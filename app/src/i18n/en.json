@@ -3722,5 +3722,8 @@
   "spielen.zahlenVorlesen": "{art}: you {ich}, opponent {gegner}",
   "spielen.partieMensch": "Two players",
   "spielen.partieZuege": "{zuege} moves",
-  "spielen.partieZugEins": "1 move"
+  "spielen.partieZugEins": "1 move",
+  "ringfeier.titel": "Ring complete, congratulations!",
+  "ringfeier.text": "{name}: all {gesamt} done. This ring in your profile is now closed.",
+  "ringfeier.weiter": "Continue"
 }

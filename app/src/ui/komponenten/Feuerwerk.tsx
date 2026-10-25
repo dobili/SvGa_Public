@@ -5,7 +5,9 @@
  * Rolle im Gesamtbild: Reine Zierde ohne Inhalt (für Vorlesehilfen verborgen). Mehrere Raketen
  * steigen an festen Stellen auf und zerplatzen in Funken in den Farben der App (Gold, Creme,
  * helles Navy); alles mit CSS-Animationen (ui/stil/feuerwerk.css), ohne Bibliothek. Wer im System
- * „Bewegung reduzieren“ eingestellt hat, sieht nur ein ruhiges, kurzes Aufleuchten.
+ * „Bewegung reduzieren“ eingestellt hat, sieht nur ein ruhiges, kurzes Aufleuchten. Seit 0.2.144
+ * auch klein über dem Brett nach einer gewonnenen Partie (Ergebnisblende.tsx, Wunsch des Autors):
+ * drei Funkenkränze ohne Aufstieg, einmal.
  * Abhängigkeiten: ui/stil/feuerwerk.css.
  */
 import type { CSSProperties } from "react";
@@ -25,11 +27,22 @@ const VOLLKREIS = 360;
 const FARBEN = ["var(--gold)", "var(--creme)", "#9fb8e6", "#f2d27a"] as const;
 const PROZENT = 100;
 
-/** Das Feuerwerk: sieben Raketen mit je vierzehn Funken. */
-export function Feuerwerk() {
+/** Raketen des kleinen Feuerwerks über dem Brett: nah am Schild, kurz nacheinander. */
+const KLEINE_RAKETEN: readonly (readonly [number, number, number])[] = [
+  [0.25, 0.3, 0.3],
+  [0.75, 0.28, 0.55],
+  [0.5, 0.72, 0.8],
+];
+
+/**
+ * Das Feuerwerk: groß sieben Raketen mit je vierzehn Funken (zweimal), klein drei Kränze (einmal).
+ * Beispiel: <Feuerwerk umfang="klein" /> über dem Brett nach „Gewonnen!“.
+ */
+export function Feuerwerk({ umfang = "gross" }: { umfang?: "gross" | "klein" }) {
+  const raketen = umfang === "klein" ? KLEINE_RAKETEN : RAKETEN;
   return (
-    <div className="feuerwerk" aria-hidden="true">
-      {RAKETEN.map(([x, y, verzoegerung], r) => (
+    <div className={`feuerwerk feuerwerk-${umfang}`} aria-hidden="true">
+      {raketen.map(([x, y, verzoegerung], r) => (
         <span
           key={r}
           className="feuerwerk-rakete"

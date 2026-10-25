@@ -3722,5 +3722,8 @@
   "spielen.zahlenVorlesen": "{art}: du {ich}, Gegner {gegner}",
   "spielen.partieMensch": "Zu zweit",
   "spielen.partieZuege": "{zuege} Züge",
-  "spielen.partieZugEins": "1 Zug"
+  "spielen.partieZugEins": "1 Zug",
+  "ringfeier.titel": "Ring voll, herzlichen Glückwunsch!",
+  "ringfeier.text": "{name}: alle {gesamt} geschafft. Damit ist dieser Ring in deinem Profil geschlossen.",
+  "ringfeier.weiter": "Weiter"
 }

@@ -17,6 +17,7 @@
  */
 import { useEffect, useState } from "react";
 import { useAnzeigesatz } from "../ui/komponenten/maiastand";
+import { Ringfeier } from "../ui/komponenten/Ringfeier";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
@@ -191,6 +192,8 @@ function Hauptrahmen() {
       </main>
       <AufgabenRueckweg />
       <Leiste />
+      {/* Gratulation bei einem vollen Ring des Fortschritts (seit 0.2.144). */}
+      <Ringfeier />
       <TourAngebot />
       <TourEbene />
       <Startanimation />

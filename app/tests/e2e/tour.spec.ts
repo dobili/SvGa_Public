@@ -182,6 +182,12 @@ test("jede Tour der Bereiche läuft bis zum Ende durch", async ({ page }) => {
     // Die Ziele der Tour (etwa die Steckbriefe) kommen erst mit den Daten; ohne sie zeigt die Tour
     // keine Karte (im Gesamtlauf am 25.10.2026 einmal so gesehen).
     await page.waitForLoadState("networkidle");
+    // Seit 0.2.144 lädt die Hülle Index und Nachschlagen schon beim Start (Ringfeier), „networkidle“
+    // kommt deshalb vor dem Zeichnen der Seite; erst auf ihre Überschrift warten.
+    await expect(page.getByRole("heading", { level: 1, name: new RegExp(eintrag) })).toBeVisible();
+    if (eintrag === "Steckbriefe") {
+      await expect(page.getByRole("heading", { level: 2, name: "Eröffnungen" })).toBeVisible();
+    }
     await laeuft();
   }
   await bereich(page, "Profil");

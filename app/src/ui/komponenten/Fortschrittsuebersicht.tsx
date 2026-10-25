@@ -14,33 +14,16 @@
  * Abhängigkeiten: speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */
-import { Dumbbell, LayoutGrid, ListChecks } from "lucide-react";
-import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
-import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../daten/laden";
-import { GEGNER } from "../../engine/gegner";
+import type { Datenverzeichnis } from "../../daten/laden";
 import { t, tZahl } from "../../i18n/sprache";
-import { botsiegeJeTempo } from "../../speicher/besiegt";
 import type { Fortschritt } from "../../speicher/format";
-import {
-  erstmalsTrainiert,
-  geloesteUebungen,
-  kapitelfortschritt,
-  type Anteil,
-} from "../../speicher/fortschritt";
+import { geloesteUebungen, kapitelfortschritt } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Ring } from "./Kreisanzeige";
-import { Ringlegende, Symbolringreihe, type Symbolringangabe } from "./Symbolringe";
-import { useDaten } from "./useDaten";
+import { summe, useFortschrittsringe } from "./fortschrittsringe";
+import { Ringlegende, Symbolringreihe } from "./Symbolringe";
 import { Titelsymbol } from "./Titelsymbol";
-import { ZEITARTZEICHEN, zeitartname } from "./zeitartzeichen";
-
-/** Kennungen aller vorgefertigten Bots, auch der Spaß-Bots (sie tragen ebenso Siegmarken). */
-const VORGEFERTIGTE = GEGNER.map((g) => g.kennung);
-
-function summe(zahlen: readonly number[]): number {
-  return zahlen.reduce((gesamt, zahl) => gesamt + zahl, 0);
-}
 
 /** Je Kapitel eine Zeile mit kleinem Ring; ein Tipp öffnet die Kapitelübersicht. */
 function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fortschritt }) {
@@ -81,73 +64,20 @@ function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschrit
   );
 }
 
-/** Abgehakte Lernziele über alle Kapitel; null, solange nachschlagen.json lädt oder ohne Ziele. */
-function useLernzielanteil(): Anteil | null {
-  const nachschlagen = useDaten(ladeNachschlagen, "nachschlagen");
-  const stand = useLernstand();
-  if (nachschlagen.art !== "fertig") return null;
-  const ziele = nachschlagen.wert.lernziele;
-  const gesamt = summe(ziele.map((z) => z.punkte.length));
-  if (gesamt === 0) return null;
-  return { erreicht: summe(ziele.map((z) => abgehakt(stand, z.kapitel, z.punkte.length))), gesamt };
-}
-
-/** Je Zeitart ein Ring: besiegte vorgefertigte Bots (Blitz, Schnellschach, Klassisch). */
-function useBotringe(): Symbolringangabe[] {
-  const besiegt = useSpeicher((zustand) => zustand.daten.spiel.besiegt);
-  return botsiegeJeTempo(besiegt, VORGEFERTIGTE).map(({ tempo, erreicht, gesamt }) => ({
-    name: t("fortschritt.botsiege", { zeitart: zeitartname(tempo) }),
-    legende: zeitartname(tempo),
-    symbol: ZEITARTZEICHEN[tempo],
-    anteil: { erreicht, gesamt },
-    testid: `ich-bots-${tempo}`,
-  }));
-}
-
 /**
  * Fortschritt über das ganze Buch.
  *
  * Beispiel: nach dem Öffnen von Abb. 1.26 und 1.27 → „Abbildungen angesehen: 2 von 850“.
  */
 export function Fortschrittsuebersicht() {
-  const index = useDaten(ladeIndex, "index");
   const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
-  const lernziele = useLernzielanteil();
-  const botringe = useBotringe();
-  if (index.art !== "fertig") return null;
-  const alle = index.wert.kapitel.flatMap((kapitel) => kapitel.abbildungen);
-  const abbildungen = {
-    erreicht: alle.filter((id) => fortschritt.gesehen[id] !== undefined).length,
-    gesamt: alle.length,
-  };
+  const ringe = useFortschrittsringe();
+  if (!ringe) return null;
+  const { index, buchringe, botringe } = ringe;
   const uebungen = Object.values(fortschritt.uebungen);
   const durchgaenge = summe(Object.values(fortschritt.trainer).map((s) => s.durchgaenge));
   // Beantwortete Warum-Fragen (0.2.99); die Gesamtzahl steht in den Kapiteln, hier die Summe.
   const warum = summe(Object.values(fortschritt.warum).map((stellen) => stellen.length));
-  const buchringe: Symbolringangabe[] = [
-    {
-      name: t("fortschritt.abbildungen"),
-      symbol: LayoutGrid,
-      anteil: abbildungen,
-      testid: "ich-abbildungen",
-    },
-    ...(lernziele
-      ? [
-          {
-            name: t("fortschritt.lernziele"),
-            symbol: ListChecks,
-            anteil: lernziele,
-            testid: "ich-lernziele",
-          },
-        ]
-      : []),
-    {
-      name: t("fortschritt.trainerErstmals"),
-      symbol: Dumbbell,
-      anteil: erstmalsTrainiert(fortschritt),
-      testid: "ich-trainer",
-    },
-  ];
   return (
     <section className="karte" data-testid="ich-fortschritt" data-tour="einstellungen-fortschritt">
       <h2 className="karte-titel">
@@ -183,7 +113,7 @@ export function Fortschrittsuebersicht() {
           )}
         </dl>
       )}
-      <JeKapitel index={index.wert} fortschritt={fortschritt} />
+      <JeKapitel index={index} fortschritt={fortschritt} />
     </section>
   );
 }

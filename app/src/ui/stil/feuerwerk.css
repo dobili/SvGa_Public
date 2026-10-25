@@ -56,12 +56,40 @@
   }
 }
 
+/* Klein über dem Brett (gewonnene Partie): kein Aufstieg, ein Durchgang, kürzere Funken. */
+.feuerwerk-klein .feuerwerk-rakete {
+  animation: none;
+}
+
+.feuerwerk-klein .feuerwerk-funke {
+  width: 6px;
+  height: 6px;
+  animation-name: feuerwerk-funke-klein;
+  animation-delay: var(--verzoegerung);
+  animation-iteration-count: 1;
+}
+
+@keyframes feuerwerk-funke-klein {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--winkel)) translateX(0);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--winkel)) translateX(min(14vw, 70px)) translateY(10px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .feuerwerk-rakete {
     animation: none;
   }
 
-  .feuerwerk-funke {
+  .feuerwerk-funke,
+  .feuerwerk-klein .feuerwerk-funke {
     animation: feuerwerk-leuchten 1.2s ease-in-out var(--verzoegerung) 1 both;
     transform: rotate(var(--winkel)) translateX(40px);
   }

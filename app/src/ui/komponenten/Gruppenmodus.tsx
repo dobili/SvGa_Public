@@ -160,8 +160,11 @@ export function Gruppenfreischaltung({ gegnerBot }: { gegnerBot: string | null }
   );
 }
 
-/** Spielt einmal den Feierton, wenn der Ton eingeschaltet ist (Einstellungen › Ton). */
-function Feierton() {
+/**
+ * Spielt einmal den Feierton, wenn der Ton eingeschaltet ist (Einstellungen › Ton); auch für die
+ * Gratulation bei einem vollen Ring (Ringfeier.tsx).
+ */
+export function Feierton() {
   const { ton } = useEinstellungen();
   useEffect(() => {
     if (ton === "an") spieleKlang("feier");

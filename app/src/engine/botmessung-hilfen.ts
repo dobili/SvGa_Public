@@ -150,15 +150,26 @@ export function datendatei(
 }
 
 /**
+ * Untergrenze der Lichess-Wertung (Lichess vergibt keine Zahl unter 400). Die schwächsten Bots
+ * verlieren in Blitz fast jede Partie gegen Stufe 1; die Leiter setzt sie dann beliebig tief (bis
+ * unter 0), messbar ist nur „unter der Stufe 1“. Auf der Lichess-Skala heißt das 400.
+ */
+const LICHESS_UNTERGRENZE = 400;
+
+/**
  * Die Datei der Zahlen einer Zeitklasse (Blitz, Klassisch; docs/MESSUNG_ZEITKLASSEN.md) für
  * engine/botstaerke-zeitklassen.ts.
  * Warum eigene Datei: Die Gruppen-Chats messen die Bots unter ihrer Kennung (skripte/gruppen-bots.mjs),
  * nicht unter dem Kandidatennamen (BOTMESSNAMEN) wie die Schnellschach-Messung; Archiv-Bots und
  * nicht gemessene Bots fehlen, für sie gilt die Schnellschach-Zahl.
- * Beispiel: Blitz, Tom gemessen mit 526 → `"tom": 526`; „alt-tom“ steht nicht in der Datei.
+ * Beispiel: Blitz, Tom gemessen mit 526 → `"tom": 526`; „alt-tom“ steht nicht in der Datei;
+ * gemessen −89 → 400 (Lichess-Untergrenze).
  */
 export function zeitklassendatei(werte: Map<string, number>, tempo: Wertungstempo): string {
-  const zahl = (k: string) => werte.get(k);
+  const zahl = (k: string) => {
+    const w = werte.get(k);
+    return w === undefined ? undefined : Math.max(LICHESS_UNTERGRENZE, w);
+  };
   const stufen = STUFEN_NUMMERN.map((n) => {
     const w = zahl(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`);
     return w === undefined ? null : `  ${n}: ${Math.round(w)},`;

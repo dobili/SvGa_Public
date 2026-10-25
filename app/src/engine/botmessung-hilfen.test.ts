@@ -9,6 +9,7 @@ describe("Datei der Zahlen je Zeitklasse", () => {
       ["stufe10", 2990],
       ["tom", 526],
       ["alt-tom", 700],
+      ["luis", -231],
     ]);
     const text = zeitklassendatei(werte, "blitz");
     expect(text).toContain("  1: 612,");
@@ -16,6 +17,7 @@ describe("Datei der Zahlen je Zeitklasse", () => {
     expect(text).not.toContain("  2: ");
     expect(text).toContain('  "tom": 526,');
     expect(text).not.toContain("alt-tom");
+    expect(text).toContain('  "luis": 400,');
     expect(text).not.toContain("NaN");
   });
 });

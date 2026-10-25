@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.129 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.130 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -32,6 +32,30 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.130: Bot-Zahlen je Bedenkzeit (Bot-Chat, Opus, 25.10.2026)
+
+Die zehn Mess-Chats sind fertig. Jeder Bot und jede Stufe hat jetzt drei Zahlen: Blitz,
+Schnellschach und Klassisch, wie bei Lichess (dein Wunsch R51).
+
+- [ ] N805. **Zahl passt zur Uhr:** Spielen › Gegner, einen Bot wählen (etwa Ole, Stufe 9). Stelle
+      die Bedenkzeit nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der
+      Sprechblase und im Bereich über der Stufe wechselt mit: Ole etwa 2700 (Blitz), 2700
+      (Schnellschach), 2200 (Klassisch). Ohne Uhr gilt die Schnellschach-Zahl. Die Spaß-Bots
+      (Kiki, Onkel Otto, Tante Hilde, Bodo) behalten überall ihre Schnellschach-Zahl, weil sie
+      keiner Gruppe angehören und nicht mitgemessen wurden.
+      Die Stufen in Blitz / Schnellschach / Klassisch: 1: 635/747/1007 · 2: 961/946/1220 ·
+      3: 1264/1242/1482 · 4: 1516/1456/1564 · 5: 1750/1696/1677 · 6: 2009/1906/1758 ·
+      7: 2206/2108/2006 · 8: 2353/2291/2116 · 9: 2361/2388/2198 · 10: 3323/3296/2775.
+      Blitz liegt nah an Schnellschach. Klassisch ist gestaucht (unten höher, oben niedriger), so
+      wie die Lichess-Klassisch-Wertung, die unten höher anfängt und oben selten über 2600 reicht.
+      Die schwächsten Bots (Tom, Marie, Oma Erna, Luis, Clara, Onkel Bernd) verlieren in Blitz fast
+      jede Partie gegen Stufe 1; ihre Blitz-Zahl steht deshalb auf 400, der Untergrenze von Lichess
+      (schon umgesetzt, Widerspruch genügt).
+- [ ] N806. **Wertung je Zeitklasse:** Spiele eine gewertete Blitz-Partie (3 + 2) gegen einen Bot
+      und sieh dir danach „Deine Spielstärke“ an: Die Gegnerstärke der Partie ist die Blitz-Zahl
+      des Bots (bei Ole etwa 2700, nicht 2200). In der Partienliste sortiert „Stärke des Gegners“
+      nach derselben Zahl.
 
 ### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
 

@@ -5284,3 +5284,39 @@ Freigabe „Alles ja“, mit der Bitte, den neuen Stand 0.2.128 zu berücksichti
   auf); die Karte heißt „Darstellung und Training“.
 - DS45 Rand der gestrichelten Chips in `--rand-bedien`; Überschrift im Formular eigener Bots.
 
+
+## Zahlen je Zeitklasse: Blitz und Klassisch gemessen (25.10.2026 nachts, Bot-Chat, 0.2.130)
+
+R51 (drei Zahlen je Bot wie bei Lichess) ist umgesetzt. Zehn Gruppen-Chats haben nach
+`docs/MESSUNG_ZEITKLASSEN.md` je Gruppe die Nm-Anker (40 Partien gegen sich selbst, Tiefe 18) und
+die acht Bots gegen die zwei nächsten Nm-Stufen gespielt, einmal mit 3 + 2 und einmal mit 30 + 20.
+Der Koordinierungschat hat die Zweige `messung-blitz-N` und `messung-klassisch-N` mit
+`app/skripte/sammle-zeitklasse.sh` zusammengelegt und mit `engine/botstaerke.messung.ts`
+(BOTELO_TEMPO blitz bzw. classical) ausgewertet. Ergebnis: `engine/botstaerke-daten-blitz.ts` und
+`engine/botstaerke-daten-klassisch.ts`, eingebunden in `engine/botstaerke-zeitklassen.ts`.
+
+- **Stufen (Blitz / Schnellschach / Klassisch):** 1: 635/747/1007 · 2: 961/946/1220 ·
+  3: 1264/1242/1482 · 4: 1516/1456/1564 · 5: 1750/1696/1677 · 6: 2009/1906/1758 ·
+  7: 2206/2108/2006 · 8: 2353/2291/2116 · 9: 2361/2388/2198 · 10: 3323/3296/2775.
+- **Plausibilität:** Leiter und Anker stimmen in Klassisch auf ±50 Elo, in Blitz auf ±145. Blitz
+  liegt nah an Schnellschach (Bots im Mittel −176, Streuung 189). Klassisch ist gestaucht, unten
+  etwa +300, oben bis −650: Die Lichess-Klassisch-Wertung beginnt unten höher und reicht oben
+  selten über 2600. Oberhalb von 2200 (gesättigte Anker) ist die Unsicherheit groß (±250 bis ±300).
+- **Lichess-Untergrenze 400 (Empfehlung, umgesetzt nach Regel 9):** Tom, Marie, Oma Erna, Luis,
+  Clara und Onkel Bernd verlieren in Blitz fast jede Partie gegen Stufe 1; die Leiter setzte sie
+  auf −231 bis 97. Messbar ist nur „schwächer als Stufe 1“, auf der Lichess-Skala heißt das 400
+  (Lichess vergibt keine Zahl darunter). Die Zahlen je Zeitklasse beginnen deshalb bei 400
+  (`zeitklassendatei`, `LICHESS_UNTERGRENZE`); die Schnellschach-Zahlen bleiben, wie sie sind.
+- **Spaß-Bots:** gehören keiner Gruppe an, wurden nicht je Zeitklasse gemessen und behalten in
+  allen Zeitklassen die Schnellschach-Zahl.
+- **Gruppe 6:** Ihr Chat lief auf der Bewertung einer Blitz-Ankerpartie fest (Partie 20 von
+  6m gegen 6m, am Ende mehrere Damen gegen den König; die Tiefe-18-Bewertung der WASM-Engine kam
+  nach über einer Stunde nicht zum Ende, in zwei Umgebungen gleich). Der Koordinierungschat hat
+  Blitz und Klassisch der Gruppe 6 lokal nachgemessen und diese eine Partie aus den Ankern
+  gelassen (39 statt 40 Partien, 72 statt 80 Seiten). Gruppe 7 hat Blitz versehentlich auf `main`
+  gemessen; das war derselbe Stand wie `menschliche-bots` (aac4d99), die Daten gelten.
+- **Anzeige:** Gegnerwahl (Kacheln, Sprechblase, Bereich je Stufe, Reihenfolge) und die
+  Sortierung der Partienliste nehmen die Zahl der Zeitklasse der gewählten Uhr; die feste
+  Gegnerwertung (`gegnerstaerke`) tat das schon seit 0.2.125. Die Stufen bleiben nach der
+  Schnellschach-Zahl eingeteilt; in Blitz und Klassisch können sich benachbarte Bereiche
+  überschneiden.

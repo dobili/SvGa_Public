@@ -8,7 +8,7 @@
  * dieser Stärke und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten Klassen heißen die Zonen „wenig, normal,
  * viel“ mit „viel“ als gut, bei den schwachen umgekehrt. Unter MINDESTZUEGE_VERGLEICH eigenen
  * Zügen stehen nur die Anzahlen. Ersetzt die zweispaltige Tabelle „Züge nach Art“.
- * Seit 0.2.130 (Wunsch des Autors, 25.10.2026: schwache Werte sollen auffallen) trägt der
+ * Seit 0.2.131 (Wunsch des Autors, 25.10.2026: schwache Werte sollen auffallen) trägt der
  * Balken die Farbe des Urteils statt der Klasse (grün gut, ruhig normal, rot schwach), die Zonen
  * sind schwach in denselben Farben getönt, und eine schwache Zeile hat zusätzlich ein Warnzeichen
  * und einen leichten roten Grund (Bedeutung nie nur über Farbe). Die Klasse erkennt man weiter an

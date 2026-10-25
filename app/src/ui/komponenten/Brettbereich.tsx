@@ -94,7 +94,7 @@ export function Brettbereich({
   skelett?: boolean;
   seitenleiste?: ((gedreht: boolean) => React.ReactNode) | null;
   /** Über dem Brett, etwa das Ergebnis am Partieende (R38); als Funktion mit der Drehung,
-      wenn die Lage vom Feld abhängt (Zugmarke, 0.2.130). */
+      wenn die Lage vom Feld abhängt (Zugmarke, 0.2.131). */
   ueberlagerung?: React.ReactNode | ((gedreht: boolean) => React.ReactNode);
 }) {
   const [gedreht, setzeGedreht] = useState(anfangsGedreht);

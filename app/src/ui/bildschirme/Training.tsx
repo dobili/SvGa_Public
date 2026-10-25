@@ -10,7 +10,7 @@
  * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
  * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
  * Seit 0.2.93 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
- * Seit DS53/DS54 (0.2.130) steht der Link zur Website als Zeichen rechts in der Kapitelzeile statt
+ * Seit DS53/DS54 (0.2.131) steht der Link zur Website als Zeichen rechts in der Kapitelzeile statt
  * als eigene Zeile unter jedem Kapitel; die Seite wird so etwa 700 Pixel kürzer.
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */

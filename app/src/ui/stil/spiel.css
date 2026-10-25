@@ -615,7 +615,7 @@
   flex: none;
 }
 
-/* Seit 0.2.130 (Wunsch des Autors: das Porträt war neben dem Text zu klein) 96 statt 64 Pixel,
+/* Seit 0.2.131 (Wunsch des Autors: das Porträt war neben dem Text zu klein) 96 statt 64 Pixel,
    und die Blase zeigt mit einem Zipfel auf das Porträt. */
 .gegner-blase {
   position: relative;

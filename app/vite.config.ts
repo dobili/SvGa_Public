@@ -228,7 +228,7 @@ export default defineConfig({
         start_url: "/app/",
         scope: "/",
         display: "standalone",
-        // DS57 (0.2.130): Die App folgt der Drehung des Geräts. „portrait“ sperrte die
+        // DS57 (0.2.131): Die App folgt der Drehung des Geräts. „portrait“ sperrte die
         // installierte Android-App im Hochformat, obwohl es seit DS2 ein Querformat gibt.
         orientation: "any",
         theme_color: NAVY,

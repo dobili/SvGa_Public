@@ -89,7 +89,7 @@ export function VorgefertigteGitter({
   };
   return (
     <div role="radiogroup" aria-label={t("spielen.bot")}>
-      {gruppen().map((gruppe) => (
+      {gruppen(tempo).map((gruppe) => (
         <details
           key={gruppe.schluessel}
           className="gegnerstufe"
@@ -115,9 +115,7 @@ export function VorgefertigteGitter({
               <Kachel
                 key={g.kennung}
                 name={g.name}
-                staerke={staerketext(
-                  staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
-                )}
+                staerke={staerketext(zahlDes(g, tempo))}
                 gewaehlt={bot === g.kennung}
                 beiWahl={() => beiBot(g.kennung)}
                 kinder={
@@ -188,10 +186,17 @@ interface Gruppe {
   readonly bots: readonly Gegner[];
 }
 
+/**
+ * Die Zahl eines Bots in der Zeitklasse der gewählten Uhr (seit 0.2.129 je Zeitklasse gemessen,
+ * docs/MESSUNG_ZEITKLASSEN.md); ohne Messung die Schätzung aus seinen Stufen.
+ */
+function zahlDes(g: Gegner, tempo: Wertungstempo): number {
+  return staerkeDesBots(g.kennung, tempo) ?? staerkeAusStufen(g.stufenJePhase);
+}
+
 /** Schwächster Bot zuerst (Wunsch des Autors, 19.10.2026); ohne Messung zählt die Schätzung. */
-function nachStaerke(bots: readonly Gegner[]): Gegner[] {
-  const zahl = (g: Gegner) => staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase);
-  return [...bots].sort((a, b) => zahl(a) - zahl(b));
+function nachStaerke(bots: readonly Gegner[], tempo: Wertungstempo): Gegner[] {
+  return [...bots].sort((a, b) => zahlDes(a, tempo) - zahlDes(b, tempo));
 }
 
 /**
@@ -199,17 +204,17 @@ function nachStaerke(bots: readonly Gegner[]): Gegner[] {
  * die Stufen mit Bots (seit 0.2.117 zehn, nach der gemessenen Zahl; eine Stufe ohne Bot fällt
  * weg). Beispiel: „Zum Spaß“ mit „etwa 450 bis 1200“, „Stufe 1 · Neuling“ mit „unter 400“.
  */
-function gruppen(): Gruppe[] {
+function gruppen(tempo: Wertungstempo): Gruppe[] {
   const stufen = STUFENNUMMERN.map((nummer) => ({
     schluessel: nummer,
     stufe: nummer,
     kopf: t("spielen.bot.stufeKopf", { nummer: String(nummer), name: t(stufe(nummer).name) }),
-    bereich: bereichstext(nummer),
-    bots: nachStaerke(gegnerDerStufe(nummer)),
+    bereich: bereichstext(nummer, tempo),
+    bots: nachStaerke(gegnerDerStufe(nummer), tempo),
   })).filter((g) => g.bots.length > 0);
-  const spass = nachStaerke(spassbots());
+  const spass = nachStaerke(spassbots(), tempo);
   if (spass.length === 0) return stufen;
   const kopf = t("spielen.bot.spassKopf");
-  const bereich = spassbereichstext();
+  const bereich = spassbereichstext(tempo);
   return [{ schluessel: SPASSGRUPPE, stufe: null, kopf, bereich, bots: spass }, ...stufen];
 }

@@ -147,7 +147,7 @@
   font-size: var(--groesse-klein);
 }
 
-/* Stufenbalken (seit 0.2.130): „aus“ als Zeichen, dann steigende Säulen wie eine Lautstärke-
+/* Stufenbalken (seit 0.2.131): „aus“ als Zeichen, dann steigende Säulen wie eine Lautstärke-
    anzeige, gefüllt bis zur Wahl; rechts das Wort. Jede Säule ist eine volle Tippfläche. */
 .stufenbalken-zeile {
   display: flex;

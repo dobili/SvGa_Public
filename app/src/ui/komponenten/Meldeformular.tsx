@@ -6,7 +6,7 @@
  * (app/melden.ts). Fehlt das Netz, wartet die Meldung seit V9 auf dem Gerät und geht später
  * hinaus; scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben
  * kopieren und per E-Mail schicken.
- * Seit T3 (0.2.130) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
+ * Seit T3 (0.2.131) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
  * Angaben, damit niemand einer Voreinstellung blind zustimmt; seit T2 ist die
  * Datenschutzerklärung ein Link.
  * Abhängigkeiten: app/melden.ts, Segmentwahl, i18n.
@@ -28,7 +28,7 @@ const DATENSCHUTZ = "/datenschutz/";
 
 /**
  * Die Angaben, die mit dem Häkchen mitgehen, mit ihren echten Werten (T3).
- * Beispiel: App-Version 0.2.130, Browser und Gerät „Mozilla/5.0 (Linux; Android 14 …)“,
+ * Beispiel: App-Version 0.2.131, Browser und Gerät „Mozilla/5.0 (Linux; Android 14 …)“,
  * Bildschirm „412×915 @2.625“, Sprache „de“, an einer Abbildung dazu Nummer und FEN.
  */
 function Sendeangaben({ abbildung, stellung }: { abbildung?: string; stellung?: string }) {

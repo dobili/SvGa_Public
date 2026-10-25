@@ -32,7 +32,7 @@ import {
   type Sortierung,
   type Sortierwerte,
 } from "../../spiel/partienfilter";
-import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
+import { gegnerstaerke } from "../../engine/botstaerke";
 import { ohnePartie, type Partieeintrag } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Ergebnismarke } from "./Ergebnismarke";
@@ -264,7 +264,8 @@ function sortierwerte(eintrag: Partieeintrag): Sortierwerte {
   return {
     begonnen: eintrag.partie.begonnen,
     staerke: eigene ?? null,
-    gegner: mensch ? null : (staerkeDesBots(e.bot) ?? staerkeAusStufen(e.stufenJePhase)),
+    // Die feste Gegnerwertung der Partie (Zeitklasse, Gruppe, eigene Stufe wie in der Wertung).
+    gegner: mensch ? null : gegnerstaerke(e),
   };
 }
 

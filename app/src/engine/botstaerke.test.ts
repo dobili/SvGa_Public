@@ -1,5 +1,6 @@
 /** Tests der Elo-Zahl der Bots: Daten vollständig und geordnet, Schätzung aus Stufen, Anzeige. */
 import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
+import { BOT_STAERKE_JE_ZEITKLASSE, STUFEN_STAERKE_JE_ZEITKLASSE } from "./botstaerke-zeitklassen";
 import { describe, expect, it } from "vitest";
 import {
   ANGABE_HOECHSTENS,
@@ -84,5 +85,33 @@ describe("Elo-Zahl der Bots", () => {
     expect(staerkeangabe(3400)).toEqual({ art: "ueber", wert: ANGABE_HOECHSTENS });
     expect(staerkeangabe(310)).toEqual({ art: "unter", wert: ANGABE_MINDESTENS });
     expect(staerkeangabe(ANGABE_HOECHSTENS)).toEqual({ art: "etwa", wert: ANGABE_HOECHSTENS });
+  });
+});
+
+describe("Zahlen je Zeitklasse (0.2.130)", () => {
+  const KLASSISCH_30_20 = { grundzeitMs: 1_800_000, zuschlagMs: 20_000 };
+  const BLITZ_3_2 = { grundzeitMs: 180_000, zuschlagMs: 2_000 };
+  // Die Spaß-Bots gehören keiner Gruppe an und wurden nicht je Zeitklasse gemessen.
+  it("jeder Gruppen-Bot und jede Stufe hat in Blitz und Klassisch eine Zahl ab 400", () => {
+    const gruppenbots = GEGNER.filter((g) => !g.zufallszuege);
+    for (const tempo of ["blitz", "classical"] as const) {
+      const bots = BOT_STAERKE_JE_ZEITKLASSE[tempo] ?? {};
+      for (const g of gruppenbots)
+        expect(bots[g.kennung], `${tempo} ${g.kennung}`).toBeGreaterThanOrEqual(400);
+      const stufen = STUFEN_STAERKE_JE_ZEITKLASSE[tempo] ?? {};
+      for (const n of STUFEN) expect(stufen[n], `${tempo} Stufe ${n}`).toBeGreaterThanOrEqual(400);
+    }
+    expect(staerkeDesBots("kiki", "blitz")).toBe(staerkeDesBots("kiki"));
+  });
+  it("die Gegnerwertung nimmt die Zahl der Zeitklasse der Uhr", () => {
+    const partie = {
+      bot: "ole",
+      stufenJePhase: { eroeffnung: 9, mittelspiel: 9, endspiel: 9 },
+    } as const;
+    expect(gegnerstaerke({ ...partie, uhr: KLASSISCH_30_20 })).toBe(
+      BOT_STAERKE_JE_ZEITKLASSE.classical?.ole,
+    );
+    expect(gegnerstaerke({ ...partie, uhr: BLITZ_3_2 })).toBe(BOT_STAERKE_JE_ZEITKLASSE.blitz?.ole);
+    expect(gegnerstaerke({ ...partie, uhr: null })).toBe(staerkeDesBots("ole"));
   });
 });

@@ -258,7 +258,7 @@
   flex: none;
 }
 
-/* T3 (0.2.130): „Was wird gesendet?“ unter dem Häkchen, mit den echten Werten. */
+/* T3 (0.2.131): „Was wird gesendet?“ unter dem Häkchen, mit den echten Werten. */
 .sendeangaben {
   margin-left: calc(var(--raster) * 4);
   font-size: var(--groesse-klein);
@@ -293,7 +293,7 @@
   margin: 0;
 }
 
-/* T2 (0.2.130): Datenschutz und Impressum am Ende von „Über die App“. */
+/* T2 (0.2.131): Datenschutz und Impressum am Ende von „Über die App“. */
 .rechtliche-links {
   display: flex;
   flex-wrap: wrap;

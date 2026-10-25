@@ -49,7 +49,7 @@ import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
-/** Zeichen der eigenen Stufe anstelle eines Porträts (96 Pixel groß seit 0.2.130). */
+/** Zeichen der eigenen Stufe anstelle eines Porträts (96 Pixel groß seit 0.2.131). */
 const PORTRAETSYMBOL = 40;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
@@ -70,7 +70,7 @@ function staerkezeile(
   erlaubte?: readonly Fehlerart[],
 ): string {
   const vorgefertigt = gegnerVon(bot);
-  const gemessen = staerkeDesBots(bot);
+  const gemessen = staerkeDesBots(bot, wertungstempo(uhr));
   if (vorgefertigt && gemessen !== null) {
     const mitUhr = uhrzeile(gemessen, vorgefertigt.stufenJePhase, uhr);
     // Spaß-Bots (0.2.88) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.

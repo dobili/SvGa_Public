@@ -117,7 +117,7 @@ function saeulenhoehe(position: number, anzahl: number): number {
 }
 
 /**
- * Der Stufenschalter einer Art. Seit 0.2.130 (Wunsch des Autors, 25.10.2026: aufgeräumter, wie
+ * Der Stufenschalter einer Art. Seit 0.2.131 (Wunsch des Autors, 25.10.2026: aufgeräumter, wie
  * die Balken in „Deine Züge“) als Säulen wie eine Lautstärkeanzeige: „aus“ als Zeichen links,
  * dann je Stufe eine höhere Säule; gefüllt bis zur gewählten Stufe, unter „normal“ ein Strich
  * wie das Übliche in „Deine Züge“, rechts das Wort der Wahl. Jede Säule bleibt ein Optionsfeld

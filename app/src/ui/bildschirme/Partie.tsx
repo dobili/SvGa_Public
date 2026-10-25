@@ -147,7 +147,7 @@ function Spielfeld({
   ansicht: Ansichtsstelle | null;
   beiAnsicht: (ansicht: Ansichtsstelle) => void;
   zeichen: readonly (string | null)[];
-  /** Zugklasse je Halbzug nach der Auswertung, für die Marken in Zugliste und Brett (0.2.130). */
+  /** Zugklasse je Halbzug nach der Auswertung, für die Marken in Zugliste und Brett (0.2.131). */
   klassen: readonly (Zugklasse | null)[];
   /** Phase je Stellung für „M“ und „E“ in der Zugliste (0.2.43). */
   phasen: readonly Phase[];

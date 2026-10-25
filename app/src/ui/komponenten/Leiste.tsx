@@ -22,7 +22,7 @@ import { useLangerDruck } from "./useLangerDruck";
 
 /**
  * Von 0.2.116 bis 0.2.129 zeigte die Leiste nur Symbole (Wunsch des Autors, 19.10.2026). Seit DS55
- * (0.2.130, vom Autor am 25.10.2026 freigegeben) steht unter Buch, Training, Spielen und
+ * (0.2.131, vom Autor am 25.10.2026 freigegeben) steht unter Buch, Training, Spielen und
  * Nachschlagen wieder das Wort, weil Fadenkreuz und Schwerter nicht von selbst verständlich sind;
  * das Zahnrad bleibt ohne Wort. Der Name bleibt zusätzlich als aria-label und Tooltip.
  */

@@ -418,7 +418,7 @@
   color: var(--text);
   font: inherit;
   font-size: var(--groesse-mittel);
-  /* Seit T3 (0.2.130) darf ein langes Wort umbrechen statt abgeschnitten zu werden
+  /* Seit T3 (0.2.131) darf ein langes Wort umbrechen statt abgeschnitten zu werden
      („Fehler im Buch“ stand bei 360 Pixeln als „Fehler im B…“ da). */
   line-height: 1.15;
   text-wrap: balance;

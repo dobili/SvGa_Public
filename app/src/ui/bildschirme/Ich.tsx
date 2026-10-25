@@ -160,7 +160,7 @@ export function Ich() {
             {t("installation.lizenzen")}
           </button>
         </div>
-        {/* T2 (0.2.130): Impressum und Datenschutz direkt erreichbar (§ 5 DDG), nicht nur über
+        {/* T2 (0.2.131): Impressum und Datenschutz direkt erreichbar (§ 5 DDG), nicht nur über
             die Lizenzen. */}
         <p className="rechtliche-links">
           <a href="/datenschutz/">{t("lizenzen.datenschutz")}</a>

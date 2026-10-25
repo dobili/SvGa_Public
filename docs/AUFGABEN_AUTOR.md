@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.130 (mit der Nutzungsprüfung, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.131 (mit der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.130“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.131“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.2.130: Nutzungsprüfung (DS46 bis DS57, V1 bis V9, T1 bis T4) und deine Ergänzungen (Opus, 25.10.2026)
+### Neu in 0.2.131: Nutzungsprüfung (DS46 bis DS57, V1 bis V9, T1 bis T4) und deine Ergänzungen (Opus, 25.10.2026)
 
 Deine Freigabe vom 25.10.2026 („Ja“ zu allem außer T5) und deine drei Ergänzungen dazu. Die
 Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
@@ -136,6 +136,30 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       dorthin, der Bildschirm folgt gleich. Zurück zu „Buch“ und wieder „Spielen“: spürbar
       schneller als vorher. „Beginnen“ wirkt sofort gedrückt, die Partie ist schneller da.
 
+### Neu in 0.2.130: Bot-Zahlen je Bedenkzeit (Bot-Chat, Opus, 25.10.2026)
+
+Die zehn Mess-Chats sind fertig. Jeder Bot und jede Stufe hat jetzt drei Zahlen: Blitz,
+Schnellschach und Klassisch, wie bei Lichess (dein Wunsch R51).
+
+- [ ] N805. **Zahl passt zur Uhr:** Spielen › Gegner, einen Bot wählen (etwa Ole, Stufe 9). Stelle
+      die Bedenkzeit nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der
+      Sprechblase und im Bereich über der Stufe wechselt mit: Ole etwa 2700 (Blitz), 2700
+      (Schnellschach), 2200 (Klassisch). Ohne Uhr gilt die Schnellschach-Zahl. Die Spaß-Bots
+      (Kiki, Onkel Otto, Tante Hilde, Bodo) behalten überall ihre Schnellschach-Zahl, weil sie
+      keiner Gruppe angehören und nicht mitgemessen wurden.
+      Die Stufen in Blitz / Schnellschach / Klassisch: 1: 635/747/1007 · 2: 961/946/1220 ·
+      3: 1264/1242/1482 · 4: 1516/1456/1564 · 5: 1750/1696/1677 · 6: 2009/1906/1758 ·
+      7: 2206/2108/2006 · 8: 2353/2291/2116 · 9: 2361/2388/2198 · 10: 3323/3296/2775.
+      Blitz liegt nah an Schnellschach. Klassisch ist gestaucht (unten höher, oben niedriger), so
+      wie die Lichess-Klassisch-Wertung, die unten höher anfängt und oben selten über 2600 reicht.
+      Die schwächsten Bots (Tom, Marie, Oma Erna, Luis, Clara, Onkel Bernd) verlieren in Blitz fast
+      jede Partie gegen Stufe 1; ihre Blitz-Zahl steht deshalb auf 400, der Untergrenze von Lichess
+      (schon umgesetzt, Widerspruch genügt).
+- [ ] N806. **Wertung je Zeitklasse:** Spiele eine gewertete Blitz-Partie (3 + 2) gegen einen Bot
+      und sieh dir danach „Deine Spielstärke“ an: Die Gegnerstärke der Partie ist die Blitz-Zahl
+      des Bots (bei Ole etwa 2700, nicht 2200). In der Partienliste sortiert „Stärke des Gegners“
+      nach derselben Zahl.
+
 ### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
 
 Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an den Stand 0.2.128
@@ -151,7 +175,7 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       Antippen: Wie Menschen, Solide, Leichtsinnig, Königsunsicher, Taktisch blind, Keine Fehler
       (die letzte ist neu: alle Fehler aus, die Stufe spielt rein). Dann der Regler für die
       Häufigkeit und die Fehlerarten in fünf Gruppen mit Zeichen (Material, Taktik, König,
-      Eröffnung und Bauern, Allgemein). Jede Fehlerart hat seit 0.2.130 Säulen statt Schalter
+      Eröffnung und Bauern, Allgemein). Jede Fehlerart hat seit 0.2.131 Säulen statt Schalter
       (siehe N914); Arten ohne Spielerdaten nur „aus | an“. Bei
       eingeschalteten Gelegenheitsfehlern klappt „Verlust: unbegrenzt“ die Wahl „0,5 | 1 | 2 | 3
       Bauern | unbegrenzt“ auf.
@@ -165,7 +189,7 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       „Neuer Gegner“ („Gegner bearbeiten“ beim Bearbeiten), darunter Name, Porträt und dieselben
       vier Reiter wie bei der eigenen Stufe.
 - [ ] N905. **Feste Startleiste:** Unten über der Navigation klebt eine Leiste mit Bild und Name
-      des Gegners, darunter seit 0.2.130 kurz „Weiß · 10 + 0 · gewertet“, rechts „Beginnen“
+      des Gegners, darunter seit 0.2.131 kurz „Weiß · 10 + 0 · gewertet“, rechts „Beginnen“
       (siehe N912). Sie bleibt beim Scrollen stehen und rutscht erst über der Liste der Partien an
       ihren Platz. Ein Tipp auf den linken Teil springt zur Gegnerwahl. Bei laufender Partie
       kommt die Rückfrage in der Leiste. Bei „Eigene Bots“ ohne gewählten Bot steht dort „Noch kein eigener Bot – oben wählen oder anlegen“, und der Knopf ist grau.

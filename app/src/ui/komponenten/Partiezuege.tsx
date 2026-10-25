@@ -6,7 +6,7 @@
  * aktuellen Stellung. Auch in der ruhigen Ansicht sichtbar (Wunsch des Autors: Brett,
  * Zugnavigation und gespielte Züge). Seit 0.2.43 (Wunsch des Autors) steht vor dem ersten Zug
  * des Mittelspiels ein „M“ und vor dem ersten Zug des Endspiels ein „E“, wie in der Kurve.
- * Seit 0.2.130 (Wunsch des Autors, 25.10.2026) steht nach der Auswertung hinter jedem Zug die
+ * Seit 0.2.131 (Wunsch des Autors, 25.10.2026) steht nach der Auswertung hinter jedem Zug die
  * runde Marke seiner Zugklasse wie in „Deine Züge“ (statt des Zeichens als Text); Bildschirmleser
  * hören den Namen der Klasse.
  * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
@@ -30,7 +30,7 @@ const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
 /**
  * Rollt die Zugzeile waagerecht, bis der gezeigte Zug (sonst der letzte) sichtbar ist.
  * Warum nicht scrollIntoView: Das würde auch die ganze Seite verschieben (wie in Zugleiste.tsx).
- * Seit DS48 (0.2.130) steht die Zeile in der Partie einzeilig neben den Zugknöpfen.
+ * Seit DS48 (0.2.131) steht die Zeile in der Partie einzeilig neben den Zugknöpfen.
  */
 function rolleZumZug(zeile: HTMLElement | null): void {
   if (!zeile) return;

@@ -126,7 +126,7 @@ function Einstellungen({
         stufeninhalt={<EigeneStufe v={v} mit={mit} />}
         editor={<GegnerEditor />}
         // Farbe, Bedenkzeit, Rücknahme und Spielhilfen standen seit dem 19.10.2026 über der Art
-        // des Gegners, weil man sie unter dem Gitter der Bots übersah. Seit DS51 (0.2.130) stehen
+        // des Gegners, weil man sie unter dem Gitter der Bots übersah. Seit DS51 (0.2.131) stehen
         // sie wieder danach: Die feste Startleiste zeigt Farbe, Zeit und Wertung ohnehin an.
         einstellungen={
           <div className="partieeinstellungen" data-tour="spielen-einstellungen">

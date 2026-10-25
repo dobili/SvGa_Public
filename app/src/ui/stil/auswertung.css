@@ -231,7 +231,7 @@
   color: var(--text-leise);
 }
 
-/* Zonen in den Farben ihres Urteils, schwach getönt (seit 0.2.130): Wo ein Balken endet,
+/* Zonen in den Farben ihres Urteils, schwach getönt (seit 0.2.131): Wo ein Balken endet,
    sieht man sofort, ob er im guten oder schwachen Bereich liegt. */
 .zone-urteil-gut {
   background: color-mix(in srgb, var(--gruen-text) 16%, var(--flaeche));

@@ -8,6 +8,7 @@
  */
 import { bereichDerSpassbots, bereichDerStufe, staerkeangabe } from "../../engine/botstaerke";
 import type { Stufennummer } from "../../engine/stufen";
+import type { Wertungstempo } from "../../spiel/elomodell";
 import { t } from "../../i18n/sprache";
 
 /**
@@ -22,13 +23,13 @@ export function staerketext(wert: number): string {
  * Der Bereich einer Stufe als Text. Beispiel: 1042 bis 1301 → „etwa 1050 bis 1300“; 2976 bis
  * 3400 → „etwa 3000 bis über 3300“; gleiche Enden → „etwa 1100“.
  */
-export function bereichstext(nummer: Stufennummer): string {
-  return alsBereich(bereichDerStufe(nummer));
+export function bereichstext(nummer: Stufennummer, tempo: Wertungstempo = "rapid"): string {
+  return alsBereich(bereichDerStufe(nummer, tempo));
 }
 
 /** Der Bereich der Spaß-Bots als Text (0.2.88); ohne Messung leer. */
-export function spassbereichstext(): string {
-  const bereich = bereichDerSpassbots();
+export function spassbereichstext(tempo: Wertungstempo = "rapid"): string {
+  const bereich = bereichDerSpassbots(tempo);
   return bereich ? alsBereich(bereich) : "";
 }
 

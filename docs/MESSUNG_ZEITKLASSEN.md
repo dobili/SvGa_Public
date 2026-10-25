@@ -28,11 +28,18 @@ Gruppen 1 bis 10; Gruppe 10 misst zusätzlich die reinen Spitzenstufen (im Skrip
 
 ## Auswertung im Koordinierungschat
 
-1. Alle Zweige holen: `git fetch origin 'refs/heads/messung-*:refs/remotes/origin/messung-*'`, die
-   Ordner `messdaten/<zeitklasse>/gruppe-N` aller Zweige in einen Ordner je Zeitklasse legen
-   (`anker-sN`, `neu-gruppeN`, Bewertungen zusammen in `anker-bewertung/`, Dateien als
-   `bewertet-N-k.jsonl`).
+1. Alle Zweige zusammenlegen (seit 0.2.130 ein Skript, im Ordner app/):
+   `skripte/sammle-zeitklasse.sh blitz ../buch/arbeit/zeitklassen/blitz` (holt die Zweige, legt
+   `anker-sN`, `neu-gruppeN` und die Bewertungen als `bewertet-N-k.jsonl` zusammen; fehlt ein
+   `fertig.txt`, bricht es ab). Ein drittes Argument wählt Gruppen („1 2 3“).
 2. `BOTELO_ORDNER=<ordner> BOTELO_TEMPO=blitz BOTELO_AUSGABE=botstaerke-daten-blitz.ts npx vitest run
    --config vitest.messung.config.ts src/engine/botstaerke.messung.ts` (im Ordner app/); für
    Klassisch `BOTELO_TEMPO=classical`.
-3. Datei nach `app/src/engine/` kopieren; `engine/botstaerke.ts` wählt die Zahl nach der Zeitklasse.
+3. Datei nach `app/src/engine/` kopieren und mit Prettier formatieren; `engine/botstaerke-zeitklassen.ts`
+   bindet sie ein, `engine/botstaerke.ts` wählt die Zahl nach der Zeitklasse. Für Blitz und
+   Klassisch schreibt der Messlauf nur die gemessenen Zahlen, Bots unter ihrer Kennung, ab 400.
+
+Erfahrungen der ersten Messung (25.10.2026): Ein Lauf braucht 20 bis 35 Minuten je Zeitklasse.
+Eine Ankerpartie mit mehreren Damen gegen den König brachte die Tiefe-18-Bewertung nicht zum
+Ende; dann den hängenden Lauf beenden und die übrigen Partien ohne diese bewerten
+(`skripte/eichung-rechnen.mjs --ordner <kopie> --quellen stufen`, `stufen.jsonl` ohne die Partie).

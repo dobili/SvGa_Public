@@ -1,5 +1,5 @@
 /*
- * Gegnerbild mit Stern für besiegte Bots, Porträt zur Wahl für eigene Bots, Porträt in der
+ * Gegnerbild mit Siegmarken für besiegte Bots, Porträt zur Wahl für eigene Bots, Porträt in der
  * Partienliste (0.2.99, Wunsch des Autors vom 19.10.2026). Eigene Datei, weil spiel.css schon
  * lang ist. Farben und Abstände aus basis.css.
  */
@@ -14,24 +14,33 @@
   display: flex;
 }
 
-/* Stern für „schon gewertet besiegt“: gold auf Navy wie der Stern gewerteter Partien. */
+/* Siegmarken für „schon gewertet besiegt“ (seit 25.10.2026 je Zeitklasse ein Zeichen, bis zu
+   drei): gold auf Navy wie der Stern gewerteter Partien, leicht überlappend, damit drei Marken
+   auch auf die kleinen Kacheln der Gegnerwahl passen (360 px: etwa 70 px Porträt). */
 .gegner-besiegt {
   position: absolute;
   right: -3px;
   bottom: -3px;
-  width: 22px;
-  height: 22px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.gegner-siegmarke {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: var(--navy);
   color: var(--gold);
+  /* Goldener Rand: Im Dunkeln läge Navy sonst fast unsichtbar auf der dunklen Fläche. */
+  border: 1px solid var(--gold);
   box-shadow: 0 0 0 2px var(--flaeche);
 }
 
-.gegner-besiegt svg {
-  fill: currentColor;
+.gegner-siegmarke + .gegner-siegmarke {
+  margin-inline-start: -3px;
 }
 
 .gegner-sprechblase > .gegnerbild,
@@ -186,6 +195,17 @@
   align-items: center;
   gap: var(--raster);
   padding: 0 calc(var(--raster) * 2) var(--raster);
+}
+
+/* Zeichen der Zeitart vor „Blitz 3 + 2“ (25.10.2026), mit dem Text zusammen nie umbrochen. */
+.partie-zeitart {
+  white-space: nowrap;
+}
+
+.partie-zeitart svg {
+  margin-inline-end: 2px;
+  vertical-align: -2px;
+  color: var(--gold-text);
 }
 
 .partienfilter {

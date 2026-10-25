@@ -34,6 +34,7 @@ import "./ui/stil/brett.css";
 import "./ui/stil/tour.css";
 import "./ui/stil/auswertung.css";
 import "./ui/stil/zugmarken.css";
+import "./ui/stil/symbolringe.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteNachsenden } from "./app/melden";

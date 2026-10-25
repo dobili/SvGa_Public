@@ -40,7 +40,8 @@ import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 import { gruppenstufe } from "../../engine/gruppe";
 import { gruppenname, gruppenstaerketext } from "./gruppentexte";
-import { wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
+import { wertungstempo } from "../../spiel/elomodell";
+import { besiegtIn } from "../../speicher/besiegt";
 import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext } from "./staerkeangabe";
@@ -131,10 +132,8 @@ function Sprechblase({
     gruppe !== null
       ? gruppenname(gruppe)
       : (vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene"));
-  // Stern je Zeitklasse der gewählten Uhr (R51, 0.2.125).
-  const tempo = wertungstempo(uhr);
+  // Siegmarken aller Zeitklassen, je eine eigene (25.10.2026; vorher nur die der gewählten Uhr).
   const alleBesiegt = useSpeicher((z) => z.daten.spiel.besiegt);
-  const besiegt = bot ? alleBesiegt[tempo].includes(bot) : false;
   const text =
     gruppe !== null
       ? t("gruppe.text", { nummer: String(gruppe) })
@@ -154,7 +153,7 @@ function Sprechblase({
       data-tour="spielen-sprechblase"
     >
       {vorgefertigt || eigener || gruppe !== null ? (
-        <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
+        <GegnerBild bot={bot} eigene={eigene} name={name} besiegtIn={besiegtIn(alleBesiegt, bot)} />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
           <SlidersHorizontal size={PORTRAETSYMBOL} />
@@ -196,14 +195,12 @@ function EigeneGitter({
   bot,
   eigene,
   beiBot,
-  tempo,
 }: {
   bot: string | null;
   eigene: readonly EigenerGegner[];
   beiBot: (bot: string | null) => void;
-  tempo: Wertungstempo;
 }) {
-  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt[tempo]);
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   if (eigene.length === 0) return null;
   return (
     <div
@@ -223,7 +220,7 @@ function EigeneGitter({
               bot={g.kennung}
               eigene={eigene}
               name={g.name}
-              besiegt={besiegt.includes(g.kennung)}
+              besiegtIn={besiegtIn(besiegt, g.kennung)}
             />
           }
         />
@@ -298,7 +295,7 @@ export function GegnerWahl({
           )}
           {kategorie === "eigene" && (
             <>
-              <EigeneGitter bot={bot} eigene={eigene} beiBot={beiBot} tempo={wertungstempo(uhr)} />
+              <EigeneGitter bot={bot} eigene={eigene} beiBot={beiBot} />
               {editor}
             </>
           )}

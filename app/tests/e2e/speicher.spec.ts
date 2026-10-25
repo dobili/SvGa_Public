@@ -43,6 +43,15 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   // Seit 0.2.134 steht der Fortschritt im Profil.
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
+  // Seit 25.10.2026 je Zeitart ein Ring mit den besiegten Bots, Zeichen erklärt die Legende.
+  await expect(page.getByTestId("ich-bots-blitz")).toHaveText(/^0 von \d+$/);
+  await expect(
+    page.getByRole("progressbar", { name: /^Klassisch: vorgefertigte Bots .* 0 von \d+$/ }),
+  ).toBeVisible();
+  await expect(page.getByRole("list", { name: "Zeichenerklärung" })).toContainText("Schnellschach");
+  // Ohne Partien: die Karte „Deine Partien“ mit kurzem Satz (Wunsch des Autors, 25.10.2026).
+  await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
+  await expect(page.getByText("Noch keine Partie gespielt.", { exact: false })).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/ich-fortschritt.png", fullPage: true });
 });
 

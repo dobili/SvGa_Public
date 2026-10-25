@@ -8,6 +8,8 @@ import { gibAuf, neuePartie, type Partie } from "../spiel/partie";
 import {
   besiegtAus,
   besiegterBot,
+  besiegtIn,
+  botsiegeJeTempo,
   irgendwoBesiegt,
   KEINE_BESIEGTEN,
   mitBesiegtem,
@@ -86,5 +88,40 @@ describe("besiegte Bots", () => {
       JSON.stringify({ ...legeAb(LEERER_SPIELSTAND, partie("leon", true, true)), besiegt: [] }),
     ) as unknown;
     expect(spielstandAus(roh).besiegt.rapid).toEqual(["leon"]);
+  });
+});
+
+describe("Siegmarken und Bot-Ringe je Zeitklasse (Wunsch des Autors, 25.10.2026)", () => {
+  const blitz = { grundzeitMs: 180_000, zuschlagMs: 2_000 };
+  const klassisch = { grundzeitMs: 1_800_000, zuschlagMs: 20_000 };
+
+  it("nennt die Zeitklassen eines Bots in fester Reihenfolge, bis zu drei", () => {
+    const liste = [
+      partie("mia", true, true, klassisch),
+      partie("mia", true, true, blitz),
+      partie("mia", true, true),
+    ].reduce(mitBesiegtem, KEINE_BESIEGTEN);
+    expect(besiegtIn(liste, "mia")).toEqual(["blitz", "rapid", "classical"]);
+    expect(besiegtIn(liste, "max")).toEqual([]);
+    expect(besiegtIn(liste, null)).toEqual([]);
+  });
+
+  it("zählt je Zeitklasse nur die übergebenen Bots, ohne eigene Gegner und Gruppen", () => {
+    const liste = {
+      blitz: ["lotta", "mia", "eigen-1", "gruppe-2"],
+      rapid: ["lotta"],
+      classical: [],
+    };
+    expect(botsiegeJeTempo(liste, ["lotta", "mia", "max"])).toEqual([
+      { tempo: "blitz", erreicht: 2, gesamt: 3 },
+      { tempo: "rapid", erreicht: 1, gesamt: 3 },
+      { tempo: "classical", erreicht: 0, gesamt: 3 },
+    ]);
+  });
+
+  it("ordnet eine alte einfache Liste nach den noch gespeicherten Partien ein", () => {
+    // Mia steht noch als Blitz-Sieg in den Partien: nur Blitz; Emil ohne Partie: Schnellschach.
+    const liste = besiegtAus(["mia", "emil"], [partie("mia", true, true, blitz)]);
+    expect(liste).toEqual({ blitz: ["mia"], rapid: ["emil"], classical: [] });
   });
 });

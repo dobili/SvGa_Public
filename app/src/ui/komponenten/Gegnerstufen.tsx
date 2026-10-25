@@ -8,11 +8,13 @@
  * darf). Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht seit 0.2.85
  * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.88 steht vor Stufe 1 die Gruppe
  * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors). Seit 0.2.101 (Symbolsprache DS19) trägt jede
- * Stufenzeile eine farbige Marke, die ersten Porträts und die Zahl besiegter Bots.
+ * Stufenzeile eine farbige Marke, die ersten Porträts und die Zahl besiegter Bots; seit 25.10.2026
+ * mit dem Zeichen der Zeitklasse statt des Sterns, weil die Zahl für die gewählte Uhr gilt und die
+ * Porträts jetzt je Zeitklasse eine eigene Siegmarke tragen (Wunsch des Autors).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, engine/botstaerke.ts, staerkeangabe.ts,
- * app/merker.ts, lucide, i18n.
+ * speicher/besiegt.ts, zeitartzeichen.ts, app/merker.ts, lucide, i18n.
  */
-import { ChevronDown, Star } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
@@ -20,18 +22,20 @@ import { gegnerDerStufe, spassbots, type Gegner } from "../../engine/gegner";
 import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Wertungstempo } from "../../spiel/elomodell";
+import { besiegtIn } from "../../speicher/besiegt";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 import { Gruppenzeile } from "./Gruppenmodus";
 import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
 import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
 import { Stufenmarke } from "./Stufenmarke";
+import { ZEITARTZEICHEN } from "./zeitartzeichen";
 
 /** Merker der offenen Stufen, als Liste der Nummern („1,3“). */
 const MERKER_OFFEN = "gegnerstufenOffen";
 const PFEIL_GROESSE = 18;
-/** Stern am Zähler besiegter Bots in der Stufenzeile (Bildpunkte). */
-const STERN_GROESSE = 14;
+/** Zeichen der Zeitklasse am Zähler besiegter Bots in der Stufenzeile (Bildpunkte). */
+const ZAEHLERZEICHEN_GROESSE = 14;
 /** So viele Porträts zeigt die zugeklappte Stufenzeile (DS19). */
 const VORSCHAU_GESICHTER = 4;
 
@@ -77,8 +81,10 @@ export function VorgefertigteGitter({
   tempo: Wertungstempo;
 }) {
   const [offen, setzeOffen] = useState(() => offeneStufenAnfangs(liesMerker(MERKER_OFFEN), bot));
-  // Stern an Bots, die der Leser schon gewertet besiegt hat (0.2.99, Wunsch des Autors).
-  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt[tempo]);
+  // Siegmarken an Bots, die der Leser schon gewertet besiegt hat (0.2.99, seit 25.10.2026 je
+  // Zeitklasse); der Zähler der Stufenzeile gilt für die Zeitklasse der gewählten Uhr.
+  const alleBesiegt = useSpeicher((z) => z.daten.spiel.besiegt);
+  const besiegt = alleBesiegt[tempo];
   const umschalten = (nummer: number, jetztOffen: boolean) => {
     const neu = new Set(offen);
     if (jetztOffen) neu.add(nummer);
@@ -107,7 +113,7 @@ export function VorgefertigteGitter({
                 </span>
               )}
             </h4>
-            <Gruppenvorschau bots={gruppe.bots} besiegt={besiegt} />
+            <Gruppenvorschau bots={gruppe.bots} besiegt={besiegt} tempo={tempo} />
             <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
           </summary>
           <div className="gegnergitter" data-tour="spielen-gitter">
@@ -123,7 +129,7 @@ export function VorgefertigteGitter({
                     bot={g.kennung}
                     eigene={[]}
                     name={g.name}
-                    besiegt={besiegt.includes(g.kennung)}
+                    besiegtIn={besiegtIn(alleBesiegt, g.kennung)}
                   />
                 }
               />
@@ -138,16 +144,20 @@ export function VorgefertigteGitter({
 
 /**
  * Rechts in der Stufenzeile (DS19): die ersten Porträts übereinander, damit man die Gruppe auch
- * zugeklappt erkennt, und ein Stern mit der Zahl schon gewertet besiegter Bots.
- * Beispiel: Stufe 1, Lotta und Mia besiegt → vier kleine Gesichter und „★ 2/8“.
+ * zugeklappt erkennt, und das Zeichen der Zeitklasse mit der Zahl schon gewertet besiegter Bots.
+ * Beispiel: Stufe 1, Blitz gewählt, Lotta und Mia in Blitz besiegt → vier kleine Gesichter und
+ * „⚡ 2/8“.
  */
 function Gruppenvorschau({
   bots,
   besiegt,
+  tempo,
 }: {
   bots: readonly Gegner[];
   besiegt: readonly string[];
+  tempo: Wertungstempo;
 }) {
+  const Zeichen = ZEITARTZEICHEN[tempo];
   const geschlagen = bots.filter((g) => besiegt.includes(g.kennung)).length;
   return (
     <span className="gegnerstufe-vorschau">
@@ -158,7 +168,7 @@ function Gruppenvorschau({
       </span>
       {geschlagen > 0 && (
         <span className="gegnerstufe-besiegt">
-          <Star size={STERN_GROESSE} aria-hidden="true" />
+          <Zeichen size={ZAEHLERZEICHEN_GROESSE} aria-hidden="true" />
           <span aria-hidden="true">
             {geschlagen}/{bots.length}
           </span>

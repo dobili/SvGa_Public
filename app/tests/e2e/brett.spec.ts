@@ -89,8 +89,10 @@ test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte
     .getByLabel("Stellung als FEN")
     .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
+  // Stufe 10 (volle Engine, ohne menschliche Fehler) findet das Matt Dh4# immer; Stufe 8 spielt
+  // seit 0.2.126 mit menschlichen Fehlern und übersah es selten (Testlauf 25.10.2026).
   for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
-    await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
+    await page.getByLabel(new RegExp(`^${phase}:`)).fill("10");
   }
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await page.getByRole("button", { name: /^g2, Bauer/ }).click();

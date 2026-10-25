@@ -1,0 +1,139 @@
+/*
+ * Fehler und blinde Flecken als Spinnennetz (seit 0.2.135, ui/komponenten/Profilnetz.tsx), dazu
+ * die gesperrten Teile, solange die Feinregler offen sind (Fehlerprofil.tsx, Feinregler.tsx).
+ * Farben wie das Netz des Spielstils (gegnerbild.css), im Dunkeln dieselben kräftigeren Linien.
+ */
+.profilnetz {
+  width: 100%;
+  max-width: 380px;
+  justify-self: center;
+  align-self: center;
+  font-family: var(--schrift);
+  /* In Einheiten des Bildes: bei 360 Pixeln Breite etwa 12 Pixel auf dem Schirm. */
+  font-size: 17px;
+  touch-action: manipulation;
+}
+
+.profilnetz-ring,
+.profilnetz-speiche {
+  fill: none;
+  stroke: var(--linie-stark);
+}
+
+/* „normal“: gestrichelt in Gold, wie der Strich des Üblichen in „Deine Züge“. */
+.profilnetz-ring.normal {
+  stroke: var(--gold);
+  stroke-dasharray: 4 3;
+  stroke-width: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) :is(.profilnetz-ring:not(.normal), .profilnetz-speiche) {
+    stroke: #6b7fa3;
+  }
+}
+
+:root[data-farbschema="dunkel"] :is(.profilnetz-ring:not(.normal), .profilnetz-speiche) {
+  stroke: #6b7fa3;
+}
+
+.profilnetz-flaeche {
+  fill: rgb(201 162 39 / 0.28);
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  transition: all 0.2s ease-out;
+}
+
+.profilnetz-punkt {
+  cursor: pointer;
+  fill: var(--flaeche);
+  stroke: var(--linie-stark);
+  stroke-width: 1.2;
+}
+
+.profilnetz-punkt.aus circle:not(.profilnetz-treffer) {
+  stroke-dasharray: 2 2;
+}
+
+.profilnetz-punkt .profilnetz-treffer {
+  fill: transparent;
+  stroke: none;
+}
+
+.profilnetz-punkt.gewaehlt circle:not(.profilnetz-treffer) {
+  fill: var(--gold);
+  stroke: var(--gold-text);
+  stroke-width: 1.5;
+}
+
+.profilnetz-punkt:focus {
+  outline: none;
+}
+
+.profilnetz-punkt:focus-visible circle:not(.profilnetz-treffer) {
+  stroke: var(--gold-text);
+  stroke-width: 3px;
+}
+
+.profilnetz text {
+  fill: var(--text);
+  /* Schein in der Grundfarbe, damit die Schrift über Linien und Fläche lesbar bleibt. */
+  stroke: var(--flaeche);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.profilnetz-name {
+  font-weight: 600;
+}
+
+.profilnetz text.profilnetz-wert {
+  fill: var(--gold-text);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.profilnetz text.profilnetz-wert.ist-aus {
+  fill: var(--text-leise);
+  font-weight: 400;
+}
+
+/* Mit offenen Feinreglern: grau und ohne Bedienung, es zeigt nur den Mittelwert. */
+.profilnetz.gesperrt {
+  opacity: 0.4;
+  filter: grayscale(0.6);
+  pointer-events: none;
+}
+
+.stufenregler.gesperrt {
+  opacity: 0.4;
+}
+
+.vorlage:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.profilnetz-legende {
+  margin: 0;
+  text-align: center;
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.fleckennetz,
+.feinregler {
+  display: grid;
+  gap: var(--raster);
+}
+
+/* Hinweis auf gesperrtes Netz oder ältere Einstellungen: leicht golden hinterlegt. */
+.profil-hinweis {
+  margin: 0;
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-radius: 8px;
+  background: rgb(201 162 39 / 0.14);
+  font-size: var(--groesse-fein);
+}

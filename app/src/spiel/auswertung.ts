@@ -6,6 +6,9 @@
  * rechnet diese Datei den Verlust jedes Zuges und sein Zeichen. Die absichtlichen Fehler der
  * Engine stehen im Protokoll der Partie (spiel/partie.ts, engine/zugwahl.ts).
  * Seit 0.2.40 bekommt jeder Zug eine Klasse wie bei chess.com (brillant bis patzer).
+ * Seit dem Theoriezug (Wunsch des Autors, 25.10.2026) heißt die Klasse "buch" auf dem Bildschirm
+ * „Theoriezug“ und umfasst die bekannte Eröffnungstheorie (Regel in schach/theorie.ts), nicht nur
+ * die Eröffnungen des Buches. Der interne Schlüssel bleibt "buch" (Texte, Marken, Tests).
  * Abhängigkeiten: spiel/partie.ts, engine/fehlerart.ts.
  */
 import { lageVon, type Fehlerart } from "../engine/fehlerart";
@@ -22,8 +25,8 @@ export type Zugzeichen = "!!" | "!" | "??" | "?" | "?!";
  * einzige gute Zug oder der beste Zug nach einem Fehler des Gegners, solange die Stellung danach
  * nicht klar gewonnen ist; bester = der Zug der Engine (seit 0.2.50
  * nur noch dieser, damit die Zahl zur Zeile „Beste Züge“ passt); sehrGut (bis 0,2 hinter dem
- * besten, auch ein gleichwertiger Zug); gut (bis 0,5); buch = ein Zug aus den Eröffnungen des
- * Buches; ungenau (ab 0,5); fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den
+ * besten, auch ein gleichwertiger Zug); gut (bis 0,5); buch = Theoriezug (bekannte
+ * Eröffnungstheorie, seit 25.10.2026; vorher nur die Eröffnungen des Buches); ungenau (ab 0,5); fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den
  * Gewinn genommen (ab 0,5, seit 0.2.50 auch vor „patzer“, solange man nicht schlechter steht als
  * vor dem Fehler des Gegners, wie „Verpasst“ bei chess.com); patzer (ab 3).
  */
@@ -114,6 +117,7 @@ export interface Zugumstaende {
   readonly abstand: number;
   /** Stand die ziehende Seite vor dem Zug im Schach? */
   readonly imSchach: boolean;
+  /** Theoriezug, solange alle Züge davor Theoriezüge waren (Bedingungen 1 und 2, theorie.ts). */
   readonly buch: boolean;
 }
 
@@ -215,12 +219,9 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
 }
 
-/** Prüft, ob ein Zug (SAN) ein Zug aus den Eröffnungen des Buches ist; ohne Index nie. */
-export type Buchpruefer = (fen: string, san: string) => boolean;
-
 /**
  * Die Umstände eines Zuges: bester, einziger (bester mit mindestens 1,2 Abstand zum zweitbesten,
- * wie in der Engine-Karte), Opfer (Abtauschrechnung), Buch.
+ * wie in der Engine-Karte), Opfer (Abtauschrechnung), Theorie (schon mit der Kette geprüft).
  */
 function umstaende(
   fen: string,
@@ -229,7 +230,7 @@ function umstaende(
   abstand: number | undefined,
   vorherVerlust: number,
   wertVorher: number,
-  buch: Buchpruefer | null,
+  theorie: boolean,
 ): Zugumstaende {
   const uci = sanZuUci(fen, san);
   const warBester = bester !== undefined && bester !== "" && uci === bester;
@@ -242,7 +243,7 @@ function umstaende(
     wertVorher,
     abstand: abstand ?? 0,
     imSchach: lage?.regeln.isCheck() ?? false,
-    buch: buch !== null && buch(fen, san),
+    buch: theorie,
   };
 }
 
@@ -255,17 +256,23 @@ function umstaende(
  * Werte fehlen.
  * Beispiel: 1. e4 (+0,3) e5 (+0,3) 2. Dh5 (−0,2): 2. Dh5 verliert 0,5 → „?!“. Nach 2. Dh5 ist
  * 2... Sc6 bester Zug mit Abstand 2,5 zum zweitbesten → „!“.
+ * Theorie (seit 25.10.2026): je Halbzug, ob die Stellung danach Theorie ist (schach/theorie.ts,
+ * theorieJeZug). Theoriezug ist ein Zug nur, solange alle Züge davor Theoriezüge waren: Der erste
+ * Zug, der keiner ist (nicht in der Theorie oder ab 0,5 Verlust, etwa 2. Ke2 der „Bongcloud“),
+ * beendet die Theorie für den Rest der Partie (chess.com: „out of book“). Ohne Angabe gibt es
+ * keine Theoriezüge (so rechnen Spielstärke und Wertung, spiel/wertung.ts).
  */
 export function zugurteile(
   partie: Partie,
   werte: readonly number[],
   beste: readonly string[] = [],
   abstaende: readonly number[] = [],
-  buch: Buchpruefer | null = null,
+  theorie: readonly boolean[] = [],
 ): Zugurteil[] {
   if (werte.length !== partie.zuege.length + 1) return [];
   const alle = stellungen(partie);
   let vorherVerlust = 0;
+  let nochTheorie = true;
   return partie.zuege.map((zug, index) => {
     const fen = alle[index] ?? "";
     const weiss = fen.split(" ")[1] !== "b";
@@ -280,10 +287,11 @@ export function zugurteile(
       abstaende[index],
       vorherVerlust,
       wertVorher,
-      buch,
+      nochTheorie && theorie[index] === true,
     );
     vorherVerlust = verlust;
     const klasse = klasseVon(verlust, u);
+    nochTheorie = klasse === "buch";
     return { index, verlust, zeichen: ZEICHEN_JE_KLASSE[klasse], klasse };
   });
 }

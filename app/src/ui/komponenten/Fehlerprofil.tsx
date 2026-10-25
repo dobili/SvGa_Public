@@ -1,60 +1,48 @@
 /**
- * Fehler eines eigenen Gegners oder der eigenen Stufe: Kopf mit Menschlichkeit, Vorlagen und
- * Gesamthäufigkeit, darunter jede Fehlerart genau einmal mit einem Stufenschalter (seit 0.2.129,
- * Vorschlag DS38, vom Autor am 25.10.2026 freigegeben).
+ * Fehler eines eigenen Gegners oder der eigenen Stufe: Kopf mit Menschlichkeit, Vorlagen, das
+ * Fehlernetz mit fünf Achsen, ein Höchstverlust für alle Fehler und hinter einem Haken die
+ * Feinregler (seit 0.2.135; Netz-Vorschau E1 bis E3 und Auftrag „Variante A“, vom Autor am
+ * 25.10.2026 freigegeben).
  *
- * Rolle im Gesamtbild: Ersetzt die Abhaklisten „Fehlerarten“ und den erweiterten Modus mit 29
- * Reglerkästen (bis 0.2.128: FehlerartenKarte.tsx, ErweiterteFehler.tsx). Jede Zeile hat einen
- * Schalter „aus · sehr selten · selten · normal · oft · sehr oft“ (normal = Median der Menschen);
- * die unmenschlichen Stufen kommen erst über einen eigenen Schalter dazu. Der Höchstverlust lässt
- * sich je Zeile aufklappen. Die Logik liegt in fehlerprofil.ts, die blinden Flecken in
- * Fleckenkacheln.tsx; beide nutzen GegnerReiter.tsx für eigene Stufe und eigene Bots.
- * Abhängigkeiten: fehlerprofil.ts, engine/eigenstufen.ts, engine/botstaerke.ts, i18n, lucide-react.
+ * Rolle im Gesamtbild: Bis 0.2.134 stand jede der 18 Fehlerarten mit einem Stufenschalter
+ * untereinander (seit 0.2.129, davor Haken und erweiterter Modus). Die statistische Auswertung des
+ * Koordinierungschats zeigte, dass mehrere davon kaum ein echtes Merkmal von Spielern messen.
+ * Jetzt: fünf Achsen im Netz (Figuren, Taktik, König, Bauernzüge, Eröffnung), darunter neun
+ * Regler als Feinregler. Mit offenem Feinregler ist das Netz grau und zeigt den Mittelwert, damit
+ * sich nichts widerspricht. Die Logik liegt in fehlergruppen.ts und fehlerprofil.ts.
+ * Abhängigkeiten: fehlergruppen.ts, fehlerprofil.ts, Profilnetz.tsx, Feinregler.tsx,
+ * engine/eigenstufen.ts, engine/botstaerke.ts, i18n.
  */
-import { Ban, BookOpen, Crown, Gem, Shuffle, Zap, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { staerkeGeschaetzt } from "../../engine/botstaerke";
 import { menschlichkeit, staerkerichtung } from "../../engine/eigenstufen";
-import type { Fehlerart } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
-import { GELEGENHEITSARTEN } from "../../engine/menschenprofil";
-import { t } from "../../i18n/sprache";
-import { HAEUFIGKEIT_HOECHSTENS } from "../../speicher/menschenwerte";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import {
-  aktuelleStufen,
-  FEHLERGRUPPEN,
-  hatStufen,
-  istVorlage,
-  mitVorlage,
-  setzeStufe,
-  setzeVerlust,
-  stufenwort,
-  stufeVon,
-  STUFEN_ALLE,
-  STUFEN_MENSCHLICH,
-  UNMENSCHLICH_AB,
-  VERLUSTWAHL,
-  VORLAGEN,
-  verlustVon,
-  type Fehlergruppe,
-  type Profilart,
-  type Vorlagenname,
-} from "./fehlerprofil";
+  alteEinstellungen,
+  artenDerAchse,
+  FEHLERACHSEN,
+  FEHLERVORLAGEN,
+  gemeinsamerVerlust,
+  gruppenstufe,
+  istEinheitlich,
+  istFehlervorlage,
+  mitFehlervorlage,
+  mitVerlustFuerAlle,
+  setzeGruppe,
+  type Fehlervorlage,
+} from "./fehlergruppen";
+import { aktuelleStufen, UNMENSCHLICH_AB, VERLUSTWAHL, verlusttext } from "./fehlerprofil";
+import { Feinregler } from "./Feinregler";
+import { Profilnetz } from "./Profilnetz";
 import { staerketext } from "./staerkeangabe";
 
 const PROZENT = 100;
-const SCHRITT_HAEUFIGKEIT = 0.1;
 /** Ab diesem Anteil ganze Prozent, darunter eine Nachkommastelle. */
 const GANZE_PROZENT_AB = 0.01;
-const ZEICHENGROESSE = 18;
 
-const GRUPPENZEICHEN: Readonly<Record<Fehlergruppe, LucideIcon>> = {
-  material: Gem,
-  taktik: Zap,
-  koenig: Crown,
-  eroeffnung: BookOpen,
-  allgemein: Shuffle,
-};
+/** Wann gestrichene Arten neutral werden: beim Speichern (eigene Bots) oder beim Ändern (eigene Stufe). */
+export type Neutralwerden = "speichern" | "aendern";
 
 /** Kopf: geschätzte Stärke, Urteil über die Menschlichkeit und Richtung der Stärke. */
 function Profilkopf({ g }: { g: EigenerGegner }) {
@@ -85,279 +73,147 @@ function Profilkopf({ g }: { g: EigenerGegner }) {
   );
 }
 
-/** Vorlagen als Schnellstart, die aktive ist markiert. */
-function Vorlagen({ g, setze }: { g: EigenerGegner; setze: (g: EigenerGegner) => void }) {
+/** Vorlagen als Schnellstart, die aktive ist markiert; auch für die Flecken (Fleckennetz.tsx). */
+export function Vorlagenreihe<T extends string>({
+  namen,
+  aktiv,
+  waehle,
+  text,
+  gesperrt = false,
+}: {
+  namen: readonly T[];
+  aktiv: (name: T) => boolean;
+  waehle: (name: T) => void;
+  text: (name: T) => string;
+  gesperrt?: boolean;
+}) {
   return (
     <div className="vorlagenreihe" role="group" aria-label={t("spielen.profil.vorlagen")}>
-      {(Object.keys(VORLAGEN) as Vorlagenname[]).map((name) => (
+      {namen.map((name) => (
         <button
           key={name}
           type="button"
           className="vorlage"
-          aria-pressed={istVorlage(g, name)}
-          onClick={() => setze(mitVorlage(g, name))}
+          aria-pressed={aktiv(name)}
+          disabled={gesperrt}
+          onClick={() => waehle(name)}
         >
-          {t(`spielen.profil.vorlage.${name}`)}
+          {text(name)}
         </button>
       ))}
     </div>
   );
 }
 
-/** Höhe der niedrigsten Säule in Prozent; die höchste füllt die Spur. */
-const SAEULE_MINDESTENS = 25;
-const ZEICHEN_AUS = 18;
-
-/**
- * Höhe der Säule einer Stufe in Prozent: von „sehr selten“ (klein) bis „sehr oft“ (voll).
- * Beispiel: sechs Stufen mit „aus“ → sehr selten 40 %, normal 70 %, sehr oft 100 %.
- */
-function saeulenhoehe(position: number, anzahl: number): number {
-  return SAEULE_MINDESTENS + ((PROZENT - SAEULE_MINDESTENS) * position) / anzahl;
-}
-
-/**
- * Der Stufenschalter einer Art. Seit 0.2.131 (Wunsch des Autors, 25.10.2026: aufgeräumter, wie
- * die Balken in „Deine Züge“) als Säulen wie eine Lautstärkeanzeige: „aus“ als Zeichen links,
- * dann je Stufe eine höhere Säule; gefüllt bis zur gewählten Stufe, unter „normal“ ein Strich
- * wie das Übliche in „Deine Züge“, rechts das Wort der Wahl. Jede Säule bleibt ein Optionsfeld
- * mit dem Wort als Namen (Bildschirmleser, Tests). Arten ohne Daten der Spieler kennen nur „aus“
- * und „an“ und behalten den kleinen Schalter.
- */
-export function Stufenschalter({
-  art,
-  name,
-  wert,
-  extrem,
-  beiWahl,
-}: {
-  art: Profilart;
-  name: string;
-  wert: number | null;
-  extrem: boolean;
-  beiWahl: (stufe: number | null) => void;
-}) {
-  if (!hatStufen(art)) {
-    return <AnAusSchalter art={art} name={name} wert={wert} beiWahl={beiWahl} />;
-  }
-  const stufen = extrem ? STUFEN_ALLE : STUFEN_MENSCHLICH;
-  const anzahl = stufen.length - 1;
-  return (
-    <div className="stufenbalken-zeile">
-      <div
-        className="stufenbalken"
-        role="radiogroup"
-        aria-label={name}
-        data-testid={`stufe-${art}`}
-      >
-        {stufen.map((s, position) => (
-          <button
-            key={String(s)}
-            type="button"
-            role="radio"
-            aria-checked={s === wert}
-            aria-label={stufenwort(s)}
-            title={stufenwort(s)}
-            className={saeulenklasse(s, wert)}
-            onClick={() => beiWahl(s)}
-          >
-            {s === null ? (
-              <Ban size={ZEICHEN_AUS} aria-hidden="true" />
-            ) : (
-              <span
-                className="stufenbalken-saeule"
-                style={{ height: `${saeulenhoehe(position, anzahl)}%` }}
-              />
-            )}
-          </button>
-        ))}
-      </div>
-      <span className="stufenbalken-wert" aria-hidden="true">
-        {stufenwort(wert)}
-      </span>
-    </div>
-  );
-}
-
-/** Klassen einer Säule: gefüllt bis zur Wahl, „normal“ mit Strich, unmenschlich gestreift. */
-function saeulenklasse(s: number | null, wert: number | null): string {
-  if (s === null) return "stufenbalken-aus";
-  const teile = ["stufenbalken-stufe"];
-  if (wert !== null && s <= wert) teile.push("gefuellt");
-  if (s === 0) teile.push("ist-normal");
-  if (Math.abs(s) >= UNMENSCHLICH_AB) teile.push("unmenschlich");
-  return teile.join(" ");
-}
-
-/** Kleiner Schalter „aus · an“ für Arten ohne Stufen. */
-function AnAusSchalter({
-  art,
-  name,
-  wert,
-  beiWahl,
-}: {
-  art: Profilart;
-  name: string;
-  wert: number | null;
-  beiWahl: (stufe: number | null) => void;
-}) {
-  return (
-    <div
-      className="stufenschalter stufen-2"
-      role="radiogroup"
-      aria-label={name}
-      data-testid={`stufe-${art}`}
-    >
-      {[null, 0].map((s) => (
-        <button
-          key={String(s)}
-          type="button"
-          role="radio"
-          aria-checked={s === wert}
-          onClick={() => beiWahl(s)}
-        >
-          {s === null ? stufenwort(s) : t("spielen.profil.an")}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-/** Wahl des Höchstverlusts einer Art als Chips (unter der Zeile aufgeklappt). */
-function Verlustwahl({
+/** Ein Höchstverlust für alle Fehler (E3) als Regler über die Wahl ½, 1, 2, 3, unbegrenzt. */
+function Verlustregler({
   g,
-  art,
   setze,
+  gesperrt,
 }: {
   g: EigenerGegner;
-  art: Fehlerart;
   setze: (g: EigenerGegner) => void;
+  gesperrt: boolean;
 }) {
-  const wert = verlustVon(g, art);
-  const wahl = VERLUSTWAHL.includes(wert) ? VERLUSTWAHL : [...VERLUSTWAHL.slice(0, -1), wert, null];
+  const { wert, einheitlich } = gemeinsamerVerlust(g);
+  const stelle = VERLUSTWAHL.indexOf(wert);
   return (
-    <div className="verlustwahl" role="radiogroup" aria-label={t("spielen.profil.verlustTitel")}>
-      <span className="hinweis">{t("spielen.profil.verlustTitel")}</span>
-      {wahl.map((b) => (
-        <button
-          key={String(b)}
-          type="button"
-          role="radio"
-          className="chip"
-          aria-checked={b === wert}
-          onClick={() => setze(setzeVerlust(g, art, b))}
-        >
-          {b === null
-            ? t("spielen.eigene.unbegrenzt")
-            : t("spielen.eigene.bauern", { wert: String(b).replace(".", ",") })}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-/** Eine Zeile: Name, auf Wunsch der Höchstverlust, darunter der Stufenschalter. */
-function Fehlerzeile({
-  g,
-  art,
-  extrem,
-  setze,
-}: {
-  g: EigenerGegner;
-  art: Fehlerart;
-  extrem: boolean;
-  setze: (g: EigenerGegner) => void;
-}) {
-  const [offen, setzeOffen] = useState(false);
-  const wert = stufeVon(g, art);
-  const name = t(`fehlerart.${art}`);
-  const mitVerlust = (GELEGENHEITSARTEN as readonly string[]).includes(art) && wert !== null;
-  const verlust = verlustVon(g, art);
-  return (
-    <div className={`fehlerzeile${wert === null ? " ist-aus" : ""}`}>
-      <div className="fehlerzeile-kopf">
-        <span className="fehlerzeile-name">{name}</span>
-        {mitVerlust && (
-          <button
-            type="button"
-            className="knopf-link fehlerzeile-verlust"
-            aria-expanded={offen}
-            onClick={() => setzeOffen(!offen)}
-          >
-            {t("spielen.profil.verlust", {
-              wert:
-                verlust === null
-                  ? t("spielen.eigene.unbegrenzt")
-                  : t("spielen.eigene.bauern", { wert: String(verlust).replace(".", ",") }),
-            })}
-          </button>
-        )}
-      </div>
-      <Stufenschalter
-        art={art}
-        name={name}
-        wert={wert}
-        extrem={extrem}
-        beiWahl={(s) => setze(setzeStufe(g, art, s))}
+    <div className={gesperrt ? "stufenregler gesperrt" : "stufenregler"}>
+      <label htmlFor="gegner-verlust">
+        {t("spielen.profil.verlustAlle")}:{" "}
+        <strong>{einheitlich ? verlusttext(wert) : t("spielen.profil.verlustVerschieden")}</strong>
+      </label>
+      <input
+        id="gegner-verlust"
+        type="range"
+        min={0}
+        max={VERLUSTWAHL.length - 1}
+        step={1}
+        value={stelle < 0 ? VERLUSTWAHL.length - 1 : stelle}
+        disabled={gesperrt}
+        aria-valuetext={verlusttext(wert)}
+        onChange={(e) => setze(mitVerlustFuerAlle(g, VERLUSTWAHL[Number(e.target.value)] ?? null))}
       />
-      {mitVerlust && offen && <Verlustwahl g={g} art={art} setze={setze} />}
     </div>
   );
 }
 
+/** Lässt sich das Profil ohne Verlust im Netz zeigen? Sonst beginnen die Feinregler offen. */
+function passtInsNetz(g: EigenerGegner): boolean {
+  const stufen = Object.values(aktuelleStufen(g));
+  return (
+    (g.haeufigkeit ?? 1) === 1 &&
+    gemeinsamerVerlust(g).einheitlich &&
+    stufen.every((s) => s === undefined || Math.abs(s) < UNMENSCHLICH_AB) &&
+    FEHLERACHSEN.every((a) => istEinheitlich(g, artenDerAchse(a.kennung)))
+  );
+}
+
+/** Hinweis auf ältere Einstellungen gestrichener Arten (Variante A, Punkt 3). */
+export function AlteEinstellungen({ g, wann }: { g: EigenerGegner; wann: Neutralwerden }) {
+  const alte = alteEinstellungen(g);
+  if (alte.length === 0) return null;
+  const arten = alte.map((a) => t(`fehlerart.${a}` as Textschluessel)).join(", ");
+  return (
+    <p className="profil-hinweis" data-testid="alte-einstellungen">
+      {t(`spielen.profil.alt.${wann}`, { arten })}
+    </p>
+  );
+}
+
 /**
- * Das ganze Fehlerprofil: Kopf, Vorlagen, Gesamthäufigkeit, Schalter für unmenschliche Werte und
- * die Gruppen. Beispiel: Vorlage „Leichtsinnig“, dann „Figur hängen lassen“ auf „oft“ zurück.
+ * Das ganze Fehlerprofil. Beispiel: Vorlage „Leichtsinnig“, dann „Taktik“ im Netz auf „normal“.
+ * `wann`: ob ältere Einstellungen beim Speichern oder bei der nächsten Änderung neutral werden.
  */
 export function Fehlerprofil({
   g,
   setze,
+  wann,
 }: {
   g: EigenerGegner;
   setze: (g: EigenerGegner) => void;
+  wann: Neutralwerden;
 }) {
-  const stufen = Object.values(aktuelleStufen(g));
-  const [extrem, setzeExtrem] = useState(() =>
-    stufen.some((s) => s !== undefined && Math.abs(s) >= UNMENSCHLICH_AB),
+  const [fein, setzeFein] = useState(() => !passtInsNetz(g));
+  const extremAnfang = Object.values(aktuelleStufen(g)).some(
+    (s) => s !== undefined && Math.abs(s) >= UNMENSCHLICH_AB,
   );
-  const haeufigkeit = g.haeufigkeit ?? 1;
+  const achsen = FEHLERACHSEN.map((a) => ({
+    kennung: a.kennung,
+    name: t(`spielen.profil.achse.${a.kennung}`),
+  }));
+  const werte = FEHLERACHSEN.map((a) => gruppenstufe(g, artenDerAchse(a.kennung)));
+  const namen = Object.keys(FEHLERVORLAGEN) as Fehlervorlage[];
   return (
     <div className="fehlerprofil" data-testid="fehlerprofil">
       <Profilkopf g={g} />
-      <Vorlagen g={g} setze={setze} />
-      <div className="stufenregler">
-        <label htmlFor="gegner-haeufigkeit">
-          {t("spielen.eigene.haeufigkeit")}: <strong>{Math.round(haeufigkeit * PROZENT)} %</strong>
-        </label>
-        <input
-          id="gegner-haeufigkeit"
-          type="range"
-          min={0}
-          max={HAEUFIGKEIT_HOECHSTENS}
-          step={SCHRITT_HAEUFIGKEIT}
-          value={haeufigkeit}
-          onChange={(e) => setze({ ...g, haeufigkeit: Number(e.target.value) })}
-        />
-      </div>
-      <label className="schalterzeile">
-        <input type="checkbox" checked={extrem} onChange={(e) => setzeExtrem(e.target.checked)} />
-        {t("spielen.profil.extrem")}
+      <AlteEinstellungen g={g} wann={wann} />
+      <Vorlagenreihe
+        namen={namen}
+        aktiv={(n) => istFehlervorlage(g, n)}
+        waehle={(n) => setze(mitFehlervorlage(g, n))}
+        text={(n) => t(`spielen.profil.vorlage.${n}`)}
+        gesperrt={fein}
+      />
+      <Profilnetz
+        name={t("spielen.profil.netzFehler")}
+        achsen={achsen}
+        werte={werte}
+        gesperrt={fein}
+        testid="fehlernetz"
+        beiWahl={(i, s) => {
+          const achse = FEHLERACHSEN[i];
+          if (achse) setze(setzeGruppe(g, artenDerAchse(achse.kennung), s));
+        }}
+      />
+      <p className="profilnetz-legende">{t("spielen.profil.normalLegende")}</p>
+      <Verlustregler g={g} setze={setze} gesperrt={fein} />
+      <label className="schalterzeile profil-fein">
+        <input type="checkbox" checked={fein} onChange={(e) => setzeFein(e.target.checked)} />
+        {t("spielen.profil.fein")}
       </label>
-      <p className="hinweis">{t("spielen.profil.erklaerung")}</p>
-      {FEHLERGRUPPEN.map(({ kennung, arten }) => {
-        const Zeichen = GRUPPENZEICHEN[kennung];
-        return (
-          <section key={kennung} className="fehlergruppe" aria-labelledby={`gruppe-${kennung}`}>
-            <h3 id={`gruppe-${kennung}`} className="fehlergruppe-kopf">
-              <Zeichen size={ZEICHENGROESSE} aria-hidden="true" />
-              {t(`spielen.profil.gruppe.${kennung}`)}
-            </h3>
-            {arten.map((art) => (
-              <Fehlerzeile key={art} g={g} art={art} extrem={extrem} setze={setze} />
-            ))}
-          </section>
-        );
-      })}
+      {fein && <p className="profil-hinweis">{t("spielen.profil.feinWarnung")}</p>}
+      {fein && <Feinregler g={g} setze={setze} extremAnfang={extremAnfang} />}
     </div>
   );
 }

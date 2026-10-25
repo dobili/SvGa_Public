@@ -117,11 +117,12 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     .getByLabel("Stellung als FEN")
     .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
-  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 8 (Großmeister).
+  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 10 (volle Engine). Stufe 8 spielt mit
+  // menschlichen Fehlern und übersieht das Matt 2. … Dh4# gelegentlich (wie in brett.spec.ts).
   for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
-    await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
+    await page.getByLabel(new RegExp(`^${phase}:`)).fill("10");
   }
-  await expect(page.getByLabel(/^Mittelspiel:/)).toHaveValue("8");
+  await expect(page.getByLabel(/^Mittelspiel:/)).toHaveValue("10");
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   // Seit 0.2.32 ohne Rückfrage (Wunsch des Autors): Der Zug wird sofort gespielt.
   await ziehe(page, /^g2, Bauer/, "g4");
@@ -280,13 +281,15 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
     "true",
   );
   await expect(page.getByTestId("stilnetz-text")).toContainText("sucht Schach");
-  // Seit 0.2.129 (DS38): je Fehlerart ein Stufenschalter von „aus“ bis „sehr oft“.
-  await page.getByRole("tab", { name: "Fehler (18)" }).click();
-  await page.getByTestId("stufe-figurHaengen").getByRole("radio", { name: "aus" }).click();
-  await expect(page.getByRole("tab", { name: "Fehler (17)" })).toBeVisible();
+  // Seit 0.2.135 (Variante A): fünf Achsen im Netz, neun Feinregler hinter einem Haken.
+  await page.getByRole("tab", { name: "Fehler (9)" }).click();
+  await page.getByTestId("fehlernetz").getByRole("radio", { name: "Figuren: aus" }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (7)" })).toBeVisible();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).check();
+  await expect(page.getByRole("button", { name: "Keine Fehler" })).toBeDisabled();
   // Unmenschliche Stufen erst nach dem Haken.
-  const dame = page.getByTestId("stufe-verfruehteDame");
+  const dame = page.getByTestId("stufe-eroeffnungsfehler");
   await expect(dame.getByRole("radio", { name: "extrem" })).toHaveCount(0);
   await page.getByRole("checkbox", { name: "Auch unmenschliche Werte anbieten" }).check();
   await dame.getByRole("radio", { name: "extrem" }).click();
@@ -341,10 +344,12 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   // Anfangs „Eigene Stufe“: Regler und Fehlerarten, keine Porträts.
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegnerreiter")).toBeVisible();
-  // Seit 0.2.82 auch die blinden Flecken der eigenen Stufe; seit 0.2.129 (DS38) als Kacheln.
+  // Seit 0.2.82 auch die blinden Flecken der eigenen Stufe; seit 0.2.135 als Netz mit fünf Gruppen.
   await page.getByRole("tab", { name: "Flecken (0)" }).click();
-  await page.getByRole("button", { name: /^Rückzüge: aus$/ }).click();
-  await expect(page.getByRole("button", { name: /^Rückzüge: selten$/ })).toBeVisible();
+  const rueckzug = page.getByTestId("fleckennetz").getByRole("radio", { name: "Rückzüge: selten" });
+  await rueckzug.click();
+  await expect(rueckzug).toHaveAttribute("aria-checked", "true");
+  await expect(page.getByTestId("flecken-text")).toContainText("auch die der Springer");
   await expect(page.getByRole("tab", { name: "Flecken (1)" })).toBeVisible();
   await page.getByRole("tab", { name: "Stärke" }).click();
   await expect(page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" })).toHaveCount(0);
@@ -517,10 +522,11 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await expect(page.getByTestId("stilnetz-text")).toContainText("Positionsspieler 125 %");
   await punkt("Positionsspieler 125 %").locator("circle").nth(1).click();
   await expect(punkt("Positionsspieler 125 %")).toHaveAttribute("aria-checked", "false");
-  await page.getByRole("tab", { name: "Fehler (18)" }).click();
+  await page.getByRole("tab", { name: "Fehler (9)" }).click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).check();
   await page.getByRole("checkbox", { name: "Auch unmenschliche Werte anbieten" }).check();
-  await page.getByTestId("stufe-bauernraub").getByRole("radio", { name: "ständig" }).click();
+  await page.getByTestId("stufe-eroeffnungsfehler").getByRole("radio", { name: "ständig" }).click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
   const blase = page.getByTestId("gegner-sprechblase");
   await page.getByRole("tab", { name: "Stärke" }).click();
@@ -528,7 +534,9 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await page.getByLabel(/^Eröffnung:/).fill("5");
   await page.getByLabel(/^Endspiel:/).fill("5");
   await expect(blase).toContainText("etwa 1700");
-  await page.getByRole("tab", { name: "Fehler (18)" }).click();
+  await page.getByRole("tab", { name: "Fehler (9)" }).click();
+  // Mit unmenschlichem Wert beginnen die Feinregler offen; die Vorlagen erst nach dem Haken.
+  await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).uncheck();
   await page.getByRole("button", { name: "Keine Fehler" }).click();
   await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
   // Ohne Fehlerart spielt die Stufe nur ihre Grundschicht: gemessen etwa 720.

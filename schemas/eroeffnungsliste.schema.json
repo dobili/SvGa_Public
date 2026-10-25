@@ -7,21 +7,22 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "quelle", "lizenz", "stellungen"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "quelle": { "description": "Herkunft der Liste mit Adresse", "type": "string" },
     "lizenz": { "type": "string" },
     "stellungen": {
-      "description": "Je Stellung: Schlüssel (Figurenstellung, Zugrecht, Rochaderechte wie im Eröffnungsindex der App), ECO-Schlüssel, Name (Familie auf Deutsch, Variante englisch)",
+      "description": "Je Stellung: Schlüssel (Figurenstellung, Zugrecht, Rochaderechte wie im Eröffnungsindex der App), ECO-Schlüssel, Name (Familie auf Deutsch, Variante englisch), Zugfolge ab der Grundstellung (englische Kurznotation ohne Zugnummern, durch Leerzeichen getrennt; seit Version 2 für den Theoriebaum)",
       "type": "array",
       "items": {
         "type": "array",
         "prefixItems": [
           { "type": "string" },
           { "type": "string", "pattern": "^[A-E][0-9]{2}$" },
-          { "type": "string" }
+          { "type": "string" },
+          { "type": "string", "minLength": 1 }
         ],
-        "minItems": 3,
-        "maxItems": 3
+        "minItems": 4,
+        "maxItems": 4
       }
     }
   }

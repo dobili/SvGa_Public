@@ -32,8 +32,8 @@ import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
-import { buchzuegeAb } from "../../schach/eroeffnungsindex";
-import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
+import { theorieJeZug } from "../../schach/theorie";
+import { useTheorie } from "../komponenten/useTheorie";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -57,9 +57,6 @@ import { usePartie, type Partiesteuerung } from "../komponenten/usePartie";
 import { useWerkzeugwahl, type Werkzeugwahlstand } from "../komponenten/useWerkzeugwahl";
 
 const SYMBOLGROESSE = 20;
-/** Ab Kapitel 2 gibt es den Eröffnungsindex. */
-const KAPITEL_MIT_EROEFFNUNGEN = 2;
-
 function gegnerVon(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
 }
@@ -280,13 +277,21 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   );
   // Seit 0.2.40 rechnet die Auswertung schon während der Partie, wenn der Leser am Zug ist.
   const stand = useAuswertung(partie, eintrag, leserAmZug(partie) && partie.ende === null);
-  // Der Eröffnungsindex (Kapitel 2 und 3) erkennt Buchzüge für die Zugklasse „Buch“.
-  const index = useEroeffnungsindex(KAPITEL_MIT_EROEFFNUNGEN);
+  // Lichess-Liste und Eröffnungsindex (Kapitel 2 und 3) erkennen die Theoriezüge (seit dem
+  // Wunsch des Autors vom 25.10.2026 wie „Book“ bei chess.com; Regel in schach/theorie.ts).
+  const theorie = useTheorie() ?? null;
   const urteile = useMemo(() => {
     if (!eintrag) return [];
-    const buch = index ? (fen: string, san: string) => buchzuegeAb(index, fen).includes(san) : null;
-    return zugurteile(eintrag.partie, eintrag.werte, eintrag.beste, eintrag.abstaende, buch);
-  }, [eintrag, index]);
+    const p = eintrag.partie;
+    const jeZug = theorie
+      ? theorieJeZug(
+          theorie,
+          stellungen(p),
+          p.zuege.map((z) => z.san),
+        )
+      : [];
+    return zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende, jeZug);
+  }, [eintrag, theorie]);
   const phasen = useMemo(() => phasenJeStellung(partie), [partie]);
   const ruhig = vorlieben.ruhigeAnsicht;
   const leser = leserAmZug(partie);
@@ -326,7 +331,13 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         }
         rueckblick={
           partie.ende && eintrag && urteile.length > 0 && !ruhig
-            ? { werte: eintrag.werte, beste: eintrag.beste, urteile, varianten: eintrag.varianten }
+            ? {
+                werte: eintrag.werte,
+                beste: eintrag.beste,
+                urteile,
+                varianten: eintrag.varianten,
+                theorie,
+              }
             : null
         }
       />

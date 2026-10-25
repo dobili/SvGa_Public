@@ -256,6 +256,33 @@
   color: var(--rot-text);
 }
 
+/* Theoriezug (25.10.2026): Das Wort „Eröffnung“ im Satz klappt die Namen auf; es steht im
+   Fließtext, deshalb ohne Mindesthöhe, mit Unterstrich und dem Pfeil der anderen Aufklapper. */
+.theorie-knopf {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.theorie-knopf .aufklapper-pfeil {
+  vertical-align: middle;
+}
+
+.theorie-liste {
+  margin: 0 0 calc(var(--raster) / 2);
+  padding-left: calc(var(--raster) * 2.5);
+}
+
+.theorie-imbuch,
+.theorie-weitere {
+  color: var(--text-leise);
+}
+
 /* Spielstärke-Tabelle (0.2.39): drei Spalten, Zahlen rechtsbündig. */
 .spielstaerke {
   margin-top: calc(var(--raster) * 2);

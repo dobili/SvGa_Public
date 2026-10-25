@@ -1,22 +1,12 @@
 /**
- * Tests des Fehlerprofils eigener Gegner (DS38, 0.2.129): Stufen setzen und lesen, Höchstverlust,
- * Vorlagen und das Weiterschalten der blinden Flecken.
+ * Tests des Fehlerprofils eigener Gegner (DS38, 0.2.129): Stufen setzen und lesen, Höchstverlust.
+ * Gruppen, Vorlagen und Speicherweg seit 0.2.135 in fehlergruppen.test.ts.
  */
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
 import { STIL_NEUTRAL } from "../../engine/stil";
-import {
-  FEHLERGRUPPEN,
-  hatStufen,
-  istVorlage,
-  mitVorlage,
-  naechsterFleckstand,
-  setzeStufe,
-  setzeVerlust,
-  stufeVon,
-  verlustVon,
-} from "./fehlerprofil";
+import { hatStufen, setzeStufe, setzeVerlust, stufeVon, verlustVon } from "./fehlerprofil";
 
 const STUFE = 3;
 
@@ -30,13 +20,6 @@ function gegner(): EigenerGegner {
     blindeFlecken: [],
   };
 }
-
-describe("Gruppen", () => {
-  it("enthalten jede Fehlerart genau einmal", () => {
-    const alle = FEHLERGRUPPEN.flatMap((gruppe) => gruppe.arten);
-    expect([...alle].sort()).toEqual([...FEHLERARTEN].sort());
-  });
-});
 
 describe("Stufen setzen und lesen", () => {
   it("neuer Gegner: alle Fehlerarten normal, Flecken aus", () => {
@@ -76,42 +59,5 @@ describe("Höchstverlust", () => {
     const zwei = setzeVerlust(g, "figurHaengen", 2);
     expect(verlustVon(zwei, "figurHaengen")).toBe(2);
     expect(verlustVon(setzeVerlust(zwei, "figurHaengen", null), "figurHaengen")).toBeNull();
-  });
-});
-
-describe("Vorlagen", () => {
-  it("„leichtsinnig“ setzt Figur hängen auf sehr oft und wird erkannt", () => {
-    const g = mitVorlage(setzeStufe(gegner(), "figurHaengen", null), "leichtsinnig");
-    expect(stufeVon(g, "figurHaengen")).toBe(2);
-    expect(stufeVon(g, "koenigMitte")).toBe(0);
-    expect(istVorlage(g, "leichtsinnig")).toBe(true);
-    expect(istVorlage(g, "wieMenschen")).toBe(false);
-  });
-
-  it("eine geänderte Zeile hebt die Vorlage auf", () => {
-    const g = setzeStufe(mitVorlage(gegner(), "solide"), "koenigMitte", 1);
-    expect(istVorlage(g, "solide")).toBe(false);
-  });
-
-  it("„taktisch blind“ schaltet nur seine Flecken ein", () => {
-    const g = mitVorlage(gegner(), "taktischBlind");
-    expect([...g.blindeFlecken].sort()).toEqual(["abzug", "roentgen", "zwischenzug"]);
-  });
-
-  it("„keine Fehler“ schaltet alle Fehlerarten und Flecken aus", () => {
-    const g = mitVorlage(setzeStufe(gegner(), "rueckzug", 1), "fehlerfrei");
-    expect(g.fehlerarten).toEqual([]);
-    expect(g.blindeFlecken).toEqual([]);
-    expect(istVorlage(g, "fehlerfrei")).toBe(true);
-  });
-});
-
-describe("blinde Flecken weiterschalten", () => {
-  it("aus → selten → normal → oft → sehr oft → aus; Unbekanntes springt auf aus", () => {
-    const folge = [null, -1, 0, 1, 2, null];
-    for (let i = 0; i < folge.length - 1; i += 1) {
-      expect(naechsterFleckstand(folge[i] ?? null)).toBe(folge[i + 1]);
-    }
-    expect(naechsterFleckstand(-4)).toBeNull();
   });
 });

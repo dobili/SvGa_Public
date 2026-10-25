@@ -28,7 +28,7 @@
  */
 import { BLINDE_FLECKEN, blindeFehlerart, fleckeVon, type BlinderFleck } from "./blindeFlecken";
 import type { Staerke } from "./engineDienst";
-import { fehlerartIn, lageVon, type Fehlerart, type Lage } from "./fehlerart";
+import { FEHLERARTEN, fehlerartIn, lageVon, type Fehlerart, type Lage } from "./fehlerart";
 import { typischeFehlerzuege } from "./fehlersuche";
 import { grundzug, kandidatenAusVarianten } from "./grundschicht";
 import { GELEGENHEITSARTEN, zeitnotTemperatur } from "./menschenprofil";
@@ -136,10 +136,22 @@ function zuPruefen(lage: Lage, aktiv: ReadonlySet<Fehlerart>, schon: ReadonlySet
   return [...new Set([...jeArt.values()].flat())];
 }
 
-/** Hat der Bot überhaupt Zusatzfehler (eine Fehlerart oder ein Fleck mit Gewicht über 0)? */
+/** Arten, deren Gewicht über Zusatzfehler entscheidet: alle außer „ungenau“ (wählt das Wahlmodell). */
+const ZUSATZARTEN: readonly (Fehlerart | BlinderFleck)[] = [
+  ...FEHLERARTEN.filter((a) => a !== "ungenau"),
+  ...BLINDE_FLECKEN,
+];
+
+/**
+ * Hat der Bot überhaupt Zusatzfehler (eine Fehlerart oder ein Fleck mit Gewicht über 0)?
+ * Bis 0.2.134 zählten nur die zwölf Arten mit Gelegenheitsdaten; ein eigener Gegner mit nur
+ * „Schlag verpasst“ oder „Bauernzug ohne Not“ spielte dann ohne Wahlmodell, obwohl das Wahlmodell
+ * diese Arten gewichtet (engine/wahlschritt.ts). Seit 0.2.135 zählen alle außer „ungenau“.
+ * Beispiel: erlaubt nur [„schlagVerpasst“] → true; Häufigkeit 0 → false.
+ */
 export function hatZusatzfehler(werte: Menschenwerte): boolean {
   if (werte.haeufigkeit <= 0) return false;
-  return [...GELEGENHEITSARTEN, ...BLINDE_FLECKEN].some((a) => gewichtVon(werte, a) > 0);
+  return ZUSATZARTEN.some((a) => gewichtVon(werte, a) > 0);
 }
 
 /** Temperatur des Wahlmodells: Tagesform mal Zeitnot je Zeitklasse (nicht die Fehlerhäufigkeit). */

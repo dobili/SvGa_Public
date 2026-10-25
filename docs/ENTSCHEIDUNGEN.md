@@ -5472,7 +5472,78 @@ Einstellungen prüfen, umsortieren, umbenennen.
   die App; der Rundgang „Spielen“ verliert die Partienliste. Texte zu Speicherfehlern nennen
   „Profil › Einstellungen“ statt „Zahnrad“.
 
-## Bots als ein Mensch mit drei Wertungen (25.10.2026, Bot-Chat, Version 0.2.135)
+## Theoriezug statt Buchzug (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.135)
+
+Wunsch des Autors (25.10.2026): „Theoriezug“ wie „Book“ bei chess.com, aus der Lichess-Liste und
+den Eröffnungen und Gambits des Buches; im Rückblick „Teil einer Eröffnung“ oder „eines Gambits“,
+das Wort klappt höchstens fünf Namen auf, der Rest wird abgeschnitten.
+
+- Regel (`schach/theorie.ts`): Ein Zug ist Theoriezug, wenn er (1) auf der Zugfolge einer
+  benannten Eröffnung der Lichess-Liste liegt (auch über unbenannte Zwischenstellungen, nach
+  Zugumstellung ab der nächsten benannten Stellung) oder als Buchzug in Kapitel 2 und 3 steht
+  (ohne die mit „?“ markierten), (2) alle Züge davor Theoriezüge waren (chess.com: „out of
+  book“; sonst zählte eine zufällig wieder erreichte Theoriestellung im Mittelspiel) und (3) er
+  nicht 0,5 Bauern oder mehr verliert (Bongcloud 2. Ke2 bleibt „ungenau“).
+- Die Lichess-Liste trägt ihre Zugfolgen (Schema 2, `pipeline/eroeffnungsliste.py`, etwa 165 KB
+  je Sprache mehr; die ersten drei Felder unverändert). Die App baut daraus einmal einen Zugbaum
+  ohne Schachregeln (etwa 5 ms); eine Menge aller Stellungsschlüssel kostete 80 bis 200 ms.
+  Dafür fehlen Zugumstellungen in unbenannte Zwischenstellungen (etwa 2 % der Theoriezüge).
+- Namen: zuerst die des Buches, dann Lichess (die Stellung selbst oder die letzte benannte davor,
+  dann die kürzesten Fortsetzungen, bei gleicher Länge die mit mehr Varianten). „Gambit“ nur, wenn
+  die Eröffnung der Partie selbst eines ist (Lichess-Name der Stellung oder eindeutiger Buchname);
+  wörtlich wäre schon 1. e4 „Teil eines Gambits“. Damengambit und Abgelehntes Damengambit zählen
+  nach ihrem Namen als Gambit. Varianten bleiben englisch (R12), Familien deutsch.
+- Interner Schlüssel bleibt `"buch"`; gespeichert wird die Klasse nirgends. Genauigkeit,
+  Elo-Modell, Wertung und Bots sehen die Klasse nicht.
+- Üblicher Anteil in „Deine Züge“: nachgemessen an 60 000 Lichess-Partien (September 2026, ohne
+  Bullet): neue Regel 6,9 bis 8,0 % der Züge einer Seite, der alte Buchindex 3,7 bis 4,7 %. Die
+  Schätzung (6, 8, 10, 11 % bei 800, 1200, 1600, 2000) ersetzt durch die Schnellschach-Werte
+  7,5, 7,6, 7,5, 8,0 % (Empfehlung nach Regel 9, N949). Messskript nur lokal.
+
+## Fehlerprofil vereinfacht, Fehler und Flecken als Spinnennetz (25.10.2026, Opus, Version 0.2.136)
+
+Auftrag „Variante A“ aus dem Koordinierungschat (vom Autor am 25.10.2026 freigegeben) und die
+Netz-Vorschau (privates Artifact „Fehler und Flecken als Spinnennetz“, E1 bis E4 freigegeben).
+
+- Begründung (Koordinierungschat): Zuverlässigkeit je Fehlerart und Fleck nach Split-Half mit
+  Spearman-Brown an etwa 1 280 Spielerprofilen und Trennbarkeit der fünf Stufen je Elo-Band.
+  Mehrere Regler messen kaum ein echtes Merkmal von Spielern oder stecken in anderen; die Flecken
+  einzeln sind zu schwach, als Gruppen tragen sie.
+- Regler (`ui/komponenten/fehlergruppen.ts`): figurHaengen, drohungIgnoriert, taktikUebersehen,
+  schlagVerpasst (neu), koenigMitte, koenigsschild, bauernvorstoss, bauernzugOhneNot (neu),
+  „Eröffnungsfehler“ für verfruehteDame + tempoverlust + bauernraub. Ohne Regler: schlagreflex,
+  bauerEingestellt, falscherAbtausch, koenigPassiv, koenigszugOhneNot, ungenau; pattGesetzt als
+  Schalter „Setzt nie Patt“. `REGLERARTEN` (engine/eigenstufen.ts) kennt dafür auch
+  schlagVerpasst und bauernzugOhneNot (Quantile lagen schon vor); die gestrichenen bleiben dort,
+  damit gespeicherte Werte bis zum Speichern wirken.
+- Netz (E1, E2): fünf Achsen Figuren (Figur hängen, Drohung), Taktik (Taktik, Schlag verpasst),
+  König (Mitte, Schild), Bauernzüge (Vorstoß, ohne Not), Eröffnung (Eröffnungsfehler). Eine Achse
+  schreibt ihren Wert in alle Mitglieder und zeigt den gerundeten Mittelwert der eingeschalteten.
+  Feinregler hinter einem Haken; dann sind Netz, Vorlagen und Höchstverlust gesperrt. Die
+  Feinregler beginnen offen, wenn das Profil nicht ins Netz passt (Achse uneinheitlich,
+  Höchstverluste verschieden, Häufigkeit nicht 100 %, unmenschliche Stufe). Fehlerhäufigkeit und
+  „unmenschliche Werte“ stehen seitdem bei den Feinreglern.
+- Ein Höchstverlust für alle Fehler (E3), im Feinmodus je Regler.
+- Flecken nur als Netz (E4), fünf Gruppen: ruhig; bauer; rueckzug + springer; diagonale + turm +
+  dame + roentgen; zwischenzug + abzug + grundreihe. Die Fehlervorlagen ändern die Flecken nicht
+  mehr (vorher schaltete „Taktisch blind“ drei Flecken ein); die Flecken haben eigene Vorlagen.
+- Speicherweg: Format unverändert, keine Migration. Gestrichene Arten mit gespeicherter Stufe,
+  altem Gewicht, Höchstverlust oder abweichendem An/Aus wirken weiter, bis der Leser speichert
+  (eigene Bots) oder im Fehler- oder Fleckenreiter etwas ändert (eigene Stufe); dann werden sie
+  neutral (`neutralisiert`: ohne Stufe, Gewicht und Höchstverlust; an genau dann, wenn ein Regler
+  an ist). Ein Satz weist vorher darauf hin. Test mit drei gespeicherten Gegnern aus 0.2.117 bis
+  0.2.134 (`speicher/testdaten/alteGegner*.json`): wirksame Gewichte gleich wie in 0.2.134.
+- Fertige Bots: CHARAKTERE unverändert (Variante B später mit Nachmessung). Kein Bildschirm zeigt
+  ihr Fehlerprofil als Regler; die Beschreibungen nennen gestrichene Arten weiter in Worten.
+  `engine/vorgefertigteUnveraendert.test.ts` vergleicht faktorenAus bei fünf Wertungen,
+  menschenwerteAus und hatZusatzfehler aller 82 Bots mit 0.2.134.
+- `hatZusatzfehler` prüft alle Fehlerarten außer „ungenau“ (vorher nur die zwölf mit
+  Gelegenheitsdaten): Ein eigener Gegner mit nur „Schlag verpasst“ oder „Patt“ bekam vorher kein
+  Wahlmodell. Für die fertigen Bots ändert sich nichts (geprüft).
+- Nicht Teil: „ungenau“ im Spiel, gezielte Suche nach bauernzugOhneNot, koenigszugOhneNot,
+  bauerEingestellt, CHARAKTERE neu zuordnen.
+
+## Bots als ein Mensch mit drei Wertungen (25.10.2026, Bot-Chat, Version 0.2.137)
 
 Ersetzt die gemessenen Blitz- und Klassisch-Zahlen aus 0.2.130 (Abschnitt „Zahlen je Zeitklasse:
 Blitz und Klassisch gemessen“). Fragen des Autors: Sollte nicht Blitz < Schnell < Klassisch
@@ -5531,7 +5602,7 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
   geänderten Blitz-Wertung Zug für Zug dieselben Partien spielte wie Runde 1. Ein Versuch dazwischen
   (Grundschicht je Zeitklasse breiter oder enger) wirkte aus demselben Grund nicht und ist
   zurückgebaut: Bots und Nm-Stufen wählen mit dem Wahlmodell, die Grundschicht nutzen nur reine
-  Stufen. Behoben in 0.2.135, Test `engine/messspieler.test.ts`.
+  Stufen. Behoben in 0.2.137, Test `engine/messspieler.test.ts`.
 - **Runde 4 (mit Zeitklasse, ohne Korrektur), Blitz:** Stufe 2 bis 7 Anker 879, 1214, 1543, 1807,
   1864, 2021 gegen die Zahlen 839, 1078, 1278, 1537, 1770, 1998. Stufe 2 und 7 passen, 3 bis 6
   spielen 94 bis 270 zu stark: Das Wahlmodell mit der Blitz-Wertung desselben Menschen wählt in

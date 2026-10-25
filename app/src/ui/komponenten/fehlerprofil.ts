@@ -1,7 +1,7 @@
 /**
- * Fehlerprofil eines eigenen Gegners ohne Oberfläche: Gruppen der Fehlerarten, Stufe je Art oder
- * Fleck lesen und setzen, Vorlagen (seit 0.2.129, Vorschlag DS38, vom Autor am 25.10.2026
- * freigegeben).
+ * Fehlerprofil eines eigenen Gegners ohne Oberfläche: Stufe je Art oder Fleck lesen und setzen,
+ * Höchstverlust je Art (seit 0.2.129, Vorschlag DS38, vom Autor am 25.10.2026 freigegeben). Seit
+ * 0.2.135 fasst fehlergruppen.ts die Arten zu Reglern, Achsen und Fleckengruppen zusammen.
  *
  * Rolle im Gesamtbild: Bis 0.2.128 stellte man jede Fehlerart an drei Stellen ein (Haken, Regler
  * „Häufigkeit“, Regler „Höchstverlust“ im erweiterten Modus). Fehlerprofil.tsx zeigt jede Art
@@ -21,26 +21,6 @@ import { t, type Textschluessel } from "../../i18n/sprache";
 
 export type Profilart = Fehlerart | BlinderFleck;
 
-/** Die Gruppen der Fehlerarten mit ihren Arten, in der Reihenfolge der Anzeige. */
-export const FEHLERGRUPPEN = [
-  {
-    kennung: "material",
-    arten: ["figurHaengen", "bauerEingestellt", "schlagreflex", "falscherAbtausch", "bauernraub"],
-  },
-  { kennung: "taktik", arten: ["taktikUebersehen", "drohungIgnoriert", "schlagVerpasst"] },
-  {
-    kennung: "koenig",
-    arten: ["koenigMitte", "koenigsschild", "koenigPassiv", "koenigszugOhneNot", "pattGesetzt"],
-  },
-  {
-    kennung: "eroeffnung",
-    arten: ["verfruehteDame", "tempoverlust", "bauernvorstoss", "bauernzugOhneNot"],
-  },
-  { kennung: "allgemein", arten: ["ungenau"] },
-] as const satisfies readonly { kennung: string; arten: readonly Fehlerart[] }[];
-
-export type Fehlergruppe = (typeof FEHLERGRUPPEN)[number]["kennung"];
-
 /** Stufen ohne Schalter „unmenschlich“ und mit; null heißt „aus“. */
 export const STUFEN_MENSCHLICH: readonly (number | null)[] = [null, -2, -1, 0, 1, 2];
 export const STUFEN_ALLE: readonly (number | null)[] = [null, -4, -3, -2, -1, 0, 1, 2, 3, 4];
@@ -54,11 +34,11 @@ export function hatStufen(art: Profilart): boolean {
   return REGLERARTEN.includes(art);
 }
 
-function istFleck(art: Profilart): art is BlinderFleck {
+export function istFleck(art: Profilart): art is BlinderFleck {
   return (BLINDE_FLECKEN as readonly string[]).includes(art);
 }
 
-function istAn(g: EigenerGegner, art: Profilart): boolean {
+export function istAn(g: EigenerGegner, art: Profilart): boolean {
   return istFleck(art) ? g.blindeFlecken.includes(art) : g.fehlerarten.includes(art);
 }
 
@@ -133,67 +113,6 @@ export function setzeVerlust(
   return { ...g, hoechstverlust: Object.fromEntries(eintraege) };
 }
 
-/**
- * Eine Vorlage: Stufe je Fehlerart (fehlende Arten 0) und die blinden Flecken mit Stufe; `keine`:
- * alle Fehlerarten und Flecken aus, die Stufe spielt rein.
- */
-interface Vorlage {
-  readonly keine?: boolean;
-  readonly alle?: number;
-  readonly arten?: Readonly<Partial<Record<Fehlerart, number>>>;
-  readonly flecken?: Readonly<Partial<Record<BlinderFleck, number>>>;
-}
-
-/** Vorlagen als Schnellstart; danach lässt sich jede Zeile einzeln nachstellen. */
-export const VORLAGEN = {
-  wieMenschen: {},
-  solide: { alle: -1, arten: { figurHaengen: -2, taktikUebersehen: -2 } },
-  leichtsinnig: { arten: { figurHaengen: 2, schlagreflex: 2, bauernraub: 1, drohungIgnoriert: 1 } },
-  koenigsunsicher: { arten: { koenigMitte: 2, koenigsschild: 2, koenigPassiv: 1 } },
-  taktischBlind: {
-    arten: { taktikUebersehen: 2, drohungIgnoriert: 2 },
-    flecken: { zwischenzug: 1, abzug: 1, roentgen: 1 },
-  },
-  fehlerfrei: { keine: true },
-} as const satisfies Readonly<Record<string, Vorlage>>;
-
-export type Vorlagenname = keyof typeof VORLAGEN;
-
-/**
- * Wendet eine Vorlage an: alle Fehlerarten an mit der Stufe der Vorlage, nur die Flecken der
- * Vorlage an, Häufigkeit und Höchstverluste wie Menschen; „fehlerfrei“ schaltet alles aus.
- * Beispiel: „leichtsinnig“ → Figur hängen und Schlagreflex „sehr oft“, Rest „normal“.
- */
-export function mitVorlage(g: EigenerGegner, name: Vorlagenname): EigenerGegner {
-  const v: Vorlage = VORLAGEN[name];
-  const stufen: Partial<Record<Profilart, number>> = {};
-  for (const art of FEHLERARTEN) if (hatStufen(art)) stufen[art] = v.arten?.[art] ?? v.alle ?? 0;
-  for (const [fleck, stufe] of Object.entries(v.flecken ?? {}))
-    stufen[fleck as BlinderFleck] = stufe;
-  const neu: EigenerGegner = {
-    ...g,
-    fehlerarten: v.keine ? [] : FEHLERARTEN,
-    blindeFlecken: BLINDE_FLECKEN.filter((f) => v.flecken?.[f] !== undefined),
-    reglerstufen: stufen,
-    haeufigkeit: 1,
-    hoechstverlust: {},
-  };
-  delete (neu as { gewichte?: unknown }).gewichte;
-  return neu;
-}
-
-/** Ist der Gegner genau auf einer Vorlage (für die Markierung der Vorlage)? */
-export function istVorlage(g: EigenerGegner, name: Vorlagenname): boolean {
-  const soll = mitVorlage(g, name);
-  const gleich = (art: Profilart) => stufeVon(g, art) === stufeVon(soll, art);
-  return (
-    (g.haeufigkeit ?? 1) === 1 &&
-    Object.keys(g.hoechstverlust ?? {}).length === 0 &&
-    FEHLERARTEN.every(gleich) &&
-    BLINDE_FLECKEN.every(gleich)
-  );
-}
-
 /** Kurzes Wort einer Stufe auf dem Schalter („oft“); null heißt „aus“. */
 export function stufenwort(stufe: number | null): string {
   return t(
@@ -201,14 +120,9 @@ export function stufenwort(stufe: number | null): string {
   );
 }
 
-/** Reihenfolge der blinden Flecken beim Weiterschalten (Fleckenkacheln.tsx); null heißt aus. */
-const FLECKFOLGE: readonly (number | null)[] = [null, -1, 0, 1, 2];
-
-/**
- * Die nächste Stufe eines Flecks nach einem Tipp; unbekannte (etwa unmenschliche) Stufen springen
- * auf aus. Beispiel: null → −1 („selten“), 2 → null.
- */
-export function naechsterFleckstand(stufe: number | null): number | null {
-  const stelle = FLECKFOLGE.indexOf(stufe);
-  return stelle < 0 ? null : (FLECKFOLGE[(stelle + 1) % FLECKFOLGE.length] ?? null);
+/** Ein Höchstverlust als Text: „2 Bauern“, „½ Bauer“ wie in den Daten, null „unbegrenzt“. */
+export function verlusttext(bauern: number | null): string {
+  return bauern === null
+    ? t("spielen.eigene.unbegrenzt")
+    : t("spielen.eigene.bauern", { wert: String(bauern).replace(".", ",") });
 }

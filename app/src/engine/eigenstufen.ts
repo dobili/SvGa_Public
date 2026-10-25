@@ -26,9 +26,17 @@ import {
 /** Stufen je Fehlerart und Fleck; fehlend heißt 0 (wie der Median der Spieler). */
 export type Reglerstufen = Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
 
-/** Die Arten mit Regler: Fehlerarten mit Daten der Spieler und alle blinden Flecken. */
+/**
+ * Die Arten mit Stufen: Fehlerarten mit Gelegenheitsdaten, seit 0.2.135 dazu „Schlag verpasst“
+ * und „Bauernzug ohne Not“ (Quantile der Spieler liegen vor, engine/spielerbereiche-daten.ts;
+ * Auftrag „Variante A“ des Koordinierungschats), und alle blinden Flecken. Stufe 0 gibt Faktor 1
+ * wie bisher das fehlende Gewicht: Ältere eigene Gegner spielen deshalb unverändert. Welche
+ * Arten die Oberfläche als Regler zeigt, steht in ui/komponenten/fehlerprofil.ts.
+ */
 export const REGLERARTEN: readonly (Fehlerart | BlinderFleck)[] = [
   ...GELEGENHEITSARTEN,
+  "schlagVerpasst",
+  "bauernzugOhneNot",
   ...BLINDE_FLECKEN,
 ];
 

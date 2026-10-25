@@ -26,6 +26,8 @@ import type { Phase } from "../../spiel/phasen";
 import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../speicher/gegner";
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
+import { neutralisiert } from "./fehlergruppen";
+import { AlteEinstellungen } from "./Fehlerprofil";
 import { GegnerReiter } from "./GegnerReiter";
 import { GegnerBild } from "./GegnerBild";
 import { PortraetAuswahl } from "./PortraetAuswahl";
@@ -121,6 +123,7 @@ function Formular({
       <GegnerReiter
         g={g}
         setze={setze}
+        wann="speichern"
         staerke={
           <StufenWahl
             stufen={g.stufenJePhase}
@@ -137,13 +140,17 @@ function Formular({
           />
         }
       />
+      <AlteEinstellungen g={g} wann="speichern" />
       <div className="knopfreihe">
         <button
           type="button"
           className="knopf-haupt"
           disabled={name.length === 0}
           onClick={() =>
-            beiSpeichern({ ...g, name, stilmix: stilDes(g), stilname: hauptstil(stilDes(g)) })
+            // Seit 0.2.135: gestrichene Arten werden beim Speichern neutral (Variante A).
+            beiSpeichern(
+              neutralisiert({ ...g, name, stilmix: stilDes(g), stilname: hauptstil(stilDes(g)) }),
+            )
           }
         >
           <Knopfsymbol art="speichern" />

@@ -14,8 +14,8 @@ describe("Zugklassenvergleich", () => {
     expect(ueblicherAnteil("patzer", 100, "classical")).toBe(
       ueblicherAnteil("patzer", 1000, "classical"),
     );
-    // Brillant, stark und Buchzug bleiben vorläufig; „bester“ ist der Median ohne diese drei.
-    expect(ueblicherAnteil("buch", 1400)).toBeCloseTo(9);
+    // Brillant und stark bleiben vorläufig; Theoriezug seit 0.2.135 gemessen (N949).
+    expect(ueblicherAnteil("buch", 1400)).toBeCloseTo(7.55);
     expect(ueblicherAnteil("bester", 1400, "rapid")).toBeLessThan(
       ueblicheSpanne("bester", 1400, "rapid").oben,
     );

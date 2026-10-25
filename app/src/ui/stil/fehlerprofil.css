@@ -147,8 +147,106 @@
   font-size: var(--groesse-klein);
 }
 
+/* Stufenbalken (seit 0.2.130): „aus“ als Zeichen, dann steigende Säulen wie eine Lautstärke-
+   anzeige, gefüllt bis zur Wahl; rechts das Wort. Jede Säule ist eine volle Tippfläche. */
+.stufenbalken-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.stufenbalken {
+  flex: 1;
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  align-items: end;
+  max-width: 300px;
+}
+
+.stufenbalken button {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: var(--tippflaeche);
+  padding: 4px 3px 8px;
+  border: none;
+  background: none;
+  color: var(--text-leise);
+  cursor: pointer;
+}
+
+.stufenbalken .stufenbalken-aus {
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.stufenbalken .stufenbalken-aus[aria-checked="true"] {
+  color: var(--rot-text);
+}
+
+.stufenbalken-saeule {
+  display: block;
+  width: 100%;
+  max-width: 28px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--linie-stark) 70%, var(--flaeche));
+}
+
+.stufenbalken .gefuellt .stufenbalken-saeule {
+  background: var(--akzent);
+}
+
+/* Unmenschliche Stufen gestreift, gefüllt in Rot. */
+.stufenbalken .unmenschlich .stufenbalken-saeule {
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--linie-stark) 70%, var(--flaeche)) 0 3px,
+    var(--flaeche) 3px 6px
+  );
+}
+
+.stufenbalken .unmenschlich.gefuellt .stufenbalken-saeule {
+  background: var(--rot-text);
+}
+
+/* Strich unter „normal“: das Übliche der Menschen, wie in „Deine Züge“. */
+.stufenbalken .ist-normal::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  background: var(--text);
+}
+
+.stufenbalken button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+  border-radius: var(--radius);
+}
+
+.stufenbalken-wert {
+  flex: none;
+  min-width: 5.5em;
+  text-align: right;
+  font-weight: 700;
+  font-size: var(--groesse-mittel);
+}
+
+.fehlerzeile.ist-aus .stufenbalken-wert {
+  color: var(--text-leise);
+  font-weight: 400;
+}
+
+/* Schalter „aus · an“ für Arten ohne Stufen: klein statt über die ganze Breite. */
 /* Stufenschalter: gleich breite Felder, das gewählte in der Akzentfarbe. */
 .stufenschalter {
+  max-width: 200px;
   display: grid;
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
@@ -178,16 +276,6 @@
   background: var(--akzent);
   color: var(--flaeche);
   font-weight: 700;
-}
-
-/* Unmenschliche Stufen gestreift, gewählt in Rot. */
-.stufenschalter button.unmenschlich {
-  background: repeating-linear-gradient(135deg, var(--flaeche) 0 5px, var(--grund) 5px 10px);
-}
-
-.stufenschalter button.unmenschlich[aria-checked="true"] {
-  background: var(--rot-text);
-  color: var(--flaeche);
 }
 
 .stufenschalter button:focus-visible {

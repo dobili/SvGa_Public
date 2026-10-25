@@ -11,7 +11,7 @@
  * Fleckenkacheln.tsx; beide nutzen GegnerReiter.tsx für eigene Stufe und eigene Bots.
  * Abhängigkeiten: fehlerprofil.ts, engine/eigenstufen.ts, engine/botstaerke.ts, i18n, lucide-react.
  */
-import { BookOpen, Crown, Gem, Shuffle, Zap, type LucideIcon } from "lucide-react";
+import { Ban, BookOpen, Crown, Gem, Shuffle, Zap, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { staerkeGeschaetzt } from "../../engine/botstaerke";
 import { menschlichkeit, staerkerichtung } from "../../engine/eigenstufen";
@@ -104,7 +104,26 @@ function Vorlagen({ g, setze }: { g: EigenerGegner; setze: (g: EigenerGegner) =>
   );
 }
 
-/** Der Stufenschalter einer Art; Arten ohne Daten der Spieler kennen nur „aus“ und „an“. */
+/** Höhe der niedrigsten Säule in Prozent; die höchste füllt die Spur. */
+const SAEULE_MINDESTENS = 25;
+const ZEICHEN_AUS = 18;
+
+/**
+ * Höhe der Säule einer Stufe in Prozent: von „sehr selten“ (klein) bis „sehr oft“ (voll).
+ * Beispiel: sechs Stufen mit „aus“ → sehr selten 40 %, normal 70 %, sehr oft 100 %.
+ */
+function saeulenhoehe(position: number, anzahl: number): number {
+  return SAEULE_MINDESTENS + ((PROZENT - SAEULE_MINDESTENS) * position) / anzahl;
+}
+
+/**
+ * Der Stufenschalter einer Art. Seit 0.2.130 (Wunsch des Autors, 25.10.2026: aufgeräumter, wie
+ * die Balken in „Deine Züge“) als Säulen wie eine Lautstärkeanzeige: „aus“ als Zeichen links,
+ * dann je Stufe eine höhere Säule; gefüllt bis zur gewählten Stufe, unter „normal“ ein Strich
+ * wie das Übliche in „Deine Züge“, rechts das Wort der Wahl. Jede Säule bleibt ein Optionsfeld
+ * mit dem Wort als Namen (Bildschirmleser, Tests). Arten ohne Daten der Spieler kennen nur „aus“
+ * und „an“ und behalten den kleinen Schalter.
+ */
 export function Stufenschalter({
   art,
   name,
@@ -118,25 +137,86 @@ export function Stufenschalter({
   extrem: boolean;
   beiWahl: (stufe: number | null) => void;
 }) {
-  const mitStufen = hatStufen(art);
-  const stufen = mitStufen ? (extrem ? STUFEN_ALLE : STUFEN_MENSCHLICH) : [null, 0];
+  if (!hatStufen(art)) {
+    return <AnAusSchalter art={art} name={name} wert={wert} beiWahl={beiWahl} />;
+  }
+  const stufen = extrem ? STUFEN_ALLE : STUFEN_MENSCHLICH;
+  const anzahl = stufen.length - 1;
+  return (
+    <div className="stufenbalken-zeile">
+      <div
+        className="stufenbalken"
+        role="radiogroup"
+        aria-label={name}
+        data-testid={`stufe-${art}`}
+      >
+        {stufen.map((s, position) => (
+          <button
+            key={String(s)}
+            type="button"
+            role="radio"
+            aria-checked={s === wert}
+            aria-label={stufenwort(s)}
+            title={stufenwort(s)}
+            className={saeulenklasse(s, wert)}
+            onClick={() => beiWahl(s)}
+          >
+            {s === null ? (
+              <Ban size={ZEICHEN_AUS} aria-hidden="true" />
+            ) : (
+              <span
+                className="stufenbalken-saeule"
+                style={{ height: `${saeulenhoehe(position, anzahl)}%` }}
+              />
+            )}
+          </button>
+        ))}
+      </div>
+      <span className="stufenbalken-wert" aria-hidden="true">
+        {stufenwort(wert)}
+      </span>
+    </div>
+  );
+}
+
+/** Klassen einer Säule: gefüllt bis zur Wahl, „normal“ mit Strich, unmenschlich gestreift. */
+function saeulenklasse(s: number | null, wert: number | null): string {
+  if (s === null) return "stufenbalken-aus";
+  const teile = ["stufenbalken-stufe"];
+  if (wert !== null && s <= wert) teile.push("gefuellt");
+  if (s === 0) teile.push("ist-normal");
+  if (Math.abs(s) >= UNMENSCHLICH_AB) teile.push("unmenschlich");
+  return teile.join(" ");
+}
+
+/** Kleiner Schalter „aus · an“ für Arten ohne Stufen. */
+function AnAusSchalter({
+  art,
+  name,
+  wert,
+  beiWahl,
+}: {
+  art: Profilart;
+  name: string;
+  wert: number | null;
+  beiWahl: (stufe: number | null) => void;
+}) {
   return (
     <div
-      className={`stufenschalter stufen-${stufen.length}`}
+      className="stufenschalter stufen-2"
       role="radiogroup"
       aria-label={name}
       data-testid={`stufe-${art}`}
     >
-      {stufen.map((s) => (
+      {[null, 0].map((s) => (
         <button
           key={String(s)}
           type="button"
           role="radio"
           aria-checked={s === wert}
-          className={s !== null && Math.abs(s) >= UNMENSCHLICH_AB ? "unmenschlich" : undefined}
           onClick={() => beiWahl(s)}
         >
-          {mitStufen || s === null ? stufenwort(s) : t("spielen.profil.an")}
+          {s === null ? stufenwort(s) : t("spielen.profil.an")}
         </button>
       ))}
     </div>

@@ -12,4 +12,12 @@ describe("Wahlwertung je Zeitklasse", () => {
       expect(wahlwertung(s, "classical"), `Klassisch ${n}`).toBeGreaterThan(s.wertung);
     }
   });
+
+  it("mit Maia eigene Reihe in Blitz (0.2.144): Stufe 5 ohne Korrektur, Stufe 7 mit", () => {
+    const fuenf = stufe(5);
+    const sieben = stufe(7);
+    expect(wahlwertung(fuenf, "blitz", true)).toBeGreaterThan(wahlwertung(fuenf, "blitz"));
+    expect(wahlwertung(sieben, "blitz", true)).toBeLessThan(wahlwertung(sieben, "blitz"));
+    expect(wahlwertung(fuenf, "rapid", true)).toBe(fuenf.wertung);
+  });
 });

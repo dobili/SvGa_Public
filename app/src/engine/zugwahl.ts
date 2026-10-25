@@ -177,7 +177,7 @@ export async function waehleZug(
  */
 function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
   const tempo = profil.tempo ?? "rapid";
-  const wertung = wahlwertung(stufe, tempo);
+  const wertung = wahlwertung(stufe, tempo, profil.maia !== undefined);
   return {
     maia: profil.maia ? maiaabfrage(profil.maia, wertung, tempo) : undefined,
     wertung,

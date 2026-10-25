@@ -19,25 +19,42 @@
  * Zahl. Stufe 6 und 7 bleiben ohne: Bei 81 bis 83 % Genauigkeit sättigen die Anker und messen zu
  * niedrig. (Runde 1 bis 3 gaben dem Wahlmodell die Zeitklasse nicht mit und gelten nicht.)
  * Nachmessung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit drei Wertungen“.
+ * Mit Maia (seit 0.2.144): Die Wertung geht auch an Maia, deren Netz nach Wertungsklassen wählt;
+ * dieselbe Korrektur wirkte dort stärker. Prüfmessung vom 25./26.10.2026 (Blitz, Plan C, je 40
+ * Partien): ohne Maia liegen die Anker im Rauschen (±110 um die erwartete Zahl, nur Stufe 8 höher);
+ * mit Maia spielt Stufe 4 etwa 120 bis 260 und Stufe 5 etwa 450 zu schwach, Stufe 7 etwa 130 bis
+ * 280 zu stark. Darum mit Maia eine eigene Reihe: Stufe 4 halb, Stufe 5 ohne Korrektur, Stufe 7
+ * mit −150 (Steigung etwa 0,75 wie oben); Nachprüfung auf den Zweigen pruefung-blitz-N-maia2.
  * Abhängigkeiten: engine/zeitklassenabstand.ts, engine/stufen.ts (Typ), spiel/elomodell-daten.ts (Typ).
  */
 import type { Wertungstempo } from "../spiel/elomodell-daten";
 import type { Stufe } from "./stufen";
 import { wertungInZeitklasse } from "./zeitklassenabstand";
 
+type Zeitklasse = "blitz" | "classical";
+
 /** Korrektur der Wertung (Elo) je Stufe 1 bis 9; Stufe 10 (volle Engine) braucht keine. */
-const KORREKTUR: Readonly<Record<"blitz" | "classical", readonly number[]>> = {
+const KORREKTUR: Readonly<Record<Zeitklasse, readonly number[]>> = {
   blitz: [0, 0, -180, -350, -360, -125, 0, 0, 0],
+  classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],
+};
+
+/** Dieselbe Korrektur, wenn Maia mitspielt (seit 0.2.144, Herleitung im Dateikopf). */
+const KORREKTUR_MAIA: Readonly<Record<Zeitklasse, readonly number[]>> = {
+  blitz: [0, 0, -180, -175, 0, -125, -150, 0, 0],
   classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],
 };
 
 /**
  * Die Wertung für Wahlmodell und Zeitnot einer Stufe in einer Zeitklasse.
+ * `maia`: Spielt Maia mit, gilt die eigene Reihe KORREKTUR_MAIA.
  * Beispiel: Stufe 3 (Zielwertung 900) in Blitz → etwa 792 − 180 = 612; in Schnellschach 900.
+ * Stufe 5 in Blitz mit Maia: ohne Korrektur.
  * Sonderfall: Stufe 10 und Schnellschach ohne Korrektur.
  */
-export function wahlwertung(stufe: Stufe, tempo: Wertungstempo): number {
+export function wahlwertung(stufe: Stufe, tempo: Wertungstempo, maia = false): number {
   const umgerechnet = wertungInZeitklasse(stufe.wertung, tempo);
   if (tempo === "rapid") return umgerechnet;
-  return umgerechnet + (KORREKTUR[tempo][stufe.nummer - 1] ?? 0);
+  const reihe = maia ? KORREKTUR_MAIA : KORREKTUR;
+  return umgerechnet + (reihe[tempo][stufe.nummer - 1] ?? 0);
 }

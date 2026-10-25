@@ -67,7 +67,7 @@ export function mitgliederFuer(
  */
 function kontextVon(m: Gruppenmitglied, verlauf: Wahlkontext["verlauf"]): Wahlkontext {
   const tempo = m.profil.tempo ?? "rapid";
-  const wertung = wahlwertung(m.stufe, tempo);
+  const wertung = wahlwertung(m.stufe, tempo, m.profil.maia !== undefined);
   return {
     maia: m.profil.maia ? maiaabfrage(m.profil.maia, wertung, tempo) : undefined,
     wertung,

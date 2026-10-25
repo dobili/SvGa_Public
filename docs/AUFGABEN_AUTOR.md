@@ -33,25 +33,68 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
+
+- [ ] N990. **Gruppenbild als Kreis:** Spielen › Vorgefertigte Bots, eine Stufe aufklappen. Unter
+      den Porträts steht der Knopf „Gruppenmodus“; rechts daneben sitzen die acht Gesichter der
+      Gruppe klein auf einem Kreis, zusammen so groß wie ein Porträt. Dasselbe in der
+      Sprechblase, wenn du den Gruppenmodus wählst, und im Glückwunschfenster. Gut erkennbar?
+- [ ] N991. **Glückwunsch mit Feuerwerk:** Schlägst du den letzten Bot einer Stufe (gewertet),
+      kommt nach der Partie das Fenster „Glückwunsch!“ mit Feuerwerk dahinter und, bei
+      eingeschaltetem Ton, einer kurzen Fanfare. „Weiter“ schließt es; es kommt je Gruppe nur einmal.
+      Bei „Bewegung reduzieren“ des Geräts leuchtet es nur kurz auf, ohne fliegende Funken.
+- [ ] N992. **Voller Ring im Profil:** Wird einer der Fortschrittsringe im Profil voll (alle
+      Abbildungen angesehen, alle Lernziele, jeder Trainer einmal benutzt oder alle Bots einer
+      Zeitart besiegt), erscheint sofort, auf jedem Bildschirm, dasselbe Feuerwerk mit „Ring voll,
+      herzlichen Glückwunsch!“ und dem Namen des Rings. Einmal je Ring; Ringe, die schon vorher
+      voll waren, feiern beim ersten Start dieser Fassung einmal nachträglich.
+- [ ] N993. **Nach der Partie:** Gewinnst du eine Partie, leuchtet das Brett golden auf, über dem
+      Schild „Gewonnen!“ sprühen ein paar Funken, dazu ein kurzer Dreiklang (bei Ton an). Bei
+      Remis kommt nur das Schild, bei einer Niederlage wird das Brett kurz grau und das Schild
+      sinkt etwas ab, ohne Ton. Passt das Maß?
+- [ ] N994. **Maia-Hinweis beim ersten Bot:** Am besten in einem privaten Browserfenster (sonst
+      hast du ihn schon gesehen): Spielen › Vorgefertigte Bots, irgendeinen Bot antippen. Ein
+      Fenster erklärt kurz, wozu Maia gut ist, hat den Knopf „Maia laden (etwa 96 MB)“ und sagt,
+      dass du Maia später unter dem Zahnrad, Reiter „Bots“, findest. „Weiter“ schließt es; danach
+      kommt es nie wieder. Ist Maia schon an, kommt es gar nicht.
+- [ ] N995. **Einfachere Erklärtexte:** Lies ein paar Texte hinter den Fragezeichen, etwa bei
+      „Deine Spielstärke“, „Stärke der Bots“, den Zugarten der Auswertung und Maia. Sie sollen
+      ohne Vorwissen verständlich sein: keine Begriffe wie Median, Quantil, Eichung oder Skala.
+      32 Texte sind neu gefasst, Deutsch und Englisch gleich.
+- [ ] N996. **Rundgang:** Starte den Rundgang (Zahnrad › Hilfe › „Rundgang durch die App“) und auf
+      einigen Seiten über das Toursymbol. Jeder Schritt zeigt auf das Richtige, auch die neuen
+      Schritte zur Profilkarte, zum Reiter „Bots“, zur Wahl Engine oder Mensch und zu den
+      Werkzeugen am Brett der Partie.
+- [ ] N997. **Gruppen ohne Überschneidung:** Jede Stufe hat genau acht Bots, und die Zahlen
+      benachbarter Stufen überschneiden sich nicht mehr (die acht schwächsten in Stufe 1 und so
+      weiter, nach der Nachmessung). Manche Bots stehen dadurch eine Stufe höher oder tiefer
+      als in 0.2.143. Die Zahlen der Gruppenmodi sind mit den neuen Gruppen gemessen.
+- [ ] N998. **Planbilanz-Übung:** Training › Planbilanz › Drei Planfragen, einige Runden. Bei „Wo
+      spiele ich?“ ist keine Antwort mehr ein Satz über den Gegner. Fragen aus dem Buch (etwa
+      „Warum spielt Weiß 9. Lc4 noch vor der langen Rochade?“) stehen unter der Überschrift
+      „Eine Frage aus dem Buch zu Abb. …“ statt „Beantworte die Planfragen“.
+- [ ] N999. **Kleinigkeiten:** Bei „Falle oder Köder“ steht bei einer Mattfalle kein Satz mehr
+      über „104,0 Bauern“; in den Endspiel-Kurzübungen kein doppelter Punkt nach „Richtig ist:“.
+
 ### Neu in 0.2.143: Maia, Plan C, zwei Zahlensätze, acht Neulinge (Opus, 25.10.2026)
 
 Deine Freigaben vom 25.10.2026: Maia als Komplettpaket, in den Einstellungen ausschaltbar; Plan C;
 eine Neumessung mit und ohne Maia; die Gruppe Neuling auf acht Bots.
 
 - [ ] N983. **Maia laden:** Profil › Einstellungen › Reiter „Bots“. Dort steht, was Maia ist
-      (ein Netz der Universität Toronto, das aus Millionen Lichess-Partien gelernt hat, welche
-      Züge Menschen einer Stärke wählen) und „Laden (etwa 96 MB)“. Antippen: ein Balken zeigt den
-      Fortschritt, danach „geladen“ und ein Schalter „Maia spielt mit“ (an). Am besten im WLAN.
+      (ein Programm der Universität Toronto, das aus Millionen echter Partien gelernt hat, wie
+      Menschen spielen) und „Maia laden (etwa 96 MB)“. Antippen: Eine Zeile zeigt, wie viel schon
+      geladen ist, danach steht der Schalter „Maia für die Bots“ (an). Am besten im WLAN.
 - [ ] N984. **Ohne Netz:** Nach dem Laden den Flugmodus einschalten, eine Partie gegen einen Bot
       beginnen und ein paar Züge spielen. Die Bots ziehen wie gewohnt; ab dem zehnten Halbzug
       wählt Maia mit (die Eröffnung bleibt beim Praxisbuch). Ein Zug dauert kaum länger.
 - [ ] N985. **Spielgefühl mit Maia:** Spiele je eine Partie gegen denselben Bot mit Maia an und
       aus. Mit Maia sollen die Züge menschlicher wirken (typische Pläne, typische Fehler), nicht
       besser oder schlechter „zufällig“. Notiere, was dir auffällt.
-- [ ] N986. **Zwei Zahlensätze:** Mit Maia spielen die Bots ab Stufe 4 um etwa 200 Elo stärker
-      (Neumessung, je 5408 Partien mit und ohne Maia). Deshalb zeigt die Gegnerwahl mit Maia
+- [ ] N986. **Zwei Zahlensätze:** Mit Maia spielen die Bots ab Stufe 4 um etwa 100 bis 270 Elo
+      stärker (Neumessung mit Nachmessung, 36 Partien je Bot, mit und ohne Maia). Deshalb zeigt die Gegnerwahl mit Maia
       andere Zahlen: Schalter in den Einstellungen umlegen und in der Gegnerwahl vergleichen (etwa
-      Stufe 5: ohne Maia etwa 1450, mit etwa 1600). Die Wertung einer Partie nimmt immer den Satz,
+      Stufe 6: ohne Maia etwa 1600, mit etwa 1850). Die Wertung einer Partie nimmt immer den Satz,
       mit dem sie gespielt wurde; alte Partien zählen als „ohne Maia“.
 - [ ] N987. **Löschen:** Einstellungen › Bots › „Maia vom Gerät löschen“. Danach steht wieder
       „Laden“, und die Bots spielen ohne Maia (Zahlen wie ohne Maia).

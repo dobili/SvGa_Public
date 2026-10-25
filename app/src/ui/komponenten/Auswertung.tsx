@@ -322,6 +322,8 @@ export function Auswertung({
         <Titelsymbol art="auswertung" />
         {t("auswertung.titel")}
       </h2>
+      {/* PGN ganz oben (Wunsch des Autors, 25.10.2026): Export sucht man nicht mitten im Text. */}
+      <Pgn partie={partie} urteile={urteile} />
       {stand.art === "laeuft" && (
         <Auswertungsfortschritt erledigt={stand.erledigt} gesamt={stand.gesamt} />
       )}
@@ -355,7 +357,6 @@ export function Auswertung({
       {(urteile.length === 0 ? partie.einstellung.gegner === "engine" : engineSeite) && (
         <Enginefehler partie={partie} beiSprung={beiSprung} />
       )}
-      <Pgn partie={partie} urteile={urteile} />
       <Spielstaerke
         partie={partie}
         werte={eintrag.werte}

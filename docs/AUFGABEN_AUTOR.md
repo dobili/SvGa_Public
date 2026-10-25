@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.132 (mit der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.133 (mit der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.132“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.133“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,6 +33,17 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.2.133: deine Korrekturen zur Nutzungsprüfung (Opus, 25.10.2026)
+
+- [ ] N936. **Porträts:** In der laufenden Partie gegen einen Bot (etwa Tom) ist das Porträt neben
+      seinem Satz oben jetzt groß (80 statt 48 Pixel). Unter „Spielen“ hat das Porträt neben der
+      Sprechblase wieder die alte Größe (64 Pixel); N913 entfällt damit.
+- [ ] N937. **Marken am Brett:** Die Bewertungsmarke an der gezogenen Figur ist 10 % kleiner.
+- [ ] N938. **PGN oben:** In der Auswertung stehen „PGN kopieren“ und „PGN als Datei sichern“
+      direkt unter der Überschrift „Auswertung“.
+- [ ] N939. **Spinnennetz im Dunkelmodus:** Ringe und Speichen des Netzes „Spielstil“ sind im
+      Dunkeln deutlich besser zu sehen.
+
 ### Neu in 0.2.131 und 0.2.132: Nutzungsprüfung (DS46 bis DS57, V1 bis V9, T1 bis T4) und deine Ergänzungen (Opus, 25.10.2026)
 
 Deine Freigabe vom 25.10.2026 („Ja“ zu allem außer T5) und deine drei Ergänzungen dazu. Die
@@ -46,9 +57,6 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 - [ ] N912. **Startleiste:** Unten steht jetzt der ganze Name des Gegners, darunter kurz „Weiß ·
       10 + 0 · gewertet“, rechts der Knopf „Beginnen“. Bei 360 Pixeln Breite (kleines Handy)
       darf nichts mehr mit „…“ abgeschnitten sein.
-- [ ] N913. **Porträt in der Sprechblase:** Unter „Vorgefertigte Bots“ ist das Porträt neben der
-      Beschreibung jetzt deutlich größer (96 statt 64 Pixel), und die Blase zeigt mit einem
-      kleinen Zipfel auf das Porträt.
 - [ ] N914. **Fehlerprofil als Säulen (Spielen › Eigene Stufe › Fehler):** Jede Fehlerart hat
       links ein Zeichen „aus“ (durchgestrichener Kreis), daneben fünf steigende Säulen von „sehr
       selten“ bis „sehr oft“, gefüllt bis zur gewählten Stufe; unter der mittleren („normal“)

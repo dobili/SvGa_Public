@@ -5435,3 +5435,13 @@ Build von 8b2c3ae unter denselben Bedingungen.
   (`aria-busy`). `startTransition` verworfen (60 ms später). INP Spielen 152 → 24 ms, Partie
   beginnen 304 → 24 ms; das erste Zeichnen von Spielen bleibt etwa 160 ms.
 - Die Sprachwahl steht in `SprachWahl.tsx` (EinstellungenKarte war fast 400 Zeilen).
+
+## Korrekturen des Autors zur Nutzungsprüfung (25.10.2026, Opus, Version 0.2.133)
+
+- Gemeint war das Porträt in der laufenden Partie (`.partie-gegnerzeile`), nicht in der
+  Sprechblase: dort jetzt 80 statt 48 Pixel, die Sprechblase zurück auf 64 (Zipfel bleibt).
+- Zugmarke am Brett 23 statt 26 Pixel.
+- PGN-Knöpfe ganz oben in der Auswertung; nebeneinander brachen die Beschriftungen bei 360 Pixeln
+  um, deshalb untereinander.
+- Spinnennetz: Ringe in `--linie-stark`, im Dunkelmodus Ringe und Speichen #6b7fa3.
+

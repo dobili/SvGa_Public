@@ -33,9 +33,16 @@
 }
 
 .partie-gegnerzeile .gegner-portraet {
-  width: 48px;
-  height: 48px;
+  /* 80 statt 48 Pixel (Wunsch des Autors, 25.10.2026: das Porträt neben dem Satz des Gegners
+     in der laufenden Partie war zu klein). */
+  width: 80px;
+  height: 80px;
   flex: none;
+}
+
+.partie-gegnerzeile > .gegnerbild {
+  flex: none;
+  width: 80px;
 }
 
 .partie-gegnerbeschreibung {
@@ -377,7 +384,7 @@
 }
 
 .pgn {
-  margin-top: calc(var(--raster) * 2);
+  margin-bottom: var(--raster);
 }
 
 .pgn pre {

@@ -49,8 +49,8 @@ import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
-/** Zeichen der eigenen Stufe anstelle eines Porträts (96 Pixel groß seit 0.2.131). */
-const PORTRAETSYMBOL = 40;
+/** Zeichen der eigenen Stufe anstelle eines Porträts. */
+const PORTRAETSYMBOL = 28;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };

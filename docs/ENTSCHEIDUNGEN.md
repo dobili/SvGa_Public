@@ -5471,3 +5471,31 @@ Einstellungen prüfen, umsortieren, umbenennen.
 - Rundgänge: `ich` erklärt jetzt das Profil, neu `einstellungen` für die Reiter, Daten und Über
   die App; der Rundgang „Spielen“ verliert die Partienliste. Texte zu Speicherfehlern nennen
   „Profil › Einstellungen“ statt „Zahnrad“.
+
+## Theoriezug statt Buchzug (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.135)
+
+Wunsch des Autors (25.10.2026): „Theoriezug“ wie „Book“ bei chess.com, aus der Lichess-Liste und
+den Eröffnungen und Gambits des Buches; im Rückblick „Teil einer Eröffnung“ oder „eines Gambits“,
+das Wort klappt höchstens fünf Namen auf, der Rest wird abgeschnitten.
+
+- Regel (`schach/theorie.ts`): Ein Zug ist Theoriezug, wenn er (1) auf der Zugfolge einer
+  benannten Eröffnung der Lichess-Liste liegt (auch über unbenannte Zwischenstellungen, nach
+  Zugumstellung ab der nächsten benannten Stellung) oder als Buchzug in Kapitel 2 und 3 steht
+  (ohne die mit „?“ markierten), (2) alle Züge davor Theoriezüge waren (chess.com: „out of
+  book“; sonst zählte eine zufällig wieder erreichte Theoriestellung im Mittelspiel) und (3) er
+  nicht 0,5 Bauern oder mehr verliert (Bongcloud 2. Ke2 bleibt „ungenau“).
+- Die Lichess-Liste trägt ihre Zugfolgen (Schema 2, `pipeline/eroeffnungsliste.py`, etwa 165 KB
+  je Sprache mehr; die ersten drei Felder unverändert). Die App baut daraus einmal einen Zugbaum
+  ohne Schachregeln (etwa 5 ms); eine Menge aller Stellungsschlüssel kostete 80 bis 200 ms.
+  Dafür fehlen Zugumstellungen in unbenannte Zwischenstellungen (etwa 2 % der Theoriezüge).
+- Namen: zuerst die des Buches, dann Lichess (die Stellung selbst oder die letzte benannte davor,
+  dann die kürzesten Fortsetzungen, bei gleicher Länge die mit mehr Varianten). „Gambit“ nur, wenn
+  die Eröffnung der Partie selbst eines ist (Lichess-Name der Stellung oder eindeutiger Buchname);
+  wörtlich wäre schon 1. e4 „Teil eines Gambits“. Damengambit und Abgelehntes Damengambit zählen
+  nach ihrem Namen als Gambit. Varianten bleiben englisch (R12), Familien deutsch.
+- Interner Schlüssel bleibt `"buch"`; gespeichert wird die Klasse nirgends. Genauigkeit,
+  Elo-Modell, Wertung und Bots sehen die Klasse nicht.
+- Üblicher Anteil in „Deine Züge“: nachgemessen an 60 000 Lichess-Partien (September 2026, ohne
+  Bullet): neue Regel 6,9 bis 8,0 % der Züge einer Seite, der alte Buchindex 3,7 bis 4,7 %. Die
+  Schätzung (6, 8, 10, 11 % bei 800, 1200, 1600, 2000) ersetzt durch die Schnellschach-Werte
+  7,5, 7,6, 7,5, 8,0 % (Empfehlung nach Regel 9, N949). Messskript nur lokal.

@@ -31,11 +31,12 @@ export const GUTE_KLASSEN: ReadonlySet<Zugklasse> = new Set([
 
 /**
  * Klassen, die die Spielerprofile nicht kennen: vorläufige Anteile in Prozent je Band.
- * „buch“ heißt seit dem 25.10.2026 „Theoriezug“ (schach/theorie.ts). Die Schätzung blieb dabei
- * unverändert; nachgemessen an 60.000 Lichess-Partien (September 2026, ohne Bullet, Anteil an
- * allen Zügen einer Seite): Theoriezüge nach der neuen Regel 6,9 bis 8,0 %, Züge aus dem
- * Eröffnungsindex des Buches allein nur 3,7 bis 4,7 %. Die Schätzung (6 bis 11 %) meinte also
- * schon Theorie im Sinne von chess.com; ab etwa 1600 liegt sie über dem Gemessenen (7 bis 8 %).
+ * „buch“ heißt seit dem 25.10.2026 „Theoriezug“ (schach/theorie.ts). Nachgemessen an 60.000
+ * Lichess-Partien (September 2026, ohne Bullet, Anteil an allen Zügen einer Seite): Theoriezüge
+ * nach der neuen Regel 6,9 bis 8,0 %, Züge aus dem Eröffnungsindex des Buches allein nur 3,7 bis
+ * 4,7 %. Die alte Schätzung (6, 8, 10, 11 %) lag ab etwa 1600 über dem Gemessenen, übliche
+ * Spieler bekamen dort „wenig“. Seit 0.2.135 (Empfehlung nach Regel 9, N949) die gemessenen
+ * Schnellschach-Werte; brillant und stark bleiben Schätzungen.
  */
 const VORLAEUFIG: Readonly<
   Record<"brillant" | "stark" | "buch", readonly (readonly [number, number])[]>
@@ -53,10 +54,10 @@ const VORLAEUFIG: Readonly<
     [2000, 2.5],
   ],
   buch: [
-    [800, 6],
-    [1200, 8],
-    [1600, 10],
-    [2000, 11],
+    [800, 7.5],
+    [1200, 7.6],
+    [1600, 7.5],
+    [2000, 8],
   ],
 };
 /** Zone „normal“ der vorläufigen Klassen: 75 bis 125 % des Üblichen. */

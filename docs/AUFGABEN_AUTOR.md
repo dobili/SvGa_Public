@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.134 (mit Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.135 (mit Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.134“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.135“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.135: Theoriezug statt Buchzug (Opus mit einem Hilfsagenten, 25.10.2026)
+
+Dein Wunsch vom 25.10.2026: wie „Book“ bei chess.com, mit der Lichess-Liste und den Eröffnungen
+und Gambits des Buches; im Rückblick „Teil einer Eröffnung“ oder „eines Gambits“, das Wort klappt
+bis zu fünf Namen auf.
+
+- [ ] N946. **Theoriezug im Rückblick:** Unter „Spielen“ eine Partie aus der Grundstellung
+      beginnen, 1. e4 ziehen, nach der Antwort aufgeben und die Auswertung abwarten. In der
+      Zugliste „1. e4“ antippen: Unter dem Brett steht „1. e4 ist ein Theoriezug: Teil einer
+      Eröffnung“. Ein Tipp auf das unterstrichene „Eröffnung“ öffnet eine Liste mit höchstens
+      fünf Namen (zuerst die des Buches mit „· im Buch“, dann die von Lichess) und am Ende „und
+      … weitere“; ein zweiter Tipp schließt sie.
+- [ ] N947. **Gambit:** Eine Partie mit 1. e4 e5 2. f4 per PGN einlesen (Profil › Partie
+      einlesen) und auf 2. f4 tippen: Dort steht „Teil eines Gambits“, die Liste beginnt mit dem
+      Königsgambit. Bei 1. e4 steht noch „Eröffnung“, weil die Partie dort kein Gambit ist (sonst
+      wäre schon 1. e4 „Teil eines Gambits“, denn dort beginnt auch das Königsgambit).
+- [ ] N948. **Wann die Theorie endet:** Theoriezüge zählen nur, solange alle Züge davor
+      Theoriezüge waren (wie „out of book“ bei chess.com), und nur ohne Verlust von einem halben
+      Bauern oder mehr: Die Bongcloud 2. Ke2 steht zwar in der Lichess-Liste, bleibt aber
+      „ungenau“ oder schlechter. Unter „Deine Züge“ heißt die Zeile mit dem Buchsymbol jetzt
+      „Theoriezug“.
+- [ ] N949. **Üblicher Anteil der Theoriezüge (Rückfrage, schon umgesetzt):** Die Zeile
+      „Theoriezug“ in „Deine Züge“ vergleicht mit einem üblichen Anteil. Bisher war das eine
+      Schätzung (6 % bei 800 bis 11 % bei 2000). Gemessen an 60 000 Lichess-Partien vom September
+      2026 sind es mit der neuen Regel 7 bis 8 % in allen Stärken (Schnellschach 800: 7,5 %, 1200:
+      7,6 %, 1600: 7,5 %, 2000: 8,0 %). Mit der Schätzung bekamen Spieler ab etwa 1600 zu oft
+      „wenig“. Empfehlung und schon umgesetzt: die gemessenen Werte. Genauigkeit, Elo-Schätzung,
+      Wertung und Bots ändern sich dadurch nicht. Widerspruch genügt.
 
 ### Neu in 0.2.134: Profil statt Zahnrad, Einstellungen neu geordnet (Opus, 25.10.2026)
 

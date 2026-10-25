@@ -9,10 +9,12 @@
  * Seit 25.10.2026 (Wunsch des Autors) dazu je Zeitart ein Ring mit den schon gewertet besiegten
  * vorgefertigten Bots (gezählt wie die Siegmarken am Porträt, speicher/besiegt.ts); alle Ringe
  * tragen ein Zeichen in der Mitte, eine Legende darunter erklärt die Zeichen (Symbolringe.tsx).
+ * Seit 0.2.139 (Wunsch des Autors, 25.10.2026) ein dritter Ring in der ersten Zeile: Trainer aus
+ * „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang).
  * Abhängigkeiten: speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */
-import { LayoutGrid, ListChecks } from "lucide-react";
+import { Dumbbell, LayoutGrid, ListChecks } from "lucide-react";
 import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../daten/laden";
@@ -20,7 +22,12 @@ import { GEGNER } from "../../engine/gegner";
 import { t, tZahl } from "../../i18n/sprache";
 import { botsiegeJeTempo } from "../../speicher/besiegt";
 import type { Fortschritt } from "../../speicher/format";
-import { geloesteUebungen, kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
+import {
+  erstmalsTrainiert,
+  geloesteUebungen,
+  kapitelfortschritt,
+  type Anteil,
+} from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Ring } from "./Kreisanzeige";
 import { Ringlegende, Symbolringreihe, type Symbolringangabe } from "./Symbolringe";
@@ -134,6 +141,12 @@ export function Fortschrittsuebersicht() {
           },
         ]
       : []),
+    {
+      name: t("fortschritt.trainerErstmals"),
+      symbol: Dumbbell,
+      anteil: erstmalsTrainiert(fortschritt),
+      testid: "ich-trainer",
+    },
   ];
   return (
     <section className="karte" data-testid="ich-fortschritt" data-tour="einstellungen-fortschritt">

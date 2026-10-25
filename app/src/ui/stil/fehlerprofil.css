@@ -60,32 +60,9 @@
 }
 
 /* ---------- Vorlagen ---------- */
-.vorlagenreihe {
-  display: flex;
-  gap: var(--raster);
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: thin;
-}
-
-.vorlage {
-  flex: none;
-  min-height: var(--tippflaeche);
-  padding: 0 14px;
-  border-radius: calc(var(--tippflaeche) / 2);
-  border: 1.5px dashed var(--rand-bedien);
-  background: none;
-  color: var(--text);
-  font: inherit;
-  font-size: var(--groesse-mittel);
-  cursor: pointer;
-}
-
-.vorlage[aria-pressed="true"] {
-  border-style: solid;
-  border-color: var(--gold);
-  background: color-mix(in srgb, var(--gold) 18%, transparent);
-  font-weight: 700;
+/* Seit 0.2.139 eine Auswahlliste im Aussehen der Stilachsen (.stilnetz-liste, gegnerbild.css). */
+.vorlagenliste select:disabled {
+  opacity: 0.4;
 }
 
 /* ---------- Gruppen und Zeilen ---------- */

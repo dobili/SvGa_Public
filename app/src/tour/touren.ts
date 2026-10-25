@@ -271,6 +271,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   // die Tour.
   spielen: tour("tour.titel.spielen", [
     ziel("spielen-laufend", "tour.spielen.laufend"),
+    // Seit 0.2.139 steht „Deine Spielstärke“ wieder ganz oben über dem Gegner.
+    ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
     // Reihenfolge wie auf dem Bildschirm seit DS51 (0.2.131): Gegner, Einstellungen, Stellung.
     ziel("spielen-gegner", "tour.spielen.gegner"),
     ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
@@ -281,7 +283,6 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
     ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
-    ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
   ]),
   partie: tour("tour.titel.partie", [
     ziel("partie-zuege", "tour.partie.zuege"),

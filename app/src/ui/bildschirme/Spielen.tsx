@@ -44,6 +44,7 @@ import { startstaerke } from "./startstaerke";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie } from "../komponenten/Partienliste";
+import { LetzteSpielstaerke } from "../komponenten/LetzteSpielstaerke";
 import { Startstellung } from "../komponenten/Startstellung";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -299,6 +300,9 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           steht oben; aus der Grundstellung kommt erst der Gegner, die Stellung am Ende. */}
       {!ausGrund && <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />}
       {!spielbar(fen) && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
+      {/* Seit 0.2.139 wieder hier, ganz oben über dem Gegner (Wunsch des Autors, 25.10.2026): Wer
+          spielen will, sieht zuerst, wo er steht; die Liste der Partien bleibt im Profil. */}
+      <LetzteSpielstaerke partien={spiel.partien} />
       <Einstellungen
         wahl={wahl}
         fen={fen}

@@ -286,6 +286,10 @@ test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neulade
   await page.getByRole("tab", { name: "Fehler (7)" }).click();
   await expect(figuren).toHaveAttribute("aria-checked", "true");
   await expect(eroeffnung).toHaveAttribute("aria-checked", "true");
-  await page.getByRole("button", { name: "Keine Fehler" }).click();
+  // Seit 0.2.139 stehen die Vorlagen in einer Auswahlliste wie bei den Stilachsen.
+  await page
+    .getByTestId("fehlerprofil")
+    .getByRole("combobox", { name: "Vorlage" })
+    .selectOption({ label: "Keine Fehler" });
   await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
 });

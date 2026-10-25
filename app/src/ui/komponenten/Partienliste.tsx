@@ -6,7 +6,7 @@
  * Auswertung und PGN (Pflichtenheft 5.3).
  * Seit 0.2.40 (Wunsch des Autors): je Partie eine kleine Figur in der gespielten Farbe (König im
  * gewählten Figurensatz) und die erreichte Spielstärke oder Genauigkeit des Lesers. Seit 0.2.83
- * darüber die Karte „Deine Spielstärke“ über die letzten zehn Partien (LetzteSpielstaerke.tsx).
+ * darüber die Karte „Deine Spielstärke“ (LetzteSpielstaerke.tsx; seit 0.2.139 unter Spielen).
  * Seit 0.2.99 (Wunsch des Autors vom 19.10.2026): Porträt des Gegners je Partie, Filter nach
  * Ergebnis und Wertung, „Weitere Partien zeigen“ und Löschen ungewerteter Partien mit Nachfrage.
  * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx), und
@@ -41,7 +41,6 @@ import { Ergebnismarke } from "./Ergebnismarke";
 import { GegnerBild } from "./GegnerBild";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
-import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
 import { Partienfilterleiste } from "./Partienfilterleiste";
 import { PgnImport } from "./PgnImport";
 import { Knopfsymbol } from "./Knopfsymbol";
@@ -333,7 +332,6 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const rest = passend.length - anzahl;
   return (
     <>
-      <LetzteSpielstaerke partien={partien} />
       <section className="karte partienliste" data-tour="spielen-partien">
         <Partienkopf />
         <PgnImport />

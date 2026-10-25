@@ -111,11 +111,6 @@
   opacity: 0.4;
 }
 
-.vorlage:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
 .fleckennetz,
 .feinregler {
   display: grid;

@@ -39,7 +39,11 @@ import { Profilnetz } from "./Profilnetz";
 /** Wann gestrichene Arten neutral werden: beim Speichern (eigene Bots) oder beim Ändern (eigene Stufe). */
 export type Neutralwerden = "speichern" | "aendern";
 
-/** Vorlagen als Schnellstart, die aktive ist markiert; auch für die Flecken (Fleckennetz.tsx). */
+/**
+ * Vorlagen als Schnellstart in einer Auswahlliste, auch für die Flecken (Fleckennetz.tsx). Seit
+ * 0.2.139 (Wunsch des Autors, 25.10.2026) eine Liste wie bei den Stilachsen (Stilnetz.tsx) statt
+ * einer Reihe von Knöpfen; passt die Einstellung zu keiner Vorlage, steht „eigene Einstellung“.
+ */
 export function Vorlagenreihe<T extends string>({
   namen,
   aktiv,
@@ -53,21 +57,27 @@ export function Vorlagenreihe<T extends string>({
   text: (name: T) => string;
   gesperrt?: boolean;
 }) {
+  const wert = namen.find((name) => aktiv(name)) ?? "";
   return (
-    <div className="vorlagenreihe" role="group" aria-label={t("spielen.profil.vorlagen")}>
-      {namen.map((name) => (
-        <button
-          key={name}
-          type="button"
-          className="vorlage"
-          aria-pressed={aktiv(name)}
-          disabled={gesperrt}
-          onClick={() => waehle(name)}
-        >
-          {text(name)}
-        </button>
-      ))}
-    </div>
+    <label className="stilnetz-liste vorlagenliste">
+      <span className="einstellung-name">{t("spielen.profil.vorlagen")}</span>
+      <select
+        className="auswahlfeld"
+        value={wert}
+        disabled={gesperrt}
+        onChange={(e) => {
+          const name = namen.find((n) => n === e.target.value);
+          if (name) waehle(name);
+        }}
+      >
+        {wert === "" && <option value="">{t("spielen.profil.vorlageEigene")}</option>}
+        {namen.map((name) => (
+          <option key={name} value={name}>
+            {text(name)}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
 

@@ -7,7 +7,7 @@
  * es die Trainer gibt (AP 13); die Schnittstelle steht schon jetzt fest.
  * Abhängigkeiten: speicher/format.ts, training/trainer.ts.
  */
-import { trainerZuKapitel, type TrainerKennung } from "../training/trainer";
+import { TRAINER, trainerZuKapitel, type TrainerKennung } from "../training/trainer";
 import { beantworte, uebungskarte, type Antwortergebnis } from "../training/wiederholung";
 import type { Fortschritt, Nutzerdaten, Trainerstand } from "./format";
 
@@ -247,4 +247,18 @@ export function notiereEinschaetzung(
   if (daten.fortschritt.eingeschaetzt[abbildung] !== undefined) return daten;
   const eingeschaetzt = { ...daten.fortschritt.eingeschaetzt, [abbildung]: jetzt.toISOString() };
   return { ...daten, fortschritt: { ...daten.fortschritt, eingeschaetzt } };
+}
+
+/**
+ * Wie viele Trainer aus „Training“ schon einmal abgeschlossen wurden (mindestens ein Durchgang).
+ * Warum: dritter Ring „Trainings erstmalig absolviert“ in „Dein Fortschritt“ (Wunsch des Autors,
+ * 25.10.2026, Fortschrittsuebersicht.tsx). Gezählt werden nur fertige Trainer.
+ * Beispiel: ein Durchgang „Koordinaten“ und zwei „Zählen“ → 2 von 17.
+ */
+export function erstmalsTrainiert(fortschritt: Fortschritt): Anteil {
+  const fertige = TRAINER.filter((trainer) => trainer.fertig);
+  const erreicht = fertige.filter(
+    (trainer) => (fortschritt.trainer[trainer.kennung]?.durchgaenge ?? 0) > 0,
+  ).length;
+  return { erreicht, gesamt: fertige.length };
 }

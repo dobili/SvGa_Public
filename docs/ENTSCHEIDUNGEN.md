@@ -5651,3 +5651,20 @@ Ergänzungen des Autors vom 25.10.2026 abends.
   die der gewählten Uhr); die Zahl an der Stufe gilt weiter für die gewählte Uhr. Alte Siegliste
   (vor 0.2.125) wird der Zeitart der Partie zugeordnet, wenn die Partie noch gespeichert ist, sonst
   Schnellschach. Bullet zählt als Blitz. Speicherformat unverändert.
+
+## Spielstärke unter Spielen, Trainer-Ring, Vorlagen als Liste (25.10.2026, Bot-Chat, Version 0.2.139)
+
+Wünsche des Autors vom 25.10.2026 nachmittags; mit dem Design-Chat abgestimmt (er hat die Dateien
+in dieser Zeit nicht angefasst).
+
+- **„Deine Spielstärke“** (`LetzteSpielstaerke.tsx`) steht wieder unter Spielen, ganz oben über
+  dem Gegner, nicht mehr über der Partienliste im Profil. Die Tour zeigt sie entsprechend früh.
+- **„Trainings erstmalig absolviert“:** dritter Ring in der ersten Zeile von „Dein Fortschritt“.
+  Gezählt wird jeder fertige Trainer aus `training/trainer.ts` mit mindestens einem
+  abgeschlossenen Durchgang (`erstmalsTrainiert` in `speicher/fortschritt.ts`). „Erfolgreich“
+  heißt damit „bis zum Ende durchgespielt“ (gezählt beim Abschluss der Runde, `useRunde.ts`, und
+  in der 30-Minuten-Routine); eine Mindestzahl richtiger Antworten verlangt der Ring nicht.
+- **Vorlagen für Fehler und Flecken** als Auswahlliste im Aussehen der Stilachsen
+  (`.stilnetz-liste`); passt die Einstellung zu keiner Vorlage, steht „eigene Einstellung“. Mit
+  offenen Feinreglern bleibt die Liste gesperrt wie vorher die Knöpfe.
+

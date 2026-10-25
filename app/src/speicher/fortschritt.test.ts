@@ -4,6 +4,7 @@ import { aufgabenAusKarten, faellige, trainerkarte } from "../training/wiederhol
 import { leereDaten } from "./format";
 import {
   beantworteteFragen,
+  erstmalsTrainiert,
   geloesteUebungen,
   kapitelfortschritt,
   markiereGesehen,
@@ -143,5 +144,17 @@ describe("Warum-Fragen im Fortschritt (0.2.99)", () => {
     });
     expect(stand.warum).toEqual({ erreicht: 1, gesamt: 3 });
     expect(beantworteteFragen(daten.fortschritt, "1.27", 2)).toBe(0);
+  });
+});
+
+describe("Trainings erstmalig absolviert", () => {
+  it("zählt jeden fertigen Trainer mit mindestens einem Durchgang einmal", () => {
+    const stand = { durchgaenge: 2, aufgaben: 10, richtig: 8, zuletzt: "2026-10-25T10:00:00Z" };
+    const fortschritt = {
+      ...leereDaten(ERST).fortschritt,
+      trainer: { koordinaten: { ...stand, durchgaenge: 1 }, zaehlen: stand },
+    };
+    expect(erstmalsTrainiert(fortschritt)).toEqual({ erreicht: 2, gesamt: 17 });
+    expect(erstmalsTrainiert(leereDaten(ERST).fortschritt).erreicht).toBe(0);
   });
 });

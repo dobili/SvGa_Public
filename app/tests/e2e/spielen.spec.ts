@@ -287,7 +287,10 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
   await expect(page.getByRole("tab", { name: "Fehler (7)" })).toBeVisible();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
   await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).check();
-  await expect(page.getByRole("button", { name: "Keine Fehler" })).toBeDisabled();
+  // Seit 0.2.139 ist die Auswahlliste der Vorlagen gesperrt, solange die Feinregler offen sind.
+  await expect(
+    page.getByTestId("fehlerprofil").getByRole("combobox", { name: "Vorlage" }),
+  ).toBeDisabled();
   // Unmenschliche Stufen erst nach dem Haken.
   const dame = page.getByTestId("stufe-eroeffnungsfehler");
   await expect(dame.getByRole("radio", { name: "extrem" })).toHaveCount(0);
@@ -539,7 +542,11 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await page.getByRole("tab", { name: "Fehler (9)" }).click();
   // Mit unmenschlichem Wert beginnen die Feinregler offen; die Vorlagen erst nach dem Haken.
   await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).uncheck();
-  await page.getByRole("button", { name: "Keine Fehler" }).click();
+  // Seit 0.2.139 stehen die Vorlagen in einer Auswahlliste wie bei den Stilachsen.
+  await page
+    .getByTestId("fehlerprofil")
+    .getByRole("combobox", { name: "Vorlage" })
+    .selectOption({ label: "Keine Fehler" });
   await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
   // Ohne Fehlerart spielt die Stufe nur ihre Grundschicht: gemessen etwa 720.
   await expect(blase).toContainText("etwa 700");

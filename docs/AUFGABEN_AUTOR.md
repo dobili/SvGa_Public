@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.138 (mit aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.139 (mit „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -32,6 +32,24 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.139: Spielstärke unter Spielen, Trainer-Ring, Vorlagen als Liste (Bot-Chat, Opus, 25.10.2026)
+
+Deine drei Wünsche vom 25.10.2026 nachmittags.
+
+- [ ] N965. **„Deine Spielstärke“ unter Spielen:** Unten auf „Spielen“ tippen. Ganz oben, über
+      dem Gegner, steht die Karte „Deine Spielstärke“ (sobald es gewertete, ausgewertete Partien
+      gibt). Im Profil steht sie nicht mehr; dort bleiben Wertung, Fortschritt und die Partien.
+- [ ] N966. **Dritter Ring im Fortschritt:** Profil › „Dein Fortschritt“: In der ersten Zeile
+      stehen jetzt drei Ringe, der dritte mit einer Hantel für „Trainings erstmalig absolviert“
+      (etwa „1 von 17“). Er zählt jeden Trainer aus „Training“, den du mindestens einmal bis zum
+      Ende durchgespielt hast. Einen Trainer einmal abschließen: Der Ring wächst um eins, ein
+      zweiter Durchgang desselben Trainers ändert nichts.
+- [ ] N967. **Vorlagen als Liste:** Spielen › Eigene Stufe (oder ein eigener Bot) › Reiter
+      „Fehler“: Statt der Knopfreihe steht oben „Vorlage“ mit einer Auswahlliste, im selben
+      Aussehen wie die Listen beim Stil. Eine Vorlage wählen setzt das Netz; passt das Netz zu
+      keiner Vorlage, zeigt die Liste „eigene Einstellung“. Mit offenen Feinreglern ist die Liste
+      gesperrt. Im Reiter „Flecken“ genauso.
 
 ### Neu in 0.2.137: Jeder Bot ist ein Mensch mit drei Wertungen (Bot-Chat, Opus, 25.10.2026)
 

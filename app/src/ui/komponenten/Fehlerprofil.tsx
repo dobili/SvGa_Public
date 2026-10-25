@@ -1,5 +1,5 @@
 /**
- * Fehler eines eigenen Gegners oder der eigenen Stufe: Kopf mit Menschlichkeit, Vorlagen, das
+ * Fehler eines eigenen Gegners oder der eigenen Stufe: Vorlagen, das
  * Fehlernetz mit fünf Achsen, ein Höchstverlust für alle Fehler und hinter einem Haken die
  * Feinregler (seit 0.2.135; Netz-Vorschau E1 bis E3 und Auftrag „Variante A“, vom Autor am
  * 25.10.2026 freigegeben).
@@ -9,13 +9,12 @@
  * Koordinierungschats zeigte, dass mehrere davon kaum ein echtes Merkmal von Spielern messen.
  * Jetzt: fünf Achsen im Netz (Figuren, Taktik, König, Bauernzüge, Eröffnung), darunter neun
  * Regler als Feinregler. Mit offenem Feinregler ist das Netz grau und zeigt den Mittelwert, damit
- * sich nichts widerspricht. Die Logik liegt in fehlergruppen.ts und fehlerprofil.ts.
+ * sich nichts widerspricht. Die Logik liegt in fehlergruppen.ts und fehlerprofil.ts. Die Schätzung
+ * der Stärke steht seit 0.2.137 über allen Reitern (Gesamtstaerke.tsx).
  * Abhängigkeiten: fehlergruppen.ts, fehlerprofil.ts, Profilnetz.tsx, Feinregler.tsx,
  * engine/eigenstufen.ts, engine/botstaerke.ts, i18n.
  */
 import { useState } from "react";
-import { staerkeGeschaetzt } from "../../engine/botstaerke";
-import { menschlichkeit, staerkerichtung } from "../../engine/eigenstufen";
 import type { EigenerGegner } from "../../engine/gegner";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import {
@@ -34,44 +33,11 @@ import {
 } from "./fehlergruppen";
 import { aktuelleStufen, UNMENSCHLICH_AB, VERLUSTWAHL, verlusttext } from "./fehlerprofil";
 import { Feinregler } from "./Feinregler";
+import { MitInfo } from "./InfoKnopf";
 import { Profilnetz } from "./Profilnetz";
-import { staerketext } from "./staerkeangabe";
-
-const PROZENT = 100;
-/** Ab diesem Anteil ganze Prozent, darunter eine Nachkommastelle. */
-const GANZE_PROZENT_AB = 0.01;
 
 /** Wann gestrichene Arten neutral werden: beim Speichern (eigene Bots) oder beim Ändern (eigene Stufe). */
 export type Neutralwerden = "speichern" | "aendern";
-
-/** Kopf: geschätzte Stärke, Urteil über die Menschlichkeit und Richtung der Stärke. */
-function Profilkopf({ g }: { g: EigenerGegner }) {
-  const stufen = aktuelleStufen(g);
-  const m = menschlichkeit(stufen);
-  const anteil =
-    m.anteil >= GANZE_PROZENT_AB
-      ? `${Math.round(m.anteil * PROZENT)} %`
-      : `${(m.anteil * PROZENT).toFixed(1).replace(".", ",")} %`;
-  return (
-    <div className="profilkopf" data-testid="menschlichkeit" data-urteil={m.urteil}>
-      <div className="profilkopf-staerke">
-        <strong>{staerketext(staerkeGeschaetzt(g))}</strong>
-        <span className="hinweis">{t("spielen.profil.geschaetzt")}</span>
-      </div>
-      <div className="profilkopf-urteil">
-        <span className={`urteilsmarke urteil-${m.urteil}`}>
-          {t(`spielen.eigene.menschlich.${m.urteil}`)}
-        </span>
-        <p className="hinweis">
-          {m.urteil === "unmenschlich"
-            ? t("spielen.eigene.menschlich.unmenschlichText", { anzahl: String(m.unmenschlich) })
-            : t("spielen.eigene.menschlich.anteil", { anteil })}{" "}
-          {t(`spielen.eigene.richtung.${staerkerichtung(stufen, staerkeGeschaetzt(g))}`)}
-        </p>
-      </div>
-    </div>
-  );
-}
 
 /** Vorlagen als Schnellstart, die aktive ist markiert; auch für die Flecken (Fleckennetz.tsx). */
 export function Vorlagenreihe<T extends string>({
@@ -186,8 +152,18 @@ export function Fehlerprofil({
   const namen = Object.keys(FEHLERVORLAGEN) as Fehlervorlage[];
   return (
     <div className="fehlerprofil" data-testid="fehlerprofil">
-      <Profilkopf g={g} />
       <AlteEinstellungen g={g} wann={wann} />
+      {/* Seit 0.2.137 Erklärung und Legende hinter dem Fragezeichen. */}
+      <MitInfo
+        thema={t("spielen.profil.netzFehler")}
+        zeile={<span className="einstellung-name">{t("spielen.profil.netzFehler")}</span>}
+        erklaerung={
+          <>
+            <p>{t("spielen.profil.erklaerung")}</p>
+            <p>{t("spielen.profil.normalLegende")}</p>
+          </>
+        }
+      />
       <Vorlagenreihe
         namen={namen}
         aktiv={(n) => istFehlervorlage(g, n)}
@@ -206,13 +182,17 @@ export function Fehlerprofil({
           if (achse) setze(setzeGruppe(g, artenDerAchse(achse.kennung), s));
         }}
       />
-      <p className="profilnetz-legende">{t("spielen.profil.normalLegende")}</p>
       <Verlustregler g={g} setze={setze} gesperrt={fein} />
-      <label className="schalterzeile profil-fein">
-        <input type="checkbox" checked={fein} onChange={(e) => setzeFein(e.target.checked)} />
-        {t("spielen.profil.fein")}
-      </label>
-      {fein && <p className="profil-hinweis">{t("spielen.profil.feinWarnung")}</p>}
+      <MitInfo
+        thema={t("spielen.profil.fein")}
+        zeile={
+          <label className="schalterzeile profil-fein">
+            <input type="checkbox" checked={fein} onChange={(e) => setzeFein(e.target.checked)} />
+            {t("spielen.profil.fein")}
+          </label>
+        }
+        erklaerung={<p>{t("spielen.profil.feinWarnung")}</p>}
+      />
       {fein && <Feinregler g={g} setze={setze} extremAnfang={extremAnfang} />}
     </div>
   );

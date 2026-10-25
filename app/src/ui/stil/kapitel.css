@@ -228,3 +228,8 @@ h2.abschnittsklappe-titel {
   color: var(--gruen-text);
   font-weight: 600;
 }
+
+/* Abbildungen als Karte (0.2.137): Titel und Abschnitte ohne den zusätzlichen Einzug. */
+.galeriekarte .abschnitt-titel {
+  padding: 0;
+}

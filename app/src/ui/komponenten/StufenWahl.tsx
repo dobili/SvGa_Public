@@ -5,11 +5,12 @@
  * Engine folgt der Phase der Stellung und wechselt Zug für Zug um höchstens eine Stufe
  * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe; seit 0.2.101 mit
  * Phasenzeichen (DS26) und der Nummer in der Stufenmarke (DS19).
- * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), i18n.
+ * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), InfoKnopf, i18n.
  */
 import { STUFEN, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { PHASEN, type Phase } from "../../spiel/phasen";
+import { MitInfo } from "./InfoKnopf";
 import { Titelsymbol } from "./Titelsymbol";
 import { Phasenzeichen } from "./Phasenzeichen";
 import { Stufenmarke } from "./Stufenmarke";
@@ -29,10 +30,18 @@ export function StufenWahl({
 }) {
   return (
     <div className="stufenwahl" role="group" aria-label={t("spielen.stufe")}>
-      <span className="einstellung-name">
-        <Titelsymbol art="stufe" />
-        {t("spielen.stufe")}
-      </span>
+      {/* Seit 0.2.137 steht der Satz zum Wechsel der Stufe hinter dem Fragezeichen (Wunsch des
+          Autors: Erklärtexte stören, sobald man sie einmal gelesen hat). */}
+      <MitInfo
+        thema={t("spielen.stufe")}
+        zeile={
+          <span className="einstellung-name">
+            <Titelsymbol art="stufe" />
+            {t("spielen.stufe")}
+          </span>
+        }
+        erklaerung={<p>{t("spielen.stufenHinweis")}</p>}
+      />
       {PHASEN.map((ph) => {
         const id = `${praefix}-${ph}`;
         return (
@@ -56,7 +65,6 @@ export function StufenWahl({
           </div>
         );
       })}
-      <p className="hinweis">{t("spielen.stufenHinweis")}</p>
     </div>
   );
 }

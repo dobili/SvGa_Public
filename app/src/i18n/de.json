@@ -3535,5 +3535,9 @@
   "spielen.stilachse.angreifer": "Königsangriff",
   "spielen.stilachse.taktiker": "Aktivität",
   "spielen.stilachse.draufgaenger": "Bauernsturm oder Vereinfachen",
-  "spielen.stilachse.keine": "keiner der beiden"
+  "spielen.stilachse.keine": "keiner der beiden",
+  "spielen.partieTitel": "Partie",
+  "spielen.profil.staerkeThema": "Geschätzte Stärke",
+  "spielen.profil.staerkeErklaerung": "Die Zahl kommt aus den Stufen je Phase (Reiter „Stärke“); ohne jede Fehlerart gilt die gemessene Zahl der reinen Stufen. Wie Fehler und Flecken sie verschieben, zeigt der Satz oben nur als Richtung; der Stil geht nicht ein. Eine genaue Zahl gibt es erst mit einer Messung.",
+  "gruppe.gesperrtKurz": "Gruppenmodus: noch gesperrt"
 }

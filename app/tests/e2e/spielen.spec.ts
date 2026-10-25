@@ -317,6 +317,8 @@ test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page
   await page.getByTestId("spielhilfen-klappe").locator("summary").click();
   await expect(page.getByRole("checkbox", { name: /zurücknehmen erlauben/ })).toBeDisabled();
   await expect(page.getByRole("checkbox", { name: /Symbole am Brett/ })).toBeDisabled();
+  // Seit 0.2.137 steht der Satz hinter dem Fragezeichen an „Gewertete Partie“.
+  await page.getByRole("button", { name: /^Erklärung: Gewertete Partie/ }).click();
   await expect(page.getByText(/keine Zugrücknahme und keine Spielhilfen/)).toBeVisible();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("button", { name: "Zurücknehmen" })).toHaveCount(0);

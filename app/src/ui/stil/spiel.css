@@ -644,15 +644,15 @@
 }
 
 .gegner-sprechblase .gegner-portraet {
-  width: 96px;
-  height: 96px;
+  width: 64px;
+  height: 64px;
   flex: none;
 }
 
-/* Seit 0.2.131 (Wunsch des Autors: das Porträt war neben dem Text zu klein) 96 statt 64 Pixel,
-   und die Blase zeigt mit einem Zipfel auf das Porträt. */
+/* Seit 0.2.137 (Wunsch des Autors, 25.10.2026) wieder ein einfacher Kasten neben dem Porträt:
+   Der Zipfel zeigte auf das Auge, und das 96 Pixel große Bild ragte unter den Kasten (sein
+   Rahmen war nur 64 breit). Ein Bot spricht hier nicht selbst, der Text beschreibt ihn. */
 .gegner-blase {
-  position: relative;
   flex: 1;
   min-width: 0;
   padding: 10px 12px;
@@ -664,19 +664,6 @@
 
 .gegner-blase p {
   margin: 4px 0 0;
-}
-
-.gegner-blase::before {
-  content: "";
-  position: absolute;
-  top: 36px;
-  left: -8px;
-  width: 12px;
-  height: 12px;
-  border-left: 1.5px solid var(--linie-stark);
-  border-bottom: 1.5px solid var(--linie-stark);
-  background: var(--flaeche);
-  transform: rotate(45deg);
 }
 
 .gegner-klasse {

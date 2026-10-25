@@ -105,98 +105,104 @@ function Einstellungen({
     mit(g ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel } : { bot });
   };
   return (
-    <section className="karte spielwahl" id={SPIELWAHL}>
-      <GegnerWahl
-        gegner={v.gegner}
-        bot={v.bot}
-        stufen={v.stufenJePhase}
-        erlaubte={v.erlaubteFehlerarten}
-        uhr={uhr}
-        eigene={eigene}
-        kategorie={kategorie}
-        // R32: Der Haken „Gewertete Partie“ bleibt beim Wechsel der Art des Gegners, wie er war; ob
-        // gewertet wird, entscheidet beim Start wertbar() (nur gegen die Engine).
-        beiGegner={(gegner) => mit({ gegner })}
-        beiBot={waehleBot}
-        beiKategorie={(neu) => {
-          setzeKategorie(neu);
-          waehleBot(botFuerKategorie(neu, v.bot, eigene, v.stufenJePhase.mittelspiel));
-        }}
-        // Seit 0.2.126 dieselben Einstellungen wie bei eigenen Bots (Wunsch des Autors).
-        stufeninhalt={<EigeneStufe v={v} mit={mit} />}
-        editor={<GegnerEditor />}
-        // Farbe, Bedenkzeit, Rücknahme und Spielhilfen standen seit dem 19.10.2026 über der Art
-        // des Gegners, weil man sie unter dem Gitter der Bots übersah. Seit DS51 (0.2.131) stehen
-        // sie wieder danach: Die feste Startleiste zeigt Farbe, Zeit und Wertung ohnehin an.
-        einstellungen={
-          <div className="partieeinstellungen" data-tour="spielen-einstellungen">
-            {engine && (
-              <Auswahl
-                name={t("spielen.seite")}
-                symbol="farbe"
-                werte={["white", "black"] as const}
-                gewaehlt={wahl.farbe}
-                text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
-                beiWahl={(farbe) => setze({ ...wahl, farbe })}
-              />
-            )}
-            <ZeitWahl
-              stellen={stellen}
-              gewaehlt={uhrstelle(fen, v.uhr)}
-              beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
+    <>
+      <section className="karte spielwahl" id={SPIELWAHL}>
+        <GegnerWahl
+          gegner={v.gegner}
+          bot={v.bot}
+          stufen={v.stufenJePhase}
+          erlaubte={v.erlaubteFehlerarten}
+          uhr={uhr}
+          eigene={eigene}
+          kategorie={kategorie}
+          // R32: Der Haken „Gewertete Partie“ bleibt beim Wechsel der Art des Gegners, wie er war; ob
+          // gewertet wird, entscheidet beim Start wertbar() (nur gegen die Engine).
+          beiGegner={(gegner) => mit({ gegner })}
+          beiBot={waehleBot}
+          beiKategorie={(neu) => {
+            setzeKategorie(neu);
+            waehleBot(botFuerKategorie(neu, v.bot, eigene, v.stufenJePhase.mittelspiel));
+          }}
+          // Seit 0.2.126 dieselben Einstellungen wie bei eigenen Bots (Wunsch des Autors).
+          stufeninhalt={<EigeneStufe v={v} mit={mit} />}
+          editor={<GegnerEditor />}
+        />
+      </section>
+      {/* Seit 0.2.137 eine eigene Karte (Wunsch des Autors, 25.10.2026): Unter den Einstellungen
+          des Gegners begann „Du spielst“ ohne Trennung, man scrollte leicht darüber hinweg.
+          Farbe, Bedenkzeit, Wertung, Spielhilfen und Eröffnung stehen seit DS51 (0.2.131) nach
+          dem Gegner; die feste Startleiste zeigt Farbe, Zeit und Wertung ohnehin an. */}
+      <section className="karte partiekarte" aria-labelledby="partiekarte-titel">
+        <h2 className="karte-titel" id="partiekarte-titel">
+          {t("spielen.partieTitel")}
+        </h2>
+        <div className="partieeinstellungen" data-tour="spielen-einstellungen">
+          {engine && (
+            <Auswahl
+              name={t("spielen.seite")}
+              symbol="farbe"
+              werte={["white", "black"] as const}
+              gewaehlt={wahl.farbe}
+              text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+              beiWahl={(farbe) => setze({ ...wahl, farbe })}
             />
-            {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
-                  Eröffnung (Wunsch des Autors, 19.10.2026). */}
-            <WertungsWahl
+          )}
+          <ZeitWahl
+            stellen={stellen}
+            gewaehlt={uhrstelle(fen, v.uhr)}
+            beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
+          />
+          {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
+                Eröffnung (Wunsch des Autors, 19.10.2026). */}
+          <WertungsWahl
+            gewertet={v.gewertet}
+            wertbar={wertbar(fen, v)}
+            beiGewertet={(gewertet) => mit({ gewertet })}
+          />
+          <details
+            className="unterabschnitt"
+            data-testid="spielhilfen-klappe"
+            data-tour="spielen-hilfen"
+          >
+            <summary>
+              <Titelsymbol art="hilfen" />
+              {t("spielen.hilfen")}
+            </summary>
+            <label className="schalterzeile">
+              <input
+                type="checkbox"
+                checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
+                disabled={wirdGewertet(fen, v)}
+                onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
+              />
+              {t("spielen.ruecknahme")}
+            </label>
+            <HilfenWahl
+              ohneTitel
+              ohneWertung
+              hilfen={v.hilfen}
               gewertet={v.gewertet}
               wertbar={wertbar(fen, v)}
+              beiHilfen={(hilfen) => mit({ hilfen })}
               beiGewertet={(gewertet) => mit({ gewertet })}
             />
+          </details>
+          {eroeffnung && (
             <details
               className="unterabschnitt"
-              data-testid="spielhilfen-klappe"
-              data-tour="spielen-hilfen"
+              data-testid="eroeffnung-klappe"
+              data-tour="spielen-eroeffnung"
             >
               <summary>
-                <Titelsymbol art="hilfen" />
-                {t("spielen.hilfen")}
+                <Titelsymbol art="eroeffnung" />
+                {t("spielen.eroeffnungFestlegen")}
               </summary>
-              <label className="schalterzeile">
-                <input
-                  type="checkbox"
-                  checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
-                  disabled={wirdGewertet(fen, v)}
-                  onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
-                />
-                {t("spielen.ruecknahme")}
-              </label>
-              <HilfenWahl
-                ohneTitel
-                ohneWertung
-                hilfen={v.hilfen}
-                gewertet={v.gewertet}
-                wertbar={wertbar(fen, v)}
-                beiHilfen={(hilfen) => mit({ hilfen })}
-                beiGewertet={(gewertet) => mit({ gewertet })}
-              />
+              {eroeffnung}
             </details>
-            {eroeffnung && (
-              <details
-                className="unterabschnitt"
-                data-testid="eroeffnung-klappe"
-                data-tour="spielen-eroeffnung"
-              >
-                <summary>
-                  <Titelsymbol art="eroeffnung" />
-                  {t("spielen.eroeffnungFestlegen")}
-                </summary>
-                {eroeffnung}
-              </details>
-            )}
-          </div>
-        }
-      />
-    </section>
+          )}
+        </div>
+      </section>
+    </>
   );
 }
 

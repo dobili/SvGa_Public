@@ -257,8 +257,14 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
  * Eingabe: geladenes Kapitel. Beispiel: Kapitel 1 mit den Abschnitten 1.1 bis 1.6.
  */
 export function Abbildungsgalerie({ kapitel }: { kapitel: Kapitel }) {
+  // Seit 0.2.137 eine Karte wie Fortschritt und Training darüber (Wunsch des Autors nach klarer
+  // optischer Trennung der Abschnitte, 25.10.2026).
   return (
-    <section className="abschnitt" data-testid="abbildungsgalerie" data-tour="kapitel-galerie">
+    <section
+      className="karte abschnitt galeriekarte"
+      data-testid="abbildungsgalerie"
+      data-tour="kapitel-galerie"
+    >
       <Galeriekopf kapitel={kapitel} />
       {nachAbschnitten(kapitel).map((gruppe) =>
         gruppe.nummer ? (

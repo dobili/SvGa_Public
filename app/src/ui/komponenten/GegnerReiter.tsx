@@ -18,6 +18,7 @@ import { t } from "../../i18n/sprache";
 import { anzahlAn } from "./fehlergruppen";
 import { Fehlerprofil, type Neutralwerden } from "./Fehlerprofil";
 import { Fleckennetz } from "./Fleckennetz";
+import { Gesamtstaerke } from "./Gesamtstaerke";
 import { Reiter } from "./Reiter";
 
 type Gegnerreiter = "staerke" | "stil" | "fehler" | "flecken";
@@ -59,6 +60,8 @@ export function GegnerReiter({
   ] as const;
   return (
     <div className="gegnerreiter" data-testid="gegnerreiter">
+      {/* Seit 0.2.137 über allen Reitern: Alle Einstellungen betreffen die Stärke. */}
+      <Gesamtstaerke g={g} />
       <Reiter
         name={t("spielen.reiter.name")}
         eintraege={eintraege}

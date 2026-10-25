@@ -172,9 +172,20 @@ function Sprechblase({
               </span>
             </>
           }
-          erklaerung={t("botstaerke.erklaerung")}
+          erklaerung={
+            vorgefertigt || gruppe !== null ? (
+              t("botstaerke.erklaerung")
+            ) : (
+              // Seit 0.2.137: Bei eigener Stufe und eigenen Bots erklärt der Text nur die
+              // Bedienung; er steht deshalb hinter dem Fragezeichen.
+              <>
+                <p>{text}</p>
+                <p>{t("botstaerke.erklaerung")}</p>
+              </>
+            )
+          }
         />
-        <p>{text}</p>
+        {(vorgefertigt || gruppe !== null) && <p>{text}</p>}
       </div>
     </div>
   );
@@ -236,7 +247,6 @@ export function GegnerWahl({
   beiKategorie,
   stufeninhalt,
   editor,
-  einstellungen,
   uhr = null,
   erlaubte,
 }: {
@@ -252,8 +262,6 @@ export function GegnerWahl({
   beiKategorie: (kategorie: Gegnerkategorie) => void;
   stufeninhalt: ReactNode;
   editor: ReactNode;
-  /** Farbe, Bedenkzeit, Wertung, Spielhilfen, Eröffnung: über der Art des Gegners (R27). */
-  einstellungen: ReactNode;
   /** Die gewählte Uhr (seit 0.2.117: Zahl des Bots mit Uhr in der Sprechblase). */
   uhr?: Uhrangabe | null;
   /** Abhakliste der eigenen Stufe (0.2.126; leer: sie spielt rein, die Zahl ist die der reinen Stufe). */
@@ -296,7 +304,6 @@ export function GegnerWahl({
           )}
         </div>
       )}
-      {einstellungen}
     </>
   );
 }
@@ -390,10 +397,15 @@ export function WertungsWahl({
             {t("spielen.gewertet")}
           </label>
         }
-        erklaerung={<p>{t("spielen.gewertetHinweis")}</p>}
+        erklaerung={
+          <>
+            <p>{t("spielen.gewertetHinweis")}</p>
+            {/* Seit 0.2.137 ebenfalls hinter dem Fragezeichen statt dauerhaft darunter. */}
+            <p>{t("spielen.gewertetOhneHilfen")}</p>
+          </>
+        }
         thema={t("spielen.gewertet")}
       />
-      {gewertet && <p className="hinweis">{t("spielen.gewertetOhneHilfen")}</p>}
     </>
   );
 }

@@ -24,6 +24,7 @@ import {
 import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Besiegte } from "../../speicher/besiegt";
+import { MitInfo } from "./InfoKnopf";
 import { useSpeicher } from "../../speicher/speicher";
 import { portraet } from "./gegnerportraet";
 import { gruppenstaerketext } from "./gruppentexte";
@@ -60,7 +61,16 @@ export function Gruppenzeile({
   const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   const kennung = gruppenkennung(stufe);
   if (!gruppeFrei(besiegt, stufe)) {
-    return <p className="hinweis gruppenhinweis">{t("gruppe.gesperrt")}</p>;
+    // Seit 0.2.137 nur eine kurze Zeile, die Erklärung hinter dem Fragezeichen.
+    return (
+      <div className="gruppenhinweis">
+        <MitInfo
+          thema={t("gruppe.knopf")}
+          zeile={<span className="hinweis">{t("gruppe.gesperrtKurz")}</span>}
+          erklaerung={<p>{t("gruppe.gesperrt")}</p>}
+        />
+      </div>
+    );
   }
   return (
     <button

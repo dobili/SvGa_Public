@@ -5,18 +5,24 @@
 
 /* ---------- Kopf: Stärke und Menschlichkeit ---------- */
 .profilkopf {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: calc(var(--raster) * 1.5);
-  align-items: start;
-  padding: var(--raster) calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) / 2) calc(var(--raster) * 1.5);
   border-radius: var(--radius);
   background: var(--grund);
+  margin-bottom: var(--raster);
+}
+
+/* Seit 0.2.137 eine Zeile über allen Reitern: Zahl, „geschätzt“, Urteil; der Rest hinter „?“. */
+.profilkopf-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px calc(var(--raster) * 1.5);
 }
 
 .profilkopf-staerke {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  gap: 6px;
 }
 
 .profilkopf-staerke strong {
@@ -26,15 +32,8 @@
   white-space: nowrap;
 }
 
-.profilkopf-urteil {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-.profilkopf-urteil p {
-  margin: 0;
+.profilkopf .mitinfo-erklaerung p {
+  margin: 4px 0 0;
 }
 
 /* Urteil als Marke: grün menschlich, gold ungewöhnlich, rot kaum oder nicht menschlich. */

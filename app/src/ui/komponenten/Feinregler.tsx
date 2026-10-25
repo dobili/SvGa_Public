@@ -116,7 +116,6 @@ export function Feinregler({
         <input type="checkbox" checked={extrem} onChange={(e) => setzeExtrem(e.target.checked)} />
         {t("spielen.profil.extrem")}
       </label>
-      <p className="hinweis">{t("spielen.profil.erklaerung")}</p>
       {FEHLERACHSEN.map(({ kennung, regler }) => {
         const Zeichen = ACHSENZEICHEN[kennung];
         return (

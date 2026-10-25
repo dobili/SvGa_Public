@@ -3535,5 +3535,9 @@
   "spielen.stilachse.angreifer": "King attack",
   "spielen.stilachse.taktiker": "Activity",
   "spielen.stilachse.draufgaenger": "Pawn storm or simplifying",
-  "spielen.stilachse.keine": "neither"
+  "spielen.stilachse.keine": "neither",
+  "spielen.partieTitel": "Game",
+  "spielen.profil.staerkeThema": "Estimated strength",
+  "spielen.profil.staerkeErklaerung": "The number comes from the levels per phase (“Strength” tab); without any mistake type, the measured number of the pure levels applies. How mistakes and blind spots shift it is shown above only as a direction; the style is not included. An exact number needs a measurement.",
+  "gruppe.gesperrtKurz": "Group mode: still locked"
 }

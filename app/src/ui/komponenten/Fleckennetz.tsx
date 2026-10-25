@@ -23,6 +23,7 @@ import {
   type Fleckenvorlage,
 } from "./fehlergruppen";
 import { stufenwort } from "./fehlerprofil";
+import { MitInfo } from "./InfoKnopf";
 import { Profilnetz } from "./Profilnetz";
 
 /**
@@ -39,7 +40,17 @@ export function Fleckennetz({ g, setze }: { g: EigenerGegner; setze: (g: Eigener
   const namen = Object.keys(FLECKENVORLAGEN) as Fleckenvorlage[];
   return (
     <div className="fleckennetz" data-testid="blinde-flecken">
-      <p className="hinweis">{t("spielen.profil.fleckenHinweis")}</p>
+      {/* Seit 0.2.137 Erklärung und Legende hinter dem Fragezeichen. */}
+      <MitInfo
+        thema={t("spielen.profil.netzFlecken")}
+        zeile={<span className="einstellung-name">{t("spielen.profil.netzFlecken")}</span>}
+        erklaerung={
+          <>
+            <p>{t("spielen.profil.fleckenHinweis")}</p>
+            <p>{t("spielen.profil.normalLegende")}</p>
+          </>
+        }
+      />
       <Vorlagenreihe
         namen={namen}
         aktiv={(n) => istFleckenvorlage(g, n)}
@@ -56,7 +67,6 @@ export function Fleckennetz({ g, setze }: { g: EigenerGegner; setze: (g: Eigener
           if (gruppe) setze(setzeGruppe(g, gruppe.flecken, s));
         }}
       />
-      <p className="profilnetz-legende">{t("spielen.profil.normalLegende")}</p>
       <div className="hinweis" data-testid="flecken-text">
         {an.length === 0 ? (
           <p>{t("spielen.profil.fleckenKeine")}</p>

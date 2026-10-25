@@ -116,13 +116,6 @@
   cursor: default;
 }
 
-.profilnetz-legende {
-  margin: 0;
-  text-align: center;
-  font-size: var(--groesse-fein);
-  color: var(--text-leise);
-}
-
 .fleckennetz,
 .feinregler {
   display: grid;

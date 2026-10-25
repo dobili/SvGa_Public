@@ -113,9 +113,17 @@ function trennstelle(paarung: string): number {
   return paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
 }
 
+/**
+ * Kürzel ohne Maia-Zeichen („@tom*“ → „@tom“, „5m*“ → „5m“): Ein Durchgang misst entweder alle mit
+ * oder alle ohne Maia (Neumessung Plan C, 0.2.143), die Zahlen gehören also zu denselben Bots.
+ */
+function ohneMaia(kuerzel: string): string {
+  return kuerzel.replaceAll("*", "");
+}
+
 /** „@svenja“ und „3@nina“ (bis 0.2.115) → Kennung des Bots, „3“ → „stufe3“. */
 function spielerkennung(kuerzel: string): string {
-  const kern = kuerzel.split("~")[0] ?? kuerzel; // „@tom~180+2“ → „@tom“ (Messung je Zeitklasse)
+  const kern = ohneMaia(kuerzel.split("~")[0] ?? kuerzel); // „@tom~180+2“ → „@tom“ (Messung je Zeitklasse)
   const at = kern.indexOf("@");
   return at >= 0 ? kern.slice(at + 1) : `stufe${kern}`;
 }
@@ -207,7 +215,7 @@ function ankerGenauigkeiten(): Map<string, Partiekennzahlen[]> {
   for (const o of unterordner(ANKER_ORDNER)) {
     for (const d of dateienIn(join(ORDNER, o))) {
       // Kürzel der Seite: „3“ oder eine freie Grundschicht wie „4x0.2“ (Eichung 0.2.117)
-      const stufe = d.paarung.slice(0, trennstelle(d.paarung)).split("~")[0] ?? "";
+      const stufe = ohneMaia(d.paarung.slice(0, trennstelle(d.paarung)).split("~")[0] ?? "");
       d.berichte.forEach((b, i) => {
         const roh = bewertet.get(`${o}/${d.paarung}:${i}`);
         if (!roh || roh.length < 2 * MINDESTENS_ZUEGE) return;

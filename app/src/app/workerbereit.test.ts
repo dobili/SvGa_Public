@@ -1,6 +1,9 @@
-/** Tests für das Warten auf einen wirklich aktiven Service Worker (V1, Nutzungsprüfung 25.10.2026). */
+/**
+ * Tests für das Warten auf einen wirklich aktiven Service Worker (V1) und den Takt der
+ * Update-Suche (V3, beide Nutzungsprüfung 25.10.2026).
+ */
 import { describe, expect, it } from "vitest";
-import { warteAufAktivenWorker, type WorkerContainer } from "./workerbereit";
+import { updateFaellig, warteAufAktivenWorker, type WorkerContainer } from "./workerbereit";
 
 /** Ein nachgebildeter Worker, dessen Zustand der Test weiterschaltet. */
 function falscherWorker(anfang: ServiceWorkerState) {
@@ -50,5 +53,20 @@ describe("warteAufAktivenWorker", () => {
 
   it("meldet false ohne aktiven Worker", async () => {
     await expect(warteAufAktivenWorker(container(null))).resolves.toBe(false);
+  });
+});
+
+describe("updateFaellig", () => {
+  const NEUN_UHR = Date.UTC(2026, 9, 25, 9, 0);
+  const MINUTE = 60_000;
+
+  it("sucht höchstens einmal je Stunde", () => {
+    expect(updateFaellig(NEUN_UHR, NEUN_UHR + 40 * MINUTE)).toBe(false);
+    expect(updateFaellig(NEUN_UHR, NEUN_UHR + 60 * MINUTE)).toBe(true);
+    expect(updateFaellig(NEUN_UHR, NEUN_UHR + 65 * MINUTE)).toBe(true);
+  });
+
+  it("zählt eine zurückgestellte Uhr als fällig", () => {
+    expect(updateFaellig(NEUN_UHR, NEUN_UHR - MINUTE)).toBe(true);
   });
 });

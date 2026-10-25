@@ -7,10 +7,12 @@
  * „pruefeUpdate“, und 11.1 bis 11.3). Der Stand ist ein kleiner Speicher mit Abonnenten.
  * „Offline bereit“ gilt seit V1 (Nutzungsprüfung 25.10.2026) erst, wenn der Service Worker
  * wirklich aktiviert ist, nicht schon, wenn er nur installiert ist (app/workerbereit.ts).
+ * Seit V3 sucht die App auch beim Zurückkehren aus dem Hintergrund nach Updates, höchstens
+ * einmal je Stunde. Aktiv wird ein Update weiterhin erst nach Tippen auf den Hinweis.
  * Abhängigkeiten: vite-plugin-pwa (registerSW), app/workerbereit.ts.
  */
 import { registerSW } from "virtual:pwa-register";
-import { warteAufAktivenWorker } from "./workerbereit";
+import { updateFaellig, warteAufAktivenWorker } from "./workerbereit";
 
 /** Was die Oberfläche über Offline-Nutzung und Updates weiß. */
 export interface OfflineStand {
@@ -32,6 +34,8 @@ let stand: OfflineStand = { verfuegbar: false, prozent: 0, bereit: false, update
 const abonnenten = new Set<() => void>();
 let aktualisiere: ((neuLaden?: boolean) => Promise<void>) | null = null;
 let registrierung: ServiceWorkerRegistration | null = null;
+/** Zeitpunkt der letzten Suche nach einem Update (die Anmeldung sucht selbst). */
+let letzteUpdateSuche = Date.now();
 
 function setze(neu: Partial<OfflineStand>): void {
   stand = { ...stand, ...neu };
@@ -89,6 +93,23 @@ async function verfolgeFortschritt(): Promise<void> {
 }
 
 /**
+ * Sucht nach einem Update, wenn die App wieder sichtbar wird und die letzte Suche mindestens
+ * eine Stunde her ist (V3). Ein gefundenes Update meldet onNeedRefresh wie beim Start; aktiv
+ * wird es erst nach Tippen auf den Hinweis (Konzept 11.3), nie durch automatisches Neuladen.
+ * Sonderfall: Ohne Netz scheitert die Suche; das steht nur im Protokoll, die nächste Rückkehr
+ * nach einer Stunde versucht es wieder.
+ */
+function beiSichtbarkeit(): void {
+  const jetzt = Date.now();
+  if (document.visibilityState !== "visible" || !registrierung) return;
+  if (!updateFaellig(letzteUpdateSuche, jetzt)) return;
+  letzteUpdateSuche = jetzt;
+  registrierung.update().catch((fehler: unknown) => {
+    console.warn("Suche nach einem Update fehlgeschlagen:", fehler);
+  });
+}
+
+/**
  * Meldet den Service Worker an. Einmal beim Start der App aufrufen.
  *
  * Warum: Erst damit lädt das Gerät alle Dateien für die Offline-Nutzung und erfährt von neuen
@@ -106,6 +127,8 @@ export function starteOffline(): void {
     onOfflineReady: meldeBereitWennAktiv,
     onRegisteredSW: (_adresse, reg) => {
       registrierung = reg ?? null;
+      letzteUpdateSuche = Date.now();
+      document.addEventListener("visibilitychange", beiSichtbarkeit);
       void verfolgeFortschritt();
     },
     onRegisterError: (fehler: unknown) => {
@@ -130,6 +153,7 @@ export async function sucheUpdate(): Promise<boolean> {
   if (!registrierung) {
     return false;
   }
+  letzteUpdateSuche = Date.now();
   await registrierung.update();
   return registrierung.waiting !== null || registrierung.installing !== null;
 }

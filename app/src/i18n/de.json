@@ -2871,7 +2871,7 @@
   "prueffragen.keinAngebot": "Kein Material im Angebot und keine Fesselung im Spiel: Die Prüffragen helfen hier nicht weiter. Sie greifen, sobald du etwas schlagen kannst, das dir angeboten wird.",
   "prueffragen.nurF3": "Kein Material im Angebot: F1 und F2 entfallen. Der Fesselungs-Check (F3) gilt trotzdem.",
   "startseite.untertitel": "Ein Handbuch für Einsteiger und leicht Fortgeschrittene",
-  "startseite.beta": "Die App ist noch eine Beta: Sie wird laufend verbessert und erweitert; Updates kommen von selbst beim nächsten Öffnen.",
+  "startseite.beta": "Die App ist noch eine Beta: Sie wird laufend verbessert und erweitert; Updates lädt sie von selbst, ein Tipp auf „Jetzt aktualisieren“ aktiviert sie.",
   "startseite.meta": "Schach von Grund auf: das Handbuch für Einsteiger und leicht Fortgeschrittene, mit der App zum Buch. Jede Abbildung als lebendiges Brett, die Werkzeuge des Buches, Training und eine Engine.",
   "startseite.buch.titel": "Das Buch",
   "startseite.buch.text1": "Vom ersten Zug bis zu den Ideen, die für den Weg in Richtung Elo 2000 entscheidend sind: Das Buch führt von den Regeln und der Schachnotation über Eröffnungsgrundsätze und klassische Eröffnungssysteme, Gambits und Fallen, Bauernstrukturen, Planfindung und Taktik bis zu den wichtigen Endspielen.",

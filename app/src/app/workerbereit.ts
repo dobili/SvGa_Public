@@ -41,3 +41,26 @@ export async function warteAufAktivenWorker(container: WorkerContainer): Promise
     worker.addEventListener("statechange", beiWechsel);
   });
 }
+
+/** Höchstens so oft sucht die App beim Zurückkehren nach einem Update: einmal je Stunde. */
+export const UPDATE_ABSTAND_MS = 60 * 60 * 1000;
+
+/**
+ * Ob beim Zurückkehren in die App wieder nach einem Update gesucht werden soll.
+ *
+ * Zweck und Warum (V3): Eine installierte App bleibt auf dem Handy oft tagelang im Hintergrund
+ * geöffnet. Ohne eigene Suche fände sie Updates erst nach einem echten Neustart. Häufiger als
+ * einmal je Stunde zu suchen, kostet Daten ohne Nutzen.
+ * Eingaben: Zeitpunkt der letzten Suche und jetzt (Millisekunden), Abstand.
+ * Ausgabe: true, wenn seit der letzten Suche mindestens der Abstand vergangen ist.
+ * Beispiel: letzte Suche 9:00, jetzt 9:40 → false; jetzt 10:05 → true.
+ * Sonderfall: Eine Uhr, die zurückgestellt wurde (jetzt vor der letzten Suche), zählt als fällig,
+ * damit die Suche nicht tagelang ausbleibt.
+ */
+export function updateFaellig(
+  letzteSuche: number,
+  jetzt: number,
+  abstand: number = UPDATE_ABSTAND_MS,
+): boolean {
+  return jetzt < letzteSuche || jetzt - letzteSuche >= abstand;
+}

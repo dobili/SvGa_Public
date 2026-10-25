@@ -3,7 +3,7 @@
  * Brett (R38), Startanimation (R39), Wechsel der Spalten mit der Fenstergröße (R40).
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
 
 async function beginnePartie(seite: Page): Promise<void> {
   await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
@@ -66,8 +66,8 @@ test("Zuganimation (R37): nach Ziehen per Wischen gleitet der eigene Zug nicht",
 
 test("Zuganimation (R37): in den Einstellungen abgeschaltet gleitet nichts", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Brett" }).click();
+  await oeffneEinstellungen(page);
+  await page.getByRole("tab", { name: "Bedienung" }).click();
   const schalter = page.getByRole("radiogroup", { name: "Züge gleiten über das Brett" });
   await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
   await schalter.getByRole("radio", { name: "aus" }).click();
@@ -102,8 +102,9 @@ test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte
   await page.screenshot({ path: "test-results/bilder/ergebnisblende.png" });
   await expect(blende).toHaveCount(0, { timeout: 5_000 });
   await expect(page.getByTestId("partieende")).toContainText("Matt. Die Engine hat gewonnen.");
-  // Eine schon beendete Partie neu öffnen zeigt die Blende nicht noch einmal.
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  // Eine schon beendete Partie neu öffnen zeigt die Blende nicht noch einmal (seit 0.2.134
+  // stehen die gespielten Partien im Profil).
+  await oeffneProfil(page);
   await page.locator(".partienliste li.partieeintrag").first().getByRole("button").first().click();
   await expect(page.getByTestId("partieende")).toBeVisible();
   await expect(blende).toHaveCount(0);
@@ -123,8 +124,8 @@ test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nic
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
   await expect(start).toHaveCount(0);
   // In den Einstellungen abgeschaltet: auch beim nächsten Start (neue Sitzung) kein Startbild.
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Brett" }).click();
+  await oeffneEinstellungen(page);
+  await page.getByRole("tab", { name: "Bedienung" }).click();
   const schalter = page.getByRole("radiogroup", { name: "Startbild beim Öffnen der App" });
   await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
   await schalter.getByRole("radio", { name: "aus" }).click();

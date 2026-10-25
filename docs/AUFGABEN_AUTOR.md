@@ -1,11 +1,11 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.133 (mit der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.134 (mit Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
-**In der App (seit 0.2.75):** Halte das Zahnrad unten rechts drei Sekunden gedrückt (am Rechner:
+**In der App (seit 0.2.75):** Halte „Profil“ unten rechts drei Sekunden gedrückt (am Rechner:
 Adresse `/app/#aufgaben`). Dann öffnet sich diese Datei als Seite: Abbildungen, Trainer,
 Spielen, Einstellungen und Nachschlagen im Text sind Links, jeder Punkt hat einen Haken und eine
 Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als Text ab („N306 ok“,
@@ -13,12 +13,12 @@ Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als T
 
 **So antwortest du:** im Chat mit den Kürzeln, etwa „N203 ok“, „N205 falscher Pfeil“, „X5: so
 lassen“, „T1: Vorschläge übernehmen“. Claude trägt alles ein. Bei Fehlern in der App hilft
-**Einstellungen (Zahnrad) › Fehler melden**: Den kopierten Text mitschicken (App-Version,
+**Profil › Einstellungen › Fehler melden**: Den kopierten Text mitschicken (App-Version,
 Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), bei allem anderen kurz, **was** du getan hast und **was** passiert ist, gern
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.133“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.134“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,31 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.134: Profil statt Zahnrad, Einstellungen neu geordnet (Opus, 25.10.2026)
+
+Dein Wunsch vom 25.10.2026: unten rechts ein Profil, die Einstellungen eine Ebene tiefer, die
+Partien vom Spielen ins Profil, die Reiter der Einstellungen neu sortiert.
+
+- [ ] N940. **Leiste:** Unten rechts steht statt des Zahnrads ein Personensymbol mit dem Wort
+      „Profil“. Alle fünf Knöpfe haben jetzt ihr Wort. Drei Sekunden auf „Profil“ öffnen wie
+      bisher die Aufgabenseite.
+- [ ] N941. **Profil:** Die Seite „Profil“ zeigt oben den Knopf „Einstellungen“, darunter deine
+      Wertung (Kurve), deinen Fortschritt (drei Ringe) und die Liste deiner Partien mit Filter
+      und „Partie einlesen (PGN)“. Eine Partie antippen öffnet sie wie vorher.
+- [ ] N942. **Spielen ohne Partienliste:** Unter „Spielen“ steht die Partienliste nicht mehr;
+      eine laufende Partie zeigt weiter „Weiterspielen“ oben.
+- [ ] N943. **Einstellungen:** Profil › Einstellungen öffnet eine eigene Seite (oben „‹ Profil“
+      zum Zurückgehen). Darauf die Reiter, darunter „Daten auf diesem Gerät“ und „Über die App“
+      (Version, Updates, Fehler melden, Lizenzen, Datenschutz, Impressum).
+- [ ] N944. **Neue Reiter:** Die Einstellungen haben jetzt fünf Reiter in dieser Reihenfolge:
+      „Brett“ (Brettfarben, Figuren, Koordinaten), „Bedienung“ (Wischen, Zuganimation,
+      Startanimation, Ton), „Anzeige“ (Nachtmodus, Schriftgröße, Sprache), „Training“ (wie
+      bisher) und „Hilfe“ (App-Tour, Erklärungen). Vorher hießen sie Brett, Figuren, Ton,
+      Anzeige, Training; Figuren und Ton gehörten thematisch zu Brett und Bedienung. Geöffnet
+      ist zuerst „Training“. Schon umgesetzt, Widerspruch genügt.
+- [ ] N945. **Rundgang:** Auf „Profil“ und auf „Einstellungen“ zeigt der Kompass oben rechts je
+      einen eigenen kurzen Rundgang, der die neuen Orte erklärt.
 
 ### Neu in 0.2.133: deine Korrekturen zur Nutzungsprüfung (Opus, 25.10.2026)
 
@@ -81,6 +106,7 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       1.26 die Brettsymbole (Zählen, Ziehen, Engine …) ohne Scrollen.
 - [ ] N919. **Leiste unten:** Unter Buch, Training, Spielen und Nachschlagen steht wieder das Wort,
       das Zahnrad bleibt ohne. Das nimmt deinen Wunsch aus 0.2.116 zurück (DS55 freigegeben).
+      Seit 0.2.134 steht dort „Profil“ mit Wort (N940).
 - [ ] N920. **Fortschrittsringe:** In einem Kapitel und in den Einstellungen stehen die drei Ringe
       nebeneinander, das Wort darunter, ohne Trennung mitten im Wort („Warum-Fragen“).
 - [ ] N921. **Training:** Unter den Kapiteln fehlt die Zeile „Training zu diesem Kapitel
@@ -213,6 +239,8 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       auf den anderen Seiten; die Karte mit Brett, Figuren, Anzeige, Ton und Training heißt
       „Darstellung und Training“. Das hebt deinen Wunsch von 0.2.30 auf (keine sichtbare
       Überschrift); du hast DS44 freigegeben, Widerspruch genügt.
+      Seit 0.2.134 sind die Einstellungen eine eigene Seite unter Profil; die Reiter stehen dort
+      ganz oben, die Überschrift „Darstellung und Training“ entfällt (N943, N944).
 - [ ] N910. **Kleinigkeiten:** Die gestrichelten Chips „frühere“ und „spätere“ in der
       Werkzeugleiste einer Abbildung haben einen kräftigeren Rand.
 

@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
+import { Einstellungen } from "../ui/bildschirme/Einstellungen";
 import { Kapitel } from "../ui/bildschirme/Kapitel";
 import { Lernsammlung } from "../ui/bildschirme/Lernsammlung";
 import { Checkliste } from "../ui/bildschirme/Checkliste";
@@ -85,6 +86,8 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Partie key={ansicht.id} id={ansicht.id} />;
     case "ich":
       return <Ich />;
+    case "einstellungen":
+      return <Einstellungen />;
     case "lizenzen":
       return <Lizenzen />;
     case "autoraufgaben":

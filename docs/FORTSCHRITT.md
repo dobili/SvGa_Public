@@ -1,3 +1,5 @@
+Stand: 25.10.2026 spät · **Version 0.2.134** (Zweig `nutzung-nachtrag`, Opus): Profil statt Zahnrad in der Leiste (Wertung, Fortschritt, Partienliste aus „Spielen“), Einstellungen als eigene Seite unter Profil, Reiter neu: Brett, Bedienung, Anzeige, Training, Hilfe; Testpunkte N940 bis N945. Theoriezug statt Buchzug läuft als Hilfsagent (Zweig `theoriezug`). **Nächster Schritt:** Theoriezug zusammenführen und freigeben, dann Variante A mit Spinnennetz (E1 bis E4 freigegeben).
+
 Stand: 25.10.2026 spät · **Version 0.2.133** (Zweig `nutzung-nachtrag`, Opus): Korrekturen des Autors (Porträt in der Partie statt in der Sprechblase, Zugmarke 10 % kleiner, PGN oben in der Auswertung, Spinnennetz im Dunkeln kräftiger); Testpunkte N936 bis N939. Vorschau „Fehler und Flecken als Spinnennetz“ (https://claude.ai/artifact/6SyUnKzB45ZCtFDgGtFHwV) wartet auf Freigabe E1 bis E4, Umsetzung zusammen mit Variante A. **Nächster Schritt:** Theoriezug statt Buchzug, Ordnung der Einstellungen, Profilseite (Wünsche des Autors vom 25.10.2026 spät).
 
 # Fortschritt – Wiederaufsetzpunkt

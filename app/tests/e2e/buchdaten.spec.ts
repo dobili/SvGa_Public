@@ -3,7 +3,12 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { klappeAbschnittAuf, oeffneAbbildung, starteImBrowser } from "./hilfen";
+import {
+  klappeAbschnittAuf,
+  oeffneAbbildung,
+  oeffneEinstellungen,
+  starteImBrowser,
+} from "./hilfen";
 
 test("Lehrbild ohne König (Abb. 0.3): Zählen ja, Engine nein", async ({ page }) => {
   await starteImBrowser(page);
@@ -96,7 +101,7 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   const kastenlinks = page.getByRole("link", { name: "Training zu diesem Kapitel (Website)" });
   await expect(kastenlinks).toHaveCount(13);
   await expect(page.locator('a[href="/training/kap09/"]')).toBeVisible();
-  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Brettfarben" })
@@ -113,7 +118,7 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
     page.locator('.brett pattern image[href$="holz/dunkel.webp"]').first(),
   ).toBeAttached();
   // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
-  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Brettfarben" })
@@ -135,7 +140,7 @@ test("Barrierefreiheit: Training, Nachschlagen, Einstellungen, Kapitelübersicht
     (await new AxeBuilder({ page }).analyze()).violations.filter(
       (v) => v.impact === "serious" || v.impact === "critical",
     );
-  for (const bereich of ["Training", "Nachschlagen", "Einstellungen"]) {
+  for (const bereich of ["Training", "Nachschlagen", "Profil"]) {
     await leiste.getByRole("button", { name: bereich }).click();
     expect(await schwer()).toEqual([]);
   }

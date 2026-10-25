@@ -3,7 +3,7 @@
  * Abbildung erst die eigene Einschätzung, dann die Werkzeuge. Übungen und Trainer bleiben lösbar.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneAbbildung, oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneEinstellungen, oeffneTrainer, starteImBrowser } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
   page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
@@ -11,7 +11,7 @@ const feld = (page: Page, name: string) =>
 /** Schaltet „Auch vor Werkzeugen und Engine“ an, auf Wunsch dazu „streng“. */
 async function schalteEin(page: Page, streng = false): Promise<void> {
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
-  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Training" }).click();
   await page
     .getByRole("radiogroup", { name: "Auch vor Werkzeugen und Engine" })

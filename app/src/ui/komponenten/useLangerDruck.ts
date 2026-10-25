@@ -1,9 +1,9 @@
 /**
  * Langer Druck auf einen Knopf: nach einer festen Zeit eine andere Handlung als beim Tippen.
  *
- * Rolle im Gesamtbild: Drei Sekunden auf dem Zahnrad der Leiste öffnen die Aufgabenseite des
- * Autors (Wunsch des Autors vom 18.10.2026); ein kurzer Tipp bleibt der Wechsel zu den
- * Einstellungen. Das Kontextmenü des Handys (lange Berührung) wird auf diesem Knopf
+ * Rolle im Gesamtbild: Drei Sekunden auf „Profil“ in der Leiste öffnen die Aufgabenseite des
+ * Autors (Wunsch des Autors vom 18.10.2026); ein kurzer Tipp bleibt der Wechsel zum
+ * Profil. Das Kontextmenü des Handys (lange Berührung) wird auf diesem Knopf
  * unterdrückt, sonst bricht es den Druck ab.
  * Abhängigkeiten: React.
  */

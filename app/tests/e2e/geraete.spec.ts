@@ -3,7 +3,7 @@
  * statt einer leeren Seite, Safari im Browser den Hinweis auf die Sieben-Tage-Regel.
  */
 import { expect, test } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
 
 /** Tut so, als fehle die Rückschau in regulären Ausdrücken (Safari vor 16.4). */
 const ALTER_BROWSER = () => {
@@ -49,7 +49,7 @@ test.describe("Safari auf dem iPhone, im Browser", () => {
       "href",
       "/installieren/",
     );
-    await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+    await oeffneEinstellungen(page);
     await expect(page.getByTestId("sicherung-safari")).toBeVisible();
     await hinweis.getByRole("button", { name: "Verstanden" }).click();
     await expect(hinweis).toHaveCount(0);

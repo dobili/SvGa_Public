@@ -4,7 +4,7 @@
  * abgeschaltet zieht nur noch das Antippen.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
 
 /** Schritte der Mausbewegung, damit die Schwelle zum Wischen sicher überschritten wird. */
 const SCHRITTE = 8;
@@ -83,8 +83,8 @@ test("Ziehen per Wischen mit dem Finger (Touch, nur Chromium): d2 nach d4", asyn
 
 test("Ziehen per Wischen abgeschaltet: Wischen zieht nicht, Antippen schon", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Brett" }).click();
+  await oeffneEinstellungen(page);
+  await page.getByRole("tab", { name: "Bedienung" }).click();
   const schalter = page.getByRole("radiogroup", { name: "Figuren per Wischen ziehen" });
   await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
   await schalter.getByRole("radio", { name: "aus" }).click();

@@ -93,9 +93,23 @@ export async function oeffneAbbildung(seite: Page, eingabe: string, nummer: stri
   await expect(seite.locator(".bildschirm-abbildung .brettbereich")).toBeVisible();
 }
 
+/** Öffnet das Profil über die Leiste (seit 0.2.134 statt des Zahnrads). */
+export async function oeffneProfil(seite: Page): Promise<void> {
+  await seite
+    .getByRole("navigation", { name: "Hauptbereiche" })
+    .getByRole("button", { name: "Profil", exact: true })
+    .click();
+}
+
+/** Öffnet die Einstellungen: Profil, dann der Knopf „Einstellungen“ oben (seit 0.2.134). */
+export async function oeffneEinstellungen(seite: Page): Promise<void> {
+  await oeffneProfil(seite);
+  await seite.getByRole("button", { name: "Einstellungen", exact: true }).click();
+}
+
 /** Wartet, bis der Service Worker alle Dateien geladen hat (Einstellungen: „Offline bereit“). */
 export async function warteAufOffline(seite: Page): Promise<void> {
-  await seite.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(seite);
   await expect(seite.getByTestId("offline-stand")).toHaveText("Offline bereit", {
     timeout: 30_000,
   });

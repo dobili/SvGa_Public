@@ -139,8 +139,9 @@ test("Einstellungen: Symbol aus blendet es überall aus, der Rundgang bleibt err
   page,
 }) => {
   await starteImBrowser(page);
-  await bereich(page, "Einstellungen");
-  await page.getByRole("tab", { name: "Anzeige" }).click();
+  await bereich(page, "Profil");
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Hilfe" }).click();
   await page
     .getByRole("radiogroup", { name: "Toursymbol" })
     .getByRole("radio", { name: "aus" })
@@ -180,7 +181,7 @@ test("jede Tour der Bereiche läuft bis zum Ende durch", async ({ page }) => {
     await page.getByRole("button", { name: new RegExp(`^${eintrag}`) }).click();
     await laeuft();
   }
-  await bereich(page, "Einstellungen");
+  await bereich(page, "Profil");
   await laeuft();
 });
 

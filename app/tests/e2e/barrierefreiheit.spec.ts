@@ -64,7 +64,7 @@ test("axe im Dunkelmodus: Buch, Abbildung, Training, Einstellungen", async ({ pa
   await oeffneAbbildung(page, "1.26", "1.26");
   await page.getByRole("button", { name: "Zählen" }).click();
   expect(await schwereVerstoesse(page)).toEqual([]);
-  for (const name of ["Training", "Einstellungen"]) {
+  for (const name of ["Training", "Profil"]) {
     await bereich(page, name);
     expect(await schwereVerstoesse(page), name).toEqual([]);
   }
@@ -93,7 +93,7 @@ test("360 px Breite: kein waagerechtes Scrollen auf den Hauptbildschirmen", asyn
   expect(await ueberstand(), "Buch").toBeLessThanOrEqual(0);
   await oeffneAbbildung(page, "1.26", "1.26");
   expect(await ueberstand(), "Abbildung").toBeLessThanOrEqual(0);
-  for (const name of ["Spielen", "Training", "Nachschlagen", "Einstellungen"]) {
+  for (const name of ["Spielen", "Training", "Nachschlagen", "Profil"]) {
     await bereich(page, name);
     expect(await ueberstand(), name).toBeLessThanOrEqual(0);
   }

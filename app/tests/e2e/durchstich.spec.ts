@@ -7,7 +7,13 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser, waehleWerkzeug, warteAufOffline } from "./hilfen";
+import {
+  oeffneAbbildung,
+  oeffneEinstellungen,
+  starteImBrowser,
+  waehleWerkzeug,
+  warteAufOffline,
+} from "./hilfen";
 
 /** Höchstens so lange darf die Engine im Browser für eine Bewertung rechnen. */
 const ENGINE_FRIST_MS = 30_000;
@@ -103,7 +109,7 @@ test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, conte
 
 test("Einstellungen zeigen App-Version und Datenstand", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+ \(Beta\)$/);
   await expect(page.getByText("Auflage 1, Datenlauf vom")).toBeVisible();
 });
@@ -136,7 +142,7 @@ test("Barrierefreiheit: keine schweren Verstöße auf Buch und Abbildung", async
 test("Einstellungen: alle Daten löschen nach Nachfrage", async ({ page }) => {
   await starteImBrowser(page);
   await warteAufOffline(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("button", { name: "Alle Daten dieser App löschen" }).click();
   await page.getByRole("button", { name: "Ja, alles löschen" }).click();
   await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible();
@@ -221,7 +227,7 @@ test("Brett drehen; Koordinaten in den Einstellungen; Skelett-Ansicht im Bündel
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await page.getByRole("radio", { name: "ausblenden" }).click();
   await page.getByRole("button", { name: "Buch", exact: true }).click();
@@ -250,7 +256,7 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Anzeige" }).click();
   const nacht = page.getByRole("radiogroup", { name: "Nachtmodus" });
   const wurzel = page.locator("html");
@@ -260,7 +266,7 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
   expect(await grund()).toBe("rgb(15, 27, 46)");
   await page.reload();
   await expect(wurzel).toHaveAttribute("data-farbschema", "dunkel");
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Anzeige" }).click();
   await nacht.getByRole("radio", { name: "aus" }).click();
   await expect(wurzel).toHaveAttribute("data-farbschema", "hell");
@@ -292,17 +298,17 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   // „Erst selbst denken“ ist seit 0.2.37 wieder da (wirkt bei den Übungen, AP 13); seit 0.2.80
   // stehen die Bereiche der Darstellung auf Reitern.
   await page.getByRole("tab", { name: "Training" }).click();
   await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(1);
-  await page.getByRole("tab", { name: "Figuren" }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })
     .getByRole("radio", { name: "Chessnut" })
     .click();
-  await page.getByRole("tab", { name: "Ton" }).click();
+  await page.getByRole("tab", { name: "Bedienung" }).click();
   const ton = page.getByRole("radiogroup", { name: "Ton" });
   await ton.getByRole("radio", { name: "an" }).click();
   await expect(ton.getByRole("radio", { name: "an" })).toBeChecked();

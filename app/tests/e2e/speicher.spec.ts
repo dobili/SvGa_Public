@@ -258,27 +258,25 @@ test("Hinweis auf die Datensicherung nach vier Stunden App-Zeit, „Später“ u
   await expect(hinweis).toHaveCount(0);
 });
 
-test("Fehlerarten (0.2.60): eine Art aus und eine Stufe überleben das Neuladen", async ({
+test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neuladen", async ({
   page,
 }) => {
   await starteImBrowser(page);
-  // Seit 0.2.80 beim Spielen; seit 0.2.129 (DS38) im Reiter „Fehler“ mit Stufenschaltern.
+  // Seit 0.2.80 beim Spielen; seit 0.2.135 (Variante A) im Reiter „Fehler“ als Netz.
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("tab", { name: "Fehler (18)" }).click();
-  const figur = page.getByTestId("stufe-figurHaengen");
-  const dame = page.getByTestId("stufe-verfruehteDame");
-  await figur.getByRole("radio", { name: "aus" }).click();
-  await dame.getByRole("radio", { name: "oft", exact: true }).click();
-  await expect(page.getByRole("tab", { name: "Fehler (17)" })).toBeVisible();
+  await page.getByRole("tab", { name: "Fehler (9)" }).click();
+  const netz = page.getByTestId("fehlernetz");
+  const figuren = netz.getByRole("radio", { name: "Figuren: aus", exact: true });
+  const eroeffnung = netz.getByRole("radio", { name: "Eröffnung: oft", exact: true });
+  await figuren.click();
+  await eroeffnung.click();
+  await expect(page.getByRole("tab", { name: "Fehler (7)" })).toBeVisible();
   await page.reload();
   await leiste.getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("tab", { name: "Fehler (17)" }).click();
-  await expect(figur.getByRole("radio", { name: "aus" })).toHaveAttribute("aria-checked", "true");
-  await expect(dame.getByRole("radio", { name: "oft", exact: true })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
+  await page.getByRole("tab", { name: "Fehler (7)" }).click();
+  await expect(figuren).toHaveAttribute("aria-checked", "true");
+  await expect(eroeffnung).toHaveAttribute("aria-checked", "true");
   await page.getByRole("button", { name: "Keine Fehler" }).click();
   await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
 });

@@ -11,7 +11,8 @@
  * (engine/botstaerke.ts, staerkeGeschaetzt). Den erweiterten Modus teilt sie sich mit den eigenen
  * Bots, der dafür einen namenlosen eigenen Gegner aus den Vorlieben bekommt. Seit 0.2.129 (DS38,
  * DS39) stehen Stärke, Stil, Fehler und blinde Flecken in Reitern (GegnerReiter.tsx), die Fehler
- * mit einem Stufenschalter je Art (Fehlerprofil.tsx) statt Haken und erweitertem Modus.
+ * mit einem Stufenschalter je Art (Fehlerprofil.tsx) statt Haken und erweitertem Modus; seit
+ * 0.2.135 als Netz mit Feinreglern, ältere Werte gestrichener Arten werden beim Ändern neutral.
  * Abhängigkeiten: StufenWahl, Stilnetz, GegnerReiter, engine/gegner.ts, speicher/partien.ts.
  */
 import type { EigenerGegner } from "../../engine/gegner";
@@ -19,6 +20,7 @@ import { STIL_NEUTRAL } from "../../engine/stil";
 import { hauptstil, mixAusStil } from "../../engine/stile";
 import { mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
+import { neutralisiert } from "./fehlergruppen";
 import { GegnerReiter } from "./GegnerReiter";
 import { Stilnetz } from "./Stilnetz";
 import { StufenWahl } from "./StufenWahl";
@@ -64,15 +66,18 @@ export function EigeneStufe({
   return (
     <GegnerReiter
       g={g}
-      setze={(neu) =>
+      wann="aendern"
+      setze={(geaendert) => {
+        // Seit 0.2.135: ältere Werte gestrichener Arten werden mit der ersten Änderung neutral.
+        const neu = neutralisiert(geaendert);
         mit({
           erlaubteFehlerarten: neu.fehlerarten,
           blindeFlecken: neu.blindeFlecken,
           ...(neu.reglerstufen ? { reglerstufen: neu.reglerstufen } : {}),
           ...(neu.haeufigkeit !== undefined ? { haeufigkeit: neu.haeufigkeit } : {}),
           ...(neu.hoechstverlust ? { hoechstverlust: neu.hoechstverlust } : {}),
-        })
-      }
+        });
+      }}
       staerke={
         <StufenWahl
           stufen={v.stufenJePhase}

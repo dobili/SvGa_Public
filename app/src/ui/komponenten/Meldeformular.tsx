@@ -5,10 +5,14 @@
  * Buch melden“, mit Abbildungsnummer und Stellung). Die Meldung landet im Dashboard des Autors
  * (app/melden.ts). Geht das Senden nicht (kein Netz), bietet das Formular den alten Weg an:
  * Angaben kopieren und per E-Mail schicken.
+ * Seit T3 (0.2.130) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
+ * Angaben, damit niemand einer Voreinstellung blind zustimmt; seit T2 ist die
+ * Datenschutzerklärung ein Link.
  * Abhängigkeiten: app/melden.ts, Segmentwahl, i18n.
  */
 import { useState } from "react";
 import {
+  geraeteangaben,
   MELDEARTEN,
   sendeMeldung,
   TEXT_ZEICHEN,
@@ -19,6 +23,40 @@ import { t } from "../../i18n/sprache";
 import { Segmentwahl } from "./Segmentwahl";
 
 const KONTAKT = "kontakt@schach-von-grund-auf.com";
+const DATENSCHUTZ = "/datenschutz/";
+
+/**
+ * Die Angaben, die mit dem Häkchen mitgehen, mit ihren echten Werten (T3).
+ * Beispiel: App-Version 0.2.130, Browser und Gerät „Mozilla/5.0 (Linux; Android 14 …)“,
+ * Bildschirm „412×915 @2.625“, Sprache „de“, an einer Abbildung dazu Nummer und FEN.
+ */
+function Sendeangaben({ abbildung, stellung }: { abbildung?: string; stellung?: string }) {
+  const g = geraeteangaben();
+  const zeilen: readonly (readonly [string, string | undefined])[] = [
+    [t("melden.angabe.version"), g.version],
+    [t("melden.angabe.geraet"), g.geraet],
+    [t("melden.angabe.bildschirm"), g.bildschirm],
+    [t("melden.angabe.sprache"), g.sprache],
+    [t("melden.angabe.abbildung"), abbildung],
+    [t("melden.angabe.stellung"), stellung],
+  ];
+  return (
+    <details className="sendeangaben">
+      <summary>{t("melden.wasGesendet")}</summary>
+      <dl>
+        {zeilen
+          .filter(([, wert]) => wert)
+          .map(([name, wert]) => (
+            <div key={name}>
+              <dt>{name}</dt>
+              <dd>{wert}</dd>
+            </div>
+          ))}
+      </dl>
+      <p>{t("melden.angabe.nicht")}</p>
+    </details>
+  );
+}
 
 /** Rückmeldung nach dem Senden, bei Fehler mit Kopierknopf. */
 function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertext: string }) {
@@ -120,7 +158,10 @@ export function Meldeformular({
         />
         {abbildung ? t("melden.mitAbbildung", { nummer: abbildung }) : t("melden.mitGeraet")}
       </label>
-      <p className="hinweis klein">{t("melden.datenschutz")}</p>
+      <Sendeangaben abbildung={abbildung} stellung={stellung} />
+      <p className="hinweis klein">
+        {t("melden.datenschutz")} <a href={DATENSCHUTZ}>{t("melden.datenschutzLink")}</a>
+      </p>
       <div className="knopfreihe">
         <button
           type="button"

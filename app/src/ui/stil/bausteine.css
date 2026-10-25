@@ -418,9 +418,11 @@
   color: var(--text);
   font: inherit;
   font-size: var(--groesse-mittel);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Seit T3 (0.2.130) darf ein langes Wort umbrechen statt abgeschnitten zu werden
+     („Fehler im Buch“ stand bei 360 Pixeln als „Fehler im B…“ da). */
+  line-height: 1.15;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .segment:first-child {

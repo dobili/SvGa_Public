@@ -27,7 +27,7 @@
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * tour/, SprachWahl (seit V4 eigene Datei), i18n.
  */
-import { Brain, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
+import { Bot, Brain, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import {
   aendereEinstellungen,
@@ -49,6 +49,7 @@ import { liesMerker, schreibeMerker } from "../../app/merker";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
+import { MaiaWahl } from "./MaiaWahl";
 import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
 import { SprachWahl } from "./SprachWahl";
 import { MERKER_STARTANIMATION } from "./Startanimation";
@@ -166,7 +167,7 @@ function ErklaerungenWahl() {
   );
 }
 
-type Bereich = "brett" | "bedienung" | "anzeige" | "training" | "hilfe";
+type Bereich = "brett" | "bedienung" | "anzeige" | "training" | "bots" | "hilfe";
 const BEREICHE: readonly {
   wert: Bereich;
   text: Textschluessel;
@@ -197,6 +198,13 @@ const BEREICHE: readonly {
     text: "einstellungen.reiter.training",
     symbol: Brain,
     tour: "einstellungen-reiter-training",
+  },
+  // Seit 0.2.141: Maia-Zusatzpaket für menschlichere Bots (MaiaWahl.tsx).
+  {
+    wert: "bots",
+    text: "einstellungen.reiter.bots",
+    symbol: Bot,
+    tour: "einstellungen-reiter-bots",
   },
   {
     wert: "hilfe",
@@ -351,6 +359,7 @@ const INHALT: Readonly<Record<Bereich, () => React.ReactNode>> = {
   bedienung: () => <BedienungBereich />,
   anzeige: () => <AnzeigeBereich />,
   training: () => <TrainingBereich />,
+  bots: () => <MaiaWahl />,
   hilfe: () => <HilfeBereich />,
 };
 

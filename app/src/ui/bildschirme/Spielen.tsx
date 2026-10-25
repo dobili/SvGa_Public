@@ -45,6 +45,7 @@ import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie } from "../komponenten/Partienliste";
 import { LetzteSpielstaerke } from "../komponenten/LetzteSpielstaerke";
+import { useMaiaAktiv } from "../komponenten/maiastand";
 import { Startstellung } from "../komponenten/Startstellung";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -212,6 +213,8 @@ function Einstellungen({
 function useBeginne(fen: string, abbildung: string | undefined) {
   const { navigiere } = useNavigation();
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
+  // Seit 0.2.141: mit Maia, wenn das Paket geladen und eingeschaltet ist (gilt für die Partie).
+  const mitMaia = useMaiaAktiv();
   return (wahl: Wahl) => {
     const v = wahl.vorlieben;
     const bot = v.gegner === "engine" ? v.bot : null;
@@ -228,6 +231,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       eroeffnung: fen === GRUNDSTELLUNG && v.gegner === "engine" ? wahl.eroeffnung : null,
       gegner: v.gegner,
       bot,
+      ...(mitMaia && v.gegner === "engine" ? { maia: true } : {}),
       hilfen: wirdGewertet(fen, v) ? OHNE_HILFEN : v.hilfen,
       // Nur Partien gegen die Engine aus der Grundstellung zählen (Wunsch des Autors).
       gewertet: wirdGewertet(fen, v),

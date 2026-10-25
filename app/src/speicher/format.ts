@@ -92,7 +92,16 @@ export interface Einstellungen {
    * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
    */
   readonly vorWerkzeugen: VorWerkzeugen;
+  /**
+   * Seit 0.2.141 (Entscheidung des Autors, 25.10.2026): Bots wählen mit Maia, wenn das Zusatzpaket
+   * geladen ist (app/maiapaket.ts). Ältere Stände ohne diesen Eintrag lesen sich als „an“; ohne
+   * Paket wirkt der Schalter nicht.
+   */
+  readonly maia: Maiaschalter;
 }
+
+/** Maia an oder aus (wirkt nur mit geladenem Paket). */
+export type Maiaschalter = "an" | "aus";
 
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   brettfarben: "buch",
@@ -100,6 +109,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   figurensatz: "buch",
   ton: "aus",
   vorWerkzeugen: "aus",
+  maia: "an",
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -241,6 +251,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     // Der Schalter „Genauigkeit wie“ (0.2.83 bis 0.2.120, Feld genauigkeitsmodus) ist weg; ein
     // gespeicherter Wert wird übergangen.
     vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
+    maia: roh.maia === "aus" ? "aus" : "an",
   };
 }
 

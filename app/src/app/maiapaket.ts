@@ -167,3 +167,29 @@ export async function maialaufzeitBytes(): Promise<ArrayBuffer> {
   if (!antwort) throw new Error("Maia: Laufzeit fehlt");
   return antwort.arrayBuffer();
 }
+
+/** Stand des Pakets für die Oberfläche: null, solange noch nicht nachgesehen. */
+let bereit: boolean | null = null;
+const hoerer = new Set<() => void>();
+
+/** Sieht im Speicher nach, ob das Paket vollständig ist, und benachrichtigt die Oberfläche. */
+export async function pruefeMaia(): Promise<boolean> {
+  const neu = await maiaGeladen().catch(() => false);
+  if (neu !== bereit) {
+    bereit = neu;
+    for (const h of hoerer) h();
+  }
+  return neu;
+}
+
+/** Ist das Paket geladen? Für useSyncExternalStore (useMaiaBereit in ui/komponenten/MaiaWahl.tsx). */
+export function maiaBereitJetzt(): boolean {
+  return bereit === true;
+}
+
+/** Meldet sich für Änderungen des Paketstands an; gibt die Abmeldung zurück. */
+export function beiMaiaAenderung(h: () => void): () => void {
+  hoerer.add(h);
+  if (bereit === null) void pruefeMaia();
+  return () => hoerer.delete(h);
+}

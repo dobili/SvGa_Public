@@ -17,6 +17,7 @@ export type {
   Brettfarben,
   Einstellungen,
   Figurensatz,
+  Maiaschalter,
   Strenge,
   VorWerkzeugen,
   Ton,

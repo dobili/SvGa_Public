@@ -30,6 +30,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       figurensatz: "buch",
       ton: "aus",
       vorWerkzeugen: "aus",
+      maia: "an",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({
@@ -100,6 +101,7 @@ describe("Format 1", () => {
           figurensatz: "buch",
           ton: "aus",
           vorWerkzeugen: "aus",
+          maia: "an",
         },
         // Beantwortete Warum-Fragen (seit 0.2.99) fehlen in Format 1 und lesen sich leer.
         fortschritt: { ...format1.fortschritt, warum: {}, eingeschaetzt: {} },

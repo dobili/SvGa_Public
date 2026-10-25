@@ -35,6 +35,7 @@ describe("Rundreise", () => {
         figurensatz: "klassisch-cburnett",
         ton: "an",
         vorWerkzeugen: "an",
+        maia: "aus",
       },
       lernstand: { 1: [0, 2] },
       sammlung: [

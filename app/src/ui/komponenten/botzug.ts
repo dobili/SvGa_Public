@@ -17,6 +17,7 @@ import { gegnerstaerke } from "../../engine/botstaerke";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
+import { MAIA_WEB } from "../../engine/maia-web";
 import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../engine/zugwahl";
 import { botBedenkzeit, eigeneRestzeit, zieheBotMitUhr } from "../../spiel/botzeit";
 import { mitUhrverzug } from "../../spiel/ablauf";
@@ -75,6 +76,14 @@ export function stufeFuer(
 }
 
 /** Der Verlauf der Partie für die Fehlerneigung (engine/menschlich.ts): die Tagesform. */
+/**
+ * Maia für die Züge des Bots (0.2.141), wenn die Partie mit Maia begann (Paket geladen und
+ * eingeschaltet, Spielen.tsx). Die Laufzeit lädt die Netze beim ersten Zug aus dem Speicher.
+ */
+function maiaDerPartie(partie: Partie): Pick<Gegnerprofil, "maia"> {
+  return partie.einstellung.maia ? { maia: { laufzeit: MAIA_WEB } } : {};
+}
+
 function verlaufVon(partie: Partie): Verlauf {
   return { tagesform: tagesform(partie.id) };
 }
@@ -103,6 +112,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       verlauf: verlaufVon(partie),
       restMs: eigeneRestzeit(partie, jetztMs),
       tempo: wahltempo(e.uhr),
+      ...maiaDerPartie(partie),
     };
   }
   if (e.bot === null) {
@@ -115,6 +125,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       verlauf: verlaufVon(partie),
       restMs: eigeneRestzeit(partie, jetztMs),
       tempo: wahltempo(e.uhr),
+      ...maiaDerPartie(partie),
     };
   }
   const bot = gegnerVon(e.bot);
@@ -137,6 +148,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),
+    ...maiaDerPartie(partie),
   };
 }
 
@@ -149,6 +161,7 @@ function gruppenmitglieder(partie: Partie, fen: string, jetztMs: number): Gruppe
     verlauf: verlaufVon(partie),
     restMs: eigeneRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),
+    ...maiaDerPartie(partie),
   });
 }
 

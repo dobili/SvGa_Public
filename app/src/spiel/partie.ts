@@ -58,6 +58,11 @@ export interface Partieeinstellung {
   readonly abbildung: string | null;
   /** Gegner (0.2.41): die Engine oder ein Mensch am selben Gerät. */
   readonly gegner: Gegnerart;
+  /**
+   * Seit 0.2.141: Der Bot wählt mit Maia (Paket geladen und eingeschaltet beim Beginn). Gilt für
+   * die ganze Partie, auch wenn der Schalter mitten in der Partie umgestellt wird; fehlend: ohne.
+   */
+  readonly maia?: boolean;
   /** Kennung eines vorgefertigten oder eigenen Gegners (engine/gegner.ts), sonst null. */
   readonly bot: string | null;
   /** Name des Gegners zur Zeit der Partie (0.2.42; eigene Gegner lassen sich löschen). */

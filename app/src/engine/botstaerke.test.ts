@@ -90,10 +90,11 @@ describe("Elo-Zahl der Bots", () => {
 describe("Zahlen je Zeitklasse (seit 0.2.131 umgerechnet)", () => {
   const KLASSISCH_30_20 = { grundzeitMs: 1_800_000, zuschlagMs: 20_000 };
   const BLITZ_3_2 = { grundzeitMs: 180_000, zuschlagMs: 2_000 };
-  it("ein Bot ist ein Mensch: Blitz nie über Schnellschach, Stufen in jeder Zeitklasse geordnet", () => {
+  it("ein Bot ist ein Mensch: Blitz < Schnellschach < Klassisch, Stufen in jeder Zeitklasse geordnet", () => {
     for (const g of GEGNER) {
       const schnell = staerkeDesBots(g.kennung) ?? 0;
-      expect(staerkeDesBots(g.kennung, "blitz"), g.kennung).toBeLessThanOrEqual(schnell);
+      expect(staerkeDesBots(g.kennung, "blitz"), g.kennung).toBeLessThan(schnell);
+      expect(staerkeDesBots(g.kennung, "classical"), g.kennung).toBeGreaterThan(schnell);
     }
     for (const tempo of ["blitz", "rapid", "classical"] as const) {
       for (const n of STUFEN.slice(1)) {

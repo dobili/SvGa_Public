@@ -1,6 +1,6 @@
 /** Tests der Umrechnung Schnellschach → Blitz und Klassisch (engine/zeitklassenabstand.ts, 0.2.131). */
 import { describe, expect, it } from "vitest";
-import { LICHESS_UNTERGRENZE, wertungInZeitklasse, zahlInZeitklasse } from "./zeitklassenabstand";
+import { wertungInZeitklasse, zahlInZeitklasse } from "./zeitklassenabstand";
 
 describe("Ein Mensch mit drei Wertungen", () => {
   it("Schnellschach bleibt, Blitz liegt darunter, Klassisch unten darüber", () => {
@@ -20,9 +20,11 @@ describe("Ein Mensch mit drei Wertungen", () => {
       }
     }
   });
-  it("angezeigte Zahlen: nicht unter 400, außer Schnellschach liegt selbst darunter", () => {
-    expect(zahlInZeitklasse(450, "blitz")).toBe(LICHESS_UNTERGRENZE);
-    expect(zahlInZeitklasse(347, "blitz")).toBe(347);
+  it("für jede Zahl gilt Blitz < Schnellschach < Klassisch, mindestens 50 Abstand", () => {
+    for (let w = 200; w <= 3400; w += 25) {
+      expect(zahlInZeitklasse(w, "blitz"), `Blitz ${w}`).toBeLessThanOrEqual(w - 50);
+      expect(zahlInZeitklasse(w, "classical"), `Klassisch ${w}`).toBeGreaterThanOrEqual(w + 50);
+    }
     expect(zahlInZeitklasse(1500.4, "rapid")).toBe(1500.4);
   });
 });

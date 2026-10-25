@@ -13,8 +13,6 @@
 import type { Wertungstempo } from "../spiel/elomodell-daten";
 import { ABSTAND_ZU_SCHNELLSCHACH, type Abstandspunkt } from "./zeitklassenabstand-daten";
 
-/** Lichess vergibt keine Zahl unter 400; tiefer rechnet die Umrechnung angezeigte Zahlen nicht. */
-export const LICHESS_UNTERGRENZE = 400;
 /** Schritte der Fixpunktrechnung (der Abstand hängt vom Mittel beider Zahlen ab); 8 genügen auf 1 Elo. */
 const SCHRITTE = 8;
 
@@ -52,13 +50,13 @@ export function wertungInZeitklasse(schnellschach: number, tempo: Wertungstempo)
 }
 
 /**
- * Die angezeigte und gewertete Zahl eines Bots oder einer Stufe in einer Zeitklasse: die
- * umgerechnete Zahl, aber nicht unter der Lichess-Untergrenze 400, außer die Schnellschach-Zahl
- * liegt selbst darunter (dann nie unter ihr, damit Blitz nicht über Schnellschach rutscht).
- * Beispiel: Tom (347 in Schnellschach) → Blitz 347, Klassisch etwa 580.
+ * Die angezeigte und gewertete Zahl eines Bots oder einer Stufe in einer Zeitklasse, auf ganze
+ * Elo gerundet. Weil der Blitz-Abstand überall höchstens −50 und der Klassisch-Abstand mindestens
+ * +50 ist (engine/zeitklassenabstand-daten.ts), gilt für jeden Bot Blitz < Schnellschach <
+ * Klassisch, auch unter 400 (dort zeigt die App ohnehin nur „unter 400“).
+ * Beispiel: Tom (347 in Schnellschach) → Blitz 297, Klassisch etwa 560.
  */
 export function zahlInZeitklasse(schnellschach: number, tempo: Wertungstempo): number {
   if (tempo === "rapid") return schnellschach;
-  const boden = Math.min(schnellschach, LICHESS_UNTERGRENZE);
-  return Math.round(Math.max(boden, wertungInZeitklasse(schnellschach, tempo)));
+  return Math.round(wertungInZeitklasse(schnellschach, tempo));
 }

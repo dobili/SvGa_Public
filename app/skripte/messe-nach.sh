@@ -3,6 +3,8 @@
 # messplan-nach/<fassung>/teil-N.txt (erzeugt von src/engine/messplan-nach.messung.ts) mit je 24
 # Partien, ohne Anker (die der Neumessung gelten weiter). Ergebnis auf Zweig messung-nach-<fassung>-N.
 # Aufruf (im Ordner app/): skripte/messe-nach.sh ohne 3
+# Mit PLANORDNER, ZIELNAME und PARTIEN auch für andere Pläne (etwa die Gruppen nach der neuen
+# Ordnung, 0.2.144): PLANORDNER=messplan-gruppen ZIELNAME=gruppen PARTIEN=36 skripte/messe-nach.sh mit 1
 # Fertige Paarungen (Datei vorhanden) werden beim Neustart übersprungen.
 set -euo pipefail
 set -f  # Kürzel mit „*“ (Maia) nicht als Dateimuster lesen
@@ -10,8 +12,11 @@ FASSUNG=${1:?Fassung ohne oder mit}
 N=${2:?Teil 1 bis 10}
 APP=$(cd "$(dirname "$0")/.." && pwd)
 cd "$APP"
-PLAN="$APP/messplan-nach/$FASSUNG/teil-$N.txt"
-ZIEL="$APP/../messdaten/nach/$FASSUNG/teil-$N"
+PLANORDNER=${PLANORDNER:-messplan-nach}
+ZIELNAME=${ZIELNAME:-nach}
+PARTIEN=${PARTIEN:-24}
+PLAN="$APP/$PLANORDNER/$FASSUNG/teil-$N.txt"
+ZIEL="$APP/../messdaten/$ZIELNAME/$FASSUNG/teil-$N"
 mkdir -p "$ZIEL/neu-nach"
 [ -d node_modules ] || npm ci
 npm run vorbereiten > /dev/null
@@ -26,13 +31,13 @@ fi
 export MESSUNG_ENGINE_PFAD="$ENGINE" VITE_CONFIG_NATIVE_IGNORE_WARNING=true
 PAARE=$(sed -n 1p "$PLAN")
 REST=$(for p in $PAARE; do [ -s "$ZIEL/neu-nach/$p.json" ] || echo "$p"; done)
-[ -z "$REST" ] || node skripte/messe-stufen.mjs $REST --partien 24 --parallel 4 --ziel "$ZIEL/neu-nach"
+[ -z "$REST" ] || node skripte/messe-stufen.mjs $REST --partien "$PARTIEN" --parallel 4 --ziel "$ZIEL/neu-nach"
 echo "fertig $(date -u +%FT%TZ)" > "$ZIEL/fertig.txt"
 cd "$APP/.."
-git checkout -q -B "messung-nach-$FASSUNG-$N"
-git add "messdaten/nach/$FASSUNG/teil-$N"
-git commit -q -m "Nachmessung nach Plan C, $FASSUNG Maia, Teil $N
+git checkout -q -B "messung-$ZIELNAME-$FASSUNG-$N"
+git add "messdaten/$ZIELNAME/$FASSUNG/teil-$N"
+git commit -q -m "Messung $ZIELNAME, $FASSUNG Maia, Teil $N
 
-Warum: 24 Partien mehr je Bot und Gruppe, damit die Zahlen weniger streuen (0.2.144)." || echo "nichts zu committen"
-git push -u origin "messung-nach-$FASSUNG-$N"
-echo "FERTIG: messdaten/nach/$FASSUNG/teil-$N auf Zweig messung-nach-$FASSUNG-$N"
+Warum: mehr Partien je Bot und Gruppe, damit die Zahlen weniger streuen (0.2.144)." || echo "nichts zu committen"
+git push -u origin "messung-$ZIELNAME-$FASSUNG-$N"
+echo "FERTIG: messdaten/$ZIELNAME/$FASSUNG/teil-$N auf Zweig messung-$ZIELNAME-$FASSUNG-$N"

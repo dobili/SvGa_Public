@@ -601,13 +601,17 @@
 }
 
 .gegner-sprechblase .gegner-portraet {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   flex: none;
 }
 
+/* Seit 0.2.130 (Wunsch des Autors: das Porträt war neben dem Text zu klein) 96 statt 64 Pixel,
+   und die Blase zeigt mit einem Zipfel auf das Porträt. */
 .gegner-blase {
+  position: relative;
   flex: 1;
+  min-width: 0;
   padding: 10px 12px;
   border: 1.5px solid var(--linie-stark);
   border-radius: var(--radius);
@@ -617,6 +621,19 @@
 
 .gegner-blase p {
   margin: 4px 0 0;
+}
+
+.gegner-blase::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: -8px;
+  width: 12px;
+  height: 12px;
+  border-left: 1.5px solid var(--linie-stark);
+  border-bottom: 1.5px solid var(--linie-stark);
+  background: var(--flaeche);
+  transform: rotate(45deg);
 }
 
 .gegner-klasse {

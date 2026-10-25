@@ -49,6 +49,8 @@ import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
+/** Zeichen der eigenen Stufe anstelle eines Porträts (96 Pixel groß seit 0.2.130). */
+const PORTRAETSYMBOL = 40;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
@@ -155,7 +157,7 @@ function Sprechblase({
         <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-          <SlidersHorizontal size={28} />
+          <SlidersHorizontal size={PORTRAETSYMBOL} />
         </span>
       )}
       <div className="gegner-blase">

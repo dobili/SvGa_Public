@@ -5284,3 +5284,117 @@ Freigabe „Alles ja“, mit der Bitte, den neuen Stand 0.2.128 zu berücksichti
   auf); die Karte heißt „Darstellung und Training“.
 - DS45 Rand der gestrichelten Chips in `--rand-bedien`; Überschrift im Formular eigener Bots.
 
+## Nutzungsprüfung DS46 bis DS57, V1 bis V9, T1 bis T4 (25.10.2026, Opus, Zweig `nutzungspruefung`, Version 0.2.130)
+
+Auftrag des Autors (25.10.2026): App und Website nach den Gruppen Design, Bedienung,
+Verlässlichkeit und Tempo sowie Vertrauen und Recht prüfen (Barrierefreiheit und Lernen als
+eigene Gruppen zurückgestellt). Grundlage: Fotos aller Bildschirme bei 360 Pixeln hell und
+dunkel, Tastaturdurchlauf, Messung von Tippflächen, Schriftgrößen und Fokus unter festen
+Leisten, Netzanfragen, Ladezeiten gedrosselt (CPU 4×, 1,6 Mbit/s). Vorschläge mit Vorher-Nachher-
+Bildern der echten App im privaten Artifact „Nutzungsprüfung“
+<https://claude.ai/artifact/SkEbgyv893PKa1vHt5PV2u> (nicht im Repository, weil es Abbildungen
+zeigt). Freigabe: alles ja außer T5 (keine Erklärung zur Barrierefreiheit).
+
+- DS46 Beta-Hinweis der Website in Creme (vorher Grau auf Navy, etwa 1,9 : 1).
+- DS47 Website: „App öffnen“ und „Installieren“ im Kopf der Startseite.
+- DS48 Partie: Untertitel einzeilig, Züge in einer rollenden Zeile neben den Zugknöpfen,
+  Abstände 8 Pixel; beide Uhren und das Brett bei 360 × 740 auf einem Schirm.
+- DS49 Zugliste der Abbildungen höchstens zwei Zeilen (4.3em); die Brettsymbole sind sichtbar.
+- DS50 Startleiste: „Weiß · 10 + 0 · gewertet“, Knopf „Beginnen“ (Bildschirmleser „Partie
+  beginnen“); neue Funktion `uhrnameKurz`.
+- DS51 Spielen: Gegner zuerst, dann Farbe, Bedenkzeit und Hilfen (hebt die Reihenfolge vom
+  19.10.2026 auf, weil die Startleiste sie zusammenfasst), Ausgangsstellung am Ende ohne Brett;
+  ab Abbildung oder eigener Stellung oben mit Brett. Karte in `Startstellung.tsx`, Rundgang
+  in derselben Reihenfolge.
+- DS52 `scroll-padding-bottom` auf `html` (Leiste unten, auf Spielen auch Startleiste), im
+  Querformat mit Schiene nur der sichere Rand (WCAG 2.4.11).
+- DS53 Fortschrittsringe in einer Reihe, Wort darunter.
+- DS54 Website-Link im Training als Zeichen in der Kapitelzeile.
+- DS55 Wörter unter vier Symbolen der Leiste, Zahnrad ohne (nimmt den Wunsch von 0.2.116
+  zurück).
+- DS56 Zonenwörter in „Deine Züge“ in der Stufe „fein“ (13 px) statt 0.6rem.
+- DS57 Manifest `orientation: "any"` (vorher „portrait“, das Querformat aus DS2 fehlte in der
+  installierten Android-App).
+- T1 Datenschutzerklärung: „Fehler melden“ sendet an uns (Satz „Die App selbst verschickt
+  nichts“ war seit R57 falsch).
+- T2 Links „Datenschutz“ und „Impressum“ am Ende von „Über die App“, Link im Meldeformular.
+- T3 „Was wird gesendet?“ mit den echten Werten unter dem voreingestellten Häkchen; Segmente
+  brechen um statt „…“.
+- T4 HSTS (ein Jahr, ohne Unterdomains) in `public/_headers`; Content Security Policy aus
+  `src/startseite/csp.ts`, beim Bauen mit den Prüfsummen der eingebetteten Skripte an
+  `dist/_headers` angehängt, live zunächst als Report-Only. `tests/e2e/csp.spec.ts` erzwingt
+  sie probeweise (Startseite, App, Engine, Partie: kein Verstoß; ohne Prüfsummen meldet derselbe
+  Test drei). Scharf schalten: frühestens 1.11.2026, wenn bis dahin kein Fehler gemeldet ist;
+  dann im Plugin `sicherheitsregelDatei` „-Report-Only“ streichen.
+
+## Ergänzungen des Autors zur Nutzungsprüfung (25.10.2026, Opus, Version 0.2.130)
+
+- **Marken der Zugklassen an Zugliste und Brett** (Wunsch: Symbole wie in „Deine Züge“ auch in
+  der Zugnavigation und beim Nachspielen an der gezogenen Figur): `Partiezuege.tsx` zeigt die
+  Marke statt des Zeichens als Text (Name für Bildschirmleser „2. g4, Patzer (??)“),
+  `Zugmarke.tsx`/`zugmarke.ts` setzen sie oben rechts ans Zielfeld; `Brettbereich` nimmt die
+  Überlagerung auch als Funktion der Drehung. Stile in `zugmarken.css`.
+- **„Deine Züge“ deutlicher** (Frage nach Expertise: andere Farben für Bereiche oder Balken?).
+  Empfehlung und Umsetzung: Balken in der Farbe des Urteils statt der Klasse (grün, ruhig grau,
+  rot), Zonen schwach in denselben Farben getönt, schwache Zeile mit Warnzeichen, fettem Urteil
+  und leichtem roten Grund. Warum so: Ein Bullet-Diagramm liest man am Ende des Balkens; die
+  Klassenfarbe sagte nur „welche Klasse“, die steht schon an der Marke. Bedeutung nie nur über
+  Farbe (Zeichen und Wort dazu).
+- **Porträt in der Sprechblase** 96 statt 64 Pixel, Blase mit Zipfel.
+- **Fehlerprofil als Säulen** (Wunsch: aufgeräumter, ähnlich den Balken in „Deine Züge“):
+  „aus“ als Zeichen, steigende Säulen wie eine Lautstärkeanzeige, gefüllt bis zur Wahl, Strich
+  unter „normal“, Wort rechts; jede Säule bleibt Optionsfeld mit dem Wort als Namen. Arten nur
+  mit „aus | an“ behalten einen schmalen Schalter. Datenformat unverändert.
+
+## Verlässlichkeit V1 bis V9 (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.130)
+
+Teil der Nutzungsprüfung, vom Autor freigegeben.
+
+- V1 „Offline bereit“ erst nach `navigator.serviceWorker.ready` und Zustand „activated“
+  (`app/workerbereit.ts`); bis dahin höchstens 99 %. vite-plugin-pwa meldet „offline ready“
+  schon beim Zustand „installed“; wer da ohne Netz neu lud, sah die Fehlerseite des Browsers.
+- V2 Navigationsstapel als Merker `svga.stapel` (Format 1, Zeitstempel, `app/stapelMerker.ts`):
+  beim Start wiederhergestellt, wenn jünger als 24 Stunden und jede Ansicht gültig; Sprungziele
+  in der Adresse haben Vorrang. Partien gegen die Engine öffnen nicht direkt (die Uhr liefe
+  sonst los), der Stapel endet davor auf „Spielen“ mit „Weiterspielen“. Die Zurück-Taste
+  übernimmt den vorhandenen Wächtereintrag der Browsergeschichte. Folge: Ein Sprachwechsel
+  bleibt auf dem Bildschirm. `starteImBrowser` löscht den Merker vor jedem Test (opt-in mit
+  `weitermachen: true`). Nur ein Merker, das Format der Nutzerdaten bleibt 5.
+- V3 Beim Sichtbarwerden höchstens stündlich `registration.update()` (`updateFaellig`); aktiv
+  wird ein Update weiter nur nach Tipp. Text `startseite.beta` angepasst.
+- V7 Fehlergrenze je Bildschirm (`app/Bildschirmgrenze.tsx`, Absturzbericht in
+  `Absturzbericht.tsx` für beide Grenzen): Leiste bleibt, „Zurück“, „Fehler melden“, Technik
+  eingeklappt, Geräteangaben nur mit Häkchen. Zurückgesetzt wird über einen Schlüssel des
+  Bildschirms in `getDerivedStateFromProps` statt eines React-`key`, der jeden Bildschirm bei
+  jedem Schritt neu aufbauen würde (gewähltes Werkzeug ginge verloren).
+- V8 `persist()` bei jedem Start, solange `persisted()` falsch ist; Laden wartet nicht darauf.
+- V9 Warteschlange für Meldungen ohne Netz (`app/meldeschlange.ts`, `svga.meldungen.warten`,
+  höchstens zehn, höchstens 30 Tage); gesendet bei „online“, beim Start und nach jeder
+  erfolgreichen Meldung; 4xx und 5xx kommen nicht in die Schlange. „Alle Daten löschen“ leert sie.
+  Satz in der Datenschutzerklärung ergänzt.
+
+## Tempo V4 bis V6 (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.130)
+
+Gemessen mit Pixel 7, CPU 4× gedrosselt, Seiten zusätzlich 1,6 Mbit/s und 150 ms; vorher ein
+Build von 8b2c3ae unter denselben Bedingungen.
+
+- V4 Der Service Worker teilt die Dateiliste in Kern und Sprachpakete (`src/sw/dateiliste.ts`,
+  `src/sw/sprachpakete.ts`); vorab lädt nur der Kern, `daten/en/**` und `en.json` beim ersten
+  Abruf, mit Revision (deshalb nicht `globIgnores`, sonst bliebe Englisch nach Updates veraltet).
+  `en.json` per `import()` (`i18n/sprachpaket-en.ts`). Wechsel auf Englisch ohne Netz und ohne
+  Paket: Meldung, die App bleibt deutsch; mit Netz lädt das ganze Paket im Hintergrund.
+  Vorab: 335 Dateien mit 20,9 MB → 313 Dateien mit 15,2 MB; Sprachbaustein 187 → 96 KB gzip.
+  Die Entscheidung vom 15.10.2026 (die Startseite lädt schon vorab) bleibt.
+- V5 Ursache war nicht der Fortschritt (sein `hidden` wirkte wegen `display: flex` nie), sondern
+  die Anleitung je Gerät, die erst `startseite.ts` einblendete. Jetzt wählt ein kleines Skript
+  im Installationsteil sie vor dem ersten Zeichnen (Test gegen `anleitungFuer` für 8
+  Browserkennungen), der Fortschritt hält seinen Platz mit `visibility`, zwei Schriftschnitte
+  per preload, die wechselnden Texte setzt der Build ins HTML. CLS auf / 0,092 → 0, auf
+  /installieren/ 0,032 → 0; JavaScript der Startseite 625 KB → 12 KB; FCP etwa 80 ms später
+  (Preload). Keine Ersatzschrift mit size-adjust: nur gegen Liberation Sans abstimmbar.
+- V6 Eröffnungsindex einmal gebaut und gemerkt (`schach/eroeffnungsindexVorrat.ts`, erstes Mal
+  nach dem nächsten Bild), Spielstufe in `usePartie` nur bei neuer Stellung und Engine am Zug,
+  Leiste markiert sofort und wechselt im nächsten Bild, „Beginnen“ sofort gedrückt
+  (`aria-busy`). `startTransition` verworfen (60 ms später). INP Spielen 152 → 24 ms, Partie
+  beginnen 304 → 24 ms; das erste Zeichnen von Spielen bleibt etwa 160 ms.
+- Die Sprachwahl steht in `SprachWahl.tsx` (EinstellungenKarte war fast 400 Zeilen).

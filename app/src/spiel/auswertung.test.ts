@@ -204,3 +204,47 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(0.1, { ...ruhig, wertVorher: 10 })).toBe("sehrGut");
   });
 });
+
+describe("Theoriezug (Klasse „buch“, seit dem Wunsch des Autors vom 25.10.2026)", () => {
+  // Partie 1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6?? 4. Dxf7#; Werte so, dass nur 3... Sf6 etwas verliert.
+  const werte = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 10, 10];
+  const alleTheorie = [true, true, true, true, true, true, true];
+
+  it("Theorie, solange alle Züge davor Theoriezüge waren", () => {
+    const klassen = zugurteile(partie(), werte, [], [], alleTheorie).map((u) => u.klasse);
+    expect(klassen.slice(0, 5)).toEqual(["buch", "buch", "buch", "buch", "buch"]);
+    // 3... Sf6?? verliert: Patzer, und danach ist die Theorie vorbei (4. Dxf7# kein Theoriezug).
+    expect(klassen[5]).toBe("patzer");
+    expect(klassen[6]).not.toBe("buch");
+  });
+
+  it("einmal außerhalb der Theorie, bleibt es so (wie „out of book“ bei chess.com)", () => {
+    const klassen = zugurteile(partie(), werte, [], [], [true, true, false, true, true]);
+    expect(klassen.map((u) => u.klasse).slice(0, 5)).toEqual([
+      "buch",
+      "buch",
+      "sehrGut",
+      "sehrGut",
+      "sehrGut",
+    ]);
+  });
+
+  it("benannt, aber schlecht (Bongcloud 2. Ke2, Verlust ab 0,5): kein Theoriezug", () => {
+    const theorie = {
+      warBester: false,
+      einziger: false,
+      opfer: false,
+      vorherVerlust: 0,
+      wertVorher: 0.3,
+      abstand: 0,
+      imSchach: false,
+      buch: true,
+    };
+    expect(klasseVon(0.8, theorie)).toBe("ungenau");
+    expect(klasseVon(0.2, theorie)).toBe("buch");
+  });
+
+  it("ohne Angabe gibt es keine Theoriezüge (so rechnen Spielstärke und Wertung)", () => {
+    expect(zugurteile(partie(), werte).some((u) => u.klasse === "buch")).toBe(false);
+  });
+});

@@ -21,6 +21,7 @@ import { zweigzuege, type Zweigzug } from "../../spiel/nebenzweig";
 import type { Partie } from "../../spiel/partie";
 import { rueckblickMarken } from "../../spiel/rueckblick";
 import { sanZuUci } from "../../spiel/zuege";
+import type { Theoriequellen } from "../../schach/theorie";
 import { Bewertungsbalken } from "./Bewertungsbalken";
 import type { Zweigwahl } from "./Nebenzweig";
 import { Rueckblickkarte } from "./Rueckblickkarte";
@@ -32,6 +33,8 @@ export interface Rueckblick {
   readonly urteile: readonly Zugurteil[];
   /** Hauptvariante der Engine je Stellung (UCI); leer bei älteren Auswertungen (R5, 0.2.56). */
   readonly varianten?: readonly (readonly string[])[];
+  /** Quellen der Theorie-Erkennung für die Namen bei einem Theoriezug (25.10.2026). */
+  readonly theorie?: Theoriequellen | null;
 }
 
 /** Erklärung des gezeigten Zuges, nur wenn er ein Fehlerzeichen trägt. */

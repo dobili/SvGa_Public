@@ -30,7 +30,7 @@ import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { zugurteile } from "../../spiel/auswertung";
+import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { buchzuegeAb } from "../../schach/eroeffnungsindex";
 import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
@@ -40,6 +40,7 @@ import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
 import { Gruppenfreischaltung } from "../komponenten/Gruppenmodus";
 import { Ergebnisblende } from "../komponenten/Ergebnisblende";
+import { Zugmarke } from "../komponenten/Zugmarke";
 import { Partiestatus } from "../komponenten/Partiestatus";
 import { Partietitel } from "../komponenten/Partietitel";
 import { Partieuhr } from "../komponenten/Partieuhr";
@@ -128,6 +129,7 @@ function Spielfeld({
   ansicht,
   beiAnsicht,
   zeichen,
+  klassen,
   phasen,
   ruhig,
   werkzeug,
@@ -145,6 +147,8 @@ function Spielfeld({
   ansicht: Ansichtsstelle | null;
   beiAnsicht: (ansicht: Ansichtsstelle) => void;
   zeichen: readonly (string | null)[];
+  /** Zugklasse je Halbzug nach der Auswertung, für die Marken in Zugliste und Brett (0.2.130). */
+  klassen: readonly (Zugklasse | null)[];
   /** Phase je Stellung für „M“ und „E“ in der Zugliste (0.2.43). */
   phasen: readonly Phase[];
 }) {
@@ -205,6 +209,7 @@ function Spielfeld({
         zuege={sans}
         stelle={stelle}
         zeichen={zeichen}
+        klassen={klassen}
         phasen={phasen}
         beiStelle={(neu) => beiAnsicht({ zuege: sans.length, stelle: neu, marken: [] })}
       />
@@ -229,7 +234,18 @@ function Spielfeld({
         }
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
         seitenleiste={rb.leiste}
-        ueberlagerung={<Ergebnisblende partie={partie} />}
+        ueberlagerung={(gedreht: boolean) => (
+          <>
+            <Ergebnisblende partie={partie} />
+            {!rb.zweigzug && stelle > 0 && (
+              <Zugmarke
+                feld={letzter?.nach ?? null}
+                klasse={klassen[stelle - 1] ?? null}
+                gedreht={gedreht}
+              />
+            )}
+          </>
+        )}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {engineKarte}
@@ -288,6 +304,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         ansicht={ansicht}
         beiAnsicht={setzeAnsicht}
         zeichen={urteile.map((u) => u.zeichen)}
+        klassen={urteile.map((u) => u.klasse)}
         phasen={phasen}
         ruhig={ruhig}
         werkzeug={werkzeug}

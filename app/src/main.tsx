@@ -32,6 +32,7 @@ import "./ui/stil/breit.css";
 import "./ui/stil/brett.css";
 import "./ui/stil/tour.css";
 import "./ui/stil/auswertung.css";
+import "./ui/stil/zugmarken.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteOffline } from "./app/offline";

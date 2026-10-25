@@ -119,7 +119,8 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Rückblick (Vorschlag H, 0.2.38): Kurve über der Auswertung, Balken links am Brett. Nach
   // 2. g4?? setzt Schwarz matt: Der Balken zeigt „−M“.
   await expect(page.getByTestId("verlaufskurve")).toBeVisible();
-  await page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }).click();
+  // Seit 0.2.130 steht die Klasse als Marke am Zug; Bildschirmleser hören „2. g4, Patzer (??)“.
+  await page.getByTestId("partiezuege").getByRole("button", { name: "2. g4, Patzer (??)" }).click();
   await expect(page.getByTestId("bewertungsbalken")).toHaveAttribute("aria-label", /−M/);
   // Seit 0.2.39: Karte zum Zug unter dem Brett (Urteil, besserer Zug) und die Spielstärke.
   const karte = page.getByTestId("rueckblickkarte");
@@ -163,7 +164,7 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(
-    page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }),
+    page.getByTestId("partiezuege").getByRole("button", { name: "2. g4, Patzer (??)" }),
   ).not.toHaveAttribute("aria-current");
   await auswertung.getByRole("button", { name: "PGN kopieren" }).click();
   await expect(auswertung).toContainText(/PGN/);

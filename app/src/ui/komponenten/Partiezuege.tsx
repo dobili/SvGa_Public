@@ -6,13 +6,19 @@
  * aktuellen Stellung. Auch in der ruhigen Ansicht sichtbar (Wunsch des Autors: Brett,
  * Zugnavigation und gespielte Züge). Seit 0.2.43 (Wunsch des Autors) steht vor dem ersten Zug
  * des Mittelspiels ein „M“ und vor dem ersten Zug des Endspiels ein „E“, wie in der Kurve.
- * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react.
+ * Seit 0.2.130 (Wunsch des Autors, 25.10.2026) steht nach der Auswertung hinter jedem Zug die
+ * runde Marke seiner Zugklasse wie in „Deine Züge“ (statt des Zeichens als Text); Bildschirmleser
+ * hören den Namen der Klasse.
+ * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
+ * Auswertungssymbole.tsx.
  */
 import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
 import { Fragment } from "react";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
+import type { Zugklasse } from "../../spiel/auswertung";
 import { phasenwechsel, type Phase } from "../../spiel/phasen";
+import { Klassenmarke } from "./Auswertungssymbole";
 
 const SYMBOLGROESSE = 22;
 const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
@@ -33,9 +39,29 @@ function phasenmarken(phasen: readonly Phase[]): ReadonlyMap<number, Phase> {
   return marken;
 }
 
+/** Text des Zuges mit Marke der Klasse (falls bekannt), sonst mit dem Zugzeichen als Text. */
+function Zugtext({
+  text,
+  zeichen,
+  klasse,
+}: {
+  text: string;
+  zeichen: string | null;
+  klasse: Zugklasse | null;
+}) {
+  if (!klasse) return <>{`${text}${zeichen ?? ""}`}</>;
+  return (
+    <>
+      {text}
+      <Klassenmarke klasse={klasse} />
+    </>
+  );
+}
+
 /**
- * Eingaben: Startstellung, Züge in SAN, gezeigte Stelle (Zahl der Halbzüge), Zugzeichen der
- * Auswertung je Halbzug (nach dem Ende), Phase je Stellung (für „M“ und „E“), Wechsel der Stelle.
+ * Eingaben: Startstellung, Züge in SAN, gezeigte Stelle (Zahl der Halbzüge), Zugzeichen und
+ * Zugklassen der Auswertung je Halbzug (nach dem Ende), Phase je Stellung (für „M“ und „E“),
+ * Wechsel der Stelle.
  * Beispiel: 1. e4 e5 2. Sf3, Stelle 3 → „2. Sf3“ hervorgehoben.
  */
 export function Partiezuege({
@@ -43,6 +69,7 @@ export function Partiezuege({
   zuege,
   stelle,
   zeichen = [],
+  klassen = [],
   phasen = [],
   beiStelle,
 }: {
@@ -50,6 +77,7 @@ export function Partiezuege({
   zuege: readonly string[];
   stelle: number;
   zeichen?: readonly (string | null)[];
+  klassen?: readonly (Zugklasse | null)[];
   phasen?: readonly Phase[];
   beiStelle: (stelle: number) => void;
 }) {
@@ -93,10 +121,16 @@ export function Partiezuege({
               type="button"
               className="zug"
               aria-current={index === stelle - 1 ? "step" : undefined}
+              aria-label={
+                klassen[index] ? `${text}, ${t(`zugklasse.${klassen[index]}`)}` : undefined
+              }
               onClick={() => beiStelle(index + 1)}
             >
-              {text}
-              {zeichen[index] ?? ""}
+              <Zugtext
+                text={text}
+                zeichen={zeichen[index] ?? null}
+                klasse={klassen[index] ?? null}
+              />
             </button>{" "}
           </Fragment>
         ))}

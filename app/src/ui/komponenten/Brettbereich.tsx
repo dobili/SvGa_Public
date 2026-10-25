@@ -93,8 +93,9 @@ export function Brettbereich({
   zusatzSchalter?: React.ReactNode;
   skelett?: boolean;
   seitenleiste?: ((gedreht: boolean) => React.ReactNode) | null;
-  /** Über dem Brett, etwa das Ergebnis am Partieende (R38). */
-  ueberlagerung?: React.ReactNode;
+  /** Über dem Brett, etwa das Ergebnis am Partieende (R38); als Funktion mit der Drehung,
+      wenn die Lage vom Feld abhängt (Zugmarke, 0.2.130). */
+  ueberlagerung?: React.ReactNode | ((gedreht: boolean) => React.ReactNode);
 }) {
   const [gedreht, setzeGedreht] = useState(anfangsGedreht);
   // Die Koordinaten stellt man in den Einstellungen ein; der Bildschirm liest sie beim Öffnen.
@@ -115,7 +116,9 @@ export function Brettbereich({
           gesperrt={bedienung.gesperrt?.feld ?? null}
           beiFeld={bedienung.beiFeld}
           ziehen={bedienung.ziehen}
-          ueberlagerung={ueberlagerung}
+          ueberlagerung={
+            typeof ueberlagerung === "function" ? ueberlagerung(gedreht) : ueberlagerung
+          }
           beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
         />
       </div>

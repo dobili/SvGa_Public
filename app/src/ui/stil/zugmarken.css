@@ -1,0 +1,30 @@
+/*
+ * Marken der Zugklassen an Zugliste und Brett (0.2.130, Wunsch des Autors vom 25.10.2026):
+ * dieselben runden Marken wie in „Deine Züge“, klein hinter dem Zug und groß am Zielfeld.
+ */
+.zug .klassenmarke {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  vertical-align: -4px;
+  font-size: var(--groesse-fein);
+}
+
+.zug .klassenmarke svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Oben rechts am Zielfeld, halb über den Rand wie bei chess.com; nimmt keine Tipps an. */
+.zugmarke-brett {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-65%, -35%);
+  pointer-events: none;
+}
+
+.zugmarke-brett .klassenmarke {
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+}

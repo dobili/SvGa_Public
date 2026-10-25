@@ -36,7 +36,11 @@ export function StrukturBereich() {
   const vorhanden = faellig.filter((id) => aufgaben.some((a) => a.id === id));
   if (!laeuft)
     return (
-      <div className="trainerrunde" data-testid="struktur-wahl" data-tour="trainer-wahl">
+      <div
+        className="trainerrunde trainerwahl"
+        data-testid="struktur-wahl"
+        data-tour="trainer-wahl"
+      >
         <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(vorhanden)} />
         <Stufenwahl stufe={stufe} setze={setzeStufe} erklaerung={t("strukturtrainer.stufenText")} />
         <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft([])}>

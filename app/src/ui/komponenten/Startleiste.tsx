@@ -108,7 +108,8 @@ export function Startleiste({
         .filter((teil) => teil !== null)
         .join(" · ");
   return (
-    <div className="startleiste" data-testid="startleiste">
+    // Tourziel die ganze Leiste: Die Tour erklärt Zusammenfassung und Knopf zusammen.
+    <div className="startleiste" data-testid="startleiste" data-tour="spielen-beginnen">
       <button
         type="button"
         className="startleiste-wer"

@@ -106,7 +106,11 @@ function Partiewahl({
   const [index, setzeIndex] = useState(0);
   const gewaehlt = liste[index] ?? null;
   return (
-    <div className="trainerrunde" data-testid="zugerraten-wahl" data-tour="trainer-wahl">
+    <div
+      className="trainerrunde trainerwahl"
+      data-testid="zugerraten-wahl"
+      data-tour="trainer-wahl"
+    >
       <Auswahlliste
         titel={t("zugerraten.partie")}
         eintraege={liste.map((p, i) => ({ wert: String(i), text: p.titel }))}

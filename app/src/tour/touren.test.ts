@@ -5,7 +5,8 @@
  * Warum: Leitlinie des Autors zu R52: Ein Test meldet Schritte, deren Ziel es nicht gibt. Zur
  * Laufzeit überspringt die Tour solche Schritte; ohne diesen Test fiele ein Tippfehler in der
  * Kennung also nie auf. Gesucht wird im Quelltext nach `data-tour="…"`, nach der Eigenschaft
- * `tour="…"` (Nachschlagen) und nach `tour: "…"` in Tabellen (Leiste, Reiter der Einstellungen).
+ * `tour="…"` (Nachschlagen), nach `tour: "…"` in Tabellen (Leiste, Reiter der Einstellungen) und
+ * nach bedingten Zielen `data-tour={… "…"}` (Partiestatus nur während der Partie).
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -16,7 +17,13 @@ import { TRAINER } from "../training/trainer";
 import { TOUREN, tourFuerAnsicht, type TourKennung } from "./touren";
 
 const QUELLEN = join(import.meta.dirname, "..");
-const MUSTER = [/data-tour="([^"]+)"/g, /\btour="([^"]+)"/g, /\btour: "([^"]+)"/g];
+const MUSTER = [
+  /data-tour="([^"]+)"/g,
+  // Bedingte Ziele wie `data-tour={partie.ende ? undefined : "partie-status"}`.
+  /data-tour=\{[^}"]*"([^"]+)"\}/g,
+  /\btour="([^"]+)"/g,
+  /\btour: "([^"]+)"/g,
+];
 
 /** Alle Quelldateien der App außer Tests und den Tourdaten selbst. */
 function quelldateien(ordner: string): string[] {

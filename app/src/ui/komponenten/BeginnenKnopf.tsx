@@ -40,7 +40,7 @@ export function BeginnenKnopf({
     void nachDemNaechstenBild().then(beiBeginn);
   };
   return (
-    <div className="beginnen" data-tour="spielen-beginnen">
+    <div className="beginnen">
       {laufend && ersetzen ? (
         <div className="nachfrage">
           <p>{t("spielen.ersetzenFrage")}</p>

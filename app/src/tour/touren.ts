@@ -68,6 +68,10 @@ function tour(titel: Textschluessel, schritte: readonly Tourschritt[]): Tour {
 // Gemeinsame Schritte der Trainer: vorn der Ablauf, hinten die Runde (ohne 30-Minuten-Plan und
 // Fehlerdatenbank, die keine Runden haben).
 const ANFANG = ziel("trainer-ablauf", "tour.trainer.ablauf");
+// Trainer ohne Auswahl beginnen gleich mit der Runde; dort ist die Beschreibung ausgeblendet
+// (uebung.css, DS6). Der Schritt steht dann in der Mitte und nennt, wo sie jederzeit steht
+// (Befund der Tourprüfung, 25.10.2026).
+const ANFANG_OHNE_WAHL = ziel("trainer-ablauf", "tour.trainer.ablaufMitte", true);
 const STUFE = ziel("trainer-wahl", "tour.trainer.stufe");
 const WIEDERHOLEN = ziel("trainer-wiederholen", "tour.trainer.wiederholen");
 const RUNDE: readonly Tourschritt[] = [
@@ -136,7 +140,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.roentgen": tour("trainer.roentgen.name", [
-    ANFANG,
+    ANFANG_OHNE_WAHL,
     mitte("tour.trainer.roentgen.schritte"),
     mitte("tour.trainer.roentgen.pfeile"),
     ...RUNDE,
@@ -154,7 +158,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.zielbilanz": tour("trainer.zielbilanz.name", [
-    ANFANG,
+    ANFANG_OHNE_WAHL,
     mitte("tour.trainer.zielbilanz.ausfuellen"),
     ...RUNDE,
   ]),
@@ -165,7 +169,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.faktorenbilanz": tour("trainer.faktorenbilanz.name", [
-    ANFANG,
+    ANFANG_OHNE_WAHL,
     mitte("tour.trainer.faktorenbilanz.waage"),
     ...RUNDE,
   ]),
@@ -206,7 +210,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.studien": tour("trainer.studien.name", [
-    ANFANG,
+    ANFANG_OHNE_WAHL,
     mitte("tour.trainer.studien.ziehen"),
     ...RUNDE,
   ]),
@@ -229,15 +233,16 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("fehler-eintraege", "tour.trainer.fehlerdatenbank.eintraege"),
   ]),
   "trainer.denkroutine": tour("trainer.denkroutine.name", [
-    ANFANG,
+    ANFANG_OHNE_WAHL,
     mitte("tour.trainer.denkroutine.minute"),
     ...RUNDE,
   ]),
   lernsammlung: tour("tour.titel.lernsammlung", [
     ziel("sammlung-einleitung", "tour.lernsammlung.einleitung"),
     ziel("sammlung-abfragen", "tour.lernsammlung.abfragen"),
-    ziel("sammlung-gruppe", "tour.lernsammlung.gruppen"),
+    // Reihenfolge wie auf dem Bildschirm: PGN steht über den Gruppen.
     ziel("sammlung-pgn", "tour.lernsammlung.pgn"),
+    ziel("sammlung-gruppe", "tour.lernsammlung.gruppen"),
     ziel("sammlung-neu", "tour.lernsammlung.neu"),
   ]),
   nachschlagen: tour("tour.titel.nachschlagen", [
@@ -274,6 +279,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     // Seit 0.2.139 steht „Deine Spielstärke“ wieder ganz oben über dem Gegner.
     ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
     // Reihenfolge wie auf dem Bildschirm seit DS51 (0.2.131): Gegner, Einstellungen, Stellung.
+    // Zuerst der Schalter Engine/Mensch; im Modus Mensch fehlen die folgenden Schritte zum Bot.
+    ziel("spielen-gegnerart", "tour.spielen.gegnerart"),
     ziel("spielen-gegner", "tour.spielen.gegner"),
     ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
     ziel("spielen-gitter", "tour.spielen.gitter"),
@@ -284,24 +291,29 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
   ]),
+  // Reihenfolge wie auf dem Bildschirm (Befund der Tourprüfung, 25.10.2026). Der Status gilt nur
+  // während der Partie, Rückblick und Auswertung erst danach; beide zugleich gibt es nie.
   partie: tour("tour.titel.partie", [
     ziel("partie-zuege", "tour.partie.zuege"),
     ziel("partie-uhr", "tour.partie.uhr"),
     ziel("brett", "tour.partie.brett"),
+    ziel("brett-werkzeuge", "tour.partie.brettwerkzeuge"),
     ziel("partie-ruhig", "tour.partie.ruhig"),
     ziel("partie-werkzeuge", "tour.partie.werkzeuge"),
     ziel("partie-status", "tour.partie.status"),
+    ziel("rueckblick-karte", "tour.partie.rueckblick"),
     ziel("partie-ende", "tour.partie.ende"),
     ziel("auswertung", "tour.partie.auswertung"),
+    ziel("auswertung-pgn", "tour.partie.pgn"),
     ziel("auswertung-kurve", "tour.partie.kurve"),
-    ziel("auswertung-staerke", "tour.partie.staerke"),
     ziel("auswertung-abweichung", "tour.partie.abweichung"),
     ziel("auswertung-patzer", "tour.partie.patzer"),
-    ziel("rueckblick-karte", "tour.partie.rueckblick"),
-    ziel("auswertung-pgn", "tour.partie.pgn"),
+    ziel("auswertung-staerke", "tour.partie.staerke"),
   ]),
-  // Profil (seit 0.2.134): Knopf zu den Einstellungen, Wertung, Fortschritt, Partien.
+  // Profil (seit 0.2.134): Name und Porträt (seit 0.2.140), Knopf zu den Einstellungen, Wertung,
+  // Fortschritt, Partien.
   ich: tour("tour.titel.ich", [
+    ziel("profil-karte", "tour.ich.profilkarte"),
     ziel("profil-einstellungen", "tour.ich.einstellungen"),
     ziel("einstellungen-wertung", "tour.ich.wertung"),
     ziel("einstellungen-fortschritt", "tour.ich.fortschritt"),
@@ -313,6 +325,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("einstellungen-reiter-bedienung", "tour.ich.reiterBedienung"),
     ziel("einstellungen-reiter-anzeige", "tour.ich.reiterAnzeige"),
     ziel("einstellungen-reiter-training", "tour.ich.reiterTraining"),
+    ziel("einstellungen-reiter-bots", "tour.ich.reiterBots"),
     ziel("einstellungen-reiter-hilfe", "tour.ich.reiterHilfe"),
     ziel("einstellungen-daten", "tour.ich.daten"),
     ziel("einstellungen-ueber", "tour.ich.ueber"),

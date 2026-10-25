@@ -463,7 +463,7 @@
   "engine.urteil.verlust": "{zug}{zeichen}: Die Gewinnchance von {seite} fällt von {vorher} % auf {nachher} %. Besser: {bester} (goldener Pfeil).",
   "engine.urteil.verlustEntschieden": "{zug}{zeichen} kostet etwa {verlust} Bauerneinheiten; die Gewinnchance von {seite} bleibt trotzdem bei {vorher} %. Besser: {bester} (goldener Pfeil).",
   "engine.urteil.keins": "Für diesen Zug liefert die Engine kein Urteil.",
-  "engine.zeichenRegel": "Zeichen für den letzten Zug: „?!“ ab 0,5, „?“ ab 1,2, „??“ ab 3 Bauerneinheiten Verlust gegenüber dem besten Zug der Engine; „!“, wenn jeder andere Zug mindestens 1,2 kostet. Steht die ziehende Seite danach noch mit +5 oder besser, gibt es höchstens „?!“ (sie gewinnt weiter, etwa mit +5 statt Matt in 2). Dieselben Grenzen gelten in der Auswertung nach der Partie.",
+  "engine.zeichenRegel": "So vergibt die Engine Zeichen für den letzten Zug: „?!“ (ungenau), wenn er etwa einen halben Bauern schlechter ist als ihr bester Zug, „?“ (Fehler) ab gut einem Bauern, „??“ (grober Fehler) ab drei Bauern. „!“ bekommt ein Zug, wenn jeder andere deutlich schlechter wäre. Wer danach weiter klar gewinnt, bekommt höchstens „?!“. Nach der Partie gelten dieselben Regeln.",
   "engine.messung": "Rechenzeit {zeit} s · Tiefe {tiefe} · {knoten} Tsd. Stellungen/s · Start der Engine {start} s",
   "engine.keineZuege": "In dieser Stellung gibt es keinen legalen Zug.",
   "ich.titel": "Einstellungen",

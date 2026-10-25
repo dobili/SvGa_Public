@@ -41,6 +41,18 @@ test("Zurück-Taste führt von der Abbildung zum Buch, nicht aus der App", async
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
 });
 
+test("Weitermachen (V2): nach dem Neuladen wieder auf der Abbildung, Zurück-Taste zum Buch", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { weitermachen: true });
+  await oeffneAbbildung(page, "1.28", "1.28");
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Abb. 1.28" })).toBeVisible();
+  await page.goBack();
+  await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await expect(page).toHaveURL(/\/app\/$/);
+});
+
 test("unbekannte Nummer: Meldung und Vorschläge", async ({ page }) => {
   await starteImBrowser(page);
   await page.getByLabel("Abbildung öffnen").fill("1.99");

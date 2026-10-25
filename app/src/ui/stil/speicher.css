@@ -308,3 +308,14 @@
   color: var(--text);
   font-weight: 600;
 }
+
+/* Absturzseite eines Bildschirms (V7): die technische Meldung steht leise und eingeklappt unten. */
+.absturz-technik {
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.absturz-technik summary {
+  cursor: pointer;
+  padding-block: calc(var(--raster) / 2);
+}

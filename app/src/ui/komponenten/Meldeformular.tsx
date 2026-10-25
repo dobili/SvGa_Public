@@ -3,8 +3,9 @@
  *
  * Rolle im Gesamtbild: In den Einstellungen („Über die App“) und an jeder Abbildung („Fehler im
  * Buch melden“, mit Abbildungsnummer und Stellung). Die Meldung landet im Dashboard des Autors
- * (app/melden.ts). Geht das Senden nicht (kein Netz), bietet das Formular den alten Weg an:
- * Angaben kopieren und per E-Mail schicken.
+ * (app/melden.ts). Fehlt das Netz, wartet die Meldung seit V9 auf dem Gerät und geht später
+ * hinaus; scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben
+ * kopieren und per E-Mail schicken.
  * Seit T3 (0.2.130) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
  * Angaben, damit niemand einer Voreinstellung blind zustimmt; seit T2 ist die
  * Datenschutzerklärung ein Link.
@@ -13,6 +14,7 @@
 import { useState } from "react";
 import {
   geraeteangaben,
+  KONTAKT_ADRESSE,
   MELDEARTEN,
   sendeMeldung,
   TEXT_ZEICHEN,
@@ -22,7 +24,6 @@ import {
 import { t } from "../../i18n/sprache";
 import { Segmentwahl } from "./Segmentwahl";
 
-const KONTAKT = "kontakt@schach-von-grund-auf.com";
 const DATENSCHUTZ = "/datenschutz/";
 
 /**
@@ -68,6 +69,13 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
       </p>
     );
   }
+  if (ergebnis.art === "vorgemerkt") {
+    return (
+      <p className="hinweis" role="status">
+        {t("melden.vorgemerkt")}
+      </p>
+    );
+  }
   if (ergebnis.art === "zuViele") {
     return (
       <p className="hinweis" role="status">
@@ -82,7 +90,7 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
       .catch((fehler: unknown) => console.warn("Zwischenablage nicht verfügbar:", fehler));
   return (
     <div role="status">
-      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT })}</p>
+      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT_ADRESSE })}</p>
       <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
         {kopiert ? t("melden.kopiert") : t("melden.kopieren")}
       </button>
@@ -122,7 +130,7 @@ export function Meldeformular({
     setzeErgebnis(await sendeMeldung({ art, text, ...zusatz }, mitGeraet));
     setzeSendet(false);
   };
-  if (ergebnis?.art === "gesendet") {
+  if (ergebnis?.art === "gesendet" || ergebnis?.art === "vorgemerkt") {
     return (
       <div className="meldeformular" data-testid="meldeformular">
         <Ergebnis ergebnis={ergebnis} kopiertext="" />

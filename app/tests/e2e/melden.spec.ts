@@ -1,7 +1,7 @@
 /**
  * Oberflächentests für „Fehler melden“ (R57): Formular in den Einstellungen, „Fehler im Buch
- * melden“ an einer Abbildung, Kopierweg ohne Netz. Die Schnittstelle /api/melden beantwortet
- * Playwright selbst (im Test gibt es keinen Worker).
+ * melden“ an einer Abbildung, Kopierweg bei Serverfehler, Warteschlange ohne Verbindung (V9).
+ * Die Schnittstelle /api/melden beantwortet Playwright selbst (im Test gibt es keinen Worker).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, starteImBrowser } from "./hilfen";
@@ -56,7 +56,7 @@ test("Abbildung: Fehler im Buch melden schickt Nummer und Stellung", async ({ pa
   expect(String((gesendet[0] as { stellung: string }).stellung)).toMatch(/^[1-8a-zA-Z/]+ [wb] /);
 });
 
-test("ohne Netz: Hinweis auf E-Mail und Kopierweg", async ({ page }) => {
+test("Serverfehler: Hinweis auf E-Mail und Kopierweg", async ({ page }) => {
   await fangeMeldungen(page, 500);
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
@@ -67,4 +67,23 @@ test("ohne Netz: Hinweis auf E-Mail und Kopierweg", async ({ page }) => {
   await formular.getByRole("button", { name: "Senden" }).click();
   await expect(formular.getByRole("status")).toContainText("kontakt@schach-von-grund-auf.com");
   await expect(formular.getByRole("button", { name: "Text und Angaben kopieren" })).toBeVisible();
+});
+
+test("ohne Verbindung: Meldung wartet und geht beim Wiederverbinden hinaus (V9)", async ({
+  page,
+  context,
+}) => {
+  const gesendet = await fangeMeldungen(page);
+  await starteImBrowser(page);
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("button", { name: "Fehler melden" }).click();
+  const formular = page.getByTestId("meldeformular");
+  await formular.getByLabel(/Was ist passiert/).fill("Im Zug gemeldet");
+  await context.setOffline(true);
+  await formular.getByRole("button", { name: "Senden" }).click();
+  await expect(formular.getByRole("status")).toContainText("Ohne Netz gespeichert");
+  expect(gesendet).toHaveLength(0);
+  await context.setOffline(false);
+  await expect.poll(() => gesendet.length).toBe(1);
+  expect(gesendet[0]).toMatchObject({ art: "fehler", text: "Im Zug gemeldet" });
 });

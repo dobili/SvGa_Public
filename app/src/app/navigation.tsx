@@ -7,23 +7,50 @@
  * Wischgeste am iPhone gehen im Verlauf zurück. Damit sie die vorige Ansicht der App zeigen und
  * die App nicht verlassen, liegt immer genau ein zusätzlicher Verlaufseintrag bereit, solange
  * es in der App noch etwas zum Zurückgehen gibt.
- * Abhängigkeiten: stapel.ts, navigationsKontext.ts, React.
+ * Seit V2 (Nutzungsprüfung 25.10.2026) sichert der Rahmen jeden Stand als Merker
+ * (app/stapelMerker.ts), und der Anfangsstapel kann ein wiederhergestellter sein. Steht die Seite
+ * nach einem Neuladen schon auf dem Wächter-Eintrag, übernimmt der Rahmen ihn, statt einen
+ * weiteren anzulegen; so führt die Zurück-Taste auch nach dem Neuladen eine Ansicht zurück.
+ * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, React.
  */
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
 import { NavigationsKontext, type Navigation } from "./navigationsKontext";
-import { neuerStapel, oben, schritt, type Bereich } from "./stapel";
+import { oben, schritt, type Stapel } from "./stapel";
+import { sichereStapel } from "./stapelMerker";
 
 /** Markierung des Wächter-Eintrags im Browserverlauf. */
 const WAECHTER = { app: "schach-von-grund-auf", waechter: true };
 
-/** Stellt die Navigation für alle Bildschirme bereit. */
-export function NavigationsRahmen({ start, children }: { start: Bereich; children: ReactNode }) {
-  const [stapel, ausfuehren] = useReducer(schritt, start, neuerStapel);
-  const tiefe = useRef(stapel.ansichten.length);
-  const waechterAktiv = useRef(false);
+/** Ob ein Eintrag im Browserverlauf der Wächter ist (etwa nach einem Neuladen). */
+function istWaechter(zustand: unknown): boolean {
+  return (
+    typeof zustand === "object" &&
+    zustand !== null &&
+    "waechter" in zustand &&
+    "app" in zustand &&
+    zustand.waechter === true &&
+    zustand.app === WAECHTER.app
+  );
+}
 
-  // Wächter setzen, sobald es etwas zum Zurückgehen gibt.
+/**
+ * Stellt die Navigation für alle Bildschirme bereit.
+ * Eingaben: `anfang` liefert den ersten Stapel (einmal beim Aufbau, App.tsx), die Kinder.
+ */
+export function NavigationsRahmen({
+  anfang,
+  children,
+}: {
+  anfang: () => Stapel;
+  children: ReactNode;
+}) {
+  const [stapel, ausfuehren] = useReducer(schritt, undefined, anfang);
+  const tiefe = useRef(stapel.ansichten.length);
+  const waechterAktiv = useRef(istWaechter(window.history.state));
+
+  // Wächter setzen, sobald es etwas zum Zurückgehen gibt; jeden Stand sichern (V2).
   useEffect(() => {
+    sichereStapel(stapel);
     tiefe.current = stapel.ansichten.length;
     if (stapel.ansichten.length > 1 && !waechterAktiv.current) {
       window.history.pushState(WAECHTER, "");

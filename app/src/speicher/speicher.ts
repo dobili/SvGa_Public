@@ -4,8 +4,8 @@
  * Rolle im Gesamtbild: Modul Speicher aus Konzept 6.4 (lade, speichere, bitteUmDauerhaftenSpeicher;
  * exportiere und importiere stehen in sicherung.ts). Einstellungen, Lernstand und Fortschritt
  * lesen und schreiben ausschließlich hierüber. Regeln aus Konzept 9.4: speichern nach jeder
- * Antwort, beim ersten Start um dauerhaften Speicher bitten, Fehler dem Leser zeigen, ältere
- * Formate umwandeln. Komponenten abonnieren den Stand mit useSpeicher.
+ * Antwort, um dauerhaften Speicher bitten (seit V8, Nutzungsprüfung 25.10.2026, bei jedem Start,
+ * solange der Browser ihn nicht gewährt hat), Fehler dem Leser zeigen, ältere Formate umwandeln. Komponenten abonnieren den Stand mit useSpeicher.
  * Abhängigkeiten: speicher/datenbank.ts, speicher/format.ts, app/merker.ts, React.
  */
 import { useSyncExternalStore } from "react";
@@ -80,6 +80,32 @@ export async function bitteUmDauerhaftenSpeicher(): Promise<boolean | null> {
   }
 }
 
+/**
+ * Bittet bei jedem Start um dauerhaften Speicher, solange der Browser ihn nicht gewährt hat.
+ *
+ * Warum (V8): Bis 0.2.129 fragte die App nur beim allerersten Start. Lehnte der Browser damals
+ * ab (etwa weil die App noch nicht installiert war), blieb es dabei. Chrome und Safari entscheiden
+ * nach Nutzung und Installation; eine spätere Bitte hat also oft Erfolg.
+ * Ausgabe: true (dauerhaft), false (abgelehnt), null (nicht möglich). Steht auch im Zustand
+ * („dauerhaft“), damit die Anzeige in den Einstellungen sich erneuert.
+ * Beispiel: App inzwischen auf dem Home-Bildschirm → persisted() false, persist() true.
+ * Sonderfall: Ist der Speicher schon dauerhaft, fragt die App nicht noch einmal.
+ */
+export async function sichereDauerhaftenSpeicher(): Promise<boolean | null> {
+  if (typeof navigator === "undefined" || typeof navigator.storage?.persisted !== "function") {
+    return bitteUmDauerhaftenSpeicher();
+  }
+  try {
+    if (await navigator.storage.persisted()) {
+      setze({ dauerhaft: true });
+      return true;
+    }
+  } catch (fehler) {
+    console.warn("Dauerhafter Speicher nicht abfragbar:", fehler);
+  }
+  return bitteUmDauerhaftenSpeicher();
+}
+
 /** Erster Start: die alten Merker übernehmen, schreiben, danach die Merker entfernen. */
 async function ersterStart(jetzt: Date): Promise<Nutzerdaten> {
   const roh = merkerAlsFormat0(liesMerker("einstellungen"), liesMerker("lernstand"));
@@ -87,7 +113,6 @@ async function ersterStart(jetzt: Date): Promise<Nutzerdaten> {
   const daten = ergebnis.ok ? ergebnis.daten : leereDaten(jetzt);
   await schreibeRoh(daten);
   ALTE_MERKER.forEach(entferneMerker);
-  void bitteUmDauerhaftenSpeicher();
   return daten;
 }
 
@@ -117,7 +142,8 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
 /**
  * Lädt die Nutzerdaten (einmal je Sitzung, weitere Aufrufe warten auf denselben Vorgang).
  *
- * Warum: Beim Start muss der Stand des Lesers da sein, bevor er etwas ändert.
+ * Warum: Beim Start muss der Stand des Lesers da sein, bevor er etwas ändert. Danach bittet sie
+ * nebenher um dauerhaften Speicher (sichereDauerhaftenSpeicher, V8).
  * Ausgabe: erfüllt, sobald geladen; Fehler stehen im Zustand, nie als Ausnahme.
  * Beispiel: Erster Start nach Version 0.2.20 mit Holzbrett → aktuelles Format mit Holzbrett,
  * Merker weg.
@@ -125,7 +151,11 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
  * die App läuft mit dem vorläufigen Stand weiter.
  */
 export function lade(jetzt: Date = new Date()): Promise<void> {
-  ladevorgang ??= ladeJetzt(jetzt);
+  if (!ladevorgang) {
+    ladevorgang = ladeJetzt(jetzt);
+    // Nebenher und ohne zu warten: Firefox fragt den Leser, das darf das Laden nicht aufhalten.
+    void ladevorgang.then(sichereDauerhaftenSpeicher);
+  }
   return ladevorgang;
 }
 

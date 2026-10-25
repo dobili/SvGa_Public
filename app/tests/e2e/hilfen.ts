@@ -21,6 +21,9 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
  * die Startanimation (R39): Sie läge sonst 2,5 Sekunden über dem ersten Bildschirm;
  * brett.spec.ts prüft sie mit `startanimation: true`. Auch die Frage nach dem Rundgang beim ersten
  * Start (R52) gilt als schon gestellt; tour.spec.ts prüft sie mit `tourAngebot: true`.
+ * Das Weitermachen nach dem Neuladen (V2, Merker svga.stapel) ist aus: Viele Tests laden neu und
+ * erwarten danach das Buch wie ein neuer Start; durchstich.spec.ts und spielen.spec.ts prüfen es
+ * mit `weitermachen: true`.
  */
 export async function starteImBrowser(
   seite: Page,
@@ -28,8 +31,24 @@ export async function starteImBrowser(
     safariHinweis = false,
     startanimation = false,
     tourAngebot = false,
-  }: { safariHinweis?: boolean; startanimation?: boolean; tourAngebot?: boolean } = {},
+    weitermachen = false,
+  }: {
+    safariHinweis?: boolean;
+    startanimation?: boolean;
+    tourAngebot?: boolean;
+    weitermachen?: boolean;
+  } = {},
 ): Promise<void> {
+  if (!weitermachen) {
+    // Vor jedem Laden der Seite, also auch nach page.reload(): kein gesicherter Stapel.
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.removeItem("svga.stapel");
+      } catch (fehler) {
+        console.warn("Merker nicht löschbar:", fehler);
+      }
+    });
+  }
   if (!tourAngebot) {
     await seite.addInitScript(() => {
       try {

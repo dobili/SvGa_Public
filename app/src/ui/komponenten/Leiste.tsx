@@ -15,10 +15,12 @@ import { t, type Textschluessel } from "../../i18n/sprache";
 import { useLangerDruck } from "./useLangerDruck";
 
 /**
- * Seit 0.2.116 zeigt die Leiste nur Symbole (Wunsch des Autors, 19.10.2026): Die Beschriftung
- * fällt weg, die Symbole werden dafür größer. Der Name bleibt als aria-label und Tooltip.
+ * Von 0.2.116 bis 0.2.129 zeigte die Leiste nur Symbole (Wunsch des Autors, 19.10.2026). Seit DS55
+ * (0.2.130, vom Autor am 25.10.2026 freigegeben) steht unter Buch, Training, Spielen und
+ * Nachschlagen wieder das Wort, weil Fadenkreuz und Schwerter nicht von selbst verständlich sind;
+ * das Zahnrad bleibt ohne Wort. Der Name bleibt zusätzlich als aria-label und Tooltip.
  */
-const SYMBOLGROESSE = 30;
+const SYMBOLGROESSE = 26;
 const STRICHSTAERKE = 1.8;
 /** So lange hält der Autor das Zahnrad, bis die Aufgabenseite aufgeht (sein Wunsch: 3 s). */
 const LANGER_DRUCK_MS = 3000;
@@ -81,6 +83,7 @@ export function Leiste() {
             }}
           >
             <Symbol size={SYMBOLGROESSE} strokeWidth={STRICHSTAERKE} aria-hidden="true" />
+            {!mitDruck && <span aria-hidden="true">{t(text)}</span>}
           </button>
         );
       })}

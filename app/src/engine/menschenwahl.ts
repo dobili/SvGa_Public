@@ -31,6 +31,7 @@ import type { Staerke } from "./engineDienst";
 import { fehlerartIn, lageVon, type Fehlerart, type Lage } from "./fehlerart";
 import { typischeFehlerzuege } from "./fehlersuche";
 import { grundzug, kandidatenAusVarianten } from "./grundschicht";
+import { tauFaktor } from "./grundschicht-zeitklasse";
 import { GELEGENHEITSARTEN, zeitnotTemperatur } from "./menschenprofil";
 import { verlaufsfaktor, type Verlauf } from "./menschlich";
 import { wertFuer, type Spielbewerter, type Zugwahl } from "./spielbewerter";
@@ -174,7 +175,8 @@ async function basiszug(
     const uebrig = kandidaten.find((k) => !ohneFleck(k.uci)) ?? kandidaten[0];
     return uebrig ? { ...engineZug(uebrig.uci), verlust: uebrig.verlust } : null;
   }
-  const faktor = grundfaktor(kontext);
+  // Seit 0.2.131 streut die Grundschicht in Blitz breiter, in Klassisch enger (wie ein Mensch).
+  const faktor = grundfaktor(kontext) * tauFaktor(stufe.nummer, kontext.tempo);
   const wahl = await grundzug(bewerter, fen, grund, stufe.rechenzeitMs, faktor, zufall, ohneFleck);
   if (!wahl) return null;
   const { zug, varianten } = wahl;

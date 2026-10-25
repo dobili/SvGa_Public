@@ -10,9 +10,11 @@
  * stärker als ihre Blitz-Zahl (Stufe 2, 3, 5: 950, 1264, 1875 statt 839, 1078, 1537), in
  * Klassisch passend. Die Korrektur gleicht das aus: benötigte Verschiebung durch etwa 0,75 Elo
  * Stärke je Elo Wertung (Steigung der Stufen in Schnellschach, engine/botstaerke-daten.ts).
- * Stufe 1 lag schon passend (Anker 593, Zahl 667); Stufe 6 bis 9 sind geschätzt (ihre Anker
- * sind zu genau, um sie abzulesen). Nachmessung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit
- * drei Wertungen“.
+ * Stufe 1 lag schon passend (Anker 593, Zahl 667).
+ * Stand Runde 4 (25.10.2026): Die Messung gab dem Wahlmodell bis Runde 3 die Zeitklasse nicht mit
+ * (engine/messspieler.testhilfe.ts), die App schon; die Anker oben maßen also Schnellschach-Wahl
+ * mit Blitz-Uhr. Deshalb steht die Korrektur auf null, bis Runde 4 mit Zeitklasse misst.
+ * Nachmessung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit drei Wertungen“.
  * Abhängigkeiten: engine/zeitklassenabstand.ts, engine/stufen.ts (Typ), spiel/elomodell-daten.ts (Typ).
  */
 import type { Wertungstempo } from "../spiel/elomodell-daten";
@@ -21,13 +23,13 @@ import { wertungInZeitklasse } from "./zeitklassenabstand";
 
 /** Korrektur der Wertung (Elo) je Stufe 1 bis 9; Stufe 10 (volle Engine) braucht keine. */
 const KORREKTUR: Readonly<Record<"blitz" | "classical", readonly number[]>> = {
-  blitz: [0, -150, -250, -290, -330, -300, -250, -200, -150],
+  blitz: [0, 0, 0, 0, 0, 0, 0, 0, 0],
   classical: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
 
 /**
  * Die Wertung für Wahlmodell und Zeitnot einer Stufe in einer Zeitklasse.
- * Beispiel: Stufe 3 (Zielwertung 900) in Blitz → etwa 792 − 250 = 542; in Schnellschach 900.
+ * Beispiel: Stufe 3 (Zielwertung 900) in Blitz → etwa 792; in Schnellschach 900.
  * Sonderfall: Stufe 10 und Schnellschach ohne Korrektur.
  */
 export function wahlwertung(stufe: Stufe, tempo: Wertungstempo): number {

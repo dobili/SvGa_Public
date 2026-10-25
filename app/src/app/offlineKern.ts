@@ -5,9 +5,12 @@
  * Rolle im Gesamtbild: Kern von app/offline.ts. Die statische Startseite des Buches
  * (src/startseite/) nutzt ihn ohne React, die App über den Hook useOfflineStand (Konzept 6.6,
  * „pruefeUpdate“, und 11.1 bis 11.3). Der Stand ist ein kleiner Speicher mit Abonnenten.
- * Abhängigkeiten: vite-plugin-pwa (registerSW).
+ * „Offline bereit“ gilt seit V1 (Nutzungsprüfung 25.10.2026) erst, wenn der Service Worker
+ * wirklich aktiviert ist, nicht schon, wenn er nur installiert ist (app/workerbereit.ts).
+ * Abhängigkeiten: vite-plugin-pwa (registerSW), app/workerbereit.ts.
  */
 import { registerSW } from "virtual:pwa-register";
+import { warteAufAktivenWorker } from "./workerbereit";
 
 /** Was die Oberfläche über Offline-Nutzung und Updates weiß. */
 export interface OfflineStand {
@@ -48,7 +51,27 @@ function frageStand(worker: ServiceWorker): Promise<{ gesamt: number; vorhanden:
   });
 }
 
-/** Fragt so lange nach dem Fortschritt, bis alle Dateien da sind. */
+/** Laufendes Warten auf den aktivierten Worker; höchstens eines zugleich. */
+let bereitPruefung: Promise<void> | null = null;
+
+/**
+ * Meldet „Offline bereit“, sobald ein aktivierter Service Worker die Seite bedienen kann.
+ * Wird der Worker unterwegs ersetzt, darf ein späterer Aufruf erneut warten.
+ */
+function meldeBereitWennAktiv(): void {
+  bereitPruefung ??= warteAufAktivenWorker(navigator.serviceWorker).then(
+    (aktiv) => {
+      if (aktiv) setze({ bereit: true, prozent: VOLL });
+      else bereitPruefung = null;
+    },
+    (fehler: unknown) => {
+      console.error("Service Worker nicht erreichbar:", fehler);
+      bereitPruefung = null;
+    },
+  );
+}
+
+/** Fragt so lange nach dem Fortschritt, bis alle Dateien da sind und der Worker aktiv ist. */
 async function verfolgeFortschritt(): Promise<void> {
   const reg = registrierung;
   const worker = reg?.installing ?? reg?.waiting ?? reg?.active;
@@ -56,11 +79,11 @@ async function verfolgeFortschritt(): Promise<void> {
     return;
   }
   const antwort = await frageStand(worker);
-  if (antwort && antwort.gesamt > 0) {
+  if (antwort && antwort.gesamt > 0 && !stand.bereit) {
     const prozent = Math.floor((antwort.vorhanden / antwort.gesamt) * VOLL);
-    const fertig = antwort.vorhanden === antwort.gesamt && reg.active !== null;
-    setze({ prozent: fertig ? VOLL : Math.min(prozent, VOLL - 1), bereit: fertig });
-    if (fertig) return;
+    // Höchstens 99 %, bis der Worker aktiviert ist; erst dann stimmt „Offline bereit“.
+    setze({ prozent: Math.min(prozent, VOLL - 1) });
+    if (antwort.vorhanden === antwort.gesamt) meldeBereitWennAktiv();
   }
   setTimeout(() => void verfolgeFortschritt(), ABFRAGE_ABSTAND_MS);
 }
@@ -79,7 +102,8 @@ export function starteOffline(): void {
   aktualisiere = registerSW({
     immediate: true,
     onNeedRefresh: () => setze({ updateVerfuegbar: true }),
-    onOfflineReady: () => setze({ bereit: true, prozent: VOLL }),
+    // Kommt schon bei „installed“; bereit erst mit aktiviertem Worker (V1).
+    onOfflineReady: meldeBereitWennAktiv,
     onRegisteredSW: (_adresse, reg) => {
       registrierung = reg ?? null;
       void verfolgeFortschritt();

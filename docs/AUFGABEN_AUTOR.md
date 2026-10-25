@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.136 (mit vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.137 (mit den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -32,6 +32,33 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.137: Jeder Bot ist ein Mensch mit drei Wertungen (Bot-Chat, Opus, 25.10.2026)
+
+Deine Fragen vom 25.10. nachts: Ein Bot verhält sich jetzt beim Wechsel der Bedenkzeit wie ein
+einzelner Mensch. Grundlage sind 871 364 Lichess-Profile aus sieben Monaten: Je 200er-Band der
+Abstand Blitz − Schnellschach und Klassisch − Schnellschach desselben Spielers (Spieler, die
+ähnlich viel in beiden Zeitklassen spielen, zählen mehr). Gewählt ist der Median, in Blitz aber
+höchstens −50 und in Klassisch mindestens +50, damit für jeden Bot Blitz < Schnellschach <
+Klassisch gilt; jeder gewählte Wert liegt in der Spanne, in der 95 % der Spieler liegen. Der Bot
+übergibt diese Zahl auch an sein Spiel (Fehlerhäufigkeit, Zeitnot, Bedenkzeit, Eröffnungen): In
+Blitz spielt er wie ein Mensch seiner Stärke mit 3 Minuten, in Klassisch wie derselbe Mensch mit
+30 Minuten.
+
+- [ ] N805. **Zahl passt zur Uhr:** Spielen › Gegner, Ole (Stufe 9) wählen. Stelle die Bedenkzeit
+      nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der Sprechblase und
+      im Bereich über der Stufe wechselt mit: etwa 2650, 2700, 2750. Ohne Uhr gilt Schnellschach.
+      Die Stufen in Blitz / Schnellschach / Klassisch: 1: 667/747/973 · 2: 839/946/1177 ·
+      3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
+      7: 1998/2108/2158 · 8: 2216/2291/2341 · 9: 2327/2388/2438 · 10: 3246/3296/3346.
+      Bei echten Spielern über 1900 liegt Klassisch im Median etwas unter Schnellschach (über
+      2200 bei drei von vier Spielern); dort steht die App auf +50, am Rand der Spanne, weil du
+      Blitz < Schnellschach < Klassisch wolltest (schon umgesetzt, Widerspruch genügt).
+- [ ] N806. **Spielgefühl je Zeitklasse:** Spiele gegen denselben Bot einmal 3 + 2 und einmal
+      30 + 20. In Blitz macht er spürbar mehr Fehler als in Klassisch, wie ein Mensch, der weniger
+      Zeit hat. Danach unter Profil bei der Wertung: Die Gegnerstärke der Partie ist die Zahl der
+      Zeitklasse (Ole in Blitz etwa 2650). In der Partienliste im Profil sortiert „Stärke des
+      Gegners“ nach derselben Zahl.
 
 ### Neu in 0.2.136: Fehlerprofil vereinfacht, Fehler und Flecken als Spinnennetz (Opus, 25.10.2026)
 
@@ -240,30 +267,6 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 - [ ] N935. **„Spielen“ schneller:** Unten auf „Spielen“ tippen: Der goldene Strich springt sofort
       dorthin, der Bildschirm folgt gleich. Zurück zu „Buch“ und wieder „Spielen“: spürbar
       schneller als vorher. „Beginnen“ wirkt sofort gedrückt, die Partie ist schneller da.
-
-### Neu in 0.2.130: Bot-Zahlen je Bedenkzeit (Bot-Chat, Opus, 25.10.2026)
-
-Die zehn Mess-Chats sind fertig. Jeder Bot und jede Stufe hat jetzt drei Zahlen: Blitz,
-Schnellschach und Klassisch, wie bei Lichess (dein Wunsch R51).
-
-- [ ] N805. **Zahl passt zur Uhr:** Spielen › Gegner, einen Bot wählen (etwa Ole, Stufe 9). Stelle
-      die Bedenkzeit nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der
-      Sprechblase und im Bereich über der Stufe wechselt mit: Ole etwa 2700 (Blitz), 2700
-      (Schnellschach), 2200 (Klassisch). Ohne Uhr gilt die Schnellschach-Zahl. Die Spaß-Bots
-      (Kiki, Onkel Otto, Tante Hilde, Bodo) behalten überall ihre Schnellschach-Zahl, weil sie
-      keiner Gruppe angehören und nicht mitgemessen wurden.
-      Die Stufen in Blitz / Schnellschach / Klassisch: 1: 635/747/1007 · 2: 961/946/1220 ·
-      3: 1264/1242/1482 · 4: 1516/1456/1564 · 5: 1750/1696/1677 · 6: 2009/1906/1758 ·
-      7: 2206/2108/2006 · 8: 2353/2291/2116 · 9: 2361/2388/2198 · 10: 3323/3296/2775.
-      Blitz liegt nah an Schnellschach. Klassisch ist gestaucht (unten höher, oben niedriger), so
-      wie die Lichess-Klassisch-Wertung, die unten höher anfängt und oben selten über 2600 reicht.
-      Die schwächsten Bots (Tom, Marie, Oma Erna, Luis, Clara, Onkel Bernd) verlieren in Blitz fast
-      jede Partie gegen Stufe 1; ihre Blitz-Zahl steht deshalb auf 400, der Untergrenze von Lichess
-      (schon umgesetzt, Widerspruch genügt).
-- [ ] N806. **Wertung je Zeitklasse:** Spiele eine gewertete Blitz-Partie (3 + 2) gegen einen Bot
-      und sieh dir danach „Deine Spielstärke“ an: Die Gegnerstärke der Partie ist die Blitz-Zahl
-      des Bots (bei Ole etwa 2700, nicht 2200). In der Partienliste sortiert „Stärke des Gegners“
-      nach derselben Zahl.
 
 ### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
 

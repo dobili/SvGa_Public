@@ -12,6 +12,7 @@ import type { Partiezug } from "../spiel/partie";
 import { sanZuUci } from "../spiel/zuege";
 import { praxisbuchAus, praxiszug } from "./praxisbuch";
 import { wahltempo } from "./wahlmodell";
+import { wertungInZeitklasse } from "./zeitklassenabstand";
 
 const PRAXISBUCH = praxisbuchAus(
   JSON.parse(readFileSync(join(process.cwd(), "public", "daten", "praxisbuch.json"), "utf8")),
@@ -33,7 +34,9 @@ export function buchzug(
 ): { zug: Partiezug; uci: string; breite?: number } | null {
   if (!PRAXISBUCH || buchtiefe === 0) return null;
   const tempo = uhr ? wahltempo(uhr) : "rapid";
-  const san = praxiszug(PRAXISBUCH, verlauf, { tempo, wertung, tiefe: buchtiefe }, zufall);
+  // Wie die App (ui/komponenten/botzug.ts): die Wertung in der Zeitklasse, seit 0.2.131.
+  const lage = { tempo, wertung: wertungInZeitklasse(wertung, tempo), tiefe: buchtiefe };
+  const san = praxiszug(PRAXISBUCH, verlauf, lage, zufall);
   const uci = san ? sanZuUci(fen, san) : null;
   if (!san || !uci) return null;
   return { zug: { san, von: "engine", quelle: "buch", fehler: null, verlust: 0 }, uci };

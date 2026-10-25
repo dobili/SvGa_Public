@@ -43,3 +43,13 @@ Erfahrungen der ersten Messung (25.10.2026): Ein Lauf braucht 20 bis 35 Minuten 
 Eine Ankerpartie mit mehreren Damen gegen den König brachte die Tiefe-18-Bewertung nicht zum
 Ende; dann den hängenden Lauf beenden und die übrigen Partien ohne diese bewerten
 (`skripte/eichung-rechnen.mjs --ordner <kopie> --quellen stufen`, `stufen.jsonl` ohne die Partie).
+
+## Seit 0.2.131: Umrechnung statt eigener Messung
+
+Die App misst Blitz und Klassisch nicht mehr eigens, sondern rechnet die Schnellschach-Zahl um wie
+bei einem Menschen dieser Stärke (`engine/zeitklassenabstand.ts`, Herleitung in
+`docs/ENTSCHEIDUNGEN.md`, „Bots als ein Mensch mit drei Wertungen“). Die Gruppen-Chats oben dienen
+nur noch einer Prüfung: Der Messlauf schreibt dann eine Prüfdatei, die sich mit der Umrechnung
+vergleichen lässt. Neu erzeugen lässt sich die Tabelle lokal mit
+`buch/arbeit/wertungsvergleich/` (`sammle.py`, `profile2.py`, `profile3.py`, `tabelle.py`).
+

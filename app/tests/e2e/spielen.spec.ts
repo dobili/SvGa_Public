@@ -117,11 +117,12 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     .getByLabel("Stellung als FEN")
     .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
-  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 8 (Großmeister).
+  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 10 (volle Engine). Stufe 8 spielt mit
+  // menschlichen Fehlern und übersieht das Matt 2. … Dh4# gelegentlich (wie in brett.spec.ts).
   for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
-    await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
+    await page.getByLabel(new RegExp(`^${phase}:`)).fill("10");
   }
-  await expect(page.getByLabel(/^Mittelspiel:/)).toHaveValue("8");
+  await expect(page.getByLabel(/^Mittelspiel:/)).toHaveValue("10");
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   // Seit 0.2.32 ohne Rückfrage (Wunsch des Autors): Der Zug wird sofort gespielt.
   await ziehe(page, /^g2, Bauer/, "g4");

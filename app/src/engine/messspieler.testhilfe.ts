@@ -15,6 +15,7 @@ import { faktorenAus } from "./gegnerbau";
 import { gruppenstufe, gruppenstufen } from "./gruppe";
 import { BUCHTIEFE } from "./praxisbuch";
 import { grundschicht, stufe, STUFEN_ZAHL, type Stufe, type Stufennummer } from "./stufen";
+import { wahltempo } from "./wahlmodell";
 import { REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
 
 const SEKUNDE_MS = 1000;
@@ -84,7 +85,11 @@ export function spieler(kuerzel: string): Spieler {
   const [roh = "", uhrtext] = kuerzel.split("~");
   // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128)
   const ohneBuch = roh.endsWith("!");
-  const s = spielerOhneBuchwahl(ohneBuch ? roh.slice(0, -1) : roh, uhrtext);
+  const ohneTempo = spielerOhneBuchwahl(ohneBuch ? roh.slice(0, -1) : roh, uhrtext);
+  // Zeitklasse der Uhr ins Profil wie in der App (ui/komponenten/botzug.ts); fehlte bis zur
+  // Prüfmessung vom 25.10.2026, Runde 3: Bis dahin wählten alle Messungen wie in Schnellschach.
+  const profil = { ...ohneTempo.profil, tempo: wahltempo(ohneTempo.uhr) };
+  const s = { ...ohneTempo, profil };
   return ohneBuch ? { ...s, buchtiefe: 0 } : s;
 }
 

@@ -150,26 +150,16 @@ export function datendatei(
 }
 
 /**
- * Untergrenze der Lichess-Wertung (Lichess vergibt keine Zahl unter 400). Die schwächsten Bots
- * verlieren in Blitz fast jede Partie gegen Stufe 1; die Leiter setzt sie dann beliebig tief (bis
- * unter 0), messbar ist nur „unter der Stufe 1“. Auf der Lichess-Skala heißt das 400.
- */
-const LICHESS_UNTERGRENZE = 400;
-
-/**
- * Die Datei der Zahlen einer Zeitklasse (Blitz, Klassisch; docs/MESSUNG_ZEITKLASSEN.md) für
- * engine/botstaerke-zeitklassen.ts.
+ * Die Prüfdatei der gemessenen Zahlen einer Zeitklasse (Blitz, Klassisch;
+ * docs/MESSUNG_ZEITKLASSEN.md). Seit 0.2.131 rechnet die App Blitz und Klassisch aus der
+ * Schnellschach-Zahl um (engine/zeitklassenabstand.ts); die Messung prüft diese Umrechnung.
  * Warum eigene Datei: Die Gruppen-Chats messen die Bots unter ihrer Kennung (skripte/gruppen-bots.mjs),
  * nicht unter dem Kandidatennamen (BOTMESSNAMEN) wie die Schnellschach-Messung; Archiv-Bots und
- * nicht gemessene Bots fehlen, für sie gilt die Schnellschach-Zahl.
- * Beispiel: Blitz, Tom gemessen mit 526 → `"tom": 526`; „alt-tom“ steht nicht in der Datei;
- * gemessen −89 → 400 (Lichess-Untergrenze).
+ * nicht gemessene Bots fehlen.
+ * Beispiel: Blitz, Tom gemessen mit 526 → `"tom": 526`; „alt-tom“ steht nicht in der Datei.
  */
 export function zeitklassendatei(werte: Map<string, number>, tempo: Wertungstempo): string {
-  const zahl = (k: string) => {
-    const w = werte.get(k);
-    return w === undefined ? undefined : Math.max(LICHESS_UNTERGRENZE, w);
-  };
+  const zahl = (k: string) => werte.get(k);
   const stufen = STUFEN_NUMMERN.map((n) => {
     const w = zahl(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`);
     return w === undefined ? null : `  ${n}: ${Math.round(w)},`;
@@ -183,8 +173,8 @@ export function zeitklassendatei(werte: Map<string, number>, tempo: Wertungstemp
     ` * Elo-Zahl der Stufen und Bots in der Zeitklasse ${tempo} (erzeugt vom Messlauf`,
     ` * engine/botstaerke.messung.ts am ${new Date().toISOString().slice(0, 10)}, nicht von Hand ändern).`,
     " *",
-    " * Rolle im Gesamtbild: Daten für engine/botstaerke-zeitklassen.ts, gemessen in zehn Gruppen-Chats",
-    " * (docs/MESSUNG_ZEITKLASSEN.md). Herleitung: docs/ENTSCHEIDUNGEN.md, „Zahlen je Zeitklasse“.",
+    " * Rolle im Gesamtbild: Prüfung der Umrechnung engine/zeitklassenabstand.ts (docs/MESSUNG_ZEITKLASSEN.md).",
+    " * Herleitung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit drei Wertungen“.",
     " * Abhängigkeiten: engine/stufen.ts (Typ).",
     " */",
     'import type { Stufennummer } from "./stufen";',

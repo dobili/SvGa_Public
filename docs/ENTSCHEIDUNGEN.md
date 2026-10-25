@@ -5542,3 +5542,83 @@ Netz-Vorschau (privates Artifact „Fehler und Flecken als Spinnennetz“, E1 bi
   Wahlmodell. Für die fertigen Bots ändert sich nichts (geprüft).
 - Nicht Teil: „ungenau“ im Spiel, gezielte Suche nach bauernzugOhneNot, koenigszugOhneNot,
   bauerEingestellt, CHARAKTERE neu zuordnen.
+
+## Bots als ein Mensch mit drei Wertungen (25.10.2026, Bot-Chat, Version 0.2.137)
+
+Ersetzt die gemessenen Blitz- und Klassisch-Zahlen aus 0.2.130 (Abschnitt „Zahlen je Zeitklasse:
+Blitz und Klassisch gemessen“). Fragen des Autors: Sollte nicht Blitz < Schnell < Klassisch
+gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Mensch?
+
+- **Befund 1 (Lichess):** Je Spieler unterscheiden sich die drei Wertungen deutlich. Blitz liegt
+  in jedem Band im Median 45 bis 180 unter Schnellschach (bei 61 bis 88 % der Spieler darunter),
+  Klassisch unten 200 bis 230 darüber, ab etwa 1900 im Median etwas darunter.
+- **Befund 2 (Bots):** Wahlmodell, Zeitnot, Bedenkzeit und Praxisbuch sind an Lichess-Partien
+  nach der Wertung *in der jeweiligen Zeitklasse* geeicht. Die Bots übergaben in jeder Zeitklasse
+  dieselbe Zahl und spielten in Blitz deshalb wie ein stärkerer Mensch; die direkte Messung aus
+  0.2.130 bestätigte das (Blitz-Zahlen so hoch wie Schnellschach).
+- **Umsetzung:** `engine/zeitklassenabstand.ts` rechnet die Schnellschach-Zahl in die Zahl
+  desselben Menschen in Blitz und Klassisch um. Der Bot übergibt sie an Wahlmodell und Zeitnot
+  (`engine/zugwahl.ts`, `engine/gruppenwahl.ts`), Bedenkzeit (`spiel/botzeit.ts`) und Praxisbuch
+  (`ui/komponenten/botzug.ts`, Messlauf genauso); Anzeige und Wertung rechnen mit derselben
+  Umrechnung (`engine/botstaerke.ts`, auch Gruppen, eigene Stufe und eigene Bots). Die gemessenen
+  Tabellen entfallen, die Untergrenze 400 ebenso (sonst stünde Tom in Blitz gleich hoch wie in
+  Schnellschach).
+- **Stichprobe (Wünsche des Autors):** 871 364 Lichess-Profile aus den Monaten März bis September
+  2026 (Spieler aus Klassisch-Partien vollständig, aus Schnellschach-Partien je Band nach Bedarf).
+  Gezählt sind Spieler mit mindestens 20 Partien und fester Wertung in beiden Zeitklassen,
+  eingeteilt nach dem Mittel beider Wertungen, gewichtet mit dem Verhältnis der Partienzahlen
+  (kleinere durch größere). Ziel 10 000 je Band: für Blitz erreicht von 800 bis 2399, für
+  Klassisch nicht (Mitte bis 9349; mehr Spieler mit fester Klassisch-Wertung gibt es bei Lichess
+  nicht). Skripte und Bericht lokal in `buch/arbeit/wertungsvergleich/`.
+- **Gewählte Werte:** Median, in Blitz höchstens −50, in Klassisch mindestens +50 (Wunsch des
+  Autors: Blitz < Schnellschach < Klassisch für jeden Bot, Werte aus der 95-%-Spanne). Jeder
+  gewählte Wert liegt in der Spanne der mittleren 95 % der Spieler seines Bandes. Über 1900 liegt
+  Klassisch damit am oberen Rand dessen, was Spieler typisch zeigen (über 2200 haben drei von vier
+  Spielern Klassisch unter Schnellschach).
+
+| Band | Blitz: Spieler / Median / 95 % / App | Klassisch: Spieler / Median / 95 % / App |
+|---|---|---|
+| 400–599 | 1468 / −45 / −266 bis +212 / −50 | 20 / – / – / Randwert +213 |
+| 600–799 | 8113 / −79 / −332 bis +293 / −79 | 354 / +213 / −23 bis +472 / +213 |
+| 800–999 | 16 916 / −108 / −395 bis +304 / −108 | 1849 / +229 / −67 bis +558 / +229 |
+| 1000–1199 | 24 000 / −157 / −455 bis +265 / −157 | 4391 / +232 / −77 bis +594 / +232 |
+| 1200–1399 | 28 427 / −180 / −483 bis +182 / −180 | 6974 / +208 / −76 bis +512 / +208 |
+| 1400–1599 | 31 250 / −174 / −464 bis +155 / −174 | 9037 / +149 / −136 bis +411 / +149 |
+| 1600–1799 | 30 876 / −149 / −434 bis +127 / −149 | 9349 / +86 / −174 bis +338 / +86 |
+| 1800–1999 | 26 017 / −130 / −399 bis +115 / −130 | 6903 / +12 / −229 bis +273 / +50 |
+| 2000–2199 | 18 555 / −104 / −368 bis +111 / −104 | 3281 / −26 / −246 bis +232 / +50 |
+| 2200–2399 | 8432 / −66 / −312 bis +167 / −66 | 879 / −70 / −272 bis +151 / +50 |
+| 2400–2599 | 1640 / −22 / −267 bis +213 / −50 | 144 / −137 / −381 bis +76 / +50 |
+| 2600–2799 | 233 / +7 / −234 bis +284 / −50 | 32 / – / – / Randwert +50 |
+
+- **Stufen danach (Blitz / Schnellschach / Klassisch):** 1: 667/747/973 · 2: 839/946/1177 ·
+  3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
+  7: 1998/2108/2158 · 8: 2216/2291/2341 · 9: 2327/2388/2438 · 10: 3246/3296/3346.
+- **Prüfmessung (25.10.2026, sechs Chats):** Anker der Nm-Stufen (je 40 Partien gegen sich
+  selbst mit der Uhr der Zeitklasse, Tiefe 18), verglichen mit der Zahl der App; Messgenauigkeit
+  etwa ±65. Runde 1 bis 3 gelten nicht: Die Messspieler (`engine/messspieler.testhilfe.ts`) gaben
+  dem Wahlmodell die Zeitklasse nicht mit, die App schon (`ui/komponenten/botzug.ts`); gemessen war
+  also Schnellschach-Wahl mit Blitz- oder Klassisch-Uhr. Erkannt daran, dass Runde 3 mit einer
+  geänderten Blitz-Wertung Zug für Zug dieselben Partien spielte wie Runde 1. Ein Versuch dazwischen
+  (Grundschicht je Zeitklasse breiter oder enger) wirkte aus demselben Grund nicht und ist
+  zurückgebaut: Bots und Nm-Stufen wählen mit dem Wahlmodell, die Grundschicht nutzen nur reine
+  Stufen. Behoben in 0.2.137, Test `engine/messspieler.test.ts`.
+- **Runde 4 (mit Zeitklasse, ohne Korrektur), Blitz:** Stufe 2 bis 7 Anker 879, 1214, 1543, 1807,
+  1864, 2021 gegen die Zahlen 839, 1078, 1278, 1537, 1770, 1998. Stufe 2 und 7 passen, 3 bis 6
+  spielen 94 bis 270 zu stark: Das Wahlmodell mit der Blitz-Wertung desselben Menschen wählt in
+  diesem Bereich noch zu gute Züge. Umsetzung: `engine/wahlkorrektur.ts` zieht für Stufe 3 bis 6
+  die Abweichung durch 0,75 (Elo Stärke je Elo Wertung) von der Wahlwertung ab: −180, −350, −360,
+  −125; Stufe 1, 2, 7 bis 10 ohne Korrektur. Anzeige und Wertung bleiben bei der umgerechneten Zahl.
+- **Runde 5 (mit Korrektur), Blitz 3 bis 6:** Anker 1029, 1257, 1550, 1950 gegen 1078, 1278, 1537,
+  1770: Stufe 3 bis 5 passen (−49, −21, +13). Stufe 6 liegt nahe der Sättigung (Genauigkeit 76 bis
+  78 %): Mit Korrektur spielte sie ungenauer als ohne, der Anker stieg trotzdem; dort trennt die
+  Messung nicht mehr, die Korrektur −125 bleibt.
+- **Klassisch (Runde 4, ohne Korrektur):** Stufe 2 bis 7 Anker 1179, 1414, 1600, 1629, 1857, 2050
+  gegen 1177, 1438, 1597, 1776, 1956, 2158. Stufe 2 bis 4 passen (+2, −24, +3). Stufe 5 spielte
+  147 zu schwach; mit +195 (Runde 5) ergab sie 1950, in Klassisch wirkt die Korrektur also mit etwa
+  1,65 Elo je Elo Wertung. Umsetzung +90, zwischen beiden Messungen auf der Zahl. Stufe 6 und 7
+  (−99, −108) bleiben ohne Korrektur: Bei 81 bis 83 % Genauigkeit sättigen die Anker und messen zu
+  niedrig.
+- **Rohdaten** lokal in `buch/arbeit/zeitklassen/pruefung-0.2.131-r4` und `-r5`, Partien auf den
+  Zweigen `pruefung-<zeitklasse>-<stufe>-r4` und `-r5`.
+

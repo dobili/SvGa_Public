@@ -11,9 +11,13 @@
  * 1278, 1537, 1770, 1998: Stufe 2 und 7 passen (±65), 3 bis 6 spielen 94 bis 270 zu stark. Die
  * Korrektur für 3 bis 6 ist diese Abweichung durch etwa 0,75 Elo Stärke je Elo Wertung (Steigung
  * der Stufen in Schnellschach, engine/botstaerke-daten.ts); 1, 8 und 9 bleiben wie ihre Nachbarn
- * ohne Korrektur. Klassisch (Runde 4): Stufe 2, 3, 5 Anker 1179, 1414, 1629 gegen 1177, 1438,
- * 1776; 2 und 3 passen, 5 spielt 147 zu schwach, vorläufig +195 (Runde 5 prüft, 4, 6, 7 werden
- * nachgemessen). (Runde 1 bis 3 gaben dem Wahlmodell die Zeitklasse nicht mit und gelten nicht.)
+ * ohne Korrektur; Runde 5 mit Korrektur: Stufe 3 bis 5 auf −49, −21, +13 (Stufe 6 misst nahe der
+ * Sättigung nicht trennscharf: 1950 bei geringerer Genauigkeit als ohne Korrektur).
+ * Klassisch (Runde 4): Stufe 2 bis 7 Anker 1179, 1414, 1600, 1629, 1857, 2050 gegen 1177, 1438,
+ * 1597, 1776, 1956, 2158. Stufe 2 bis 4 passen; Stufe 5 mit +195 ergab 1950, also wirkt die
+ * Korrektur in Klassisch mit etwa 1,65 statt 0,75; +90 liegt zwischen beiden Messungen auf der
+ * Zahl. Stufe 6 und 7 bleiben ohne: Bei 81 bis 83 % Genauigkeit sättigen die Anker und messen zu
+ * niedrig. (Runde 1 bis 3 gaben dem Wahlmodell die Zeitklasse nicht mit und gelten nicht.)
  * Nachmessung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit drei Wertungen“.
  * Abhängigkeiten: engine/zeitklassenabstand.ts, engine/stufen.ts (Typ), spiel/elomodell-daten.ts (Typ).
  */
@@ -24,7 +28,7 @@ import { wertungInZeitklasse } from "./zeitklassenabstand";
 /** Korrektur der Wertung (Elo) je Stufe 1 bis 9; Stufe 10 (volle Engine) braucht keine. */
 const KORREKTUR: Readonly<Record<"blitz" | "classical", readonly number[]>> = {
   blitz: [0, 0, -180, -350, -360, -125, 0, 0, 0],
-  classical: [0, 0, 0, 0, 195, 0, 0, 0, 0],
+  classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],
 };
 
 /**

@@ -5538,6 +5538,16 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
   diesem Bereich noch zu gute Züge. Umsetzung: `engine/wahlkorrektur.ts` zieht für Stufe 3 bis 6
   die Abweichung durch 0,75 (Elo Stärke je Elo Wertung) von der Wahlwertung ab: −180, −350, −360,
   −125; Stufe 1, 2, 7 bis 10 ohne Korrektur. Anzeige und Wertung bleiben bei der umgerechneten Zahl.
-- **Runde 5 (mit Korrektur), Blitz 3 bis 6:** läuft, Ergebnis folgt.
-- **Klassisch (Runde 4):** läuft (Stufe 2, 3, 5), Ergebnis folgt.
+- **Runde 5 (mit Korrektur), Blitz 3 bis 6:** Anker 1029, 1257, 1550, 1950 gegen 1078, 1278, 1537,
+  1770: Stufe 3 bis 5 passen (−49, −21, +13). Stufe 6 liegt nahe der Sättigung (Genauigkeit 76 bis
+  78 %): Mit Korrektur spielte sie ungenauer als ohne, der Anker stieg trotzdem; dort trennt die
+  Messung nicht mehr, die Korrektur −125 bleibt.
+- **Klassisch (Runde 4, ohne Korrektur):** Stufe 2 bis 7 Anker 1179, 1414, 1600, 1629, 1857, 2050
+  gegen 1177, 1438, 1597, 1776, 1956, 2158. Stufe 2 bis 4 passen (+2, −24, +3). Stufe 5 spielte
+  147 zu schwach; mit +195 (Runde 5) ergab sie 1950, in Klassisch wirkt die Korrektur also mit etwa
+  1,65 Elo je Elo Wertung. Umsetzung +90, zwischen beiden Messungen auf der Zahl. Stufe 6 und 7
+  (−99, −108) bleiben ohne Korrektur: Bei 81 bis 83 % Genauigkeit sättigen die Anker und messen zu
+  niedrig.
+- **Rohdaten** lokal in `buch/arbeit/zeitklassen/pruefung-0.2.131-r4` und `-r5`, Partien auf den
+  Zweigen `pruefung-<zeitklasse>-<stufe>-r4` und `-r5`.
 

@@ -3,9 +3,11 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): Fortschritt als Kreisdiagramm statt
  * Balken, in den Einstellungen und auf den Kapitelseiten. Für Bildschirmleser eine
- * Fortschrittsanzeige (role „progressbar“) mit Beschriftung.
- * Abhängigkeiten: speicher/fortschritt.ts (Typ Anteil), i18n.
+ * Fortschrittsanzeige (role „progressbar“) mit Beschriftung. Seit 25.10.2026 kann ein Zeichen in
+ * der Mitte stehen, die Prozentzahl dann kleiner darunter (Profil › Fortschritt, Wunsch des Autors).
+ * Abhängigkeiten: speicher/fortschritt.ts (Typ Anteil), i18n, lucide-react (Typ des Zeichens).
  */
+import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { t } from "../../i18n/sprache";
 import type { Anteil } from "../../speicher/fortschritt";
@@ -16,21 +18,30 @@ const STRICH = 4;
 const MASS = 2 * (RADIUS + STRICH);
 const UMFANG = 2 * Math.PI * RADIUS;
 const VIERTEL_DREHUNG = -90;
+/** Zeichen in der Mitte (Einheiten des Rings): Größe und Oberkante; die Zahl steht darunter. */
+const ZEICHEN_MASS = 12;
+const ZEICHEN_OBEN = 9;
+const ZAHL_UNTER_ZEICHEN_Y = 27;
 
 /** Anteil in ganzen Prozent; ohne Gesamtzahl 0. */
 function prozentVon(anteil: Anteil): number {
   return anteil.gesamt > 0 ? Math.round((anteil.erreicht / anteil.gesamt) * PROZENT) : 0;
 }
 
-/** Nur der Ring (ohne Beschriftung), etwa für Listen. */
+/**
+ * Nur der Ring (ohne Beschriftung), etwa für Listen. `symbol`: Zeichen in der Mitte, die
+ * Prozentzahl steht dann kleiner darunter. Beispiel: Blitz, 2 von 72 → Blitz-Zeichen über „3%“.
+ */
 export function Ring({
   anteil,
   beschriftung,
   klein = false,
+  symbol: Zeichen,
 }: {
   anteil: Anteil;
   beschriftung: string;
   klein?: boolean;
+  symbol?: LucideIcon;
 }) {
   const prozent = prozentVon(anteil);
   return (
@@ -60,7 +71,28 @@ export function Ring({
           strokeDasharray={`${(prozent / PROZENT) * UMFANG} ${UMFANG}`}
         />
       </g>
-      {!klein && (
+      {!klein && Zeichen && (
+        <>
+          <Zeichen
+            className="ring-zeichen"
+            x={(MASS - ZEICHEN_MASS) / 2}
+            y={ZEICHEN_OBEN}
+            width={ZEICHEN_MASS}
+            height={ZEICHEN_MASS}
+            aria-hidden="true"
+          />
+          <text
+            className="ring-zahl ring-zahl-unten"
+            x="50%"
+            y={ZAHL_UNTER_ZEICHEN_Y}
+            dominantBaseline="central"
+            textAnchor="middle"
+          >
+            {prozent}%
+          </text>
+        </>
+      )}
+      {!klein && !Zeichen && (
         <text className="ring-zahl" x="50%" y="50%" dominantBaseline="central" textAnchor="middle">
           {prozent}%
         </text>

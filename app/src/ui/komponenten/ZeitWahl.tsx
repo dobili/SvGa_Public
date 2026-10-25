@@ -6,24 +6,20 @@
  * („Schnellschach 15 + 10“ war doppelt so breit wie „Blitz 3 + 0“) auf drei Zeilen. Vier Kacheln je
  * Zeile wie bei Lichess; außerhalb der Grundstellung kommt „ohne Uhr“ dazu (uhrwahl.ts). Für
  * Bildschirmleser eine Gruppe von Optionsfeldern mit dem vollen Namen („Blitz 3 + 2“).
- * Abhängigkeiten: uhrwahl.ts, spiel/uhr.ts, spiel/elomodell.ts, Titelsymbol, i18n, lucide-react.
+ * Abhängigkeiten: uhrwahl.ts, zeitartzeichen.ts, spiel/uhr.ts, spiel/elomodell.ts, Titelsymbol,
+ * i18n, lucide-react.
  */
-import { Coffee, Infinity as Unendlich, Timer, Zap, type LucideIcon } from "lucide-react";
+import { Infinity as Unendlich, type LucideIcon } from "lucide-react";
 import { t } from "../../i18n/sprache";
-import { wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
+import { wertungstempo } from "../../spiel/elomodell";
 import { UHR_VORGABEN } from "../../spiel/uhr";
 import { Titelsymbol } from "./Titelsymbol";
 import { OHNE_UHR, uhrname } from "./uhrwahl";
+import { ZEITARTZEICHEN } from "./zeitartzeichen";
 
 const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
 const ZEICHENGROESSE = 13;
-
-const KLASSENZEICHEN: Readonly<Record<Wertungstempo, LucideIcon>> = {
-  blitz: Zap,
-  rapid: Timer,
-  classical: Coffee,
-};
 
 /** Zeit und Klasse einer Stelle: „3 + 2“ und „Blitz“; „ohne Uhr“ ohne Klasse. */
 function kachelVon(stelle: string): { zeit: string; klasse: string; Zeichen: LucideIcon } {
@@ -36,7 +32,7 @@ function kachelVon(stelle: string): { zeit: string; klasse: string; Zeichen: Luc
     zeit: `${vorgabe.grundzeitMs / MINUTE_MS} + ${vorgabe.zuschlagMs / SEKUNDE_MS}`,
     // Mit weichem Trennstrich („Schnell-schach“): Die Kachel ist auf dem Handy schmaler als das Wort.
     klasse: t(`spielen.zeitkachel.${tempo}`),
-    Zeichen: KLASSENZEICHEN[tempo],
+    Zeichen: ZEITARTZEICHEN[tempo],
   };
 }
 

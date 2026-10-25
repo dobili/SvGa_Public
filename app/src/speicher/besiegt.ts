@@ -59,12 +59,18 @@ function kennungen(roh: unknown): readonly string[] {
 /**
  * Die Listen aus Rohdaten, ergänzt um die Siege in den gespeicherten Partien (für Daten von vor
  * 0.2.99, in denen es die Liste noch nicht gab). Eine einfache Liste (vor 0.2.125) zählt als
- * Schnellschach. Unbekanntes fällt weg.
+ * Schnellschach, außer der Sieg steht noch in einer gespeicherten Partie: Dann gilt deren Uhr.
+ * Unbekanntes fällt weg. Beispiel: alte Liste ["mia"], Sieg gegen Mia mit 3 + 2 gespeichert →
+ * blitz: ["mia"], rapid: [].
  */
 export function besiegtAus(roh: unknown, partien: readonly Partie[]): Besiegte {
   let gespeichert: Besiegte = KEINE_BESIEGTEN;
   if (Array.isArray(roh)) {
-    gespeichert = { ...KEINE_BESIEGTEN, rapid: kennungen(roh) };
+    // Alte einfache Liste: Bots, deren Sieg noch in einer gespeicherten Partie mit Uhr steht,
+    // kommen in deren Zeitklasse (unten); nur die übrigen gelten als Schnellschach (seit 25.10.2026).
+    const ausPartien = partien.reduce(mitBesiegtem, KEINE_BESIEGTEN);
+    const rapid = kennungen(roh).filter((bot) => !irgendwoBesiegt(ausPartien, bot));
+    gespeichert = { ...KEINE_BESIEGTEN, rapid };
   } else if (typeof roh === "object" && roh !== null) {
     const je = roh as Record<string, unknown>;
     gespeichert = {
@@ -79,4 +85,37 @@ export function besiegtAus(roh: unknown, partien: readonly Partie[]): Besiegte {
 /** In irgendeiner Zeitklasse besiegt? */
 export function irgendwoBesiegt(liste: Besiegte, bot: string): boolean {
   return WERTUNGSTEMPI.some((tempo) => liste[tempo].includes(bot));
+}
+
+/**
+ * Die Zeitklassen, in denen der Leser diesen Bot gewertet besiegt hat, in der festen Reihenfolge
+ * Blitz, Schnellschach, Klassisch (seit 25.10.2026 je ein Zeichen am Porträt, Wunsch des Autors,
+ * 25.10.2026). Beispiel: Mia in Blitz und Klassisch besiegt → ["blitz", "classical"].
+ */
+export function besiegtIn(liste: Besiegte, bot: string | null): Wertungstempo[] {
+  if (!bot) return [];
+  return WERTUNGSTEMPI.filter((tempo) => liste[tempo].includes(bot));
+}
+
+/** Besiegte Bots einer Zeitklasse im Verhältnis zu allen Bots der Auswahl. */
+export interface Botsiege {
+  readonly tempo: Wertungstempo;
+  readonly erreicht: number;
+  readonly gesamt: number;
+}
+
+/**
+ * Je Zeitklasse, wie viele der übergebenen Bots (die vorgefertigten, auch die Spaß-Bots) schon
+ * gewertet besiegt sind; eigene Gegner und die Gruppe zählen nicht, weil sie nicht in der
+ * Auswahl stehen. Warum: Profil › Fortschritt zeigt seit 25.10.2026 je Zeitklasse einen Ring
+ * (Wunsch des Autors, 25.10.2026). Beispiel: 72 Bots, Lotta und Mia in Blitz besiegt →
+ * Blitz 2 von 72, Schnellschach 0 von 72, Klassisch 0 von 72.
+ */
+export function botsiegeJeTempo(liste: Besiegte, alleBots: readonly string[]): Botsiege[] {
+  const bots = new Set(alleBots);
+  return WERTUNGSTEMPI.map((tempo) => ({
+    tempo,
+    erreicht: new Set(liste[tempo].filter((bot) => bots.has(bot))).size,
+    gesamt: bots.size,
+  }));
 }

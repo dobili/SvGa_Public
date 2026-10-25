@@ -104,7 +104,7 @@ test("Abb. 1.26: gegen die Engine mit Schwarz, ruhige Ansicht, Aufgeben", async 
   await expect(page.getByTestId("laufende-partie")).toHaveCount(0);
   // Seit 0.2.134 stehen die gespielten Partien im Profil.
   await oeffneProfil(page);
-  await expect(page.getByText("Deine letzten Partien")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
 });
 
 test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurücknehmen", async ({

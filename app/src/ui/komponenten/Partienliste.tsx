@@ -11,6 +11,8 @@
  * Ergebnis und Wertung, „Weitere Partien zeigen“ und Löschen ungewerteter Partien mit Nachfrage.
  * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx), und
  * „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine Partie gespielt ist.
+ * Seit 25.10.2026 steht vor der Zeitangabe das Zeichen der Zeitart wie in der Bedenkzeit-Auswahl
+ * (Wunsch des Autors); der Name bleibt als Text daneben, damit es nicht nur am Zeichen hängt.
  * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
  */
@@ -46,6 +48,8 @@ import { Knopfsymbol } from "./Knopfsymbol";
 import { Stufenmarke } from "./Stufenmarke";
 import { Titelsymbol } from "./Titelsymbol";
 import { zeitklasse } from "../../spiel/zeitklasse";
+import { wertungstempo } from "../../spiel/elomodell";
+import { ZEITARTZEICHEN } from "./zeitartzeichen";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
 const FIGURGROESSE = 28;
@@ -60,6 +64,8 @@ const LOESCHSYMBOL = 20;
 const WERTUNGSSYMBOL = 14;
 const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
+/** Größe des Zeichens der Zeitart vor der Zeitangabe (Bildpunkte). */
+const ZEITARTSYMBOL = 13;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
 function zeile(partie: Partie): string {
@@ -75,19 +81,33 @@ function zeile(partie: Partie): string {
         t("spielen.partieStufe", { nummer: s.nummer }));
   // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
   const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
-  return t(schluessel, { datum, stufe: gegner, zuege }) + zeitangabe(partie);
+  return t(schluessel, { datum, stufe: gegner, zuege });
 }
 
-/** „ · Schnellschach 10 + 0“ (R51); ohne Uhr leer. */
-function zeitangabe(partie: Partie): string {
+/**
+ * „ · ⚡ Blitz 3 + 2“ (R51, Zeichen seit 25.10.2026); ohne Uhr nichts. Bullet (nur eingelesene
+ * Partien) trägt das Blitz-Zeichen, weil die Wertung Bullet zu Blitz zählt; der Text sagt „Bullet“.
+ */
+function Zeitangabe({ partie }: { partie: Partie }) {
   const uhr = partie.einstellung.uhr;
   const klasse = zeitklasse(uhr);
-  if (!uhr || !klasse) return "";
-  return ` · ${t("spielen.zeitangabe", {
-    klasse: t(`zeitklasse.${klasse}`),
-    minuten: uhr.grundzeitMs / MINUTE_MS,
-    sekunden: uhr.zuschlagMs / SEKUNDE_MS,
-  })}`;
+  if (!uhr || !klasse) return null;
+  const Zeichen = ZEITARTZEICHEN[wertungstempo(uhr)];
+  return (
+    <>
+      {" "}
+      {/* Der Punkt gehört zur Zeitangabe, damit eine neue Zeile nicht mit „·“ beginnt. */}
+      <span className="partie-zeitart">
+        {"· "}
+        <Zeichen size={ZEITARTSYMBOL} aria-hidden="true" />
+        {t("spielen.zeitangabe", {
+          klasse: t(`zeitklasse.${klasse}`),
+          minuten: uhr.grundzeitMs / MINUTE_MS,
+          sekunden: uhr.zuschlagMs / SEKUNDE_MS,
+        })}
+      </span>
+    </>
+  );
 }
 
 /** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
@@ -154,7 +174,10 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
       data-tour="spielen-laufend"
     >
       <h2 className="karte-titel">{t("spielen.laufend")}</h2>
-      <p>{zeile(partie)}</p>
+      <p>
+        {zeile(partie)}
+        <Zeitangabe partie={partie} />
+      </p>
       <button
         type="button"
         className="knopf-haupt"
@@ -247,6 +270,7 @@ function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
           </strong>
           <span>
             {zeile(partie)}
+            <Zeitangabe partie={partie} />
             {staerke && ` · ${staerke}`}
           </span>
         </span>
@@ -269,6 +293,19 @@ function sortierwerte(eintrag: Partieeintrag): Sortierwerte {
   };
 }
 
+/**
+ * Überschrift der Karte „Deine Partien“ im Stil der anderen Profilkarten (seit 25.10.2026 eine
+ * eigene Karte statt eines Abschnitts ohne Rahmen: Wunsch des Autors nach klarer Trennung).
+ */
+function Partienkopf() {
+  return (
+    <h2 className="karte-titel">
+      <Titelsymbol art="partien" />
+      {t("spielen.partien")}
+    </h2>
+  );
+}
+
 export function Partienliste({ partien }: { partien: readonly Partieeintrag[] }) {
   const [filter, setzeFilter] = useState<Partienfilter>(OHNE_FILTER);
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);
@@ -278,7 +315,9 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const werte = useMemo(() => new Map(partien.map((e) => [e, sortierwerte(e)])), [partien]);
   if (partien.length === 0)
     return (
-      <section className="abschnitt partienliste" data-tour="spielen-partien">
+      <section className="karte partienliste" data-tour="spielen-partien">
+        <Partienkopf />
+        <p className="hinweis">{t("spielen.partienLeer")}</p>
         <PgnImport />
       </section>
     );
@@ -295,11 +334,8 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   return (
     <>
       <LetzteSpielstaerke partien={partien} />
-      <section className="abschnitt partienliste" data-tour="spielen-partien">
-        <h2 className="abschnitt-titel">
-          <Titelsymbol art="partien" />
-          {t("spielen.partien")}
-        </h2>
+      <section className="karte partienliste" data-tour="spielen-partien">
+        <Partienkopf />
         <PgnImport />
         {mitFilter && (
           <Partienfilterleiste

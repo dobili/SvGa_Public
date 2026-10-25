@@ -191,10 +191,6 @@
   color: var(--gold-text);
 }
 
-.gegnerstufe-besiegt svg {
-  fill: currentColor;
-}
-
 /* ---------- DS20: ein Aufklappzeichen für alles, was auf der Seite aufklappt ---------- */
 /*
  * Pfeil nach unten am Ende der Zeile, aufgeklappt nach oben (NN/g, Studie zu Akkordeon-Zeichen:

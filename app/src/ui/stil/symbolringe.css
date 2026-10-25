@@ -1,0 +1,78 @@
+/*
+ * Ringe mit Zeichen in Profil › Fortschritt und ihre Legende (Symbolringe.tsx, Wunsch des Autors
+ * vom 25.10.2026). Je Reihe drei gleich breite Spalten: Bei 360 px passen drei Ringe mit „x von y“
+ * nebeneinander; zwei Reihen (Buch, Bots) statt einer, damit nichts abgeschnitten wird.
+ * Eigene Datei, weil bausteine.css schon lang ist; hinter auswertung.css geladen, deren
+ * .ring-zahl sonst die kleine Zahl unter dem Zeichen überschreiben würde.
+ */
+.symbolringe {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+  margin-bottom: var(--raster);
+}
+
+.symbolringe-titel {
+  margin: 0;
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  color: var(--text-leise);
+}
+
+.symbolringe-reihe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.symbolring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  text-align: center;
+  font-size: var(--groesse-klein);
+  overflow-wrap: anywhere;
+}
+
+.symbolring .ring {
+  width: 64px;
+  height: 64px;
+}
+
+.ring .ring-zeichen {
+  color: var(--gold-text);
+}
+
+/* Fest in Einheiten des Rings (40 breit), weil die Zahl unter dem Zeichen in den Ring passen muss. */
+.ring .ring-zahl-unten {
+  font-size: 8.5px;
+  font-weight: 700;
+}
+
+.ringlegende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2) calc(var(--raster) * 2);
+  margin: 0 0 var(--raster);
+  padding: var(--raster) 0 0;
+  border-top: 1px solid var(--linie);
+  list-style: none;
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.ringlegende li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--raster) / 2);
+}
+
+.ringlegende svg {
+  flex: none;
+  color: var(--gold-text);
+}

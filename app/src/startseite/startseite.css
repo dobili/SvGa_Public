@@ -17,8 +17,49 @@
   color: var(--creme);
   padding: calc(env(safe-area-inset-top) + 32px) 24px 28px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+}
+
+.startseite-kopf > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* DS47: zwei Knöpfe über die ganze Breite des Kopfes, Gold für den Weg in die App. */
+.startseite-aktionen {
+  flex: 1 0 100%;
+  display: flex;
+  gap: var(--raster);
+}
+
+.startseite-aktionen a {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 var(--raster);
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.startseite-aktion-haupt {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.startseite-aktion-zweit {
+  border: 1.5px solid var(--creme);
+  color: var(--creme);
+}
+
+.startseite-aktionen a:focus-visible {
+  outline: 3px solid var(--creme);
+  outline-offset: 2px;
 }
 
 .startseite-kopf h1 {

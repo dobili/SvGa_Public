@@ -268,7 +268,6 @@ export function GegnerWahl({
         text={(w) => t(`spielen.gegner.${w}`)}
         beiWahl={beiGegner}
       />
-      {einstellungen}
       {gegner === "engine" && (
         <div className="gegnerwahl" data-tour="spielen-gegner">
           <Vorschauwahl
@@ -297,6 +296,7 @@ export function GegnerWahl({
           )}
         </div>
       )}
+      {einstellungen}
     </>
   );
 }

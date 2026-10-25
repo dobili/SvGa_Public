@@ -48,6 +48,11 @@
           <p class="startseite-untertitel">{{startseite.untertitel}}</p>
           <p class="startseite-beta">{{startseite.beta}}</p>
         </div>
+        <!-- DS47: Der Weg in die App gleich oben, statt drei Bildschirme tiefer. -->
+        <nav class="startseite-aktionen" aria-label="{{startseite.aktionen}}">
+          <a class="startseite-aktion-haupt" href="/app/">{{startseite.appOeffnen}}</a>
+          <a class="startseite-aktion-zweit" href="#installieren">{{startseite.zurInstallation}}</a>
+        </nav>
       </header>
       <main class="startseite-inhalt">
         <section class="karte" aria-labelledby="buch-titel">

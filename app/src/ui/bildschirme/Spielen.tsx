@@ -20,12 +20,11 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { EROEFFNUNG_PRAXIS, neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
-import { uhrname, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
+import { uhrnameKurz, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
 import { Startleiste } from "../komponenten/Startleiste";
 import { ZeitWahl } from "../komponenten/ZeitWahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
 import { EigeneStufe } from "../komponenten/EigeneStufe";
 import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
@@ -44,7 +43,7 @@ import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
-import { Stellungseditor } from "../komponenten/Stellungseditor";
+import { Startstellung } from "../komponenten/Startstellung";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 /** Kennung der Karte mit der Gegnerwahl, Ziel der Startleiste (DS40). */
@@ -126,8 +125,9 @@ function Einstellungen({
         // Seit 0.2.126 dieselben Einstellungen wie bei eigenen Bots (Wunsch des Autors).
         stufeninhalt={<EigeneStufe v={v} mit={mit} />}
         editor={<GegnerEditor />}
-        // Farbe, Bedenkzeit, Rücknahme und Spielhilfen über der Art des Gegners (Wunsch des
-        // Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie.
+        // Farbe, Bedenkzeit, Rücknahme und Spielhilfen standen seit dem 19.10.2026 über der Art
+        // des Gegners, weil man sie unter dem Gitter der Bots übersah. Seit DS51 (0.2.130) stehen
+        // sie wieder danach: Die feste Startleiste zeigt Farbe, Zeit und Wertung ohnehin an.
         einstellungen={
           <div className="partieeinstellungen" data-tour="spielen-einstellungen">
             {engine && (
@@ -196,71 +196,6 @@ function Einstellungen({
           </div>
         }
       />
-    </section>
-  );
-}
-
-/** Die Startstellung: Grundstellung, Abbildung oder eigene FEN. */
-function Startstellung({
-  fen,
-  abbildung,
-  setzeFen,
-}: {
-  fen: string;
-  abbildung: string | undefined;
-  setzeFen: (fen: string) => void;
-}) {
-  const [eingabe, setzeEingabe] = useState("");
-  const [editor, setzeEditor] = useState(false);
-  const gueltig = spielbar(eingabe.trim());
-  const titel = abbildung
-    ? t("spielen.abAbbildung", { nummer: abbildung })
-    : fen === GRUNDSTELLUNG
-      ? t("spielen.grundstellung")
-      : t("spielen.eigeneStellung");
-  return (
-    <section className="karte startstellung" data-tour="spielen-start">
-      <h2 className="karte-titel">{titel}</h2>
-      {editor ? (
-        <Stellungseditor
-          start={fen}
-          beiUebernehmen={(neu) => {
-            setzeFen(neu);
-            setzeEditor(false);
-          }}
-          beiAbbrechen={() => setzeEditor(false)}
-        />
-      ) : (
-        <>
-          <div className="startbrett">
-            <Brett fen={fen} markierungen={[]} beschriftung={titel} koordinaten={false} />
-          </div>
-          <button type="button" className="knopf-zweit" onClick={() => setzeEditor(true)}>
-            {t("spielen.aufbauen")}
-          </button>
-        </>
-      )}
-      {!editor && (
-        <details className="fen-eingabe">
-          <summary>{t("spielen.fenEingeben")}</summary>
-          <input
-            className="suchfeld"
-            value={eingabe}
-            onChange={(e) => setzeEingabe(e.target.value)}
-            aria-label={t("spielen.fen")}
-            placeholder="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
-          />
-          {eingabe && !gueltig && <p className="fehlertext">{t("spielen.fenUngueltig")}</p>}
-          <button
-            type="button"
-            className="knopf-zweit"
-            disabled={!gueltig}
-            onClick={() => setzeFen(eingabe.trim())}
-          >
-            {t("spielen.fenUebernehmen")}
-          </button>
-        </details>
-      )}
     </section>
   );
 }
@@ -341,6 +276,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
   const beginne = useBeginne(fen, abbildungGilt);
   const laufend = spiel.laufend;
   const ok = spielbar(fen) && !ohneEigenenBot;
+  const ausGrund = fen === GRUNDSTELLUNG && !abbildungGilt;
   return (
     <div className="bildschirm bildschirm-spielen" data-testid="spielen">
       {startFen ? (
@@ -352,7 +288,9 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         </header>
       )}
       {laufend && <LaufendePartie partie={laufend} />}
-      <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />
+      {/* DS51: Ab einer Abbildung oder eigenen Stellung ist die Stellung die Hauptsache und
+          steht oben; aus der Grundstellung kommt erst der Gegner, die Stellung am Ende. */}
+      {!ausGrund && <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />}
       {!spielbar(fen) && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
       <Einstellungen
         wahl={wahl}
@@ -380,11 +318,12 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           stufe: wahl.vorlieben.stufenJePhase.mittelspiel,
           eigene: spiel.eigeneGegner,
           farbe: wahl.farbe,
-          uhr: uhrname(uhrstelle(fen, wahl.vorlieben.uhr)),
+          uhr: uhrnameKurz(uhrstelle(fen, wahl.vorlieben.uhr)),
           gewertet: wirdGewertet(fen, wahl.vorlieben),
         }}
         knopf={
           <BeginnenKnopf
+            kurz
             laufend={laufend !== null}
             moeglich={ok}
             // Der Hinweis steht seit 0.2.129 in der Startleiste selbst (kürzer, ohne Umbruch).
@@ -393,6 +332,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           />
         }
       />
+      {ausGrund && <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />}
       <Partienliste partien={spiel.partien} />
     </div>
   );

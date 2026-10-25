@@ -270,14 +270,15 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   // die Tour.
   spielen: tour("tour.titel.spielen", [
     ziel("spielen-laufend", "tour.spielen.laufend"),
-    ziel("spielen-start", "tour.spielen.start"),
-    ziel("spielen-einstellungen", "tour.spielen.einstellungen"),
-    ziel("spielen-hilfen", "tour.spielen.hilfen"),
-    ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
+    // Reihenfolge wie auf dem Bildschirm seit DS51 (0.2.130): Gegner, Einstellungen, Stellung.
     ziel("spielen-gegner", "tour.spielen.gegner"),
     ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
     ziel("spielen-gitter", "tour.spielen.gitter"),
     ziel("spielen-eigene", "tour.spielen.eigene"),
+    ziel("spielen-einstellungen", "tour.spielen.einstellungen"),
+    ziel("spielen-hilfen", "tour.spielen.hilfen"),
+    ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
+    ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
     ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
     ziel("spielen-partien", "tour.spielen.partien"),

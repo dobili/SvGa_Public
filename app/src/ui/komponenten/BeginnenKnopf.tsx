@@ -18,7 +18,10 @@ export function BeginnenKnopf({
   moeglich,
   hinweis,
   beiBeginn,
+  kurz = false,
 }: {
+  /** Nur „Beginnen“ sichtbar (Startleiste, DS50); Bildschirmleser hören „Partie beginnen“. */
+  kurz?: boolean;
   laufend: boolean;
   moeglich: boolean;
   hinweis: string | null;
@@ -43,11 +46,12 @@ export function BeginnenKnopf({
         <button
           type="button"
           className="knopf-haupt"
+          aria-label={kurz ? t("spielen.beginnen") : undefined}
           disabled={!moeglich}
           onClick={() => (laufend ? setzeErsetzen(true) : beiBeginn())}
         >
           <Knopfsymbol art="starten" />
-          {t("spielen.beginnen")}
+          {t(kurz ? "spielen.beginnenKurz" : "spielen.beginnen")}
         </button>
       )}
       {hinweis && <p className="hinweis">{hinweis}</p>}

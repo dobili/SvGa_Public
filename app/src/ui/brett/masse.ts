@@ -150,6 +150,13 @@ export const RAHMEN = {
   punktGrau: [0, ausPunkt(4.2)],
   /** Goldene Felder nur an den Ecken; Schenkellänge 0,22 Feldbreiten (\eckrahmenschenkel). */
   eckschenkel: 0.22 * EINHEITEN_JE_FELD,
+  /**
+   * Dünner gepunkteter Goldrahmen zwischen den Ecken (Wunsch des Autors, 25.10.2026): Bei
+   * größeren goldenen Flächen waren die Ecken allein schwer zu lesen. Kein Buchwert, nur
+   * App-Darstellung; Punkt 1,1 pt mit 3,2 pt Abstand, damit er neben den Ecken zurücktritt.
+   */
+  goldpunktBreite: ausPunkt(1.1),
+  goldpunkt: [0, ausPunkt(3.2)],
 } as const;
 
 /** Schriftgröße der Koordinaten am Rand, als Anteil der Feldbreite. */

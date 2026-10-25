@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Bausteine für Brett.tsx, seit 0.2.92 in einer eigenen Datei, damit das
  * Brett mit dem Ziehen per Wischen unter 400 Zeilen bleibt. Seit R36 (23.10.2026) teilen sich
- * benachbarte Feldmarkierungen gleicher Farbe einen Umriss (umriss.ts).
+ * benachbarte Feldmarkierungen gleicher Farbe einen Umriss (umriss.ts). Seit 25.10.2026 hat
+ * der goldene Umriss zu den Ecken einen dünnen gepunkteten Rahmen (Goldpunktrahmen).
  * Abhängigkeiten: analyse/werkzeug.ts (Markierungen), geometrie.ts, masse.ts, umriss.ts.
  */
 import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
@@ -111,9 +112,40 @@ function eckenpfad(punkte: readonly Punkt[]): string {
 }
 
 /**
+ * Dünner gepunkteter Goldrahmen um den ganzen Umriss, zusätzlich zu den goldenen Ecken.
+ *
+ * Warum: Bei mehreren benachbarten goldenen Feldern zeigen die Ecken allein schwer, welche
+ * Fläche gemeint ist (Wunsch des Autors, 25.10.2026). Der Rahmen läuft auf derselben Linie wie
+ * die Ecken und der Rahmen von Grau und Rot, aber dünn und gepunktet, damit die Ecken die
+ * Buchdarstellung bleiben. Unter den Punkten liegt wie überall eine Navy-Kontur, damit sie auf
+ * hellen und dunklen Feldern sichtbar sind; das Brett hat in beiden Farbschemata dieselben Farben.
+ * Eingabe: Pfad aller Züge (rahmenpfad). Ausgabe: zwei Pfade, Kontur und Gold.
+ * Beispiel: ein einzelnes goldenes Feld zeigt vier Ecken und dazwischen eine Punktreihe.
+ */
+function Goldpunktrahmen({ pfad }: { pfad: string }) {
+  const muster = RAHMEN.goldpunkt.join(" ");
+  return (
+    <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path
+        d={pfad}
+        stroke={FARBEN.navy}
+        strokeWidth={RAHMEN.goldpunktBreite + 2 * PFEIL.kontur}
+        strokeDasharray={muster}
+      />
+      <path
+        d={pfad}
+        stroke={FARBEN.gold}
+        strokeWidth={RAHMEN.goldpunktBreite}
+        strokeDasharray={muster}
+      />
+    </g>
+  );
+}
+
+/**
  * Die Feldmarkierungen einer Farbe als gemeinsamer Umriss (umriss.ts, R36): Rot gestrichelt,
- * Grau gepunktet, Gold nur an den Ecken, die übrigen Farben durchgezogen, jeweils mit dünner
- * Navy-Kontur wie im Buch.
+ * Grau gepunktet, Gold an den Ecken (dazu dünn gepunktet rundum, Goldpunktrahmen), die übrigen
+ * Farben durchgezogen, jeweils mit dünner Navy-Kontur wie im Buch.
  * Beispiel: Zentrum d4, e4, d5, e5 in Gold → vier Ecken um das ganze Quadrat statt sechzehn.
  */
 function Umrissmarke({
@@ -130,6 +162,7 @@ function Umrissmarke({
   const kappe = farbe === "grau" ? "round" : "butt";
   return (
     <g fill="none" strokeLinecap={kappe} strokeLinejoin="miter">
+      {farbe === "gold" && <Goldpunktrahmen pfad={zuege.map(rahmenpfad).join(" ")} />}
       <path
         d={pfad}
         stroke={FARBEN.navy}

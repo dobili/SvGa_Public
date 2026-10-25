@@ -6,12 +6,18 @@
  * ein Zahnrad ohne Beschriftung, denn letztlich sind es Einstellungen. Bildschirmleser lesen
  * „Einstellungen“ vor. Intern heißt der Bereich weiter „ich“ (Navigation, Speicher). Drei
  * Sekunden Druck auf das Zahnrad öffnen die Aufgabenseite des Autors (seit 0.2.75).
- * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck.
+ * Seit V6 (Nutzungsprüfung 25.10.2026) springt der goldene Strich sofort auf den getippten
+ * Bereich; den neuen Bildschirm zeichnet React erst nach diesem Bild. Vorher wartete die ganze
+ * Rückmeldung auf den Bildschirm, bei „Spielen“ gedrosselt (CPU 4×) etwa 0,15 s. (Als Übergang
+ * mit startTransition kam der Bildschirm gemessen 60 ms später, deshalb ohne.)
+ * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck, nachDemNaechstenBild.
  */
 import { BookOpen, Crosshair, Search, Settings, Swords, type LucideIcon } from "lucide-react";
+import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Bereich } from "../../app/stapel";
 import { t, type Textschluessel } from "../../i18n/sprache";
+import { nachDemNaechstenBild } from "./nachDemNaechstenBild";
 import { useLangerDruck } from "./useLangerDruck";
 
 /**
@@ -47,6 +53,16 @@ const BEREICHE: readonly Bereichsknopf[] = [
 /** Die Leiste; der aktive Bereich trägt oben einen goldenen Strich. */
 export function Leiste() {
   const { stapel, wechsleBereich, navigiere } = useNavigation();
+  // Der getippte Bereich, bis der Bildschirm gewechselt hat; so zeigt die Leiste ihn sofort (V6).
+  const [angetippt, setzeAngetippt] = useState<Bereich | null>(null);
+  const gezeigt = angetippt ?? stapel.bereich;
+  const wechsle = (bereich: Bereich) => {
+    setzeAngetippt(bereich);
+    void nachDemNaechstenBild().then(() => {
+      wechsleBereich(bereich);
+      setzeAngetippt(null);
+    });
+  };
   const druck = useLangerDruck(LANGER_DRUCK_MS, () => {
     // In der Fassung für die Leser gibt es die Aufgabenseite nicht (AP 17).
     if (__VEROEFFENTLICHUNG__) return;
@@ -62,7 +78,7 @@ export function Leiste() {
             key={bereich}
             type="button"
             className={mitDruck ? "leiste-knopf leiste-knopf-halten" : "leiste-knopf"}
-            aria-current={stapel.bereich === bereich ? "page" : undefined}
+            aria-current={gezeigt === bereich ? "page" : undefined}
             data-tour={tour}
             aria-label={t(text)}
             title={t(text)}
@@ -77,7 +93,7 @@ export function Leiste() {
               : {})}
             onClick={() => {
               if (mitDruck && druck.warLang()) return;
-              wechsleBereich(bereich);
+              wechsle(bereich);
             }}
           >
             <Symbol size={SYMBOLGROESSE} strokeWidth={STRICHSTAERKE} aria-hidden="true" />

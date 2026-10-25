@@ -654,6 +654,12 @@
   gap: calc(var(--raster) / 2);
 }
 
+/* Sofortige Rückmeldung auf den Tipp, bis die Partie gezeichnet ist (V6, BeginnenKnopf.tsx). */
+.beginnen [aria-busy="true"] {
+  opacity: 0.75;
+  transform: scale(0.98);
+}
+
 /*
  * Vier gleich breite Spalten (0.2.89, Bildschirmfoto des Autors): Mit „1fr“ wurde eine Spalte nie
  * schmaler als ihr längster Name, „Großmeister Grün“ machte Kachel und Porträt größer.

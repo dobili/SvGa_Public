@@ -13,16 +13,12 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen } from "../../engine/engineDienst";
-import { ladeEroeffnungsliste, ladeKapitel, ladePraxisbuch } from "../../daten/laden";
+import { ladeEroeffnungsliste, ladePraxisbuch } from "../../daten/laden";
 import { praxislinie, type Praxisbuch } from "../../engine/praxisbuch";
 import { familieDerBucheroeffnung, zuegeDerFamilie } from "../../schach/eroeffnungsfamilie";
-import { eroeffnungsnamenAus, type Eroeffnungsnamen } from "../../schach/eroeffnungsnamen";
-import {
-  baueEroeffnungsindex,
-  buchzuegeAb,
-  buchzuegeZu,
-  type Eroeffnungsindex,
-} from "../../schach/eroeffnungsindex";
+import type { Eroeffnungsnamen } from "../../schach/eroeffnungsnamen";
+import { eroeffnungsnamenFuer } from "../../schach/eroeffnungsindexVorrat";
+import { buchzuegeAb, buchzuegeZu, type Eroeffnungsindex } from "../../schach/eroeffnungsindex";
 import {
   nimmZurueckMitUhr,
   pausiere,
@@ -45,6 +41,7 @@ import {
 import { findePartie } from "../../speicher/partien";
 import { useSpeicher } from "../../speicher/speicher";
 import { useDaten } from "./useDaten";
+import { ladeEroeffnungsindex } from "./useEroeffnungsindex";
 import {
   aendereNeueste,
   neueste,
@@ -59,7 +56,6 @@ import { animationsverzugMs } from "../brett/useZuganimation";
 
 /** So oft fragt die Anzeige die Uhr ab (Millisekunden). */
 const TAKT_MS = 200;
-const BUCHKAPITEL = [2, 3];
 
 export interface Partiesteuerung {
   /** Die Partie; null, solange der Speicher lädt oder wenn es sie nicht mehr gibt. */
@@ -78,19 +74,17 @@ export interface Partiesteuerung {
 
 /**
  * Der Eröffnungsindex für den Eröffnungsmodus und die Lichess-Liste (R24); bereit auch dann, wenn
- * das Laden scheitert (dann ohne Liste).
+ * das Laden scheitert (dann ohne Liste). Seit V6 beide aus dem Vorrat (einmal gebaut, das erste Mal
+ * erst nach dem nächsten Bild), damit „Partie beginnen“ sofort die Partie zeigt.
  */
 function useBuch() {
-  const daten = useDaten(() => Promise.all(BUCHKAPITEL.map(ladeKapitel)), "eroeffnungen");
+  const daten = useDaten(() => ladeEroeffnungsindex(), "eroeffnungen");
   const liste = useDaten(ladeEroeffnungsliste, "eroeffnungsliste");
   const praxisdaten = useDaten(ladePraxisbuch, "praxisbuch");
   const praxis = praxisdaten.art === "fertig" ? praxisdaten.wert : null;
-  const index = useMemo(
-    () => (daten.art === "fertig" ? baueEroeffnungsindex(daten.wert) : null),
-    [daten],
-  );
+  const index = daten.art === "fertig" ? daten.wert : null;
   const bekannte = useMemo<Eroeffnungsnamen>(
-    () => (liste.art === "fertig" ? eroeffnungsnamenAus(liste.wert) : new Map()),
+    () => (liste.art === "fertig" ? eroeffnungsnamenFuer(liste.wert) : new Map()),
     [liste],
   );
   const bereit = daten.art !== "laedt" && liste.art !== "laedt" && praxisdaten.art !== "laedt";
@@ -142,7 +136,15 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
   const [fehler, setzeFehler] = useState<string | null>(null);
   const [versuch, setzeVersuch] = useState(0);
   const id = partie?.id ?? "";
-  const stufennummer = partie ? stufeFuer(partie, fen) : 1;
+  // Die Stufe hängt an der Phase der Stellung (spiel/phasen.ts, eine ganze Stellungsanalyse).
+  // Seit V6 nur, wenn die Engine am Zug ist, und nur neu bei neuer Stellung oder neuem Zug: Vorher
+  // lief sie bei jedem Takt der Uhr (alle 200 ms) und schon beim Öffnen der Partie mit.
+  const zuege = partie?.zuege;
+  const einstellung = partie?.einstellung;
+  const stufennummer = useMemo(
+    () => (amZugEngine && zuege && einstellung ? stufeFuer({ zuege, einstellung }, fen) : 1),
+    [amZugEngine, zuege, einstellung, fen],
+  );
   const eroeffnung = partie?.einstellung.eroeffnung ?? null;
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;

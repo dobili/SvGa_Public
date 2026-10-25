@@ -5,10 +5,15 @@
 # sie soll zur umgerechneten Zahl passen (engine/zeitklassenabstand.ts).
 # Aufruf (im Ordner app/): skripte/pruefe-anker.sh blitz 3 → Zweig pruefung-blitz-3
 #   skripte/pruefe-anker.sh blitz 3 r2 → Zweig pruefung-blitz-3-r2 (weitere Runde)
+#   skripte/pruefe-anker.sh blitz 3 maia mit → mit Maia (Kürzel „3m*“), Zweig pruefung-blitz-3-maia
+#   (0.2.143: prüft die Umrechnung je Zeitklasse auch für den Zahlensatz mit Maia)
 set -euo pipefail
+set -f  # Kürzel mit „*“ (Maia) nicht als Dateimuster lesen
 ZEITKLASSE=${1:?Zeitklasse blitz oder klassisch}
 N=${2:?Stufe}
 RUNDE=${3:+-$3}
+STERN=""
+[ "${4:-}" = "mit" ] && STERN="*"
 case "$ZEITKLASSE" in blitz) UHR="180+2" ;; klassisch) UHR="1800+20" ;; *) exit 1 ;; esac
 APP=$(cd "$(dirname "$0")/.." && pwd)
 cd "$APP"
@@ -24,7 +29,7 @@ if [ ! -x "$ENGINE" ]; then
   chmod +x "$ENGINE"
 fi
 export MESSUNG_ENGINE_PFAD="$ENGINE" VITE_CONFIG_NATIVE_IGNORE_WARNING=true
-node skripte/messe-stufen.mjs "${N}m~${UHR}-${N}m~${UHR}" --partien 40 --parallel 4 --ziel "$ZIEL/anker-s$N"
+node skripte/messe-stufen.mjs "${N}m${STERN}~${UHR}-${N}m${STERN}~${UHR}" --partien 40 --parallel 4 --ziel "$ZIEL/anker-s$N"
 node skripte/anker-zu-jsonl.mjs "$ZIEL"
 # Höchstens 100 Minuten: Eine Partie mit mehreren Damen kann die Bewertung festhalten (25.10.2026).
 timeout 100m node skripte/eichung-rechnen.mjs --ordner "$ZIEL/anker-bewertung" --quellen stufen \

@@ -23,7 +23,7 @@ import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stilname, Stilmix } from "./stile";
 import type { Stufe } from "./stufen";
 import type { Wahltempo } from "./wahlmodell";
-import { wertungInZeitklasse } from "./zeitklassenabstand";
+import { wahlwertung } from "./wahlkorrektur";
 import { zufallszug } from "./zufallszug";
 
 /** Ein Fehler oder Fleck mit Gewicht: 0 aus, 1 wie Menschen, 3 besonders häufig. */
@@ -169,13 +169,13 @@ export async function waehleZug(
 
 /**
  * Der Kontext der menschlichen Wahl aus Stufe und Profil. Die Wertung ist seit 0.2.131 die
- * desselben Menschen in der Zeitklasse der Partie (engine/zeitklassenabstand.ts): Wahlmodell und
+ * desselben Menschen in der Zeitklasse der Partie mit geeichter Korrektur (engine/wahlkorrektur.ts): Wahlmodell und
  * Zeitnot sind nach der Wertung in der jeweiligen Zeitklasse geeicht.
  */
 function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
   const tempo = profil.tempo ?? "rapid";
   return {
-    wertung: wertungInZeitklasse(stufe.wertung, tempo),
+    wertung: wahlwertung(stufe, tempo),
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,

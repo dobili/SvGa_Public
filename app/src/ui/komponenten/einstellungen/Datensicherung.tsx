@@ -5,7 +5,7 @@
  * (Auftrag des Autors zu AP 12). Pflichtenheft 4, Stufe 2: Export und Import als eine Datei;
  * Konzept 9.4: sanfter Hinweis alle vier Wochen. Vor dem Einspielen fragt die App nach und
  * nennt, was in der Sicherung steckt, denn das Einspielen ersetzt alle Daten auf dem Gerät.
- * Seit 0.2.80 mit Fragezeichen neben der Überschrift (Erklärung anfangs eingeklappt).
+ * Neben der Überschrift steht ein Fragezeichen (Erklärung anfangs eingeklappt).
  * Abhängigkeiten: speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n.
  */
 import { useEffect, useRef, useState, type ChangeEvent } from "react";

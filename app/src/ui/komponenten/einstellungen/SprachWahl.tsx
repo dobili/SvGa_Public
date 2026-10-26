@@ -1,11 +1,11 @@
 /**
- * Sprachwahl in den Einstellungen (Reiter „Anzeige“), seit 0.2.94; bis 0.2.129 Teil von
- * EinstellungenKarte.tsx.
+ * Sprachwahl in den Einstellungen (Reiter „Anzeige“).
  *
  * Rolle im Gesamtbild: Eine Auswahl, sobald es mehr als eine Sprache gibt; bis dahin nur die Zeile
- * „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts. Seit V4 (Nutzungsprüfung
- * 25.10.2026) lädt eine weitere Sprache erst bei der Wahl: Währenddessen steht „Englisch wird
- * geladen …“ da; ohne Netz eine verständliche Meldung, und die App bleibt bei der bisherigen Sprache.
+ * „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts. Eine weitere Sprache lädt
+ * erst bei der Wahl (V4, Nutzungsprüfung 25.10.2026): Währenddessen steht „Englisch wird
+ * geladen …“ da; ohne Netz eine verständliche Meldung, und die App bleibt bei der bisherigen
+ * Sprache.
  * Abhängigkeiten: app/sprachwahl.ts, Auswahl, i18n.
  */
 import { useState } from "react";

@@ -3,12 +3,11 @@
  *
  * Rolle im Gesamtbild: In den Einstellungen („Über die App“) und an jeder Abbildung („Fehler im
  * Buch melden“, mit Abbildungsnummer und Stellung). Die Meldung landet im Dashboard des Autors
- * (app/melden.ts). Fehlt das Netz, wartet die Meldung seit V9 auf dem Gerät und geht später
- * hinaus; scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben
- * kopieren und per E-Mail schicken.
- * Seit T3 (0.2.131) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
- * Angaben, damit niemand einer Voreinstellung blind zustimmt; seit T2 ist die
- * Datenschutzerklärung ein Link.
+ * (app/melden.ts). Fehlt das Netz, wartet die Meldung auf dem Gerät und geht später hinaus (V9);
+ * scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben kopieren
+ * und per E-Mail schicken.
+ * „Was wird gesendet?“ zeigt unter dem voreingestellten Häkchen die echten Angaben, damit niemand
+ * einer Voreinstellung blind zustimmt (T3); die Datenschutzerklärung ist ein Link (T2).
  * Abhängigkeiten: app/melden.ts, Segmentwahl, i18n.
  */
 import { useState } from "react";

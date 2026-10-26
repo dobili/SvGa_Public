@@ -1,10 +1,10 @@
 /**
- * Stand von Maia für die Oberfläche (0.2.143): Ist das Zusatzpaket geladen, und spielt Maia mit?
+ * Stand von Maia für die Oberfläche: Ist das Zusatzpaket geladen, und spielt Maia mit?
  *
  * Rolle im Gesamtbild: Spielen.tsx merkt sich beim Beginn einer Partie, ob der Bot mit Maia wählt
  * (Partieeinstellung „maia“); die Einstellungen (MaiaWahl.tsx) zeigen Laden, Schalter und Löschen.
- * Seit 0.2.143 stellt die Hülle (app/App.tsx, useAnzeigesatz) damit auch den Zahlensatz der
- * Anzeige ein (engine/zahlensatz.ts): Mit Maia zeigen Gegnerwahl und Startstärke die Zahlen mit Maia.
+ * Die Hülle (app/App.tsx, useAnzeigesatz) stellt damit auch den Zahlensatz der Anzeige ein
+ * (engine/zahlensatz.ts): Mit Maia zeigen Gegnerwahl und Startstärke die Zahlen mit Maia.
  * Abhängigkeiten: app/maiapaket.ts, app/einstellungen.ts, engine/zahlensatz.ts.
  */
 import { useSyncExternalStore } from "react";

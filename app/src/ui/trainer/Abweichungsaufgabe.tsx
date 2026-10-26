@@ -22,8 +22,8 @@ import {
   type Abweichungsaufgabe as Aufgabe,
 } from "../../training/abweichungstrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useAbweichzug, useAntwortbewertung } from "./useAbweichung";
 import type { Runde } from "./useRunde";

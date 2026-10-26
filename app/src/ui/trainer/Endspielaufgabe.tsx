@@ -17,14 +17,14 @@ import { stellungAusFen } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
 import type { Endspielergebnis, Massstab } from "../../training/endspieltrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useEndspielpartie } from "./useEndspielpartie";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;

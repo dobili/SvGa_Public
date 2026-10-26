@@ -5,14 +5,14 @@
  * Rolle im Gesamtbild: Teil von Faktorenaufgabe.tsx. Wunsch des Autors (19.10.2026): Der Trainer
  * soll mit Waagen arbeiten wie die Faktorenbilanz in Kapitel 3, statt mit drei gleichen Knöpfen je
  * Faktor. Nach der Antwort steht wie bisher daneben, was Buch oder App sagen.
- * Abhängigkeiten: ui/komponenten/Waage.tsx, training/faktorentrainer.ts, i18n.
+ * Abhängigkeiten: ui/komponenten/werkzeugkarten/Waage.tsx, training/faktorentrainer.ts, i18n.
  * Buchbezug: Kapitel 3, „Kompensation messen statt fühlen: die Faktorenbilanz“ (Waage bei
  * Material und Zeit, ✓ ◐ ✗ bei Königssicherheit und Aktivität).
  */
 import { t } from "../../i18n/sprache";
 import type { Einschaetzung } from "../../schach/faktoreinschaetzung";
 import { ANTWORTEN, type Vorn } from "../../training/faktorentrainer";
-import { Waage } from "../komponenten/Waage";
+import { Waage } from "../komponenten/werkzeugkarten/Waage";
 
 /** Neigung der Waage zur gewählten Seite (Weiß links wie im Buch). */
 const NEIGUNG: Readonly<Record<Vorn, "links" | "rechts" | "gerade">> = {

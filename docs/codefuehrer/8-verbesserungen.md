@@ -9,7 +9,7 @@ Aufwand: **klein** (unter einer Stunde), **mittel** (ein Arbeitspaket), **groß*
 ## Regeln aus CLAUDE.md, die der Code gerade nicht ganz einhält
 
 - [ ] **Zwei Dateien über 400 Zeilen** (Regel 4): `spiel/genauigkeit.ts` (413) und
-      `ui/komponenten/GegnerWahl.tsx` (407). Je einen Teil in eine eigene Datei auslagern. Weitere
+      `ui/komponenten/gegner/GegnerWahl.tsx` (407). Je einen Teil in eine eigene Datei auslagern. Weitere
       13 Dateien liegen knapp darunter (360 bis 400 Zeilen). Ausgenommen sind die erzeugten
       Tabellen `engine/maia-zuege-daten.ts` und `spiel/elomodell-daten.ts`. Aufwand: klein.
 - [ ] **Die Hülle kennt die Bildschirme.** `app/src/README.md` sagt „kein Modul kennt `ui/`“, aber
@@ -25,10 +25,6 @@ Aufwand: **klein** (unter einer Stunde), **mittel** (ein Arbeitspaket), **groß*
 
 ## Ordnung im Code
 
-- [ ] **`ui/komponenten/` hat 173 Dateien in einem Ordner.** Unterordner nach Themen (etwa
-      `gegner/`, `partie/`, `auswertung/`, `profil/`, `hinweise/`, `werkzeugkarten/`) machen ihn
-      übersichtlicher, auch in der Konzeptkarte. Viele Importe ändern sich dabei, das Verhalten
-      nicht. Aufwand: mittel.
 - [ ] **Code der Messläufe liegt zwischen dem Code der App.** `engine/botkandidaten*.ts`,
       `engine/botarchiv.ts`, `engine/botmessnamen.ts`, `engine/botmessung-hilfen.ts`,
       `engine/eloleiter.ts` und `spiel/eichungsrechnung.ts` braucht nur die Messung, nicht die App.

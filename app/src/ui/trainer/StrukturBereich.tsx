@@ -12,13 +12,13 @@ import { ladeStrukturen } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { strukturrunde } from "../../training/strukturtrainer";
 import { ZUFALL } from "../../training/zufall";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Strukturaufgabe } from "./Strukturaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 const AUFGABEN_JE_RUNDE = 8;
 

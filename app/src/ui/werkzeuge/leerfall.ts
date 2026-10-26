@@ -4,7 +4,7 @@
  * wann das Werkzeug gilt und warum hier nicht.
  *
  * Rolle im Gesamtbild: Schicht zwischen den Werkzeugen (analyse/, Fables Bereich, unverändert)
- * und der Karte (ui/komponenten/Werkzeugkarte.tsx). Sie bekommt das fertige Ergebnis und die
+ * und der Karte (ui/komponenten/werkzeugkarten/Werkzeugkarte.tsx). Sie bekommt das fertige Ergebnis und die
  * Stellung und ersetzt es, wenn das Werkzeug nicht greift. Dazu entfernt sie bei allen Werkzeugen
  * den Satz, der als Befund und als Fazit doppelt stand (Planbilanz, Elementarmatt, Quadrat …).
  * Die Phase folgt derselben Regel wie das Werkzeug „Phase“ (Glossar an Buchstellungen, S17).

@@ -24,7 +24,7 @@ import {
 import { FehlerFormular } from "./FehlerFormular";
 import { useFehlerarten, type Fehlerart } from "./useFehlerarten";
 import { Trainerbrett } from "./Trainerbrett";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 /** So viele Einträge zeigt die Liste zuerst; der Rest auf Wunsch. */
 const ERSTE_EINTRAEGE = 10;

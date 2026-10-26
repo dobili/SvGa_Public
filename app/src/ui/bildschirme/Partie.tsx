@@ -14,12 +14,12 @@
  * Seit 0.2.38 (Vorschlag H, Rückblick): Nach der Auswertung trägt beim Nachspielen das Zielfeld
  * des gezeigten Zuges sein Zeichen, ein goldener Pfeil zeigt den besseren Zug, links am Brett
  * steht ein Bewertungsbalken (spiel/rueckblick.ts); seit 0.2.39 dazu unter dem Brett die Karte
- * zum Zug mit Urteil, besserem Zug und Erklärung des Fehlers (ui/komponenten/useRueckblick.tsx).
+ * zum Zug mit Urteil, besserem Zug und Erklärung des Fehlers (ui/komponenten/rueckblick/useRueckblick.tsx).
  * Während der Partie bleibt das aus.
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) steht statt der gestuften Hinweise ein Knopf
  * „Engine“ unter dem Brett, der Schritt für Schritt Bewertung, Urteil über den eigenen letzten
  * Zug, Erklärung und besten Zug zeigt (SpielEngine.tsx).
- * Abhängigkeiten: ui/komponenten/usePartie.ts, spiel/, i18n.
+ * Abhängigkeiten: ui/komponenten/partie/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
@@ -34,28 +34,35 @@ import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { theorieJeZug } from "../../schach/theorie";
 import { gambitJeZug } from "../../schach/theorienamen";
-import { useTheorie } from "../komponenten/useTheorie";
-import { Auswertung, type Sprung } from "../komponenten/Auswertung";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { Partieende } from "../komponenten/Partieende";
-import { Gruppenfreischaltung } from "../komponenten/Gruppenmodus";
-import { Ergebnisblende } from "../komponenten/Ergebnisblende";
-import { Zugmarke } from "../komponenten/Zugmarke";
-import { Partiestatus } from "../komponenten/Partiestatus";
-import { Partietitel } from "../komponenten/Partietitel";
-import { Partieuhr } from "../komponenten/Partieuhr";
-import { Partiezuege } from "../komponenten/Partiezuege";
-import { Untertitel } from "../komponenten/Partieuntertitel";
-import { PartieLeiste, PartieSymbole, PartieWerkzeugkarten } from "../komponenten/PartieWerkzeuge";
-import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partiewerkzeug";
-import type { Zweigart } from "../komponenten/Nebenzweig";
-import { useRueckblick, type Rueckblick } from "../komponenten/useRueckblick";
-import { SpielEngine } from "../komponenten/SpielEngine";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
-import { useAuswertung } from "../komponenten/useAuswertung";
-import { usePartie, type Partiesteuerung } from "../komponenten/usePartie";
-import { useWerkzeugwahl, type Werkzeugwahlstand } from "../komponenten/useWerkzeugwahl";
+import { useTheorie } from "../komponenten/rueckblick/useTheorie";
+import { Auswertung, type Sprung } from "../komponenten/auswertung/Auswertung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { Partieende } from "../komponenten/partie/Partieende";
+import { Gruppenfreischaltung } from "../komponenten/gegner/Gruppenmodus";
+import { Ergebnisblende } from "../komponenten/partie/Ergebnisblende";
+import { Zugmarke } from "../komponenten/rueckblick/Zugmarke";
+import { Partiestatus } from "../komponenten/partie/Partiestatus";
+import { Partietitel } from "../komponenten/partie/Partietitel";
+import { Partieuhr } from "../komponenten/partie/Partieuhr";
+import { Partiezuege } from "../komponenten/partie/Partiezuege";
+import { Untertitel } from "../komponenten/partie/Partieuntertitel";
+import {
+  PartieLeiste,
+  PartieSymbole,
+  PartieWerkzeugkarten,
+} from "../komponenten/partie/PartieWerkzeuge";
+import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partie/partiewerkzeug";
+import type { Zweigart } from "../komponenten/rueckblick/Nebenzweig";
+import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRueckblick";
+import { SpielEngine } from "../komponenten/partie/SpielEngine";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
+import { usePartie, type Partiesteuerung } from "../komponenten/partie/usePartie";
+import {
+  useWerkzeugwahl,
+  type Werkzeugwahlstand,
+} from "../komponenten/werkzeugwahl/useWerkzeugwahl";
 
 const SYMBOLGROESSE = 20;
 function gegnerVon(farbe: Farbe): Farbe {

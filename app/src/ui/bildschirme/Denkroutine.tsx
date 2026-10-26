@@ -9,10 +9,10 @@
  */
 import { ladeNachschlagen, type Nachschlagen } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { useDaten } from "../komponenten/useDaten";
-import { Phasenzeichen } from "../komponenten/Phasenzeichen";
-import { phaseZumNamen } from "../komponenten/zeilensymbole";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { Phasenzeichen } from "../komponenten/auswertung/Phasenzeichen";
+import { phaseZumNamen } from "../komponenten/auswertung/zeilensymbole";
 
 type Routine = NonNullable<Nachschlagen["denkroutine"]>;
 

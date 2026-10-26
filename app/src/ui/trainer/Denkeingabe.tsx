@@ -16,8 +16,8 @@ import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { fenNach, regelstellung } from "../../spiel/zuege";
 import { KANDIDATEN } from "../../training/denkroutinetrainer";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 
 const KEINE_WAHL = () => undefined;
 /** Je Kandidat zwei Züge: der Kandidat selbst und die Antwort des Gegners. */

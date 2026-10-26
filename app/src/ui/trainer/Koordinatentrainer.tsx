@@ -20,8 +20,8 @@ import {
   type Zugaufgabe,
 } from "../../training/koordinatentrainer";
 import { pruefeFelder } from "../../training/zaehltrainer";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";

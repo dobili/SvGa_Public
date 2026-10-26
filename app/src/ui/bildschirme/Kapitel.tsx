@@ -11,14 +11,14 @@
  */
 import { ladeKapitel, type Kapitel as KapitelDaten } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Abbildungsgalerie } from "../komponenten/Abbildungsgalerie";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { KapitelUebungen } from "../komponenten/KapitelUebungen";
-import { useDaten } from "../komponenten/useDaten";
-import { Kapitelfortschritt } from "../komponenten/Kapitelfortschritt";
+import { Abbildungsgalerie } from "../komponenten/kapitel/Abbildungsgalerie";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { KapitelUebungen } from "../komponenten/kapitel/KapitelUebungen";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { Kapitelfortschritt } from "../komponenten/kapitel/Kapitelfortschritt";
 import { trainerZuKapitel } from "../../training/trainer";
-import { Trainerkarte } from "../komponenten/Trainerkarte";
-import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { Trainerkarte } from "../komponenten/training/Trainerkarte";
+import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
 
 /**
  * Trainer und Übungen des Kapitels in einer Karte (Konzept 10.1: „Trainer des Kapitels“; seit

@@ -19,23 +19,123 @@ und `Trainer.tsx`, `Uebung.tsx`, `Spielen.tsx` (Gegner wählen, Partie beginnen)
 
 ## ui/komponenten
 
-Die Bausteine, aus denen die Bildschirme bestehen, 173 Dateien. Grob:
+Die Bausteine, aus denen die Bildschirme bestehen, seit 26.10.2026 in 19 Unterordnern nach
+Themen (vorher rund 190 Dateien in einem Ordner). Die Unterordner stehen unten je mit einem
+eigenen Abschnitt. Die `use…`-Dateien sind die „Gehirne“ der Bildschirme, etwa `usePartie`
+(laufende Partie und Zug des Bots) oder `useWerkzeugwahl` (welches Werkzeug offen ist). Das
+Aussehen (Farben, Abstände, Schriften) steht daneben in `ui/stil/` als CSS.
 
-- Karten der Werkzeuge und der Engine: `Werkzeugkarte`, `Werkzeugleiste`, `EngineKarte`,
-  `KandidatenKarte`, `FalleKarte`, `RuheKarte`.
-- Gegnerwahl und Bots: `GegnerWahl`, `Gegnerstufen`, `GegnerEditor`, `Fehlerprofil`, `Stilnetz`,
-  `Fleckennetz`, `Gruppenmodus`, `MaiaWahl`, `MaiaHinweis`.
-- Partie: `Partieuhr`, `Partiezuege`, `Partiestatus`, `Ergebnisblende`, `Auswertung`,
-  `Rueckblickkarte`, `Verlaufskurve`, `Zugklassen`, `Spielstaerke`.
-- Profil und Fortschritt: `Wertungskurve`, `LetzteSpielstaerke`, `Fortschrittsuebersicht`,
-  `Symbolringe`, `Ringfeier`, `Partienliste`.
-- Hinweise und Sicherheit: `UpdateHinweis`, `SicherungsHinweis`, `SafariHinweis`,
-  `Speicherhinweis`, `Meldeformular`, `Datensicherung`.
+## ui/komponenten/bausteine
 
-Die `use…`-Dateien sind die „Gehirne“ der Bildschirme: `usePartie` (laufende Partie und Zug des
-Bots), `useAuswertung` (Auswertung nach der Partie), `useWerkzeugwahl` (welches Werkzeug offen
-ist), `useSelbstDenken` (Modus „Erst selbst denken“), `useDaten` (Kapitel laden). Das Aussehen
-(Farben, Abstände, Schriften) steht daneben in `ui/stil/` als CSS.
+Kleine Teile, die überall vorkommen: Auswahl-Chips (`Auswahl`), Reiter, Segmentleiste,
+Fragezeichen-Knopf (`InfoKnopf`), Aufklapper, Zeichen vor Knöpfen und Überschriften, Ring- und
+Balkenanzeigen. Dazu Hilfen ohne eigenes Aussehen: `useDaten` lädt Daten für einen Bildschirm,
+`useEroeffnungsindex` die Eröffnungen des Buches, `dateiAnbieten` bietet Text als Datei an.
+
+## ui/komponenten/rahmen
+
+Der feste Rahmen um alle Bildschirme: die Leiste unten (`Leiste`), die Kopfzeile oben
+(`Kopfzeile`) und die Startanimation mit dem goldenen Springer. Dazu die zwei Teile der
+Aufgabenseite für den Autor (`Aufgabenpunkt`, `AufgabenRueckweg`).
+
+## ui/komponenten/hinweise
+
+Hinweise, die oben in der App oder als Fenster erscheinen: neue Version, Zeit für eine
+Datensicherung, Safari löscht Daten, Speicher nicht lesbar. Dazu der einmalige Hinweis auf Maia
+beim ersten Antippen eines Bots; wann er kommt, rechnet `maiahinweis.ts`.
+
+## ui/komponenten/einstellungen
+
+Die Karten des Einstellungen-Bildschirms: Anzeige (`EinstellungenKarte`), Schriftgröße, Sprache,
+das Maia-Zusatzpaket (`MaiaWahl`, `maiastand`), Datensicherung und Löschen aller Daten, dazu das
+Formular „Fehler melden“.
+
+## ui/komponenten/gegner
+
+Die Wahl eines Gegners vor der Partie: Engine oder Mensch, die vorgefertigten Bots als
+Porträtgitter je Stufe (`GegnerWahl`, `Gegnerstufen`), das Bild eines Gegners mit Siegmarken
+(`GegnerBild`) und der Gruppenmodus. Dazu kleine Texte wie „etwa 1100“ (`staerkeangabe`).
+
+## ui/komponenten/gegnereditor
+
+Eigene Gegner anlegen und einstellen (`GegnerEditor`, `EigeneStufe`): vier Reiter für Stärke,
+Stil, Fehler und blinde Flecken, die Spinnennetze (`Profilnetz`, `Stilnetz`, `Fleckennetz`) und
+die Regler. Die Rechnung dahinter ohne Oberfläche steht in `fehlerprofil.ts` und
+`fehlergruppen.ts`.
+
+## ui/komponenten/spielstart
+
+Was vor dem Beginn einer Partie gewählt wird: Bedenkzeit (`ZeitWahl`), Spielhilfen, Eröffnung,
+Startstellung mit Stellungseditor, dazu die feste Startleiste unten und der Knopf „Partie
+beginnen“.
+
+## ui/komponenten/partie
+
+Die laufende Partie: der Zustand (`usePartie`), der Zug des Bots (`botzug`, `botNotmodus`), Uhr,
+Zugliste, Statuszeile, Titel und Ergebnis. Dazu der Engine-Knopf während der Partie
+(`SpielEngine`) und die Werkzeuge am Brett der Partie (`PartieWerkzeuge`).
+
+## ui/komponenten/partienliste
+
+Die Liste der gespielten Partien: eine Zeile je Partie (`Partiezeile`), Filter und Sortierung,
+der Löschmodus und das Einlesen einer Partie aus PGN.
+
+## ui/komponenten/auswertung
+
+Die Auswertung nach der Partie: `useAuswertung` lässt die Engine jede Stellung bewerten,
+`Auswertung` zeigt das Ergebnis. Dazu Genauigkeit und Spielstärke, die Karte „Deine Züge“, die
+Verlaufskurve der Bewertung und die Zeichen der Zeilen und Phasen.
+
+## ui/komponenten/rueckblick
+
+Das Nachspielen einer ausgewerteten Partie: die Karte zum gezeigten Zug (`Rueckblickkarte`) mit
+besserem Zug und Erklärung, der Nebenzweig „Besser war …“, die Marke der Zugklasse am Brett und
+der Bewertungsbalken. `useTheorie` erkennt, ob ein Zug noch Eröffnungstheorie ist.
+
+## ui/komponenten/fortschritt
+
+Wertung und Fortschritt des Lesers: die Kurve der eigenen Wertung mit Maßstab (Lichess,
+chess.com, FIDE), die geschätzte Spielstärke je Zeitklasse, die Ringe „Dein Fortschritt“ und die
+Gratulation, wenn ein Ring voll wird (`Ringfeier`).
+
+## ui/komponenten/werkzeugkarten
+
+Die Karten unter dem Brett, die ein Werkzeug oder die Engine zeigen: `Werkzeugkarte` mit Befunden
+und Fazit, `EngineKarte`, die Engine-Teile einzelner Werkzeuge (etwa `FalleKarte`,
+`KandidatenKarte`, `RuheKarte`) und „So prüft die App“.
+
+## ui/komponenten/werkzeugwahl
+
+Welches Werkzeug gerade offen ist und wie man es wählt: die Werkzeugleiste mit den Bündeln, die
+Symbole am Brett, die Ordnung der Werkzeuge je Kapitel (`werkzeugordnung`) und das Ergebnis des
+gewählten Werkzeugs (`werkzeugergebnis`).
+
+## ui/komponenten/brettbedienung
+
+Das Brett mit seinen Knöpfen (`Brettbereich`) und was ein Tipp aufs Brett bedeutet
+(`useBrettbedienung`): ziehen, zählen, Bauern umwandeln. Dazu die Zugleiste und die vier
+Zugknöpfe, die auch die Trainer benutzen.
+
+## ui/komponenten/abbildung
+
+Teile des Abbildung-Bildschirms: die Bildunterschrift aus dem Buch (`Unterschrift`), Pfeile und
+Felder des Buches (`buchmarkierungen`), „Erst selbst denken“, Warum-Fragen und der Sprung zu einer
+anderen Abbildungsnummer.
+
+## ui/komponenten/kapitel
+
+Die Kapitelübersicht: die Galerie der Abbildungen, „Dein Fortschritt“ im Kapitel, die
+Kapitelnummer im Ring und die Übungen eines Kapitels mit ihrem Ablauf (`useUebung`).
+
+## ui/komponenten/training
+
+Der Bereich Training: die fälligen Wiederholungen und je Trainer eine kompakte Zeile mit Symbol
+(`Trainerkarte`, `trainersymbole`).
+
+## ui/komponenten/lernsammlung
+
+Die Lernsammlung: Stellungen mit einem Plan-Satz speichern (`SammelFormular`), einen Eintrag
+zeigen und später abfragen.
 
 ## ui/trainer
 

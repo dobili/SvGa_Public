@@ -14,7 +14,7 @@ import { aktiverAnzeigesatz } from "../../engine/zahlensatz";
 import type { EigenerGegner } from "../../engine/gegner";
 import type { Besiegte } from "../../speicher/besiegt";
 import type { Spielvorlieben } from "../../speicher/partien";
-import { wirksameUhr } from "../komponenten/uhrwahl";
+import { wirksameUhr } from "../komponenten/spielstart/uhrwahl";
 import { gegnerprofil } from "./gegnerprofil";
 
 /**

@@ -24,9 +24,9 @@ import {
   type Repertoireaufgabe as Aufgabe,
 } from "../../training/repertoiretrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { WarumFragenListe } from "../komponenten/WarumFrage";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { WarumFragenListe } from "../komponenten/abbildung/WarumFrage";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";

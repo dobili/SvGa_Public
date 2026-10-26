@@ -1,5 +1,5 @@
 /*
- * Fehler und blinde Flecken als Spinnennetz (seit 0.2.135, ui/komponenten/Profilnetz.tsx), dazu
+ * Fehler und blinde Flecken als Spinnennetz (seit 0.2.135, ui/komponenten/gegnereditor/Profilnetz.tsx), dazu
  * die gesperrten Teile, solange die Feinregler offen sind (Fehlerprofil.tsx, Feinregler.tsx).
  * Farben wie das Netz des Spielstils (gegnerbild.css), im Dunkeln dieselben kräftigeren Linien.
  */

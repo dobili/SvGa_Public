@@ -1,5 +1,5 @@
 /*
- * Feuerwerk hinter der Gratulation des Gruppenmodus (ui/komponenten/Feuerwerk.tsx, seit 0.2.144).
+ * Feuerwerk hinter der Gratulation des Gruppenmodus (ui/komponenten/bausteine/Feuerwerk.tsx, seit 0.2.144).
  * Jede Rakete steigt vom unteren Rand zu ihrer Höhe (--y) auf und zerplatzt dort; jeder Funke
  * fliegt in seinem Winkel (--winkel) nach außen, fällt ein wenig und verlischt. Zwei Durchgänge,
  * dann bleibt es still. Mit „Bewegung reduzieren“ nur ein kurzes Aufleuchten an Ort und Stelle.

@@ -10,7 +10,7 @@ import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { MAX_PROFILNAME, type Spielerprofil } from "../../speicher/profil";
 import { aendere } from "../../speicher/speicher";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Portraetwahl } from "./Portraetwahl";
 import { usePortraetwahl } from "./portraetwahlZustand";
 import { Spielerbild } from "./Spielerbild";

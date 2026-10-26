@@ -3,10 +3,10 @@
  *
  * Rolle im Gesamtbild: Formular und Auswertung der Fehlerdatenbank brauchen dieselbe Liste; sie
  * kommt aus nachschlagen.json (Spalte „Fehlerart“, je Kapitel eine).
- * Abhängigkeiten: daten/laden.ts, ui/komponenten/useDaten.ts.
+ * Abhängigkeiten: daten/laden.ts, ui/komponenten/bausteine/useDaten.ts.
  */
 import { ladeNachschlagen } from "../../daten/laden";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 /** Eine Fehlerart der Gesamt-Checkliste: Kapitel und Name. */
 export interface Fehlerart {

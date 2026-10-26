@@ -13,9 +13,9 @@ import { ladeIndex, type Datenverzeichnis } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
-import { Kapitelnummer } from "../komponenten/Kapitelnummer";
-import { Fundmeldung } from "../komponenten/Nummernsprung";
-import { useDaten } from "../komponenten/useDaten";
+import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
+import { Fundmeldung } from "../komponenten/abbildung/Nummernsprung";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { TourKnopf } from "../../tour/TourKnopf";
 
 /** Kapitel 0 bis 12 des Buches. */

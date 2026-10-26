@@ -10,7 +10,7 @@
  * Abhängigkeiten: Kopfzeile, i18n.
  */
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 
 /** Öffentlicher Quellcode der App, wie ihn die GPL verlangt; als Link, nicht nur als Text. */
 const QUELLCODE = "https://github.com/dobili/SvGa_Public";

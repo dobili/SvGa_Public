@@ -17,13 +17,13 @@ import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { alsZugaufgabe, MOTIVE, pruefeTaktikzug } from "../../training/taktiktrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;

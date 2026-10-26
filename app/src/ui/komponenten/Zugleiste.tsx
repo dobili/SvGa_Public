@@ -6,12 +6,12 @@
  * Abzweigungen wählbar. Zugnummern wie im Buch: „5... Db6“ für Schwarz. Die vier Knöpfe stehen
  * ganz unten im Kasten, direkt über dem Brett, damit sie ohne Scrollen erreichbar sind (Wunsch
  * des Autors, 14.10.2026).
- * Abhängigkeiten: schach/variantenbaum.ts, i18n, lucide-react.
+ * Abhängigkeiten: schach/variantenbaum.ts, i18n, Zugknoepfe.tsx.
  */
-import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
 import { Fragment, useEffect, useRef } from "react";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
+import { Zugknoepfe } from "./Zugknoepfe";
 import type { Nachspielstand } from "./useNachspielen";
 import {
   abzweigungen,
@@ -20,8 +20,6 @@ import {
   type Beispiel,
   type Halbzug,
 } from "../../schach/variantenbaum";
-
-const SYMBOLGROESSE = 22;
 
 /** „5.“ vor weißen Zügen, „5...“ vor einem schwarzen Zug am Anfang oder nach einer Abzweigung. */
 function nummerVor(halbzug: Halbzug, erster: boolean): string {
@@ -41,30 +39,15 @@ function hauptvariantenAnteil(beispiel: Beispiel, pfad: readonly string[]): stri
   return anteil;
 }
 
-/** Anfang, Halbzug zurück, Halbzug vor, Ende. */
+/** Anfang, Halbzug zurück, Halbzug vor, Ende (Anfang und Ende abgesetzt, Zugknoepfe.tsx). */
 function Knoepfe({ stand }: { stand: Nachspielstand }) {
-  const knopf = (
-    richtung: "anfang" | "zurueck" | "vor" | "ende",
-    aus: boolean,
-    symbol: React.ReactNode,
-  ) => (
-    <button
-      type="button"
-      className="knopf-symbol"
-      aria-label={t(`zugleiste.${richtung}`)}
-      disabled={aus}
-      onClick={() => stand.schritt(richtung)}
-    >
-      {symbol}
-    </button>
-  );
+  const zurueckAus = !stand.kann.zurueck;
+  const vorAus = !stand.kann.vor;
   return (
-    <div className="zugknoepfe">
-      {knopf("anfang", !stand.kann.zurueck, <ChevronFirst size={SYMBOLGROESSE} />)}
-      {knopf("zurueck", !stand.kann.zurueck, <StepBack size={SYMBOLGROESSE} />)}
-      {knopf("vor", !stand.kann.vor, <StepForward size={SYMBOLGROESSE} />)}
-      {knopf("ende", !stand.kann.vor, <ChevronLast size={SYMBOLGROESSE} />)}
-    </div>
+    <Zugknoepfe
+      gesperrt={{ anfang: zurueckAus, zurueck: zurueckAus, vor: vorAus, ende: vorAus }}
+      beiRichtung={(richtung) => stand.schritt(richtung)}
+    />
   );
 }
 

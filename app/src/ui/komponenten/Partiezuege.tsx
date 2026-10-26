@@ -9,16 +9,22 @@
  * Seit 0.2.131 (Wunsch des Autors, 25.10.2026) steht nach der Auswertung hinter jedem Zug die
  * runde Marke seiner Zugklasse wie in „Deine Züge“ (statt des Zeichens als Text); Bildschirmleser
  * hören den Namen der Klasse.
+ * Seit dem 26.10.2026 (Wunsch des Autors: „Die Liste der gespielten Züge ist nur eine Zeile hoch.
+ * Bitte ausklappbar machen.“) klappt ein Knopf neben der Zeile alle Züge auf, umbrochen über
+ * mehrere Zeilen; das Gerät merkt sich die Wahl. Die Zugknöpfe stehen darunter, „Zum Anfang“ und
+ * „Zum Ende“ abgesetzt von „Zurück“ und „Vor“ (Zugknoepfe.tsx).
  * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
- * Auswertungssymbole.tsx.
+ * app/merker.ts, Auswertungssymbole.tsx, Zugknoepfe.tsx.
  */
-import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
-import { Fragment, useEffect, useRef } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { liesMerker, schreibeMerker } from "../../app/merker";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
 import type { Zugklasse } from "../../spiel/auswertung";
 import { phasenwechsel, type Phase } from "../../spiel/phasen";
 import { Klassenmarke } from "./Auswertungssymbole";
+import { Zugknoepfe, type Zugrichtung } from "./Zugknoepfe";
 
 const SYMBOLGROESSE = 22;
 const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
@@ -26,22 +32,62 @@ const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
   mittelspiel: "M",
   endspiel: "E",
 };
+/** Merker auf dem Gerät: Zugliste der Partie aufgeklappt („ja“) oder einzeilig (fehlt). */
+const MERKER_AUFGEKLAPPT = "partiezuegeAufgeklappt";
+const AUFGEKLAPPT = "ja";
 
 /**
- * Rollt die Zugzeile waagerecht, bis der gezeigte Zug (sonst der letzte) sichtbar ist.
+ * Rollt die Zugzeile, bis der gezeigte Zug (sonst der letzte) sichtbar ist: einzeilig waagerecht,
+ * aufgeklappt senkrecht.
  * Warum nicht scrollIntoView: Das würde auch die ganze Seite verschieben (wie in Zugleiste.tsx).
- * Seit DS48 (0.2.131) steht die Zeile in der Partie einzeilig neben den Zugknöpfen.
+ * Seit DS48 (0.2.131) steht die Zeile in der Partie einzeilig über den Zugknöpfen.
  */
-function rolleZumZug(zeile: HTMLElement | null): void {
+function rolleZumZug(zeile: HTMLElement | null, aufgeklappt: boolean): void {
   if (!zeile) return;
   const knopf =
     zeile.querySelector<HTMLElement>('[aria-current="step"]') ??
     zeile.querySelector<HTMLElement>(".zug:last-of-type");
   if (!knopf) return;
+  if (aufgeklappt) {
+    const oben = knopf.offsetTop;
+    const sichtbar =
+      oben >= zeile.scrollTop && oben + knopf.offsetHeight <= zeile.scrollTop + zeile.clientHeight;
+    if (!sichtbar) zeile.scrollTop = oben - zeile.clientHeight / 2;
+    return;
+  }
   const links = knopf.offsetLeft;
   const sichtbar =
     links >= zeile.scrollLeft && links + knopf.offsetWidth <= zeile.scrollLeft + zeile.clientWidth;
   if (!sichtbar) zeile.scrollLeft = links - zeile.clientWidth / 2;
+}
+
+/** Aufgeklappt oder einzeilig, mit Merker auf dem Gerät (geht er verloren, ist es einzeilig). */
+function useAufgeklappt(): readonly [boolean, () => void] {
+  const [aufgeklappt, setzeAufgeklappt] = useState(
+    () => liesMerker(MERKER_AUFGEKLAPPT) === AUFGEKLAPPT,
+  );
+  const umschalten = () => {
+    const neu = !aufgeklappt;
+    setzeAufgeklappt(neu);
+    schreibeMerker(MERKER_AUFGEKLAPPT, neu ? AUFGEKLAPPT : "");
+  };
+  return [aufgeklappt, umschalten];
+}
+
+/** Knopf neben der Zugzeile: alle Züge zeigen oder wieder einzeilig. */
+function Aufklappknopf({ offen, beiTipp }: { offen: boolean; beiTipp: () => void }) {
+  return (
+    <button
+      type="button"
+      className="knopf-symbol zugliste-aufklappen"
+      aria-expanded={offen}
+      aria-label={t(offen ? "partie.wenigerZuegeZeigen" : "partie.alleZuegeZeigen")}
+      title={t(offen ? "partie.wenigerZuegeZeigen" : "partie.alleZuegeZeigen")}
+      onClick={beiTipp}
+    >
+      {offen ? <ChevronUp size={SYMBOLGROESSE} /> : <ChevronDown size={SYMBOLGROESSE} />}
+    </button>
+  );
 }
 
 /** Je Halbzug (Index) die Phase, die mit der Stellung nach ihm beginnt, falls eine beginnt. */
@@ -75,6 +121,50 @@ function Zugtext({
   );
 }
 
+/** „M“ oder „E“ vor dem ersten Zug des Mittel- oder Endspiels; sonst nichts. */
+function Phasenmarke({ phase }: { phase: Phase | undefined }) {
+  if (!phase) return null;
+  const name = t(`phase.name.${phase}`);
+  return (
+    <span className="zugphase" title={name} aria-label={name}>
+      {PHASENBUCHSTABE[phase]}
+    </span>
+  );
+}
+
+/**
+ * Die vier Zugknöpfe der Partie; gesperrt ist ein Knopf, dessen Ziel die gezeigte Stelle ist
+ * oder außerhalb der Partie liegt.
+ */
+function Partieknoepfe({
+  stelle,
+  anzahl,
+  beiStelle,
+}: {
+  stelle: number;
+  anzahl: number;
+  beiStelle: (stelle: number) => void;
+}) {
+  const ziele: Readonly<Record<Zugrichtung, number>> = {
+    anfang: 0,
+    zurueck: stelle - 1,
+    vor: stelle + 1,
+    ende: anzahl,
+  };
+  const gesperrt = (ziel: number) => ziel === stelle || ziel < 0 || ziel > anzahl;
+  return (
+    <Zugknoepfe
+      gesperrt={{
+        anfang: gesperrt(ziele.anfang),
+        zurueck: gesperrt(ziele.zurueck),
+        vor: gesperrt(ziele.vor),
+        ende: gesperrt(ziele.ende),
+      }}
+      beiRichtung={(richtung) => beiStelle(ziele[richtung])}
+    />
+  );
+}
+
 /**
  * Eingaben: Startstellung, Züge in SAN, gezeigte Stelle (Zahl der Halbzüge), Zugzeichen und
  * Zugklassen der Auswertung je Halbzug (nach dem Ende), Phase je Stellung (für „M“ und „E“),
@@ -101,25 +191,11 @@ export function Partiezuege({
   const texte = eigeneAlsText(startFen, zuege, sprache());
   const marken = phasenmarken(phasen);
   const zeile = useRef<HTMLParagraphElement>(null);
-  useEffect(() => rolleZumZug(zeile.current), [stelle, zuege.length]);
-  const knopf = (
-    richtung: "anfang" | "zurueck" | "vor" | "ende",
-    ziel: number,
-    symbol: React.ReactNode,
-  ) => (
-    <button
-      type="button"
-      className="knopf-symbol"
-      aria-label={t(`zugleiste.${richtung}`)}
-      disabled={ziel === stelle || ziel < 0 || ziel > zuege.length}
-      onClick={() => beiStelle(ziel)}
-    >
-      {symbol}
-    </button>
-  );
+  const [aufgeklappt, umschalten] = useAufgeklappt();
+  useEffect(() => rolleZumZug(zeile.current, aufgeklappt), [stelle, zuege.length, aufgeklappt]);
   return (
     <section
-      className="zugleiste partiezuege"
+      className={aufgeklappt ? "zugleiste partiezuege aufgeklappt" : "zugleiste partiezuege"}
       aria-label={t("partie.zuege")}
       data-tour="partie-zuege"
     >
@@ -127,15 +203,7 @@ export function Partiezuege({
         {texte.length === 0 && <span className="hinweis">{t("partie.nochKeineZuege")}</span>}
         {texte.map((text, index) => (
           <Fragment key={`${index}-${text}`}>
-            {marken.has(index) && (
-              <span
-                className="zugphase"
-                title={t(`phase.name.${marken.get(index) ?? "mittelspiel"}`)}
-                aria-label={t(`phase.name.${marken.get(index) ?? "mittelspiel"}`)}
-              >
-                {PHASENBUCHSTABE[marken.get(index) ?? "mittelspiel"]}
-              </span>
-            )}
+            <Phasenmarke phase={marken.get(index)} />
             <button
               type="button"
               className="zug"
@@ -154,12 +222,8 @@ export function Partiezuege({
           </Fragment>
         ))}
       </p>
-      <div className="zugknoepfe">
-        {knopf("anfang", 0, <ChevronFirst size={SYMBOLGROESSE} />)}
-        {knopf("zurueck", stelle - 1, <StepBack size={SYMBOLGROESSE} />)}
-        {knopf("vor", stelle + 1, <StepForward size={SYMBOLGROESSE} />)}
-        {knopf("ende", zuege.length, <ChevronLast size={SYMBOLGROESSE} />)}
-      </div>
+      <Aufklappknopf offen={aufgeklappt} beiTipp={umschalten} />
+      <Partieknoepfe stelle={stelle} anzahl={zuege.length} beiStelle={beiStelle} />
     </section>
   );
 }

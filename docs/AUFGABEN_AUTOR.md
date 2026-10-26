@@ -1409,7 +1409,7 @@ nur du das Buch änderst.
 ### Q1 Befunde der Nachsicht im Code (26.10.2026, nur gelesen, nichts geändert)
 
 Antworten auf deine Fragen aus der Ideensammlung. Wo ein Vorschlag steht, ist er noch nicht
-umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
+umgesetzt; Widerspruch genügt.
 
 - [ ] Q1-1. **Plus-Symbol in der Partieauswertung:** Es gibt es, aber es sieht nicht wie ein
       Plus aus. Beim Nachspielen einer Partie (Rückblick) stehen unter der Karte zum gezeigten
@@ -1417,7 +1417,7 @@ umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
       Lesezeichen mit Plus (wie an den Abbildungen im Buch) gibt es dort nicht, deshalb hast du
       es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
       Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
-      öffnet (siehe Q1-5).
+      öffnet (beschlossen, siehe Entscheidungen).
 - [ ] Q1-4. **Porträt-Editor gegen fertige Porträts:** Es fehlt nichts. Alle 30 fertigen
       Auswahlporträts und die der Bots sind aus denselben Teilen gebaut (Frisur, Haarfarbe,
       Hautfarbe, Augen, Mund, Bart), und jeder Wert davon steht im Baukasten zur Auswahl; der

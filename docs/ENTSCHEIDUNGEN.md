@@ -5881,3 +5881,28 @@ Menschen gut bearbeitbar sein („eventuell ein Wiki?“), und Verbesserungsidee
   Zeilen, 173 Dateien in `ui/komponenten/`, Messcode zwischen App-Code, gegenseitige Importe,
   Versionsgeschichte in Dateiköpfen, Zeitgrenze für den Browser-Schritt der CI, zwei offene
   Messungen).
+
+## Version 0.3.0: Zugklassen gemessen, Varianten abspielen, Zugliste, Wertungsmaßstab (26.10.2026, Opus)
+
+- **Zugklassen gemessen** (Frage des Autors, ob die 90-%-Spannen auch für brillant, stark und
+  Theoriezug bestimmt waren: nein, sie waren geschätzt). Der Messlauf `spiel/zugklassen.messung.ts`
+  setzt die Partien der Spielerprofile zusammen und bestimmt die Klasse jedes Zuges mit der Regel
+  der App (Opfer, Theoriekette, Gambit). Ungenau, Fehler, Verpasst und Patzer kommen genau wie in
+  der alten Tabelle heraus, das bestätigt den Lauf. Neu: brillant Median 0,1 bis 0,5 %, stark 7 bis
+  9 % (vorher auf 1 bis 2,5 % geschätzt; die Regel „Fehler des Gegners bestraft“ greift in
+  Amateurpartien oft), Theoriezug 5 bis 7 %; „bester“ enthält diese Klassen nicht mehr. Ist der
+  Median 0 (brillant), steht als „üblich“ das Mittel der Spieler. Schon umgesetzt, Widerspruch genügt.
+- **Varianten abspielen** (Wunsch des Autors): Knöpfe direkt unter dem Brett spielen „Besser war …“
+  (Glühbirne) und „So wird der Fehler bestraft“ (Schwerter) ab, 1,2 Sekunden je Zug, ein zweiter
+  Tipp hält an (`ui/komponenten/Variantenknoepfe.tsx`).
+- **Zugliste beim Nachspielen** (Wunsch des Autors): aufklappbar auf bis zu fünf Zeilen, Wahl auf dem
+  Gerät gemerkt; „Zum Anfang“ und „Zum Ende“ an den Rand, Zurück und Vor breit in der Mitte
+  (`ui/komponenten/Zugknoepfe.tsx`, auch an Abbildungen und bei „Zug erraten“).
+- **Wertungsmaßstab** (Frage des Autors nach der Umrechnung): chess.com ist im Mittel recht
+  verlässlich (Umfrage unter aktiven Spielern), für Einzelne etwa ±100 bis 150; FIDE deutlich
+  unsicherer, ±200 und mehr, und erst ab etwa 1730 Lichess Klassisch. Deshalb ein kleiner Schalter
+  „Lichess | chess.com · FIDE“ mit „≈“ und Erklärung; die Kurve bleibt bei Lichess. Schon umgesetzt,
+  Widerspruch genügt.
+- **Codepflege:** CI-Browser-Schritt mit Zeitgrenze 5 Minuten; `spiel/genauigkeit.ts` und
+  `ui/komponenten/GegnerWahl.tsx` unter 400 Zeilen (`spiel/zuggenauigkeit.ts`,
+  `ui/komponenten/HilfenWahl.tsx`); der doppelte Wahlkontext ist eine Funktion (`wahlkontextVon`).

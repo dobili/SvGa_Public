@@ -2,7 +2,7 @@
 
 Wie die App „Schach von Grund auf“ aufgebaut ist: was welcher Teil des Codes macht und wie die
 Teile zusammenhängen. Für Leser ohne Programmierkenntnisse geschrieben (Wunsch des Autors vom
-26.10.2026). Stand: Version 0.2.145.
+26.10.2026). Stand: Version 0.3.0.
 
 ## Die Seiten
 

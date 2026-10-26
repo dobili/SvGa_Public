@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 26.10.2026, Version 0.2.146 (mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 26.10.2026, Version 0.3.0 (mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.146“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.0“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -89,6 +89,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.0: Zugklassen gemessen, Varianten abspielen, Zugliste, Wertungsmaßstab (Opus, 26.10.2026)
+
+- [ ] N1005. **Varianten abspielen:** Spiele eine Partie mit einem Fehler (?) oder Patzer (??) und
+      tippe beim Nachspielen auf diesen Zug. Direkt unter dem Brett stehen die Knöpfe „Besseren Zug
+      abspielen“ (Glühbirne) und „Bestrafung abspielen“ (gekreuzte Schwerter). Ein Tipp spielt die
+      Variante langsam am Brett ab, etwa ein Zug je 1,2 Sekunden; der Knopf heißt dann „Anhalten“.
+      Am Ende bleibt die letzte Stellung stehen, „Zurück zur Partie“ in der Karte kehrt zurück.
+      Bei einer Ungenauigkeit (?!) gibt es nur „Besseren Zug abspielen“. Tempo angenehm?
+- [ ] N1006. **Zugliste aufklappbar:** Beim Nachspielen einer Partie steht rechts neben der
+      einzeiligen Zugliste ein Pfeil „Alle Züge zeigen“. Ein Tipp zeigt alle Züge auf bis zu fünf
+      Zeilen (danach scrollt die Liste), ein zweiter klappt sie wieder zu. Die Wahl bleibt nach
+      dem Neuladen erhalten.
+- [ ] N1007. **Knöpfe getrennt:** Unter der Zugliste (Partie, Abbildungen, Zug erraten) steht
+      „Zum Anfang“ ganz links, „Zum Ende“ ganz rechts, Zurück und Vor als breitere Knöpfe in der
+      Mitte mit deutlichem Abstand. Drückst du jetzt seltener versehentlich auf Anfang oder Ende?
+- [ ] N1008. **Wertung wie chess.com oder FIDE:** Profil › Deine Wertung (und unter Spielen „Deine
+      Spielstärke“) hat einen kleinen Schalter „Lichess | chess.com · FIDE“. Rechts stehen die
+      Zahlen mit „≈“ umgerechnet: Blitz und Schnellschach in chess.com, Klassisch in FIDE. Unter
+      etwa 1730 Lichess Klassisch steht bei FIDE ein Strich mit kurzem Hinweis, weil die Tabelle
+      dort endet. Die Kurve bleibt im Maßstab von Lichess. Hinter dem Fragezeichen steht, wie
+      ungenau das ist: im Mittel recht verlässlich, für einen einzelnen Spieler etwa ±100 bis 150
+      (chess.com) und ±200 oder mehr (FIDE). Die Wahl bleibt auf dem Gerät gespeichert.
+- [ ] N1009. **Deine Züge mit gemessenen Spannen:** Nach einer gewerteten Partie, Auswertung ›
+      „Deine Züge“: Jetzt sind auch Brillant, Stark und Theoriezug aus 77 000 Lichess-Partien
+      gemessen (vorher geschätzt). Üblich sind etwa: brillant 0,1 bis 0,5 %, stark 7 bis 9 %
+      (stark heißt auch: einen Fehler des Gegners bestraft, das kommt oft vor), Theoriezug 5 bis
+      7 %. „Bester Zug“ ist dadurch üblich nur noch 20 bis 30 %, weil die anderen Klassen nicht
+      mehr darin stecken. Wirken die Urteile (wenig, normal, viel) jetzt stimmig?
 
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 

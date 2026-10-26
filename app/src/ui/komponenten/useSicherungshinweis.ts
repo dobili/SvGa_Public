@@ -28,6 +28,10 @@ export interface Sicherungshinweis {
   readonly nichtMehr: () => void;
 }
 
+/**
+ * Zählt die Zeit, in der die App sichtbar ist, und meldet, wann der Hinweis auf die Datensicherung
+ * fällig ist; dazu „Später“ und „Nicht mehr nachfragen“.
+ */
 export function useSicherungshinweis(): Sicherungshinweis {
   const letzte = useSpeicher((z) => z.daten.letzteSicherung);
   const hatDaten = useSpeicher((z) => {

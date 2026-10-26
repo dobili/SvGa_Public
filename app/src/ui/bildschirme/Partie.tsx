@@ -355,6 +355,10 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   );
 }
 
+/**
+ * Der Bildschirm einer laufenden Partie gegen die Engine (oder einen Menschen am selben Gerät):
+ * Brett, Uhren, Zugliste, Rücknahme und am Ende das Ergebnis.
+ */
 export function Partie({ id }: { id: string }) {
   const s = usePartie(id);
   return (

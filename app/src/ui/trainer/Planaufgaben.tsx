@@ -60,6 +60,10 @@ function Frageblock({ frage, waehle }: { frage: Wahlfrage; waehle: (richtig: boo
   );
 }
 
+/**
+ * Eine Aufgabe der Planbilanz-Übung (Kapitel 6): Planfragen mit Antwortauswahl; gelöst, wenn alle
+ * Antworten stimmen.
+ */
 export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const [ergebnisse, setzeErgebnisse] = useState<readonly boolean[]>([]);
@@ -91,6 +95,9 @@ export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; ru
   );
 }
 
+/**
+ * Eine LAP-Aufgabe der Planbilanz-Übung (Kapitel 6): Figur antippen, dann ihr Zielfeld, und prüfen.
+ */
 export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const [figur, setzeFigur] = useState<string | null>(null);
@@ -141,6 +148,10 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
 
 const ZUEGE = Array.from({ length: HOECHSTENS_ZUEGE }, (_, i) => String(i + 1));
 
+/**
+ * Eine Wettrennen-Aufgabe der Planbilanz-Übung (Kapitel 6): bei entgegengesetzten Rochaden die
+ * Bauernzüge bis zum ersten Hebel für beide Seiten wählen.
+ */
 export function Rennaufgabe({ aufgabe, runde }: { aufgabe: RennAufgabe; runde: Runde }) {
   const [wahl, setzeWahl] = useState<Partial<Record<Color, string>>>({});
   const beantwortet = runde.ergebnis !== null;

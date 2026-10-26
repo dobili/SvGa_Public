@@ -73,6 +73,10 @@ function Bilanz({ fen }: { fen: string }) {
   );
 }
 
+/**
+ * Eine Aufgabe des Faktorenbilanz-Trainers (Kapitel 3): je Faktor einschätzen, wer vorn liegt, und
+ * mit der Bilanz vergleichen.
+ */
 export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const [entwurf, setzeEntwurf] = useState<Entwurf>(LEER);

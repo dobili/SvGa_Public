@@ -73,6 +73,7 @@ function Wahl({
 /** Gewählt: eine Runde nach Thema und Stufe oder die fälligen Wiederholungen. */
 type Rundenwahl = Taktikwahl | { readonly wiederholung: readonly string[] };
 
+/** Der Taktiktrainer: Thema und Stufe wählen, dann eine Runde aus acht Aufgaben. */
 export function TaktikBereich() {
   const daten = useDaten(ladeTaktik, "trainer-taktik");
   const faellig = useFaelligeAufgaben("taktik");

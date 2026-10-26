@@ -261,6 +261,10 @@ function seiteAmZug(fen: string): Farbe {
   return stellung.ok ? stellung.wert.amZug : "white";
 }
 
+/**
+ * Der Bildschirm „Spielen“: Gegner, Stufen, Bedenkzeit und Farbe wählen und eine Partie beginnen
+ * oder die laufende fortsetzen; auch aus einer Abbildung heraus.
+ */
 export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?: string }) {
   const spiel = useSpeicher((z) => z.daten.spiel);
   const [fen, setzeFen] = useState(startFen ?? GRUNDSTELLUNG);

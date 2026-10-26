@@ -82,6 +82,10 @@ function Auswahl({
   );
 }
 
+/**
+ * Der Trainer „Abweichungsmodus“ (Kapitel 2 und 3): Eröffnung und Seite wählen, dann auf
+ * Abweichungen der Engine vom Buch antworten.
+ */
 export function AbweichungBereich() {
   const daten = useDaten(
     () => ladeKapitel(KAPITEL_EROEFFNUNGEN),

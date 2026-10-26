@@ -69,6 +69,10 @@ function Begruendung({ fen }: { fen: string }) {
   );
 }
 
+/**
+ * Eine Aufgabe der Zielbilanz-Übung (Kapitel 2): die Tabelle für beide Seiten ausfüllen und mit der
+ * Wertung der App vergleichen.
+ */
 export function Zielbilanzaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const [entwurf, setzeEntwurf] = useState<Entwurf>({ white: {}, black: {} });

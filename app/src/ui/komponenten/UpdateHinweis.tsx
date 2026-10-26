@@ -8,6 +8,10 @@
 import { aktualisiereJetzt, useOfflineStand } from "../../app/offline";
 import { t } from "../../i18n/sprache";
 
+/**
+ * Der Hinweis „Neue Version verfügbar“: erscheint, wenn die neue Version geladen ist, und
+ * aktualisiert erst nach Tippen.
+ */
 export function UpdateHinweis() {
   const { updateVerfuegbar } = useOfflineStand();
   if (!updateVerfuegbar) {

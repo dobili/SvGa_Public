@@ -133,6 +133,10 @@ function Eintrag({ eintrag, arten }: { eintrag: Fehlereintrag; arten: readonly F
   );
 }
 
+/**
+ * Der Trainer „Fehlerdatenbank“ (Kapitel 12): eigene Fehler eintragen, je Fehlerart auswerten,
+ * passenden Trainer vorschlagen, Einträge ansehen und löschen.
+ */
 export function FehlerBereich() {
   const liste = useSpeicher((z) => z.daten.fehler);
   const arten = useFehlerarten();

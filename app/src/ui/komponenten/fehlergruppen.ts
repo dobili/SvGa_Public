@@ -81,6 +81,10 @@ export function artenDesReglers(kennung: Reglerkennung): readonly Fehlerart[] {
   return FEHLERREGLER.find((r) => r.kennung === kennung)?.arten ?? [];
 }
 
+/**
+ * Alle Fehlerarten, die zu einer Achse des Fehlernetzes gehören (etwa „Figuren“: Figur hängen
+ * lassen und Drohung übersehen).
+ */
 export function artenDerAchse(kennung: Achsenkennung): readonly Fehlerart[] {
   const achse = FEHLERACHSEN.find((a) => a.kennung === kennung);
   return (achse?.regler ?? []).flatMap((r) => artenDesReglers(r));
@@ -115,6 +119,10 @@ export function setztNiePatt(g: EigenerGegner): boolean {
   return !istAn(g, PATT);
 }
 
+/**
+ * Schaltet beim eigenen Gegner den Fehler „patt gesetzt“ aus (nie patt) oder wieder auf das Maß der
+ * Menschen.
+ */
 export function mitNiePatt(g: EigenerGegner, nie: boolean): EigenerGegner {
   return setzeStufe(g, PATT, nie ? null : 0);
 }
@@ -224,6 +232,10 @@ export function mitFehlervorlage(g: EigenerGegner, name: Fehlervorlage): Eigener
   return neu;
 }
 
+/**
+ * Prüft, ob die Fehler des eigenen Gegners genau einer Vorlage entsprechen (etwa „leichtsinnig“),
+ * damit die Vorlage als gewählt erscheint.
+ */
 export function istFehlervorlage(g: EigenerGegner, name: Fehlervorlage): boolean {
   const werte: Netzwerte = FEHLERVORLAGEN[name];
   return (
@@ -235,11 +247,19 @@ export function istFehlervorlage(g: EigenerGegner, name: Fehlervorlage): boolean
   );
 }
 
+/**
+ * Wendet eine Vorlage der blinden Flecken an (etwa „kurzsichtig“): jede Fleckengruppe auf ihren
+ * Wert.
+ */
 export function mitFleckenvorlage(g: EigenerGegner, name: Fleckenvorlage): EigenerGegner {
   const werte: Netzwerte = FLECKENVORLAGEN[name];
   return FLECKENGRUPPEN.reduce((x, gr, i) => setzeGruppe(x, gr.flecken, werte[i] ?? null), g);
 }
 
+/**
+ * Prüft, ob die blinden Flecken des eigenen Gegners genau einer Vorlage entsprechen, damit die
+ * Vorlage als gewählt erscheint.
+ */
 export function istFleckenvorlage(g: EigenerGegner, name: Fleckenvorlage): boolean {
   const werte: Netzwerte = FLECKENVORLAGEN[name];
   return FLECKENGRUPPEN.every((gr, i) =>

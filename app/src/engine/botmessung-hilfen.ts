@@ -88,6 +88,10 @@ export function zeitklasseVon(tempo: string): Wertungstempo {
 /** Kennungen des Archivs beginnen so (engine/botarchiv.ts). */
 const ARCHIV_VORSILBE = "alt-";
 
+/**
+ * Schreibt aus den Messergebnissen die Datei engine/botstaerke-daten.ts: die Elo-Zahl jeder Stufe
+ * und jedes Bots und die Abzüge je Bedenkzeit. Nur für den Messlauf, nicht in der App.
+ */
 export function datendatei(
   werte: Map<string, number>,
   uhr: ReadonlyMap<string, ReadonlyMap<number, number>>,

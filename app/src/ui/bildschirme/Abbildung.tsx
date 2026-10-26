@@ -250,6 +250,10 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
   );
 }
 
+/**
+ * Der Bildschirm einer Abbildung des Buches: Brett mit den Markierungen des Buches,
+ * Bildunterschrift, Zugfolge zum Nachspielen, Werkzeuge und Engine.
+ */
 export function Abbildung({ nummer }: { nummer: string }) {
   const kapitelnummer = Number(nummer.split(".")[0]);
   const kapitel = useDaten(() => ladeKapitel(kapitelnummer), `kapitel-${kapitelnummer}`);

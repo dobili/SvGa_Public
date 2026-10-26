@@ -20,6 +20,7 @@ import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const AUFGABEN_JE_RUNDE = 8;
 
+/** Der Trainer „Falle oder Köder“: Stufe wählen, dann eine Runde aus acht Angeboten. */
 export function FallenBereich() {
   const daten = useDaten(ladeFallen, "trainer-falle");
   const [stufe, setzeStufe] = useState<number | null>(null);

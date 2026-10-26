@@ -146,6 +146,10 @@ function Falle({ falle, aktionen }: { falle: Fallencheck; aktionen: Textaktionen
   );
 }
 
+/**
+ * Der Bildschirm „Steckbriefe“: die Eröffnungs-Steckbriefe (Kapitel 2) und Fallenchecks (Kapitel 4)
+ * zum Aufklappen, mit Sprung an die passende Stelle im Buch.
+ */
 export function Steckbriefe() {
   const { navigiere } = useNavigation();
   const kapitel = useDaten(ladeAlleKapitel, "alle-kapitel");

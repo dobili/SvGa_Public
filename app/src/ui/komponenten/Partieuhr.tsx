@@ -64,6 +64,10 @@ function Seite({ partie, farbe }: { partie: Partie; farbe: Farbe }) {
   );
 }
 
+/**
+ * Die Uhr einer Seite über oder unter dem Brett: Name (beim Gegner mit Porträt und Stufe) und
+ * Restzeit, unter zehn Sekunden rot.
+ */
 export function Partieuhr({
   partie,
   farbe,

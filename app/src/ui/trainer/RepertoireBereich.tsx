@@ -81,6 +81,10 @@ function Auswahl({
   );
 }
 
+/**
+ * Der Repertoire-Trainer (Kapitel 2): Eröffnung und Seite wählen, dann ihre Varianten Zug für Zug
+ * ziehen.
+ */
 export function RepertoireBereich() {
   const daten = useDaten(
     () => ladeKapitel(KAPITEL_EROEFFNUNGEN),

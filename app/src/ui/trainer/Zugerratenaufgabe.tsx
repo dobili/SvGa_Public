@@ -155,6 +155,10 @@ function Zugerratenbrett({
   );
 }
 
+/**
+ * Eine Aufgabe „Zug erraten“: eine Meisterpartie aus Kapitel 11 Zug für Zug raten; nach einem
+ * Fehlversuch vergleicht die Engine.
+ */
 export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   const s = useRatestand(aufgabe, runde);
   // Der letzte Durchgang vor dieser Runde; bleibt während der Runde stehen.

@@ -233,6 +233,10 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   dreissigMinuten: () => <DreissigMinutenBereich />,
 };
 
+/**
+ * Der Bildschirm eines Trainers: Übungsart und Einstellungen wählen und eine Runde Aufgaben
+ * spielen.
+ */
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {
   const eigener = EIGENE_BEREICHE[kennung];
   return (

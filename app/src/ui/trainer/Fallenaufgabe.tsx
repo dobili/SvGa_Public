@@ -87,6 +87,10 @@ function pfeile(aufgabe: Aufgabe, entschieden: boolean): Markierung[] {
   return marken;
 }
 
+/**
+ * Eine Aufgabe von „Falle oder Köder“: den Köder-Zug ansehen, nehmen oder ablehnen, dann
+ * Widerlegung und Warnsignale sehen.
+ */
 export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const entschieden = runde.ergebnis !== null;

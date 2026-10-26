@@ -65,6 +65,10 @@ function FehlerMelden({ angaben }: { angaben: string }) {
   );
 }
 
+/**
+ * Der Bildschirm „Einstellungen“ (über die Profilseite): Einstellungen in Reitern, Daten auf diesem
+ * Gerät sichern, einspielen oder löschen, und „Über die App“.
+ */
 export function Einstellungen() {
   const { navigiere } = useNavigation();
   const offline = useOfflineStand();

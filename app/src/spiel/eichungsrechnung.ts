@@ -60,10 +60,15 @@ export interface Eichseite {
   readonly wertung: number;
 }
 
+/** Durchschnitt einer Zahlenreihe; Hilfsrechnung der Eichung (nur im Messlauf). */
 export function mittel(zahlen: readonly number[]): number {
   return zahlen.length === 0 ? Number.NaN : zahlen.reduce((s, x) => s + x, 0) / zahlen.length;
 }
 
+/**
+ * Streuung einer Zahlenreihe (Standardabweichung): wie weit die Werte im Mittel vom Durchschnitt
+ * abweichen.
+ */
 export function streuung(zahlen: readonly number[]): number {
   const m = mittel(zahlen);
   return Math.sqrt(mittel(zahlen.map((x) => (x - m) ** 2)));

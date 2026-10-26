@@ -240,6 +240,10 @@ function figurensatzAus(roh: unknown): Figurensatz {
   if (alt) return alt;
   return BILDSAETZE.find((satz) => satz === roh) ?? "buch";
 }
+/**
+ * Liest die gespeicherten Einstellungen (Brettfarben, Figuren, Ton, Strenge und weitere); was fehlt
+ * oder nicht passt, bekommt die Vorgabe.
+ */
 export function einstellungenAus(roh: unknown): Einstellungen {
   if (!istObjekt(roh)) return STANDARD_EINSTELLUNGEN;
   const farbe = roh.brettfarben;

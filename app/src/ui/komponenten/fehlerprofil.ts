@@ -34,10 +34,12 @@ export function hatStufen(art: Profilart): boolean {
   return REGLERARTEN.includes(art);
 }
 
+/** Gibt an, ob ein Eintrag des Fehlerprofils ein blinder Fleck ist (und keine Fehlerart). */
 export function istFleck(art: Profilart): art is BlinderFleck {
   return (BLINDE_FLECKEN as readonly string[]).includes(art);
 }
 
+/** Gibt an, ob diese Fehlerart oder dieser blinde Fleck beim eigenen Gegner eingeschaltet ist. */
 export function istAn(g: EigenerGegner, art: Profilart): boolean {
   return istFleck(art) ? g.blindeFlecken.includes(art) : g.fehlerarten.includes(art);
 }

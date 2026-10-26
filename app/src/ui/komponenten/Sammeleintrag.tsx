@@ -87,6 +87,10 @@ function Inhalt({ eintrag }: { eintrag: Sammeleintrag }) {
   );
 }
 
+/**
+ * Ein Eintrag der Lernsammlung: zugeklappt Fundstelle und Plan, aufgeklappt mit Brett, Notiz,
+ * Sprung zur Abbildung, Bearbeiten und Löschen.
+ */
 export function SammeleintragKarte({ eintrag }: { eintrag: Sammeleintrag }) {
   const { navigiere } = useNavigation();
   const [bearbeiten, setzeBearbeiten] = useState(false);

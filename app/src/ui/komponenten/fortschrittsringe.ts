@@ -102,6 +102,10 @@ function gefeiert(): Set<string> {
   return new Set((liesMerker(MERKER_GEFEIERT) ?? "").split(",").filter(Boolean));
 }
 
+/**
+ * Merkt sich auf dem Gerät, dass zu diesem vollen Fortschrittsring schon gratuliert wurde, damit
+ * die Gratulation nur einmal kommt.
+ */
 export function merkeGefeiert(testid: string): void {
   schreibeMerker(MERKER_GEFEIERT, [...gefeiert(), testid].join(","));
 }

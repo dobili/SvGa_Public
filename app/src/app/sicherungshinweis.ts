@@ -63,6 +63,7 @@ export function liesAppzeit(): Appzeit {
   return { seitSicherung: null, ms: 0 };
 }
 
+/** Merkt sich auf dem Gerät, wie lange die App seit der letzten Datensicherung sichtbar war. */
 export function schreibeAppzeit(stand: Appzeit): void {
   schreibeMerker(MERKER_ZEIT, JSON.stringify(stand));
 }
@@ -72,6 +73,10 @@ export function hinweisAbgeschaltet(): boolean {
   return liesMerker(MERKER_AUS) === AUS;
 }
 
+/**
+ * Merkt sich „Nicht mehr nachfragen“: Der Hinweis auf die Datensicherung erscheint danach nicht
+ * mehr.
+ */
 export function schalteHinweisAb(): void {
   schreibeMerker(MERKER_AUS, AUS);
 }

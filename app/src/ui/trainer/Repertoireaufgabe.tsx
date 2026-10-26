@@ -43,6 +43,10 @@ function buchpfeil(aufgabe: Aufgabe, zuege: readonly string[]): Markierung[] {
   return felder ? [{ typ: "pfeil", farbe: "gold", von: felder.von, nach: felder.nach }] : [];
 }
 
+/**
+ * Eine Variante Zug für Zug aus dem Gedächtnis ziehen; die App antwortet aus dem Buch. Auch für
+ * „Studien lösen“.
+ */
 export function Repertoireaufgabe({
   aufgabe,
   runde,

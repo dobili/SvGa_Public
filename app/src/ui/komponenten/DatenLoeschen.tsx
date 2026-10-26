@@ -40,6 +40,10 @@ function Anleitung() {
   );
 }
 
+/**
+ * Die Karte „Daten auf diesem Gerät“: Datensicherung, alle Daten löschen (mit Bestätigung) und
+ * Anleitung zum Entfernen der App.
+ */
 export function DatenLoeschen() {
   const [stand, setzeStand] = useState<Stand>("ruhe");
   const loesche = async () => {

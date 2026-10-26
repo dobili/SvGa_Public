@@ -18,6 +18,10 @@ interface Zustand {
   readonly komponenten: string;
 }
 
+/**
+ * Äußerste Schutzschicht um die ganze App: Stürzt die Oberfläche ab, erscheint statt einer leeren
+ * Seite eine verständliche Meldung, auf Wunsch mit Fehlerbericht an den Autor.
+ */
 export class Fehlergrenze extends Component<{ children: ReactNode }, Zustand> {
   override state: Zustand = { fehler: null, komponenten: "" };
 

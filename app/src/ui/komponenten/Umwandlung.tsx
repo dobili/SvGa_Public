@@ -9,6 +9,10 @@ import { t } from "../../i18n/sprache";
 import { ROLLENBUCHSTABE, type Rolle } from "../../schach/stellung";
 import { UMWANDLUNGEN } from "../../schach/weiterspielen";
 
+/**
+ * Die Auswahl der Figur, wenn ein Bauer die letzte Reihe erreicht (Dame, Turm, Läufer, Springer
+ * oder Abbruch).
+ */
 export function Umwandlung({ beiWahl }: { beiWahl: (rolle: Rolle | null) => void }) {
   return (
     <div className="umwandlung" role="dialog" aria-label={t("zugleiste.umwandlung")}>

@@ -121,6 +121,10 @@ function Sicherungsstand() {
   );
 }
 
+/**
+ * Sichert alle eigenen Daten als Datei und spielt eine Sicherung wieder ein; vorher fragt sie nach,
+ * weil das Einspielen alles auf dem Gerät ersetzt.
+ */
 export function Datensicherung() {
   const [stand, setzeStand] = useState<Stand>({ art: "ruhe" });
   const auswahl = useRef<HTMLInputElement>(null);

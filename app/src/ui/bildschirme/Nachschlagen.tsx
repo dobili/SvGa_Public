@@ -43,6 +43,10 @@ function Eintrag({
   );
 }
 
+/**
+ * Die Startseite des Bereichs „Nachschlagen“: Suche im Glossar und Wege zu Denkroutine, Checkliste,
+ * Steckbriefen und Werkzeugen.
+ */
 export function Nachschlagen() {
   const { navigiere } = useNavigation();
   const glossar = useDaten(ladeGlossar, "glossar");

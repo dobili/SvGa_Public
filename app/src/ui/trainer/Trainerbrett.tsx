@@ -17,6 +17,10 @@ function amZug(fen: string): "w" | "b" {
   return fen.split(" ")[1] === "b" ? "b" : "w";
 }
 
+/**
+ * Das Brett der Trainer: zeigt Stellung und Markierungen und meldet einen Tipp auf ein Feld;
+ * schlanker als das Brett der Abbildungen.
+ */
 export function Trainerbrett({
   fen,
   markierungen = [],

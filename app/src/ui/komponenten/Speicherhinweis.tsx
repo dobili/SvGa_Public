@@ -10,6 +10,9 @@ import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
 
+/**
+ * Der Hinweis oben, wenn die App ihre Daten auf dem Gerät nicht lesen oder nicht speichern kann.
+ */
 export function Speicherhinweis() {
   const fehler = useSpeicher((zustand) => zustand.fehler);
   const [geschlossen, setzeGeschlossen] = useState<typeof fehler>(null);

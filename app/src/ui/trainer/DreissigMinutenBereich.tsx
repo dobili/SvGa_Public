@@ -107,6 +107,10 @@ function Uhrzeile({ einheit }: { einheit: Einheit }) {
   );
 }
 
+/**
+ * Der Trainer „30-Minuten-Plan“ (Kapitel 12): geführte Einheit mit Uhr, Partietag und Studientag im
+ * Wechsel.
+ */
 export function DreissigMinutenBereich() {
   const [stand, aenderePlan] = usePlanstand();
   const [geschafft, setzeGeschafft] = useState<Tagesart | null>(null);

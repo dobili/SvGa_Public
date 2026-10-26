@@ -292,6 +292,10 @@ function praxisErgebnis(
   return { zug: { san, von: "engine", quelle: "buch", fehler: null, verlust: 0 }, uci };
 }
 
+/**
+ * Rechnet in der laufenden Partie den Zug des Bots (Eröffnungsbuch oder Engine mit Stufe, Profil
+ * und Bedenkzeit) und schreibt ihn samt Uhr in die gespeicherte Partie.
+ */
 export async function normalerBotzug(
   id: string,
   fen: string,

@@ -14,6 +14,10 @@ import { useRunde, type Runde } from "./useRunde";
 /** Eine Aufgabe, gleich welcher Art, mit ihrer Darstellung. */
 export type Darstellung = (runde: Runde) => React.ReactNode;
 
+/**
+ * Eine Trainingsrunde, gemeinsam für alle Trainer: erzeugt die Aufgaben einmal und zeigt sie der
+ * Reihe nach.
+ */
 export function Rundenablauf({
   kennung,
   erzeuge,

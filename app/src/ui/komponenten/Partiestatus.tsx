@@ -22,6 +22,10 @@ function statustext(s: Partiesteuerung, partie: Partie): string {
   return t(s.engineDenkt ? "partie.engineDenkt" : "partie.duBistAmZug");
 }
 
+/**
+ * Die Zeile unter der Zugliste: wer am Zug ist oder wie die Partie endete, dazu Zurücknehmen und
+ * Aufgeben.
+ */
 export function Partiestatus({
   s,
   partie,

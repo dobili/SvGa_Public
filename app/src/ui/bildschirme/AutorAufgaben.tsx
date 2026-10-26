@@ -238,6 +238,10 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
   );
 }
 
+/**
+ * Die Aufgabenseite des Autors (docs/AUFGABEN_AUTOR.md in der App) mit Haken, Notizen und Knopf zum
+ * Kopieren des Stands; erreichbar über langen Druck auf „Profil“.
+ */
 export function AutorAufgaben() {
   const daten = useDaten(ladeAufgabendatei, "autor-aufgaben");
   return (

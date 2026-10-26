@@ -300,6 +300,10 @@ function Seitenwahl({
   );
 }
 
+/**
+ * Die Auswertung unter einer beendeten Partie: Verlaufskurve, erste klare Abweichung, grobe Patzer,
+ * absichtliche Fehler der Engine und die PGN.
+ */
 export function Auswertung({
   eintrag,
   stand,

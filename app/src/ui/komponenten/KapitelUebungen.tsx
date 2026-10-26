@@ -12,6 +12,10 @@ import type { Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
 
+/**
+ * Die Übungen eines Kapitels mit ihrem Stand; „Übungen lösen“ geht sie der Reihe nach durch, die
+ * ungelösten zuerst.
+ */
 export function KapitelUebungen({ kapitel }: { kapitel: Kapitel }) {
   const { navigiere } = useNavigation();
   const staende = useSpeicher((z) => z.daten.fortschritt.uebungen);

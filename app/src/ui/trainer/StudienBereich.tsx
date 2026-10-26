@@ -87,6 +87,10 @@ function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
   );
 }
 
+/**
+ * Der Trainer „Studien lösen“ (Kapitel 10): alle Studien des Kapitels nacheinander Zug für Zug
+ * lösen.
+ */
 export function StudienBereich() {
   return (
     <MitKapitel nummer={KAPITEL_STUDIEN} inhalt={(k) => <Studienrunde studien={studienAus(k)} />} />
@@ -159,6 +163,10 @@ function Zugerraten({ kapitel }: { kapitel: Parameters<typeof partienAus>[0] }) 
   );
 }
 
+/**
+ * Der Trainer „Zug erraten“ (Kapitel 11): Partie und Seite wählen, dann die Züge des Meisters
+ * raten.
+ */
 export function ZugErratenBereich() {
   return <MitKapitel nummer={KAPITEL_PARTIEN} inhalt={(k) => <Zugerraten kapitel={k} />} />;
 }

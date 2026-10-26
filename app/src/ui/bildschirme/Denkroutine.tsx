@@ -79,6 +79,10 @@ function Phasen({ routine }: { routine: Routine }) {
   );
 }
 
+/**
+ * Die Denkroutine des Buches als Nachschlagekarte: vier Schritte, Sicherheitsblick und Werkzeuge je
+ * Partiephase.
+ */
 export function Denkroutine() {
   const daten = useDaten(ladeNachschlagen, "nachschlagen");
   const routine = daten.art === "fertig" ? daten.wert.denkroutine : null;

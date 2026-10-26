@@ -88,6 +88,10 @@ export function Buchtext({
   );
 }
 
+/**
+ * Die Bildunterschrift einer Abbildung, eins zu eins aus dem Buch, mit fett, kursiv und antippbaren
+ * Verweisen.
+ */
 export function Unterschrift({ nummer, teile, beiVerweis }: UnterschriftEigenschaften) {
   return (
     <p className="unterschrift" data-tour="unterschrift">

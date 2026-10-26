@@ -10,6 +10,10 @@
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 
+/**
+ * Der Knopf „Zurück zu den Aufgaben“: erscheint nur, wenn der Autor von seiner Aufgabenseite einem
+ * Link gefolgt ist.
+ */
 export function AufgabenRueckweg() {
   const { stapel, zurueck } = useNavigation();
   const darunter = stapel.ansichten[stapel.ansichten.length - 2];

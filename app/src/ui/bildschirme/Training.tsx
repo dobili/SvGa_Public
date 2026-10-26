@@ -102,6 +102,10 @@ function SammelKarte() {
   );
 }
 
+/**
+ * Die Startseite des Bereichs „Training“: fällige Wiederholungen, 30-Minuten-Plan und alle Trainer
+ * je Kapitel.
+ */
 export function Training() {
   return (
     <div className="bildschirm">

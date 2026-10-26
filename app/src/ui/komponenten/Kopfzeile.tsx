@@ -20,6 +20,9 @@ interface KopfzeileEigenschaften {
   readonly beiZurueck?: () => void;
 }
 
+/**
+ * Die Kopfzeile eines Bildschirms: Zurück-Knopf, Titel, rechts eigene Knöpfe und das Toursymbol.
+ */
 export function Kopfzeile({ titel, zurueckText, rechts, beiZurueck }: KopfzeileEigenschaften) {
   const { zurueck } = useNavigation();
   return (

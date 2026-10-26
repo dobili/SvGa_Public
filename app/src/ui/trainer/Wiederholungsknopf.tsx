@@ -7,6 +7,10 @@
  */
 import { t } from "../../i18n/sprache";
 
+/**
+ * Der Knopf „Wiederholen“ in einem Trainer: startet eine Runde aus den fälligen Aufgaben; ohne
+ * fällige Aufgaben erscheint er nicht.
+ */
 export function Wiederholungsknopf({ anzahl, starte }: { anzahl: number; starte: () => void }) {
   if (anzahl === 0) return null;
   return (

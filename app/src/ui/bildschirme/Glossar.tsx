@@ -15,6 +15,10 @@ import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Buchtext } from "../komponenten/Unterschrift";
 import { useDaten } from "../komponenten/useDaten";
 
+/**
+ * Das Glossar des Buches: Begriffe suchen und einen Eintrag mit Kurzdefinition, Stellen und
+ * Querverweisen lesen.
+ */
 export function Glossar() {
   const glossar = useDaten(ladeGlossar, "glossar");
   const [suchtext, setzeSuchtext] = useState("");

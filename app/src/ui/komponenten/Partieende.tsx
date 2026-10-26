@@ -16,6 +16,7 @@ import { kurzergebnis } from "./partietexte";
 import { Ergebnismarke } from "./Ergebnismarke";
 import { Knopfsymbol } from "./Knopfsymbol";
 
+/** Das Ergebnis einer beendeten Partie (wie sie endete) mit den Knöpfen für eine neue Partie. */
 export function Partieende({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
   const { startFen, abbildung } = partie.einstellung;

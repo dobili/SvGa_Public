@@ -27,6 +27,10 @@ export interface Rateversuch {
   readonly fehlversuch: Fehlversuch | null;
 }
 
+/**
+ * Der Kommentar unter dem Brett zum letzten Rateversuch bei „Zug erraten“: Motive des Partiezugs
+ * und, nach dem Vergleich, Fehlerart oder Motive des eigenen Zugs.
+ */
 export function Zugkommentare({
   aufgabe,
   versuch,

@@ -66,6 +66,10 @@ function Eintrag({ werkzeug }: { werkzeug: Werkzeug }) {
   );
 }
 
+/**
+ * Der Bildschirm „Werkzeuge des Buches“: alle Werkzeuge nach Kapiteln mit Bedienung und Regel, je
+ * mit Knopf zum einführenden Kapitel.
+ */
 export function Werkzeuguebersicht() {
   const { navigiere } = useNavigation();
   const index = useDaten(ladeIndex, "index");

@@ -106,6 +106,10 @@ function Vergleich({
   );
 }
 
+/**
+ * Eine Aufgabe des Denkroutine-Trainers (Kapitel 12): eine Minute denken, dann zwei Kandidaten mit
+ * der stärksten Antwort ziehen und mit der Engine vergleichen.
+ */
 export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const rest = useDenkminute();

@@ -160,6 +160,10 @@ function Gesamt({
   );
 }
 
+/**
+ * Der Bildschirm „Lernsammlung“: eigene Stellungen nach Eröffnung geordnet, abfragen, als PGN
+ * ausgeben und neue Stellungen eintragen.
+ */
 export function Lernsammlung() {
   const liste = useSpeicher((z) => z.daten.sammlung);
   const [abfrage, setzeAbfrage] = useState<readonly Sammeleintrag[] | null>(null);

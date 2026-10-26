@@ -11,6 +11,10 @@ import { ladeUebungspruefung } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { useDaten } from "./useDaten";
 
+/**
+ * Der Satz „Nur dieser Zug führt zum Ziel“ unter der Erklärung einer Übung, wenn die Engine-Prüfung
+ * das bestätigt hat.
+ */
 export function EinzigerZug({ uebung }: { uebung: string }) {
   const pruefung = useDaten(ladeUebungspruefung, "uebungen-engine");
   if (pruefung.art !== "fertig") return null;

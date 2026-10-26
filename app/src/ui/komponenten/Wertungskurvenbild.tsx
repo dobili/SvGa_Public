@@ -86,6 +86,10 @@ function raster(punkte: readonly Wertungspunkt[]): number[] {
   return linien;
 }
 
+/**
+ * Zeichnet die Wertungskurve: Linie mit einem Punkt je Partie (grün Sieg, rot Niederlage, grau
+ * Remis) und Datum am Rand.
+ */
 export function Kurve({
   punkte,
   bereich,

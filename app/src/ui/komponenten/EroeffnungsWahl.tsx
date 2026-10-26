@@ -40,6 +40,10 @@ function zugfolge(zuege: readonly string[]): string {
   return `${teile.join(" ")}${zuege.length > VORSCHAU_HALBZUEGE ? " …" : ""}`;
 }
 
+/**
+ * Wahl einer Eröffnung aus Kapitel 2 und 3 vor der Partie, mit Vorschau der Hauptvariante: Die
+ * Engine folgt ihr, solange der Leser ihre Züge spielt.
+ */
 export function EroeffnungsWahl({
   gewaehlt,
   beiWahl,

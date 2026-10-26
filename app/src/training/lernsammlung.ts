@@ -115,6 +115,7 @@ export function geaenderterEintrag(
   return liste.map((e) => (e.id === id ? { ...e, ...teil } : e));
 }
 
+/** Entfernt einen Eintrag aus der Lernsammlung. */
 export function ohneSammeleintrag(liste: readonly Sammeleintrag[], id: string): Sammeleintrag[] {
   return liste.filter((e) => e.id !== id);
 }

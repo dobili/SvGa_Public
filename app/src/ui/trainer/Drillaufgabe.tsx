@@ -46,6 +46,10 @@ function regelsatz(drill: Drill): string {
   return t(`drill.${drill.art}.regel`);
 }
 
+/**
+ * Eine Kurzübung des Endspieltrainers (etwa Quadrat, Opposition, Schlüsselfelder): Frage,
+ * Antwortknöpfe, danach Regel des Buches und Lösung am Brett.
+ */
 export function Drillaufgabe({ drill, runde }: { drill: Drill; runde: Runde }) {
   const [gewaehlt, setzeGewaehlt] = useState<string | null>(null);
   const waehle = (option: string) => {

@@ -11,6 +11,7 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { useSicherungshinweis } from "./useSicherungshinweis";
 
+/** Der Hinweis oben „Zeit für eine Datensicherung“ nach vier Stunden App-Zeit ohne Sicherung. */
 export function SicherungsHinweis() {
   const hinweis = useSicherungshinweis();
   const { wechsleBereich } = useNavigation();

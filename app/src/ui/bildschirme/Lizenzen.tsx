@@ -51,6 +51,7 @@ const BAUSTEINE = [
   { kennung: "badrap", text: PAKETTEXTE },
 ] as const satisfies readonly { kennung: string; text?: string; quelle?: string }[];
 
+/** Die Seite mit Impressum, Datenschutz und den Lizenzen aller Bausteine der App. */
 export function Lizenzen({ beiZurueck }: { beiZurueck?: () => void }) {
   return (
     <div className="bildschirm">

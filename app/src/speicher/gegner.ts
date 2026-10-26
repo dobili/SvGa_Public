@@ -127,6 +127,10 @@ function portraetBauAus(roh: unknown): Pick<EigenerGegner, "portraetBau"> {
   return gebaut ? { portraetBau: gebaut } : {};
 }
 
+/**
+ * Liest einen selbst angelegten Gegner aus den gespeicherten Daten und prüft jedes Feld; ohne
+ * Kennung oder Namen gibt es keinen Gegner.
+ */
 export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
   if (!istObjekt(roh) || typeof roh.kennung !== "string" || typeof roh.name !== "string") {
     return null;

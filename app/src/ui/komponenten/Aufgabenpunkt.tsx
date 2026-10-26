@@ -49,6 +49,10 @@ export function Aufgabentext({
   );
 }
 
+/**
+ * Ein Punkt der Aufgabenseite des Autors: Haken, Kennung, Text mit antippbaren Links und eine
+ * eigene Notiz.
+ */
 export function Aufgabenpunkt({
   punkt,
   namen,

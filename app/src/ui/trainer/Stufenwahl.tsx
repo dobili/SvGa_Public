@@ -9,6 +9,7 @@ import { t } from "../../i18n/sprache";
 
 const STUFEN = [1, 2, 3, 4, 5] as const;
 
+/** Die Wahl der Schwierigkeit 1 bis 5 (oder alle) in den Trainern mit geeichten Aufgaben. */
 export function Stufenwahl({
   stufe,
   setze,

@@ -8,6 +8,10 @@
  */
 import { t } from "../../i18n/sprache";
 
+/**
+ * Eine Zeile mit Auswahlknöpfen (etwa ja, teils, nein); nach der Antwort steht die Antwort der App
+ * daneben, grün oder rot.
+ */
 export function Wahlzeile<T extends string>({
   titel,
   werte,

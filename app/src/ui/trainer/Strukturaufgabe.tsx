@@ -229,6 +229,10 @@ function Planwahl({
   );
 }
 
+/**
+ * Eine Aufgabe des Strukturerkenners: starke Felder und schwache Bauern antippen, eine Feldart
+ * benennen und den Plan wählen.
+ */
 export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const [felder] = useState(() => starkeFelderMitArt(aufgabe));

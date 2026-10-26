@@ -109,6 +109,10 @@ function Wahl({
   );
 }
 
+/**
+ * Der Endspieltrainer (Kapitel 8 und 9): Gruppe und Stufe wählen und Stellungen gegen die Engine
+ * spielen; darunter die Kurzübungen.
+ */
 export function EndspielBereich() {
   const daten = useDaten(ladeEndspiele, "trainer-endspiel");
   const [wahl, setzeWahl] = useState<Endspielwahl | null>(null);

@@ -11,6 +11,10 @@ import { balkenanteil, balkentext } from "../../spiel/rueckblick";
 
 const PROZENT = 100;
 
+/**
+ * Der schmale Bewertungsbalken links am Brett, mit Zahl; nur beim Nachspielen einer ausgewerteten
+ * Partie.
+ */
 export function Bewertungsbalken({ wert, gedreht }: { wert: number; gedreht: boolean }) {
   const weiss = balkenanteil(wert) * PROZENT;
   const text = balkentext(wert);

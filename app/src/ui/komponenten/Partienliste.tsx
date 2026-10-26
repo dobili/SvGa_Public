@@ -64,6 +64,7 @@ function zeile(partie: Partie): string {
   return t(schluessel, { datum, stufe: gegner, zuege });
 }
 
+/** Die Karte der laufenden Partie im Bereich Spielen: ein Tipp setzt sie fort. */
 export function LaufendePartie({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
   return (
@@ -114,6 +115,10 @@ function Partienkopf() {
   );
 }
 
+/**
+ * Die Liste der beendeten Partien im Bereich Spielen, mit Filter und Sortierung; ein Tipp öffnet
+ * Ergebnis und Auswertung.
+ */
 export function Partienliste({ partien }: { partien: readonly Partieeintrag[] }) {
   const [filter, setzeFilter] = useState<Partienfilter>(OHNE_FILTER);
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);

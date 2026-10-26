@@ -225,6 +225,10 @@ function Inhalt({
   );
 }
 
+/**
+ * Der Bildschirm einer Übung des Buches: den Zug auf dem Brett finden, mit Hinweisen in drei
+ * Stufen, Lösung und Erklärung; „Nächste Übung“ führt durch eine Reihe.
+ */
 export function Uebung({
   kapitel,
   id,

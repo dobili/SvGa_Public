@@ -57,6 +57,10 @@ function Einschaetzung({ aufgabe, zuege }: { aufgabe: Aufgabe; zuege: readonly s
   );
 }
 
+/**
+ * Eine Aufgabe des Abweichungsmodus: Buchzüge bis zur Abweichung der Engine, die eigene Antwort am
+ * Brett, dann Bewertung und Einschätzung nach den Prinzipien.
+ */
 export function Abweichungsaufgabe({
   aufgabe,
   runde,

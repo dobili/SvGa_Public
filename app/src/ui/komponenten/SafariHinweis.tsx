@@ -15,6 +15,10 @@ import { t } from "../../i18n/sprache";
 /** Die Installationsseite der Website (Anleitung je Gerät). */
 const INSTALLATIONSSEITE = "/installieren/";
 
+/**
+ * Der Hinweis oben, nur in Safari im Browser: Safari löscht die Daten nach sieben Tagen ohne
+ * Besuch, deshalb die App installieren.
+ */
 export function SafariHinweis() {
   const [sichtbar, setzeSichtbar] = useState(() =>
     safariHinweisNoetig(geraet(), istInstalliert(), liesMerker(MERKER_SAFARIHINWEIS)),

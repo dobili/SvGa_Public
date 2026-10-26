@@ -38,6 +38,7 @@ function Trainerwiederholungen({ faellig }: { faellig: readonly string[] }) {
   });
 }
 
+/** Zeigt im Bereich Training, wie viele Wiederholungen fällig sind, und startet sie. */
 export function FaelligeWiederholungen() {
   const { navigiere } = useNavigation();
   const karten = useSpeicher((z) => z.daten.karten);

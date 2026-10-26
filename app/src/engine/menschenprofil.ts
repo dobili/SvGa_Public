@@ -48,6 +48,10 @@ export function bandwert(tabelle: readonly number[], wertung: number): number {
 export type Gelegenheitsart = keyof typeof GELEGENHEIT;
 export const GELEGENHEITSARTEN = Object.keys(GELEGENHEIT) as Gelegenheitsart[];
 
+/**
+ * Gibt an, ob es für diese Fehlerart Lichess-Zahlen gibt, wie oft Menschen die Gelegenheit zu ihr
+ * nutzen.
+ */
 export function hatDaten(art: Fehlerart): art is Gelegenheitsart {
   return art in GELEGENHEIT;
 }
@@ -105,6 +109,10 @@ export function verlustfaktor(wertung: number, verlust: number): number {
 /** Zeitnot-Stufe aus der Restzeit: „0“ unter 10 s, „10“ bis 30 s, „30“ bis 60 s, sonst null. */
 export type Zeitnotstufe = "0" | "10" | "30";
 
+/**
+ * Ordnet die Restzeit auf der Uhr einer Zeitnot-Stufe zu (unter 10, 30 oder 60 Sekunden); ohne Uhr
+ * oder mit genug Zeit gibt es keine.
+ */
 export function zeitnotstufe(restMs: number | null): Zeitnotstufe | null {
   if (restMs === null) return null;
   const sekunden = restMs / SEKUNDE_MS;
@@ -113,10 +121,6 @@ export function zeitnotstufe(restMs: number | null): Zeitnotstufe | null {
   return sekunden < 60 ? "30" : null;
 }
 
-/**
- * Faktoren der Zeitnot gegenüber ruhiger Zeit (ab 60 s): für Fehler ab einem Bauern und für
- * Patzer ab drei Bauern. Beispiel: 2000, unter 10 s → Fehler etwa ×1,4, Patzer etwa ×3,2.
- */
 /**
  * Faktor auf die Temperatur des Wahlmodells in Zeitnot (seit 0.2.125, engine/zeitnot-daten.ts):
  * je Zeitklasse und Band so, dass die Fehlerrate steigt wie bei Menschen mit so wenig Restzeit.
@@ -132,6 +136,10 @@ export function zeitnotTemperatur(
   return bandwert(ZEITNOT_TEMPERATUR[tempo][stufe], wertung);
 }
 
+/**
+ * Faktoren der Zeitnot gegenüber ruhiger Zeit (ab 60 s): für Fehler ab einem Bauern und für
+ * Patzer ab drei Bauern. Beispiel: 2000, unter 10 s → Fehler etwa ×1,4, Patzer etwa ×3,2.
+ */
 export function zeitnotFaktoren(
   wertung: number,
   restMs: number | null,

@@ -103,6 +103,9 @@ export function naechsteStufe(von: Stufennummer, ziel: Stufennummer): Stufennumm
   return (von < ziel ? von + 1 : von - 1) as Stufennummer;
 }
 
+/**
+ * Die Spielstufe mit dieser Nummer (1 bis 10); bei einer unbekannten Nummer die schwächste Stufe.
+ */
 export function stufe(nummer: number): Stufe {
   return STUFEN.find((s) => s.nummer === nummer) ?? EINSTEIGER;
 }

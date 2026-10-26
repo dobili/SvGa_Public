@@ -22,6 +22,7 @@ import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const AUFGABEN_JE_RUNDE = 8;
 
+/** Der Strukturerkenner: Stufe wählen, dann eine Runde aus acht Skeletten (Bauernstrukturen). */
 export function StrukturBereich() {
   const daten = useDaten(ladeStrukturen, "trainer-struktur");
   const [stufe, setzeStufe] = useState<number | null>(null);

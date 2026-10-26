@@ -195,6 +195,9 @@ export function ohnePartien(stand: Spielstand, ids: ReadonlySet<string>): Spiels
   return { ...stand, partien };
 }
 
+/**
+ * Merkt sich im Spielstand die letzte Wahl im Spielen-Bildschirm (Gegner, Stufen, Uhr und weitere).
+ */
 export function mitVorlieben(stand: Spielstand, vorlieben: Spielvorlieben): Spielstand {
   return { ...stand, vorlieben };
 }

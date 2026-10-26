@@ -75,6 +75,7 @@ const LINIEN_SEITLICH = 2;
 /** Drei Steine: Bauer und zwei Könige. */
 const STEINE_KPK = 3;
 
+/** Ein zufälliges Feld des Bretts, für die zufälligen Stellungen der Endspiel-Kurzübungen. */
 export function zufallsfeld(zufall: Zufall): Square {
   return Math.floor(zufall() * FELDER) as Square;
 }

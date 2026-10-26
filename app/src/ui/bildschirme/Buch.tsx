@@ -148,6 +148,10 @@ function Kapitelliste({ index }: { index: Datenverzeichnis }) {
   );
 }
 
+/**
+ * Der Bildschirm „Buch“: Nummer einer Abbildung eintippen (etwa „1.26“) oder ein Kapitel mit seinen
+ * Abbildungen öffnen.
+ */
 export function Buch() {
   const index = useDaten(ladeIndex, "index");
   return (

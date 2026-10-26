@@ -1,11 +1,11 @@
 /**
- * Bedenkzeit als Raster gleich großer Kacheln: groß die Zeit mit dem Zeichen der Zeitklasse,
- * klein darunter ihr Name (Vorschlag DS41, vom Autor am 25.10.2026 freigegeben).
+ * Bedenkzeit nach Zeitart geordnet: Je Zeitart eine Zeile mit dem Zeichen einmal groß und dem
+ * Namen davor, daneben die Zeiten dieser Art zur Wahl (Wunsch des Autors, 26.10.2026, statt
+ * vieler gleicher Kacheln mit je einem Zeichen).
  *
- * Rolle im Gesamtbild: Gleich große Kacheln statt Chips unterschiedlicher Breite („Schnellschach
- * 15 + 10“ wäre doppelt so breit wie „Blitz 3 + 0“). Vier Kacheln je Zeile wie bei Lichess;
- * außerhalb der Grundstellung kommt „ohne Uhr“ dazu (uhrwahl.ts). Für Bildschirmleser eine
- * Gruppe von Optionsfeldern mit dem vollen Namen („Blitz 3 + 2“).
+ * Rolle im Gesamtbild: Ersetzt seit 0.3.2 das Raster der Kacheln (DS41). Die Zeiten sind
+ * Wahlknöpfe; „ohne Uhr“ (außerhalb der Grundstellung) steht als eigene Zeile. Für
+ * Bildschirmleser bleibt es eine Gruppe von Optionsfeldern mit dem vollen Namen („Blitz 3 + 2“).
  * Abhängigkeiten: uhrwahl.ts, zeitartzeichen.ts, spiel/uhr.ts, spiel/elomodell.ts, Titelsymbol,
  * i18n, lucide-react.
  */
@@ -14,30 +14,55 @@ import { t } from "../../../i18n/sprache";
 import { wertungstempo } from "../../../spiel/elomodell";
 import { UHR_VORGABEN } from "../../../spiel/uhr";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
-import { OHNE_UHR, uhrname } from "./uhrwahl";
 import { ZEITARTZEICHEN } from "../bausteine/zeitartzeichen";
+import { OHNE_UHR, uhrname } from "./uhrwahl";
 
 const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
-const ZEICHENGROESSE = 13;
+/** Größe des Zeichens der Zeitart, einmal je Zeile. */
+const ZEICHENGROESSE = 26;
 
-/** Zeit und Klasse einer Stelle: „3 + 2“ und „Blitz“; „ohne Uhr“ ohne Klasse. */
-function kachelVon(stelle: string): { zeit: string; klasse: string; Zeichen: LucideIcon } {
+/** Eine Zeile der Wahl: Zeichen und Name der Zeitart, dazu die Zeiten (Stellen) dieser Art. */
+interface Zeitzeile {
+  readonly schluessel: string;
+  readonly name: string;
+  readonly Zeichen: LucideIcon;
+  readonly stellen: string[];
+}
+
+/** Die Zeit einer Stelle: „3 + 2“; „ohne Uhr“ als Unendlichzeichen. */
+function zeitVon(stelle: string): string {
   const vorgabe = UHR_VORGABEN[Number(stelle)];
-  if (stelle === OHNE_UHR || !vorgabe) {
-    return { zeit: "∞", klasse: t("spielen.uhr.ohne"), Zeichen: Unendlich };
+  if (stelle === OHNE_UHR || !vorgabe) return "∞";
+  return `${vorgabe.grundzeitMs / MINUTE_MS} + ${vorgabe.zuschlagMs / SEKUNDE_MS}`;
+}
+
+/** Ordnet die Stellen nach Zeitart in der Reihenfolge ihres ersten Auftretens. */
+function zeilenVon(stellen: readonly string[]): Zeitzeile[] {
+  const zeilen: Zeitzeile[] = [];
+  for (const stelle of stellen) {
+    const vorgabe = UHR_VORGABEN[Number(stelle)];
+    const ohne = stelle === OHNE_UHR || !vorgabe;
+    const tempo = ohne ? null : wertungstempo(vorgabe);
+    const schluessel = tempo ?? OHNE_UHR;
+    let zeile = zeilen.find((z) => z.schluessel === schluessel);
+    if (!zeile) {
+      zeile = {
+        schluessel,
+        name: tempo ? t(`spielstaerke.zeitklasse.${tempo}`) : t("spielen.uhr.ohne"),
+        Zeichen: tempo ? ZEITARTZEICHEN[tempo] : Unendlich,
+        stellen: [],
+      };
+      zeilen.push(zeile);
+    }
+    zeile.stellen.push(stelle);
   }
-  const tempo = wertungstempo(vorgabe);
-  return {
-    zeit: `${vorgabe.grundzeitMs / MINUTE_MS} + ${vorgabe.zuschlagMs / SEKUNDE_MS}`,
-    // Mit weichem Trennstrich („Schnell-schach“): Die Kachel ist auf dem Handy schmaler als das Wort.
-    klasse: t(`spielen.zeitkachel.${tempo}`),
-    Zeichen: ZEITARTZEICHEN[tempo],
-  };
+  return zeilen;
 }
 
 /**
- * Das Raster der Bedenkzeiten. Beispiel: Grundstellung → sieben Kacheln, „10 + 0 Schnellschach“
+ * Die Wahl der Bedenkzeit. Beispiel: Grundstellung → drei Zeilen (Blitz mit 3 + 0, 3 + 2 und
+ * 5 + 3; Schnellschach mit 10 + 0 und 15 + 10; Klassisch mit 30 + 20 und 60 + 0), „10 + 0“
  * gewählt.
  */
 export function ZeitWahl({
@@ -55,27 +80,30 @@ export function ZeitWahl({
         <Titelsymbol art="bedenkzeit" />
         {t("spielen.uhr")}
       </span>
-      <div className="zeitraster">
-        {stellen.map((stelle) => {
-          const { zeit, klasse, Zeichen } = kachelVon(stelle);
-          return (
-            <button
-              key={stelle}
-              type="button"
-              role="radio"
-              aria-checked={stelle === gewaehlt}
-              aria-label={uhrname(stelle)}
-              className="zeitkachel"
-              onClick={() => beiWahl(stelle)}
-            >
-              <strong aria-hidden="true">
-                <Zeichen size={ZEICHENGROESSE} />
-                {zeit}
-              </strong>
-              <span aria-hidden="true">{klasse}</span>
-            </button>
-          );
-        })}
+      <div className="zeitzeilen">
+        {zeilenVon(stellen).map(({ schluessel, name, Zeichen, stellen: zeiten }) => (
+          <div key={schluessel} className="zeitzeile">
+            <span className="zeitart" aria-hidden="true">
+              <Zeichen size={ZEICHENGROESSE} />
+              <span>{name}</span>
+            </span>
+            <div className="zeitwahl">
+              {zeiten.map((stelle) => (
+                <button
+                  key={stelle}
+                  type="button"
+                  role="radio"
+                  aria-checked={stelle === gewaehlt}
+                  aria-label={uhrname(stelle)}
+                  className="zeitknopf"
+                  onClick={() => beiWahl(stelle)}
+                >
+                  <span aria-hidden="true">{zeitVon(stelle)}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

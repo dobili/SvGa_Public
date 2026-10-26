@@ -21,7 +21,7 @@
  * (Typen), Vorschauwahl, InfoKnopf, HilfenWahl, staerkeangabe.ts, lucide, i18n.
  */
 import type { Fehlerart } from "../../../engine/fehlerart";
-import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
+import { Bot, Cpu, SlidersHorizontal, UserPen, Users } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   staerkeGeschaetzt,
@@ -51,6 +51,8 @@ import { Vorschauwahl } from "../bausteine/Vorschauwahl";
 const KATEGORIE_SYMBOL = 28;
 /** Zeichen der eigenen Stufe anstelle eines Porträts. */
 const PORTRAETSYMBOL = 28;
+/** Größe der Zeichen in den Chips „Engine“ und „Mensch“. */
+const ZEICHEN = 18;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
@@ -267,6 +269,7 @@ export function GegnerWahl({
           werte={["engine", "mensch"] as const}
           gewaehlt={gegner}
           text={(w) => t(`spielen.gegner.${w}`)}
+          zeichen={(w) => (w === "engine" ? <Cpu size={ZEICHEN} /> : <Users size={ZEICHEN} />)}
           beiWahl={beiGegner}
         />
       </div>

@@ -7,7 +7,7 @@
  * falschen Zug und ohne Hilfe gelöst ist; das Benennen des Motivs zeigt nur, ob es stimmte.
  * Abhängigkeiten: training/taktiktrainer.ts, analyse/k7-warnsignale.ts, Brettbereich.
  */
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { warnsignaleSieben } from "../../analyse/k7-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
@@ -85,31 +85,40 @@ function Hilfen({
   );
 }
 
-/** Nach dem Lösen: das Motiv benennen (nur bei Aufgaben mit Grundmotiv). */
+/**
+ * Nach dem Lösen: das Motiv benennen (nur bei Aufgaben mit Grundmotiv).
+ * Seit 0.3.2 als Auswahlliste statt zwölf Chips untereinander (Wunsch des Autors, 26.10.2026):
+ * ruhiger, auf dem Handy öffnet sie die gewohnte Auswahl des Systems. Die erste Wahl zählt.
+ */
 function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
   const [gewaehlt, setzeGewaehlt] = useState<string | null>(null);
+  const kennung = useId();
   if (!richtig) return null;
   return (
-    <fieldset className="zahlwahl" data-testid="motiv-benennen">
-      <legend>{t("taktiktrainer.benennen")}</legend>
-      {MOTIVE.map((m) => (
-        <button
-          key={m}
-          type="button"
-          className="chip"
-          aria-pressed={gewaehlt === m}
-          disabled={gewaehlt !== null}
-          onClick={() => setzeGewaehlt(m)}
-        >
-          {t(`taktiktrainer.motiv.${m}`)}
-        </button>
-      ))}
+    <div className="auswahlliste" data-testid="motiv-benennen">
+      <label className="einstellung-name" htmlFor={kennung}>
+        {t("taktiktrainer.benennen")}
+      </label>
+      <select
+        id={kennung}
+        className="auswahlfeld"
+        value={gewaehlt ?? ""}
+        disabled={gewaehlt !== null}
+        onChange={(e) => setzeGewaehlt(e.target.value || null)}
+      >
+        <option value="">{t("taktiktrainer.benennenWaehlen")}</option>
+        {MOTIVE.map((m) => (
+          <option key={m} value={m}>
+            {t(`taktiktrainer.motiv.${m}`)}
+          </option>
+        ))}
+      </select>
       {gewaehlt && (
         <Antwortmeldung richtig={gewaehlt === richtig}>
           {t("taktiktrainer.motivWar", { motiv: t(`taktiktrainer.motiv.${richtig}`) })}
         </Antwortmeldung>
       )}
-    </fieldset>
+    </div>
   );
 }
 

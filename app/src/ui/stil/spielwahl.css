@@ -1,61 +1,63 @@
 /*
- * Bedenkzeit als Kacheln und feste Startleiste auf dem Bildschirm Spielen, dazu die Seiten an der
+ * Bedenkzeit nach Zeitart und feste Startleiste auf dem Bildschirm Spielen, dazu die Seiten an der
  * Partieuhr (seit 0.2.129, Vorschläge DS40 bis DS42, vom Autor am 25.10.2026 freigegeben). Farben
  * aus basis.css und abstimmung.css; die übrige Partieuhr steht in spiel.css.
  */
 
-/* ---------- Bedenkzeit als Kacheln (DS41) ---------- */
-.zeitraster {
+/* ---------- Bedenkzeit nach Zeitart (0.3.2, löst die Kacheln DS41 ab) ---------- */
+.zeitzeilen {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
+  gap: 8px;
 }
 
-.zeitkachel {
+.zeitzeile {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+/* Zeichen einmal groß, darunter der Name der Zeitart. */
+.zeitart {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2px;
-  min-height: calc(var(--tippflaeche) * 1.4);
-  padding: 4px 2px;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.zeitwahl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.zeitknopf {
+  flex: 1 1 0;
+  min-width: 3.6rem;
+  min-height: var(--tippflaeche);
+  padding: 0 8px;
   border: 1px solid var(--rand-bedien);
   border-radius: var(--radius);
   background: var(--flaeche);
   color: var(--text);
   font: inherit;
+  font-size: var(--groesse-mittel);
+  white-space: nowrap;
   cursor: pointer;
 }
 
-.zeitkachel strong {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  font-size: var(--groesse-mittel);
-  white-space: nowrap;
-}
-
-/* „Schnellschach“ ist breiter als eine Kachel auf dem Handy: Trennung am weichen Trennstrich. */
-.zeitkachel span {
-  max-width: 100%;
-  color: var(--text-leise);
-  font-size: var(--groesse-fein);
-  line-height: 1.15;
-  text-align: center;
-  hyphens: manual;
-}
-
-.zeitkachel[aria-checked="true"] {
+.zeitknopf[aria-checked="true"] {
   background: var(--akzent);
   border-color: var(--akzent);
   color: var(--flaeche);
+  font-weight: 600;
 }
 
-.zeitkachel[aria-checked="true"] span {
-  color: var(--flaeche);
-}
-
-.zeitkachel:focus-visible {
+.zeitknopf:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
 }

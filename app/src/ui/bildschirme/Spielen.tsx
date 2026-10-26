@@ -146,6 +146,7 @@ function Einstellungen({
               werte={["white", "black"] as const}
               gewaehlt={wahl.farbe}
               text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+              zeichen={(farbe) => <span className={`farbscheibe farbscheibe-${farbe}`} />}
               beiWahl={(farbe) => setze({ ...wahl, farbe })}
             />
           )}

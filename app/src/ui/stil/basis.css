@@ -347,6 +347,33 @@ a.knopf-zweit {
   font-size: var(--groesse-mittel);
 }
 
+/* Chip mit Zeichen vor dem Text (seit 0.3.2): Zeichen und Wort in einer Zeile. */
+.chip:has(.chip-zeichen) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip-zeichen {
+  display: inline-flex;
+}
+
+/* Scheibe in der Farbe der Seite („Weiß“, „Schwarz“) mit Rand, damit Weiß auf hellem Grund steht. */
+.farbscheibe {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+
+.farbscheibe-white {
+  background: #fff;
+}
+
+.farbscheibe-black {
+  background: #111;
+}
+
 .chip[aria-pressed="true"] {
   background: var(--navy);
   border-color: var(--navy);

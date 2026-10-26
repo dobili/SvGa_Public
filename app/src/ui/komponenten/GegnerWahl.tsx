@@ -1,7 +1,7 @@
 /**
  * Wahl des Gegners vor der Partie: Engine oder Mensch; bei der Engine ein vorgefertigter Gegner
  * (Porträtgitter je Stufe, 0.2.65), ein eigener Gegner oder eigene Stufen; dazu Spielhilfen und
- * Wertung.
+ * Wertung (HilfenWahl.tsx, seit 0.3.0 eigene Datei).
  *
  * Rolle im Gesamtbild: Wünsche des Autors vom 17.10.2026: beide Seiten selbst spielen (gegen
  * einen Menschen am selben Gerät), vorgefertigte Gegner mit Namen (engine/gegner.ts), Spielhilfen
@@ -18,7 +18,7 @@
  * Die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx). „Partie beginnen“ steht
  * seit 0.2.129 (DS40) in der festen Startleiste (Startleiste.tsx), nicht mehr hier.
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
- * (Typen), Vorschauwahl, InfoKnopf, staerkeangabe.ts, lucide, i18n.
+ * (Typen), Vorschauwahl, InfoKnopf, HilfenWahl, staerkeangabe.ts, lucide, i18n.
  */
 import type { Fehlerart } from "../../engine/fehlerart";
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
@@ -33,7 +33,7 @@ import { gegnerVon, klasseVon, type EigenerGegner, istSpassbot } from "../../eng
 import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Phase } from "../../schach/phase";
-import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
+import type { Gegnerart } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
 import { useSpeicher } from "../../speicher/speicher";
@@ -46,7 +46,6 @@ import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext } from "./staerkeangabe";
 import { Vorschauwahl } from "./Vorschauwahl";
-import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
@@ -299,108 +298,6 @@ export function GegnerWahl({
           )}
         </div>
       )}
-    </>
-  );
-}
-
-/**
- * Die Spielhilfen und der Haken „Gewertete Partie“. `wertbar`: nur Partien gegen die Engine aus
- * der Grundstellung zählen für die Wertung (Wunsch des Autors, 17.10.2026); sonst steht statt des
- * Hakens ein Satz.
- */
-export function HilfenWahl({
-  hilfen,
-  gewertet,
-  wertbar,
-  beiHilfen,
-  beiGewertet,
-  ohneTitel = false,
-  ohneWertung = false,
-}: {
-  hilfen: Spielhilfen;
-  gewertet: boolean;
-  wertbar: boolean;
-  beiHilfen: (hilfen: Spielhilfen) => void;
-  beiGewertet: (gewertet: boolean) => void;
-  /** In der Klappe „Spielhilfen“ steht der Titel schon in der Zusammenfassung (0.2.116). */
-  ohneTitel?: boolean;
-  /** Der Haken „Gewertete Partie“ steht dann außerhalb (WertungsWahl). */
-  ohneWertung?: boolean;
-}) {
-  // Gewertete Partien ohne Spielhilfen (S9): die Haken sind dann gesperrt und leer.
-  const gesperrt = wertbar && gewertet;
-  return (
-    <>
-      {!ohneTitel && (
-        <span className="einstellung-name">
-          <Titelsymbol art="hilfen" />
-          {t("spielen.hilfen")}
-        </span>
-      )}
-      <label className="schalterzeile">
-        <input
-          type="checkbox"
-          disabled={gesperrt}
-          checked={hilfen.symbole && !gesperrt}
-          onChange={(e) => beiHilfen({ ...hilfen, symbole: e.target.checked })}
-        />
-        {t("spielen.hilfen.symbole")}
-      </label>
-      <label className="schalterzeile">
-        <input
-          type="checkbox"
-          disabled={gesperrt}
-          checked={hilfen.werkzeuge && !gesperrt}
-          onChange={(e) => beiHilfen({ ...hilfen, werkzeuge: e.target.checked })}
-        />
-        {t("spielen.hilfen.werkzeuge")}
-      </label>
-      {!ohneWertung && (
-        <WertungsWahl gewertet={gewertet} wertbar={wertbar} beiGewertet={beiGewertet} />
-      )}
-    </>
-  );
-}
-
-/**
- * Der Haken „Gewertete Partie“ mit Erklärung; in gewerteten Partien der Satz, dass Rücknahme und
- * Spielhilfen fehlen (S9). Seit 0.2.116 eigenständig: Er steht über der Klappe „Spielhilfen“,
- * damit man ihn auch zugeklappt sieht.
- */
-export function WertungsWahl({
-  gewertet,
-  wertbar,
-  beiGewertet,
-}: {
-  gewertet: boolean;
-  wertbar: boolean;
-  beiGewertet: (gewertet: boolean) => void;
-}) {
-  if (!wertbar) return <p className="hinweis">{t("spielen.nichtWertbar")}</p>;
-  return (
-    <>
-      {/* Die Erklärung zur Wertung hinter dem Fragezeichen: Sie stand sonst bei jedem Öffnen
-          als zweiter Absatz direkt über „Partie beginnen“ (19.10.2026). */}
-      <MitInfo
-        zeile={
-          <label className="schalterzeile">
-            <input
-              type="checkbox"
-              checked={gewertet}
-              onChange={(e) => beiGewertet(e.target.checked)}
-            />
-            {t("spielen.gewertet")}
-          </label>
-        }
-        erklaerung={
-          <>
-            <p>{t("spielen.gewertetHinweis")}</p>
-            {/* Seit 0.2.137 ebenfalls hinter dem Fragezeichen statt dauerhaft darunter. */}
-            <p>{t("spielen.gewertetOhneHilfen")}</p>
-          </>
-        }
-        thema={t("spielen.gewertet")}
-      />
     </>
   );
 }

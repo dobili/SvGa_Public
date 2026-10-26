@@ -28,7 +28,8 @@ import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Auswahl } from "../komponenten/Auswahl";
 import { EigeneStufe } from "../komponenten/EigeneStufe";
 import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
-import { GegnerWahl, HilfenWahl, WertungsWahl } from "../komponenten/GegnerWahl";
+import { GegnerWahl } from "../komponenten/GegnerWahl";
+import { HilfenWahl, WertungsWahl } from "../komponenten/HilfenWahl";
 import {
   botFuerKategorie,
   kategorieVon,

@@ -16,12 +16,10 @@ import { wertungDerPersoenlichkeit } from "./persoenlichkeitswertung";
 import type { Phase } from "../schach/phase";
 import { faktorenAus } from "./gegnerbau";
 import { mitgliederDerGruppe } from "./gruppe";
-import { maiaabfrage } from "./maia";
 import { aktiveArten, kandidatenpool, wahlAusPool, type Wahlkontext } from "./menschenwahl";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
-import { menschenwerteAus, type Gegnerprofil } from "./zugwahl";
-import { wahlwertung } from "./wahlkorrektur";
+import { menschenwerteAus, wahlkontextVon, type Gegnerprofil } from "./zugwahl";
 
 /** Ein Bot der Gruppe für diesen Zug: seine Stufe (Wertung) und sein Profil. */
 export interface Gruppenmitglied {
@@ -59,24 +57,6 @@ export function mitgliederFuer(
       },
     };
   });
-}
-
-/**
- * Der Kontext eines Mitglieds für das Wahlmodell (wie in engine/zugwahl.ts, waehleZug; die
- * Wertung seit 0.2.131 in der Zeitklasse der Partie, engine/wahlkorrektur.ts).
- */
-function kontextVon(m: Gruppenmitglied, verlauf: Wahlkontext["verlauf"]): Wahlkontext {
-  const tempo = m.profil.tempo ?? "rapid";
-  const wertung = wahlwertung(m.stufe, tempo, m.profil.maia !== undefined);
-  return {
-    maia: m.profil.maia ? maiaabfrage(m.profil.maia, wertung, tempo) : undefined,
-    wertung,
-    restMs: m.profil.restMs ?? null,
-    verlauf: m.profil.verlauf ?? verlauf,
-    stil: m.profil.stil,
-    stilname: m.profil.stilname,
-    tempo,
-  };
 }
 
 /**
@@ -118,7 +98,7 @@ export async function gruppenzug(
   const werteJe = mitglieder.map((m) => menschenwerteAus(m.profil));
   const aktiv = new Set(werteJe.flatMap((w) => [...aktiveArten(w)]));
   const pool = await kandidatenpool(bewerter, fen, aktiv);
-  const kontexte = mitglieder.map((m) => kontextVon(m, verlauf));
+  const kontexte = mitglieder.map((m) => wahlkontextVon(m.stufe, m.profil, verlauf));
   // Maia je Mitglied; gleiche Wertungsklasse rechnet das Netz nur einmal (engine/maia.ts).
   const maiaJe = await Promise.all(kontexte.map((k) => (k.maia ? k.maia(fen) : null)));
   const stimmen: Zugwahl[] = [];

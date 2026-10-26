@@ -91,6 +91,8 @@ jobs:
       - name: Abhängigkeiten
         run: npm ci
       - name: Browser
+        # Zeitgrenze: In der Nacht zum 26.10.2026 hing dieser Schritt 21 Minuten; so bricht er ab.
+        timeout-minutes: 5
         run: npx playwright install --with-deps chromium webkit
       - name: Build
         run: npm run build

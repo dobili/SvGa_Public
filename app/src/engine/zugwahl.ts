@@ -16,7 +16,7 @@
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
-import { hatZusatzfehler, menschlicheWahl, type Menschenwerte } from "./menschenwahl";
+import { menschlicheWahl, type Menschenwerte, type Wahlkontext } from "./menschenwahl";
 import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
@@ -165,24 +165,29 @@ export async function waehleZug(
   // spielte sie wie Stufe 9 (die Kandidaten aus Tiefe 10 begrenzen das Wahlmodell; gemessen am
   // 24.10.2026: 9m und 10m identisch), und „volle Engine“ wäre falsch.
   if (!stufe.grund) return engineZug(bewerter, fen, stufe, profil.stil);
-  if (!hatZusatzfehler(werte))
-    return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
-  return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
+  return menschlicheWahl(bewerter, fen, stufe, werte, wahlkontextVon(stufe, profil), zufall);
 }
 
 /**
- * Der Kontext der menschlichen Wahl aus Stufe und Profil. Die Wertung ist seit 0.2.131 die
- * desselben Menschen in der Zeitklasse der Partie mit geeichter Korrektur (engine/wahlkorrektur.ts): Wahlmodell und
- * Zeitnot sind nach der Wertung in der jeweiligen Zeitklasse geeicht.
+ * Der Kontext der menschlichen Wahl aus Stufe und Profil, für einen Bot und für jedes Mitglied
+ * des Gruppenmodus (engine/gruppenwahl.ts), damit beide dieselbe Rechnung nutzen.
+ * Die Wertung ist seit 0.2.131 die desselben Menschen in der Zeitklasse der Partie mit geeichter
+ * Korrektur (engine/wahlkorrektur.ts): Wahlmodell und Zeitnot sind nach der Wertung in der
+ * jeweiligen Zeitklasse geeicht. `verlauf`: Tagesform, falls das Profil keine eigene hat.
+ * Beispiel: Stufe 5, Blitz, mit Maia → Wahlwertung mit der Blitz-Korrektur für Maia.
  */
-function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
+export function wahlkontextVon(
+  stufe: Stufe,
+  profil: Gegnerprofil,
+  verlauf: Verlauf = RUHIGER_VERLAUF,
+): Wahlkontext {
   const tempo = profil.tempo ?? "rapid";
   const wertung = wahlwertung(stufe, tempo, profil.maia !== undefined);
   return {
     maia: profil.maia ? maiaabfrage(profil.maia, wertung, tempo) : undefined,
     wertung,
     restMs: profil.restMs ?? null,
-    verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
+    verlauf: profil.verlauf ?? verlauf,
     stil: profil.stil,
     stilname: profil.stilname,
     stilmix: profil.stilmix,

@@ -5,7 +5,7 @@
  * Rolle im Gesamtbild: Nachschlagewerk für spätere Sätze.
  * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */
-import { bot, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "../gegnerbau";
 
 export const BOTARCHIV: readonly Gegner[] = [
   // gemessen 783 (Schnellschach, 24.10.2026)

@@ -10,7 +10,7 @@
  */
 import { spawn } from "node:child_process";
 import { createInterface } from "node:readline";
-import { EngineDienst, type Kanal } from "./engineDienst";
+import { EngineDienst, type Kanal } from "../engineDienst";
 
 /**
  * Ein Kanal zu der Engine-Datei unter `pfad` (UCI über Standardein- und -ausgabe).

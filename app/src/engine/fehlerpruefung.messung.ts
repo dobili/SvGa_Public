@@ -13,14 +13,14 @@
  * schnellen Auswertung der Spielerprofile in Tiefe 12).
  * Aufruf (im Ordner app/): LAUF=0 LAEUFE=4 npx vitest run --config vitest.messung.config.ts
  *   src/engine/fehlerpruefung.messung.ts
- * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, engine/nativeEngine.testhilfe.ts.
+ * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, engine/messung/nativeEngine.testhilfe.ts.
  */
 import { appendFileSync, existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { fenNachUci, fleckeVon } from "./blindeFlecken";
 import { fehlerartIn, lageVon } from "./fehlerart";
-import { nativeEngine } from "./nativeEngine.testhilfe";
+import { nativeEngine } from "./messung/nativeEngine.testhilfe";
 import { wertFuer } from "./spielbewerter";
 
 const ORDNER =

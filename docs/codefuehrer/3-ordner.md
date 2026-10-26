@@ -100,6 +100,13 @@ geschätzte Spielstärke), `elomodell.ts` (Elo-Zahl je Zeitklasse), `wertung.ts`
 Zug ein Fehler war). Rund um Partien: `pgn.ts` und `pgnimport.ts`, `stellungsbau.ts`,
 `partienfilter.ts`.
 
+## spiel/messung
+
+Rechnung der Eichung: wie Genauigkeit und Spielstärke aus den Messpartien zusammenhängen
+(`genauigkeitsmodell.ts`, `eichungsrechnung.ts`), dazu die Tabelle der Zugklassen-Messung. Die App
+lädt diese Dateien nicht; die Messläufe `spiel/*.messung.ts` und `engine/botstaerke.messung.ts`
+benutzen sie.
+
 ## speicher
 
 Was sich die App merkt: alles in einer Datenbank im Browser (IndexedDB), nur auf deinem Gerät.
@@ -159,8 +166,16 @@ Stockfish, die Stufen, die Bots und Maia.
 - Die gemessenen Zahlen: `botstaerke.ts` mit den Tabellen `botstaerke-daten.ts` (ohne Maia) und
   `botstaerke-maia-daten.ts` (mit Maia), `zahlensatz.ts`, `wahlkorrektur.ts` und
   `zeitklassenabstand.ts` (Blitz und Klassisch).
-- Dateien mit `kandidat`, `botmess`, `eloleiter`, `botarchiv` gehören zu den Messläufen, mit denen
-  die Bots ausgewählt und gemessen wurden.
+- Die Messläufe selbst (`*.messung.ts`) stehen neben dem Code, den sie messen; ihre Hilfsdateien
+  liegen in `engine/messung/`.
+
+## engine/messung
+
+Hilfsdateien der Messläufe, mit denen die Bots ausgewählt und ihre Spielstärke gemessen wurden:
+die Kandidaten des Bot-Satzes (`botkandidaten*.ts`), alte Bots (`botarchiv.ts`), die Elo-Leiter
+aus allen Ergebnissen (`eloleiter.ts`) und die Spieler der Messpartien (`messspieler.testhilfe.ts`,
+`nativeEngine.testhilfe.ts`, `maia-node.testhilfe.ts`). Die App lädt keine dieser Dateien; sie
+laufen nur mit `vitest.messung.config.ts` und in ihren Tests.
 
 ## schach
 

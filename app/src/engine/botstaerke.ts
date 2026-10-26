@@ -5,7 +5,7 @@
  * Stufe und je Bot „etwa 1100“, und die Elo-Wertung des Lesers rechnet mit dieser festen Zahl als
  * Gegnerwertung statt mit der Schätzung aus der Genauigkeit einer einzelnen Partie (die streut um
  * etwa ±400 und ist nach oben gedeckelt). Die Zahlen stammen aus der Elo-Leiter
- * (engine/eloleiter.ts, Messlauf engine/botstaerke.messung.ts) und stehen in
+ * (engine/messung/eloleiter.ts, Messlauf engine/botstaerke.messung.ts) und stehen in
  * engine/botstaerke-daten.ts. Eigene Stufen und eigene Bots wurden nie gemessen; ihre Zahl wird
  * aus den drei Stufen je Phase geschätzt. An der Überschrift einer Stufe steht der Bereich ihrer
  * acht Bots (Vorschlag des Autors, 18.10.2026; seit 0.2.109 ohne Überschneidungen); die Zahl

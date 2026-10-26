@@ -4,21 +4,21 @@
  * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern, seit 0.2.128) und mit Maia („*“, seit 0.2.143).
  *
  * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.128).
- * Abhängigkeiten: engine/gegner.ts, engine/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
+ * Abhängigkeiten: engine/gegner.ts, engine/messung/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
  * engine/praxisbuch.ts, engine/stufen.ts, engine/zugwahl.ts.
  */
-import { wertungDerPersoenlichkeit } from "./persoenlichkeitswertung";
-import type { Phase } from "../schach/phase";
+import { wertungDerPersoenlichkeit } from "../persoenlichkeitswertung";
+import type { Phase } from "../../schach/phase";
 import { BOTKANDIDATEN } from "./botkandidaten";
-import { GEGNER } from "./gegner";
-import { faktorenAus } from "./gegnerbau";
-import { gruppenstufe, gruppenstufen } from "./gruppe";
-import { BUCHTIEFE } from "./praxisbuch";
-import { grundschicht, stufe, STUFEN_ZAHL, type Stufe, type Stufennummer } from "./stufen";
+import { GEGNER } from "../gegner";
+import { faktorenAus } from "../gegnerbau";
+import { gruppenstufe, gruppenstufen } from "../gruppe";
+import { BUCHTIEFE } from "../praxisbuch";
+import { grundschicht, stufe, STUFEN_ZAHL, type Stufe, type Stufennummer } from "../stufen";
 import { maiaNode } from "./maia-node.testhilfe";
-import type { Maialaufzeit } from "./maia";
-import { wahltempo } from "./wahlmodell";
-import { REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
+import type { Maialaufzeit } from "../maia";
+import { wahltempo } from "../wahlmodell";
+import { REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "../zugwahl";
 
 const SEKUNDE_MS = 1000;
 

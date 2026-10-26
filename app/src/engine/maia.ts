@@ -11,7 +11,7 @@
  * (maia2.inference.preprocessing): Brett als 18 Ebenen zu 8 × 8, bei Schwarz am Zug gespiegelt,
  * Wertung als eine von elf Klassen, Ausgabe über die Zugliste des Trainings. Das Netz selbst
  * rechnet eine Laufzeit (onnxruntime-web in der App, engine/maia-web.ts; onnxruntime-node in der
- * Messung, engine/maia-node.testhilfe.ts).
+ * Messung, engine/messung/maia-node.testhilfe.ts).
  * Sonderfall: Maia-2 ist ohne die ersten 10 Halbzüge einer Partie trainiert; davor gibt es keine
  * Werte (dort wählen Praxisbuch und Wahlmodell ohne Maia).
  * Abhängigkeiten: engine/maia-zuege-daten.ts, engine/wahlmodell-daten.ts (Typ), chessops.

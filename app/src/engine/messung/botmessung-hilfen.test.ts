@@ -1,4 +1,4 @@
-/** Tests der Datei der Zahlen je Zeitklasse (engine/botmessung-hilfen.ts, seit 0.2.131 Prüfdatei). */
+/** Tests der Datei der Zahlen je Zeitklasse (engine/messung/botmessung-hilfen.ts, seit 0.2.131 Prüfdatei). */
 import { describe, expect, it } from "vitest";
 import { zeitklassendatei } from "./botmessung-hilfen";
 

@@ -3,7 +3,7 @@
  * Genauigkeit eines Zuges, Gewichte je Zug und Genauigkeit der Partie.
  *
  * Rolle im Gesamtbild: die offen dokumentierte Rechnung von Lichess, auf der Genauigkeit,
- * Spielstärke und Urteilswort aufbauen (spiel/genauigkeit.ts, spiel/genauigkeitsmodell.ts).
+ * Spielstärke und Urteilswort aufbauen (spiel/genauigkeit.ts, spiel/messung/genauigkeitsmodell.ts).
  * Reine Funktionen ohne Zustand.
  * Warum eigene Datei: spiel/genauigkeit.ts lag über 400 Zeilen (Regel 4 in CLAUDE.md); die
  * Rechnung ist ein eigener, in sich geschlossener Teil. spiel/genauigkeit.ts gibt sie weiter,

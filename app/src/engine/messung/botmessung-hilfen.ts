@@ -1,18 +1,18 @@
 /**
  * Hilfen des Messlaufs engine/botstaerke.messung.ts (0.2.125, ausgelagert für Dateien unter 400
  * Zeilen): Phasen einer nachgespielten Partie und die Datei der Kandidaten.
- * Abhängigkeiten: chessops, spiel/phasen.ts, engine/botkandidaten.ts.
+ * Abhängigkeiten: chessops, spiel/phasen.ts, engine/messung/botkandidaten.ts.
  */
 import { Chess } from "chessops/chess";
 import { makeFen } from "chessops/fen";
 import { parseSan } from "chessops/san";
-import { phaseVon, type Phase } from "../spiel/phasen";
-import { WERTUNGSTEMPI, wertungstempo, type Wertungstempo } from "../spiel/elomodell";
+import { phaseVon, type Phase } from "../../spiel/phasen";
+import { WERTUNGSTEMPI, wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
 import { BOTARCHIV } from "./botarchiv";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { BOTMESSNAMEN } from "./botmessnamen";
-import { GEGNER } from "./gegnerliste";
-import { STUFEN } from "./stufen";
+import { GEGNER } from "../gegnerliste";
+import { STUFEN } from "../stufen";
 
 /**
  * Die Phase je Stellung einer nachgespielten Partie (SAN-Züge), monoton wie spiel/phasen.ts;
@@ -38,7 +38,7 @@ export function phasenAusZuegen(zuege: readonly string[]): Phase[] {
   return phasen;
 }
 
-/** Datei der Kandidaten (engine/botkandidaten-daten.ts): Zahl je Kandidat, der gemessen wurde. */
+/** Datei der Kandidaten (engine/messung/botkandidaten-daten.ts): Zahl je Kandidat, der gemessen wurde. */
 export function kandidatendatei(werte: Map<string, number>, streu: Map<string, number>): string {
   const zeilen = BOTKANDIDATEN.filter((g) => werte.has(g.kennung)).map(
     (g) =>
@@ -85,7 +85,7 @@ export function zeitklasseVon(tempo: string): Wertungstempo {
  * Die Datendatei engine/botstaerke-daten.ts (oder je Zeitklasse): Stufen, Bots, Uhrabzug.
  * `uhr`: Zeitklasse → Stufe → Abzug; fehlende Zeitklassen bekommen leere Tabellen (Typ vollständig).
  */
-/** Kennungen des Archivs beginnen so (engine/botarchiv.ts). */
+/** Kennungen des Archivs beginnen so (engine/messung/botarchiv.ts). */
 const ARCHIV_VORSILBE = "alt-";
 
 /**

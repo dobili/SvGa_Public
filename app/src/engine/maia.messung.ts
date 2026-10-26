@@ -13,7 +13,7 @@ import {
   wahrscheinlichkeitenAus,
   type Maiamodell,
 } from "./maia";
-import { maiaNode } from "./maia-node.testhilfe";
+import { maiaNode } from "./messung/maia-node.testhilfe";
 
 /** fp16 weicht vom Original um höchstens ein paar Tausendstel ab (Bericht maia-onnx). */
 const TOLERANZ = 0.01;

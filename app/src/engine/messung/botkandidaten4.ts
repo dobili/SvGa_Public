@@ -1,8 +1,8 @@
 /**
- * Kandidaten des Bot-Satzes, Teil 4: k10 und die Zusatzkandidaten vom 24.10.2026 (k0a, k0b häufigere Fehler; k9a, k9b seltenere). Siehe engine/botkandidaten.ts.
+ * Kandidaten des Bot-Satzes, Teil 4: k10 und die Zusatzkandidaten vom 24.10.2026 (k0a, k0b häufigere Fehler; k9a, k9b seltenere). Siehe engine/messung/botkandidaten.ts.
  * Abhängigkeiten: engine/gegnerbau.ts.
  */
-import { bot, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "../gegnerbau";
 
 export const BOTKANDIDATEN_4: readonly Gegner[] = [
   bot("k10-angreifer-angreifer", "Kandidat 10", "", [9, 9, 9], "angreifer", 0, "angreifer", 0.1),

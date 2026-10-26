@@ -9,7 +9,7 @@
  * bericht.md und ergebnis.json im selben Ordner (lokal); die Zahlen aus ergebnis.json kommen in
  * Schritt d als Konstanten in die App. Seit 0.2.103 stehen die Kurven auf der inneren Genauigkeit
  * nur bis zur Entscheidung der Partie (spiel/entscheidung.ts), wie die Schätzung in der App.
- * Abhängigkeiten: spiel/eichungsrechnung.ts, spiel/genauigkeitsmodell.ts.
+ * Abhängigkeiten: spiel/messung/eichungsrechnung.ts, spiel/messung/genauigkeitsmodell.ts.
  * Aufruf (im Ordner app/): npm run messen:eichung
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -30,7 +30,7 @@ import {
   type Eichseite,
   type Kurve,
   type Rohwert,
-} from "./eichungsrechnung";
+} from "./messung/eichungsrechnung";
 import {
   genauigkeitAus,
   LICHESS_REGLER,
@@ -38,7 +38,7 @@ import {
   zugwerte,
   zugwerteBisEntscheidung,
   type Regler,
-} from "./genauigkeitsmodell";
+} from "./messung/genauigkeitsmodell";
 
 const ORDNER = process.env.EICHUNG_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "eichung");
 // Unter und über dem Lichess-Wert: Die erste Runde lag am unteren Rand (18.10.2026).

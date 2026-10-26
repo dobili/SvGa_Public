@@ -6,17 +6,17 @@
  * echter Zeit: Ein Vorzug kostet eine Zehntelsekunde, die Planung kostet nichts.
  * Abhängigkeiten: spiel/notmodus.ts, spiel/partie.ts, spiel/zuege.ts, engine/engineDienst.ts.
  */
-import type { EngineDienst } from "./engineDienst";
-import type { Stufennummer } from "./stufen";
+import type { EngineDienst } from "../engineDienst";
+import type { Stufennummer } from "../stufen";
 import {
   bleibtImNotmodus,
   planeVorzuege,
   VORZUG_MS,
   waehleVorzug,
   type Vorzug,
-} from "../spiel/notmodus";
-import { stellungen, zeitUeberschritten, ziehe, type Partie } from "../spiel/partie";
-import { uciZuSan } from "../spiel/zuege";
+} from "../../spiel/notmodus";
+import { stellungen, zeitUeberschritten, ziehe, type Partie } from "../../spiel/partie";
+import { uciZuSan } from "../../spiel/zuege";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 

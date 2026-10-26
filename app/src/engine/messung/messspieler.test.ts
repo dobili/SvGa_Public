@@ -1,4 +1,4 @@
-/** Tests der Messspieler (engine/messspieler.testhilfe.ts): Zeitklasse im Profil wie in der App. */
+/** Tests der Messspieler (engine/messung/messspieler.testhilfe.ts): Zeitklasse im Profil wie in der App. */
 import { describe, expect, it } from "vitest";
 import { spieler } from "./messspieler.testhilfe";
 

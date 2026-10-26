@@ -20,7 +20,7 @@
  * Jede Partie beginnt mit einer der Eröffnungen aus Kapitel 2 und 3 (zwei Halbzüge), damit die
  * Partien verschieden sind; danach spielt keine Seite aus dem Buch.
  * Paarung: zwei Kürzel, getrennt am letzten Bindestrich („@oma-erna-1“: Oma Erna gegen Stufe 1).
- * Abhängigkeiten: engine/nodeEngine.testhilfe.ts, engine/nativeEngine.testhilfe.ts,
+ * Abhängigkeiten: engine/nodeEngine.testhilfe.ts, engine/messung/nativeEngine.testhilfe.ts,
  * engine/stufen.ts, engine/gegner.ts, engine/bedenkzeit.ts, engine/menschlich.ts, spiel/.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -33,7 +33,7 @@ import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
 import { gruppenzug, mitgliederFuer } from "./gruppenwahl";
 import { RUHIGER_VERLAUF, tagesform } from "./menschlich";
-import { nativeEngine } from "./nativeEngine.testhilfe";
+import { nativeEngine } from "./messung/nativeEngine.testhilfe";
 import { nodeEngine } from "./nodeEngine.testhilfe";
 import { naechsteStufe, stufe, type Stufe, type Stufennummer } from "./stufen";
 import { BUCHTREUE, type Gegnerprofil } from "./zugwahl";
@@ -50,9 +50,9 @@ import {
 } from "../spiel/partie";
 import { brauchtNotmodus, NOTMODUS_REST_MS } from "../spiel/notmodus";
 import { fenNach, uciZuSan } from "../spiel/zuege";
-import { alleGleich, spieler, type Spieler } from "./messspieler.testhilfe";
-import { buchzug } from "./messbuch.testhilfe";
-import { planeWeiter, vorzugMitUhr, type Seitenstand } from "./messuhr.testhilfe";
+import { alleGleich, spieler, type Spieler } from "./messung/messspieler.testhilfe";
+import { buchzug } from "./messung/messbuch.testhilfe";
+import { planeWeiter, vorzugMitUhr, type Seitenstand } from "./messung/messuhr.testhilfe";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 /** Zwei Halbzüge je Partie aus den Eröffnungen der Kapitel 2 und 3. */

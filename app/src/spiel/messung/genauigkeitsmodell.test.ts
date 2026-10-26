@@ -3,7 +3,7 @@
  * genauigkeit.ts; ein größerer Abfall und ein kleineres Polster senken die Zahl.
  */
 import { describe, expect, it } from "vitest";
-import { partiegenauigkeit, zuggewichte, zuggenauigkeit } from "./genauigkeit";
+import { partiegenauigkeit, zuggewichte, zuggenauigkeit } from "../genauigkeit";
 import {
   genauigkeitAus,
   innereGenauigkeit,

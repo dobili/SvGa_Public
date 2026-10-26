@@ -11,14 +11,14 @@
  * Aufruf (im Ordner app/), vorher die Bewertung:
  *   node skripte/eichung-rechnen.mjs --ordner ../buch/arbeit/zugfolgen-konstruiert/bewertung --quellen konstruiert
  *   npx vitest run --config vitest.messung.config.ts src/spiel/konstruiert.messung.ts
- * Abhängigkeiten: spiel/eichungsrechnung.ts, spiel/genauigkeitsmodell.ts, spiel/auswertung.ts.
+ * Abhängigkeiten: spiel/messung/eichungsrechnung.ts, spiel/messung/genauigkeitsmodell.ts, spiel/auswertung.ts.
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { zeichenFuer } from "./auswertung";
-import { werteAusEngine, type Rohwert } from "./eichungsrechnung";
-import { LICHESS_REGLER, seitengenauigkeit } from "./genauigkeitsmodell";
+import { werteAusEngine, type Rohwert } from "./messung/eichungsrechnung";
+import { LICHESS_REGLER, seitengenauigkeit } from "./messung/genauigkeitsmodell";
 
 const HAUPT = join(process.cwd(), "..");
 const ZUGFOLGEN = join(HAUPT, "inhalte", "de", "zugfolgen");

@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Eingabe von faktorenAus (engine/gegnerbau.ts) in der App
  * (ui/komponenten/botzug.ts), im Gruppenmodus (engine/gruppenwahl.ts) und in der Messung
- * (engine/messspieler.testhilfe.ts), immer dieselbe, damit ein Bot spielt, wie er gemessen wurde.
+ * (engine/messung/messspieler.testhilfe.ts), immer dieselbe, damit ein Bot spielt, wie er gemessen wurde.
  * Warum eingefroren: engine/persoenlichkeitswertung-daten.ts.
  * Abhängigkeiten: engine/botstaerke.ts (staerkeAusStufen), engine/persoenlichkeitswertung-daten.ts,
  * engine/reinestufen-daten.ts.

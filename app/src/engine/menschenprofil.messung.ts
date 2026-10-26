@@ -18,7 +18,7 @@
  * Aufruf (im Ordner app/): LAUF=0 LAEUFE=4 npx vitest run --config vitest.messung.config.ts
  *   src/engine/menschenprofil.messung.ts
  * Abhängigkeiten: engine/fehlerart.ts, engine/fehlersuche.ts, engine/blindeFlecken.ts,
- * engine/nativeEngine.testhilfe.ts, spiel/zuege.ts.
+ * engine/messung/nativeEngine.testhilfe.ts, spiel/zuege.ts.
  */
 import { appendFileSync, existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -28,7 +28,7 @@ import { fleckeVon } from "./blindeFlecken";
 import type { Bewertung } from "./engineDienst";
 import { alleZuege, fehlerartIn, lageVon, type Fehlerart, type Lage } from "./fehlerart";
 import { typischeFehlerzuege } from "./fehlersuche";
-import { nativeEngine } from "./nativeEngine.testhilfe";
+import { nativeEngine } from "./messung/nativeEngine.testhilfe";
 import { wertFuer } from "./spielbewerter";
 
 const ORDNER =

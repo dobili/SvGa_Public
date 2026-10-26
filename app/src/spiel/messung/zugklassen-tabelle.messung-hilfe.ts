@@ -6,8 +6,8 @@
  * Warum eigene Datei: Der Messlauf bliebe sonst über 400 Zeilen (Regel 4 in CLAUDE.md).
  * Abhängigkeiten: spiel/zugklassenvergleich-daten.ts (bisherige Tabelle, nur für den Vergleich).
  */
-import type { Zugklasse } from "./auswertung";
-import { ZUGKLASSEN_UEBLICH } from "./zugklassenvergleich-daten";
+import type { Zugklasse } from "../auswertung";
+import { ZUGKLASSEN_UEBLICH } from "../zugklassenvergleich-daten";
 
 const PROZENT = 100;
 const QUANTILE = [0.05, 0.5, 0.95] as const;
@@ -94,7 +94,7 @@ export function zugklassenTabelle(
  * Mitte das Mittel der Spieler. Bänder 400 breit nach der Elo der Partie, mit mindestens 30
  * Spielern.
  */
-import type { Wertungstempo } from "./elomodell-daten";
+import type { Wertungstempo } from "../elomodell-daten";
 
 export type Quantilklasse =
   ${klassen.map((k) => `"${k}"`).join(" | ")};

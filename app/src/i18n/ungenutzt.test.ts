@@ -8,8 +8,9 @@
  * eintragen.
  * Als benutzt gilt ein Schlüssel, wenn er im Code als Zeichenkette oder als „{{schluessel}}“ in
  * einer HTML-Seite steht, wenn sein Grundschlüssel ohne „Eins“/„Null“ (Einzahl, i18n/sprache.ts)
- * oder ohne eine angehängte Endung („${schluessel}Da“) dort steht oder wenn ein zusammengesetzter Schlüssel mit seinem Anfang beginnt
- * (Vorlage „spielen.ordnung.${…}“ oder Verkettung "werkzeug." + id).
+ * oder ohne eine angehängte Endung („${schluessel}Da“) dort steht oder wenn ein zusammengesetzter
+ * Schlüssel mit seinem Anfang beginnt (Vorlage „spielen.ordnung.${…}“, auch mitten in einer
+ * Vorlage wie „{{training.ort.${ort}}}“, oder Verkettung "werkzeug." + id).
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -30,59 +31,13 @@ const SEITEN = [
 const KUERZESTER_ANFANG = 3;
 
 /**
- * Schlüssel, die der Test für ungenutzt hält, die aber noch geprüft werden müssen: Manche setzt
- * der Code über Variablen zusammen. Die Liste soll nur schrumpfen (Stand 26.10.2026).
+ * Schlüssel, die der Code benutzt, die der Test aber nicht selbst erkennt (geprüft am
+ * 26.10.2026; die übrigen Einträge der früheren Liste waren wirklich ungenutzt und sind gelöscht).
+ * Alle acht setzt `MerkerWahl` in ui/komponenten/einstellungen/EinstellungenKarte.tsx als
+ * `${schluessel}.${w}` zusammen: `schluessel` ist einer der vier Grundschlüssel unten, `w` ist
+ * „an“ oder „aus“ (KOORDINATEN).
  */
 const NOCH_ZU_PRUEFEN: ReadonlySet<string> = new Set([
-  "leiste.einstellungen",
-  "linie.diagonale",
-  "engine.laedt",
-  "engine.abbrechen",
-  "training.ort.lichess",
-  "training.ort.web",
-  "training.ort.app",
-  "training.ort.brett",
-  "training.ort.partie",
-  "fortschritt.trainer",
-  "einstellungen.fehlerarten.titel",
-  "einstellungen.fehlerarten.alle",
-  "einstellungen.fehlerarten.keine",
-  "einstellungen.fehlerarten.stand",
-  "einstellungen.fehlerarten.kurz",
-  "richtung.nichts",
-  "turmbegriffe.richtung.linie",
-  "turmbegriffe.richtung.reihe",
-  "erfassen.phaseTitel",
-  "spielen.uhr.zeit",
-  "spielen.sortierung.datum",
-  "spielen.sortierung.staerke",
-  "spielen.sortierung.gegner",
-  "spielen.sortierung.aufsteigend",
-  "spielen.bot.stufe",
-  "spielen.eigene.fehlerarten",
-  "spielen.eigene.blindeFlecken",
-  "spielen.eigene.aus",
-  "spielen.eigene.hoechstverlust",
-  "spielen.flecken.titel",
-  "spielen.flecken.stand",
-  "spielen.flecken.kurz",
-  "auswertung.patzer",
-  "rueckblick.titel",
-  "rueckblick.zugnummer",
-  "spielstaerke.seite",
-  "spielstaerke.du",
-  "spielstaerke.engine",
-  "spielstaerke.spanne",
-  "spielstaerke.letzte.wert",
-  "spielstaerke.verlust",
-  "spielstaerke.bauern",
-  "spielstaerke.beste",
-  "spielstaerke.zeichen",
-  "spielstaerke.phase",
-  "spielstaerke.phaseEins",
-  "spielstaerke.klassen",
-  "spielstaerke.zugart.taktik",
-  "spielstaerke.zugart.strategie",
   "einstellungen.koordinaten.an",
   "einstellungen.koordinaten.aus",
   "einstellungen.wischen.an",
@@ -116,10 +71,14 @@ function ungenutzteSchluessel(): string[] {
   const woerter = [...text.matchAll(/(?:["'`]|\{\{)([a-zA-Z0-9_.-]+)(?:["'`]|\}\})/g)];
   const literale = new Set(woerter.map((m) => m[1] ?? ""));
   const vorlagen = [...text.matchAll(/`([a-zA-Z0-9_.-]*)\$\{/g)].map((m) => m[1] ?? "");
+  // Anfänge mitten in einer Vorlage, etwa `<span …>{{training.ort.${ort}}}</span>`.
+  const mitten = [...text.matchAll(/([a-zA-Z][a-zA-Z0-9_.]*\.)\$\{/g)].map((m) => m[1] ?? "");
   const verkettet = [...text.matchAll(/["'`]([a-zA-Z0-9_.-]+\.)["'`]\s*\+/g)].map(
     (m) => m[1] ?? "",
   );
-  const anfaenge = [...vorlagen, ...verkettet].filter((a) => a.length >= KUERZESTER_ANFANG);
+  const anfaenge = [...vorlagen, ...mitten, ...verkettet].filter(
+    (a) => a.length >= KUERZESTER_ANFANG,
+  );
   // Angehängte Endungen wie `${schluessel}Da` (analyse/planfragen.ts), dazu „Eins“ und „Null“.
   const endungen = [...text.matchAll(/\$\{[^}]+\}([A-Za-z]+)`/g)].map((m) => m[1] ?? "");
   const grundformen = (k: string) =>
@@ -141,5 +100,11 @@ describe("Texte in de.json", () => {
   it("die Prüfliste nennt nur Schlüssel, die es gibt", () => {
     const fehlend = [...NOCH_ZU_PRUEFEN].filter((k) => !(k in de));
     expect(fehlend).toEqual([]);
+  });
+
+  it("die Prüfliste nennt nur Schlüssel, die der Test nicht selbst erkennt", () => {
+    const ungenutzt = new Set(ungenutzteSchluessel());
+    const erkannt = [...NOCH_ZU_PRUEFEN].filter((k) => !ungenutzt.has(k));
+    expect(erkannt).toEqual([]);
   });
 });

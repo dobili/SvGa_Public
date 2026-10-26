@@ -1,6 +1,5 @@
 /**
- * Die Zahlen einer Zeile der Partienliste (seit 0.2.142): Spielstärke oder Genauigkeit beider
- * Seiten als Text.
+ * Die Zahlen einer Zeile der Partienliste: Spielstärke oder Genauigkeit beider Seiten als Text.
  *
  * Rolle im Gesamtbild: Partiezeile.tsx zeigt sie rechts untereinander. Eigene Datei, weil
  * Komponentendateien nur Komponenten ausführen (schnelles Neuladen).

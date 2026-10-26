@@ -1,17 +1,17 @@
 /**
- * Eine Zeile der Partienliste (seit 0.2.142 neu aufgebaut, Wunsch des Autors vom 25.10.2026: „zu
+ * Eine Zeile der Partienliste (Wunsch des Autors vom 25.10.2026: die alte Zeile war „zu
  * unübersichtlich“).
  *
  * Rolle im Gesamtbild: Links der Gegner (Porträt, darunter sein Name; gewertete Partien mit einem
  * kleinen goldenen Stern an der Ecke des Porträts, vom Autor am 25.10.2026 so gewählt), in der
- * Mitte oben Ergebnis, gespielte Farbe und
- * das Zeichen der Zeitart, darunter klein Zeitart mit Bedenkzeit, Datum und Züge; rechts die Zahlen
- * beider Seiten als Marken mit König (Nachbesserungen vom 25.10.2026: kein leerer Raum rechts,
- * „grafischer“). Die Zahlen sind die Spielstärke in der Partie, wenn sie für beide Seiten geschätzt
- * werden kann, sonst stets die Genauigkeit beider Seiten. Das eigene Porträt und der eigene Name
- * stehen nicht da: Man ist an jeder Partie beteiligt. Platzhalter statt Porträt: Stufenmarke bei der
- * Engine ohne Bot, ein Dateizeichen bei eingelesenen Partien (Name aus dem PGN), zwei Personen bei
- * Mensch gegen Mensch. Im Löschmodus (PartieLoeschen.tsx) wählt ein Tipp die Zeile aus.
+ * Mitte oben Ergebnis, gespielte Farbe und das Zeichen der Zeitart, darunter klein Zeitart mit
+ * Bedenkzeit, Datum und Züge; rechts die Zahlen beider Seiten als Marken mit König
+ * (Nachbesserungen vom 25.10.2026: kein leerer Raum rechts, „grafischer“). Die Zahlen sind die
+ * Spielstärke in der Partie, wenn sie für beide Seiten geschätzt werden kann, sonst stets die
+ * Genauigkeit beider Seiten. Das eigene Porträt und der eigene Name stehen nicht da: Man ist an
+ * jeder Partie beteiligt. Platzhalter statt Porträt: Stufenmarke bei der Engine ohne Bot, ein
+ * Dateizeichen bei eingelesenen Partien (Name aus dem PGN), zwei Personen bei Mensch gegen
+ * Mensch. Im Löschmodus (PartieLoeschen.tsx) wählt ein Tipp die Zeile aus.
  * Abhängigkeiten: spiel/partie.ts, spiel/wertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * Ergebnismarke, GegnerBild, Stufenmarke, zeitartzeichen.ts, ui/brett (Figur), Navigation, i18n.
  */

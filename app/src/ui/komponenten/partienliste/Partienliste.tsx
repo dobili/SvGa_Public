@@ -4,18 +4,13 @@
  * Rolle im Gesamtbild: Die laufende Partie übersteht das Schließen der App (Speicher Format 2);
  * hier geht es mit einem Tipp weiter. Beendete Partien öffnen den Partie-Bildschirm mit Ergebnis,
  * Auswertung und PGN (Pflichtenheft 5.3).
- * Seit 0.2.40 (Wunsch des Autors): je Partie eine kleine Figur in der gespielten Farbe (König im
- * gewählten Figurensatz) und die erreichte Spielstärke oder Genauigkeit des Lesers. Seit 0.2.83
- * darüber die Karte „Deine Spielstärke“ (LetzteSpielstaerke.tsx; seit 0.2.139 unter Spielen).
- * Seit 0.2.99 (Wunsch des Autors vom 19.10.2026): Porträt des Gegners je Partie, Filter nach
- * Ergebnis und Wertung, „Weitere Partien zeigen“ und Löschen ungewerteter Partien mit Nachfrage.
- * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx), und
- * „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine Partie gespielt ist.
- * Seit 25.10.2026 steht vor der Zeitangabe das Zeichen der Zeitart wie in der Bedenkzeit-Auswahl
- * (Wunsch des Autors); der Name bleibt als Text daneben, damit es nicht nur am Zeichen hängt.
- * Seit 0.2.142 baut Partiezeile.tsx jede Zeile (Gegner links, Ergebnis, Farbe, Zeitart und Zahlen
- * auf einen Blick, Datum und Züge klein); gelöscht wird im Löschmodus (PartieLoeschen.tsx): Papierkorb
- * neben Filter und Sortieren, Partien antippen, „Ausgewählte löschen“.
+ * Wünsche des Autors: je Partie Porträt des Gegners, gespielte Farbe, Zeitart (Zeichen
+ * und Name, damit es nicht nur am Zeichen hängt) und die Zahlen beider Seiten; jede Zeile baut
+ * Partiezeile.tsx. Filter und Sortierung, mehrere Filter zugleich (Partienfilterleiste.tsx),
+ * „Weitere Partien zeigen“ und „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine
+ * Partie gespielt ist. Ungewertete Partien löscht man im Löschmodus (PartieLoeschen.tsx):
+ * Papierkorb neben Filter und Sortieren, Partien antippen, „Ausgewählte löschen“.
+ * Die Karte „Deine Spielstärke“ (LetzteSpielstaerke.tsx) steht unter Spielen.
  * Abhängigkeiten: Partiezeile, PartieLoeschen, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
  * engine/stufen.ts, Navigation, i18n.
  */

@@ -1,12 +1,12 @@
 /**
  * Filter und Sortierung der Partienliste: zwei Knöpfe mit aufklappender Liste in Worten (R54).
  *
- * Rolle im Gesamtbild: Teil von Partienliste.tsx. Seit 0.2.117 gab es eine Reihe unbeschrifteter
- * Symbolknöpfe; man musste die Symbole kennen, und Filter und Sortierung waren nicht getrennt.
- * Seit R54 (Wunsch des Autors, Variante A, 23.10.2026): oben „Filter“ (mit der Zahl aktiver
- * Filter) und „Sortieren“ (mit der gewählten Ordnung); ein Tipp klappt direkt darunter die Liste
- * auf. Filter sind Häkchen in Gruppen (Ergebnis, Wertung, Farbe, Gegner, seit R51 Zeitklasse), die Sortierung eine Wahl
- * aus sechs Ordnungen. Aktive Filter stehen als Chips mit × unter den Knöpfen.
+ * Rolle im Gesamtbild: Teil von Partienliste.tsx. Wunsch des Autors (R54, Variante A,
+ * 23.10.2026): Unbeschriftete Symbolknöpfe musste man kennen, und Filter und Sortierung waren
+ * nicht getrennt. Deshalb oben „Filter“ (mit der Zahl aktiver Filter) und „Sortieren“ (mit der
+ * gewählten Ordnung); ein Tipp klappt direkt darunter die Liste auf. Filter sind Häkchen in
+ * Gruppen (Ergebnis, Wertung, Farbe, Gegner, Zeitklasse), die Sortierung eine Wahl aus sechs
+ * Ordnungen. Aktive Filter stehen als Chips mit × unter den Knöpfen.
  * Abhängigkeiten: spiel/partienfilter.ts, lucide-react, i18n.
  */
 import { ArrowUpDown, Check, Filter, X } from "lucide-react";

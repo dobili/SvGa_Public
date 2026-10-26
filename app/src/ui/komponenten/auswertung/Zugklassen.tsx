@@ -4,15 +4,15 @@
  * Rolle im Gesamtbild: Wunsch des Autors (23.10.2026) nach Vorschaubildern: Jede Zeile hat Marke,
  * Namen, ein Badge mit der Anzahl und „x % des Üblichen · Urteil“; darunter ein Balken auf
  * eigener Skala (0 bis zum Doppelten des Üblichen) über drei grauen Zonen, mit einem Strich für
- * das Übliche bei der eigenen Stärke; die Zone „normal“ ist seit 0.2.125 die Spanne der Spieler
- * dieser Stärke und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten Klassen heißen die Zonen „wenig, normal,
- * viel“ mit „viel“ als gut, bei den schwachen umgekehrt. Unter MINDESTZUEGE_VERGLEICH eigenen
- * Zügen stehen nur die Anzahlen. Ersetzt die zweispaltige Tabelle „Züge nach Art“.
- * Seit 0.2.131 (Wunsch des Autors, 25.10.2026: schwache Werte sollen auffallen) trägt der
- * Balken die Farbe des Urteils statt der Klasse (grün gut, ruhig normal, rot schwach), die Zonen
- * sind schwach in denselben Farben getönt, und eine schwache Zeile hat zusätzlich ein Warnzeichen
- * und einen leichten roten Grund (Bedeutung nie nur über Farbe). Die Klasse erkennt man weiter an
- * ihrer Marke links. Zu schmale Zonen bleiben ohne Wort, statt es abzuschneiden.
+ * das Übliche bei der eigenen Stärke; die Zone „normal“ ist die Spanne der Spieler dieser Stärke
+ * und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten
+ * Klassen heißen die Zonen „wenig, normal, viel“ mit „viel“ als gut, bei den schwachen umgekehrt.
+ * Unter MINDESTZUEGE_VERGLEICH eigenen Zügen stehen nur die Anzahlen.
+ * Wunsch des Autors (25.10.2026: schwache Werte sollen auffallen): Der Balken trägt die Farbe des
+ * Urteils (grün gut, ruhig normal, rot schwach), die Zonen sind schwach in denselben Farben
+ * getönt, und eine schwache Zeile hat zusätzlich ein Warnzeichen und einen leichten roten Grund
+ * (Bedeutung nie nur über Farbe). Die Klasse erkennt man an ihrer Marke links. Zu schmale Zonen
+ * bleiben ohne Wort, statt es abzuschneiden.
  * Abhängigkeiten: spiel/zugklassenvergleich.ts, Auswertungssymbole.tsx, InfoKnopf, i18n, lucide.
  */
 import { Check, TriangleAlert } from "lucide-react";

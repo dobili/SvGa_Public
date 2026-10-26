@@ -1,4 +1,4 @@
-/** Test der Gewinnchance vor und nach einem Zug (0.2.85), am Beispiel 10. Tab1?? (Partie gegen Mia). */
+/** Test der Gewinnchance vor und nach einem Zug, am Beispiel 10. Tab1?? (Partie gegen Mia). */
 import { describe, expect, it } from "vitest";
 import { gewinnchanceVorNach } from "./gewinnchance";
 

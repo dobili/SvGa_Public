@@ -1,7 +1,7 @@
 /**
  * Gewinnchance der ziehenden Seite vor und nach einem Zug, in ganzen Prozent, mit dem Namen der
- * Seite: für die Sätze der Auswertung und des Rückblicks (seit 0.2.85, Rückmeldung des Autors:
- * die Bauerneinheiten der Engine passten weder zu chess.com noch zur Wertungstabelle des Buches).
+ * Seite: für die Sätze der Auswertung und des Rückblicks. Grund (Rückmeldung des Autors): Die
+ * Bauerneinheiten der Engine passten weder zu chess.com noch zur Wertungstabelle des Buches.
  * Abhängigkeiten: spiel/genauigkeit.ts (gewinnwahrscheinlichkeit, wie Lichess), i18n.
  */
 import { t } from "../../../i18n/sprache";

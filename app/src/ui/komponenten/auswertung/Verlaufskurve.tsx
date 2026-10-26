@@ -4,13 +4,13 @@
  * Rolle im Gesamtbild: Steht über der Auswertung (Auswertung.tsx). x: Halbzug, y: Bewertung aus
  * Sicht von Weiß, auf ±5 begrenzt (Matt am Rand). Die Fläche unter der Kurve ist hell (der Anteil
  * von Weiß wie im Balken), darüber dunkel; die Nulllinie ist eingezeichnet. Fehler, verpasste
- * Chancen und Patzer sind Punkte. Seit 0.2.40 (Wunsch des Autors) stehen die Übergänge zum
- * Mittelspiel und zum Endspiel als senkrechte Linien mit „M“ und „E“ (spiel/phasen.ts). Ein Tipp
- * springt zur Stellung. Für Bildschirmleser und Tastatur ist die Kurve ein Bild; springen geht
- * dort über die Zugliste.
- * Seit R56 (Wunsch des Autors, 23.10.2026): Unter der Kurve stehen „Ganze Partie“ und die Phasen
- * als Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der Kurve halten
- * und fahren zeigt darüber den Zug („23. Sf5“), Loslassen springt dorthin; zwei Finger zoomen
+ * Chancen und Patzer sind Punkte. Die Übergänge zum Mittelspiel und zum Endspiel stehen als
+ * senkrechte Linien mit „M“ und „E“ (spiel/phasen.ts, Wunsch des Autors). Ein Tipp springt zur
+ * Stellung. Für Bildschirmleser und Tastatur ist die Kurve ein Bild; springen geht dort über die
+ * Zugliste.
+ * Wunsch des Autors (R56, 23.10.2026): Unter der Kurve stehen „Ganze Partie“ und die Phasen als
+ * Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der Kurve halten und
+ * fahren zeigt darüber den Zug („23. Sf5“), Loslassen springt dorthin; zwei Finger zoomen
  * (useKurvenzoom.ts).
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/auswertung.ts, useKurvenzoom.ts, i18n.
  */

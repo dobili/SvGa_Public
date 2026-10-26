@@ -2,14 +2,14 @@
  * Wertet die Partie mit der Engine aus: während der Partie im Hintergrund, wenn der Leser am Zug
  * ist, sonst nach dem Ende; jede Stellung kurz bewerten.
  *
- * Rolle im Gesamtbild: Konzept 8.3 „Auswertung: Bewertung jeder Stellung im Hintergrund“. Seit
- * 0.2.40 (Wunsch des Autors) läuft die Bewertung schon während der Partie, solange der Leser
- * nachdenkt: Jede fertige Stellung kommt in einen Zwischenspeicher (je Partie, je Stellung mit
- * ihrer FEN; nach einer Rücknahme passen die alten Einträge nicht mehr zur FEN und werden neu
- * gerechnet). Die Engine bekommt diese Aufträge nur, wenn sie frei ist, damit Hinweise, Werkzeuge
- * und der Zug der Engine Vorrang haben; wird ein Auftrag trotzdem unterbrochen, kommt die Stellung
- * später noch einmal dran. Am Ende der Partie fehlen meist nur die letzten Stellungen, das
- * Ergebnis (Wert, bester Zug, Abstand zum zweitbesten je Stellung) kommt in den Speicher
+ * Rolle im Gesamtbild: Konzept 8.3 „Auswertung: Bewertung jeder Stellung im Hintergrund“. Die
+ * Bewertung läuft schon während der Partie, solange der Leser nachdenkt (Wunsch des Autors):
+ * Jede fertige Stellung kommt in einen Zwischenspeicher (je Partie, je Stellung mit ihrer FEN;
+ * nach einer Rücknahme passen die alten Einträge nicht mehr zur FEN und werden neu gerechnet).
+ * Die Engine bekommt diese Aufträge nur, wenn sie frei ist, damit Hinweise, Werkzeuge und der Zug
+ * der Engine Vorrang haben; wird ein Auftrag trotzdem unterbrochen, kommt die Stellung später
+ * noch einmal dran. Am Ende der Partie fehlen meist nur die letzten Stellungen, das Ergebnis
+ * (Wert, bester Zug, Abstand zum zweitbesten je Stellung) kommt in den Speicher
  * (speicher/partien.ts, mitWerten), damit die Auswertung nur einmal läuft. Während der Partie
  * zeigt die App nichts davon (es verriete zu viel). Endstellungen (Matt, Patt) brauchen keine
  * Engine.

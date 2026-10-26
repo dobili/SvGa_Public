@@ -14,9 +14,11 @@ import { liesMerker, schreibeMerker } from "./merker";
 const MERKER = "schriftgroesse";
 /** Schrittweite in Prozent (Wunsch des Autors: 10-%-Schritte). */
 export const SCHRITT = 10;
-/** Kleinste und größte Schrift in Prozent der Gerätevorgabe. */
+/** Kleinste Schrift in Prozent der Gerätevorgabe. */
 export const KLEINSTE = 80;
+/** Größte Schrift in Prozent der Gerätevorgabe. */
 export const GROESSTE = 150;
+/** Schrift wie vom Gerät vorgegeben (100 %), die Grundeinstellung. */
 export const NORMAL = 100;
 const PROZENT = 100;
 

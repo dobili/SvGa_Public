@@ -20,6 +20,7 @@ export interface Abhakstand {
   readonly zuletzt: string | null;
 }
 
+/** Stand ohne Haken, Notizen und offene Punkte: Anfang und „Alles löschen“. */
 export const LEERER_ABHAKSTAND: Abhakstand = { haken: [], notizen: {}, offen: [], zuletzt: null };
 
 const istTextliste = (w: unknown): w is string[] =>

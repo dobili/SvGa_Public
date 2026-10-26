@@ -2,8 +2,8 @@
  * Sprachpakete im Service Worker: Dateien einer weiteren Sprache erst laden, wenn sie gebraucht
  * werden, und dann offline vorhalten.
  *
- * Rolle im Gesamtbild: Seit V4 (Nutzungsprüfung 25.10.2026) lädt das Gerät nur den Kern vorab
- * (sw.ts, sw/dateiliste.ts). Englisch (Buch- und Trainerdaten, Sprachdatei der Oberfläche, etwa
+ * Rolle im Gesamtbild: Das Gerät lädt nur den Kern vorab (sw.ts, sw/dateiliste.ts; V4,
+ * Nutzungsprüfung 25.10.2026). Englisch (Buch- und Trainerdaten, Sprachdatei der Oberfläche, etwa
  * 6 MB) kommt erst, wenn der Leser es wählt: Jede Datei wird beim ersten Abruf gespeichert, und die
  * App bittet nach der Wahl, das ganze Paket nachzuladen (app/sprachpaket.ts), damit Englisch danach
  * auch ohne Netz vollständig ist. Der Speicher hält jede Datei unter Adresse plus Revision; eine

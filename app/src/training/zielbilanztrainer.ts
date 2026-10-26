@@ -19,7 +19,9 @@ import { mische, type Zufall } from "./zufall";
 /** Die drei Ziele in Buchreihenfolge. */
 export const ZIELE = ["zentrum", "entwicklung", "koenig"] as const;
 export type Ziel = (typeof ZIELE)[number];
+/** Die zwei Seiten, je mit eigener Wertung der drei Ziele. */
 export const SEITEN: readonly Color[] = ["white", "black"];
+/** Die drei möglichen Wertungen je Ziel, in der Reihenfolge der Knöpfe. */
 export const WERTUNGEN: readonly Wertung[] = ["ja", "teils", "nein"];
 
 /** Kapitel mit Eröffnungsstellungen. */

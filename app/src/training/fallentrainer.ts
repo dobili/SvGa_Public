@@ -5,7 +5,7 @@
  * Rolle im Gesamtbild: Trainer „falle“ (Pflichtenheft 7, AP 13). Die Aufgaben stammen aus
  * inhalte/de/trainer/falle.json (pipeline/trainer/falle.py): die Fallenchecks aus Kapitel 4, die
  * Schläge mit Fragezeichen aus den Zugfolgen der Kapitel 2 und 3 und Aufgaben der freien
- * Lichess-Datenbank (CC0). Jede Aufgabe ist von der Engine entschieden (Verfahren seit P4, R50):
+ * Lichess-Datenbank (CC0). Jede Aufgabe ist von der Engine entschieden (Verfahren aus P4, R50):
  * „falle“, wenn der Leser nach dem Nehmen eine Widerlegung erleidet und mindestens 1,5 Bauern
  * schlechter steht als vor dem Nehmen (und klar im Minus); „geschenk“, wenn das Nehmen höchstens
  * 0,3 hinter dem besten Zug liegt. Reine Funktionen.

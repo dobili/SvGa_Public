@@ -1,4 +1,4 @@
-/** Tests für den Hinweis auf die Datensicherung nach vier Stunden App-Zeit (0.2.32). */
+/** Tests für den Hinweis auf die Datensicherung nach vier Stunden App-Zeit. */
 import { describe, expect, it } from "vitest";
 import { hinweisFaellig, zaehle, type Appzeit } from "./sicherungshinweis";
 

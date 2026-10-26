@@ -19,6 +19,7 @@ export interface Werkzeuglink {
   readonly adresse: string;
 }
 
+/** Alle Werkzeuglinks aus inhalte/de/werkzeuglinks.json, mit Namen und Adresse. */
 export const WERKZEUGLINKS: readonly Werkzeuglink[] = daten.links;
 
 function maskiere(text: string): string {

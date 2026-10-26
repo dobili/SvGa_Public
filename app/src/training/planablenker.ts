@@ -2,13 +2,13 @@
  * Antwortsätze und Ablenker der Planbilanz-Übung, durchgehend aus Sicht der Seite am Zug
  * (P4, R48: Befund des Autors vom 23.10.2026).
  *
- * Rolle im Gesamtbild: Baustein für training/planbilanztrainer.ts. Vorher kamen die falschen
- * Antworten vom Gegner (wahre Aussagen über seinen Plan) oder waren dem richtigen Satz bis auf
- * ein Feld gleich. Jetzt gilt: Ein Ablenker zu „Wo spiele ich?“ gehört zu einer anderen Lage
- * (anderer Ort oder Grund), zu „Was will mein Gegner?“ ist er eine andere Aussage über den
- * Gegner (gleiche Farbe im Satz), zu „Welche Figur?“ eine andere eigene Figur; eigene Figuren
- * heißen „dein Läufer c1“. Dazu die Hauptkette: Bei mehreren Ketten zum selben Flügel nennt der
- * Satz die längste, dann die zentralste (Abb. 11.78: e4–d5 statt c3–b4).
+ * Rolle im Gesamtbild: Baustein für training/planbilanztrainer.ts. Falsche Antworten dürfen weder
+ * wahre Aussagen über den Plan des Gegners sein noch dem richtigen Satz bis auf ein Feld gleichen.
+ * Deshalb gilt: Ein Ablenker zu „Wo spiele ich?“ gehört zu einer anderen Lage (anderer Ort oder
+ * Grund), zu „Was will mein Gegner?“ ist er eine andere Aussage über den Gegner (gleiche Farbe im
+ * Satz), zu „Welche Figur?“ eine andere eigene Figur; eigene Figuren heißen „dein Läufer c1“.
+ * Dazu die Hauptkette: Bei mehreren Ketten zum selben Flügel nennt der Satz die längste, dann die
+ * zentralste (Abb. 11.78: e4–d5 statt c3–b4).
  * Abhängigkeiten: analyse/planfragen.ts, analyse/planlage.ts, analyse/skelett.ts (nur
  * aufgerufen), schach/aktivitaet.ts, schach/figurenziel.ts, i18n.
  * Buchbezug: Kapitel 6, die drei Planfragen; Kapitel 5, Richtung der Kette (Basis → Spitze).

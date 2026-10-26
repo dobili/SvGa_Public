@@ -1,4 +1,4 @@
-/** Tests der Sprachtechnik (seit 0.2.94): Startsprache nach Wahl oder Gerät, Wechsel, Namen. */
+/** Tests der Sprachtechnik: Startsprache nach Wahl oder Gerät, Wechsel, Namen. */
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   beiSprachwechsel,

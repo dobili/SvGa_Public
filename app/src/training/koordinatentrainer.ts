@@ -24,6 +24,7 @@ import { zuegeAusText } from "./uebungsaufgabe";
 import { mische, waehle, zahlBis, type Zufall } from "./zufall";
 
 export type Koordinatenart = "felder" | "notieren" | "ausfuehren" | "gangarten";
+/** Die vier Übungsarten des Koordinatentrainers als Liste. */
 export const KOORDINATENARTEN: readonly Koordinatenart[] = [
   "felder",
   "notieren",

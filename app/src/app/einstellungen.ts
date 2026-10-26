@@ -2,11 +2,11 @@
  * Einstellungen des Lesers: Brettfarben, Figurensatz, Ton und Strenge des Modus „Erst selbst
  * denken“.
  *
- * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen“. Seit AP 12 Teil der Nutzerdaten im
- * Speicher (speicher/speicher.ts), damit sie mit der Datensicherung umziehen; bis 0.2.20 lagen
- * sie als Merker auf dem Gerät und werden beim ersten Laden übernommen. Komponenten abonnieren
- * sie mit useEinstellungen und zeichnen sich bei einer Änderung neu. Sprache und Auflage folgen,
- * sobald es die Inhalte dafür gibt; Figurensatz und Ton gibt es seit 0.2.33.
+ * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen“. Teil der Nutzerdaten im Speicher
+ * (speicher/speicher.ts, AP 12), damit sie mit der Datensicherung umziehen; Merker aus den ersten
+ * Versionen der App werden beim ersten Laden übernommen (speicher/format.ts). Komponenten
+ * abonnieren sie mit useEinstellungen und zeichnen sich bei einer Änderung neu. Die Auflage folgt,
+ * sobald es die Inhalte dafür gibt.
  * Abhängigkeiten: speicher/speicher.ts, speicher/format.ts.
  */
 import type { Einstellungen } from "../speicher/format";

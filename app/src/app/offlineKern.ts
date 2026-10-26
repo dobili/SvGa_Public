@@ -5,10 +5,10 @@
  * Rolle im Gesamtbild: Kern von app/offline.ts. Die statische Startseite des Buches
  * (src/startseite/) nutzt ihn ohne React, die App über den Hook useOfflineStand (Konzept 6.6,
  * „pruefeUpdate“, und 11.1 bis 11.3). Der Stand ist ein kleiner Speicher mit Abonnenten.
- * „Offline bereit“ gilt seit V1 (Nutzungsprüfung 25.10.2026) erst, wenn der Service Worker
- * wirklich aktiviert ist, nicht schon, wenn er nur installiert ist (app/workerbereit.ts).
- * Seit V3 sucht die App auch beim Zurückkehren aus dem Hintergrund nach Updates, höchstens
- * einmal je Stunde. Aktiv wird ein Update weiterhin erst nach Tippen auf den Hinweis.
+ * „Offline bereit“ gilt erst, wenn der Service Worker wirklich aktiviert ist, nicht schon, wenn
+ * er nur installiert ist (app/workerbereit.ts, V1, Nutzungsprüfung 25.10.2026). Die App sucht
+ * auch beim Zurückkehren aus dem Hintergrund nach Updates, höchstens einmal je Stunde (V3).
+ * Aktiv wird ein Update erst nach Tippen auf den Hinweis.
  * Abhängigkeiten: vite-plugin-pwa (registerSW), app/workerbereit.ts.
  */
 import { registerSW } from "virtual:pwa-register";

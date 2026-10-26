@@ -1,16 +1,16 @@
 /**
  * Kurzübungen im Endspieltrainer: Quadrat, Opposition, Schlüsselfelder und das Quiz „Welches
- * Erkennungsbild?“ (seit 0.2.90); seit P4 (R47) dazu die Zug-Übungen und der Plan zum
- * Erkennungsbild aus endspielzugdrills.ts.
+ * Erkennungsbild?“, dazu die Zug-Übungen und der Plan zum Erkennungsbild aus
+ * endspielzugdrills.ts (P4, R47).
  *
  * Rolle im Gesamtbild: Pflichtenheft 7 nennt für den Endspieltrainer neben den Partien gegen die
  * Engine kurze Drills und ein Erkennungsbild-Quiz. Die Stellungen der Drills erzeugt die App
  * zufällig (König und Bauer gegen König oder zwei Könige); die Antwort rechnen dieselben
  * Bausteine, die auch die Werkzeuge des Kapitels 8 tragen (schach/quadrat.ts, opposition.ts,
  * schluesselfelder.ts). Die Lösung am Brett zeichnet beim Quadrat das Werkzeug k8-quadrat wie
- * das Buch (goldener Pfeil der Bauernweg, graue Pfeile die übrigen Seiten, Abb. 8.35), nicht mehr
- * goldene Felder (Wunsch des Autors, R47). Das Quiz nimmt die Buchstellungen des Endspieltrainers,
- * für die das Werkzeug „Erkennungsbild“ (Kapitel 9) ein Bild der Tabelle erkennt. Reine Funktionen.
+ * das Buch (goldener Pfeil der Bauernweg, graue Pfeile die übrigen Seiten, Abb. 8.35; Wunsch des
+ * Autors, R47). Das Quiz nimmt die Buchstellungen des Endspieltrainers, für die das Werkzeug
+ * „Erkennungsbild“ (Kapitel 9) ein Bild der Tabelle erkennt. Reine Funktionen.
  * Abhängigkeiten: schach/, analyse/k8-quadrat.ts (nur aufgerufen), training/zufall.ts.
  */
 import type { Color, Square } from "chessops/types";

@@ -1,12 +1,12 @@
 /**
- * Töne beim Ziehen: ein kurzes Klacken für einen Zug, ein kräftigeres für einen Schlag; seit
- * 0.2.58 (Wunsch des Autors) dazu ein Klang für Schach, Matt und Remis und ein Warnton, wenn eine
- * Figur angetippt wird, die nicht ziehen darf.
+ * Töne beim Ziehen: ein kurzes Klacken für einen Zug, ein kräftigeres für einen Schlag, dazu ein
+ * Klang für Schach, Matt und Remis und ein Warnton, wenn eine Figur angetippt wird, die nicht
+ * ziehen darf (Wunsch des Autors).
  *
- * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: … Ton“. Seit 0.2.33 (Frage des Autors nach
- * den versprochenen Tönen). Die Töne werden im Browser erzeugt (Web Audio: gefiltertes Rauschen
- * mit schnell abklingender Lautstärke), es gibt also keine Tondateien und keine Lizenzfragen; sie
- * klingen offline wie online. Standard ist „aus“ (Einstellungen).
+ * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: … Ton“. Die Töne werden im Browser
+ * erzeugt (Web Audio: gefiltertes Rauschen mit schnell abklingender Lautstärke), es gibt also
+ * keine Tondateien und keine Lizenzfragen; sie klingen offline wie online. Standard ist „aus“
+ * (Einstellungen).
  * iPhone und iPad spielen Töne erst nach einer Berührung: Deshalb weckt der erste Tipp auf der
  * Seite den Tonerzeuger (entsperreTon, in App.tsx angemeldet).
  * Abhängigkeiten: keine (Browser-Schnittstelle AudioContext).

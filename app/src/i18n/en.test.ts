@@ -1,6 +1,6 @@
 /**
- * Tests der englischen Sprachdatei (seit 0.2.104): gleiche Schlüssel und Platzhalter wie
- * Deutsch, englische Figurenbuchstaben in Zügen, Buchzitate bleiben deutsch.
+ * Tests der englischen Sprachdatei: gleiche Schlüssel und Platzhalter wie Deutsch, englische
+ * Figurenbuchstaben in Zügen, Buchzitate bleiben deutsch.
  */
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import de from "./de.json";

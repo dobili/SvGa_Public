@@ -1,18 +1,18 @@
 /**
  * Hülle der App: zeigt die oberste Ansicht des Stapels, die Leiste, den Update-Hinweis, den
- * Hinweis auf die Datensicherung (seit 0.2.32) und den Hinweis bei Speicherfehlern. Ist der Ton
- * an (seit 0.2.33), weckt jede Berührung den Tonerzeuger (Vorgabe von Safari, app/ton.ts).
+ * Hinweis auf die Datensicherung und den Hinweis bei Speicherfehlern. Ist der Ton an, weckt jede
+ * Berührung den Tonerzeuger (Vorgabe von Safari, app/ton.ts).
  *
  * Rolle im Gesamtbild: Oberste Komponente (Konzept 6.6). Kennt alle Bildschirme, aber keine
  * Schachlogik. Die App liegt unter /app/ und startet immer direkt; Installation und Buch stellt
  * die statische Startseite unter / vor (Entscheidung 15.10.2026). Die Adresse /app/#lizenzen
  * (Fußzeile der Startseite) öffnet gleich die Lizenzen, /app/#abb-6.20 (Trainingsseiten der
- * Website, seit 16.10.2026) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors.
- * Ohne solches Sprungziel macht die App seit V2 dort weiter, wo der Leser war (app/stapelMerker.ts).
- * Seit P8 (R52) liegen hier auch die Tour-Ebene und der Hinweis beim ersten Start (tour/), unter
- * der Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
- * Seit V7 (Nutzungsprüfung 25.10.2026) steht jeder Bildschirm in einer eigenen Fehlergrenze
- * (app/Bildschirmgrenze.tsx): Stürzt er ab, bleiben Leiste und Navigation.
+ * Website) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors. Ohne solches
+ * Sprungziel macht die App dort weiter, wo der Leser war (V2, app/stapelMerker.ts).
+ * Hier liegen auch die Tour-Ebene und der Hinweis beim ersten Start (tour/, P8, R52), unter der
+ * Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
+ * Jeder Bildschirm steht in einer eigenen Fehlergrenze (app/Bildschirmgrenze.tsx, V7,
+ * Nutzungsprüfung 25.10.2026): Stürzt er ab, bleiben Leiste und Navigation.
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
 import { useEffect, useState } from "react";

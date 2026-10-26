@@ -2,8 +2,8 @@
  * Kleine Merker auf dem Gerät, etwa die zuletzt geöffnete Abbildung.
  *
  * Rolle im Gesamtbild: Nur Bequemlichkeiten, die verloren gehen dürfen (zuletzt geöffnete
- * Abbildung, Koordinaten an oder aus). Einstellungen, Lernstand und Fortschritt stehen seit AP 12
- * im Speicher auf IndexedDB (speicher/speicher.ts) und ziehen mit der Datensicherung um.
+ * Abbildung, Koordinaten an oder aus). Einstellungen, Lernstand und Fortschritt stehen im
+ * Speicher auf IndexedDB (speicher/speicher.ts, AP 12) und ziehen mit der Datensicherung um.
  * Abhängigkeiten: keine.
  */
 

@@ -5,7 +5,7 @@
  * gelöste Übungen, Stand der Trainer“. Dazu die abgehakten Lernziele der Gesamt-Checkliste, weil
  * sie den Stand des Kapitels aus Sicht des Lesers zeigen. Übungen und Trainer zeigen Zahlen,
  * sobald es die Trainer gibt (AP 13); bis dahin ein ehrlicher Satz statt „0 von 12“.
- * Seit 0.2.80 als Kreisanzeigen statt Balken (Wunsch des Autors, 18.10.2026).
+ * Alles als Kreisanzeigen (Wunsch des Autors, 18.10.2026).
  * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Kreisanzeige, i18n.
  */
 import type { ReactNode } from "react";

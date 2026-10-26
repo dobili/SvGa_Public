@@ -1,10 +1,10 @@
 /**
- * Kapitelnummer im Kreis mit goldenem Fortschrittsrand (seit 0.2.101, Symbolsprache DS27).
+ * Kapitelnummer im Kreis mit goldenem Fortschrittsrand (Symbolsprache DS27).
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, „farbige Symbole für Zahlen“. Im Buch und
- * in der Gesamt-Checkliste stand der Fortschritt bisher nur als Text („12 von 43“). Jetzt füllt
- * sich der Rand der Nummer wie ein Ring im Uhrzeigersinn; ist alles erledigt, wird die Marke gold
- * mit Haken. Der Text daneben bleibt, der Ring ist für Bildschirmleser verborgen.
+ * in der Gesamt-Checkliste füllt sich der Rand der Nummer wie ein Ring im Uhrzeigersinn; ist
+ * alles erledigt, wird die Marke gold mit Haken. Der Text daneben („12 von 43“) bleibt, der Ring
+ * ist für Bildschirmleser verborgen.
  * Abhängigkeiten: speicher/fortschritt.ts (Anteil), lucide-react.
  */
 import { Check } from "lucide-react";

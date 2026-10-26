@@ -4,14 +4,13 @@
  * Rolle im Gesamtbild: Hauptteil der Kapitelübersicht (Konzept 10.1, Pflichtenheft 4
  * „Kapitelübersicht mit kleinen Brettern“). Die kleinen Bretter zeigen Pfeile und Felder wie im
  * Buch; ein Tipp öffnet die Abbildung. Angesehene Abbildungen tragen einen Haken, den der Leser
- * auch von Hand setzen kann (einzeln oder alle, 0.2.27).
- * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): „Alle abhaken“ und „Alle zurücksetzen“ stehen
- * direkt über der Galerie; jeder Abschnitt (1.1, 1.2 …) ist aufklappbar, zeigt seinen Stand als
- * kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken in 1.1 lösen“.
- * Seit 0.2.82 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
- * ob ein Abschnitt auf- oder zugeklappt ist.
- * Seit 0.2.99 (Wunsch des Autors): Abbildungen mit Warum-Fragen tragen oben rechts ein Zeichen
- * (gesperrt, offen, beantwortet), erklärt in der Legende über der Galerie (Zusatzsymbol.tsx).
+ * auch von Hand setzen kann (einzeln oder alle).
+ * Wünsche des Autors (18. und 19.10.2026): „Alle abhaken“ und „Alle zurücksetzen“ stehen direkt
+ * über der Galerie; jeder Abschnitt (1.1, 1.2 …) ist aufklappbar, anfangs eingeklappt, zeigt
+ * seinen Stand als kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken
+ * in 1.1 lösen“; ein Pfeil vorn zeigt, ob ein Abschnitt auf- oder zugeklappt ist. Abbildungen
+ * mit Warum-Fragen tragen oben rechts ein Zeichen (gesperrt, offen, beantwortet), erklärt in der
+ * Legende über der Galerie (Zusatzsymbol.tsx).
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
 import { Check, ChevronDown } from "lucide-react";

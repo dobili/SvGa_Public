@@ -20,34 +20,34 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { EROEFFNUNG_PRAXIS, neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
-import { uhrnameKurz, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
-import { Startleiste } from "../komponenten/Startleiste";
-import { ZeitWahl } from "../komponenten/ZeitWahl";
+import { uhrnameKurz, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/spielstart/uhrwahl";
+import { Startleiste } from "../komponenten/spielstart/Startleiste";
+import { ZeitWahl } from "../komponenten/spielstart/ZeitWahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { Auswahl } from "../komponenten/Auswahl";
-import { EigeneStufe } from "../komponenten/EigeneStufe";
-import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
-import { GegnerWahl } from "../komponenten/GegnerWahl";
-import { HilfenWahl, WertungsWahl } from "../komponenten/HilfenWahl";
+import { Auswahl } from "../komponenten/bausteine/Auswahl";
+import { EigeneStufe } from "../komponenten/gegnereditor/EigeneStufe";
+import { BeginnenKnopf } from "../komponenten/spielstart/BeginnenKnopf";
+import { GegnerWahl } from "../komponenten/gegner/GegnerWahl";
+import { HilfenWahl, WertungsWahl } from "../komponenten/spielstart/HilfenWahl";
 import {
   botFuerKategorie,
   kategorieVon,
   type Gegnerkategorie,
-} from "../komponenten/gegnerkategorie";
-import { GegnerEditor } from "../komponenten/GegnerEditor";
-import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
-import { Titelsymbol } from "../komponenten/Titelsymbol";
+} from "../komponenten/gegner/gegnerkategorie";
+import { GegnerEditor } from "../komponenten/gegnereditor/GegnerEditor";
+import { EroeffnungsWahl } from "../komponenten/spielstart/EroeffnungsWahl";
+import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
 import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { startangabe } from "./startstaerke";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
-import { LaufendePartie } from "../komponenten/Partienliste";
-import { LetzteSpielstaerke } from "../komponenten/LetzteSpielstaerke";
-import { useMaiaAktiv } from "../komponenten/maiastand";
-import { Startstellung } from "../komponenten/Startstellung";
+import { LaufendePartie } from "../komponenten/partienliste/Partienliste";
+import { LetzteSpielstaerke } from "../komponenten/fortschritt/LetzteSpielstaerke";
+import { useMaiaAktiv } from "../komponenten/einstellungen/maiastand";
+import { Startstellung } from "../komponenten/spielstart/Startstellung";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 /** Kennung der Karte mit der Gegnerwahl, Ziel der Startleiste (DS40). */

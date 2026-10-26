@@ -182,7 +182,7 @@ export async function pruefeMaia(): Promise<boolean> {
   return neu;
 }
 
-/** Ist das Paket geladen? Für useSyncExternalStore (useMaiaBereit in ui/komponenten/MaiaWahl.tsx). */
+/** Ist das Paket geladen? Für useSyncExternalStore (useMaiaBereit in ui/komponenten/einstellungen/MaiaWahl.tsx). */
 export function maiaBereitJetzt(): boolean {
   return bereit === true;
 }

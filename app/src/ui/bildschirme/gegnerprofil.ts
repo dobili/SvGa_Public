@@ -13,7 +13,7 @@ import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/geg
 import { gruppenstufe } from "../../engine/gruppe";
 import { wertungEigenerPersoenlichkeit } from "../../engine/persoenlichkeitswertung";
 import { gewichteAusStufen, REGLERARTEN } from "../../engine/eigenstufen";
-import { gruppenname } from "../komponenten/gruppentexte";
+import { gruppenname } from "../komponenten/gegner/gruppentexte";
 import type { Spielvorlieben } from "../../speicher/partien";
 
 /**

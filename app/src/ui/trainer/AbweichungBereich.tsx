@@ -6,7 +6,7 @@
  * und Varianten kommen aus Kapitel 2 wie im Repertoire-Trainer; welche Züge Buch sind, sagt der
  * Eröffnungsindex der Kapitel 2 und 3.
  * Abhängigkeiten: training/abweichungstrainer.ts, training/repertoiretrainer.ts,
- * ui/komponenten/useEroeffnungsindex.ts, Rundenablauf, Abweichungsaufgabe, i18n.
+ * ui/komponenten/bausteine/useEroeffnungsindex.ts, Rundenablauf, Abweichungsaufgabe, i18n.
  */
 import type { Color } from "chessops/types";
 import { useState } from "react";
@@ -15,12 +15,12 @@ import { t } from "../../i18n/sprache";
 import { abweichungsrunde } from "../../training/abweichungstrainer";
 import { eroeffnungenAus, type Repertoireeroeffnung } from "../../training/repertoiretrainer";
 import { ZUFALL } from "../../training/zufall";
-import { PARTIEKAPITEL } from "../komponenten/partiewerkzeug";
-import { useDaten } from "../komponenten/useDaten";
-import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
+import { PARTIEKAPITEL } from "../komponenten/partie/partiewerkzeug";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { useEroeffnungsindex } from "../komponenten/bausteine/useEroeffnungsindex";
 import { Abweichungsaufgabe } from "./Abweichungsaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_EROEFFNUNGEN = 2;

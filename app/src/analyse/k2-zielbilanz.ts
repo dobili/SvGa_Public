@@ -6,7 +6,7 @@
  * Rot unentwickelte Leichtfiguren und ein König in der Mitte, Gold erfüllte Ziele
  * (Zentrumsbauern, rochierter König mit Schild), Grau angegriffene Zentrumsbauern und die übrigen
  * Zentrumsfelder. Ob ein angegriffener Zentrumsbauer wirklich hängt, prüft danach die Engine
- * (ui/komponenten/ZentrumKarte.tsx, seit 0.2.33, C1.1).
+ * (ui/komponenten/werkzeugkarten/ZentrumKarte.tsx, seit 0.2.33, C1.1).
  * Abhängigkeiten: schach/zielbilanz.ts, analyse/stellungsprofil.ts, i18n.
  * Buchbezug: Kapitel 2, „Die Zielbilanz“; kalibriert an allen Zielbilanzen des Kapitels.
  */

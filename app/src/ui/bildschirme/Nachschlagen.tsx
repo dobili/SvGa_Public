@@ -10,7 +10,7 @@ import { BookA, IdCard, ListChecks, Route, Wrench } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeGlossar } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { TourKnopf } from "../../tour/TourKnopf";
 
 const SYMBOLGROESSE = 24;

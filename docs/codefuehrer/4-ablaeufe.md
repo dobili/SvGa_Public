@@ -15,15 +15,15 @@ der [Konzeptkarte](7-konzeptkarte.md) kannst du jede Datei anklicken und den Weg
 ### 4.2 Eine Abbildung öffnen und ein Werkzeug anwenden
 
 1. `ui/bildschirme/Buch.tsx`: Du tippst eine Abbildungsnummer; `daten/finde.ts` versteht sie.
-2. `ui/bildschirme/Abbildung.tsx` lädt das Kapitel (`ui/komponenten/useDaten.ts` →
+2. `ui/bildschirme/Abbildung.tsx` lädt das Kapitel (`ui/komponenten/bausteine/useDaten.ts` →
    `daten/laden.ts`) und zeigt das Brett mit den Markierungen des Buches
-   (`ui/komponenten/buchmarkierungen.ts` → `ui/brett/Brett.tsx`).
+   (`ui/komponenten/abbildung/buchmarkierungen.ts` → `ui/brett/Brett.tsx`).
 3. Du wählst ein Werkzeug in der Leiste (`Werkzeugleiste.tsx`, `useWerkzeugwahl.ts`).
-4. `ui/komponenten/werkzeugergebnis.ts` ruft das Werkzeug über das Verzeichnis
+4. `ui/komponenten/werkzeugwahl/werkzeugergebnis.ts` ruft das Werkzeug über das Verzeichnis
    `analyse/register.ts` auf, zum Beispiel `analyse/k1-zaehlen.ts`. Es nutzt das Stellungsprofil
    (`analyse/stellungsprofil.ts`) und darunter die Schachbausteine aus `schach/`
    (`angriffskarte.ts`, `abtausch.ts`).
-5. Die Sätze zeigt `ui/komponenten/Werkzeugkarte.tsx` unter dem Brett
+5. Die Sätze zeigt `ui/komponenten/werkzeugkarten/Werkzeugkarte.tsx` unter dem Brett
    (`ui/bildschirme/AbbildungKarten.tsx`), die Marken erscheinen auf dem Brett.
 6. Auf Wunsch bewertet die Engine die Stellung (`EngineKarte.tsx` → `engine/engineDienst.ts` →
    Stockfish).
@@ -32,9 +32,9 @@ der [Konzeptkarte](7-konzeptkarte.md) kannst du jede Datei anklicken und den Weg
 
 1. `ui/bildschirme/Spielen.tsx`: Gegner, Uhr und Farbe wählen; „Partie beginnen“ legt eine
    Partie an (`spiel/partie.ts`, gespeichert über `speicher/partien.ts`).
-2. `ui/bildschirme/Partie.tsx` mit dem Hook `ui/komponenten/usePartie.ts`: Du ziehst am Brett,
+2. `ui/bildschirme/Partie.tsx` mit dem Hook `ui/komponenten/partie/usePartie.ts`: Du ziehst am Brett,
    `spiel/ablauf.ts` spielt den Zug und drückt die Uhr.
-3. Ist der Bot am Zug, holt `ui/komponenten/botzug.ts` seinen Zug:
+3. Ist der Bot am Zug, holt `ui/komponenten/partie/botzug.ts` seinen Zug:
    - In der Eröffnung spielt er oft einen Zug aus dem **Praxisbuch** (`engine/praxisbuch.ts`):
      so, wie echte Menschen seiner Stärke auf Lichess eröffnen.
    - Danach fragt `engine/zugwahl.ts` die Engine nach Kandidatenzügen (`engine/grundschicht.ts`)
@@ -53,7 +53,7 @@ der [Konzeptkarte](7-konzeptkarte.md) kannst du jede Datei anklicken und den Weg
 
 ### 4.4 Die Partie ist zu Ende: Auswertung und Spielstärke
 
-1. `ui/komponenten/useAuswertung.ts` lässt die Engine jede Stellung der Partie bewerten (im
+1. `ui/komponenten/auswertung/useAuswertung.ts` lässt die Engine jede Stellung der Partie bewerten (im
    Hintergrund, schon während der Partie, wenn du am Zug bist).
 2. `spiel/auswertung.ts` gibt jedem Zug eine Klasse und ein Zeichen (bester Zug, Theoriezug,
    Ungenauigkeit, Fehler …); `schach/theorie.ts` erkennt Theoriezüge.

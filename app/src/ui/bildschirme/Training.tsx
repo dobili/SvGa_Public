@@ -21,11 +21,11 @@ import { TRAINER, trainerZuKapitel } from "../../training/trainer";
 import { kapiteladresse } from "../../startseite/trainingsseiten";
 import { BookmarkPlus, ExternalLink, Globe } from "lucide-react";
 import { useSpeicher } from "../../speicher/speicher";
-import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
-import { Trainerkarte } from "../komponenten/Trainerkarte";
-import { MitInfo } from "../komponenten/InfoKnopf";
-import { useDaten } from "../komponenten/useDaten";
-import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { FaelligeWiederholungen } from "../komponenten/training/FaelligeWiederholungen";
+import { Trainerkarte } from "../komponenten/training/Trainerkarte";
+import { MitInfo } from "../komponenten/bausteine/InfoKnopf";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
 import { TourKnopf } from "../../tour/TourKnopf";
 
 const LINKSYMBOL = 20;

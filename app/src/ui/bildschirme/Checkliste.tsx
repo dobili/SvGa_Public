@@ -13,9 +13,9 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { abgehakt, schalteLernziel, useLernstand, type Lernstand } from "../../app/lernstand";
 import { ladeNachschlagen, type Nachschlagen } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { Kapitelnummer } from "../komponenten/Kapitelnummer";
-import { useDaten } from "../komponenten/useDaten";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 type Liste = NonNullable<Nachschlagen["checkliste"]>;
 type Zeile = Liste["zeilen"][number];

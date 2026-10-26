@@ -165,10 +165,14 @@ function masse() {
 }
 let M = masse();
 
-/** Gruppe einer Datei: Oberordner, bei ui/ der Unterordner; Dateien direkt in src/ sind „Start“. */
+/**
+ * Gruppe einer Datei: Oberordner, bei ui/ der Unterordner, bei ui/komponenten/ dessen Unterordner
+ * (seit 26.10.2026); Dateien direkt in src/ sind „Start“.
+ */
 function gruppeVon(pfad) {
   const teile = pfad.split("/");
   if (teile.length === 1) return "start";
+  if (teile[0] === "ui" && teile[1] === "komponenten" && teile.length > 3) return teile.slice(0, 3).join("/");
   if (teile[0] === "ui" && teile.length > 2) return "ui/" + teile[1];
   return teile[0];
 }
@@ -202,7 +206,9 @@ const GRUPPEN = {
 };
 const EBENEN = ["oberflaeche", "ablauf", "fach", "grund"];
 const EBENEN_NAMEN = { oberflaeche: "Oberfläche", ablauf: "Abläufe und Speicher", fach: "Werkzeuge, Engine, Bots", grund: "Grundlagen" };
-const farbe = (gruppe) => `var(--ebene-${(GRUPPEN[gruppe] || ["grund"])[0]})`;
+/** Ebene einer Gruppe; Ordner unter ui/ ohne eigenen Eintrag (etwa ui/komponenten/gegner) zählen zur Oberfläche. */
+const ebeneVon = (gruppe) => (GRUPPEN[gruppe] || [gruppe.startsWith("ui/") ? "oberflaeche" : "grund"])[0];
+const farbe = (gruppe) => `var(--ebene-${ebeneVon(gruppe)})`;
 
 // Verzeichnisse für schnelle Suche: Datei → Eintrag, Datei → wer sie benutzt.
 const NACH_PFAD = new Map(DATEIEN.map((d) => [d.pfad, d]));
@@ -339,7 +345,7 @@ function gruppenpositionen() {
   const zeilenhoehe = M.schmal ? 170 : 150;
   let y = 30;
   for (const ebene of EBENEN) {
-    const gruppen = [...JE_GRUPPE.keys()].filter((g) => (GRUPPEN[g] || ["grund"])[0] === ebene)
+    const gruppen = [...JE_GRUPPE.keys()].filter((g) => ebeneVon(g) === ebene)
       .sort((a, b) => zeilen(JE_GRUPPE.get(b)) - zeilen(JE_GRUPPE.get(a)));
     baender.push([ebene, y]);
     for (let anfang = 0; anfang < gruppen.length; anfang += M.proZeile) {
@@ -388,7 +394,7 @@ function zeichneUebersicht(hervor) {
   };
   for (const [g, p] of pos) {
     const dateien = JE_GRUPPE.get(g);
-    const k = knoten(p.x, p.y, p.r, farbe(g), g === "start" ? "Start" : g, `${dateien.length} Dateien`, () => zeigeGruppe(g), g === hervor);
+    const k = knoten(p.x, p.y, p.r, farbe(g), g === "start" ? "Start" : g.replace(/^ui\/komponenten\//, ""), `${dateien.length} Dateien`, () => zeigeGruppe(g), g === hervor);
     k.addEventListener("mouseenter", () => hebeHervor(g));
     k.addEventListener("focus", () => hebeHervor(g));
     k.addEventListener("mouseleave", () => hebeHervor(hervor));
@@ -463,7 +469,7 @@ function zeigeUebersicht() {
   k.append(html("p", "Oben die Oberfläche, darunter die Abläufe, dann Werkzeuge und Engine, ganz unten die Grundlagen. Die Abhängigkeiten zeigen nach unten: Die Oberfläche benutzt alles, die Schachlogik kennt keine Bildschirme."));
   const ul = html("ul", null, "liste");
   for (const ebene of EBENEN) {
-    for (const [g] of [...JE_GRUPPE.entries()].filter(([g]) => (GRUPPEN[g] || ["grund"])[0] === ebene)) {
+    for (const [g] of [...JE_GRUPPE.entries()].filter(([g]) => ebeneVon(g) === ebene)) {
       ul.append(eintragKnopf(g === "start" ? "Start (main.tsx, sw.ts)" : g, kurztext(g), () => zeigeGruppe(g)));
     }
   }

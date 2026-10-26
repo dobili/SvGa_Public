@@ -18,13 +18,13 @@ import type { Uebung as UebungDaten } from "../../daten/generiert/uebung";
 import { t } from "../../i18n/sprache";
 import { ROLLENBUCHSTABE, stellungAusFen } from "../../schach/stellung";
 import { aufgabeZu, zusaetzlichAkzeptiert } from "../../training/uebungsaufgabe";
-import { Brettbereich } from "../komponenten/Brettbereich";
-import { EinzigerZug } from "../komponenten/EinzigerZug";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { useBrettbedienung } from "../komponenten/useBrettbedienung";
-import { useDaten } from "../komponenten/useDaten";
-import { HOECHSTE_STUFE, useUebung, type Uebungssteuerung } from "../komponenten/useUebung";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
+import { EinzigerZug } from "../komponenten/kapitel/EinzigerZug";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { HOECHSTE_STUFE, useUebung, type Uebungssteuerung } from "../komponenten/kapitel/useUebung";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 const OHNE_WAHL = () => undefined;
 

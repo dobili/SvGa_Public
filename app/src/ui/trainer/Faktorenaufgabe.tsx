@@ -21,7 +21,7 @@ import {
   type Faktorenaufgabe as Aufgabe,
   type Vorn,
 } from "../../training/faktorentrainer";
-import { WarumFragenListe } from "../komponenten/WarumFrage";
+import { WarumFragenListe } from "../komponenten/abbildung/WarumFrage";
 import { Seitenwahl, Waagenwahl, type Seitenwertung } from "./Faktorwahl";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";

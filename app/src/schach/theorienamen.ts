@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Rückblick beim Nachspielen (Wunsch des Autors, 25.10.2026): Bei einem
  * Theoriezug steht „Theoriezug: Teil einer Eröffnung“ bzw. „… eines Gambits“; ein Tipp auf das
- * Wort zeigt die zutreffenden Namen (ui/komponenten/Theorieangabe.tsx). Zutreffend sind die
+ * Wort zeigt die zutreffenden Namen (ui/komponenten/rueckblick/Theorieangabe.tsx). Zutreffend sind die
  * Eröffnungen, deren Zugfolge durch die Stellung führt.
  * Reihenfolge: zuerst die Eröffnungen und Gambits des Buches (Kapitel 2 und 3, Namen aus den
  * Steckbriefen und Abschnitten, in der Reihenfolge des Buches), dann die Lichess-Namen: die

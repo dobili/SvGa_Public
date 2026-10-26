@@ -31,7 +31,7 @@ import {
 } from "../../training/dreissigminuten";
 import { Planschritt } from "./Planschritte";
 import { useJetzt, usePlanstand } from "./usePlanstand";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 /** Der Plan eines Tages als Tabelle: Zeit, Aktivität, Ziel. */
 function Tagesplan({ tag }: { tag: Tagesart }) {

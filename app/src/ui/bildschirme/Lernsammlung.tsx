@@ -16,14 +16,14 @@ import { stellungAusFen } from "../../schach/stellung";
 import { useSpeicher } from "../../speicher/speicher";
 import { nachEroeffnung, type Sammeleintrag } from "../../training/lernsammlung";
 import { sammlungAlsPgn } from "../../training/sammlungpgn";
-import { bieteDateiAn } from "../komponenten/dateiAnbieten";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { SammelAbfrage } from "../komponenten/SammelAbfrage";
-import { SammeleintragKarte } from "../komponenten/Sammeleintrag";
-import { SammelFormular } from "../komponenten/SammelFormular";
-import { pgntexte } from "../komponenten/sammeltexte";
+import { bieteDateiAn } from "../komponenten/bausteine/dateiAnbieten";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { SammelAbfrage } from "../komponenten/lernsammlung/SammelAbfrage";
+import { SammeleintragKarte } from "../komponenten/lernsammlung/Sammeleintrag";
+import { SammelFormular } from "../komponenten/lernsammlung/SammelFormular";
+import { pgntexte } from "../komponenten/lernsammlung/sammeltexte";
 import { Trainerbrett } from "../trainer/Trainerbrett";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 /** Neue Stellung als FEN, etwa aus einer Vereinspartie. */
 function NeueStellung() {

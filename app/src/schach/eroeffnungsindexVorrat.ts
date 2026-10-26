@@ -39,7 +39,7 @@ function eintragZu(kapitel: readonly Kapitel[]): Vorratseintrag | undefined {
  * Liegt der Index zu diesen Kapiteln schon im Vorrat?
  *
  * Warum: Nur das erste Bauen kostet Zeit; die Hooks verschieben es dann hinter das nächste Bild
- * (ui/komponenten/useEroeffnungsindex.ts), damit der Bildschirm sofort erscheint.
+ * (ui/komponenten/bausteine/useEroeffnungsindex.ts), damit der Bildschirm sofort erscheint.
  * Beispiel: vor dem ersten Öffnen von „Spielen“ → false, danach → true.
  */
 export function eroeffnungsindexBereit(kapitel: readonly Kapitel[]): boolean {

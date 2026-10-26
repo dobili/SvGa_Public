@@ -17,13 +17,13 @@ import { aktualisiereJetzt, sucheUpdate, useOfflineStand } from "../../app/offli
 import { APP_VERSION } from "../../app/version";
 import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { DatenLoeschen } from "../komponenten/DatenLoeschen";
-import { EinstellungenKarte } from "../komponenten/EinstellungenKarte";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { Meldeformular } from "../komponenten/Meldeformular";
-import { Titelsymbol } from "../komponenten/Titelsymbol";
-import { useDaten } from "../komponenten/useDaten";
+import { DatenLoeschen } from "../komponenten/einstellungen/DatenLoeschen";
+import { EinstellungenKarte } from "../komponenten/einstellungen/EinstellungenKarte";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { Meldeformular } from "../komponenten/einstellungen/Meldeformular";
+import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
 const INSTALLATIONSSEITE = "/installieren/";

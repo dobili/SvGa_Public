@@ -367,7 +367,7 @@
   }
 }
 
-/* Stil eigener Gegner als Spinnennetz (Teil E, 0.2.126, ui/komponenten/Stilnetz.tsx). */
+/* Stil eigener Gegner als Spinnennetz (Teil E, 0.2.126, ui/komponenten/gegnereditor/Stilnetz.tsx). */
 .stilnetz {
   display: grid;
   gap: var(--raster);

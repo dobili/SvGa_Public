@@ -12,11 +12,11 @@ import { ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import type { Repertoireaufgabe as Aufgabe } from "../../training/repertoiretrainer";
 import { partienAus, studienAus } from "../../training/studientrainer";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_STUDIEN = 10;

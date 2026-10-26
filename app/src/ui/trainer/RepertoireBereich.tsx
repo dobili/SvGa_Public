@@ -16,10 +16,10 @@ import {
   repertoirerunde,
   type Repertoireeroeffnung,
 } from "../../training/repertoiretrainer";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_EROEFFNUNGEN = 2;

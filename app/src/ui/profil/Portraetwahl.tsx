@@ -10,8 +10,8 @@
  */
 import { ALTERSGRUPPEN, PORTRAETWAHL, type Portraetkennung } from "../../engine/portraetwahl";
 import { t } from "../../i18n/sprache";
-import { Auswahl } from "../komponenten/Auswahl";
-import { portraet } from "../komponenten/gegnerportraet";
+import { Auswahl } from "../komponenten/bausteine/Auswahl";
+import { portraet } from "../komponenten/gegner/gegnerportraet";
 import { Baukasten } from "./Baukasten";
 import type { Portraetwahlzustand } from "./portraetwahlZustand";
 

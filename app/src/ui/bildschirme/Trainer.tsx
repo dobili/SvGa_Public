@@ -22,8 +22,8 @@ import type { TrainerKennung } from "../../training/trainer";
 import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { ZUFALL } from "../../training/zufall";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { useDaten } from "../komponenten/useDaten";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import {
   Ausfuehraufgabe,
   Feldaufgabe,

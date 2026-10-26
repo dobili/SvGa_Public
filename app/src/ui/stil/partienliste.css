@@ -2,7 +2,7 @@
  * Zeilen der Partienliste (seit 0.2.142, Wunsch des Autors: übersichtlicher, Platz gut nutzen):
  * links der Gegner mit Namen darunter, in der Mitte Ergebnis, Farbe, Zeitzeichen und Stern, klein
  * Zeitart, Datum und Züge, rechts die Zahlen beider Seiten groß untereinander (Nachbesserung vom
- * 25.10.2026: kein leerer Raum rechts; ui/komponenten/Partiezeile.tsx).
+ * 25.10.2026: kein leerer Raum rechts; ui/komponenten/partienliste/Partiezeile.tsx).
  */
 .partienliste .partiezeile {
   --zahlenbreite: 76px;

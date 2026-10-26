@@ -16,8 +16,8 @@
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
 import { useEffect, useState } from "react";
-import { useAnzeigesatz } from "../ui/komponenten/maiastand";
-import { Ringfeier } from "../ui/komponenten/Ringfeier";
+import { useAnzeigesatz } from "../ui/komponenten/einstellungen/maiastand";
+import { Ringfeier } from "../ui/komponenten/fortschritt/Ringfeier";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
@@ -37,13 +37,13 @@ import { Partie } from "../ui/bildschirme/Partie";
 import { Spielen } from "../ui/bildschirme/Spielen";
 import { Lizenzen } from "../ui/bildschirme/Lizenzen";
 import { AutorAufgaben } from "../ui/bildschirme/AutorAufgaben";
-import { AufgabenRueckweg } from "../ui/komponenten/AufgabenRueckweg";
-import { Leiste } from "../ui/komponenten/Leiste";
-import { Speicherhinweis } from "../ui/komponenten/Speicherhinweis";
-import { SafariHinweis } from "../ui/komponenten/SafariHinweis";
-import { Startanimation } from "../ui/komponenten/Startanimation";
-import { SicherungsHinweis } from "../ui/komponenten/SicherungsHinweis";
-import { UpdateHinweis } from "../ui/komponenten/UpdateHinweis";
+import { AufgabenRueckweg } from "../ui/komponenten/rahmen/AufgabenRueckweg";
+import { Leiste } from "../ui/komponenten/rahmen/Leiste";
+import { Speicherhinweis } from "../ui/komponenten/hinweise/Speicherhinweis";
+import { SafariHinweis } from "../ui/komponenten/hinweise/SafariHinweis";
+import { Startanimation } from "../ui/komponenten/rahmen/Startanimation";
+import { SicherungsHinweis } from "../ui/komponenten/hinweise/SicherungsHinweis";
+import { UpdateHinweis } from "../ui/komponenten/hinweise/UpdateHinweis";
 import { Bildschirmgrenze } from "./Bildschirmgrenze";
 import { useEinstellungen } from "./einstellungen";
 import { NavigationsRahmen } from "./navigation";

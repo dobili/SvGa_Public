@@ -18,10 +18,10 @@ import type { Werkzeug } from "../../analyse/werkzeug";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { useDaten } from "../komponenten/useDaten";
-import { BUENDELSYMBOL } from "../komponenten/buendelsymbole";
-import { buendelMit } from "../komponenten/werkzeugordnung";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { useDaten } from "../komponenten/bausteine/useDaten";
+import { BUENDELSYMBOL } from "../komponenten/werkzeugwahl/buendelsymbole";
+import { buendelMit } from "../komponenten/werkzeugwahl/werkzeugordnung";
 
 /** Größe des Werkzeugzeichens (Bildpunkte). */
 const WERKZEUGZEICHEN = 18;

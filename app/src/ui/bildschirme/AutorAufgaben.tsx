@@ -31,9 +31,9 @@ import {
 import type { Trainername } from "../../autor/verweise";
 import { t } from "../../i18n/sprache";
 import { TRAINER } from "../../training/trainer";
-import { Aufgabenpunkt, Aufgabentext } from "../komponenten/Aufgabenpunkt";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { useDaten } from "../komponenten/useDaten";
+import { Aufgabenpunkt, Aufgabentext } from "../komponenten/rahmen/Aufgabenpunkt";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 const MERKER = "autorAufgaben";
 

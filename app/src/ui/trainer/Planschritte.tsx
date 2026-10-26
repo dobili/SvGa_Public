@@ -24,7 +24,7 @@ import {
 } from "../../training/dreissigminuten";
 import { taktikrunde } from "../../training/taktiktrainer";
 import { ZUFALL } from "../../training/zufall";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Rundenablauf } from "./Rundenablauf";
 import { Taktikaufgabe } from "./Taktikaufgabe";
 

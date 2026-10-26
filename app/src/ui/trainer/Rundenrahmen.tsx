@@ -12,8 +12,8 @@ import { RotateCcw } from "lucide-react";
 import { Fragment, useState } from "react";
 import { t } from "../../i18n/sprache";
 import type { TrainerKennung } from "../../training/trainer";
-import { Fortschrittsbalken } from "../komponenten/Fortschrittsbalken";
-import { SammelKnopf } from "../komponenten/SammelFormular";
+import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken";
+import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
 import { SammelstellungKontext } from "./sammelstellung";
 import type { Runde } from "./useRunde";
 

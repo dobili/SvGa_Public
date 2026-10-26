@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Safari (iPhone, iPad, Mac) löscht den Speicher einer Website, die sieben
  * Tage lang nicht besucht wurde, mit allem Fortschritt; als App auf dem Home-Bildschirm gilt das
  * nicht. Wer die App nur im Browser nutzt, soll das einmal erfahren (Vorschlag vom 19.10.2026,
- * vom Autor angenommen). Die Anzeige steht in ui/komponenten/SafariHinweis.tsx.
+ * vom Autor angenommen). Die Anzeige steht in ui/komponenten/hinweise/SafariHinweis.tsx.
  * Abhängigkeiten: app/geraet.ts (Gerätetyp), app/merker.ts.
  */
 import type { Geraet } from "./geraet";

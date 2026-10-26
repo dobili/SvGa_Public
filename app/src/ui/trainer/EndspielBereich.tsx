@@ -32,14 +32,14 @@ import {
   quadratzugdrill,
 } from "../../training/endspielzugdrills";
 import { ZUFALL } from "../../training/zufall";
-import { useDaten } from "../komponenten/useDaten";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Drillaufgabe } from "./Drillaufgabe";
 import { Endspielaufgabe } from "./Endspielaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */

@@ -14,10 +14,10 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
 import { TourKnopf } from "../../tour/TourKnopf";
-import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
-import { Knopfsymbol } from "../komponenten/Knopfsymbol";
-import { Partienliste } from "../komponenten/Partienliste";
-import { Wertungskurve } from "../komponenten/Wertungskurve";
+import { Fortschrittsuebersicht } from "../komponenten/fortschritt/Fortschrittsuebersicht";
+import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { Partienliste } from "../komponenten/partienliste/Partienliste";
+import { Wertungskurve } from "../komponenten/fortschritt/Wertungskurve";
 import { ProfilKarte } from "../profil/ProfilKarte";
 
 /** Die Profilseite. */

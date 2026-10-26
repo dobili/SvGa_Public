@@ -14,9 +14,9 @@ import { ChevronDown } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex, ladeKapitel, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { Buchtext, type Textaktionen } from "../komponenten/Unterschrift";
-import { useDaten } from "../komponenten/useDaten";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { Buchtext, type Textaktionen } from "../komponenten/abbildung/Unterschrift";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 /** Größe des Pfeils, der zeigt, dass sich ein Eintrag aufklappen lässt. */
 const PFEILGROESSE = 20;

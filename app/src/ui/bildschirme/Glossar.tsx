@@ -11,9 +11,9 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { suche } from "../../daten/glossarsuche";
 import { ladeGlossar, type Glossareintrag } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { Kopfzeile } from "../komponenten/Kopfzeile";
-import { Buchtext } from "../komponenten/Unterschrift";
-import { useDaten } from "../komponenten/useDaten";
+import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { Buchtext } from "../komponenten/abbildung/Unterschrift";
+import { useDaten } from "../komponenten/bausteine/useDaten";
 
 /**
  * Das Glossar des Buches: Begriffe suchen und einen Eintrag mit Kurzdefinition, Stellen und

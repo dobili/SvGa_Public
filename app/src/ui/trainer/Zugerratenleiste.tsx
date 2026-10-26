@@ -5,12 +5,12 @@
  * gespielten Züge“ und „optional Analysemodus: von der aktuellen Stellung Varianten
  * durchspielen, bevor man den Zug festlegt“. Die Leiste sieht aus wie die Zugleiste beim
  * Nachspielen (gleiche Klassen); geraten wird nur in der aktuellen Stellung.
- * Abhängigkeiten: schach/weiterspielen.ts (Zugtexte), i18n, komponenten/Zugknoepfe.tsx.
+ * Abhängigkeiten: schach/weiterspielen.ts (Zugtexte), i18n, komponenten/brettbedienung/Zugknoepfe.tsx.
  */
 import { Fragment, useEffect, useRef } from "react";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
-import { Zugknoepfe, type Zugrichtung } from "../komponenten/Zugknoepfe";
+import { Zugknoepfe, type Zugrichtung } from "../komponenten/brettbedienung/Zugknoepfe";
 
 /**
  * Die gespielten Züge als Tippflächen, darunter Anfang, zurück, vor, Ende.

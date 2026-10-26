@@ -3,11 +3,11 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (R38, 23.10.2026). Endet die Partie, erscheint die
  * Meldung animiert über dem Brett und verschwindet nach knapp drei Sekunden von selbst; die Karte
- * „Partieende“ darunter (Partieende.tsx) bleibt wie bisher. Nur wenn die Partie gerade endet,
+ * „Partieende“ darunter (Partieende.tsx) bleibt stehen. Nur wenn die Partie gerade endet,
  * nicht beim Öffnen einer beendeten Partie aus der Liste. Für Bildschirmleser zählt die Karte;
  * die Blende ist nur Bild (aria-hidden), sonst hörte man das Ergebnis doppelt.
- * Seit 0.2.144 (Wunsch des Autors, 25.10.2026): Ein Sieg feiert mit einem kleinen Feuerwerk und,
- * bei eingeschaltetem Ton, einem kurzen steigenden Klang; Remis und Niederlage bleiben ruhig (das
+ * Wunsch des Autors (25.10.2026): Ein Sieg feiert mit einem kleinen Feuerwerk und, bei
+ * eingeschaltetem Ton, einem kurzen steigenden Klang; Remis und Niederlage bleiben ruhig (das
  * Schild sinkt sanft, das Brett wird bei einer Niederlage etwas dunkler), ohne Feier.
  * Abhängigkeiten: spiel/partienfilter.ts, Ergebnismarke.tsx, Feuerwerk.tsx, partietexte.ts,
  * app/ton.ts, app/einstellungen.ts, i18n.

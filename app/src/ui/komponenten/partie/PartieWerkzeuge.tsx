@@ -3,11 +3,11 @@
  * Brett, darunter die Bündel des Buches mit ihren Reitern, dazu die Ergebniskarten wie an den
  * Abbildungen.
  *
- * Rolle im Gesamtbild: Wunsch des Autors P1 (Rückmeldung zu 0.2.31) und Vorschlag B2, vom Autor am
- * 16.10.2026 angenommen: zuerst die Vorstufe, die drei Werkzeuge, die man in jeder Phase braucht
- * („In jeder Phase zuerst Warnsignale und Röntgen“, Kapitel 12; „Zählen“ seit 0.2.31 immer am
- * Brett), dann die Bündel Eröffnung prüfen, Skelett-Röntgen, Planfindung, Taktik, Endspiel und
- * Denkroutine (partiewerkzeug.ts).
+ * Rolle im Gesamtbild: Wunsch des Autors P1 und Vorschlag B2, vom Autor am 16.10.2026
+ * angenommen: zuerst die Vorstufe, die drei Werkzeuge, die man in jeder Phase braucht („In jeder
+ * Phase zuerst Warnsignale und Röntgen“, Kapitel 12; „Zählen“ immer am Brett), dann die Bündel
+ * Eröffnung prüfen, Skelett-Röntgen, Planfindung, Taktik, Endspiel und Denkroutine
+ * (partiewerkzeug.ts).
  * Verhalten: Alle Werkzeuge zeigen nur an, die Figuren lassen sich weiter ziehen. Nur mit
  * „Zählen“ zählt ein Tipp das Feld, statt zu ziehen; abwählen, und es wird wieder gezogen. Die
  * Engine-Teile (Gegner?, Erzwingende Züge bis zur Ruhe, Ruhe, Nachrechnung der Zielbilanz)

@@ -2,15 +2,15 @@
  * Engine-Knopf während der Partie: Schritt für Schritt Bewertung, Urteil über den eigenen letzten
  * Zug, Erklärung und bester Zug.
  *
- * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): Statt der Hinweisknöpfe unten gibt es unter
- * dem Brett einen Knopf „Engine“ wie bei den Abbildungen, der mit jedem Tipp etwas mehr verrät:
+ * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): Statt Hinweisknöpfen unten gibt es eine
+ * Engine-Hilfe wie bei den Abbildungen, die mit jedem Tipp etwas mehr verrät:
  * 1. die Bewertung der Stellung, 2. das Zeichen des eigenen letzten Zuges in den Klassen der
  * Auswertung (!, ?!, ?, ??) ohne Erklärung, 3. warum er schlecht war (Regeln des Buches,
  * spiel/erklaerung.ts), 4. der beste Zug jetzt als goldener Pfeil. Schritte, die nichts zu sagen
  * haben, fallen weg (kein eigener Zug bisher; ein guter Zug braucht kein „Warum“).
- * Die Engine rechnet erst beim Tipp, mit voller Stärke. Seit 0.2.82 (Rückmeldung des Autors) ist
- * der Einstieg das Engine-Symbol am Brett wie bei den Abbildungen: Die Karte erscheint mit der
- * Bewertung, die weiteren Schritte sind kleine Schaltflächen statt großer Knöpfe.
+ * Die Engine rechnet erst beim Tipp, mit voller Stärke. Der Einstieg ist das Engine-Symbol am
+ * Brett wie bei den Abbildungen (Rückmeldung des Autors): Die Karte erscheint mit der Bewertung,
+ * die weiteren Schritte sind kleine Schaltflächen statt großer Knöpfe.
  * Abhängigkeiten: engine/engineDienst.ts, engine/letzterzug.ts, spiel/erklaerung.ts,
  * ui/komponenten/werkzeugkarten/useZugurteil.ts, i18n.
  */

@@ -4,6 +4,15 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 26.10.2026 – Phase in eigenen Partien bleibt wie sie ist
+
+- Die Lesart für eigene Partien bleibt: Mittelspiel, sobald eine Seite entwickelt ist (höchstens
+  eine Leichtfigur zu Hause). Die strenge Glossarregel (beide entwickelt und rochiert) gilt weiter
+  nur für Stellungen des Buches. Anlass: In der Partie des Autors galt die Stellung nach 5. Sbd2
+  schon als Mittelspiel; der Autor hätte noch Eröffnung gesagt, will aber keine Änderung, weil
+  sie Phasengrenzen und Spielstärke je Phase verschieben würde. Auch die Lage des „M“ in der
+  Zugliste bleibt.
+
 ## 13.10.2026 – Grundlagen (mit dem Autor abgestimmt)
 
 - Progressive Web App unter schach-von-grund-auf.com, ohne Unterpfade, nach der Installation offline,

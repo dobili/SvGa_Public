@@ -1418,19 +1418,6 @@ umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
       es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
       Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
       öffnet (siehe Q1-5).
-- [ ] Q1-2. **Mittelspiel nach 4…e6 in deiner Partie:** Die App meldet es nicht nach 4…e6. Die
-      Stellung nach 4…e6 gilt als Eröffnung (beide Seiten haben zwei Leichtfiguren zu Hause:
-      Weiß Sb1 und Lf1, Schwarz Sg8 und Lf8). Das „M“ in der Zugliste steht erst beim nächsten
-      Zug, 5. Sbd2: Danach hat Weiß nur noch den Lf1 zu Hause, und die App-Regel lautet
-      „Mittelspiel, sobald eine Seite entwickelt ist (höchstens eine Leichtfigur zu Hause)“.
-      Das M steht aber optisch hinter dem e6 und vor „5.“, und es sieht so aus, als beginne das
-      Mittelspiel mit e6. Außerdem ist die Regel streng nach dem Glossar zu locker: Das Glossar
-      verlangt „beide entwickelt und rochiert“; diese Regel gibt es im Code (Lesart „glossar“),
-      sie ist für eigene Partien aber nicht eingestellt. Vorschlag: (a) das M direkt vor den
-      Zug setzen, mit dem die Phase beginnt (nach der Zugnummer); (b) für eigene Partien die
-      Glossarregel nehmen („beide entwickelt und rochiert“). Dann beginnt das Mittelspiel in
-      deiner Partie erst später. Das ändert Phasengrenzen und die Spielstärke je Phase, deshalb
-      wartet es auf dein Ja.
 - [ ] Q1-3. **„Menschlich“ bei „keine Fehler“:** Das Wort sagt nicht, dass der Bot Fehler
       macht, sondern nur, dass die Einstellung der Fehlerprofil-Regler bei Menschen vorkommt.
       Gerechnet wird der Anteil der Spieler, die in allen eingestellten Reglern mindestens so

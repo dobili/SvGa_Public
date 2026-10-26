@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Abschneiden, Schachdistanz (mindestens drei Linien
  * zwischen Turm und Bauer), kurze und lange Seite. E“). Grau: die Sperrlinie und die
  * Schachdistanz; der verteidigende König und Turm gold, wenn sie richtig stehen, sonst rot.
- * Seit den Entscheidungen des Autors vom 16.10.2026: Steht der verteidigende König vor dem Bauern
+ * Nach den Entscheidungen des Autors vom 16.10.2026: Steht der verteidigende König vor dem Bauern
  * (Philidor), gelten Schachdistanz und kurze/lange Seite nicht (C1.24, Abb. 9.3, 9.4); die drei
  * Begriffe und der Vancura-Hinweis gelten nur mit höchstens einem Bauern am Brett, sonst verweist
  * das Werkzeug auf das Erkennungsbild (C1.25, Abb. 9.23, 9.25, 9.26).

@@ -1,4 +1,4 @@
-/** Tests der Buchbeispiele (0.2.96): konstruierte Partien fallen weg, Buchzugfolgen bleiben. */
+/** Tests der Buchbeispiele: konstruierte Partien fallen weg, Buchzugfolgen bleiben. */
 import { describe, expect, it } from "vitest";
 import { buchbeispiele } from "./buchbeispiele";
 import type { Kapitel } from "./generiert/kapitel";

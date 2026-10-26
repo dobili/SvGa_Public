@@ -5,14 +5,14 @@
  * Prüfkette, sondern ein Messlauf (vitest.messung.config.ts), den skripte/messe-stufen.mjs je
  * Paarung startet. Umgebung: MESSUNG_PAARUNG, MESSUNG_PARTIEN (Zahl, gerade; die Farben wechseln),
  * MESSUNG_ZIEL (Ordner für die JSON-Ergebnisse, nur lokal: buch/arbeit/), MESSUNG_SAAT_AB,
- * seit 0.2.117 MESSUNG_ENGINE_PFAD (native Engine statt Stockfish lite, viel schneller) und
+ * MESSUNG_ENGINE_PFAD (native Engine statt Stockfish lite, viel schneller) und
  * MESSUNG_TIEFE_VOLL (Suchtiefe der vollen Engine, Stufe 10, Vorgabe 16, statt 2 s Rechenzeit).
  * Kürzel eines Spielers:
- * - „3“: Stufe 3 in allen Phasen, ohne Zusatzfehler (nur die Grundschicht, seit 0.2.117);
+ * - „3“: Stufe 3 in allen Phasen, ohne Zusatzfehler (nur die Grundschicht);
  * - „3m“: Stufe 3 mit allen Zusatzfehlern und blinden Flecken der Menschen (Abzug für Bots);
  * - „4x0.2“: freie Grundschicht mit Suchtiefe 4 und tau 0,2 (Eichung der Stufen, 21.10.2026);
  * - „@svenja“: ein vorgefertigter Bot mit seinen Stufen je Phase und seiner Persönlichkeit, wie
- *   in der App (seit 0.2.117; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
+ *   in der App;
  * - Anhang „~300+3“: dieser Spieler spielt mit Uhr (Grundzeit und Zuschlag in Sekunden) und
  *   simulierter Bedenkzeit (engine/bedenkzeit.ts); reicht sie nicht, zieht er im Notmodus mit
  *   Vorzügen weiter (spiel/notmodus.ts) und kann so auf Zeit verlieren. Ohne Anhang hat er
@@ -93,7 +93,7 @@ interface Partiebericht {
   readonly halbzuege: number;
   readonly dauerMs: number;
   readonly statistik: Record<"weiss" | "schwarz", Seitenstatistik>;
-  /** Alle Züge ab der Grundstellung in SAN, einschließlich der zwei Eröffnungszüge (seit 0.2.85). */
+  /** Alle Züge ab der Grundstellung in SAN, einschließlich der zwei Eröffnungszüge. */
   readonly zuege: readonly string[];
 }
 
@@ -289,7 +289,7 @@ function ergebnisVon(partie: Partie): Partiebericht["ergebnis"] {
 
 const paarung = process.env.MESSUNG_PAARUNG ?? "1-2";
 const partienZahl = Number(process.env.MESSUNG_PARTIEN ?? STANDARD_PARTIEN);
-/** Verschiebung der Zufallssaaten (zweite Stichprobe derselben Paarung, 0.2.78). */
+/** Verschiebung der Zufallssaaten (zweite Stichprobe derselben Paarung). */
 const saatAb = Number(process.env.MESSUNG_SAAT_AB ?? 0);
 const ziel =
   process.env.MESSUNG_ZIEL ?? join(process.cwd(), "..", "buch", "arbeit", "stufenmessung");

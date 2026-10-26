@@ -1,5 +1,5 @@
 /**
- * Namen von Eröffnungen außerhalb des Buches, aus der freien Liste von Lichess (seit 0.2.32).
+ * Namen von Eröffnungen außerhalb des Buches, aus der freien Liste von Lichess.
  *
  * Rolle im Gesamtbild: Vorschlag G („Eröffnung außerhalb des Buches“, Entscheidung des Autors vom
  * 15.10.2026: zuerst die Offline-Liste). Das Werkzeug k2-eroeffnung kennt die Eröffnungen des

@@ -12,6 +12,7 @@
  */
 import type { Stufennummer } from "./stufen";
 
+/** Gemessene Elo-Zahl je rein spielender Stufe (kann bei Stufe 1 und 2 unter 0 liegen). */
 export const REINE_STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
   1: -41,
   2: -31,

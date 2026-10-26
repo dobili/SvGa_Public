@@ -1,14 +1,13 @@
 /**
- * Wertung des Lesers aus den gewerteten Partien: ein Elo-System gegen die Engine-Schätzung des
- * Gegners (Wunsch des Autors, 17.10.2026, Version 0.2.41).
+ * Wertung des Lesers aus den gewerteten Partien: ein Elo-System gegen die Stärke des Gegners
+ * (Wunsch des Autors, 17.10.2026), je Zeitklasse eine eigene Kette.
  *
  * Rolle im Gesamtbild: Die Spielstärke je Partie (spiel/genauigkeit.ts) misst nur die Genauigkeit
  * der Züge einer Partie. Die Wertung verbindet alle gewerteten Partien zu einer Zahl, die mit
  * Siegen steigt und mit Niederlagen fällt, wie eine Elo-Zahl im Verein: Die erste gewertete
  * Partie setzt die Wertung auf die Schätzung der Engine für den Leser; jede weitere zählt wie
  * eine Partie gegen einen Spieler mit der festen Zahl des Gegners aus der Gegnerwahl
- * (engine/botstaerke.ts, seit 0.2.85, Rückfrage S23; vorher die Stärke, mit der die Engine in
- * dieser Partie gespielt hat, die um etwa ±400 streute und nach oben bei etwa 1750 endete). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
+ * (engine/botstaerke.ts, Rückfrage S23). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
  * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann;
  * dazu die Schätzung der Engine für den Leser je Phase dieser Partie (Wunsch des Autors: die Kurve
@@ -17,10 +16,10 @@
  * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
  * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) ohne Rücknahme mit Haken
  * „gewertete Partie“ und fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
- * Seit 0.2.125 (Empfehlung, vom Autor am 24.10.2026 angenommen) läuft die Wertung je Zeitklasse
- * (Blitz, Schnellschach, Klassisch) als eigene Elo-Kette wie bei Lichess; ältere Punkte ohne
- * Zeitklasse zählen als Schnellschach. Die Kurve je Phase kommt nicht mehr aus Werten je Partie,
- * sondern aus der Schätzung über die letzten zehn Partien (phasenverlauf).
+ * Die Wertung läuft je Zeitklasse (Blitz, Schnellschach, Klassisch) als eigene Elo-Kette wie bei
+ * Lichess (Empfehlung, vom Autor am 24.10.2026 angenommen); ältere Punkte ohne Zeitklasse zählen
+ * als Schnellschach. Die Kurve je Phase kommt aus der Schätzung über die letzten zehn Partien
+ * (phasenverlauf).
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partieeintrag.ts (Partieeintrag).
  */
@@ -72,7 +71,7 @@ export interface Wertungspunkt {
    */
   readonly phasen: Readonly<Record<Phase, number | null>>;
   /**
-   * Zeitklasse der Partie (seit 0.2.125, Wertung je Zeitklasse wie bei Lichess). Punkte ohne
+   * Zeitklasse der Partie (Wertung je Zeitklasse wie bei Lichess). Punkte ohne
    * Angabe stammen aus der Zeit mit einer Wertung für alles und zählen als Schnellschach.
    */
   readonly tempo?: Wertungstempo;
@@ -83,7 +82,7 @@ export function tempoDesPunkts(punkt: Wertungspunkt): Wertungstempo {
   return punkt.tempo ?? "rapid";
 }
 
-/** Der Verlauf einer Zeitklasse (Elo-Kette je Zeitklasse, seit 0.2.125). */
+/** Der Verlauf einer Zeitklasse (Elo-Kette je Zeitklasse). */
 export function verlaufDerZeitklasse(
   punkte: readonly Wertungspunkt[],
   tempo: Wertungstempo,
@@ -267,7 +266,7 @@ export interface Phasenpunkt {
 
 /**
  * Der Verlauf einer Phase über die Punkte einer Zeitklasse (Kurve „Eröffnung“, „Mittelspiel“,
- * „Endspiel“ in den Einstellungen, seit 0.2.125): Nach jeder Partie die Schätzung des Teilmodells
+ * „Endspiel“ in den Einstellungen): Nach jeder Partie die Schätzung des Teilmodells
  * aus den Kennzahlen der bis dahin letzten zehn Partien, nur wo die Spanne schmal ist (SCHMAL).
  * Warum: Aus einer Partie ist die Spanne einer Phase nie schmal; über mehrere Partien wird sie es.
  * Eingaben: Punkte einer Zeitklasse (ältester zuerst), Kennzahlen je Partie, Zeitklasse, Phase.

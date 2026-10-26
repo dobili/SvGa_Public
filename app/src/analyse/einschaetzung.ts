@@ -2,7 +2,7 @@
  * Einschätzung einer Stellung („Weiß steht besser“, „ausgeglichen“, „Schwarz steht besser“) und
  * das Urteil der Engine in derselben Sprache.
  *
- * Rolle im Gesamtbild: „Erst selbst denken“ an den Abbildungen (seit 0.2.90). Wunsch des Autors
+ * Rolle im Gesamtbild: „Erst selbst denken“ an den Abbildungen. Wunsch des Autors
  * (NA1, 19.10.2026): Nach der eigenen Einschätzung steht die Antwort der Engine, und richtig
  * eingeschätzte Abbildungen merkt sich die App. Rein und ohne Engine testbar.
  * Abhängigkeiten: engine/uci.ts (Wert), engine/spielbewerter.ts (Wert in Bauerneinheiten).
@@ -12,6 +12,7 @@ import type { Wert } from "../engine/uci";
 
 /** Die drei Einschätzungen der Stellung, wie der Leser sie vor dem Werkzeug trifft. */
 export type Einschaetzung = "weiss" | "gleich" | "schwarz";
+/** Die drei Einschätzungen in der Reihenfolge der Knöpfe: Weiß besser, gleich, Schwarz besser. */
 export const EINSCHAETZUNGEN: readonly Einschaetzung[] = ["weiss", "gleich", "schwarz"];
 
 /**

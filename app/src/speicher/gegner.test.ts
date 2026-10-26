@@ -1,4 +1,4 @@
-/** Tests der eigenen Gegner im Speicher (0.2.42): lesen, anlegen, ersetzen, löschen, Grenze. */
+/** Tests der eigenen Gegner im Speicher: lesen, anlegen, ersetzen, löschen, Grenze. */
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";

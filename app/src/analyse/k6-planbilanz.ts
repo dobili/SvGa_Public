@@ -1,7 +1,7 @@
 /**
  * Werkzeug k6-planbilanz: die drei Planfragen für beide Seiten nebeneinander, dazu der Plan in
  * einem Satz und, wo das Buch eine Planbilanz hat, ein Verweis darauf. Den Text der Planbilanz
- * zeigt die App seit 0.2.27 nicht mehr (Entscheidung des Autors vom 15.10.2026: keine wörtlichen
+ * zeigt die App nicht (Entscheidung des Autors vom 15.10.2026: keine wörtlichen
  * Buchtexte in den Werkzeugen); das Werkzeug rechnet dieselben Fragen selbst.
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Die drei Planfragen für beide Seiten nebeneinander.

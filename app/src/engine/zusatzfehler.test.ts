@@ -1,5 +1,5 @@
 /**
- * Tests zu hatZusatzfehler (0.2.135, Auftrag „Variante A“, Punkt 5): Ein eigener Gegner mit nur
+ * Tests zu hatZusatzfehler (Auftrag „Variante A“, Punkt 5): Ein eigener Gegner mit nur
  * einer Art ohne Gelegenheitsdaten bekommt das Wahlmodell.
  */
 import { describe, expect, it } from "vitest";

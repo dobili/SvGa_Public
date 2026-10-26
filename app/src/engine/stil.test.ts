@@ -1,4 +1,4 @@
-/** Tests des Spielstils (0.2.42): Stilwert je Merkmal und Wahl innerhalb der Toleranz. */
+/** Tests des Spielstils: Stilwert je Merkmal und Wahl innerhalb der Toleranz. */
 import { describe, expect, it } from "vitest";
 import { stilwahl, stilwert } from "./stil";
 import type { Variante } from "./uci";

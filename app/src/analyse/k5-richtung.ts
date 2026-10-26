@@ -227,7 +227,7 @@ function isolanifazit(p: Stellungsprofil, farbe: Color): string | null {
  * Wo die Seite spielt, in dieser Reihenfolge (Entscheidung des Autors zu C1.9): die Richtung der
  * Kette (Abb. 5.26); eine gesunde eigene Mehrheit mit Kandidat, wenn die gegnerische keinen hat
  * (Abb. 5.30, Berliner Endspiel); eine gegnerische Bauernschwäche (Abb. 5.17, der Isolani d4);
- * seit 0.2.66 der eigene zentrale Isolani im Mittelspiel (Abb. 5.17, Weiß: aktives
+ * der eigene zentrale Isolani im Mittelspiel (Abb. 5.17, Weiß: aktives
  * Figurenspiel); der Minderheitsangriff gegen eine gesunde Mehrheit, vor dem eigenen König aber
  * Gegenspiel mit Figuren (Abb. 5.32, Carlsbad); zuletzt irgendeine eigene Mehrheit.
  */

@@ -1,6 +1,6 @@
 /**
  * Die sieben Spielstile der Bots (Teil D, Entscheidung des Autors 23.10.2026) als Verschiebungen
- * der Stilmerkmale im Wahlmodell (0.2.125).
+ * der Stilmerkmale im Wahlmodell.
  *
  * Rolle im Gesamtbild: Aus 3 889 Lichess-Spielern ergaben sich drei Stilachsen (Königsangriff,
  * Aktivität, Bauernsturm gegen Vereinfachen; docs/ENTSCHEIDUNGEN.md „Spielstile der Bots“). Ein
@@ -14,6 +14,7 @@
  */
 import type { Stilmerkmale } from "./stilmerkmale";
 
+/** Die Namen der sieben Stile, der letzte ist „universell“. */
 export const STILNAMEN = [
   "angreifer",
   "positionsspieler",
@@ -81,7 +82,7 @@ export function stilverschiebung(stil: Stilname, anteil = 1): Stilverschiebung {
 export type Richtungsstil = Exclude<Stilname, "universell">;
 
 /**
- * Eine Stil-Mischung eigener Bots (0.2.128, Wunsch des Autors): je Stil die Ausprägung in Prozent
+ * Eine Stil-Mischung eigener Bots (Wunsch des Autors): je Stil die Ausprägung in Prozent
  * der geeichten Stärke (50, 75, 100 oder 125). Je Achse höchstens ein Stil, denn die beiden Enden
  * einer Achse höben sich auf. Leer: universell.
  */
@@ -89,6 +90,7 @@ export type Stilmix = Readonly<Partial<Record<Richtungsstil, number>>>;
 
 /** Die wählbaren Ausprägungen in Prozent; 100 ist die geeichte Stärke, 125 geht darüber hinaus. */
 export const STILPROZENTE = [50, 75, 100, 125] as const;
+/** Die geeichte Ausprägung in Prozent (Vorgabe). */
 export const STILPROZENT_GEEICHT = 100;
 
 /** Das andere Ende derselben Achse. */

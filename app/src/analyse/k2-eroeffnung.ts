@@ -1,12 +1,12 @@
 /**
  * Werkzeug k2-eroeffnung: erkennt Eröffnung und Variante aus den Buchvarianten, auch nach
- * Zugumstellung, und springt zum Steckbrief im Buch. Statt des Steckbriefs zeigt die App seit
- * 0.2.27 eine eigene Kurzfassung und den Abschnitt im Buch (Entscheidung des Autors vom
- * 15.10.2026: keine wörtlichen Buchtexte; wo kein Werkzeug rechnet, eine knappe Zusammenfassung).
+ * Zugumstellung, und zeigt eine eigene Kurzfassung und den Abschnitt im Buch statt des
+ * Steckbriefs (Entscheidung des Autors vom 15.10.2026: keine wörtlichen Buchtexte; wo kein
+ * Werkzeug rechnet, eine knappe Zusammenfassung).
  *
- * Seit 0.2.32 (Vorschlag G, Entscheidung des Autors vom 15.10.2026): Steht die Stellung nicht im
- * Buch, nennt das Werkzeug den üblichen Namen aus der freien Eröffnungsliste von Lichess („Nicht
- * im Buch – bekannt als …“); hat die Partie die bekannten Wege verlassen, die letzte benannte
+ * Steht die Stellung nicht im Buch, nennt das Werkzeug den üblichen Namen aus der freien
+ * Eröffnungsliste von Lichess („Nicht im Buch – bekannt als …“; Vorschlag G, Entscheidung des
+ * Autors vom 15.10.2026); hat die Partie die bekannten Wege verlassen, die letzte benannte
  * Stellung davor.
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.2 („Name der Eröffnung und Variante aus den

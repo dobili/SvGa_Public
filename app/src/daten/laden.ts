@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Die App liest nur Daten, die die Pipeline aus dem LaTeX erzeugt hat
  * (Konzept 6.1, „ladeIndex“ und „ladeKapitel“). Offline kommen die Dateien aus dem Speicher
- * des Service Workers, die Funktionen merken davon nichts. Seit 0.2.94 liegt der Ordner bei der
+ * des Service Workers, die Funktionen merken davon nichts. Der Ordner liegt bei der
  * Sprache der App (/daten/<sprache>/a1); beim Sprachwechsel vergisst vergissBuchdaten alles
  * Geladene, damit die App die Daten der neuen Sprache holt.
  * Abhängigkeiten: erzeugte Typen aus den Schemas, i18n/sprache.ts.
@@ -126,7 +126,7 @@ export async function ladeNachschlagen(): Promise<Nachschlagen> {
 let eroeffnungsliste: Promise<Eroeffnungsliste> | null = null;
 
 /**
- * Lädt die Namen der Eröffnungen außerhalb des Buches (freie Liste von Lichess, seit 0.2.32).
+ * Lädt die Namen der Eröffnungen außerhalb des Buches (freie Liste von Lichess).
  *
  * Beispiel: Eintrag „Sizilianische Verteidigung: Najdorf Variation“ (B90).
  * Sonderfälle: Ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
@@ -144,7 +144,7 @@ export function ladeEroeffnungsliste(): Promise<Eroeffnungsliste> {
 let praxisbuch: Promise<Praxisbuch> | null = null;
 
 /**
- * Lädt das Praxisbuch (0.2.128, engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
+ * Lädt das Praxisbuch (engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
  * Zeitklasse und Wertungsband, unabhängig von der Sprache. Einmal geladen; ein Fehler wird nicht
  * gemerkt, damit ein späterer Versuch neu lädt.
  */

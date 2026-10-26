@@ -1,4 +1,4 @@
-/** Tests der Umrechnung Schnellschach → Blitz und Klassisch (engine/zeitklassenabstand.ts, 0.2.131). */
+/** Tests der Umrechnung Schnellschach → Blitz und Klassisch (engine/zeitklassenabstand.ts). */
 import { describe, expect, it } from "vitest";
 import { wertungInZeitklasse, zahlInZeitklasse } from "./zeitklassenabstand";
 

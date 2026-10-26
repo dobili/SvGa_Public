@@ -1,22 +1,25 @@
 /**
- * Regler auf menschlichen Quantilen (0.2.125, Entscheidung des Autors 23.10.2026): Eine Stufe
+ * Regler auf menschlichen Quantilen (Entscheidung des Autors 23.10.2026): Eine Stufe
  * je Fehlerart oder blindem Fleck von −2 (5 % der Spieler machen das noch seltener) über 0 (Median)
  * bis 2 (95 %), dazu je zwei „unmenschliche“ Stufen ±3 und ±4 darüber hinaus.
  *
- * Rolle im Gesamtbild: Persönlichkeiten der Bots (engine/gegnerbau.ts) und später die Regler
- * eigener Gegner nennen Stufen statt freier Faktoren; der Faktor auf das Gewicht einer Art
- * (engine/wahlschritt.ts) folgt daraus und aus der Wertung des Bots, denn die Spanne der Menschen
- * ist je Band verschieden (engine/spielerbereiche-daten.ts). So bleibt jeder Bot innerhalb dessen,
- * was echte Spieler seiner Stärke tun, und die Regler sind vergleichbar: Stufe 2 heißt immer „so
- * oft wie die auffälligsten 5 %“.
+ * Rolle im Gesamtbild: Persönlichkeiten der Bots (engine/gegnerbau.ts) und die Regler eigener
+ * Gegner (engine/eigenstufen.ts) nennen Stufen statt freier Faktoren; der Faktor auf das Gewicht
+ * einer Art (engine/wahlschritt.ts) folgt daraus und aus der Wertung des Bots, denn die Spanne der
+ * Menschen ist je Band verschieden (engine/spielerbereiche-daten.ts). So bleibt jeder Bot innerhalb
+ * dessen, was echte Spieler seiner Stärke tun, und die Regler sind vergleichbar: Stufe 2 heißt
+ * immer „so oft wie die auffälligsten 5 %“.
  * Abhängigkeiten: engine/spielerbereiche-daten.ts.
  */
 import { SPIELERBEREICHE } from "./spielerbereiche-daten";
 
+/** Kleinste Reglerstufe (−4, „unmenschlich“ selten). */
 export const STUFE_MIN = -4;
+/** Größte Reglerstufe (4, „unmenschlich“ oft). */
 export const STUFE_MAX = 4;
 /** Innerhalb dieser Stufen bewegt sich ein Mensch (5 bis 95 % der Spieler). */
 export const MENSCHLICH_MIN = -2;
+/** Obere Grenze der menschlichen Stufen (95 % der Spieler). */
 export const MENSCHLICH_MAX = 2;
 /** Stelle der Quantile 5, 25, 50, 75, 95 % in der Tabelle für die Stufen −2 bis 2. */
 const MITTE = 2;

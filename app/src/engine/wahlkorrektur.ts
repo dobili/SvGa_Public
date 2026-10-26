@@ -1,5 +1,5 @@
 /**
- * Die Wertung, die eine Stufe in Blitz und Klassisch an das Wahlmodell gibt (0.2.131, Empfehlung
+ * Die Wertung, die eine Stufe in Blitz und Klassisch an das Wahlmodell gibt (Empfehlung
  * an den Autor, angenommen am 25.10.2026): die Wertung desselben Menschen in der Zeitklasse
  * (engine/zeitklassenabstand.ts) plus eine geeichte Korrektur je Stufe.
  *
@@ -19,7 +19,7 @@
  * Zahl. Stufe 6 und 7 bleiben ohne: Bei 81 bis 83 % Genauigkeit sättigen die Anker und messen zu
  * niedrig. (Runde 1 bis 3 gaben dem Wahlmodell die Zeitklasse nicht mit und gelten nicht.)
  * Nachmessung: docs/ENTSCHEIDUNGEN.md, „Bots als ein Mensch mit drei Wertungen“.
- * Mit Maia (seit 0.2.144): Die Wertung geht auch an Maia, deren Netz nach Wertungsklassen wählt;
+ * Mit Maia: Die Wertung geht auch an Maia, deren Netz nach Wertungsklassen wählt;
  * dieselbe Korrektur wirkte dort stärker. Prüfmessung vom 25./26.10.2026 (Blitz, Plan C, je 40
  * Partien): ohne Maia liegen die Anker im Rauschen (±110 um die erwartete Zahl, nur Stufe 8 höher);
  * mit Maia spielt Stufe 4 etwa 120 bis 260 und Stufe 5 etwa 450 zu schwach, Stufe 7 etwa 130 bis
@@ -43,7 +43,7 @@ const KORREKTUR: Readonly<Record<Zeitklasse, readonly number[]>> = {
   classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],
 };
 
-/** Dieselbe Korrektur, wenn Maia mitspielt (seit 0.2.144, Herleitung im Dateikopf). */
+/** Dieselbe Korrektur, wenn Maia mitspielt (Herleitung im Dateikopf). */
 const KORREKTUR_MAIA: Readonly<Record<Zeitklasse, readonly number[]>> = {
   blitz: [0, 0, -180, -175, -110, -125, -240, 0, 0],
   classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],

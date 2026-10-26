@@ -1,5 +1,5 @@
 /**
- * Test des Wachhunds im Engine-Dienst (0.2.85, Fehlerbericht des Autors: Auswertung startete nach
+ * Test des Wachhunds im Engine-Dienst (Fehlerbericht des Autors: Auswertung startete nach
  * einer Partie nicht): Antwortet die Engine nach dem „go“ nicht mehr, startet der Dienst sie neu,
  * lehnt den hängenden Auftrag als abgebrochen ab, und der nächste Auftrag läuft mit der neuen.
  */

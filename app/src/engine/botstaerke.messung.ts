@@ -9,7 +9,7 @@
  * in `anker-bewertung` (skripte/eichung-rechnen.mjs --quellen stufen). Rechnung: Elo-Leiter aus
  * allen Ergebnissen (engine/messung/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
  * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (spiel/elomodell.ts,
- * seit 0.2.125 mit dem Elo-Modell je Zeitklasse, die Phasen der Züge aus den nachgespielten
+ * mit dem Elo-Modell je Zeitklasse, die Phasen der Züge aus den nachgespielten
  * Partien); dazu die Kandidaten des neuen Bot-Satzes (engine/messung/botkandidaten.ts) in
  * botkandidaten-daten.ts;
  * eine gemeinsame Verschiebung legt die Leiter auf die Anker. Unsicherheit je Spieler durch
@@ -115,7 +115,7 @@ function trennstelle(paarung: string): number {
 
 /**
  * Kürzel ohne Maia-Zeichen („@tom*“ → „@tom“, „5m*“ → „5m“): Ein Durchgang misst entweder alle mit
- * oder alle ohne Maia (Neumessung Plan C, 0.2.143), die Zahlen gehören also zu denselben Bots.
+ * oder alle ohne Maia (Neumessung Plan C), die Zahlen gehören also zu denselben Bots.
  */
 function ohneMaia(kuerzel: string): string {
   return kuerzel.replaceAll("*", "");
@@ -159,7 +159,7 @@ function grundzeit(tempo: string): number {
 }
 
 /**
- * Was die Uhr je Bedenkzeit kostet (seit 0.2.117): Stufe n mit Uhr gegen Stufe n ohne
+ * Was die Uhr je Bedenkzeit kostet: Stufe n mit Uhr gegen Stufe n ohne
  * („3~300+3-3“). Seit 0.2.117 bereinigt: Ohne Zeitnot verläuft eine Partie mit Uhr genau wie ohne
  * (gleiche Zufallsfolge), die Rohwerte langer Bedenkzeiten sind also nur das Rauschen der Partien
  * gegen sich selbst. Abgezogen wird deshalb der Wert der längsten Bedenkzeit derselben Stufe, dann

@@ -1,6 +1,6 @@
 /**
  * Tests für das Verzeichnis der Werkzeuge: Erklärung und Legende der Markierungen für jedes
- * Werkzeug (Legende in der Karte seit 0.2.30, Wunsch des Autors).
+ * Werkzeug (Legende in der Karte, Wunsch des Autors).
  */
 import { describe, expect, it } from "vitest";
 import { t } from "../i18n/sprache";

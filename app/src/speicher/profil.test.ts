@@ -1,4 +1,4 @@
-/** Tests des Spielerprofils (0.2.140): Lesen aus Rohdaten, Grenzen, Adresse des Bildes. */
+/** Tests des Spielerprofils: Lesen aus Rohdaten, Grenzen, Adresse des Bildes. */
 import { describe, expect, it } from "vitest";
 import { wandleUm } from "./format";
 import { bildadresse, LEERES_PROFIL, MAX_PROFILNAME, MAX_SVG_ZEICHEN, profilAus } from "./profil";

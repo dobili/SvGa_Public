@@ -4,14 +4,15 @@
  * denen am 25.10.2026 gemessen wurde; nicht ändern, sonst neu messen).
  *
  * Rolle im Gesamtbild: Die Faktoren hängen von der Wertung ab (wie stark weichen Spieler dieser
- * Stärke vom Median ab). Bis 0.2.142 nahm die App dafür die gemessene Zahl des Bots; mit jeder
- * neuen Messung hätte der Bot dadurch anders gespielt, als er gemessen wurde. Seit 0.2.143 gilt
+ * Stärke vom Median ab). Nähme die App dafür die gemessene Zahl des Bots, spielte er nach jeder
+ * neuen Messung anders, als er gemessen wurde. Deshalb gilt
  * diese feste Tabelle für App, Gruppenmodus und Messung; die angezeigte Zahl und die Wertung
  * kommen weiter aus engine/botstaerke-daten.ts und engine/botstaerke-maia-daten.ts.
  * Abhängigkeiten: engine/stufen.ts (Typ).
  */
 import type { Stufennummer } from "./stufen";
 
+/** Feste Wertung je Stufe für die Persönlichkeit (Elo, Stand 24.10.2026). */
 export const PERSOENLICHKEIT_STUFEN: Readonly<Record<Stufennummer, number>> = {
   1: 747,
   2: 946,
@@ -25,6 +26,7 @@ export const PERSOENLICHKEIT_STUFEN: Readonly<Record<Stufennummer, number>> = {
   10: 3296,
 };
 
+/** Feste Wertung je Bot (Schlüssel: Kennung) für die Persönlichkeit (Elo, Stand 24.10.2026). */
 export const PERSOENLICHKEIT_BOTS: Readonly<Record<string, number>> = {
   tom: 347,
   marie: 226,

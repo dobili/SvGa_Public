@@ -1,5 +1,5 @@
 /**
- * Tests für „jeden Kandidaten bis zur Ruhe“ (Vorschlag B1, seit 0.2.33) an Abb. 7.14: mit fester
+ * Tests für „jeden Kandidaten bis zur Ruhe“ (Vorschlag B1) an Abb. 7.14: mit fester
  * Fortsetzung (ohne Engine) und mit der echten Engine (Stockfish lite, ein Kern).
  * 1. Te8+ verliert den Turm, 2. Th8+ Kxh8 Sxf7+ Kg8 Sxd6 gewinnt die Dame (+5).
  */

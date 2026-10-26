@@ -1,6 +1,6 @@
 /**
  * Nebenzweig im Rückblick: die Hauptvariante der Engine ab der Stellung vor einem Zug als
- * spielbare Züge mit Stellungen (seit 0.2.85, Wunsch des Autors: die Zugfolge unter „Besser war
+ * spielbare Züge mit Stellungen (Wunsch des Autors: die Zugfolge unter „Besser war
  * …“ soll man auf dem Brett Zug für Zug sehen können, wie eine Abzweigung bei den Abbildungen).
  * Reine Funktion; gespeichert ist die Variante in UCI (useAuswertung.ts, höchstens sechs
  * Halbzüge).
@@ -21,7 +21,7 @@ export const MIT_BESSEREM: ReadonlySet<Zugklasse> = new Set([
   "patzer",
 ]);
 
-/** Bei diesen Klassen zeigt sie, wie der Gegner den Fehler bestraft (seit 0.2.85). */
+/** Bei diesen Klassen zeigt sie, wie der Gegner den Fehler bestraft. */
 export const MIT_STRAFE: ReadonlySet<Zugklasse> = new Set(["fehler", "patzer"]);
 
 /** Ein Zug des Nebenzweigs. */

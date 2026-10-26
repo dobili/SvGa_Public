@@ -46,6 +46,7 @@ export function bandwert(tabelle: readonly number[], wertung: number): number {
 
 /** Die Fehlerarten mit Daten (alle aus engine/fehlerart.ts außer „ungenau“ und „pattGesetzt“). */
 export type Gelegenheitsart = keyof typeof GELEGENHEIT;
+/** Alle Fehlerarten mit Lichess-Zahlen zur Gelegenheit. */
 export const GELEGENHEITSARTEN = Object.keys(GELEGENHEIT) as Gelegenheitsart[];
 
 /**
@@ -122,7 +123,7 @@ export function zeitnotstufe(restMs: number | null): Zeitnotstufe | null {
 }
 
 /**
- * Faktor auf die Temperatur des Wahlmodells in Zeitnot (seit 0.2.125, engine/zeitnot-daten.ts):
+ * Faktor auf die Temperatur des Wahlmodells in Zeitnot (engine/zeitnot-daten.ts):
  * je Zeitklasse und Band so, dass die Fehlerrate steigt wie bei Menschen mit so wenig Restzeit.
  * Beispiel: Blitz, 2000, 8 s Rest → etwa 1,6; eine Minute und mehr → 1.
  */
@@ -154,4 +155,5 @@ export function zeitnotFaktoren(
 
 /** Die Tabellen der Bedenkzeit (engine/bedenkzeit.ts liest sie). */
 export const BEDENKZEIT_DATEN = BEDENKZEIT;
+/** Untergrenzen der Wertungsbänder der Lichess-Zahlen (400 bis 2400 in Schritten von 200). */
 export const BAND_UNTERGRENZEN: readonly number[] = BAENDER;

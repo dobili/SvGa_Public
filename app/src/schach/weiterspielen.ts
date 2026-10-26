@@ -20,6 +20,7 @@ export interface EigeneZuege {
   readonly stelle: number;
 }
 
+/** Noch keine eigenen Züge hinter der Buchstellung: leere Liste, nichts gezeigt. */
 export const KEINE_EIGENEN: EigeneZuege = { zuege: [], stelle: 0 };
 
 /** Figuren, in die ein Bauer umwandeln kann, in der Reihenfolge der Auswahl. */
@@ -68,7 +69,7 @@ export function legaleZiele(fen: string, von: string): string[] {
 /**
  * Felder mit Figuren der Seite am Zug, die mindestens einen legalen Zug haben.
  *
- * Warum: Beim Ziehen per Wischen (seit 0.2.92) darf nur auf diesen Feldern ein Wischen beginnen;
+ * Warum: Beim Ziehen per Wischen darf nur auf diesen Feldern ein Wischen beginnen;
  * überall sonst bleibt das Scrollen der Seite frei.
  * Beispiel: Grundstellung → die acht Bauern und beide Springer. Sonderfall: Stellung ohne Regeln
  * (Lehrbild ohne König) → leere Liste.
@@ -81,7 +82,7 @@ export function ziehbareFelder(fen: string): string[] {
     .map(([feld]) => makeSquare(feld));
 }
 
-/** Warum eine eigene Figur gerade nicht ziehen darf (0.2.58, Wunsch des Autors). */
+/** Warum eine eigene Figur gerade nicht ziehen darf (Wunsch des Autors). */
 export type Zugsperre = "schach" | "gefesselt" | "blockiert";
 
 /**

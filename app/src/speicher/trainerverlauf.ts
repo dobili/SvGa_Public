@@ -1,11 +1,11 @@
 /**
  * Verläufe einzelner Trainer in den Nutzerdaten: Trefferzahlen bei „Zug erraten“ je Partie und
- * der Stand des 30-Minuten-Plans (seit 0.2.90).
+ * der Stand des 30-Minuten-Plans.
  *
  * Rolle im Gesamtbild: Pflichtenheft 7 verlangt beim Zugerraten den Vergleich mit früheren
- * Versuchen („Wiederholung derselben Partie nach Wochen“); bis 0.2.89 lebte die Trefferzahl nur im
- * Bildschirm. Der 30-Minuten-Plan lag nur als Merker im Gerät und fehlte in der Datensicherung.
- * Beides steht jetzt in den Nutzerdaten (speicher/format.ts) und damit auch in der Sicherung.
+ * Versuchen („Wiederholung derselben Partie nach Wochen“). Deshalb stehen die Trefferzahlen und
+ * der 30-Minuten-Plan in den Nutzerdaten (speicher/format.ts) und damit auch in der
+ * Datensicherung, nicht nur im Bildschirm oder als Merker im Gerät.
  * Ältere Stände ohne diese Einträge lesen sich als leer; das Format bleibt dasselbe.
  * Abhängigkeiten: keine.
  */

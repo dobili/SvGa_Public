@@ -6,7 +6,7 @@
  * Fallencheck aus dem Buch.“). Dieses Werkzeug bestimmt das Angebot; das Urteil der Engine (Art N)
  * rechnet die Karte FalleKarte darunter, weil die Engine Zeit braucht. Rot: Fehlzug, Gold:
  * Rettung (setzt die Karte, sobald die Engine fertig ist). An den Stopp-Momenten des Buches steht
- * seit 0.2.27 nur ein Verweis auf den Fallencheck im Buch, nicht mehr dessen Text (Entscheidung
+ * nur ein Verweis auf den Fallencheck im Buch, nicht dessen Text (Entscheidung
  * des Autors vom 15.10.2026: keine wörtlichen Buchtexte in den Werkzeugen).
  * Abhängigkeiten: analyse/stellungsprofil.ts (Schläge mit Bilanz), daten (Fallencheck), i18n.
  * Buchbezug: Kapitel 4, „Fallenkabinett“, Stopp-Momente und Fallenchecks.

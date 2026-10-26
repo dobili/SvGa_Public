@@ -6,7 +6,7 @@
  * Rot unentwickelte Leichtfiguren und ein König in der Mitte, Gold erfüllte Ziele
  * (Zentrumsbauern, rochierter König mit Schild), Grau angegriffene Zentrumsbauern und die übrigen
  * Zentrumsfelder. Ob ein angegriffener Zentrumsbauer wirklich hängt, prüft danach die Engine
- * (ui/komponenten/werkzeugkarten/ZentrumKarte.tsx, seit 0.2.33, C1.1).
+ * (ui/komponenten/werkzeugkarten/ZentrumKarte.tsx, C1.1).
  * Abhängigkeiten: schach/zielbilanz.ts, analyse/stellungsprofil.ts, i18n.
  * Buchbezug: Kapitel 2, „Die Zielbilanz“; kalibriert an allen Zielbilanzen des Kapitels.
  */
@@ -121,7 +121,7 @@ export function zielbilanzWerkzeug(stellung: Stellung, eigen: Color): Werkzeuger
   const karte = profil(stellung).angriffskarte;
   const meine = zielbilanz(stellung.brett, karte, eigen, stellung.amZug);
   const seine = zielbilanz(stellung.brett, karte, gegner(eigen), stellung.amZug);
-  // Wie die Tabelle im Buch: Weiß zuerst, gleich wer am Zug ist (Nachtest des Autors, 0.2.26).
+  // Wie die Tabelle im Buch: Weiß zuerst, gleich wer am Zug ist (Nachtest des Autors).
   const [weiss, schwarz] = eigen === "white" ? [meine, seine] : [seine, meine];
   const befunde = [befund(weiss), befund(schwarz)];
   return {
@@ -130,7 +130,7 @@ export function zielbilanzWerkzeug(stellung: Stellung, eigen: Color): Werkzeuger
     ueberschrift: t("zielbilanz.titel"),
     befunde,
     fazit: fazit(weiss, schwarz),
-    // Nur die Seite der Sicht wird markiert (0.2.28), seit 0.2.29 ausführlicher.
+    // Nur die Seite der Sicht wird markiert, dafür ausführlich (Wunsch des Autors).
     markierungen: zielmarkierungen(meine, stellung.brett),
     stufen: [[eigen], [eigen, gegner(eigen)], [eigen, gegner(eigen)]],
     regel: t("werkzeug.k2-zielbilanz.regel"),

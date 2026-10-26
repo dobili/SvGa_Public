@@ -1,5 +1,5 @@
 /**
- * Messplan der Neumessung von Plan C (0.2.143, Freigabe des Autors 25.10.2026): alle Stufen, Bots,
+ * Messplan der Neumessung von Plan C (Freigabe des Autors 25.10.2026): alle Stufen, Bots,
  * Gruppen und die Neuling-Kandidaten, je ohne und mit Maia („*“), aufgeteilt auf zehn Chats.
  *
  * Rolle im Gesamtbild: Erzeugt app/messplan/<fassung>/teil-N.txt (Fassung „ohne“ und „mit“ Maia;

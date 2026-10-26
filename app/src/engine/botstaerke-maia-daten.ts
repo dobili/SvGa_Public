@@ -3,13 +3,14 @@
  * ausgewertet am 2026-10-25 mit engine/botstaerke.messung.ts, übernommen mit
  * skripte/uebernehme-planc.mjs; nicht von Hand ändern).
  *
- * Rolle im Gesamtbild: Zweiter Zahlensatz für engine/zahlensatz.ts (seit 0.2.143). Gleiche Messung
+ * Rolle im Gesamtbild: Zweiter Zahlensatz für engine/zahlensatz.ts. Gleiche Messung
  * wie botstaerke-daten.ts, nur wählen alle Spieler mit Maia. Herleitung: docs/ENTSCHEIDUNGEN.md,
  * „Maia im Wahlmodell, Plan C und eine Neumessung“.
  * Abhängigkeiten: engine/stufen.ts (Typ).
  */
 import type { Stufennummer } from "./stufen";
 
+/** Gemessene Elo-Zahl je Stufe, wenn Maia mitspielt. */
 export const STUFEN_STAERKE_MAIA: Readonly<Record<Stufennummer, number>> = {
   1: 592,
   2: 733,
@@ -23,6 +24,7 @@ export const STUFEN_STAERKE_MAIA: Readonly<Record<Stufennummer, number>> = {
   10: 3287,
 };
 
+/** Gemessene Elo-Zahl je vorgefertigtem Bot (Schlüssel: Kennung), wenn Maia mitspielt. */
 export const BOT_STAERKE_MAIA: Readonly<Record<string, number>> = {
   tom: 327,
   marie: 198,
@@ -159,8 +161,10 @@ export const BOT_STAERKE_MAIA: Readonly<Record<string, number>> = {
   "alt-wgm-tanaka": 2541,
 };
 
-// Gruppen seit 0.2.144 mit der festen Ordnung neu gemessen (skripte/sammle-gruppen.sh, 72 Partien
-// je Gruppe, Zweige messung-gruppen-mit-1/2).
+/**
+ * Gemessene Elo-Zahl des Gruppenmodus je Stufe mit Maia, mit den Gruppen der festen Ordnung
+ * (skripte/sammle-gruppen.sh, 72 Partien je Gruppe, Zweige messung-gruppen-mit-1/2).
+ */
 export const GRUPPEN_STAERKE_MAIA: Readonly<Partial<Record<Stufennummer, number>>> = {
   1: 410,
   2: 674,

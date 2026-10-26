@@ -7,7 +7,7 @@
  * Die Rohdaten liegen nur lokal (EICHUNG_ORDNER, Vorgabe ../buch/arbeit/eichung): die Partien
  * aus pipeline/eichung/sammeln.py und die Bewertungen aus skripte/eichung-rechnen.mjs. Ausgabe:
  * bericht.md und ergebnis.json im selben Ordner (lokal); die Zahlen aus ergebnis.json kommen in
- * Schritt d als Konstanten in die App. Seit 0.2.103 stehen die Kurven auf der inneren Genauigkeit
+ * Schritt d als Konstanten in die App. Die Kurven stehen auf der inneren Genauigkeit
  * nur bis zur Entscheidung der Partie (spiel/entscheidung.ts), wie die Schätzung in der App.
  * Abhängigkeiten: spiel/messung/eichungsrechnung.ts, spiel/messung/genauigkeitsmodell.ts.
  * Aufruf (im Ordner app/): npm run messen:eichung

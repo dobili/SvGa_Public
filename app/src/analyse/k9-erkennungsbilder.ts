@@ -1,6 +1,6 @@
 /**
  * Werkzeug k9-erkennungsbilder: Welches Bild der Endspiel-Tabelle steht auf dem Brett, woran man
- * es erkennt, die Merkmale und der Plan in Kürze. Erkennungsmerkmal und Plan stehen seit 0.2.27
+ * es erkennt, die Merkmale und der Plan in Kürze. Erkennungsmerkmal und Plan stehen
  * in eigenen Worten, dazu ein Verweis auf die Tabelle im Buch (Entscheidung des Autors vom
  * 15.10.2026: keine wörtlichen Buchtexte in den Werkzeugen).
  *

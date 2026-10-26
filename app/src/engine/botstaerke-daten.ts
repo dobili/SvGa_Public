@@ -10,6 +10,7 @@
 import type { Wertungstempo } from "../spiel/elomodell";
 import type { Stufennummer } from "./stufen";
 
+/** Gemessene Elo-Zahl je Stufe (Schnellschach, ohne Maia). */
 export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
   1: 607,
   2: 797,
@@ -23,6 +24,7 @@ export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
   10: 2864,
 };
 
+/** Gemessene Elo-Zahl je vorgefertigtem Bot (Schlüssel: Kennung), Schnellschach, ohne Maia. */
 export const BOT_STAERKE: Readonly<Record<string, number>> = {
   tom: 332,
   marie: 321,

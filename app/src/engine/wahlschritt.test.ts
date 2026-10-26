@@ -1,4 +1,4 @@
-/** Tests des Wahlschritts (0.2.125): Übersetzung der Stellschrauben, Höchstverlust, Ziehen. */
+/** Tests des Wahlschritts: Übersetzung der Stellschrauben, Höchstverlust, Ziehen. */
 import { describe, expect, it } from "vitest";
 import { lageVon } from "./fehlerart";
 import { WIE_MENSCHEN } from "./menschenwahl";

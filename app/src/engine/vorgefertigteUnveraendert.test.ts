@@ -2,13 +2,13 @@
  * Absicherung: Die vorgefertigten Bots bekommen genau die Eingaben, mit denen sie gemessen wurden;
  * ihre gemessenen Zahlen gelten nur dann.
  *
- * Rolle im Gesamtbild: Eingeführt mit dem Umbau „Fehlerprofil vereinfacht“ (Variante A, 0.2.135),
- * der die Bots nicht verändern durfte. Seit 0.2.143 hält der Vergleich den Stand von Plan C fest
- * (Charaktere auf das vereinfachte Profil, Freigabe des Autors 25.10.2026), mit dem die Bots neu
- * gemessen werden. Je Bot: die Faktoren seiner Persönlichkeit (faktorenAus) bei fünf Wertungen,
- * die Stellschrauben der Zugwahl (menschenwerteAus) und ob er Zusatzfehler hat (hatZusatzfehler),
- * festgehalten in `testdaten/vorgefertigte-0.2.143.json`. Neu schreiben nur mit Absicht (und dann
- * neu messen): `SCHREIBE_VERGLEICH=1 npx vitest run src/engine/vorgefertigteUnveraendert.test.ts`.
+ * Rolle im Gesamtbild: Der Vergleich hält den Stand von Plan C fest (Charaktere auf das
+ * vereinfachte Profil, Freigabe des Autors 25.10.2026), mit dem die Bots gemessen wurden; kein
+ * Umbau darf die Bots unbemerkt verändern. Je Bot: die Faktoren seiner Persönlichkeit (faktorenAus)
+ * bei fünf Wertungen, die Stellschrauben der Zugwahl (menschenwerteAus) und ob er Zusatzfehler hat
+ * (hatZusatzfehler), festgehalten in `testdaten/vorgefertigte-0.2.143.json`. Neu schreiben nur mit
+ * Absicht (und dann neu messen):
+ * `SCHREIBE_VERGLEICH=1 npx vitest run src/engine/vorgefertigteUnveraendert.test.ts`.
  * Abhängigkeiten: engine/gegnerliste.ts, engine/gegnerbau.ts, engine/zugwahl.ts,
  * engine/menschenwahl.ts, engine/botstaerke.ts.
  */

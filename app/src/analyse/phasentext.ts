@@ -1,6 +1,6 @@
 /**
  * Der Satz zur Phase mit ihrem Grund, für das Werkzeug „Phase“ und für die Erklärung am
- * Phasenwechsel im Rückblick (Wunsch des Autors, 17.10.2026, Version 0.2.44).
+ * Phasenwechsel im Rückblick (Wunsch des Autors, 17.10.2026).
  *
  * Rolle im Gesamtbild: Beide Anzeigen sollen denselben Wortlaut haben, damit der Leser die Regel
  * wiedererkennt. Die Zusatzregel (wenig Material) bekommt ihren eigenen Satz mit dem Hinweis

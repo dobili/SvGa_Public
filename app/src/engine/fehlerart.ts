@@ -1,13 +1,13 @@
 /**
  * Welchen typischen Anfängerfehler ein Zug darstellt (Konzept 8.2, Tabelle „Fehlerarten“).
  *
- * Seit 0.2.39 liefert fehlerbefundIn zu jeder Art auch die Einzelheiten (welche Drohung, welche
- * Figur hängt, welche Gabel oder Linie), damit der Rückblick nach der Partie sie am Brett zeigen
- * kann (spiel/erklaerung.ts). Die Eröffnungsregeln stehen in fehlerart-eroeffnung.ts.
- * Rolle im Gesamtbild: Die Fehlersuche der Stufen 1 bis 4 (engine/fehlersuche.ts) sucht unter
- * allen legalen Zügen und den Kandidaten der Engine einen typischen Fehlerzug und protokolliert
- * seine Art; die Auswertung nach der Partie nennt sie („Mit 12... Sf6 hat die Engine eine Figur
- * hängen lassen (W1). Hast du es gesehen?“, Pflichtenheft 5.2).
+ * fehlerbefundIn liefert zu jeder Art auch die Einzelheiten (welche Drohung, welche Figur hängt,
+ * welche Gabel oder Linie), damit der Rückblick nach der Partie sie am Brett zeigen kann
+ * (spiel/erklaerung.ts). Die Eröffnungsregeln stehen in fehlerart-eroeffnung.ts.
+ * Rolle im Gesamtbild: Die Fehlersuche (engine/fehlersuche.ts, für engine/menschenwahl.ts) sucht
+ * unter allen legalen Zügen und den Kandidaten der Engine einen typischen Fehlerzug und
+ * protokolliert seine Art; die Auswertung nach der Partie nennt sie („Mit 12... Sf6 hat die Engine
+ * eine Figur hängen lassen (W1). Hast du es gesehen?“, Pflichtenheft 5.2).
  *
  * Die sechs Arten aus Konzept 8.2, geprüft mit den Werkzeugen des Buches:
  * - Figur hängen lassen (W1, Kapitel 4): Nach dem Zug ist eine eigene Figur (ab Leichtfigur)
@@ -26,7 +26,7 @@
  * Stellung einmal berechnet, damit alle legalen Züge geprüft werden können.
  * Abhängigkeiten: chessops, schach/ (Abtausch, Drohungen, Gabeln, Motive, Todsünden),
  * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts, engine/zugprobe.ts (Zug spielen),
- * engine/opfer.ts (verlorene Figuren, seit 0.2.59 dort zusammen mit dem Opferwert),
+ * engine/opfer.ts (verlorene Figuren, dort zusammen mit dem Opferwert),
  * engine/fehlerart-typen.ts (Fehlerart, Lage, FEHLERARTEN; hier weitergereicht).
  */
 import { Chess } from "chessops/chess";
@@ -63,7 +63,7 @@ import { eingestellt, schlagVerpasst, zugOhneNot } from "./fehlerart-neu";
 import type { Fehlerart, Lage } from "./fehlerart-typen";
 export { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart-typen";
 
-/** Die Fehlerart mit ihren Einzelheiten für den Rückblick (0.2.39). */
+/** Die Fehlerart mit ihren Einzelheiten für den Rückblick. */
 export interface Fehlerbefund {
   readonly art: Fehlerart;
   /** Bei „drohungIgnoriert“: die Drohung, die stehen blieb. */
@@ -202,7 +202,7 @@ export function fehlerbefundIn(
   return { art: phasenart ?? "ungenau", ...OHNE_EINZELHEITEN };
 }
 
-/** Die Fehlerarten je Phase (0.2.40) in ihrer Reihenfolge; null, wenn keine passt. */
+/** Die Fehlerarten je Phase in ihrer Reihenfolge; null, wenn keine passt. */
 function phasenfehler(
   lage: Lage,
   p: Zugprobe,

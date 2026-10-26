@@ -36,7 +36,7 @@ const GRUNDREIHE = 0;
 
 /**
  * Die Signale je Kennung und die Motive, nach denen man sucht (Kapitel 7, „Vom Warnsignal zum
- * Motiv“). Seit 0.2.27 mit Namen statt der Nummern des Buches (Entscheidung des Autors).
+ * Motiv“). Mit Namen statt der Nummern des Buches (Entscheidung des Autors).
  */
 const MOTIVE: Readonly<Record<string, Textschluessel>> = {
   W1: "motive.w1",

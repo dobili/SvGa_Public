@@ -3,14 +3,15 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (23.10.2026): Partien nach Bullet, Blitz, Schnellschach
  * und klassisch unterscheiden. Die Klasse wird nur aus der gespeicherten Bedenkzeit abgeleitet
- * (kein neues Speicherformat); Wertung und „besiegt“ je Zeitklasse baut der Bot-Chat mit seinem
- * Elo-Modell je Zeitklasse und der dazu nötigen Speicherumstellung (Teil F seines Restplans).
+ * (kein neues Speicherformat); Wertung und „besiegt“ je Zeitklasse stehen in spiel/wertung.ts
+ * und speicher/besiegt.ts.
  * Regel wie bei Lichess: geschätzte Dauer = Grundzeit + 40 × Zuschlag; unter 3 Minuten Bullet,
  * unter 8 Blitz, unter 25 Schnellschach, sonst klassisch.
  * Abhängigkeiten: spiel/uhr.ts (Uhreinstellung).
  */
 import type { Uhreinstellung } from "./uhr";
 
+/** Die Zeitklassen nach Lichess, von der schnellsten zur langsamsten. */
 export const ZEITKLASSEN = ["bullet", "blitz", "schnell", "klassisch"] as const;
 export type Zeitklasse = (typeof ZEITKLASSEN)[number];
 

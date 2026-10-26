@@ -1,5 +1,5 @@
 /**
- * Lesen der Stellschrauben des erweiterten Modus aus gespeicherten Daten (seit 0.2.117).
+ * Lesen der Stellschrauben des erweiterten Modus aus gespeicherten Daten.
  *
  * Rolle im Gesamtbild: Eigene Gegner (speicher/gegner.ts) und Partien (speicher/partienLesen.ts)
  * können Gewichte je Fehlerart und blindem Fleck, die Fehlerhäufigkeit insgesamt und Höchst-
@@ -11,9 +11,13 @@
 import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 
+/** Größtes Gewicht je Fehlerart oder blindem Fleck (Faktor; 0 = nie, ohne Angabe gilt 1). */
 export const GEWICHT_HOECHSTENS = 3;
+/** Größte Fehlerhäufigkeit insgesamt (Faktor, das kleinste ist 0); Grenze des Reglers. */
 export const HAEUFIGKEIT_HOECHSTENS = 2;
+/** Kleinster Höchstverlust je Fehlerart, in Bauern. */
 export const HOECHSTVERLUST_MINDESTENS = 0.5;
+/** Größter Höchstverlust je Fehlerart, in Bauern. */
 export const HOECHSTVERLUST_HOECHSTENS = 9;
 
 type Roh = Record<string, unknown>;

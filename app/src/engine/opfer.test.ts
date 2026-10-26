@@ -1,6 +1,6 @@
 /**
  * Tests der Opfererkennung (engine/opfer.ts): Opferwert an der Opernpartie (Abb. 11.4) und an
- * der Berliner Partie, dazu seit 0.2.59 die Frage, ob der Gegner die Figur wirklich nehmen kann.
+ * der Berliner Partie, dazu die Frage, ob der Gegner die Figur wirklich nehmen kann.
  */
 import { describe, expect, it } from "vitest";
 import { lageVon } from "./fehlerart";

@@ -1,11 +1,11 @@
 /**
- * Umrechnung gespeicherter Stufen von acht auf zehn Stufen (Format 5 → 6, seit 0.2.117).
+ * Umrechnung gespeicherter Stufen von acht auf zehn Stufen (Format 5 → 6).
  *
- * Rolle im Gesamtbild: Teil der Formatumwandlung (speicher/format.ts). Bis 0.2.116 gab es acht
- * Stufen; seit 0.2.117 zehn von etwa 300 bis 3000 Elo (engine/stufen.ts, Vorschlag des Autors
+ * Rolle im Gesamtbild: Teil der Formatumwandlung (speicher/format.ts). Früher gab es acht
+ * Stufen, heute zehn von etwa 300 bis 3000 Elo (engine/stufen.ts, Vorschlag des Autors
  * vom 21.10.2026). Eine alte Stufe wird die neue mit der nächsten Elo-Zahl, nach den Zahlen, die
- * 0.2.116 zeigte (983, 1319, 1698, 1868, 2147, 2383, 2699, 3011). So spielen laufende Partien,
- * eigene Gegner und Vorlieben etwa so stark weiter wie vorher.
+ * die App zu den acht Stufen zuletzt zeigte (983, 1319, 1698, 1868, 2147, 2383, 2699, 3011). So
+ * spielen laufende Partien, eigene Gegner und Vorlieben etwa so stark weiter wie vorher.
  * Abhängigkeiten: keine.
  */
 

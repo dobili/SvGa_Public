@@ -45,8 +45,8 @@ const DEUTSCH_NACH_ENGLISCH: Readonly<Record<string, string>> = {
 /**
  * Schreibt einen Zug oder eine Zugfolge aus dem Buchtext (deutsche Notation) in der Sprache.
  *
- * Warum: Die Pipeline markiert Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, seit
- * 0.2.94); in der englischen Fassung sollen sie als „2. Bf4“ erscheinen (AP 18).
+ * Warum: Die Pipeline markiert Züge im Klartext der Bildunterschriften („Nach 2. Lf4“); in der
+ * englischen Fassung sollen sie als „2. Bf4“ erscheinen (AP 18).
  * Eingaben: Text wie im Buch, Sprachcode. Ausgabe: derselbe Text mit den Figurenbuchstaben der
  * Sprache. Beispiel: („5... Db6“, „en“) → „5... Qb6“ (Abb. 1.26); auf Deutsch unverändert.
  * Sonderfall: Nur Großbuchstaben vor einem Feld oder einem Schlag und hinter „=“ (Umwandlung)

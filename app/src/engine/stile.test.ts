@@ -1,4 +1,4 @@
-/** Tests der Stil-Mischung eigener Bots (engine/stile.ts, 0.2.128): Tippen, Gegenüber, Summe. */
+/** Tests der Stil-Mischung eigener Bots (engine/stile.ts): Tippen, Gegenüber, Summe. */
 import { describe, expect, it } from "vitest";
 import { stilmixAus } from "../speicher/gegner";
 import { hauptstil, mischverschiebung, mitStil, mixAusStil, stilverschiebung } from "./stile";

@@ -4,11 +4,11 @@
  *
  * Rolle im Gesamtbild: Plan „menschlichere Bots und Uhr der Bots“ (vom Autor freigegeben am
  * 20.10.2026). Die Engine rechnet in etwa einer Sekunde; mit Uhr zieht ihr die App stattdessen
- * die Zeit ab, die ein Mensch dieser Stärke gebraucht hätte (engine/bedenkzeit.ts). Seit 0.2.126
- * zieht der Bot, sobald die Engine fertig ist, und seine Uhr springt auf den Stand nach der
+ * die Zeit ab, die ein Mensch dieser Stärke gebraucht hätte (engine/bedenkzeit.ts). Der Bot
+ * zieht, sobald die Engine fertig ist, und seine Uhr springt auf den Stand nach der
  * simulierten Bedenkzeit (Klarstellung des Autors, 24.10.2026: Die Uhr läuft künstlich herunter,
- * der Zug kommt nicht künstlich später; bis dahin wartete er sichtbar bis zu 2,5 Sekunden).
- * Reicht seine Zeit nicht, verliert er auf Zeit, wie ein Mensch. Ohne Uhr bleibt alles wie bisher.
+ * der Zug kommt nicht künstlich später).
+ * Reicht seine Zeit nicht, verliert er auf Zeit, wie ein Mensch. Ohne Uhr gibt es keinen Abzug.
  * Abhängigkeiten: engine/bedenkzeit.ts, spiel/partie.ts, spiel/uhr.ts, spiel/ablauf.ts,
  * spiel/zuege.ts.
  */

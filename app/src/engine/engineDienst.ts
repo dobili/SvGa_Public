@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Einzige Stelle, die mit der Engine spricht (Konzept Abschnitt 8). Die
  * Engine läuft in einem Web Worker, damit die Oberfläche nie hängt. Sie wird erst beim ersten
  * Bedarf gestartet. Es läuft immer nur ein Auftrag: Ein neuer Auftrag bricht den alten ab.
- * Seit 0.2.85 wacht ein Wachhund über jeden Auftrag: Meldet die Engine lange nach der Rechenzeit
+ * Ein Wachhund wacht über jeden Auftrag: Meldet die Engine lange nach der Rechenzeit
  * kein „bestmove“ (der Worker ist abgestürzt oder wurde vom Handy im Hintergrund beendet), startet
  * der Dienst die Engine neu und lehnt den Auftrag als abgebrochen ab; die Aufrufer versuchen es
  * dann wie nach jeder Unterbrechung noch einmal (Fehlerbericht des Autors: Auswertung startete
@@ -45,6 +45,7 @@ export type Staerke =
   /** Volle Stärke, aber nur bis zu dieser Suchtiefe (Stufen 1 bis 3 seit 0.2.52, engine/menschlich.ts). */
   | { readonly art: "tiefe"; readonly tiefe: number };
 
+/** Die Engine ohne Begrenzung der Stärke. */
 export const VOLLE_STAERKE: Staerke = { art: "voll" };
 /** Höchster „Skill Level“ von Stockfish (volle Stärke). */
 const SKILL_VOLL = 20;
@@ -90,7 +91,7 @@ interface LaufenderAuftrag {
   tiefe: number;
   knotenJeSekunde: number;
   abgebrochen: boolean;
-  /** Zeitgeber des Wachhunds (seit 0.2.85). */
+  /** Zeitgeber des Wachhunds. */
   wachhund?: ReturnType<typeof setTimeout>;
   readonly erfuellen: (bewertung: Bewertung) => void;
   readonly ablehnen: (fehler: Error) => void;
@@ -242,7 +243,7 @@ export class EngineDienst {
 
   /**
    * Rechnet die Engine gerade, oder wartet ein Auftrag? Die Auswertung im Hintergrund während der
-   * Partie (ui/komponenten/useAuswertung.ts, 0.2.40) fragt das vor jeder Stellung, damit sie keinen
+   * Partie (ui/komponenten/useAuswertung.ts) fragt das vor jeder Stellung, damit sie keinen
    * Auftrag des Lesers (Hinweis, Werkzeug, Zug der Engine) verdrängt.
    */
   beschaeftigt(): boolean {

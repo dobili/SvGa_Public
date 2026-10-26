@@ -5,8 +5,8 @@
  * Partie übersteht ein Neuladen und das Schließen der App; beendete Partien bleiben mit ihrer
  * Auswertung (Wert je Stellung) für den Rückblick und den PGN-Export, höchstens MAX_PARTIEN.
  * Die Vorlieben merken sich die letzte Wahl im Spielen-Bildschirm. Das Lesen gespeicherter
- * Partien steht seit 0.2.90 in speicher/partienLesen.ts.
- * Seit 0.2.41 liegt hier auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
+ * Partien steht in speicher/partienLesen.ts.
+ * Hier liegt auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
  * jeder fertig ausgewerteten gewerteten Partie und überlebt das Wegfallen alter Partien.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, spiel/wertung.ts, engine/fehlerart.ts,
  * engine/stufen.ts, speicher/partieeintrag.ts (Typ Partieeintrag, hier weitergereicht).
@@ -30,26 +30,26 @@ export const MAX_PARTIEN = 50;
 
 /** Letzte Wahl im Spielen-Bildschirm. */
 export interface Spielvorlieben {
-  /** Gegner, vorgefertigter Gegner, Spielhilfen und Wertung (0.2.41). */
+  /** Gegner, vorgefertigter Gegner, Spielhilfen und Wertung. */
   readonly gegner: Gegnerart;
   readonly bot: string | null;
   readonly hilfen: Spielhilfen;
   readonly gewertet: boolean;
   /** Stufe im Mittelspiel. */
   readonly stufe: Stufennummer;
-  /** Stufe je Phase (0.2.40); `mittelspiel` ist gleich `stufe`. */
+  /** Stufe je Phase; `mittelspiel` ist gleich `stufe`. */
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   readonly uhr: Uhreinstellung | null;
   readonly ruecknahmeErlaubt: boolean;
   /** Ruhige Ansicht: nur Brett, Zugnavigation und gespielte Züge (Wunsch des Autors). */
   readonly ruhigeAnsicht: boolean;
   /**
-   * Abhakliste der Fehlerarten (0.2.60, Rest aus S7): welche absichtlichen Fehler die
+   * Abhakliste der Fehlerarten (Rest aus S7): welche absichtlichen Fehler die
    * Engine-Stufen 1 bis 4 und die vorgefertigten Gegner machen dürfen; Vorgabe alle.
    */
   readonly erlaubteFehlerarten: readonly Fehlerart[];
   /**
-   * Blinde Flecken der eigenen Stufe (0.2.82, Wunsch des Autors): Zugarten, die die Engine ohne
+   * Blinde Flecken der eigenen Stufe (Wunsch des Autors): Zugarten, die die Engine ohne
    * vorgefertigten Gegner oft nicht sieht; Vorgabe keine. Fehlt die Angabe in älteren Daten,
    * gilt die Vorgabe.
    */
@@ -61,7 +61,7 @@ export interface Spielvorlieben {
    */
   readonly stilname?: Stilname;
   /**
-   * Stil-Mischung (0.2.128, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * Stil-Mischung (Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;
@@ -75,14 +75,15 @@ export interface Spielstand {
   /** Neueste zuerst. */
   readonly partien: readonly Partieeintrag[];
   readonly vorlieben: Spielvorlieben;
-  /** Wertungsverlauf des Lesers, älteste zuerst (0.2.41). */
+  /** Wertungsverlauf des Lesers, älteste zuerst. */
   readonly wertung: readonly Wertungspunkt[];
-  /** Eigene Gegner des Lesers (0.2.42, speicher/gegner.ts). */
+  /** Eigene Gegner des Lesers (speicher/gegner.ts). */
   readonly eigeneGegner: readonly EigenerGegner[];
-  /** Je Zeitklasse die Bots, die der Leser in gewerteten Partien besiegt hat (0.2.99, R51, besiegt.ts). */
+  /** Je Zeitklasse die Bots, die der Leser in gewerteten Partien besiegt hat (R51, besiegt.ts). */
   readonly besiegt: Besiegte;
 }
 
+/** Die Vorlieben ohne frühere Wahl: Engine auf Stufe 1, gewertet, ohne Uhr, alle Hilfen an. */
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
   gegner: "engine",
   bot: null,
@@ -97,6 +98,7 @@ export const STANDARD_VORLIEBEN: Spielvorlieben = {
   blindeFlecken: [],
 };
 
+/** Der Spielstand vor der ersten Partie: nichts gespielt, keine Wertung, keine eigenen Gegner. */
 export const LEERER_SPIELSTAND: Spielstand = {
   laufend: null,
   partien: [],
@@ -166,7 +168,7 @@ export function mitWerten(
 }
 
 /**
- * Löscht beendete, ungewertete Partien (0.2.99, Wunsch des Autors; seit 0.2.142 mehrere auf einmal
+ * Löscht beendete, ungewertete Partien (Wunsch des Autors; auch mehrere auf einmal
  * aus dem Löschmodus der Partienliste). Gewertete Partien bleiben: Sie tragen die Wertung und die
  * besiegten Bots. Beispiel: zwei Übungspartien mit Rücknahmen ausgewählt → beide weg.
  */

@@ -1,6 +1,6 @@
 /**
  * Umrechnung der eigenen Wertung (Lichess-Maßstab je Zeitklasse) in „entspricht etwa“ auf anderen Listen
- * (0.2.125): Blitz → chess.com Blitz, Schnellschach → chess.com Schnellschach, Klassisch → FIDE.
+ * Blitz → chess.com Blitz, Schnellschach → chess.com Schnellschach, Klassisch → FIDE.
  * Zahlen aus dem Wertungsvergleich von chessgoals.com (Stand Juli 2026, Selbstangaben aktiver Spieler),
  * zusammengeführt über die gemeinsame Spalte chess.com Blitz; auf 5 gerundet. Erzeugt von
  * buch/arbeit/appmodell/erzeugen.py, nicht von Hand ändern. Stützstellen [Lichess, Ziel], aufsteigend.
@@ -10,6 +10,7 @@ import type { Wertungstempo } from "./elomodell-daten";
 /** Eine Kurve als Stützstellen [Lichess-Wertung, Zielwertung], aufsteigend. */
 export type Umrechnungskurve = readonly (readonly [number, number])[];
 
+/** Je Zeitklasse die Kurve von der eigenen Wertung zur anderen Liste; Zahlen erzeugt. */
 export const UMRECHNUNG: Readonly<Record<Wertungstempo, Umrechnungskurve>> = {
   blitz: [
     [1090, 500],

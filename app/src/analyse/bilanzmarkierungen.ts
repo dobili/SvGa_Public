@@ -1,8 +1,8 @@
 /**
  * Markierungen am Brett für Zielbilanz und Faktorenbilanz, jeweils nur für die Seite der Sicht.
  *
- * Rolle im Gesamtbild: Seit 0.2.28 markieren beide Bilanzen nur eine Seite. Wunsch des Autors nach
- * dem Test von 0.2.28: „Bei den Bilanzen könnten wir jetzt ruhig mehr Markierungen machen.“ Jede
+ * Rolle im Gesamtbild: Beide Bilanzen markieren nur eine Seite. Wunsch des Autors: „Bei den
+ * Bilanzen könnten wir jetzt ruhig mehr Markierungen machen.“ Jede
  * Zeile der Karte bekommt deshalb ihr Bild am Brett, in den Farben des Buches: gold, was für die
  * Seite spricht; rot, was gegen sie spricht; grau, was noch offen oder neutral ist.
  * Abhängigkeiten: schach/zielbilanz.ts, schach/faktorenbilanz.ts, analyse/stellungsprofil.ts.
@@ -52,8 +52,8 @@ const KOENIG_ZIEL: Readonly<Record<Wertung, Markierungsfarbe>> = {
 /**
  * Zielbilanz einer Seite am Brett.
  *
- * Zentrum: Zentrumsbauern gold, angegriffene grau (ob sie hängen, prüft erst die Engine; seit
- * 0.2.33 nicht mehr rot, Entscheidung des Autors zu C1.1), ohne Bauern die kontrollierten Felder
+ * Zentrum: Zentrumsbauern gold, angegriffene grau (ob sie hängen, prüft erst die Engine; deshalb
+ * nicht rot, Entscheidung des Autors zu C1.1), ohne Bauern die kontrollierten Felder
  * gold, die übrigen Zentrumsfelder grau. Entwicklung: Leichtfiguren auf dem Startfeld rot,
  * entwickelte gold. König: gold, grau oder rot nach der Wertung, die Schildbauern gold.
  * Beispiel: Abb. 2.71 aus Sicht von Weiß: Springer b1 und Läufer c1 rot, Sf3 und Lc4 gold, Bauer d4

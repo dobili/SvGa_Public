@@ -1,5 +1,5 @@
 /**
- * Tests der besiegten Bots (0.2.99): nur gewertete Siege gegen einen Bot zählen, die Liste
+ * Tests der besiegten Bots: nur gewertete Siege gegen einen Bot zählen, die Liste
  * wächst beim Ablegen, „Wertung zurücksetzen“ leert sie, ältere Daten bekommen sie aus den
  * gespeicherten Partien.
  */

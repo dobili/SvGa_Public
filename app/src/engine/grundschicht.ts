@@ -1,8 +1,8 @@
 /**
  * Grundschicht der Stufen: die Engine bewertet Züge in begrenzter Tiefe und wählt gewichtet.
  *
- * Rolle im Gesamtbild: Seit 0.2.117 (Vorschlag des Autors vom 21.10.2026) bestimmt allein die
- * Grundschicht die Stärke einer Stufe (engine/stufen.ts); Zusatzfehler und blinde Flecken
+ * Rolle im Gesamtbild: Allein die Grundschicht bestimmt die Stärke einer Stufe (engine/stufen.ts;
+ * Vorschlag des Autors vom 21.10.2026); Zusatzfehler und blinde Flecken
  * (engine/menschenwahl.ts) kommen nur bei Bots dazu. Die Engine bewertet in den unteren Stufen
  * alle legalen Züge in kleiner Tiefe; jeder bekommt das Gewicht (1 + Verlust/tau)^(−Exponent).
  * Mit großem tau zieht die Stufe fast beliebig (auch Figuren ins Schlagfeld), mit kleinem fast

@@ -1,17 +1,16 @@
 /**
  * Bausteine der menschlichen Zugwahl: Verlauf der Partie, Tagesform, Temperatur, gewichtete Wahl.
  *
- * Rolle im Gesamtbild: Seit 0.2.52 (Empfehlung R4) wählt die Engine in den unteren Stufen
- * gewichtet zufällig unter ihren Kandidaten mit einer „Temperatur“: Jeder Kandidat bekommt das
+ * Rolle im Gesamtbild: Die Engine wählt in den unteren Stufen gewichtet zufällig unter ihren
+ * Kandidaten mit einer „Temperatur“ (Empfehlung R4): Jeder Kandidat bekommt das
  * Gewicht e^(−Verlust/Temperatur). Kleine Fehler sind so häufig, große selten, und in erzwungenen
- * Lagen bleibt der beste Zug sehr wahrscheinlich. Seit 0.2.117 nutzt die Grundschicht der Stufen
- * (engine/grundschicht.ts) diese Wahl mit dem Potenzkern, Breite und Tiefe je Stufe geeicht; die
- * Zusatzfehler stehen in engine/menschenwahl.ts. Hier bleiben die Bausteine. Von den alten
- * Faustregeln bleibt nur die
- * Tagesform (im Mittel 1). Strähne (mehr Fehler nach Fehlern) und Lage (Schach, viele Züge) sind
- * entfallen: Die geeichten Raten der Menschen enthalten sie schon im Mittel, ein Faktor obendrauf
- * zählte doppelt (Messung vom 21.10.2026: Stufe 1 machte in eigenen Partien 42 % Fehlerzüge statt
- * etwa 30 % wie Menschen ihres Bandes).
+ * Lagen bleibt der beste Zug sehr wahrscheinlich. Die Grundschicht der Stufen
+ * (engine/grundschicht.ts) nutzt diese Wahl mit dem Potenzkern, Breite und Tiefe je Stufe geeicht;
+ * die Zusatzfehler stehen in engine/menschenwahl.ts. Hier stehen die Bausteine, dazu die
+ * Tagesform (im Mittel 1). Einen Faktor für Strähne (mehr Fehler nach Fehlern) oder Lage (Schach,
+ * viele Züge) gibt es nicht: Die geeichten Raten der Menschen enthalten sie schon im Mittel, ein
+ * Faktor obendrauf zählte doppelt (Messung vom 21.10.2026: Stufe 1 machte damit in eigenen
+ * Partien 42 % Fehlerzüge statt etwa 30 % wie Menschen ihres Bandes).
  * Abhängigkeiten: keine.
  */
 
@@ -21,6 +20,7 @@ export interface Verlauf {
   readonly tagesform: number;
 }
 
+/** Ein Verlauf mit mittlerer Tagesform (Faktor 1), wenn keine gewürfelt ist. */
 export const RUHIGER_VERLAUF: Verlauf = { tagesform: 1 };
 
 /** Die Tagesform liegt zwischen 1 − Spanne und 1 + Spanne. */
@@ -68,7 +68,7 @@ export interface Kandidat {
  * gewählte Kandidat oder null ohne Kandidaten.
  * Beispiel: Verluste 0, 0,5, 3 bei Temperatur 1: Gewichte 1, 0,61, 0,05 → der beste zu 60 %, der
  * zweite zu 37 %, der dritte zu 3 %. Bei Temperatur 0,45: 1, 0,33, 0,001 → 75 %, 25 %, 0 %.
- * Mit Exponent (seit 0.2.117, menschliche Bots) gilt der Potenzkern (1 + Verlust/Temperatur)^
+ * Mit Exponent (menschliche Bots) gilt der Potenzkern (1 + Verlust/Temperatur)^
  * (−Exponent): Verluste 0 und 3 bei Temperatur 0,25 und Exponent 1 → Gewichte 1 und 1/13.
  * Sonderfall: Zufall 0 ergibt immer den besten Zug.
  */

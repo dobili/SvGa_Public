@@ -2,7 +2,7 @@
  * Werkzeug k8-opposition: Stehen die Könige in Opposition, wer hat sie, und welche Züge nehmen sie?
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Opposition (direkt, fern, diagonal), wer sie hat.
- * Grau: Oppositionslinie, Gold: Feld“). Seit der Entscheidung des Autors vom 16.10.2026 (C1.19,
+ * Grau: Oppositionslinie, Gold: Feld“). Nach der Entscheidung des Autors vom 16.10.2026 (C1.19,
  * C2.14) nennt das Werkzeug nur Oppositionszüge, die das Ergebnis halten (König und Bauer gegen
  * König exakt mit der Endspieldatenbank); hält keiner, sagt es, was stattdessen entscheidet.
  * Abhängigkeiten: schach/opposition.ts, schach/ergebnispruefung.ts, i18n.

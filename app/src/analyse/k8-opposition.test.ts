@@ -1,6 +1,6 @@
 /**
  * Referenztests für k8-opposition an Kapitel 8 (Abb. 8.19 bis 8.24, 8.28 bis 8.36, 8.53) und den
- * Übungen 8.58, 8.59. Seit C1.19 (Entscheidung des Autors vom 16.10.2026): nur Oppositionszüge,
+ * Übungen 8.58, 8.59. Nach C1.19 (Entscheidung des Autors vom 16.10.2026): nur Oppositionszüge,
  * die das Ergebnis halten; sonst der Hinweis, was stattdessen entscheidet.
  */
 import { describe, expect, it } from "vitest";

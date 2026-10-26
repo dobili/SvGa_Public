@@ -3,8 +3,8 @@
  * Menschen derselben Spielstärke, über der Grundschicht der Stufe.
  *
  * Rolle im Gesamtbild: Plan „menschlichere Bots und Uhr der Bots“ (vom Autor freigegeben am
- * 20.10.2026). Ersetzt die Fehlerwürfe der Stufen 1 bis 4 (bis 0.2.115: bei Stufe 1 jeder dritte
- * Zug ein gezielt gesuchter Fehler, oft eine Figur direkt ins Schlagfeld). Ablauf je Zug:
+ * 20.10.2026). Statt fester Fehlerwürfe je Stufe (die bei Stufe 1 jeden dritten Zug einen gezielt
+ * gesuchten Fehler spielten, oft eine Figur direkt ins Schlagfeld) gilt dieser Ablauf je Zug:
  * 1. Die Engine rechnet sechs Kandidaten in Tiefe 10; dazu je Fehlerart bis zu zwei typische Fehlerzüge nach
  *    den Werkzeugen des Buches, gezielt bewertet. Jeder Zug mit mindestens einem halben Bauern
  *    Verlust bekommt seine Fehlerart; ein Zug der Art (bis zum Höchstverlust, falls der Leser
@@ -19,8 +19,8 @@
  *    wahrscheinlichkeit von Menschen (mal Gewicht) übersehen; die Züge dieses Flecks fallen weg.
  * 4. Sonst zieht die Grundschicht der Stufe (engine/grundschicht.ts), ohne die Züge des
  *    übersehenen Flecks. Der Stil wählt danach.
- * Die Raten sind an den Lichess-Zügen geeicht (pipeline/menschenprofil/eichen.py). Seit 0.2.117
- * (Vorschlag des Autors vom 21.10.2026) bestimmt die Grundschicht die Stärke der Stufe; die
+ * Die Raten sind an den Lichess-Zügen geeicht (pipeline/menschenprofil/eichen.py). Die
+ * Grundschicht bestimmt die Stärke der Stufe (Vorschlag des Autors vom 21.10.2026); die
  * Zusatzfehler machen einen Bot menschlicher und schwächer. Sind alle Gewichte null, zieht nur
  * die Grundschicht, ohne die Suche dieser Datei.
  * Abhängigkeiten: engine/menschenprofil.ts, engine/fehlerart.ts, engine/fehlersuche.ts,
@@ -44,6 +44,7 @@ import type { Wahltempo } from "./wahlmodell";
 import { waehleMenschlich, type Menschenwerte, type Wahlschritt } from "./wahlschritt";
 export type { Menschenwerte } from "./wahlschritt";
 
+/** Die Stellschrauben ohne eigene Angaben: Häufigkeit und Gewichte wie bei Menschen (Faktor 1). */
 export const WIE_MENSCHEN: Menschenwerte = {
   haeufigkeit: 1,
   gewichte: {},
@@ -58,13 +59,13 @@ export interface Wahlkontext {
   readonly restMs: number | null;
   readonly verlauf: Verlauf;
   readonly stil: number;
-  /** Stil eines vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: der Regler `stil`. */
+  /** Stil eines vorgefertigten Bots (engine/stile.ts); fehlend: der Regler `stil`. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
-  /** Zeitklasse für das Wahlmodell (0.2.125). */
+  /** Zeitklasse für das Wahlmodell. */
   readonly tempo: Wahltempo;
-  /** Maia-Abfrage (0.2.143, engine/maia.ts); fehlend: ohne Maia (Paket nicht geladen oder aus). */
+  /** Maia-Abfrage (engine/maia.ts); fehlend: ohne Maia (Paket nicht geladen oder aus). */
   readonly maia?: Maiaabfrage;
 }
 

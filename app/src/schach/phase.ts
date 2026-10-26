@@ -15,7 +15,7 @@
  * König, der nicht rochiert, ist nach der Entwicklung eine Frage der Königssicherheit, nicht der
  * Phase (die Unsterbliche Partie, Abb. 11.28 bis 11.31, ist Mittelspiel, obwohl der schwarze
  * König bis zum Matt in der Mitte steht).
- * Zusatzregel (0.2.41, Rückfrage S2, nicht aus dem Buch, in der Anzeige als solche genannt):
+ * Zusatzregel (Rückfrage S2, nicht aus dem Buch, in der Anzeige als solche genannt):
  * Endspiel, sobald jede Seite höchstens 13 Punkte an Steinen außer dem König hat (Speelman,
  * „Endgame Preparation“, 1981), auch mit Damen am Brett, etwa im Damenendspiel. Eine Regel nach
  * der Zugzahl gibt es nicht (Entscheidung des Autors, 17.10.2026: der Wechsel folgt der
@@ -56,6 +56,7 @@ export interface Endspielfragen {
 export type Phasenregel =
   { readonly art: "lesart" } | { readonly art: "glossar"; readonly verlauf?: Verlauf };
 
+/** Die Regel „Lesart“ für eigene Partien, ohne Züge bis zur Stellung (S17). */
 export const LESART: Phasenregel = { art: "lesart" };
 
 /** Die Regel für eine Stellung: Glossar für Stellungen des Buches, sonst die Lesart (S17). */
@@ -63,11 +64,11 @@ export function phasenregel(buchstellung: boolean | undefined, verlauf?: Verlauf
   return buchstellung ? { art: "glossar", verlauf } : LESART;
 }
 
-/** Zusatzregel, die nicht aus dem Buch stammt (0.2.41). */
+/** Zusatzregel, die nicht aus dem Buch stammt (Rückfrage S2). */
 export type Zusatzregel = "wenigMaterial";
 
 /**
- * Warum die Phase gilt (0.2.44, für die Erklärung am Phasenwechsel): Eröffnung, weil Figuren zu
+ * Warum die Phase gilt (für die Erklärung am Phasenwechsel): Eröffnung, weil Figuren zu
  * Hause stehen; Mittelspiel, weil beide oder eine Seite entwickelt ist oder das Figurenmaterial
  * ungleich ist; Endspiel nach den vier Fragen oder nach der Zusatzregel.
  */
@@ -115,7 +116,7 @@ const ZU_HAUSE_EROEFFNUNG = 2;
 const UEBERWIEGEND = 3;
 /** Figurenmaterial ohne Bauern je Seite, bis zu dem Angriffe selten noch entscheiden. */
 const WENIG_MATERIAL = 13;
-/** Mittelspiel, sobald das Figurenmaterial um eine Leichtfigur ungleich ist (Lesart, 0.2.44). */
+/** Mittelspiel, sobald das Figurenmaterial um eine Leichtfigur ungleich ist (Lesart). */
 const UNGLEICH_AB = 3;
 /** Zusatzregel nach Speelman: Endspiel, wenn jede Seite höchstens so viele Punkte hat (ohne König). */
 export const ENDSPIEL_BIS_PUNKTE = 13;
@@ -141,7 +142,7 @@ function steinpunkte(stellung: Stellung, farbe: Color): number {
 }
 
 /**
- * Wendet die Zusatzregel an, die nicht aus dem Buch stammt (0.2.41, Rückfrage S2): Endspiel nach
+ * Wendet die Zusatzregel an, die nicht aus dem Buch stammt (Rückfrage S2): Endspiel nach
  * Speelman. Das Endspiel des Buches bleibt unberührt. Beispiel: Damenendspiel (Dame und drei
  * Bauern je Seite) → Endspiel, obwohl die Damen noch am Brett sind.
  */
@@ -203,7 +204,7 @@ function endspielfragen(
  * Regel: Kapitel 12, Denkroutine Schritt 1: „Eröffnung, solange die drei Eröffnungsziele aus
  * Kapitel 1 nicht erfüllt sind … Mittelspiel, sobald die Ziele erfüllt sind“; Endspiel nach den
  * vier Prüffragen aus Kapitel 8. Die App liest „Ziele erfüllt“ als „entwickelt“ (C1.27).
- * Lesart seit 0.2.44 (Entscheidung des Autors, 17.10.2026, damit Anfänger mit einer Figur zu
+ * Lesart (Entscheidung des Autors, 17.10.2026, damit Anfänger mit einer Figur zu
  * Hause nicht ewig in der „Eröffnung“ bleiben): Mittelspiel, sobald eine Seite entwickelt ist
  * (höchstens eine Leichtfigur zu Hause; ihr Gegner hat dann ein Mittelspielthema, den
  * Entwicklungsrückstand) oder das Figurenmaterial um mindestens eine Leichtfigur ungleich ist;

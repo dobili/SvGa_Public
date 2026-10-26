@@ -87,10 +87,10 @@ function befundFuer(art: Kandidat["art"], liste: readonly Kandidat[]): Befund {
 }
 
 /**
- * Kürzel der Zugart hinter der Nummer am Zielfeld (seit 0.2.32, Wunsch des Autors): Die Pfeile
+ * Kürzel der Zugart hinter der Nummer am Zielfeld (Wunsch des Autors): Die Pfeile
  * bleiben gold wie im Buch, die Art steht als Zeichen daneben. Regel: Kapitel 7, Schritt 2
  * („Rechne sie in dieser Reihenfolge: Schachs, Schläge, Drohungen“). Der Buchstabe der Drohung
- * steht in der Sprachdatei (Deutsch D, Englisch T für „threat“, seit 0.2.104).
+ * steht in der Sprachdatei (Deutsch D, Englisch T für „threat“).
  */
 function kuerzel(art: Kandidat["art"]): string {
   if (art === "schach") return "+";
@@ -98,7 +98,7 @@ function kuerzel(art: Kandidat["art"]): string {
 }
 
 /**
- * Wie die Engine einen Kandidaten eingestuft hat (seit 0.2.33, Vorschlag B1): der beste
+ * Wie die Engine einen Kandidaten eingestuft hat (Vorschlag B1): der beste
  * (gold mit „!“) oder verworfen, weil er bis zur Ruhe nichts gewinnt (grau wie bei Röntgen die
  * Schläge ohne Gewinn). Ohne Einstufung bleibt der Kandidat gold.
  */

@@ -1,4 +1,4 @@
-/** Tests des Zugklassenvergleichs (R56; seit 0.2.125 mit den Spannen der Spielerprofile, seit 0.3.0 für alle Klassen). */
+/** Tests des Zugklassenvergleichs (R56) mit den gemessenen Spannen der Spielerprofile. */
 import { describe, expect, it } from "vitest";
 import { ueblicheSpanne, ueblicherAnteil, vergleicheKlasse } from "./zugklassenvergleich";
 

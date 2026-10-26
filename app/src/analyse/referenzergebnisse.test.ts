@@ -1,6 +1,6 @@
 /**
  * Referenzergebnisse: Was jedes Werkzeug (ohne Engine) an jeder Abbildung des Buches findet, ist
- * festgehalten (Konzept 13 und 15.3, seit 0.2.90).
+ * festgehalten (Konzept 13 und 15.3).
  *
  * Warum: Ein Umbau an einem Baustein (etwa der Angriffskarte) kann unbemerkt Ergebnisse an
  * anderen Abbildungen verschieben. Hier steht je Abbildung und Werkzeug eine kurze Zeile mit

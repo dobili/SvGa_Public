@@ -96,10 +96,10 @@ describe("k3-faktorenbilanz an Buchabbildungen", () => {
       "Schwarz ist am Zug: eine Figur vom weißen Vorsprung abgezogen.",
     );
     expect(ergebnis.markierungen).toContainEqual({ typ: "feld", farbe: "gold", feld: "f3" });
-    // Aus Sicht von Schwarz nur die schwarzen Markierungen: keine weiße Figur gold (0.2.28).
+    // Aus Sicht von Schwarz nur die schwarzen Markierungen: keine weiße Figur gold.
     const schwarz = faktorenbilanz(stellung, "black").markierungen;
     expect(schwarz).not.toContainEqual({ typ: "feld", farbe: "gold", feld: "f3" });
-    // Ausführlichere Markierungen (0.2.29): Drohung gold, Angriff grau, zu Hause grau, König.
+    // Ausführlichere Markierungen: Drohung gold, Angriff grau, zu Hause grau, König.
     const weiss = ergebnis.markierungen;
     expect(weiss).toContainEqual({ typ: "pfeil", farbe: "gold", von: "f3", nach: "f4" });
     expect(weiss).toContainEqual({ typ: "pfeil", farbe: "grau", von: "c4", nach: "f7" });

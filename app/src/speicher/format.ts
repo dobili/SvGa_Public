@@ -6,17 +6,17 @@
  * der App wandelt ältere Formate um (Konzept 9.4); die Umwandlung ist rein und getestet
  * (Konzept 13: „Jedes frühere Format wird korrekt umgewandelt“).
  * Formate:
- * - Format 0: die Merker der Versionen 0.2.0 bis 0.2.20 im localStorage („svga.einstellungen“,
+ * - Format 0: die Merker der ersten Testversionen im localStorage („svga.einstellungen“,
  *   „svga.lernstand“). Sie werden beim ersten Laden übernommen (merkerAlsFormat0, wandleUm).
- * - Format 1 (0.2.21 bis 0.2.25): Einstellungen, Lernstand, Fortschritt, letzte Sicherung.
+ * - Format 1: Einstellungen, Lernstand, Fortschritt, letzte Sicherung.
  * - Format 2 (ab AP 11): dazu „spiel“ mit laufender Partie, beendeten Partien und Vorlieben
  *   (speicher/partien.ts).
  * - Format 3 (ab AP 13): dazu „karten“, die Wiederholungskarten (training/wiederholung.ts).
- * - Format 4 (ab 0.2.65): dazu „fehler“, die Fehlerdatenbank (training/fehlerdatenbank.ts).
- * - Format 5 (ab 0.2.93): dazu „sammlung“, die Lernsammlung aus Konzept 4.7
+ * - Format 4: dazu „fehler“, die Fehlerdatenbank (training/fehlerdatenbank.ts).
+ * - Format 5: dazu „sammlung“, die Lernsammlung aus Konzept 4.7
  *   (training/lernsammlung.ts). Eine ältere App lehnt Format 5 als „neuer“ ab, statt die
  *   Sammlung beim nächsten Speichern stillschweigend zu verlieren.
- * - Format 6 (ab 0.2.117): zehn statt acht Stufen; gespeicherte Stufen werden umgerechnet
+ * - Format 6: zehn statt acht Stufen; gespeicherte Stufen werden umgerechnet
  *   (speicher/stufenskala.ts). Eine ältere App lehnt Format 6 als „neuer“ ab, statt die neuen
  *   Stufen 9 und 10 als falsche Stufen zu lesen.
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
@@ -36,7 +36,7 @@ import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerver
 export const SCHEMA_VERSION = 6;
 
 /**
- * Die Bretter zur Wahl (seit 0.2.84 Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
+ * Die Bretter zur Wahl (Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
  * und drei Materialbretter (ganze Brettbilder von Lichess). Werte und Herkunft in
  * pipeline/bretter/ (farben.json, LIZENZEN.md) und ui/brett/masse.ts.
  */
@@ -56,10 +56,10 @@ export const BRETTARTEN = [
 ] as const;
 export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";
-/** „Erst selbst denken“ auch vor Werkzeugen und Engine an den Abbildungen (seit 0.2.90). */
+/** „Erst selbst denken“ auch vor Werkzeugen und Engine an den Abbildungen. */
 export type VorWerkzeugen = "aus" | "an";
 /**
- * Die Bildsätze der Figuren (seit 0.2.82, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
+ * Die Bildsätze der Figuren (Auswahl des Autors vom 18.10.2026), je Gruppe drei:
  * Klassisch, Modern, Holz. Die Dateien liegen in public/figuren/<satz>/, Herkunft und Lizenz in
  * pipeline/figuren/saetze/LIZENZEN.md.
  */
@@ -83,17 +83,17 @@ export interface Einstellungen {
   readonly brettfarben: Brettfarben;
   /** „locker“: ein Tipp auf „Ich habe nachgedacht“ genügt; „streng“: echte Eingabe nötig. */
   readonly strenge: Strenge;
-  /** Seit 0.2.33; ältere Stände ohne diesen Eintrag lesen sich als „buch“. */
+  /** Bildsatz der Figuren; ältere Stände ohne diesen Eintrag lesen sich als „buch“. */
   readonly figurensatz: Figurensatz;
-  /** Seit 0.2.33; ältere Stände ohne diesen Eintrag lesen sich als „aus“. */
+  /** Ton an oder aus; ältere Stände ohne diesen Eintrag lesen sich als „aus“. */
   readonly ton: Ton;
   /**
-   * Seit 0.2.90 (Wunsch des Autors, Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
+   * Wunsch des Autors (Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
    * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
    */
   readonly vorWerkzeugen: VorWerkzeugen;
   /**
-   * Seit 0.2.143 (Entscheidung des Autors, 25.10.2026): Bots wählen mit Maia, wenn das Zusatzpaket
+   * Entscheidung des Autors (25.10.2026): Bots wählen mit Maia, wenn das Zusatzpaket
    * geladen ist (app/maiapaket.ts). Ältere Stände ohne diesen Eintrag lesen sich als „an“; ohne
    * Paket wirkt der Schalter nicht.
    */
@@ -103,6 +103,7 @@ export interface Einstellungen {
 /** Maia an oder aus (wirkt nur mit geladenem Paket). */
 export type Maiaschalter = "an" | "aus";
 
+/** Die Einstellungen beim ersten Start: Brett und Figuren wie im Buch, ohne Ton, Maia an. */
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   brettfarben: "buch",
   strenge: "locker",
@@ -138,12 +139,12 @@ export interface Fortschritt {
   readonly uebungen: Readonly<Record<string, Uebungsstand>>;
   readonly trainer: Readonly<Partial<Record<TrainerKennung, Trainerstand>>>;
   /**
-   * Seit 0.2.99: beantwortete Warum-Fragen je Abbildung („1.26“ → Stellen der Fragen, etwa [0]).
-   * Zusätzliches Feld wie 0.2.90; ältere Daten ohne Feld bekommen ein leeres.
+   * Beantwortete Warum-Fragen je Abbildung („1.26“ → Stellen der Fragen, etwa [0]).
+   * Zusätzliches Feld ohne neue Formatversion; ältere Daten ohne Feld bekommen ein leeres.
    */
   readonly warum: Readonly<Record<string, readonly number[]>>;
   /**
-   * Seit 0.2.117 (NA1): richtig eingeschätzte Abbildungen („1.26“ → Datum). Dort zeigt „Erst
+   * Richtig eingeschätzte Abbildungen („1.26“ → Datum, NA1). Dort zeigt „Erst
    * selbst denken“ die Werkzeuge gleich. Zusätzliches Feld wie „warum“; ältere Daten bekommen
    * ein leeres.
    */
@@ -166,11 +167,11 @@ export interface Nutzerdaten {
   readonly fehler: readonly Fehlereintrag[];
   /** Lernsammlung: eigene Stellungen mit Notiz und Plan (ab Format 5, Kapitel 12). */
   readonly sammlung: readonly Sammeleintrag[];
-  /** Seit 0.2.90: Trefferzahlen bei „Zug erraten“ je Partie (speicher/trainerverlauf.ts). */
+  /** Trefferzahlen bei „Zug erraten“ je Partie (speicher/trainerverlauf.ts); zusätzliches Feld. */
   readonly zugErraten: Rateverlauf;
-  /** Seit 0.2.90: Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt. */
+  /** Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt; zusätzliches Feld. */
   readonly planstand: string | null;
-  /** Seit 0.2.140: Name und Porträt des Lesers (speicher/profil.ts); zusätzliches Feld. */
+  /** Name und Porträt des Lesers (speicher/profil.ts); zusätzliches Feld. */
   readonly profil: Spielerprofil;
 }
 

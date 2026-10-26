@@ -1,4 +1,4 @@
-/** Tests der Fehlerarten je Phase (0.2.40) an kleinen Stellungen; Reihenfolge über fehlerartIn. */
+/** Tests der Fehlerarten je Phase an kleinen Stellungen; Reihenfolge über fehlerartIn. */
 import { describe, expect, it } from "vitest";
 import { fehlerartIn, lageVon, type Lage } from "./fehlerart";
 
@@ -46,7 +46,7 @@ describe("Fehlerarten je Phase", () => {
     expect(fehlerartIn(lage(BAUERNENDSPIEL), "e2e3", [], 0, "e2e3")).toBe("ungenau");
     expect(fehlerartIn(lage(PATTFALLE), "e7f7", [], 9)).toBe("pattGesetzt");
     expect(fehlerartIn(lage(RUECKSTAND), "c3d5", [], 0.5)).toBe("falscherAbtausch");
-    // Ist der beste Zug derselbe Schlag (Zurückschlagen), ist es kein Tauschentschluss (0.2.118)
+    // Ist der beste Zug derselbe Schlag (Zurückschlagen), ist es kein Tauschentschluss
     expect(fehlerartIn(lage(RUECKSTAND), "c3d5", [], 0.5, "c3d5")).not.toBe("falscherAbtausch");
     // König passiv: Weiß zieht den König vom Zentrum weg (Kapitel 8, Regel 1)
     const aktiv = "8/8/8/4k3/8/4K3/4P3/8 w - - 0 1";

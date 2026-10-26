@@ -1,5 +1,5 @@
 /**
- * Vorbeugezug mit der Engine: Welcher eigene Zug nimmt dem Gegner seinen Plan (seit 0.2.32)?
+ * Vorbeugezug mit der Engine: Welcher eigene Zug nimmt dem Gegner seinen Plan?
  *
  * Rolle im Gesamtbild: Vorschlag D4 (Entscheidung des Autors vom 15.10.2026): „Gegner?“ zeigt in
  * einer Karte den Plan des Gegners (Nullzug, gegnerplan.ts) und dazu den eigenen Vorbeugezug.

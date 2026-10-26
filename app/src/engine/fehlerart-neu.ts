@@ -1,9 +1,9 @@
 /**
- * Fehlerarten seit 0.2.118, gefunden in der Auswertung von etwa 2600 Lichess-Partien (Plan
- * „Bots, zweite Runde“, Teil A): Ein Drittel der Fehler ab einem halben Bauern passte vorher in
- * keine Art. Die häufigsten Merkmale dieser Fehler: Die Widerlegung schlägt einen Bauern oder eine
- * Figur mit Gewinn, der beste Zug wäre ein Schlag gewesen, oder der Fehler ist ein ruhiger Bauern-
- * oder Königszug.
+ * Weitere Fehlerarten, gefunden in der Auswertung von etwa 2600 Lichess-Partien (Plan
+ * „Bots, zweite Runde“, Teil A): Ein Drittel der Fehler ab einem halben Bauern passte in keine
+ * der älteren Arten. Die häufigsten Merkmale dieser Fehler: Die Widerlegung schlägt einen Bauern
+ * oder eine Figur mit Gewinn, der beste Zug wäre ein Schlag gewesen, oder der Fehler ist ein
+ * ruhiger Bauern- oder Königszug.
  *
  * Rolle im Gesamtbild: Teil von fehlerbefundIn (engine/fehlerart.ts), nach „Taktik übersehen“.
  * Regeln: Kapitel 1 (Zählen von Angreifern und Verteidigern), Kapitel 8 (Bauern gehen nicht

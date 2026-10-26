@@ -1,14 +1,14 @@
 /**
  * Rückblick nach der Partie: Zeichen am Brett, besserer Zug, Bewertungsbalken, Verlaufskurve.
  *
- * Rolle im Gesamtbild: Vorschlag H zu 0.2.26, vom Autor angenommen („Spielen: Rückblick nach der
+ * Rolle im Gesamtbild: Vorschlag H, vom Autor angenommen („Spielen: Rückblick nach der
  * Partie“). Beim Nachspielen einer ausgewerteten Partie steht am Zielfeld des gezeigten Zuges
  * sein Zeichen (?!, ?, ??), ein goldener Pfeil zeigt den besseren Zug; links am Brett ein
  * schmaler Balken mit der Bewertung, über der Auswertung eine Kurve. Während der Partie bleibt
  * das alles aus (es verriete zu viel). Reine Funktionen; die Werte kommen aus
  * ui/komponenten/useAuswertung.ts, die Zeichen aus spiel/auswertung.ts.
- * Seit 0.2.56 (Empfehlung R5) nennt die Karte nach „Besser war …“ auch die nächsten Züge der
- * Hauptvariante der Engine; seit 0.2.85 als antippbarer Nebenzweig (spiel/nebenzweig.ts).
+ * Nach „Besser war …“ nennt die Karte auch die nächsten Züge der Hauptvariante der Engine
+ * (Empfehlung R5), als antippbaren Nebenzweig (spiel/nebenzweig.ts).
  * Abhängigkeiten: analyse/werkzeug.ts (Markierung), schach/weiterspielen.ts,
  * spiel/auswertung.ts, spiel/zuege.ts.
  */

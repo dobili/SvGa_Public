@@ -10,6 +10,7 @@
  */
 import { bot, type Gegner } from "./gegnerbau";
 
+/** Die Bots der Gruppen 1 bis 5, je Gruppe acht. */
 export const GEGNER_GRUPPE_1_BIS_5: readonly Gegner[] = [
   bot("tom", "Tom", "max", [1, 1, 1], "angreifer", 0, "angreifer", 2.5),
   bot("marie", "Marie", "paula", [1, 1, 1], "stratege", 0, "positionsspieler", 2.5),

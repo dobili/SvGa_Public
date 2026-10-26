@@ -1,23 +1,21 @@
 /**
  * Spielstärke-Bewertung nach der Partie: Genauigkeit, geschätzte Spielstärke und Zugzeichen je Seite.
  *
- * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Elo-Schätzung für beide
- * Seiten, Anzahl der !, ?, ?! Züge, Genauigkeit wie bei chess.com“). Die Genauigkeit folgt der
- * Rechnung von Lichess (offen dokumentiert): Jede Bewertung wird in eine Gewinnwahrscheinlichkeit
+ * Rolle im Gesamtbild: Rückmeldung des Autors („Elo-Schätzung für beide Seiten, Anzahl der !, ?,
+ * ?! Züge, Genauigkeit wie bei chess.com“). Die Genauigkeit folgt der Rechnung von Lichess (offen
+ * dokumentiert, in spiel/zuggenauigkeit.ts): Jede Bewertung wird in eine Gewinnwahrscheinlichkeit
  * umgerechnet, die Genauigkeit eines Zuges fällt mit dem Verlust an Gewinnwahrscheinlichkeit;
- * die Genauigkeit der Partie ist seit 0.2.50 wie bei Lichess das Mittel aus zwei Mitteln der
+ * die Genauigkeit der Partie ist wie bei Lichess das Mittel aus zwei Mitteln der
  * eigenen Züge: dem nach der Schwankung der Partie gewichteten Mittel (ruhige, längst entschiedene
  * Phasen zählen wenig, die Kämpfe viel) und dem harmonischen Mittel (ein grober Fehler drückt die
- * Zahl spürbar). Seit 0.2.72 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com)
+ * Zahl spürbar). Dazu ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com)
  * und die Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
- * Seit 0.2.103 zählen für Spielstärke und Urteilswort nur die Züge bis zur Entscheidung der Partie
- * (spiel/entscheidung.ts). Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) kommt die
- * Spielstärke aus dem Elo-Modell je Zeitklasse (spiel/elomodell.ts: Kennzahlen der Züge bis zur
- * Entscheidung, Maßstab Lichess, Spanne für 90 % der Spieler); der Schalter „Genauigkeit wie“
- * (0.2.83 bis 0.2.120: Lichess, Mittelweg, nahe chess.com) ist weg, die Genauigkeit ist die von
- * Lichess über alle Züge.
- * Die Rechnung von Lichess selbst steht seit 0.3.0 in spiel/zuggenauigkeit.ts.
+ * Für Spielstärke und Urteilswort zählen nur die Züge bis zur Entscheidung der Partie
+ * (spiel/entscheidung.ts). Die Spielstärke kommt aus dem Elo-Modell je Zeitklasse
+ * (spiel/elomodell.ts: Kennzahlen der Züge bis zur Entscheidung, Maßstab Lichess, Spanne für 90 %
+ * der Spieler; Entscheidung des Autors, 23.10.2026); die Genauigkeit ist die von Lichess über
+ * alle Züge.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/zuggenauigkeit.ts, spiel/entscheidung.ts, spiel/partie.ts, spiel/phasen.ts,
  * spiel/phasenurteil.ts, spiel/taktik.ts, spiel/elomodell.ts.
  */
@@ -51,7 +49,7 @@ export interface Seitenbilanz {
   readonly genauigkeit: number | null;
   /** Innere Genauigkeit (Lichess) für Spielstärke und Urteilswort, nur bis zur Entscheidung. */
   readonly innen: number | null;
-  /** Züge bis zur Entscheidung (seit 0.2.103, spiel/entscheidung.ts); nur sie zählen für `innen`. */
+  /** Züge bis zur Entscheidung (spiel/entscheidung.ts); nur sie zählen für `innen`. */
   readonly gewertet: number;
   /** Durchschnittlicher Verlust je Zug in Bauerneinheiten. */
   readonly verlustJeZug: number;
@@ -66,7 +64,7 @@ export interface Seitenbilanz {
   readonly kennzahlen: Partiekennzahlen | null;
   /** Anzahl je Zeichen. */
   readonly zeichen: Readonly<Record<Zugzeichen, number>>;
-  /** Anzahl je Zugklasse (wie bei chess.com, 0.2.40). */
+  /** Anzahl je Zugklasse (wie bei chess.com). */
   readonly klassen: Readonly<Record<Zugklasse, number>>;
   /** Züge, die der beste Zug der Engine waren. */
   readonly beste: number;
@@ -220,7 +218,7 @@ function zugbilanzen(
 }
 
 /**
- * Die Spielstärke-Bewertung je Phase (Wunsch des Autors, 0.2.40): Eröffnung, Mittelspiel,
+ * Die Spielstärke-Bewertung je Phase (Wunsch des Autors): Eröffnung, Mittelspiel,
  * Endspiel, jeweils beide Seiten; Schätzung ab sechs Zügen je Phase.
  * Eingaben wie `spielstaerke`, dazu die Phase je Stellung (spiel/phasen.ts).
  */

@@ -127,7 +127,7 @@ describe("Genauigkeit und Spielstärke", () => {
     const s = spielstaerke(p, werte, urteile, beste, gespielte);
     expect(s.white.zuege).toBe(4);
     expect(s.white.beste).toBe(2);
-    // 4. Dxf7# ist einziger Zug, aber danach klar gewonnen: kein „!“ (0.2.51).
+    // 4. Dxf7# ist einziger Zug, aber danach klar gewonnen: kein „!“.
     expect(s.white.zeichen).toEqual({ "!!": 0, "!": 0, "?!": 1, "?": 0, "??": 0 });
     expect(s.white.spielstaerke).toBeNull();
     expect(s.black.zeichen["??"]).toBe(1);

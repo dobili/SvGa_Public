@@ -6,7 +6,7 @@
  * wenn der Bauer durchläuft.
  * Abhängigkeiten: schach/quadrat.ts, i18n.
  * Buchbezug: Kapitel 8, „Holt der König ihn ein? Die Regel des Quadrats“ (Abb. 8.35, 8.36) und
- * der Schachtipp zu den Grenzen der Regel. Seit den Entscheidungen des Autors vom 16.10.2026:
+ * der Schachtipp zu den Grenzen der Regel. Nach den Entscheidungen des Autors vom 16.10.2026:
  * kein Urteil, wenn der eigene König den Bauern begleitet (C1.23, Abb. 8.19) oder verbundene
  * Freibauern sich schützen (C1.21, Abb. 8.50); der Bauer, der mit dem nächsten Zug zum
  * Freibauern wird, kommt zuerst (C1.22, Abb. 8.46).

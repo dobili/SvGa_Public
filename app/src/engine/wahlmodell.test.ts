@@ -1,4 +1,4 @@
-/** Tests des Wahlmodells (0.2.125): Merkmale, Gewichte, Wahrscheinlichkeiten, Zeitklasse. */
+/** Tests des Wahlmodells: Merkmale, Gewichte, Wahrscheinlichkeiten, Zeitklasse. */
 import { describe, expect, it } from "vitest";
 import { lageVon } from "./fehlerart";
 import { stilmerkmale } from "./stilmerkmale";

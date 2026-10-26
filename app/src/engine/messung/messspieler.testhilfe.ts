@@ -1,9 +1,9 @@
 /**
  * Spieler der Messläufe aus ihrem Kürzel (engine/stufen.messung.ts): Stufen („5“, „5m“), freie
  * Grundschicht („4x0.2“), vorgefertigte Bots und Kandidaten („@ella“), Gruppen („@gruppe-3“), mit
- * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern, seit 0.2.128) und mit Maia („*“, seit 0.2.143).
+ * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern) und mit Maia („*“).
  *
- * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.128).
+ * Rolle im Gesamtbild: Eigene Datei neben engine/stufen.messung.ts (Dateien unter 400 Zeilen).
  * Abhängigkeiten: engine/gegner.ts, engine/messung/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
  * engine/praxisbuch.ts, engine/stufen.ts, engine/zugwahl.ts.
  */
@@ -37,7 +37,7 @@ export interface Spieler {
   /** Gruppenmodus („@gruppe-3“): alle Bots der Stufe ziehen gemeinsam (engine/gruppenwahl.ts). */
   readonly gruppe?: Stufennummer;
   /**
-   * Halbzüge aus dem Praxisbuch (0.2.128, wie in der App, engine/praxisbuch.ts); 0 ohne Buch
+   * Halbzüge aus dem Praxisbuch (wie in der App, engine/praxisbuch.ts); 0 ohne Buch
    * (Kürzel mit „!“, etwa „@ella!“, zum Vergleich mit und ohne Buch; Spaß-Bots immer ohne).
    */
   readonly buchtiefe: number;
@@ -63,7 +63,7 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
       buchtiefe,
     };
   }
-  // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes (0.2.125)
+  // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes
   const g = [...GEGNER, ...BOTKANDIDATEN].find((x) => x.kennung === bot[1]);
   if (!g) throw new Error(`Unbekannter Bot: ${kern}`);
   const profil: Gegnerprofil = {
@@ -89,7 +89,7 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
 /** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
 export function spieler(kuerzel: string): Spieler {
   const [roh = "", uhrtext] = kuerzel.split("~");
-  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128); „*“: mit Maia (0.2.143), in
+  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128); „*“: mit Maia, in
   // beliebiger Reihenfolge, etwa „@tom*!“.
   const ohneBuch = roh.includes("!");
   const mitMaia = roh.includes("*");

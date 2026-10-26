@@ -1,6 +1,6 @@
 /**
- * Filter und Sortierung der Partienliste (seit 0.2.99; seit 0.2.117 mehrere Filter zugleich und
- * Sortierung, Wunsch des Autors vom 19.10.2026).
+ * Filter und Sortierung der Partienliste, mehrere Filter zugleich (Wunsch des Autors vom
+ * 19.10.2026).
  *
  * Rolle im Gesamtbild: Die Liste im Bereich Spielen hält bis zu 50 Partien. Der Leser schaltet
  * Filter als Symbole an und aus: Ergebnis, Wertung, eigene Farbe und Art des Gegners. Innerhalb
@@ -14,21 +14,25 @@
 import type { Partie } from "./partie";
 import { ZEITKLASSEN, zeitklasse } from "./zeitklasse";
 
+/** Die Symbole des Filters „Ergebnis“, aus Sicht des Lesers. */
 export const ERGEBNISSE = ["gewonnen", "remis", "verloren"] as const;
 export type Ergebnis = (typeof ERGEBNISSE)[number];
+/** Die Symbole des Filters „Wertung“. */
 export const WERTUNGEN = ["gewertet", "ungewertet"] as const;
 export type Wertungsart = (typeof WERTUNGEN)[number];
+/** Die Symbole des Filters „eigene Farbe“. */
 export const FARBEN = ["white", "black"] as const;
 export type Farbfilter = (typeof FARBEN)[number];
 /**
  * Art des Gegners: vorgefertigter oder eigener Bot, die Engine nach Stufe, ein Mensch am selben
- * Gerät, eine eingelesene Partie (PGN-Import, seit 0.2.117).
+ * Gerät, eine eingelesene Partie (PGN-Import).
  */
 export const GEGNERARTEN = ["bot", "stufe", "mensch", "import"] as const;
 export type Gegnerfilter = (typeof GEGNERARTEN)[number];
 /** Zeitklasse der Partie (R51, spiel/zeitklasse.ts) oder „ohne“ Uhr. */
 export const ZEITFILTER = [...ZEITKLASSEN, "ohne"] as const;
 export type Zeitfilter = (typeof ZEITFILTER)[number];
+/** Sortierung nach Datum, nach der eigenen Spielstärke in der Partie oder nach der des Gegners. */
 export const SORTIERUNGEN = ["datum", "staerke", "gegner"] as const;
 export type Sortierung = (typeof SORTIERUNGEN)[number];
 
@@ -40,6 +44,7 @@ export interface Partienfilter {
   readonly zeit: readonly Zeitfilter[];
 }
 
+/** Kein Symbol gewählt: Die Liste zeigt alle Partien. */
 export const OHNE_FILTER: Partienfilter = {
   ergebnis: [],
   wertung: [],

@@ -2,8 +2,8 @@
  * Zentrumsschlag mit der Engine: Gewinnt das Schlagen eines angegriffenen Zentrumsbauern auch
  * nach der besten Antwort des Gegners Material?
  *
- * Rolle im Gesamtbild: Zweiter Schritt der Zentrumsprüfung im Werkzeug k2-zielbilanz (seit
- * 0.2.33, Entscheidung des Autors zu C1.1). Die Zielbilanz zählt auf dem Feld des Bauern nur
+ * Rolle im Gesamtbild: Zweiter Schritt der Zentrumsprüfung im Werkzeug k2-zielbilanz
+ * (Entscheidung des Autors zu C1.1). Die Zielbilanz zählt auf dem Feld des Bauern nur
  * Angreifer und Verteidiger (Kapitel 1); was danach passiert, sieht sie nicht. Abb. 2.40: Nach
  * 3... Sxe4?! holt 4. De2! den Bauern zurück; Abb. 2.113: 7. dxe5 dxe5 8. Dxd8 Txd8 9. Sxe5
  * Sxe4! gleicht aus; Abb. 2.24: 6... Sxe4? 7. dxc5 kostet eine Figur. Die Widerlegungen sind fünf

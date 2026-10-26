@@ -1,5 +1,5 @@
 /**
- * Zwei Zahlensätze der Bot-Stärke: ohne und mit Maia (0.2.143, Neumessung Plan C).
+ * Zwei Zahlensätze der Bot-Stärke: ohne und mit Maia (Neumessung Plan C).
  *
  * Rolle im Gesamtbild: Mit dem Maia-Zusatzpaket wählen die Bots menschlicher und spielen ab Stufe 4
  * deutlich stärker (Neumessung 25.10.2026: um 200 Elo, weit über der Grenze von ±65, die der Autor

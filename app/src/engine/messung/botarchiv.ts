@@ -1,5 +1,5 @@
 /**
- * Archiv: Bots des Satzes von 0.2.117, die beim Bot-Satz vom 24.10.2026 nicht gewählt wurden (Wunsch
+ * Archiv: Bots des älteren Satzes, die beim Bot-Satz vom 24.10.2026 nicht gewählt wurden (Wunsch
  * des Autors: nicht löschen, Werte dauerhaft behalten). Nicht Teil der Gegnerwahl; ihre gemessenen
  * Zahlen stehen weiter in engine/botstaerke-daten.ts (ohne Sätze in den Sprachdateien).
  * Rolle im Gesamtbild: Nachschlagewerk für spätere Sätze.
@@ -7,6 +7,7 @@
  */
 import { bot, type Gegner } from "../gegnerbau";
 
+/** Die nicht gewählten Bots, je mit ihrer gemessenen Zahl im Kommentar darüber. */
 export const BOTARCHIV: readonly Gegner[] = [
   // gemessen 783 (Schnellschach, 24.10.2026)
   bot("alt-marie", "Marie (alt)", "paula", [1, 1, 2], "vorsichtig", -1, "verteidiger"),

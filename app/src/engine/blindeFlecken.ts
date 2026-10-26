@@ -1,6 +1,6 @@
 /**
  * Blinde Flecken eines Gegners: Zugarten, die er „nicht sieht“ (Wunsch des Autors, 17.10.2026,
- * Version 0.2.46, Recherche in docs/ENTSCHEIDUNGEN.md „Vormerkung: Bots mit Persönlichkeit“).
+ * Recherche in docs/ENTSCHEIDUNGEN.md „Vormerkung: Bots mit Persönlichkeit“).
  *
  * Rolle im Gesamtbild: Menschen übersehen bestimmte Züge systematisch: Rückzüge (Christiansen–
  * Karpow), lange Läuferdiagonalen aus der Ecke, Springerzüge rückwärts, lange Damenzüge,
@@ -10,7 +10,7 @@
  * auf den Verlust einer Leichtfigur; das Protokoll nennt den blinden Fleck für die Auswertung
  * („einen Rückzug nicht gesehen“). Anders als die Fehlerarten (Stufe 1 bis 4) wirken blinde
  * Flecken in jeder Stufe; so bekommen auch starke Gegner eine Persönlichkeit.
- * Seit 0.2.57 drei weitere Flecken (Röntgen, Zwischenzug, Grundreihe) und die Blindheit auch
+ * Dazu Röntgen, Zwischenzug und Grundreihe, und die Blindheit gilt auch
  * gegenüber gegnerischen Zügen dieser Art: Ein Gegner, der Abzüge nicht sieht, tappt in einen
  * Zug, dessen Widerlegung ein Abzug ist (`blindeWahl`, zweiter Teil).
  * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante),
@@ -27,6 +27,7 @@ import type { Variante } from "./uci";
 
 export type { BlinderFleck } from "./fehlerart-typen";
 
+/** Alle blinden Flecken, die ein Bot haben kann. */
 export const BLINDE_FLECKEN: readonly BlinderFleck[] = [
   "rueckzug",
   "diagonale",
@@ -287,7 +288,7 @@ function eigenenZugUebersehen(
 }
 
 /**
- * Übersieht der Gegner die Widerlegung eines Kandidaten (0.2.57)? Der erste Kandidat nach dem
+ * Übersieht der Gegner die Widerlegung eines Kandidaten? Der erste Kandidat nach dem
  * besten, dessen Antwort der Engine zu einem blinden Fleck gehört und der höchstens eine
  * Leichtfigur kostet: Der Gegner hält ihn für gut, weil er die Antwort nicht sieht.
  */

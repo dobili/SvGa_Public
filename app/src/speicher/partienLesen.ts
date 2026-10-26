@@ -1,9 +1,9 @@
 /**
  * Partien und Spielstand aus Rohdaten lesen (Laden, Einspielen einer Sicherung).
  *
- * Rolle im Gesamtbild: Teil von speicher/partien.ts, seit 0.2.90 eigene Datei (Dateien unter 400
+ * Rolle im Gesamtbild: Teil von speicher/partien.ts, als eigene Datei (Dateien unter 400
  * Zeilen, Konzept 12). Gespeicherte Partien werden Feld für Feld geprüft und Zug für Zug
- * nachgespielt; was nicht passt, fällt weg. Das Speicherformat ist unverändert.
+ * nachgespielt; was nicht passt, fällt weg.
  * Abhängigkeiten: speicher/partien.ts (Typen, Vorgaben), spiel/partie.ts, spiel/uhr.ts,
  * spiel/wertung.ts, engine/fehlerart.ts, engine/stufen.ts.
  */
@@ -161,8 +161,8 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
 }
 
 /**
- * Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42) und die Namen einer eingelesenen
- * Partie (0.2.117), nur wenn sie gespeichert sind.
+ * Name, Fehlerarten und Stil eines eigenen Gegners und die Namen einer eingelesenen
+ * Partie, nur wenn sie gespeichert sind.
  */
 function gegnerprofilAus(
   roh: Roh,
@@ -255,7 +255,7 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
   };
 }
 
-/** Stil, Reglerstufen, Häufigkeit und Höchstverlust der eigenen Stufe (0.2.126), nur vorhandene. */
+/** Stil, Reglerstufen, Häufigkeit und Höchstverlust der eigenen Stufe, nur vorhandene. */
 function feinheitenDerStufeAus(
   roh: Roh,
 ): Pick<

@@ -35,7 +35,7 @@ function ordner(): string {
   return `/daten/${trainerdatensprache()}/trainer`;
 }
 
-/** Vergisst die geladenen Trainerdaten (nach einem Sprachwechsel, seit 0.2.94). */
+/** Vergisst die geladenen Trainerdaten (nach einem Sprachwechsel). */
 export function vergissTrainerdaten(): void {
   geladen.clear();
 }

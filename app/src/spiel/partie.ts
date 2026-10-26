@@ -3,9 +3,10 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 5.2 „Spielen gegen die Engine“: aus jeder Stellung (Grund-
  * stellung, Buchabbildung, Trainerstellung) zu Ende spielen, Seite und Stufe wählen, Züge
- * zurücknehmen (abschaltbar). Ein Spielziel gibt es seit 0.2.33 nicht mehr (Entscheidung des
- * Autors, 16.10.2026): Ziel ist immer der Sieg. Alle Funktionen sind rein: Sie geben eine neue Partie zurück und ändern die alte nicht. So lässt
- * sich die Partie speichern (speicher/) und nach einem Neuladen fortsetzen.
+ * zurücknehmen (abschaltbar). Ziel ist immer der Sieg, ein eigenes Spielziel gibt es nicht
+ * (Entscheidung des Autors, 16.10.2026). Alle Funktionen sind rein: Sie geben eine neue Partie
+ * zurück und ändern die alte nicht. So lässt sich die Partie speichern (speicher/) und nach
+ * einem Neuladen fortsetzen.
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
 import type { Stilmix, Stilname } from "../engine/stile";
@@ -27,12 +28,13 @@ export const EROEFFNUNG_BUCH = "buch";
  * Praxis („praxis:Sicilian Defense“) und danach dem Praxisbuch.
  */
 export const EROEFFNUNG_PRAXIS = "praxis";
+/** Vorsilbe vor dem Namen einer benannten Eröffnung aus der Praxis („praxis:Sicilian Defense“). */
 export const PRAXIS_VORSILBE = "praxis:";
 
-/** Gegner: die Engine oder ein Mensch am selben Gerät (beide Seiten selbst spielen, 0.2.41). */
+/** Gegner: die Engine oder ein Mensch am selben Gerät (beide Seiten selbst spielen). */
 export type Gegnerart = "engine" | "mensch";
 
-/** Spielhilfen während der Partie (0.2.41, vor der Partie zuschaltbar). */
+/** Spielhilfen während der Partie (vor der Partie zuschaltbar). */
 export interface Spielhilfen {
   /** Die Symbole am Brett: Zählen, Röntgen, Warnsignale. */
   readonly symbole: boolean;
@@ -47,7 +49,7 @@ export interface Partieeinstellung {
   /** Stufe im Mittelspiel (zugleich die „Stufe“ der Partie in Anzeige und PGN). */
   readonly stufe: Stufennummer;
   /**
-   * Stufe je Phase (Wunsch des Autors, 0.2.40): Die Engine folgt der Phase der Stellung
+   * Stufe je Phase (Wunsch des Autors): Die Engine folgt der Phase der Stellung
    * (spiel/phasen.ts) und wechselt Zug für Zug um höchstens eine Stufe (engine/stufen.ts).
    */
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
@@ -56,7 +58,7 @@ export interface Partieeinstellung {
   readonly ruecknahmeErlaubt: boolean;
   /** Abbildungsnummer, wenn die Partie an einer Abbildung begann („1.26“), sonst null. */
   readonly abbildung: string | null;
-  /** Gegner (0.2.41): die Engine oder ein Mensch am selben Gerät. */
+  /** Gegner: die Engine oder ein Mensch am selben Gerät. */
   readonly gegner: Gegnerart;
   /**
    * Seit 0.2.143: Der Bot wählt mit Maia (Paket geladen und eingeschaltet beim Beginn). Gilt für
@@ -65,24 +67,24 @@ export interface Partieeinstellung {
   readonly maia?: boolean;
   /** Kennung eines vorgefertigten oder eigenen Gegners (engine/gegner.ts), sonst null. */
   readonly bot: string | null;
-  /** Name des Gegners zur Zeit der Partie (0.2.42; eigene Gegner lassen sich löschen). */
+  /** Name des Gegners zur Zeit der Partie (eigene Gegner lassen sich löschen). */
   readonly botName?: string | null;
-  /** Eigener Gegner (0.2.42): erlaubte Fehlerarten (null oder fehlend: alle) und Stil (−2 bis 2). */
+  /** Eigener Gegner: erlaubte Fehlerarten (null oder fehlend: alle) und Stil (−2 bis 2). */
   readonly fehlerarten?: readonly Fehlerart[] | null;
   readonly stil?: number;
-  /** Blinde Flecken des Gegners (0.2.46, engine/blindeFlecken.ts); fehlend: keine. */
+  /** Blinde Flecken des Gegners (engine/blindeFlecken.ts); fehlend: keine. */
   readonly blindeFlecken?: readonly BlinderFleck[];
   /**
-   * Erweiterter Modus eigener Gegner (seit 0.2.117): Gewicht je Fehlerart und Fleck (0 aus, 1 wie
+   * Erweiterter Modus eigener Gegner: Gewicht je Fehlerart und Fleck (0 aus, 1 wie
    * Menschen), Fehlerhäufigkeit insgesamt, Höchstverlust je Art in Bauern; fehlend: wie Menschen.
    */
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
-  /** Stil eines eigenen Gegners (seit 0.2.126, engine/stile.ts); fehlend: der Regler `stil`. */
+  /** Stil eines eigenen Gegners (engine/stile.ts); fehlend: der Regler `stil`. */
   readonly stilname?: Stilname;
   /**
-   * Stil-Mischung (0.2.128, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * Stil-Mischung (Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;
@@ -90,9 +92,9 @@ export interface Partieeinstellung {
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;
   /**
-   * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39);
+   * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex);
    * EROEFFNUNG_BUCH: irgendeine Variante des Buches (Buchtreue 0,85); null: die Engine spielt die
-   * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40); EROEFFNUNG_PRAXIS (Vorgabe seit
+   * Eröffnung selbst, ohne Buch (Wunsch des Autors); EROEFFNUNG_PRAXIS (Vorgabe seit
    * 0.2.128): wie Menschen ihrer Stärke; „praxis:Name“: eine benannte Eröffnung aus der Praxis.
    */
   readonly eroeffnung: string | null;
@@ -111,7 +113,7 @@ export interface Partiezug {
   readonly fehler: Fehlerart | null;
   /** Verlust des absichtlichen Fehlers in Bauerneinheiten, sonst 0. */
   readonly verlust: number;
-  /** Bei Zügen der Engine: die Stufe, mit der sie diesen Zug gespielt hat (seit 0.2.40). */
+  /** Bei Zügen der Engine: die Stufe, mit der sie diesen Zug gespielt hat. */
   readonly stufe?: Stufennummer;
 }
 
@@ -188,7 +190,7 @@ export function amZug(partie: Partie): Color {
 /** Ist der Leser am Zug und läuft die Partie noch? */
 export function leserAmZug(partie: Partie): boolean {
   if (partie.ende) return false;
-  // Mensch gegen Mensch (0.2.41): Es zieht immer ein Mensch.
+  // Mensch gegen Mensch: Es zieht immer ein Mensch.
   if (partie.einstellung.gegner === "mensch") return true;
   return amZug(partie) === partie.einstellung.eigeneFarbe;
 }

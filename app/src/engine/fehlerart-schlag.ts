@@ -1,5 +1,5 @@
 /**
- * Schlagreflex und falscher Abtausch, seit 0.2.118 scharf voneinander getrennt.
+ * Schlagreflex und falscher Abtausch, scharf voneinander getrennt.
  *
  * Rolle im Gesamtbild: Teil von fehlerbefundIn (engine/fehlerart.ts). Die Engine-Gegenprüfung in
  * Tiefe 20 (Plan „Bots, zweite Runde“, Teil A) zeigte, dass „falscher Abtausch“ oft eigentlich

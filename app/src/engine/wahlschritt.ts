@@ -1,10 +1,10 @@
 /**
- * Der Wahlschritt eines Bots (0.2.125): aus den Stellschrauben eines Bots die Verschiebungen des
+ * Der Wahlschritt eines Bots: aus den Stellschrauben eines Bots die Verschiebungen des
  * Wahlmodells bilden und unter den Kandidaten ziehen.
  *
- * Rolle im Gesamtbild: Teil von engine/menschenwahl.ts; ersetzt seit 0.2.125 die Fehlerwürfe je
- * Gelegenheit und den Wurf auf blinde Flecken durch das geeichte Wahlmodell (engine/wahlmodell.ts).
- * Die bisherigen Stellschrauben bleiben gültig und werden übersetzt: Gewicht einer Fehlerart g →
+ * Rolle im Gesamtbild: Teil von engine/menschenwahl.ts; statt einzelner Würfe je Gelegenheit und
+ * auf blinde Flecken wählt das geeichte Wahlmodell (engine/wahlmodell.ts).
+ * Die Stellschrauben der Bots werden dafür übersetzt: Gewicht einer Fehlerart g →
  * Verschiebung ln(g) (0 schließt aus, 1 wie Menschen, 3 etwa dreimal so wahrscheinlich); Gewicht
  * eines Flecks g → (g − 1) · Blindstärke (3: deutlich blinder als Menschen, 0: weniger blind);
  * Fehlerhäufigkeit h → ln(h) auf alle Arten; Stilregler −2 bis 2 → Verschiebung der Stilmerkmale;
@@ -70,9 +70,9 @@ export interface Wahlschritt {
   readonly stil: number;
   /** Einer der sieben Stile (engine/stile.ts) der vorgefertigten Bots. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
-  /** Maia-Karte der Stellung (0.2.143, engine/maia.ts); fehlend oder null: ohne Maia. */
+  /** Maia-Karte der Stellung (engine/maia.ts); fehlend oder null: ohne Maia. */
   readonly maia?: ReadonlyMap<string, number> | null;
 }
 

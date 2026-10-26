@@ -1,8 +1,7 @@
 /**
  * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): 78 Bots in zehn Gruppen, eindeutige Kennungen,
- * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
- * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und seit 0.2.109 Gruppen ohne
- * Überschneidung.
+ * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu der Schnitt mit der
+ * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und Gruppen ohne Überschneidung.
  */
 import { existsSync } from "node:fs";
 import { join } from "node:path";

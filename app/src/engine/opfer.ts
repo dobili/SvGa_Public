@@ -5,7 +5,7 @@
  * Rolle im Gesamtbild: chess.com nennt einen Zug brillant, wenn er gut ist und eine Figur opfert.
  * Hier steht, was „opfert“ heißt: Nach dem Zug gewinnt der Gegner laut Abtauschrechnung (Kapitel 1)
  * auf dem Feld einer eigenen Figur ab Leichtfigur mindestens zwei Bauern, und er kann sie wirklich
- * nehmen (seit 0.2.59 wie bei chess.com: Es gibt einen legalen Schlag auf das Feld, also keinen an
+ * nehmen (wie bei chess.com: Es gibt einen legalen Schlag auf das Feld, also keinen an
  * den König gefesselten Angreifer und kein Schach, das vorgeht). Was der Zug selbst schlägt, wird
  * abgezogen (ein Abtausch ist kein Opfer). Geprüft an 100 Brillant-Zügen von chess.com
  * (Chessigma-Vergleich, Datei nur lokal; Messlauf spiel/opfer.messung.ts; Entscheidung „Brillant am
@@ -35,7 +35,7 @@ const VERLOREN_AB = 2;
 export type AltVerlorene = "keine" | "gezogene" | "alle";
 
 /**
- * Die Fassung der App für den Opferwert, am Prüfstand von chess.com gewählt (0.2.59, Rückfrage
+ * Die Fassung der App für den Opferwert, am Prüfstand von chess.com gewählt (Rückfrage
  * S19: lieber ein verpasstes „!!“ als ein grundloses). Messung mit der Nehmbarkeitsprüfung:
  * „keine“ 50 von 100 Brillanten bei 20 Fehlalarmen, „gezogene“ 59 bei 19, „alle“ 81 bei 59.
  */
@@ -97,7 +97,7 @@ export function neuVerlorene(lage: Lage, p: Zugprobe): { wert: number; feld: Squ
 }
 
 /**
- * Kann der Gegner die Figur auf dem Feld wirklich nehmen? Regel wie bei chess.com (0.2.59): Es
+ * Kann der Gegner die Figur auf dem Feld wirklich nehmen? Regel wie bei chess.com: Es
  * gibt einen legalen Schlag auf das Feld. Das schließt einen an den eigenen König gefesselten
  * Angreifer aus und ebenso eine Figur, die stehen bleibt, während der Gegner ein Schach beantworten
  * muss, das nicht von ihr ausgeht. Beispiel: 16. Db8+ in der Opernpartie, Sxb8 ist legal → ja.
@@ -112,12 +112,12 @@ function annehmbar(danach: Chess, feld: Square): boolean {
 /**
  * Was der Zug laut Abtauschrechnung hergibt: der größte Gewinn des Gegners an einer eigenen Figur
  * ab Leichtfigur, die er wirklich nehmen kann, abzüglich dessen, was der Zug selbst schlägt; 0,
- * wenn nichts. Für die Zugklasse „brillant“ im Rückblick (0.2.40; Grenze OPFER_AB in
+ * wenn nichts. Für die Zugklasse „brillant“ im Rückblick (Grenze OPFER_AB in
  * spiel/auswertung.ts).
  * Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5; 10. Sxb5 in der Opernpartie (Springer für zwei
  * Bauern: cxb5, dann Lxb5) → 1. Sonderfälle: Ein Abtausch ist kein Opfer (0.2.51: Lxg5 gegen einen
  * Springer, danach Lxg5 → 3 − 3 = 0); eine Figur, die nur ein gefesselter Angreifer „schlagen“
- * könnte, ist kein Opfer (0.2.59). `altVerlorene` nur für den Messlauf; die App nimmt die Fassung
+ * könnte, ist kein Opfer. `altVerlorene` nur für den Messlauf; die App nimmt die Fassung
  * OPFER_ALT_VERLORENE.
  */
 export function opferwert(

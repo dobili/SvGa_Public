@@ -1,5 +1,5 @@
 /**
- * Die Wertung für die Persönlichkeit eines vorgefertigten Bots oder Kandidaten (seit 0.2.143).
+ * Die Wertung für die Persönlichkeit eines vorgefertigten Bots oder Kandidaten.
  *
  * Rolle im Gesamtbild: Eingabe von faktorenAus (engine/gegnerbau.ts) in der App
  * (ui/komponenten/botzug.ts), im Gruppenmodus (engine/gruppenwahl.ts) und in der Messung

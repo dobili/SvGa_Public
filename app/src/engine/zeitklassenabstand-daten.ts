@@ -22,6 +22,7 @@
  */
 export type Abstandspunkt = readonly [number, number, number, number, number, number, number];
 
+/** Je Zeitklasse (Blitz, Klassisch) die Abstandspunkte zur Schnellschach-Wertung, je Band. */
 export const ABSTAND_ZU_SCHNELLSCHACH: Readonly<
   Record<"blitz" | "classical", readonly Abstandspunkt[]>
 > = {

@@ -7,7 +7,7 @@
  * heraus (wie spiel/genauigkeit.ts, partiegenauigkeit). Ein größerer Abfall bestraft kleine
  * Fehler stärker; ein Polster unter 1 lässt Züge in entschiedenen Stellungen weniger zählen (bei
  * Lichess gleichen viele saubere Züge in längst gewonnener Stellung Fehler aus).
- * Seit 0.2.103 gibt es dazu die innere Genauigkeit nur bis zur Entscheidung der Partie
+ * Dazu gibt es die innere Genauigkeit nur bis zur Entscheidung der Partie
  * (spiel/entscheidung.ts), auf der die Kurven Genauigkeit → Spielstärke geeicht sind.
  * Abhängigkeiten: spiel/genauigkeit.ts (Gewinnwahrscheinlichkeit, Gewichte nach Lichess),
  * spiel/entscheidung.ts.
@@ -28,6 +28,7 @@ export interface Regler {
   readonly polster: number;
 }
 
+/** Die Regler, mit denen genau die Genauigkeit von Lichess herauskommt (Zahl von Lichess). */
 export const LICHESS_REGLER: Regler = { abfall: 0.04354, polster: 1 };
 
 /** Lichess: Genauigkeit eines Zuges = 103,1668 · e^(−Abfall · Verlust) − 3,1669. */

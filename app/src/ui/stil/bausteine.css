@@ -500,6 +500,25 @@
   font-weight: 600;
 }
 
+/* Maßstab der eigenen Wertung (26.10.2026): „Lichess | chess.com · FIDE“, klein über den Zahlen. */
+.massstabwahl {
+  margin-block: var(--raster);
+  max-width: 22rem;
+  font-size: var(--groesse-klein);
+}
+
+/* Name der Liste hinter einer umgerechneten Zahl („≈ 1340 chess.com“). */
+.wertung-liste {
+  font-family: var(--schrift);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+.wertung-zahl .wertung-liste {
+  margin-inline-start: calc(var(--raster) / 2);
+}
+
 /* Aufklapper (0.2.116): Knopf mit Pfeil, der sich beim Öffnen dreht. */
 .aufklapper-knopf {
   display: inline-flex;

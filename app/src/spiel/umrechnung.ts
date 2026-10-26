@@ -51,3 +51,16 @@ export function entsprichtEtwa(tempo: Wertungstempo, wertung: number): number | 
   if (!erste || !letzte || wertung < erste[0] || wertung > letzte[0]) return null;
   return Math.round(kurvenwert(kurve, wertung) / RUNDUNG) * RUNDUNG;
 }
+
+/**
+ * Von welcher bis zu welcher eigenen Wertung (Lichess-Maßstab) die Tabelle der Zeitklasse reicht.
+ * Warum: Außerhalb gibt es keine Entsprechung; die Oberfläche nennt dann die Grenze.
+ * Beispiel: Klassisch → von 1730 bis 2465 (FIDE erst ab etwa 1730 Lichess Klassisch).
+ * Sonderfall: eine leere Tabelle liefert null.
+ */
+export function vergleichsbereich(tempo: Wertungstempo): { von: number; bis: number } | null {
+  const kurve = UMRECHNUNG[tempo];
+  const erste = kurve[0];
+  const letzte = kurve.at(-1);
+  return erste && letzte ? { von: erste[0], bis: letzte[0] } : null;
+}

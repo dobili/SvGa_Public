@@ -3,11 +3,11 @@
  * der eigene Vorbeugezug.
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Die Engine zeigt, was der Gegner spielen würde, wenn
- * er jetzt am Zug wäre. Rot: gegnerischer Plan als Pfeil.“). Seit 0.2.32 (Vorschlag D4,
- * Entscheidung des Autors vom 15.10.2026) steht alles in einer Karte: Der Abschnitt erscheint in
- * der Werkzeugkarte von „Gegner?“ statt als eigene Kachel, mit Überschriften, die die Farbe nennen,
- * und mit dem Vorbeugezug der Engine (engine/vorbeugezug.ts). Die Rechnung dauert einige
- * Sekunden und läuft deshalb hier und nicht im Werkzeug selbst.
+ * er jetzt am Zug wäre. Rot: gegnerischer Plan als Pfeil.“). Alles steht in einer Karte (Vorschlag
+ * D4, Entscheidung des Autors vom 15.10.2026): Der Abschnitt erscheint in der Werkzeugkarte von
+ * „Gegner?“, mit Überschriften, die die Farbe nennen, und mit dem Vorbeugezug der Engine
+ * (engine/vorbeugezug.ts). Die Rechnung dauert einige Sekunden und läuft deshalb hier und nicht
+ * im Werkzeug selbst.
  * Abhängigkeiten: engine/gegnerplan.ts, engine/vorbeugezug.ts, engine/engineDienst.ts,
  * schach/notation.ts, i18n.
  */

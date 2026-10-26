@@ -4,9 +4,9 @@
  *
  * Rolle im Gesamtbild: Teil des Durchstichs (AP 1): Stockfish läuft offline auf dem Handy.
  * Die Messung (Startzeit, Rechenzeit, Tiefe, Geschwindigkeit) hilft, Stufen und Rechenzeiten für
- * ältere Handys festzulegen (Konzept 8). Seit 0.2.31 (Wunsch des Autors nach dem Test von 0.2.30)
- * steht die beste Fortsetzung erst auf Wunsch da, dann mit goldenem Pfeil am Brett; ebenso auf
- * Wunsch das Urteil über den zuletzt gespielten Zug mit ??, ?, ?! oder ! am Zielfeld.
+ * ältere Handys festzulegen (Konzept 8). Die beste Fortsetzung steht erst auf Wunsch da (Wunsch
+ * des Autors), dann mit goldenem Pfeil am Brett; ebenso auf Wunsch das Urteil über den zuletzt
+ * gespielten Zug mit ??, ?, ?! oder ! am Zielfeld.
  * Abhängigkeiten: engine/engineDienst.ts, engine/letzterzug.ts, useZugurteil.ts,
  * schach/notation.ts, i18n.
  */

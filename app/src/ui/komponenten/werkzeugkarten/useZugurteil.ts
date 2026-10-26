@@ -1,5 +1,5 @@
 /**
- * Rechnet auf Wunsch das Urteil der Engine über den letzten Zug (Engine-Karte, seit 0.2.31).
+ * Rechnet auf Wunsch das Urteil der Engine über den letzten Zug (Engine-Karte).
  *
  * Rolle im Gesamtbild: Die Engine-Karte bewertet zuerst die gezeigte Stellung. Erst wenn der
  * Leser „Letzten Zug bewerten“ wählt und diese Bewertung fertig ist, rechnet die Engine die

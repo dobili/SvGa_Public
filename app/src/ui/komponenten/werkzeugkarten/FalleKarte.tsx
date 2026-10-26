@@ -4,8 +4,8 @@
  * Rolle im Gesamtbild: Pflichtenheft 6.2, „Falle oder Köder“: Die Engine vergleicht „Material
  * nehmen“ mit dem besten anderen Zug. Die Rechnung dauert einige Sekunden und läuft deshalb hier
  * und nicht im Werkzeug selbst. Ist das Urteil da, meldet die Karte die Pfeile fürs Brett: Rot der
- * Fehlzug, Gold die Rettung. Seit 0.2.91 nennt der Satz die Gewinnchance nach dem Schlag und
- * nach der Rettung (wie der Rückblick nach der Partie) statt der Bauerneinheiten.
+ * Fehlzug, Gold die Rettung. Der Satz nennt die Gewinnchance nach dem Schlag und nach der Rettung
+ * (wie der Rückblick nach der Partie) statt der Bauerneinheiten.
  * Abhängigkeiten: engine/fallenpruefung.ts, engine/fallenurteil.ts, engine/engineDienst.ts,
  * spiel/genauigkeit.ts, schach/notation.ts, i18n.
  */

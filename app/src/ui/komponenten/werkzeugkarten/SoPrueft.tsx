@@ -2,10 +2,10 @@
  * Aufklappbarer Abschnitt „So prüft die App“ unter einer Ergebniskarte: Erklärung des Werkzeugs,
  * Regel mit Buchbezug und der Hinweis, dass die Werkzeuge irren können.
  *
- * Rolle im Gesamtbild: Seit 0.2.28 wählt ein zweites Tippen auf ein Werkzeug es wieder ab (Wunsch
- * des Autors nach dem Test von 0.2.27); die Erklärung, die dabei bisher erschien, steht deshalb
- * hier. Nur „Zählen“ und „Ziehen“, bei denen man mit dem Brett arbeitet, zeigen sie weiter in der
- * Werkzeugleiste. Abhängigkeiten: i18n.
+ * Rolle im Gesamtbild: Ein zweites Tippen auf ein Werkzeug wählt es wieder ab (Wunsch des
+ * Autors); die Erklärung steht deshalb hier in der Karte. Nur „Zählen“ und „Ziehen“, bei denen
+ * man mit dem Brett arbeitet, zeigen sie in einer eigenen Kachel (Erklaerkarte.tsx).
+ * Abhängigkeiten: i18n.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";

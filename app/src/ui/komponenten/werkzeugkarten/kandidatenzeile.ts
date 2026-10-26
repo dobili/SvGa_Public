@@ -2,7 +2,7 @@
  * Eine Zeile der Engine-Rechnung bei „Erzwingende Züge“: Nummer, Folge bis zur Ruhe, Bilanz und
  * Urteil in Worten, dazu der Wert der Engine.
  *
- * Rolle im Gesamtbild: Text für ErzwingendKarte.tsx (Vorschlag B1, seit 0.2.33).
+ * Rolle im Gesamtbild: Text für ErzwingendKarte.tsx (Vorschlag B1).
  * Abhängigkeiten: chessops, engine/kandidatenruhe.ts, engine/wertInWorten.ts, schach/notation.ts,
  * engine/gegnerplan.ts (Nullzug), i18n.
  * Buchbezug: Kapitel 7, Schritt 3 („Die Bilanz: Zähle am Ende der Variante nach“).

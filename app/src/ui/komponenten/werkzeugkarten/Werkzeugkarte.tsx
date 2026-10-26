@@ -3,18 +3,17 @@
  *
  * Rolle im Gesamtbild: Einschätzungskarte (Konzept 10.2), für alle Werkzeuge gleich. Befunde mit
  * Farbe tragen dieselbe Linienart wie die Pfeile am Brett, damit der Farbcode auch ohne
- * Farbsehen lesbar bleibt (Konzept 10.3).
+ * Farbsehen lesbar bleibt (Konzept 10.3). Die Karte zeigt immer alle Befunde (Wunsch des
+ * Autors), ohne gestuftes Aufklappen.
  * Vergleiche der Faktorenbilanz zeigen zusätzlich eine Waage (Kapitel 3).
  * Der Schalter „Sicht“ oben rechts in der Kopfzeile tauscht die Seite, für die das Werkzeug rechnet
  * (Entscheidung des Autors, 15.10.2026); er sagt auch, ob diese Seite am Zug ist. Unter „So
  * prüft die App“ stehen Erklärung und Regel des Werkzeugs und der Hinweis, dass die Werkzeuge
  * irren können und das Buch maßgeblich ist (SoPrueft.tsx). Darüber steht klein die Legende der
- * Markierungen am Brett (seit 0.2.30, Wunsch des Autors); im Leerfall (U12, ohne Befunde und
- * Markierungen) fehlt sie. Die Legende nennt die Farben der gewählten Sicht („Drohungen von
- * Schwarz“ statt „des Gegners“), damit sie dem Sicht-Schalter folgt (R41, 23.10.2026). Hat das Ergebnis einen Hinweis (etwa
- * „Nur Kandidaten“ bei den Todsünden, seit 0.2.33), steht er hervorgehoben unter dem Namen.
- * Seit 0.2.85 (Wunsch des Autors) zeigt die Karte immer alle Befunde; das gestufte Aufklappen mit
- * „Mehr …“ (0.2.30 bis 0.2.84) ist entfallen, etwa die zweite Seite bei der Angriffsregel.
+ * Markierungen am Brett (Wunsch des Autors); im Leerfall (U12, ohne Befunde und Markierungen)
+ * fehlt sie. Die Legende nennt die Farben der gewählten Sicht („Drohungen von Schwarz“ statt „des
+ * Gegners“), damit sie dem Sicht-Schalter folgt (R41, 23.10.2026). Hat das Ergebnis einen
+ * Hinweis (etwa „Nur Kandidaten“ bei den Todsünden), steht er hervorgehoben unter dem Namen.
  * Abhängigkeiten: analyse/werkzeug.ts, Waage.tsx, useSicht.ts, i18n, lucide-react.
  */
 import { ArrowLeftRight } from "lucide-react";

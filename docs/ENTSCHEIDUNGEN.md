@@ -5950,3 +5950,29 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
 - **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
   (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
 
+## Wertung auf chess.com als Bereich für alle Zeitarten (26.10.2026, Opus, Version 0.3.2)
+
+Wunsch des Autors: für jede Zeitart eine Schätzung auf chess.com, auch für Klassisch, als
+Bereich statt einer Zahl; wo die Daten dünn sind, breiter. Rückfragen W1 bis W7 in
+`docs/AUFGABEN_AUTOR.md`.
+
+- **Quelle geprüft:** chessgoals.com „Chess Rating Comparisons“ (Juli 2026). Jede Spalte ist gegen
+  chess.com Blitz ausgewertet, mit „(+/-)“ als halber Breite des Fensters, in dem etwa 50 % der
+  aktiven Spieler liegen: chess.com Schnellschach ±115 (N = 10 156), FIDE ±75 (1923), Lichess Blitz
+  ±70 (1935), Schnellschach ±90 (1066), Klassisch ±90 (240). FIDE unter etwa 1550 hat die Quelle
+  entfernt. Die Kurven im Code stimmten; die Tabelle steht jetzt vollständig mit der Brückenspalte
+  in `spiel/umrechnung-daten.ts` (von Hand übertragen, Test prüft Anstieg und Stichproben; das
+  frühere Erzeugerskript lag nur lokal).
+- **Brücke:** Lichess-Zahl → chess.com Blitz → Zielspalte, wie die Quelle selbst ihre Tabelle
+  „Lichess vs. FIDE“ bildet. Klassisch → chess.com Schnellschach, weil chess.com keine Wertung für
+  Klassisch hat und Partien ab zehn Minuten als Schnellschach wertet.
+- **Breite** (`spiel/umrechnung.ts`, bereichEtwa): s_Quelle / Steigung der Quellspalte (Rückweg auf
+  chess.com Blitz) mal Steigung der Zielspalte, quadratisch addiert mit s_Ziel; Steigung über
+  ±100 chess.com Blitz gemessen (die Quelle rundet auf 5). Ergebnis: Blitz ±105, Schnellschach
+  ±130 bis ±170, Klassisch auf chess.com ±150 bis ±260, FIDE ±95 bis ±170. Bereich = 50 % der
+  Spieler wie in der Quelle (90 % wäre 2,4-mal so breit).
+- **Anzeige:** Schalter „Lichess | chess.com“ (gemerkter Wert „umgerechnet“ unverändert, kein neues
+  Speicherformat). Zahl als Bereich „1170–1510“, Spanne als äußere Hülle, Änderung über die
+  Mitten. FIDE nur noch im Satz der Auswertung bei Klassisch (ab 1730). Quellenangabe chessgoals.com
+  wieder hinter dem Fragezeichen (war beim Vereinfachen der Erklärtexte in 0.2.144 entfallen).
+- **Nicht geändert:** Elo-Modell, Bot-Messungen, gespeicherte Daten.

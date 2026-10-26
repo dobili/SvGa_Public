@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 26.10.2026, Version 0.3.1 (nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 26.10.2026, Version 0.3.2 (Wertung auf chess.com als Bereich für alle drei Zeitarten; 0.3.1 nur Codepflege; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.1“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.2“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -90,6 +90,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.2: Wertung auf chess.com als Bereich, für alle drei Zeitarten (Opus, 26.10.2026)
+
+Ersetzt N1008. Der Schalter heißt jetzt „Lichess | chess.com“. Statt einer Zahl mit „≈“ steht
+ein Bereich, in dem etwa die Hälfte der Spieler mit deiner Lichess-Zahl auf chess.com steht.
+Wo die Daten dünn sind, ist der Bereich breiter: Blitz etwa ±110, Schnellschach etwa ±170,
+Klassisch ±150 bis ±260.
+
+- [ ] N1011. **Bereich in „Deine Wertung“:** Profil › Deine Wertung, Schalter auf „chess.com“.
+      Statt „≈ 1340 chess.com“ steht groß ein Bereich wie „1170–1510 chess.com“ (bei
+      Schnellschach 1680 auf Lichess), eine Stufe kleiner als die Lichess-Zahl. Darunter die
+      Änderung im Ausschnitt als eine Zahl (etwa „+30“), weil sich die Breite dabei aufhebt.
+      In den Phasen (Eröffnung, Mittelspiel, Endspiel) ist auch die Spanne umgerechnet.
+      Unter etwa 1505 Lichess Klassisch steht „–“ mit „chess.com erst ab etwa 1505 (Lichess
+      Klassisch)“. Passt der Bereich auf eine Zeile?
+- [ ] N1012. **Klassisch jetzt auch auf chess.com:** Spielen › „Deine Spielstärke“, Schalter auf
+      „chess.com“: Alle drei Kacheln zeigen einen Bereich mit „chess.com“, auch Klassisch
+      (vorher FIDE). chess.com hat keine Wertung für Klassisch und wertet alle Partien ab zehn
+      Minuten als Schnellschach; deshalb gilt der Bereich bei Klassisch für chess.com
+      Schnellschach. Passt der Bereich in die schmalen Kacheln (er darf nach dem Strich
+      umbrechen)? Die kleine Zeile darunter ist die Spanne deiner Schätzung, umgerechnet,
+      und „Wertung …“ ebenfalls als Bereich.
+- [ ] N1013. **Satz in der Auswertung und Fragezeichen:** Nach einer gewerteten Partie,
+      Auswertung › Spielstärke: Der Satz lautet etwa „Deine Zahl gilt für Schnellschach und
+      richtet sich nach Lichess; Spieler mit dieser Zahl stehen auf chess.com Schnellschach
+      etwa bei 1170 bis 1510.“ Nach einer klassischen Partie kommt dazu der Hinweis zu
+      chess.com Schnellschach und, ab etwa 1730 Lichess Klassisch, „Beim Weltschachbund (FIDE)
+      etwa … bis …“. Hinter dem Fragezeichen der Karten steht, was der Bereich bedeutet, wie
+      breit er je Zeitart ist und dass die Zahlen von chessgoals.com stammen. Verständlich?
+
 ### Neu in 0.3.1: Codepflege ohne sichtbare Änderung (Opus, 26.10.2026)
 
 - [ ] N1010. **Alles wie vorher:** In 0.3.1 ist nur der Code aufgeräumt (Ordner, Kommentare,
@@ -114,13 +143,6 @@ Teil fertig ist.
 - [ ] N1007. **Knöpfe getrennt:** Unter der Zugliste (Partie, Abbildungen, Zug erraten) steht
       „Zum Anfang“ ganz links, „Zum Ende“ ganz rechts, Zurück und Vor als breitere Knöpfe in der
       Mitte mit deutlichem Abstand. Drückst du jetzt seltener versehentlich auf Anfang oder Ende?
-- [ ] N1008. **Wertung wie chess.com oder FIDE:** Profil › Deine Wertung (und unter Spielen „Deine
-      Spielstärke“) hat einen kleinen Schalter „Lichess | chess.com · FIDE“. Rechts stehen die
-      Zahlen mit „≈“ umgerechnet: Blitz und Schnellschach in chess.com, Klassisch in FIDE. Unter
-      etwa 1730 Lichess Klassisch steht bei FIDE ein Strich mit kurzem Hinweis, weil die Tabelle
-      dort endet. Die Kurve bleibt im Maßstab von Lichess. Hinter dem Fragezeichen steht, wie
-      ungenau das ist: im Mittel recht verlässlich, für einen einzelnen Spieler etwa ±100 bis 150
-      (chess.com) und ±200 oder mehr (FIDE). Die Wahl bleibt auf dem Gerät gespeichert.
 - [ ] N1009. **Deine Züge mit gemessenen Spannen:** Nach einer gewerteten Partie, Auswertung ›
       „Deine Züge“: Jetzt sind auch Brillant, Stark und Theoriezug aus 77 000 Lichess-Partien
       gemessen (vorher geschätzt). Üblich sind etwa: brillant 0,1 bis 0,5 %, stark 7 bis 9 %
@@ -1361,6 +1383,64 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Wertung auf chess.com als Bereich (Opus, 26.10.2026): schon umgesetzt, Widerspruch genügt
+
+Dein Wunsch: für jede Zeitart eine Schätzung auf chess.com, auch für Klassisch, als Bereich
+statt einer Zahl, damit man sieht, wie unsicher sie ist. Woher die Zahlen kommen: der
+Wertungsvergleich von chessgoals.com (Stand Juli 2026), eine Umfrage unter fast 20 000 aktiven
+Spielern mit Selbstangaben, Lichess nur mit gefestigter Wertung (RD unter 150). Die Quelle
+wertet jede Spalte gegen chess.com Blitz aus und nennt je Spalte ein „±“, in dem etwa die
+Hälfte der Spieler liegt: chess.com Schnellschach ±115 (10 156 Spieler), FIDE ±75 (1923),
+Lichess Blitz ±70 (1935), Lichess Schnellschach ±90 (1066), Lichess Klassisch ±90 (nur 240).
+
+- [ ] W1. **Klassisch auf chess.com über die Brücke chess.com Blitz:** chess.com hat keine
+      Wertung für Klassisch; Partien ab zehn Minuten zählen dort als Schnellschach. Weil jede
+      Spalte der Quelle gegen chess.com Blitz ausgewertet ist, rechnet die App Lichess
+      Klassisch → chess.com Blitz → chess.com Schnellschach. Genau so setzt die Quelle selbst
+      ihre Tabelle „Lichess gegen FIDE“ zusammen; es ist also kein erfundener Weg, aber ein
+      Umweg mit doppelter Unsicherheit, und Lichess Klassisch hat nur 240 Vergleichsspieler.
+      Beispiel: Lichess Klassisch 2120 → chess.com Schnellschach etwa 1820 bis 2170; Lichess
+      Klassisch 1600 → etwa 810 bis 1300. Unter 1505 Lichess Klassisch gibt es keinen Wert.
+      Schon umgesetzt.
+- [ ] W2. **Wie breit der Bereich ist:** Die eigene Lichess-Zahl wird auf chess.com Blitz
+      zurückgerechnet: Das „±“ der Lichess-Spalte geteilt durch ihre Steigung. Wo die
+      Lichess-Spalte flach ist (Klassisch, vor allem unten), sagt eine Lichess-Zahl wenig über
+      chess.com, der Bereich wird von selbst breit. Von dort auf die Zielspalte, dazu deren „±“;
+      beide Teile werden wie unabhängige Messfehler zusammengezählt (Wurzel aus der Summe der
+      Quadrate). Ergebnis: Blitz etwa ±105, Schnellschach etwa ±130 bis ±170, Klassisch auf
+      chess.com ±150 bis ±260, FIDE ±95 bis ±170. Der Bereich umfasst etwa die Hälfte der
+      Spieler, wie die Angabe der Quelle. Alternative: neun von zehn Spielern; dann wäre jeder
+      Bereich etwa 2,4-mal so breit (Blitz etwa ±250), was kaum noch etwas aussagt. Schon
+      umgesetzt mit „die Hälfte“.
+- [ ] W3. **FIDE nur noch im Satz:** Der Schalter heißt jetzt „Lichess | chess.com“; FIDE steht
+      nur noch im Satz der Auswertung bei Klassisch (ab etwa 1730 Lichess Klassisch, darunter
+      hat die Quelle keine FIDE-Zahlen). Über dieselbe Brücke ginge FIDE auch für Blitz und
+      Schnellschach; eine dritte Stellung „FIDE“ im Schalter würde aber einen neuen gemerkten
+      Wert auf dem Gerät brauchen, deshalb nicht ohne dein Ja. Willst du sie?
+- [ ] W4. **Spanne und Änderung:** Die Spanne deiner Schätzung (neun von zehn Spielern) wird als
+      äußere Hülle umgerechnet: vom unteren Rand des Bereichs zum unteren Ende bis zum oberen
+      Rand des Bereichs zum oberen Ende. Das ist eher zu breit als zu schmal und leicht zu
+      erklären. Die Änderung („im Ausschnitt +30“) bleibt eine Zahl zwischen den Mitten, weil
+      sich die Breite dabei aufhebt. Schon umgesetzt.
+- [ ] W5. **Offene Fragen zur Quelle (nur zur Kenntnis, ich erfinde nichts dazu):**
+      (a) Das „±“ gilt für die ganze Spalte; wie viele Spieler in jeder Zeile stecken, nennt
+      die Quelle nicht. An den Rändern (sehr schwach, sehr stark) ist der Bereich deshalb
+      vermutlich zu schmal. (b) Es sind Selbstangaben von Lesern einer Seite für ehrgeizige
+      Erwachsene; Gelegenheitsspieler fehlen eher. (c) Die Quelle erneuert die Tabellen jährlich
+      und verschiebt sie dabei um 15 bis 40 Punkte. Empfehlung: so lassen und die Tabelle
+      einmal im Jahr neu übertragen. Wenn du magst, kannst du chessgoals.com um die Zahl der
+      Spieler je Zeile bitten; dann ließen sich die Ränder ehrlich verbreitern.
+- [ ] W6. **„Auf Lichess selbst“ verstanden als:** Der Schalter „Lichess“ bleibt, deine Zahl je
+      Zeitart steht dort unverändert (sie ist schon im Maßstab von Lichess). Falls du meintest,
+      aus einer Zahl in einer Zeitart auch die anderen Zeitarten auf Lichess zu schätzen (etwa
+      aus Klassisch auf Lichess Blitz): das geht über dieselbe Brücke, sag Bescheid.
+- [ ] W7. **Abweichungen, die ich beim Prüfen gefunden habe:** (a) E4 sagte „Quellenangabe in
+      der App“; die stand beim Vereinfachen der Erklärtexte (0.2.144) nicht mehr drin. Jetzt
+      steht chessgoals.com wieder hinter dem Fragezeichen. (b) Der alte Hilfetext nannte für
+      FIDE „±200 und mehr“; die Quelle gibt ±75 (die Hälfte der Spieler), über die Brücke sind
+      es ±95 bis ±170. (c) Die Kurven im Code stimmten mit der Quelle überein; die Tabelle ist
+      jetzt vollständig mit der Brückenspalte übernommen und durch Tests abgesichert.
+
 ### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 
 Dein Wunsch R52: ein kleines Toursymbol oben rechts, ein Hinweis beim ersten Start, ein Schalter
@@ -1840,11 +1920,13 @@ Paket P4.
 - [ ] E3. **Zeitklasse ohne Uhr:** Partien ohne Uhr zählen als Schnellschach (wie in der
       Zugwahl der Bots). Mit R51 (Teil F) fällt „ohne Uhr“ für gewertete Partien ohnehin weg.
       Schon umgesetzt.
-- [ ] E4. **Umrechnung nach chessgoals.com:** Die Entsprechung auf chess.com und FIDE stammt aus
-      dem Wertungsvergleich von chessgoals.com (Juli 2026, Selbstangaben aktiver Spieler;
-      Lichess-Schnellschach 1680 ≈ chess.com Schnellschach 1340, Lichess Klassisch 2120 ≈ FIDE
-      1965; FIDE erst ab 1730 Lichess Klassisch). Übernommen sind nur die Zahlen (Fakten), mit
-      Quellenangabe in der App und in docs/LIZENZEN.md. Schon umgesetzt.
+- [ ] E4. **Umrechnung nach chessgoals.com:** Die Bereiche auf chess.com (und FIDE im Satz bei
+      Klassisch) stammen aus dem Wertungsvergleich von chessgoals.com (Juli 2026, Selbstangaben
+      aktiver Spieler). Seit 0.3.2 ein Bereich statt einer Zahl, für alle drei Zeitarten:
+      Lichess Schnellschach 1680 → chess.com Schnellschach etwa 1170 bis 1510, Lichess
+      Klassisch 2120 → chess.com Schnellschach etwa 1820 bis 2170 und FIDE etwa 1830 bis 2100.
+      Übernommen sind nur die Zahlen (Fakten), mit Quellenangabe hinter dem Fragezeichen und in
+      docs/LIZENZEN.md. Schon umgesetzt.
 
 ### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
 

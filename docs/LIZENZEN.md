@@ -20,7 +20,7 @@
 | onnxruntime-web 1.20.1 (Microsoft; Laufzeit des Maia-Zusatzpakets, `app/public/maia/ort/`, beim Build aus dem npm-Paket) | MIT | `app/public/lizenzen/mit-onnxruntime.txt` |
 | React, React DOM, Scheduler, Workbox, vite-plugin-pwa                                                                  | MIT                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
-| Wertungsvergleich (Zahlen aus chessgoals.com/rating-comparison, Juli 2026, in `app/src/spiel/umrechnung-daten.ts`, seit 0.2.125) | Fakten, kein Schutz; Quelle genannt | – (Herkunft in der Datei und in der Erklärung der App)        |
+| Wertungsvergleich (Zahlen und Streuung je Spalte aus chessgoals.com/rating-comparison, Juli 2026, in `app/src/spiel/umrechnung-daten.ts`, seit 0.2.125, als Bereiche seit 0.3.2) | Fakten, kein Schutz; Quelle genannt | – (Herkunft in der Datei und in der Erklärung der App)        |
 
 ## Hinweise
 

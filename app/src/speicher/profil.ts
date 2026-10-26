@@ -1,6 +1,6 @@
 /**
- * Das eigene Spielerprofil: ein Name und ein Porträt, beides freiwillig (seit 0.2.140, Wunsch des
- * Autors vom 25.10.2026).
+ * Das eigene Spielerprofil: ein Name und ein Porträt, beides freiwillig (Wunsch des Autors vom
+ * 25.10.2026).
  *
  * Rolle im Gesamtbild: Oben auf der Profilseite, an der eigenen Seite der Partie, in der
  * Partienliste und als eigener Name im PGN steht dann der Leser mit Bild und Namen statt „Du“.
@@ -8,7 +8,7 @@
  * selbst gebaut aus den Merkmalen der DiceBear-„Personas“ (ui/profil/merkmale.ts). Vom selbst
  * gebauten wird das fertige SVG mitgespeichert, damit die übrigen Bildschirme den Baukasten nicht
  * laden müssen; es wird nur als Bild (img) gezeigt, dort läuft kein Skript.
- * Zusätzliches Feld der Nutzerdaten wie „zugErraten“ (0.2.90), ohne neue Formatversion: Fehlt
+ * Zusätzliches Feld der Nutzerdaten wie „zugErraten“, ohne neue Formatversion: Fehlt
  * es, gibt es kein Profil.
  * Abhängigkeiten: engine/portraetwahl.ts.
  */
@@ -36,6 +36,7 @@ export interface Spielerprofil {
   readonly bild: Profilbild | null;
 }
 
+/** Kein Profil angelegt: ohne Namen und ohne Porträt (die App zeigt dann „Du“). */
 export const LEERES_PROFIL: Spielerprofil = { name: "", bild: null };
 
 type Roh = Record<string, unknown>;

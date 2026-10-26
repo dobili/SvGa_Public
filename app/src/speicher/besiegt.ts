@@ -1,13 +1,13 @@
 /**
- * Bots, die der Leser schon in einer gewerteten Partie besiegt hat, je Zeitklasse (seit 0.2.99;
- * seit 0.2.125 getrennt nach Blitz, Schnellschach und Klassisch, R51).
+ * Bots, die der Leser schon in einer gewerteten Partie besiegt hat, je Zeitklasse (Blitz,
+ * Schnellschach und Klassisch getrennt, R51).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (19.10.2026): Ein kleiner Stern am Porträt in der
- * Gegnerwahl zeigt, gegen wen man schon gewonnen hat; seit R51 (23.10.2026) je Zeitklasse der
+ * Gegnerwahl zeigt, gegen wen man schon gewonnen hat; nach R51 (23.10.2026) je Zeitklasse der
  * gewählten Bedenkzeit, weil die Wertung je Zeitklasse gilt. Die Listen stehen im Spielstand
  * (speicher/partien.ts, „besiegt“), damit sie auch bleiben, wenn alte Partien aus der Liste der
  * höchstens 50 Partien fallen. Ältere Daten ohne Listen bekommen sie aus den gespeicherten
- * Partien; eine alte einfache Liste (vor 0.2.125) zählt als Schnellschach (Partien ohne Uhr).
+ * Partien; eine alte einfache Liste ohne Zeitklassen zählt als Schnellschach (Partien ohne Uhr).
  * „Wertung zurücksetzen“ leert sie, weil danach alle bisherigen Partien als ungewertet gelten.
  * Abhängigkeiten: spiel/partie.ts, spiel/elomodell.ts (Zeitklasse).
  */
@@ -17,6 +17,7 @@ import type { Partie } from "../spiel/partie";
 /** Je Zeitklasse die Kennungen der besiegten Bots. */
 export type Besiegte = Readonly<Record<Wertungstempo, readonly string[]>>;
 
+/** Noch kein Bot besiegt: in jeder Zeitklasse eine leere Liste. */
 export const KEINE_BESIEGTEN: Besiegte = { blitz: [], rapid: [], classical: [] };
 
 /** Höchstzahl der gemerkten Bots je Zeitklasse (vorgefertigte und eigene zusammen, großzügig). */

@@ -5,8 +5,8 @@
  * Partie übersteht ein Neuladen und das Schließen der App; beendete Partien bleiben mit ihrer
  * Auswertung (Wert je Stellung) für den Rückblick und den PGN-Export, höchstens MAX_PARTIEN.
  * Die Vorlieben merken sich die letzte Wahl im Spielen-Bildschirm. Das Lesen gespeicherter
- * Partien steht seit 0.2.90 in speicher/partienLesen.ts.
- * Seit 0.2.41 liegt hier auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
+ * Partien steht in speicher/partienLesen.ts.
+ * Hier liegt auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
  * jeder fertig ausgewerteten gewerteten Partie und überlebt das Wegfallen alter Partien.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, spiel/wertung.ts, engine/fehlerart.ts,
  * engine/stufen.ts, speicher/partieeintrag.ts (Typ Partieeintrag, hier weitergereicht).
@@ -83,6 +83,7 @@ export interface Spielstand {
   readonly besiegt: Besiegte;
 }
 
+/** Die Vorlieben ohne frühere Wahl: Engine auf Stufe 1, gewertet, ohne Uhr, alle Hilfen an. */
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
   gegner: "engine",
   bot: null,
@@ -97,6 +98,7 @@ export const STANDARD_VORLIEBEN: Spielvorlieben = {
   blindeFlecken: [],
 };
 
+/** Der Spielstand vor der ersten Partie: nichts gespielt, keine Wertung, keine eigenen Gegner. */
 export const LEERER_SPIELSTAND: Spielstand = {
   laufend: null,
   partien: [],

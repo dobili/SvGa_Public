@@ -1,5 +1,5 @@
 /**
- * Eigene Gegner des Lesers im Speicher (0.2.42): anlegen, ändern, löschen, aus Rohdaten lesen.
+ * Eigene Gegner des Lesers im Speicher: anlegen, ändern, löschen, aus Rohdaten lesen.
  *
  * Rolle im Gesamtbild: Teil des Spielstands (speicher/partien.ts, `eigeneGegner`). Jeder Gegner
  * hat Name, Stufen je Phase, erlaubte Fehlerarten und Stil (engine/gegner.ts, EigenerGegner).

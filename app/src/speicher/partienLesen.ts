@@ -1,9 +1,9 @@
 /**
  * Partien und Spielstand aus Rohdaten lesen (Laden, Einspielen einer Sicherung).
  *
- * Rolle im Gesamtbild: Teil von speicher/partien.ts, seit 0.2.90 eigene Datei (Dateien unter 400
+ * Rolle im Gesamtbild: Teil von speicher/partien.ts, als eigene Datei (Dateien unter 400
  * Zeilen, Konzept 12). Gespeicherte Partien werden Feld für Feld geprüft und Zug für Zug
- * nachgespielt; was nicht passt, fällt weg. Das Speicherformat ist unverändert.
+ * nachgespielt; was nicht passt, fällt weg.
  * Abhängigkeiten: speicher/partien.ts (Typen, Vorgaben), spiel/partie.ts, spiel/uhr.ts,
  * spiel/wertung.ts, engine/fehlerart.ts, engine/stufen.ts.
  */

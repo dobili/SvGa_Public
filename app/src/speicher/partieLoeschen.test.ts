@@ -1,5 +1,5 @@
 /**
- * Tests zum Löschen von Partien und zum Porträt eigener Gegner (0.2.99): Nur ungewertete Partien
+ * Tests zum Löschen von Partien und zum Porträt eigener Gegner: Nur ungewertete Partien
  * lassen sich löschen; ein Porträt kommt nur aus der Liste zur Wahl durch die Rohdaten.
  */
 import { describe, expect, it } from "vitest";

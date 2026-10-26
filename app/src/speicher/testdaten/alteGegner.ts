@@ -1,10 +1,11 @@
 /**
- * Gespeicherte eigene Gegner aus 0.2.117 bis 0.2.134 für die Tests des Speicherwegs von
- * „Fehlerprofil vereinfacht“ (0.2.135): mit Stufen gestrichener Arten, ausgeschalteten Arten,
- * alten freien Gewichten und blinden Flecken einzeln.
+ * Gespeicherte eigene Gegner im Format vor „Fehlerprofil vereinfacht“, für die Tests des
+ * Speicherwegs: mit Stufen gestrichener Arten, ausgeschalteten Arten, alten freien Gewichten
+ * und blinden Flecken einzeln.
  */
 const STUFEN = { eroeffnung: 3, mittelspiel: 4, endspiel: 3 };
 
+/** Die alten Gegner als Rohdaten, so wie sie im Speicher standen (je einer pro Sonderfall). */
 export const ALTE_GEGNER: readonly Record<string, unknown>[] = [
   {
     kennung: "eigen-alt-stufen",

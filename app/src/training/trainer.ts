@@ -33,6 +33,7 @@ export type TrainerKennung =
   | "studien"
   | "zugErraten"
   | "dreissigMinuten"
+  | "kurzplaene"
   | "fehlerdatenbank"
   | "denkroutine";
 
@@ -53,6 +54,7 @@ export const TRAINER: readonly Trainer[] = [
   { kennung: "studien", kapitel: [10], stufe: 3, fertig: true },
   { kennung: "zugErraten", kapitel: [11], stufe: 3, fertig: true },
   { kennung: "dreissigMinuten", kapitel: [12], stufe: 3, fertig: true },
+  { kennung: "kurzplaene", kapitel: [12], stufe: 3, fertig: true },
   { kennung: "fehlerdatenbank", kapitel: [12], stufe: 3, fertig: true },
   { kennung: "denkroutine", kapitel: [12], stufe: 3, fertig: true },
 ];

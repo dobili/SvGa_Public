@@ -55,7 +55,9 @@ export function Gesamtstaerke({ g }: { g: EigenerGegner }) {
                 ? t("spielen.eigene.menschlich.unmenschlichText", {
                     anzahl: String(m.unmenschlich),
                   })
-                : t("spielen.eigene.menschlich.anteil", { anteil })}{" "}
+                : m.urteil === "keineNeigung"
+                  ? t("spielen.eigene.menschlich.keineNeigungText")
+                  : t("spielen.eigene.menschlich.anteil", { anteil })}{" "}
               {t(`spielen.eigene.richtung.${staerkerichtung(stufen, zahl)}`)}
             </p>
             <p>{t("spielen.profil.staerkeErklaerung")}</p>

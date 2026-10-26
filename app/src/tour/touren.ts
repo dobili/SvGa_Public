@@ -226,6 +226,10 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("trainer-wahl", "tour.trainer.dreissigMinuten.plan"),
     mitte("tour.trainer.dreissigMinuten.einheit"),
   ]),
+  "trainer.kurzplaene": tour("trainer.kurzplaene.name", [
+    ANFANG,
+    ziel("trainer-wahl", "tour.trainer.kurzplaene.plan"),
+  ]),
   "trainer.fehlerdatenbank": tour("trainer.fehlerdatenbank.name", [
     ANFANG,
     ziel("fehler-auswertung", "tour.trainer.fehlerdatenbank.auswertung"),

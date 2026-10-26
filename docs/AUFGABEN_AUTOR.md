@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 26.10.2026, Version 0.3.2 (kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 26.10.2026, Version 0.3.3 (Kurzpläne und „Keine Fehlerneigung“; 0.3.2 kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.2“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.3“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -89,6 +89,31 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.3: Kurzpläne und „Keine Fehlerneigung“ (Sonnet, 26.10.2026)
+
+Nach deinen Beschlüssen im Chat umgesetzt; Widerspruch genügt.
+
+- [ ] N1021. **Keine Fehlerneigung:** Eigener Bot, Vorlage „keine Fehler“ (keine Fehlerart und kein
+      blinder Fleck an): Über den Reitern steht nicht mehr „Menschlich.“, sondern „Keine
+      Fehlerneigung.“ in Gold, hinter dem Fragezeichen die Erklärung. Sobald eine Fehlerart oder
+      ein Fleck angehakt ist, kommen die alten Urteile wieder.
+- [ ] N1022. **Neuer Trainer „Kurzpläne“** (Training › Kapitel 12, Stundenglas-Symbol): Vier
+      Angebote. „5 Minuten: nur Wiederholungen“ zeigt Uhr und die fälligen Wiederholungen;
+      „Einheit abschließen“ meldet „Geschafft“. „15 Minuten: Kurzplan“ hat zwei Schritte
+      (5 Minuten Wiederholungen, 10 Minuten Taktik-Themenblock mit Knopf zum Taktiktrainer). Die
+      Einheit bleibt beim Wechsel in einen anderen Bildschirm erhalten (nach drei Stunden verfällt
+      sie). Der Stand liegt nur auf dem Gerät, nicht in der Datensicherung.
+- [ ] N1023. **Taktik auf Zeit:** „Zeitrunde starten“: drei Minuten leichte Taktikaufgaben, Ende
+      nach drei Fehlern oder wenn die Zeit um ist; am Ende „X richtig, Y falsch“ und deine beste
+      Runde. Prüfe, ob sich die Aufgaben auf dem Handy flott bedienen lassen und ob das Ende
+      auch mitten in einer Aufgabe sauber kommt.
+- [ ] N1024. **Tagesaufgabe mit Serie:** Eine leichte Taktikaufgabe pro Tag (am nächsten Tag eine
+      andere). Oben steht „Serie: n Tage in Folge (beste: m)“; sie wächst, wenn du an
+      aufeinanderfolgenden Tagen eine Aufgabe bearbeitest (richtig oder falsch), und fällt nach einem
+      ausgelassenen Tag auf 0. Auch Änderung der Systemzeit zum Testen möglich.
+- [ ] N1025. **Fortschritt:** Der Ring „Trainer ausprobiert“ hat jetzt 18 statt 17 Trainer
+      (Kurzpläne zählt, sobald du eine Einheit abgeschlossen oder eine Runde gespielt hast).
 
 ### Neu in 0.3.2: kleine Korrekturen aus der Ideensammlung (Sonnet, 26.10.2026)
 

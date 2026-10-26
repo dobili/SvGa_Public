@@ -38,6 +38,7 @@ import { StrukturBereich } from "../trainer/StrukturBereich";
 import { StudienBereich, ZugErratenBereich } from "../trainer/StudienBereich";
 import { AbweichungBereich } from "../trainer/AbweichungBereich";
 import { DreissigMinutenBereich } from "../trainer/DreissigMinutenBereich";
+import { KurzplanBereich } from "../trainer/KurzplanBereich";
 import { EndspielBereich } from "../trainer/EndspielBereich";
 import { FehlerBereich } from "../trainer/FehlerBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
@@ -231,6 +232,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   fehlerdatenbank: () => <FehlerBereich />,
   abweichung: () => <AbweichungBereich />,
   dreissigMinuten: () => <DreissigMinutenBereich />,
+  kurzplaene: () => <KurzplanBereich />,
 };
 
 /**

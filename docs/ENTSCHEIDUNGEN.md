@@ -4,7 +4,7 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
-## 26.10.2026 – Beschlossen in der Ideensammlung, noch nicht umgesetzt
+## 26.10.2026 – Beschlossen in der Ideensammlung (Anzeige und Kurzpläne seit 0.3.3 umgesetzt, der gemeinsame Knopf offen)
 
 Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Recherche Q2):
 
@@ -18,8 +18,17 @@ Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Rech
   Wiederholungen plus 10 Minuten Taktik-Themenblock oder Studie), Taktik auf Zeit (3 Minuten leichte
   Aufgaben, Ende nach drei Fehlern, freiwillig), Tagesaufgabe mit Serie (Tage in Folge). Die
   Aufteilung der Pläne ist ein Vorschlag der App, kein Buchinhalt, und wird als solcher gekennzeichnet.
-- **Umsetzung:** In getrennten Chats parallel; jeder Chat prüft vorher die hier festgehaltenen
+- **Umsetzung:** Anzeige „Keine Fehlerneigung“ und die vier Kurzpläne stehen seit 0.3.3 in der App (Trainer „Kurzpläne“; Stand und Serie nur als Merker auf dem Gerät, kein neues Datenformat). Der gemeinsame Knopf wartet auf einen Opus-Chat. Der Rest: In getrennten Chats parallel; jeder Chat prüft vorher die hier festgehaltenen
   Ergebnisse noch einmal gegen den Code.
+
+## 26.10.2026 – Bündel der Bot-Stufen für die Orden (Vorschlag des Autors, noch nicht umgesetzt)
+
+- Fünf Bündel nach Stufe: **1–3, 4–5, 6–7, 8–9, 10**.
+- Die ersten vier Bündel geben je **zwei Orden**: einen, wenn alle Bots darin einmal besiegt sind
+  (beliebige Zeitklasse), und einen, wenn alle Bots darin in **allen Zeitklassen** besiegt sind.
+- Das Bündel 10 (nur Engine, Stufe 10) gibt **einen Superorden**, sobald jeder Bot darin einmal
+  besiegt ist.
+- Gehört zum Paket „Ringe, Orden, Startanimation“ (Opus). Orden gibt es nur für volle Ringe.
 
 ## 26.10.2026 – Phase in eigenen Partien bleibt wie sie ist
 

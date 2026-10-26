@@ -97,20 +97,29 @@ export const MENSCHLICH_AB = 0.05;
 /** Unter diesem Anteil heißt sie „kaum noch menschlich“. */
 export const UNGEWOEHNLICH_AB = 0.001;
 
-export type Menschlichkeit = "menschlich" | "ungewoehnlich" | "kaumMenschlich" | "unmenschlich";
+/**
+ * „keineNeigung“ (seit 0.3.3): Es ist weder eine Fehlerart noch ein blinder Fleck eingestellt; der
+ * Bot spielt dann wie die reine Stufe ohne Zusatzfehler, und das tut kein Mensch.
+ */
+export type Menschlichkeit =
+  "keineNeigung" | "menschlich" | "ungewoehnlich" | "kaumMenschlich" | "unmenschlich";
 
 /**
  * Wie menschlich ist eine Kombination? Unter der vereinfachenden Annahme, dass die Arten
  * unabhängig streuen, ist der Anteil der Spieler, die in allen eingestellten Punkten mindestens so
  * auffällig sind, das Produkt der Anteile je Stufe. Eine Stufe über ±2 gibt es bei Menschen nicht.
  * Beispiel: zwei Regler auf 2, einer auf −1 → 0,1 · 0,1 · 0,5 = 0,5 % → „ungewöhnlich“.
- * Sonderfall: keine Stufe gesetzt → Anteil 1, „menschlich“.
+ * Sonderfall: keine Stufe gesetzt (Vorlage „keine Fehler“) → Anteil 1, aber „keineNeigung“ statt
+ * „menschlich“ (Wunsch des Autors, 26.10.2026): Ein Spieler ohne jede Fehlerneigung ist keiner.
  */
 export function menschlichkeit(stufen: Reglerstufen): {
   readonly anteil: number;
   readonly urteil: Menschlichkeit;
   readonly unmenschlich: number;
 } {
+  if (REGLERARTEN.every((a) => stufen[a] === undefined)) {
+    return { anteil: 1, urteil: "keineNeigung", unmenschlich: 0 };
+  }
   const werte = REGLERARTEN.map((a) => stufen[a] ?? 0);
   const unmenschlich = werte.filter((s) => s < MENSCHLICH_MIN || s > MENSCHLICH_MAX).length;
   const anteil =

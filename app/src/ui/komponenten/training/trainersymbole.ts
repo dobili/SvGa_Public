@@ -12,6 +12,7 @@ import {
   Fish,
   Flag,
   GitBranch,
+  Hourglass,
   Grid3x3,
   Library,
   Lightbulb,
@@ -43,6 +44,7 @@ export const TRAINERSYMBOL: Readonly<Record<TrainerKennung, LucideIcon>> = {
   studien: Lightbulb,
   zugErraten: Puzzle,
   dreissigMinuten: Timer,
+  kurzplaene: Hourglass,
   fehlerdatenbank: Database,
   denkroutine: Brain,
 };

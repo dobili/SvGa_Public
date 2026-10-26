@@ -50,6 +50,7 @@
   color: var(--gruen-text);
 }
 
+.urteil-keineNeigung,
 .urteil-ungewoehnlich {
   color: var(--gold-text);
 }

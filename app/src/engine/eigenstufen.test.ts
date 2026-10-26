@@ -38,7 +38,8 @@ describe("Reglerstufen eigener Gegner (Teil E, 0.2.126)", () => {
   });
 
   it("Menschlichkeit: Produkt der Anteile, über ±2 unmenschlich", () => {
-    expect(menschlichkeit({}).urteil).toBe("menschlich");
+    expect(menschlichkeit({}).urteil).toBe("keineNeigung");
+    expect(menschlichkeit({ bauernraub: 0 }).urteil).toBe("menschlich");
     const ungewoehnlich = menschlichkeit({ verfruehteDame: 2, bauernraub: 2, figurHaengen: -1 });
     expect(ungewoehnlich.anteil).toBeCloseTo(0.005);
     expect(ungewoehnlich.urteil).toBe("ungewoehnlich");

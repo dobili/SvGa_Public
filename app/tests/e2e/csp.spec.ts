@@ -4,7 +4,7 @@
  * Seiten (über die Antworten des Vorschau-Servers) und prüft, dass Startseite, App, Abbildung
  * mit Engine und eine Partie keinen einzigen Verstoß auslösen. Erst dann darf sie scharf werden.
  * Seit 0.2.144 („Weg 1“, Nachtarbeit 25./26.10.2026) geht ein zweiter Test alle Bereiche durch:
- * alle 17 Trainer, Nachschlagen mit Unterseiten, Lernsammlung, Profil mit Porträt-Baukasten
+ * alle 18 Trainer, Nachschlagen mit Unterseiten, Lernsammlung, Profil mit Porträt-Baukasten
  * (data:-Bilder, nachgeladener DiceBear-Teil), Einstellungen mit allen Reitern, die englische
  * Fassung und die Seiten der Website. Jeder Verstoß lässt ihn fehlschlagen.
  */

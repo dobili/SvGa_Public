@@ -16,8 +16,8 @@
  * Das Fragezeichen sitzt an der Überschrift und nimmt alle Erklärtexte auf (vorläufig, Schätzung
  * aus den Zügen, Phasen; Wunsch des Autors, 25.10.2026); sichtbar bleiben die Zahl mit der Marke
  * „vorläufig“ und eine kurze Zeile zum Stand.
- * „Lichess | chess.com · FIDE“ schaltet Zahl, Spanne und Änderung auf die umgerechnete Liste
- * (wertungsmassstab.ts, Wunsch des Autors, 26.10.2026); die Kurve bleibt im Maßstab von Lichess
+ * „Lichess | chess.com“ schaltet Zahl und Spanne auf Bereiche auf chess.com, die Änderung auf die
+ * Mitte (wertungsmassstab.ts, Wunsch des Autors, 26.10.2026); die Kurve bleibt im Maßstab von Lichess
  * und sagt das (außerhalb der Tabellen gäbe es keine Punkte).
  * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
  * InfoKnopf, wertungstext, wertungsmassstab, Massstabwahl, i18n.
@@ -43,7 +43,7 @@ import {
   type Wertungspunkt,
 } from "../../../spiel/wertung";
 import { MitInfo } from "../bausteine/InfoKnopf";
-import { Listenname, Massstabwahl } from "./Massstabwahl";
+import { Listenname, Massstabtext, Massstabwahl } from "./Massstabwahl";
 import { Reiter } from "../bausteine/Reiter";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 import { Kurve } from "./Wertungskurvenbild";
@@ -161,9 +161,9 @@ function Standzeile({
 }
 
 /**
- * Die große Zahl im gewählten Maßstab, mit Liste und Marke „vorläufig“; außerhalb der Tabelle
- * „–“ und darunter die Grenze. Beispiel: Klassisch 1500 umgerechnet → „– FIDE“, „FIDE erst ab
- * etwa 1730 (Lichess Klassisch)“.
+ * Die große Zahl im gewählten Maßstab (umgerechnet ein Bereich), mit Liste und Marke „vorläufig“;
+ * außerhalb der Tabelle „–“ und darunter die Grenze. Beispiel: Klassisch 1500 umgerechnet →
+ * „– chess.com“, „chess.com erst ab etwa 1505 (Lichess Klassisch)“.
  */
 function Zahlzeile({
   tempo,
@@ -179,8 +179,11 @@ function Zahlzeile({
   const zahl = wert === null ? null : zahlImMassstab(tempo, wert, massstab);
   return (
     <>
-      <p className="wertung-zahl" data-testid="wertung-zahl">
-        {zahl ? zahl.zahl : "–"}
+      <p
+        className={zahl?.bereich ? "wertung-zahl bereich" : "wertung-zahl"}
+        data-testid="wertung-zahl"
+      >
+        {zahl ? <Massstabtext zahl={zahl} /> : "–"}
         {zahl && <Listenname liste={zahl.liste} />}
         {vorlaeufig && (
           <span className="wertung-vorlaeufig-marke">{t("ich.wertung.vorlaeufigMarke")}</span>

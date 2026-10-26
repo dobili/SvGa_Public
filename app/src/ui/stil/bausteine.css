@@ -328,6 +328,11 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Ein Bereich („1080–1300“, seit 0.3.2) ist länger als eine Zahl: kleiner, damit er in die Kachel passt. */
+.staerkekachel-zahl.bereich {
+  font-size: var(--groesse-titel);
+}
+
 .staerkekachel-klein {
   font-size: var(--groesse-klein);
   color: var(--text-leise);
@@ -507,7 +512,7 @@
   font-size: var(--groesse-klein);
 }
 
-/* Name der Liste hinter einer umgerechneten Zahl („≈ 1340 chess.com“). */
+/* Name der Liste hinter einem umgerechneten Bereich („1170–1510 chess.com“). */
 .wertung-liste {
   font-family: var(--schrift);
   font-size: var(--groesse-klein);

@@ -1,7 +1,7 @@
 /**
  * Oberflächentests des Spielerprofils (0.2.140): Name und selbst gebautes Porträt festlegen, das
  * übersteht das Neuladen und erscheint in der Partie an der eigenen Uhr. Seit 26.10.2026 dazu der
- * Maßstab der Wertung (Lichess oder umgerechnet auf chess.com und FIDE).
+ * Maßstab der Wertung (Lichess oder als Bereich auf chess.com umgerechnet, seit 0.3.2).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneProfil, starteImBrowser } from "./hilfen";
@@ -94,7 +94,7 @@ async function spieleWertungEin(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10.2026)", async ({
+test("Profil: Wertung als Bereich auf chess.com, die Wahl bleibt (26.10.2026)", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -103,23 +103,23 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10
   const karte = page.getByTestId("wertung");
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^1680/);
   const massstab = karte.getByRole("radiogroup", { name: "Maßstab der Wertung" });
-  await massstab.getByRole("radio", { name: "chess.com · FIDE" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^≈ \d{3,4}chess\.com/);
+  await massstab.getByRole("radio", { name: "chess.com" }).click();
+  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^\d{3,4}–\d{4}chess\.com/);
   await expect(karte.getByTestId("wertungskurve-massstab")).toHaveText(
     "Die Kurve zeigt den Maßstab von Lichess.",
   );
   await page.setViewportSize({ width: 400, height: 900 });
   await karte.screenshot({ path: "test-results/bilder/wertung-umschalter.png" });
-  // Klassisch 1500 liegt unter der FIDE-Tabelle: „–“ und die Grenze.
+  // Klassisch 1500 liegt unter der Tabelle (chess.com für Klassisch erst ab 1505): „–“ und die Grenze.
   await karte.getByRole("tab", { name: "Klassisch" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–FIDE/);
+  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–chess\.com/);
   await expect(karte.getByTestId("massstab-ausserhalb")).toHaveText(
-    "FIDE erst ab etwa 1730 (Lichess Klassisch)",
+    "chess.com erst ab etwa 1505 (Lichess Klassisch)",
   );
   // Die Wahl gilt je Gerät: nach dem Neuladen und in „Deine Spielstärke“ unter Spielen.
   await page.reload();
   await oeffneProfil(page);
-  await expect(massstab.getByRole("radio", { name: "chess.com · FIDE" })).toHaveAttribute(
+  await expect(massstab.getByRole("radio", { name: "chess.com" })).toHaveAttribute(
     "aria-checked",
     "true",
   );
@@ -129,7 +129,7 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10
     .click();
   const kachel = page.getByTestId("letzte-spielstaerke-rapid");
   await expect(kachel).toContainText("chess.com");
-  await expect(kachel).toContainText(/Wertung ≈ \d{3,4}/);
+  await expect(kachel).toContainText(/Wertung \d{3,4}–\d{4}/);
   await page.getByTestId("letzte-spielstaerke").getByRole("radio", { name: "Lichess" }).click();
   await expect(kachel).toContainText("Wertung 1680");
 });

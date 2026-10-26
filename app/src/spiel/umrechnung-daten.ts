@@ -1,120 +1,88 @@
 /**
- * Umrechnung der eigenen Wertung (Lichess-Maßstab je Zeitklasse) in „entspricht etwa“ auf anderen Listen
- * Blitz → chess.com Blitz, Schnellschach → chess.com Schnellschach, Klassisch → FIDE.
- * Zahlen aus dem Wertungsvergleich von chessgoals.com (Stand Juli 2026, Selbstangaben aktiver Spieler),
- * zusammengeführt über die gemeinsame Spalte chess.com Blitz; auf 5 gerundet. Erzeugt von
- * buch/arbeit/appmodell/erzeugen.py, nicht von Hand ändern. Stützstellen [Lichess, Ziel], aufsteigend.
+ * Wertungsvergleich von chessgoals.com (Stand Juli 2026, abgerufen am 26.10.2026): die Tabellen
+ * „Chess.com vs. FIDE and USCF“ und „Lichess Ratings vs. Chess.com“, dazu die Streuung je Spalte.
+ *
+ * Rolle im Gesamtbild: Grundlage der Bereiche „etwa 1320 bis 1530 auf chess.com“ (spiel/umrechnung.ts).
+ * Woher die Zahlen kommen: Umfrage unter fast 20 000 aktiven Spielern mit Selbstangaben (Profile
+ * auf beiden Seiten, Lichess nur mit RD unter 150). Jede Spalte ist für sich gegen chess.com Blitz
+ * ausgewertet; chess.com Blitz ist deshalb die gemeinsame Brücke, über die auch die Quelle selbst
+ * ihre dritte Tabelle „Lichess vs. FIDE“ zusammensetzt. Übernommen sind nur die Zahlen (Fakten),
+ * Quelle in der App und in docs/LIZENZEN.md.
+ * Genauigkeit: Die Quelle nennt je Spalte ein „±“, in dem etwa die Hälfte der aktiven Spieler liegt
+ * (eine Zahl für die ganze Spalte, keine Angabe je Zeile). Dünn sind Lichess Klassisch (N = 240)
+ * und FIDE unter etwa 1550 (dort hat die Quelle keine Zeilen, „--“ in der Tabelle).
+ * Von Hand übertragen; umrechnung.test.ts prüft, dass jede Spalte steigt und Stichproben stimmen.
+ * Abhängigkeiten: keine.
  */
-import type { Wertungstempo } from "./elomodell-daten";
 
-/** Eine Kurve als Stützstellen [Lichess-Wertung, Zielwertung], aufsteigend. */
-export type Umrechnungskurve = readonly (readonly [number, number])[];
+/**
+ * Eine Zeile: [chess.com Blitz, chess.com Schnellschach, FIDE oder null, Lichess Blitz,
+ * Lichess Schnellschach, Lichess Klassisch].
+ */
+export type Vergleichszeile = readonly [number, number, number | null, number, number, number];
 
-/** Je Zeitklasse die Kurve von der eigenen Wertung zur anderen Liste; Zahlen erzeugt. */
-export const UMRECHNUNG: Readonly<Record<Wertungstempo, Umrechnungskurve>> = {
-  blitz: [
-    [1090, 500],
-    [1160, 600],
-    [1225, 700],
-    [1290, 800],
-    [1360, 900],
-    [1425, 1000],
-    [1490, 1100],
-    [1525, 1150],
-    [1555, 1200],
-    [1590, 1250],
-    [1620, 1300],
-    [1655, 1350],
-    [1685, 1400],
-    [1720, 1450],
-    [1755, 1500],
-    [1785, 1550],
-    [1820, 1600],
-    [1850, 1650],
-    [1885, 1700],
-    [1915, 1750],
-    [1950, 1800],
-    [1980, 1850],
-    [2015, 1900],
-    [2045, 1950],
-    [2080, 2000],
-    [2145, 2100],
-    [2210, 2200],
-    [2275, 2300],
-    [2340, 2400],
-    [2410, 2500],
-    [2475, 2600],
-    [2540, 2700],
-    [2610, 2800],
-    [2675, 2900],
-    [2745, 3000],
-  ],
-  rapid: [
-    [1290, 815],
-    [1360, 905],
-    [1425, 995],
-    [1490, 1085],
-    [1555, 1170],
-    [1615, 1255],
-    [1680, 1340],
-    [1710, 1380],
-    [1740, 1420],
-    [1765, 1460],
-    [1795, 1500],
-    [1825, 1540],
-    [1850, 1580],
-    [1880, 1620],
-    [1905, 1655],
-    [1935, 1690],
-    [1960, 1730],
-    [1990, 1765],
-    [2015, 1800],
-    [2040, 1835],
-    [2065, 1870],
-    [2090, 1900],
-    [2115, 1935],
-    [2140, 1965],
-    [2165, 1995],
-    [2215, 2055],
-    [2260, 2110],
-    [2310, 2165],
-    [2355, 2215],
-    [2400, 2260],
-    [2445, 2300],
-    [2490, 2340],
-    [2530, 2375],
-    [2575, 2405],
-    [2615, 2430],
-  ],
-  classical: [
-    [1730, 1660],
-    [1750, 1665],
-    [1770, 1670],
-    [1795, 1675],
-    [1815, 1685],
-    [1835, 1700],
-    [1860, 1710],
-    [1880, 1725],
-    [1900, 1740],
-    [1925, 1760],
-    [1945, 1780],
-    [1970, 1800],
-    [1990, 1820],
-    [2015, 1840],
-    [2035, 1865],
-    [2055, 1890],
-    [2080, 1915],
-    [2100, 1940],
-    [2120, 1965],
-    [2165, 2020],
-    [2205, 2075],
-    [2245, 2135],
-    [2280, 2190],
-    [2320, 2245],
-    [2350, 2300],
-    [2385, 2350],
-    [2415, 2400],
-    [2440, 2445],
-    [2465, 2485],
-  ],
+/** Die Spalten der Tabelle mit ihrer Stelle in der Zeile. */
+export const SPALTE = {
+  chesscomBlitz: 0,
+  chesscomSchnell: 1,
+  fide: 2,
+  lichessBlitz: 3,
+  lichessSchnell: 4,
+  lichessKlassisch: 5,
+} as const;
+
+/** Name einer Spalte. */
+export type Spalte = keyof typeof SPALTE;
+
+/**
+ * Streuung je Spalte: die halbe Breite des Fensters, in dem etwa 50 % der aktiven Spieler mit
+ * derselben chess.com-Blitz-Zahl liegen (Angabe „(+/-)“ der Quelle, in Punkten der Spalte).
+ * chess.com Blitz ist die Brücke selbst und hat deshalb 0. In Klammern die Zahl der Spieler.
+ */
+export const STREUUNG: Readonly<Record<Spalte, number>> = {
+  chesscomBlitz: 0,
+  chesscomSchnell: 115, // N = 10 156
+  fide: 75, // N = 1923
+  lichessBlitz: 70, // N = 1935
+  lichessSchnell: 90, // N = 1066
+  lichessKlassisch: 90, // N = 240
 };
+
+/** Die Tabelle, aufsteigend nach chess.com Blitz (500 bis 3000). */
+export const VERGLEICHSTABELLE: readonly Vergleichszeile[] = [
+  [500, 815, null, 1090, 1290, 1505],
+  [600, 905, null, 1160, 1360, 1540],
+  [700, 995, null, 1225, 1425, 1575],
+  [800, 1085, null, 1290, 1490, 1610],
+  [900, 1170, null, 1360, 1555, 1650],
+  [1000, 1255, null, 1425, 1615, 1690],
+  [1100, 1340, 1660, 1490, 1680, 1730],
+  [1150, 1380, 1665, 1525, 1710, 1750],
+  [1200, 1420, 1670, 1555, 1740, 1770],
+  [1250, 1460, 1675, 1590, 1765, 1795],
+  [1300, 1500, 1685, 1620, 1795, 1815],
+  [1350, 1540, 1700, 1655, 1825, 1835],
+  [1400, 1580, 1710, 1685, 1850, 1860],
+  [1450, 1620, 1725, 1720, 1880, 1880],
+  [1500, 1655, 1740, 1755, 1905, 1900],
+  [1550, 1690, 1760, 1785, 1935, 1925],
+  [1600, 1730, 1780, 1820, 1960, 1945],
+  [1650, 1765, 1800, 1850, 1990, 1970],
+  [1700, 1800, 1820, 1885, 2015, 1990],
+  [1750, 1835, 1840, 1915, 2040, 2015],
+  [1800, 1870, 1865, 1950, 2065, 2035],
+  [1850, 1900, 1890, 1980, 2090, 2055],
+  [1900, 1935, 1915, 2015, 2115, 2080],
+  [1950, 1965, 1940, 2045, 2140, 2100],
+  [2000, 1995, 1965, 2080, 2165, 2120],
+  [2100, 2055, 2020, 2145, 2215, 2165],
+  [2200, 2110, 2075, 2210, 2260, 2205],
+  [2300, 2165, 2135, 2275, 2310, 2245],
+  [2400, 2215, 2190, 2340, 2355, 2280],
+  [2500, 2260, 2245, 2410, 2400, 2320],
+  [2600, 2300, 2300, 2475, 2445, 2350],
+  [2700, 2340, 2350, 2540, 2490, 2385],
+  [2800, 2375, 2400, 2610, 2530, 2415],
+  [2900, 2405, 2445, 2675, 2575, 2440],
+  [3000, 2430, 2485, 2745, 2615, 2465],
+];

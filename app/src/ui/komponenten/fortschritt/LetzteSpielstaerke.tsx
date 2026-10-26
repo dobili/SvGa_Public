@@ -14,8 +14,9 @@
  * 25.10.2026): oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
  * eine kleine Legende nennt die Zeichen. Spanne je Phase und Herleitung stehen hinter dem
  * Fragezeichen.
- * „Lichess | chess.com · FIDE“ schaltet alle Zahlen der Kacheln auf die umgerechnete Liste
- * (wertungsmassstab.ts), mit „≈“ und dem Namen der Liste (Wunsch des Autors, 26.10.2026).
+ * „Lichess | chess.com“ schaltet alle Zahlen der Kacheln auf Bereiche auf chess.com
+ * (wertungsmassstab.ts), mit dem Namen der Liste (Wunsch des Autors, 26.10.2026; Bereiche seit
+ * 0.3.2).
  * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien,
  * verlaufDerZeitklasse), spiel/elomodell.ts, speicher/partien.ts, speicher/speicher.ts,
  * wertungstext.ts, wertungsmassstab.ts, Massstabwahl, InfoKnopf, i18n.
@@ -35,7 +36,7 @@ import {
 import type { Partieeintrag } from "../../../speicher/partien";
 import { useSpeicher } from "../../../speicher/speicher";
 import { MitInfo } from "../bausteine/InfoKnopf";
-import { Listenname, Massstabwahl } from "./Massstabwahl";
+import { Listenname, Massstabtext, Massstabwahl } from "./Massstabwahl";
 import {
   ausserhalbText,
   spanneImMassstab,
@@ -130,9 +131,11 @@ function Kachel({ stand, massstab }: { stand: Kachelstand; massstab: Wertungsmas
       data-testid={`letzte-spielstaerke-${stand.tempo}`}
     >
       <Zeichen className="staerkekachel-zeichen" size={KACHELZEICHEN} aria-hidden="true" />
-      <span className="staerkekachel-zahl">{zahl ? zahl.zahl : "–"}</span>
+      <span className={zahl?.bereich ? "staerkekachel-zahl bereich" : "staerkekachel-zahl"}>
+        {zahl ? <Massstabtext zahl={zahl} /> : "–"}
+      </span>
       {(s || stand.wertung !== null) && (
-        <Listenname liste={massstab === "umgerechnet" ? zielname(stand.tempo) : null} />
+        <Listenname liste={massstab === "umgerechnet" ? zielname() : null} />
       )}
       <Kachelzeilen stand={stand} massstab={massstab} />
     </div>

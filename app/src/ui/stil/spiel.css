@@ -505,6 +505,11 @@
   margin: 0;
 }
 
+/* Ein Bereich statt einer Zahl (seit 0.3.2): eine Stufe kleiner, damit er auf eine Zeile passt. */
+.wertung-zahl.bereich {
+  font-size: var(--groesse-seite);
+}
+
 /* „vorläufig“ neben der Zahl (seit 0.2.142; die Erklärung steht hinter dem Fragezeichen). */
 .wertung-vorlaeufig-marke {
   margin-inline-start: var(--raster);

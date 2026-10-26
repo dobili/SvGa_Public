@@ -1,13 +1,15 @@
 /**
  * Tests des Maßstabs der eigenen Wertung (Wunsch des Autors, 26.10.2026): Zahl, Spanne und Änderung
- * im Maßstab von Lichess oder umgerechnet (chess.com, FIDE), Grenzen der Tabellen und die Karte
- * „Deine Spielstärke“ mit gemerktem Maßstab (Server-Renderer, ohne Gerätespeicher: Lichess).
+ * im Maßstab von Lichess oder umgerechnet als Bereich auf chess.com (seit 0.3.2 alle Zeitklassen),
+ * Grenzen der Tabellen, der Satz in der Auswertung und die Karte „Deine Wertung“ (Server-Renderer,
+ * ohne Gerätespeicher: Lichess).
  */
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { entsprichtEtwa, vergleichsbereich } from "../../../spiel/umrechnung";
+import type { Wertungsschaetzung } from "../../../spiel/elomodell";
+import { bereichEtwa, entsprichtEtwa, vergleichsbereich } from "../../../spiel/umrechnung";
 import type { Wertungspunkt } from "../../../spiel/wertung";
-import { Massstabwahl } from "./Massstabwahl";
+import { Massstabtext, Massstabwahl } from "./Massstabwahl";
 import { Wertungskurve } from "./Wertungskurve";
 import {
   aenderungImMassstab,
@@ -16,6 +18,7 @@ import {
   spanneImMassstab,
   zahlImMassstab,
 } from "./wertungsmassstab";
+import { entsprichtText } from "./wertungstext";
 
 describe("Maßstab der eigenen Wertung", () => {
   it("lässt im Maßstab von Lichess die Zahl unverändert", () => {
@@ -23,46 +26,80 @@ describe("Maßstab der eigenen Wertung", () => {
       zahl: "1680",
       liste: null,
       ausserhalb: false,
+      bereich: false,
     });
     expect(spanneImMassstab("rapid", 1600, 1760, "lichess")).toEqual({ von: "1600", bis: "1760" });
     expect(aenderungImMassstab("blitz", 1500, 1524, "lichess")).toBe(24);
   });
 
-  it("rechnet Schnellschach auf chess.com und Klassisch auf FIDE um, mit „≈“", () => {
-    const rapid = zahlImMassstab("rapid", 1680, "umgerechnet");
-    expect(rapid).toEqual({
-      zahl: `≈ ${entsprichtEtwa("rapid", 1680)}`,
+  it("rechnet alle drei Zeitklassen als Bereich auf chess.com um", () => {
+    const rapid = bereichEtwa("rapid", 1680);
+    expect(zahlImMassstab("rapid", 1680, "umgerechnet")).toEqual({
+      zahl: `${rapid?.von}–${rapid?.bis}`,
       liste: "chess.com",
       ausserhalb: false,
+      bereich: true,
     });
-    const fide = zahlImMassstab("classical", 2120, "umgerechnet");
-    expect(fide.liste).toBe("FIDE");
-    expect(fide.zahl).toMatch(/^≈ 19[3-9]0$/);
-    expect(zahlImMassstab("blitz", 1500, "umgerechnet").liste).toBe("chess.com");
+    for (const tempo of ["blitz", "classical"] as const) {
+      const zahl = zahlImMassstab(tempo, 2000, "umgerechnet");
+      expect(zahl.liste).toBe("chess.com");
+      expect(zahl.zahl).toMatch(/^\d{3,4}–\d{4}$/);
+    }
   });
 
   it("zeigt außerhalb der Tabelle „–“ und nennt die Grenze", () => {
     expect(zahlImMassstab("classical", 1500, "umgerechnet")).toEqual({
       zahl: "–",
-      liste: "FIDE",
+      liste: "chess.com",
       ausserhalb: true,
+      bereich: false,
     });
-    expect(vergleichsbereich("classical")?.von).toBe(1730);
-    expect(ausserhalbText("classical", 1500)).toBe("FIDE erst ab etwa 1730 (Lichess Klassisch)");
+    expect(vergleichsbereich("classical")?.von).toBe(1505);
+    expect(ausserhalbText("classical", 1500)).toBe(
+      "chess.com erst ab etwa 1505 (Lichess Klassisch)",
+    );
     expect(ausserhalbText("blitz", 3200)).toMatch(
       /^chess\.com nur bis etwa \d{4} \(Lichess Blitz\)$/,
     );
   });
 
-  it("rechnet Spanne und Änderung nur, wenn beide Enden in der Tabelle liegen", () => {
+  it("rechnet Spanne als Hülle und Änderung über die Mitte, nur innerhalb der Tabelle", () => {
     const spanne = spanneImMassstab("rapid", 1600, 1760, "umgerechnet");
-    expect(spanne?.von).toBe(`≈ ${entsprichtEtwa("rapid", 1600)}`);
-    expect(spanne?.bis).toBe(String(entsprichtEtwa("rapid", 1760)));
-    expect(spanneImMassstab("classical", 1600, 1900, "umgerechnet")).toBeNull();
+    expect(spanne?.von).toBe(String(bereichEtwa("rapid", 1600)?.von));
+    expect(spanne?.bis).toBe(String(bereichEtwa("rapid", 1760)?.bis));
+    expect(spanneImMassstab("classical", 1400, 1900, "umgerechnet")).toBeNull();
     const vorher = entsprichtEtwa("blitz", 1500) ?? 0;
     const nachher = entsprichtEtwa("blitz", 1560) ?? 0;
     expect(aenderungImMassstab("blitz", 1500, 1560, "umgerechnet")).toBe(nachher - vorher);
-    expect(aenderungImMassstab("classical", 1500, 1800, "umgerechnet")).toBeNull();
+    expect(aenderungImMassstab("classical", 1400, 1800, "umgerechnet")).toBeNull();
+  });
+
+  it("nennt in der Auswertung den Bereich, bei Klassisch dazu FIDE", () => {
+    const schaetzung = (tempo: Wertungsschaetzung["tempo"], mitte: number): Wertungsschaetzung => ({
+      tempo,
+      mitte,
+      von: mitte - 200,
+      bis: mitte + 200,
+      partien: 1,
+    });
+    const rapid = bereichEtwa("rapid", 1680);
+    expect(entsprichtText(schaetzung("rapid", 1680))).toBe(
+      `Deine Zahl gilt für Schnellschach und richtet sich nach Lichess; Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei ${rapid?.von} bis ${rapid?.bis}.`,
+    );
+    const klassisch = entsprichtText(schaetzung("classical", 2120));
+    expect(klassisch).toContain("auf chess.com Schnellschach etwa bei");
+    expect(klassisch).toContain("wertet alle Partien ab zehn Minuten als Schnellschach");
+    expect(klassisch).toMatch(/Beim Weltschachbund \(FIDE\) etwa \d{4} bis \d{4}\.$/);
+    // Unter 1730 nur chess.com, ohne FIDE; unter 1505 kein Vergleichswert.
+    expect(entsprichtText(schaetzung("classical", 1600))).not.toContain("FIDE");
+    expect(entsprichtText(schaetzung("classical", 1400))).toContain("keinen Vergleichswert");
+  });
+
+  it("lässt einen Bereich nach dem Strich umbrechen", () => {
+    const html = renderToStaticMarkup(
+      <Massstabtext zahl={zahlImMassstab("blitz", 1550, "umgerechnet")} />,
+    );
+    expect(html).toMatch(/^\d{3,4}–<wbr\/>\d{4}$/);
   });
 
   it("nimmt ohne Gerätespeicher den Maßstab von Lichess", () => {
@@ -91,6 +128,6 @@ describe("Maßstab der eigenen Wertung", () => {
     const html = renderToStaticMarkup(<Massstabwahl massstab="umgerechnet" beiWahl={() => {}} />);
     expect(html).toContain('aria-label="Maßstab der Wertung"');
     expect(html).toMatch(/aria-checked="false"[^>]*>Lichess</);
-    expect(html).toMatch(/aria-checked="true"[^>]*>chess\.com · FIDE</);
+    expect(html).toMatch(/aria-checked="true"[^>]*>chess\.com</);
   });
 });

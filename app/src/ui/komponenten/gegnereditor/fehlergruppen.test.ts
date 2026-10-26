@@ -1,7 +1,8 @@
 /**
- * Tests von „Fehlerprofil vereinfacht“ (0.2.135, Auftrag „Variante A“): Regler, Achsen und
- * Fleckengruppen, Vorlagen und der Speicherweg alter Gegner (lädt, spielt unverändert, ändert sich
- * erst beim Speichern; Vergleich mit 0.2.134 in speicher/testdaten/alteGegner-0.2.134.json).
+ * Tests von „Fehlerprofil vereinfacht“ (Auftrag „Variante A“): Regler, Achsen und Fleckengruppen,
+ * Vorlagen und der Speicherweg alter Gegner (lädt, spielt unverändert, ändert sich erst beim
+ * Speichern; Vergleich mit gespeicherten alten Gegnern in
+ * speicher/testdaten/alteGegner-0.2.134.json).
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";

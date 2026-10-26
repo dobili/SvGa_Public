@@ -1,6 +1,6 @@
 /**
- * Tests des Fehlerprofils eigener Gegner (DS38, 0.2.129): Stufen setzen und lesen, Höchstverlust.
- * Gruppen, Vorlagen und Speicherweg seit 0.2.135 in fehlergruppen.test.ts.
+ * Tests des Fehlerprofils eigener Gegner (DS38): Stufen setzen und lesen, Höchstverlust.
+ * Gruppen, Vorlagen und Speicherweg prüft fehlergruppen.test.ts.
  */
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../../../engine/fehlerart";

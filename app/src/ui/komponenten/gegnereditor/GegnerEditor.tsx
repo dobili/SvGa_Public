@@ -1,17 +1,13 @@
 /**
- * Eigene Gegner anlegen, ändern und löschen (Wunsch des Autors, 17.10.2026, Version 0.2.42).
+ * Eigene Gegner anlegen, ändern und löschen (Wunsch des Autors, 17.10.2026).
  *
- * Rolle im Gesamtbild: Teil der Kategorie „Eigene Bots“ in der Gegnerwahl (seit 0.2.80; vorher
- * eine Karte unter der Gegnerwahl). Ein eigener Gegner
- * hat Name, Stufen je Phase (StufenWahl.tsx), erlaubte Fehlerarten (Haken; wirksam in Stufe 1
- * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil, seit 0.2.126 einen der sieben
- * Stile der vorgefertigten Bots im Spinnennetz (Stilnetz.tsx, Teil E; vorher ein Regler von sehr
- * defensiv bis sehr aggressiv, engine/stil.ts, der für ältere Gegner bis zum nächsten Speichern
- * gilt); seit 0.2.117 dazu der erweiterte Modus (ErweiterteFehler.tsx: Fehlerhäufigkeit, Stufe je
- * Art auf den Quantilen der Menschen, Höchstverlust); seit 0.2.129 (DS38, DS39) in vier Reitern
- * (GegnerReiter.tsx) mit einem Stufenschalter je Fehlerart. Gespeichert wird im Spielstand
- * (speicher/gegner.ts); gelöschte
- * Gegner bleiben in alten Partien mit ihrem Namen.
+ * Rolle im Gesamtbild: Teil der Kategorie „Eigene Bots“ in der Gegnerwahl. Ein eigener Gegner hat
+ * Name, Porträt, Stufen je Phase (StufenWahl.tsx), einen Stil aus den sieben Stilen der
+ * vorgefertigten Bots im Spinnennetz (Stilnetz.tsx, Teil E), Fehler und blinde Flecken; alles in
+ * vier Reitern (GegnerReiter.tsx, DS38, DS39). Ältere Gegner haben noch einen Stil als Regler von
+ * sehr defensiv bis sehr aggressiv (engine/stil.ts); er gilt bis zum nächsten Speichern.
+ * Gespeichert wird im Spielstand (speicher/gegner.ts); gelöschte Gegner bleiben in alten Partien
+ * mit ihrem Namen.
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
 import { useState } from "react";

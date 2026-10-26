@@ -1,16 +1,14 @@
 /**
- * Fehler eines eigenen Gegners oder der eigenen Stufe: Vorlagen, das
- * Fehlernetz mit fünf Achsen, ein Höchstverlust für alle Fehler und hinter einem Haken die
- * Feinregler (seit 0.2.135; Netz-Vorschau E1 bis E3 und Auftrag „Variante A“, vom Autor am
- * 25.10.2026 freigegeben).
+ * Fehler eines eigenen Gegners oder der eigenen Stufe: Vorlagen, das Fehlernetz mit fünf Achsen,
+ * ein Höchstverlust für alle Fehler und hinter einem Haken die Feinregler (Netz-Vorschau E1 bis
+ * E3 und Auftrag „Variante A“, vom Autor am 25.10.2026 freigegeben).
  *
- * Rolle im Gesamtbild: Bis 0.2.134 stand jede der 18 Fehlerarten mit einem Stufenschalter
- * untereinander (seit 0.2.129, davor Haken und erweiterter Modus). Die statistische Auswertung des
- * Koordinierungschats zeigte, dass mehrere davon kaum ein echtes Merkmal von Spielern messen.
- * Jetzt: fünf Achsen im Netz (Figuren, Taktik, König, Bauernzüge, Eröffnung), darunter neun
- * Regler als Feinregler. Mit offenem Feinregler ist das Netz grau und zeigt den Mittelwert, damit
- * sich nichts widerspricht. Die Logik liegt in fehlergruppen.ts und fehlerprofil.ts. Die Schätzung
- * der Stärke steht seit 0.2.137 über allen Reitern (Gesamtstaerke.tsx).
+ * Rolle im Gesamtbild: Die statistische Auswertung des Koordinierungschats zeigte, dass mehrere
+ * der 18 Fehlerarten einzeln kaum ein echtes Merkmal von Spielern messen. Deshalb fünf Achsen im
+ * Netz (Figuren, Taktik, König, Bauernzüge, Eröffnung), darunter neun Regler als Feinregler. Mit
+ * offenem Feinregler ist das Netz grau und zeigt den Mittelwert, damit sich nichts widerspricht.
+ * Die Logik liegt in fehlergruppen.ts und fehlerprofil.ts. Die Schätzung der Stärke steht über
+ * allen Reitern (Gesamtstaerke.tsx).
  * Abhängigkeiten: fehlergruppen.ts, fehlerprofil.ts, Profilnetz.tsx, Feinregler.tsx,
  * engine/eigenstufen.ts, engine/botstaerke.ts, i18n.
  */

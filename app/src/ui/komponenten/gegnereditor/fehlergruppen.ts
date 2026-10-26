@@ -1,14 +1,14 @@
 /**
  * Fehlerprofil eigener Gegner in Gruppen: neun Regler, fünf Achsen des Netzes, fünf Gruppen der
- * blinden Flecken, Vorlagen und der Speicherweg für gestrichene Arten (seit 0.2.135).
+ * blinden Flecken, Vorlagen und der Speicherweg für gestrichene Arten.
  *
  * Rolle im Gesamtbild: Auftrag „Variante A“ des Koordinierungschats (vom Autor am 25.10.2026
  * freigegeben) und die Netz-Vorschau (E1 bis E4, am selben Tag freigegeben). Die statistische
  * Auswertung an etwa 1 280 Spielerprofilen (Zuverlässigkeit nach Spearman-Brown, Trennbarkeit der
  * Stufen je Elo-Band) zeigte: Mehrere Regler messen kaum ein echtes Merkmal, die Flecken einzeln
- * sind zu schwach, als Gruppen tragen sie. Gespeichert wird weiter je Art und Fleck
- * (EigenerGegner), es gibt keine Migration: Eine Gruppe zeigt den Mittelwert ihrer eingeschalteten
- * Mitglieder und schreibt beim Setzen denselben Wert in alle. Die Engine bleibt unverändert.
+ * sind zu schwach, als Gruppen tragen sie. Gespeichert wird je Art und Fleck (EigenerGegner), es
+ * gibt keine Migration: Eine Gruppe zeigt den Mittelwert ihrer eingeschalteten Mitglieder und
+ * schreibt beim Setzen denselben Wert in alle. Die Engine bleibt unverändert.
  * Abhängigkeiten: fehlerprofil.ts, engine/fehlerart.ts, engine/blindeFlecken.ts.
  */
 import type { BlinderFleck } from "../../../engine/blindeFlecken";

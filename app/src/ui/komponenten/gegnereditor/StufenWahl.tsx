@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026): „einen gerasterten Regler je Phase“. Die
  * Engine folgt der Phase der Stellung und wechselt Zug für Zug um höchstens eine Stufe
- * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe; seit 0.2.101 mit
- * Phasenzeichen (DS26) und der Nummer in der Stufenmarke (DS19).
+ * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe, mit Phasenzeichen
+ * (DS26) und der Nummer in der Stufenmarke (DS19).
  * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), InfoKnopf, i18n.
  */
 import { STUFEN, type Stufennummer } from "../../../engine/stufen";

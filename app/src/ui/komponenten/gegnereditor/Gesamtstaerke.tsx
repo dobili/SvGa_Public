@@ -1,12 +1,12 @@
 /**
  * Geschätzte Stärke der ganzen Einstellung eines eigenen Gegners oder der eigenen Stufe, über den
- * Reitern Stärke, Stil, Fehler, Flecken (seit 0.2.137, Wunsch des Autors vom 25.10.2026).
+ * Reitern Stärke, Stil, Fehler, Flecken (Wunsch des Autors vom 25.10.2026).
  *
- * Rolle im Gesamtbild: Bis 0.2.136 stand die Schätzung nur im Reiter „Fehler“ (Fehlerprofil.tsx),
- * obwohl auch Stärke je Phase, Flecken und Stil die Spielstärke betreffen. Jetzt steht sie einmal
- * über allen Reitern: die Zahl aus den Stufen je Phase (engine/botstaerke.ts, staerkeGeschaetzt),
- * daneben das Urteil über die Menschlichkeit von Fehlern und Flecken. Die langen Sätze (Anteil der
- * Spieler, Richtung, was in die Zahl eingeht) stehen hinter dem Fragezeichen.
+ * Rolle im Gesamtbild: Nicht nur die Fehler, auch Stärke je Phase, Flecken und Stil betreffen die
+ * Spielstärke; deshalb steht die Schätzung einmal über allen Reitern: die Zahl aus den Stufen je
+ * Phase (engine/botstaerke.ts, staerkeGeschaetzt), daneben das Urteil über die Menschlichkeit von
+ * Fehlern und Flecken. Die langen Sätze (Anteil der Spieler, Richtung, was in die Zahl eingeht)
+ * stehen hinter dem Fragezeichen.
  * Abhängigkeiten: engine/botstaerke.ts, engine/eigenstufen.ts, fehlerprofil.ts, InfoKnopf, i18n.
  */
 import { staerkeGeschaetzt } from "../../../engine/botstaerke";

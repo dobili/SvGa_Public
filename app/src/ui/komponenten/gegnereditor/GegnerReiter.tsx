@@ -1,13 +1,12 @@
 /**
- * Einstellungen eines Gegners in vier Reitern: Stärke, Stil, Fehler, Blinde Flecken (seit 0.2.129,
- * Vorschlag DS39, vom Autor am 25.10.2026 freigegeben).
+ * Einstellungen eines Gegners in vier Reitern: Stärke, Stil, Fehler, Blinde Flecken (Vorschlag
+ * DS39, vom Autor am 25.10.2026 freigegeben).
  *
  * Rolle im Gesamtbild: „Eigene Stufe“ (EigeneStufe.tsx) und „Eigene Bots“ (GegnerEditor.tsx)
- * zeigten Stufen, Spinnennetz, Fehlerarten, blinde Flecken und den erweiterten Modus untereinander,
- * zusammen rund sechs Bildschirme. Jetzt teilen sich beide denselben Rahmen mit Reitern wie die
- * Einstellungen; an „Fehler“ und „Blinde Flecken“ steht, wie viele an sind. Den Inhalt der Reiter
- * Stärke und Stil liefern die Aufrufer, weil die eigene Stufe ihre Stufen anders speichert.
- * Seit 0.2.135 zählen die Reiter Regler (höchstens neun) und Fleckengruppen (höchstens fünf).
+ * teilen sich denselben Rahmen mit Reitern wie die Einstellungen; untereinander wären es rund
+ * sechs Bildschirme. An „Fehler“ und „Blinde Flecken“ steht, wie viele an sind: Regler (höchstens
+ * neun) und Fleckengruppen (höchstens fünf). Den Inhalt der Reiter Stärke und Stil liefern die
+ * Aufrufer, weil die eigene Stufe ihre Stufen anders speichert.
  * Abhängigkeiten: Reiter, Fehlerprofil, Fleckennetz, fehlergruppen.ts, engine/gegner.ts, i18n,
  * lucide-react.
  */

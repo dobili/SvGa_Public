@@ -1,11 +1,12 @@
 /**
  * Feinregler des Fehlerprofils: Fehlerhäufigkeit, unmenschliche Werte, die neun Regler je Achse
- * mit Höchstverlust und der Schalter „setzt nie Patt“ (seit 0.2.135, Netz-Vorschau E1 und E3).
+ * mit Höchstverlust und der Schalter „setzt nie Patt“ (Netz-Vorschau E1 und E3).
  *
  * Rolle im Gesamtbild: Hinter dem Haken „Feinregler für jede Fehlerart“ unter dem Netz
  * (Fehlerprofil.tsx). Das Netz bleibt dann grau und zeigt den Mittelwert, damit sich nichts
- * widerspricht. Die Säulen sind die von 0.2.131 (Stufenschalter.tsx); „Eröffnungsfehler“
- * schreibt in frühe Dame, Tempoverlust und Bauernraub zugleich (Auftrag „Variante A“).
+ * widerspricht. Jeder Regler ist ein Stufenschalter aus Säulen (Stufenschalter.tsx);
+ * „Eröffnungsfehler“ schreibt in frühe Dame, Tempoverlust und Bauernraub zugleich (Auftrag
+ * „Variante A“).
  * Abhängigkeiten: fehlergruppen.ts, fehlerprofil.ts, Stufenschalter.tsx, i18n, lucide-react.
  */
 import { BookOpen, ChessPawn, Crown, Gem, Zap, type LucideIcon } from "lucide-react";

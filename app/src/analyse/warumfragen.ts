@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 3 „Warum-Fragen mit Antwortauswahl“ für Buchstellungen. Die
  * Fragen kommen aus der Pipeline (abbildung.vorbereitet, AP 14); Entwürfe erscheinen nur in
- * Testversionen und sind gekennzeichnet. Seit 0.2.27 zeigt die App nur noch die Warum-Fragen,
- * nicht mehr die Einschätzungen je Werkzeug (Entscheidung des Autors vom 15.10.2026: nichts aus
+ * Testversionen und sind gekennzeichnet. Die App zeigt nur die Warum-Fragen,
+ * nicht die Einschätzungen je Werkzeug (Entscheidung des Autors vom 15.10.2026: nichts aus
  * dem Buch vorwegnehmen). Später (AP 13) dienen die Fragen auch als Wiederholungskarten.
  * Abhängigkeiten: daten/generiert (Typen der Buchdaten).
  */
@@ -28,7 +28,7 @@ export function istRichtig(frage: Frage, gewaehlt: number): boolean {
 }
 
 /**
- * Warum-Fragen je Abbildung, nur Abbildungen mit Fragen (0.2.99: Zeichen in der Kapitelübersicht
+ * Warum-Fragen je Abbildung, nur Abbildungen mit Fragen (für das Zeichen in der Kapitelübersicht
  * und Zähler im Fortschritt). Beispiel: Kapitel 1 → { "1.26": 1, … }.
  */
 export function fragenJeAbbildung(

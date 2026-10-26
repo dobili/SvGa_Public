@@ -193,7 +193,7 @@ export function zaehle(stellung: Stellung, ziel: Square): Werkzeugergebnis {
     markierungen: markierungen(rot, gold, ziel),
     // Schon Stufe 1 zeigt beide Seiten: Zählen heißt Angreifer gegen Verteidiger stellen
     // (Regel: Kapitel 1, Zählen von Angreifern und Verteidigern); das Fazit nennt beide Zahlen.
-    // Seit den gestuften Karten (0.2.30) hätte die Karte sonst die Verteidiger versteckt.
+    // Die gestuften Karten würden sonst auf den ersten Stufen die Verteidiger verstecken.
     stufen: [ZWEI_SEITEN, ZWEI_SEITEN, ZWEI_SEITEN],
     regel: t("werkzeug.k1-zaehlen.regel"),
   };

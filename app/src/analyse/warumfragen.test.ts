@@ -1,4 +1,4 @@
-/** Tests für die Warum-Fragen einer Abbildung (AP 14, seit 0.2.27 ohne Einschätzungen). */
+/** Tests für die Warum-Fragen einer Abbildung (AP 14, ohne Einschätzungen je Werkzeug). */
 import { describe, expect, it } from "vitest";
 import { istRichtig, warumFragen, type Vorbereitet } from "./warumfragen";
 

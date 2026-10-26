@@ -1,11 +1,11 @@
 /**
  * Werkzeug k11-phase: In welcher Phase steht die Partie, und welches Werkzeug des Buches ist an
- * der Reihe? Bei den Beispielpartien dazu Thema und Werkzeug der Partie; die Lehre bleibt seit
- * 0.2.27 im Buch, damit die App nichts vorwegnimmt (Entscheidung des Autors vom 15.10.2026).
+ * der Reihe? Bei den Beispielpartien dazu Thema und Werkzeug der Partie; die Lehre bleibt im
+ * Buch, damit die App nichts vorwegnimmt (Entscheidung des Autors vom 15.10.2026).
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Werkzeug je Phase. N“). Gold: der Weg des Königs der
- * Seite am Zug ins Zentrum im Endspiel. Seit 0.2.33 (C1.27) gilt die Phase für beide Seiten
- * gleich; das Werkzeug hat deshalb keinen Sicht-Schalter mehr.
+ * Seite am Zug ins Zentrum im Endspiel. Die Phase gilt für beide Seiten gleich (C1.27); das
+ * Werkzeug hat deshalb keinen Sicht-Schalter.
  * Abhängigkeiten: schach/phase.ts, analyse/stellungsprofil.ts, i18n.
  * Buchbezug: Kapitel 11, Tabelle „Die Partien dieses Kapitels und ihre Werkzeuge“ und Rückblick;
  * Kapitel 12, Denkroutine Schritt 1 („Davon hängt ab, mit welchem Werkzeug du in Schritt 2 nach
@@ -60,7 +60,7 @@ const WERKZEUGZEILEN: Readonly<Record<Phase, readonly Textschluessel[]>> = {
 /**
  * Zeilen zur Phase: das Urteil, die Leichtfiguren auf dem Startfeld, die drei Eröffnungsziele
  * beider Seiten (Weiß zuerst wie die Tabellen im Buch) und die vier Prüffragen. Greift eine
- * Zusatzregel, die nicht aus dem Buch stammt (0.2.41), steht das als zweite Zeile dabei.
+ * Zusatzregel, die nicht aus dem Buch stammt (Rückfrage S2), steht das als zweite Zeile dabei.
  * Beispiel: Abb. 11.28 → „Mittelspiel: …“, „Leichtfiguren auf dem Startfeld: Weiß 0, Schwarz 0.“,
  * „Eröffnungsziele Schwarz: …, Königssicherheit nein.“
  */

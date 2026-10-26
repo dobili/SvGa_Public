@@ -3,8 +3,8 @@
  *
  * Die Kalibrierung vergleicht jede Wertung (ja, teils, nein) der Bilanztabellen im Buch mit der
  * App, Seite für Seite (Konzept 13). Abweichungen stehen als Befund in docs/FORTSCHRITT.md und
- * hier in BEFUNDE; jede andere Abweichung lässt den Test scheitern. Seit 0.2.33 (C1.1) gehört
- * zur Zentrumsprüfung die Nachrechnung der Engine: Angegriffene Zentrumsbauern prüft Stockfish,
+ * hier in BEFUNDE; jede andere Abweichung lässt den Test scheitern. Zur Zentrumsprüfung gehört
+ * die Nachrechnung der Engine (C1.1): Angegriffene Zentrumsbauern prüft Stockfish,
  * wie die Karte in der App (ZentrumKarte.tsx).
  */
 import { afterAll, describe, expect, it } from "vitest";

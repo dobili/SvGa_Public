@@ -15,7 +15,7 @@ import type { Verlauf } from "../schach/todsuenden";
 export type Befundart = "E" | "N" | "V";
 
 /** Farbe einer Markierung, wie im Buch (Konzept 10.3). */
-/** Gold, Rot, Grau wie im Buch; Grün und Blau nur für die Zugklassen im Rückblick (0.2.40). */
+/** Gold, Rot, Grau wie im Buch; Grün und Blau nur für die Zugklassen im Rückblick. */
 export type Markierungsfarbe = "gold" | "rot" | "grau" | "gruen" | "blau";
 
 /** Eine Markierung auf dem Brett: Pfeil von Feld zu Feld oder ein markiertes Feld. */

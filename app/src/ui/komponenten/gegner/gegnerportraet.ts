@@ -1,6 +1,6 @@
 /**
  * Hilfen der Gegnerwahl ohne Oberfläche: Adresse eines Porträts und die offenen Stufen beim
- * ersten Zeigen (seit 0.2.85, Gegnerstufen.tsx).
+ * ersten Zeigen (Gegnerstufen.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts.
  */
 import { gegnerVon, istSpassbot, klasseVon } from "../../../engine/gegner";

@@ -2,15 +2,15 @@
  * Die vorgefertigten Gegner als Porträtgitter in acht aufklappbaren Gruppen je Stufe, dazu die
  * Kachel eines Gegners und die Adresse seines Porträts.
  *
- * Rolle im Gesamtbild: Teil der Gegnerwahl (GegnerWahl.tsx). Seit 0.2.85 (Wunsch des Autors) sind
- * die Stufen aufklappbar, damit nicht immer alle 64 Porträts zu sehen sind; die App merkt sich auf
- * dem Gerät, welche Stufen offen waren (app/merker.ts, eine Bequemlichkeit, die verloren gehen
- * darf). Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht seit 0.2.85
- * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.88 steht vor Stufe 1 die Gruppe
- * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors). Seit 0.2.101 (Symbolsprache DS19) trägt jede
- * Stufenzeile eine farbige Marke, die ersten Porträts und die Zahl besiegter Bots; seit 25.10.2026
- * mit dem Zeichen der Zeitklasse statt des Sterns, weil die Zahl für die gewählte Uhr gilt und die
- * Porträts jetzt je Zeitklasse eine eigene Siegmarke tragen (Wunsch des Autors).
+ * Rolle im Gesamtbild: Teil der Gegnerwahl (GegnerWahl.tsx). Die Stufen sind aufklappbar (Wunsch
+ * des Autors), damit nicht immer alle 64 Porträts zu sehen sind; die App merkt sich auf dem
+ * Gerät, welche Stufen offen waren (app/merker.ts, eine Bequemlichkeit, die verloren gehen darf).
+ * Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht die Elo-Zahl
+ * (engine/botstaerke.ts, Rückfrage S23). Vor Stufe 1 steht die Gruppe „Zum Spaß“ mit den
+ * Spaß-Bots (Wunsch des Autors). Jede Stufenzeile trägt eine farbige Marke (Symbolsprache DS19),
+ * die ersten Porträts und die Zahl besiegter Bots mit dem Zeichen der Zeitklasse, weil die Zahl
+ * für die gewählte Uhr gilt und die Porträts je Zeitklasse eine eigene Siegmarke tragen (Wunsch
+ * des Autors, 25.10.2026).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, engine/botstaerke.ts, staerkeangabe.ts,
  * speicher/besiegt.ts, zeitartzeichen.ts, app/merker.ts, lucide, i18n.
  */

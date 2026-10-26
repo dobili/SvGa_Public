@@ -25,7 +25,7 @@ import { fenNachZuegen } from "../../schach/weiterspielen";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
-import type { Zweigzug } from "../../spiel/nebenzweig";
+import { MIT_BESSEREM, MIT_STRAFE, type Zweigzug } from "../../spiel/nebenzweig";
 import { balkentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
@@ -101,19 +101,6 @@ function urteilssatz(zug: string, urteil: Zugurteil, bester: string, chance: Cha
       return t("rueckblick.verlust", { zug: mitZeichen, ...chance });
   }
 }
-
-/** Bei diesen Klassen nennt die Karte den besseren Zug. */
-const MIT_BESSEREM: ReadonlySet<Zugurteil["klasse"]> = new Set([
-  "sehrGut",
-  "gut",
-  "ungenau",
-  "fehler",
-  "verpasst",
-  "patzer",
-]);
-
-/** Bei diesen Klassen zeigt die Karte, wie der Gegner den Fehler bestraft (seit 0.2.85). */
-const MIT_STRAFE: ReadonlySet<Zugurteil["klasse"]> = new Set(["fehler", "patzer"]);
 
 /** Die Karte unter dem Brett zum gezeigten Zug. */
 export function Rueckblickkarte({

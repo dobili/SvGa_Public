@@ -913,3 +913,22 @@
   font-size: var(--groesse-fein);
   white-space: normal;
 }
+
+/* Knöpfe unter dem Brett, die die Varianten des Rückblicks abspielen (0.3.0). */
+.variantenknoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  margin: calc(var(--raster) / 2) 0;
+}
+
+.variantenknoepfe button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+}
+
+.variantenknoepfe button[aria-pressed="true"] {
+  border-color: var(--gold);
+}

@@ -156,6 +156,23 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Dazu die Strafe: 2... Dh4# als eigener Zweig.
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
+  // Seit 0.3.0 spielen Knöpfe unter dem Brett die Varianten langsam ab, bis zum letzten Zug.
+  const abspielen = page.getByTestId("abspielen-besser");
+  await abspielen.click();
+  await expect(abspielen).toHaveText("Anhalten");
+  await expect(zweig.locator(".zweigzug").last()).toHaveAttribute("aria-pressed", "true", {
+    timeout: ENGINE_FRIST,
+  });
+  await expect(abspielen).toHaveText("Besseren Zug abspielen", { timeout: ENGINE_FRIST });
+  await page.getByTestId("abspielen-strafe").click();
+  await expect(page.getByTestId("nebenzweig-strafe").locator(".zweigzug").first()).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await page
+    .getByTestId("nebenzweig-strafe")
+    .getByRole("button", { name: "Zurück zur Partie" })
+    .click();
   // Seit 0.2.121 ohne Schalter „Genauigkeit wie“: Genauigkeit nach Lichess, Spielstärke aus dem
   // Elo-Modell je Zeitklasse, Erklärung hinter dem Fragezeichen.
   const spielstaerke = page.getByTestId("spielstaerke");

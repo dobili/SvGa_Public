@@ -8,8 +8,10 @@
  * für die gezeigte Stellung (spiel/erklaerung.ts, ohne Engine); während der Partie bleibt alles
  * aus. Beginnt mit der Stellung nach dem gezeigten Zug eine neue Phase, erklärt die Karte, warum
  * (Wunsch des Autors, 0.2.44; analyse/phasentext.ts).
+ * Seit 0.3.0 (Wunsch des Autors, 26.10.2026) dazu die Knöpfe unter dem Brett, die die beiden
+ * Varianten der Karte langsam abspielen (Variantenknoepfe.tsx).
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, spiel/phasen.ts, Bewertungsbalken,
- * Rueckblickkarte.
+ * Rueckblickkarte, Variantenknoepfe.
  */
 import { useMemo, type ReactNode } from "react";
 import { phasensatz, zusatzsatz } from "../../analyse/phasentext";
@@ -17,7 +19,7 @@ import type { Markierung } from "../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../spiel/phasen";
 import type { Zugurteil } from "../../spiel/auswertung";
 import { erklaereZug, type Zugerklaerung } from "../../spiel/erklaerung";
-import { zweigzuege, type Zweigzug } from "../../spiel/nebenzweig";
+import { MIT_BESSEREM, MIT_STRAFE, zweigzuege, type Zweigzug } from "../../spiel/nebenzweig";
 import type { Partie } from "../../spiel/partie";
 import { rueckblickMarken } from "../../spiel/rueckblick";
 import { sanZuUci } from "../../spiel/zuege";
@@ -25,6 +27,7 @@ import type { Theoriequellen } from "../../schach/theorie";
 import { Bewertungsbalken } from "./Bewertungsbalken";
 import type { Zweigwahl } from "./Nebenzweig";
 import { Rueckblickkarte } from "./Rueckblickkarte";
+import { Variantenknoepfe } from "./Variantenknoepfe";
 
 /** Was der Rückblick nach der ausgewerteten Partie braucht. */
 export interface Rueckblick {
@@ -95,6 +98,8 @@ export function useRueckblick(
   marken: readonly Markierung[];
   leiste: ((gedreht: boolean) => ReactNode) | null;
   karte: ReactNode;
+  /** Die Knöpfe „abspielen“ unter dem Brett (seit 0.3.0), sonst null. */
+  abspielen: ReactNode;
   /** Der gezeigte Zug des Nebenzweigs (seit 0.2.85), sonst null. */
   zweigzug: Zweigzug | null;
 } {
@@ -123,7 +128,8 @@ export function useRueckblick(
         : [],
     [rueckblick, alle, index],
   );
-  if (!rueckblick) return { marken: [], leiste: null, karte: null, zweigzug: null };
+  if (!rueckblick)
+    return { marken: [], leiste: null, karte: null, abspielen: null, zweigzug: null };
   const marken =
     index >= 0
       ? [
@@ -154,5 +160,16 @@ export function useRueckblick(
     ) : null;
   const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;
   const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
-  return { marken, leiste, karte, zweigzug };
+  // Dieselben Bedingungen wie in der Karte, damit nur abspielbar ist, was dort auch steht.
+  const klasse = index >= 0 ? rueckblick.urteile[index]?.klasse : undefined;
+  const mitBesser = klasse !== undefined && MIT_BESSEREM.has(klasse) && !!rueckblick.beste[index];
+  const mitStrafe = klasse !== undefined && MIT_STRAFE.has(klasse);
+  const abspielen = (
+    <Variantenknoepfe
+      besser={mitBesser ? zweigZuege : []}
+      strafe={mitStrafe ? strafZuege : []}
+      wahl={zweig}
+    />
+  );
+  return { marken, leiste, karte, abspielen, zweigzug };
 }

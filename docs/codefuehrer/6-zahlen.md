@@ -9,7 +9,7 @@ Hand geschrieben:
 - **Menschliches Verhalten** (`menschenprofil-daten.ts`, `wahlmodell-daten.ts`, `zeitnot-daten.ts`,
   `bedenkzeit-daten.ts`, `spielerbereiche-daten.ts`): aus Lichess-Partien echter Spieler.
 - **Elo-Modell und Vergleiche** (`spiel/elomodell-daten.ts`, `spiel/umrechnung-daten.ts`,
-  `spiel/zugklassenvergleich-daten.ts`): aus 77 000 gewerteten Lichess-Partien von 3 900 Spielern.
+  `spiel/zugklassenvergleich-daten.ts`): aus 77 000 gewerteten Lichess-Partien von 3 900 Spielern; seit 0.3.0 alle zehn Klassen mit der Regel der App gemessen (`spiel/zugklassen.messung.ts`).
 - **Praxisbuch** (`app/public/daten/praxisbuch.json`): ein Monat Lichess-Partien, gezählt je
   Zeitklasse und Stärke.
 

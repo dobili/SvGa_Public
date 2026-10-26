@@ -10,14 +10,16 @@
  * (spiel/zugklassenvergleich-daten.ts): „üblich“ ist der Median der Spieler des Bandes in der
  * Zeitklasse, „normal“ reicht vom 5-%- bis zum 95-%-Quantil der Spieler, erweitert um die
  * Zufallsstreuung einer einzelnen Partie mit so vielen Zügen (Binomial, 90 %), damit eine Partie
- * nicht schon durch Würfelglück „gut“ oder „schwach“ heißt. Brillant, stark und Theoriezug kennen die
- * Profile nicht; dafür bleibt die vorläufige Schätzung mit der festen Zone 75 bis 125 %.
+ * nicht schon durch Würfelglück „gut“ oder „schwach“ heißt. Seit 0.3.0 (Wunsch des Autors,
+ * 26.10.2026) sind alle zehn Klassen gemessen: Der Messlauf spiel/zugklassen.messung.ts bestimmt
+ * die Klasse jedes Zuges der Profile mit der Regel der App; vorher waren brillant, stark und
+ * Theoriezug geschätzt (feste Zone 75 bis 125 %), und „bester“ enthielt sie noch.
  * Abhängigkeiten: spiel/auswertung.ts (Zugklasse), spiel/zugklassenvergleich-daten.ts,
  * spiel/elomodell-daten.ts (Zeitklasse).
  */
 import type { Zugklasse } from "./auswertung";
 import type { Wertungstempo } from "./elomodell-daten";
-import { ZUGKLASSEN_UEBLICH, type Quantilklasse } from "./zugklassenvergleich-daten";
+import { ZUGKLASSEN_UEBLICH } from "./zugklassenvergleich-daten";
 
 /** Klassen, von denen man viele haben will; die übrigen möglichst wenige. */
 export const GUTE_KLASSEN: ReadonlySet<Zugklasse> = new Set([
@@ -28,41 +30,6 @@ export const GUTE_KLASSEN: ReadonlySet<Zugklasse> = new Set([
   "gut",
   "buch",
 ]);
-
-/**
- * Klassen, die die Spielerprofile nicht kennen: vorläufige Anteile in Prozent je Band.
- * „buch“ heißt seit dem 25.10.2026 „Theoriezug“ (schach/theorie.ts). Nachgemessen an 60.000
- * Lichess-Partien (September 2026, ohne Bullet, Anteil an allen Zügen einer Seite): Theoriezüge
- * nach der neuen Regel 6,9 bis 8,0 %, Züge aus dem Eröffnungsindex des Buches allein nur 3,7 bis
- * 4,7 %. Die alte Schätzung (6, 8, 10, 11 %) lag ab etwa 1600 über dem Gemessenen, übliche
- * Spieler bekamen dort „wenig“. Seit 0.2.135 (Empfehlung nach Regel 9, N949) die gemessenen
- * Schnellschach-Werte; brillant und stark bleiben Schätzungen.
- */
-const VORLAEUFIG: Readonly<
-  Record<"brillant" | "stark" | "buch", readonly (readonly [number, number])[]>
-> = {
-  brillant: [
-    [800, 0.3],
-    [1200, 0.4],
-    [1600, 0.5],
-    [2000, 0.6],
-  ],
-  stark: [
-    [800, 1],
-    [1200, 1.5],
-    [1600, 2],
-    [2000, 2.5],
-  ],
-  buch: [
-    [800, 7.5],
-    [1200, 7.6],
-    [1600, 7.5],
-    [2000, 8],
-  ],
-};
-/** Zone „normal“ der vorläufigen Klassen: 75 bis 125 % des Üblichen. */
-const VORLAEUFIG_UNTEN = 0.75;
-const VORLAEUFIG_OBEN = 1.25;
 
 /** Unter so vielen eigenen Zügen springen die Anteile zu stark: dann nur die Anzahlen. */
 export const MINDESTZUEGE_VERGLEICH = 15;
@@ -109,11 +76,7 @@ function interpoliert(punkte: readonly (readonly [number, number])[], x: number)
 }
 
 /** Die drei Quantile [5 %, Median, 95 %] einer Profilklasse bei dieser Stärke und Zeitklasse. */
-function quantile(
-  klasse: Quantilklasse,
-  elo: number,
-  tempo: Wertungstempo,
-): [number, number, number] {
+function quantile(klasse: Zugklasse, elo: number, tempo: Wertungstempo): [number, number, number] {
   const baender = Object.entries(ZUGKLASSEN_UEBLICH[tempo])
     .map(([band, werte]) => [Number(band) + HALBES_BAND, werte[klasse]] as const)
     .sort((a, b) => a[0] - b[0]);
@@ -125,36 +88,19 @@ function quantile(
   return [je(0), je(1), je(2)];
 }
 
-/** Summe der vorläufigen Klassen, die in den Profilen unter „bester“ stecken. */
-function vorlaeufigeSumme(elo: number): number {
-  return (
-    interpoliert(VORLAEUFIG.brillant, elo) +
-    interpoliert(VORLAEUFIG.stark, elo) +
-    interpoliert(VORLAEUFIG.buch, elo)
-  );
-}
-
 /**
  * Üblich und Zone „normal“ (Prozent) einer Klasse bei dieser Stärke und Zeitklasse, ohne die
  * Zufallsstreuung der Partie. Beispiel: „patzer“ bei 1400 Schnellschach → üblich etwa 3,4 %,
- * normal etwa 1,8 bis 5 %; „bester“ 1400 → Median der Profile minus Buch, stark und brillant.
+ * normal etwa 1,8 bis 5 %. Sonderfall: brillant hat bei den meisten Spielern den Anteil 0; die
+ * Mitte ist dann das Mittel der Spieler (spiel/zugklassenvergleich-daten.ts).
  */
 export function ueblicheSpanne(
   klasse: Zugklasse,
   elo: number,
   tempo: Wertungstempo = "rapid",
 ): { readonly unten: number; readonly ueblich: number; readonly oben: number } {
-  if (klasse === "brillant" || klasse === "stark" || klasse === "buch") {
-    const ueblich = interpoliert(VORLAEUFIG[klasse], elo);
-    return { unten: ueblich * VORLAEUFIG_UNTEN, ueblich, oben: ueblich * VORLAEUFIG_OBEN };
-  }
-  const [p5, median, p95] = quantile(klasse, elo, tempo);
-  const abzug = klasse === "bester" ? vorlaeufigeSumme(elo) : 0;
-  return {
-    unten: Math.max(0, p5 - abzug),
-    ueblich: Math.max(0, median - abzug),
-    oben: Math.max(0, p95 - abzug),
-  };
+  const [unten, ueblich, oben] = quantile(klasse, elo, tempo);
+  return { unten, ueblich, oben };
 }
 
 /** Üblicher Anteil einer Klasse in Prozent (Median der Spieler). */

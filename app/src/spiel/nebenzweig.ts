@@ -9,6 +9,20 @@
 import { sanInSprache } from "../schach/notation";
 import { fenNach, uciZuSan } from "./zuege";
 import { sprache } from "../i18n/sprache";
+import type { Zugklasse } from "./auswertung";
+
+/** Bei diesen Klassen nennt die Rückblickkarte den besseren Zug (Variante „besser“). */
+export const MIT_BESSEREM: ReadonlySet<Zugklasse> = new Set([
+  "sehrGut",
+  "gut",
+  "ungenau",
+  "fehler",
+  "verpasst",
+  "patzer",
+]);
+
+/** Bei diesen Klassen zeigt sie, wie der Gegner den Fehler bestraft (seit 0.2.85). */
+export const MIT_STRAFE: ReadonlySet<Zugklasse> = new Set(["fehler", "patzer"]);
 
 /** Ein Zug des Nebenzweigs. */
 export interface Zweigzug {

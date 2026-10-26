@@ -1,4 +1,4 @@
-/** Tests des Zugklassenvergleichs (R56; seit 0.2.125 mit den Spannen der Spielerprofile). */
+/** Tests des Zugklassenvergleichs (R56; seit 0.2.125 mit den Spannen der Spielerprofile, seit 0.3.0 für alle Klassen). */
 import { describe, expect, it } from "vitest";
 import { ueblicheSpanne, ueblicherAnteil, vergleicheKlasse } from "./zugklassenvergleich";
 
@@ -14,8 +14,12 @@ describe("Zugklassenvergleich", () => {
     expect(ueblicherAnteil("patzer", 100, "classical")).toBe(
       ueblicherAnteil("patzer", 1000, "classical"),
     );
-    // Brillant und stark bleiben vorläufig; Theoriezug seit 0.2.135 gemessen (N949).
-    expect(ueblicherAnteil("buch", 1400)).toBeCloseTo(7.55);
+    // Seit 0.3.0 alle Klassen gemessen: Theoriezug um 6 %, stark um 8 %, brillant selten.
+    expect(ueblicherAnteil("buch", 1400)).toBeGreaterThan(4);
+    expect(ueblicherAnteil("buch", 1400)).toBeLessThan(9);
+    expect(ueblicherAnteil("stark", 1400)).toBeGreaterThan(5);
+    expect(ueblicherAnteil("brillant", 1400)).toBeGreaterThan(0);
+    expect(ueblicherAnteil("brillant", 1400)).toBeLessThan(1);
     expect(ueblicherAnteil("bester", 1400, "rapid")).toBeLessThan(
       ueblicheSpanne("bester", 1400, "rapid").oben,
     );

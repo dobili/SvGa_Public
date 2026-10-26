@@ -22,7 +22,8 @@ KOPF = """/**
  * Konten mit ihrer aktuellen Wertung (Klassisch → chess.com Schnellschach).
  * Je Zeile [Lichess, von, Mitte, bis, Spieler]: Median und Viertel (25 %, 75 %) der Zielwertung bei
  * Spielern mit Lichess-Zahl ±100, die Ränder um eine Standardabweichung der Messung (Bootstrap)
- * nach außen geschoben. Paare je Zeitklasse: {paare}.
+ * nach außen geschoben.
+ * Paare: {paare}.
  * Abhängigkeiten: spiel/elomodell-daten.ts (Zeitklasse).
  */
 import type {{ Wertungstempo }} from "./elomodell-daten";
@@ -47,7 +48,7 @@ def schreiben(ergebnis: dict, ziel: Path) -> None:
             zeilen = "".join(f"      {json.dumps(z).replace(',', ', ')},\n" for z in ergebnis[liste][tempo])
             teile.append(f"    {tempo}: [\n{zeilen}    ],\n" if zeilen else f"    {tempo}: [],\n")
         teile.append("  },\n")
-    paare = "; ".join(
+    paare = ";\n *   ".join(
         f"{liste} {', '.join(f'{t} {n}' for t, n in werte.items())}"
         for liste, werte in ergebnis["paare"].items()
     )

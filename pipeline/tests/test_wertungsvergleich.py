@@ -52,7 +52,7 @@ def test_quantil_und_monoton():
     assert monoton([1, 3, 2, 4]) == [1, 2.5, 2.5, 4]
 
 
-def test_filter_runde_zahlen_und_vorlaeufige():
+def test_filter_runde_zahlen_und_unsichere_wertung():
     profil = {
         "fide": 1600,
         "gesehen": JETZT_MS,
@@ -61,7 +61,7 @@ def test_filter_runde_zahlen_und_vorlaeufige():
     assert fide_paare([profil], "blitz", JETZT_MS) == []
     profil["fide"] = 1613
     assert fide_paare([profil], "blitz", JETZT_MS) == [(1900, 1613)]
-    profil["perfs"]["blitz"]["prov"] = True
+    profil["perfs"]["blitz"]["rd"] = 160
     assert fide_paare([profil], "blitz", JETZT_MS) == []
 
 

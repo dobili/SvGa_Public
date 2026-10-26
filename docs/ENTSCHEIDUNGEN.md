@@ -5976,3 +5976,33 @@ Bereich statt einer Zahl; wo die Daten dünn sind, breiter. Rückfragen W1 bis W
   Mitten. FIDE nur noch im Satz der Auswertung bei Klassisch (ab 1730). Quellenangabe chessgoals.com
   wieder hinter dem Fragezeichen (war beim Vereinfachen der Erklärtexte in 0.2.144 entfallen).
 - **Nicht geändert:** Elo-Modell, Bot-Messungen, gespeicherte Daten.
+
+## Wertung als Bereich auf chess.com und FIDE, gemessen (26.10.2026, Opus, Version 0.3.3)
+
+Wunsch des Autors (26.10.2026 abends): Lichess unverändert (keine Änderung am Elo-Modell),
+dazu je ein Schalter für chess.com und FIDE, für jede Zeitart ein Bereich auf einem vernünftigen
+statistischen Fundament; Angaben von chessgoals.com nutzen, wenn sie das Ergebnis verbessern.
+Damit erledigt: früher W3 (Stellung FIDE, „ja“), W6 (Lichess wie gehabt), W7 (Abweichungen, hier
+unter 0.3.2 festgehalten).
+
+- **Schalter** „Lichess | chess.com | FIDE“; neuer Merker „fide“ (ein älterer Stand liest ihn als
+  Lichess). Der Satz der Auswertung nennt chess.com und FIDE für jede Zeitart.
+- **Quellenlage:** Keine Quelle veröffentlicht Streuung je Wertungsband (chessgoals.com: eine Zahl
+  je Spalte; ChessMonitor 2023: r² = 0,65 und ±118 nur für Lichess Blitz; handsonml, Lichess-Forum:
+  Faustregeln). chessgoals.com nennt keine Zeilenzahlen.
+- **Eigene Messung** (`pipeline/wertungsvergleich/`): 150 000 Lichess-Profile aus Teams (nacheinander
+  abgefragt, Lichess antwortet sonst 429), 14 690 mit FIDE-Angabe, 1214 mit chess.com-Link. FIDE
+  über Klarname und Zahl (±150) gegen die offizielle FIDE-Liste (Oktober 2026), nur eindeutige,
+  aktive Treffer, offizielle Standard-Wertung: 2165 abgeglichen. Klarnamen nur im Speicher.
+  Filter: Lichess mindestens 20 Partien, RD unter 150 (wie chessgoals.com; unter 110 blieben für
+  Klassisch nur rund 100 Paare), im letzten Jahr gesehen; chess.com ebenso.
+- **Statistik:** bedingte Quantile (25/50/75 %) im Fenster ±100 um jede Stützstelle (alle 50),
+  Abweichungen von einer monotonen Mediankurve (damit die Steigung im Fenster die Streuung nicht
+  aufbläht), Ränder um eine Bootstrap-Standardabweichung nach außen, mindestens 25 Spieler je Band
+  und 6 Bänder je Tabelle, Spalten monoton (PAV). Paare: FIDE 916/637/189, chess.com 452/356/84.
+- **Wahl der Quelle** je Zeitklasse und Liste (spiel/umrechnung.ts): Messung, wo es eine Tabelle
+  gibt, sonst der Umweg über chessgoals.com (nur noch chess.com Klassisch). Eine Quelle je Paar,
+  damit nichts an einer Grenze springt; außerhalb der Messung null.
+- **Befund:** chess.com passt zu chessgoals.com; FIDE liegt 100 bis 150 tiefer. Grund vermutlich
+  die Aussortierung von FIDE unter 1550 bei chessgoals.com und die andere Spielergruppe.
+- Rückfragen W1 bis W6 in `docs/AUFGABEN_AUTOR.md`.

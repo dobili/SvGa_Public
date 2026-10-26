@@ -14,17 +14,22 @@ Selbstangaben) verschieben sie kaum, deshalb wird nichts „bereinigt“, was di
 verkleinern würde.
 
 Schritte:
-1. Filter je Zeitklasse: Lichess mit mindestens 20 Partien, RD unter 110, nicht vorläufig, im
-   letzten Jahr gesehen (wie ChessMonitor 2023). FIDE 1000 bis 2850 und nicht durch 100 teilbar
-   (runde Zahlen sind meist geschätzt, ebenfalls wie ChessMonitor). chess.com mit mindestens 20
-   Partien, RD unter 110, Partie im letzten Jahr.
+1. Filter je Zeitklasse: Lichess mit mindestens 20 Partien, RD unter 150 (wie chessgoals.com), im
+   letzten Jahr gesehen. FIDE: nur Spieler, die ``abgleich.py`` eindeutig in der offiziellen
+   FIDE-Liste gefunden hat und die dort aktiv sind, mit ihrer offiziellen Standard-Wertung (so
+   veraltet keine Selbstangabe die Messung). chess.com mit mindestens 20 Partien, RD unter 150,
+   Partie im letzten Jahr. Die Funktion ``fide_paare`` (Selbstangaben, ohne Abgleich) bleibt zum
+   Vergleich.
 2. Mediankurve m(x) aus Bändern zu 100 Punkten, monoton gemacht (Pool Adjacent Violators).
 3. Je Stützstelle c (alle 50 Punkte) die Spieler mit |x − c| ≤ 100; ihre Abweichungen y − m(x)
    plus m(c), damit die Steigung innerhalb des Fensters die Streuung nicht aufbläht.
 4. Quantile 25, 50, 75 % und ihre Unsicherheit (Bootstrap, 300 Ziehungen). Die Ränder werden um
    eine Standardabweichung der Messung nach außen geschoben: Wo wenige Spieler sind, wird der
    Bereich dadurch breiter, wo viele sind, bleibt er bei der gemessenen Streuung.
-5. Nur Stützstellen mit mindestens MINDESTZAHL Spielern; außerhalb liefert die App null.
+5. Nur Stützstellen mit mindestens MINDESTZAHL (25) Spielern, und nur Tabellen mit mindestens
+   MINDESTBAENDER Stützstellen; außerhalb liefert die App null, ohne Tabelle nimmt sie den Umweg
+   über chessgoals.com. 25 reicht für Viertel: deren Messfehler (Bootstrap) liegt dann bei etwa
+   einem Viertel der Streuung und wird in Schritt 4 dazugerechnet.
 """
 
 from __future__ import annotations
@@ -40,24 +45,29 @@ ZEITKLASSEN = ("blitz", "rapid", "classical")
 #: chess.com hat keine Wertung für Klassisch und wertet Partien ab zehn Minuten als Schnellschach.
 CHESSCOM_ZEITKLASSE = {"blitz": "blitz", "rapid": "rapid", "classical": "rapid"}
 MINDESTPARTIEN = 20
-HOECHST_RD = 110
+HOECHST_RD = 150
 EIN_JAHR_MS = 365 * 24 * 3600 * 1000
 FIDE_GRENZEN = (1000, 2850)
 FENSTER = 100
 SCHRITT = 50
-MINDESTZAHL = 40
+MINDESTZAHL = 25
+#: Weniger Bänder als hier sind keine brauchbare Tabelle; die App nimmt dann chessgoals.com.
+MINDESTBAENDER = 6
 ZIEHUNGEN = 300
 RUNDUNG = 5
 
 
 def gefestigt(perf: dict | None) -> bool:
-    """Lichess-Wertung mit genug Partien, kleiner RD und nicht vorläufig."""
+    """Lichess-Wertung mit genug Partien und RD unter 150 (wie chessgoals.com).
+
+    Warum nicht „nicht vorläufig“ (RD unter 110): Wer klassisch spielt, spielt selten, die RD steigt
+    dann schnell über 110; mit dieser Grenze blieben für Klassisch nur rund 100 Paare.
+    """
     return bool(
         perf
         and perf.get("rating")
         and (perf.get("games") or 0) >= MINDESTPARTIEN
         and (perf.get("rd") or 999) < HOECHST_RD
-        and not perf.get("prov")
     )
 
 
@@ -72,6 +82,22 @@ def fide_paare(profile: list[dict], tempo: str, jetzt_ms: int) -> list[tuple[int
         if not FIDE_GRENZEN[0] <= fide <= FIDE_GRENZEN[1] or fide % 100 == 0:
             continue
         paare.append((perf["rating"], fide))
+    return paare
+
+
+def abgeglichene_paare(
+    profile: dict[str, dict], abgleich: list[dict], tempo: str, jetzt_ms: int
+) -> list[tuple[int, int]]:
+    """(Lichess, offizielle FIDE-Standardwertung) für abgeglichene, bei der FIDE aktive Spieler."""
+    paare = []
+    for eintrag in abgleich:
+        p = profile.get(eintrag["id"])
+        if not p or not eintrag.get("aktiv") or not eintrag.get("standard"):
+            continue
+        perf = p["perfs"].get(tempo)
+        if not gefestigt(perf) or (p.get("gesehen") or 0) < jetzt_ms - EIN_JAHR_MS:
+            continue
+        paare.append((perf["rating"], eintrag["standard"]))
     return paare
 
 
@@ -120,7 +146,7 @@ def mediankurve(paare: list[tuple[int, int]]) -> list[tuple[float, float]]:
     baender: dict[int, list[int]] = {}
     for x, y in paare:
         baender.setdefault(x // 100 * 100 + 50, []).append(y)
-    mitten = sorted(c for c, ys in baender.items() if len(ys) >= MINDESTZAHL // 2)
+    mitten = sorted(c for c, ys in baender.items() if len(ys) >= MINDESTZAHL // 4)
     medianwerte = monoton([statistics.median(baender[c]) for c in mitten])
     return list(zip(mitten, medianwerte, strict=True))
 
@@ -150,6 +176,8 @@ def tabelle(paare: list[tuple[int, int]]) -> list[list[int]]:
     if len(paare) < MINDESTZAHL:
         return []
     kurve = mediankurve(paare)
+    if not kurve:
+        return []
     zufall = random.Random(1)
     zeilen = []
     for c in range(600, 3000, SCHRITT):
@@ -157,7 +185,7 @@ def tabelle(paare: list[tuple[int, int]]) -> list[list[int]]:
         if len(fenster) >= MINDESTZAHL:
             von, mitte, bis = stuetzstelle(fenster, zufall)
             zeilen.append([c, von, mitte, bis, len(fenster)])
-    if not zeilen:
+    if len(zeilen) < MINDESTBAENDER:
         return []
     spalten = [monoton([z[i] for z in zeilen]) for i in (1, 2, 3)]
     return [[z[0], *(round(s[k] / RUNDUNG) * RUNDUNG for s in spalten), z[4]] for k, z in enumerate(zeilen)]
@@ -174,12 +202,13 @@ def auswerten(ziel: Path) -> dict:
     """Alle Tabellen und die Zahl der Paare je Zeitklasse und Liste."""
     profile = {p["id"]: p for p in lesen(ziel / "profile.ndjson")}
     chesscom = {k["chesscom"]: k for k in lesen(ziel / "chesscom.ndjson") if k.get("gefunden")}
+    abgleich = lesen(ziel / "abgleich.ndjson")
     jetzt_ms = int(time.time() * 1000)
     ergebnis: dict = {"fide": {}, "chesscom": {}, "paare": {"fide": {}, "chesscom": {}}}
     for tempo in ZEITKLASSEN:
         werte = list(profile.values())
         for liste, paare in (
-            ("fide", fide_paare(werte, tempo, jetzt_ms)),
+            ("fide", abgeglichene_paare(profile, abgleich, tempo, jetzt_ms)),
             ("chesscom", chesscom_paare(werte, chesscom, tempo, jetzt_ms // 1000)),
         ):
             ergebnis[liste][tempo] = tabelle(paare)

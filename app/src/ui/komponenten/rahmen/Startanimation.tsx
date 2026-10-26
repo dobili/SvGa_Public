@@ -3,17 +3,17 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (R39, 23.10.2026). Über allem liegt kurz eine Fläche in
  * Navy; der Springer wächst mit goldenem Schein heran, darunter der Titel des Buches; dann
- * blendet alles aus. Seit 0.2.126 (Wunsch des Autors, 24.10.2026) ein eigener Ausschnitt des Covers
- * (public/bilder/startspringer.webp, erzeugt von skripte/erzeuge-startbild.mjs): Springer mittig,
- * darunter Brett und Schatten; vorher stand das eng geschnittene App-Symbol mit dem Sockel auf
- * dem Kreisrand. Das Bild liegt im Offline-Speicher wie alle WebP-Dateien. Ein Tipp irgendwo überspringt sie sofort.
- * Bei jedem Start der App, 2,5 Sekunden lang (Wunsch des Autors, 23.10.2026; vorher 1,9 s und
- * höchstens einmal je Stunde), außer sie ist in den Einstellungen abgeschaltet. Ein Start ist eine
- * neue Sitzung des Browsers (die installierte App startet nach dem Schließen neu); ein Neuladen
- * bleibt in der Sitzung und zeigt sie nicht noch einmal. Bei „Bewegung reduzieren“ des Geräts nie.
- * Seit 0.2.125 (Wunsch des Autors, 24.10.2026) auch bei der Rückkehr aus dem Hintergrund: War die
- * App auf einem Gerät mit Touch-Bedienung (Handy, Tablet) mindestens 30 Minuten nicht zu sehen,
- * läuft sie 1,8 Sekunden; am Rechner nicht, weil man dort zwischen Fenstern hin- und herwechselt.
+ * blendet alles aus. Das Bild ist ein eigener Ausschnitt des Covers (Wunsch des Autors,
+ * 24.10.2026; public/bilder/startspringer.webp, erzeugt von skripte/erzeuge-startbild.mjs):
+ * Springer mittig, darunter Brett und Schatten. Es liegt im Offline-Speicher wie alle
+ * WebP-Dateien. Ein Tipp irgendwo überspringt die Animation sofort.
+ * Bei jedem Start der App, 2,5 Sekunden lang (Wunsch des Autors, 23.10.2026), außer sie ist in
+ * den Einstellungen abgeschaltet. Ein Start ist eine neue Sitzung des Browsers (die installierte
+ * App startet nach dem Schließen neu); ein Neuladen bleibt in der Sitzung und zeigt sie nicht
+ * noch einmal. Bei „Bewegung reduzieren“ des Geräts nie.
+ * Auch bei der Rückkehr aus dem Hintergrund (Wunsch des Autors, 24.10.2026): War die App auf
+ * einem Gerät mit Touch-Bedienung (Handy, Tablet) mindestens 30 Minuten nicht zu sehen, läuft sie
+ * 1,8 Sekunden; am Rechner nicht, weil man dort zwischen Fenstern hin- und herwechselt.
  * Abhängigkeiten: app/merker.ts, startanimationRegel.ts, i18n, ui/stil/brett.css.
  */
 import { useEffect, useState } from "react";

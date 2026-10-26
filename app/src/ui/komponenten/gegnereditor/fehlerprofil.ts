@@ -1,14 +1,13 @@
 /**
  * Fehlerprofil eines eigenen Gegners ohne Oberfläche: Stufe je Art oder Fleck lesen und setzen,
- * Höchstverlust je Art (seit 0.2.129, Vorschlag DS38, vom Autor am 25.10.2026 freigegeben). Seit
- * 0.2.135 fasst fehlergruppen.ts die Arten zu Reglern, Achsen und Fleckengruppen zusammen.
+ * Höchstverlust je Art (Vorschlag DS38, vom Autor am 25.10.2026 freigegeben). fehlergruppen.ts
+ * fasst die Arten zu Reglern, Achsen und Fleckengruppen zusammen.
  *
- * Rolle im Gesamtbild: Bis 0.2.128 stellte man jede Fehlerart an drei Stellen ein (Haken, Regler
- * „Häufigkeit“, Regler „Höchstverlust“ im erweiterten Modus). Fehlerprofil.tsx zeigt jede Art
- * genau einmal mit einem Schalter in Stufen; „aus“ ersetzt den Haken. Gespeichert wird wie bisher
- * (EigenerGegner: fehlerarten, blindeFlecken, reglerstufen, haeufigkeit, hoechstverlust), es gibt
- * also kein neues Datenformat. Die Stufen −4 bis 4 sind die Quantile der Menschen
- * (engine/eigenstufen.ts): 0 wie der Median, ±2 wie die 5 % auffälligsten oder unauffälligsten.
+ * Rolle im Gesamtbild: Jede Fehlerart hat genau einen Schalter in Stufen; „aus“ heißt, die Art
+ * kommt nicht vor. Gespeichert wird in den Feldern von EigenerGegner (fehlerarten, blindeFlecken,
+ * reglerstufen, haeufigkeit, hoechstverlust), es gibt also kein neues Datenformat. Die Stufen −4
+ * bis 4 sind die Quantile der Menschen (engine/eigenstufen.ts): 0 wie der Median, ±2 wie die 5 %
+ * auffälligsten oder unauffälligsten.
  * Abhängigkeiten: engine/eigenstufen.ts, engine/fehlerart.ts, engine/blindeFlecken.ts,
  * engine/botstaerke.ts, i18n.
  */
@@ -21,8 +20,9 @@ import { t, type Textschluessel } from "../../../i18n/sprache";
 
 export type Profilart = Fehlerart | BlinderFleck;
 
-/** Stufen ohne Schalter „unmenschlich“ und mit; null heißt „aus“. */
+/** Stufen ohne Schalter „unmenschlich“: aus (null) und −2 bis 2, also wie echte Spieler. */
 export const STUFEN_MENSCHLICH: readonly (number | null)[] = [null, -2, -1, 0, 1, 2];
+/** Stufen mit Schalter „unmenschlich“: aus (null) und −4 bis 4, über ±2 hinaus unmenschlich. */
 export const STUFEN_ALLE: readonly (number | null)[] = [null, -4, -3, -2, -1, 0, 1, 2, 3, 4];
 /** Ab dieser Stufe (Betrag) liegt ein Wert außerhalb dessen, was echte Spieler zeigen. */
 export const UNMENSCHLICH_AB = 3;

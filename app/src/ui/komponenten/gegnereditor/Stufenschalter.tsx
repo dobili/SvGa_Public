@@ -1,7 +1,7 @@
 /**
  * Stufenschalter einer Fehlerart oder Gruppe als steigende Säulen, der Schalter „aus · an“ und die
- * Wahl des Höchstverlusts (seit 0.2.131; seit 0.2.135 aus Fehlerprofil.tsx ausgelagert, damit
- * beide Dateien unter 400 Zeilen bleiben).
+ * Wahl des Höchstverlusts; eigene Datei, damit Fehlerprofil.tsx und diese Datei unter 400 Zeilen
+ * bleiben.
  *
  * Rolle im Gesamtbild: Die Feinregler (Feinregler.tsx) zeigen je Regler eine Zeile mit diesen
  * Schaltern; das Netz (Profilnetz.tsx) ist die einfache Ansicht darüber.

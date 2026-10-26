@@ -1,4 +1,4 @@
-/** Test der Rückkehr-Regel der Startanimation (0.2.125): nur Touch-Geräte, nur nach 30 Minuten. */
+/** Test der Rückkehr-Regel der Startanimation: nur Touch-Geräte, nur nach 30 Minuten. */
 import { describe, expect, it } from "vitest";
 import { RUECKKEHR_AB_MS, rueckkehrFaellig } from "./startanimationRegel";
 

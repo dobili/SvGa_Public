@@ -2,21 +2,20 @@
  * Karte unter dem Brett zum gezeigten Zug im Rückblick: Urteil mit Zeichen, Bewertung davor und
  * danach, Erklärung des Fehlers nach den Regeln des Buches, besserer Zug.
  *
- * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Nachspielen wie bei
- * chess.com: einfache Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte
- * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
+ * Rolle im Gesamtbild: Rückmeldung des Autors („Nachspielen wie bei chess.com: einfache
+ * Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte (Zugurteil.tsx),
+ * die Erklärung kommt aus spiel/erklaerung.ts.
  * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
- * Stellung vor dem Zug und dem gespielten Zug. Seit 0.2.93 daneben „In die Lernsammlung“ für die
- * Stellung nach dem Zug, mit dem Weg der Partie (Eröffnung und PGN).
- * Seit 0.2.85 (Rückmeldung des Autors) nennt der Satz zu einem Fehler die Gewinnchance vorher und
- * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,
- * eine Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
+ * Stellung vor dem Zug und dem gespielten Zug. Daneben „In die Lernsammlung“ für die Stellung
+ * nach dem Zug, mit dem Weg der Partie (Eröffnung und PGN).
+ * Der Satz zu einem Fehler nennt die Gewinnchance vorher und nachher statt der Bauerneinheiten
+ * der Engine (Rückmeldung des Autors): Stockfish rechnet seine Zahl aus der Gewinnchance, eine
+ * Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
  * hängt weniger an der Skala; das Material nennt die Erklärung nach den Werten des Buches.
- * Seit dem Theoriezug (Wunsch des Autors, 25.10.2026) steht bei einem Theoriezug „Theoriezug: Teil
- * einer Eröffnung“ (oder „eines Gambits“), das Wort klappt die zutreffenden Namen auf
- * (Theorieangabe.tsx).
+ * Bei einem Theoriezug steht „Theoriezug: Teil einer Eröffnung“ (oder „eines Gambits“), das Wort
+ * klappt die zutreffenden Namen auf (Theorieangabe.tsx, Wunsch des Autors, 25.10.2026).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
- * ui/trainer/FehlerFormular.tsx.
+ * ui/trainer/FehlerFormular.tsx, rueckblicktyp.ts.
  */
 import { useId, useState } from "react";
 import { sprache, t, zahlText } from "../../../i18n/sprache";
@@ -36,7 +35,7 @@ import { MitInfo } from "../bausteine/InfoKnopf";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import { Theorieliste, Theoriesatz } from "./Theorieangabe";
 import { useTheorieauskunft } from "./useTheorie";
-import type { Rueckblick } from "./useRueckblick";
+import type { Rueckblick } from "./rueckblicktyp";
 
 /**
  * Knopf und Formular „In die Fehlerdatenbank“ für den gezeigten Zug. Der Schlüssel (Stellung und

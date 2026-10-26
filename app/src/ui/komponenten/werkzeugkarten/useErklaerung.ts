@@ -1,11 +1,11 @@
 /**
  * Ob die Erklärkachel von „Zählen“ oder „Ziehen“ erscheint, und das dauerhafte Ausblenden.
  *
- * Rolle im Gesamtbild: Wunsch des Autors nach dem Test von 0.2.30: Da anfangs kein Werkzeug
- * gewählt ist, erklären sich Zählen und Ziehen gleich beim Wählen mit einer Kachel, die stehen
- * bleibt, solange das Werkzeug gewählt ist (wie die Karten der übrigen Werkzeuge). Ein Haken
- * „Nicht mehr anzeigen“ blendet sie dauerhaft aus; die Einstellungen holen sie zurück. Die Wahl
- * ist ein Merker auf dem Gerät (wie die Koordinaten).
+ * Rolle im Gesamtbild: Wunsch des Autors: Da anfangs kein Werkzeug gewählt ist, erklären sich
+ * Zählen und Ziehen gleich beim Wählen mit einer Kachel, die stehen bleibt, solange das Werkzeug
+ * gewählt ist (wie die Karten der übrigen Werkzeuge). Ein Haken „Nicht mehr anzeigen“ blendet
+ * sie dauerhaft aus; die Einstellungen holen sie zurück. Die Wahl ist ein Merker auf dem Gerät
+ * (wie die Koordinaten).
  * Abhängigkeiten: app/merker.ts, React.
  */
 import { useState } from "react";

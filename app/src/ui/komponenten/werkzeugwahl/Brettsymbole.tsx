@@ -1,11 +1,11 @@
 /**
  * Werkzeuge als Symbole am Brett: Zählen, Ziehen, Engine, Röntgen und Warnsignale.
  *
- * Rolle im Gesamtbild: Werkzeug-Umbau 0.2.30 (Vorschlag C, Ebene 1; Entscheidung des Autors vom
+ * Rolle im Gesamtbild: Werkzeug-Umbau nach Vorschlag C, Ebene 1 (Entscheidung des Autors vom
  * 15.10.2026): Diese Werkzeuge braucht man in jeder Phase („In jeder Phase zuerst Warnsignale und
  * Röntgen“, Kapitel 12), deshalb sitzen sie unten rechts am Brett neben „Brett drehen“, sobald das
- * Buch sie eingeführt hat. Seit 0.2.31 auch „Zählen“ (Wunsch des Autors: immer zugänglich und
- * arbeitet mit dem Brett). Ein zweites Tippen wählt ab, bei allen Symbolen.
+ * Buch sie eingeführt hat. „Zählen“ gehört dazu (Wunsch des Autors: immer zugänglich und arbeitet
+ * mit dem Brett). Ein zweites Tippen wählt ab, bei allen Symbolen.
  * Abhängigkeiten: werkzeugordnung.ts, useWerkzeugwahl.ts, i18n, lucide-react.
  */
 import { Calculator, Cpu, Move, ScanEye, TriangleAlert, type LucideIcon } from "lucide-react";

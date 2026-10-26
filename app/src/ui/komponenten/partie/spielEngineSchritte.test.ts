@@ -1,4 +1,4 @@
-/** Tests für die Schritte des Engine-Knopfes während der Partie (seit 0.2.80). */
+/** Tests für die Schritte des Engine-Knopfes während der Partie. */
 import { describe, expect, it } from "vitest";
 import type { LetzterZugUrteil } from "../../../engine/letzterzug";
 import {

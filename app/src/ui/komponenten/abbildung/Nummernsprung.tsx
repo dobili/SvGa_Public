@@ -2,9 +2,9 @@
  * Sprung zu einer anderen Abbildung von der Kopfzeile aus: Der Titel „Abb. 7.12“ ist ein Knopf,
  * ein Tipp darauf öffnet ein Nummernfeld, wie es auch der Buch-Bildschirm hat.
  *
- * Rolle im Gesamtbild: Idee des Autors nach dem Test von 0.2.38 („Wenn man auf die Nummer klickt,
- * kann man eine andere Nummer eingeben“). Das Verstehen der Eingabe und die Vorschläge bei einem
- * Tippfehler kommen aus daten/finde.ts, die Nummern aus dem Datenverzeichnis (index.json).
+ * Rolle im Gesamtbild: Idee des Autors („Wenn man auf die Nummer klickt, kann man eine andere
+ * Nummer eingeben“). Das Verstehen der Eingabe und die Vorschläge bei einem Tippfehler kommen aus
+ * daten/finde.ts, die Nummern aus dem Datenverzeichnis (index.json).
  * Abhängigkeiten: daten/finde.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useState, type FormEvent } from "react";

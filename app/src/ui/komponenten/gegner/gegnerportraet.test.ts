@@ -1,6 +1,6 @@
 /**
- * Tests der offenen Stufen in der Gegnerwahl (0.2.85): aus dem Merker oder die Stufe des Gegners;
- * seit 0.2.88 auch die Gruppe „Zum Spaß“.
+ * Tests der offenen Stufen in der Gegnerwahl: aus dem Merker oder die Stufe des Gegners, auch die
+ * Gruppe „Zum Spaß“.
  */
 import { describe, expect, it } from "vitest";
 import { GEGNER, durchschnitt } from "../../../engine/gegner";

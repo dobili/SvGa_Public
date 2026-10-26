@@ -1,13 +1,12 @@
 /**
- * Brett mit Zugseite und den Brettknöpfen (Werkzeuge, drehen). Den Hinweis „Markierungen des
- * Buches“ gibt es seit 0.2.32 nicht mehr (Wunsch des Autors: Platz sparen; die
- * Bildunterschrift erklärt die Markierungen ohnehin).
+ * Brett mit Zugseite und den Brettknöpfen (Werkzeuge, drehen).
  *
  * Rolle im Gesamtbild: Oberer Teil des Abbildung-Bildschirms (Pflichtenheft 4
- * „Brettdarstellung“: Brett drehen, Koordinaten ein und aus; „Skelett-Ansicht“). Seit dem
- * Werkzeug-Umbau 0.2.30 stehen unten rechts die Werkzeug-Symbole (Brettsymbole.tsx) und „Brett
- * drehen“; die Koordinaten stellt man in den Einstellungen ein (das Gerät merkt sie sich), die
- * Skelett-Ansicht schaltet das Bündel „Skelett-Röntgen“ (früher das Knochensymbol hier).
+ * „Brettdarstellung“: Brett drehen, Koordinaten ein und aus; „Skelett-Ansicht“). Unten rechts
+ * stehen die Werkzeug-Symbole (Brettsymbole.tsx) und „Brett drehen“; die Koordinaten stellt man
+ * in den Einstellungen ein (das Gerät merkt sie sich), die Skelett-Ansicht schaltet das Bündel
+ * „Skelett-Röntgen“. Einen eigenen Hinweis zu den Markierungen des Buches gibt es nicht (Wunsch
+ * des Autors: Platz sparen; die Bildunterschrift erklärt sie ohnehin).
  * Beim Weiterspielen fragt hier eine kleine Auswahl nach der Figur für die Umwandlung.
  * Abhängigkeiten: ui/brett, schach/weiterspielen.ts, app/merker.ts, i18n, lucide-react.
  */

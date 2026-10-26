@@ -4,8 +4,8 @@
  * Sxd6 – bis zur Ruhe: +5 (gewinnt die Dame)“. Die Zeilen erscheinen nach und nach; am Brett
  * bekommt der stärkste Kandidat ein „!“, Kandidaten ohne Gewinn werden grau.
  *
- * Rolle im Gesamtbild: Vorschlag B1 (Antwort des Autors „einverstanden“, seit 0.2.33). Röntgen
- * zeigt den Rundumblick (beide Seiten, ein Zug), „Erzwingende Züge“ die durchgerechneten eigenen
+ * Rolle im Gesamtbild: Vorschlag B1 (Antwort des Autors „einverstanden“). Röntgen zeigt den
+ * Rundumblick (beide Seiten, ein Zug), „Erzwingende Züge“ die durchgerechneten eigenen
  * Kandidaten. Muster: GegnerKarte.tsx (als `zusatz` in der Werkzeugkarte).
  * Abhängigkeiten: analyse/k7-erzwingend.ts (Kandidaten, Markierungen), engine/kandidatenruhe.ts,
  * engine/gegnerplan.ts (Nullzug), engine/engineDienst.ts, i18n.

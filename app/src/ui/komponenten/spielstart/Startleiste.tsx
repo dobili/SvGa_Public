@@ -1,15 +1,13 @@
 /**
  * Feste Startleiste unten auf dem Bildschirm Spielen: Bild und Name des Gegners, Farbe, Bedenkzeit
- * und Wertung, daneben „Partie beginnen“ (seit 0.2.129, Vorschlag DS40, vom Autor am 25.10.2026
- * freigegeben).
+ * und Wertung, daneben „Partie beginnen“ (Vorschlag DS40, vom Autor am 25.10.2026 freigegeben).
  *
- * Rolle im Gesamtbild: „Partie beginnen“ stand bis 0.2.128 mitten auf der Seite (über dem Gitter
- * der Bots, über den Reglern der eigenen Stufe, ausgegraut über dem Formular eigener Bots); wer
- * unten etwas einstellte, musste zurückscrollen und sah nicht, was gewählt war. Die Leiste klebt
- * über der Navigation (CSS position: sticky) und gleitet erst über der Partienliste an ihren Platz.
- * Ein Tipp auf die Zusammenfassung springt zur Gegnerwahl. Der Knopf selbst mit der Rückfrage bei
- * laufender Partie bleibt BeginnenKnopf.tsx.
- * Seit 0.2.138 steht hinter dem Namen die Spielstärke zur gewählten Uhr (bildschirme/startstaerke.ts).
+ * Rolle im Gesamtbild: Stünde „Partie beginnen“ mitten auf der Seite, müsste zurückscrollen, wer
+ * unten etwas einstellt, und sähe nicht, was gewählt ist. Die Leiste klebt über der Navigation
+ * (CSS position: sticky) und gleitet erst über der Partienliste an ihren Platz. Ein Tipp auf die
+ * Zusammenfassung springt zur Gegnerwahl. Der Knopf selbst mit der Rückfrage bei laufender Partie
+ * ist BeginnenKnopf.tsx. Hinter dem Namen steht die Spielstärke zur gewählten Uhr
+ * (bildschirme/startstaerke.ts).
  * Abhängigkeiten: BeginnenKnopf, GegnerBild, Stufenmarke, staerkeangabe, engine/gegner.ts,
  * engine/gruppe.ts, i18n.
  */

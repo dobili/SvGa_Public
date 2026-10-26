@@ -2,9 +2,9 @@
  * Sofortige Sicherung der Schachuhr beim Verlassen der App (N180).
  *
  * Rolle im Gesamtbild: Die Partie steht in IndexedDB, und das Schreiben dorthin ist asynchron.
- * Beim schnellen Neuladen oder Schließen bricht der Browser es ab; dann stand die Uhr danach
- * wieder auf der Zeit beim letzten Zug, und die Bedenkzeit seit dem Zug fehlte (Befund am
- * Rechner, 0.2.36). Deshalb legt die App beim Verlassen den angehaltenen Uhrstand zusätzlich
+ * Beim schnellen Neuladen oder Schließen bricht der Browser es ab; ohne diese Sicherung stünde
+ * die Uhr danach wieder auf der Zeit beim letzten Zug, und die Bedenkzeit seit dem Zug fehlte
+ * (Befund am Rechner). Deshalb legt die App beim Verlassen den angehaltenen Uhrstand zusätzlich
  * sofort (synchron) in den Gerätespeicher; beim nächsten Öffnen der Partie übernimmt sie ihn,
  * wenn er zur gespeicherten Partie passt (gleiche Kennung, gleiche Zahl der Züge).
  * Abhängigkeiten: app/merker.ts, speicher/partienLesen.ts, spiel/partie.ts.

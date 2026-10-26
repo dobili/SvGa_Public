@@ -1,12 +1,12 @@
 /**
- * Gratulation, wenn ein Ring des Fortschritts voll wird (seit 0.2.144, Wunsch des Autors
- * 25.10.2026: „wenn man eine von diesen Ringdiagrammen voll bekommt, dass dann so ein Pop-up
- * kommt“), im Stil der Freischaltung des Gruppenmodus: Feuerwerk, Feierton, goldene Karte.
+ * Gratulation, wenn ein Ring des Fortschritts voll wird (Wunsch des Autors, 25.10.2026: „wenn man
+ * eine von diesen Ringdiagrammen voll bekommt, dass dann so ein Pop-up kommt“), im Stil der
+ * Freischaltung des Gruppenmodus: Feuerwerk, Feierton, goldene Karte.
  *
  * Rolle im Gesamtbild: Liegt in der Hülle der App (app/App.tsx) und erscheint auf jedem
  * Bildschirm, sobald ein Ring voll ist (Abbildungen angesehen, Lernziele, Trainer erstmals,
  * besiegte Bots je Zeitart). Je Ring nur einmal (Merker auf dem Gerät); wer einen Ring schon voll
- * hatte, bekommt die Gratulation beim ersten Start dieser Fassung einmal nachgereicht.
+ * hatte, bevor es die Gratulation gab, bekommt sie beim ersten Start einmal nachgereicht.
  * Abhängigkeiten: fortschrittsringe.ts (Ringe), Gruppenmodus.tsx (Feierton), Feuerwerk.tsx,
  * app/merker.ts, i18n, lucide-react.
  */

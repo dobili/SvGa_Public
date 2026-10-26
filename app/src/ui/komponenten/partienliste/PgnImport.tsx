@@ -1,5 +1,5 @@
 /**
- * Partie aus PGN einlesen, an der Partienliste (seit 0.2.117, Wunsch des Autors vom 19.10.2026).
+ * Partie aus PGN einlesen, an der Partienliste (Wunsch des Autors vom 19.10.2026).
  *
  * Rolle im Gesamtbild: Ein Aufklapper „Partie einlesen (PGN)“ über der Liste. Der Leser fügt den
  * Text ein oder wählt eine .pgn-Datei, sagt, welche Farbe er gespielt hat, und tippt

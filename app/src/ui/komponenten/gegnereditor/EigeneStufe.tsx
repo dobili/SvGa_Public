@@ -1,18 +1,16 @@
 /**
- * Einstellungen der Kategorie „Eigene Stufe“: Stufen je Phase, erlaubte Fehlerarten, blinde Flecken,
- * Stil im Spinnennetz und der erweiterte Modus mit Reglern auf den Quantilen der Menschen.
+ * Einstellungen der Kategorie „Eigene Stufe“: Stufen je Phase, Stil im Spinnennetz, Fehler und
+ * blinde Flecken, in denselben Reitern wie bei den eigenen Bots.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (24.10.2026): „Eigene Stufe“ bekommt dieselben
  * Einstellungen wie „Eigene Bots“ (GegnerEditor.tsx). Die Werte liegen in den Spielvorlieben des
  * Spielbildschirms (Spielen.tsx, `mit`) und kommen beim Partiebeginn in die Partie
- * (bildschirme/gegnerprofil.ts). Seitdem spielt die eigene Stufe wie ein eigener Bot mit den
- * angehakten Fehlerarten wie Menschen; die angezeigte Zahl ist dann die der gemessenen Stufe mit
- * Zusatzfehlern. Ohne angehakte Fehlerart spielt sie rein, die Zahl ist die der reinen Stufe
- * (engine/botstaerke.ts, staerkeGeschaetzt). Den erweiterten Modus teilt sie sich mit den eigenen
- * Bots, der dafür einen namenlosen eigenen Gegner aus den Vorlieben bekommt. Seit 0.2.129 (DS38,
- * DS39) stehen Stärke, Stil, Fehler und blinde Flecken in Reitern (GegnerReiter.tsx), die Fehler
- * mit einem Stufenschalter je Art (Fehlerprofil.tsx) statt Haken und erweitertem Modus; seit
- * 0.2.135 als Netz mit Feinreglern, ältere Werte gestrichener Arten werden beim Ändern neutral.
+ * (bildschirme/gegnerprofil.ts). Die eigene Stufe spielt wie ein eigener Bot mit den
+ * eingeschalteten Fehlerarten wie Menschen; die angezeigte Zahl ist dann die der gemessenen Stufe
+ * mit Zusatzfehlern. Ohne Fehlerart spielt sie rein, die Zahl ist die der reinen Stufe
+ * (engine/botstaerke.ts, staerkeGeschaetzt). Stärke, Stil, Fehler und blinde Flecken stehen in
+ * Reitern (GegnerReiter.tsx, DS38, DS39), die Fehler als Netz mit Feinreglern (Fehlerprofil.tsx);
+ * ältere Werte gestrichener Arten werden beim Ändern neutral.
  * Abhängigkeiten: StufenWahl, Stilnetz, GegnerReiter, engine/gegner.ts, speicher/partien.ts.
  */
 import type { EigenerGegner } from "../../../engine/gegner";

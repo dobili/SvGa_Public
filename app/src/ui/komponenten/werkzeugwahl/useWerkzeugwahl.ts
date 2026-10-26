@@ -2,18 +2,18 @@
  * Zustand der Werkzeugwahl auf dem Abbildung-Bildschirm: gewähltes Bündel und Werkzeug, und ob
  * frühere oder spätere Bündel zugeschaltet sind.
  *
- * Rolle im Gesamtbild: Werkzeug-Umbau 0.2.30. Bündel stehen in der Leiste unter dem Brett,
- * einzelne Werkzeuge als Symbole am Brett (werkzeugordnung.ts). Für die Rechnung zählt nur das
- * gewählte Werkzeug (`wahl`); das Bündel bestimmt die Reiter in der Karte.
- * Verhalten (Entscheidungen des Autors nach den Tests von 0.2.27 bis 0.2.30):
+ * Rolle im Gesamtbild: Bündel stehen in der Leiste unter dem Brett, einzelne Werkzeuge als
+ * Symbole am Brett (werkzeugordnung.ts). Für die Rechnung zählt nur das gewählte Werkzeug
+ * (`wahl`); das Bündel bestimmt die Reiter in der Karte.
+ * Verhalten (Entscheidungen des Autors nach seinen Tests):
  * - Anfangs ist nichts gewählt; das Brett zeigt die Markierungen des Buches.
  * - Ein zweites Tippen auf das gewählte Bündel oder Symbol wählt es ab, bei allen Werkzeugen.
- *   Seit 0.2.31 erklären sich Zählen und Ziehen nicht mehr beim zweiten Tippen, sondern mit einer
- *   eigenen Kachel, solange sie gewählt sind (Erklaerkarte.tsx).
- * Abhängigkeiten: werkzeugordnung.ts, React.
+ *   Zählen und Ziehen erklären sich mit einer eigenen Kachel, solange sie gewählt sind
+ *   (Erklaerkarte.tsx).
+ * Abhängigkeiten: werkzeugordnung.ts, werkzeugwahltyp.ts, React.
  */
 import { useCallback, useState } from "react";
-import type { Werkzeugwahl } from "./Werkzeugleiste";
+import type { Werkzeugwahl } from "./werkzeugwahltyp";
 import { ersterTeil, type Buendelkennung } from "./werkzeugordnung";
 
 interface Auswahl {

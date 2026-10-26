@@ -1,9 +1,10 @@
 /**
  * Die Übungen eines Kapitels mit ihrem Stand und dem Einstieg zum Lösen (AP 13).
  *
- * Rolle im Gesamtbild: Teil der Karte „Training und Übungen“ im Kapitel-Bildschirm (seit
- * 0.2.80). Jede Übung öffnet den Bildschirm „Übung“; „Übungen lösen“ geht alle Übungen des
- * Kapitels der Reihe nach durch, die noch nicht gelösten zuerst. Der Stand kommt aus dem Fortschritt (speicher/format.ts, „uebungen“).
+ * Rolle im Gesamtbild: Teil der Karte „Training und Übungen“ im Kapitel-Bildschirm. Jede Übung
+ * öffnet den Bildschirm „Übung“; „Übungen lösen“ geht alle Übungen des Kapitels der Reihe nach
+ * durch, die noch nicht gelösten zuerst. Der Stand kommt aus dem Fortschritt (speicher/format.ts,
+ * „uebungen“).
  * Abhängigkeiten: Navigation, Speicher, i18n.
  */
 import { useNavigation } from "../../../app/navigationsKontext";

@@ -1,9 +1,9 @@
 /**
  * Untertitel des Partie-Bildschirms: Gegner, Stufen, eigene Farbe und Eröffnung; gegen einen Bot
- * sein Porträt links und seine Beschreibung daneben (seit 0.2.125).
+ * sein Porträt links und seine Beschreibung daneben.
  *
- * Rolle im Gesamtbild: aus bildschirme/Partie.tsx ausgelagert (0.2.117, Dateien unter 400 Zeilen),
- * als die eingelesenen Partien (PGN-Import) einen eigenen Untertitel bekamen. Wunsch des Autors
+ * Rolle im Gesamtbild: Eigene Datei, damit bildschirme/Partie.tsx unter 400 Zeilen bleibt;
+ * eingelesene Partien (PGN-Import) haben einen eigenen Untertitel. Wunsch des Autors
  * (24.10.2026): Das Porträt gehört nicht in die Titelzeile (Umbruch des Namens), sondern
  * linksbündig darunter, daneben der Satz des Bots aus der Gegnerwahl statt nur der Stufenangabe;
  * Stufen, Farbe und Eröffnung stehen klein darunter.

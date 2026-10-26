@@ -1,5 +1,5 @@
 /**
- * Kurztext einer Stil-Mischung für Listen (0.2.128): „Angreifer + Taktiker 50 %“.
+ * Kurztext einer Stil-Mischung für Listen: „Angreifer + Taktiker 50 %“.
  *
  * Rolle im Gesamtbild: Die Liste eigener Gegner (GegnerEditor.tsx) nennt den Stil in einer Zeile.
  * 100 % (die geeichte Stärke) steht ohne Zahl. Abhängigkeiten: engine/stile.ts, i18n.

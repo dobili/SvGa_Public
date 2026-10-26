@@ -5,16 +5,14 @@
  * Fortsetzung, grobe Patzer markiert, Export als PGN“) und 5.2 („In Zug 12 hat die Engine eine
  * Figur hängen lassen (W1). Hast du es gesehen?“). Die Werte rechnet useAuswertung im
  * Hintergrund; die Urteile spiel/auswertung.ts. Ein Sprung zeigt die Stellung vor dem Zug mit
- * dem besseren Zug (gold) und dem gespielten (rot). Darüber steht seit 0.2.38 die Verlaufskurve
- * (Vorschlag H); ein Tipp darauf zeigt die Stellung mit Zeichen und besserem Zug. Seit 0.2.39
- * folgt die Karte „Spielstärke“ (Genauigkeit, Schätzung, Zeichen je Seite, Spielstaerke.tsx).
- * Seit 0.2.85 (Wünsche des Autors): die erste Abweichung mit der Gewinnchance statt Bauern, grobe
- * Patzer beider Seiten mit einem Bauern in der Farbe der Seite und Sprung zur Stellung, von den
- * absichtlichen Fehlern der Engine zuerst nur drei („Alle zeigen“ klappt den Rest auf).
- * Seit R55/R56 (Wunsch des Autors, 23.10.2026): oben ein Umschalter Weiß/Schwarz (Voreinstellung
- * die eigene Seite), der die ganze Seite steuert: erste Abweichung, die eingeklappte Liste „Fehler
- * und Patzer“ (alle Fehler, verpassten Gewinne und Patzer der Seite), bei der Engine die
- * eingeklappte Liste ihrer absichtlichen Fehler, darunter Ring, Balken und Zugklassen.
+ * dem besseren Zug (gold) und dem gespielten (rot).
+ * Die Verlaufskurve (Vorschlag H) steht über der Auswertung; ein Tipp darauf zeigt die Stellung
+ * mit Zeichen und besserem Zug. Wünsche des Autors (zuletzt R55/R56, 23.10.2026): oben ein
+ * Umschalter Weiß/Schwarz (Voreinstellung die eigene Seite), der die ganze Seite steuert: die
+ * erste Abweichung mit der Gewinnchance statt Bauern, die eingeklappte Liste „Fehler und Patzer“
+ * (alle Fehler, verpassten Gewinne und Patzer der Seite, mit Sprung zur Stellung), bei der Engine
+ * die eingeklappte Liste ihrer absichtlichen Fehler, darunter Ring, Balken und Zugklassen
+ * (Spielstaerke.tsx).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
  */
 import type { Color } from "chessops/types";

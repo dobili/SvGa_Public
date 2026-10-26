@@ -7,8 +7,8 @@
  *
  * Rolle im Gesamtbild: engine/gruppe.ts entscheidet, wann eine Gruppe frei ist; hier steht nur die
  * Anzeige. Die Gratulation erscheint einmal je Gruppe (Merker auf dem Gerät, app/merker.ts) nach
- * dem Ende der Partie, die den letzten Bot der Stufe besiegt hat.
- * Seit 0.2.144 feiert die Gratulation mit Feuerwerk (Feuerwerk.tsx) und Feierton (app/ton.ts).
+ * dem Ende der Partie, die den letzten Bot der Stufe besiegt hat, und feiert mit Feuerwerk
+ * (Feuerwerk.tsx) und Feierton (app/ton.ts).
  * Abhängigkeiten: engine/gruppe.ts, engine/gegner.ts, gegnerportraet.ts, app/merker.ts,
  * app/ton.ts, app/einstellungen.ts, Feuerwerk.tsx, speicher, i18n, lucide-react.
  */

@@ -1,10 +1,11 @@
 /**
  * Wartet, bis der Browser das nächste Bild gezeichnet hat.
  *
- * Rolle im Gesamtbild: Seit V6 (Nutzungsprüfung 25.10.2026) zeichnet die App nach einem Tipp
- * zuerst eine kleine Rückmeldung (goldener Strich in der Leiste, „Partie beginnen“ gedrückt) und
- * erst danach den schweren neuen Bildschirm; ebenso baut sie den Eröffnungsindex erst nach dem
- * Bild. Gemessen (CPU 4×): Ohne dieses Warten zeigte der Browser bis zu 0,2 s lang gar nichts.
+ * Rolle im Gesamtbild: Nach einem Tipp zeichnet die App zuerst eine kleine Rückmeldung (goldener
+ * Strich in der Leiste, „Partie beginnen“ gedrückt) und erst danach den schweren neuen
+ * Bildschirm; ebenso baut sie den Eröffnungsindex erst nach dem Bild (V6, Nutzungsprüfung
+ * 25.10.2026). Gemessen (CPU 4×): Ohne dieses Warten zeigte der Browser bis zu 0,2 s lang gar
+ * nichts.
  * Abhängigkeiten: keine.
  */
 

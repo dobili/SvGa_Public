@@ -2,11 +2,11 @@
  * Merkt eine Abbildung als angesehen, wenn sie 30 Sekunden am Stück auf dem Bildschirm steht.
  *
  * Rolle im Gesamtbild: Füllt den Fortschritt „angesehene Abbildungen“ (Pflichtenheft 4, Stufe 2).
- * Wunsch des Autors nach dem Nachtest von 0.2.26: Wer nur durch die Abbildungen blättert, hat sie
- * nicht angesehen. Deshalb zählt eine Abbildung erst nach VERWEILZEIT_MS ohne Unterbrechung; geht
- * die App in den Hintergrund oder wechselt die Abbildung, beginnt die Zeit von vorn. Das gilt für
- * die geöffnete Abbildung und jede, die der Leser beim Nachspielen erreicht. Von Hand abhaken
- * lässt sie sich in der Kapitelübersicht. Eine schon gesehene Abbildung schreibt nichts neu.
+ * Wunsch des Autors: Wer nur durch die Abbildungen blättert, hat sie nicht angesehen. Deshalb
+ * zählt eine Abbildung erst nach VERWEILZEIT_MS ohne Unterbrechung; geht die App in den
+ * Hintergrund oder wechselt die Abbildung, beginnt die Zeit von vorn. Das gilt für die geöffnete
+ * Abbildung und jede, die der Leser beim Nachspielen erreicht. Von Hand abhaken lässt sie sich in
+ * der Kapitelübersicht. Eine schon gesehene Abbildung schreibt nichts neu.
  * Abhängigkeiten: speicher/speicher.ts, speicher/fortschritt.ts, React.
  */
 import { useEffect } from "react";

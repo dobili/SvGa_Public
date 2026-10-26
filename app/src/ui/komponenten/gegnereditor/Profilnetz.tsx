@@ -1,6 +1,6 @@
 /**
- * Spinnennetz mit fünf Achsen für Fehler und blinde Flecken eigener Gegner (seit 0.2.135, Netz-
- * Vorschau E1 und E4, vom Autor am 25.10.2026 freigegeben).
+ * Spinnennetz mit fünf Achsen für Fehler und blinde Flecken eigener Gegner (Netz-Vorschau E1 und
+ * E4, vom Autor am 25.10.2026 freigegeben).
  *
  * Rolle im Gesamtbild: Wunsch des Autors, Fehler und Flecken so einzustellen wie den Spielstil
  * (Stilnetz.tsx). Jede Achse trägt sechs Punkte: innen „aus“ (gestrichelt), dann „sehr selten“

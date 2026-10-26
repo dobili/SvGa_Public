@@ -1,22 +1,22 @@
 /**
  * Wahl des Gegners vor der Partie: Engine oder Mensch; bei der Engine ein vorgefertigter Gegner
- * (Porträtgitter je Stufe, 0.2.65), ein eigener Gegner oder eigene Stufen; dazu Spielhilfen und
- * Wertung (HilfenWahl.tsx, seit 0.3.0 eigene Datei).
+ * (Porträtgitter je Stufe), ein eigener Gegner oder eigene Stufen; dazu Spielhilfen und Wertung
+ * (HilfenWahl.tsx).
  *
  * Rolle im Gesamtbild: Wünsche des Autors vom 17.10.2026: beide Seiten selbst spielen (gegen
  * einen Menschen am selben Gerät), vorgefertigte Gegner mit Namen (engine/gegner.ts), Spielhilfen
- * vor der Partie zuschaltbar, ungewertete Partien. Seit 0.2.65 (Wunsch vom 18.10.2026, Vorbild
- * chess.com) stehen die 64 Gegner als Porträts in acht Gruppen je Stufe; der gewählte stellt sich
- * oben in einer Sprechblase vor. Die Auswahl eines Gegners setzt die drei Regler (StufenWahl.tsx);
- * wer danach einen Regler bewegt, spielt wieder mit eigenen Stufen (Kachel „Eigene Stufen“).
- * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) drei Kategorien als Kacheln mit Symbol: eigene
- * Stufe, vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt
- * (Regler und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
- * Seit 0.2.85 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
- * Elo-Zahl auf der Skala von „Deine Spielstärke“ (engine/botstaerke.ts), mit Erklärung hinter
- * dem Fragezeichen; eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
+ * vor der Partie zuschaltbar, ungewertete Partien. Die 64 Gegner stehen als Porträts in acht
+ * Gruppen je Stufe (Wunsch vom 18.10.2026, Vorbild chess.com); der gewählte stellt sich oben in
+ * einer Sprechblase vor. Die Auswahl eines Gegners setzt die drei Regler (StufenWahl.tsx); wer
+ * danach einen Regler bewegt, spielt wieder mit eigenen Stufen (Kachel „Eigene Stufen“).
+ * Drei Kategorien als Kacheln mit Symbol (Wunsch des Autors, 18.10.2026): eigene Stufe,
+ * vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt (Regler
+ * und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
+ * An jeder Stufe, jeder Kachel und in der Sprechblase steht die Elo-Zahl auf der Skala von „Deine
+ * Spielstärke“ (engine/botstaerke.ts, Rückfrage S23), mit Erklärung hinter dem Fragezeichen;
+ * eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
  * Die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx). „Partie beginnen“ steht
- * seit 0.2.129 (DS40) in der festen Startleiste (Startleiste.tsx), nicht mehr hier.
+ * in der festen Startleiste (Startleiste.tsx, DS40).
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
  * (Typen), Vorschauwahl, InfoKnopf, HilfenWahl, staerkeangabe.ts, lucide, i18n.
  */

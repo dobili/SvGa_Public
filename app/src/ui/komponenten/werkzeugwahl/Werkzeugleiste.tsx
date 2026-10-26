@@ -2,15 +2,15 @@
  * Werkzeugleiste unter dem Brett: die Bündel des Kapitels, „◀ frühere“ und „spätere ▶“, dazu die
  * Reiter des gewählten Bündels.
  *
- * Rolle im Gesamtbild: Teil des Abbildung-Bildschirms. Seit dem Werkzeug-Umbau 0.2.30 steht je
- * Verfahren des Buches ein Knopf in der Leiste (Bündel, werkzeugordnung.ts); die Teile schaltet
- * man in der Karte wie Reiter um (Reiterleiste unten). Zählen, Ziehen, Engine, Röntgen und
- * Warnsignale sitzen als Symbole am Brett (Brettsymbole.tsx; Zählen seit 0.2.31).
+ * Rolle im Gesamtbild: Teil des Abbildung-Bildschirms. Je Verfahren des Buches steht ein Knopf in
+ * der Leiste (Bündel, werkzeugordnung.ts); die Teile schaltet man in der Karte wie Reiter um
+ * (Reiterleiste unten). Zählen, Ziehen, Engine, Röntgen und Warnsignale sitzen als Symbole am
+ * Brett (Brettsymbole.tsx).
  * Bedienung: Ein Tipp wählt ein Bündel, ein zweiter wählt es wieder ab (Kreuz im Knopf).
- * Seit 0.2.85 (Wunsch des Autors) eine waagerecht scrollbare Reihe statt umbrechender Zeilen; jedes
- * Bündel trägt ein Symbol (buendelsymbole.ts), „frühere“ und „spätere“ stehen als Schalter mit
- * Symbol am Anfang und am Ende derselben Reihe.
- * Abhängigkeiten: werkzeugordnung.ts, useWerkzeugwahl.ts, i18n, lucide-react.
+ * Eine waagerecht scrollbare Reihe statt umbrechender Zeilen (Wunsch des Autors); jedes Bündel
+ * trägt ein Symbol (buendelsymbole.ts), „frühere“ und „spätere“ stehen als Schalter mit Symbol am
+ * Anfang und am Ende derselben Reihe.
+ * Abhängigkeiten: werkzeugordnung.ts, useWerkzeugwahl.ts, werkzeugwahltyp.ts, i18n, lucide-react.
  */
 import { Bone, X, type LucideIcon } from "lucide-react";
 import { t, type Textschluessel } from "../../../i18n/sprache";
@@ -24,10 +24,8 @@ import {
   type Buendelkennung,
 } from "./werkzeugordnung";
 
-/** Kennung eines angemeldeten Werkzeugs wie „k1-roentgen“ (analyse/register.ts). */
-export type Werkzeugkennung = `k${number}-${string}`;
-/** Was gewählt sein kann: Zählen, ein Werkzeug des Buches, Ziehen oder die Engine. */
-export type Werkzeugwahl = "zaehlen" | "ziehen" | "engine" | Werkzeugkennung;
+/** Typen aus werkzeugwahltyp.ts, weitergegeben für Dateien, die sie von hier importieren. */
+export type { Werkzeugkennung, Werkzeugwahl } from "./werkzeugwahltyp";
 
 const SYMBOLGROESSE = 16;
 

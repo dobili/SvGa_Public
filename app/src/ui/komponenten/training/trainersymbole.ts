@@ -1,7 +1,7 @@
 /**
- * Ein Symbol je Trainer (seit 0.2.85, Wunsch des Autors: die Trainingsseite war viel Text; am
- * Symbol erkennt man einen Trainer schneller). Wo ein Trainer ein Werkzeug übt, trägt er dessen
- * Symbol (Röntgen, Zählen, Planfindung, Taktik, Endspiel, Denkroutine).
+ * Ein Symbol je Trainer (Wunsch des Autors: Eine Trainingsseite mit viel Text liest sich
+ * langsam; am Symbol erkennt man einen Trainer schneller). Wo ein Trainer ein Werkzeug übt, trägt
+ * er dessen Symbol (Röntgen, Zählen, Planfindung, Taktik, Endspiel, Denkroutine).
  * Abhängigkeiten: lucide-react, training/trainer.ts (TrainerKennung).
  */
 import {

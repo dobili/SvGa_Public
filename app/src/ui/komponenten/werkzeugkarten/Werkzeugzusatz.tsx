@@ -1,10 +1,9 @@
 /**
- * Engine-Abschnitte in der Werkzeugkarte: bei „Gegner?“ Plan und Vorbeugezug (GegnerKarte, seit
- * 0.2.32, Vorschlag D4), bei „Erzwingende Züge“ jeder Kandidat bis zur Ruhe (ErzwingendKarte,
- * seit 0.2.33, Vorschlag B1), bei der Zielbilanz die Nachrechnung angegriffener Zentrumsbauern
- * (ZentrumKarte, seit 0.2.33, C1.1), bei den Kandidaten der Denkroutine die Bewertung jedes
- * Kandidaten (KandidatenKarte, R43, 23.10.2026). Auch die Partie gegen die Engine nutzt diese
- * Auswahl.
+ * Engine-Abschnitte in der Werkzeugkarte: bei „Gegner?“ Plan und Vorbeugezug (GegnerKarte,
+ * Vorschlag D4), bei „Erzwingende Züge“ jeder Kandidat bis zur Ruhe (ErzwingendKarte, Vorschlag
+ * B1), bei der Zielbilanz die Nachrechnung angegriffener Zentrumsbauern (ZentrumKarte, C1.1), bei
+ * den Kandidaten der Denkroutine die Bewertung jedes Kandidaten (KandidatenKarte, R43,
+ * 23.10.2026). Auch die Partie gegen die Engine nutzt diese Auswahl.
  *
  * Rolle im Gesamtbild: hält die Auswahl aus dem Abbildung-Bildschirm heraus, damit er unter 400
  * Zeilen bleibt. Ein neuer Schlüssel (Stellung, Sicht) legt die Karte neu an und startet die

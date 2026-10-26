@@ -2,10 +2,10 @@
  * Warum-Fragen zur Stellung oder zum nächsten Buchzug, mit Antwortauswahl (Art V, AP 14).
  *
  * Rolle im Gesamtbild: Pflichtenheft 3 „Warum-Fragen mit Antwortauswahl“ für Buchstellungen.
- * Wunsch des Autors nach dem Test von 0.2.26: Die Fragen erscheinen erst, wenn die Abbildung als
- * angesehen gilt (30 Sekunden oder Haken in der Kapitelübersicht), und zugeklappt; sie stehen
- * unter den Kacheln des gewählten Werkzeugs. Nach der Wahl zeigt die Karte, ob die Antwort
- * stimmt, die richtige Antwort und eine kurze Erklärung.
+ * Wunsch des Autors: Die Fragen erscheinen erst, wenn die Abbildung als angesehen gilt
+ * (30 Sekunden oder Haken in der Kapitelübersicht), und zugeklappt; sie stehen unter den Kacheln
+ * des gewählten Werkzeugs. Nach der Wahl zeigt die Karte, ob die Antwort stimmt, die richtige
+ * Antwort und eine kurze Erklärung.
  * Abhängigkeiten: analyse/warumfragen.ts, speicher (angesehen), i18n.
  */
 import { ChevronDown } from "lucide-react";

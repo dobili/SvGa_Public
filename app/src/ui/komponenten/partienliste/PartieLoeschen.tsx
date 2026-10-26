@@ -1,12 +1,12 @@
 /**
- * Löschmodus der Partienliste (seit 0.2.142, Wunsch des Autors vom 25.10.2026): Ein Papierkorb neben
- * „Filter“ und „Sortieren“ schaltet ihn ein; dann wählt ein Tipp auf eine ungewertete Partie sie
- * aus (goldener Rahmen, Haken), und „Ausgewählte löschen“ entfernt sie nach einer Nachfrage.
+ * Löschmodus der Partienliste (Wunsch des Autors vom 25.10.2026): Ein Papierkorb neben „Filter“
+ * und „Sortieren“ schaltet ihn ein; dann wählt ein Tipp auf eine ungewertete Partie sie aus
+ * (goldener Rahmen, Haken), und „Ausgewählte löschen“ entfernt sie nach einer Nachfrage.
  *
- * Rolle im Gesamtbild: Vorher trug jede ungewertete Zeile einen eigenen Papierkorb; der kostete in
- * der Zeile Platz und stand nicht überall. Gewertete Partien bleiben unwählbar, weil sie die Wertung
- * und die besiegten Bots tragen (speicher/partien.ts, ohnePartien). Den Zustand (Modus an, welche
- * gewählt) hält Partienliste.tsx.
+ * Rolle im Gesamtbild: Ein eigener Papierkorb je Zeile kostete Platz und stand nicht überall;
+ * deshalb ein Modus für die ganze Liste. Gewertete Partien bleiben unwählbar, weil sie die
+ * Wertung und die besiegten Bots tragen (speicher/partien.ts, ohnePartien). Den Zustand (Modus
+ * an, welche gewählt) hält Partienliste.tsx.
  * Abhängigkeiten: speicher/partien.ts, speicher/speicher.ts, Knopfsymbol, i18n, lucide-react.
  */
 import { Trash2 } from "lucide-react";

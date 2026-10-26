@@ -1,12 +1,12 @@
 /**
  * Das Bild eines Gegners: Porträt eines vorgefertigten Bots, das gewählte Porträt eines eigenen
- * Bots (seit 0.2.99) oder sein Anfangsbuchstabe; dazu Siegmarken, wenn der Leser ihn schon in
- * einer gewerteten Partie besiegt hat: seit 25.10.2026 je Zeitklasse ein eigenes Zeichen (Blitz,
- * Stoppuhr, Kaffeetasse wie in der Bedenkzeit-Auswahl), bis zu drei zugleich (Wunsch des Autors).
+ * Bots oder sein Anfangsbuchstabe; dazu Siegmarken, wenn der Leser ihn schon in einer gewerteten
+ * Partie besiegt hat: je Zeitklasse ein eigenes Zeichen (Blitz, Stoppuhr, Kaffeetasse wie in der
+ * Bedenkzeit-Auswahl), bis zu drei zugleich (Wunsch des Autors, 25.10.2026).
  *
  * Rolle im Gesamtbild: Gemeinsamer Baustein für Gegnerwahl (Kacheln und Sprechblase), Editor der
- * eigenen Gegner und Partienliste (Wunsch des Autors, 19.10.2026). Bis 25.10.2026 war es ein Stern
- * nur für die Zeitklasse der gewählten Uhr; jetzt sieht man alle Zeitklassen auf einen Blick.
+ * eigenen Gegner und Partienliste (Wunsch des Autors, 19.10.2026). Man sieht alle Zeitklassen auf
+ * einen Blick, nicht nur die der gewählten Uhr.
  * Abhängigkeiten: engine/gegner.ts, gegnerportraet.ts, zeitartzeichen.ts, i18n.
  */
 import { gegnerVon, type EigenerGegner } from "../../../engine/gegner";

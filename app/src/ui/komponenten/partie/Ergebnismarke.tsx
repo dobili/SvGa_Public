@@ -1,12 +1,12 @@
 /**
- * Ergebnis einer Partie als Marke mit Zeichen und Farbe aus Sicht des Lesers (seit 0.2.101,
- * Symbolsprache DS25).
+ * Ergebnis einer Partie als Marke mit Zeichen und Farbe aus Sicht des Lesers (Symbolsprache
+ * DS25).
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Listen ohne Lesen erfassbar zu machen.
- * In der Partienliste stand bisher nur „1–0“; ob das ein Sieg war, hing an der Farbe, die man
- * gespielt hatte. Jetzt: Pokal auf Gold für einen Sieg, Händedruck auf Grau für Remis, Kreuz in Rot
- * für eine Niederlage, die Schachschreibweise bleibt daneben. Bei Mensch gegen Mensch gibt es kein
- * „du“, die Marke bleibt neutral. Farbe ist nie das einzige Merkmal (Zeichen und Wort im
+ * „1–0“ allein sagt nicht, ob das ein Sieg war; das hängt an der Farbe, die man gespielt hat.
+ * Deshalb: Pokal auf Gold für einen Sieg, Händedruck auf Grau für Remis, Kreuz in Rot für eine
+ * Niederlage, die Schachschreibweise bleibt daneben. Bei Mensch gegen Mensch gibt es kein „du“,
+ * die Marke bleibt neutral. Farbe ist nie das einzige Merkmal (Zeichen und Wort im
  * Bildschirmleser, WCAG 1.4.1).
  * Abhängigkeiten: spiel/partienfilter.ts, i18n, lucide-react.
  */

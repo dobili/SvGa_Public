@@ -1,19 +1,18 @@
 /**
- * Stil eines eigenen Gegners als Spinnennetz über die drei Stilachsen (Teil E, 0.2.126).
+ * Stil eines eigenen Gegners als Spinnennetz über die drei Stilachsen (Teil E).
  *
- * Rolle im Gesamtbild: Ersetzt im Formular eigener Gegner (GegnerEditor.tsx) den Regler „sehr
- * defensiv bis sehr aggressiv“ durch die sieben Stile der vorgefertigten Bots (engine/stile.ts;
- * Entscheidung des Autors, 23.10.2026: „Stil als Spinnennetz über die drei Achsen, sechs Speichen,
- * mit Anzeige des nächsten Stils, dazu Auswahlliste“). Die drei Achsen kommen aus 3 889
- * Lichess-Spielern: Königsangriff (Angreifer gegen Positionsspieler), Aktivität (Taktiker gegen
- * Verteidiger), Bauernsturm gegen Vereinfachen (Draufgänger gegen Vereinfacher); gegenüberliegende
- * Speichen sind die beiden Enden einer Achse, die Mitte ist „Universell“. Ein Tipp auf eine
- * Speiche wählt den Stil, die Mitte setzt auf „Universell“ zurück. Seit 0.2.128 (Wunsch des
- * Autors) trägt jede Speiche vier Punkte: 50, 75, 100 und 125 % der geeichten Verschiebung
- * (engine/stile.ts; 125 % geht über das hinaus, was echte Spieler zeigen). Mehrere Stile lassen
- * sich kombinieren, nur die beiden Enden einer Achse nicht, denn sie höben sich auf: Ein Tipp auf
- * das Gegenüber ersetzt den Stil dieser Achse, ein zweiter Tipp auf denselben Punkt nimmt ihn
- * weg. Neben dem Netz steht je Achse eine Auswahlliste.
+ * Rolle im Gesamtbild: Im Formular eigener Gegner (GegnerEditor.tsx) stehen die sieben Stile der
+ * vorgefertigten Bots (engine/stile.ts; Entscheidung des Autors, 23.10.2026: „Stil als
+ * Spinnennetz über die drei Achsen, sechs Speichen, mit Anzeige des nächsten Stils, dazu
+ * Auswahlliste“). Die drei Achsen kommen aus 3 889 Lichess-Spielern: Königsangriff (Angreifer
+ * gegen Positionsspieler), Aktivität (Taktiker gegen Verteidiger), Bauernsturm gegen Vereinfachen
+ * (Draufgänger gegen Vereinfacher); gegenüberliegende Speichen sind die beiden Enden einer Achse,
+ * die Mitte ist „Universell“. Ein Tipp auf eine Speiche wählt den Stil, die Mitte setzt auf
+ * „Universell“ zurück. Jede Speiche trägt vier Punkte (Wunsch des Autors): 50, 75, 100 und 125 %
+ * der geeichten Verschiebung (engine/stile.ts; 125 % geht über das hinaus, was echte Spieler
+ * zeigen). Mehrere Stile lassen sich kombinieren, nur die beiden Enden einer Achse nicht, denn sie
+ * höben sich auf: Ein Tipp auf das Gegenüber ersetzt den Stil dieser Achse, ein zweiter Tipp auf
+ * denselben Punkt nimmt ihn weg. Neben dem Netz steht je Achse eine Auswahlliste.
  * Abhängigkeiten: engine/stile.ts, i18n.
  */
 import {

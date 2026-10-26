@@ -1,7 +1,7 @@
 /**
  * Tests für den Sicht-Schalter: Werkzeuge mit Schalter ändern ihr Ergebnis mit der Sicht, die
- * ohne Schalter nicht (Wunsch des Autors nach dem Test von 0.2.27: „Tools, bei denen sich
- * wirklich nichts ändert, brauchen den Button nicht“).
+ * ohne Schalter nicht (Wunsch des Autors: „Tools, bei denen sich wirklich nichts ändert, brauchen
+ * den Button nicht“).
  */
 import { describe, expect, it } from "vitest";
 import { werkzeugeFuer, wende } from "../../../analyse/register";

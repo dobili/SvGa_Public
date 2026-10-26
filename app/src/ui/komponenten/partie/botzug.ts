@@ -1,8 +1,8 @@
 /**
- * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit (seit 0.2.126 ohne sichtbares Warten),
+ * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit (ohne sichtbares Warten),
  * Zug mit Uhr und Notmodus mit Vorzügen.
  *
- * Rolle im Gesamtbild: Aus ui/komponenten/partie/usePartie.ts ausgelagert (0.2.117), als der Notmodus
+ * Rolle im Gesamtbild: Eigene Datei neben ui/komponenten/partie/usePartie.ts, seit der Notmodus
  * (spiel/notmodus.ts, Idee des Autors vom 21.10.2026) dazukam. usePartie ruft je Zug entweder
  * normalerBotzug oder, im Notmodus, spieleVorzug; beide lesen und schreiben die Partie im
  * Speicher, damit sie ein Neuladen übersteht.

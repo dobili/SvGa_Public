@@ -1,13 +1,13 @@
 /**
  * Auswahl mit Vorschau: Brettfarben und Figurensätze als Kacheln mit kleinem Brettausschnitt.
  *
- * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): In der Karte „Einstellungen“
- * soll man sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt die Ecke a8
- * bis b7 (2 × 2 Felder, seit 0.2.85 quadratisch und je Feld 40 % größer als die frühere Reihe aus
- * vier Feldern, Wunsch des Autors) mit weißem König und Springer und schwarzem Springer und
- * Bauern, gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für Bildschirmleser eine Gruppe von
- * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden). Seit 0.2.82 lassen sich
- * die Kacheln in Gruppen mit Überschrift teilen (Figurensätze: Klassisch, Modern, Holz).
+ * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): In der Karte „Einstellungen“ soll man
+ * sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt die Ecke a8 bis b7
+ * (2 × 2 Felder, quadratisch, Wunsch des Autors) mit weißem König und Springer und schwarzem
+ * Springer und Bauern, gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für
+ * Bildschirmleser eine Gruppe von Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck
+ * (aria-hidden). Die Kacheln lassen sich in Gruppen mit Überschrift teilen (Figurensätze:
+ * Klassisch, Modern, Holz).
  * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
  */
 import { useId } from "react";

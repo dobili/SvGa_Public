@@ -1,9 +1,9 @@
 /**
  * Farbige Marke einer Spielstufe mit ihrer Nummer, in Gürtelfarben von Weiß (Stufe 1) bis Schwarz
- * (Stufe 8) (seit 0.2.101, Symbolsprache DS19).
+ * (Stufe 8) (Symbolsprache DS19).
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Seiten beim Scrollen ohne Lesen erfassbar
- * zu machen; die Stufen der vorgefertigten Bots waren als graue Textzeilen kaum zu unterscheiden.
+ * zu machen; als graue Textzeilen wären die Stufen der vorgefertigten Bots kaum zu unterscheiden.
  * Gürtelfarben kennt man aus Judo und Karate als Rangfolge: hell heißt Anfang, dunkel heißt
  * Meister. Die Zahl steht immer in der Marke, die Farbe ist nur ein zweites Merkmal (WCAG 1.4.1).
  * Die Gruppe „Zum Spaß“ bekommt eine bunte Marke mit Konfetti. Farben in ui/stil/symbole.css.

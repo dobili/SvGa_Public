@@ -1,6 +1,5 @@
 /**
- * Zeichen vor der Beschriftung eines Knopfes, nach festen Bedeutungen (seit 0.2.101,
- * Symbolsprache DS22).
+ * Zeichen vor der Beschriftung eines Knopfes, nach festen Bedeutungen (Symbolsprache DS22).
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026: allgemein bekannte Zeichen, die man ohne
  * Lesen erkennt, etwa die Diskette fürs Speichern. Jede Bedeutung hat genau ein Zeichen, und jedes

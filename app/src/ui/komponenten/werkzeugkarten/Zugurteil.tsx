@@ -1,11 +1,11 @@
 /**
- * Anzeige des Urteils über den letzten Zug in der Engine-Karte (seit 0.2.31).
+ * Anzeige des Urteils über den letzten Zug in der Engine-Karte.
  *
  * Rolle im Gesamtbild: Teil der Engine-Karte. Sagt in einem Satz, wie gut der zuletzt gespielte
- * Zug war, mit Zeichen, und nennt den besten Zug der Engine. Seit 0.2.91 sagt er den Verlust als
- * Gewinnchance vorher und nachher wie der Rückblick nach der Partie (Wunsch des Autors: einheitlich,
- * leichter verständlich als Bauerneinheiten); nur wenn die Gewinnchance sich kaum ändert (klar
- * gewonnene Stellung), nennt er die Bauerneinheiten.
+ * Zug war, mit Zeichen, und nennt den besten Zug der Engine. Den Verlust nennt er als
+ * Gewinnchance vorher und nachher wie der Rückblick nach der Partie (Wunsch des Autors:
+ * einheitlich, leichter verständlich als Bauerneinheiten); nur wenn die Gewinnchance sich kaum
+ * ändert (klar gewonnene Stellung), nennt er die Bauerneinheiten.
  * Abhängigkeiten: engine/letzterzug.ts, spiel/genauigkeit.ts, spiel/zuege.ts, schach/notation.ts,
  * i18n.
  */

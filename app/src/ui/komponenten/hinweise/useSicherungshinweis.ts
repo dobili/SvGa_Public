@@ -1,5 +1,5 @@
 /**
- * Zählt die App-Zeit und sagt, wann der Hinweis auf die Datensicherung erscheint (seit 0.2.32).
+ * Zählt die App-Zeit und sagt, wann der Hinweis auf die Datensicherung erscheint.
  *
  * Rolle im Gesamtbild: Verbindet app/sicherungshinweis.ts mit der Oberfläche. Einmal je Minute
  * zählt der Hook eine Minute dazu, aber nur, wenn die App sichtbar ist (nicht im Hintergrund).

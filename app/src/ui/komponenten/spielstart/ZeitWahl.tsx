@@ -1,11 +1,11 @@
 /**
  * Bedenkzeit als Raster gleich großer Kacheln: groß die Zeit mit dem Zeichen der Zeitklasse,
- * klein darunter ihr Name (seit 0.2.129, Vorschlag DS41, vom Autor am 25.10.2026 freigegeben).
+ * klein darunter ihr Name (Vorschlag DS41, vom Autor am 25.10.2026 freigegeben).
  *
- * Rolle im Gesamtbild: Ersetzt auf dem Bildschirm Spielen die Chips unterschiedlicher Breite
- * („Schnellschach 15 + 10“ war doppelt so breit wie „Blitz 3 + 0“) auf drei Zeilen. Vier Kacheln je
- * Zeile wie bei Lichess; außerhalb der Grundstellung kommt „ohne Uhr“ dazu (uhrwahl.ts). Für
- * Bildschirmleser eine Gruppe von Optionsfeldern mit dem vollen Namen („Blitz 3 + 2“).
+ * Rolle im Gesamtbild: Gleich große Kacheln statt Chips unterschiedlicher Breite („Schnellschach
+ * 15 + 10“ wäre doppelt so breit wie „Blitz 3 + 0“). Vier Kacheln je Zeile wie bei Lichess;
+ * außerhalb der Grundstellung kommt „ohne Uhr“ dazu (uhrwahl.ts). Für Bildschirmleser eine
+ * Gruppe von Optionsfeldern mit dem vollen Namen („Blitz 3 + 2“).
  * Abhängigkeiten: uhrwahl.ts, zeitartzeichen.ts, spiel/uhr.ts, spiel/elomodell.ts, Titelsymbol,
  * i18n, lucide-react.
  */

@@ -1,13 +1,12 @@
 /**
  * Blinde Flecken eines eigenen Gegners oder der eigenen Stufe als Spinnennetz über fünf Gruppen
- * (seit 0.2.135; Netz-Vorschau E4 und Auftrag „Variante A“, vom Autor am 25.10.2026 freigegeben).
+ * (Netz-Vorschau E4 und Auftrag „Variante A“, vom Autor am 25.10.2026 freigegeben).
  *
- * Rolle im Gesamtbild: Ersetzt die elf Kacheln (Fleckenkacheln.tsx, 0.2.129 bis 0.2.134). Die
- * Flecken einzeln messen bei Spielern kaum etwas, als Gruppen tragen sie (Auswertung des
- * Koordinierungschats): ruhige Züge, Bauernzüge, Rückzüge (mit den Springern), Fernwirkung
- * (Läufer, Turm, Dame, Röntgen) und Wendungen (Zwischenzug, Abzug, Grundreihe). Eine Gruppe an
- * heißt alle Mitglieder an; gespeichert wird weiter je Fleck. Ohne Feinregler, weil es nur fünf
- * Gruppen gibt. Darunter je eingeschalteter Gruppe ein Satz, was der Gegner übersieht.
+ * Rolle im Gesamtbild: Die Flecken einzeln messen bei Spielern kaum etwas, als Gruppen tragen sie
+ * (Auswertung des Koordinierungschats): ruhige Züge, Bauernzüge, Rückzüge (mit den Springern),
+ * Fernwirkung (Läufer, Turm, Dame, Röntgen) und Wendungen (Zwischenzug, Abzug, Grundreihe). Eine
+ * Gruppe an heißt alle Mitglieder an; gespeichert wird je Fleck. Ohne Feinregler, weil es nur
+ * fünf Gruppen gibt. Darunter je eingeschalteter Gruppe ein Satz, was der Gegner übersieht.
  * Abhängigkeiten: fehlergruppen.ts, Profilnetz.tsx, Fehlerprofil.tsx (Vorlagen), i18n.
  */
 import type { EigenerGegner } from "../../../engine/gegner";

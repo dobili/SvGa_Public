@@ -1,6 +1,6 @@
 /**
- * Stellungseditor auf dem Spielen-Bildschirm (Wunsch des Autors, 17.10.2026, Version 0.2.41):
- * eine Stellung aufbauen und von dort gegen die Engine oder einen Menschen spielen.
+ * Stellungseditor auf dem Spielen-Bildschirm (Wunsch des Autors, 17.10.2026): eine Stellung
+ * aufbauen und von dort gegen die Engine oder einen Menschen spielen.
  *
  * Rolle im Gesamtbild: Zwei Arten des Aufbaus. „Züge spielen“: Figur und Zielfeld antippen, die
  * Züge folgen den Regeln (schach/weiterspielen.ts), Umwandlung mit Nachfrage. „Figuren setzen“:

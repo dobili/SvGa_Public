@@ -2,10 +2,10 @@
  * Ergebnis einer beendeten Partie: wie sie endete, neue Partie.
  *
  * Rolle im Gesamtbild: Erscheint auf dem Partie-Bildschirm nach dem Ende (Pflichtenheft 5.2,
- * 5.3 Auswertung). Die Auswertung mit Zugzeichen, den absichtlichen Fehlern der
- * Engine und der PGN steht darunter (ui/komponenten/auswertung/Auswertung.tsx). Seit 0.2.85 (Rückmeldung
- * des Autors) fehlt „Noch einmal aus derselben Stellung“ bei Partien aus der Grundstellung: Das
- * ist dort dasselbe wie „Neue Partie“ und verwirrte.
+ * 5.3 Auswertung). Die Auswertung mit Zugzeichen, den absichtlichen Fehlern der Engine und der
+ * PGN steht darunter (ui/komponenten/auswertung/Auswertung.tsx). Bei Partien aus der
+ * Grundstellung fehlt „Noch einmal aus derselben Stellung“ (Rückmeldung des Autors): Das ist dort
+ * dasselbe wie „Neue Partie“ und verwirrte.
  * Abhängigkeiten: spiel/partie.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../../app/navigationsKontext";

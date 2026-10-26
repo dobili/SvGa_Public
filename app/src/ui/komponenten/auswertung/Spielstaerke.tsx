@@ -1,16 +1,15 @@
 /**
  * Karten „Genauigkeit und Spielstärke“ und „Deine Züge“ in der Auswertung, für eine Seite.
  *
- * Rolle im Gesamtbild: Seit R56 (Wunsch des Autors, 23.10.2026, nach Vorschaubildern) statt der
- * zweispaltigen Tabellen: Die Auswertung zeigt eine Seite (Umschalter in Auswertung.tsx), oben ein
- * großer Ring mit der Genauigkeit, daneben Urteil und geschätzte Spielstärke mit Spanne, darunter
- * je ein Balken (Skala 50 bis 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik
- * mit Prozent, Urteilswort und Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen
- * stehen als Bullet-Diagramm in Zugklassen.tsx. Rechnungen wie bisher in spiel/genauigkeit.ts.
- * Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) ohne den Schalter „Genauigkeit wie“: Die
- * Genauigkeit ist die von Lichess, die Spielstärke kommt aus dem Elo-Modell der Zeitklasse der
- * Partie (spiel/elomodell.ts); hinter dem Fragezeichen die Entsprechung auf chess.com oder beim
- * Weltschachbund (wertungstext.ts).
+ * Rolle im Gesamtbild: Wunsch des Autors (R56, 23.10.2026, nach Vorschaubildern): Die Auswertung
+ * zeigt eine Seite (Umschalter in Auswertung.tsx), oben ein großer Ring mit der Genauigkeit,
+ * daneben Urteil und geschätzte Spielstärke mit Spanne, darunter je ein Balken (Skala 50 bis
+ * 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik mit Prozent, Urteilswort und
+ * Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen stehen als Bullet-Diagramm in
+ * Zugklassen.tsx. Die Rechnungen stehen in spiel/genauigkeit.ts.
+ * Entscheidung des Autors (23.10.2026): Die Genauigkeit ist die von Lichess, die Spielstärke
+ * kommt aus dem Elo-Modell der Zeitklasse der Partie (spiel/elomodell.ts); hinter dem
+ * Fragezeichen die Entsprechung auf chess.com oder beim Weltschachbund (wertungstext.ts).
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/wertung.ts, spiel/elomodell.ts, engine/botstaerke.ts,
  * Zugklassen.tsx, Genauigkeitsbalken.tsx, wertungstext.ts, InfoKnopf, i18n.
  */

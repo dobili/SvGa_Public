@@ -1,7 +1,7 @@
 /**
  * Das Bild der Wertungskurve (SVG): Rasterlinien, Linie, ein Punkt je Partie (grün Sieg, rot
- * Niederlage, grau Remis), Datum links und rechts. Seit 0.2.125 aus Wertungskurve.tsx ausgelagert,
- * damit die Karte (Zeitklassen, Phasen, vorläufige Wertung) unter 400 Zeilen bleibt.
+ * Niederlage, grau Remis), Datum links und rechts. Eigene Datei, damit die Karte
+ * Wertungskurve.tsx (Zeitklassen, Phasen, vorläufige Wertung) unter 400 Zeilen bleibt.
  *
  * Rolle im Gesamtbild: Zeichnet, was Wertungskurve.tsx auswählt; bei den Partien steht jede gleich
  * weit von der nächsten, beim Zeitraum liegt jede an ihrer Zeit, der rechte Rand ist jetzt. Für

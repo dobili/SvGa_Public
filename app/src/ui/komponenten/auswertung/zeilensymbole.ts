@@ -1,7 +1,7 @@
 /**
- * Symbole der Zeilen in den Tabellen der Auswertung (seit 0.2.85, Wunsch des Autors): je
- * Kennzahl, je Phase und je Zugart im Mittelspiel. Die Darstellung steht in Auswertungssymbole.tsx.
- * Seit 0.2.101 auch die Zuordnung eines Phasennamens zur Phase (Phasenzeichen.tsx, DS26).
+ * Symbole der Zeilen in den Tabellen der Auswertung (Wunsch des Autors): je Kennzahl, je Phase
+ * und je Zugart im Mittelspiel, dazu die Zuordnung eines Phasennamens zur Phase
+ * (Phasenzeichen.tsx, DS26). Die Darstellung steht in Auswertungssymbole.tsx.
  * Abhängigkeiten: lucide-react, i18n, spiel/phasen.ts, spiel/taktik.ts.
  */
 import {

@@ -1,11 +1,11 @@
 /**
  * „Besser war …, danach etwa …“ im Rückblick als antippbare Züge: Ein Tipp zeigt die Stellung
  * nach diesem Zug des Nebenzweigs am Brett, Pfeile davor und danach gehen Zug für Zug, „Zurück
- * zur Partie“ verlässt den Zweig (seit 0.2.85, Wunsch des Autors).
+ * zur Partie“ verlässt den Zweig (Wunsch des Autors).
  *
- * Seit 0.2.85 auch der zweite Zweig „So wird der Fehler bestraft“: die Hauptvariante der Engine
- * nach dem Fehlzug, also wie der Gegner Material gewinnt (Rückmeldung des Autors zu 4. c4?, wo
- * das Motiv „Gabel: e5“ ohne Zugfolge nicht einleuchtete).
+ * Dazu der zweite Zweig „So wird der Fehler bestraft“: die Hauptvariante der Engine nach dem
+ * Fehlzug, also wie der Gegner Material gewinnt (Rückmeldung des Autors zu 4. c4?, wo das Motiv
+ * „Gabel: e5“ ohne Zugfolge nicht einleuchtete).
  * Rolle im Gesamtbild: Teil der Rückblickkarte (Rueckblickkarte.tsx); die Stellung am Brett wählt
  * der Partie-Bildschirm (Partie.tsx) aus dem Schritt. Die Züge rechnet spiel/nebenzweig.ts.
  * Abhängigkeiten: spiel/nebenzweig.ts, lucide, i18n.

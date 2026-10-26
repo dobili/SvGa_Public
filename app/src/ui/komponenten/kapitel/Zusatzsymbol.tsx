@@ -1,6 +1,6 @@
 /**
- * Zeichen für Zusatzinhalte an den kleinen Brettern der Kapitelübersicht, mit Legende (seit
- * 0.2.99, Wunsch des Autors vom 19.10.2026).
+ * Zeichen für Zusatzinhalte an den kleinen Brettern der Kapitelübersicht, mit Legende (Wunsch des
+ * Autors vom 19.10.2026).
  *
  * Rolle im Gesamtbild: Manche Abbildungen tragen Warum-Fragen (AP 14, WarumFrage.tsx), die erst
  * erscheinen, wenn die Abbildung als angesehen gilt. Oben rechts am kleinen Brett zeigt ein

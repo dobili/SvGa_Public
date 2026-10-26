@@ -1,6 +1,6 @@
 /**
  * Reiter „Bots“ der Einstellungen: das Maia-Zusatzpaket laden, ein- und ausschalten, löschen
- * (0.2.143, Entscheidung des Autors 25.10.2026: Komplettpaket, in den Einstellungen ausschaltbar).
+ * (Entscheidung des Autors 25.10.2026: Komplettpaket, in den Einstellungen ausschaltbar).
  *
  * Rolle im Gesamtbild: Maia-2 lässt die Bots Züge wählen, die Menschen ihrer Stärke wirklich
  * spielen (engine/maia.ts). Das Paket (etwa 96 MB) gehört nicht zur Installation; hier lädt der

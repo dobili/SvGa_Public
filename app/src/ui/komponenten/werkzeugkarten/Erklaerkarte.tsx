@@ -1,10 +1,10 @@
 /**
  * Erklärkachel von „Zählen“ und „Ziehen“: wie man das Werkzeug am Brett bedient.
  *
- * Rolle im Gesamtbild: Seit 0.2.31 erscheint sie, sobald Zählen oder Ziehen gewählt ist, und
- * bleibt stehen, bis man das Werkzeug abwählt (vorher kam sie erst beim zweiten Tippen). Der
- * Autor wusste beim Handytest von AP 1 nicht, wie „Zählen“ zu bedienen ist; daher die Kachel.
- * Mit dem Haken „Nicht mehr anzeigen“ verschwindet sie dauerhaft (useErklaerung.ts).
+ * Rolle im Gesamtbild: Sie erscheint, sobald Zählen oder Ziehen gewählt ist, und bleibt stehen,
+ * bis man das Werkzeug abwählt. Der Autor wusste beim Handytest von AP 1 nicht, wie „Zählen“ zu
+ * bedienen ist; daher die Kachel. Mit dem Haken „Nicht mehr anzeigen“ verschwindet sie dauerhaft
+ * (useErklaerung.ts).
  * Abhängigkeiten: useErklaerung.ts, i18n.
  */
 import { t, type Textschluessel } from "../../../i18n/sprache";

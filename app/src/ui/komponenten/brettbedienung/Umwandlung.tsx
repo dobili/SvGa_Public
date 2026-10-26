@@ -2,7 +2,7 @@
  * Auswahl der Figur bei der Umwandlung eines Bauern (Dame, Turm, Läufer, Springer) mit Abbruch.
  *
  * Rolle im Gesamtbild: Erscheint, wenn ein Bauer die letzte Reihe erreicht, beim Weiterspielen an
- * einer Abbildung (Brettbereich.tsx) wie im Stellungseditor (Stellungseditor.tsx, 0.2.41).
+ * einer Abbildung (Brettbereich.tsx) wie im Stellungseditor (Stellungseditor.tsx).
  * Abhängigkeiten: schach/weiterspielen.ts (UMWANDLUNGEN), schach/stellung.ts, i18n.
  */
 import { t } from "../../../i18n/sprache";

@@ -1,11 +1,11 @@
 /**
  * Der Knopf „Partie beginnen“ mit der Rückfrage, wenn schon eine Partie läuft.
  *
- * Rolle im Gesamtbild: Seit 0.2.85 (Wunsch des Autors) steht der Knopf auf dem Bildschirm Spielen
- * direkt unter den drei Kacheln der Gegnerwahl statt ganz unten (GegnerWahl.tsx, Spielen.tsx).
- * Seit V6 (Nutzungsprüfung 25.10.2026) zeigt der Knopf den Tipp sofort (gedrückt, für Bildschirmleser „beschäftigt“)
- * und beginnt die Partie erst nach diesem Bild; vorher stand gedrosselt (CPU 4×) gut 0,2 s lang
- * nichts Neues da, bis die Partie fertig gezeichnet war.
+ * Rolle im Gesamtbild: Steht auf dem Bildschirm Spielen in der festen Startleiste
+ * (Startleiste.tsx, Spielen.tsx). Der Knopf zeigt den Tipp sofort (gedrückt, für Bildschirmleser
+ * „beschäftigt“) und beginnt die Partie erst nach diesem Bild (V6, Nutzungsprüfung 25.10.2026);
+ * sonst stünde gedrosselt (CPU 4×) gut 0,2 s lang nichts Neues da, bis die Partie fertig
+ * gezeichnet ist.
  * Abhängigkeiten: i18n, nachDemNaechstenBild.
  */
 import { useState } from "react";

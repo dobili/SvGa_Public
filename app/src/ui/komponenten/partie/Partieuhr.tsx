@@ -2,10 +2,10 @@
  * Anzeige einer Schachuhr über oder unter dem Brett (Bildschirmentwurf „Partie“).
  *
  * Rolle im Gesamtbild: Zeigt, wer auf dieser Seite spielt, und die Restzeit; die laufende Uhr hat
- * einen goldenen Streifen, unter zehn Sekunden erscheint die Zeit rot. Seit 0.2.129 (Vorschlag
- * DS42, vom Autor am 25.10.2026 freigegeben) steht beim Gegner sein Porträt, sein Name und seine
- * Stufenmarke statt „Engine“, auf beiden Seiten ein Kreis in der Farbe der Steine. Die Zeit
- * rechnet spiel/uhr.ts.
+ * einen goldenen Streifen, unter zehn Sekunden erscheint die Zeit rot. Beim Gegner steht sein
+ * Porträt, sein Name und seine Stufenmarke statt „Engine“, auf beiden Seiten ein Kreis in der
+ * Farbe der Steine (Vorschlag DS42, vom Autor am 25.10.2026 freigegeben). Die Zeit rechnet
+ * spiel/uhr.ts.
  * Abhängigkeiten: spiel/uhr.ts, engine/gegner.ts, GegnerBild, Stufenmarke, speicher, i18n.
  */
 import { gegnername } from "../../../engine/gegner";

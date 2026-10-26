@@ -2,10 +2,10 @@
  * Die vier Zugknöpfe: Zum Anfang, Halbzug zurück, Halbzug vor, Zum Ende.
  *
  * Rolle im Gesamtbild: Gemeinsame Knopfreihe der Zugleiste (Abbildung), der Zugliste der Partie
- * und der Leiste beim Zug erraten. Seit dem 26.10.2026 (Wunsch des Autors: „Die Knöpfe zum
- * ersten und zum letzten Zug drücke ich immer aus Versehen“) steht „Zum Anfang“ ganz links und
- * „Zum Ende“ ganz rechts; „Zurück“ und „Vor“ stehen als breitere Hauptknöpfe zusammen in der
- * Mitte, mit deutlichem Abstand zu den äußeren.
+ * und der Leiste beim Zug erraten. Wunsch des Autors (26.10.2026: „Die Knöpfe zum ersten und zum
+ * letzten Zug drücke ich immer aus Versehen“): „Zum Anfang“ steht ganz links und „Zum Ende“ ganz
+ * rechts; „Zurück“ und „Vor“ stehen als breitere Hauptknöpfe zusammen in der Mitte, mit
+ * deutlichem Abstand zu den äußeren.
  * Abhängigkeiten: i18n, lucide-react.
  */
 import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";

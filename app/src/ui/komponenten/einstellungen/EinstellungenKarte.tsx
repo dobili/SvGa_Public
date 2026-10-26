@@ -1,31 +1,23 @@
 /**
- * Karte „Einstellungen“ (bis 0.2.84 „Darstellung und Training“): Nachtmodus, Brettfarben, Figurensatz,
- * Koordinaten, Ton, Erklärkacheln, dazu der Stand der Sprache.
+ * Karte „Einstellungen“: Brett, Figuren, Bedienung, Anzeige, Training, Bots und Hilfen in Reitern.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
- * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
- * steht mit „folgt“ da (Sprache, bis es eine zweite gibt; seit 0.2.94 dann eine Auswahl). Die Auflage zeigt die Zeile „Datenstand“ darüber.
- * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, klassisch, seit 0.2.39
- * auch Holz) und Ton
- * (aus, an) sind wählbar. „Erst selbst denken“ war bis AP 13 ausgeblendet; seit 0.2.37 wirkt es
- * bei den Übungen des Buches (Hinweise und Lösung erst nach eigenem Nachdenken) und ist wählbar.
- * Nachtmodus (seit 0.2.31, Wunsch des Autors): wie das Gerät, aus oder an (app/farbschema.ts).
- * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
- * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
- * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
- * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
- * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
- * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
- * Seit P8 (R52) unter „Anzeige“ der Schalter für das Toursymbol und der Knopf für den Rundgang.
- * Seit 0.2.134 (Wunsch des Autors, 25.10.2026: die Reiter waren nicht sinnvoll sortiert) neu
- * geordnet: Brett (Farben, Figuren, Koordinaten: wie das Brett aussieht), Bedienung (Ziehen per
- * Wischen, Zuganimation, Startanimation, Ton: wie die App reagiert), Anzeige (Nachtmodus, Schrift,
- * Sprache), Training (Erst selbst denken) und Hilfe (Toursymbol, Rundgang, Erklärkacheln). Vorher
- * hatte „Ton“ einen Reiter für eine Einstellung, die Startanimation stand unter „Brett“ und die
- * Hilfen unter „Anzeige“. Die Karte steht seit 0.2.134 auf dem Bildschirm „Einstellungen“ und
- * braucht keine eigene Überschrift mehr.
+ * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Die Auflage zeigt die Zeile
+ * „Datenstand“ darüber. Die Karte steht auf dem Bildschirm „Einstellungen“ und braucht keine
+ * eigene Überschrift.
+ * Reiter mit Symbolen (Wunsch des Autors, 18.10.2026: nicht alles auf einmal untereinander),
+ * geordnet nach dem Wunsch des Autors vom 25.10.2026:
+ * - Brett: wie das Brett aussieht (Brettfarben und Figurensätze als Kacheln mit Vorschau, in
+ *   Gruppen; Koordinaten),
+ * - Bedienung: wie die App reagiert (Figuren per Wischen ziehen, Zuganimation, Startanimation,
+ *   Ton aus oder an),
+ * - Anzeige: Nachtmodus (wie das Gerät, aus oder an, app/farbschema.ts), Schrift, Sprache,
+ * - Training: „Erst selbst denken“ (Strenge, auch vor Werkzeugen und Engine),
+ * - Bots: das Maia-Zusatzpaket (MaiaWahl.tsx),
+ * - Hilfe: Toursymbol, Rundgang (P8, R52) und ausgeblendete Erklärkacheln wieder anzeigen.
+ * Merker wie Wischen und Koordinaten gelten für das Gerät (app/merker.ts).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
- * tour/, SprachWahl (seit V4 eigene Datei), i18n.
+ * tour/, SprachWahl, i18n.
  */
 import { Bot, Brain, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
 import { useState } from "react";
@@ -326,9 +318,9 @@ function TonBereich() {
 }
 
 /**
- * Training: „Erst selbst denken“. Der Schalter „Genauigkeit wie“ (0.2.83 bis 0.2.86 hier) steht
- * seit 0.2.87 nur noch in der Auswertung einer Partie (Spielstaerke.tsx): Nur dort zeigt die App
- * Genauigkeiten (Wunsch des Autors).
+ * Training: „Erst selbst denken“ (Strenge, und ob es auch vor Werkzeugen und Engine gilt).
+ * Genauigkeiten zeigt die App nur in der Auswertung einer Partie (Wunsch des Autors), deshalb
+ * gibt es hier keinen Schalter dafür.
  */
 function TrainingBereich() {
   const einstellungen = useEinstellungen();

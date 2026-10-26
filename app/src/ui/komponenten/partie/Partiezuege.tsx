@@ -4,15 +4,14 @@
  * Rolle im Gesamtbild: Teil des Partie-Bildschirms (Bildschirmentwurf „Partie“, Zugliste unter
  * dem Brett). Ein Tipp auf einen Zug zeigt die Stellung danach; gezogen wird nur in der
  * aktuellen Stellung. Auch in der ruhigen Ansicht sichtbar (Wunsch des Autors: Brett,
- * Zugnavigation und gespielte Züge). Seit 0.2.43 (Wunsch des Autors) steht vor dem ersten Zug
- * des Mittelspiels ein „M“ und vor dem ersten Zug des Endspiels ein „E“, wie in der Kurve.
- * Seit 0.2.131 (Wunsch des Autors, 25.10.2026) steht nach der Auswertung hinter jedem Zug die
- * runde Marke seiner Zugklasse wie in „Deine Züge“ (statt des Zeichens als Text); Bildschirmleser
- * hören den Namen der Klasse.
- * Seit dem 26.10.2026 (Wunsch des Autors: „Die Liste der gespielten Züge ist nur eine Zeile hoch.
- * Bitte ausklappbar machen.“) klappt ein Knopf neben der Zeile alle Züge auf, umbrochen über
- * mehrere Zeilen; das Gerät merkt sich die Wahl. Die Zugknöpfe stehen darunter, „Zum Anfang“ und
- * „Zum Ende“ abgesetzt von „Zurück“ und „Vor“ (Zugknoepfe.tsx).
+ * Zugnavigation und gespielte Züge). Vor dem ersten Zug des Mittelspiels steht ein „M“, vor dem
+ * ersten Zug des Endspiels ein „E“, wie in der Kurve (Wunsch des Autors).
+ * Nach der Auswertung steht hinter jedem Zug die runde Marke seiner Zugklasse wie in „Deine
+ * Züge“ (Wunsch des Autors, 25.10.2026); Bildschirmleser hören den Namen der Klasse.
+ * Wunsch des Autors (26.10.2026: „Die Liste der gespielten Züge ist nur eine Zeile hoch. Bitte
+ * ausklappbar machen.“): Ein Knopf neben der Zeile klappt alle Züge auf, umbrochen über mehrere
+ * Zeilen; das Gerät merkt sich die Wahl. Die Zugknöpfe stehen darunter, „Zum Anfang“ und „Zum
+ * Ende“ abgesetzt von „Zurück“ und „Vor“ (Zugknoepfe.tsx).
  * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
  * app/merker.ts, Auswertungssymbole.tsx, Zugknoepfe.tsx.
  */

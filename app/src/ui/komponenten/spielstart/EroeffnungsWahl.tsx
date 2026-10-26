@@ -2,15 +2,15 @@
  * Wahl einer Eröffnung für die Engine vor der Partie: eine Liste der Eröffnungen aus Kapitel 2
  * und 3, dazu die Hauptvariante als Vorschau.
  *
- * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 (N178: „Wie bringe ich die
- * Engine zu einer bestimmten Eröffnung?“). Die Engine folgt der gewählten Eröffnung mit Buchtreue
- * 1, solange der Leser ihre Züge spielt (usePartie.ts, buchzuegeZu); verlässt er sie, spielt
- * die Engine die übrigen Buchzüge oder selbst. „frei“ heißt seit 0.2.40: ohne Buch, die Engine
- * spielt die Eröffnung selbst (Wunsch des Autors); „eine Eröffnung des Buches (zufällig)“ ist das
- * bisherige Verhalten mit Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
- * Seit 0.2.128 (Wunsch des Autors) ist die Vorgabe „wie Menschen dieser Stärke“: Der Bot eröffnet
- * nach dem Praxisbuch (engine/praxisbuch.ts). Dazu kommen die häufigsten benannten Eröffnungen
- * aus der Praxis (Lichess-Namen), denen der Bot folgt, solange du ihre Züge spielst.
+ * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest (N178: „Wie bringe ich die Engine zu
+ * einer bestimmten Eröffnung?“). Die Engine folgt der gewählten Eröffnung mit Buchtreue 1,
+ * solange der Leser ihre Züge spielt (usePartie.ts, buchzuegeZu); verlässt er sie, spielt die
+ * Engine die übrigen Buchzüge oder selbst. „frei“ heißt: ohne Buch, die Engine spielt die
+ * Eröffnung selbst (Wunsch des Autors); „eine Eröffnung des Buches (zufällig)“ wählt mit
+ * Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
+ * Die Vorgabe ist „wie Menschen dieser Stärke“ (Wunsch des Autors): Der Bot eröffnet nach dem
+ * Praxisbuch (engine/praxisbuch.ts). Dazu kommen die häufigsten benannten Eröffnungen aus der
+ * Praxis (Lichess-Namen), denen der Bot folgt, solange du ihre Züge spielst.
  * Abhängigkeiten: schach/eroeffnungsindex.ts, engine/praxisbuch.ts, daten/laden.ts,
  * useEroeffnungsindex, useDaten, i18n.
  */

@@ -1,7 +1,7 @@
 /**
- * Tests für die Ordnung der Werkzeuge (Werkzeug-Umbau 0.2.30): Bündel je Kapitel, „◀ frühere“
- * und „spätere ▶“, Reiter, erster Reiter, Symbole am Brett. Seit 0.2.31: Zählen am Brett, Bündel
- * in der Reihenfolge ihrer Einführung, Zuschalten ändert die Reihenfolge der gezeigten nicht.
+ * Tests für die Ordnung der Werkzeuge: Bündel je Kapitel, „◀ frühere“ und „spätere ▶“, Reiter,
+ * erster Reiter, Symbole am Brett (auch Zählen), Bündel in der Reihenfolge ihrer Einführung,
+ * Zuschalten ändert die Reihenfolge der gezeigten nicht.
  */
 import { describe, expect, it } from "vitest";
 import { werkzeugeFuer } from "../../../analyse/register";

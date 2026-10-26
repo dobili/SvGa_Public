@@ -5,12 +5,11 @@
  * Stufe 2 den Fortschritt je Kapitel. Die Summen kommen aus dem Datenverzeichnis (Abbildungen je
  * Kapitel) und aus nachschlagen.json (Lernziele), damit Ich keine Kapiteldateien laden muss.
  * Gelöste Übungen und Trainer-Durchgänge erscheinen, sobald es welche gibt (AP 13).
- * Seit 0.2.80 Kreisanzeigen statt Balken, je Kapitel ein kleiner Ring (Wunsch des Autors).
- * Seit 25.10.2026 (Wunsch des Autors) dazu je Zeitart ein Ring mit den schon gewertet besiegten
- * vorgefertigten Bots (gezählt wie die Siegmarken am Porträt, speicher/besiegt.ts); alle Ringe
- * tragen ein Zeichen in der Mitte, eine Legende darunter erklärt die Zeichen (Symbolringe.tsx).
- * Seit 0.2.139 (Wunsch des Autors, 25.10.2026) ein dritter Ring in der ersten Zeile: Trainer aus
- * „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang).
+ * Kreisanzeigen, je Kapitel ein kleiner Ring (Wunsch des Autors). In der ersten Zeile ein Ring
+ * für Trainer aus „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang),
+ * und je Zeitart ein Ring mit den schon gewertet besiegten vorgefertigten Bots (gezählt wie die
+ * Siegmarken am Porträt, speicher/besiegt.ts; Wünsche des Autors, 25.10.2026). Alle Ringe tragen
+ * ein Zeichen in der Mitte, eine Legende darunter erklärt die Zeichen (Symbolringe.tsx).
  * Abhängigkeiten: speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */

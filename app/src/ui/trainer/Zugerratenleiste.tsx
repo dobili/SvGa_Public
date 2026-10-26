@@ -5,14 +5,12 @@
  * gespielten Züge“ und „optional Analysemodus: von der aktuellen Stellung Varianten
  * durchspielen, bevor man den Zug festlegt“. Die Leiste sieht aus wie die Zugleiste beim
  * Nachspielen (gleiche Klassen); geraten wird nur in der aktuellen Stellung.
- * Abhängigkeiten: schach/weiterspielen.ts (Zugtexte), i18n, lucide-react, Knopfsymbol.
+ * Abhängigkeiten: schach/weiterspielen.ts (Zugtexte), i18n, komponenten/Zugknoepfe.tsx.
  */
-import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
 import { Fragment, useEffect, useRef } from "react";
-import { sprache, t, type Textschluessel } from "../../i18n/sprache";
+import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
-
-const SYMBOLGROESSE = 22;
+import { Zugknoepfe, type Zugrichtung } from "../komponenten/Zugknoepfe";
 
 /**
  * Die gespielten Züge als Tippflächen, darunter Anfang, zurück, vor, Ende.
@@ -40,17 +38,14 @@ export function Zugerratenleiste({
     if (zeile && stelle === null) zeile.scrollTop = zeile.scrollHeight;
   }, [stelle, zuege.length]);
   const gehe = (ziel: number) => setzeStelle(ziel >= zuege.length ? null : Math.max(0, ziel));
-  const knopf = (name: Textschluessel, ziel: number, aus: boolean, symbol: React.ReactNode) => (
-    <button
-      type="button"
-      className="knopf-symbol"
-      aria-label={t(name)}
-      disabled={aus}
-      onClick={() => gehe(ziel)}
-    >
-      {symbol}
-    </button>
-  );
+  const ziele: Readonly<Record<Zugrichtung, number>> = {
+    anfang: 0,
+    zurueck: gezeigt - 1,
+    vor: gezeigt + 1,
+    ende: zuege.length,
+  };
+  const amAnfang = gezeigt === 0;
+  const amEnde = stelle === null;
   return (
     <div className="zugleiste" data-testid="zugerraten-navigation">
       <p ref={behaelter} className="zugzeile" aria-label={t("zugerraten.navigation")}>
@@ -68,17 +63,10 @@ export function Zugerratenleiste({
           </Fragment>
         ))}
       </p>
-      <div className="zugknoepfe">
-        {knopf("zugleiste.anfang", 0, gezeigt === 0, <ChevronFirst size={SYMBOLGROESSE} />)}
-        {knopf("zugleiste.zurueck", gezeigt - 1, gezeigt === 0, <StepBack size={SYMBOLGROESSE} />)}
-        {knopf("zugleiste.vor", gezeigt + 1, stelle === null, <StepForward size={SYMBOLGROESSE} />)}
-        {knopf(
-          "zugleiste.ende",
-          zuege.length,
-          stelle === null,
-          <ChevronLast size={SYMBOLGROESSE} />,
-        )}
-      </div>
+      <Zugknoepfe
+        gesperrt={{ anfang: amAnfang, zurueck: amAnfang, vor: amEnde, ende: amEnde }}
+        beiRichtung={(richtung) => gehe(ziele[richtung])}
+      />
       {stelle !== null && <p className="hinweis">{t("zugerraten.ansicht")}</p>}
     </div>
   );

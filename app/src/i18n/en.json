@@ -2718,6 +2718,8 @@
   "partie.engine": "Engine",
   "partie.zuege": "Moves played",
   "partie.nochKeineZuege": "No moves yet.",
+  "partie.alleZuegeZeigen": "Show all moves",
+  "partie.wenigerZuegeZeigen": "Show fewer moves",
   "partie.duBistAmZug": "It's your move.",
   "partie.engineDenkt": "The engine is thinking …",
   "partie.engineFehler": "The engine found no move: {fehler}",

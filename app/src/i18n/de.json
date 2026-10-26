@@ -2718,6 +2718,8 @@
   "partie.engine": "Engine",
   "partie.zuege": "Gespielte Züge",
   "partie.nochKeineZuege": "Noch keine Züge.",
+  "partie.alleZuegeZeigen": "Alle Züge zeigen",
+  "partie.wenigerZuegeZeigen": "Weniger Züge zeigen",
   "partie.duBistAmZug": "Du bist am Zug.",
   "partie.engineDenkt": "Die Engine denkt …",
   "partie.engineFehler": "Die Engine hat keinen Zug gefunden: {fehler}",

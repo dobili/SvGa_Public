@@ -2,7 +2,8 @@
  * Oberflächentests für das Spiel gegen die Engine (AP 11): Partie beginnen, ziehen, Antwort der
  * Engine, Rücknahme, Fortsetzen nach dem Neuladen, Start an einer Abbildung mit Schwarz,
  * ein Zug, der ein Matt erlaubt, wird ohne Rückfrage gespielt (seit 0.2.32), Ergebnis und
- * Rücknahme nach dem Matt; Neuladen mitten im Nachdenken behält die verbrauchte Zeit (N180).
+ * Rücknahme nach dem Matt; Neuladen mitten im Nachdenken behält die verbrauchte Zeit (N180);
+ * die Zugliste klappt auf und bleibt nach dem Neuladen aufgeklappt (26.10.2026).
  */
 import { expect, type Page } from "@playwright/test";
 import { test } from "@playwright/test";
@@ -45,6 +46,12 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await expect(page.getByTestId("partiezuege")).toHaveText("Noch keine Züge.");
   await ziehe(page, /^d2, Bauer/, "d4");
   await warteAufLeser(page);
+  // Zugliste aufklappbar (Wunsch des Autors, 26.10.2026); das Gerät merkt sich die Wahl.
+  await page.getByRole("button", { name: "Alle Züge zeigen" }).click();
+  await expect(page.getByRole("button", { name: "Weniger Züge zeigen" })).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
   await page.screenshot({ path: "test-results/bilder/partie.png", fullPage: true });
   await page.reload();
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
@@ -52,6 +59,11 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.getByTestId("partiezuege")).toContainText("1. d4");
   await expect(page.getByTestId("partiezuege").getByRole("button")).toHaveCount(2);
+  await page.getByRole("button", { name: "Weniger Züge zeigen" }).click();
+  await expect(page.getByRole("button", { name: "Alle Züge zeigen" })).toHaveAttribute(
+    "aria-expanded",
+    "false",
+  );
 });
 
 test("Weitermachen (V2): nach dem Neuladen auf Spielen mit „Weiterspielen“, nicht in der Partie", async ({

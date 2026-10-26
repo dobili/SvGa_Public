@@ -8,6 +8,7 @@
  */
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 
+/** Name des Merkers auf dem Gerät, der festhält, dass der Hinweis auf Maia schon kam. */
 export const MERKER_MAIA_HINWEIS = "maiaHinweis";
 const GEZEIGT = "gezeigt";
 

@@ -2,11 +2,11 @@
  * Weitermachen, wo man war (V2, Nutzungsprüfung 25.10.2026): den Navigationsstapel als Merker
  * sichern und beim Start prüfen und wiederherstellen.
  *
- * Rolle im Gesamtbild: Der Stapel (app/stapel.ts) lebte nur im Speicher; nach einem Neuladen
- * oder wenn das Handy die App im Hintergrund beendet hatte, stand man wieder auf „Buch“. Jetzt
- * schreibt navigation.tsx jeden Stand als Merker `svga.stapel` (mit Formatnummer und Zeitpunkt),
- * und App.tsx liest ihn beim Start. Wiederhergestellt wird nur ein Stand, der jünger als
- * 24 Stunden ist und in dem jede Ansicht gültig ist; sonst beginnt die App wie bisher.
+ * Rolle im Gesamtbild: Der Stapel (app/stapel.ts) lebt im Arbeitsspeicher; ohne diesen Merker
+ * stünde man nach einem Neuladen oder wenn das Handy die App im Hintergrund beendet hat, wieder
+ * auf „Buch“. navigation.tsx schreibt jeden Stand als Merker `svga.stapel` (mit Formatnummer
+ * und Zeitpunkt), und App.tsx liest ihn beim Start. Wiederhergestellt wird nur ein Stand, der
+ * jünger als 24 Stunden ist und in dem jede Ansicht gültig ist; sonst beginnt die App auf „Buch“.
  * Partien gegen die Engine werden nicht direkt wieder geöffnet: Der Stapel endet vor ihnen (meist
  * auf „Spielen“ mit „Weiterspielen“), damit die Uhr nicht ohne Zutun des Lesers weiterläuft.
  * Die Nutzerdaten in IndexedDB bleiben unberührt; der Merker ist eine Bequemlichkeit, die

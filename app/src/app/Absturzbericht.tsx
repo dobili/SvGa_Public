@@ -3,10 +3,10 @@
  * Angaben zum Gerät nur mit Häkchen; geht das nicht, „Text kopieren“ als Rückweg.
  *
  * Rolle im Gesamtbild: Teil beider Fehlergrenzen, der äußeren um die ganze App
- * (app/Fehlergrenze.tsx) und der um jeden Bildschirm (app/Bildschirmgrenze.tsx, seit V7,
- * Nutzungsprüfung 25.10.2026). Bis dahin gingen die Geräteangaben bei Abstürzen immer mit; jetzt
- * gilt dasselbe Häkchen wie im Formular „Fehler melden“ (Datenschutzerklärung, „Meldungen aus der
- * App“). Gesendet wird nur auf Tipp. Ohne Netz wartet der Bericht auf dem Gerät (V9).
+ * (app/Fehlergrenze.tsx) und der um jeden Bildschirm (app/Bildschirmgrenze.tsx, V7,
+ * Nutzungsprüfung 25.10.2026). Für die Geräteangaben gilt dasselbe Häkchen wie im Formular
+ * „Fehler melden“ (Datenschutzerklärung, „Meldungen aus der App“). Gesendet wird nur auf Tipp.
+ * Ohne Netz wartet der Bericht auf dem Gerät (V9).
  * Abhängigkeiten: app/melden.ts, i18n.
  */
 import { useState } from "react";

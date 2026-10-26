@@ -1,13 +1,12 @@
 /**
- * Bildschirm „Werkzeuge des Buches“: alle Werkzeuge nach Kapiteln, je mit Bedienung und Regel
- * (seit 0.2.99).
+ * Bildschirm „Werkzeuge des Buches“: alle Werkzeuge nach Kapiteln, je mit Bedienung und Regel.
  *
- * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Nachschlagen zu prüfen. Die Werkzeuge
- * erklären sich bisher nur an einer Abbildung (Fragezeichen an der Werkzeugkarte); wer nachlesen
- * will, was „Skelett-Röntgen“ oder „Planbilanz“ prüft, fand keine Übersicht. Hier stehen alle
- * Werkzeuge aus dem Verzeichnis (analyse/register.ts) in der Reihenfolge ihrer Einführung, mit
- * denselben Texten wie an der Abbildung; ein Knopf öffnet das Kapitel, das sie einführt.
- * Seit 0.2.101 (DS28) mit dem Zeichen jedes Werkzeugs wie am Brett oder in der Werkzeugleiste.
+ * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Nachschlagen zu prüfen. An einer
+ * Abbildung erklärt sich ein Werkzeug hinter dem Fragezeichen der Werkzeugkarte; wer nachlesen
+ * will, was „Skelett-Röntgen“ oder „Planbilanz“ prüft, findet hier die Übersicht: alle Werkzeuge
+ * aus dem Verzeichnis (analyse/register.ts) in der Reihenfolge ihrer Einführung, mit denselben
+ * Texten wie an der Abbildung und dem Zeichen wie am Brett oder in der Werkzeugleiste (DS28);
+ * ein Knopf öffnet das Kapitel, das sie einführt.
  * Abhängigkeiten: analyse/register.ts, daten/laden.ts, buendelsymbole.ts, werkzeugordnung.ts,
  * Kopfzeile, Navigation, i18n, lucide-react.
  */

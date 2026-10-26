@@ -1,10 +1,10 @@
 /**
  * Lernstand: welche Lernziele der Leser je Kapitel abgehakt hat.
  *
- * Rolle im Gesamtbild: Die Gesamt-Checkliste wird zur Abhakliste (Wunsch des Autors nach dem
- * Test von 0.2.0). Die Punkte stehen im Buch am Ende jedes Kapitels („Bevor du weiterliest,
- * solltest du Folgendes können“, nachschlagen.json, Feld lernziele). Gespeichert wird nur, welche
- * Punkte abgehakt sind; seit AP 12 als Teil der Nutzerdaten im Speicher (bis 0.2.20 als Merker).
+ * Rolle im Gesamtbild: Die Gesamt-Checkliste ist eine Abhakliste (Wunsch des Autors). Die Punkte
+ * stehen im Buch am Ende jedes Kapitels („Bevor du weiterliest, solltest du Folgendes können“,
+ * nachschlagen.json, Feld lernziele). Gespeichert wird nur, welche Punkte abgehakt sind, als Teil
+ * der Nutzerdaten im Speicher (AP 12).
  * Abhängigkeiten: speicher/speicher.ts, speicher/format.ts.
  */
 import type { Lernstand } from "../speicher/format";

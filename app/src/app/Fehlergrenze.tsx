@@ -1,12 +1,11 @@
 /**
  * Fängt unerwartete Fehler der Oberfläche ab und zeigt eine verständliche Meldung statt einer
- * leeren Seite (Konzept 12: Fehler werden nie verschluckt). Seit R57 (24.10.2026) bietet sie an,
- * die technische Fehlermeldung an den Autor zu schicken (freiwilliger Absturzbericht, nur auf
- * Tipp; Datenschutzerklärung „Meldungen aus der App“).
- * Seit V7 (Nutzungsprüfung 25.10.2026) fängt zuerst die Grenze um jeden Bildschirm
- * (app/Bildschirmgrenze.tsx); diese äußere Grenze um die ganze App bleibt die letzte Rettung,
- * etwa wenn die Leiste selbst abstürzt. Geräteangaben gehen nur mit Häkchen mit
- * (app/Absturzbericht.tsx).
+ * leeren Seite (Konzept 12: Fehler werden nie verschluckt). Sie bietet an, die technische
+ * Fehlermeldung an den Autor zu schicken (freiwilliger Absturzbericht, nur auf Tipp, R57;
+ * Datenschutzerklärung „Meldungen aus der App“).
+ * Zuerst fängt die Grenze um jeden Bildschirm (app/Bildschirmgrenze.tsx, V7); diese äußere Grenze
+ * um die ganze App ist die letzte Rettung, etwa wenn die Leiste selbst abstürzt. Geräteangaben
+ * gehen nur mit Häkchen mit (app/Absturzbericht.tsx).
  * Abhängigkeiten: React, app/Absturzbericht.tsx, i18n.
  */
 import { Component, type ErrorInfo, type ReactNode } from "react";

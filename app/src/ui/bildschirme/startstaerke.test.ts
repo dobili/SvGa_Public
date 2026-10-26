@@ -1,4 +1,4 @@
-/** Tests der Spielstärke in der Startleiste (0.2.138): Zahl je Zeitart, keine gegen Menschen. */
+/** Tests der Spielstärke in der Startleiste: Zahl je Zeitart, keine gegen Menschen. */
 import { describe, expect, it } from "vitest";
 import { gegnerstaerke } from "../../engine/botstaerke";
 import { GRUNDSTELLUNG } from "../../spiel/stellungsbau";

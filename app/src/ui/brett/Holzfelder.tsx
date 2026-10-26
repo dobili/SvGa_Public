@@ -1,12 +1,12 @@
 /**
  * Holzfelder für die Brettfarbe „Holz“: die Felder zeigen Fotos echten Holzes.
  *
- * Rolle im Gesamtbild: Wunsch des Autors nach dem Test von 0.2.2: Die gerechnete Maserung sah zu
- * unecht aus; Vorbild ist das Holzbrett von Lichess. Zwei Muster (hell, dunkel) legen je ein
- * Holzfoto über das ganze Brett; jedes Feld zeigt den Ausschnitt an seiner Stelle, so läuft die
- * Faser wie bei einem echten Brett weiter. Bis das Bild geladen ist, gilt die Grundfarbe.
- * Die Bilder liegen offline im App-Speicher (vite-plugin-pwa, Muster *.webp). Seit 0.2.84 hier
- * auch das ganze Brettbild der Materialbretter (Brettbild).
+ * Rolle im Gesamtbild: Wunsch des Autors: Eine gerechnete Maserung sah zu unecht aus; Vorbild ist
+ * das Holzbrett von Lichess. Zwei Muster (hell, dunkel) legen je ein Holzfoto über das ganze
+ * Brett; jedes Feld zeigt den Ausschnitt an seiner Stelle, so läuft die Faser wie bei einem
+ * echten Brett weiter. Bis das Bild geladen ist, gilt die Grundfarbe. Die Bilder liegen offline
+ * im App-Speicher (vite-plugin-pwa, Muster *.webp). Hier steht auch das ganze Brettbild der
+ * Materialbretter (Brettbild).
  * Abhängigkeiten: masse.ts.
  */
 import { BRETT, BRETTFARBEN, HOLZ, holzmuster } from "./masse";

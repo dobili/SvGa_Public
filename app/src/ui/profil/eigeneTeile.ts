@@ -1,13 +1,13 @@
 /**
- * Eigene Varianten für den Porträt-Baukasten (seit 0.2.142, Wunsch des Autors vom 25.10.2026:
- * „verdopple die Auswahlmöglichkeiten … Nase, Augen, Mund, Bart, Oberteil“).
+ * Eigene Varianten für den Porträt-Baukasten (Wunsch des Autors vom 25.10.2026: „verdopple die
+ * Auswahlmöglichkeiten … Nase, Augen, Mund, Bart, Oberteil“).
  *
  * Rolle im Gesamtbild: Der Stil „Personas“ (DiceBear) bringt je Merkmal nur wenige Formen mit. Jede
  * Form steht im SVG als Gruppe an fester Stelle (`<g transform="translate(20 24)">` für die Augen
  * usw.). Eine eigene Variante baut DiceBear mit einer Grundform und ersetzt danach den Inhalt dieser
  * Gruppe durch eigene Pfade im selben Stil: dunkles Violett für Gesichtszüge, Überlagerung für die
  * Nase, Haarfarbe für den Bart, Kleidungsfarbe mit hellen und dunklen Überlagerungen für Oberteile.
- * Gespeichert wird wie bisher das fertige SVG; die Namen der Varianten stehen in den Merkmalen.
+ * Gespeichert wird das fertige SVG; die Namen der Varianten stehen in den Merkmalen.
  * Abhängigkeiten: keine (reine Zeichenketten); genutzt von merkmale.ts.
  */
 

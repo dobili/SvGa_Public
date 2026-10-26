@@ -3,10 +3,10 @@
  *
  * Rolle im Gesamtbild: Trainer „faktorenbilanz“ (AP 13). Der Leser stellt die Waage für
  * Material und Zeit und gibt Königssicherheit und Aktivität je Seite ✓ ◐ ✗ wie die Tabelle im
- * Buch (seit 0.2.117, Faktorwahl.tsx; vorher drei Knöpfe Weiß, gleich, Schwarz); nach
- * „Prüfen“ steht je Faktor die Antwort daneben (aus der Faktorenbilanz des Buches, wenn die
- * Abbildung eine hat, W9), darunter die Bilanz mit denselben Sätzen wie das Werkzeug
- * „Faktorenbilanz“ (k3-faktorenbilanz.ts) und die Warum-Fragen der Abbildung (AP 14).
+ * Buch (Faktorwahl.tsx); nach „Prüfen“ steht je Faktor die Antwort daneben (aus der
+ * Faktorenbilanz des Buches, wenn die Abbildung eine hat, W9), darunter die Bilanz mit denselben
+ * Sätzen wie das Werkzeug „Faktorenbilanz“ (k3-faktorenbilanz.ts) und die Warum-Fragen der
+ * Abbildung (AP 14).
  * Abhängigkeiten: training/faktorentrainer.ts, analyse/k3-faktorenbilanz.ts, Faktorwahl.tsx,
  * Trainerbrett.
  */

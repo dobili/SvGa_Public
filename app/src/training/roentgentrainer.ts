@@ -27,6 +27,7 @@ export const HOECHSTENS_PFEILE = 10;
 const MINDESTENS_PFEILE = 2;
 
 export type Roentgenschritt = "schachs" | "schlaege" | "gegner";
+/** Die drei Schritte des Röntgenblicks in der Reihenfolge des Buches. */
 export const SCHRITTE: readonly Roentgenschritt[] = ["schachs", "schlaege", "gegner"];
 
 /** Ein Pfeil als Text „von-nach“, etwa „f3-e5“. */

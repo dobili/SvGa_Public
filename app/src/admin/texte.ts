@@ -9,6 +9,7 @@
  */
 import type { Meldeart, Meldestatus } from "./schnittstelle";
 
+/** Alle festen Texte des Dashboards, nach Bereichen geordnet; {wer} wird ersetzt. */
 export const TEXTE = {
   titel: "Dashboard",
   angemeldet: "Angemeldet als {wer}",
@@ -51,6 +52,7 @@ export const TEXTE = {
   },
 } as const;
 
+/** Anzeigenamen der vier Meldearten (Fehler, Wunsch, Buchbefund, Absturzbericht). */
 export const ARTEN: Record<Meldeart, string> = {
   fehler: "Fehler",
   wunsch: "Wunsch",
@@ -58,6 +60,7 @@ export const ARTEN: Record<Meldeart, string> = {
   absturz: "Absturzbericht",
 };
 
+/** Anzeigenamen der Bearbeitungsstände einer Meldung (neu, in Arbeit, erledigt …). */
 export const STATUSNAMEN: Record<Meldestatus, string> = {
   neu: "Neu",
   in_arbeit: "In Arbeit",

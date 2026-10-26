@@ -64,6 +64,7 @@ async function hole<T>(pfad: string, init?: RequestInit): Promise<T> {
   return (await antwort.json()) as T;
 }
 
+/** Holt die Übersicht des Dashboards: Kennzahlen und Prüfpunkte mit ihrem Verlauf. */
 export const ladeUebersicht = () => hole<Uebersicht>("/api/admin/uebersicht");
 
 /** Meldungen mit einem Status; ohne Status die offenen (neu und in Arbeit). */
@@ -78,6 +79,7 @@ export interface Aenderung {
   notiz?: string;
 }
 
+/** Ändert eine Meldung (Status oder Notiz des Autors), gekennzeichnet durch ihre Nummer. */
 export const aendereMeldung = (id: number, aenderung: Aenderung) =>
   hole<{ ok: true }>(`/api/admin/meldungen/${id}`, {
     method: "POST",

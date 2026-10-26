@@ -1,6 +1,6 @@
 /**
- * Tests der Anleitungswahl auf der Startseite (Konzept 11.1, Entscheidung 15.10.2026); seit V5 auch,
- * dass das kleine Skript im Installationsteil (Wahl vor dem ersten Zeichnen) dasselbe wählt.
+ * Tests der Anleitungswahl auf der Startseite (Konzept 11.1, Entscheidung 15.10.2026), auch, dass
+ * das kleine Skript im Installationsteil (Wahl vor dem ersten Zeichnen) dasselbe wählt (V5).
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it, vi } from "vitest";

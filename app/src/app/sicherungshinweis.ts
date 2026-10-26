@@ -1,5 +1,5 @@
 /**
- * Hinweis auf die Datensicherung nach vier Stunden App-Zeit (seit 0.2.32).
+ * Hinweis auf die Datensicherung nach vier Stunden App-Zeit.
  *
  * Rolle im Gesamtbild: Antwort des Autors auf Frage Q4 (15.10.2026): Nach jeweils vier Stunden
  * „In-App-Zeit“ ohne Sicherung macht die App oben auf die Datensicherung aufmerksam, mit dem Haken

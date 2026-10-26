@@ -1,10 +1,10 @@
 /**
  * Fragen der App an den Service Worker nach dem Sprachpaket einer weiteren Sprache.
  *
- * Rolle im Gesamtbild: Seit V4 (Nutzungsprüfung 25.10.2026) lädt das Gerät Englisch erst, wenn
- * der Leser es wählt (sw/sprachpakete.ts). Die Sprachwahl (app/sprachwahl.ts) fragt hier, ob das
- * Paket schon vollständig auf dem Gerät liegt (dann geht der Wechsel auch offline) und bittet nach
- * dem Wechsel, es ganz nachzuladen.
+ * Rolle im Gesamtbild: Das Gerät lädt Englisch erst, wenn der Leser es wählt (sw/sprachpakete.ts,
+ * V4, Nutzungsprüfung 25.10.2026). Die Sprachwahl (app/sprachwahl.ts) fragt hier, ob das Paket
+ * schon vollständig auf dem Gerät liegt (dann geht der Wechsel auch offline) und bittet nach dem
+ * Wechsel, es ganz nachzuladen.
  * Abhängigkeiten: sw/dateiliste.ts (nur der Typ), Service-Worker-Schnittstelle des Browsers.
  */
 import type { Paketstand } from "../sw/dateiliste";

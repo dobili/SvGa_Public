@@ -4,10 +4,11 @@
  * Rolle im Gesamtbild: Trainer „endspiel“ (Pflichtenheft 7, AP 13). Die Aufgaben stammen aus
  * inhalte/de/trainer/endspiel.json (pipeline/trainer/endspiel.py): Abbildungen der Kapitel 8 und
  * 9 mit Seite des Lesers, Ziel (Gewinn oder Remis), Thema, Stichwort und Schwierigkeit, jede von
- * Stockfish geprüft; seit P4 (R47) dazu freie Endspielaufgaben der Lichess-Datenbank (CC0,
- * Themen bauernendspiel, turmendspiel, damenendspiel, leichtfiguren, Stufe nach Lichess-Wertung). Der Leser spielt gegen die Engine in voller Stärke; nach jedem seiner Züge
- * sagt die Bewertung, ob die Stellung noch hält. Reine Funktionen; die Engine ruft die
- * Oberfläche (ui/trainer/useEndspielpartie.ts).
+ * Stockfish geprüft; dazu freie Endspielaufgaben der Lichess-Datenbank (CC0, P4, R47; Themen
+ * bauernendspiel, turmendspiel, damenendspiel, leichtfiguren, Stufe nach Lichess-Wertung). Der
+ * Leser spielt gegen die Engine in voller Stärke; nach jedem seiner Züge sagt die Bewertung, ob
+ * die Stellung noch hält. Reine Funktionen; die Engine ruft die Oberfläche
+ * (ui/trainer/useEndspielpartie.ts).
  * Abhängigkeiten: daten/trainerdaten.ts, spiel/ergebnis.ts, training/zufall.ts.
  * Buchbezug: Kapitel 8 (Endspiel-Fundament) und 9 (Endspiel-Vertiefung).
  */
@@ -17,6 +18,7 @@ import { mische, type Zufall } from "./zufall";
 
 /** Gruppen der Themen für die Auswahl. */
 export type Endspielgruppe = "alle" | "matt" | "bauern" | "turm" | "dame" | "leichtfiguren";
+/** Die Gruppen in der Reihenfolge der Auswahl, „alle“ zuerst. */
 export const GRUPPEN: readonly Endspielgruppe[] = [
   "alle",
   "matt",

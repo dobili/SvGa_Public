@@ -1,6 +1,6 @@
 /**
- * Bereich Nachschlagen: Glossar, Denkroutine, Gesamt-Checkliste (Pflichtenheft 8, Navigation);
- * seit 0.2.99 dazu die Steckbriefe (Eröffnungen und Fallenchecks) und die Werkzeuge des Buches.
+ * Bereich Nachschlagen: Glossar, Denkroutine, Gesamt-Checkliste (Pflichtenheft 8, Navigation),
+ * dazu die Steckbriefe (Eröffnungen und Fallenchecks) und die Werkzeuge des Buches.
  *
  * Rolle im Gesamtbild: Startseite des Bereichs in der Leiste unten. Die Suche im Glossar beginnt
  * direkt hier, weil Leser meist einen Begriff aus dem Buch nachschlagen wollen.

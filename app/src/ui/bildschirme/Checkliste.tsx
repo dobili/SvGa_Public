@@ -3,8 +3,8 @@
  * Kernfrage, Werkzeug und Fehlerart aus der Tabelle in Kapitel 12.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Gesamt-Checkliste: die Tabelle aus Kapitel 12 als
- * Nachschlagekarte, jede Zeile verlinkt zum Kapitel“, erweitert auf Wunsch des Autors (Test von
- * 0.2.0) um die Liste „Bevor du weiterliest, solltest du Folgendes können“ am Ende jedes Kapitels.
+ * Nachschlagekarte, jede Zeile verlinkt zum Kapitel“, erweitert auf Wunsch des Autors um die
+ * Liste „Bevor du weiterliest, solltest du Folgendes können“ am Ende jedes Kapitels.
  * Alle Texte kommen aus nachschlagen.json (Pipeline, aus dem LaTeX); die Haken speichert
  * app/lernstand.ts auf dem Gerät.
  * Abhängigkeiten: daten/laden.ts, app/lernstand.ts, Navigation, i18n.

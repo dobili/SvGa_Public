@@ -1,17 +1,15 @@
 /**
  * Zeigerbedienung des Brettes: Antippen von Feldern und Ziehen per Wischen.
  *
- * Rolle im Gesamtbild: Ergänzt das Antippen von Figur und Zielfeld (Konzept 10.2), seit 0.2.92
- * (Wunsch des Autors, 18.10.2026) um das Wischen. Brett.tsx hängt die Zeiger-Ereignisse an die
- * Knopfschicht über dem Bild; ein Wischen beginnt nur auf Feldern mit ziehbaren Figuren, damit
- * das Scrollen der Seite auf allen anderen Feldern frei bleibt (dort gilt weiter touch-action
- * des Brettes).
- * Seit R35 (23.10.2026) erkennt der Baustein auch das Antippen selbst, statt auf den Klick des
- * Knopfes zu warten: Der Klick kam nicht, wenn der Finger beim Tippen etwas rutschte oder der
- * Tipp knapp nach einem Wischen folgte (die alte Klicksperre galt 400 ms für jeden Klick). Jetzt
- * zählt ein Tipp, solange der Finger weniger als TIPP_SPIEL Feldbreiten wandert, und das Feld
- * bestimmt treffer.ts großzügig. Der Klick des Knopfes danach wird verschluckt; Tastatur und
- * Bildschirmleser lösen weiter über den Klick aus.
+ * Rolle im Gesamtbild: Ergänzt das Antippen von Figur und Zielfeld (Konzept 10.2) um das Wischen
+ * (Wunsch des Autors, 18.10.2026). Brett.tsx hängt die Zeiger-Ereignisse an die Knopfschicht
+ * über dem Bild; ein Wischen beginnt nur auf Feldern mit ziehbaren Figuren, damit das Scrollen
+ * der Seite auf allen anderen Feldern frei bleibt (dort gilt touch-action des Brettes).
+ * Der Baustein erkennt auch das Antippen selbst, statt auf den Klick des Knopfes zu warten (R35):
+ * Der Klick kommt nicht, wenn der Finger beim Tippen etwas rutscht oder der Tipp knapp nach einem
+ * Wischen folgt. Ein Tipp zählt, solange der Finger weniger als TIPP_SPIEL Feldbreiten wandert,
+ * und das Feld bestimmt treffer.ts großzügig. Der Klick des Knopfes danach wird verschluckt;
+ * Tastatur und Bildschirmleser lösen über den Klick aus.
  * In den Einstellungen abschaltbar ist nur das Wischen (Merker „wischen“ auf dem Gerät, wie die
  * Koordinaten), weil es von Gerät und Hand abhängt, nicht vom Lernstand.
  * Abhängigkeiten: geometrie.ts, masse.ts, app/merker.ts, React.

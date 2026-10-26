@@ -24,6 +24,7 @@ export const FAKTOREN = ["material", "zeit", "koenig", "aktivitaet"] as const;
 export type Faktor = (typeof FAKTOREN)[number];
 /** Wer bei einem Faktor vorn liegt; „gleich“, wenn keiner. */
 export type Vorn = Color | "gleich";
+/** Die drei Antworten je Faktor in der Reihenfolge der Knöpfe: Weiß, gleich, Schwarz. */
 export const ANTWORTEN: readonly Vorn[] = ["white", "gleich", "black"];
 
 /** Kapitel mit Gambits und Faktorenbilanzen. */

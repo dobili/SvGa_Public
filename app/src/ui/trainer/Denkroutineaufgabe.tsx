@@ -1,7 +1,6 @@
 /**
  * Aufgabe des Denkroutine-Trainers: eine Minute denken, dann zwei Kandidaten mit je der stärksten
- * Antwort am Brett ziehen (seit 0.2.117, F2; vorher als Text), prüfen und mit der Engine
- * vergleichen.
+ * Antwort am Brett ziehen (F2), prüfen und mit der Engine vergleichen.
  *
  * Rolle im Gesamtbild: Trainer „denkroutine“ (Kapitel 12, AP 13 Stufe 3). Während der Minute
  * steht nur das Brett da; erst danach öffnet sich die Eingabe (die feste Zeit ist der Kern der

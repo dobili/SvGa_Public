@@ -7,10 +7,10 @@
  * Wischgeste am iPhone gehen im Verlauf zurück. Damit sie die vorige Ansicht der App zeigen und
  * die App nicht verlassen, liegt immer genau ein zusätzlicher Verlaufseintrag bereit, solange
  * es in der App noch etwas zum Zurückgehen gibt.
- * Seit V2 (Nutzungsprüfung 25.10.2026) sichert der Rahmen jeden Stand als Merker
- * (app/stapelMerker.ts), und der Anfangsstapel kann ein wiederhergestellter sein. Steht die Seite
- * nach einem Neuladen schon auf dem Wächter-Eintrag, übernimmt der Rahmen ihn, statt einen
- * weiteren anzulegen; so führt die Zurück-Taste auch nach dem Neuladen eine Ansicht zurück.
+ * Der Rahmen sichert jeden Stand als Merker (app/stapelMerker.ts, V2, Nutzungsprüfung
+ * 25.10.2026), und der Anfangsstapel kann ein wiederhergestellter sein. Steht die Seite nach
+ * einem Neuladen schon auf dem Wächter-Eintrag, übernimmt der Rahmen ihn, statt einen weiteren
+ * anzulegen; so führt die Zurück-Taste auch nach dem Neuladen eine Ansicht zurück.
  * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, React.
  */
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";

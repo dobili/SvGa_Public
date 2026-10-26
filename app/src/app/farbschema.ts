@@ -1,17 +1,18 @@
 /**
  * Farbschema der App: hell, dunkel (Nachtmodus) oder wie das Gerät.
  *
- * Rolle im Gesamtbild: Wunsch des Autors nach dem Test von 0.2.30: Der Nachtmodus soll sich in
- * den Einstellungen dauerhaft ein- und ausschalten lassen und nicht nur der Systemeinstellung
- * folgen. Die Wahl ist ein Merker auf dem Gerät (wie die Koordinaten), denn Helligkeit hängt am
- * Gerät, nicht am Lernstand. Die Stile lesen das Attribut `data-farbschema` am Wurzelelement
- * (basis.css): „dunkel“ erzwingt den Nachtmodus, „hell“ verhindert ihn, ohne Attribut gilt das
- * Gerät. Ein kleines Skript in app/index.html setzt das Attribut schon vor dem ersten Zeichnen,
- * damit nichts aufblitzt; es liest denselben Merker („svga.farbschema“).
+ * Rolle im Gesamtbild: Wunsch des Autors: Der Nachtmodus soll sich in den Einstellungen dauerhaft
+ * ein- und ausschalten lassen und nicht nur der Systemeinstellung folgen. Die Wahl ist ein Merker
+ * auf dem Gerät (wie die Koordinaten), denn Helligkeit hängt am Gerät, nicht am Lernstand. Die
+ * Stile lesen das Attribut `data-farbschema` am Wurzelelement (basis.css): „dunkel“ erzwingt den
+ * Nachtmodus, „hell“ verhindert ihn, ohne Attribut gilt das Gerät. Ein kleines Skript in
+ * app/index.html setzt das Attribut schon vor dem ersten Zeichnen, damit nichts aufblitzt; es
+ * liest denselben Merker („svga.farbschema“).
  * Abhängigkeiten: app/merker.ts.
  */
 import { liesMerker, schreibeMerker } from "./merker";
 
+/** Die drei Wahlen in den Einstellungen: wie das Gerät, immer hell, immer dunkel. */
 export const FARBSCHEMATA = ["geraet", "hell", "dunkel"] as const;
 export type Farbschema = (typeof FARBSCHEMATA)[number];
 

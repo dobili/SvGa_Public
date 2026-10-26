@@ -1,18 +1,19 @@
 /**
  * Meldungen an den Autor schicken (R57): Fehler, Wünsche, Buchbefunde, Absturzberichte.
  *
- * Rolle im Gesamtbild: Bis R57 kopierte „Fehler melden“ nur die Angaben in die Zwischenablage.
- * Jetzt geht die Meldung an POST /api/melden (worker/meldungen.ts) und erscheint im Dashboard des
- * Autors. Bei einem Fehler des Servers bleibt der alte Weg: Angaben kopieren. Fehlt das Netz,
- * wartet die Meldung seit V9 (Nutzungsprüfung 25.10.2026) auf dem Gerät und geht beim Ereignis
- * `online` oder beim nächsten Start hinaus (app/meldeschlange.ts).
- * Gesendet wird nur, was der Leser abschickt (Datenschutzerklärung, „Meldungen aus der App“).
+ * Rolle im Gesamtbild: Die Meldung geht an POST /api/melden (worker/meldungen.ts) und erscheint
+ * im Dashboard des Autors. Bei einem Fehler des Servers bleibt als Rückweg: Angaben in die
+ * Zwischenablage kopieren. Fehlt das Netz, wartet die Meldung auf dem Gerät und geht beim
+ * Ereignis `online` oder beim nächsten Start hinaus (app/meldeschlange.ts, V9, Nutzungsprüfung
+ * 25.10.2026). Gesendet wird nur, was der Leser abschickt (Datenschutzerklärung, „Meldungen aus
+ * der App“).
  * Abhängigkeiten: app/meldeschlange.ts, app/version.ts, i18n.
  */
 import { sprache } from "../i18n/sprache";
 import { liesSchlange, merkeVor, ohne, schreibeSchlange, type Meldekoerper } from "./meldeschlange";
 import { APP_VERSION } from "./version";
 
+/** Was der Leser im Formular melden kann; Absturzberichte kommen von den Fehlergrenzen. */
 export const MELDEARTEN = ["fehler", "wunsch", "buch"] as const;
 export type Meldeart = (typeof MELDEARTEN)[number] | "absturz";
 

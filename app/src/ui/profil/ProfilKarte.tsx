@@ -1,6 +1,6 @@
 /**
- * Kopf der Profilseite mit Porträt und Namen des Lesers (seit 0.2.140, Wunsch des Autors vom
- * 25.10.2026); „Name und Porträt“ öffnet den Editor in derselben Karte.
+ * Kopf der Profilseite mit Porträt und Namen des Lesers (Wunsch des Autors vom 25.10.2026);
+ * „Name und Porträt“ öffnet den Editor in derselben Karte.
  *
  * Rolle im Gesamtbild: Ganz oben im Profil (bildschirme/Ich.tsx). Ohne Namen und Bild lädt ein
  * Satz dazu ein; beides ist freiwillig. Dieselben Angaben erscheinen in Partie, Partienliste und

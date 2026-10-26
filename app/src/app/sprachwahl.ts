@@ -1,14 +1,14 @@
 /**
  * Sprachwahl der App: Startsprache, Wechsel durch den Leser, Abonnement für React.
  *
- * Rolle im Gesamtbild: Technik für die englische Fassung (AP 18, seit 0.2.94). Die Wahl des
- * Lesers liegt als Merker auf dem Gerät (wie Koordinaten und Wischen): Sie muss beim Start sofort
- * da sein, bevor die Nutzerdaten aus IndexedDB geladen sind, und folgt ohne Wahl der Sprache des
- * Geräts. Ein Wechsel vergisst die geladenen Buch- und Trainerdaten; App.tsx zeichnet die ganze
- * Oberfläche neu, sodass jeder Bildschirm die Daten der neuen Sprache lädt.
- * Seit V4 (Nutzungsprüfung 25.10.2026) lädt eine weitere Sprache erst bei der Wahl: Sprachdatei
- * und Sprachpaket (Buch- und Trainerdaten) kommen beim ersten Mal aus dem Netz. Ohne Netz und
- * ohne vollständiges Paket bleibt die App bei der bisherigen Sprache und meldet das, statt halb
+ * Rolle im Gesamtbild: Technik für die englische Fassung (AP 18). Die Wahl des Lesers liegt als
+ * Merker auf dem Gerät (wie Koordinaten und Wischen): Sie muss beim Start sofort da sein, bevor
+ * die Nutzerdaten aus IndexedDB geladen sind, und folgt ohne Wahl der Sprache des Geräts. Ein
+ * Wechsel vergisst die geladenen Buch- und Trainerdaten; App.tsx zeichnet die ganze Oberfläche
+ * neu, sodass jeder Bildschirm die Daten der neuen Sprache lädt.
+ * Eine weitere Sprache lädt erst bei der Wahl (V4, Nutzungsprüfung 25.10.2026): Sprachdatei und
+ * Sprachpaket (Buch- und Trainerdaten) kommen beim ersten Mal aus dem Netz. Ohne Netz und ohne
+ * vollständiges Paket bleibt die App bei der bisherigen Sprache und meldet das, statt halb
  * englisch zu sein.
  * Abhängigkeiten: i18n/sprache.ts, app/merker.ts, app/sprachpaket.ts, daten/laden.ts,
  * daten/trainerdaten.ts, React.

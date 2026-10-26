@@ -4,11 +4,10 @@
  * Rolle im Gesamtbild: Zeigt jede Abbildung und jedes Werkzeugergebnis (Konzept 10.2). Ebenen in
  * dieser Reihenfolge: Felder, Feldmarkierungen, Figuren, Pfeile, Beschriftungen.
  * Bedienung: Über dem Bild liegen 64 unsichtbare Knöpfe, einer je Feld. Das ist zuverlässig auf
- * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.92
- * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts); seit R35
- * erkennt useZiehen.ts auch das Antippen, mit großzügiger Trefferfläche um die Zielfelder
- * (treffer.ts). Seit R37 gleitet ein neuer Zug über das Brett (useZuganimation.ts,
- * Zuganimation.tsx).
+ * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Auf derselben
+ * Schicht lassen sich Figuren per Wischen ziehen; useZiehen.ts erkennt dort auch das Antippen,
+ * mit großzügiger Trefferfläche um die Zielfelder (treffer.ts, R35). Ein neuer Zug gleitet über
+ * das Brett (useZuganimation.ts, Zuganimation.tsx, R37).
  * Abhängigkeiten: masse.ts, geometrie.ts, treffer.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
  * useZugton.ts (Ton), useZiehen.ts, useZuganimation.ts, Zuganimation.tsx, i18n.
  */

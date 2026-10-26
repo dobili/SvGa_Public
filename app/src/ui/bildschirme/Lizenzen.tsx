@@ -5,8 +5,7 @@
  * Figurenschrift SkakNew (LPPL) und die Schriften (OFL) verlangen Namensnennung.
  * Impressum und Datenschutz stehen als statische Seiten neben der Startseite des Buches
  * (/impressum/, /datenschutz/); hier nur die Verweise.
- * Seit 0.2.94 stehen alle Texte dieser Seite in der Sprachdatei (Technik für die englische
- * Fassung, AP 18); vorher standen sie als rechtliche Angaben in fester Form hier.
+ * Alle Texte dieser Seite stehen in der Sprachdatei, damit es sie auch englisch gibt (AP 18).
  * Abhängigkeiten: Kopfzeile, i18n.
  */
 import { t } from "../../i18n/sprache";

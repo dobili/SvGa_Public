@@ -1,5 +1,5 @@
 /**
- * Name und Porträt des Lesers bearbeiten (seit 0.2.140, Wunsch des Autors vom 25.10.2026).
+ * Name und Porträt des Lesers bearbeiten (Wunsch des Autors vom 25.10.2026).
  *
  * Rolle im Gesamtbild: Öffnet sich in der Profilkarte (ProfilKarte.tsx). Oben die Vorschau mit
  * Name (bleibt beim Scrollen stehen), darunter die Porträtwahl (Portraetwahl.tsx, dieselbe wie

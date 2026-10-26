@@ -1,5 +1,5 @@
 /**
- * Name und Profil des Lesers für die Anzeige (seit 0.2.140): der eigene Name, sonst „Du“.
+ * Name und Profil des Lesers für die Anzeige: der eigene Name, sonst „Du“.
  *
  * Rolle im Gesamtbild: Partieuhr, Partienliste, PGN und Profilseite fragen hier, wie der Leser
  * heißt, statt überall „Du“ einzusetzen (Wunsch des Autors, 25.10.2026).

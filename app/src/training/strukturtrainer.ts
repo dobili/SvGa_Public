@@ -4,8 +4,8 @@
  *
  * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7, AP 13). Die Aufgaben stammen aus
  * inhalte/de/trainer/struktur.json: Abbildungen des Buches und Stellungen aus seinen Partien mit
- * Struktur, Seite und Plan-Schlüssel. Seit P4 (R49) zeigt der Trainer die echte Stellung (Skelett
- * per Knopf) und rechnet die Felder und Bauern mit denselben Bausteinen wie die Werkzeuge nach
+ * Struktur, Seite und Plan-Schlüssel. Der Trainer zeigt die echte Stellung (Skelett per Knopf,
+ * P4, R49) und rechnet die Felder und Bauern mit denselben Bausteinen wie die Werkzeuge nach
  * den Festlegungen des Autors (P3, 23.10.2026): starkes Feld = eigene 4. bis 6. Reihe, kein
  * gegnerischer Bauer kann es mehr angreifen; Vorposten = starkes Feld mit eigener Bauernstütze;
  * Loch = eigenes Feld (3. bis 5. Reihe), das kein eigener Bauer je wieder deckt; schwaches Feld =
@@ -29,6 +29,7 @@ export type Plan = Strukturaufgabe["plan"];
 
 /** Die fünf Feldarten der Festlegungen des Autors (P3), aus Sicht der Seite am Zug. */
 export type Feldart = "loch" | "schwachesFeld" | "starkesFeld" | "vorposten" | "rueckstaendigerBauer";
+/** Die fünf Feldarten als Liste, mit denselben Kennungen wie im Typ Feldart. */
 export const FELDARTEN: readonly Feldart[] = [
   "loch",
   "schwachesFeld",

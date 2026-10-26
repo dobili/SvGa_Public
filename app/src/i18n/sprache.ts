@@ -3,10 +3,10 @@
  *
  * Rolle im Gesamtbild: Kein Oberflächentext steht im Code, alle kommen über `t` aus
  * src/i18n/de.json (Konzept Abschnitt 6.5 und 11.4). Eine zweite Sprache ist eine zweite Datei,
- * eingetragen in SPRACHLADER (AP 18). Seit 0.2.94 die Technik dafür: Startsprache nach Wahl des
- * Lesers oder nach der Sprache des Geräts, Wechsel mit Benachrichtigung (useSprache.ts lässt die
- * App neu zeichnen), `<html lang>` folgt der Sprache. Seit V4 (Nutzungsprüfung 25.10.2026) ist nur
- * Deutsch fest eingebaut; jede weitere Sprachdatei lädt erst, wenn sie gebraucht wird (ladeSprache).
+ * eingetragen in SPRACHLADER (AP 18). Die Startsprache folgt der Wahl des Lesers oder der Sprache
+ * des Geräts; ein Wechsel benachrichtigt die App (useSprache.ts lässt sie neu zeichnen), und
+ * `<html lang>` folgt der Sprache. Nur Deutsch ist fest eingebaut; jede weitere Sprachdatei lädt
+ * erst, wenn sie gebraucht wird (ladeSprache, V4, Nutzungsprüfung 25.10.2026).
  * Abhängigkeiten: keine.
  */
 import de from "./de.json";

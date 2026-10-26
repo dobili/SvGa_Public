@@ -1,7 +1,7 @@
 /**
- * Spielstärke des gewählten Gegners für die Startleiste (seit 0.2.138, Wunsch des Autors vom
- * 25.10.2026): Wer zur Bedenkzeit scrollt, sieht die Zahl des Gegners sonst nicht mehr; in der
- * Leiste ändert sie sich sofort mit der Zeitart.
+ * Spielstärke des gewählten Gegners für die Startleiste (Wunsch des Autors vom 25.10.2026): Wer
+ * zur Bedenkzeit scrollt, sieht die Zahl des Gegners sonst nicht mehr; in der Leiste ändert sie
+ * sich sofort mit der Zeitart.
  *
  * Rolle im Gesamtbild: Dieselbe Zahl, mit der eine gewertete Partie rechnet (engine/botstaerke.ts,
  * gegnerstaerke): gemessene Bots und Gruppen in der Zeitklasse der Uhr, eigene Stufen und eigene

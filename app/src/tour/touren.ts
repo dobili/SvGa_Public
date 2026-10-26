@@ -81,6 +81,7 @@ const RUNDE: readonly Tourschritt[] = [
 ];
 
 // Eine Zeile je Schritt; die Texte stehen in de.json und en.json unter „tour.…“.
+/** Alle Rundgänge der App mit Titel und Schritten, nach Kennung. */
 export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   haupt: tour("tour.titel.haupt", [
     mitte("tour.haupt.willkommen"),

@@ -1,6 +1,6 @@
 /**
- * Wiederholungskarten im Taktiktrainer und in „Falle oder Köder“ (Empfehlung U9, 0.2.47), seit
- * 0.2.90 auch im Strukturerkenner und im Endspieltrainer.
+ * Wiederholungskarten im Taktiktrainer, in „Falle oder Köder“ (Empfehlung U9), im
+ * Strukturerkenner und im Endspieltrainer.
  *
  * Rolle im Gesamtbild: Eine falsch gelöste Aufgabe wird zur Wiederholungskarte
  * (speicher/fortschritt.ts, notiereTrainerantwort). Die Auswahl des Trainers fragt hier die

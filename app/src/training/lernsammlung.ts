@@ -48,11 +48,15 @@ export interface Sammeleintrag {
 
 /** Höchstens so viele Einträge; ältere fallen weg, damit der Speicher klein bleibt. */
 export const HOECHSTENS_SAMMLUNG = 1000;
+/** Längster Plan eines Eintrags in Zeichen (Eingabefeld begrenzt). */
 export const PLAN_HOECHSTENS = 200;
+/** Längste Notiz eines Eintrags in Zeichen. */
 export const NOTIZ_HOECHSTENS = 1000;
+/** Längster Eröffnungsname eines Eintrags in Zeichen. */
 export const EROEFFNUNG_HOECHSTENS = 100;
 /** Längster gespeicherter Weg (Halbzüge), damit eine lange Partie die Sammlung nicht aufbläht. */
 const VERLAUF_HOECHSTENS = 300;
+/** Die Grundstellung als FEN; nur andere Startstellungen schreibt das PGN als FEN aus. */
 export const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 type Roh = Record<string, unknown>;

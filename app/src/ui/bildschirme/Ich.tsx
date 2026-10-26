@@ -1,8 +1,7 @@
 /**
- * Bereich „Profil“ (intern „ich“, bis 0.2.133 „Einstellungen“ mit Zahnrad): oben Name und Porträt
- * des Lesers (seit 0.2.140, ProfilKarte.tsx), dann der Knopf zu den
- * Einstellungen, darunter die Wertung des Lesers (Wertungskurve.tsx), sein Fortschritt im Buch
- * (Fortschrittsuebersicht.tsx) und seine gespielten Partien (Partienliste.tsx).
+ * Bereich „Profil“ (intern „ich“): oben Name und Porträt des Lesers (ProfilKarte.tsx), dann der
+ * Knopf zu den Einstellungen, darunter die Wertung des Lesers (Wertungskurve.tsx), sein
+ * Fortschritt im Buch (Fortschrittsuebersicht.tsx) und seine gespielten Partien (Partienliste.tsx).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (25.10.2026): Die Leiste zeigt ein Profil statt des
  * Zahnrads; wer auf „Spielen“ tippt, will spielen und keine alten Partien sehen, deshalb stehen die

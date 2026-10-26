@@ -18,6 +18,7 @@ export interface Navigation {
   readonly wechsleBereich: (bereich: Bereich) => void;
 }
 
+/** Reicht die Navigation an alle Bildschirme weiter; außerhalb des Rahmens leer. */
 export const NavigationsKontext = createContext<Navigation | null>(null);
 
 /** Zugriff auf die Navigation aus einem Bildschirm. */

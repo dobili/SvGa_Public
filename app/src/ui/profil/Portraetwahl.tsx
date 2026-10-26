@@ -1,11 +1,10 @@
 /**
  * Porträtwahl mit drei Wegen: aus den 30 Porträts auswählen (nach Altersgruppen), selbst gestalten
- * (Baukasten.tsx) oder kein Bild (seit 0.2.140, Wunsch des Autors vom 25.10.2026).
+ * (Baukasten.tsx) oder kein Bild (Wunsch des Autors vom 25.10.2026).
  *
  * Rolle im Gesamtbild: Gemeinsam für das Profil des Lesers (ProfilEditor.tsx) und eigene Bots
- * (GegnerEditor.tsx); ersetzt dort das Aufklappmenü PortraetAuswahl.tsx (0.2.100 bis 0.2.139).
- * Den Zustand hält usePortraetwahl (portraetwahlZustand.ts), damit der Aufrufer das Ergebnis
- * für Vorschau und Speichern kennt.
+ * (GegnerEditor.tsx). Den Zustand hält usePortraetwahl (portraetwahlZustand.ts), damit der
+ * Aufrufer das Ergebnis für Vorschau und Speichern kennt.
  * Abhängigkeiten: portraetwahlZustand.ts, Baukasten, Auswahl, engine/portraetwahl.ts, i18n.
  */
 import { ALTERSGRUPPEN, PORTRAETWAHL, type Portraetkennung } from "../../engine/portraetwahl";

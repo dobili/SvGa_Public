@@ -41,10 +41,12 @@ export const PLAN: Readonly<Record<Tagesart, readonly Planschritt[]>> = {
   ],
 };
 
+/** Die zwei Tagesarten des 30-Minuten-Plans: Partietag und Studientag. */
 export const TAGESARTEN: readonly Tagesart[] = ["partietag", "studientag"];
 
 /** Die vier Bereiche des Studientags, in der Reihenfolge des Buches. */
 export type Studienbereich = "taktik" | "endspiel" | "strategie" | "eroeffnung";
+/** Die Bereiche als Liste in Buchreihenfolge, für die Auswahl und den Wechsel. */
 export const BEREICHE: readonly Studienbereich[] = [
   "taktik",
   "endspiel",
@@ -83,6 +85,7 @@ export interface Planstand {
   readonly letzterBereich: Studienbereich | null;
 }
 
+/** Stand ohne laufende Einheit und ohne letzten Tag oder Bereich (erster Start). */
 export const LEERER_PLANSTAND: Planstand = {
   einheit: null,
   letzterTag: null,

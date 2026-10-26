@@ -1,4 +1,4 @@
-/** Tests des Porträts eigener Bots mit Baukasten (0.2.140): lesen, schreiben, speichern. */
+/** Tests des Porträts eigener Bots mit Baukasten: lesen, schreiben, speichern. */
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";

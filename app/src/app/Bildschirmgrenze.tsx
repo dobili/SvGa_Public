@@ -1,15 +1,14 @@
 /**
  * Fehlergrenze um den Inhalt jedes Bildschirms (V7, Nutzungsprüfung 25.10.2026).
  *
- * Rolle im Gesamtbild: Bis V7 gab es nur eine Grenze um die ganze App (app/Fehlergrenze.tsx);
- * stürzte ein Bildschirm ab, verschwanden auch Leiste und Navigation, und es blieb nur „Neu
- * laden“. Jetzt fängt App.tsx jeden Bildschirm einzeln: Leiste und Navigation bleiben, die Seite
- * sagt freundlich, dass der Fortschritt gespeichert ist (er steht nach jeder Antwort in IndexedDB,
- * Konzept 9.4), und bietet „Zurück“ und „Fehler melden“. Die äußere Grenze bleibt als letzte
- * Rettung. Wechselt der Bildschirm (anderer `schluessel`), beginnt die Grenze ohne Fehler. Ein
- * React-`key` täte das auch, würde aber jeden Bildschirm bei jedem Schritt neu aufbauen (etwa
- * beim Wischen von Abb. 1.26 zu 1.27 ginge die Werkzeugwahl verloren); deshalb der Vergleich in
- * getDerivedStateFromProps.
+ * Rolle im Gesamtbild: App.tsx fängt jeden Bildschirm einzeln; stürzt einer ab, bleiben Leiste
+ * und Navigation (mit nur der Grenze um die ganze App, app/Fehlergrenze.tsx, bliebe nur „Neu
+ * laden“). Die Seite sagt freundlich, dass der Fortschritt gespeichert ist (er steht nach jeder
+ * Antwort in IndexedDB, Konzept 9.4), und bietet „Zurück“ und „Fehler melden“. Die äußere Grenze
+ * bleibt als letzte Rettung. Wechselt der Bildschirm (anderer `schluessel`), beginnt die Grenze
+ * ohne Fehler. Ein React-`key` täte das auch, würde aber jeden Bildschirm bei jedem Schritt neu
+ * aufbauen (etwa beim Wischen von Abb. 1.26 zu 1.27 ginge die Werkzeugwahl verloren); deshalb
+ * der Vergleich in getDerivedStateFromProps.
  * Abhängigkeiten: React, app/Absturzbericht.tsx, i18n.
  */
 import { Component, type ErrorInfo, type ReactNode } from "react";

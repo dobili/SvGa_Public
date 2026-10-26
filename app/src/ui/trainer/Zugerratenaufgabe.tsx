@@ -6,10 +6,10 @@
  * nächsten Zug der Gegenseite. Am Ende zählt die Runde die Partie als gut geraten, wenn
  * mindestens die Hälfte der Züge getroffen ist. Nach einem verfehlten Zug vergleicht die Engine
  * den eigenen Zug mit dem Partiezug und erinnert an die Frage des Buches, warum der Meister anders
- * zog (W12, Kapitel 12: „erst selbst denken und dann vergleichen“). Seit 0.2.90 speichert die
- * App die Trefferzahl je Partie (speicher/trainerverlauf.ts) und nennt beim nächsten Mal den
- * letzten Durchgang zum Vergleich (Pflichtenheft 7: „Wiederholung derselben Partie nach Wochen“).
- * Seit R45 (Wunsch des Autors, 23.10.2026): Hinweis-Knopf (goldenes Feld unter der Figur des
+ * zog (W12, Kapitel 12: „erst selbst denken und dann vergleichen“). Die App speichert die
+ * Trefferzahl je Partie (speicher/trainerverlauf.ts) und nennt beim nächsten Mal den letzten
+ * Durchgang zum Vergleich (Pflichtenheft 7: „Wiederholung derselben Partie nach Wochen“).
+ * Dazu (R45, Wunsch des Autors, 23.10.2026): Hinweis-Knopf (goldenes Feld unter der Figur des
  * Partiezuges; ein Treffer mit Hinweis zählt nicht), Pfeile für den letzten Zug (gold der
  * Partiezug, rot der eigene, falls er abweicht), Bewertungsbalken am Brett nach jedem Zug,
  * Kommentar nach Motiven und Fehlerarten (training/zugkommentar.ts), Blättern durch die

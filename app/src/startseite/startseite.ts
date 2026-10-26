@@ -8,8 +8,8 @@
  * - den Knopf „App installieren“ über den Installationsdialog des Browsers;
  * - den Fortschritt der Offline-Vorbereitung, denn der Service Worker lädt schon hier alle Dateien
  *   der App vorab („nach der Installation vollständig offline“).
- * Ohne React, damit die Startseite schnell lädt; seit V5 (Nutzungsprüfung 25.10.2026) auch ohne die
- * Sprachdatei (etwa 96 KB gzip): Alle Texte setzt der Build ins HTML, auch die beiden, die dieses
+ * Ohne React, damit die Startseite schnell lädt, und ohne die Sprachdatei (etwa 96 KB gzip; V5,
+ * Nutzungsprüfung 25.10.2026): Alle Texte setzt der Build ins HTML, auch die beiden, die dieses
  * Skript wechselt (data-text-fortschritt, data-text-bereit). Die erste Anleitung wählt schon ein
  * kleines Skript im Installationsteil vor dem ersten Zeichnen.
  * Abhängigkeiten: app/geraet.ts, app/installieren.ts, app/offlineKern.ts.

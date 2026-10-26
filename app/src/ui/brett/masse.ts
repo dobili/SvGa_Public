@@ -17,7 +17,9 @@ function ausPunkt(punkt: number): number {
   return (punkt / BUCHFELD_PT) * EINHEITEN_JE_FELD;
 }
 
+/** Breite eines Feldes in Einheiten des Brettes (wie in den Figurenpfaden). */
 export const FELD = EINHEITEN_JE_FELD;
+/** Breite des ganzen Brettes: acht Felder. */
 export const BRETT = 8 * FELD;
 
 /** Farben wie im Buch (Konzept 10.3). */

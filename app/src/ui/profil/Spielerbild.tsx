@@ -1,6 +1,6 @@
 /**
- * Das Porträt des Lesers (seit 0.2.140, Wunsch des Autors vom 25.10.2026): gewähltes oder selbst
- * gebautes Bild, sonst der Anfangsbuchstabe des Namens oder ein Personenzeichen.
+ * Das Porträt des Lesers (Wunsch des Autors vom 25.10.2026): gewähltes oder selbst gebautes Bild,
+ * sonst der Anfangsbuchstabe des Namens oder ein Personenzeichen.
  *
  * Rolle im Gesamtbild: Gegenstück zu GegnerBild.tsx; dieselben Klassen, damit Größe, Rundung und
  * Grundfarbe überall zu den Bots passen (Profilkopf, Partieuhr, Partienliste).

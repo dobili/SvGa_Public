@@ -12,7 +12,9 @@
 
 /** Wieder fällig nach so vielen Tagen, je Kasten 1 bis 5 (Konzept 9.1). */
 export const TAGE_JE_KASTEN = [1, 3, 7, 16, 35] as const;
+/** Nummer des ersten Kastens: Hier beginnt jede neue oder falsch gelöste Karte. */
 export const ERSTER_KASTEN = 1;
+/** Nummer des letzten Kastens (5), längster Abstand bis zur nächsten Frage. */
 export const LETZTER_KASTEN = TAGE_JE_KASTEN.length;
 const MS_JE_TAG = 24 * 60 * 60 * 1000;
 /** So viele Einträge merkt sich eine Karte im Verlauf (genug für eine Statistik über Wochen). */

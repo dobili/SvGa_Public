@@ -3,10 +3,10 @@
  * Widerlegung und die Warnsignale sehen.
  *
  * Rolle im Gesamtbild: Trainer „falle“ (Pflichtenheft 7: „Die Engine spielt den Fallensteller und
- * bietet Material an. Du entscheidest, ob du nimmst.“). Seit P4 (R50) steht der Köder-Zug als
- * roter Pfeil am Brett, das Angebot als grauer; die Warnsignale (Kapitel 4, k4-warnsignale)
- * erscheinen erst nach der Antwort, zusammen mit der Widerlegung aus der Engine-Prüfung und dem
- * Wert vor und nach dem Nehmen.
+ * bietet Material an. Du entscheidest, ob du nimmst.“). Der Köder-Zug steht als roter Pfeil am
+ * Brett, das Angebot als grauer (P4, R50); die Warnsignale (Kapitel 4, k4-warnsignale) erscheinen
+ * erst nach der Antwort, zusammen mit der Widerlegung aus der Engine-Prüfung und dem Wert vor und
+ * nach dem Nehmen.
  * Abhängigkeiten: training/fallentrainer.ts, analyse/k4-warnsignale.ts, Trainerbrett.
  */
 import { useMemo } from "react";

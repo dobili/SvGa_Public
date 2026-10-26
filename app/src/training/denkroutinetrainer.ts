@@ -6,9 +6,9 @@
  * Rolle im Gesamtbild: Trainer „denkroutine“ (Pflichtenheft 5.3, AP 13 Stufe 3). Die Stellungen
  * stammen aus dem Buch (Kapitel 7, 11 und 12: Taktik, Meisterpartien, Denkroutine), nur solche
  * mit beiden Königen, ohne Schach, mit mindestens zehn Steinen und einigen Zügen zur Wahl. Die
- * Züge zieht der Leser am Brett (seit 0.2.117, Denkeingabe.tsx); gelesen werden sie hier als
- * Kurznotation, auch in der Notation des Buches. Rechnen tut die Engine in ui/trainer/useDenkvergleich.ts; hier stehen die reinen
- * Teile: Stellungen, Lesen der Eingaben, Urteil.
+ * Züge zieht der Leser am Brett (Denkeingabe.tsx); gelesen werden sie hier als Kurznotation, auch
+ * in der Notation des Buches. Rechnen tut die Engine in ui/trainer/useDenkvergleich.ts; hier
+ * stehen die reinen Teile: Stellungen, Lesen der Eingaben, Urteil.
  * Abhängigkeiten: training/uebungsaufgabe.ts (zuegeAusText), spiel/zuege.ts, chessops,
  * training/zufall.ts.
  * Buchbezug: Kapitel 12, Denkroutine Schritt 2 und 3 (Kandidaten und stärkste Antwort).

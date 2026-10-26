@@ -1,4 +1,4 @@
-/** Tests der Schriftgröße (0.2.125): Schritte, Grenzen, Merker, Variable am Wurzelelement. */
+/** Tests der Schriftgröße: Schritte, Grenzen, Merker, Variable am Wurzelelement. */
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   GROESSTE,

@@ -2,8 +2,8 @@
  * Karten unter dem Brett der Abbildung: Kacheln des gewählten Werkzeugs, Engine-Kacheln,
  * Warum-Fragen, Knöpfe, Unterschrift und Fundstelle.
  *
- * Rolle im Gesamtbild: Teil des Abbildung-Bildschirms (Abbildung.tsx); seit 0.2.90 eigene Datei,
- * damit Abbildung.tsx unter 400 Zeilen bleibt (Konzept 12).
+ * Rolle im Gesamtbild: Teil des Abbildung-Bildschirms (Abbildung.tsx); eigene Datei, damit
+ * Abbildung.tsx unter 400 Zeilen bleibt (Konzept 12).
  * Abhängigkeiten: analyse, engine, ui/komponenten (Werkzeug- und Engine-Karten), Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";

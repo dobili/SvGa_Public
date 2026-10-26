@@ -1,11 +1,11 @@
 /**
  * Bildschirm „Steckbriefe“: die Eröffnungs-Steckbriefe und die Fallenchecks des Buches zum
- * Nachschlagen (seit 0.2.99).
+ * Nachschlagen.
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Nachschlagen zu prüfen. Die Steckbriefe
- * der Eröffnungen (Kapitel 2) und die Fallenchecks (Kapitel 4) standen schon in den Buchdaten,
- * waren in der App aber nirgends am Stück zu lesen. Jeder Eintrag ist aufklappbar; ein Knopf
- * führt zur passenden Stelle im Buch (erste Abbildung des Abschnitts, Stopp-Moment der Falle).
+ * der Eröffnungen (Kapitel 2) und die Fallenchecks (Kapitel 4) stehen in den Buchdaten und sind
+ * hier am Stück zu lesen. Jeder Eintrag ist aufklappbar; ein Knopf führt zur passenden Stelle im
+ * Buch (erste Abbildung des Abschnitts, Stopp-Moment der Falle).
  * Begriffe wie im Buch: „Wer tappt hinein?“, „Prüfung“, „Reicht?“, „Rettender Zug“,
  * „Fallensteller-Test“. Regel 1: Inhalte kommen unverändert aus den Buchdaten.
  * Abhängigkeiten: daten/laden.ts, Buchtext, Kopfzeile, Navigation, i18n.

@@ -1,10 +1,10 @@
 /**
  * Spielt beim Wechsel des letzten Zuges auf einem Brett den passenden Ton (app/ton.ts).
  *
- * Rolle im Gesamtbild: Einstellung „Ton“ (seit 0.2.33). Das Brett kennt den letzten Zug und die
- * Figuren; ein Zug, nach dem weniger Figuren auf dem Brett stehen, war ein Schlag. So klingt es
- * überall gleich, beim Ziehen, beim Nachspielen und in der Partie gegen die Engine, ohne dass jeder
- * Bildschirm selbst Töne auslöst. Das erste Zeichnen eines Brettes ist still.
+ * Rolle im Gesamtbild: Einstellung „Ton“. Das Brett kennt den letzten Zug und die Figuren; ein
+ * Zug, nach dem weniger Figuren auf dem Brett stehen, war ein Schlag. So klingt es überall gleich,
+ * beim Ziehen, beim Nachspielen und in der Partie gegen die Engine, ohne dass jeder Bildschirm
+ * selbst Töne auslöst. Das erste Zeichnen eines Brettes ist still.
  * Abhängigkeiten: app/ton.ts.
  */
 import { useEffect, useRef } from "react";

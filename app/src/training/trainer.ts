@@ -1,10 +1,9 @@
 /**
  * Verzeichnis aller Trainer mit Kapitel und Ausbaustufe (Pflichtenheft 7).
  *
- * Rolle im Gesamtbild: Das Trainingsmenü zeigt alle Trainer von Anfang an, auch die aus Stufe 2
- * und 3. Seit 0.2.71 sind alle spielbar; „folgt mit einem Update“ (Konzept 10.1) bleibt nur für
- * künftige Trainer. Die Namen
- * stehen in i18n/de.json (`trainer.<kennung>.name`) und kommen vor dem Druck in die
+ * Rolle im Gesamtbild: Das Trainingsmenü zeigt alle Trainer, auch die aus Stufe 2 und 3; alle
+ * sind spielbar, „folgt mit einem Update“ (Konzept 10.1) ist für künftige Trainer gedacht. Die
+ * Namen stehen in i18n/de.json (`trainer.<kennung>.name`) und kommen vor dem Druck in die
  * Trainingskästen des Buches (AP 16); danach werden sie nicht mehr geändert.
  * Abhängigkeiten: keine.
  */

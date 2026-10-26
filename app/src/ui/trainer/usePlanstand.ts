@@ -3,9 +3,9 @@
  *
  * Rolle im Gesamtbild: Teil von ui/trainer/DreissigMinutenBereich.tsx. Der Stand liegt als
  * Merker im Gerätespeicher (app/merker.ts), damit die Einheit den Weg zum Spielen und zurück
- * übersteht; geht er verloren (privates Fenster), beginnt der Plan einfach neu. Seit 0.2.90 steht
- * er zusätzlich in den Nutzerdaten („planstand“) und damit in der Datensicherung; fehlt der
- * Merker (neues Gerät, eingespielte Sicherung), gilt der Stand aus den Nutzerdaten.
+ * übersteht, und zusätzlich in den Nutzerdaten („planstand“) und damit in der Datensicherung.
+ * Fehlt der Merker (neues Gerät, eingespielte Sicherung), gilt der Stand aus den Nutzerdaten;
+ * fehlt beides (privates Fenster), beginnt der Plan einfach neu.
  * Abhängigkeiten: app/merker.ts, speicher/speicher.ts, training/dreissigminuten.ts, React.
  */
 import { useEffect, useState } from "react";

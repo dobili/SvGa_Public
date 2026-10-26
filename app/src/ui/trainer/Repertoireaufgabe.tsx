@@ -6,9 +6,9 @@
  * Buches als Pfeil, und der Leser zieht ihn nach. „Zug zeigen“ hilft ebenso und zählt ebenso.
  * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt. Hat ein gespielter Zug
  * eine Warum-Frage (W10), steht sie unter dem Brett, zugeklappt; sie zählt nicht zur Wertung.
- * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag. Dort zeigt ein falscher Zug seit
- * R46 (Wunsch des Autors, 23.10.2026) den eigenen Zug als roten und den Zug der Studie als
- * goldenen Pfeil, und die Engine vergleicht beide (Zugvergleich).
+ * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag. Dort zeigt ein falscher Zug den
+ * eigenen Zug als roten und den Zug der Studie als goldenen Pfeil, und die Engine vergleicht beide
+ * (Zugvergleich; R46, Wunsch des Autors, 23.10.2026).
  * Abhängigkeiten: training/repertoiretrainer.ts, Brettbereich, useBrettbedienung, Rundenrahmen,
  * useRatevergleich, Zugvergleich.
  */

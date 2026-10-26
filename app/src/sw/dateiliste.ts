@@ -2,7 +2,7 @@
  * Teilt die Dateiliste des Service Workers in den Kern (vorab geladen) und die Sprachpakete.
  *
  * Rolle im Gesamtbild: Der Build trägt alle Dateien der App in die Liste ein (vite.config.ts,
- * injectManifest). Seit V4 (Nutzungsprüfung 25.10.2026) lädt das Gerät davon nur den Kern vorab:
+ * injectManifest). Das Gerät lädt davon nur den Kern vorab (V4, Nutzungsprüfung 25.10.2026):
  * alles Deutsche, die Engine, Bilder und Schriften. Die Dateien einer weiteren Sprache (Buch- und
  * Trainerdaten unter daten/<sprache>/ und die Sprachdatei der Oberfläche als Baustein
  * assets/sprachpaket-<sprache>-…js) bilden ein Sprachpaket, das erst geladen wird, wenn der Leser

@@ -1,9 +1,9 @@
 /**
  * Stand von „Erst selbst denken“ je Abbildung: gesperrt oder freigegeben mit Einschätzung.
  *
- * Rolle im Gesamtbild: Logik zur Karte SelbstDenken.tsx (Pflichtenheft 4 und 5.1, seit 0.2.90);
- * eigene Datei, damit die Komponentendatei nur Komponenten exportiert. Seit 0.2.117 (NA1) bleiben
- * richtig eingeschätzte Abbildungen frei (Nutzerdaten, fortschritt.eingeschaetzt).
+ * Rolle im Gesamtbild: Logik zur Karte SelbstDenken.tsx (Pflichtenheft 4 und 5.1); eigene Datei,
+ * damit die Komponentendatei nur Komponenten exportiert. Richtig eingeschätzte Abbildungen
+ * bleiben frei (NA1, Nutzerdaten, fortschritt.eingeschaetzt).
  * Abhängigkeiten: app/einstellungen.ts, analyse/einschaetzung.ts, speicher.
  */
 import { useState } from "react";

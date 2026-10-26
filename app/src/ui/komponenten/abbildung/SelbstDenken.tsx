@@ -9,8 +9,8 @@
  * Übungen und Trainer haben eigene Bildschirme und bleiben davon unberührt.
  * Bei „streng“ (Einstellung „Erst selbst denken“) muss der Leser eine Einschätzung wählen, bei
  * „locker“ genügt „Ich habe nachgedacht“.
- * Seit 0.2.117 (NA1, Wunsch des Autors): Nach der Einschätzung steht das Urteil der Engine; eine
- * richtige Einschätzung merkt sich die App, dort sind die Werkzeuge beim nächsten Mal gleich da.
+ * Nach der Einschätzung steht das Urteil der Engine; eine richtige Einschätzung merkt sich die
+ * App, dort sind die Werkzeuge beim nächsten Mal gleich da (NA1, Wunsch des Autors).
  * Abhängigkeiten: useSelbstDenken.ts, useEngineEinschaetzung.ts, app/einstellungen.ts,
  * speicher/fortschritt.ts, engine/wertInWorten.ts, i18n.
  */

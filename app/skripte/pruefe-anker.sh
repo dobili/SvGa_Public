@@ -7,6 +7,10 @@
 #   skripte/pruefe-anker.sh blitz 3 r2 → Zweig pruefung-blitz-3-r2 (weitere Runde)
 #   skripte/pruefe-anker.sh blitz 3 maia mit → mit Maia (Kürzel „3m*“), Zweig pruefung-blitz-3-maia
 #   (0.2.143: prüft die Umrechnung je Zeitklasse auch für den Zahlensatz mit Maia)
+# Achtung: Die Partien hängen nur von Stand und Zufallssaat ab. Eine weitere Runde auf demselben
+# Stand liefert genau dieselben Partien (26.10.2026: pruefung-blitz-8-r2 glich pruefung-blitz-8-planc
+# Zug für Zug). Für eine neue Stichprobe die Saaten verschieben, etwa
+#   MESSUNG_SAAT_AB=1000 skripte/pruefe-anker.sh blitz 8 r3
 set -euo pipefail
 set -f  # Kürzel mit „*“ (Maia) nicht als Dateimuster lesen
 ZEITKLASSE=${1:?Zeitklasse blitz oder klassisch}

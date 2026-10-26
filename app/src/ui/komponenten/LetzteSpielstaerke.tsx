@@ -14,8 +14,11 @@
  * nebeneinander: oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
  * eine kleine Legende nennt die Zeichen. Spanne je Phase und Herleitung stehen hinter dem
  * Fragezeichen.
+ * Seit dem 26.10.2026 (Wunsch des Autors) schaltet „Lichess | chess.com · FIDE“ alle Zahlen
+ * der Kacheln auf die umgerechnete Liste (wertungsmassstab.ts), mit „≈“ und dem Namen der Liste.
  * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien, verlaufDerZeitklasse), spiel/elomodell.ts,
- * speicher/partien.ts, speicher/speicher.ts, wertungstext.ts, InfoKnopf, i18n.
+ * speicher/partien.ts, speicher/speicher.ts, wertungstext.ts, wertungsmassstab.ts, Massstabwahl,
+ * InfoKnopf, i18n.
  */
 import { useMemo } from "react";
 import { t } from "../../i18n/sprache";
@@ -32,6 +35,15 @@ import {
 import type { Partieeintrag } from "../../speicher/partien";
 import { useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "./InfoKnopf";
+import { Listenname, Massstabwahl } from "./Massstabwahl";
+import {
+  ausserhalbText,
+  spanneImMassstab,
+  useWertungsmassstab,
+  zahlImMassstab,
+  zielname,
+  type Wertungsmassstab,
+} from "./wertungsmassstab";
 import { entsprichtText, zeitklassenname } from "./wertungstext";
 import { ZEITARTZEICHEN } from "./zeitartzeichen";
 
@@ -71,6 +83,7 @@ function kachelstaende(
 export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintrag[] }) {
   const punkte = useSpeicher((z) => z.daten.spiel.wertung);
   const staende = useMemo(() => kachelstaende(partien, punkte), [partien, punkte]);
+  const [massstab, setzeMassstab] = useWertungsmassstab();
   if (staende.every((s) => !s.schaetzung && s.wertung === null)) return null;
   return (
     <section
@@ -83,9 +96,10 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
         erklaerung={<Erklaerung staende={staende} />}
         thema={t("spielstaerke.letzte.titel")}
       />
+      <Massstabwahl massstab={massstab} beiWahl={setzeMassstab} />
       <div className="staerkekacheln">
         {staende.map((s) => (
-          <Kachel key={s.tempo} stand={s} />
+          <Kachel key={s.tempo} stand={s} massstab={massstab} />
         ))}
       </div>
       <p className="staerkelegende" aria-hidden="true">
@@ -104,9 +118,10 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
 }
 
 /** Eine Kachel: Zeichen, Zahl (sonst „–“), Spanne, Wertung; für Bildschirmleser mit Namen. */
-function Kachel({ stand }: { stand: Kachelstand }) {
+function Kachel({ stand, massstab }: { stand: Kachelstand; massstab: Wertungsmassstab }) {
   const Zeichen = ZEITARTZEICHEN[stand.tempo];
   const s = stand.schaetzung;
+  const zahl = s ? zahlImMassstab(stand.tempo, s.mitte, massstab) : null;
   return (
     <div
       className={s ? "staerkekachel" : "staerkekachel leer"}
@@ -115,23 +130,46 @@ function Kachel({ stand }: { stand: Kachelstand }) {
       data-testid={`letzte-spielstaerke-${stand.tempo}`}
     >
       <Zeichen className="staerkekachel-zeichen" size={KACHELZEICHEN} aria-hidden="true" />
-      <span className="staerkekachel-zahl">{s ? s.mitte : "–"}</span>
+      <span className="staerkekachel-zahl">{zahl ? zahl.zahl : "–"}</span>
+      {(s || stand.wertung !== null) && (
+        <Listenname liste={massstab === "umgerechnet" ? zielname(stand.tempo) : null} />
+      )}
+      <Kachelzeilen stand={stand} massstab={massstab} />
+    </div>
+  );
+}
+
+/** Die kleinen Zeilen einer Kachel: Spanne (oder Grenze der Tabelle) und Wertung im Maßstab. */
+function Kachelzeilen({ stand, massstab }: { stand: Kachelstand; massstab: Wertungsmassstab }) {
+  const s = stand.schaetzung;
+  const zahl = s ? zahlImMassstab(stand.tempo, s.mitte, massstab) : null;
+  const spanne = s ? spanneImMassstab(stand.tempo, s.von, s.bis, massstab) : null;
+  const wertung =
+    stand.wertung === null ? null : zahlImMassstab(stand.tempo, stand.wertung, massstab);
+  // Liegt eine Zahl außerhalb der Tabelle, steht einmal die Grenze dabei.
+  const grenze = s && zahl?.ausserhalb ? s.mitte : wertung?.ausserhalb ? stand.wertung : null;
+  return (
+    <>
       <span className="staerkekachel-klein">
-        {s
-          ? t("spielstaerke.letzte.kachelSpanne", { von: s.von, bis: s.bis })
-          : t("spielstaerke.letzte.keine")}
+        {!s && t("spielstaerke.letzte.keine")}
+        {s && spanne && t("spielstaerke.letzte.kachelSpanne", spanne)}
       </span>
-      {stand.wertung !== null && (
+      {grenze !== null && (
+        <span className="staerkekachel-klein" data-testid="massstab-ausserhalb">
+          {ausserhalbText(stand.tempo, grenze)}
+        </span>
+      )}
+      {wertung && (
         <span className="staerkekachel-klein staerkekachel-wertung">
           {t(
             stand.vorlaeufig
               ? "spielstaerke.letzte.kachelWertungVorlaeufig"
               : "spielstaerke.letzte.kachelWertung",
-            { wertung: stand.wertung },
+            { wertung: wertung.zahl },
           )}
         </span>
       )}
-    </div>
+    </>
   );
 }
 
@@ -143,6 +181,7 @@ function Erklaerung({ staende }: { staende: readonly Kachelstand[] }) {
       {staende.map((stand) =>
         stand.schaetzung ? <Einzelheiten key={stand.tempo} stand={stand} /> : null,
       )}
+      <p>{t("wertung.massstab.erklaerung")}</p>
     </>
   );
 }

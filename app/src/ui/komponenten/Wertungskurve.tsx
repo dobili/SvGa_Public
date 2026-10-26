@@ -17,8 +17,11 @@
  * Seit 0.2.142 (Wunsch des Autors, 25.10.2026) sitzt das Fragezeichen an der Überschrift und
  * nimmt alle Erklärtexte auf (vorläufig, Schätzung aus den Zügen, Phasen); sichtbar bleiben die
  * Zahl mit der Marke „vorläufig“ und eine kurze Zeile zum Stand.
+ * Seit dem 26.10.2026 (Wunsch des Autors) schaltet „Lichess | chess.com · FIDE“ Zahl, Spanne
+ * und Änderung auf die umgerechnete Liste (wertungsmassstab.ts); die Kurve bleibt im Maßstab von
+ * Lichess und sagt das (außerhalb der Tabellen gäbe es keine Punkte).
  * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
- * InfoKnopf, wertungstext, i18n.
+ * InfoKnopf, wertungstext, wertungsmassstab, Massstabwahl, i18n.
  */
 import { useMemo, useState } from "react";
 import { t, type Textschluessel } from "../../i18n/sprache";
@@ -41,9 +44,18 @@ import {
   type Wertungspunkt,
 } from "../../spiel/wertung";
 import { MitInfo } from "./InfoKnopf";
+import { Listenname, Massstabwahl } from "./Massstabwahl";
 import { Reiter } from "./Reiter";
 import { Titelsymbol } from "./Titelsymbol";
 import { Kurve } from "./Wertungskurvenbild";
+import {
+  aenderungImMassstab,
+  ausserhalbText,
+  spanneImMassstab,
+  useWertungsmassstab,
+  zahlImMassstab,
+  type Wertungsmassstab,
+} from "./wertungsmassstab";
 import { zeitklassenname } from "./wertungstext";
 
 /** Was die Kurve zeigt: die Wertung oder die Schätzung je Phase. */
@@ -128,22 +140,75 @@ function Standzeile({
   kette,
   sichtbar,
   tempo,
+  massstab,
 }: {
   kette: readonly Wertungspunkt[];
   sichtbar: readonly Wertungspunkt[];
   tempo: Wertungstempo;
+  massstab: Wertungsmassstab;
 }) {
   const aktuell = aktuelleWertung(kette) ?? 0;
   const start = sichtbar[0];
+  const aenderung = start ? aenderungImMassstab(tempo, start.wertung, aktuell, massstab) : 0;
   return (
     <p className="hinweis">
       {t(kette.length === 1 ? "ich.wertung.standKlasseEins" : "ich.wertung.standKlasse", {
         zeitklasse: zeitklassenname(tempo),
         anzahl: kette.length,
-        aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
+        aenderung: aenderung === null ? "–" : vorzeichen(aenderung),
       })}
     </p>
   );
+}
+
+/**
+ * Die große Zahl im gewählten Maßstab, mit Liste und Marke „vorläufig“; außerhalb der Tabelle
+ * „–“ und darunter die Grenze. Beispiel: Klassisch 1500 umgerechnet → „– FIDE“, „FIDE erst ab
+ * etwa 1730 (Lichess Klassisch)“.
+ */
+function Zahlzeile({
+  tempo,
+  wert,
+  massstab,
+  vorlaeufig,
+}: {
+  tempo: Wertungstempo;
+  wert: number | null;
+  massstab: Wertungsmassstab;
+  vorlaeufig: boolean;
+}) {
+  const zahl = wert === null ? null : zahlImMassstab(tempo, wert, massstab);
+  return (
+    <>
+      <p className="wertung-zahl" data-testid="wertung-zahl">
+        {zahl ? zahl.zahl : "–"}
+        {zahl && <Listenname liste={zahl.liste} />}
+        {vorlaeufig && (
+          <span className="wertung-vorlaeufig-marke">{t("ich.wertung.vorlaeufigMarke")}</span>
+        )}
+      </p>
+      {zahl?.ausserhalb && wert !== null && (
+        <p className="hinweis" data-testid="massstab-ausserhalb">
+          {ausserhalbText(tempo, wert)}
+        </p>
+      )}
+    </>
+  );
+}
+
+/** Unter der Zahl einer Phase: „Spanne 1600–1760“ im Maßstab, sonst „Noch zu wenige Partien“. */
+function Phasenspanne({
+  tempo,
+  phase,
+  massstab,
+}: {
+  tempo: Wertungstempo;
+  phase: { readonly von: number; readonly bis: number } | null;
+  massstab: Wertungsmassstab;
+}) {
+  if (!phase) return <p className="hinweis">{t("ich.wertung.phasenZuWenigKurz")}</p>;
+  const spanne = spanneImMassstab(tempo, phase.von, phase.bis, massstab);
+  return spanne ? <p className="hinweis">{t("ich.wertung.spanneKurz", spanne)}</p> : null;
 }
 
 /**
@@ -184,6 +249,7 @@ function Erklaerung({
         <p>{t("ich.wertung.phasenZuWenig", { phase: t(`phase.name.${phaseOhneZahl}`) })}</p>
       )}
       <p>{t("ich.wertung.erklaerung")}</p>
+      <p>{t("wertung.massstab.erklaerung")}</p>
     </>
   );
 }
@@ -205,6 +271,7 @@ export function Wertungskurve({
   const [kennung, setzeKennung] = useState(STANDARD_AUSSCHNITT);
   const [ansicht, setzeAnsicht] = useState<Ansicht>("gesamt");
   const [tempoWahl, setzeTempo] = useState<Wertungstempo | null>(null);
+  const [massstab, setzeMassstab] = useWertungsmassstab();
   const zeitklassen = zeitklassenMitWertung(punkte);
   const letzter = punkte.at(-1);
   // Gezeigt wird die gewählte Zeitklasse, sonst die der letzten gewerteten Partie.
@@ -270,20 +337,17 @@ export function Wertungskurve({
         gewaehlt={ansicht}
         beiWahl={setzeAnsicht}
       />
-      <p className="wertung-zahl" data-testid="wertung-zahl">
-        {ansicht === "gesamt" ? aktuell : (letztePhase?.mitte ?? "–")}
-        {ansicht === "gesamt" && istVorlaeufig(kette) && (
-          <span className="wertung-vorlaeufig-marke">{t("ich.wertung.vorlaeufigMarke")}</span>
-        )}
-      </p>
+      <Massstabwahl massstab={massstab} beiWahl={setzeMassstab} />
+      <Zahlzeile
+        tempo={tempo}
+        wert={ansicht === "gesamt" ? aktuell : (letztePhase?.mitte ?? null)}
+        massstab={massstab}
+        vorlaeufig={ansicht === "gesamt" && istVorlaeufig(kette)}
+      />
       {ansicht === "gesamt" ? (
-        <Standzeile kette={kette} sichtbar={sichtbar} tempo={tempo} />
+        <Standzeile kette={kette} sichtbar={sichtbar} tempo={tempo} massstab={massstab} />
       ) : (
-        <p className="hinweis">
-          {letztePhase
-            ? t("ich.wertung.spanneKurz", { von: letztePhase.von, bis: letztePhase.bis })
-            : t("ich.wertung.phasenZuWenigKurz")}
-        </p>
+        <Phasenspanne tempo={tempo} phase={letztePhase} massstab={massstab} />
       )}
       <label className="einstellung-name" htmlFor="wertung-bereich">
         {t("ich.wertung.bereich")}
@@ -301,7 +365,14 @@ export function Wertungskurve({
         ))}
       </select>
       {kurvenpunkte.length > 0 ? (
-        <Kurve punkte={kurvenpunkte} bereich={ausschnitt.bereich} jetzt={jetzt} />
+        <>
+          <Kurve punkte={kurvenpunkte} bereich={ausschnitt.bereich} jetzt={jetzt} />
+          {massstab === "umgerechnet" && (
+            <p className="hinweis" data-testid="wertungskurve-massstab">
+              {t("wertung.massstab.kurve")}
+            </p>
+          )}
+        </>
       ) : (
         <p className="hinweis">{t("ich.wertung.keineImBereich")}</p>
       )}

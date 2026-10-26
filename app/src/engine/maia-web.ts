@@ -1,5 +1,5 @@
 /**
- * Laufzeit von Maia-2 in der App (onnxruntime-web, WebAssembly, ein Thread), 0.2.143.
+ * Laufzeit von Maia-2 in der App (onnxruntime-web, WebAssembly, ein Thread).
  *
  * Rolle im Gesamtbild: Rechnet das Netz für engine/maia.ts, wenn der Leser das Zusatzpaket geladen
  * und eingeschaltet hat (app/maiapaket.ts). onnxruntime-web wird erst beim ersten Zug mit Maia

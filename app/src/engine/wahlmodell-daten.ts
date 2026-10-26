@@ -83,6 +83,7 @@ export interface Wahlgewichte {
   readonly g2: readonly number[];
 }
 
+/** Je Zeitklasse die geeichten Gewichte der Merkmale (g0, g1, g2 je Merkmal, ohne Maia). */
 export const WAHL_GEWICHTE: Readonly<Record<Wahltempo, Wahlgewichte>> = {
   blitz: {
     g0: [

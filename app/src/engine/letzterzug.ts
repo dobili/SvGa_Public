@@ -1,7 +1,7 @@
 /**
  * Urteil der Engine über den zuletzt gespielten Zug: Zeichen (??, ?, ?!, !) und Verlust.
  *
- * Rolle im Gesamtbild: Wunsch des Autors nach dem Test von 0.2.30: In der Engine-Karte lässt sich
+ * Rolle im Gesamtbild: Wunsch des Autors: In der Engine-Karte lässt sich
  * auf Wunsch der letzte Zug bewerten, mit dem Zeichen am Zielfeld. Die Engine rechnet dafür die
  * Stellung vor dem Zug; der Verlust ist der Abstand des gespielten Zuges zum besten. Die Grenzen
  * sind dieselben wie in der Auswertung nach der Partie (Konzept 8.3, spiel/auswertung.ts): „?!“ ab

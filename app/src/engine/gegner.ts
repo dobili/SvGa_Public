@@ -1,15 +1,14 @@
 /**
  * Vorgefertigte Gegner („Bots“): Durchschnitt, Klasse, Suche, Gruppen je Stufe; dazu die eigenen
- * Gegner des Lesers. Die Liste der 64 Gegner selbst steht in engine/gegnerliste.ts (0.2.65).
+ * Gegner des Lesers. Die Liste der Gegner selbst steht in engine/gegnerliste.ts.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026, Rückfrage S5): Gegner mit Namen, die in
  * Eröffnung, Mittelspiel und Endspiel verschieden stark sind (Streuung höchstens zwei Stufen um
  * das Mittelspiel), mit Durchschnittswertung und Einordnung nach den Stufennamen, auswählbar und
- * nach Stärke sortiert. Die Stufen selbst (Skill Level, Fehlerprofile) stehen in stufen.ts. Seit
- * 0.2.46 hat jeder Gegner eine Persönlichkeit: eigene Fehlerliste und blinde Flecken
- * (engine/blindeFlecken.ts); die Stufen je Phase bleiben dem Leser verborgen (Wunsch des Autors).
- * Seit 0.2.60 gilt dazu die allgemeine Abhakliste der Fehlerarten aus den Einstellungen
- * (`unterAbhakliste`, Rest aus Rückfrage S7).
+ * nach Stärke sortiert. Die Stufen selbst stehen in stufen.ts. Jeder Gegner hat eine
+ * Persönlichkeit: eigene Fehlerliste und blinde Flecken (engine/blindeFlecken.ts); die Stufen je
+ * Phase bleiben dem Leser verborgen (Wunsch des Autors). Dazu gilt die allgemeine Abhakliste der
+ * Fehlerarten aus den Einstellungen (`unterAbhakliste`, Rest aus Rückfrage S7).
  * Abhängigkeiten: stufen.ts, botgruppe.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
 import type { Reglerstufen } from "./eigenstufen";
@@ -44,7 +43,7 @@ export function gegnerVon(kennung: string | null): Gegner | null {
 }
 
 /**
- * Ein eigener Gegner des Lesers (0.2.42, Wunsch des Autors): Name, Stufen je Phase, erlaubte
+ * Ein eigener Gegner des Lesers (Wunsch des Autors): Name, Stufen je Phase, erlaubte
  * Fehlerarten (nur in Stufe 1 bis 4 wirksam; leer: nie ein absichtlicher Fehler) und Stil von −2
  * (sehr defensiv) bis 2 (sehr aggressiv, engine/stil.ts). Liegt im Speicher (speicher/gegner.ts).
  */
@@ -54,13 +53,13 @@ export interface EigenerGegner {
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   readonly fehlerarten: readonly Fehlerart[];
   readonly stil: number;
-  /** Zugarten, die der Gegner nicht sieht (0.2.46). */
+  /** Zugarten, die der Gegner nicht sieht. */
   readonly blindeFlecken: readonly BlinderFleck[];
-  /** Porträt aus der Liste zur Wahl (0.2.99, engine/portraetwahl.ts); fehlt bei älteren Gegnern. */
+  /** Porträt aus der Liste zur Wahl (engine/portraetwahl.ts); fehlt bei älteren Gegnern. */
   readonly portraet?: Portraetkennung;
   /** Seit 0.2.140: selbst gebautes Porträt (Baukasten); vorhanden, gilt es statt `portraet`. */
   readonly portraetBau?: GebautesPortraet;
-  /** Erweiterter Modus (seit 0.2.117): Gewichte, Fehlerhäufigkeit, Höchstverluste; fehlend: wie Menschen. */
+  /** Erweiterter Modus: Gewichte, Fehlerhäufigkeit, Höchstverluste; fehlend: wie Menschen. */
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
@@ -72,7 +71,7 @@ export interface EigenerGegner {
   readonly stilname?: Stilname;
   readonly reglerstufen?: Reglerstufen;
   /**
-   * Stil-Mischung (0.2.128, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * Stil-Mischung (Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;
@@ -102,7 +101,7 @@ export function gegnername(
 }
 
 /**
- * Die Fehlerarten einer Partie unter der allgemeinen Abhakliste (0.2.60, Rest aus Rückfrage S7).
+ * Die Fehlerarten einer Partie unter der allgemeinen Abhakliste (Rest aus Rückfrage S7).
  *
  * Warum: Die Liste in den Einstellungen sagt, welche absichtlichen Fehler die Engine-Stufen und
  * die vorgefertigten Gegner überhaupt machen dürfen (eigene Gegner haben ihre eigene Liste).
@@ -120,7 +119,7 @@ export function unterAbhakliste(
   return (gegnerliste ?? FEHLERARTEN).filter((art) => erlaubt.includes(art));
 }
 
-/** Ist der Gegner ein Spaß-Bot (mit Zufallszügen, 0.2.88)? */
+/** Ist der Gegner ein Spaß-Bot (mit Zufallszügen)? */
 export function istSpassbot(g: Gegner): boolean {
   return (g.zufallszuege ?? 0) > 0;
 }
@@ -135,7 +134,7 @@ export function gegnerDerStufe(nummer: Stufennummer): Gegner[] {
   );
 }
 
-/** Die Spaß-Bots (0.2.88), vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */
+/** Die Spaß-Bots, vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */
 export function spassbots(): Gegner[] {
   return GEGNER.filter(istSpassbot).sort((a, b) => (b.zufallszuege ?? 0) - (a.zufallszuege ?? 0));
 }

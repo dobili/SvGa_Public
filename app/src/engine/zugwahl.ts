@@ -2,10 +2,10 @@
  * Der Zug der Engine im Spiel gegen den Leser, je nach Stufe und Profil des Gegners.
  *
  * Rolle im Gesamtbild: „waehleZug“ aus Konzept 8.1. Reihenfolge je Zug:
- * 1. Spaß-Bots (0.2.88) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug.
+ * 1. Spaß-Bots ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug.
  * 2. Eröffnungsmodus (Konzept 8.3): Gibt der Aufrufer Buchzüge aus Kapitel 2 und 3 mit, spielt die
  *    Engine meist einen davon (Buchtreue 0,85, bei vorgegebener Eröffnung 1).
- * 3. Seit 0.2.117 (zehn Stufen, Vorschlag des Autors vom 21.10.2026): Ohne Zusatzfehler zieht die
+ * 3. Zehn Stufen (Vorschlag des Autors vom 21.10.2026): Ohne Zusatzfehler zieht die
  *    Grundschicht der Stufe (engine/grundschicht.ts), Stufe 10 die volle Engine. Mit
  *    Zusatzfehlern (Bots) kommen Fehler je Gelegenheit und blinde Flecken nach den Zahlen von
  *    Menschen der Ziel-Elo der Stufe dazu (engine/menschenwahl.ts); das Profil stellt Gewichte,
@@ -32,9 +32,9 @@ export type Gewichte = Readonly<Partial<Record<Fehlerart | BlinderFleck, number>
 
 /**
  * Profil eines Gegners: erlaubte Fehlerarten (null: alle; nicht erlaubte haben Gewicht 0), Stil
- * (−2 bis 2), blinde Flecken, für die er besonders blind ist (0.2.46; seit 0.2.117 dreifache
+ * (−2 bis 2), blinde Flecken, für die er besonders blind ist (dreifache
  * Wahrscheinlichkeit der Menschen, die übrigen Flecken wie bei Menschen), Verlauf der Partie,
- * Spaß-Zufallszüge, seit 0.2.117 Gewichte je Art, Fehlerhäufigkeit und Höchstverluste
+ * Spaß-Zufallszüge, Gewichte je Art, Fehlerhäufigkeit und Höchstverluste
  * (erweiterter Modus der eigenen Bots) und die Restzeit der eigenen Uhr (null: ohne Uhr).
  */
 export interface Gegnerprofil {
@@ -42,7 +42,7 @@ export interface Gegnerprofil {
   readonly stil: number;
   readonly blindeFlecken: readonly BlinderFleck[];
   readonly verlauf?: Verlauf;
-  /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots, 0.2.88); fehlend: keine. */
+  /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots); fehlend: keine. */
   readonly zufallszuege?: number;
   readonly gewichte?: Gewichte;
   readonly haeufigkeit?: number;
@@ -54,16 +54,17 @@ export interface Gegnerprofil {
    */
   readonly fleckenStandard?: number;
   readonly fleckGewicht?: number;
-  /** Zeitklasse der Partie für das Wahlmodell (0.2.125); fehlend: Schnellschach. */
+  /** Zeitklasse der Partie für das Wahlmodell; fehlend: Schnellschach. */
   readonly tempo?: Wahltempo;
-  /** Einer der sieben Stile der vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: Regler `stil`. */
+  /** Einer der sieben Stile der vorgefertigten Bots (engine/stile.ts); fehlend: Regler `stil`. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
-  /** Maia für die Zugwahl (0.2.143, engine/maia.ts); fehlend: ohne Maia. */
+  /** Maia für die Zugwahl (engine/maia.ts); fehlend: ohne Maia. */
   readonly maia?: Maiaquelle;
 }
 
+/** Das Profil ohne Besonderheiten: alle Fehlerarten, ohne Stil, ohne blinde Flecken. */
 export const STANDARDPROFIL: Gegnerprofil = {
   fehlerarten: null,
   stil: STIL_NEUTRAL,
@@ -74,7 +75,7 @@ export const STANDARDPROFIL: Gegnerprofil = {
 export const BESONDERS_BLIND = 3;
 
 /**
- * Eine Stufe ohne Zusatzfehler (seit 0.2.117, Vorschlag des Autors): keine Fehlerart, kein
+ * Eine Stufe ohne Zusatzfehler (Vorschlag des Autors): keine Fehlerart, kein
  * blinder Fleck, nur die Grundschicht. So spielt die Engine, wenn kein Bot gewählt ist.
  */
 export const REINES_PROFIL: Gegnerprofil = {
@@ -89,7 +90,7 @@ export { wertFuer } from "./spielbewerter";
 
 /** Mit dieser Wahrscheinlichkeit bleibt die Engine im Buch, solange es Buchzüge gibt. */
 export const BUCHTREUE = 0.85;
-/** Hat der Leser eine Eröffnung vorgegeben, folgt die Engine ihr immer (0.2.39). */
+/** Hat der Leser eine Eröffnung vorgegeben, folgt die Engine ihr immer. */
 export const BUCHTREUE_VORGABE = 1;
 
 function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undefined {
@@ -151,7 +152,7 @@ export async function waehleZug(
   buchtreue: number = BUCHTREUE,
   profil: Gegnerprofil = STANDARDPROFIL,
 ): Promise<Zugwahl | null> {
-  // Spaß-Bots (0.2.88): der Zufallszug kommt vor allem anderen, auch vor dem Buch.
+  // Spaß-Bots: der Zufallszug kommt vor allem anderen, auch vor dem Buch.
   if (profil.zufallszuege && zufall() < profil.zufallszuege) {
     const zug = zufallszug(fen, zufall);
     if (zug) return zug;
@@ -161,7 +162,7 @@ export async function waehleZug(
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }
   const werte = menschenwerteAus(profil);
-  // Stufe 10 ist die volle Engine (0.2.125): Zusatzfehler gelten dort nicht. Mit Zusatzfehlern
+  // Stufe 10 ist die volle Engine: Zusatzfehler gelten dort nicht. Mit Zusatzfehlern
   // spielte sie wie Stufe 9 (die Kandidaten aus Tiefe 10 begrenzen das Wahlmodell; gemessen am
   // 24.10.2026: 9m und 10m identisch), und „volle Engine“ wäre falsch.
   if (!stufe.grund) return engineZug(bewerter, fen, stufe, profil.stil);

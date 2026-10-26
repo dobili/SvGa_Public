@@ -115,7 +115,7 @@ describe("staerkebefehle", () => {
   });
 
   it("Elo-Begrenzung mit Zahl", () => {
-    // Tiefengrenze (Stufen 1 bis 3, 0.2.52): volle Stärke, die Grenze setzt erst „go depth“.
+    // Tiefengrenze (Stufen 1 bis 3): volle Stärke, die Grenze setzt erst „go depth“.
     expect(staerkebefehle({ art: "tiefe", tiefe: 5 })).toEqual([
       "setoption name UCI_LimitStrength value false",
       "setoption name Skill Level value 20",

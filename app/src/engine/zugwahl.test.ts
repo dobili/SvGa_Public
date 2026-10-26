@@ -1,6 +1,6 @@
 /**
  * Tests der Zugwahl (Konzept 8.1 „waehleZug“, 8.2 Stufen) mit vorgegebenen Kandidaten und festem
- * Zufall: Buchzug, menschliche Zugwahl der Stufen 1 bis 7 (seit 0.2.117: Fehler je Gelegenheit,
+ * Zufall: Buchzug, menschliche Zugwahl der Stufen 1 bis 7 (Fehler je Gelegenheit,
  * blinde Flecken, Höchstverlust je Art), volle Stärke der Stufe 8.
  */
 import { describe, expect, it } from "vitest";

@@ -3,7 +3,7 @@
  * der Antwort der Engine, dazu die Schlüssel, mit denen die Lage Gabeln und Linien vor dem Zug
  * festhält.
  *
- * Rolle im Gesamtbild: Ausgelagert aus fehlerart.ts (0.2.40, Dateigrenze 400 Zeilen). Regeln:
+ * Rolle im Gesamtbild: Eigene Datei neben fehlerart.ts (Dateigrenze 400 Zeilen). Regeln:
  * Kapitel 4 (W2, W6 Gabelgeometrie) und Kapitel 7 (Motive).
  * Abhängigkeiten: fehlerart-typen.ts (Lage), zugprobe.ts (Zugprobe), analyse/k4-warnsignale.ts,
  * analyse/stellungsprofil.ts, schach/gabeln.ts, schach/taktikmotive.ts, chessops.
@@ -38,7 +38,7 @@ const TAKTIKMOTIVE: ReadonlySet<Motiv> = new Set<Motiv>([
 ]);
 /** So viele Halbzüge der Engine-Antwort prüft die Motiverkennung. */
 const ANTWORT_HALBZUEGE = 3;
-/** In so vielen Halbzügen der Widerlegung muss das Motiv Material gewinnen (seit 0.2.118). */
+/** In so vielen Halbzügen der Widerlegung muss das Motiv Material gewinnen. */
 const GEWINN_HALBZUEGE = 5;
 /** So viel muss es mindestens gewinnen (ein Bauer). */
 const GEWINN_AB = 1;

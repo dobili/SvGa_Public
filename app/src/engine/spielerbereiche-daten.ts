@@ -1,5 +1,5 @@
 /**
- * Menschliche Bereiche je Fehlerart und blindem Fleck (0.2.125): Verhältnis zum Median der Spieler an den
+ * Menschliche Bereiche je Fehlerart und blindem Fleck: Verhältnis zum Median der Spieler an den
  * Quantilen 5, 25, 50, 75 und 95 % je Wertungsband (Untergrenzen 400 bis 2400, Schnellschach, Züge bis zur
  * Entscheidung), aus dem Beta-Binomial-Modell der Spielerprofile (buch/arbeit/spielerprofil/betabinom.py,
  * Quantile der Beta-Verteilung je Zelle; Flecken: Lift der eigenen Flecken, 25/75 % geometrisch gemittelt).

@@ -1,4 +1,4 @@
-/** Tests der Wahlwertung je Zeitklasse (engine/wahlkorrektur.ts, 0.2.131). */
+/** Tests der Wahlwertung je Zeitklasse (engine/wahlkorrektur.ts). */
 import { describe, expect, it } from "vitest";
 import { stufe } from "./stufen";
 import { wahlwertung } from "./wahlkorrektur";

@@ -9,6 +9,10 @@
  */
 
 export const BAENDER = [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400] as const;
+/**
+ * Je Fehlerart: wie oft Menschen eine Gelegenheit zu ihr nutzen (`rate` je Band), Faktor je Phase
+ * Median und 90-%-Wert des Verlusts (in Bauern).
+ */
 export const GELEGENHEIT = {
   bauernraub: {
     rate: [0.0312, 0.0312, 0.0312, 0.0312, 0.0285, 0.0285, 0.0263, 0.0136, 0.0047, 0.0047, 0.0047],
@@ -83,6 +87,7 @@ export const GELEGENHEIT = {
     p90: 1.65,
   },
 } as const;
+/** Je blindem Fleck die Zusatzwahrscheinlichkeit, mit der Menschen ihn übersehen, je Band. */
 export const BLIND = {
   rueckzug: [0.464, 0.371, 0.239, 0.234, 0.237, 0.222, 0.147, 0.096, 0.068, 0.053, 0.054],
   diagonale: [0.397, 0.226, 0.16, 0.121, 0.189, 0.153, 0.167, 0.158, 0.09, 0.0, 0.0],
@@ -96,11 +101,13 @@ export const BLIND = {
   zwischenzug: [0.498, 0.299, 0.241, 0.104, 0.146, 0.096, 0.273, 0.26, 0.288, 0.163, 0.146],
   grundreihe: [0.031, 0.0, 0.0, 0.0, 0.0, 0.017, 0.0, 0.0, 0.0, 0.003, 0.049],
 } as const;
+/** Der Kern der Wahl je Band: tau und Exponent der Gewichte, beta für die Wahl in einer Art. */
 export const KERN = {
   tau: [3.0, 0.4, 0.04, 0.04, 0.04, 0.04, 0.04, 0.06, 0.04, 0.08, 0.06],
   exponent: [0.25, 0.25, 0.25, 0.25, 0.35, 0.35, 0.35, 0.5, 0.5, 0.75, 0.75],
   beta: [0.25, 0.25, 0.5, 0.75, 0.75, 0.75, 1.0, 1.25, 1.25, 1.25, 1.5],
 } as const;
+/** Bedenkzeit der Menschen: Anteil der Restzeit je Band und Zugstufe, dazu Zeitnot-Sekunden. */
 export const BEDENKZEIT = {
   zugstufen: [0, 5, 10, 15, 20, 30, 40],
   anteil: {
@@ -124,16 +131,19 @@ export const BEDENKZEIT = {
     "30": [6.51, 6.48, 4.96, 4.62, 4.28, 3.86, 4.21, 3.74, 4.27, 3.88, 3.69],
   },
 } as const;
+/** Faktor auf Fehler ab einem Bauern in Zeitnot („0“ unter 10 s, „10“ bis 30, „30“ bis 60 s). */
 export const ZEITNOT = {
   "0": [1.26, 1.26, 1.26, 1.36, 1.36, 1.36, 1.36, 1.4, 1.4, 1.4, 1.4],
   "10": [1.15, 1.15, 1.15, 1.12, 1.12, 1.12, 1.12, 1.57, 1.57, 1.57, 1.57],
   "30": [1.16, 1.16, 1.16, 1.07, 1.07, 1.07, 1.07, 1.29, 1.29, 1.29, 1.29],
 } as const;
+/** Faktor auf Patzer ab drei Bauern in Zeitnot, Stufen wie bei ZEITNOT. */
 export const ZEITNOT_PATZER = {
   "0": [1.33, 1.33, 1.33, 1.86, 1.86, 1.86, 1.86, 3.18, 3.18, 3.18, 3.18],
   "10": [1.98, 1.98, 1.98, 1.7, 1.7, 1.7, 1.7, 2.69, 2.69, 2.69, 2.69],
   "30": [1.41, 1.41, 1.41, 1.07, 1.07, 1.07, 1.07, 1.91, 1.91, 1.91, 1.91],
 } as const;
+/** Faktor auf die Gelegenheitsrate je Verlustklasse (ab 0,5; 1; 2; 3; 5 Bauern) und Band. */
 export const VERLUSTFAKTOR = {
   klassen: [0.5, 1.0, 2.0, 3.0, 5.0],
   faktor: [

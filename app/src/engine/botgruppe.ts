@@ -1,14 +1,13 @@
 /**
  * In welcher Gruppe der Gegnerwahl ein vorgefertigter Bot steht (Stufe 1 bis 10).
  *
- * Rolle im Gesamtbild: Seit 0.2.117 (zehn Stufen) steht ein Bot in der Gruppe seiner gemessenen
- * Zahl; seine Stufen je Phase sind nur die Grundstärke, die menschlichen Zusatzfehler machen ihn
- * schwächer. Bis 0.2.143 hieß das „Zahl geteilt durch 300, gerundet“; nach der Nachmessung vom
- * 25./26.10.2026 überschnitten sich damit die Bereiche benachbarter Stufen. Seit 0.2.144 gilt eine
+ * Rolle im Gesamtbild: Ein Bot steht in der Gruppe seiner gemessenen Zahl; seine Stufen je Phase
+ * sind nur die Grundstärke, die menschlichen Zusatzfehler machen ihn schwächer. Es gilt eine
  * feste Liste (engine/botgruppen-daten.ts, skripte/ordne-gruppen.mjs): die acht schwächsten Bots
  * in Stufe 1, die nächsten acht in Stufe 2 und so weiter, so überschneiden sich die Gruppen nicht
- * (Wunsch des Autors, 19.10.2026). Sie bleibt fest, auch wenn neue Messungen die Zahlen leicht
- * verschieben; der Gruppenmodus spielt mit genau diesen acht Bots.
+ * (Wunsch des Autors, 19.10.2026; eine Rundung der Zahl hätte nach der Nachmessung vom
+ * 25./26.10.2026 überlappende Bereiche ergeben). Sie bleibt fest, auch wenn neue Messungen die
+ * Zahlen leicht verschieben; der Gruppenmodus spielt mit genau diesen acht Bots.
  * Sonderfall: Ein Bot ohne Eintrag (neu, noch nicht eingeordnet) steht in der Stufe des gerundeten
  * Durchschnitts seiner Stufen je Phase.
  * Abhängigkeiten: engine/botgruppen-daten.ts, engine/stufen.ts.

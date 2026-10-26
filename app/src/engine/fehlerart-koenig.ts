@@ -1,9 +1,9 @@
 /**
- * Passiver König im Endspiel (Kapitel 8, Regel 1 „Aktiviere deinen König“), seit 0.2.118 mit dem
+ * Passiver König im Endspiel (Kapitel 8, Regel 1 „Aktiviere deinen König“), mit dem
  * Königsweg des Endspielwerkzeugs (analyse/k8-regeln.ts).
  *
- * Rolle im Gesamtbild: Teil von fehlerbefundIn (engine/fehlerart.ts). Vorher galt jeder Zug als
- * „König passiv“, wenn die Engine einen Königszug vorzog; in der Gegenprüfung (Tiefe 20) war das
+ * Rolle im Gesamtbild: Teil von fehlerbefundIn (engine/fehlerart.ts). Nicht jeder Zug, bei dem
+ * die Engine einen Königszug vorzog, ist „König passiv“; in der Gegenprüfung (Tiefe 20) war das
  * oft nur „ungenau“. Festlegung nach Regel 1: Im Endspiel marschiert der König zu seinem Ziel
  * (Schlüsselfelder eigener Freibauern, sonst Zentrum), sobald ihn keine gegnerische Dame mehr mit
  * Schachs oder Mattdrohungen bestrafen kann. Passiv ist ein Zug ohne Schlag und Schach, wenn

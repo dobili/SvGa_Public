@@ -78,7 +78,7 @@ export const FEHLERARTEN: readonly Fehlerart[] = [
 /** Die Lage vor dem Zug, einmal je Stellung berechnet, damit viele Züge schnell geprüft sind. */
 export interface Lage {
   readonly regeln: Chess;
-  /** Phase der Stellung (Kapitel 11), für die Fehlerarten je Phase (0.2.40). */
+  /** Phase der Stellung (Kapitel 11), für die Fehlerarten je Phase. */
   readonly phase: Phase;
   /** Drohungen des Gegners, als wäre er am Zug (leer, wenn die Seite am Zug im Schach steht). */
   readonly drohungen: readonly Drohung[];

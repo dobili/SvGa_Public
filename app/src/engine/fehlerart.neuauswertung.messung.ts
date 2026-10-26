@@ -2,7 +2,7 @@
  * Neuauswertung der Fehlerarten ohne Engine: ordnet jeden Kandidaten der gespeicherten Stellungen
  * (menschenprofil.messung.ts) mit der aktuellen Erkennung neu ein.
  *
- * Rolle im Gesamtbild: Plan „Bots, zweite Runde“, Teil A (0.2.118). Die Stellungen enthalten je
+ * Rolle im Gesamtbild: Plan „Bots, zweite Runde“, Teil A. Die Stellungen enthalten je
  * Kandidat die Fortsetzung der Engine (acht Halbzüge); daraus folgen Widerlegung und Verlust, die
  * Erkennung braucht also keine neue Engine-Rechnung. Rohdaten nur lokal (MENSCHENPROFIL_ORDNER,
  * Vorgabe ../buch/arbeit/menschenprofil2), Ausgabe `neu-<Datei>` daneben.

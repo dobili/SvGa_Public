@@ -2,7 +2,7 @@
  * Die zehn Spielstufen der Engine: Name, Ziel-Elo und Grundschicht (Konzept 8.2, Pflichtenheft 5.2).
  *
  * Rolle im Gesamtbild: Die Stufe entscheidet, wie stark die Engine im Spiel zieht
- * (engine/zugwahl.ts). Seit 0.2.117 (Vorschlag des Autors vom 21.10.2026) sind es zehn Stufen von
+ * (engine/zugwahl.ts). Es sind zehn Stufen (Vorschlag des Autors vom 21.10.2026) von
  * etwa 300 bis 3000 Elo in Schritten von 300. Eine Stufe ohne Zusatzfehler spielt nur ihre
  * Grundschicht (engine/grundschicht.ts): Die Engine bewertet die Züge in begrenzter Tiefe (in den
  * unteren Stufen alle legalen Züge) und wählt gewichtet mit dem Kern (1 + Verlust/tau)^(−Exponent);
@@ -10,7 +10,7 @@
  * engine/stufen.messung.ts, Ergebnis in engine/botstaerke-daten.ts). Stufe 10 ist die volle Engine.
  * Die Zusatzfehler der Menschen (engine/menschenwahl.ts) machen Bots menschlicher und schwächer;
  * sie nutzen die Lichess-Zahlen der Menschen mit der Ziel-Elo der Stufe.
- * Bis 0.2.116 gab es acht Stufen; gespeicherte Stufen rechnet speicher/format.ts um.
+ * Gespeicherte Stufen der früheren achtstufigen Skala rechnet speicher/format.ts um.
  * Abhängigkeiten: engine/engineDienst.ts (Staerke), engine/grundschicht.ts (Typ), i18n (Namen).
  */
 import type { Textschluessel } from "../i18n/sprache";
@@ -34,6 +34,7 @@ export interface Stufe {
   readonly wertung: number;
 }
 
+/** Zahl der Stufen (1 bis 10). */
 export const STUFEN_ZAHL = 10;
 const ELO_JE_STUFE = 300;
 const RECHENZEIT_MS = 1500;
@@ -83,6 +84,7 @@ function stufeMit(nummer: Stufennummer, grund: Grundschicht | null): Stufe {
   };
 }
 
+/** Alle Stufen: 1 bis 9 mit ihrer Grundschicht, Stufe 10 die volle Engine. */
 export const STUFEN: readonly Stufe[] = [
   ...GRUNDSCHICHTEN.map(([tiefe, tau], i) =>
     stufeMit((i + 1) as Stufennummer, grundschicht(tiefe, tau)),

@@ -1,4 +1,4 @@
-/** Tests der Regler auf menschlichen Quantilen (0.2.125). */
+/** Tests der Regler auf menschlichen Quantilen. */
 import { describe, expect, it } from "vitest";
 import { faktorenAus, CHARAKTERE } from "./gegnerbau";
 import { faktorFuerStufe } from "./spielerbereiche";

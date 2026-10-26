@@ -9,7 +9,7 @@
  * der mit der Zugnummer wächst (Eröffnungszüge kommen schnell, gute Spieler kennen mehr Theorie)
  * und nach der Lage schwankt (ein Wiederschlag halb so lang, ein einziger guter Zug länger). Unter
  * 60, 30 und 10 Sekunden zieht er im Schnitt in festen, kurzen Zeiten (Schnell- und Notmodus).
- * Seit 0.2.125 (Restplan 8b) gelten Anteile und Zeitnot-Sekunden je Zeitklasse
+ * Anteile und Zeitnot-Sekunden gelten je Zeitklasse (Restplan 8b)
  * (engine/bedenkzeit-daten.ts, aus 390 000 Zügen der Spielerprofile): Im Blitz braucht ein Zug
  * etwa den doppelten Anteil der Restzeit wie im Schnellschach, im Klassischen etwa die Hälfte.
  * Abhängigkeiten: engine/menschenprofil.ts, engine/bedenkzeit-daten.ts, spiel/elomodell-daten.ts.

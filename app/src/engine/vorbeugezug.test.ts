@@ -1,4 +1,4 @@
-/** Tests für den Vorbeugezug (Vorschlag D4, seit 0.2.32) mit einer vorgegebenen Engine. */
+/** Tests für den Vorbeugezug (Vorschlag D4) mit einer vorgegebenen Engine. */
 import { describe, expect, it } from "vitest";
 import type { Bewertung } from "./engineDienst";
 import type { Bewerter } from "./gegnerplan";

@@ -1,4 +1,4 @@
-/** Tests der blinden Flecken (0.2.46): Zugarten erkennen, Übersehen mit festem Zufall. */
+/** Tests der blinden Flecken: Zugarten erkennen, Übersehen mit festem Zufall. */
 import { describe, expect, it } from "vitest";
 import {
   blindeFehlerart,
@@ -27,7 +27,7 @@ describe("Blinde Flecken", () => {
   it("erkennt Rückzug, Springer rückwärts, langen Damenzug, Diagonale, Turm, Abzug, Bauer", () => {
     // Sxe5 wäre möglich, also ist Sg1 auch ein ruhiger Zug.
     expect(fleckeVon(OFFEN, "f3g1")).toEqual(["rueckzug", "springer", "ruhig"]);
-    // Dh5 ist ein langer Damenzug und zielt durch f7 auf den König (Röntgen, 0.2.57).
+    // Dh5 ist ein langer Damenzug und zielt durch f7 auf den König (Röntgen).
     expect(fleckeVon(OHNE_SCHLAG, "d1h5")).toEqual(["dame", "roentgen"]);
     expect(fleckeVon(OHNE_SCHLAG, "f1c4")).toEqual([]);
     expect(fleckeVon(GRUNDSTELLUNG, "e2e4")).toEqual(["bauer"]);

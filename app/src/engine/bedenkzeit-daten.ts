@@ -1,5 +1,5 @@
 /**
- * Bedenkzeit der Menschen je Zeitklasse (0.2.125, Restplan 8b), aus den Spielerprofilen (77 000 gewertete
+ * Bedenkzeit der Menschen je Zeitklasse (Restplan 8b), aus den Spielerprofilen (77 000 gewertete
  * Lichess-Partien von 3 900 Spielern, 390 000 Züge mit Uhrdaten); erzeugt von buch/arbeit/bedenkzeit/eichung.py
  * (nur lokal), nicht von Hand ändern. Je Zeitklasse und Band (Untergrenze) der Median des Anteils der Restzeit
  * je Zug nach Zugstufen (ab Zug 1, 5, 10, 15, 20, 30, 40) bei mindestens einer Minute Rest; Zellen mit unter
@@ -9,8 +9,10 @@
  */
 import type { Wertungstempo } from "../spiel/elomodell-daten";
 
+/** Die Zugstufen: ab welchem Zug (gezählt ab 0) die nächste Spalte der Anteile gilt. */
 export const BEDENKZEIT_ZUGSTUFEN: readonly number[] = [0, 5, 10, 15, 20, 30, 40];
 
+/** Je Zeitklasse die Anteile der Restzeit je Band und Zugstufe und die Zeitnot-Sekunden. */
 export const BEDENKZEIT_JE_TEMPO: Readonly<
   Record<
     Wertungstempo,

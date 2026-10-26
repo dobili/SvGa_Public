@@ -1,7 +1,7 @@
 /**
  * Fehlerarten aus Kapitel 1, die nur die Eröffnung betreffen: verfrühte Dame, König in der Mitte.
  *
- * Rolle im Gesamtbild: Ausgelagert aus fehlerart.ts (0.2.39), damit die Datei mit den Befunden
+ * Rolle im Gesamtbild: Eigene Datei neben fehlerart.ts, damit die Datei mit den Befunden
  * für den Rückblick unter 400 Zeilen bleibt. Die Regeln sind die Todsünden aus Kapitel 1
  * (k1-todsuenden.ts) in der Fassung für die Fehlersuche der Engine (Konzept 8.2).
  * Abhängigkeiten: fehlerart-typen.ts (Lage), zugprobe.ts (Zugprobe), schach/todsuenden.ts.

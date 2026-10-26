@@ -4,7 +4,7 @@
  * Material vorher und nachher.
  *
  * Rolle im Gesamtbild: liefert die Zeilen der Karte ErzwingendKarte (Werkzeug k7-erzwingend,
- * seit 0.2.33, Vorschlag B1, Antwort des Autors „einverstanden“). Dieselbe Ruhe wie im Werkzeug
+ * Vorschlag B1, Antwort des Autors „einverstanden“). Dieselbe Ruhe wie im Werkzeug
  * „Ruhe“ (ruhe.ts, bisZurRuhe), nur je Kandidat statt für die Hauptvariante.
  * Abhängigkeiten: chessops, ruhe.ts (bisZurRuhe, material), engineDienst.ts (Bewertung).
  * Buchbezug: Kapitel 7, Schritt 2 und 3 („Rechne sie in dieser Reihenfolge … jeden Ast bis zur

@@ -1,6 +1,6 @@
 /**
- * Tests der Bausteine der menschlichen Zugwahl (R4, 0.2.52): gewichtete Wahl mit Temperatur,
- * Breite mit Tagesform (Strähne und Lage seit 0.2.117 entfallen).
+ * Tests der Bausteine der menschlichen Zugwahl (R4): gewichtete Wahl mit Temperatur,
+ * Breite mit Tagesform.
  */
 import { describe, expect, it } from "vitest";
 import { gewichteteZugwahl, tagesform, verlaufsfaktor } from "./menschlich";

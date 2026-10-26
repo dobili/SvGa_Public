@@ -1,5 +1,5 @@
 /**
- * Stilmerkmale eines Zuges für das Wahlmodell der Bots (0.2.125): Schlag, Schach, Vorwärtszug,
+ * Stilmerkmale eines Zuges für das Wahlmodell der Bots: Schlag, Schach, Vorwärtszug,
  * Nähe zum gegnerischen König, Bauernsturm, Rückzug, gleichwertiger Abtausch.
  *
  * Rolle im Gesamtbild: Dieselben sieben Merkmale wie in der Eichung des Wahlmodells

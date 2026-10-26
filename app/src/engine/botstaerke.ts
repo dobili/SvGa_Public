@@ -8,7 +8,7 @@
  * (engine/messung/eloleiter.ts, Messlauf engine/botstaerke.messung.ts) und stehen in
  * engine/botstaerke-daten.ts. Eigene Stufen und eigene Bots wurden nie gemessen; ihre Zahl wird
  * aus den drei Stufen je Phase geschätzt. An der Überschrift einer Stufe steht der Bereich ihrer
- * acht Bots (Vorschlag des Autors, 18.10.2026; seit 0.2.109 ohne Überschneidungen); die Zahl
+ * acht Bots (Vorschlag des Autors, 18.10.2026; ohne Überschneidungen); die Zahl
  * der reinen Stufe dient der Schätzung eigener Stufen.
  * Hier steht auch die Zahl einer Gruppe für die Elo-Wertung (gruppenwertung, weitergereicht von
  * engine/gruppe.ts).
@@ -36,14 +36,15 @@ import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 /**
  * Bereich, in dem die Zahl eine Bedeutung hat. Unten: Die Eichung von „Deine Spielstärke“ beruht
- * auf Partien ab 400; darunter zeigt die App „unter 400“. Oben: Bis 0.2.87 stand über 2200 (Ende
- * der Eichdaten) nur „über 2200“; damit sahen Stufe 5 bis 8 gleich aus, obwohl die Ergebnisse sie
- * klar trennen (Rückmeldung des Autors, 18.10.2026 abends). Seit 0.2.88 zeigt die App auch darüber
- * die Zahl der Elo-Leiter: Sie kommt dort allein aus den Ergebnissen gegen die tieferen, an der
- * Skala verankerten Stufen. Die Grenze liegt über der vollen Engine (Stufe 8, etwa 3000), weil es
- * darüber nichts mehr zu messen gibt.
+ * auf Partien ab 400; darunter zeigt die App „unter 400“. Oben: Auch über 2200 (Ende der
+ * Eichdaten) zeigt die App die Zahl der Elo-Leiter, denn „über 2200“ ließe die starken Stufen
+ * gleich aussehen, obwohl die Ergebnisse sie klar trennen (Rückmeldung des Autors, 18.10.2026
+ * abends). Die Zahl kommt dort allein aus den Ergebnissen gegen die tieferen, an der Skala
+ * verankerten Stufen. Die Grenze liegt über der vollen Engine (höchste Stufe), weil es darüber
+ * nichts mehr zu messen gibt.
  */
 export const ANGABE_HOECHSTENS = 3300;
+/** Kleinste angezeigte Zahl; darunter zeigt die App „unter 400“ (siehe ANGABE_HOECHSTENS). */
 export const ANGABE_MINDESTENS = 400;
 const RUNDUNG = 50;
 const ERSTE_STUFE = 1;
@@ -58,7 +59,7 @@ export type Staerkeangabe =
 
 /**
  * Die Zahl einer Stufe (gemessen in Schnellschach), in Blitz und Klassisch umgerechnet wie bei
- * einem Menschen dieser Stärke (seit 0.2.131, engine/zeitklassenabstand.ts).
+ * einem Menschen dieser Stärke (engine/zeitklassenabstand.ts).
  * Seit 0.2.143 je Zahlensatz (engine/zahlensatz.ts): maia aus der Partie, sonst der Satz der Anzeige.
  * Beispiel: Stufe 3 → 1239 (angezeigt „etwa 1250“).
  */
@@ -134,7 +135,7 @@ export function zusatzanteil(e: Zusatzfehlerangabe): number {
  * bei der Wertung der Stufe, und die Haken ändern nur, welche Fehler vorkommen, nicht wie viele
  * (Variante A, ENTSCHEIDUNGEN „Messung der Bots gegen menschlich spielende Stufen“).
  * Beispiel: 4 · 4 · 4 → die Zahl der Stufe 4, mit oder ohne Haken.
- * Sonderfall (seit 0.2.126): Ist keine Fehlerart angehakt, spielt nur die Grundschicht; dann gilt
+ * Sonderfall: Ist keine Fehlerart angehakt, spielt nur die Grundschicht; dann gilt
  * die gemessene Zahl der reinen Stufen (engine/reinestufen-daten.ts), etwa 720 statt 1700 bei
  * Stufe 5.
  */
@@ -205,7 +206,7 @@ export interface Uhrangabe {
 }
 
 /**
- * Was die Uhr einen Bot dieser Stufen kostet (seit 0.2.117, gemessen: jede Stufe mit Uhr gegen
+ * Was die Uhr einen Bot dieser Stufen kostet (gemessen: jede Stufe mit Uhr gegen
  * sich selbst ohne Uhr, engine/botstaerke.messung.ts): Mittel der drei Phasen; ohne Uhr 0. Seit
  * 0.2.125 je Zeitklasse (Blitz, Schnellschach, Klassisch) statt je genauer Bedenkzeit, damit auch
  * 3+0, 5+3, 15+10 und 60+0 einen Wert haben. Beispiel: Stufe 5 in allen Phasen, 5 + 3 → Blitz.
@@ -267,7 +268,7 @@ function gemesseneZahlen(
 }
 
 /**
- * Der Bereich der Spaß-Bots (0.2.88, eigene Gruppe unter Stufe 1); null, solange keiner gemessen
+ * Der Bereich der Spaß-Bots (eigene Gruppe unter Stufe 1); null, solange keiner gemessen
  * ist. Beispiel: vier Bots von 520 bis 940 → { von: 520, bis: 940 }.
  */
 export function bereichDerSpassbots(

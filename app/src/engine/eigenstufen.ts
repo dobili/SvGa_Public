@@ -1,14 +1,14 @@
 /**
- * Regler eigener Gegner auf den menschlichen Quantilen (Teil E, Oberfläche; 0.2.126): Stufe je
+ * Regler eigener Gegner auf den menschlichen Quantilen (Teil E, Oberfläche): Stufe je
  * Fehlerart und blindem Fleck, daraus die Gewichte der Zugwahl, und die Menschlichkeit der
  * ganzen Kombination.
  *
- * Rolle im Gesamtbild: Die vorgefertigten Bots tragen seit 0.2.125 Stufen statt freier Faktoren
- * (engine/gegnerbau.ts, engine/spielerbereiche.ts). Eigene Gegner hatten im erweiterten Modus noch
- * freie Gewichte (0 bis 3, speicher/menschenwerte.ts). Jetzt stellt der Leser dieselben Stufen −4
- * bis 4 ein (−2 bis 2 menschlich, darüber „unmenschlich“; Entscheidung des Autors, 23.10.2026,
- * „Zugwahl der Bots, Plan“). Ältere Gegner mit Gewichten spielen unverändert weiter, bis der Leser
- * einen Regler bewegt; dann übersetzt naechsteStufe ihre Gewichte in Stufen.
+ * Rolle im Gesamtbild: Die vorgefertigten Bots tragen Stufen statt freier Faktoren
+ * (engine/gegnerbau.ts, engine/spielerbereiche.ts). Dieselben Stufen −4 bis 4 stellt der Leser
+ * für eigene Gegner ein (−2 bis 2 menschlich, darüber „unmenschlich“; Entscheidung des Autors,
+ * 23.10.2026, „Zugwahl der Bots, Plan“). Ältere eigene Gegner mit freien Gewichten (0 bis 3,
+ * speicher/menschenwerte.ts) spielen unverändert weiter, bis der Leser einen Regler bewegt; dann
+ * übersetzt naechsteStufe ihre Gewichte in Stufen.
  * Abhängigkeiten: engine/spielerbereiche.ts, engine/menschenprofil.ts, engine/blindeFlecken.ts.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";

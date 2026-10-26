@@ -1,5 +1,5 @@
 /**
- * Porträts zur Wahl für eigene Bots (seit 0.2.99, Wunsch des Autors vom 19.10.2026).
+ * Porträts zur Wahl für eigene Bots (Wunsch des Autors vom 19.10.2026).
  *
  * Rolle im Gesamtbild: Eigene Gegner (engine/gegner.ts, EigenerGegner) bekommen kein frei
  * gestaltetes Bild, sondern eines aus dieser festen Liste: je sechs Kinder, Jugendliche, junge
@@ -65,7 +65,7 @@ export function istPortraetwahl(wert: unknown): wert is Portraetkennung {
 }
 
 /**
- * Ein selbst gebautes Porträt (seit 0.2.140, Wunsch des Autors vom 25.10.2026): die Merkmale aus
+ * Ein selbst gebautes Porträt (Wunsch des Autors vom 25.10.2026): die Merkmale aus
  * dem Baukasten (ui/profil/merkmale.ts) und das fertige SVG, damit nur der Baukasten die
  * Bibliothek laden muss. Für das Profil des Lesers und für eigene Bots.
  */

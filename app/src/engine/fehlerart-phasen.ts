@@ -1,5 +1,5 @@
 /**
- * Typische Fehler je Phase (0.2.40): Tempoverlust und Bauernraub in der Eröffnung, geschwächter
+ * Typische Fehler je Phase: Tempoverlust und Bauernraub in der Eröffnung, geschwächter
  * Königsschild und falscher Abtausch im Mittelspiel, passiver König, Bauernvorstoß und Patt im
  * Endspiel.
  *
@@ -85,7 +85,7 @@ export function istBauernraub(lage: Lage, p: Zugprobe, verlust: number | null): 
   if (lage.phase === "endspiel" || p.figur.role !== "queen" || p.geschlagen !== "pawn") {
     return false;
   }
-  // Bauernraub ist ein Eröffnungsfehler: Die raubende Seite hat noch Figuren zu Hause (0.2.44).
+  // Bauernraub ist ein Eröffnungsfehler: Die raubende Seite hat noch Figuren zu Hause.
   if (leichtfigurenZuHause(lage.regeln.board, lage.regeln.turn) < ZU_HAUSE_TEMPO) return false;
   return (verlust !== null && verlust >= VERLUST_AB) || KOEDERLINIEN.has(squareFile(p.zug.to));
 }

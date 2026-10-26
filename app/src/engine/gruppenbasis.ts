@@ -59,7 +59,7 @@ export function gruppenstufen(stufe: Stufennummer): Readonly<Record<Phase, Stufe
 }
 
 /**
- * Die gemessene Zahl der Gruppe; null, solange nicht gemessen. Zahlensatz (seit 0.2.143): maia aus
+ * Die gemessene Zahl der Gruppe; null, solange nicht gemessen. Zahlensatz: maia aus
  * der Partie, sonst der Satz der Anzeige (engine/zahlensatz.ts).
  */
 export function gemesseneGruppenstaerke(stufe: Stufennummer, maia?: boolean): number | null {

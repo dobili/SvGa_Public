@@ -4,9 +4,9 @@
  *
  * Rolle im Gesamtbild: Von den Listen engine/gegnerliste0.ts bis gegnerliste2.ts gebraucht, die
  * engine/gegnerliste.ts zusammenführt; getrennt, damit kein Modul im Kreis importiert.
- * Seit 0.2.117 (Plan „menschlichere Bots und Uhr der Bots“, Wunsch des Autors vom 20.10.2026:
- * „mach die Bots komplett neu“, Porträts bleiben) spielt jeder Bot wie Menschen seiner Stufe
- * (engine/menschenwahl.ts); seine Persönlichkeit sind seit 0.2.125 Stufen auf menschlichen
+ * Jeder Bot spielt wie Menschen seiner Stufe (engine/menschenwahl.ts; Plan „menschlichere Bots
+ * und Uhr der Bots“, Wunsch des Autors vom 20.10.2026: „mach die Bots komplett neu“, Porträts
+ * bleiben); seine Persönlichkeit sind Stufen auf menschlichen
  * Quantilen je Fehlerart und blindem Fleck (engine/spielerbereiche.ts: −2 selten wie die 5 %
  * unauffälligsten Spieler, 0 Median, 2 wie die auffälligsten 5 %, ±3 und ±4 darüber hinaus),
  * dazu einer der sieben Stile (engine/stile.ts) und die Fehlerhäufigkeit. Die Faktoren auf die
@@ -40,18 +40,18 @@ export interface Gegner {
   readonly blindeFlecken: readonly BlinderFleck[];
   /** Feste Faktoren (eigene Gegner im erweiterten Modus); vorgefertigte Bots: leer, siehe `persoenlichkeit`. */
   readonly gewichte: Gewichte;
-  /** Stufen auf den menschlichen Quantilen je Fehlerart und Fleck (0.2.125). */
+  /** Stufen auf den menschlichen Quantilen je Fehlerart und Fleck. */
   readonly persoenlichkeit: Charakter;
   /** Fehlerhäufigkeit insgesamt (1: wie Menschen der Stufe). */
   readonly haeufigkeit: number;
-  /** Spielstil von −2 (sehr defensiv) bis 2 (sehr aggressiv), engine/stil.ts (0.2.65); eigene Gegner. */
+  /** Spielstil von −2 (sehr defensiv) bis 2 (sehr aggressiv), engine/stil.ts; eigene Gegner. */
   readonly stil: number;
-  /** Einer der sieben Stile aus den Spielerprofilen (0.2.125, engine/stile.ts). */
+  /** Einer der sieben Stile aus den Spielerprofilen (engine/stile.ts). */
   readonly stilname: Stilname;
-  /** Anteil der Züge, die ein beliebiger legaler Zug sind (nur Spaß-Bots, 0.2.88). */
+  /** Anteil der Züge, die ein beliebiger legaler Zug sind (nur Spaß-Bots). */
   readonly zufallszuege?: number;
   /**
-   * Halbzüge aus dem Praxisbuch höchstens (0.2.128, engine/praxisbuch.ts): Theoretiker 20,
+   * Halbzüge aus dem Praxisbuch höchstens (engine/praxisbuch.ts): Theoretiker 20,
    * Hektiker 10, sonst 16. Spaß-Bots spielen kein Buch.
    */
   readonly buchtiefe: number;
@@ -181,7 +181,7 @@ const STREUUNG = 2;
 const ZUFALL_HOECHSTENS = 0.9;
 
 /**
- * Baut einen Bot und prüft Streuung und Stil. Der letzte Wert (seit 0.2.117) ist ein Faktor auf
+ * Baut einen Bot und prüft Streuung und Stil. Der letzte Wert ist ein Faktor auf
  * die Fehlerhäufigkeit seiner Persönlichkeit: Die stärksten Bots machen die Fehler der Menschen
  * seltener, sonst kämen sie nie über deren Stärke (die Daten reichen bis 2400); 0 heißt: keine
  * Zusatzfehler, nur Stil (die fünf stärksten Bots, volle Engine).
@@ -227,7 +227,7 @@ export function bot(
 }
 
 /**
- * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.88): eine Stufe in allen Phasen und dazu ein
+ * Baut einen Spaß-Bot (Wunsch des Autors): eine Stufe in allen Phasen und dazu ein
  * Anteil an Zufallszügen. Seit 0.2.117 hat jeder seine eigene Stufe (Stufe 1 ist schon fast
  * zufällig). Beispiel: spassbot("kiki", "Kiki", "fritzi", 3, 0.5, "hektiker", 1).
  * Sonderfall: ein Anteil über 0,9 oder unter 0 ist ein Programmierfehler und wirft.

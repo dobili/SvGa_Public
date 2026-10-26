@@ -2,11 +2,11 @@
  * Die Spaß-Bots: vier Gegner, die einen Teil ihrer Züge zufällig spielen.
  *
  * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Wunsch des Autors (18.10.2026 abends):
- * „eine Spaßkategorie unter Einsteiger … richtig schlecht“, vier Bots. Seit 0.2.117 neu gebaut
- * (Wunsch des Autors vom 20.10.2026, Porträts bleiben). Seit 0.2.117 (zehn Stufen) spielt jeder
+ * „eine Spaßkategorie unter Einsteiger … richtig schlecht“, vier Bots, neu gebaut mit den
+ * anderen Bots (Wunsch des Autors vom 20.10.2026, Porträts bleiben). Jeder spielt
  * eine eigene Stufe mit den Zusatzfehlern der Menschen und zieht dazu mit seinem Anteil an
  * Zufallszügen irgendeinen legalen Zug (engine/zufallszug.ts): mal ordentlich, mal völlig
- * daneben. Stufe 1 ist schon fast zufällig; darum liegen sie nicht mehr darunter, sondern stehen
+ * daneben. Stufe 1 ist schon fast zufällig; darum liegen sie nicht darunter, sondern stehen
  * in ihrer eigenen Gruppe mit ihrer gemessenen Zahl (engine/botstaerke.messung.ts).
  * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */

@@ -1,4 +1,4 @@
-/** Tests für das Urteil über den letzten Zug (Engine-Karte seit 0.2.31). */
+/** Tests für das Urteil über den letzten Zug (Engine-Karte). */
 import { describe, expect, it } from "vitest";
 import { letzterZugAus, urteilUeberLetztenZug, wertNachDemZug } from "./letzterzug";
 import type { Variante } from "./uci";

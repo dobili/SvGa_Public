@@ -3,9 +3,9 @@
  * am Ende Ergebnis mit Zeit und „Noch eine Runde“.
  *
  * Rolle im Gesamtbild: Gemeinsame Hülle aller Trainer (AP 13). Die Aufgaben selbst stehen in den
- * Komponenten der einzelnen Trainer; sie bekommen die Runde und melden ihr Ergebnis.
- * Seit 0.2.93 steht nach der Antwort „In die Lernsammlung“ für die Stellung, die die Aufgabe
- * über sammelstellung.ts meldet.
+ * Komponenten der einzelnen Trainer; sie bekommen die Runde und melden ihr Ergebnis. Nach der
+ * Antwort steht „In die Lernsammlung“ für die Stellung, die die Aufgabe über sammelstellung.ts
+ * meldet.
  * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, i18n.
  */
 import { RotateCcw } from "lucide-react";

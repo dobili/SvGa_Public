@@ -2,11 +2,11 @@
  * Eine Aufgabe des Strukturerkenners: in der echten Stellung die starken Felder antippen
  * (Leitfrage 1, W5), dann die schwachen Bauern, eine Feldart benennen, dann den Plan wählen.
  *
- * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7). Seit P4 (R49) zeigt das Brett die
- * echte Stellung; ein Knopf blendet alles außer Bauern und Königen aus (Skelett-Röntgen,
- * Kapitel 5). Richtig zählt die Aufgabe, wenn alle Schritte stimmen. Hat die Seite am Zug mehr
- * als vier starke Felder (Lehrbilder mit wenigen Bauern), entfällt der erste Schritt; ohne Feld
- * einer der fünf Arten entfällt die Feldart-Frage.
+ * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7). Das Brett zeigt die echte Stellung
+ * (P4, R49); ein Knopf blendet alles außer Bauern und Königen aus (Skelett-Röntgen, Kapitel 5).
+ * Richtig zählt die Aufgabe, wenn alle Schritte stimmen. Hat die Seite am Zug mehr als vier
+ * starke Felder (Lehrbilder mit wenigen Bauern), entfällt der erste Schritt; ohne Feld einer der
+ * fünf Arten entfällt die Feldart-Frage.
  * Abhängigkeiten: training/strukturtrainer.ts, schach/weiterspielen.ts (Skelett), Trainerbrett.
  */
 import { useState } from "react";

@@ -1,17 +1,13 @@
 /**
  * Bereich Training: fällige Wiederholungen, 30-Minuten-Plan und alle Trainer je Kapitel.
  *
- * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Alle Trainer stehen von Anfang an
- * im Menü, unter genau den Namen, die später in den Trainingskästen des Buches stehen
- * (Pflichtenheft 7); seit 0.2.71 sind alle spielbar (die Plakette „folgt mit einem Update“
- * bleibt nur für künftige Trainer). Ein Tipp zeigt den Ablauf.
- * Seit 16.10.2026 führt je Kapitel ein Link zur Trainingsseite der Website (/training/kapNN/),
- * dem früheren Kasten „Training zu diesem Kapitel“ des Buches; sie ist offline vorhanden.
- * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
- * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
- * Seit 0.2.93 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
- * Seit DS53/DS54 (0.2.131) steht der Link zur Website als Zeichen rechts in der Kapitelzeile statt
- * als eigene Zeile unter jedem Kapitel; die Seite wird so etwa 700 Pixel kürzer.
+ * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Alle Trainer stehen im Menü, unter
+ * genau den Namen, die später in den Trainingskästen des Buches stehen (Pflichtenheft 7); die
+ * Plakette „folgt mit einem Update“ ist für künftige Trainer gedacht. Ein Tipp zeigt den Ablauf.
+ * Je Kapitel eine Karte mit Nummer, die Trainer als Zeilen mit Symbol (Trainerkarte.tsx,
+ * Wunsch des Autors: viel Text), Erklärungen hinter dem Fragezeichen. Ein Zeichen rechts in der
+ * Kapitelzeile führt zur Trainingsseite der Website (/training/kapNN/, offline vorhanden; DS53,
+ * DS54). Die Karte „Lernsammlung“ führt zu den eigenen Stellungen (Kapitel 12, AP 15).
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";

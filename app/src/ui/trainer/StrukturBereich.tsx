@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Trainer „struktur“ (AP 13). Die Aufgaben lädt die Datei struktur.json
  * (daten/trainerdaten.ts); die Runde läuft im gemeinsamen Rundenablauf. Die Stufe misst hier
- * nicht die Engine, sondern wie viele Merkmale und Figuren zu überblicken sind. Seit 0.2.90 mit
- * Wiederholung falsch gelöster Skelette (wie „Falle oder Köder“, FallenBereich.tsx).
+ * nicht die Engine, sondern wie viele Merkmale und Figuren zu überblicken sind. Falsch gelöste
+ * Skelette kommen in die Wiederholung (wie bei „Falle oder Köder“, FallenBereich.tsx).
  * Abhängigkeiten: training/strukturtrainer.ts, Rundenablauf, Strukturaufgabe, Stufenwahl, i18n.
  */
 import { useState } from "react";

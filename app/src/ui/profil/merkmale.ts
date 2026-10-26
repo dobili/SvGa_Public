@@ -1,14 +1,14 @@
 /**
- * Baukasten für das eigene Porträt: Merkmale, ihre Werte, Zufall und das Bauen des SVG (seit
- * 0.2.140, Wunsch des Autors vom 25.10.2026).
+ * Baukasten für das eigene Porträt: Merkmale, ihre Werte, Zufall und das Bauen des SVG (Wunsch
+ * des Autors vom 25.10.2026).
  *
  * Rolle im Gesamtbild: Die Porträts der Bots stammen aus DiceBear „Personas“ (Zeichnungen
  * Draftbit, CC BY 4.0; Code Florian Körner, MIT; docs/LIZENZEN.md), zusammengesetzt aus Frisur,
  * Haar- und Hautfarbe, Augen, Nase, Mund, Bart und Kleidung (skripte/erzeuge-portraetwahl.mjs).
- * Dieselben Teile kann der Leser hier selbst wählen. Die Bibliothek lädt erst der Baukasten nach
- * (dynamischer Import); gespeichert wird das fertige SVG (speicher/profil.ts). Hintergrund und
- * Rundung wie bei den Bots, die Grundfarbe legt die App dahinter (--portraet-grund). Seit 0.2.142
- * kommen eigene Formen für Augen, Nase, Mund, Bart und Oberteil dazu (eigeneTeile.ts).
+ * Dieselben Teile kann der Leser hier selbst wählen, dazu eigene Formen für Augen, Nase, Mund,
+ * Bart und Oberteil (eigeneTeile.ts). Die Bibliothek lädt erst der Baukasten nach (dynamischer
+ * Import); gespeichert wird das fertige SVG (speicher/profil.ts). Hintergrund und Rundung wie bei
+ * den Bots, die Grundfarbe legt die App dahinter (--portraet-grund).
  * Abhängigkeiten: @dicebear/core, @dicebear/personas (nachgeladen), speicher/profil.ts, eigeneTeile.ts.
  */
 import type { Merkmale } from "../../speicher/profil";
@@ -142,6 +142,7 @@ export const MERKMALE = {
 } as const;
 
 export type Merkmalfeld = keyof typeof MERKMALE;
+/** Die Namen aller Merkmale (Frisur, Augen, …) als Liste, in der Reihenfolge oben. */
 export const MERKMALFELDER = Object.keys(MERKMALE) as Merkmalfeld[];
 /** Felder mit Farben: als Farbfelder zum Antippen statt als Auswahlliste. */
 export const FARBFELDER: readonly Merkmalfeld[] = ["haarfarbe", "haut", "kleidung"];

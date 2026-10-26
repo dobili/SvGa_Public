@@ -2,17 +2,17 @@
  * Abbildung-Bildschirm: Brett mit den Buchmarkierungen, Bildunterschrift, Werkzeuge, Engine.
  *
  * Rolle im Gesamtbild: Herzstück der App (Konzept 10.1, Bildschirmentwurf „Abbildung“). Hat die
- * Abbildung eine Zugfolge, lässt sie sich mit der Zugleiste nachspielen (AP 5). Seit dem
- * Werkzeug-Umbau 0.2.30: Symbole am Brett (Zählen, Ziehen, Engine, Röntgen, Warnsignale),
- * darunter die Bündel des Kapitels, im gewählten Bündel die Reiter seiner Teile, dann die Karten.
+ * Abbildung eine Zugfolge, lässt sie sich mit der Zugleiste nachspielen (AP 5). Am Brett stehen
+ * Symbole (Zählen, Ziehen, Engine, Röntgen, Warnsignale), darunter die Bündel des Kapitels, im
+ * gewählten Bündel die Reiter seiner Teile, dann die Karten.
  * Bedienung: Anfangs ist nichts gewählt, das Brett zeigt die Markierungen des Buches. Mit
  * „Zählen“ zählt ein Tipp aufs Feld Angreifer und Verteidiger; Zählen und Ziehen zeigen dazu ihre
  * Erklärkachel (bis man sie ausblendet). Ein zweites Tippen auf ein Bündel oder Symbol wählt es
- * ab, ebenso ein Tipp auf den Hintergrund. Seit 0.2.39 ist der Titel „Abb. 7.12“ ein Knopf: Ein
- * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). Seit
- * 0.2.90 kann „Erst selbst denken“ Werkzeuge und Engine zurückhalten, bis der Leser die Stellung
- * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Seit 0.2.93
- * legt das Lesezeichen am Brett die gezeigte Stellung in die Lernsammlung (SammelFormular.tsx).
+ * ab, ebenso ein Tipp auf den Hintergrund. Der Titel „Abb. 7.12“ ist ein Knopf: Ein Tipp öffnet
+ * ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). „Erst selbst
+ * denken“ kann Werkzeuge und Engine zurückhalten, bis der Leser die Stellung eingeschätzt hat
+ * (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Das Lesezeichen am Brett
+ * legt die gezeigte Stellung in die Lernsammlung (SammelFormular.tsx).
  * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
  * Navigation, i18n.
  */

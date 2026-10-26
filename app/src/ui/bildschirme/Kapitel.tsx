@@ -6,7 +6,7 @@
  * Die kleinen Bretter zeigen Pfeile und Felder wie im Buch; ein Tipp öffnet die Abbildung.
  * Das Kapitelbild folgt, sobald die Bilder des Buches final sind. Oben stehen der Fortschritt
  * des Lesers (AP 12), dann Trainer (Pflichtenheft 7) und Übungen in einer Karte, darunter die
- * Galerie der Abbildungen mit den Abhak-Knöpfen (Abbildungsgalerie.tsx, seit 0.2.80).
+ * Galerie der Abbildungen mit den Abhak-Knöpfen (Abbildungsgalerie.tsx).
  * Abhängigkeiten: daten/laden.ts, Abbildungsgalerie, Kapitelfortschritt, KapitelUebungen, i18n.
  */
 import { ladeKapitel, type Kapitel as KapitelDaten } from "../../daten/laden";

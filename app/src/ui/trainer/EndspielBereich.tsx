@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Trainer „endspiel“ (Pflichtenheft 7, Kapitel 8 und 9). Die Aufgaben lädt
  * die Datei endspiel.json (daten/trainerdaten.ts); die Runde läuft im gemeinsamen Rundenablauf.
- * Seit 0.2.90 kommen nicht geschaffte Stellungen in die Wiederholung (Knopf über der Wahl), und
- * unter der Wahl stehen die Kurzübungen ohne Engine (Drillaufgabe.tsx, training/endspieldrills.ts).
+ * Nicht geschaffte Stellungen kommen in die Wiederholung (Knopf über der Wahl), und unter der
+ * Wahl stehen die Kurzübungen ohne Engine (Drillaufgabe.tsx, training/endspieldrills.ts).
  * Abhängigkeiten: training/endspieltrainer.ts, Rundenablauf, Endspielaufgabe, Stufenwahl, i18n.
  */
 import { useState, type ReactNode } from "react";

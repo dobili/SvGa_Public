@@ -5,20 +5,19 @@
  * Navigation (wie bei den Abbildungen), darunter die Uhr der Engine, das Brett (bei Schwarz
  * gedreht) und die Uhr des Lesers. Die ruhige Ansicht (Wunsch des Autors,
  * Schalter mit dem Auge unten rechts am Brett) zeigt nur Brett, Zugnavigation und Züge.
- * Nach dem Ende erscheint das Ergebnis (ein Spielziel gibt es seit 0.2.33 nicht mehr). Die
- * Rückfrage vor einem gefährlichen Zug (Sicherheitsblick) gibt es seit 0.2.32 nicht mehr: Der
- * Autor hat sie gestrichen, weil der Spieler Züge zurücknehmen kann.
- * Seit 0.2.33 (Wunsch P1, Vorschlag B2): Zählen, Röntgen und Warnsignale W1–W7 als Symbole am
+ * Nach dem Ende erscheint das Ergebnis. Eine Rückfrage vor einem gefährlichen Zug gibt es nicht:
+ * Der Autor hat sie gestrichen, weil der Spieler Züge zurücknehmen kann.
+ * Werkzeuge (Wunsch P1, Vorschlag B2): Zählen, Röntgen und Warnsignale W1–W7 als Symbole am
  * Brett, darunter die Bündel des Buches mit Reitern und Karten (PartieWerkzeuge.tsx); in der
  * ruhigen Ansicht ausgeblendet.
- * Seit 0.2.38 (Vorschlag H, Rückblick): Nach der Auswertung trägt beim Nachspielen das Zielfeld
- * des gezeigten Zuges sein Zeichen, ein goldener Pfeil zeigt den besseren Zug, links am Brett
- * steht ein Bewertungsbalken (spiel/rueckblick.ts); seit 0.2.39 dazu unter dem Brett die Karte
- * zum Zug mit Urteil, besserem Zug und Erklärung des Fehlers (ui/komponenten/rueckblick/useRueckblick.tsx).
- * Während der Partie bleibt das aus.
- * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) steht statt der gestuften Hinweise ein Knopf
- * „Engine“ unter dem Brett, der Schritt für Schritt Bewertung, Urteil über den eigenen letzten
- * Zug, Erklärung und besten Zug zeigt (SpielEngine.tsx).
+ * Rückblick (Vorschlag H): Nach der Auswertung trägt beim Nachspielen das Zielfeld des gezeigten
+ * Zuges sein Zeichen, ein goldener Pfeil zeigt den besseren Zug, links am Brett steht ein
+ * Bewertungsbalken (spiel/rueckblick.ts), unter dem Brett die Karte zum Zug mit Urteil, besserem
+ * Zug und Erklärung des Fehlers (ui/komponenten/rueckblick/useRueckblick.tsx). Während der
+ * Partie bleibt das aus.
+ * Hilfe während der Partie (Wunsch des Autors, 18.10.2026): ein Knopf „Engine“ unter dem Brett,
+ * der Schritt für Schritt Bewertung, Urteil über den eigenen letzten Zug, Erklärung und besten
+ * Zug zeigt (SpielEngine.tsx).
  * Abhängigkeiten: ui/komponenten/partie/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";

@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Teil von Faktorenaufgabe.tsx. Wunsch des Autors (19.10.2026): Der Trainer
  * soll mit Waagen arbeiten wie die Faktorenbilanz in Kapitel 3, statt mit drei gleichen Knöpfen je
- * Faktor. Nach der Antwort steht wie bisher daneben, was Buch oder App sagen.
+ * Faktor. Nach der Antwort steht daneben, was Buch oder App sagen.
  * Abhängigkeiten: ui/komponenten/werkzeugkarten/Waage.tsx, training/faktorentrainer.ts, i18n.
  * Buchbezug: Kapitel 3, „Kompensation messen statt fühlen: die Faktorenbilanz“ (Waage bei
  * Material und Zeit, ✓ ◐ ✗ bei Königssicherheit und Aktivität).

@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Teil von Denkroutineaufgabe.tsx. Wunsch des Autors (F2, 19.10.2026): Die
  * Züge werden mit den Figuren eingegeben statt als Text, wie überall sonst in der App. Ablauf:
  * Kandidat 1 ziehen, dann die Antwort des Gegners in der Stellung danach; das Brett springt
- * zurück, Kandidat 2 und seine Antwort folgen. Danach prüft die Aufgabe wie bisher.
+ * zurück, Kandidat 2 und seine Antwort folgen. Danach prüft die Aufgabe.
  * Abhängigkeiten: schach/weiterspielen.ts, schach/stellung.ts, Brettbereich, useBrettbedienung,
  * training/denkroutinetrainer.ts (KANDIDATEN), i18n.
  * Buchbezug: Kapitel 12, Denkroutine Schritt 2 und 3 (Kandidaten und stärkste Antwort).

@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Glossar: Suche, Kurzdefinition, Querverweise, Sprung zu
  * passenden Abbildungen“. Die Texte kommen eins zu eins aus dem Anhang des Buches (AP 2).
- * Seit 0.2.101 (Symbolsprache DS29) ohne Suche nach Anfangsbuchstaben gegliedert.
+ * Ohne Suchbegriff ist die Liste nach Anfangsbuchstaben gegliedert (Symbolsprache DS29).
  * Abhängigkeiten: daten/laden.ts, Navigation, Buchtext, i18n.
  */
 import { useState } from "react";

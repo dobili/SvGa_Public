@@ -1,10 +1,10 @@
 /**
- * Porträt eines eigenen Bots als Profilbild lesen und zurückschreiben (seit 0.2.140, Wunsch des
- * Autors: den Baukasten auch für eigene Bots).
+ * Porträt eines eigenen Bots als Profilbild lesen und zurückschreiben (Wunsch des Autors: den
+ * Baukasten auch für eigene Bots).
  *
- * Rolle im Gesamtbild: Der Bot speichert wie bisher `portraet` (Kennung der Porträtwahl) oder
- * neu `portraetBau` (selbst gebaut, engine/gegner.ts); die Porträtwahl (Portraetwahl.tsx) rechnet
- * mit Profilbildern. Nur eines der beiden Felder ist gesetzt.
+ * Rolle im Gesamtbild: Der Bot speichert `portraet` (Kennung der Porträtwahl) oder `portraetBau`
+ * (selbst gebaut, engine/gegner.ts); die Porträtwahl (Portraetwahl.tsx) rechnet mit
+ * Profilbildern. Nur eines der beiden Felder ist gesetzt.
  * Abhängigkeiten: engine/gegner.ts, speicher/profil.ts.
  */
 import type { EigenerGegner } from "../../engine/gegner";

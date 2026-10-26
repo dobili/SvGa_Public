@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Logik hinter Zugerratenaufgabe.tsx. Ein Treffer mit Hinweis zählt als
  * Versuch, aber nicht als Treffer (R45). Am Ende der Partie beantwortet der Stand die Runde und
- * speichert den Durchgang (speicher/trainerverlauf.ts, seit 0.2.90).
+ * speichert den Durchgang (speicher/trainerverlauf.ts).
  * Abhängigkeiten: training/repertoiretrainer.ts, training/studientrainer.ts, speicher, React.
  */
 import { useState } from "react";

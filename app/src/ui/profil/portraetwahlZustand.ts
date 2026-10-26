@@ -1,6 +1,6 @@
 /**
- * Zustand der Porträtwahl (seit 0.2.140): Art (auswählen, selbst gestalten, kein Bild), das
- * gewählte Porträt, die Merkmale des Baukastens und das daraus gebaute SVG.
+ * Zustand der Porträtwahl: Art (auswählen, selbst gestalten, kein Bild), das gewählte Porträt,
+ * die Merkmale des Baukastens und das daraus gebaute SVG.
  *
  * Rolle im Gesamtbild: Gemeinsam für das Profil des Lesers (ProfilEditor.tsx) und eigene Bots
  * (GegnerEditor.tsx), Wunsch des Autors vom 25.10.2026. Das Ergebnis ist ein Profilbild

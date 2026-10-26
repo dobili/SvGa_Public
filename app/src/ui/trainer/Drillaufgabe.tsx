@@ -2,11 +2,11 @@
  * Eine Kurzübung des Endspieltrainers: Stellung, Frage, Antwortknöpfe, danach die Regel des
  * Buches und die Lösung am Brett (Quadrat wie im Buch, Schlüsselfelder, der richtige Zug).
  *
- * Rolle im Gesamtbild: Teil des Endspieltrainers (EndspielBereich.tsx), seit 0.2.90; seit P4
- * (R47) mit den Zug-Übungen und dem Plan zum Erkennungsbild. Die Aufgaben erzeugen
- * training/endspieldrills.ts und endspielzugdrills.ts; die Antwort rechnen die Bausteine der
- * Werkzeuge aus Kapitel 8 und 9. Pflichtenheft 7: Kurzdrills zu Quadrat, Opposition,
- * Schlüsselfeldern und das Quiz „Welches Erkennungsbild?“.
+ * Rolle im Gesamtbild: Teil des Endspieltrainers (EndspielBereich.tsx), mit den Zug-Übungen und
+ * dem Plan zum Erkennungsbild (P4, R47). Die Aufgaben erzeugen training/endspieldrills.ts und
+ * endspielzugdrills.ts; die Antwort rechnen die Bausteine der Werkzeuge aus Kapitel 8 und 9.
+ * Pflichtenheft 7: Kurzdrills zu Quadrat, Opposition, Schlüsselfeldern und das Quiz „Welches
+ * Erkennungsbild?“.
  * Abhängigkeiten: training/endspieldrills.ts, Trainerbrett, Rundenrahmen, i18n.
  */
 import { useState } from "react";

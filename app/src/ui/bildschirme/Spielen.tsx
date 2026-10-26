@@ -3,15 +3,13 @@
  *
  * Rolle im Gesamtbild: Startseite des Bereichs „Spielen“ (Leiste) und Ziel des Knopfes „Gegen die
  * Engine spielen“ an jeder Abbildung (Pflichtenheft 5.2: aus jeder Stellung zu Ende spielen,
- * Seite und Stufe wählen, Rücknahme abschaltbar; ein Spielziel gibt es seit 0.2.33 nicht mehr, Ziel ist
- * immer der Sieg). Die letzte Wahl merkt sich der
- * Speicher (Vorlieben). Seit 0.2.40 gibt es je Phase einen Regler für die Stufe (StufenWahl.tsx);
- * seit 0.2.41 die Wahl des Gegners (Engine mit vorgefertigten Gegnern oder Mensch am selben
- * Gerät), die Spielhilfen und die Wertung (GegnerWahl.tsx).
- * Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
- * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Seit
- * 0.2.41 lässt sich die Startstellung selbst aufbauen (Stellungseditor.tsx); eine veränderte
- * Abbildungsstellung zählt dann als eigene Stellung. Darunter die letzten Partien zum Nachlesen.
+ * Seite und Stufe wählen, Rücknahme abschaltbar; Ziel ist immer der Sieg). Die letzte Wahl merkt
+ * sich der Speicher (Vorlieben). Wählbar sind der Gegner (Engine mit vorgefertigten Gegnern,
+ * eigene Stufe mit Reglern je Phase oder Mensch am selben Gerät), die Spielhilfen und die Wertung
+ * (GegnerWahl.tsx, EigeneStufe.tsx, HilfenWahl.tsx). Aus der Grundstellung lässt sich eine
+ * Eröffnung des Buches vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des
+ * Autors zu N178). Die Startstellung lässt sich auch selbst aufbauen (Startstellung.tsx mit
+ * Stellungseditor); eine veränderte Abbildungsstellung zählt dann als eigene Stellung.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
 import { useState, type ReactNode } from "react";

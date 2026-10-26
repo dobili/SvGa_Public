@@ -1,10 +1,9 @@
 /**
  * Marken auf dem Brett: Schimmer, Zielpunkte und -ringe, Feldrahmen und Pfeile im Stil des Buches.
  *
- * Rolle im Gesamtbild: Bausteine für Brett.tsx, seit 0.2.92 in einer eigenen Datei, damit das
- * Brett mit dem Ziehen per Wischen unter 400 Zeilen bleibt. Seit R36 (23.10.2026) teilen sich
- * benachbarte Feldmarkierungen gleicher Farbe einen Umriss (umriss.ts). Seit 25.10.2026 hat
- * der goldene Umriss zu den Ecken einen dünnen gepunkteten Rahmen (Goldpunktrahmen).
+ * Rolle im Gesamtbild: Bausteine für Brett.tsx, in einer eigenen Datei, damit das Brett unter 400
+ * Zeilen bleibt. Benachbarte Feldmarkierungen gleicher Farbe teilen sich einen Umriss (umriss.ts,
+ * R36). Der goldene Umriss hat zu den Ecken einen dünnen gepunkteten Rahmen (Goldpunktrahmen).
  * Abhängigkeiten: analyse/werkzeug.ts (Markierungen), geometrie.ts, masse.ts, umriss.ts.
  */
 import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";

@@ -1,4 +1,4 @@
-/** Tests des Porträt-Baukastens (0.2.140): Vervollständigen, Zufall, Bauen des SVG. */
+/** Tests des Porträt-Baukastens: Vervollständigen, Zufall, Bauen des SVG. */
 import { describe, expect, it } from "vitest";
 import de from "../../i18n/de.json";
 import en from "../../i18n/en.json";

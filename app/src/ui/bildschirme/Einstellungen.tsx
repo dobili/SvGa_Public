@@ -1,12 +1,12 @@
 /**
- * Bildschirm „Einstellungen“ (seit 0.2.134, Wunsch des Autors vom 25.10.2026): erreichbar über den
- * Knopf „Einstellungen“ oben auf der Profilseite. Enthält die Einstellungen in Reitern
- * (EinstellungenKarte.tsx), Daten auf diesem Gerät (sichern, einspielen, löschen) und „Über die
- * App“ (Version, Datenstand, Offline, Update, Fehler melden, Lizenzen, Datenschutz, Impressum).
+ * Bildschirm „Einstellungen“: erreichbar über den Knopf „Einstellungen“ oben auf der Profilseite.
+ * Enthält die Einstellungen in Reitern (EinstellungenKarte.tsx), Daten auf diesem Gerät (sichern,
+ * einspielen, löschen) und „Über die App“ (Version, Datenstand, Offline, Update, Fehler melden,
+ * Lizenzen, Datenschutz, Impressum).
  *
- * Rolle im Gesamtbild: Bis 0.2.133 stand das alles mit Wertung und Fortschritt auf einer Seite
- * hinter dem Zahnrad (Ich.tsx). Jetzt zeigt die Leiste ein Profil (Ich.tsx: Wertung, Fortschritt,
- * Partien), und die selten gebrauchten Einstellungen liegen eine Ebene tiefer.
+ * Rolle im Gesamtbild: Wunsch des Autors vom 25.10.2026: Die Leiste zeigt ein Profil (Ich.tsx:
+ * Wertung, Fortschritt, Partien), und die selten gebrauchten Einstellungen liegen eine Ebene
+ * tiefer auf diesem Bildschirm.
  * Abhängigkeiten: app/offline.ts, app/version.ts, EinstellungenKarte, DatenLoeschen, Meldeformular,
  * Kopfzeile, Navigation, i18n.
  */

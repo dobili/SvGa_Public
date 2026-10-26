@@ -1,4 +1,4 @@
-/** Tests des Gegnerprofils einer neuen Partie für eigene Gegner mit Teil-E-Einstellungen (0.2.126). */
+/** Tests des Gegnerprofils einer neuen Partie für eigene Gegner mit Teil-E-Einstellungen. */
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";

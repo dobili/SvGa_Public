@@ -1,5 +1,8 @@
 # Wegweiser durch die App (`app/src/`)
 
+Für Leser ohne Programmierkenntnisse: `docs/codefuehrer/` erklärt Aufbau und Abläufe in Worten,
+`docs/konzeptkarte.html` zeigt alle Dateien und ihre Verbindungen zum Anklicken.
+
 Die App ist eine reine TypeScript-App ohne Server (Konzept Abschnitt 6). Abhängigkeiten zeigen nur
 in eine Richtung: `ui/` nutzt alle anderen Module, kein Modul kennt `ui/`.
 

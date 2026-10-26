@@ -30,3 +30,5 @@ Ausführlich: Technisches Konzept (Claude Docs, Link in `CLAUDE.md`). Hier das W
 - **Prüfungen:** `.github/workflows/pruefen.yml` (Pipeline, App, Playwright mit Chromium und WebKit).
 
 Wegweiser je Ordner: `pipeline/README.md`, `app/src/README.md` und die README-Dateien der Module.
+In Worten für den Autor: `docs/codefuehrer/`, als Karte aller Dateien: `docs/konzeptkarte.html`
+(Daten aus `app/skripte/konzeptkarte.mjs`).

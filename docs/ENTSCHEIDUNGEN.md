@@ -5860,3 +5860,24 @@ Freischaltung und vollem Ring, kleine Siegesanimation, Erklärtexte für Leser o
 - **CSP:** Die Prüfung mit erzwungener Regel deckt alle Bereiche ab (Website, /admin/, alle
   Trainer, Nachschlagen, Baukasten, Einstellungen, Englisch); die Regel bleibt bis mindestens
   1.11.2026 „Report-Only“ wie entschieden.
+
+## Codeführer und Konzeptkarte (26.10.2026, Opus, Version 0.2.146)
+
+Wunsch des Autors: den Code so beschreiben, dass er ihn mit seinen Kenntnissen versteht, gern in
+einem eigenen Dokument, dazu eine Karte aller Dateien und Verbindungen; die Beschreibung soll von
+Menschen gut bearbeitbar sein („eventuell ein Wiki?“), und Verbesserungsideen als To-do.
+
+- **Seiten statt Wiki:** `docs/codefuehrer/` mit acht kurzen Markdown-Seiten. Ein GitHub-Wiki ist
+  ein eigenes Repository, ändert sich nicht im selben Schritt wie der Code und ist aus den
+  Sitzungen nicht erreichbar; Markdown im Repository lässt sich auf GitHub ebenso mit dem Stift
+  bearbeiten (auch am Handy). Schon umgesetzt, Widerspruch genügt.
+- **Konzeptkarte:** `docs/konzeptkarte.html` (drei Ebenen: alle Ordner, ein Ordner, eine Datei;
+  Suche). Die Daten erzeugt `app/skripte/konzeptkarte.mjs` aus den Dateiköpfen, den Kommentaren der
+  Exporte und den Importen; die Ordnertexte liest es aus `docs/codefuehrer/3-ordner.md`, damit sie
+  von Menschen bearbeitbar bleiben.
+- **Kommentare:** über allen 94 exportierten Funktionen und Bausteinen ohne Kommentar ein kurzer
+  deutscher Satz (Zweig `kommentare-ergaenzt`); kein Code geändert.
+- **Verbesserungen:** Liste in `docs/codefuehrer/8-verbesserungen.md` (zwei Dateien über 400
+  Zeilen, 173 Dateien in `ui/komponenten/`, Messcode zwischen App-Code, gegenseitige Importe,
+  Versionsgeschichte in Dateiköpfen, Zeitgrenze für den Browser-Schritt der CI, zwei offene
+  Messungen).

@@ -1418,28 +1418,12 @@ umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
       es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
       Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
       öffnet (siehe Q1-5).
-- [ ] Q1-3. **„Menschlich“ bei „keine Fehler“:** Das Wort sagt nicht, dass der Bot Fehler
-      macht, sondern nur, dass die Einstellung der Fehlerprofil-Regler bei Menschen vorkommt.
-      Gerechnet wird der Anteil der Spieler, die in allen eingestellten Reglern mindestens so
-      auffällig sind (Regler 0 = alle, ±1 = die Hälfte, ±2 = ein Zehntel, darüber niemand). Bei
-      „keine Fehler“ ist kein Regler gesetzt, der Anteil ist 100 %, also „menschlich“. Plausibel
-      ist das nicht: Ein Bot ohne jede Fehlerart spielt wie die reine Engine, und das macht kein
-      Mensch. Vorschlag: Ohne eingestellte Fehlerarten und ohne Häufigkeit sagt die Anzeige
-      stattdessen „Keine Fehlerneigung“ und nennt die Einschätzung nicht „menschlich“.
 - [ ] Q1-4. **Porträt-Editor gegen fertige Porträts:** Es fehlt nichts. Alle 30 fertigen
       Auswahlporträts und die der Bots sind aus denselben Teilen gebaut (Frisur, Haarfarbe,
       Hautfarbe, Augen, Mund, Bart), und jeder Wert davon steht im Baukasten zur Auswahl; der
       Baukasten hat zusätzlich Nase, Körper, Kleidung und mehr Farben und Formen. Nicht einzeln
       geprüft habe ich Nase und Körper der fertigen Porträts: Sie kommen vom Zufall der
       Bibliothek, und ob jeder dieser Werte im Baukasten steht, wäre noch zu vergleichen.
-- [ ] Q1-5. **Lernsammlung und Fehlerdatenbank:** Gemeinsam: beide speichern eine Stellung mit
-      einem Satz, beide sind im Rückblick unter dem Zug und nach Trainer-Aufgaben erreichbar.
-      Verschieden: Die Lernsammlung hat Plan (ein Satz), Notiz und Eröffnung (vorausgefüllt),
-      dazu Abfragen und PGN-Ausgabe für Lichess. Die Fehlerdatenbank hat eine Fehlerart aus der
-      Gesamt-Checkliste (Kapitel 12), einen Satz und die Stellung vor dem Zug, dazu die
-      Auswertung je Fehlerart und den Vorschlag eines Trainers. Empfehlung: ein Knopf, zwei
-      Ziele im Menü, mit Vorauswahl („Fehler“, wenn der Zug als ?, ?? oder verpasst bewertet
-      wurde, sonst „Lernen“). Noch nicht umgesetzt, kommt mit der Lernsammlung-Aufgabe.
 - [ ] Q1-6. **Kürzere Trainingspläne:** Im Buch gibt es nur den 30-Minuten-Plan (Tag A
       Partietag 5 + 20 + 5 Minuten, Tag B Studientag 5 + 15 + 10 Minuten, Kapitel 12). Der
       Satz zu wenig Zeit lautet: „Hast du weniger Zeit, kürze zunächst das Themenstudium, nie
@@ -1456,45 +1440,6 @@ umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
       von Klassisch auf chess.com gäbe es nur über den gemeinsamen Blitzwert; die Streuung wäre
       groß, ein Bereich statt einer Zahl wäre dann ehrlicher. Der Punkt E4 weiter unten betrifft
       dasselbe.
-
-### Q2 Recherche: Übungsformate bei chess.com und Lichess (26.10.2026, nur Empfehlungen, kein Code)
-
-Gelesen habe ich die Hilfeseite von chess.com
-(<https://www.chess.com/article/view/chesscom-features>), deren App-Beschreibung im App Store und
-Beiträge im Lichess-Forum; Teile der Lichess-Beschreibung sind mein Vorwissen und nicht von der
-Seite geprüft (unten markiert). Bitte als Anregung lesen, nicht als geprüfte Produktbeschreibung.
-
-- [ ] Q2-1. **Was chess.com anbietet (laut eigener Seite):** Tägliche Aufgabe mit Archiv und
-      Serie (Streak); Puzzle Rush (3 oder 5 Minuten oder bis zu drei Fehlern); Aufgaben auf
-      Wunschthema und Stufe ohne Wertung; Lektionen und Kurse zu Eröffnung, Mittelspiel und Endspiel;
-      Partieanalyse mit Bewertung jedes Zuges (Brillanz, Fehler); Engine-Bewertungsbalken und
-      Endspieldatenbank im Analysebrett. Vieles davon hat die App schon: Zugklassen wie bei
-      chess.com, Bewertungsbalken, Tablebase-Prüfung der Buchabbildungen, Trainer nach Motiv.
-- [ ] Q2-2. **Was Lichess anbietet:** Aufgaben nach Thema (ein Muster am Stück üben, wie im
-      Buch die Themenblöcke), Puzzle Storm (Aufgaben gegen die Uhr, Fehler zeigen, welche Themen
-      fehlen), Puzzle Streak (Serie ohne Fehler), die Fehleraufgaben einer Partie („Aus deinen
-      Fehlern lernen“, Vorwissen, nicht geprüft), Koordinatentrainer, Eröffnungsbaum und Studien.
-      Ein Zeitplan für Wiederholungen (Spaced Repetition) war in den gelesenen Quellen nicht zu
-      finden; die App hat ihn bereits (fällige Wiederholungen im Training).
-- [ ] Q2-3. **Empfehlung: Fünf-Minuten-Plan „Nur Wiederholungen“.** Die fälligen Wiederholungen
-      aus Lernsammlung, Fehlerdatenbank und Übungen in einer Serie, ohne Auswahl. Kein neuer Inhalt,
-      nur eine Zusammenstellung vorhandener Bausteine. Noch nicht umgesetzt.
-- [ ] Q2-4. **Empfehlung: Kurzplan 15 Minuten.** Fünf Minuten fällige Wiederholungen, zehn Minuten
-      Taktik-Themenblock (die App hat die Themenblöcke aus Kapitel 12 schon) oder eine Studie.
-      Das Buch gibt hier nur den Satz „kürze zuerst das Themenstudium, nie die Analyse“; die
-      Aufteilung wäre also ein Vorschlag der App und kein Buchinhalt (siehe Q1-6). Da du als
-      Autor entscheidest, was als „Plan des Buches“ gilt, wartet es auf dein Ja.
-- [ ] Q2-5. **Empfehlung: Taktik auf Zeit (an Puzzle Rush und Storm angelehnt).** Drei Minuten
-      leichte Aufgaben aus dem Taktiktrainer, Ende nach drei Fehlern, Anzeige der Fehlmotive. Das
-      passt zum Satz im Buch, dass der Plan leichte Aufgaben von zwei Minuten enthält, widerspricht
-      aber dem Grundsatz „Rechnen ohne Zeitdruck lernen“. Deshalb als kleines, freiwilliges Angebot
-      gedacht; Entscheidung bei dir.
-- [ ] Q2-6. **Empfehlung: Tagesaufgabe und Serie.** Eine Aufgabe pro Tag aus dem Taktiktrainer, mit
-      Zähler für Tage in Folge. Würde als Ring „Tagesplan“ zu den Medaillen passen (Abschnitt 1 der
-      Ideensammlung). Noch nicht umgesetzt.
-- [ ] Q2-7. **Nicht empfohlen:** Wertung einzelner Aufgaben nach Art der Online-Seiten (bräuchte
-      Vergleichsdaten vieler Spieler), Kämpfe gegen andere Spieler (braucht Server), und
-      Videolektionen (Urheberrecht, Umfang).
 
 ### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 

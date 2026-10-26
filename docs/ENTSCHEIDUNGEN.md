@@ -4,6 +4,23 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 26.10.2026 – Beschlossen in der Ideensammlung, noch nicht umgesetzt
+
+Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Recherche Q2):
+
+- **Anzeige bei Bots ohne Fehlerarten:** Statt „menschlich“ steht „Keine Fehlerneigung“ (ohne
+  eingestellte Fehlerarten und Häufigkeit; der Bot spielt wie die reine Engine).
+- **Ein Knopf für Lernsammlung und Fehlerdatenbank:** Ein Lesezeichen im Rückblick öffnet ein
+  Fenster mit den Zielen „Lernen“ und „Fehler“; bei Zügen mit ?, ?? oder „verpasst“ ist „Fehler“
+  vorgewählt, sonst „Lernen“. Dazu: Felder aus der Auswertung vorschlagen (Eröffnung, Fehlerart,
+  Motiv, besserer Zug), goldenes Aufleuchten bei einer guten Gelegenheit.
+- **Neue Trainingspläne:** 5 Minuten (nur fällige Wiederholungen), 15 Minuten (5 Minuten
+  Wiederholungen plus 10 Minuten Taktik-Themenblock oder Studie), Taktik auf Zeit (3 Minuten leichte
+  Aufgaben, Ende nach drei Fehlern, freiwillig), Tagesaufgabe mit Serie (Tage in Folge). Die
+  Aufteilung der Pläne ist ein Vorschlag der App, kein Buchinhalt, und wird als solcher gekennzeichnet.
+- **Umsetzung:** In getrennten Chats parallel; jeder Chat prüft vorher die hier festgehaltenen
+  Ergebnisse noch einmal gegen den Code.
+
 ## 26.10.2026 – Phase in eigenen Partien bleibt wie sie ist
 
 - Die Lesart für eigene Partien bleibt: Mittelspiel, sobald eine Seite entwickelt ist (höchstens

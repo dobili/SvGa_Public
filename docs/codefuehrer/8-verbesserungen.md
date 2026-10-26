@@ -12,7 +12,7 @@ Zwei Dateien über 400 Zeilen geteilt, README-Regel zur Hülle genauer gefasst, 
 Dateien, `ui/komponenten/` in 19 Themenordner, Messcode nach `engine/messung/` und
 `spiel/messung/`, 15 der 18 gegenseitigen Importe aufgelöst, doppelter Wahlkontext, 21 ungenutzte
 Texte gelöscht und ein Test dagegen, Zeitgrenze für den Browser-Schritt der CI, Prüfmessung Blitz
-mit Maia Stufe 7 (bestätigt). Einzelheiten in `docs/ENTSCHEIDUNGEN.md`.
+mit Maia Stufe 7 (bestätigt), Wiederholung Blitz ohne Maia Stufe 8 (Ausreißer war Zufall). Einzelheiten in `docs/ENTSCHEIDUNGEN.md`.
 
 ## Noch offen
 
@@ -27,9 +27,6 @@ mit Maia Stufe 7 (bestätigt). Einzelheiten in `docs/ENTSCHEIDUNGEN.md`.
 - [ ] **Drei gegenseitige Importe nur über Typen** in `ui/komponenten/`: Rueckblickkarte ↔
       useRueckblick, Werkzeugleiste ↔ useWerkzeugwahl, Werkzeugleiste ↔ werkzeugordnung.
       Unkritisch, aber leicht zu lösen (Typen in eigene Datei). Aufwand: klein.
-- [ ] **Blitz ohne Maia, Stufe 8:** einziger Ausreißer der Zeitklassenprüfung (+291). Die erste
-      Wiederholung (`pruefung-blitz-8-r2`) ergab Zug für Zug dieselben Partien (feste
-      Zufallssaaten); die Wiederholung mit `MESSUNG_SAAT_AB=1000` (`pruefung-blitz-8-r3`) läuft.
 
 ---
 

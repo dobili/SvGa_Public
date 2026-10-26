@@ -5935,5 +5935,8 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   erwartet etwa 1824, Abweichung etwa −40, im Rauschen; die Korrektur bleibt.
 - **Prüfmessung Blitz ohne Maia, Stufe 8:** Die Wiederholung `pruefung-blitz-8-r2` ergab dieselben
   Partien wie die erste Runde (feste Zufallssaaten); `skripte/pruefe-anker.sh` nennt jetzt
-  `MESSUNG_SAAT_AB` für eine neue Stichprobe.
+  `MESSUNG_SAAT_AB` für eine neue Stichprobe. Mit `MESSUNG_SAAT_AB=1000` (`pruefung-blitz-8-r3`):
+  Anker 1813 statt 2063, erwartet etwa 1772, Abweichung etwa +40. Der Ausreißer von +291 war
+  Zufall; die Umrechnung bleibt. Zwei Stichproben derselben Stufe lagen 250 Punkte auseinander, die
+  Streuung einer Prüfmessung mit 40 Partien ist also größer als die Blöcke zu zehn vermuten lassen.
 

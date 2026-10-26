@@ -1,5 +1,5 @@
 /**
- * Karte „Einstellungen“: Brett, Figuren, Bedienung, Anzeige, Training, Bots und Hilfen in Reitern.
+ * Karte „Einstellungen“: Brett, Figuren, Bedienung, Anzeige, Bots und Hilfen in Reitern.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
  * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Die Auflage zeigt die Zeile
@@ -12,14 +12,15 @@
  * - Bedienung: wie die App reagiert (Figuren per Wischen ziehen, Zuganimation, Startanimation,
  *   Ton aus oder an),
  * - Anzeige: Nachtmodus (wie das Gerät, aus oder an, app/farbschema.ts), Schrift, Sprache,
- * - Training: „Erst selbst denken“ (Strenge, auch vor Werkzeugen und Engine),
  * - Bots: das Maia-Zusatzpaket (MaiaWahl.tsx),
  * - Hilfe: Toursymbol, Rundgang (P8, R52) und ausgeblendete Erklärkacheln wieder anzeigen.
+ * Seit 0.3.2 gibt es den Reiter „Training“ nicht mehr (Wunsch des Autors, 26.10.2026): „Erst selbst
+ * denken“ gilt fest in der lockeren Form, und die Einschätzung vor den Werkzeugen ist immer aus.
  * Merker wie Wischen und Koordinaten gelten für das Gerät (app/merker.ts).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * tour/, SprachWahl, i18n.
  */
-import { Bot, Brain, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
+import { Bot, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import {
   aendereEinstellungen,
@@ -27,8 +28,6 @@ import {
   useEinstellungen,
   type Brettfarben,
   type Figurensatz,
-  type Strenge,
-  type VorWerkzeugen,
   type Ton,
 } from "../../../app/einstellungen";
 import {
@@ -81,8 +80,6 @@ const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figuren
   },
 ];
 const TOENE: readonly Ton[] = ["aus", "an"];
-const STRENGEN: readonly Strenge[] = ["locker", "streng"];
-const VOR_WERKZEUGEN: readonly VorWerkzeugen[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
@@ -159,7 +156,7 @@ function ErklaerungenWahl() {
   );
 }
 
-type Bereich = "brett" | "bedienung" | "anzeige" | "training" | "bots" | "hilfe";
+type Bereich = "brett" | "bedienung" | "anzeige" | "bots" | "hilfe";
 const BEREICHE: readonly {
   wert: Bereich;
   text: Textschluessel;
@@ -184,12 +181,6 @@ const BEREICHE: readonly {
     text: "einstellungen.reiter.anzeige",
     symbol: Palette,
     tour: "einstellungen-reiter-anzeige",
-  },
-  {
-    wert: "training",
-    text: "einstellungen.reiter.training",
-    symbol: Brain,
-    tour: "einstellungen-reiter-training",
   },
   // Seit 0.2.143: Maia-Zusatzpaket für menschlichere Bots (MaiaWahl.tsx).
   {
@@ -317,52 +308,21 @@ function TonBereich() {
   );
 }
 
-/**
- * Training: „Erst selbst denken“ (Strenge, und ob es auch vor Werkzeugen und Engine gilt).
- * Genauigkeiten zeigt die App nur in der Auswertung einer Partie (Wunsch des Autors), deshalb
- * gibt es hier keinen Schalter dafür.
- */
-function TrainingBereich() {
-  const einstellungen = useEinstellungen();
-  return (
-    <>
-      <Auswahl
-        name={t("einstellungen.strenge")}
-        werte={STRENGEN}
-        gewaehlt={einstellungen.strenge}
-        text={(wert) => t(`einstellungen.strenge.${wert}`)}
-        beiWahl={(strenge) => aendereEinstellungen({ strenge })}
-      />
-      <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
-      <Auswahl
-        name={t("einstellungen.vorWerkzeugen")}
-        werte={VOR_WERKZEUGEN}
-        gewaehlt={einstellungen.vorWerkzeugen}
-        text={(wert) => t(`einstellungen.vorWerkzeugen.${wert}`)}
-        beiWahl={(vorWerkzeugen) => aendereEinstellungen({ vorWerkzeugen })}
-      />
-      <p className="hinweis">{t("einstellungen.vorWerkzeugen.text")}</p>
-    </>
-  );
-}
-
 const INHALT: Readonly<Record<Bereich, () => React.ReactNode>> = {
   brett: () => <BrettBereich />,
   bedienung: () => <BedienungBereich />,
   anzeige: () => <AnzeigeBereich />,
-  training: () => <TrainingBereich />,
   bots: () => <MaiaWahl />,
   hilfe: () => <HilfeBereich />,
 };
 
 /**
- * Die Einstellungen in Reitern (Training, Brett, Bedienung, Anzeige, Bots, Hilfe), etwa
- * Brettfarben, Figurensatz, Ton, Strenge und Sprache.
+ * Die Einstellungen in Reitern (Brett, Bedienung, Anzeige, Bots, Hilfe), etwa
+ * Brettfarben, Figurensatz, Ton und Sprache.
  */
 export function EinstellungenKarte() {
-  // Beim Öffnen steht der Reiter „Training“ vorn (Wunsch des Autors, 19.10.2026): Dort stellt man
-  // am häufigsten etwas um; Brett und Figuren wählt man meist nur einmal.
-  const [bereich, setzeBereich] = useState<Bereich>("training");
+  // Beim Öffnen steht der Reiter „Brett“ vorn (seit 0.3.2, nachdem „Training“ entfallen ist).
+  const [bereich, setzeBereich] = useState<Bereich>("brett");
   return (
     <section className="karte" data-testid="darstellung">
       <Reiter

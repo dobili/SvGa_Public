@@ -299,10 +299,9 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
 }) => {
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
-  // „Erst selbst denken“ ist seit 0.2.37 wieder da (wirkt bei den Übungen, AP 13); seit 0.2.80
-  // stehen die Bereiche der Darstellung auf Reitern.
-  await page.getByRole("tab", { name: "Training" }).click();
-  await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(1);
+  // Seit 0.2.80 stehen die Bereiche der Darstellung auf Reitern; „Training“ gibt es seit 0.3.2
+  // nicht mehr („Erst selbst denken“ gilt fest).
+  await expect(page.getByRole("tab", { name: "Training" })).toHaveCount(0);
   await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })

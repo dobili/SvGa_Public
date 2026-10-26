@@ -5,13 +5,19 @@
  * Rolle im Gesamtbild: Ganz oben im Profil (bildschirme/Ich.tsx). Ohne Namen und Bild lädt ein
  * Satz dazu ein; beides ist freiwillig. Dieselben Angaben erscheinen in Partie, Partienliste und
  * PGN (spieler.ts).
+ * Seit 0.3.2: Sind Name oder Bild gesetzt, steht statt des Textknopfes ein unauffälliger Stift am
+ * Rand der Karte (Wunsch des Autors, 26.10.2026); der Textknopf lädt nur zum ersten Mal ein.
  * Abhängigkeiten: ProfilEditor, Spielerbild, spieler.ts, i18n.
  */
+import { Pencil } from "lucide-react";
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ProfilEditor } from "./ProfilEditor";
 import { Spielerbild } from "./Spielerbild";
 import { useSpielerprofil } from "./spieler";
+
+/** Größe des Stiftes zum Bearbeiten. */
+const STIFTGROESSE = 18;
 
 /** Die Karte; geschlossen Bild, Name und Knopf, offen der Editor. */
 export function ProfilKarte() {
@@ -29,10 +35,23 @@ export function ProfilKarte() {
             <strong data-testid="profilname">{profil.name || t("profil.ohneName")}</strong>
             {leer && <span className="hinweis">{t("profil.einladung")}</span>}
             {/* Unter dem Namen, damit ein langer Name nicht mitten im Wort umbricht. */}
-            <button type="button" className="knopf-zweit" onClick={() => setzeOffen(true)}>
-              {t("profil.bearbeiten")}
-            </button>
+            {leer && (
+              <button type="button" className="knopf-zweit" onClick={() => setzeOffen(true)}>
+                {t("profil.bearbeiten")}
+              </button>
+            )}
           </div>
+          {!leer && (
+            <button
+              type="button"
+              className="knopf-symbol profilkarte-stift"
+              aria-label={t("profil.bearbeiten")}
+              title={t("profil.bearbeiten")}
+              onClick={() => setzeOffen(true)}
+            >
+              <Pencil size={STIFTGROESSE} aria-hidden="true" />
+            </button>
+          )}
         </div>
       )}
     </section>

@@ -10,7 +10,6 @@
  * Abhängigkeiten: useUebung.ts, training/uebungsaufgabe.ts, Brettbereich, Navigation, i18n.
  */
 import { useMemo } from "react";
-import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Uebungsverweis } from "../../app/stapel";
 import { ladeKapitel, type Kapitel } from "../../daten/laden";
@@ -34,12 +33,10 @@ function Hilfe({ s, uebung }: { s: Uebungssteuerung; uebung: UebungDaten }) {
   if (!s.hilfeFrei) {
     return (
       <div className="uebung-hilfe" data-tour="uebung-hilfe">
-        <p className="hinweis">{t(s.erstZug ? "uebung.erstZug" : "uebung.erstDenken")}</p>
-        {!s.erstZug && (
-          <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>
-            {t("uebung.nachgedacht")}
-          </button>
-        )}
+        <p className="hinweis">{t("uebung.erstDenken")}</p>
+        <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>
+          {t("uebung.nachgedacht")}
+        </button>
       </div>
     );
   }
@@ -170,7 +167,6 @@ function Inhalt({
   reihe: readonly Uebungsverweis[];
 }) {
   const { navigiere } = useNavigation();
-  const { strenge } = useEinstellungen();
   const erste = uebung.abbildungen[0];
   const startFen = kapitel.abbildungen.find((a) => a.id === erste)?.fen ?? null;
   const aufgabe = useMemo(
@@ -181,7 +177,7 @@ function Inhalt({
       ]),
     [startFen, uebung],
   );
-  const s = useUebung(uebung, aufgabe, startFen ?? "", strenge);
+  const s = useUebung(uebung, aufgabe, startFen ?? "");
   const bedienung = useBrettbedienung(s, aufgabe.art === "zug" ? "ziehen" : null, OHNE_WAHL);
   const stellung = useMemo(() => (startFen ? stellungAusFen(s.fen) : null), [startFen, s.fen]);
   const fertig = s.status !== "offen" || (aufgabe.art === "denken" && s.hilfeFrei);

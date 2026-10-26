@@ -16,6 +16,7 @@ import { t } from "../i18n/sprache";
 import { erzwingendeZuege, type ErzwingendeZuege, type Schlagzug } from "../schach/drohungen";
 import { koenigImFreien } from "../schach/koenigImFreien";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
+import { besterKandidatenzug } from "./k12-kandidaten";
 import { profil } from "./stellungsprofil";
 import { aufzaehlung, farbname, mitVorzeichen, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
@@ -190,14 +191,17 @@ function fazit(b: Blick): string {
 /**
  * Stellt die drei Fragen des Sicherheitsblicks zu einem geplanten Zug.
  *
- * Eingaben: Stellung, eigene Seite, Zug in SAN (der nächste Buchzug oder ein eigener). Ausgabe:
- * drei Befunde. Beispiel: Abb. 12.1 mit 1. Lxh7+: Der Läufer kann geschlagen werden („gerade
+ * Eingaben: Stellung, eigene Seite, Zug in SAN (der nächste Buchzug oder ein eigener; ohne Zug
+ * der beste Kandidat der Denkroutine, Schritt 2 bis 4). Ausgabe: drei Befunde. Beispiel: Abb. 12.1 mit 1. Lxh7+: Der Läufer kann geschlagen werden („gerade
  * der Plan“), der weiße König steht sicher. Übung 12.6 mit 1. Txd5: erlaubt 1... Lh2+.
- * Sonderfall: ohne Zug, ohne Regeln oder wenn der Gegner am Zug ist ein Hinweis.
+ * Sonderfall: ohne Zug und ohne Kandidaten, ohne Regeln oder wenn der Gegner am Zug ist ein Hinweis.
  */
 export function sicherheitsblick(stellung: Stellung, eigen: Color, zug?: string): Werkzeugergebnis {
-  const b = zug ? blick(stellung, eigen, zug) : null;
+  const gewaehlt =
+    zug ?? (stellung.regeln?.turn === eigen ? besterKandidatenzug(stellung, eigen) : null);
+  const b = gewaehlt ? blick(stellung, eigen, gewaehlt) : null;
   if (!b) return ohneZug(eigen);
+  const vomKandidaten = !zug;
   const befunde: Befund[] = [
     { kennung: "koenig", art: "E", titel: t("sicher.koenigTitel"), zeilen: frage1(b), farbe: null },
     { kennung: "figur", art: "E", titel: t("sicher.figurTitel"), zeilen: frage2(b), farbe: "rot" },
@@ -214,7 +218,7 @@ export function sicherheitsblick(stellung: Stellung, eigen: Color, zug?: string)
     art: "E",
     ueberschrift: t("sicher.titelZug", { zug: zugtext(b.san) }),
     befunde,
-    fazit: fazit(b),
+    fazit: vomKandidaten ? `${t("sicher.ausKandidaten")} ${fazit(b)}` : fazit(b),
     markierungen: markierungen(b),
     stufen: [
       ["koenig", "figur", "schach"],

@@ -3,7 +3,7 @@
  * Lösung zeigen, Denkaufgabe mit Selbsteinschätzung, fällige Wiederholungen im Training.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { starteImBrowser } from "./hilfen";
 
 async function oeffneKapitelUebungen(page: Page, kapitel: number): Promise<void> {
   await page
@@ -87,28 +87,6 @@ test("Lösung zeigen zählt als gelöst; Denkaufgabe mit Selbsteinschätzung", a
   await expect(page.getByTestId("uebung-erklaerung")).toBeVisible();
   await uebung.getByRole("button", { name: "Teilweise" }).click();
   await expect(uebung).toContainText("Gespeichert");
-});
-
-test("Erst selbst denken „streng“: Hilfe erst nach dem ersten eigenen Zug", async ({ page }) => {
-  await starteImBrowser(page);
-  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
-  await oeffneEinstellungen(page);
-  // Seit 0.2.80 im Reiter „Training“ der Karte „Einstellungen“.
-  await page.getByRole("tab", { name: "Training" }).click();
-  await page.getByRole("radio", { name: "streng" }).click();
-  await expect(page.getByText("erst, wenn du einen eigenen Zug gemacht hast")).toBeVisible();
-  await leiste.getByRole("button", { name: "Buch" }).click();
-  await oeffneKapitelUebungen(page, 1);
-  await page
-    .getByTestId("kapitel-uebungen")
-    .getByRole("button", { name: /Abb\. 1\.40/ })
-    .click();
-  const uebung = page.getByTestId("uebung");
-  await expect(uebung).toContainText("nach deinem ersten eigenen Zug");
-  await expect(uebung.getByRole("button", { name: "Ich habe nachgedacht" })).toHaveCount(0);
-  await feld(page, "b5").click();
-  await feld(page, "a7").click();
-  await expect(uebung.getByRole("button", { name: "Hinweis 1" })).toBeVisible();
 });
 
 test("T1: ein vom Buch gestützter, gleich guter Zug löst Übung 6 (Abb. 1.42) ebenfalls", async ({

@@ -175,7 +175,7 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await expect(zweig.locator(".zweigzug").last()).toHaveAttribute("aria-pressed", "true", {
     timeout: ENGINE_FRIST,
   });
-  await expect(abspielen).toHaveText("Besseren Zug abspielen", { timeout: ENGINE_FRIST });
+  await expect(abspielen).toHaveText("Besserer Zug", { timeout: ENGINE_FRIST });
   await page.getByTestId("abspielen-strafe").click();
   await expect(page.getByTestId("nebenzweig-strafe").locator(".zweigzug").first()).toHaveAttribute(
     "aria-pressed",
@@ -379,12 +379,12 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegnerreiter")).toBeVisible();
   // Seit 0.2.82 auch die blinden Flecken der eigenen Stufe; seit 0.2.135 als Netz mit fünf Gruppen.
-  await page.getByRole("tab", { name: "Flecken (0)" }).click();
+  await page.getByRole("tab", { name: "Blinde Flecken (0)" }).click();
   const rueckzug = page.getByTestId("fleckennetz").getByRole("radio", { name: "Rückzüge: selten" });
   await rueckzug.click();
   await expect(rueckzug).toHaveAttribute("aria-checked", "true");
   await expect(page.getByTestId("flecken-text")).toContainText("auch die der Springer");
-  await expect(page.getByRole("tab", { name: "Flecken (1)" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: "Blinde Flecken (1)" })).toBeVisible();
   await page.getByRole("tab", { name: "Stärke" }).click();
   await expect(page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" })).toHaveCount(0);
   await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();

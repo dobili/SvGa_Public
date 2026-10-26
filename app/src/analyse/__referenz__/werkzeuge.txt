@@ -8964,7 +8964,7 @@
 12.4 k9-erkennungsbilder: N [keins:N] {}
 12.4 k11-phase: N [phase:N werkzeuge:V/gold] {}
 12.4 k12-kandidaten: E [sammeln:E/gold antwort:N/rot bewerten:N] {gold b7-b5 gold d8-d1 gold d8-d2 gold d8-d3 gold g8-f6 rot e1-d1}
-12.4 k12-sicherheitsblick: E [hinweis:E] {}
+12.4 k12-sicherheitsblick: E [koenig:E figur:E/rot schach:E/rot] {gold g8-f6 rot c4-b5 rot c4-f7 rot f3-f6}
 12.5 k1-roentgen: E [schachs:E/gold schachs-gegner:E/rot schlaege:E/gold schlaege-gegner:E/rot drohungen:E/gold drohungen-gegner:E/rot optimierung:N] {gold d3-h7}
 12.5 k1-angriffsregel: N [eigen:N/gold gegner:N/rot] {gold d1 gold d3 gold f3 grau e5 grau e6 grau e7 grau e8 grau f5 grau g5 grau h5 rot f8}
 12.5 k2-zielbilanz: E [white:E black:E] {gold c3 gold d3 gold d4 gold e5 gold f2 gold f3 gold g1 gold g2 gold h2 grau d5 grau e4}

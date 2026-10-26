@@ -76,7 +76,7 @@ const NACHSCHLAGEN = [
   "Steckbriefe",
   "Werkzeuge des Buches",
 ];
-const REITER = ["Brett", "Bedienung", "Anzeige", "Training", "Bots", "Hilfe"];
+const REITER = ["Brett", "Bedienung", "Anzeige", "Bots", "Hilfe"];
 const BEREICHE_FRIST_MS = 240_000;
 
 async function bereich(seite: Page, name: string): Promise<void> {

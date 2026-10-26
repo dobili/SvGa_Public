@@ -61,8 +61,19 @@ describe("k12-sicherheitsblick", () => {
     expect(e.markierungen).toContainEqual({ typ: "feld", farbe: "rot", feld: "f7" });
   });
 
-  it("ohne Zug ein Hinweis", () => {
-    expect(blick("12.1").befunde[0]?.kennung).toBe("hinweis");
+  it("ohne Zug prüft er den besten Kandidaten der Denkroutine (Abb. 12.4)", () => {
+    // Abb. 12.4: Weiß droht Dxf7#; der beste Kandidat wehrt das Matt ab.
+    const e = blick("12.4");
+    expect(e.befunde[0]?.kennung).toBe("koenig");
+    expect(e.ueberschrift).toMatch(/^Sicherheitsblick: /);
+    expect(e.fazit).toContain("Kein Zug ist geplant");
+  });
+
+  it("ohne Zug und ohne Kandidaten ein Hinweis (Seite matt)", () => {
+    // Narrenmatt-Endstellung: Weiß ist matt, es gibt keinen Zug.
+    const s = stellungAusFen("rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3");
+    if (!s.ok) throw new Error(s.fehler);
+    expect(sicherheitsblick(s.wert, "white").befunde[0]?.kennung).toBe("hinweis");
   });
 });
 

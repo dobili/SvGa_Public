@@ -79,6 +79,9 @@ function markierungen(
 ): readonly Markierung[] {
   if (hinweisFeld) return [{ typ: "feld", farbe: "gold", feld: hinweisFeld }];
   if (!versuch) return [];
+  // Hat der Leser den Partiezug selbst gefunden (auch mit Hinweis), gibt es nichts zu vergleichen:
+  // keine Pfeile (Wunsch des Autors, 26.10.2026).
+  if (versuch.getroffen) return [];
   if (versuch.fehlversuch) return vergleichspfeile(versuch.fehlversuch);
   const felder = zugFelder(versuch.vorherFen, versuch.partie);
   return felder ? [{ typ: "pfeil", farbe: "gold", ...felder }] : [];

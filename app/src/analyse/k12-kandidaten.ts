@@ -182,6 +182,23 @@ export function kandidatenliste(stellung: Stellung, eigen: Color, buchzug?: stri
 }
 
 /**
+ * Der beste Kandidat der Denkroutine als Zug in SAN (Schritt 4: bester Ausgang gegen die stärkste
+ * Antwort); null ohne Regeln, ohne Kandidaten oder wenn jeder mit Matt beantwortet wird.
+ *
+ * Warum: Der Sicherheitsblick braucht einen Zug; ist weder ein Zug der Zugfolge noch ein
+ * Buchzug da, prüft er den besten Kandidaten (Wunsch des Autors, 26.10.2026).
+ * Beispiel: Abb. 12.4 (Weiß droht Dxf7#) → der Zug, der das Matt abwehrt, etwa Sf6.
+ */
+export function besterKandidatenzug(stellung: Stellung, eigen: Color): string | null {
+  const { regeln } = stellung;
+  if (!regeln) return null;
+  const fuer = regeln.turn === eigen ? regeln : nullzug(regeln, eigen);
+  const liste = kandidatenliste(stellung, eigen);
+  const index = besterKandidat(liste.map((k) => staerksteAntwort(fuer, k.san, eigen)));
+  return index === null ? null : (liste[index]?.san ?? null);
+}
+
+/**
  * Sammelt Kandidaten, prüft je Kandidat die stärkste Antwort und vergleicht die Bilanz.
  *
  * Eingaben: Stellung, eigene Seite, Buchzug (freiwillig). Ausgabe: drei Befunde (Sammeln E,

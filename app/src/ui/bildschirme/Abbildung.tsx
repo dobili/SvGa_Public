@@ -9,9 +9,9 @@
  * „Zählen“ zählt ein Tipp aufs Feld Angreifer und Verteidiger; Zählen und Ziehen zeigen dazu ihre
  * Erklärkachel (bis man sie ausblendet). Ein zweites Tippen auf ein Bündel oder Symbol wählt es
  * ab, ebenso ein Tipp auf den Hintergrund. Der Titel „Abb. 7.12“ ist ein Knopf: Ein Tipp öffnet
- * ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). „Erst selbst
- * denken“ kann Werkzeuge und Engine zurückhalten, bis der Leser die Stellung eingeschätzt hat
- * (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Das Lesezeichen am Brett
+ * ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). Seit 0.3.2 hält
+ * nichts mehr die Werkzeuge zurück (die Einstellung „Auch vor Werkzeugen und Engine“ ist entfallen,
+ * Wunsch des Autors, 26.10.2026). Das Lesezeichen am Brett
  * legt die gezeigte Stellung in die Lernsammlung (SammelFormular.tsx).
  * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
  * Navigation, i18n.
@@ -28,8 +28,6 @@ import { stellungAusFen } from "../../schach/stellung";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { SammelFormular, SammelSchalter } from "../komponenten/lernsammlung/SammelFormular";
-import { EigeneEinschaetzung, SelbstDenkenKarte } from "../komponenten/abbildung/SelbstDenken";
-import { useSelbstDenken } from "../komponenten/abbildung/useSelbstDenken";
 import { Karten } from "./AbbildungKarten";
 import { Nummernfeld, Nummerntitel } from "../komponenten/abbildung/Nummernsprung";
 import { useDaten } from "../komponenten/bausteine/useDaten";
@@ -129,9 +127,6 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
     [startFen, zugschluessel],
   );
 
-  // Erst selbst denken (seit 0.2.90, Einstellung „Auch vor Werkzeugen und Engine“): je Abbildung.
-  const denken = useSelbstDenken(nachspielen.abbildungHier?.id ?? abbildung.id, nachspielen.fen);
-
   // Tipp auf den Hintergrund: kein Werkzeug, also wieder die Markierungen des Buches.
   useHintergrundTipp(wahl !== null, werkzeug.abwaehlen);
 
@@ -193,9 +188,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
         bedienung={bedienung}
         beschriftung={hier ? t("abbildung.titel", { nummer: hier.id }) : t("zugleiste.stellung")}
         werkzeugSymbole={
-          denken.gesperrt ? null : (
-            <Brettsymbole kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
-          )
+          <Brettsymbole kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
         }
         skelett={skelettAn}
         zusatzSchalter={<SammelSchalter an={sammeln} beiKlick={() => setzeSammeln(!sammeln)} />}
@@ -212,13 +205,9 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
           }}
         />
       )}
-      {denken.gesperrt && <SelbstDenkenKarte stand={denken} />}
-      {!denken.gesperrt && <EigeneEinschaetzung stand={denken} />}
       {/* Lehrbilder ohne König (Kapitel 0 und 5): keine Bündel, am Brett nur „Zählen“. */}
-      {!denken.gesperrt && (
-        <Werkzeugleiste kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
-      )}
-      {!denken.gesperrt && werkzeug.buendel && (
+      <Werkzeugleiste kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
+      {werkzeug.buendel && (
         <Reiterleiste
           kennung={werkzeug.buendel}
           kapitel={kapitel.kapitel}

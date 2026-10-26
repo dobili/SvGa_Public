@@ -13,6 +13,13 @@
   width: 72px;
 }
 
+/* Der Stift zum Bearbeiten sitzt am Rand der Karte und fällt kaum auf (0.3.2). */
+.profilkarte-stift {
+  flex: none;
+  align-self: flex-start;
+  color: var(--text-leise);
+}
+
 .profilkarte-text {
   flex: 1;
   min-width: 0;

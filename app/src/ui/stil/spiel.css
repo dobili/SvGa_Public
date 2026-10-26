@@ -918,8 +918,17 @@
 .variantenknoepfe {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--raster);
   margin: calc(var(--raster) / 2) 0;
+}
+
+/* Die zwei Abspielknöpfe teilen sich die Zeile; der Symbolknopf zurück bleibt schmal (0.3.2). */
+.variantenknoepfe button.knopf-zweit {
+  flex: 1 1 0;
+  justify-content: center;
+  padding-inline: 8px;
+  white-space: nowrap;
 }
 
 .variantenknoepfe button {

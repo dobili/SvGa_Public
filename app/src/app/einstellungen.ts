@@ -1,6 +1,5 @@
 /**
- * Einstellungen des Lesers: Brettfarben, Figurensatz, Ton und Strenge des Modus „Erst selbst
- * denken“.
+ * Einstellungen des Lesers: Brettfarben, Figurensatz, Ton und Maia.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen“. Teil der Nutzerdaten im Speicher
  * (speicher/speicher.ts, AP 12), damit sie mit der Datensicherung umziehen; Merker aus den ersten
@@ -18,8 +17,6 @@ export type {
   Einstellungen,
   Figurensatz,
   Maiaschalter,
-  Strenge,
-  VorWerkzeugen,
   Ton,
 } from "../speicher/format";
 export { BILDSAETZE } from "../speicher/format";

@@ -7,10 +7,11 @@
  * einzeln antippen. Ein Tipp auf einen Knopf zeigt nun die Züge der Variante nacheinander, etwa
  * einen Zug je 1,2 Sekunden; ein zweiter Tipp hält an. Die Stellung am Brett wählt weiter der
  * Partie-Bildschirm aus dem Schritt (Zweigwahl), deshalb gelten Pfeile und „Zurück zur Partie“
- * der Karte auch während des Abspielens.
+ * der Karte auch während des Abspielens. Seit 0.3.2 stehen die Knöpfe in einer Zeile (kurze
+ * Beschriftung), und ein Symbolknopf führt zurück zur Ausgangsstellung, auch nach dem Ende.
  * Abhängigkeiten: Nebenzweig.tsx (Zweigwahl), spiel/nebenzweig.ts (Typ), lucide, i18n.
  */
-import { Lightbulb, Pause, Play, Swords } from "lucide-react";
+import { Lightbulb, Pause, Play, Swords, Undo2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { t } from "../../../i18n/sprache";
 import type { Zweigzug } from "../../../spiel/nebenzweig";
@@ -100,6 +101,18 @@ export function Variantenknoepfe({
           {laeuft === art ? t("rueckblick.abspielenHalt") : t(text)}
         </button>
       ))}
+      {wahl.art !== null && (
+        <button
+          type="button"
+          className="knopf-symbol"
+          data-testid="abspielen-zurueck"
+          aria-label={t("rueckblick.abspielenZurueck")}
+          title={t("rueckblick.abspielenZurueck")}
+          onClick={() => wahl.setze(wahl.art ?? "besser", null)}
+        >
+          <Undo2 size={SYMBOL} aria-hidden="true" />
+        </button>
+      )}
     </div>
   );
 }

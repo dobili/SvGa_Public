@@ -81,15 +81,15 @@ export type Ton = "aus" | "an";
 
 export interface Einstellungen {
   readonly brettfarben: Brettfarben;
-  /** „locker“: ein Tipp auf „Ich habe nachgedacht“ genügt; „streng“: echte Eingabe nötig. */
+  /** Seit 0.3.2 ohne Wirkung (gilt fest „locker“); bleibt für alte Sicherungen im Format. */
   readonly strenge: Strenge;
   /** Bildsatz der Figuren; ältere Stände ohne diesen Eintrag lesen sich als „buch“. */
   readonly figurensatz: Figurensatz;
   /** Ton an oder aus; ältere Stände ohne diesen Eintrag lesen sich als „aus“. */
   readonly ton: Ton;
   /**
-   * Wunsch des Autors (Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
-   * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
+   * Seit 0.3.2 ohne Wirkung (gilt fest „aus“, Wunsch des Autors, 26.10.2026); bleibt für alte
+   * Sicherungen im Format. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
    */
   readonly vorWerkzeugen: VorWerkzeugen;
   /**

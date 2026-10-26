@@ -6,14 +6,12 @@
  * Seite; richtig gezogen spielt die App die Antwort der Gegenseite aus der Lösung. Das Ergebnis
  * (richtig, mit Hilfe, falsch) geht einmal in Fortschritt und Wiederholungskarte
  * (speicher/fortschritt.ts, notiereUebungsergebnis).
- * „Erst selbst denken“ (Einstellung „Strenge“): locker – Hinweise und Lösung erst nach „Ich habe
- * nachgedacht“; streng – bei Zugaufgaben erst nach einem eigenen Zug (Denkaufgaben haben keinen
- * Zug, dort gilt auch bei „streng“ „Ich habe nachgedacht“).
+ * „Erst selbst denken“: Hinweise und Lösung erst nach „Ich habe nachgedacht“ (seit 0.3.2 gilt
+ * fest diese lockere Form, die frühere Einstellung „streng“ ist entfallen).
  * Abhängigkeiten: training/uebungsaufgabe.ts, schach/weiterspielen.ts, speicher.
  */
 import { useState } from "react";
 import type { Markierung } from "../../../analyse/werkzeug";
-import type { Strenge } from "../../../speicher/format";
 import { notiereUebungsergebnis } from "../../../speicher/fortschritt";
 import { aendere } from "../../../speicher/speicher";
 import { spieleZug, zugFelder } from "../../../schach/weiterspielen";
@@ -36,8 +34,6 @@ export interface Uebungssteuerung {
   readonly stufe: number;
   /** Darf der Leser Hinweise und Lösung sehen („Erst selbst denken“)? */
   readonly hilfeFrei: boolean;
-  /** Gibt erst ein eigener Zug die Hilfe frei (Strenge „streng“ bei einer Zugaufgabe)? */
-  readonly erstZug: boolean;
   /** Die Rolle der Figur, die als Nächstes zieht (für Hinweis 2), sonst null. */
   readonly naechsteFigur: Rolle | null;
   readonly markierungen: readonly Markierung[];
@@ -73,7 +69,7 @@ function rolleVon(san: string): Rolle {
 /**
  * Steuerung einer Übung.
  *
- * Eingaben: Kennung und Kapitel der Übung, Aufgabe, Startstellung (Diagramm), Strenge.
+ * Eingaben: Kennung und Kapitel der Übung, Aufgabe, Startstellung (Diagramm).
  * Sonderfall: Bei einer Denkaufgabe gibt es keine Züge; der Leser schätzt sich nach der Erklärung
  * selbst ein.
  */
@@ -81,7 +77,6 @@ export function useUebung(
   uebung: { id: string; kapitel: number },
   aufgabe: Uebungsaufgabe,
   startFen: string,
-  strenge: Strenge,
 ): Uebungssteuerung {
   const [zuege, setzeZuege] = useState<readonly string[]>([]);
   const [status, setzeStatus] = useState<Uebungsstatus>("offen");
@@ -91,8 +86,7 @@ export function useUebung(
   const [gedacht, setzeGedacht] = useState(false);
   const [eingeschaetzt, setzeEingeschaetzt] = useState(false);
   const fen = stellungNach(startFen, zuege);
-  const erstZug = strenge === "streng" && aufgabe.art === "zug";
-  const hilfeFrei = erstZug ? fehler > 0 || zuege.length > 0 : gedacht;
+  const hilfeFrei = gedacht;
 
   const speichere = (ergebnis: Antwortergebnis) =>
     void aendere((daten) =>
@@ -136,7 +130,6 @@ export function useUebung(
     meldung,
     stufe,
     hilfeFrei,
-    erstZug,
     naechsteFigur: naechster ? rolleVon(naechster) : null,
     markierungen,
     spiele,

@@ -83,8 +83,10 @@ export function EroeffnungsWahl({
       className={eingebettet ? "eroeffnungswahl" : "karte eroeffnungswahl"}
       data-testid="eroeffnungswahl"
     >
-      <label className="einstellung-name" htmlFor="eroeffnung">
-        <Titelsymbol art="eroeffnung" />
+      {/* Eingebettet steht „Eröffnung festlegen“ schon als Überschrift darüber: Das Wort nur für
+          Bildschirmleser, damit es nicht doppelt dasteht (Wunsch des Autors, 26.10.2026). */}
+      <label className={eingebettet ? "nur-vorlesen" : "einstellung-name"} htmlFor="eroeffnung">
+        {!eingebettet && <Titelsymbol art="eroeffnung" />}
         {t("spielen.eroeffnung")}
       </label>
       <select

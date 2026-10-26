@@ -1,7 +1,7 @@
 /**
- * Zug aus dem Praxisbuch in den Messläufen (0.2.128), wie in der App (ui/komponenten/botzug.ts).
+ * Zug aus dem Praxisbuch in den Messläufen, wie in der App (ui/komponenten/botzug.ts).
  *
- * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen). Die
+ * Rolle im Gesamtbild: Eigene Datei neben engine/stufen.messung.ts (Dateien unter 400 Zeilen). Die
  * Messung lädt das Buch der App aus public/daten/praxisbuch.json und verlangt es, damit gemessen
  * wird, was die App spielt. Abhängigkeiten: engine/praxisbuch.ts, engine/wahlmodell.ts,
  * spiel/zuege.ts.

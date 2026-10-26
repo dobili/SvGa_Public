@@ -4,6 +4,7 @@
  */
 import { bot, type Gegner } from "../gegnerbau";
 
+/** Kandidaten für die Gruppen 1 bis 3 (Kennungen „k1-…“ bis „k3-…“). */
 export const BOTKANDIDATEN_1: readonly Gegner[] = [
   bot("k1-angreifer-angreifer", "Kandidat 1", "", [1, 1, 1], "angreifer", 0, "angreifer"),
   bot("k1-angreifer-hektiker", "Kandidat 1", "", [1, 1, 1], "hektiker", 0, "angreifer"),

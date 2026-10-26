@@ -1,5 +1,5 @@
 /**
- * Hilfen des Messlaufs engine/botstaerke.messung.ts (0.2.125, ausgelagert für Dateien unter 400
+ * Hilfen des Messlaufs engine/botstaerke.messung.ts (eigene Datei, damit Dateien unter 400
  * Zeilen): Phasen einer nachgespielten Partie und die Datei der Kandidaten.
  * Abhängigkeiten: chessops, spiel/phasen.ts, engine/messung/botkandidaten.ts.
  */
@@ -98,7 +98,7 @@ export function datendatei(
 ): string {
   // Seit 0.2.125 die Stufen mit Zusatzfehlern („Nm“, so spielt eine Stufe in der App); Stufe 10
   // ist die volle Engine ohne Zusatzfehler (rein gemessen, „10-9m“ usw.).
-  // Seit Plan C (0.2.143) auch Stufe 10 menschlich („10m“); fehlt die reine Messung, gilt sie.
+  // Seit Plan C auch Stufe 10 menschlich („10m“); fehlt die reine Messung, gilt sie.
   const stufe = (n: number) =>
     n === STUFEN_NUMMERN.at(-1)
       ? (werte.get("stufe10") ?? werte.get("stufe10m"))

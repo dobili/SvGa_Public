@@ -17,6 +17,7 @@ import { entsprichtEtwa, vergleichsbereich, ZIELLISTE } from "../../../spiel/umr
 
 /** „lichess“: Zahlen wie berechnet; „umgerechnet“: chess.com oder FIDE je Zeitklasse. */
 export type Wertungsmassstab = "lichess" | "umgerechnet";
+/** Die beiden Maßstäbe in der Reihenfolge der Umschalter: zuerst Lichess, dann umgerechnet. */
 export const WERTUNGSMASSSTAEBE: readonly Wertungsmassstab[] = ["lichess", "umgerechnet"];
 
 /** Name des Merkers auf dem Gerät. */

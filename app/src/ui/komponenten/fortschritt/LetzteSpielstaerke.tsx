@@ -4,21 +4,21 @@
  * die Entsprechung auf chess.com oder beim Weltschachbund hinter dem Fragezeichen.
  *
  * Rolle im Gesamtbild: Plan „Genauigkeit und Spielstärke neu eichen“, Entscheidung 4 des Autors
- * (18.10.2026): Eine einzelne Partie streut stark, über zehn Partien gleicht sich das aus. Seit
- * 0.2.125 (Entscheidung des Autors, 23.10.2026) eine eigene Zahl je Zeitklasse aus dem Elo-Modell
- * (spiel/elomodell.ts); eine Zahl je Phase nur, wenn ihre Spanne schmal genug ist. Steht im Bereich
- * Spielen ganz oben über dem Gegner (Spielen.tsx, seit 0.2.139 wieder dort).
- * Seit 0.2.125 steht je Zeitklasse auch die Elo-Wertung aus den Ergebnissen dabei (Empfehlung, vom
- * Autor am 24.10.2026 angenommen): Zugqualität und Ergebnisse nebeneinander erklären sich gegenseitig.
- * Seit 0.2.142 (Wunsch des Autors, 25.10.2026) stehen alle drei Zeitarten gleichzeitig als Kacheln
- * nebeneinander: oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
+ * (18.10.2026): Eine einzelne Partie streut stark, über zehn Partien gleicht sich das aus. Eine
+ * eigene Zahl je Zeitklasse aus dem Elo-Modell (spiel/elomodell.ts, Entscheidung des Autors,
+ * 23.10.2026); eine Zahl je Phase nur, wenn ihre Spanne schmal genug ist. Steht im Bereich
+ * Spielen ganz oben über dem Gegner (Spielen.tsx).
+ * Je Zeitklasse steht auch die Elo-Wertung aus den Ergebnissen dabei (Empfehlung, vom Autor am
+ * 24.10.2026 angenommen): Zugqualität und Ergebnisse nebeneinander erklären sich gegenseitig.
+ * Alle drei Zeitarten stehen gleichzeitig als Kacheln nebeneinander (Wunsch des Autors,
+ * 25.10.2026): oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
  * eine kleine Legende nennt die Zeichen. Spanne je Phase und Herleitung stehen hinter dem
  * Fragezeichen.
- * Seit dem 26.10.2026 (Wunsch des Autors) schaltet „Lichess | chess.com · FIDE“ alle Zahlen
- * der Kacheln auf die umgerechnete Liste (wertungsmassstab.ts), mit „≈“ und dem Namen der Liste.
- * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien, verlaufDerZeitklasse), spiel/elomodell.ts,
- * speicher/partien.ts, speicher/speicher.ts, wertungstext.ts, wertungsmassstab.ts, Massstabwahl,
- * InfoKnopf, i18n.
+ * „Lichess | chess.com · FIDE“ schaltet alle Zahlen der Kacheln auf die umgerechnete Liste
+ * (wertungsmassstab.ts), mit „≈“ und dem Namen der Liste (Wunsch des Autors, 26.10.2026).
+ * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien,
+ * verlaufDerZeitklasse), spiel/elomodell.ts, speicher/partien.ts, speicher/speicher.ts,
+ * wertungstext.ts, wertungsmassstab.ts, Massstabwahl, InfoKnopf, i18n.
  */
 import { useMemo } from "react";
 import { t } from "../../../i18n/sprache";

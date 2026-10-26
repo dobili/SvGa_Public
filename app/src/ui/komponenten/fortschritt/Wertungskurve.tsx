@@ -1,25 +1,24 @@
 /**
- * Karte „Deine Wertung“ oben in den Einstellungen (Wunsch des Autors, 17.10.2026, Version 0.2.41):
- * die Elo-Wertung aus den gewerteten Partien (spiel/wertung.ts) mit Kurve.
+ * Karte „Deine Wertung“ oben in den Einstellungen (Wunsch des Autors, 17.10.2026): die
+ * Elo-Wertung aus den gewerteten Partien (spiel/wertung.ts) mit Kurve.
  *
  * Rolle im Gesamtbild: Die Karte zeigt die aktuelle Zahl groß, darunter die Kurve mit einem Punkt
  * je Partie und ein Auswahlfeld für den Ausschnitt (letzte 10, 25, 50 Partien oder ein Zeitraum).
- * Umschalter „Ansicht“: „Wertung“ zeigt die Elo-Wertung; „Eröffnung“, „Mittelspiel“, „Endspiel“
- * zeigen seit 0.2.125 die Schätzung des Elo-Modells für die Phase aus den jeweils letzten zehn
- * Partien (spiel/wertung.ts, phasenverlauf), nur wo die Spanne schmal ist (aus einer Partie ist
- * sie das nie, deshalb reichten Werte je Partie nicht mehr). Seit 0.2.125 außerdem (Empfehlung,
- * vom Autor am 24.10.2026 angenommen): Reiter „Zeitklasse“ (Blitz, Schnellschach, Klassisch) mit
- * eigener Wertung wie bei Lichess, sobald mehr als eine Zeitklasse Partien hat; „vorläufig“ in den
- * ersten zehn Partien; die Schätzung aus den Zügen („Deine Spielstärke“) als Zeile darunter, damit
- * Ergebnisse und Zugqualität nebeneinander stehen. „Wertung zurücksetzen“ (nach Nachfrage) leert
- * den Verlauf und macht alle bisherigen Partien dauerhaft ungewertet (speicher/partien.ts).
- * Seit 0.2.80 ist die Ansicht eine Reiterzeile, die Erklärung steht hinter einem Fragezeichen.
- * Seit 0.2.142 (Wunsch des Autors, 25.10.2026) sitzt das Fragezeichen an der Überschrift und
- * nimmt alle Erklärtexte auf (vorläufig, Schätzung aus den Zügen, Phasen); sichtbar bleiben die
- * Zahl mit der Marke „vorläufig“ und eine kurze Zeile zum Stand.
- * Seit dem 26.10.2026 (Wunsch des Autors) schaltet „Lichess | chess.com · FIDE“ Zahl, Spanne
- * und Änderung auf die umgerechnete Liste (wertungsmassstab.ts); die Kurve bleibt im Maßstab von
- * Lichess und sagt das (außerhalb der Tabellen gäbe es keine Punkte).
+ * Reiterzeile „Ansicht“: „Wertung“ zeigt die Elo-Wertung; „Eröffnung“, „Mittelspiel“, „Endspiel“
+ * zeigen die Schätzung des Elo-Modells für die Phase aus den jeweils letzten zehn Partien
+ * (spiel/wertung.ts, phasenverlauf), nur wo die Spanne schmal ist (aus einer Partie ist sie das
+ * nie, deshalb keine Werte je Partie). Dazu (Empfehlung, vom Autor am 24.10.2026 angenommen):
+ * Reiter „Zeitklasse“ (Blitz, Schnellschach, Klassisch) mit eigener Wertung wie bei Lichess,
+ * sobald mehr als eine Zeitklasse Partien hat; „vorläufig“ in den ersten zehn Partien; die
+ * Schätzung aus den Zügen („Deine Spielstärke“) als Zeile darunter, damit Ergebnisse und
+ * Zugqualität nebeneinander stehen. „Wertung zurücksetzen“ (nach Nachfrage) leert den Verlauf und
+ * macht alle bisherigen Partien dauerhaft ungewertet (speicher/partien.ts).
+ * Das Fragezeichen sitzt an der Überschrift und nimmt alle Erklärtexte auf (vorläufig, Schätzung
+ * aus den Zügen, Phasen; Wunsch des Autors, 25.10.2026); sichtbar bleiben die Zahl mit der Marke
+ * „vorläufig“ und eine kurze Zeile zum Stand.
+ * „Lichess | chess.com · FIDE“ schaltet Zahl, Spanne und Änderung auf die umgerechnete Liste
+ * (wertungsmassstab.ts, Wunsch des Autors, 26.10.2026); die Kurve bleibt im Maßstab von Lichess
+ * und sagt das (außerhalb der Tabellen gäbe es keine Punkte).
  * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
  * InfoKnopf, wertungstext, wertungsmassstab, Massstabwahl, i18n.
  */

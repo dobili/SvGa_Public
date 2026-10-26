@@ -1,7 +1,7 @@
 /**
  * Die Ringe des Fortschritts (Abbildungen, Lernziele, Trainer erstmals, besiegte Bots je Zeitart)
  * für die Karte „Dein Fortschritt“ (Fortschrittsuebersicht.tsx) und die Gratulation bei einem
- * vollen Ring (Ringfeier.tsx); seit 0.2.144 eigene Datei, damit beide dieselben Zahlen zeigen.
+ * vollen Ring (Ringfeier.tsx); eigene Datei, damit beide dieselben Zahlen zeigen.
  * Abhängigkeiten: speicher, speicher/besiegt.ts, speicher/fortschritt.ts, engine/gegner.ts,
  * app/lernstand.ts, daten/laden.ts, useDaten, zeitartzeichen.ts, i18n, lucide-react.
  */

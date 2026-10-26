@@ -1,4 +1,4 @@
-/** Tests des Stellungsaufbaus (0.2.41): setzen, entfernen, Rochaderechte, Seite am Zug. */
+/** Tests des Stellungsaufbaus: setzen, entfernen, Rochaderechte, Seite am Zug. */
 import { describe, expect, it } from "vitest";
 import { spielbar } from "./partie";
 import { amZugVon, GRUNDSTELLUNG, LEERES_BRETT, mitAmZug, setzeStein } from "./stellungsbau";

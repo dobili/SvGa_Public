@@ -22,6 +22,7 @@ export type Quantilklasse =
   | "verpasst"
   | "patzer";
 
+/** Je Zeitklasse und Elo-Band (Schlüssel wie „400“) je Klasse [5 %, Median, 95 %] in Prozent. */
 export const ZUGKLASSEN_UEBLICH: Readonly<
   Record<
     Wertungstempo,

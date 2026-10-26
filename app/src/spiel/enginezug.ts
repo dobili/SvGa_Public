@@ -23,7 +23,7 @@ import { sanZuUci, uciZuSan } from "./zuege";
  *
  * Eingaben: Bewerter (der Engine-Dienst), Stellung, Stufe, Buchzüge in SAN (leer außerhalb des
  * Buches oder ohne Eröffnungsindex), Zufallsquelle, Buchtreue (1 bei vorgegebener Eröffnung),
- * Profil eines eigenen Gegners (Fehlerarten, Stil; 0.2.42).
+ * Profil eines eigenen Gegners (Fehlerarten, Stil).
  * Ausgabe: Partiezug oder null, wenn es keinen legalen Zug gibt.
  * Beispiel: Grundstellung, Buchzüge [„e4“, „d4“] → meist „e4“ oder „d4“ mit Quelle „buch“.
  * Sonderfall: Ein Buchzug, der in der Stellung nicht geht, fällt still weg (die Daten sind
@@ -52,7 +52,7 @@ export async function engineZug(
 
 /**
  * Wie engineZug, dazu der Zug in UCI und die Breite der Wahl (für die Bedenkzeit der Bots,
- * spiel/botzeit.ts, seit 0.2.117). Die Breite bleibt außerhalb des Partiezugs, damit sie nicht
+ * spiel/botzeit.ts). Die Breite bleibt außerhalb des Partiezugs, damit sie nicht
  * mit der Partie gespeichert wird.
  */
 export async function engineZugMitLage(

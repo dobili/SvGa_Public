@@ -1,4 +1,4 @@
-/** Tests des Nebenzweigs im Rückblick (0.2.85). */
+/** Tests des Nebenzweigs im Rückblick. */
 import { describe, expect, it } from "vitest";
 import { zweigzuege } from "./nebenzweig";
 import { fenNach } from "./zuege";

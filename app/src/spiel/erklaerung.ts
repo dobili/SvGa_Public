@@ -2,15 +2,15 @@
  * Erklärung eines Fehlzuges im Rückblick: welche Drohung, welche hängende Figur, welche Taktik,
  * dazu die Markierungen am Brett.
  *
- * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38: „Bei der Auswertung
+ * Rolle im Gesamtbild: Rückmeldung des Autors: „Bei der Auswertung
  * möchte ich wissen, welche Drohung, Taktik, hängende Figur es gab, mit Feldmarkierung.“ Die
  * Regeln sind dieselben, mit denen die Engine ihre absichtlichen Fehler einordnet
  * (engine/fehlerart.ts, Kapitel 1, 4 und 7); so urteilen Fehlersuche und Rückblick gleich. Die
- * Rechnung läuft erst, wenn der Leser die Stellung nachspielt (nur eine Stellung, ohne Engine).
- * Seit 0.2.85 (Rückmeldung des Autors zu 10. Tab1?? in einer Partie gegen Mia) kennt der
- * Rückblick auch den ausgelassenen Schlag: Der beste Zug nahm eine Figur, der gespielte nicht;
- * hatte der Gegner gerade auf diesem Feld geschlagen, heißt es „schlägt nicht zurück“.
- * Abhängigkeiten: engine/fehlerart.ts, analyse/texte.ts, schach/, i18n.
+ * Rechnung läuft erst, wenn der Leser die Stellung nachspielt (nur eine Stellung, ohne Engine). Der
+ * Rückblick kennt auch den ausgelassenen Schlag (Rückmeldung des Autors zu 10. Tab1?? in einer
+ * Partie gegen Mia): Der beste Zug nahm eine Figur, der gespielte nicht; hatte der Gegner gerade
+ * auf diesem Feld geschlagen, heißt es „schlägt nicht zurück“. Abhängigkeiten: engine/fehlerart.ts,
+ * analyse/texte.ts, schach/, i18n.
  */
 import { makeSquare, parseSquare } from "chessops/util";
 import { aufzaehlung, figurenname, figurImWenfall, schlagtext, zugtext } from "../analyse/texte";
@@ -28,7 +28,7 @@ export interface Zugerklaerung {
 
 /** UCI: zwei Zeichen Startfeld, zwei Zeichen Zielfeld. */
 const FELDLAENGE = 2;
-/** Die Sätze der Fehlerarten je Phase (0.2.40); Arten ohne Eintrag haben eigene Sätze oder keinen. */
+/** Die Sätze der Fehlerarten je Phase; Arten ohne Eintrag haben eigene Sätze oder keinen. */
 const PHASENTEXT: Readonly<Partial<Record<Fehlerbefund["art"], Textschluessel>>> = {
   tempoverlust: "erklaerung.tempoverlust",
   bauernraub: "erklaerung.bauernraub",
@@ -117,7 +117,7 @@ function geschlageneFigur(danachFen: string, antwort: string): string | null {
 }
 
 /**
- * Der Satz zur Gabel mit den Namen der getroffenen Figuren (seit 0.2.91). Steht der König unter
+ * Der Satz zur Gabel mit den Namen der getroffenen Figuren. Steht der König unter
  * den Zielen, muss er ziehen, und die andere Figur geht verloren (Kapitel 7, Motiv 1).
  * Beispiel: Sf7 trifft Dame d6 und König h8 → „…trifft König h8 und Dame d6: Der König muss
  * ziehen, Dame d6 geht verloren.“
@@ -184,7 +184,7 @@ function erklaerungZu(
   if (befund.art === "koenigMitte") return { text: t("erklaerung.koenig"), marken: [] };
   const schluessel = PHASENTEXT[befund.art];
   if (!schluessel) return null;
-  // Die Fehlerarten je Phase (0.2.40): ein Satz, bei Zügen einer Figur ihr Zielfeld rot.
+  // Die Fehlerarten je Phase: ein Satz, bei Zügen einer Figur ihr Zielfeld rot.
   const zielfeld = uci.slice(FELDLAENGE, 2 * FELDLAENGE);
   return {
     text: t(schluessel),
@@ -196,7 +196,7 @@ function erklaerungZu(
 const SCHLAG_AB_VERLUST = 1.2;
 
 /**
- * Der ausgelassene Schlag (seit 0.2.85): Der beste Zug schlug eine Figur, der gespielte schlägt
+ * Der ausgelassene Schlag: Der beste Zug schlug eine Figur, der gespielte schlägt
  * sie nicht. Hatte der Gegner zuletzt auf diesem Feld geschlagen, fehlt der Rückschlag.
  * Regel: Kapitel 1, Abtausch (wer schlägt, rechnet mit dem Rückschlag; ohne ihn fehlt Material).
  * Beispiel: 9... Sxf4 10. Tab1?? statt exf4 → „schlägt nicht zurück: exf4 nahm den Springer f4
@@ -231,7 +231,7 @@ function ausgelassenerSchlag(
  * Eingaben: Stellung vor dem Zug (FEN), Stellung danach (FEN), der Zug (UCI), die beste Antwort
  * der Engine in der Stellung danach (UCI, darf leer sein), der Verlust in Bauerneinheiten, der
  * beste Zug der Engine vor dem Zug (UCI, für „passiver König“ und den ausgelassenen Schlag), der
- * Zug des Gegners davor in SAN (für „schlägt nicht zurück“, seit 0.2.85).
+ * Zug des Gegners davor in SAN (für „schlägt nicht zurück“).
  * Ausgabe: Satz und Markierungen, oder null, wenn keine Regel passt („ungenau“).
  * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? → „lässt die Drohung Dxe5+ stehen (gewinnt den
  * Bauern)“, roter Pfeil h5–e5, rotes Feld e5.

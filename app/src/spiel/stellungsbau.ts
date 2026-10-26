@@ -1,5 +1,5 @@
 /**
- * Stellungen selbst aufbauen (Wunsch des Autors, 17.10.2026, Version 0.2.41): Steine frei setzen
+ * Stellungen selbst aufbauen (Wunsch des Autors, 17.10.2026): Steine frei setzen
  * und entfernen, Seite am Zug wählen, daraus eine FEN für eine Partie.
  *
  * Rolle im Gesamtbild: Reine Funktionen für den Stellungseditor (ui/komponenten/
@@ -15,7 +15,9 @@ import type { Board } from "chessops/board";
 import type { Color } from "chessops/types";
 import { charToRole, parseSquare } from "chessops/util";
 
+/** Die Grundstellung als FEN, Ausgangspunkt des Editors. */
 export const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+/** Ein Brett ohne Steine als FEN, Weiß am Zug. */
 export const LEERES_BRETT = "8/8/8/8/8/8/8/8 w - - 0 1";
 
 /** Die zwölf Steine als FEN-Buchstaben: Großbuchstaben Weiß, Kleinbuchstaben Schwarz. */

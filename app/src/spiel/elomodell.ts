@@ -1,19 +1,18 @@
 /**
- * Elo-Modell der App (0.2.125): eine eigene Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch)
+ * Elo-Modell der App: eine eigene Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch)
  * aus den Kennzahlen der eigenen Züge bis zur Entscheidung, geeicht an den Lichess-Wertungen von
  * 3 900 Spielern (77 000 Partien), umgerechnet auf die Tiefe 18 der Engine der App.
  *
- * Rolle im Gesamtbild: ersetzt seit 0.2.125 die Mitte zweier Kurven Genauigkeit → Wertung (chess.com
- * und Lichess, 0.2.83) und den Schalter „Genauigkeit wie“ (Entscheidung des Autors, 23.10.2026:
- * eine Zahl je Zeitklasse auf dem Maßstab von Lichess; „entspricht etwa“ für chess.com und FIDE
- * rechnet spiel/umrechnung.ts). Kennzahlen: Zahl der Züge, Genauigkeit nach Lichess, Verlust je
- * Zug, Fehlerrate (ab einem halben Bauern), Anteile Ungenauigkeit, Fehler und Patzer, Verlust je
- * Fehler; je Phase Züge, Verlust, Genauigkeit, Fehler und Patzer. Das Modell ist additiv: je
- * Kennzahl eine stückweise lineare Kurve (spiel/elomodell-daten.ts), ein Modell für eine bis zehn
- * Partien (Kennzahlen gemittelt, Zahl der Partien als Kennzahl), danach entzerrt, damit Spieler
- * jeder Wertung im Mittel ihre Lichess-Zahl bekommen, mit der Spanne, in der 90 % der Spieler
- * liegen. Kontrolle an zurückgelegten Spielern: Schnellschach je Partie ±310, über zehn Partien
- * ±150 (Blitz ±410 und ±200, Klassisch ±270 und ±130).
+ * Rolle im Gesamtbild: liefert die geschätzte Spielstärke nach jeder Partie (Entscheidung des
+ * Autors, 23.10.2026: eine Zahl je Zeitklasse auf dem Maßstab von Lichess; „entspricht etwa“ für
+ * chess.com und FIDE rechnet spiel/umrechnung.ts). Kennzahlen: Zahl der Züge, Genauigkeit nach
+ * Lichess, Verlust je Zug, Fehlerrate (ab einem halben Bauern), Anteile Ungenauigkeit, Fehler und
+ * Patzer, Verlust je Fehler; je Phase Züge, Verlust, Genauigkeit, Fehler und Patzer. Das Modell ist
+ * additiv: je Kennzahl eine stückweise lineare Kurve (spiel/elomodell-daten.ts), ein Modell für
+ * eine bis zehn Partien (Kennzahlen gemittelt, Zahl der Partien als Kennzahl), danach entzerrt,
+ * damit Spieler jeder Wertung im Mittel ihre Lichess-Zahl bekommen, mit der Spanne, in der 90 % der
+ * Spieler liegen. Kontrolle an zurückgelegten Spielern: Schnellschach je Partie ±310, über zehn
+ * Partien ±150 (Blitz ±410 und ±200, Klassisch ±270 und ±130).
  * Warum additiv: erklärbar, klein und in TypeScript nachrechenbar; Gradient Boosting war nur 5 bis
  * 15 Prozent genauer. Die Teilmodelle je Phase sind breit (Endspiel sehr); ihre Zahl erscheint nur,
  * wenn die Spanne schmal ist (SCHMAL).
@@ -31,6 +30,7 @@ import { PHASEN, type Phase } from "./phasen";
 import type { Uhreinstellung } from "./uhr";
 
 export type { Wertungstempo } from "./elomodell-daten";
+/** Die drei Zeitklassen mit eigener Wertung, in der Reihenfolge der Anzeige. */
 export const WERTUNGSTEMPI: readonly Wertungstempo[] = ["blitz", "rapid", "classical"];
 
 /** Ein Zug für die Kennzahlen: Verlust in Bauern, Zuggenauigkeit, Wert danach aus eigener Sicht, Phase. */

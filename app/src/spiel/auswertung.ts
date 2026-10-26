@@ -5,8 +5,8 @@
  * der Partie jede Stellung im Hintergrund (ui/komponenten/useAuswertung.ts); aus den Werten
  * rechnet diese Datei den Verlust jedes Zuges und sein Zeichen. Die absichtlichen Fehler der
  * Engine stehen im Protokoll der Partie (spiel/partie.ts, engine/zugwahl.ts).
- * Seit 0.2.40 bekommt jeder Zug eine Klasse wie bei chess.com (brillant bis patzer).
- * Seit dem Theoriezug (Wunsch des Autors, 25.10.2026) heißt die Klasse "buch" auf dem Bildschirm
+ * Jeder Zug bekommt eine Klasse wie bei chess.com (brillant bis patzer).
+ * Die Klasse "buch" heißt auf dem Bildschirm (Wunsch des Autors, 25.10.2026)
  * „Theoriezug“ und umfasst die bekannte Eröffnungstheorie (Regel in schach/theorie.ts), nicht nur
  * die Eröffnungen des Buches. Der interne Schlüssel bleibt "buch" (Texte, Marken, Tests).
  * Abhängigkeiten: spiel/partie.ts, engine/fehlerart.ts.
@@ -20,7 +20,7 @@ import { regelstellung, sanZuUci } from "./zuege";
 export type Zugzeichen = "!!" | "!" | "??" | "?" | "?!";
 
 /**
- * Zugklasse wie bei chess.com (Wunsch des Autors, 0.2.40), mit den Grenzen der App: brillant = ein
+ * Zugklasse wie bei chess.com (Wunsch des Autors), mit den Grenzen der App: brillant = ein
  * gutes Opfer (bester oder fast bester Zug, gibt Material laut Abtauschrechnung); stark = der
  * einzige gute Zug oder der beste Zug nach einem Fehler des Gegners, solange die Stellung danach
  * nicht klar gewonnen ist; bester = der Zug der Engine (seit 0.2.50
@@ -58,6 +58,7 @@ export const ZEICHEN_JE_KLASSE: Readonly<Record<Zugklasse, Zugzeichen | null>> =
 
 /** Grenzen aus Konzept 8.3: Verlust ab 3 „??“, ab 1,2 „?“, ab 0,5 „?!“ (Bauerneinheiten). */
 const GRENZE_PATZER = 3;
+/** Verlust in Bauern, ab dem ein Zug „?“ (Fehler) heißt; auch für andere Dateien. */
 export const GRENZE_FEHLER = 1.2;
 const GRENZE_UNGENAU = 0.5;
 /** Pflichtenheft 5.3: Grobe Patzer (mehr als zwei Bauern) werden hervorgehoben. */
@@ -67,7 +68,7 @@ const SEHR_GUT_UNTER = 0.2;
 /**
  * Brillant nur, wenn man nach dem Opfer nicht schlecht steht (ab −1) und der zweitbeste Zug nicht
  * ohnehin klar gewinnt (unter +7; sonst ist das Opfer nur Zierde). Beides wie bei chess.com
- * (Nachbau „freechess“) und geprüft an den 100 Brillant-Zügen des Chessigma-Vergleichs (0.2.54):
+ * (Nachbau „freechess“) und geprüft an den 100 Brillant-Zügen des Chessigma-Vergleichs:
  * ohne die Bedingungen 73 erkannt bei 230 Fehlalarmen in 100 Partien, mit ihnen 79 bei etwa
  * einem Fehlalarm je Partie.
  */
@@ -77,7 +78,7 @@ const BRILLANT_ZWEITBESTER_UNTER = 7;
  * Ein Opfer laut Abtauschrechnung: Der Gegner gewinnt eine Figur ab Leichtfigur und bekommt dafür
  * höchstens zwei Bauern (Nettowert mindestens 1; bis 0.2.52 mindestens 2, womit ein Springer für
  * zwei Bauern wie 10. Sxb5 in der Opernpartie kein Opfer war). Geprüft an den 100 Brillant-Zügen
- * des Chessigma-Vergleichs (chess.com-Partien, 17.10.2026, 0.2.54): 100 von 100 erkannt, 7,5 % aller
+ * des Chessigma-Vergleichs (chess.com-Partien, 17.10.2026): 100 von 100 erkannt, 7,5 % aller
  * Züge sind Opferkandidaten.
  */
 export const OPFER_AB = 1;
@@ -162,7 +163,7 @@ export function endwert(fen: string): number | null {
  * 0,5), gibt aber höchstens zurück, was der Gegner geschenkt hat. Man steht also nicht schlechter
  * als vor dem Fehler des Gegners; deshalb zählt das auch bei großem Verlust als „verpasst“ und
  * nicht als „patzer“ (so auch chess.com: 4. e3 nach 3... Sf4?? mit hängendem Springer ist
- * „verpasst“, kein Patzer; 0.2.50).
+ * „verpasst“, kein Patzer).
  */
 function verpasst(verlust: number, u: Zugumstaende): boolean {
   return (
@@ -307,7 +308,7 @@ export function zugurteile(
   });
 }
 
-/** Ein Sprung des Wertes ab dieser Größe, der sofort zurückspringt, ist verdächtig (0.2.51). */
+/** Ein Sprung des Wertes ab dieser Größe, der sofort zurückspringt, ist verdächtig. */
 const AUSREISSER_AB = 3;
 
 /**

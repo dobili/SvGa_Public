@@ -19,6 +19,7 @@ export type { Phase };
 
 /** Reihenfolge der Phasen für den Vergleich. */
 const RANG: Readonly<Record<Phase, number>> = { eroeffnung: 0, mittelspiel: 1, endspiel: 2 };
+/** Die drei Phasen in der Reihenfolge der Partie. */
 export const PHASEN: readonly Phase[] = ["eroeffnung", "mittelspiel", "endspiel"];
 
 /**

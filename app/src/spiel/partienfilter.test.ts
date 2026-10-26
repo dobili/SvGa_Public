@@ -1,5 +1,5 @@
 /**
- * Tests des Filters der Partienliste (0.2.99, mehrere Filter und Sortierung seit 0.2.117):
+ * Tests des Filters der Partienliste (mehrere Filter zugleich und Sortierung):
  * Ergebnis aus Sicht des Lesers, Wertung, Farbe, Art des Gegners, Sortierung.
  */
 import { describe, expect, it } from "vitest";

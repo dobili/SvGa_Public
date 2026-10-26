@@ -3,10 +3,10 @@
  * Spielerprofilen (77 000 Lichess-Partien, buch/arbeit/spielerprofil, nur lokal).
  *
  * Warum: „Deine Züge“ vergleicht jede Klasse mit dem Üblichen bei gleicher Stärke
- * (spiel/zugklassenvergleich.ts). Für Brillant, Stark und Theoriezug gab es bis 0.2.146 nur
- * Schätzungen (Frage des Autors, 26.10.2026). Dieser Lauf bestimmt die Klasse jedes gespeicherten
- * Zuges mit der Regel der App selbst (klasseVon in spiel/auswertung.ts, Opfer nach engine/opfer.ts,
- * Theoriekette nach schach/theorie.ts) und zählt je Spieler.
+ * (spiel/zugklassenvergleich.ts). Auch für Brillant, Stark und Theoriezug braucht es dafür
+ * Messungen statt Schätzungen (Frage des Autors, 26.10.2026). Dieser Lauf bestimmt die Klasse
+ * jedes gespeicherten Zuges mit der Regel der App selbst (klasseVon in spiel/auswertung.ts,
+ * Opfer nach engine/opfer.ts, Theoriekette nach schach/theorie.ts) und zählt je Spieler.
  * Ablauf: Teil 0 bis 3 (je eine Datei stellungen-N.jsonl) schreiben die Zählungen je Spieler,
  * danach fasst ZUSAMMEN=1 alles zu Quantilen zusammen (5 %, Median, 95 % über die Spieler mit
  * mindestens 100 Zügen) und schreibt spiel/zugklassenvergleich-daten.ts neu.

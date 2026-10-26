@@ -1,5 +1,5 @@
 /**
- * Tests der Wertung (0.2.41): Elo-Erwartung, Ergebnis aus Sicht des Lesers, erste Partie setzt die
+ * Tests der Wertung: Elo-Erwartung, Ergebnis aus Sicht des Lesers, erste Partie setzt die
  * Wertung auf die Schätzung, weitere Partien ändern sie nach Elo, was nicht zählt, und die
  * Ausschnitte für die Kurve.
  */

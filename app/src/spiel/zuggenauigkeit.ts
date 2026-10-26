@@ -28,6 +28,7 @@ const GENAUIGKEIT_VERSATZ = 3.1669;
 const FENSTER_JE_ZUEGE = 10;
 const FENSTER_MINDESTENS = 2;
 const FENSTER_HOECHSTENS = 8;
+/** Kleinstes Gewicht eines Zuges (Zahl von Lichess); auch für Züge ohne berechnetes Gewicht. */
 export const GEWICHT_MINDESTENS = 0.5;
 const GEWICHT_HOECHSTENS = 12;
 /** Kleinste Genauigkeit eines Zuges im harmonischen Mittel; sonst teilt eine 0 alles weg. */
@@ -82,7 +83,7 @@ export function zuggewichte(werte: readonly number[]): number[] {
 /**
  * Genauigkeit einer Seite (Lichess): Mittel aus dem gewichteten Mittel und dem harmonischen Mittel
  * der Zuggenauigkeiten; null ohne Züge. Mit `polster` unter 1 zählen Züge in entschiedener
- * Stellung (`entschieden`) in beiden Mitteln nur mit diesem Faktor (seit 0.2.83, Modus).
+ * Stellung (`entschieden`) in beiden Mitteln nur mit diesem Faktor (Modus).
  * Beispiel: Beispielpartie des Autors (siehe zuggewichte), Weiß: einfaches Mittel 97, gewichtet 84, harmonisch 90 → 87 (chess.com
  * 86,8). Sonderfall: Eine Zuggenauigkeit unter 1 zählt im harmonischen Mittel als 1.
  */

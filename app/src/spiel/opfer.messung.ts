@@ -3,7 +3,7 @@
  * Vergleich, Datei nur lokal) gegen unsere Opfererkennung und Brillant-Regel.
  *
  * Rolle im Gesamtbild: Kein Test der Prüfkette, sondern ein Messlauf wie engine/stufen.messung.ts
- * (Entscheidung „Brillant am Prüfstand von chess.com“, 0.2.54). Für jeden Zug der 100 Partien
+ * (Entscheidung „Brillant am Prüfstand von chess.com“). Für jeden Zug der 100 Partien
  * prüft die Abtauschrechnung, ob er ein Opfer ist; jeden Opferkandidaten bewertet die Engine vor
  * und nach dem Zug (zwei Varianten, für den Abstand zum zweitbesten), dann entscheidet
  * `klasseVon`. Ausgabe: Treffer unter den 100 Brillanten, Fehlalarme (weitere Züge, die wir

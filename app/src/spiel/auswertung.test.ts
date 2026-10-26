@@ -69,7 +69,7 @@ describe("Auswertung", () => {
     const abstaende = [0, 0, 0, 1.5, 1.1, 0, 5, 0];
     const zeichen = zugurteile(p, werte, beste, abstaende).map((u) => u.zeichen);
     // 2... Sc6: bester Zug mit Abstand 1,5 → „!“; 3. Lc4: Abstand 1,1 reicht nicht; 4. Dxf7# ist
-    // einziger Zug, aber danach klar gewonnen: kein „!“ mehr (0.2.51).
+    // einziger Zug, aber danach klar gewonnen: kein „!“ mehr.
     expect(zeichen).toEqual([null, null, "?!", "!", null, "??", null]);
     // Ohne Abstände (ältere Auswertung) gibt es kein „!“.
     expect(zugurteile(p, werte).map((u) => u.zeichen)).toEqual([
@@ -145,7 +145,7 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(1.2, { ...ruhig, buch: true, gambit: true })).toBe("fehler");
     expect(klasseVon(0.3, ruhig)).toBe("gut");
     expect(klasseVon(0.1, ruhig)).toBe("sehrGut");
-    // Gleichwertig, aber nicht der Zug der Engine: sehr gut (0.2.50, wie „exzellent“ bei chess.com).
+    // Gleichwertig, aber nicht der Zug der Engine: sehr gut (wie „exzellent“ bei chess.com).
     expect(klasseVon(0, ruhig)).toBe("sehrGut");
     expect(klasseVon(0, { ...ruhig, warBester: true })).toBe("bester");
   });
@@ -163,7 +163,7 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5 })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true })).toBe("brillant");
-    // Ein gutes Opfer bis 0,5 hinter dem besten Zug ist auch brillant (0.2.53), ab 0,5 nicht.
+    // Ein gutes Opfer bis 0,5 hinter dem besten Zug ist auch brillant, ab 0,5 nicht.
     expect(klasseVon(0.1, { ...ruhig, opfer: true })).toBe("brillant");
     expect(klasseVon(0.3, { ...ruhig, opfer: true })).toBe("brillant");
     expect(klasseVon(0.5, { ...ruhig, opfer: true })).toBe("ungenau");
@@ -176,7 +176,7 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(
       klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 9, abstand: 4 }),
     ).toBe("brillant");
-    // Nach dem Zug klar gewonnen (ab +5): kein „stark“ mehr, auch nicht als einziger Zug (0.2.51).
+    // Nach dem Zug klar gewonnen (ab +5): kein „stark“ mehr, auch nicht als einziger Zug.
     expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5, wertVorher: 6 })).toBe(
       "bester",
     );
@@ -196,7 +196,7 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
   it("noch klar gewonnen (ab +5 nach dem Zug): höchstens ungenau (Empfehlung K5)", () => {
     // Matt in 2 (Wert 10) zu +5: Verlust 5, aber weiter klar gewonnen.
     expect(klasseVon(5, { ...ruhig, wertVorher: 10 })).toBe("ungenau");
-    // Unter 3 Verlust in klar gewonnener Stellung nur „gut“ (0.2.51, Vergleich mit chess.com).
+    // Unter 3 Verlust in klar gewonnener Stellung nur „gut“ (Vergleich mit chess.com).
     expect(klasseVon(1.5, { ...ruhig, wertVorher: 10, vorherVerlust: 2 })).toBe("gut");
     expect(klasseVon(3, { ...ruhig, wertVorher: 10 })).toBe("ungenau");
     // Klar verloren nach dem Zug: der einzige Zug ist nur „bester“, kein „!“.

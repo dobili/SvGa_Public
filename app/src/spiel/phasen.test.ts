@@ -38,7 +38,7 @@ describe("Phasen", () => {
     expect(phaseVon("unsinn")).toBeNull();
   });
 
-  // Zusatzregel (0.2.41, nicht aus dem Buch): Speelman (höchstens 13 Punkte je Seite). Eine Regel
+  // Zusatzregel (nicht aus dem Buch): Speelman (höchstens 13 Punkte je Seite). Eine Regel
   // nach der Zugzahl gibt es nicht mehr (Entscheidung des Autors, 17.10.2026).
   it("Damenendspiel ist Endspiel (Zusatzregel Speelman); die Zugzahl ändert nichts", () => {
     // Dame, Turm und drei Bauern je Seite (17 Punkte): Mittelspiel; ohne Türme (12 Punkte): Endspiel.

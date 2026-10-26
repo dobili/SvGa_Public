@@ -6,14 +6,13 @@
  * Deshalb steht jede Klasse gegen ihren üblichen Anteil bei einem Spieler gleicher Stärke, mit
  * Zonen „schwach / normal / gut“ (bei den schwachen Klassen umgekehrt). Die Anzeige steht in
  * ui/komponenten/Zugklassen.tsx.
- * Seit 0.2.125 (Wunsch des Autors, 24.10.2026) kommen Üblich und Zonen aus den Spielerprofilen
- * (spiel/zugklassenvergleich-daten.ts): „üblich“ ist der Median der Spieler des Bandes in der
- * Zeitklasse, „normal“ reicht vom 5-%- bis zum 95-%-Quantil der Spieler, erweitert um die
- * Zufallsstreuung einer einzelnen Partie mit so vielen Zügen (Binomial, 90 %), damit eine Partie
- * nicht schon durch Würfelglück „gut“ oder „schwach“ heißt. Seit 0.3.0 (Wunsch des Autors,
- * 26.10.2026) sind alle zehn Klassen gemessen: Der Messlauf spiel/zugklassen.messung.ts bestimmt
- * die Klasse jedes Zuges der Profile mit der Regel der App; vorher waren brillant, stark und
- * Theoriezug geschätzt (feste Zone 75 bis 125 %), und „bester“ enthielt sie noch.
+ * Üblich und Zonen kommen aus den Spielerprofilen (spiel/zugklassenvergleich-daten.ts, Wunsch des
+ * Autors, 24.10.2026): „üblich“ ist der Median der Spieler des Bandes in der Zeitklasse, „normal“
+ * reicht vom 5-%- bis zum 95-%-Quantil der Spieler, erweitert um die Zufallsstreuung einer
+ * einzelnen Partie mit so vielen Zügen (Binomial, 90 %), damit eine Partie nicht schon durch
+ * Würfelglück „gut“ oder „schwach“ heißt. Alle zehn Klassen sind gemessen (Wunsch des Autors,
+ * 26.10.2026): Der Messlauf spiel/zugklassen.messung.ts bestimmt die Klasse jedes Zuges der Profile
+ * mit der Regel der App.
  * Abhängigkeiten: spiel/auswertung.ts (Zugklasse), spiel/zugklassenvergleich-daten.ts,
  * spiel/elomodell-daten.ts (Zeitklasse).
  */

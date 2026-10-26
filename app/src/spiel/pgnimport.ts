@@ -1,6 +1,6 @@
 /**
- * Eine Partie aus PGN einlesen, um sie in der App auswerten zu lassen (seit 0.2.117, Wunsch des
- * Autors vom 19.10.2026: „PGN-Import an der Partienliste, ausgewertet, ungewertet gespeichert“).
+ * Eine Partie aus PGN einlesen, um sie in der App auswerten zu lassen (Wunsch des Autors vom
+ * 19.10.2026: „PGN-Import an der Partienliste, ausgewertet, ungewertet gespeichert“).
  *
  * Rolle im Gesamtbild: Der Leser fügt eine Partie von Lichess, chess.com oder vom Partieformular
  * ein. Sie landet als beendete, ungewertete Partie in der Partienliste (speicher/partien.ts) und

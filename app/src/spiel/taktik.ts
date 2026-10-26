@@ -17,6 +17,7 @@ import { gegner, stellungAusFen } from "../schach/stellung";
 import { stellungen, type Partie } from "./partie";
 
 export type Zugart = "taktik" | "strategie";
+/** Die beiden Zugarten, nach denen die Spielstärke im Mittelspiel getrennt wird. */
 export const ZUGARTEN: readonly Zugart[] = ["taktik", "strategie"];
 
 /**

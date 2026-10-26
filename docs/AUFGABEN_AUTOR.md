@@ -1361,6 +1361,70 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q1 Befunde der Nachsicht im Code (26.10.2026, nur gelesen, nichts geändert)
+
+Antworten auf deine Fragen aus der Ideensammlung. Wo ein Vorschlag steht, ist er noch nicht
+umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
+
+- [ ] Q1-1. **Plus-Symbol in der Partieauswertung:** Es gibt es, aber es sieht nicht wie ein
+      Plus aus. Beim Nachspielen einer Partie (Rückblick) stehen unter der Karte zum gezeigten
+      Zug zwei aufklappbare Zeilen: „In die Fehlerdatenbank“ und „In die Lernsammlung“. Das
+      Lesezeichen mit Plus (wie an den Abbildungen im Buch) gibt es dort nicht, deshalb hast du
+      es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
+      Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
+      öffnet (siehe Q1-5).
+- [ ] Q1-2. **Mittelspiel nach 4…e6 in deiner Partie:** Die App meldet es nicht nach 4…e6. Die
+      Stellung nach 4…e6 gilt als Eröffnung (beide Seiten haben zwei Leichtfiguren zu Hause:
+      Weiß Sb1 und Lf1, Schwarz Sg8 und Lf8). Das „M“ in der Zugliste steht erst beim nächsten
+      Zug, 5. Sbd2: Danach hat Weiß nur noch den Lf1 zu Hause, und die App-Regel lautet
+      „Mittelspiel, sobald eine Seite entwickelt ist (höchstens eine Leichtfigur zu Hause)“.
+      Das M steht aber optisch hinter dem e6 und vor „5.“, und es sieht so aus, als beginne das
+      Mittelspiel mit e6. Außerdem ist die Regel streng nach dem Glossar zu locker: Das Glossar
+      verlangt „beide entwickelt und rochiert“; diese Regel gibt es im Code (Lesart „glossar“),
+      sie ist für eigene Partien aber nicht eingestellt. Vorschlag: (a) das M direkt vor den
+      Zug setzen, mit dem die Phase beginnt (nach der Zugnummer); (b) für eigene Partien die
+      Glossarregel nehmen („beide entwickelt und rochiert“). Dann beginnt das Mittelspiel in
+      deiner Partie erst später. Das ändert Phasengrenzen und die Spielstärke je Phase, deshalb
+      wartet es auf dein Ja.
+- [ ] Q1-3. **„Menschlich“ bei „keine Fehler“:** Das Wort sagt nicht, dass der Bot Fehler
+      macht, sondern nur, dass die Einstellung der Fehlerprofil-Regler bei Menschen vorkommt.
+      Gerechnet wird der Anteil der Spieler, die in allen eingestellten Reglern mindestens so
+      auffällig sind (Regler 0 = alle, ±1 = die Hälfte, ±2 = ein Zehntel, darüber niemand). Bei
+      „keine Fehler“ ist kein Regler gesetzt, der Anteil ist 100 %, also „menschlich“. Plausibel
+      ist das nicht: Ein Bot ohne jede Fehlerart spielt wie die reine Engine, und das macht kein
+      Mensch. Vorschlag: Ohne eingestellte Fehlerarten und ohne Häufigkeit sagt die Anzeige
+      stattdessen „Keine Fehlerneigung“ und nennt die Einschätzung nicht „menschlich“.
+- [ ] Q1-4. **Porträt-Editor gegen fertige Porträts:** Es fehlt nichts. Alle 30 fertigen
+      Auswahlporträts und die der Bots sind aus denselben Teilen gebaut (Frisur, Haarfarbe,
+      Hautfarbe, Augen, Mund, Bart), und jeder Wert davon steht im Baukasten zur Auswahl; der
+      Baukasten hat zusätzlich Nase, Körper, Kleidung und mehr Farben und Formen. Nicht einzeln
+      geprüft habe ich Nase und Körper der fertigen Porträts: Sie kommen vom Zufall der
+      Bibliothek, und ob jeder dieser Werte im Baukasten steht, wäre noch zu vergleichen.
+- [ ] Q1-5. **Lernsammlung und Fehlerdatenbank:** Gemeinsam: beide speichern eine Stellung mit
+      einem Satz, beide sind im Rückblick unter dem Zug und nach Trainer-Aufgaben erreichbar.
+      Verschieden: Die Lernsammlung hat Plan (ein Satz), Notiz und Eröffnung (vorausgefüllt),
+      dazu Abfragen und PGN-Ausgabe für Lichess. Die Fehlerdatenbank hat eine Fehlerart aus der
+      Gesamt-Checkliste (Kapitel 12), einen Satz und die Stellung vor dem Zug, dazu die
+      Auswertung je Fehlerart und den Vorschlag eines Trainers. Empfehlung: ein Knopf, zwei
+      Ziele im Menü, mit Vorauswahl („Fehler“, wenn der Zug als ?, ?? oder verpasst bewertet
+      wurde, sonst „Lernen“). Noch nicht umgesetzt, kommt mit der Lernsammlung-Aufgabe.
+- [ ] Q1-6. **Kürzere Trainingspläne:** Im Buch gibt es nur den 30-Minuten-Plan (Tag A
+      Partietag 5 + 20 + 5 Minuten, Tag B Studientag 5 + 15 + 10 Minuten, Kapitel 12). Der
+      Satz zu wenig Zeit lautet: „Hast du weniger Zeit, kürze zunächst das Themenstudium, nie
+      die Analyse.“ Weitere Pläne stehen nicht im Buch. Die App setzt den 30-Minuten-Plan in
+      `training/dreissigminuten.ts` um (zwei Tagesarten, je drei Schritte mit fester Dauer,
+      Stand auf dem Gerät). Ein Kurzplan müsste von der App stammen und nicht vom Buch; er
+      wäre ein neuer Entwurf und gehört zu dir als Autor, weil das Buch die Quelle ist.
+- [ ] Q1-7. **Wertungsumrechnung:** Die eigene Wertung der App liegt auf dem Maßstab von
+      Lichess, je Zeitklasse (Blitz, Schnellschach, Klassisch). Daneben zeigt die App
+      „entspricht etwa“: Blitz und Schnellschach auf chess.com, Klassisch auf FIDE. chess.com
+      hat keine Wertung für Klassisch, deshalb nimmt Klassisch die FIDE-Liste; sie gilt erst ab
+      etwa 1730 Lichess Klassisch. Die Zahlen stammen aus dem Wertungsvergleich von
+      chessgoals.com (Juli 2026, Selbstangaben, spiel/umrechnung-daten.ts). Eine Umrechnung
+      von Klassisch auf chess.com gäbe es nur über den gemeinsamen Blitzwert; die Streuung wäre
+      groß, ein Bereich statt einer Zahl wäre dann ehrlicher. Der Punkt E4 weiter unten betrifft
+      dasselbe.
+
 ### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 
 Dein Wunsch R52: ein kleines Toursymbol oben rechts, ein Hinweis beim ersten Start, ein Schalter

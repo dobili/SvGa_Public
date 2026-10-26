@@ -1,6 +1,6 @@
 /**
- * Texte zur eigenen Wertung: Name der Zeitklasse und der Bereich auf chess.com (alle Zeitklassen),
- * bei Klassisch dazu beim Weltschachbund (FIDE).
+ * Texte zur eigenen Wertung: Name der Zeitklasse und die Bereiche auf chess.com und beim
+ * Weltschachbund (FIDE), für alle Zeitklassen.
  *
  * Rolle im Gesamtbild: Gemeinsame Sätze für die Karte „Spielstärke“ in der Auswertung und die Karte
  * „Deine Spielstärke“ unter Spielen; die Rechnung steht in spiel/umrechnung.ts.
@@ -17,7 +17,7 @@ export function zeitklassenname(tempo: Wertungstempo): string {
 
 /**
  * Der Satz zur Entsprechung als Bereich (spiel/umrechnung.ts, bereichEtwa); bei Klassisch der
- * Hinweis, dass chess.com dafür Schnellschach wertet, und, wo die Tabelle reicht, FIDE.
+ * Hinweis, dass chess.com dafür Schnellschach wertet; wo die Tabelle reicht, dazu FIDE.
  * Beispiel: Schnellschach 1680 → „Deine Zahl gilt für Schnellschach und richtet sich nach Lichess;
  * Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei 1170 bis 1510.“; Klassisch
  * 2120 → „… auf chess.com Schnellschach etwa bei 1820 bis 2170 (chess.com wertet alle Partien ab
@@ -32,8 +32,10 @@ export function entsprichtText(s: Wertungsschaetzung): string {
   const ziel = bereichEtwa(s.tempo, s.mitte);
   if (ziel === null) return t("spielstaerke.entsprichtOhne", { zeitklasse, liste });
   const satz = t("spielstaerke.entspricht", { zeitklasse, liste, von: ziel.von, bis: ziel.bis });
-  if (s.tempo !== "classical") return satz;
   const fide = bereichEtwa(s.tempo, s.mitte, "fide");
-  const zusatz = fide ? [t("spielstaerke.entsprichtFide", { von: fide.von, bis: fide.bis })] : [];
-  return [satz, t("spielstaerke.entsprichtKlassisch"), ...zusatz].join(" ");
+  return [
+    satz,
+    ...(s.tempo === "classical" ? [t("spielstaerke.entsprichtKlassisch")] : []),
+    ...(fide ? [t("spielstaerke.entsprichtFide", { von: fide.von, bis: fide.bis })] : []),
+  ].join(" ");
 }

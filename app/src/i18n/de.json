@@ -2820,6 +2820,8 @@
   "wertung.massstab.lichess": "Lichess",
   "wertung.massstab.umgerechnet": "chess.com",
   "wertung.massstab.liste.chesscom": "chess.com",
+  "wertung.massstab.liste.fide": "FIDE",
+  "wertung.massstab.fide": "FIDE",
   "wertung.massstab.bereich": "{von}–{bis}",
   "wertung.massstab.unter": "{liste} erst ab etwa {grenze} (Lichess {zeitklasse})",
   "wertung.massstab.ueber": "{liste} nur bis etwa {grenze} (Lichess {zeitklasse})",

@@ -1,6 +1,6 @@
 /**
- * Kleiner Umschalter „Lichess | chess.com“ für die eigene Wertung (Wunsch des Autors, 26.10.2026;
- * seit 0.3.2 chess.com für alle Zeitklassen, als Bereich), dazu die Form einer Zahl im Maßstab.
+ * Kleiner Umschalter „Lichess | chess.com | FIDE“ für die eigene Wertung (Wunsch des Autors,
+ * 26.10.2026; Bereiche seit 0.3.2, FIDE seit 0.3.3), dazu die Form einer Zahl im Maßstab.
  *
  * Rolle im Gesamtbild: Sitzt in den Karten „Deine Wertung“ (Wertungskurve.tsx) und „Deine
  * Spielstärke“ (LetzteSpielstaerke.tsx); was umgerechnet wird, bestimmt wertungsmassstab.ts.
@@ -11,7 +11,7 @@ import { Segmentwahl } from "../bausteine/Segmentwahl";
 import { WERTUNGSMASSSTAEBE, type Massstabzahl, type Wertungsmassstab } from "./wertungsmassstab";
 
 /**
- * Die Segmentleiste mit beiden Maßstäben.
+ * Die Segmentleiste mit den drei Maßstäben.
  * Beispiel: <Massstabwahl massstab="lichess" beiWahl={setzeMassstab} />.
  */
 export function Massstabwahl({

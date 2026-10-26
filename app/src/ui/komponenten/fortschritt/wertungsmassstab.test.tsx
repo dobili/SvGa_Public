@@ -55,10 +55,10 @@ describe("Maßstab der eigenen Wertung", () => {
       bereich: false,
     });
     expect(vergleichsbereich("classical")?.von).toBe(1505);
-    expect(ausserhalbText("classical", 1500)).toBe(
+    expect(ausserhalbText("classical", 1500, "umgerechnet")).toBe(
       "chess.com erst ab etwa 1505 (Lichess Klassisch)",
     );
-    expect(ausserhalbText("blitz", 3200)).toMatch(
+    expect(ausserhalbText("blitz", 3200, "umgerechnet")).toMatch(
       /^chess\.com nur bis etwa \d{4} \(Lichess Blitz\)$/,
     );
   });
@@ -74,7 +74,7 @@ describe("Maßstab der eigenen Wertung", () => {
     expect(aenderungImMassstab("classical", 1400, 1800, "umgerechnet")).toBeNull();
   });
 
-  it("nennt in der Auswertung den Bereich, bei Klassisch dazu FIDE", () => {
+  it("nennt in der Auswertung die Bereiche auf chess.com und FIDE", () => {
     const schaetzung = (tempo: Wertungsschaetzung["tempo"], mitte: number): Wertungsschaetzung => ({
       tempo,
       mitte,
@@ -83,15 +83,15 @@ describe("Maßstab der eigenen Wertung", () => {
       partien: 1,
     });
     const rapid = bereichEtwa("rapid", 1680);
+    const fide = bereichEtwa("rapid", 1680, "fide");
     expect(entsprichtText(schaetzung("rapid", 1680))).toBe(
-      `Deine Zahl gilt für Schnellschach und richtet sich nach Lichess; Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei ${rapid?.von} bis ${rapid?.bis}.`,
+      `Deine Zahl gilt für Schnellschach und richtet sich nach Lichess; Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei ${rapid?.von} bis ${rapid?.bis}. Beim Weltschachbund (FIDE) etwa ${fide?.von} bis ${fide?.bis}.`,
     );
     const klassisch = entsprichtText(schaetzung("classical", 2120));
     expect(klassisch).toContain("auf chess.com Schnellschach etwa bei");
     expect(klassisch).toContain("wertet alle Partien ab zehn Minuten als Schnellschach");
     expect(klassisch).toMatch(/Beim Weltschachbund \(FIDE\) etwa \d{4} bis \d{4}\.$/);
-    // Unter 1730 nur chess.com, ohne FIDE; unter 1505 kein Vergleichswert.
-    expect(entsprichtText(schaetzung("classical", 1600))).not.toContain("FIDE");
+    // Unter 1505 Lichess Klassisch kein Vergleichswert.
     expect(entsprichtText(schaetzung("classical", 1400))).toContain("keinen Vergleichswert");
   });
 

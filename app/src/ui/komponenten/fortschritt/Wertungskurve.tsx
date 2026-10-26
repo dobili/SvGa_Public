@@ -16,7 +16,7 @@
  * Das Fragezeichen sitzt an der Überschrift und nimmt alle Erklärtexte auf (vorläufig, Schätzung
  * aus den Zügen, Phasen; Wunsch des Autors, 25.10.2026); sichtbar bleiben die Zahl mit der Marke
  * „vorläufig“ und eine kurze Zeile zum Stand.
- * „Lichess | chess.com“ schaltet Zahl und Spanne auf Bereiche auf chess.com, die Änderung auf die
+ * „Lichess | chess.com | FIDE“ schaltet Zahl und Spanne auf Bereiche, die Änderung auf die
  * Mitte (wertungsmassstab.ts, Wunsch des Autors, 26.10.2026); die Kurve bleibt im Maßstab von Lichess
  * und sagt das (außerhalb der Tabellen gäbe es keine Punkte).
  * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
@@ -163,7 +163,7 @@ function Standzeile({
 /**
  * Die große Zahl im gewählten Maßstab (umgerechnet ein Bereich), mit Liste und Marke „vorläufig“;
  * außerhalb der Tabelle „–“ und darunter die Grenze. Beispiel: Klassisch 1500 umgerechnet →
- * „– chess.com“, „chess.com erst ab etwa 1505 (Lichess Klassisch)“.
+ * „– chess.com“, „chess.com erst ab etwa 1505 (Lichess Klassisch)“ (Grenzen je Liste).
  */
 function Zahlzeile({
   tempo,
@@ -189,9 +189,9 @@ function Zahlzeile({
           <span className="wertung-vorlaeufig-marke">{t("ich.wertung.vorlaeufigMarke")}</span>
         )}
       </p>
-      {zahl?.ausserhalb && wert !== null && (
+      {zahl?.ausserhalb && wert !== null && massstab !== "lichess" && (
         <p className="hinweis" data-testid="massstab-ausserhalb">
-          {ausserhalbText(tempo, wert)}
+          {ausserhalbText(tempo, wert, massstab)}
         </p>
       )}
     </>
@@ -369,7 +369,7 @@ export function Wertungskurve({
       {kurvenpunkte.length > 0 ? (
         <>
           <Kurve punkte={kurvenpunkte} bereich={ausschnitt.bereich} jetzt={jetzt} />
-          {massstab === "umgerechnet" && (
+          {massstab !== "lichess" && (
             <p className="hinweis" data-testid="wertungskurve-massstab">
               {t("wertung.massstab.kurve")}
             </p>

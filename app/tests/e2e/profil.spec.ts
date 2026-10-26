@@ -94,7 +94,7 @@ async function spieleWertungEin(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Profil: Wertung als Bereich auf chess.com, die Wahl bleibt (26.10.2026)", async ({
+test("Profil: Wertung als Bereich auf chess.com und FIDE, die Wahl bleibt (26.10.2026)", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -110,6 +110,11 @@ test("Profil: Wertung als Bereich auf chess.com, die Wahl bleibt (26.10.2026)", 
   );
   await page.setViewportSize({ width: 400, height: 900 });
   await karte.screenshot({ path: "test-results/bilder/wertung-umschalter.png" });
+  // Dritte Stellung FIDE (seit 0.3.3): ebenfalls ein Bereich, mit „FIDE“ dahinter.
+  await massstab.getByRole("radio", { name: "FIDE" }).click();
+  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^\d{4}–\d{4}FIDE/);
+  await karte.screenshot({ path: "test-results/bilder/wertung-fide.png" });
+  await massstab.getByRole("radio", { name: "chess.com" }).click();
   // Klassisch 1500 liegt unter der Tabelle (chess.com für Klassisch erst ab 1505): „–“ und die Grenze.
   await karte.getByRole("tab", { name: "Klassisch" }).click();
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–chess\.com/);

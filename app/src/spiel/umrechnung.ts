@@ -15,9 +15,13 @@
  * Partien ab zehn Minuten Bedenkzeit als Schnellschach („Rapid“), also auch 30 + 20 oder 60 + 0.
  * Ziel für Klassisch ist deshalb chess.com Schnellschach, über dieselbe Brücke (so setzt die Quelle
  * auch ihre Tabelle „Lichess vs. FIDE“ zusammen).
- * Abhängigkeiten: spiel/umrechnung-daten.ts, spiel/elomodell-daten.ts (Zeitklasse).
+ * Seit 0.3.3 gilt zuerst die eigene Messung aus echten Spielerpaaren (spiel/plattformvergleich.ts);
+ * der Umweg über chessgoals.com bleibt für Zeitklassen und Listen ohne Messung. Je Zeitklasse und
+ * Liste gilt immer genau eine Quelle, damit der Bereich nicht an einer Grenze springt.
+ * Abhängigkeiten: spiel/umrechnung-daten.ts, spiel/plattformvergleich.ts, spiel/elomodell-daten.ts.
  */
 import type { Wertungstempo } from "./elomodell-daten";
+import { gemessenerBereich, gemessenerVergleichsbereich, istGemessen } from "./plattformvergleich";
 import { SPALTE, STREUUNG, VERGLEICHSTABELLE, type Spalte } from "./umrechnung-daten";
 
 /** Eine Kurve als Stützstellen [x, y], aufsteigend in x. */
@@ -140,7 +144,7 @@ function gerundet(wert: number): number {
  * keine FIDE-Zeilen); oberhalb der letzten Zeile null. Die Streuung der Quelle gilt für die ganze
  * Spalte, an den Rändern der Tabelle ist der Bereich deshalb eher zu schmal.
  */
-export function bereichEtwa(
+export function bereichUeberChessgoals(
   tempo: Wertungstempo,
   wertung: number,
   liste: Zielliste = "chesscom",
@@ -154,6 +158,30 @@ export function bereichEtwa(
   const aufDerBruecke = STREUUNG[b.quellspalte] / steigung(b.quelleUeberBlitz, blitz);
   const halb = Math.hypot(aufDerBruecke * steigung(b.vonDerBruecke, blitz), STREUUNG[b.zielspalte]);
   return { von: gerundet(mitte - halb), bis: gerundet(mitte + halb), mitte: gerundet(mitte) };
+}
+
+/** Woher der Bereich für Zeitklasse und Liste kommt: eigene Messung oder chessgoals.com. */
+export function quelleDerUmrechnung(
+  tempo: Wertungstempo,
+  liste: Zielliste,
+): "messung" | "chessgoals" {
+  return istGemessen(tempo, liste) ? "messung" : "chessgoals";
+}
+
+/**
+ * Der Bereich auf der Zielliste, in dem etwa die Hälfte der Spieler mit dieser eigenen Wertung
+ * steht; null außerhalb. Aus der eigenen Messung, wo es sie gibt, sonst über chessgoals.com.
+ * Beispiel und Herleitung: gemessenerBereich (spiel/plattformvergleich.ts) und
+ * bereichUeberChessgoals (oben).
+ */
+export function bereichEtwa(
+  tempo: Wertungstempo,
+  wertung: number,
+  liste: Zielliste = "chesscom",
+): Wertungsbereich | null {
+  return quelleDerUmrechnung(tempo, liste) === "messung"
+    ? gemessenerBereich(tempo, wertung, liste)
+    : bereichUeberChessgoals(tempo, wertung, liste);
 }
 
 /**
@@ -202,6 +230,9 @@ export function vergleichsbereich(
   tempo: Wertungstempo,
   liste: Zielliste = "chesscom",
 ): { von: number; bis: number } | null {
+  if (quelleDerUmrechnung(tempo, liste) === "messung") {
+    return gemessenerVergleichsbereich(tempo, liste);
+  }
   const kurve = bruecke(tempo, liste).zurBruecke;
   const erste = kurve[0];
   const letzte = kurve.at(-1);

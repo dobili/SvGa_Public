@@ -21,7 +21,7 @@ import { normalizeMove, type Chess } from "chessops/chess";
 import type { Color } from "chessops/types";
 import { opposite, parseUci } from "chessops/util";
 import { FIGURENWERT } from "../schach/stellung";
-import type { Lage } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
 import { widerlegungsgewinn } from "./fehlerart-taktik";
 import type { Zugprobe } from "./zugprobe";
 

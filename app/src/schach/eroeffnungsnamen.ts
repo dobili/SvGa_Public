@@ -7,23 +7,16 @@
  * („Nicht im Buch – bekannt als …“). Die Liste ist gemeinfrei (CC0) und liegt offline in der App
  * (`public/daten/de/eroeffnungen-lichess.json`, erzeugt von `pipeline/eroeffnungsliste.py`). Die
  * Schlüssel sind dieselben wie im Eröffnungsindex (Figuren, Zugrecht, Rochaderechte).
- * Abhängigkeiten: chessops, schach/eroeffnungsindex.ts (Schlüssel), daten/generiert.
+ * Abhängigkeiten: chessops, schach/eroeffnungsindex.ts (Schlüssel), daten/generiert,
+ * schach/eroeffnungsnamen-typen.ts (Typen, hier weitergereicht).
  */
 import { Chess } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import { parseSan } from "chessops/san";
 import type { Eroeffnungsliste } from "../daten/generiert/eroeffnungsliste";
 import { stellungsschluessel } from "./eroeffnungsindex";
-
-export interface BekannteEroeffnung {
-  /** ECO-Schlüssel, etwa „B90“. */
-  readonly eco: string;
-  /** Name, die Familie auf Deutsch, die Variante englisch. */
-  readonly name: string;
-}
-
-/** Stellungsschlüssel → bekannte Eröffnung. */
-export type Eroeffnungsnamen = ReadonlyMap<string, BekannteEroeffnung>;
+import type { BekannteEroeffnung, Eroeffnungsnamen } from "./eroeffnungsnamen-typen";
+export type { BekannteEroeffnung, Eroeffnungsnamen } from "./eroeffnungsnamen-typen";
 
 /** Fundstelle in einer Partie: die Eröffnung und wie viele Halbzüge bis dorthin gespielt sind. */
 export interface Fundstelle {

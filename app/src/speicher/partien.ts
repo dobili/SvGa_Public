@@ -9,7 +9,7 @@
  * Seit 0.2.41 liegt hier auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
  * jeder fertig ausgewerteten gewerteten Partie und überlebt das Wegfallen alter Partien.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, spiel/wertung.ts, engine/fehlerart.ts,
- * engine/stufen.ts.
+ * engine/stufen.ts, speicher/partieeintrag.ts (Typ Partieeintrag, hier weitergereicht).
  */
 import type { Reglerstufen } from "../engine/eigenstufen";
 import type { Stilmix, Stilname } from "../engine/stile";
@@ -22,29 +22,11 @@ import type { Gegnerart, Partie, Spielhilfen } from "../spiel/partie";
 import type { Uhreinstellung } from "../spiel/uhr";
 import { mitGewerteterPartie, type Wertungspunkt } from "../spiel/wertung";
 import { KEINE_BESIEGTEN, mitBesiegtem, type Besiegte } from "./besiegt";
+import type { Partieeintrag } from "./partieeintrag";
+export type { Partieeintrag } from "./partieeintrag";
 
 /** So viele beendete Partien bleiben gespeichert; ältere fallen weg. */
 export const MAX_PARTIEN = 50;
-
-/** Eine beendete Partie mit ihrer Auswertung. */
-export interface Partieeintrag {
-  readonly partie: Partie;
-  /** Wert je Stellung aus Sicht von Weiß in Bauerneinheiten; leer, solange nicht ausgewertet. */
-  readonly werte: readonly number[];
-  /** Bester Zug der Engine je Stellung (UCI, „“ in Endstellungen); leer wie „werte“. */
-  readonly beste: readonly string[];
-  /**
-   * Abstand des besten zum zweitbesten Zug je Stellung in Bauerneinheiten (für das „!“ des
-   * einzigen guten Zuges, seit 0.2.39); leer bei Auswertungen aus älteren Versionen.
-   */
-  readonly abstaende: readonly number[];
-  /**
-   * Hauptvariante der Engine je Stellung (UCI, bis sechs Halbzüge, beginnt mit dem besten Zug;
-   * für „Danach etwa …“ in der Rückblickkarte, Empfehlung R5, 0.2.56); leer bei älteren
-   * Auswertungen.
-   */
-  readonly varianten: readonly (readonly string[])[];
-}
 
 /** Letzte Wahl im Spielen-Bildschirm. */
 export interface Spielvorlieben {

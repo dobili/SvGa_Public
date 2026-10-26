@@ -26,22 +26,16 @@
  * Stellung einmal berechnet, damit alle legalen Züge geprüft werden können.
  * Abhängigkeiten: chessops, schach/ (Abtausch, Drohungen, Gabeln, Motive, Todsünden),
  * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts, engine/zugprobe.ts (Zug spielen),
- * engine/opfer.ts (verlorene Figuren, seit 0.2.59 dort zusammen mit dem Opferwert).
+ * engine/opfer.ts (verlorene Figuren, seit 0.2.59 dort zusammen mit dem Opferwert),
+ * engine/fehlerart-typen.ts (Fehlerart, Lage, FEHLERARTEN; hier weitergereicht).
  */
-import type { BlinderFleck } from "./blindeFlecken";
 import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
 import type { Square } from "chessops/types";
 import { opposite } from "chessops/util";
 import { profil } from "../analyse/stellungsprofil";
-import {
-  drohungenVon,
-  schlaege,
-  sofortigeGewinne,
-  type Drohung,
-  type Schlagzug,
-} from "../schach/drohungen";
-import { phase, type Phase } from "../schach/phase";
+import { drohungenVon, schlaege, sofortigeGewinne, type Drohung } from "../schach/drohungen";
+import { phase } from "../schach/phase";
 import { FIGURENWERT } from "../schach/stellung";
 import {
   gabelnVon,
@@ -66,52 +60,8 @@ import {
 import { istKoenigPassiv } from "./fehlerart-koenig";
 import { istFalscherAbtausch, istSchlagreflex } from "./fehlerart-schlag";
 import { eingestellt, schlagVerpasst, zugOhneNot } from "./fehlerart-neu";
-
-export type Fehlerart =
-  | "figurHaengen"
-  | "schlagreflex"
-  | "verfruehteDame"
-  | "koenigMitte"
-  | "taktikUebersehen"
-  | "drohungIgnoriert"
-  // Seit 0.2.40, typische Fehler je Phase (engine/fehlerart-phasen.ts, Liste in ENTSCHEIDUNGEN):
-  | "tempoverlust"
-  | "bauernraub"
-  | "koenigsschild"
-  | "falscherAbtausch"
-  | "koenigPassiv"
-  | "bauernvorstoss"
-  | "pattGesetzt"
-  // Seit 0.2.118 aus der Auswertung von Lichess-Partien (engine/fehlerart-neu.ts):
-  | "bauerEingestellt"
-  | "schlagVerpasst"
-  | "bauernzugOhneNot"
-  | "koenigszugOhneNot"
-  | "ungenau"
-  // Seit 0.2.46: blinde Flecken eines Gegners (engine/blindeFlecken.ts), nur im Protokoll.
-  | `blind${Capitalize<BlinderFleck>}`;
-
-/** Die typischen Fehlerarten (ohne blinde Flecken), für Fehlerprofile, Speicher und Oberfläche. */
-export const FEHLERARTEN: readonly Fehlerart[] = [
-  "figurHaengen",
-  "schlagreflex",
-  "verfruehteDame",
-  "koenigMitte",
-  "taktikUebersehen",
-  "drohungIgnoriert",
-  "tempoverlust",
-  "bauernraub",
-  "koenigsschild",
-  "falscherAbtausch",
-  "koenigPassiv",
-  "bauernvorstoss",
-  "pattGesetzt",
-  "bauerEingestellt",
-  "schlagVerpasst",
-  "bauernzugOhneNot",
-  "koenigszugOhneNot",
-  "ungenau",
-];
+import type { Fehlerart, Lage } from "./fehlerart-typen";
+export { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart-typen";
 
 /** Die Fehlerart mit ihren Einzelheiten für den Rückblick (0.2.39). */
 export interface Fehlerbefund {
@@ -133,21 +83,6 @@ const DROHUNG_AB = 1;
 const DAMENOPFER_AB = DAME - LEICHTFIGUR;
 /** Wert einer Mattdrohung beim Vergleich mit Materialdrohungen. */
 const MATTDROHUNG = 1000;
-/** Die Lage vor dem Zug, einmal je Stellung berechnet, damit viele Züge schnell geprüft sind. */
-export interface Lage {
-  readonly regeln: Chess;
-  /** Phase der Stellung (Kapitel 11), für die Fehlerarten je Phase (0.2.40). */
-  readonly phase: Phase;
-  /** Drohungen des Gegners, als wäre er am Zug (leer, wenn die Seite am Zug im Schach steht). */
-  readonly drohungen: readonly Drohung[];
-  /** Alle Schläge der Seite am Zug mit ihrer Abtauschbilanz. */
-  readonly schlaege: readonly Schlagzug[];
-  /** Schlüssel der Gabelfelder des Gegners (W6) vor dem Zug. */
-  readonly gabeln: ReadonlySet<string>;
-  /** Schlüssel der gefährlichen Linien (W2) gegen die Seite am Zug vor dem Zug. */
-  readonly linien: ReadonlySet<string>;
-}
-
 /**
  * Die Lage vor dem Zug; null bei unlesbarer oder regelwidriger Stellung.
  *

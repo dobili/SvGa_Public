@@ -13,29 +13,19 @@
  * Seit 0.2.57 drei weitere Flecken (Röntgen, Zwischenzug, Grundreihe) und die Blindheit auch
  * gegenüber gegnerischen Zügen dieser Art: Ein Gegner, der Abzüge nicht sieht, tappt in einen
  * Zug, dessen Widerlegung ein Abzug ist (`blindeWahl`, zweiter Teil).
- * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante).
+ * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante),
+ * engine/fehlerart-typen.ts (BlinderFleck und Fehlerart; BlinderFleck wird hier weitergereicht).
  */
 import { attacks, rookAttacks, bishopAttacks, queenAttacks } from "chessops/attacks";
 import { Chess } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import type { Color, Role, Square } from "chessops/types";
 import { opposite, parseUci, squareFile, squareRank } from "chessops/util";
-import type { Fehlerart } from "./fehlerart";
+import type { BlinderFleck, Fehlerart } from "./fehlerart-typen";
 import { wertFuer } from "./spielbewerter";
 import type { Variante } from "./uci";
 
-export type BlinderFleck =
-  | "rueckzug"
-  | "diagonale"
-  | "springer"
-  | "dame"
-  | "turm"
-  | "ruhig"
-  | "abzug"
-  | "bauer"
-  | "roentgen"
-  | "zwischenzug"
-  | "grundreihe";
+export type { BlinderFleck } from "./fehlerart-typen";
 
 export const BLINDE_FLECKEN: readonly BlinderFleck[] = [
   "rueckzug",

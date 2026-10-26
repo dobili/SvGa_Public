@@ -4,10 +4,10 @@
  * Rolle im Gesamtbild: engine/zugwahl.ts (Zug je Stufe) und engine/fehlersuche.ts (Fehlerzüge
  * der Stufen 1 bis 4) teilen diese Typen; die Auswertung (ui/komponenten/useAuswertung.ts)
  * rechnet mit „wertFuer“ die Werte der Engine in Bauerneinheiten um.
- * Abhängigkeiten: engine/engineDienst.ts, engine/fehlerart.ts, engine/uci.ts.
+ * Abhängigkeiten: engine/engineDienst.ts, engine/fehlerart-typen.ts, engine/uci.ts.
  */
 import type { Bewertung, Staerke } from "./engineDienst";
-import type { Fehlerart } from "./fehlerart";
+import type { Fehlerart } from "./fehlerart-typen";
 import type { Wert } from "./uci";
 
 /** Was die Zugwahl von der Engine braucht (der Engine-Dienst erfüllt das). */

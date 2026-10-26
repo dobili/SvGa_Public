@@ -4,11 +4,12 @@
  * Rolle im Gesamtbild: Ausgelagert aus fehlerart.ts (0.2.39), damit die Datei mit den Befunden
  * für den Rückblick unter 400 Zeilen bleibt. Die Regeln sind die Todsünden aus Kapitel 1
  * (k1-todsuenden.ts) in der Fassung für die Fehlersuche der Engine (Konzept 8.2).
- * Abhängigkeiten: fehlerart.ts (Typen Lage und Zugprobe), schach/todsuenden.ts.
+ * Abhängigkeiten: fehlerart-typen.ts (Lage), zugprobe.ts (Zugprobe), schach/todsuenden.ts.
  */
 import type { Chess } from "chessops/chess";
 import { leichtfigurenZuHause } from "../schach/todsuenden";
-import type { Lage, Zugprobe } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
+import type { Zugprobe } from "./zugprobe";
 
 /** Leichtfiguren zu Hause, ab denen ein Damenzug „verfrüht“ ist (wie k1-todsuenden). */
 const ZU_HAUSE_DAME = 2;

@@ -12,7 +12,7 @@
  */
 import type { Square } from "chessops/types";
 import { parseUci } from "chessops/util";
-import type { Fehlerart, Lage } from "./fehlerart";
+import type { Fehlerart, Lage } from "./fehlerart-typen";
 import { widerlegungsgewinn } from "./fehlerart-taktik";
 import type { Zugprobe } from "./zugprobe";
 

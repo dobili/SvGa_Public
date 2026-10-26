@@ -10,8 +10,10 @@
  * aus den drei Stufen je Phase geschätzt. An der Überschrift einer Stufe steht der Bereich ihrer
  * acht Bots (Vorschlag des Autors, 18.10.2026; seit 0.2.109 ohne Überschneidungen); die Zahl
  * der reinen Stufe dient der Schätzung eigener Stufen.
- * Abhängigkeiten: engine/botgruppe.ts, engine/botstaerke-daten.ts, engine/gegnerliste.ts, engine/stufen.ts (Typ),
- * schach/phase.ts (Typ).
+ * Hier steht auch die Zahl einer Gruppe für die Elo-Wertung (gruppenwertung, weitergereicht von
+ * engine/gruppe.ts).
+ * Abhängigkeiten: engine/botgruppe.ts, engine/botstaerke-daten.ts, engine/gegnerliste.ts,
+ * engine/gruppenbasis.ts, engine/stufen.ts (Typ), schach/phase.ts (Typ).
  */
 import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
 import type { Phase } from "../schach/phase";
@@ -24,7 +26,12 @@ import { wertungstempo, type Wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
 import { GELEGENHEITSARTEN } from "./menschenprofil";
 import { GEGNER } from "./gegnerliste";
-import { gruppenstufe, gruppenwertung } from "./gruppe";
+import {
+  gemesseneGruppenstaerke,
+  gruppenstufe,
+  gruppenstufen,
+  mitgliederDerGruppe,
+} from "./gruppenbasis";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 /**
@@ -170,6 +177,25 @@ export function gegnerstaerke(
       : (staerkeDesBots(einstellung.bot, "rapid", maia) ?? staerkeGeschaetzt(eigen, maia));
   const ohneUhr = zahlInZeitklasse(schnellschach, tempo);
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
+}
+
+/** Ohne Messung: die Zahl des stärksten Bots plus dieser Zuschlag (acht Köpfe, der beste Zug). */
+const ZUSCHLAG_OHNE_MESSUNG = 150;
+
+/**
+ * Die Zahl der Gruppe für die Elo-Wertung: gemessen, sonst der stärkste Bot plus Zuschlag.
+ * Beispiel: Stufe 3, Bots bis 1020, nicht gemessen → 1170.
+ */
+export function gruppenwertung(stufe: Stufennummer, maia?: boolean): number {
+  const gemessen = gemesseneGruppenstaerke(stufe, maia);
+  if (gemessen !== null) return gemessen;
+  const zahlen = mitgliederDerGruppe(stufe).map(
+    (g) => staerkeDesBots(g.kennung, "rapid", maia) ?? staerkeAusStufen(g.stufenJePhase),
+  );
+  return (
+    (zahlen.length > 0 ? Math.max(...zahlen) : staerkeAusStufen(gruppenstufen(stufe))) +
+    ZUSCHLAG_OHNE_MESSUNG
+  );
 }
 
 /** Bedenkzeit einer Partie (wie spiel/uhr.ts, Uhreinstellung). */

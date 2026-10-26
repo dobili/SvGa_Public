@@ -7,7 +7,7 @@
  * Porträts und Sätze sind da, ein Tausch kostet eine Zeile).
  * Abhängigkeiten: engine/gegnerbau.ts.
  */
-import { bot, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "../gegnerbau";
 
 export const BOTKANDIDATEN_NEULING: readonly Gegner[] = [
   bot("emma", "Emma", "emma", [1, 1, 1], "solide", 0, "universell", 2.5),

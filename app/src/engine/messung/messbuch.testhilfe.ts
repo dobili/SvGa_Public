@@ -8,11 +8,11 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import type { Partiezug } from "../spiel/partie";
-import { sanZuUci } from "../spiel/zuege";
-import { praxisbuchAus, praxiszug } from "./praxisbuch";
-import { wahltempo } from "./wahlmodell";
-import { wertungInZeitklasse } from "./zeitklassenabstand";
+import type { Partiezug } from "../../spiel/partie";
+import { sanZuUci } from "../../spiel/zuege";
+import { praxisbuchAus, praxiszug } from "../praxisbuch";
+import { wahltempo } from "../wahlmodell";
+import { wertungInZeitklasse } from "../zeitklassenabstand";
 
 const PRAXISBUCH = praxisbuchAus(
   JSON.parse(readFileSync(join(process.cwd(), "public", "daten", "praxisbuch.json"), "utf8")),

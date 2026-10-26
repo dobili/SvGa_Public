@@ -11,14 +11,14 @@
  * (Chessigma-Vergleich, Datei nur lokal; Messlauf spiel/opfer.messung.ts; Entscheidung „Brillant am
  * Prüfstand von chess.com“ in docs/ENTSCHEIDUNGEN.md).
  * Abhängigkeiten: chessops, schach/abtausch.ts, schach/stellung.ts (Figurenwerte),
- * engine/zugprobe.ts; aus engine/fehlerart.ts nur der Typ Lage.
+ * engine/zugprobe.ts; aus engine/fehlerart-typen.ts nur der Typ Lage.
  */
 import type { Chess } from "chessops/chess";
 import type { Square } from "chessops/types";
 import { opposite } from "chessops/util";
 import { abtausch } from "../schach/abtausch";
 import { FIGURENWERT } from "../schach/stellung";
-import type { Lage } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
 import { probe, type Zugprobe } from "./zugprobe";
 
 /** Faustwert aus Kapitel 1: Figuren unter einer Leichtfigur (Bauern) zählen nicht als Opfer. */

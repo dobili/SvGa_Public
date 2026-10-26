@@ -4,7 +4,8 @@
  *
  * Rolle im Gesamtbild: Teil von erkennungsbilder.ts (Baustein für k9-erkennungsbilder), seit
  * 16.10.2026 eigene Datei, damit beide unter 400 Zeilen bleiben.
- * Abhängigkeiten: chessops, bauernschwaechen.ts, koenigsweg.ts, stellung.ts.
+ * Abhängigkeiten: chessops, erkennungsbild-typen.ts (Typen), bauernschwaechen.ts, koenigsweg.ts,
+ * stellung.ts.
  * Buchbezug: Kapitel 9, „Ungleichfarbige Läufer: Das Festungsremis“ (Abb. 9.35 bis 9.37),
  * „Gleichfarbige Läufer“ (Abb. 9.38), „Der falsche Läufer“ (Abb. 9.41), „Läufer gegen Springer“
  * (Abb. 9.42), Turm gegen Läufer (Abb. 9.43, 9.44).
@@ -12,7 +13,7 @@
 import type { Color, Square } from "chessops/types";
 import { squareFile, squareRank } from "chessops/util";
 import { bauernschwaechen } from "./bauernschwaechen";
-import type { Bildfeld, Erkennungsbild, Merkmal } from "./erkennungsbilder";
+import type { Bildfeld, Erkennungsbild, Merkmal } from "./erkennungsbild-typen";
 import { koenigsabstand } from "./koenigsweg";
 import { gegner, type Stellung } from "./stellung";
 

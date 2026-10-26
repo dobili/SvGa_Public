@@ -31,7 +31,7 @@ import { baueEroeffnungsindex } from "../schach/eroeffnungsindex";
 import { baueTheoriebaum, theorieJeZug, type Theoriequellen } from "../schach/theorie";
 import { gambitJeZug } from "../schach/theorienamen";
 import { GRENZE_FEHLER, klasseVon, OPFER_AB, WERTGRENZE, type Zugklasse } from "./auswertung";
-import { zugklassenTabelle } from "./zugklassen-tabelle.messung-hilfe";
+import { zugklassenTabelle } from "./messung/zugklassen-tabelle.messung-hilfe";
 
 const ORDNER = join(import.meta.dirname, "../../../buch/arbeit/spielerprofil");
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";

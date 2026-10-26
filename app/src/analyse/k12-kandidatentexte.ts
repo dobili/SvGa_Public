@@ -4,14 +4,14 @@
  *
  * Rolle im Gesamtbild: Textteil von k12-kandidaten (der Rechenteil steht in k12-kandidaten.ts
  * und k12-antwort.ts), damit jede Datei unter 400 Zeilen bleibt.
- * Abhängigkeiten: i18n, analyse/texte.ts.
+ * Abhängigkeiten: i18n, analyse/texte.ts, analyse/k12-kandidat.ts (Kandidat).
  * Buchbezug: Kapitel 12, Denkroutine Schritte 2 bis 4; Glossar „Schach“ (wegziehen, schlagen,
  * dazwischenstellen).
  */
 import type { Color } from "chessops/types";
 import { t, tZahl } from "../i18n/sprache";
 import type { Antwort } from "./k12-antwort";
-import { istRuhig, type Kandidat } from "./k12-kandidaten";
+import { istRuhig, type Kandidat } from "./k12-kandidat";
 import { aufzaehlung, farbname, figurenname, mitVorzeichen, zugtext } from "./texte";
 import type { Befund } from "./werkzeug";
 

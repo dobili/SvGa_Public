@@ -15,7 +15,7 @@ import { makeFen, parseFen } from "chessops/fen";
 import { parseSan } from "chessops/san";
 import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
 import type { Kapitel, Steckbrief } from "../daten/generiert/kapitel";
-import type { Eroeffnungsnamen } from "./eroeffnungsnamen";
+import type { Eroeffnungsnamen } from "./eroeffnungsnamen-typen";
 import { buchbeispiele } from "../daten/buchbeispiele";
 
 /** Felder der FEN, die eine Stellung für den Vergleich ausmachen (Figuren, Zugrecht, Rochade). */

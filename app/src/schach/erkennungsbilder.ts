@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Baustein für k9-erkennungsbilder. Pflichtenheft 6.3, Kapitel 9:
  * „Erkennungsbilder Philidor, Lucena, Vancura: E bei Standardnähe, sonst N“.
  * Abhängigkeiten: chessops, turmendspiel.ts, laeuferbilder.ts (Bilder mit Läufer),
- * bauernprofil.ts, koenigsweg.ts, stellung.ts.
+ * erkennungsbild-typen.ts (Typen, hier weitergereicht), bauernprofil.ts, koenigsweg.ts,
+ * stellung.ts.
  * Buchbezug: Kapitel 9, „Rückblick: die Erkennungsbilder“ (Tabelle mit Bild, Erkennungsfrage und
  * Plan), Philidor (Abb. 9.3, 9.4), kurze Seite (9.5), Lucena (9.8), Vancura (9.15), Turm gegen
  * Bauer (9.18 bis 9.22), Mehrbauern (9.23 bis 9.27), Dame gegen Bauer (9.28 bis 9.33), Läufer
@@ -18,6 +19,8 @@ import { bauernschwaechen } from "./bauernschwaechen";
 import { koenigsabstand } from "./koenigsweg";
 import { gegner, type Stellung } from "./stellung";
 import { laeuferendspiel, laeuferGegenSpringer, turmGegenLaeufer } from "./laeuferbilder";
+import type { Bildfeld, Erkennungsbild, Merkmal } from "./erkennungsbild-typen";
+export type { Bildfeld, Bildname, Erkennungsbild, Merkmal } from "./erkennungsbild-typen";
 import {
   philidorMoeglich,
   philidorTurmRichtig,
@@ -26,46 +29,6 @@ import {
   vorDemBauern,
   type Turmlage,
 } from "./turmendspiel";
-
-/** Die Bilder der Tabelle des Buches. */
-export type Bildname =
-  | "philidor"
-  | "kurzeSeite"
-  | "lucena"
-  | "vancura"
-  | "turmGegenBauer"
-  | "mehrbauern"
-  | "dameGegenBauer"
-  | "dameGegenDame"
-  | "laeufer"
-  | "springer"
-  | "laeuferGegenSpringer"
-  | "turmGegenLaeufer";
-
-/** Ein Merkmal des Bildes mit Textschlüssel-Endung und Werten. */
-export interface Merkmal {
-  readonly kennung: string;
-  readonly werte: Readonly<Record<string, string | number>>;
-  /** Trifft die Standardstellung des Buches zu (E), oder nur das Bild (N)? */
-  readonly standard?: boolean;
-}
-
-/** Ein Feld zum Markieren: gold gut, rot Gefahr, grau Linie. */
-export interface Bildfeld {
-  readonly feld: Square;
-  readonly farbe: "gold" | "rot" | "grau";
-}
-
-/** Ein erkanntes Bild. */
-export interface Erkennungsbild {
-  readonly bild: Bildname;
-  /** E, wenn die Standardstellung des Buches erreicht ist, sonst N. */
-  readonly art: "E" | "N";
-  /** Die Seite, der der Plan des Buches gilt. */
-  readonly seite: Color;
-  readonly merkmale: readonly Merkmal[];
-  readonly felder: readonly Bildfeld[];
-}
 
 /** Figuren einer Seite außer dem König, gezählt je Rolle. */
 type Zaehlung = Readonly<Record<Role, number>>;

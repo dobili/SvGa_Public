@@ -22,10 +22,10 @@
  * Zeitklasse zählen als Schnellschach. Die Kurve je Phase kommt nicht mehr aus Werten je Partie,
  * sondern aus der Schätzung über die letzten zehn Partien (phasenverlauf).
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
- * speicher/partien.ts (Partieeintrag).
+ * speicher/partieeintrag.ts (Partieeintrag).
  */
 import { gegnerstaerke } from "../engine/botstaerke";
-import type { Partieeintrag } from "../speicher/partien";
+import type { Partieeintrag } from "../speicher/partieeintrag";
 import { zugurteile } from "./auswertung";
 import {
   HOECHSTENS_PARTIEN,

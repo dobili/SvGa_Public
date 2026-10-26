@@ -41,20 +41,8 @@ import type { Stufe } from "./stufen";
 import type { Variante } from "./uci";
 import type { Maiaabfrage } from "./maia";
 import type { Wahltempo } from "./wahlmodell";
-import { waehleMenschlich, type Wahlschritt } from "./wahlschritt";
-
-/** Die Stellschrauben eines Bots (Grundstufe: alles 1, keine Höchstverluste). */
-export interface Menschenwerte {
-  /** Faktor auf alle Fehler und die Temperatur (1: wie Menschen dieser Stärke). */
-  readonly haeufigkeit: number;
-  /** Faktor je Fehlerart oder blindem Fleck; fehlt eine Art, gilt `standardgewicht`. */
-  readonly gewichte: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
-  readonly standardgewicht: number;
-  /** Erlaubte Fehlerarten (null: alle); nicht erlaubte haben Gewicht 0 (Abhakliste, eigene Bots). */
-  readonly erlaubt: readonly Fehlerart[] | null;
-  /** Höchstverlust je Fehlerart in Bauern; fehlt er, ist der Verlust nicht begrenzt (wie Menschen). */
-  readonly hoechstverlust: Readonly<Partial<Record<Fehlerart, number>>>;
-}
+import { waehleMenschlich, type Menschenwerte, type Wahlschritt } from "./wahlschritt";
+export type { Menschenwerte } from "./wahlschritt";
 
 export const WIE_MENSCHEN: Menschenwerte = {
   haeufigkeit: 1,

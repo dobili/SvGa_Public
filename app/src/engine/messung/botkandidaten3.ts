@@ -1,8 +1,8 @@
 /**
- * Kandidaten des Bot-Satzes, Teil 3: k7 bis k9 (Zielgruppen 7 bis 9). Siehe engine/botkandidaten.ts.
+ * Kandidaten des Bot-Satzes, Teil 3: k7 bis k9 (Zielgruppen 7 bis 9). Siehe engine/messung/botkandidaten.ts.
  * Abhängigkeiten: engine/gegnerbau.ts.
  */
-import { bot, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "../gegnerbau";
 
 export const BOTKANDIDATEN_3: readonly Gegner[] = [
   bot("k7-angreifer-angreifer", "Kandidat 7", "", [8, 8, 8], "angreifer", 0, "angreifer"),

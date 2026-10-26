@@ -18,8 +18,8 @@ import {
   gewinnwahrscheinlichkeit,
   partiegenauigkeit,
   zuggewichte,
-} from "./genauigkeit";
-import { gewerteteHalbzuege } from "./entscheidung";
+} from "../genauigkeit";
+import { gewerteteHalbzuege } from "../entscheidung";
 
 export interface Regler {
   /** Abfall der Zugkurve je Prozentpunkt Verlust (Lichess 0,04354). */

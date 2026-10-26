@@ -10,9 +10,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import * as ort from "onnxruntime-node";
-import { BRETTLAENGE, type Maialaufzeit, type Maiamodell } from "./maia";
+import { BRETTLAENGE, type Maialaufzeit, type Maiamodell } from "../maia";
 
-const ORDNER = join(import.meta.dirname, "../../public/maia");
+const ORDNER = join(import.meta.dirname, "../../../public/maia");
 
 interface Verzeichnis {
   readonly modelle: Readonly<Record<Maiamodell, { readonly teile: readonly string[] }>>;

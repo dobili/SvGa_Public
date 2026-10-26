@@ -6,13 +6,13 @@
  * suchen (Rastersuche, kleinste mittlere Abweichung), eine monotone Kurve Genauigkeit →
  * Wertungszahl bilden und die Streuung der Schätzung je Partie und über zehn Partien messen.
  * Die App selbst nutzt diese Datei nicht; sie bekommt nur die Ergebnisse als Konstanten.
- * Abhängigkeiten: spiel/genauigkeitsmodell.ts, spiel/auswertung.ts (Wertgrenze), training/zufall.ts.
+ * Abhängigkeiten: spiel/messung/genauigkeitsmodell.ts, spiel/auswertung.ts (Wertgrenze), training/zufall.ts.
  */
 import type { Color } from "chessops/types";
-import { WERTGRENZE } from "./auswertung";
+import { WERTGRENZE } from "../auswertung";
 import { genauigkeitAus, zugwerte, type Regler } from "./genauigkeitsmodell";
-import { festerZufall, mische } from "../training/zufall";
-import { kurvenwert, type Kurve } from "./umrechnung";
+import { festerZufall, mische } from "../../training/zufall";
+import { kurvenwert, type Kurve } from "../umrechnung";
 
 export { kurvenwert, type Kurve };
 

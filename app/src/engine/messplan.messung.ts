@@ -13,7 +13,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { it } from "vitest";
-import { BOTKANDIDATEN_NEULING } from "./botkandidaten-neuling";
+import { BOTKANDIDATEN_NEULING } from "./messung/botkandidaten-neuling";
 import { BOT_STAERKE, STUFEN_STAERKE } from "./botstaerke-daten";
 import { GEGNER } from "./gegner";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";

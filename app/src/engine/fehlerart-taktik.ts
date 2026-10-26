@@ -5,7 +5,7 @@
  *
  * Rolle im Gesamtbild: Ausgelagert aus fehlerart.ts (0.2.40, Dateigrenze 400 Zeilen). Regeln:
  * Kapitel 4 (W2, W6 Gabelgeometrie) und Kapitel 7 (Motive).
- * Abhängigkeiten: fehlerart.ts (Typen Lage, Zugprobe), analyse/k4-warnsignale.ts,
+ * Abhängigkeiten: fehlerart-typen.ts (Lage), zugprobe.ts (Zugprobe), analyse/k4-warnsignale.ts,
  * analyse/stellungsprofil.ts, schach/gabeln.ts, schach/taktikmotive.ts, chessops.
  */
 import { Chess, normalizeMove } from "chessops/chess";
@@ -18,7 +18,8 @@ import { profil } from "../analyse/stellungsprofil";
 import { gabelfelder, type Gabelfeld } from "../schach/gabeln";
 import type { Stellung } from "../schach/stellung";
 import { erkenneMotive, type Motiv } from "../schach/taktikmotive";
-import type { Lage, Zugprobe } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
+import type { Zugprobe } from "./zugprobe";
 
 /** Die übersehene Taktik: eine neue Gabel (W6), eine neue gefährliche Linie (W2) oder ein Motiv der Antwort. */
 export type Taktikbefund =

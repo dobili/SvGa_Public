@@ -5,13 +5,13 @@
  * Rolle im Gesamtbild: Die Fehlersuche (engine/fehlersuche.ts) prüft Züge mit „searchmoves“ und
  * braucht dafür die Schreibweise von Stockfish; chessops schreibt die Rochade als „König auf
  * Turm“. Ausgelagert aus fehlerart.ts (0.2.39).
- * Abhängigkeiten: chessops, schach/drohungen.ts (legaleZuege), fehlerart.ts (Typ Lage).
+ * Abhängigkeiten: chessops, schach/drohungen.ts (legaleZuege), fehlerart-typen.ts (Typ Lage).
  */
 import type { Chess } from "chessops/chess";
 import type { NormalMove } from "chessops/types";
 import { makeUci, squareRank } from "chessops/util";
 import { legaleZuege } from "../schach/drohungen";
-import type { Lage } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
 
 const AUF_REIHE = 8;
 const LETZTE_REIHEN = new Set([0, 7]);

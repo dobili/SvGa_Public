@@ -8,15 +8,16 @@
  * docs/ENTSCHEIDUNGEN.md; hier die Regeln, mit denen die Fehlersuche (engine/fehlersuche.ts)
  * solche Züge erkennt und der Rückblick (spiel/erklaerung.ts) sie erklärt. Die Gewichte je
  * Phase und Stufe stehen in engine/fehlerprofil.ts.
- * Abhängigkeiten: fehlerart.ts (Lage, Zugprobe), schach/angriffskarte.ts, schach/todsuenden.ts,
- * schach/stellung.ts (Faustwerte), chessops.
+ * Abhängigkeiten: fehlerart-typen.ts (Lage), zugprobe.ts (Zugprobe), schach/angriffskarte.ts,
+ * schach/todsuenden.ts, schach/stellung.ts (Faustwerte), chessops.
  */
 import type { Color, Role } from "chessops/types";
 import { opposite, squareFile, squareRank } from "chessops/util";
 import { Angriffskarte } from "../schach/angriffskarte";
 import { FIGURENWERT } from "../schach/stellung";
 import { leichtfigurenZuHause } from "../schach/todsuenden";
-import type { Lage, Zugprobe } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
+import type { Zugprobe } from "./zugprobe";
 
 /** Ab so viel Verlust (Engine) gilt ein Zug als Fehler dieser Art, wenn die Regel allein nicht reicht. */
 const VERLUST_AB = 0.5;

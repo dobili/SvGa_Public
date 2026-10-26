@@ -5,8 +5,9 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Denkroutine Schritt 2 bis 4: Kandidaten E, der Rest
  * N“). Gold: die Kandidaten; rot: die stärkste Antwort auf den ersten Kandidaten.
- * Abhängigkeiten: analyse/k12-antwort.ts, analyse/stellungsprofil.ts, schach/drohungen.ts,
- * schach/schachabwehr.ts, schach/phase.ts, i18n.
+ * Abhängigkeiten: analyse/k12-antwort.ts, analyse/k12-kandidat.ts (Kandidat, istRuhig; hier
+ * weitergereicht), analyse/stellungsprofil.ts, schach/drohungen.ts, schach/schachabwehr.ts,
+ * schach/phase.ts, i18n.
  * Buchbezug: Kapitel 12, Denkroutine Schritt 2 („zuerst Schachs, dann Schläge, dann Drohungen …
  * notiere gedanklich zwei oder drei Kandidaten … Jeder erfüllt eine konkrete Aufgabe: Schach,
  * Materialgewinn, Verteidigung einer Drohung …“), Schritt 3 („Was ist die stärkste, nicht die
@@ -25,39 +26,20 @@ import {
   type ErzwingendeZuege,
 } from "../schach/drohungen";
 import { LESART, phase, phasenregel, type Phasenregel } from "../schach/phase";
-import { abwehrzuege, besteMattabwehr, type Abwehrart } from "../schach/schachabwehr";
+import { abwehrzuege, besteMattabwehr } from "../schach/schachabwehr";
 import { gegner, type Stellung } from "../schach/stellung";
 import { besterKandidat, staerksteAntwort, type Antwort } from "./k12-antwort";
+import type { Kandidat } from "./k12-kandidat";
+export { istRuhig, type Kandidat, type Kandidatenart } from "./k12-kandidat";
 import { werkzeugzeilen } from "./k11-phase";
 import { kandidatenBefunde } from "./k12-kandidatentexte";
 import { profil } from "./stellungsprofil";
 import { farbname } from "./texte";
 import type { Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
-/** Die Aufgabe eines Kandidaten (Kapitel 12, Schritt 2). */
-export type Kandidatenart = "schach" | "schlag" | "drohung" | "ruhig" | "mattabwehr" | Abwehrart;
-
-/** Ein Kandidat mit seiner Aufgabe. */
-export interface Kandidat {
-  readonly san: string;
-  readonly uci: string;
-  readonly art: Kandidatenart;
-  /** Ob es der nächste Zug des Buches ist. */
-  readonly buchzug: boolean;
-}
-
 /** Höchstens so viele Kandidaten je Art und insgesamt. */
 const JE_ART = 2;
 const HOECHSTENS = 4;
-
-/**
- * Ein ruhiger Kandidat: kein Schach, kein Schlag, keine Drohung, keine Abwehr (der Buchzug oder
- * die Mattabwehr). Für ihn sagt die Rechnung einen Zug tief wenig über Material; seine Wirkung
- * zeigt die Bewertung der Engine (R43, Wunsch des Autors vom 23.10.2026).
- */
-export function istRuhig(k: Kandidat): boolean {
-  return k.art === "ruhig" || k.art === "mattabwehr";
-}
 
 /** Der Buchzug als Kandidat, falls er in dieser Stellung geht. */
 function buchkandidat(regeln: Chess, buchzug?: string): Kandidat | null {

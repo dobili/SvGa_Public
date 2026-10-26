@@ -15,7 +15,7 @@
  * Abhängigkeiten: analyse/k8-regeln.ts, engine/fehlerart-taktik.ts (Stellung), engine/zugprobe.ts.
  */
 import { koenigsabstandZumZiel } from "../analyse/k8-regeln";
-import type { Lage } from "./fehlerart";
+import type { Lage } from "./fehlerart-typen";
 import { stellungVon } from "./fehlerart-taktik";
 import { probe, type Zugprobe } from "./zugprobe";
 

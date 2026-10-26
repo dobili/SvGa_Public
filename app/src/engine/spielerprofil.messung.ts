@@ -12,7 +12,7 @@
  * Partien (Kennung und Spieler) stehen in `fertig-<LAUF>.txt`.
  * Aufruf (im Ordner app/): LAUF=0 LAEUFE=4 npx vitest run --config vitest.messung.config.ts
  *   src/engine/spielerprofil.messung.ts
- * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, engine/nativeEngine.testhilfe.ts,
+ * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, engine/messung/nativeEngine.testhilfe.ts,
  * spiel/zuege.ts.
  */
 import { appendFileSync, existsSync, readFileSync } from "node:fs";
@@ -21,7 +21,7 @@ import { describe, expect, it } from "vitest";
 import { fenNach, sanZuUci } from "../spiel/zuege";
 import { fenNachUci, fleckeVon } from "./blindeFlecken";
 import { fehlerartIn, lageVon } from "./fehlerart";
-import { nativeEngine } from "./nativeEngine.testhilfe";
+import { nativeEngine } from "./messung/nativeEngine.testhilfe";
 import { wertFuer } from "./spielbewerter";
 
 const ORDNER =

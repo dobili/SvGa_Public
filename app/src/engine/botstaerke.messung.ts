@@ -7,28 +7,28 @@
  * alle Paarungsdateien in den Unterordnern `leiter-*`, `bruecken`, `alt` und `neu-*` (Ergebnisse für die
  * Leiter) und `anker-*` (Stufen gegen sich selbst, mit Zügen) samt ihren Bewertungen in Tiefe 18
  * in `anker-bewertung` (skripte/eichung-rechnen.mjs --quellen stufen). Rechnung: Elo-Leiter aus
- * allen Ergebnissen (engine/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
+ * allen Ergebnissen (engine/messung/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
  * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (spiel/elomodell.ts,
  * seit 0.2.125 mit dem Elo-Modell je Zeitklasse, die Phasen der Züge aus den nachgespielten
- * Partien); dazu die Kandidaten des neuen Bot-Satzes (engine/botkandidaten.ts) in
+ * Partien); dazu die Kandidaten des neuen Bot-Satzes (engine/messung/botkandidaten.ts) in
  * botkandidaten-daten.ts;
  * eine gemeinsame Verschiebung legt die Leiter auf die Anker. Unsicherheit je Spieler durch
  * Nachziehen der Ergebnisse (Binomial, 200 Durchgänge). Ausgabe im Ordner: botstaerke-daten.ts
  * (kommt nach engine/), bericht.md.
  * Aufruf (im Ordner app/): npx vitest run --config vitest.messung.config.ts
  *   src/engine/botstaerke.messung.ts (mit BOTELO_NUR_LEITER=1 ein Probelauf ohne Anker).
- * Abhängigkeiten: engine/eloleiter.ts, engine/gegnerliste.ts, spiel/eichungsrechnung.ts,
- * spiel/genauigkeitsmodell.ts, spiel/staerkemodell.ts.
+ * Abhängigkeiten: engine/messung/eloleiter.ts, engine/gegnerliste.ts, spiel/messung/eichungsrechnung.ts,
+ * spiel/messung/genauigkeitsmodell.ts, spiel/staerkemodell.ts.
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { werteAusEngine, type Rohwert } from "../spiel/eichungsrechnung";
+import { werteAusEngine, type Rohwert } from "../spiel/messung/eichungsrechnung";
 import {
   genauigkeitAus,
   LICHESS_REGLER,
   zugwerteBisEntscheidung,
-} from "../spiel/genauigkeitsmodell";
+} from "../spiel/messung/genauigkeitsmodell";
 import {
   kennzahlenAus,
   kennzahlenMittel,
@@ -36,8 +36,8 @@ import {
   type Partiekennzahlen,
   type Wertungstempo,
 } from "../spiel/elomodell";
-import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
-import { BOTKANDIDATEN } from "./botkandidaten";
+import { leiter, verankere, type Anker, type Begegnung } from "./messung/eloleiter";
+import { BOTKANDIDATEN } from "./messung/botkandidaten";
 import { GEGNER } from "./gegnerliste";
 import {
   datendatei,
@@ -45,7 +45,7 @@ import {
   phasenAusZuegen,
   zeitklassendatei,
   zufallsquelle,
-} from "./botmessung-hilfen";
+} from "./messung/botmessung-hilfen";
 
 const ORDNER = process.env.BOTELO_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "botelo");
 const LEITER_ORDNER = /^(leiter-.*|bruecken|alt|neu-.*)$/;

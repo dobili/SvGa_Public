@@ -11,12 +11,13 @@
  * Höchstverlust je Art → Kandidaten darüber ausgeschlossen. Tagesform und Zeitnot wirken als
  * Temperatur (größer: zufälliger). Vorgefertigte Bots bringen statt des Reglers einen der sieben
  * Stile mit (engine/stile.ts, Teil D).
- * Abhängigkeiten: engine/wahlmodell.ts, engine/menschenwahl.ts (Typen), engine/blindeFlecken.ts,
- * engine/fehlerart.ts, engine/stilmerkmale.ts.
+ * Der Typ Menschenwerte steht hier und nicht in engine/menschenwahl.ts (das ihn weiterreicht),
+ * damit sich beide Dateien nicht gegenseitig importieren.
+ * Abhängigkeiten: engine/wahlmodell.ts, engine/blindeFlecken.ts, engine/fehlerart.ts,
+ * engine/stilmerkmale.ts.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart";
-import type { Menschenwerte } from "./menschenwahl";
 import type { Zugwahl } from "./spielbewerter";
 import { mischverschiebung, stilverschiebung, type Stilname, type Stilmix } from "./stile";
 import type { Stilmerkmale } from "./stilmerkmale";
@@ -27,6 +28,19 @@ import {
   type Wahltempo,
   type Wahlverschiebung,
 } from "./wahlmodell";
+
+/** Die Stellschrauben eines Bots (Grundstufe: alles 1, keine Höchstverluste). */
+export interface Menschenwerte {
+  /** Faktor auf alle Fehler und die Temperatur (1: wie Menschen dieser Stärke). */
+  readonly haeufigkeit: number;
+  /** Faktor je Fehlerart oder blindem Fleck; fehlt eine Art, gilt `standardgewicht`. */
+  readonly gewichte: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+  readonly standardgewicht: number;
+  /** Erlaubte Fehlerarten (null: alle); nicht erlaubte haben Gewicht 0 (Abhakliste, eigene Bots). */
+  readonly erlaubt: readonly Fehlerart[] | null;
+  /** Höchstverlust je Fehlerart in Bauern; fehlt er, ist der Verlust nicht begrenzt (wie Menschen). */
+  readonly hoechstverlust: Readonly<Partial<Record<Fehlerart, number>>>;
+}
 
 /** Verschiebung je Einheit des Fleckgewichts über 1 (Gewicht 3 → −1: deutlich blinder). */
 const BLINDSTAERKE = 0.5;

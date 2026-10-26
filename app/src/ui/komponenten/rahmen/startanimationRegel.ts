@@ -1,6 +1,6 @@
 /**
- * Regel der Startanimation bei der Rückkehr aus dem Hintergrund (0.2.125, Wunsch des Autors,
- * 24.10.2026): reine Rechnung ohne Browser, damit sie testbar ist; Startanimation.tsx ruft sie.
+ * Regel der Startanimation bei der Rückkehr aus dem Hintergrund (Wunsch des Autors, 24.10.2026):
+ * reine Rechnung ohne Browser, damit sie testbar ist; Startanimation.tsx ruft sie.
  * Abhängigkeiten: keine.
  */
 

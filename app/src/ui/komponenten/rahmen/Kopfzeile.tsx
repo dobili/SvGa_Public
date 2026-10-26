@@ -1,8 +1,8 @@
 /**
  * Kopfzeile eines Bildschirms im Stapel: Zurück-Knopf, Titel, optionale Knöpfe rechts.
  *
- * Seit P8 (R52) steht ganz rechts das Toursymbol, wenn es zum Bildschirm eine Tour gibt
- * (tour/TourKnopf.tsx); sonst bleibt die Stelle leer.
+ * Rolle im Gesamtbild: Ganz rechts steht das Toursymbol, wenn es zum Bildschirm eine Tour gibt
+ * (tour/TourKnopf.tsx, P8, R52); sonst bleibt die Stelle leer.
  * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, Tour.
  */
 import { ChevronLeft } from "lucide-react";

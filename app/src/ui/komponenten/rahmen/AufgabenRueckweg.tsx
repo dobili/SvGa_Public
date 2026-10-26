@@ -2,9 +2,9 @@
  * Knopf „Zurück zu den Aufgaben“ über der Leiste, solange der Autor von der Aufgabenseite einem
  * Link gefolgt ist.
  *
- * Rolle im Gesamtbild: Teil der Aufgabenseite (seit 0.2.75). Eine installierte App auf dem iPhone
- * hat keine Zurück-Taste, und Bildschirme wie die Einstellungen haben keinen eigenen
- * „Zurück“-Knopf; ohne diesen Knopf käme der Autor nur über den langen Druck zurück.
+ * Rolle im Gesamtbild: Teil der Aufgabenseite. Eine installierte App auf dem iPhone hat keine
+ * Zurück-Taste, und Bildschirme wie die Einstellungen haben keinen eigenen „Zurück“-Knopf; ohne
+ * diesen Knopf käme der Autor nur über den langen Druck zurück.
  * Abhängigkeiten: Navigation, i18n.
  */
 import { useNavigation } from "../../../app/navigationsKontext";

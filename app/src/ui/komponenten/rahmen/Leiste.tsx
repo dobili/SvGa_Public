@@ -2,15 +2,14 @@
  * Die Leiste unten mit den fünf Bereichen Buch, Training, Spielen, Nachschlagen, Profil.
  *
  * Rolle im Gesamtbild: Hauptnavigation der App (Konzept 10.1, Bildschirmentwurf „Leiste“). Der
- * fünfte Bereich hieß bis 0.2.30 „Ich“, danach war er ein Zahnrad für die Einstellungen. Seit
- * 0.2.134 (Wunsch des Autors, 25.10.2026) ist er das „Profil“ mit Personensymbol und Wort:
+ * fünfte Bereich ist das „Profil“ mit Personensymbol und Wort (Wunsch des Autors, 25.10.2026):
  * Wertung, Fortschritt und Partien; die Einstellungen liegen eine Ebene tiefer. Intern heißt der
- * Bereich weiter „ich“ (Navigation, Speicher). Drei Sekunden Druck auf „Profil“ öffnen die
- * Aufgabenseite des Autors (seit 0.2.75).
- * Seit V6 (Nutzungsprüfung 25.10.2026) springt der goldene Strich sofort auf den getippten
- * Bereich; den neuen Bildschirm zeichnet React erst nach diesem Bild. Vorher wartete die ganze
- * Rückmeldung auf den Bildschirm, bei „Spielen“ gedrosselt (CPU 4×) etwa 0,15 s. (Als Übergang
- * mit startTransition kam der Bildschirm gemessen 60 ms später, deshalb ohne.)
+ * Bereich „ich“ (Navigation, Speicher). Drei Sekunden Druck auf „Profil“ öffnen die
+ * Aufgabenseite des Autors.
+ * Der goldene Strich springt sofort auf den getippten Bereich (V6, Nutzungsprüfung 25.10.2026);
+ * den neuen Bildschirm zeichnet React erst nach diesem Bild. Sonst wartete die ganze Rückmeldung
+ * auf den Bildschirm, bei „Spielen“ gedrosselt (CPU 4×) etwa 0,15 s. (Als Übergang mit
+ * startTransition kam der Bildschirm gemessen 60 ms später, deshalb ohne.)
  * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck, nachDemNaechstenBild.
  */
 import {

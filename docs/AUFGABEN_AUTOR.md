@@ -1470,6 +1470,45 @@ umgesetzt; Widerspruch oder „Q1-3: ja“ genügt.
       groß, ein Bereich statt einer Zahl wäre dann ehrlicher. Der Punkt E4 weiter unten betrifft
       dasselbe.
 
+### Q2 Recherche: Übungsformate bei chess.com und Lichess (26.10.2026, nur Empfehlungen, kein Code)
+
+Gelesen habe ich die Hilfeseite von chess.com
+(<https://www.chess.com/article/view/chesscom-features>), deren App-Beschreibung im App Store und
+Beiträge im Lichess-Forum; Teile der Lichess-Beschreibung sind mein Vorwissen und nicht von der
+Seite geprüft (unten markiert). Bitte als Anregung lesen, nicht als geprüfte Produktbeschreibung.
+
+- [ ] Q2-1. **Was chess.com anbietet (laut eigener Seite):** Tägliche Aufgabe mit Archiv und
+      Serie (Streak); Puzzle Rush (3 oder 5 Minuten oder bis zu drei Fehlern); Aufgaben auf
+      Wunschthema und Stufe ohne Wertung; Lektionen und Kurse zu Eröffnung, Mittelspiel und Endspiel;
+      Partieanalyse mit Bewertung jedes Zuges (Brillanz, Fehler); Engine-Bewertungsbalken und
+      Endspieldatenbank im Analysebrett. Vieles davon hat die App schon: Zugklassen wie bei
+      chess.com, Bewertungsbalken, Tablebase-Prüfung der Buchabbildungen, Trainer nach Motiv.
+- [ ] Q2-2. **Was Lichess anbietet:** Aufgaben nach Thema (ein Muster am Stück üben, wie im
+      Buch die Themenblöcke), Puzzle Storm (Aufgaben gegen die Uhr, Fehler zeigen, welche Themen
+      fehlen), Puzzle Streak (Serie ohne Fehler), die Fehleraufgaben einer Partie („Aus deinen
+      Fehlern lernen“, Vorwissen, nicht geprüft), Koordinatentrainer, Eröffnungsbaum und Studien.
+      Ein Zeitplan für Wiederholungen (Spaced Repetition) war in den gelesenen Quellen nicht zu
+      finden; die App hat ihn bereits (fällige Wiederholungen im Training).
+- [ ] Q2-3. **Empfehlung: Fünf-Minuten-Plan „Nur Wiederholungen“.** Die fälligen Wiederholungen
+      aus Lernsammlung, Fehlerdatenbank und Übungen in einer Serie, ohne Auswahl. Kein neuer Inhalt,
+      nur eine Zusammenstellung vorhandener Bausteine. Noch nicht umgesetzt.
+- [ ] Q2-4. **Empfehlung: Kurzplan 15 Minuten.** Fünf Minuten fällige Wiederholungen, zehn Minuten
+      Taktik-Themenblock (die App hat die Themenblöcke aus Kapitel 12 schon) oder eine Studie.
+      Das Buch gibt hier nur den Satz „kürze zuerst das Themenstudium, nie die Analyse“; die
+      Aufteilung wäre also ein Vorschlag der App und kein Buchinhalt (siehe Q1-6). Da du als
+      Autor entscheidest, was als „Plan des Buches“ gilt, wartet es auf dein Ja.
+- [ ] Q2-5. **Empfehlung: Taktik auf Zeit (an Puzzle Rush und Storm angelehnt).** Drei Minuten
+      leichte Aufgaben aus dem Taktiktrainer, Ende nach drei Fehlern, Anzeige der Fehlmotive. Das
+      passt zum Satz im Buch, dass der Plan leichte Aufgaben von zwei Minuten enthält, widerspricht
+      aber dem Grundsatz „Rechnen ohne Zeitdruck lernen“. Deshalb als kleines, freiwilliges Angebot
+      gedacht; Entscheidung bei dir.
+- [ ] Q2-6. **Empfehlung: Tagesaufgabe und Serie.** Eine Aufgabe pro Tag aus dem Taktiktrainer, mit
+      Zähler für Tage in Folge. Würde als Ring „Tagesplan“ zu den Medaillen passen (Abschnitt 1 der
+      Ideensammlung). Noch nicht umgesetzt.
+- [ ] Q2-7. **Nicht empfohlen:** Wertung einzelner Aufgaben nach Art der Online-Seiten (bräuchte
+      Vergleichsdaten vieler Spieler), Kämpfe gegen andere Spieler (braucht Server), und
+      Videolektionen (Urheberrecht, Umfang).
+
 ### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 
 Dein Wunsch R52: ein kleines Toursymbol oben rechts, ein Hinweis beim ersten Start, ein Schalter

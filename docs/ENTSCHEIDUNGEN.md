@@ -5906,3 +5906,34 @@ Menschen gut bearbeitbar sein („eventuell ein Wiki?“), und Verbesserungsidee
 - **Codepflege:** CI-Browser-Schritt mit Zeitgrenze 5 Minuten; `spiel/genauigkeit.ts` und
   `ui/komponenten/GegnerWahl.tsx` unter 400 Zeilen (`spiel/zuggenauigkeit.ts`,
   `ui/komponenten/HilfenWahl.tsx`); der doppelte Wahlkontext ist eine Funktion (`wahlkontextVon`).
+
+## Codepflege nach dem Codeführer (26.10.2026, Opus, nach 0.3.0)
+
+Die Liste `docs/codefuehrer/8-verbesserungen.md` abgearbeitet (Wunsch des Autors: „alle
+Verbesserungsvorschläge einarbeiten, ohne dass die Funktion der App bricht“). Nur Ordnung, kein
+geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwright).
+
+- **README:** Die Regel „kein Modul kennt `ui/`“ nennt jetzt die Hülle `app/` als einzige Ausnahme
+  (sie setzt die Bildschirme zusammen); `App.tsx` bleibt, wo es ist.
+- **Erzeugte Dateien:** Die Köpfe aus Zeilenkommentaren nennen jetzt den Zweck; die Konzeptkarte
+  liest auch diese Form.
+- **Ungenutzte Texte:** 21 Texte gelöscht (de und en), die kein Code mehr aufrief; geprüft mit
+  Suche und Typprüfung (zwei scheinbar ungenutzte, `plan.gegenschlagDa` und `wo.gegenschlagDa`,
+  setzt `analyse/planfragen.ts` zusammen und blieben). Neuer Test `i18n/ungenutzt.test.ts` meldet
+  jeden neuen ungenutzten Text; 57 Kandidaten stehen dort zur Prüfung.
+- **`ui/komponenten/`** in 19 Themenordner (bausteine, rahmen, hinweise, einstellungen, gegner,
+  gegnereditor, spielstart, partie, partienliste, auswertung, rueckblick, fortschritt,
+  werkzeugkarten, werkzeugwahl, brettbedienung, abbildung, kapitel, training, lernsammlung); die
+  Konzeptkarte zeigt sie als eigene Gruppen, der Codeführer hat je Ordner einen Abschnitt.
+- **Messcode** nach `engine/messung/` und `spiel/messung/` (nur, was vom Einstieg der App nicht
+  erreichbar ist); die `*.messung.ts` bleiben neben dem gemessenen Code.
+- **Gegenseitige Importe:** von 18 Paaren auf 3 (alle nur über Typen); neue Dateien für gemeinsame
+  Typen (`engine/fehlerart-typen.ts`, `engine/gruppenbasis.ts`, `speicher/partieeintrag.ts`,
+  `analyse/k12-kandidat.ts`, `schach/erkennungsbild-typen.ts`, `schach/eroeffnungsnamen-typen.ts`),
+  die alten Dateien reichen alles weiter.
+- **Prüfmessung Blitz mit Maia, Stufe 7** (`pruefung-blitz-7-maia4`, Korrektur −240): Anker 1786,
+  erwartet etwa 1824, Abweichung etwa −40, im Rauschen; die Korrektur bleibt.
+- **Prüfmessung Blitz ohne Maia, Stufe 8:** Die Wiederholung `pruefung-blitz-8-r2` ergab dieselben
+  Partien wie die erste Runde (feste Zufallssaaten); `skripte/pruefe-anker.sh` nennt jetzt
+  `MESSUNG_SAAT_AB` für eine neue Stichprobe.
+

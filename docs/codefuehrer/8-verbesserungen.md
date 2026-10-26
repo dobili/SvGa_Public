@@ -6,63 +6,30 @@ und Wartung. Erledigtes wird hier gestrichen und in `docs/ENTSCHEIDUNGEN.md` fes
 
 Aufwand: **klein** (unter einer Stunde), **mittel** (ein Arbeitspaket), **groß** (mehrere Sitzungen).
 
-## Regeln aus CLAUDE.md, die der Code gerade nicht ganz einhält
+## Erledigt am 26.10.2026
 
-- [ ] **Zwei Dateien über 400 Zeilen** (Regel 4): `spiel/genauigkeit.ts` (413) und
-      `ui/komponenten/gegner/GegnerWahl.tsx` (407). Je einen Teil in eine eigene Datei auslagern. Weitere
-      13 Dateien liegen knapp darunter (360 bis 400 Zeilen). Ausgenommen sind die erzeugten
-      Tabellen `engine/maia-zuege-daten.ts` und `spiel/elomodell-daten.ts`. Aufwand: klein.
-- [ ] **Die Hülle kennt die Bildschirme.** `app/src/README.md` sagt „kein Modul kennt `ui/`“, aber
-      `app/App.tsx` bindet alle Bildschirme ein. Das ist für die Hülle nötig. Entweder `App.tsx`
-      nach `ui/` verschieben oder die Regel im README genauer fassen („außer der Hülle“).
-      Aufwand: klein.
-- [ ] **114 exportierte Werte ohne Kommentar**, meist Zahlen und Tabellen (etwa Grenzwerte). Die
-      Funktionen und Bausteine haben seit 26.10.2026 alle einen; die Werte nachziehen.
+Zwei Dateien über 400 Zeilen geteilt, README-Regel zur Hülle genauer gefasst, Köpfe der erzeugten
+Dateien, `ui/komponenten/` in 19 Themenordner, Messcode nach `engine/messung/` und
+`spiel/messung/`, 15 der 18 gegenseitigen Importe aufgelöst, doppelter Wahlkontext, 21 ungenutzte
+Texte gelöscht und ein Test dagegen, Zeitgrenze für den Browser-Schritt der CI, Prüfmessung Blitz
+mit Maia Stufe 7 (bestätigt). Einzelheiten in `docs/ENTSCHEIDUNGEN.md`.
+
+## Noch offen
+
+- [ ] **116 exportierte Werte ohne Kommentar**, meist Zahlen und Tabellen (etwa Grenzwerte).
       `node skripte/konzeptkarte.mjs` listet sie. Aufwand: mittel.
-- [ ] **Erzeugte Dateien ohne deutschen Dateikopf:** `daten/generiert/*` und
-      `ui/brett/figurenpfade.generiert.ts`. Die Erzeuger (`skripte/erzeuge-typen.mjs` und der
-      Figurenpfad-Erzeuger) sollen einen kurzen Kopf mitschreiben. Aufwand: klein.
-
-## Ordnung im Code
-
-- [ ] **Code der Messläufe liegt zwischen dem Code der App.** `engine/botkandidaten*.ts`,
-      `engine/botarchiv.ts`, `engine/botmessnamen.ts`, `engine/botmessung-hilfen.ts`,
-      `engine/eloleiter.ts` und `spiel/eichungsrechnung.ts` braucht nur die Messung, nicht die App.
-      Ein eigener Ordner (etwa `engine/messung/`) trennt beides sichtbar. Aufwand: klein bis mittel.
-- [ ] **18 Paare von Dateien benutzen sich gegenseitig**, vor allem `engine/fehlerart.ts` mit
-      seinen sieben Teildateien, dazu `speicher/partien.ts` ↔ `spiel/wertung.ts` und
-      `engine/botstaerke.ts` ↔ `engine/gruppe.ts`. Das funktioniert, macht den Weg durch den Code
-      aber schwerer zu verfolgen. Gemeinsame Typen in eine eigene Datei legen. Aufwand: mittel.
-- [ ] **Doppelter Code beim Kontext der Zugwahl:** `kontextVon` steht fast gleich in
-      `engine/zugwahl.ts` und `engine/gruppenwahl.ts`. Eine gemeinsame Funktion verhindert, dass
-      eine Änderung nur an einer Stelle landet (geprüft: im Moment verhalten sich beide richtig).
-      Aufwand: klein.
-
-## Lesbarkeit der Kommentare
-
-- [ ] **Versionsgeschichte in den Dateiköpfen.** 255 Dateiköpfe erzählen, seit welcher Version
-      was gilt („seit 0.2.117 …, bis 0.2.143 …“). Das macht sie lang und für Außenstehende schwer
-      lesbar. Die Köpfe auf den heutigen Stand kürzen, die Geschichte steht ohnehin in
-      `docs/ENTSCHEIDUNGEN.md`. Aufwand: groß (schrittweise je Ordner möglich).
-- [ ] **Ungenutzte Texte finden.** Am 26.10.2026 lagen 13 Texte in `de.json`, die kein Code mehr
-      aufrief. Ein Test, der solche Schlüssel meldet, verhindert, dass sich wieder welche sammeln.
-      Aufwand: klein.
-
-## Prüfungen (CI)
-
-- [ ] **Zeitgrenze für den Schritt „Browser“.** In der Nacht zum 26.10.2026 hing dieser Schritt in
-      GitHub Actions 21 Minuten, bevor ein Test lief. Mit einer Zeitgrenze (etwa 5 Minuten) bricht
-      er von selbst ab, und ein Neustart geht schneller. Datei: `.github/workflows/pruefen.yml`.
-      Aufwand: klein.
-
-## Messungen, die noch offen sind
-
-- [ ] **Blitz mit Maia, Stufe 7:** Die Korrektur −240 liegt zwischen zwei Messungen, ist selbst
-      aber nicht gemessen. Eine Prüfmessung (`skripte/pruefe-anker.sh blitz 7 maia4 mit`)
-      bestätigt sie. Aufwand: klein (Rechenzeit eines Mess-Chats).
-- [ ] **Blitz ohne Maia, Stufe 8:** einziger Ausreißer der Zeitklassenprüfung (+291 gegenüber der
-      Erwartung, alle anderen Stufen im Rauschen). Eine zweite Messung klärt, ob das Zufall war.
-      Aufwand: klein.
+- [ ] **Versionsgeschichte in den Dateiköpfen.** Rund 255 Dateiköpfe erzählen, seit welcher
+      Version was gilt („seit 0.2.117 …, bis 0.2.143 …“). Die Köpfe auf den heutigen Stand kürzen,
+      die Geschichte steht in `docs/ENTSCHEIDUNGEN.md`. Aufwand: groß (je Ordner möglich).
+- [ ] **57 Texte noch zu prüfen:** Der Test `i18n/ungenutzt.test.ts` hält sie für ungenutzt, sie
+      können aber über Variablen zusammengesetzt sein (Liste `NOCH_ZU_PRUEFEN` im Test). Je Text
+      prüfen und löschen oder als benutzt belegen. Aufwand: klein bis mittel.
+- [ ] **Drei gegenseitige Importe nur über Typen** in `ui/komponenten/`: Rueckblickkarte ↔
+      useRueckblick, Werkzeugleiste ↔ useWerkzeugwahl, Werkzeugleiste ↔ werkzeugordnung.
+      Unkritisch, aber leicht zu lösen (Typen in eigene Datei). Aufwand: klein.
+- [ ] **Blitz ohne Maia, Stufe 8:** einziger Ausreißer der Zeitklassenprüfung (+291). Die erste
+      Wiederholung (`pruefung-blitz-8-r2`) ergab Zug für Zug dieselben Partien (feste
+      Zufallssaaten); die Wiederholung mit `MESSUNG_SAAT_AB=1000` (`pruefung-blitz-8-r3`) läuft.
 
 ---
 

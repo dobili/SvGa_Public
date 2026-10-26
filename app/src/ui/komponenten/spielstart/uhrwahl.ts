@@ -2,10 +2,10 @@
  * Hilfen zur Wahl der Bedenkzeit unter Spielen: Namen der Vorgaben mit Zeitklasse, gewählte
  * Stelle, Uhr beim Start.
  *
- * Rolle im Gesamtbild: Aus Spielen.tsx ausgelagert (Dateien unter 400 Zeilen). Seit R51 (Wunsch
- * des Autors, 23.10.2026) gilt die Wertung je Zeitklasse; deshalb hat jede Partie aus der
+ * Rolle im Gesamtbild: Eigene Datei, damit Spielen.tsx unter 400 Zeilen bleibt. Die Wertung gilt
+ * je Zeitklasse (R51, Wunsch des Autors, 23.10.2026); deshalb hat jede Partie aus der
  * Grundstellung eine Uhr (ohne gewählte Uhr 10 + 0, Schnellschach wie der Partietag des
- * 30-Minuten-Plans). „Ohne Uhr“ gibt es nur noch für Partien aus einer Abbildung oder aufgebauten
+ * 30-Minuten-Plans). „Ohne Uhr“ gibt es nur für Partien aus einer Abbildung oder aufgebauten
  * Stellung, die ohnehin ungewertet sind (Entscheidung des Autors, 24.10.2026).
  * Abhängigkeiten: spiel/uhr.ts, spiel/elomodell.ts (Zeitklasse), wertungstext.ts, i18n.
  */

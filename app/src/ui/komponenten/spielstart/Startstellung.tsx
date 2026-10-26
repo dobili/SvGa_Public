@@ -2,10 +2,9 @@
  * Karte der Startstellung auf „Spielen“: Grundstellung, Abbildung oder eigene Stellung, mit
  * Stellungseditor und FEN-Eingabe.
  *
- * Rolle im Gesamtbild: Bis 0.2.129 stand die Karte oben in Spielen.tsx. Seit DS51 (0.2.131,
- * Nutzungsprüfung vom 25.10.2026) steht sie aus der Grundstellung am Ende und zeigt dort kein
- * Brett, weil man sie selten ändert; ab einer Abbildung oder eigenen Stellung bleibt sie oben mit
- * Brett. Ausgelagert, damit Spielen.tsx unter 400 Zeilen bleibt.
+ * Rolle im Gesamtbild: Aus der Grundstellung steht die Karte am Ende und zeigt kein Brett, weil
+ * man sie selten ändert; ab einer Abbildung oder eigenen Stellung steht sie oben mit Brett (DS51,
+ * Nutzungsprüfung vom 25.10.2026). Eigene Datei, damit Spielen.tsx unter 400 Zeilen bleibt.
  * Abhängigkeiten: Brett, Stellungseditor, spiel/partie.ts (spielbar), spiel/stellungsbau.ts, i18n.
  */
 import { useState } from "react";

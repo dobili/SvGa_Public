@@ -2,8 +2,9 @@
  * Segmentleiste: eine Wahl aus wenigen kurzen Werten in einer Zeile, gleich breit, ohne Umbruch
  * (wie Reiter, aber als Auswahl).
  *
- * Rolle im Gesamtbild: Seit 0.2.87 für „Genauigkeit wie“ in der Auswertung (Spielstaerke.tsx,
- * Wunsch des Autors: die Knöpfe sollen nicht umbrechen). Für Bildschirmleser eine Gruppe von
+ * Rolle im Gesamtbild: Wunsch des Autors: Solche Knöpfe sollen nicht umbrechen. Genutzt etwa für
+ * den Umschalter Weiß/Schwarz der Auswertung, die Wahl des Maßstabs (Massstabwahl.tsx), das
+ * Meldeformular, den PGN-Import und „Erst selbst denken“. Für Bildschirmleser eine Gruppe von
  * Radioknöpfen wie Auswahl.tsx.
  * Abhängigkeiten: keine.
  */

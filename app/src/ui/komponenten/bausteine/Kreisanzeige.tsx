@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): Fortschritt als Kreisdiagramm statt
  * Balken, in den Einstellungen und auf den Kapitelseiten. Für Bildschirmleser eine
- * Fortschrittsanzeige (role „progressbar“) mit Beschriftung. Seit 25.10.2026 kann ein Zeichen in
- * der Mitte stehen, die Prozentzahl dann kleiner darunter (Profil › Fortschritt, Wunsch des Autors).
+ * Fortschrittsanzeige (role „progressbar“) mit Beschriftung. In der Mitte kann ein Zeichen stehen,
+ * die Prozentzahl dann kleiner darunter (Profil › Fortschritt, Wunsch des Autors, 25.10.2026).
  * Abhängigkeiten: speicher/fortschritt.ts (Typ Anteil), i18n, lucide-react (Typ des Zeichens).
  */
 import type { LucideIcon } from "lucide-react";

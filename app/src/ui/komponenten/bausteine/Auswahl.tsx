@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Gemeinsame Auswahl für die Karte „Einstellungen“ und den
  * Spielen-Bildschirm (Seite, Stufe, Ziel, Uhr). Für Bildschirmleser eine Gruppe von Radioknöpfen.
- * Seit 0.2.101 (DS24) optional mit Zeichen vor dem Namen, etwa der Uhr vor „Bedenkzeit“.
+ * Optional mit Zeichen vor dem Namen (DS24), etwa der Uhr vor „Bedenkzeit“.
  * Abhängigkeiten: React, Titelsymbol.
  */
 import { Titelsymbol, type Abschnittsart } from "./Titelsymbol";

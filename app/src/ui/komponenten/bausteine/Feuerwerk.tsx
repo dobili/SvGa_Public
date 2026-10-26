@@ -1,13 +1,13 @@
 /**
- * Feuerwerk hinter der Gratulation des Gruppenmodus (seit 0.2.144, Wunsch des Autors 25.10.2026:
- * „ein bisschen mehr feierlich … eine Art Feuerwerk“).
+ * Feuerwerk hinter der Gratulation des Gruppenmodus (Wunsch des Autors, 25.10.2026: „ein bisschen
+ * mehr feierlich … eine Art Feuerwerk“).
  *
  * Rolle im Gesamtbild: Reine Zierde ohne Inhalt (für Vorlesehilfen verborgen). Mehrere Raketen
  * steigen an festen Stellen auf und zerplatzen in Funken in den Farben der App (Gold, Creme,
  * helles Navy); alles mit CSS-Animationen (ui/stil/feuerwerk.css), ohne Bibliothek. Wer im System
- * „Bewegung reduzieren“ eingestellt hat, sieht nur ein ruhiges, kurzes Aufleuchten. Seit 0.2.144
- * auch klein über dem Brett nach einer gewonnenen Partie (Ergebnisblende.tsx, Wunsch des Autors):
- * drei Funkenkränze ohne Aufstieg, einmal.
+ * „Bewegung reduzieren“ eingestellt hat, sieht nur ein ruhiges, kurzes Aufleuchten. Auch klein
+ * über dem Brett nach einer gewonnenen Partie (Ergebnisblende.tsx, Wunsch des Autors): drei
+ * Funkenkränze ohne Aufstieg, einmal.
  * Abhängigkeiten: ui/stil/feuerwerk.css.
  */
 import type { CSSProperties } from "react";

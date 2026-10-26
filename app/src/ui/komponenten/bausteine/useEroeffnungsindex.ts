@@ -1,13 +1,13 @@
 /**
- * Lädt die Buchvarianten aus Kapitel 2 und 3 und baut daraus den Eröffnungsindex, dazu seit
- * 0.2.32 die Namen der Eröffnungen außerhalb des Buches (Lichess-Liste).
+ * Lädt die Buchvarianten aus Kapitel 2 und 3 und baut daraus den Eröffnungsindex, dazu die Namen
+ * der Eröffnungen außerhalb des Buches (Lichess-Liste).
  *
  * Rolle im Gesamtbild: Das Werkzeug k2-eroeffnung erkennt Eröffnungen über den
  * Stellungsvergleich (Pflichtenheft 6.2); dafür braucht es die Beispiele beider Kapitel, auch wenn
  * gerade eine Abbildung aus einem anderen Kapitel offen ist. Vor Kapitel 2 lädt nichts.
- * Seit V6 (Nutzungsprüfung 25.10.2026) kommt der Index aus dem Vorrat (schach/
- * eroeffnungsindexVorrat.ts), und das erste Bauen wartet bis nach dem nächsten Bild: So erscheint
- * „Spielen“ sofort, die Eröffnungsliste einen Augenblick später.
+ * Der Index kommt aus dem Vorrat (schach/eroeffnungsindexVorrat.ts, V6, Nutzungsprüfung
+ * 25.10.2026), und das erste Bauen wartet bis nach dem nächsten Bild: So erscheint „Spielen“
+ * sofort, die Eröffnungsliste einen Augenblick später.
  * Abhängigkeiten: daten/laden.ts, schach/eroeffnungsindexVorrat.ts, nachDemNaechstenBild, useDaten.
  */
 import { ladeEroeffnungsliste, ladeKapitel, type Eroeffnungsliste } from "../../../daten/laden";

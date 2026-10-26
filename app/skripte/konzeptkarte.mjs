@@ -60,6 +60,22 @@ function gekuerzt(text) {
   return `${schnitt.slice(0, schnitt.lastIndexOf(" "))} …`;
 }
 
+/**
+ * Der Kopf aus Zeilenkommentaren („// …“) am Anfang der Datei, wie ihn die Erzeuger schreiben
+ * (skripte/erzeuge-typen.mjs, pipeline/figuren/erzeuge_figuren.py); ohne „ERZEUGTE DATEI“-Zeile.
+ */
+function zeilenkopf(text) {
+  const zeilen = [];
+  for (const zeile of text.split("\n")) {
+    if (!zeile.startsWith("//")) break;
+    zeilen.push(zeile.replace(/^\/\/ ?/, ""));
+  }
+  return zeilen
+    .filter((z) => !/^ERZEUGTE DATEI/.test(z))
+    .join("\n")
+    .trim();
+}
+
 /** Ein Abschnitt des Dateikopfes, etwa „Rolle im Gesamtbild:“ bis zum nächsten Schlüsselwort. */
 function abschnitt(kopf, name) {
   const flach = kopf.replace(/\s+/g, " ");
@@ -129,7 +145,7 @@ const eintraege = alle.map((pfad) => {
   const text = readFileSync(pfad, "utf8");
   const quelle = ts.createSourceFile(pfad, text, ts.ScriptTarget.Latest, true);
   const erster = text.match(/^\s*\/\*\*[\s\S]*?\*\//)?.[0] ?? "";
-  const kopf = kommentartext(erster);
+  const kopf = erster ? kommentartext(erster) : zeilenkopf(text);
   return {
     pfad: relative(QUELLE, pfad),
     ordner: relative(QUELLE, dirname(pfad)) || ".",

@@ -14,9 +14,13 @@ const HIER = dirname(fileURLToPath(import.meta.url));
 const SCHEMA_ORDNER = resolve(HIER, "../../schemas");
 const ZIEL_ORDNER = resolve(HIER, "../src/daten/generiert");
 
-const KOPF = `// ERZEUGTE DATEI – nicht von Hand bearbeiten.
-// Quelle: schemas/*.schema.json, erzeugt von app/skripte/erzeuge-typen.mjs.
+/** Kopf jeder erzeugten Datei: Zweck in einem Satz (für Konzeptkarte und Leser), dann die Quelle. */
+function kopf(datei) {
+  return `// ERZEUGTE DATEI – nicht von Hand bearbeiten.
+// Typen der Buchdaten „${modulname(datei)}“ für die App, aus dem Vertrag zwischen Pipeline und App.
+// Quelle: schemas/${datei}, erzeugt von app/skripte/erzeuge-typen.mjs.
 `;
+}
 
 /** Wandelt „abbildung.schema.json“ in den Modulnamen „abbildung“. */
 function modulname(dateiname) {
@@ -30,7 +34,7 @@ async function main() {
     // Querverweise ($ref auf andere Schemas) löst der Compiler relativ zum Schema-Ordner auf.
     const code = await compileFromFile(join(SCHEMA_ORDNER, datei), {
       cwd: SCHEMA_ORDNER,
-      bannerComment: KOPF,
+      bannerComment: kopf(datei),
       additionalProperties: false,
       style: { printWidth: 100 },
     });

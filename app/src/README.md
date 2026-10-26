@@ -4,7 +4,9 @@ Für Leser ohne Programmierkenntnisse: `docs/codefuehrer/` erklärt Aufbau und A
 `docs/konzeptkarte.html` zeigt alle Dateien und ihre Verbindungen zum Anklicken.
 
 Die App ist eine reine TypeScript-App ohne Server (Konzept Abschnitt 6). Abhängigkeiten zeigen nur
-in eine Richtung: `ui/` nutzt alle anderen Module, kein Modul kennt `ui/`.
+in eine Richtung: `ui/` nutzt alle anderen Module, kein Fachmodul kennt `ui/`. Einzige Ausnahme ist
+die Hülle `app/`: Sie setzt die Bildschirme aus `ui/bildschirme/` zusammen und muss sie deshalb
+kennen.
 
 | Ordner        | Aufgabe                                                     | Anfangen mit                   |
 | ------------- | ----------------------------------------------------------- | ------------------------------ |

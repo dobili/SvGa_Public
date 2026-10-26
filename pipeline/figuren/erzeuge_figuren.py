@@ -139,6 +139,7 @@ def schreibe_typescript(figuren: dict[str, Figurenpfade], zieldatei: Path = ZIEL
     """Schreibt die Pfade als TypeScript-Modul für das Brett der App."""
     zeilen = [
         "// ERZEUGTE DATEI – nicht von Hand bearbeiten.",
+        "// Umrisse der Figuren des Buches (Schrift SkakNew) als SVG-Pfade für das Brett der App.",
         "// Quelle: pipeline/figuren/erzeuge_figuren.py aus SkakNew-Diagram.otf",
         "// (Ulrich Dirr, LaTeX Project Public License 1.2 oder neuer; umgewandelte Fassung).",
         "// Koordinaten: 1000 Einheiten je Feld, y nach unten.",

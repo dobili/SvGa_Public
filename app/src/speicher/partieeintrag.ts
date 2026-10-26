@@ -19,12 +19,12 @@ export interface Partieeintrag {
   readonly beste: readonly string[];
   /**
    * Abstand des besten zum zweitbesten Zug je Stellung in Bauerneinheiten (für das „!“ des
-   * einzigen guten Zuges, seit 0.2.39); leer bei Auswertungen aus älteren Versionen.
+   * einzigen guten Zuges); leer bei Auswertungen aus älteren Versionen.
    */
   readonly abstaende: readonly number[];
   /**
    * Hauptvariante der Engine je Stellung (UCI, bis sechs Halbzüge, beginnt mit dem besten Zug;
-   * für „Danach etwa …“ in der Rückblickkarte, Empfehlung R5, 0.2.56); leer bei älteren
+   * für „Danach etwa …“ in der Rückblickkarte, Empfehlung R5); leer bei älteren
    * Auswertungen.
    */
   readonly varianten: readonly (readonly string[])[];

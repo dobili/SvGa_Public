@@ -19,7 +19,7 @@ export interface Anteil {
 
 export interface Kapitelfortschritt {
   readonly abbildungen: Anteil;
-  /** Beantwortete Warum-Fragen des Kapitels (0.2.99); gesamt 0, wenn es keine gibt. */
+  /** Beantwortete Warum-Fragen des Kapitels; gesamt 0, wenn es keine gibt. */
   readonly warum: Anteil;
   /** Gelöste Übungen; `versucht` zählt jede Übung mit mindestens einem Versuch. */
   readonly uebungen: Anteil & { readonly versucht: number };
@@ -203,7 +203,7 @@ export function geloesteUebungen(fortschritt: Fortschritt, kapitel: number): num
 }
 
 /**
- * Wie viele der `anzahl` Warum-Fragen einer Abbildung schon beantwortet sind (0.2.99).
+ * Wie viele der `anzahl` Warum-Fragen einer Abbildung schon beantwortet sind.
  * Beispiel: Abb. 1.26 mit einer Frage, beantwortet → 1.
  */
 export function beantworteteFragen(

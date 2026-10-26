@@ -117,7 +117,7 @@ describe("k2-zielbilanz an Buchabbildungen", () => {
     expect(zeilen(auswertung, "black")[2]).toBe(
       "Königssicherheit: nein – Der König steht auf e8, noch nicht rochiert",
     );
-    // Markiert wird nur die Seite der Sicht (0.2.28).
+    // Markiert wird nur die Seite der Sicht.
     const stellung = stellungVon("2.71");
     const weiss = zielbilanzWerkzeug(stellung, "white").markierungen;
     const schwarz = zielbilanzWerkzeug(stellung, "black").markierungen;

@@ -95,7 +95,7 @@ describe("Format 1", () => {
       ok: true,
       daten: {
         ...format1,
-        // Figurensatz und Ton (seit 0.2.33) fehlen in Format 1 und lesen sich als Standard.
+        // Figurensatz und Ton fehlen in Format 1 und lesen sich als Standard.
         einstellungen: {
           ...format1.einstellungen,
           figurensatz: "buch",
@@ -103,7 +103,7 @@ describe("Format 1", () => {
           vorWerkzeugen: "aus",
           maia: "an",
         },
-        // Beantwortete Warum-Fragen (seit 0.2.99) fehlen in Format 1 und lesen sich leer.
+        // Beantwortete Warum-Fragen fehlen in Format 1 und lesen sich leer.
         fortschritt: { ...format1.fortschritt, warum: {}, eingeschaetzt: {} },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
@@ -112,7 +112,7 @@ describe("Format 1", () => {
         sammlung: [],
         zugErraten: {},
         planstand: null,
-        // Name und Porträt (seit 0.2.140) fehlen in Format 1 und lesen sich leer.
+        // Name und Porträt fehlen in Format 1 und lesen sich leer.
         profil: LEERES_PROFIL,
       },
       vonVersion: 1,
@@ -216,7 +216,7 @@ describe("Format 2", () => {
     const format2 = { ...leereDaten(JETZT), schemaVersion: 2 } as Record<string, unknown>;
     delete format2.karten;
     const ergebnis = wandleUm(JSON.parse(JSON.stringify(format2)), JETZT);
-    // Bis Format 5 gab es acht Stufen: die Vorgabe Stufe 1 wird Stufe 3 (0.2.117)
+    // Bis Format 5 gab es acht Stufen: die Vorgabe Stufe 1 wird Stufe 3
     const leer = leereDaten(JETZT);
     const drei = { eroeffnung: 3, mittelspiel: 3, endspiel: 3 } as const;
     const vorlieben = { ...leer.spiel.vorlieben, stufe: 3, stufenJePhase: drei } as const;

@@ -121,7 +121,7 @@ export function zielbilanzWerkzeug(stellung: Stellung, eigen: Color): Werkzeuger
   const karte = profil(stellung).angriffskarte;
   const meine = zielbilanz(stellung.brett, karte, eigen, stellung.amZug);
   const seine = zielbilanz(stellung.brett, karte, gegner(eigen), stellung.amZug);
-  // Wie die Tabelle im Buch: Weiß zuerst, gleich wer am Zug ist (Nachtest des Autors, 0.2.26).
+  // Wie die Tabelle im Buch: Weiß zuerst, gleich wer am Zug ist (Nachtest des Autors).
   const [weiss, schwarz] = eigen === "white" ? [meine, seine] : [seine, meine];
   const befunde = [befund(weiss), befund(schwarz)];
   return {

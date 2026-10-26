@@ -52,7 +52,7 @@ const NEUE_ARTEN: readonly Fehlerart[] = [
 ];
 
 /**
- * Fehlerarten aus Rohdaten; ohne Liste alle (auch für die Abhakliste der Vorlieben, 0.2.60).
+ * Fehlerarten aus Rohdaten; ohne Liste alle (auch für die Abhakliste der Vorlieben).
  * Seit 0.2.118: Enthält eine gespeicherte Liste alle Arten von vor 0.2.118, hatte der Leser nichts
  * abgehakt; dann gelten auch die neuen Arten als erlaubt (sonst machte sein Gegner sie nie).
  */
@@ -78,12 +78,12 @@ function stilAus(roh: unknown): number {
 }
 
 /** Ein eigener Gegner aus Rohdaten; null ohne Kennung oder Name. */
-/** Einer der sieben Stile (engine/stile.ts) aus Rohdaten, sonst undefined (seit 0.2.126). */
+/** Einer der sieben Stile (engine/stile.ts) aus Rohdaten, sonst undefined. */
 export function stilnameAus(wert: unknown): Stilname | undefined {
   return STILNAMEN.find((n) => n === wert);
 }
 
-/** Stufen −4 bis 4 je Fehlerart und Fleck (seit 0.2.126); undefined ohne gültige Angabe. */
+/** Stufen −4 bis 4 je Fehlerart und Fleck; undefined ohne gültige Angabe. */
 export function reglerstufenAus(roh: unknown): Reglerstufen | undefined {
   if (!istObjekt(roh) || Array.isArray(roh)) return undefined;
   const aus: Partial<Record<(typeof REGLERARTEN)[number], number>> = {};
@@ -95,7 +95,7 @@ export function reglerstufenAus(roh: unknown): Reglerstufen | undefined {
 }
 
 /**
- * Eine Stil-Mischung aus Rohdaten (0.2.128): nur bekannte Stile mit 50, 75, 100 oder 125 %, je
+ * Eine Stil-Mischung aus Rohdaten: nur bekannte Stile mit 50, 75, 100 oder 125 %, je
  * Achse der erste; sonst undefined.
  */
 export function stilmixAus(roh: unknown): Stilmix | undefined {
@@ -144,13 +144,13 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     fehlerarten: fehlerartenAus(roh.fehlerarten),
     stil: stilAus(roh.stil),
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
-    // Porträt nur aus der Liste zur Wahl (0.2.99); ältere Gegner und Unbekanntes ohne Porträt.
+    // Porträt nur aus der Liste zur Wahl; ältere Gegner und Unbekanntes ohne Porträt.
     ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
     // Seit 0.2.140 auch ein selbst gebautes Porträt (gleiche Prüfung wie im Profil).
     ...portraetBauAus(roh.portraetBau),
-    // Erweiterter Modus (0.2.117), nur wenn gespeichert.
+    // Erweiterter Modus, nur wenn gespeichert.
     ...menschenwerteAus(roh),
-    // Teil E (0.2.126): Stil und Reglerstufen, nur wenn gespeichert.
+    // Teil E: Stil und Reglerstufen, nur wenn gespeichert.
     ...teilEAus(roh),
   };
 }

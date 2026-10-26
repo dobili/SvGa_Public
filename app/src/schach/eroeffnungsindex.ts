@@ -54,7 +54,7 @@ export interface Eroeffnungsindex {
   readonly stellungen: ReadonlyMap<string, readonly Eroeffnungseintrag[]>;
   /** „Schlüssel vor dem Zug|Zug“ → Zugzeichen des Buches („“, „!“, „?“ …), für k1-todsuenden. */
   readonly buchzuege: ReadonlyMap<string, string>;
-  /** Eröffnungen außerhalb des Buches (Lichess-Liste, seit 0.2.32); fehlt sie, gibt es keine. */
+  /** Eröffnungen außerhalb des Buches (Lichess-Liste); fehlt sie, gibt es keine. */
   readonly bekannte?: Eroeffnungsnamen;
 }
 
@@ -84,7 +84,7 @@ export function buchzuegeAb(index: Eroeffnungsindex, fen: string): string[] {
  * Die Buchzüge ab einer Stellung, die in einer bestimmten Eröffnung bleiben (englische
  * Kurznotation); leer, wenn keiner dorthin führt.
  *
- * Warum: Seit 0.2.39 kann der Leser der Engine eine Eröffnung vorgeben (Rückmeldung des Autors
+ * Warum: Der Leser kann der Engine eine Eröffnung vorgeben (Rückmeldung des Autors
  * zu N178). Beispiel: Grundstellung, „Spanische Partie“ → [„e4“]; nach 1. e4 e5 2. Sf3 Sc6 →
  * [„Bb5“]. Sonderfall: Hat der Leser die Eröffnung verlassen, gibt es keine Züge mehr, und die
  * Engine spielt die übrigen Buchzüge oder selbst.

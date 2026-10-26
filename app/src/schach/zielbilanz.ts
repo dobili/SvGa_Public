@@ -7,7 +7,7 @@
  * als erledigt. Königsprüfung: rochiert, und von den drei Bauern vor dem König stehen mindestens
  * zwei höchstens ein Feld von ihrem Ausgangsfeld entfernt. Ergebnis je Seite als ja, teils oder
  * nein wie im Buch.“ Kalibriert an den Zielbilanzen aus Kapitel 2 (kap02.json, `bilanzen`).
- * Seit 0.2.33 (Entscheidungen des Autors vom 16.10.2026): Ein angegriffener Zentrumsbauer zählt
+ * Entscheidungen des Autors vom 16.10.2026: Ein angegriffener Zentrumsbauer zählt
  * voll, ob er wirklich hängt, prüft danach die Engine (C1.1, engine/zentrumsschlag.ts); ein König
  * eine Reihe vor der Grundreihe am Rand gilt als rochiert mit beschädigtem Schild (C2.20).
  * Abhängigkeiten: chessops, angriffskarte.ts, abtausch.ts, stellung.ts.
@@ -54,7 +54,7 @@ const LETZTE_LINIE = 7;
 
 export interface Zentrumspruefung {
   readonly wertung: Wertung;
-  /** Eigene Bauern auf Zentrumsfeldern; alle zählen für die Wertung (seit 0.2.33, C1.1). */
+  /** Eigene Bauern auf Zentrumsfeldern; alle zählen für die Wertung (C1.1). */
   readonly bauern: readonly Square[];
   /**
    * Davon die, die der Gegner am Zug laut Abtauschrechnung auf dem Feld mit Gewinn schlagen
@@ -111,10 +111,10 @@ const OHNE_BATTERIE = false;
  * „Bauer d5 … kann aber gleich geschlagen werden“). Entscheidung des Autors zu C1.1 (16.10.2026).
  * Ohne Zentrumsbauern gilt Pflichtenheft 6.6: ja, wenn eigene Figuren mindestens zwei der vier
  * Zentrumsfelder mindestens so oft angreifen wie der Gegner; teils bei einem Feld; sonst nein.
- * Gezählt werden nur Figuren, die das Feld direkt angreifen, keine Batterien dahinter (seit
- * 0.2.32): Kontrolle eines Feldes heißt, welche Figuren es jetzt treffen; Batterien gehören zur
+ * Gezählt werden nur Figuren, die das Feld direkt angreifen, keine Batterien dahinter:
+ * Kontrolle eines Feldes heißt, welche Figuren es jetzt treffen; Batterien gehören zur
  * Abtauschrechnung auf einem besetzten Feld. Befund des Autors zu Abb. 2.128: Der Läufer
- * beherrscht d4 und e5; e5 zählte vorher nicht, weil die Dame c7 hinter Ld6 mitgezählt wurde.
+ * beherrscht d4 und e5 (die Dame c7 hinter Ld6 zählt dabei nicht mit).
  */
 function zentrumspruefung(
   brett: Board,

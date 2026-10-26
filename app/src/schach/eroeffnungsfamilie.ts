@@ -2,12 +2,12 @@
  * Fortsetzung einer festgelegten Eröffnung nach dem Buch: Züge derselben Familie aus der
  * Lichess-Liste (R24).
  *
- * Rolle im Gesamtbild: Seit 0.2.39 kann der Leser dem Bot eine Eröffnung aus dem Buch vorgeben
- * (usePartie.ts). Das Buch kennt aber nur wenige Züge je Eröffnung; danach spielte der Bot
- * irgendeinen Buchzug oder selbst. Wunsch des Autors (R24): Ohne Buchzug bleibt der Bot in
- * derselben Eröffnung, mit Zügen aus der freien Eröffnungsliste von Lichess (3864 benannte
- * Stellungen). Die Familie (der Teil des Namens vor dem Doppelpunkt, etwa „Spanische Partie“)
- * steht an der letzten Stellung der Hauptlinie des Buches, die Lichess kennt.
+ * Rolle im Gesamtbild: Der Leser kann dem Bot eine Eröffnung aus dem Buch vorgeben
+ * (usePartie.ts). Das Buch kennt aber nur wenige Züge je Eröffnung. Wunsch des Autors (R24):
+ * Ohne Buchzug bleibt der Bot in derselben Eröffnung, mit Zügen aus der freien Eröffnungsliste
+ * von Lichess (3864 benannte Stellungen), statt irgendeinen Buchzug oder selbst zu spielen. Die
+ * Familie (der Teil des Namens vor dem Doppelpunkt, etwa „Spanische Partie“) steht an der letzten
+ * Stellung der Hauptlinie des Buches, die Lichess kennt.
  * Abhängigkeiten: chessops, schach/eroeffnungsindex.ts, schach/eroeffnungsnamen.ts.
  */
 import { Chess } from "chessops/chess";

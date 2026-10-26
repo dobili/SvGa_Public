@@ -137,7 +137,7 @@ function istTreppe(
  * Schachlinie nicht zurückweichen).
  *
  * Regel: Kapitel 7, Typische Mattbilder (Abb. 7.41: zwei Läufer kreuzen sich, der König hält sich
- * mit eigenen Figuren selbst gefangen). Seit 0.2.33 (Entscheidung des Autors zu C1.17): Deckt eine
+ * mit eigenen Figuren selbst gefangen). Entscheidung des Autors zu C1.17: Deckt eine
  * andere Figur ein Fluchtfeld mit, ist es kein Boden-Matt (Abb. 7.21 nach 8... Lg4#: Der Springer
  * e4 deckt d2 und f2, also nur „Matt“).
  */

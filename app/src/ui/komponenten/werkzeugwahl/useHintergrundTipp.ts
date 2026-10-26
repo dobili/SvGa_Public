@@ -1,14 +1,14 @@
 /**
  * Ein Tipp auf die freie Fläche der App (den Hintergrund) schaltet das gewählte Werkzeug ab.
  *
- * Rolle im Gesamtbild: Wunsch des Autors nach dem Nachtest von 0.2.26: Wer neben Brett und
- * Kacheln tippt, kehrt zur Ausgangsansicht der Abbildung zurück (Buchmarkierungen). Nach den
- * Nachtests von 0.2.27 und 0.2.28 („nur ganz am Rand“): Auf dem Handy füllen Brett, Leisten und
- * Karten fast die ganze Breite, frei blieb nur ein schmaler Rand. Seit 0.2.29 zählt deshalb alles,
- * was nicht bedient wird: Bildunterschrift, Fundstelle, die Zeile unter dem Brett, Kopfzeile,
- * Abstände und die Fläche neben der App. Ausgenommen bleiben Bedienelemente, Brett, Werkzeug- und
- * Zugleiste, die Reiter eines Bündels, die Karten (dort liest man) und Dialoge. Ein Klick entsteht
- * nur beim Tippen, nicht beim Scrollen; wer am Rechner Text markiert, schaltet nichts ab.
+ * Rolle im Gesamtbild: Wunsch des Autors: Wer neben Brett und Kacheln tippt, kehrt zur
+ * Ausgangsansicht der Abbildung zurück (Buchmarkierungen). Auf dem Handy füllen Brett, Leisten
+ * und Karten fast die ganze Breite, frei bliebe nur ein schmaler Rand („nur ganz am Rand“,
+ * Nachtest des Autors). Deshalb zählt alles, was nicht bedient wird: Bildunterschrift,
+ * Fundstelle, die Zeile unter dem Brett, Kopfzeile, Abstände und die Fläche neben der App.
+ * Ausgenommen bleiben Bedienelemente, Brett, Werkzeug- und Zugleiste, die Reiter eines Bündels,
+ * die Karten (dort liest man) und Dialoge. Ein Klick entsteht nur beim Tippen, nicht beim
+ * Scrollen; wer am Rechner Text markiert, schaltet nichts ab.
  * Abhängigkeiten: React.
  */
 import { useEffect } from "react";

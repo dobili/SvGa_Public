@@ -1,5 +1,5 @@
 /**
- * Ein Symbol je Werkzeug-Bündel (seit 0.2.85, Wunsch des Autors): In der waagerecht scrollbaren
+ * Ein Symbol je Werkzeug-Bündel (Wunsch des Autors): In der waagerecht scrollbaren
  * Werkzeugleiste erkennt man ein Bündel am Symbol, ohne den Namen zu lesen. Dazu die Symbole für
  * „frühere“ (Werkzeuge aus früheren Kapiteln) und „spätere“ (Vorschau).
  * Abhängigkeiten: lucide-react, werkzeugordnung.ts (Buendelkennung).
@@ -31,6 +31,7 @@ export const BUENDELSYMBOL: Readonly<Record<Buendelkennung, LucideIcon>> = {
   denkroutine: Brain,
 };
 
-/** „frühere“: Uhr mit Pfeil zurück; „spätere“: Fernrohr (Vorschau). */
+/** Symbol für „frühere“ (Werkzeuge aus früheren Kapiteln): Uhr mit Pfeil zurück. */
 export const FRUEHERE_SYMBOL: LucideIcon = History;
+/** Symbol für „spätere“ (Vorschau auf Werkzeuge späterer Kapitel): Fernrohr. */
 export const SPAETERE_SYMBOL: LucideIcon = Telescope;

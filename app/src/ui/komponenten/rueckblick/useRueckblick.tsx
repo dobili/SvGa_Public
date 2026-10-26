@@ -2,43 +2,34 @@
  * Rückblick beim Nachspielen einer ausgewerteten Partie: Markierungen am Brett, Bewertungsbalken
  * und die Karte zum gezeigten Zug (Rueckblickkarte.tsx).
  *
- * Rolle im Gesamtbild: Vorschlag H (0.2.38) und die Rückmeldung des Autors zum Nachtest
- * („Nachspielen wie bei chess.com: Bewertung des aktuellen Zuges, beste Alternative mit
- * Markierungen, einfache Kommentare, warum ein Zug schlecht war“). Die Erklärung rechnet nur
- * für die gezeigte Stellung (spiel/erklaerung.ts, ohne Engine); während der Partie bleibt alles
- * aus. Beginnt mit der Stellung nach dem gezeigten Zug eine neue Phase, erklärt die Karte, warum
- * (Wunsch des Autors, 0.2.44; analyse/phasentext.ts).
- * Seit 0.3.0 (Wunsch des Autors, 26.10.2026) dazu die Knöpfe unter dem Brett, die die beiden
- * Varianten der Karte langsam abspielen (Variantenknoepfe.tsx).
+ * Rolle im Gesamtbild: Vorschlag H und die Rückmeldung des Autors zum Nachtest („Nachspielen wie
+ * bei chess.com: Bewertung des aktuellen Zuges, beste Alternative mit Markierungen, einfache
+ * Kommentare, warum ein Zug schlecht war“). Die Erklärung rechnet nur für die gezeigte Stellung
+ * (spiel/erklaerung.ts, ohne Engine); während der Partie bleibt alles aus. Beginnt mit der
+ * Stellung nach dem gezeigten Zug eine neue Phase, erklärt die Karte, warum (Wunsch des Autors;
+ * analyse/phasentext.ts).
+ * Dazu die Knöpfe unter dem Brett, die die beiden Varianten der Karte langsam abspielen
+ * (Variantenknoepfe.tsx, Wunsch des Autors, 26.10.2026).
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, spiel/phasen.ts, Bewertungsbalken,
- * Rueckblickkarte, Variantenknoepfe.
+ * Rueckblickkarte, Variantenknoepfe, rueckblicktyp.ts.
  */
 import { useMemo, type ReactNode } from "react";
 import { phasensatz, zusatzsatz } from "../../../analyse/phasentext";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../../spiel/phasen";
-import type { Zugurteil } from "../../../spiel/auswertung";
 import { erklaereZug, type Zugerklaerung } from "../../../spiel/erklaerung";
 import { MIT_BESSEREM, MIT_STRAFE, zweigzuege, type Zweigzug } from "../../../spiel/nebenzweig";
 import type { Partie } from "../../../spiel/partie";
 import { rueckblickMarken } from "../../../spiel/rueckblick";
 import { sanZuUci } from "../../../spiel/zuege";
-import type { Theoriequellen } from "../../../schach/theorie";
 import { Bewertungsbalken } from "./Bewertungsbalken";
 import type { Zweigwahl } from "./Nebenzweig";
 import { Rueckblickkarte } from "./Rueckblickkarte";
 import { Variantenknoepfe } from "./Variantenknoepfe";
+import type { Rueckblick } from "./rueckblicktyp";
 
-/** Was der Rückblick nach der ausgewerteten Partie braucht. */
-export interface Rueckblick {
-  readonly werte: readonly number[];
-  readonly beste: readonly string[];
-  readonly urteile: readonly Zugurteil[];
-  /** Hauptvariante der Engine je Stellung (UCI); leer bei älteren Auswertungen (R5, 0.2.56). */
-  readonly varianten?: readonly (readonly string[])[];
-  /** Quellen der Theorie-Erkennung für die Namen bei einem Theoriezug (25.10.2026). */
-  readonly theorie?: Theoriequellen | null;
-}
+/** Typ aus rueckblicktyp.ts, weitergegeben für Dateien, die ihn von hier importieren. */
+export type { Rueckblick } from "./rueckblicktyp";
 
 /** Erklärung des gezeigten Zuges, nur wenn er ein Fehlerzeichen trägt. */
 function erklaerungFuer(

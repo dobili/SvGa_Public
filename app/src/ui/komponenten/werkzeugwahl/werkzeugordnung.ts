@@ -2,26 +2,25 @@
  * Ordnung der Werkzeuge auf dem Abbildung-Bildschirm: Symbole am Brett, Bündel in der Leiste,
  * Reiter im Bündel, und welche davon ein Kapitel zeigt.
  *
- * Rolle im Gesamtbild: Werkzeug-Umbau 0.2.30 nach Vorschlag C in
- * `VORSCHLAEGE_0.2.26.md` (im privaten Archiv-Repository), mit den Entscheidungen des Autors vom
- * 15.10.2026:
+ * Rolle im Gesamtbild: Werkzeug-Umbau nach Vorschlag C in `VORSCHLAEGE_0.2.26.md` (im privaten
+ * Archiv-Repository), mit den Entscheidungen des Autors vom 15.10.2026:
  * - Am Brett stehen als Symbole Zählen, Ziehen, Engine, Röntgen (ab Kapitel 1) und Warnsignale
  *   (Kapitel 4 bis 6 W1–W5, ab Kapitel 7 W1–W7), sobald das Buch sie eingeführt hat. „Zählen“
- *   steht seit 0.2.31 am Brett statt in der Leiste (Wunsch des Autors: es ist immer da und
- *   arbeitet mit dem Brett), auch bei Lehrbildern ohne König.
+ *   steht am Brett statt in der Leiste (Wunsch des Autors: es ist immer da und arbeitet mit dem
+ *   Brett), auch bei Lehrbildern ohne König.
  * - Die Leiste unter dem Brett zeigt Bündel statt Einzelwerkzeuge, ein Knopf je Verfahren des
  *   Buches; die Teile schaltet man in der Karte wie Reiter um, in der Reihenfolge des Buches.
  * - In jedem Kapitel zuerst nur die Bündel, die das Kapitel behandelt; „◀ frühere“ und
  *   „spätere ▶“ schalten die übrigen zu, spätere als Vorschau.
- * - Die Bündel stehen in der Reihenfolge, in der das Buch sie einführt (seit 0.2.31, Wunsch des
- *   Autors: „◀ frühere“ und „spätere ▶“ fügen hinzu, ohne die Reihenfolge der schon gezeigten
- *   Knöpfe zu ändern; bis 0.2.30 galt die Reihenfolge der Denkroutine).
+ * - Die Bündel stehen in der Reihenfolge, in der das Buch sie einführt (Wunsch des Autors:
+ *   „◀ frühere“ und „spätere ▶“ fügen hinzu, ohne die Reihenfolge der schon gezeigten Knöpfe zu
+ *   ändern).
  * Die Kennungen der Werkzeuge (k1-roentgen …) bleiben, damit vorbereitete Texte und Tests
- * weiter passen. Abhängigkeiten: analyse/register.ts, i18n.
+ * weiter passen. Abhängigkeiten: analyse/register.ts, werkzeugwahltyp.ts, i18n.
  */
 import { werkzeugeFuer } from "../../../analyse/register";
 import type { Textschluessel } from "../../../i18n/sprache";
-import type { Werkzeugwahl } from "./Werkzeugleiste";
+import type { Werkzeugwahl } from "./werkzeugwahltyp";
 
 /** Letztes Kapitel des Buches: bis dahin sind alle Werkzeuge angemeldet. */
 const LETZTES_KAPITEL = 12;

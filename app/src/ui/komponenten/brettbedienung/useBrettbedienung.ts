@@ -5,11 +5,11 @@
  * im Durchstich), mit „Ziehen“ wählt der erste Tipp eine Figur und der zweite ihr Zielfeld
  * (Konzept 10.2, „Tippen auf Figur und Zielfeld“). Eine Wahl gilt nur für die Stellung, in der sie
  * getroffen wurde: Nach einem Schritt in der Zugleiste ist sie von selbst aufgehoben.
- * Seit 0.2.29 ist anfangs kein Werkzeug gewählt (Wunsch des Autors); seit 0.2.30 bewirkt ein Tipp
- * aufs Brett dann nichts. Seit 0.2.58: Ein Tipp auf eine eigene Figur, die nicht ziehen darf
- * (Schach, Fesselung, blockiert), leuchtet kurz rot auf, mit Warnton und Satz unter dem Brett.
- * Seit 0.2.92 lässt sich mit „Ziehen“ eine Figur auch per Wischen ziehen (ui/brett/useZiehen.ts):
- * Beim Greifen ist sie gewählt, beim Ablegen auf einem Zielfeld wird gezogen wie beim Antippen.
+ * Anfangs ist kein Werkzeug gewählt (Wunsch des Autors), dann bewirkt ein Tipp aufs Brett nichts.
+ * Ein Tipp auf eine eigene Figur, die nicht ziehen darf (Schach, Fesselung, blockiert), leuchtet
+ * kurz rot auf, mit Warnton und Satz unter dem Brett.
+ * Mit „Ziehen“ lässt sich eine Figur auch per Wischen ziehen (ui/brett/useZiehen.ts): Beim
+ * Greifen ist sie gewählt, beim Ablegen auf einem Zielfeld wird gezogen wie beim Antippen.
  * Abhängigkeiten: schach/weiterspielen.ts, useNachspielen.ts, app/ton.ts, ui/brett/useZiehen.ts.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";

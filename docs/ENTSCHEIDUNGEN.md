@@ -5939,4 +5939,14 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   Anker 1813 statt 2063, erwartet etwa 1772, Abweichung etwa +40. Der Ausreißer von +291 war
   Zufall; die Umrechnung bleibt. Zwei Stichproben derselben Stufe lagen 250 Punkte auseinander, die
   Streuung einer Prüfmessung mit 40 Partien ist also größer als die Blöcke zu zehn vermuten lassen.
+- **Kommentare** (drei Agenten, je Ordner getrennt): rund 400 Dateiköpfe auf den heutigen Stand
+  gekürzt (ohne Versionsgeschichte; Wünsche und Entscheidungen des Autors bleiben als Grund), alle
+  exportierten Werte kommentiert (die Konzeptkarte meldet keinen mehr), rund 145 reine
+  Versionsetiketten in Kommentaren entfernt. Ein Vergleichsskript hat für jede geänderte Datei
+  bestätigt, dass das übersetzte Programm ohne Kommentare gleich bleibt.
+- **Weitere 44 ungenutzte Texte** gelöscht (einzeln geprüft); der Test erkennt jetzt auch Anfänge
+  mitten in Vorlagen (`{{training.ort.${ort}}}`), die Prüfliste nennt nur noch die acht Texte, die
+  `MerkerWahl` als `${schluessel}.${w}` zusammensetzt.
+- **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
+  (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
 

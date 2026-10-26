@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Zählt die fälligen Karten (training/wiederholung.ts) und startet die
  * Übungen des Buches als Reihe im Bildschirm „Übung“. Fällige Aufgaben des Taktiktrainers und
- * von „Falle oder Köder“ (U9, 0.2.47) führen in ihren Trainer; dort startet „Wiederholen“ sie.
+ * von „Falle oder Köder“ (U9) führen in ihren Trainer; dort startet „Wiederholen“ sie.
  * Abhängigkeiten: Speicher, Navigation, training/wiederholung.ts, i18n.
  */
 import { useNavigation } from "../../../app/navigationsKontext";

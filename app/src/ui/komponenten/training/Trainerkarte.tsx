@@ -1,11 +1,11 @@
 /**
  * Ein Trainer als kompakte Zeile: Symbol, Name, Fragezeichen mit dem Ablauf und der Knopf
- * „Trainieren“; ein künftiger, noch unfertiger Trainer trüge die Plakette „folgt mit einem Update“
- * (seit 0.2.71 sind alle spielbar).
+ * „Trainieren“; ein künftiger, noch unfertiger Trainer trüge die Plakette „folgt mit einem
+ * Update“ (zurzeit sind alle spielbar).
  *
  * Rolle im Gesamtbild: Steht auf der Trainingsseite (Training.tsx) und im Kasten „Training und
- * Übungen“ jedes Kapitels (Kapitel.tsx). Seit 0.2.85 (Wunsch des Autors: weniger Text, schneller
- * erkennbar) mit Symbol je Trainer (trainersymbole.ts); der Ablauf steht hinter dem Fragezeichen.
+ * Übungen“ jedes Kapitels (Kapitel.tsx). Mit Symbol je Trainer (trainersymbole.ts, Wunsch des
+ * Autors: weniger Text, schneller erkennbar); der Ablauf steht hinter dem Fragezeichen.
  * Abhängigkeiten: training/trainer.ts, Navigation, InfoKnopf, lucide, i18n.
  */
 import { Play } from "lucide-react";

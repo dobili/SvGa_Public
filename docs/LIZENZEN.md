@@ -22,6 +22,7 @@
 | Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Wertungsvergleich (Zahlen und Streuung je Spalte aus chessgoals.com/rating-comparison, Juli 2026, in `app/src/spiel/umrechnung-daten.ts`, seit 0.2.125, als Bereiche seit 0.3.2; seit 0.3.3 nur noch für chess.com Klassisch) | Fakten, kein Schutz; Quelle genannt | – (Herkunft in der Datei und in der Erklärung der App)        |
 | Gemessene Wertungsbänder (`app/src/spiel/plattformvergleich-daten.ts`, seit 0.3.3): Kennzahlen aus öffentlichen Lichess-Profilen (Lichess-Schnittstelle), der offiziellen FIDE-Wertungsliste und der öffentlichen Schnittstelle von chess.com | Eigene Auswertung, nur Kennzahlen, keine Profile oder Namen | – (Verfahren in `pipeline/wertungsvergleich/`) |
+| Datensatz `Research/wertungsvergleich/` (seit 0.3.4): pseudonymisierte Zahlen aus 999 326 öffentlichen Lichess-Profilen, offiziellen FIDE-Wertungen und chess.com-Wertungen | Eigene Zusammenstellung von Fakten, ohne Kennungen und Namen | – (Beschreibung in `Research/README.md`) |
 
 ## Hinweise
 

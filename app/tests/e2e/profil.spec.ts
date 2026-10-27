@@ -53,7 +53,7 @@ test("Profil: ein Porträt aus der Auswahl und wieder kein Bild", async ({ page 
 
 /** Gewertete Partien zum Einspielen: einmal Klassisch (unter der FIDE-Tabelle), zweimal Schnellschach. */
 const WERTUNGSPUNKTE = [
-  { partieId: "w1", zeit: "2026-10-20T10:00:00.000Z", tempo: "classical", wertung: 1500 },
+  { partieId: "w1", zeit: "2026-10-20T10:00:00.000Z", tempo: "classical", wertung: 1200 },
   { partieId: "w2", zeit: "2026-10-21T10:00:00.000Z", tempo: "rapid", wertung: 1660 },
   { partieId: "w3", zeit: "2026-10-22T10:00:00.000Z", tempo: "rapid", wertung: 1680 },
 ].map((p) => ({ ...p, gegner: 1500, ergebnis: 1, phasen: {} }));
@@ -115,11 +115,11 @@ test("Profil: Wertung als Bereich auf chess.com und FIDE, die Wahl bleibt (26.10
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^\d{4}–\d{4}FIDE/);
   await karte.screenshot({ path: "test-results/bilder/wertung-fide.png" });
   await massstab.getByRole("radio", { name: "chess.com" }).click();
-  // Klassisch 1500 liegt unter der Tabelle (chess.com für Klassisch erst ab 1505): „–“ und die Grenze.
+  // Klassisch 1200 liegt unter der Messung (chess.com für Klassisch erst ab 1300): „–“ und die Grenze.
   await karte.getByRole("tab", { name: "Klassisch" }).click();
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–chess\.com/);
   await expect(karte.getByTestId("massstab-ausserhalb")).toHaveText(
-    "chess.com erst ab etwa 1505 (Lichess Klassisch)",
+    "chess.com erst ab etwa 1300 (Lichess Klassisch)",
   );
   // Die Wahl gilt je Gerät: nach dem Neuladen und in „Deine Spielstärke“ unter Spielen.
   await page.reload();

@@ -6006,3 +6006,23 @@ unter 0.3.2 festgehalten).
 - **Befund:** chess.com passt zu chessgoals.com; FIDE liegt 100 bis 150 tiefer. Grund vermutlich
   die Aussortierung von FIDE unter 1550 bei chessgoals.com und die andere Spielergruppe.
 - Rückfragen W1 bis W6 in `docs/AUFGABEN_AUTOR.md`.
+
+## Eine Million Profile und Datensatz in Research (27.10.2026, Opus, Version 0.3.4)
+
+Wunsch des Autors: so viele Profile wie möglich, Stichprobe auf eine Million, alle eingetragenen
+Zahlen speichern; Ablage im App-Repository im Ordner Research.
+
+- **Namen** aus der offenen Partiendatenbank von Lichess (September 2026, CC0) statt aus Teamlisten
+  (Sekunden statt Stunden, ohne Last auf der Schnittstelle); Profile streng nacheinander (etwa 2,5
+  Stunden, Lichess antwortet sonst 429). 999 326 Profile, 38 740 mit FIDE-Angabe, davon 7397 in der
+  FIDE-Liste abgeglichen; 3429 chess.com-Links.
+- **Bänder neu** (`app/src/spiel/plattformvergleich-daten.ts`): FIDE 3564/2359/634, chess.com
+  1753/1419/283 Paare; jetzt auch chess.com Klassisch gemessen (1300 bis 2200). chessgoals.com nur
+  noch Ersatz.
+- **Research/wertungsvergleich/** (öffentlich): pseudonymisiert (SHA-256 mit lokalem Salz), ohne
+  Kennung, FIDE-ID, chess.com-Name, Klarname, Freitext; Zeitpunkte als Monat; alle Zahlen. Grund:
+  Die Verknüpfung Lichess-Konto ↔ FIDE-ID ↔ chess.com identifiziert Personen. Ein Versuch, die
+  Rohdaten in das private Repository schachbuch-quellen zu legen, wurde von der Rechteprüfung der
+  Umgebung abgelehnt; der Autor entschied sich für Research.
+- **Korrekturen:** Ein gescheitertes Bündel gilt nicht mehr als abgefragt; die beim Neustart
+  beschädigte gzip-Datei wurde repariert (bis zum letzten gesicherten Stand lesbar).

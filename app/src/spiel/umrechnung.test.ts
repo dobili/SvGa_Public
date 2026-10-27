@@ -123,15 +123,19 @@ describe("Quelle je Zeitklasse und Liste", () => {
         istGemessen(tempo, "chesscom") ? "messung" : "chessgoals",
       );
     }
-    // Stand der Messung vom 26.10.2026: chess.com Klassisch hat zu wenige Paare.
+    // Stand der Messung vom 27.10.2026 (eine Million Profile): alle sechs Paare gemessen.
     expect(quelleDerUmrechnung("blitz", "chesscom")).toBe("messung");
-    expect(quelleDerUmrechnung("classical", "chesscom")).toBe("chessgoals");
+    expect(quelleDerUmrechnung("classical", "chesscom")).toBe("messung");
     expect(quelleDerUmrechnung("classical", "fide")).toBe("messung");
   });
 
   it("liefert über die gewählte Quelle Bereich und Grenzen", () => {
-    expect(bereichEtwa("classical", 2120)).toEqual(bereichUeberChessgoals("classical", 2120));
-    expect(vergleichsbereich("classical")).toEqual({ von: 1505, bis: 2465 });
+    expect(bereichEtwa("classical", 2000)).toEqual(
+      gemessenerBereich("classical", 2000, "chesscom"),
+    );
+    expect(vergleichsbereich("classical")).toEqual(
+      gemessenerVergleichsbereich("classical", "chesscom"),
+    );
     expect(bereichEtwa("blitz", 1900, "fide")).toEqual(gemessenerBereich("blitz", 1900, "fide"));
     expect(vergleichsbereich("blitz", "fide")).toEqual(
       gemessenerVergleichsbereich("blitz", "fide"),
@@ -139,14 +143,14 @@ describe("Quelle je Zeitklasse und Liste", () => {
     expect(entsprichtEtwa("blitz", 1900, "fide")).toBe(
       gemessenerBereich("blitz", 1900, "fide")?.mitte,
     );
-    expect(bereichEtwa("classical", 1500)).toBeNull();
+    expect(bereichEtwa("classical", 1200)).toBeNull();
   });
 
   it("macht aus einer Spanne die äußere Hülle der beiden Bereiche, außerhalb null", () => {
     const spanne = bereichDerSpanne("rapid", 1600, 1760);
     expect(spanne?.von).toBe(bereichEtwa("rapid", 1600)?.von);
     expect(spanne?.bis).toBe(bereichEtwa("rapid", 1760)?.bis);
-    expect(bereichDerSpanne("classical", 1400, 1900)).toBeNull();
+    expect(bereichDerSpanne("classical", 1200, 1900)).toBeNull();
     expect(bereichDerSpanne("blitz", 1000, 3000, "fide")).toBeNull();
   });
 });

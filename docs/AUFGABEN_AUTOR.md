@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 26.10.2026, Version 0.3.3 (Wertung als Bereich auf chess.com und FIDE für alle drei Zeitarten, gemessen an echten Spielern; 0.3.1 nur Codepflege; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 27.10.2026, Version 0.3.4 (Wertung als Bereich auf chess.com und FIDE für alle drei Zeitarten, gemessen an einer Million Lichess-Profilen; Datensatz in Research/; 0.3.1 nur Codepflege; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.3“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.4“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -90,19 +90,19 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.3.2 und 0.3.3: Wertung als Bereich auf chess.com und FIDE (Opus, 26.10.2026)
+### Neu in 0.3.2 bis 0.3.4: Wertung als Bereich auf chess.com und FIDE (Opus, 26./27.10.2026)
 
 Der Schalter heißt jetzt „Lichess | chess.com | FIDE“. Lichess zeigt deine Zahl wie bisher.
 chess.com und FIDE zeigen statt einer Zahl einen Bereich, in dem etwa die Hälfte der Spieler mit
 deiner Lichess-Zahl steht, für alle drei Zeitarten. Gemessen an echten Spielern (Teil 2, W2).
-Typische Breite: FIDE ±100 bis ±150, chess.com ±150 bis ±250; wo wenige Spieler sind, breiter.
+Typische Breite: FIDE ±100 bis ±135, chess.com ±120 bis ±200; wo wenige Spieler sind, breiter.
 
 - [ ] N1011. **Bereich in „Deine Wertung“:** Profil › Deine Wertung, Schalter auf „chess.com“,
       dann auf „FIDE“. Statt einer Zahl steht groß ein Bereich wie „1450–1640 FIDE“, eine Stufe
       kleiner als die Lichess-Zahl. Darunter die Änderung im Ausschnitt als eine Zahl. Bei
       niedrigen Zahlen kann bei FIDE „±0“ stehen: FIDE-Wertungen fallen nicht unter 1400, unter
       etwa 1750 auf Lichess ändert sich der FIDE-Bereich deshalb kaum. Außerhalb der Messung
-      steht „–“ mit der Grenze (etwa „FIDE erst ab etwa 1550 (Lichess Klassisch)“). Passt der
+      steht „–“ mit der Grenze (etwa „chess.com erst ab etwa 1300 (Lichess Klassisch)“). Passt der
       Bereich auf eine Zeile?
 - [ ] N1012. **Drei Kacheln, drei Stellungen:** Spielen › „Deine Spielstärke“: Der Schalter hat
       drei Stellungen. Bei „chess.com“ und „FIDE“ zeigen alle drei Kacheln einen Bereich mit dem
@@ -1379,65 +1379,56 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
-### Wertung als Bereich auf chess.com und FIDE (Opus, 26.10.2026): schon umgesetzt, Widerspruch genügt
+### Wertung als Bereich auf chess.com und FIDE (Opus, 26./27.10.2026): schon umgesetzt, Widerspruch genügt
 
 Dein Wunsch: Lichess bleibt, dazu je ein Schalter für chess.com und FIDE, für jede Zeitart ein
-Bereich auf statistisch sauberem Fundament; nicht-klassisch darf er breiter sein. Erledigt
-sind die Stellung FIDE im Schalter (früher W3) und deine Klarstellung zu Lichess (früher W6).
+Bereich auf statistisch sauberem Fundament, mit einer Stichprobe von einer Million Profilen, und
+alle Zahlen aufheben (im App-Repository, Ordner Research). Alles umgesetzt.
 
-- [ ] W1. **Klassisch auf chess.com:** chess.com hat keine Wertung für Klassisch und wertet
-      Partien ab zehn Minuten als Schnellschach. Ziel ist deshalb chess.com Schnellschach. Für
-      diese Paarung gab es in der Messung nur 84 Spieler, zu wenig für Bänder; dort gilt weiter
-      der Umweg über chessgoals.com (Lichess Klassisch → chess.com Blitz → chess.com
-      Schnellschach, so baut chessgoals.com auch seine eigenen Tabellen). Beispiel: Lichess
-      Klassisch 2120 → chess.com Schnellschach etwa 1820 bis 2170. Schon umgesetzt.
-- [ ] W2. **Das Fundament: eigene Messung an echten Spielerpaaren.** Im Netz gibt es keine
-      Quelle, die die Streuung je Wertungsband veröffentlicht: chessgoals.com nennt eine Zahl
-      je Spalte, ChessMonitor (2023, 100 000 Profile) nur ein Gütemaß für Lichess Blitz,
-      andere Auswertungen (Lichess-Forum, handsonml) nur Faustregeln. Deshalb habe ich selbst
-      gemessen, mit demselben Verfahren wie ChessMonitor:
-      (a) 150 000 öffentliche Lichess-Profile aus großen Teams abgefragt, davon 14 690 mit
-      eingetragener FIDE-Zahl und 1214 mit Link zu chess.com.
-      (b) FIDE: Klarname und Zahl gegen die offizielle FIDE-Liste (Oktober 2026) abgeglichen,
-      nur eindeutige Treffer und nur bei der FIDE aktive Spieler, mit ihrer offiziellen
-      Standard-Wertung. So kann keine veraltete Selbstangabe die Messung verfälschen. Ergebnis:
-      916 Paare Blitz, 637 Schnellschach, 189 Klassisch.
-      (c) chess.com: die aktuelle Wertung der verlinkten Konten: 452 Paare Blitz, 356
-      Schnellschach.
+- [ ] W1. **Das Fundament: Messung an einer Million Lichess-Profilen.** Im Netz veröffentlicht
+      niemand die Streuung je Wertungsband, deshalb habe ich selbst gemessen:
+      (a) Eine Million aktive Spieler aus der offenen Partiendatenbank von Lichess (September
+      2026) und aus großen Teams, ihre öffentlichen Profile über die Lichess-Schnittstelle
+      (999 326 lieferbar, der Rest sind gelöschte Konten).
+      (b) FIDE: 38 740 Profile mit eingetragener FIDE-Zahl; davon 7397 eindeutig in der
+      offiziellen FIDE-Liste (Oktober 2026) gefunden, über Klarname und Zahl. Gezählt werden nur
+      dort aktive Spieler mit ihrer offiziellen Standard-Wertung, damit keine veraltete
+      Selbstangabe die Messung verfälscht.
+      (c) chess.com: 3429 Profile mit Link zu chess.com, deren aktuelle Wertung.
       (d) Statistik: Für Spieler mit (fast) derselben Lichess-Zahl (±100) das untere und obere
-      Viertel der Zielwertung. Dazwischen liegt die Hälfte der Spieler, wie beim „±“ von
-      chessgoals.com. Viertel sind robust gegen Ausreißer, deshalb wird nichts „bereinigt“. Die
-      Messunsicherheit (Bootstrap) kommt nach außen dazu: Wo wenige Spieler sind, wird der
-      Bereich von selbst breiter. Bänder unter 25 Spielern gibt es nicht.
-      Ergebnis: FIDE Blitz ±75 bis ±145, Schnellschach ±55 bis ±240, Klassisch ±70 bis ±200;
-      chess.com Blitz ±75 bis ±190, Schnellschach ±90 bis ±255. Die Klarnamen wurden nur im
-      Speicher verglichen und nirgends gespeichert; ins Repository kommen nur die Bänder.
-      Schon umgesetzt.
-- [ ] W3. **FIDE liegt etwa 120 unter chessgoals.com.** Bei chess.com stimmen Messung und
-      chessgoals.com gut überein (Blitz fast gleich, Schnellschach etwa 90 höher). Bei FIDE
-      liegt die Messung etwa 100 bis 150 niedriger, zum Beispiel Lichess Blitz 2050: gemessen
-      etwa 1650 bis 1900, chessgoals.com etwa 1920. Der wahrscheinlichste Grund steht bei
-      chessgoals.com selbst: Es hat FIDE-Spieler unter etwa 1550 als „Ausreißer“ entfernt.
-      Das hebt die Tabelle an. Dazu kommen andere Spieler: bei chessgoals.com vor allem
-      erwachsene Leser aus den USA, hier Spieler aus aller Welt, auch Jugendliche, deren
-      FIDE-Zahl dem Können oft hinterherläuft. Empfehlung: die Messung nehmen, weil sie
-      offizielle Wertungen und niemanden aussortiert. Schon umgesetzt.
-- [ ] W4. **Die Hälfte der Spieler oder mehr?** Der Bereich umfasst die Hälfte der Spieler. Für
-      zwei von drei Spielern wäre er etwa 1,4-mal so breit, für neun von zehn etwa 2,4-mal
-      (FIDE Blitz dann etwa ±250). Empfehlung: bei der Hälfte bleiben; breiter sagt kaum noch
-      etwas. Schon umgesetzt.
-- [ ] W5. **Grenzen der Messung:** FIDE Klassisch reicht nur von 1550 bis 2150 Lichess
-      Klassisch, darüber und darunter steht „–“ (zu wenige Spieler). Wer auf Lichess sehr
-      schwach ist und eine FIDE-Wertung hat, liegt fast immer bei 1450 bis 1600, weil
-      FIDE-Wertungen nicht unter 1400 fallen. Empfehlung: Wenn dir die Lücken stören, lasse ich
-      die Sammlung ein zweites Mal länger laufen (mehr Teams, etwa drei Stunden, nur
-      nacheinander, wie Lichess es verlangt) und erneuere die Bänder; ebenso einmal im Jahr.
-      Willst du das?
-- [ ] W6. **Zu chessgoals.com (deine Frage):** Ich hatte gemeint, du könntest chessgoals.com
-      um die Zahl der Spieler je Zeile bitten. Mit ihr ließe sich die Streuung je Zeile
-      schätzen. Das ist jetzt nicht mehr nötig: Die eigene Messung liefert genau das, mit
-      offiziellen FIDE-Wertungen. chessgoals.com bleibt nur noch für chess.com Klassisch
-      (W1). Nichts zu tun.
+      Viertel der Zielwertung; dazwischen liegt die Hälfte der Spieler. Die Messunsicherheit
+      (Bootstrap) kommt nach außen dazu, so wird der Bereich breiter, wo wenige Spieler sind.
+      Paare: FIDE 3564 Blitz, 2359 Schnellschach, 634 Klassisch; chess.com 1753, 1419, 283.
+      Ergebnis: FIDE ±70 bis ±170, chess.com Blitz ±75 bis ±150, Schnellschach ±100 bis ±185,
+      Klassisch ±150 bis ±260. Jetzt ist alles gemessen, auch Klassisch auf chess.com;
+      chessgoals.com bleibt nur noch als Ersatz im Code. Schon umgesetzt.
+- [ ] W2. **Klassisch auf chess.com:** chess.com hat keine Wertung für Klassisch und wertet
+      Partien ab zehn Minuten als Schnellschach. Ziel ist deshalb chess.com Schnellschach,
+      jetzt direkt gemessen (283 Spieler, Lichess Klassisch 1300 bis 2200). Schon umgesetzt.
+- [ ] W3. **FIDE liegt etwa 120 unter chessgoals.com.** Bei chess.com passen Messung und
+      chessgoals.com gut zusammen. Bei FIDE liegt die Messung 100 bis 150 tiefer. Der
+      wahrscheinlichste Grund steht bei chessgoals.com selbst: Es hat FIDE-Spieler unter etwa
+      1550 als „Ausreißer“ entfernt, das hebt die Tabelle an. Dazu kommen andere Spieler (dort
+      vor allem Erwachsene aus den USA, hier Spieler aus aller Welt, auch Jugendliche).
+      Empfehlung: die Messung nehmen. Schon umgesetzt.
+- [ ] W4. **Die Hälfte der Spieler oder mehr?** Für zwei von drei Spielern wäre der Bereich etwa
+      1,4-mal so breit, für neun von zehn etwa 2,4-mal (FIDE Blitz dann etwa ±250). Empfehlung:
+      bei der Hälfte bleiben. Schon umgesetzt.
+- [ ] W5. **Datensatz in Research/ (öffentlich, deshalb pseudonymisiert):** Das App-Repository
+      ist öffentlich. Die Rohdaten verknüpfen Lichess-Konten mit FIDE-IDs und chess.com-Konten,
+      also mit echten Personen. Deshalb steht dort statt der Lichess-Kennung ein Pseudonym
+      (mit einem geheimen Schlüssel, der nur lokal liegt), ohne FIDE-ID, ohne chess.com-Namen,
+      ohne Klarnamen und Freitexte, Zeitpunkte nur als Monat. Alle Zahlen sind vollständig da:
+      jede Wertungsart mit RD und Partien, alle eingetragenen Verbandszahlen (FIDE, USCF, ECF,
+      RCF, CFC, DSB), Land, Titel, Spielzeit, offizielle FIDE-Wertungen und chess.com-Wertungen
+      je Spieler. 4 Dateien, zusammen 67 MB; Beschreibung in Research/README.md.
+      Achtung: Der geheime Schlüssel liegt nur in dieser Cloud-Umgebung und geht mit ihr
+      verloren. Dann bekommt ein späterer Lauf neue Pseudonyme; die Zahlen bleiben nutzbar, nur
+      lassen sich dieselben Spieler nicht über zwei Läufe verfolgen. Willst du das, müsste der
+      Schlüssel an einen privaten Ort (etwa als Geheimnis der Umgebung). Sag Bescheid.
+- [ ] W6. **Zu chessgoals.com (deine Frage):** Ich hatte gemeint, du könntest dort die Zahl der
+      Spieler je Tabellenzeile erfragen. Nicht mehr nötig: Die eigene Messung liefert die
+      Streuung je Band direkt. Nichts zu tun.
 
 ### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 
@@ -1918,11 +1909,10 @@ Paket P4.
 - [ ] E3. **Zeitklasse ohne Uhr:** Partien ohne Uhr zählen als Schnellschach (wie in der
       Zugwahl der Bots). Mit R51 (Teil F) fällt „ohne Uhr“ für gewertete Partien ohnehin weg.
       Schon umgesetzt.
-- [ ] E4. **Quellen der Bereiche:** chess.com Blitz und Schnellschach und FIDE aller Zeitarten
-      sind seit 0.3.3 an echten Spielerpaaren gemessen (Teil 2, W2). Nur chess.com Klassisch
-      kommt noch aus dem Wertungsvergleich von chessgoals.com (Juli 2026, Selbstangaben aktiver
-      Spieler). Übernommen sind von dort nur Zahlen (Fakten), mit Quellenangabe hinter dem
-      Fragezeichen und in docs/LIZENZEN.md. Schon umgesetzt.
+- [ ] E4. **Quellen der Bereiche:** Seit 0.3.4 sind alle Bereiche (chess.com und FIDE, alle
+      Zeitarten) an einer Million Lichess-Profilen gemessen (Teil 2, W1). Der Wertungsvergleich
+      von chessgoals.com (Juli 2026) bleibt nur als Ersatz im Code, falls eine Messung fehlt.
+      Schon umgesetzt.
 
 ### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
 

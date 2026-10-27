@@ -5,7 +5,7 @@ liest nur die daraus gemessenen Kennzahlen (`app/src/spiel/plattformvergleich-da
 
 ## wertungsvergleich/
 
-Rund eine Million öffentliche Lichess-Profile (Oktober 2026), pseudonymisiert, mit allen
+999 326 öffentliche Lichess-Profile (Oktober 2026), pseudonymisiert, mit allen
 eingetragenen Zahlen. Erzeugt mit `pipeline/wertungsvergleich/` (sammeln, abgleich, chesscom,
 veroeffentlichen); das Verfahren steht in den Dateiköpfen dort.
 

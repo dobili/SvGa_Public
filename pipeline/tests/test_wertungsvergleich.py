@@ -1,5 +1,6 @@
 """Tests für den Wertungsvergleich (Profile kürzen, Namensabgleich, Quantile, Bänder)."""
 
+import json
 import random
 
 from pipeline.wertungsvergleich.abgleich import treffer, woerter
@@ -109,3 +110,27 @@ def test_zahlenprofil_alle_zahlen_ohne_klarnamen_und_freitext():
 def test_spielerzeile_der_partiendatenbank():
     assert SPIELERZEILE.match(b'[White "DrNykterstein"]').group(1) == b"DrNykterstein"
     assert SPIELERZEILE.match(b'[WhiteElo "2900"]') is None
+
+
+def test_oeffentliche_form_ohne_kennung_fide_id_und_chesscom_name():
+    from pipeline.wertungsvergleich.veroeffentlichen import monat, oeffentlich, pseudonym
+
+    profil = {
+        "id": "erika",
+        "perfs": {"blitz": {"rating": 1900, "rd": 60, "games": 500}},
+        "verbaende": {"fideRating": 1750},
+        "chesscom": "erika_cc",
+        "erstellt": 1_700_000_000_000,
+        "gesehen": 1_793_000_000_000,
+    }
+    fide = {"id": "erika", "fide_id": 4711, "standard": 1748, "schnell": 0, "blitz": 0, "aktiv": True}
+    konto = {"chesscom": "erika_cc", "perfs": {"blitz": {"rating": 1700, "rd": 40, "games": 900, "datum": 1}}}
+    z = oeffentlich(profil, "salz", fide, konto)
+    text = json.dumps(z)
+    for verboten in ("erika", "4711", "erika_cc"):
+        assert verboten not in text
+    assert z["p"] == pseudonym("salz", "erika") != pseudonym("anders", "erika")
+    assert z["fide_offiziell"]["standard"] == 1748
+    assert z["chesscom"]["blitz"] == {"rating": 1700, "rd": 40, "games": 900}
+    assert z["erstellt"] == monat(1_700_000_000_000) == "2023-11"
+    assert z["verbaende"] == {"fideRating": 1750}

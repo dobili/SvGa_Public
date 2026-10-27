@@ -37,6 +37,21 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Vergleich nach einem falschen Zug in allen Trainern (nur notiert)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Wird in einem Trainer ein **falscher Zug** gezogen, zeigt die App wie im Trainer „Zug erraten“
+  den gemachten Zug mit einem **roten Pfeil** und den richtigen mit einem **goldenen Pfeil**.
+- Dazu zeigt die **Engine den Stellungsverlust**, den der falsche Zug gebracht hätte (Bewertung
+  nach dem richtigen gegen die nach dem gemachten Zug, in Bauern).
+- Gilt für „all diese Trainer“, also für die Trainer mit Zugaufgaben (Taktik, Falle oder Köder,
+  Endspiel, Repertoire, Abweichung, Studien und die neuen Fallen und Eröffnungen).
+- Hat der Leser den richtigen Zug gespielt, gibt es keine Pfeile (wie beim Zügeraten seit 0.3.2).
+- Offen (zu prüfen): Welche Trainer das heute schon tun (Zugvergleich.tsx und vergleichspfeile.ts
+  gibt es für „Zug erraten“ und „Studien“); Kosten der Engine-Rechnung je falschem Zug auf dem Handy;
+  bei Aufgaben mit einer festen Lösung eines Buches ist der „richtige Zug“ die Buchlösung, nicht
+  der Engine-Zug.
+
 ## 27.10.2026 – Vorgemerkt: Weitere Fallen im Trainer „Falle oder Köder“ (nur notiert, schwerster Teil)
 
 Idee des Autors (im Chat stand „Pfeilenkabinett“ und „Pfeilen“, gemeint ist das Fallenkabinett und

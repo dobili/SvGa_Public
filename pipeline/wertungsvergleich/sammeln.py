@@ -179,8 +179,12 @@ def namen_streamen(team: str, ausgang: queue.Queue, stop: threading.Event) -> No
         print(f"Team {team}: Strom endet ({fehler})", flush=True)
 
 
-def profile_holen(namen: list[str]) -> list[dict]:
-    """Holt bis zu 300 Profile in einer Anfrage; wartet bei 429 und versucht es erneut."""
+def profile_holen(namen: list[str]) -> list[dict] | None:
+    """Holt bis zu 300 Profile in einer Anfrage; wartet bei 429 und versucht es erneut.
+
+    Ausgabe: die Profile (gelöschte Konten fehlen darin) oder None, wenn alle Versuche scheitern;
+    dann gilt das Bündel nicht als abgefragt.
+    """
     daten = ",".join(namen).encode()
     for _versuch in range(5):
         anfrage = urllib.request.Request(
@@ -197,7 +201,7 @@ def profile_holen(namen: list[str]) -> list[dict]:
         except OSError as fehler:
             print(f"Netzfehler ({fehler}), neuer Versuch", flush=True)
             time.sleep(5)
-    return []
+    return None
 
 
 def gesehene_namen(datei: Path) -> set[str]:
@@ -253,7 +257,11 @@ def profile_sammeln(ziel: Path) -> None:
     ):
         for start in range(0, len(offen), BUENDEL):
             buendel = offen[start : start + BUENDEL]
-            for nutzer in profile_holen(buendel):
+            antwort = profile_holen(buendel)
+            if antwort is None:
+                print("Bündel übersprungen, bleibt offen für den nächsten Lauf", flush=True)
+                continue
+            for nutzer in antwort:
                 alle_aus.write(json.dumps(zahlenprofil(nutzer)) + "\n")
                 kurz = kurzprofil(nutzer)
                 if kurz:

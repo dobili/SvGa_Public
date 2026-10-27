@@ -90,7 +90,7 @@ def main() -> None:
     gefunden = 0
     with (ziel / "abgleich.ndjson").open("w", encoding="utf-8") as aus:
         for start in range(0, len(namen), BUENDEL):
-            for nutzer in profile_holen(namen[start : start + BUENDEL]):
+            for nutzer in profile_holen(namen[start : start + BUENDEL]) or []:
                 realname = (nutzer.get("profile") or {}).get("realName") or ""
                 spieler = treffer(index, realname, angaben.get(nutzer["id"], 0)) if realname else None
                 if spieler:

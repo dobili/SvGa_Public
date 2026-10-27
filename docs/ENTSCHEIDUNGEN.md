@@ -53,6 +53,8 @@ sind Fallen), noch nicht bewertet und nicht umgesetzt:
 - Ein möglicher Ansatzpunkt (nur Gedanke, nicht geprüft): Engine-Bewertungen und die Fehlerarten
   der App (Schlagreflex, blinde Flecken, Taktikmotive) könnten die Bedingung „naheliegend, aber
   falsch“ prüfbar machen; die Häufigkeit des Köderzuges käme aus der Datenquelle der Eröffnungen.
+- **Mindesthäufigkeit:** Nur Fallen, die in der Praxis mit einer gewissen Mindesthäufigkeit
+  gespielt werden; die Schwelle ist noch festzulegen (Ergänzung des Autors, 27.10.2026).
 - Offen: Quellenlage und Lizenz; ob die Definition als Daten der Pipeline geprüft wird; wie Fallen im
   Bot-Dropdown zur Eröffnung markiert werden (wie Gambits); der Autor muss Fallen als Inhalt
   freigeben, weil das Buch die Quelle ist.

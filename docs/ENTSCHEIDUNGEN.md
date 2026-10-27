@@ -37,6 +37,23 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Eröffnungen nach Elo-Band über das Buch hinaus (nur notiert)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Zum Üben (Repertoire-Trainer, Gambits) und für die Eröffnungswahl der Bots kommen neben den
+  Bucheröffnungen weitere Eröffnungen hinzu, **sortiert nach Elo-Band** (die Bänder der Bots).
+- **Hauptauswahl nach Elo-Band:** Je Band stehen die drei häufigsten Eröffnungen, getrennt für
+  Weiß und Schwarz; darunter der Variantenbaum (siehe oben).
+- **Bänder anhaken, von … bis …:** Mit jedem zugeschalteten Band kommen **neue** Eröffnungen
+  dazu. Wären die drei häufigsten dieselben wie im Band davor, rücken die nächsten nach (Plätze
+  4 bis 6 usw.), sodass jedes Band drei neue bringt.
+- **Markierung:** In der Auswahl ist erkennbar, welche Eröffnung eine Bucheröffnung ist.
+- Offen: Häufigkeiten je Elo-Band brauchen eine Datenquelle (Lichess-Datenbank nach Bändern oder
+  die Praxisdatei der Maia-Eröffnungen, nicht geprüft); Nutzungsbedingungen und Quelle müssen
+  dokumentiert werden; ob „Gambits“ einen eigenen Trainer haben, wurde nicht geprüft (die Liste der
+  Trainer kennt „Falle oder Köder“, „Repertoire“ und „Abweichung“); Eröffnungen außerhalb des
+  Buches haben keine Zugfolgen des Buches, die Zugfolgen kämen aus der Datenquelle.
+
 ## 27.10.2026 – Vorgemerkt: Varianten anhaken, Schnellwahl (Ergänzung zum Variantenbaum)
 
 Ergänzung des Autors, nur notiert:

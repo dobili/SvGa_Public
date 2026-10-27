@@ -44,6 +44,9 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   den Rückfragen Q2 der Sitzung vom 26.10.2026) wird um **Chessly** erweitert. Gemeint ist
   vermutlich der Anbieter für Eröffnungstraining (Chessly); die Schreibweise stammt aus einer
   Spracheingabe und ist zu bestätigen.
+- **Umfang der Recherche (Klarstellung des Autors):** Alle drei Plattformen (Lichess, chess.com,
+  Chessly) werden allgemein darauf geprüft, ob ihre **Inhalte, Werkzeuge und Funktionen** sinnvolle
+  Ergänzungen für die App wären, nicht nur bei kurzen Trainingsformaten.
 - Die **Trainingsseiten der Website** werden darauf geprüft, auf welche Webinhalte sie verweisen;
   Inhalte, die sich direkt in die App einbauen lassen, kommen in die App (zum Beispiel statt
   eines Links ein eigener Trainer oder eine eigene Karte).

@@ -37,6 +37,17 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Gambits wie Eröffnungen, mit Zuordnung (Ergänzung, nur notiert)
+
+- Dieselben Möglichkeiten (Elo-Bänder, Variantenbaum, Schnellwahl, Haken) gelten für den
+  **Gambit-Trainer**. Ob es heute einen eigenen Gambit-Trainer gibt, wurde nicht geprüft (die
+  Trainerliste kennt „Repertoire“, „Abweichung“ und „Falle oder Köder“); sonst wäre er neu.
+- **Benennung im Gambit-Trainer:** Der Name eines Gambits sagt, **aus welcher Eröffnung** es
+  stammt, damit man es zuordnen kann.
+- **Bei den Bots:** Eine gemeinsame Auswahlliste für Eröffnungen und Gambits, **nach Eröffnung
+  geordnet**. Klappt man die Varianten einer Eröffnung auf, sind Varianten, die ein Gambit sind,
+  als **Gambit markiert**.
+
 ## 27.10.2026 – Vorgemerkt: Variantenbaum für alle Eröffnungen (Ergänzung, nur notiert)
 
 - Der Variantenbaum mit Schnellwahl und einzelnen Haken (siehe die Einträge davor) gilt für

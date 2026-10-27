@@ -37,6 +37,24 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Recherche erweitern und Webverweise prüfen (nur notiert)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Die Recherche nach passenden Inhalten und Funktionen (bisher Lichess und chess.com, Ergebnis in
+  den Rückfragen Q2 der Sitzung vom 26.10.2026) wird um **Chessly** erweitert. Gemeint ist
+  vermutlich der Anbieter für Eröffnungstraining (Chessly); die Schreibweise stammt aus einer
+  Spracheingabe und ist zu bestätigen.
+- Die **Trainingsseiten der Website** werden darauf geprüft, auf welche Webinhalte sie verweisen;
+  Inhalte, die sich direkt in die App einbauen lassen, kommen in die App (zum Beispiel statt
+  eines Links ein eigener Trainer oder eine eigene Karte).
+- Erster Blick (nur eine Suche nach Adressen in den Quelltexten, keine Prüfung der Seiten): Fast
+  alle Verweise gehen zu Lichess (mehrere hundert, vermutlich Analyse- und Übungslinks je
+  Abbildung), dazu je ein paar auf die Endspieldatenbank syzygy-tables.info, die Lichess-
+  Datenbank, den Schachbund, Stockfish, Listudy, En Croissant, chessgames.com und 365chess.com.
+  Welche davon sich einbauen lassen, ist zu prüfen (Lizenz, Offlinefähigkeit der PWA, Umfang).
+- Grundsatz dabei (CLAUDE.md): Das Buch bleibt die einzige Quelle für Inhalte; übernommene
+  Fremdinhalte werden als solche gekennzeichnet, mit Quelle und Lizenz.
+
 ## 27.10.2026 – Vorgemerkt: Vergleich nach einem falschen Zug in allen Trainern (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:

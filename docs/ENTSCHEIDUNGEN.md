@@ -37,6 +37,17 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Varianten anhaken, Schnellwahl (Ergänzung zum Variantenbaum)
+
+Ergänzung des Autors, nur notiert:
+- Aus dem Variantenbaum wählt man **Schnellwahlen**: alle Varianten, nur die drei häufigsten, nur
+  die vier häufigsten und ähnlich, um viele auf einmal anzuhaken.
+- Oder man setzt **einzelne Haken** bei den Varianten, die man üben oder spielen lassen will.
+- Dasselbe gilt für die **Bots** (beim Anlegen, in einem „erweiterten Modus“ mit Haken je
+  Variante) und für die **globale Eröffnungswahl im Spielfenster**.
+- Gehört zusammen mit dem Variantenbaum, den festen Eröffnungen für Bots und dem Regler
+  „Abweichung“ in ein gemeinsames Paket (Opus).
+
 ## 27.10.2026 – Vorgemerkt: feste Eröffnungen für eigene Bots (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:

@@ -21,6 +21,21 @@ Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Rech
 - **Umsetzung:** Anzeige „Keine Fehlerneigung“ und die vier Kurzpläne stehen seit 0.3.3 in der App (Trainer „Kurzpläne“; Stand und Serie nur als Merker auf dem Gerät, kein neues Datenformat). Der gemeinsame Knopf wartet auf einen Opus-Chat. Der Rest: In getrennten Chats parallel; jeder Chat prüft vorher die hier festgehaltenen
   Ergebnisse noch einmal gegen den Code.
 
+## 27.10.2026 – Vorgemerkt: feste Eröffnungen für eigene Bots (nur notiert, nicht beschlossen)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Beim Anlegen eines eigenen Bots lassen sich **dauerhaft feste Eröffnungen** einstellen, etwa ein
+  Bot, der nur London spielt, solange es geht.
+- **Mehrfachauswahl:** Überall, wo eine Eröffnung gewählt wird (Bot anlegen und Spielfenster),
+  lassen sich mehrere anklicken; der Bot spielt Züge aus diesen Eröffnungen, solange es möglich ist.
+- **Regler „Abweichung“:** Mit welcher Wahrscheinlichkeit der Bot von den gespeicherten
+  Eröffnungszügen abweicht; sowohl beim Anlegen als auch im Spielfenster.
+- **Vorrang:** Die Wahl im Spielfenster überschreibt die Voreinstellung des Bots. Hat ein eigener Bot
+  eine Voreinstellung, ist die globale Eröffnungswahl zunächst ausgegraut; ein Haken oder ein Tipp
+  auf die Kachel „Eröffnung“ schaltet sie frei und überschreibt dann die Voreinstellung.
+- Offen: Datenformat der eigenen Bots (neues Feld, alte Bots ohne Feld), wie die Wahrscheinlichkeit
+  mit der „Praxis“-Eröffnung (Maia) und mit den Buch-Eröffnungen zusammenspielt.
+
 ## 26.10.2026 – Bündel der Bot-Stufen für die Orden (Vorschlag des Autors, noch nicht umgesetzt)
 
 - Fünf Bündel nach Stufe: **1–3, 4–5, 6–7, 8–9, 10**.

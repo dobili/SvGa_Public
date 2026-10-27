@@ -37,6 +37,26 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Weitere Fallen im Trainer „Falle oder Köder“ (nur notiert, schwerster Teil)
+
+Idee des Autors (im Chat stand „Pfeilenkabinett“ und „Pfeilen“, gemeint ist das Fallenkabinett und
+sind Fallen), noch nicht bewertet und nicht umgesetzt:
+- Neben den Fallen des Buches werden **Fallen zu den neu hinzukommenden Eröffnungen** (siehe
+  Elo-Bänder und Variantenbaum) angeboten, je Eröffnung zunächst die **häufigsten zwei**.
+- Auch diese Fallen sollen für die **Bots auswählbar** sein.
+- **Die Definition einer Falle** ist die eigentliche Aufgabe. Entweder gibt es Quellen im Netz, die
+  einen Zug oder eine Linie als Falle nennen (mit Quelle und Lizenz), oder die App definiert sie
+  selbst. Erste Gedanken des Autors für eine eigene Definition: Eine Seite spielt einen Zug, der
+  **nicht der beste ist** und die eigene Stellung deutlich verschlechtern würde (Köder), **es sei
+  denn, der Gegner antwortet falsch**. Die falsche Antwort muss ein **naheliegender Zug für Spieler
+  sein, die die Falle nicht kennen** (zum Beispiel Schlagreflex, blinder Fleck, übersehene Gabel).
+- Ein möglicher Ansatzpunkt (nur Gedanke, nicht geprüft): Engine-Bewertungen und die Fehlerarten
+  der App (Schlagreflex, blinde Flecken, Taktikmotive) könnten die Bedingung „naheliegend, aber
+  falsch“ prüfbar machen; die Häufigkeit des Köderzuges käme aus der Datenquelle der Eröffnungen.
+- Offen: Quellenlage und Lizenz; ob die Definition als Daten der Pipeline geprüft wird; wie Fallen im
+  Bot-Dropdown zur Eröffnung markiert werden (wie Gambits); der Autor muss Fallen als Inhalt
+  freigeben, weil das Buch die Quelle ist.
+
 ## 27.10.2026 – Vorgemerkt: Häufigkeit an jeder Variante und jedem Gambit (Ergänzung, nur notiert)
 
 - Bei **jeder Variante** und **jedem Gambit** steht, wie häufig sie gespielt wird (wenn möglich).

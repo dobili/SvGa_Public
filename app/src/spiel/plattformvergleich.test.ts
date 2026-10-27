@@ -68,7 +68,7 @@ describe("Gemessene Bereiche", () => {
 
   it("ist bei FIDE Blitz in der Mitte der Tabelle etwa ±80 bis ±150 breit", () => {
     // Gemessen 26.10.2026: halbe Breite 80 bis 145 bei 50 bis 190 Spielern je Band.
-    for (const wert of [1600, 1900, 2200]) {
+    for (const wert of [1900, 2100, 2400]) {
       const b = gemessenerBereich("blitz", wert, "fide");
       const halb = b ? (b.bis - b.von) / 2 : 0;
       expect(halb).toBeGreaterThanOrEqual(60);

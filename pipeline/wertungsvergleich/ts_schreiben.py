@@ -22,7 +22,8 @@ KOPF = """/**
  * Konten mit ihrer aktuellen Wertung (Klassisch → chess.com Schnellschach).
  * Je Zeile [Lichess, von, Mitte, bis, Spieler]: Median und Viertel (25 %, 75 %) der Zielwertung bei
  * Spielern mit Lichess-Zahl ±100, die Ränder um eine Standardabweichung der Messung (Bootstrap)
- * nach außen geschoben.
+ * nach außen geschoben. FIDE erst ab dem Band, an dem die Mitte um mindestens die Hälfte jedes
+ * Lichess-Zuwachses steigt (darunter stehen fast alle FIDE-Spieler am Boden der FIDE-Wertung).
  * Paare: {paare}.
  * Abhängigkeiten: spiel/elomodell-daten.ts (Zeitklasse).
  */

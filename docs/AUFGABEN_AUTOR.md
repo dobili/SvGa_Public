@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 27.10.2026, Version 0.3.4 (Wertung als Bereich auf chess.com und FIDE für alle drei Zeitarten, gemessen an einer Million Lichess-Profilen; Datensatz in Research/; 0.3.1 nur Codepflege; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 27.10.2026, Version 0.3.5 (FIDE erst ab etwa 1800 Lichess; Wertung als Bereich auf chess.com und FIDE für alle drei Zeitarten, gemessen an einer Million Lichess-Profilen; Datensatz in Research/; 0.3.1 nur Codepflege; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.4“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.5“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -90,7 +90,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.3.2 bis 0.3.4: Wertung als Bereich auf chess.com und FIDE (Opus, 26./27.10.2026)
+### Neu in 0.3.2 bis 0.3.5: Wertung als Bereich auf chess.com und FIDE (Opus, 26./27.10.2026)
 
 Der Schalter heißt jetzt „Lichess | chess.com | FIDE“. Lichess zeigt deine Zahl wie bisher.
 chess.com und FIDE zeigen statt einer Zahl einen Bereich, in dem etwa die Hälfte der Spieler mit
@@ -100,9 +100,9 @@ Typische Breite: FIDE ±100 bis ±135, chess.com ±120 bis ±200; wo wenige Spie
 - [ ] N1011. **Bereich in „Deine Wertung“:** Profil › Deine Wertung, Schalter auf „chess.com“,
       dann auf „FIDE“. Statt einer Zahl steht groß ein Bereich wie „1450–1640 FIDE“, eine Stufe
       kleiner als die Lichess-Zahl. Darunter die Änderung im Ausschnitt als eine Zahl. Bei
-      niedrigen Zahlen kann bei FIDE „±0“ stehen: FIDE-Wertungen fallen nicht unter 1400, unter
-      etwa 1750 auf Lichess ändert sich der FIDE-Bereich deshalb kaum. Außerhalb der Messung
-      steht „–“ mit der Grenze (etwa „chess.com erst ab etwa 1300 (Lichess Klassisch)“). Passt der
+      FIDE erscheint erst ab etwa 1800 Lichess (Blitz 1750); darunter steht „–“ mit „FIDE erst
+      ab etwa 1800 (Lichess Schnellschach)“, und der Satz in der Auswertung erklärt warum
+      (siehe W7). Auch sonst steht außerhalb der Messung „–“ mit der Grenze (etwa „chess.com erst ab etwa 1300 (Lichess Klassisch)“). Passt der
       Bereich auf eine Zeile?
 - [ ] N1012. **Drei Kacheln, drei Stellungen:** Spielen › „Deine Spielstärke“: Der Schalter hat
       drei Stellungen. Bei „chess.com“ und „FIDE“ zeigen alle drei Kacheln einen Bereich mit dem
@@ -1426,6 +1426,15 @@ alle Zahlen aufheben (im App-Repository, Ordner Research). Alles umgesetzt.
       verloren. Dann bekommt ein späterer Lauf neue Pseudonyme; die Zahlen bleiben nutzbar, nur
       lassen sich dieselben Spieler nicht über zwei Läufe verfolgen. Willst du das, müsste der
       Schlüssel an einen privaten Ort (etwa als Geheimnis der Umgebung). Sag Bescheid.
+- [ ] W7. **FIDE erst ab etwa 1800 Lichess (deine Frage vom 27.10.2026):** Ja, darunter ergibt
+      FIDE keinen Sinn. Gemessen: Steigt die Lichess-Zahl um 100, steigt die FIDE-Mitte bei 1400
+      nur um 0 bis 20, bei 1700 um etwa 40, ab 1800 um 55 und mehr (in allen drei Zeitarten).
+      Darunter stehen fast alle Spieler mit FIDE-Wertung bei 1450 bis 1600, weil die
+      FIDE-Wertung bei 1400 beginnt; ein Bereich wäre dort Scheingenauigkeit. Regel: FIDE ab dem
+      Band, an dem die Mitte um mindestens die Hälfte jedes Lichess-Zuwachses steigt. Das ergibt
+      Blitz 1750, Schnellschach 1800, Klassisch 1800. Darunter steht ein Strich mit der Grenze
+      und im Satz der Auswertung die Begründung. chess.com bleibt überall, dort steigt die
+      Kurve auch unten gleichmäßig. Schon umgesetzt, Widerspruch genügt.
 - [ ] W6. **Zu chessgoals.com (deine Frage):** Ich hatte gemeint, du könntest dort die Zahl der
       Spieler je Tabellenzeile erfragen. Nicht mehr nötig: Die eigene Messung liefert die
       Streuung je Band direkt. Nichts zu tun.

@@ -53,6 +53,10 @@ SCHRITT = 50
 MINDESTZAHL = 25
 #: Weniger Bänder als hier sind keine brauchbare Tabelle; die App nimmt dann chessgoals.com.
 MINDESTBAENDER = 6
+#: FIDE erst, wo die Mitte um mindestens die Hälfte jedes Lichess-Zuwachses steigt (Wunsch des
+#: Autors, 27.10.2026): Darunter stehen fast alle FIDE-Spieler am Boden der FIDE-Wertung (1400,
+#: gemessen 1450 bis 1600), die Lichess-Zahl sagt dort kaum etwas über FIDE.
+MINDESTSTEIGUNG = 0.5
 ZIEHUNGEN = 300
 RUNDUNG = 5
 
@@ -191,6 +195,22 @@ def tabelle(paare: list[tuple[int, int]]) -> list[list[int]]:
     return [[z[0], *(round(s[k] / RUNDUNG) * RUNDUNG for s in spalten), z[4]] for k, z in enumerate(zeilen)]
 
 
+def ab_aussagekraeftig(zeilen: list[list[int]]) -> list[list[int]]:
+    """Die Tabelle ab dem ersten Band, an dem die Mitte mit Steigung MINDESTSTEIGUNG steigt.
+
+    Steigung je Band über ±100 Lichess-Punkte (zwei Bänder links und rechts).
+    Beispiel (Messung 27.10.2026): FIDE Blitz 1700 → +42 je 100, 1800 → +57; die Tabelle beginnt
+    bei 1800. Sonderfall: erreicht kein Band die Steigung, bleibt die Tabelle leer.
+    """
+    mitte = {z[0]: z[2] for z in zeilen}
+    for i, zeile in enumerate(zeilen):
+        x = zeile[0]
+        links, rechts = mitte.get(x - FENSTER), mitte.get(x + FENSTER)
+        if links is not None and rechts is not None and (rechts - links) / (2 * FENSTER) >= MINDESTSTEIGUNG:
+            return zeilen[i:]
+    return []
+
+
 def lesen(datei: Path) -> list[dict]:
     """Eine ndjson-Datei als Liste; fehlt sie, leer."""
     if not datei.exists():
@@ -211,7 +231,9 @@ def auswerten(ziel: Path) -> dict:
             ("fide", abgeglichene_paare(profile, abgleich, tempo, jetzt_ms)),
             ("chesscom", chesscom_paare(werte, chesscom, tempo, jetzt_ms // 1000)),
         ):
-            ergebnis[liste][tempo] = tabelle(paare)
+            voll = tabelle(paare)
+            ergebnis[liste][tempo] = ab_aussagekraeftig(voll) if liste == "fide" else voll
+            ergebnis.setdefault("voll", {}).setdefault(liste, {})[tempo] = voll
             ergebnis["paare"][liste][tempo] = len(paare)
     ergebnis["profile"] = len(profile)
     return ergebnis

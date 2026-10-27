@@ -134,3 +134,14 @@ def test_oeffentliche_form_ohne_kennung_fide_id_und_chesscom_name():
     assert z["chesscom"]["blitz"] == {"rating": 1700, "rd": 40, "games": 900}
     assert z["erstellt"] == monat(1_700_000_000_000) == "2023-11"
     assert z["verbaende"] == {"fideRating": 1750}
+
+
+def test_fide_erst_ab_aussagekraeftiger_steigung():
+    from pipeline.wertungsvergleich.auswerten import ab_aussagekraeftig
+
+    # Flach bis 1600 (Boden), danach Steigung 0,6 je Punkt.
+    zeilen = [
+        [x, 0, 1500 if x <= 1600 else 1500 + round(0.6 * (x - 1600)), 0, 50] for x in range(1200, 2201, 50)
+    ]
+    assert ab_aussagekraeftig(zeilen)[0][0] == 1700
+    assert ab_aussagekraeftig([[x, 0, 1500, 0, 50] for x in range(1200, 2000, 50)]) == []

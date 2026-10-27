@@ -6026,3 +6026,13 @@ Zahlen speichern; Ablage im App-Repository im Ordner Research.
   Umgebung abgelehnt; der Autor entschied sich für Research.
 - **Korrekturen:** Ein gescheitertes Bündel gilt nicht mehr als abgefragt; die beim Neustart
   beschädigte gzip-Datei wurde repariert (bis zum letzten gesicherten Stand lesbar).
+
+## FIDE erst ab etwa 1800 Lichess (27.10.2026, Opus, Version 0.3.5)
+
+Frage des Autors: Ergibt FIDE erst ab einem bestimmten Wert Sinn? Ja. Gemessene Steigung der
+FIDE-Mitte je 100 Lichess: bei 1400 0 bis 20, bei 1700 etwa 40, ab 1800 55 und mehr. Darunter
+sitzen fast alle Spieler mit FIDE-Wertung am Boden (1450 bis 1600, FIDE beginnt bei 1400).
+Regel in `pipeline/wertungsvergleich/auswerten.py` (`ab_aussagekraeftig`, MINDESTSTEIGUNG 0,5):
+FIDE-Tabelle ab Blitz 1750, Schnellschach 1800, Klassisch 1800. Darunter Strich mit Grenze, im
+Satz der Auswertung die Begründung (`spielstaerke.entsprichtFideUnter`). Die vollständigen
+Tabellen bleiben in `ergebnis.json` (`voll`). Rückfrage W7.

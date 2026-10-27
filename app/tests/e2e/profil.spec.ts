@@ -110,9 +110,13 @@ test("Profil: Wertung als Bereich auf chess.com und FIDE, die Wahl bleibt (26.10
   );
   await page.setViewportSize({ width: 400, height: 900 });
   await karte.screenshot({ path: "test-results/bilder/wertung-umschalter.png" });
-  // Dritte Stellung FIDE (seit 0.3.3): ebenfalls ein Bereich, mit „FIDE“ dahinter.
+  // Dritte Stellung FIDE (seit 0.3.3): unter etwa 1800 Lichess sagt die Zahl wenig über FIDE
+  // (seit 0.3.5), deshalb bei Schnellschach 1680 ein Strich mit der Grenze.
   await massstab.getByRole("radio", { name: "FIDE" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^\d{4}–\d{4}FIDE/);
+  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–FIDE/);
+  await expect(karte.getByTestId("massstab-ausserhalb")).toHaveText(
+    "FIDE erst ab etwa 1800 (Lichess Schnellschach)",
+  );
   await karte.screenshot({ path: "test-results/bilder/wertung-fide.png" });
   await massstab.getByRole("radio", { name: "chess.com" }).click();
   // Klassisch 1200 liegt unter der Messung (chess.com für Klassisch erst ab 1300): „–“ und die Grenze.

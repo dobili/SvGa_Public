@@ -82,15 +82,20 @@ describe("Maßstab der eigenen Wertung", () => {
       bis: mitte + 200,
       partien: 1,
     });
-    const rapid = bereichEtwa("rapid", 1680);
-    const fide = bereichEtwa("rapid", 1680, "fide");
-    expect(entsprichtText(schaetzung("rapid", 1680))).toBe(
+    const rapid = bereichEtwa("rapid", 2000);
+    const fide = bereichEtwa("rapid", 2000, "fide");
+    expect(entsprichtText(schaetzung("rapid", 2000))).toBe(
       `Deine Zahl gilt für Schnellschach und richtet sich nach Lichess; Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei ${rapid?.von} bis ${rapid?.bis}. Beim Weltschachbund (FIDE) etwa ${fide?.von} bis ${fide?.bis}.`,
     );
     const klassisch = entsprichtText(schaetzung("classical", 2120));
     expect(klassisch).toContain("auf chess.com Schnellschach etwa bei");
     expect(klassisch).toContain("wertet alle Partien ab zehn Minuten als Schnellschach");
     expect(klassisch).toMatch(/Beim Weltschachbund \(FIDE\) etwa \d{4} bis \d{4}\.$/);
+    // Unter etwa 1800 Lichess sagt die Zahl wenig über FIDE: Begründung statt Bereich.
+    expect(entsprichtText(schaetzung("rapid", 1680))).toMatch(
+      /Für FIDE sagt eine Lichess-Zahl unter etwa 1800 wenig: .* bei 1400 beginnt\.$/,
+    );
+    expect(zahlImMassstab("blitz", 1500, "fide").ausserhalb).toBe(true);
     // Unter 1300 Lichess Klassisch kein Vergleichswert (Messung vom 27.10.2026).
     expect(entsprichtText(schaetzung("classical", 1200))).toContain("keinen Vergleichswert");
   });

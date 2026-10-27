@@ -8,7 +8,7 @@
  */
 import { t } from "../../../i18n/sprache";
 import type { Wertungsschaetzung, Wertungstempo } from "../../../spiel/elomodell";
-import { bereichEtwa, CHESSCOM_ZEITKLASSE } from "../../../spiel/umrechnung";
+import { bereichEtwa, CHESSCOM_ZEITKLASSE, vergleichsbereich } from "../../../spiel/umrechnung";
 
 /** „Blitz“, „Schnellschach“, „Klassisch“. */
 export function zeitklassenname(tempo: Wertungstempo): string {
@@ -17,7 +17,7 @@ export function zeitklassenname(tempo: Wertungstempo): string {
 
 /**
  * Der Satz zur Entsprechung als Bereich (spiel/umrechnung.ts, bereichEtwa); bei Klassisch der
- * Hinweis, dass chess.com dafür Schnellschach wertet; wo die Tabelle reicht, dazu FIDE.
+ * Hinweis, dass chess.com dafür Schnellschach wertet; dazu FIDE (unter der Grenze die Begründung).
  * Beispiel: Schnellschach 1680 → „Deine Zahl gilt für Schnellschach und richtet sich nach Lichess;
  * Spieler mit dieser Zahl stehen auf chess.com Schnellschach etwa bei 1170 bis 1510.“; Klassisch
  * 2120 → „… auf chess.com Schnellschach etwa bei 1820 bis 2170 (chess.com wertet alle Partien ab
@@ -32,10 +32,25 @@ export function entsprichtText(s: Wertungsschaetzung): string {
   const ziel = bereichEtwa(s.tempo, s.mitte);
   if (ziel === null) return t("spielstaerke.entsprichtOhne", { zeitklasse, liste });
   const satz = t("spielstaerke.entspricht", { zeitklasse, liste, von: ziel.von, bis: ziel.bis });
-  const fide = bereichEtwa(s.tempo, s.mitte, "fide");
   return [
     satz,
     ...(s.tempo === "classical" ? [t("spielstaerke.entsprichtKlassisch")] : []),
-    ...(fide ? [t("spielstaerke.entsprichtFide", { von: fide.von, bis: fide.bis })] : []),
+    ...fideSatz(s),
   ].join(" ");
+}
+
+/**
+ * Der Satz zu FIDE: der Bereich, unter der Grenze der Messung die Begründung, sonst nichts.
+ * Warum die Begründung: Unter etwa 1800 Lichess stehen fast alle FIDE-Spieler am Boden der
+ * FIDE-Wertung (pipeline/wertungsvergleich/auswerten.py, MINDESTSTEIGUNG); ein Bereich wäre dort
+ * Scheingenauigkeit (Wunsch des Autors, 27.10.2026).
+ * Beispiel: Blitz 1500 → „Für FIDE sagt eine Lichess-Zahl unter etwa 1750 wenig: …“.
+ */
+function fideSatz(s: Wertungsschaetzung): string[] {
+  const fide = bereichEtwa(s.tempo, s.mitte, "fide");
+  if (fide) return [t("spielstaerke.entsprichtFide", { von: fide.von, bis: fide.bis })];
+  const grenze = vergleichsbereich(s.tempo, "fide");
+  return grenze && s.mitte < grenze.von
+    ? [t("spielstaerke.entsprichtFideUnter", { grenze: grenze.von })]
+    : [];
 }

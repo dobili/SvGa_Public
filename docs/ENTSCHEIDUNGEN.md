@@ -37,6 +37,14 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Variantenbaum für alle Eröffnungen (Ergänzung, nur notiert)
+
+- Der Variantenbaum mit Schnellwahl und einzelnen Haken (siehe die Einträge davor) gilt für
+  **alle** angebotenen Eröffnungen: die des Buches und die zusätzlichen nach Elo-Band.
+- Folge für die Planung: Die Varianten einer Eröffnung kommen aus derselben Datenquelle wie die
+  Häufigkeiten je Elo-Band; sie werden einmal erzeugt und überall verwendet (Repertoire-Trainer,
+  Bots, globale Eröffnungswahl).
+
 ## 27.10.2026 – Vorgemerkt: Eröffnungen nach Elo-Band über das Buch hinaus (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:

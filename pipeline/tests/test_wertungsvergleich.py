@@ -4,7 +4,7 @@ import random
 
 from pipeline.wertungsvergleich.abgleich import treffer, woerter
 from pipeline.wertungsvergleich.auswerten import fide_paare, monoton, quantil, tabelle
-from pipeline.wertungsvergleich.sammeln import chesscom_name, kurzprofil
+from pipeline.wertungsvergleich.sammeln import SPIELERZEILE, chesscom_name, kurzprofil, zahlenprofil
 
 JETZT_MS = 1_800_000_000_000
 
@@ -74,3 +74,38 @@ def test_tabelle_trifft_eine_bekannte_streuung():
     assert abs(mitte - 1500) <= 15
     assert 55 <= (bis - von) / 2 <= 95
     assert anzahl > 500
+
+
+def test_zahlenprofil_alle_zahlen_ohne_klarnamen_und_freitext():
+    nutzer = {
+        "id": "b",
+        "title": "FM",
+        "perfs": {
+            "bullet": {"rating": 2000, "rd": 50, "games": 900, "prog": 3},
+            "puzzle": {"rating": 2400, "rd": 80, "games": 3000, "prog": 0},
+        },
+        "profile": {
+            "fideRating": 2210,
+            "dsbRating": 2190,
+            "realName": "Erika Muster",
+            "bio": "Hallo",
+            "location": "Berlin",
+            "links": "https://chess.com/member/Erika",
+            "flag": "DE",
+        },
+        "playTime": {"total": 12345},
+        "tosViolation": True,
+    }
+    z = zahlenprofil(nutzer)
+    assert z["perfs"]["bullet"]["rating"] == 2000
+    assert z["perfs"]["puzzle"]["games"] == 3000
+    assert z["verbaende"] == {"fideRating": 2210, "dsbRating": 2190}
+    assert z["chesscom"] == "erika"
+    assert z["regelverstoss"] is True
+    for verboten in ("Erika Muster", "Hallo", "Berlin"):
+        assert verboten not in str(z)
+
+
+def test_spielerzeile_der_partiendatenbank():
+    assert SPIELERZEILE.match(b'[White "DrNykterstein"]').group(1) == b"DrNykterstein"
+    assert SPIELERZEILE.match(b'[WhiteElo "2900"]') is None

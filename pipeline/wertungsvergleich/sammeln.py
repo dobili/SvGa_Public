@@ -1,9 +1,9 @@
 """Sammelt öffentliche Lichess-Profile mit FIDE-Zahl oder Link zu chess.com (nur lokal).
 
-Aufruf (im Hauptordner des Repositorys, dauert je nach Ziel 30 bis 90 Minuten):
+Aufruf (im Hauptordner des Repositorys; eine Million Profile brauchen mehrere Stunden):
 
-    python -m pipeline.wertungsvergleich.sammeln --schritt namen --namen 150000
-    python -m pipeline.wertungsvergleich.sammeln --schritt profile
+    python -m pipeline.wertungsvergleich.sammeln --schritt datenbank --namen 1000000
+    python -m pipeline.wertungsvergleich.sammeln --schritt profile   # mehrere Stunden
 
 Rolle im Gesamtbild: Die App zeigt die eigene Wertung (Lichess-Maßstab) als Bereich auf chess.com
 und FIDE (Wunsch des Autors, 26.10.2026). Veröffentlichte Vergleiche (chessgoals.com, ChessMonitor)
@@ -25,6 +25,8 @@ Bei Antwort 429 wartet das Skript eine Minute (Regel der Lichess-Schnittstelle).
 from __future__ import annotations
 
 import argparse
+import gzip
+import io
 import json
 import queue
 import re
@@ -53,6 +55,13 @@ BUENDEL = 300
 WARTEN_BEI_429 = 60
 PAUSE_ZWISCHEN_BUENDELN = 1.0
 ZEITKLASSEN = ("blitz", "rapid", "classical")
+#: Alle Wertungsarten eines Profils, die gespeichert werden (auch Bullet, Fernschach, Aufgaben).
+ALLE_WERTUNGEN = ("ultraBullet", "bullet", "blitz", "rapid", "classical", "correspondence", "puzzle")
+#: Eingetragene Wertungen anderer Verbände im Lichess-Profil.
+VERBANDSZAHLEN = ("fideRating", "uscfRating", "ecfRating", "rcfRating", "cfcRating", "dsbRating")
+#: Offene Partiendatenbank von Lichess (CC0), Quelle der Namen aktiver Spieler.
+DATENBANK = "https://database.lichess.org/standard/lichess_db_standard_rated_{monat}.pgn.zst"
+SPIELERZEILE = re.compile(rb'^\[(?:White|Black) "([^"]+)"\]')
 CHESSCOM_LINK = re.compile(r"chess\.com/(?:member|players?|profile)/([A-Za-z0-9_-]{3,25})", re.I)
 KOPF = {"User-Agent": "schach-von-grund-auf.com Wertungsvergleich (Kontakt im Impressum)"}
 
@@ -91,6 +100,68 @@ def kurzprofil(nutzer: dict) -> dict | None:
             if k in perfs
         },
     }
+
+
+def zahlenprofil(nutzer: dict) -> dict:
+    """Alle eingetragenen Zahlen eines Profils für spätere Auswertungen (Wunsch des Autors, 27.10.2026).
+
+    Gespeichert werden Kennung, Wertungen mit RD und Partien je Wertungsart, die Zahlen anderer
+    Verbände, Land, Titel, Zeiten und Merkmale (Regelverstoß, gesperrt). Kein Klarname, keine
+    Freitexte (Ort, Über mich); aus dem Linkfeld nur der chess.com-Name.
+    """
+    profil = nutzer.get("profile") or {}
+    perfs = nutzer.get("perfs") or {}
+    spielzeit = nutzer.get("playTime") or {}
+    return {
+        "id": nutzer["id"],
+        "perfs": {
+            k: {f: perfs[k].get(f) for f in ("rating", "rd", "games", "prog", "prov")}
+            for k in ALLE_WERTUNGEN
+            if k in perfs
+        },
+        "verbaende": {k: profil[k] for k in VERBANDSZAHLEN if profil.get(k)},
+        "chesscom": chesscom_name(profil.get("links", "")),
+        "land": profil.get("flag"),
+        "titel": nutzer.get("title"),
+        "erstellt": nutzer.get("createdAt"),
+        "gesehen": nutzer.get("seenAt"),
+        "spielzeit": spielzeit.get("total"),
+        "regelverstoss": bool(nutzer.get("tosViolation")),
+        "gesperrt": bool(nutzer.get("disabled")),
+    }
+
+
+def namen_aus_datenbank(ziel: Path, ziel_namen: int, monat: str) -> None:
+    """Schritt 1 (seit 27.10.2026): Namen aktiver Spieler aus der Partiendatenbank eines Monats.
+
+    Warum: Die Teamlisten fließen mit etwa 50 Namen je Sekunde, eine Million bräuchte über fünf
+    Stunden. Die Datenbank (database.lichess.org, frei, CC0) liest sich mit etwa 30 MB je Sekunde
+    und belastet die Schnittstelle nicht. Gelesen wird nur so weit, bis ``ziel_namen`` verschiedene
+    Namen beisammen sind; die Spieler haben im Monat gewertet gespielt, sind also aktiv.
+    """
+    import zstandard
+
+    ziel.mkdir(parents=True, exist_ok=True)
+    datei = ziel / "namen.txt"
+    bekannt = gesehene_namen(datei)
+    anfrage = urllib.request.Request(DATENBANK.format(monat=monat), headers=KOPF)
+    with (
+        urllib.request.urlopen(anfrage, timeout=120) as antwort,
+        datei.open("a", encoding="utf-8") as aus,
+    ):
+        leser = io.BufferedReader(zstandard.ZstdDecompressor().stream_reader(antwort))
+        for zeile in leser:
+            treffer = SPIELERZEILE.match(zeile)
+            if not treffer:
+                continue
+            name = treffer.group(1).decode("utf-8", "replace").lower()
+            if name not in bekannt:
+                bekannt.add(name)
+                aus.write(name + "\n")
+                if len(bekannt) % 100_000 == 0:
+                    print(f"{len(bekannt)} Namen", flush=True)
+                if len(bekannt) >= ziel_namen:
+                    return
 
 
 def namen_streamen(team: str, ausgang: queue.Queue, stop: threading.Event) -> None:
@@ -166,17 +237,24 @@ def namen_sammeln(ziel: Path, ziel_namen: int) -> None:
 
 
 def profile_sammeln(ziel: Path) -> None:
-    """Schritt 2: Profile zu allen Namen aus namen.txt, die noch nicht abgefragt sind."""
-    abgefragt = gesehene_namen(ziel / "abgefragt.txt")
+    """Schritt 2: Profile zu allen Namen aus namen.txt, die noch nicht abgefragt sind.
+
+    Jedes Profil kommt mit allen Zahlen nach ``alle.ndjson.gz`` (``zahlenprofil``); Profile mit
+    FIDE-Zahl oder chess.com-Link zusätzlich als Kurzprofil nach ``profile.ndjson`` (für Abgleich
+    und Auswertung). Erledigte Namen stehen in ``alle_abgefragt.txt`` (fortsetzbar).
+    """
+    abgefragt = gesehene_namen(ziel / "alle_abgefragt.txt")
     offen = [n for n in sorted(gesehene_namen(ziel / "namen.txt")) if n not in abgefragt]
     treffer = 0
     with (
-        (ziel / "abgefragt.txt").open("a", encoding="utf-8") as namen_aus,
+        (ziel / "alle_abgefragt.txt").open("a", encoding="utf-8") as namen_aus,
         (ziel / "profile.ndjson").open("a", encoding="utf-8") as profile_aus,
+        gzip.open(ziel / "alle.ndjson.gz", "at", encoding="utf-8") as alle_aus,
     ):
         for start in range(0, len(offen), BUENDEL):
             buendel = offen[start : start + BUENDEL]
             for nutzer in profile_holen(buendel):
+                alle_aus.write(json.dumps(zahlenprofil(nutzer)) + "\n")
                 kurz = kurzprofil(nutzer)
                 if kurz:
                     profile_aus.write(json.dumps(kurz) + "\n")
@@ -184,6 +262,7 @@ def profile_sammeln(ziel: Path) -> None:
             namen_aus.write("\n".join(buendel) + "\n")
             namen_aus.flush()
             profile_aus.flush()
+            alle_aus.flush()
             print(f"{start + len(buendel)} von {len(offen)}, {treffer} Treffer", flush=True)
             time.sleep(PAUSE_ZWISCHEN_BUENDELN)
 
@@ -192,10 +271,13 @@ def main() -> None:
     """Befehlszeile: Zielordner und Zahl der Namen."""
     teiler = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     teiler.add_argument("--ziel", type=Path, default=Path("buch/arbeit/wertungsvergleich"))
-    teiler.add_argument("--namen", type=int, default=150_000)
-    teiler.add_argument("--schritt", choices=("namen", "profile"), required=True)
+    teiler.add_argument("--namen", type=int, default=1_000_000)
+    teiler.add_argument("--monat", default="2026-09", help="Monat der Partiendatenbank, JJJJ-MM")
+    teiler.add_argument("--schritt", choices=("datenbank", "namen", "profile"), required=True)
     argumente = teiler.parse_args()
-    if argumente.schritt == "namen":
+    if argumente.schritt == "datenbank":
+        namen_aus_datenbank(argumente.ziel, argumente.namen, argumente.monat)
+    elif argumente.schritt == "namen":
         namen_sammeln(argumente.ziel, argumente.namen)
     else:
         profile_sammeln(argumente.ziel)

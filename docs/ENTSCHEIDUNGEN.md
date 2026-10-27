@@ -37,6 +37,15 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Häufigkeit an jeder Variante und jedem Gambit (Ergänzung, nur notiert)
+
+- Bei **jeder Variante** und **jedem Gambit** steht, wie häufig sie gespielt wird (wenn möglich).
+- Gilt überall, wo Varianten oder Gambits gewählt werden: Repertoire-Trainer, Gambit-Trainer,
+  Bots und globale Eröffnungswahl.
+- Offen: In welcher Form (Prozent der Partien in der Eröffnung, Zahl der Partien, Rangplatz),
+  für welches Elo-Band die Zahl gilt, und was bei fehlender Datenlage angezeigt wird (zum Beispiel
+  „zu selten für eine Angabe“).
+
 ## 27.10.2026 – Vorgemerkt: Gambits wie Eröffnungen, mit Zuordnung (Ergänzung, nur notiert)
 
 - Dieselben Möglichkeiten (Elo-Bänder, Variantenbaum, Schnellwahl, Haken) gelten für den

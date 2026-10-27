@@ -37,6 +37,25 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
   der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
   Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
 
+## 27.10.2026 – Vorgemerkt: Gamifizierung insgesamt (nur notiert)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Die Orden gehen schon in diese Richtung; gewünscht ist **insgesamt ein Belohnungssystem**, das
+  Jugendliche und junge Erwachsene zum häufigen Üben motiviert, auch wenn die Belohnungen nur
+  digital sind.
+- Als Vorbild dienen **Chessly** und vermutlich **chess.com**; die Recherche (siehe Eintrag davor)
+  soll dazu die vorhandenen Mechanismen sammeln und bewerten, was zur App passt.
+- Schon beschlossen und passend: Ringe und Orden (Bündel der Bot-Stufen), Glückwunsch mit Ton, Serie
+  der Tagesaufgabe (seit 0.3.3), Startanimation mit den gesammelten Orden.
+- Ideen aus der Branche, die die Recherche prüfen soll (nur Gedanken, nicht bewertet): Tagesziel und
+  Serie, Erfahrungspunkte und Stufen, Abzeichen für Meilensteine, Wochenziele, Rückblick „Dein
+  Monat“, Überraschungsbelohnungen. Grenze, die der Autor setzen müsste: kein Druck durch
+  Verlustängste (Serien, die „verfallen“), keine Werbung, keine Daten an Dritte (Datenschutz der
+  App).
+- Offen: Welche Mechanismen zum Ton des Buches passen (Lernbuch für Einsteiger bis etwa 2000 Elo);
+  wo die Fortschrittsdaten liegen (Speicherformat, Datensicherung); Prüfung bei jeder Änderung,
+  ob die Texte „freiwillig“ bleiben.
+
 ## 27.10.2026 – Vorgemerkt: Recherche erweitern und Webverweise prüfen (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:

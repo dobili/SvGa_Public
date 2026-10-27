@@ -21,6 +21,22 @@ Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Rech
 - **Umsetzung:** Anzeige „Keine Fehlerneigung“ und die vier Kurzpläne stehen seit 0.3.3 in der App (Trainer „Kurzpläne“; Stand und Serie nur als Merker auf dem Gerät, kein neues Datenformat). Der gemeinsame Knopf wartet auf einen Opus-Chat. Der Rest: In getrennten Chats parallel; jeder Chat prüft vorher die hier festgehaltenen
   Ergebnisse noch einmal gegen den Code.
 
+## 27.10.2026 – Vorgemerkt: Variantenbaum im Repertoire-Trainer (nur notiert, nicht beschlossen)
+
+Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+- Für alle Eröffnungen, die im Buch vorkommen, kommt nach der Wahl der Eröffnung eine **zweite
+  Auswahl mit benannten Varianten** aus Lichess (Zahl: die 10 bis 20 häufigsten je Eröffnung,
+  sortiert nach Häufigkeit).
+- Hat eine Variante keinen Namen, heißt sie nach dem **ersten Zug, in dem sie von den anderen
+  abweicht**.
+- Weil die Varianten an verschiedenen Stellen abzweigen, als **aufklappbarer Baum**: Sind die
+  ersten Züge für alle gleich (etwa zwei), beginnt der Baum erst beim ersten Zug, an dem sich
+  die Äste trennen; die Äste stehen nach Häufigkeit.
+- Offen: Woher die Häufigkeiten kommen (Lichess-Datenbank oder die vorhandene Praxisdatei der
+  Maia-Eröffnungen, nicht geprüft), ob die Auswahl nur im Repertoire-Trainer steht oder auch bei
+  der Eröffnungswahl der Bots (siehe die vorgemerkte Mehrfachauswahl) und ob die Varianten als
+  Daten der Pipeline erzeugt werden (Quellen und Lizenz dokumentieren).
+
 ## 27.10.2026 – Vorgemerkt: feste Eröffnungen für eigene Bots (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:

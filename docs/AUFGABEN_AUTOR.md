@@ -1554,6 +1554,27 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q4 Mehr Meisterpartien für „Zug erraten“: Quelle und Lizenz (30.10.2026)
+
+Heute übt „Zug erraten“ an den Meisterpartien aus Kapitel 11 deines Buches. Für mehr Partien habe
+ich die freien Quellen geprüft:
+
+- Die Lichess-Partiedatenbank (Online-Partien) ist CC0, also ohne jede Bedingung. Das sind aber
+  keine Meisterpartien am Brett.
+- Die Lichess-Datenbank der **Turnierübertragungen** (rund 1,26 Millionen Partien aus offiziellen
+  Turnieren am Brett, monatlich, auch Weltklasse) steht unter **CC BY-SA 4.0**: Wir müssen die
+  Quelle nennen, und die Datei mit den ausgewählten Partien steht dann ebenfalls unter CC BY-SA.
+  Diese Lizenz verträgt sich mit der GPL der App (Creative Commons hat CC BY-SA 4.0 als
+  einseitig vereinbar mit GPLv3 erklärt). Dein Buch berührt das nicht.
+- Sammlungen wie „PGN Mentor“ oder „KingBase“ haben keine klare freie Lizenz; die lasse ich weg.
+
+- [ ] Q4-1. **Empfehlung:** Partien aus den Lichess-Übertragungen nehmen, nur klassische
+      Bedenkzeit, beide Spieler über 2500, mindestens 30 Halbzüge, entschiedene Partien, je
+      Eröffnung des Buches ein paar, zusammen etwa 60. In der App als „Zusatzinhalt (nicht aus
+      dem Buch)“ gekennzeichnet, mit Quelle „Lichess-Übertragungen, CC BY-SA 4.0“ an jeder Partie
+      und in den Lizenzen. Weil das eine Lizenzzusage für die veröffentlichte App ist, baue ich es
+      erst nach deinem Ja ein. Einverstanden?
+
 ### Q3 Eröffnungspaket, Stufe 1: die Datenfrage (30.10.2026)
 
 Ergebnis: Wir brauchen keine neue Quelle. Die App hat seit dem Praxisbuch (0.2.128) einen ganzen

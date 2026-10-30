@@ -123,3 +123,27 @@
   justify-content: center;
   font-weight: 600;
 }
+
+/* Fortsetzung durchspielen mit Balken (Folgespieler): Züge als Zeile, der aktuelle golden. */
+.folgespieler {
+  display: grid;
+  gap: var(--raster);
+}
+
+.folgespieler-zuege {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--raster);
+}
+
+.folgespieler-zuege [aria-current="step"] {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.folgespieler-knoepfe {
+  flex-wrap: wrap;
+}

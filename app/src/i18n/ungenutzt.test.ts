@@ -107,6 +107,8 @@ const ABGELOEST: ReadonlySet<string> = new Set([
   "training.faelligAnzahl",
   "training.faelligEine",
   "training.wiederholen",
+  // Falle oder Köder: Warnsignale vorher als Hinweis, danach der Satz zum Nutzen (Punkt F).
+  "fallentrainer.warnsignaleDanach",
 ]);
 
 describe("Texte in de.json", () => {

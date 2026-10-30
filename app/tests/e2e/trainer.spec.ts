@@ -136,7 +136,7 @@ test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage"
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
 
-test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale danach", async ({
+test("Falle oder Köder: Warnsignale als Hinweis vorher, danach Lösung mit Balken", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -145,12 +145,18 @@ test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale da
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Der Gegner hat gerade");
   await expect(runde).toContainText("Falle oder Geschenk?");
-  // Die Warnsignale kommen erst nach der Antwort (Wunsch des Autors, P4 R50).
+  // Seit dem Nebenchat (30.10.2026): Die Warnsignale sind vorher ein freiwilliger Hinweis.
   await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
+  await runde.getByRole("button", { name: "Hinweis: Warnsignale zeigen" }).click();
+  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
-  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
+  // Danach nur die Lösung: Fortsetzung mit Bewertungsbalken, keine Warnsignal-Marken mehr.
+  await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
   await expect(runde).toContainText("Fortsetzung laut Engine:");
+  const folge = page.getByTestId("falle-folge");
+  await expect(folge.getByTestId("bewertungsbalken")).toBeVisible();
+  await folge.getByRole("button", { name: "Einen Zug vor" }).click();
   await page.screenshot({ path: "test-results/bilder/trainer-falle.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");

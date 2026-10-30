@@ -4,12 +4,13 @@
  *
  * Rolle im Gesamtbild: Trainer „falle“ (Pflichtenheft 7: „Die Engine spielt den Fallensteller und
  * bietet Material an. Du entscheidest, ob du nimmst.“). Der Köder-Zug steht als roter Pfeil am
- * Brett, das Angebot als grauer (P4, R50); die Warnsignale (Kapitel 4, k4-warnsignale) erscheinen
- * erst nach der Antwort, zusammen mit der Widerlegung aus der Engine-Prüfung und dem Wert vor und
- * nach dem Nehmen.
+ * Brett, das Angebot als grauer (P4, R50). Seit dem Nebenchat (30.10.2026, Wunsch des Autors):
+ * Die Warnsignale (Kapitel 4, k4-warnsignale) sind vor der Entscheidung ein freiwilliger
+ * Hinweis; nach der Entscheidung zeigt das Brett nur die Lösung, die Fortsetzung lässt sich mit
+ * Bewertungsbalken vorspielen (Folgespieler), und ein Satz sagt, ob die Signale geholfen hätten.
  * Abhängigkeiten: training/fallentrainer.ts, analyse/k4-warnsignale.ts, Trainerbrett.
  */
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { warnsignale } from "../../analyse/k4-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Fallenaufgabe as Aufgabe } from "../../daten/trainerdaten";
@@ -22,6 +23,8 @@ import {
   widerlegungszug,
   wirkungDerWiderlegung,
 } from "../../training/fallentrainer";
+import { warnnutzen, type Warnnutzen } from "../../training/fallenwarnung";
+import { Folgespieler } from "./Folgespieler";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -87,9 +90,25 @@ function pfeile(aufgabe: Aufgabe, entschieden: boolean): Markierung[] {
   return marken;
 }
 
+/** Der Satz zum Nutzen der Warnsignale nach der Entscheidung. */
+function Warnnutzensatz({ nutzen }: { nutzen: Warnnutzen }) {
+  if (!nutzen) return null;
+  const text =
+    nutzen.art === "geholfen"
+      ? t("fallentrainer.warnGeholfen", { feld: nutzen.feld, zug: buchzug(nutzen.zug) })
+      : nutzen.art === "nichtGeholfen"
+        ? t("fallentrainer.warnNichtGeholfen", { zug: buchzug(nutzen.zug) })
+        : t("fallentrainer.warnUnnoetig");
+  return (
+    <p className="hinweis" data-testid="falle-warnnutzen">
+      {text}
+    </p>
+  );
+}
+
 /**
- * Eine Aufgabe von „Falle oder Köder“: den Köder-Zug ansehen, nehmen oder ablehnen, dann
- * Widerlegung und Warnsignale sehen.
+ * Eine Aufgabe von „Falle oder Köder“: den Köder-Zug ansehen, auf Wunsch die Warnsignale als
+ * Hinweis, nehmen oder ablehnen, dann Widerlegung mit Balken und den Nutzen der Signale sehen.
  */
 export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
@@ -99,10 +118,13 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
     const eigen = aufgabe.amZug === "w" ? "white" : "black";
     return gelesen.ok ? warnsignale(gelesen.wert, eigen) : null;
   }, [aufgabe]);
-  const markierungen = [
-    ...pfeile(aufgabe, entschieden),
-    ...(entschieden && warn ? warn.markierungen : []),
-  ];
+  const [hinweis, setzeHinweis] = useState(false);
+  const zeigeWarn = hinweis && !entschieden && warn !== null;
+  const markierungen = [...pfeile(aufgabe, entschieden), ...(zeigeWarn ? warn.markierungen : [])];
+  const nutzen = useMemo(
+    () => (warn ? warnnutzen(aufgabe, warn.markierungen) : null),
+    [aufgabe, warn],
+  );
   const farbe = t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b");
   const antworte = (nimmt: boolean) =>
     antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, nimmt));
@@ -124,6 +146,21 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
       <p className="hinweis">
         {herkunftstext(aufgabe)} · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
       </p>
+      {!entschieden && warn && (
+        <button
+          type="button"
+          className="knopf-link"
+          aria-pressed={hinweis}
+          onClick={() => setzeHinweis(!hinweis)}
+        >
+          {t(hinweis ? "fallentrainer.warnVerbergen" : "fallentrainer.warnZeigen")}
+        </button>
+      )}
+      {zeigeWarn && (
+        <p className="hinweis" data-testid="falle-warnsignale">
+          {t("fallentrainer.warnHinweis", { fazit: warn.fazit })}
+        </p>
+      )}
       {!entschieden && (
         <div className="knopfzeile">
           <button type="button" className="knopf-haupt" onClick={() => antworte(true)}>
@@ -135,10 +172,15 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
         </div>
       )}
       {entschieden && <Aufloesung aufgabe={aufgabe} richtig={runde.ergebnis === true} />}
-      {entschieden && warn && (
-        <p className="hinweis" data-testid="falle-warnsignale">
-          {t("fallentrainer.warnsignaleDanach", { fazit: warn.fazit })}
-        </p>
+      {entschieden && <Warnnutzensatz nutzen={nutzen} />}
+      {entschieden && (
+        <Folgespieler
+          startFen={aufgabe.fen}
+          zuege={aufgabe.fortsetzung}
+          titel={t("fallentrainer.folgeTitel")}
+          gedreht={aufgabe.amZug === "b"}
+          testid="falle-folge"
+        />
       )}
     </>
   );

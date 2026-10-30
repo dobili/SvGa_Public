@@ -22,6 +22,7 @@ import {
 import { Denkeingabe } from "./Denkeingabe";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
+import { Folgenwahl } from "./Folgespieler";
 import { useDenkvergleich, type Denkstand, type Kandidat } from "./useDenkvergleich";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
@@ -74,9 +75,11 @@ function pruefsatz(p: Kandidatpruefung, nummer: number): string {
 function Vergleich({
   stand,
   pruefungen,
+  fen,
 }: {
   stand: Denkstand;
   pruefungen: readonly Kandidatpruefung[];
+  fen: string;
 }) {
   if (stand.art === "aus") return null;
   if (stand.art === "rechnet") return <p className="hinweis">{t("denk.rechnet")}</p>;
@@ -101,6 +104,19 @@ function Vergleich({
           );
         })}
       </ul>
+      <Folgenwahl
+        startFen={fen}
+        linien={[
+          { name: t("denk.linieEngine", { zug: de(v.besterZug) }), zuege: [v.besterZug] },
+          ...v.kandidaten.map((k) => ({
+            name: t("denk.linieKandidat", { zug: de(k.zug) }),
+            zuege: k.antwort ? [k.zug, k.antwort] : [k.zug],
+          })),
+        ]}
+        titel={t("denk.linienTitel")}
+        gedreht={fen.split(" ")[1] === "b"}
+        testid="denk-folgen"
+      />
     </section>
   );
 }
@@ -175,7 +191,7 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
       {pruefungen && !vollstaendig && (
         <p className="meldung schlecht">{t("denk.unvollstaendig")}</p>
       )}
-      <Vergleich stand={stand} pruefungen={pruefungen ?? []} />
+      <Vergleich stand={stand} pruefungen={pruefungen ?? []} fen={aufgabe.fen} />
       {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
     </>
   );

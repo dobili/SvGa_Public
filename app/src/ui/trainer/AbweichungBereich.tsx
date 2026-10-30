@@ -12,7 +12,7 @@ import type { Color } from "chessops/types";
 import { useState } from "react";
 import { ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { abweichungsrunde } from "../../training/abweichungstrainer";
+import { abweichungsrunde, gambitsAus } from "../../training/abweichungstrainer";
 import { eroeffnungenAus, type Repertoireeroeffnung } from "../../training/repertoiretrainer";
 import { ZUFALL } from "../../training/zufall";
 import { PARTIEKAPITEL } from "../komponenten/partie/partiewerkzeug";
@@ -24,6 +24,31 @@ import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_EROEFFNUNGEN = 2;
+const KAPITEL_GAMBITS = 3;
+const QUELLEN = ["kapitel2", "kapitel3"] as const;
+type Quelle = (typeof QUELLEN)[number];
+
+/**
+ * Eröffnungen aus Kapitel 2 oder Gambits aus Kapitel 3 (mit dem Damengambit): derselbe Trainer,
+ * zwei Einstiege (Empfehlung im Nebenchat, vom Autor freigegeben am 30.10.2026).
+ */
+function Quellenwahl({ quelle, setze }: { quelle: Quelle; setze: (q: Quelle) => void }) {
+  return (
+    <fieldset className="zahlwahl" data-testid="abweichung-quelle">
+      {QUELLEN.map((q) => (
+        <button
+          key={q}
+          type="button"
+          className="chip"
+          aria-pressed={quelle === q}
+          onClick={() => setze(q)}
+        >
+          {t(`abweichung.wahl.${q}`)}
+        </button>
+      ))}
+    </fieldset>
+  );
+}
 const AUFGABEN_JE_RUNDE = 3;
 const SEITEN: readonly Color[] = ["white", "black"];
 
@@ -91,6 +116,8 @@ export function AbweichungBereich() {
     () => ladeKapitel(KAPITEL_EROEFFNUNGEN),
     `kapitel-${KAPITEL_EROEFFNUNGEN}`,
   );
+  const gambitdaten = useDaten(() => ladeKapitel(KAPITEL_GAMBITS), `kapitel-${KAPITEL_GAMBITS}`);
+  const [quelle, setzeQuelle] = useState<Quelle>("kapitel2");
   // Index der Kapitel 2 und 3 (wie beim Spiel gegen die Engine).
   const index = useEroeffnungsindex(PARTIEKAPITEL);
   const [wahl, setzeWahl] = useState<Wahl | null>(null);
@@ -98,7 +125,16 @@ export function AbweichungBereich() {
   if (daten.art === "laedt") return <p className="lade">…</p>;
   if (daten.art === "fehler")
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
-  if (!wahl) return <Auswahl eroeffnungen={eroeffnungenAus(daten.wert)} starte={setzeWahl} />;
+  if (!wahl) {
+    const gambits = gambitdaten.art === "fertig" ? gambitsAus(gambitdaten.wert, daten.wert) : [];
+    const liste = quelle === "kapitel3" ? gambits : eroeffnungenAus(daten.wert);
+    return (
+      <>
+        <Quellenwahl quelle={quelle} setze={setzeQuelle} />
+        <Auswahl key={quelle} eroeffnungen={liste} starte={setzeWahl} />
+      </>
+    );
+  }
   return (
     <Rundenablauf
       key={`${wahl.eroeffnung.id}-${wahl.seite}-${durchlauf}`}

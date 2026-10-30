@@ -13,7 +13,9 @@
  * die Todsünden.
  */
 import type { Color } from "chessops/types";
-import { varianten, type Repertoireeroeffnung } from "./repertoiretrainer";
+import type { Kapitel } from "../daten/generiert/kapitel";
+import { buchbeispiele } from "../daten/buchbeispiele";
+import { eroeffnungenAus, varianten, type Repertoireeroeffnung } from "./repertoiretrainer";
 import { mische, type Zufall } from "./zufall";
 
 /** Frühestens nach so vielen Halbzügen verlässt die Engine das Buch. */
@@ -31,6 +33,12 @@ export interface Abweichungsaufgabe {
   /** Die Züge des Buches bis zur Abweichung (englische Kurznotation). */
   readonly buchzuege: readonly string[];
   readonly seite: Color;
+  /**
+   * Der Zug des Buches für die eigene Seite nach dem ursprünglichen Gegnerzug (der „Planzug“),
+   * oder null am Ende der Variante. Spielt der Leser ihn nach der Abweichung, sagt die App, ob
+   * er damit auf den neuen Zug eingeht (Nebenchat, 30.10.2026).
+   */
+  readonly planzug: string | null;
 }
 
 /** Halbzüge, nach denen die Gegenseite am Zug ist (dort weicht die Engine ab). */
@@ -66,6 +74,7 @@ export function abweichungsrunde(
           startFen: eroeffnung.beispiel.startFen,
           buchzuege: linie.slice(0, k),
           seite,
+          planzug: linie[k + 1] ?? null,
         },
       ];
     });
@@ -86,4 +95,25 @@ export type Antwortklasse = "gut" | "ungenau" | "fehler";
 export function antwortklasse(verlust: number): Antwortklasse {
   if (verlust <= GUT_BIS) return "gut";
   return verlust <= UNGENAU_BIS ? "ungenau" : "fehler";
+}
+
+/** Abschnitte von Kapitel 3 mit den Gambits (3.4 Königsgambit bis 3.10 Gambits gegen 1. e4). */
+const GAMBITABSCHNITT = /^3\.(?:[4-9]|10)$/;
+/** Das Damengambit aus Kapitel 2 gehört ebenfalls dazu (Wunsch des Autors, 30.10.2026). */
+const DAMENGAMBIT = /Damengambit/;
+
+/**
+ * Die Gambits für den Abweichungsmodus in Kapitel 3: die Zugfolgen der Gambit-Abschnitte von
+ * Kapitel 3 (nur solche mit „Gambit“ im Titel und übbaren Varianten) und das Damengambit aus
+ * Kapitel 2.
+ * Warum: Kapitel 3 hat keine Steckbriefe; ohne diese Auswahl fehlten die Gambits ganz.
+ * Beispiel: Königsgambit, Evans-Gambit, Dänisches Gambit, …, Lettisches Gambit, Damengambit.
+ */
+export function gambitsAus(kapitel3: Kapitel, kapitel2: Kapitel): Repertoireeroeffnung[] {
+  const gambits = buchbeispiele(kapitel3)
+    .filter((b) => b.abschnitt !== null && GAMBITABSCHNITT.test(b.abschnitt))
+    .filter((b) => /gambit/i.test(b.titel) && varianten(b).length > 0)
+    .map((b) => ({ id: b.id, titel: b.titel.replace(/\\,/g, " "), beispiel: b }));
+  const damengambit = eroeffnungenAus(kapitel2).filter((e) => DAMENGAMBIT.test(e.titel));
+  return [...gambits, ...damengambit];
 }

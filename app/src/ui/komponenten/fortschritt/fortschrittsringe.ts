@@ -1,25 +1,56 @@
 /**
- * Die Ringe des Fortschritts (Abbildungen, Lernziele, Trainer erstmals, besiegte Bots je Zeitart)
- * für die Karte „Dein Fortschritt“ (Fortschrittsuebersicht.tsx) und die Gratulation bei einem
- * vollen Ring (Ringfeier.tsx); eigene Datei, damit beide dieselben Zahlen zeigen.
- * Abhängigkeiten: speicher, speicher/besiegt.ts, speicher/fortschritt.ts, engine/gegner.ts,
- * app/lernstand.ts, daten/laden.ts, useDaten, zeitartzeichen.ts, i18n, lucide-react.
+ * Die Ringe des Fortschritts für die Karte „Dein Fortschritt“ (Fortschrittsuebersicht.tsx) und die
+ * Gratulation bei einem vollen Ring (Ringfeier.tsx); eigene Datei, damit beide dieselben Zahlen
+ * zeigen. Drei Gruppen: das Buch (Abbildungen, Übungen, Lernziele, Trainer), die fünf Teile des
+ * Buches und die Bündel der Bots (Wunsch des Autors, 26.10.2026: jeder volle Ring wird ein Orden).
+ * Die Rechnung der neuen Ringe steht in ringrechnung.ts.
+ * Abhängigkeiten: ringrechnung.ts, speicher, speicher/fortschritt.ts, app/lernstand.ts,
+ * daten/laden.ts, useDaten, i18n, lucide-react.
  */
-import { Dumbbell, LayoutGrid, ListChecks } from "lucide-react";
+import {
+  Bot,
+  ClipboardCheck,
+  Cpu,
+  Crown,
+  DoorOpen,
+  Dumbbell,
+  LayoutGrid,
+  ListChecks,
+  Sprout,
+  Swords,
+  Target,
+  Timer,
+  type LucideIcon,
+} from "lucide-react";
 import { abgehakt, useLernstand } from "../../../app/lernstand";
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../../daten/laden";
-import { GEGNER } from "../../../engine/gegner";
 import { t } from "../../../i18n/sprache";
-import { botsiegeJeTempo } from "../../../speicher/besiegt";
 import { erstmalsTrainiert, type Anteil } from "../../../speicher/fortschritt";
 import { useSpeicher } from "../../../speicher/speicher";
+import { useOrdenprobe } from "./ordenprobe";
 import type { Symbolringangabe } from "./Symbolringe";
 import { useDaten } from "../bausteine/useDaten";
-import { ZEITARTZEICHEN, zeitartname } from "../bausteine/zeitartzeichen";
+import {
+  BOTBUENDEL,
+  BUCHTEILE,
+  botsDesBuendels,
+  buendelanteil,
+  ENGINEBUENDEL,
+  istVoll,
+  teilanteil,
+  uebungsanteil,
+  type Buchteil,
+} from "./ringrechnung";
 
-/** Kennungen aller vorgefertigten Bots, auch der Spaß-Bots (sie tragen ebenso Siegmarken). */
-const VORGEFERTIGTE = GEGNER.map((g) => g.kennung);
+/** Zeichen der Teile des Buches. */
+const TEILZEICHEN: Readonly<Record<Buchteil, LucideIcon>> = {
+  grundlagen: Sprout,
+  eroeffnung: DoorOpen,
+  mittelspiel: Swords,
+  endspiel: Crown,
+  praxis: Target,
+};
 
 /** Summe einer Zahlenliste. */
 export function summe(zahlen: readonly number[]): number {
@@ -37,16 +68,44 @@ function useLernzielanteil(): Anteil | null {
   return { erreicht: summe(ziele.map((z) => abgehakt(stand, z.kapitel, z.punkte.length))), gesamt };
 }
 
-/** Je Zeitart ein Ring: besiegte vorgefertigte Bots (Blitz, Schnellschach, Klassisch). */
+/**
+ * Die Ringe der Bots: je Bündel der Stufen „alle einmal besiegt“ und „alle in allen Zeitarten
+ * besiegt“; das Bündel der Engine (Stufe 10) nur „einmal“, der Superorden.
+ */
 function useBotringe(): Symbolringangabe[] {
   const besiegt = useSpeicher((zustand) => zustand.daten.spiel.besiegt);
-  return botsiegeJeTempo(besiegt, VORGEFERTIGTE).map(({ tempo, erreicht, gesamt }) => ({
-    name: t("fortschritt.botsiege", { zeitart: zeitartname(tempo) }),
-    legende: zeitartname(tempo),
-    symbol: ZEITARTZEICHEN[tempo],
-    anteil: { erreicht, gesamt },
-    testid: `ich-bots-${tempo}`,
-  }));
+  return BOTBUENDEL.flatMap(({ kennung }) => {
+    const bots = botsDesBuendels(kennung);
+    const stufen = t("fortschritt.buendel", { stufen: kennung.replace("-", "–") });
+    if (kennung === ENGINEBUENDEL) {
+      const anteil = buendelanteil(besiegt, bots, "einmal");
+      return [
+        {
+          name: t("fortschritt.engine"),
+          legende: t("fortschritt.engineKurz"),
+          symbol: Cpu,
+          anteil,
+          testid: "ich-bots-10",
+        },
+      ];
+    }
+    return [
+      {
+        name: t("fortschritt.buendelEinmal", { stufen }),
+        legende: t("fortschritt.einmalKurz"),
+        symbol: Bot,
+        anteil: buendelanteil(besiegt, bots, "einmal"),
+        testid: `ich-bots-${kennung}-einmal`,
+      },
+      {
+        name: t("fortschritt.buendelAlle", { stufen }),
+        legende: t("fortschritt.alleKurz"),
+        symbol: Timer,
+        anteil: buendelanteil(besiegt, bots, "alleZeitarten"),
+        testid: `ich-bots-${kennung}-alle`,
+      },
+    ];
+  });
 }
 
 /**
@@ -56,12 +115,14 @@ function useBotringe(): Symbolringangabe[] {
 export function useFortschrittsringe(): {
   index: Datenverzeichnis;
   buchringe: Symbolringangabe[];
+  teilringe: Symbolringangabe[];
   botringe: Symbolringangabe[];
 } | null {
   const index = useDaten(ladeIndex, "index");
   const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
   const lernziele = useLernzielanteil();
   const botringe = useBotringe();
+  const probe = useOrdenprobe();
   if (index.art !== "fertig") return null;
   const alle = index.wert.kapitel.flatMap((kapitel) => kapitel.abbildungen);
   const abbildungen = {
@@ -74,6 +135,12 @@ export function useFortschrittsringe(): {
       symbol: LayoutGrid,
       anteil: abbildungen,
       testid: "ich-abbildungen",
+    },
+    {
+      name: t("fortschritt.uebungen"),
+      symbol: ClipboardCheck,
+      anteil: uebungsanteil(fortschritt),
+      testid: "ich-uebungen",
     },
     ...(lernziele
       ? [
@@ -92,7 +159,26 @@ export function useFortschrittsringe(): {
       testid: "ich-trainer",
     },
   ];
-  return { index: index.wert, buchringe, botringe };
+  const teilringe: Symbolringangabe[] = BUCHTEILE.map(({ kennung }) => ({
+    name: t("fortschritt.teil", { teil: t(`fortschritt.teil.${kennung}`) }),
+    legende: t(`fortschritt.teil.${kennung}`),
+    symbol: TEILZEICHEN[kennung],
+    anteil: teilanteil(kennung, index.wert.kapitel, fortschritt),
+    testid: `ich-teil-${kennung}`,
+  }));
+  // Zur Probe des Autors (Aufgabenseite) gelten geprobte Ringe als voll; echte Daten bleiben.
+  const geprobt = (ringe: Symbolringangabe[]) =>
+    ringe.map((r) =>
+      probe.has(r.testid)
+        ? { ...r, anteil: { erreicht: r.anteil.gesamt, gesamt: r.anteil.gesamt } }
+        : r,
+    );
+  return {
+    index: index.wert,
+    buchringe: geprobt(buchringe),
+    teilringe: geprobt(teilringe),
+    botringe: geprobt(botringe),
+  };
 }
 
 /** Merker der Ringe, deren Gratulation schon gezeigt wurde („ich-abbildungen,ich-bots-blitz“). */
@@ -115,7 +201,5 @@ export function offeneRinge(
   ringe: readonly Symbolringangabe[],
   schon: ReadonlySet<string> = gefeiert(),
 ): Symbolringangabe[] {
-  return ringe.filter(
-    (r) => r.anteil.gesamt > 0 && r.anteil.erreicht >= r.anteil.gesamt && !schon.has(r.testid),
-  );
+  return ringe.filter((r) => istVoll(r.anteil) && !schon.has(r.testid));
 }

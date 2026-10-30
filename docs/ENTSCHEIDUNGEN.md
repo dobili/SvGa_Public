@@ -4,6 +4,26 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Orden für volle Ringe (Opus, Version 0.3.7)
+
+- Beschlüsse des Autors (26.10.2026): Orden nur für volle Ringe; das Buch nach Abschnitten; Übungen
+  und Abbildungen mit eigenen Ringen; Bot-Bündel 1–3, 4–5, 6–7, 8–9 je zwei Orden (einmal; alle
+  Zeitarten), 10 ein Superorden; ausklappbar; Glückwunsch mit Ton; Orden in der Startanimation,
+  offene als Silhouette; Testwerkzeug im Menü mit den Aufgaben.
+- Abschnitte nach dem Buch selbst (main.tex hat fünf Teile: Grundlagen, Eröffnung, Mittelspiel,
+  Endspiel, Praxis; Kapitel 0 zählt zu den Grundlagen). Ein Teil ist voll, wenn alle Abbildungen
+  angesehen und alle Übungen seiner Kapitel gelöst sind. Spaß-Bots zählen in keinem Bündel. Die
+  Ringe je Zeitart entfallen.
+- Kein neues Datenformat: Orden sind volle Ringe, aus den vorhandenen Daten gerechnet
+  (`ui/komponenten/fortschritt/ringrechnung.ts`). Die Übungen je Kapitel liefert eine erzeugte
+  Liste (`daten/uebungsliste-daten.ts`, Erzeuger `skripte/erzeuge-uebungsliste.mjs`, Test gegen die
+  Kapiteldateien), damit beim Start nicht alle Kapitel geladen werden.
+- Orden: `bausteine/Orden.tsx` (Medaille mit Band, Zeichen des Rings; Silhouette). Startanimation:
+  `fortschritt/OrdenHintergrund.tsx`, Kranz mit festen Plätzen. Testwerkzeug: in der Aufgabenseite
+  der App (dort sieht der Autor seine Aufgaben; das Dashboard unter /admin/ ist eine eigene Seite),
+  `fortschritt/OrdenProbe.tsx` und `ordenprobe.ts`: ein Merker auf dem Gerät, der Ringe als voll
+  zeigt, ohne echte Daten zu ändern.
+
 ## 30.10.2026 – Ein Knopf „Merken“ im Rückblick (Opus, Version 0.3.6)
 
 - Beschluss des Autors (26.10.2026): ein Knopf für Lernsammlung und Fehlerdatenbank, im Fenster

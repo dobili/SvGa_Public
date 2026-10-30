@@ -12,6 +12,8 @@ import type { LucideIcon } from "lucide-react";
 import { t } from "../../../i18n/sprache";
 import type { Anteil } from "../../../speicher/fortschritt";
 import { Ring } from "../bausteine/Kreisanzeige";
+import { Orden } from "../bausteine/Orden";
+import { istVoll } from "./ringrechnung";
 
 /**
  * Ein Ring der Reihe: Name (zum Vorlesen, und in der Legende, wenn `legende` fehlt), kurzer
@@ -51,11 +53,15 @@ export function Symbolringreihe({
           });
           return (
             <li key={ring.testid} className="symbolring">
-              <Ring
-                anteil={ring.anteil}
-                beschriftung={`${ring.name}: ${wert}`}
-                symbol={ring.symbol}
-              />
+              {istVoll(ring.anteil) ? (
+                <Orden symbol={ring.symbol} beschriftung={t("orden.name", { name: ring.name })} />
+              ) : (
+                <Ring
+                  anteil={ring.anteil}
+                  beschriftung={`${ring.name}: ${wert}`}
+                  symbol={ring.symbol}
+                />
+              )}
               <span data-testid={ring.testid} aria-hidden="true">
                 {wert}
               </span>

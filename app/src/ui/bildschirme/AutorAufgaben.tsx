@@ -33,6 +33,7 @@ import { t } from "../../i18n/sprache";
 import { TRAINER } from "../../training/trainer";
 import { Aufgabenpunkt, Aufgabentext } from "../komponenten/rahmen/Aufgabenpunkt";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { OrdenProbe } from "../komponenten/fortschritt/OrdenProbe";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 
 const MERKER = "autorAufgaben";
@@ -212,6 +213,7 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
   }, []);
   return (
     <>
+      <OrdenProbe />
       <Steuerung
         datei={datei}
         stand={stand}

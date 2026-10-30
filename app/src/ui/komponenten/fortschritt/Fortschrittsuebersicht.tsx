@@ -21,8 +21,31 @@ import { geloesteUebungen, kapitelfortschritt } from "../../../speicher/fortschr
 import { useSpeicher } from "../../../speicher/speicher";
 import { Ring } from "../bausteine/Kreisanzeige";
 import { summe, useFortschrittsringe } from "./fortschrittsringe";
-import { Ringlegende, Symbolringreihe } from "./Symbolringe";
+import { istVoll } from "./ringrechnung";
+import { Ringlegende, Symbolringreihe, type Symbolringangabe } from "./Symbolringe";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
+
+/** Eine aufklappbare Gruppe von Ringen mit Legende; die Zusammenfassung nennt die vollen Ringe. */
+function Ringgruppe({
+  ringe,
+  titel,
+  testid,
+}: {
+  ringe: readonly Symbolringangabe[];
+  titel: string;
+  testid: string;
+}) {
+  const voll = ringe.filter((r) => istVoll(r.anteil));
+  return (
+    <details className="anleitung ringgruppe" data-testid={testid}>
+      <summary>
+        {t("fortschritt.gruppe", { titel, voll: voll.length, gesamt: ringe.length })}
+      </summary>
+      <Symbolringreihe ringe={ringe} />
+      <Ringlegende ringe={ringe} />
+    </details>
+  );
+}
 
 /** Je Kapitel eine Zeile mit kleinem Ring; ein Tipp öffnet die Kapitelübersicht. */
 function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fortschritt }) {
@@ -72,7 +95,7 @@ export function Fortschrittsuebersicht() {
   const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
   const ringe = useFortschrittsringe();
   if (!ringe) return null;
-  const { index, buchringe, botringe } = ringe;
+  const { index, buchringe, teilringe, botringe } = ringe;
   const uebungen = Object.values(fortschritt.uebungen);
   const durchgaenge = summe(Object.values(fortschritt.trainer).map((s) => s.durchgaenge));
   // Beantwortete Warum-Fragen (0.2.99); die Gesamtzahl steht in den Kapiteln, hier die Summe.
@@ -84,8 +107,10 @@ export function Fortschrittsuebersicht() {
         {t("fortschritt.titel")}
       </h2>
       <Symbolringreihe ringe={buchringe} />
-      <Symbolringreihe ringe={botringe} titel={t("fortschritt.bots")} />
-      <Ringlegende ringe={[...buchringe, ...botringe]} />
+      {/* Teile und Bots aufklappbar: zusammen 14 Ringe wären sonst zu viele Zeilen (Wunsch des
+          Autors, 26.10.2026). */}
+      <Ringgruppe ringe={teilringe} titel={t("fortschritt.teile")} testid="ich-teile" />
+      <Ringgruppe ringe={botringe} titel={t("fortschritt.bots")} testid="ich-bots" />
       {(uebungen.length > 0 || durchgaenge > 0 || warum > 0) && (
         <dl className="fortschritt-liste">
           {uebungen.length > 0 && (

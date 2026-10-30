@@ -140,7 +140,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.roentgen": tour("trainer.roentgen.name", [
-    ANFANG_OHNE_WAHL,
+    ANFANG,
+    ziel("trainer-wahl", "tour.trainer.roentgen.wahl"),
     mitte("tour.trainer.roentgen.schritte"),
     mitte("tour.trainer.roentgen.pfeile"),
     ...RUNDE,

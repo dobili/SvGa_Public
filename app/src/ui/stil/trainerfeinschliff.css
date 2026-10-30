@@ -87,3 +87,39 @@
   cursor: pointer;
   color: var(--text-leise);
 }
+
+/* Notationstastatur (Zug aufschreiben): Anzeige oben, darunter Reihen mit Bausteinen. Acht
+   Linien und acht Reihen passen bei 360 Pixeln je in eine Zeile. */
+.tastenformular {
+  display: grid;
+  gap: var(--raster);
+}
+
+.notationstastatur {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}
+
+.notationsanzeige {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--raster);
+  border: 1.5px solid var(--linie);
+  border-radius: 8px;
+  font-size: var(--groesse-grund);
+  font-weight: 700;
+}
+
+.tastenreihe {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.taste {
+  min-width: 0;
+  padding: 0;
+  justify-content: center;
+  font-weight: 600;
+}

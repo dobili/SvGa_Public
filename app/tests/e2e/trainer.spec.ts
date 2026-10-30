@@ -36,6 +36,22 @@ test("Zug aufschreiben: falsche Schreibweise, das Buch schreibt den Zug", async 
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
   await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  // Seit dem Nebenchat (30.10.2026) Bausteine statt Handytastatur: „K“, „a“, „1“.
+  const tastatur = page.getByTestId("notationstastatur");
+  await tastatur.getByRole("button", { name: "K", exact: true }).click();
+  await tastatur.getByRole("button", { name: "a", exact: true }).click();
+  await tastatur.getByRole("button", { name: "1", exact: true }).click();
+  await expect(tastatur).toContainText("Ka1");
+  await page.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("trainer")).toContainText("Das Buch schreibt");
+  await page.screenshot({ path: "test-results/bilder/notationstastatur.png", fullPage: true });
+});
+
+test("Zug aufschreiben: umschaltbar auf das Eingabefeld", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "koordinaten");
+  await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  await page.getByRole("button", { name: "Lieber mit der Tastatur tippen" }).click();
   await page.getByRole("textbox", { name: "Zug in Notation" }).fill("Qa1");
   await page.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("trainer")).toContainText("Das Buch schreibt");
@@ -75,6 +91,8 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
 test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "roentgen");
+  await page.getByTestId("roentgen-wahl").getByRole("button", { name: "schwer" }).click();
+  await page.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Schritt 1 von 3");
   for (const naechster of [true, true, false]) {

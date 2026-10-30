@@ -106,7 +106,11 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
         {...(vergleich ? {} : { beiFeld: eingabe.beiFeld })}
         ausgewaehlt={eingabe.gewaehlt}
         ziele={eingabe.ziele}
-        beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
+        beschriftung={
+          aufgabe.zugfolge
+            ? t("roentgentrainer.ausZugfolge", aufgabe.zugfolge)
+            : t("trainer.brettAus", { nummer: aufgabe.nummer })
+        }
       />
       {!vergleich && (
         <>

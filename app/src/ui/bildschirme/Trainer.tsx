@@ -17,7 +17,6 @@ import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
 import { auswahl, lapaufgabe, planaufgaben, rennaufgabe } from "../../training/planbilanztrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
-import { roentgenrunde } from "../../training/roentgentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
@@ -30,7 +29,7 @@ import {
   Gangartaufgabe,
   Notieraufgabe,
 } from "../trainer/Koordinatentrainer";
-import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
+import { RoentgenBereich } from "../trainer/RoentgenBereich";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
 import { RepertoireBereich } from "../trainer/RepertoireBereich";
@@ -51,7 +50,6 @@ import { Lapaufgabe, Planfragenaufgabe, Rennaufgabe } from "../trainer/Planaufga
 export type Uebungsart =
   | "bilanz"
   | "haengen"
-  | "roentgen"
   | "felder"
   | "notieren"
   | "ausfuehren"
@@ -66,7 +64,6 @@ export type Uebungsart =
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
   zaehlen: ["bilanz", "haengen"],
-  roentgen: ["roentgen"],
   koordinaten: ["felder", "notieren", "ausfuehren", "gangarten"],
   zielbilanz: ["zielbilanz"],
   faktorenbilanz: ["faktoren"],
@@ -78,7 +75,6 @@ const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[
 const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   bilanz: 8,
   haengen: 8,
-  roentgen: 5,
   felder: 16,
   notieren: 8,
   ausfuehren: 8,
@@ -103,10 +99,6 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
     case "haengen":
       return haengerunde(stellungen, n, ZUFALL).map((a) => (r) => (
         <Haengeaufgabe aufgabe={a} runde={r} />
-      ));
-    case "roentgen":
-      return roentgenrunde(stellungen, n, ZUFALL).map((a) => (r) => (
-        <Roentgenaufgabe aufgabe={a} runde={r} />
       ));
     case "felder":
       return feldrunde(n, ZUFALL).map((a) => (r) => <Feldaufgabe aufgabe={a} runde={r} />);
@@ -232,6 +224,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   fehlerdatenbank: () => <FehlerBereich />,
   abweichung: () => <AbweichungBereich />,
   dreissigMinuten: () => <DreissigMinutenBereich />,
+  roentgen: () => <RoentgenBereich />,
   kurzplaene: () => <KurzplanBereich />,
 };
 

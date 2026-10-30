@@ -3872,5 +3872,11 @@
   "abzeichenprobe.erklaerung": "A tap gives you a badge as a test, or exactly enough experience points to reach the next level. The message then appears as it would for real, and your profile shows the badge and level. Your real progress does not change; “End test” resets everything.",
   "abzeichenprobe.stufe": "Reach the next level",
   "abzeichenprobe.verdienen": "{name}: earn",
-  "abzeichenprobe.beenden": "End test"
+  "abzeichenprobe.beenden": "End test",
+  "startorden.neuerOrden": "New medal",
+  "startorden.neuesAbzeichen": "New badge",
+  "startorden.sammlung": "From your collection · {verdient} of {gesamt}",
+  "startorden.teil": "Part {teil}",
+  "startorden.weitere": "and {anzahl} more in your profile",
+  "leiste.profilNeu": "Profile: new in your collection"
 }

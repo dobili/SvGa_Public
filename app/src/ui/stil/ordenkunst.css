@@ -1,0 +1,323 @@
+/*
+ * Ordenkunst (Wunsch des Autors, 30.10.2026): eigene Bilder für jeden Orden und jedes Abzeichen
+ * (ui/komponenten/ordenkunst/), Orden und Abzeichen im Profil in Reihen statt untereinander,
+ * das neue Stück in der Startanimation mit Flug zum Reiter „Profil“ und der goldene Punkt dort.
+ * Eigene Datei, damit die gemeinsamen Grundwerte (basis.css, ergaenzungen.css) unberührt bleiben;
+ * nach abzeichen.css geladen.
+ */
+
+/* ---------- Das Bild ---------- */
+.ordenkunst {
+  display: inline-block;
+  flex: none;
+  line-height: 0;
+}
+
+.ordenkunst svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Noch nicht verdient: die Form in der Textfarbe, blass (Filter im SVG nimmt currentColor). */
+.ordenkunst-silhouette {
+  color: var(--text-leise);
+}
+
+/* Lichtstreif, der ab und zu über ein verdientes Stück läuft. */
+.ordenkunst-glanz {
+  animation: ordenkunst-glanz 5.5s ease-in-out infinite;
+  transform-box: view-box;
+}
+
+@keyframes ordenkunst-glanz {
+  0%,
+  62% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 200px 0;
+  }
+}
+
+/* ---------- Profil: Reihen statt einer Spalte ----------
+ * .anleitung ul (ergaenzungen.css) macht jede Liste in Ausklapplisten zu einer Spalte mit Einzug;
+ * die Ringe und Abzeichen sind aber Gitter. Diese Regeln sind genauer und gewinnen. */
+.anleitung ul.symbolringe-reihe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-left: 0;
+  font-size: var(--groesse-klein);
+}
+
+.anleitung ul.abzeichengitter,
+.anleitung ul.abzeichenraster,
+.abzeichenraster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--raster) calc(var(--raster) / 2);
+  margin: var(--raster) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-klein);
+}
+
+.anleitung ul.abzeichengitter li {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.abzeichengitter .abzeichenbild,
+.abzeichenraster .abzeichenbild {
+  width: 56px;
+  height: 56px;
+}
+
+.abzeichenraster li {
+  min-width: 0;
+}
+
+.abzeichenraster button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 4px 2px;
+  border: none;
+  border-radius: var(--rundung, 8px);
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.abzeichenraster button[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+.abzeichenraster .offen {
+  color: var(--text-leise);
+}
+
+.abzeichenraster-name {
+  font-weight: 600;
+}
+
+.abzeichenraster-bedingung {
+  color: var(--text-leise);
+  font-size: 0.68rem;
+}
+
+/* ---------- Goldener Punkt an „Profil“ ---------- */
+.leiste-neu {
+  position: absolute;
+  top: 6px;
+  left: calc(50% + 8px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow:
+    0 0 0 2px var(--flaeche),
+    0 0 10px #ffd166;
+  animation: leiste-neu 0.45s cubic-bezier(0.2, 0.8, 0.2, 1.4) both;
+}
+
+@keyframes leiste-neu {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.6;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* ---------- Startanimation: das neue Stück und das Stück des Tages ----------
+ * Springer und Titel bleiben wie in brett.css. Die Ebene liegt über der Startanimation; Lage, Ziel
+ * des Flugs und den Versatz (so viel später als die Startanimation erschien die Ebene, weil die
+ * Daten erst laden mussten) setzt Startorden.tsx als Variablen. Zeiten ab dem Start: Logo steht
+ * nach 1,4 s still. */
+.startstueck {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  pointer-events: none;
+  color: #f5f0e6;
+}
+
+.startstueck-bild {
+  position: absolute;
+  left: 50%;
+  top: var(--startstueck-y, 78vh);
+  width: 84px;
+  translate: -50% -50%;
+  animation: startstueck-auftritt 0.65s cubic-bezier(0.2, 0.8, 0.2, 1)
+    calc(1.4s - var(--startstueck-versatz, 0s)) both;
+}
+
+.startstueck-tag .startstueck-bild {
+  width: 60px;
+}
+
+.startstueck-bild .ordenkunst {
+  position: relative;
+  width: 100%;
+  filter: drop-shadow(0 6px 14px rgb(0 0 0 / 0.45));
+}
+
+.startstueck-strahlen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 260%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgb(255 214 102 / 0.28) 0 8deg, transparent 8deg 22deg);
+  mask: radial-gradient(circle, #000 20%, transparent 68%);
+  animation: startstueck-strahlen 14s linear infinite;
+}
+
+.startstueck-tag .startstueck-strahlen {
+  display: none;
+}
+
+.startstueck-zeile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--startstueck-y, 78vh) + 62px);
+  padding: 0 var(--raster);
+  text-align: center;
+  animation: startstueck-zeile 0.5s ease-out calc(1.9s - var(--startstueck-versatz, 0s)) both;
+}
+
+.startstueck-tag .startstueck-zeile {
+  top: calc(var(--startstueck-y, 78vh) + 44px);
+  animation-delay: calc(1.65s - var(--startstueck-versatz, 0s));
+}
+
+.startstueck-art {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e3bf4a;
+}
+
+.startstueck-name {
+  font-family: "Source Serif 4", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.startstueck-weitere {
+  font-size: 0.8rem;
+  color: #c3c9d3;
+}
+
+/* Neues Stück: Nach dem Namen fliegt es zu „Profil“, die Zeile blendet aus. */
+.startstueck-neu .startstueck-bild {
+  animation:
+    startstueck-auftritt 0.65s cubic-bezier(0.2, 0.8, 0.2, 1)
+      calc(1.4s - var(--startstueck-versatz, 0s)) both,
+    startstueck-flug 0.85s cubic-bezier(0.5, 0, 0.3, 1) calc(3.35s - var(--startstueck-versatz, 0s))
+      forwards;
+}
+
+.startstueck-neu .startstueck-zeile {
+  animation:
+    startstueck-zeile 0.5s ease-out calc(1.9s - var(--startstueck-versatz, 0s)) both,
+    startstueck-aus 0.3s ease-in calc(3.35s - var(--startstueck-versatz, 0s)) forwards;
+}
+
+.startstueck-neu .startstueck-strahlen {
+  animation:
+    startstueck-strahlen 14s linear infinite,
+    startstueck-aus 0.3s ease-in calc(3.35s - var(--startstueck-versatz, 0s)) forwards;
+}
+
+/* Stück des Tages: blendet mit der Fläche aus (78 % von 3,5 s). */
+.startstueck-tag {
+  animation: startstueck-aus 0.77s ease-in calc(2.73s - var(--startstueck-versatz, 0s)) forwards;
+}
+
+@keyframes startstueck-auftritt {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+  }
+  70% {
+    opacity: 1;
+    scale: 1.12;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes startstueck-zeile {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes startstueck-aus {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes startstueck-strahlen {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes startstueck-flug {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  45% {
+    transform: translate(
+        calc(var(--startstueck-ziel-x) * 0.5),
+        calc(var(--startstueck-ziel-y) * 0.35)
+      )
+      scale(0.7);
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--startstueck-ziel-x), var(--startstueck-ziel-y)) scale(0.18);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ordenkunst-glanz,
+  .startstueck-strahlen,
+  .leiste-neu {
+    animation: none;
+  }
+}

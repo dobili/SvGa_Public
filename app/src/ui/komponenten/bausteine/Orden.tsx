@@ -5,9 +5,13 @@
  * sich dauerhaft in einen Orden, passend zum Zeichen des Rings. Die Karte „Dein Fortschritt“
  * (Symbolringe.tsx) und die Gratulation (Ringfeier.tsx) zeigen ihn golden; die Startanimation
  * zeigt noch nicht verdiente Orden als Silhouette.
- * Abhängigkeiten: lucide-react (Zeichen), Stil in ui/stil/fortschritt.css.
+ * Seit dem Wunsch des Autors vom 30.10.2026 hat jeder Orden ein eigenes Bild (ordenkunst/): Wer
+ * `ring` (die testid des Rings) mitgibt, bekommt es; ohne `ring` bleibt die alte Medaille.
+ * Abhängigkeiten: lucide-react (Zeichen), ordenkunst/, Stil in ui/stil/symbolringe.css.
  */
 import type { LucideIcon } from "lucide-react";
+import { hatOrdenkunst, ordenkennungAusRing } from "../ordenkunst/entwuerfe";
+import { Ordenkunst } from "../ordenkunst/Ordenkunst";
 
 /** Maße der Zeichnung (Einheiten des viewBox). */
 const BREITE = 64;
@@ -20,19 +24,34 @@ const ZEICHEN = 24;
 
 /**
  * Die Medaille. `silhouette`: nur der Umriss in einer ruhigen Farbe (noch nicht verdient).
- * Beispiel: voller Ring „Übungen gelöst“ → goldene Medaille mit Klemmbrett.
+ * `ring`: testid des Rings; dann das eigene Bild des Ordens (ordenkunst/entwuerfe.ts).
+ * Beispiel: voller Ring „Übungen gelöst“ (ring „ich-uebungen“) → rote Medaille mit Brett.
  */
 export function Orden({
   symbol: Zeichen,
   beschriftung,
   silhouette = false,
   klasse = "",
+  ring,
 }: {
   symbol: LucideIcon;
   beschriftung: string;
   silhouette?: boolean;
   klasse?: string;
+  ring?: string;
 }) {
+  const kennung = ring ? ordenkennungAusRing(ring) : null;
+  if (kennung && hatOrdenkunst("orden", kennung)) {
+    return (
+      <Ordenkunst
+        art="orden"
+        kennung={kennung}
+        beschriftung={beschriftung}
+        silhouette={silhouette}
+        klasse={`orden ${klasse}`}
+      />
+    );
+  }
   return (
     <svg
       className={`orden ${silhouette ? "orden-silhouette" : ""} ${klasse}`.trim()}

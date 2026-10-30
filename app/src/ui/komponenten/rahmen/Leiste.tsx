@@ -10,7 +10,11 @@
  * den neuen Bildschirm zeichnet React erst nach diesem Bild. Sonst wartete die ganze Rückmeldung
  * auf den Bildschirm, bei „Spielen“ gedrosselt (CPU 4×) etwa 0,15 s. (Als Übergang mit
  * startTransition kam der Bildschirm gemessen 60 ms später, deshalb ohne.)
- * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck, nachDemNaechstenBild.
+ * Seit dem Wunsch des Autors vom 30.10.2026 trägt „Profil“ einen goldenen Punkt, wenn die
+ * Startanimation ein neues Orden oder Abzeichen dorthin geschickt hat; er verschwindet, sobald
+ * das Profil offen ist (ordenkunst/startorden.ts).
+ * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck, nachDemNaechstenBild,
+ * ordenkunst/startorden.ts.
  */
 import {
   BookOpen,
@@ -20,12 +24,13 @@ import {
   Swords,
   type LucideIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import type { Bereich } from "../../../app/stapel";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { nachDemNaechstenBild } from "../bausteine/nachDemNaechstenBild";
 import { useLangerDruck } from "../bausteine/useLangerDruck";
+import { loescheUngesehen, useOrdenUngesehen } from "../ordenkunst/startorden";
 
 /**
  * Von 0.2.116 bis 0.2.129 zeigte die Leiste nur Symbole (Wunsch des Autors, 19.10.2026). Seit DS55
@@ -65,6 +70,10 @@ export function Leiste() {
   // Der getippte Bereich, bis der Bildschirm gewechselt hat; so zeigt die Leiste ihn sofort (V6).
   const [angetippt, setzeAngetippt] = useState<Bereich | null>(null);
   const gezeigt = angetippt ?? stapel.bereich;
+  const ordenNeu = useOrdenUngesehen();
+  useEffect(() => {
+    if (ordenNeu && stapel.bereich === "ich") loescheUngesehen();
+  }, [ordenNeu, stapel.bereich]);
   const wechsle = (bereich: Bereich) => {
     setzeAngetippt(bereich);
     void nachDemNaechstenBild().then(() => {
@@ -82,6 +91,7 @@ export function Leiste() {
     <nav className="leiste" aria-label={t("leiste.titel")}>
       {BEREICHE.map(({ bereich, symbol: Symbol, text, tour }) => {
         const mitDruck = bereich === "ich";
+        const neuImProfil = mitDruck && ordenNeu;
         return (
           <button
             key={bereich}
@@ -89,8 +99,8 @@ export function Leiste() {
             className={mitDruck ? "leiste-knopf leiste-knopf-halten" : "leiste-knopf"}
             aria-current={gezeigt === bereich ? "page" : undefined}
             data-tour={tour}
-            aria-label={t(text)}
-            title={t(text)}
+            aria-label={t(neuImProfil ? "leiste.profilNeu" : text)}
+            title={t(neuImProfil ? "leiste.profilNeu" : text)}
             {...(mitDruck
               ? {
                   onPointerDown: druck.onPointerDown,
@@ -107,6 +117,9 @@ export function Leiste() {
           >
             <Symbol size={SYMBOLGROESSE} strokeWidth={STRICHSTAERKE} aria-hidden="true" />
             <span aria-hidden="true">{t(text)}</span>
+            {neuImProfil && (
+              <i className="leiste-neu" aria-hidden="true" data-testid="leiste-orden-neu" />
+            )}
           </button>
         );
       })}

@@ -4,6 +4,28 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Nebenchat: eigene Bilder für Orden und Abzeichen (Zweig neben-orden)
+
+- Wunsch des Autors: Orden und Abzeichen sollen etwas sein, das man haben will; jedes Stück
+  bekommt ein eigenes Bild, das zu seiner Aufgabe passt, und alle unterscheiden sich deutlich.
+  Auf einer Entwurfsseite gab es je Stück drei Varianten (A klassisch aus Metall und Emaille,
+  B flach mit langem Schatten, C „Nacht und Gold“). Gewählt: alle 18 Abzeichen und die Orden für
+  Buch und Buchteile in C, die Bot-Orden und die Engine in A. Drei Notizen eingearbeitet (Auge
+  bei „Erst selbst denken“ tiefer, Fragezeichen bei „Nachgefragt“ größer und mittig, Flammen bei
+  „Eine Woche dabei“ mit Abstand zum Rand).
+- Startanimation: Die Orden im Rand (Kreis, Ringe oder verstreut) gefielen dem Autor nicht.
+  Entschieden: Springer und Titel bleiben unverändert; ist seit dem letzten Start etwas neu,
+  erscheint es danach unter dem Titel und fliegt zum Reiter „Profil“, wo ein goldener Punkt
+  bleibt, bis man das Profil öffnet (Entwurf 3). Ohne Neues erscheint leise ein verdientes Stück
+  des Tages (Entwurf 4). Der Stand des letzten Starts steht in einem Merker auf dem Gerät
+  (`ordenBekannt`), nicht im Speicher der Leser; beim ersten Start nach dem Update gilt nichts
+  als neu.
+- Profil: Orden und Abzeichen standen in den Ausklapplisten einzeln untereinander, weil
+  `.anleitung ul` in `ergaenzungen.css` das Gitter überschrieb. Eigene, genauere Regeln in
+  `ordenkunst.css`; die Abzeichen stehen zu viert in Reihen, ein Tipp zeigt die Bedingung.
+- Bilder als SVG-Text aus eigenen Zeichnungsdaten (`ui/komponenten/ordenkunst/`), keine fremden
+  Grafiken.
+
 ## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
 
 - Die fünf Zweige paket-webverweise, paket-meisterpartien, paket-zusatzaufgaben,

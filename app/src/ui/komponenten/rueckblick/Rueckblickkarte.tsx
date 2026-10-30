@@ -5,9 +5,8 @@
  * Rolle im Gesamtbild: Rückmeldung des Autors („Nachspielen wie bei chess.com: einfache
  * Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte (Zugurteil.tsx),
  * die Erklärung kommt aus spiel/erklaerung.ts.
- * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
- * Stellung vor dem Zug und dem gespielten Zug. Daneben „In die Lernsammlung“ für die Stellung
- * nach dem Zug, mit dem Weg der Partie (Eröffnung und PGN).
+ * Unten steht, wenn am Brett „Merken“ gedrückt ist, der Bereich für Lernsammlung oder
+ * Fehlerdatenbank (Merkenbereich.tsx; Kapitel 12, AP 13, ein Knopf nach Beschluss des Autors).
  * Der Satz zu einem Fehler nennt die Gewinnchance vorher und nachher statt der Bauerneinheiten
  * der Engine (Rückmeldung des Autors): Stockfish rechnet seine Zahl aus der Gewinnchance, eine
  * Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
@@ -15,57 +14,24 @@
  * Bei einem Theoriezug steht „Theoriezug: Teil einer Eröffnung“ (oder „eines Gambits“), das Wort
  * klappt die zutreffenden Namen auf (Theorieangabe.tsx, Wunsch des Autors, 25.10.2026).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
- * ui/trainer/FehlerFormular.tsx, rueckblicktyp.ts.
+ * Merkenbereich.tsx, rueckblicktyp.ts.
  */
 import { useId, useState } from "react";
 import { sprache, t, zahlText } from "../../../i18n/sprache";
 import { sanInSprache } from "../../../schach/notation";
-import { fenNachZuegen } from "../../../schach/weiterspielen";
 import { zugnummer, type Zugurteil } from "../../../spiel/auswertung";
 import type { Zugerklaerung } from "../../../spiel/erklaerung";
 import type { Partie } from "../../../spiel/partie";
 import { MIT_BESSEREM, MIT_STRAFE, type Zweigzug } from "../../../spiel/nebenzweig";
 import { balkentext } from "../../../spiel/rueckblick";
 import { uciZuSan } from "../../../spiel/zuege";
-import { FehlerFormular } from "../../trainer/FehlerFormular";
-import { SammelKnopf } from "../lernsammlung/SammelFormular";
 import { gewinnchanceVorNach, type Chance } from "../auswertung/gewinnchance";
-import { Aufklapper } from "../bausteine/Aufklapper";
 import { MitInfo } from "../bausteine/InfoKnopf";
+import { Merkenbereich } from "./Merkenbereich";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import { Theorieliste, Theoriesatz } from "./Theorieangabe";
 import { useTheorieauskunft } from "./useTheorie";
 import type { Rueckblick } from "./rueckblicktyp";
-
-/**
- * Knopf und Formular „In die Fehlerdatenbank“ für den gezeigten Zug. Der Schlüssel (Stellung und
- * Zug) setzt das Formular für jeden Zug zurück.
- */
-function InDieFehlerdatenbank({ fen, zug }: { fen: string; zug: string }) {
-  return (
-    <Aufklapper
-      text={t("fehlerdb.ausRueckblick")}
-      erklaerung={<p>{t("fehlerdb.erklaerung")}</p>}
-      thema={t("fehlerdb.erklaerungThema")}
-    >
-      <FehlerFormular fen={fen} zug={zug} />
-    </Aufklapper>
-  );
-}
-
-/** „In die Lernsammlung“ für die Stellung nach dem gezeigten Zug, mit dem Weg der Partie. */
-function InDieLernsammlung({ partie, index }: { partie: Partie; index: number }) {
-  const startFen = partie.einstellung.startFen;
-  const zuege = partie.zuege.slice(0, index + 1).map((z) => z.san);
-  const fen = fenNachZuegen(startFen, zuege);
-  if (!fen) return null;
-  return (
-    <SammelKnopf
-      fen={fen}
-      herkunft={{ herkunft: "partie", quelle: "", verlauf: { startFen, zuege } }}
-    />
-  );
-}
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
 /** Bis zu diesem Verlust ist ein Zug „so gut wie der beste“ (die Anzeige rundet auf 0,0). */
@@ -112,6 +78,7 @@ export function Rueckblickkarte({
   zweig,
   zweigZuege,
   strafZuege,
+  merkenOffen = false,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
@@ -126,6 +93,8 @@ export function Rueckblickkarte({
   zweigZuege: readonly Zweigzug[];
   /** Wie der Gegner den Fehler bestraft: Variante der Engine nach dem Zug (0.2.85). */
   strafZuege: readonly Zweigzug[];
+  /** Ist „Merken“ am Brett offen (Lernsammlung oder Fehlerdatenbank)? */
+  merkenOffen?: boolean;
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -198,8 +167,19 @@ export function Rueckblickkarte({
           {t("rueckblick.phasenwechsel", { text: phasenwechsel })}
         </p>
       )}
-      <InDieFehlerdatenbank key={`${fen} ${san}`} fen={fen} zug={san} />
-      <InDieLernsammlung key={`s ${fen} ${san}`} partie={partie} index={index} />
+      {merkenOffen && (
+        <Merkenbereich
+          key={`${fen} ${san}`}
+          rueckblick={rueckblick}
+          partie={partie}
+          index={index}
+          fen={fen}
+          san={san}
+          zug={zug}
+          bester={bester}
+          erklaerung={erklaerung}
+        />
+      )}
     </section>
   );
 }

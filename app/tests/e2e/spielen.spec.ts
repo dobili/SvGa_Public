@@ -185,6 +185,22 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     .getByTestId("nebenzweig-strafe")
     .getByRole("button", { name: "Zurück zur Partie" })
     .click();
+  // Seit 0.3.6 ein Knopf „Merken“ am Brett: bei einem eigenen Patzer leuchtet er auf und wählt
+  // „Fehler“ vor; der Satz trägt schon den Zug, „Lernen“ eine Notiz zur Herkunft.
+  const merken = page.getByTestId("merken-schalter");
+  await expect(merken).toHaveClass(/leuchtet/);
+  await merken.click();
+  const bereich = page.getByTestId("merkenbereich");
+  await expect(bereich.getByRole("radio", { name: "Fehler" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await expect(bereich.getByLabel(/^Ein Satz/)).toHaveValue(/^2\. g4/);
+  await bereich.getByRole("radio", { name: "Lernen" }).click();
+  await expect(bereich.getByTestId("sammelformular")).toBeVisible();
+  await expect(bereich.getByLabel(/^Notiz/)).toHaveValue(/Aus meiner Partie/);
+  await merken.click();
+  await expect(bereich).toHaveCount(0);
   // Seit 0.2.121 ohne Schalter „Genauigkeit wie“: Genauigkeit nach Lichess, Spielstärke aus dem
   // Elo-Modell je Zeitklasse, Erklärung hinter dem Fragezeichen.
   const spielstaerke = page.getByTestId("spielstaerke");

@@ -111,16 +111,19 @@ export function SammelFormular({
   herkunft,
   beiGespeichert,
   mitErklaerung = false,
+  vorschlagNotiz = "",
 }: {
   fen: string | null;
   herkunft: Sammelherkunft;
   beiGespeichert?: () => void;
+  /** Vorschlag für die Notiz (Rückblick: woher die Stellung stammt); der Leser ändert. */
+  vorschlagNotiz?: string;
   /** Kopfzeile mit Fragezeichen (unter dem Brett der Abbildung, Wunsch des Autors 19.10.2026). */
   mitErklaerung?: boolean;
 }) {
   const index = useEroeffnungsindex(KAPITEL_MIT_INDEX);
   const [plan, setzePlan] = useState("");
-  const [notiz, setzeNotiz] = useState("");
+  const [notiz, setzeNotiz] = useState(vorschlagNotiz.slice(0, NOTIZ_HOECHSTENS));
   // null: die Eröffnung der App gilt; sobald der Leser tippt, gilt seine.
   const [eigeneEroeffnung, setzeEroeffnung] = useState<string | null>(null);
   const [gespeichert, setzeGespeichert] = useState(false);

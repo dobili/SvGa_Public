@@ -141,6 +141,35 @@
   box-shadow: inset 0 0 0 1px var(--gold);
 }
 
+/* „Merken“ leuchtet bei einem eigenen Patzer oder verpassten Gewinn kurz golden auf (Wunsch des
+   Autors, 27.10.2026); bei „Bewegung reduzieren“ bleibt nur ein ruhiger goldener Rand. */
+.brettschalter.leuchtet {
+  border-radius: var(--radius);
+  animation: merken-leuchten 1.2s ease-in-out 2;
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+@keyframes merken-leuchten {
+  50% {
+    color: var(--gold-text);
+    box-shadow:
+      inset 0 0 0 2px var(--gold),
+      0 0 12px var(--gold);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brettschalter.leuchtet {
+    animation: none;
+  }
+}
+
+.merkenbereich {
+  display: grid;
+  gap: var(--raster);
+  margin-top: var(--raster);
+}
+
 .umwandlung {
   display: flex;
   flex-wrap: wrap;

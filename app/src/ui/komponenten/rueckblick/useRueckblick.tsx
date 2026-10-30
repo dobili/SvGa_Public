@@ -13,7 +13,7 @@
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, spiel/phasen.ts, Bewertungsbalken,
  * Rueckblickkarte, Variantenknoepfe, rueckblicktyp.ts.
  */
-import { useMemo, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { phasensatz, zusatzsatz } from "../../../analyse/phasentext";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../../spiel/phasen";
@@ -24,6 +24,8 @@ import { rueckblickMarken } from "../../../spiel/rueckblick";
 import { sanZuUci } from "../../../spiel/zuege";
 import { Bewertungsbalken } from "./Bewertungsbalken";
 import type { Zweigwahl } from "./Nebenzweig";
+import { MerkenSchalter } from "./Merkenbereich";
+import { istGelegenheit } from "./merken";
 import { Rueckblickkarte } from "./Rueckblickkarte";
 import { Variantenknoepfe } from "./Variantenknoepfe";
 import type { Rueckblick } from "./rueckblicktyp";
@@ -89,12 +91,17 @@ export function useRueckblick(
   marken: readonly Markierung[];
   leiste: ((gedreht: boolean) => ReactNode) | null;
   karte: ReactNode;
+  /** Knopf „Merken“ am Brett (Lernsammlung oder Fehlerdatenbank), ohne Zug null. */
+  merken: ReactNode;
   /** Die Knöpfe „abspielen“ unter dem Brett (seit 0.3.0), sonst null. */
   abspielen: ReactNode;
   /** Der gezeigte Zug des Nebenzweigs (seit 0.2.85), sonst null. */
   zweigzug: Zweigzug | null;
 } {
   const index = stelle - 1;
+  // „Merken“ gilt für den Zug, an dem es geöffnet wurde; ein anderer Zug schließt es.
+  const [merkenBei, setzeMerkenBei] = useState<number | null>(null);
+  const merkenOffen = merkenBei === index;
   const erklaerung = useMemo(
     () => (rueckblick && index >= 0 ? erklaerungFuer(rueckblick, alle, sans, index) : null),
     [rueckblick, alle, sans, index],
@@ -120,7 +127,7 @@ export function useRueckblick(
     [rueckblick, alle, index],
   );
   if (!rueckblick)
-    return { marken: [], leiste: null, karte: null, abspielen: null, zweigzug: null };
+    return { marken: [], leiste: null, karte: null, merken: null, abspielen: null, zweigzug: null };
   const marken =
     index >= 0
       ? [
@@ -147,6 +154,7 @@ export function useRueckblick(
         zweig={zweig}
         zweigZuege={zweigZuege}
         strafZuege={strafZuege}
+        merkenOffen={merkenOffen}
       />
     ) : null;
   const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;
@@ -162,5 +170,14 @@ export function useRueckblick(
       wahl={zweig}
     />
   );
-  return { marken, leiste, karte, abspielen, zweigzug };
+  const merken =
+    index >= 0 ? (
+      <MerkenSchalter
+        key={index}
+        an={merkenOffen}
+        leuchtet={istGelegenheit(partie, rueckblick, index)}
+        beiKlick={() => setzeMerkenBei(merkenOffen ? null : index)}
+      />
+    ) : null;
+  return { marken, leiste, karte, merken, abspielen, zweigzug };
 }

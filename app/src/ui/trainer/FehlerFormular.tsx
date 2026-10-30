@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Fehlerdatenbank (Kapitel 12, AP 13). Dasselbe Formular steht im Trainer
  * (mit einer Stellung als FEN) und im Rückblick einer Partie unter dem Zug, den der Leser
  * eintragen will (Stellung vor dem Zug, gespielter Zug). Die Fehlerarten kommen aus
- * nachschlagen.json (Gesamt-Checkliste, Spalte „Fehlerart“).
+ * nachschlagen.json (Gesamt-Checkliste, Spalte „Fehlerart“). Aus dem Rückblick kommen Fehlerart
+ * und Satz schon als Vorschlag (spiel/fehlervorschlag.ts; Wunsch des Autors, 27.10.2026).
  * Abhängigkeiten: training/fehlerdatenbank.ts, speicher/speicher.ts, daten/laden.ts, i18n.
  */
 import { useId, useState } from "react";
@@ -27,16 +28,21 @@ export function FehlerFormular({
   fen,
   zug,
   beiGespeichert,
+  vorschlagArt = null,
+  vorschlagSatz = "",
 }: {
   /** Stellung vor dem Fehler; null, solange keine gültige Stellung angegeben ist. */
   fen: string | null;
   zug?: string;
   beiGespeichert?: () => void;
+  /** Vorschlag aus der Auswertung (Rückblick): Kapitel der Fehlerart, Satz; der Leser ändert. */
+  vorschlagArt?: number | null;
+  vorschlagSatz?: string;
 }) {
   const arten = useFehlerarten();
   const id = useId();
-  const [art, setzeArt] = useState<number | null>(null);
-  const [satz, setzeSatz] = useState("");
+  const [art, setzeArt] = useState<number | null>(vorschlagArt);
+  const [satz, setzeSatz] = useState(vorschlagSatz.slice(0, SATZ_HOECHSTENS));
   const [gespeichert, setzeGespeichert] = useState(false);
   const speichern = () => {
     if (fen === null || art === null) return;

@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Ein Knopf „Merken“ im Rückblick (Opus, Version 0.3.6)
+
+- Beschluss des Autors (26.10.2026): ein Knopf für Lernsammlung und Fehlerdatenbank, im Fenster
+  die Wahl; Vorauswahl „Fehler“ bei ?, ?? und „verpasst“; Vorschläge für die Felder; goldenes
+  Aufleuchten bei einer guten Gelegenheit, sparsam. Umgesetzt als Lesezeichen „Merken“ am Brett
+  der Partie (`ui/komponenten/rueckblick/Merkenbereich.tsx`, `merken.ts`); der Bereich steht unter
+  der Karte des Zuges, ein anderer Zug schließt ihn. Die alten Zeilen und drei Texte sind weg.
+- Vorschlag der Fehlerart: `spiel/fehlervorschlag.ts` ordnet die erkannte Fehlerart der Auswertung
+  einem Kapitel der Gesamt-Checkliste zu (hängende Figur, Drohung, eingestellter Bauer → 1;
+  verfrühte Dame, König in der Mitte, Tempoverlust → 2; Schlagreflex, Bauernraub → 4;
+  Königsschild, Bauernvorstoß, Bauernzug ohne Not → 5; falscher Abtausch, Königszug ohne Not → 6;
+  Taktik übersehen, Schlag verpasst → 7; Patt gesetzt → 8; passiver König → 9). „Ungenau“ ohne
+  Vorschlag. Satz: Zug, Erklärung, besserer Zug. Lernsammlung: Notiz zur Herkunft.
+- Aufleuchten nur bei eigenen Zügen mit ?? oder „verpasst“ (zweimal, CSS; bei reduzierter Bewegung
+  nur ein Rand). Kein neues Datenformat.
+
 ## 30.10.2026 – Vergleich nach falschem Zug in Taktik und Übungen (Opus, Version 0.3.5)
 
 - Wunsch des Autors (27.10.2026): In allen Trainern mit Zugaufgaben nach einem falschen Zug den

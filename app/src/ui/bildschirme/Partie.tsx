@@ -236,7 +236,12 @@ function Spielfeld({
             />
           )
         }
-        zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
+        zusatzSchalter={
+          <>
+            {rb.merken}
+            <RuhigSchalter ruhig={ruhig} />
+          </>
+        }
         seitenleiste={rb.leiste}
         ueberlagerung={(gedreht: boolean) => (
           <>

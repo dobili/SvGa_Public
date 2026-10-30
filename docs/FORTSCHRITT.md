@@ -1,3 +1,5 @@
+Stand: 30.10.2026 · **Version 0.3.6** (Zweig `ein-knopf`, Opus): Paket B, ein Knopf „Merken“ im Rückblick mit Vorschlägen und Aufleuchten. **Nächster Schritt:** Paket A (Admin-Testwerkzeug, Ringe, Orden, Startanimation) – zuerst prüfen, was an Ringen und Feiern schon da ist; Datenformat der Fortschritte nur mit Rückfrage ändern.
+
 Stand: 30.10.2026 · **Version 0.3.5** (Zweig `falschzug`, Opus): Vergleich nach falschem Zug in Taktiktrainer und Buchübungen (`ui/trainer/useFalschzug.ts`, `Falschzugmeldung.tsx`). **Nächster Schritt:** Paket B (ein Knopf für Lernsammlung und Fehlerdatenbank im Rückblick, Vorschläge, Aufleuchten), dann A (Orden).
 
 Stand: 30.10.2026 · **Version 0.3.4** (Zweig `wertung-bereich`, Opus, Übergabe aus der Ideensammlung): Paket C fertig, Wertung auf chess.com und FIDE als Bereich für jede Zeitart (`spiel/umrechnung.ts`, `ui/komponenten/fortschritt/wertungsmassstab.ts`). **Nächster Schritt:** Paket „Pfeile und Stellungsverlust nach falschem Zug in allen Trainern“, dann B (ein Knopf Lernsammlung/Fehlerdatenbank), dann A (Orden).

@@ -7,8 +7,9 @@
  * Schachlogik. Die App liegt unter /app/ und startet immer direkt; Installation und Buch stellt
  * die statische Startseite unter / vor (Entscheidung 15.10.2026). Die Adresse /app/#lizenzen
  * (Fußzeile der Startseite) öffnet gleich die Lizenzen, /app/#abb-6.20 (Trainingsseiten der
- * Website) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors. Ohne solches
- * Sprungziel macht die App dort weiter, wo der Leser war (V2, app/stapelMerker.ts).
+ * Website) gleich die Abbildung, /app/#trainer-koordinaten einen Trainer, /app/#aufgaben die
+ * Aufgabenseite des Autors. Ohne solches Sprungziel macht die App dort weiter, wo der Leser war
+ * (V2, app/stapelMerker.ts).
  * Hier liegen auch die Tour-Ebene und der Hinweis beim ersten Start (tour/, P8, R52), unter der
  * Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
  * Jeder Bildschirm steht in einer eigenen Fehlergrenze (app/Bildschirmgrenze.tsx, V7,
@@ -28,6 +29,7 @@ import { Checkliste } from "../ui/bildschirme/Checkliste";
 import { Steckbriefe } from "../ui/bildschirme/Steckbriefe";
 import { Werkzeuguebersicht } from "../ui/bildschirme/Werkzeuguebersicht";
 import { Denkroutine } from "../ui/bildschirme/Denkroutine";
+import { TRAINER } from "../training/trainer";
 import { Begriff, Glossar } from "../ui/bildschirme/Glossar";
 import { Nachschlagen } from "../ui/bildschirme/Nachschlagen";
 import { Training } from "../ui/bildschirme/Training";
@@ -140,23 +142,35 @@ const SPRUNG_LIZENZEN = "#lizenzen";
 const SPRUNG_AUFGABEN = "#aufgaben";
 /** Sprung zu einer Abbildung von den Trainingsseiten der Website, etwa „#abb-6.20“ (16.10.2026). */
 const SPRUNG_ABBILDUNG = /^#abb-(\d{1,2}\.\d{1,3})$/;
+/**
+ * Sprung zu einem Trainer von den Trainingsseiten, etwa „#trainer-koordinaten“ statt des
+ * Koordinatentrainings auf Lichess (Paket Webverweise, 30.10.2026).
+ */
+const SPRUNG_TRAINER = /^#trainer-([A-Za-z]+)$/;
 
-/** Die Ansicht zu einem Sprungziel der Adresse, oder null. Beispiel: „#abb-6.20“ → Abb. 6.20. */
+/**
+ * Die Ansicht zu einem Sprungziel der Adresse, oder null. Beispiel: „#abb-6.20“ → Abb. 6.20.
+ * Sonderfall: Ein unbekannter Trainer („#trainer-zauberei“) öffnet nichts, die App startet normal.
+ */
 function ansichtZumSprung(hash: string): Ansicht | null {
   if (hash === SPRUNG_LIZENZEN) return { bildschirm: "lizenzen" };
   if (hash === SPRUNG_AUFGABEN && !__VEROEFFENTLICHUNG__) return { bildschirm: "autoraufgaben" };
+  const trainer = TRAINER.find((t) => t.kennung === SPRUNG_TRAINER.exec(hash)?.[1]);
+  if (trainer) return { bildschirm: "trainer", kennung: trainer.kennung };
   const abbildung = SPRUNG_ABBILDUNG.exec(hash)?.[1];
   return abbildung ? { bildschirm: "abbildung", nummer: abbildung } : null;
 }
 
 /**
- * Der Stapel beim Start: Ein Sprungziel in der Adresse beginnt beim Buch (der Sprung folgt in
- * Hauptrahmen); sonst der gesicherte Stapel, wenn er sich wiederherstellen lässt (V2), und im
- * Zweifel das Buch wie bisher. Auch ein Sprachwechsel baut den Rahmen neu auf und bleibt so auf
+ * Der Stapel beim Start: Ein Sprungziel in der Adresse beginnt beim Buch, ein Trainer beim
+ * Training (der Sprung folgt in Hauptrahmen); sonst der gesicherte Stapel, wenn er sich
+ * wiederherstellen lässt (V2), und im Zweifel das Buch wie bisher. Auch ein Sprachwechsel baut den Rahmen neu auf und bleibt so auf
  * dem Bildschirm, auf dem der Leser die Sprache gewählt hat.
  */
 function anfangsstapel(): Stapel {
-  if (ansichtZumSprung(window.location.hash)) return neuerStapel("buch");
+  const sprung = ansichtZumSprung(window.location.hash);
+  // Ein Trainer gehört zum Bereich Training, damit „Zurück“ zur Übersicht der Trainer führt.
+  if (sprung) return neuerStapel(sprung.bildschirm === "trainer" ? "training" : "buch");
   return gesicherterStapel() ?? neuerStapel("buch");
 }
 

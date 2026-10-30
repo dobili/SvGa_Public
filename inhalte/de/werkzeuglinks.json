@@ -5,7 +5,8 @@
     {
       "namen": ["Aufgabenthemen"],
       "titel": "Aufgabenthemen",
-      "adresse": "https://lichess.org/training/themes"
+      "adresse": "https://lichess.org/training/themes",
+      "app": "taktik"
     },
     {
       "namen": ["Aufgabenübersicht"],
@@ -65,7 +66,8 @@
     {
       "namen": ["Feld finden", "Feld benennen", "Koordinaten"],
       "titel": "Koordinatentraining",
-      "adresse": "https://lichess.org/training/coordinate"
+      "adresse": "https://lichess.org/training/coordinate",
+      "app": "koordinaten"
     },
     {
       "namen": ["Lernen →"],
@@ -79,7 +81,8 @@
         "Figuren-Mattvarianten"
       ],
       "titel": "Übungen (Lichess Practice)",
-      "adresse": "https://lichess.org/practice"
+      "adresse": "https://lichess.org/practice",
+      "app": "endspiel"
     },
     {
       "namen": ["Übertragungen"],

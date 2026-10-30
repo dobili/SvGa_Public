@@ -33,6 +33,25 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1050. **Koordinaten in der App:** schach-von-grund-auf.com/training/kap00/ öffnen. Unter
+      der Übung zum Koordinatentraining steht wie bisher „Direkt öffnen: Koordinatentraining ↗“
+      (Lichess, neuer Tab) und dahinter neu „In der App: Koordinaten, Notation, Gangarten“. Ein
+      Tipp darauf öffnet die App gleich im Koordinatentrainer (Knöpfe „Feld finden“ usw.).
+      „Zurück“ führt zur Übersicht der Trainer im Bereich Training. Passt das?
+- [ ] N1051. **Taktik und Endspiel in der App:** Auf schach-von-grund-auf.com/training/kap01/
+      steht bei Übungen mit „Aufgabenthemen“ zusätzlich „In der App: Taktiktrainer“, auf
+      /training/kap08/ und /training/kap09/ bei den Lichess-Übungen zu Mattvarianten und
+      Turmendspielen „In der App: Endspieltrainer“. Je einmal antippen: Öffnet sich der richtige
+      Trainer? Die Lichess-Links bleiben daneben, weil das Buch sie nennt.
+- [ ] N1052. **Linkprüfung im Dashboard:** Nach dem nächsten Wartungslauf (schach-von-grund-auf.com/admin/,
+      Übersicht, Gruppe „Links“) prüft „App-Texte und Lizenzen“ jetzt auch die Quellen der
+      Lizenzseite, die ohne „https://“ dastehen (etwa github.com/niklasf/chessops). Neu ist
+      außerdem: Leitet eine Adresse auf eine andere Domain weiter (so sieht eine abgelaufene,
+      geparkte Domain aus), wird der Punkt gelb mit „umgeleitet nach …“. Heute sollte alles grün
+      sein. Ist es das?
+
 ### Neu in 0.3.13: Orden verstreut, Pfeile, Serie ohne Verfall (Opus, 30.10.2026)
 
 - [ ] N1041. **Orden zufällig verteilt:** Aufgabenseite › „Orden testen“ › ein paar Ringe auf
@@ -326,6 +345,71 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q6 Webverweise der App (30.10.2026)
+
+Dein Wunsch vom 26.10.: prüfen, auf welche Webinhalte die App und die Trainingsseiten verweisen,
+und ob sich davon etwas direkt in die App holen lässt. Ergebnis:
+
+- **925 verschiedene Webadressen** stehen in den Daten und Texten der App. 876 davon sind Links
+  auf die Lichess-Partien, aus denen die Aufgaben im Taktiktrainer, in „Falle oder Köder“ und im
+  Endspieltrainer stammen. Die App speichert sie nur als Herkunft und zeigt sie nicht an. Eine
+  Stichprobe von 25 war vollständig erreichbar.
+- **Trainingsseiten** (13 Kapitel und der Werkzeugkasten): 32 Links auf 28 Ziele, davon 20 auf
+  lichess.org. Dazu kommen syzygy-tables.info, schachbund.de, chessgames.com, 365chess.com,
+  stockfishchess.org, encroissant.org, Lucas Chess, listudy.org, schach-tipps.de und
+  schachtraining.de.
+- **Texte der App:** Hier steht keine Adresse mit „https://“, nur Quellenangaben auf der
+  Lizenzseite (13 GitHub-Projekte, dazu Lichess, chess.com, chessgoals.com, DiceBear, Draftbit,
+  itch.io und ambientCG).
+- **Buchdaten** (Abbildungen, Glossar, Kapiteltexte): keine einzige Webadresse.
+- **Tot ist kein Verweis.** Alle 12 GitHub-Projekte gibt es noch. Harmlos umgeleitet werden
+  365chess.com, chessgames.com und schachbund.de (jeweils auf „www.“), listudy.org (auf die
+  englische Seite) und die Lichess-Aufgabenübersicht (ohne Anmeldung auf die Aufgabenseite).
+  Auf eine fremde Domain wird nichts umgeleitet.
+- **Doppelt:** syzygy-tables.info steht auf vier Seiten (Kapitel 8, 9, 10 und im
+  Werkzeugkasten). Das ist gewollt, weil jedes Kapitel für sich steht.
+
+Was frei ist und was sich einbauen lässt:
+
+- Lichess-**Puzzles** und -**Partiedatenbank**: CC0 (database.lichess.org: „Database exports are
+  released under the Creative Commons CC0 license.“). Ist schon eingebaut: Taktiktrainer,
+  „Falle oder Köder“, Endspieltrainer, Eröffnungen nach Spielstärke.
+- Lichess-**Eröffnungsnamen**: CC0, auch schon eingebaut.
+- Lichess-**Übertragungen**: CC BY-SA 4.0 (database.lichess.org, Abschnitt Broadcasts:
+  „Broadcast games are released under the Creative Commons Attribution-ShareAlike 4.0
+  license.“). Von dir am 30.10. angenommen (Entscheidung 7), kommt mit „Zug erraten“.
+- **Lernen, Koordinatentraining, Analysebrett, Stellung aufbauen, Puzzle Storm, Streak und
+  Racer** sind Programmteile von Lichess unter AGPL-3.0 (github.com/lichess-org/lila: „Lila is
+  licensed under the GNU Affero General Public License 3 or any later version“). Abschreiben
+  wäre rechtlich möglich, lohnt sich aber nicht: Die App hat für das Wichtigste eigene Trainer.
+- **Lichess Practice und Studien:** Dafür gibt es keine ausdrückliche Lizenz, die Studien gehören
+  ihren Autoren. Also nur verlinken.
+- **Tablebase** (syzygy-tables.info): Die Tafeln bis fünf Steine sind zusammen knapp 1 GB groß,
+  offline passt das nicht in die App.
+- **Andere Seiten** (Partiedatenbanken, Programme, Schachbund, Trainingsseiten): nur verlinken.
+
+- [ ] Q6-1. **„In der App“ neben Lichess.** Wo eine Übung ein Lichess-Werkzeug nennt, für das
+      die App einen eigenen Trainer hat, steht hinter dem Lichess-Link jetzt „In der App: …“ mit
+      einem direkten Sprung in diesen Trainer. Das betrifft drei Fälle: Koordinatentraining →
+      Koordinatentrainer, Aufgabenthemen → Taktiktrainer, Lichess Practice (Mattvarianten,
+      Turmendspiele) → Endspieltrainer. Der Text der Übungen bleibt, wie er im Buch steht.
+      Schon umgesetzt, Widerspruch genügt.
+- [ ] Q6-2. **Linkprüfung schärfer.** Die wöchentliche Prüfung im Dashboard prüft jetzt auch die
+      Quellen auf der Lizenzseite und meldet gelb, wenn eine Adresse auf eine fremde Domain
+      umleitet (etwa eine abgelaufene Domain mit Parkseite, die sonst als „erreichbar“ durchgeht).
+      Die 876 Partielinks prüft sie absichtlich nicht jede Woche, das wären zu viele Abrufe bei
+      Lichess. Schon umgesetzt, Widerspruch genügt.
+- [ ] Q6-3. **Keine Änderung an den Adressen.** Die Umleitungen auf „www.“ und die englische
+      Seite von listudy.org schaden nicht, deshalb lasse ich die Adressen, wie sie im Buch stehen.
+      Schon so entschieden, Widerspruch genügt.
+- [ ] Q6-4. **Buchbefund, klein:** Der Trainingskasten in Kapitel 0 schreibt
+      „www.schachbund.de“, der Werkzeugkasten in Kapitel 12 „schachbund.de“. Beide Adressen
+      funktionieren. Willst du die Schreibweise im Buch vereinheitlichen? Kein toter Link im Buch.
+- [ ] Q6-5. **Später, nur Empfehlung: Tablebase online im Endspieltrainer.** Ein Knopf
+      „Tablebase“, der eine Endspielstellung mit bis zu sieben Steinen bei der freien
+      Lichess-Tablebase nachschlägt (nur mit Netz). Das ändert die Datenschutzerklärung, weil die
+      Stellung an Lichess geht. Deshalb baue ich es erst nach deinem Ja. Möchtest du das?
 
 ### Q5 Weitere Ideen aus der Recherche (30.10.2026, noch nicht beschlossen)
 

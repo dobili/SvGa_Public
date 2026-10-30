@@ -5,7 +5,8 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Trainingsblock, Trainingsseite } from "./trainingsseiten";
 import { kapitelseite } from "./trainingsrahmen";
-import { WERKZEUGLINKS, werkzeugeDes, werkzeuglinksHtml } from "./werkzeuglinks";
+import { TRAINER } from "../training/trainer";
+import { WERKZEUGLINKS, appTrainerDes, werkzeugeDes, werkzeuglinksHtml } from "./werkzeuglinks";
 
 const absatz = (text: string, ziel?: string): Trainingsblock => ({
   art: "absatz",
@@ -54,5 +55,19 @@ describe("Werkzeug-Links", () => {
       'href="https://lichess.org/training/themes" target="_blank" rel="noopener"',
     );
     expect(html).toContain("{{training.werkzeuglinks}}");
+  });
+
+  it("nennt das Gegenstück in der App mit Sprung zum Trainer, jedes nur einmal", () => {
+    const block = absatz("Übe „Feld finden“ und danach das Koordinaten-Benennen.");
+    expect(appTrainerDes(werkzeugeDes(block))).toEqual(["koordinaten"]);
+    const html = werkzeuglinksHtml(block);
+    expect(html).toContain("{{training.inDerApp}}");
+    expect(html).toContain('href="/app/#trainer-koordinaten">{{trainer.koordinaten.name}}</a>');
+    expect(werkzeuglinksHtml(absatz("Im Analysebrett prüfen."))).not.toContain("inDerApp");
+  });
+
+  it("jedes Gegenstück ist ein Trainer der App", () => {
+    const kennungen = TRAINER.map((t) => t.kennung as string);
+    for (const w of WERKZEUGLINKS) if (w.app) expect(kennungen).toContain(w.app);
   });
 });

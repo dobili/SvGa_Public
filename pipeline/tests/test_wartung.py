@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from pathlib import Path
 
-from pipeline.wartung.links import bewerte, pruefe_links, urls_in
+from pipeline.wartung.links import bewerte, fremde_weiterleitung, pruefe_links, urls_in
 from pipeline.wartung.live import ampel_nach_tagen, pruefe_seiten, pruefe_version
 from pipeline.wartung.netz import Antwort
 from pipeline.wartung.projekt import bewerte_audit, bewerte_laeufe, hauptversion, pruefe_aufgaben
@@ -17,6 +17,52 @@ JETZT = datetime(2026, 10, 24, 12, tzinfo=UTC)
 def test_urls_in_ohne_satzzeichen_und_eigene_domain() -> None:
     text = 'Siehe https://lichess.org/learn. Und "https://schach-von-grund-auf.com/app/" sowie (https://syzygy-tables.info)'
     assert urls_in(text) == {"https://lichess.org/learn", "https://syzygy-tables.info"}
+
+
+def test_urls_in_findet_nackte_github_adressen() -> None:
+    text = "Quellcode: github.com/niklasf/chessops; über Lichess (github.com/lichess-org/lila, public/piece). https://github.com/x/y"
+    assert urls_in(text) == {
+        "https://github.com/niklasf/chessops",
+        "https://github.com/lichess-org/lila",
+        "https://github.com/x/y",
+    }
+
+
+def test_fremde_weiterleitung_nur_bei_anderer_domain() -> None:
+    ziele = {
+        "https://365chess.com": "https://www.365chess.com/",
+        "https://chessgames.com": "https://www.chessgames.com:443/",
+        "https://listudy.org": "/en",
+        "https://verwaist.example.net": "https://sedo.com/search/?domain=verwaist.example.net",
+    }
+
+    def abruf(url: str, methode: str = "GET", **optionen: object) -> Antwort:
+        assert optionen.get("weiterleiten") is False
+        return Antwort(301, ziel=ziele[url]) if url in ziele else Antwort(200)
+
+    assert fremde_weiterleitung("https://365chess.com", abruf) is None
+    assert fremde_weiterleitung("https://chessgames.com", abruf) is None
+    assert fremde_weiterleitung("https://listudy.org", abruf) is None
+    assert fremde_weiterleitung("https://lichess.org", abruf) is None
+    assert fremde_weiterleitung("https://verwaist.example.net", abruf) == (
+        "https://sedo.com/search/?domain=verwaist.example.net"
+    )
+
+
+def test_pruefe_links_gelb_bei_umleitung_auf_andere_domain(tmp_path: Path) -> None:
+    texte = tmp_path / "app/src/i18n"
+    texte.mkdir(parents=True)
+    (texte / "de.json").write_text('{"a": "Quelle: https://alt.example.net/x"}', encoding="utf-8")
+
+    def abruf(url: str, methode: str = "GET", **optionen: object) -> Antwort:
+        if optionen.get("weiterleiten") is False:
+            return Antwort(302, ziel="https://parkplatz.example.net/")
+        return Antwort(200)
+
+    punkte = {p.id: p for p in pruefe_links(tmp_path, abruf)}
+    assert punkte["links-app"].ampel == Ampel.GELB
+    erwartet = "umgeleitet nach https://parkplatz.example.net/: https://alt.example.net/x"
+    assert erwartet in punkte["links-app"].text
 
 
 def test_bewerte_status() -> None:

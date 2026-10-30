@@ -4,6 +4,29 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Webverweise der App geprüft (Opus, Paket Webverweise)
+
+- Wunsch des Autors (Ideensammlung 26.10.2026): Verweise der Trainingsseiten auf Webinhalte
+  prüfen und Einbaubares in die App holen.
+- Bestand: 925 Adressen. 876 davon sind Lichess-Partien als Herkunft der Trainer-Aufgaben (nicht
+  angezeigt). Die Trainingsseiten haben 28 Ziele, die App-Texte nur Quellenangaben ohne
+  „https://“, die Buchdaten gar keine. Tot ist nichts, umgeleitet wird nur harmlos (www., Sprache,
+  Anmeldung).
+- Lizenzen mit Fundstelle: Lichess-Datenbank und Puzzles CC0, Übertragungen CC BY-SA 4.0 (beides
+  database.lichess.org), lila AGPL-3.0 (README von lichess-org/lila). Practice und Studien haben
+  keine ausdrückliche Lizenz und werden deshalb nur verlinkt.
+- Eingebaut: In `inhalte/de/werkzeuglinks.json` hat ein Werkzeug optional das Feld `app` (Kennung
+  eines Trainers). Die Trainingsseiten zeigen dann „In der App: …“ mit Sprung
+  `/app/#trainer-<kennung>`, und die App öffnet den Trainer im Bereich Training. Das gilt für drei
+  Fälle (Koordinaten, Aufgabenthemen → Taktik, Practice → Endspiel). Die Übungstexte bleiben
+  unverändert (Regel 1).
+- Linkprüfung (`pipeline/wartung/links.py`): Sie prüft jetzt auch nackte GitHub-Adressen der
+  Lizenzseite. Eine Weiterleitung auf eine fremde Domain (ohne „www.“ und Port) wird gelb.
+  Partielinks der Trainerdaten bleiben aus der wöchentlichen Prüfung heraus (zu viele Abrufe).
+- Nicht gemacht: Adressen der Trainingsseiten bleiben trotz harmloser Umleitungen wie im Buch.
+  Ein Tablebase-Knopf mit Netz bleibt Empfehlung (Q6-5), weil er die Datenschutzerklärung
+  berührt.
+
 ## 30.10.2026 – Prüfstand des Autors, Entscheidungen 1 bis 13 (Opus, Version 0.3.13)
 
 - **Prüfstand vom 30.10.2026:** 315 Punkte „ok“ und aus `AUFGABEN_AUTOR.md` gelöscht:

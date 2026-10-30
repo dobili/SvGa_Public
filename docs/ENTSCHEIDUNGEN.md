@@ -4,6 +4,21 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Wertungsumrechnung als Bereich für jede Zeitart (Opus, Version 0.3.4)
+
+- Wunsch des Autors (27.10.2026): chess.com und FIDE für alle Zeitarten, Bereich statt „etwa“.
+  Gerechnet wird über die gemeinsame Spalte „chess.com Blitz“ der Tabellen von chessgoals.com
+  (Juli 2026): eigene Wertung → chess.com Blitz → Zielliste. Klassisch auf chess.com heißt
+  „chess.com Schnellschach“, weil chess.com keine klassische Wertung führt (geprüft: die Quelle hat
+  keine solche Spalte). Der Bereich ist die Hälfte der Spieler; seine halbe Breite verbindet die
+  Streuung der eigenen Spalte und der Zielspalte (beide gegen chess.com Blitz gemessen,
+  quadratisch addiert): Blitz → chess.com Blitz ±70, Schnellschach → chess.com Schnellschach ±146,
+  Klassisch → FIDE ±117. FIDE fehlt unter etwa 1650 (Tabelle der Quelle); Lichess Klassisch beruht
+  nur auf 240 Spielern. Spannen und Änderungen werden mit den Mitten umgerechnet.
+- Die Daten erzeugt jetzt `buch/arbeit/umrechnung/erzeugen.py` (nur lokal) mit Kommentaren, damit sie
+  beim Neuerzeugen erhalten bleiben. Der Merker „umgerechnet“ alter Geräte gilt als „chess.com“.
+- Ersetzt den Testpunkt N1008 (ein Schalter „chess.com · FIDE“ mit „≈“).
+
 ## 26.10.2026 – Beschlossen in der Ideensammlung (Anzeige und Kurzpläne seit 0.3.3 umgesetzt, der gemeinsame Knopf offen)
 
 Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Recherche Q2):

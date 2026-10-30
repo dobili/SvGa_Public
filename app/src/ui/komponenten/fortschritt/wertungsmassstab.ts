@@ -1,24 +1,25 @@
 /**
- * Maßstab der eigenen Wertung (Wunsch des Autors, 26.10.2026): „Lichess“ oder umgerechnet auf
- * chess.com (Blitz, Schnellschach) und FIDE (Klassisch), mit „≈“ und dem Namen der Liste.
+ * Maßstab der eigenen Wertung: „Lichess“ (wie berechnet) oder umgerechnet auf chess.com oder FIDE,
+ * jeweils als Bereich und mit dem Namen der Liste.
  *
  * Rolle im Gesamtbild: Die Karten „Deine Wertung“ (Wertungskurve.tsx) und „Deine Spielstärke“
  * (LetzteSpielstaerke.tsx) zeigen jede Zahl zur eigenen Wertung wahlweise im Maßstab von Lichess
- * oder umgerechnet. Die Rechnung steht in spiel/umrechnung.ts (Tabellen von chessgoals.com); hier
- * nur Wahl, Merker und die Form der Zahl. Außerhalb der Tabellen steht „–“ mit der Grenze
- * (FIDE erst ab etwa 1730 Lichess Klassisch). Die Wahl gilt je Gerät (app/merker.ts).
+ * oder umgerechnet. Wunsch des Autors (27.10.2026): beide Listen für jede Zeitklasse, Bereich statt
+ * „≈“. Die Rechnung steht in spiel/umrechnung.ts (Tabellen von chessgoals.com); hier nur Wahl,
+ * Merker und die Form der Zahl. Außerhalb der Tabellen steht „–“ mit der Grenze. Die Wahl gilt je
+ * Gerät (app/merker.ts); der frühere Wert „umgerechnet“ gilt als chess.com.
  * Abhängigkeiten: spiel/umrechnung.ts, app/merker.ts, i18n, React (useState).
  */
 import { useState } from "react";
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { t } from "../../../i18n/sprache";
 import type { Wertungstempo } from "../../../spiel/elomodell";
-import { entsprichtEtwa, vergleichsbereich, ZIELLISTE } from "../../../spiel/umrechnung";
+import { umgerechnet, vergleichsbereich, type Zielliste } from "../../../spiel/umrechnung";
 
-/** „lichess“: Zahlen wie berechnet; „umgerechnet“: chess.com oder FIDE je Zeitklasse. */
-export type Wertungsmassstab = "lichess" | "umgerechnet";
-/** Die beiden Maßstäbe in der Reihenfolge der Umschalter: zuerst Lichess, dann umgerechnet. */
-export const WERTUNGSMASSSTAEBE: readonly Wertungsmassstab[] = ["lichess", "umgerechnet"];
+/** „lichess“: Zahlen wie berechnet; „chesscom“ und „fide“: umgerechnet als Bereich. */
+export type Wertungsmassstab = "lichess" | Zielliste;
+/** Die Maßstäbe in der Reihenfolge der Umschalter. */
+export const WERTUNGSMASSSTAEBE: readonly Wertungsmassstab[] = ["lichess", "chesscom", "fide"];
 
 /** Name des Merkers auf dem Gerät. */
 const MERKER = "wertungsmassstab";
@@ -27,7 +28,10 @@ const OHNE_ZAHL = "–";
 
 /** Der gemerkte Maßstab; ohne Merker (oder gesperrten Gerätespeicher) „lichess“. */
 export function liesMassstab(): Wertungsmassstab {
-  return liesMerker(MERKER) === "umgerechnet" ? "umgerechnet" : "lichess";
+  const gemerkt = liesMerker(MERKER);
+  if (gemerkt === "chesscom" || gemerkt === "fide") return gemerkt;
+  // Bis zum 27.10.2026 gab es nur „umgerechnet“ (chess.com für Blitz und Schnellschach).
+  return gemerkt === "umgerechnet" ? "chesscom" : "lichess";
 }
 
 /**
@@ -46,12 +50,16 @@ export function useWertungsmassstab(): readonly [
   return [massstab, waehle];
 }
 
-/** Kurzer Name der Zielliste: „chess.com“ oder „FIDE“. */
-export function zielname(tempo: Wertungstempo): string {
-  return t(`wertung.massstab.liste.${ZIELLISTE[tempo]}`);
+/**
+ * Name der Liste, mit der verglichen wird: „chess.com Blitz“, „chess.com Schnellschach“ (auch für
+ * Klassisch, chess.com führt keine klassische Wertung) oder „FIDE“.
+ */
+export function zielname(tempo: Wertungstempo, liste: Zielliste): string {
+  const ziel = liste === "fide" ? "fide" : tempo === "blitz" ? "chesscomBlitz" : "chesscomRapid";
+  return t(`wertung.massstab.ziel.${ziel}`);
 }
 
-/** Eine Zahl im Maßstab: die Zahl („1424“, „≈ 1340“, „–“) und, wenn umgerechnet, die Liste. */
+/** Eine Zahl im Maßstab: die Zahl („1424“, „1190–1490“, „–“) und, wenn umgerechnet, die Liste. */
 export interface Massstabzahl {
   readonly zahl: string;
   readonly liste: string | null;
@@ -61,8 +69,9 @@ export interface Massstabzahl {
 
 /**
  * Eine eigene Wertung im gewählten Maßstab.
- * Beispiel: Schnellschach 1680 umgerechnet → { zahl: „≈ 1340“, liste: „chess.com“ };
- * Klassisch 1500 umgerechnet → { zahl: „–“, liste: „FIDE“, ausserhalb: true }; Lichess → „1680“.
+ * Beispiel: Schnellschach 1680 auf chess.com → { zahl: „1190–1490“, liste: „chess.com
+ * Schnellschach“ }; Klassisch 1500 auf FIDE → { zahl: „–“, liste: „FIDE“, ausserhalb: true };
+ * Lichess → „1680“.
  */
 export function zahlImMassstab(
   tempo: Wertungstempo,
@@ -70,17 +79,18 @@ export function zahlImMassstab(
   massstab: Wertungsmassstab,
 ): Massstabzahl {
   if (massstab === "lichess") return { zahl: String(wert), liste: null, ausserhalb: false };
-  const ziel = entsprichtEtwa(tempo, wert);
+  const u = umgerechnet(tempo, wert, massstab);
   return {
-    zahl: ziel === null ? OHNE_ZAHL : t("wertung.massstab.etwa", { wert: ziel }),
-    liste: zielname(tempo),
-    ausserhalb: ziel === null,
+    zahl: u === null ? OHNE_ZAHL : t("wertung.massstab.bereich", { von: u.von, bis: u.bis }),
+    liste: zielname(tempo, massstab),
+    ausserhalb: u === null,
   };
 }
 
 /**
  * Eine Spanne im Maßstab als Texte für „{von}–{bis}“; null, wenn ein Ende außerhalb liegt.
- * Beispiel: Schnellschach 1600 bis 1760 umgerechnet → { von: „≈ 1250“, bis: „1430“ }.
+ * Umgerechnet werden die Mitten beider Enden: Die Spanne sagt schon, wie unsicher die eigene Zahl
+ * ist. Beispiel: Schnellschach 1600 bis 1760 auf chess.com → { von: „1240“, bis: „1440“ }.
  */
 export function spanneImMassstab(
   tempo: Wertungstempo,
@@ -89,15 +99,15 @@ export function spanneImMassstab(
   massstab: Wertungsmassstab,
 ): { von: string; bis: string } | null {
   if (massstab === "lichess") return { von: String(von), bis: String(bis) };
-  const unten = entsprichtEtwa(tempo, von);
-  const oben = entsprichtEtwa(tempo, bis);
+  const unten = umgerechnet(tempo, von, massstab);
+  const oben = umgerechnet(tempo, bis, massstab);
   if (unten === null || oben === null) return null;
-  return { von: t("wertung.massstab.etwa", { wert: unten }), bis: String(oben) };
+  return { von: String(unten.mitte), bis: String(oben.mitte) };
 }
 
 /**
- * Die Änderung zwischen zwei Wertungen im Maßstab; null, wenn eine davon außerhalb liegt.
- * Beispiel: Blitz 1500 → 1560 umgerechnet → etwa +80 auf chess.com.
+ * Die Änderung zwischen zwei Wertungen im Maßstab (Mitten); null, wenn eine außerhalb liegt.
+ * Beispiel: Blitz 1500 → 1560 auf chess.com → etwa +80.
  */
 export function aenderungImMassstab(
   tempo: Wertungstempo,
@@ -106,19 +116,22 @@ export function aenderungImMassstab(
   massstab: Wertungsmassstab,
 ): number | null {
   if (massstab === "lichess") return nachher - vorher;
-  const a = entsprichtEtwa(tempo, vorher);
-  const b = entsprichtEtwa(tempo, nachher);
-  return a === null || b === null ? null : b - a;
+  const a = umgerechnet(tempo, vorher, massstab);
+  const b = umgerechnet(tempo, nachher, massstab);
+  return a === null || b === null ? null : b.mitte - a.mitte;
 }
 
 /**
  * Kurzer Hinweis, warum keine umgerechnete Zahl steht.
- * Beispiel: Klassisch 1500 → „FIDE erst ab etwa 1730 (Lichess Klassisch)“; Blitz 2900 →
- * „chess.com nur bis etwa 2745 (Lichess Blitz)“.
+ * Beispiel: Klassisch 1500 auf FIDE → „FIDE erst ab etwa 1730 (Lichess Klassisch)“; Blitz 2900
+ * auf chess.com → „chess.com Blitz nur bis etwa 2745 (Lichess Blitz)“.
  */
-export function ausserhalbText(tempo: Wertungstempo, wert: number): string {
-  const bereich = vergleichsbereich(tempo);
-  const werte = { liste: zielname(tempo), zeitklasse: t(`spielstaerke.zeitklasse.${tempo}`) };
+export function ausserhalbText(tempo: Wertungstempo, wert: number, liste: Zielliste): string {
+  const bereich = vergleichsbereich(tempo, liste);
+  const werte = {
+    liste: zielname(tempo, liste),
+    zeitklasse: t(`spielstaerke.zeitklasse.${tempo}`),
+  };
   if (!bereich) return t("wertung.massstab.ohneTabelle", werte);
   return wert < bereich.von
     ? t("wertung.massstab.unter", { ...werte, grenze: bereich.von })

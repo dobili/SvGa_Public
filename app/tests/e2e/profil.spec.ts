@@ -94,7 +94,7 @@ async function spieleWertungEin(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10.2026)", async ({
+test("Profil: Wertung umgerechnet auf chess.com und FIDE als Bereich, die Wahl bleibt", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -103,14 +103,18 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10
   const karte = page.getByTestId("wertung");
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^1680/);
   const massstab = karte.getByRole("radiogroup", { name: "Maßstab der Wertung" });
-  await massstab.getByRole("radio", { name: "chess.com · FIDE" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^≈ \d{3,4}chess\.com/);
+  // Seit dem 27.10.2026 je Liste ein Schalter, die Zahl als Bereich (Hälfte der Spieler).
+  await massstab.getByRole("radio", { name: "chess.com" }).click();
+  await expect(karte.getByTestId("wertung-zahl")).toHaveText(
+    /^\d{3,4}–\d{3,4}chess\.com Schnellschach/,
+  );
   await expect(karte.getByTestId("wertungskurve-massstab")).toHaveText(
     "Die Kurve zeigt den Maßstab von Lichess.",
   );
   await page.setViewportSize({ width: 400, height: 900 });
   await karte.screenshot({ path: "test-results/bilder/wertung-umschalter.png" });
   // Klassisch 1500 liegt unter der FIDE-Tabelle: „–“ und die Grenze.
+  await massstab.getByRole("radio", { name: "FIDE" }).click();
   await karte.getByRole("tab", { name: "Klassisch" }).click();
   await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–FIDE/);
   await expect(karte.getByTestId("massstab-ausserhalb")).toHaveText(
@@ -119,7 +123,7 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10
   // Die Wahl gilt je Gerät: nach dem Neuladen und in „Deine Spielstärke“ unter Spielen.
   await page.reload();
   await oeffneProfil(page);
-  await expect(massstab.getByRole("radio", { name: "chess.com · FIDE" })).toHaveAttribute(
+  await expect(massstab.getByRole("radio", { name: "FIDE" })).toHaveAttribute(
     "aria-checked",
     "true",
   );
@@ -128,8 +132,8 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE, die Wahl bleibt (26.10
     .getByRole("button", { name: "Spielen" })
     .click();
   const kachel = page.getByTestId("letzte-spielstaerke-rapid");
-  await expect(kachel).toContainText("chess.com");
-  await expect(kachel).toContainText(/Wertung ≈ \d{3,4}/);
+  await expect(kachel).toContainText("FIDE");
+  await expect(kachel).toContainText(/Wertung \d{3,4}–\d{3,4}/);
   await page.getByTestId("letzte-spielstaerke").getByRole("radio", { name: "Lichess" }).click();
   await expect(kachel).toContainText("Wertung 1680");
 });

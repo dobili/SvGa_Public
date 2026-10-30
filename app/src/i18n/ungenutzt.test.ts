@@ -100,6 +100,13 @@ const ABGELOEST: ReadonlySet<string> = new Set([
   // Zähltrainer: klarere Auftragstexte (Nebenchat, Punkte B4 und N).
   "zaehltrainer.auftrag",
   "zaehltrainer.haengenAuftrag",
+  // Röntgen-Trainer: klarere Aufträge für Schritt 2 und 3 (Punkt M).
+  "roentgentrainer.schlaege",
+  "roentgentrainer.gegner",
+  // Fällige Wiederholungen: Gesamtzahl und ein Knopf je Quelle (Punkt Q).
+  "training.faelligAnzahl",
+  "training.faelligEine",
+  "training.wiederholen",
 ]);
 
 describe("Texte in de.json", () => {

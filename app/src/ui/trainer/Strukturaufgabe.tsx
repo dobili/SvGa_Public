@@ -27,6 +27,7 @@ import { pruefeFelder } from "../../training/zaehltrainer";
 import { ZUFALL } from "../../training/zufall";
 import { abgleichsfelder, umschalten } from "./abgleich";
 import { antworteMitKarte } from "./kartenantwort";
+import { bauernbegruendungen } from "../../training/strukturbegruendung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -74,6 +75,7 @@ function Tippschritt({
   pruefe,
   skelett,
   schalte,
+  begruendung,
 }: {
   aufgabe: Aufgabe;
   auftrag: string;
@@ -83,6 +85,8 @@ function Tippschritt({
   pruefe: (vergleich: Vergleich) => void;
   skelett: boolean;
   schalte: () => void;
+  /** Sätze zu den übersehenen und zu viel getippten Feldern (Regel L, Nebenchat). */
+  begruendung?: (vergleich: Vergleich) => readonly string[];
 }) {
   const [getippt, setzeGetippt] = useState<readonly string[]>([]);
   const markierungen: Markierung[] = geprueft
@@ -110,7 +114,20 @@ function Tippschritt({
         </button>
       )}
       {geprueft && <Antwortmeldung richtig={geprueft.richtig}>{meldung}</Antwortmeldung>}
+      {geprueft && begruendung && <Begruendungsliste saetze={begruendung(geprueft)} />}
     </>
+  );
+}
+
+/** Die Begründungen nach dem Prüfen, je Satz ein Absatz; leer, wenn alles stimmte. */
+function Begruendungsliste({ saetze }: { saetze: readonly string[] }) {
+  if (saetze.length === 0) return null;
+  return (
+    <section className="karte" data-testid="struktur-begruendung">
+      {saetze.map((satz) => (
+        <p key={satz}>{satz}</p>
+      ))}
+    </section>
   );
 }
 
@@ -282,6 +299,7 @@ export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
           pruefe={setzeVergleichBauern}
           skelett={skelett}
           schalte={schalte}
+          begruendung={(v) => bauernbegruendungen(aufgabe, v.fehlend, v.falsch)}
         />
       )}
       {feldartDran && frage && (

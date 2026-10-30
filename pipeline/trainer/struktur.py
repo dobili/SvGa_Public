@@ -95,6 +95,19 @@ BUCHSTRUKTUREN: dict[str, tuple[str, str, str]] = {
     "5.47": ("laeufer", "w", "gutenLaeuferBehalten"),
     "5.48": ("kette", "b", "kettenbasisAngreifen"),
 }
+# Abbildungen aus Kapitel 5, die keine Aufgabe werden (Prüfung gegen den Buchtext, Nebenchat
+# 30.10.2026, Wunsch des Autors: „ob die Antwort tatsächlich zur Stellung passt“). Dazu fallen alle
+# reinen Bauernstellungen weg (Skelette; der Trainer hat einen Skelett-Knopf) und alle Stellungen,
+# in denen die Seite am Zug im Schach steht.
+NICHT_ALS_AUFGABE: dict[str, str] = {
+    "5.7": "Gegenbeispiel des Buches: e5 ist kein Vorposten, denn ...d6 vertreibt den Springer.",
+    "5.12": "Grundreihenmatt: Die Partie ist entschieden, ein Plan ist sinnlos.",
+    "5.19": "Isolierter Randbauer a2, kein Isolani im Zentrum; das Buch zeigt die Läufer.",
+    "5.28": "Spannung d4/e5: Laut Buch gibt es noch keine Kette, die Richtung ist offen.",
+    "5.31": "Freibauer mit Blockade, keine Mehrheit mehr, aus der ein Freibauer entstünde.",
+    "5.37": "Offene Stellung ohne Zentrumsbauern: Der Plan „mit einem Hebel öffnen“ passt nicht.",
+}
+
 # Plan je Struktur für die Seite, der die Struktur gehört (Besitzer) oder die ihr gegenübersteht.
 PLAN_BESITZER = {
     "isolani": "isolaniVorstossen",
@@ -211,14 +224,40 @@ def _ketten(eigene: list[int], farbe: chess.Color) -> list[list[int]]:
     return [k for k in ketten if not any(set(k) < set(o) for o in ketten)]
 
 
-def erkenne(brett: chess.Board) -> tuple[str, chess.Color] | None:
-    """Die eine klare Struktur einer Stellung (Struktur, Besitzer) oder None.
+def in_spannung(brett: chess.Board) -> bool:
+    """Steht irgendwo ein Bauer einem gegnerischen Bauern schräg gegenüber, sodass er schlagen
+    kann? Dann ist offen, welche Ketten entstehen (Kapitel 5, Abb. 5.28: d4 und e5)."""
+    for feld in brett.pieces(chess.PAWN, chess.WHITE):
+        if brett.attacks(feld) & brett.pieces(chess.PAWN, chess.BLACK):
+            return True
+    return False
 
-    Reihenfolge: Isolani (ein isolierter Bauer auf d, der Gegner hat keinen d-Bauern), hängende
-    Bauern (c und d nebeneinander, keine b- und e-Bauern), Minderheitsangriff (a, b gegen a, b, c
-    bei festem d-Bauernpaar), Doppelbauer, Kette ab drei Bauern, Mehrheit (ein Flügel 3 gegen 2).
-    """
-    w, b = merkmale(brett, chess.WHITE), merkmale(brett, chess.BLACK)
+
+def kette_blockiert(brett: chess.Board, kette: list[int], farbe: chess.Color) -> bool:
+    """Steht vor der Spitze der Kette ein gegnerischer Bauer? Erst dann zeigt die Kette eine
+    Richtung (Kapitel 5, Abb. 5.27: e4--d5 gegen d6--e5, die Paare sind verkeilt)."""
+    vor = _vorn(kette[-1], farbe)
+    return vor is not None and brett.piece_at(vor) == chess.Piece(chess.PAWN, not farbe)
+
+
+def doppelbauer_angreifbar(brett: chess.Board, m: Merkmale, farbe: chess.Color) -> bool:
+    """Ist der vordere Bauer eines Doppelbauern ohne Deckung durch einen eigenen Bauern? Nur dann
+    ist er ein Ziel für Figuren (Kapitel 5, Tabelle der Bauernschwächen: Doppelbauern decken
+    einander nie; Abb. 5.16: c4 ist ungedeckt). Der hintere steht oft auf der Grundreihe der
+    Bauern und ist nie gedeckt; er allein sagt nichts. Beispiel: f2/f3 mit g2 → f3 gedeckt, kein Ziel."""
+    bauern = brett.pieces(chess.PAWN, farbe)
+    vordere: dict[int, int] = {}
+    for feld in m.doppelte:
+        linie = chess.square_file(feld)
+        alt = vordere.get(linie)
+        weiter = alt is None or (feld > alt if farbe else feld < alt)
+        vordere[linie] = feld if weiter else alt  # type: ignore[assignment]
+    return any(not (brett.attackers(farbe, feld) & bauern) for feld in vordere.values())
+
+
+def _zentrum_und_damenfluegel(brett: chess.Board, w: Merkmale, b: Merkmale) -> list[tuple[str, chess.Color]]:
+    """Isolani, hängende Bauern und Minderheitsangriff (die Regeln stehen bei ``strukturen``)."""
+    gefunden: list[tuple[str, chess.Color]] = []
     for farbe, m, gegner in ((chess.WHITE, w, b), (chess.BLACK, b, w)):
         linien = sorted(chess.square_file(f) for f in bauernfelder(brett, farbe))
         gegnerlinien = sorted(chess.square_file(f) for f in bauernfelder(brett, not farbe))
@@ -228,38 +267,58 @@ def erkenne(brett: chess.Board) -> tuple[str, chess.Color] | None:
             and 3 not in gegnerlinien
             and not gegner.isolierte
         ):
-            return "isolani", farbe
+            gefunden.append(("isolani", farbe))
         if {2, 3} <= set(linien) and not {1, 4} & set(linien) and not {2, 3} & set(gegnerlinien):
-            return "haengendeBauern", farbe
-    for farbe, linien_eigen, linien_gegner in (
-        (
-            chess.WHITE,
-            [chess.square_file(f) for f in bauernfelder(brett, chess.WHITE)],
-            [chess.square_file(f) for f in bauernfelder(brett, chess.BLACK)],
-        ),
-        (
-            chess.BLACK,
-            [chess.square_file(f) for f in bauernfelder(brett, chess.BLACK)],
-            [chess.square_file(f) for f in bauernfelder(brett, chess.WHITE)],
-        ),
-    ):
-        if sorted(x for x in linien_eigen if x < 4) == [0, 1, 3] and sorted(
-            x for x in linien_gegner if x < 4
-        ) == [0, 1, 2, 3]:
-            return "minderheitsangriff", farbe
+            gefunden.append(("haengendeBauern", farbe))
+        eigen_dame = sorted(x for x in linien if x < 4)
+        gegner_dame = sorted(x for x in gegnerlinien if x < 4)
+        if eigen_dame == [0, 1, 3] and gegner_dame == [0, 1, 2, 3]:
+            gefunden.append(("minderheitsangriff", farbe))
+    return gefunden
+
+
+def strukturen(brett: chess.Board) -> list[tuple[str, chess.Color]]:
+    """Alle klaren Strukturen einer Stellung (Struktur, Besitzer), in der Reihenfolge der Prüfung.
+
+    Reihenfolge: Isolani (ein isolierter Bauer auf d, der Gegner hat keinen d-Bauern), hängende
+    Bauern (c und d nebeneinander, keine b- und e-Bauern), Minderheitsangriff (a, b gegen a, b, c
+    bei festem d-Bauernpaar), Doppelbauer (nur, wenn einer ungedeckt ist), Kette ab drei Bauern
+    (nur blockiert und ohne Spannung), Mehrheit (ein Flügel 3 gegen 2).
+    Warum eine Liste: Passt eine zweite Struktur, darf ihr Plan nicht als falsche Antwort
+    erscheinen (Nebenchat, 30.10.2026).
+    """
+    w, b = merkmale(brett, chess.WHITE), merkmale(brett, chess.BLACK)
+    gefunden = _zentrum_und_damenfluegel(brett, w, b)
     for farbe, m, gegner in ((chess.WHITE, w, b), (chess.BLACK, b, w)):
-        if m.doppelte and not gegner.doppelte:
-            return "doppelbauer", farbe
+        if m.doppelte and not gegner.doppelte and doppelbauer_angreifbar(brett, m, farbe):
+            gefunden.append(("doppelbauer", farbe))
     for farbe, m, gegner in ((chess.WHITE, w, b), (chess.BLACK, b, w)):
-        if m.ketten and not gegner.ketten and len(m.ketten[0]) >= 3:
-            return "kette", farbe
+        if m.ketten and not gegner.ketten and kette_blockiert(brett, m.ketten[0], farbe):
+            if not in_spannung(brett):
+                gefunden.append(("kette", farbe))
     for farbe in (chess.WHITE, chess.BLACK):
         eigene = [chess.square_file(f) for f in bauernfelder(brett, farbe)]
         fremde = [chess.square_file(f) for f in bauernfelder(brett, not farbe)]
         for fluegel in (DAMENFLUEGEL, KOENIGSFLUEGEL):
             if sum(1 for x in eigene if x in fluegel) == 3 and sum(1 for x in fremde if x in fluegel) == 2:
-                return "mehrheit", farbe
-    return None
+                gefunden.append(("mehrheit", farbe))
+    return gefunden
+
+
+def erkenne(brett: chess.Board) -> tuple[str, chess.Color] | None:
+    """Die erste klare Struktur einer Stellung (Struktur, Besitzer) oder None (siehe ``strukturen``)."""
+    alle = strukturen(brett)
+    return alle[0] if alle else None
+
+
+def auch_passend(brett: chess.Board, seite: str, plan: str) -> list[str]:
+    """Pläne weiterer Strukturen dieser Stellung für die Seite: Sie sind keine falschen Antworten."""
+    am_zug = seite == "w"
+    plaene = {
+        (PLAN_BESITZER if besitzer == am_zug else PLAN_GEGNER).get(struktur)
+        for struktur, besitzer in strukturen(brett)
+    }
+    return sorted(p for p in plaene if p is not None and p != plan)
 
 
 def skelett(brett: chess.Board) -> str:
@@ -314,7 +373,15 @@ def _aufgabe(kennung: str, brett: chess.Board, struktur: str, seite: str, plan: 
         "schwierigkeit": stufe,
         "herkunft": herkunft,
         "messung": {"merkmale": anzahl, "figuren": figuren},
+        "auchPassend": auch_passend(brett, seite, plan),
     }
+
+
+def taugt_als_aufgabe(brett: chess.Board) -> bool:
+    """Eine Stellung taugt als Aufgabe, wenn Figuren außer Bauern und Königen dastehen (der Leser
+    soll die Struktur in einer echten Stellung erkennen, Entscheidung P4/R49) und die Seite am Zug
+    nicht im Schach steht (dann zählt die Antwort aufs Schach, kein Plan)."""
+    return figuren_ausser_bauern(brett) > 0 and not brett.is_check()
 
 
 def aus_kapitel_5(datenordner: Path = DATENORDNER) -> list[dict]:
@@ -322,13 +389,14 @@ def aus_kapitel_5(datenordner: Path = DATENORDNER) -> list[dict]:
     aufgaben = []
     for a in daten["abbildungen"]:
         eintrag = BUCHSTRUKTUREN.get(a["id"])
-        if eintrag is None:
+        brett = chess.Board(a["fen"])
+        if eintrag is None or a["id"] in NICHT_ALS_AUFGABE or not taugt_als_aufgabe(brett):
             continue
         struktur, seite, plan = eintrag
         aufgaben.append(
             _aufgabe(
                 f"struktur-b-{a['id']}",
-                chess.Board(a["fen"]),
+                brett,
                 struktur,
                 seite,
                 plan,
@@ -355,7 +423,7 @@ def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER, gesehen: set[str] | N
             brett = chess.Board(a["fen"])
             schluessel = skelett(brett)
             anzahl_bauern = len(brett.pieces(chess.PAWN, True)) + len(brett.pieces(chess.PAWN, False))
-            if anzahl_bauern < MINDESTENS_BAUERN or schluessel in gesehen:
+            if anzahl_bauern < MINDESTENS_BAUERN or schluessel in gesehen or not taugt_als_aufgabe(brett):
                 continue
             if a["id"] in BUCHFOLGERUNGEN:
                 struktur, seite, plan = BUCHFOLGERUNGEN[a["id"]]

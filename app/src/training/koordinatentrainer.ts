@@ -45,6 +45,8 @@ const ANTEIL_BESONDERE = 0.5;
 export interface Feldaufgabe {
   readonly feld: string;
   readonly gedreht: boolean;
+  /** Die erste Aufgabe nach dem Drehen des Bretts: Die App weist deutlich darauf hin. */
+  readonly wechsel: boolean;
 }
 
 /**
@@ -57,6 +59,7 @@ export function feldrunde(anzahl: number, zufall: Zufall): Feldaufgabe[] {
   return Array.from({ length: anzahl }, (_, i) => ({
     feld: `${LINIEN.charAt(zahlBis(LINIEN.length, zufall))}${zahlBis(REIHEN, zufall) + 1}`,
     gedreht: i >= haelfte,
+    wechsel: i === haelfte && i > 0,
   }));
 }
 

@@ -172,10 +172,13 @@ export function feldartfrage(aufgabe: Strukturaufgabe, zufall: Zufall): Feldartf
  * Die Plan-Sätze zur Wahl: der richtige und zwei aus anderen Strukturfamilien, gemischt.
  *
  * Beispiel: Isolani blockieren, dazu etwa „Mit der Mehrheit vorstoßen“ und „Die Stellung öffnen“.
+ * Sonderfall: Pläne weiterer Strukturen derselben Stellung (`auchPassend`, aus der Pipeline)
+ * erscheinen nie als falsche Antwort, denn sie passen ebenfalls (Nebenchat, 30.10.2026).
  */
 export function planwahl(aufgabe: Strukturaufgabe, zufall: Zufall): Plan[] {
   const eigene = familieVon(aufgabe.plan);
-  const fremde = FAMILIEN.flat().filter((p) => !eigene.includes(p));
+  const passend = (aufgabe.auchPassend ?? []).flatMap((p) => familieVon(p));
+  const fremde = FAMILIEN.flat().filter((p) => !eigene.includes(p) && !passend.includes(p));
   const falsche = mische(fremde, zufall).slice(0, PLAENE_ZUR_WAHL - 1);
   return mische([aufgabe.plan, ...falsche], zufall);
 }

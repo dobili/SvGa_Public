@@ -54,6 +54,11 @@
           "additionalProperties": false,
           "required": ["merkmale", "figuren"],
           "properties": { "merkmale": { "type": "integer" }, "figuren": { "type": "integer" } }
+        },
+        "auchPassend": {
+          "description": "Pläne weiterer Strukturen, die in dieser Stellung für dieselbe Seite ebenfalls passen; sie erscheinen nie als falsche Antwort",
+          "type": "array",
+          "items": { "$ref": "#/$defs/plan" }
         }
       }
     }

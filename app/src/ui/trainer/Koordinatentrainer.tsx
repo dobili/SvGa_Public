@@ -39,6 +39,30 @@ function zugpfeil(aufgabe: Zugaufgabe, farbe: "gold" | "rot"): Markierung {
   return { typ: "pfeil", farbe, von: aufgabe.von, nach: aufgabe.nach };
 }
 
+/**
+ * Aus welcher Sicht das Brett steht, deutlich unter dem Brett: ein weißer oder schwarzer Kreis
+ * wie die Anzeige „am Zug“, dazu der Satz. Nach dem Drehen leuchtet die Anzeige kurz auf und
+ * sagt es ausdrücklich (Wunsch des Autors, 30.10.2026: Der Wechsel fiel nicht auf).
+ */
+function Sichtanzeige({ gedreht, wechsel }: { gedreht: boolean; wechsel: boolean }) {
+  return (
+    <p
+      className={wechsel ? "sichtanzeige sichtwechsel" : "sichtanzeige"}
+      data-testid="sichtanzeige"
+      aria-live="polite"
+    >
+      <span
+        className={gedreht ? "sichtpunkt sichtpunkt-schwarz" : "sichtpunkt"}
+        aria-hidden="true"
+      />
+      <span>
+        {wechsel && <strong>{t("koordinatentrainer.gedrehtHinweis")} </strong>}
+        {t(gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss")}
+      </span>
+    </p>
+  );
+}
+
 /** Feld finden: Ein richtiger Tipp führt sofort weiter, ein falscher zeigt das Feld. */
 export function Feldaufgabe({ aufgabe, runde }: { aufgabe: Feldaufgabe; runde: Runde }) {
   const [getippt, setzeGetippt] = useState<string | null>(null);
@@ -71,9 +95,7 @@ export function Feldaufgabe({ aufgabe, runde }: { aufgabe: Feldaufgabe; runde: R
           aufgabe.gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss",
         )}
       />
-      <p className="hinweis">
-        {t(aufgabe.gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss")}
-      </p>
+      <Sichtanzeige gedreht={aufgabe.gedreht} wechsel={aufgabe.wechsel} />
       {runde.ergebnis === false && (
         <Antwortmeldung richtig={false}>
           {t("koordinatentrainer.feldFalsch", { feld: getippt ?? "" })}

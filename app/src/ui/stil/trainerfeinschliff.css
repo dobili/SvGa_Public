@@ -19,3 +19,71 @@
   margin-bottom: var(--raster);
   font-weight: 600;
 }
+
+/* Werkzeugreiter am Brett (Bündel wie „Denkroutine“): Bricht ein Reiter in die zweite Zeile um,
+   wurde er durch die allgemeine Reiterregel (bausteine.css: flex 1 1 0) bildschirmbreit und
+   mittig. Hier nimmt jeder Reiter nur die Breite seiner Beschriftung und steht links (Wunsch
+   des Autors, 30.10.2026). Die Reiter der Einstellungen bleiben unberührt. */
+.reiterbereich .reiterleiste > .reiter {
+  flex: 0 1 auto;
+  justify-content: flex-start;
+}
+
+/* Feld finden: Sicht des Bretts mit Spielsteinmarke wie „am Zug“; nach dem Drehen leuchtet die
+   Anzeige golden auf (Wunsch des Autors, 30.10.2026). */
+.sichtanzeige {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.sichtpunkt {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text);
+  background: var(--creme);
+}
+
+.sichtpunkt-schwarz {
+  background: var(--navy);
+  box-shadow: 0 0 0 1.5px var(--creme);
+}
+
+.sichtwechsel {
+  box-shadow: 0 0 0 2px var(--gold);
+  animation: sichtwechsel-leuchten 1.2s ease-in-out 3;
+}
+
+@keyframes sichtwechsel-leuchten {
+  50% {
+    background: color-mix(in srgb, var(--gold) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sichtwechsel {
+    animation: none;
+  }
+}
+
+/* Fällige Wiederholungen: je Quelle ein Knopf untereinander, linksbündig (Nebenchat, Punkt Q). */
+.faellig-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--raster) / 2);
+}
+
+.faellig-prinzip summary {
+  cursor: pointer;
+  color: var(--text-leise);
+}

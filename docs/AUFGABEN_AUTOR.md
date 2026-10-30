@@ -33,6 +33,75 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Nebenchat: Trainer-Feinschliff (30.10.2026)
+
+- [ ] N2001. **Zähltrainer, Ergebnis mit einem Tipp:** Training › Zähltrainer › „Bilanz zählen“.
+      Unter dem Brett stehen Knöpfe „lohnt nicht“, „+1“ bis „+9“. Ein Tipp prüft sofort. Wer
+      lieber genau zählt, tippt „Genauer üben: auch Angreifer und Verteidiger zählen“ und prüft
+      dann wie früher. Ist das schnell und klar genug?
+- [ ] N2002. **Zähltrainer, Stufen und Fesselung:** Vor der Übung „leicht“, „mittel“ oder
+      „schwer“ wählen. Leicht hat höchstens drei beteiligte Figuren, schwer viele Figuren, eine
+      Batterie oder eine Fesselung. Eine an den König gefesselte Figur zählt nicht mit (wie
+      Kapitel 1 bei Abb. 1.12 sagt); nach der Antwort steht dann „Achtung Fesselung: …“.
+      Stellungen, in denen die Seite am Zug im Schach steht oder matt ist, kommen nicht mehr vor.
+      Passen die Stufen?
+- [ ] N2003. **Hängende Figuren:** Der Auftrag sagt jetzt, dass auch unterdeckte Figuren und
+      Bauern hängen und der ganze Abtausch zählt. Nach dem Prüfen steht zu jedem übersehenen und
+      jedem falsch getippten Feld der Grund, etwa „e4: 2 gegen 1: Schwarz gewinnt mit dxe4
+      Material“.
+- [ ] N2004. **Notationstastatur:** Koordinaten-Trainer › „Zug aufschreiben“. Statt der
+      Handytastatur setzt du den Zug aus Bausteinen zusammen: Figur (K D T L S, für einen
+      Bauernzug keine), Linie a bis h, Reihe 1 bis 8, dazu x, +, #, =, 0-0, 0-0-0 und Löschen.
+      Der Zug baut sich oben auf. „Lieber mit der Tastatur tippen“ schaltet zurück. Fehlt ein
+      Fall?
+- [ ] N2005. **Feld finden, Sicht:** Unter dem Brett steht deutlich „Weiß spielt von unten“ mit
+      weißem Kreis, nach dem Drehen „Achtung, das Brett ist jetzt gedreht!“ mit schwarzem Kreis,
+      golden aufleuchtend. Fällt der Wechsel jetzt auf?
+- [ ] N2006. **Röntgen-Trainer, Stufen und Texte:** Vor der Runde „leicht“ (2 bis 3 Pfeile),
+      „mittel“ (4 bis 6) oder „schwer“ (7 bis 10, auf mehrere Schritte verteilt) wählen. Dafür
+      kommen auch Stellungen aus den Zugfolgen des Buches dazu („Stellung aus der Zugfolge … nach
+      dem 12. Zug“). Schritt 2 und 3 sagen jetzt klar, dass der ganze Abtausch auf dem Feld zählt.
+      Nach dem Prüfen steht zu jedem übersehenen oder zu viel gesetzten Pfeil die Abtauschfolge
+      mit Ergebnis, etwa „Txe7+ Sxe7 fxe7: +1 Bauerneinheit“, nach Schritt 3 die Drohungen der
+      Gegenseite. Sind schwere Aufgaben schwer genug?
+- [ ] N2007. **Strukturerkenner:** Es gibt keine reinen Bauernstellungen mehr und keine Stellung
+      im Schach. Abb. 5.28 (Spannung d4/e5, laut Buch noch keine Kette), 5.7 (das Gegenbeispiel:
+      e5 ist kein Vorposten), 5.12 (Matt), 5.19, 5.31 und 5.37 sind keine Aufgaben mehr. Eine
+      Kette zählt nur noch, wenn sie verkeilt ist und nirgends Spannung herrscht; ein Doppelbauer
+      nur, wenn sein vorderer Bauer ungedeckt ist. Pläne, die in der Stellung ebenfalls passen,
+      stehen nie als falsche Antwort da. Insgesamt 107 statt 162 Aufgaben. Tippst du einen Bauern
+      als schwach an, der es nicht ist, nennt die App die Bedingung, an der „rückständig“
+      scheitert (etwa „Ein eigener Bauer kann ihn noch decken“). Passen die Pläne jetzt?
+- [ ] N2008. **LAP-Übung:** Planbilanz-Übung › LAP. Es kommen nur ruhige Stellungen ohne
+      hängende oder gefesselte eigene Figur. Nach der Antwort stehen die freien Felder jeder
+      Figur da und der Grund für die Lösung, etwa „Läufer c1 steht noch auf seinem Startfeld“
+      oder „Springer d2 hat nur 2 freie Felder, Läufer b7 hat 3“.
+- [ ] N2009. **Falle oder Köder:** Vor der Entscheidung zeigt „Hinweis: Warnsignale zeigen“ die
+      Warnsignale aus Kapitel 4, nur wenn du willst. Nach der Entscheidung steht nur die Lösung am
+      Brett, darunter die Fortsetzung mit Bewertungsbalken links (◀ ▶ blättern oder
+      „Vorspielen“), und ein Satz, ob ein rotes Warnsignal die Widerlegung vorhergesagt hätte.
+- [ ] N2010. **Denkroutine-Trainer:** Nach dem Vergleich mit der Engine stehen Knöpfe „Engine: …“
+      und „Dein Kandidat …“; jeder zeigt den Zug (und die Antwort) mit Bewertungsbalken zum
+      Durchspielen.
+- [ ] N2011. **Abweichungsmodus, Kapitel 2 und 3:** Oben wählst du „Eröffnungen (Kapitel 2)“ oder
+      „Gambits (Kapitel 3)“. Die Gambits sind die aus Kapitel 3 (Königsgambit bis Lettisches
+      Gambit) und das Damengambit.
+- [ ] N2012. **Abweichungsmodus, Reagieren statt Planzug:** Die Engine wählt jetzt bevorzugt
+      Abweichungen, nach denen dein nächster Buchzug mindestens einen halben Bauern verliert. Vor
+      deinem Zug zeigt „Hinweis: Was will … mit …?“, was der neue Zug angreift oder droht. Nach
+      deinem Zug sagt die App, ob du stur den Buchzug gespielt hast und ob das hier geht.
+- [ ] N2013. **Abweichungsmodus, drei Züge im Vergleich:** Nach deinem Zug stehen der beste Zug
+      der Stellung, der beste Zug für die Eröffnungsziele (so schlecht er sein mag) und dein Zug
+      mit Werten da. Weichen die ersten beiden ab, fragt die App zuerst „Überlege kurz: Warum ist
+      … hier stärker als …?“; „Auflösung zeigen“ bringt die Begründung und die drei Fortsetzungen
+      mit Bewertungsbalken. Die Einschätzung nennt die drei Ziele deiner Seite einzeln statt nur
+      „1 von 3“.
+- [ ] N2014. **Kleinigkeiten:** (1) Werkzeug Denkroutine an einer Abbildung, etwa 12.6: Der
+      Reiter „Sicherheitsblick“ bricht schmal und links um, nicht mehr bildschirmbreit.
+      (2) Repertoire-Trainer: keine Warum-Fragen mehr. (3) Training › „Fällige Wiederholungen“:
+      oben die Gesamtzahl, darunter je Quelle ein Knopf (Übungen aus dem Buch, Falle oder Köder,
+      Strukturerkenner …), dazu „Wie funktioniert das?“ mit dem Prinzip der Lernkartei.
+
 ### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,

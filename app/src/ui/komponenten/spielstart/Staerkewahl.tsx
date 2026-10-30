@@ -6,7 +6,8 @@
  * Rolle im Gesamtbild: Eröffnungspaket der Ideensammlung, Stufe 2 (Wunsch des Autors,
  * 26.10.2026; Empfehlung Q3-2). Rechnung in spiel/eroeffnungsbaender.ts, Daten aus dem
  * Lichess-Monat (CC0). Die Wahl ist dieselbe wie in der Liste „Aus der Praxis“ („praxis:Name“,
- * spiel/partie.ts), es entsteht also kein neues Speicherformat.
+ * spiel/partie.ts), es entsteht also kein neues Speicherformat. Seit 0.3.11 (Stufe 3) unter
+ * jeder Eröffnung der Variantenbaum (Variantenbaum.tsx) und unten die Gambits (Gambitliste.tsx).
  * Abhängigkeiten: spiel/eroeffnungsbaender.ts, daten/laden.ts, useDaten, i18n.
  */
 import { useState } from "react";
@@ -20,6 +21,8 @@ import {
 } from "../../../spiel/eroeffnungsbaender";
 import { PRAXIS_VORSILBE } from "../../../spiel/partie";
 import { useDaten } from "../bausteine/useDaten";
+import { Gambitliste } from "./Gambitliste";
+import { Variantenbaum } from "./Variantenbaum";
 
 /** Vorgabe der Bänder: 1000 bis 1400, die Leser des Buches (Einsteiger bis Verein). */
 const VORGABE_VON = 1000;
@@ -72,11 +75,16 @@ function Zeile({
   eintrag,
   gewaehlt,
   beiWahl,
+  aktuell,
+  beiAuswahl,
 }: {
   daten: Eroeffnungsbaender;
   eintrag: Staerkeeintrag;
   gewaehlt: boolean;
   beiWahl: () => void;
+  /** Die gerade gewählte Eröffnung und die Wahl einer Variante (Variantenbaum). */
+  aktuell: string | null;
+  beiAuswahl: (eroeffnung: string) => void;
 }) {
   const { familie, band } = eintrag;
   const anteil = (familie.anteil[band] ?? 0).toLocaleString(sprache(), {
@@ -100,6 +108,7 @@ function Zeile({
           {t("spielen.staerkewahl.anteil", { anteil, band: bandname(daten, band) })}
         </span>
       </button>
+      <Variantenbaum daten={daten} familie={familie} gewaehlt={aktuell} beiWahl={beiAuswahl} />
     </li>
   );
 }
@@ -132,6 +141,8 @@ function Seite({
             eintrag={e}
             gewaehlt={gewaehlt === `${PRAXIS_VORSILBE}${e.familie.name}`}
             beiWahl={() => beiWahl(`${PRAXIS_VORSILBE}${e.familie.name}`)}
+            aktuell={gewaehlt}
+            beiAuswahl={beiWahl}
           />
         ))}
       </ul>
@@ -185,6 +196,14 @@ export function Staerkewahl({
           beiWahl={beiWahl}
         />
       ))}
+      <Gambitliste
+        daten={d}
+        von={a}
+        bis={b}
+        bandname={(i) => bandname(d, i)}
+        gewaehlt={gewaehlt}
+        beiWahl={beiWahl}
+      />
       <p className="hinweis">{t("spielen.staerkewahl.quelle")}</p>
     </details>
   );

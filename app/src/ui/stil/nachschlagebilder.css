@@ -114,3 +114,48 @@
   flex-basis: 100%;
   margin: 0;
 }
+
+.variantenklappe {
+  margin: 2px 0 var(--raster) var(--raster);
+}
+
+.variantenklappe > summary {
+  cursor: pointer;
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.variantenbaum {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 calc(var(--raster) * 1.5);
+  border-left: 2px solid var(--linie);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.variantenknoten {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 4px var(--raster);
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.variantenknoten[aria-pressed="true"] {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.variantenknoten .hinweis {
+  flex-basis: 100%;
+  margin: 0;
+}

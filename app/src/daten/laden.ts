@@ -169,7 +169,8 @@ export function ladeEroeffnungsbaender(): Promise<Eroeffnungsbaender> {
 
 /**
  * Hängt die Eröffnungen nach Spielstärke an die benannten Eröffnungen des Praxisbuchs an (seit
- * 0.3.10), damit ein Bot ihnen folgt wie den bisherigen. Vorhandene Namen bleiben, wie sie sind.
+ * 0.3.10, Varianten und Gambits seit 0.3.11), damit ein Bot ihnen folgt wie den bisherigen.
+ * Vorhandene Namen bleiben, wie sie sind; angehängte tragen das Gewicht 0.
  * Fehlt die Datei, bleibt das Praxisbuch unverändert.
  */
 async function mitEroeffnungsbaendern(buch: Praxisbuch): Promise<Praxisbuch> {
@@ -179,7 +180,11 @@ async function mitEroeffnungsbaendern(buch: Praxisbuch): Promise<Praxisbuch> {
   });
   if (!baender) return buch;
   const bekannt = new Set((buch.eroeffnungen ?? []).map(([name]) => name));
-  const neu = alsPraxiseintraege(baender).filter(([name]) => !bekannt.has(name));
+  const neu = alsPraxiseintraege(baender).filter(([name]) => {
+    if (bekannt.has(name)) return false;
+    bekannt.add(name);
+    return true;
+  });
   return { ...buch, eroeffnungen: [...(buch.eroeffnungen ?? []), ...neu] };
 }
 

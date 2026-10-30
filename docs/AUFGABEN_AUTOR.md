@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 30.10.2026, Version 0.3.10 (Eröffnungen nach Spielstärke; 0.3.9 Bilder im Nachschlagen; 0.3.8 Beschreibung eigener Bots; 0.3.7 Orden für volle Ringe, Orden testen, Startanimation mit Orden; 0.3.6 ein Knopf „Merken“ im Rückblick mit Vorschlägen; 0.3.5 Pfeile und Verlust nach falschem Zug in Taktik und Übungen; 0.3.4 Wertung auf chess.com und FIDE als Bereich für jede Zeitart; 0.3.3 Kurzpläne und „Keine Fehlerneigung“; 0.3.2 kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 30.10.2026, Version 0.3.11 (Variantenbaum und Gambits; 0.3.10 Eröffnungen nach Spielstärke; 0.3.9 Bilder im Nachschlagen; 0.3.8 Beschreibung eigener Bots; 0.3.7 Orden für volle Ringe, Orden testen, Startanimation mit Orden; 0.3.6 ein Knopf „Merken“ im Rückblick mit Vorschlägen; 0.3.5 Pfeile und Verlust nach falschem Zug in Taktik und Übungen; 0.3.4 Wertung auf chess.com und FIDE als Bereich für jede Zeitart; 0.3.3 Kurzpläne und „Keine Fehlerneigung“; 0.3.2 kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.10“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.11“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -89,6 +89,23 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.11: Variantenbaum und Gambits (Opus, 30.10.2026)
+
+- [ ] N1038. **Variantenbaum:** In „Eröffnungen nach Spielstärke“ (Spielen › Eröffnung
+      festlegen) steht unter jeder Eröffnung „Varianten (20)“. Aufgeklappt: die 20 häufigsten
+      Varianten nach Lichess als Baum, verzweigt ab dem ersten abweichenden Zug, Geschwister nach
+      Häufigkeit. Jede Zeile nennt den Namen (ohne das, was darüber schon steht), die Züge ab der
+      Verzweigung in deiner Notation und den Anteil an der Eröffnung, etwa unter Italienisch
+      „Two Knights Defense · 3... Sf6 · 34 % dieser Eröffnung“, darunter „Knight Attack · 4. Sg5“.
+      Ein Tipp legt die Variante für den Bot fest. Die Variantennamen bleiben englisch wie in der
+      Lichess-Liste. Ist der Baum so lesbar?
+- [ ] N1039. **Gambits:** Unter „Weiß wählt“ und „Schwarz wählt“ steht „Gambits“: je Band die
+      drei häufigsten, die noch nicht dastehen, beide Seiten zusammen, mit „Weiß spielt es“ oder
+      „Schwarz spielt es“ und der Häufigkeit; der Name nennt die Eröffnung, aus der das Gambit
+      stammt („Sizilianische Verteidigung: Smith-Morra Gambit“). Um 800 sind es Englund-Gambit,
+      Busch-Gass-Gambit und Königsgambit. Das Damengambit zählt nicht als Gambit (wie im Buch).
+      Passt das?
 
 ### Neu in 0.3.10: Eröffnungen nach Spielstärke (Opus, 30.10.2026)
 
@@ -1568,10 +1585,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
 - [ ] Q3-2. **Nächste Stufen (Empfehlung):** Die Auswahl „Eröffnungen nach Spielstärke“ ist
       schon umgesetzt (0.3.10, Testpunkt N1037), Widerspruch genügt. Bänder als „von … bis …“
       statt einzelner Haken, weil benachbarte Bänder fast immer zusammen gemeint sind. Die Wahl
-      wird wie die bisherigen Praxis-Eröffnungen gespeichert, ohne neues Format. Als Nächstes:
-      der Variantenbaum (die 20 häufigsten Varianten je Eröffnung, aufklappbar, mit
-      Häufigkeit) und die Gambits mit eigener Liste. Fallen kommen zuletzt, weil sie zuerst eine
-      Definition brauchen und du sie freigibst. Einverstanden?
+      wird wie die bisherigen Praxis-Eröffnungen gespeichert, ohne neues Format. Variantenbaum
+      und Gambits sind ebenfalls umgesetzt (0.3.11, N1038, N1039). Offen bleiben aus deiner
+      Liste: die Schnellwahl im Baum (alle, die häufigsten 3 …) für den Repertoire-Trainer, feste
+      Eröffnungen für eigene Bots mit Regler „Abweichung“ und die Fallen. Die Fallen kommen
+      zuletzt, weil sie zuerst eine Definition brauchen und du sie freigibst. Einverstanden?
 
 ### Q2 Eigene Bots: freie Beschreibung? (30.10.2026)
 

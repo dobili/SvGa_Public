@@ -5,6 +5,8 @@ import {
   alsPraxiseintraege,
   auswahlNachStaerke,
   eroeffnungsbaenderAus,
+  gambitsNachStaerke,
+  variantenbaum,
   type Eroeffnungsbaender,
 } from "./eroeffnungsbaender";
 
@@ -47,6 +49,32 @@ describe("Eröffnungen nach Spielstärke", () => {
     expect(alsPraxiseintraege(daten).find(([n]) => n === "Italian Game")?.[1]).toBe(
       "e4 e5 Nf3 Nc6 Bc4",
     );
+  });
+
+  it("Variantenbaum: Verzweigung ab dem ersten abweichenden Zug, nach Häufigkeit", () => {
+    const italienisch = daten.familien.find((f) => f.name === "Italian Game");
+    if (!italienisch) throw new Error("Italian Game fehlt");
+    const baum = variantenbaum(daten, italienisch);
+    expect(baum[0]?.variante.name).toBe("Italian Game: Two Knights Defense");
+    const kinder = baum[0]?.kinder.map((k) => k.variante.folge) ?? [];
+    expect(kinder.every((f) => f.startsWith("e4 e5 Nf3 Nc6 Bc4 Nf6 "))).toBe(true);
+    expect(baum[0]?.anteil).toBeGreaterThan(0);
+    expect(baum[0]?.anteil).toBeLessThanOrEqual(100);
+    // Jede Variante steht genau einmal im Baum
+    const zaehle = (k: typeof baum): number => k.reduce((n, x) => n + 1 + zaehle(x.kinder), 0);
+    expect(zaehle(baum)).toBe(italienisch.varianten.length);
+  });
+
+  it("Gambits nach Spielstärke, beide Seiten", () => {
+    const liste = gambitsNachStaerke(daten, band(800), band(800));
+    expect(liste.map((e) => e.familie.name)).toContain("Englund Gambit");
+    expect(liste).toHaveLength(3);
+  });
+
+  it("Praxis-Einträge enthalten Varianten und Gambits", () => {
+    const namen = alsPraxiseintraege(daten).map(([n]) => n);
+    expect(namen).toContain("Italian Game: Evans Gambit");
+    expect(namen).toContain("Englund Gambit");
   });
 
   it("unbekanntes Format → null", () => {

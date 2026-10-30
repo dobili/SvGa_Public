@@ -4,6 +4,17 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Variantenbaum und Gambits (Opus, Version 0.3.11)
+
+- Eröffnungspaket Stufe 3: Unter jeder Eröffnung der Klappe „Eröffnungen nach Spielstärke“ der
+  Variantenbaum (`ui/komponenten/spielstart/Variantenbaum.tsx`, Rechnung `variantenbaum` in
+  `spiel/eroeffnungsbaender.ts`): Eine Variante hängt unter der längsten anderen, mit der ihre
+  Zugfolge beginnt; Anteil an der Eröffnung aus den Anteilen je Band und den Partien je Band.
+  Gambits (`Gambitliste.tsx`, `gambitsNachStaerke`): je Band drei neue, beide Seiten zusammen.
+- Varianten und Gambits sind wie die Familien „praxis:Name“ wählbar (Gewicht 0 im Praxisbuch).
+  Die Auswahlliste „Aus der Praxis“ zeigt weiter nur die häufigsten Namen des Praxisbuchs und die
+  gerade gewählte Eröffnung, sonst stünden dort rund 1000 Einträge.
+
 ## 30.10.2026 – Eröffnungen nach Spielstärke (Opus, Version 0.3.10)
 
 - Eröffnungspaket Stufe 2 (Empfehlung Q3-2, Regel 9): Klappe „Eröffnungen nach Spielstärke“ in

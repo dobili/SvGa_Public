@@ -61,8 +61,16 @@ export function EroeffnungsWahl({
   if (!index) return null;
   const praxis = praxisdaten.art === "fertig" ? praxisdaten.wert : null;
   const namen = eroeffnungsnamen(index);
-  const praxisnamen = (praxis?.eroeffnungen ?? []).map(([name]) => name).sort();
   const ausDerPraxis = gewaehlt?.startsWith(PRAXIS_VORSILBE) ?? false;
+  // Die Liste zeigt die häufigsten Namen des Praxisbuchs; Eröffnungen nach Spielstärke, Varianten
+  // und Gambits (Gewicht 0, seit 0.3.10) nur, wenn sie gerade gewählt sind.
+  const gewaehlterName = ausDerPraxis ? (gewaehlt ?? "").slice(PRAXIS_VORSILBE.length) : null;
+  const praxisnamen = [
+    ...new Set([
+      ...(praxis?.eroeffnungen ?? []).filter(([, , n]) => n > 0).map(([name]) => name),
+      ...(gewaehlterName ? [gewaehlterName] : []),
+    ]),
+  ].sort();
   const linie = ausDerPraxis
     ? praxis
       ? praxislinie(praxis, (gewaehlt ?? "").slice(PRAXIS_VORSILBE.length))

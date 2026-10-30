@@ -24,7 +24,9 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
  * Das Weitermachen nach dem Neuladen (V2, Merker svga.stapel) ist aus: Viele Tests laden neu und
  * erwarten danach das Buch wie ein neuer Start; durchstich.spec.ts und spielen.spec.ts prüfen es
  * mit `weitermachen: true`. Der einmalige Maia-Hinweis beim ersten Bot (26.10.2026) gilt als
- * gezeigt; spielen.spec.ts prüft ihn mit `maiaHinweis: true`.
+ * gezeigt; spielen.spec.ts prüft ihn mit `maiaHinweis: true`. Die Meldung neuer Abzeichen und
+ * Stufen (Paket Abzeichen) schweigt, weil sie sonst nach der ersten Partie oder Übung vor dem
+ * Brett läge; abzeichen.spec.ts prüft sie mit `abzeichenMeldung: true`.
  */
 export async function starteImBrowser(
   seite: Page,
@@ -34,12 +36,14 @@ export async function starteImBrowser(
     tourAngebot = false,
     weitermachen = false,
     maiaHinweis = false,
+    abzeichenMeldung = false,
   }: {
     safariHinweis?: boolean;
     startanimation?: boolean;
     tourAngebot?: boolean;
     weitermachen?: boolean;
     maiaHinweis?: boolean;
+    abzeichenMeldung?: boolean;
   } = {},
 ): Promise<void> {
   if (!weitermachen) {
@@ -83,6 +87,15 @@ export async function starteImBrowser(
     await seite.addInitScript(() => {
       try {
         window.localStorage.setItem("svga.maiaHinweis", "gezeigt");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+  }
+  if (!abzeichenMeldung) {
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.abzeichenStill", "ja");
       } catch (fehler) {
         console.warn("Merker nicht schreibbar:", fehler);
       }

@@ -10,7 +10,8 @@
  * und je Zeitart ein Ring mit den schon gewertet besiegten vorgefertigten Bots (gezählt wie die
  * Siegmarken am Porträt, speicher/besiegt.ts; Wünsche des Autors, 25.10.2026). Alle Ringe tragen
  * ein Zeichen in der Mitte, eine Legende darunter erklärt die Zeichen (Symbolringe.tsx).
- * Abhängigkeiten: speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
+ * Oben stehen Stufe, Erfahrungspunkte und Abzeichen (Erfahrung.tsx, seit dem Paket Abzeichen).
+ * Abhängigkeiten: Erfahrung.tsx, speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */
 import { useNavigation } from "../../../app/navigationsKontext";
@@ -20,6 +21,7 @@ import type { Fortschritt } from "../../../speicher/format";
 import { geloesteUebungen, kapitelfortschritt } from "../../../speicher/fortschritt";
 import { useSpeicher } from "../../../speicher/speicher";
 import { Ring } from "../bausteine/Kreisanzeige";
+import { Erfahrung } from "./Erfahrung";
 import { summe, useFortschrittsringe } from "./fortschrittsringe";
 import { istVoll } from "./ringrechnung";
 import { Ringlegende, Symbolringreihe, type Symbolringangabe } from "./Symbolringe";
@@ -106,6 +108,8 @@ export function Fortschrittsuebersicht() {
         <Titelsymbol art="fortschritt" />
         {t("fortschritt.titel")}
       </h2>
+      {/* Stufe, Erfahrungspunkte und Abzeichen (Wunsch des Autors, freigegeben 30.10.2026). */}
+      <Erfahrung />
       <Symbolringreihe ringe={buchringe} />
       {/* Teile und Bots aufklappbar: zusammen 14 Ringe wären sonst zu viele Zeilen (Wunsch des
           Autors, 26.10.2026). */}

@@ -4,6 +4,37 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, Paket Abzeichen)
+
+- Freigabe des Autors (30.10.2026): Erfahrungspunkte und Abzeichen wie bei Chessly, nur auf dem
+  Gerät, ohne Bestenliste, keine Daten an Dritte, keine Werbung.
+- EP ohne neues Speicherfeld, gerechnet aus vorhandenen Daten (`ui/komponenten/fortschritt/
+  erfahrung.ts`). Lernen am Buch wiegt schwerer als Ansehen (Übung 20, Abbildung 2); ohne Inhalt
+  zählt nichts (Partien unter zehn Zügen je Seite, Sammlung ohne Plan und Notiz, Fehler ohne Satz).
+  Partien und Siege: der größere Wert aus den gespeicherten 50 Partien und dem Wertungsverlauf.
+  Die Tagesaufgabe zählt über die beste Serie im Merker `tagesserie` (nur gelesen; die Gesamtzahl
+  gelöster Tagesaufgaben steht nirgends, und `training/kurzplaene.ts` lag außerhalb des Pakets).
+- Zehn Stufen mit Begriffen des Buches in Lernreihenfolge (Erster Zug bis Meisterplan), Schwellen
+  mit wachsenden Abständen bis 5000 EP; Figurennamen verworfen, weil „König“ als Stufe nach
+  Rangliste klingt. Rückfrage dazu in N1090.
+- 18 Abzeichen (`abzeichen.ts`), keins doppelt zu einem Orden. „Stärker“ heißt mindestens 100
+  Punkte über der eigenen Wertung nach der Partie (vorsichtig: nach Sieg oder Remis steigt sie).
+  „Brillant“ rechnet die Zugklassen wie der Rückblick, aber ohne Theoriezüge (die Eröffnungslisten
+  lädt nur der Rückblick); einmal gefeiert, wird nicht mehr gerechnet. „Eine Woche dabei“ aus
+  allen Datumsangaben im Speicher (sieben Kalendertage hintereinander) oder der Tagesserie.
+- Merker statt Speicher: `abzeichenGefeiert` (gefeiert bleibt verdient, auch wenn die Partie
+  aus den 50 fällt), `stufeGefeiert` (beim ersten Start still gesetzt, damit Bestandsnutzer keine
+  Aufstiegsmeldung bekommen), `abzeichenProbe` und `erfahrungProbe` (Testkarte),
+  `abzeichenStill` (schaltet die Meldung für die Oberflächentests ab; `starteImBrowser` setzt ihn,
+  `abzeichenMeldung: true` lässt sie zu). Nachteil: Die Merker ziehen nicht mit der
+  Datensicherung um; auf einem neuen Gerät kommen die Meldungen noch einmal.
+- Meldung schlichter als die Ringfeier: gleiche goldene Karte, ohne Feuerwerk und Ton, alle neuen
+  Abzeichen auf einer Karte (Bestandsnutzer sonst mit vielen Meldungen hintereinander). Sie hängt
+  hinter der Ringfeier (`Ringfeier.tsx` zeigt sie, wenn kein Ring offen ist), damit `App.tsx`
+  unverändert bleibt und nie zwei Karten übereinander liegen.
+- Abzeichenbild als Sechseck (`bausteine/Abzeichenbild.tsx`), damit Abzeichen und Orden
+  (Medaille mit Band) auseinanderzuhalten sind; Zeichen aus lucide-react (schon im Projekt).
+
 ## 30.10.2026 – Wiki im Dashboard (Opus, Version 0.3.12, Paket D)
 
 - Wunsch des Autors (Ideensammlung 26.10.2026): Wiki im Dashboard mit Code-Teil und

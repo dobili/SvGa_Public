@@ -90,6 +90,48 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,
+      etwa „Stufe 3 von 10: Zentrum“, rechts die Erfahrungspunkte (EP), darunter ein goldener
+      Balken und „Noch … EP bis zur Stufe …“. Die zehn Stufen heißen nach Begriffen des Buches:
+      Erster Zug, Entwicklung, Zentrum, Rochade, Offene Linie, Vorposten, Freibauer,
+      Kombination, Zugzwang, Meisterplan. Passen Namen und Reihenfolge? Bitte sagen, wenn dir
+      andere Namen lieber sind (etwa die Figuren vom Bauern bis zum König).
+- [ ] N1091. **Woher die EP kommen:** Darunter „Abzeichen: x von 18“ aufklappen. Der zweite
+      Absatz erklärt die Punkte: gelöste Übung 20, beantwortete Warum-Frage 5, vor den
+      Werkzeugen richtig eingeschätzte Abbildung 4, angesehene Abbildung 2, abgehaktes Lernziel
+      5, Trainerrunde 5, jede richtige Trainerantwort 1, Partie ab zehn Zügen 10, Sieg 10 mehr,
+      Bot zum ersten Mal besiegt 25, Eintrag mit Text in Lernsammlung oder Fehlerdatenbank 8,
+      jeder Tag der besten Serie der Tagesaufgabe 5. Die Punkte werden aus deinen vorhandenen
+      Daten gerechnet; wer schon viel gemacht hat, steht gleich auf einer höheren Stufe. Passen
+      die Gewichte und die Schwellen (100, 250, 500, 900, 1400, 2000, 2800, 3800, 5000)?
+- [ ] N1092. **Abzeichengitter:** Im aufgeklappten Teil stehen alle 18 Abzeichen als
+      Sechsecke mit Name und Bedingung; noch nicht verdiente sind grau. Die 18: Erste Partie,
+      Erster Sieg, Zehn, Fünfzig und Hundert Partien, Erstes Matt, Aus eigener Kraft (Sieg ohne
+      Rücknahme und ohne Werkzeuge), Über dich hinaus (Sieg gegen einen mindestens 100 Punkte
+      stärkeren Gegner), Gehalten (Remis gegen einen solchen), Brillanter Zug, Erste Übung,
+      Kapitel gemeistert (alle Übungen eines Kapitels), Nachgefragt (zehn Warum-Fragen), Erst
+      selbst denken (zehn Einschätzungen), Eigene Stellung (Lernsammlung), Aus Fehlern lernen
+      (fünf Fehler mit Satz), Fleißig trainiert (100 richtige Trainerantworten), Eine Woche
+      dabei (sieben Tage hintereinander gelernt oder gespielt). Fehlt dir eines, ist eines zu
+      leicht oder zu schwer?
+- [ ] N1093. **Meldung bei einem neuen Abzeichen:** Spiele eine Partie gegen einen Bot zu Ende
+      (wenn du noch keine hast). Danach erscheint eine schlichte goldene Karte „Neues
+      Abzeichen“ mit dem Sechseck „Erste Partie“ und „Weiter“, ohne Feuerwerk und ohne Ton. Sie
+      kommt nur einmal. Hast du beim ersten Öffnen nach dem Update schon vieles erreicht,
+      stehen alle Abzeichen auf einer einzigen Karte statt vieler Meldungen nacheinander.
+- [ ] N1094. **Abzeichen testen:** Aufgabenseite (Profil drei Sekunden halten) › Karte
+      „Abzeichen testen (nur für dich)“ aufklappen. Ein Tipp auf „Erste Partie: verdienen“
+      zeigt sofort die Meldung; „Nächste Stufe erreichen“ zeigt „Neue Stufe erreicht“. Im Profil
+      stehen dann Abzeichen und Stufe. „Probe beenden“ stellt alles zurück; deine echten Daten
+      ändern sich dabei nicht.
+- [ ] N1095. **Nichts verfällt:** Eine Pause nimmt dir kein Abzeichen und keine Stufe. Ein
+      einmal gemeldetes Abzeichen bleibt, auch wenn die Partie dazu später aus der Liste der
+      letzten 50 Partien fällt. Es gibt keine Bestenliste, nichts verlässt das Gerät. Passt
+      dir der ruhige Ton, oder wünschst du dir bei Abzeichen doch Feuerwerk und Ton wie bei den
+      Orden?
+
 ### Neu in 0.3.12: Wiki im Dashboard (Opus, 30.10.2026)
 
 - [ ] N1040. **Wiki:** schach-von-grund-auf.com/admin/ öffnen (wie immer mit dem Einmalcode).

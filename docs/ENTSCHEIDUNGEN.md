@@ -28,6 +28,13 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   `abzeichenStill` (schaltet die Meldung für die Oberflächentests ab; `starteImBrowser` setzt ihn,
   `abzeichenMeldung: true` lässt sie zu). Nachteil: Die Merker ziehen nicht mit der
   Datensicherung um; auf einem neuen Gerät kommen die Meldungen noch einmal.
+- Nachtrag (Freigabe des Autors über den Koordinierungs-Chat, 30.10.2026: ein neues Feld im
+  Speicher wäre erlaubt): bewusst nicht genutzt. Alle Bedingungen lassen sich aus vorhandenen
+  Daten ableiten; die Merker halten nur Meldungen und die Probe. Ein Feld in
+  `speicher/format.ts` brächte vor allem, dass Abzeichen zu Partien jenseits der letzten 50 die
+  Datensicherung überleben, und würde den gemeinsamen Format-Teil gleichzeitig mit anderen
+  Paketen ändern. Lohnt sich das später, genügt ein zusätzliches Feld „abzeichen“ (Liste der
+  Kennungen) ohne neue Formatversion, gefüllt aus dem Merker `abzeichenGefeiert`.
 - Meldung schlichter als die Ringfeier: gleiche goldene Karte, ohne Feuerwerk und Ton, alle neuen
   Abzeichen auf einer Karte (Bestandsnutzer sonst mit vielen Meldungen hintereinander). Sie hängt
   hinter der Ringfeier (`Ringfeier.tsx` zeigt sie, wenn kein Ring offen ist), damit `App.tsx`

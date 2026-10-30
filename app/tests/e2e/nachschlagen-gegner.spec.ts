@@ -10,15 +10,30 @@ test("Nachschlagen: Steckbriefe mit Fallencheck und Werkzeuge des Buches", async
   await page.getByRole("navigation").getByRole("button", { name: "Nachschlagen" }).click();
   await page.getByRole("button", { name: /^Steckbriefe/ }).click();
   await expect(page.getByTestId("steckbrief")).toHaveCount(13);
+  // Seit 0.3.9 (Paket F): Diagramm der Schlussstellung der Hauptvariante aus dem Buch.
+  const spanisch = page.getByTestId("steckbrief").filter({ hasText: "Spanische Partie" });
+  await spanisch.locator("summary").click();
+  await expect(
+    spanisch.getByRole("button", { name: "Schlussstellung der Hauptvariante (Abb. 2.11)" }),
+  ).toBeVisible();
   const falle = page.getByTestId("fallencheck").filter({ hasText: "Klammerfalle" });
   await falle.locator("summary").click();
   await expect(falle).toContainText("Wer tappt hinein?");
-  await falle.getByRole("button", { name: "Zum Stopp-Moment (Abb. 4.2)" }).click();
+  // Der Stopp-Moment als Diagramm (seit 0.3.9), ein Tipp öffnet die Abbildung.
+  await falle.getByTestId("stellungsbild").click();
   await expect(page.getByRole("heading", { name: "Abb. 4.2" })).toBeVisible();
   await page.getByRole("navigation").getByRole("button", { name: "Nachschlagen" }).click();
   await page.getByRole("button", { name: /^Werkzeuge des Buches/ }).click();
   await page.locator(".werkzeugeintrag summary", { hasText: "Röntgen" }).first().click();
   await expect(page.getByText(/Regel: Kapitel 1, Schach-Röntgen-Regel/)).toBeVisible();
+  // Seit 0.3.9 (Paket F): Bildschirmfoto des Werkzeugs, geladen, mit Knopf zum Ausprobieren.
+  const bild = page.getByRole("img", { name: /das Werkzeug „Röntgen“ an Abb\. 1\.23/ });
+  await expect(bild).toBeVisible();
+  await expect
+    .poll(() => bild.evaluate((el) => (el as HTMLImageElement).naturalWidth))
+    .toBeGreaterThan(0);
+  await page.getByRole("button", { name: "An Abb. 1.23 ausprobieren" }).click();
+  await expect(page.getByRole("heading", { name: "Abb. 1.23" })).toBeVisible();
 });
 
 test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“", async ({ page }) => {

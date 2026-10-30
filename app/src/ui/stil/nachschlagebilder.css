@@ -1,0 +1,50 @@
+/*
+ * Bilder im Nachschlagen (Paket F der Ideensammlung, 0.3.9): Diagramme der Steckbriefe und
+ * Fallenchecks (Stellungsbild.tsx) und Bildschirmfotos der Werkzeuge (Werkzeuguebersicht.tsx).
+ * Eigene Datei, weil nachschlagen.css an der Grenze von 400 Zeilen steht.
+ */
+
+.stellungsbild {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: min(100%, 260px);
+  margin: var(--raster) 0;
+  padding: var(--raster);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+  text-align: left;
+  cursor: pointer;
+}
+
+.stellungsbild .brett {
+  max-width: none;
+}
+
+.stellungsbild-text {
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.werkzeugbild {
+  margin: var(--raster) 0 calc(var(--raster) * 1.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--raster);
+}
+
+.werkzeugbild img {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.werkzeugbild figcaption {
+  margin: 0;
+}

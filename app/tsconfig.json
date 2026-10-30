@@ -28,6 +28,7 @@
     "skripte",
     "vite.config.ts",
     "playwright.config.ts",
+    "playwright.bilder.config.ts",
     "eslint.config.js"
   ]
 }

@@ -4,6 +4,24 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Bilder im Nachschlagen (Opus, Version 0.3.9)
+
+- Wunsch des Autors (Ideensammlung 26.10.2026, Paket F): Steckbriefe mit der Endstellung,
+  bestätigt als Stellung am Ende der Hauptvariante aus dem Buch; Werkzeuge mit Bildschirmfotos
+  aus der App, „wo man was findet“, möglichst automatisch, damit sie nicht veralten.
+- Steckbriefe: keine neue Rechnung, sondern die Abbildung des Buches mit der Unterschrift
+  „Schlussstellung der Hauptvariante“ im Abschnitt des Steckbriefs, im Sammelabschnitt 2.10 nach
+  dem Unterabschnitt (`ui/komponenten/nachschlagen/steckbriefbild.ts`, Test an den echten Daten:
+  alle 13 Steckbriefe haben eine). Fallenchecks zeigen den Stopp-Moment als Brett
+  (`Stellungsbild.tsx`). Empfehlung über den Wunsch hinaus, Widerspruch genügt.
+- Werkzeugbilder: Erzeuger `tests/bilder/werkzeugbilder.spec.ts` mit eigener Einstellung
+  (`playwright.bilder.config.ts`, Befehl `npm run bilder:werkzeuge`), nicht in den normalen
+  Prüfungen, weil er Dateien schreibt. Je Werkzeug die Abbildung aus den Oberflächentests
+  (`werkzeugbeispiele.ts`); Engine-Werkzeuge warten auf dasselbe Ergebnis wie ihr Test. Goldene
+  Nummern statt Pfeilen, weil auf dem kleinen Bild die Reihenfolge des Antippens klarer wird als
+  mit Pfeilen. WebP 480 Bildpunkte breit, Qualität 72 (zusammen 1,7 MB, Größenbudget danach
+  23,7 von 25 MB). Ein Test verlangt für jedes Werkzeug Eintrag und Bild.
+
 ## 30.10.2026 – Eigene Bots stellen sich vor (Opus, Version 0.3.8)
 
 - Wunsch des Autors (26.10.2026): eigene Bots bekommen eine Beschreibung aus Textbausteinen, als

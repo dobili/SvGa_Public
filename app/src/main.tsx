@@ -18,6 +18,7 @@ import "./ui/stil/ergaenzungen.css";
 import "./ui/stil/zugleiste.css";
 import "./ui/stil/kapitel.css";
 import "./ui/stil/nachschlagen.css";
+import "./ui/stil/nachschlagebilder.css";
 import "./ui/stil/speicher.css";
 import "./ui/stil/vorbereitet.css";
 import "./ui/stil/spiel.css";

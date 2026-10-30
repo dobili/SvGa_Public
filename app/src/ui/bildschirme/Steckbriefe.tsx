@@ -6,17 +6,21 @@
  * der Eröffnungen (Kapitel 2) und die Fallenchecks (Kapitel 4) stehen in den Buchdaten und sind
  * hier am Stück zu lesen. Jeder Eintrag ist aufklappbar; ein Knopf führt zur passenden Stelle im
  * Buch (erste Abbildung des Abschnitts, Stopp-Moment der Falle).
+ * Seit 0.3.9 (Paket F der Ideensammlung) mit Diagramm: bei Eröffnungen die Schlussstellung der
+ * Hauptvariante aus dem Buch, bei Fallen der Stopp-Moment (steckbriefbild.ts).
  * Begriffe wie im Buch: „Wer tappt hinein?“, „Prüfung“, „Reicht?“, „Rettender Zug“,
  * „Fallensteller-Test“. Regel 1: Inhalte kommen unverändert aus den Buchdaten.
- * Abhängigkeiten: daten/laden.ts, Buchtext, Kopfzeile, Navigation, i18n.
+ * Abhängigkeiten: daten/laden.ts, Buchtext, Kopfzeile, Navigation, Stellungsbild, i18n.
  */
 import { ChevronDown } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
-import { ladeIndex, ladeKapitel, type Kapitel } from "../../daten/laden";
+import { ladeIndex, ladeKapitel, type Abbildung, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { Buchtext, type Textaktionen } from "../komponenten/abbildung/Unterschrift";
 import { useDaten } from "../komponenten/bausteine/useDaten";
+import { Stellungsbild } from "../komponenten/nachschlagen/Stellungsbild";
+import { abbildungMitNummer, schlussstellung } from "../komponenten/nachschlagen/steckbriefbild";
 
 /** Größe des Pfeils, der zeigt, dass sich ein Eintrag aufklappen lässt. */
 const PFEILGROESSE = 20;
@@ -54,10 +58,13 @@ function ersteAbbildung(kapitel: readonly Kapitel[], abschnitt: string | null): 
 function Eroeffnung({
   steckbrief,
   abbildung,
+  schluss,
   aktionen,
 }: {
   steckbrief: Steckbrief;
   abbildung: string | null;
+  /** Schlussstellung der Hauptvariante, als Diagramm unter den Zeilen. */
+  schluss: Abbildung | null;
   aktionen: Textaktionen;
 }) {
   return (
@@ -81,6 +88,13 @@ function Eroeffnung({
           </div>
         ))}
       </dl>
+      {schluss && (
+        <Stellungsbild
+          abbildung={schluss}
+          text={t("steckbrief.schluss", { nummer: schluss.id })}
+          beiKlick={() => aktionen.beiVerweis(schluss.id)}
+        />
+      )}
       {abbildung && (
         <button
           type="button"
@@ -94,16 +108,41 @@ function Eroeffnung({
   );
 }
 
-/** Knopf zum Stopp-Moment der Falle im Buch. */
-function StoppKnopf({ nummer, aktionen }: { nummer: string; aktionen: Textaktionen }) {
+/**
+ * Der Stopp-Moment der Falle: als Diagramm, wenn die Abbildung geladen ist, sonst als Knopf.
+ * Beide führen an die Stelle im Buch.
+ */
+function StoppKnopf({
+  nummer,
+  bild,
+  aktionen,
+}: {
+  nummer: string;
+  bild: Abbildung | null;
+  aktionen: Textaktionen;
+}) {
+  const text = t("steckbrief.stopp", { nummer });
+  if (bild) {
+    return (
+      <Stellungsbild abbildung={bild} text={text} beiKlick={() => aktionen.beiVerweis(nummer)} />
+    );
+  }
   return (
     <button type="button" className="knopf-zweit" onClick={() => aktionen.beiVerweis(nummer)}>
-      {t("steckbrief.stopp", { nummer })}
+      {text}
     </button>
   );
 }
 
-function Falle({ falle, aktionen }: { falle: Fallencheck; aktionen: Textaktionen }) {
+function Falle({
+  falle,
+  stoppbild,
+  aktionen,
+}: {
+  falle: Fallencheck;
+  stoppbild: Abbildung | null;
+  aktionen: Textaktionen;
+}) {
   return (
     <details className="karte steckbrief" data-testid="fallencheck">
       <summary className="karte-kopf">
@@ -141,7 +180,7 @@ function Falle({ falle, aktionen }: { falle: Fallencheck; aktionen: Textaktionen
           <Buchtext teile={falle.fallensteller.text} aktionen={aktionen} />
         </p>
       )}
-      {falle.stopp && <StoppKnopf nummer={falle.stopp} aktionen={aktionen} />}
+      {falle.stopp && <StoppKnopf nummer={falle.stopp} bild={stoppbild} aktionen={aktionen} />}
     </details>
   );
 }
@@ -176,6 +215,7 @@ export function Steckbriefe() {
                 key={s.name}
                 steckbrief={s}
                 abbildung={ersteAbbildung(kapitel.wert, s.abschnitt)}
+                schluss={schlussstellung(kapitel.wert, s)}
                 aktionen={aktionen}
               />
             )),
@@ -184,7 +224,14 @@ export function Steckbriefe() {
             {t("steckbrief.fallen")}
           </h2>
           {kapitel.wert.flatMap((k) =>
-            k.fallenchecks.map((f) => <Falle key={f.name} falle={f} aktionen={aktionen} />),
+            k.fallenchecks.map((f) => (
+              <Falle
+                key={f.name}
+                falle={f}
+                stoppbild={abbildungMitNummer(kapitel.wert, f.stopp)}
+                aktionen={aktionen}
+              />
+            )),
           )}
         </>
       )}

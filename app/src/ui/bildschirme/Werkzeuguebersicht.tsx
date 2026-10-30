@@ -7,6 +7,10 @@
  * aus dem Verzeichnis (analyse/register.ts) in der Reihenfolge ihrer Einführung, mit denselben
  * Texten wie an der Abbildung und dem Zeichen wie am Brett oder in der Werkzeugleiste (DS28);
  * ein Knopf öffnet das Kapitel, das sie einführt.
+ * Seit 0.3.9 (Paket F der Ideensammlung) mit Bildschirmfoto je Werkzeug: wo man es in der Leiste
+ * findet (goldene Nummern in der Reihenfolge des Antippens) und was es an Brett und Karte zeigt;
+ * erzeugt im Browser (werkzeugbeispiele.ts), damit es nicht veraltet. Ein Knopf öffnet dieselbe
+ * Abbildung zum Ausprobieren.
  * Abhängigkeiten: analyse/register.ts, daten/laden.ts, buendelsymbole.ts, werkzeugordnung.ts,
  * Kopfzeile, Navigation, i18n, lucide-react.
  */
@@ -21,6 +25,7 @@ import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { BUENDELSYMBOL } from "../komponenten/werkzeugwahl/buendelsymbole";
 import { buendelMit } from "../komponenten/werkzeugwahl/werkzeugordnung";
+import { WERKZEUGBEISPIELE, werkzeugbildpfad } from "../komponenten/nachschlagen/werkzeugbeispiele";
 
 /** Größe des Werkzeugzeichens (Bildpunkte). */
 const WERKZEUGZEICHEN = 18;
@@ -48,7 +53,44 @@ function bildVon(werkzeug: Werkzeug): LucideIcon {
   return buendel ? BUENDELSYMBOL[buendel] : Wrench;
 }
 
-function Eintrag({ werkzeug }: { werkzeug: Werkzeug }) {
+/** Bildschirmfoto des Werkzeugs an seiner Beispiel-Abbildung, mit Knopf zum Ausprobieren. */
+function Werkzeugbild({
+  werkzeug,
+  beiAbbildung,
+}: {
+  werkzeug: Werkzeug;
+  beiAbbildung: (nummer: string) => void;
+}) {
+  const beispiel = WERKZEUGBEISPIELE[werkzeug.id];
+  if (!beispiel) return null;
+  const name = t(werkzeug.name);
+  return (
+    <figure className="werkzeugbild" data-testid="werkzeugbild">
+      <img
+        src={`${import.meta.env.BASE_URL}${werkzeugbildpfad(werkzeug.id)}`}
+        alt={t("werkzeuge.bildAlt", { name, nummer: beispiel.abbildung })}
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="hinweis">{t("werkzeuge.bildText")}</figcaption>
+      <button
+        type="button"
+        className="knopf-zweit"
+        onClick={() => beiAbbildung(beispiel.abbildung)}
+      >
+        {t("werkzeuge.ausprobieren", { nummer: beispiel.abbildung })}
+      </button>
+    </figure>
+  );
+}
+
+function Eintrag({
+  werkzeug,
+  beiAbbildung,
+}: {
+  werkzeug: Werkzeug;
+  beiAbbildung: (nummer: string) => void;
+}) {
   return (
     <details className="werkzeugeintrag">
       <summary>
@@ -61,6 +103,7 @@ function Eintrag({ werkzeug }: { werkzeug: Werkzeug }) {
       </summary>
       <p>{t(werkzeug.erklaerung)}</p>
       <p className="hinweis">{t(werkzeug.regel)}</p>
+      <Werkzeugbild werkzeug={werkzeug} beiAbbildung={beiAbbildung} />
     </details>
   );
 }
@@ -86,7 +129,11 @@ export function Werkzeuguebersicht() {
             {t("werkzeuge.kapitel", { nummer: kapitel, titel: titel(kapitel) })}
           </h2>
           {werkzeuge.map((w) => (
-            <Eintrag key={w.id} werkzeug={w} />
+            <Eintrag
+              key={w.id}
+              werkzeug={w}
+              beiAbbildung={(nummer) => navigiere({ bildschirm: "abbildung", nummer })}
+            />
           ))}
           <button
             type="button"

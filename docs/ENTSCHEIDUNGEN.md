@@ -4,6 +4,16 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Eröffnungen nach Spielstärke (Opus, Version 0.3.10)
+
+- Eröffnungspaket Stufe 2 (Empfehlung Q3-2, Regel 9): Klappe „Eröffnungen nach Spielstärke“ in
+  der Eröffnungswahl (`ui/komponenten/spielstart/Staerkewahl.tsx`), Rechnung
+  `spiel/eroeffnungsbaender.ts` (`auswahlNachStaerke`: je Band die drei häufigsten, die noch
+  nicht in der Liste stehen). Bänder als „von … bis …“; Vorgabe 1000 bis 1400.
+- Kein neues Speicherformat: Die Familien werden beim Laden an die benannten Eröffnungen des
+  Praxisbuchs angehängt (`daten/laden.ts`), die Wahl ist „praxis:Name“ wie bisher; ältere
+  Versionen lesen sie als unbekannte Praxis-Eröffnung und spielen dann wie Menschen der Stärke.
+
 ## 30.10.2026 – Eröffnungspaket, Stufe 1: Daten nach Elo-Band (Opus)
 
 - Auftrag (Übergabe aus der Ideensammlung, Reihenfolge 5): zuerst nur die Datenfrage klären.

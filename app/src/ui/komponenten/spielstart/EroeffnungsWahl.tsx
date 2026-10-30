@@ -11,6 +11,7 @@
  * Die Vorgabe ist „wie Menschen dieser Stärke“ (Wunsch des Autors): Der Bot eröffnet nach dem
  * Praxisbuch (engine/praxisbuch.ts). Dazu kommen die häufigsten benannten Eröffnungen aus der
  * Praxis (Lichess-Namen), denen der Bot folgt, solange du ihre Züge spielst.
+ * Seit 0.3.10 darunter die Klappe „Eröffnungen nach Spielstärke“ (Staerkewahl.tsx).
  * Abhängigkeiten: schach/eroeffnungsindex.ts, engine/praxisbuch.ts, daten/laden.ts,
  * useEroeffnungsindex, useDaten, i18n.
  */
@@ -23,6 +24,7 @@ import { useDaten } from "../bausteine/useDaten";
 import { sanInSprache } from "../../../schach/notation";
 import { useEroeffnungsindex } from "../bausteine/useEroeffnungsindex";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
+import { Staerkewahl } from "./Staerkewahl";
 
 /** Kapitel 2: ab dort gibt es den Index. */
 const KAPITEL_MIT_EROEFFNUNGEN = 2;
@@ -119,6 +121,7 @@ export function EroeffnungsWahl({
         <p className="hinweis">{t("spielen.eroeffnungZuege", { zuege: zugfolge(linie) })}</p>
       )}
       <p className="hinweis">{t(hinweis)}</p>
+      <Staerkewahl gewaehlt={gewaehlt} beiWahl={beiWahl} />
     </section>
   );
 }

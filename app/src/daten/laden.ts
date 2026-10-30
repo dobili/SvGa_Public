@@ -12,6 +12,11 @@ import { datensprache, trainerdatensprache } from "../i18n/sprache";
 import type { Datenverzeichnis } from "./generiert/index";
 import type { Eroeffnungsliste } from "./generiert/eroeffnungsliste";
 import { praxisbuchAus, type Praxisbuch } from "../engine/praxisbuch";
+import {
+  alsPraxiseintraege,
+  eroeffnungsbaenderAus,
+  type Eroeffnungsbaender,
+} from "../spiel/eroeffnungsbaender";
 import type { Glossar } from "./generiert/glossar";
 import type { Kapitel } from "./generiert/kapitel";
 import type { Nachschlagen } from "./generiert/nachschlagen";
@@ -142,6 +147,41 @@ export function ladeEroeffnungsliste(): Promise<Eroeffnungsliste> {
 }
 
 let praxisbuch: Promise<Praxisbuch> | null = null;
+let eroeffnungsbaender: Promise<Eroeffnungsbaender> | null = null;
+
+/**
+ * Lädt die Eröffnungen nach Spielstärke (spiel/eroeffnungsbaender.ts), unabhängig von der Sprache.
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladeEroeffnungsbaender(): Promise<Eroeffnungsbaender> {
+  if (!eroeffnungsbaender) {
+    eroeffnungsbaender = ladeJson<unknown>("/daten/eroeffnungsbaender.json").then((roh) => {
+      const daten = eroeffnungsbaenderAus(roh);
+      if (!daten) throw new Error("/daten/eroeffnungsbaender.json: unbekanntes Format");
+      return daten;
+    });
+    eroeffnungsbaender.catch(() => {
+      eroeffnungsbaender = null;
+    });
+  }
+  return eroeffnungsbaender;
+}
+
+/**
+ * Hängt die Eröffnungen nach Spielstärke an die benannten Eröffnungen des Praxisbuchs an (seit
+ * 0.3.10), damit ein Bot ihnen folgt wie den bisherigen. Vorhandene Namen bleiben, wie sie sind.
+ * Fehlt die Datei, bleibt das Praxisbuch unverändert.
+ */
+async function mitEroeffnungsbaendern(buch: Praxisbuch): Promise<Praxisbuch> {
+  const baender = await ladeEroeffnungsbaender().catch((fehler: unknown) => {
+    console.warn("Eröffnungen nach Spielstärke nicht geladen:", fehler);
+    return null;
+  });
+  if (!baender) return buch;
+  const bekannt = new Set((buch.eroeffnungen ?? []).map(([name]) => name));
+  const neu = alsPraxiseintraege(baender).filter(([name]) => !bekannt.has(name));
+  return { ...buch, eroeffnungen: [...(buch.eroeffnungen ?? []), ...neu] };
+}
 
 /**
  * Lädt das Praxisbuch (engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
@@ -153,7 +193,7 @@ export function ladePraxisbuch(): Promise<Praxisbuch> {
     praxisbuch = ladeJson<unknown>("/daten/praxisbuch.json").then((roh) => {
       const buch = praxisbuchAus(roh);
       if (!buch) throw new Error("/daten/praxisbuch.json: unbekanntes Format");
-      return buch;
+      return mitEroeffnungsbaendern(buch);
     });
     praxisbuch.catch(() => {
       praxisbuch = null;

@@ -1,7 +1,9 @@
 /*
  * Bilder im Nachschlagen (Paket F der Ideensammlung, 0.3.9): Diagramme der Steckbriefe und
- * Fallenchecks (Stellungsbild.tsx) und Bildschirmfotos der Werkzeuge (Werkzeuguebersicht.tsx).
- * Eigene Datei, weil nachschlagen.css an der Grenze von 400 Zeilen steht.
+ * Fallenchecks (Stellungsbild.tsx) und Bildschirmfotos der Werkzeuge (Werkzeuguebersicht.tsx);
+ * seit 0.3.10 auch die Klappe „Eröffnungen nach Spielstärke“ (Staerkewahl.tsx), die wie die
+ * Steckbriefe Eröffnungen zum Nachschlagen zeigt. Eigene Datei, weil nachschlagen.css an der
+ * Grenze von 400 Zeilen steht.
  */
 
 .stellungsbild {
@@ -46,5 +48,69 @@
 }
 
 .werkzeugbild figcaption {
+  margin: 0;
+}
+
+/* ---------- Eröffnungen nach Spielstärke (Staerkewahl.tsx, 0.3.10) ---------- */
+
+.staerkewahl-baender {
+  display: flex;
+  gap: calc(var(--raster) * 2);
+  margin: var(--raster) 0;
+}
+
+.staerkewahl-band {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.staerkewahl-seite h4 {
+  margin: calc(var(--raster) * 1.5) 0 var(--raster);
+}
+
+.staerkewahl-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.staerkewahl-zeile {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  padding: var(--raster);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.staerkewahl-zeile[aria-pressed="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.staerkewahl-name {
+  font-weight: 600;
+}
+
+.staerkewahl-marke {
+  padding: 0 8px;
+  border-radius: 10px;
+  background: var(--grund);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+}
+
+.staerkewahl-zeile .hinweis {
+  flex-basis: 100%;
   margin: 0;
 }

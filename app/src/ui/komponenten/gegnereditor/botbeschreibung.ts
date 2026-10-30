@@ -8,12 +8,14 @@
  * Die Sätze entstehen bei jedem Zeigen neu; gespeichert wird nichts (kein neues Datenformat).
  * Gewählt werden die Fehlerarten und Flecken, die der Bot am stärksten macht (Regler über 0), sonst
  * die angehakten; höchstens drei, damit der Text kurz bleibt.
+ * Seit Paket 9 (30.10.2026) dazu die festen Eröffnungen („Eröffnet gern: …“).
  * Abhängigkeiten: engine/gegner.ts (EigenerGegner), engine/stile.ts, stiltext.ts, i18n.
  */
 import type { BlinderFleck, Fehlerart } from "../../../engine/fehlerart-typen";
 import type { EigenerGegner } from "../../../engine/gegner";
 import { mixAusStil } from "../../../engine/stile";
 import { t } from "../../../i18n/sprache";
+import { eroeffnungsname } from "../../../spiel/boteroeffnung";
 import { stilkurz } from "./stiltext";
 
 /** Höchstens so viele Fehlerarten und Flecken je Satz. */
@@ -46,6 +48,9 @@ const BAUSTEINARTEN = [
 type Bausteinart = (typeof BAUSTEINARTEN)[number];
 const istBausteinart = (f: Fehlerart): f is Bausteinart =>
   (BAUSTEINARTEN as readonly string[]).includes(f);
+
+/** So viele feste Eröffnungen nennt der Satz, der Rest zählt als „und n weitere“. */
+const EROEFFNUNGEN_GENANNT = 2;
 
 /** Anzahl der Phasen, über die die Stufen gemittelt werden. */
 const PHASEN = 3;
@@ -81,14 +86,43 @@ function aufzaehlung(teile: readonly string[]): string {
   });
 }
 
+/** Ohne Namen der Daten: Praxis-Eröffnungen ohne Vorsilbe, Buch-Eröffnungen wie gespeichert. */
+const ohneVorsilbe = (wert: string) => eroeffnungsname(wert, null, false);
+
+/**
+ * Der Satz zu den festen Eröffnungen (Paket 9), leer ohne.
+ * Beispiel: [Italienisch, London] → „Eröffnet gern: Italienische Partie oder London-System.“
+ */
+function eroeffnungssatz(g: EigenerGegner, namen: (wert: string) => string): string {
+  const liste = g.eroeffnungen ?? [];
+  if (liste.length === 0) return "";
+  const genannt = liste.slice(0, EROEFFNUNGEN_GENANNT).map(namen);
+  const rest = liste.length - genannt.length;
+  const text =
+    rest > 0
+      ? t("botbeschreibung.weitere", { liste: genannt.join(", "), anzahl: String(rest) })
+      : genannt.length > 1
+        ? t("botbeschreibung.oder", {
+            anfang: genannt.slice(0, -1).join(", "),
+            ende: genannt.at(-1) ?? "",
+          })
+        : (genannt[0] ?? "");
+  return t("botbeschreibung.eroeffnungen", { liste: text });
+}
+
 /**
  * Die Beschreibung eines eigenen Bots.
  * Beispiel: Stufen 3 · 3 · 2, Stil Angreifer, Fehler „Figur hängen lassen“, Fleck „Rückzüge“ →
  * „Ein Gegner für Einsteiger. Spielt im Stil Angreifer. Typisch: lässt Figuren hängen. Übersieht
  * gern Rückzüge.“
  * Sonderfall: ohne Fehlerarten und Flecken „Macht kaum typische Fehler.“
+ * Seit Paket 9 am Ende ein Satz zu festen Eröffnungen; `namen` macht aus einem gespeicherten Wert
+ * den Namen zur Anzeige (spiel/boteroeffnung.ts, eroeffnungsname).
  */
-export function botbeschreibung(g: EigenerGegner): string {
+export function botbeschreibung(
+  g: EigenerGegner,
+  namen: (wert: string) => string = ohneVorsilbe,
+): string {
   const mix = g.stilmix ?? mixAusStil(g.stilname);
   const fehler = staerkste<Fehlerart>(g, g.fehlerarten).filter(istBausteinart);
   const flecken = staerkste<BlinderFleck>(g, g.blindeFlecken);
@@ -105,6 +139,7 @@ export function botbeschreibung(g: EigenerGegner): string {
     flecken.length > 0
       ? t("botbeschreibung.flecken", { liste: aufzaehlung(flecken.map((f) => t(`blind.${f}`))) })
       : "",
+    eroeffnungssatz(g, namen),
   ];
   return saetze.filter(Boolean).join(" ");
 }

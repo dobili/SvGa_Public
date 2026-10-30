@@ -9,6 +9,8 @@
  * wird, und läuft bei der Rückkehr weiter; zieht die Engine im Hintergrund, bleibt die Uhr
  * nach ihrem Zug stehen. Den angehaltenen Uhrstand sichert sie zusätzlich sofort im
  * Gerätespeicher, weil ein Neuladen das Schreiben in IndexedDB abbricht (uhrNotsicherung.ts, N180).
+ * Seit Paket 9 verlässt ein eigener Bot seine feste Eröffnung je Buchzug mit seiner Abweichung
+ * (spiel/boteroeffnung.ts).
  * Abhängigkeiten: spiel/, speicher/, engine/, daten/laden.ts, schach/eroeffnungsindex.ts.
  */
 import { useEffect, useMemo, useState } from "react";
@@ -39,6 +41,7 @@ import {
   type Partie,
 } from "../../../spiel/partie";
 import { findePartie } from "../../../speicher/partien";
+import { abweichungDerPartie, mitAbweichung } from "../../../spiel/boteroeffnung";
 import { useSpeicher } from "../../../speicher/speicher";
 import { useDaten } from "../bausteine/useDaten";
 import { ladeEroeffnungsindex } from "../bausteine/useEroeffnungsindex";
@@ -130,6 +133,21 @@ function buchzuegeFuer(
   };
 }
 
+/**
+ * Die Abweichung der Partie in Prozent (Paket 9): die des eigenen Bots, wenn die Eröffnung der
+ * Partie eine seiner festen ist, sonst 0. Gelesen beim Bot im Speicher; ist er gelöscht, folgt die
+ * Partie der Eröffnung ohne Abweichung.
+ */
+function useAbweichung(partie: Partie | null): number {
+  const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
+  const bot = partie?.einstellung.bot ?? null;
+  const eroeffnung = partie?.einstellung.eroeffnung ?? null;
+  return abweichungDerPartie(
+    eigene.find((g) => g.kennung === bot),
+    eroeffnung,
+  );
+}
+
 /** Lässt die Engine ziehen, solange sie am Zug ist; im Notmodus mit Vorzügen. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
@@ -146,12 +164,15 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     [amZugEngine, zuege, einstellung, fen],
   );
   const eroeffnung = partie?.einstellung.eroeffnung ?? null;
+  const abweichung = useAbweichung(partie);
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;
     let aktiv = true;
     const laeuft = () => aktiv;
     const jetzige = neueste(id);
-    const buchzuege = buchzuegeFuer(buch, fen, eroeffnung);
+    // Paket 9: Je Buchzug verlässt ein eigener Bot seine feste Eröffnung mit der Abweichung.
+    const wirksam = mitAbweichung(eroeffnung, abweichung, Math.random);
+    const buchzuege = buchzuegeFuer(buch, fen, wirksam);
     (jetzige ? vorzugFuer(id, jetzige) : Promise.resolve(null))
       .then((vorzug) =>
         vorzug === null
@@ -173,7 +194,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     return () => {
       aktiv = false;
     };
-  }, [id, fen, amZugEngine, buch, stufennummer, eroeffnung, versuch]);
+  }, [id, fen, amZugEngine, buch, stufennummer, eroeffnung, abweichung, versuch]);
   return fehler;
 }
 

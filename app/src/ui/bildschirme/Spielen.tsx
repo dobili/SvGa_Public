@@ -8,7 +8,8 @@
  * eigene Stufe mit Reglern je Phase oder Mensch am selben Gerät), die Spielhilfen und die Wertung
  * (GegnerWahl.tsx, EigeneStufe.tsx, HilfenWahl.tsx). Aus der Grundstellung lässt sich eine
  * Eröffnung des Buches vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des
- * Autors zu N178). Die Startstellung lässt sich auch selbst aufbauen (Startstellung.tsx mit
+ * Autors zu N178); feste Eröffnungen eines eigenen Bots haben Vorrang, außer mit Haken (Paket 9,
+ * BotEroeffnungVorrang.tsx). Die Startstellung lässt sich auch selbst aufbauen (Startstellung.tsx mit
  * Stellungseditor); eine veränderte Abbildungsstellung zählt dann als eigene Stellung.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
@@ -34,7 +35,8 @@ import {
   type Gegnerkategorie,
 } from "../komponenten/gegner/gegnerkategorie";
 import { GegnerEditor } from "../komponenten/gegnereditor/GegnerEditor";
-import { EroeffnungsWahl } from "../komponenten/spielstart/EroeffnungsWahl";
+import { Eroeffnungsteil } from "../komponenten/spielstart/BotEroeffnungVorrang";
+import { eroeffnungFuerPartie } from "../../spiel/boteroeffnung";
 import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
 import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
@@ -66,6 +68,8 @@ interface Wahl {
   readonly vorlieben: Spielvorlieben;
   /** Eröffnung für die Engine (nur aus der Grundstellung), sonst null. */
   readonly eroeffnung: string | null;
+  /** Paket 9: Die Wahl gilt statt der festen Eröffnungen eines eigenen Bots (Haken). */
+  readonly ueberschreiben: boolean;
 }
 
 /** Zählt eine Partie mit dieser Wahl für die Wertung? Nur gegen die Engine aus der Grundstellung. */
@@ -228,7 +232,18 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       // Gewertete Partien: keine Rücknahme und keine Spielhilfen (Wunsch des Autors zu S9).
       ruecknahmeErlaubt: v.ruecknahmeErlaubt && !wirdGewertet(fen, v),
       abbildung: abbildung ?? null,
-      eroeffnung: fen === GRUNDSTELLUNG && v.gegner === "engine" ? wahl.eroeffnung : null,
+      // Paket 9: Ein eigener Bot mit festen Eröffnungen wählt je Partie eine, außer mit Haken.
+      eroeffnung:
+        fen === GRUNDSTELLUNG && v.gegner === "engine"
+          ? eroeffnungFuerPartie(
+              {
+                botEroeffnungen: eigene.find((g) => g.kennung === bot)?.eroeffnungen ?? [],
+                ueberschreiben: wahl.ueberschreiben,
+                global: wahl.eroeffnung,
+              },
+              Math.random,
+            )
+          : null,
       gegner: v.gegner,
       bot,
       ...(mitMaia && v.gegner === "engine" ? { maia: true } : {}),
@@ -273,6 +288,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
     vorlieben: spiel.vorlieben,
     // Seit 0.2.128: Bots eröffnen wie Menschen ihrer Stärke (engine/praxisbuch.ts)
     eroeffnung: EROEFFNUNG_PRAXIS,
+    ueberschreiben: false,
   });
   // Die Wahl von Gegner, Stufen, Uhr und Hilfen gilt sofort als Vorliebe, nicht erst beim
   // Beginnen; sonst stand die eigene Stufe nach einem Wechsel zum Buch wieder auf 1 · 1 · 1,
@@ -327,10 +343,12 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         setzeKategorie={setzeKategorie}
         eroeffnung={
           fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" ? (
-            <EroeffnungsWahl
-              eingebettet
+            <Eroeffnungsteil
               gewaehlt={wahl.eroeffnung}
               beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
+              bot={spiel.eigeneGegner.find((g) => g.kennung === wahl.vorlieben.bot)}
+              ueberschreiben={wahl.ueberschreiben}
+              beiUeberschreiben={(ueberschreiben) => setzeWahl({ ...wahl, ueberschreiben })}
             />
           ) : null
         }

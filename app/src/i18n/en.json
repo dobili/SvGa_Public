@@ -3790,5 +3790,21 @@
   "zusatzaufgaben.thema.grundreihenmatt": "Back-rank mate",
   "zusatzaufgaben.thema.mattbilder": "Mating patterns (smothered, Anastasia, Arabian, Boden)",
   "zusatzaufgaben.thema.matt1": "Mate in one",
-  "zusatzaufgaben.thema.matt2": "Mate in two"
+  "zusatzaufgaben.thema.matt2": "Mate in two",
+  "spielen.boteroeffnung.titel": "Openings ({anzahl})",
+  "spielen.boteroeffnung.erklaerung": "Choose what your bot opens with. Each game it picks one of the chosen openings at random and follows it as long as you play its moves. Without a choice it opens according to the choice in the game window.",
+  "spielen.boteroeffnung.keine": "No fixed opening yet.",
+  "spielen.boteroeffnung.gewaehlt": "Chosen",
+  "spielen.boteroeffnung.entfernen": "Remove {name}",
+  "spielen.boteroeffnung.alleEntfernen": "Remove all",
+  "spielen.boteroeffnung.abweichung": "Deviation: {prozent}%",
+  "spielen.boteroeffnung.abweichungHinweis": "How often the bot leaves its opening on each book move and then plays on like people of its strength. 0%: always follows it, 100%: as if nothing were fixed.",
+  "spielen.boteroeffnung.ausDemBuch": "Openings from the book",
+  "spielen.boteroeffnung.alleVarianten": "All variations",
+  "spielen.boteroeffnung.haeufigste": "Top {anzahl}",
+  "spielen.boteroeffnung.vorrang": "{name} has fixed openings: {liste}. Each game it picks one of them.",
+  "spielen.boteroeffnung.ueberschreiben": "Override the bot's opening",
+  "botbeschreibung.eroeffnungen": "Likes to open with: {liste}.",
+  "botbeschreibung.oder": "{anfang} or {ende}",
+  "botbeschreibung.weitere": "{liste} (and {anzahl} more)"
 }

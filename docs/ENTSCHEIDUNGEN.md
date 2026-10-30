@@ -4,6 +4,39 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, Paket 9)
+
+- Wunsch des Autors (Ideensammlung, freigegeben 30.10.2026): feste Eröffnungen für eigene Bots,
+  Mehrfachauswahl, Regler „Abweichung“, Vorrang der globalen Wahl im Spielfenster (ausgegraut,
+  Haken zum Überschreiben); im Variantenbaum Schnellwahl und Einzelhaken.
+- Speicher: zwei neue optionale Felder am eigenen Gegner, `eroeffnungen` (Werte wie in der
+  Eröffnungswahl: „praxis:Name“ oder Name einer Buch-Eröffnung, höchstens 40, je höchstens 120
+  Zeichen) und `abweichung` (0 bis 100, ganzzahlig). Fehlende Felder: wie bisher. `format.ts`
+  blieb unverändert (kein neues Schema). Eine ältere App liest Gegner Feld für Feld und lässt
+  die unbekannten Felder still weg: kein Absturz, beim erneuten Speichern dort gehen sie
+  verloren (hingenommen, getestet). Sicherung und Import tragen die Felder mit (getestet).
+- Die Partie bekommt kein neues Feld: Beim Beginnen wählt `eroeffnungFuerPartie` zufällig eine
+  der festen Eröffnungen und schreibt sie in das bestehende Feld `eroeffnung`. Die Abweichung
+  liest die Partie beim Bot im Speicher (`abweichungDerPartie`), und nur, wenn die Eröffnung der
+  Partie eine seiner festen ist. Folgen: Wird der Bot mitten in der Partie geändert, gilt die neue
+  Abweichung; wird er gelöscht, folgt die Partie der Eröffnung ohne Abweichung; wählt der Leser
+  mit Haken eine Eröffnung, die auch in der Liste des Bots steht, gilt die Abweichung ebenfalls.
+- Abweichung je Buchzug: Mit der Wahrscheinlichkeit wird für diesen Zug „wie Menschen dieser
+  Stärke“ gewählt (Praxisbuch). Fällt der Praxiszug zufällig mit der Linie zusammen, bleibt die
+  Partie auf der Linie. So ist 100 % genau „wie ohne Festlegung“. Vorgabe 0 % (folgt immer),
+  Regler in Zehnerschritten.
+- Vorrang: Ohne Haken gelten die Eröffnungen des Bots, mit Haken die Wahl im Spielfenster, auch
+  wenn sie auf der Vorgabe „wie Menschen“ steht (der Haken ist die klare Entscheidung; „Vorgabe
+  gegen anderes“ automatisch zu erkennen hätte die Vorgabe nicht mehr wählbar gemacht). Der
+  Haken wird nicht gespeichert.
+- Editor: eine Klappe „Eröffnungen (n)“ unter den Reitern statt eines fünften Reiters (die Reiter
+  teilt sich der Editor mit der eigenen Stufe, und die Eröffnungen ändern die Stärke nicht). Die
+  Klappe „Eröffnungen nach Spielstärke“ ist dieselbe Komponente wie im Spielfenster, jetzt mit
+  einer Wahlart (`ist`, `beiWahl`, optional `beiSchnellwahl`) statt eines Einzelwertes.
+- Beschreibung: „Eröffnet gern: A oder B.“ mit Doppelpunkt, weil sich die Namen nicht beugen
+  lassen; ab drei „A, B (und n weitere)“. Deutsche Namen der Eröffnungen nach Spielstärke aus
+  den Eröffnungsbändern, sobald geladen.
+
 ## 30.10.2026 – Zusatzaufgaben von Lichess im Taktiktrainer (Opus, Paket 8)
 
 - Freigabe des Autors (30.10.2026): etwa 1000 Lichess-Aufgaben je Thema des Buches als

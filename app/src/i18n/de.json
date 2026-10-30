@@ -3747,5 +3747,21 @@
   "botbeschreibung.art.schlagVerpasst": "lässt gute Schläge aus",
   "botbeschreibung.art.bauernzugOhneNot": "macht Bauernzüge ohne Not",
   "botbeschreibung.art.koenigszugOhneNot": "zieht den König ohne Not",
-  "botbeschreibung.titel": "So stellt er sich vor:"
+  "botbeschreibung.titel": "So stellt er sich vor:",
+  "spielen.boteroeffnung.titel": "Eröffnungen ({anzahl})",
+  "spielen.boteroeffnung.erklaerung": "Lege fest, was dein Bot eröffnet. Er wählt je Partie zufällig eine der gewählten Eröffnungen und folgt ihr, solange du ihre Züge spielst. Ohne Wahl eröffnet er nach der Wahl im Spielfenster.",
+  "spielen.boteroeffnung.keine": "Noch keine feste Eröffnung.",
+  "spielen.boteroeffnung.gewaehlt": "Gewählt",
+  "spielen.boteroeffnung.entfernen": "{name} entfernen",
+  "spielen.boteroeffnung.alleEntfernen": "Alle entfernen",
+  "spielen.boteroeffnung.abweichung": "Abweichung: {prozent} %",
+  "spielen.boteroeffnung.abweichungHinweis": "Wie oft der Bot je Buchzug seine Eröffnung verlässt und dann wie Menschen seiner Stärke weiterspielt. 0 %: folgt ihr immer, 100 %: wie ohne Festlegung.",
+  "spielen.boteroeffnung.ausDemBuch": "Eröffnungen aus dem Buch",
+  "spielen.boteroeffnung.alleVarianten": "Alle Varianten",
+  "spielen.boteroeffnung.haeufigste": "Die häufigsten {anzahl}",
+  "spielen.boteroeffnung.vorrang": "{name} hat feste Eröffnungen: {liste}. Je Partie wählt er eine davon.",
+  "spielen.boteroeffnung.ueberschreiben": "Eröffnung des Bots überschreiben",
+  "botbeschreibung.eroeffnungen": "Eröffnet gern: {liste}.",
+  "botbeschreibung.oder": "{anfang} oder {ende}",
+  "botbeschreibung.weitere": "{liste} (und {anzahl} weitere)"
 }

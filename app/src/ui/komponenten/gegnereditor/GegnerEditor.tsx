@@ -7,7 +7,7 @@
  * vier Reitern (GegnerReiter.tsx, DS38, DS39). Ältere Gegner haben noch einen Stil als Regler von
  * sehr defensiv bis sehr aggressiv (engine/stil.ts); er gilt bis zum nächsten Speichern.
  * Gespeichert wird im Spielstand (speicher/gegner.ts); gelöschte Gegner bleiben in alten Partien
- * mit ihrem Namen.
+ * mit ihrem Namen. Seit Paket 9 (30.10.2026) mit der Klappe „Eröffnungen“ (Eroeffnungsklappe.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
 import { useState } from "react";
@@ -31,6 +31,8 @@ import { usePortraetwahl, type Portraetwahlzustand } from "../../profil/portraet
 import { Stilnetz } from "./Stilnetz";
 import { StufenWahl } from "./StufenWahl";
 import { botbeschreibung } from "./botbeschreibung";
+import { Eroeffnungsklappe } from "./Eroeffnungsklappe";
+import { useEroeffnungsname } from "../spielstart/useEroeffnungsname";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
@@ -109,6 +111,7 @@ function Formular({
 }) {
   const [g, setze] = useState(start);
   const bildwahl = usePortraetwahl(bildVon(start));
+  const namen = useEroeffnungsname();
   const name = g.name.trim();
   return (
     <div className="gegnerformular" data-testid="gegnerformular">
@@ -146,9 +149,11 @@ function Formular({
           />
         }
       />
+      {/* Paket 9: feste Eröffnungen und Abweichung (Wunsch des Autors, 30.10.2026). */}
+      <Eroeffnungsklappe g={g} setze={setze} namen={namen} />
       {/* Vorschlag einer Beschreibung aus den Einstellungen (Wunsch des Autors, 26.10.2026). */}
       <p className="hinweis" data-testid="bot-beschreibung">
-        <strong>{t("botbeschreibung.titel")}</strong> {botbeschreibung(g)}
+        <strong>{t("botbeschreibung.titel")}</strong> {botbeschreibung(g, namen)}
       </p>
       <div className="knopfreihe">
         <button

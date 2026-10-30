@@ -17,6 +17,12 @@ import { menschenwerteAus } from "./menschenwerte";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
+import {
+  ABWEICHUNG_MAX,
+  ABWEICHUNG_MIN,
+  MAX_BOTEROEFFNUNGEN,
+  MAX_EROEFFNUNGSWERT,
+} from "../spiel/boteroeffnung";
 
 /** Höchstens so viele eigene Gegner. */
 export const MAX_EIGENE_GEGNER = 20;
@@ -122,6 +128,35 @@ function teilEAus(roh: Roh): Pick<EigenerGegner, "stilname" | "reglerstufen" | "
   };
 }
 
+/**
+ * Feste Eröffnungen aus Rohdaten (Paket 9): nur nicht leere Texte bis MAX_EROEFFNUNGSWERT
+ * Zeichen, ohne Doppelte, höchstens MAX_BOTEROEFFNUNGEN; undefined ohne Liste. Ob es die
+ * Eröffnung gibt, prüft erst die Partie (unbekannte wirken wie „wie Menschen“).
+ */
+export function eroeffnungenAus(roh: unknown): readonly string[] | undefined {
+  if (!Array.isArray(roh)) return undefined;
+  const texte = roh.filter(
+    (w): w is string => typeof w === "string" && w.length > 0 && w.length <= MAX_EROEFFNUNGSWERT,
+  );
+  return [...new Set(texte)].slice(0, MAX_BOTEROEFFNUNGEN);
+}
+
+/** Abweichung in Prozent aus Rohdaten, ganzzahlig zwischen 0 und 100; undefined ohne Zahl. */
+export function abweichungAus(roh: unknown): number | undefined {
+  if (typeof roh !== "number" || !Number.isFinite(roh)) return undefined;
+  return Math.max(ABWEICHUNG_MIN, Math.min(ABWEICHUNG_MAX, Math.round(roh)));
+}
+
+/** Eröffnungen und Abweichung eines Rohobjekts, nur die vorhandenen. */
+function eroeffnungsteilAus(roh: Roh): Pick<EigenerGegner, "eroeffnungen" | "abweichung"> {
+  const eroeffnungen = eroeffnungenAus(roh.eroeffnungen);
+  const abweichung = abweichungAus(roh.abweichung);
+  return {
+    ...(eroeffnungen && eroeffnungen.length > 0 ? { eroeffnungen } : {}),
+    ...(abweichung !== undefined ? { abweichung } : {}),
+  };
+}
+
 function portraetBauAus(roh: unknown): Pick<EigenerGegner, "portraetBau"> {
   const gebaut = gebautesPortraetAus(roh);
   return gebaut ? { portraetBau: gebaut } : {};
@@ -152,6 +187,8 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     ...menschenwerteAus(roh),
     // Teil E: Stil und Reglerstufen, nur wenn gespeichert.
     ...teilEAus(roh),
+    // Paket 9: feste Eröffnungen und Abweichung, nur wenn gespeichert.
+    ...eroeffnungsteilAus(roh),
   };
 }
 

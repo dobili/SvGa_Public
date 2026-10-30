@@ -75,6 +75,14 @@ export interface EigenerGegner {
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;
+  /**
+   * Seit Paket 9 (30.10.2026): feste Eröffnungen, Werte wie in der Eröffnungswahl
+   * („praxis:Italian Game“ oder der Name einer Eröffnung des Buches), und die Abweichung je
+   * Buchzug in Prozent (0: folgt immer, 100: wie ohne Festlegung; spiel/boteroeffnung.ts).
+   * Fehlend oder leer: Der Bot eröffnet nach der Wahl im Spielfenster.
+   */
+  readonly eroeffnungen?: readonly string[];
+  readonly abweichung?: number;
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

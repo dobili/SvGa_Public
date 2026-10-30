@@ -56,8 +56,7 @@ Teil fertig ist.
       Partien, nur die Phase je Stellung neu). Weil die Eröffnung jetzt länger dauert, verteilen
       sich die Fehlerarten etwas anders auf die Phasen (die meisten kommen in der Eröffnung jetzt
       etwas öfter vor, weil die späteren Eröffnungszüge schwerer sind). Die Spielstärke bleibt
-      gleich: 59 Paarungen mit je 24 Partien, alt gegen neu mit denselben
-      Zufallszahlen, ergaben +0,1 Prozentpunkte (Messgenauigkeit ±1,4). Fällt dir beim Spielen
+      gleich: 78 Paarungen mit je 24 Partien, alt gegen neu mit denselben Zufallszahlen, ergaben +0,2 Prozentpunkte (Messgenauigkeit ±1,1). Fällt dir beim Spielen
       etwas auf?
 
 ### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)

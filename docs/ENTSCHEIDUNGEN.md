@@ -39,10 +39,10 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   Maia Gewicht von ln p_Maia gleich (Blitz 0,84, Schnellschach 0,85, Klassisch 0,74).
 - **Bot-Stichprobe statt Neumessung** (Entscheidung 13: voll nur bei Abweichung über der
   Messgenauigkeit): zwei Messchats mit denselben Paarungen und Saaten
-  (`messplan-nach/ohne/teil-1` bis `teil-3`, je 24 Partien), alt auf 0.3.14, neu auf dem Zweig
+  (`messplan-nach/ohne/teil-1` bis `teil-4`, je 24 Partien), alt auf 0.3.14, neu auf dem Zweig
   `phasen` (Zweige `messung-phasenprobe-alt-ohne-N`, `messung-phasenprobe-neu-ohne-N`). Ergebnis
-  über 59 Paarungen (1416 Partien je Seite): Punkte der Bots alt 47,1 %, neu 47,2 %, Unterschied
-  +0,1 Prozentpunkte bei einem Standardfehler von 1,4. Teil 1 allein zeigte +3,1 (Zufall). Die
+  über 78 Paarungen (1872 Partien je Seite): Punkte der Bots alt 41,6 %, neu 41,8 %, Unterschied
+  +0,2 Prozentpunkte (etwa +2 Elo) bei einem Standardfehler von 1,1. Teil 1 allein zeigte +3,1 (Zufall). Die
   Spielstärke der Bots ist unverändert; Zahlensätze und Gruppen bleiben, keine Neumessung.
 
 ## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)

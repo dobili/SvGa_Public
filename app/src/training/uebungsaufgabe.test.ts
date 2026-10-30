@@ -8,6 +8,7 @@ import type { Datenverzeichnis } from "../daten/generiert/index";
 import type { Kapitel } from "../daten/generiert/kapitel";
 import {
   aufgabeZu,
+  loesungszug,
   pruefeZug,
   stellungNach,
   zuegeAusText,
@@ -72,6 +73,14 @@ describe("Übungsaufgaben", () => {
     });
     expect(pruefeZug(a, [], "exd5")).toEqual({ art: "geloest", linie: 1 });
     expect(pruefeZug(a, ["cxd5", "cxd5"], "a3")).toEqual({ art: "falsch" });
+  });
+
+  it("Zug der Lösung nach einem falschen Zug: erste passende Linie, am Ende null", () => {
+    const a = zugaufgabe("ueb:zaehlen-vorstoss");
+    expect(loesungszug(a, [])).toBe("cxd5");
+    expect(loesungszug(a, ["cxd5", "cxd5"])).toBe("exd5");
+    expect(loesungszug(a, ["cxd5", "cxd5", "exd5", "exd5", "Nxd5"])).toBeNull();
+    expect(loesungszug(a, ["a3"])).toBeNull();
   });
 
   it("Abb. 7.55: Doppelschach „++“ im Buch, chessops schreibt „+“", () => {

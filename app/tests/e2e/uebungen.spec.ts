@@ -36,9 +36,15 @@ test("Übung 1.40 auf dem Brett lösen: falscher Zug, Hinweise, richtiger Zug, E
   await feld(page, "b5").click();
   await feld(page, "a7").click();
   await expect(uebung).toContainText("nicht der Zug des Buches");
+  // Seit 0.3.5 rechnet die Engine den falschen Zug gegen die Lösung; die Lösung bleibt verdeckt.
+  const falschzug = page.getByTestId("uebung-falschzug");
+  await expect(falschzug).toContainText(/Sa7.*Lösung/, { timeout: 30_000 });
+  await expect(falschzug).not.toContainText("Sc7");
   await feld(page, "b5").click();
   await feld(page, "c7").click();
   await expect(uebung).toContainText("Richtig!");
+  // Nach dem Lösen der volle Vergleich mit dem Zug der Lösung.
+  await expect(falschzug).toContainText(/Lösung Sc7/);
   await expect(page.getByTestId("uebung-erklaerung")).toContainText("Sc7+");
   // Engine-Prüfung der Übungen (Fable): 1. Sc7+ ist der einzige gute Zug.
   await expect(page.getByTestId("einziger-zug")).toBeVisible();

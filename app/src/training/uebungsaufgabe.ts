@@ -162,6 +162,26 @@ export function pruefeZug(
     : { art: "weiter", antwort, linie: index };
 }
 
+/**
+ * Der Zug der Lösung an dieser Stelle: der nächste Zug der ersten Lösungslinie, die zu den
+ * bisherigen Zügen passt.
+ *
+ * Warum: Nach einem falschen Zug vergleicht die App ihn mit dem Zug der Lösung (Pfeile rot und
+ * gold, Stellungsverlust der Engine; Wunsch des Autors, 27.10.2026).
+ * Beispiel: Übung „Zählen beim Vorstoß“ (Abb. 1.41), noch kein Zug → „cxd5“.
+ * Sonderfall: Passt keine Linie oder ist die Lösung zu Ende, null.
+ */
+export function loesungszug(
+  aufgabe: Extract<Uebungsaufgabe, { art: "zug" }>,
+  bisher: readonly string[],
+): string | null {
+  const stelle = bisher.length;
+  const linie = aufgabe.linien.find(
+    (l) => l.length > stelle && bisher.every((z, i) => ohneSchach(z) === ohneSchach(l[i] ?? "")),
+  );
+  return linie?.[stelle] ?? null;
+}
+
 /** Stellung nach den bisherigen Zügen (für das Brett). Unpassendes bleibt bei der Ausgangsstellung. */
 export function stellungNach(fen: string, zuege: readonly string[]): string {
   const pos = regelstellung(fen);

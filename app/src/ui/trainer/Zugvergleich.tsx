@@ -2,8 +2,9 @@
  * Vergleich des eigenen Zuges mit dem Zug der Partie oder der Studie, in Worten und mit beiden
  * Bewertungen der Engine.
  *
- * Rolle im Gesamtbild: „Zug erraten“ (W12) und „Studien lösen“ (R46, Wunsch des Autors vom
- * 23.10.2026: bei falschem Zug eigenen und richtigen Zug vergleichen). Die Pfeile dazu zeichnet
+ * Rolle im Gesamtbild: „Zug erraten“ (W12), „Studien lösen“ (R46, Wunsch des Autors vom
+ * 23.10.2026: bei falschem Zug eigenen und richtigen Zug vergleichen) und die Trainer mit fester
+ * Lösung (Falschzug.tsx). Die Pfeile dazu zeichnet
  * die Aufgabe selbst (rot der eigene, gold der richtige Zug, siehe vergleichspfeile.ts).
  * Abhängigkeiten: useRatevergleich, training/rateurteil.ts, engine/wertInWorten.ts, i18n.
  * Buchbezug: Kapitel 12, „erst selbst denken und dann vergleichen“.
@@ -14,8 +15,8 @@ import { sanInSprache } from "../../schach/notation";
 import { mitMatt, type Rateurteil } from "../../training/rateurteil";
 import type { Fehlversuch, Vergleichsstand } from "./useRatevergleich";
 
-/** Womit verglichen wird: Partiezug (Zug erraten) oder Zug der Studie. */
-export type Vergleichsbezug = "partie" | "studie";
+/** Womit verglichen wird: Partiezug (Zug erraten), Zug der Studie oder Zug der Lösung. */
+export type Vergleichsbezug = "partie" | "studie" | "loesung";
 
 /** Das Urteil in einem Satz; mit Matt ohne Zahl, weil Bauerneinheiten dann nichts sagen. */
 function urteilText(urteil: Rateurteil, bezug: Vergleichsbezug): string {

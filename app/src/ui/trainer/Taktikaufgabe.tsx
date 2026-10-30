@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Trainer „taktik“ (Pflichtenheft 7: „Gestufte Hilfen: Warnsignal, Motiv,
  * Schlüsselfigur, Lösung. Nach der Lösung benennst du das Motiv.“). Das Warnsignal rechnet das
  * Werkzeug Warnsignale aus Kapitel 7 aus der Stellung. Richtig zählt eine Aufgabe, die ohne
- * falschen Zug und ohne Hilfe gelöst ist; das Benennen des Motivs zeigt nur, ob es stimmte.
+ * falschen Zug und ohne Hilfe gelöst ist; das Benennen des Motivs zeigt nur, ob es stimmte. Nach
+ * einem falschen Zug zeigen useFalschzug und Falschzugmeldung den roten Pfeil und den Verlust laut Engine.
  * Abhängigkeiten: training/taktiktrainer.ts, analyse/k7-warnsignale.ts, Brettbereich.
  */
 import { useId, useMemo, useState } from "react";
@@ -16,7 +17,7 @@ import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { alsZugaufgabe, MOTIVE, pruefeTaktikzug } from "../../training/taktiktrainer";
-import { stellungNach } from "../../training/uebungsaufgabe";
+import { loesungszug, stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
@@ -24,6 +25,8 @@ import type { Runde } from "./useRunde";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { Falschzugmeldung } from "./Falschzugmeldung";
+import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -143,6 +146,7 @@ export function Taktikaufgabe({
   const [stufe, setzeStufe] = useState(0);
   const [fehler, setzeFehler] = useState(false);
   const [gezeigt, setzeGezeigt] = useState(false);
+  const falschzug = useFalschzug();
   const fen = stellungNach(aufgabe.fen, zuege);
   const fertig = runde.ergebnis !== null;
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
@@ -152,6 +156,7 @@ export function Taktikaufgabe({
     const pruefung = pruefeTaktikzug(zugaufgabe, zuege, versuch.san);
     if (pruefung.art === "falsch") {
       setzeFehler(true);
+      falschzug.merke(fen, versuch.san, loesungszug(zugaufgabe, zuege));
       return "gespielt" as const;
     }
     const neu = [...zuege, versuch.san, ...(pruefung.antwort ? [pruefung.antwort] : [])];
@@ -167,10 +172,12 @@ export function Taktikaufgabe({
   };
   const bedienung = useBrettbedienung({ fen, spiele }, fertig ? null : "ziehen", KEINE_WAHL);
   const stellung = useMemo(() => stellungAusFen(fen), [fen]);
-  const markierungen: Markierung[] =
-    stufe >= HILFEN && !fertig
-      ? [{ typ: "feld", farbe: "gold", feld: aufgabe.schluesselfeld }]
-      : [];
+  const markierungen: Markierung[] = [
+    ...(stufe >= HILFEN && !fertig
+      ? [{ typ: "feld" as const, farbe: "gold" as const, feld: aufgabe.schluesselfeld }]
+      : []),
+    ...falschzugpfeile(falschzug, fen, fertig),
+  ];
   const letzter =
     zuege.length > 0
       ? zugFelder(stellungNach(aufgabe.fen, zuege.slice(0, -1)), zuege[zuege.length - 1] ?? "")
@@ -196,6 +203,7 @@ export function Taktikaufgabe({
       {!fertig && fehler && (
         <Antwortmeldung richtig={false}>{t("taktiktrainer.falsch")}</Antwortmeldung>
       )}
+      <Falschzugmeldung falschzug={falschzug} aufgedeckt={fertig} testid="taktik-falschzug" />
       {!fertig && (
         <Hilfen
           aufgabe={aufgabe}

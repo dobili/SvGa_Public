@@ -7,7 +7,10 @@
  * danach die freigegebene knappe Erklärung (inhalte/de/texte/). Denkaufgaben ohne Zug auf dem
  * Brett: erst selbst denken, dann Erklärung lesen und sich einschätzen.
  * Eine Reihe von Übungen (Kapitel oder fällige Wiederholungen) geht mit „Nächste Übung“ weiter.
- * Abhängigkeiten: useUebung.ts, training/uebungsaufgabe.ts, Brettbereich, Navigation, i18n.
+ * Nach einem falschen Zug zeigt Falschzugmeldung, wie viel er laut Engine verliert (roter Pfeil;
+ * Wunsch des Autors, 27.10.2026).
+ * Abhängigkeiten: useUebung.ts, training/uebungsaufgabe.ts, Brettbereich, Falschzugmeldung,
+ * Navigation, i18n.
  */
 import { useMemo } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
@@ -23,6 +26,7 @@ import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { HOECHSTE_STUFE, useUebung, type Uebungssteuerung } from "../komponenten/kapitel/useUebung";
+import { Falschzugmeldung } from "../trainer/Falschzugmeldung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 const OHNE_WAHL = () => undefined;
@@ -208,6 +212,11 @@ function Inhalt({
         />
       )}
       <Rueckmeldung s={s} />
+      <Falschzugmeldung
+        falschzug={s.falschzug}
+        aufgedeckt={s.status !== "offen"}
+        testid="uebung-falschzug"
+      />
       {aufgabe.art === "zug" && <Hilfe s={s} uebung={uebung} />}
       {aufgabe.art === "denken" && !s.hilfeFrei && (
         <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>

@@ -16,7 +16,13 @@ import { notiereUebungsergebnis } from "../../../speicher/fortschritt";
 import { aendere } from "../../../speicher/speicher";
 import { spieleZug, zugFelder } from "../../../schach/weiterspielen";
 import type { Rolle } from "../../../schach/stellung";
-import { pruefeZug, stellungNach, type Uebungsaufgabe } from "../../../training/uebungsaufgabe";
+import {
+  loesungszug,
+  pruefeZug,
+  stellungNach,
+  type Uebungsaufgabe,
+} from "../../../training/uebungsaufgabe";
+import { falschzugpfeile, useFalschzug, type Falschzug } from "../../trainer/useFalschzug";
 import type { Antwortergebnis } from "../../../training/wiederholung";
 
 /** Höchste Hinweisstufe: 1 Motiv, 2 Figur, 3 Zug als Pfeil. */
@@ -48,6 +54,8 @@ export interface Uebungssteuerung {
   /** Denkaufgabe: Selbsteinschätzung nach dem Lesen der Erklärung. */
   readonly schaetzeEin: (ergebnis: Antwortergebnis) => void;
   readonly eingeschaetzt: boolean;
+  /** Der letzte falsche Zug mit dem Vergleich der Engine (Wunsch des Autors, 27.10.2026). */
+  readonly falschzug: Falschzug;
 }
 
 type Zugaufgabe = Extract<Uebungsaufgabe, { art: "zug" }>;
@@ -99,7 +107,11 @@ export function useUebung(
 
   const naechster =
     aufgabe.art === "zug" && status === "offen" ? naechsterZug(aufgabe, zuege) : null;
-  const markierungen = pfeil(stufe, naechster, fen, status, aufgabe, zuege, startFen);
+  const falschzug = useFalschzug();
+  const markierungen = [
+    ...pfeil(stufe, naechster, fen, status, aufgabe, zuege, startFen),
+    ...falschzugpfeile(falschzug, fen, status !== "offen"),
+  ];
 
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
     if (aufgabe.art !== "zug" || status !== "offen") return "ungueltig" as const;
@@ -109,6 +121,7 @@ export function useUebung(
     if (pruefung.art === "falsch") {
       setzeFehler(fehler + 1);
       setzeMeldung("falsch");
+      falschzug.merke(fen, versuch.san, loesungszug(aufgabe, zuege));
       return "gespielt" as const;
     }
     if (pruefung.art === "weiter") {
@@ -150,6 +163,7 @@ export function useUebung(
       speichere(ergebnis);
     },
     eingeschaetzt,
+    falschzug,
   };
 }
 

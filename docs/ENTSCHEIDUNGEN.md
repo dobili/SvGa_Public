@@ -4,6 +4,35 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Phasen wie bei Schachexperten und Eichung neu (Opus, Entscheidungen 11 bis 13)
+
+- **Regel für eigene Partien** (`schach/phase.ts`, `schach/phasengruende.ts`): Eröffnung, bis
+  beide Seiten entwickelt sind und rochiert haben (Glossar), oder bis einer der drei Gründe von
+  Lichess greift (scalachess `Divider.scala`, nur die Regeln nachgebaut): höchstens 10 Figuren
+  außer Königen und Bauern („Abtausch“), eine Grundreihe mit weniger als vier eigenen Steinen
+  („Grundreihe“), Durchmischung über 150 („Kontakt“). Endspiel, wenn die vier Fragen aus Kapitel
+  8 überwiegend Ja ergeben und wenig Material steht (je Seite höchstens 13 Punkte Figuren nach
+  Speelman, oder höchstens sechs Figuren nach Lichess); sonst „damenloses Mittelspiel“. Der alte
+  Grund „Material ungleich“ entfällt. Abbildungen des Buches behalten die Lesart des Buches;
+  Buchbefund als Rückfrage Q7 an den Autor.
+- **Messung** (`spiel/phasenvergleich.messung.ts`, 5654 Lichess-Partien): Mittelspiel im Median ab
+  Halbzug 20 (Lichess 21, alte Regel 11); Zweifelsfälle 19 %. Endspiel beginnt nie mit mehr als
+  acht Figuren.
+- **Eichung neu ohne Engine-Läufe** (Entscheidung 13): Die gespeicherten Bewertungen in Tiefe 18
+  bleiben; nur die Phase je Stellung wird neu gesetzt (`spiel/phasenumetikett.messung.ts`, lokal),
+  dann laufen die bekannten Skripte. Menschenprofil: 12818 Stellungen von Mittelspiel zu
+  Eröffnung, 3246 von Endspiel zu Mittelspiel; neu sind nur die Phasenfaktoren und der
+  Verlustfaktor in `engine/menschenprofil-daten.ts` (Raten, blinde Flecken, Bedenkzeit gleich).
+  Die alte Datei ließ sich aus den alten Daten genau nachbauen, bevor umgeschrieben wurde.
+  Spielerprofile (Elo-Modell): 322598 Züge von Mittelspiel zu Eröffnung, 93939 von Endspiel zu
+  Mittelspiel. Wahlmodell (mit und ohne Maia): 58744 von 385722 Stellungen mit neuer Phase.
+- **Elo-Modell neu** (`spiel/elomodell-daten.ts`, Generator lokal, vorher an den alten Daten
+  zahlengleich nachgebaut): Die Gesamtschätzung ändert sich kaum (halbe Spanne bei zehn
+  Schnellschach-Partien 311 statt 328). Die Phasen tauschen ihre Schärfe: Die Eröffnung hat jetzt
+  mehr Züge und wird schärfer (Schnellschach 436 statt 531), das Mittelspiel etwas breiter (456
+  statt 395). Damit Schnellschach weiter eine Phasenzahl bekommt, steigt die Schwelle „schmal“
+  (`SCHMAL`) von 400 auf 460, mit derselben Begründung wie am 24.10.2026.
+
 ## 30.10.2026 – Prüfstand des Autors, Entscheidungen 1 bis 13 (Opus, Version 0.3.13)
 
 - **Prüfstand vom 30.10.2026:** 315 Punkte „ok“ und aus `AUFGABEN_AUTOR.md` gelöscht:
@@ -216,6 +245,7 @@ Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Rech
 ## 27.10.2026 – Vorgemerkt: Variantenbaum im Repertoire-Trainer (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Für alle Eröffnungen, die im Buch vorkommen, kommt nach der Wahl der Eröffnung eine **zweite
   Auswahl mit benannten Varianten** aus Lichess (Zahl: die 10 bis 20 häufigsten je Eröffnung,
   sortiert nach Häufigkeit).
@@ -232,6 +262,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Gamifizierung insgesamt (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Die Orden gehen schon in diese Richtung; gewünscht ist **insgesamt ein Belohnungssystem**, das
   Jugendliche und junge Erwachsene zum häufigen Üben motiviert, auch wenn die Belohnungen nur
   digital sind.
@@ -251,6 +282,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Recherche erweitern und Webverweise prüfen (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Die Recherche nach passenden Inhalten und Funktionen (bisher Lichess und chess.com, Ergebnis in
   den Rückfragen Q2 der Sitzung vom 26.10.2026) wird um **Chessly** erweitert. Gemeint ist
   vermutlich der Anbieter für Eröffnungstraining (Chessly); die Schreibweise stammt aus einer
@@ -272,6 +304,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Vergleich nach einem falschen Zug in allen Trainern (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Wird in einem Trainer ein **falscher Zug** gezogen, zeigt die App wie im Trainer „Zug erraten“
   den gemachten Zug mit einem **roten Pfeil** und den richtigen mit einem **goldenen Pfeil**.
 - Dazu zeigt die **Engine den Stellungsverlust**, den der falsche Zug gebracht hätte (Bewertung
@@ -288,6 +321,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 
 Idee des Autors (im Chat stand „Pfeilenkabinett“ und „Pfeilen“, gemeint ist das Fallenkabinett und
 sind Fallen), noch nicht bewertet und nicht umgesetzt:
+
 - Neben den Fallen des Buches werden **Fallen zu den neu hinzukommenden Eröffnungen** (siehe
   Elo-Bänder und Variantenbaum) angeboten, je Eröffnung zunächst die **häufigsten zwei**.
 - Auch diese Fallen sollen für die **Bots auswählbar** sein.
@@ -337,6 +371,7 @@ sind Fallen), noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Eröffnungen nach Elo-Band über das Buch hinaus (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Zum Üben (Repertoire-Trainer, Gambits) und für die Eröffnungswahl der Bots kommen neben den
   Bucheröffnungen weitere Eröffnungen hinzu, **sortiert nach Elo-Band** (die Bänder der Bots).
 - **Hauptauswahl nach Elo-Band:** Je Band stehen die drei häufigsten Eröffnungen, getrennt für
@@ -354,6 +389,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Varianten anhaken, Schnellwahl (Ergänzung zum Variantenbaum)
 
 Ergänzung des Autors, nur notiert:
+
 - Aus dem Variantenbaum wählt man **Schnellwahlen**: alle Varianten, nur die drei häufigsten, nur
   die vier häufigsten und ähnlich, um viele auf einmal anzuhaken.
 - Oder man setzt **einzelne Haken** bei den Varianten, die man üben oder spielen lassen will.
@@ -365,6 +401,7 @@ Ergänzung des Autors, nur notiert:
 ## 27.10.2026 – Vorgemerkt: feste Eröffnungen für eigene Bots (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Beim Anlegen eines eigenen Bots lassen sich **dauerhaft feste Eröffnungen** einstellen, etwa ein
   Bot, der nur London spielt, solange es geht.
 - **Mehrfachauswahl:** Überall, wo eine Eröffnung gewählt wird (Bot anlegen und Spielfenster),
@@ -6340,4 +6377,3 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   `MerkerWahl` als `${schluessel}.${w}` zusammensetzt.
 - **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
   (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
-

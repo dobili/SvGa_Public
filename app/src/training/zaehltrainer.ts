@@ -8,9 +8,14 @@
  * Abhängigkeiten: analyse/stellungsprofil.ts, training/zufall.ts.
  * Buchbezug: Kapitel 1, „Werte von Angreifer und Verteidiger zählen“ und „Drei gegen drei:
  * Noch geht nichts“.
+ * Geeignete Stellungen (Nebenchat, 30.10.2026): Die Abtauschrechnung zählt wie das Buch ohne
+ * Fesselungen. Damit sie im Trainer nie Unsinn sagt, fallen Stellungen weg, in denen die Seite am
+ * Zug im Schach steht (dort zählt nur die Antwort aufs Schach, Abb. aus Kapitel 4 mit Matt), und
+ * Felder, an denen eine an den König gefesselte Figur beteiligt ist (sie darf gar nicht schlagen).
  */
 import type { Square } from "chessops/types";
-import { profil } from "../analyse/stellungsprofil";
+import { profil, type Stellungsprofil } from "../analyse/stellungsprofil";
+import { fesselungslinien } from "../schach/fesselungen";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
@@ -40,11 +45,50 @@ export interface Zaehlantwort {
   readonly bilanz: number;
 }
 
+/**
+ * Taugt die Stellung zum Zählen? Nicht, wenn die Seite am Zug im Schach steht oder matt ist.
+ *
+ * Warum: Wer im Schach steht, muss zuerst darauf antworten (Kapitel 1, Schach-Röntgen-Regel);
+ * hängende Figuren und Abtauschbilanzen sind dann nebensächlich, beim Matt sinnlos.
+ * Beispiel: die Fallenstellung mit Sf3 matt (Dame e4 fesselt den Läufer e2) → ungeeignet.
+ * Sonderfall: Ausschnitte ohne König (keine Regeln) bleiben geeignet, wie Abb. 1.26.
+ */
+export function zumZaehlenGeeignet(stellung: Stellung): boolean {
+  return !stellung.regeln?.isCheck();
+}
+
+/** Die Felder aller Figuren, die direkt an ihren König gefesselt sind (beide Seiten). */
+function gefesselteFelder(p: Stellungsprofil): Set<Square> {
+  return new Set(
+    fesselungslinien(p.stellung.brett, p.angriffskarte)
+      .filter((linie) => linie.art === "direkt" && linie.absolut)
+      .map((linie) => linie.gefesselt.feld),
+  );
+}
+
+/**
+ * Ist an diesem Feld eine gefesselte Figur als Angreifer oder Verteidiger beteiligt?
+ *
+ * Regel: Kapitel 2, Fesselung: Eine an den König gefesselte Figur darf die Linie nicht verlassen.
+ * Die Zählung des Buches sieht davon ab; solche Felder fragt der Trainer deshalb nicht ab.
+ * Beispiel: Läufer e2, gefesselt durch die Dame e4, „greift“ den Springer f3 an → beteiligt.
+ */
+export function gefesselteBeteiligt(p: Stellungsprofil, feld: Square): boolean {
+  const gefesselt = gefesselteFelder(p);
+  if (gefesselt.size === 0) return false;
+  const beteiligte = [
+    ...p.angriffskarte.angreiferVon(feld, "white"),
+    ...p.angriffskarte.angreiferVon(feld, "black"),
+  ];
+  return beteiligte.some((a) => gefesselt.has(a.feld));
+}
+
 /** Zählt ein besetztes Feld aus Sicht der Seite, die die Figur angreift (wie k1-zaehlen). */
 function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "nummer" | "fen"> | null {
   const figur = stellung.brett.get(feld);
   if (!figur || figur.role === "king") return null;
   const p = profil(stellung);
+  if (gefesselteBeteiligt(p, feld)) return null;
   const seite = gegner(figur.color);
   const angreifer = p.angriffskarte.angreiferVon(feld, seite).length;
   if (angreifer === 0) return null;
@@ -60,6 +104,7 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
  */
 export function zaehlfelder(buch: Buchstellung): Zaehlaufgabe[] {
   const ergebnis: Zaehlaufgabe[] = [];
+  if (!zumZaehlenGeeignet(buch.stellung)) return ergebnis;
   for (const feld of buch.stellung.brett.occupied) {
     const gezaehlt = zaehleFeld(buch.stellung, feld);
     if (gezaehlt && gezaehlt.bilanz <= HOECHSTE_BILANZ) {
@@ -109,6 +154,14 @@ export function pruefeZaehlantwort(aufgabe: Zaehlaufgabe, antwort: Zaehlantwort)
   return { angreifer, verteidiger, bilanz, richtig: angreifer && verteidiger && bilanz };
 }
 
+/**
+ * Prüft nur das Ergebnis (kurzer Modus): Wer die Bilanz trifft, hat richtig gezählt.
+ * Beispiel: Abb. 1.28, d4: Bilanz 1 → „+1“ ist richtig, „lohnt nicht“ (0) falsch.
+ */
+export function pruefeBilanz(aufgabe: Zaehlaufgabe, bilanz: number): boolean {
+  return bilanz === aufgabe.bilanz;
+}
+
 /** Eine Aufgabe „hängende Figuren finden“. */
 export interface Haengeaufgabe {
   readonly nummer: string;
@@ -121,16 +174,22 @@ export interface Haengeaufgabe {
  * Die hängenden Figuren einer Stellung: Figuren beider Seiten (ohne König), deren Schlagen dem
  * Gegner Material bringt.
  *
- * Regel: Kapitel 1, „Werte von Angreifer und Verteidiger zählen“: Eine Figur hängt, wenn der
- * Gegner sie mit Gewinn schlagen kann, auch wenn sie gedeckt ist (Turm von Bauer angegriffen).
+ * Regel: Glossar „Hängen“: angegriffen und nicht ausreichend gedeckt; Kapitel 1, „Werte von
+ * Angreifer und Verteidiger zählen“: Eine Figur hängt, wenn der Gegner sie mit Gewinn schlagen
+ * kann, auch wenn sie gedeckt ist (Turm von Bauer angegriffen, oder zwei Angreifer gegen einen
+ * Verteidiger).
  * Sonderfall: Gabeln und Drohungen zählen nicht, nur Schläge, die sofort Gewinn bringen.
+ * Ausgabe null: Die Stellung taugt nicht (Schach, oder eine gefesselte Figur ist beteiligt).
  */
-export function haengendeFiguren(stellung: Stellung): string[] {
+export function haengendeFiguren(stellung: Stellung): string[] | null {
+  if (!zumZaehlenGeeignet(stellung)) return null;
   const p = profil(stellung);
   const ergebnis: string[] = [];
   for (const feld of stellung.brett.occupied) {
     const figur = stellung.brett.get(feld);
     if (!figur || figur.role === "king") continue;
+    const angegriffen = p.angriffskarte.angreiferVon(feld, gegner(figur.color)).length > 0;
+    if (angegriffen && gefesselteBeteiligt(p, feld)) return null;
     if ((p.abtausch(feld)?.bilanz ?? 0) > 0) ergebnis.push(feldname(feld));
   }
   return ergebnis.sort();
@@ -145,11 +204,10 @@ export function haengerunde(
   anzahl: number,
   zufall: Zufall,
 ): Haengeaufgabe[] {
-  const alle = mische(stellungen, zufall).map((buch) => ({
-    nummer: buch.nummer,
-    fen: buch.stellung.fen,
-    haengend: haengendeFiguren(buch.stellung),
-  }));
+  const alle = mische(stellungen, zufall).flatMap((buch) => {
+    const haengend = haengendeFiguren(buch.stellung);
+    return haengend ? [{ nummer: buch.nummer, fen: buch.stellung.fen, haengend }] : [];
+  });
   const ohne = Math.floor(anzahl / 5);
   const mit = alle.filter((a) => a.haengend.length > 0).slice(0, anzahl - ohne);
   const leer = alle.filter((a) => a.haengend.length === 0).slice(0, anzahl - mit.length);

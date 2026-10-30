@@ -2,7 +2,9 @@
  * Aufgaben des Zähltrainers: Bilanz zählen und hängende Figuren finden (Kapitel 1).
  *
  * Rolle im Gesamtbild: Trainer „zaehlen“ (AP 13). Nach der Antwort zeigt die App ihre Rechnung
- * mit denselben Pfeilen und demselben Satz wie das Werkzeug „Zählen“ (k1-zaehlen.ts).
+ * mit denselben Pfeilen und demselben Satz wie das Werkzeug „Zählen“ (k1-zaehlen.ts). Seit dem
+ * Nebenchat (30.10.2026): Ergebnis mit einem Tipp, genaues Zählen umschaltbar, bei hängenden
+ * Figuren zu jedem übersehenen oder falsch getippten Feld die Begründung.
  * Abhängigkeiten: training/zaehltrainer.ts, analyse/k1-zaehlen.ts, Trainerbrett, Rundenrahmen.
  */
 import { useMemo, useState } from "react";
@@ -13,6 +15,7 @@ import { feldAusName, stellungAusFen } from "../../schach/stellung";
 import {
   HOECHSTE_ANZAHL,
   HOECHSTE_BILANZ,
+  pruefeBilanz,
   pruefeFelder,
   pruefeZaehlantwort,
   type Haengeaufgabe,
@@ -101,27 +104,58 @@ function rechnungspfeile(fen: string, feld: string): Markierung[] {
   return gelesen.ok && ziel !== null ? zaehle(gelesen.wert, ziel).markierungen.slice() : [];
 }
 
-/** Aufgabe „Bilanz zählen“: Angreifer, Verteidiger, Gewinn beim Schlagen. */
-export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde: Runde }) {
-  const [angreifer, setzeAngreifer] = useState<number | null>(null);
-  const [verteidiger, setzeVerteidiger] = useState<number | null>(null);
-  const [bilanz, setzeBilanz] = useState<number | null>(null);
-  const beantwortet = runde.ergebnis !== null;
-  const markierungen: Markierung[] = beantwortet
-    ? rechnungspfeile(aufgabe.fen, aufgabe.feld)
-    : [{ typ: "feld", farbe: "rot", feld: aufgabe.feld }];
-  const pruefe = () => {
-    if (angreifer === null || verteidiger === null || bilanz === null) return;
-    runde.beantworte(pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig);
-  };
+/** „lohnt nicht“ oder „+3“: die Bilanz als Text. */
+function bilanztext(wert: number): string {
+  return wert === 0 ? t("zaehltrainer.lohntNicht") : `+${wert}`;
+}
+
+/**
+ * Die Ergebnisknöpfe „lohnt nicht“, „+1“ bis „+9“ (Wunsch des Autors, 30.10.2026: schneller
+ * eingeben). Im kurzen Modus prüft der Tipp sofort, im genauen Modus wählt er nur aus.
+ */
+function Ergebniswahl({
+  wert,
+  setze,
+  gesperrt,
+}: {
+  wert: number | null;
+  setze: (wert: number) => void;
+  gesperrt: boolean;
+}) {
+  const werte = Array.from({ length: HOECHSTE_BILANZ + 1 }, (_, i) => i);
+  return (
+    <fieldset className="ergebniswahl" data-testid="zaehl-ergebnisse">
+      <legend>{t("zaehltrainer.bilanz")}</legend>
+      {werte.map((w) => (
+        <button
+          key={w}
+          type="button"
+          className="chip"
+          aria-pressed={wert === w}
+          disabled={gesperrt}
+          onClick={() => setze(w)}
+        >
+          {bilanztext(w)}
+        </button>
+      ))}
+    </fieldset>
+  );
+}
+
+/** Die Zahlen des genauen Modus: Angreifer und Verteidiger. */
+function Anzahlen({
+  angreifer,
+  verteidiger,
+  setzeAngreifer,
+  setzeVerteidiger,
+}: {
+  angreifer: number | null;
+  verteidiger: number | null;
+  setzeAngreifer: (w: number) => void;
+  setzeVerteidiger: (w: number) => void;
+}) {
   return (
     <>
-      <p>{t("zaehltrainer.auftrag", { feld: aufgabe.feld })}</p>
-      <Trainerbrett
-        fen={aufgabe.fen}
-        markierungen={markierungen}
-        beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
-      />
       <Zahlwahl
         titel={t("zaehltrainer.angreifer")}
         von={KLEINSTE_ANZAHL}
@@ -136,27 +170,108 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
         wert={verteidiger}
         setze={setzeVerteidiger}
       />
-      <Zahlwahl
-        titel={t("zaehltrainer.bilanz")}
-        von={0}
-        bis={HOECHSTE_BILANZ}
-        wert={bilanz}
-        setze={setzeBilanz}
-        text={(w) => (w === 0 ? t("zaehltrainer.lohntNicht") : `+${w}`)}
+    </>
+  );
+}
+
+/**
+ * Aufgabe „Bilanz zählen“. Kurz (Standard): nur das Ergebnis antippen, die App prüft sofort; wer
+ * das Ergebnis trifft, hat richtig gezählt. Genau (umschaltbar): dazu Angreifer und Verteidiger.
+ */
+export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde: Runde }) {
+  const [genau, setzeGenau] = useState(false);
+  const [angreifer, setzeAngreifer] = useState<number | null>(null);
+  const [verteidiger, setzeVerteidiger] = useState<number | null>(null);
+  const [bilanz, setzeBilanz] = useState<number | null>(null);
+  const beantwortet = runde.ergebnis !== null;
+  const markierungen: Markierung[] = beantwortet
+    ? rechnungspfeile(aufgabe.fen, aufgabe.feld)
+    : [{ typ: "feld", farbe: "rot", feld: aufgabe.feld }];
+  const waehle = (wert: number) => {
+    setzeBilanz(wert);
+    if (!genau) runde.beantworte(pruefeBilanz(aufgabe, wert));
+  };
+  const pruefeGenau = () => {
+    if (angreifer === null || verteidiger === null || bilanz === null) return;
+    runde.beantworte(pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig);
+  };
+  return (
+    <>
+      <p>{t("zaehltrainer.auftragKurz", { feld: aufgabe.feld })}</p>
+      <Trainerbrett
+        fen={aufgabe.fen}
+        markierungen={markierungen}
+        beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
       />
       {!beantwortet && (
+        <button type="button" className="knopf-link" onClick={() => setzeGenau(!genau)}>
+          {t(genau ? "zaehltrainer.nurErgebnis" : "zaehltrainer.genauZaehlen")}
+        </button>
+      )}
+      {genau && (
+        <Anzahlen
+          angreifer={angreifer}
+          verteidiger={verteidiger}
+          setzeAngreifer={setzeAngreifer}
+          setzeVerteidiger={setzeVerteidiger}
+        />
+      )}
+      <Ergebniswahl wert={bilanz} setze={waehle} gesperrt={beantwortet} />
+      {genau && !beantwortet && (
         <button
           type="button"
           className="knopf-haupt"
           disabled={angreifer === null || verteidiger === null || bilanz === null}
-          onClick={pruefe}
+          onClick={pruefeGenau}
         >
           {t("trainer.pruefen")}
         </button>
       )}
-      {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
+      {beantwortet && (
+        <Antwortmeldung richtig={runde.ergebnis === true}>
+          {runde.ergebnis !== true && bilanz !== null
+            ? t("zaehltrainer.deineAntwort", {
+                antwort: bilanztext(bilanz),
+                richtig: bilanztext(aufgabe.bilanz),
+              })
+            : undefined}
+        </Antwortmeldung>
+      )}
       {beantwortet && <Rechnung fen={aufgabe.fen} feld={aufgabe.feld} />}
     </>
+  );
+}
+
+/** Die Begründung je Feld: der Satz des Werkzeugs „Zählen“ (Regel L: falsch heißt begründet). */
+function Begruendungen({
+  fen,
+  titel,
+  felder,
+}: {
+  fen: string;
+  titel: string;
+  felder: readonly string[];
+}) {
+  const saetze = useMemo(() => {
+    const gelesen = stellungAusFen(fen);
+    if (!gelesen.ok) return [];
+    return felder.flatMap((feld) => {
+      const ziel = feldAusName(feld);
+      return ziel === null
+        ? []
+        : [t("zaehltrainer.begruendung", { feld, fazit: zaehle(gelesen.wert, ziel).fazit })];
+    });
+  }, [fen, felder]);
+  if (saetze.length === 0) return null;
+  return (
+    <section className="karte" data-testid="haengen-begruendung">
+      <p>
+        <strong>{titel}</strong>
+      </p>
+      {saetze.map((satz) => (
+        <p key={satz}>{satz}</p>
+      ))}
+    </section>
   );
 }
 
@@ -173,7 +288,7 @@ export function Haengeaufgabe({ aufgabe, runde }: { aufgabe: Haengeaufgabe; rund
   };
   return (
     <>
-      <p>{t("zaehltrainer.haengenAuftrag")}</p>
+      <p>{t("zaehltrainer.haengenAuftragKlar")}</p>
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
@@ -195,6 +310,20 @@ export function Haengeaufgabe({ aufgabe, runde }: { aufgabe: Haengeaufgabe; rund
             ? t("zaehltrainer.keineHing")
             : t("zaehltrainer.haengend", { felder: aufgabe.haengend.join(", ") })}
         </Antwortmeldung>
+      )}
+      {beantwortet && (
+        <Begruendungen
+          fen={aufgabe.fen}
+          titel={t("zaehltrainer.uebersehen")}
+          felder={vergleich.fehlend}
+        />
+      )}
+      {beantwortet && (
+        <Begruendungen
+          fen={aufgabe.fen}
+          titel={t("zaehltrainer.haengtNicht")}
+          felder={vergleich.falsch}
+        />
       )}
       {beantwortet && <p className="hinweis">{t("trainer.legendeFelder")}</p>}
     </>

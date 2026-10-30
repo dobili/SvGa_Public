@@ -1,0 +1,21 @@
+/*
+ * Trainer-Feinschliff (Nebenchat, 30.10.2026): Ergebnisknöpfe im Zähltrainer, Notationstastatur,
+ * Sichtanzeige beim Feldfinden und weitere kleine Bausteine der Trainer. Eigene Datei, damit die
+ * gemeinsamen Grundwerte in basis.css unberührt bleiben.
+ */
+
+/* Ergebnis mit einem Tipp: „lohnt nicht“, „+1“ bis „+9“, umbrechend, linksbündig. */
+.ergebniswahl {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.ergebniswahl legend {
+  padding: 0;
+  margin-bottom: var(--raster);
+  font-weight: 600;
+}

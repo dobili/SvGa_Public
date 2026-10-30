@@ -4,6 +4,15 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Eigene Bots stellen sich vor (Opus, Version 0.3.8)
+
+- Wunsch des Autors (26.10.2026): eigene Bots bekommen eine Beschreibung aus Textbausteinen, als
+  Vorschlag aus den Einstellungen. Umsetzung `ui/komponenten/gegnereditor/botbeschreibung.ts`:
+  Stärke aus dem Mittel der drei Stufen, Stil wie in der Kurzbeschreibung, höchstens drei
+  Fehlerarten und drei blinde Flecken (die höchsten Regler, sonst die angehakten).
+- Kein neues Datenformat: Der Text wird bei jedem Zeigen neu gebildet (Editor und Sprechblase der
+  Gegnerwahl). Ein freies Textfeld wäre ein neues Speicherfeld und bleibt Rückfrage Q2-1.
+
 ## 30.10.2026 – Orden für volle Ringe (Opus, Version 0.3.7)
 
 - Beschlüsse des Autors (26.10.2026): Orden nur für volle Ringe; das Buch nach Abschnitten; Übungen

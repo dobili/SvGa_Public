@@ -4,6 +4,19 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Vergleich nach falschem Zug in Taktik und Übungen (Opus, Version 0.3.5)
+
+- Wunsch des Autors (27.10.2026): In allen Trainern mit Zugaufgaben nach einem falschen Zug den
+  eigenen Zug rot, den richtigen gold und den Stellungsverlust der Engine zeigen. Geprüft: „Zug
+  erraten“ und „Studien“ (Repertoire-Bereich) hatten das schon (`Zugvergleich.tsx`); feste Lösungen
+  haben außerdem der Taktiktrainer und die Buchübungen; der Endspieltrainer spielt gegen die Engine
+  ohne feste Lösung; der Abweichungstrainer nennt Verlust und besten Zug schon in Worten, sein
+  Brett zeigt dann die Stellung nach dem eigenen Zug, Pfeile passen dort nicht.
+- Neu: `ui/trainer/useFalschzug.ts` (merkt den falschen Zug, Engine rechnet ihn gegen den Zug der
+  Lösung, `training/uebungsaufgabe.ts` `loesungszug`) und `Falschzugmeldung.tsx`. Empfehlung nach
+  Regel 9: Solange man es noch einmal versuchen darf, bleibt die Lösung verdeckt (nur roter Pfeil
+  und Verlust); erst nach dem Lösen oder „Lösung zeigen“ kommen goldener Pfeil und Zugname.
+
 ## 30.10.2026 – Wertungsumrechnung als Bereich für jede Zeitart (Opus, Version 0.3.4)
 
 - Wunsch des Autors (27.10.2026): chess.com und FIDE für alle Zeitarten, Bereich statt „etwa“.

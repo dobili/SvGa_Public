@@ -45,3 +45,20 @@ test("Werkzeugkasten: Tabelle der Lichess-Funktionen mit Links", async ({ page }
     fullPage: true,
   });
 });
+
+test("Kapitel 0: Koordinatentraining auf Lichess oder gleich im Trainer der App", async ({
+  page,
+}) => {
+  // Paket Webverweise (30.10.2026): Was die App selbst kann, steht neben dem Lichess-Link.
+  await page.goto("/training/kap00/");
+  const kasten = page.getByTestId("trainingskasten");
+  await expect(kasten.getByRole("link", { name: "Koordinatentraining ↗" })).toHaveAttribute(
+    "href",
+    "https://lichess.org/training/coordinate",
+  );
+  const inDerApp = kasten.getByRole("link", { name: "Koordinaten, Notation, Gangarten" });
+  await expect(inDerApp).toHaveAttribute("href", "/app/#trainer-koordinaten");
+  await inDerApp.click();
+  await expect(page).toHaveURL(/\/app\/$/);
+  await expect(page.getByRole("button", { name: /Feld finden/ })).toBeVisible();
+});

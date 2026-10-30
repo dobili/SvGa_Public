@@ -3,25 +3,24 @@
  *
  * Rolle im Gesamtbild: Beide laden ihr Kapitel (daten/laden.ts) und spielen die Zugfolgen des
  * Buches im gemeinsamen Rundenablauf. Studien: alle Studien des Kapitels nacheinander, gelöst
- * wie im Repertoire-Trainer. Zug erraten: Partie und Seite wählen, eine Partie je Runde.
+ * wie im Repertoire-Trainer. Zug erraten: Quelle (Buch, berühmte Partien, aktuelle Turniere; seit
+ * 30.10.2026), Partie und Seite wählen (Zugerratenwahl.tsx), eine Partie je Runde.
  * Abhängigkeiten: training/studientrainer.ts, Repertoireaufgabe, Zugerratenaufgabe, i18n.
  */
-import type { Color } from "chessops/types";
 import { useState } from "react";
 import { ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import type { Repertoireaufgabe as Aufgabe } from "../../training/repertoiretrainer";
-import { partienAus, studienAus } from "../../training/studientrainer";
+import { partienAus, studienAus, type Ratepartie } from "../../training/studientrainer";
+import type { Partiequelle } from "../../training/zusatzpartien";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
-import { Auswahlliste } from "./Auswahlliste";
+import { Partiewahl } from "./Zugerratenwahl";
 
 const KAPITEL_STUDIEN = 10;
 const KAPITEL_PARTIEN = 11;
-const SEITEN: readonly Color[] = ["white", "black"];
 
 /** Lädt ein Kapitel und zeigt Laden und Fehler wie die anderen Trainer. */
 function MitKapitel({
@@ -97,61 +96,19 @@ export function StudienBereich() {
   );
 }
 
-/** Auswahl von Partie und Seite für „Zug erraten“. */
-function Partiewahl({
-  partien,
-  starte,
-}: {
-  partien: (seite: Color) => readonly Aufgabe[];
-  starte: (aufgabe: Aufgabe) => void;
-}) {
-  const [seite, setzeSeite] = useState<Color>("white");
-  const liste = partien(seite);
-  const [index, setzeIndex] = useState(0);
-  const gewaehlt = liste[index] ?? null;
-  return (
-    <div
-      className="trainerrunde trainerwahl"
-      data-testid="zugerraten-wahl"
-      data-tour="trainer-wahl"
-    >
-      <Auswahlliste
-        titel={t("zugerraten.partie")}
-        eintraege={liste.map((p, i) => ({ wert: String(i), text: p.titel }))}
-        wert={String(index)}
-        setze={(i) => setzeIndex(Number(i))}
-      />
-      <fieldset className="zahlwahl">
-        <legend>{t("repertoiretrainer.seite")}</legend>
-        {SEITEN.map((s) => (
-          <button
-            key={s}
-            type="button"
-            className="chip"
-            aria-pressed={seite === s}
-            onClick={() => setzeSeite(s)}
-          >
-            {t(s === "white" ? "farbe.w" : "farbe.b")}
-          </button>
-        ))}
-      </fieldset>
-      <button
-        type="button"
-        className="knopf-haupt"
-        disabled={gewaehlt === null}
-        onClick={() => gewaehlt && starte(gewaehlt)}
-      >
-        <Knopfsymbol art="starten" />
-        {t("taktiktrainer.starten")}
-      </button>
-    </div>
-  );
-}
-
 function Zugerraten({ kapitel }: { kapitel: Parameters<typeof partienAus>[0] }) {
-  const [partie, setzePartie] = useState<Aufgabe | null>(null);
+  const [quelle, setzeQuelle] = useState<Partiequelle>("buch");
+  const [partie, setzePartie] = useState<Ratepartie | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
-  if (!partie) return <Partiewahl partien={(s) => partienAus(kapitel, s)} starte={setzePartie} />;
+  if (!partie)
+    return (
+      <Partiewahl
+        quelle={quelle}
+        setzeQuelle={setzeQuelle}
+        buchpartien={(s) => partienAus(kapitel, s)}
+        starte={setzePartie}
+      />
+    );
   return (
     <Rundenablauf
       key={`${partie.titel}-${partie.seite}-${durchlauf}`}
@@ -164,8 +121,8 @@ function Zugerraten({ kapitel }: { kapitel: Parameters<typeof partienAus>[0] }) 
 }
 
 /**
- * Der Trainer „Zug erraten“ (Kapitel 11): Partie und Seite wählen, dann die Züge des Meisters
- * raten.
+ * Der Trainer „Zug erraten“ (Kapitel 11): Quelle, Partie und Seite wählen, dann die Züge des
+ * Meisters raten. Vorgabe sind die Partien des Buches; Zusatzpartien sind gekennzeichnet.
  */
 export function ZugErratenBereich() {
   return <MitKapitel nummer={KAPITEL_PARTIEN} inhalt={(k) => <Zugerraten kapitel={k} />} />;

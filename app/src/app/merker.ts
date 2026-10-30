@@ -9,6 +9,23 @@
 
 const VORSILBE = "svga.";
 
+/** Wer wissen will, wenn ein Merker geschrieben oder entfernt wird (etwa die Abzeichen). */
+const beobachter = new Set<(name: string) => void>();
+
+/**
+ * Meldet jede Änderung eines Merkers in dieser Sitzung mit seinem Namen. Warum: Merker liegen
+ * außerhalb des Speichers; wer sie anzeigt (Abzeichen nach der Tagesaufgabe), bekäme sonst erst
+ * nach einem Neuladen den neuen Stand. Ausgabe: Funktion zum Abmelden.
+ */
+export function beobachteMerker(rueckruf: (name: string) => void): () => void {
+  beobachter.add(rueckruf);
+  return () => beobachter.delete(rueckruf);
+}
+
+function benachrichtige(name: string): void {
+  for (const rueckruf of beobachter) rueckruf(name);
+}
+
 /** Liest einen Merker; ein gesperrter Gerätespeicher (privates Fenster) liefert null. */
 export function liesMerker(name: string): string | null {
   try {
@@ -26,6 +43,7 @@ export function schreibeMerker(name: string, wert: string): void {
   } catch (fehler) {
     console.warn("Gerätespeicher nicht beschreibbar:", fehler);
   }
+  benachrichtige(name);
 }
 
 /** Entfernt einen Merker (nach dem Umzug in den Speicher, AP 12). */
@@ -35,4 +53,5 @@ export function entferneMerker(name: string): void {
   } catch (fehler) {
     console.warn("Gerätespeicher nicht beschreibbar:", fehler);
   }
+  benachrichtige(name);
 }

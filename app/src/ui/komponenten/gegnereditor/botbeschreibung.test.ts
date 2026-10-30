@@ -33,4 +33,14 @@ describe("Beschreibung eigener Bots", () => {
         "und übersieht Drohungen. Übersieht gern Rückzüge.",
     );
   });
+
+  it("nennt feste Eröffnungen, ab drei mit „und n weitere“ (Paket 9)", () => {
+    const zwei = { ...GRUND, eroeffnungen: ["praxis:Italian Game", "Londoner System"] };
+    expect(botbeschreibung(zwei)).toContain("Eröffnet gern: Italian Game oder Londoner System.");
+    const namen = (wert: string) => (wert === "praxis:Italian Game" ? "Italienische Partie" : wert);
+    expect(botbeschreibung(zwei, namen)).toContain("Italienische Partie oder Londoner System");
+    const vier = { ...GRUND, eroeffnungen: ["A", "B", "C", "D"] };
+    expect(botbeschreibung(vier)).toContain("Eröffnet gern: A, B (und 2 weitere).");
+    expect(botbeschreibung(GRUND)).not.toContain("Eröffnet");
+  });
 });

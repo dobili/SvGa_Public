@@ -2,7 +2,13 @@
 import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
+import { MAX_EROEFFNUNGSWERT } from "../spiel/boteroeffnung";
+import { leereDaten } from "./format";
+import { spielstandAus } from "./partienLesen";
+import { pruefeSicherung, sicherungAlsText } from "./sicherung";
 import {
+  abweichungAus,
+  eroeffnungenAus,
   fehlerartenAus,
   eigeneGegnerAus,
   eigenerGegnerAus,
@@ -85,5 +91,47 @@ describe("Stil und Reglerstufen aus dem Speicher (Teil E, 0.2.126)", () => {
     const g = eigenerGegnerAus({ ...RAMBO, stilname: "gibtEsNicht" });
     expect(g).not.toHaveProperty("stilname");
     expect(g).not.toHaveProperty("reglerstufen");
+  });
+});
+
+describe("Eigene Gegner: feste Eröffnungen und Abweichung (Paket 9)", () => {
+  const MIT: EigenerGegner = {
+    ...RAMBO,
+    eroeffnungen: ["praxis:Italian Game", "Londoner System"],
+    abweichung: 20,
+  };
+
+  it("ältere Gegner ohne Felder laden unverändert, neue mit Feldern vollständig", () => {
+    expect(eigenerGegnerAus(JSON.parse(JSON.stringify(RAMBO)))).toEqual(RAMBO);
+    expect(eigenerGegnerAus(JSON.parse(JSON.stringify(MIT)))).toEqual(MIT);
+    // So liest auch eine ältere App einen neueren Gegner: Unbekannte Felder fallen still weg
+    // (kein Absturz; beim nächsten Speichern dort gehen die Eröffnungen verloren).
+    expect(eigenerGegnerAus({ ...RAMBO, kuenftigesFeld: [1, 2] })).toEqual(RAMBO);
+  });
+
+  it("prüft die Felder: nur Texte, ohne Doppelte, Abweichung 0 bis 100 ganzzahlig", () => {
+    expect(eroeffnungenAus(["a", 3, "", "a", "b", "x".repeat(MAX_EROEFFNUNGSWERT + 1)])).toEqual([
+      "a",
+      "b",
+    ]);
+    expect(eroeffnungenAus("a")).toBeUndefined();
+    expect(abweichungAus(150)).toBe(100);
+    expect(abweichungAus(-3)).toBe(0);
+    expect(abweichungAus(33.4)).toBe(33);
+    expect(abweichungAus("20")).toBeUndefined();
+    const krumm = eigenerGegnerAus({ ...RAMBO, eroeffnungen: [], abweichung: Number.NaN });
+    expect(krumm).toEqual(RAMBO);
+  });
+
+  it("übersteht Spielstand, Sicherung und Import", () => {
+    const daten = leereDaten(new Date("2026-10-30T10:00:00Z"));
+    const mitGegner = { ...daten, spiel: { ...daten.spiel, eigeneGegner: [MIT, RAMBO] } };
+    expect(spielstandAus(JSON.parse(JSON.stringify(mitGegner.spiel))).eigeneGegner).toEqual([
+      MIT,
+      RAMBO,
+    ]);
+    const text = sicherungAlsText(mitGegner, "0.3.12", new Date("2026-10-30T10:00:00Z"));
+    const pruefung = pruefeSicherung(text, new Date("2026-10-30T11:00:00Z"));
+    expect(pruefung.ok && pruefung.daten.spiel.eigeneGegner).toEqual([MIT, RAMBO]);
   });
 });

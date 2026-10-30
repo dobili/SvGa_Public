@@ -30,14 +30,15 @@ export function Gambitliste({
   von,
   bis,
   bandname,
-  gewaehlt,
+  ist,
   beiWahl,
 }: {
   daten: Eroeffnungsbaender;
   von: number;
   bis: number;
   bandname: (index: number) => string;
-  gewaehlt: string | null;
+  /** Ist dieser Wert gewählt (einer oder, im Gegnereditor, mehrere)? */
+  ist: (wert: string) => boolean;
   beiWahl: (eroeffnung: string) => void;
 }) {
   const liste = gambitsNachStaerke(daten, von, bis);
@@ -56,7 +57,7 @@ export function Gambitliste({
               <button
                 type="button"
                 className="staerkewahl-zeile"
-                aria-pressed={gewaehlt === wert}
+                aria-pressed={ist(wert)}
                 onClick={() => beiWahl(wert)}
               >
                 <span className="staerkewahl-name">{gambitname(g)}</span>

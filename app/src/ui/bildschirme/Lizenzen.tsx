@@ -43,6 +43,7 @@ const BAUSTEINE = [
   { kennung: "portraets", text: "/lizenzen/cc-by-4.0.txt" },
   { kennung: "eroeffnungsnamen" },
   { kennung: "puzzles" },
+  { kennung: "zusatzpartien", quelle: "https://database.lichess.org/#broadcasts" },
   { kennung: "react", text: PAKETTEXTE },
   { kennung: "workbox", text: PAKETTEXTE },
   { kennung: "lucide", text: PAKETTEXTE },

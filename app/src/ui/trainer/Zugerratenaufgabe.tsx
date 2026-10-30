@@ -9,6 +9,7 @@
  * zog (W12, Kapitel 12: „erst selbst denken und dann vergleichen“). Die App speichert die
  * Trefferzahl je Partie (speicher/trainerverlauf.ts) und nennt beim nächsten Mal den letzten
  * Durchgang zum Vergleich (Pflichtenheft 7: „Wiederholung derselben Partie nach Wochen“).
+ * Zusatzpartien (nicht aus dem Buch, seit 30.10.2026) zeigen über dem Brett die Zusatzkarte.
  * Dazu (R45, Wunsch des Autors, 23.10.2026): Hinweis-Knopf (goldenes Feld unter der Figur des
  * Partiezuges; ein Treffer mit Hinweis zählt nicht), Pfeile für den letzten Zug (gold der
  * Partiezug, rot der eigene, falls er abweicht), Bewertungsbalken am Brett nach jedem Zug,
@@ -26,6 +27,7 @@ import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import type { Repertoireaufgabe as Aufgabe } from "../../training/repertoiretrainer";
+import type { Ratepartie } from "../../training/studientrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
 import { Bewertungsbalken } from "../komponenten/rueckblick/Bewertungsbalken";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
@@ -39,6 +41,7 @@ import { vergleichspfeile } from "./vergleichspfeile";
 import { Analysebereich, Zugerratenleiste } from "./Zugerratenleiste";
 import { Zugkommentare, type Rateversuch } from "./Zugkommentare";
 import { Zugvergleich } from "./Zugvergleich";
+import { Zusatzkarte } from "./Zusatzkarte";
 import { partieKennung, useRatestand, type Ratezustand } from "./useRatestand";
 
 const KEINE_WAHL = () => undefined;
@@ -159,10 +162,10 @@ function Zugerratenbrett({
 }
 
 /**
- * Eine Aufgabe „Zug erraten“: eine Meisterpartie aus Kapitel 11 Zug für Zug raten; nach einem
- * Fehlversuch vergleicht die Engine.
+ * Eine Aufgabe „Zug erraten“: eine Meisterpartie (Kapitel 11 oder Zusatzpartie) Zug für Zug
+ * raten; nach einem Fehlversuch vergleicht die Engine.
  */
-export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Ratepartie; runde: Runde }) {
   const s = useRatestand(aufgabe, runde);
   // Der letzte Durchgang vor dieser Runde; bleibt während der Runde stehen.
   const verlauf = useSpeicher((z) => z.daten.zugErraten[partieKennung(aufgabe)]);
@@ -184,6 +187,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
           farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
         })}
       </p>
+      {aufgabe.zusatz && <Zusatzkarte partie={aufgabe.zusatz} zugeklappt />}
       <Zugerratenbrett
         aufgabe={aufgabe}
         s={s}

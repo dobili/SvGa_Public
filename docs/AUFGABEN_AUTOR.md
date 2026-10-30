@@ -57,6 +57,178 @@ Teil fertig ist.
       Eröffnung patzen schwache Bots etwas seltener, im Mittelspiel etwas häufiger. Fällt dir beim
       Spielen etwas auf?
 
+### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,
+      etwa „Stufe 3 von 10: Zentrum“, rechts die Erfahrungspunkte (EP), darunter ein goldener
+      Balken und „Noch … EP bis zur Stufe …“. Die zehn Stufen heißen nach Begriffen des Buches:
+      Erster Zug, Entwicklung, Zentrum, Rochade, Offene Linie, Vorposten, Freibauer,
+      Kombination, Zugzwang, Meisterplan. Passen Namen und Reihenfolge? Bitte sagen, wenn dir
+      andere Namen lieber sind (etwa die Figuren vom Bauern bis zum König).
+- [ ] N1091. **Woher die EP kommen:** Darunter „Abzeichen: x von 18“ aufklappen. Der zweite
+      Absatz erklärt die Punkte: gelöste Übung 20, beantwortete Warum-Frage 5, vor den
+      Werkzeugen richtig eingeschätzte Abbildung 4, angesehene Abbildung 2, abgehaktes Lernziel
+      5, Trainerrunde 5, jede richtige Trainerantwort 1, Partie ab zehn Zügen 10, Sieg 10 mehr,
+      Bot zum ersten Mal besiegt 25, Eintrag mit Text in Lernsammlung oder Fehlerdatenbank 8,
+      jeder Tag der besten Serie der Tagesaufgabe 5. Die Punkte werden aus deinen vorhandenen
+      Daten gerechnet; wer schon viel gemacht hat, steht gleich auf einer höheren Stufe. Passen
+      die Gewichte und die Schwellen (100, 250, 500, 900, 1400, 2000, 2800, 3800, 5000)?
+- [ ] N1092. **Abzeichengitter:** Im aufgeklappten Teil stehen alle 18 Abzeichen als
+      Sechsecke mit Name und Bedingung; noch nicht verdiente sind grau. Die 18: Erste Partie,
+      Erster Sieg, Zehn, Fünfzig und Hundert Partien, Erstes Matt, Aus eigener Kraft (Sieg ohne
+      Rücknahme und ohne Werkzeuge), Über dich hinaus (Sieg gegen einen mindestens 100 Punkte
+      stärkeren Gegner), Gehalten (Remis gegen einen solchen), Brillanter Zug, Erste Übung,
+      Kapitel gemeistert (alle Übungen eines Kapitels), Nachgefragt (zehn Warum-Fragen), Erst
+      selbst denken (zehn Einschätzungen), Eigene Stellung (Lernsammlung), Aus Fehlern lernen
+      (fünf Fehler mit Satz), Fleißig trainiert (100 richtige Trainerantworten), Eine Woche
+      dabei (sieben Tage hintereinander gelernt oder gespielt). Fehlt dir eines, ist eines zu
+      leicht oder zu schwer?
+- [ ] N1093. **Meldung bei einem neuen Abzeichen:** Spiele eine Partie gegen einen Bot zu Ende
+      (wenn du noch keine hast). Danach erscheint eine schlichte goldene Karte „Neues
+      Abzeichen“ mit dem Sechseck „Erste Partie“ und „Weiter“, ohne Feuerwerk und ohne Ton. Sie
+      kommt nur einmal. Hast du beim ersten Öffnen nach dem Update schon vieles erreicht,
+      stehen alle Abzeichen auf einer einzigen Karte statt vieler Meldungen nacheinander.
+- [ ] N1094. **Abzeichen testen:** Aufgabenseite (Profil drei Sekunden halten) › Karte
+      „Abzeichen testen (nur für dich)“ aufklappen. Ein Tipp auf „Erste Partie: verdienen“
+      zeigt sofort die Meldung; „Nächste Stufe erreichen“ zeigt „Neue Stufe erreicht“. Im Profil
+      stehen dann Abzeichen und Stufe. „Probe beenden“ stellt alles zurück; deine echten Daten
+      ändern sich dabei nicht.
+- [ ] N1095. **Nichts verfällt:** Eine Pause nimmt dir kein Abzeichen und keine Stufe. Ein
+      einmal gemeldetes Abzeichen bleibt, auch wenn die Partie dazu später aus der Liste der
+      letzten 50 Partien fällt. Es gibt keine Bestenliste, nichts verlässt das Gerät. Passt
+      dir der ruhige Ton, oder wünschst du dir bei Abzeichen doch Feuerwerk und Ton wie bei den
+      Orden?
+
+### Neu in 0.3.14: Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1080. **Klappe „Eröffnungen“ im Gegnereditor:** Spielen › Eigene Bots › „Neuen Gegner
+      anlegen“ (oder einen bestehenden bearbeiten). Unter den vier Reitern steht die Klappe
+      „Eröffnungen (0)“. Aufklappen: „Noch keine feste Eröffnung.“, darunter „Eröffnungen aus dem
+      Buch“ (Haken je Eröffnung aus Kapitel 2 und 3) und „Eröffnungen nach Spielstärke“ (dieselbe
+      Liste wie im Spielfenster). Ein Tipp auf eine Eröffnung setzt den Haken (goldener Rahmen),
+      ein zweiter Tipp nimmt ihn weg. Die Zahl in der Überschrift zählt mit. Passt das so?
+- [ ] N1081. **Mehrfachauswahl:** Wähle zwei oder drei Eröffnungen (etwa Italienische Partie und
+      London-System, dazu eine aus dem Buch). Oben unter „Gewählt“ stehen sie als kleine Marken
+      mit ✕; ein Tipp auf eine Marke entfernt sie, „Alle entfernen“ leert die Liste.
+- [ ] N1082. **Schnellwahl im Variantenbaum:** In „Eröffnungen nach Spielstärke“ unter einer
+      Eröffnung „Varianten (n)“ aufklappen. Darüber stehen jetzt die Knöpfe „Die häufigsten 3“,
+      „Die häufigsten 5“ und „Alle Varianten“. Sie ersetzen die gewählten Varianten dieser einen
+      Eröffnung durch die häufigsten (andere Eröffnungen bleiben). Einzelne Varianten lassen sich
+      auch einzeln an- und abhaken. Höchstens 40 Eröffnungen je Bot.
+- [ ] N1083. **Regler „Abweichung“:** Sobald mindestens eine Eröffnung gewählt ist, erscheint
+      „Abweichung: 0 %“ mit Regler in Zehnerschritten. 0 % heißt: Der Bot folgt seiner Eröffnung
+      immer, solange du ihre Züge spielst. 100 % heißt: wie ohne Festlegung (er eröffnet wie
+      Menschen seiner Stärke). Dazwischen verlässt er die Eröffnung bei jedem Buchzug mit dieser
+      Wahrscheinlichkeit. Ist die Vorgabe 0 % richtig, oder lieber etwa 20 %?
+- [ ] N1084. **Beschreibung:** Unter dem Editor steht „So stellt er sich vor:“. Mit festen
+      Eröffnungen endet sie mit „Eröffnet gern: Italienische Partie oder London-System.“; ab drei
+      Eröffnungen „Eröffnet gern: A, B (und 2 weitere).“ Gefällt dir der Satz? (Der Doppelpunkt
+      erspart die Beugung der Namen, „Eröffnet gern Italienisch“ ginge nicht für jeden Namen.)
+- [ ] N1085. **Vorrang im Spielfenster:** Den Bot speichern und in „Eigene Bots“ wählen. Unten
+      in der Karte „Partie“ die Klappe „Eröffnung festlegen“ öffnen. Oben steht „<Name> hat feste
+      Eröffnungen: …. Je Partie wählt er eine davon.“, darunter der Haken „Eröffnung des Bots
+      überschreiben“. Die gewohnte Eröffnungswahl darunter ist ausgegraut und nicht bedienbar.
+      Setzt du den Haken, wird sie bedienbar und gilt für die nächste Partie (auch „wie Menschen
+      dieser Stärke“). Der Haken gilt nur, solange du auf dem Bildschirm bist.
+- [ ] N1086. **Partie mit fester Eröffnung:** Einem Bot nur das London-System geben, Abweichung
+      0 %, mit Schwarz eine Partie beginnen. Der Bot spielt 1. d4 und nach 1… d5 2. Lf4. Mit zwei
+      Eröffnungen (etwa Italienische Partie und London-System) wählt er je Partie zufällig eine;
+      bitte drei oder vier Partien beginnen und aufgeben.
+- [ ] N1087. **Abweichung im Spiel:** Denselben Bot auf 100 % stellen: Er eröffnet dann wie ohne
+      Festlegung (meist 1. e4). Bei 50 % verlässt er die Linie im Mittel nach ein bis zwei
+      Buchzügen. Fühlt sich das richtig an?
+- [ ] N1088. **Bestehende Bots und Sicherung:** Deine schon angelegten eigenen Bots sehen aus wie
+      vorher und spielen wie vorher („Eröffnungen (0)“). Nach Einstellungen › Datensicherung
+      exportieren und wieder einlesen sind die festen Eröffnungen und die Abweichung noch da.
+      Hinweis: Eine ältere App-Version (vor diesem Stand) liest solche Bots ohne Absturz, kennt
+      die Eröffnungen aber nicht; speichert man den Bot dort neu, sind sie weg.
+- [ ] N1089. **Englisch:** Sprache auf Englisch stellen: Klappe „Openings (n)“, „Deviation“,
+      „Override the bot's opening“, Beschreibung „Likes to open with: …“. Die Namen der
+      Eröffnungen nach Spielstärke stehen dann englisch (wie auf Lichess).
+
+### Neu in 0.3.14: Zusatzaufgaben von Lichess im Taktiktrainer (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1070. **Wahl der Quelle:** Training › Taktiktrainer öffnen. Oben steht „Aufgaben“ mit zwei
+      Knöpfen, „Aus dem Buch“ (vorgewählt, alles wie bisher) und „Zusatzaufgaben (Lichess)“.
+      Darunter ein Satz, was gewählt ist. Prüfen: Ist „Aus dem Buch“ vorgewählt und läuft die
+      Runde dort genau wie früher?
+- [ ] N1071. **Kennzeichnung:** „Zusatzaufgaben (Lichess)“ tippen. Darunter steht
+      „Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess-Puzzle-Datenbank (CC0) …“. In jeder
+      Aufgabe steht unter dem Brett „Zusatzaufgabe (nicht aus dem Buch) · Lichess (CC0),
+      Wertung …“. Reicht dir die Kennzeichnung?
+- [ ] N1072. **Themen:** Die Liste „Thema“ hat 20 Themen mit je 50 Aufgaben: Hängende Figur,
+      Gabel und Doppelangriff, Fesselung, Spieß, Abzug und Abzugsschach, Doppelschach,
+      Hinlenkung, Räumung, Beseitigung der Verteidigung, Ablenkung, Zwischenzug, Gefangene
+      Figur, Umwandlung, Wegversperrung, Stiller Zug, Zugzwang, Grundreihenmatt, Mattbilder,
+      Matt in einem Zug, Matt in zwei Zügen (dazu „Alle Themen gemischt“). Passen die Namen zu
+      deinen Begriffen? „Röntgenangriff“ von Lichess ist bewusst nicht dabei, weil „Röntgen“ im
+      Buch die Schach-Röntgen-Regel meint.
+- [ ] N1073. **Stufen:** Stufe 1 bis 5 wählen (Stufe 1: Lichess-Wertung unter 1000, Stufe 5:
+      1900 bis 2200). Je Thema und Stufe gibt es zehn Aufgaben. Fühlen sich Stufe 1 leicht und
+      Stufe 5 schwer an?
+- [ ] N1074. **Gegnerzug vorgespielt:** Eine Runde starten. Das Brett zeigt kurz (0,7 Sekunden)
+      die Stellung vor dem Zug des Gegners, dann gleitet sein Zug über das Brett und bleibt
+      markiert; erst dann kannst du ziehen. Ist die Pause angenehm?
+- [ ] N1075. **Lösen und falscher Zug:** Eine Aufgabe richtig lösen (die App antwortet mit dem
+      Gegenzug), bei einer anderen einen falschen Zug ziehen: roter Pfeil und Verlust laut
+      Engine wie bei den Buchaufgaben. Hinweis 2 nennt das Thema, Hinweis 3 die Figur.
+- [ ] N1076. **Motivfrage:** Bei „Alle Themen gemischt“ kommt nach dem Lösen „Welches Motiv war
+      es?“, aber nur bei Themen, die zu einem der zwölf Grundmotive aus Kapitel 7 gehören
+      (Räumung zählt zur Hinlenkung, Ablenkung zur Überlastung). Bei einem einzelnen Thema
+      entfällt die Frage. Einverstanden mit der Zuordnung?
+- [ ] N1077. **Wiederholung:** Bei einer Zusatzaufgabe „Lösung zeigen“ tippen. Nach zwei Tagen
+      bietet der Taktiktrainer oben „Wiederholen: 1 Aufgabe ist fällig“ an, auch wenn
+      „Aus dem Buch“ gewählt ist; die Aufgabe kommt mit der Kennzeichnung als Zusatzaufgabe.
+- [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
+      „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
+- [ ] N1079. **Englisch:** Sprache auf Englisch stellen. Die Wahl heißt „From the book“ |
+      „Extra puzzles (Lichess)“, die Themen sind englisch benannt.
+
+### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1060. **Quellenwahl:** Trainer › „Zug erraten“ öffnen. Oben steht „Quelle“ mit drei
+      Knöpfen: „Aus dem Buch“ (gewählt, wie bisher die Meisterpartien aus Kapitel 11),
+      „Berühmte Partien“ und „Aktuelle Turniere“. Bei „Aus dem Buch“ sieht alles aus wie bisher.
+- [ ] N1061. **Berühmte Partien:** „Berühmte Partien“ tippen. Die Liste „Partie“ zeigt etwa 50
+      Klassiker von Anderssen bis Carlsen (Titel „Weiß – Schwarz, Ort Jahr“). Unter der Liste
+      steht eine Karte „Zusatzinhalt (nicht aus dem Buch)“ mit Spielern, Ergebnis, Eröffnung,
+      einem kurzen Text (wer, wann, warum berühmt) und zwei Quellen als Links. Bitte ein paar
+      Kurztexte lesen: Stimmen sie, klingen sie gut? Partien aus dem Buch (Opernpartie,
+      Immergrüne, Lasker–Thomas usw.) kommen hier nicht noch einmal vor.
+- [ ] N1062. **Aktuelle Turniere:** „Aktuelle Turniere“ tippen. Etwa 60 Partien aus August und
+      September 2026 (Olympiade Samarkand, Sinquefield Cup, türkische Liga u. a.), klassische
+      Bedenkzeit, beide Spieler ab 2500, alle entschieden. Die Karte nennt Turnier, Runde, Datum,
+      Wertungen und als Quelle die Lichess-Übertragung mit „CC BY-SA 4.0“ (die Lizenz verlangt
+      diese Namensnennung).
+- [ ] N1063. **Raten wie gewohnt:** Eine berühmte Partie wählen, Seite des Siegers, „Runde
+      starten“. Über dem Brett steht zugeklappt „Zusatzinhalt (nicht aus dem Buch)“ (aufklappen
+      zeigt die Karte). Raten, Hinweis, Pfeile, Engine-Vergleich, Blättern und Analyse
+      funktionieren wie bei den Buchpartien; beim nächsten Mal nennt die App den letzten
+      Durchgang dieser Partie.
+- [ ] N1064. **Offline und Lizenzen:** Nach dem Aktualisieren der App einmal ohne Netz „Berühmte
+      Partien“ und „Aktuelle Turniere“ öffnen: Die Listen kommen trotzdem. Unter Einstellungen ›
+      Lizenzen steht der neue Eintrag „Zusatzpartien für „Zug erraten“ (aktuelle Turniere)“ mit
+      CC BY-SA 4.0.
+
+### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1050. **Koordinaten in der App:** schach-von-grund-auf.com/training/kap00/ öffnen. Unter
+      der Übung zum Koordinatentraining steht wie bisher „Direkt öffnen: Koordinatentraining ↗“
+      (Lichess, neuer Tab) und dahinter neu „In der App: Koordinaten, Notation, Gangarten“. Ein
+      Tipp darauf öffnet die App gleich im Koordinatentrainer (Knöpfe „Feld finden“ usw.).
+      „Zurück“ führt zur Übersicht der Trainer im Bereich Training. Passt das?
+- [ ] N1051. **Taktik und Endspiel in der App:** Auf schach-von-grund-auf.com/training/kap01/
+      steht bei Übungen mit „Aufgabenthemen“ zusätzlich „In der App: Taktiktrainer“, auf
+      /training/kap08/ und /training/kap09/ bei den Lichess-Übungen zu Mattvarianten und
+      Turmendspielen „In der App: Endspieltrainer“. Je einmal antippen: Öffnet sich der richtige
+      Trainer? Die Lichess-Links bleiben daneben, weil das Buch sie nennt.
+- [ ] N1052. **Linkprüfung im Dashboard:** Nach dem nächsten Wartungslauf (schach-von-grund-auf.com/admin/,
+      Übersicht, Gruppe „Links“) prüft „App-Texte und Lizenzen“ jetzt auch die Quellen der
+      Lizenzseite, die ohne „https://“ dastehen (etwa github.com/niklasf/chessops). Neu ist
+      außerdem: Leitet eine Adresse auf eine andere Domain weiter (so sieht eine abgelaufene,
+      geparkte Domain aus), wird der Punkt gelb mit „umgeleitet nach …“. Heute sollte alles grün
+      sein. Ist es das?
+
 ### Neu in 0.3.13: Orden verstreut, Pfeile, Serie ohne Verfall (Opus, 30.10.2026)
 
 - [ ] N1041. **Orden zufällig verteilt:** Aufgabenseite › „Orden testen“ › ein paar Ringe auf
@@ -364,6 +536,71 @@ nur du das Buch änderst.
       „Ohne Damen, aber mit vielen Figuren ist es noch ein damenloses Mittelspiel; zum Endspiel
       wird es, wenn je Seite höchstens etwa Turm, Turm und Leichtfigur übrig sind.“ Sag „Q7-1 ja“
       (dann gilt die Grenze auch an den Abbildungen) oder „Q7-1 nein“ (alles bleibt, wie es ist).
+
+### Q6 Webverweise der App (30.10.2026)
+
+Dein Wunsch vom 26.10.: prüfen, auf welche Webinhalte die App und die Trainingsseiten verweisen,
+und ob sich davon etwas direkt in die App holen lässt. Ergebnis:
+
+- **925 verschiedene Webadressen** stehen in den Daten und Texten der App. 876 davon sind Links
+  auf die Lichess-Partien, aus denen die Aufgaben im Taktiktrainer, in „Falle oder Köder“ und im
+  Endspieltrainer stammen. Die App speichert sie nur als Herkunft und zeigt sie nicht an. Eine
+  Stichprobe von 25 war vollständig erreichbar.
+- **Trainingsseiten** (13 Kapitel und der Werkzeugkasten): 32 Links auf 28 Ziele, davon 20 auf
+  lichess.org. Dazu kommen syzygy-tables.info, schachbund.de, chessgames.com, 365chess.com,
+  stockfishchess.org, encroissant.org, Lucas Chess, listudy.org, schach-tipps.de und
+  schachtraining.de.
+- **Texte der App:** Hier steht keine Adresse mit „https://“, nur Quellenangaben auf der
+  Lizenzseite (13 GitHub-Projekte, dazu Lichess, chess.com, chessgoals.com, DiceBear, Draftbit,
+  itch.io und ambientCG).
+- **Buchdaten** (Abbildungen, Glossar, Kapiteltexte): keine einzige Webadresse.
+- **Tot ist kein Verweis.** Alle 12 GitHub-Projekte gibt es noch. Harmlos umgeleitet werden
+  365chess.com, chessgames.com und schachbund.de (jeweils auf „www.“), listudy.org (auf die
+  englische Seite) und die Lichess-Aufgabenübersicht (ohne Anmeldung auf die Aufgabenseite).
+  Auf eine fremde Domain wird nichts umgeleitet.
+- **Doppelt:** syzygy-tables.info steht auf vier Seiten (Kapitel 8, 9, 10 und im
+  Werkzeugkasten). Das ist gewollt, weil jedes Kapitel für sich steht.
+
+Was frei ist und was sich einbauen lässt:
+
+- Lichess-**Puzzles** und -**Partiedatenbank**: CC0 (database.lichess.org: „Database exports are
+  released under the Creative Commons CC0 license.“). Ist schon eingebaut: Taktiktrainer,
+  „Falle oder Köder“, Endspieltrainer, Eröffnungen nach Spielstärke.
+- Lichess-**Eröffnungsnamen**: CC0, auch schon eingebaut.
+- Lichess-**Übertragungen**: CC BY-SA 4.0 (database.lichess.org, Abschnitt Broadcasts:
+  „Broadcast games are released under the Creative Commons Attribution-ShareAlike 4.0
+  license.“). Von dir am 30.10. angenommen (Entscheidung 7), kommt mit „Zug erraten“.
+- **Lernen, Koordinatentraining, Analysebrett, Stellung aufbauen, Puzzle Storm, Streak und
+  Racer** sind Programmteile von Lichess unter AGPL-3.0 (github.com/lichess-org/lila: „Lila is
+  licensed under the GNU Affero General Public License 3 or any later version“). Abschreiben
+  wäre rechtlich möglich, lohnt sich aber nicht: Die App hat für das Wichtigste eigene Trainer.
+- **Lichess Practice und Studien:** Dafür gibt es keine ausdrückliche Lizenz, die Studien gehören
+  ihren Autoren. Also nur verlinken.
+- **Tablebase** (syzygy-tables.info): Die Tafeln bis fünf Steine sind zusammen knapp 1 GB groß,
+  offline passt das nicht in die App.
+- **Andere Seiten** (Partiedatenbanken, Programme, Schachbund, Trainingsseiten): nur verlinken.
+
+- [ ] Q6-1. **„In der App“ neben Lichess.** Wo eine Übung ein Lichess-Werkzeug nennt, für das
+      die App einen eigenen Trainer hat, steht hinter dem Lichess-Link jetzt „In der App: …“ mit
+      einem direkten Sprung in diesen Trainer. Das betrifft drei Fälle: Koordinatentraining →
+      Koordinatentrainer, Aufgabenthemen → Taktiktrainer, Lichess Practice (Mattvarianten,
+      Turmendspiele) → Endspieltrainer. Der Text der Übungen bleibt, wie er im Buch steht.
+      Schon umgesetzt, Widerspruch genügt.
+- [ ] Q6-2. **Linkprüfung schärfer.** Die wöchentliche Prüfung im Dashboard prüft jetzt auch die
+      Quellen auf der Lizenzseite und meldet gelb, wenn eine Adresse auf eine fremde Domain
+      umleitet (etwa eine abgelaufene Domain mit Parkseite, die sonst als „erreichbar“ durchgeht).
+      Die 876 Partielinks prüft sie absichtlich nicht jede Woche, das wären zu viele Abrufe bei
+      Lichess. Schon umgesetzt, Widerspruch genügt.
+- [ ] Q6-3. **Keine Änderung an den Adressen.** Die Umleitungen auf „www.“ und die englische
+      Seite von listudy.org schaden nicht, deshalb lasse ich die Adressen, wie sie im Buch stehen.
+      Schon so entschieden, Widerspruch genügt.
+- [ ] Q6-4. **Buchbefund, klein:** Der Trainingskasten in Kapitel 0 schreibt
+      „www.schachbund.de“, der Werkzeugkasten in Kapitel 12 „schachbund.de“. Beide Adressen
+      funktionieren. Willst du die Schreibweise im Buch vereinheitlichen? Kein toter Link im Buch.
+- [ ] Q6-5. **Später, nur Empfehlung: Tablebase online im Endspieltrainer.** Ein Knopf
+      „Tablebase“, der eine Endspielstellung mit bis zu sieben Steinen bei der freien
+      Lichess-Tablebase nachschlägt (nur mit Netz). Das ändert die Datenschutzerklärung, weil die
+      Stellung an Lichess geht. Deshalb baue ich es erst nach deinem Ja. Möchtest du das?
 
 ### Q5 Weitere Ideen aus der Recherche (30.10.2026, noch nicht beschlossen)
 

@@ -33,6 +33,181 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   statt 395). Damit Schnellschach weiter eine Phasenzahl bekommt, steigt die Schwelle „schmal“
   (`SCHMAL`) von 400 auf 460, mit derselben Begründung wie am 24.10.2026.
 
+## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
+
+- Die fünf Zweige paket-webverweise, paket-meisterpartien, paket-zusatzaufgaben,
+  paket-boteroeffnungen und paket-abzeichen sind nacheinander zusammengeführt. Vorher hat ein
+  Prüfagent jeden Zweig gegen den Code gelesen (Fehler, Regeln, Lizenzen, Datenmengen,
+  Speicherformat, Konflikte). Nachgebessert beim Zusammenführen:
+- **Linkprüfung:** Die Gruppe „Buchdaten“ las bisher alle JSON-Dateien unter
+  `app/public/daten`, also auch rund 1000 Herkunftslinks der Trainer-Aufgaben und
+  Zusatzpartien. Jetzt nur noch die Buchdaten selbst (`*/*.json`, `*/a1/*.json`), so wie es
+  Q6-2 beschreibt.
+- **Lizenz der Turnierpartien (CC BY-SA 4.0, Abschnitt 3(a)(1)(B)):** Karte und Lizenzseite
+  sagen jetzt, dass die Partien ausgewählt und ohne Uhrzeiten übernommen sind, und nennen den
+  Lizenztext.
+- **Abzeichen:** Erfahrungspunkte und „Eine Woche dabei“ zogen nach der Tagesaufgabe erst nach
+  einem Neuladen nach, weil der Merker „tagesserie“ nur beim Start gelesen wurde. Merker melden
+  Änderungen jetzt an Beobachter (`app/merker.ts`, `beobachteMerker`).
+- **Bot-Eröffnungen:** „Eröffnung des Bots überschreiben“ gilt nur für den Bot, bei dem es
+  gesetzt wurde; beim Wechsel des Bots steht es wieder aus.
+- Kleinigkeiten: lange Funktion der Abzeichenmeldung geteilt, veralteter Verweis im Dateikopf.
+
+## 30.10.2026 – Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, Paket Abzeichen)
+
+- Freigabe des Autors (30.10.2026): Erfahrungspunkte und Abzeichen wie bei Chessly, nur auf dem
+  Gerät, ohne Bestenliste, keine Daten an Dritte, keine Werbung.
+- EP ohne neues Speicherfeld, gerechnet aus vorhandenen Daten (`ui/komponenten/fortschritt/
+erfahrung.ts`). Lernen am Buch wiegt schwerer als Ansehen (Übung 20, Abbildung 2); ohne Inhalt
+  zählt nichts (Partien unter zehn Zügen je Seite, Sammlung ohne Plan und Notiz, Fehler ohne Satz).
+  Partien und Siege: der größere Wert aus den gespeicherten 50 Partien und dem Wertungsverlauf.
+  Die Tagesaufgabe zählt über die beste Serie im Merker `tagesserie` (nur gelesen; die Gesamtzahl
+  gelöster Tagesaufgaben steht nirgends, und `training/kurzplaene.ts` lag außerhalb des Pakets).
+- Zehn Stufen mit Begriffen des Buches in Lernreihenfolge (Erster Zug bis Meisterplan), Schwellen
+  mit wachsenden Abständen bis 5000 EP; Figurennamen verworfen, weil „König“ als Stufe nach
+  Rangliste klingt. Rückfrage dazu in N1090.
+- 18 Abzeichen (`abzeichen.ts`), keins doppelt zu einem Orden. „Stärker“ heißt mindestens 100
+  Punkte über der eigenen Wertung nach der Partie (vorsichtig: nach Sieg oder Remis steigt sie).
+  „Brillant“ rechnet die Zugklassen wie der Rückblick, aber ohne Theoriezüge (die Eröffnungslisten
+  lädt nur der Rückblick); einmal gefeiert, wird nicht mehr gerechnet. „Eine Woche dabei“ aus
+  allen Datumsangaben im Speicher (sieben Kalendertage hintereinander) oder der Tagesserie.
+- Merker statt Speicher: `abzeichenGefeiert` (gefeiert bleibt verdient, auch wenn die Partie
+  aus den 50 fällt), `stufeGefeiert` (beim ersten Start still gesetzt, damit Bestandsnutzer keine
+  Aufstiegsmeldung bekommen), `abzeichenProbe` und `erfahrungProbe` (Testkarte),
+  `abzeichenStill` (schaltet die Meldung für die Oberflächentests ab; `starteImBrowser` setzt ihn,
+  `abzeichenMeldung: true` lässt sie zu). Nachteil: Die Merker ziehen nicht mit der
+  Datensicherung um; auf einem neuen Gerät kommen die Meldungen noch einmal.
+- Nachtrag (Freigabe des Autors über den Koordinierungs-Chat, 30.10.2026: ein neues Feld im
+  Speicher wäre erlaubt): bewusst nicht genutzt. Alle Bedingungen lassen sich aus vorhandenen
+  Daten ableiten; die Merker halten nur Meldungen und die Probe. Ein Feld in
+  `speicher/format.ts` brächte vor allem, dass Abzeichen zu Partien jenseits der letzten 50 die
+  Datensicherung überleben, und würde den gemeinsamen Format-Teil gleichzeitig mit anderen
+  Paketen ändern. Lohnt sich das später, genügt ein zusätzliches Feld „abzeichen“ (Liste der
+  Kennungen) ohne neue Formatversion, gefüllt aus dem Merker `abzeichenGefeiert`.
+- Meldung schlichter als die Ringfeier: gleiche goldene Karte, ohne Feuerwerk und Ton, alle neuen
+  Abzeichen auf einer Karte (Bestandsnutzer sonst mit vielen Meldungen hintereinander). Sie hängt
+  hinter der Ringfeier (`Ringfeier.tsx` zeigt sie, wenn kein Ring offen ist), damit `App.tsx`
+  unverändert bleibt und nie zwei Karten übereinander liegen.
+- Abzeichenbild als Sechseck (`bausteine/Abzeichenbild.tsx`), damit Abzeichen und Orden
+  (Medaille mit Band) auseinanderzuhalten sind; Zeichen aus lucide-react (schon im Projekt).
+
+## 30.10.2026 – Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, Paket 9)
+
+- Wunsch des Autors (Ideensammlung, freigegeben 30.10.2026): feste Eröffnungen für eigene Bots,
+  Mehrfachauswahl, Regler „Abweichung“, Vorrang der globalen Wahl im Spielfenster (ausgegraut,
+  Haken zum Überschreiben); im Variantenbaum Schnellwahl und Einzelhaken.
+- Speicher: zwei neue optionale Felder am eigenen Gegner, `eroeffnungen` (Werte wie in der
+  Eröffnungswahl: „praxis:Name“ oder Name einer Buch-Eröffnung, höchstens 40, je höchstens 120
+  Zeichen) und `abweichung` (0 bis 100, ganzzahlig). Fehlende Felder: wie bisher. `format.ts`
+  blieb unverändert (kein neues Schema). Eine ältere App liest Gegner Feld für Feld und lässt
+  die unbekannten Felder still weg: kein Absturz, beim erneuten Speichern dort gehen sie
+  verloren (hingenommen, getestet). Sicherung und Import tragen die Felder mit (getestet).
+- Die Partie bekommt kein neues Feld: Beim Beginnen wählt `eroeffnungFuerPartie` zufällig eine
+  der festen Eröffnungen und schreibt sie in das bestehende Feld `eroeffnung`. Die Abweichung
+  liest die Partie beim Bot im Speicher (`abweichungDerPartie`), und nur, wenn die Eröffnung der
+  Partie eine seiner festen ist. Folgen: Wird der Bot mitten in der Partie geändert, gilt die neue
+  Abweichung; wird er gelöscht, folgt die Partie der Eröffnung ohne Abweichung; wählt der Leser
+  mit Haken eine Eröffnung, die auch in der Liste des Bots steht, gilt die Abweichung ebenfalls.
+- Abweichung je Buchzug: Mit der Wahrscheinlichkeit wird für diesen Zug „wie Menschen dieser
+  Stärke“ gewählt (Praxisbuch). Fällt der Praxiszug zufällig mit der Linie zusammen, bleibt die
+  Partie auf der Linie. So ist 100 % genau „wie ohne Festlegung“. Vorgabe 0 % (folgt immer),
+  Regler in Zehnerschritten.
+- Vorrang: Ohne Haken gelten die Eröffnungen des Bots, mit Haken die Wahl im Spielfenster, auch
+  wenn sie auf der Vorgabe „wie Menschen“ steht (der Haken ist die klare Entscheidung; „Vorgabe
+  gegen anderes“ automatisch zu erkennen hätte die Vorgabe nicht mehr wählbar gemacht). Der
+  Haken wird nicht gespeichert.
+- Editor: eine Klappe „Eröffnungen (n)“ unter den Reitern statt eines fünften Reiters (die Reiter
+  teilt sich der Editor mit der eigenen Stufe, und die Eröffnungen ändern die Stärke nicht). Die
+  Klappe „Eröffnungen nach Spielstärke“ ist dieselbe Komponente wie im Spielfenster, jetzt mit
+  einer Wahlart (`ist`, `beiWahl`, optional `beiSchnellwahl`) statt eines Einzelwertes.
+- Beschreibung: „Eröffnet gern: A oder B.“ mit Doppelpunkt, weil sich die Namen nicht beugen
+  lassen; ab drei „A, B (und n weitere)“. Deutsche Namen der Eröffnungen nach Spielstärke aus
+  den Eröffnungsbändern, sobald geladen.
+
+## 30.10.2026 – Zusatzaufgaben von Lichess im Taktiktrainer (Opus, Paket 8)
+
+- Freigabe des Autors (30.10.2026): etwa 1000 Lichess-Aufgaben je Thema des Buches als
+  „Zusatzaufgaben (nicht aus dem Buch)“ im Taktiktrainer, offline, nach Wertung gestaffelt.
+- Daten: `pipeline/trainer/zusatzaufgaben.py` wählt aus `lichess_db_puzzle.csv.zst` (CC0, lokal,
+  nicht im Repository) 1000 Aufgaben nach `app/public/daten/zusatzaufgaben.json` (175 KB, liegt
+  wie `praxisbuch.json` im Vorabspeicher des Service Workers). Je Thema 50, je Stufe 10 (Stufen
+  nach Wertung wie im Taktiktrainer, 600 bis 2200). Bedingungen: Abweichung höchstens 80, ab 300
+  Partien, Beliebtheit ab 80, höchstens vier eigene Züge; Rangfolge nach Beliebtheit, dann
+  Partien. Aufgaben, die Taktik-, Fallen- oder Endspieltrainer schon haben, fallen weg. Keine
+  Partie-Adresse. Format wie bei Lichess (Stellung vor dem Gegnerzug, UCI); die App rechnet
+  SAN und Stellung selbst (`training/zusatzaufgaben.ts`).
+- Themen (20): die elf Grundmotive aus Kapitel 7 mit Lichess-Thema (ohne Rettung), dazu
+  Räumung (zählt zur Hinlenkung), Ablenkung (zählt zur Überlastung, wie die Gruppen im Buch),
+  Hängende Figur (Kapitel 1), Wegversperrung und Stiller Zug (Kapitel 10), Zugzwang
+  (Kapitel 8), Grundreihenmatt, Mattbilder, Matt in 1 und Matt in 2. Motivthemen nur mit genau
+  einem Motiv unter den Lichess-Themen. Nicht dabei: `xRayAttack`, weil „Röntgen“ im Buch die
+  Schach-Röntgen-Regel ist; Angriffsthemen ohne Buchbegriff. Deutsche Namen eigene, aus dem
+  Glossar (keine Übersetzungen von Lichess, die stehen unter AGPL).
+- Oberfläche: Wahl „Aus dem Buch“ (Vorgabe) | „Zusatzaufgaben (Lichess)“. „Aus dem Buch“ bleibt
+  genau der bisherige Trainer, also weiter mit den 637 eingemischten, geeichten
+  Lichess-Aufgaben; der Hinweis darunter sagt das ehrlich. Der Gegnerzug wird nach 0,7 s
+  vorgespielt (Zuganimation des Brettes), bis dahin ist das Brett gesperrt.
+- Wiederholung ohne neues Speicherformat: Kennungen `lichess:<PuzzleId>`, Karten also
+  `taktik:lichess:<PuzzleId>`. Geprüft: Ältere App-Versionen lesen jede Karte mit gültigem
+  Kasten und Datum (`kartenAus`), der Taktiktrainer filtert fällige Kennungen gegen seine
+  Aufgaben; eine unbekannte Kennung wird also nur übergangen, nichts stürzt ab. Einzige
+  Folge in alten Versionen: Die Übersicht „fällig“ zählt sie mit.
+- Durchgänge der Zusatzrunden zählen beim Taktiktrainer mit (gleiche Kennung „taktik“).
+
+## 30.10.2026 – Mehr Meisterpartien für „Zug erraten“ (Opus, Pakete 6 und 7)
+
+- Wunsch des Autors: mehr Meisterpartien zum Raten als die aus Kapitel 11, nur solche, die man
+  benutzen darf. Freigegeben: (6) etwa 50 berühmte Klassiker, (7) Partien aus den
+  Lichess-Übertragungen.
+- Eine Datei `app/public/daten/zusatzpartien.json` für beide Sprachen (Texte je Sprache), erzeugt
+  von `pipeline/zusatzpartien.py`; je Partie `quelle` (Adressen) und `lizenz`. Der Service Worker
+  nimmt sie wie alle JSON-Dateien in den Offline-Speicher (globPatterns), geladen wird sie erst bei
+  Wahl einer Zusatzquelle (`ladeZusatzpartien`). Kein neues Speicherfeld: Der Verlauf je Partie
+  nutzt wie bisher den Titel als Kennung (`zugErraten`), die Titel sind eindeutig (Test).
+- Klassiker: von Hand gepflegt in `inhalte/zusatzpartien/klassiker.json`. Partiezüge sind
+  Tatsachen; jede Partie mit chessops/python-chess auf Legalität geprüft und gegen zwei
+  unabhängige öffentliche Quellen (Ergebnis, Zugzahl, Schlussstellung), beide Adressen stehen an
+  der Partie. Kurztexte selbst geschrieben, keine fremden Kommentare. Die elf Meisterpartien aus
+  Kapitel 11 sind ausgeschlossen (Test: kein gleicher Anfang von 30 Halbzügen).
+- Turnierpartien: Monatsdateien August und September 2026 der Lichess-Übertragungsdatenbank
+  (CC BY-SA 4.0), nur lokal. Auswahl: klassisch (Uhr nach dem ersten Zug mindestens 50 Minuten,
+  sonst TimeControl; Engine-, Schnell- und Blitzturniere über den Namen ausgeschlossen), beide
+  Spieler ab 2500, entschieden, 30 bis 160 Halbzüge; stärkste Paarungen zuerst, je Eröffnung des
+  Buches (Familien mit Buchabschnitt aus `eroeffnungsbaender.json`) höchstens fünf, je Spieler
+  höchstens zwei, insgesamt 60. Eröffnungsnamen aus der Lichess-Liste der App. Namensnennung
+  „Lichess-Übertragungen, CC BY-SA 4.0“ an jeder Partie und auf der Lizenzseite; die
+  ShareAlike-Pflicht betrifft nur diese Daten (die Datei steht damit selbst unter CC BY-SA 4.0).
+- Oberfläche: Quelle als Chips „Aus dem Buch“ (Vorgabe) | „Berühmte Partien“ | „Aktuelle
+  Turniere“ (`Zugerratenwahl.tsx`); Zusatzpartien tragen die Karte „Zusatzinhalt (nicht aus dem
+  Buch)“ mit Kurztext, Quelle und Lizenz (`Zusatzkarte.tsx`), beim Raten zugeklappt über dem
+  Brett. Raten, Vergleich und Verlauf unverändert. Die gewählte Quelle bleibt beim Zurückkehren
+  zur Auswahl stehen, aber nicht über einen Neustart (kein Merker nötig).
+- Bestehende Texte (Ablauf des Trainers, Tour) nennen weiter Kapitel 11; sie bleiben unverändert,
+  weil die Buchpartien die Vorgabe sind (Regel: bestehende Schlüssel nicht ändern).
+
+## 30.10.2026 – Webverweise der App geprüft (Opus, Paket Webverweise)
+
+- Wunsch des Autors (Ideensammlung 26.10.2026): Verweise der Trainingsseiten auf Webinhalte
+  prüfen und Einbaubares in die App holen.
+- Bestand: 925 Adressen. 876 davon sind Lichess-Partien als Herkunft der Trainer-Aufgaben (nicht
+  angezeigt). Die Trainingsseiten haben 28 Ziele, die App-Texte nur Quellenangaben ohne
+  „https://“, die Buchdaten gar keine. Tot ist nichts, umgeleitet wird nur harmlos (www., Sprache,
+  Anmeldung).
+- Lizenzen mit Fundstelle: Lichess-Datenbank und Puzzles CC0, Übertragungen CC BY-SA 4.0 (beides
+  database.lichess.org), lila AGPL-3.0 (README von lichess-org/lila). Practice und Studien haben
+  keine ausdrückliche Lizenz und werden deshalb nur verlinkt.
+- Eingebaut: In `inhalte/de/werkzeuglinks.json` hat ein Werkzeug optional das Feld `app` (Kennung
+  eines Trainers). Die Trainingsseiten zeigen dann „In der App: …“ mit Sprung
+  `/app/#trainer-<kennung>`, und die App öffnet den Trainer im Bereich Training. Das gilt für drei
+  Fälle (Koordinaten, Aufgabenthemen → Taktik, Practice → Endspiel). Die Übungstexte bleiben
+  unverändert (Regel 1).
+- Linkprüfung (`pipeline/wartung/links.py`): Sie prüft jetzt auch nackte GitHub-Adressen der
+  Lizenzseite. Eine Weiterleitung auf eine fremde Domain (ohne „www.“ und Port) wird gelb.
+  Partielinks der Trainerdaten bleiben aus der wöchentlichen Prüfung heraus (zu viele Abrufe).
+- Nicht gemacht: Adressen der Trainingsseiten bleiben trotz harmloser Umleitungen wie im Buch.
+  Ein Tablebase-Knopf mit Netz bleibt Empfehlung (Q6-5), weil er die Datenschutzerklärung
+  berührt.
+
 ## 30.10.2026 – Prüfstand des Autors, Entscheidungen 1 bis 13 (Opus, Version 0.3.13)
 
 - **Prüfstand vom 30.10.2026:** 315 Punkte „ok“ und aus `AUFGABEN_AUTOR.md` gelöscht:

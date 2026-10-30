@@ -8,6 +8,7 @@
  * Lichess-Monat (CC0). Die Wahl ist dieselbe wie in der Liste „Aus der Praxis“ („praxis:Name“,
  * spiel/partie.ts), es entsteht also kein neues Speicherformat. Seit 0.3.11 (Stufe 3) unter
  * jeder Eröffnung der Variantenbaum (Variantenbaum.tsx) und unten die Gambits (Gambitliste.tsx).
+ * Seit Paket 9 auch im Gegnereditor mit Mehrfachauswahl (feste Eröffnungen eines eigenen Bots).
  * Abhängigkeiten: spiel/eroeffnungsbaender.ts, daten/laden.ts, useDaten, i18n.
  */
 import { useState } from "react";
@@ -15,6 +16,7 @@ import { ladeEroeffnungsbaender } from "../../../daten/laden";
 import { sprache, t } from "../../../i18n/sprache";
 import {
   auswahlNachStaerke,
+  type Bandfamilie,
   type Eroeffnungsbaender,
   type Eroeffnungsseite,
   type Staerkeeintrag,
@@ -23,6 +25,16 @@ import { PRAXIS_VORSILBE } from "../../../spiel/partie";
 import { useDaten } from "../bausteine/useDaten";
 import { Gambitliste } from "./Gambitliste";
 import { Variantenbaum } from "./Variantenbaum";
+
+/**
+ * Wie gewählt wird: `ist` sagt, ob ein Wert („praxis:Name“) gewählt ist, `beiWahl` wählt ihn (im
+ * Gegnereditor: schaltet ihn um); `beiSchnellwahl` nur bei Mehrfachauswahl (Variantenbaum).
+ */
+export interface Staerkewahlart {
+  readonly ist: (wert: string) => boolean;
+  readonly beiWahl: (wert: string) => void;
+  readonly beiSchnellwahl?: (familie: Bandfamilie, anzahl: number | null) => void;
+}
 
 /** Vorgabe der Bänder: 1000 bis 1400, die Leser des Buches (Einsteiger bis Verein). */
 const VORGABE_VON = 1000;
@@ -73,26 +85,25 @@ function Bandfeld({
 function Zeile({
   daten,
   eintrag,
-  gewaehlt,
-  beiWahl,
-  aktuell,
-  beiAuswahl,
+  wahl,
 }: {
   daten: Eroeffnungsbaender;
   eintrag: Staerkeeintrag;
-  gewaehlt: boolean;
-  beiWahl: () => void;
-  /** Die gerade gewählte Eröffnung und die Wahl einer Variante (Variantenbaum). */
-  aktuell: string | null;
-  beiAuswahl: (eroeffnung: string) => void;
+  wahl: Staerkewahlart;
 }) {
   const { familie, band } = eintrag;
+  const wert = `${PRAXIS_VORSILBE}${familie.name}`;
   const anteil = (familie.anteil[band] ?? 0).toLocaleString(sprache(), {
     maximumFractionDigits: STELLEN,
   });
   return (
     <li>
-      <button type="button" className="staerkewahl-zeile" aria-pressed={gewaehlt} onClick={beiWahl}>
+      <button
+        type="button"
+        className="staerkewahl-zeile"
+        aria-pressed={wahl.ist(wert)}
+        onClick={() => wahl.beiWahl(wert)}
+      >
         <span className="staerkewahl-name">
           {sprache() === "de" ? familie.nameDe : familie.name}
         </span>
@@ -108,7 +119,13 @@ function Zeile({
           {t("spielen.staerkewahl.anteil", { anteil, band: bandname(daten, band) })}
         </span>
       </button>
-      <Variantenbaum daten={daten} familie={familie} gewaehlt={aktuell} beiWahl={beiAuswahl} />
+      <Variantenbaum
+        daten={daten}
+        familie={familie}
+        ist={wahl.ist}
+        beiWahl={wahl.beiWahl}
+        {...(wahl.beiSchnellwahl ? { beiSchnellwahl: wahl.beiSchnellwahl } : {})}
+      />
     </li>
   );
 }
@@ -119,15 +136,13 @@ function Seite({
   seite,
   von,
   bis,
-  gewaehlt,
-  beiWahl,
+  wahl,
 }: {
   daten: Eroeffnungsbaender;
   seite: Eroeffnungsseite;
   von: number;
   bis: number;
-  gewaehlt: string | null;
-  beiWahl: (eroeffnung: string) => void;
+  wahl: Staerkewahlart;
 }) {
   const liste = auswahlNachStaerke(daten, seite, von, bis);
   return (
@@ -135,28 +150,24 @@ function Seite({
       <h4>{t(seite === "w" ? "spielen.staerkewahl.weiss" : "spielen.staerkewahl.schwarz")}</h4>
       <ul className="staerkewahl-liste">
         {liste.map((e) => (
-          <Zeile
-            key={e.familie.name}
-            daten={daten}
-            eintrag={e}
-            gewaehlt={gewaehlt === `${PRAXIS_VORSILBE}${e.familie.name}`}
-            beiWahl={() => beiWahl(`${PRAXIS_VORSILBE}${e.familie.name}`)}
-            aktuell={gewaehlt}
-            beiAuswahl={beiWahl}
-          />
+          <Zeile key={e.familie.name} daten={daten} eintrag={e} wahl={wahl} />
         ))}
       </ul>
     </div>
   );
 }
 
-/** Die Klappe mit Bändern und den beiden Listen. */
+/**
+ * Die Klappe mit Bändern und den beiden Listen. Seit Paket 9 mit `wahl` statt eines einzelnen
+ * Wertes: Im Spielfenster ist genau ein Wert gewählt, im Gegnereditor mehrere (Haken).
+ * `praefix` hält die Kennungen der Bandfelder eindeutig, wenn zwei Klappen auf dem Bildschirm sind.
+ */
 export function Staerkewahl({
-  gewaehlt,
-  beiWahl,
+  wahl,
+  praefix = "staerke",
 }: {
-  gewaehlt: string | null;
-  beiWahl: (eroeffnung: string) => void;
+  wahl: Staerkewahlart;
+  praefix?: string;
 }) {
   const daten = useDaten(ladeEroeffnungsbaender, "eroeffnungsbaender");
   const [von, setzeVon] = useState<number | null>(null);
@@ -172,37 +183,29 @@ export function Staerkewahl({
       <div className="staerkewahl-baender">
         <Bandfeld
           daten={d}
-          kennung="staerke-von"
+          kennung={`${praefix}-von`}
           text={t("spielen.staerkewahl.von")}
           wert={a}
           beiWahl={setzeVon}
         />
         <Bandfeld
           daten={d}
-          kennung="staerke-bis"
+          kennung={`${praefix}-bis`}
           text={t("spielen.staerkewahl.bis")}
           wert={b}
           beiWahl={setzeBis}
         />
       </div>
       {(["w", "s"] as const).map((seite) => (
-        <Seite
-          key={seite}
-          daten={d}
-          seite={seite}
-          von={a}
-          bis={b}
-          gewaehlt={gewaehlt}
-          beiWahl={beiWahl}
-        />
+        <Seite key={seite} daten={d} seite={seite} von={a} bis={b} wahl={wahl} />
       ))}
       <Gambitliste
         daten={d}
         von={a}
         bis={b}
         bandname={(i) => bandname(d, i)}
-        gewaehlt={gewaehlt}
-        beiWahl={beiWahl}
+        ist={wahl.ist}
+        beiWahl={wahl.beiWahl}
       />
       <p className="hinweis">{t("spielen.staerkewahl.quelle")}</p>
     </details>

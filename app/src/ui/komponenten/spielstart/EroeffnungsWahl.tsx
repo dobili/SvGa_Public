@@ -129,7 +129,7 @@ export function EroeffnungsWahl({
         <p className="hinweis">{t("spielen.eroeffnungZuege", { zuege: zugfolge(linie) })}</p>
       )}
       <p className="hinweis">{t(hinweis)}</p>
-      <Staerkewahl gewaehlt={gewaehlt} beiWahl={beiWahl} />
+      <Staerkewahl wahl={{ ist: (wert) => wert === gewaehlt, beiWahl }} />
     </section>
   );
 }

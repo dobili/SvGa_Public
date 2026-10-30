@@ -17,7 +17,13 @@ import {
   eroeffnungsbaenderAus,
   type Eroeffnungsbaender,
 } from "../spiel/eroeffnungsbaender";
+import { zusatzpartienAus, type Zusatzpartie } from "../training/zusatzpartien";
 import type { Glossar } from "./generiert/glossar";
+import {
+  alsZusatzaufgabe,
+  zusatzeintraegeAus,
+  type Zusatzaufgabe,
+} from "../training/zusatzaufgaben";
 import type { Kapitel } from "./generiert/kapitel";
 import type { Nachschlagen } from "./generiert/nachschlagen";
 
@@ -205,6 +211,48 @@ export function ladePraxisbuch(): Promise<Praxisbuch> {
     });
   }
   return praxisbuch;
+}
+
+let zusatzpartien: Promise<readonly Zusatzpartie[]> | null = null;
+
+/**
+ * Lädt die Zusatzpartien für „Zug erraten“ (training/zusatzpartien.ts): berühmte Klassiker und
+ * aktuelle Turnierpartien, nicht aus dem Buch, eine Datei für beide Sprachen (Texte je Sprache).
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladeZusatzpartien(): Promise<readonly Zusatzpartie[]> {
+  if (!zusatzpartien) {
+    zusatzpartien = ladeJson<unknown>("/daten/zusatzpartien.json").then((roh) => {
+      const partien = zusatzpartienAus(roh);
+      if (!partien) throw new Error("/daten/zusatzpartien.json: unbekanntes Format");
+      return partien;
+    });
+    zusatzpartien.catch(() => {
+      zusatzpartien = null;
+    });
+  }
+  return zusatzpartien;
+}
+
+let zusatzaufgaben: Promise<Zusatzaufgabe[]> | null = null;
+
+/**
+ * Lädt die Zusatzaufgaben des Taktiktrainers (Lichess, nicht aus dem Buch, training/
+ * zusatzaufgaben.ts), unabhängig von der Sprache. Aufgaben mit unspielbaren Zügen fallen weg.
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladeZusatzaufgaben(): Promise<Zusatzaufgabe[]> {
+  if (!zusatzaufgaben) {
+    zusatzaufgaben = ladeJson<unknown>("/daten/zusatzaufgaben.json").then((roh) => {
+      const eintraege = zusatzeintraegeAus(roh);
+      if (!eintraege) throw new Error("/daten/zusatzaufgaben.json: unbekanntes Format");
+      return eintraege.flatMap((e) => alsZusatzaufgabe(e) ?? []);
+    });
+    zusatzaufgaben.catch(() => {
+      zusatzaufgaben = null;
+    });
+  }
+  return zusatzaufgaben;
 }
 
 /**

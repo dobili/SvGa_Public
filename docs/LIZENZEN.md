@@ -9,7 +9,7 @@
 | chessops (Lichess, Niklas Fiekas), mit @badrap/result (MIT)                                                            | GNU GPL 3.0                         | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Figurenschrift SkakNew-Diagram (Ulrich Dirr)                                                                           | LPPL 1.2 oder neuer                 | `app/public/lizenzen/lppl-1.3c.txt`                           |
 | Figurensätze (9 Sätze, `app/public/figuren/`, Quelle `pipeline/figuren/saetze/`, seit 0.2.82)                         | je Satz: GPLv2+, GPLv3+, Apache 2.0, MIT, CC0 | `pipeline/figuren/saetze/LIZENZEN.md`; `app/public/lizenzen/` |
-| Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, seit P4 `endspiel.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei) | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
+| Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, seit P4 `endspiel.json`, Herkunft `lichess`; seit Paket 8 `app/public/daten/zusatzaufgaben.json`) | CC0 1.0 (gemeinfrei) | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
 | Source Sans 3, Source Serif 4 (Adobe)                                                                                  | SIL Open Font License 1.1           | `app/public/lizenzen/ofl-*.txt`                               |
 | Holzbilder der Bretts „Ahorn & Nussbaum“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft unter Hinweise)                  |
 | Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (Lichess, `app/public/bretter/`, seit 0.2.84) | GNU AGPL 3.0 oder neuer | `app/public/lizenzen/agpl-3.0.txt`; `pipeline/bretter/LIZENZEN.md` |
@@ -59,6 +59,13 @@
   released under the Creative Commons CC0 license“). In den Daten stehen je Aufgabe Stellung,
   Lösung, Kennung, Wertung und die Adresse der Partie; die Datenbank selbst (300 MB) bleibt
   lokal. Einzelheiten in `docs/TRAINERDATEN.md`.
+- **Zusatzaufgaben im Taktiktrainer (Paket 8, 30.10.2026):** 1000 Aufgaben derselben
+  Lichess-Puzzle-Datenbank in `app/public/daten/zusatzaufgaben.json` (Kennung, Stellung, Züge,
+  Wertung, ohne Partie-Adresse), CC0 1.0 (geprüft 30.10.2026 auf https://database.lichess.org/,
+  Abschnitt Puzzles: „Database exports are released under the Creative Commons CC0 license.“).
+  Die englischen Themennamen von Lichess (`translation/source/puzzleTheme.xml`, CC0) dienen nur
+  der Zuordnung; die deutschen Namen sind eigene Begriffe aus dem Glossar des Buches, die
+  deutschen Übersetzungen von Lichess (AGPL) werden nicht verwendet.
 - **App-Symbol (seit 0.2.106):** `app/public/symbole/*.png` sind Ausschnitte des Buchcovers (alle
   Rechte vorbehalten wie das Cover), erzeugt mit `app/skripte/erzeuge-appsymbol.mjs`; nur das
   Symbol im Browser-Tab (`symbol.svg`) ist der Springer aus SkakNew.

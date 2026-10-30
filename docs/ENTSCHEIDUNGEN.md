@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Zusatzaufgaben von Lichess im Taktiktrainer (Opus, Paket 8)
+
+- Freigabe des Autors (30.10.2026): etwa 1000 Lichess-Aufgaben je Thema des Buches als
+  „Zusatzaufgaben (nicht aus dem Buch)“ im Taktiktrainer, offline, nach Wertung gestaffelt.
+- Daten: `pipeline/trainer/zusatzaufgaben.py` wählt aus `lichess_db_puzzle.csv.zst` (CC0, lokal,
+  nicht im Repository) 1000 Aufgaben nach `app/public/daten/zusatzaufgaben.json` (175 KB, liegt
+  wie `praxisbuch.json` im Vorabspeicher des Service Workers). Je Thema 50, je Stufe 10 (Stufen
+  nach Wertung wie im Taktiktrainer, 600 bis 2200). Bedingungen: Abweichung höchstens 80, ab 300
+  Partien, Beliebtheit ab 80, höchstens vier eigene Züge; Rangfolge nach Beliebtheit, dann
+  Partien. Aufgaben, die Taktik-, Fallen- oder Endspieltrainer schon haben, fallen weg. Keine
+  Partie-Adresse. Format wie bei Lichess (Stellung vor dem Gegnerzug, UCI); die App rechnet
+  SAN und Stellung selbst (`training/zusatzaufgaben.ts`).
+- Themen (20): die elf Grundmotive aus Kapitel 7 mit Lichess-Thema (ohne Rettung), dazu
+  Räumung (zählt zur Hinlenkung), Ablenkung (zählt zur Überlastung, wie die Gruppen im Buch),
+  Hängende Figur (Kapitel 1), Wegversperrung und Stiller Zug (Kapitel 10), Zugzwang
+  (Kapitel 8), Grundreihenmatt, Mattbilder, Matt in 1 und Matt in 2. Motivthemen nur mit genau
+  einem Motiv unter den Lichess-Themen. Nicht dabei: `xRayAttack`, weil „Röntgen“ im Buch die
+  Schach-Röntgen-Regel ist; Angriffsthemen ohne Buchbegriff. Deutsche Namen eigene, aus dem
+  Glossar (keine Übersetzungen von Lichess, die stehen unter AGPL).
+- Oberfläche: Wahl „Aus dem Buch“ (Vorgabe) | „Zusatzaufgaben (Lichess)“. „Aus dem Buch“ bleibt
+  genau der bisherige Trainer, also weiter mit den 637 eingemischten, geeichten
+  Lichess-Aufgaben; der Hinweis darunter sagt das ehrlich. Der Gegnerzug wird nach 0,7 s
+  vorgespielt (Zuganimation des Brettes), bis dahin ist das Brett gesperrt.
+- Wiederholung ohne neues Speicherformat: Kennungen `lichess:<PuzzleId>`, Karten also
+  `taktik:lichess:<PuzzleId>`. Geprüft: Ältere App-Versionen lesen jede Karte mit gültigem
+  Kasten und Datum (`kartenAus`), der Taktiktrainer filtert fällige Kennungen gegen seine
+  Aufgaben; eine unbekannte Kennung wird also nur übergangen, nichts stürzt ab. Einzige
+  Folge in alten Versionen: Die Übersicht „fällig“ zählt sie mit.
+- Durchgänge der Zusatzrunden zählen beim Taktiktrainer mit (gleiche Kennung „taktik“).
+
 ## 30.10.2026 – Wiki im Dashboard (Opus, Version 0.3.12, Paket D)
 
 - Wunsch des Autors (Ideensammlung 26.10.2026): Wiki im Dashboard mit Code-Teil und

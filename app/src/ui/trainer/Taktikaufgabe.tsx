@@ -6,6 +6,8 @@
  * Werkzeug Warnsignale aus Kapitel 7 aus der Stellung. Richtig zählt eine Aufgabe, die ohne
  * falschen Zug und ohne Hilfe gelöst ist; das Benennen des Motivs zeigt nur, ob es stimmte. Nach
  * einem falschen Zug zeigen useFalschzug und Falschzugmeldung den roten Pfeil und den Verlust laut Engine.
+ * Zusatzaufgaben (Lichess, nicht aus dem Buch, seit Paket 8) bringen ihren Gegnerzug mit: Das
+ * Brett zeigt erst die Stellung davor und spielt ihn nach kurzer Pause vor (useVorzug.ts).
  * Abhängigkeiten: training/taktiktrainer.ts, analyse/k7-warnsignale.ts, Brettbereich.
  */
 import { useId, useMemo, useState } from "react";
@@ -27,18 +29,27 @@ import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
+import { useVorzug } from "./useVorzug";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
 
+/** Was eine Zusatzaufgabe mitbringt: Name ihres Themas und den Gegnerzug, der vorgespielt wird. */
+export interface Zusatzanzeige {
+  readonly themenname: string;
+  readonly vorher: { readonly fen: string; readonly zug: string };
+}
+
 /** Woher die Aufgabe stammt: Abbildung des Buches oder Lichess-Datenbank. */
-function Herkunft({ aufgabe }: { aufgabe: Aufgabe }) {
+function Herkunft({ aufgabe, zusatz }: { aufgabe: Aufgabe; zusatz: boolean }) {
   const h = aufgabe.herkunft;
   return (
-    <p className="hinweis">
+    <p className="hinweis" data-testid={zusatz ? "zusatz-herkunft" : undefined}>
       {h.quelle === "buch"
         ? t("taktiktrainer.ausBuch", { nummer: h.abbildung })
-        : t("taktiktrainer.ausLichess", { wertung: h.wertung })}
+        : t(zusatz ? "zusatzaufgaben.herkunft" : "taktiktrainer.ausLichess", {
+            wertung: h.wertung,
+          })}
       {" · "}
       {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
     </p>
@@ -48,11 +59,13 @@ function Herkunft({ aufgabe }: { aufgabe: Aufgabe }) {
 /** Die Hilfen in drei Stufen, darunter „Lösung zeigen“. */
 function Hilfen({
   aufgabe,
+  themenname,
   stufe,
   weiter,
   zeigeLoesung,
 }: {
   aufgabe: Aufgabe;
+  themenname: string | null;
   stufe: number;
   weiter: () => void;
   zeigeLoesung: () => void;
@@ -62,11 +75,13 @@ function Hilfen({
     const eigen = aufgabe.amZug === "w" ? "white" : "black";
     return gelesen.ok ? warnsignaleSieben(gelesen.wert, eigen).fazit : "";
   }, [aufgabe]);
-  const motiv = aufgabe.motiv
-    ? t(`taktiktrainer.motiv.${aufgabe.motiv}`)
-    : aufgabe.mattbild
-      ? t(`mattbild.${aufgabe.mattbild}`)
-      : t("taktiktrainer.ohneMotiv");
+  const motiv = themenname
+    ? themenname
+    : aufgabe.motiv
+      ? t(`taktiktrainer.motiv.${aufgabe.motiv}`)
+      : aufgabe.mattbild
+        ? t(`mattbild.${aufgabe.mattbild}`)
+        : t("taktiktrainer.ohneMotiv");
   return (
     <div className="uebung-hilfe">
       {stufe >= 1 && <p>{t("taktiktrainer.hilfeWarnsignal", { text: warnsignal })}</p>}
@@ -130,15 +145,18 @@ function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
  *
  * `motivAbfragen`: false, wenn der Leser nur ein Motiv übt; die Frage „Welches Motiv war es?“
  * hätte dann immer dieselbe Antwort (Wunsch des Autors R30, 23.10.2026).
+ * `zusatz`: nur bei Zusatzaufgaben; der Gegnerzug wird vorgespielt, bevor der Leser zieht.
  */
 export function Taktikaufgabe({
   aufgabe,
   runde,
   motivAbfragen = true,
+  zusatz = null,
 }: {
   aufgabe: Aufgabe;
   runde: Runde;
   motivAbfragen?: boolean;
+  zusatz?: Zusatzanzeige | null;
 }) {
   useSammelstellung(aufgabe.fen);
   const zugaufgabe = useMemo(() => alsZugaufgabe(aufgabe), [aufgabe]);
@@ -147,10 +165,11 @@ export function Taktikaufgabe({
   const [fehler, setzeFehler] = useState(false);
   const [gezeigt, setzeGezeigt] = useState(false);
   const falschzug = useFalschzug();
+  const vorgespielt = useVorzug(zusatz !== null);
   const fen = stellungNach(aufgabe.fen, zuege);
   const fertig = runde.ergebnis !== null;
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
-    if (!zugaufgabe || fertig) return "ungueltig" as const;
+    if (!zugaufgabe || fertig || !vorgespielt) return "ungueltig" as const;
     const versuch = spieleZug(fen, von, nach, umwandlung);
     if (versuch.art !== "gespielt") return versuch.art;
     const pruefung = pruefeTaktikzug(zugaufgabe, zuege, versuch.san);
@@ -170,8 +189,13 @@ export function Taktikaufgabe({
     setzeZuege(zugaufgabe?.linien[0] ?? []);
     antworteMitKarte(runde, "taktik", aufgabe.id, false);
   };
-  const bedienung = useBrettbedienung({ fen, spiele }, fertig ? null : "ziehen", KEINE_WAHL);
-  const stellung = useMemo(() => stellungAusFen(fen), [fen]);
+  const bedienung = useBrettbedienung(
+    { fen, spiele },
+    fertig || !vorgespielt ? null : "ziehen",
+    KEINE_WAHL,
+  );
+  const brettFen = vorgespielt || !zusatz ? fen : zusatz.vorher.fen;
+  const stellung = useMemo(() => stellungAusFen(brettFen), [brettFen]);
   const markierungen: Markierung[] = [
     ...(stufe >= HILFEN && !fertig
       ? [{ typ: "feld" as const, farbe: "gold" as const, feld: aufgabe.schluesselfeld }]
@@ -181,7 +205,9 @@ export function Taktikaufgabe({
   const letzter =
     zuege.length > 0
       ? zugFelder(stellungNach(aufgabe.fen, zuege.slice(0, -1)), zuege[zuege.length - 1] ?? "")
-      : null;
+      : zusatz && vorgespielt
+        ? zugFelder(zusatz.vorher.fen, zusatz.vorher.zug)
+        : null;
   return (
     <>
       <p className="trainer-auftrag">
@@ -199,7 +225,7 @@ export function Taktikaufgabe({
           anfangsGedreht={aufgabe.amZug === "b"}
         />
       )}
-      <Herkunft aufgabe={aufgabe} />
+      <Herkunft aufgabe={aufgabe} zusatz={zusatz !== null} />
       {!fertig && fehler && (
         <Antwortmeldung richtig={false}>{t("taktiktrainer.falsch")}</Antwortmeldung>
       )}
@@ -207,6 +233,7 @@ export function Taktikaufgabe({
       {!fertig && (
         <Hilfen
           aufgabe={aufgabe}
+          themenname={zusatz?.themenname ?? null}
           stufe={stufe}
           weiter={() => setzeStufe(stufe + 1)}
           zeigeLoesung={zeigeLoesung}

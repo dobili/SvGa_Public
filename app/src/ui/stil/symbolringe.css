@@ -124,3 +124,12 @@
   height: 120px;
   margin: 0 auto;
 }
+
+/* Liste „Orden testen“ auf der Aufgabenseite. */
+.ordenprobe-liste {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+}

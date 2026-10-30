@@ -19,6 +19,7 @@
 import { useEffect, useState } from "react";
 import { liesMerker } from "../../../app/merker";
 import { t } from "../../../i18n/sprache";
+import { OrdenHintergrund } from "../fortschritt/OrdenHintergrund";
 import { RUECKKEHR_MS, rueckkehrFaellig } from "./startanimationRegel";
 
 /** Kantenlänge des Startbilds in Bildpunkten (skripte/erzeuge-startbild.mjs). */
@@ -104,6 +105,7 @@ export function Startanimation() {
       aria-label={t("startanimation.ueberspringen")}
       onClick={() => setzeLauf(null)}
     >
+      <OrdenHintergrund />
       <span className="startanimation-schein" aria-hidden="true">
         <img
           className="startanimation-springer"

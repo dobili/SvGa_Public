@@ -3696,5 +3696,10 @@
   "spielen.partieZugEins": "1 move",
   "ringfeier.titel": "Ring complete, congratulations!",
   "ringfeier.text": "{name}: all {gesamt} done. You earn this medal; from now on it shows in your profile and in the start animation.",
-  "ringfeier.weiter": "Continue"
+  "ringfeier.weiter": "Continue",
+  "ordenprobe.titel": "Test medals (just for you)",
+  "ordenprobe.erklaerung": "A tap sets a ring to 100% as a test: congratulations, sound and medal appear as if you had just completed it. Your real progress does not change. “End test” resets everything; “Restart” shows the start animation with the medals.",
+  "ordenprobe.voll": "{name}: set to 100%",
+  "ordenprobe.beenden": "End test",
+  "ordenprobe.neustart": "Restart"
 }

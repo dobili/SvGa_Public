@@ -1,3 +1,5 @@
+Stand: 30.10.2026 · **Version 0.3.7** (Zweig `orden`, Opus): Paket A, Orden für volle Ringe mit neuen Ringen (Übungen, Teile, Bot-Bündel), Gratulation mit Orden, Testwerkzeug auf der Aufgabenseite, Orden in der Startanimation. **Nächster Schritt:** Paket D, E, F, G, H aus der Übergabe (Wiki im Dashboard, Beschreibung eigener Bots, Bilder im Nachschlagen, Meisterpartien, Porträt-Editor), dann Eröffnungspaket und Recherche.
+
 Stand: 30.10.2026 · **Version 0.3.6** (Zweig `ein-knopf`, Opus): Paket B, ein Knopf „Merken“ im Rückblick mit Vorschlägen und Aufleuchten. **Nächster Schritt:** Paket A (Admin-Testwerkzeug, Ringe, Orden, Startanimation) – zuerst prüfen, was an Ringen und Feiern schon da ist; Datenformat der Fortschritte nur mit Rückfrage ändern.
 
 Stand: 30.10.2026 · **Version 0.3.5** (Zweig `falschzug`, Opus): Vergleich nach falschem Zug in Taktiktrainer und Buchübungen (`ui/trainer/useFalschzug.ts`, `Falschzugmeldung.tsx`). **Nächster Schritt:** Paket B (ein Knopf für Lernsammlung und Fehlerdatenbank im Rückblick, Vorschläge, Aufleuchten), dann A (Orden).

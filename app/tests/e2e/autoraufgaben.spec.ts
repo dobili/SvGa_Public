@@ -93,3 +93,41 @@ test("„Zurück zu den Aufgaben“ führt zum zuletzt angetippten Punkt, nicht 
   await expect(page.getByTestId(`aufgabe-${id}`)).toBeInViewport();
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
 });
+
+test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Startanimation", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneUeberAdresse(page);
+  const probe = page.getByTestId("orden-probe");
+  await probe.locator("summary").click();
+  await probe
+    .getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true })
+    .click();
+  // Die Gratulation kommt sofort, mit dem Orden des Rings.
+  const feier = page.getByTestId("ringfeier");
+  await expect(feier.getByRole("img", { name: "Orden: Übungen gelöst" })).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/orden-feier.png" });
+  await feier.getByRole("button", { name: "Weiter" }).click();
+  await expect(
+    probe.getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true }),
+  ).toBeDisabled();
+  // Die Startanimation zeigt den Orden golden, die übrigen als Silhouette.
+  // Die Hilfe merkt sich vor jedem Laden, dass die Animation schon lief; das hier hebt es auf.
+  await page.addInitScript(() => window.sessionStorage.removeItem("svga.startanimation.sitzung"));
+  await page.reload();
+  const orden = page.getByTestId("startanimation-orden");
+  await expect(orden.locator(".startorden")).toHaveCount(18);
+  await expect(orden.locator(".startorden.verdient")).toHaveCount(1);
+  await page.screenshot({ path: "test-results/bilder/orden-startanimation.png" });
+  await page.getByTestId("startanimation").click();
+  // Probe beenden: der Ring zählt wieder echt (Aufgabenseite neu öffnen, die Animation wegtippen).
+  await page.goto("/app/#aufgaben");
+  await page.reload();
+  await page.getByTestId("startanimation").click();
+  await probe.locator("summary").click();
+  await probe.getByRole("button", { name: "Probe beenden" }).click();
+  await expect(
+    probe.getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true }),
+  ).toBeEnabled();
+});

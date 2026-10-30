@@ -3696,5 +3696,10 @@
   "spielen.partieZugEins": "1 Zug",
   "ringfeier.titel": "Ring voll, herzlichen Glückwunsch!",
   "ringfeier.text": "{name}: alle {gesamt} geschafft. Dafür bekommst du diesen Orden; er steht ab jetzt in deinem Profil und in der Startanimation.",
-  "ringfeier.weiter": "Weiter"
+  "ringfeier.weiter": "Weiter",
+  "ordenprobe.titel": "Orden testen (nur für dich)",
+  "ordenprobe.erklaerung": "Ein Tipp setzt einen Ring zur Probe auf 100 %: Dann kommen Gratulation, Ton und Orden, als hättest du ihn gerade geschafft. Deine echten Fortschritte ändern sich nicht. „Probe beenden“ stellt alles zurück; „Neu starten“ zeigt die Startanimation mit den Orden.",
+  "ordenprobe.voll": "{name}: auf 100 % setzen",
+  "ordenprobe.beenden": "Probe beenden",
+  "ordenprobe.neustart": "Neu starten"
 }

@@ -28,6 +28,7 @@ import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../../dat
 import { t } from "../../../i18n/sprache";
 import { erstmalsTrainiert, type Anteil } from "../../../speicher/fortschritt";
 import { useSpeicher } from "../../../speicher/speicher";
+import { useOrdenprobe } from "./ordenprobe";
 import type { Symbolringangabe } from "./Symbolringe";
 import { useDaten } from "../bausteine/useDaten";
 import {
@@ -121,6 +122,7 @@ export function useFortschrittsringe(): {
   const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
   const lernziele = useLernzielanteil();
   const botringe = useBotringe();
+  const probe = useOrdenprobe();
   if (index.art !== "fertig") return null;
   const alle = index.wert.kapitel.flatMap((kapitel) => kapitel.abbildungen);
   const abbildungen = {
@@ -164,7 +166,19 @@ export function useFortschrittsringe(): {
     anteil: teilanteil(kennung, index.wert.kapitel, fortschritt),
     testid: `ich-teil-${kennung}`,
   }));
-  return { index: index.wert, buchringe, teilringe, botringe };
+  // Zur Probe des Autors (Aufgabenseite) gelten geprobte Ringe als voll; echte Daten bleiben.
+  const geprobt = (ringe: Symbolringangabe[]) =>
+    ringe.map((r) =>
+      probe.has(r.testid)
+        ? { ...r, anteil: { erreicht: r.anteil.gesamt, gesamt: r.anteil.gesamt } }
+        : r,
+    );
+  return {
+    index: index.wert,
+    buchringe: geprobt(buchringe),
+    teilringe: geprobt(teilringe),
+    botringe: geprobt(botringe),
+  };
 }
 
 /** Merker der Ringe, deren Gratulation schon gezeigt wurde („ich-abbildungen,ich-bots-blitz“). */

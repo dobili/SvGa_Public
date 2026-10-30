@@ -14,7 +14,7 @@
  * 25.10.2026): oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
  * eine kleine Legende nennt die Zeichen. Spanne je Phase und Herleitung stehen hinter dem
  * Fragezeichen.
- * „Lichess | chess.com · FIDE“ schaltet alle Zahlen der Kacheln auf die umgerechnete Liste
+ * „Lichess | chess.com | FIDE“ schaltet alle Zahlen der Kacheln auf die umgerechnete Liste
  * (wertungsmassstab.ts), mit „≈“ und dem Namen der Liste (Wunsch des Autors, 26.10.2026).
  * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien,
  * verlaufDerZeitklasse), spiel/elomodell.ts, speicher/partien.ts, speicher/speicher.ts,
@@ -132,7 +132,7 @@ function Kachel({ stand, massstab }: { stand: Kachelstand; massstab: Wertungsmas
       <Zeichen className="staerkekachel-zeichen" size={KACHELZEICHEN} aria-hidden="true" />
       <span className="staerkekachel-zahl">{zahl ? zahl.zahl : "–"}</span>
       {(s || stand.wertung !== null) && (
-        <Listenname liste={massstab === "umgerechnet" ? zielname(stand.tempo) : null} />
+        <Listenname liste={massstab === "lichess" ? null : zielname(stand.tempo, massstab)} />
       )}
       <Kachelzeilen stand={stand} massstab={massstab} />
     </div>
@@ -154,9 +154,9 @@ function Kachelzeilen({ stand, massstab }: { stand: Kachelstand; massstab: Wertu
         {!s && t("spielstaerke.letzte.keine")}
         {s && spanne && t("spielstaerke.letzte.kachelSpanne", spanne)}
       </span>
-      {grenze !== null && (
+      {grenze !== null && massstab !== "lichess" && (
         <span className="staerkekachel-klein" data-testid="massstab-ausserhalb">
-          {ausserhalbText(stand.tempo, grenze)}
+          {ausserhalbText(stand.tempo, grenze, massstab)}
         </span>
       )}
       {wertung && (

@@ -9,6 +9,7 @@
  */
 import { useMemo, useState } from "react";
 import { zaehle } from "../../analyse/k1-zaehlen";
+import { figurenname } from "../../analyse/texte";
 import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { feldAusName, stellungAusFen } from "../../schach/stellung";
@@ -237,7 +238,31 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
             : undefined}
         </Antwortmeldung>
       )}
+      {beantwortet && <Motivhinweise aufgabe={aufgabe} />}
       {beantwortet && <Rechnung fen={aufgabe.fen} feld={aufgabe.feld} />}
+    </>
+  );
+}
+
+/** Nach der Antwort: die Motive der Aufgabe (Fesselung, Batterie), mit Buchbezug. */
+function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
+  const stellung = useMemo(() => stellungAusFen(aufgabe.fen), [aufgabe.fen]);
+  const namen = aufgabe.gefesselt.flatMap((feld) => {
+    const quadrat = feldAusName(feld);
+    if (quadrat === null || !stellung.ok) return [];
+    const figur = stellung.wert.brett.get(quadrat);
+    return figur ? [figurenname({ feld: quadrat, figur })] : [];
+  });
+  return (
+    <>
+      {namen.length > 0 && (
+        <p className="meldung" data-testid="zaehl-fesselung">
+          {t("zaehltrainer.fesselung", { figuren: namen.join(", ") })}
+        </p>
+      )}
+      {aufgabe.motive.includes("batterie") && (
+        <p className="hinweis">{t("zaehltrainer.batterie")}</p>
+      )}
     </>
   );
 }

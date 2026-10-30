@@ -82,10 +82,17 @@ function billigsterSchlaeger(
  * Warum: Nach jedem Schlag kann eine Figur dahinter frei werden (Batterie). Deshalb werden die
  * Angreifer nach jedem Schlag mit der neuen Belegung neu bestimmt.
  */
-function schlagfolge(brett: Board, ziel: Square, seite: Color, opfer: Role): Schlag[] {
+function schlagfolge(
+  brett: Board,
+  ziel: Square,
+  seite: Color,
+  opfer: Role,
+  gesperrt: SquareSet,
+): Schlag[] {
   const folge: Schlag[] = [];
   let belegung = brett.occupied;
-  let weg = SquareSet.empty();
+  // Gesperrte Figuren (gefesselt) schlagen nicht mit, verstellen aber weiter ihre Linie.
+  let weg = gesperrt;
   let amZug = seite;
   let aufDemFeld = opfer;
   for (;;) {
@@ -124,15 +131,22 @@ function gewinneJeStufe(folge: readonly Schlag[]): number[] {
  * Eingaben: Brett, Feld. Ausgabe: Abtausch, oder null bei einem leeren Feld.
  * Beispiel: Abb. 1.26, d4: Bilanz 0 („Drei gegen drei: Noch geht nichts“).
  * Abb. 1.28, d4: Schwarz gewinnt einen Bauern (Sxd4 Sxd4 Dxd4, Bilanz +1).
- * Sonderfälle: Fesselungen bleiben unberücksichtigt, wie bei der reinen Zählung im Buch.
+ * Sonderfälle: Fesselungen bleiben unberücksichtigt, wie bei der reinen Zählung im Buch; wer sie
+ * berücksichtigen will, gibt die gefesselten Figuren als `gesperrt` an (Zähltrainer, Kapitel 1:
+ * „Ein gefesselter … Verteidiger zählt weniger“, Abb. 1.12). Sie schlagen dann nicht mit,
+ * verstellen aber weiter ihre Linie.
  */
-export function abtausch(brett: Board, ziel: Square): Abtausch | null {
+export function abtausch(
+  brett: Board,
+  ziel: Square,
+  gesperrt: SquareSet = SquareSet.empty(),
+): Abtausch | null {
   const opfer = brett.get(ziel);
   if (!opfer) {
     return null;
   }
   const seite = gegner(opfer.color);
-  const folge = schlagfolge(brett, ziel, seite, opfer.role);
+  const folge = schlagfolge(brett, ziel, seite, opfer.role, gesperrt);
   const gewinne = gewinneJeStufe(folge);
   const bilanz = gewinne[0] ?? 0;
   return { seite, schlagfolge: folge, lohnendeSchlaege: lohnend(gewinne), bilanz };

@@ -1611,12 +1611,6 @@ umgesetzt; Widerspruch genügt.
       es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
       Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
       öffnet (beschlossen, siehe Entscheidungen).
-- [ ] Q1-4. **Porträt-Editor gegen fertige Porträts:** Es fehlt nichts. Alle 30 fertigen
-      Auswahlporträts und die der Bots sind aus denselben Teilen gebaut (Frisur, Haarfarbe,
-      Hautfarbe, Augen, Mund, Bart), und jeder Wert davon steht im Baukasten zur Auswahl; der
-      Baukasten hat zusätzlich Nase, Körper, Kleidung und mehr Farben und Formen. Nicht einzeln
-      geprüft habe ich Nase und Körper der fertigen Porträts: Sie kommen vom Zufall der
-      Bibliothek, und ob jeder dieser Werte im Baukasten steht, wäre noch zu vergleichen.
 - [ ] Q1-6. **Kürzere Trainingspläne:** Im Buch gibt es nur den 30-Minuten-Plan (Tag A
       Partietag 5 + 20 + 5 Minuten, Tag B Studientag 5 + 15 + 10 Minuten, Kapitel 12). Der
       Satz zu wenig Zeit lautet: „Hast du weniger Zeit, kürze zunächst das Themenstudium, nie

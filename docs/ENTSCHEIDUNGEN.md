@@ -4,6 +4,17 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Porträt-Baukasten deckt alle fertigen Porträts ab (Opus, Paket H)
+
+- Offener Rest aus Q1-4 (Ideensammlung): Nase und Körper der fertigen Porträts gegen den Baukasten
+  vergleichen. Ergebnis: keine Lücke. Die 30 Porträts zur Wahl und die Bots lassen Nase, Körper
+  und Kleidungsfarbe von DiceBear „Personas“ wählen (3 Nasen, 4 Körper, 7 Farben); alle stehen im
+  Baukasten, der dazu eigene Formen hat. Haut- und Haarfarben, Frisuren, Augen und Bärte ebenso.
+- Einziger Wert von Personas, der fehlt: der Mund „Schnuller“ (pacifier). Kein fertiges Porträt
+  nutzt ihn (Münder sind dort fest gewählt), deshalb bleibt er weg.
+- Ein Test sichert das ab (`ui/profil/merkmale.test.ts`, „Baukasten deckt die fertigen Porträts
+  ab“); Q1-4 ist aus den Rückfragen gelöscht.
+
 ## 30.10.2026 – Variantenbaum und Gambits (Opus, Version 0.3.11)
 
 - Eröffnungspaket Stufe 3: Unter jeder Eröffnung der Klappe „Eröffnungen nach Spielstärke“ der

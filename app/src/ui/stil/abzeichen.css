@@ -1,0 +1,108 @@
+/*
+ * Erfahrungspunkte, Stufen und Abzeichen (Wunsch des Autors, freigegeben 30.10.2026): Stufe mit
+ * Balken und Abzeichengitter in der Karte „Dein Fortschritt“, die Meldung beim Erreichen und die
+ * Liste „Abzeichen testen“ auf der Aufgabenseite. Abzeichen sind Sechsecke (bausteine/
+ * Abzeichenbild.tsx), damit sie sich von den Orden (Medaillen) unterscheiden.
+ */
+.erfahrung {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+  margin: 0 0 var(--raster);
+}
+
+.erfahrung-stufe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--raster);
+  font-weight: 600;
+}
+
+.erfahrung-ep {
+  color: var(--gold-text);
+}
+
+.erfahrung-rest {
+  margin: 0;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.abzeichenbild {
+  width: 48px;
+  height: 48px;
+  flex: none;
+}
+
+.abzeichenbild-rand {
+  fill: var(--gold);
+}
+
+.abzeichenbild-flaeche {
+  fill: #e9cf6b;
+}
+
+.abzeichenbild-zeichen {
+  color: #5a4305;
+}
+
+/* Noch nicht verdient: grauer Umriss, blasses Zeichen, wie die Orden in der Startanimation. */
+.abzeichenbild-silhouette .abzeichenbild-rand,
+.abzeichenbild-silhouette .abzeichenbild-flaeche {
+  fill: currentColor;
+  opacity: 0.18;
+}
+
+.abzeichenbild-silhouette .abzeichenbild-zeichen {
+  color: currentColor;
+  opacity: 0.35;
+}
+
+.abzeichenbild.abzeichenbild-gross {
+  width: 88px;
+  height: 88px;
+}
+
+.abzeichengitter {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--raster);
+  margin: var(--raster) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abzeichengitter li {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  font-size: var(--groesse-klein);
+}
+
+.abzeichengitter-name {
+  display: block;
+  font-weight: 600;
+}
+
+.abzeichengitter-bedingung {
+  display: block;
+  color: var(--text-leise);
+}
+
+.abzeichengitter .offen {
+  color: var(--text-leise);
+}
+
+/* Meldung: mehrere neue Abzeichen nebeneinander, darunter ihre Namen. */
+.abzeichenmeldung-bilder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--raster);
+}
+
+.abzeichenmeldung-liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

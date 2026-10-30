@@ -8,13 +8,16 @@
  * Bildschirm, sobald ein Ring voll ist (Buch, Teile des Buches, Bündel der Bots;
  * fortschrittsringe.ts). Je Ring nur einmal (Merker auf dem Gerät); wer einen Ring schon voll
  * hatte, bevor es die Gratulation gab, bekommt sie beim ersten Start einmal nachgereicht.
- * Abhängigkeiten: fortschrittsringe.ts (Ringe), Gruppenmodus.tsx (Feierton), Feuerwerk.tsx,
+ * Danach zeigt sie die schlichtere Meldung neuer Abzeichen und Stufen (Abzeichenmeldung.tsx), damit
+ * die Hülle der App dafür keinen eigenen Platz braucht.
+ * Abhängigkeiten: fortschrittsringe.ts (Ringe), Abzeichenmeldung.tsx, Gruppenmodus.tsx (Feierton), Feuerwerk.tsx,
  * app/merker.ts, i18n, lucide-react.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import { Feuerwerk } from "../bausteine/Feuerwerk";
 import { Orden } from "../bausteine/Orden";
+import { Abzeichenmeldung } from "./Abzeichenmeldung";
 import { merkeGefeiert, offeneRinge, useFortschrittsringe } from "./fortschrittsringe";
 import { Feierton } from "../gegner/Gruppenmodus";
 
@@ -31,7 +34,8 @@ export function Ringfeier() {
     (r) => !geschlossen.includes(r.testid),
   );
   const ring = offen[0];
-  if (!ring) return null;
+  // Ohne offene Gratulation zu einem Ring kommt die Meldung neuer Abzeichen (nie beide zugleich).
+  if (!ring) return <Abzeichenmeldung />;
   const weiter = () => {
     merkeGefeiert(ring.testid);
     setzeGeschlossen([...geschlossen, ring.testid]);

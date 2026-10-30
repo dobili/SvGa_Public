@@ -19,6 +19,11 @@ import {
 } from "../spiel/eroeffnungsbaender";
 import { zusatzpartienAus, type Zusatzpartie } from "../training/zusatzpartien";
 import type { Glossar } from "./generiert/glossar";
+import {
+  alsZusatzaufgabe,
+  zusatzeintraegeAus,
+  type Zusatzaufgabe,
+} from "../training/zusatzaufgaben";
 import type { Kapitel } from "./generiert/kapitel";
 import type { Nachschlagen } from "./generiert/nachschlagen";
 
@@ -227,6 +232,27 @@ export function ladeZusatzpartien(): Promise<readonly Zusatzpartie[]> {
     });
   }
   return zusatzpartien;
+}
+
+let zusatzaufgaben: Promise<Zusatzaufgabe[]> | null = null;
+
+/**
+ * Lädt die Zusatzaufgaben des Taktiktrainers (Lichess, nicht aus dem Buch, training/
+ * zusatzaufgaben.ts), unabhängig von der Sprache. Aufgaben mit unspielbaren Zügen fallen weg.
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladeZusatzaufgaben(): Promise<Zusatzaufgabe[]> {
+  if (!zusatzaufgaben) {
+    zusatzaufgaben = ladeJson<unknown>("/daten/zusatzaufgaben.json").then((roh) => {
+      const eintraege = zusatzeintraegeAus(roh);
+      if (!eintraege) throw new Error("/daten/zusatzaufgaben.json: unbekanntes Format");
+      return eintraege.flatMap((e) => alsZusatzaufgabe(e) ?? []);
+    });
+    zusatzaufgaben.catch(() => {
+      zusatzaufgaben = null;
+    });
+  }
+  return zusatzaufgaben;
 }
 
 /**

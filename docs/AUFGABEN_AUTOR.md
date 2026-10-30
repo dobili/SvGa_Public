@@ -33,6 +33,44 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Zusatzaufgaben von Lichess im Taktiktrainer (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1070. **Wahl der Quelle:** Training › Taktiktrainer öffnen. Oben steht „Aufgaben“ mit zwei
+      Knöpfen, „Aus dem Buch“ (vorgewählt, alles wie bisher) und „Zusatzaufgaben (Lichess)“.
+      Darunter ein Satz, was gewählt ist. Prüfen: Ist „Aus dem Buch“ vorgewählt und läuft die
+      Runde dort genau wie früher?
+- [ ] N1071. **Kennzeichnung:** „Zusatzaufgaben (Lichess)“ tippen. Darunter steht
+      „Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess-Puzzle-Datenbank (CC0) …“. In jeder
+      Aufgabe steht unter dem Brett „Zusatzaufgabe (nicht aus dem Buch) · Lichess (CC0),
+      Wertung …“. Reicht dir die Kennzeichnung?
+- [ ] N1072. **Themen:** Die Liste „Thema“ hat 20 Themen mit je 50 Aufgaben: Hängende Figur,
+      Gabel und Doppelangriff, Fesselung, Spieß, Abzug und Abzugsschach, Doppelschach,
+      Hinlenkung, Räumung, Beseitigung der Verteidigung, Ablenkung, Zwischenzug, Gefangene
+      Figur, Umwandlung, Wegversperrung, Stiller Zug, Zugzwang, Grundreihenmatt, Mattbilder,
+      Matt in einem Zug, Matt in zwei Zügen (dazu „Alle Themen gemischt“). Passen die Namen zu
+      deinen Begriffen? „Röntgenangriff“ von Lichess ist bewusst nicht dabei, weil „Röntgen“ im
+      Buch die Schach-Röntgen-Regel meint.
+- [ ] N1073. **Stufen:** Stufe 1 bis 5 wählen (Stufe 1: Lichess-Wertung unter 1000, Stufe 5:
+      1900 bis 2200). Je Thema und Stufe gibt es zehn Aufgaben. Fühlen sich Stufe 1 leicht und
+      Stufe 5 schwer an?
+- [ ] N1074. **Gegnerzug vorgespielt:** Eine Runde starten. Das Brett zeigt kurz (0,7 Sekunden)
+      die Stellung vor dem Zug des Gegners, dann gleitet sein Zug über das Brett und bleibt
+      markiert; erst dann kannst du ziehen. Ist die Pause angenehm?
+- [ ] N1075. **Lösen und falscher Zug:** Eine Aufgabe richtig lösen (die App antwortet mit dem
+      Gegenzug), bei einer anderen einen falschen Zug ziehen: roter Pfeil und Verlust laut
+      Engine wie bei den Buchaufgaben. Hinweis 2 nennt das Thema, Hinweis 3 die Figur.
+- [ ] N1076. **Motivfrage:** Bei „Alle Themen gemischt“ kommt nach dem Lösen „Welches Motiv war
+      es?“, aber nur bei Themen, die zu einem der zwölf Grundmotive aus Kapitel 7 gehören
+      (Räumung zählt zur Hinlenkung, Ablenkung zur Überlastung). Bei einem einzelnen Thema
+      entfällt die Frage. Einverstanden mit der Zuordnung?
+- [ ] N1077. **Wiederholung:** Bei einer Zusatzaufgabe „Lösung zeigen“ tippen. Nach zwei Tagen
+      bietet der Taktiktrainer oben „Wiederholen: 1 Aufgabe ist fällig“ an, auch wenn
+      „Aus dem Buch“ gewählt ist; die Aufgabe kommt mit der Kennzeichnung als Zusatzaufgabe.
+- [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
+      „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
+- [ ] N1079. **Englisch:** Sprache auf Englisch stellen. Die Wahl heißt „From the book“ |
+      „Extra puzzles (Lichess)“, die Themen sind englisch benannt.
+
 ### Neu: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1060. **Quellenwahl:** Trainer › „Zug erraten“ öffnen. Oben steht „Quelle“ mit drei

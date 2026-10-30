@@ -196,6 +196,14 @@ Vorgabe). Schwierigkeit: Grundstufe je Thema plus eins bei einzigem Zug (nicht g
 Ausgelassen: 9.41 (Engine unklar, +1,05) und 9.23 (Buch „Txa7 gewinnt“, Engine Remis);
 Befunde beim Autor (Rückfrage X1).
 
+## Zusatzaufgaben im Taktiktrainer (Paket 8, 30.10.2026)
+
+1000 Lichess-Aufgaben in `app/public/daten/zusatzaufgaben.json`, je Thema des Buches 50, je Stufe
+10, nicht aus dem Buch und in der App so gekennzeichnet. Bau (Dauer etwa 4 Minuten, ohne Engine):
+`python -m pipeline.trainer.zusatzaufgaben --datenbank PFAD/lichess_db_puzzle.csv.zst`.
+Themen und Bedingungen stehen in `pipeline/trainer/zusatzaufgaben.py` (THEMEN) und
+`app/src/training/zusatzaufgaben.ts` (ZUSATZTHEMEN, gleiche Reihenfolge, ein Test vergleicht).
+
 ## Lizenzen (Opus trägt sie in `docs/LIZENZEN.md` ein)
 
 | Teil                                                                                                                 | Lizenz                  | Hinweis                                                                                                                  |

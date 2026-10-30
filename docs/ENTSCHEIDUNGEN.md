@@ -4,7 +4,7 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
-## 30.10.2026 – Phasen wie bei Schachexperten und Eichung neu (Opus, Entscheidungen 11 bis 13)
+## 30.10.2026 – Version 0.3.15: Phasen wie bei Schachexperten und Eichung neu (Opus, Entscheidungen 11 bis 13)
 
 - **Regel für eigene Partien** (`schach/phase.ts`, `schach/phasengruende.ts`): Eröffnung, bis
   beide Seiten entwickelt sind und rochiert haben (Glossar), oder bis einer der drei Gründe von
@@ -37,6 +37,13 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   Merkmale bleiben, nur die Phase je Stellung ist neu. Trefferquote an zurückgelegten Stellungen
   minimal besser (Blitz 39,4 → 39,5 %, Schnellschach 40,7 → 40,8 %, Klassisch 41,5 → 41,5 %), mit
   Maia Gewicht von ln p_Maia gleich (Blitz 0,84, Schnellschach 0,85, Klassisch 0,74).
+- **Bot-Stichprobe statt Neumessung** (Entscheidung 13: voll nur bei Abweichung über der
+  Messgenauigkeit): zwei Messchats mit denselben Paarungen und Saaten
+  (`messplan-nach/ohne/teil-1` bis `teil-3`, je 24 Partien), alt auf 0.3.14, neu auf dem Zweig
+  `phasen` (Zweige `messung-phasenprobe-alt-ohne-N`, `messung-phasenprobe-neu-ohne-N`). Ergebnis
+  über 59 Paarungen (1416 Partien je Seite): Punkte der Bots alt 47,1 %, neu 47,2 %, Unterschied
+  +0,1 Prozentpunkte bei einem Standardfehler von 1,4. Teil 1 allein zeigte +3,1 (Zufall). Die
+  Spielstärke der Bots ist unverändert; Zahlensätze und Gruppen bleiben, keine Neumessung.
 
 ## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
 

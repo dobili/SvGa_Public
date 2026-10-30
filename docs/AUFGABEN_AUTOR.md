@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu: Phasen in eigenen Partien wie bei Schachexperten (Opus, 30.10.2026)
+### Neu in 0.3.15: Phasen in eigenen Partien wie bei Schachexperten (Opus, 30.10.2026)
 
 - [ ] N1044. **Mittelspiel beginnt später:** Spiele eine Partie gegen einen Bot und öffne danach
       den Rückblick. Der Hinweis „Mittelspiel“ kommt jetzt erst, wenn beide Seiten entwickelt sind
@@ -53,9 +53,12 @@ Teil fertig ist.
       Buches (Kapitel 8, vier Fragen), etwa Abb. 4.21 als Eröffnung. Siehe auch Rückfrage Q7.
 - [ ] N1048. **Bots neu geeicht:** Die Fehlerraten der Bots je Phase, das Elo-Modell der
       Partiebewertung und die Zugwahl sind mit der neuen Phasenregel neu gerechnet (dieselben
-      Partien, nur die Phase je Stellung neu). Die Bots spielen etwa so stark wie vorher; in der
-      Eröffnung patzen schwache Bots etwas seltener, im Mittelspiel etwas häufiger. Fällt dir beim
-      Spielen etwas auf?
+      Partien, nur die Phase je Stellung neu). Weil die Eröffnung jetzt länger dauert, verteilen
+      sich die Fehlerarten etwas anders auf die Phasen (die meisten kommen in der Eröffnung jetzt
+      etwas öfter vor, weil die späteren Eröffnungszüge schwerer sind). Die Spielstärke bleibt
+      gleich: 59 Paarungen mit je 24 Partien, alt gegen neu mit denselben
+      Zufallszahlen, ergaben +0,1 Prozentpunkte (Messgenauigkeit ±1,4). Fällt dir beim Spielen
+      etwas auf?
 
 ### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
 

@@ -4,12 +4,32 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
+
+- Die fünf Zweige paket-webverweise, paket-meisterpartien, paket-zusatzaufgaben,
+  paket-boteroeffnungen und paket-abzeichen sind nacheinander zusammengeführt. Vorher hat ein
+  Prüfagent jeden Zweig gegen den Code gelesen (Fehler, Regeln, Lizenzen, Datenmengen,
+  Speicherformat, Konflikte). Nachgebessert beim Zusammenführen:
+- **Linkprüfung:** Die Gruppe „Buchdaten“ las bisher alle JSON-Dateien unter
+  `app/public/daten`, also auch rund 1000 Herkunftslinks der Trainer-Aufgaben und
+  Zusatzpartien. Jetzt nur noch die Buchdaten selbst (`*/*.json`, `*/a1/*.json`), so wie es
+  Q6-2 beschreibt.
+- **Lizenz der Turnierpartien (CC BY-SA 4.0, Abschnitt 3(a)(1)(B)):** Karte und Lizenzseite
+  sagen jetzt, dass die Partien ausgewählt und ohne Uhrzeiten übernommen sind, und nennen den
+  Lizenztext.
+- **Abzeichen:** Erfahrungspunkte und „Eine Woche dabei“ zogen nach der Tagesaufgabe erst nach
+  einem Neuladen nach, weil der Merker „tagesserie“ nur beim Start gelesen wurde. Merker melden
+  Änderungen jetzt an Beobachter (`app/merker.ts`, `beobachteMerker`).
+- **Bot-Eröffnungen:** „Eröffnung des Bots überschreiben“ gilt nur für den Bot, bei dem es
+  gesetzt wurde; beim Wechsel des Bots steht es wieder aus.
+- Kleinigkeiten: lange Funktion der Abzeichenmeldung geteilt, veralteter Verweis im Dateikopf.
+
 ## 30.10.2026 – Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, Paket Abzeichen)
 
 - Freigabe des Autors (30.10.2026): Erfahrungspunkte und Abzeichen wie bei Chessly, nur auf dem
   Gerät, ohne Bestenliste, keine Daten an Dritte, keine Werbung.
 - EP ohne neues Speicherfeld, gerechnet aus vorhandenen Daten (`ui/komponenten/fortschritt/
-  erfahrung.ts`). Lernen am Buch wiegt schwerer als Ansehen (Übung 20, Abbildung 2); ohne Inhalt
+erfahrung.ts`). Lernen am Buch wiegt schwerer als Ansehen (Übung 20, Abbildung 2); ohne Inhalt
   zählt nichts (Partien unter zehn Zügen je Seite, Sammlung ohne Plan und Notiz, Fehler ohne Satz).
   Partien und Siege: der größere Wert aus den gespeicherten 50 Partien und dem Wertungsverlauf.
   Die Tagesaufgabe zählt über die beste Serie im Merker `tagesserie` (nur gelesen; die Gesamtzahl
@@ -371,6 +391,7 @@ Der Autor hat im Chat zugestimmt (Empfehlungen aus der Nachsicht Q1 und der Rech
 ## 27.10.2026 – Vorgemerkt: Variantenbaum im Repertoire-Trainer (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Für alle Eröffnungen, die im Buch vorkommen, kommt nach der Wahl der Eröffnung eine **zweite
   Auswahl mit benannten Varianten** aus Lichess (Zahl: die 10 bis 20 häufigsten je Eröffnung,
   sortiert nach Häufigkeit).
@@ -387,6 +408,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Gamifizierung insgesamt (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Die Orden gehen schon in diese Richtung; gewünscht ist **insgesamt ein Belohnungssystem**, das
   Jugendliche und junge Erwachsene zum häufigen Üben motiviert, auch wenn die Belohnungen nur
   digital sind.
@@ -406,6 +428,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Recherche erweitern und Webverweise prüfen (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Die Recherche nach passenden Inhalten und Funktionen (bisher Lichess und chess.com, Ergebnis in
   den Rückfragen Q2 der Sitzung vom 26.10.2026) wird um **Chessly** erweitert. Gemeint ist
   vermutlich der Anbieter für Eröffnungstraining (Chessly); die Schreibweise stammt aus einer
@@ -427,6 +450,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Vergleich nach einem falschen Zug in allen Trainern (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Wird in einem Trainer ein **falscher Zug** gezogen, zeigt die App wie im Trainer „Zug erraten“
   den gemachten Zug mit einem **roten Pfeil** und den richtigen mit einem **goldenen Pfeil**.
 - Dazu zeigt die **Engine den Stellungsverlust**, den der falsche Zug gebracht hätte (Bewertung
@@ -443,6 +467,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 
 Idee des Autors (im Chat stand „Pfeilenkabinett“ und „Pfeilen“, gemeint ist das Fallenkabinett und
 sind Fallen), noch nicht bewertet und nicht umgesetzt:
+
 - Neben den Fallen des Buches werden **Fallen zu den neu hinzukommenden Eröffnungen** (siehe
   Elo-Bänder und Variantenbaum) angeboten, je Eröffnung zunächst die **häufigsten zwei**.
 - Auch diese Fallen sollen für die **Bots auswählbar** sein.
@@ -492,6 +517,7 @@ sind Fallen), noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Eröffnungen nach Elo-Band über das Buch hinaus (nur notiert)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Zum Üben (Repertoire-Trainer, Gambits) und für die Eröffnungswahl der Bots kommen neben den
   Bucheröffnungen weitere Eröffnungen hinzu, **sortiert nach Elo-Band** (die Bänder der Bots).
 - **Hauptauswahl nach Elo-Band:** Je Band stehen die drei häufigsten Eröffnungen, getrennt für
@@ -509,6 +535,7 @@ Idee des Autors, noch nicht bewertet und nicht umgesetzt:
 ## 27.10.2026 – Vorgemerkt: Varianten anhaken, Schnellwahl (Ergänzung zum Variantenbaum)
 
 Ergänzung des Autors, nur notiert:
+
 - Aus dem Variantenbaum wählt man **Schnellwahlen**: alle Varianten, nur die drei häufigsten, nur
   die vier häufigsten und ähnlich, um viele auf einmal anzuhaken.
 - Oder man setzt **einzelne Haken** bei den Varianten, die man üben oder spielen lassen will.
@@ -520,6 +547,7 @@ Ergänzung des Autors, nur notiert:
 ## 27.10.2026 – Vorgemerkt: feste Eröffnungen für eigene Bots (nur notiert, nicht beschlossen)
 
 Idee des Autors, noch nicht bewertet und nicht umgesetzt:
+
 - Beim Anlegen eines eigenen Bots lassen sich **dauerhaft feste Eröffnungen** einstellen, etwa ein
   Bot, der nur London spielt, solange es geht.
 - **Mehrfachauswahl:** Überall, wo eine Eröffnung gewählt wird (Bot anlegen und Spielfenster),
@@ -6495,4 +6523,3 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   `MerkerWahl` als `${schluessel}.${w}` zusammensetzt.
 - **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
   (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
-

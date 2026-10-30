@@ -7,7 +7,7 @@
  * die Erfahrungspunkte (erfahrung.ts); nichts verfällt: Wer an sieben Tagen hintereinander gelernt
  * hat, behält das Abzeichen, auch wenn danach eine Pause kommt. Ein einmal gefeiertes Abzeichen
  * bleibt verdient, auch wenn die Partie dazu später aus der Liste der letzten 50 fällt
- * (abzeichenstand.ts). Reine Funktionen; die Oberfläche steht in Abzeichengitter.tsx.
+ * (abzeichenstand.ts). Reine Funktionen; die Oberfläche steht in Erfahrung.tsx (Gitter im Profil).
  * Abhängigkeiten: erfahrung.ts, spiel/auswertung.ts (Zugklassen), daten/uebungsliste-daten.ts,
  * speicher/format.ts, lucide-react (Zeichen).
  */

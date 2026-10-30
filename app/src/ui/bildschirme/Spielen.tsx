@@ -294,7 +294,9 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
   // Beginnen; sonst stand die eigene Stufe nach einem Wechsel zum Buch wieder auf 1 · 1 · 1,
   // während Fehler und Stil schon gespeichert waren (Befund zu N801, 26.10.2026).
   const setzeUndMerke = (neu: Wahl) => {
-    setzeWahl(neu);
+    // Ein anderer Bot bringt seine eigenen Eröffnungen mit: das Überschreiben gilt nur dem alten.
+    const andererBot = neu.vorlieben.bot !== wahl.vorlieben.bot;
+    setzeWahl(andererBot ? { ...neu, ueberschreiben: false } : neu);
     if (neu.vorlieben !== wahl.vorlieben)
       void aendere((d) => ({ ...d, spiel: mitVorlieben(d.spiel, neu.vorlieben) }));
   };

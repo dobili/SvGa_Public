@@ -1,3 +1,5 @@
+Stand: 30.10.2026 spätabends · **Version 0.3.14** (Zweig `zusammenfuehrung`, Koordinierungs-Chat Opus): Pakete 5 bis 10 der Arbeitschats geprüft, zusammengeführt und nachgebessert (Webverweise, Meisterpartien und Turnierpartien für „Zug erraten“, Lichess-Zusatzaufgaben, feste Eröffnungen eigener Bots, Erfahrungspunkte und Abzeichen); Testpunkte N1050 bis N1095, Rückfragen Q6. **Nächster Schritt:** Phasenzweig `phasen` (Entscheidungen 11 bis 13) auf diesen Stand bringen, Wahlmodell neu einspielen (siehe Eintrag darunter auf dem Zweig `phasen`), Bot-Stichprobe, dann 0.3.15.
+
 Stand: 30.10.2026 abends · **Version 0.3.13** (Zweig `kleinpakete`, Koordinierungs-Chat Opus): Entscheidungen 1 bis 13 des Autors angenommen. Selbst gebaut: 1 Orden verstreut, 3 Pfeile in den Werkzeugbildern, 4 Tagesserie ohne Verfall; Prüfstand eingearbeitet (315 Punkte erledigt). **Arbeitschats laufen** (je eigener Zweig, nie nach main): paket-webverweise (5, N1050–1059), paket-meisterpartien (6+7, N1060–1069), paket-zusatzaufgaben (8, N1070–1079), paket-boteroeffnungen (9, N1080–1089), paket-abzeichen (10, N1090–1099). **Nächster Schritt:** Zweige nach Fertigmeldung prüfen und übernehmen; danach Phasenregel (11, 12) in `schach/phase.ts` nur für eigene Partien, Messskript `spiel/phasenvergleich.messung.ts` als Grundlage; Eichung neu (13) aus `buch/arbeit/menschenprofil2`, `tiefe18`, `appmodell` (nur lokal); Bot-Stichprobe über zwei Arbeitschats.
 
 Stand: 30.10.2026 · Zweig `recherche` (Opus, ohne neue App-Version): Recherche Lichess, chess.com, Chessly abgeschlossen, Empfehlungen als Q5 beim Autor (Lichess-Puzzles CC0 als Zusatzaufgaben, „Nochmal versuchen“ in der Auswertung, Serie ohne Uhr, Ziel-Ausspielen; Gamifizierung als Lernwoche ohne Verfall, wartet wegen neuer Speicherfelder). Damit sind alle Pakete der Übergabe bearbeitet. **Nächster Schritt:** Antworten des Autors zu Q3-2, Q4, Q5 einarbeiten; ohne Widerspruch zuerst Q5-1 (2), Lichess-Zusatzaufgaben je Buchthema.
@@ -1359,14 +1361,14 @@ unten). Testpunkte N690–N701 und Rückfragen P4-1 bis P4-7 in `docs/AUFGABEN_A
 - [x] **R48 Planbilanz-Übung** (`training/planablenker.ts` neu, `planbilanztrainer.ts`): Ablenker
       aus Sicht der Seite am Zug, Figuren mit „dein“, nur Mittelspiel (49 Stellungen),
       Hauptkette. Prüflauf `npx vitest run --config vitest.messung.config.ts
-    src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
+  src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
       (durchgesehen: alle 49 Stellungen plausibel).
 - [x] **R47 Endspieltrainer** (`training/endspieldrills.ts`, `endspielzugdrills.ts` neu,
       `ui/trainer/Drillaufgabe.tsx`, `pipeline/trainer/endspiel.py`, `endspiel_lichess.py` neu):
       drei neue Kurzübungen, Quadrat als Pfeile aus k8-quadrat, Abb. 8.31 raus, Plausibilität aller
       Buchstellungen über zwölf Züge geprüft (nur 8.31 trivial), 119 freie Lichess-Endspielaufgaben
       (Themen `bauernendspiel`, `damenendspiel` neu). Lauf: `python -m pipeline.trainer.endspiel
-    --lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
+  --lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
       Stichprobe entsteht mit `lichess.lies_datenbank(pfad, endspiele=True)` (zwei Minuten).
 - [x] **R49 Strukturerkenner** (`p3-werkzeuge` eingemischt; `training/strukturtrainer.ts`,
       `ui/trainer/Strukturaufgabe.tsx`, `pipeline/trainer/struktur.py`): echte Stellung mit Knopf

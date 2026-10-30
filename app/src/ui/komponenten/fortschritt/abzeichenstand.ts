@@ -16,7 +16,7 @@
  * (Serie der Tagesaufgabe, nur lesen), React.
  */
 import { useMemo, useSyncExternalStore } from "react";
-import { entferneMerker, liesMerker, schreibeMerker } from "../../../app/merker";
+import { beobachteMerker, entferneMerker, liesMerker, schreibeMerker } from "../../../app/merker";
 import { useSpeicher } from "../../../speicher/speicher";
 import { serieAus } from "../../../training/kurzplaene";
 import {
@@ -75,6 +75,12 @@ function melde(): void {
   stand = lies();
   for (const z of zuhoerer) z();
 }
+
+// Die Tagesaufgabe (ui/trainer/ZeitrundeBereich.tsx) schreibt die Serie selbst; ohne diese Meldung
+// kämen Erfahrungspunkte und „Eine Woche dabei“ erst nach einem Neuladen.
+beobachteMerker((name) => {
+  if (name === MERKER_TAGESSERIE) melde();
+});
 
 function useMerker(): Merkerstand {
   return useSyncExternalStore(

@@ -19,9 +19,11 @@ from urllib.parse import urljoin, urlsplit
 from .netz import Antwort, abrufen
 from .punkte import Ampel, Pruefpunkt
 
-#: Wo Links stehen, je Gruppe (Pfade relativ zum Hauptordner, Muster für glob).
+#: Wo Links stehen, je Gruppe (Pfade relativ zum Hauptordner, Muster für glob). Die Herkunftslinks
+#: der Trainer-Aufgaben und Zusatzpartien (rund 1000 Lichess- und Partieseiten) bleiben absichtlich
+#: draußen: Das wären zu viele Abrufe je Woche, und sie werden nicht angezeigt (Q6-2).
 QUELLEN: dict[str, tuple[str, list[str]]] = {
-    "links-buch": ("Buchdaten", ["app/public/daten/**/*.json"]),
+    "links-buch": ("Buchdaten", ["app/public/daten/*/*.json", "app/public/daten/*/a1/*.json"]),
     "links-training": ("Trainingsseiten", ["inhalte/de/training/*.json", "inhalte/de/werkzeuglinks.json"]),
     "links-website": (
         "Website",

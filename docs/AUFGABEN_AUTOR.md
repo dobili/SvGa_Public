@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
+### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,
       etwa „Stufe 3 von 10: Zentrum“, rechts die Erfahrungspunkte (EP), darunter ein goldener
@@ -75,7 +75,7 @@ Teil fertig ist.
       dir der ruhige Ton, oder wünschst du dir bei Abzeichen doch Feuerwerk und Ton wie bei den
       Orden?
 
-### Neu: Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, 30.10.2026)
+### Neu in 0.3.14: Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1080. **Klappe „Eröffnungen“ im Gegnereditor:** Spielen › Eigene Bots › „Neuen Gegner
       anlegen“ (oder einen bestehenden bearbeiten). Unter den vier Reitern steht die Klappe
@@ -122,7 +122,7 @@ Teil fertig ist.
       „Override the bot's opening“, Beschreibung „Likes to open with: …“. Die Namen der
       Eröffnungen nach Spielstärke stehen dann englisch (wie auf Lichess).
 
-### Neu: Zusatzaufgaben von Lichess im Taktiktrainer (Opus-Arbeitschat, 30.10.2026)
+### Neu in 0.3.14: Zusatzaufgaben von Lichess im Taktiktrainer (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1070. **Wahl der Quelle:** Training › Taktiktrainer öffnen. Oben steht „Aufgaben“ mit zwei
       Knöpfen, „Aus dem Buch“ (vorgewählt, alles wie bisher) und „Zusatzaufgaben (Lichess)“.
@@ -160,7 +160,7 @@ Teil fertig ist.
 - [ ] N1079. **Englisch:** Sprache auf Englisch stellen. Die Wahl heißt „From the book“ |
       „Extra puzzles (Lichess)“, die Themen sind englisch benannt.
 
-### Neu: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
+### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1060. **Quellenwahl:** Trainer › „Zug erraten“ öffnen. Oben steht „Quelle“ mit drei
       Knöpfen: „Aus dem Buch“ (gewählt, wie bisher die Meisterpartien aus Kapitel 11),
@@ -186,7 +186,7 @@ Teil fertig ist.
       Lizenzen steht der neue Eintrag „Zusatzpartien für „Zug erraten“ (aktuelle Turniere)“ mit
       CC BY-SA 4.0.
 
-### Neu: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
+### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1050. **Koordinaten in der App:** schach-von-grund-auf.com/training/kap00/ öffnen. Unter
       der Übung zum Koordinatentraining steht wie bisher „Direkt öffnen: Koordinatentraining ↗“

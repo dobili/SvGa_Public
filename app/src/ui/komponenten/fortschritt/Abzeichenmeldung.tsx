@@ -20,6 +20,35 @@ import { merkeErsteStufe, merkeGefeiert, useAbzeichenstand } from "./abzeichenst
 /** Höchstens so viele Bilder auf der Karte; die Namen stehen alle darunter. */
 const HOECHSTENS_BILDER = 6;
 
+/** Bilder der neuen Abzeichen (höchstens sechs) oder, nur bei neuer Stufe, das Stufenzeichen. */
+function Meldungsbilder({
+  neue,
+  stufenname,
+}: {
+  neue: readonly (typeof ABZEICHEN)[number][];
+  stufenname: string;
+}) {
+  return (
+    <div className="abzeichenmeldung-bilder">
+      {neue.length === 0 && (
+        <Abzeichenbild
+          symbol={ABZEICHENZEICHEN}
+          beschriftung={stufenname}
+          klasse="abzeichenbild-gross"
+        />
+      )}
+      {neue.slice(0, HOECHSTENS_BILDER).map((a) => (
+        <Abzeichenbild
+          key={a.kennung}
+          symbol={a.symbol}
+          beschriftung={t("abzeichen.verdient", { name: t(`abzeichen.name.${a.kennung}`) })}
+          klasse={neue.length === 1 ? "abzeichenbild-gross" : ""}
+        />
+      ))}
+    </div>
+  );
+}
+
 /**
  * Die Meldung zu allen neuen Abzeichen und zur neuen Stufe; „Weiter“ merkt sie als gefeiert.
  * Beispiel: erste Partie beendet → „Neues Abzeichen: Erste Partie“.
@@ -46,23 +75,7 @@ export function Abzeichenmeldung() {
       data-testid="abzeichenmeldung"
     >
       <div className="gruppen-gratulation-karte">
-        <div className="abzeichenmeldung-bilder">
-          {neue.length === 0 && (
-            <Abzeichenbild
-              symbol={ABZEICHENZEICHEN}
-              beschriftung={stufenname}
-              klasse="abzeichenbild-gross"
-            />
-          )}
-          {neue.slice(0, HOECHSTENS_BILDER).map((a) => (
-            <Abzeichenbild
-              key={a.kennung}
-              symbol={a.symbol}
-              beschriftung={t("abzeichen.verdient", { name: t(`abzeichen.name.${a.kennung}`) })}
-              klasse={neue.length === 1 ? "abzeichenbild-gross" : ""}
-            />
-          ))}
-        </div>
+        <Meldungsbilder neue={neue} stufenname={stufenname} />
         <h2>{titel}</h2>
         <ul className="abzeichenmeldung-liste">
           {neue.map((a) => (

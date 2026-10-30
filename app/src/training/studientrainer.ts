@@ -7,6 +7,7 @@
  * dem Zug des Buches (wie der Repertoire-Trainer). Zug erraten: Meisterpartien aus Kapitel 11,
  * der Leser rät die Züge einer Seite, die App deckt den Partiezug auf und zählt die Treffer.
  * Reine Funktionen.
+ * Seit 30.10.2026 kommen Zusatzpartien dazu (training/zusatzpartien.ts, Typ Ratepartie).
  * Abhängigkeiten: training/repertoiretrainer.ts (Aufgabenform), training/uebungsaufgabe.ts.
  * Buchbezug: Kapitel 10 (Studien) und Kapitel 12, „Zug erraten“ als Trainingsmethode.
  */
@@ -14,6 +15,7 @@ import type { Color } from "chessops/types";
 import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
 import type { Kapitel } from "../daten/generiert/kapitel";
 import type { Repertoireaufgabe } from "./repertoiretrainer";
+import type { Zusatzpartie } from "./zusatzpartien";
 import { kanonischeLinie } from "./uebungsaufgabe";
 import { buchbeispiele } from "../daten/buchbeispiele";
 
@@ -68,6 +70,14 @@ export function studienAus(kapitel: Kapitel): Repertoireaufgabe[] {
  */
 export function partienAus(kapitel: Kapitel, seite: Color): Repertoireaufgabe[] {
   return ausAbschnitten(kapitel).flatMap((b) => aufgabeAus(b, seite, PARTIE_MINDESTENS) ?? []);
+}
+
+/**
+ * Eine Partie zum Zugerraten: aus dem Buch oder, mit `zusatz`, eine Zusatzpartie (berühmte
+ * Klassiker, aktuelle Turniere; training/zusatzpartien.ts, Wunsch des Autors, 30.10.2026).
+ */
+export interface Ratepartie extends Repertoireaufgabe {
+  readonly zusatz?: Zusatzpartie;
 }
 
 /** Stand beim Zugerraten: wie viele eigene Züge geraten, wie viele getroffen. */

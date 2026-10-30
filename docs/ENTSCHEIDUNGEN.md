@@ -4,6 +4,37 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Mehr Meisterpartien für „Zug erraten“ (Opus, Pakete 6 und 7)
+
+- Wunsch des Autors: mehr Meisterpartien zum Raten als die aus Kapitel 11, nur solche, die man
+  benutzen darf. Freigegeben: (6) etwa 50 berühmte Klassiker, (7) Partien aus den
+  Lichess-Übertragungen.
+- Eine Datei `app/public/daten/zusatzpartien.json` für beide Sprachen (Texte je Sprache), erzeugt
+  von `pipeline/zusatzpartien.py`; je Partie `quelle` (Adressen) und `lizenz`. Der Service Worker
+  nimmt sie wie alle JSON-Dateien in den Offline-Speicher (globPatterns), geladen wird sie erst bei
+  Wahl einer Zusatzquelle (`ladeZusatzpartien`). Kein neues Speicherfeld: Der Verlauf je Partie
+  nutzt wie bisher den Titel als Kennung (`zugErraten`), die Titel sind eindeutig (Test).
+- Klassiker: von Hand gepflegt in `inhalte/zusatzpartien/klassiker.json`. Partiezüge sind
+  Tatsachen; jede Partie mit chessops/python-chess auf Legalität geprüft und gegen zwei
+  unabhängige öffentliche Quellen (Ergebnis, Zugzahl, Schlussstellung), beide Adressen stehen an
+  der Partie. Kurztexte selbst geschrieben, keine fremden Kommentare. Die elf Meisterpartien aus
+  Kapitel 11 sind ausgeschlossen (Test: kein gleicher Anfang von 30 Halbzügen).
+- Turnierpartien: Monatsdateien August und September 2026 der Lichess-Übertragungsdatenbank
+  (CC BY-SA 4.0), nur lokal. Auswahl: klassisch (Uhr nach dem ersten Zug mindestens 50 Minuten,
+  sonst TimeControl; Engine-, Schnell- und Blitzturniere über den Namen ausgeschlossen), beide
+  Spieler ab 2500, entschieden, 30 bis 160 Halbzüge; stärkste Paarungen zuerst, je Eröffnung des
+  Buches (Familien mit Buchabschnitt aus `eroeffnungsbaender.json`) höchstens fünf, je Spieler
+  höchstens zwei, insgesamt 60. Eröffnungsnamen aus der Lichess-Liste der App. Namensnennung
+  „Lichess-Übertragungen, CC BY-SA 4.0“ an jeder Partie und auf der Lizenzseite; die
+  ShareAlike-Pflicht betrifft nur diese Daten (die Datei steht damit selbst unter CC BY-SA 4.0).
+- Oberfläche: Quelle als Chips „Aus dem Buch“ (Vorgabe) | „Berühmte Partien“ | „Aktuelle
+  Turniere“ (`Zugerratenwahl.tsx`); Zusatzpartien tragen die Karte „Zusatzinhalt (nicht aus dem
+  Buch)“ mit Kurztext, Quelle und Lizenz (`Zusatzkarte.tsx`), beim Raten zugeklappt über dem
+  Brett. Raten, Vergleich und Verlauf unverändert. Die gewählte Quelle bleibt beim Zurückkehren
+  zur Auswahl stehen, aber nicht über einen Neustart (kein Merker nötig).
+- Bestehende Texte (Ablauf des Trainers, Tour) nennen weiter Kapitel 11; sie bleiben unverändert,
+  weil die Buchpartien die Vorgabe sind (Regel: bestehende Schlüssel nicht ändern).
+
 ## 30.10.2026 – Wiki im Dashboard (Opus, Version 0.3.12, Paket D)
 
 - Wunsch des Autors (Ideensammlung 26.10.2026): Wiki im Dashboard mit Code-Teil und

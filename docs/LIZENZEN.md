@@ -21,6 +21,8 @@
 | React, React DOM, Scheduler, Workbox, vite-plugin-pwa                                                                  | MIT                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Wertungsvergleich (Zahlen aus chessgoals.com/rating-comparison, Juli 2026, in `app/src/spiel/umrechnung-daten.ts`, seit 0.2.125) | Fakten, kein Schutz; Quelle genannt | – (Herkunft in der Datei und in der Erklärung der App)        |
+| Zusatzpartien „Zug erraten“, Turnierpartien aus der Lichess-Übertragungsdatenbank (database.lichess.org, Abschnitt „Broadcasts“, August und September 2026; `app/public/daten/zusatzpartien.json`, Einträge `art: "turnier"`) | CC BY-SA 4.0 (Lichess: „Broadcast games are released under the Creative Commons Attribution-ShareAlike 4.0 license“) | https://creativecommons.org/licenses/by-sa/4.0/; Namensnennung an jeder Partie (Übertragungsadresse) und auf der Lizenzseite |
+| Zusatzpartien „Zug erraten“, berühmte Klassiker (`inhalte/zusatzpartien/klassiker.json`, in `zusatzpartien.json` `art: "klassiker"`) | Partiezüge als Tatsachen, kein Schutz; Kurztexte eigene Arbeit (GPL wie die App) | – (je Partie zwei geprüfte Fundstellen in `quelle`) |
 
 ## Hinweise
 

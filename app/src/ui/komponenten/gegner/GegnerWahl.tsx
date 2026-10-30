@@ -45,6 +45,7 @@ import { besiegtIn } from "../../../speicher/besiegt";
 import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { staerketext } from "./staerkeangabe";
+import { botbeschreibung } from "../gegnereditor/botbeschreibung";
 import { Vorschauwahl } from "../bausteine/Vorschauwahl";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
@@ -186,6 +187,7 @@ function Sprechblase({
           }
         />
         {(vorgefertigt || gruppe !== null) && <p>{text}</p>}
+        {eigener && <p data-testid="eigener-bot-beschreibung">{botbeschreibung(eigener)}</p>}
       </div>
     </div>
   );

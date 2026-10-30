@@ -30,6 +30,7 @@ import { Portraetwahl } from "../../profil/Portraetwahl";
 import { usePortraetwahl, type Portraetwahlzustand } from "../../profil/portraetwahlZustand";
 import { Stilnetz } from "./Stilnetz";
 import { StufenWahl } from "./StufenWahl";
+import { botbeschreibung } from "./botbeschreibung";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
@@ -145,6 +146,10 @@ function Formular({
           />
         }
       />
+      {/* Vorschlag einer Beschreibung aus den Einstellungen (Wunsch des Autors, 26.10.2026). */}
+      <p className="hinweis" data-testid="bot-beschreibung">
+        <strong>{t("botbeschreibung.titel")}</strong> {botbeschreibung(g)}
+      </p>
       <div className="knopfreihe">
         <button
           type="button"

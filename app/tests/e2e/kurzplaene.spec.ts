@@ -28,7 +28,9 @@ test("Tagesaufgabe zeigt die Serie, Taktik auf Zeit startet eine Zeitrunde", asy
   await starteImBrowser(page);
   await oeffneTrainer(page, "kurzplaene");
   await page.getByRole("button", { name: /Tagesaufgabe mit Serie/ }).click();
-  await expect(page.getByTestId("serie")).toContainText("Serie: 0 Tage in Folge");
+  await expect(page.getByTestId("serie")).toContainText(
+    "Serie: 0 Tage mit Tagesaufgabe. Die Serie verfällt nicht.",
+  );
   await page.getByRole("button", { name: "Zurück zu den Kurzplänen" }).click();
   await page.getByRole("button", { name: /Taktik auf Zeit/ }).click();
   await page.getByRole("button", { name: "Zeitrunde starten" }).click();

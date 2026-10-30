@@ -19,6 +19,7 @@ import {
   geltendeSerie,
   serieAus,
   serieNach,
+  seriePausiert,
   tagesaufgabe,
   zeitrundeRestSekunden,
   zeitrundeVorbei,
@@ -178,7 +179,9 @@ export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
   return (
     <div className="trainerrunde" data-testid="tagesaufgabe">
       <p className="hinweis" data-testid="serie">
-        {t("kurzplan.serie", { anzahl: geltendeSerie(serie, heute), beste: serie.beste })}
+        {t(seriePausiert(serie, heute) ? "kurzplan.seriePause" : "kurzplan.serie", {
+          anzahl: geltendeSerie(serie),
+        })}
       </p>
       {aufgabe ? (
         <Taktikaufgabe aufgabe={aufgabe} runde={mitAbschluss} motivAbfragen={false} />

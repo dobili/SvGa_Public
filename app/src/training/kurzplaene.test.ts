@@ -11,6 +11,7 @@ import {
   naechsterKurzschritt,
   serieAus,
   serieNach,
+  seriePausiert,
   starteKurzplan,
   tagesaufgabe,
   zeitrundeRestSekunden,
@@ -55,7 +56,7 @@ describe("Kurzpläne", () => {
     expect(tagesaufgabe([], heute)).toBeNull();
   });
 
-  it("Serie: wächst am Folgetag, bleibt am selben Tag, reißt nach einer Lücke", () => {
+  it("Serie: wächst am Folgetag, bleibt am selben Tag, pausiert nach einer Lücke (seit 0.3.13)", () => {
     const tag1 = new Date(2026, 9, 24);
     const tag2 = new Date(2026, 9, 25);
     const tag4 = new Date(2026, 9, 27);
@@ -64,10 +65,13 @@ describe("Kurzpläne", () => {
     s = serieNach(s, tag2);
     expect(s).toMatchObject({ serie: 2, beste: 2 });
     expect(serieNach(s, tag2)).toBe(s);
-    expect(geltendeSerie(s, new Date(2026, 9, 26))).toBe(2);
-    expect(geltendeSerie(s, tag4)).toBe(0);
+    expect(geltendeSerie(s)).toBe(2);
+    expect(seriePausiert(s, new Date(2026, 9, 26))).toBe(false);
+    expect(geltendeSerie(s)).toBe(2);
+    expect(seriePausiert(s, tag4)).toBe(true);
     s = serieNach(s, tag4);
-    expect(s).toMatchObject({ serie: 1, beste: 2 });
+    expect(s).toMatchObject({ serie: 3, beste: 3 });
+    expect(seriePausiert(s, tag4)).toBe(false);
   });
 
   it("Serie über Monatswechsel und gemerkter Stand", () => {

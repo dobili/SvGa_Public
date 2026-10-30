@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Prüfstand des Autors, Entscheidungen 1 bis 13 (Opus, Version 0.3.13)
+
+- **Prüfstand vom 30.10.2026:** 315 Punkte „ok“ und aus `AUFGABEN_AUTOR.md` gelöscht:
+  N1010, N1005, N1006, N1007, N1009, N991, N992, N994, N995, N997, N999, N1000, N1001, N1002, N1003, N1004, N983, N984, N985, N986, N988, N989, N976, N977, N978, N979, N980, N981, N982, N973, N974, N975, N968, N969, N970, N971, N972, N965, N966, N967, N805, N806, N955, N956, N957, N958, N959, N960, N961, N962, N963, N964, N950, N951, N952, N953, N954, N946, N947, N948, N949, N940, N941, N942, N943, N944, N945, N936, N937, N938, N939, N911, N912, N914, N915, N916, N917, N918, N919, N920, N921, N922, N923, N926, N927, N928, N929, N930, N931, N932, N933, N934, N900, N901, N902, N903, N904, N905, N907, N908, N909, N910, N740, N741, N742, N743, N745, N746, N747, N638, N639, N640, N641, N642, N633, N634, N635, N636, N637, N760, N761, N762, N763, N764, N765, N766, N767, N768, N769, N650, N651, N652, N653, N654, N655, N656, N657, N690, N691, N692, N693, N694, N695, N696, N697, N698, N699, N700, N701, N702, N703, N704, N705, N600, N601, N602, N603, N604, N605, N606, N607, N608, N609, N610, N611, N612, N613, N614, N615, N616, N617, N618, N630, N632, N670, N671, N672, N673, N674, N675, N676, N677, N678, N679, N620, N621, N622, N623, N624, N625, N626, N627, N710, N711, N712, N713, N714, N715, N716, N717, N718, N730, N731, N732, N733, N734, N735, N736, N737, N738, N739, N770, N771, N772, N773, N774, N775, N776, N777, N778, N779, N780, N781, N783, N782, N784, N785, N786, N787, N788, N789, N790, N791, N792, N793, N794, N795, N796, N797, N798, N799, N800, N801, N802, N803, N804, P8-1, P8-2, P8-3, P8-4, P8-5, P8-6, P8-7, P8-8, P8-9, P8-10, P8-11, P8-12, P8-13, P8-14, P8-15, P8-16, P8-17, P8-18, P8-19, P8-20, P8-21, P8-22, P8-23, P8-24, P8-25, P8-26, P8-27, P8-28, P8-29, P8-30, P8-31, P8-32, P8-33, P8-34, P8-35, P8-36, P8-37, P8-38, P8-39, P8-40, P8-41, P8-42, P8-43, P8-44, B9, B10, B11, B12, B13, B14, EN4, EN5, P1-A, P1-C, P1-D, P2-B, E1, E2, E3, E4, P4-1, P4-2, P4-3, P4-4, P4-5, P4-6, P4-7, P4-8, P4-9. Abschnitte ohne offenen Punkt sind dort mit entfernt (32 Abschnitte, darunter
+  der Nachtbericht vom 25./26.10. und die Pläne P1 bis P8).
+- **Abweichungen vom Wortlaut des Autors** (Prüfung der Übergabe aus der Ideensammlung): Der Autor
+  folgt den Empfehlungen und der Umsetzung. Fünf Buchteil-Ringe (mit „Grundlagen“) bleiben.
+- **Entscheidungen 1 bis 10 (alle angenommen):** (1) Orden in der Startanimation zufällig
+  verteilt (`fortschritt/ordenplaetze.ts`, fester Zufall, Mindestabstand, freie Mitte), (2)
+  Buchteile bleiben, (3) Pfeile zusätzlich zu den Nummern in den Werkzeugbildern (nicht auf dem
+  Brett), (4) Tagesserie pausiert statt zu verfallen (`training/kurzplaene.ts`, `seriePausiert`;
+  Merker unverändert), (5) Webverweise prüfen, (6) berühmte Partien und (7) Lichess-Übertragungen
+  (CC BY-SA 4.0) für „Zug erraten“, (8) Lichess-Aufgaben (CC0) als Zusatzaufgaben, (9) feste
+  Eröffnungen für eigene Bots mit Regler „Abweichung“, (10) Erfahrungspunkte und Abzeichen nur
+  auf dem Gerät. 5 bis 10 bauen Arbeitschats auf eigenen Zweigen (paket-webverweise,
+  paket-meisterpartien, paket-zusatzaufgaben, paket-boteroeffnungen, paket-abzeichen); der
+  Koordinierungs-Chat prüft und übernimmt sie.
+- **Entscheidungen 11 bis 13 (angenommen, Umsetzung nach 1 bis 10):** (11) Mittelspiel in eigenen
+  Partien nach dem Glossar (beide entwickelt, Könige in Sicherheit) mit den drei Gründen von
+  Lichess als Ausweg (höchstens 10 Figuren, ausgedünnte Grundreihe, Durchmischung); (12)
+  Endspiel in eigenen Partien nur mit wenig Material (Speelman oder höchstens 6 Figuren), an den
+  Abbildungen bleibt die Regel aus Kapitel 8 (Buchbefund folgt); (13) Eichung neu (Elo-Modell,
+  Fehlerraten je Phase, Wahlmodell aus den gespeicherten Daten ohne neue Engine-Läufe), Bots erst
+  als Stichprobe, voll nur bei Abweichung über der Messgenauigkeit. Grundlage: Messung an 5654
+  Lichess-Partien (heutige Regel: Mittelspiel im Median ab Halbzug 11, in 78 % mit beiden Seiten
+  unentwickelt; Glossar plus Lichess: Halbzug 20, 18 %).
+- **Speicherformat (Freigabe des Autors, 30.10.2026):** Es gibt noch keine Leser, nur Betatester;
+  das Speicherformat darf geändert werden, Datenverlust ist hinnehmbar. Spielstände der aktuellen
+  Version sollen trotzdem laden.
+
 ## 30.10.2026 – Recherche Lichess, chess.com, Chessly (Opus mit einem Hilfsagenten)
 
 - Auftrag der Übergabe (Reihenfolge 7). Ergebnis und Empfehlungen in `docs/AUFGABEN_AUTOR.md`

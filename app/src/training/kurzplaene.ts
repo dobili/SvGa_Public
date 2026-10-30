@@ -7,6 +7,9 @@
  * laufenden Einheit mit Uhr, die Aufgabe des Tages, die Serie der Tage in Folge und das Ende der
  * Zeitrunde. Die Oberfläche (ui/trainer/KurzplanBereich.tsx) zeigt sie. Der Stand liegt als
  * Merker auf dem Gerät (app/merker.ts) und geht nicht in die Datensicherung.
+ * Seit 0.3.13 (Entscheidung des Autors, 30.10.2026) verfällt die Serie nicht mehr: Ein
+ * verpasster Tag pausiert sie, die nächste gelöste Tagesaufgabe setzt sie fort. Vorbild ist die
+ * Pause bei chess.com, aber milder (dort reißt sie nach drei Tagen); kein Druck durch Verlust.
  * Abhängigkeiten: keine.
  * Buchbezug: Kapitel 12, „Hast du weniger Zeit, kürze zunächst das Themenstudium, nie die
  * Analyse.“ Die Aufteilung der Kurzpläne ist ein Vorschlag der App und kein Inhalt des Buches.
@@ -116,7 +119,7 @@ export function tagesaufgabe<T>(aufgaben: readonly T[], datum: Date): T | null {
   return aufgaben[tagesnummer(datum) % aufgaben.length] ?? null;
 }
 
-/** Die Serie: Tage in Folge, in denen die Tagesaufgabe bearbeitet wurde. */
+/** Die Serie: Tage, an denen die Tagesaufgabe bearbeitet wurde (seit 0.3.13 ohne Verfall). */
 export interface Tagesserie {
   readonly letzterTag: string | null;
   readonly serie: number;
@@ -127,26 +130,32 @@ export const LEERE_SERIE: Tagesserie = { letzterTag: null, serie: 0, beste: 0 };
 
 /**
  * Trägt die Bearbeitung der Tagesaufgabe an einem Tag ein.
- * Regel: Am Tag nach dem letzten Eintrag wächst die Serie um 1, am selben Tag bleibt sie, sonst
- * beginnt sie bei 1. Beispiel: letzter Tag gestern, Serie 4 → Serie 5.
+ * Regel: An jedem neuen Tag wächst die Serie um 1, am selben Tag bleibt sie; eine Lücke pausiert
+ * sie nur (seit 0.3.13). Beispiel: letzter Tag vor einer Woche, Serie 4 → Serie 5.
  */
 export function serieNach(alt: Tagesserie, heute: Date): Tagesserie {
   const schluessel = tagesschluessel(heute);
   if (alt.letzterTag === schluessel) return alt;
-  const gestern = new Date(heute.getFullYear(), heute.getMonth(), heute.getDate() - 1);
-  const serie = alt.letzterTag === tagesschluessel(gestern) ? alt.serie + 1 : 1;
+  const serie = alt.serie + 1;
   return { letzterTag: schluessel, serie, beste: Math.max(alt.beste, serie) };
 }
 
 /**
- * Die Serie, wie sie heute gilt: Wurde gestern und heute nichts bearbeitet, ist sie gerissen (0).
- * Beispiel: letzter Tag vorgestern, Serie 4 → 0.
+ * Die Serie, wie sie heute gilt: Sie verfällt nicht (seit 0.3.13).
+ * Beispiel: letzter Tag vorgestern, Serie 4 → 4 (pausiert, siehe seriePausiert).
  */
-export function geltendeSerie(stand: Tagesserie, heute: Date): number {
-  if (stand.letzterTag === null) return 0;
+export function geltendeSerie(stand: Tagesserie): number {
+  return stand.serie;
+}
+
+/**
+ * Ist die Serie gerade pausiert, weil gestern und heute keine Tagesaufgabe gelöst wurde?
+ * Beispiel: letzter Tag vorgestern → ja; gestern oder heute → nein; noch nie → nein.
+ */
+export function seriePausiert(stand: Tagesserie, heute: Date): boolean {
+  if (stand.letzterTag === null) return false;
   const gestern = new Date(heute.getFullYear(), heute.getMonth(), heute.getDate() - 1);
-  const noch = [tagesschluessel(heute), tagesschluessel(gestern)].includes(stand.letzterTag);
-  return noch ? stand.serie : 0;
+  return ![tagesschluessel(heute), tagesschluessel(gestern)].includes(stand.letzterTag);
 }
 
 /** Liest die gemerkte Serie; Unlesbares ergibt die leere Serie. */

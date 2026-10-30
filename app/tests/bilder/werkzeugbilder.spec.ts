@@ -1,7 +1,7 @@
 /**
  * Erzeugt die Bildschirmfotos der Werkzeuge für das Werkzeugverzeichnis (Paket F der
  * Ideensammlung, 26.10.2026): je Werkzeug die Beispiel-Abbildung öffnen, das Werkzeug wie ein
- * Leser wählen und Leiste, Brett und Karte fotografieren. Gold umrandet mit Nummer: was der Leser
+ * Leser wählen und Leiste, Brett und Karte fotografieren. Gold umrandet mit Nummer und Pfeil: was der Leser
  * antippt, in dieser Reihenfolge (Bündel, Reiter, bei „Zählen“ das Feld); gold umrandet ohne
  * Nummer: Brett und Karte mit dem Ergebnis. Aufruf: `npm run bilder:werkzeuge`
  * (playwright.bilder.config.ts). Die Bilder landen als WebP in public/bilder/werkzeuge/.
@@ -83,8 +83,34 @@ function rahmenImBrowser(a: {
         textAlign: "center",
       });
       el.append(marke);
+      // Auf dem Brett kein Pfeil: Er sähe aus wie ein Pfeil des Werkzeugs.
+      if (!ziel.closest(".brett")) pfeil(box);
     }
     document.body.append(el);
+  };
+  // Seit 0.3.13 (Wunsch des Autors „mit Pfeilen“): ein goldener Pfeil schräg von unten auf jeden
+  // Schritt; von links, wenn dort Platz ist, sonst von rechts.
+  const PFEIL = 40;
+  const pfeil = (box: { x: number; y: number; w: number; h: number }) => {
+    const vonLinks = box.x >= PFEIL;
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("width", String(PFEIL));
+    svg.setAttribute("height", String(PFEIL));
+    const [x1, x2] = vonLinks ? [2, PFEIL - 6] : [PFEIL - 2, 6];
+    svg.innerHTML =
+      `<defs><marker id="spitze" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">` +
+      `<path d="M0,0 L6,3 L0,6 z" fill="${GOLD}"/></marker></defs>` +
+      `<line x1="${x1}" y1="${PFEIL - 2}" x2="${x2}" y2="6" stroke="${GOLD}" stroke-width="4" ` +
+      `stroke-linecap="round" marker-end="url(#spitze)"/>`;
+    Object.assign(svg.style, {
+      position: "absolute",
+      left: `${vonLinks ? box.x - PFEIL + 4 : box.x + box.w - 4}px`,
+      top: `${box.y + box.h - 4}px`,
+      pointerEvents: "none",
+      zIndex: "10001",
+    });
+    boxen.push({ y: box.y + box.h, h: PFEIL });
+    document.body.append(svg);
   };
   for (const kachel of document.querySelectorAll('[data-testid="werkzeug-erklaerung"]')) {
     (kachel as HTMLElement).style.display = "none";

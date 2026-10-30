@@ -33,6 +33,32 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
+
+- [ ] N1060. **Quellenwahl:** Trainer › „Zug erraten“ öffnen. Oben steht „Quelle“ mit drei
+      Knöpfen: „Aus dem Buch“ (gewählt, wie bisher die Meisterpartien aus Kapitel 11),
+      „Berühmte Partien“ und „Aktuelle Turniere“. Bei „Aus dem Buch“ sieht alles aus wie bisher.
+- [ ] N1061. **Berühmte Partien:** „Berühmte Partien“ tippen. Die Liste „Partie“ zeigt etwa 50
+      Klassiker von Anderssen bis Carlsen (Titel „Weiß – Schwarz, Ort Jahr“). Unter der Liste
+      steht eine Karte „Zusatzinhalt (nicht aus dem Buch)“ mit Spielern, Ergebnis, Eröffnung,
+      einem kurzen Text (wer, wann, warum berühmt) und zwei Quellen als Links. Bitte ein paar
+      Kurztexte lesen: Stimmen sie, klingen sie gut? Partien aus dem Buch (Opernpartie,
+      Immergrüne, Lasker–Thomas usw.) kommen hier nicht noch einmal vor.
+- [ ] N1062. **Aktuelle Turniere:** „Aktuelle Turniere“ tippen. Etwa 60 Partien aus August und
+      September 2026 (Olympiade Samarkand, Sinquefield Cup, türkische Liga u. a.), klassische
+      Bedenkzeit, beide Spieler ab 2500, alle entschieden. Die Karte nennt Turnier, Runde, Datum,
+      Wertungen und als Quelle die Lichess-Übertragung mit „CC BY-SA 4.0“ (die Lizenz verlangt
+      diese Namensnennung).
+- [ ] N1063. **Raten wie gewohnt:** Eine berühmte Partie wählen, Seite des Siegers, „Runde
+      starten“. Über dem Brett steht zugeklappt „Zusatzinhalt (nicht aus dem Buch)“ (aufklappen
+      zeigt die Karte). Raten, Hinweis, Pfeile, Engine-Vergleich, Blättern und Analyse
+      funktionieren wie bei den Buchpartien; beim nächsten Mal nennt die App den letzten
+      Durchgang dieser Partie.
+- [ ] N1064. **Offline und Lizenzen:** Nach dem Aktualisieren der App einmal ohne Netz „Berühmte
+      Partien“ und „Aktuelle Turniere“ öffnen: Die Listen kommen trotzdem. Unter Einstellungen ›
+      Lizenzen steht der neue Eintrag „Zusatzpartien für „Zug erraten“ (aktuelle Turniere)“ mit
+      CC BY-SA 4.0.
+
 ### Neu: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1050. **Koordinaten in der App:** schach-von-grund-auf.com/training/kap00/ öffnen. Unter

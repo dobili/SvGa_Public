@@ -17,6 +17,7 @@ import {
   eroeffnungsbaenderAus,
   type Eroeffnungsbaender,
 } from "../spiel/eroeffnungsbaender";
+import { zusatzpartienAus, type Zusatzpartie } from "../training/zusatzpartien";
 import type { Glossar } from "./generiert/glossar";
 import type { Kapitel } from "./generiert/kapitel";
 import type { Nachschlagen } from "./generiert/nachschlagen";
@@ -205,6 +206,27 @@ export function ladePraxisbuch(): Promise<Praxisbuch> {
     });
   }
   return praxisbuch;
+}
+
+let zusatzpartien: Promise<readonly Zusatzpartie[]> | null = null;
+
+/**
+ * Lädt die Zusatzpartien für „Zug erraten“ (training/zusatzpartien.ts): berühmte Klassiker und
+ * aktuelle Turnierpartien, nicht aus dem Buch, eine Datei für beide Sprachen (Texte je Sprache).
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladeZusatzpartien(): Promise<readonly Zusatzpartie[]> {
+  if (!zusatzpartien) {
+    zusatzpartien = ladeJson<unknown>("/daten/zusatzpartien.json").then((roh) => {
+      const partien = zusatzpartienAus(roh);
+      if (!partien) throw new Error("/daten/zusatzpartien.json: unbekanntes Format");
+      return partien;
+    });
+    zusatzpartien.catch(() => {
+      zusatzpartien = null;
+    });
+  }
+  return zusatzpartien;
 }
 
 /**

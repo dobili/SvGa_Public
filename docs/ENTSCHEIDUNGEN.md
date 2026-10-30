@@ -4,6 +4,17 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Eröffnungspaket, Stufe 1: Daten nach Elo-Band (Opus)
+
+- Auftrag (Übergabe aus der Ideensammlung, Reihenfolge 5): zuerst nur die Datenfrage klären.
+  Antwort: Die Zählungen des Praxisbuchs (Lichess September 2026, CC0, lokal in
+  `buch/arbeit/praxisbuch/`) reichen; Namen aus `inhalte/lichess` (CC0).
+- `pipeline/praxisbuch/baender.py` baut `app/public/daten/eroeffnungsbaender.json` (82 KB): 46
+  Familien, die in einem Band unter den zwölf häufigsten ihrer Seite sind, mit Anteil je Band,
+  kürzester Zugfolge, Gambit- und Buchmarke und 20 Varianten; dazu 40 Gambits. Regeln und
+  Beispiele in `docs/AUFGABEN_AUTOR.md` Q3-1, Tests `pipeline/tests/test_eroeffnungsbaender.py`.
+- Die App liest die Datei noch nicht; das ist Stufe 2 (Auswahl nach Spielstärke, Q3-2).
+
 ## 30.10.2026 – Bilder im Nachschlagen (Opus, Version 0.3.9)
 
 - Wunsch des Autors (Ideensammlung 26.10.2026, Paket F): Steckbriefe mit der Endstellung,

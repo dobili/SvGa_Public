@@ -1525,6 +1525,41 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q3 Eröffnungspaket, Stufe 1: die Datenfrage (30.10.2026)
+
+Ergebnis: Wir brauchen keine neue Quelle. Die App hat seit dem Praxisbuch (0.2.128) einen ganzen
+Monat der Lichess-Datenbank ausgezählt (September 2026, rund 37 Millionen gewertete Partien in
+Blitz, Schnellschach und Klassisch). Lizenz CC0, also frei ohne Bedingungen; die Namen der
+Eröffnungen kommen aus der freien Lichess-Liste (ebenfalls CC0). Gezählt sind die ersten 20
+Halbzüge je Zeitklasse und je 200er-Band von 400 bis 2800. Daraus ist jetzt eine Liste mit 46
+Eröffnungen entstanden: je Band die häufigsten zwölf für Weiß und für Schwarz, jede mit Anteil
+je Band, den 20 häufigsten Varianten und den Marken „Gambit“ und „im Buch (Abschnitt …)“, dazu
+die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes):
+
+- Weiß um 600: Läuferspiel 3,1 %, Wayward Queen (frühes Dh5) 2,3 %, Italienisch 1,7 %. Um 1200:
+  Italienisch 2,9 %, Läuferspiel 2,0 %, London 2,0 %. Um 1800: Damengambit 2,3 %, Englisch
+  2,0 %, London 1,7 %. Um 2400: Englisch 2,9 %, Damengambit 2,7 %, Spanisch 1,4 %.
+- Schwarz um 600: Skandinavisch 3,4 %, Russisch (Petroff) 2,1 %, Französisch 1,7 %. Um 1200:
+  Skandinavisch 3,4 %, Sizilianisch 3,2 %, Französisch 2,7 %. Ab 1800 führt Sizilianisch klar
+  (6,8 %, um 2400 8,6 %), dann Französisch und Caro-Kann.
+- Gambits um 800: Englund-Gambit, Busch-Gass-Gambit, Königsgambit; um 1800: Königsgambit,
+  Englund-Gambit, Smith-Morra-Gambit.
+
+- [ ] Q3-1. **Festlegungen (schon umgesetzt, Widerspruch genügt):** Eine „Eröffnung“ ist die
+      Familie nach Lichess (Name vor dem Doppelpunkt, etwa „Sizilianische Verteidigung“). Bei
+      Sammelnamen, die nur den ersten Zug beschreiben („Damenbauernspiel“, „Königsbauernspiel“),
+      zählt der Teil danach, also „London-System“ oder „Wayward Queen“; bloße „Normal
+      Variation“ zählt nicht. London mit 2. Lf4 („Accelerated London“) ist London (Buch 2.8).
+      Verteidigungen (auch „abgelehnt“, „angenommen“, „Gegengambit“) wählt Schwarz, sonst die
+      Seite des letzten Zuges. Das Damengambit gilt nicht als Gambit, wie im Buch. Gezählt wird
+      im Band dessen, der zieht; beide Spieler einer Partie liegen meist im selben Band.
+- [ ] Q3-2. **Nächste Stufe (Empfehlung):** zuerst die Auswahl „Eröffnungen nach Spielstärke“
+      in der Eröffnungswahl für Bots und für dich: Bänder von … bis … anhaken, je Band die drei
+      häufigsten für deine Farbe, mit jedem weiteren Band drei neue (Plätze 4 bis 6, wenn sich
+      welche wiederholen), Bucheröffnungen markiert, Häufigkeit an jeder Zeile. Danach der
+      Variantenbaum (die 20 häufigsten Varianten je Eröffnung) und die Gambits. Fallen kommen
+      zuletzt, weil sie zuerst eine Definition brauchen und du sie freigibst. Einverstanden?
+
 ### Q2 Eigene Bots: freie Beschreibung? (30.10.2026)
 
 - [ ] Q2-1. **Eigener Text statt Vorschlag:** Die Beschreibung eigener Bots entsteht jetzt bei

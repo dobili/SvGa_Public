@@ -95,6 +95,7 @@ python -m pipeline.wartung   # Wartungsprüfungen des Dashboards (R57): Live-Sei
 python -m pipeline.eroeffnungsliste   # Eröffnungsnamen von Lichess (inhalte/lichess) für das Werkzeug „Eröffnung“
 python -m pipeline.zugfolgen.konstruieren --engine PFAD   # konstruierte Partien zu Abbildungen ohne Zugfolge (schnelle UCI-Engine, nur lokal)
 python -m pipeline.pruefen.tablebase   # Endspielabbildungen bis 7 Steine gegen die Lichess-Tablebase (Netz, Zwischenspeicher in buch/arbeit)
+python -m pipeline.praxisbuch.baender app/public/daten/eroeffnungsbaender.json buch/arbeit/praxisbuch/voll.tsv buch/arbeit/praxisbuch/voll2.tsv   # Eröffnungen je Elo-Band (Zählungen nur lokal)
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

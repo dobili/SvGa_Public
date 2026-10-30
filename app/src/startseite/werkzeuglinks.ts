@@ -7,6 +7,9 @@
  * stehen in einer eigenen Zeile darunter. Namen und Adressen stehen in
  * inhalte/de/werkzeuglinks.json (Adressen aus dem Werkzeugkasten in Kapitel 12); die
  * Wartungsprüfung (pipeline/wartung) prüft sie wöchentlich.
+ * Hat ein Werkzeug ein gleichwertiges Gegenstück in der App (Feld „app“, etwa Koordinatentraining →
+ * Koordinatentrainer), steht dahinter „In der App: …“ mit einem Sprung /app/#trainer-<kennung>
+ * (Paket Webverweise, 30.10.2026: Was die App selbst kann, soll man nicht nur auf Lichess finden).
  * Abhängigkeiten: uebungsort.ts (Textteile), trainingsseiten.ts (Typen).
  */
 import daten from "../../../inhalte/de/werkzeuglinks.json";
@@ -17,6 +20,8 @@ export interface Werkzeuglink {
   readonly namen: readonly string[];
   readonly titel: string;
   readonly adresse: string;
+  /** Kennung des gleichwertigen Trainers der App (TrainerKennung), falls es einen gibt. */
+  readonly app?: string;
 }
 
 /** Alle Werkzeuglinks aus inhalte/de/werkzeuglinks.json, mit Namen und Adresse. */
@@ -44,7 +49,31 @@ export function werkzeugeDes(block: Trainingsblock): Werkzeuglink[] {
   );
 }
 
-/** Die Zeile „Direkt öffnen: Aufgabenthemen ↗ · Analysebrett ↗“; leer ohne Werkzeug. */
+/**
+ * Die Trainer der App, die die genannten Werkzeuge ersetzen können, jeder nur einmal.
+ * Beispiel aus Kapitel 0: „Feld finden“ → ["koordinaten"]. Sonderfall: ohne Gegenstück leer.
+ */
+export function appTrainerDes(werkzeuge: readonly Werkzeuglink[]): string[] {
+  return [...new Set(werkzeuge.flatMap((w) => (w.app ? [w.app] : [])))];
+}
+
+/** „ · In der App: Endspieltrainer“ mit Sprung in die App; leer ohne Gegenstück. */
+function appLinksHtml(werkzeuge: readonly Werkzeuglink[]): string {
+  const trainer = appTrainerDes(werkzeuge);
+  if (trainer.length === 0) return "";
+  const links = trainer
+    .map(
+      (kennung) =>
+        `<a class="werkzeuglink" href="/app/#trainer-${maskiere(kennung)}">{{trainer.${maskiere(kennung)}.name}}</a>`,
+    )
+    .join(" ");
+  return ` <span>{{training.inDerApp}}</span> ${links}`;
+}
+
+/**
+ * Die Zeile „Direkt öffnen: Aufgabenthemen ↗ · Analysebrett ↗“, dahinter „In der App: …“ für
+ * Werkzeuge mit Gegenstück in der App; leer ohne Werkzeug.
+ */
 export function werkzeuglinksHtml(block: Trainingsblock): string {
   const werkzeuge = werkzeugeDes(block);
   if (werkzeuge.length === 0) return "";
@@ -54,5 +83,5 @@ export function werkzeuglinksHtml(block: Trainingsblock): string {
         `<a class="werkzeuglink" href="${maskiere(w.adresse)}" target="_blank" rel="noopener">${maskiere(w.titel)} ↗</a>`,
     )
     .join(" ");
-  return `<p class="werkzeuglinks"><span>{{training.werkzeuglinks}}</span> ${links}</p>`;
+  return `<p class="werkzeuglinks"><span>{{training.werkzeuglinks}}</span> ${links}${appLinksHtml(werkzeuge)}</p>`;
 }

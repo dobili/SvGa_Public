@@ -32,6 +32,11 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   mehr Züge und wird schärfer (Schnellschach 436 statt 531), das Mittelspiel etwas breiter (456
   statt 395). Damit Schnellschach weiter eine Phasenzahl bekommt, steigt die Schwelle „schmal“
   (`SCHMAL`) von 400 auf 460, mit derselben Begründung wie am 24.10.2026.
+- **Wahlmodell neu** (`engine/wahlmodell-daten.ts`, `engine/wahlmodell-maia-daten.ts`; Generator
+  `buch/arbeit/zugwahl/schreibe_ts.py`, lokal, an den alten Gewichten zahlengleich geprüft): Die
+  Merkmale bleiben, nur die Phase je Stellung ist neu. Trefferquote an zurückgelegten Stellungen
+  minimal besser (Blitz 39,4 → 39,5 %, Schnellschach 40,7 → 40,8 %, Klassisch 41,5 → 41,5 %), mit
+  Maia Gewicht von ln p_Maia gleich (Blitz 0,84, Schnellschach 0,85, Klassisch 0,74).
 
 ## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
 

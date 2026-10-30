@@ -76,3 +76,51 @@
   flex: none;
   color: var(--gold-text);
 }
+
+/* Orden (Wunsch des Autors, 26.10.2026): Ein voller Ring wird zur Medaille mit Band. */
+.orden {
+  width: 52px;
+  height: 64px;
+}
+
+.symbolring .orden {
+  width: 52px;
+  height: 64px;
+}
+
+.orden-band {
+  fill: var(--navy, #1d2433);
+}
+
+.orden-band-zwei {
+  fill: var(--gold);
+}
+
+.orden-rand {
+  fill: var(--gold);
+}
+
+.orden-scheibe {
+  fill: #e9cf6b;
+}
+
+.orden-zeichen {
+  color: #5a4305;
+}
+
+/* Noch nicht verdient: nur der Umriss, ruhig zum Hintergrund der Startanimation. */
+.orden-silhouette .orden-band,
+.orden-silhouette .orden-band-zwei,
+.orden-silhouette .orden-rand,
+.orden-silhouette .orden-scheibe {
+  fill: currentColor;
+  opacity: 0.18;
+}
+
+/* Der Orden in der Gratulation: groß in der Mitte der goldenen Karte. */
+.orden.orden-gross {
+  display: block;
+  width: 96px;
+  height: 120px;
+  margin: 0 auto;
+}

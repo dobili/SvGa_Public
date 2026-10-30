@@ -43,12 +43,22 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   // Seit 0.2.134 steht der Fortschritt im Profil.
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
-  // Seit 25.10.2026 je Zeitart ein Ring mit den besiegten Bots, Zeichen erklärt die Legende.
-  await expect(page.getByTestId("ich-bots-blitz")).toHaveText(/^0 von \d+$/);
+  // Seit 0.3.7 Ringe für Übungen, die fünf Teile des Buches und die Bündel der Bots (Orden);
+  // Teile und Bots stehen aufgeklappt, die Zusammenfassung zählt die vollen Ringe.
+  await expect(page.getByTestId("ich-uebungen")).toHaveText(/^0 von 86$/);
+  await expect(page.getByTestId("ich-teil-grundlagen")).toBeHidden();
+  await page.getByTestId("ich-teile").locator("summary").click();
+  await expect(page.getByTestId("ich-teil-grundlagen")).toHaveText(/^2 von \d+$/);
+  const bots = page.getByTestId("ich-bots");
+  await expect(bots.locator("summary")).toContainText("0 von 9 Ringen voll");
+  await bots.locator("summary").click();
+  await expect(page.getByTestId("ich-bots-1-3-einmal")).toHaveText(/^0 von \d+$/);
   await expect(
-    page.getByRole("progressbar", { name: /^Klassisch: vorgefertigte Bots .* 0 von \d+$/ }),
+    page.getByRole("progressbar", { name: /^Engine \(Stufe 10\).* 0 von \d+$/ }),
   ).toBeVisible();
-  await expect(page.getByRole("list", { name: "Zeichenerklärung" })).toContainText("Schnellschach");
+  await expect(bots.getByRole("list", { name: "Zeichenerklärung" })).toContainText(
+    "in allen Zeitarten",
+  );
   // Ohne Partien: die Karte „Deine Partien“ mit kurzem Satz (Wunsch des Autors, 25.10.2026).
   await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
   await expect(page.getByText("Noch keine Partie gespielt.", { exact: false })).toBeVisible();

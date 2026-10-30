@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Wiki im Dashboard (Opus, Version 0.3.12, Paket D)
+
+- Wunsch des Autors (Ideensammlung 26.10.2026): Wiki im Dashboard mit Code-Teil und
+  Projekt-Teil, aufbereitet, handytauglich, mit Suche, ohne Buchtexte und Buchbefunde, nur in D1
+  hinter Access, nie als Datei im Repository, keine Mails.
+- Bauen: `pipeline/wiki.py` liest `CLAUDE.md`, `docs/` (Architektur, Fortschritt, Lizenzen,
+  Entscheidungen je Abschnitt, Begriffe, Codeführer) und die Konzeptkarte (je Ordner eine Seite)
+  im Speicher; Abschnitte mit „Buchbefund“ im Titel bleiben weg. Senden im Lauf „Wartung“ nach
+  jedem Push nach main an POST /api/wiki mit dem Schlüssel des Prüfberichts (kein neues Secret).
+- Speichern und Lesen: Tabelle `wiki` in D1, jedes Hochladen ersetzt alle Seiten
+  (`worker/wiki.ts`); Liste, Seite und Suche (LIKE mit Ausschnitt) unter /api/admin/wiki, also
+  nur mit Access. Anzeige `src/admin/Wiki.tsx` mit eigenem kleinem Markdown-Leser
+  (`src/admin/markdown.ts`), der nur React-Elemente erzeugt, nie HTML-Text.
+- Die Ideensammlung selbst liegt nicht im Repository; ihre beschlossenen und notierten Punkte
+  stehen in den Entscheidungen und kommen so ins Wiki.
+
 ## 30.10.2026 – Porträt-Baukasten deckt alle fertigen Porträts ab (Opus, Paket H)
 
 - Offener Rest aus Q1-4 (Ideensammlung): Nase und Körper der fertigen Porträts gegen den Baukasten

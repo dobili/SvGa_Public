@@ -2,7 +2,8 @@
  * Schnittstellen des Dashboards unter /api/admin/ (nur mit gültigem Access-Zeichen, R57).
  *
  * Rolle im Gesamtbild: Die Seite /admin/ (worker/adminseite.ts) holt hier die Übersicht
- * (Ampel mit Verlauf, Zahlen der Meldungen) und die Meldungen und setzt deren Status.
+ * (Ampel mit Verlauf, Zahlen der Meldungen) und die Meldungen und setzt deren Status; seit
+ * 0.3.12 auch die Seiten des Wikis (worker/wiki.ts).
  * Claude liest dieselben Schnittstellen mit dem Service Token des Autors.
  * Abhängigkeiten: worker/umgebung.ts, worker/datenbank.ts, worker/bericht.ts, worker/mail.ts.
  */
@@ -10,6 +11,7 @@ import { ladeBerichte, verlaufJePunkt } from "./bericht";
 import { sorgeFuerTabellen } from "./datenbank";
 import { mailEingerichtet } from "./mail";
 import { fehler, jsonAntwort, type Umgebung } from "./umgebung";
+import { wikiliste, wikiseite, wikisuche } from "./wiki";
 
 export const STATUS = ["neu", "in_arbeit", "erledigt", "kein_fehler", "doppelt"] as const;
 export type Meldestatus = (typeof STATUS)[number];
@@ -98,6 +100,10 @@ export async function verwalte(anfrage: Request, env: Umgebung, wer: string): Pr
   const pfad = url.pathname.replace(/^\/api\/admin\/?/, "");
   if (anfrage.method === "GET" && pfad === "uebersicht") return uebersicht(env, wer);
   if (anfrage.method === "GET" && pfad === "meldungen") return meldungen(env, url);
+  // Wiki (Paket D, 0.3.12)
+  if (anfrage.method === "GET" && pfad === "wiki") return wikiliste(env);
+  if (anfrage.method === "GET" && pfad === "wiki/seite") return wikiseite(env, url);
+  if (anfrage.method === "GET" && pfad === "wiki/suche") return wikisuche(env, url);
   const treffer = /^meldungen\/(\d+)$/.exec(pfad);
   if (anfrage.method === "POST" && treffer?.[1]) {
     return aendereMeldung(env, Number(treffer[1]), anfrage);

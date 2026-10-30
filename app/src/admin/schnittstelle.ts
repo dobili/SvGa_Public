@@ -86,3 +86,37 @@ export const aendereMeldung = (id: number, aenderung: Aenderung) =>
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(aenderung),
   });
+
+/** Eine Seite des Wikis in der Liste (ohne Inhalt). */
+export interface Wikieintrag {
+  pfad: string;
+  bereich: "projekt" | "code";
+  titel: string;
+  quelle: string;
+  laenge: number;
+  stand: string | null;
+  zeit: string;
+}
+
+export interface Wikitreffer {
+  pfad: string;
+  bereich: string;
+  titel: string;
+  ausschnitt: string;
+}
+
+/** Alle Seiten des Wikis (Paket D). */
+export const ladeWikiliste = () =>
+  hole<{ seiten: Wikieintrag[] }>("/api/admin/wiki").then((d) => d.seiten);
+
+/** Eine Seite mit Inhalt. */
+export const ladeWikiseite = (pfad: string) =>
+  hole<{ seite: Wikieintrag & { inhalt: string } }>(
+    `/api/admin/wiki/seite?pfad=${encodeURIComponent(pfad)}`,
+  ).then((d) => d.seite);
+
+/** Suche in Titeln und Texten. */
+export const sucheImWiki = (begriff: string) =>
+  hole<{ treffer: Wikitreffer[] }>(`/api/admin/wiki/suche?q=${encodeURIComponent(begriff)}`).then(
+    (d) => d.treffer,
+  );

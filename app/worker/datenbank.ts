@@ -12,6 +12,7 @@ import type { D1Datenbank } from "./umgebung";
 /**
  * meldungen: Fehler, Wünsche, Buchbefunde und Absturzberichte aus App und Website.
  * berichte: die Prüfberichte aus GitHub Actions (Ampel je Punkt als JSON).
+ * wiki: die Seiten des Wikis (worker/wiki.ts), bei jedem Hochladen ganz ersetzt.
  * drossel: Zähler je Absender (nur ein Hash der IP-Adresse mit Tag) und Stunde gegen Flut.
  */
 const SCHEMA = [
@@ -39,6 +40,16 @@ const SCHEMA = [
     rot INTEGER NOT NULL,
     gelb INTEGER NOT NULL,
     punkte TEXT NOT NULL
+  )`,
+  // Wiki des Dashboards (Paket D, 0.3.12): Seiten aus docs/, vom Lauf „Wartung“ geschickt.
+  `CREATE TABLE IF NOT EXISTS wiki (
+    pfad TEXT PRIMARY KEY,
+    bereich TEXT NOT NULL,
+    titel TEXT NOT NULL,
+    inhalt TEXT NOT NULL,
+    quelle TEXT NOT NULL,
+    stand TEXT,
+    zeit TEXT NOT NULL
   )`,
   `CREATE TABLE IF NOT EXISTS drossel (
     schluessel TEXT NOT NULL,

@@ -188,3 +188,79 @@
 .admin-art-absturz {
   border-left: 4px solid var(--rot-text);
 }
+
+/* ---------- Wiki (Paket D, 0.3.12) ---------- */
+
+.admin-reiter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  margin: var(--raster) 0;
+}
+
+.admin-reiter button[aria-pressed="true"] {
+  background: var(--navy);
+  color: var(--creme);
+}
+
+.admin-wikisuche {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  margin-bottom: var(--raster);
+}
+
+.admin-wikisuche input,
+.admin [data-testid="wiki"] > input {
+  flex: 1 1 200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-wikiliste {
+  list-style: none;
+  margin: var(--raster) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.admin .admin-wikilink {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--raster);
+  text-align: left;
+}
+
+.admin-wikitext {
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.admin-wikitext code,
+.admin-code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+.admin-code {
+  overflow-x: auto;
+  padding: var(--raster);
+  border-radius: var(--radius);
+  background: var(--grund);
+}
+
+.admin-tabelle {
+  overflow-x: auto;
+}
+
+.admin-tabelle td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--linie);
+  vertical-align: top;
+}

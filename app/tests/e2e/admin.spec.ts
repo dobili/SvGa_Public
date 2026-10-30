@@ -95,3 +95,50 @@ test("Dashboard ohne Zugang: verständlicher Hinweis", async ({ page }) => {
   await page.goto("/admin/");
   await expect(page.getByText(/Kein Zugang\. Bitte über/)).toBeVisible();
 });
+
+test("Dashboard: Wiki mit Bereichen, Suche und Seite (Paket D)", async ({ page }) => {
+  await bildeNach(page, []);
+  const liste = [
+    { pfad: "projekt/arbeitsregeln", bereich: "projekt", titel: "Arbeitsregeln (CLAUDE.md)" },
+    { pfad: "code/module-spiel", bereich: "code", titel: "Module: spiel" },
+  ].map((s) => ({
+    ...s,
+    quelle: "CLAUDE.md",
+    laenge: 10,
+    stand: null,
+    zeit: "2026-10-30T12:00:00Z",
+  }));
+  await page.route("**/api/admin/wiki", (route) => route.fulfill({ json: { seiten: liste } }));
+  await page.route("**/api/admin/wiki/suche**", (route) =>
+    route.fulfill({
+      json: {
+        treffer: [{ ...liste[0], ausschnitt: "… Tests vor jedem Speichern …" }],
+      },
+    }),
+  );
+  await page.route("**/api/admin/wiki/seite**", (route) =>
+    route.fulfill({
+      json: {
+        seite: {
+          ...liste[0],
+          inhalt: "## Feste Regeln\n\n- **Tests** vor jedem Speichern\n\n<script>alert(1)</script>",
+        },
+      },
+    }),
+  );
+  await page.goto("/admin/");
+  await page.getByRole("button", { name: "Wiki" }).click();
+  const wiki = page.getByTestId("wiki");
+  await expect(wiki.getByRole("button", { name: "Arbeitsregeln (CLAUDE.md)" })).toBeVisible();
+  await wiki.getByRole("button", { name: "Code", exact: true }).click();
+  await expect(wiki.getByRole("button", { name: "Module: spiel" })).toBeVisible();
+  await wiki.getByLabel("Im Wiki suchen").fill("Speichern");
+  await wiki.getByRole("button", { name: "Suchen" }).click();
+  await wiki.getByRole("button", { name: /Arbeitsregeln.*Tests vor jedem/ }).click();
+  const seite = page.getByTestId("wiki-seite");
+  await expect(seite.getByRole("heading", { name: "Feste Regeln" })).toBeVisible();
+  await expect(seite.locator("strong", { hasText: "Tests" })).toBeVisible();
+  // HTML in Seiten bleibt Text (kein eingeschleuster Code)
+  await expect(seite).toContainText("<script>alert(1)</script>");
+  await expect(seite.locator("script")).toHaveCount(0);
+});

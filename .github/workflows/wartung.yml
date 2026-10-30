@@ -1,8 +1,8 @@
 # Wartungsprüfungen des Admin-Dashboards (R57, Stufe 1; Wunsch des Autors 24.10.2026).
 # Prüft, ob draußen noch alles stimmt: Live-Seite und Version, Dashboard gesperrt, Zertifikat und
 # Domain, Links, CI, Abhängigkeiten, Eröffnungsliste von Lichess, offene Punkte des Autors
-# (pipeline/wartung). Ein roter Punkt lässt den Lauf scheitern; dann schickt GitHub dem Autor eine
-# Mail. Der Bericht geht an das Dashboard (/api/bericht), sobald das Secret BERICHT_SCHLUESSEL
+# (pipeline/wartung), danach das Wiki des Dashboards (pipeline/wiki.py). Ein roter Punkt lässt
+# den Lauf scheitern; dann schickt GitHub dem Autor eine Mail. Der Bericht geht an das Dashboard (/api/bericht), sobald das Secret BERICHT_SCHLUESSEL
 # gesetzt ist, und steht immer als Zusammenfassung auf der Seite des Laufs.
 name: Wartung
 
@@ -41,6 +41,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         # Nach einem Push nach main höchstens 15 Minuten warten, bis Cloudflare den Stand ausliefert.
         run: python -m pipeline.wartung --ausgabe wartung-bericht.json --warten ${{ github.event_name == 'push' && 900 || 0 }}
+      # Wiki des Dashboards (Paket D): Seiten aus docs/ und CLAUDE.md an /api/wiki, auch wenn ein
+      # Prüfpunkt rot ist (pipeline/wiki.py). Ohne Secret wird nichts geschickt.
+      - name: Wiki
+        if: always()
+        env:
+          BERICHT_SCHLUESSEL: ${{ secrets.BERICHT_SCHLUESSEL }}
+        run: python -m pipeline.wiki --senden
       - uses: actions/upload-artifact@v5
         if: always()
         with:

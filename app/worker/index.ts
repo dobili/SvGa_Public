@@ -6,6 +6,7 @@
  * andere bleibt unverändert und schnell:
  * - POST /api/melden: Meldungen aus App und Website (öffentlich, gedrosselt).
  * - POST /api/bericht: Prüfbericht aus GitHub Actions (gemeinsamer Schlüssel).
+ * - POST /api/wiki: Seiten des Wikis aus GitHub Actions (derselbe Schlüssel, Paket D).
  * - /api/admin/*: Schnittstellen des Dashboards (nur mit Cloudflare Access).
  * - /admin/: die Seite des Dashboards (statische Datei, nur mit Cloudflare Access).
  * Zeitplan: täglich aufräumen (Datenschutz), montags eine Wochenübersicht per Mail.
@@ -16,6 +17,7 @@ import { nimmMeldungAn } from "./meldungen";
 import { taeglich } from "./woche";
 import { fehler, type Ausfuehrung, type Umgebung } from "./umgebung";
 import { verwalte } from "./verwaltung";
+import { nimmWikiAn } from "./wiki";
 import { zugangVon } from "./zugang";
 
 const SEITE = "https://schach-von-grund-auf.com";
@@ -73,6 +75,9 @@ async function beantworte(
   }
   if (pathname === "/api/bericht") {
     return anfrage.method === "POST" ? nimmBerichtAn(anfrage, env) : fehler(405, "methode");
+  }
+  if (pathname === "/api/wiki") {
+    return anfrage.method === "POST" ? nimmWikiAn(anfrage, env) : fehler(405, "methode");
   }
   if (pathname.startsWith("/api/admin")) {
     // Ändernde Anfragen nur von der eigenen Seite (gegen untergeschobene Anfragen fremder Seiten).

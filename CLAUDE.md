@@ -96,6 +96,7 @@ python -m pipeline.eroeffnungsliste   # Eröffnungsnamen von Lichess (inhalte/li
 python -m pipeline.zugfolgen.konstruieren --engine PFAD   # konstruierte Partien zu Abbildungen ohne Zugfolge (schnelle UCI-Engine, nur lokal)
 python -m pipeline.pruefen.tablebase   # Endspielabbildungen bis 7 Steine gegen die Lichess-Tablebase (Netz, Zwischenspeicher in buch/arbeit)
 python -m pipeline.praxisbuch.baender app/public/daten/eroeffnungsbaender.json buch/arbeit/praxisbuch/voll.tsv buch/arbeit/praxisbuch/voll2.tsv   # Eröffnungen je Elo-Band (Zählungen nur lokal)
+python -m pipeline.wiki --zeigen   # Seiten des Wikis im Dashboard (Paket D); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 30.10.2026, Version 0.3.11 (Variantenbaum und Gambits; 0.3.10 Eröffnungen nach Spielstärke; 0.3.9 Bilder im Nachschlagen; 0.3.8 Beschreibung eigener Bots; 0.3.7 Orden für volle Ringe, Orden testen, Startanimation mit Orden; 0.3.6 ein Knopf „Merken“ im Rückblick mit Vorschlägen; 0.3.5 Pfeile und Verlust nach falschem Zug in Taktik und Übungen; 0.3.4 Wertung auf chess.com und FIDE als Bereich für jede Zeitart; 0.3.3 Kurzpläne und „Keine Fehlerneigung“; 0.3.2 kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 30.10.2026, Version 0.3.12 (Wiki im Dashboard; 0.3.11 Variantenbaum und Gambits; 0.3.10 Eröffnungen nach Spielstärke; 0.3.9 Bilder im Nachschlagen; 0.3.8 Beschreibung eigener Bots; 0.3.7 Orden für volle Ringe, Orden testen, Startanimation mit Orden; 0.3.6 ein Knopf „Merken“ im Rückblick mit Vorschlägen; 0.3.5 Pfeile und Verlust nach falschem Zug in Taktik und Übungen; 0.3.4 Wertung auf chess.com und FIDE als Bereich für jede Zeitart; 0.3.3 Kurzpläne und „Keine Fehlerneigung“; 0.3.2 kleine Korrekturen und Oberfläche aus der Ideensammlung; 0.3.1 nur Codepflege, keine sichtbaren Änderungen; 0.3.0 mit gemessenen Zugklassen, abspielbaren Varianten, aufklappbarer Zugliste und Wertung wie chess.com oder FIDE; 0.2.146 mit Codeführer und Konzeptkarte; 0.2.145 mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.11“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.12“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -89,6 +89,20 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.12: Wiki im Dashboard (Opus, 30.10.2026)
+
+- [ ] N1040. **Wiki:** schach-von-grund-auf.com/admin/ öffnen (wie immer mit dem Einmalcode).
+      Oben stehen jetzt zwei Knöpfe, „Übersicht“ (alles wie bisher) und „Wiki“. Im Wiki:
+      „Projekt“ mit Arbeitsregeln, Architektur, Fortschritt (die 40 neuesten Stände), Lizenzen
+      und je Entscheidung eine Seite; „Code“ mit dem Codeführer, den Begriffen und je Ordner
+      der App einer Seite mit allen Dateien (Zweck, Rolle, was sie anbietet). Oben sucht „Im Wiki
+      suchen“ im ganzen Text und zeigt die Fundstelle; „Titel filtern“ kürzt die Liste. Ein Tipp
+      öffnet die Seite. Die Seiten kommen nach jedem Push nach main mit dem Lauf „Wartung“ neu
+      (etwa 15 bis 20 Minuten nach dem Push); Buchbefunde sind ausgenommen, Buchtexte stehen
+      ohnehin nicht in diesen Unterlagen. Gespeichert wird nur in der Datenbank des Dashboards
+      hinter Cloudflare Access, nie als Datei im Repository. Steht dort „Noch keine Seiten“, ist
+      der Lauf noch nicht durch. Ist das Wiki so brauchbar?
 
 ### Neu in 0.3.11: Variantenbaum und Gambits (Opus, 30.10.2026)
 

@@ -4,6 +4,18 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Recherche Lichess, chess.com, Chessly (Opus mit einem Hilfsagenten)
+
+- Auftrag der Übergabe (Reihenfolge 7). Ergebnis und Empfehlungen in `docs/AUFGABEN_AUTOR.md`
+  Q5. Lizenzen mit Fundstelle: Lichess-Datenbankexporte einschließlich Puzzles CC0
+  (database.lichess.org: „Database exports are released under the Creative Commons CC0
+  license“); Übertragungen CC BY-SA 4.0; englische Puzzle-Themen CC0, deutsche Übersetzungen
+  AGPL (lila, COPYING.md); Themensymbole CC BY 3.0 (game-icons.net). chess.com und Chessly: nur
+  Ideen.
+- Gegen den Code geprüft: Den Koordinatentrainer, den die Recherche vorschlug, gibt es schon
+  (Kapitel 0). Gamifizierung mit Lernwoche und Tagesaufgabe braucht neue Speicherfelder; daher
+  Rückfrage Q5-2 statt sofortiger Umsetzung (Regel 9, Ausnahme Datenformat).
+
 ## 30.10.2026 – Wiki im Dashboard (Opus, Version 0.3.12, Paket D)
 
 - Wunsch des Autors (Ideensammlung 26.10.2026): Wiki im Dashboard mit Code-Teil und

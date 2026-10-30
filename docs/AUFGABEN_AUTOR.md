@@ -1568,6 +1568,33 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q5 Recherche Lichess, chess.com, Chessly und Gamifizierung (30.10.2026)
+
+Geprüft wurden Lichess (Learn, Practice, Puzzles, Storm, Streak, Koordinaten), chess.com (Lektionen,
+Puzzles, Tagesaufgabe, Partieauswertung, Practice, Serien, Abzeichen) und Chessly (Kurse,
+Abfragen, Erfahrungspunkte). Von chess.com und Chessly dürfen wir nur Ideen nehmen, keine Inhalte.
+Von Lichess ist die **Puzzle-Datenbank frei (CC0)**: 6,1 Millionen Aufgaben mit Wertung und
+Themen wie Gabel, Fesselung, Röntgen. Die englischen Themennamen sind ebenfalls CC0, die deutschen
+Übersetzungen nicht (AGPL); wir nähmen ohnehin die Begriffe deines Buches.
+
+- [ ] Q5-1. **Empfehlungen in dieser Reihenfolge (Widerspruch genügt; ich fange mit (2) an,
+      sobald du nichts dagegen hast):** (1) Den Koordinatentrainer wie bei Lichess hat die App schon (Training ›
+      Koordinaten, Notation, Gangarten, Feld finden auch auf Zeit); nichts zu tun. (2) Eine Auswahl Lichess-Aufgaben
+      je Thema deines Buches als „Zusatzaufgaben (nicht aus dem Buch)“ im Taktiktrainer, offline,
+      etwa 1000 Stück nach Wertung gestaffelt. (3) „Nochmal versuchen“ an den Schlüsselzügen der
+      Partieauswertung, mit einem Hinweis aus der Denkroutine statt einer KI. (4) Aufgabenserie
+      ohne Uhr (ein Fehler beendet die Serie, eigener Bestwert nur für dich). (5) Stellung mit
+      Ziel gegen die Engine ausspielen („halte Remis“, „setze matt“) an jeder Abbildung.
+- [ ] Q5-2. **Gamifizierung ohne Druck (Empfehlung):** keine Tagesserie, die verfällt (chess.com
+      setzt nach drei Tagen zurück, das wollen wir nicht). Stattdessen eine **Lernwoche**: ein
+      Wochenkalender mit Punkten für Übungstage und ein frei gewähltes Ziel wie „3 von 7 Tagen“;
+      nichts wird zurückgesetzt. Dazu eine **Tagesaufgabe ohne Frist** (verpasste Tage jederzeit
+      nachholbar), ein ruhiger **Monatsrückblick** nur auf deinem Gerät (Gelerntes, stärkstes und
+      schwächstes Thema, ein nächster Schritt mit Kapitel) und **Stärken und Schwächen nach
+      Buchthema** mit Sprung in die passende Übung. Keine Erfahrungspunkte, keine Bestenlisten,
+      keine Daten an Dritte. Für die Lernwoche und die Tagesaufgabe braucht die App neue Felder
+      im Speicher deiner Leser; deshalb warte ich hier auf dein Ja. Einverstanden?
+
 ### Q4 Mehr Meisterpartien für „Zug erraten“: Quelle und Lizenz (30.10.2026)
 
 Heute übt „Zug erraten“ an den Meisterpartien aus Kapitel 11 deines Buches. Für mehr Partien habe

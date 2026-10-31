@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Gegenstück zu GegnerBild.tsx; dieselben Klassen, damit Größe, Rundung und
  * Grundfarbe überall zu den Bots passen (Profilkopf, Partieuhr, Partienliste).
  * Seit Gamifizierung P7 trägt das Bild den gewählten Porträtrahmen (Bronze, Silber, Gold), ein
- * freischaltbares Extra (komponenten/extras/extrawahl.ts).
+ * freischaltbares Extra (komponenten/extras/extrawahl.ts). Die Profilkarte „Deine Extras“ zeigt
+ * mit `rahmen` jeden Rahmen zur Probe, ohne ihn anzulegen.
  * Abhängigkeiten: speicher/profil.ts, spieler.ts, extras/extrawahl.ts, lucide-react.
  */
 import { CircleUserRound } from "lucide-react";
@@ -17,10 +18,12 @@ const ZEICHENGROESSE = 22;
 
 /**
  * Bild des Lesers. `profil`: zum Anzeigen eines Entwurfs im Editor; sonst das gespeicherte.
+ * `rahmen`: ein Rahmen zur Probe (Kacheln der Extras); ohne gilt der angelegte.
  * Beispiel: Profil mit „wahl-07“ → das Porträt wahl-07; ohne Bild mit Namen „Dana“ → „D“.
  */
-export function Spielerbild({ profil }: { profil: Spielerprofil }) {
-  const rahmen = usePortraetrahmen();
+export function Spielerbild({ profil, rahmen: probe }: { profil: Spielerprofil; rahmen?: string }) {
+  const angelegt = usePortraetrahmen();
+  const rahmen = probe ?? angelegt;
   const rahmenklasse = rahmen === "ohne" ? "" : ` spielerbild-rahmen spielerbild-rahmen-${rahmen}`;
   return (
     <span

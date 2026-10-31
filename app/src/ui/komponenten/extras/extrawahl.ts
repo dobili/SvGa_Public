@@ -5,8 +5,10 @@
  * diese Datei verbindet jede Art mit ihrer Wahl. Brett und Figuren stehen in den Einstellungen
  * (Speicher, gehen mit der Datensicherung um), Porträtrahmen und Konfettifarben als Merker auf
  * dem Gerät (kein neues Speicherfeld, Format gesperrt), ebenso der Titel unter dem Namen (P3).
- * Eine neue Art (etwa Zubehör) bekommt hier eine Zeile in `EXTRAWAHL`.
- * Abhängigkeiten: training/extras.ts, app/einstellungen.ts, app/merker.ts, app/konfetti.ts, i18n.
+ * Eine neue Art (etwa Zubehör) bekommt hier eine Zeile in `EXTRAWAHL`; die Profilkarte zeigt sie
+ * dann mit eigenem Reiter, in der Vorschau oben und mit „Ablegen“ (seit 31.10.2026).
+ * Abhängigkeiten: training/extras.ts, app/einstellungen.ts, app/merker.ts, app/konfetti.ts,
+ * speicher/format.ts (Standard der Einstellungen), i18n.
  */
 import { useSyncExternalStore } from "react";
 import {
@@ -18,7 +20,8 @@ import {
 } from "../../../app/einstellungen";
 import { MERKER_KONFETTI } from "../../../app/konfetti";
 import { beobachteMerker, liesMerker, schreibeMerker } from "../../../app/merker";
-import type { Textschluessel } from "../../../i18n/sprache";
+import { istTextschluessel, t } from "../../../i18n/sprache";
+import { STANDARD_EINSTELLUNGEN } from "../../../speicher/format";
 import type { Extraart } from "../../../training/extras";
 
 /** Merker des Porträtrahmens: „bronze“, „silber“, „gold“; fehlt er, gibt es keinen Rahmen. */
@@ -30,53 +33,71 @@ const OHNE_RAHMEN = "ohne";
 const OHNE_TITEL = "ohne";
 const KONFETTI_APP = "app";
 
+/**
+ * Wo eine Art in der Vorschau „So siehst du gerade aus“ erscheint: am Porträt (Rahmen, Titel)
+ * oder als Zeile neben dem Mini-Brett (Brett, Figuren, Konfetti, jede neue Art).
+ */
+export type Buehnenort = "portraet" | "zeile";
+
 /** Wie eine Art gewählt wird. */
 interface Extrawahl {
   readonly art: Extraart;
-  /** Überschrift der Art in der Profilkarte. */
-  readonly titel: Textschluessel;
-  /** Der freie Wert, zu dem „Ablegen“ zurückkehrt; null, wenn die Wahl in den Einstellungen steht. */
-  readonly ohne: string | null;
+  /** Der Wert, zu dem „Ablegen“ zurückkehrt (bei Brett und Figuren der Standard „wie im Buch“). */
+  readonly ohne: string;
+  readonly ort: Buehnenort;
   readonly lies: (einstellungen: Einstellungen) => string;
   readonly waehle: (wert: string) => void;
+  /** Name eines Werts, der kein Extra ist (etwa „holz“ → „Holz“, „app“ → „Farben der App“). */
+  readonly name: (wert: string) => string;
+}
+
+/** Text eines Schlüssels aus Vorsilbe und Wert, sonst der Wert selbst. */
+function textOder(vorsilbe: string, wert: string): string {
+  const schluessel = `${vorsilbe}${wert}`;
+  return istTextschluessel(schluessel) ? t(schluessel) : wert;
 }
 
 /** Je Art eine Zeile. */
 export const EXTRAWAHL: readonly Extrawahl[] = [
   {
     art: "rahmen",
-    titel: "extras.art.rahmen",
     ohne: OHNE_RAHMEN,
+    ort: "portraet",
     lies: () => liesMerker(MERKER_RAHMEN) ?? OHNE_RAHMEN,
     waehle: (wert) => schreibeMerker(MERKER_RAHMEN, wert),
+    name: () => t("extrasneu.ohne"),
   },
   {
     art: "brett",
-    titel: "extras.art.brett",
-    ohne: null,
+    ohne: STANDARD_EINSTELLUNGEN.brettfarben,
+    ort: "zeile",
     lies: (e) => e.brettfarben,
     waehle: (wert) => aendereEinstellungen({ brettfarben: wert as Brettfarben }),
+    name: (wert) => textOder("einstellungen.brettfarben.", wert),
   },
   {
     art: "figuren",
-    titel: "extras.art.figuren",
-    ohne: null,
+    ohne: STANDARD_EINSTELLUNGEN.figurensatz,
+    ort: "zeile",
     lies: (e) => e.figurensatz,
     waehle: (wert) => aendereEinstellungen({ figurensatz: wert as Figurensatz }),
+    name: (wert) => textOder("einstellungen.figurensatz.", wert),
   },
   {
     art: "konfetti",
-    titel: "extras.art.konfetti",
     ohne: KONFETTI_APP,
+    ort: "zeile",
     lies: () => liesMerker(MERKER_KONFETTI) ?? KONFETTI_APP,
     waehle: (wert) => schreibeMerker(MERKER_KONFETTI, wert),
+    name: () => t("extrasneu.konfetti.app"),
   },
   {
     art: "titel",
-    titel: "themen.extras.art.titel",
     ohne: OHNE_TITEL,
+    ort: "portraet",
     lies: () => liesMerker(MERKER_TITEL) ?? OHNE_TITEL,
     waehle: (wert) => schreibeMerker(MERKER_TITEL, wert),
+    name: () => t("extrasneu.ohne"),
   },
 ];
 

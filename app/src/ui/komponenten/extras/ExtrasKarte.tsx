@@ -1,90 +1,122 @@
 /**
- * Profilkarte „Deine Extras“ (Gamifizierung P7): alle freischaltbaren Extras nach Art, freie zum
- * Wählen, gesperrte als Silhouette mit ihrer Bedingung („Ab Stufe 5“).
+ * Profilkarte „Deine Extras“ (Gamifizierung P7, neu gestaltet nach Entwurf E1 „Ankleide“ am
+ * 31.10.2026): oben die Vorschau „So siehst du gerade aus“, darunter je Art ein Reiter mit
+ * Kacheln; Antippen legt an, erneutes Antippen oder „… ablegen“ legt ab.
  *
  * Rolle im Gesamtbild: Steht im Profil unter „Dein Fortschritt“ (profilkarten.ts). Die Liste und
- * die Regeln kommen aus training/extras.ts, die Wahl je Art aus extrawahl.ts. Brett und Figuren
+ * die Regeln kommen aus training/extras.ts, die Wahl je Art aus extrawahl.ts. Die Reiter entstehen
+ * aus `EXTRAARTEN` (nur Arten mit Extras): Eine neue Art erscheint von selbst. Brett und Figuren
  * lassen sich auch in den Einstellungen wählen; dort stehen dieselben Sperren. Nie wegnehmen
- * (E8): Ein gewähltes Extra bleibt gewählt, auch wenn die Bedingung gerade nicht erfüllt ist.
- * Abhängigkeiten: training/extras.ts, extrawahl.ts, extralage.ts, extratexte.ts, i18n, lucide-react.
+ * (E8): Ein gewähltes Extra bleibt gewählt (und zählt als frei), auch wenn die Bedingung gerade
+ * nicht erfüllt ist.
+ * Abhängigkeiten: training/extras.ts, extrawahl.ts, extralage.ts, extratexte.ts, Extrabuehne.tsx,
+ * Extrakachel.tsx, bausteine/Reiter.tsx, profil/spieler.ts, i18n, lucide-react.
  */
-import { Lock } from "lucide-react";
+import { CircleHelp, X } from "lucide-react";
+import { useState } from "react";
+import { useEinstellungen } from "../../../app/einstellungen";
 import { t } from "../../../i18n/sprache";
-import { bedingungErfuellt, EXTRAARTEN, extrasDerArt, type Extra } from "../../../training/extras";
-import { bedingungstext, extraname } from "./extratexte";
+import {
+  bedingungErfuellt,
+  EXTRAARTEN,
+  EXTRAS,
+  extrasDerArt,
+  type Extra,
+  type Extraart,
+  type Extralage,
+} from "../../../training/extras";
+import { useSpielerprofil } from "../../profil/spieler";
+import { Reiter } from "../bausteine/Reiter";
+import { Extrabuehne } from "./Extrabuehne";
+import { Extrakachel, type Kachelzustand } from "./Extrakachel";
 import { useExtralage } from "./extralage";
+import { reitertext } from "./extratexte";
 import { extrawahl, useGewaehlteExtras } from "./extrawahl";
 
-/** Größe des Schlosses auf gesperrten Kacheln. */
-const SCHLOSSGROESSE = 14;
+/** Größe der kleinen Zeichen (Ablegen, Hinweis). */
+const ZEICHENGROESSE = 16;
 
-/** Eine Kachel: Bild, Name und Knopf (frei) oder Schloss mit Bedingung (gesperrt). */
-function Extrakachel({
-  extra,
-  frei,
+type Gewaehlt = Readonly<Record<string, string>>;
+
+/** Zustand einer Kachel aus Wahl und Lage. */
+function zustandVon(extra: Extra, gewaehlt: Gewaehlt, lage: Extralage): Kachelzustand {
+  if (gewaehlt[extra.art] === extra.wert) return "angelegt";
+  return bedingungErfuellt(extra.bedingung, lage) ? "frei" : "gesperrt";
+}
+
+/** Die Kacheln einer Art und darunter „… ablegen“, solange ein Extra dieser Art angelegt ist. */
+function Artauswahl({
+  art,
   gewaehlt,
+  lage,
 }: {
-  extra: Extra;
-  frei: boolean;
-  gewaehlt: boolean;
+  art: Extraart;
+  gewaehlt: Gewaehlt;
+  lage: Extralage;
 }) {
-  const wahl = extrawahl(extra.art);
-  const name = extraname(extra);
-  const offen = frei || gewaehlt;
-  const ohne = wahl?.ohne ?? null;
-  const ablegen = gewaehlt && ohne !== null;
-  const knopftext = t(ablegen ? "extras.ablegen" : gewaehlt ? "extras.gewaehlt" : "extras.waehlen");
+  const wahl = extrawahl(art);
+  const profil = useSpielerprofil();
+  const einstellungen = useEinstellungen();
+  const extras = extrasDerArt(art);
+  const angelegt = extras.some((e) => gewaehlt[art] === e.wert);
+  const lege = (wert: string) => wahl?.waehle(wert);
   return (
-    <li
-      className={`extrakachel${offen ? "" : " extrakachel-gesperrt"}`}
-      data-testid={`extra-${extra.kennung}`}
-    >
-      <img className="extrakachel-bild" src={`${import.meta.env.BASE_URL}${extra.bild}`} alt="" />
-      <span className="extrakachel-name">{name}</span>
-      {offen ? (
-        <button
-          type="button"
-          className="knopf-zweit"
-          aria-pressed={gewaehlt}
-          aria-label={`${name}: ${knopftext}`}
-          disabled={gewaehlt && !ablegen}
-          onClick={() => wahl?.waehle(ablegen && ohne !== null ? ohne : extra.wert)}
-        >
-          {knopftext}
+    <div role="tabpanel" aria-label={reitertext(art)} className="extrasneu-auswahl">
+      <ul className="extrasneu-kacheln">
+        {extras.map((extra) => {
+          const zustand = zustandVon(extra, gewaehlt, lage);
+          return (
+            <Extrakachel
+              key={extra.kennung}
+              extra={extra}
+              zustand={zustand}
+              lage={lage}
+              kontext={{ profil, einstellungen }}
+              beiTipp={() => lege(zustand === "angelegt" ? (wahl?.ohne ?? "") : extra.wert)}
+            />
+          );
+        })}
+      </ul>
+      {angelegt && wahl && (
+        <button type="button" className="extrasneu-ablegen" onClick={() => lege(wahl.ohne)}>
+          <X size={ZEICHENGROESSE} aria-hidden="true" />
+          {t("extrasneu.ablegen", { art: reitertext(art) })}
         </button>
-      ) : (
-        <span className="extrakachel-bedingung">
-          <Lock size={SCHLOSSGROESSE} aria-hidden="true" />
-          {bedingungstext(extra.bedingung)}
-        </span>
       )}
-    </li>
+    </div>
   );
 }
 
-/** Die Karte mit allen Extras, je Art eine Reihe. */
+/** Die Karte: Kopf mit Zähler, Vorschau, Reiter je Art, Kacheln, Hinweis. */
 export function ExtrasKarte() {
   const lage = useExtralage();
   const gewaehlt = useGewaehlteExtras();
+  const arten = EXTRAARTEN.filter((a) => extrasDerArt(a).length > 0);
+  const [art, setzeArt] = useState<Extraart>(arten[0] ?? "rahmen");
+  const frei = EXTRAS.filter((e) => zustandVon(e, gewaehlt, lage) !== "gesperrt").length;
   return (
     <section className="karte extraskarte" data-testid="extras">
-      <h2 className="karte-titel">{t("extras.karte.titel")}</h2>
-      <p className="hinweis">{t("extras.karte.einleitung")}</p>
-      {EXTRAARTEN.map((art) => (
-        <div key={art} className="extrareihe">
-          <h3 className="extrareihe-titel">{t(extrawahl(art)?.titel ?? "extras.karte.titel")}</h3>
-          <ul className="extraliste">
-            {extrasDerArt(art).map((extra) => (
-              <Extrakachel
-                key={extra.kennung}
-                extra={extra}
-                frei={bedingungErfuellt(extra.bedingung, lage)}
-                gewaehlt={gewaehlt[art] === extra.wert}
-              />
-            ))}
-          </ul>
-        </div>
-      ))}
+      <div className="extrasneu-kopf">
+        <h2 className="karte-titel">{t("extras.karte.titel")}</h2>
+        <span className="hinweis" data-testid="extras-zaehler">
+          {t("extrasneu.zaehler", { frei, gesamt: EXTRAS.length })}
+        </span>
+      </div>
+      <p className="hinweis">{t("extrasneu.einleitung")}</p>
+      <Extrabuehne gewaehlt={gewaehlt} />
+      <div className="extrasneu-reiter">
+        <Reiter
+          name={t("extrasneu.reiterliste")}
+          eintraege={arten.map((a) => ({ wert: a, text: reitertext(a) }))}
+          gewaehlt={art}
+          beiWahl={setzeArt}
+        />
+      </div>
+      <Artauswahl art={art} gewaehlt={gewaehlt} lage={lage} />
+      <p className="hinweis extrasneu-fuss">
+        <CircleHelp size={ZEICHENGROESSE} aria-hidden="true" />
+        {t("extrasneu.hinweis")}
+      </p>
     </section>
   );
 }

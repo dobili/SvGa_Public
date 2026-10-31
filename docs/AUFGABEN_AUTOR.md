@@ -33,6 +33,57 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Deine Extras neu (31.10.2026)
+
+Die Profilkarte „Deine Extras“ ist nach deiner Wahl neu gebaut (Entwurf E1 „Ankleide“): oben eine
+Vorschau, wie du gerade aussiehst, darunter Reiter je Art mit Kacheln, die du antippst statt
+Knöpfe zu drücken. Profil: Tipp auf „Profil“ unten in der Leiste, dann nach unten bis „Deine
+Extras“. Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das Zahnrad bzw.
+„Profil“) › „Abzeichen testen (nur für dich)“ › mehrmals „Nächste Stufe erreichen“; „Probe
+beenden“ stellt alles zurück.
+
+- [ ] N2270. **Kopf und Vorschau:** Oben „Deine Extras“ mit Zähler rechts („4 von 8“: so viele
+      Extras sind frei oder angelegt). Darunter ein Kasten „So siehst du gerade aus“ mit deinem
+      Porträt samt Rahmen, deinem Namen, dem Titel als goldenes Band (falls angelegt) und „Stufe
+      6 · Vorposten“; darunter ein kleines Brett 4 × 4 in deinen Brettfarben mit deinem
+      Figurensatz und daneben „Brett …“, „Figuren …“, „Konfetti …“. Im Hintergrund ruhiges
+      Konfetti in deinen Konfettifarben. Wirkt das einladend, nicht wie ein Formular?
+- [ ] N2271. **Reiter:** Unter der Vorschau die Reiter „Rahmen“, „Brett“, „Figuren“, „Konfetti“,
+      „Titel“ als runde Schaltflächen; der gewählte ist hinterlegt. Auf einem schmalen Handy
+      passen alle fünf in eine Zeile, sonst lässt sich die Zeile seitlich wischen. Ein Tipp zeigt
+      die Kacheln dieser Art.
+- [ ] N2272. **Anlegen durch Antippen:** Mit Stufe 6 (Probe) im Reiter „Rahmen“ auf „Bronze“
+      tippen: Die Kachel bekommt einen goldenen Rand, einen Haken in der Ecke und „Angelegt“;
+      das Porträt oben und überall in der App trägt sofort den Bronzerahmen. Freie, nicht
+      angelegte Kacheln sagen „Antippen zum Anlegen“. Es gibt keine Knöpfe „Wählen“ mehr.
+- [ ] N2273. **Ablegen:** Die angelegte Kachel noch einmal antippen: Der Rahmen ist abgelegt.
+      Alternativ unter den Kacheln klein „Rahmen ablegen“ (erscheint nur, solange ein Extra
+      dieser Art angelegt ist). Bei Brett und Figuren führt Ablegen zurück zu „wie im Buch“.
+- [ ] N2274. **Gesperrte Kacheln:** Gesperrte Extras zeigen die echte Vorschau abgedunkelt (etwa
+      dein Porträt mit Goldrahmen, das Brett „Nacht und Gold“), ein Schloss in der Ecke und die
+      Bedingung („Ab Stufe 9“, „Mit allen Orden der Buchteile“, „5 Themen im Taktiktrainer in
+      Gold“). Bei Stufen und Themen zeigt ein kleiner goldener Balken, wie weit du bist (Stufe 6
+      von 9). Ein Tipp darauf bewirkt nichts. Ist klar, was man tun muss?
+- [ ] N2275. **Vorschau sofort:** Im Reiter „Figuren“ (ab Stufe 5) „Gold“ antippen: Das kleine
+      Brett oben zeigt sofort goldene Figuren, und die Zeile daneben sagt „Figuren Gold“. Im
+      Reiter „Konfetti“ (ab Stufe 2) „Bunt“ antippen: Das Konfetti oben wird bunt.
+- [ ] N2276. **Titel:** Im Reiter „Titel“ stehen „Taktiker“ und „Endspielkenner“ als runder
+      goldener Orden mit dem Namen darunter (das Band passt nicht in eine schmale Kachel). Mit
+      der Probe der Meisterschaft (Aufgabenseite › Themen zur Probe auf Gold, fünf Taktikmotive)
+      lässt sich „Taktiker“ anlegen; dann steht das goldene Band oben in der Vorschau und der
+      Titel unter deinem Namen im Profilkopf.
+- [ ] N2277. **Einstellungen › Brett:** Profil › „Einstellungen“ › Reiter „Brett“, ganz unten
+      bei Brettfarben und Figurensatz die Gruppe „Verdient“: Gesperrte Kacheln zeigen jetzt das
+      echte Brett bzw. die echten Figuren abgedunkelt mit Schloss und darunter die Bedingung,
+      nicht mehr leere graue Kästen. Sieht es nicht mehr nach Ladefehler aus?
+- [ ] N2278. **Hell und dunkel:** Profil › „Einstellungen“ › Darstellung hell, dann dunkel: Die
+      Vorschau, die Reiter, die Kacheln (Rand, Haken, Schloss, Balken) sind in beiden Fällen gut
+      lesbar; im hellen Modus ist die Vorschau leicht grau hinterlegt, im dunklen leicht heller
+      als die Karte.
+- [ ] N2279. **Bildschirmleser (wahlweise):** Mit TalkBack bzw. VoiceOver sagt eine Kachel ihren
+      Namen und Zustand, etwa „Rahmen Silber: angelegt, antippen zum Ablegen“ oder „Rahmen Gold:
+      gesperrt, Ab Stufe 9 (6 von 9)“; die Reiter werden als Reiter angesagt.
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

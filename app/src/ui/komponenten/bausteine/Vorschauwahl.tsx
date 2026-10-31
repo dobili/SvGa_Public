@@ -8,19 +8,28 @@
  * Bildschirmleser eine Gruppe von Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck
  * (aria-hidden). Die Kacheln lassen sich in Gruppen mit Überschrift teilen (Figurensätze:
  * Klassisch, Modern, Holz). Seit Gamifizierung P7 kann eine Kachel gesperrt sein (freischaltbares
- * Extra): Dann zeigt sie die Vorschau als Silhouette, ein Schloss und die Bedingung und lässt
- * sich nicht wählen.
- * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
+ * Extra): Dann zeigt sie die echte Vorschau abgedunkelt mit Schloss (Sperrbild.tsx, seit
+ * 31.10.2026 statt einer grauen Silhouette) und darunter die Bedingung und lässt sich nicht wählen.
+ * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts,
+ * Sperrbild.tsx.
  */
-import { Lock } from "lucide-react";
 import { useId } from "react";
 import type { Brettfarben, Figurensatz } from "../../../app/einstellungen";
 import { Figur } from "../../brett/Figur";
 import { Brettbild, Holzfelder } from "../../brett/Holzfelder";
 import { BRETTFARBEN, FELD, holzmuster } from "../../brett/masse";
+import { Sperrbild } from "./Sperrbild";
+
+/** Ein Feld der Vorschau: hell oder dunkel, Figur als FEN-Zeichen ("" ohne Figur), Lage. */
+export interface Vorschaufeld {
+  readonly hell: boolean;
+  readonly figur: string;
+  readonly spalte: number;
+  readonly reihe: number;
+}
 
 /** Die vier Felder der Vorschau (a8, b8, a7, b7) mit ihren Figuren (FEN-Zeichen). */
-const FELDER: readonly { hell: boolean; figur: string; spalte: number; reihe: number }[] = [
+const FELDER: readonly Vorschaufeld[] = [
   { hell: true, figur: "K", spalte: 0, reihe: 0 },
   { hell: false, figur: "N", spalte: 1, reihe: 0 },
   { hell: false, figur: "n", spalte: 0, reihe: 1 },
@@ -28,14 +37,23 @@ const FELDER: readonly { hell: boolean; figur: string; spalte: number; reihe: nu
 ];
 /** Seitenlänge der Vorschau in Feldern. */
 const SEITE = 2;
-/** Größe des Schlosses auf gesperrten Kacheln. */
-const SCHLOSSGROESSE = 14;
 
 /**
- * Ein Brettausschnitt aus vier Feldern mit Figuren.
+ * Ein Brettausschnitt aus vier Feldern mit Figuren; mit `felder` und `seite` auch größer
+ * (Mini-Brett der Profilkarte „Deine Extras“, 4 × 4 Felder).
  * Beispiel: Brettfarben „Holz“ mit Figurensatz „klassisch“.
  */
-export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: Figurensatz }) {
+export function Brettausschnitt({
+  farben,
+  satz,
+  felder = FELDER,
+  seite = SEITE,
+}: {
+  farben: Brettfarben;
+  satz: Figurensatz;
+  felder?: readonly Vorschaufeld[];
+  seite?: number;
+}) {
   const kennung = useId();
   const palette = BRETTFARBEN[farben];
   const fuellung = (hell: boolean) =>
@@ -43,11 +61,11 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
   return (
     <svg
       className="brettausschnitt"
-      viewBox={`0 0 ${SEITE * FELD} ${SEITE * FELD}`}
+      viewBox={`0 0 ${seite * FELD} ${seite * FELD}`}
       aria-hidden="true"
     >
       {farben === "holz" && <Holzfelder kennung={kennung} />}
-      {FELDER.map((f, i) => (
+      {felder.map((f, i) => (
         <rect
           key={i}
           x={f.spalte * FELD}
@@ -59,7 +77,7 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
       ))}
       {/* Die obere linke Ecke des Brettbildes: a8, b8, a7, b7. */}
       {palette.bild && <Brettbild pfad={palette.bild} />}
-      {FELDER.map((f, i) => (
+      {felder.map((f, i) => (
         <Figur
           key={i}
           zeichen={f.figur}
@@ -73,7 +91,7 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
   );
 }
 
-/** Eine Kachel; mit Bedingung gesperrt (Silhouette, Schloss, nicht wählbar). */
+/** Eine Kachel; mit Bedingung gesperrt (abgedunkelt, Schloss, nicht wählbar). */
 function Kachel({
   gewaehlt,
   text,
@@ -97,14 +115,9 @@ function Kachel({
       className={`vorschaukachel${gesperrt ? " vorschaukachel-gesperrt" : ""}`}
       onClick={gesperrt ? undefined : beiWahl}
     >
-      {children}
+      <Sperrbild gesperrt={gesperrt}>{children}</Sperrbild>
       <span>{text}</span>
-      {gesperrt && (
-        <span className="vorschaukachel-bedingung">
-          <Lock size={SCHLOSSGROESSE} aria-hidden="true" />
-          {bedingung}
-        </span>
-      )}
+      {gesperrt && <span className="vorschaukachel-bedingung">{bedingung}</span>}
     </button>
   );
 }

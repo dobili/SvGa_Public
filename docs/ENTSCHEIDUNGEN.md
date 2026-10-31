@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Deine Extras neu: Entwurf E1 „Ankleide“ (Arbeitschat, Zweig `gestaltung-extras`)
+
+Ziel des Autors: Die Karte war zu technisch und wirkte wie ein Formular (graue Kreise, Knöpfe
+„Wählen“/„Ablegen“); in Einstellungen › Brett sahen gesperrte Extras wie ein Ladefehler aus.
+Gewählt: E1 „Ankleide“.
+
+- **Vorschau „So siehst du gerade aus“** (`extras/Extrabuehne.tsx`): Porträt mit angelegtem
+  Rahmen, Name, Titel als Band, Stufe; Mini-Brett 4 × 4 in den eigenen Brettfarben mit eigenem
+  Figurensatz (`Brettausschnitt` hat dafür `felder` und `seite` bekommen); stilles Konfetti in den
+  gewählten Farben (kein Effekt, daher ohne Schalter „Feiereffekte“). Welche Art am Porträt und
+  welche als Zeile erscheint, steht als Feld `ort` in `EXTRAWAHL`; neue Arten erscheinen als Zeile.
+- **Reiter je Art** aus `EXTRAARTEN` (nur Arten mit Extras), vorhandene Reiter-Komponente als
+  Pillen gestaltet. Texte `extrasneu.reiter.<art>`; fehlt einer, steht die Kennung der Art.
+- **Kacheln** (`extras/Extrakachel.tsx`): Umschaltknopf (`aria-pressed`), Antippen legt an,
+  erneutes Antippen legt ab, dazu klein „… ablegen“. Echte Vorschau je Art (Liste `VORSCHAUEN`
+  in `Extravorschau.tsx`; neue Arten zeigen ihr Bild aus `EXTRAS`). Titel als runder Orden statt
+  Band, weil das Band bei 360 px nicht in ein Drittel der Breite passt und der Name ohnehin
+  darunter steht. Kurznamen `extrasneu.kurz.<kennung>` mit Rückfall auf den langen Namen.
+- **Gesperrt:** echte Vorschau abgedunkelt mit Schloss (`bausteine/Sperrbild.tsx`), Bedingung als
+  Text, bei Stufe und Meisterschaft ein Balken (`extrafortschritt.ts`, Liste `FORTSCHRITTE`; bei
+  Orden gibt die Lage keinen Zwischenstand her, daher kein Balken). Dieselbe Darstellung in den
+  Kacheln der Einstellungen (Vorschauwahl.tsx) statt der grauen Silhouette.
+- **Ablegen bei Brett und Figuren:** zurück zum Standard „wie im Buch“ (`STANDARD_EINSTELLUNGEN`);
+  vorher gab es dort kein Ablegen. „… ablegen“ erscheint nur, wenn ein Extra der Art angelegt ist.
+- Zähler „4 von 8“: frei oder angelegt (nie wegnehmen, E8). Abweichung vom Entwurf: Kopf „So
+  siehst du gerade aus“ wie im Auftrag (Bild: „So sieht man dich“); keine Kachel „Ohne“, Ablegen
+  genügt. Speicherformat unverändert; Texte unter `extrasneu.`, abgelöste Schlüssel
+  (`extras.waehlen`, `extras.gewaehlt`, `extras.ablegen`, `extras.karte.einleitung`,
+  `extras.art.*`, `themen.extras.art.titel`) gelöscht. Testpunkte N2270 bis N2279.
+
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 
 - Zweig `profil-neu` geprüft und zusammengeführt (Wahl des Autors auf der Auswahlseite):

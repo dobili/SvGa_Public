@@ -1,8 +1,10 @@
 /**
- * Oberflächentests der freischaltbaren Extras (Gamifizierung P7): Die Profilkarte „Deine Extras“
- * zeigt gesperrte Extras mit Bedingung; in den Einstellungen steht der Figurensatz „Gold“
- * gesperrt mit „Ab Stufe 5“ und lässt sich nicht wählen; nach einer Probe-Stufe auf der
- * Aufgabenseite sind die Konfettifarben wählbar, der Bronzerahmen noch nicht.
+ * Oberflächentests der freischaltbaren Extras (Gamifizierung P7, Profilkarte neu nach Entwurf E1
+ * „Ankleide“ seit 31.10.2026): Die Karte zeigt oben die Vorschau, darunter je Art einen Reiter;
+ * gesperrte Extras stehen abgedunkelt mit Schloss und Bedingung da. In den Einstellungen steht
+ * der Figurensatz „Gold“ gesperrt mit „Ab Stufe 5“ und lässt sich nicht wählen. Nach einer
+ * Probe-Stufe auf der Aufgabenseite legt Antippen die bunten Konfettifarben an, erneutes Antippen
+ * legt sie ab; der Bronzerahmen bleibt gesperrt.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
@@ -17,14 +19,18 @@ async function extraskarte(page: Page) {
   return karte;
 }
 
-test("Gesperrte Extras zeigen ihre Bedingung; nach der Probe-Stufe sind die Konfettifarben wählbar", async ({
+test("Gesperrte Extras zeigen ihre Bedingung; nach der Probe-Stufe legt Antippen die Konfettifarben an", async ({
   page,
 }) => {
   await starteImBrowser(page);
   let karte = await extraskarte(page);
+  await expect(karte.getByTestId("extras-buehne")).toContainText("So siehst du gerade aus");
+  await expect(karte.getByTestId("extra-rahmen-bronze")).toContainText("Ab Stufe 3");
+  await karte.getByRole("tab", { name: "Konfetti" }).click();
   const konfetti = karte.getByTestId("extra-konfetti-bunt");
   await expect(konfetti).toContainText("Ab Stufe 2");
-  await expect(konfetti.getByRole("button")).toHaveCount(0);
+  await expect(konfetti).toHaveAttribute("aria-disabled", "true");
+  await karte.getByRole("tab", { name: "Brett" }).click();
   await expect(karte.getByTestId("extra-brett-nacht-gold")).toContainText(
     "Mit allen Orden der Buchteile",
   );
@@ -46,11 +52,17 @@ test("Gesperrte Extras zeigen ihre Bedingung; nach der Probe-Stufe sind die Konf
   await probe.getByRole("button", { name: "Nächste Stufe erreichen" }).click();
 
   karte = await extraskarte(page);
-  await karte.getByRole("button", { name: "Bunte Konfettifarben: Wählen" }).click();
-  await expect(karte.getByRole("button", { name: "Bunte Konfettifarben: Ablegen" })).toBeVisible();
-  await expect(karte.getByTestId("extra-rahmen-bronze")).toContainText("Ab Stufe 3");
+  await karte.getByRole("tab", { name: "Konfetti" }).click();
+  await karte.getByRole("button", { name: "Bunte Konfettifarben: antippen zum Anlegen" }).click();
+  const angelegt = karte.getByRole("button", { name: /Bunte Konfettifarben: angelegt/ });
+  await expect(angelegt).toHaveAttribute("aria-pressed", "true");
+  await expect(karte.getByTestId("extras-buehne")).toContainText("Bunt");
   await karte.scrollIntoViewIfNeeded();
   await page.screenshot({ path: "test-results/bilder/extras-frei.png" });
+  await angelegt.click();
+  await expect(karte.getByTestId("extra-konfetti-bunt")).toHaveAttribute("aria-pressed", "false");
+  await karte.getByRole("tab", { name: "Rahmen" }).click();
+  await expect(karte.getByTestId("extra-rahmen-bronze")).toContainText("Ab Stufe 3");
 });
 
 test("Ein gewählter Rahmen erscheint am Porträt und bleibt auch ohne Bedingung (nie wegnehmen)", async ({
@@ -69,11 +81,13 @@ test("Ein gewählter Rahmen erscheint am Porträt und bleibt auch ohne Bedingung
     "data-rahmen",
     "gold",
   );
-  await karte.getByRole("button", { name: "Rahmen Gold: Ablegen" }).click();
+  await expect(karte.getByTestId("extra-rahmen-gold")).toContainText("Angelegt");
+  await karte.getByRole("button", { name: "Rahmen ablegen" }).click();
   await expect(page.getByTestId("profilkarte").getByTestId("spielerbild")).toHaveAttribute(
     "data-rahmen",
     "ohne",
   );
   // Abgelegt und ohne Stufe 9: jetzt wieder gesperrt.
   await expect(karte.getByTestId("extra-rahmen-gold")).toContainText("Ab Stufe 9");
+  await expect(karte.getByRole("button", { name: "Rahmen ablegen" })).toHaveCount(0);
 });

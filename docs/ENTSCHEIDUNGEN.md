@@ -4,6 +4,17 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.30: Fällige Wiederholungen überall gleich gezählt (Opus)
+
+- Befund des Autors (Bildschirmfotos, 31.10.2026): „Dein nächster Schritt“ meldete „9
+  Wiederholungen sind fällig“, die Übersicht im Training 6. Die Karte zählte alle fälligen Karten,
+  die Übersicht seit 0.3.24 nur die, deren Aufgabe es noch gibt. Jetzt rechnen beide mit derselben
+  Funktion (`useFaelligeUebersicht` in `ui/komponenten/training/vorhandeneAufgaben.ts`).
+- 0.3.25 bis 0.3.29 sind mit grüner CI (auch WebKit) auf main.
+- Neue Gestaltungsrunde angestoßen: je drei Entwürfe für die Karten im Buch, den Lernpfad (mit
+  Hintergründen), die Übersicht „Training“ und die Gesamt-Checkliste, dazu eine Durchsicht
+  weiterer Bildschirme; Wahl über die Auswahlseite.
+
 ## 31.10.2026 – Version 0.3.29: Gamifizierung P3 Meisterschaft übernommen, Welle 2 vollständig (Opus)
 
 - Zweig `gami-p3-meisterschaft` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den

@@ -8,6 +8,7 @@
  * Die Vorschläge selbst rechnet training/naechsterSchritt.ts.
  * Abhängigkeiten: training/naechsterSchritt.ts, daten/laden.ts, Speicher, Merker, i18n.
  */
+import { useFaelligeUebersicht } from "../training/vorhandeneAufgaben";
 import { liesMerker } from "../../../app/merker";
 import { ladeIndex, ladeKapitel } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
@@ -43,6 +44,8 @@ export function vorschlagstext(vorschlag: Vorschlag): string {
 /** Die Lage aus Speicher, Verzeichnis und Merkern; die Übungen kommen nach dem Laden dazu. */
 export function useLage(): Lage | null {
   const daten = useSpeicher((z) => z.daten);
+  // Dieselbe Zahl wie in der Übersicht im Training (ohne verwaiste Karten).
+  const { gesamt } = useFaelligeUebersicht();
   const index = useDaten(ladeIndex, "index");
   const kapitel = index.art === "fertig" ? index.wert.kapitel : KEINE_KAPITEL;
   const kandidaten = kapitelFuerUebungen(daten, kapitel);
@@ -63,5 +66,6 @@ export function useLage(): Lage | null {
       jetzt,
     ),
     jetzt,
+    faelligAnzahl: gesamt,
   };
 }

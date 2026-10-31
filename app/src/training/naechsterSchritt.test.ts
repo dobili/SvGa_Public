@@ -61,6 +61,10 @@ describe("Rangfolge der Vorschläge", () => {
     expect(erster?.werte).toEqual({ anzahl: 4, minuten: 3 });
     expect(erster?.ziel).toEqual({ bildschirm: "zusatz", kennung: "naechster", wert: "wiederholung" });
     expect(arten(lage({}, faelligeKarten(2)))).not.toContain("faellig");
+    // Verwaiste Karten zählen nicht: dieselbe Zahl wie die Übersicht im Training.
+    expect(arten(lage({ faelligAnzahl: 2 }, faelligeKarten(5)))).not.toContain("faellig");
+    const [mitZahl] = vorschlaege(lage({ faelligAnzahl: 4 }, faelligeKarten(9)));
+    expect(mitZahl?.werte).toMatchObject({ anzahl: 4 });
   });
 
   it("nennt die offene Tagesaufgabe vor dem Weiterlesen, höchstens drei Vorschläge", () => {

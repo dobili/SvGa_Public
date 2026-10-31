@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.30** (Zweig `uebernahme-welle2`): 0.3.29 auf main. Fällige Wiederholungen in Karte und Training gleich gezählt. Gestaltungsrunde 2 (Buchkarten, Lernpfad, Training, Checkliste, Durchsicht) in Arbeit; Arbeitschat „Profil neu“ läuft.
+
 Stand: 31.10.2026 · **Version 0.3.29** (Zweig `uebernahme-welle2`): P3 Meisterschaft übernommen (N2180–N2189), Welle 2 vollständig; Orden-Wackler im Test behoben. **Nächster Schritt:** nach grüner CI 0.3.27 bis 0.3.29 auf main; Bericht „Profil neu“ prüfen und übernehmen; Arbeitsliste aus den Entscheidungen 0.3.24 bis 0.3.29.
 
 Stand: 31.10.2026 · **Version 0.3.28**: dazu P6 Wochenaufträge (N2190–N2199). Welle 2 offen: nur P3 Meisterschaft. Arbeitschat „Profil neu“ (Zweig `profil-neu`) baut die Wahl des Autors: Orden C mit flacherem Glanzstück, Wertung W3 mit Klassisch als Schätzung, Rekorde R1.

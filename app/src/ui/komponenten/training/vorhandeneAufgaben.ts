@@ -11,14 +11,22 @@
  * Abhängigkeiten: training/wiederholbar.ts, training/buchstellungen.ts, daten/trainerdaten.ts.
  */
 import { useMemo } from "react";
+import type { Uebungsverweis } from "../../../app/stapel";
 import { ladeStrukturen } from "../../../daten/trainerdaten";
+import { useSpeicher } from "../../../speicher/speicher";
 import { ladeBuchstellungen, type Buchstellung } from "../../../training/buchstellungen";
 import {
   lapaufgabenAus,
   roentgenaufgabenAus,
   zaehlaufgabenAus,
 } from "../../../training/wiederholbar";
-import type { WiederholterTrainer } from "../../../training/wiederholung";
+import {
+  aufgabenAusKarten,
+  faellige,
+  uebungAusKarte,
+  WIEDERHOLTE_TRAINER,
+  type WiederholterTrainer,
+} from "../../../training/wiederholung";
 import { useDaten } from "../bausteine/useDaten";
 
 /** Was die Filter brauchen: Buchstellungen und Kennungen der Strukturaufgaben (null: lädt). */
@@ -68,4 +76,36 @@ export function useVorhandeneAufgaben(): (
     if (ids.length === 0) return 0;
     return ZAEHLER[trainer]?.(ids, quellen) ?? ids.length;
   };
+}
+
+/** Fällige Wiederholungen, wie die Übersicht im Training sie zählt. */
+export interface FaelligeUebersicht {
+  /** Fällige Übungen des Buches als Reihe für den Bildschirm „Übung“. */
+  readonly reihe: readonly Uebungsverweis[];
+  /** Je Trainer die fälligen Aufgaben, die es noch gibt (nur Trainer mit mehr als null). */
+  readonly trainer: readonly { kennung: WiederholterTrainer; anzahl: number }[];
+  readonly gesamt: number;
+}
+
+/**
+ * Hook: die fälligen Wiederholungen ohne verwaiste Karten, für die Übersicht im Training und die
+ * Karte „Dein nächster Schritt“. Beide zeigen so dieselbe Zahl (beim Übernehmen am 31.10.2026: die
+ * Karte meldete 9, das Training 6, weil sie verwaiste Karten mitzählte).
+ */
+export function useFaelligeUebersicht(): FaelligeUebersicht {
+  const karten = useSpeicher((z) => z.daten.karten);
+  const staende = useSpeicher((z) => z.daten.fortschritt.uebungen);
+  const vorhanden = useVorhandeneAufgaben();
+  const faellig = faellige(karten, new Date());
+  const reihe = faellig.flatMap((kennung): Uebungsverweis[] => {
+    const id = uebungAusKarte(kennung);
+    const kapitel = id ? staende[id]?.kapitel : undefined;
+    return id && kapitel !== undefined ? [{ kapitel, id }] : [];
+  });
+  const trainer = WIEDERHOLTE_TRAINER.map((kennung) => ({
+    kennung,
+    anzahl: vorhanden(kennung, aufgabenAusKarten(faellig, kennung)),
+  })).filter((z) => z.anzahl > 0);
+  const gesamt = reihe.length + trainer.reduce((summe, z) => summe + z.anzahl, 0);
+  return { reihe, trainer, gesamt };
 }

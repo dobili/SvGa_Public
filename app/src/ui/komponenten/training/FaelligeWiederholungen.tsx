@@ -6,34 +6,12 @@
  * Übungen des Buches als Reihe im Bildschirm „Übung“. Fällige Aufgaben der Trainer (Taktik,
  * „Falle oder Köder“, Strukturerkenner, Endspiel; U9) führen in ihren Trainer; dort startet
  * „Wiederholen“ sie. Oben steht die Gesamtzahl, darunter je Quelle ein Knopf.
- * Abhängigkeiten: Speicher, Navigation, training/wiederholung.ts, i18n.
+ * Abhängigkeiten: Speicher, Navigation, vorhandeneAufgaben.ts (Zählung), i18n.
  */
 import { useNavigation } from "../../../app/navigationsKontext";
-import type { Uebungsverweis } from "../../../app/stapel";
 import { datumText, t } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
-import {
-  aufgabenAusKarten,
-  faellige,
-  uebungAusKarte,
-  WIEDERHOLTE_TRAINER,
-  type WiederholterTrainer,
-} from "../../../training/wiederholung";
-import { useVorhandeneAufgaben } from "./vorhandeneAufgaben";
-
-/**
- * Je Trainer die Zahl der fälligen Aufgaben, die es noch gibt (größer als null). Verwaiste Karten
- * (Aufgabe aussortiert oder ausgeschlossen) zählen nicht (vorhandeneAufgaben.ts).
- */
-function trainerAnzahlen(
-  faellig: readonly string[],
-  vorhanden: (trainer: WiederholterTrainer, ids: readonly string[]) => number,
-): { kennung: WiederholterTrainer; anzahl: number }[] {
-  return WIEDERHOLTE_TRAINER.map((kennung) => ({
-    kennung,
-    anzahl: vorhanden(kennung, aufgabenAusKarten(faellig, kennung)),
-  })).filter((z) => z.anzahl > 0);
-}
+import { useFaelligeUebersicht } from "./vorhandeneAufgaben";
 
 /**
  * Zeigt im Bereich Training, wie viele Wiederholungen fällig sind, und startet sie.
@@ -45,17 +23,7 @@ function trainerAnzahlen(
 export function FaelligeWiederholungen() {
   const { navigiere } = useNavigation();
   const karten = useSpeicher((z) => z.daten.karten);
-  const staende = useSpeicher((z) => z.daten.fortschritt.uebungen);
-  const vorhanden = useVorhandeneAufgaben();
-  const jetzt = new Date();
-  const faellig = faellige(karten, jetzt);
-  const reihe: Uebungsverweis[] = faellig.flatMap((kennung) => {
-    const id = uebungAusKarte(kennung);
-    const kapitel = id ? staende[id]?.kapitel : undefined;
-    return id && kapitel !== undefined ? [{ kapitel, id }] : [];
-  });
-  const trainer = trainerAnzahlen(faellig, vorhanden);
-  const gesamt = reihe.length + trainer.reduce((summe, z) => summe + z.anzahl, 0);
+  const { reihe, trainer, gesamt } = useFaelligeUebersicht();
   const erste = reihe[0];
   if (gesamt === 0) {
     const termine = Object.values(karten).map((k) => Date.parse(k.faellig));

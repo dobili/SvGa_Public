@@ -53,8 +53,8 @@ export function kapitelFuerUebungen(
 
 
 /** Fall 1: mindestens drei fällige Wiederholungskarten, mit grober Dauer. */
-function faelligeKarten({ daten, jetzt }: Lage): Vorschlag | null {
-  const anzahl = faellige(daten.karten, jetzt).length;
+function faelligeKarten({ daten, jetzt, faelligAnzahl }: Lage): Vorschlag | null {
+  const anzahl = faelligAnzahl ?? faellige(daten.karten, jetzt).length;
   if (anzahl < FAELLIG_AB) return null;
   const minuten = Math.max(1, Math.ceil((anzahl * SEKUNDEN_JE_KARTE) / SEKUNDEN_JE_MINUTE));
   return {

@@ -38,6 +38,11 @@ export interface Lage {
   readonly zuletzt: string | null;
   readonly tagesaufgabeErledigt: boolean;
   readonly jetzt: Date;
+  /**
+   * Fällige Wiederholungen ohne verwaiste Karten, wie die Übersicht im Training sie zählt
+   * (ui/komponenten/training/vorhandeneAufgaben.ts); fehlt die Angabe, zählen alle fälligen Karten.
+   */
+  readonly faelligAnzahl?: number;
 }
 
 /** Ein Vorschlag: Satz, Knopf und Ziel. */

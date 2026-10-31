@@ -32,6 +32,7 @@ import {
 } from "../../../training/wochenauftraege";
 import { useDaten } from "../bausteine/useDaten";
 import { useSpielvorbelegung } from "../spielstart/vorbelegung";
+import { Reiterstand } from "./Reiterstand";
 import "../../stil/auftraege.css";
 
 const KEINE_KAPITEL: readonly Kapitelangabe[] = [];
@@ -163,7 +164,6 @@ export function Auftragsabschnitt() {
   const zeilen = auftragszeilen(stand, lage.daten);
   return (
     <div className="wochenkarte-abschnitt" data-testid="wochenauftraege">
-      <h3>{t("auftrag.titel")}</h3>
       {zeilen.length === 0 ? (
         <p className="hinweis">{t("auftrag.keine")}</p>
       ) : (
@@ -183,4 +183,12 @@ export function Auftragsabschnitt() {
       )}
     </div>
   );
+}
+
+/** Stand im Reiter der Karte „Heute“: erledigte Aufträge von allen, etwa „1/3“. */
+export function AuftraegeStand() {
+  const lage = useAuftragslage();
+  if (!lage) return null;
+  const zeilen = auftragszeilen(auftraegeDerWoche(lage.daten.wochen.auftraege, lage), lage.daten);
+  return <Reiterstand erreicht={zeilen.filter((z) => z.erledigt).length} gesamt={zeilen.length} />;
 }

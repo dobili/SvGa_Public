@@ -116,12 +116,12 @@ test("Tastatur: Pfeiltasten blättern, Tab bleibt in der Karte, Esc beendet; axe
   await starteImBrowser(page);
   await starteTour(page);
   const karte = tourkarte(page);
-  // Buch beim ersten Start: Nummernfeld, Kapitel, Rundgang (ohne „Zuletzt“, das fehlt noch).
-  await expect(karte.getByText("Schritt 1 von 3")).toBeVisible();
+  // Buch beim ersten Start: Nummernfeld, Karte „Heute“, Kapitel, Rundgang.
+  await expect(karte.getByText("Schritt 1 von 4")).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(karte.getByText("Schritt 2 von 3")).toBeVisible();
+  await expect(karte.getByText("Schritt 2 von 4")).toBeVisible();
   await page.keyboard.press("ArrowLeft");
-  await expect(karte.getByText("Schritt 1 von 3")).toBeVisible();
+  await expect(karte.getByText("Schritt 1 von 4")).toBeVisible();
   for (let i = 0; i < 4; i += 1) await page.keyboard.press("Tab");
   expect(await karte.evaluate((k) => k.contains(document.activeElement))).toBe(true);
   const ergebnis = await new AxeBuilder({ page }).include("[data-testid='tour']").analyze();

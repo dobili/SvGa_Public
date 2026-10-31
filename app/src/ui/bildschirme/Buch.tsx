@@ -1,5 +1,8 @@
 /**
  * Buch-Bildschirm: Nummernfeld „Abbildung öffnen“ und die Kapitel mit ihren Abbildungen.
+ * Seit der Gestaltung A2 (31.10.2026) steht das Nummernfeld neben dem Titel und der Knopf zum
+ * Lernpfad als Symbol oben rechts; „Zuletzt: Abb. …“ erscheint nach einem Tipp ins Feld (sonst
+ * führt die Kachel „Weiterlesen“ der Karte „Heute“ weiter). So beginnen die Kapitel weiter oben.
  *
  * Rolle im Gesamtbild: Startseite des Bereichs Buch (Konzept 10.1, Bildschirmentwurf „Buch“).
  * Leser tippen die Nummer aus dem Buch ein, etwa „1.26“, oder öffnen ein Kapitel (Kapitelübersicht).
@@ -29,6 +32,12 @@ function alleNummern(index: Datenverzeichnis): string[] {
   return index.kapitel.flatMap((kapitel) => kapitel.abbildungen);
 }
 
+/**
+ * Nummernfeld „Abbildung öffnen“ neben dem Titel (Gestaltung A2, 31.10.2026: kompakt, damit die
+ * Kapitel in der oberen Bildschirmhälfte beginnen). Die Beschriftung hören Vorlesehilfen; sichtbar
+ * steht „z. B. 1.26“ im Feld. Zahlenleiste und Fundmeldung erscheinen darunter über die ganze Breite
+ * (das Formular ordnet sich mit display: contents in die Kopfzeile ein).
+ */
 function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   const { navigiere } = useNavigation();
   const [eingabe, setzeEingabe] = useState("");
@@ -47,11 +56,11 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   };
 
   return (
-    <form className="karte" onSubmit={absenden} data-tour="buch-nummer">
-      <label htmlFor="abbildungsnummer" className="karte-titel">
-        {t("buch.abbildungOeffnen")}
-      </label>
-      <div className="eingabezeile">
+    <form className="buchkopf-formular" onSubmit={absenden}>
+      <div className="eingabezeile buchkopf-feld" data-tour="buch-nummer">
+        <label htmlFor="abbildungsnummer" className="nur-vorlesen">
+          {t("buch.abbildungOeffnen")}
+        </label>
         <input
           id="abbildungsnummer"
           type="text"
@@ -69,13 +78,9 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
       {/* Zahlenleiste statt Handytastatur (Punkt A3 des Nebenchats), sobald das Feld aktiv ist. */}
       {leiste && <Zahlenleiste text={eingabe} setze={setzeEingabe} />}
       <Fundmeldung fund={fund} oeffne={oeffne} />
-      {zuletzt && (
-        <button
-          type="button"
-          className="knopf-link links"
-          onClick={() => oeffne(zuletzt)}
-          data-tour="buch-zuletzt"
-        >
+      {/* „Zuletzt“ erscheint nach einem Tipp ins Feld (Wunsch des Autors: nichts fällt weg). */}
+      {leiste && zuletzt && (
+        <button type="button" className="knopf-link links" onClick={() => oeffne(zuletzt)}>
           {t("buch.zuletzt")} <strong>{t("abbildung.titel", { nummer: zuletzt })}</strong>
         </button>
       )}
@@ -163,10 +168,17 @@ export function Buch() {
   const index = useDaten(ladeIndex, "index");
   return (
     <div className="bildschirm">
-      <header className="seitenkopf">
-        <p className="ueberzeile">{t("app.titel")}</p>
-        <h1>{t("buch.titel")}</h1>
-        <TourKnopf />
+      <header className="seitenkopf buchkopf">
+        <div className="buchkopf-oben">
+          <p className="ueberzeile">{t("app.titel")}</p>
+          {/* Gamifizierung P2: die Kapitel als Weg mit Etappen und Orden (Entscheidung E3). */}
+          {index.art === "fertig" && <LernpfadKnopf ort="buch" />}
+          <TourKnopf />
+        </div>
+        <div className="buchkopf-zeile">
+          <h1>{t("buch.titel")}</h1>
+          {index.art === "fertig" && <Nummernfeld index={index.wert} />}
+        </div>
       </header>
       {index.art === "laedt" && <p className="lade">…</p>}
       {index.art === "fehler" && (
@@ -174,11 +186,8 @@ export function Buch() {
       )}
       {index.art === "fertig" && (
         <>
-          {/* Gamifizierung G4: Karten der Pakete (nächster Schritt, Wochenziel …), höchstens zwei. */}
+          {/* Gamifizierung G4: Karten der Pakete („Heute“, Rückblick, Rivale), höchstens zwei. */}
           <Startkarten />
-          <Nummernfeld index={index.wert} />
-          {/* Gamifizierung P2: die Kapitel als Weg mit Etappen und Orden (Entscheidung E3). */}
-          <LernpfadKnopf ort="buch" />
           <Kapitelliste index={index.wert} />
         </>
       )}

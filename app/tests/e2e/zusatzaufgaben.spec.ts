@@ -4,7 +4,7 @@
  * Gegnerzug, Lösung zeigen und die Wiederholung einer falsch gelösten Zusatzaufgabe.
  */
 import { expect, test } from "@playwright/test";
-import { oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneTrainer, starteImBrowser, waehleInZeile } from "./hilfen";
 
 test("Taktiktrainer: Zusatzaufgaben wählen, lösen lassen und wiederholen", async ({ page }) => {
   await page.clock.install();
@@ -13,21 +13,14 @@ test("Taktiktrainer: Zusatzaufgaben wählen, lösen lassen und wiederholen", asy
   const wahl = page.getByTestId("taktik-wahl");
   const quelle = wahl.getByTestId("taktik-quelle");
   // Vorgabe wie bisher: Aufgaben aus dem Buch.
-  await expect(quelle.getByRole("button", { name: "Aus dem Buch" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await quelle.getByRole("button", { name: "Zusatzaufgaben (Lichess)" }).click();
+  await expect(quelle).toContainText("Aus dem Buch");
+  await waehleInZeile(page, "taktik-quelle", "Zusätzlich Lichess");
   await expect(page.getByTestId("taktik-quellenhinweis")).toContainText(
     "Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess-Puzzle-Datenbank (CC0)",
   );
-  const thema = page.getByTestId("zusatz-thema");
-  const wert = await thema
-    .locator("option", { hasText: /^Matt in einem Zug/ })
-    .getAttribute("value");
-  await thema.selectOption(wert ?? "");
-  await wahl.getByRole("button", { name: "1", exact: true }).click();
-  await page.getByTestId("zusatz-starten").click();
+  await waehleInZeile(page, "zeile-motiv", /^Matt in einem Zug/);
+  await waehleInZeile(page, "zeile-stufe", "Stufe 1");
+  await page.getByTestId("taktik-start-runde").click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 8");
   await expect(page.getByTestId("zusatz-herkunft")).toContainText(
@@ -43,7 +36,7 @@ test("Taktiktrainer: Zusatzaufgaben wählen, lösen lassen und wiederholen", asy
   // Die falsch gelöste Zusatzaufgabe kommt nach zwei Tagen in die Wiederholung.
   await page.clock.fastForward("48:00:00");
   await oeffneTrainer(page, "taktik");
-  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await page.getByTestId("trainer-wiederholung").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
   await expect(page.getByTestId("zusatz-herkunft")).toBeVisible();
 });

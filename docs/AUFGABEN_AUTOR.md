@@ -33,6 +33,56 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Trainer-Startseiten neu (31.10.2026)
+
+Alle Trainer mit Runden beginnen jetzt mit derselben Startkarte (dein Entwurf G1): oben ein
+kleines Beispielbrett mit einem Satz, worum es geht; darunter „Deine Runde“ als antippbare Zeilen
+mit den Werten deiner letzten Runde; ein großer Knopf „Runde starten“; darunter weitere Modi als
+kleinere Knöpfe. Die frühere Beschreibung steht hinter „So funktioniert dieser Trainer“. Öffnen:
+unten „Training“, beim Trainer „Trainieren“. Am besten im dunklen und im hellen Modus ansehen
+(Einstellungen › Farbschema).
+
+- [ ] N2280. **Taktiktrainer:** Oben links ein Brett (Weiß setzt auf der Grundreihe matt), rechts
+      „Finde den Zug, der gewinnt“. Darunter „Deine Runde · zum Ändern antippen“ mit drei Zeilen:
+      „Aufgaben: Aus dem Buch“, „Motiv: Gemischt · 674“ (Zahl je nach Datenstand), „Stufe: alle
+      Stufen“. Dann der große Knopf „Runde starten · 8 Aufgaben“ und darunter „Serie ohne
+      Fehler“ mit Flamme. Wirkt das ruhiger als vorher, und liest sich alles ohne Erklärung?
+- [ ] N2281. **Zeile antippen:** Im Taktiktrainer auf „Stufe“ tippen: Darunter klappen Chips auf
+      („alle Stufen“, „Stufe 1“ bis „Stufe 5“) mit dem Satz, wie die Stufen gemessen sind. Eine
+      Stufe wählen: Die Zeile klappt zu und zeigt sie. Auf „Motiv“ tippen: Es öffnet sich die
+      gewohnte Auswahlliste des Handys mit allen Motiven und ihrer Anzahl.
+- [ ] N2282. **Letzte Werte bleiben:** Im Taktiktrainer Motiv „Fesselung“ und Stufe 2 wählen, eine
+      Runde starten, zurück zu „Training“ und den Taktiktrainer wieder öffnen: „Deine Runde“ zeigt
+      noch Fesselung und Stufe 2. Das gilt in jedem Trainer (auch nach dem Schließen der App).
+- [ ] N2283. **Lichess-Aufgaben:** Im Taktiktrainer „Aufgaben“ antippen und „Zusätzlich Lichess“
+      wählen. Die Zeile „Motiv“ zeigt nun die Lichess-Themen; unter der Runde steht die
+      Kennzeichnung („Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess …“). „Serie ohne Fehler“
+      verschwindet hier, weil die Serie nur mit Buchaufgaben läuft. Zurück auf „Aus dem Buch“:
+      Die Serie ist wieder da.
+- [ ] N2284. **So funktioniert:** Unten auf der Startkarte „So funktioniert dieser Trainer“
+      antippen: Darunter stehen die frühere Beschreibung des Trainers und weitere Erklärungen
+      (im Taktiktrainer etwa zur Serie). Reicht das, oder fehlt dir etwas, das vorher sichtbar war?
+- [ ] N2285. **Zähltrainer und Röntgen:** Zähltrainer öffnen: eine Zeile „Stufe: gemischt“, der
+      große Knopf startet „Bilanz zählen“, darunter der Modus „Hängende Figuren finden“.
+      Röntgen-Trainer: Brett mit goldenem und rotem Pfeil, Zeile „Stufe“, „Runde starten ·
+      5 Aufgaben“.
+- [ ] N2286. **Endspieltrainer:** Zeilen „Was üben?“ (alle, Mattführung, Bauernendspiele …, mit
+      Anzahl) und „Stufe“, großer Knopf „Runde starten · 6 Stellungen“, darunter „Kurzübungen“.
+      Hast du nicht geschaffte Stellungen, steht dort auch „Wiederholen“ mit der Zahl.
+- [ ] N2287. **Wiederholen als Modus:** In einem Trainer mit fälligen Wiederholungen (etwa
+      „Falle oder Köder“ nach einer falsch gelösten Aufgabe am Vortag) steht unter dem
+      Startknopf „Wiederholen“ mit „3 Aufgaben sind fällig.“ Ohne fällige Aufgaben fehlt der
+      Knopf ganz.
+- [ ] N2288. **Eröffnungstrainer und Zug erraten:** Repertoire-Trainer: Zeilen „Eröffnung“ und
+      „Du spielst: Weiß“. Abweichungsmodus: zusätzlich „Aus: Eröffnungen (Kapitel 2)“ oder
+      „Gambits (Kapitel 3)“. Zug erraten: Zeilen „Quelle“, „Partie“ und „Du spielst“;
+      bei einer berühmten Partie steht ihre Karte mit Quelle und Lizenz unter der Runde.
+- [ ] N2289. **Übrige Trainer:** Koordinaten (Zeile „Übung“, bei „Feld finden“ auch „Stufe“),
+      Planbilanz (Zeile „Übung“, bei LAP „Stufe“), Zielbilanz, Faktorenbilanz, Denkroutine,
+      Studien und Kurzpläne (großer Knopf „15 Minuten starten“, darunter „5 Minuten“, „Taktik auf
+      Zeit“, „Tagesaufgabe“) haben dieselbe Form. 30-Minuten-Plan und Fehlerdatenbank sind
+      unverändert, weil sie keine Runde haben. Passt die Form überall, auch auf 360 Pixel Breite?
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Trainer-Startseiten neu: Startkarte G1 (Arbeitschat, Zweig `gestaltung-trainerstart`)
+
+Ziel des Autors: Die Startseiten der Trainer waren zu technisch, zu textlastig und wirkten wie ein
+Formular (Text, Formular, wieder Text). Gewählt: Entwurf G1 „Startkarte“.
+
+- **Ein Baustein für alle** (`ui/trainer/startkarte/`): `Startkarte.tsx` zeichnet Beispielbrett
+  mit Satz, „Deine Runde“ als Zeilen (`Einstellzeile.tsx`), den großen Startknopf, weitere Modi
+  und „So funktioniert dieser Trainer“ (die frühere Beschreibung und weitere Erklärungen). Die
+  Bereiche liefern nur Listen (`einstellung.ts`: `Einstellung`, `Startmodus`, `Startknopf`);
+  Beispielstellungen je Trainer stehen in `TRAINERSTARTS` (`trainerstarts.ts`), Texte unter
+  `trainerstart.<kennung>.satz/.kurz`. Ein neuer Trainer trägt dort eine Zeile ein.
+- **Zeilen statt Formular:** Kurze Wahlen (bis sechs Werte: Stufe, Seite, Quelle) klappen als
+  Chips unter der Zeile auf, mit der Erklärung der Werte; lange Wahlen (Motive, Eröffnungen,
+  Partien) öffnen die Auswahlliste des Systems (Wunsch vom 19.10.2026 bleibt erfüllt).
+- **Zuletzt gewählte Werte** stehen je Trainer als Merker `trainerstart.<kennung>` auf dem Gerät
+  (Bequemlichkeit, darf verloren gehen); das Speicherformat der Nutzerdaten bleibt unverändert.
+  Ein mitgegebenes Thema (etwa aus „Dein nächster Schritt“) geht dem gemerkten Wert vor.
+- **Nichts fällt weg:** Quelle Buch/Lichess mit Kennung der Zusatzaufgaben, alle Stufen, Serie
+  ohne Fehler (nur mit Buchaufgaben, mit Rekord), Wiederholen, Kurzübungen, Hängende Figuren,
+  Übungsarten, LAP-Wiederholung, Eröffnung/Seite/Kapitel, Quelle/Partie/Seite bei „Zug
+  erraten“, die vier Angebote der Kurzpläne. Zähltrainer: Der große Knopf startet „Bilanz
+  zählen“ (die Stufe gilt nur dafür), „Hängende Figuren finden“ ist der zweite Modus.
+- **Abweichungen vom Entwurf:** Die Beispielbretter sind selbst gebaute Stellungen der App, keine
+  Abbildungen des Buches (ein Test prüft jede FEN). Trainer mit einer einzigen Übung (Zielbilanz,
+  Faktorenbilanz, Denkroutine, Studien) zeigen jetzt auch die Startkarte statt sofort die Runde
+  (ein Tipp mehr, dafür dieselbe Form). 30-Minuten-Plan und Fehlerdatenbank haben keine Runde und
+  bleiben wie sie sind. Stufen heißen in den Zeilen „Stufe 1“ bis „Stufe 5“ statt nur der Zahl.
+- Entfernt: `Stufenwahl.tsx`, `Wiederholungsknopf.tsx`, `ZusatzWahl.tsx`, `Auswahlliste.tsx` und
+  ihre nicht mehr genutzten Texte.
+
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 
 - Zweig `profil-neu` geprüft und zusammengeführt (Wahl des Autors auf der Auswahlseite):

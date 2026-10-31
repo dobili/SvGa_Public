@@ -60,5 +60,5 @@ test("Kapitel 0: Koordinatentraining auf Lichess oder gleich im Trainer der App"
   await expect(inDerApp).toHaveAttribute("href", "/app/#trainer-koordinaten");
   await inDerApp.click();
   await expect(page).toHaveURL(/\/app\/$/);
-  await expect(page.getByRole("button", { name: /Feld finden/ })).toBeVisible();
+  await expect(page.getByTestId("koordinaten-wahl")).toContainText("Feld finden");
 });

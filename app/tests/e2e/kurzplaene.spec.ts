@@ -27,7 +27,7 @@ test("15-Minuten-Plan: zwei Schritte, dann geschafft", async ({ page }) => {
 test("Tagesaufgabe zeigt die Serie, Taktik auf Zeit startet eine Zeitrunde", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "kurzplaene");
-  await page.getByRole("button", { name: /Tagesaufgabe mit Serie/ }).click();
+  await page.getByTestId("kurzplan-tag").click();
   await expect(page.getByTestId("serie")).toContainText(
     "Serie: 0 Tage mit Tagesaufgabe. Die Serie verfällt nicht.",
   );

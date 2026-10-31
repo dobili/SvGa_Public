@@ -3,11 +3,12 @@
  *
  * Rolle im Gesamtbild: Trainer „endspiel“ (Pflichtenheft 7, Kapitel 8 und 9). Die Aufgaben lädt
  * die Datei endspiel.json (daten/trainerdaten.ts); die Runde läuft im gemeinsamen Rundenablauf.
- * Nicht geschaffte Stellungen kommen in die Wiederholung (Knopf über der Wahl), und unter der
- * Wahl stehen die Kurzübungen ohne Engine (Drillaufgabe.tsx, training/endspieldrills.ts).
- * Abhängigkeiten: training/endspieltrainer.ts, Rundenablauf, Endspielaufgabe, Stufenwahl, i18n.
+ * Gruppe und Stufe stehen als Zeilen auf der Startkarte (Entwurf G1, 31.10.2026); nicht geschaffte
+ * Stellungen (Wiederholen) und die Kurzübungen ohne Engine (Drillaufgabe.tsx,
+ * training/endspieldrills.ts) sind weitere Modi darunter.
+ * Abhängigkeiten: training/endspieltrainer.ts, Rundenablauf, Endspielaufgabe, Startkarte, i18n.
  */
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { ladeEndspiele } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import {
@@ -37,11 +38,10 @@ import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Drillaufgabe } from "./Drillaufgabe";
 import { Endspielaufgabe } from "./Endspielaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
-import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
-import { Wiederholungsknopf } from "./Wiederholungsknopf";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
-import { Auswahlliste } from "./Auswahlliste";
+import { einstellung, stufenzeile, wiederholung, type Startmodus } from "./startkarte/einstellung";
+import { Startkarte } from "./startkarte/Startkarte";
+import { useGemerkt, useGemerkteStufe } from "./startkarte/useGemerkt";
 import { useTrainerthema } from "./trainerthema";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
@@ -67,50 +67,62 @@ function drillerzeuger(fens: readonly string[]): (art: Drillart) => Drill | null
   return (art) => je[art]();
 }
 
-/** Wahl von Gruppe und Stufe. */
+/** Die Startkarte: Gruppe und Stufe, darunter Kurzübungen und Wiederholen als weitere Modi. */
 function Wahl({
   anzahl,
   starte,
-  wiederholung,
-  kurz,
+  modi,
 }: {
   anzahl: Map<Endspielgruppe, number>;
   starte: (wahl: Endspielwahl) => void;
-  wiederholung: ReactNode;
-  kurz: () => void;
+  modi: readonly Startmodus[];
 }) {
   // Mit Thema geöffnet (Meisterschaft P3, nächster Schritt P1): dessen Gruppe vorwählen.
+  const vorhanden = GRUPPEN.filter((g) => (anzahl.get(g) ?? 0) > 0);
   const vorwahl = gruppeZumThema(useTrainerthema("endspiel"));
-  const [gruppe, setzeGruppe] = useState<Endspielgruppe>(vorwahl ?? "alle");
-  const [stufe, setzeStufe] = useState<number | null>(null);
+  const [gruppe, setzeGruppe] = useGemerkt("endspiel", "gruppe", vorhanden, "alle", vorwahl);
+  const [stufe, setzeStufe] = useGemerkteStufe("endspiel");
+  const gruppenzeile = einstellung({
+    kennung: "gruppe",
+    titel: t("trainerstart.zeile.gruppe"),
+    symbol: "gruppe",
+    optionen: vorhanden.map((g) => ({
+      wert: g,
+      text: t("trainerstart.eintrag", {
+        name: t(`endspiel.gruppe.${g}`),
+        anzahl: anzahl.get(g) ?? 0,
+      }),
+    })),
+    wert: gruppe,
+    setze: setzeGruppe,
+    testkennung: "zeile-gruppe",
+  });
   return (
-    <div className="trainerrunde trainerwahl" data-testid="endspiel-wahl" data-tour="trainer-wahl">
-      {wiederholung}
-      <Auswahlliste
-        titel={t("endspiel.gruppe")}
-        eintraege={GRUPPEN.filter((g) => (anzahl.get(g) ?? 0) > 0).map((g) => ({
-          wert: g,
-          text: `${t(`endspiel.gruppe.${g}`)} (${anzahl.get(g)})`,
-        }))}
-        wert={gruppe}
-        setze={setzeGruppe}
-      />
-      <Stufenwahl stufe={stufe} setze={setzeStufe} erklaerung={t("endspiel.stufenText")} />
-      <p className="hinweis">{t("endspiel.ablaufText")}</p>
-      <button type="button" className="knopf-haupt" onClick={() => starte({ gruppe, stufe })}>
-        <Knopfsymbol art="starten" />
-        {t("taktiktrainer.starten")}
-      </button>
-      <div className="trainer-kurz" data-tour="endspiel-kurz">
-        <h3>{t("endspiel.kurz.titel")}</h3>
-        <p className="hinweis">{t("endspiel.kurz.text")}</p>
-        <button type="button" className="knopf-zweit" onClick={kurz}>
-          <Knopfsymbol art="starten" />
-          {t("endspiel.kurz.starten")}
-        </button>
-      </div>
-    </div>
+    <Startkarte
+      kennung="endspiel"
+      testkennung="endspiel-wahl"
+      zeilen={[gruppenzeile, stufenzeile(stufe, setzeStufe, t("endspiel.stufenText"))]}
+      start={{
+        zusatz: t("trainerstart.stellungen", { anzahl: AUFGABEN_JE_RUNDE }),
+        starte: () => starte({ gruppe, stufe }),
+      }}
+      modi={modi}
+      hilfen={[t("endspiel.ablaufText"), t("endspiel.kurz.text")]}
+    />
   );
+}
+
+/** Der Modus „Kurzübungen“ (ohne Engine) unter dem Startknopf. */
+function kurzmodus(starte: () => void): Startmodus {
+  return {
+    kennung: "kurz",
+    titel: t("trainerstart.modus.kurz"),
+    text: t("trainerstart.modus.kurzText"),
+    symbol: "kurz",
+    starte,
+    tour: "endspiel-kurz",
+    testkennung: "endspiel-kurz",
+  };
 }
 
 /**
@@ -154,10 +166,10 @@ export function EndspielBereich() {
       <Wahl
         anzahl={anzahlJeGruppe(aufgaben)}
         starte={setzeWahl}
-        wiederholung={
-          <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeWiederholt(vorhanden)} />
-        }
-        kurz={() => setzeKurz(true)}
+        modi={[
+          kurzmodus(() => setzeKurz(true)),
+          ...wiederholung(vorhanden.length, () => setzeWiederholt(vorhanden)),
+        ]}
       />
     );
   const runde = () =>

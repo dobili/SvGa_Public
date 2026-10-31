@@ -3,7 +3,14 @@
  * schmal um (Sicherheitsblick), Feld finden zeigt die Sicht deutlich, Röntgen begründet Pfeile.
  */
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, oeffneTrainer, starteImBrowser, waehleWerkzeug } from "./hilfen";
+import {
+  oeffneAbbildung,
+  oeffneTrainer,
+  starteImBrowser,
+  waehleWerkzeug,
+  starteUebung,
+  starteRunde,
+} from "./hilfen";
 
 /** Ein umgebrochener Reiter darf nicht mehr die ganze Zeile füllen. */
 const HOECHSTENS_ANTEIL = 0.7;
@@ -24,7 +31,7 @@ test("Denkroutine-Reiter: „Sicherheitsblick“ ist nicht zeilenbreit", async (
 test("Feld finden: Die Sicht steht deutlich unter dem Brett", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Feld finden/ }).click();
+  await starteUebung(page, "Feld finden");
   await expect(page.getByTestId("sichtanzeige")).toContainText("Weiß spielt von unten.");
 });
 
@@ -59,7 +66,7 @@ test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", asyn
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "zaehlen");
-  await page.getByRole("button", { name: /Bilanz zählen/ }).click();
+  await starteRunde(page);
   // Ein Tipp auf „+9“ ist fast immer falsch; dann legt die App eine Karte an.
   await page.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "+9" }).click();
   await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
@@ -73,7 +80,7 @@ test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", asyn
     .getByTestId("faellig")
     .getByRole("button", { name: /Zähltrainer: 1 fällig/ })
     .click();
-  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await page.getByTestId("trainer-wiederholung").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
 

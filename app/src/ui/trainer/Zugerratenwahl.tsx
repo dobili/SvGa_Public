@@ -1,12 +1,12 @@
 /**
- * Auswahl für „Zug erraten“: Quelle der Partien, Partie und Seite.
+ * Startkarte für „Zug erraten“: Quelle der Partien, Partie und Seite als Zeilen (Entwurf G1).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (30.10.2026): Neben den Meisterpartien aus Kapitel 11
  * gibt es berühmte Klassiker und aktuelle Turnierpartien (training/zusatzpartien.ts). Die Quelle
  * „Aus dem Buch“ bleibt die Vorgabe; die beiden anderen laden public/daten/zusatzpartien.json erst,
  * wenn der Leser sie wählt. Zusatzpartien tragen sichtbar „Zusatzinhalt (nicht aus dem Buch)“ mit
  * Kurztext, Quelle und Lizenz (Zusatzkarte).
- * Abhängigkeiten: training/zusatzpartien.ts, daten/laden.ts, Auswahlliste, Zusatzkarte, i18n.
+ * Abhängigkeiten: training/zusatzpartien.ts, daten/laden.ts, Startkarte, Zusatzkarte, i18n.
  */
 import type { Color } from "chessops/types";
 import { useState } from "react";
@@ -14,9 +14,10 @@ import { ladeZusatzpartien } from "../../daten/laden";
 import { sprache, t, type Textschluessel } from "../../i18n/sprache";
 import type { Ratepartie } from "../../training/studientrainer";
 import { PARTIEQUELLEN, zusatzaufgaben, type Partiequelle } from "../../training/zusatzpartien";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { useDaten } from "../komponenten/bausteine/useDaten";
-import { Auswahlliste } from "./Auswahlliste";
+import { einstellung, seitenzeile, type Einstellung } from "./startkarte/einstellung";
+import { Startkarte } from "./startkarte/Startkarte";
+import { useGemerkt } from "./startkarte/useGemerkt";
 import { Zusatzkarte } from "./Zusatzkarte";
 
 const SEITEN: readonly Color[] = ["white", "black"];
@@ -26,110 +27,95 @@ const QUELLENTEXT: Readonly<Record<Partiequelle, Textschluessel>> = {
   turnier: "zugerraten.quelleTurnier",
 };
 
-/** Eine Reihe Chips: Quelle oder Seite. */
-function Chipwahl<T extends string>({
-  titel,
-  werte,
-  text,
-  wert,
-  setze,
-  testkennung,
-}: {
-  titel: string;
-  werte: readonly T[];
-  text: (wert: T) => string;
-  wert: T;
-  setze: (wert: T) => void;
-  testkennung?: string;
-}) {
-  return (
-    <fieldset className="zahlwahl" data-testid={testkennung}>
-      <legend>{titel}</legend>
-      {werte.map((w) => (
-        <button
-          key={w}
-          type="button"
-          className="chip"
-          aria-pressed={wert === w}
-          onClick={() => setze(w)}
-        >
-          {text(w)}
-        </button>
-      ))}
-    </fieldset>
-  );
+/** Die Zeile „Aus“ mit den drei Quellen der Partien. */
+function quellenzeile(quelle: Partiequelle, setze: (q: Partiequelle) => void): Einstellung {
+  return einstellung({
+    kennung: "quelle",
+    titel: t("zugerraten.quelle"),
+    symbol: "quelle",
+    optionen: PARTIEQUELLEN.map((q) => ({ wert: q, text: t(QUELLENTEXT[q]) })),
+    wert: quelle,
+    setze,
+    testkennung: "zugerraten-quelle",
+  });
 }
 
-/** Liste der Partien einer Quelle, Seite, Karte zur gewählten Zusatzpartie und Startknopf. */
-function Partieliste({
+/** Gemeinsame Angaben der Karte: Quelle, Seite und Start. */
+interface Kartenwahl {
+  readonly quelle: Partiequelle;
+  readonly setzeQuelle: (quelle: Partiequelle) => void;
+  readonly seite: Color;
+  readonly setzeSeite: (seite: Color) => void;
+  readonly starte: (aufgabe: Ratepartie) => void;
+}
+
+/** Die Startkarte mit Quelle, Partie und Seite; bei Zusatzpartien deren Karte darunter. */
+function Partiekarte({
   liste,
-  seite,
-  setzeSeite,
-  starte,
+  wahl,
+  hinweis = null,
 }: {
   liste: readonly Ratepartie[];
-  seite: Color;
-  setzeSeite: (seite: Color) => void;
-  starte: (aufgabe: Ratepartie) => void;
+  wahl: Kartenwahl;
+  hinweis?: React.ReactNode;
 }) {
-  const [index, setzeIndex] = useState(0);
-  const gewaehlt = liste[index] ?? null;
+  const [index, setzeIndex] = useState("0");
+  const gewaehlt = liste[Number(index)] ?? null;
+  const partiezeile = einstellung({
+    kennung: "partie",
+    titel: t("zugerraten.partie"),
+    symbol: "partie",
+    optionen: liste.map((p, i) => ({ wert: String(i), text: p.titel })),
+    wert: index,
+    setze: setzeIndex,
+    testkennung: "zugerraten-partieliste",
+  });
   return (
-    <>
-      <Auswahlliste
-        titel={t("zugerraten.partie")}
-        eintraege={liste.map((p, i) => ({ wert: String(i), text: p.titel }))}
-        wert={String(index)}
-        setze={(i) => setzeIndex(Number(i))}
-        testkennung="zugerraten-partieliste"
-      />
-      {gewaehlt?.zusatz && <Zusatzkarte partie={gewaehlt.zusatz} />}
-      <Chipwahl
-        titel={t("repertoiretrainer.seite")}
-        werte={SEITEN}
-        text={(s) => t(s === "white" ? "farbe.w" : "farbe.b")}
-        wert={seite}
-        setze={setzeSeite}
-      />
-      <button
-        type="button"
-        className="knopf-haupt"
-        disabled={gewaehlt === null}
-        onClick={() => gewaehlt && starte(gewaehlt)}
-      >
-        <Knopfsymbol art="starten" />
-        {t("taktiktrainer.starten")}
-      </button>
-    </>
+    <Startkarte
+      kennung="zugErraten"
+      testkennung="zugerraten-wahl"
+      zeilen={[
+        quellenzeile(wahl.quelle, wahl.setzeQuelle),
+        ...(liste.length > 0 ? [partiezeile] : []),
+        seitenzeile(wahl.seite, wahl.setzeSeite),
+      ]}
+      hinweis={gewaehlt?.zusatz ? <Zusatzkarte partie={gewaehlt.zusatz} /> : hinweis}
+      start={{
+        zusatz: null,
+        gesperrt: gewaehlt === null,
+        starte: () => gewaehlt && wahl.starte(gewaehlt),
+      }}
+    />
   );
 }
 
 /** Die Zusatzpartien einer Quelle: erst laden, dann wie die Buchpartien wählen. */
 function Zusatzliste({
   quelle,
-  ...rest
+  wahl,
 }: {
   quelle: Exclude<Partiequelle, "buch">;
-  seite: Color;
-  setzeSeite: (seite: Color) => void;
-  starte: (aufgabe: Ratepartie) => void;
+  wahl: Kartenwahl;
 }) {
   const daten = useDaten(ladeZusatzpartien, "zusatzpartien");
-  if (daten.art === "laedt") return <p className="lade">…</p>;
-  if (daten.art === "fehler")
+  if (daten.art === "fertig")
     return (
+      <Partiekarte liste={zusatzaufgaben(daten.wert, quelle, wahl.seite, sprache())} wahl={wahl} />
+    );
+  const hinweis =
+    daten.art === "laedt" ? (
+      <p className="lade">…</p>
+    ) : (
       <p className="fehlertext">{t("zugerraten.zusatzLadefehler", { fehler: daten.meldung })}</p>
     );
-  return (
-    <Partieliste liste={zusatzaufgaben(daten.wert, quelle, rest.seite, sprache())} {...rest} />
-  );
+  return <Partiekarte liste={[]} wahl={wahl} hinweis={hinweis} />;
 }
 
 /**
- * Auswahl von Quelle, Partie und Seite für „Zug erraten“.
+ * Startkarte für „Zug erraten“: Quelle, Partie und Seite (Entwurf G1, 31.10.2026).
  *
  * Eingaben: die gewählte Quelle (bleibt beim Zurückkehren zur Auswahl stehen), die Buchpartien
- * je Seite und der Start einer Partie.
+ * je Seite und der Start einer Partie. Die Seite ist gemerkt; die Partie beginnt bei der ersten.
  */
 export function Partiewahl({
   quelle,
@@ -142,27 +128,11 @@ export function Partiewahl({
   buchpartien: (seite: Color) => readonly Ratepartie[];
   starte: (aufgabe: Ratepartie) => void;
 }) {
-  const [seite, setzeSeite] = useState<Color>("white");
-  const auswahl = { seite, setzeSeite, starte };
-  return (
-    <div
-      className="trainerrunde trainerwahl"
-      data-testid="zugerraten-wahl"
-      data-tour="trainer-wahl"
-    >
-      <Chipwahl
-        titel={t("zugerraten.quelle")}
-        werte={PARTIEQUELLEN}
-        text={(q) => t(QUELLENTEXT[q])}
-        wert={quelle}
-        setze={setzeQuelle}
-        testkennung="zugerraten-quelle"
-      />
-      {quelle === "buch" ? (
-        <Partieliste key="buch" liste={buchpartien(seite)} {...auswahl} />
-      ) : (
-        <Zusatzliste key={quelle} quelle={quelle} {...auswahl} />
-      )}
-    </div>
+  const [seite, setzeSeite] = useGemerkt<Color>("zugErraten", "seite", SEITEN, "white");
+  const wahl = { quelle, setzeQuelle, seite, setzeSeite, starte };
+  return quelle === "buch" ? (
+    <Partiekarte key={`buch-${seite}`} liste={buchpartien(seite)} wahl={wahl} />
+  ) : (
+    <Zusatzliste key={`${quelle}-${seite}`} quelle={quelle} wahl={wahl} />
   );
 }

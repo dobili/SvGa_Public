@@ -10,61 +10,42 @@
 import { useMemo, useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen } from "../../training/buchstellungen";
-import { haengerunde, ZAEHLSTUFEN, zaehlrunde, type Zaehlstufe } from "../../training/zaehltrainer";
+import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
 import { ZUFALL } from "../../training/zufall";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { istHaengeaufgabe, zaehlaufgabenAus } from "../../training/wiederholbar";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Rundenablauf } from "./Rundenablauf";
-import { Wiederholungsknopf } from "./Wiederholungsknopf";
+import {
+  aufgabenzahl,
+  wiederholung,
+  wortstufenzeile,
+  type Startmodus,
+} from "./startkarte/einstellung";
+import { Startkarte } from "./startkarte/Startkarte";
+import { useGemerkteWortstufe } from "./startkarte/useGemerkt";
 import { Haengeaufgabe, Zaehlaufgabe } from "./Zaehltrainer";
 
 /** Aufgaben je Runde (wie bisher). */
 const AUFGABEN_JE_RUNDE = 8;
 type Art = "bilanz" | "haengen";
-const ARTEN: readonly Art[] = ["bilanz", "haengen"];
 
-/** Die Stufenwahl für „Bilanz zählen“. */
-function Zaehlstufenwahl({
-  stufe,
-  setze,
-}: {
-  stufe: Zaehlstufe | null;
-  setze: (s: Zaehlstufe | null) => void;
-}) {
-  return (
-    <>
-      <fieldset className="zahlwahl">
-        <legend>{t("taktiktrainer.stufeWahl")}</legend>
-        <button
-          type="button"
-          className="chip"
-          aria-pressed={stufe === null}
-          onClick={() => setze(null)}
-        >
-          {t("roentgentrainer.stufe.gemischt")}
-        </button>
-        {ZAEHLSTUFEN.map((s) => (
-          <button
-            key={s}
-            type="button"
-            className="chip"
-            aria-pressed={stufe === s}
-            onClick={() => setze(s)}
-          >
-            {t(`roentgentrainer.stufe.${s}`)}
-          </button>
-        ))}
-      </fieldset>
-      <p className="hinweis">{t("zaehltrainer.stufenText")}</p>
-    </>
-  );
+/** Der zweite Modus „Hängende Figuren finden“ (auf Zeit). */
+function haengenmodus(starte: () => void): Startmodus {
+  return {
+    kennung: "haengen",
+    titel: t("trainerstart.modus.haengen"),
+    text: t("trainerstart.modus.haengenText"),
+    symbol: "zeit",
+    starte,
+    testkennung: "zaehl-haengen",
+  };
 }
 
-/** Der Zähltrainer mit Stufenwahl und den beiden Übungsarten. */
+/** Der Zähltrainer: Startkarte mit Stufe, „Bilanz zählen“ als Runde, „Hängende Figuren“ als Modus. */
 export function ZaehlBereich() {
   const daten = useDaten(ladeBuchstellungen, "buchstellungen");
-  const [stufe, setzeStufe] = useState<Zaehlstufe | null>(null);
+  const [stufe, setzeStufe] = useGemerkteWortstufe("zaehlen");
   const [art, setzeArt] = useState<Art | "wiederholung" | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
   const faellig = useFaelligeAufgaben("zaehlen");
@@ -77,20 +58,20 @@ export function ZaehlBereich() {
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
   if (art === null)
     return (
-      <div className="trainerrunde trainerwahl" data-testid="zaehl-wahl" data-tour="trainer-wahl">
-        <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeArt("wiederholung")} />
-        <Zaehlstufenwahl stufe={stufe} setze={setzeStufe} />
-        <ul className="uebungsarten">
-          {ARTEN.map((a) => (
-            <li key={a}>
-              <button type="button" className="karte uebungsart" onClick={() => setzeArt(a)}>
-                <span className="karte-titel">{t(`uebungsart.${a}.name`)}</span>
-                <span className="hinweis">{t(`uebungsart.${a}.text`)}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Startkarte
+        kennung="zaehlen"
+        testkennung="zaehl-wahl"
+        zeilen={[wortstufenzeile(stufe, setzeStufe, t("zaehltrainer.stufenText"))]}
+        start={{
+          zusatz: aufgabenzahl(AUFGABEN_JE_RUNDE),
+          starte: () => setzeArt("bilanz"),
+          testkennung: "zaehl-bilanz",
+        }}
+        modi={[
+          haengenmodus(() => setzeArt("haengen")),
+          ...wiederholung(vorhanden.length, () => setzeArt("wiederholung")),
+        ]}
+      />
     );
   return (
     <Rundenablauf

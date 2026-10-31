@@ -6,7 +6,7 @@
  * Trainer stehen seit 0.2.90 in trainer-kapitel2bis12.spec.ts.
  */
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneTrainer, starteImBrowser, starteUebung, starteRunde, waehleInZeile } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
   page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
@@ -16,7 +16,7 @@ test("Feld finden: sechzehn Felder aus beiden Perspektiven, Ergebnis mit Zeit", 
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Feld finden/ }).click();
+  await starteUebung(page, "Feld finden");
   const auftrag = page.getByTestId("feld-auftrag");
   for (let i = 0; i < 16; i += 1) {
     await expect(page.getByText(`Aufgabe ${i + 1} von 16`)).toBeVisible();
@@ -29,13 +29,13 @@ test("Feld finden: sechzehn Felder aus beiden Perspektiven, Ergebnis mit Zeit", 
   await expect(ende).toContainText("16 von 16 Aufgaben richtig");
   await expect(ende).toContainText("Sekunden");
   await ende.getByRole("button", { name: "Andere Übung" }).click();
-  await expect(page.getByRole("button", { name: /Gangarten/ })).toBeVisible();
+  await expect(page.getByTestId("koordinaten-wahl")).toBeVisible();
 });
 
 test("Zug aufschreiben: falsche Schreibweise, das Buch schreibt den Zug", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  await starteUebung(page, "Zug aufschreiben");
   // Seit dem Nebenchat (30.10.2026) Bausteine statt Handytastatur: „K“, „a“, „1“.
   const tastatur = page.getByTestId("notationstastatur");
   await tastatur.getByRole("button", { name: "K", exact: true }).click();
@@ -50,7 +50,7 @@ test("Zug aufschreiben: falsche Schreibweise, das Buch schreibt den Zug", async 
 test("Zug aufschreiben: umschaltbar auf das Eingabefeld", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  await starteUebung(page, "Zug aufschreiben");
   await page.getByRole("button", { name: "Lieber mit der Tastatur tippen" }).click();
   await page.getByRole("textbox", { name: "Zug in Notation" }).fill("Qa1");
   await page.getByRole("button", { name: "Prüfen" }).click();
@@ -62,7 +62,7 @@ test("Gangarten: Prüfen ohne Tipp zeigt die Zielfelder, Weiter zur zweiten Aufg
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Gangarten/ }).click();
+  await starteUebung(page, "Gangarten");
   await page.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("trainer")).toContainText("Zielfelder");
   // Seit dem Nebenchat: Zu jedem übersehenen Feld steht der Grund da.
@@ -74,7 +74,7 @@ test("Gangarten: Prüfen ohne Tipp zeigt die Zielfelder, Weiter zur zweiten Aufg
 test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "zaehlen");
-  await page.getByRole("button", { name: /Bilanz zählen/ }).click();
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   // Seit dem Nebenchat (30.10.2026): Ein Tipp auf das Ergebnis prüft sofort.
   await runde.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "lohnt nicht" }).click();
@@ -93,7 +93,7 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
 test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "roentgen");
-  await page.getByTestId("roentgen-wahl").getByRole("button", { name: "schwer" }).click();
+  await waehleInZeile(page, "zeile-stufe", "schwer");
   await page.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Schritt 1 von 3");
@@ -113,15 +113,8 @@ test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage"
   await starteImBrowser(page);
   await oeffneTrainer(page, "taktik");
   const wahl = page.getByTestId("taktik-wahl");
-  {
-    const liste = wahl.getByLabel("Thema");
-    const wert = await liste
-      .locator("option", { hasText: /^Spieß/ })
-      .first()
-      .getAttribute("value");
-    await liste.selectOption(wert ?? "");
-  }
-  await wahl.getByRole("button", { name: "2", exact: true }).click();
+  await waehleInZeile(page, "zeile-motiv", /^Spieß/);
+  await waehleInZeile(page, "zeile-stufe", "Stufe 2");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 8");
@@ -231,7 +224,7 @@ test("Wiederholung (U9): falsch gelöste Taktikaufgabe kommt nach einem Tag wied
     .getByTestId("faellig")
     .getByRole("button", { name: /Taktiktrainer: 1 fällig/ })
     .click();
-  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await page.getByTestId("trainer-wiederholung").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
 
@@ -241,15 +234,8 @@ test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbre
   await starteImBrowser(page);
   await oeffneTrainer(page, "endspiel");
   const wahl = page.getByTestId("endspiel-wahl");
-  {
-    const liste = wahl.getByLabel("Was üben?");
-    const wert = await liste
-      .locator("option", { hasText: /^Mattführung/ })
-      .first()
-      .getAttribute("value");
-    await liste.selectOption(wert ?? "");
-  }
-  await wahl.getByRole("button", { name: "1", exact: true }).click();
+  await waehleInZeile(page, "zeile-gruppe", /^Mattführung/);
+  await waehleInZeile(page, "zeile-stufe", "Stufe 1");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 6");
@@ -275,6 +261,7 @@ test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre We
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "zielbilanz");
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 5");
   const pruefen = runde.getByRole("button", { name: "Prüfen" });
@@ -306,6 +293,7 @@ test("Faktorenbilanz-Trainer: Waagen und ✓ ◐ ✗ wie im Buch, App zeigt ihre
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "faktorenbilanz");
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 5");
   const pruefen = runde.getByRole("button", { name: "Prüfen" });
@@ -366,7 +354,7 @@ test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners 
     .getByTestId("faellig")
     .getByRole("button", { name: /Strukturerkenner: 1 fällig/ })
     .click();
-  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await page.getByTestId("trainer-wiederholung").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
 
@@ -375,7 +363,7 @@ test("Endspiel-Kurzübungen (0.2.90): Frage beantworten, Regel des Buches, acht 
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "endspiel");
-  await page.getByRole("button", { name: "Kurzübungen starten" }).click();
+  await page.getByTestId("endspiel-kurz").click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 8");
   await expect(runde).toContainText("Holt der schwarze König den Bauern ein?");

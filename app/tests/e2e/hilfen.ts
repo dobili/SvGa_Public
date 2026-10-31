@@ -235,3 +235,42 @@ export async function oeffneTrainer(seite: Page, kennung: string): Promise<void>
     .click();
   await expect(seite.getByTestId("trainer")).toBeVisible();
 }
+
+/**
+ * Wählt auf der Startkarte eines Trainers in einer Zeile einen Wert (Entwurf G1, 31.10.2026):
+ * kurze Wahlen klappen als Chips auf, lange öffnen die Auswahlliste des Systems.
+ * Beispiel: waehleInZeile(seite, "zeile-stufe", "Stufe 2"); waehleInZeile(seite, "zeile-motiv",
+ * /^Fesselung/).
+ */
+export async function waehleInZeile(
+  seite: Page,
+  testkennung: string,
+  wert: string | RegExp,
+): Promise<void> {
+  const zeile = seite.getByTestId(testkennung);
+  const liste = zeile.locator("select");
+  if ((await liste.count()) > 0) {
+    const optionen = await liste.locator("option").allTextContents();
+    const text = optionen.find((o) => (typeof wert === "string" ? o === wert : wert.test(o)));
+    if (text === undefined) throw new Error(`„${String(wert)}“ fehlt in ${testkennung}`);
+    await liste.selectOption({ label: text });
+    return;
+  }
+  await zeile.locator("button.startzeile").click();
+  await zeile.locator("button.chip", { hasText: wert }).click();
+}
+
+/** Tippt auf der Startkarte auf den großen Knopf „Runde starten …“. */
+export async function starteRunde(seite: Page): Promise<void> {
+  await seite.getByRole("button", { name: /^Runde starten/ }).click();
+}
+
+/**
+ * Wählt auf der Startkarte die Übung (falls es mehrere gibt) und startet die Runde.
+ * Beispiel: starteUebung(seite, "Feld finden").
+ */
+export async function starteUebung(seite: Page, uebung: string): Promise<void> {
+  if ((await seite.getByTestId("zeile-uebung").count()) > 0)
+    await waehleInZeile(seite, "zeile-uebung", uebung);
+  await starteRunde(seite);
+}

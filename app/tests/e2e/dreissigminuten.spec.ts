@@ -10,11 +10,7 @@ async function oeffnePlan(page: Page): Promise<void> {
     .getByRole("navigation", { name: "Hauptbereiche" })
     .getByRole("button", { name: "Training" })
     .click();
-  await page
-    .getByTestId("trainer-dreissigMinuten")
-    .first()
-    .getByRole("button", { name: "Trainieren" })
-    .click();
+  await page.getByTestId("trainer-dreissigMinuten").first().getByRole("button").click();
   await expect(page.getByTestId("trainer")).toBeVisible();
 }
 

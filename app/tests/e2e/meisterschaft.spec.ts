@@ -104,7 +104,8 @@ test("Probe auf Gold schaltet den Titel „Taktiker“ frei, er steht unter dem 
     "gold",
   );
   const extras = page.getByTestId("extras");
-  await extras.getByRole("button", { name: "Titel „Taktiker“: Wählen" }).click();
+  await extras.getByRole("tab", { name: "Titel" }).click();
+  await extras.getByRole("button", { name: "Titel „Taktiker“: antippen zum Anlegen" }).click();
   await expect(page.getByTestId("profiltitel")).toHaveText("Taktiker");
   await karte.screenshot({ path: "test-results/bilder/meisterschaft-probe.png" });
   await page

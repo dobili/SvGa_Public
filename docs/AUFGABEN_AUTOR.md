@@ -86,6 +86,105 @@ dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
       Tour zeigt nacheinander die Brettvorschau, die Reiter Bedienung, Anzeige und Hilfe, dann die
       Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Stimmen die Texte zu dem, was
       du siehst?
+### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
+
+Der Bereich „Training“ und die Gesamt-Checkliste sind nach deiner Wahl der Entwürfe neu gebaut
+(Training C2, Checkliste D1): weniger Text, mehr Bild, am Handy im dunklen Modus gut lesbar.
+Training: Tipp auf „Training“ unten in der Leiste. Checkliste: „Nachschlagen“ › „Gesamt-Checkliste“.
+
+- [ ] N2260. **Stapel für heute:** Ganz oben im Training steht „Dein Stapel für heute“ mit einem
+      gezeichneten Kartenstapel. Ist etwas fällig, trägt der Stapel eine goldene Zahl, daneben
+      steht etwa „3 Karten · 2 Taktiktrainer · 1 Falle oder Köder“ und der Knopf „Durchgehen“.
+      Dieselbe Zahl nennt die Karte „Dein nächster Schritt“ im Buch. Stimmen die Zahlen überein?
+- [ ] N2261. **Durchgehen:** Tipp auf „Durchgehen“. Sind Übungen aus dem Buch fällig, startet
+      zuerst deren Reihe; sonst öffnet sich der erste Trainer mit fälligen Aufgaben (dort
+      „Wiederholen“). Ist nichts fällig, ist der Stapel blass, es gibt keinen Knopf, und darunter
+      steht „Nichts fällig. Als Nächstes am …“. Unter dem Stapel steht kurz, wann Gelöstes
+      wiederkommt; ein Tipp darauf klappt die ganze Erklärung der Lernkartei auf. Passt das?
+- [ ] N2262. **Wischreihen je Buchteil:** Unter dem Stapel stehen fünf Reihen: Grundlagen
+      (Kapitel 0–1 · 3 Trainer), Eröffnung (2–4 · 5), Mittelspiel (5–7 · 3), Endspiel (8–10 · 2),
+      Praxis (11–12 · 5). Jede Reihe lässt sich seitlich wischen; alle 18 Trainer kommen genau
+      einmal vor (Abweichungsmodus mit „Kap. 2–3“, Endspieltrainer mit „Kap. 8–9“).
+- [ ] N2263. **Trainer-Karte:** Jede Karte zeigt ein kleines Brett mit einer typischen Stellung
+      (Röntgen: Dame a8 zielt durch den Läufer auf den König h1; Taktik: Springergabel; Falle
+      oder Köder: Schäferzug), darunter den Namen. Noch nie gespielt: goldenes „neu · Kap. 1“.
+      Gespielt: „3 Runden · 80 % richtig“ und ein goldenes Band nach dem Anteil. Ein Tipp auf die
+      ganze Karte öffnet den Trainer. Erkennst du die Trainer an den Bildern?
+- [ ] N2264. **Fällig auf der Karte und Bestwert:** Löse im Taktiktrainer eine Aufgabe falsch und
+      stelle die Uhr zwei Tage vor (oder warte). Die Karte des Taktiktrainers trägt oben rechts auf
+      dem Brett die Plakette „1 fällig“. Nach einer Serie im Serienmodus steht dort auch
+      „Bestwert: … in Folge“.
+- [ ] N2265. **Kacheln unten:** Unter den Reihen stehen zwei gestrichelte Kacheln:
+      „Lernsammlung“ (Unterzeile „noch leer“ bzw. „1 Stellung“, Tipp öffnet die Lernsammlung) und
+      „Alle Kapitel“ („Übungen auf der Website“, Tipp öffnet die Trainingsseiten der Website).
+- [ ] N2266. **Link zur Trainingsseite eines Kapitels:** Die Links „Training zu diesem Kapitel
+      (Website)“ stehen nicht mehr im Training, sondern im Buch in jedem Kapitel in der Karte
+      „Training und Übungen“ unter den Trainern. Öffne Kapitel 9: Der Link führt zur
+      Trainingsseite von Kapitel 9. Ist der Platz recht?
+- [ ] N2267. **Checkliste, Kopf:** Oben steht groß die Zahl der Haken, daneben „von 77 Punkten“,
+      rechts gold „1 Kapitel fertig“, sobald ein Kapitel ganz abgehakt ist. Darunter ein Band mit
+      13 Abschnitten (0 bis 12, so breit wie das Kapitel Punkte hat), die sich gold füllen. Das
+      Fragezeichen neben „Hake ab, was du sicher kannst.“ erklärt, woher die Punkte kommen.
+- [ ] N2268. **Checkliste, Kapitelzeilen:** Alle Kapitel stehen in einer Karte, je Zeile ein Ring
+      mit der Nummer, die Leitfrage und rechts „4/6“. Ein ganz abgehaktes Kapitel zeigt einen
+      goldenen Kreis mit Haken und „fertig“. Ein Tipp klappt die Zeile auf: die Punkte als
+      abgerundete Kästchen (gold mit Haken, wenn abgehakt), darunter Werkzeug, Fehlerart und
+      „Zu Kapitel …“.
+- [ ] N2269. **Abhaken gleich schnell, hell und dunkel:** Hake in Kapitel 1 einen Punkt ab: Ring,
+      „1/6“, Band und Summe ändern sich sofort, der Haken bleibt nach dem Neuladen. Schalte unter
+      Einstellungen › Anzeige auf „Hell“: Training und Checkliste sind gut lesbar, Gold und
+      Kästchen deutlich zu sehen.
+
+### Neu in 0.3.32: Deine Extras neu – „Ankleide“ (Arbeitschat, 31.10.2026)
+
+Die Profilkarte „Deine Extras“ ist nach deiner Wahl neu gebaut (Entwurf E1 „Ankleide“): oben eine
+Vorschau, wie du gerade aussiehst, darunter Reiter je Art mit Kacheln, die du antippst statt
+Knöpfe zu drücken. Profil: Tipp auf „Profil“ unten in der Leiste, dann nach unten bis „Deine
+Extras“. Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das Zahnrad bzw.
+„Profil“) › „Abzeichen testen (nur für dich)“ › mehrmals „Nächste Stufe erreichen“; „Probe
+beenden“ stellt alles zurück.
+
+- [ ] N2270. **Kopf und Vorschau:** Oben „Deine Extras“ mit Zähler rechts („4 von 8“: so viele
+      Extras sind frei oder angelegt). Darunter ein Kasten „So siehst du gerade aus“ mit deinem
+      Porträt samt Rahmen, deinem Namen, dem Titel als goldenes Band (falls angelegt) und „Stufe
+      6 · Vorposten“; darunter ein kleines Brett 4 × 4 in deinen Brettfarben mit deinem
+      Figurensatz und daneben „Brett …“, „Figuren …“, „Konfetti …“. Im Hintergrund ruhiges
+      Konfetti in deinen Konfettifarben. Wirkt das einladend, nicht wie ein Formular?
+- [ ] N2271. **Reiter:** Unter der Vorschau die Reiter „Rahmen“, „Brett“, „Figuren“, „Konfetti“,
+      „Titel“ als runde Schaltflächen; der gewählte ist hinterlegt. Auf einem schmalen Handy
+      passen alle fünf in eine Zeile, sonst lässt sich die Zeile seitlich wischen. Ein Tipp zeigt
+      die Kacheln dieser Art.
+- [ ] N2272. **Anlegen durch Antippen:** Mit Stufe 6 (Probe) im Reiter „Rahmen“ auf „Bronze“
+      tippen: Die Kachel bekommt einen goldenen Rand, einen Haken in der Ecke und „Angelegt“;
+      das Porträt oben und überall in der App trägt sofort den Bronzerahmen. Freie, nicht
+      angelegte Kacheln sagen „Antippen zum Anlegen“. Es gibt keine Knöpfe „Wählen“ mehr.
+- [ ] N2273. **Ablegen:** Die angelegte Kachel noch einmal antippen: Der Rahmen ist abgelegt.
+      Alternativ unter den Kacheln klein „Rahmen ablegen“ (erscheint nur, solange ein Extra
+      dieser Art angelegt ist). Bei Brett und Figuren führt Ablegen zurück zu „wie im Buch“.
+- [ ] N2274. **Gesperrte Kacheln:** Gesperrte Extras zeigen die echte Vorschau abgedunkelt (etwa
+      dein Porträt mit Goldrahmen, das Brett „Nacht und Gold“), ein Schloss in der Ecke und die
+      Bedingung („Ab Stufe 9“, „Mit allen Orden der Buchteile“, „5 Themen im Taktiktrainer in
+      Gold“). Bei Stufen und Themen zeigt ein kleiner goldener Balken, wie weit du bist (Stufe 6
+      von 9). Ein Tipp darauf bewirkt nichts. Ist klar, was man tun muss?
+- [ ] N2275. **Vorschau sofort:** Im Reiter „Figuren“ (ab Stufe 5) „Gold“ antippen: Das kleine
+      Brett oben zeigt sofort goldene Figuren, und die Zeile daneben sagt „Figuren Gold“. Im
+      Reiter „Konfetti“ (ab Stufe 2) „Bunt“ antippen: Das Konfetti oben wird bunt.
+- [ ] N2276. **Titel:** Im Reiter „Titel“ stehen „Taktiker“ und „Endspielkenner“ als runder
+      goldener Orden mit dem Namen darunter (das Band passt nicht in eine schmale Kachel). Mit
+      der Probe der Meisterschaft (Aufgabenseite › Themen zur Probe auf Gold, fünf Taktikmotive)
+      lässt sich „Taktiker“ anlegen; dann steht das goldene Band oben in der Vorschau und der
+      Titel unter deinem Namen im Profilkopf.
+- [ ] N2277. **Einstellungen › Brett:** Profil › „Einstellungen“ › Reiter „Brett“, ganz unten
+      bei Brettfarben und Figurensatz die Gruppe „Verdient“: Gesperrte Kacheln zeigen jetzt das
+      echte Brett bzw. die echten Figuren abgedunkelt mit Schloss und darunter die Bedingung,
+      nicht mehr leere graue Kästen. Sieht es nicht mehr nach Ladefehler aus?
+- [ ] N2278. **Hell und dunkel:** Profil › „Einstellungen“ › Darstellung hell, dann dunkel: Die
+      Vorschau, die Reiter, die Kacheln (Rand, Haken, Schloss, Balken) sind in beiden Fällen gut
+      lesbar; im hellen Modus ist die Vorschau leicht grau hinterlegt, im dunklen leicht heller
+      als die Karte.
+- [ ] N2279. **Bildschirmleser (wahlweise):** Mit TalkBack bzw. VoiceOver sagt eine Kachel ihren
+      Namen und Zustand, etwa „Rahmen Silber: angelegt, antippen zum Ablegen“ oder „Rahmen Gold:
+      gesperrt, Ab Stufe 9 (6 von 9)“; die Reiter werden als Reiter angesagt.
 
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 

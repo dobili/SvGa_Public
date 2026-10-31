@@ -1,3 +1,7 @@
+Stand: 31.10.2026 · **Version 0.3.33**: Training und Checkliste neu (C2, D1; N2260–N2269) übernommen. Neue Arbeitschats: Gestaltung Auswertung (F2, Zugarten-Grafik und Zoom bleiben) und Gestaltung Spielen (J3, Einstellen der eigenen Stufe im alten Design). **Nächster Schritt:** übrige Berichte übernehmen.
+
+Stand: 31.10.2026 · **Version 0.3.32**: Deine Extras neu (E1 „Ankleide“, N2270–N2279) übernommen. Laufend: Gestaltungs-Chats Buch/Lernpfad, Training/Checkliste, Trainerstart, Nachschlagen, Einstellungen; Profil neu 2. Beim Autor: Wahl Auswertung (F1–F3) und Spielen (J1–J3). **Nächster Schritt:** übrige Berichte übernehmen, „alt → neu“ gegen Funktionsverlust prüfen.
+
 Stand: 31.10.2026 · **Version 0.3.31**: Profil neu übernommen (N2240–N2249). Gestaltungsrunde 2 auf der Auswahlseite (Buchkarten, Lernpfad, Training, Checkliste, Extras, sechs Funde der Durchsicht).
 
 Stand: 31.10.2026 · **Version 0.3.30** (Zweig `uebernahme-welle2`): 0.3.29 auf main. Fällige Wiederholungen in Karte und Training gleich gezählt. Gestaltungsrunde 2 (Buchkarten, Lernpfad, Training, Checkliste, Durchsicht) in Arbeit; Arbeitschat „Profil neu“ läuft.

@@ -31,6 +31,71 @@ Zielgruppe sind Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. G
   (Gruppentitel, „an/aus“ der Merker, alte Tourtexte) gelöscht; neue Texte mit der Vorsilbe
   `einstellungenneu.` in beiden Sprachen. Speicherformat unverändert.
 - Testpunkte N2300 bis N2309.
+## 31.10.2026 – Training und Checkliste neu (Entwürfe C2 und D1, Arbeitschat, Zweig `gestaltung-training-checkliste`)
+
+Ziel des Autors: Training und Checkliste waren zu technisch, zu textlastig und wirkten wie ein
+Formular; Zielgruppe Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus.
+
+- **Training (C2):** oben „Dein Stapel für heute“ (`Stapelkarte.tsx`), gezählt mit
+  `useFaelligeUebersicht` wie „Dein nächster Schritt“; „Durchgehen“ startet zuerst die Übungen aus
+  dem Buch, sonst den ersten Trainer mit Fälligem. Die Liste mit einem Knopf je Quelle
+  (`FaelligeWiederholungen.tsx`) bleibt in „Dein nächster Schritt“ und in den Kurzplänen.
+  Die Erklärung der Lernkartei steht kurz unter dem Stapel und ganz zum Aufklappen.
+- **Nichts fällt weg (Wunsch des Autors):** fällige Trainer-Aufgaben je Quelle → Plakette auf der
+  Karte des Trainers (Tipp öffnet ihn), Übungen aus dem Buch → „Durchgehen“; Ablauf je Trainer →
+  im Trainer selbst und in der Kapitelübersicht; Beschreibungen von Lernsammlung und
+  Website-Training → auf deren Seiten. Bewusst weggelassen: Kapiteltitel und Sprung ins Kapitel
+  je Kapitelkopf im Training (das Kapitel steht auf jeder Karte, Kapitel öffnet man im Buch).
+- Je Buchteil eine Wischreihe (`Trainerreihe.tsx`), abgeleitet aus `TRAINER` und `BUCHTEILE`
+  (`trainerreihen.ts`): ein Trainer steht einmal, im Teil seines ersten Kapitels. Karte als
+  ganzer Knopf (Tastatur, axe), Bild aus `TRAINERBILDER` (`trainerbilder.ts`, selbst gebaute
+  Stellungen, Vorgabe Grundstellung für neue Trainer), Stand aus dem Trainerstand („neu · Kap. 2“
+  bzw. „3 Runden · 80 % richtig“ mit Band), Bestwert aus dem Rekord, dessen „Versuchen“ in den
+  Trainer führt, Plakette „N fällig“.
+- **Abweichung vom Entwurf:** „Stufe“ und die fünf Striche des Entwurfs gibt es in den Daten
+  nicht; die Karte zeigt Runden und Trefferquote, das Band zeigt die Quote. Das Brett zeigt alle
+  64 Felder statt eines Ausschnitts (ohne Koordinaten), Feldfarben wie in den Einstellungen.
+  Der Ablauf hinter dem Fragezeichen steht weiter in der Kapitelübersicht und im Trainer.
+- Lernsammlung und „Alle Kapitel“ (Website `/training/`) als gestrichelte Kacheln aus der Liste
+  `TRAININGSKACHELN`. Der Link zur Trainingsseite je Kapitel (DS53, DS54) steht jetzt in der
+  Kapitelübersicht unter den Trainern statt 13-mal im Training.
+- **Checkliste (D1):** Kopf mit Summe, „N Kapitel fertig“ und Band mit 13 Abschnitten
+  (`Checklistenkopf.tsx`, Breite nach Zahl der Punkte); Kapitel als Zeilen in einer Karte mit
+  dem vorhandenen Ring (`Kapitelnummer`), fertige golden mit Haken und „fertig“; Kästchen
+  gezeichnet (gold mit Haken). Daten, Speicher und Abhaken unverändert.
+- Texte mit der Vorsilbe `trainingslook.`; nicht mehr genutzte Schlüssel gelöscht
+  (`training.faellig`, `training.jeKapitel`, `training.kapitel`, `training.kastenText`,
+  `sammlung.karte*`, `checkliste.gesamt`). Speicherformat unverändert.
+
+## 31.10.2026 – Deine Extras neu: Entwurf E1 „Ankleide“ (Arbeitschat, Zweig `gestaltung-extras`)
+
+Ziel des Autors: Die Karte war zu technisch und wirkte wie ein Formular (graue Kreise, Knöpfe
+„Wählen“/„Ablegen“); in Einstellungen › Brett sahen gesperrte Extras wie ein Ladefehler aus.
+Gewählt: E1 „Ankleide“.
+
+- **Vorschau „So siehst du gerade aus“** (`extras/Extrabuehne.tsx`): Porträt mit angelegtem
+  Rahmen, Name, Titel als Band, Stufe; Mini-Brett 4 × 4 in den eigenen Brettfarben mit eigenem
+  Figurensatz (`Brettausschnitt` hat dafür `felder` und `seite` bekommen); stilles Konfetti in den
+  gewählten Farben (kein Effekt, daher ohne Schalter „Feiereffekte“). Welche Art am Porträt und
+  welche als Zeile erscheint, steht als Feld `ort` in `EXTRAWAHL`; neue Arten erscheinen als Zeile.
+- **Reiter je Art** aus `EXTRAARTEN` (nur Arten mit Extras), vorhandene Reiter-Komponente als
+  Pillen gestaltet. Texte `extrasneu.reiter.<art>`; fehlt einer, steht die Kennung der Art.
+- **Kacheln** (`extras/Extrakachel.tsx`): Umschaltknopf (`aria-pressed`), Antippen legt an,
+  erneutes Antippen legt ab, dazu klein „… ablegen“. Echte Vorschau je Art (Liste `VORSCHAUEN`
+  in `Extravorschau.tsx`; neue Arten zeigen ihr Bild aus `EXTRAS`). Titel als runder Orden statt
+  Band, weil das Band bei 360 px nicht in ein Drittel der Breite passt und der Name ohnehin
+  darunter steht. Kurznamen `extrasneu.kurz.<kennung>` mit Rückfall auf den langen Namen.
+- **Gesperrt:** echte Vorschau abgedunkelt mit Schloss (`bausteine/Sperrbild.tsx`), Bedingung als
+  Text, bei Stufe und Meisterschaft ein Balken (`extrafortschritt.ts`, Liste `FORTSCHRITTE`; bei
+  Orden gibt die Lage keinen Zwischenstand her, daher kein Balken). Dieselbe Darstellung in den
+  Kacheln der Einstellungen (Vorschauwahl.tsx) statt der grauen Silhouette.
+- **Ablegen bei Brett und Figuren:** zurück zum Standard „wie im Buch“ (`STANDARD_EINSTELLUNGEN`);
+  vorher gab es dort kein Ablegen. „… ablegen“ erscheint nur, wenn ein Extra der Art angelegt ist.
+- Zähler „4 von 8“: frei oder angelegt (nie wegnehmen, E8). Abweichung vom Entwurf: Kopf „So
+  siehst du gerade aus“ wie im Auftrag (Bild: „So sieht man dich“); keine Kachel „Ohne“, Ablegen
+  genügt. Speicherformat unverändert; Texte unter `extrasneu.`, abgelöste Schlüssel
+  (`extras.waehlen`, `extras.gewaehlt`, `extras.ablegen`, `extras.karte.einleitung`,
+  `extras.art.*`, `themen.extras.art.titel`) gelöscht. Testpunkte N2270 bis N2279.
 
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 

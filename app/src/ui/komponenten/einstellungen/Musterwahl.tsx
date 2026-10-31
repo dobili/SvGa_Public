@@ -5,17 +5,16 @@
  * großen Brettvorschau liegen die Brettfarben als runde Farbfelder und die Figurensätze als
  * Kacheln mit einem Springer in einer Reihe, die man seitlich wischt. Für Bildschirmleser ist die
  * Reihe eine Gruppe von Radioknöpfen wie Vorschauwahl.tsx. Gesperrte Extras (Gamifizierung P7)
- * zeigen ein Schloss, lassen sich nicht wählen und nennen ihre Bedingung: für Bildschirmleser im
- * Namen, sichtbar nach einem Tipp unter der Reihe (in den kleinen Feldern hat sie keinen Platz).
+ * zeigen ihr echtes Bild abgedunkelt mit Schloss (Sperrbild.tsx wie in „Deine Extras“), lassen
+ * sich nicht wählen und nennen ihre Bedingung: für Bildschirmleser im Namen, sichtbar nach einem
+ * Tipp unter der Reihe (in den kleinen Feldern hat sie keinen Platz).
  * Beim Öffnen rückt die Reihe das gewählte Feld ins Bild.
- * Abhängigkeiten: React, Lucide-Symbole, i18n.
+ * Abhängigkeiten: React, bausteine/Sperrbild, i18n.
  */
-import { Lock } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { t } from "../../../i18n/sprache";
+import { Sperrbild } from "../bausteine/Sperrbild";
 
-/** Größe des Schlosses auf gesperrten Feldern. */
-const SCHLOSSGROESSE = 16;
 /** Das gewählte Feld steht nach dem Öffnen in der Mitte der Reihe (Hälfte der Breite). */
 const MITTE = 2;
 
@@ -58,10 +57,11 @@ function Musterfeld({
       className={`musterfeld musterfeld-${form}${gesperrt ? " musterfeld-gesperrt" : ""}`}
       onClick={beiTipp}
     >
-      <span className="musterfeld-bild" aria-hidden="true">
-        {children}
-        {gesperrt && <Lock className="musterfeld-schloss" size={SCHLOSSGROESSE} />}
-      </span>
+      <Sperrbild gesperrt={gesperrt}>
+        <span className="musterfeld-bild" aria-hidden="true">
+          {children}
+        </span>
+      </Sperrbild>
       <span className="musterfeld-name">{text}</span>
       {gesperrt && <span className="nur-vorlesen">{bedingung}</span>}
     </button>

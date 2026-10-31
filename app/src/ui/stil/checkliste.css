@@ -1,0 +1,135 @@
+/*
+ * Gesamt-Checkliste nach Entwurf D1 (Wahl des Autors, 31.10.2026): Kopf mit Summe und Band je
+ * Kapitel, Kapitelzeilen in einer Karte, gezeichnete Kästchen. Farben nur über die Tokens
+ * (basis.css, abstimmung.css). Komponenten: ui/bildschirme/Checkliste.tsx,
+ * ui/komponenten/nachschlagen/Checklistenkopf.tsx.
+ */
+
+/* ---------- Gesamt-Checkliste: Kopf ---------- */
+.checkkopf-zeile {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.karte .checkkopf-summe {
+  margin: 0;
+  font-size: var(--groesse-gross);
+}
+
+.checkkopf-summe strong {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-riesig);
+  line-height: 1;
+}
+
+.checkkopf-fertig {
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+.checkband {
+  display: flex;
+  gap: 3px;
+}
+
+.checkband-abschnitt {
+  flex-basis: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkband-balken {
+  width: 100%;
+  height: 12px;
+  border-radius: 4px;
+  background:
+    linear-gradient(var(--gold-strich), var(--gold-strich)) 0 0 / var(--fuellung) 100% no-repeat,
+    var(--linie);
+}
+
+.checkband-nummer {
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}
+
+.checkkopf .hinweis {
+  margin: 0;
+}
+
+/* ---------- Gesamt-Checkliste: Kapitelzeilen in einer Karte ---------- */
+.lernkarten {
+  border-radius: 12px;
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+  overflow: hidden;
+}
+
+.lernkarten .lernkarte {
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border-top: 1px solid var(--linie);
+}
+
+.lernkarten .lernkarte:first-child {
+  border-top: none;
+}
+
+.lernkarte .kapitel-nummer {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.lernkarte.ganz .lernkarte-frage {
+  font-weight: 400;
+}
+
+.lernkarte.ganz .lernkarte-stand {
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
+.lernkarte[open] {
+  background: color-mix(in srgb, var(--navy) 5%, var(--flaeche));
+}
+
+/* Kästchen wie im Entwurf: abgerundet, gold mit Haken, sonst leerer Rahmen. */
+.lernkarte .lernziel input {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  border: 2px solid var(--rand-bedien);
+  border-radius: 6px;
+  background: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.lernkarte .lernziel input:checked {
+  border-color: var(--gold);
+  background: var(--gold);
+}
+
+.lernkarte .lernziel input:checked::after {
+  content: "";
+  width: 12px;
+  height: 7px;
+  border-left: 3px solid var(--navy);
+  border-bottom: 3px solid var(--navy);
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.lernkarte .lernziel input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}

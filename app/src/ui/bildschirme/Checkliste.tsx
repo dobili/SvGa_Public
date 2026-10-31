@@ -7,7 +7,10 @@
  * Liste „Bevor du weiterliest, solltest du Folgendes können“ am Ende jedes Kapitels.
  * Alle Texte kommen aus nachschlagen.json (Pipeline, aus dem LaTeX); die Haken speichert
  * app/lernstand.ts auf dem Gerät.
- * Abhängigkeiten: daten/laden.ts, app/lernstand.ts, Navigation, i18n.
+ * Aussehen nach Entwurf D1 (Wahl des Autors, 31.10.2026): oben Summe und Fortschrittsband
+ * (Checklistenkopf.tsx), darunter alle Kapitel als Zeilen in einer Karte, je mit Ring, Leitfrage
+ * und „4/6“; fertige Kapitel golden mit Haken und „fertig“. Aufgeklappt die Punkte zum Abhaken.
+ * Abhängigkeiten: daten/laden.ts, app/lernstand.ts, Checklistenkopf.tsx, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import { abgehakt, schalteLernziel, useLernstand, type Lernstand } from "../../app/lernstand";
@@ -16,6 +19,7 @@ import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
 import { useDaten } from "../komponenten/bausteine/useDaten";
+import { Checklistenkopf } from "../komponenten/nachschlagen/Checklistenkopf";
 
 type Liste = NonNullable<Nachschlagen["checkliste"]>;
 type Zeile = Liste["zeilen"][number];
@@ -57,9 +61,10 @@ function Kapitelkarte({
   const { navigiere } = useNavigation();
   const anzahl = ziele?.punkte.length ?? 0;
   const fertig = ziele ? abgehakt(stand, zeile.kapitel, anzahl) : 0;
+  const ganz = anzahl > 0 && fertig >= anzahl;
   return (
     <details
-      className="lernkarte"
+      className={ganz ? "lernkarte ganz" : "lernkarte"}
       data-testid={`lernkarte-${zeile.kapitel}`}
       data-tour="checkliste-karte"
     >
@@ -68,7 +73,9 @@ function Kapitelkarte({
         <span className="lernkarte-frage">{zeile.kernfrage}</span>
         {anzahl > 0 && (
           <span className="lernkarte-stand">
-            {t("checkliste.kapitelStand", { erledigt: fertig, alle: anzahl })}
+            {ganz
+              ? t("trainingslook.kapitelFertig")
+              : t("checkliste.kapitelStand", { erledigt: fertig, alle: anzahl })}
           </span>
         )}
       </summary>
@@ -95,29 +102,22 @@ function Inhalt({ daten }: { daten: Nachschlagen }) {
   const liste = daten.checkliste;
   if (!liste) return null;
   const zuKapitel = new Map(daten.lernziele.map((ziele) => [ziele.kapitel, ziele]));
-  const alle = daten.lernziele.reduce((summe, ziele) => summe + ziele.punkte.length, 0);
-  const erledigt = daten.lernziele.reduce(
-    (summe, ziele) => summe + abgehakt(stand, ziele.kapitel, ziele.punkte.length),
-    0,
-  );
   return (
     <>
-      <p className="hinweis">{liste.titel}</p>
-      {alle > 0 && <p className="hinweis">{t("checkliste.hinweis")}</p>}
-      {alle > 0 && (
-        <p className="lernstand-gesamt" data-testid="lernstand-gesamt" data-tour="checkliste-stand">
-          {t("checkliste.gesamt", { erledigt, alle })}
-        </p>
+      {daten.lernziele.length > 0 && (
+        <Checklistenkopf lernziele={daten.lernziele} stand={stand} titel={liste.titel} />
       )}
-      {liste.zeilen.map((zeile) => (
-        <Kapitelkarte
-          key={zeile.kapitel}
-          zeile={zeile}
-          ziele={zuKapitel.get(zeile.kapitel)}
-          spalten={liste.spalten}
-          stand={stand}
-        />
-      ))}
+      <div className="lernkarten">
+        {liste.zeilen.map((zeile) => (
+          <Kapitelkarte
+            key={zeile.kapitel}
+            zeile={zeile}
+            ziele={zuKapitel.get(zeile.kapitel)}
+            spalten={liste.spalten}
+            stand={stand}
+          />
+        ))}
+      </div>
     </>
   );
 }

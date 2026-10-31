@@ -1,20 +1,176 @@
 /*
- * Freischaltbare Extras (Gamifizierung P7): Profilkarte „Deine Extras“, gesperrte Kacheln in den
- * Einstellungen als Silhouette mit Bedingung, Porträtrahmen in Bronze, Silber und Gold.
- * Farben und Abstände aus basis.css.
+ * Freischaltbare Extras (Gamifizierung P7), neu gestaltet nach Entwurf E1 „Ankleide“
+ * (31.10.2026): Profilkarte „Deine Extras“ mit Vorschau oben, Reitern und Kacheln; gesperrte
+ * Vorschauen abgedunkelt mit Schloss (auch in den Einstellungen); Porträtrahmen in Bronze, Silber
+ * und Gold. Farben nur über die Tokens aus basis.css, damit hell und dunkel stimmen.
  */
-.extrareihe + .extrareihe {
-  margin-top: var(--raster);
+
+/* ---------- Kopf der Karte ---------- */
+
+.extrasneu-kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--raster);
 }
 
-.extrareihe-titel {
-  margin: var(--raster) 0 calc(var(--raster) / 2);
-  font-size: var(--groesse-grund);
+.extrasneu-kopf .hinweis {
+  white-space: nowrap;
 }
 
-.extraliste {
+/* ---------- Vorschau „So siehst du gerade aus“ ---------- */
+
+.extrabuehne {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 2);
+  border-radius: 16px;
+  border: 1px solid var(--linie-stark);
+  background: radial-gradient(
+    120% 90% at 30% 20%,
+    color-mix(in srgb, var(--text) 10%, var(--flaeche)),
+    var(--flaeche) 70%
+  );
+}
+
+/* Konfetti im Hintergrund: Schmuck, unter allem anderen, leicht durchscheinend. */
+.extrabuehne-konfetti {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.extrabuehne > :not(.extrabuehne-konfetti) {
+  position: relative;
+}
+
+.extrabuehne-marke {
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+
+.extrabuehne-kopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+}
+
+.extrabuehne-portraet {
+  flex: none;
+  width: 84px;
+  --rahmenbreite: 5px;
+}
+
+.extrabuehne-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.extrabuehne-name {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  overflow-wrap: anywhere;
+}
+
+.extrabuehne-brett {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--grund) 70%, transparent);
+}
+
+.extrabuehne-minibrett {
+  flex: none;
+  width: 84px;
+}
+
+.extrabuehne-minibrett .brettausschnitt {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.extrabuehne-liste {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--groesse-klein);
+  min-width: 0;
+}
+
+.extrabuehne-liste > div {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 6px;
+}
+
+.extrabuehne-liste dt {
+  color: var(--text-leise);
+}
+
+.extrabuehne-liste dd {
+  margin: 0;
+}
+
+/* ---------- Titelband (Vorschau oben und Kacheln der Titel) ---------- */
+
+.titelband {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+  color: var(--gold-text);
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ---------- Reiter als Pillen ---------- */
+
+.extrasneu-reiter .reiterzeile {
+  gap: 2px;
+  border-bottom: none;
+}
+
+.extrasneu-reiter .reiter {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 9px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+}
+
+.extrasneu-reiter .reiter[aria-selected="true"] {
+  border-color: var(--linie-stark);
+  background: color-mix(in srgb, var(--text) 8%, var(--flaeche));
+}
+
+/* ---------- Kacheln ---------- */
+
+.extrasneu-kacheln {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--raster);
   margin: 0;
   padding: 0;
@@ -22,35 +178,187 @@
 }
 
 .extrakachel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(var(--raster) / 2);
+  gap: 6px;
+  padding: 12px 6px 10px;
+  border: 1.5px solid var(--linie-stark);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--text) 4%, var(--flaeche));
+  color: var(--text);
+  font: inherit;
   text-align: center;
+  cursor: pointer;
 }
 
-.extrakachel-bild {
-  width: 56px;
-  height: 56px;
+.extrakachel-angelegt {
+  border-color: var(--gold);
+  box-shadow:
+    inset 0 0 0 1px var(--gold),
+    0 0 14px color-mix(in srgb, var(--gold) 30%, transparent);
+}
+
+.extrakachel-gesperrt {
+  cursor: not-allowed;
+}
+
+.extrakachel-haken {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
 }
 
 .extrakachel-name {
-  font-size: 0.9em;
+  font-size: var(--groesse-mittel);
+  font-weight: 600;
+  line-height: 1.2;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
-/* Gesperrt: Silhouette in mittlerem Grau (hell wie dunkel sichtbar), darunter die Bedingung. */
-.extrakachel-gesperrt .extrakachel-bild,
-.vorschaukachel-gesperrt .brettausschnitt {
-  filter: contrast(0);
-  opacity: 0.45;
+.extrakachel-zeile {
+  font-size: var(--groesse-fein);
+  line-height: 1.25;
+  color: var(--text-leise);
 }
 
-.extrakachel-bedingung,
-.vorschaukachel-bedingung {
+.extrakachel-angelegt .extrakachel-zeile {
+  color: var(--gold-text);
+  font-weight: 700;
+}
+
+.extrakachel-balken {
+  width: 70%;
+  height: 5px;
+  margin-top: auto;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--linie);
+}
+
+.extrakachel-balken > i {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+}
+
+/* Vorschauen in den Kacheln: alle gleich hoch (64 px), damit Namen auf einer Linie stehen. */
+.extrakachel .sperrbild {
+  height: 64px;
+  align-items: center;
+}
+
+.extrakachel .brettausschnitt {
+  width: auto;
+  height: 100%;
+}
+
+.extravorschau-portraet {
+  display: block;
+  width: 56px;
+}
+
+.extravorschau-konfetti,
+.extravorschau-bild {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--grund) 70%, transparent);
+}
+
+.extravorschau-titel {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+  color: var(--gold-text);
+}
+
+.extrasneu-ablegen {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.85em;
+  gap: 8px;
+  min-height: var(--tippflaeche);
+  margin-top: 4px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: var(--text-leise);
+  font: inherit;
+  font-size: var(--groesse-mittel);
+  cursor: pointer;
+}
+
+.extrasneu-auswahl {
+  display: flex;
+  flex-direction: column;
+}
+
+.extrasneu-fuss {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.extrasneu-fuss > svg {
+  flex: none;
+}
+
+/* ---------- Gesperrte Vorschau (Profilkarte und Einstellungen) ---------- */
+
+.sperrbild {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sperrbild-inhalt {
+  display: contents;
+}
+
+/* Abgedunkelt, aber erkennbar: man sieht, was man bekommt (statt grauer Silhouette). */
+.sperrbild-zu .sperrbild-inhalt > * {
+  filter: grayscale(0.5) brightness(0.55);
+}
+
+.sperrbild-schloss {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--linie-stark);
+  color: var(--text);
+  box-shadow: 0 0 0 2px var(--flaeche);
+}
+
+.vorschaukachel-bedingung {
+  font-size: var(--groesse-fein);
+  line-height: 1.25;
   color: var(--text-leise);
 }
 
@@ -58,10 +366,11 @@
   cursor: not-allowed;
 }
 
-/* Porträtrahmen: ein Ring um das Bild des Lesers, überall, wo es erscheint. */
+/* ---------- Porträtrahmen: ein Ring um das Bild des Lesers, überall, wo es erscheint ---------- */
+
 .spielerbild-rahmen > .gegner-portraet {
   border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--rahmenfarbe);
+  box-shadow: 0 0 0 var(--rahmenbreite, 3px) var(--rahmenfarbe);
 }
 
 .spielerbild-rahmen-bronze {
@@ -74,10 +383,4 @@
 
 .spielerbild-rahmen-gold {
   --rahmenfarbe: #d9a514;
-}
-
-/* Das Schloss bleibt gleich groß, auch wenn die Bedingung umbricht. */
-.extrakachel-bedingung > svg,
-.vorschaukachel-bedingung > svg {
-  flex: none;
 }

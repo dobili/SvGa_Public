@@ -69,9 +69,10 @@ test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", asyn
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Buch" }).click();
   await leiste.getByRole("button", { name: "Training" }).click();
+  // Die Karte des Trainers trägt die Plakette „1 fällig“ (Training neu, 31.10.2026).
   await page
-    .getByTestId("faellig")
-    .getByRole("button", { name: /Zähltrainer: 1 fällig/ })
+    .getByTestId("trainer-zaehlen")
+    .getByRole("button", { name: /1 fällig/ })
     .click();
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");

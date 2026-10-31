@@ -79,28 +79,33 @@ test("Nachschlagen: Glossar suchen, Stelle öffnen; Denkroutine; Abhakliste mit 
   await page.getByTestId("lernkarte-1").getByText("Was passiert jetzt?").click();
   await page.getByRole("button", { name: "Zu Kapitel 1" }).click();
   await expect(page.getByRole("heading", { name: "Kapitel 1" })).toBeVisible();
+  // Die Trainingsseite des Kapitels steht seit „Training neu“ (31.10.2026) in der Kapitelübersicht.
+  await expect(
+    page.getByTestId("kapitel-training").getByRole("link", {
+      name: "Training zu diesem Kapitel (Website)",
+    }),
+  ).toHaveAttribute("href", "/training/kap01/");
 });
 
 test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async ({ page }) => {
   await starteImBrowser(page);
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Training" }).click();
+  // Seit „Training neu“ (Entwurf C2, 31.10.2026): je Teil des Buches eine Wischreihe mit Karten.
+  await expect(page.getByTestId("trainerreihe-grundlagen")).toContainText(
+    "Kapitel 0–1 · 3 Trainer",
+  );
   const zaehltrainer = page.getByTestId("trainer-zaehlen");
   await expect(zaehltrainer).toContainText("Zähltrainer");
-  // Seit 0.2.85 steht der Ablauf hinter dem Fragezeichen.
-  await expect(zaehltrainer).not.toContainText("Abtauschbilanz in Bauerneinheiten");
-  await zaehltrainer.getByRole("button", { name: /Erklärung/ }).click();
-  await expect(zaehltrainer).toContainText("Abtauschbilanz in Bauerneinheiten");
-  await expect(zaehltrainer.getByRole("button", { name: "Trainieren" })).toBeVisible();
-  // Alle Trainer sind spielbar (seit 0.2.71 auch der 30-Minuten-Plan), keiner „folgt“ mehr.
-  const dreissig = page.getByTestId("trainer-dreissigMinuten").first();
-  await expect(dreissig.getByRole("button", { name: "Trainieren" })).toBeVisible();
+  await expect(zaehltrainer).toContainText("neu · Kap. 1");
+  await expect(zaehltrainer.getByRole("button", { name: /^Zähltrainer/ })).toBeVisible();
+  // Ein Trainer für zwei Kapitel steht einmal, mit beiden Kapiteln.
+  await expect(page.getByTestId("trainer-abweichung")).toHaveCount(1);
+  await expect(page.getByTestId("trainer-abweichung")).toContainText("Kap. 2–3");
+  await expect(page.getByTestId("trainer-dreissigMinuten").getByRole("button")).toBeVisible();
   await expect(page.getByText("folgt mit einem Update")).toHaveCount(0);
   await expect(page.getByTestId("trainer-denkroutine")).toContainText("Denkroutine-Trainer");
-  // Jedes Kapitel hat seine Trainingsseite, auch Kapitel 9 (sein Trainer gehört auch zu Kapitel 8).
-  const kastenlinks = page.getByRole("link", { name: "Training zu diesem Kapitel (Website)" });
-  await expect(kastenlinks).toHaveCount(13);
-  await expect(page.locator('a[href="/training/kap09/"]')).toBeVisible();
+  await expect(page.getByTestId("kachel-kapitel").locator('a[href="/training/"]')).toBeVisible();
   await oeffneEinstellungen(page);
   await page
     .getByRole("radiogroup", { name: "Brettfarbe" })

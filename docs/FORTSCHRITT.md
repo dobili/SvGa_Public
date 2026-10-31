@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.35**: Bot rechnet erst nach der Zuganimation (Befund des Autors, N2315). **Danach (Wunsch des Autors):** Maia in einen eigenen Worker; allgemein prüfen, welche Rechnungen auf weitere Kerne gehören (Multicore). Vorher übrige Berichte übernehmen (Buchseite/Lernpfad, Nachschlagen, Trainerstart, Einstellungen, Auswertung, Spielen).
+
 Stand: 31.10.2026 · **Version 0.3.34**: Profil – Zurückgeholt (Verlauf je Phase, Schätzung aus Zügen, Stand in den Regalen; N2310–N2314). 0.3.32 auf main. **Nächster Schritt:** Hängen der Zuganimation gegen die Engine auf schwachen Handys (Befund des Autors); übrige Berichte übernehmen.
 
 Stand: 31.10.2026 · **Version 0.3.33**: Training und Checkliste neu (C2, D1; N2260–N2269) übernommen. Neue Arbeitschats: Gestaltung Auswertung (F2, Zugarten-Grafik und Zoom bleiben) und Gestaltung Spielen (J3, Einstellen der eigenen Stufe im alten Design). **Nächster Schritt:** übrige Berichte übernehmen.

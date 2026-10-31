@@ -33,6 +33,15 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.35: Zuganimation gegen die Engine ohne Hänger (31.10.2026)
+
+- [ ] N2315. **Zug gleitet sauber, auch bei schnellem Spiel:** Auf dem älteren Handy (Redmi) mit
+      eingeschaltetem Maia eine Blitzpartie gegen einen Bot spielen und schnell ziehen. Deine
+      Figur gleitet jedes Mal ohne Stocken ins Ziel; erst danach „denkt“ der Bot. Seine Antwort
+      kommt höchstens eine Viertelsekunde später als bisher, seine Uhr verliert dadurch nichts.
+      Falls die Uhranzeige beim Rechnen des Bots noch kurz stockt: notieren (das behebt der
+      nächste Schritt, Maia in einem eigenen Thread).
+
 ### Neu in 0.3.34: Profil – Zurückgeholt, was bei der Neugestaltung wegfiel (Arbeitschat, 31.10.2026)
 
 Bei der Neugestaltung des Profils waren ein paar nützliche Dinge weggefallen; sie sind zurück,

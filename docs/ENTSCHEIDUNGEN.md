@@ -4,6 +4,18 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Zuganimation: Bot rechnet erst nach dem Gleiten (0.3.35)
+
+Befund des Autors: Auf einem sechs Jahre alten Handy hing bei schnellem Spiel mit Maia die
+Animation des eigenen Zuges. Ursache: Der Bot begann sofort nach dem Zug zu rechnen; Maia
+(onnxruntime-web, ein Thread), die Prüfung der Kandidaten und die Phase der Stellung laufen im
+selben Thread wie die Animation. Eine Auswertung im Hintergrund läuft während der Partie nicht.
+Entscheidung: `usePartie.ts` wartet nach dem Zug die Dauer der Animation plus 40 ms ab, erst dann
+bestimmt der Bot Stufe und Zug. Seine Uhr verliert nichts (Bedenkzeit simuliert, `zieheBotMitUhr`).
+Ein Zeitgeber statt `requestAnimationFrame`, damit der Bot auch im Hintergrund zieht. Nächster
+Schritt (Wunsch des Autors, nach den laufenden Übernahmen): Maia in einen eigenen Worker und
+allgemein prüfen, welche Rechnungen auf weitere Kerne gehören.
+
 ## 31.10.2026 – Profil: Zurückgeholt (Arbeitschat, Zweig `profil-neu`)
 
 Wunsch des Autors: Bei der Neugestaltung soll nichts Sinnvolles wegfallen. Geprüft gegen alle

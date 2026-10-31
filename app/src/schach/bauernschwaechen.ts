@@ -133,6 +133,41 @@ function istRueckstaendig(
   );
 }
 
+/** Die vier Bedingungen für „rückständig“ (P3, 23.10.2026), einzeln benannt. */
+export type Rueckstandsbedingung =
+  "nachbarnVorn" | "nichtZuDecken" | "feldDavorKontrolliert" | "halboffeneLinie";
+
+/**
+ * Welche Bedingungen für „rückständig“ ein Bauer nicht erfüllt, in der Reihenfolge der Regel.
+ *
+ * Warum: Tippt der Leser einen Bauern als schwach an, der es nicht ist, nennt die App den Grund
+ * (Wunsch des Autors, 30.10.2026: falsch heißt begründet).
+ * Beispiel: f7 mit den Nachbarn g7 und e5, weißer Bauer f2, kein weißer Bauer greift f6 an →
+ * alle vier: „nachbarnVorn“ (g7 steht gleich hoch), „nichtZuDecken“ (nach ...f6 deckt g7),
+ * „feldDavorKontrolliert“ und „halboffeneLinie“ (f2 steht auf der f-Linie).
+ * Sonderfall: Ohne Nachbarn ist der Bauer isoliert; dann scheitert „nachbarnVorn“.
+ */
+export function fehlendeRueckstandsbedingungen(
+  brett: Board,
+  feld: Square,
+  farbe: Color,
+): Rueckstandsbedingung[] {
+  const jeLinie = bauernJeLinie(brett, farbe);
+  const gegnerische = bauernJeLinie(brett, gegner(farbe));
+  const nachbarn = nachbarlinien(squareFile(feld)).flatMap((linie) => jeLinie[linie] ?? []);
+  const reihe = eigeneReihe(feld, farbe);
+  const fehlend: Rueckstandsbedingung[] = [];
+  if (nachbarn.length === 0 || nachbarn.some((n) => eigeneReihe(n, farbe) <= reihe)) {
+    fehlend.push("nachbarnVorn");
+  }
+  if (bestehtDeckungstest(feld, jeLinie, farbe)) fehlend.push("nichtZuDecken");
+  if (!feldDavorVomGegnerAngegriffen(feld, gegnerische, farbe)) {
+    fehlend.push("feldDavorKontrolliert");
+  }
+  if (gegnerbauerDavor(feld, gegnerische, farbe)) fehlend.push("halboffeneLinie");
+  return fehlend;
+}
+
 /**
  * Freibauer: Weder auf seiner Linie noch auf den Nachbarlinien steht vor ihm ein gegnerischer
  * Bauer (Glossar). Beispiel: Abb. 5.31, der Freibauer d5.

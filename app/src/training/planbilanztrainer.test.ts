@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 import { profil } from "../analyse/stellungsprofil";
 import { ladeKapitel } from "../schach/buchabbildungen.testhilfe";
 import { phase } from "../schach/phase";
+import { stellungAusFen } from "../schach/stellung";
+import { lapbegruendung } from "./lapbegruendung";
 import { buchstellungenAus } from "./buchstellungen";
 import { hauptketteText } from "./planablenker";
 import { lapaufgabe, planaufgaben, rennaufgabe } from "./planbilanztrainer";
@@ -106,5 +108,27 @@ describe("Planbilanz-Übung", () => {
   it("Wettrennen: Abb. 6.6 Weiß 2, Schwarz 3", () => {
     expect(rennaufgabe(stellung("6.6"))?.zuege).toEqual({ white: 2, black: 3 });
     expect(stellungen.flatMap((s) => rennaufgabe(s) ?? []).length).toBeGreaterThan(3);
+  });
+});
+
+describe("LAP: ruhige Stellungen und Begründung (Nebenchat, 30.10.2026)", () => {
+  /** Die Stellung des Autors: Springer e7 gefesselt und angegriffen (Schwarz am Zug). */
+  const UNRUHIG = "1r2k1r1/pbppnp1p/1bn2P2/7q/Q7/B1PB1N2/P4PPP/3RR1K1 b - - 0 1";
+
+  it("nimmt keine Stellung mit gefesselter oder hängender eigener Figur", () => {
+    const gelesen = stellungAusFen(UNRUHIG);
+    if (!gelesen.ok) throw new Error(gelesen.fehler);
+    expect(lapaufgabe({ nummer: "6.x", kapitel: 6, stellung: gelesen.wert })).toBeNull();
+  });
+
+  it("nennt die freien Felder und den Grund gegen eine andere Figur", () => {
+    const lap = stellungen.flatMap((b) => lapaufgabe(b) ?? []);
+    const aufgabe = lap.find((a) => a.figuren.length > 1);
+    if (!aufgabe) throw new Error("keine LAP-Aufgabe mit mehreren Figuren");
+    const andere = aufgabe.figuren.find((f) => f.feld !== aufgabe.figur);
+    const saetze = lapbegruendung(aufgabe, andere?.feld ?? null, null);
+    expect(saetze[0]).toContain("Freie Felder");
+    expect(saetze).toHaveLength(2);
+    expect(lapbegruendung(aufgabe, aufgabe.figur, aufgabe.ziel)).toHaveLength(1);
   });
 });

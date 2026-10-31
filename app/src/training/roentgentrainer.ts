@@ -50,6 +50,8 @@ export interface Roentgenaufgabe {
   readonly schritte: Readonly<Record<Roentgenschritt, Schrittloesung>>;
   /** Eigene Züge, die etwas drohen (nur zur Anzeige nach der Aufgabe). */
   readonly drohende: readonly Pfeil[];
+  /** Stellung aus einer Zugfolge des Buches (Röntgen-Stufen), sonst fehlt das Feld. */
+  readonly zugfolge?: { readonly titel: string; readonly zug: number };
 }
 
 /** Der Pfeil eines Zuges; Rochaden zählen nicht (sie geben in Buchstellungen kaum Schach). */
@@ -95,7 +97,14 @@ export function roentgenaufgabe(buch: Buchstellung): Roentgenaufgabe | null {
   const anzahl = SCHRITTE.reduce((summe, s) => summe + schritte[s].verlangt.length, 0);
   if (anzahl < MINDESTENS_PFEILE || anzahl > HOECHSTENS_PFEILE) return null;
   const drohende = pfeile(p.erzwingend()?.drohende ?? []);
-  return { nummer: buch.nummer, fen: stellung.fen, eigen, schritte, drohende };
+  return {
+    nummer: buch.nummer,
+    fen: stellung.fen,
+    eigen,
+    schritte,
+    drohende,
+    ...(buch.zugfolge ? { zugfolge: buch.zugfolge } : {}),
+  };
 }
 
 /** Eine Runde Röntgen-Aufgaben aus zufälligen Buchstellungen. */

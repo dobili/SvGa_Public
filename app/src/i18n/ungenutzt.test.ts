@@ -91,9 +91,34 @@ function ungenutzteSchluessel(): string[] {
   );
 }
 
+/**
+ * Texte, die ein Nebenchat durch neue Schlüssel abgelöst hat. Er darf gemeinsame Schlüssel nicht
+ * löschen (Absprache mit dem Haupt-Chat, 30.10.2026); der Haupt-Chat löscht sie beim Übernehmen
+ * in de.json und en.json und leert diese Liste. Ungenutzt sein müssen sie trotzdem.
+ */
+const ABGELOEST: ReadonlySet<string> = new Set([
+  // Zähltrainer: klarere Auftragstexte (Nebenchat, Punkte B4 und N).
+  "zaehltrainer.auftrag",
+  "zaehltrainer.haengenAuftrag",
+  // Röntgen-Trainer: klarere Aufträge für Schritt 2 und 3 (Punkt M).
+  "roentgentrainer.schlaege",
+  "roentgentrainer.gegner",
+  // Fällige Wiederholungen: Gesamtzahl und ein Knopf je Quelle (Punkt Q).
+  "training.faelligAnzahl",
+  "training.faelligEine",
+  "training.wiederholen",
+  // Falle oder Köder: Warnsignale vorher als Hinweis, danach der Satz zum Nutzen (Punkt F).
+  "fallentrainer.warnsignaleDanach",
+]);
+
 describe("Texte in de.json", () => {
+  it("abgelöste Texte sind wirklich ungenutzt", () => {
+    const ungenutzt = new Set(ungenutzteSchluessel());
+    expect([...ABGELOEST].filter((k) => !ungenutzt.has(k))).toEqual([]);
+  });
+
   it("jeder Text wird im Code benutzt (oder steht in der Prüfliste)", () => {
-    const neu = ungenutzteSchluessel().filter((k) => !NOCH_ZU_PRUEFEN.has(k));
+    const neu = ungenutzteSchluessel().filter((k) => !NOCH_ZU_PRUEFEN.has(k) && !ABGELOEST.has(k));
     expect(neu).toEqual([]);
   });
 

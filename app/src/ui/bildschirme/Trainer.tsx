@@ -17,9 +17,7 @@ import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
 import { auswahl, lapaufgabe, planaufgaben, rennaufgabe } from "../../training/planbilanztrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
-import { roentgenrunde } from "../../training/roentgentrainer";
 import type { TrainerKennung } from "../../training/trainer";
-import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { ZUFALL } from "../../training/zufall";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
@@ -30,7 +28,8 @@ import {
   Gangartaufgabe,
   Notieraufgabe,
 } from "../trainer/Koordinatentrainer";
-import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
+import { RoentgenBereich } from "../trainer/RoentgenBereich";
+import { ZaehlBereich } from "../trainer/ZaehlBereich";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
 import { RepertoireBereich } from "../trainer/RepertoireBereich";
@@ -42,16 +41,12 @@ import { KurzplanBereich } from "../trainer/KurzplanBereich";
 import { EndspielBereich } from "../trainer/EndspielBereich";
 import { FehlerBereich } from "../trainer/FehlerBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
-import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
 import { Faktorenaufgabe } from "../trainer/Faktorenaufgabe";
 import { Denkroutineaufgabe } from "../trainer/Denkroutineaufgabe";
 import { Lapaufgabe, Planfragenaufgabe, Rennaufgabe } from "../trainer/Planaufgaben";
 
 export type Uebungsart =
-  | "bilanz"
-  | "haengen"
-  | "roentgen"
   | "felder"
   | "notieren"
   | "ausfuehren"
@@ -65,8 +60,6 @@ export type Uebungsart =
 
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
-  zaehlen: ["bilanz", "haengen"],
-  roentgen: ["roentgen"],
   koordinaten: ["felder", "notieren", "ausfuehren", "gangarten"],
   zielbilanz: ["zielbilanz"],
   faktorenbilanz: ["faktoren"],
@@ -76,9 +69,6 @@ const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[
 
 /** Aufgaben je Runde: kurze Runden passen in eine Pause, „Feld finden“ geht schnell. */
 const ANZAHL: Readonly<Record<Uebungsart, number>> = {
-  bilanz: 8,
-  haengen: 8,
-  roentgen: 5,
   felder: 16,
   notieren: 8,
   ausfuehren: 8,
@@ -96,18 +86,6 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
 function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstellung[] {
   const n = ANZAHL[art];
   switch (art) {
-    case "bilanz":
-      return zaehlrunde(stellungen, n, ZUFALL).map((a) => (r) => (
-        <Zaehlaufgabe aufgabe={a} runde={r} />
-      ));
-    case "haengen":
-      return haengerunde(stellungen, n, ZUFALL).map((a) => (r) => (
-        <Haengeaufgabe aufgabe={a} runde={r} />
-      ));
-    case "roentgen":
-      return roentgenrunde(stellungen, n, ZUFALL).map((a) => (r) => (
-        <Roentgenaufgabe aufgabe={a} runde={r} />
-      ));
     case "felder":
       return feldrunde(n, ZUFALL).map((a) => (r) => <Feldaufgabe aufgabe={a} runde={r} />);
     case "notieren":
@@ -232,6 +210,8 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   fehlerdatenbank: () => <FehlerBereich />,
   abweichung: () => <AbweichungBereich />,
   dreissigMinuten: () => <DreissigMinutenBereich />,
+  roentgen: () => <RoentgenBereich />,
+  zaehlen: () => <ZaehlBereich />,
   kurzplaene: () => <KurzplanBereich />,
 };
 

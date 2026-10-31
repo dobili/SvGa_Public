@@ -22,6 +22,8 @@ export interface Buchstellung {
   readonly faktortabelle?: Tabelle;
   /** Die vorbereiteten Texte der Abbildung (Warum-Fragen, AP 14), falls es welche gibt. */
   readonly vorbereitet?: Vorbereitet;
+  /** Stellung aus einer Zugfolge statt aus einer Abbildung: Titel und Zug (Röntgen-Stufen). */
+  readonly zugfolge?: { readonly titel: string; readonly zug: number };
 }
 
 /**

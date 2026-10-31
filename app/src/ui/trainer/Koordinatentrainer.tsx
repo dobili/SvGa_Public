@@ -22,6 +22,7 @@ import {
 import { pruefeFelder } from "../../training/zaehltrainer";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { Notationstastatur } from "./Notationstastatur";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -37,6 +38,30 @@ function buchzug(san: string): string {
 
 function zugpfeil(aufgabe: Zugaufgabe, farbe: "gold" | "rot"): Markierung {
   return { typ: "pfeil", farbe, von: aufgabe.von, nach: aufgabe.nach };
+}
+
+/**
+ * Aus welcher Sicht das Brett steht, deutlich unter dem Brett: ein weißer oder schwarzer Kreis
+ * wie die Anzeige „am Zug“, dazu der Satz. Nach dem Drehen leuchtet die Anzeige kurz auf und
+ * sagt es ausdrücklich (Wunsch des Autors, 30.10.2026: Der Wechsel fiel nicht auf).
+ */
+function Sichtanzeige({ gedreht, wechsel }: { gedreht: boolean; wechsel: boolean }) {
+  return (
+    <p
+      className={wechsel ? "sichtanzeige sichtwechsel" : "sichtanzeige"}
+      data-testid="sichtanzeige"
+      aria-live="polite"
+    >
+      <span
+        className={gedreht ? "sichtpunkt sichtpunkt-schwarz" : "sichtpunkt"}
+        aria-hidden="true"
+      />
+      <span>
+        {wechsel && <strong>{t("koordinatentrainer.gedrehtHinweis")} </strong>}
+        {t(gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss")}
+      </span>
+    </p>
+  );
 }
 
 /** Feld finden: Ein richtiger Tipp führt sofort weiter, ein falscher zeigt das Feld. */
@@ -71,9 +96,7 @@ export function Feldaufgabe({ aufgabe, runde }: { aufgabe: Feldaufgabe; runde: R
           aufgabe.gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss",
         )}
       />
-      <p className="hinweis">
-        {t(aufgabe.gedreht ? "koordinatentrainer.sichtSchwarz" : "koordinatentrainer.sichtWeiss")}
-      </p>
+      <Sichtanzeige gedreht={aufgabe.gedreht} wechsel={aufgabe.wechsel} />
       {runde.ergebnis === false && (
         <Antwortmeldung richtig={false}>
           {t("koordinatentrainer.feldFalsch", { feld: getippt ?? "" })}
@@ -83,9 +106,38 @@ export function Feldaufgabe({ aufgabe, runde }: { aufgabe: Feldaufgabe; runde: R
   );
 }
 
-/** Gezeigten Zug aufschreiben. */
+/** Das Eingabefeld für die Handytastatur (umschaltbar, für alle, die lieber tippen). */
+function Tippfeld({
+  eingabe,
+  setze,
+  gesperrt,
+}: {
+  eingabe: string;
+  setze: (text: string) => void;
+  gesperrt: boolean;
+}) {
+  return (
+    <input
+      type="text"
+      aria-label={t("koordinatentrainer.eingabe")}
+      placeholder={t("koordinatentrainer.beispiel")}
+      value={eingabe}
+      autoCapitalize="off"
+      autoComplete="off"
+      spellCheck={false}
+      readOnly={gesperrt}
+      onChange={(e) => setze(e.target.value)}
+    />
+  );
+}
+
+/**
+ * Gezeigten Zug aufschreiben. Standard ist die Notationstastatur mit Bausteinen (Wunsch des
+ * Autors, 30.10.2026); wer lieber tippt, schaltet auf das Eingabefeld um.
+ */
 export function Notieraufgabe({ aufgabe, runde }: { aufgabe: Zugaufgabe; runde: Runde }) {
   const [eingabe, setzeEingabe] = useState("");
+  const [tasten, setzeTasten] = useState(true);
   const [pruefung, setzePruefung] = useState<ReturnType<typeof pruefeNotation> | null>(null);
   const pruefe = (ereignis: React.FormEvent) => {
     ereignis.preventDefault();
@@ -96,30 +148,31 @@ export function Notieraufgabe({ aufgabe, runde }: { aufgabe: Zugaufgabe; runde: 
   };
   return (
     <>
-      <p>{t("koordinatentrainer.notierAuftrag")}</p>
+      <p>
+        {t(tasten ? "koordinatentrainer.notierAuftragTasten" : "koordinatentrainer.notierAuftrag")}
+      </p>
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={[zugpfeil(aufgabe, "gold")]}
         beschriftung={t("koordinatentrainer.brett")}
       />
-      <form className="eingabezeile" onSubmit={pruefe}>
-        <input
-          type="text"
-          aria-label={t("koordinatentrainer.eingabe")}
-          placeholder={t("koordinatentrainer.beispiel")}
-          value={eingabe}
-          autoCapitalize="off"
-          autoComplete="off"
-          spellCheck={false}
-          readOnly={pruefung !== null}
-          onChange={(e) => setzeEingabe(e.target.value)}
-        />
+      <form className={tasten ? "tastenformular" : "eingabezeile"} onSubmit={pruefe}>
+        {tasten ? (
+          <Notationstastatur text={eingabe} setze={setzeEingabe} gesperrt={pruefung !== null} />
+        ) : (
+          <Tippfeld eingabe={eingabe} setze={setzeEingabe} gesperrt={pruefung !== null} />
+        )}
         {!pruefung && (
-          <button type="submit" className="knopf-haupt">
+          <button type="submit" className="knopf-haupt" disabled={eingabe.trim() === ""}>
             {t("trainer.pruefen")}
           </button>
         )}
       </form>
+      {!pruefung && (
+        <button type="button" className="knopf-link" onClick={() => setzeTasten(!tasten)}>
+          {t(tasten ? "koordinatentrainer.lieberTippen" : "koordinatentrainer.lieberBausteine")}
+        </button>
+      )}
       {pruefung && (
         <Antwortmeldung richtig={pruefung.richtig}>
           {pruefung.englisch

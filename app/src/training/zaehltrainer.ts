@@ -8,9 +8,15 @@
  * Abhängigkeiten: analyse/stellungsprofil.ts, training/zufall.ts.
  * Buchbezug: Kapitel 1, „Werte von Angreifer und Verteidiger zählen“ und „Drei gegen drei:
  * Noch geht nichts“.
+ * Seit dem Nebenchat (30.10.2026): Stellungen, in denen die Seite am Zug im Schach steht (oder
+ * matt ist), fallen weg; an den König gefesselte Figuren zählen nicht mit (Kapitel 1: „Ein
+ * gefesselter … Verteidiger zählt weniger“, Abb. 1.12, training/zaehlfesselung.ts); jede Aufgabe
+ * hat eine Stufe (leicht, mittel, schwer) und ihre Motive (Batterie, Fesselung).
  */
 import type { Square } from "chessops/types";
 import { profil } from "../analyse/stellungsprofil";
+import { abtausch } from "../schach/abtausch";
+import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
@@ -31,7 +37,21 @@ export interface Zaehlaufgabe {
   readonly verteidiger: number;
   /** Gewinn der angreifenden Seite in Bauerneinheiten; 0 heißt: Schlagen lohnt nicht. */
   readonly bilanz: number;
+  /** Motive, die das Zählen schwerer machen: Batterie, Fesselung (Kapitel 1). */
+  readonly motive: readonly Zaehlmotiv[];
+  /** Gefesselte Figuren, die hier nicht mitzählen (Felder), für die Erklärung. */
+  readonly gefesselt: readonly string[];
+  readonly stufe: Zaehlstufe;
 }
+
+export type Zaehlmotiv = "batterie" | "fesselung";
+export type Zaehlstufe = "leicht" | "mittel" | "schwer";
+export const ZAEHLSTUFEN: readonly Zaehlstufe[] = ["leicht", "mittel", "schwer"];
+/** Bis zu so vielen beteiligten Figuren ist eine Aufgabe ohne Motiv leicht. */
+const LEICHT_BIS = 3;
+/** Ab so vielen beteiligten Figuren ist sie schwer, mit Batterie schon ab SCHWER_MIT_BATTERIE. */
+const SCHWER_AB = 6;
+const SCHWER_MIT_BATTERIE = 5;
 
 /** Die Antwort des Lesers. */
 export interface Zaehlantwort {
@@ -40,17 +60,64 @@ export interface Zaehlantwort {
   readonly bilanz: number;
 }
 
-/** Zählt ein besetztes Feld aus Sicht der Seite, die die Figur angreift (wie k1-zaehlen). */
+/**
+ * Taugt die Stellung zum Zählen? Nicht, wenn die Seite am Zug im Schach steht oder matt ist.
+ *
+ * Warum: Wer im Schach steht, muss zuerst darauf antworten (Kapitel 1, Schach-Röntgen-Regel);
+ * hängende Figuren und Abtauschbilanzen sind dann nebensächlich, beim Matt sinnlos.
+ * Beispiel: die Fallenstellung mit Sf3 matt (Dame e4 fesselt den Läufer e2) → ungeeignet.
+ * Sonderfall: Ausschnitte ohne König (keine Regeln) bleiben geeignet, wie Abb. 1.26.
+ */
+export function zumZaehlenGeeignet(stellung: Stellung): boolean {
+  return !stellung.regeln?.isCheck();
+}
+
+/**
+ * Die Stufe einer Zählaufgabe (Wunsch des Autors, 30.10.2026: weitere Schwierigkeitsgrade).
+ * Leicht: höchstens drei Figuren beteiligt, kein Motiv. Schwer: eine Fesselung, sechs und mehr
+ * Figuren, oder eine Batterie bei fünf und mehr. Sonst mittel.
+ * Beispiel: Abb. 1.26, d4 (drei gegen drei, Dame b6 in Batterie) → schwer.
+ */
+export function zaehlstufe(a: Pick<Zaehlaufgabe, "angreifer" | "verteidiger" | "motive">): Zaehlstufe {
+  const beteiligt = a.angreifer + a.verteidiger;
+  const batterie = a.motive.includes("batterie");
+  if (a.motive.includes("fesselung") || beteiligt >= SCHWER_AB || (batterie && beteiligt >= SCHWER_MIT_BATTERIE))
+    return "schwer";
+  return beteiligt <= LEICHT_BIS && a.motive.length === 0 ? "leicht" : "mittel";
+}
+
+/**
+ * Zählt ein besetztes Feld aus Sicht der Seite, die die Figur angreift (wie k1-zaehlen), aber
+ * ohne an den König gefesselte Figuren, die hier nicht schlagen dürfen (Kapitel 1, Abb. 1.12).
+ */
 function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "nummer" | "fen"> | null {
   const figur = stellung.brett.get(feld);
   if (!figur || figur.role === "king") return null;
   const p = profil(stellung);
+  const gesperrt = gesperrteFuer(p, feld);
   const seite = gegner(figur.color);
-  const angreifer = p.angriffskarte.angreiferVon(feld, seite).length;
-  if (angreifer === 0) return null;
-  const verteidiger = p.angriffskarte.angreiferVon(feld, figur.color).length;
-  const bilanz = Math.max(p.abtausch(feld)?.bilanz ?? 0, 0);
-  return { feld: feldname(feld), angreifer, verteidiger, bilanz };
+  const zaehlt = (a: { feld: Square }) => !gesperrt.has(a.feld);
+  const angreiferListe = p.angriffskarte.angreiferVon(feld, seite).filter(zaehlt);
+  if (angreiferListe.length === 0) return null;
+  const verteidigerListe = p.angriffskarte.angreiferVon(feld, figur.color).filter(zaehlt);
+  const bilanz = Math.max(abtausch(stellung.brett, feld, gesperrt)?.bilanz ?? 0, 0);
+  const gefesselt = gefesselteAmFeld(p, feld).map(feldname);
+  const batterie = [...angreiferListe, ...verteidigerListe].some((a) => a.hinter !== null);
+  const motive: Zaehlmotiv[] = [
+    ...(batterie ? (["batterie"] as const) : []),
+    ...(gefesselt.length > 0 ? (["fesselung"] as const) : []),
+  ];
+  const angreifer = angreiferListe.length;
+  const verteidiger = verteidigerListe.length;
+  return {
+    feld: feldname(feld),
+    angreifer,
+    verteidiger,
+    bilanz,
+    motive,
+    gefesselt,
+    stufe: zaehlstufe({ angreifer, verteidiger, motive }),
+  };
 }
 
 /**
@@ -60,6 +127,7 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
  */
 export function zaehlfelder(buch: Buchstellung): Zaehlaufgabe[] {
   const ergebnis: Zaehlaufgabe[] = [];
+  if (!zumZaehlenGeeignet(buch.stellung)) return ergebnis;
   for (const feld of buch.stellung.brett.occupied) {
     const gezaehlt = zaehleFeld(buch.stellung, feld);
     if (gezaehlt && gezaehlt.bilanz <= HOECHSTE_BILANZ) {
@@ -70,7 +138,7 @@ export function zaehlfelder(buch: Buchstellung): Zaehlaufgabe[] {
 }
 
 /**
- * Eine Runde Zählaufgaben, je zur Hälfte mit und ohne Gewinn.
+ * Eine Runde Zählaufgaben, je zur Hälfte mit und ohne Gewinn, auf Wunsch nur einer Stufe.
  *
  * Warum: Das Buch lehrt beides: erkennen, wann Schlagen gewinnt, und wann „noch nichts geht“.
  * Nur Felder, die auch verteidigt werden, sonst wäre die Aufgabe zu leicht.
@@ -80,13 +148,17 @@ export function zaehlrunde(
   stellungen: readonly Buchstellung[],
   anzahl: number,
   zufall: Zufall,
+  stufe: Zaehlstufe | null = null,
 ): Zaehlaufgabe[] {
   const mitGewinn: Zaehlaufgabe[] = [];
   const ohneGewinn: Zaehlaufgabe[] = [];
   for (const buch of mische(stellungen, zufall)) {
     const felder = mische(
       zaehlfelder(buch).filter(
-        (a) => a.verteidiger > 0 && Math.max(a.angreifer, a.verteidiger) <= HOECHSTE_ANZAHL,
+        (a) =>
+          a.verteidiger > 0 &&
+          Math.max(a.angreifer, a.verteidiger) <= HOECHSTE_ANZAHL &&
+          (stufe === null || a.stufe === stufe),
       ),
       zufall,
     ).slice(0, FELDER_JE_STELLUNG);
@@ -109,6 +181,14 @@ export function pruefeZaehlantwort(aufgabe: Zaehlaufgabe, antwort: Zaehlantwort)
   return { angreifer, verteidiger, bilanz, richtig: angreifer && verteidiger && bilanz };
 }
 
+/**
+ * Prüft nur das Ergebnis (kurzer Modus): Wer die Bilanz trifft, hat richtig gezählt.
+ * Beispiel: Abb. 1.28, d4: Bilanz 1 → „+1“ ist richtig, „lohnt nicht“ (0) falsch.
+ */
+export function pruefeBilanz(aufgabe: Zaehlaufgabe, bilanz: number): boolean {
+  return bilanz === aufgabe.bilanz;
+}
+
 /** Eine Aufgabe „hängende Figuren finden“. */
 export interface Haengeaufgabe {
   readonly nummer: string;
@@ -121,17 +201,23 @@ export interface Haengeaufgabe {
  * Die hängenden Figuren einer Stellung: Figuren beider Seiten (ohne König), deren Schlagen dem
  * Gegner Material bringt.
  *
- * Regel: Kapitel 1, „Werte von Angreifer und Verteidiger zählen“: Eine Figur hängt, wenn der
- * Gegner sie mit Gewinn schlagen kann, auch wenn sie gedeckt ist (Turm von Bauer angegriffen).
+ * Regel: Glossar „Hängen“: angegriffen und nicht ausreichend gedeckt; Kapitel 1, „Werte von
+ * Angreifer und Verteidiger zählen“: Eine Figur hängt, wenn der Gegner sie mit Gewinn schlagen
+ * kann, auch wenn sie gedeckt ist (Turm von Bauer angegriffen, oder zwei Angreifer gegen einen
+ * Verteidiger).
  * Sonderfall: Gabeln und Drohungen zählen nicht, nur Schläge, die sofort Gewinn bringen.
+ * Gefesselte Figuren schlagen nicht mit (Kapitel 1, Abb. 1.12). Ausgabe null: Die Stellung
+ * taugt nicht (die Seite am Zug steht im Schach).
  */
-export function haengendeFiguren(stellung: Stellung): string[] {
+export function haengendeFiguren(stellung: Stellung): string[] | null {
+  if (!zumZaehlenGeeignet(stellung)) return null;
   const p = profil(stellung);
   const ergebnis: string[] = [];
   for (const feld of stellung.brett.occupied) {
     const figur = stellung.brett.get(feld);
     if (!figur || figur.role === "king") continue;
-    if ((p.abtausch(feld)?.bilanz ?? 0) > 0) ergebnis.push(feldname(feld));
+    if ((abtausch(stellung.brett, feld, gesperrteFuer(p, feld))?.bilanz ?? 0) > 0)
+      ergebnis.push(feldname(feld));
   }
   return ergebnis.sort();
 }
@@ -145,11 +231,10 @@ export function haengerunde(
   anzahl: number,
   zufall: Zufall,
 ): Haengeaufgabe[] {
-  const alle = mische(stellungen, zufall).map((buch) => ({
-    nummer: buch.nummer,
-    fen: buch.stellung.fen,
-    haengend: haengendeFiguren(buch.stellung),
-  }));
+  const alle = mische(stellungen, zufall).flatMap((buch) => {
+    const haengend = haengendeFiguren(buch.stellung);
+    return haengend ? [{ nummer: buch.nummer, fen: buch.stellung.fen, haengend }] : [];
+  });
   const ohne = Math.floor(anzahl / 5);
   const mit = alle.filter((a) => a.haengend.length > 0).slice(0, anzahl - ohne);
   const leer = alle.filter((a) => a.haengend.length === 0).slice(0, anzahl - mit.length);

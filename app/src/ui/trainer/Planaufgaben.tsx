@@ -19,6 +19,7 @@ import {
   type Rennaufgabe as RennAufgabe,
   type Wahlfrage,
 } from "../../training/planbilanztrainer";
+import { lapbegruendung } from "../../training/lapbegruendung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -141,6 +142,13 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
         <Antwortmeldung richtig={runde.ergebnis === true}>
           {t("planuebung.lapLoesung", { figur: aufgabe.figur, ziel: aufgabe.ziel ?? "" })}
         </Antwortmeldung>
+      )}
+      {beantwortet && (
+        <section className="karte" data-testid="lap-begruendung">
+          {lapbegruendung(aufgabe, figur, ziel).map((satz) => (
+            <p key={satz}>{satz}</p>
+          ))}
+        </section>
       )}
     </>
   );

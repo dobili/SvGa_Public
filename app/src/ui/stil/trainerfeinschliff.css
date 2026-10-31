@@ -1,0 +1,149 @@
+/*
+ * Trainer-Feinschliff (Nebenchat, 30.10.2026): Ergebnisknöpfe im Zähltrainer, Notationstastatur,
+ * Sichtanzeige beim Feldfinden und weitere kleine Bausteine der Trainer. Eigene Datei, damit die
+ * gemeinsamen Grundwerte in basis.css unberührt bleiben.
+ */
+
+/* Ergebnis mit einem Tipp: „lohnt nicht“, „+1“ bis „+9“, umbrechend, linksbündig. */
+.ergebniswahl {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.ergebniswahl legend {
+  padding: 0;
+  margin-bottom: var(--raster);
+  font-weight: 600;
+}
+
+/* Werkzeugreiter am Brett (Bündel wie „Denkroutine“): Bricht ein Reiter in die zweite Zeile um,
+   wurde er durch die allgemeine Reiterregel (bausteine.css: flex 1 1 0) bildschirmbreit und
+   mittig. Hier nimmt jeder Reiter nur die Breite seiner Beschriftung und steht links (Wunsch
+   des Autors, 30.10.2026). Die Reiter der Einstellungen bleiben unberührt. */
+.reiterbereich .reiterleiste > .reiter {
+  flex: 0 1 auto;
+  justify-content: flex-start;
+}
+
+/* Feld finden: Sicht des Bretts mit Spielsteinmarke wie „am Zug“; nach dem Drehen leuchtet die
+   Anzeige golden auf (Wunsch des Autors, 30.10.2026). */
+.sichtanzeige {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.sichtpunkt {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text);
+  background: var(--creme);
+}
+
+.sichtpunkt-schwarz {
+  background: var(--navy);
+  box-shadow: 0 0 0 1.5px var(--creme);
+}
+
+.sichtwechsel {
+  box-shadow: 0 0 0 2px var(--gold);
+  animation: sichtwechsel-leuchten 1.2s ease-in-out 3;
+}
+
+@keyframes sichtwechsel-leuchten {
+  50% {
+    background: color-mix(in srgb, var(--gold) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sichtwechsel {
+    animation: none;
+  }
+}
+
+/* Fällige Wiederholungen: je Quelle ein Knopf untereinander, linksbündig (Nebenchat, Punkt Q). */
+.faellig-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--raster) / 2);
+}
+
+.faellig-prinzip summary {
+  cursor: pointer;
+  color: var(--text-leise);
+}
+
+/* Notationstastatur (Zug aufschreiben): Anzeige oben, darunter Reihen mit Bausteinen. Acht
+   Linien und acht Reihen passen bei 360 Pixeln je in eine Zeile. */
+.tastenformular {
+  display: grid;
+  gap: var(--raster);
+}
+
+.notationstastatur {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}
+
+.notationsanzeige {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--raster);
+  border: 1.5px solid var(--linie);
+  border-radius: 8px;
+  font-size: var(--groesse-grund);
+  font-weight: 700;
+}
+
+.tastenreihe {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.taste {
+  min-width: 0;
+  padding: 0;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Fortsetzung durchspielen mit Balken (Folgespieler): Züge als Zeile, der aktuelle golden. */
+.folgespieler {
+  display: grid;
+  gap: var(--raster);
+}
+
+.folgespieler-zuege {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--raster);
+}
+
+.folgespieler-zuege [aria-current="step"] {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.folgespieler-knoepfe {
+  flex-wrap: wrap;
+}

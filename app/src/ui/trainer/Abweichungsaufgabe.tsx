@@ -5,7 +5,10 @@
  * Rolle im Gesamtbild: Trainer „abweichung“ (Kapitel 2 und 3, AP 13 Stufe 3). Gut ist eine
  * Antwort, die höchstens 0,5 Bauern hinter dem besten Zug der Engine liegt. Die Einschätzung
  * zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden für die eigene Seite nach der Antwort
- * (Konzept: erst selbst nach den Prinzipien ziehen, dann vergleichen).
+ * (Konzept: erst selbst nach den Prinzipien ziehen, dann vergleichen). Seit dem Nebenchat
+ * (30.10.2026): vor dem Zug ein Hinweis, was der Abweichzug will; danach die Einordnung des
+ * Planzuges und der Vergleich von bestem Zug, Zielzug und eigenem Zug mit Denkpause, Begründung
+ * und Fortsetzungen mit Balken (Abweichungsauswertung.tsx).
  * Abhängigkeiten: training/abweichungstrainer.ts, useAbweichung.ts, analyse/register.ts (nur
  * aufgerufen), Brettbereich, useBrettbedienung, i18n.
  */
@@ -24,6 +27,7 @@ import {
 import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { Abweichungshinweis, Planeinordnung, Zielvergleich } from "./Abweichungsauswertung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useAbweichzug, useAntwortbewertung } from "./useAbweichung";
 import type { Runde } from "./useRunde";
@@ -44,7 +48,12 @@ function Einschaetzung({ aufgabe, zuege }: { aufgabe: Aufgabe; zuege: readonly s
     };
     return ["k2-zielbilanz", "k1-todsuenden"].flatMap((id) => {
       const e = wende(id, eingabe);
-      return e ? [`${e.ueberschrift}: ${e.fazit}`] : [];
+      if (!e) return [];
+      // Zur Zielbilanz die drei Ziele der eigenen Seite einzeln (Regel L: „1 von 3“ allein
+      // sagte dem Autor nichts; Nebenchat, 30.10.2026).
+      const eigene =
+        id === "k2-zielbilanz" ? e.befunde.find((b) => b.kennung === aufgabe.seite) : null;
+      return [`${e.ueberschrift}: ${e.fazit}`, ...(eigene?.zeilen ?? [])];
     });
   }, [aufgabe, zuege]);
   return (
@@ -71,7 +80,7 @@ export function Abweichungsaufgabe({
   index: Eroeffnungsindex | undefined;
 }) {
   const fenBuch = stellungNach(aufgabe.startFen, aufgabe.buchzuege);
-  const abweichung = useAbweichzug(fenBuch, index);
+  const abweichung = useAbweichzug(fenBuch, index, aufgabe.planzug);
   const abw = abweichung?.art === "fertig" ? abweichung.wert : null;
   const fenVorher = abw ? (fenNach(fenBuch, abw) ?? fenBuch) : fenBuch;
   const [eigen, setzeEigen] = useState<string | null>(null);
@@ -124,6 +133,14 @@ export function Abweichungsaufgabe({
           {t("abweichung.verlaesst", { zug: de(abw) })}
         </p>
       )}
+      {abw && !eigen && (
+        <Abweichungshinweis
+          fenVorAbw={fenBuch}
+          abw={abw}
+          fenNachAbw={fenVorher}
+          gegnerFarbe={t(aufgabe.seite === "white" ? "farbe.b" : "farbe.w")}
+        />
+      )}
       {abweichung?.art === "fertig" && abw === null && (
         <p className="hinweis">{t("abweichung.keinZug")}</p>
       )}
@@ -137,6 +154,17 @@ export function Abweichungsaufgabe({
             bester: de(bewertung.wert.besterZug ?? ""),
           })}
         </Antwortmeldung>
+      )}
+      {fertig && eigen && abw && bewertung?.art === "fertig" && (
+        <Planeinordnung
+          eigen={eigen}
+          planzug={aufgabe.planzug}
+          abw={abw}
+          verlust={bewertung.wert.verlust}
+        />
+      )}
+      {fertig && bewertung?.art === "fertig" && (
+        <Zielvergleich fen={fenVorher} seite={aufgabe.seite} bewertung={bewertung.wert} />
       )}
       {fertig && eigen && <Einschaetzung aufgabe={aufgabe} zuege={zuege} />}
     </>

@@ -18,14 +18,18 @@
  * aufgerufen), training/planablenker.ts, schach/phase.ts, training/zufall.ts.
  * Buchbezug: Kapitel 6, drei Planfragen, Planbilanz (Abb. 6.20), LAP-Prinzip, entgegengesetzte
  * Rochaden („Bauernzüge bis zum ersten Hebel zählen“).
+ * LAP nur in ruhigen Stellungen ohne hängende und ohne gefesselte eigene Figuren, mit den freien
+ * Feldern jeder Figur für die Begründung (Nebenchat, 30.10.2026).
  */
-import type { Color } from "chessops/types";
+import type { Color, Role } from "chessops/types";
 import { lapVon, unruhe } from "../analyse/planfragen";
 import { planlage } from "../analyse/planlage";
 import { profil, type Stellungsprofil } from "../analyse/stellungsprofil";
 import type { Frage } from "../analyse/warumfragen";
 import { t } from "../i18n/sprache";
 import { farbname } from "../analyse/texte";
+import { aktivitaeten } from "../schach/aktivitaet";
+import { fesselungslinien } from "../schach/fesselungen";
 import { phase } from "../schach/phase";
 import { feldname, gegner } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
@@ -191,6 +195,14 @@ function alsWahlfrage(f: Frage): Wahlfrage {
   return { frage: f.frage, antworten: f.antworten, richtig: f.richtig, erklaerung: f.erklaerung };
 }
 
+/** Eine eigene Figur mit ihren freien Feldern (für die Begründung nach der Antwort). */
+export interface Lapfigur {
+  readonly feld: string;
+  readonly rolle: Role;
+  readonly freie: number;
+  readonly zuHause: boolean;
+}
+
 export interface Lapaufgabe {
   readonly nummer: string;
   readonly fen: string;
@@ -199,6 +211,28 @@ export interface Lapaufgabe {
   readonly figur: string;
   /** Ihr Zielfeld laut LAP-Prinzip, oder null, wenn die App keines findet. */
   readonly ziel: string | null;
+  /** Alle eigenen Figuren außer König und Bauern, am wenigsten aktive zuerst (Begründung). */
+  readonly figuren: readonly Lapfigur[];
+}
+
+/**
+ * Ruhig genug für die LAP-Frage? Keine eigene Figur hängt (der Gegner gewinnt beim Schlagen
+ * Material), und keine eigene Figur ist an den König gefesselt.
+ *
+ * Warum: Das LAP-Prinzip gilt für ruhige Stellungen (Kapitel 6). Der Autor bekam eine Stellung, in
+ * der der gefesselte Springer e7 zugleich angegriffen war: Dort geht es um Rettung, nicht um
+ * Figurenverbesserung (Nebenchat, 30.10.2026).
+ */
+function ruhigFuerLap(p: Stellungsprofil, seite: Color): boolean {
+  const brett = p.stellung.brett;
+  const haengt = [...brett[seite]].some((feld) => {
+    const figur = brett.get(feld);
+    return figur?.role !== "king" && (p.abtausch(feld)?.bilanz ?? 0) > 0;
+  });
+  const gefesselt = fesselungslinien(brett, p.angriffskarte, seite).some(
+    (linie) => linie.art === "direkt" && linie.absolut,
+  );
+  return !haengt && !gefesselt;
 }
 
 /**
@@ -210,14 +244,22 @@ export function lapaufgabe(buch: Buchstellung): Lapaufgabe | null {
   const p = planstellung(buch);
   if (!p) return null;
   const seite = buch.stellung.amZug;
+  if (!ruhigFuerLap(p, seite)) return null;
   const ergebnis = lapVon(p, seite);
   if (!ergebnis || ergebnis.ziel.ziel === null) return null;
+  const figuren = aktivitaeten(p.sichereFelder(seite)).map((a) => ({
+    feld: feldname(a.stand.feld),
+    rolle: a.stand.figur.role,
+    freie: a.freie.length,
+    zuHause: a.zuHause,
+  }));
   return {
     nummer: buch.nummer,
     fen: buch.stellung.fen,
     seite,
     figur: feldname(ergebnis.lap.stand.feld),
     ziel: feldname(ergebnis.ziel.ziel),
+    figuren,
   };
 }
 

@@ -36,6 +36,22 @@ test("Zug aufschreiben: falsche Schreibweise, das Buch schreibt den Zug", async 
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
   await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  // Seit dem Nebenchat (30.10.2026) Bausteine statt Handytastatur: „K“, „a“, „1“.
+  const tastatur = page.getByTestId("notationstastatur");
+  await tastatur.getByRole("button", { name: "K", exact: true }).click();
+  await tastatur.getByRole("button", { name: "a", exact: true }).click();
+  await tastatur.getByRole("button", { name: "1", exact: true }).click();
+  await expect(tastatur).toContainText("Ka1");
+  await page.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("trainer")).toContainText("Das Buch schreibt");
+  await page.screenshot({ path: "test-results/bilder/notationstastatur.png", fullPage: true });
+});
+
+test("Zug aufschreiben: umschaltbar auf das Eingabefeld", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "koordinaten");
+  await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  await page.getByRole("button", { name: "Lieber mit der Tastatur tippen" }).click();
   await page.getByRole("textbox", { name: "Zug in Notation" }).fill("Qa1");
   await page.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("trainer")).toContainText("Das Buch schreibt");
@@ -58,22 +74,25 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
   await oeffneTrainer(page, "zaehlen");
   await page.getByRole("button", { name: /Bilanz zählen/ }).click();
   const runde = page.getByTestId("trainerrunde");
-  // Seit 0.2.116 mit „−“ und „+“: der erste Tipp auf „+“ setzt den kleinsten Wert.
-  await runde.getByRole("button", { name: "Angreifer: eins mehr" }).click();
-  await runde.getByRole("button", { name: "Verteidiger: eins mehr" }).click();
-  await runde
-    .getByRole("button", { name: /eins mehr/ })
-    .last()
-    .click();
-  await expect(runde.getByText("lohnt nicht")).toBeVisible();
-  await runde.getByRole("button", { name: "Prüfen" }).click();
+  // Seit dem Nebenchat (30.10.2026): Ein Tipp auf das Ergebnis prüft sofort.
+  await runde.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "lohnt nicht" }).click();
   await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-zaehlen.png", fullPage: true });
+  await page.getByRole("button", { name: "Weiter" }).click();
+  // Genauer Modus: Angreifer und Verteidiger mit „−“ und „+“, dann Prüfen.
+  await runde.getByRole("button", { name: /Genauer üben/ }).click();
+  await runde.getByRole("button", { name: "Angreifer: eins mehr" }).click();
+  await runde.getByRole("button", { name: "Verteidiger: eins mehr" }).click();
+  await runde.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "+1" }).click();
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
 });
 
 test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "roentgen");
+  await page.getByTestId("roentgen-wahl").getByRole("button", { name: "schwer" }).click();
+  await page.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Schritt 1 von 3");
   for (const naechster of [true, true, false]) {
@@ -117,7 +136,7 @@ test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage"
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
 
-test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale danach", async ({
+test("Falle oder Köder: Warnsignale als Hinweis vorher, danach Lösung mit Balken", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -126,12 +145,18 @@ test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale da
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Der Gegner hat gerade");
   await expect(runde).toContainText("Falle oder Geschenk?");
-  // Die Warnsignale kommen erst nach der Antwort (Wunsch des Autors, P4 R50).
+  // Seit dem Nebenchat (30.10.2026): Die Warnsignale sind vorher ein freiwilliger Hinweis.
   await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
+  await runde.getByRole("button", { name: "Hinweis: Warnsignale zeigen" }).click();
+  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
-  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
+  // Danach nur die Lösung: Fortsetzung mit Bewertungsbalken, keine Warnsignal-Marken mehr.
+  await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
   await expect(runde).toContainText("Fortsetzung laut Engine:");
+  const folge = page.getByTestId("falle-folge");
+  await expect(folge.getByTestId("bewertungsbalken")).toBeVisible();
+  await folge.getByRole("button", { name: "Einen Zug vor" }).click();
   await page.screenshot({ path: "test-results/bilder/trainer-falle.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");

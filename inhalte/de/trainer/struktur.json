@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "trainer": "struktur",
  "erzeugt": {
-  "datum": "2026-10-23",
+  "datum": "2026-10-30",
   "engine": null,
   "skript": "pipeline/trainer/struktur.py"
  },
@@ -11,7 +11,7 @@
    "kennung": "buch",
    "name": "Schach von Grund auf, Abbildungen (Kapitel 5; weitere Kapitel nach Regeln)",
    "lizenz": "Alle Rechte vorbehalten (nur Stellungen)",
-   "anzahl": 162
+   "anzahl": 107
   }
  ],
  "aufgaben": [
@@ -39,7 +39,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "fluegelDerKette"
+   ]
   },
   {
    "id": "struktur-b-5.4",
@@ -65,7 +68,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.5",
@@ -91,7 +95,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.6",
@@ -117,36 +122,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.7",
-   "fen": "rnbqkbnr/pppp1p1p/8/4N3/4PppP/8/PPPP2P1/RNBQKB1R b KQkq - 1 5",
-   "seite": "w",
-   "struktur": "vorposten",
-   "plan": "vorpostenBesetzen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "f4",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.7"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.8",
@@ -174,148 +151,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.9",
-   "fen": "6k1/5p1p/8/6p1/8/7P/5PP1/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "haken",
-   "plan": "luftlochSchaffen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.9"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.10",
-   "fen": "4k3/pppppppp/8/8/4PP2/8/PPPP2PP/4K3 b - - 0 1",
-   "seite": "w",
-   "struktur": "loch",
-   "plan": "lochVermeiden",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.10"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.11",
-   "fen": "rnb1k1nr/pppp1ppp/8/2b1P3/4P2q/8/PPPP2PP/RNBQKBNR w KQkq - 1 4",
-   "seite": "w",
-   "struktur": "haken",
-   "plan": "lochVermeiden",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "e4",
-     "e5"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.11"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.12",
-   "fen": "6k1/8/8/8/8/8/5PPP/4r1K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "haken",
-   "plan": "luftlochSchaffen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [
-     "f2",
-     "g2",
-     "h2"
-    ],
-    "inseln": {
-     "w": 1,
-     "b": 0
-    }
-   },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.12"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 1
-   }
-  },
-  {
-   "id": "struktur-b-5.13",
-   "fen": "6k1/8/8/8/8/7P/5PP1/4r1K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "haken",
-   "plan": "luftlochSchaffen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [
-     "f2",
-     "g2",
-     "h3"
-    ],
-    "inseln": {
-     "w": 1,
-     "b": 0
-    }
-   },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.13"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 1
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.14",
@@ -343,36 +180,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.15",
-   "fen": "3k4/ppp2ppp/2p5/4P3/8/8/PPP2PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "c6",
-     "c7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.15"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 0
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.16",
@@ -403,7 +212,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.17",
@@ -431,7 +241,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-5.18",
@@ -459,37 +272,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-5.19",
-   "fen": "rnbqkbnr/ppp2ppp/8/3p4/2B1P3/8/PB3PPP/RN1QK1NR w KQkq - 0 6",
-   "seite": "w",
-   "struktur": "isolani",
-   "plan": "isolaniVorstossen",
-   "merkmale": {
-    "isolierte": [
-     "a2"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [
-     "c7"
-    ],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.19"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.20",
@@ -515,7 +299,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.21",
@@ -541,7 +326,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.22",
@@ -569,7 +355,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-5.23",
@@ -597,7 +386,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-5.24",
@@ -623,7 +415,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "kettenbasisAngreifen"
+   ]
   },
   {
    "id": "struktur-b-5.25",
@@ -649,7 +444,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "fluegelDerKette"
+   ]
   },
   {
    "id": "struktur-b-5.26",
@@ -675,253 +473,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.27",
-   "fen": "6k1/ppp2p1p/3p2p1/3Pp3/2P1P3/8/PP3PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.27"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.28",
-   "fen": "r4rk1/2qbbppp/2np1n2/1p2p3/p2PP3/4BN1P/PPBN1PP1/R2QR1K1 w - - 2 17",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.28"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.29",
-   "fen": "4k3/1pp5/8/8/8/8/PPP1K3/8 w - - 0 1",
-   "seite": "w",
-   "struktur": "mehrheit",
-   "plan": "mehrheitVorstossen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.29"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.30",
-   "fen": "3k4/ppp2ppp/2p5/4P3/8/8/PPP2PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "mehrheit",
-   "plan": "mehrheitVorstossen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "c6",
-     "c7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.30"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.31",
-   "fen": "6k1/pp3ppp/3n4/3P4/8/8/PP3PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "mehrheit",
-   "plan": "mehrheitVorstossen",
-   "merkmale": {
-    "isolierte": [
-     "d5"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [
-     "d5"
-    ],
-    "inseln": {
-     "w": 3,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.31"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 1
-   }
-  },
-  {
-   "id": "struktur-b-5.32",
-   "fen": "6k1/pp3ppp/2p5/3p4/3P4/4P3/PP3PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "minderheitsangriff",
-   "plan": "minderheitsangriff",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.32"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.33",
-   "fen": "6k1/pp3ppp/2p5/1P1p4/3P4/4P3/P4PPP/6K1 b - - 0 1",
-   "seite": "w",
-   "struktur": "minderheitsangriff",
-   "plan": "minderheitsangriff",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.33"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.34",
-   "fen": "6k1/p4ppp/2p5/3p4/3P4/4P3/P4PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "minderheitsangriff",
-   "plan": "minderheitsangriff",
-   "merkmale": {
-    "isolierte": [
-     "a2",
-     "a7"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [
-     "c6"
-    ],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 3
-    }
-   },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.34"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.35",
-   "fen": "6k1/ppp2p1p/3p2p1/3Pp3/2P1P3/8/PP3PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "geschlossen",
-   "plan": "stellungSchliessen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.35"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
+   "auchPassend": [
+    "fluegelDerKette"
+   ]
   },
   {
    "id": "struktur-b-5.36",
@@ -949,88 +504,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.37",
-   "fen": "r1bqk2r/p4pp1/2pb1n1p/n7/8/3N4/PPP1BPPP/RNBQK2R b KQkq - 0 12",
-   "seite": "b",
-   "struktur": "offen",
-   "plan": "stellungOeffnen",
-   "merkmale": {
-    "isolierte": [
-     "c6",
-     "a7"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 3
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.37"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-5.38",
-   "fen": "6k1/ppp2ppp/4p3/8/3PP3/8/PPP2PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "offen",
-   "plan": "stellungOeffnen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.38"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-5.39",
-   "fen": "6k1/ppp2ppp/4p3/4P3/3P4/8/PPP2PPP/6K1 b - - 0 1",
-   "seite": "w",
-   "struktur": "geschlossen",
-   "plan": "springerStattLaeufer",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "5.39"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.40",
@@ -1056,7 +531,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.41",
@@ -1087,7 +563,8 @@
    "messung": {
     "merkmale": 4,
     "figuren": 4
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.42",
@@ -1113,7 +590,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.43",
@@ -1139,7 +617,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.44",
@@ -1165,7 +644,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 12
-   }
+   },
+   "auchPassend": [
+    "kettenbasisAngreifen"
+   ]
   },
   {
    "id": "struktur-b-5.45",
@@ -1191,7 +673,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.46",
@@ -1219,7 +702,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.47",
@@ -1245,7 +729,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-5.48",
@@ -1271,7 +756,10 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "fluegelDerKette"
+   ]
   },
   {
    "id": "struktur-b-2.7",
@@ -1297,67 +785,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.9",
-   "fen": "r1b2rk1/2q1bppp/p2p1n2/np2p3/3pP3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 0 13",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "d4",
-     "d6"
-    ],
-    "rueckstaendige": [
-     "d6"
-    ],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 4,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.9"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.15",
-   "fen": "r1bqkb1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "c6",
-     "c7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.15"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 12
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.21",
@@ -1383,7 +812,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.22",
@@ -1409,7 +839,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.24",
@@ -1435,7 +866,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.26",
@@ -1463,7 +895,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.35",
@@ -1494,7 +927,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.47",
@@ -1525,7 +959,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.54",
@@ -1554,33 +989,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.63",
-   "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.63"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.68",
@@ -1609,7 +1019,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.69",
@@ -1638,85 +1049,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.70",
-   "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2BP4/4P3/PP3PPP/RNBQK1NR w KQkq - 0 5",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.70"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.71",
-   "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 w kq - 0 7",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.71"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.72",
-   "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.72"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.78",
@@ -1742,103 +1076,15 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.86",
-   "fen": "rnbqkb1r/ppp2ppp/5p2/3p4/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "f6",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.86"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-2.87",
-   "fen": "rnbqkb1r/ppp1pp1p/5p2/3p4/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [
-     "h7"
-    ],
-    "doppelte": [
-     "f6",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 4,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.87"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-2.88",
-   "fen": "rnbqk2r/pp3ppp/2pb1p2/3p4/2PP4/4P3/PP3PPP/RN1QKBNR w KQkq - 0 6",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "f6",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.88"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 12
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.89",
    "fen": "rnbqk2r/pp3ppp/3b1p2/3p4/3P4/2N1P3/PP3PPP/R2QKBNR b KQkq - 1 7",
    "seite": "b",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAufloesen",
+   "struktur": "kette",
+   "plan": "kettenbasisAngreifen",
    "merkmale": {
     "isolierte": [
      "d5"
@@ -1862,33 +1108,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-2.97",
-   "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.97"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.100",
@@ -1914,33 +1135,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.104",
-   "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.104"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.105",
@@ -1966,33 +1162,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.106",
-   "fen": "rn1qkbnr/pp3ppp/4p3/2ppPb2/3P4/5N2/PPP1BPPP/RNBQK2R w KQkq - 0 6",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.106"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.108",
@@ -2021,33 +1192,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.113",
-   "fen": "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N2N2/PP2BPPP/R1BQK2R w KQ - 0 7",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.113"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.114",
@@ -2073,59 +1219,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.115",
-   "fen": "r1bq1rk1/ppp1n1bp/3p2p1/3Ppp1n/1PP1P3/2N2N2/P3BPPP/R1BQR1K1 w - - 0 11",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.115"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.116",
-   "fen": "r1bq1rk1/pp2n1bp/2pp1np1/3PppN1/1PP1P3/2N2B2/P4PPP/R1BQR1K1 w - - 0 13",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.116"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.118",
@@ -2156,7 +1251,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.121",
@@ -2185,33 +1281,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-2.140",
-   "fen": "r1bq1rk1/pp1n1ppp/4pn2/2p5/1bBP4/2N1PN2/PP2QPPP/R1B2RK1 b - - 2 9",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "2.140"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.141",
@@ -2239,7 +1310,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-2.151",
@@ -2265,7 +1337,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.2",
@@ -2294,7 +1367,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.4",
@@ -2323,7 +1397,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.6",
@@ -2352,36 +1427,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-3.7",
-   "fen": "rnbqkbnr/pppp1p1p/8/6p1/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "f4",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "3.7"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.8",
@@ -2410,7 +1457,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.9",
@@ -2439,7 +1487,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.10",
@@ -2472,35 +1521,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 13
-   }
-  },
-  {
-   "id": "struktur-b-3.15",
-   "fen": "r1bqk1nr/ppp2ppp/1bnp4/4p3/2BPP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 2 8",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [
-     "a2"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "3.15"
-   },
-   "messung": {
-    "merkmale": 1,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.19",
@@ -2529,7 +1551,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.25",
@@ -2555,14 +1578,15 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.30",
    "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3q4/2NB4/PP3PPP/R1BQ1RK1 b kq - 1 10",
    "seite": "b",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -2583,14 +1607,15 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.31",
    "fen": "r3kb1r/1p1bnppp/p3p3/3pP3/3q4/2NB4/PP2QPPP/R1B2R1K b kq - 3 12",
    "seite": "b",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -2611,14 +1636,15 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.32",
    "fen": "r3kb1r/1p1b1ppp/p1n1p3/3pP3/3q1P2/2NB4/PP2Q1PP/R1B2R1K b kq - 0 13",
    "seite": "b",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -2639,7 +1665,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.37",
@@ -2668,7 +1695,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.44",
@@ -2697,7 +1725,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.46",
@@ -2726,7 +1755,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.50",
@@ -2754,14 +1784,15 @@
    "messung": {
     "merkmale": 1,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.51",
    "fen": "rn1qkb1r/4pppp/3p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKbNR w KQkq - 0 8",
    "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -2782,14 +1813,15 @@
    "messung": {
     "merkmale": 1,
     "figuren": 13
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.52",
    "fen": "rn1qk2r/4ppbp/3p1np1/2pP4/4P3/2N3P1/PP3P1P/R1BQ1KNR w kq - 1 10",
    "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -2810,7 +1842,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.55",
@@ -2839,7 +1872,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.57",
@@ -2871,65 +1905,8 @@
    "messung": {
     "merkmale": 4,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-3.63",
-   "fen": "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/3P4/PPP2PPP/RNBQKB1R b KQkq - 0 5",
-   "seite": "b",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAufloesen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "c6",
-     "c7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "3.63"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-3.68",
-   "fen": "r1bBk2r/ppp2ppp/2p5/8/4n3/3P4/PPP2bPP/RN1QKB1R w KQkq - 0 8",
-   "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [
-     "c6",
-     "c7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "3.68"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 11
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-3.81",
@@ -2958,7 +1935,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-6.4",
@@ -2987,90 +1965,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-6.5",
-   "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/2N1BP2/PPPQ2PP/R3KB1R w KQ - 3 9",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.5"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-6.9",
-   "fen": "6k1/pp3ppp/2p5/1P1p4/3P4/4P3/P4PPP/6K1 b - - 0 1",
-   "seite": "b",
-   "struktur": "minderheitsangriff",
-   "plan": "minderheitsangriff",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 1,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.9"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 0
-   }
-  },
-  {
-   "id": "struktur-b-6.10",
-   "fen": "6k1/p4ppp/2p5/3p4/3P4/4P3/P4PPP/6K1 w - - 0 1",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [
-     "a2",
-     "a7"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [
-     "c6"
-    ],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 3
-    }
-   },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.10"
-   },
-   "messung": {
-    "merkmale": 3,
-    "figuren": 0
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-6.15",
@@ -3102,91 +1998,8 @@
    "messung": {
     "merkmale": 4,
     "figuren": 10
-   }
-  },
-  {
-   "id": "struktur-b-6.24",
-   "fen": "r1bq1rk1/pppnn1bp/3p2p1/3Ppp2/2P1P3/2N1B3/PP2BPPP/R2QNRK1 w - - 0 11",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.24"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-6.29",
-   "fen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [
-     "h2",
-     "f4",
-     "h7"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [
-     "f4"
-    ],
-    "inseln": {
-     "w": 3,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 4,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.29"
-   },
-   "messung": {
-    "merkmale": 4,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-6.35",
-   "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQ - 2 6",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.35"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.1",
@@ -3215,7 +2028,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.13",
@@ -3243,7 +2057,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 11
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-11.14",
@@ -3271,7 +2088,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 10
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-11.18",
@@ -3299,14 +2119,15 @@
    "messung": {
     "merkmale": 1,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.19",
    "fen": "rn3r2/pbppq1p1/1p2pN2/8/3P2NP/3B1kP1/PPP2P2/R3K2R w KQ - 1 16",
    "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
+   "struktur": "mehrheit",
+   "plan": "mehrheitVorstossen",
    "merkmale": {
     "isolierte": [
      "g7"
@@ -3327,7 +2148,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.23",
@@ -3361,7 +2183,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.24",
@@ -3395,7 +2218,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.27",
@@ -3430,69 +2254,8 @@
    "messung": {
     "merkmale": 7,
     "figuren": 13
-   }
-  },
-  {
-   "id": "struktur-b-11.30",
-   "fen": "1r4r1/pbpknp1p/1b3P2/5B2/8/B1P2q2/P4PPP/3R2K1 b - - 1 22",
-   "seite": "b",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
-   "merkmale": {
-    "isolierte": [
-     "a2",
-     "c3",
-     "a7",
-     "c7",
-     "f7",
-     "h7"
-    ],
-    "doppelte": [
-     "f2",
-     "f6"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 3,
-     "b": 4
-    }
    },
-   "schwierigkeit": 4,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.30"
-   },
-   "messung": {
-    "merkmale": 8,
-    "figuren": 9
-   }
-  },
-  {
-   "id": "struktur-b-11.33",
-   "fen": "2rq1rk1/pp1bppbp/3p1np1/4n3/3NP2P/1BN1BP2/PPPQ2P1/2KR3R b - - 4 12",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.33"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.40",
@@ -3526,39 +2289,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 6
-   }
-  },
-  {
-   "id": "struktur-b-11.41",
-   "fen": "4rk1Q/pp3p2/3p1pp1/q2b4/5N2/5P2/PPP5/2K4R b - - 2 27",
-   "seite": "b",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAufloesen",
-   "merkmale": {
-    "isolierte": [
-     "f3",
-     "d6"
-    ],
-    "doppelte": [
-     "f6",
-     "f7"
-    ],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 3
-    }
    },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.41"
-   },
-   "messung": {
-    "merkmale": 4,
-    "figuren": 6
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.42",
@@ -3586,7 +2318,10 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-11.70",
@@ -3615,7 +2350,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.71",
@@ -3644,7 +2380,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.73",
@@ -3677,33 +2414,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 6
-   }
-  },
-  {
-   "id": "struktur-b-11.75",
-   "fen": "r1b2rk1/2q1bppp/p2p1n2/npp1p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 2 12",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 1,
-     "b": 1
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.75"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-11.100",
@@ -3732,33 +2444,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 6
-   }
-  },
-  {
-   "id": "struktur-b-12.2",
-   "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "12.2"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 11
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-12.6",
@@ -3786,7 +2473,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 6
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k02-a110-10w",
@@ -3813,7 +2501,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k02-a119-13w",
@@ -3843,7 +2532,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k02-a119-14w",
@@ -3873,7 +2563,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k02-a149-10w",
@@ -3902,7 +2593,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k03-a1-10b",
@@ -3929,7 +2621,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k03-a11-10b",
@@ -3959,7 +2652,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k06-a11-15b",
@@ -3991,37 +2685,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-k06-a29-24w",
-   "fen": "r2q1rk1/7p/p2p4/nppP4/2P2nB1/1P2N3/PQ1N3P/5RK1 w - - 0 24",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [
-     "h2",
-     "h7"
-    ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "6.30",
-    "beispiel": "k06-a29"
-   },
-   "messung": {
-    "merkmale": 2,
-    "figuren": 10
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a1-11w",
@@ -4048,7 +2713,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 11
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a11-10w",
@@ -4078,34 +2744,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
-  },
-  {
-   "id": "struktur-b-k11-a11-10b",
-   "fen": "r1bqr1k1/pp1n1ppp/3bpn2/2p5/3PN3/2PB1N2/PP3PPP/R1BQR1K1 b - - 0 10",
-   "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
    },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.11",
-    "beispiel": "k11-a11"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 14
-   }
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a16-15w",
@@ -4134,7 +2774,8 @@
    "messung": {
     "merkmale": 1,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a22-12w",
@@ -4169,7 +2810,8 @@
    "messung": {
     "merkmale": 5,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a22-12b",
@@ -4205,107 +2847,62 @@
    "messung": {
     "merkmale": 6,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
-   "id": "struktur-b-k11-a32-14b",
-   "fen": "3q1rk1/pp1bppbp/3p1np1/7P/2rNP3/2N1BP2/PPPQ2P1/2KR3R b - - 0 14",
+   "id": "struktur-b-k11-a32-25b",
+   "fen": "4r1k1/pp2pp1p/3p1PpQ/q2b4/5N2/5P2/PPP5/2K4R b - - 0 25",
    "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.34",
-    "beispiel": "k11-a32"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-k11-a32-15w",
-   "fen": "3q1rk1/pp1bppbp/3p2p1/7n/2rNP3/2N1BP2/PPPQ2P1/2KR3R w - - 0 15",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "fluegelDerKette",
-   "merkmale": {
-    "isolierte": [],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.34",
-    "beispiel": "k11-a32"
-   },
-   "messung": {
-    "merkmale": 0,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-k11-a43-10w",
-   "fen": "r1bqkb1r/5ppp/p3pn2/3p4/4P3/3B4/PP3PPP/RNBQ1RK1 w kq - 0 10",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
+   "struktur": "doppelbauer",
+   "plan": "doppelbauerAngreifen",
    "merkmale": {
     "isolierte": [
-     "a6"
+     "f3",
+     "f6"
     ],
-    "doppelte": [],
-    "rueckstaendige": [],
-    "freibauern": [],
-    "inseln": {
-     "w": 2,
-     "b": 2
-    }
-   },
-   "schwierigkeit": 3,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "11.43",
-    "beispiel": "k11-a43"
-   },
-   "messung": {
-    "merkmale": 1,
-    "figuren": 12
-   }
-  },
-  {
-   "id": "struktur-b-k11-a43-27w",
-   "fen": "r4k2/2Rn1p2/p2r2p1/3p3p/1P6/3B1P2/P3RKPP/8 w - - 0 27",
-   "seite": "w",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
-   "merkmale": {
-    "isolierte": [
-     "d5",
-     "a6"
+    "doppelte": [
+     "f3",
+     "f6"
     ],
-    "doppelte": [],
     "rueckstaendige": [],
     "freibauern": [
-     "d5"
+     "h7"
     ],
+    "inseln": {
+     "w": 2,
+     "b": 2
+    }
+   },
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "11.39",
+    "beispiel": "k11-a32"
+   },
+   "messung": {
+    "merkmale": 5,
+    "figuren": 6
+   },
+   "auchPassend": []
+  },
+  {
+   "id": "struktur-b-k11-a32-27w",
+   "fen": "4rk2/pp3p1Q/3p1pp1/q2b4/5N2/5P2/PPP5/2K4R w - - 1 27",
+   "seite": "w",
+   "struktur": "doppelbauer",
+   "plan": "doppelbauerAngreifen",
+   "merkmale": {
+    "isolierte": [
+     "f3",
+     "d6"
+    ],
+    "doppelte": [
+     "f6",
+     "f7"
+    ],
+    "rueckstaendige": [],
+    "freibauern": [],
     "inseln": {
      "w": 2,
      "b": 3
@@ -4314,13 +2911,14 @@
    "schwierigkeit": 2,
    "herkunft": {
     "quelle": "buch",
-    "abbildung": "11.52",
-    "beispiel": "k11-a43"
+    "abbildung": "11.40",
+    "beispiel": "k11-a32"
    },
    "messung": {
-    "merkmale": 3,
+    "merkmale": 4,
     "figuren": 6
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a57-12w",
@@ -4350,17 +2948,21 @@
    "messung": {
     "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": []
   },
   {
-   "id": "struktur-b-k11-a57-12b",
-   "fen": "r1b1r1k1/pp1nqpp1/2pbpn1p/8/2BP4/P1N1PN1P/1PQ2PP1/R1BR2K1 b - - 0 12",
+   "id": "struktur-b-k11-a57-14b",
+   "fen": "r1b1rnk1/pp2qpp1/2pb1n1p/4P3/2B4N/P1N1P2P/1PQ2PP1/R1BR2K1 b - - 0 14",
    "seite": "b",
-   "struktur": "kette",
-   "plan": "kettenbasisAngreifen",
+   "struktur": "doppelbauer",
+   "plan": "doppelbauerAngreifen",
    "merkmale": {
     "isolierte": [],
-    "doppelte": [],
+    "doppelte": [
+     "e3",
+     "e5"
+    ],
     "rueckstaendige": [],
     "freibauern": [],
     "inseln": {
@@ -4375,9 +2977,12 @@
     "beispiel": "k11-a57"
    },
    "messung": {
-    "merkmale": 0,
+    "merkmale": 2,
     "figuren": 14
-   }
+   },
+   "auchPassend": [
+    "mehrheitVorstossen"
+   ]
   },
   {
    "id": "struktur-b-k11-a68-16w",
@@ -4407,7 +3012,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a68-16b",
@@ -4437,7 +3043,8 @@
    "messung": {
     "merkmale": 2,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a85-11b",
@@ -4469,7 +3076,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 11
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a85-12b",
@@ -4501,7 +3109,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 10
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a91-13b",
@@ -4533,7 +3142,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a91-14b",
@@ -4565,7 +3175,8 @@
    "messung": {
     "merkmale": 3,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a42-k-10b",
@@ -4592,7 +3203,8 @@
    "messung": {
     "merkmale": 0,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   },
   {
    "id": "struktur-b-k11-a42-k-13w",
@@ -4625,7 +3237,8 @@
    "messung": {
     "merkmale": 4,
     "figuren": 12
-   }
+   },
+   "auchPassend": []
   }
  ]
 }

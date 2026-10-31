@@ -7,6 +7,7 @@
  * nimmt ihn weg. Nach „Prüfen“: Gold gefunden, Rot übersehen, Grau gehört nicht dazu.
  * Abhängigkeiten: training/roentgentrainer.ts, schach/weiterspielen.ts, Trainerbrett.
  */
+import type { Color } from "chessops/types";
 import { useMemo, useState } from "react";
 import { farbname } from "../../analyse/texte";
 import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
@@ -21,9 +22,17 @@ import {
   type Roentgenaufgabe,
   type Schrittvergleich,
 } from "../../training/roentgentrainer";
+import { gegnerdrohungen, roentgenbegruendungen } from "../../training/roentgenbegruendung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+
+/** Der Auftrag je Schritt; Schritt 2 und 3 mit den klareren Texten (Nebenchat, 30.10.2026). */
+const AUFTRAG = {
+  schachs: "roentgentrainer.schachs",
+  schlaege: "roentgentrainer.schlaegeKlar",
+  gegner: "roentgentrainer.gegnerKlar",
+} as const;
 
 function alsMarkierung(pfeil: Pfeil, farbe: Markierungsfarbe): Markierung {
   const [von = "", nach = ""] = pfeil.split("-");
@@ -90,14 +99,18 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
     : eingabe.pfeile.map((p) => alsMarkierung(p, "gold"));
   return (
     <>
-      <p>{t(`roentgentrainer.${schritt}`, { farbe: farbname(loesung.farbe) })}</p>
+      <p>{t(AUFTRAG[schritt], { farbe: farbname(loesung.farbe) })}</p>
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
         {...(vergleich ? {} : { beiFeld: eingabe.beiFeld })}
         ausgewaehlt={eingabe.gewaehlt}
         ziele={eingabe.ziele}
-        beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
+        beschriftung={
+          aufgabe.zugfolge
+            ? t("roentgentrainer.ausZugfolge", aufgabe.zugfolge)
+            : t("trainer.brettAus", { nummer: aufgabe.nummer })
+        }
       />
       {!vergleich && (
         <>
@@ -108,6 +121,8 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
         </>
       )}
       {vergleich && <Schrittergebnis vergleich={vergleich} />}
+      {vergleich && <Pfeilgruende aufgabe={aufgabe} farbe={loesung.farbe} vergleich={vergleich} />}
+      {vergleich && schritt === "gegner" && <Drohungen aufgabe={aufgabe} />}
       {vergleich && stelle + 1 < SCHRITTE.length && (
         <button type="button" className="knopf-haupt" onClick={naechster}>
           {t("roentgentrainer.naechsterSchritt")}
@@ -137,5 +152,52 @@ function Schrittergebnis({ vergleich }: { vergleich: Schrittvergleich }) {
       </Antwortmeldung>
       <p className="hinweis">{t("trainer.legendePfeile")}</p>
     </>
+  );
+}
+
+/** Zu jedem übersehenen und zu viel gesetzten Pfeil der Grund (Regel L, Nebenchat). */
+function Pfeilgruende({
+  aufgabe,
+  farbe,
+  vergleich,
+}: {
+  aufgabe: Roentgenaufgabe;
+  farbe: Color;
+  vergleich: Schrittvergleich;
+}) {
+  const fehlend = useMemo(
+    () => roentgenbegruendungen(aufgabe, farbe, vergleich.fehlend),
+    [aufgabe, farbe, vergleich.fehlend],
+  );
+  const falsch = useMemo(
+    () => roentgenbegruendungen(aufgabe, farbe, vergleich.falsch),
+    [aufgabe, farbe, vergleich.falsch],
+  );
+  if (fehlend.length === 0 && falsch.length === 0) return null;
+  return (
+    <section className="karte" data-testid="roentgen-begruendung">
+      {fehlend.length > 0 && <strong>{t("roentgentrainer.grund.uebersehen")}</strong>}
+      {fehlend.map((satz) => (
+        <p key={satz}>{satz}</p>
+      ))}
+      {falsch.length > 0 && <strong>{t("roentgentrainer.grund.zuViel")}</strong>}
+      {falsch.map((satz) => (
+        <p key={satz}>{satz}</p>
+      ))}
+    </section>
+  );
+}
+
+/** Nach Schritt 3: die Drohungen der Gegenseite, also ihre Schläge mit Gewinn. */
+function Drohungen({ aufgabe }: { aufgabe: Roentgenaufgabe }) {
+  const zuege = useMemo(() => gegnerdrohungen(aufgabe), [aufgabe]);
+  if (zuege.length === 0) return null;
+  return (
+    <p className="hinweis" data-testid="roentgen-drohungen">
+      {t("roentgentrainer.grund.drohungen", {
+        farbe: farbname(aufgabe.schritte.gegner.farbe),
+        zuege: zuege.join(", "),
+      })}
+    </p>
   );
 }

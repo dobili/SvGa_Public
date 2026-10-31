@@ -233,8 +233,9 @@ test("Trainer: Beschreibung auf der Auswahl sichtbar, ohne Auswahl der Schritt i
   await starteTour(page);
   await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
   await page.keyboard.press("Escape");
-  // Röntgen beginnt gleich mit der Runde: Beschreibung aus, der erste Schritt steht in der Mitte.
-  await oeffneTrainer(page, "roentgen");
+  // Die Zielbilanz beginnt gleich mit der Runde: Beschreibung aus, der erste Schritt in der Mitte
+  // (Röntgen hat seit dem Nebenchat, 30.10.2026, eine Stufenwahl).
+  await oeffneTrainer(page, "zielbilanz");
   await expect(page.locator(".trainer-ablauf")).toBeHidden();
   await starteTour(page);
   await expect(tourkarte(page)).toContainText("das Fragezeichen an seiner Karte");

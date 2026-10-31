@@ -273,6 +273,18 @@ test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
   await expect(runde).toContainText("Nach dem LAP-Prinzip");
 });
 
+test("Abweichungsmodus: Gambits aus Kapitel 3 mit dem Damengambit zur Wahl", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "abweichung");
+  await page
+    .getByTestId("abweichung-quelle")
+    .getByRole("button", { name: /Gambits/ })
+    .click();
+  const liste = page.getByTestId("abweichung-wahl").getByLabel("Eröffnung");
+  await expect(liste).toContainText("Das Königsgambit");
+  await expect(liste).toContainText("Das Damengambit");
+});
+
 test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort wird bewertet", async ({
   page,
 }) => {
@@ -300,6 +312,14 @@ test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort w
     timeout: 30_000,
   });
   await expect(page.getByTestId("abweichung-einschaetzung")).toContainText("Zielbilanz");
+  // Seit dem Nebenchat (30.10.2026): bester Zug, Zielzug und eigener Zug im Vergleich; weichen
+  // die ersten beiden ab, erst die Denkpause, dann Begründung und Fortsetzungen mit Balken.
+  const vergleich = page.getByTestId("abweichung-vergleich");
+  await expect(vergleich).toContainText("Bester Zug der Stellung");
+  const aufloesen = vergleich.getByRole("button", { name: "Auflösung zeigen" });
+  if (await aufloesen.isVisible()) await aufloesen.click();
+  await expect(page.getByTestId("abweichung-folgen")).toBeVisible();
+  await expect(page.getByTestId("abweichung-folgen").getByTestId("bewertungsbalken")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-abweichung.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 3");

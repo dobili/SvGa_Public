@@ -4,6 +4,41 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 30.10.2026 – Nebenchat: Trainer-Feinschliff (Zweig neben-trainer-feinschliff)
+
+Der Autor hat beim Testen der Trainer Punkte gesammelt; der Nebenchat hat sie sortiert,
+Empfehlungen gegeben, und der Autor hat allen zugestimmt (30.10.2026). Umgesetzt:
+
+- **Regel L (Querschnitt):** Ist eine Antwort falsch, sagt die App, warum. Umgesetzt im
+  Zähltrainer (Bilanz und hängende Figuren), Röntgen-Trainer (Abtauschfolge je Pfeil),
+  Strukturerkenner (Bedingung für „rückständig“), LAP (freie Felder), Falle oder Köder (Nutzen
+  der Warnsignale) und Abweichungsmodus (drei Züge, Begründung).
+- **Regel E (Bewertungsbalken):** Erst nach der Entscheidung, live beim Durchspielen, nur wo
+  die Antwort an einer Engine-Bewertung hängt (Falle oder Köder, Denkroutine, Abweichungsmodus);
+  nicht bei exakten Antworten (Zählen, Röntgen, Koordinaten, Struktur, Repertoire). Baustein
+  „Folgespieler“ mit dem Balken aus dem Rückblick.
+- **Zählen mit Fesselung:** Kapitel 1 sagt „Zähle nicht rein mechanisch … Ein gefesselter
+  Verteidiger zählt weniger“ (Abb. 1.12). Der Zähltrainer lässt an den König gefesselte Figuren
+  nicht mitschlagen (außer auf ihrer Linie); das Werkzeug „Zählen“ zählt weiter wie das Buch
+  mechanisch. Stellungen mit Schach oder Matt der Seite am Zug sind keine Zählaufgaben.
+- **Hängen:** Definition wie im Glossar, angegriffen und nicht ausreichend gedeckt, gerechnet
+  über den ganzen Abtausch.
+- **Strukturerkenner:** Pläne gegen den Buchtext geprüft; aussortiert 5.7, 5.12, 5.19, 5.28,
+  5.31, 5.37, alle reinen Bauernstellungen und Stellungen im Schach. Ketten nur verkeilt und ohne
+  Spannung, Doppelbauern nur mit ungedecktem Vorderbauern. Weitere passende Pläne
+  (`auchPassend`) erscheinen nie als falsche Antwort.
+- **Abweichungsmodus:** ein Trainer, zwei Einstiege (Kapitel 2 Eröffnungen, Kapitel 3 Gambits
+  mit dem Damengambit). Der Zielzug hat keine Grenze nach unten (Wunsch des Autors). Abweichungen,
+  nach denen der Planzug mindestens 0,5 verliert, werden bevorzugt.
+- **Stufen:** Röntgen (leicht 2–3 Pfeile, mittel 4–6, schwer 7–10 verteilt; Stellungen auch aus
+  den Zugfolgen des Buches ab Zug 8) und Zähltrainer (leicht bis drei Figuren, schwer ab sechs,
+  mit Batterie ab fünf oder mit Fesselung).
+- **Eingaben:** Zähltrainer mit einem Tipp auf das Ergebnis; Notationstastatur statt
+  Handytastatur beim „Zug aufschreiben“.
+- **Kleinigkeiten:** Werkzeugreiter brechen schmal um; Repertoire-Trainer ohne Warum-Fragen;
+  LAP nur in ruhigen Stellungen; Sichtanzeige beim Feldfinden; fällige Wiederholungen mit
+  Gesamtzahl und je Quelle einem Knopf.
+
 ## 30.10.2026 – Version 0.3.15: Phasen wie bei Schachexperten und Eichung neu (Opus, Entscheidungen 11 bis 13)
 
 - **Regel für eigene Partien** (`schach/phase.ts`, `schach/phasengruende.ts`): Eröffnung, bis

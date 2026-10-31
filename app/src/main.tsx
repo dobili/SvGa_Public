@@ -40,6 +40,7 @@ import "./ui/stil/auswertung.css";
 import "./ui/stil/zugmarken.css";
 import "./ui/stil/symbolringe.css";
 import "./ui/stil/abzeichen.css";
+import "./ui/stil/trainerfeinschliff.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteNachsenden } from "./app/melden";

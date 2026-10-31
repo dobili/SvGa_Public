@@ -75,7 +75,7 @@ function Stueckansicht({
   const ziel = stueckziel(stueck, kapitel);
   return (
     <div className="infofenster-stueck">
-      <Stueckbild stueck={stueck} klasse="infofenster-bild" />
+      <Stueckbild stueck={stueck} klasse="infofenster-bild" vorschau />
       <p className="infofenster-bedingung" data-testid="infofenster-bedingung">
         {stueck.bedingung}
       </p>

@@ -18,14 +18,21 @@ import type { Erfolgsstueck } from "./erfolgsstuecke";
  * Das Bild einer Kapitelaufgabe (Lernpfad): dieselbe Hülle wie Ordenkunst, Bild aus nachtaufgaben.ts.
  * Die Kennung einer Aufgabe ist „<art>-<kapitel>“ („uebungen-3“); das Bild hängt nur an der Art.
  */
-function Aufgabenbild({ stueck, klasse }: { stueck: Erfolgsstueck; klasse: string }) {
-  const silhouette = !stueck.verdient;
+function Aufgabenbild({
+  stueck,
+  klasse,
+  silhouette,
+}: {
+  stueck: Erfolgsstueck;
+  klasse: string;
+  silhouette: boolean;
+}) {
   const art = stueck.kennung.split("-")[0] ?? "";
   const svg = useMemo(
     () => aufgabeSvg(art, { silhouette, glanz: !silhouette }) ?? "",
     [art, silhouette],
   );
-  const beschriftung = t(silhouette ? "profil.erfolge.offen" : "nebenaufgaben.geschafft", {
+  const beschriftung = t(!stueck.verdient ? "profil.erfolge.offen" : "nebenaufgaben.geschafft", {
     name: stueck.name,
   });
   return (
@@ -40,15 +47,33 @@ function Aufgabenbild({ stueck, klasse }: { stueck: Erfolgsstueck; klasse: strin
   );
 }
 
-/** Beispiel: <Stueckbild stueck={uebungen} klasse="erfolg-gross" /> → roter Orden mit Brett. */
-export function Stueckbild({ stueck, klasse = "" }: { stueck: Erfolgsstueck; klasse?: string }) {
-  const silhouette = !stueck.verdient;
-  if (stueck.art === "aufgabe") return <Aufgabenbild stueck={stueck} klasse={klasse} />;
+/**
+ * Beispiel: <Stueckbild stueck={uebungen} klasse="erfolg-gross" /> → roter Orden mit Brett.
+ * `vorschau`: ein offenes Stück blass in Farbe statt als Silhouette („so sieht es aus, wenn du es
+ * hast“), nur im Infofenster (Empfehlung zur Rückfrage, 31.10.2026; die Silhouette der
+ * Kapitelaufgaben war dort nur ein graues Quadrat).
+ */
+export function Stueckbild({
+  stueck,
+  klasse = "",
+  vorschau = false,
+}: {
+  stueck: Erfolgsstueck;
+  klasse?: string;
+  vorschau?: boolean;
+}) {
+  const blass = vorschau && !stueck.verdient;
+  const silhouette = !stueck.verdient && !blass;
+  klasse = blass ? `${klasse} stueck-vorschau` : klasse;
+  if (stueck.art === "aufgabe")
+    return <Aufgabenbild stueck={stueck} klasse={klasse} silhouette={silhouette} />;
   if (stueck.art === "orden") {
     return (
       <Orden
         symbol={stueck.symbol}
-        beschriftung={t(silhouette ? "profil.erfolge.offen" : "orden.name", { name: stueck.name })}
+        beschriftung={t(!stueck.verdient ? "profil.erfolge.offen" : "orden.name", {
+          name: stueck.name,
+        })}
         silhouette={silhouette}
         klasse={klasse}
         ring={stueck.ring ?? undefined}
@@ -59,7 +84,9 @@ export function Stueckbild({ stueck, klasse = "" }: { stueck: Erfolgsstueck; kla
     <Abzeichenbild
       symbol={stueck.symbol}
       kennung={stueck.kennung}
-      beschriftung={t(silhouette ? "abzeichen.offen" : "abzeichen.verdient", { name: stueck.name })}
+      beschriftung={t(!stueck.verdient ? "abzeichen.offen" : "abzeichen.verdient", {
+        name: stueck.name,
+      })}
       silhouette={silhouette}
       klasse={klasse}
     />

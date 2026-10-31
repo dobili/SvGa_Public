@@ -136,3 +136,9 @@
   display: flex;
   flex: none;
 }
+
+/* Offenes Stück im Infofenster: blass in Farbe statt Silhouette (Stueckbild.tsx, `vorschau`). */
+.stueck-vorschau {
+  opacity: 0.5;
+  filter: saturate(0.6);
+}

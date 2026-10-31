@@ -196,8 +196,14 @@
 
 .kapitelringe {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-  gap: var(--raster);
+  /* Vier Ringe passen bei 360 px in eine Reihe (Entwurf P4); bei großer Schrift brechen sie um. */
+  grid-template-columns: repeat(auto-fit, minmax(3.6em, 1fr));
+  gap: calc(var(--raster) / 2);
+}
+
+.kapitelring .ring {
+  width: 48px;
+  height: 48px;
 }
 
 .kapitelring {

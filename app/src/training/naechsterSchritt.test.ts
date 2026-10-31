@@ -108,7 +108,7 @@ describe("Rangfolge der Vorschläge", () => {
     const themen = { "taktik:fesselung": fesselung, "taktik:doppelangriff": gabel };
     const v = vorschlaege(lage({}, { themen })).find((x) => x.art === "thema");
     expect(v?.werte).toEqual({ richtig: 5, anzahl: 9 });
-    expect(v?.namen).toEqual({ thema: "zusatzaufgaben.thema.fesselung" });
+    expect(v?.namen).toEqual({ thema: "motiv.name.fesselung" });
     expect(v?.ziel).toEqual({
       bildschirm: "trainer",
       kennung: "taktik",

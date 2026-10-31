@@ -1,0 +1,82 @@
+/* Monatsrückblick (Gamifizierung P12): Kalender, Zahlen, Stücke und Monate, ui/komponenten/rueckblick/. */
+.rueckblick-abschnitt {
+  padding: calc(var(--raster) * 1.5) 0;
+  border-top: 1px solid var(--linie);
+}
+
+.rueckblick-abschnitt:first-of-type {
+  border-top: none;
+}
+
+.rueckblick-kalender {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: calc(var(--raster) / 2);
+  max-width: 22rem;
+}
+
+.rueckblick-wochentag {
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+  text-align: center;
+}
+
+.rueckblick-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--linie-stark);
+  font-size: var(--groesse-klein);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-leise);
+}
+
+.rueckblick-tag.leer {
+  border: none;
+}
+
+.rueckblick-tag.gelernt {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-tief);
+  font-weight: 600;
+}
+
+.rueckblick-zahlen,
+.rueckblick-stuecke,
+.rueckblick-monate {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rueckblick-zahlen li {
+  padding: calc(var(--raster) / 2) 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.rueckblick-stueck {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: calc(var(--raster) / 2) 0;
+}
+
+.rueckblick-stueck .ordenkunst {
+  width: 48px;
+  height: 48px;
+  flex: none;
+}
+
+.rueckblick-stueckname {
+  flex: 1;
+  font-weight: 600;
+}
+
+.rueckblick-monate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}

@@ -24,6 +24,9 @@ export const NAMENSMUSTER: readonly Namensmuster[] = [
   (p, k) => `themen.name.${p}.${k}`,
   (p, k) => `${p}.thema.${k}`,
   (p, k) => `${p}.art.${k}`,
+  // Taktikmotive heißen im Taktiktrainer „motiv.name.<motiv>“ (beim Übernehmen von P12 ergänzt:
+  // „taktik:gabel“ hieß sonst nur „Taktiktrainer“).
+  (p, k) => (p === "taktik" ? `motiv.name.${k}` : null),
   (p, k) => (p === "taktik" ? `zusatzaufgaben.thema.${k}` : null),
 ];
 

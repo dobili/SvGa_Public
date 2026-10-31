@@ -4,6 +4,49 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.27: Gamifizierung P12 Monatsrückblick übernommen (Opus)
+
+- Zweig `gami-p12-rueckblick` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den Listen
+  (`STARTKARTEN`, `PROFILKARTEN`), Texten und Unterlagen. Die Abschnitte des Rückblicks stehen als
+  Liste `RUECKBLICKABSCHNITTE`; Rivalen, Meisterschaft und eigene Ziele tragen dort später je eine
+  Zeile ein (Rang 35, 45, 55 vorgesehen).
+- **Bestätigt (Abweichung des Arbeitschats):** Startkarte Rang 15 statt 40. Mit höchstens zwei
+  Karten wäre der Rückblick hinter „Dein nächster Schritt“ und der Wochenkarte nie erschienen; so
+  verdrängt er die Wochenkarte höchstens an den ersten sieben Tagen eines Monats und nur bis zum
+  Öffnen. Kommentar zur Reihenfolge in `startkarten.ts` angepasst.
+- **Behoben (Befund des Arbeitschats):** „taktik:gabel“ hieß in „Dein nächster Schritt“ und im
+  Rückblick nur „Taktiktrainer“. Die Motivnamen stehen in `motiv.name.<motiv>`; `NAMENSMUSTER`
+  hat dafür jetzt eine Zeile.
+- Offen gelassen (Speicherformat, nächste Formatversion): Rekorde halten nur die letzte
+  Verbesserung, ein im Folgemonat verbesserter Rekord fehlt deshalb im älteren Rückblick; die
+  Themen halten nur 12 Tage.
+
+## 31.10.2026 – Gamifizierung P12 Monatsrückblick (Arbeitschat, Zweig `gami-p12-rueckblick`)
+
+- **Gebaut:** Startkarte „Dein Oktober ist fertig“ (1. bis 7. eines Monats, nur mit mindestens
+  einem Lerntag im Vormonat, bis der Rückblick geöffnet ist; Merker `rueckblickGesehen`),
+  Bildschirm „rueckblick“ über `ZUSATZANSICHTEN` (Wert „2026-10“), Profilkarte „Rückblicke“
+  (Rang 30) mit allen abgeschlossenen Monaten mit Lerntagen, Probe auf der Aufgabenseite. Kein
+  neues Speicherfeld.
+- **Erweiterbar:** Die Abschnitte stehen als Liste `RUECKBLICKABSCHNITTE`
+  (`ui/komponenten/rueckblick/rueckblickabschnitte.ts`: Kennung, Rang, sichtbar, Komponente);
+  Rivalen P8 (35), Meisterschaft P3 (45), eigene Ziele P13 (55) und neue Trainer tragen je eine
+  Zeile ein. Die Zahlen stehen als Liste `RUECKBLICKZAHLEN` (`training/rueckblickinhalt.ts`).
+  Themen kommen über das Präfix aus dem Antwortprotokoll, der nächste Schritt aus
+  `VORSCHLAGSARTEN`; neue Trainer erscheinen dort von selbst.
+- **Rang der Startkarte 15 statt 40 (Empfehlung, schon umgesetzt, Widerspruch genügt):** Höchstens
+  zwei Karten stehen im Buch; „Dein nächster Schritt“ (10) und die Wochenkarte (20) sind bei jedem
+  Leser mit einem Lerntag fast immer sichtbar. Mit Rang 40 wäre der Rückblick nie erschienen. Mit
+  15 verdrängt er die Wochenkarte höchstens sieben Tage und nur bis zum Öffnen.
+- **Wertung je Zeitklasse:** Die App rechnet die Wertung getrennt nach Blitz, Schnellschach und
+  Klassisch; der Rückblick zeigt daher je Zeitklasse Anfang und Ende, ohne Farbe.
+- **Grenzen der Daten:** „rekorde“ hält nur die letzte Verbesserung, „themen“ nur die letzten zwölf
+  Tage mit richtiger Antwort; ältere Rückblicke zeigen deshalb nur, was davon im Monat liegt.
+- **Teilen:** eigenes Bild mit dem Kalender als Punkten, gebaut mit `teilbildSvg` und `teileBild`
+  aus P9; keine neue Art in `TEILARTEN`, weil der Rückblick kein verdientes Stück ist.
+- `useLage` und `vorschlagstext` aus `NaechsterSchritt.tsx` in `start/naechsterLage.ts`
+  verschoben, damit der Rückblick denselben Vorschlag zeigt (Regel für schnelles Neuladen).
+
 ## 31.10.2026 – Version 0.3.26: Gamifizierung P13 Eigene Ziele und P8 Rivalen übernommen (Opus)
 
 - Zweige `gami-p13-ziele` und `gami-p8-rivalen` (Welle 2) geprüft und zusammengeführt. Beide

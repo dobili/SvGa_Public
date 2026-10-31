@@ -17,11 +17,13 @@ import { NaechsterSchritt } from "./NaechsterSchritt";
 import { naechsterSchrittSichtbar } from "./naechsterSchrittMerker";
 import { Rivalenkarte } from "../rivale/Rivalenkarte";
 import { rivalenkarteSichtbar } from "../rivale/rivalenmerker";
+import { RueckblickStartkarte } from "../rueckblick/RueckblickKarten";
+import { rueckblickkarteJetzt } from "../rueckblick/rueckblickMerker";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
   readonly kennung: string;
-  /** Reihenfolge: P1 = 10, P4/P6 = 20, P13 = 25, P8 = 30, P12 = 40 (Lücken für Späteres). */
+  /** Reihenfolge: P1 = 10, P12 = 15 (nur 1. bis 7. des Monats), P4/P6/P13 = 20, P8 = 30. */
   readonly rang: number;
   /** Soll die Karte jetzt erscheinen? Rein, ohne Nebenwirkung. */
   readonly sichtbar: (daten: Nutzerdaten, jetzt: Date) => boolean;
@@ -41,6 +43,8 @@ export const STARTKARTEN: readonly Startkarte[] = [
     Karte: NaechsterSchritt,
   },
   { kennung: "rivale", rang: 30, sichtbar: rivalenkarteSichtbar, Karte: Rivalenkarte },
+  // P12 Monatsrückblick: Rang 15 statt 40, sonst verdrängen P1 und P4 die Karte immer (Bericht).
+  { kennung: "rueckblick", rang: 15, sichtbar: rueckblickkarteJetzt, Karte: RueckblickStartkarte },
 ];
 
 /**

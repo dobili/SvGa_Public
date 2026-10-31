@@ -14,6 +14,8 @@ import { Rekordtafel } from "../rekorde/Rekordtafel";
 import { ExtrasKarte } from "../extras/ExtrasKarte";
 import { hatErreichteZiele } from "../../../training/ziele";
 import { ErreichteZiele } from "../ziele/ErreichteZiele";
+import { RueckblickProfilkarte } from "../rueckblick/RueckblickKarten";
+import { rueckblickeSichtbar } from "../rueckblick/rueckblickwerte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -32,4 +34,6 @@ export const PROFILKARTEN: readonly Profilkarte[] = [
   { kennung: "extras", rang: 50, sichtbar: () => true, Karte: ExtrasKarte },
   // P13 Eigene Ziele: ab dem ersten erreichten Ziel.
   { kennung: "ziele", rang: 25, sichtbar: hatErreichteZiele, Karte: ErreichteZiele },
+  // P12 Monatsrückblick: ältere Rückblicke, sobald ein Monat mit Lerntagen abgeschlossen ist.
+  { kennung: "rueckblicke", rang: 30, sichtbar: rueckblickeSichtbar, Karte: RueckblickProfilkarte },
 ];

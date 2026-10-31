@@ -14,11 +14,13 @@ interface Stand {
   readonly index: number;
   readonly richtig: number;
   readonly falsch: number;
+  /** Richtige Antworten in Folge (Kombo, P10); hier nur gezählt, der Kurzplan zeigt sie nicht. */
+  readonly folge: number;
   readonly ergebnis: boolean | null;
   readonly versuch: number;
 }
 
-const ANFANG: Stand = { index: 0, richtig: 0, falsch: 0, ergebnis: null, versuch: 0 };
+const ANFANG: Stand = { index: 0, richtig: 0, falsch: 0, folge: 0, ergebnis: null, versuch: 0 };
 
 /**
  * Die Runde und ihre Zählung. Eingabe: Zahl der vorbereiteten Aufgaben. Die erste Antwort auf eine
@@ -31,6 +33,7 @@ export function useFreieRunde(anzahl: number): { runde: Runde; richtig: number; 
     index: stand.index,
     anzahl,
     richtig: stand.richtig,
+    folge: stand.folge,
     ergebnis: stand.ergebnis,
     versuch: stand.versuch,
     fertig: false,
@@ -44,6 +47,7 @@ export function useFreieRunde(anzahl: number): { runde: Runde; richtig: number; 
               ergebnis: richtig,
               richtig: alt.richtig + (richtig ? 1 : 0),
               falsch: alt.falsch + (richtig ? 0 : 1),
+              folge: richtig ? alt.folge + 1 : 0,
             },
       ),
     weiter: () =>

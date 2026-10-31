@@ -13,6 +13,8 @@
 import type { ComponentType } from "react";
 import { Lernpfad } from "../ui/bildschirme/Lernpfad";
 import { Herausforderung } from "../ui/komponenten/teilen/Herausforderung";
+import { ALBUM } from "../ui/komponenten/fundstuecke/album";
+import { Fundstueckalbum } from "../ui/komponenten/fundstuecke/Fundstueckalbum";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -27,6 +29,7 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: "lernpfad", Bildschirm: Lernpfad },
   // P9: geteilte Aufgabe aus einem Link (ui/komponenten/teilen/Herausforderung.tsx).
   { kennung: "herausforderung", Bildschirm: Herausforderung },
+  { kennung: ALBUM, Bildschirm: Fundstueckalbum },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

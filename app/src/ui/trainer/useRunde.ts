@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Gemeinsamer Zustand aller Trainer (Konzept 9.2: starte, naechste,
  * antworte, beende). Die Aufgabe meldet „richtig“ oder „falsch“ mit `beantworte`; `weiter`
  * führt zur nächsten Aufgabe. Nach der letzten zählt die Runde als Durchgang im Fortschritt
- * (speicher/fortschritt.ts, notiereDurchgang).
+ * (speicher/fortschritt.ts, notiereDurchgang). Dazu zählt die Runde die richtigen Antworten in
+ * Folge für die Kombo (Gamifizierung P10, training/kombo.ts); ein Fehler setzt sie auf null.
  * Abhängigkeiten: speicher, training/trainer.ts.
  */
 import { useEffect, useReducer } from "react";
@@ -15,6 +16,8 @@ import type { TrainerKennung } from "../../training/trainer";
 export interface Zustand {
   readonly index: number;
   readonly richtig: number;
+  /** Richtige Antworten in Folge (Kombo, P10); nur die gezählte erste Antwort zählt. */
+  readonly folge: number;
   /** Ergebnis der aktuellen Aufgabe, null solange offen. */
   readonly ergebnis: boolean | null;
   /** Die aktuelle Aufgabe ist schon gezählt; Wiederholungen zählen nicht noch einmal. */
@@ -41,6 +44,8 @@ export function rundenschritt(zustand: Zustand, aktion: Aktion): Zustand {
       ergebnis: aktion.richtig,
       gezaehlt: true,
       richtig: zustand.richtig + (zaehlt ? 1 : 0),
+      // Kombo: Eine Wiederholung derselben Aufgabe ändert die Folge nicht mehr.
+      folge: zustand.gezaehlt ? zustand.folge : aktion.richtig ? zustand.folge + 1 : 0,
     };
   }
   // Dieselbe Aufgabe noch einmal (Wunsch des Autors, 19.10.2026); die erste Antwort bleibt
@@ -56,6 +61,8 @@ export interface Runde {
   readonly index: number;
   readonly anzahl: number;
   readonly richtig: number;
+  /** Richtige Antworten in Folge (Kombo, P10). */
+  readonly folge: number;
   readonly ergebnis: boolean | null;
   /** Zähler der Wiederholungen der aktuellen Aufgabe (Schlüssel für ihren Zustand). */
   readonly versuch: number;
@@ -80,6 +87,7 @@ export function useRunde(kennung: TrainerKennung, anzahl: number): Runde {
   const [zustand, sende] = useReducer(rundenschritt, null, () => ({
     index: 0,
     richtig: 0,
+    folge: 0,
     ergebnis: null,
     gezaehlt: false,
     versuch: 0,
@@ -97,6 +105,7 @@ export function useRunde(kennung: TrainerKennung, anzahl: number): Runde {
     index: zustand.index,
     anzahl,
     richtig: zustand.richtig,
+    folge: zustand.folge,
     ergebnis: zustand.ergebnis,
     versuch: zustand.versuch,
     fertig: zustand.fertig,

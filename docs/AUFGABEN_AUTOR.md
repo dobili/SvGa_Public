@@ -42,13 +42,15 @@ Bitte jeweils im dunklen und im hellen Modus ansehen (Profil › Einstellungen �
 - [ ] N2250. **Kopf der Buchseite:** Oben „SCHACH VON GRUND AUF“ und rechts zwei Symbole: der Weg
       (geschwungene Linie, öffnet „Dein Weg durchs Buch“) und der Kompass (Tour). Darunter
       „Buch“ und gleich daneben das Feld „z. B. 1.26“ mit „Öffnen“. Antippen des Feldes zeigt
-      die Zahlenleiste; „1.26“ und „Öffnen“ öffnen die Abbildung. „Zuletzt: Abb. …“ gibt es dort
-      nicht mehr, dafür die Kachel „Weiterlesen“ (N2252).
+      die Zahlenleiste und darunter „Zuletzt: Abb. …“ (führt zur zuletzt geöffneten Abbildung);
+      „1.26“ und „Öffnen“ öffnen die Abbildung.
 - [ ] N2251. **Karte „Heute“ mit Wochenziel:** Oben „Heute“, rechts eine Flamme mit „3 von 4
       Tagen“ und ein Stift. Darunter sieben Kreise Mo bis So, durch eine Linie verbunden: Tage, an
       denen du etwas gemacht hast, sind gold gefüllt, heute hat einen goldenen Ring. Der Stift
       zeigt die Knöpfe 2 3 4 5 7 mit „Abbrechen“ und „Kein Wochenziel“. Ist das Ziel erreicht,
-      steht darunter „Wochenziel geschafft!“ (einmal mit kleinem Feuerwerk).
+      steht darunter „Wochenziel geschafft!“ (einmal mit kleinem Feuerwerk), fehlt nur noch ein
+      Tag, „Noch ein Tag für dein Ziel, wenn du magst.“; dazu leise „3 Wochen geschafft · beste
+      Folge 3“.
 - [ ] N2252. **Nächster Schritt als Kacheln:** In der Karte eine große helle Kachel (im hellen
       Modus dunkel) mit Symbol, Titel und kurzer Zeile, etwa „Tagesaufgabe – 1 Stellung für
       heute“ oder „Wiederholen – 9 Stellungen · etwa 6 Min“, rechts ein Pfeil. Darunter zwei
@@ -78,7 +80,8 @@ Bitte jeweils im dunklen und im hellen Modus ansehen (Profil › Einstellungen �
       kleinem Haken, darunter „fertig“. Das aktuelle Kapitel ist größer, mit goldenem Ring für
       den Stand, leichtem Schein und der Marke „Du bist hier“; angefangene haben einen
       Teilring und „12 von 40“; offene sind dunkel mit grauem Rand. Ein Tipp öffnet das Kapitel.
-      Oben steht der Satz, was bis zum Ende des Kapitels fehlt, mit dem Ring des Kapitels daneben.
+      Oben steht der Satz, was bis zum Ende des Kapitels fehlt, mit dem Ring des Kapitels daneben;
+      die Erklärung „Jede Station ist ein Kapitel …“ steht jetzt leise unter dem Weg.
 - [ ] N2259. **Lernpfad, Orden und Lesbarkeit:** Am Ende jedes Teils das Bild des Ordens, offen
       als graue Silhouette, daneben „Orden „Teil Mittelspiel““ und „verdient“ bzw. „noch 3
       Kapitel“. Alle Kapitelnamen stehen auf einem leicht deckenden Grund und sind auf jedem

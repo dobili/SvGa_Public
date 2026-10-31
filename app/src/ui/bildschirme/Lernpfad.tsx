@@ -8,7 +8,7 @@
  * Kapitelliste (Buch.tsx) und aus dem Profil; eingetragen als Zusatzansicht „lernpfad“
  * (app/zusatzansichten.ts). Kein eigenes Speicherfeld; nur der Merker „lernpfadStation“.
  * Entscheidung E3: eigener Bildschirm, die Kapitelliste bleibt. Gestaltung B1 (31.10.2026): der
- * Satz steht mit dem Ring der aktuellen Station in einer Karte, die Einleitung entfällt, der Weg
+ * Satz steht mit dem Ring der aktuellen Station in einer Karte, die Einleitung steht leise unter dem Weg, der Weg
  * führt durch fünf Landschaften (komponenten/lernpfad/Landschaft.tsx).
  * Abhängigkeiten: komponenten/lernpfad/, daten/laden.ts, speicher, app/merker.ts, i18n.
  */
@@ -68,6 +68,8 @@ function Pfad({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fo
         aktuell={station?.kapitel ?? 0}
         vorher={vorher}
       />
+      {/* Erklärung leise unter dem Weg statt darüber (Gestaltung B1: weniger Text vorn). */}
+      <p className="hinweis lernpfad-erklaerung">{t("lernpfad.einleitung")}</p>
     </div>
   );
 }

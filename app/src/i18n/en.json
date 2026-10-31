@@ -4603,5 +4603,8 @@
   "buchlook.orden.name": "Medal “{orden}”",
   "buchlook.orden.verdient": "earned",
   "buchlook.orden.noch": "{n} chapters to go",
-  "buchlook.orden.nochEins": "1 chapter to go"
+  "buchlook.orden.nochEins": "1 chapter to go",
+  "buch.zuletzt": "Last viewed:",
+  "woche.nochEinTag": "One more day for your goal, if you like.",
+  "lernpfad.einleitung": "Each stop is a chapter. At the end of each part of the book its medal is waiting. Tap a stop to open the chapter."
 }

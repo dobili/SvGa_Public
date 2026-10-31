@@ -22,18 +22,20 @@ ein Formular. Gewählt: A2 „Heute“ und B1 „Fünf Landschaften“. Testpunk
 - **Kapitel in der oberen Hälfte** (Prüfung auf 360 × 800 in `buchlook.spec.ts`): Nummernfeld
   neben dem Titel (Beschriftung nur für Vorlesehilfen), Lernpfad als Symbol neben der Tour,
   Kürzel der Tage im Kreis statt darunter, „Nicht jetzt“ als kleines Kreuz, „Zuletzt: Abb. …“
-  entfällt (die Kachel „Weiterlesen“ übernimmt; der Tourschritt zeigt jetzt die Karte „Heute“).
+  erscheint nach einem Tipp ins Nummernfeld (Wunsch des Autors: nichts Sinnvolles fällt weg; der
+  Tourschritt dazu zeigt jetzt die Karte „Heute“).
   Mit zweiter Startkarte rutschen die Kapitel tiefer.
 - **Lernpfad mit fünf Landschaften:** selbst gezeichnete SVG-Bänder je Buchteil, Liste
   `LANDSCHAFTEN` (ein späterer Teil = eine Zeile), Bänder aus `wegform.ts` (`baender`, `KOPF`).
   Farben `--land-*` je hell und dunkel (`lernpfad-land.css`); hell als Tagfassung. Alle Schriften
   auf leicht deckendem Grund (Kontrast auf jedem Band). Stationen fertig, aktuell („Du bist
   hier“, Schein nur ohne „Bewegung reduzieren“), angefangen, offen; Orden mit Stand daneben.
-  Der Einleitungssatz entfällt; der Satz oben steht mit dem Ring der aktuellen Station.
+  Der Einleitungssatz steht leise unter dem Weg; der Satz oben steht mit dem Ring der aktuellen
+  Station.
 - Texte neu unter `buchlook.*` (de und en); gelöscht: `naechster.titel`, `naechster.andere`,
   `woche.titel`, `woche.erreicht`, `woche.nochEinTag`, `woche.wochenErreicht`,
-  `woche.besteFolge`, `auftrag.titel`, `ziel.titel`, `buch.zuletzt`, `tour.buch.zuletzt`,
-  `lernpfad.einleitung`.
+  `woche.besteFolge`, `auftrag.titel`, `ziel.titel`, `tour.buch.zuletzt` (ihre Inhalte stehen
+  in neuer, kürzerer Form unter `buchlook.*`).
 
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 

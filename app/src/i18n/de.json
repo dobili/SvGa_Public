@@ -4603,5 +4603,8 @@
   "buchlook.orden.name": "Orden „{orden}“",
   "buchlook.orden.verdient": "verdient",
   "buchlook.orden.noch": "noch {n} Kapitel",
-  "buchlook.orden.nochEins": "noch 1 Kapitel"
+  "buchlook.orden.nochEins": "noch 1 Kapitel",
+  "buch.zuletzt": "Zuletzt:",
+  "woche.nochEinTag": "Noch ein Tag für dein Ziel, wenn du magst.",
+  "lernpfad.einleitung": "Jede Station ist ein Kapitel. Am Ende jedes Buchteils wartet sein Orden. Tipp auf eine Station, um das Kapitel zu öffnen."
 }

@@ -1,8 +1,8 @@
 /**
  * Buch-Bildschirm: Nummernfeld „Abbildung öffnen“ und die Kapitel mit ihren Abbildungen.
  * Seit der Gestaltung A2 (31.10.2026) steht das Nummernfeld neben dem Titel und der Knopf zum
- * Lernpfad als Symbol oben rechts; „Zuletzt: Abb. …“ ersetzt die Kachel „Weiterlesen“ der Karte
- * „Heute“. So beginnen die Kapitel weiter oben.
+ * Lernpfad als Symbol oben rechts; „Zuletzt: Abb. …“ erscheint nach einem Tipp ins Feld (sonst
+ * führt die Kachel „Weiterlesen“ der Karte „Heute“ weiter). So beginnen die Kapitel weiter oben.
  *
  * Rolle im Gesamtbild: Startseite des Bereichs Buch (Konzept 10.1, Bildschirmentwurf „Buch“).
  * Leser tippen die Nummer aus dem Buch ein, etwa „1.26“, oder öffnen ein Kapitel (Kapitelübersicht).
@@ -10,6 +10,7 @@
  */
 import { Startkarten } from "../komponenten/start/Startkarten";
 import { useState, type FormEvent } from "react";
+import { liesMerker } from "../../app/merker";
 import { useNavigation } from "../../app/navigationsKontext";
 import { findeAbbildung, type Fundergebnis } from "../../daten/finde";
 import { ladeIndex, type Datenverzeichnis } from "../../daten/laden";
@@ -42,6 +43,7 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   const [eingabe, setzeEingabe] = useState("");
   const [leiste, setzeLeiste] = useState(false);
   const [fund, setzeFund] = useState<Fundergebnis | null>(null);
+  const zuletzt = liesMerker("zuletzt");
   const oeffne = (nummer: string) => navigiere({ bildschirm: "abbildung", nummer });
 
   const absenden = (ereignis: FormEvent) => {
@@ -76,6 +78,12 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
       {/* Zahlenleiste statt Handytastatur (Punkt A3 des Nebenchats), sobald das Feld aktiv ist. */}
       {leiste && <Zahlenleiste text={eingabe} setze={setzeEingabe} />}
       <Fundmeldung fund={fund} oeffne={oeffne} />
+      {/* „Zuletzt“ erscheint nach einem Tipp ins Feld (Wunsch des Autors: nichts fällt weg). */}
+      {leiste && zuletzt && (
+        <button type="button" className="knopf-link links" onClick={() => oeffne(zuletzt)}>
+          {t("buch.zuletzt")} <strong>{t("abbildung.titel", { nummer: zuletzt })}</strong>
+        </button>
+      )}
     </form>
   );
 }

@@ -96,6 +96,9 @@ for (const schema of ["dunkel", "hell"] as const) {
     const oben = (await kapitel.boundingBox())?.y ?? HANDY.height;
     expect(oben).toBeLessThan(HANDY.height / 2);
     await page.screenshot({ path: `test-results/bilder/buch-heute-${schema}.png` });
+    // „Zuletzt“ steht nach einem Tipp ins Nummernfeld bereit (nichts fällt weg).
+    await page.getByLabel("Abbildung öffnen").click();
+    await expect(page.getByRole("button", { name: "Zuletzt: Abb. 6.19" })).toBeVisible();
     await karte.getByTestId("reiter-auftraege").click();
     await karte.screenshot({ path: `test-results/bilder/buch-heute-auftraege-${schema}.png` });
   });

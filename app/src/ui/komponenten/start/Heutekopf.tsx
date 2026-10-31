@@ -82,14 +82,15 @@ export function Heutekopf({
   );
 }
 
-/** „Wochenziel geschafft“ und die Bilanz in einer leisen Zeile; sonst nichts. */
+/** „Wochenziel geschafft“ oder „Noch ein Tag …“ und die Bilanz in einer leisen Zeile; sonst nichts. */
 export function Wochenmeldung({ daten, lage }: { daten: Nutzerdaten; lage: Wochenlage }) {
   const wochen = erreichteWochen(daten);
   const folge = besteFolge(wochen);
-  if (!lage.erreicht && wochen.length === 0) return null;
+  if (!lage.erreicht && !lage.nochEinTag && wochen.length === 0) return null;
   return (
     <p className="heute-meldung">
       {lage.erreicht && <strong className="heute-erreicht">{t("buchlook.erreicht")}</strong>}
+      {lage.nochEinTag && <span>{t("woche.nochEinTag")}</span>}
       {wochen.length > 0 && (
         <span data-testid="wochenziel-bilanz">
           {tZahl("buchlook.bilanz", wochen.length, { n: wochen.length })}

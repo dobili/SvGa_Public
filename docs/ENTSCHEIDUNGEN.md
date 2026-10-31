@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.16: Trainer-Feinschliff aus dem Nebenchat übernommen (Opus)
+
+- Zweig `neben-trainer-feinschliff` (7 Commits auf 0.3.14) auf 0.3.15 zusammengeführt; Code ohne
+  Konflikt, nur die Unterlagen. Vorher von einem Prüfagenten gegen den Code gelesen (Fesselung in
+  `schach/abtausch.ts`, Schach-Filter, Strukturdaten gegen das Schema, Fortsetzung mit Engine,
+  Buchtexte, Speicherformat, gesperrte Dateien). Die Angaben der Übergabe stimmen bis auf zwei:
+  main stand schon auf 0.3.15, und abgelöst waren acht Texte, nicht neun (gelöscht; die Liste
+  `ABGELOEST` in `i18n/ungenutzt.test.ts` bleibt leer für spätere Nebenchats).
+- **Nachgebessert:** Im Zähltrainer zählte eine Linienfigur hinter einer gefesselten Figur (Batterie)
+  noch als Angreifer oder Verteidiger, obwohl die vordere nie wegzieht und die hintere also nie
+  schlägt; die Bilanz rechnete schon richtig. Jetzt zählen beide nicht (`nurFreie`), Test mit
+  Td2 gefesselt und Td1 dahinter.
+- Bekannt und auf der Arbeitsliste (`docs/FORTSCHRITT.md`): mehrere Oberflächenfunktionen über 40
+  Zeilen, `pipeline/trainer/struktur.py` mit 548 Zeilen; sieben Strukturaufgaben behalten ihre
+  Kennung mit geändertem Plan, ihre Wiederholungskarten behalten die Lernstufe.
+
 ## 30.10.2026 – Nebenchat: Trainer-Feinschliff (Zweig neben-trainer-feinschliff)
 
 Der Autor hat beim Testen der Trainer Punkte gesammelt; der Nebenchat hat sie sortiert,

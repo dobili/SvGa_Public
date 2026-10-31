@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Nebenchat: Trainer-Feinschliff (30.10.2026)
+### Neu in 0.3.16: Trainer-Feinschliff (Nebenchat, 30.10.2026)
 
 - [ ] N2001. **Zähltrainer, Ergebnis mit einem Tipp:** Training › Zähltrainer › „Bilanz zählen“.
       Unter dem Brett stehen Knöpfe „lohnt nicht“, „+1“ bis „+9“. Ein Tipp prüft sofort. Wer

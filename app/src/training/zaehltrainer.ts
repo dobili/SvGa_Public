@@ -14,6 +14,7 @@
  * hat eine Stufe (leicht, mittel, schwer) und ihre Motive (Batterie, Fesselung).
  */
 import type { Square } from "chessops/types";
+import type { SquareSet } from "chessops/squareSet";
 import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
 import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
@@ -87,6 +88,24 @@ export function zaehlstufe(a: Pick<Zaehlaufgabe, "angreifer" | "verteidiger" | "
 }
 
 /**
+ * Nur die Figuren, die wirklich schlagen dürfen: nicht gefesselt und, bei einer Batterie, nicht
+ * hinter einer gefesselten Figur (die vordere zieht nie weg, also kommt die hintere nie zum Zug).
+ * Beispiel: Td2 an Ke1 gefesselt, Td1 dahinter, Ziel d6 → keiner der beiden Türme zählt.
+ */
+function nurFreie<T extends { feld: Square; hinter: Square | null }>(
+  liste: readonly T[],
+  gesperrt: SquareSet,
+): T[] {
+  const jeFeld = new Map(liste.map((a) => [a.feld, a]));
+  const frei = (a: T): boolean => {
+    if (gesperrt.has(a.feld)) return false;
+    const vorne = a.hinter === null ? undefined : jeFeld.get(a.hinter);
+    return vorne === undefined ? !(a.hinter !== null && gesperrt.has(a.hinter)) : frei(vorne);
+  };
+  return liste.filter(frei);
+}
+
+/**
  * Zählt ein besetztes Feld aus Sicht der Seite, die die Figur angreift (wie k1-zaehlen), aber
  * ohne an den König gefesselte Figuren, die hier nicht schlagen dürfen (Kapitel 1, Abb. 1.12).
  */
@@ -96,10 +115,9 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
   const p = profil(stellung);
   const gesperrt = gesperrteFuer(p, feld);
   const seite = gegner(figur.color);
-  const zaehlt = (a: { feld: Square }) => !gesperrt.has(a.feld);
-  const angreiferListe = p.angriffskarte.angreiferVon(feld, seite).filter(zaehlt);
+  const angreiferListe = nurFreie(p.angriffskarte.angreiferVon(feld, seite), gesperrt);
   if (angreiferListe.length === 0) return null;
-  const verteidigerListe = p.angriffskarte.angreiferVon(feld, figur.color).filter(zaehlt);
+  const verteidigerListe = nurFreie(p.angriffskarte.angreiferVon(feld, figur.color), gesperrt);
   const bilanz = Math.max(abtausch(stellung.brett, feld, gesperrt)?.bilanz ?? 0, 0);
   const gefesselt = gefesselteAmFeld(p, feld).map(feldname);
   const batterie = [...angreiferListe, ...verteidigerListe].some((a) => a.hinter !== null);

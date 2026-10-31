@@ -58,6 +58,18 @@ describe("Zähltrainer: geeignete Stellungen", () => {
     expect(haengendeFiguren(stellung(FESSELUNG))).toContain("f3");
   });
 
+  it("eine Batterie hinter einer gefesselten Figur zählt nicht (Prüfung 31.10.2026)", () => {
+    // Td2 an Ke1 gefesselt (Lb4), Td1 dahinter: Keiner der Türme schlägt je auf d6, nur Sb5.
+    const fen = "7k/8/3n4/1N6/1b6/8/3R4/3RK3 w - - 0 1";
+    const d6 = zaehlfelder({ nummer: "x", kapitel: 1, stellung: stellung(fen) }).find(
+      (a) => a.feld === "d6",
+    );
+    expect(d6?.angreifer).toBe(1);
+    expect(d6?.verteidiger).toBe(1); // Lb4 deckt d6 über c5
+    expect(d6?.motive).not.toContain("batterie");
+    expect(d6?.motive).toContain("fesselung");
+  });
+
   it("Stufen: wenige Figuren leicht, Fesselung schwer", () => {
     expect(zaehlstufe({ angreifer: 1, verteidiger: 1, motive: [] })).toBe("leicht");
     expect(zaehlstufe({ angreifer: 2, verteidiger: 2, motive: [] })).toBe("mittel");

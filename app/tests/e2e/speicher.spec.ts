@@ -12,6 +12,7 @@ import {
   oeffneProfil,
   starteImBrowser,
 } from "./hilfen";
+import { oeffneSpielseite } from "./spielenhilfen";
 
 /** Eine Abbildung zählt erst nach 30 Sekunden am Stück (0.2.27); der Test spult die Uhr vor. */
 const VERWEILZEIT_MS = 30_000;
@@ -32,7 +33,7 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   await page.goBack();
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
-  const kapitel1 = page.getByRole("button", { name: /Grundprinzipien/ });
+  const kapitel1 = page.locator(".kapitelliste").getByRole("button", { name: /Grundprinzipien/ });
   await expect(kapitel1).toContainText(/2 von \d+ Abbildungen angesehen/);
   await kapitel1.click();
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^2 von \d+$/);
@@ -66,7 +67,10 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  await page
+    .locator(".kapitelliste")
+    .getByRole("button", { name: /Grundprinzipien/ })
+    .click();
   await klappeAbschnittAuf(page, "1.1");
   const haken = page.getByRole("button", { name: "Abb. 1.3 als angesehen abhaken" });
   await haken.click();
@@ -89,7 +93,10 @@ test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken löse
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  await page
+    .locator(".kapitelliste")
+    .getByRole("button", { name: /Grundprinzipien/ })
+    .click();
   // Seit 0.2.82 sind alle Abschnitte anfangs eingeklappt.
   await expect(page.locator("details.abschnittsklappe[open]")).toHaveCount(0);
   await klappeAbschnittAuf(page, "1.4");
@@ -281,6 +288,8 @@ test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neulade
   // Seit 0.2.80 beim Spielen; seit 0.2.135 (Variante A) im Reiter „Fehler“ als Netz.
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Spielen" }).click();
+  // Seit „Spielen neu“ (J3) auf der Seite „Eigene Stufe“.
+  await oeffneSpielseite(page, "stufe");
   await page.getByRole("tab", { name: "Fehler (9)" }).click();
   const netz = page.getByTestId("fehlernetz");
   const figuren = netz.getByRole("radio", { name: "Figuren: aus", exact: true });
@@ -290,6 +299,7 @@ test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neulade
   await expect(page.getByRole("tab", { name: "Fehler (7)" })).toBeVisible();
   await page.reload();
   await leiste.getByRole("button", { name: "Spielen" }).click();
+  await oeffneSpielseite(page, "stufe");
   await page.getByRole("tab", { name: "Fehler (7)" }).click();
   await expect(figuren).toHaveAttribute("aria-checked", "true");
   await expect(eroeffnung).toHaveAttribute("aria-checked", "true");

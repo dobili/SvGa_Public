@@ -86,6 +86,234 @@ dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
       Tour zeigt nacheinander die Brettvorschau, die Reiter Bedienung, Anzeige und Hilfe, dann die
       Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Stimmen die Texte zu dem, was
       du siehst?
+### Neu in 0.3.38: Spielen neu (Arbeitschat, 31.10.2026)
+
+Der Bildschirm „Spielen“ ist nach deiner Wahl neu gebaut (Entwurf J3 „Schnell eine Partie“):
+oben ein Vorschlag mit großem Knopf „Spielen“, darunter Rivale, Spielstärke, vier Kacheln zu
+eigenen Seiten und „Zuletzt gespielt“. Die Einstellungen von Stärke, Stil, Fehlern und Flecken
+sehen aus wie bisher, nur der Weg dorthin ist neu. Öffnen: Tipp auf „Spielen“ unten in der Leiste.
+Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › Anzeige).
+
+- [ ] N2330. **Startseite:** Von oben nach unten: (nur wenn eine Partie läuft) die Karte „Partie
+      läuft“ mit kleinem Brett, „gegen … · 10 + 0“ und „Weiterspielen“; dann „Schnell eine
+      Partie“; dann (wenn du einen hast) der Rivale; „Deine Spielstärke“; vier Kacheln „Gegner
+      aussuchen“, „Eigene Stufe“, „Eigene Bots“, „Freie Partie“; unten „Zuletzt gespielt“.
+      Nichts ist breiter als der Bildschirm, nichts ragt über den Rand. Die feste Leiste unten mit
+      „Beginnen“ gibt es auf der Startseite nicht mehr.
+- [ ] N2331. **Schnell eine Partie:** Die Karte zeigt einen Bot mit rundem Porträt, Namen,
+      Stufenmarke, „Stufe 3 · Positionsspieler“ (Beispiel) und darunter seine Zahl mit einem
+      Satz: ohne gewertete Partie „gut für den Anfang“ (dann ein Bot der Stufe 1 oder 2), sonst
+      meist „etwa so stark wie du“. Bots, die du in dieser Zeitklasse schon gewertet besiegt hast,
+      kommen erst später dran. „Anderer Vorschlag“ zeigt den nächsten passenden Bot; nach dem
+      letzten beginnt es wieder vorn.
+- [ ] N2332. **Drei Bedenkzeiten und „Spielen“:** Auf der Karte stehen drei Zeiten mit dem
+      Zeichen ihrer Zeitklasse (Blitz, Schnellschach, Klassisch), anfangs 3 + 2, 10 + 0, 30 + 20.
+      Ein Tipp wählt sie; die Zeile darunter („Weiß · 10 + 0 · gewertet“) ändert sich mit. Hast
+      du im Blatt etwa 5 + 3 gewählt, steht 5 + 3 statt 3 + 2 auf der Karte. „Spielen“ beginnt
+      die Partie gegen genau diesen Bot mit dieser Zeit und Farbe. Läuft schon eine Partie,
+      fragt die App erst, ob sie ersetzt werden soll.
+- [ ] N2333. **Blatt „Partie einstellen“:** „Einstellen ›“ oben rechts auf der Karte öffnet von
+      unten ein Blatt mit: Du spielst (Weiß/Schwarz), allen sieben Bedenkzeiten nach Zeitklasse,
+      „Gewertete Partie“ mit Fragezeichen, Spielhilfen (Zurücknehmen, Symbole, Werkzeuge; in
+      gewerteten Partien gesperrt mit dem Satz „Spielhilfen gehen nur in ungewerteten
+      Partien.“) und unten der Zeile „Eröffnung festlegen“ mit der aktuellen Wahl. Schließen mit
+      dem X oben rechts oder mit Tipp auf den dunklen Rand.
+- [ ] N2334. **Eröffnung im Blatt:** Tipp auf „Eröffnung festlegen ›“ zeigt im selben Blatt die
+      Eröffnungswahl wie bisher (wie Menschen dieser Stärke, ohne Buch, aus dem Buch, einzelne
+      Eröffnungen mit Hauptvariante, „Eröffnungen nach Spielstärke“ mit Varianten, Gambits und
+      Quelle). „Zurück zu den Einstellungen“ führt zurück. Mit einem eigenen Bot mit festen
+      Eröffnungen (Seite „Eigene Bots“) stehen dort Hinweis und Haken „Eröffnung des Bots
+      überschreiben“.
+- [ ] N2335. **Gegner aussuchen:** Die Kachel öffnet eine eigene Seite mit „‹ Spielen“ oben
+      links. Oben die Sprechblase des gewählten Bots: Porträt, Name mit Zahl und Fragezeichen
+      (Erklärung der Stärke), darunter golden sein Stil und „So stellt er sich vor“ mit seinem
+      Satz. Darunter wie bisher „Zum Spaß“ und Stufe 1 bis 10 zum Aufklappen, mit Porträts,
+      Zahlen je Zeitklasse, Siegzeichen, „x/8“ und dem Gruppenmodus. Unten klebt eine Leiste mit
+      dem Bot, „Weiß · 10 + 0 · gewertet“ und „Spielen“; ein Tipp auf die Leiste links öffnet das
+      Blatt „Partie einstellen“.
+- [ ] N2336. **Eigene Stufe und Eigene Bots:** „Eigene Stufe“ zeigt oben die geschätzte Zahl
+      („Deine Einstellung 1 · 1 · 1 · etwa …“) und darunter genau die bisherigen Reiter Stärke,
+      Stil, Fehler, Blinde Flecken mit Marke „Menschlich“; unten die Leiste „Eigene Stufe ·
+      Spielen“. „Eigene Bots“ zeigt deine Bots zum Antippen, die Liste mit Bearbeiten und
+      Löschen und „Neuen Gegner anlegen“ mit dem bisherigen Editor. Ohne gewählten eigenen Bot
+      ist „Spielen“ ausgegraut und die Leiste sagt „oben wählen oder anlegen“.
+- [ ] N2337. **Freie Partie:** Die Kachel öffnet eine Seite mit dem Schalter „Mensch (beide Seiten
+      selbst)“ und der Startstellung mit „Stellung aufbauen“ und „Eigene Stellung eingeben
+      (FEN)“. Mit Schalter spielt ihr zu zweit am Gerät, ohne ihn dein zuletzt gewählter Gegner.
+      Nach einer aufgebauten Stellung zeigt das Brett sie, die Leiste sagt „ungewertet“, und im
+      Blatt gibt es zusätzlich „Ohne Uhr“.
+- [ ] N2338. **Aus einer Abbildung:** Im Buch bei Abb. 1.26 „Gegen die Engine spielen“ antippen:
+      „Spielen“ zeigt oben „Aus der Stellung von Abb. 1.26“ mit Brett, darunter „Schnell eine
+      Partie“ (ungewertet, „Ohne Uhr“ möglich). „Spielen“ beginnt aus dieser Stellung. Die
+      Kacheln nehmen die Stellung mit: „Gegner aussuchen“ beginnt dann ebenfalls aus Abb. 1.26.
+- [ ] N2339. **Zuletzt gespielt und Revanche:** Nach ein, zwei Partien gegen Bots stehen sie
+      unten (höchstens drei) mit Porträt, Name, „heute · 10 + 0“ und der Ergebnismarke (Pokal,
+      Händedruck oder Kreuz). Tipp auf den Namen öffnet die Partie. „Revanche“ zeigt sofort oben
+      „Schnell eine Partie“ mit genau diesem Bot (Satz „dein gewählter Gegner“) und einer Zeit
+      derselben Zeitklasse. Genauso wirken „Revanche“/„Herausfordern“ auf der Rivalenkarte und
+      „Spielen“ an einem angehefteten Ziel („Besiege Lotte in Schnellschach.“).
+
+### Neu in 0.3.38: Auswertung neu (Arbeitschat, 31.10.2026)
+
+Die Auswertung nach einer Partie ist nach deiner Wahl neu gebaut (Entwurf F2 „Zeitleiste der
+Partie“): Ergebnis oben, die Partie als Zeitleiste in Momenten, darunter „In Zahlen“, ganz unten
+„Neue Partie“ und „Teilen“. So kommst du zu einer Auswertung: „Spielen“ unten in der Leiste, einen
+schwachen Bot wählen (etwa Derya, Gruppe „Neuling“ oder „Einsteiger“), „Partie beginnen“ und
+etwa 15 bis 20 Züge spielen, gern mit einem absichtlich schlechten Zug; dann aufgeben („Aufgeben“
+unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach einige Sekunden.
+
+- [ ] N2320. **Ergebnis oben:** Direkt unter dem Untertitel, über der Zugliste, eine Kopfzeile mit
+      dem Porträt des Bots, groß „Gewonnen“ (grün), „Verloren“ (rot) oder „Remis“, darunter wie
+      die Partie endete und in welchem Zug („Du hast aufgegeben. · im 18. Zug“), rechts nach der
+      Auswertung deine Genauigkeit („74 %“ und „genau“). Gut lesbar hell und dunkel?
+- [ ] N2321. **Die Partie in Momenten:** Unter dem Brett die Überschrift „Die Partie in
+      Momenten“, ein Umschalter „Weiß (du) | Schwarz (Bot)“, die Verlaufskurve und darunter eine
+      senkrechte Linie mit Abschnitten je Phase („ERÖFFNUNG · ZUG 1 BIS 9 · 87 %“; die Prozente
+      sind deine Genauigkeit in der Phase, die Linie trägt die Farbe des Urteils). Wirkt das
+      weniger wie ein Formular als vorher?
+- [ ] N2322. **Momente:** An der Linie runde Marken mit Karten: das Ende der Theorie mit dem
+      Namen der Eröffnung („Philidor-Verteidigung · 4 Theoriezüge bis 4. dxe5 …“), deine erste
+      klare Abweichung („8. Sc3?“, „Erste klare Abweichung: Gewinnchance 64 % → 52 %.“, „Besser
+      war 8. Dxb7“ in Gold), weitere Fehler, verpasste Gewinne und Patzer mit ihrer Marke, die
+      absichtlichen Fehler des Bots mit einem kleinen Roboter („Absichtlicher Fehler: Derya hat
+      eine Figur hängen lassen (W1).“ und darunter „Du hast es gesehen und genutzt.“ oder „Hast du
+      es gesehen?“) und zuletzt das Ende der Partie mit einer Flagge. Ohne klare Abweichung steht
+      oben eine grüne Karte „Gut gespielt!“.
+- [ ] N2323. **Kleine Bretter und Sprung:** Fehler und Fehler des Bots zeigen rechts ein kleines
+      Brett (gold der bessere Zug, rot der gespielte). „Zur Stellung“ springt nach oben aufs große
+      Brett an genau diese Stelle; die Karte unter dem Brett erklärt dort den Zug wie bisher.
+- [ ] N2324. **Seitenwahl:** Im Umschalter „Schwarz (Bot)“ wählen: Die Zeitleiste zeigt jetzt
+      die Fehler des Bots, ohne „Erste klare Abweichung“; auch „In Zahlen“ wechselt auf den Bot
+      (beide Umschalter bleiben gleich gestellt). Zurück auf „Weiß (du)“.
+- [ ] N2325. **Verlaufskurve wie bisher (dein Wunsch):** Unter der Kurve „Ganze Partie“ und die
+      Phasen als Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der
+      Kurve halten und fahren zeigt den Zug darüber, Loslassen springt dorthin; zwei Finger
+      zoomen. Die roten Punkte sind Fehler. Alles wie vor dem Umbau, nur im neuen Rahmen?
+- [ ] N2326. **In Zahlen:** Überschrift „In Zahlen“, Umschalter Weiß/Schwarz, dann die Karte
+      „SPIELSTÄRKE“ (Ring, Urteil, geschätzte Spielstärke mit Spanne, beim Bot seine feste Zahl,
+      Fragezeichen mit Erklärung, fünf Balken mit Skala 50 bis 100 %) und „DEINE ZÜGE“: weiter
+      die bisherige Grafik, je Zugart ein Balken über den Zonen wenig/normal/viel mit Strich für
+      das Übliche, Warnzeichen bei schwachen Werten, alle zehn Arten; unter 15 eigenen Zügen nur
+      die Anzahlen. Nur Rundungen und Überschriften sind neu.
+- [ ] N2327. **Neue Partie und Teilen:** Ganz unten zwei große Knöpfe „Neue Partie“ und
+      „Teilen“; aus einer eigenen Stellung (etwa „Gegen die Engine spielen“ an einer Abbildung)
+      darunter zusätzlich „Noch einmal aus derselben Stellung“. „Teilen“ öffnet ein Blatt von
+      unten mit „PGN kopieren“ und „PGN als Datei sichern“; das Kreuz oder ein Tipp daneben
+      schließt es.
+- [ ] N2328. **Merken als Blatt:** Einen Zug in der Zugliste antippen, dann rechts unter dem Brett
+      „Merken“: Statt eines Bereichs unten in der Karte öffnet sich ein Blatt von unten mit „Wohin?“
+      (Lernen oder Fehler) und den Feldern wie bisher. Speichern klappt, das Kreuz schließt es.
+- [ ] N2329. **Nichts verloren:** Zugliste mit Zeichen und „Alle Züge zeigen“, Pfeile zum Blättern,
+      Uhren, Bewertungsbalken links am Brett, Drehen, Ruhige Ansicht (blendet die Auswertung aus,
+      Ergebnis und „Neue Partie“ bleiben), „Besserer Zug“/„Bestrafung“ abspielen, Nebenzweig,
+      „Zurücknehmen“ nach dem Ende (nur in ungewerteten Partien), die Meldung „Gruppenmodus frei“ und während der Rechnung
+      „Die Engine wertet die Partie aus …“ mit Balken: alles noch da?
+
+### Neu in 0.3.38: Buchseite und Lernpfad neu (Arbeitschat, 31.10.2026)
+
+Die Startseite „Buch“ und „Dein Weg durchs Buch“ sind nach deiner Wahl der Entwürfe neu gebaut:
+A2 „Heute“ und B1 „Fünf Landschaften“. Weniger Text, mehr Bild; die Kapitel beginnen weiter oben.
+Bitte jeweils im dunklen und im hellen Modus ansehen (Profil › Einstellungen › Darstellung).
+
+- [ ] N2250. **Kopf der Buchseite:** Oben „SCHACH VON GRUND AUF“ und rechts zwei Symbole: der Weg
+      (geschwungene Linie, öffnet „Dein Weg durchs Buch“) und der Kompass (Tour). Darunter
+      „Buch“ und gleich daneben das Feld „z. B. 1.26“ mit „Öffnen“. Antippen des Feldes zeigt
+      die Zahlenleiste und darunter „Zuletzt: Abb. …“ (führt zur zuletzt geöffneten Abbildung);
+      „1.26“ und „Öffnen“ öffnen die Abbildung.
+- [ ] N2251. **Karte „Heute“ mit Wochenziel:** Oben „Heute“, rechts eine Flamme mit „3 von 4
+      Tagen“ und ein Stift. Darunter sieben Kreise Mo bis So, durch eine Linie verbunden: Tage, an
+      denen du etwas gemacht hast, sind gold gefüllt, heute hat einen goldenen Ring. Der Stift
+      zeigt die Knöpfe 2 3 4 5 7 mit „Abbrechen“ und „Kein Wochenziel“. Ist das Ziel erreicht,
+      steht darunter „Wochenziel geschafft!“ (einmal mit kleinem Feuerwerk), fehlt nur noch ein
+      Tag, „Noch ein Tag für dein Ziel, wenn du magst.“; dazu leise „3 Wochen geschafft · beste
+      Folge 3“.
+- [ ] N2252. **Nächster Schritt als Kacheln:** In der Karte eine große helle Kachel (im hellen
+      Modus dunkel) mit Symbol, Titel und kurzer Zeile, etwa „Tagesaufgabe – 1 Stellung für
+      heute“ oder „Wiederholen – 9 Stellungen · etwa 6 Min“, rechts ein Pfeil. Darunter zwei
+      kleine Kacheln mit den Alternativen (etwa „Weiterlesen – Abb. 6.20“, „Übungen – Kapitel
+      5“). Jede Kachel führt mit einem Tipp hin.
+- [ ] N2253. **Nicht jetzt:** Rechts neben den kleinen Kacheln ein kleines Kreuz. Ein Tipp
+      blendet die Kacheln bis morgen aus; Tageskette und Woche bleiben. Ohne Lerntag
+      verschwindet dann die ganze Karte bis morgen.
+- [ ] N2254. **Woche als Reiter:** Unten in der Karte drei runde Reiter „Aufträge 1/3“ (mit
+      kurzem goldenem Strich), „Plan“ (an einem Übungstag „heute“, sonst die Uhrzeit) und „Ziele“
+      (mit Zahl der angehefteten Ziele). Ein Tipp klappt den Abschnitt darunter auf, ein zweiter
+      Tipp wieder zu. Inhalt wie bisher: Aufträge mit Tauschen, Übungsplan mit Kalender, eigene
+      Ziele. Ist „Reiter nebeneinander“ statt drei Zeilen für dich gut bedienbar?
+- [ ] N2255. **Ohne Wochenziel:** Auf einem Gerät ohne Wochenziel (Stift › „Kein Wochenziel“)
+      steht unter „Heute“ nur die Zeile „Tage pro Woche 2 3 4 5 7“ (die 3 mit goldenem Rand als
+      Vorschlag). Rechts oben „Wochenziel?“ klappt die Erklärung des Lerntags und „Später“ auf;
+      „Später“ blendet die Frage für diese Woche aus.
+- [ ] N2256. **Kapitel weit oben:** Auf deinem Handy beginnt die Liste der Kapitel in der oberen
+      Hälfte des Bildschirms, solange nur die Karte „Heute“ da ist (am Monatsanfang kann der
+      Monatsrückblick als zweite Karte dazukommen; dann rutschen die Kapitel tiefer).
+- [ ] N2257. **Lernpfad, Landschaften:** Weg-Symbol oben rechts im Buch. Der goldene Weg führt
+      durch fünf Bänder, jedes mit „Teil 1 … Teil 5“ und Namen: Grundlagen auf Schachbrettmuster,
+      Eröffnung in der Morgendämmerung mit Sonne, Mittelspiel über Hügel mit Türmen, Endspiel
+      unter Nachthimmel mit Mond und wenigen Sternen, Praxis im Turniersaal mit Lampen, Tischen
+      und Uhren. Gefallen dir die Bilder, hell wie dunkel?
+- [ ] N2258. **Lernpfad, Stationen:** Fertige Kapitel sind goldene Scheiben mit Nummer und
+      kleinem Haken, darunter „fertig“. Das aktuelle Kapitel ist größer, mit goldenem Ring für
+      den Stand, leichtem Schein und der Marke „Du bist hier“; angefangene haben einen
+      Teilring und „12 von 40“; offene sind dunkel mit grauem Rand. Ein Tipp öffnet das Kapitel.
+      Oben steht der Satz, was bis zum Ende des Kapitels fehlt, mit dem Ring des Kapitels daneben;
+      die Erklärung „Jede Station ist ein Kapitel …“ steht jetzt leise unter dem Weg.
+- [ ] N2259. **Lernpfad, Orden und Lesbarkeit:** Am Ende jedes Teils das Bild des Ordens, offen
+      als graue Silhouette, daneben „Orden „Teil Mittelspiel““ und „verdient“ bzw. „noch 3
+      Kapitel“. Alle Kapitelnamen stehen auf einem leicht deckenden Grund und sind auf jedem
+      Bild gut lesbar. Mit „Bewegung reduzieren“ (Bedienungshilfen des Handys) schimmert die
+      aktuelle Station nicht.
+
+### Neu in 0.3.37: Trainer-Startseiten neu (Arbeitschat, 31.10.2026)
+
+Alle Trainer mit Runden beginnen jetzt mit derselben Startkarte (dein Entwurf G1): oben ein
+kleines Beispielbrett mit einem Satz, worum es geht; darunter „Deine Runde“ als antippbare Zeilen
+mit den Werten deiner letzten Runde; ein großer Knopf „Runde starten“; darunter weitere Modi als
+kleinere Knöpfe. Die frühere Beschreibung steht hinter „So funktioniert dieser Trainer“. Öffnen:
+unten „Training“, beim Trainer „Trainieren“. Am besten im dunklen und im hellen Modus ansehen
+(Einstellungen › Farbschema).
+
+- [ ] N2280. **Taktiktrainer:** Oben links ein Brett (Weiß setzt auf der Grundreihe matt), rechts
+      „Finde den Zug, der gewinnt“. Darunter „Deine Runde · zum Ändern antippen“ mit drei Zeilen:
+      „Aufgaben: Aus dem Buch“, „Motiv: Gemischt · 674“ (Zahl je nach Datenstand), „Stufe: alle
+      Stufen“. Dann der große Knopf „Runde starten · 8 Aufgaben“ und darunter „Serie ohne
+      Fehler“ mit Flamme. Wirkt das ruhiger als vorher, und liest sich alles ohne Erklärung?
+- [ ] N2281. **Zeile antippen:** Im Taktiktrainer auf „Stufe“ tippen: Darunter klappen Chips auf
+      („alle Stufen“, „Stufe 1“ bis „Stufe 5“) mit dem Satz, wie die Stufen gemessen sind. Eine
+      Stufe wählen: Die Zeile klappt zu und zeigt sie. Auf „Motiv“ tippen: Es öffnet sich die
+      gewohnte Auswahlliste des Handys mit allen Motiven und ihrer Anzahl.
+- [ ] N2282. **Letzte Werte bleiben:** Im Taktiktrainer Motiv „Fesselung“ und Stufe 2 wählen, eine
+      Runde starten, zurück zu „Training“ und den Taktiktrainer wieder öffnen: „Deine Runde“ zeigt
+      noch Fesselung und Stufe 2. Das gilt in jedem Trainer (auch nach dem Schließen der App).
+- [ ] N2283. **Lichess-Aufgaben:** Im Taktiktrainer „Aufgaben“ antippen und „Zusätzlich Lichess“
+      wählen. Die Zeile „Motiv“ zeigt nun die Lichess-Themen; unter der Runde steht die
+      Kennzeichnung („Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess …“). „Serie ohne Fehler“
+      verschwindet hier, weil die Serie nur mit Buchaufgaben läuft. Zurück auf „Aus dem Buch“:
+      Die Serie ist wieder da.
+- [ ] N2284. **So funktioniert:** Unten auf der Startkarte „So funktioniert dieser Trainer“
+      antippen: Darunter stehen die frühere Beschreibung des Trainers und weitere Erklärungen
+      (im Taktiktrainer etwa zur Serie). Reicht das, oder fehlt dir etwas, das vorher sichtbar war?
+- [ ] N2285. **Zähltrainer und Röntgen:** Zähltrainer öffnen: eine Zeile „Stufe: gemischt“, der
+      große Knopf startet „Bilanz zählen“, darunter der Modus „Hängende Figuren finden“.
+      Röntgen-Trainer: Brett mit goldenem und rotem Pfeil, Zeile „Stufe“, „Runde starten ·
+      5 Aufgaben“.
+- [ ] N2286. **Endspieltrainer:** Zeilen „Was üben?“ (alle, Mattführung, Bauernendspiele …, mit
+      Anzahl) und „Stufe“, großer Knopf „Runde starten · 6 Stellungen“, darunter „Kurzübungen“.
+      Hast du nicht geschaffte Stellungen, steht dort auch „Wiederholen“ mit der Zahl.
+- [ ] N2287. **Wiederholen als Modus:** In einem Trainer mit fälligen Wiederholungen (etwa
+      „Falle oder Köder“ nach einer falsch gelösten Aufgabe am Vortag) steht unter dem
+      Startknopf „Wiederholen“ mit „3 Aufgaben sind fällig.“ Ohne fällige Aufgaben fehlt der
+      Knopf ganz.
+- [ ] N2288. **Eröffnungstrainer und Zug erraten:** Repertoire-Trainer: Zeilen „Eröffnung“ und
+      „Du spielst: Weiß“. Abweichungsmodus: zusätzlich „Aus: Eröffnungen (Kapitel 2)“ oder
+      „Gambits (Kapitel 3)“. Zug erraten: Zeilen „Quelle“, „Partie“ und „Du spielst“;
+      bei einer berühmten Partie steht ihre Karte mit Quelle und Lizenz unter der Runde.
+- [ ] N2289. **Übrige Trainer:** Koordinaten (Zeile „Übung“, bei „Feld finden“ auch „Stufe“),
+      Planbilanz (Zeile „Übung“, bei LAP „Stufe“), Zielbilanz, Faktorenbilanz, Denkroutine,
+      Studien und Kurzpläne (großer Knopf „15 Minuten starten“, darunter „5 Minuten“, „Taktik auf
+      Zeit“, „Tagesaufgabe“) haben dieselbe Form. 30-Minuten-Plan und Fehlerdatenbank sind
+      unverändert, weil sie keine Runde haben. Passt die Form überall, auch auf 360 Pixel Breite?
+
 ### Neu in 0.3.36: Steckbriefe und Glossar neu (Arbeitschat, 31.10.2026)
 
 Steckbriefe und Glossar sind nach deiner Wahl der Entwürfe neu gebaut: Die Steckbriefe zeigen die
@@ -1493,6 +1721,19 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q9 Cloudflare baut nicht mehr (31.10.2026, dringend)
+
+- [ ] Q9-1. **Vorschau-Builds bei Cloudflare ausschalten.** Von etwa 13:20 bis 16:45 Uhr brach
+      der Cloudflare-Build bei jedem Push in derselben Sekunde ab, ohne zu bauen; die Seite blieb
+      bei 0.3.31. Dein Neustart um 16:45 hat 0.3.32 sauber gebaut und ausgeliefert, am Code lag es
+      also nicht. Der Vorschau-Build eines Arbeitszweigs, der zur selben Zeit kam, brach wieder
+      sofort ab. Das spricht für eine Grenze bei Cloudflare (ein Build zur selben Zeit oder die
+      Build-Minuten des Monats), die die vielen Arbeitszweige heute ausschöpfen. Empfehlung: im
+      Cloudflare-Dashboard unter Workers › schach-von-grund-auf › Settings › Build die Builds für
+      andere Zweige als `main` ausschalten (du testest ohnehin auf main). Bis dahin prüfe ich nach
+      jedem Push nach main, ob die Seite die neue Version zeigt, und sage dir Bescheid, falls du
+      den Build neu starten musst.
 
 ### Q8 Gamifizierung: Entscheidungen E2 bis E11 (31.10.2026)
 

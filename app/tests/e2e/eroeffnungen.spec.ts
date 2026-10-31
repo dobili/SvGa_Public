@@ -6,11 +6,12 @@
  */
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { oeffneEroeffnungswahl, oeffneSpielen } from "./spielenhilfen";
 
 test("Eröffnungen nach Spielstärke: Bänder, Buchmarke, Wahl für den Bot", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByTestId("eroeffnung-klappe").locator("summary").click();
+  await oeffneSpielen(page);
+  await oeffneEroeffnungswahl(page);
   const wahl = page.getByTestId("staerkewahl");
   await wahl.locator(":scope > summary").click();
   // Vorgabe 1000 bis 1400: drei Bänder, je Seite neun Eröffnungen

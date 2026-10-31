@@ -18,6 +18,7 @@ import {
   starteImBrowser,
 } from "./hilfen";
 import { TRAINER } from "../../src/training/trainer";
+import { oeffneSpielen, spieleVorschlag } from "./spielenhilfen";
 
 const ENGINE_FRIST_MS = 30_000;
 
@@ -62,8 +63,8 @@ test("Content Security Policy: Startseite, App, Engine und Partie ohne Verstoß"
   await page.getByRole("button", { name: "Engine", exact: true }).click();
   await expect(page.getByTestId("engine-messung")).toBeVisible({ timeout: ENGINE_FRIST_MS });
   expect(await verstoesse(page)).toEqual([]);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await oeffneSpielen(page);
+  await spieleVorschlag(page);
   await expect(page.locator(".bildschirm-partie .brett")).toBeVisible();
   expect(await verstoesse(page)).toEqual([]);
 });

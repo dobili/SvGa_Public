@@ -88,7 +88,14 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "lernsammlung":
       return <Lernsammlung />;
     case "spielen":
-      return <Spielen startFen={ansicht.startFen} abbildung={ansicht.abbildung} />;
+      return (
+        <Spielen
+          key={ansicht.seite ?? ""}
+          startFen={ansicht.startFen}
+          abbildung={ansicht.abbildung}
+          seite={ansicht.seite}
+        />
+      );
     case "partie":
       return <Partie key={ansicht.id} id={ansicht.id} />;
     case "ich":

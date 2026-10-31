@@ -10,20 +10,16 @@ import { useMemo, useState } from "react";
 import { ladeIndex, ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { buchstellungenAus } from "../../training/buchstellungen";
-import {
-  ROENTGENSTUFEN,
-  roentgenrundeNachStufe,
-  zugfolgenstellungen,
-  type Roentgenstufe,
-} from "../../training/roentgenstufen";
+import { roentgenrundeNachStufe, zugfolgenstellungen } from "../../training/roentgenstufen";
 import { ZUFALL } from "../../training/zufall";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Roentgenaufgabe } from "./Roentgentrainer";
 import { roentgenaufgabenAus } from "../../training/wiederholbar";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Rundenablauf } from "./Rundenablauf";
-import { Wiederholungsknopf } from "./Wiederholungsknopf";
+import { aufgabenzahl, wiederholung, wortstufenzeile } from "./startkarte/einstellung";
+import { Startkarte } from "./startkarte/Startkarte";
+import { useGemerkteWortstufe } from "./startkarte/useGemerkt";
 
 /** Aufgaben je Runde (wie bisher). */
 const AUFGABEN_JE_RUNDE = 5;
@@ -35,47 +31,10 @@ async function ladeRoentgenstellungen() {
   return [...buchstellungenAus(kapitel), ...zugfolgenstellungen(kapitel)];
 }
 
-/** Die Wahl der Stufe: gemischt oder eine der drei Stufen. */
-function Roentgenstufenwahl({
-  stufe,
-  setze,
-}: {
-  stufe: Roentgenstufe | null;
-  setze: (stufe: Roentgenstufe | null) => void;
-}) {
-  return (
-    <>
-      <fieldset className="zahlwahl">
-        <legend>{t("taktiktrainer.stufeWahl")}</legend>
-        <button
-          type="button"
-          className="chip"
-          aria-pressed={stufe === null}
-          onClick={() => setze(null)}
-        >
-          {t("roentgentrainer.stufe.gemischt")}
-        </button>
-        {ROENTGENSTUFEN.map((s) => (
-          <button
-            key={s}
-            type="button"
-            className="chip"
-            aria-pressed={stufe === s}
-            onClick={() => setze(s)}
-          >
-            {t(`roentgentrainer.stufe.${s}`)}
-          </button>
-        ))}
-      </fieldset>
-      <p className="hinweis">{t("roentgentrainer.stufenText")}</p>
-    </>
-  );
-}
-
-/** Der Röntgen-Trainer mit Stufenwahl. */
+/** Der Röntgen-Trainer: Startkarte mit Stufe, dann die Runde. */
 export function RoentgenBereich() {
   const daten = useDaten(ladeRoentgenstellungen, "roentgenstellungen");
-  const [stufe, setzeStufe] = useState<Roentgenstufe | null>(null);
+  const [stufe, setzeStufe] = useGemerkteWortstufe("roentgen");
   /** null: Auswahl; „runde“: nach Stufe; „wiederholung“: die fälligen Aufgaben. */
   const [laeuft, setzeLaeuft] = useState<"runde" | "wiederholung" | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
@@ -89,18 +48,13 @@ export function RoentgenBereich() {
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
   if (laeuft === null)
     return (
-      <div
-        className="trainerrunde trainerwahl"
-        data-testid="roentgen-wahl"
-        data-tour="trainer-wahl"
-      >
-        <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft("wiederholung")} />
-        <Roentgenstufenwahl stufe={stufe} setze={setzeStufe} />
-        <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft("runde")}>
-          <Knopfsymbol art="starten" />
-          {t("taktiktrainer.starten")}
-        </button>
-      </div>
+      <Startkarte
+        kennung="roentgen"
+        testkennung="roentgen-wahl"
+        zeilen={[wortstufenzeile(stufe, setzeStufe, t("roentgentrainer.stufenText"))]}
+        start={{ zusatz: aufgabenzahl(AUFGABEN_JE_RUNDE), starte: () => setzeLaeuft("runde") }}
+        modi={wiederholung(vorhanden.length, () => setzeLaeuft("wiederholung"))}
+      />
     );
   return (
     <Rundenablauf

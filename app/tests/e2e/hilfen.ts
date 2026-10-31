@@ -4,6 +4,11 @@
  */
 import { expect, type Locator, type Page } from "@playwright/test";
 
+/** Ein Versuch, eine Zeile der Startkarte zu bedienen (ms); danach neu versuchen. */
+const VERSUCH_MS = 1500;
+/** So lange darf eine Zeile der Startkarte brauchen, bis ihr Wert wählbar ist (ms). */
+const ZEILE_WARTEN_MS = 20_000;
+
 /**
  * Alles, was gerade als Werkzeug gewählt ist: Bündel in der Leiste und Symbole am Brett (seit
  * 0.2.30 sitzen Ziehen, Engine, Röntgen und Warnsignale am Brett). Leer, wenn nichts gewählt ist.
@@ -240,4 +245,62 @@ export async function oeffneTrainer(seite: Page, kennung: string): Promise<void>
   // Seit „Training neu“ (31.10.2026) ist die ganze Karte in der Wischreihe der Knopf.
   await seite.getByTestId(`trainer-${kennung}`).first().getByRole("button").click();
   await expect(seite.getByTestId("trainer")).toBeVisible();
+}
+
+/**
+ * Wählt auf der Startkarte eines Trainers in einer Zeile einen Wert (Entwurf G1, 31.10.2026):
+ * kurze Wahlen klappen als Chips auf, lange öffnen die Auswahlliste des Systems.
+ * Beispiel: waehleInZeile(seite, "zeile-stufe", "Stufe 2"); waehleInZeile(seite, "zeile-motiv",
+ * /^Fesselung/).
+ */
+export async function waehleInZeile(
+  seite: Page,
+  testkennung: string,
+  wert: string | RegExp,
+): Promise<void> {
+  const zeile = seite.getByTestId(testkennung);
+  const passt = (o: string) => (typeof wert === "string" ? o === wert : wert.test(o));
+  await expect(zeile).toBeVisible();
+  // Eine Zeile kann beim Laden der Daten ihre Form wechseln (erst wenige Chips, dann die lange
+  // Auswahlliste, etwa die Motive des Taktiktrainers): so lange neu versuchen, bis der Wert da ist.
+  await expect(async () => {
+    const liste = zeile.locator("select");
+    if ((await liste.count()) > 0) {
+      const text = (await liste.locator("option").allTextContents()).find(passt);
+      if (text === undefined) throw new Error(`„${String(wert)}“ fehlt in ${testkennung}`);
+      await liste.selectOption({ label: text }, { timeout: VERSUCH_MS });
+      return;
+    }
+    const chip = zeile.locator("button.chip", { hasText: wert });
+    if ((await chip.count()) === 0) {
+      await zeile.locator("button.startzeile").click({ timeout: VERSUCH_MS });
+    }
+    await chip.click({ timeout: VERSUCH_MS });
+  }).toPass({ timeout: ZEILE_WARTEN_MS });
+}
+
+/** Tippt auf der Startkarte auf den großen Knopf „Runde starten …“. */
+export async function starteRunde(seite: Page): Promise<void> {
+  await seite.getByRole("button", { name: /^Runde starten/ }).click();
+}
+
+/**
+ * Wählt auf der Startkarte die Übung (falls es mehrere gibt) und startet die Runde.
+ * Beispiel: starteUebung(seite, "Feld finden").
+ */
+export async function starteUebung(seite: Page, uebung: string): Promise<void> {
+  if ((await seite.getByTestId("zeile-uebung").count()) > 0)
+    await waehleInZeile(seite, "zeile-uebung", uebung);
+  await starteRunde(seite);
+}
+
+/**
+ * Klappt einen Abschnitt der Woche in der Karte „Heute“ auf (Reiter „Aufträge“, „Plan“, „Ziele“;
+ * seit der Gestaltung A2 vom 31.10.2026 zugeklappt). Bleibt offen, wenn er schon offen ist.
+ * Beispiel: oeffneReiter(seite, "auftraege").
+ */
+export async function oeffneReiter(seite: Page, kennung: string): Promise<void> {
+  const reiter = seite.getByTestId(`reiter-${kennung}`);
+  if ((await reiter.getAttribute("aria-expanded")) !== "true") await reiter.click();
+  await expect(reiter).toHaveAttribute("aria-expanded", "true");
 }

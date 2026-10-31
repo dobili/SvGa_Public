@@ -5,6 +5,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { oeffneSpielen, spieleVorschlag } from "./spielenhilfen";
 
 /** Schritte der Mausbewegung, damit die Schwelle zum Wischen sicher überschritten wird. */
 const SCHRITTE = 8;
@@ -28,9 +29,9 @@ async function wische(seite: Page, von: RegExp, nach: string): Promise<void> {
 }
 
 async function beginnePartie(seite: Page): Promise<void> {
-  await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await seite.getByRole("button", { name: "Partie beginnen" }).click();
-  await expect(seite.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
+  await oeffneSpielen(seite);
+  await spieleVorschlag(seite);
+  await expect(seite.getByTestId("partie")).toBeVisible();
   // Gezogen wird nach Koordinaten: die zweite Reihe mittig ins Bild, nicht unter die Navigation
   // (seit 0.2.129 beginnt die Partie ohne vorheriges Scrollen aus der Startleiste).
   await seite

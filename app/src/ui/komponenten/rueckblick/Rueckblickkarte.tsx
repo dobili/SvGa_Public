@@ -5,8 +5,8 @@
  * Rolle im Gesamtbild: Rückmeldung des Autors („Nachspielen wie bei chess.com: einfache
  * Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte (Zugurteil.tsx),
  * die Erklärung kommt aus spiel/erklaerung.ts.
- * Unten steht, wenn am Brett „Merken“ gedrückt ist, der Bereich für Lernsammlung oder
- * Fehlerdatenbank (Merkenbereich.tsx; Kapitel 12, AP 13, ein Knopf nach Beschluss des Autors).
+ * Ist am Brett „Merken“ gedrückt, öffnet sich ein Blatt von unten (seit 31.10.2026, Entwurf F2) mit
+ * Lernsammlung oder Fehlerdatenbank (Merkenbereich.tsx; Kapitel 12, AP 13, ein Knopf nach Beschluss des Autors).
  * Der Satz zu einem Fehler nennt die Gewinnchance vorher und nachher statt der Bauerneinheiten
  * der Engine (Rückmeldung des Autors): Stockfish rechnet seine Zahl aus der Gewinnchance, eine
  * Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
@@ -28,6 +28,7 @@ import { uciZuSan } from "../../../spiel/zuege";
 import { gewinnchanceVorNach, type Chance } from "../auswertung/gewinnchance";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { Merkenbereich } from "./Merkenbereich";
+import { Blatt } from "../auswertung/Blatt";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import { Theorieliste, Theoriesatz } from "./Theorieangabe";
 import { useTheorieauskunft } from "./useTheorie";
@@ -79,6 +80,7 @@ export function Rueckblickkarte({
   zweigZuege,
   strafZuege,
   merkenOffen = false,
+  beiMerkenZu = () => undefined,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
@@ -95,6 +97,8 @@ export function Rueckblickkarte({
   strafZuege: readonly Zweigzug[];
   /** Ist „Merken“ am Brett offen (Lernsammlung oder Fehlerdatenbank)? */
   merkenOffen?: boolean;
+  /** Schließt das Blatt „Merken“ (Kreuz, Escape, Tipp daneben). */
+  beiMerkenZu?: () => void;
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -167,17 +171,26 @@ export function Rueckblickkarte({
           {t("rueckblick.phasenwechsel", { text: phasenwechsel })}
         </p>
       )}
+      {/* Seit der Auswertung neu (Entwurf F2, 31.10.2026) ein Blatt von unten statt eines
+          Bereichs am Ende der Karte: Brett und Karte bleiben dahinter, wie sie sind. */}
       {merkenOffen && (
-        <Merkenbereich
-          key={`${fen} ${san}`}
-          rueckblick={rueckblick}
-          partie={partie}
-          index={index}
-          fen={fen}
-          san={san}
-          zug={zug}
-          bester={bester}
-          erklaerung={erklaerung}
+        <Blatt
+          titel={t("merken.kurz")}
+          testid="merken-blatt"
+          beiSchliessen={beiMerkenZu}
+          kinder={
+            <Merkenbereich
+              key={`${fen} ${san}`}
+              rueckblick={rueckblick}
+              partie={partie}
+              index={index}
+              fen={fen}
+              san={san}
+              zug={zug}
+              bester={bester}
+              erklaerung={erklaerung}
+            />
+          }
         />
       )}
     </section>

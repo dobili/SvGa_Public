@@ -10,7 +10,7 @@
  * Abhängigkeiten: spiel/uhr.ts, spiel/elomodell.ts (Zeitklasse), wertungstext.ts, i18n.
  */
 import { t } from "../../../i18n/sprache";
-import { wertungstempo } from "../../../spiel/elomodell";
+import { WERTUNGSTEMPI, wertungstempo } from "../../../spiel/elomodell";
 import { gleicheUhr, UHR_STANDARD, UHR_VORGABEN, type Uhreinstellung } from "../../../spiel/uhr";
 import { zeitklassenname } from "../fortschritt/wertungstext";
 
@@ -68,4 +68,19 @@ export function uhrstelle(fen: string, uhr: Uhreinstellung | null): string {
   if (!wirksam) return OHNE_UHR;
   const stelle = UHR_VORGABEN.findIndex((v) => gleicheUhr(v, wirksam));
   return String(Math.max(0, stelle));
+}
+
+/** Je Zeitklasse diese Vorgabe, wenn zuletzt keine andere dieser Klasse gewählt war (Entwurf). */
+const VORGABE_JE_KLASSE = { blitz: 1, rapid: 3, classical: 5 } as const;
+
+/**
+ * Die drei Zeiten der Karte „Schnell eine Partie“ (J3): je Zeitklasse die gewählte oder die
+ * Vorgabe. Beispiel: zuletzt 5 + 3 → 5 + 3, 10 + 0, 30 + 20.
+ */
+export function dreiZeiten(uhr: Uhreinstellung | null): Uhreinstellung[] {
+  return WERTUNGSTEMPI.flatMap((tempo) => {
+    if (uhr && wertungstempo(uhr) === tempo) return [uhr];
+    const vorgabe = UHR_VORGABEN[VORGABE_JE_KLASSE[tempo]];
+    return vorgabe ? [vorgabe] : [];
+  });
 }

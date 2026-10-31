@@ -71,6 +71,7 @@ describe("ansichtAus", () => {
       { bildschirm: "trainer", kennung: "taktik", thema: "taktik:gabel" },
       { bildschirm: "spielen" },
       { bildschirm: "spielen", startFen: "8/8/8/4k3/8/8/4P3/4K3 w - - 0 1", abbildung: "8.3" },
+      { bildschirm: "spielen", seite: "gegner" },
       {
         bildschirm: "uebung",
         kapitel: 1,
@@ -89,6 +90,7 @@ describe("ansichtAus", () => {
     expect(ansichtAus({ bildschirm: "kapitel", nummer: 13 })).toBeNull();
     expect(ansichtAus({ bildschirm: "trainer", kennung: "zauberei" })).toBeNull();
     expect(ansichtAus({ bildschirm: "spielen", startFen: "keine Stellung" })).toBeNull();
+    expect(ansichtAus({ bildschirm: "spielen", seite: 3 })).toBeNull();
     expect(ansichtAus({ bildschirm: "uebung", kapitel: 1, id: "a", reihe: [{}] })).toBeNull();
     expect(ansichtAus({ bildschirm: "partie", id: "p-1" })).toBeNull();
     expect(ansichtAus("buch")).toBeNull();

@@ -1,261 +1,51 @@
 /**
- * Auswertung nach der Partie: erste klare Abweichung, grobe Patzer, Fehler der Engine, PGN.
+ * Auswertung nach der Partie: Zeitleiste der Partie in Momenten und „In Zahlen“ (Entwurf F2
+ * „Zeitleiste der Partie“, Wahl des Autors 31.10.2026).
  *
  * Rolle im Gesamtbild: Pflichtenheft 5.3 („Sprung zur ersten klaren Abweichung von der besten
- * Fortsetzung, grobe Patzer markiert, Export als PGN“) und 5.2 („In Zug 12 hat die Engine eine
- * Figur hängen lassen (W1). Hast du es gesehen?“). Die Werte rechnet useAuswertung im
- * Hintergrund; die Urteile spiel/auswertung.ts. Ein Sprung zeigt die Stellung vor dem Zug mit
- * dem besseren Zug (gold) und dem gespielten (rot).
- * Die Verlaufskurve (Vorschlag H) steht über der Auswertung; ein Tipp darauf zeigt die Stellung
- * mit Zeichen und besserem Zug. Wünsche des Autors (zuletzt R55/R56, 23.10.2026): oben ein
- * Umschalter Weiß/Schwarz (Voreinstellung die eigene Seite), der die ganze Seite steuert: die
- * erste Abweichung mit der Gewinnchance statt Bauern, die eingeklappte Liste „Fehler und Patzer“
- * (alle Fehler, verpassten Gewinne und Patzer der Seite, mit Sprung zur Stellung), bei der Engine
- * die eingeklappte Liste ihrer absichtlichen Fehler, darunter Ring, Balken und Zugklassen
- * (Spielstaerke.tsx).
- * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
+ * Fortsetzung, grobe Patzer markiert“) und 5.2 („In Zug 12 hat die Engine eine Figur hängen
+ * lassen. Hast du es gesehen?“). Ziel des Autors: weniger technisch, weniger Text, kein Formular;
+ * Einsteiger am Handy, meist dunkel. Aufbau: Fortschritt der Engine, „Die Partie in Momenten“
+ * (Verlaufskurve mit Fehlerpunkten und Ausschnitt, darunter die Zeitleiste mit Phasen und
+ * Momenten: erste klare Abweichung oder „Gut gespielt!“, Fehler und Patzer, absichtliche Fehler
+ * der Engine, Ende; jeder Moment springt aufs Brett), dann „In Zahlen“ (Seitenwahl,
+ * Spielstärke, Deine Züge; Zahlen.tsx). Eine Seitenwahl gilt für beide Teile (Voreinstellung die
+ * eigene Seite, R55/R56). Ergebnis oben und Knöpfe unten stehen außerhalb (Ergebniskopf.tsx,
+ * Partieabschluss.tsx). Die Werte rechnet useAuswertung im Hintergrund, die Urteile
+ * spiel/auswertung.ts, die Kennzahlen seitenzahlen.ts.
+ * Abhängigkeiten: momente.ts, zeitleiste.ts, Zeitleiste.tsx, Verlaufskurve.tsx, Zahlen.tsx, i18n.
  */
 import type { Color } from "chessops/types";
 import { useState } from "react";
-import type { Markierung } from "../../../analyse/werkzeug";
-import { stufe } from "../../../engine/stufen";
-import { sprache, t } from "../../../i18n/sprache";
-import { sanInSprache } from "../../../schach/notation";
-import {
-  enginefehler,
-  ersteAbweichung,
-  zugnummer,
-  type Zugklasse,
-  type Zugurteil,
-} from "../../../spiel/auswertung";
-import { stellungen, type Partie } from "../../../spiel/partie";
+import { t } from "../../../i18n/sprache";
+import type { Theoriequellen } from "../../../schach/theorie";
+import type { Zugurteil } from "../../../spiel/auswertung";
 import { phasenwechsel, type Phase } from "../../../spiel/phasen";
-import { alsPgn } from "../../../spiel/pgn";
-import { uciZuSan } from "../../../spiel/zuege";
-import { zugFelder } from "../../../schach/weiterspielen";
 import type { Partieeintrag } from "../../../speicher/partien";
-import { bieteDateiAn } from "../bausteine/dateiAnbieten";
-import { Klassenmarke } from "./Auswertungssymbole";
 import { Fortschrittsbalken } from "../bausteine/Fortschrittsbalken";
-import { Segmentwahl } from "../bausteine/Segmentwahl";
-import { gewinnchanceVorNach } from "./gewinnchance";
-import { Spielstaerke } from "./Spielstaerke";
-import { Verlaufskurve } from "./Verlaufskurve";
+import { gutGespielt, momente, type Momentkontext } from "./momente";
+import type { Seitenzahlen } from "./seitenzahlen";
+import { zugtext, type Sprung } from "./sprung";
 import type { Auswertungsstand } from "./useAuswertung";
-import { Knopfsymbol } from "../bausteine/Knopfsymbol";
-import { Titelsymbol } from "../bausteine/Titelsymbol";
-import { useSpielerprofil } from "../../profil/spieler";
+import { Verlaufskurve } from "./Verlaufskurve";
+import { Seitenwahl, Zahlen } from "./Zahlen";
+import { phasenabschnitte } from "./zeitleiste";
+import { Zeitleiste } from "./Zeitleiste";
+
+export type { Sprung } from "./sprung";
 
 const PROZENT = 100;
-const SEITEN: readonly Color[] = ["white", "black"];
-/** Klassen der Liste „Fehler und Patzer“ (R55). */
-const FEHLERKLASSEN: ReadonlySet<Zugklasse> = new Set(["fehler", "verpasst", "patzer"]);
-
-/** Die Seite, die den Zug an dieser Stelle gemacht hat. */
-function seiteAn(partie: Partie, index: number): Color {
-  return stellungen(partie)[index]?.split(" ")[1] === "b" ? "black" : "white";
-}
-
-/** Ein Sprung auf dem Brett: Stelle in der Partie und Markierungen dort. */
-export interface Sprung {
-  readonly stelle: number;
-  readonly marken: readonly Markierung[];
-}
-
-function zugtext(partie: Partie, index: number, zeichen = ""): string {
-  const san = partie.zuege[index]?.san ?? "";
-  return `${zugnummer(partie, index)} ${sanInSprache(san, sprache())}${zeichen}`;
-}
-
-/** Gold der bessere Zug, rot der gespielte, in der Stellung vor dem Zug. */
-function sprungZu(eintrag: Partieeintrag, index: number): Sprung {
-  const fen = stellungen(eintrag.partie)[index] ?? "";
-  const gespielt = zugFelder(fen, eintrag.partie.zuege[index]?.san ?? "");
-  const bester = eintrag.beste[index] ?? "";
-  const marken: Markierung[] = [];
-  if (bester)
-    marken.push({ typ: "pfeil", farbe: "gold", von: bester.slice(0, 2), nach: bester.slice(2, 4) });
-  if (gespielt) marken.push({ typ: "pfeil", farbe: "rot", ...gespielt });
-  return { stelle: index, marken };
-}
-
-/** Die erste klare Abweichung mit dem besseren Zug und dem Sprung dorthin. */
-function Abweichung({
-  eintrag,
-  urteile,
-  beiSprung,
-}: {
-  eintrag: Partieeintrag;
-  urteile: readonly Zugurteil[];
-  beiSprung: (sprung: Sprung) => void;
-}) {
-  const p = eintrag.partie;
-  const erste = ersteAbweichung(p, urteile);
-  if (!erste) return <p>{t("auswertung.keineAbweichung")}</p>;
-  const fen = stellungen(p)[erste.index] ?? "";
-  const bester = uciZuSan(fen, eintrag.beste[erste.index] ?? "");
-  return (
-    <div className="abweichung" data-tour="auswertung-abweichung">
-      <p>
-        {t("auswertung.abweichung", {
-          zug: zugtext(p, erste.index, erste.zeichen ?? ""),
-          ...gewinnchanceVorNach(eintrag.werte, erste.index, fen.split(" ")[1] !== "b"),
-        })}
-        {bester && ` ${t("auswertung.besser", { zug: sanInSprache(bester, sprache()) })}`}
-      </p>
-      <button
-        type="button"
-        className="knopf-zweit"
-        onClick={() => beiSprung(sprungZu(eintrag, erste.index))}
-      >
-        {t("auswertung.zurStellung")}
-      </button>
-    </div>
-  );
-}
+/** Ab dieser Stufe hat die Engine kein Fehlerprofil mehr; „keinen absichtlichen Fehler“ wäre leer. */
+const ERSTE_STUFE_OHNE_PROFIL = 4;
 
 /**
- * Fehler, verpasste Gewinne und Patzer der gewählten Seite, eingeklappt mit der Anzahl (R55,
- * Wunsch des Autors: die Liste wurde oft sehr lang). Je Zug die farbige Marke und der Sprung zur
- * Stellung. Beispiel: „▸ Fehler und Patzer (3)“, aufgeklappt „?? 2. g4??“.
- */
-function Fehlerliste({
-  eintrag,
-  urteile,
-  beiSprung,
-}: {
-  eintrag: Partieeintrag;
-  urteile: readonly Zugurteil[];
-  beiSprung: (sprung: Sprung) => void;
-}) {
-  const partie = eintrag.partie;
-  const fehler = urteile.filter((u) => FEHLERKLASSEN.has(u.klasse));
-  if (fehler.length === 0) return null;
-  return (
-    <details
-      className="klappliste fehlerliste"
-      data-testid="grobe-patzer"
-      data-tour="auswertung-patzer"
-    >
-      <summary>
-        {t("auswertung.fehlerUndPatzer")} <span className="badge">{fehler.length}</span>
-      </summary>
-      <ul className="patzerliste">
-        {fehler.map((u) => (
-          <li key={u.index}>
-            <button
-              type="button"
-              className="knopf-link"
-              onClick={() => beiSprung(sprungZu(eintrag, u.index))}
-            >
-              <Klassenmarke klasse={u.klasse} /> {zugtext(partie, u.index, u.zeichen ?? "")}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </details>
-  );
-}
-
-/** Die absichtlichen Fehler der Engine aus dem Protokoll, eingeklappt mit der Anzahl (R55). */
-function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sprung) => void }) {
-  const fehler = enginefehler(partie);
-  const ERSTE_STUFE_OHNE_PROFIL = 4;
-  if (fehler.length === 0) {
-    const niedrigste = Math.min(...Object.values(partie.einstellung.stufenJePhase));
-    return niedrigste < ERSTE_STUFE_OHNE_PROFIL ? <p>{t("auswertung.engineOhneFehler")}</p> : null;
-  }
-  return (
-    <details className="klappliste enginefehler" data-testid="enginefehler">
-      <summary>
-        {t("auswertung.engineFehlerTitel")} <span className="badge">{fehler.length}</span>
-      </summary>
-      <ul>
-        {fehler.map((f) => (
-          <li key={f.index}>
-            {t("auswertung.engineFehler", {
-              zug: zugtext(partie, f.index),
-              fehler: t(`fehlerart.${f.fehler}`),
-            })}{" "}
-            <button
-              type="button"
-              className="knopf-link"
-              onClick={() => beiSprung({ stelle: f.index + 1, marken: [] })}
-            >
-              {t("auswertung.zeigen")}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </details>
-  );
-}
-
-/** PGN kopieren oder als Datei sichern. */
-function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[] }) {
-  const [meldung, setzeMeldung] = useState<string | null>(null);
-  const profil = useSpielerprofil();
-  const s = stufe(partie.einstellung.stufe);
-  const kommentare = new Map(
-    enginefehler(partie).map((f) => [
-      f.index,
-      t("pgn.fehler", { fehler: t(`fehlerart.${f.fehler}`) }),
-    ]),
-  );
-  const zeichen = new Map(
-    urteile.flatMap((u) => (u.zeichen ? [[u.index, u.zeichen] as const] : [])),
-  );
-  const mensch = partie.einstellung.gegner === "mensch";
-  const kopf = {
-    ereignis: mensch
-      ? t("pgn.ereignisMensch")
-      : t("pgn.ereignis", { nummer: s.nummer, name: t(s.name) }),
-    // Seit 0.2.140 der Name aus dem Profil, sonst „Leser“.
-    leser: mensch ? t("pgn.weiss") : profil.name || t("pgn.leser"),
-    engine: mensch ? t("pgn.schwarz") : t("pgn.engine", { nummer: s.nummer }),
-  };
-  const text = alsPgn(partie, kopf, kommentare, zeichen);
-  const kopiere = async () => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setzeMeldung(t("pgn.kopiert"));
-    } catch (fehler) {
-      console.warn("Zwischenablage nicht verfügbar:", fehler);
-      setzeMeldung(t("pgn.nichtKopiert"));
-    }
-  };
-  const datei = `partie-${partie.begonnen.slice(0, "JJJJ-MM-TT".length)}.pgn`;
-  return (
-    <div className="pgn" data-tour="auswertung-pgn">
-      <div className="knopfreihe">
-        <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
-          <Knopfsymbol art="kopieren" />
-          {t("pgn.kopieren")}
-        </button>
-        <button
-          type="button"
-          className="knopf-zweit"
-          onClick={() => bieteDateiAn(text, datei, "application/vnd.chess-pgn")}
-        >
-          <Knopfsymbol art="herunterladen" />
-          {t("pgn.sichern")}
-        </button>
-      </div>
-      {meldung && <p className="hinweis">{meldung}</p>}
-      {meldung === t("pgn.nichtKopiert") && <pre className="vorformatiert">{text}</pre>}
-    </div>
-  );
-}
-
-/**
- * Fortschritt der laufenden Auswertung als Balken mit Prozentzahl (R29, Wunsch des Autors:
- * „Zug x von y“ sagte wenig, ein Balken zeigt auf einen Blick, wie weit die Engine ist).
+ * Fortschritt der laufenden Auswertung als Balken mit Prozentzahl (R29, Wunsch des Autors).
  * Beispiel: 12 von 48 Stellungen → Balken zu einem Viertel, daneben „25 %“.
  */
 function Auswertungsfortschritt({ erledigt, gesamt }: { erledigt: number; gesamt: number }) {
   const prozent = gesamt > 0 ? Math.round((erledigt / gesamt) * PROZENT) : 0;
   return (
-    <div className="auswertung-fortschritt">
+    <div className="karte auswertung-fortschritt">
       <p>{t("auswertung.laeuft")}</p>
       <div className="auswertung-fortschritt-zeile">
         <Fortschrittsbalken
@@ -270,106 +60,94 @@ function Auswertungsfortschritt({ erledigt, gesamt }: { erledigt: number; gesamt
   );
 }
 
-/** Umschalter Weiß/Schwarz; bei der Engine mit ihrem Namen, die eigene Seite mit „(du)“. */
-function Seitenwahl({
-  partie,
-  seite,
-  beiWahl,
-}: {
-  partie: Partie;
-  seite: Color;
-  beiWahl: (seite: Color) => void;
-}) {
-  const e = partie.einstellung;
-  const name = (s: Color) => {
-    const farbe = t(s === "white" ? "farbe.w" : "farbe.b");
-    if (e.gegner !== "engine") return farbe;
-    if (s === e.eigeneFarbe) return t("auswertung.seiteDu", { farbe });
-    return t("auswertung.seiteGegner", { farbe, name: e.botName ?? t("spielstaerke.gegnerName") });
-  };
+/** Der Satz „keinen absichtlichen Fehler“, nur gegen schwache Stufen mit Fehlerprofil. */
+function OhneEnginefehler({ eintrag, gezeigt }: { eintrag: Partieeintrag; gezeigt: boolean }) {
+  const e = eintrag.partie.einstellung;
+  if (gezeigt || e.gegner !== "engine") return null;
+  const niedrigste = Math.min(...Object.values(e.stufenJePhase));
+  if (niedrigste >= ERSTE_STUFE_OHNE_PROFIL) return null;
+  return <p className="hinweis zeitleiste-hinweis">{t("auswertung.engineOhneFehler")}</p>;
+}
+
+/** Eingaben der Auswertung. */
+interface AuswertungEigenschaften {
+  eintrag: Partieeintrag;
+  stand: Auswertungsstand;
+  urteile: readonly Zugurteil[];
+  /** Phase je Stellung (spiel/phasen.ts), für Kurve, Zeitleiste und Spielstärke je Phase. */
+  phasen: readonly Phase[];
+  /** Theoriequellen für den Namen der Eröffnung; null, solange nicht geladen. */
+  theorie: Theoriequellen | null;
+  /** Kennzahlen beider Seiten (seitenzahlen.ts); null vor der Auswertung. */
+  zahlen: Readonly<Record<Color, Seitenzahlen>> | null;
+  beiSprung: (sprung: Sprung) => void;
+}
+
+/** „Die Partie in Momenten“: Überschrift, Seitenwahl, Kurve, Zeitleiste. */
+function Momente(p: AuswertungEigenschaften & { seite: Color; beiSeite: (s: Color) => void }) {
+  const partie = p.eintrag.partie;
+  const kontext: Momentkontext = { partie, urteile: p.urteile, seite: p.seite };
+  const alle = momente(kontext);
+  const zeichenAn = (index: number) => p.urteile.find((u) => u.index === index)?.zeichen ?? "";
   return (
-    <Segmentwahl
-      name={t("auswertung.seite")}
-      werte={SEITEN}
-      gewaehlt={seite}
-      text={name}
-      beiWahl={beiWahl}
-    />
+    <section className="auswertung-abschnitt" data-testid="momente">
+      <h2 className="auswertung-ueberschrift">{t("auswertungneu.momente.titel")}</h2>
+      <p className="hinweis">{t("auswertungneu.momente.text")}</p>
+      <Seitenwahl
+        partie={partie}
+        seite={p.seite}
+        name={t("auswertungneu.momente.seite")}
+        beiWahl={p.beiSeite}
+      />
+      <Verlaufskurve
+        werte={p.eintrag.werte}
+        urteile={p.urteile}
+        wechsel={phasenwechsel(p.phasen)}
+        beiStelle={(stelle) => p.beiSprung({ stelle, marken: [] })}
+        zugname={(stelle) =>
+          stelle === 0
+            ? t("rueckblick.startstellung")
+            : zugtext(partie, stelle - 1, zeichenAn(stelle - 1))
+        }
+      />
+      <Zeitleiste
+        abschnitte={phasenabschnitte(partie, p.phasen, alle)}
+        grund={{ eintrag: p.eintrag, urteile: p.urteile, theorie: p.theorie }}
+        jePhase={p.zahlen?.[p.seite].jePhase ?? null}
+        gedreht={partie.einstellung.eigeneFarbe === "black"}
+        gutGespielt={gutGespielt(kontext)}
+        beiSprung={p.beiSprung}
+      />
+      <OhneEnginefehler eintrag={p.eintrag} gezeigt={alle.some((m) => m.art === "engine")} />
+    </section>
   );
 }
 
 /**
- * Die Auswertung unter einer beendeten Partie: Verlaufskurve, erste klare Abweichung, grobe Patzer,
- * absichtliche Fehler der Engine und die PGN.
+ * Die Auswertung unter einer beendeten Partie. Vor dem Ende der Engine-Rechnung zeigt sie den
+ * Fortschritt; ohne Urteile (etwa ein Fehler der Engine) nur diesen Teil.
  */
-export function Auswertung({
-  eintrag,
-  stand,
-  urteile,
-  phasen,
-  beiSprung,
-}: {
-  eintrag: Partieeintrag;
-  stand: Auswertungsstand;
-  urteile: readonly Zugurteil[];
-  /** Phase je Stellung (spiel/phasen.ts), für Kurve und Spielstärke je Phase. */
-  phasen: readonly Phase[];
-  beiSprung: (sprung: Sprung) => void;
-}) {
-  const partie = eintrag.partie;
+export function Auswertung(p: AuswertungEigenschaften) {
+  const partie = p.eintrag.partie;
   const [seite, setzeSeite] = useState<Color>(partie.einstellung.eigeneFarbe);
-  const eigeneUrteile = urteile.filter((u) => seiteAn(partie, u.index) === seite);
-  const engineSeite =
-    partie.einstellung.gegner === "engine" && seite !== partie.einstellung.eigeneFarbe;
+  const fertig = p.urteile.length > 0;
   return (
-    <section className="karte auswertung" data-testid="auswertung" data-tour="auswertung">
-      <h2 className="karte-titel">
-        <Titelsymbol art="auswertung" />
-        {t("auswertung.titel")}
-      </h2>
-      {/* PGN ganz oben (Wunsch des Autors, 25.10.2026): Export sucht man nicht mitten im Text. */}
-      <Pgn partie={partie} urteile={urteile} />
-      {stand.art === "laeuft" && (
-        <Auswertungsfortschritt erledigt={stand.erledigt} gesamt={stand.gesamt} />
+    <div className="auswertung" data-testid="auswertung" data-tour="auswertung">
+      {p.stand.art === "laeuft" && (
+        <Auswertungsfortschritt erledigt={p.stand.erledigt} gesamt={p.stand.gesamt} />
       )}
-      {stand.art === "fehler" && <p className="fehlertext">{stand.meldung}</p>}
-      {urteile.length > 0 && <Seitenwahl partie={partie} seite={seite} beiWahl={setzeSeite} />}
-      {urteile.length > 0 && (
-        <>
-          <Verlaufskurve
-            werte={eintrag.werte}
-            urteile={urteile}
-            wechsel={phasenwechsel(phasen)}
-            beiStelle={(stelle) => beiSprung({ stelle, marken: [] })}
-            zugname={(stelle) =>
-              stelle === 0
-                ? t("rueckblick.startstellung")
-                : zugtext(
-                    partie,
-                    stelle - 1,
-                    urteile.find((u) => u.index === stelle - 1)?.zeichen ?? "",
-                  )
-            }
-          />
-          {/* Die erste Abweichung betrifft nur Züge des Lesers (spiel/auswertung.ts). */}
-          {!engineSeite && (
-            <Abweichung eintrag={eintrag} urteile={eigeneUrteile} beiSprung={beiSprung} />
-          )}
-          <Fehlerliste eintrag={eintrag} urteile={eigeneUrteile} beiSprung={beiSprung} />
-        </>
+      {p.stand.art === "fehler" && <p className="fehlertext">{p.stand.meldung}</p>}
+      {/* Ohne Züge (sofort aufgegeben) bleibt ein Satz statt einer leeren Fläche; sonst fehlte
+          auch das Tourziel „auswertung“, sobald der Fortschritt verschwindet. */}
+      {p.stand.art === "fertig" && !fertig && (
+        <p className="karte hinweis" data-testid="auswertung-leer">
+          {t("auswertungneu.leer")}
+        </p>
       )}
-      {/* Zu zweit spielt keine Engine; der Satz „keinen absichtlichen Fehler“ wäre falsch. */}
-      {(urteile.length === 0 ? partie.einstellung.gegner === "engine" : engineSeite) && (
-        <Enginefehler partie={partie} beiSprung={beiSprung} />
+      {fertig && <Momente {...p} seite={seite} beiSeite={setzeSeite} />}
+      {fertig && p.zahlen && (
+        <Zahlen partie={partie} seite={seite} zahlen={p.zahlen} beiSeite={setzeSeite} />
       )}
-      <Spielstaerke
-        partie={partie}
-        werte={eintrag.werte}
-        urteile={urteile}
-        beste={eintrag.beste}
-        phasen={phasen}
-        seite={seite}
-      />
-    </section>
+    </div>
   );
 }

@@ -25,11 +25,20 @@ import {
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
-import { rundeNachStufe, TRAINERSTUFEN, type Trainerstufe } from "../../training/stufen";
+import { rundeNachStufe, type Trainerstufe } from "../../training/stufen";
 import { lapaufgabenAus } from "../../training/wiederholbar";
 import { ZUFALL } from "../../training/zufall";
 import { useFaelligeAufgaben } from "../trainer/kartenantwort";
-import { Wiederholungsknopf } from "../trainer/Wiederholungsknopf";
+import {
+  aufgabenzahl,
+  einstellung,
+  wiederholung,
+  wortstufenzeile,
+  type Einstellung,
+} from "../trainer/startkarte/einstellung";
+import { Startkarte } from "../trainer/startkarte/Startkarte";
+import { TRAINERSTARTS } from "../trainer/startkarte/trainerstarts";
+import { useGemerkt, useGemerkteWortstufe } from "../trainer/startkarte/useGemerkt";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { TrainerthemaKontext } from "../trainer/trainerthema";
 import { useDaten } from "../komponenten/bausteine/useDaten";
@@ -166,100 +175,37 @@ function planrunde(
   }
 }
 
-/**
- * Die Stufe über der Runde: gemischt, leicht, mittel, schwer. Ein Wechsel startet eine neue Runde.
- * Der Satz darunter sagt, was die Stufe misst (Punkt B7 des Nebenchats).
- */
-function Stufenzeile({
-  art,
-  stufe,
-  setze,
-}: {
-  art: Stufenart;
-  stufe: Trainerstufe | null;
-  setze: (s: Trainerstufe | null) => void;
-}) {
-  return (
-    <div className="stufenzeile" data-testid="stufenzeile">
-      <fieldset className="zahlwahl">
-        <legend>{t("taktiktrainer.stufeWahl")}</legend>
-        {[null, ...TRAINERSTUFEN].map((s) => (
-          <button
-            key={s ?? "gemischt"}
-            type="button"
-            className="chip"
-            aria-pressed={stufe === s}
-            onClick={() => setze(s)}
-          >
-            {t(`roentgentrainer.stufe.${s ?? "gemischt"}`)}
-          </button>
-        ))}
-      </fieldset>
-      <p className="hinweis">{t(`stufen.text.${art}`)}</p>
-    </div>
-  );
+/** Die Zeilen der Startkarte: Übung (bei mehreren) und Stufe (bei Übungen mit Stufen). */
+function buchzeilen(
+  arten: readonly Uebungsart[],
+  art: Uebungsart,
+  setzeArt: (art: Uebungsart) => void,
+  stufe: Trainerstufe | null,
+  setzeStufe: (stufe: Trainerstufe | null) => void,
+): Einstellung[] {
+  const uebung = einstellung({
+    kennung: "uebung",
+    titel: t("trainerstart.zeile.uebung"),
+    symbol: "uebung",
+    optionen: arten.map((a) => ({ wert: a, text: t(`uebungsart.${a}.name`) })),
+    wert: art,
+    setze: setzeArt,
+    erklaerung: t(`uebungsart.${art}.text`),
+    testkennung: "zeile-uebung",
+  });
+  return [
+    ...(arten.length > 1 ? [uebung] : []),
+    ...(hatStufen(art) ? [wortstufenzeile(stufe, setzeStufe, t(`stufen.text.${art}`))] : []),
+  ];
 }
+
+/** Was gerade läuft: nichts (Startkarte), eine Runde oder die fälligen LAP-Aufgaben. */
+type Lauf = "runde" | "wiederholung" | null;
 
 /**
- * Fällige LAP-Aufgaben der Planbilanz-Übung als eigene Runde (Punkt B4 des Nebenchats); ohne
- * fällige Aufgaben steht nichts da.
+ * Die Trainer an den Buchstellungen: Startkarte mit Übung und Stufe, dann die Runde. Die
+ * Planbilanz-Übung bietet die fälligen LAP-Aufgaben als Modus „Wiederholen“ an (Punkt B4).
  */
-function LapWiederholung({
-  stellungen,
-  kennung,
-  auswahl,
-}: {
-  stellungen: readonly Buchstellung[];
-  kennung: TrainerKennung;
-  /** Die Auswahl der Übungsarten; sie steht nur da, solange keine Wiederholung läuft. */
-  auswahl: React.ReactNode;
-}) {
-  const faellig = useFaelligeAufgaben("planbilanz");
-  const vorhanden = useMemo(() => lapaufgabenAus(stellungen, faellig), [stellungen, faellig]);
-  const [laeuft, setzeLaeuft] = useState(false);
-  // Während der Wiederholung keine Auswahl darunter: Ein Tipp dort brach die Runde sonst ohne
-  // Rückfrage ab (Prüfung beim Übernehmen, 31.10.2026).
-  if (!laeuft)
-    return (
-      <>
-        <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(true)} />
-        {auswahl}
-      </>
-    );
-  return (
-    <Rundenablauf
-      kennung={kennung}
-      erzeuge={() =>
-        vorhanden.slice(0, ANZAHL.lap).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />)
-      }
-      nochmal={() => setzeLaeuft(false)}
-      zurAuswahl={() => setzeLaeuft(false)}
-    />
-  );
-}
-
-/** Auswahl der Übungsart. */
-function Auswahl({
-  arten,
-  waehle,
-}: {
-  arten: readonly Uebungsart[];
-  waehle: (art: Uebungsart) => void;
-}) {
-  return (
-    <ul className="uebungsarten" data-tour="trainer-wahl">
-      {arten.map((art) => (
-        <li key={art}>
-          <button type="button" className="karte uebungsart" onClick={() => waehle(art)}>
-            <span className="karte-titel">{t(`uebungsart.${art}.name`)}</span>
-            <span className="hinweis">{t(`uebungsart.${art}.text`)}</span>
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function Inhalt({
   kennung,
   stellungen,
@@ -268,30 +214,40 @@ function Inhalt({
   stellungen: readonly Buchstellung[];
 }) {
   const arten = UEBUNGSARTEN[kennung] ?? [];
-  const einzige = arten.length === 1 ? (arten[0] ?? null) : null;
-  const [art, setzeArt] = useState<Uebungsart | null>(einzige);
-  const [stufe, setzeStufe] = useState<Trainerstufe | null>(null);
+  const [art, setzeArt] = useGemerkt<Uebungsart>(kennung, "uebung", arten, arten[0] ?? "felder");
+  const [stufe, setzeStufe] = useGemerkteWortstufe(kennung);
+  const [lauf, setzeLauf] = useState<Lauf>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
+  const faellig = useFaelligeAufgaben("planbilanz");
+  const lap = useMemo(
+    () => (kennung === "planbilanz" ? lapaufgabenAus(stellungen, faellig) : []),
+    [kennung, stellungen, faellig],
+  );
   if (arten.length === 0) return <p className="hinweis">{t("training.folgt")}</p>;
-  if (art === null) {
-    const auswahl = <Auswahl arten={arten} waehle={setzeArt} />;
-    return kennung === "planbilanz" ? (
-      <LapWiederholung stellungen={stellungen} kennung={kennung} auswahl={auswahl} />
-    ) : (
-      auswahl
-    );
-  }
-  return (
-    <>
-      {hatStufen(art) && <Stufenzeile art={art} stufe={stufe} setze={setzeStufe} />}
-      <Rundenablauf
-        key={`${art}-${stufe}-${durchlauf}`}
+  if (lauf === null)
+    return (
+      <Startkarte
         kennung={kennung}
-        erzeuge={() => erzeuge(art, stellungen, stufe)}
-        nochmal={() => setzeDurchlauf(durchlauf + 1)}
-        zurAuswahl={einzige ? null : () => setzeArt(null)}
+        testkennung={`${kennung}-wahl`}
+        zeilen={buchzeilen(arten, art, setzeArt, stufe, setzeStufe)}
+        start={{ zusatz: aufgabenzahl(ANZAHL[art]), starte: () => setzeLauf("runde") }}
+        modi={wiederholung(lap.length, () => setzeLauf("wiederholung"))}
+        hilfen={arten.length > 1 ? [] : [t(`uebungsart.${art}.text`)]}
       />
-    </>
+    );
+  const zurueck = () => setzeLauf(null);
+  return (
+    <Rundenablauf
+      key={`${lauf}-${art}-${stufe}-${durchlauf}`}
+      kennung={kennung}
+      erzeuge={() =>
+        lauf === "wiederholung"
+          ? lap.slice(0, ANZAHL.lap).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />)
+          : erzeuge(art, stellungen, hatStufen(art) ? stufe : null)
+      }
+      nochmal={lauf === "wiederholung" ? zurueck : () => setzeDurchlauf(durchlauf + 1)}
+      zurAuswahl={zurueck}
+    />
   );
 }
 
@@ -337,9 +293,11 @@ export function Trainer({
     <TrainerthemaKontext value={thema}>
       <div className="bildschirm bildschirm-trainer" data-testid="trainer">
         <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
-        <p className="hinweis trainer-ablauf" data-tour="trainer-ablauf">
-          {t(`trainer.${kennung}.ablauf`)}
-        </p>
+        {!TRAINERSTARTS[kennung] && (
+          <p className="hinweis trainer-ablauf" data-tour="trainer-ablauf">
+            {t(`trainer.${kennung}.ablauf`)}
+          </p>
+        )}
         {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
       </div>
     </TrainerthemaKontext>

@@ -4,7 +4,7 @@
  * finden“ zeigt seinen Auftrag als Text, deshalb kann der Test gezielt richtig oder falsch tippen.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneTrainer, starteImBrowser, starteUebung } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
   page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
@@ -20,7 +20,7 @@ test("Kombo: drei richtige in Folge zeigen „3 in Folge“, ein Fehler beendet 
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Feld finden/ }).click();
+  await starteUebung(page, "Feld finden");
   const kombo = page.getByTestId("kombo");
   for (let i = 0; i < 3; i += 1) {
     await expect(page.getByText(`Aufgabe ${i + 1} von 16`)).toBeVisible();
@@ -51,7 +51,7 @@ test("Fundstück: das erste kommt in der dritten Runde und liegt im Album", asyn
   });
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Feld finden/ }).click();
+  await starteUebung(page, "Feld finden");
   const ende = page.getByTestId("runde-ende");
   for (let runde = 1; runde <= 3; runde += 1) {
     if (runde > 1) await ende.getByRole("button", { name: "Noch eine Runde" }).click();

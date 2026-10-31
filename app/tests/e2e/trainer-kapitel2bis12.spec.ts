@@ -10,7 +10,7 @@ import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
 import { makeSan } from "chessops/san";
 import { makeSquare } from "chessops/util";
-import { oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneTrainer, starteImBrowser, starteUebung, waehleInZeile, starteRunde } from "./hilfen";
 
 /** Ein Feld des Brettes (nur die Knöpfe auf dem Brett, nicht gleichnamige Züge der Zugleiste). */
 const feld = (page: Page | Locator, name: string) =>
@@ -20,8 +20,8 @@ test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", a
   await starteImBrowser(page);
   await oeffneTrainer(page, "repertoire");
   const wahl = page.getByTestId("repertoire-wahl");
-  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
-  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
+  await waehleInZeile(page, "zeile-eroeffnung", "Die Spanische Partie (Ruy Lopez)");
+  await waehleInZeile(page, "zeile-seite", "Weiß");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von");
@@ -41,6 +41,7 @@ test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", a
 test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "studien");
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Die Saavedra-Studie");
   await page
@@ -66,12 +67,7 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   await starteImBrowser(page);
   await oeffneTrainer(page, "zugErraten");
   const wahl = page.getByTestId("zugerraten-wahl");
-  const partien = wahl.getByLabel("Partie");
-  const opern = await partien
-    .locator("option", { hasText: /^Morphys Opernpartie/ })
-    .first()
-    .getAttribute("value");
-  await partien.selectOption(opern ?? "0");
+  await waehleInZeile(page, "zugerraten-partieliste", /^Morphys Opernpartie/);
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await feld(page, "e2").click();
@@ -145,6 +141,7 @@ test("Denkroutine: eine Minute, dann Kandidaten am Brett; Zurücknehmen", async 
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "denkroutine");
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 3");
   const brett = runde.getByRole("img", { name: /^Stellung aus Abb\. / });
@@ -227,6 +224,7 @@ test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "denkroutine");
+  await starteRunde(page);
   const runde = page.getByTestId("trainerrunde");
   const brett = runde.getByRole("img", { name: /^Stellung aus Abb\. / });
   const nummer = ((await brett.getAttribute("aria-label")) ?? "").replace("Stellung aus Abb. ", "");
@@ -248,7 +246,7 @@ test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async
 test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /Drei Planfragen/ }).click();
+  await starteUebung(page, "Drei Planfragen");
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 4");
   for (const gruppe of await runde.locator(".antworten").all()) {
@@ -258,7 +256,7 @@ test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
   await page.screenshot({ path: "test-results/bilder/trainer-planfragen.png", fullPage: true });
   await page.getByRole("button", { name: "Training" }).first().click();
   await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /Wettrennen der Bauern/ }).click();
+  await starteUebung(page, "Wettrennen der Bauern");
   for (const seite of ["Weiß", "Schwarz"]) {
     await runde.getByRole("group", { name: seite }).getByRole("button", { name: "2" }).click();
   }
@@ -266,7 +264,7 @@ test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
   await expect(runde).toContainText(/schneller|gleich viele/);
   await page.getByRole("button", { name: "Training" }).first().click();
   await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /LAP/ }).click();
+  await starteUebung(page, "LAP: am wenigsten aktive Figur");
   await feld(page, "a1").click();
   await feld(page, "h8").click();
   await runde.getByRole("button", { name: "Prüfen" }).click();
@@ -276,11 +274,8 @@ test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
 test("Abweichungsmodus: Gambits aus Kapitel 3 mit dem Damengambit zur Wahl", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "abweichung");
-  await page
-    .getByTestId("abweichung-quelle")
-    .getByRole("button", { name: /Gambits/ })
-    .click();
-  const liste = page.getByTestId("abweichung-wahl").getByLabel("Eröffnung");
+  await waehleInZeile(page, "abweichung-quelle", /Gambits/);
+  const liste = page.getByTestId("zeile-eroeffnung");
   await expect(liste).toContainText("Das Königsgambit");
   await expect(liste).toContainText("Das Damengambit");
 });
@@ -291,8 +286,8 @@ test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort w
   await starteImBrowser(page);
   await oeffneTrainer(page, "abweichung");
   const wahl = page.getByTestId("abweichung-wahl");
-  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
-  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
+  await waehleInZeile(page, "zeile-eroeffnung", "Die Spanische Partie (Ruy Lopez)");
+  await waehleInZeile(page, "zeile-seite", "Weiß");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(page.getByTestId("abweichung-zug")).toContainText("Die Engine verlässt das Buch", {

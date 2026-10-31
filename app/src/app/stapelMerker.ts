@@ -72,8 +72,10 @@ function uebungAus(roh: unknown): Uebungsverweis | null {
 
 /** Bildschirm „spielen“: ohne oder mit gültiger Stellung und Abbildung. */
 function spielenAus(roh: Roh): Ansicht | null {
-  const { startFen, abbildung } = roh;
+  const { startFen, abbildung, seite } = roh;
   if (startFen !== undefined && !(istText(startFen) && FEN_FORM.test(startFen))) return null;
+  // Unterseite von „Spielen“ (Entwurf J3, 31.10.2026), damit sie das Neuladen übersteht.
+  if (seite !== undefined && !istText(seite)) return null;
   if (abbildung !== undefined && !(istText(abbildung) && ABBILDUNGSNUMMER.test(abbildung))) {
     return null;
   }
@@ -81,6 +83,7 @@ function spielenAus(roh: Roh): Ansicht | null {
     bildschirm: "spielen",
     ...(startFen === undefined ? {} : { startFen }),
     ...(abbildung === undefined ? {} : { abbildung }),
+    ...(seite === undefined ? {} : { seite }),
   };
 }
 

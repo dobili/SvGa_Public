@@ -8,6 +8,13 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, oeffneTrainer, starteImBrowser } from "./hilfen";
+import {
+  oeffnePartieEinstellen,
+  oeffneSpielseite,
+  schliessePartieEinstellen,
+  spieleFenGegenStufe,
+  zurueckZuSpielen,
+} from "./spielenhilfen";
 
 /** Schwere und kritische Verstöße auf der aktuellen Seite (leichte nehmen wir in Kauf). */
 async function schwereVerstoesse(page: Page): Promise<string[]> {
@@ -32,15 +39,19 @@ test("axe: Spielen, Partie und Auswertung (Matt nach 2. g4??)", async ({ page })
   await starteImBrowser(page);
   await bereich(page, "Spielen");
   expect(await schwereVerstoesse(page)).toEqual([]);
-  await page.getByText("Eigene Stellung eingeben (FEN)").click();
-  await page
-    .getByLabel("Stellung als FEN")
-    .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
-  await page.getByRole("button", { name: "Stellung übernehmen" }).click();
-  for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
-    await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
-  }
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  // Seit „Spielen neu“ (J3): Blatt, Unterseiten mit Startleiste prüfen axe ebenfalls.
+  await oeffnePartieEinstellen(page);
+  expect(await schwereVerstoesse(page)).toEqual([]);
+  await schliessePartieEinstellen(page);
+  await oeffneSpielseite(page, "gegner");
+  expect(await schwereVerstoesse(page)).toEqual([]);
+  await zurueckZuSpielen(page);
+  await spieleFenGegenStufe(
+    page,
+    "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+    8,
+    async () => expect(await schwereVerstoesse(page)).toEqual([]),
+  );
   expect(await schwereVerstoesse(page)).toEqual([]);
   await page.getByRole("button", { name: /^g2, Bauer/ }).click();
   await page.getByRole("button", { name: "g4", exact: true }).click();

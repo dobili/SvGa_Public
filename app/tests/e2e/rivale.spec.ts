@@ -5,6 +5,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { spieleVorschlag } from "./spielenhilfen";
 
 /** Testdaten: Rivale Tom (Angreifer, Stufe 1), Bilanz 1 : 2; optional ein gestern besiegter Rivale. */
 interface Rivalendaten {
@@ -77,9 +78,11 @@ test("Rivalenkarte: Spruch, Bilanz, Revanche gegen Tom, danach neue Bilanz", asy
   await page.screenshot({ path: "test-results/bilder/rivalenkarte.png", fullPage: true });
   await karte.getByRole("button", { name: "Revanche" }).click();
   await expect(page.getByTestId("spielen")).toBeVisible();
-  await expect(page.getByRole("checkbox", { name: /Gewertete Partie/ })).toBeChecked();
-  await expect(page.getByTestId("spielen")).toContainText("Tom");
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  // Seit „Spielen neu“ (J3) steht Tom auf „Schnell eine Partie“, gewertet.
+  await expect(page.getByTestId("vorschlag-name")).toHaveText("Tom");
+  await expect(page.getByTestId("vorschlag-angabe")).toContainText("gewertet");
+  await expect(page.getByTestId("vorschlag-grund")).toContainText("dein gewählter Gegner");
+  await spieleVorschlag(page);
   await page.getByRole("button", { name: "Aufgeben" }).click();
   await page.getByRole("button", { name: "Ja, aufgeben" }).click();
   await expect(page.getByTestId("partieende")).toContainText("Du hast aufgegeben.");

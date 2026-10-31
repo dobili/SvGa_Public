@@ -5,7 +5,8 @@
  * Navigation (wie bei den Abbildungen), darunter die Uhr der Engine, das Brett (bei Schwarz
  * gedreht) und die Uhr des Lesers. Die ruhige Ansicht (Wunsch des Autors,
  * Schalter mit dem Auge unten rechts am Brett) zeigt nur Brett, Zugnavigation und Züge.
- * Nach dem Ende erscheint das Ergebnis. Eine Rückfrage vor einem gefährlichen Zug gibt es nicht:
+ * Nach dem Ende erscheint das Ergebnis als Kopfzeile über dem Brett, darunter die Auswertung als
+ * Zeitleiste und „In Zahlen“, ganz unten Neue Partie und Teilen (Entwurf F2, 31.10.2026). Eine Rückfrage vor einem gefährlichen Zug gibt es nicht:
  * Der Autor hat sie gestrichen, weil der Spieler Züge zurücknehmen kann.
  * Werkzeuge (Wunsch P1, Vorschlag B2): Zählen, Röntgen und Warnsignale W1–W7 als Symbole am
  * Brett, darunter die Bündel des Buches mit Reitern und Karten (PartieWerkzeuge.tsx); in der
@@ -37,7 +38,8 @@ import { useTheorie } from "../komponenten/rueckblick/useTheorie";
 import { Auswertung, type Sprung } from "../komponenten/auswertung/Auswertung";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
-import { Partieende } from "../komponenten/partie/Partieende";
+import { Ergebniskopf } from "../komponenten/partie/Ergebniskopf";
+import { Partieabschluss } from "../komponenten/partie/Partieabschluss";
 import { Gruppenfreischaltung } from "../komponenten/gegner/Gruppenmodus";
 import { Ergebnisblende } from "../komponenten/partie/Ergebnisblende";
 import { Zugmarke } from "../komponenten/rueckblick/Zugmarke";
@@ -57,6 +59,7 @@ import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRue
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
+import { useSeitenzahlen } from "../komponenten/auswertung/seitenzahlen";
 import { usePartie, type Partiesteuerung } from "../komponenten/partie/usePartie";
 import {
   useWerkzeugwahl,
@@ -304,6 +307,8 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
     return zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende, jeZug, gambits);
   }, [eintrag, theorie]);
   const phasen = useMemo(() => phasenJeStellung(partie), [partie]);
+  // Kennzahlen beider Seiten, einmal für Kopfzeile, Zeitleiste und „In Zahlen“ (seit F2).
+  const zahlen = useSeitenzahlen({ eintrag, urteile, phasen });
   const ruhig = vorlieben.ruhigeAnsicht;
   const leser = leserAmZug(partie);
   const springe = (sprung: Sprung) => {
@@ -313,6 +318,17 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   return (
     <>
       {!ruhig && <Untertitel partie={partie} />}
+      {/* Entwurf F2 (31.10.2026): das Ergebnis als Kopfzeile über dem Brett. */}
+      {partie.ende && (
+        <Ergebniskopf
+          partie={partie}
+          genauigkeit={
+            partie.einstellung.gegner === "engine"
+              ? (zahlen?.[partie.einstellung.eigeneFarbe].b.genauigkeit ?? null)
+              : null
+          }
+        />
+      )}
       <Spielfeld
         s={s}
         partie={partie}
@@ -353,7 +369,6 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         }
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
-      {partie.ende && <Partieende partie={partie} />}
       {partie.ende && <Gruppenfreischaltung gegnerBot={partie.einstellung.bot} />}
       {partie.ende && eintrag && !ruhig && (
         <Auswertung
@@ -361,9 +376,12 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
           stand={stand}
           urteile={urteile}
           phasen={phasen}
+          theorie={theorie}
+          zahlen={zahlen}
           beiSprung={springe}
         />
       )}
+      {partie.ende && <Partieabschluss partie={partie} urteile={urteile} />}
     </>
   );
 }

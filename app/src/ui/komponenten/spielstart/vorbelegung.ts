@@ -6,7 +6,8 @@
  * gespeicherten Vorlieben. Wer eine Partie gegen einen bestimmten Bot in einer Zeitart anbieten
  * will (Revanche gegen den Rivalen, Ziel „Lotte in Schnellschach besiegen“), schreibt deshalb
  * nur die Vorlieben um und öffnet „Spielen“: Gegner Engine, dieser Bot mit seinen Stufen,
- * gewertet, eine Bedenkzeit der Zeitart. Der Leser sieht die Wahl und tippt „Beginnen“; nichts
+ * gewertet, eine Bedenkzeit der Zeitart. Seit „Spielen neu“ (Entwurf J3) steht der Bot dann auf
+ * der Karte „Schnell eine Partie“ (Ansicht mit `seite: "vorbelegt"`), der Leser tippt „Spielen“; nichts
  * am Spielstart muss sich dafür ändern, und spätere Pakete (etwa ein Turniermodus) nutzen
  * denselben Einstieg.
  * Abhängigkeiten: speicher/partien.ts (Vorlieben), engine/gegner.ts, spiel/uhr.ts,
@@ -19,6 +20,9 @@ import type { Wertungstempo } from "../../../spiel/elomodell-daten";
 import { UHR_VORGABEN, type Uhreinstellung } from "../../../spiel/uhr";
 import { mitVorlieben, type Spielvorlieben } from "../../../speicher/partien";
 import { aendere } from "../../../speicher/speicher";
+
+/** Wert von `seite` der Ansicht „spielen“: Startseite mit dem vorbelegten Bot als Vorschlag. */
+export const VORBELEGT = "vorbelegt";
 
 /** Was vorbelegt wird: ein Bot und, wenn es darauf ankommt, die Zeitart der Wertung. */
 export interface Vorbelegung {
@@ -72,7 +76,14 @@ export function vorbelegteVorlieben(
  * Beispiel (P8): `const spiele = useSpielvorbelegung(); spiele({ bot: "lotte", tempo: null })`.
  */
 export function useSpielvorbelegung(): (belegung: Vorbelegung) => void {
-  const { navigiere } = useNavigation();
+  const { ansicht, navigiere, ersetze } = useNavigation();
+  // Seit „Spielen neu“ (J3): Die Startseite zeigt den vorbelegten Bot auf „Schnell eine Partie“.
+  // Steht der Leser schon auf der Startseite (Revanche, Rivale), ersetzt sie sich selbst.
+  const aufStartseite =
+    ansicht.bildschirm === "spielen" &&
+    !ansicht.startFen &&
+    (ansicht.seite === undefined || ansicht.seite === VORBELEGT);
+  const oeffne = aufStartseite ? ersetze : navigiere;
   return (belegung) => {
     void aendere((d) => ({
       ...d,
@@ -80,6 +91,6 @@ export function useSpielvorbelegung(): (belegung: Vorbelegung) => void {
         d.spiel,
         vorbelegteVorlieben(d.spiel.vorlieben, belegung, d.spiel.eigeneGegner),
       ),
-    })).then(() => navigiere({ bildschirm: "spielen" }));
+    })).then(() => oeffne({ bildschirm: "spielen", seite: VORBELEGT }));
   };
 }

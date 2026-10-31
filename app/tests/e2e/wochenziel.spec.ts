@@ -6,7 +6,7 @@
  */
 import { readFile } from "node:fs/promises";
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { oeffneReiter, starteImBrowser } from "./hilfen";
 
 /** Donnerstag mittag: Montag 26.10. und Dienstag 27.10. sind Lerntage dieser Woche. */
 const JETZT = "2026-10-29T12:00:00";
@@ -56,32 +56,37 @@ async function spieleProtokollEin(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Wochenziel: Wahl, Ring und Bilanz; ein höheres Ziel nimmt keine erreichte Woche weg", async ({
+test("Wochenziel: Wahl, Tageskette und Bilanz; ein höheres Ziel nimmt keine erreichte Woche weg", async ({
   page,
 }) => {
   await page.clock.setFixedTime(JETZT);
   await starteImBrowser(page);
   // Ohne Lerntag fragt die App noch nicht.
-  await expect(page.getByTestId("wochenkarte")).toHaveCount(0);
+  await expect(page.getByTestId("wochenziel-wahl")).toHaveCount(0);
   await spieleProtokollEin(page);
-  const karte = page.getByTestId("wochenkarte");
-  await expect(karte.getByText("Wie oft willst du pro Woche üben?")).toBeVisible();
+  const karte = page.getByTestId("heute");
+  await expect(
+    karte.getByRole("group", { name: "Wie oft willst du pro Woche üben?" }),
+  ).toBeVisible();
+  // Die Erklärung des Lerntags steht hinter „Wochenziel?“.
+  await karte.getByRole("button", { name: "Wochenziel?" }).click();
+  await expect(karte.getByText("Als Lerntag zählt ein Tag", { exact: false })).toBeVisible();
   await karte.getByRole("button", { name: "3 Tage" }).click();
   await expect(karte.getByTestId("wochenziel-stand")).toHaveText("2 von 3 Tagen");
   await expect(karte.getByRole("listitem", { name: "Dienstag: gelernt" })).toBeVisible();
   await expect(karte.getByRole("listitem", { name: "Mittwoch: noch nicht" })).toBeVisible();
   await expect(karte.getByTestId("wochenziel-bilanz")).toHaveText(
-    "Wochen mit erreichtem Ziel: 2 · Beste Folge: 2 Wochen",
+    "2 Wochen geschafft · beste Folge 2",
   );
   await page.setViewportSize({ width: 400, height: 900 });
-  await karte.screenshot({ path: "test-results/bilder/wochenkarte.png" });
+  await karte.screenshot({ path: "test-results/bilder/heute-wochenziel.png" });
 
   // Ziel mitten in der Woche gesenkt: gilt sofort, die Woche ist erreicht.
   await karte.getByRole("button", { name: "Ziel ändern" }).click();
   await karte.getByRole("button", { name: "2 Tage" }).click();
-  await expect(karte.getByText("Wochenziel geschafft. Schön!")).toBeVisible();
+  await expect(karte.getByText("Wochenziel geschafft!")).toBeVisible();
   await expect(karte.getByTestId("wochenziel-bilanz")).toHaveText(
-    "Wochen mit erreichtem Ziel: 3 · Beste Folge: 3 Wochen",
+    "3 Wochen geschafft · beste Folge 3",
   );
   // Wieder erhöht: Die erreichten Wochen bleiben (nichts verfällt).
   await karte.getByRole("button", { name: "Ziel ändern" }).click();
@@ -89,7 +94,7 @@ test("Wochenziel: Wahl, Ring und Bilanz; ein höheres Ziel nimmt keine erreichte
   await expect(karte.getByTestId("wochenziel-stand")).toHaveText("2 von 5 Tagen");
   await page.reload();
   await expect(karte.getByTestId("wochenziel-bilanz")).toHaveText(
-    "Wochen mit erreichtem Ziel: 3 · Beste Folge: 3 Wochen",
+    "3 Wochen geschafft · beste Folge 3",
   );
 });
 
@@ -97,12 +102,15 @@ test("Wochenziel: „Später“ blendet die Frage für diese Woche aus", async (
   await page.clock.setFixedTime(JETZT);
   await starteImBrowser(page);
   await spieleProtokollEin(page);
-  const karte = page.getByTestId("wochenkarte");
+  const karte = page.getByTestId("heute");
+  await karte.getByRole("button", { name: "Wochenziel?" }).click();
   await karte.getByRole("button", { name: "Später" }).click();
-  await expect(karte).toHaveCount(0);
+  // Die Frage und die Abschnitte der Woche verschwinden; die Vorschläge bleiben.
+  await expect(karte.getByTestId("wochenziel-wahl")).toHaveCount(0);
+  await expect(karte.getByTestId("wochenreiter")).toHaveCount(0);
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
-  await expect(karte).toHaveCount(0);
+  await expect(page.getByTestId("wochenziel-wahl")).toHaveCount(0);
 });
 
 test("Übungsplan: Tage und Uhrzeit wählen, heute ist Übungstag, Kalenderdatei wird angeboten", async ({
@@ -111,8 +119,9 @@ test("Übungsplan: Tage und Uhrzeit wählen, heute ist Übungstag, Kalenderdatei
   await page.clock.setFixedTime(JETZT);
   await starteImBrowser(page);
   await spieleProtokollEin(page);
-  const karte = page.getByTestId("wochenkarte");
+  const karte = page.getByTestId("heute");
   await karte.getByRole("button", { name: "3 Tage" }).click();
+  await oeffneReiter(page, "uebungsplan");
   await karte.getByRole("button", { name: "Übungszeit planen" }).click();
   const wahl = karte.getByTestId("planwahl");
   await expect(wahl.getByRole("button", { name: "Plan speichern" })).toBeDisabled();

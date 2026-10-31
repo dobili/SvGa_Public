@@ -56,29 +56,38 @@ function useVerdient(): Stueck[] | null {
 }
 
 /**
+ * Die Entscheidung dieses Seitenaufrufs. Warum hier und nicht nur im Zustand der Komponente:
+ * planeStart merkt die verdienten Stücke sofort als bekannt. Baute sich die Startanimation beim
+ * Laden ein zweites Mal auf (langsames Gerät, WebKit), entschied sie neu, und der eben neue Orden
+ * erschien nur noch als „Stück des Tages“ (Wackler in ordenkunst.spec.ts, 31.10.2026).
+ */
+let entscheidungDiesesAufrufs: Startplan | null = null;
+
+/** Merkt und setzt den Plan; nur für den ersten Aufruf je Seite wird neu entschieden. */
+function entscheideEinmal(verdient: readonly Stueck[] | null): Startplan {
+  if (entscheidungDiesesAufrufs) return entscheidungDiesesAufrufs;
+  if (!verdient) return { art: "nichts" };
+  const { plan, bekanntNeu } = planeStart(liesBekannt(), verdient, zufallDesTages(new Date()));
+  merkeBekannt(bekanntNeu);
+  entscheidungDiesesAufrufs = plan;
+  return plan;
+}
+
+/**
  * `aktiv`: Die Startanimation läuft beim App-Start (nicht bei der kurzen Rückkehr aus dem
  * Hintergrund). Ausgabe: Gesamtdauer in ms (null: wie bisher, 2,5 s) und die Ebene.
  * Beispiel: seit dem letzten Start „Erster Sieg“ verdient → dauerMs 4600, Ebene mit dem Pokal.
  */
 export function useStartorden(aktiv: boolean): { dauerMs: number | null; inhalt: ReactNode } {
   const verdient = useVerdient();
-  const [plan, setzePlan] = useState<Startplan | null>(null);
+  const [plan, setzePlan] = useState<Startplan | null>(() => entscheidungDiesesAufrufs);
   const [beginn] = useState(() => Date.now());
   const bereit = verdient !== null;
   useEffect(() => {
     if (!aktiv || plan) return;
     // Entscheidung im nächsten Schritt der Ereignisschleife: setState nur aus einem Rückruf.
     const warte = setTimeout(
-      () => {
-        if (!verdient) return setzePlan({ art: "nichts" });
-        const { plan: neu, bekanntNeu } = planeStart(
-          liesBekannt(),
-          verdient,
-          zufallDesTages(new Date()),
-        );
-        merkeBekannt(bekanntNeu);
-        setzePlan(neu);
-      },
+      () => setzePlan(entscheideEinmal(verdient)),
       bereit ? 0 : LOGO_STEHT_MS,
     );
     return () => clearTimeout(warte);

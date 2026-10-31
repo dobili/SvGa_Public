@@ -15,6 +15,7 @@ import { useSpeicher } from "../../../speicher/speicher";
 import { heuteGeplant, ICS_DATEI, ICS_TYP, kalenderdatei } from "../../../training/uebungsplan";
 import { bieteDateiAn, kannDateiTeilen, teileDatei } from "../bausteine/dateiAnbieten";
 import { Planwahl } from "./Planwahl";
+import { Reiterwort } from "./Reiterstand";
 
 /** Die Kalenderdatei zum Plan in der Sprache der Oberfläche. */
 function datei(plan: Uebungsplan): string {
@@ -110,5 +111,16 @@ export function Planabschnitt() {
       {plan.satz && <p className="hinweis">{plan.satz}</p>}
       <Kalenderknoepfe plan={plan} />
     </div>
+  );
+}
+
+/** Stand im Reiter der Karte „Heute“: „heute“ an einem Übungstag, sonst die Uhrzeit; ohne Plan nichts. */
+export function PlanStand() {
+  const plan = useSpeicher((z) => z.daten.uebungsplan);
+  if (plan === null) return null;
+  return heuteGeplant(plan, new Date()) ? (
+    <Reiterwort text={t("buchlook.planHeute")} betont />
+  ) : (
+    <Reiterwort text={plan.uhrzeit} />
   );
 }

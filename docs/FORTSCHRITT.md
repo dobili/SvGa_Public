@@ -1,4 +1,8 @@
-Stand: 31.10.2026 · **Version 0.3.36**: Steckbriefe als Eröffnungsbaum (H2), Glossar als Lexikonseite (I3), N2290–N2299. Offen aus dem Bericht: untere Leiste bei 360 px 10 px zu breit (prüfen).
+Stand: 31.10.2026 · **Version 0.3.38** (nur Arbeitszweig, nicht auf main, bis Cloudflare wieder baut, Q9-1): Buchseite „Heute“ und Lernpfad „Fünf Landschaften“ (N2250–N2259), Auswertung „Zeitleiste der Partie“ mit Originalgrafik der Zugarten und Zoom (N2320–N2329), Spielen „Schnell eine Partie“ mit Unterseiten (N2330–N2339; Unterseite übersteht Neuladen). Offen: Bericht Einstellungen (K2); danach Maia-Worker und Multicore.
+
+Stand: 31.10.2026 · **Version 0.3.37**: Trainer-Startseiten neu (G1, Startkarte mit Beispielbrett, N2280–N2289); Startanimation entscheidet je Seitenaufruf nur einmal über den neuen Orden (Ursache des WebKit-Wacklers in ordenkunst.spec.ts, CI auf main für 0.3.32 deshalb rot).
+
+Stand: 31.10.2026 · **Version 0.3.36**: Steckbriefe als Eröffnungsbaum (H2), Glossar als Lexikonseite (I3), N2290–N2299. Befund „untere Leiste 10 px zu breit“ nachgemessen: Leiste und Seite bei 360 px genau 360 px breit (Chromium), nicht nachvollziehbar.
 
 Stand: 31.10.2026 · **Version 0.3.35**: Bot rechnet erst nach der Zuganimation (Befund des Autors, N2315). **Danach (Wunsch des Autors):** Maia in einen eigenen Worker; allgemein prüfen, welche Rechnungen auf weitere Kerne gehören (Multicore). Vorher übrige Berichte übernehmen (Buchseite/Lernpfad, Nachschlagen, Trainerstart, Einstellungen, Auswertung, Spielen).
 

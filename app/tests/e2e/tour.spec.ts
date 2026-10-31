@@ -6,6 +6,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneSpielseite, spieleVorschlag, ungewertet, zurueckZuSpielen } from "./spielenhilfen";
 
 /** Die Karte der laufenden Tour. */
 function tourkarte(page: Page) {
@@ -116,12 +117,12 @@ test("Tastatur: Pfeiltasten blättern, Tab bleibt in der Karte, Esc beendet; axe
   await starteImBrowser(page);
   await starteTour(page);
   const karte = tourkarte(page);
-  // Buch beim ersten Start: Nummernfeld, Kapitel, Rundgang (ohne „Zuletzt“, das fehlt noch).
-  await expect(karte.getByText("Schritt 1 von 3")).toBeVisible();
+  // Buch beim ersten Start: Nummernfeld, Karte „Heute“, Kapitel, Rundgang.
+  await expect(karte.getByText("Schritt 1 von 4")).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(karte.getByText("Schritt 2 von 3")).toBeVisible();
+  await expect(karte.getByText("Schritt 2 von 4")).toBeVisible();
   await page.keyboard.press("ArrowLeft");
-  await expect(karte.getByText("Schritt 1 von 3")).toBeVisible();
+  await expect(karte.getByText("Schritt 1 von 4")).toBeVisible();
   for (let i = 0; i < 4; i += 1) await page.keyboard.press("Tab");
   expect(await karte.evaluate((k) => k.contains(document.activeElement))).toBe(true);
   const ergebnis = await new AxeBuilder({ page }).include("[data-testid='tour']").analyze();
@@ -201,11 +202,17 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await bereich(page, "Spielen");
   await starteTour(page);
   const spielen = await bisZumEnde(page);
-  expect(spielen.join(" ")).toContain("Art des Gegners");
-  expect(spielen.join(" ")).toContain("Gegen wen du spielst");
-  expect(spielen.join(" ")).toContain("„Beginnen“ startet die Partie");
-  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  // Seit „Spielen neu“ (J3): Startseite mit Vorschlag, Kacheln; die Leiste auf den Unterseiten.
+  expect(spielen.join(" ")).toContain("Schnell eine Partie");
+  expect(spielen.join(" ")).toContain("Weitere Wege zu einer Partie");
+  await oeffneSpielseite(page, "gegner");
+  await starteTour(page);
+  const gegner = await bisZumEnde(page);
+  expect(gegner.join(" ")).toContain("Die Gegner nach Stufen");
+  expect(gegner.join(" ")).toContain("„Spielen“ startet die Partie");
+  await zurueckZuSpielen(page);
+  await ungewertet(page);
+  await spieleVorschlag(page);
   await starteTour(page);
   const waehrend = await bisZumEnde(page);
   expect(waehrend.join(" ")).toContain("Die Züge der Partie");
@@ -216,7 +223,7 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await expect(page.getByTestId("partieende")).toBeVisible();
   await starteTour(page);
   const danach = await bisZumEnde(page);
-  expect(danach.join(" ")).toContain("Das Ergebnis.");
+  expect(danach.join(" ")).toContain("Das Ergebnis der Partie");
   // Nach dem Ende stimmt „Wer am Zug ist …“ nicht mehr; der Schritt fällt weg.
   expect(danach.join(" ")).not.toContain("Wer am Zug ist");
 });
@@ -225,18 +232,20 @@ test("Trainer: Beschreibung auf der Auswahl sichtbar, ohne Auswahl der Schritt i
   page,
 }) => {
   await starteImBrowser(page);
-  // Taktik hat eine Auswahl: Die Beschreibung steht darüber, die Tour zeigt auf sie.
+  // Seit der Startkarte (Entwurf G1, 31.10.2026) beginnt jeder Trainer mit Beispielbrett und
+  // Satz; die Beschreibung steht zugeklappt unter „So funktioniert dieser Trainer“.
   await oeffneTrainer(page, "taktik");
   await expect(page.getByTestId("taktik-wahl")).toBeVisible();
+  await expect(page.locator(".startkopf")).toBeVisible();
+  await expect(page.locator(".trainer-ablauf")).toBeHidden();
+  await page.getByText("So funktioniert dieser Trainer").click();
   await expect(page.locator(".trainer-ablauf")).toBeVisible();
   await starteTour(page);
   await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
   await page.keyboard.press("Escape");
-  // Die Zielbilanz beginnt gleich mit der Runde: Beschreibung aus, der erste Schritt in der Mitte
-  // (Röntgen hat seit dem Nebenchat, 30.10.2026, eine Stufenwahl).
+  // Auch die Zielbilanz (früher gleich mit der Runde) hat jetzt die Startkarte.
   await oeffneTrainer(page, "zielbilanz");
-  await expect(page.locator(".trainer-ablauf")).toBeHidden();
+  await expect(page.locator(".startkopf")).toBeVisible();
   await starteTour(page);
-  await expect(tourkarte(page)).toContainText("das Fragezeichen an seiner Karte");
-  await expect(page.locator(".tour-karte-mitte")).toBeVisible();
+  await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
 });

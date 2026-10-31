@@ -12,12 +12,14 @@ import { ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import type { Repertoireaufgabe as Aufgabe } from "../../training/repertoiretrainer";
 import { partienAus, studienAus, type Ratepartie } from "../../training/studientrainer";
-import type { Partiequelle } from "../../training/zusatzpartien";
+import { PARTIEQUELLEN, type Partiequelle } from "../../training/zusatzpartien";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
 import { Partiewahl } from "./Zugerratenwahl";
+import { Startkarte } from "./startkarte/Startkarte";
+import { useGemerkt } from "./startkarte/useGemerkt";
 
 const KAPITEL_STUDIEN = 10;
 const KAPITEL_PARTIEN = 11;
@@ -58,8 +60,21 @@ function Pruefungen() {
   );
 }
 
+/** Startkarte, dann alle Studien des Kapitels nacheinander; die vier Prüfungen stehen darüber. */
 function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
+  const [laeuft, setzeLaeuft] = useState(false);
   const [durchlauf, setzeDurchlauf] = useState(0);
+  if (!laeuft)
+    return (
+      <Startkarte
+        kennung="studien"
+        testkennung="studien-wahl"
+        start={{
+          zusatz: t("trainerstart.stellungen", { anzahl: studien.length }),
+          starte: () => setzeLaeuft(true),
+        }}
+      />
+    );
   return (
     <>
       <Pruefungen />
@@ -80,7 +95,7 @@ function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
           ))
         }
         nochmal={() => setzeDurchlauf(durchlauf + 1)}
-        zurAuswahl={null}
+        zurAuswahl={() => setzeLaeuft(false)}
       />
     </>
   );
@@ -97,7 +112,12 @@ export function StudienBereich() {
 }
 
 function Zugerraten({ kapitel }: { kapitel: Parameters<typeof partienAus>[0] }) {
-  const [quelle, setzeQuelle] = useState<Partiequelle>("buch");
+  const [quelle, setzeQuelle] = useGemerkt<Partiequelle>(
+    "zugErraten",
+    "quelle",
+    PARTIEQUELLEN,
+    "buch",
+  );
   const [partie, setzePartie] = useState<Ratepartie | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
   if (!partie)

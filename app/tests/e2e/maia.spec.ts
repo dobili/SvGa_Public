@@ -5,6 +5,7 @@
  */
 import { expect, test } from "@playwright/test";
 import { oeffneEinstellungsseite, starteImBrowser } from "./hilfen";
+import { oeffneSpielen, oeffneSpielseite, startknopf } from "./spielenhilfen";
 
 const LADEZEIT = 180_000;
 
@@ -46,14 +47,15 @@ test("mit Maia: der Bot antwortet im Mittelspiel, die Laufzeit läuft unter der 
   await expect(page.getByTestId("maia-wahl").getByRole("radio", { name: "an" })).toBeChecked({
     timeout: LADEZEIT,
   });
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await oeffneSpielen(page);
+  await oeffneSpielseite(page, "frei");
   await page.getByText("Eigene Stellung eingeben (FEN)").click();
   // Halbzug 28: Maia rechnet erst ab Halbzug 10 (Training ohne Eröffnung).
   await page
     .getByLabel("Stellung als FEN")
     .fill("r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 15");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await startknopf(page).click();
   await page.getByRole("button", { name: /^h2, Bauer/ }).click();
   await page.getByRole("button", { name: "h3", exact: true }).click();
   await expect(page.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {

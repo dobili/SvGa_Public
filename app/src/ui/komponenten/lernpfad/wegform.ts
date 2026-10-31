@@ -15,6 +15,8 @@ export const BREITE = 360;
 /** Senkrechter Abstand zweier Knoten und Rand oben und unten. */
 const ABSTAND = 84;
 const RAND = 56;
+/** Platz über der ersten Station einer Etappe für ihren Namen („Teil 1 · Grundlagen“, B1). */
+export const KOPF = 64;
 /** Wie weit der Weg nach links und rechts schwingt, und wie schnell (Bogenmaß je Knoten). */
 const AUSSCHLAG = 92;
 const WELLE = 0.9;
@@ -30,23 +32,53 @@ export type Knoten =
       readonly y: number;
     };
 
-/** Lage des i-ten Knotens. Beispiel: i = 0 → Mitte oben. */
-function lage(i: number): { x: number; y: number } {
-  return { x: BREITE / 2 + AUSSCHLAG * Math.sin(i * WELLE), y: RAND + i * ABSTAND };
+/** Lage des i-ten Knotens in der e-ten Etappe. Beispiel: i = 0, e = 0 → Mitte, unter dem Kopf. */
+function lage(i: number, etappe: number): { x: number; y: number } {
+  return {
+    x: BREITE / 2 + AUSSCHLAG * Math.sin(i * WELLE),
+    y: RAND + i * ABSTAND + (etappe + 1) * KOPF,
+  };
 }
 
 /** Alle Knoten des Weges von oben nach unten: je Etappe ihre Stationen, dann ihr Orden. */
 export function knoten(liste: readonly Etappe[]): Knoten[] {
-  const ohneLage = liste.flatMap((etappe) => [
-    ...etappe.stationen.map((station) => ({ art: "station" as const, station })),
-    { art: "orden" as const, teil: etappe.teil, verdient: etappe.ordenVerdient },
+  const ohneLage = liste.flatMap((etappe, e) => [
+    ...etappe.stationen.map((station) => ({ art: "station" as const, station, e })),
+    { art: "orden" as const, teil: etappe.teil, verdient: etappe.ordenVerdient, e },
   ]);
-  return ohneLage.map((k, i) => ({ ...k, ...lage(i) }));
+  return ohneLage.map(({ e, ...k }, i) => ({ ...k, ...lage(i, e) }));
 }
 
-/** Höhe des Koordinatensystems für so viele Knoten. */
-export function hoehe(anzahl: number): number {
-  return RAND * 2 + Math.max(0, anzahl - 1) * ABSTAND;
+/** Höhe des Koordinatensystems für so viele Knoten und Etappen (je Etappe ein Kopf). */
+export function hoehe(anzahl: number, etappen = 0): number {
+  return RAND * 2 + Math.max(0, anzahl - 1) * ABSTAND + etappen * KOPF;
+}
+
+/** Ein Band der Landschaft: der Bereich einer Etappe von oben (y0) bis unten (y1). */
+export interface Band {
+  readonly teil: Buchteil;
+  readonly y0: number;
+  readonly y1: number;
+}
+
+/**
+ * Die Bänder der Etappen, lückenlos von 0 bis zur Höhe: Jedes beginnt einen halben Abstand und
+ * einen Kopf über seiner ersten Station und endet einen halben Abstand unter seinem Orden.
+ * Beispiel: zwei Etappen → [{ y0: 0, … }, { y0: Ende des ersten, y1: Höhe }].
+ */
+export function baender(alle: readonly Knoten[], flaechenhoehe: number): Band[] {
+  const teile = [...new Set(alle.map(teilVon))];
+  return teile.map((teil, e) => {
+    const eigene = alle.filter((k) => teilVon(k) === teil);
+    const oben = (eigene[0]?.y ?? 0) - KOPF - ABSTAND / 2;
+    const unten = (eigene.at(-1)?.y ?? 0) + ABSTAND / 2;
+    return { teil, y0: e === 0 ? 0 : oben, y1: e === teile.length - 1 ? flaechenhoehe : unten };
+  });
+}
+
+/** Der Teil des Buches, zu dem ein Knoten gehört. */
+function teilVon(k: Knoten): Buchteil {
+  return k.art === "station" ? k.station.teil : k.teil;
 }
 
 /**

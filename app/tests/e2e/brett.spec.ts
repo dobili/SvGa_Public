@@ -4,11 +4,12 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
+import { oeffneSpielen, spieleFenGegenStufe, spieleVorschlag } from "./spielenhilfen";
 
 async function beginnePartie(seite: Page): Promise<void> {
-  await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await seite.getByRole("button", { name: "Partie beginnen" }).click();
-  await expect(seite.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
+  await oeffneSpielen(seite);
+  await spieleVorschlag(seite);
+  await expect(seite.getByTestId("partie")).toBeVisible();
 }
 
 /** Merkt sich auf der Seite jeden Zug, dessen Figur über das Brett glitt („e2e4“). */
@@ -84,18 +85,14 @@ test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByText("Eigene Stellung eingeben (FEN)").click();
-  await page
-    .getByLabel("Stellung als FEN")
-    .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
-  await page.getByRole("button", { name: "Stellung übernehmen" }).click();
+  await oeffneSpielen(page);
   // Stufe 10 (volle Engine, ohne menschliche Fehler) findet das Matt Dh4# immer; Stufe 8 spielt
   // seit 0.2.126 mit menschlichen Fehlern und übersah es selten (Testlauf 25.10.2026).
-  for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
-    await page.getByLabel(new RegExp(`^${phase}:`)).fill("10");
-  }
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await spieleFenGegenStufe(
+    page,
+    "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+    10,
+  );
   await page.getByRole("button", { name: /^g2, Bauer/ }).click();
   await page.getByRole("button", { name: "g4", exact: true }).click();
   const blende = page.getByTestId("ergebnisblende");

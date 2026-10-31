@@ -31,6 +31,143 @@ Zielgruppe sind Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. G
   (Gruppentitel, „an/aus“ der Merker, alte Tourtexte) gelöscht; neue Texte mit der Vorsilbe
   `einstellungenneu.` in beiden Sprachen. Speicherformat unverändert.
 - Testpunkte N2300 bis N2309.
+## 31.10.2026 – Spielen neu: Entwurf J3 „Schnell eine Partie“ (Arbeitschat, Zweig `gestaltung-spielen`)
+
+Ziel des Autors: „Spielen“ war zu technisch, zu textlastig und wirkte wie ein Formular; Zielgruppe
+Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. Gewählt: J3. Ergänzung des
+Autors (14:11): Stärke, Stil, Fehler und Flecken bleiben im alten Design; vorhandene Symbole
+weiter nutzen.
+
+- **Startseite** (`bildschirme/Spielen.tsx`): Partie läuft (`spielstart/LaufendeKarte.tsx`, kleines
+  SVG-Brett), „Schnell eine Partie“ (`Vorschlagskarte.tsx`), Rivalenkarte (unverändert), „Deine
+  Spielstärke“ (unverändert `fortschritt/LetzteSpielstaerke.tsx`: die Profilkacheln aus
+  `wertung/` zeigen die Wertung ohne Spanne und sind Auswahlknöpfe; die Karte unter Spielen braucht
+  Spanne, Maßstab und Hilfe), vier Kacheln, „Zuletzt gespielt“ (`ZuletztGespielt.tsx`). Die feste
+  Startleiste entfällt auf der Startseite.
+- **Vorschlag als reine Regel** (`spielstart/vorschlag.ts`, Tests): Quellen als Liste
+  `VORSCHLAGSQUELLEN` (zuerst „vorbelegt“, dann „passend“); passend heißt nächstliegend an der
+  Wertung des Lesers in der Zeitklasse (wie im Profil, mit Schätzung für Klassen ohne eigene
+  Partie), noch nicht besiegte zuerst, Suchspanne ±250, „etwa so stark“ bis ±100; ohne Wertung
+  Stufe 1 bis 2, schwächster zuerst. Neue Quellen (Rivale, Ziele) sind eine Zeile mehr.
+- **Unterseiten als Liste** (`spielstart/spielseiten.tsx`, `SPIELSEITEN`): Gegner aussuchen, Eigene
+  Stufe, Eigene Bots, Freie Partie; je eine eigene Ansicht über das Feld `seite` der Ansicht
+  „spielen“ (`app/stapel.ts`, eine Zeile; `app/App.tsx` reicht es weiter). Jede Unterseite hat
+  die feste Startleiste mit „Spielen“; ein Tipp auf die Leiste öffnet das Blatt.
+- **Blatt „Partie einstellen“** (`spielstart/Blatt.tsx`, natives modales `<dialog>`;
+  `PartieEinstellen.tsx`): Farbe, alle sieben Zeiten (plus „Ohne Uhr“ aus eigener Stellung),
+  Gewertet mit Hinweis, Spielhilfen, „Eröffnung ›“ im selben Blatt.
+- **Vorbelegung** (`spielstart/vorbelegung.ts`): öffnet die Startseite mit `seite: "vorbelegt"`;
+  der vorbelegte Bot steht dann auf „Schnell eine Partie“. Auf der Startseite ersetzt sie die
+  Ansicht, statt eine zweite zu stapeln.
+- **Gestrichen:** `gegner/GegnerWahl.tsx` und `gegner/gegnerkategorie.ts` (Schalter Engine/Mensch
+  und drei Kategorie-Kacheln; ersetzt durch Kacheln und Seiten), die Karte „Laufende Partie“ in
+  `partienliste/Partienliste.tsx`, zwölf nicht mehr genutzte Textschlüssel. Die Sprechblase lebt
+  in `spielstart/Sprechblase.tsx` weiter, neu mit Stil und „So stellt er sich vor“.
+- **Abweichungen vom Entwurf:** Eröffnungswahl als bisherige Auswahlliste statt Chips (Ergänzung
+  des Autors: vorhandene Bausteine); Kacheln ohne neue Symbole (Schieberegler, Stift am Menschen,
+  zwei Menschen wie in der alten Gegnerwahl); Ergebnis in „Zuletzt gespielt“ mit der vorhandenen
+  Ergebnismarke (Pokal, Händedruck, Kreuz mit „1–0“) statt „Sieg“/„Niederlage“ als Wort;
+  „Zuletzt gespielt“ nur für Partien gegen Bots, die es noch gibt (sonst keine Revanche möglich).
+- Speicherformat unverändert; nach dem Neuladen auf einer Unterseite zeigt die App die
+  Startseite, weil `app/stapelMerker.ts` (gesperrt) das Feld `seite` noch nicht liest.
+
+## 31.10.2026 – Auswertung neu: Entwurf F2 „Zeitleiste der Partie“ (Arbeitschat, Zweig `gestaltung-auswertung`)
+
+Ziel des Autors: Die Auswertung war zu technisch, zu textlastig und wirkte wie ein Formular;
+Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. Gewählt: F2.
+
+- **Ergebnis oben** (`partie/Ergebniskopf.tsx`, ersetzt `Partieende.tsx`): Porträt, „Gewonnen“/
+  „Verloren“/„Remis“, wie und in welchem Zug, rechts die Genauigkeit des Lesers. Testkennung
+  `partieende` und Tourziel `partie-ende` bleiben.
+- **Zeitleiste** (`auswertung/Zeitleiste.tsx`): Phasen mit Zugbereich und Genauigkeit der
+  gewählten Seite, Momente als Karten mit Marke, kleinem Brett (vorhandenes statisches `Brett`) und
+  „Zur Stellung“. Die Momente rechnet `auswertung/momente.ts` (Liste `MOMENTQUELLEN`: Theorie,
+  erste Abweichung, Fehler, Fehler der Engine, Ende), die Darstellung `momentdarstellung.ts`
+  (`MOMENTDARSTELLUNG`); eine neue Art ist je ein Eintrag. Die Listen „Fehler und Patzer“ und
+  „Absichtliche Fehler der Engine“ entfallen als eigene Listen. Neu bei den Fehlern der Engine:
+  „Du hast es gesehen und genutzt“ (Antwort war brillant, stark oder bester Zug), „Die Chance hast
+  du nicht genutzt“ (verpasst), sonst „Hast du es gesehen?“ (Pflichtenheft 5.2).
+- **Verlaufskurve** unverändert in der Bedienung (Ganze Partie/Phasen, Fingerfahren, zwei Finger
+  zoomen, Tipp springt; Wunsch des Autors vom 31.10.2026), nur im neuen Rahmen.
+- **Eine Seitenwahl** für Zeitleiste und „In Zahlen“, zweimal gezeigt (oben „Momente von“, unten
+  „Seite“), beide gleich gestellt. Fehler der Engine erscheinen unabhängig von der Seite.
+- **In Zahlen** (`auswertung/Zahlen.tsx`, Liste `ZAHLENABSCHNITTE`): Spielstärke und „Deine Züge“.
+  „Deine Züge“ behält ausdrücklich die Originalgrafik (`Zugklassen.tsx`), nur Rundungen,
+  Überschrift und Abstände im neuen Stil; die Tabelle des Entwurfs ist nicht übernommen. Die
+  Kennzahlen rechnet `seitenzahlen.ts` einmal für Kopfzeile, Zeitleiste und Zahlen.
+- **Abschluss** (`partie/Partieabschluss.tsx`): „Neue Partie“, „Teilen“ (Blatt mit PGN kopieren
+  und als Datei sichern, `PgnTeilen.tsx`), bei eigener Stellung „Noch einmal aus derselben
+  Stellung“; auch in der ruhigen Ansicht.
+- **Blatt** (`auswertung/Blatt.tsx`): Dialog von unten mit Titel, Kreuz, Escape und Tipp daneben;
+  genutzt für „Teilen“ und „Merken“ (`rueckblick/Rueckblickkarte.tsx`).
+- Abweichungen vom Entwurf: Die Genauigkeit des Ergebnisses steht erst nach der Auswertung; die
+  Eröffnungskarte zeigt Theoriezüge der gewählten Seite, aber keine „Eröffnungsziele“ (dafür gibt
+  es keine Daten); Theoriezüge, Ende und „Gut gespielt!“ ohne kleines Brett; Zeichen der Kurve
+  bleiben rot (die Kurve kennt nur „Fehler“). Testpunkte N2320 bis N2329.
+
+## 31.10.2026 – Buchseite und Lernpfad neu (Arbeitschat, Zweig `gestaltung-buch-lernpfad`)
+
+Ziel des Autors: Die Buchseite und der Lernpfad waren zu technisch, zu textlastig und wirkten wie
+ein Formular. Gewählt: A2 „Heute“ und B1 „Fünf Landschaften“. Testpunkte N2250 bis N2259.
+
+- **Karte „Heute“** (`ui/komponenten/start/Heutekarte.tsx`) ersetzt „Dein nächster Schritt“ und
+  „Deine Woche“: ein Eintrag in `STARTKARTEN` (Rang 10, sichtbar, wenn eine der beiden früheren
+  Karten sichtbar wäre). So bleibt Platz für Rückblick (15) und Rivale (30). Rechnung unverändert
+  (Vorschläge, Wochenziel, Abschnitte); Speicherformat unverändert.
+- **Kacheln je Vorschlagsart** in `KACHELARTEN` (`vorschlagskacheln.ts`): Symbol, Titel, Kurzzeile;
+  ohne Eintrag Knopftext und ganzer Satz. Der ganze Satz bleibt Name für Vorlesehilfen.
+- **Abschnitte der Woche als Reiter** statt drei Zeilen: `WOCHENABSCHNITTE` hat je Eintrag
+  `titel` und `Stand`. Abweichung vom Entwurf: nebeneinander, weil drei Zeilen die Kapitel unter
+  die Bildschirmmitte schoben. Alle Abschnitte bleiben gerendert (verborgen), weil Aufträge und
+  Ziele beim Anzeigen etwas festhalten.
+- **Kapitel in der oberen Hälfte** (Prüfung auf 360 × 800 in `buchlook.spec.ts`): Nummernfeld
+  neben dem Titel (Beschriftung nur für Vorlesehilfen), Lernpfad als Symbol neben der Tour,
+  Kürzel der Tage im Kreis statt darunter, „Nicht jetzt“ als kleines Kreuz, „Zuletzt: Abb. …“
+  erscheint nach einem Tipp ins Nummernfeld (Wunsch des Autors: nichts Sinnvolles fällt weg; der
+  Tourschritt dazu zeigt jetzt die Karte „Heute“).
+  Mit zweiter Startkarte rutschen die Kapitel tiefer.
+- **Lernpfad mit fünf Landschaften:** selbst gezeichnete SVG-Bänder je Buchteil, Liste
+  `LANDSCHAFTEN` (ein späterer Teil = eine Zeile), Bänder aus `wegform.ts` (`baender`, `KOPF`).
+  Farben `--land-*` je hell und dunkel (`lernpfad-land.css`); hell als Tagfassung. Alle Schriften
+  auf leicht deckendem Grund (Kontrast auf jedem Band). Stationen fertig, aktuell („Du bist
+  hier“, Schein nur ohne „Bewegung reduzieren“), angefangen, offen; Orden mit Stand daneben.
+  Der Einleitungssatz steht leise unter dem Weg; der Satz oben steht mit dem Ring der aktuellen
+  Station.
+- Texte neu unter `buchlook.*` (de und en); gelöscht: `naechster.titel`, `naechster.andere`,
+  `woche.titel`, `woche.erreicht`, `woche.nochEinTag`, `woche.wochenErreicht`,
+  `woche.besteFolge`, `auftrag.titel`, `ziel.titel`, `tour.buch.zuletzt` (ihre Inhalte stehen
+  in neuer, kürzerer Form unter `buchlook.*`).
+
+## 31.10.2026 – Trainer-Startseiten neu: Startkarte G1 (Arbeitschat, Zweig `gestaltung-trainerstart`)
+
+Ziel des Autors: Die Startseiten der Trainer waren zu technisch, zu textlastig und wirkten wie ein
+Formular (Text, Formular, wieder Text). Gewählt: Entwurf G1 „Startkarte“.
+
+- **Ein Baustein für alle** (`ui/trainer/startkarte/`): `Startkarte.tsx` zeichnet Beispielbrett
+  mit Satz, „Deine Runde“ als Zeilen (`Einstellzeile.tsx`), den großen Startknopf, weitere Modi
+  und „So funktioniert dieser Trainer“ (die frühere Beschreibung und weitere Erklärungen). Die
+  Bereiche liefern nur Listen (`einstellung.ts`: `Einstellung`, `Startmodus`, `Startknopf`);
+  Beispielstellungen je Trainer stehen in `TRAINERSTARTS` (`trainerstarts.ts`), Texte unter
+  `trainerstart.<kennung>.satz/.kurz`. Ein neuer Trainer trägt dort eine Zeile ein.
+- **Zeilen statt Formular:** Kurze Wahlen (bis sechs Werte: Stufe, Seite, Quelle) klappen als
+  Chips unter der Zeile auf, mit der Erklärung der Werte; lange Wahlen (Motive, Eröffnungen,
+  Partien) öffnen die Auswahlliste des Systems (Wunsch vom 19.10.2026 bleibt erfüllt).
+- **Zuletzt gewählte Werte** stehen je Trainer als Merker `trainerstart.<kennung>` auf dem Gerät
+  (Bequemlichkeit, darf verloren gehen); das Speicherformat der Nutzerdaten bleibt unverändert.
+  Ein mitgegebenes Thema (etwa aus „Dein nächster Schritt“) geht dem gemerkten Wert vor.
+- **Nichts fällt weg:** Quelle Buch/Lichess mit Kennung der Zusatzaufgaben, alle Stufen, Serie
+  ohne Fehler (nur mit Buchaufgaben, mit Rekord), Wiederholen, Kurzübungen, Hängende Figuren,
+  Übungsarten, LAP-Wiederholung, Eröffnung/Seite/Kapitel, Quelle/Partie/Seite bei „Zug
+  erraten“, die vier Angebote der Kurzpläne. Zähltrainer: Der große Knopf startet „Bilanz
+  zählen“ (die Stufe gilt nur dafür), „Hängende Figuren finden“ ist der zweite Modus.
+- **Abweichungen vom Entwurf:** Die Beispielbretter sind selbst gebaute Stellungen der App, keine
+  Abbildungen des Buches (ein Test prüft jede FEN). Trainer mit einer einzigen Übung (Zielbilanz,
+  Faktorenbilanz, Denkroutine, Studien) zeigen jetzt auch die Startkarte statt sofort die Runde
+  (ein Tipp mehr, dafür dieselbe Form). 30-Minuten-Plan und Fehlerdatenbank haben keine Runde und
+  bleiben wie sie sind. Stufen heißen in den Zeilen „Stufe 1“ bis „Stufe 5“ statt nur der Zahl.
+- Entfernt: `Stufenwahl.tsx`, `Wiederholungsknopf.tsx`, `ZusatzWahl.tsx`, `Auswahlliste.tsx` und
+  ihre nicht mehr genutzten Texte.
+
 ## 31.10.2026 – Steckbriefe und Glossar neu (Arbeitschat, Zweig `gestaltung-nachschlagen`)
 
 Ziel des Autors: Nachschlagen war zu technisch und textlastig und wirkte wie ein Formular.

@@ -62,7 +62,10 @@ export function MerkenSchalter({
 /** Der vorgeschlagene Satz für die Fehlerdatenbank: Zug, Erklärung, besserer Zug. */
 function satzvorschlag(zug: string, erklaerung: Zugerklaerung | null, bester: string): string {
   const teile = [
-    erklaerung ? t("merken.satzErklaerung", { zug, text: erklaerung.text }) : zug,
+    // Endet die Erklärung schon mit einem Punkt, bleibt es bei einem („… (W1). Besser war …“).
+    erklaerung
+      ? t("merken.satzErklaerung", { zug, text: erklaerung.text }).replace(/\.\.$/, ".")
+      : zug,
     bester ? t("merken.satzBesser", { bester }) : "",
   ];
   return teile.filter(Boolean).join(" ");

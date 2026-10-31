@@ -7,6 +7,7 @@
  * Meldung am Rundenende. Lücken verraten keinen Inhalt, nur dass es noch mehr gibt.
  * Abhängigkeiten: training/fundstuecke.ts, Fundstueckkarte, Kopfzeile, speicher, i18n.
  */
+import { useEffect } from "react";
 import { t } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
 import { FUNDSTUECKE } from "../../../training/fundstuecke";
@@ -16,6 +17,9 @@ import { Fundstueckkarte } from "./Fundstueckkarte";
 
 /** Das Album; den Wert der Ansicht braucht es nicht. */
 export function Fundstueckalbum() {
+  // Das Album beginnt oben, nicht in der Höhe, in der man im Profil stand (Befund der
+  // Vorprüfung N2166, 31.10.2026).
+  useEffect(() => window.scrollTo({ top: 0 }), []);
   const gefunden = useSpeicher((z) => z.daten.fundstuecke);
   const schon = new Set(gefunden);
   return (

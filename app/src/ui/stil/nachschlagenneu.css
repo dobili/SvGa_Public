@@ -133,7 +133,9 @@
   font-weight: 600;
   line-height: 1.2;
   hyphens: auto;
-  overflow-wrap: anywhere;
+  /* Nur ein Wort, das allein nicht in die Zeile passt, wird gebrochen; sonst trennt die
+     Silbentrennung („Zweispringe|rspiel“ ohne Strich war ein Befund der Vorprüfung N2292). */
+  overflow-wrap: break-word;
 }
 
 .baum-blatt-text small {

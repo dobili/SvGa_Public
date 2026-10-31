@@ -26,7 +26,7 @@ import { MERKER_FEIEREFFEKTE } from "../../../app/feiereffekte";
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { setzeSymbol, useTourMerker } from "../../../tour/tourMerker";
-import { starteTour } from "../../../tour/tourStand";
+import { oeffneStartwahl } from "../../../tour/tourStand";
 import { MERKER_WISCHEN } from "../../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../../brett/useZuganimation";
 import { MERKER_STARTANIMATION } from "../rahmen/Startanimation";
@@ -189,7 +189,7 @@ export function HilfeZeilen() {
             type="button"
             className="knopf-zweit einstellungszeile-knopf"
             aria-label={t("einstellungen.rundgang")}
-            onClick={() => starteTour("haupt")}
+            onClick={oeffneStartwahl}
           >
             {t("einstellungenneu.starten")}
           </button>

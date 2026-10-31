@@ -28,6 +28,7 @@ export function LernpfadKnopf({ ort }: { ort: "buch" | "profil" }) {
         aria-label={t("lernpfad.knopf")}
         title={t("lernpfad.knopf")}
         data-testid="lernpfad-knopf-buch"
+        data-tour="buch-lernpfad"
         onClick={() => navigiere({ bildschirm: "zusatz", kennung: "lernpfad" })}
       >
         <Route size={SYMBOLGROESSE} aria-hidden="true" />

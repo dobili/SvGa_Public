@@ -87,3 +87,15 @@ describe("kartenlage", () => {
     expect(kartenlage(null, 400, 800)).toBe("mitte");
   });
 });
+
+describe("Bedingte Schritte der Startwahl (0.3.43)", () => {
+  it("überspringt „Installieren“, wenn die App nicht im Browser-Tab läuft (hier: ohne Browser)", () => {
+    const schritt: Tourschritt = {
+      ziel: null,
+      ersatzMitte: true,
+      text: "starttour.installieren",
+      nurWenn: "nichtInstalliert",
+    };
+    expect(schrittart(schritt, () => true)).toBe("ueberspringen");
+  });
+});

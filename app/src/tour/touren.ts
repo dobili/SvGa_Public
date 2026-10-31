@@ -13,6 +13,7 @@
 import type { Ansicht } from "../app/stapel";
 import type { Textschluessel } from "../i18n/sprache";
 import type { TrainerKennung } from "../training/trainer";
+import { STARTTOUREN } from "./starttouren";
 
 /** Ein Schritt der Tour. */
 export interface Tourschritt {
@@ -21,7 +22,14 @@ export interface Tourschritt {
   /** Fehlt das Ziel gerade, zeigt die Tour den Text in der Mitte, statt den Schritt zu überspringen. */
   readonly ersatzMitte: boolean;
   readonly text: Textschluessel;
+  /** Nur zeigen, wenn die Bedingung gilt (tourbedingung.ts); etwa der Hinweis zum Installieren. */
+  readonly nurWenn?: Tourbedingung;
+  /** Zusätzlicher Knopf, der die Tour beendet und dorthin springt (etwa „Kapitel 0 öffnen“). */
+  readonly sprung?: { readonly text: Textschluessel; readonly ansicht: Ansicht };
 }
+
+/** Bedingungen für einzelne Schritte. `nichtInstalliert`: Die App läuft im Browser-Tab. */
+export type Tourbedingung = "nichtInstalliert";
 
 /** Eine Tour: Titel der Karte und ihre Schritte in Reihenfolge. */
 export interface Tour {
@@ -32,6 +40,8 @@ export interface Tour {
 /** Die Touren: Haupttour, je Bildschirm eine, je Trainer eine (seit Teil B auch Spielen und Partie). */
 export type TourKennung =
   | "haupt"
+  | "start.buch"
+  | "start.spielen"
   | "buch"
   | "kapitel"
   | "abbildung"
@@ -80,6 +90,7 @@ const RUNDE: readonly Tourschritt[] = [
 // Eine Zeile je Schritt; die Texte stehen in de.json und en.json unter „tour.…“.
 /** Alle Rundgänge der App mit Titel und Schritten, nach Kennung. */
 export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
+  ...STARTTOUREN,
   haupt: tour("tour.titel.haupt", [
     mitte("tour.haupt.willkommen"),
     ziel("leiste-buch", "tour.haupt.buch"),

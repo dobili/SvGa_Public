@@ -190,3 +190,42 @@
 .blaettern {
   display: flex;
 }
+
+/* Startwahl beim ersten Start (0.3.43, TourAngebot.tsx): drei große Wege untereinander. */
+.startwahl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin: calc(var(--raster) * 2) 0 var(--raster);
+}
+
+.startwahl-weg {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  min-height: calc(var(--tippflaeche) + var(--raster));
+  padding: var(--raster) calc(var(--raster) * 2);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--grund);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.startwahl-weg svg {
+  flex: none;
+  color: var(--gold-text);
+}
+
+.startwahl-weg:first-child {
+  border-color: var(--gold);
+  border-width: 2px;
+}
+
+.startwahl-spaeter {
+  display: block;
+  margin: 0 auto;
+}

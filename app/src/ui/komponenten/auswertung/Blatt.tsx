@@ -6,7 +6,8 @@
  * statt die Seite zu verlängern. Barrierefreiheit: Dialog mit Titel, der Fokus springt hinein und
  * beim Schließen zurück, Escape und ein Tipp auf den abgedunkelten Grund schließen, dazu ein
  * sichtbarer Knopf „Schließen“. Gezeigt über ein Portal am Ende der Seite, damit kein Elternteil
- * die feste Lage stört.
+ * die feste Lage stört. Klasse `auswertungsblatt` (seit 0.3.43), weil `.blatt` aus spielenneu.css
+ * sonst den Innenabstand auf null setzte (Befund der Vorprüfung, 31.10.2026).
  * Abhängigkeiten: react-dom (Portal), i18n, lucide.
  */
 import { X } from "lucide-react";
@@ -51,7 +52,7 @@ export function Blatt({
   return createPortal(
     <div className="blatt-grund" onClick={beiSchliessen}>
       <div
-        className="blatt"
+        className="auswertungsblatt"
         role="dialog"
         aria-modal="true"
         aria-labelledby={kennung}

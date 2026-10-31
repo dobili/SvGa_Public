@@ -15,7 +15,7 @@
 import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { ladeTaktik, type Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
-import { t } from "../../i18n/sprache";
+import { t, tZahl } from "../../i18n/sprache";
 import { zaehleAktivitaet } from "../../speicher/aktivitaet";
 import type { Nutzerdaten } from "../../speicher/format";
 import { notiereDurchgang } from "../../speicher/fortschritt";
@@ -212,9 +212,11 @@ export function Tagesaufgabe({
   return (
     <div className="trainerrunde" data-testid="tagesaufgabe">
       <p className="hinweis" data-testid="serie">
-        {t(seriePausiert(serie, heute) ? "kurzplan.seriePause" : "kurzplan.serie", {
-          anzahl: geltendeSerie(serie),
-        })}
+        {tZahl(
+          seriePausiert(serie, heute) ? "kurzplan.seriePause" : "kurzplan.serie",
+          geltendeSerie(serie),
+          { anzahl: geltendeSerie(serie) },
+        )}
       </p>
       {aufgabe ? (
         <Taktikaufgabe aufgabe={aufgabe} runde={mitAbschluss} motivAbfragen={false} />

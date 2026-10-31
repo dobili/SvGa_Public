@@ -6,6 +6,7 @@
  * hängen) und ob die Karte oben, unten oder in der Mitte steht.
  * Abhängigkeiten: touren.ts (Typ des Schritts).
  */
+import { bedingungErfuellt } from "./tourbedingung";
 import type { Tourschritt } from "./touren";
 
 /** Wie ein Schritt erscheint: am Ziel mit Rahmen, in der Mitte ohne Rahmen, oder gar nicht. */
@@ -15,9 +16,11 @@ export type Schrittart = "ziel" | "mitte" | "ueberspringen";
  * Wie ein Schritt erscheint, je nachdem, ob sein Ziel gerade auf dem Bildschirm ist.
  *
  * Beispiel: Abb. 1.1 ohne Zugfolge: Schritt „zugleiste“ → überspringen; Schritt „karte“ ohne
- * gewähltes Werkzeug (ersatzMitte) → mitte.
+ * gewähltes Werkzeug (ersatzMitte) → mitte. Ein Schritt mit `nurWenn`, dessen Bedingung nicht
+ * gilt (etwa „Installieren“ in der installierten App), → überspringen.
  */
 export function schrittart(schritt: Tourschritt, vorhanden: (ziel: string) => boolean): Schrittart {
+  if (schritt.nurWenn && !bedingungErfuellt(schritt.nurWenn)) return "ueberspringen";
   if (schritt.ziel === null) return "mitte";
   if (vorhanden(schritt.ziel)) return "ziel";
   return schritt.ersatzMitte ? "mitte" : "ueberspringen";

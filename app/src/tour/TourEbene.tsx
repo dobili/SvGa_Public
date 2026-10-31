@@ -9,11 +9,14 @@
  * Bedienung: Während der Tour fängt eine Sperre jeden Tipp neben der Karte ab, damit nichts aus
  * Versehen passiert. Tastatur: Tab bleibt in der Karte, Esc beendet, Pfeiltasten blättern. Für
  * Bildschirmleser ist die Karte ein modaler Dialog, der bei jedem Schritt den Fokus bekommt.
+ * Ein Schritt mit `sprung` (starttouren.ts) zeigt einen goldenen Knopf, der die Tour beendet und
+ * dorthin springt; Weiter oder Fertig stehen dann daneben in der zweiten Form.
  * Abhängigkeiten: touren.ts, tourlogik.ts, tourStand.ts, tourMerker.ts, useZielbeobachtung.ts,
  * i18n, lucide-react, ui/stil/tour.css.
  */
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { useNavigation } from "../app/navigationsKontext";
 import { haltFokus } from "./haltFokus";
 import { t } from "../i18n/sprache";
 import { merkeGesehen } from "./tourMerker";
@@ -90,6 +93,7 @@ function useTourablauf(kennung: TourKennung) {
 /** Die Tour, solange sie läuft; der Fokus kehrt danach dorthin zurück, wo er vorher war. */
 function LaufendeTour({ kennung }: { kennung: TourKennung }) {
   const { schritte, stelle, ende, blaettere } = useTourablauf(kennung);
+  const { navigiere } = useNavigation();
   const { rechteck, zeigbar } = useZielbeobachtung(schritte, stelle);
   const karte = useRef<HTMLDivElement>(null);
   const titelId = useId();
@@ -167,9 +171,26 @@ function LaufendeTour({ kennung }: { kennung: TourKennung }) {
               {t("tour.zurueck")}
             </button>
           )}
-          <button type="button" className="knopf-haupt" onClick={() => blaettere(1)}>
+          <button
+            type="button"
+            className={schritt.sprung ? "knopf-zweit" : "knopf-haupt"}
+            onClick={() => blaettere(1)}
+          >
             {letzter ? t("tour.fertig") : t("tour.weiter")}
           </button>
+          {schritt.sprung && (
+            <button
+              type="button"
+              className="knopf-haupt tour-sprung"
+              onClick={() => {
+                const ziel = schritt.sprung?.ansicht;
+                ende();
+                if (ziel) navigiere(ziel);
+              }}
+            >
+              {t(schritt.sprung.text)}
+            </button>
+          )}
         </div>
       </div>
     </div>

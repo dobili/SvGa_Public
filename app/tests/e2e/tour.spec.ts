@@ -42,13 +42,15 @@ async function bisZumEnde(page: Page): Promise<string[]> {
   return texte;
 }
 
-test("erster Start: Frage nach dem Rundgang, einmal; Rundgang über alle Bereiche", async ({
+test("erster Start: Startwahl, einmal; „Erst einmal umsehen“ ist der Rundgang über alle Bereiche", async ({
   page,
 }) => {
   await starteImBrowser(page, { tourAngebot: true });
   const angebot = page.getByTestId("tour-angebot");
-  await expect(angebot.getByRole("heading", { name: "Kleiner Rundgang?" })).toBeVisible();
-  await angebot.getByRole("button", { name: "Rundgang starten" }).click();
+  await expect(
+    angebot.getByRole("heading", { name: "Willkommen! Wie möchtest du starten?" }),
+  ).toBeVisible();
+  await angebot.getByRole("button", { name: "Erst einmal umsehen" }).click();
   await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
   const karte = tourkarte(page);
   await expect(karte.getByRole("heading", { name: "Rundgang durch die App" })).toBeVisible();
@@ -66,6 +68,51 @@ test("erster Start: Frage nach dem Rundgang, einmal; Rundgang über alle Bereich
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
   await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
+});
+
+test("Startwahl „Ich lese das Buch“: Heute, Weg, Nummer, Kapitel, dann „Los: Kapitel 0“", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { tourAngebot: true });
+  await page.getByRole("button", { name: "Ich lese das Buch" }).click();
+  const karte = tourkarte(page);
+  await expect(karte.getByRole("heading", { name: "Mit dem Buch starten" })).toBeVisible();
+  const texte: string[] = [];
+  for (let i = 0; i < 20; i += 1) {
+    texte.push((await karte.locator(".tour-text").textContent()) ?? "");
+    if (await karte.getByRole("button", { name: "Los: Kapitel 0" }).count()) break;
+    await karte.getByRole("button", { name: "Weiter" }).click();
+  }
+  expect(texte.some((t) => t.startsWith("Hier steht jeden Tag"))).toBe(true);
+  expect(texte.some((t) => t.startsWith("Dein Weg durchs Buch"))).toBe(true);
+  // Im Browser-Tab (nicht installiert) kommt der Hinweis zum Installieren.
+  expect(texte.some((t) => t.startsWith("Tipp: Installiere die App"))).toBe(true);
+  await karte.getByRole("button", { name: "Los: Kapitel 0" }).click();
+  await expect(page.getByTestId("tour")).toHaveCount(0);
+  await expect(page.getByTestId("kapitelfortschritt")).toBeVisible();
+});
+
+test("Startwahl „spielen“ führt durch Spielen; ?start=buch beginnt ohne Frage mit dem Buch", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { tourAngebot: true });
+  await page.getByRole("button", { name: "Ich will spielen und Partien auswerten" }).click();
+  const karte = tourkarte(page);
+  await expect(karte.getByRole("heading", { name: "Spielen und auswerten" })).toBeVisible();
+  await expect(page.getByTestId("spielkachel-gegner")).toBeAttached();
+  for (let i = 0; i < 6; i += 1) {
+    if (await karte.getByRole("button", { name: "Partie einlesen" }).count()) break;
+    await karte.getByRole("button", { name: "Weiter" }).click();
+  }
+  await karte.getByRole("button", { name: "Partie einlesen" }).click();
+  await expect(page.getByText("Partie einlesen (PGN)").first()).toBeAttached();
+  // Neues Gerät mit Adresse aus dem QR-Code des Buches: gleich der Buch-Weg.
+  await page.evaluate(() => window.localStorage.removeItem("svga.tour.angeboten"));
+  await page.goto("/app/?start=buch");
+  await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
+  await expect(
+    tourkarte(page).getByRole("heading", { name: "Mit dem Buch starten" }),
+  ).toBeVisible();
 });
 
 test("„Später“ schließt die Frage für immer, das Symbol bleibt", async ({ page }) => {
@@ -148,6 +195,8 @@ test("Einstellungen: Symbol aus blendet es überall aus, der Rundgang bleibt err
   await symbol.click();
   await expect(page.getByRole("button", { name: /^Tour zu diesem Bildschirm/ })).toHaveCount(0);
   await page.getByRole("button", { name: "Rundgang durch die App" }).click();
+  // Seit 0.3.43 öffnet der Knopf die Startwahl; „Erst einmal umsehen“ ist die Haupttour.
+  await page.getByRole("button", { name: "Erst einmal umsehen" }).click();
   const karte = tourkarte(page);
   // Ohne Symbol steht der Schritt dazu in der Mitte statt am Ziel.
   for (let i = 0; i < 6; i += 1) await karte.getByRole("button", { name: "Weiter" }).click();

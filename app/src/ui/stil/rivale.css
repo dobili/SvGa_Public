@@ -1,0 +1,50 @@
+/*
+ * Rivalenkarte (Gamifizierung P8) oben auf der Buch-Startseite: Porträt neben dem Spruch, Bilanz,
+ * Knöpfe; die Feier nach einem gewonnenen Duell mit kleinem Feuerwerk über der Karte. Farben und
+ * Abstände aus basis.css, damit hell und dunkel stimmen.
+ */
+.rivalenkarte {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Porträt fest 64 px breit, der Spruch daneben nimmt den Rest (auch bei 320 px Breite). */
+.rivale-kopf {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: calc(var(--raster) * 2);
+  align-items: center;
+}
+
+.rivale-spruch {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-leise);
+}
+
+.rivale-bilanz {
+  font-weight: 600;
+}
+
+.rivale-knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+}
+
+.rivale-feier {
+  position: relative;
+  margin-bottom: calc(var(--raster) * 2);
+  padding-bottom: calc(var(--raster) * 2);
+  border-bottom: 1px solid var(--linie);
+}
+
+.rivale-feier-titel {
+  margin: 0 0 var(--raster);
+  color: var(--gold-text);
+}
+
+.rivale-feier-neu {
+  font-weight: 600;
+}

@@ -48,6 +48,7 @@ import { LaufendePartie } from "../komponenten/partienliste/Partienliste";
 import { LetzteSpielstaerke } from "../komponenten/fortschritt/LetzteSpielstaerke";
 import { useMaiaAktiv } from "../komponenten/einstellungen/maiastand";
 import { Startstellung } from "../komponenten/spielstart/Startstellung";
+import { Rivalenkarte } from "../komponenten/rivale/Rivalenkarte";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 /** Kennung der Karte mit der Gegnerwahl, Ziel der Startleiste (DS40). */
@@ -330,6 +331,8 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         </header>
       )}
       {laufend && <LaufendePartie partie={laufend} />}
+      {/* Gamifizierung P8: der Rivale oben, wenn keine Partie läuft und aus der Grundstellung. */}
+      {!laufend && ausGrund && <Rivalenkarte />}
       {/* DS51: Ab einer Abbildung oder eigenen Stellung ist die Stellung die Hauptsache und
           steht oben; aus der Grundstellung kommt erst der Gegner, die Stellung am Ende. */}
       {!ausGrund && <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />}

@@ -12,6 +12,10 @@
 import type { Nutzerdaten } from "../../../speicher/format";
 import { PUNKTE_JE_ZIEL } from "../../../training/ziele";
 import { erreichteWochen } from "../../../training/wochenziel";
+import { besiegteRivalen } from "../../../training/rivalen";
+
+/** Erfahrungspunkte für einen besiegten Rivalen (Gamifizierung P8, Plan: 40). */
+const PUNKTE_JE_RIVALE = 40;
 
 /** Eine Quelle: Kennung, Punkte je Einheit, Zahl der Einheiten aus den Nutzerdaten. */
 export interface Erfahrungsquelle {
@@ -24,4 +28,9 @@ export interface Erfahrungsquelle {
 export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
   { kennung: "wochenErreicht", gewicht: 30, zaehle: (d) => erreichteWochen(d).length },
   { kennung: "zieleErreicht", gewicht: PUNKTE_JE_ZIEL, zaehle: (d) => d.ziele.erreicht.length },
+  {
+    kennung: "duelleGewonnen",
+    gewicht: PUNKTE_JE_RIVALE,
+    zaehle: (d) => besiegteRivalen(d).length,
+  },
 ];

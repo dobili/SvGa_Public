@@ -18,6 +18,7 @@ import { REKORD_ABZEICHEN } from "./abzeichen-rekorde";
 import { GRUNDABZEICHEN } from "./abzeichen-grund";
 import { WOCHEN_ABZEICHEN } from "./abzeichen-wochen";
 import { ZIEL_ABZEICHEN } from "./abzeichen-ziele";
+import { RIVALEN_ABZEICHEN } from "./abzeichen-rivalen";
 
 export { WOCHE } from "./abzeichen-grund";
 import { zugurteile } from "../../../spiel/auswertung";
@@ -78,6 +79,7 @@ export const ABZEICHEN: readonly Abzeichenangabe[] = [
   ...WOCHEN_ABZEICHEN,
   ...REKORD_ABZEICHEN,
   ...ZIEL_ABZEICHEN,
+  ...RIVALEN_ABZEICHEN,
 ];
 
 /**

@@ -4,6 +4,48 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.26: Gamifizierung P13 Eigene Ziele und P8 Rivalen übernommen (Opus)
+
+- Zweige `gami-p13-ziele` und `gami-p8-rivalen` (Welle 2) geprüft und zusammengeführt. Beide
+  trugen je eine Zeile in dieselben Listen ein (`NACH_PARTIEENDE`, `ABZEICHEN`,
+  `NACHTABZEICHEN`, `ERFAHRUNGSQUELLEN`); beim Zusammenführen bleiben beide Zeilen. Die
+  40 Erfahrungspunkte je Rivale stehen jetzt als benannter Wert.
+- **Geändert (Rückfrage aus P13, nach Empfehlung):** Eigene Ziele erscheinen auf der
+  Wochenkarte auch ohne gewähltes Wochenziel und nach „Später“; vorher sah sie nur, wer ein
+  Wochenziel hatte.
+- **Eingespielt (Patch aus P8 für die gesperrte Datei `Spielen.tsx`):** Die Rivalenkarte steht
+  oben in „Spielen“, wenn keine Partie läuft. Auf der Buch-Startseite stehen höchstens zwei
+  Karten (nächster Schritt, Woche); die Rivalenkarte (Rang 30) kommt dort nur zum Zug, wenn eine
+  davon fehlt.
+- Offen gelassen (Empfehlung, wartet auf die nächste Formatversion): besiegte Rivalen stehen in
+  `verdient` als „rivale:<bot>“ (geht mit in die Datensicherung); ein eigenes Feld wäre
+  sauberer. Vorschlag „Deinen Rivalen besiegen“ in den Zielvorschlägen (eine Zeile in
+  `ZIELVORSCHLAGSARTEN`) folgt mit der Meisterschaft (P3).
+
+## 31.10.2026 – Gamifizierung P8: Rivalen unter den Bots (Arbeitschat, Zweig gami-p8-rivalen)
+
+- **Wahl:** Rivale ist ein vorgefertigter Bot (ohne Spaß-Bots, Gruppen und eigene Gegner), der
+  noch nie gewertet besiegt wurde, mit Stärke 50 bis 150 über der eigenen Wertung in der Zeitklasse
+  der letzten gewerteten Partie; bei mehreren der mit den meisten Partien gegen den Leser, dann der
+  nächste an +100. Liegt keiner im Abstand, der nächste an +100. Ohne Wertung: niedrigste Stufe mit
+  einem unbesiegten Bot. Warum Zeitklasse der letzten Partie: Die Wertung gilt je Zeitklasse, und
+  die Revanche übernimmt die zuletzt gewählte Bedenkzeit.
+- **Duell gewonnen** beim ersten gewerteten Sieg (E6). Gespeichert als `verdient["rivale:<bot>"]`
+  mit Datum, weil der Speicher kein eigenes Feld für besiegte Rivalen hat (Speicher gesperrt);
+  daraus zählen Erfahrungspunkte (40 je Duell, `duelleGewonnen`) und die Abzeichen „Drei“ und
+  „Zehn Rivalen besiegt“. Die Bilanz (`duelle`) zählt jede beendete Partie gegen einen Bot, auch
+  ungewertete.
+- **Schreiben** über eine Zeile in `NACH_PARTIEENDE` (`training/rivalenfolge.ts`), nicht in der
+  gesperrten Partie. Ohne gespeicherten Rivalen wird nach der ersten Bot-Partie der festgehalten,
+  der vorher galt (ein Sieg gegen den gezeigten Rivalen zählt also auch beim ersten Mal).
+- **Sprüche** je Charakter (E6), Liste `RIVALENSPRUECHE` mit einer Zeile je Charakter; der
+  Charakter eines Bots folgt aus seiner Persönlichkeit (`CHARAKTERE`), ohne Änderung an den Bots.
+  48 Entwürfe gelten nach Regel 9 als abgesegnet (N2208).
+- **Merker auf dem Gerät** (dürfen verloren gehen): gefeierter Rivale, Tag des letzten Wechsels.
+  Die Feier erscheint nur bis sieben Tage nach dem Sieg (nicht nach dem Einspielen alter Sicherungen).
+- **Karte** in `STARTKARTEN` (Rang 30), sichtbar nach der ersten beendeten Partie gegen einen Bot.
+  Für „Spielen“ (gesperrt) liegt dem Haupt-Chat eine Zeile als Patch vor.
+
 ## 31.10.2026 – Gamifizierung P13: Eigene Ziele mit Vorschlägen (Welle 2, Zweig gami-p13-ziele)
 
 - **E11 nach Empfehlung:** höchstens drei angeheftete Ziele, ohne Ablaufdatum; Lösen mit einem

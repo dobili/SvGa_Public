@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.40** (Arbeitszweig): eigene Engine für die Auswertung (zweiter Kern, N2317). **Nächster Schritt:** Bericht Einstellungen (K2) übernehmen, dann alles nach main (Cloudflare prüfen).
+
 Stand: 31.10.2026 · **Version 0.3.39** (Arbeitszweig): Maia rechnet in einem eigenen Worker (N2316). **Nächster Schritt:** Bericht Einstellungen (K2) übernehmen; prüfen, welche weiteren Rechnungen auf andere Kerne gehören (Zugwahl des Bots, Werkzeuge, Auswertung); danach alles nach main, sobald Cloudflare baut.
 
 Stand: 31.10.2026 · **Version 0.3.38** (nur Arbeitszweig, nicht auf main, bis Cloudflare wieder baut, Q9-1): Buchseite „Heute“ und Lernpfad „Fünf Landschaften“ (N2250–N2259), Auswertung „Zeitleiste der Partie“ mit Originalgrafik der Zugarten und Zoom (N2320–N2329), Spielen „Schnell eine Partie“ mit Unterseiten (N2330–N2339; Unterseite übersteht Neuladen). Offen: Bericht Einstellungen (K2); danach Maia-Worker und Multicore.

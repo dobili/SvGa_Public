@@ -3,7 +3,9 @@
  *
  * Rolle im Gesamtbild: Einzige Stelle, die mit der Engine spricht (Konzept Abschnitt 8). Die
  * Engine läuft in einem Web Worker, damit die Oberfläche nie hängt. Sie wird erst beim ersten
- * Bedarf gestartet. Es läuft immer nur ein Auftrag: Ein neuer Auftrag bricht den alten ab.
+ * Bedarf gestartet. Es läuft immer nur ein Auftrag je Engine: Ein neuer Auftrag bricht den alten ab.
+ * Die App hat zwei Engines (seit 0.3.40): eine für Spiel, Hinweise und Werkzeuge, eine für die
+ * Auswertung der Partie.
  * Ein Wachhund wacht über jeden Auftrag: Meldet die Engine lange nach der Rechenzeit
  * kein „bestmove“ (der Worker ist abgestürzt oder wurde vom Handy im Hintergrund beendet), startet
  * der Dienst die Engine neu und lehnt den Auftrag als abgebrochen ab; die Aufrufer versuchen es
@@ -344,3 +346,13 @@ function workerKanal(): Kanal {
 
 /** Der Engine-Dienst der App. Startet die Engine erst beim ersten Auftrag. */
 export const engine = new EngineDienst(workerKanal);
+
+/**
+ * Eine zweite Engine nur für die Auswertung der Partie (seit 0.3.40, Wunsch des Autors: Rechnungen
+ * auf mehrere Kerne verteilen). Die Auswertung läuft schon während der Partie, solange der Leser
+ * nachdenkt (ui/komponenten/auswertung/useAuswertung.ts); mit der gemeinsamen Engine musste sie
+ * jedem Hinweis, Werkzeug und Zug des Bots weichen und brach dabei ab. Mit einem eigenen Worker
+ * rechnet sie auf einem anderen Kern weiter. Kosten: ein zweiter Worker mit eigener Hashtabelle,
+ * gestartet erst beim ersten Auftrag der Auswertung.
+ */
+export const auswertungsEngine = new EngineDienst(workerKanal);

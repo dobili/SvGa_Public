@@ -33,6 +33,16 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.40: Eigene Engine für die Auswertung (31.10.2026)
+
+- [ ] N2317. **Auswertung schneller fertig:** Eine Partie gegen einen Bot spielen und dabei
+      zwischendurch das Engine-Symbol oder ein Werkzeug am Brett benutzen. Nach dem letzten Zug
+      steht die Auswertung (Zeitleiste, Genauigkeit) schneller da als bisher, meist sofort; die
+      Engine-Hilfe und der Bot antworten so schnell wie vorher. Auf Handys mit mindestens vier
+      Kernen (auch dein Redmi) rechnet sie jetzt die ganze Partie über, auch während der Bot
+      nachdenkt, auf eigenem Kern. Auf dem älteren Handy darauf achten,
+      ob es dabei spürbar wärmer wird oder der Akku schneller sinkt; dann melden.
+
 ### Neu in 0.3.39: Maia rechnet in einem eigenen Thread (31.10.2026)
 
 - [ ] N2316. **Kein Stocken mehr beim Rechnen des Bots:** Auf dem älteren Handy (Redmi) mit

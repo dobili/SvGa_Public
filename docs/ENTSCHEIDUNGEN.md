@@ -4,6 +4,23 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Eigene Engine für die Auswertung (0.3.40)
+
+Empfehlung nach dem Wunsch des Autors, Rechnungen auf mehrere Kerne zu verteilen (er folgt ihr):
+Die Auswertung läuft seit 0.2.40 schon während der Partie, solange der Leser nachdenkt, teilte
+sich aber die eine Stockfish-Instanz mit Bot, Hinweisen und Werkzeugen und brach bei jedem ihrer
+Aufträge ab. Jetzt hat sie eine eigene Instanz (`engineDienst.ts`, `auswertungsEngine`), einen
+zweiten Worker auf einem anderen Kern, erst beim ersten Auftrag gestartet (16 MB Hash). Frage
+des Autors: durchgängig, ohne den Zug des Gegners zu verlängern? Ja, ab 4 logischen Kernen
+(`navigator.hardwareConcurrency`, `auswertung/hintergrund.ts`): Oberfläche, Bot-Engine,
+Auswertung und Maia haben dann je einen Kern; auf Geräten mit weniger Kernen rechnet sie wie
+bisher nur, solange der Leser am Zug ist. `Partie.tsx` dafür unter 400 Zeilen gebracht
+(Schalter der ruhigen Ansicht in `partie/RuhigSchalter.tsx`). Nicht umgesetzt, bewusst: Stockfish mit mehreren Threads in einer Instanz (braucht
+Cross-Origin-Isolation der ganzen Seite, Risiko für Safari und eingebettete Inhalte) und die
+Zugwahl des Bots im Worker (rechnet seit 0.3.35 erst nach der Animation; erst prüfen, ob auf dem
+Handy noch etwas stockt). Werkzeuge am Brett bleiben im Hauptthread (unter 50 ms je Stellung,
+geprüft in `alleAbbildungen.test.ts`).
+
 ## 31.10.2026 – Maia in einem eigenen Worker (0.3.39)
 
 Wunsch des Autors nach dem Befund mit der hängenden Zuganimation: Maia ganz aus dem Hauptthread

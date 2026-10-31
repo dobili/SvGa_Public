@@ -6,9 +6,9 @@
  * Bewertung läuft schon während der Partie, solange der Leser nachdenkt (Wunsch des Autors):
  * Jede fertige Stellung kommt in einen Zwischenspeicher (je Partie, je Stellung mit ihrer FEN;
  * nach einer Rücknahme passen die alten Einträge nicht mehr zur FEN und werden neu gerechnet).
- * Die Engine bekommt diese Aufträge nur, wenn sie frei ist, damit Hinweise, Werkzeuge und der Zug
- * der Engine Vorrang haben; wird ein Auftrag trotzdem unterbrochen, kommt die Stellung später
- * noch einmal dran. Am Ende der Partie fehlen meist nur die letzten Stellungen, das Ergebnis
+ * Seit 0.3.40 rechnet sie mit einer eigenen Engine (engineDienst.ts, auswertungsEngine) auf einem
+ * anderen Kern; Hinweise, Werkzeuge und der Zug des Bots unterbrechen sie nicht mehr. Wird ein
+ * Auftrag trotzdem abgebrochen (Wachhund, Neustart), kommt die Stellung später noch einmal dran. Am Ende der Partie fehlen meist nur die letzten Stellungen, das Ergebnis
  * (Wert, bester Zug, Abstand zum zweitbesten je Stellung) kommt in den Speicher
  * (speicher/partien.ts, mitWerten), damit die Auswertung nur einmal läuft. Während der Partie
  * zeigt die App nichts davon (es verriete zu viel). Endstellungen (Matt, Patt) brauchen keine
@@ -17,7 +17,11 @@
  */
 import { nachAuswertung } from "../../../speicher/partieprotokoll";
 import { useEffect, useState } from "react";
-import { AuftragAbgebrochen, engine, type Staerke } from "../../../engine/engineDienst";
+import {
+  AuftragAbgebrochen,
+  auswertungsEngine as engine,
+  type Staerke,
+} from "../../../engine/engineDienst";
 import { wertFuer } from "../../../engine/spielbewerter";
 import { ausreisser, endwert } from "../../../spiel/auswertung";
 import { stellungen, type Partie } from "../../../spiel/partie";
@@ -30,8 +34,8 @@ import { aendere } from "../../../speicher/speicher";
  * passen App und Eichung zusammen, und alte wie neue Handys kommen auf dieselben Zahlen. Die
  * Zeitgrenzen sind nur die Sicherung für langsame Geräte; während der Partie, solange der Leser
  * nachdenkt, darf es länger dauern (die Zeit ist ohnehin da, Wunsch des Autors vom 17.10.2026).
- * Braucht der Leser die Engine (Engine-Symbol, Werkzeug, Zug der Engine), bricht der Auftrag ab
- * und die Stellung kommt später dran.
+ * Seit 0.3.40 hat die Auswertung ihre eigene Engine; Engine-Symbol, Werkzeuge und der Zug des Bots
+ * brechen ihre Aufträge nicht mehr ab.
  */
 const AUSWERTUNG: Staerke = { art: "tiefe", tiefe: 18 };
 const RECHENZEIT_MS = 4000;
@@ -162,8 +166,8 @@ function speichere(id: string, werte: readonly Stellungswert[]): void {
 }
 
 /**
- * Startet die Auswertung: im Hintergrund, solange `imHintergrund` gilt (Leser am Zug, Partie
- * läuft), und nach dem Ende, solange der Eintrag noch keine Werte hat. Ausgabe: Stand mit
+ * Startet die Auswertung: im Hintergrund, solange `imHintergrund` gilt (Partie läuft und der Leser
+ * ist am Zug oder das Gerät hat genug Kerne, hintergrund.ts), und nach dem Ende, solange der Eintrag noch keine Werte hat. Ausgabe: Stand mit
  * Fortschritt für die Anzeige nach dem Ende.
  * Beispiel: eine Partie mit 20 Halbzügen, während der Partie 18 Stellungen vorgerechnet → nach
  * dem Ende „läuft 18 von 21“, kurz darauf „fertig“.

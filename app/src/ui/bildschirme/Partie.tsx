@@ -21,15 +21,13 @@
  * Zug zeigt (SpielEngine.tsx).
  * Abhängigkeiten: ui/komponenten/partie/usePartie.ts, spiel/, i18n.
  */
-import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
-import { mitVorlieben } from "../../speicher/partien";
-import { aendere, useSpeicher } from "../../speicher/speicher";
+import { useSpeicher } from "../../speicher/speicher";
 import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { theorieJeZug } from "../../schach/theorie";
@@ -59,6 +57,8 @@ import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRue
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
+import { auswertungImHintergrund, kerneDesGeraets } from "../komponenten/auswertung/hintergrund";
+import { RuhigSchalter } from "../komponenten/partie/RuhigSchalter";
 import { useSeitenzahlen } from "../komponenten/auswertung/seitenzahlen";
 import { usePartie, type Partiesteuerung } from "../komponenten/partie/usePartie";
 import {
@@ -66,34 +66,8 @@ import {
   type Werkzeugwahlstand,
 } from "../komponenten/werkzeugwahl/useWerkzeugwahl";
 
-const SYMBOLGROESSE = 20;
 function gegnerVon(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
-}
-
-/** Schalter für die ruhige Ansicht, unten rechts am Brett bei den anderen Brettschaltern. */
-function RuhigSchalter({ ruhig }: { ruhig: boolean }) {
-  const schalte = () =>
-    void aendere((d) => ({
-      ...d,
-      spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, ruhigeAnsicht: !ruhig }),
-    }));
-  return (
-    <button
-      type="button"
-      className="knopf-symbol brettschalter"
-      data-tour="partie-ruhig"
-      aria-pressed={ruhig}
-      aria-label={t("partie.ruhig")}
-      title={t("partie.ruhig")}
-      onClick={schalte}
-    >
-      {ruhig ? <EyeOff size={SYMBOLGROESSE} /> : <Eye size={SYMBOLGROESSE} />}
-      <span className="brettschalter-text" aria-hidden="true">
-        {t("partie.ruhigKurz")}
-      </span>
-    </button>
-  );
 }
 
 /** Uhr einer Seite, falls die Partie eine Uhr hat. */
@@ -292,8 +266,13 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   const eintrag = useSpeicher(
     (z) => z.daten.spiel.partien.find((e) => e.partie.id === partie.id) ?? null,
   );
-  // Seit 0.2.40 rechnet die Auswertung schon während der Partie, wenn der Leser am Zug ist.
-  const stand = useAuswertung(partie, eintrag, leserAmZug(partie) && partie.ende === null);
+  // Seit 0.2.40 rechnet die Auswertung schon während der Partie, wenn der Leser am Zug ist; seit
+  // 0.3.40 mit eigener Engine und auf Geräten mit genug Kernen durchgängig (hintergrund.ts).
+  const stand = useAuswertung(
+    partie,
+    eintrag,
+    auswertungImHintergrund(partie.ende === null, leserAmZug(partie), kerneDesGeraets()),
+  );
   // Lichess-Liste und Eröffnungsindex (Kapitel 2 und 3) erkennen die Theoriezüge (seit dem
   // Wunsch des Autors vom 25.10.2026 wie „Book“ bei chess.com; Regel in schach/theorie.ts).
   const theorie = useTheorie() ?? null;

@@ -1,0 +1,110 @@
+/** Vorübergehend (nicht committen): jede Tour Schritt für Schritt, mit Foto und Zielprüfung. */
+import { mkdirSync, writeFileSync } from "node:fs";
+import { expect, test, type Page } from "@playwright/test";
+import {
+  oeffneAbbildung,
+  oeffneEinstellungen,
+  oeffneProfil,
+  oeffneTrainer,
+  starteImBrowser,
+} from "./hilfen";
+import { oeffneSpielen } from "./spielenhilfen";
+import touren from "/tmp/claude-0/-home-user/6cd0ae61-23ea-58fc-a7d3-549ee4b688ae/scratchpad/tourpruefung/touren.json" with { type: "json" };
+
+const ZIEL = "/tmp/claude-0/-home-user/6cd0ae61-23ea-58fc-a7d3-549ee4b688ae/scratchpad/tourpruefung/lauf";
+test.use({ viewport: { width: 360, height: 800 } });
+
+const leiste = (page: Page, name: string) =>
+  page.getByRole("navigation", { name: "Hauptbereiche" }).getByRole("button", { name, exact: true }).click();
+
+async function nachschlagen(page: Page, knopf: RegExp) {
+  await leiste(page, "Nachschlagen");
+  await page.getByRole("button", { name: knopf }).first().click();
+}
+
+/** Wie man zum Bildschirm einer Tour kommt. */
+const WEGE: Record<string, (page: Page) => Promise<void>> = {
+  buch: async () => undefined,
+  kapitel: async (p) => {
+    await p.getByRole("button", { name: /Kapitel 1 ·/ }).first().click();
+  },
+  abbildung: async (p) => oeffneAbbildung(p, "1.26", "1.26"),
+  uebung: async (p) => {
+    await p.getByRole("button", { name: /Kapitel 1 ·/ }).first().click();
+    await p.getByTestId("kapitel-uebungen").getByRole("button", { name: /Abb\. 1\.40/ }).click();
+  },
+  training: async (p) => leiste(p, "Training"),
+  lernsammlung: async (p) => {
+    await leiste(p, "Training");
+    await p.getByTestId("kachel-sammlung").getByRole("button").click();
+  },
+  nachschlagen: async (p) => leiste(p, "Nachschlagen"),
+  glossar: async (p) => nachschlagen(p, /^Glossar/),
+  begriff: async (p) => {
+    await nachschlagen(p, /^Glossar/);
+    await p.getByRole("searchbox", { name: "Begriff suchen" }).fill("abschneid");
+    await p.getByRole("button", { name: "Abschneiden", exact: true }).click();
+  },
+  denkroutine: async (p) => nachschlagen(p, /^Denkroutine/),
+  checkliste: async (p) => nachschlagen(p, /^Gesamt-Checkliste/),
+  steckbriefe: async (p) => nachschlagen(p, /^Steckbriefe/),
+  werkzeuge: async (p) => nachschlagen(p, /^Werkzeuge des Buches/),
+  ich: async (p) => oeffneProfil(p),
+  einstellungen: async (p) => oeffneEinstellungen(p),
+  spielen: async (p) => oeffneSpielen(p),
+  partie: async (p) => {
+    await oeffneSpielen(p);
+    await p.getByRole("button", { name: /^Spielen/ }).first().click();
+    await expect(p.getByTestId("partie")).toBeVisible();
+  },
+};
+
+interface Ergebnis {
+  tour: string;
+  erwartet: number;
+  gezeigt: number;
+  schritte: { nr: number; text: string; mitte: boolean }[];
+  fehler?: string;
+}
+
+async function pruefeTour(page: Page, kennung: string): Promise<Ergebnis> {
+  const def = (touren as Record<string, { schritte: unknown[] }>)[kennung];
+  const ergebnis: Ergebnis = { tour: kennung, erwartet: def?.schritte.length ?? 0, gezeigt: 0, schritte: [] };
+  await page.getByRole("button", { name: /^Tour zu diesem Bildschirm/ }).click({ timeout: 8000 });
+  const karte = page.getByTestId("tour").getByRole("dialog");
+  await expect(karte).toBeVisible();
+  const stand = (await karte.getByText(/^Schritt \d+ von \d+$/).textContent()) ?? "";
+  const anzahl = Number(/von (\d+)/.exec(stand)?.[1] ?? 0);
+  ergebnis.gezeigt = anzahl;
+  for (let nr = 1; nr <= anzahl; nr += 1) {
+    await expect(karte.getByText(`Schritt ${nr} von ${anzahl}`)).toBeVisible();
+    await page.waitForTimeout(450);
+    const text = (await karte.locator(".tour-text").textContent()) ?? "";
+    const mitte = await page.getByTestId("tour").evaluate((e) => e.classList.contains("tour-ebene-dunkel"));
+    ergebnis.schritte.push({ nr, text, mitte });
+    await page.screenshot({ path: `${ZIEL}/${kennung}-${String(nr).padStart(2, "0")}.png` });
+    await karte.getByRole("button", { name: nr === anzahl ? "Fertig" : "Weiter" }).click();
+  }
+  return ergebnis;
+}
+
+const KENNUNGEN = Object.keys(touren).filter((k) => k !== "haupt");
+
+for (const kennung of KENNUNGEN) {
+  test(`Tour ${kennung}`, async ({ page }) => {
+    test.setTimeout(120_000);
+    mkdirSync(ZIEL, { recursive: true });
+    await starteImBrowser(page);
+    await page.goto("/app/");
+    let ergebnis: Ergebnis;
+    try {
+      if (kennung.startsWith("trainer.")) await oeffneTrainer(page, kennung.slice("trainer.".length));
+      else await (WEGE[kennung] ?? (async () => { throw new Error("kein Weg"); }))(page);
+      ergebnis = await pruefeTour(page, kennung);
+    } catch (fehler) {
+      ergebnis = { tour: kennung, erwartet: 0, gezeigt: 0, schritte: [], fehler: String(fehler).slice(0, 300) };
+      await page.screenshot({ path: `${ZIEL}/${kennung}-FEHLER.png` }).catch(() => undefined);
+    }
+    writeFileSync(`${ZIEL}/${kennung}.json`, JSON.stringify(ergebnis, null, 1));
+  });
+}

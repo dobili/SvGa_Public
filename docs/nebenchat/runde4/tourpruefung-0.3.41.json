@@ -1,0 +1,1062 @@
+[
+ {
+  "tour": "abbildung",
+  "erwartet": 13,
+  "gezeigt": 11,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Nummer wie im Buch. Ein Tipp darauf öffnet ein Feld, mit dem du zu jeder anderen Abbildung springst.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Vorige und nächste Abbildung im selben Kapitel.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Diese Abbildung hat eine Zugfolge. Tippe einen Zug an, um die Stellung danach zu sehen, oder blättere mit den Knöpfen darunter Halbzug für Halbzug. Abzweigungen stehen unter „Andere Züge hier“.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Das Brett zeigt Pfeile und Felder wie im Buch. Du kannst jederzeit selbst weiterziehen: Figur antippen und Zielfeld tippen oder die Figur wischen. „Zurück zur Buchvariante“ führt wieder zum Buch.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Die Werkzeuge am Brett, etwa Zählen (ein Feld antippen, dann siehst du Angreifer und Verteidiger), Ziehen, Engine, Röntgen und Warnsignale. Jedes erscheint, sobald das Buch es eingeführt hat. Ein zweiter Tipp oder ein Tipp neben das Brett schaltet es wieder aus. Solange du die Stellung noch nicht eingeschätzt hast, stehen hier nur Drehen und Sammlung.",
+    "mitte": false
+   },
+   {
+    "nr": 6,
+    "text": "Dreht das Brett, damit Schwarz unten steht.",
+    "mitte": false
+   },
+   {
+    "nr": 7,
+    "text": "Das Lesezeichen legt die gezeigte Stellung mit einem Plan-Satz und einer Notiz in deine Lernsammlung.",
+    "mitte": false
+   },
+   {
+    "nr": 8,
+    "text": "Ein Bündel fasst Werkzeuge zu einem Verfahren des Buches zusammen, etwa „Eröffnung prüfen“ oder „Planfindung“. Hier stehen die Bündel bis zu diesem Kapitel; „frühere“ und „spätere“ am Rand zeigen die übrigen. Schiebe die Reihe zur Seite, um alle zu sehen.",
+    "mitte": false
+   },
+   {
+    "nr": 9,
+    "text": "Die Karte eines Werkzeugs zeigt, was es gefunden hat, und ein Fazit; „Am Brett“ erklärt die Markierungen. „Sicht“ oben rechts zeigt dasselbe für die andere Seite. „So prüft die App“ nennt die Regel des Buches. Werkzeuge können irren; maßgeblich ist das Buch.",
+    "mitte": true
+   },
+   {
+    "nr": 10,
+    "text": "Spiel die gezeigte Stellung gegen die Engine zu Ende.",
+    "mitte": false
+   },
+   {
+    "nr": 11,
+    "text": "Die Bildunterschrift wie im Buch, darunter die Fundstelle. Antippbare Nummern öffnen die genannte Abbildung.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "begriff",
+  "erwartet": 1,
+  "gezeigt": 1,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Erklärung aus dem Anhang des Buches. Unter „Siehe auch“ führen die Knöpfe zu verwandten Begriffen; Zurück bringt dich zur Liste.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "buch",
+  "erwartet": 4,
+  "gezeigt": 4,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Tippe die Nummer einer Abbildung aus dem Buch ein, etwa 1.26, und öffne sie. Bei einem Tippfehler schlägt die App passende Nummern vor.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Hier steht, was heute dran ist: dein nächster Schritt als große Kachel, darüber deine Lerntage der Woche.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Die Kapitel des Buches. Der goldene Ring um die Nummer zeigt, wie viele Abbildungen du schon angesehen hast. Ein Tipp öffnet das Kapitel mit allen Abbildungen, Trainern und Übungen.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Den Rundgang durch alle Bereiche findest du jederzeit unter Profil › Einstellungen im Reiter „Hilfe“.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "checkliste",
+  "erwartet": 2,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Wie viele Punkte du schon abgehakt hast. Die Haken bleiben auf diesem Gerät und ziehen mit der Datensicherung um.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Je Kapitel eine Karte mit der Kernfrage. Ein Tipp klappt sie auf: Lernziele zum Abhaken, das Werkzeug des Kapitels und der Weg zum Kapitel.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "denkroutine",
+  "erwartet": 2,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die vier Schritte vor jedem Zug, wie im Buch. Der Sicherheitsblick vor dem Ziehen gehört dazu.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Je Partiephase die Werkzeuge, die du dort brauchst. Ein Tipp klappt eine Phase auf.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "einstellungen",
+  "erwartet": 7,
+  "gezeigt": 7,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Oben siehst du dein Brett, wie es überall in der App aussieht. Tippe eine Brettfarbe oder einen Figurensatz an; die Vorschau ändert sich sofort. Darunter schaltest du die Koordinaten.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Bedienung: Ziehen per Wischen, Zuganimation, Startbild und Zuggeräusche.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Anzeige: Nachtmodus, Schriftgröße und Sprache.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Hilfe: das Toursymbol, der Rundgang durch die App und ausgeblendete Erklärungen wieder zeigen.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Bots und Wertung: das Zusatzpaket Maia, mit dem die Bots Züge wählen wie Menschen ihrer Stärke, und der Maßstab deiner Wertung (Lichess, chess.com oder FIDE).",
+    "mitte": false
+   },
+   {
+    "nr": 6,
+    "text": "Deine Daten liegen nur auf diesem Gerät. Sichere sie ab und zu als Datei; mit ihr ziehst du auch auf ein anderes Gerät um.",
+    "mitte": false
+   },
+   {
+    "nr": 7,
+    "text": "App-Version, Datenstand und ob die App offline bereit ist. „Fehler melden“ schickt dem Autor einen Fehler, einen Wunsch oder einen Fehler im Buch, auf Wunsch mit diesen Angaben.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "glossar",
+  "erwartet": 3,
+  "gezeigt": 3,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Tippe einen Begriff oder einen Teil davon; die Liste zeigt sofort passende Einträge.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Ein Tipp auf einen Buchstaben zeigt seine Seite: alle Begriffe mit diesem Anfang, mit Kapitel und kleinem Diagramm.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Ein Tipp auf einen Begriff öffnet seine Erklärung mit Verweisen auf verwandte Begriffe.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "ich",
+  "erwartet": 6,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Dein Name und dein Porträt, beides freiwillig. Sie erscheinen in deinen Partien. Der Stift rechts, am Anfang der Knopf „Name und Porträt“, öffnet die Auswahl: ein Bild auswählen, selbst gestalten oder kein Bild.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Hier geht es zu den Einstellungen: oben dein Brett mit Farben und Figuren, darunter Bedienung, Anzeige und Hilfe, dazu Bots und Wertung, deine Daten und „Über die App“.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Deine Wertung aus den gewerteten Partien, mit Verlauf. Die Reiter zeigen stattdessen deine geschätzte Stärke je Partiephase. Darunter wählst du, ob du die letzten Partien oder einen Zeitraum siehst.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Dein Fortschritt im ganzen Buch: angesehene Abbildungen, abgehakte Lernziele, Trainer, die du schon einmal gemacht hast, und besiegte vorgefertigte Bots je Zeitklasse. „Je Kapitel“ klappt die Kapitel auf; ein Tipp auf ein Kapitel öffnet es.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Deine gespielten Partien. Ein Tipp öffnet eine Partie mit Auswertung und Rückblick. „Partie einlesen (PGN)“ holt eine Partie von anderswo zur Auswertung herein.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "kapitel",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Dein Stand in diesem Kapitel: angesehene Abbildungen, gelöste Übungen, beantwortete Warum-Fragen, abgehakte Lernziele und deine Trainer-Durchgänge.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Die Trainer zu diesem Kapitel. Das Fragezeichen erklärt den Ablauf, der runde Knopf mit dem Dreieck ▷ startet.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Die Übungen aus dem Buch. „Übungen lösen“ geht alle der Reihe nach durch, die offenen zuerst. Gelöste Übungen kommen später zur Wiederholung.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Alle Abbildungen als kleine Bretter, nach Abschnitten. Ein Tipp auf einen Abschnitt klappt ihn auf, ein Tipp auf ein Brett öffnet die Abbildung. Ein Zeichen oben rechts am Brett zeigt Warum-Fragen an.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Eine Abbildung gilt als angesehen, wenn sie 30 Sekunden am Stück zu sehen war. Hier hakst du alle von Hand ab oder setzt sie zurück; jeder Abschnitt hat dafür auch einen eigenen Knopf.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "lernsammlung",
+  "erwartet": 5,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier liegen deine eigenen Stellungen mit Plan-Satz und Notiz. Du sammelst sie mit dem Lesezeichen an jeder Abbildung, im Rückblick einer Partie und nach Trainer-Aufgaben.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Eine Stellung von woanders, etwa aus einer Vereinspartie: FEN einfügen, Plan und Notiz schreiben, speichern.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "nachschlagen",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Das Glossar aus dem Anhang des Buches, mit Suche und Querverweisen.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Die Denkroutine: vier Schritte vor jedem Zug und die Werkzeuge je Partiephase.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Die Gesamt-Checkliste: was du nach jedem Kapitel können solltest, zum Abhaken.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Die Steckbriefe der Eröffnungen und die Fallenchecks des Buches.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Alle Werkzeuge des Buches nach Kapiteln: was jedes prüft und nach welcher Regel.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "partie",
+  "erwartet": 14,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Züge der Partie. Ein Tipp auf einen Zug zeigt die Stellung danach; zurück zur aktuellen Stellung kommst du mit dem letzten Zug.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Die Uhren beider Seiten, wenn die Partie eine Bedenkzeit hat. Jede Uhr steht auf der Seite ihres Spielers; gegen die Engine ist deine unten.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Hier ziehst du: Figur antippen und Zielfeld tippen oder die Figur wischen. Nach der Partie zeigt das Brett im Rückblick Pfeile für den besseren Zug.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Am Brett: Zählen, Engine, Röntgen und die Warnsignale W1–W7, wenn die Spielhilfen sie erlauben, dazu Drehen. Ein zweiter Tipp schaltet ein Werkzeug aus.",
+    "mitte": false
+   },
+   {
+    "nr": 5,
+    "text": "Das Auge schaltet die ruhige Ansicht ein: nur Brett und Uhren, ohne Werkzeuge und Texte.",
+    "mitte": false
+   },
+   {
+    "nr": 6,
+    "text": "Wer am Zug ist, dazu „Zurücknehmen“ (wenn erlaubt) und „Aufgeben“.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "spielen",
+  "erwartet": 15,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Schnell eine Partie: ein Bot, der zu deiner Spielstärke passt. Tippe eine Bedenkzeit an und dann „Spielen“. „Einstellen“ öffnet Farbe, alle Bedenkzeiten, Wertung, Spielhilfen und Eröffnung; „Anderer Vorschlag“ zeigt den nächsten passenden Bot.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Weitere Wege zu einer Partie: alle Bots nach Stufen, eine eigene Stufe, deine eigenen Bots und die freie Partie (Mensch gegen Mensch, eigene Stellung).",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "steckbriefe",
+  "erwartet": 2,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Eröffnungen aus Kapitel 2, nach ihren ersten Zügen geordnet. Ein Tipp auf eine Eröffnung öffnet ihren Steckbrief mit Diagramm und dem Weg ins Buch.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Die Fallenchecks aus Kapitel 4: wo die Falle steht und woran du sie erkennst.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "trainer.abweichung",
+  "erwartet": 6,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle eine Eröffnung aus Kapitel 2 und deine Seite.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Die Engine verlässt die Buchvariante. Antworte nach den Prinzipien aus Kapitel 2 und 3: Zentrum, Entwicklung, Königssicherheit. Danach zeigt die App, wie die Engine deinen Zug einschätzt.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.denkroutine",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Eine feste Minute nur schauen. Dann gibst du zwei Kandidatenzüge und zu jedem die stärkste Antwort des Gegners ein. Die App prüft, ob zu jedem Kandidaten eine Antwort dasteht, und vergleicht mit der Engine.",
+    "mitte": true
+   },
+   {
+    "nr": 3,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.dreissigMinuten",
+  "erwartet": 3,
+  "gezeigt": 3,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Tag A ist Partietag, Tag B Studientag, im Wechsel. Die App schlägt den Tag vor, der dran ist, und zeigt den Plan mit Zeit, Aktivität und Ziel.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Während der Einheit stehen oben Schritt und Restzeit. Die Zeit ist ein Richtwert und läuft weiter; „Schritt erledigt“ führt zum nächsten. Eine fertige Einheit zählt im Fortschritt.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.endspiel",
+  "erwartet": 8,
+  "gezeigt": 7,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle, was du üben willst (Mattführung, Bauern-, Turm-, Damenendspiele, Leichtfiguren oder alles gemischt), und eine Stufe.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Darunter stehen Kurzübungen ohne Engine, etwa der Zug ins Quadrat oder der Zug zur Opposition.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde spielst du gegen die Engine, bis das Ziel erreicht ist: gewinnen oder Remis halten. Hilfen: Merksatz, Figur, Zug.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 7,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.faktorenbilanz",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Stell die Waagen für Material und Zeit ein und sag, wer bei Königssicherheit und Aktivität besser steht. Danach vergleicht die App mit ihrer Faktorenbilanz aus Kapitel 3.",
+    "mitte": true
+   },
+   {
+    "nr": 3,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.falle",
+  "erwartet": 7,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle eine Stufe von 1 (leicht) bis 5 (schwer) oder alle. Die Stufen richten sich danach, wie schwer die Aufgaben echten Spielern auf Lichess fielen.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Der rote Pfeil zeigt den letzten Zug des Gegners. Entscheide, ob du das Material nimmst. Danach zeigt die App die Widerlegung und welche Warnsignale aus Kapitel 4 dich gewarnt hätten.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.fehlerdatenbank",
+  "erwartet": 4,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Am einfachsten trägst du Fehler im Rückblick einer Partie ein. Hier geht es auch mit einer Stellung als FEN, einem Satz und einer Fehlerart aus der Gesamt-Checkliste.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "trainer.koordinaten",
+  "erwartet": 6,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Vier Übungsarten: Feld finden (auf Zeit, ohne Koordinaten am Rand, erst mit Weiß, dann mit Schwarz unten), Zug aufschreiben, Zug ausführen (auch Rochade, en passant, Umwandlung) und Gangarten.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Notation wie im Buch: K, D, T, L, S für König, Dame, Turm, Läufer und Springer, Bauernzüge ohne Buchstaben, „x“ für Schlagen, 0-0 und 0-0-0 für die Rochade.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.kurzplaene",
+  "erwartet": 2,
+  "gezeigt": 2,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Vier Angebote für wenig Zeit: 5 Minuten nur fällige Wiederholungen, 15 Minuten mit Taktik, Taktik auf Zeit und die Tagesaufgabe mit Serie. Bei den ersten beiden führt dich die App Schritt für Schritt mit einer Uhr; die Zeit ist ein Richtwert.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "trainer.planbilanz",
+  "erwartet": 6,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Drei Übungsarten: die drei Planfragen, LAP (die am wenigsten aktive Figur) und das Wettrennen der Bauern.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Planfragen: je Frage eine Antwort wählen, danach die Musterlösung. LAP: erst die Figur antippen, dann ihr Zielfeld. Wettrennen: bei entgegengesetzten Rochaden die Züge bis zum ersten Hebel zählen.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.repertoire",
+  "erwartet": 6,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle eine Eröffnung aus Kapitel 2 und deine Seite.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Zieh die Züge des Buches, die App spielt die Gegenseite. Ein falscher Zug zeigt den Zug des Buches. An Schlüsselzügen fragt die App, warum er gespielt wird.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.roentgen",
+  "erwartet": 7,
+  "gezeigt": 7,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle die Stufe: leicht mit wenigen Pfeilen, schwer mit vielen Schachs und Schlägen zugleich, oder gemischt.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Drei Schritte wie die Schach-Röntgen-Regel aus Kapitel 1: deine Schachs, deine Schläge, dann was der Gegner hätte, wenn er am Zug wäre.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Tippe eine Figur und dann ihr Zielfeld: So entsteht ein Pfeil. Derselbe Zug noch einmal nimmt ihn weg. Gibt es nichts, tippe gleich auf „Prüfen“. Gold heißt gefunden, Rot übersehen, Grau gehört nicht dazu.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 7,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.struktur",
+  "erwartet": 7,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Stufe 1 ist leicht, Stufe 5 schwer: Je mehr Bauernmerkmale und Figuren, desto mehr ist zu überblicken.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Schritt für Schritt: starke Felder antippen, schwache Bauern antippen, die Feldart des goldenen Feldes benennen, dann den passenden Plan-Satz wählen. „Nur das Skelett zeigen“ blendet die Figuren aus.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.studien",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Du ziehst, die App antwortet mit dem Gegenzug aus dem Buch. Ein falscher Zug zeigt den Zug der Lösung als Pfeil, und die Engine zeigt, warum dein Zug nicht reicht.",
+    "mitte": true
+   },
+   {
+    "nr": 3,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.taktik",
+  "erwartet": 8,
+  "gezeigt": 7,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle ein Motiv oder „gemischt“ und eine Stufe von 1 bis 5. Die Stufen richten sich danach, wie schwer die Aufgaben echten Spielern auf Lichess fielen.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Zieh die Lösung auf dem Brett. Findest du nichts, helfen die Hilfen Schritt für Schritt: Warnsignal, Motiv, Schlüsselfigur, Lösung. Richtig zählt eine Aufgabe ohne falschen Zug und ohne Hilfe.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Nach der Lösung benennst du das Motiv. Das schult den Blick für das nächste Mal.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 7,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.zaehlen",
+  "erwartet": 6,
+  "gezeigt": 6,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Zwei Übungsarten: Bilanz zählen an einem Feld und hängende Figuren finden auf Zeit.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Bilanz zählen: Zähle Angreifer und Verteidiger des Feldes und schätze, was das Schlagen in Bauerneinheiten bringt (Bauer 1, Springer und Läufer 3, Turm 5, Dame 9). Die App rechnet zum Vergleich den ganzen Abtausch vor.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.zielbilanz",
+  "erwartet": 5,
+  "gezeigt": 5,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Für beide Seiten je drei Ziele: Zentrum, Entwicklung, Königssicherheit. Wähle ja, teils oder nein; „Prüfen“ vergleicht mit der Prüfung der App und erklärt Unterschiede.",
+    "mitte": true
+   },
+   {
+    "nr": 3,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "trainer.zugErraten",
+  "erwartet": 7,
+  "gezeigt": 7,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Hier steht in einem Satz, worum es in diesem Trainer geht. Wie er genau abläuft, steht unten unter „So funktioniert dieser Trainer“.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Wähle eine Meisterpartie aus Kapitel 11 und eine Seite, am besten die des Siegers.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Zieh deinen Zug, die App deckt den Partiezug auf: Gold der Partiezug, Rot deiner. Weicht er ab, überleg kurz, warum der Meister anders zog.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "Über den Knöpfen blätterst du durch die gespielten Züge. „Analysieren“ lässt dich frei Varianten ausprobieren, bevor du dich festlegst. „Hinweis: Figur zeigen“ markiert die Figur, die zieht; ein Treffer mit Hinweis zählt nicht.",
+    "mitte": true
+   },
+   {
+    "nr": 5,
+    "text": "In der Runde steht oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht es mit „Weiter“ zur nächsten.",
+    "mitte": true
+   },
+   {
+    "nr": 6,
+    "text": "Nach einer Antwort legt „In die Lernsammlung“ die Stellung mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).",
+    "mitte": true
+   },
+   {
+    "nr": 7,
+    "text": "Am Ende siehst du Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "training",
+  "erwartet": 4,
+  "gezeigt": 4,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Dein Stapel für heute: Übungen und Trainer-Aufgaben, die zur Wiederholung fällig sind. „Durchgehen“ startet sie.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Deine Lernsammlung: eigene Stellungen mit Plan, nach Eröffnung geordnet, zum Abfragen.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Die Übungen aus dem Kasten „Training zu diesem Kapitel“ des Buches auf der Website, mit Links zu Lichess. Die Seiten gehen auch offline.",
+    "mitte": false
+   },
+   {
+    "nr": 4,
+    "text": "Je Teil des Buches eine Reihe mit Trainern zum Wischen. Ein Tipp auf eine Karte startet den Trainer; im Trainer zeigt das Toursymbol, wie er funktioniert.",
+    "mitte": false
+   }
+  ]
+ },
+ {
+  "tour": "uebung",
+  "erwartet": 4,
+  "gezeigt": 4,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Aufgabe steht im Buch, hier löst du sie. Bei Zugaufgaben ziehst du auf dem Brett, die App antwortet mit den Zügen der Gegenseite aus der Lösung.",
+    "mitte": false
+   },
+   {
+    "nr": 2,
+    "text": "Erst selbst denken: Hinweise und Lösung erscheinen, wenn du nachgedacht hast. Danach helfen gestufte Hinweise (Motiv, Figur, Zug), oder du lässt dir die Lösung zeigen.",
+    "mitte": false
+   },
+   {
+    "nr": 3,
+    "text": "Löst du eine Übung im Kopf, sagst du nach der Erklärung selbst, wie es lief. Danach kommt die Übung in wachsenden Abständen wieder: nach 1, 3, 7, 16 und 35 Tagen.",
+    "mitte": true
+   },
+   {
+    "nr": 4,
+    "text": "„Nächste Übung“ führt weiter durch die Übungen des Kapitels.",
+    "mitte": true
+   }
+  ]
+ },
+ {
+  "tour": "werkzeuge",
+  "erwartet": 1,
+  "gezeigt": 1,
+  "schritte": [
+   {
+    "nr": 1,
+    "text": "Die Werkzeuge in der Reihenfolge des Buches, je Kapitel eine Karte. Ein Tipp auf einen Namen zeigt, was das Werkzeug zeigt und nach welcher Regel es rechnet.",
+    "mitte": false
+   }
+  ]
+ }
+]

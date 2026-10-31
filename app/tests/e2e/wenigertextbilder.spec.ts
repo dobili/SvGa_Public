@@ -69,7 +69,11 @@ for (const schema of SCHEMATA) {
     await zeile.getByRole("button", { name: "Erklärung: Zählen" }).click();
     await bild(page.locator(".abbildung-karten"), "p08", schema);
     await ohneUeberstand(page);
-    // P10: Kandidaten als Zeilen.
+    // P10: Kandidaten als Zeilen (zurück ins Buch, dann Abb. 12.1).
+    await page
+      .getByRole("navigation", { name: "Hauptbereiche" })
+      .getByRole("button", { name: "Buch" })
+      .click();
     await oeffneAbbildung(page, "12.1", "12.1");
     await waehleWerkzeug(page, "Kandidaten");
     const engine = karte.getByTestId("kandidaten-karte");

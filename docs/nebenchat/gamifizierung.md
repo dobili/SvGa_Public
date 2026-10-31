@@ -91,17 +91,23 @@ Erlaubt ist je eine Zeile in den Listen oben.
 **Stand nach Welle 1 (Version 0.3.23, 31.10.2026):** P1, P2, P4+P11, P5, P7, P9, P10 sind auf
 main. Dazu kamen Listen, die Welle 2 nur um eine Zeile ergänzt (nicht umbauen):
 
-| Liste                                  | Datei                                            | Wofür                                                         |
-| -------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
-| `VORSCHLAGSARTEN`                      | `training/vorschlagsarten.ts`                    | Vorschläge der Karte „Dein nächster Schritt“ (P1)             |
-| `NAMENSMUSTER`                         | `training/themennamen.ts`                        | Anzeigename eines Themas aus seiner Kennung (P1, P3, P12)     |
-| `REKORDARTEN`                          | `training/rekordarten.ts`                        | Rekorde mit Quelle und Wert (P5); `pruefeRekorde`             |
-| `WOCHENABSCHNITTE`                     | `ui/komponenten/start/wochenabschnitte.ts`       | Teile der Wochenkarte (P4: Ziel; P6 Aufträge, P13 Ziele)      |
-| `STATIONSTEILE`                        | `ui/komponenten/lernpfad/lernpfad.ts`            | Bestandteile einer Station im Lernpfad (P2)                   |
-| `HERAUSFORDERUNGEN`                    | `ui/komponenten/teilen/herausforderungen.ts`     | Herausforderung per Link je Aufgabenart (P9)                  |
-| `KOMBOSTUFEN`, `FUNDSTUECKE`           | `training/kombo.ts`, `training/fundstuecke.ts`   | Kombo-Meldungen, Fundstücke (P10)                             |
-| `EXTRAS`, `EXTRAARTEN`, `ORDENGRUPPEN` | `training/extras.ts`                             | freischaltbare Extras mit Bedingung (P7); Wahl in `EXTRAWAHL` |
-| Abzeichen-Teillisten                   | `fortschritt/abzeichen-wochen.ts`, `-rekorde.ts` | Vorbild für neue Teillisten                                   |
+| Liste                                  | Datei                                                | Wofür                                                                               |
+| -------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `VORSCHLAGSARTEN`                      | `training/vorschlagsarten.ts`                        | Vorschläge der Karte „Dein nächster Schritt“ (P1)                                   |
+| `NAMENSMUSTER`                         | `training/themennamen.ts`                            | Anzeigename eines Themas aus seiner Kennung (P1, P3, P12)                           |
+| `REKORDARTEN`                          | `training/rekordarten.ts`                            | Rekorde mit Quelle und Wert (P5); `pruefeRekorde`                                   |
+| `WOCHENABSCHNITTE`                     | `ui/komponenten/start/wochenabschnitte.ts`           | Teile der Wochenkarte (P4: Ziel; P6 Aufträge, P13 Ziele)                            |
+| `STATIONSTEILE`                        | `ui/komponenten/lernpfad/lernpfad.ts`                | Bestandteile einer Station im Lernpfad (P2)                                         |
+| `HERAUSFORDERUNGEN`                    | `ui/komponenten/teilen/herausforderungen.ts`         | Herausforderung per Link je Aufgabenart (P9)                                        |
+| `KOMBOSTUFEN`, `FUNDSTUECKE`           | `training/kombo.ts`, `training/fundstuecke.ts`       | Kombo-Meldungen, Fundstücke (P10)                                                   |
+| `EXTRAS`, `EXTRAARTEN`, `ORDENGRUPPEN` | `training/extras.ts`                                 | freischaltbare Extras mit Bedingung (P7); Wahl in `EXTRAWAHL`                       |
+| Abzeichen-Teillisten                   | `fortschritt/abzeichen-wochen.ts`, `-rekorde.ts`     | Vorbild für neue Teillisten                                                         |
+| `TRAINERSTARTS`                        | `ui/trainer/startkarte/trainerstarts.ts`             | Startkarte je Trainer (Beispielstellung; Texte `trainerstart.<kennung>.satz/.kurz`) |
+| `VORSCHLAGSQUELLEN`                    | `ui/komponenten/spielstart/vorschlag.ts`             | Quellen für „Schnell eine Partie“ (Rivale, Ziele …)                                 |
+| `SPIELSEITEN`                          | `ui/komponenten/spielstart/spielseiten.tsx`          | Unterseiten und Kacheln von „Spielen“ (neue Gegnerart = Eintrag)                    |
+| `KACHELARTEN`                          | `ui/komponenten/start/vorschlagskacheln.ts`          | Kachel je Vorschlagsart in der Karte „Heute“                                        |
+| `MOMENTQUELLEN`, `ZAHLENABSCHNITTE`    | `ui/komponenten/auswertung/momente.ts`, `Zahlen.tsx` | Momente der Zeitleiste und Abschnitte „In Zahlen“ der Auswertung                    |
+| `LANDSCHAFTEN`                         | `ui/komponenten/lernpfad/landschaften.ts`            | Landschaft je Buchteil im Lernpfad                                                  |
 
 Weitere gebaute Bausteine: Teilenknopf für Bilder (`ui/komponenten/teilen/Teilenknopf.tsx`,
 P9; für Rekorde, Meisterschaft, Rückblick), `NeueRekorde` am Rundenende (P5), Ansicht
@@ -109,7 +115,7 @@ P9; für Rekorde, Meisterschaft, Rückblick), `NeueRekorde` am Rundenende (P5), 
 `ui/komponenten/spielstart/vorbelegung.ts`: `useSpielvorbelegung()({ bot, tempo })` schreibt die
 Vorlieben (Bot mit Stufen, gewertet, Bedenkzeit der Zeitart `blitz`/`rapid`/`classical` oder
 `null`) und öffnet „Spielen“. P8 (Revanche) und P13 (Ziel „Bot in Zeitart besiegen“) nutzen ihn;
-der Spielstart selbst bleibt gesperrt. Partieende: `NACH_PARTIEENDE` (Duelle P8, Ziele P13). **Neu: Trainer mit Thema öffnen:**
+der Spielstart selbst bleibt gesperrt. Seit J3 (31.10.2026) öffnet der Einstieg die Startseite von „Spielen“ mit `seite: "vorbelegt"`; der Bot steht dann auf „Schnell eine Partie“. Partieende: `NACH_PARTIEENDE` (Duelle P8, Ziele P13). **Neu: Trainer mit Thema öffnen:**
 `navigiere({ bildschirm: "trainer", kennung, thema: "taktik:gabel" })`; der Trainer stellt das
 Thema über `ui/trainer/trainerthema.ts` bereit, jeder Bereich liest es mit
 `useTrainerthema("<präfix>")` und wählt vor, sobald er es kann (Taktik: Serien-Chat L).

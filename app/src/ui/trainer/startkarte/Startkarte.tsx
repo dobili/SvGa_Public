@@ -11,7 +11,7 @@
  */
 import {
   CalendarCheck,
-  CircleHelp,
+  Info,
   Clock,
   Flame,
   Play,
@@ -112,7 +112,7 @@ function Starthilfe({ kennung, hilfen }: { kennung: TrainerKennung; hilfen: read
   return (
     <details className="starthilfe" data-testid="trainer-hilfe">
       <summary>
-        <CircleHelp size={KNOPFZEICHEN} aria-hidden="true" />
+        <Info size={KNOPFZEICHEN} aria-hidden="true" />
         {t("trainerstart.hilfe")}
       </summary>
       <p className="trainer-ablauf">{t(`trainer.${kennung}.ablauf`)}</p>

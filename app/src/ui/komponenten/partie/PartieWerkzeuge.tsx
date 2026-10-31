@@ -24,6 +24,7 @@ import { RuheKarte } from "../werkzeugkarten/RuheKarte";
 import type { Enginemarkierungen } from "../werkzeugkarten/useEngineMarkierungen";
 import type { Werkzeugwahlstand } from "../werkzeugwahl/useWerkzeugwahl";
 import { Buendelknopf, Reiterleiste, type Werkzeugwahl } from "../werkzeugwahl/Werkzeugleiste";
+import { Erklaerkarte } from "../werkzeugkarten/Erklaerkarte";
 import { Werkzeugkarte } from "../werkzeugkarten/Werkzeugkarte";
 import { buendelname } from "../werkzeugwahl/werkzeugordnung";
 import { Werkzeugzusatz } from "../werkzeugkarten/Werkzeugzusatz";
@@ -164,7 +165,9 @@ export function PartieWerkzeugkarten({
 }) {
   return (
     <>
-      {wahl === "zaehlen" && !ergebnis && <p className="hinweis">{t("abbildung.tippeFeld")}</p>}
+      {wahl === "zaehlen" && !ergebnis && (
+        <Erklaerkarte werkzeug="zaehlen" ausblenden={() => undefined} />
+      )}
       {ergebnis && (
         <Werkzeugkarte
           key={ergebnis.werkzeug}

@@ -14,6 +14,7 @@ import { istGruppe } from "../../../../engine/gruppe";
 import { t } from "../../../../i18n/sprache";
 import { wertungstempo } from "../../../../spiel/elomodell";
 import { useSpeicher } from "../../../../speicher/speicher";
+import { MitInfoblase } from "../../bausteine/Infoblase";
 import { VorgefertigteGitter } from "../../gegner/Gegnerstufen";
 import { Sprechblase } from "../Sprechblase";
 import { mitBot } from "../spielwahl";
@@ -58,7 +59,11 @@ export function GegnerAussuchen({
             beiBot={(neu) => seite.setze({ ...seite.wahl, vorlieben: mitBot(v, neu, eigene) })}
             tempo={wertungstempo(uhr)}
           />
-          <p className="hinweis">{t("spielenneu.seite.gegner.hinweis")}</p>
+          <MitInfoblase
+            zeile={<p className="hinweis">{t("wenigertext.seiten.gegner.zeile")}</p>}
+            thema={t("spielenneu.seite.gegner.titel")}
+            erklaerung={<p>{t("spielenneu.seite.gegner.hinweis")}</p>}
+          />
         </section>
       }
     />

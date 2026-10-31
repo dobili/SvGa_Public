@@ -11,7 +11,7 @@
  * Trainingsseite eines Kapitels in der Kapitelübersicht.
  * Abhängigkeiten: training/trainer.ts, komponenten/training/*, i18n, Tour.
  */
-import { CircleHelp } from "lucide-react";
+import { Info } from "lucide-react";
 import { useMemo } from "react";
 import { t } from "../../i18n/sprache";
 import { TRAINER, type TrainerKennung } from "../../training/trainer";
@@ -50,7 +50,7 @@ export function Training() {
       {/* Kurz sichtbar, aufgeklappt die ganze Erklärung der Lernkartei (wie bisher). */}
       <details className="stapel-prinzip hinweis" data-testid="stapel-prinzip">
         <summary>
-          <CircleHelp size={HILFESYMBOL} aria-hidden="true" />
+          <Info size={HILFESYMBOL} aria-hidden="true" />
           {t("trainingslook.prinzip")}
         </summary>
         <p>{t("training.faelligPrinzip")}</p>

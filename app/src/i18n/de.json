@@ -50,7 +50,6 @@
   "abbildung.amZug.b": "Schwarz am Zug",
   "abbildung.werkzeuge": "Werkzeuge",
   "abbildung.brettwerkzeuge": "Werkzeuge am Brett",
-  "abbildung.tippeFeld": "Tippe ein Feld an, um Angreifer und Verteidiger zu zählen.",
   "abbildung.andereOeffnen": "Diese Stellung ist Abb. {nummer} – öffnen",
   "abbildung.andereNummer": "Abb. {nummer}. Tippen, um eine andere Abbildung zu öffnen",
   "abbildung.sprungSchliessen": "Schließen",
@@ -4944,5 +4943,6 @@
   "wenigertext.seiten.denk.phasen": "Partiephase wählen",
   "wenigertext.seiten.maia.groesse": "{mb} MB",
   "wenigertext.seiten.werkzeuge.zeile": "Nach Kapiteln geordnet",
-  "wenigertext.seiten.beta": "Beta"
+  "wenigertext.seiten.beta": "Beta",
+  "wenigertext.seiten.gegner.zeile": "So liest du die Bots"
 }

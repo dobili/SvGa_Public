@@ -50,7 +50,6 @@
   "abbildung.amZug.b": "Black to move",
   "abbildung.werkzeuge": "Tools",
   "abbildung.brettwerkzeuge": "Tools on the board",
-  "abbildung.tippeFeld": "Tap a square to count attackers and defenders.",
   "abbildung.andereOeffnen": "This position is Fig. {nummer} – open",
   "abbildung.andereNummer": "Fig. {nummer}. Tap to open another figure",
   "abbildung.sprungSchliessen": "Close",
@@ -4944,5 +4943,6 @@
   "wenigertext.seiten.denk.phasen": "Choose the game phase",
   "wenigertext.seiten.maia.groesse": "{mb} MB",
   "wenigertext.seiten.werkzeuge.zeile": "Sorted by chapter",
-  "wenigertext.seiten.beta": "Beta"
+  "wenigertext.seiten.beta": "Beta",
+  "wenigertext.seiten.gegner.zeile": "How to read the bots"
 }

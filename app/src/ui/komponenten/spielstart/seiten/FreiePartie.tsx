@@ -15,6 +15,7 @@ import { istGruppe } from "../../../../engine/gruppe";
 import { t } from "../../../../i18n/sprache";
 import { spielbar } from "../../../../spiel/partie";
 import { useSpeicher } from "../../../../speicher/speicher";
+import { MitInfoblase } from "../../bausteine/Infoblase";
 import { Startstellung } from "../Startstellung";
 import { Unterseite } from "../Unterseite";
 import { abgeleitet, useSpielwahl } from "../useSpielwahl";
@@ -43,19 +44,24 @@ export function FreiePartie({ startFen, abbildung }: { startFen?: string; abbild
       kinder={
         <>
           <section className="karte" data-tour="spielen-gegnerart">
-            <label className="schalterzeile spielen-mensch">
-              <Users size={ZEICHEN} aria-hidden="true" />
-              <span>{t("spielen.gegner.mensch")}</span>
-              <input
-                type="checkbox"
-                role="switch"
-                checked={mensch}
-                onChange={(e) => seite.mit({ gegner: e.target.checked ? "mensch" : "engine" })}
-              />
-            </label>
-            <p className="hinweis">
-              {t(mensch ? "spielenneu.seite.frei.mensch" : "spielenneu.seite.frei.engine")}
-            </p>
+            <MitInfoblase
+              zeile={
+                <label className="schalterzeile spielen-mensch">
+                  <Users size={ZEICHEN} aria-hidden="true" />
+                  <span>{t("spielen.gegner.mensch")}</span>
+                  <input
+                    type="checkbox"
+                    role="switch"
+                    checked={mensch}
+                    onChange={(e) => seite.mit({ gegner: e.target.checked ? "mensch" : "engine" })}
+                  />
+                </label>
+              }
+              thema={t("spielen.gegner.mensch")}
+              erklaerung={
+                <p>{t(mensch ? "spielenneu.seite.frei.mensch" : "spielenneu.seite.frei.engine")}</p>
+              }
+            />
           </section>
           <Startstellung fen={sw.fen} abbildung={sw.abbildung} setzeFen={sw.uebernimm} />
           {!spielbar(sw.fen) && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}

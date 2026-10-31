@@ -1,5 +1,6 @@
 /**
- * Info-Knopf: ein Fragezeichen im Kreis, das eine Erklärung ein- und ausklappt.
+ * Info-Knopf: ein „i“ im Kreis (seit 0.3.42 wie Infoblase.tsx; vorher ein Fragezeichen), das eine
+ * Erklärung ein- und ausklappt.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): Längere Erklärungen (Elo-System der
  * Wertung, Speicher auf dem iPhone, Datensicherung) stehen nicht mehr dauerhaft da, sondern
@@ -7,7 +8,7 @@
  * (Überschrift oder Zusammenfassung); die Erklärung erscheint darunter.
  * Abhängigkeiten: React, Lucide-Symbole, i18n.
  */
-import { CircleHelp } from "lucide-react";
+import { Info } from "lucide-react";
 import { useId, useState, type ReactNode } from "react";
 import { t } from "../../../i18n/sprache";
 
@@ -41,7 +42,7 @@ export function MitInfo({
           aria-label={t("info.erklaerung", { thema })}
           onClick={() => setzeOffen(!offen)}
         >
-          <CircleHelp size={SYMBOLGROESSE} aria-hidden="true" />
+          <Info size={SYMBOLGROESSE} aria-hidden="true" />
         </button>
       </div>
       {offen && (

@@ -9,7 +9,7 @@
  * ein „switch“ mit dem Namen der Zeile.
  * Abhängigkeiten: React, Lucide-Symbole, i18n.
  */
-import { ChevronRight, CircleHelp, type LucideIcon } from "lucide-react";
+import { ChevronRight, Info, type LucideIcon } from "lucide-react";
 import { useId, useState, type ReactNode } from "react";
 import { t } from "../../../i18n/sprache";
 
@@ -80,7 +80,7 @@ function Fragezeichen({
       aria-label={t("info.erklaerung", { thema })}
       onClick={beiWechsel}
     >
-      <CircleHelp size={KLEINES_SYMBOL} aria-hidden="true" />
+      <Info size={KLEINES_SYMBOL} aria-hidden="true" />
     </button>
   );
 }

@@ -95,7 +95,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   ]),
   buch: tour("tour.titel.buch", [
     ziel("buch-nummer", "tour.buch.nummer"),
-    ziel("buch-zuletzt", "tour.buch.zuletzt"),
+    ziel("buch-heute", "buchlook.tourHeute"),
     ziel("buch-kapitel", "tour.buch.kapitel"),
     mitte("tour.buch.rundgang"),
   ]),

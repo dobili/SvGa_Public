@@ -235,3 +235,14 @@ export async function oeffneTrainer(seite: Page, kennung: string): Promise<void>
     .click();
   await expect(seite.getByTestId("trainer")).toBeVisible();
 }
+
+/**
+ * Klappt einen Abschnitt der Woche in der Karte „Heute“ auf (Reiter „Aufträge“, „Plan“, „Ziele“;
+ * seit der Gestaltung A2 vom 31.10.2026 zugeklappt). Bleibt offen, wenn er schon offen ist.
+ * Beispiel: oeffneReiter(seite, "auftraege").
+ */
+export async function oeffneReiter(seite: Page, kennung: string): Promise<void> {
+  const reiter = seite.getByTestId(`reiter-${kennung}`);
+  if ((await reiter.getAttribute("aria-expanded")) !== "true") await reiter.click();
+  await expect(reiter).toHaveAttribute("aria-expanded", "true");
+}

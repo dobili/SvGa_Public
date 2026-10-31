@@ -1,0 +1,436 @@
+/*
+ * Karte „Heute“ oben im Buch (Gestaltung A2 nach Wahl des Autors, 31.10.2026): Tageskette,
+ * Kacheln des nächsten Schritts und Reiter der Woche. Alle Farben über die Größen aus basis.css;
+ * nur die große Kachel kehrt die Farben um (hell: Navy mit Creme, dunkel: Creme mit Navy), wie
+ * der Hauptknopf. Kompakt gehalten, damit die Kapitel in der oberen Bildschirmhälfte beginnen.
+ */
+.heutekarte {
+  position: relative;
+  overflow: hidden;
+  gap: var(--raster);
+  padding: calc(var(--raster) * 1.5);
+}
+
+.heute-kopf h2 {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.heute-stand {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 0.5);
+  font-size: var(--groesse-mittel);
+  font-weight: 600;
+}
+
+.heute-flamme {
+  color: var(--gold-text);
+}
+
+.heute-stift {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tippflaeche);
+  min-height: var(--tippflaeche);
+  margin: calc(var(--raster) * -1) calc(var(--raster) * -1.5) calc(var(--raster) * -1) 0;
+  border: none;
+  background: none;
+  color: var(--text-leise);
+}
+
+.heute-hilfe {
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.heute-erklaerung {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--raster);
+}
+
+.heute-meldung {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--raster);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.heute-erreicht {
+  color: var(--gold-text);
+}
+
+/* ---------- Tageskette Mo bis So ---------- */
+
+.tageskette {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Die Linie hinter den Kreisen, von Mitte Mo bis Mitte So. */
+.tageskette::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: var(--linie-stark);
+}
+
+.tageskette-tag {
+  position: relative;
+  display: flex;
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.tageskette-kreis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--flaeche);
+  border: 2px solid var(--linie-stark);
+  color: var(--text-leise);
+}
+
+.tageskette-tag.gelernt .tageskette-kreis {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.tageskette-tag.heute {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.tageskette-tag.heute .tageskette-kreis {
+  border: 3px solid var(--gold);
+  color: var(--text);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 22%, transparent);
+}
+
+/* ---------- Wahl des Wochenziels in einer Zeile ---------- */
+
+.tageswahl {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 0.5);
+}
+
+.tageswahl-zeile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tageswahl-frage {
+  flex: 0 1 4.6em;
+  font-size: var(--groesse-klein);
+  line-height: 1.2;
+  color: var(--text-leise);
+}
+
+.tageswahl-knopf {
+  flex: 1 1 0;
+  min-width: var(--tippflaeche);
+  height: var(--tippflaeche);
+  border-radius: calc(var(--tippflaeche) / 2);
+  border: 1px solid var(--linie-stark);
+  background: var(--flaeche);
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+}
+
+.tageswahl-knopf.vorschlag {
+  border: 2px solid var(--gold);
+}
+
+/* ---------- Kacheln des nächsten Schritts ---------- */
+
+.heute-vorschlaege {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.heute-kachel {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  width: 100%;
+  min-height: 52px;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: left;
+}
+
+.heute-kachel.gross {
+  min-height: 56px;
+  border: none;
+  background: var(--navy);
+  color: var(--creme);
+}
+
+.heute-kachel-symbol {
+  display: flex;
+  flex: none;
+  color: var(--gold-text);
+}
+
+.heute-kachel.gross .heute-kachel-symbol {
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: var(--navy-tief);
+  color: var(--gold);
+}
+
+.heute-kachel-text {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.heute-kachel-text strong {
+  font-size: var(--groesse-grund);
+}
+
+.heute-kachel.gross .heute-kachel-text strong {
+  font-size: var(--groesse-gross);
+}
+
+.heute-kachel-text span {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.heute-kachel.gross .heute-kachel-text span {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.heute-kachel-pfeil {
+  flex: none;
+}
+
+/* Die Alternativen nebeneinander, am Ende das kleine Kreuz „Nicht jetzt“. */
+.heute-alternativen {
+  display: flex;
+  gap: var(--raster);
+}
+
+.heute-alternativen .heute-kachel {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 48px;
+  gap: var(--raster);
+  padding: 6px var(--raster);
+}
+
+.heute-alternativen .heute-kachel-text strong {
+  font-size: var(--groesse-mittel);
+}
+
+.heute-nicht-jetzt {
+  flex: none;
+  margin-left: auto;
+  align-self: center;
+  color: var(--text-leise);
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-farbschema="hell"])) .heute-kachel.gross {
+    background: var(--creme);
+    color: var(--navy);
+  }
+
+  :where(:root:not([data-farbschema="hell"])) .heute-kachel.gross .heute-kachel-symbol {
+    background: var(--navy);
+  }
+}
+
+:where(:root[data-farbschema="dunkel"]) .heute-kachel.gross {
+  background: var(--creme);
+  color: var(--navy);
+}
+
+:where(:root[data-farbschema="dunkel"]) .heute-kachel.gross .heute-kachel-symbol {
+  background: var(--navy);
+}
+
+/* ---------- Reiter der Woche ---------- */
+
+.wochenreiter {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.wochenreiter-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.wochenreiter-knopf {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 1.25);
+  border: 1px solid var(--linie-stark);
+  border-radius: calc(var(--tippflaeche) / 2);
+  background: none;
+  font-size: var(--groesse-mittel);
+  font-weight: 600;
+}
+
+.wochenreiter-knopf[aria-expanded="true"] {
+  border-color: var(--gold);
+  background: var(--grund);
+}
+
+.wochenreiter-pfeil {
+  color: var(--text-leise);
+  transition: transform 0.2s ease;
+}
+
+.wochenreiter-knopf[aria-expanded="true"] .wochenreiter-pfeil {
+  transform: rotate(180deg);
+}
+
+.reiterstand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--gold-text);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.reiterstand.betont {
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.reiterstand-strich {
+  display: block;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--linie);
+  overflow: hidden;
+}
+
+.reiterstand-strich span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wochenreiter-pfeil {
+    transition: none;
+  }
+}
+
+/* ---------- Kopf des Buches: Weg und Tour oben rechts, Nummernfeld neben dem Titel ---------- */
+
+.bildschirm:has(> .buchkopf) {
+  gap: calc(var(--raster) * 1.5);
+  padding-top: calc(env(safe-area-inset-top) + var(--raster));
+}
+
+.buchkopf {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+}
+
+.buchkopf-oben {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: calc(var(--raster) * -1);
+}
+
+.buchkopf-oben .ueberzeile {
+  flex: 1;
+  margin: 0;
+}
+
+.buchkopf-oben .tourknopf {
+  position: relative;
+}
+
+.lernpfad-symbol {
+  flex: none;
+  color: var(--text-leise);
+}
+
+.buchkopf-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster) calc(var(--raster) * 1.5);
+}
+
+.buchkopf-zeile h1 {
+  margin: 0;
+}
+
+/* Das Formular ordnet sich in die Zeile ein; Zahlenleiste und Fundmeldung nehmen die ganze Breite. */
+.buchkopf-formular {
+  display: contents;
+}
+
+.buchkopf-formular > :not(.buchkopf-feld) {
+  flex-basis: 100%;
+}
+
+.buchkopf-feld {
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+.buchkopf-feld input {
+  min-height: var(--tippflaeche);
+  font-size: var(--groesse-gross);
+  border-width: 1px;
+  border-color: var(--linie-stark);
+}
+
+.buchkopf-feld .knopf-haupt {
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 1.5);
+}

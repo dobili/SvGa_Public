@@ -20,7 +20,10 @@ test("Lernpfad: Stationen, Figur, Satz, Abhaken füllt Station 0, Tipp öffnet d
   await expect(hinweis).toContainText("nur noch Kapitel 1 bis zum Orden „Teil Grundlagen“");
   // Kapitel 0 ganz abhaken: Die Station zeigt alle Abbildungen, es fehlen nur die Übungen.
   await page.getByRole("button", { name: "Zurück" }).click();
-  await page.getByRole("button", { name: /Dein Einstieg ins Schachbuch/ }).click();
+  await page
+    .locator(".kapitelliste")
+    .getByRole("button", { name: /Dein Einstieg ins Schachbuch/ })
+    .click();
   await page.getByRole("button", { name: "Alle abhaken" }).click();
   await page.getByRole("button", { name: "Ja, alle abhaken" }).click();
   await page.goBack();

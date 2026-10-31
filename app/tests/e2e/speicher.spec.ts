@@ -31,7 +31,7 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   await page.goBack();
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
-  const kapitel1 = page.getByRole("button", { name: /Grundprinzipien/ });
+  const kapitel1 = page.locator(".kapitelliste").getByRole("button", { name: /Grundprinzipien/ });
   await expect(kapitel1).toContainText(/2 von \d+ Abbildungen angesehen/);
   await kapitel1.click();
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^2 von \d+$/);
@@ -65,7 +65,10 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  await page
+    .locator(".kapitelliste")
+    .getByRole("button", { name: /Grundprinzipien/ })
+    .click();
   await klappeAbschnittAuf(page, "1.1");
   const haken = page.getByRole("button", { name: "Abb. 1.3 als angesehen abhaken" });
   await haken.click();
@@ -88,7 +91,10 @@ test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken löse
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  await page
+    .locator(".kapitelliste")
+    .getByRole("button", { name: /Grundprinzipien/ })
+    .click();
   // Seit 0.2.82 sind alle Abschnitte anfangs eingeklappt.
   await expect(page.locator("details.abschnittsklappe[open]")).toHaveCount(0);
   await klappeAbschnittAuf(page, "1.4");

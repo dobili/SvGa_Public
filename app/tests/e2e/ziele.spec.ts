@@ -5,7 +5,7 @@
  * die Karte das Ziel und das Profil zeigt es unter „Erreichte Ziele“.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneProfil, starteImBrowser } from "./hilfen";
+import { oeffneProfil, oeffneReiter, starteImBrowser } from "./hilfen";
 
 const JETZT = "2026-10-29T12:00:00";
 
@@ -58,6 +58,7 @@ test("Eigene Ziele: Vorschlag anheften, lösen, Spielen, erreicht mit Feier und 
   await page.clock.setFixedTime(JETZT);
   await starteImBrowser(page);
   await spieleEin(page, { blitz: ["lotte"], rapid: [], classical: [] });
+  await oeffneReiter(page, "ziele");
   const ziele = page.getByTestId("ziele");
   const vorschlag = ziele
     .getByTestId("ziel-vorschlag")
@@ -96,6 +97,7 @@ test("Eigene Ziele: Vorschlag anheften, lösen, Spielen, erreicht mit Feier und 
 
   // Sieg in Schnellschach (wie nach einer Partie): erreicht, Feier, Profil.
   await spieleEin(page, { blitz: ["lotte"], rapid: ["lotte"], classical: [] });
+  await oeffneReiter(page, "ziele");
   await expect(ziele.getByTestId("ziel-feier")).toHaveText(
     "Ziel erreicht: Lotte in Schnellschach besiegt!",
   );

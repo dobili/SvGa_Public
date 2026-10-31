@@ -13,7 +13,7 @@
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import type { Ziel } from "../../../speicher/gamifizierung";
-import { aendere } from "../../../speicher/speicher";
+import { aendere, useSpeicher } from "../../../speicher/speicher";
 import { zielartVon } from "../../../training/zielarten";
 import {
   HOECHSTENS_ZIELE,
@@ -23,6 +23,7 @@ import {
 } from "../../../training/ziele";
 import type { Zielkontext } from "../../../training/zieltypen";
 import { Feuerwerk } from "../bausteine/Feuerwerk";
+import { Reiterwort } from "./Reiterstand";
 import { Zielauswahl } from "./Zielauswahl";
 import {
   useHinfuehrung,
@@ -105,7 +106,6 @@ export function Zielabschnitt() {
   const wahlOffen = angeheftet.length === 0 || waehlen;
   return (
     <section className="wochenkarte-abschnitt zielabschnitt" data-testid="ziele">
-      <h3>{t("ziel.titel")}</h3>
       <Zielfeier ziele={feier} kontext={kontext} />
       {angeheftet.length > 0 && (
         <ul className="zielliste">
@@ -125,4 +125,11 @@ export function Zielabschnitt() {
       )}
     </section>
   );
+}
+
+/** Stand im Reiter der Karte „Heute“: Zahl der angehefteten Ziele; ohne Ziel nichts. */
+export function ZieleStand() {
+  const angeheftet = useSpeicher((z) => z.daten.ziele.angeheftet);
+  const anzahl = angeheftet.filter((ziel) => zielartVon(ziel) !== null).length;
+  return anzahl > 0 ? <Reiterwort text={String(anzahl)} /> : null;
 }

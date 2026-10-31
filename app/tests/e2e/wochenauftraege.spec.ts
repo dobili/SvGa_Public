@@ -6,7 +6,7 @@
  * vom Zufall der Woche abhängt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneReiter, starteImBrowser } from "./hilfen";
 
 const JETZT = new Date(2026, 9, 29, 12);
 /** Eine Abbildung zählt erst nach 30 Sekunden am Stück (0.2.27). */
@@ -62,6 +62,7 @@ test("Wochenauftrag: drei Abbildungen ansehen, dann Haken; Tauschen einmal", asy
   await page.clock.install({ time: JETZT });
   await starteImBrowser(page);
   await spieleWocheEin(page);
+  await oeffneReiter(page, "auftraege");
   const auftraege = page.getByTestId("wochenauftraege");
   const abbildungen = auftraege.getByTestId("auftrag-abbildungen");
   await expect(abbildungen).toContainText("Sieh dir 3 neue Abbildungen an, weiter ab Abb. 1.1.");
@@ -88,10 +89,9 @@ test("Wochenauftrag: drei Abbildungen ansehen, dann Haken; Tauschen einmal", asy
   }
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await oeffneReiter(page, "auftraege");
   await expect(abbildungen).toContainText("Erledigt · +15 Erfahrung");
   await expect(abbildungen.getByRole("button")).toHaveCount(0);
   await page.setViewportSize({ width: 400, height: 900 });
-  await page
-    .getByTestId("wochenkarte")
-    .screenshot({ path: "test-results/bilder/wochenauftraege.png" });
+  await page.getByTestId("heute").screenshot({ path: "test-results/bilder/wochenauftraege.png" });
 });

@@ -33,6 +33,58 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Nebenchat: Trainer-Feinschliff 2 (31.10.2026)
+
+- [ ] N2015. **Eignungsprüfung je Trainer (zur Durchsicht):** Jeder Trainer schließt eigene Arten
+      von Stellungen aus. Bitte prüfe die Regeln:
+      Zielbilanz: kein Schach, kein Matt oder Patt, kein laufender Abtausch (die Seite am Zug
+      kann sofort Material gewinnen); hängende eigene Figuren und Fesselungen bleiben erlaubt.
+      Faktorenbilanz: kein Schach, kein Ende, kein sofort gewinnbarer Figurenwert; ein
+      hängender Bauer bleibt erlaubt (Gambits). Planfragen und LAP: kein Schach, kein Ende, kein
+      sofortiger Materialgewinn, keine hängende oder gefesselte eigene Figur (die Warum-Fragen des
+      Buches bleiben unberührt). Wettrennen: nur kein Schach und kein Ende. Denkroutine: Schach
+      ist jetzt erlaubt (wie Abb. 12.3), nur Ende und weniger als zwei Züge fallen weg.
+      Gangarten und Zug aufschreiben: Schach und Fesselung erlaubt, nur Ende fällt weg. Röntgen:
+      kein Schach, kein Ende. Zählen: kein Schach, kein Ende, Lehrbilder ohne König bleiben.
+      Falle oder Köder: kein Schach, kein Ende. Endspiel: nur Ende fällt weg. Gefunden und jetzt
+      ausgeschlossen: 5 Zielbilanz-Aufgaben im Schach, 2 mit Matt oder Patt, 8 Röntgen- und 6
+      Zählstellungen mit Patt. Eine Runde Planfragen enthält jede Stellung nur einmal.
+- [ ] N2016. **Gangarten, Begründung:** Koordinaten-Trainer › Gangarten. Nach dem Prüfen steht zu
+      jedem Feld der Grund: erlaubt oder Schlag, falsche Gangart (mit der Gangart der Figur), Weg
+      versperrt, eigene Figur, Bauer schlägt nicht ins Leere, Fesselung an den König, König
+      würde ins Schach ziehen, Schach bleibt bestehen.
+- [ ] N2017. **Engine bei den Bilanzen:** Nach der Antwort in Zielbilanz, Faktorenbilanz,
+      Planfragen und LAP steht „Was sagt die Engine?“ mit Bewertungsbalken und der besten
+      Fortsetzung zum Durchspielen. Bei Ziel- und Faktorenbilanz sagt ein Satz, ob Bilanz und
+      Engine dieselbe Seite vorn sehen (unter einem halben Bauern gilt „ausgeglichen“). Die
+      Zielbilanz sieht die Seite vorn, die mehr Zielpunkte hat; die Faktorenbilanz die Seite mit
+      mehr Faktoren für sich. Passt diese Lesart?
+- [ ] N2018. **Stufen (zur Durchsicht):** Über der Runde von Zielbilanz, LAP, Denkroutine und
+      Feld finden steht „gemischt, leicht, mittel, schwer“, mit einem Satz, was gemessen wird.
+      Zielbilanz: Zahl der „teils“ (0 leicht, 1–2 mittel, ab 3 schwer). LAP: Abstand zur nächsten
+      Leichtfigur in freien Feldern (zu Hause oder ab 3 leicht, Gleichstand schwer). Denkroutine:
+      legale Züge (bis 25 leicht, bis 40 mittel). Feld finden: leicht nur Weiß, mittel wie bisher,
+      schwer zufällig wechselnd. „Falle oder Köder“ erklärt seine Stufen jetzt mit den
+      Lichess-Wertungen (Stufe 1 unter 1000 bis Stufe 5 über 1900).
+- [ ] N2019. **Wiederholung:** Falsch gelöste Aufgaben aus Zähltrainer, Röntgen-Trainer und
+      LAP-Übung kommen jetzt auch wieder („Wiederholen“ im Trainer, „Fällige Wiederholungen“ im
+      Bereich Training). Der Abweichungsmodus bleibt draußen, weil die Engine die Abweichung jedes
+      Mal neu wählt (zur Durchsicht).
+- [ ] N2020. **Zähltrainer, Abzug:** Steht eine Langschrittfigur hinter einer eigenen Figur, die
+      das Feld selbst nicht angreift, zählt sie nicht mit (Abb. 1.6); nach der Antwort steht
+      „Achtung Abzug: … Zieht … weg, greift … das Feld an“. Solche Aufgaben sind „schwer“.
+- [ ] N2021. **Einheitliche Auflösung:** In allen Trainern erst das Urteil mit Grund, dann die
+      Begründung, zuletzt das Durchspielen mit Balken. Die Denkroutine nennt jetzt, wie weit dein
+      besserer Kandidat hinter dem Zug der Engine liegt.
+- [ ] N2022. **Abbildung öffnen ohne Handytastatur:** Buch › „Abbildung öffnen“ antippen: Statt der
+      Handytastatur erscheint eine Zahlenleiste (Ziffern, Punkt, Löschen). Auf der Seite einer
+      Abbildung ebenso, wenn du auf den Titel tippst.
+- [ ] N2023. **Sprache beim ersten Start:** Auf einem Gerät, das nicht auf Deutsch eingestellt ist
+      (etwa Englisch), fragt die App beim ersten Start auf Englisch und Deutsch, ob sie auf
+      Englisch umstellen soll, mit dem Hinweis auf die Beta-Phase und dass das englische Buch noch
+      nicht erschienen ist. Zum Testen: in einem privaten Fenster mit englischer Browsersprache
+      öffnen. Die Frage kommt nur einmal.
+
 ### Nebenchat: Trainer-Feinschliff (30.10.2026)
 
 - [ ] N2001. **Zähltrainer, Ergebnis mit einem Tipp:** Training › Zähltrainer › „Bilanz zählen“.

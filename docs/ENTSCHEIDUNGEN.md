@@ -4,6 +4,29 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Nebenchat: Trainer-Feinschliff 2 (Zweig neben-trainer-feinschliff-2)
+
+Der Autor hat alle Vorschläge freigegeben; Entscheidungen im Einzelnen traf der Nebenchat und legt
+sie zur Durchsicht vor (N2015 bis N2023):
+
+- **Eignungsprüfung je Trainer** (`training/eignung.ts`): Eigenschaften einer Stellung (ohne
+  Regeln, Schach, Matt oder Patt, sofortiger Material- oder Figurengewinn, hängende oder
+  gefesselte eigene Figur, nur Bauern, kaum Züge) und je Trainer eine Ausschlussliste mit Grund
+  und Buchbezug. Messlauf `eignung.messung.ts`, Vollprüfung in `eignung.test.ts`.
+- **Denkroutine mit Schach:** erlaubt (Abb. 12.3); ohne Schach bleibt die Schwelle von acht Zügen.
+- **Begründungen** bei den Gangarten (Grund je Feld) und im Urteil der Denkroutine.
+- **Engine bei den Bilanzen:** Balken und Fortsetzung nach der Antwort; Vergleich Bilanz gegen
+  Engine (unter 0,5 ausgeglichen; Zielbilanz nach Zielpunkten, Faktorenbilanz nach Mehrheit).
+- **Stufen** in Zielbilanz, LAP, Denkroutine und Feld finden (`training/stufen.ts`); fehlt eine
+  Stufe, füllt die nächstliegende auf.
+- **Wiederholung** auch für Zählen, Röntgen und LAP über feste Kennungen
+  (`training/wiederholbar.ts`); nicht für den Abweichungsmodus. Speicherformat unverändert.
+- **Zählen:** Motiv Abzug (verdeckte Langschrittfigur hinter eigener Nicht-Bauern-Figur).
+- **Einheitliche Auflösung:** Urteil mit Grund, Begründung, Durchspielen mit Balken.
+- **Zahlenleiste** statt Handytastatur beim Öffnen einer Abbildung über die Nummer.
+- **Sprachangebot beim ersten Start** (Wunsch des Autors, 31.10.2026): einmal je Gerät, bei
+  nicht deutscher Gerätesprache, zweisprachig mit Beta-Hinweis; neuer Merker „sprachangebot“.
+
 ## 30.10.2026 – Nebenchat: Trainer-Feinschliff (Zweig neben-trainer-feinschliff)
 
 Der Autor hat beim Testen der Trainer Punkte gesammelt; der Nebenchat hat sie sortiert,

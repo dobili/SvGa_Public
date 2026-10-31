@@ -15,7 +15,13 @@ import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
 import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
-import { auswahl, lapaufgabe, planaufgaben, rennaufgabe } from "../../training/planbilanztrainer";
+import {
+  auswahl,
+  auswahlJeStellung,
+  lapaufgabe,
+  planaufgaben,
+  rennaufgabe,
+} from "../../training/planbilanztrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
@@ -125,7 +131,7 @@ function planrunde(
 ): Darstellung[] {
   switch (art) {
     case "planfragen":
-      return auswahl(planaufgaben(stellungen, ZUFALL), n, ZUFALL).map((a) => (r) => (
+      return auswahlJeStellung(planaufgaben(stellungen, ZUFALL), n, ZUFALL).map((a) => (r) => (
         <Planfragenaufgabe aufgabe={a} runde={r} />
       ));
     case "lap":

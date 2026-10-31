@@ -20,6 +20,7 @@ import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
+import { geeignet } from "./eignung";
 
 /** Höchste Bilanz, die die Auswahl anbietet (eine Dame); größere Gewinne kommen nicht dran. */
 export const HOECHSTE_BILANZ = 9;
@@ -69,7 +70,7 @@ export interface Zaehlantwort {
  * Sonderfall: Ausschnitte ohne König (keine Regeln) bleiben geeignet, wie Abb. 1.26.
  */
 export function zumZaehlenGeeignet(stellung: Stellung): boolean {
-  return !stellung.regeln?.isCheck();
+  return geeignet("zaehlen", stellung);
 }
 
 /**

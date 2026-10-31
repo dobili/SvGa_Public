@@ -18,6 +18,7 @@ import { faktorwertungen } from "../analyse/k3-faktorenbilanz";
 import type { Einschaetzung } from "../schach/faktoreinschaetzung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
+import { geeignet } from "./eignung";
 
 /** Die vier Faktoren in Buchreihenfolge. */
 export const FAKTOREN = ["material", "zeit", "koenig", "aktivitaet"] as const;
@@ -111,7 +112,7 @@ export function buchloesung(tabelle: Tabelle): Faktorantwort | null {
 export function faktorenaufgabe(buch: Buchstellung): Faktorenaufgabe | null {
   const { stellung } = buch;
   if (!KAPITEL.has(buch.kapitel) || !stellung.regeln) return null;
-  if (stellung.regeln.isCheck() || entschieden(stellung)) return null;
+  if (entschieden(stellung) || !geeignet("faktorenbilanz", stellung)) return null;
   const vorbereitet = buch.vorbereitet ? { vorbereitet: buch.vorbereitet } : {};
   const ausBuch = buch.faktortabelle ? buchloesung(buch.faktortabelle) : null;
   if (ausBuch) {

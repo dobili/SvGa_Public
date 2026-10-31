@@ -20,6 +20,7 @@ import { nullzug, type Zugangabe } from "../schach/drohungen";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
+import { geeignet } from "./eignung";
 
 /** Höchstens so viele Pfeile soll eine Aufgabe verlangen; mehr wäre auf dem Handy mühsam. */
 export const HOECHSTENS_PFEILE = 10;
@@ -72,7 +73,7 @@ function pfeile(zuege: readonly Zugangabe[]): Pfeil[] {
  */
 export function roentgenaufgabe(buch: Buchstellung): Roentgenaufgabe | null {
   const { stellung } = buch;
-  if (!stellung.regeln || stellung.regeln.isCheck()) return null;
+  if (!stellung.regeln || !geeignet("roentgen", stellung)) return null;
   const p = profil(stellung);
   const eigen = stellung.amZug;
   const andere = gegner(eigen);

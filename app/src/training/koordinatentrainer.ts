@@ -22,6 +22,7 @@ import { regelstellung } from "../spiel/zuege";
 import type { Buchstellung } from "./buchstellungen";
 import { zuegeAusText } from "./uebungsaufgabe";
 import { mische, waehle, zahlBis, type Zufall } from "./zufall";
+import { geeignet } from "./eignung";
 
 export type Koordinatenart = "felder" | "notieren" | "ausfuehren" | "gangarten";
 /** Die vier Übungsarten des Koordinatentrainers als Liste. */
@@ -109,7 +110,7 @@ function zugaufgabe(nummer: string | null, fen: string, san: string): Zugaufgabe
 /** Ein Zug aus einer Buchstellung, halb so oft ein besonderer. */
 function zugAusBuch(buch: Buchstellung, zufall: Zufall): Zugaufgabe | null {
   const regeln = buch.stellung.regeln;
-  if (!regeln) return null;
+  if (!regeln || !geeignet("notieren", buch.stellung)) return null;
   const zuege = legaleZuege(regeln).map((zug) => makeSan(regeln, zug));
   const besondere = zuege.filter(besonders);
   const auswahl = besondere.length > 0 && zufall() < ANTEIL_BESONDERE ? besondere : zuege;
@@ -226,6 +227,7 @@ export interface Gangartaufgabe {
 /** Eine Gangart-Aufgabe zu einer Buchstellung: eine zufällige Figur der Seite am Zug. */
 function gangart(buch: Buchstellung, zufall: Zufall): Gangartaufgabe | null {
   const { stellung } = buch;
+  if (!geeignet("gangarten", stellung)) return null;
   const figuren = [...stellung.brett[stellung.amZug]]
     .map((index) => ({ index, feld: makeSquare(index) }))
     .map((f) => ({ ...f, ziele: legaleZiele(stellung.fen, f.feld) }))

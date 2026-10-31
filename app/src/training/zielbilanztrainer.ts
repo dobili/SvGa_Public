@@ -12,6 +12,7 @@
  */
 import type { Color } from "chessops/types";
 import { profil } from "../analyse/stellungsprofil";
+import { geeignet } from "./eignung";
 import { zielbilanz, type Wertung, type Zielbilanz } from "../schach/zielbilanz";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
@@ -63,6 +64,8 @@ export function zielbilanzaufgabe(buch: Buchstellung): Zielbilanzaufgabe | null 
   const zug = zugnummer(stellung.fen);
   if (!KAPITEL.has(buch.kapitel) || zug < ERSTER_ZUG || zug > LETZTER_ZUG) return null;
   if (!stellung.brett.kingOf("white") || !stellung.brett.kingOf("black")) return null;
+  // Eignung je Trainer (training/eignung.ts): kein Schach, kein Ende, kein laufender Abtausch.
+  if (!geeignet("zielbilanz", stellung)) return null;
   const karte = profil(stellung).angriffskarte;
   const [weiss, schwarz] = SEITEN.map((farbe) =>
     zielbilanz(stellung.brett, karte, farbe, stellung.amZug),

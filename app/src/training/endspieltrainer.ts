@@ -15,6 +15,7 @@
 import type { Endspielaufgabe, Endspielthema } from "../daten/trainerdaten";
 import type { Partieende } from "../spiel/ergebnis";
 import { mische, type Zufall } from "./zufall";
+import { fenGeeignet } from "./eignung";
 
 /** Gruppen der Themen für die Auswahl. */
 export type Endspielgruppe = "alle" | "matt" | "bauern" | "turm" | "dame" | "leichtfiguren";
@@ -92,7 +93,8 @@ export function endspielrunde(
   const abstand = (a: Endspielaufgabe) =>
     wahl.stufe === null ? 0 : Math.abs(a.schwierigkeit - wahl.stufe);
   const auswahl = mische(
-    aufgaben.filter((a) => passtZurGruppe(a, wahl.gruppe)),
+    // Eignung je Trainer (training/eignung.ts): nur Matt und Patt fallen weg.
+    aufgaben.filter((a) => passtZurGruppe(a, wahl.gruppe) && fenGeeignet("endspiel", a.fen)),
     zufall,
   )
     .sort((a, b) => abstand(a) - abstand(b))

@@ -4716,6 +4716,7 @@
   "buchlook.kurz.faellig": "{anzahl} Stellungen · etwa {minuten} Min",
   "buchlook.kurz.tagesaufgabe": "1 Stellung für heute",
   "buchlook.kurz.weiterlesen": "Kapitel {kapitel} · Abb. {nummer}",
+  "buchlook.kurz.weiterlesenKlein": "Abb. {nummer}",
   "buchlook.kurz.uebungen": "Kapitel {kapitel}",
   "buchlook.kurz.thema": "{richtig} von {anzahl} richtig",
   "buchlook.kurz.fehler": "Aus deiner Fehlerdatenbank",

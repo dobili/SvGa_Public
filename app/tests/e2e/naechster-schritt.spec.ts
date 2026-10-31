@@ -5,22 +5,19 @@
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
 
-test("Karte „Heute“ schlägt die Tagesaufgabe vor, Alternative öffnet die erste Abbildung", async ({
+test("Karte „Heute“: Neue fangen bei Abb. 0.1 an, noch ohne Tagesaufgabe (Niveau, 0.3.43)", async ({
   page,
 }) => {
   await starteImBrowser(page);
   const karte = page.getByTestId("heute");
   await expect(karte.getByRole("heading", { name: "Heute" })).toBeVisible();
   const erster = karte.getByTestId("heute-vorschlag");
-  await expect(erster).toHaveAccessibleName("Tagesaufgabe: Die Tagesaufgabe wartet.");
-  await expect(erster).toContainText("1 Stellung für heute");
+  await expect(erster).toHaveAccessibleName(/^Anfangen: Fang vorn an: Kapitel 0/);
+  await expect(erster).toContainText("Kapitel 0 · Abb. 0.1");
+  // Die Tagesaufgabe (Taktik) kommt erst nach Kapitel 0; das Kreuz steht neben der Kachel.
+  await expect(karte.getByTestId("heute-alternative-tagesaufgabe")).toHaveCount(0);
+  await expect(karte.locator(".heute-vorschlaege-allein")).toBeVisible();
   await erster.click();
-  await expect(page.getByTestId("tagesaufgabe")).toBeVisible();
-  await page.getByRole("button", { name: "Zurück zum Buch" }).click();
-  const anfangen = karte.getByTestId("heute-alternative-weiterlesen");
-  await expect(anfangen).toHaveAccessibleName(/^Anfangen: Fang vorn an: Kapitel 0/);
-  await expect(anfangen).toContainText("Abb. 0.1");
-  await anfangen.click();
   await expect(page.getByRole("heading", { name: "Abb. 0.1" })).toBeVisible();
 });
 

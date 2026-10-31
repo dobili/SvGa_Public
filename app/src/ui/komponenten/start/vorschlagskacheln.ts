@@ -31,6 +31,8 @@ export interface Kachelart {
   readonly titelAusNamen?: string;
   /** Kurze Zeile mit den Werten des Vorschlags; ohne Angabe der ganze Satz. */
   readonly kurz?: Textschluessel;
+  /** Noch kürzere Zeile für die kleinen Kacheln, wenn `kurz` dort umbräche. */
+  readonly kurzKlein?: Textschluessel;
 }
 
 /** Je Vorschlagsart (Kennung aus VORSCHLAGSARTEN) eine Zeile. */
@@ -41,7 +43,11 @@ export const KACHELARTEN: Readonly<Record<string, Kachelart>> = {
     titel: "buchlook.kachel.tagesaufgabe",
     kurz: "buchlook.kurz.tagesaufgabe",
   },
-  weiterlesen: { Symbol: BookOpen, kurz: "buchlook.kurz.weiterlesen" },
+  weiterlesen: {
+    Symbol: BookOpen,
+    kurz: "buchlook.kurz.weiterlesen",
+    kurzKlein: "buchlook.kurz.weiterlesenKlein",
+  },
   uebungen: { Symbol: Dumbbell, titel: "buchlook.kachel.uebungen", kurz: "buchlook.kurz.uebungen" },
   thema: { Symbol: Target, titelAusNamen: "thema", kurz: "buchlook.kurz.thema" },
   fehler: { Symbol: ListChecks, titelAusNamen: "trainer", kurz: "buchlook.kurz.fehler" },
@@ -55,11 +61,15 @@ export function kachelart(vorschlag: Pick<Vorschlag, "art">): Kachelart {
   return KACHELARTEN[vorschlag.art] ?? KACHEL_SONST;
 }
 
-/** Titel und Kurzzeile einer Kachel; ohne Eintrag Knopftext und ganzer Satz. */
-export function kacheltexte(vorschlag: Vorschlag): { titel: string; kurz: string } {
+/**
+ * Titel und Kurzzeile einer Kachel; ohne Eintrag Knopftext und ganzer Satz. `klein`: die kleine
+ * Kachel der Alternativen (Beispiel Weiterlesen: groß „Kapitel 6 · Abb. 6.20“, klein „Abb. 6.20“).
+ */
+export function kacheltexte(vorschlag: Vorschlag, klein = false): { titel: string; kurz: string } {
   const art = kachelart(vorschlag);
   const name = art.titelAusNamen ? vorschlag.namen?.[art.titelAusNamen] : undefined;
   const titel = name ? t(name) : t(art.titel ?? vorschlag.knopf);
-  const kurz = art.kurz ? t(art.kurz, vorschlag.werte) : vorschlagstext(vorschlag);
+  const zeile = klein ? (art.kurzKlein ?? art.kurz) : art.kurz;
+  const kurz = zeile ? t(zeile, vorschlag.werte) : vorschlagstext(vorschlag);
   return { titel, kurz };
 }

@@ -24,7 +24,7 @@ const SYMBOL_KLEIN = 20;
 function Kachel({ vorschlag, gross }: { vorschlag: Vorschlag; gross: boolean }) {
   const { navigiere } = useNavigation();
   const { Symbol } = kachelart(vorschlag);
-  const { titel, kurz } = kacheltexte(vorschlag);
+  const { titel, kurz } = kacheltexte(vorschlag, !gross);
   return (
     <button
       type="button"

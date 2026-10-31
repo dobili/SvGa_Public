@@ -7,6 +7,7 @@
  */
 import { Flag } from "lucide-react";
 import type { Abzeichenangabe } from "./abzeichen";
+import { zielanteil } from "./abzeichenanteil";
 
 /** So viele erreichte Ziele braucht das Abzeichen. */
 export const ZIELE_FUER_ABZEICHEN = 10;
@@ -17,5 +18,6 @@ export const ZIEL_ABZEICHEN: readonly Abzeichenangabe[] = [
     kennung: "zehnZiele",
     symbol: Flag,
     erfuellt: (g) => g.daten.ziele.erreicht.length >= ZIELE_FUER_ABZEICHEN,
+    fortschritt: (g) => zielanteil(g.daten.ziele.erreicht.length, ZIELE_FUER_ABZEICHEN),
   },
 ];

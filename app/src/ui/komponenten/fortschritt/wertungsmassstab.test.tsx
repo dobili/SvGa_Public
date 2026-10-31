@@ -8,7 +8,7 @@ import { describe, expect, it } from "vitest";
 import { entsprichtEtwa, umgerechnet, vergleichsbereich } from "../../../spiel/umrechnung";
 import type { Wertungspunkt } from "../../../spiel/wertung";
 import { Massstabwahl } from "./Massstabwahl";
-import { Wertungskurve } from "./Wertungskurve";
+import { Wertungskarte } from "../wertung/Wertungskarte";
 import {
   aenderungImMassstab,
   ausserhalbText,
@@ -76,7 +76,7 @@ describe("Maßstab der eigenen Wertung", () => {
     expect(liesMassstab()).toBe("lichess");
   });
 
-  it("zeigt in der Karte „Deine Wertung“ den Umschalter, ohne Merker im Maßstab von Lichess", () => {
+  it("zeigt in der Karte „Deine Wertung“ keinen Umschalter, ohne Merker im Maßstab von Lichess", () => {
     const punkt: Wertungspunkt = {
       partieId: "p1",
       zeit: "2026-10-20T10:00:00.000Z",
@@ -87,11 +87,12 @@ describe("Maßstab der eigenen Wertung", () => {
       tempo: "rapid",
     };
     const html = renderToStaticMarkup(
-      <Wertungskurve punkte={[punkt]} partien={[]} jetzt={new Date("2026-10-26T10:00:00Z")} />,
+      <Wertungskarte punkte={[punkt]} partien={[]} jetzt={new Date("2026-10-26T10:00:00Z")} />,
     );
-    expect(html).toContain('data-testid="massstabwahl"');
-    expect(html).toMatch(/data-testid="wertung-zahl">1424/);
-    expect(html).not.toContain("wertungskurve-massstab");
+    // Seit dem Profil neu (31.10.2026) steht der Maßstab in den Einstellungen, nicht in der Karte.
+    expect(html).not.toContain('data-testid="massstabwahl"');
+    expect(html).toMatch(/data-testid="wertung-zahl-rapid">1424/);
+    expect(html).toContain("Zahlen wie bei Lichess");
   });
 
   it("zeigt den Umschalter mit drei Maßstäben, der gewählte ist markiert", () => {

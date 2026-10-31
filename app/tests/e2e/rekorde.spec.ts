@@ -1,7 +1,7 @@
 /**
  * Oberflächentests der Rekordtafel (Gamifizierung P5): Meldung „Neuer Rekord“ am Rundenende und
- * nach der Tagesaufgabe, Profilkarte „Deine Rekorde“ mit „Versuchen“, Übernahme des Merkers der
- * Zeitrunde.
+ * nach der Tagesaufgabe, Profilkarte „Deine Rekorde“ (seit dem Profil neu am 31.10.2026 mit
+ * Erreichtem, Vorschlägen und „Los“), Übernahme des Merkers der Zeitrunde.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneProfil, oeffneTrainer, starteImBrowser } from "./hilfen";
@@ -26,9 +26,12 @@ test("Rundenende meldet neue Rekorde, die Tafel im Profil zeigt sie", async ({ p
   const tafel = page.getByTestId("rekordtafel");
   await expect(tafel).toContainText("Deine Rekorde");
   await expect(tafel.getByTestId("rekord-trainerTag")).toContainText("16 richtige Antworten");
-  await expect(tafel.getByTestId("rekord-wertung")).toContainText("noch keiner");
-  await page.screenshot({ path: "test-results/bilder/rekordtafel.png", fullPage: true });
-  await tafel.getByTestId("rekord-taktikZeit").getByRole("button", { name: "Versuchen" }).click();
+  // Profil neu (31.10.2026): aus Leerstellen werden Vorschläge; „Höchste Wertung“ sagt, was fehlt.
+  await expect(tafel.getByTestId("rekord-herausforderung")).toContainText("Noch mehr Rekorde");
+  await tafel.getByTestId("rekord-weitere").locator("summary").click();
+  await expect(tafel.getByTestId("rekord-wertung")).toContainText("noch 10 Partien");
+  await tafel.screenshot({ path: "test-results/bilder/rekordtafel.png" });
+  await tafel.getByRole("button", { name: "Los: Taktik auf Zeit" }).click();
   await expect(page.getByRole("button", { name: /Taktik auf Zeit/ })).toBeVisible();
 });
 
@@ -53,7 +56,10 @@ test("Zeitrunde: Bestwert aus dem alten Merker steht als Rekord in Tafel und Zei
   await page.reload();
   await oeffneProfil(page);
   await expect(page.getByTestId("rekord-taktikZeit")).toContainText("7 richtig in 3 Minuten");
-  await page.getByTestId("rekord-taktikZeit").getByRole("button", { name: "Versuchen" }).click();
+  await expect(
+    page.getByTestId("rekord-taktikZeit").getByRole("button", { name: "Teilen: Taktik auf Zeit" }),
+  ).toBeVisible();
+  await oeffneTrainer(page, "kurzplaene");
   await page.getByRole("button", { name: /Taktik auf Zeit/ }).click();
   await expect(page.getByTestId("zeit-start")).toContainText("Deine beste Zeitrunde: 7 richtig.");
 });

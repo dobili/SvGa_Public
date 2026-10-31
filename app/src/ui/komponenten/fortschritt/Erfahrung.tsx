@@ -5,14 +5,12 @@
  * bei Chessly, nur auf dem Gerät, ohne Bestenliste. Oben die Stufe mit Namen aus dem Buch und den
  * EP, darunter ein Balken zur nächsten Stufe; aufklappbar das Gitter aller Abzeichen, verdiente
  * golden, offene als graue Silhouette mit ihrer Bedingung (wie die Orden in der Startanimation).
- * Seit dem Wunsch des Autors vom 30.10.2026 als Raster mit eigenen Bildern (ordenkunst/Abzeichenraster.tsx).
- * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, ordenkunst/Abzeichenraster.tsx,
- * bausteine/Fortschrittsbalken.tsx, i18n.
+ * Seit dem Profil neu (31.10.2026) stehen die Abzeichen in der Karte „Deine Erfolge“
+ * (erfolge/Erfolge.tsx, Regal „Abzeichen“); hier bleiben Stufe und EP.
+ * Abhängigkeiten: abzeichenstand.ts, bausteine/Fortschrittsbalken.tsx, i18n.
  */
 import { t } from "../../../i18n/sprache";
 import { Fortschrittsbalken } from "../bausteine/Fortschrittsbalken";
-import { Abzeichenraster } from "../ordenkunst/Abzeichenraster";
-import { ABZEICHEN } from "./abzeichen";
 import { STUFENZAHL, useAbzeichenstand, type Abzeichenstand } from "./abzeichenstand";
 import { STUFEN } from "./erfahrung";
 
@@ -42,28 +40,9 @@ function Stufenzeile({ stand }: { stand: Abzeichenstand }) {
   );
 }
 
-/** Das aufklappbare Gitter aller Abzeichen. */
-function Abzeichengitter({ stand }: { stand: Abzeichenstand }) {
-  return (
-    <details className="anleitung" data-testid="abzeichen">
-      <summary>
-        {t("abzeichen.gruppe", { verdient: stand.verdient.size, gesamt: ABZEICHEN.length })}
-      </summary>
-      <p className="hinweis">{t("abzeichen.erklaerung")}</p>
-      <p className="hinweis">{t("erfahrung.erklaerung")}</p>
-      <Abzeichenraster stand={stand} />
-    </details>
-  );
-}
-
-/** Stufe und Abzeichen; nichts, solange der Speicher lädt. */
+/** Stufe und EP; nichts, solange der Speicher lädt. */
 export function Erfahrung() {
   const stand = useAbzeichenstand();
   if (!stand) return null;
-  return (
-    <>
-      <Stufenzeile stand={stand} />
-      <Abzeichengitter stand={stand} />
-    </>
-  );
+  return <Stufenzeile stand={stand} />;
 }

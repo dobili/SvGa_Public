@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.31**: Profil neu übernommen (N2240–N2249). Gestaltungsrunde 2 auf der Auswahlseite (Buchkarten, Lernpfad, Training, Checkliste, Extras, sechs Funde der Durchsicht).
+
 Stand: 31.10.2026 · **Version 0.3.30** (Zweig `uebernahme-welle2`): 0.3.29 auf main. Fällige Wiederholungen in Karte und Training gleich gezählt. Gestaltungsrunde 2 (Buchkarten, Lernpfad, Training, Checkliste, Durchsicht) in Arbeit; Arbeitschat „Profil neu“ läuft.
 
 Stand: 31.10.2026 · **Version 0.3.29** (Zweig `uebernahme-welle2`): P3 Meisterschaft übernommen (N2180–N2189), Welle 2 vollständig; Orden-Wackler im Test behoben. **Nächster Schritt:** nach grüner CI 0.3.27 bis 0.3.29 auf main; Bericht „Profil neu“ prüfen und übernehmen; Arbeitsliste aus den Entscheidungen 0.3.24 bis 0.3.29.

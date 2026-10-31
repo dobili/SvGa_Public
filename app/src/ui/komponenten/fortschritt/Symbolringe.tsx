@@ -30,9 +30,6 @@ export interface Symbolringangabe {
   readonly testid: string;
 }
 
-/** Größe des Zeichens in der Legende (Bildpunkte). */
-const LEGENDENZEICHEN = 16;
-
 /**
  * Eine Reihe von Ringen mit Zeichen, je Ring „x von y“ darunter; mit `titel` eine kleine
  * Überschrift darüber. Beispiel: Blitz 2 von 72 → Ring mit Blitz-Zeichen, „3%“ und „2 von 72“.
@@ -79,22 +76,5 @@ export function Symbolringreihe({
         })}
       </ul>
     </div>
-  );
-}
-
-/**
- * Die Zeichenerklärung zu allen Ringen der Karte: je Zeichen sein Name.
- * Beispiel: Kaffeetasse → „Klassisch“ (die Reihe darüber heißt „Vorgefertigte Bots besiegt“).
- */
-export function Ringlegende({ ringe }: { ringe: readonly Symbolringangabe[] }) {
-  return (
-    <ul className="ringlegende" aria-label={t("fortschritt.legende")}>
-      {ringe.map(({ name, legende, symbol: Zeichen, testid }) => (
-        <li key={testid}>
-          <Zeichen size={LEGENDENZEICHEN} aria-hidden="true" />
-          <span>{legende ?? name}</span>
-        </li>
-      ))}
-    </ul>
   );
 }

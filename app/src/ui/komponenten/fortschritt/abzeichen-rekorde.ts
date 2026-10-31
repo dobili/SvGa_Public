@@ -8,6 +8,7 @@
  */
 import { ChartNoAxesColumnIncreasing } from "lucide-react";
 import type { Abzeichenangabe } from "./abzeichen";
+import { zielanteil } from "./abzeichenanteil";
 
 /** So viele verschiedene Rekorde braucht das Abzeichen „Drei Rekorde“. */
 export const REKORDE_FUER_ABZEICHEN = 3;
@@ -18,5 +19,6 @@ export const REKORD_ABZEICHEN: readonly Abzeichenangabe[] = [
     kennung: "dreiRekorde",
     symbol: ChartNoAxesColumnIncreasing,
     erfuellt: (g) => Object.keys(g.daten.rekorde).length >= REKORDE_FUER_ABZEICHEN,
+    fortschritt: (g) => zielanteil(Object.keys(g.daten.rekorde).length, REKORDE_FUER_ABZEICHEN),
   },
 ];

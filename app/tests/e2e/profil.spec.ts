@@ -1,7 +1,8 @@
 /**
  * Oberflächentests des Spielerprofils (0.2.140): Name und selbst gebautes Porträt festlegen, das
  * übersteht das Neuladen und erscheint in der Partie an der eigenen Uhr. Seit 26.10.2026 dazu der
- * Maßstab der Wertung (Lichess oder umgerechnet auf chess.com und FIDE).
+ * Maßstab der Wertung (Lichess oder umgerechnet auf chess.com und FIDE); seit dem Profil neu
+ * (31.10.2026) drei Kacheln und der Maßstab in den Einstellungen.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneProfil, starteImBrowser } from "./hilfen";
@@ -94,39 +95,54 @@ async function spieleWertungEin(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Profil: Wertung umgerechnet auf chess.com und FIDE als Bereich, die Wahl bleibt", async ({
+test("Profil: Wertung in drei Kacheln, Kurve und Zahl im Maßstab der Einstellungen", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await spieleWertungEin(page);
   await oeffneProfil(page);
   const karte = page.getByTestId("wertung");
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^1680/);
-  const massstab = karte.getByRole("radiogroup", { name: "Maßstab der Wertung" });
-  // Seit dem 27.10.2026 je Liste ein Schalter, die Zahl als Bereich (Hälfte der Spieler).
+  // Seit dem Profil neu (31.10.2026): drei Kacheln, Blitz ohne Partie geschätzt.
+  await expect(karte.getByTestId("wertung-zahl-rapid")).toHaveText("1680");
+  await expect(karte.getByTestId("wertung-kachel-rapid")).toHaveAttribute("aria-pressed", "true");
+  await expect(karte.getByTestId("wertung-kachel-rapid")).toContainText("2 Partien");
+  await expect(karte.getByTestId("wertung-zahl-blitz")).toHaveText(/^≈ \d{3,4}$/);
+  await expect(karte.getByTestId("wertung-kachel-blitz")).toContainText("geschätzt");
+  await expect(karte.getByTestId("wertung-vorlaeufig")).toHaveText("vorläufig · 2 von 10");
+  await expect(karte.getByTestId("massstabwahl")).toHaveCount(0);
+  await karte.getByTestId("wertung-kachel-blitz").click();
+  await expect(karte.getByTestId("wertung-schaetzung")).toContainText(
+    "Deine erste gewertete Partie in Blitz ersetzt die Schätzung.",
+  );
+  // Der Maßstab steht in den Einstellungen (Reiter „Anzeige“) und gilt danach überall.
+  await page.getByRole("button", { name: "Einstellungen" }).click();
+  await page.getByRole("tab", { name: "Anzeige" }).click();
+  const massstab = page.getByRole("radiogroup", { name: "Maßstab der Wertung" });
   await massstab.getByRole("radio", { name: "chess.com" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(
-    /^\d{3,4}–\d{3,4}chess\.com Schnellschach/,
+  await page.reload();
+  await oeffneProfil(page);
+  await expect(karte.getByTestId("wertung-massstab")).toHaveText(
+    "Zahlen wie bei chess.com · ändern in den Einstellungen",
   );
-  await expect(karte.getByTestId("wertungskurve-massstab")).toHaveText(
-    "Die Kurve zeigt den Maßstab von Lichess.",
+  await expect(karte.getByTestId("wertung-zahl-rapid")).toHaveText(/^\d{3,4}$/);
+  await expect(karte.getByTestId("wertung-bereich")).toHaveText(
+    /^Bereich \d{3,4}–\d{3,4} · chess\.com Schnellschach$/,
   );
+  await expect(karte.getByTestId("wertungskurve")).toBeVisible();
   await page.setViewportSize({ width: 400, height: 900 });
-  await karte.screenshot({ path: "test-results/bilder/wertung-umschalter.png" });
+  await karte.screenshot({ path: "test-results/bilder/wertung-kacheln.png" });
   // Klassisch 1500 liegt unter der FIDE-Tabelle: „–“ und die Grenze.
+  await page.getByRole("button", { name: "Einstellungen" }).click();
+  await page.getByRole("tab", { name: "Anzeige" }).click();
   await massstab.getByRole("radio", { name: "FIDE" }).click();
-  await karte.getByRole("tab", { name: "Klassisch" }).click();
-  await expect(karte.getByTestId("wertung-zahl")).toHaveText(/^–FIDE/);
+  await page.reload();
+  await oeffneProfil(page);
+  await karte.getByTestId("wertung-kachel-classical").click();
+  await expect(karte.getByTestId("wertung-zahl-classical")).toHaveText("–");
   await expect(karte.getByTestId("massstab-ausserhalb")).toHaveText(
     "FIDE erst ab etwa 1730 (Lichess Klassisch)",
   );
-  // Die Wahl gilt je Gerät: nach dem Neuladen und in „Deine Spielstärke“ unter Spielen.
-  await page.reload();
-  await oeffneProfil(page);
-  await expect(massstab.getByRole("radio", { name: "FIDE" })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
+  // Die Wahl gilt auch in „Deine Spielstärke“ unter Spielen.
   await page
     .getByRole("navigation", { name: "Hauptbereiche" })
     .getByRole("button", { name: "Spielen" })
@@ -136,4 +152,14 @@ test("Profil: Wertung umgerechnet auf chess.com und FIDE als Bereich, die Wahl b
   await expect(kachel).toContainText(/Wertung \d{3,4}–\d{3,4}/);
   await page.getByTestId("letzte-spielstaerke").getByRole("radio", { name: "Lichess" }).click();
   await expect(kachel).toContainText("Wertung 1680");
+});
+
+test("Profil: ohne gewertete Partie lädt die Wertungskarte zur ersten Partie ein", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneProfil(page);
+  await expect(page.getByTestId("wertung-einladung")).toBeVisible();
+  await page.getByTestId("wertung").getByRole("button", { name: "Partie spielen" }).click();
+  await expect(page.getByRole("button", { name: "Partie beginnen" })).toBeVisible();
 });

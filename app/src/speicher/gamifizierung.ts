@@ -61,6 +61,8 @@ export type Tageszaehler = Readonly<Partial<Record<Aktivitaetsart, number>>>;
 export interface Rekord {
   readonly wert: number;
   readonly datum: string;
+  /** Der Wert davor (seit 0.3.31, Profil neu); fehlt beim ersten Rekord und in älteren Daten. */
+  readonly vorher?: number;
 }
 
 /** Bilanz gegen einen Bot aus Sicht des Lesers (P8). */
@@ -196,9 +198,11 @@ function tageszaehlerAus(roh: unknown): Tageszaehler | null {
 }
 
 function rekordAus(roh: unknown): Rekord | null {
-  return istObjekt(roh) && typeof roh.wert === "number" && Number.isFinite(roh.wert)
-    ? { wert: roh.wert, datum: text(roh.datum) }
-    : null;
+  if (!istObjekt(roh) || typeof roh.wert !== "number" || !Number.isFinite(roh.wert)) return null;
+  const vorher = roh.vorher;
+  return typeof vorher === "number" && Number.isFinite(vorher)
+    ? { wert: roh.wert, datum: text(roh.datum), vorher }
+    : { wert: roh.wert, datum: text(roh.datum) };
 }
 
 function duellAus(roh: unknown): Duell | null {

@@ -85,7 +85,8 @@ export function pruefeRekorde(
   if (neue.length === 0) return { daten, neue };
   const datum = jetzt.toISOString();
   const rekorde = { ...daten.rekorde };
-  for (const { kennung, wert } of neue) rekorde[kennung] = { wert, datum };
+  for (const { kennung, wert, vorher } of neue)
+    rekorde[kennung] = vorher === null ? { wert, datum } : { wert, datum, vorher };
   const schluessel = neue.map((v) => `rekord:${v.kennung}`);
   return { daten: mitVerdient({ ...daten, rekorde }, schluessel, jetzt), neue };
 }

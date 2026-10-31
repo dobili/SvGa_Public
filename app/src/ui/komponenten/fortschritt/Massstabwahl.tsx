@@ -2,8 +2,9 @@
  * Kleiner Umschalter „Lichess | chess.com · FIDE“ für die eigene Wertung (Wunsch des Autors,
  * 26.10.2026).
  *
- * Rolle im Gesamtbild: Sitzt in den Karten „Deine Wertung“ (Wertungskurve.tsx) und „Deine
- * Spielstärke“ (LetzteSpielstaerke.tsx); was umgerechnet wird, bestimmt wertungsmassstab.ts.
+ * Rolle im Gesamtbild: Sitzt in den Einstellungen (Reiter „Anzeige“, seit dem Profil neu am
+ * 31.10.2026 statt in der Karte „Deine Wertung“) und in der Karte „Deine Spielstärke“
+ * (LetzteSpielstaerke.tsx); was umgerechnet wird, bestimmt wertungsmassstab.ts.
  * Abhängigkeiten: Segmentwahl, wertungsmassstab.ts, i18n.
  */
 import { t } from "../../../i18n/sprache";

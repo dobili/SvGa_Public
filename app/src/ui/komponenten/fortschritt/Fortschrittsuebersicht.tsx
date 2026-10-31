@@ -6,11 +6,10 @@
  * Kapitel) und aus nachschlagen.json (Lernziele), damit Ich keine Kapiteldateien laden muss.
  * Gelöste Übungen und Trainer-Durchgänge erscheinen, sobald es welche gibt (AP 13).
  * Kreisanzeigen, je Kapitel ein kleiner Ring (Wunsch des Autors). In der ersten Zeile ein Ring
- * für Trainer aus „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang),
- * und je Zeitart ein Ring mit den schon gewertet besiegten vorgefertigten Bots (gezählt wie die
- * Siegmarken am Porträt, speicher/besiegt.ts; Wünsche des Autors, 25.10.2026). Alle Ringe tragen
- * ein Zeichen in der Mitte, eine Legende darunter erklärt die Zeichen (Symbolringe.tsx).
- * Oben stehen Stufe, Erfahrungspunkte und Abzeichen (Erfahrung.tsx, seit dem Paket Abzeichen).
+ * für Trainer aus „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang).
+ * Oben stehen Stufe und Erfahrungspunkte (Erfahrung.tsx). Seit dem Profil neu (31.10.2026) stehen
+ * die Ringe der Teile des Buches und der Bots und die Abzeichen in der Karte „Deine Erfolge“
+ * (erfolge/Erfolge.tsx) als Orden und Abzeichen in Regalen.
  * Abhängigkeiten: Erfahrung.tsx, speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */
@@ -23,31 +22,8 @@ import { useSpeicher } from "../../../speicher/speicher";
 import { Ring } from "../bausteine/Kreisanzeige";
 import { Erfahrung } from "./Erfahrung";
 import { summe, useFortschrittsringe } from "./fortschrittsringe";
-import { istVoll } from "./ringrechnung";
-import { Ringlegende, Symbolringreihe, type Symbolringangabe } from "./Symbolringe";
+import { Symbolringreihe } from "./Symbolringe";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
-
-/** Eine aufklappbare Gruppe von Ringen mit Legende; die Zusammenfassung nennt die vollen Ringe. */
-function Ringgruppe({
-  ringe,
-  titel,
-  testid,
-}: {
-  ringe: readonly Symbolringangabe[];
-  titel: string;
-  testid: string;
-}) {
-  const voll = ringe.filter((r) => istVoll(r.anteil));
-  return (
-    <details className="anleitung ringgruppe" data-testid={testid}>
-      <summary>
-        {t("fortschritt.gruppe", { titel, voll: voll.length, gesamt: ringe.length })}
-      </summary>
-      <Symbolringreihe ringe={ringe} />
-      <Ringlegende ringe={ringe} />
-    </details>
-  );
-}
 
 /** Je Kapitel eine Zeile mit kleinem Ring; ein Tipp öffnet die Kapitelübersicht. */
 function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fortschritt }) {
@@ -97,7 +73,7 @@ export function Fortschrittsuebersicht() {
   const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
   const ringe = useFortschrittsringe();
   if (!ringe) return null;
-  const { index, buchringe, teilringe, botringe } = ringe;
+  const { index, buchringe } = ringe;
   const uebungen = Object.values(fortschritt.uebungen);
   const durchgaenge = summe(Object.values(fortschritt.trainer).map((s) => s.durchgaenge));
   // Beantwortete Warum-Fragen (0.2.99); die Gesamtzahl steht in den Kapiteln, hier die Summe.
@@ -111,10 +87,6 @@ export function Fortschrittsuebersicht() {
       {/* Stufe, Erfahrungspunkte und Abzeichen (Wunsch des Autors, freigegeben 30.10.2026). */}
       <Erfahrung />
       <Symbolringreihe ringe={buchringe} />
-      {/* Teile und Bots aufklappbar: zusammen 14 Ringe wären sonst zu viele Zeilen (Wunsch des
-          Autors, 26.10.2026). */}
-      <Ringgruppe ringe={teilringe} titel={t("fortschritt.teile")} testid="ich-teile" />
-      <Ringgruppe ringe={botringe} titel={t("fortschritt.bots")} testid="ich-bots" />
       {(uebungen.length > 0 || durchgaenge > 0 || warum > 0) && (
         <dl className="fortschritt-liste">
           {uebungen.length > 0 && (

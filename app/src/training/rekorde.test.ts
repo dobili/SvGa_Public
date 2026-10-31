@@ -54,7 +54,7 @@ describe("pruefeRekorde", () => {
     const alt = { ...mitRekord("zeit", 11), verdient: { "rekord:zeit": HEUTE.toISOString() } };
     const { daten, neue } = pruefeRekorde(alt, { quelle: "zeitrunde", wert: 14 }, MORGEN, ARTEN);
     expect(neue).toEqual([{ kennung: "zeit", wert: 14, vorher: 11 }]);
-    expect(daten.rekorde.zeit).toEqual({ wert: 14, datum: MORGEN.toISOString() });
+    expect(daten.rekorde.zeit).toEqual({ wert: 14, datum: MORGEN.toISOString(), vorher: 11 });
     expect(daten.verdient["rekord:zeit"]).toBe(HEUTE.toISOString());
   });
 

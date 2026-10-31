@@ -54,29 +54,6 @@
   font-weight: 700;
 }
 
-.ringlegende {
-  display: flex;
-  flex-wrap: wrap;
-  gap: calc(var(--raster) / 2) calc(var(--raster) * 2);
-  margin: 0 0 var(--raster);
-  padding: var(--raster) 0 0;
-  border-top: 1px solid var(--linie);
-  list-style: none;
-  font-size: var(--groesse-fein);
-  color: var(--text-leise);
-}
-
-.ringlegende li {
-  display: flex;
-  align-items: flex-start;
-  gap: calc(var(--raster) / 2);
-}
-
-.ringlegende svg {
-  flex: none;
-  color: var(--gold-text);
-}
-
 /* Orden (Wunsch des Autors, 26.10.2026): Ein voller Ring wird zur Medaille mit Band. */
 .orden {
   width: 52px;

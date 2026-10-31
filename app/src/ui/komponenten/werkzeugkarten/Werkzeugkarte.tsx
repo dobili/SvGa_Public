@@ -12,9 +12,15 @@
  * irren können und das Buch maßgeblich ist (SoPrueft.tsx). Darüber steht klein die Legende der
  * Markierungen am Brett (Wunsch des Autors); im Leerfall (U12, ohne Befunde und Markierungen)
  * fehlt sie. Die Legende nennt die Farben der gewählten Sicht („Drohungen von Schwarz“ statt „des
- * Gegners“), damit sie dem Sicht-Schalter folgt (R41, 23.10.2026). Hat das Ergebnis einen
- * Hinweis (etwa „Nur Kandidaten“ bei den Todsünden), steht er hervorgehoben unter dem Namen.
- * Abhängigkeiten: analyse/werkzeug.ts, Waage.tsx, useSicht.ts, i18n, lucide-react.
+ * Gegners“), damit sie dem Sicht-Schalter folgt (R41, 23.10.2026). Seit der Runde „Weniger
+ * Text“ (P7, 31.10.2026) ist sie eine Reihe farbiger Zeichen mit Stichwort, der Satz steht hinter
+ * dem Infoknopf (ui/werkzeuge/Pfeillegende.tsx). Greift das Werkzeug nicht (Leerfall, P9), zeigt
+ * die Karte statt des Fazits einen grauen Statuschip mit Kurzgrund, der ganze Satz steht hinter
+ * dem Infoknopf. Hat das Ergebnis einen Hinweis (etwa „Nur Kandidaten“ bei den Todsünden), steht
+ * er hervorgehoben unter dem Namen. Bei Werkzeugen mit eigener Darstellung der Befunde (die
+ * Kandidaten, P10) stehen die Befunde vollständig hinter einem Infoknopf.
+ * Abhängigkeiten: analyse/werkzeug.ts, Waage.tsx, useSicht.ts, ui/werkzeuge/ (Legende,
+ * Statuschip), i18n, lucide-react.
  */
 import { ArrowLeftRight } from "lucide-react";
 import { erklaerungVon, legendeVon } from "../../../analyse/register";
@@ -24,6 +30,11 @@ import { farbname } from "../../../analyse/texte";
 import { t } from "../../../i18n/sprache";
 import { farbkuerzel, gegner } from "../../../schach/stellung";
 import { SoPrueft } from "./SoPrueft";
+import { MitInfo } from "../bausteine/InfoKnopf";
+import { legendenreihe } from "../../werkzeuge/legenden";
+import { Pfeillegende } from "../../werkzeuge/Pfeillegende";
+import { Statuschip } from "../../werkzeuge/Statuschip";
+import { befundeHinterInfo } from "../../werkzeuge/darstellung";
 import type { Sicht } from "../werkzeugwahl/useSicht";
 import { Waage } from "./Waage";
 
@@ -79,6 +90,39 @@ function Befundblock({ befund }: { befund: Befund }) {
   );
 }
 
+/** Die Legende: Reihe mit Infoknopf, ohne Eintrag in legenden.ts der Satz wie bisher. */
+function Legende({ werkzeug, farben }: { werkzeug: string; farben: Record<string, string> }) {
+  const schluessel = legendeVon(werkzeug);
+  if (!schluessel) return null;
+  const reihe = legendenreihe(werkzeug);
+  if (reihe) return <Pfeillegende eintraege={reihe} satz={t(schluessel, farben)} werte={farben} />;
+  return (
+    <p className="legende">
+      <strong>{t("werkzeug.legendeTitel")}</strong> {t(schluessel, farben)}
+    </p>
+  );
+}
+
+/** Die Befunde, untereinander oder (bei eigener Darstellung, P10) hinter einem Infoknopf. */
+function Befunde({ ergebnis }: { ergebnis: Werkzeugergebnis }) {
+  if (ergebnis.befunde.length === 0) return null;
+  const liste = (
+    <div className="befunde">
+      {ergebnis.befunde.map((befund) => (
+        <Befundblock key={befund.kennung} befund={befund} />
+      ))}
+    </div>
+  );
+  if (!befundeHinterInfo(ergebnis.werkzeug)) return liste;
+  return (
+    <MitInfo
+      thema={ergebnis.ueberschrift}
+      zeile={<p className="hinweis">{t("wenigertext.werkzeug.befundeAusfuehrlich")}</p>}
+      erklaerung={liste}
+    />
+  );
+}
+
 /**
  * Die Ergebniskarte eines Werkzeugs: alle Befunde, Fazit, Legende und „So prüft die App“.
  * Beispiel: Prüffragen an Abb. 4.2 → F1, F2 und F3 untereinander.
@@ -94,12 +138,11 @@ export function Werkzeugkarte({
   /** Weiterer Inhalt nach den Befunden, etwa die Engine bei „Gegner?“ (seit 0.2.32). */
   zusatz?: React.ReactNode;
 }) {
-  const befunde = ergebnis.befunde;
   const erklaerung = erklaerungVon(ergebnis.werkzeug);
-  const legende = legendeVon(ergebnis.werkzeug);
   // Ohne Sicht (Werkzeug direkt gerechnet) gilt Weiß; in der App setzt `wende` die Seite immer.
   const seite = ergebnis.seite ?? "white";
   const farben = { eigen: farbname(seite), gegner: farbname(gegner(seite)) };
+  const mitMarken = ergebnis.befunde.length > 0 || ergebnis.markierungen.length > 0;
   return (
     <section
       className="karte"
@@ -118,20 +161,15 @@ export function Werkzeugkarte({
           {ergebnis.hinweis}
         </p>
       )}
-      {befunde.length > 0 && (
-        <div className="befunde">
-          {befunde.map((befund) => (
-            <Befundblock key={befund.kennung} befund={befund} />
-          ))}
-        </div>
+      {zusatz && befundeHinterInfo(ergebnis.werkzeug) && zusatz}
+      <Befunde ergebnis={ergebnis} />
+      {zusatz && !befundeHinterInfo(ergebnis.werkzeug) && zusatz}
+      {ergebnis.status ? (
+        <Statuschip kurz={ergebnis.status} satz={ergebnis.fazit} />
+      ) : (
+        <p className="fazit">{ergebnis.fazit}</p>
       )}
-      {zusatz}
-      <p className="fazit">{ergebnis.fazit}</p>
-      {legende && (ergebnis.befunde.length > 0 || ergebnis.markierungen.length > 0) && (
-        <p className="legende">
-          <strong>{t("werkzeug.legendeTitel")}</strong> {t(legende, farben)}
-        </p>
-      )}
+      {mitMarken && <Legende werkzeug={ergebnis.werkzeug} farben={farben} />}
       <SoPrueft
         beschriftung={t("werkzeug.soPrueft")}
         absaetze={[erklaerung ? t(erklaerung) : "", ergebnis.regel]}

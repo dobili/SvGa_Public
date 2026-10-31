@@ -1,0 +1,222 @@
+/*
+ * Runde „Weniger Text“ (31.10.2026), Trainer: Zähltrainer (P11), Falle oder Köder (P12),
+ * Taktik-Hinweis (P14). Teil 2 zu wenigertext-werkzeuge.css (Dateien unter 400 Zeilen); Farben
+ * über die Tokens aus basis.css, damit Hell und Dunkel stimmen.
+ */
+
+/* ---------- P11: Zähltrainer ---------- */
+
+.trainerfrage {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  line-height: 1.25;
+}
+
+.antwortbanner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.antwortbanner svg {
+  flex: none;
+}
+
+.ergebnischip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.zaehlstand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.zaehlzahl {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--groesse-gross);
+}
+
+.zaehlzahl:first-child {
+  color: var(--rot-text);
+}
+
+.zaehlzahl:first-child strong,
+.zaehlzahl:nth-child(3) strong {
+  color: var(--text);
+}
+
+.zaehlzahl:nth-child(3) {
+  color: var(--gold-text);
+}
+
+.zaehlnamen {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.zaehlfolge {
+  margin: calc(var(--raster) / 2) 0 0;
+  font-weight: 600;
+}
+
+.zaehlmarken {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.zaehlmarke .mitinfo-text {
+  flex: 0 1 auto;
+}
+
+.markenchip {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- P12: Falle oder Köder ---------- */
+
+.fallenfrage {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}
+
+.kurzzeile {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  margin: 0;
+}
+
+.kurzzeile svg,
+.mitsymbol svg {
+  flex: none;
+}
+
+.mitsymbol {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+}
+
+.mitsymbol svg {
+  color: var(--gold-text);
+}
+
+.fallenbanner {
+  display: grid;
+  gap: var(--raster);
+  border: 2px solid var(--linie-stark);
+}
+
+.fallenbanner.gut {
+  border-color: var(--gruen-text);
+}
+
+.fallenbanner.schlecht {
+  border-color: var(--rot-text);
+}
+
+.fallenbanner > .meldung {
+  margin: 0;
+}
+
+.fallenverlust {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--raster);
+  margin: 0;
+}
+
+.besserzeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin: 0;
+}
+
+.besserchip {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ---------- P14: Taktik-Hinweis ---------- */
+
+.warnhinweis {
+  display: grid;
+  gap: var(--raster);
+}
+
+.signalchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.signalchip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.warnchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: 1.5px solid var(--rot-text);
+  border-radius: 999px;
+  color: var(--rot-text);
+  font-weight: 700;
+}
+
+.merkzeichen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--raster);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: var(--groesse-klein);
+}
+
+.merkzeichen li {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.merkkachel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tippflaeche);
+  height: var(--tippflaeche);
+  border-radius: var(--radius);
+  background: var(--linie);
+  color: var(--gold-text);
+}
+
+.merkzeile {
+  margin: 0;
+  text-align: center;
+}

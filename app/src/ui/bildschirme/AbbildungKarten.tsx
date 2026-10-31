@@ -103,9 +103,6 @@ export function Karten({
       {erklaerung.sichtbar && (wahl === "zaehlen" || wahl === "ziehen") && (
         <Erklaerkarte werkzeug={wahl} ausblenden={erklaerung.ausblenden} />
       )}
-      {wahl === "zaehlen" && !ergebnis && !erklaerung.sichtbar && (
-        <p className="hinweis">{t("abbildung.tippeFeld")}</p>
-      )}
       {ergebnis && (
         <Werkzeugkarte
           key={ergebnis.werkzeug}

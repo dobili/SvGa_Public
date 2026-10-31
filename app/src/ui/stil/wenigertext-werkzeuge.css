@@ -1,0 +1,214 @@
+/*
+ * Runde „Weniger Text“ (31.10.2026), Werkzeuge: Pfeil-Legende (P7), Tippzeile von „Zählen“
+ * (P8), Statuschip (P9), Kandidatenzeilen und Wertpfeil (P10, auch P12). Die Trainer (P11, P12,
+ * P14) stehen in wenigertext-trainer.css. Die Farben der Zeichen sind die der Markierungen am
+ * Brett (gleich in Hell und Dunkel, wie das Brett); Text und Ränder über die Tokens aus basis.css.
+ */
+
+/* ---------- P7: Legende als Reihe farbiger Zeichen ---------- */
+
+.pfeillegende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2) calc(var(--raster) * 2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-klein);
+  color: var(--text);
+}
+
+.pfeillegende li {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+}
+
+.legende-zeichen {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+
+.legende-gold {
+  color: #d9a514;
+}
+
+.legende-rot {
+  color: #dc4444;
+}
+
+.legende-grau {
+  color: #8a93a0;
+}
+
+.legende-linie {
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.legende-rot .legende-linie {
+  stroke-dasharray: 4 3;
+}
+
+.legende-grau .legende-linie {
+  stroke-dasharray: 1 3.5;
+  stroke-linecap: round;
+}
+
+.legende-feld {
+  fill: currentColor;
+  opacity: 0.85;
+}
+
+.legende-kennung {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* ---------- P8: Tippzeile von „Zählen“ ---------- */
+
+.tippzeile {
+  padding-block: calc(var(--raster) / 2);
+}
+
+.tippzeile-text {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.tippzeile-text svg {
+  color: var(--gold-text);
+  flex: none;
+}
+
+/* ---------- P9: grauer Statuschip ---------- */
+
+.statuschip {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) * 0.75);
+  padding: 4px 12px;
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  color: var(--text-leise);
+  font-weight: 600;
+}
+
+.statuszeile .mitinfo-zeile {
+  justify-content: flex-start;
+}
+
+.statuszeile .mitinfo-text {
+  flex: 0 1 auto;
+}
+
+/* ---------- P10: Kandidaten als Zeilen ---------- */
+
+.kandidatenzeilen {
+  margin: var(--raster) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kandidat-zeile {
+  display: grid;
+  grid-template-columns: minmax(3.2em, auto) 28px minmax(36px, 1fr) auto auto 44px;
+  align-items: center;
+  column-gap: var(--raster);
+  row-gap: 2px;
+  padding: var(--raster) 0;
+  border-top: 1px solid var(--linie);
+}
+
+.kandidat-zeile:first-child {
+  border-top: none;
+}
+
+.kandidat-zug {
+  font-variant-numeric: tabular-nums;
+}
+
+.kandidat-art {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--gold-text);
+}
+
+.kandidat-balken {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--linie);
+  overflow: hidden;
+}
+
+.kandidat-balken > span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--text);
+}
+
+.kandidat-wert {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.kandidat-auszeichnung {
+  display: inline-flex;
+  gap: 2px;
+  justify-content: flex-end;
+}
+
+.kandidat-krone {
+  color: var(--gold-text);
+}
+
+.kandidat-waage {
+  color: var(--gruen-text);
+}
+
+.kandidat-antwort {
+  grid-column: 2 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.kandidat-antwortzeichen {
+  display: inline-flex;
+  color: var(--rot-text);
+}
+
+.kandidat-leer {
+  display: block;
+}
+
+.kandidatenlegende svg {
+  flex: none;
+}
+
+/* Veränderung als Pfeil mit Zahl (P10, P12): grün aufwärts, rot abwärts, grau gleich. */
+.wertpfeil {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wertpfeil-auf {
+  color: var(--gruen-text);
+}
+
+.wertpfeil-ab {
+  color: var(--rot-text);
+}
+
+.wertpfeil-gleich {
+  color: var(--text-leise);
+}

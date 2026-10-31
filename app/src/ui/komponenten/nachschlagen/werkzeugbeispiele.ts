@@ -74,7 +74,7 @@ export const WERKZEUGBEISPIELE: Readonly<Record<Werkzeug["id"], Werkzeugbeispiel
   "k12-erfassen": { abbildung: "12.2" },
   "k12-kandidaten": {
     abbildung: "12.1",
-    engine: { karte: "kandidaten-karte", text: "Am stärksten nach der Engine:" },
+    engine: { karte: "kandidaten-karte", text: "Stellung jetzt" },
   },
   "k12-sicherheitsblick": { abbildung: "12.6" },
 };

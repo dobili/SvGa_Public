@@ -29,11 +29,15 @@ test("ohne Werkzeug zu Beginn; zweites Tippen wählt ab; Erklärkacheln von Zäh
   await page.getByRole("button", { name: "d4, Bauer (Weiß)" }).click();
   await expect(gedrueckt).toHaveCount(0);
   await expect(page.getByTestId("werkzeugkarte")).toHaveCount(0);
-  // „Zählen“ wählen: Die Erklärkachel steht sofort da und bleibt, auch nach dem Zählen.
+  // „Zählen“ wählen: Die Tippzeile (Hand, „Feld antippen“, P8) steht sofort da und bleibt, auch
+  // nach dem Zählen; Erklärung und Irrtumshinweis hinter ⓘ.
   await zaehlen.click();
   await expect(zaehlen).toHaveAttribute("aria-pressed", "true");
   const erklaerung = page.getByTestId("werkzeug-erklaerung");
-  await expect(erklaerung).toContainText("So geht „Zählen“");
+  await expect(erklaerung).toContainText("Feld antippen");
+  await expect(erklaerung.getByRole("checkbox")).toHaveCount(0);
+  await erklaerung.getByRole("button", { name: "Erklärung: Zählen" }).click();
+  await expect(erklaerung).toContainText("Die App zählt, wer es angreift");
   await expect(erklaerung).toContainText("Maßgeblich ist das Buch.");
   await page.getByRole("button", { name: "d4, Bauer (Weiß)" }).click();
   await expect(page.getByTestId("werkzeugkarte")).toContainText("3 gegen 3");
@@ -56,7 +60,7 @@ test("ohne Werkzeug zu Beginn; zweites Tippen wählt ab; Erklärkacheln von Zäh
   await ziehen.click();
   await expect(erklaerung).toBeHidden();
   await zaehlen.click();
-  await expect(erklaerung).toContainText("So geht „Zählen“");
+  await expect(erklaerung).toContainText("Feld antippen");
   // Die Einstellungen holen die Kachel von „Ziehen“ zurück.
   await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Hilfe" }).click();
@@ -114,10 +118,12 @@ test("Sicht-Schalter (0.2.27): rechnet für die andere Seite, nach einem Zug wie
   await expect(schalter).toContainText("Sicht: Schwarz");
   await expect(schalter).toContainText("nicht am Zug");
   await expect(page.getByTestId("werkzeugkarte")).toContainText("1. Schachs: Schwarz");
-  // R41: Die Legende folgt der Sicht und nennt die Farben.
-  await expect(page.getByTestId("werkzeugkarte")).toContainText(
-    "Rote Pfeile: Schachs und Drohungen von Weiß",
-  );
+  // R41: Die Legende folgt der Sicht und nennt die Farben; seit P7 als Zeichenreihe (Gold
+  // Schwarz, Rot Weiß), der Satz hinter ⓘ.
+  const karte = page.getByTestId("werkzeugkarte");
+  await expect(karte.getByTestId("pfeillegende")).toHaveText(/Schwarz.*Weiß.*Abtausch/);
+  await karte.getByRole("button", { name: "Erklärung: Zeichen am Brett" }).click();
+  await expect(karte).toContainText("Rote Pfeile: Schachs und Drohungen von Weiß");
   await page.getByRole("button", { name: "Einen Halbzug vor" }).click();
   await page.getByRole("button", { name: "Einen Halbzug zurück" }).click();
   await expect(schalter).toContainText("Sicht: Weiß");
@@ -199,6 +205,9 @@ test("Werkzeug-Umbau (0.2.30): Bündel des Kapitels, frühere und spätere, Reit
   // Seit 0.2.85 zeigt die Karte gleich alles (kein „Mehr …“); Legende der Markierungen immer da.
   await page.getByRole("tab", { name: "Planbilanz" }).click();
   const karte = page.getByTestId("werkzeugkarte");
+  // Seit der Runde „Weniger Text“ (P7): Legende als Zeichenreihe, der Satz hinter ⓘ.
+  await expect(karte.getByTestId("pfeillegende")).toBeVisible();
+  await karte.getByRole("button", { name: "Erklärung: Zeichen am Brett" }).click();
   await expect(karte).toContainText("Am Brett:");
   await expect(karte).toContainText("Vergleiche deine Planbilanz");
   await expect(karte.getByRole("button", { name: "Mehr …" })).toHaveCount(0);

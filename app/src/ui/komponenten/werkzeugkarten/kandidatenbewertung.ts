@@ -17,6 +17,9 @@ import { t, zahlText } from "../../../i18n/sprache";
 
 /** Nachkommastellen für den Unterschied zweier Werte in Bauerneinheiten. */
 const NACHKOMMASTELLEN = 2;
+/** Ab diesem Betrag (Bauern) ist der Balken einer Kandidatenzeile fast voll; dazwischen weich. */
+const BALKENSKALA = 4;
+const HALB = 0.5;
 
 /** Das Urteil über einen Kandidaten gegenüber der Stellung jetzt. */
 export type Kandidatenurteil =
@@ -101,4 +104,14 @@ export function vergleichswert(wert: Wert): number {
   const MATT = 1000;
   if (wert.art === "bauern") return wert.bauern;
   return Math.sign(wert.zuege) * (MATT - Math.abs(wert.zuege));
+}
+
+/**
+ * Anteil des Bewertungsbalkens einer Kandidatenzeile (P10) für einen Wert aus eigener Sicht:
+ * 0,5 ausgeglichen, gegen 1 bei Gewinn.
+ * Beispiel: +5,37 → etwa 0,93; −1,20 → etwa 0,35; ein eigenes Matt → 1.
+ */
+export function balkenanteil(wert: Wert): number {
+  if (wert.art === "matt") return wert.zuege > 0 ? 1 : 0;
+  return HALB + HALB * Math.tanh(wert.bauern / BALKENSKALA);
 }

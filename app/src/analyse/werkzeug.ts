@@ -82,6 +82,12 @@ export interface Werkzeugergebnis {
    * (Wunsch des Autors zu C2.3, 16.10.2026). Fehlt bei den meisten Werkzeugen.
    */
   readonly hinweis?: string;
+  /**
+   * Kurzgrund, warum das Werkzeug hier nicht greift („Nicht im Endspiel“); setzt nur die
+   * Leerfall-Schicht der Oberfläche (ui/werkzeuge/leerfall.ts, Runde „Weniger Text“ P9). Die Karte
+   * zeigt ihn als grauen Chip, das Fazit mit dem ganzen Satz hinter dem Infoknopf.
+   */
+  readonly status?: string;
 }
 
 /** Was ein Werkzeug als Eingabe bekommen kann (Konzept 7.1). */

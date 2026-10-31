@@ -33,6 +33,81 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Weniger Text: Werkzeuge und Trainer (31.10.2026)
+
+Nach deiner Wahl „Umsetzen“ für alle Punkte der Runde „Weniger Text“ zeigen die Werkzeugkarten
+und drei Trainer weniger Sätze und mehr Bildzeichen. Was vorher als Satz dastand, steht jetzt
+hinter dem runden Fragezeichen-Knopf (ⓘ) rechts in der Zeile; ein Tipp klappt es auf, ein zweiter
+zu. Bitte jeden Punkt im dunklen und im hellen Modus ansehen und darauf achten, dass auf dem
+Handy nichts seitlich übersteht. Werkzeuge öffnest du so: unten „Buch“, die genannte Abbildung
+antippen, dann in der Werkzeugleiste unter dem Brett das Werkzeug wählen (manche stecken in einem
+Bündel des Kapitels, etwa „Denkroutine“ oder „Planfindung“; ein Tipp öffnet die Reiter).
+
+- [ ] N2340. **Legende als Pfeilreihe (Röntgen):** Abb. 1.26, Werkzeug „Röntgen“. Unten in der
+      Karte steht statt „Am Brett: Goldene Pfeile: …“ eine Reihe: goldener Pfeil „Weiß“, roter
+      gestrichelter Pfeil „Schwarz“, grauer gepunkteter Pfeil „Abtausch“, rechts das ⓘ. Ein Tipp
+      auf ⓘ zeigt den alten Satz „Am Brett: Goldene Pfeile: Schachs, Gewinnschläge …“. Tippe oben
+      „Sicht“: Die Reihe tauscht die Farben (Gold „Schwarz“, Rot „Weiß“). Sind die drei Pfeile
+      gut zu unterscheiden, auch im hellen Modus?
+- [ ] N2341. **Legende bei weiteren Werkzeugen:** Prüfe drei weitere: Abb. 12.6 „Sicherheitsblick“
+      (goldener Pfeil „Zug“, roter Pfeil „Schlag, Schach“, rotes Feld „bedroht“), Abb. 6.20
+      „Planbilanz“ (Felder Gold „Weiß“, Rot „Schwarz“, Grau „Ziel“) und Abb. 7.18 „Warnsignale“
+      (umrandete Felder „Signal Weiß“, „Signal Schwarz“, „Gabelfeld“). Hinter ⓘ jeweils der ganze alte Satz.
+      Passt jedes Stichwort zu dem, was am Brett markiert ist? Alle 31 Werkzeuge mit Legende haben
+      so eine Reihe; ein unpassendes Stichwort bitte mit Werkzeug melden.
+- [ ] N2342. **Zählen: Hand und „Feld antippen“:** Abb. 1.26, Werkzeug „Zählen“. Über den Karten
+      steht nur noch eine goldene Zeile mit Hand und „Feld antippen“, rechts ⓘ. Ein Tipp auf ⓘ
+      zeigt die Bedienung („Tippe ein Feld auf dem Brett an. Die App zählt …“) und klein „Die
+      Werkzeuge rechnen nach festen Regeln und können sich irren. Maßgeblich ist das Buch.“ Das
+      Kästchen „Nicht mehr anzeigen“ gibt es bei Zählen nicht mehr (bei „Ziehen“ schon). Tippe d4:
+      Die Zeile bleibt stehen, darunter die Karte „Feld d4 zählen“.
+- [ ] N2343. **Statuschip „greift hier nicht“:** Abb. 1.26, Werkzeug „Prüffragen“: Statt des
+      langen Satzes steht ein grauer Chip mit Verbotszeichen „Nur bei Angebot“ und ⓘ; dahinter
+      „Kein Material im Angebot und keine Fesselung im Spiel: …“. „So prüft die App“ bleibt.
+      Dann Abb. 6.27, Werkzeug „Zielbilanz“: Chip „Nicht im Endspiel“, hinter ⓘ „Die Zielbilanz
+      gilt in Eröffnung und Mittelspiel. Hier nicht: Es ist Endspiel.“ Weitere Chips je nach
+      Stellung: „Keine Bauern“, „Keine Figuren“, „Nur Bauernendspiel“, „Faktoren gleich“,
+      „Stellung ruhig“, „Kein Signal“, „Nicht in der Eröffnung“, „Nicht im Mittelspiel“.
+- [ ] N2344. **Kandidaten als Zeilen:** Abb. 12.1, Werkzeug „Kandidaten“ (Bündel „Denkroutine“).
+      Oben „Bewertung der Engine“, nach ein bis drei Sekunden „Stellung jetzt +4,70“ (Zahl je
+      nach Engine) mit ⓘ. Je Kandidat eine Zeile: Zug (etwa „Lxh7+“), Zeichen der Art (Kreis mit
+      Plus = Schach, Blitz = Drohung, Buch = Buchzug), ein Balken für die Bewertung mit Zahl,
+      dann die Veränderung als „▲ 0,67“ grün oder „▼ 3,44“ rot, ganz rechts die Krone beim
+      stärksten Zug laut Engine und die Waage beim Zug mit der besten Bilanz. Darunter klein
+      „↳ Kxh7 · Material −2“. Unter den Zeilen eine Legende der Zeichen. Hinter „Schritte 2 bis 4
+      ausführlich“ ⓘ stehen die alten Sätze vollständig („1. Lxh7+ (Schach)“, „Zwingt nichts: …“,
+      „Rechne jeden Kandidaten bis zur Ruhe …“). Hinter ⓘ an „Stellung jetzt“ steht „Am stärksten
+      nach der Engine: …“. Passt alles auf eine Handybreite?
+- [ ] N2345. **Kandidaten im Schach:** Abb. 12.3, Werkzeug „Kandidaten“: Die Abwehrzüge stehen
+      mit Schild-Zeichen da, beim ersten „↳ Sxe6 · Material … · Gabel: Dame c7 und Turm f8“.
+- [ ] N2346. **Zähltrainer, Frage:** Unten „Training“, „Zählen“, eine Runde „Bilanz zählen“
+      starten. Oben steht groß „d4: Lohnt sich Schlagen?“ (Feld je nach Aufgabe) mit ⓘ; dahinter
+      die Regel (zu Ende tauschen, billigste Figur zuerst, Bauerneinheiten) und der Schalter
+      „Genauer üben: auch Angreifer und Verteidiger zählen“. Der Satz „Tippe das Ergebnis an“
+      entfällt; die Knöpfe „lohnt nicht“, „+1“ … „+9“ stehen wie bisher.
+- [ ] N2347. **Zähltrainer, Antwort:** Tippe ein falsches Ergebnis. Es erscheint ein Banner „✗
+      Nicht ganz · richtig:“ mit dem richtigen Wert als goldenem Chip (deine Antwort bleibt am
+      Knopf markiert). Darunter die Zählung: rote Schwerter mit der Zahl der Angreifer, „:“,
+      goldener Schild mit der Zahl der Verteidiger, daneben „Sc6, Db6 gegen Sf3“ (Namen der
+      Figuren), darunter die Zugfolge wie „Sxd4 Sxd4 Dxd4“; ⓘ zeigt die Rechnung als Sätze.
+      Hat die Aufgabe eine verdeckte Figur, steht eine kleine Marke mit durchgestrichenem Auge
+      „Dd1 verdeckt“ und ⓘ mit dem Satz „Verdeckt: Dame d1 steht hinter …“ (ebenso Marken
+      „gefesselt“, „Batterie“, „Abzug“).
+- [ ] N2348. **Falle oder Köder:** Unter „Training“ „Falle oder Köder“ starten. Oben groß „Falle
+      oder Geschenk?“, darunter roter gestrichelter Pfeil „sein Zug …“ und grauer Pfeil „Angebot
+      …“, eine kleine Zeile „Weiß am Zug · Herkunft · Stufe“ mit ⓘ (dahinter der alte Auftrag).
+      Der Knopf „Warnsignale zeigen“ hat ein Warndreieck. Nach der Entscheidung ein umrandetes
+      Banner „✓ Richtig: Falle“ (oder „Nicht ganz: Geschenk“), bei einer Falle „nach Dxd6“ mit
+      „▼ 11,6“ in Rot (kein Balken), darunter die Fortsetzung und „Besser:“ mit goldenem Chip
+      „→ Th4+“; ⓘ zeigt die alten Sätze (Auflösung, „Fortsetzung laut Engine“, ob die
+      Warnsignale geholfen hätten). Der Bewertungsbalken beim Vorspielen bleibt wie bisher.
+- [ ] N2349. **Taktik-Hinweis:** Unter „Training“ „Taktik“ eine Runde starten und „Hinweis 1“
+      tippen. Statt „Warnsignal: Signale auf dem Brett: W1. Suche nach …“ steht ein roter Chip
+      mit Warndreieck „W1“ und „ungedeckte Figur“ (je nach Aufgabe W1 bis W7, ohne Signal grau
+      „Kein Signal“), rechts ⓘ mit dem alten Satz; darunter drei Kacheln Krone „Schach“,
+      gekreuzte Schwerter „Schlag“, Fadenkreuz „Drohung“ und „erst Motiv suchen, dann rechnen“.
+      „Hinweis 2“ zeigt wie bisher „Motiv: …“.
+
 ### Neu in 0.3.41: Einstellungen neu (Arbeitschat, 31.10.2026)
 
 Die Einstellungen sind nach deiner Wahl des Entwurfs K2 „Brettvorschau oben“ neu gebaut: oben ein

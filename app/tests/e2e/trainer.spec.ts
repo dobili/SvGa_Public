@@ -80,9 +80,17 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
   // Seit dem Nebenchat (30.10.2026): Ein Tipp auf das Ergebnis prüft sofort.
   await runde.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "lohnt nicht" }).click();
   await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
+  // Die Zählung als Zeichen: Angreifer und Verteidiger mit Zahl (P11).
+  await expect(
+    page.getByTestId("zaehl-rechnung").getByRole("img", { name: /greift an: \d/ }),
+  ).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-zaehlen.png", fullPage: true });
   await page.getByRole("button", { name: "Weiter" }).click();
-  // Genauer Modus: Angreifer und Verteidiger mit „−“ und „+“, dann Prüfen.
+  // Genauer Modus: Angreifer und Verteidiger mit „−“ und „+“, dann Prüfen. Seit der Runde
+  // „Weniger Text“ (P11) steht der Schalter mit der Regel hinter ⓘ an der kurzen Frage.
+  await expect(runde.getByRole("heading", { name: /: Lohnt sich Schlagen\?/ })).toBeVisible();
+  await runde.getByRole("button", { name: "Erklärung: Regel der Aufgabe" }).click();
+  await expect(runde).toContainText("billigsten Figur");
   await runde.getByRole("button", { name: /Genauer üben/ }).click();
   await runde.getByRole("button", { name: "Angreifer: eins mehr" }).click();
   await runde.getByRole("button", { name: "Verteidiger: eins mehr" }).click();
@@ -120,6 +128,11 @@ test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage"
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 8");
   await runde.getByRole("button", { name: "Hinweis 1" }).click();
+  // Runde „Weniger Text“ (P14): Signal als Chip, drei Merkzeichen, der Satz hinter ⓘ.
+  const warn = page.getByTestId("taktik-warnsignal");
+  await expect(warn).toContainText("Schach");
+  await expect(warn).toContainText("Drohung");
+  await warn.getByRole("button", { name: "Erklärung: Warnsignal" }).click();
   await expect(runde).toContainText("Warnsignal:");
   await runde.getByRole("button", { name: "Hinweis 2" }).click();
   await expect(page.getByTestId("taktik-motiv")).toContainText("Spieß");
@@ -139,13 +152,20 @@ test("Falle oder Köder: Warnsignale als Hinweis vorher, danach Lösung mit Balk
   await oeffneTrainer(page, "falle");
   await page.getByTestId("falle-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
+  // Runde „Weniger Text“ (P12): Frage groß, Pfeil-Legende als Zeichen, der Auftrag hinter ⓘ.
+  await expect(runde.getByRole("heading", { name: "Falle oder Geschenk?" })).toBeVisible();
+  await expect(runde.getByTestId("pfeillegende")).toContainText("Angebot");
+  await runde.getByRole("button", { name: "Erklärung: Aufgabe" }).click();
   await expect(runde).toContainText("Der Gegner hat gerade");
-  await expect(runde).toContainText("Falle oder Geschenk?");
   // Seit dem Nebenchat (30.10.2026): Die Warnsignale sind vorher ein freiwilliger Hinweis.
   await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
-  await runde.getByRole("button", { name: "Hinweis: Warnsignale zeigen" }).click();
+  await runde.getByRole("button", { name: "Warnsignale zeigen" }).click();
   await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
+  // Antwort als Banner („Richtig: Falle“), die Sätze hinter ⓘ.
+  const antwort = page.getByTestId("falle-antwort");
+  await expect(antwort.getByRole("status")).toContainText(/Falle|Geschenk/);
+  await antwort.getByRole("button", { name: "Erklärung: Auflösung" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
   // Danach nur die Lösung: Fortsetzung mit Bewertungsbalken, keine Warnsignal-Marken mehr.
   await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);

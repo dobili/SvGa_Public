@@ -8,8 +8,12 @@
  * Die Warnsignale (Kapitel 4, k4-warnsignale) sind vor der Entscheidung ein freiwilliger
  * Hinweis; nach der Entscheidung zeigt das Brett nur die Lösung, die Fortsetzung lässt sich mit
  * Bewertungsbalken vorspielen (Folgespieler), und ein Satz sagt, ob die Signale geholfen hätten.
- * Abhängigkeiten: training/fallentrainer.ts, analyse/k4-warnsignale.ts, Trainerbrett.
+ * Seit der Runde „Weniger Text“ (P12, 31.10.2026): Frage groß mit Pfeil-Legende, Antwort als
+ * Banner mit „▼ Verlust“ und goldenem Besser-Chip, die Sätze hinter ⓘ (Fallenantwort.tsx).
+ * Abhängigkeiten: training/fallentrainer.ts, analyse/k4-warnsignale.ts, Trainerbrett,
+ * Fallenantwort.tsx.
  */
+import { TriangleAlert } from "lucide-react";
 import { useMemo, useState } from "react";
 import { warnsignale } from "../../analyse/k4-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -25,7 +29,7 @@ import {
 } from "../../training/fallentrainer";
 import { warnnutzen, type Warnnutzen } from "../../training/fallenwarnung";
 import { Folgespieler } from "./Folgespieler";
-import { Antwortmeldung } from "./Rundenrahmen";
+import { Fallenbanner, Fallenfrage, type Fallenausgang } from "./Fallenantwort";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { THEMA_FALLE } from "../../speicher/themenprotokoll";
@@ -34,6 +38,7 @@ import { useSammelstellung } from "./sammelstellung";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
 const NACHKOMMASTELLEN = 1;
+const WARNSYMBOL = 18;
 /** Ab diesem „Verlust“ ist der Wert ein Mattwert (mehr Material gibt es auf dem Brett nicht). */
 const MATT_AB_BAUERN = 50;
 /** Das Angebot vor der Entscheidung: ohne „+“, „#“, „!“ oder „?“, die die Antwort verraten (R31). */
@@ -47,32 +52,50 @@ function herkunftstext(aufgabe: Aufgabe): string {
   return t("taktiktrainer.ausLichess", { wertung: h.wertung });
 }
 
-/** Die Auflösung nach der Entscheidung: Widerlegung, Wirkung, Wert vorher und nachher. */
-function Aufloesung({ aufgabe, richtig }: { aufgabe: Aufgabe; richtig: boolean }) {
-  const folge = aufgabe.fortsetzung.map(buchzug).join(" ");
+/** Der bisherige Satz der Auflösung (für ⓘ): Widerlegung, Wirkung, Verlust, besserer Zug. */
+function aufloesungssatz(aufgabe: Aufgabe, matt: boolean, folge: string): string {
   const widerlegung = widerlegungszug(aufgabe);
-  const wirkung = wirkungDerWiderlegung(aufgabe);
-  // Bei Matt ist der Verlust ein Mattwert, keine Bauernzahl (Befund N691, 26.10.2026).
-  const matt = wirkung === "matt" || aufgabe.verlustBeimNehmen >= MATT_AB_BAUERN;
-  const text =
-    aufgabe.antwort === "falle"
-      ? t(matt ? "fallentrainer.warFalleMatt" : "fallentrainer.warFalle", {
-          zug: buchzug(aufgabe.angebot),
-          widerlegung: widerlegung ? buchzug(widerlegung) : folge,
-          wirkung: t(`fallentrainer.wirkung.${wirkung}`),
-          verlust: zahlText(aufgabe.verlustBeimNehmen, NACHKOMMASTELLEN),
-          bester: buchzug(aufgabe.bester),
-        })
-      : t("fallentrainer.warGeschenk", {
-          zug: buchzug(aufgabe.angebot),
-          vorzug: buchzug(aufgabe.vorzug),
-        });
-  return (
-    <>
-      <Antwortmeldung richtig={richtig}>{text}</Antwortmeldung>
-      <p className="hinweis">{t("fallentrainer.fortsetzung", { folge })}</p>
-    </>
-  );
+  if (aufgabe.antwort !== "falle")
+    return t("fallentrainer.warGeschenk", {
+      zug: buchzug(aufgabe.angebot),
+      vorzug: buchzug(aufgabe.vorzug),
+    });
+  return t(matt ? "fallentrainer.warFalleMatt" : "fallentrainer.warFalle", {
+    zug: buchzug(aufgabe.angebot),
+    widerlegung: widerlegung ? buchzug(widerlegung) : folge,
+    wirkung: t(`fallentrainer.wirkung.${wirkungDerWiderlegung(aufgabe)}`),
+    verlust: zahlText(aufgabe.verlustBeimNehmen, NACHKOMMASTELLEN),
+    bester: buchzug(aufgabe.bester),
+  });
+}
+
+/**
+ * Der Ausgang nach der Entscheidung für das Banner (P12). Bei Matt ist der Verlust ein Mattwert,
+ * keine Bauernzahl (Befund N691, 26.10.2026).
+ */
+function ausgangVon(aufgabe: Aufgabe, richtig: boolean, nutzen: Warnnutzen): Fallenausgang {
+  const folge = aufgabe.fortsetzung.map(buchzug).join(" ");
+  const falle = aufgabe.antwort === "falle";
+  const matt =
+    wirkungDerWiderlegung(aufgabe) === "matt" || aufgabe.verlustBeimNehmen >= MATT_AB_BAUERN;
+  const verlust = matt
+    ? t("wenigertext.werkzeug.matt")
+    : zahlText(aufgabe.verlustBeimNehmen, NACHKOMMASTELLEN);
+  return {
+    richtig,
+    falle,
+    angebot: buchzug(aufgabe.angebot),
+    verlust: falle ? verlust : null,
+    bester: falle && aufgabe.bester !== aufgabe.angebot ? buchzug(aufgabe.bester) : null,
+    folge,
+    saetze: (
+      <>
+        <p>{aufloesungssatz(aufgabe, matt, folge)}</p>
+        <p>{t("fallentrainer.fortsetzung", { folge })}</p>
+        <Warnnutzensatz nutzen={nutzen} />
+      </>
+    ),
+  };
 }
 
 /**
@@ -100,11 +123,7 @@ function Warnnutzensatz({ nutzen }: { nutzen: Warnnutzen }) {
       : nutzen.art === "nichtGeholfen"
         ? t("fallentrainer.warnNichtGeholfen", { zug: buchzug(nutzen.zug) })
         : t("fallentrainer.warnUnnoetig");
-  return (
-    <p className="hinweis" data-testid="falle-warnnutzen">
-      {text}
-    </p>
-  );
+  return <p data-testid="falle-warnnutzen">{text}</p>;
 }
 
 /**
@@ -129,31 +148,38 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
   const farbe = t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b");
   const antworte = (nimmt: boolean) =>
     antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, nimmt), THEMA_FALLE);
+  const auftrag = t("fallentrainer.auftrag", {
+    farbe,
+    vorzug: buchzug(aufgabe.vorzug),
+    zug: angebotszug(aufgabe.angebot),
+  });
+  const kurzzeile = [
+    t("wenigertext.werkzeug.falle.amZug", { farbe }),
+    herkunftstext(aufgabe),
+    t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit }),
+  ].join(" · ");
   return (
     <>
-      <p>
-        {t("fallentrainer.auftrag", {
-          farbe,
-          vorzug: buchzug(aufgabe.vorzug),
-          zug: angebotszug(aufgabe.angebot),
-        })}
-      </p>
+      <Fallenfrage
+        vorzug={buchzug(aufgabe.vorzug)}
+        angebot={angebotszug(aufgabe.angebot)}
+        kurzzeile={kurzzeile}
+        auftrag={auftrag}
+      />
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
         gedreht={aufgabe.amZug === "b"}
         beschriftung={t("trainer.falle.name")}
       />
-      <p className="hinweis">
-        {herkunftstext(aufgabe)} · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
-      </p>
       {!entschieden && warn && (
         <button
           type="button"
-          className="knopf-link"
+          className="knopf-link mitsymbol"
           aria-pressed={hinweis}
           onClick={() => setzeHinweis(!hinweis)}
         >
+          <TriangleAlert size={WARNSYMBOL} aria-hidden="true" />
           {t(hinweis ? "fallentrainer.warnVerbergen" : "fallentrainer.warnZeigen")}
         </button>
       )}
@@ -172,8 +198,9 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
           </button>
         </div>
       )}
-      {entschieden && <Aufloesung aufgabe={aufgabe} richtig={runde.ergebnis === true} />}
-      {entschieden && <Warnnutzensatz nutzen={nutzen} />}
+      {entschieden && (
+        <Fallenbanner ausgang={ausgangVon(aufgabe, runde.ergebnis === true, nutzen)} />
+      )}
       {entschieden && (
         <Folgespieler
           startFen={aufgabe.fen}

@@ -12,6 +12,7 @@
  * Abhängigkeiten: speicher/format.ts, speicher/partien.ts, speicher/besiegt.ts.
  */
 import type { Nutzerdaten } from "../../../speicher/format";
+import { ERFAHRUNGSQUELLEN } from "./erfahrungsquellen";
 import type { Spielstand } from "../../../speicher/partien";
 import type { Partie } from "../../../spiel/partie";
 
@@ -43,13 +44,18 @@ export interface Erfahrungsgrundlage {
   readonly fehler: number;
   /** Längste Serie der Tagesaufgabe in Tagen (Merker auf dem Gerät, verfällt nie). */
   readonly tagesserie: number;
+  /** Einheiten der zusätzlichen Quellen je Kennung (erfahrungsquellen.ts, Pakete der Gamifizierung). */
+  readonly zusatz: Readonly<Record<string, number>>;
 }
+
+/** Die festen Grundquellen (alle Felder außer den zusätzlichen Quellen). */
+type Grundquelle = Exclude<keyof Erfahrungsgrundlage, "zusatz">;
 
 /**
  * Punkte je Einheit. Lernen am Buch (Übung, Warum-Frage, Einschätzung) wiegt schwerer als Ansehen;
  * die Trainer zählen je richtiger Antwort wenig, weil dort schnell viele Antworten entstehen.
  */
-export const GEWICHTE: Readonly<Record<keyof Erfahrungsgrundlage, number>> = {
+export const GEWICHTE: Readonly<Record<Grundquelle, number>> = {
   abbildungen: 2,
   eingeschaetzt: 4,
   warum: 5,
@@ -99,9 +105,13 @@ export interface Erfahrungsstufe {
  * Summe der Erfahrungspunkte. Beispiel: 10 Abbildungen und 2 gelöste Übungen → 10·2 + 2·20 = 60.
  */
 export function erfahrungspunkte(g: Erfahrungsgrundlage): number {
-  return (Object.keys(GEWICHTE) as (keyof Erfahrungsgrundlage)[]).reduce(
+  const grund = (Object.keys(GEWICHTE) as Grundquelle[]).reduce(
     (summe, schluessel) => summe + Math.max(0, g[schluessel]) * GEWICHTE[schluessel],
     0,
+  );
+  return ERFAHRUNGSQUELLEN.reduce(
+    (summe, q) => summe + Math.max(0, g.zusatz[q.kennung] ?? 0) * q.gewicht,
+    grund,
   );
 }
 
@@ -183,5 +193,6 @@ export function grundlageAus(daten: Nutzerdaten, tagesserie: number): Erfahrungs
     sammlung: daten.sammlung.filter((e) => mitText(e.plan) || mitText(e.notiz)).length,
     fehler: daten.fehler.filter((e) => mitText(e.satz)).length,
     tagesserie,
+    zusatz: Object.fromEntries(ERFAHRUNGSQUELLEN.map((q) => [q.kennung, q.zaehle(daten)])),
   };
 }

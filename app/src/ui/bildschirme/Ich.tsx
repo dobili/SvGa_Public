@@ -16,6 +16,7 @@ import { TourKnopf } from "../../tour/TourKnopf";
 import { Fortschrittsuebersicht } from "../komponenten/fortschritt/Fortschrittsuebersicht";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Partienliste } from "../komponenten/partienliste/Partienliste";
+import { Profilkarten } from "../komponenten/profilkarten/Profilkarten";
 import { Wertungskurve } from "../komponenten/fortschritt/Wertungskurve";
 import { ProfilKarte } from "../profil/ProfilKarte";
 
@@ -43,6 +44,8 @@ export function Ich() {
       </button>
       <Wertungskurve punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
+      {/* Gamifizierung G4: Karten der Pakete (Themen, Rekorde, Rückblicke …). */}
+      <Profilkarten />
       <Partienliste partien={partien} />
     </div>
   );

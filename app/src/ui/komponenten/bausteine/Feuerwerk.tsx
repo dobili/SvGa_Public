@@ -11,6 +11,7 @@
  * Abhängigkeiten: ui/stil/feuerwerk.css.
  */
 import type { CSSProperties } from "react";
+import { feiereffekteAn } from "../../../app/feiereffekte";
 
 /** Raketen: waagrechte Lage (Anteil der Breite), Höhe des Platzens (Anteil), Verzögerung (s). */
 const RAKETEN: readonly (readonly [number, number, number])[] = [
@@ -39,6 +40,8 @@ const KLEINE_RAKETEN: readonly (readonly [number, number, number])[] = [
  * Beispiel: <Feuerwerk umfang="klein" /> über dem Brett nach „Gewonnen!“.
  */
 export function Feuerwerk({ umfang = "gross" }: { umfang?: "gross" | "klein" }) {
+  // Schalter „Feiereffekte“ (Einstellungen › Bedienung): aus → kein Feuerwerk.
+  if (!feiereffekteAn()) return null;
   const raketen = umfang === "klein" ? KLEINE_RAKETEN : RAKETEN;
   return (
     <div className={`feuerwerk feuerwerk-${umfang}`} aria-hidden="true">

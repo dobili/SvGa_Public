@@ -46,6 +46,8 @@ const NOCH_ZU_PRUEFEN: ReadonlySet<string> = new Set([
   "einstellungen.zuganimation.aus",
   "einstellungen.startanimation.an",
   "einstellungen.startanimation.aus",
+  "einstellungen.feiereffekte.an",
+  "einstellungen.feiereffekte.aus",
 ]);
 
 /** Der Quelltext aller Dateien unter src/ (ohne Tests und Textdateien) und der HTML-Seiten. */

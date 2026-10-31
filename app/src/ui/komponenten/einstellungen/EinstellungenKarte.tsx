@@ -36,6 +36,7 @@ import {
   setzeFarbschema,
   type Farbschema,
 } from "../../../app/farbschema";
+import { MERKER_FEIEREFFEKTE } from "../../../app/feiereffekte";
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { MERKER_WISCHEN } from "../../brett/useZiehen";
@@ -97,7 +98,8 @@ function MerkerWahl({
     | "einstellungen.koordinaten"
     | "einstellungen.wischen"
     | "einstellungen.zuganimation"
-    | "einstellungen.startanimation";
+    | "einstellungen.startanimation"
+    | "einstellungen.feiereffekte";
 }) {
   const [wert, setzeWert] = useState<Koordinaten>(liesMerker(merker) === "aus" ? "aus" : "an");
   return (
@@ -226,6 +228,8 @@ function BedienungBereich() {
       <p className="hinweis">{t("einstellungen.zuganimation.hinweis")}</p>
       <MerkerWahl merker={MERKER_STARTANIMATION} schluessel="einstellungen.startanimation" />
       <p className="hinweis">{t("einstellungen.startanimation.hinweis")}</p>
+      <MerkerWahl merker={MERKER_FEIEREFFEKTE} schluessel="einstellungen.feiereffekte" />
+      <p className="hinweis">{t("einstellungen.feiereffekte.hinweis")}</p>
       <TonBereich />
     </>
   );

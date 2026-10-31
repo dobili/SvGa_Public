@@ -5,6 +5,7 @@
  * Leser tippen die Nummer aus dem Buch ein, etwa „1.26“, oder öffnen ein Kapitel (Kapitelübersicht).
  * Abhängigkeiten: daten/laden.ts, daten/finde.ts, speicher (Fortschritt), Navigation, i18n.
  */
+import { Startkarten } from "../komponenten/start/Startkarten";
 import { useState, type FormEvent } from "react";
 import { liesMerker } from "../../app/merker";
 import { useNavigation } from "../../app/navigationsKontext";
@@ -167,6 +168,8 @@ export function Buch() {
       )}
       {index.art === "fertig" && (
         <>
+          {/* Gamifizierung G4: Karten der Pakete (nächster Schritt, Wochenziel …), höchstens zwei. */}
+          <Startkarten />
           <Nummernfeld index={index.wert} />
           <Kapitelliste index={index.wert} />
         </>

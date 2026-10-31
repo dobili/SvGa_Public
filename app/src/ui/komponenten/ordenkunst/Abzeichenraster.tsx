@@ -12,7 +12,12 @@
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import { Abzeichenbild } from "../bausteine/Abzeichenbild";
-import { ABZEICHEN, type Abzeichenkennung } from "../fortschritt/abzeichen";
+import {
+  ABZEICHEN,
+  type Abzeichenkennung,
+  abzeichenname,
+  abzeichenbedingung,
+} from "../fortschritt/abzeichen";
 import type { Abzeichenstand } from "../fortschritt/abzeichenstand";
 
 /**
@@ -25,7 +30,7 @@ export function Abzeichenraster({ stand }: { stand: Abzeichenstand }) {
     <ul className="abzeichenraster">
       {ABZEICHEN.map((a) => {
         const verdient = stand.verdient.has(a.kennung);
-        const name = t(`abzeichen.name.${a.kennung}`);
+        const name = abzeichenname(a.kennung);
         const zeigt = offen === a.kennung;
         return (
           <li
@@ -48,9 +53,7 @@ export function Abzeichenraster({ stand }: { stand: Abzeichenstand }) {
                 {name}
               </span>
               {zeigt && (
-                <span className="abzeichenraster-bedingung">
-                  {t(`abzeichen.bedingung.${a.kennung}`)}
-                </span>
+                <span className="abzeichenraster-bedingung">{abzeichenbedingung(a.kennung)}</span>
               )}
             </button>
           </li>

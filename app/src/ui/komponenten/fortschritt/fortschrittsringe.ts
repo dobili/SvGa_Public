@@ -27,8 +27,10 @@ import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
 import { erstmalsTrainiert, type Anteil } from "../../../speicher/fortschritt";
-import { useSpeicher } from "../../../speicher/speicher";
+import { aendere, useSpeicher } from "../../../speicher/speicher";
+import { mitVerdient } from "../../../speicher/verdient";
 import { useOrdenprobe } from "./ordenprobe";
+import { ordenkennungAusRing } from "../ordenkunst/entwuerfe";
 import type { Symbolringangabe } from "./Symbolringe";
 import { useDaten } from "../bausteine/useDaten";
 import {
@@ -194,6 +196,9 @@ function gefeiert(): Set<string> {
  */
 export function merkeGefeiert(testid: string): void {
   schreibeMerker(MERKER_GEFEIERT, [...gefeiert(), testid].join(","));
+  // Gamifizierung G3: das Datum der ersten Feier in die Nutzerdaten (Schlüssel wie startorden.ts).
+  const schluessel = `orden:${ordenkennungAusRing(testid)}`;
+  void aendere((d) => mitVerdient(d, [schluessel], new Date()));
 }
 
 /** Volle Ringe ohne Gratulation, in der Reihenfolge der Profilkarte. */

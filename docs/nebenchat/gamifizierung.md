@@ -9,6 +9,7 @@ für die Oberfläche; sie gelten nach Regel 9 als vorläufig abgesegnet.
 
 ## Inhalt
 
+0. Stand nach Welle 0 (Haupt-Chat) – zuerst lesen
 1. Ziel und Leitlinien (Forschung, Grenzen des Autors)
 2. Was es schon gibt
 3. Gemeinsame Grundlagen G1 bis G5 (zuerst bauen)
@@ -17,6 +18,76 @@ für die Oberfläche; sie gelten nach Regel 9 als vorläufig abgesegnet.
 6. Entscheidungen des Autors (mit Empfehlung)
 7. Vorlage für die Aufträge an die Arbeitschats
 8. Quellen
+
+---
+
+## 0. Stand nach Welle 0 (Haupt-Chat, 31.10.2026, Version 0.3.18) – zuerst lesen
+
+Welle 0 ist gebaut und auf main. Wo dieser Abschnitt von den Abschnitten 3 und 5 abweicht, gilt
+dieser Abschnitt. Auf Wunsch des Autors (31.10.2026) ist alles so gebaut, dass später weitere
+Werkzeuge und Trainer dazukommen, ohne gemeinsame Dateien umzubauen: **eintragen statt umbauen**.
+
+**Speicher (G5), Format 7 mit Umwandlung (E1: Ja des Autors, mit neuer Formatversion):**
+alle Felder in `speicher/gamifizierung.ts` (Typen, Leser, `LEERE_GAMIFIZIERUNG`):
+`themen`, `aktivitaet`, `verdient`, `rekorde`, `duelle`, `rivale`, `wochen` (`ziel`,
+`auftraege`), `fundstuecke`, `uebungsplan`, `ziele`. Beim Umwandeln von Format 6 und älter wird das
+Tagesprotokoll aus vorhandenen Datumsangaben nachgetragen (`speicher/format7.ts`). Die Merker
+`taktikzeitBeste` und `tagesserie` kommen beim Laden als Rekorde `taktikZeit` und `tagesserie` dazu
+(`speicher/rekordmerker.ts`). **Kein Arbeitschat ändert `speicher/format.ts` oder
+`speicher/gamifizierung.ts`;** fehlt ein Feld, meldet er es im Bericht.
+
+**Schreiben (G1, G2):**
+
+- Thema: `notiereThemenantwort(daten, thema, richtig, jetzt)` in `speicher/themenprotokoll.ts`;
+  Kennungen `themaTaktik(motiv)`, `themaEndspiel(thema)`, `themaStruktur(struktur)`,
+  `THEMA_FALLE`. Taktik, Endspiel, Struktur und Falle schreiben schon (über `antworteMitKarte`,
+  fünfter Parameter). **Neuer Trainer:** eigenes Präfix („zaehlen:batterie“) und
+  `notiereThemenantwort` beim Beantworten aufrufen; mehr braucht es nicht.
+- Tag: `zaehleAktivitaet(daten, art, anzahl, jetzt)` in `speicher/aktivitaet.ts`; Lesen mit
+  `lerntage`, `summeIn`, `wochenbeginn`, `wochentage`. Schon geschrieben: Abbildung, Übung,
+  gelöste Übung, Warum, Einschätzung, Lernziel, Trainerrunde/-antworten/-richtige (über
+  `notiereDurchgang`, also für **jeden** Trainer mit Durchgang), Wiederholungskarte, Partie,
+  Sieg, Sammlung, Fehler, Tagesaufgabe. Neue Arten nur über den Haupt-Chat
+  (`AKTIVITAETSARTEN`).
+- Lesen der Themen: `training/themenstand.ts` (`themenquote`, `staerkstesThema`,
+  `schwaechstesThema`, ab 8 Antworten).
+
+**Eintragen statt umbauen (G3, G4, G5):** je Paket eine Zeile in der passenden Liste.
+
+| Liste                                           | Datei                                                                                             | Wofür                                                                    |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `ABZEICHEN` (aus `GRUNDABZEICHEN` + Teillisten) | `fortschritt/abzeichen.ts`; eigene Teilliste `fortschritt/abzeichen-<paket>.ts`                   | Abzeichen; Bedingung bekommt `g.daten` (alle Nutzerdaten)                |
+| Abzeichenbilder                                 | `ordenkunst/entwuerfe.ts` (`NACHTABZEICHEN`); eigene Datei `ordenkunst/nachtabzeichen-<paket>.ts` | Bild je Abzeichen (Test prüft Text und Bild)                             |
+| `ERFAHRUNGSQUELLEN`                             | `fortschritt/erfahrungsquellen.ts`                                                                | Erfahrungspunkte: Kennung, Gewicht, Zählung                              |
+| `STARTKARTEN`                                   | `start/startkarten.ts`                                                                            | Karten oben im Buch (höchstens zwei, nach Rang)                          |
+| `PROFILKARTEN`                                  | `profilkarten/profilkarten.ts`                                                                    | Karten im Profil unter „Dein Fortschritt“                                |
+| `NACH_DER_RUNDE`                                | `ui/trainer/nachDerRunde.ts`                                                                      | Meldung am Ende jeder Trainerrunde (Rundenrahmen)                        |
+| `NACH_PARTIEENDE`                               | `speicher/partieprotokoll.ts`                                                                     | reine Funktion nach dem Ende jeder Partie (Rekorde, Duelle, Ziele)       |
+| `ZUSATZANSICHTEN`                               | `app/zusatzansichten.ts`                                                                          | eigene Bildschirme: `navigiere({ bildschirm: "zusatz", kennung, wert })` |
+| `SPRUENGE`                                      | `app/spruenge.ts`                                                                                 | Sprünge in der Adresse, etwa `#aufgabe-taktik-<id>`                      |
+
+Statt fester Router-Platzhalter (G5 alt) gibt es die Ansicht `zusatz`; `app/App.tsx`,
+`app/stapel.ts` und `app/stapelMerker.ts` ändert kein Arbeitschat. Feiern: `verdient` wird bei der
+ersten Feier jedes Ordens und Abzeichens geschrieben (`speicher/verdient.ts`, `mitVerdient`, auch
+für Rekorde nutzbar); Schalter „Feiereffekte“ in `app/feiereffekte.ts` (`feiereffekteAn()`), neue
+Effekte fragen ihn ab.
+
+**Neuen Trainer oder neues Werkzeug später anschließen (Merkliste):** (1) Durchgang mit
+`notiereDurchgang` melden (Tagesprotokoll, Erfahrung, Abzeichen „trainer“ kommen von selbst);
+(2) Antworten mit Thema über `notiereThemenantwort` (Meisterschaft P3, nächster Schritt P1,
+Rückblick P12 sehen das Thema dann von selbst, sobald es einen Namen in `themen.name.<präfix>.<k>`
+hat); (3) den Rundenrahmen nutzen, dann erscheinen Meldungen aus `NACH_DER_RUNDE`; (4) eigene
+Abzeichen, Karten, Bildschirme nur über die Listen oben.
+
+**Gesperrt für alle Arbeitschats** (Änderung nur als Beschreibung oder Patch im Bericht):
+`speicher/format.ts`, `speicher/gamifizierung.ts`, `speicher/format7.ts`, `app/App.tsx`,
+`app/stapel.ts`, `app/stapelMerker.ts`, `spiel/` (Partie), `ui/komponenten/partie/`,
+`ui/bildschirme/Spielen.tsx` und `ui/komponenten/spielstart/` (Spielstart),
+`ui/trainer/Taktik*.tsx` und `training/taktiktrainer.ts`, `ui/trainer/Rundenrahmen.tsx`,
+`ui/trainer/useRunde.ts`, `ui/trainer/kartenantwort.ts`, `speicher/fortschritt.ts`.
+Erlaubt ist je eine Zeile in den Listen oben.
+
+**Testpunkte** wie in Abschnitt 5 (N2100 bis N2239); Welle 0 hat N2100 bis N2104.
 
 ---
 
@@ -58,18 +129,18 @@ Ton. Daraus folgen für alle Pakete:
 
 ## 2. Was es schon gibt
 
-| Element | Ort | Daten |
-| --- | --- | --- |
-| Fortschrittsringe, Orden (18) | `ui/komponenten/fortschritt/fortschrittsringe.ts`, `ringrechnung.ts`, `ordenkunst/` | abgeleitet; Merker `ringeGefeiert` |
-| Erfahrungspunkte, 10 Stufen | `fortschritt/erfahrung.ts` (`GEWICHTE`, `STUFEN`, `grundlageAus`) | abgeleitet, nicht gespeichert |
-| Abzeichen (18) | `fortschritt/abzeichen.ts`, `abzeichenstand.ts`, `Abzeichenmeldung.tsx` | abgeleitet; Merker `abzeichenGefeiert`, `stufeGefeiert` |
-| Gratulation mit Feuerwerk und Ton | `fortschritt/Ringfeier.tsx`, `bausteine/Feuerwerk.tsx`, `app/ton.ts` | – |
-| Tagesaufgabe mit Serie ohne Verfall | `training/kurzplaene.ts`, `ui/trainer/ZeitrundeBereich.tsx` | Merker `tagesserie` |
-| Taktik auf Zeit mit Bestwert | `ui/trainer/ZeitrundeBereich.tsx` | Merker `taktikzeitBeste` |
-| Gruppenmodus der Bots freischalten | `engine/gruppe.ts`, `gegner/Gruppenmodus.tsx` | `spiel.besiegt` |
-| Wiederholungskarten (5 Kästen) | `training/wiederholung.ts`, `training/FaelligeWiederholungen.tsx` | `karten` |
-| Startanimation mit neuem Stück, Punkt an „Profil“ | `ordenkunst/useStartorden.tsx`, `rahmen/Leiste.tsx` | Merker `ordenBekannt`, `ordenUngesehen` |
-| Vorschlag aus der Fehlerdatenbank | `training/fehlerdatenbank.ts` (`vorschlag`) | `fehler` |
+| Element                                           | Ort                                                                                 | Daten                                                   |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Fortschrittsringe, Orden (18)                     | `ui/komponenten/fortschritt/fortschrittsringe.ts`, `ringrechnung.ts`, `ordenkunst/` | abgeleitet; Merker `ringeGefeiert`                      |
+| Erfahrungspunkte, 10 Stufen                       | `fortschritt/erfahrung.ts` (`GEWICHTE`, `STUFEN`, `grundlageAus`)                   | abgeleitet, nicht gespeichert                           |
+| Abzeichen (18)                                    | `fortschritt/abzeichen.ts`, `abzeichenstand.ts`, `Abzeichenmeldung.tsx`             | abgeleitet; Merker `abzeichenGefeiert`, `stufeGefeiert` |
+| Gratulation mit Feuerwerk und Ton                 | `fortschritt/Ringfeier.tsx`, `bausteine/Feuerwerk.tsx`, `app/ton.ts`                | –                                                       |
+| Tagesaufgabe mit Serie ohne Verfall               | `training/kurzplaene.ts`, `ui/trainer/ZeitrundeBereich.tsx`                         | Merker `tagesserie`                                     |
+| Taktik auf Zeit mit Bestwert                      | `ui/trainer/ZeitrundeBereich.tsx`                                                   | Merker `taktikzeitBeste`                                |
+| Gruppenmodus der Bots freischalten                | `engine/gruppe.ts`, `gegner/Gruppenmodus.tsx`                                       | `spiel.besiegt`                                         |
+| Wiederholungskarten (5 Kästen)                    | `training/wiederholung.ts`, `training/FaelligeWiederholungen.tsx`                   | `karten`                                                |
+| Startanimation mit neuem Stück, Punkt an „Profil“ | `ordenkunst/useStartorden.tsx`, `rahmen/Leiste.tsx`                                 | Merker `ordenBekannt`, `ordenUngesehen`                 |
+| Vorschlag aus der Fehlerdatenbank                 | `training/fehlerdatenbank.ts` (`vorschlag`)                                         | `fehler`                                                |
 
 **Lücken, die mehrere Pakete betreffen (Befund der Code-Durchsicht):**
 
@@ -99,11 +170,11 @@ Empfehlung: ein einziger Chat (oder der Haupt-Chat selbst) baut G1 bis G5 in ein
 - **Speicher (neu):** `themen: Record<Themenkennung, Themenstand>` mit
   ```ts
   interface Themenstand {
-    richtig: number;            // Summe
-    falsch: number;             // Summe
-    letzte: string;             // die letzten 20 Antworten als "rrfr…" (r = richtig, f = falsch)
-    tage: string[];             // bis 12 verschiedene Tagesschlüssel mit mindestens einer richtigen Antwort
-    zuletzt: string;            // ISO-Zeitpunkt
+    richtig: number; // Summe
+    falsch: number; // Summe
+    letzte: string; // die letzten 20 Antworten als "rrfr…" (r = richtig, f = falsch)
+    tage: string[]; // bis 12 verschiedene Tagesschlüssel mit mindestens einer richtigen Antwort
+    zuletzt: string; // ISO-Zeitpunkt
   }
   ```
   `Themenkennung` = `"taktik:<motiv>"` (die 12 `MOTIVE` aus `training/taktiktrainer.ts`),
@@ -222,8 +293,8 @@ Aufwand · Abhängigkeiten · offene Entscheidung.
   5. schwächstes Thema aus G1 (mindestens 8 Antworten, Quote unter 70 %) → Trainer mit diesem
      Thema (`taktikrunde` kennt Themen),
   6. `vorschlag()` der Fehlerdatenbank.
-  Ziel als `Ansicht` (`{bildschirm:"abbildung", nummer}`, `{bildschirm:"uebung", …}`,
-  `{bildschirm:"trainer", kennung}`), Navigation über `useNavigation().navigiere`.
+     Ziel als `Ansicht` (`{bildschirm:"abbildung", nummer}`, `{bildschirm:"uebung", …}`,
+     `{bildschirm:"trainer", kennung}`), Navigation über `useNavigation().navigiere`.
 - **Speicher:** keiner; Merker `naechsterSchrittAus` (Tagesschlüssel) für „Nicht jetzt“.
 - **Dateien:** neu `training/naechsterSchritt.ts` (+ Test), `ui/komponenten/start/NaechsterSchritt.tsx`,
   Eintrag in `STARTKARTEN` (G4), Texte `naechster.*`.
@@ -321,17 +392,17 @@ Aufwand · Abhängigkeiten · offene Entscheidung.
 
 - **Ziel:** Wettbewerb mit sich selbst statt Bestenliste.
 - **Rekorde (Quelle):**
-  | Rekord | Quelle |
-  | --- | --- |
-  | Taktik auf Zeit (richtige in 3 min) | heute Merker `taktikzeitBeste` → `rekorde` |
-  | Aufgabenserie ohne Fehler (Q5-1 b) | neu, siehe unten |
-  | Beste Tagesserie | Merker `tagesserie.beste` (gespiegelt) |
-  | Höchste Wertung | Maximum `spiel.wertung[].wertung` beim Speichern einer Partie |
-  | Stärkster besiegter Bot | `besiegt` + `engine/botstaerke.ts` (`gegnerstaerke`) |
-  | Längste Partie ohne Patzer (Halbzüge) | beim Auswerten einer Partie (`spiel/auswertung.ts`, Zugklassen) |
-  | Meiste Lerntage in einer Woche | G2 |
-  | Beste Trefferquote „Zug erraten“ (eine Partie) | `zugErraten` |
-  Jeder Rekord mit Datum.
+  | Rekord                                         | Quelle                                                          |
+  | ---------------------------------------------- | --------------------------------------------------------------- |
+  | Taktik auf Zeit (richtige in 3 min)            | heute Merker `taktikzeitBeste` → `rekorde`                      |
+  | Aufgabenserie ohne Fehler (Q5-1 b)             | neu, siehe unten                                                |
+  | Beste Tagesserie                               | Merker `tagesserie.beste` (gespiegelt)                          |
+  | Höchste Wertung                                | Maximum `spiel.wertung[].wertung` beim Speichern einer Partie   |
+  | Stärkster besiegter Bot                        | `besiegt` + `engine/botstaerke.ts` (`gegnerstaerke`)            |
+  | Längste Partie ohne Patzer (Halbzüge)          | beim Auswerten einer Partie (`spiel/auswertung.ts`, Zugklassen) |
+  | Meiste Lerntage in einer Woche                 | G2                                                              |
+  | Beste Trefferquote „Zug erraten“ (eine Partie) | `zugErraten`                                                    |
+  | Jeder Rekord mit Datum.                        |
 - **Aufgabenserie ohne Fehler:** neuer Modus im Taktiktrainer „Serie“: Aufgaben steigender
   Schwierigkeit ohne Uhr, ein Fehler beendet die Serie, Ergebnis „12 in Folge“. Gehört in den
   Taktiktrainer (gesperrt) → eigener kleiner Auftrag an den Haupt-Chat oder Freigabe.
@@ -378,15 +449,15 @@ Aufwand · Abhängigkeiten · offene Entscheidung.
 
 - **Ziel:** Etwas zum Vorzeigen, das man nur durch Lernen bekommt; für Jugendliche stark.
 - **Grundsatz:** Alles Bestehende bleibt frei. Neu und nur verdienbar:
-  | Extra | Bedingung (Vorschlag) |
-  | --- | --- |
-  | Rahmen ums Porträt in Bronze, Silber, Gold | Stufe 3, 6, 9 |
-  | Brettfarbe „Nacht und Gold“ (passend zu den Orden) | alle Orden der Buchteile |
-  | Figurensatz „Gold“ (umgefärbter freier Satz, GPLv2+) | Stufe 5 |
-  | Porträt-Zubehör: Krone, Lorbeer, Medaille am Kragen, Schachbrett-Schal | je ein Gold-Thema (P3) / Orden |
-  | Titel unter dem Namen („Fesselungsprofi“, „Endspielkenner“) | Gold in einem Thema |
-  | Konfettifarben der Feiern | Stufe 2 |
-  In der Auswahl stehen gesperrte Extras als Silhouette mit Bedingung („Ab Stufe 5“).
+  | Extra                                                                               | Bedingung (Vorschlag)          |
+  | ----------------------------------------------------------------------------------- | ------------------------------ |
+  | Rahmen ums Porträt in Bronze, Silber, Gold                                          | Stufe 3, 6, 9                  |
+  | Brettfarbe „Nacht und Gold“ (passend zu den Orden)                                  | alle Orden der Buchteile       |
+  | Figurensatz „Gold“ (umgefärbter freier Satz, GPLv2+)                                | Stufe 5                        |
+  | Porträt-Zubehör: Krone, Lorbeer, Medaille am Kragen, Schachbrett-Schal              | je ein Gold-Thema (P3) / Orden |
+  | Titel unter dem Namen („Fesselungsprofi“, „Endspielkenner“)                         | Gold in einem Thema            |
+  | Konfettifarben der Feiern                                                           | Stufe 2                        |
+  | In der Auswahl stehen gesperrte Extras als Silhouette mit Bedingung („Ab Stufe 5“). |
 - **Daten:** Freischaltung abgeleitet (Stufe, Orden, Meisterschaft); Wahl in vorhandenen Feldern
   (`einstellungen.brettfarben`, `figurensatz`, `profil.bild.merkmale`).
 - **Speicher:** keiner neu; `BRETTARTEN` und `BILDSAETZE` in `speicher/format.ts` erweitern
@@ -554,8 +625,8 @@ Aufwand · Abhängigkeiten · offene Entscheidung.
   - Übungen und Buchteile aus `teilanteil`, `uebungsanteil`; Themen aus G1/P3.
 - **Speicher:** `ziele: { angeheftet: Ziel[]; erreicht: { ziel: Ziel; datum: string }[] }` mit
   `Ziel = { art: "bot"; bot: string; zeitart: "blitz" | "rapid" | "classical" | "egal" }
-  | { art: "ring"; ring: string } | { art: "thema"; thema: string; stufe: "gold" }
-  | { art: "kapitel"; kapitel: number }`. In G5 mit anlegen.
+| { art: "ring"; ring: string } | { art: "thema"; thema: string; stufe: "gold" }
+| { art: "kapitel"; kapitel: number }`. In G5 mit anlegen.
 - **Dateien:** neu `training/ziele.ts` (Vorschläge und Prüfung, rein, + Test),
   `ui/komponenten/start/Zielkarte.tsx`, `Zielwahl.tsx`, Abzeichen-Teilliste, Texte `ziel.*`;
   Start der Partie mit Bot und Zeitart über den vorhandenen Spielstart (gesperrt: Spielstart;
@@ -577,40 +648,40 @@ Protokolle, Kartenplätze, Teillisten für Abzeichen und Bilder, Router-Platzhal
 
 **Welle 1 (bis zu sieben Chats parallel):**
 
-| Chat | Pakete | Hauptdateien (neu, außer markiert) |
-| --- | --- | --- |
-| A | P1 Nächster Schritt | `training/naechsterSchritt.ts`, `start/NaechsterSchritt.tsx` |
-| B | P2 Lernpfad | `bildschirme/Lernpfad.tsx`, `komponenten/lernpfad/`, Knopf in `Buch.tsx` |
-| C | P4 Wochenziel + P11 Übungsplan | `training/wochenziel.ts`, `training/uebungsplan.ts`, `start/Wochenkarte.tsx` |
-| D | P5 Rekordtafel (ohne Serienmodus) | `training/rekorde.ts`, `komponenten/rekorde/` |
-| E | P9 Teilen | `komponenten/teilen/`, Sprung in `App.tsx` (Platzhalter aus G5) |
-| F | P10 a Kombo + P10 b Fundstücke | `bausteine/Kombo.tsx`, `training/fundstuecke.ts`, Inhalte |
-| G | P7 Extras (ohne Meisterschaftsbedingungen) | `training/extras.ts`, Figuren, Farben |
+| Chat | Pakete                                     | Hauptdateien (neu, außer markiert)                                           |
+| ---- | ------------------------------------------ | ---------------------------------------------------------------------------- |
+| A    | P1 Nächster Schritt                        | `training/naechsterSchritt.ts`, `start/NaechsterSchritt.tsx`                 |
+| B    | P2 Lernpfad                                | `bildschirme/Lernpfad.tsx`, `komponenten/lernpfad/`, Knopf in `Buch.tsx`     |
+| C    | P4 Wochenziel + P11 Übungsplan             | `training/wochenziel.ts`, `training/uebungsplan.ts`, `start/Wochenkarte.tsx` |
+| D    | P5 Rekordtafel (ohne Serienmodus)          | `training/rekorde.ts`, `komponenten/rekorde/`                                |
+| E    | P9 Teilen                                  | `komponenten/teilen/`, Sprung in `App.tsx` (Platzhalter aus G5)              |
+| F    | P10 a Kombo + P10 b Fundstücke             | `bausteine/Kombo.tsx`, `training/fundstuecke.ts`, Inhalte                    |
+| G    | P7 Extras (ohne Meisterschaftsbedingungen) | `training/extras.ts`, Figuren, Farben                                        |
 
 **Welle 2 (bis zu fünf Chats parallel):**
 
-| Chat | Pakete | voraus |
-| --- | --- | --- |
-| H | P3 Meisterschaft | G1, Welle 1 G (Titel, Zubehör) |
-| I | P6 Wochenaufträge | P4 |
-| J | P8 Rivalen | gesperrte Partie und Spielstart: mit Freigabe |
-| K | P12 Monatsrückblick | P1, P5, P9 |
-| L | P5 Serienmodus im Taktiktrainer | gesperrt: Taktiktrainer |
-| M | P13 Eigene Ziele | P4 (Karte); gesperrt: Spielstart (Vorbelegung) |
+| Chat | Pakete                          | voraus                                         |
+| ---- | ------------------------------- | ---------------------------------------------- |
+| H    | P3 Meisterschaft                | G1, Welle 1 G (Titel, Zubehör)                 |
+| I    | P6 Wochenaufträge               | P4                                             |
+| J    | P8 Rivalen                      | gesperrte Partie und Spielstart: mit Freigabe  |
+| K    | P12 Monatsrückblick             | P1, P5, P9                                     |
+| L    | P5 Serienmodus im Taktiktrainer | gesperrt: Taktiktrainer                        |
+| M    | P13 Eigene Ziele                | P4 (Karte); gesperrt: Spielstart (Vorbelegung) |
 
 **Dateien, die mehrere Pakete berühren (nach G1 bis G5 nur noch ergänzen):**
 
-| Datei | Pakete | Regel |
-| --- | --- | --- |
-| `i18n/de.json`, `en.json` | alle | nur neue Schlüssel, je Paket eigene Vorsilbe |
-| `start/Startkarten.tsx` (Liste) | P1, P4, P6, P8, P12, P13 | je Paket eine Zeile |
-| Profilkarten-Liste in `Ich.tsx` | P3, P5, P10, P12 | je Paket eine Zeile |
-| Rundenende (`NACH_DER_RUNDE`) | P3, P5, P9, P10 | je Paket eine Zeile |
-| Abzeichen-Teillisten, Bild-Teillisten | P3, P4, P5, P6, P8 | je Paket eigene Datei |
-| `GEWICHTE` in `erfahrung.ts` | P3, P4, P5, P6, P8 | Feld vorhanden (G3), Paket setzt Gewicht |
-| `speicher/format.ts` | alle mit Speicher | nur Welle 0 |
-| `app/App.tsx`, `app/stapel.ts` | P2, P9, P12 | nur Welle 0 (Platzhalter), Pakete füllen Bildschirm |
-| `docs/AUFGABEN_AUTOR.md` | alle | je Chat eigener Abschnitt und Nummernbereich |
+| Datei                                 | Pakete                   | Regel                                               |
+| ------------------------------------- | ------------------------ | --------------------------------------------------- |
+| `i18n/de.json`, `en.json`             | alle                     | nur neue Schlüssel, je Paket eigene Vorsilbe        |
+| `start/Startkarten.tsx` (Liste)       | P1, P4, P6, P8, P12, P13 | je Paket eine Zeile                                 |
+| Profilkarten-Liste in `Ich.tsx`       | P3, P5, P10, P12         | je Paket eine Zeile                                 |
+| Rundenende (`NACH_DER_RUNDE`)         | P3, P5, P9, P10          | je Paket eine Zeile                                 |
+| Abzeichen-Teillisten, Bild-Teillisten | P3, P4, P5, P6, P8       | je Paket eigene Datei                               |
+| `GEWICHTE` in `erfahrung.ts`          | P3, P4, P5, P6, P8       | Feld vorhanden (G3), Paket setzt Gewicht            |
+| `speicher/format.ts`                  | alle mit Speicher        | nur Welle 0                                         |
+| `app/App.tsx`, `app/stapel.ts`        | P2, P9, P12              | nur Welle 0 (Platzhalter), Pakete füllen Bildschirm |
+| `docs/AUFGABEN_AUTOR.md`              | alle                     | je Chat eigener Abschnitt und Nummernbereich        |
 
 **Nummernbereiche für Testpunkte (Vorschlag):** Welle 0 N2100–2109, A N2110–2119, B N2120–2129,
 C N2130–2139, D N2140–2149, E N2150–2159, F N2160–2169, G N2170–2179, H N2180–2189,
@@ -651,7 +722,7 @@ Speicherformat und braucht ein ausdrückliches Ja.
 ```
 Du arbeitest an der Schach-App „Schach von Grund auf“ (dobili/SvGa_Public). Lies zuerst
 CLAUDE.md und halte dich an alle Regeln dort. Lies dann docs/nebenchat/gamifizierung.md,
-Abschnitte 1 bis 3 ganz und aus Abschnitt 4 dein Paket <Pn>.
+Abschnitte 0 bis 3 ganz (Abschnitt 0 gilt vor 3 und 5) und aus Abschnitt 4 dein Paket <Pn>.
 
 Auftrag: Baue Paket <Pn> „<Name>“ wie dort beschrieben. Grundlage G1 bis G5 ist auf main
 vorhanden; ändere keine Datei aus der Liste „nur Welle 0“ in Abschnitt 5, nutze die

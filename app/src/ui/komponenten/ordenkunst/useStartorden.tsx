@@ -9,6 +9,7 @@
  * Abhängigkeiten: startorden.ts, Startstueck.tsx, entwuerfe.ts, fortschritt/fortschrittsringe.ts,
  * fortschritt/ringrechnung.ts, fortschritt/abzeichenstand.ts, i18n.
  */
+import { abzeichenname } from "../fortschritt/abzeichen";
 import { useEffect, useState, type ReactNode } from "react";
 import { t } from "../../../i18n/sprache";
 import { useAbzeichenstand } from "../fortschritt/abzeichenstand";
@@ -49,7 +50,7 @@ function useVerdient(): Stueck[] | null {
   const abzeichen = [...stand.verdient].map((k): Stueck => ({
     art: "abzeichen",
     kennung: k,
-    name: t(`abzeichen.name.${k}`),
+    name: abzeichenname(k),
   }));
   return [...orden, ...abzeichen].filter((s) => hatOrdenkunst(s.art, s.kennung));
 }

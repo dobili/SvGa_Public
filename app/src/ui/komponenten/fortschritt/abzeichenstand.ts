@@ -17,7 +17,8 @@
  */
 import { useMemo, useSyncExternalStore } from "react";
 import { beobachteMerker, entferneMerker, liesMerker, schreibeMerker } from "../../../app/merker";
-import { useSpeicher } from "../../../speicher/speicher";
+import { aendere, useSpeicher } from "../../../speicher/speicher";
+import { mitVerdient } from "../../../speicher/verdient";
 import { serieAus } from "../../../training/kurzplaene";
 import {
   ABZEICHEN,
@@ -145,6 +146,9 @@ export function useAbzeichenstand(): Abzeichenstand | null {
  * Beim ersten Start (noch kein Merker der Stufe) merkt die Meldung die Stufe ohne Aufstieg.
  */
 export function merkeGefeiert(kennungen: readonly string[], stufe: number): void {
+  // Gamifizierung G3: das Datum der ersten Feier in die Nutzerdaten (nicht für Proben).
+  const echte = kennungen.filter((k) => !stand.probe.has(k)).map((k) => `abzeichen:${k}`);
+  if (echte.length > 0) void aendere((d) => mitVerdient(d, echte, new Date()));
   schreibeMerker(MERKER_GEFEIERT, [...stand.gefeiert, ...kennungen].join(TRENNER));
   schreibeMerker(MERKER_STUFE, String(Math.max(stufe, stand.stufeGefeiert ?? 0)));
   melde();

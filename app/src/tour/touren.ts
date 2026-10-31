@@ -364,8 +364,10 @@ export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
     case "spielen":
     case "partie":
       return ansicht.bildschirm;
+    // Bildschirme der Pakete (app/zusatzansichten.ts) haben vorerst keine eigene Tour.
     case "lizenzen":
     case "autoraufgaben":
+    case "zusatz":
       return null;
   }
 }

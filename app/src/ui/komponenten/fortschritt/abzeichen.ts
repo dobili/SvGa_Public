@@ -11,28 +11,12 @@
  * Abhängigkeiten: erfahrung.ts, spiel/auswertung.ts (Zugklassen), daten/uebungsliste-daten.ts,
  * speicher/format.ts, lucide-react (Zeichen).
  */
-import {
-  Award,
-  BookCheck,
-  Bookmark,
-  Brain,
-  CalendarCheck,
-  CircleQuestionMark,
-  Crown,
-  Eye,
-  Flag,
-  Gem,
-  Handshake,
-  Hand,
-  Library,
-  Medal,
-  Mountain,
-  NotebookPen,
-  Swords,
-  Trophy,
-  type LucideIcon,
-} from "lucide-react";
+import { Library, type LucideIcon } from "lucide-react";
 import { UEBUNGEN_JE_KAPITEL } from "../../../daten/uebungsliste-daten";
+import { t, type Textschluessel } from "../../../i18n/sprache";
+import { GRUNDABZEICHEN } from "./abzeichen-grund";
+
+export { WOCHE } from "./abzeichen-grund";
 import { zugurteile } from "../../../spiel/auswertung";
 import type { Partieeintrag } from "../../../speicher/partien";
 import type { Fortschritt, Nutzerdaten } from "../../../speicher/format";
@@ -57,28 +41,19 @@ export interface Abzeichengrundlage extends Erfahrungsgrundlage {
   readonly kapitelKomplett: boolean;
   /** Längste Folge von Tagen hintereinander mit neuem Lernstand. */
   readonly tagesfolge: number;
+  /**
+   * Die Nutzerdaten selbst, für Abzeichen der Pakete (Themen, Wochen, Rekorde, Duelle): So muss
+   * kein Paket diese Grundlage erweitern (Welle 0 der Gamifizierung).
+   */
+  readonly daten: Nutzerdaten;
 }
 
-/** Die Kennungen aller Abzeichen (auch Schlüssel der Texte „abzeichen.name.…“). */
-export type Abzeichenkennung =
-  | "erstePartie"
-  | "ersterSieg"
-  | "partien10"
-  | "partien50"
-  | "partien100"
-  | "erstesMatt"
-  | "siegOhneHilfe"
-  | "siegGegenStaerkeren"
-  | "remisGegenStaerkeren"
-  | "brillant"
-  | "ersteUebung"
-  | "kapitelUebungen"
-  | "warum"
-  | "eingeschaetzt"
-  | "sammlung"
-  | "fehler"
-  | "trainer"
-  | "woche";
+/**
+ * Kennung eines Abzeichens (auch Schlüssel der Texte „abzeichen.name.…“ und „abzeichen.bedingung.…“).
+ * Seit Welle 0 der Gamifizierung ein Text: Die Pakete tragen eigene Abzeichen in eigenen
+ * Teillisten bei (abzeichen-grund.ts und je Paket eine Datei), ohne diese Datei zu ändern.
+ */
+export type Abzeichenkennung = string;
 
 /** Ein Abzeichen: Kennung (auch für Texte und Tests), Zeichen und Bedingung. */
 export interface Abzeichenangabe {
@@ -89,40 +64,26 @@ export interface Abzeichenangabe {
 
 /** Ab so vielen Wertungspunkten Vorsprung gilt ein Gegner als stärker (etwa eine Klasse). */
 export const STAERKER_AB = 100;
-/** Tage hintereinander für das Abzeichen „Eine Woche dabei“. */
-export const WOCHE = 7;
-/** Partien für die drei Abzeichen der Partienzahl. */
-const PARTIEN_ZIELE = [10, 50, 100] as const;
-const WARUM_ZIEL = 10;
-const EINGESCHAETZT_ZIEL = 10;
-const FEHLER_ZIEL = 5;
-const TRAINER_ZIEL = 100;
 
-/** Alle Abzeichen in der Reihenfolge des Gitters: erst Spielen, dann Lernen am Buch, dann Übung. */
-export const ABZEICHEN: readonly Abzeichenangabe[] = [
-  { kennung: "erstePartie", symbol: Flag, erfuellt: (g) => g.partien >= 1 },
-  { kennung: "ersterSieg", symbol: Trophy, erfuellt: (g) => g.siege >= 1 },
-  { kennung: "partien10", symbol: Swords, erfuellt: (g) => g.partien >= PARTIEN_ZIELE[0] },
-  { kennung: "partien50", symbol: Swords, erfuellt: (g) => g.partien >= PARTIEN_ZIELE[1] },
-  { kennung: "partien100", symbol: Crown, erfuellt: (g) => g.partien >= PARTIEN_ZIELE[2] },
-  { kennung: "erstesMatt", symbol: Medal, erfuellt: (g) => g.mattGesetzt },
-  { kennung: "siegOhneHilfe", symbol: Hand, erfuellt: (g) => g.siegOhneHilfe },
-  { kennung: "siegGegenStaerkeren", symbol: Mountain, erfuellt: (g) => g.siegGegenStaerkeren },
-  { kennung: "remisGegenStaerkeren", symbol: Handshake, erfuellt: (g) => g.remisGegenStaerkeren },
-  { kennung: "brillant", symbol: Gem, erfuellt: (g) => g.brillant },
-  { kennung: "ersteUebung", symbol: Award, erfuellt: (g) => g.uebungen >= 1 },
-  { kennung: "kapitelUebungen", symbol: BookCheck, erfuellt: (g) => g.kapitelKomplett },
-  { kennung: "warum", symbol: CircleQuestionMark, erfuellt: (g) => g.warum >= WARUM_ZIEL },
-  { kennung: "eingeschaetzt", symbol: Eye, erfuellt: (g) => g.eingeschaetzt >= EINGESCHAETZT_ZIEL },
-  { kennung: "sammlung", symbol: Bookmark, erfuellt: (g) => g.sammlung >= 1 },
-  { kennung: "fehler", symbol: NotebookPen, erfuellt: (g) => g.fehler >= FEHLER_ZIEL },
-  { kennung: "trainer", symbol: Brain, erfuellt: (g) => g.trainerRichtig >= TRAINER_ZIEL },
-  {
-    kennung: "woche",
-    symbol: CalendarCheck,
-    erfuellt: (g) => g.tagesfolge >= WOCHE || g.tagesserie >= WOCHE,
-  },
-];
+/**
+ * Alle Abzeichen in der Reihenfolge des Gitters: erst die 18 Grundabzeichen (Spielen, Lernen am
+ * Buch, Übung), dann je Paket der Gamifizierung seine Teilliste. Pakete fügen hier nur eine Zeile
+ * an (Konfliktkarte, docs/nebenchat/gamifizierung.md, Abschnitt 5).
+ */
+export const ABZEICHEN: readonly Abzeichenangabe[] = [...GRUNDABZEICHEN];
+
+/**
+ * Name eines Abzeichens („abzeichen.name.<kennung>“). Ein Test prüft, dass es den Text für jedes
+ * Abzeichen in ABZEICHEN gibt (abzeichen.test.ts). Beispiel: abzeichenname("erstesMatt").
+ */
+export function abzeichenname(kennung: Abzeichenkennung): string {
+  return t(`abzeichen.name.${kennung}` as Textschluessel);
+}
+
+/** Bedingung eines Abzeichens („abzeichen.bedingung.<kennung>“), wie abzeichenname. */
+export function abzeichenbedingung(kennung: Abzeichenkennung): string {
+  return t(`abzeichen.bedingung.${kennung}` as Textschluessel);
+}
 
 /** Zeichen der Abzeichenkarte (Gitter und Meldung), wenn kein einzelnes Abzeichen gemeint ist. */
 export const ABZEICHENZEICHEN: LucideIcon = Library;
@@ -224,6 +185,7 @@ export function abzeichengrundlageAus(
     remisGegenStaerkeren: staerkere.remis,
     kapitelKomplett: kapitelKomplett(daten.fortschritt),
     tagesfolge: laengsteTagesfolge(lernzeiten(daten)),
+    daten,
   };
 }
 

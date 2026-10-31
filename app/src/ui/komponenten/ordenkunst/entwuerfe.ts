@@ -12,6 +12,7 @@
 import { BUENDELBILDER, botordenAlle, botordenEinmal, engineorden } from "./botorden";
 import { nacht, type Nachtangabe, type Zeichnung } from "./nachtstil";
 import { neueId } from "./zeichnen";
+import { GRUND_NACHTABZEICHEN } from "./nachtabzeichen-grund";
 
 /** Die Orden der Buch- und Teilringe im Nachtstil. */
 const NACHTORDEN: Readonly<Record<string, Nachtangabe>> = {
@@ -26,27 +27,11 @@ const NACHTORDEN: Readonly<Record<string, Nachtangabe>> = {
   "teil-praxis": { form: "kreis", motiv: "uhr", akzent: "#f5f0e6" },
 };
 
-/** Alle 18 Abzeichen im Nachtstil (Kennungen wie in fortschritt/abzeichen.ts). */
-const NACHTABZEICHEN: Readonly<Record<string, Nachtangabe>> = {
-  erstePartie: { form: "banner", motiv: "figur:bauer", akzent: "#2ee6d6" },
-  ersterSieg: { form: "schild", motiv: "pokal", akzent: "#ffd166" },
-  partien10: { form: "kreis", motiv: "schwerter", akzent: "#e0a06a" },
-  partien50: { form: "schild", motiv: "zahl:50", akzent: "#dfe4ea" },
-  partien100: { form: "rosette", motiv: "stern:100", akzent: "#ffd166" },
-  erstesMatt: { form: "kreis", motiv: "koenigFaellt", akzent: "#ff5a5a" },
-  siegOhneHilfe: { form: "stern8", motiv: "figur:dame", akzent: "#ffa94d" },
-  siegGegenStaerkeren: { form: "dreieck", motiv: "figur:bauer", akzent: "#a78bfa" },
-  remisGegenStaerkeren: { form: "sechseck", motiv: "turmHalb", akzent: "#9fb6dd" },
-  brillant: { form: "achteck", motiv: "edelstein", akzent: "#38e8ff" },
-  ersteUebung: { form: "kreis", motiv: "rosette:1", akzent: "#5ea8ff" },
-  kapitelUebungen: { form: "schild", motiv: "buchHaken", akzent: "#3ddc84" },
-  warum: { form: "kreis", motiv: "frage", akzent: "#ffd84a" },
-  eingeschaetzt: { form: "tropfen", motiv: "blick", akzent: "#ffd84a", tiefer: 9 },
-  sammlung: { form: "rundquadrat", motiv: "lesezeichen", akzent: "#ff6bc1" },
-  fehler: { form: "kreis", motiv: "kreispfeil", akzent: "#ff7f6b" },
-  trainer: { form: "zahnrad", motiv: "blitz:100", akzent: "#ffd166" },
-  woche: { form: "rundquadrat", motiv: "kalender", akzent: "#ff7a1a" },
-};
+/**
+ * Die Bilder aller Abzeichen im Nachtstil, aus Teillisten (Welle 0 der Gamifizierung): die 18
+ * Grundabzeichen, dann je Paket eine eigene Datei mit seinen Abzeichen (eine Zeile hier).
+ */
+const NACHTABZEICHEN: Readonly<Record<string, Nachtangabe>> = { ...GRUND_NACHTABZEICHEN };
 
 /** Kennungen aller Orden mit eigenem Bild, in der Reihenfolge der Ringe im Profil. */
 export const ORDENKENNUNGEN: readonly string[] = [

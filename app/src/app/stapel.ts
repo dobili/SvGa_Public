@@ -48,7 +48,12 @@ export type Ansicht =
       readonly reihe?: readonly Uebungsverweis[];
     } & Uebungsverweis)
   /** Ein Trainer: Übungsart wählen und Runden spielen (AP 13). */
-  | { readonly bildschirm: "trainer"; readonly kennung: TrainerKennung };
+  | { readonly bildschirm: "trainer"; readonly kennung: TrainerKennung }
+  /**
+   * Bildschirm eines Pakets der Gamifizierung oder eines späteren Werkzeugs (app/zusatzansichten.ts),
+   * etwa „lernpfad“ oder „rueckblick“ mit dem Monat als Wert.
+   */
+  | { readonly bildschirm: "zusatz"; readonly kennung: string; readonly wert?: string };
 
 /** Eine Übung: Kapitel (zum Laden) und Kennung wie im LaTeX („ueb:droh-ignorieren“). */
 export interface Uebungsverweis {

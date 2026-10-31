@@ -114,6 +114,12 @@ function ansichtMitParameternAus(roh: Roh): Ansicht | null {
       const trainer = TRAINER.find((eintrag) => eintrag.kennung === roh.kennung);
       return trainer ? { bildschirm: "trainer", kennung: trainer.kennung } : null;
     }
+    case "zusatz":
+      // Ob es den Bildschirm gibt, prüft App.tsx (sonst Buch); hier nur die Form.
+      if (!istText(roh.kennung) || (roh.wert !== undefined && !istText(roh.wert))) return null;
+      return roh.wert === undefined
+        ? { bildschirm: "zusatz", kennung: roh.kennung }
+        : { bildschirm: "zusatz", kennung: roh.kennung, wert: roh.wert };
     default:
       return null;
   }

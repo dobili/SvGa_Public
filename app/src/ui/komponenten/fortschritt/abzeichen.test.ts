@@ -108,3 +108,23 @@ describe("Abzeichen", () => {
     ).toBe(false);
   });
 });
+
+describe("Abzeichen aus Teillisten (Welle 0 der Gamifizierung)", () => {
+  it("jedes Abzeichen hat Name und Bedingung in beiden Sprachen und ein eigenes Bild", async () => {
+    const de = (await import("../../../i18n/de.json")).default as Record<string, string>;
+    const en = (await import("../../../i18n/en.json")).default as Record<string, string>;
+    const { hatOrdenkunst } = await import("../ordenkunst/entwuerfe");
+    for (const { kennung } of ABZEICHEN) {
+      for (const sprache of [de, en]) {
+        expect(sprache[`abzeichen.name.${kennung}`], kennung).toBeTruthy();
+        expect(sprache[`abzeichen.bedingung.${kennung}`], kennung).toBeTruthy();
+      }
+      expect(hatOrdenkunst("abzeichen", kennung), kennung).toBe(true);
+    }
+  });
+
+  it("die Grundlage enthält die Daten für die Bedingungen der Pakete", () => {
+    const daten = leereDaten(new Date(BEGINN));
+    expect(abzeichengrundlageAus(daten, 0, false).daten).toBe(daten);
+  });
+});

@@ -15,6 +15,7 @@ import type { TrainerKennung } from "../../training/trainer";
 import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken";
 import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
 import { SammelstellungKontext } from "./sammelstellung";
+import { NACH_DER_RUNDE } from "./nachDerRunde";
 import type { Runde } from "./useRunde";
 
 const SYMBOLGROESSE = 16;
@@ -30,19 +31,31 @@ export function Antwortmeldung({ richtig, children }: { richtig: boolean; childr
 }
 
 function Ende({
+  kennung,
   runde,
   nochmal,
   zurAuswahl,
 }: {
+  kennung: TrainerKennung;
   runde: Runde;
   nochmal: () => void;
   zurAuswahl: (() => void) | null;
 }) {
+  const ergebnis = {
+    trainer: kennung,
+    richtig: runde.richtig,
+    anzahl: runde.anzahl,
+    sekunden: runde.sekunden,
+  };
   return (
     <section className="karte" data-testid="runde-ende">
       <h2 className="karte-titel">{t("trainer.rundeFertig")}</h2>
       <p>{t("trainer.ergebnis", { richtig: runde.richtig, anzahl: runde.anzahl })}</p>
       {runde.sekunden !== null && <p>{t("trainer.zeit", { sekunden: runde.sekunden })}</p>}
+      {/* Gamifizierung G4: Meldungen der Pakete (Rekord, Fundstück …), je eine Zeile in nachDerRunde.ts. */}
+      {NACH_DER_RUNDE.map(({ kennung: k, Meldung }) => (
+        <Meldung key={k} ergebnis={ergebnis} />
+      ))}
       <div className="knopfzeile">
         <button type="button" className="knopf-haupt" onClick={nochmal}>
           {t("trainer.nochmal")}
@@ -77,7 +90,8 @@ export function Rundenrahmen({
   children: React.ReactNode;
 }) {
   const [stellung, setzeStellung] = useState<string | null>(null);
-  if (runde.fertig) return <Ende runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
+  if (runde.fertig)
+    return <Ende kennung={kennung} runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
   return (
     <div className="trainerrunde" data-testid="trainerrunde">
       <p className="hinweis" aria-live="polite" data-tour="runde-stand">

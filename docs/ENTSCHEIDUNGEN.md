@@ -4,6 +4,32 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
+
+- Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche
+  `docs/nebenchat/gamifizierung.md` (jetzt auf main, Abschnitt 0 beschreibt den gebauten Stand)
+  koordinieren; Welle 0 baut der Haupt-Chat selbst, danach Welle 1 (sieben Arbeitschats) und
+  Welle 2.
+- **E1 (Speicherformat), Antwort des Autors:** neue Felder **mit neuer Formatversion**. Format 7:
+  Themenstand, Tagesprotokoll, Datum der Stücke, Rekorde, Duelle, Rivale, Wochen, Fundstücke,
+  Übungsplan, eigene Ziele (`speicher/gamifizierung.ts`). Eine ältere App lehnt Format 7 als
+  „neuer“ ab statt Felder zu verlieren. Beim Umwandeln wird das Tagesprotokoll aus vorhandenen
+  Datumsangaben nachgetragen (`format7.ts`). Dabei gefunden: Die Stufenumrechnung lief bei jedem
+  älteren Format; mit Format 7 hätte sie Format-6-Daten doppelt umgerechnet. Jetzt nur bis Format 5.
+  `merkerAlsFormat0` liegt in `format0.ts`, damit `format.ts` unter 400 Zeilen bleibt.
+- **Erweiterbar** (Wunsch des Autors, 31.10.2026: später weitere Werkzeuge und Trainer
+  anschließen): Statt fester Felder und Platzhalter gibt es Listen zum Eintragen: Abzeichen und
+  ihre Bilder aus Teillisten, `ERFAHRUNGSQUELLEN`, `STARTKARTEN`, `PROFILKARTEN`, `NACH_DER_RUNDE`,
+  `NACH_PARTIEENDE`, `ZUSATZANSICHTEN` (Ansicht „zusatz“ statt fünf Router-Platzhaltern),
+  `SPRUENGE`. Themen sind freie Kennungen mit Präfix; jeder Trainer mit Durchgang schreibt ins
+  Tagesprotokoll. Merkliste für neue Trainer in `gamifizierung.md`, Abschnitt 0.
+- **E2 bis E11** nach Empfehlung (Regel 9), festgehalten als Q8 in `AUFGABEN_AUTOR.md`; E2
+  (Karten auf der Buch-Startseite) und E10 (Schalter „Feiereffekte“, Vorgabe an) sind schon da.
+- Merker `taktikzeitBeste` und `tagesserie` gehen zusätzlich als Rekorde in die Nutzerdaten und so
+  in die Datensicherung. „Verdient am“ wird bei der ersten Feier jedes Ordens und Abzeichens
+  geschrieben (Proben ausgenommen).
+- Testpunkte N2100 bis N2102.
+
 ## 31.10.2026 – Version 0.3.17: Orden und Abzeichen mit eigenen Bildern aus dem Nebenchat übernommen (Opus)
 
 - Zweig `neben-orden` (auf 0.3.15) auf 0.3.16 zusammengeführt; Konflikte nur in `main.tsx`

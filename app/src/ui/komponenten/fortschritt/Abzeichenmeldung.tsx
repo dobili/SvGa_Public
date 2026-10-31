@@ -14,7 +14,7 @@
 import { useEffect } from "react";
 import { t } from "../../../i18n/sprache";
 import { Abzeichenbild } from "../bausteine/Abzeichenbild";
-import { ABZEICHEN, ABZEICHENZEICHEN } from "./abzeichen";
+import { ABZEICHEN, ABZEICHENZEICHEN, abzeichenname, abzeichenbedingung } from "./abzeichen";
 import { merkeErsteStufe, merkeGefeiert, useAbzeichenstand } from "./abzeichenstand";
 
 /** Höchstens so viele Bilder auf der Karte; die Namen stehen alle darunter. */
@@ -42,7 +42,7 @@ function Meldungsbilder({
           key={a.kennung}
           symbol={a.symbol}
           kennung={a.kennung}
-          beschriftung={t("abzeichen.verdient", { name: t(`abzeichen.name.${a.kennung}`) })}
+          beschriftung={t("abzeichen.verdient", { name: abzeichenname(a.kennung) })}
           klasse={neue.length === 1 ? "abzeichenbild-gross" : ""}
         />
       ))}
@@ -81,9 +81,9 @@ export function Abzeichenmeldung() {
         <ul className="abzeichenmeldung-liste">
           {neue.map((a) => (
             <li key={a.kennung}>
-              <strong>{t(`abzeichen.name.${a.kennung}`)}</strong>
+              <strong>{abzeichenname(a.kennung)}</strong>
               {": "}
-              {t(`abzeichen.bedingung.${a.kennung}`)}
+              {abzeichenbedingung(a.kennung)}
             </li>
           ))}
         </ul>

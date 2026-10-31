@@ -56,6 +56,8 @@ import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
 import { TourAngebot } from "../tour/TourAngebot";
 import { TourEbene } from "../tour/TourEbene";
+import { zusatzsprung } from "./spruenge";
+import { zusatzansicht } from "./zusatzansichten";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
 function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
@@ -102,7 +104,15 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       );
     case "trainer":
       return <Trainer key={ansicht.kennung} kennung={ansicht.kennung} />;
+    case "zusatz":
+      return <Zusatzbildschirm kennung={ansicht.kennung} wert={ansicht.wert ?? null} />;
   }
+}
+
+/** Ein Bildschirm aus der Liste der Pakete (app/zusatzansichten.ts); unbekannt → das Buch. */
+function Zusatzbildschirm({ kennung, wert }: { kennung: string; wert: string | null }) {
+  const eintrag = zusatzansicht(kennung);
+  return eintrag ? <eintrag.Bildschirm key={`${kennung} ${wert ?? ""}`} wert={wert} /> : <Buch />;
 }
 
 /** Schlüssel der Fehlergrenze: Jeder andere Bildschirm (oder Neuversuch) beginnt ohne Fehler. */
@@ -158,7 +168,9 @@ function ansichtZumSprung(hash: string): Ansicht | null {
   const trainer = TRAINER.find((t) => t.kennung === SPRUNG_TRAINER.exec(hash)?.[1]);
   if (trainer) return { bildschirm: "trainer", kennung: trainer.kennung };
   const abbildung = SPRUNG_ABBILDUNG.exec(hash)?.[1];
-  return abbildung ? { bildschirm: "abbildung", nummer: abbildung } : null;
+  if (abbildung) return { bildschirm: "abbildung", nummer: abbildung };
+  // Sprünge der Pakete und späterer Werkzeuge (app/spruenge.ts).
+  return zusatzsprung(hash)?.ansicht ?? null;
 }
 
 /**
@@ -170,7 +182,12 @@ function ansichtZumSprung(hash: string): Ansicht | null {
 function anfangsstapel(): Stapel {
   const sprung = ansichtZumSprung(window.location.hash);
   // Ein Trainer gehört zum Bereich Training, damit „Zurück“ zur Übersicht der Trainer führt.
-  if (sprung) return neuerStapel(sprung.bildschirm === "trainer" ? "training" : "buch");
+  if (sprung)
+    return neuerStapel(
+      sprung.bildschirm === "trainer"
+        ? "training"
+        : (zusatzsprung(window.location.hash)?.bereich ?? "buch"),
+    );
   return gesicherterStapel() ?? neuerStapel("buch");
 }
 

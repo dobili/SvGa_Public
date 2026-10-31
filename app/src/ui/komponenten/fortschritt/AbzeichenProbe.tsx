@@ -9,7 +9,7 @@
  * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, i18n.
  */
 import { t } from "../../../i18n/sprache";
-import { ABZEICHEN } from "./abzeichen";
+import { ABZEICHEN, abzeichenname } from "./abzeichen";
 import {
   beendeAbzeichenprobe,
   probeAbzeichen,
@@ -46,7 +46,7 @@ export function AbzeichenProbe() {
               disabled={stand.verdient.has(a.kennung)}
               onClick={() => probeAbzeichen(a.kennung)}
             >
-              {t("abzeichenprobe.verdienen", { name: t(`abzeichen.name.${a.kennung}`) })}
+              {t("abzeichenprobe.verdienen", { name: abzeichenname(a.kennung) })}
             </button>
           </li>
         ))}

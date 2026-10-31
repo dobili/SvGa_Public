@@ -33,6 +33,24 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
+
+Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je
+Tag, was du getan hast, und je Thema, wie viele Trainerantworten richtig waren. Beim ersten Start
+werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was schon ein Datum hat
+(angesehene Abbildungen, Übungen, Partien), wird das Tagesprotokoll nachgetragen.
+
+- [ ] N2100. **Update ohne Verlust:** Nach dem Aktualisieren ist alles wie vorher: Fortschritt im
+      Buch, Ringe und Orden, Abzeichen, Partien, Wertung, eigene Bots, Lernsammlung,
+      Fehlerdatenbank. Stimmt alles?
+- [ ] N2101. **Schalter „Feiereffekte“:** Profil › Einstellungen › Bedienung, unter „Startbild“.
+      Auf „aus“: Aufgabenseite › „Orden testen“ › einen Ring auf 100 % › „Profil“ öffnen. Die
+      Gratulation kommt, aber ohne Feuerwerk. Wieder „an“: mit Feuerwerk. Passt das?
+- [ ] N2102. **Datensicherung:** Profil › Einstellungen › Daten › Sicherung erstellen, danach
+      wieder einspielen. Alles ist noch da. (Eine Sicherung aus 0.3.18 lässt sich in einer
+      älteren App nicht mehr einspielen; die meldet dann „neuere Version“, statt etwas zu
+      verlieren.)
+
 ### Neu in 0.3.17: Orden und Abzeichen mit eigenen Bildern (Nebenchat, 30.10.2026)
 
 Gebaut nach deiner Wahl auf der Entwurfsseite: alle Abzeichen und die Orden für Buch und
@@ -624,6 +642,35 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q8 Gamifizierung: Entscheidungen E2 bis E11 (31.10.2026)
+
+Die Vorrecherche schlägt zu jeder offenen Frage eine Lösung vor. E1 (Speicherformat) hast du
+entschieden: neue Felder mit neuer Formatversion. Die übrigen setze ich nach der Empfehlung um,
+Widerspruch genügt:
+
+- [ ] Q8-1. **Startseite (E2):** Die neuen Karten (nächster Schritt, Wochenziel, Rivale,
+      Monatsrückblick, eigene Ziele) stehen oben auf der Buch-Startseite, höchstens zwei
+      zugleich, statt auf einer eigenen sechsten Seite „Heute“. Schon vorbereitet in 0.3.18.
+- [ ] Q8-2. **Lernpfad (E3):** eigener Bildschirm „Dein Weg durchs Buch“ mit einem Knopf über
+      der Kapitelliste; die Kapitelliste bleibt.
+- [ ] Q8-3. **Meisterschaft (E4):** Bronze, Silber, Gold je Thema bleiben, einmal erreicht, für
+      immer; nach 60 Tagen ohne richtige Antwort steht leise „Zum Auffrischen“ daneben.
+- [ ] Q8-4. **Wochenziel (E5):** Du wählst selbst 2 bis 7 Tage je Woche (vorgeschlagen 3); die
+      Tagesserie bleibt im Trainer „Kurzpläne“. Verpasste Wochen werden nicht erwähnt.
+- [ ] Q8-5. **Rivalen (E6):** Duell gewonnen beim ersten gewerteten Sieg; die Sprüche gibt es je
+      Charakter der Bots, nicht je Bot (84 Bots wären zu viele Texte).
+- [ ] Q8-6. **Teilen (E7):** nur Bilder deiner Orden, Abzeichen, Rekorde und Aufgaben aus freien
+      Quellen, keine Abbildungen des Buches.
+- [ ] Q8-7. **Extras (E8):** freischaltbar sind nur neue Dinge (Porträtrahmen, Brett „Nacht und
+      Gold“, Figurensatz „Gold“, Zubehör, Titel, Konfettifarben); nichts, was heute frei ist,
+      wird gesperrt.
+- [ ] Q8-8. **Fundstücke (E9):** etwa 80 eigene kurze Texte (Schachgeschichte, Kuriositäten,
+      Merksätze mit Fundstelle im Buch), Entwurf durch Claude; du liest sie später.
+- [ ] Q8-9. **Feiereffekte (E10):** Schalter in den Einstellungen, Vorgabe an. Schon umgesetzt in
+      0.3.18.
+- [ ] Q8-10. **Eigene Ziele (E11):** höchstens drei angeheftet, ohne Ablaufdatum; Vorschläge nur
+      aus echten Lücken (fehlende Bots, Übungen, Themen), sortiert nach Nähe zum Orden.
 
 ### Q7 Buchbefund Kapitel 8: Wann beginnt das Endspiel? (30.10.2026)
 

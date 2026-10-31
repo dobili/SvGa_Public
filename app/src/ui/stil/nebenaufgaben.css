@@ -1,0 +1,56 @@
+/*
+ * Bündel der Nebenaufgaben neben den Stationen des Lernpfads (lernpfad/Nebenaufgaben.tsx,
+ * 31.10.2026). Klein und ruhig: ein Bild auf leicht deckendem Grund der Landschaft, darunter
+ * „2/7“. Die Tippfläche ist mindestens 44 px groß; Weg.tsx legt das Bündel so, dass es auf
+ * 360 px nicht über den Rand ragt (Mitte 62 Einheiten neben der Station, Breite 44 px).
+ */
+.nebenaufgaben-buendel {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  width: 44px;
+  min-height: var(--tippflaeche);
+  padding: 4px 0 3px;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid var(--land-station-rand);
+  border-radius: 12px;
+  background: var(--land-schrift-grund);
+  color: var(--text-leise);
+  font: inherit;
+  cursor: pointer;
+}
+
+.nebenaufgaben-buendel.fertig {
+  border-color: var(--gold);
+}
+
+.nebenaufgaben-buendel:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.nebenaufgaben-bild {
+  display: flex;
+  line-height: 0;
+}
+
+.nebenaufgaben-buendel .nebenaufgaben-titelbild {
+  width: 30px;
+  height: 30px;
+}
+
+.nebenaufgaben-stern {
+  margin: 2px;
+  color: var(--gold-text);
+}
+
+.nebenaufgaben-zahl {
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--text);
+}

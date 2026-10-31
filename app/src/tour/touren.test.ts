@@ -81,6 +81,8 @@ describe("Touren", () => {
     expect(tourFuerAnsicht({ bildschirm: "abbildung", nummer: "1.26" })).toBe("abbildung");
     expect(tourFuerAnsicht({ bildschirm: "trainer", kennung: "taktik" })).toBe("trainer.taktik");
     expect(tourFuerAnsicht({ bildschirm: "ich" })).toBe("ich");
+    expect(tourFuerAnsicht({ bildschirm: "zusatz", kennung: "lernpfad" })).toBe("lernpfad");
+    expect(tourFuerAnsicht({ bildschirm: "zusatz", kennung: "rueckblick" })).toBeNull();
     expect(tourFuerAnsicht({ bildschirm: "spielen" })).toBe("spielen");
     expect(tourFuerAnsicht({ bildschirm: "partie", id: "p-1" })).toBe("partie");
     expect(tourFuerAnsicht({ bildschirm: "lizenzen" })).toBeNull();

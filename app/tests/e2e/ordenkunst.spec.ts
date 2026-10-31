@@ -64,9 +64,15 @@ test("Profil: Abzeichen im Regal mit eigenem Bild, ein Tipp zeigt die Bedingung"
   const a = await partie.boundingBox();
   const b = await page.getByTestId("abzeichen-ersterSieg").boundingBox();
   expect(a && b && Math.abs(a.y - b.y) < 2 && b.x > a.x).toBe(true);
+  // Seit dem 31.10.2026 öffnet ein Tipp das Infofenster statt einer Zeile unter der Reihe.
   await matt.getByRole("button").click();
-  await expect(matt.getByRole("button")).toHaveAttribute("aria-expanded", "true");
-  await expect(gitter.getByTestId("regal-bedingung")).toContainText("Erstes Matt");
+  const fenster = page.getByRole("dialog", { name: "Erstes Matt" });
+  await expect(fenster.getByTestId("infofenster-bedingung")).toHaveText(
+    "Eine Partie durch Matt gewonnen.",
+  );
+  await page.keyboard.press("Escape");
+  await expect(fenster).toHaveCount(0);
+  await expect(matt.getByRole("button")).toBeFocused();
   await gitter.scrollIntoViewIfNeeded();
   await page.screenshot({ path: "test-results/bilder/ordenkunst-profil.png", fullPage: true });
 });

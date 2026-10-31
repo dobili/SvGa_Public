@@ -10,10 +10,12 @@
  * Entscheidung E3: eigener Bildschirm, die Kapitelliste bleibt. Gestaltung B1 (31.10.2026): der
  * Weg führt durch fünf Landschaften (komponenten/lernpfad/Landschaft.tsx). Weniger Text P5
  * (31.10.2026): oben ein Balken mit Resten und Ordenssilhouette (Lernpfadkopf.tsx); der Satz und
- * die Einleitung stehen im ⓘ.
+ * die Einleitung stehen im ⓘ. Seit dem 31.10.2026 stehen neben den Stationen die Nebenaufgaben
+ * (komponenten/lernpfad/Nebenaufgaben.tsx): alle Orden, Abzeichen und Kapitelaufgaben, je beim
+ * Kapitel, zu dem sie am besten passen; für den Weg braucht man sie nicht.
  * Abhängigkeiten: komponenten/lernpfad/, daten/laden.ts, speicher, app/merker.ts, i18n.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { liesMerker } from "../../app/merker";
 import { ladeIndex, type Datenverzeichnis } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
@@ -28,6 +30,7 @@ import {
   stationen,
 } from "../komponenten/lernpfad/lernpfad";
 import { Lernpfadkopf } from "../komponenten/lernpfad/Lernpfadkopf";
+import { useNebenaufgaben } from "../komponenten/lernpfad/useNebenaufgaben";
 import { Weg } from "../komponenten/lernpfad/Weg";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import "../stil/lernpfad.css";
@@ -54,6 +57,8 @@ function Pfad({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fo
     ziel?.scrollIntoView?.({ block: "center", behavior: bewegungReduziert() ? "auto" : "smooth" });
   }, []);
   const titel = (kapitel: number) => index.kapitel.find((k) => k.kapitel === kapitel)?.titel ?? "";
+  const nummern = useMemo(() => index.kapitel.map((k) => k.kapitel), [index]);
+  const nebenaufgaben = useNebenaufgaben(nummern);
   return (
     <div ref={rahmen}>
       <Lernpfadkopf liste={liste} aktuell={aktuell} />
@@ -62,6 +67,7 @@ function Pfad({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fo
         titel={titel}
         aktuell={station?.kapitel ?? 0}
         vorher={vorher}
+        nebenaufgaben={nebenaufgaben}
       />
     </div>
   );

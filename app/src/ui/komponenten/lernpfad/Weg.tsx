@@ -7,30 +7,76 @@
  * gold, danach gestrichelt. Die Stationen sind echte Knöpfe (Bildschirmleser, Tastatur) und
  * liegen in Prozent über der Zeichnung; ein Tipp öffnet das Kapitel (Stationen.tsx). Seit der
  * Gestaltung B1 (31.10.2026) liegt darunter je Teil des Buches eine Landschaft (Landschaft.tsx).
- * Abhängigkeiten: wegform.ts, lernpfad.ts, Stationen.tsx, Landschaft.tsx, Wegfigur.
+ * Seit dem 31.10.2026 steht neben jeder Station ein kleines Bündel ihrer Nebenaufgaben
+ * (Nebenaufgaben.tsx), auf der Seite, die vom Titel wegzeigt.
+ * Abhängigkeiten: wegform.ts, lernpfad.ts, Stationen.tsx, Landschaft.tsx, Wegfigur,
+ * Nebenaufgaben.tsx.
  */
+import type { Erfolgsstueck } from "../erfolge/erfolgsstuecke";
 import type { Etappe } from "./lernpfad";
+import { Nebenaufgabenbuendel } from "./Nebenaufgaben";
 import { Landschaftsbild, Teilnamen } from "./Landschaft";
 import { Ordenknoten, Stationsknopf } from "./Stationen";
-import { baender, BREITE, hoehe, inProzent, knoten, linie } from "./wegform";
+import {
+  baender,
+  BREITE,
+  buendellage,
+  hoehe,
+  inProzent,
+  knoten,
+  linie,
+  type Knoten,
+} from "./wegform";
 import { Wegfigur } from "./Wegfigur";
+
+/** Die Bündel der Nebenaufgaben neben den Stationen; das der aktuellen ist Ziel der Tour. */
+function Buendel({
+  alle,
+  flaeche,
+  aktuell,
+  nebenaufgaben,
+}: {
+  alle: readonly Knoten[];
+  flaeche: number;
+  aktuell: number;
+  nebenaufgaben?: ReadonlyMap<number, readonly Erfolgsstueck[]> | null;
+}) {
+  if (!nebenaufgaben) return null;
+  return alle.map((k) => {
+    if (k.art !== "station") return null;
+    const stuecke = nebenaufgaben.get(k.station.kapitel);
+    if (!stuecke) return null;
+    return (
+      <Nebenaufgabenbuendel
+        key={`n${k.station.kapitel}`}
+        kapitel={k.station.kapitel}
+        stuecke={stuecke}
+        lage={buendellage(k.x, k.y, flaeche)}
+        tour={k.station.kapitel === aktuell}
+      />
+    );
+  });
+}
 
 /**
  * Der ganze Weg.
  *
  * Eingaben: Etappen, Titel je Kapitel, Kapitelnummer der aktuellen Station und der beim letzten
- * Öffnen gemerkten (für die kleine Bewegung der Figur).
+ * Öffnen gemerkten (für die kleine Bewegung der Figur), Nebenaufgaben je Kapitel (fehlt die
+ * Angabe, etwa solange sie laden, stehen keine Bündel da).
  */
 export function Weg({
   etappen,
   titel,
   aktuell,
   vorher,
+  nebenaufgaben,
 }: {
   etappen: readonly Etappe[];
   titel: (kapitel: number) => string;
   aktuell: number;
   vorher: number | null;
+  nebenaufgaben?: ReadonlyMap<number, readonly Erfolgsstueck[]> | null;
 }) {
   const alle = knoten(etappen);
   const flaeche = hoehe(alle.length, etappen.length);
@@ -75,6 +121,7 @@ export function Weg({
           />
         ),
       )}
+      <Buendel alle={alle} flaeche={flaeche} aktuell={aktuell} nebenaufgaben={nebenaufgaben} />
       <Wegfigur ziel={lageVon(aktuell)} start={lageVon(vorher)} kapitel={aktuell} />
     </div>
   );

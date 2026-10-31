@@ -154,7 +154,8 @@ describe("Trainings erstmalig absolviert", () => {
       ...leereDaten(ERST).fortschritt,
       trainer: { koordinaten: { ...stand, durchgaenge: 1 }, zaehlen: stand },
     };
-    expect(erstmalsTrainiert(fortschritt)).toEqual({ erreicht: 2, gesamt: 18 });
+    // Die Fehlerdatenbank hat keine Runde und zählt nicht mit (sonst wäre der Ring nie voll).
+    expect(erstmalsTrainiert(fortschritt)).toEqual({ erreicht: 2, gesamt: 17 });
     expect(erstmalsTrainiert(leereDaten(ERST).fortschritt).erreicht).toBe(0);
   });
 });

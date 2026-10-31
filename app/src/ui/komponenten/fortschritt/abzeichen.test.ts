@@ -30,7 +30,8 @@ describe("Abzeichen", () => {
       testpartie("matt", LANG, { gewonnen: true, matt: true, ruecknahmen: 1 }),
     ]);
     const erfuellt = erfuellteAbzeichen(abzeichengrundlageAus(daten, 0, false));
-    expect(erfuellt).toEqual(["erstePartie", "ersterSieg", "erstesMatt"]);
+    // Matt nach 10 eigenen Zügen aus der Grundstellung: auch „Kurzer Prozess“ (Kapitel 4).
+    expect(erfuellt).toEqual(["erstePartie", "ersterSieg", "erstesMatt", "kurzerProzess"]);
     const ohneHilfe = mitPartien([testpartie("ohne", LANG, { gewonnen: true, werkzeuge: false })]);
     expect(erfuellteAbzeichen(abzeichengrundlageAus(ohneHilfe, 0, false))).toContain(
       "siegOhneHilfe",

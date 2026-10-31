@@ -21,7 +21,7 @@ import { besiegterBot } from "../speicher/besiegt";
 import type { Nutzerdaten } from "../speicher/format";
 import { tagesschluessel } from "./kurzplaene";
 import { NAECHSTER_ANSICHT } from "./vorschlagsarten";
-import { TRAINER, type TrainerKennung } from "./trainer";
+import { TRAINER, TRAINER_OHNE_RUNDE, type TrainerKennung } from "./trainer";
 import type { Auftragsart, Auftragspruefung, Wahllage, Zeitraum } from "./wochenauftraege";
 import { waehle } from "./zufall";
 import { faellige } from "./wiederholung";
@@ -41,10 +41,10 @@ export const KARTEN_AB = 3;
 export const TRAINER_ZUR_WAHL = 3;
 /**
  * Trainer ohne Runde (sie melden keinen Durchgang): Eine Runde dort kann nicht zählen. Die
- * Fehlerdatenbank hat ihren eigenen Auftrag („fehler“). Kein Verzeichnis der Trainer, nur die
- * Ausnahme; jeder neue Trainer mit Durchgang ist von selbst dabei.
+ * Fehlerdatenbank hat ihren eigenen Auftrag („fehler“). Die Liste steht seit 31.10.2026 in
+ * training/trainer.ts und gilt hier unverändert weiter.
  */
-export const TRAINER_OHNE_RUNDE: ReadonlySet<TrainerKennung> = new Set(["fehlerdatenbank"]);
+export { TRAINER_OHNE_RUNDE };
 
 /** Ist der Zeitpunkt (ISO) in der Woche? */
 function inWoche(iso: string, woche: Zeitraum): boolean {

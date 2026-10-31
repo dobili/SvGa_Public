@@ -195,21 +195,30 @@
   cursor: pointer;
 }
 
-.regal-reihe button[aria-expanded="true"] {
+/* Knöpfe um Bild und Name, die das Infofenster öffnen (Regal, „Als Nächstes“, Glanzstück). */
+.naechste-reihe button,
+.glanzstueck-knopf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 2px;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.regal-reihe button:hover,
+.naechste-reihe button:hover,
+.glanzstueck-knopf:hover {
   background: color-mix(in srgb, var(--gold) 14%, transparent);
 }
 
 .regal-reihe .offen {
-  color: var(--text-leise);
-}
-
-.regal-bedingung {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--raster);
-  margin-top: var(--raster);
-  font-size: var(--groesse-klein);
   color: var(--text-leise);
 }

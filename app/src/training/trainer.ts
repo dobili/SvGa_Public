@@ -67,3 +67,11 @@ export const TRAINER: readonly Trainer[] = [
 export function trainerZuKapitel(kapitel: number): Trainer[] {
   return TRAINER.filter((trainer) => trainer.kapitel.includes(kapitel));
 }
+
+/**
+ * Trainer ohne Runde (sie melden keinen Durchgang): Die Fehlerdatenbank ist eine Liste eigener
+ * Fehler, keine Runde. Ein Durchgang dort kann also nie gezählt werden; Ringe, Aufträge und die
+ * Nebenaufgaben des Lernpfads lassen sie deshalb weg (seit 31.10.2026 hier statt in
+ * auftragsarten.ts, damit auch speicher/fortschritt.ts sie ohne Kreis einbinden kann).
+ */
+export const TRAINER_OHNE_RUNDE: ReadonlySet<TrainerKennung> = new Set(["fehlerdatenbank"]);

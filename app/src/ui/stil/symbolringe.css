@@ -39,6 +39,27 @@
   overflow-wrap: anywhere;
 }
 
+/* Ein Tipp auf Ring oder Orden öffnet das Infofenster (erfolge/Infofenster.tsx, 31.10.2026). */
+.symbolring-knopf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 2px;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.symbolring-knopf:hover {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
 .symbolring .ring {
   width: 64px;
   height: 64px;

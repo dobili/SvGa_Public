@@ -14,6 +14,7 @@
  * speicher/fortschritt.ts (Typ), i18n, lucide-react (Typ).
  */
 import type { LucideIcon } from "lucide-react";
+import type { Ansicht } from "../../../app/stapel";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import type { Anteil } from "../../../speicher/fortschritt";
 import { ABZEICHEN, abzeichenbedingung, abzeichenname } from "../fortschritt/abzeichen";
@@ -22,9 +23,15 @@ import { ENGINEBUENDEL, istVoll } from "../fortschritt/ringrechnung";
 import type { Symbolringangabe } from "../fortschritt/Symbolringe";
 import { ordenkennungAusRing, type Stueckart } from "../ordenkunst/entwuerfe";
 
-/** Ein Orden oder Abzeichen der Karte. */
+/**
+ * Art eines Stücks: Orden, Abzeichen oder (nur auf dem Lernpfad) eine Kapitelaufgabe wie „Übungen
+ * von Kapitel 3“ (lernpfad/kapitelaufgaben.ts), die kein Orden ist, aber dasselbe Infofenster hat.
+ */
+export type Erfolgsart = Stueckart | "aufgabe";
+
+/** Ein Orden, Abzeichen oder eine Kapitelaufgabe. */
 export interface Erfolgsstueck {
-  readonly art: Stueckart;
+  readonly art: Erfolgsart;
   /** Kennung wie in „verdient“ und in ordenkunst („uebungen“, „erstesMatt“). */
   readonly kennung: string;
   /** Kurzer Name unter dem Bild. */
@@ -37,6 +44,8 @@ export interface Erfolgsstueck {
   readonly verdient: boolean;
   /** Bei Orden: testid des Rings (für Bild und Teilen). */
   readonly ring: string | null;
+  /** Wohin der Knopf im Infofenster führt; fehlt er, gilt die Tabelle in stueckziele.ts. */
+  readonly ziel?: Ansicht;
 }
 
 /** Woraus die Stücke kommen: die Ringe des Fortschritts und der Stand der Abzeichen. */
@@ -130,6 +139,16 @@ export const ERFOLGSREGALE: readonly Erfolgsregal[] = [
     stuecke: (q) => abzeichenstuecke(q.stand),
   },
 ];
+
+/**
+ * Voller Name eines Stücks (Glanzstück, Infofenster): Teile des Buches mit „Teil“ davor („Teil
+ * Endspiel“), sonst der Name.
+ */
+export function glanzname(stueck: Erfolgsstueck): string {
+  return stueck.ring?.startsWith("ich-teil-")
+    ? t("startorden.teil", { teil: stueck.name })
+    : stueck.name;
+}
 
 /** Schlüssel eines Stücks in „verdient“. Beispiel: Orden „uebungen“ → „orden:uebungen“. */
 export function verdientSchluessel(stueck: Pick<Erfolgsstueck, "art" | "kennung">): string {

@@ -107,3 +107,23 @@ export function inProzent(
   const HUNDERT = 100;
   return { left: `${(x / BREITE) * HUNDERT}%`, top: `${(y / flaechenhoehe) * HUNDERT}%` };
 }
+
+/** Abstand des Bündels der Nebenaufgaben von der Mitte seiner Station, waagrecht und nach unten. */
+const BUENDEL_SEITE = 62;
+const BUENDEL_TIEFER = 14;
+
+/**
+ * Lage des Bündels der Nebenaufgaben zu einer Station: auf der Seite, die vom Titel wegzeigt (der
+ * Titel steht zur Mitte hin), etwas tiefer als die Station, damit die Figur darüber frei bleibt.
+ * Beispiel: Station bei x = 90 (Titel rechts) → Bündel bei x = 28; bei x = 270 → x = 332. So
+ * bleibt das 44 px breite Bündel auf 360 px innerhalb der Fläche.
+ */
+export function buendellage(
+  x: number,
+  y: number,
+  flaechenhoehe: number,
+): { left: string; top: string } {
+  const titelRechts = x <= BREITE / 2;
+  const bx = titelRechts ? x - BUENDEL_SEITE : x + BUENDEL_SEITE;
+  return inProzent(bx, y + BUENDEL_TIEFER, flaechenhoehe);
+}

@@ -6,11 +6,14 @@
  * rechnet erfolgsstuecke.ts (naechsteStuecke); Abzeichen erscheinen nur, wenn sich ihr
  * Fortschritt zählen lässt (Feld `fortschritt` in ABZEICHEN). Der Ring ist eine schlichte
  * SVG-Linie um das Bild; Bildschirmleser hören Name und „x von y“.
- * Abhängigkeiten: erfolgsstuecke.ts (Typ), Stueckbild.tsx, i18n.
+ * Ein Tipp öffnet das Infofenster (Infofenster.tsx, 31.10.2026).
+ * Abhängigkeiten: erfolgsstuecke.ts (Typ), Stueckbild.tsx, Infofenster.tsx, i18n.
  */
+import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import type { Anteil } from "../../../speicher/fortschritt";
 import type { Erfolgsstueck } from "./erfolgsstuecke";
+import { Infofenster } from "./Infofenster";
 import { Stueckbild } from "./Stueckbild";
 
 /** Maße des Rings (SVG-Einheiten). */
@@ -41,6 +44,7 @@ function Fortschrittsring({ anteil }: { anteil: Anteil }) {
 
 /** Die Reihe; ohne Stück nichts. Beispiel: „Fünfzig Partien · 41 von 50“. */
 export function AlsNaechstes({ stuecke }: { stuecke: readonly Erfolgsstueck[] }) {
+  const [offen, setzeOffen] = useState<Erfolgsstueck | null>(null);
   if (stuecke.length === 0) return null;
   return (
     <div className="erfolge-naechste" data-testid="erfolge-naechste">
@@ -49,18 +53,24 @@ export function AlsNaechstes({ stuecke }: { stuecke: readonly Erfolgsstueck[] })
         {stuecke.map((s) =>
           s.anteil ? (
             <li key={`${s.art}:${s.kennung}`} data-testid={`naechstes-${s.art}-${s.kennung}`}>
-              <span className="naechstes-bild">
-                <Fortschrittsring anteil={s.anteil} />
-                <Stueckbild stueck={s} klasse="erfolg-klein" />
-              </span>
-              <span className="erfolg-name">{s.name}</span>
-              <span className="erfolg-zahl">
-                {t("fortschritt.anteil", { erreicht: s.anteil.erreicht, gesamt: s.anteil.gesamt })}
-              </span>
+              <button type="button" aria-haspopup="dialog" onClick={() => setzeOffen(s)}>
+                <span className="naechstes-bild">
+                  <Fortschrittsring anteil={s.anteil} />
+                  <Stueckbild stueck={s} klasse="erfolg-klein" />
+                </span>
+                <span className="erfolg-name">{s.name}</span>
+                <span className="erfolg-zahl">
+                  {t("fortschritt.anteil", {
+                    erreicht: s.anteil.erreicht,
+                    gesamt: s.anteil.gesamt,
+                  })}
+                </span>
+              </button>
             </li>
           ) : null,
         )}
       </ul>
+      {offen && <Infofenster stuecke={[offen]} beiSchliessen={() => setzeOffen(null)} />}
     </div>
   );
 }

@@ -19,6 +19,8 @@ import { WOCHEN_NACHTABZEICHEN } from "./nachtabzeichen-wochen";
 import { ZIEL_NACHTABZEICHEN } from "./nachtabzeichen-ziele";
 import { RIVALEN_NACHTABZEICHEN } from "./nachtabzeichen-rivalen";
 import { AUFTRAG_NACHTABZEICHEN } from "./nachtabzeichen-auftraege";
+import { KAPITEL_NACHTABZEICHEN } from "./nachtabzeichen-kapitel";
+import { AUFGABENBILDER } from "./nachtaufgaben";
 
 /** Die Orden der Buch- und Teilringe im Nachtstil. */
 const NACHTORDEN: Readonly<Record<string, Nachtangabe>> = {
@@ -45,6 +47,7 @@ const NACHTABZEICHEN: Readonly<Record<string, Nachtangabe>> = {
   ...RIVALEN_NACHTABZEICHEN,
   ...AUFTRAG_NACHTABZEICHEN,
   ...MEISTERSCHAFT_NACHTABZEICHEN,
+  ...KAPITEL_NACHTABZEICHEN,
 };
 
 /** Kennungen aller Orden mit eigenem Bild, in der Reihenfolge der Ringe im Profil. */
@@ -117,6 +120,18 @@ export function stueckSvg(art: Stueckart, kennung: string, bildart: Bildart = {}
   const angabe = art === "abzeichen" ? NACHTABZEICHEN[kennung] : undefined;
   const z = art === "orden" ? ordenzeichnung(kennung) : angabe ? nacht(angabe, false) : null;
   if (!z) return null;
+  const { defs, inhalt } = huelle(z, bildart);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${z.ansicht}" aria-hidden="true" focusable="false"><defs>${defs}</defs>${inhalt}</svg>`;
+}
+
+/**
+ * Das SVG einer Kapitelaufgabe des Lernpfads (nachtaufgaben.ts) im Nachtstil der Abzeichen; null
+ * bei unbekannter Art. Beispiel: aufgabeSvg("lernziele", { silhouette: true }) → grauer Sechseck.
+ */
+export function aufgabeSvg(kennung: string, bildart: Bildart = {}): string | null {
+  const angabe = AUFGABENBILDER[kennung];
+  if (!angabe) return null;
+  const z = nacht(angabe, false);
   const { defs, inhalt } = huelle(z, bildart);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${z.ansicht}" aria-hidden="true" focusable="false"><defs>${defs}</defs>${inhalt}</svg>`;
 }

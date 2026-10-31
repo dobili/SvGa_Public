@@ -57,6 +57,7 @@ export type TourKennung =
   | "steckbriefe"
   | "werkzeuge"
   | "ich"
+  | "lernpfad"
   | "einstellungen"
   | "spielen"
   | "partie";
@@ -325,6 +326,14 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("auswertung-staerke", "tour.partie.staerke"),
     ziel("auswertung-pgn", "auswertungneu.tour.abschluss"),
   ]),
+  // Lernpfad „Dein Weg durchs Buch“ (Zusatzansicht, seit 31.10.2026 mit Nebenaufgaben): Kopf,
+  // aktuelle Station, ihr Bündel der Nebenaufgaben, Orden der ersten Etappe.
+  lernpfad: tour("tour.titel.lernpfad", [
+    ziel("lernpfad-kopf", "tour.lernpfad.kopf"),
+    ziel("lernpfad-station", "tour.lernpfad.station"),
+    ziel("lernpfad-nebenaufgaben", "tour.lernpfad.nebenaufgaben"),
+    ziel("lernpfad-orden", "tour.lernpfad.orden"),
+  ]),
   // Profil (seit 0.2.134): Name und Porträt (seit 0.2.140), Knopf zu den Einstellungen, Wertung,
   // Fortschritt, Partien.
   ich: tour("tour.titel.ich", [
@@ -380,10 +389,12 @@ export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
     case "spielen":
     case "partie":
       return ansicht.bildschirm;
-    // Bildschirme der Pakete (app/zusatzansichten.ts) haben vorerst keine eigene Tour.
+    // Bildschirme der Pakete (app/zusatzansichten.ts) haben vorerst keine eigene Tour, außer dem
+    // Lernpfad (seit 31.10.2026, wegen der Nebenaufgaben).
+    case "zusatz":
+      return ansicht.kennung === "lernpfad" ? "lernpfad" : null;
     case "lizenzen":
     case "autoraufgaben":
-    case "zusatz":
       return null;
   }
 }

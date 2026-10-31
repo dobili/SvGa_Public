@@ -1,0 +1,138 @@
+/*
+ * Infofenster zu Orden, Abzeichen und Kapitelaufgaben (erfolge/Infofenster.tsx, 31.10.2026) im
+ * Blatt von unten (Blatt.tsx, Stil in auswertungneu.css). Ein Stück: Bild groß in der Mitte,
+ * darunter Bedingung, Stand und Knöpfe; eine Liste (Bündel des Lernpfads): Zeilen mit kleinem
+ * Bild, Name und Stand. Die Größen sind genauer als .orden und .abzeichenbild und gewinnen.
+ * Farben nur aus den Farbmarken, damit hell und dunkel gleich gut lesbar sind.
+ */
+.blatt .infofenster-bild {
+  width: 96px;
+  height: 96px;
+}
+
+.blatt .infofenster-mini {
+  width: 40px;
+  height: 40px;
+}
+
+.infofenster-stueck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  text-align: center;
+}
+
+.infofenster-bedingung {
+  margin: 0;
+  max-width: 28rem;
+  font-size: var(--groesse-grund);
+  line-height: 1.4;
+}
+
+.infofenster-stand {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: min(100%, 18rem);
+  font-size: var(--groesse-klein);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-leise);
+}
+
+.infofenster-stand .fortschrittsbalken {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.infofenster-geschafft,
+.infofenster-offen {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.infofenster-geschafft {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.infofenster-geschafft svg,
+.infofenster-haken {
+  color: var(--gold-text);
+}
+
+.infofenster-los {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 12rem;
+  min-height: var(--tippflaeche);
+}
+
+.infofenster-zurueck {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--tippflaeche);
+  margin: calc(var(--raster) * -1) 0 var(--raster);
+}
+
+/* ---------- Liste eines Bündels ---------- */
+.infofenster-liste {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: 0 0 0 1px var(--linie);
+  overflow: hidden;
+}
+
+.infofenster-liste li + li {
+  border-top: 1px solid var(--linie);
+}
+
+.infofenster-zeile {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  width: 100%;
+  min-height: 56px;
+  padding: 4px calc(var(--raster) * 1.5);
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.infofenster-zeile:hover,
+.infofenster-zeile:focus-visible {
+  background: var(--grund);
+}
+
+.infofenster-zeilenname {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.infofenster-kurzstand {
+  flex: none;
+  font-size: var(--groesse-klein);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-leise);
+}
+
+.infofenster-haken {
+  display: flex;
+  flex: none;
+}

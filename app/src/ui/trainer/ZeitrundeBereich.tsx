@@ -170,8 +170,6 @@ function mitTagesaufgabe(daten: Nutzerdaten, richtig: boolean, jetzt: Date): Nut
   );
 }
 
-/** Die Tagesaufgabe: eine Aufgabe pro Tag, danach zählt die Serie. */
-export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
 /**
  * Die Tagesaufgabe: eine Aufgabe pro Tag, danach zählt die Serie. Aus „Dein nächster Schritt“
  * (P1) geöffnet, führt der Knopf unten zurück ins Buch und trägt daher einen eigenen Text.

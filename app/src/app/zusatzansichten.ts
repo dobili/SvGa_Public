@@ -15,9 +15,6 @@ import { Lernpfad } from "../ui/bildschirme/Lernpfad";
 import { Herausforderung } from "../ui/komponenten/teilen/Herausforderung";
 import { ALBUM } from "../ui/komponenten/fundstuecke/album";
 import { Fundstueckalbum } from "../ui/komponenten/fundstuecke/Fundstueckalbum";
- * Abhängigkeiten: die eingetragenen Bildschirme.
- */
-import type { ComponentType } from "react";
 import { NaechsterSchrittAnsicht } from "../ui/komponenten/start/NaechsterSchrittAnsicht";
 
 /** Ein Bildschirm eines Pakets. */

@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### P1: Dein nächster Schritt (31.10.2026)
+### Neu in 0.3.22: Dein nächster Schritt (Arbeitschat, 31.10.2026)
 
 Oben im Buch steht jetzt eine Karte „Dein nächster Schritt“ mit einem Vorschlag und einem Knopf.
 Die Reihenfolge: fällige Wiederholungen (ab 3 Karten), Tagesaufgabe, Weiterlesen, offene Übungen

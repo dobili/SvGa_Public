@@ -4,6 +4,17 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.22: Gamifizierung P1 Dein nächster Schritt übernommen (Opus)
+
+- Zweig `gami-p1-naechster-schritt` (Welle 1) geprüft und zusammengeführt. Konflikte nur in den
+  Listen (`STARTKARTEN`, `ZUSATZANSICHTEN`), in der Tagesaufgabe (P5 hatte dort die Rekorde
+  eingebaut, P1 den Text des Knopfs unten: beides behalten), in Texten und Unterlagen.
+- Die Karte „Wochenziel“ (Rang 20) und „Dein nächster Schritt“ (Rang 10) stehen zugleich; mehr als
+  zwei Karten zeigt die Startseite nicht (E2).
+- Offen gelassen (Empfehlung): Vorwahl des Motivs im Taktiktrainer aus der Karte (gesperrte
+  Dateien des Trainers, eigener kleiner Schritt nach Welle 2); Abschnittsname beim Weiterlesen
+  entfällt weiter.
+
 ## 31.10.2026 – Gamifizierung P1: Dein nächster Schritt (Welle 1, Opus, Zweig `gami-p1-naechster-schritt`)
 
 - Karte „Dein nächster Schritt“ oben im Buch (Liste `STARTKARTEN`, Rang 10, Entscheidung E2) nach

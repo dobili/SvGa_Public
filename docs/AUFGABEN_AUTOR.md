@@ -33,6 +33,48 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P8: Rivalen unter den Bots (31.10.2026)
+
+Ein Bot als Rivale: etwas stärker als du (50 bis 150 Punkte über deiner Wertung in der Zeitart
+deiner letzten gewerteten Partie) und noch nie gewertet von dir besiegt. Ohne Wertung ist es ein
+Bot der niedrigsten Stufe, in der du noch nicht jeden besiegt hast. Das Duell ist gewonnen, wenn
+du ihn zum ersten Mal in einer gewerteten Partie besiegst; dann gratuliert er, und ein neuer
+Rivale stellt sich vor. Die Karte steht oben im Buch (höchstens zwei Karten zugleich: „Dein
+nächster Schritt“ und „Deine Woche“ kommen vorher; „Nicht jetzt“ bzw. „Später“ dort machen Platz).
+Im Bereich Spielen erscheint sie erst, wenn der Haupt-Chat sie dort einträgt.
+
+- [ ] N2200. **Karte erscheint:** Beende eine Partie gegen einen beliebigen Bot (auch ungewertet,
+      Aufgeben genügt). Im Buch steht danach die Karte „Dein Rivale: …“ mit Porträt, Spruch in
+      Anführungszeichen, „Euer Duell: 0 : 0“ (bzw. mit deiner Partie, falls es derselbe Bot war)
+      und Knopf „Herausfordern“. Vor der ersten Partie gegen einen Bot gibt es die Karte nicht.
+- [ ] N2201. **Wahl passend zur Stärke:** Mit Wertung: Ist der Rivale etwas stärker als du (in
+      der Gegnerwahl steht seine Zahl; etwa 50 bis 150 über deiner Wertung im Profil)? Ohne
+      Wertung (frisches Gerät): ein Bot der Stufe 1.
+- [ ] N2202. **Revanche:** Auf „Herausfordern“ bzw. „Revanche“ tippen. „Spielen“ öffnet sich mit
+      dem Rivalen als Gegner, „Gewertete Partie“ angehakt und deiner zuletzt gewählten Bedenkzeit;
+      die Partie beginnt erst mit „Beginnen“.
+- [ ] N2203. **Bilanz und Spruch:** Partie gegen den Rivalen verlieren (Aufgeben) und zurück ins
+      Buch. Die Bilanz zählt die Niederlage („Euer Duell: 0 : 1“), der Spruch passt zum Sieg des
+      Bots (beim Angreifer etwa „Revanche? Ich greife wieder am Königsflügel an.“). Nach einem
+      Remis kommt ein Remis-Spruch und „(1 Remis)“ hinter der Bilanz.
+- [ ] N2204. **Duell gewonnen:** Rivalen in einer gewerteten Partie besiegen (Stufe 1 geht
+      leicht). Im Buch zeigt die Karte „Duell gewonnen!“, „<Name> gratuliert: „…““, ein kleines
+      Feuerwerk (nur mit Schalter „Feiereffekte“ an) und „Dein neuer Rivale: …“. „Weiter“
+      schließt die Feier; sie kommt nicht wieder. Ungewertete Siege zählen nicht.
+- [ ] N2205. **Anderer Rivale:** „Anderer Rivale“ tippen: ein anderer Bot wird Rivale, der Knopf
+      verschwindet bis morgen (auch nach Neuladen). Am nächsten Tag ist er wieder da.
+- [ ] N2206. **Erfahrungspunkte:** Profil › Erfahrung: Ein gewonnenes Duell bringt 40 Punkte
+      (vorher und nachher vergleichen).
+- [ ] N2207. **Abzeichen:** Profil › Abzeichen: „Drei Rivalen besiegt“ (Schild mit gekreuzten
+      Schwertern und Springer) und „Zehn Rivalen besiegt“ (Rosette mit Schwertern und König) als
+      Silhouetten mit Bedingung; nach drei gewonnenen Duellen leuchtet das erste. Gefallen die
+      Bilder?
+- [ ] N2208. **Sprüche lesen:** Es gibt je Charakter vier Sprüche (Begrüßung, nach Sieg des Bots,
+      Remis, nach seiner Niederlage), zwölf Charaktere. Klingen sie freundlich und ohne Druck?
+      Wünsche zu einzelnen Sätzen einfach als Text schicken („N2208: Materialist …“).
+- [ ] N2209. **Datensicherung:** Bilanz und Rivale ziehen mit der Datensicherung um (Einstellungen
+      › Sicherung anlegen, auf anderem Gerät einspielen): gleiche Karte, gleiche Bilanz.
+
 ### Neu in 0.3.23: Freischaltbare Extras (Arbeitschat, 31.10.2026)
 
 Neu und nur durch Lernen zu bekommen; alles, was es schon gab, bleibt frei. Porträtrahmen in

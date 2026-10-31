@@ -15,6 +15,7 @@ import { neueId } from "./zeichnen";
 import { REKORD_NACHTABZEICHEN } from "./nachtabzeichen-rekorde";
 import { GRUND_NACHTABZEICHEN } from "./nachtabzeichen-grund";
 import { WOCHEN_NACHTABZEICHEN } from "./nachtabzeichen-wochen";
+import { RIVALEN_NACHTABZEICHEN } from "./nachtabzeichen-rivalen";
 
 /** Die Orden der Buch- und Teilringe im Nachtstil. */
 const NACHTORDEN: Readonly<Record<string, Nachtangabe>> = {
@@ -37,6 +38,7 @@ const NACHTABZEICHEN: Readonly<Record<string, Nachtangabe>> = {
   ...GRUND_NACHTABZEICHEN,
   ...WOCHEN_NACHTABZEICHEN,
   ...REKORD_NACHTABZEICHEN,
+  ...RIVALEN_NACHTABZEICHEN,
 };
 
 /** Kennungen aller Orden mit eigenem Bild, in der Reihenfolge der Ringe im Profil. */

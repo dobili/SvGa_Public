@@ -14,6 +14,7 @@ import { zaehleAktivitaet } from "./aktivitaet";
 import { REKORDARTEN } from "../training/rekordarten";
 import { pruefeRekorde } from "../training/rekorde";
 import type { Nutzerdaten } from "./format";
+import { duelleUndRivale } from "../training/rivalenfolge";
 
 /** Eine Wirkung nach dem Partieende: neue Daten aus alten, der Partie und dem Zeitpunkt. */
 export type Partiefolge = (daten: Nutzerdaten, partie: Partie, jetzt: Date) => Nutzerdaten;
@@ -31,7 +32,7 @@ const rekorde: Partiefolge = (daten, _partie, jetzt) =>
   pruefeRekorde(daten, { quelle: "partie" }, jetzt, REKORDARTEN).daten;
 
 /** Alle Wirkungen nach dem Partieende; Pakete tragen hier je eine Zeile ein. */
-export const NACH_PARTIEENDE: readonly Partiefolge[] = [protokolliere, rekorde];
+export const NACH_PARTIEENDE: readonly Partiefolge[] = [protokolliere, rekorde, duelleUndRivale];
 
 /** Eine Wirkung nach der Auswertung einer Partie (Werte, Zugklassen): Daten, Kennung, Zeitpunkt. */
 export type Auswertungsfolge = (daten: Nutzerdaten, partieId: string, jetzt: Date) => Nutzerdaten;

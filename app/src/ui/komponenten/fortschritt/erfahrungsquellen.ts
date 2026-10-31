@@ -11,6 +11,7 @@
  */
 import type { Nutzerdaten } from "../../../speicher/format";
 import { erreichteWochen } from "../../../training/wochenziel";
+import { besiegteRivalen } from "../../../training/rivalen";
 
 /** Eine Quelle: Kennung, Punkte je Einheit, Zahl der Einheiten aus den Nutzerdaten. */
 export interface Erfahrungsquelle {
@@ -22,4 +23,5 @@ export interface Erfahrungsquelle {
 /** Alle zusätzlichen Quellen; Pakete fügen je eine Zeile an (Konfliktkarte, Abschnitt 5). */
 export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
   { kennung: "wochenErreicht", gewicht: 30, zaehle: (d) => erreichteWochen(d).length },
+  { kennung: "duelleGewonnen", gewicht: 40, zaehle: (d) => besiegteRivalen(d).length },
 ];

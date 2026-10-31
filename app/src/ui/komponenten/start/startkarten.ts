@@ -15,6 +15,8 @@ import { Wochenkarte } from "./Wochenkarte";
 import { wochenkarteSichtbar } from "./wochensichtbar";
 import { NaechsterSchritt } from "./NaechsterSchritt";
 import { naechsterSchrittSichtbar } from "./naechsterSchrittMerker";
+import { Rivalenkarte } from "../rivale/Rivalenkarte";
+import { rivalenkarteSichtbar } from "../rivale/rivalenmerker";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
@@ -38,6 +40,7 @@ export const STARTKARTEN: readonly Startkarte[] = [
     sichtbar: (_daten, jetzt) => naechsterSchrittSichtbar(jetzt),
     Karte: NaechsterSchritt,
   },
+  { kennung: "rivale", rang: 30, sichtbar: rivalenkarteSichtbar, Karte: Rivalenkarte },
 ];
 
 /**

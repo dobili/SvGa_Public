@@ -17,6 +17,7 @@ import { t, type Textschluessel } from "../../../i18n/sprache";
 import { REKORD_ABZEICHEN } from "./abzeichen-rekorde";
 import { GRUNDABZEICHEN } from "./abzeichen-grund";
 import { WOCHEN_ABZEICHEN } from "./abzeichen-wochen";
+import { RIVALEN_ABZEICHEN } from "./abzeichen-rivalen";
 
 export { WOCHE } from "./abzeichen-grund";
 import { zugurteile } from "../../../spiel/auswertung";
@@ -76,6 +77,7 @@ export const ABZEICHEN: readonly Abzeichenangabe[] = [
   ...GRUNDABZEICHEN,
   ...WOCHEN_ABZEICHEN,
   ...REKORD_ABZEICHEN,
+  ...RIVALEN_ABZEICHEN,
 ];
 
 /**

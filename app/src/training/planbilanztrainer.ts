@@ -29,10 +29,11 @@ import type { Frage } from "../analyse/warumfragen";
 import { t } from "../i18n/sprache";
 import { farbname } from "../analyse/texte";
 import { aktivitaeten } from "../schach/aktivitaet";
-import { fesselungslinien } from "../schach/fesselungen";
 import { phase } from "../schach/phase";
 import { feldname, gegner } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
+import { geeignet } from "./eignung";
+import { lapstufe, type Trainerstufe } from "./stufen";
 import { gegnerErsatz, plansaetze, type Plansaetze } from "./planablenker";
 import { mische, type Zufall } from "./zufall";
 
@@ -162,7 +163,8 @@ function planfragen(vorrat: readonly Vorrat[], i: number, zufall: Zufall): Wahlf
 export function planaufgaben(stellungen: readonly Buchstellung[], zufall: Zufall): Planaufgabe[] {
   const vorrat: Vorrat[] = stellungen.flatMap((buch) => {
     const p = planstellung(buch);
-    if (!p) return [];
+    // Eignung je Trainer (training/eignung.ts); die Warum-Fragen des Buches bleiben unberührt.
+    if (!p || !geeignet("planfragen", buch.stellung)) return [];
     const s = plansaetze(p, buch.stellung.amZug);
     return aussagekraeftig(s, buch.stellung.amZug) ? [{ buch, p, s }] : [];
   });
@@ -213,26 +215,15 @@ export interface Lapaufgabe {
   readonly ziel: string | null;
   /** Alle eigenen Figuren außer König und Bauern, am wenigsten aktive zuerst (Begründung). */
   readonly figuren: readonly Lapfigur[];
+  /** Stufe nach dem Abstand zur nächsten Leichtfigur (training/stufen.ts). */
+  readonly stufe: Trainerstufe;
 }
 
-/**
- * Ruhig genug für die LAP-Frage? Keine eigene Figur hängt (der Gegner gewinnt beim Schlagen
- * Material), und keine eigene Figur ist an den König gefesselt.
- *
- * Warum: Das LAP-Prinzip gilt für ruhige Stellungen (Kapitel 6). Der Autor bekam eine Stellung, in
- * der der gefesselte Springer e7 zugleich angegriffen war: Dort geht es um Rettung, nicht um
- * Figurenverbesserung (Nebenchat, 30.10.2026).
- */
-function ruhigFuerLap(p: Stellungsprofil, seite: Color): boolean {
-  const brett = p.stellung.brett;
-  const haengt = [...brett[seite]].some((feld) => {
-    const figur = brett.get(feld);
-    return figur?.role !== "king" && (p.abtausch(feld)?.bilanz ?? 0) > 0;
-  });
-  const gefesselt = fesselungslinien(brett, p.angriffskarte, seite).some(
-    (linie) => linie.art === "direkt" && linie.absolut,
-  );
-  return !haengt && !gefesselt;
+/** Der Abstand der Lösung zur nächsten Leichtfigur in freien Feldern (ohne zweite: groß). */
+function lapabstand(figuren: readonly Lapfigur[]): number {
+  const leicht = figuren.filter((f) => f.rolle === "knight" || f.rolle === "bishop");
+  const [erste, zweite] = leicht;
+  return erste && zweite ? zweite.freie - erste.freie : Number.POSITIVE_INFINITY;
 }
 
 /**
@@ -244,7 +235,9 @@ export function lapaufgabe(buch: Buchstellung): Lapaufgabe | null {
   const p = planstellung(buch);
   if (!p) return null;
   const seite = buch.stellung.amZug;
-  if (!ruhigFuerLap(p, seite)) return null;
+  // Eignung je Trainer (training/eignung.ts): ruhig, keine hängende oder gefesselte eigene
+  // Figur, kein sofortiger Materialgewinn (Befund des Autors: Springer e7 gefesselt).
+  if (!geeignet("lap", buch.stellung)) return null;
   const ergebnis = lapVon(p, seite);
   if (!ergebnis || ergebnis.ziel.ziel === null) return null;
   const figuren = aktivitaeten(p.sichereFelder(seite)).map((a) => ({
@@ -260,6 +253,7 @@ export function lapaufgabe(buch: Buchstellung): Lapaufgabe | null {
     figur: feldname(ergebnis.lap.stand.feld),
     ziel: feldname(ergebnis.ziel.ziel),
     figuren,
+    stufe: lapstufe(ergebnis.lap.zuHause, lapabstand(figuren)),
   };
 }
 
@@ -276,7 +270,7 @@ export interface Rennaufgabe {
  * Seiten zählen“. Beispiel: Abb. 6.6 → Weiß 2 (h2–h5 gegen g6), Schwarz 3 (a7–a3 gegen b2).
  */
 export function rennaufgabe(buch: Buchstellung): Rennaufgabe | null {
-  if (!buch.stellung.regeln) return null;
+  if (!buch.stellung.regeln || !geeignet("wettrennen", buch.stellung)) return null;
   const p = profil(buch.stellung);
   if (phase(buch.stellung, p.angriffskarte, p.drohungen).phase !== "mittelspiel") return null;
   const lage = planlage(p, "white");
@@ -291,4 +285,24 @@ export function rennaufgabe(buch: Buchstellung): Rennaufgabe | null {
 /** Eine Runde einer Übungsart: zufällig aus allen passenden Stellungen. */
 export function auswahl<T>(liste: readonly T[], anzahl: number, zufall: Zufall): T[] {
   return mische(liste, zufall).slice(0, anzahl);
+}
+
+/**
+ * Wie auswahl(), aber höchstens eine Aufgabe je Stellung: Dieselbe Abbildung kam sonst als
+ * gerechnete Planfrage und als Warum-Frage des Buches in einer Runde zweimal (Nebenchat).
+ */
+export function auswahlJeStellung<T extends { readonly fen: string }>(
+  liste: readonly T[],
+  anzahl: number,
+  zufall: Zufall,
+): T[] {
+  const gesehen = new Set<string>();
+  return mische(liste, zufall)
+    .filter((a) => {
+      const brett = a.fen.split(" ")[0] ?? "";
+      if (gesehen.has(brett)) return false;
+      gesehen.add(brett);
+      return true;
+    })
+    .slice(0, anzahl);
 }

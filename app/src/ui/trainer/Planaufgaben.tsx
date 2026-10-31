@@ -20,6 +20,9 @@ import {
   type Wahlfrage,
 } from "../../training/planbilanztrainer";
 import { lapbegruendung } from "../../training/lapbegruendung";
+import { EngineEinschaetzung } from "./EngineEinschaetzung";
+import { lapkennung } from "../../training/wiederholbar";
+import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -89,6 +92,9 @@ export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; ru
         <Frageblock key={f.frage} frage={f} waehle={waehle} />
       ))}
       {runde.ergebnis !== null && <Antwortmeldung richtig={runde.ergebnis} />}
+      {runde.ergebnis !== null && !aufgabe.warum && (
+        <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />
+      )}
       {runde.ergebnis !== null && aufgabe.buchbilanz && (
         <p className="hinweis">{t("planbilanz.buchVerweis", { abbildung: aufgabe.nummer })}</p>
       )}
@@ -133,7 +139,14 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           type="button"
           className="knopf-haupt"
           disabled={figur === null || ziel === null}
-          onClick={() => runde.beantworte(figur === aufgabe.figur && ziel === aufgabe.ziel)}
+          onClick={() =>
+            antworteMitKarte(
+              runde,
+              "planbilanz",
+              lapkennung(aufgabe),
+              figur === aufgabe.figur && ziel === aufgabe.ziel,
+            )
+          }
         >
           {t("trainer.pruefen")}
         </button>
@@ -150,6 +163,7 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           ))}
         </section>
       )}
+      {beantwortet && <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />}
     </>
   );
 }

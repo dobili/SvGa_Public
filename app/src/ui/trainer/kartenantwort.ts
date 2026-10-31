@@ -7,6 +7,7 @@
  * fälligen Aufgaben ab und bietet sie als Runde an (Wiederholungsknopf.tsx).
  * Abhängigkeiten: speicher, training/wiederholung.ts, useRunde.
  */
+import { useMemo } from "react";
 import { notiereTrainerantwort } from "../../speicher/fortschritt";
 import { notiereThemenantwort } from "../../speicher/themenprotokoll";
 import { aendere, useSpeicher } from "../../speicher/speicher";
@@ -19,9 +20,13 @@ import {
 import type { Runde } from "./useRunde";
 
 /** Die Kennungen der fälligen Aufgaben eines Trainers, die am längsten wartenden zuerst. */
-export function useFaelligeAufgaben(trainer: WiederholterTrainer): string[] {
+export function useFaelligeAufgaben(trainer: WiederholterTrainer): readonly string[] {
   const karten = useSpeicher((z) => z.daten.karten);
-  return aufgabenAusKarten(faellige(karten, new Date()), trainer);
+  // Dieselbe Liste, solange sich die fälligen Kennungen nicht ändern: Sonst rechneten die
+  // Bereiche, die daraus Aufgaben bauen (Zählen, Röntgen samt Profil, LAP), bei jedem Zeichnen
+  // neu (Prüfung beim Übernehmen, 31.10.2026). Kennungen enthalten keinen Zeilenumbruch.
+  const schluessel = aufgabenAusKarten(faellige(karten, new Date()), trainer).join("\n");
+  return useMemo(() => (schluessel === "" ? [] : schluessel.split("\n")), [schluessel]);
 }
 
 /**

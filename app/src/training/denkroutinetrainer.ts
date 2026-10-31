@@ -17,7 +17,9 @@ import { makeSan, parseSan } from "chessops/san";
 import type { Buchstellung } from "./buchstellungen";
 import { zuegeAusText } from "./uebungsaufgabe";
 import { fenNach, regelstellung } from "../spiel/zuege";
-import { mische, type Zufall } from "./zufall";
+import type { Zufall } from "./zufall";
+import { geeignet } from "./eignung";
+import { denkstufe, rundeNachStufe, type Trainerstufe } from "./stufen";
 
 /** Feste Denkzeit in Sekunden (Kapitel 12: eine Minute). */
 export const DENKZEIT_S = 60;
@@ -32,19 +34,26 @@ const MINDESTENS_ZUEGE = 8;
 export interface Denkaufgabe {
   readonly nummer: string;
   readonly fen: string;
+  /** Stufe nach der Zahl der legalen Züge (training/stufen.ts). */
+  readonly stufe: Trainerstufe;
 }
 
 /**
- * Die Aufgabe zu einer Buchstellung, oder null (anderes Kapitel, Schach, zu wenig Steine).
+ * Die Aufgabe zu einer Buchstellung, oder null (anderes Kapitel, Ende, zu wenig Steine oder Züge).
  * Beispiel: Abb. 12.1 (griechisches Geschenk, Weiß am Zug) → Aufgabe.
  */
 export function denkaufgabe(buch: Buchstellung): Denkaufgabe | null {
   const regeln = buch.stellung.regeln;
-  if (!KAPITEL.has(buch.kapitel) || !regeln || regeln.isCheck() || regeln.isEnd()) return null;
+  if (!KAPITEL.has(buch.kapitel) || !regeln) return null;
   if (buch.stellung.brett.occupied.size() < MINDESTENS_STEINE) return null;
+  // Eignung je Trainer (training/eignung.ts): Schach ist hier erlaubt (Abb. 12.3), nur Ende und
+  // Stellungen mit weniger als zwei legalen Zügen fallen weg (Nebenchat, 30.10.2026). Ohne Schach
+  // gilt weiter: mindestens acht Züge, sonst gibt es kaum etwas abzuwägen.
+  if (!geeignet("denkroutine", buch.stellung)) return null;
   let zuege = 0;
   for (const ziele of regeln.allDests().values()) zuege += ziele.size();
-  return zuege < MINDESTENS_ZUEGE ? null : { nummer: buch.nummer, fen: buch.stellung.fen };
+  const genug = regeln.isCheck() || zuege >= MINDESTENS_ZUEGE;
+  return genug ? { nummer: buch.nummer, fen: buch.stellung.fen, stufe: denkstufe(zuege) } : null;
 }
 
 /** Eine Runde aus zufälligen passenden Stellungen. */
@@ -52,11 +61,14 @@ export function denkrunde(
   stellungen: readonly Buchstellung[],
   anzahl: number,
   zufall: Zufall,
+  stufe: Trainerstufe | null = null,
 ): Denkaufgabe[] {
-  return mische(
+  return rundeNachStufe(
     stellungen.flatMap((b) => denkaufgabe(b) ?? []),
+    stufe,
+    anzahl,
     zufall,
-  ).slice(0, anzahl);
+  );
 }
 
 /** Ein Zug aus der Eingabe des Lesers in einer Stellung: Kurznotation wie chessops, oder null. */

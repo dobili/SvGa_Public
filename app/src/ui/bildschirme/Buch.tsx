@@ -16,6 +16,7 @@ import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
 import { Fundmeldung } from "../komponenten/abbildung/Nummernsprung";
+import { Zahlenleiste } from "../komponenten/bausteine/Zahlenleiste";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LernpfadKnopf } from "../komponenten/lernpfad/LernpfadKnopf";
@@ -31,6 +32,7 @@ function alleNummern(index: Datenverzeichnis): string[] {
 function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   const { navigiere } = useNavigation();
   const [eingabe, setzeEingabe] = useState("");
+  const [leiste, setzeLeiste] = useState(false);
   const [fund, setzeFund] = useState<Fundergebnis | null>(null);
   const zuletzt = liesMerker("zuletzt");
   const oeffne = (nummer: string) => navigiere({ bildschirm: "abbildung", nummer });
@@ -53,16 +55,19 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
         <input
           id="abbildungsnummer"
           type="text"
-          inputMode="decimal"
+          inputMode="none"
           autoComplete="off"
           placeholder={t("buch.platzhalter")}
           value={eingabe}
           onChange={(e) => setzeEingabe(e.target.value)}
+          onFocus={() => setzeLeiste(true)}
         />
         <button type="submit" className="knopf-haupt">
           {t("buch.oeffnen")}
         </button>
       </div>
+      {/* Zahlenleiste statt Handytastatur (Punkt A3 des Nebenchats), sobald das Feld aktiv ist. */}
+      {leiste && <Zahlenleiste text={eingabe} setze={setzeEingabe} />}
       <Fundmeldung fund={fund} oeffne={oeffne} />
       {zuletzt && (
         <button

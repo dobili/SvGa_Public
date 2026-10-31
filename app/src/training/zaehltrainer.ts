@@ -17,10 +17,12 @@ import type { Square } from "chessops/types";
 import type { SquareSet } from "chessops/squareSet";
 import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
+import { abzugspaare } from "./zaehlabzug";
 import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
+import { geeignet } from "./eignung";
 
 /** Höchste Bilanz, die die Auswahl anbietet (eine Dame); größere Gewinne kommen nicht dran. */
 export const HOECHSTE_BILANZ = 9;
@@ -42,10 +44,19 @@ export interface Zaehlaufgabe {
   readonly motive: readonly Zaehlmotiv[];
   /** Gefesselte Figuren, die hier nicht mitzählen (Felder), für die Erklärung. */
   readonly gefesselt: readonly string[];
+  /**
+   * Verdeckte Figuren: je die hintere und die vordere Figur (Felder) und ob die hintere die
+   * eigene Figur auf dem Feld deckt (verdeckter Verteidiger) statt sie anzugreifen (Abzug).
+   */
+  readonly abzug: readonly {
+    readonly hinten: string;
+    readonly vorn: string;
+    readonly deckt: boolean;
+  }[];
   readonly stufe: Zaehlstufe;
 }
 
-export type Zaehlmotiv = "batterie" | "fesselung";
+export type Zaehlmotiv = "batterie" | "fesselung" | "abzug";
 export type Zaehlstufe = "leicht" | "mittel" | "schwer";
 export const ZAEHLSTUFEN: readonly Zaehlstufe[] = ["leicht", "mittel", "schwer"];
 /** Bis zu so vielen beteiligten Figuren ist eine Aufgabe ohne Motiv leicht. */
@@ -70,7 +81,7 @@ export interface Zaehlantwort {
  * Sonderfall: Ausschnitte ohne König (keine Regeln) bleiben geeignet, wie Abb. 1.26.
  */
 export function zumZaehlenGeeignet(stellung: Stellung): boolean {
-  return !stellung.regeln?.isCheck();
+  return geeignet("zaehlen", stellung);
 }
 
 /**
@@ -82,7 +93,12 @@ export function zumZaehlenGeeignet(stellung: Stellung): boolean {
 export function zaehlstufe(a: Pick<Zaehlaufgabe, "angreifer" | "verteidiger" | "motive">): Zaehlstufe {
   const beteiligt = a.angreifer + a.verteidiger;
   const batterie = a.motive.includes("batterie");
-  if (a.motive.includes("fesselung") || beteiligt >= SCHWER_AB || (batterie && beteiligt >= SCHWER_MIT_BATTERIE))
+  if (
+    a.motive.includes("fesselung") ||
+    a.motive.includes("abzug") ||
+    beteiligt >= SCHWER_AB ||
+    (batterie && beteiligt >= SCHWER_MIT_BATTERIE)
+  )
     return "schwer";
   return beteiligt <= LEICHT_BIS && a.motive.length === 0 ? "leicht" : "mittel";
 }
@@ -121,9 +137,17 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
   const bilanz = Math.max(abtausch(stellung.brett, feld, gesperrt)?.bilanz ?? 0, 0);
   const gefesselt = gefesselteAmFeld(p, feld).map(feldname);
   const batterie = [...angreiferListe, ...verteidigerListe].some((a) => a.hinter !== null);
+  const abzug = abzugspaare(stellung, feld).map((p) => ({
+    hinten: feldname(p.hinten),
+    vorn: feldname(p.vorn),
+    deckt: p.farbe === figur.color,
+  }));
+  // Nur ein verdeckter Angreifer ist das Motiv „Abzug“ (schwer). Ein verdeckter Verteidiger wie
+  // die Dame d1 hinter dem Läufer d3 (Abb. 1.6) ist das einfache Lehrbeispiel des Buches.
   const motive: Zaehlmotiv[] = [
     ...(batterie ? (["batterie"] as const) : []),
     ...(gefesselt.length > 0 ? (["fesselung"] as const) : []),
+    ...(abzug.some((p) => !p.deckt) ? (["abzug"] as const) : []),
   ];
   const angreifer = angreiferListe.length;
   const verteidiger = verteidigerListe.length;
@@ -134,6 +158,7 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
     bilanz,
     motive,
     gefesselt,
+    abzug,
     stufe: zaehlstufe({ angreifer, verteidiger, motive }),
   };
 }

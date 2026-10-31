@@ -8,10 +8,8 @@
  * „Wiederholen“ sie. Oben steht die Gesamtzahl, darunter je Quelle ein Knopf.
  * Abhängigkeiten: Speicher, Navigation, training/wiederholung.ts, i18n.
  */
-import { useMemo } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import type { Uebungsverweis } from "../../../app/stapel";
-import { ladeStrukturen } from "../../../daten/trainerdaten";
 import { datumText, t } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
 import {
@@ -21,31 +19,20 @@ import {
   WIEDERHOLTE_TRAINER,
   type WiederholterTrainer,
 } from "../../../training/wiederholung";
-import { useDaten } from "../bausteine/useDaten";
+import { useVorhandeneAufgaben } from "./vorhandeneAufgaben";
 
-/** Je Trainer die Zahl der fälligen Aufgaben, die es noch gibt (größer als null). */
+/**
+ * Je Trainer die Zahl der fälligen Aufgaben, die es noch gibt (größer als null). Verwaiste Karten
+ * (Aufgabe aussortiert oder ausgeschlossen) zählen nicht (vorhandeneAufgaben.ts).
+ */
 function trainerAnzahlen(
   faellig: readonly string[],
-  vorhandeneStruktur: ReadonlySet<string> | null,
+  vorhanden: (trainer: WiederholterTrainer, ids: readonly string[]) => number,
 ): { kennung: WiederholterTrainer; anzahl: number }[] {
-  return WIEDERHOLTE_TRAINER.map((kennung) => {
-    const ids = aufgabenAusKarten(faellig, kennung);
-    // Aussortierte Aufgaben des Strukturerkenners (Nebenchat, 30.10.2026) zählen nicht mehr mit.
-    const gueltig =
-      kennung === "struktur" && vorhandeneStruktur
-        ? ids.filter((id) => vorhandeneStruktur.has(id))
-        : ids;
-    return { kennung, anzahl: gueltig.length };
-  }).filter((z) => z.anzahl > 0);
-}
-
-/** Die Kennungen der Aufgaben des Strukturerkenners, sobald die Daten geladen sind. */
-function useVorhandeneStruktur(): ReadonlySet<string> | null {
-  const daten = useDaten(ladeStrukturen, "trainer-struktur");
-  return useMemo(
-    () => (daten.art === "fertig" ? new Set(daten.wert.aufgaben.map((a) => a.id)) : null),
-    [daten],
-  );
+  return WIEDERHOLTE_TRAINER.map((kennung) => ({
+    kennung,
+    anzahl: vorhanden(kennung, aufgabenAusKarten(faellig, kennung)),
+  })).filter((z) => z.anzahl > 0);
 }
 
 /**
@@ -59,7 +46,7 @@ export function FaelligeWiederholungen() {
   const { navigiere } = useNavigation();
   const karten = useSpeicher((z) => z.daten.karten);
   const staende = useSpeicher((z) => z.daten.fortschritt.uebungen);
-  const vorhandeneStruktur = useVorhandeneStruktur();
+  const vorhanden = useVorhandeneAufgaben();
   const jetzt = new Date();
   const faellig = faellige(karten, jetzt);
   const reihe: Uebungsverweis[] = faellig.flatMap((kennung) => {
@@ -67,7 +54,7 @@ export function FaelligeWiederholungen() {
     const kapitel = id ? staende[id]?.kapitel : undefined;
     return id && kapitel !== undefined ? [{ kapitel, id }] : [];
   });
-  const trainer = trainerAnzahlen(faellig, vorhandeneStruktur);
+  const trainer = trainerAnzahlen(faellig, vorhanden);
   const gesamt = reihe.length + trainer.reduce((summe, z) => summe + z.anzahl, 0);
   const erste = reihe[0];
   if (gesamt === 0) {

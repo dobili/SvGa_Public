@@ -27,3 +27,64 @@ test("Feld finden: Die Sicht steht deutlich unter dem Brett", async ({ page }) =
   await page.getByRole("button", { name: /Feld finden/ }).click();
   await expect(page.getByTestId("sichtanzeige")).toContainText("Weiß spielt von unten.");
 });
+
+test.describe("Sprachangebot beim ersten Start", () => {
+  test.use({ locale: "en-GB" });
+
+  test("Gerät auf Englisch: Angebot erscheint, „Deutsch behalten“ merkt sich die Antwort", async ({
+    page,
+  }) => {
+    await page.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.tour.angeboten", "ja");
+        window.sessionStorage.setItem("svga.startanimation.sitzung", "ja");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+    await page.goto("/app/");
+    const angebot = page.getByTestId("sprachangebot");
+    await expect(angebot).toContainText("English translation is still in beta");
+    await expect(angebot).toContainText("das englische Buch ist noch nicht erschienen");
+    await page.screenshot({ path: "test-results/bilder/sprachangebot.png" });
+    await angebot.getByRole("button", { name: /Keep German/ }).click();
+    await expect(angebot).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+    await expect(page.getByTestId("sprachangebot")).toHaveCount(0);
+  });
+});
+
+test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", async ({ page }) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zaehlen");
+  await page.getByRole("button", { name: /Bilanz zählen/ }).click();
+  // Ein Tipp auf „+9“ ist fast immer falsch; dann legt die App eine Karte an.
+  await page.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "+9" }).click();
+  await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
+  const falsch = await page.getByText("Nicht ganz").count();
+  test.skip(falsch === 0, "Zufällig war +9 richtig; dann gibt es keine Karte.");
+  await page.clock.fastForward("48:00:00");
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await leiste.getByRole("button", { name: "Training" }).click();
+  await page
+    .getByTestId("faellig")
+    .getByRole("button", { name: /Zähltrainer: 1 fällig/ })
+    .click();
+  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
+});
+
+test("Abbildung öffnen: Zahlenleiste statt Handytastatur", async ({ page }) => {
+  await starteImBrowser(page);
+  await page.getByLabel("Abbildung öffnen").click();
+  const leiste = page.getByRole("group", { name: "Ziffern für die Abbildungsnummer" });
+  for (const taste of ["5", ".", "2", "8"]) {
+    await leiste.getByRole("button", { name: taste, exact: true }).click();
+  }
+  await expect(page.getByLabel("Abbildung öffnen")).toHaveValue("5.28");
+  await page.getByRole("button", { name: "Öffnen", exact: true }).click();
+  await expect(page.getByText("Abb. 5.28").first()).toBeVisible();
+});

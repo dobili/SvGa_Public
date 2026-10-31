@@ -114,7 +114,7 @@
 .tastenreihe {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 4px;
+  gap: calc(var(--raster) / 2);
 }
 
 .taste {
@@ -136,7 +136,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px var(--raster);
+  gap: calc(var(--raster) / 2) var(--raster);
 }
 
 .folgespieler-zuege [aria-current="step"] {
@@ -146,4 +146,19 @@
 
 .folgespieler-knoepfe {
   flex-wrap: wrap;
+}
+
+/* Stufenzeile über der Runde (Punkt B2): schmal, mit Abstand zur Runde. */
+.stufenzeile {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+  margin-bottom: var(--raster);
+}
+
+/* Zahlenleiste für Abbildungsnummern (Punkt A3): zwei Reihen zu sechs Tasten. */
+.zahlenleiste {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: calc(var(--raster) / 2);
+  margin-top: calc(var(--raster) / 2);
 }

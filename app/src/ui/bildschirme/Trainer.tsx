@@ -10,16 +10,26 @@
  * je nach Übungsart 5 bis 16 Aufgaben und zählt am Ende als Durchgang im Fortschritt.
  * Abhängigkeiten: training/*, ui/trainer/*, Navigation, i18n.
  */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
 import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
-import { auswahl, lapaufgabe, planaufgaben, rennaufgabe } from "../../training/planbilanztrainer";
+import {
+  auswahl,
+  auswahlJeStellung,
+  lapaufgabe,
+  planaufgaben,
+  rennaufgabe,
+} from "../../training/planbilanztrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
+import { rundeNachStufe, TRAINERSTUFEN, type Trainerstufe } from "../../training/stufen";
+import { lapaufgabenAus } from "../../training/wiederholbar";
 import { ZUFALL } from "../../training/zufall";
+import { useFaelligeAufgaben } from "../trainer/kartenantwort";
+import { Wiederholungsknopf } from "../trainer/Wiederholungsknopf";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { TrainerthemaKontext } from "../trainer/trainerthema";
 import { useDaten } from "../komponenten/bausteine/useDaten";
@@ -83,12 +93,22 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   wettrennen: 5,
 };
 
+/** Übungsarten mit Stufen (Punkt B2 des Nebenchats, training/stufen.ts). */
+const MIT_STUFEN = ["felder", "zielbilanz", "lap", "denkroutine"] as const;
+type Stufenart = (typeof MIT_STUFEN)[number];
+const hatStufen = (art: Uebungsart): art is Stufenart =>
+  (MIT_STUFEN as readonly Uebungsart[]).includes(art);
+
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
-function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstellung[] {
+function erzeuge(
+  art: Uebungsart,
+  stellungen: readonly Buchstellung[],
+  stufe: Trainerstufe | null,
+): Darstellung[] {
   const n = ANZAHL[art];
   switch (art) {
     case "felder":
-      return feldrunde(n, ZUFALL).map((a) => (r) => <Feldaufgabe aufgabe={a} runde={r} />);
+      return feldrunde(n, ZUFALL, stufe).map((a) => (r) => <Feldaufgabe aufgabe={a} runde={r} />);
     case "notieren":
       return zugrunde(stellungen, n, false, ZUFALL).map((a) => (r) => (
         <Notieraufgabe aufgabe={a} runde={r} />
@@ -102,7 +122,7 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
         <Gangartaufgabe aufgabe={a} runde={r} />
       ));
     case "zielbilanz":
-      return zielbilanzrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+      return zielbilanzrunde(stellungen, n, ZUFALL, stufe).map((a) => (r) => (
         <Zielbilanzaufgabe aufgabe={a} runde={r} />
       ));
     case "faktoren":
@@ -110,11 +130,11 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
         <Faktorenaufgabe aufgabe={a} runde={r} />
       ));
     case "denkroutine":
-      return denkrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+      return denkrunde(stellungen, n, ZUFALL, stufe).map((a) => (r) => (
         <Denkroutineaufgabe aufgabe={a} runde={r} />
       ));
     default:
-      return planrunde(art, stellungen, n);
+      return planrunde(art, stellungen, n, stufe);
   }
 }
 
@@ -123,15 +143,17 @@ function planrunde(
   art: "planfragen" | "lap" | "wettrennen",
   stellungen: readonly Buchstellung[],
   n: number,
+  stufe: Trainerstufe | null,
 ): Darstellung[] {
   switch (art) {
     case "planfragen":
-      return auswahl(planaufgaben(stellungen, ZUFALL), n, ZUFALL).map((a) => (r) => (
+      return auswahlJeStellung(planaufgaben(stellungen, ZUFALL), n, ZUFALL).map((a) => (r) => (
         <Planfragenaufgabe aufgabe={a} runde={r} />
       ));
     case "lap":
-      return auswahl(
+      return rundeNachStufe(
         stellungen.flatMap((b) => lapaufgabe(b) ?? []),
+        stufe,
         n,
         ZUFALL,
       ).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />);
@@ -142,6 +164,78 @@ function planrunde(
         ZUFALL,
       ).map((a) => (r) => <Rennaufgabe aufgabe={a} runde={r} />);
   }
+}
+
+/**
+ * Die Stufe über der Runde: gemischt, leicht, mittel, schwer. Ein Wechsel startet eine neue Runde.
+ * Der Satz darunter sagt, was die Stufe misst (Punkt B7 des Nebenchats).
+ */
+function Stufenzeile({
+  art,
+  stufe,
+  setze,
+}: {
+  art: Stufenart;
+  stufe: Trainerstufe | null;
+  setze: (s: Trainerstufe | null) => void;
+}) {
+  return (
+    <div className="stufenzeile" data-testid="stufenzeile">
+      <fieldset className="zahlwahl">
+        <legend>{t("taktiktrainer.stufeWahl")}</legend>
+        {[null, ...TRAINERSTUFEN].map((s) => (
+          <button
+            key={s ?? "gemischt"}
+            type="button"
+            className="chip"
+            aria-pressed={stufe === s}
+            onClick={() => setze(s)}
+          >
+            {t(`roentgentrainer.stufe.${s ?? "gemischt"}`)}
+          </button>
+        ))}
+      </fieldset>
+      <p className="hinweis">{t(`stufen.text.${art}`)}</p>
+    </div>
+  );
+}
+
+/**
+ * Fällige LAP-Aufgaben der Planbilanz-Übung als eigene Runde (Punkt B4 des Nebenchats); ohne
+ * fällige Aufgaben steht nichts da.
+ */
+function LapWiederholung({
+  stellungen,
+  kennung,
+  auswahl,
+}: {
+  stellungen: readonly Buchstellung[];
+  kennung: TrainerKennung;
+  /** Die Auswahl der Übungsarten; sie steht nur da, solange keine Wiederholung läuft. */
+  auswahl: React.ReactNode;
+}) {
+  const faellig = useFaelligeAufgaben("planbilanz");
+  const vorhanden = useMemo(() => lapaufgabenAus(stellungen, faellig), [stellungen, faellig]);
+  const [laeuft, setzeLaeuft] = useState(false);
+  // Während der Wiederholung keine Auswahl darunter: Ein Tipp dort brach die Runde sonst ohne
+  // Rückfrage ab (Prüfung beim Übernehmen, 31.10.2026).
+  if (!laeuft)
+    return (
+      <>
+        <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(true)} />
+        {auswahl}
+      </>
+    );
+  return (
+    <Rundenablauf
+      kennung={kennung}
+      erzeuge={() =>
+        vorhanden.slice(0, ANZAHL.lap).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />)
+      }
+      nochmal={() => setzeLaeuft(false)}
+      zurAuswahl={() => setzeLaeuft(false)}
+    />
+  );
 }
 
 /** Auswahl der Übungsart. */
@@ -176,17 +270,28 @@ function Inhalt({
   const arten = UEBUNGSARTEN[kennung] ?? [];
   const einzige = arten.length === 1 ? (arten[0] ?? null) : null;
   const [art, setzeArt] = useState<Uebungsart | null>(einzige);
+  const [stufe, setzeStufe] = useState<Trainerstufe | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
   if (arten.length === 0) return <p className="hinweis">{t("training.folgt")}</p>;
-  if (art === null) return <Auswahl arten={arten} waehle={setzeArt} />;
+  if (art === null) {
+    const auswahl = <Auswahl arten={arten} waehle={setzeArt} />;
+    return kennung === "planbilanz" ? (
+      <LapWiederholung stellungen={stellungen} kennung={kennung} auswahl={auswahl} />
+    ) : (
+      auswahl
+    );
+  }
   return (
-    <Rundenablauf
-      key={`${art}-${durchlauf}`}
-      kennung={kennung}
-      erzeuge={() => erzeuge(art, stellungen)}
-      nochmal={() => setzeDurchlauf(durchlauf + 1)}
-      zurAuswahl={einzige ? null : () => setzeArt(null)}
-    />
+    <>
+      {hatStufen(art) && <Stufenzeile art={art} stufe={stufe} setze={setzeStufe} />}
+      <Rundenablauf
+        key={`${art}-${stufe}-${durchlauf}`}
+        kennung={kennung}
+        erzeuge={() => erzeuge(art, stellungen, stufe)}
+        nochmal={() => setzeDurchlauf(durchlauf + 1)}
+        zurAuswahl={einzige ? null : () => setzeArt(null)}
+      />
+    </>
   );
 }
 

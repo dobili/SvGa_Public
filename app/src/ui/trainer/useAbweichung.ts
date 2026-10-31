@@ -32,7 +32,7 @@ export type Rechenstand<T> =
   | { readonly art: "fehler"; readonly meldung: string };
 
 /** Eine Rechnung der Engine für einen Schlüssel; ein neuer Schlüssel verwirft die alte. */
-function useRechnung<T>(
+export function useRechnung<T>(
   schluessel: string | null,
   rechne: () => Promise<T>,
 ): Rechenstand<T> | null {
@@ -70,7 +70,7 @@ const REAKTION_AB = 0.5;
 const FOLGE_HALBZUEGE = 6;
 
 /** Die Züge einer Engine-Variante (UCI) als Kurznotation, höchstens FOLGE_HALBZUEGE. */
-function alsFolge(fen: string, ucis: readonly string[]): string[] {
+export function alsFolge(fen: string, ucis: readonly string[]): string[] {
   const folge: string[] = [];
   let stand = fen;
   for (const uci of ucis.slice(0, FOLGE_HALBZUEGE)) {

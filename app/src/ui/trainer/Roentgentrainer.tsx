@@ -23,6 +23,8 @@ import {
   type Schrittvergleich,
 } from "../../training/roentgentrainer";
 import { gegnerdrohungen, roentgenbegruendungen } from "../../training/roentgenbegruendung";
+import { roentgenkennung } from "../../training/wiederholbar";
+import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -88,7 +90,13 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
   const pruefe = () => {
     const neu = [...ergebnisse, vergleicheSchritt(loesung, eingabe.pfeile)];
     setzeErgebnisse(neu);
-    if (neu.length === SCHRITTE.length) runde.beantworte(neu.every((v) => v.richtig));
+    if (neu.length === SCHRITTE.length)
+      antworteMitKarte(
+        runde,
+        "roentgen",
+        roentgenkennung(aufgabe),
+        neu.every((v) => v.richtig),
+      );
   };
   const naechster = () => {
     eingabe.leere();

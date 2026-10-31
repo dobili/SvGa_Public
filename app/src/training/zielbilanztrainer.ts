@@ -12,9 +12,11 @@
  */
 import type { Color } from "chessops/types";
 import { profil } from "../analyse/stellungsprofil";
+import { geeignet } from "./eignung";
+import { rundeNachStufe, zielbilanzstufe, type Trainerstufe } from "./stufen";
 import { zielbilanz, type Wertung, type Zielbilanz } from "../schach/zielbilanz";
 import type { Buchstellung } from "./buchstellungen";
-import { mische, type Zufall } from "./zufall";
+import type { Zufall } from "./zufall";
 
 /** Die drei Ziele in Buchreihenfolge. */
 export const ZIELE = ["zentrum", "entwicklung", "koenig"] as const;
@@ -38,6 +40,8 @@ export interface Zielbilanzaufgabe {
   readonly nummer: string;
   readonly fen: string;
   readonly loesung: Tabelle;
+  /** Stufe nach der Zahl der „teils“ in der Lösung (training/stufen.ts). */
+  readonly stufe: Trainerstufe;
 }
 
 function zeileAus(b: Zielbilanz): Record<Ziel, Wertung> {
@@ -63,17 +67,17 @@ export function zielbilanzaufgabe(buch: Buchstellung): Zielbilanzaufgabe | null 
   const zug = zugnummer(stellung.fen);
   if (!KAPITEL.has(buch.kapitel) || zug < ERSTER_ZUG || zug > LETZTER_ZUG) return null;
   if (!stellung.brett.kingOf("white") || !stellung.brett.kingOf("black")) return null;
+  // Eignung je Trainer (training/eignung.ts): kein Schach, kein Ende, kein laufender Abtausch.
+  if (!geeignet("zielbilanz", stellung)) return null;
   const karte = profil(stellung).angriffskarte;
   const [weiss, schwarz] = SEITEN.map((farbe) =>
     zielbilanz(stellung.brett, karte, farbe, stellung.amZug),
   );
   if (!weiss || !schwarz) return null;
   if (weiss.zentrum.angegriffen.length > 0 || schwarz.zentrum.angegriffen.length > 0) return null;
-  return {
-    nummer: buch.nummer,
-    fen: stellung.fen,
-    loesung: { white: zeileAus(weiss), black: zeileAus(schwarz) },
-  };
+  const loesung = { white: zeileAus(weiss), black: zeileAus(schwarz) };
+  const teils = SEITEN.flatMap((f) => ZIELE.map((z) => loesung[f][z])).filter((w) => w === "teils");
+  return { nummer: buch.nummer, fen: stellung.fen, loesung, stufe: zielbilanzstufe(teils.length) };
 }
 
 /** Eine Runde aus zufälligen passenden Stellungen. */
@@ -81,9 +85,10 @@ export function zielbilanzrunde(
   stellungen: readonly Buchstellung[],
   anzahl: number,
   zufall: Zufall,
+  stufe: Trainerstufe | null = null,
 ): Zielbilanzaufgabe[] {
   const passende = stellungen.flatMap((b) => zielbilanzaufgabe(b) ?? []);
-  return mische(passende, zufall).slice(0, anzahl);
+  return rundeNachStufe(passende, stufe, anzahl, zufall);
 }
 
 /** Die Felder der Tabelle, in denen die Antwort von der Prüfung abweicht. */

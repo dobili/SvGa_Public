@@ -4,6 +4,66 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.24: Trainer-Feinschliff 2 übernommen und nachgebessert (Opus)
+
+- Zweig `neben-trainer-feinschliff-2` (8 Commits auf dem schon übernommenen ersten Zweig)
+  zusammengeführt; Konflikte nur in den Unterlagen. Die acht abgelösten Texte waren schon in
+  0.3.16 gelöscht. Vor dem Übernehmen alle Umsetzungen unabhängig geprüft; behoben:
+  - **LAP-Wiederholung:** Lief sie, stand die Auswahl der Übungsarten darunter; ein Tipp dort
+    brach die Runde ohne Rückfrage ab. Jetzt ist die Auswahl während der Wiederholung weg.
+  - **Bilanz gegen Engine:** Die Zielbilanz galt nur bei genau gleichen Zielpunkten als
+    ausgeglichen, also fast nie; deshalb stand in Eröffnungsstellungen fast immer „Die Engine
+    sieht es anders“. Jetzt erst ab einer vollen Wertungsstufe (3 Punkte) eine Seite vorn, und
+    hält nur die Engine die Stellung für ausgeglichen, sagt ein ruhiger Satz, dass die Vorteile
+    der Bilanz langfristig sind.
+  - **Motiv Abzug im Zähltrainer:** Der Text sagte auch bei verdeckten Verteidigern „greift an“,
+    und Abb. 1.6 (Dame d1 hinter Läufer d3, das Lehrbeispiel des Buches) galt als schwer. Jetzt
+    eigener Satz „deckt mit“, und nur ein verdeckter Angreifer macht die Aufgabe schwer. Ein Bauer
+    vorn ist nur auf derselben Linie kein Abzug; auf Diagonalen und Reihen öffnet sein Zug die Bahn.
+  - **Denkroutine:** Bei Matt stand „97,8 Bauern“; jetzt vier Sätze für die Mattfälle (verpasst,
+    schneller, droht, unvermeidlich).
+  - **Fällige Wiederholungen:** Karten, deren Aufgabe es nicht mehr gibt (Zählen, Röntgen, LAP,
+    Struktur), zählen in der Übersicht nicht mehr mit (Liste je Trainer in
+    `ui/komponenten/training/vorhandeneAufgaben.ts`, ein späterer Trainer trägt eine Zeile ein).
+  - **Sprachangebot:** wie das Rundgang-Angebot nur im Buch und nicht nach einem Sprung, damit
+    es nicht über einer verlinkten Abbildung liegt.
+  - **Zahlenleiste:** liest die Eingabe für Bildschirmleser vor (der Fokus bleibt auf der Taste).
+  - Kleinigkeiten: Rochade in den Gangarten mit eigenem Grund statt „So zieht die Figur nicht“;
+    Liste der fälligen Aufgaben stabil (kein Neuberechnen bei jedem Zeichnen); Abstände ohne
+    nackte Zahlen; ein verlorener Kommentar; der langsame Röntgen-Test hat eine längere Frist.
+- Bewusst so gelassen: Leser ohne gewählte Sprache auf einem nicht deutschen Gerät sehen das
+  Angebot nach dem Update einmal (sinnvoll, sie wurden nie gefragt). Die 13 Taktikaufgaben, in
+  denen die Seite am Zug im Schach steht, bleiben (im Schach zu antworten ist eine eigene Übung).
+- Auf die Arbeitsliste: Funktionen über 40 Zeilen (`Sprachangebot` 62, `ZaehlBereich` 59,
+  `RoentgenBereich` 46); die Stufenzeile nutzt Texte des Röntgen- und Taktiktrainers und bleibt
+  beim Wechsel der Übungsart stehen; Eigenschaft `nurBauern` in `eignung.ts` ist ungenutzt.
+- Vorschläge für gesperrte Bereiche weitergegeben: Stufen-Erklärung im Taktiktrainer an den
+  Serien-Chat der Welle 2; Begründung und Fortsetzung nach Fehlern in Taktik und „Zug erraten“
+  auf die Arbeitsliste.
+
+## 31.10.2026 – Nebenchat: Trainer-Feinschliff 2 (Zweig neben-trainer-feinschliff-2)
+
+Der Autor hat alle Vorschläge freigegeben; Entscheidungen im Einzelnen traf der Nebenchat und legt
+sie zur Durchsicht vor (N2015 bis N2023):
+
+- **Eignungsprüfung je Trainer** (`training/eignung.ts`): Eigenschaften einer Stellung (ohne
+  Regeln, Schach, Matt oder Patt, sofortiger Material- oder Figurengewinn, hängende oder
+  gefesselte eigene Figur, nur Bauern, kaum Züge) und je Trainer eine Ausschlussliste mit Grund
+  und Buchbezug. Messlauf `eignung.messung.ts`, Vollprüfung in `eignung.test.ts`.
+- **Denkroutine mit Schach:** erlaubt (Abb. 12.3); ohne Schach bleibt die Schwelle von acht Zügen.
+- **Begründungen** bei den Gangarten (Grund je Feld) und im Urteil der Denkroutine.
+- **Engine bei den Bilanzen:** Balken und Fortsetzung nach der Antwort; Vergleich Bilanz gegen
+  Engine (unter 0,5 ausgeglichen; Zielbilanz nach Zielpunkten, Faktorenbilanz nach Mehrheit).
+- **Stufen** in Zielbilanz, LAP, Denkroutine und Feld finden (`training/stufen.ts`); fehlt eine
+  Stufe, füllt die nächstliegende auf.
+- **Wiederholung** auch für Zählen, Röntgen und LAP über feste Kennungen
+  (`training/wiederholbar.ts`); nicht für den Abweichungsmodus. Speicherformat unverändert.
+- **Zählen:** Motiv Abzug (verdeckte Langschrittfigur hinter eigener Nicht-Bauern-Figur).
+- **Einheitliche Auflösung:** Urteil mit Grund, Begründung, Durchspielen mit Balken.
+- **Zahlenleiste** statt Handytastatur beim Öffnen einer Abbildung über die Nummer.
+- **Sprachangebot beim ersten Start** (Wunsch des Autors, 31.10.2026): einmal je Gerät, bei
+  nicht deutscher Gerätesprache, zweisprachig mit Beta-Hinweis; neuer Merker „sprachangebot“.
+
 ## 31.10.2026 – Version 0.3.23: Gamifizierung P7 Extras übernommen, Einstieg für Welle 2 (Opus)
 
 - Zweig `gami-p7-extras` (Welle 1) geprüft und zusammengeführt; Konflikte nur in Listen

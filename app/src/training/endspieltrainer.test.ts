@@ -20,7 +20,8 @@ function aufgabe(
 ): Endspielaufgabe {
   return {
     id: `endspiel-b-${nummer}`,
-    fen: "8/8/8/8/8/8/8/K6k w - - 0 1",
+    // Mit Bauer: Nur Könige wären schon remis und fielen aus der Eignungsprüfung (Nebenchat).
+    fen: "8/8/8/8/8/8/P7/K6k w - - 0 1",
     leser: "w",
     ziel,
     thema,

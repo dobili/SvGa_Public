@@ -12,6 +12,7 @@ import { useNavigation } from "../../../app/navigationsKontext";
 import { findeAbbildung, type Fundergebnis } from "../../../daten/finde";
 import { ladeIndex } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
+import { Zahlenleiste } from "../bausteine/Zahlenleiste";
 
 /** Alle Abbildungsnummern des Buches in Buchreihenfolge. */
 async function alleNummern(): Promise<string[]> {
@@ -112,7 +113,7 @@ export function Nummernfeld({ beiSchliessen }: { beiSchliessen: () => void }) {
         <input
           id="sprungnummer"
           type="text"
-          inputMode="decimal"
+          inputMode="none"
           autoComplete="off"
           // Das Feld erscheint auf Wunsch des Lesers; der Fokus spart ihm den zweiten Tipp.
           autoFocus
@@ -127,6 +128,8 @@ export function Nummernfeld({ beiSchliessen }: { beiSchliessen: () => void }) {
           {t("abbildung.sprungSchliessen")}
         </button>
       </div>
+      {/* Zahlenleiste statt Handytastatur (Punkt A3 des Nebenchats). */}
+      <Zahlenleiste text={eingabe} setze={setzeEingabe} />
       <Fundmeldung fund={fund} oeffne={oeffne} />
     </form>
   );

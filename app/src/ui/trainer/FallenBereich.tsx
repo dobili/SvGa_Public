@@ -37,7 +37,7 @@ export function FallenBereich() {
     return (
       <div className="trainerrunde trainerwahl" data-testid="falle-wahl" data-tour="trainer-wahl">
         <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(vorhanden)} />
-        <Stufenwahl stufe={stufe} setze={setzeStufe} />
+        <Stufenwahl stufe={stufe} setze={setzeStufe} erklaerung={t("stufen.text.geeicht")} />
         <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft([])}>
           <Knopfsymbol art="starten" />
           {t("taktiktrainer.starten")}

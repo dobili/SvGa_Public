@@ -22,6 +22,8 @@ import {
   type Haengeaufgabe,
   type Zaehlaufgabe,
 } from "../../training/zaehltrainer";
+import { bilanzkennung, haengekennung } from "../../training/wiederholbar";
+import { antworteMitKarte } from "./kartenantwort";
 import { abgleichsfelder, umschalten } from "./abgleich";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
@@ -190,11 +192,13 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
     : [{ typ: "feld", farbe: "rot", feld: aufgabe.feld }];
   const waehle = (wert: number) => {
     setzeBilanz(wert);
-    if (!genau) runde.beantworte(pruefeBilanz(aufgabe, wert));
+    if (!genau)
+      antworteMitKarte(runde, "zaehlen", bilanzkennung(aufgabe), pruefeBilanz(aufgabe, wert));
   };
   const pruefeGenau = () => {
     if (angreifer === null || verteidiger === null || bilanz === null) return;
-    runde.beantworte(pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig);
+    const richtig = pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig;
+    antworteMitKarte(runde, "zaehlen", bilanzkennung(aufgabe), richtig);
   };
   return (
     <>
@@ -247,12 +251,12 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
 /** Nach der Antwort: die Motive der Aufgabe (Fesselung, Batterie), mit Buchbezug. */
 function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
   const stellung = useMemo(() => stellungAusFen(aufgabe.fen), [aufgabe.fen]);
-  const namen = aufgabe.gefesselt.flatMap((feld) => {
+  const name = (feld: string): string => {
     const quadrat = feldAusName(feld);
-    if (quadrat === null || !stellung.ok) return [];
-    const figur = stellung.wert.brett.get(quadrat);
-    return figur ? [figurenname({ feld: quadrat, figur })] : [];
-  });
+    const figur = quadrat !== null && stellung.ok ? stellung.wert.brett.get(quadrat) : undefined;
+    return quadrat !== null && figur ? figurenname({ feld: quadrat, figur }) : feld;
+  };
+  const namen = aufgabe.gefesselt.map(name);
   return (
     <>
       {namen.length > 0 && (
@@ -263,6 +267,14 @@ function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
       {aufgabe.motive.includes("batterie") && (
         <p className="hinweis">{t("zaehltrainer.batterie")}</p>
       )}
+      {aufgabe.abzug.map((p) => (
+        <p key={`${p.hinten}-${p.vorn}`} className="hinweis" data-testid="zaehl-abzug">
+          {t(p.deckt ? "zaehltrainer.abzugDeckung" : "zaehltrainer.abzug", {
+            hinten: name(p.hinten),
+            vorn: name(p.vorn),
+          })}
+        </p>
+      ))}
     </>
   );
 }
@@ -324,7 +336,9 @@ export function Haengeaufgabe({ aufgabe, runde }: { aufgabe: Haengeaufgabe; rund
         <button
           type="button"
           className="knopf-haupt"
-          onClick={() => runde.beantworte(vergleich.richtig)}
+          onClick={() =>
+            antworteMitKarte(runde, "zaehlen", haengekennung(aufgabe), vergleich.richtig)
+          }
         >
           {getippt.length === 0 ? t("zaehltrainer.keineHaengt") : t("trainer.pruefen")}
         </button>

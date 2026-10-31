@@ -17,6 +17,7 @@ import type { Fallenaufgabe } from "../daten/trainerdaten";
 import { FIGURENWERT, stellungAusFen } from "../schach/stellung";
 import { fenNachZuegen } from "../schach/weiterspielen";
 import { mische, type Zufall } from "./zufall";
+import { fenGeeignet } from "./eignung";
 
 export type Fallenantwort = Fallenaufgabe["antwort"];
 
@@ -40,7 +41,8 @@ export function fallenrunde(
   const abstand = (a: Fallenaufgabe) => (stufe === null ? 0 : Math.abs(a.schwierigkeit - stufe));
   const nahe = (art: Fallenantwort) =>
     mische(
-      aufgaben.filter((a) => a.antwort === art),
+      // Eignung je Trainer (training/eignung.ts): kein Schach, kein Ende.
+      aufgaben.filter((a) => a.antwort === art && fenGeeignet("falle", a.fen)),
       zufall,
     ).sort((a, b) => abstand(a) - abstand(b));
   const haelfte = Math.ceil(anzahl / 2);

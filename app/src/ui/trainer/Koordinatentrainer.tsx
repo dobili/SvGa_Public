@@ -22,6 +22,7 @@ import {
 import { pruefeFelder } from "../../training/zaehltrainer";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { gangartbegruendungen } from "../../training/gangartbegruendung";
 import { Notationstastatur } from "./Notationstastatur";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
@@ -272,8 +273,35 @@ export function Gangartaufgabe({ aufgabe, runde }: { aufgabe: Gangartaufgabe; ru
           })}
         </Antwortmeldung>
       )}
+      {beantwortet && (
+        <Gangartgruende aufgabe={aufgabe} fehlend={vergleich.fehlend} falsch={vergleich.falsch} />
+      )}
       {beantwortet && <p className="hinweis">{t("trainer.legendeFelder")}</p>}
     </>
+  );
+}
+
+/** Nach dem Prüfen: je übersehenem und zu viel getipptem Feld der Grund (Regel L, Nebenchat). */
+function Gangartgruende({
+  aufgabe,
+  fehlend,
+  falsch,
+}: {
+  aufgabe: Gangartaufgabe;
+  fehlend: readonly string[];
+  falsch: readonly string[];
+}) {
+  const saetze = useMemo(
+    () => gangartbegruendungen(aufgabe.fen, aufgabe.feld, fehlend, falsch),
+    [aufgabe, fehlend, falsch],
+  );
+  if (saetze.length === 0) return null;
+  return (
+    <section className="karte" data-testid="gangart-begruendung">
+      {saetze.map((satz) => (
+        <p key={satz}>{satz}</p>
+      ))}
+    </section>
   );
 }
 

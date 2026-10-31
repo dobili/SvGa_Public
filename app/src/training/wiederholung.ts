@@ -51,11 +51,20 @@ export function uebungAusKarte(kennung: string): string | null {
 /**
  * Trainer, deren Aufgaben in die Wiederholung kommen (Empfehlung U9, umgesetzt in 0.2.47; seit
  * 0.2.90 auch Strukturerkenner und Endspieltrainer, Pflichtenheft 7): Ihre Aufgaben haben feste
- * Kennungen. Zähltrainer, Röntgen und Koordinaten erzeugen ihre Aufgaben zufällig; dort ergibt
- * eine Wiederholung keinen Sinn. Das Speicherformat bleibt gleich: Karten sind nach Kennung
- * abgelegt („struktur:…“, „endspiel:…“).
+ * Kennungen. Seit dem Nebenchat (31.10.2026, Punkt B4) auch Zähltrainer, Röntgen-Trainer und die
+ * LAP-Übung der Planbilanz: Ihre Aufgaben bekommen feste Kennungen aus Abbildung und Feld
+ * (training/wiederholbar.ts). Koordinaten bleiben draußen (zufällige Felder). Das Speicherformat
+ * bleibt gleich: Karten sind nach Kennung abgelegt („struktur:…“, „zaehlen:bilanz-1.26-d4“).
  */
-export const WIEDERHOLTE_TRAINER = ["taktik", "falle", "struktur", "endspiel"] as const;
+export const WIEDERHOLTE_TRAINER = [
+  "taktik",
+  "falle",
+  "struktur",
+  "endspiel",
+  "zaehlen",
+  "roentgen",
+  "planbilanz",
+] as const;
 export type WiederholterTrainer = (typeof WIEDERHOLTE_TRAINER)[number];
 
 /** Kennung der Karte zu einer Trainer-Aufgabe („taktik:taktik-b-7.6“). */

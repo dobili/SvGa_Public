@@ -16,7 +16,9 @@ import {
   DENKZEIT_S,
   geloest,
   pruefeKandidat,
+  VERLUST_GRENZE,
   type Denkaufgabe,
+  type Denkvergleich,
   type Kandidatpruefung,
 } from "../../training/denkroutinetrainer";
 import { Denkeingabe } from "./Denkeingabe";
@@ -122,6 +124,41 @@ function Vergleich({
 }
 
 /**
+ * Der Grund des Urteils: Wie weit liegt der bessere eigene Kandidat hinter dem Zug der Engine?
+ * Gelöst ist bis 0,5 Bauern (training/denkroutinetrainer.ts, geloest).
+ */
+function urteilssatz(v: Denkvergleich): string {
+  const bester = Math.max(...v.kandidaten.map((k) => k.wert));
+  const abstand = Math.max(0, v.besterWert - bester);
+  if (abstand <= VERLUST_GRENZE) return t("denk.urteilGut");
+  const zug = de(v.besterZug);
+  // Matt ist kein Abstand in Bauern (Werte nahe 100): eigener Satz statt „97,8 Bauern“, seit
+  // Stellungen im Schach erlaubt sind häufiger (Prüfung beim Übernehmen, 31.10.2026).
+  const matt = mattfall(v.besterWert, bester);
+  if (matt) return t(matt, { zug });
+  return t("denk.urteilAbstand", { abstand: zahlText(abstand, 1), zug });
+}
+
+/**
+ * Welcher Satz für einen Mattfall (Schlüssel)? Beide Werte aus Sicht der Seite am Zug, Matt nahe ±100.
+ * Beispiel: Engine 98 (Matt in 2), bester Kandidat 1,5 → verpasst; beide matt → schneller; sonst null.
+ */
+function mattfall(
+  engine: number,
+  bester: number,
+):
+  | "denk.urteilMattLaenger"
+  | "denk.urteilMattVerpasst"
+  | "denk.urteilMattUnvermeidlich"
+  | "denk.urteilMattDroht"
+  | null {
+  if (engine >= MATT_AB)
+    return bester >= MATT_AB ? "denk.urteilMattLaenger" : "denk.urteilMattVerpasst";
+  if (engine <= -MATT_AB) return "denk.urteilMattUnvermeidlich";
+  return bester <= -MATT_AB ? "denk.urteilMattDroht" : null;
+}
+
+/**
  * Eine Aufgabe des Denkroutine-Trainers (Kapitel 12): eine Minute denken, dann zwei Kandidaten mit
  * der stärksten Antwort ziehen und mit der Engine vergleichen.
  */
@@ -191,8 +228,14 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
       {pruefungen && !vollstaendig && (
         <p className="meldung schlecht">{t("denk.unvollstaendig")}</p>
       )}
+      {/* Einheitliche Reihenfolge (Punkt B6 des Nebenchats): Urteil mit Grund, dann der Vergleich
+          und zuletzt das Durchspielen mit Balken. */}
+      {beantwortet && (
+        <Antwortmeldung richtig={runde.ergebnis === true}>
+          {stand.art === "fertig" && vollstaendig ? urteilssatz(stand.vergleich) : undefined}
+        </Antwortmeldung>
+      )}
       <Vergleich stand={stand} pruefungen={pruefungen ?? []} fen={aufgabe.fen} />
-      {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
     </>
   );
 }

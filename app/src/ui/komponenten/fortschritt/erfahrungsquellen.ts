@@ -11,6 +11,7 @@
  */
 import type { Nutzerdaten } from "../../../speicher/format";
 import { PUNKTE_JE_ZIEL } from "../../../training/ziele";
+import { erledigteAuftraege, PUNKTE_JE_AUFTRAG } from "../../../training/wochenauftraege";
 import { erreichteWochen } from "../../../training/wochenziel";
 import { besiegteRivalen } from "../../../training/rivalen";
 
@@ -32,5 +33,10 @@ export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
     kennung: "duelleGewonnen",
     gewicht: PUNKTE_JE_RIVALE,
     zaehle: (d) => besiegteRivalen(d).length,
+  },
+  {
+    kennung: "auftraege",
+    gewicht: PUNKTE_JE_AUFTRAG,
+    zaehle: (d) => erledigteAuftraege(d.verdient),
   },
 ];

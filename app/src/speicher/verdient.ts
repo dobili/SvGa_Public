@@ -6,7 +6,8 @@
  * (Merker „ringeGefeiert“, „abzeichenGefeiert“). Monatsrückblick (P12) und Teilen (P9) brauchen
  * das Datum, und es soll in die Datensicherung. Deshalb schreiben beide Feiern zusätzlich hierher.
  * Schlüssel wie die Startanimation (ordenkunst/startorden.ts): „orden:<k>“, „abzeichen:<k>“,
- * „rekord:<k>“. Ein schon gesetztes Datum bleibt.
+ * „rekord:<k>“; dazu „woche:<Montag>“ (P4), „auftrag:<Montag>:<Stelle>“ (P6), „rivale:<bot>“ (P8).
+ * Ein schon gesetztes Datum bleibt.
  * Abhängigkeiten: speicher/gamifizierung.ts (Typ).
  */
 import type { Gamifizierungsdaten } from "./gamifizierung";

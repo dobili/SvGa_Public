@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.28**: dazu P6 Wochenaufträge (N2190–N2199). Welle 2 offen: nur P3 Meisterschaft. Arbeitschat „Profil neu“ (Zweig `profil-neu`) baut die Wahl des Autors: Orden C mit flacherem Glanzstück, Wertung W3 mit Klassisch als Schätzung, Rekorde R1.
+
 Stand: 31.10.2026 · **Version 0.3.27**: dazu P12 Monatsrückblick (N2210–N2219, Startkarte Rang 15, Motivnamen in den Themen). Offen in Welle 2: P3 Meisterschaft, P6 Wochenaufträge.
 
 Stand: 31.10.2026 · **Version 0.3.26** (Zweig `uebernahme-welle1`, Koordinierungs-Chat Opus): 0.3.24 auf main. Welle 2 übernommen: Serienmodus (0.3.25), eigene Ziele P13 und Rivalen P8 (0.3.26; N2200–N2209, N2230–N2239). Offen in Welle 2: P3 Meisterschaft, P6 Wochenaufträge, P12 Monatsrückblick. Entscheidungen des Autors über die Auswahlseite https://claude.ai/artifact/9PHmhvxbwmBpbwRPda1tXc (Orden, Wertung, Klassisch, Rekorde; Wahl im Speicher „wahl“ der Seite). **Nächster Schritt:** Wahl auslesen und umsetzen; übrige Welle-2-Berichte übernehmen; Wackler `ordenkunst.spec.ts` (inzwischen auch in Chromium) klären.

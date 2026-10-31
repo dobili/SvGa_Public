@@ -4,6 +4,39 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.28: Gamifizierung P6 Wochenaufträge übernommen (Opus)
+
+- Zweig `gami-p6-wochenauftraege` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den
+  gemeinsamen Listen (Abzeichen, Bilder, Erfahrungsquellen), Texten und Unterlagen. Die
+  Auftragsarten stehen als Liste `AUFTRAGSARTEN`; der Trainer-Auftrag wählt aus `TRAINER`.
+- Die Rückfrage, ob die Aufträge auch ohne Wochenziel erscheinen, ist mit 0.3.26 erledigt: Die
+  Wochenkarte zeigt ihre Abschnitte seitdem auch unter der Zielwahl.
+- Kommentar-Patch eingespielt: Das Feld `verdient` nennt jetzt alle Schlüssel der Pakete
+  („woche:“, „auftrag:“, „rivale:“).
+- Offen gelassen (Empfehlung): Erledigte Aufträge werden erst beim Anzeigen der Wochenkarte
+  gespeichert, spätestens beim Wochenwechsel; ein Feuerwerk beim Erledigen kann später über
+  `feiereffekteAn()` dazukommen.
+
+## 31.10.2026 – Gamifizierung P6 Wochenaufträge (Arbeitschat Welle 2, Opus)
+
+- **Aufträge als Liste:** `training/auftragsarten.ts` (`AUFTRAGSARTEN`), je Art eine Zeile mit
+  Kennung, was zählt (Art des Tagesprotokolls oder eigene Prüfung), wann passend mit Zielzahl,
+  Text, Knopf und Ziel des Knopfs. Ein neuer Trainer oder ein Werkzeug trägt eine Zeile ein. Der
+  Trainerauftrag wählt aus `TRAINER` unter den drei am längsten nicht gespielten; ausgenommen ist
+  nur die Fehlerdatenbank (meldet keine Runde, hat ihren eigenen Auftrag).
+- **Fest für die Woche:** Wahl mit `festerZufall`, Saat aus dem Montag; die Liste steht in
+  `wochen.auftraege` und ändert sich nicht durch neue Daten. Tauschen hat eine eigene Saat je
+  Stelle und ist je Stelle einmal möglich, nicht für erledigte.
+- **Fortschritt** nur aus der Woche des Montags (Tagesprotokoll, `summeIn`), bei Trainer, Bot und
+  Tagesaufgabe über eigene Prüfungen (letzte Runde des Trainers in der Woche, gewertete Siege der
+  Woche gegen Bots ab der Stufe, Tage mit Tagesaufgabe).
+- **Erledigte bleiben:** Schlüssel `auftrag:<Montag>:<Stelle>` im Feld `verdient` (Datum). Daraus
+  zählen die Erfahrung (15 je Auftrag, `ERFAHRUNGSQUELLEN`) und das Abzeichen „Acht Aufträge“
+  (bester Kalendermonat). Beim Wochenwechsel kommen Erledigte der alten Woche mit deren Sonntag
+  dazu, auch wenn die Karte seitdem nicht offen war. Kein neues Speicherfeld nötig.
+- Anzeige als Abschnitt der Wochenkarte (`WOCHENABSCHNITTE`, Rang 20). Wie alle Abschnitte
+  erscheint er erst, wenn ein Wochenziel gewählt ist.
+
 ## 31.10.2026 – Version 0.3.27: Gamifizierung P12 Monatsrückblick übernommen (Opus)
 
 - Zweig `gami-p12-rueckblick` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den Listen

@@ -1,0 +1,44 @@
+/*
+ * Abschnitt „Aufträge dieser Woche“ der Wochenkarte (Gamifizierung P6): je Auftrag eine Zeile mit
+ * Haken oder Stand, Satz und Knöpfen. Farben aus den Tokens von abstimmung.css.
+ */
+.auftraege {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.auftrag {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: calc(var(--raster) * 0.5) var(--raster);
+  align-items: start;
+}
+
+.auftrag-zeichen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.2em;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9em;
+}
+
+.auftrag-erledigt .auftrag-zeichen {
+  color: var(--gruen-text);
+}
+
+.auftrag-erledigt .auftrag-text {
+  color: var(--gruen-text);
+}
+
+.auftrag-text {
+  margin: 0;
+}
+
+.auftrag .knopfzeile {
+  grid-column: 2;
+}

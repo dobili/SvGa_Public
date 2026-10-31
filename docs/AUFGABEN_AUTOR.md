@@ -33,6 +33,47 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.28: Wochenaufträge (Arbeitschat, 31.10.2026)
+
+Neu in der Karte „Deine Woche“ oben im Buch (erscheint nach dem ersten Lerntag; erst ein
+Wochenziel wählen): der Abschnitt „Aufträge dieser Woche“ mit drei Aufträgen, fest von Montag bis
+Sonntag. Jeder zeigt „1 von 3“, hat einen Knopf, der direkt hinführt, und einmal „Tauschen“.
+Erledigt: Haken und „+15 Erfahrung“. Nicht Erledigtes verschwindet am Sonntag ohne Hinweis.
+Mögliche Aufträge: neue Abbildungen ansehen, Übungen lösen, eine Runde in einem Trainer, der lange
+nicht dran war, einen Bot eine Stufe über deinem stärksten besiegten schlagen, Warum-Fragen, ein
+Lernziel abhaken, fällige Karten wiederholen, einen Fehler eintragen, Partien spielen, die
+Tagesaufgabe an mehreren Tagen. Noch nicht auf der Testseite: Zweig `gami-p6-wochenauftraege`.
+
+- [ ] N2190. **Drei Aufträge:** Buch, Karte „Deine Woche“, Abschnitt „Aufträge dieser Woche“
+      über „Wann übst du?“. Drei Zeilen mit Satz, Stand „0 von …“ und Knopf. Klingen die Sätze
+      freundlich und freiwillig genug?
+- [ ] N2191. **Fest für die Woche:** App schließen und wieder öffnen, auch nach einer gelösten
+      Übung oder einer Partie: Es bleiben dieselben drei Aufträge. Erst am Montag kommen neue.
+- [ ] N2192. **Knopf führt hin:** Bei jedem Auftrag auf den Knopf tippen („Zur Abbildung“,
+      „Üben“, „Zum Trainer“, „Spielen“ usw.). Er öffnet genau die passende Stelle; beim Trainer
+      den genannten Trainer.
+- [ ] N2193. **Fortschritt zählt mit:** Einen Auftrag teilweise erledigen (etwa eine neue
+      Abbildung 30 Sekunden ansehen), zurück ins Buch: Der Stand steigt („1 von 10“). Was du vor
+      Montag getan hast, zählt nicht.
+- [ ] N2194. **Erledigt:** Einen Auftrag ganz erledigen. Die Zeile wird grün mit Haken und
+      „Erledigt · +15 Erfahrung“, die Knöpfe verschwinden. Im Profil steigen die
+      Erfahrungspunkte um 15.
+- [ ] N2195. **Tauschen:** Bei einem offenen Auftrag „Tauschen“. Es kommt ein anderer Auftrag,
+      der noch nicht in der Liste steht; an dieser Stelle gibt es danach kein „Tauschen“ mehr, an
+      den anderen schon. Erledigte lassen sich nicht tauschen. Genügt einmal je Auftrag?
+- [ ] N2196. **Bot besiegen:** Wenn der Auftrag „Besiege einen Bot der Stufe N“ kommt (sonst
+      tauschen, bis er kommt): „Bot wählen“ öffnet „Spielen“ mit einem Bot dieser Stufe, gewertet.
+      Nach einem Sieg gegen ihn steht der Haken. Passt die Stufe (eine über deinem stärksten
+      besiegten Bot)?
+- [ ] N2197. **Trainer lange nicht dran:** Der Auftrag „Spiele eine Runde im Trainer …“ nennt
+      einen Trainer, den du lange oder nie gespielt hast. Eine Runde dort zu Ende spielen, zurück
+      ins Buch: Haken.
+- [ ] N2198. **Abzeichen „Acht Aufträge“:** Profil › Abzeichen: neues Abzeichen (Raute mit 8)
+      „In einem Kalendermonat acht Wochenaufträge erledigt.“, grau bis zum achten Auftrag in einem
+      Monat. Gefällt Bild und Bedingung?
+- [ ] N2199. **Englisch:** Einstellungen › Sprache Englisch: Abschnitt „This week’s tasks“ mit
+      englischen Sätzen und Knöpfen, „Swap“ statt „Tauschen“. Alles verständlich?
+
 ### Neu in 0.3.27: Monatsrückblick (Arbeitschat, 31.10.2026)
 
 Am Anfang jedes Monats schaut die App ruhig auf den Vormonat zurück: Kalender mit deinen

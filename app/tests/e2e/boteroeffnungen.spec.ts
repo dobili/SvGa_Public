@@ -6,6 +6,13 @@
  */
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import {
+  oeffneEroeffnungswahl,
+  oeffneSpielen,
+  oeffneSpielseite,
+  schliessePartieEinstellen,
+  startknopf,
+} from "./spielenhilfen";
 
 /** So lange darf der erste Zug des Bots dauern (Engine im Browser). */
 const ENGINE_FRIST = 30_000;
@@ -14,8 +21,8 @@ test("Eigener Bot mit festen Eröffnungen: Editor, Vorrang im Spielfenster, Part
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("radio", { name: "Eigene Bots" }).click();
+  await oeffneSpielen(page);
+  await oeffneSpielseite(page, "eigene");
   const karte = page.getByTestId("eigene-gegner");
   await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Erna");
@@ -48,8 +55,8 @@ test("Eigener Bot mit festen Eröffnungen: Editor, Vorrang im Spielfenster, Part
   await expect(page.getByTestId("bot-beschreibung")).toContainText("Eröffnet gern: London-System.");
   await karte.getByRole("button", { name: "Gegner speichern" }).click();
   await page.getByRole("radio", { name: "Erna" }).click();
-  // Spielfenster: Die globale Wahl ist ausgegraut, der Haken gibt sie frei
-  await page.getByTestId("eroeffnung-klappe").locator("summary").first().click();
+  // Blatt „Partie einstellen“: Die globale Wahl ist ausgegraut, der Haken gibt sie frei
+  await oeffneEroeffnungswahl(page);
   const vorrang = page.getByTestId("bot-eroeffnung-vorrang");
   await expect(vorrang).toContainText("Erna hat feste Eröffnungen: London-System.");
   await expect(page.locator("#eroeffnung")).toBeDisabled();
@@ -59,8 +66,10 @@ test("Eigener Bot mit festen Eröffnungen: Editor, Vorrang im Spielfenster, Part
   await haken.uncheck();
   await expect(page.locator("#eroeffnung")).toBeDisabled();
   // Partie mit Schwarz: Der Bot folgt dem London-System
+  await page.getByRole("button", { name: "Zurück zu den Einstellungen" }).click();
   await page.getByRole("radio", { name: "Schwarz" }).click();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await schliessePartieEinstellen(page);
+  await startknopf(page).click();
   const zuege = page.getByTestId("partiezuege");
   await expect(zuege).toContainText("1. d4", { timeout: ENGINE_FRIST });
 });

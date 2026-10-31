@@ -7,6 +7,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { oeffneSpielen, spieleVorschlag, ungewertet } from "./spielenhilfen";
 
 /** Die Engine rechnet im Browser; der erste Start lädt die WASM-Datei. */
 const ENGINE_FRIST = 60_000;
@@ -28,9 +29,9 @@ async function schwereVerstoesse(page: Page): Promise<string[]> {
 
 test("Theoriezug: 1. e4 im Rückblick, Eröffnungen aufklappen", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await oeffneSpielen(page);
+  await ungewertet(page);
+  await spieleVorschlag(page);
   await ziehe(page, /^e2, Bauer/, "e4");
   await expect(page.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
     timeout: ENGINE_FRIST,

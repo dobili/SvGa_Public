@@ -6,6 +6,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneProfil, starteImBrowser } from "./hilfen";
+import { spieleVorschlag, vorschlagskarte } from "./spielenhilfen";
 
 test("Profil: Name und Porträt festlegen, in der Partie sichtbar", async ({ page }) => {
   await starteImBrowser(page);
@@ -31,7 +32,7 @@ test("Profil: Name und Porträt festlegen, in der Partie sichtbar", async ({ pag
     .getByRole("navigation", { name: "Hauptbereiche" })
     .getByRole("button", { name: "Spielen" })
     .click();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await spieleVorschlag(page);
   await expect(page.getByTestId("partie-spielername")).toHaveText("Dana");
 });
 
@@ -161,5 +162,5 @@ test("Profil: ohne gewertete Partie lädt die Wertungskarte zur ersten Partie ei
   await oeffneProfil(page);
   await expect(page.getByTestId("wertung-einladung")).toBeVisible();
   await page.getByTestId("wertung").getByRole("button", { name: "Partie spielen" }).click();
-  await expect(page.getByRole("button", { name: "Partie beginnen" })).toBeVisible();
+  await expect(vorschlagskarte(page).getByRole("button", { name: /^Spielen/ })).toBeVisible();
 });

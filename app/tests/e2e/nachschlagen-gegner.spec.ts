@@ -1,9 +1,10 @@
 /**
  * Oberflächentests zu den Wünschen des Autors vom 19.10.2026 (0.2.99): Steckbriefe und Werkzeuge
- * in Nachschlagen, Porträt für eigene Bots, Spielhilfen über „Partie beginnen“.
+ * in Nachschlagen, Porträt für eigene Bots, „Spielen“ in der Startleiste der Seite „Eigene Bots“.
  */
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { oeffneSpielen, oeffneSpielseite, startknopf } from "./spielenhilfen";
 
 test("Nachschlagen: Steckbriefe mit Fallencheck und Werkzeuge des Buches", async ({ page }) => {
   await starteImBrowser(page);
@@ -36,18 +37,13 @@ test("Nachschlagen: Steckbriefe mit Fallencheck und Werkzeuge des Buches", async
   await expect(page.getByRole("heading", { name: "Abb. 1.23" })).toBeVisible();
 });
 
-test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“", async ({ page }) => {
+test("Eigener Bot mit Porträt; „Spielen“ bleibt in der Startleiste im Bild", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  const hilfen = page.getByRole("checkbox", { name: /Gewertete Partie/ });
-  const beginnen = page.getByRole("button", { name: "Partie beginnen" });
-  // Seit 0.2.129 (DS40) klebt „Partie beginnen“ unten im Bild; an seinem Platz (ganz nach unten
-  // gescrollt) steht es unter den Einstellungen.
+  await oeffneSpielen(page);
+  // Seit „Spielen neu“ (J3) eine eigene Seite mit fester Startleiste (DS40).
+  await oeffneSpielseite(page, "eigene");
+  const beginnen = startknopf(page);
   await expect(beginnen).toBeInViewport();
-  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-  const [yHilfen, yBeginnen] = await Promise.all([hilfen.boundingBox(), beginnen.boundingBox()]);
-  expect(yHilfen?.y ?? 0).toBeLessThan(yBeginnen?.y ?? 0);
-  await page.getByRole("radio", { name: "Eigene Bots" }).click();
   await page.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Tante Erna");
   // Seit 0.2.140 eine Klappe mit derselben Porträtwahl wie im Profil (Auswählen, Selbst
@@ -75,8 +71,8 @@ test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“",
 
 test("Eigener Bot mit selbst gebautem Porträt (Baukasten, 0.2.140)", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("radio", { name: "Eigene Bots" }).click();
+  await oeffneSpielen(page);
+  await oeffneSpielseite(page, "eigene");
   await page.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Bauklotz");
   const klappe = page.getByTestId("portraetklappe");
@@ -92,8 +88,8 @@ test("Eigener Bot mit selbst gebautem Porträt (Baukasten, 0.2.140)", async ({ p
   );
   // Übersteht das Neuladen.
   await page.reload();
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("radio", { name: "Eigene Bots" }).click();
+  await oeffneSpielen(page);
+  await oeffneSpielseite(page, "eigene");
   await expect(page.getByRole("radio", { name: /Bauklotz/ }).locator("img")).toHaveAttribute(
     "src",
     /^data:image\/svg\+xml/,

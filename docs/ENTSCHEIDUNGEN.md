@@ -4,6 +4,46 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Spielen neu: Entwurf J3 „Schnell eine Partie“ (Arbeitschat, Zweig `gestaltung-spielen`)
+
+Ziel des Autors: „Spielen“ war zu technisch, zu textlastig und wirkte wie ein Formular; Zielgruppe
+Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. Gewählt: J3. Ergänzung des
+Autors (14:11): Stärke, Stil, Fehler und Flecken bleiben im alten Design; vorhandene Symbole
+weiter nutzen.
+
+- **Startseite** (`bildschirme/Spielen.tsx`): Partie läuft (`spielstart/LaufendeKarte.tsx`, kleines
+  SVG-Brett), „Schnell eine Partie“ (`Vorschlagskarte.tsx`), Rivalenkarte (unverändert), „Deine
+  Spielstärke“ (unverändert `fortschritt/LetzteSpielstaerke.tsx`: die Profilkacheln aus
+  `wertung/` zeigen die Wertung ohne Spanne und sind Auswahlknöpfe; die Karte unter Spielen braucht
+  Spanne, Maßstab und Hilfe), vier Kacheln, „Zuletzt gespielt“ (`ZuletztGespielt.tsx`). Die feste
+  Startleiste entfällt auf der Startseite.
+- **Vorschlag als reine Regel** (`spielstart/vorschlag.ts`, Tests): Quellen als Liste
+  `VORSCHLAGSQUELLEN` (zuerst „vorbelegt“, dann „passend“); passend heißt nächstliegend an der
+  Wertung des Lesers in der Zeitklasse (wie im Profil, mit Schätzung für Klassen ohne eigene
+  Partie), noch nicht besiegte zuerst, Suchspanne ±250, „etwa so stark“ bis ±100; ohne Wertung
+  Stufe 1 bis 2, schwächster zuerst. Neue Quellen (Rivale, Ziele) sind eine Zeile mehr.
+- **Unterseiten als Liste** (`spielstart/spielseiten.tsx`, `SPIELSEITEN`): Gegner aussuchen, Eigene
+  Stufe, Eigene Bots, Freie Partie; je eine eigene Ansicht über das Feld `seite` der Ansicht
+  „spielen“ (`app/stapel.ts`, eine Zeile; `app/App.tsx` reicht es weiter). Jede Unterseite hat
+  die feste Startleiste mit „Spielen“; ein Tipp auf die Leiste öffnet das Blatt.
+- **Blatt „Partie einstellen“** (`spielstart/Blatt.tsx`, natives modales `<dialog>`;
+  `PartieEinstellen.tsx`): Farbe, alle sieben Zeiten (plus „Ohne Uhr“ aus eigener Stellung),
+  Gewertet mit Hinweis, Spielhilfen, „Eröffnung ›“ im selben Blatt.
+- **Vorbelegung** (`spielstart/vorbelegung.ts`): öffnet die Startseite mit `seite: "vorbelegt"`;
+  der vorbelegte Bot steht dann auf „Schnell eine Partie“. Auf der Startseite ersetzt sie die
+  Ansicht, statt eine zweite zu stapeln.
+- **Gestrichen:** `gegner/GegnerWahl.tsx` und `gegner/gegnerkategorie.ts` (Schalter Engine/Mensch
+  und drei Kategorie-Kacheln; ersetzt durch Kacheln und Seiten), die Karte „Laufende Partie“ in
+  `partienliste/Partienliste.tsx`, zwölf nicht mehr genutzte Textschlüssel. Die Sprechblase lebt
+  in `spielstart/Sprechblase.tsx` weiter, neu mit Stil und „So stellt er sich vor“.
+- **Abweichungen vom Entwurf:** Eröffnungswahl als bisherige Auswahlliste statt Chips (Ergänzung
+  des Autors: vorhandene Bausteine); Kacheln ohne neue Symbole (Schieberegler, Stift am Menschen,
+  zwei Menschen wie in der alten Gegnerwahl); Ergebnis in „Zuletzt gespielt“ mit der vorhandenen
+  Ergebnismarke (Pokal, Händedruck, Kreuz mit „1–0“) statt „Sieg“/„Niederlage“ als Wort;
+  „Zuletzt gespielt“ nur für Partien gegen Bots, die es noch gibt (sonst keine Revanche möglich).
+- Speicherformat unverändert; nach dem Neuladen auf einer Unterseite zeigt die App die
+  Startseite, weil `app/stapelMerker.ts` (gesperrt) das Feld `seite` noch nicht liest.
+
 ## 31.10.2026 – Deine Extras neu: Entwurf E1 „Ankleide“ (Arbeitschat, Zweig `gestaltung-extras`)
 
 Ziel des Autors: Die Karte war zu technisch und wirkte wie ein Formular (graue Kreise, Knöpfe

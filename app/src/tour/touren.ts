@@ -281,10 +281,14 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   // die Tour.
   spielen: tour("tour.titel.spielen", [
     ziel("spielen-laufend", "tour.spielen.laufend"),
-    // Seit 0.2.139 steht „Deine Spielstärke“ wieder ganz oben über dem Gegner.
+    // Seit „Spielen neu“ (Entwurf J3, 31.10.2026): Startseite von oben nach unten, danach die
+    // Schritte der Unterseiten (Gegner, Eigene Stufe, Eigene Bots, Freie Partie) und des Blattes;
+    // was gerade fehlt, überspringt die Tour.
+    ziel("spielen-start", "tour.spielen.start"),
+    ziel("spielen-vorschlag", "spielenneu.tour.vorschlag"),
     ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
-    // Reihenfolge wie auf dem Bildschirm seit DS51 (0.2.131): Gegner, Einstellungen, Stellung.
-    // Zuerst der Schalter Engine/Mensch; im Modus Mensch fehlen die folgenden Schritte zum Bot.
+    ziel("spielen-kacheln", "spielenneu.tour.kacheln"),
+    ziel("spielen-zuletzt", "spielenneu.tour.zuletzt"),
     ziel("spielen-gegnerart", "tour.spielen.gegnerart"),
     ziel("spielen-gegner", "tour.spielen.gegner"),
     ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
@@ -293,7 +297,6 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-einstellungen", "tour.spielen.einstellungen"),
     ziel("spielen-hilfen", "tour.spielen.hilfen"),
     ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
-    ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
   ]),
   // Reihenfolge wie auf dem Bildschirm (Befund der Tourprüfung, 25.10.2026). Der Status gilt nur

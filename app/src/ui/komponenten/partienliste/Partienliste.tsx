@@ -1,5 +1,6 @@
 /**
- * Laufende Partie zum Fortsetzen und die letzten beendeten Partien (Bereich Spielen).
+ * Die beendeten Partien mit Filter und Sortierung (Profil, „Deine Partien“). Die laufende Partie
+ * zeigt seit „Spielen neu“ (J3) spielstart/LaufendeKarte.tsx.
  *
  * Rolle im Gesamtbild: Die laufende Partie übersteht das Schließen der App (Speicher Format 2);
  * hier geht es mit einem Tipp weiter. Beendete Partien öffnen den Partie-Bildschirm mit Ergebnis,
@@ -12,14 +13,10 @@
  * Papierkorb neben Filter und Sortieren, Partien antippen, „Ausgewählte löschen“.
  * Die Karte „Deine Spielstärke“ (LetzteSpielstaerke.tsx) steht unter Spielen.
  * Abhängigkeiten: Partiezeile, PartieLoeschen, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
- * engine/stufen.ts, Navigation, i18n.
+ * i18n.
  */
 import { useMemo, useState } from "react";
-import { useNavigation } from "../../../app/navigationsKontext";
-import { stufe } from "../../../engine/stufen";
-import { datumText, t } from "../../../i18n/sprache";
-import { gegnername } from "../../../engine/gegner";
-import type { Partie } from "../../../spiel/partie";
+import { t } from "../../../i18n/sprache";
 import { staerkeDerPartie } from "../../../spiel/wertung";
 import {
   OHNE_FILTER,
@@ -33,7 +30,7 @@ import { gegnerstaerke } from "../../../engine/botstaerke";
 import type { Partieeintrag } from "../../../speicher/partien";
 import { Partienfilterleiste } from "./Partienfilterleiste";
 import { Loeschleiste, LoeschmodusKnopf } from "./PartieLoeschen";
-import { Partiezeile, Zeitangabe } from "./Partiezeile";
+import { Partiezeile } from "./Partiezeile";
 import { PgnImport } from "./PgnImport";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 
@@ -41,48 +38,6 @@ import { Titelsymbol } from "../bausteine/Titelsymbol";
 const SICHTBAR = 10;
 /** Ab so vielen Partien erscheint der Filter; bei wenigen wäre er nur Ballast. */
 const FILTER_AB = 4;
-
-/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
-function zeile(partie: Partie): string {
-  const datum = datumText(new Date(partie.begonnen));
-  const zuege = Math.ceil(partie.zuege.length / 2);
-  const importiert = partie.einstellung.importiert;
-  if (importiert) return t("spielen.partiezeileImport", { datum, ...importiert, zuege });
-  const s = stufe(partie.einstellung.stufe);
-  const gegner =
-    partie.einstellung.gegner === "mensch"
-      ? t("spielen.gegner.mensch")
-      : (gegnername(partie.einstellung.bot, partie.einstellung.botName) ??
-        t("spielen.partieStufe", { nummer: s.nummer }));
-  // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
-  const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
-  return t(schluessel, { datum, stufe: gegner, zuege });
-}
-
-/** Die Karte der laufenden Partie im Bereich Spielen: ein Tipp setzt sie fort. */
-export function LaufendePartie({ partie }: { partie: Partie }) {
-  const { navigiere } = useNavigation();
-  return (
-    <section
-      className="karte laufende-partie"
-      data-testid="laufende-partie"
-      data-tour="spielen-laufend"
-    >
-      <h2 className="karte-titel">{t("spielen.laufend")}</h2>
-      <p>
-        {zeile(partie)}
-        <Zeitangabe partie={partie} mitPunkt />
-      </p>
-      <button
-        type="button"
-        className="knopf-haupt"
-        onClick={() => navigiere({ bildschirm: "partie", id: partie.id })}
-      >
-        {t("spielen.fortsetzen")}
-      </button>
-    </section>
-  );
-}
 
 /** Zahlen zum Sortieren: Beginn, eigene Spielstärke in der Partie, Stärke des Gegners. */
 function sortierwerte(eintrag: Partieeintrag): Sortierwerte {

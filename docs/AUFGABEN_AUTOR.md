@@ -33,6 +33,64 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Profil neu: Orden, Wertung, Rekorde (31.10.2026)
+
+Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und
+Abzeichen mit Glanzstück und Regalen), „Deine Wertung“ (drei Kacheln) und „Deine Rekorde“
+(Erreichtes und Herausforderung). Jede zeigt am Anfang nur, was schon etwas bedeutet; Leerstellen
+werden zu einem nächsten Schritt. Profil: Tipp auf „Profil“ unten in der Leiste. Proben über die
+Aufgabenseite (drei Sekunden auf das Zahnrad bzw. „Profil“): „Orden testen“ und „Abzeichen
+testen“; „Probe beenden“ stellt alles zurück.
+
+- [ ] N2240. **Erfolge, Glanzstück:** Unter „Dein Fortschritt“ steht die Karte „Deine Erfolge“
+      mit Zähler oben rechts („27 von 39“). Oben ein flacher Streifen: links „Zuletzt verdient“
+      mit Datum, in der Mitte das Stück mit seinem Namen darunter („Teil Endspiel“), rechts der
+      kurze Satz zur Bedingung und „Teilen“. Er ist etwa halb so hoch wie im Entwurf. Passt die
+      Höhe so?
+- [ ] N2241. **Erfolge ohne verdientes Stück:** Auf einem frischen Gerät (oder nach „Daten
+      löschen“) steht statt des Glanzstücks ein Hinweis wie „Dein erstes Stück wartet: Erste
+      Partie. …“ mit dem Bild als Silhouette. Freundlich genug?
+- [ ] N2242. **Als Nächstes:** Darunter „Als Nächstes“ mit zwei bis vier Stücken, denen am
+      wenigsten fehlt, als Silhouette in einem goldenen Fortschrittsring mit „19 von 24“
+      darunter. Abzeichen erscheinen hier nur, wenn sich ihr Fortschritt zählen lässt (etwa
+      „Fünfzig Partien 41 von 50“, „Drei Rekorde 2 von 3“; nicht „Brillanter Zug“).
+- [ ] N2243. **Regale:** Darunter je Bereich ein Regal zum Wischen mit Zähler („5 von 9“): Buch,
+      Teile des Buches, Bots besiegt, Abzeichen. Verdiente Stücke farbig, offene als Silhouette.
+      Ein Tipp auf ein Stück zeigt darunter Name und Bedingung (bei offenen mit Stand „(2 von
+      78)“), bei verdienten dazu „Teilen“. Probe: Aufgabenseite › „Orden testen“ › einen Teil
+      auf 100 % setzen, dann steht der Orden farbig im Regal. Lässt sich gut wischen?
+- [ ] N2244. **Dein Fortschritt schlanker:** Die Karte „Dein Fortschritt“ zeigt jetzt nur Stufe
+      und EP, die Ringe Abbildungen, Übungen, Lernziele, Trainer und „Je Kapitel“. Die
+      aufklappbaren Ringe für Teile und Bots und das Abzeichengitter sind dort weg (sie stehen in
+      „Deine Erfolge“). Die Erklärung zu Abzeichen und EP steht unten in „Deine Erfolge“ unter
+      „So bekommst du Orden, Abzeichen und EP“.
+- [ ] N2245. **Wertung, Kacheln:** Mit gewerteten Partien stehen oben drei Kacheln Blitz,
+      Schnellschach, Klassisch mit Zahl und „3 Partien“; die Zeitklasse deiner letzten Partie ist
+      gold umrandet, ein Tipp wählt eine andere. Ohne gewertete Partie steht statt der Kacheln
+      eine Einladung mit Knopf „Partie spielen“, der zu „Spielen“ führt.
+- [ ] N2246. **Wertung, Schätzung:** Eine Zeitklasse ohne eigene Partie zeigt „≈ 1460“ und
+      „geschätzt“ in blasser Schrift. Ein Tipp darauf zeigt den Satz „Noch keine gewertete Partie
+      in Klassisch. Die Zahl ist aus deiner Wertung in einer anderen Zeitklasse geschätzt …
+      Deine erste gewertete Partie in Klassisch ersetzt die Schätzung.“ Verständlich?
+- [ ] N2247. **Wertung, Kurve und Maßstab:** Unter den Kacheln die Kurve der gewählten Zeitklasse
+      mit „vorläufig · 3 von 10“ in den ersten zehn Partien. Der Maßstab steht nicht mehr in der
+      Karte, sondern in Einstellungen › Anzeige › „Maßstab der Wertung“. Probe: dort „chess.com“
+      wählen, zurück ins Profil: Unter dem Titel steht „Zahlen wie bei chess.com · ändern in den
+      Einstellungen“, Zahl UND Kurve stehen jetzt im Maßstab von chess.com, darunter „Bereich
+      1190–1490 · chess.com Schnellschach“.
+- [ ] N2248. **Wertung, Phasen und Mehr:** Unter der Kurve „Nach Phasen“ mit drei Balken
+      (Eröffnung, Mittelspiel, Endspiel) und „etwa 1400“; bis zehn Partien blass mit „Ab 10
+      Partien genau; bis dahin nur ein Eindruck.“ (erst nach einer ausgewerteten Partie). „Mehr“
+      klappt Ausschnitt, kurze Erklärung und „Wertung zurücksetzen“ auf.
+- [ ] N2249. **Rekorde:** „Deine Rekorde“ zeigt groß nur die aufgestellten Rekorde mit Zeichen,
+      Wert, Datum und „Teilen“. Darunter „Stell deinen ersten Rekord auf“ (sobald einer steht:
+      „Noch mehr Rekorde“) mit zwei Vorschlägen, je mit kurzem Satz und Knopf „Los“, und „Noch 7
+      weitere Rekorde“ zum Aufklappen. „Höchste Wertung“ sagt dort „Zählt ab der zehnten
+      gewerteten Partie in einer Zeitklasse: noch 7 Partien.“ statt „noch keiner“. Probe: einen
+      Trainer eine Runde spielen, dann stehen „Richtige Trainerantworten an einem Tag“ und
+      „Lerntage in einer Woche“ oben. Hinweis: „vorher“ (der alte Wert) fehlt noch, weil die App
+      ihn nicht speichert.
+
 ### Neu in 0.3.27: Monatsrückblick (Arbeitschat, 31.10.2026)
 
 Am Anfang jedes Monats schaut die App ruhig auf den Vormonat zurück: Kalender mit deinen

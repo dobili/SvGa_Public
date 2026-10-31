@@ -2,7 +2,7 @@
  * Bereich „Profil“ (intern „ich“): oben Name und Porträt des Lesers (ProfilKarte.tsx), dann der
  * Knopf zu den Einstellungen, darunter die Wertung des Lesers (wertung/Wertungskarte.tsx, seit dem Profil neu am 31.10.2026 mit
  * drei Kacheln), sein
- * Fortschritt im Buch (Fortschrittsuebersicht.tsx) und seine gespielten Partien (Partienliste.tsx).
+ * Fortschritt im Buch (Fortschrittsuebersicht.tsx), seine Orden und Abzeichen (erfolge/Erfolge.tsx) und seine gespielten Partien (Partienliste.tsx).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (25.10.2026): Die Leiste zeigt ein Profil statt des
  * Zahnrads; wer auf „Spielen“ tippt, will spielen und keine alten Partien sehen, deshalb stehen die
@@ -14,6 +14,7 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
 import { TourKnopf } from "../../tour/TourKnopf";
+import { Erfolge } from "../komponenten/erfolge/Erfolge";
 import { Fortschrittsuebersicht } from "../komponenten/fortschritt/Fortschrittsuebersicht";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Partienliste } from "../komponenten/partienliste/Partienliste";
@@ -46,6 +47,8 @@ export function Ich() {
       </button>
       <Wertungskarte punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
+      {/* Profil neu (31.10.2026): Orden und Abzeichen mit Glanzstück und Regalen. */}
+      <Erfolge />
       {/* Gamifizierung P2: der Fortschritt im Buch als Weg. */}
       <LernpfadKnopf ort="profil" />
       {/* Gamifizierung G4: Karten der Pakete (Themen, Rekorde, Rückblicke …). */}

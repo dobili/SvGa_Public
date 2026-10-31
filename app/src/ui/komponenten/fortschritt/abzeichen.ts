@@ -24,6 +24,7 @@ export { WOCHE } from "./abzeichen-grund";
 import { zugurteile } from "../../../spiel/auswertung";
 import type { Partieeintrag } from "../../../speicher/partien";
 import type { Fortschritt, Nutzerdaten } from "../../../speicher/format";
+import type { Anteil } from "../../../speicher/fortschritt";
 import {
   gewonnen,
   grundlageAus,
@@ -64,6 +65,11 @@ export interface Abzeichenangabe {
   readonly kennung: Abzeichenkennung;
   readonly symbol: LucideIcon;
   readonly erfuellt: (g: Abzeichengrundlage) => boolean;
+  /**
+   * Wie weit der Leser ist, wenn sich das zählen lässt („41 von 50 Partien“). Fehlt es, steht das
+   * Abzeichen im Profil nicht unter „Als Nächstes“ (Profil neu, 31.10.2026), nur im Regal.
+   */
+  readonly fortschritt?: (g: Abzeichengrundlage) => Anteil;
 }
 
 /** Ab so vielen Wertungspunkten Vorsprung gilt ein Gegner als stärker (etwa eine Klasse). */

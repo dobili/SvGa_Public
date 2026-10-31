@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Profil neu: Orden, Wertung, Rekorde (Arbeitschat, Zweig `profil-neu`)
+
+Ziel des Autors: Das Profil war zu technisch und überfrachtet; viele Reiter weckten Erwartungen,
+die die App anfangs nicht erfüllt. Jede Karte zeigt jetzt am Anfang nur, was schon etwas bedeutet,
+und macht aus Leerstellen einen nächsten Schritt. Gewählte Entwürfe: C, W3, R1.
+
+- **Deine Erfolge** (neu, `ui/komponenten/erfolge/`): flaches Glanzstück (zuletzt verdient aus
+  `verdient`, Bild mit Namen in der Mitte, links Datum, rechts Bedingung und Teilen; ohne
+  verdientes Stück ein Hinweis auf das nächste), „Als Nächstes“ (zwei bis vier Stücke mit dem
+  kleinsten Rest, Fortschrittsring) und Regale zum Wischen. Regale als Liste `ERFOLGSREGALE`
+  (Buch, Teile, Bots, Abzeichen): ein neuer Bereich ist eine Zeile. Abzeichen haben ein
+  optionales Feld `fortschritt` (zählbar, `abzeichenanteil.ts`); nur sie stehen unter „Als
+  Nächstes“. „Dein Fortschritt“ verliert die Ringgruppen Teile und Bots und das Abzeichengitter
+  (`Abzeichenraster.tsx` gelöscht); testids `abzeichen-<k>` bleiben, Orden heißen `orden-<k>`.
+- **Deine Wertung** (`ui/komponenten/wertung/`, ersetzt `fortschritt/Wertungskurve.tsx`): drei
+  Kacheln; Zeitklassen ohne Partie als Schätzung über `engine/zeitklassenabstand.ts`
+  (Umkehrung durch Halbieren, wenn Schnellschach fehlt); Kurve im selben Maßstab wie die Zahl
+  (Mitte der Umrechnung, Punkte außerhalb der Tabellen fallen weg), Bereich als Zeile darunter;
+  Phasen als Balken aus dem Elo-Modell über die letzten zehn Partien, bis dahin blass;
+  Ausschnitt, Erklärung und Zurücksetzen unter „Mehr“. Der Maßstab steht in Einstellungen ›
+  Anzeige (Merker `wertungsmassstab` unverändert); „Deine Spielstärke“ unter Spielen behält
+  ihren Umschalter. Berechnung der Wertung unverändert.
+- **Deine Rekorde** (Rekordtafel neu): groß nur Aufgestelltes mit Teilen; zwei Vorschläge aus
+  `REKORDARTEN` mit Satz `profil.rekorde.vorschlag.<k>` (Test prüft ihn je Art) und „Los“,
+  die übrigen aufklappbar; „Höchste Wertung“ erst ab zehn Partien als Vorschlag, vorher „noch N
+  Partien“. Zeichen je Art in `rekordvorschlaege.ts` (neue Art ohne Eintrag: Pokal).
+- **Offen (Speicherformat):** „vorher“ bei einem Rekord braucht ein Feld `vorher` in `Rekord`
+  (`speicher/gamifizierung.ts`, gesperrt); bis dahin fehlt es.
+- Testpunkte N2240 bis N2249.
+
 ## 31.10.2026 – Version 0.3.27: Gamifizierung P12 Monatsrückblick übernommen (Opus)
 
 - Zweig `gami-p12-rueckblick` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den Listen

@@ -1,32 +1,71 @@
-/* Rekordtafel (Gamifizierung P5): Liste der Rekorde im Profil, Rekordtafel.tsx. */
+/* Rekordtafel (Gamifizierung P5): Liste der Rekorde im Profil, Rekordtafel.tsx und Rekordvorschlag.tsx. */
 .rekordliste {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.rekordzeile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.25rem 0.75rem;
-  padding: 0.5rem 0;
+/* Profil neu (Entwurf R1, 31.10.2026): Erreichtes groß, Vorschläge mit Knopf „Los“. */
+.rekord-erreicht,
+.rekord-vorschlag {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: var(--raster) 0;
   border-top: 1px solid var(--linie);
 }
 
-.rekordzeile:first-child {
+.rekordliste > li:first-child {
   border-top: none;
 }
 
-.rekordname {
-  flex: 1 1 100%;
-  font-weight: 600;
+.rekord-zeichen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius);
+  background: var(--grund);
+  color: var(--gold-text);
 }
 
-.rekordwert {
-  font-variant-numeric: tabular-nums;
+.rekord-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
-.rekordzeile .knopf-link {
-  margin-left: auto;
+.rekord-erreicht .rekordname {
+  font-weight: 400;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.rekord-erreicht .rekordwert {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 700;
+}
+
+.rekord-vorschlag .rekordname {
+  font-weight: 700;
+}
+
+.rekord-herausforderung {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.rekord-herausforderung h3 {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-grund);
+}
+
+.rekord-los {
+  min-width: 4rem;
+  border-radius: 999px;
 }

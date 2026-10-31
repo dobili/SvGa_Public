@@ -25,6 +25,7 @@ import {
   abzeichengrundlageAus,
   brillanterZug,
   erfuellteAbzeichen,
+  type Abzeichengrundlage,
   type Abzeichenkennung,
 } from "./abzeichen";
 import { erfahrungspunkte, STUFEN, stufeZu, type Erfahrungsstufe } from "./erfahrung";
@@ -106,6 +107,8 @@ export interface Abzeichenstand {
   readonly still: boolean;
   /** Erster Start: Die erreichte Stufe ist noch nicht gemerkt (merkeErsteStufe). */
   readonly stufeUngemerkt: boolean;
+  /** Die Grundlage der Bedingungen, für den Fortschritt je Abzeichen („Als Nächstes“ im Profil). */
+  readonly grundlage: Abzeichengrundlage;
 }
 
 /** Stand der Erfahrung und der Abzeichen; null, solange der Speicher lädt. */
@@ -137,6 +140,7 @@ export function useAbzeichenstand(): Abzeichenstand | null {
       neueStufe: merker.stufeGefeiert !== null && stufe.nummer > merker.stufeGefeiert,
       still: merker.still,
       stufeUngemerkt: merker.stufeGefeiert === null,
+      grundlage,
     };
   }, [geladen, daten, merker, brillant]);
 }

@@ -43,22 +43,18 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   // Seit 0.2.134 steht der Fortschritt im Profil.
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
-  // Seit 0.3.7 Ringe für Übungen, die fünf Teile des Buches und die Bündel der Bots (Orden);
-  // Teile und Bots stehen aufgeklappt, die Zusammenfassung zählt die vollen Ringe.
+  // Seit 0.3.7 Orden für Übungen, die fünf Teile des Buches und die Bündel der Bots; seit dem
+  // Profil neu (31.10.2026) stehen Teile und Bots als Regale in „Deine Erfolge“.
   await expect(page.getByTestId("ich-uebungen")).toHaveText(/^0 von 86$/);
-  await expect(page.getByTestId("ich-teil-grundlagen")).toBeHidden();
-  await page.getByTestId("ich-teile").locator("summary").click();
-  await expect(page.getByTestId("ich-teil-grundlagen")).toHaveText(/^2 von \d+$/);
-  const bots = page.getByTestId("ich-bots");
-  await expect(bots.locator("summary")).toContainText("0 von 9 Ringen voll");
-  await bots.locator("summary").click();
-  await expect(page.getByTestId("ich-bots-1-3-einmal")).toHaveText(/^0 von \d+$/);
-  await expect(
-    page.getByRole("progressbar", { name: /^Engine \(Stufe 10\).* 0 von \d+$/ }),
-  ).toBeVisible();
-  await expect(bots.getByRole("list", { name: "Zeichenerklärung" })).toContainText(
-    "in allen Zeitarten",
-  );
+  const erfolge = page.getByTestId("erfolge");
+  await expect(erfolge.getByTestId("erfolge-erstes")).toBeVisible();
+  const teile = erfolge.getByTestId("erfolge-regal-teile");
+  await expect(teile.getByTestId("erfolge-zaehler-teile")).toHaveText("0 von 5");
+  await teile.getByTestId("orden-teil-grundlagen").getByRole("button").click();
+  await expect(teile.getByTestId("regal-bedingung")).toContainText(/\(2 von \d+\)$/);
+  const bots = erfolge.getByTestId("erfolge-regal-bots");
+  await expect(bots.getByTestId("erfolge-zaehler-bots")).toHaveText("0 von 9");
+  await expect(bots.getByRole("img", { name: /^Noch offen: Engine \(Stufe 10\)$/ })).toBeAttached();
   // Ohne Partien: die Karte „Deine Partien“ mit kurzem Satz (Wunsch des Autors, 25.10.2026).
   await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
   await expect(page.getByText("Noch keine Partie gespielt.", { exact: false })).toBeVisible();

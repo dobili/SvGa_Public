@@ -1,0 +1,215 @@
+/*
+ * Karte „Deine Erfolge“ im Profil (Profil neu, Entwurf C „Glanzstück und Regale“, 31.10.2026):
+ * flaches Glanzstück, „Als Nächstes“ mit Fortschrittsringen, Regale zum Wischen.
+ * Komponenten in ui/komponenten/erfolge/. Die Größen der Bilder sind genauer als .orden und
+ * .abzeichenbild (symbolringe.css, abzeichen.css) und gewinnen deshalb.
+ */
+.erfolge .erfolg-glanz {
+  width: 72px;
+  height: 72px;
+}
+
+.erfolge .erfolg-klein {
+  width: 52px;
+  height: 52px;
+}
+
+.erfolge .erfolg-regal {
+  width: 60px;
+  height: 60px;
+}
+
+.regal-zaehler {
+  flex: none;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--grund);
+  box-shadow: 0 0 0 1px var(--linie);
+  font-size: var(--groesse-klein);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Glanzstück: flach, Bild in der Mitte, Text an den Seiten ---------- */
+.glanzstueck {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) auto minmax(0, 1.2fr);
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--gold) 22%, transparent),
+    transparent 70%
+  );
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.glanzstueck-links {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.glanzstueck-datum {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.glanzstueck-mitte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.glanzstueck-name {
+  font-family: var(--schrift-titel);
+  font-weight: 700;
+  text-align: center;
+}
+
+.glanzstueck-rechts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+  text-align: end;
+}
+
+.glanzstueck-leer {
+  grid-template-columns: auto 1fr;
+}
+
+/* ---------- Reihen: „Als Nächstes“ und Regale ---------- */
+.erfolge h3 {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-grund);
+}
+
+.erfolge-reihe {
+  display: flex;
+  gap: calc(var(--raster) * 1.5);
+  margin: var(--raster) 0 0;
+  padding: 0 0 4px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  font-size: var(--groesse-klein);
+}
+
+.erfolge-reihe li {
+  flex: none;
+  width: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+/* „Als Nächstes“ hat höchstens vier Stücke: ein Raster ohne Wischen (eine Reihe zum Wischen ohne
+   Knöpfe wäre mit der Tastatur nicht erreichbar, axe „scrollable-region-focusable“). */
+.erfolge .naechste-reihe {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  overflow: visible;
+}
+
+.erfolge .naechste-reihe li {
+  width: auto;
+  min-width: 0;
+}
+
+.erfolg-name {
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.erfolg-zahl {
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}
+
+.naechstes-bild {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(76px, 100%);
+  aspect-ratio: 1;
+}
+
+.naechstes-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.naechstes-ring-grund,
+.naechstes-ring-wert {
+  fill: none;
+  stroke-width: 5;
+}
+
+.naechstes-ring-grund {
+  stroke: var(--linie);
+}
+
+.naechstes-ring-wert {
+  stroke: var(--gold);
+  stroke-linecap: round;
+}
+
+.regal {
+  padding-top: var(--raster);
+  border-top: 1px solid var(--linie);
+}
+
+.regal-kopf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.regal-reihe button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 4px 2px;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.regal-reihe button[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+.regal-reihe .offen {
+  color: var(--text-leise);
+}
+
+.regal-bedingung {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+  margin-top: var(--raster);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}

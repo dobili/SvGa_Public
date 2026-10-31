@@ -9,6 +9,7 @@
 import { CalendarHeart, CalendarRange } from "lucide-react";
 import { erreichteWochen } from "../../../training/wochenziel";
 import type { Abzeichenangabe } from "./abzeichen";
+import { zielanteil } from "./abzeichenanteil";
 
 /** Erreichte Wochen für die beiden Abzeichen. */
 export const WOCHENZIEL_ABZEICHEN = { vier: 4, zwoelf: 12 } as const;
@@ -19,10 +20,12 @@ export const WOCHEN_ABZEICHEN: readonly Abzeichenangabe[] = [
     kennung: "wochenziel4",
     symbol: CalendarRange,
     erfuellt: (g) => erreichteWochen(g.daten).length >= WOCHENZIEL_ABZEICHEN.vier,
+    fortschritt: (g) => zielanteil(erreichteWochen(g.daten).length, WOCHENZIEL_ABZEICHEN.vier),
   },
   {
     kennung: "wochenziel12",
     symbol: CalendarHeart,
     erfuellt: (g) => erreichteWochen(g.daten).length >= WOCHENZIEL_ABZEICHEN.zwoelf,
+    fortschritt: (g) => zielanteil(erreichteWochen(g.daten).length, WOCHENZIEL_ABZEICHEN.zwoelf),
   },
 ];

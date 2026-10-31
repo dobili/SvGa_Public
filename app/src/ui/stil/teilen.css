@@ -23,7 +23,8 @@
 
 /* Unter einem Orden im Profil: klein und mittig unter „x von y“. */
 .symbolring .teilen-knopf.klein,
-.abzeichenraster .teilen-knopf.klein {
+.regal-bedingung .teilen-knopf.klein,
+.glanzstueck .teilen-knopf.klein {
   min-height: auto;
   font-size: var(--groesse-fein);
 }

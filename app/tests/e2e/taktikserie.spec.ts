@@ -37,9 +37,11 @@ test("Serie ohne Fehler: ein Fehler beendet die Serie, „Neue Serie“ beginnt 
 test("Rekordtafel: Zeile „Taktikserie ohne Fehler“ führt zum Taktiktrainer", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneProfil(page);
+  // Seit dem Profil neu (31.10.2026): beim frischen Start unter „Noch 7 weitere Rekorde“.
+  await page.getByTestId("rekord-weitere").locator("summary").click();
   const zeile = page.getByTestId("rekord-taktikSerie");
   await expect(zeile).toContainText("Taktikserie ohne Fehler");
-  await expect(zeile).toContainText("noch keiner");
-  await zeile.getByRole("button", { name: "Versuchen" }).click();
+  await expect(zeile).toContainText("ohne Fehler hintereinander?");
+  await zeile.getByRole("button", { name: "Los: Taktikserie ohne Fehler" }).click();
   await expect(page.getByTestId("taktik-start-serie")).toBeVisible();
 });

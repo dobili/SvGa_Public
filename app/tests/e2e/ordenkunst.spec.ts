@@ -45,14 +45,14 @@ test("Neuer Orden: Startanimation zeigt ihn, er fliegt zu „Profil“, der Punk
   await expect(page.getByTestId("leiste-orden-neu")).toHaveCount(0);
 });
 
-test("Profil: Abzeichen in Reihen mit eigenem Bild, ein Tipp zeigt die Bedingung", async ({
+test("Profil: Abzeichen im Regal mit eigenem Bild, ein Tipp zeigt die Bedingung", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await page.goto("/app/");
   await leiste(page).getByRole("button", { name: "Profil", exact: true }).click();
-  const gitter = page.getByTestId("abzeichen");
-  await gitter.locator("summary").click();
+  // Seit dem Profil neu (31.10.2026) ein Regal zum Wischen in „Deine Erfolge“.
+  const gitter = page.getByTestId("erfolge-regal-abzeichen");
   const matt = page.getByTestId("abzeichen-erstesMatt");
   const partie = page.getByTestId("abzeichen-erstePartie");
   await expect(matt.locator('[data-ordenkunst="erstesMatt"]')).toBeVisible();
@@ -62,6 +62,7 @@ test("Profil: Abzeichen in Reihen mit eigenem Bild, ein Tipp zeigt die Bedingung
   expect(a && b && Math.abs(a.y - b.y) < 2 && b.x > a.x).toBe(true);
   await matt.getByRole("button").click();
   await expect(matt.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+  await expect(gitter.getByTestId("regal-bedingung")).toContainText("Erstes Matt");
   await gitter.scrollIntoViewIfNeeded();
   await page.screenshot({ path: "test-results/bilder/ordenkunst-profil.png", fullPage: true });
 });

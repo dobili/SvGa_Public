@@ -10,6 +10,7 @@
 import { Swords, Trophy } from "lucide-react";
 import { besiegteRivalen } from "../../../training/rivalen";
 import type { Abzeichenangabe } from "./abzeichen";
+import { zielanteil } from "./abzeichenanteil";
 
 /** Besiegte Rivalen für die beiden Abzeichen; ein weiteres bekäme hier eine Zahl und unten eine Zeile. */
 export const RIVALEN_ABZEICHEN_ZAHLEN = { drei: 3, zehn: 10 } as const;
@@ -20,10 +21,12 @@ export const RIVALEN_ABZEICHEN: readonly Abzeichenangabe[] = [
     kennung: "rivalen3",
     symbol: Swords,
     erfuellt: (g) => besiegteRivalen(g.daten).length >= RIVALEN_ABZEICHEN_ZAHLEN.drei,
+    fortschritt: (g) => zielanteil(besiegteRivalen(g.daten).length, RIVALEN_ABZEICHEN_ZAHLEN.drei),
   },
   {
     kennung: "rivalen10",
     symbol: Trophy,
     erfuellt: (g) => besiegteRivalen(g.daten).length >= RIVALEN_ABZEICHEN_ZAHLEN.zehn,
+    fortschritt: (g) => zielanteil(besiegteRivalen(g.daten).length, RIVALEN_ABZEICHEN_ZAHLEN.zehn),
   },
 ];

@@ -33,7 +33,25 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Weniger Text: Seiten (31.10.2026)
+### Neu in 0.3.42: Erklärungen und Tour geprüft (31.10.2026)
+
+- [ ] N2360. **Ein Zeichen für Erklärungen:** Überall, wo es eine Erklärung gibt (Einstellungen,
+      Training, Startkarte der Trainer, Profil, Spielen), steht jetzt dasselbe „i“ im Kreis; das
+      Fragezeichen gibt es dafür nicht mehr. Ein Tipp klappt die Erklärung auf, ein zweiter zu.
+- [ ] N2361. **Tour im Profil:** Profil öffnen, Toursymbol oben rechts. Die Tour zeigt jetzt auch
+      Erfolge (Orden und Abzeichen), den Weg durchs Buch, Themen, Rekorde und Extras; der Schritt
+      zur Wertung spricht von Kacheln je Zeitklasse und dem „i“, nicht mehr von Reitern.
+- [ ] N2362. **Tour bei Spielen:** Auf der Startseite von Spielen und auf jeder Unterseite (Gegner
+      aussuchen, Eigene Stufe, Eigene Bots, Freie Partie) das Toursymbol antippen: Jeder Schritt
+      zeigt auf etwas, das auf dieser Seite zu sehen ist. Im Blatt „Partie einstellen“ stehen die
+      Erklärungen zu Spielhilfen und Eröffnung jetzt hinter einem „i“ an ihrer Überschrift, die zu
+      Bedenkzeit und Wertung im „i“ bei „Gewertete Partie“.
+- [ ] N2363. **Texte nennen nur, was es gibt:** Kapitel- und Denkroutine-Tour sprechen vom „i“ und
+      von den Phasenkacheln; der Hinweis zu Maia verweist auf Profil › Einstellungen › „Bots und
+      Wertung“; das Abzeichen „Zehn Ziele“ auf Buch › Karte „Heute“ › Ziele. Wenn dir irgendwo noch
+      ein Text begegnet, der einen Knopf oder Reiter nennt, den es nicht gibt: bitte melden.
+
+### Neu in 0.3.42: Weniger Text – Seiten (Arbeitschat, 31.10.2026)
 
 Nach deiner Wahl („alle 15 Punkte umsetzen“) stehen auf vielen Seiten weniger Sätze: Bildzeichen
 sagen dasselbe, und die Erklärungen stehen vollständig hinter einem ⓘ (Kreis mit kleinem i). Ein
@@ -110,7 +128,7 @@ dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts
       Fußsatz unten ist weg. Die Legende bei „Gegner aussuchen“ und der Hinweis bei „Freie Partie“
       folgen, sobald der Haupt-Chat diese gesperrten Seiten freigibt.
 
-### Weniger Text: Werkzeuge und Trainer (31.10.2026)
+### Neu in 0.3.42: Weniger Text – Werkzeuge und Trainer (Arbeitschat, 31.10.2026)
 
 Nach deiner Wahl „Umsetzen“ für alle Punkte der Runde „Weniger Text“ zeigen die Werkzeugkarten
 und drei Trainer weniger Sätze und mehr Bildzeichen. Was vorher als Satz dastand, steht jetzt

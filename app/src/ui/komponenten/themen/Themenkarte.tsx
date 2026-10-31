@@ -123,7 +123,7 @@ export function Themenkarte() {
   }, []);
   const leer = medaillen.length === 0;
   return (
-    <section className="karte" data-testid="themenkarte">
+    <section className="karte" data-testid="themenkarte" data-tour="profil-themen">
       <Kopf leer={leer} />
       {leer && (
         <Leerzustand

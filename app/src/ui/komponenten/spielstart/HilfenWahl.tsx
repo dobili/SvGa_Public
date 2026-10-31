@@ -106,6 +106,8 @@ export function WertungsWahl({
             <p>{t("spielen.gewertetHinweis")}</p>
             {/* Seit 0.2.137 ebenfalls hinter dem Fragezeichen statt dauerhaft darunter. */}
             <p>{t("spielen.gewertetOhneHilfen")}</p>
+            {/* Zeitklassen und Wertung, vorher ein Schritt der Tour (unerreichbar im Blatt). */}
+            <p>{t("spielenneu.einstellen.info.wertung")}</p>
           </>
         }
         thema={t("spielen.gewertet")}

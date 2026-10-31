@@ -279,8 +279,9 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   spielen: tour("tour.titel.spielen", [
     ziel("spielen-laufend", "tour.spielen.laufend"),
     // Seit „Spielen neu“ (Entwurf J3, 31.10.2026): Startseite von oben nach unten, danach die
-    // Schritte der Unterseiten (Gegner, Eigene Stufe, Eigene Bots, Freie Partie) und des Blattes;
-    // was gerade fehlt, überspringt die Tour.
+    // Schritte der Unterseiten (Gegner, Eigene Stufe, Eigene Bots, Freie Partie); was gerade fehlt,
+    // überspringt die Tour. Das Blatt „Partie einstellen“ deckt das Toursymbol ab: Seine Erklärungen
+    // stehen seit 0.3.42 als ⓘ an seinen Abschnitten (Prüfung der Tour, 31.10.2026).
     ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-vorschlag", "spielenneu.tour.vorschlag"),
     ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
@@ -291,9 +292,6 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
     ziel("spielen-gitter", "tour.spielen.gitter"),
     ziel("spielen-eigene", "tour.spielen.eigene"),
-    ziel("spielen-einstellungen", "tour.spielen.einstellungen"),
-    ziel("spielen-hilfen", "tour.spielen.hilfen"),
-    ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
   ]),
   // Reihenfolge wie auf dem Bildschirm (Befund der Tourprüfung, 25.10.2026). Der Status gilt nur
@@ -323,6 +321,12 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("profil-einstellungen", "einstellungenneu.tour.einstieg"),
     ziel("einstellungen-wertung", "tour.ich.wertung"),
     ziel("einstellungen-fortschritt", "tour.ich.fortschritt"),
+    // Profil neu und Gamifizierung (Prüfung der Tour, 31.10.2026): die Abschnitte darunter.
+    ziel("profil-erfolge", "tour.ich.erfolge"),
+    ziel("profil-lernpfad", "tour.ich.lernpfad"),
+    ziel("profil-themen", "tour.ich.themen"),
+    ziel("profil-rekorde", "tour.ich.rekorde"),
+    ziel("profil-extras", "tour.ich.extras"),
     ziel("spielen-partien", "tour.spielen.partien"),
     ziel("spielen-filter", "tour.spielen.filter"),
   ]),

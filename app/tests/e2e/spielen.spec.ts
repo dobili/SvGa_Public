@@ -289,7 +289,7 @@ test("Werkzeuge in der Partie (0.2.33): Röntgen, W1–W7, Zählen am Brett, Bü
   await expect(page.getByTestId("werkzeugkarte")).toBeVisible();
   // Zählen: Ein Tipp zählt das Feld, statt zu ziehen.
   await werkzeuge.getByRole("button", { name: "Zählen" }).click();
-  await expect(page.getByText("Tippe ein Feld an")).toBeVisible();
+  await expect(page.getByText("Feld antippen")).toBeVisible();
   await page.getByRole("button", { name: /^e4, Bauer/ }).click();
   await expect(page.getByTestId("werkzeugkarte")).toBeVisible();
   await expect(page.getByTestId("partiezuege").getByRole("button")).toHaveCount(2);
@@ -517,7 +517,7 @@ test("Maia-Hinweis (26.10.2026): einmal beim ersten Antippen eines vorgefertigte
   const hinweis = page.getByTestId("maia-hinweis");
   await expect(hinweis).toContainText("Zusatzpaket Maia");
   await expect(hinweis.getByRole("button", { name: /Maia laden/ })).toBeVisible();
-  await expect(hinweis).toContainText("Reiter „Bots“");
+  await expect(hinweis).toContainText("„Bots und Wertung“");
   await hinweis.getByRole("button", { name: "Weiter" }).click();
   await expect(hinweis).toHaveCount(0);
   await gitter.getByRole("radio", { checked: false }).first().click();

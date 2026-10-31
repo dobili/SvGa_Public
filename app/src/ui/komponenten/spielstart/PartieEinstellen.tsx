@@ -16,6 +16,7 @@ import { EROEFFNUNG_BUCH, EROEFFNUNG_PRAXIS } from "../../../spiel/partie";
 import { UHR_VORGABEN } from "../../../spiel/uhr";
 import { useSpeicher } from "../../../speicher/speicher";
 import { Auswahl } from "../bausteine/Auswahl";
+import { MitInfoblase } from "../bausteine/Infoblase";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 import { Blatt } from "./Blatt";
 import { Eroeffnungsteil } from "./BotEroeffnungVorrang";
@@ -68,10 +69,16 @@ function Grundteil({ sw, zurEroeffnung }: { sw: Spielwahl; zurEroeffnung: (() =>
         beiGewertet={(an) => mit({ gewertet: an })}
       />
       <div className="unterabschnitt" data-testid="spielhilfen" data-tour="spielen-hilfen">
-        <span className="einstellung-name">
-          <Titelsymbol art="hilfen" />
-          {t("spielen.hilfen")}
-        </span>
+        <MitInfoblase
+          zeile={
+            <span className="einstellung-name">
+              <Titelsymbol art="hilfen" />
+              {t("spielen.hilfen")}
+            </span>
+          }
+          thema={t("spielen.hilfen")}
+          erklaerung={<p>{t("spielenneu.einstellen.info.hilfen")}</p>}
+        />
         <label className="schalterzeile">
           <input
             type="checkbox"
@@ -116,7 +123,11 @@ function Eroeffnungsblatt({ sw, zurueck }: { sw: Spielwahl; zurueck: () => void 
         <ChevronLeft size={PFEIL} aria-hidden="true" />
         {t("spielenneu.einstellen.zurueck")}
       </button>
-      <h3 className="unterteil-titel">{t("spielen.eroeffnungFestlegen")}</h3>
+      <MitInfoblase
+        zeile={<h3 className="unterteil-titel">{t("spielen.eroeffnungFestlegen")}</h3>}
+        thema={t("spielen.eroeffnungFestlegen")}
+        erklaerung={<p>{t("spielenneu.einstellen.info.eroeffnung")}</p>}
+      />
       <Eroeffnungsteil
         gewaehlt={wahl.eroeffnung}
         beiWahl={(eroeffnung) => sw.setze({ ...wahl, eroeffnung })}

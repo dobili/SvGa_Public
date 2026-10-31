@@ -96,7 +96,7 @@ export function ExtrasKarte() {
   const [art, setzeArt] = useState<Extraart>(arten[0] ?? "rahmen");
   const frei = EXTRAS.filter((e) => zustandVon(e, gewaehlt, lage) !== "gesperrt").length;
   return (
-    <section className="karte extraskarte" data-testid="extras">
+    <section className="karte extraskarte" data-testid="extras" data-tour="profil-extras">
       {/* Weniger Text P15 (31.10.2026): Einleitung und Hinweis stehen im ⓘ der Überschrift. */}
       <MitInfoblase
         zeile={

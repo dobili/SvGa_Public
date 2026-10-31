@@ -82,6 +82,9 @@
 
 .lernpfad-flaeche {
   position: relative;
+  /* Sonnenstrahlen und Lampen der Landschaften dürfen nicht über den Bildschirmrand ragen
+     (3 px bei 360 px, Befund beim Übernehmen von „Weniger Text“, 31.10.2026). */
+  overflow-x: clip;
   width: 100%;
   max-width: 480px;
   margin: 0 auto calc(var(--raster) * 4);

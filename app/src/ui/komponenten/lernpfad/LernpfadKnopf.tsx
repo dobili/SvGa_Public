@@ -38,6 +38,7 @@ export function LernpfadKnopf({ ort }: { ort: "buch" | "profil" }) {
       type="button"
       className="knopf-zweit lernpfad-knopf"
       data-testid={`lernpfad-knopf-${ort}`}
+      data-tour="profil-lernpfad"
       onClick={() => navigiere({ bildschirm: "zusatz", kennung: "lernpfad" })}
     >
       <Route size={ZEICHENGROESSE} aria-hidden="true" />

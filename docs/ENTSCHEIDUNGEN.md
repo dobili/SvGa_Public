@@ -4,6 +4,24 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gesamtprüfung der Erklärungen und der Tour (0.3.42)
+
+Wunsch des Autors nach den vielen Änderungen an der Oberfläche: Erklärungen in Nachschlagen, die
+Texte hinter ?/ⓘ und die App-Tour prüfen. Vorgehen: zwei Prüfskripte (auf `auftraege-welle2`,
+`docs/nebenchat/runde4/tourpruefung.spec.ts.txt`): jede der 36 Touren Schritt für Schritt mit Foto
+und Zielprüfung, auf jedem Bildschirm jedes ⓘ geöffnet. Ergebnisse: (1) Zwei Erklärzeichen nebeneinander
+(Fragezeichen in InfoKnopf, „i“ in der neuen Infoblase) → überall das „i“. (2) Spielen: Die Tour
+gilt für Startseite und Unterseiten und zeigt je Seite, was dort steht; nur drei Schritte lagen im
+Blatt „Partie einstellen“, das das Toursymbol abdeckt → ihre Texte stehen jetzt als ⓘ im Blatt, die
+Schritte entfallen (Schlüssel umbenannt in `spielenneu.einstellen.info.*`). (3) Profil: Tour um
+Erfolge, Weg durchs Buch, Themen, Rekorde, Extras ergänzt (Ziele `profil-*`); Wertungsschritt neu
+(Kacheln statt Reiter). (4) Veraltete Texte neu: Kapitel (Ringe, ⓘ), Denkroutine (fünf Karten,
+Phasenkacheln), Werkzeugkarte (Zeichenlegende), Zähltrainer, Heute-Karte, Bedienung (Feiereffekte),
+Haupttour (Training, Profil), Maia-Hinweis, Abzeichen „Zehn Ziele“. Absichtlich bedingt bleiben
+Schritte, die nur mit Inhalt erscheinen (Auswertung nach Partieende, Wiederholen bei fälligen
+Aufgaben, Lernsammlung und Fehlerdatenbank mit Einträgen, Reiter nach Wahl eines Bündels). Dazu:
+Lernpfad ragt bei 360 px nicht mehr über den Rand (`overflow-x: clip`).
+
 ## 31.10.2026 – Weniger Text: Seiten (Runde 4, P1 bis P6, P13, P15; Zweig `wenigertext-seiten`)
 
 Ziel des Autors: Junge Nutzer schreckt viel Text ab; die App soll mit bekannten Bildzeichen

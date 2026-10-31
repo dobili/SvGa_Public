@@ -126,7 +126,7 @@ export function Rekordtafel() {
   };
   const stand = rekordstand(daten, REKORDARTEN);
   return (
-    <section className="karte" data-testid="rekordtafel">
+    <section className="karte" data-testid="rekordtafel" data-tour="profil-rekorde">
       <h2 className="karte-titel">{t("profil.rekorde.titel")}</h2>
       <p className="hinweis">{t("profil.rekorde.einleitung")}</p>
       {stand.aufgestellt.length > 0 && (

@@ -23,7 +23,7 @@ export function Erfolge() {
   const stand = useErfolge();
   if (!stand) return null;
   return (
-    <section className="karte erfolge" data-testid="erfolge">
+    <section className="karte erfolge" data-testid="erfolge" data-tour="profil-erfolge">
       <div className="karte-kopf">
         <h2 className="karte-titel">
           <Titelsymbol art="erfolge" />

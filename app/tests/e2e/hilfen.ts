@@ -144,9 +144,19 @@ export async function oeffneEinstellungen(seite: Page): Promise<void> {
   await seite.getByRole("button", { name: "Einstellungen", exact: true }).click();
 }
 
-/** Wartet, bis der Service Worker alle Dateien geladen hat (Einstellungen: „Offline bereit“). */
-export async function warteAufOffline(seite: Page): Promise<void> {
+/**
+ * Öffnet eine Unterseite der Einstellungen über ihre Zeile unten (seit dem Entwurf K2, 31.10.2026):
+ * „Bots und Wertung“, „Deine Daten“ oder „Über die App“.
+ */
+export async function oeffneEinstellungsseite(seite: Page, name: string): Promise<void> {
   await oeffneEinstellungen(seite);
+  await seite.getByRole("button", { name: new RegExp(`^${name}`) }).click();
+  await expect(seite.getByRole("heading", { level: 1, name })).toBeVisible();
+}
+
+/** Wartet, bis der Service Worker alle Dateien geladen hat („Über die App“: „Offline bereit“). */
+export async function warteAufOffline(seite: Page): Promise<void> {
+  await oeffneEinstellungsseite(seite, "Über die App");
   await expect(seite.getByTestId("offline-stand")).toHaveText("Offline bereit", {
     timeout: 30_000,
   });

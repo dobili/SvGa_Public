@@ -33,6 +33,60 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Einstellungen neu (31.10.2026)
+
+Die Einstellungen sind nach deiner Wahl des Entwurfs K2 „Brettvorschau oben“ neu gebaut: oben ein
+großes Brett in deinen Farben und Figuren, darunter Farbfelder und Figurenkacheln zum Antippen,
+dann drei Reiter (Bedienung, Anzeige, Hilfe) mit je einer Zeile pro Einstellung, ganz unten genau
+einmal die Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Öffnen: unten „Profil“,
+dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
+
+- [ ] N2300. **Brettvorschau:** Oben steht ein großes Brett mit einer Eröffnungsstellung, zwei
+      goldenen Pfeilen (Läufer c4 nach f7, Springer f3 nach g5), einem rot umrandeten Feld f7 und
+      dem letzten Zug g8–f6 leicht hervorgehoben. Darunter „Koordinaten“ mit Schalter. Wirkt das
+      Brett groß und ruhig genug, und passt der Hintergrund dahinter (dunkel: Nachtblau, hell:
+      Creme)?
+- [ ] N2301. **Brettfarbe:** Unter „Brettfarbe“ stehen runde Farbfelder in einer Reihe, die du
+      seitlich wischst: die acht Farben, Holz, die drei Materialbretter und am Ende „Nacht und
+      Gold“ mit Schloss. Tippe „Grün“: Der goldene Ring springt dorthin, und das Brett oben ist
+      sofort grün. Tippe „Nacht und Gold“ (gesperrt): Unter der Reihe steht, wie man es
+      freischaltet; die Wahl bleibt. Öffne danach eine Abbildung: gleiche Farbe wie in der Vorschau?
+- [ ] N2302. **Figuren:** Unter „Figuren“ zeigen Kacheln je einen weißen Springer des Satzes auf
+      dem hellen Feld deines Brettes („wie im Buch“, Cburnett, Merida, Chessnut, Mpchess, Celtic,
+      Spatial, die drei Holzsätze, „Gold“ mit Schloss). Tippe „Merida“: Die Figuren oben wechseln
+      sofort. Beim nächsten Öffnen der Einstellungen ist die gewählte Kachel ins Bild gerückt.
+- [ ] N2303. **Koordinaten:** Schalte „Koordinaten“ unter dem Brett aus: Die Buchstaben und
+      Zahlen am Rand der Vorschau verschwinden sofort. Öffne eine Abbildung: auch dort keine
+      Koordinaten. Danach wieder einschalten.
+- [ ] N2304. **Reiter „Bedienung“:** Fünf Zeilen mit Symbol und Schalter: „Figuren per Wischen
+      ziehen“, „Züge gleiten über das Brett“, „Ton bei Zug und Schlag“, „Feiereffekte“, „Startbild
+      beim Öffnen der App“. Die Erklärung steht nur noch hinter dem Fragezeichen: Tippe es bei
+      „Feiereffekte“, der Text erscheint unter der Zeile, ein zweiter Tipp blendet ihn aus. Lassen
+      sich die Schalter gut treffen?
+- [ ] N2305. **Reiter „Anzeige“:** „Nachtmodus“ mit den Chips „wie das Gerät“, „aus“, „an“ unter
+      der Zeile; „Schriftgröße“ mit „A−“, Prozent und „A+“ rechts in der Zeile (bei Abweichung
+      erscheint darunter „Standard“); „Sprache“ mit Deutsch und der englischen Vorschau. Probiere
+      „A+“ und dann „Standard“.
+- [ ] N2306. **Reiter „Hilfe“:** „Toursymbol oben rechts“ mit Schalter, „Rundgang durch die App“
+      mit dem Knopf „Starten“, „Erklärkacheln von Zählen und Ziehen“ mit „Wieder anzeigen“.
+      Schalte das Toursymbol aus: Der Kompass oben rechts verschwindet; „Starten“ beginnt den
+      Rundgang trotzdem. Danach wieder einschalten.
+- [ ] N2307. **Daten und Über nur einmal:** Wechsle zwischen den drei Reitern. Unter jedem steht
+      dieselbe kurze Liste „Bots und Wertung“, „Deine Daten“, „Über die App“ genau einmal (früher
+      standen die Karten „Daten“ und „Über die App“ lang unter jedem Reiter). Rechts steht der
+      Stand: „ohne Maia · Lichess“ (oder „Maia an“), „noch nie gesichert“ oder „gesichert am …“
+      (ein oranger Punkt, wenn eine Sicherung fällig ist), die Versionsnummer.
+- [ ] N2308. **Unterseiten:** Tippe jede der drei Zeilen. „Bots und Wertung“: Maia laden,
+      schalten, löschen und darunter der Maßstab der Wertung (Lichess, chess.com, FIDE; früher im
+      Reiter „Anzeige“). „Deine Daten“: Sicherung anlegen und einspielen, alle Daten löschen,
+      Anleitung zum Entfernen. „Über die App“: Version, Datenstand, Offline, Update suchen, Fehler
+      melden, Lizenzen, Datenschutz, Impressum. Oben links führt „Einstellungen“ zurück. Fehlt dir
+      etwas, das es vorher gab?
+- [ ] N2309. **Tour der Einstellungen:** Tippe in den Einstellungen den Kompass oben rechts. Die
+      Tour zeigt nacheinander die Brettvorschau, die Reiter Bedienung, Anzeige und Hilfe, dann die
+      Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Stimmen die Texte zu dem, was
+      du siehst?
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

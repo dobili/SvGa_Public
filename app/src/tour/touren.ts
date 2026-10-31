@@ -319,18 +319,18 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   // Fortschritt, Partien.
   ich: tour("tour.titel.ich", [
     ziel("profil-karte", "tour.ich.profilkarte"),
-    ziel("profil-einstellungen", "tour.ich.einstellungen"),
+    ziel("profil-einstellungen", "einstellungenneu.tour.einstieg"),
     ziel("einstellungen-wertung", "tour.ich.wertung"),
     ziel("einstellungen-fortschritt", "tour.ich.fortschritt"),
     ziel("spielen-partien", "tour.spielen.partien"),
     ziel("spielen-filter", "tour.spielen.filter"),
   ]),
   einstellungen: tour("tour.titel.einstellungen", [
-    ziel("einstellungen-reiter-brett", "tour.ich.reiterBrett"),
+    ziel("einstellungen-reiter-brett", "einstellungenneu.tour.brett"),
     ziel("einstellungen-reiter-bedienung", "tour.ich.reiterBedienung"),
     ziel("einstellungen-reiter-anzeige", "tour.ich.reiterAnzeige"),
-    ziel("einstellungen-reiter-bots", "tour.ich.reiterBots"),
     ziel("einstellungen-reiter-hilfe", "tour.ich.reiterHilfe"),
+    ziel("einstellungen-reiter-bots", "einstellungenneu.tour.bots"),
     ziel("einstellungen-daten", "tour.ich.daten"),
     ziel("einstellungen-ueber", "tour.ich.ueber"),
   ]),

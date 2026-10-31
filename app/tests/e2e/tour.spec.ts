@@ -142,10 +142,9 @@ test("Einstellungen: Symbol aus blendet es überall aus, der Rundgang bleibt err
   await bereich(page, "Profil");
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("tab", { name: "Hilfe" }).click();
-  await page
-    .getByRole("radiogroup", { name: "Toursymbol" })
-    .getByRole("radio", { name: "aus" })
-    .click();
+  const symbol = page.getByRole("switch", { name: "Toursymbol oben rechts" });
+  await expect(symbol).toHaveAttribute("aria-checked", "true");
+  await symbol.click();
   await expect(page.getByRole("button", { name: /^Tour zu diesem Bildschirm/ })).toHaveCount(0);
   await page.getByRole("button", { name: "Rundgang durch die App" }).click();
   const karte = tourkarte(page);

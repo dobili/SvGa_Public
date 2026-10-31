@@ -48,6 +48,7 @@ import "./ui/stil/ordenkunst.css";
 import "./ui/stil/wochenkarte.css";
 import "./ui/stil/ziele.css";
 import "./ui/stil/extras.css";
+import "./ui/stil/einstellungen.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteNachsenden } from "./app/melden";

@@ -10,6 +10,7 @@ import { expect, test } from "@playwright/test";
 import {
   oeffneAbbildung,
   oeffneEinstellungen,
+  oeffneEinstellungsseite,
   starteImBrowser,
   waehleWerkzeug,
   warteAufOffline,
@@ -109,7 +110,7 @@ test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, conte
 
 test("Einstellungen zeigen App-Version und Datenstand", async ({ page }) => {
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Über die App");
   await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+ \(Beta\)$/);
   await expect(page.getByText("Auflage 1, Datenlauf vom")).toBeVisible();
 });
@@ -142,7 +143,7 @@ test("Barrierefreiheit: keine schweren Verstöße auf Buch und Abbildung", async
 test("Einstellungen: alle Daten löschen nach Nachfrage", async ({ page }) => {
   await starteImBrowser(page);
   await warteAufOffline(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Deine Daten");
   await page.getByRole("button", { name: "Alle Daten dieser App löschen" }).click();
   await page.getByRole("button", { name: "Ja, alles löschen" }).click();
   await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible();
@@ -228,8 +229,14 @@ test("Brett drehen; Koordinaten in den Einstellungen; Skelett-Ansicht im Bündel
 }) => {
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
-  await page.getByRole("radio", { name: "ausblenden" }).click();
+  const koordinaten = page.getByRole("switch", { name: "Koordinaten" });
+  await expect(koordinaten).toHaveAttribute("aria-checked", "true");
+  await koordinaten.click();
+  await expect(koordinaten).toHaveAttribute("aria-checked", "false");
+  // Die Brettvorschau oben zeigt die Koordinaten sofort nicht mehr.
+  await expect(page.locator(".brettstudio .brett svg text").filter({ hasText: /^a$/ })).toHaveCount(
+    0,
+  );
   await page.getByRole("button", { name: "Buch", exact: true }).click();
   await oeffneAbbildung(page, "5.17", "5.17");
   const drehen = page.getByRole("button", { name: "Brett drehen" });
@@ -302,15 +309,15 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
   // Seit 0.2.80 stehen die Bereiche der Darstellung auf Reitern; „Training“ gibt es seit 0.3.2
   // nicht mehr („Erst selbst denken“ gilt fest).
   await expect(page.getByRole("tab", { name: "Training" })).toHaveCount(0);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page
-    .getByRole("radiogroup", { name: "Figurensatz" })
+    .getByRole("radiogroup", { name: "Figuren", exact: true })
     .getByRole("radio", { name: "Chessnut" })
     .click();
   await page.getByRole("tab", { name: "Bedienung" }).click();
-  const ton = page.getByRole("radiogroup", { name: "Ton" });
-  await ton.getByRole("radio", { name: "an" }).click();
-  await expect(ton.getByRole("radio", { name: "an" })).toBeChecked();
+  const ton = page.getByRole("switch", { name: "Ton bei Zug und Schlag" });
+  await expect(ton).toHaveAttribute("aria-checked", "false");
+  await ton.click();
+  await expect(ton).toHaveAttribute("aria-checked", "true");
   await page.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
   // Seit 0.2.82 neun Bildsätze; Chessnut steht in der Gruppe „Klassisch“.

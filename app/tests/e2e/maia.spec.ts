@@ -4,14 +4,16 @@
  * in Chromium; WebKit prüft den Reiter ohne Laden (Speichergrenzen des Testbrowsers).
  */
 import { expect, test } from "@playwright/test";
-import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { oeffneEinstellungsseite, starteImBrowser } from "./hilfen";
 
 const LADEZEIT = 180_000;
 
-test("Reiter „Bots“: Maia laden, einschalten, löschen", async ({ page, browserName }) => {
+test("Seite „Bots und Wertung“: Maia laden, einschalten, löschen", async ({
+  page,
+  browserName,
+}) => {
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Bots" }).click();
+  await oeffneEinstellungsseite(page, "Bots und Wertung");
   const wahl = page.getByTestId("maia-wahl");
   await expect(wahl).toContainText("Menschlichere Züge (Maia)");
   const laden = wahl.getByRole("button", { name: /^Maia laden \(etwa 96 MB\)$/ });
@@ -39,8 +41,7 @@ test("mit Maia: der Bot antwortet im Mittelspiel, die Laufzeit läuft unter der 
     if (m.type() === "error" || m.type() === "warning") fehler.push(m.text());
   });
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Bots" }).click();
+  await oeffneEinstellungsseite(page, "Bots und Wertung");
   await page.getByRole("button", { name: /^Maia laden/ }).click();
   await expect(page.getByTestId("maia-wahl").getByRole("radio", { name: "an" })).toBeChecked({
     timeout: LADEZEIT,

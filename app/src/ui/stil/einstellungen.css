@@ -1,0 +1,370 @@
+/*
+ * Einstellungen nach dem Entwurf K2 „Brettvorschau oben“ (Wahl des Autors, 31.10.2026):
+ * Brettvorschau mit Farbfeldern und Figurenkacheln, Reiter als Segmente, Zeilen mit Symbol und
+ * Schalter, Liste der Unterseiten. Farben über die Tokens aus basis.css; eigene Werte nur für die
+ * Fläche der Vorschau, hell und dunkel getrennt (gleiche Regel wie .chip: Gerät dunkel und nicht
+ * „hell“ gewählt, oder „dunkel“ gewählt).
+ */
+
+.einstellungen-neu {
+  --studio-oben: #fbf8f1;
+  --studio-unten: #ece4d3;
+  --studio-rand: var(--linie-stark);
+  --schalter-aus: #c9c2b2;
+  --zeilensymbol: var(--gold-text);
+  --punkt-warnung: #d9822b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) .einstellungen-neu {
+    --studio-oben: #2a4268;
+    --studio-unten: #16253d;
+    --studio-rand: #3a4f74;
+    --schalter-aus: #3e5070;
+    --zeilensymbol: #e3bf4a;
+    --punkt-warnung: #e3943a;
+  }
+}
+
+:root[data-farbschema="dunkel"] .einstellungen-neu {
+  --studio-oben: #2a4268;
+  --studio-unten: #16253d;
+  --studio-rand: #3a4f74;
+  --schalter-aus: #3e5070;
+  --zeilensymbol: #e3bf4a;
+  --punkt-warnung: #e3943a;
+}
+
+/* Nur für Bildschirmleser (Bedingung gesperrter Extras). */
+.nur-vorlesen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Brettvorschau ---------- */
+
+.brettstudio {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+}
+
+.brettstudio-vorschau {
+  border-radius: 20px;
+  background: radial-gradient(110% 80% at 50% 0%, var(--studio-oben), var(--studio-unten) 75%);
+  border: 1px solid var(--studio-rand);
+  padding: calc(var(--raster) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.brettstudio-brett {
+  width: min(100%, 320px);
+}
+
+.brettstudio-brett .brett {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.3);
+}
+
+.brettstudio-koordinaten {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  color: var(--text-leise);
+  font-size: var(--groesse-mittel);
+}
+
+/* ---------- Farbfelder und Figurenkacheln ---------- */
+
+.musterwahl {
+  /* Die wischbare Reihe darf die Seite nicht verbreitern: ohne eigene Breite nach innen
+     (360 Pixel, sonst rutschte die Leiste unten nach rechts). */
+  contain: inline-size;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.musterwahl-titel {
+  margin: 0;
+  font-size: var(--groesse-grund);
+  font-weight: 700;
+}
+
+.musterreihe {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  /* Platz für den goldenen Ring der Wahl, der sonst am Rand abgeschnitten würde. */
+  padding: 4px;
+  margin: -4px;
+}
+
+.musterfeld {
+  /* Hält den nur vorgelesenen Text in der Reihe; sonst verbreiterte er die Seite. */
+  position: relative;
+  flex: none;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  line-height: 1.15;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.musterfeld-bild {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px var(--linie-stark);
+}
+
+.musterfeld-bild svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.musterfeld-kreis .musterfeld-bild {
+  border-radius: 50%;
+}
+
+.musterfeld-kachel .musterfeld-bild {
+  border-radius: 12px;
+}
+
+.musterfeld[aria-checked="true"] {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.musterfeld[aria-checked="true"] .musterfeld-bild {
+  box-shadow: 0 0 0 3px var(--gold);
+}
+
+.musterfeld-gesperrt .musterfeld-bild svg {
+  filter: grayscale(1) brightness(0.55);
+}
+
+.musterfeld-schloss {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.6));
+}
+
+/* ---------- Reiter als Segmente ---------- */
+
+.einstellungsreiter {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.25);
+}
+
+.einstellungsreiter .reiterzeile {
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  padding: 3px;
+  background: var(--grund);
+}
+
+.einstellungsreiter .reiter {
+  border: none;
+  border-radius: 9px;
+  font-size: var(--groesse-mittel);
+  font-weight: 600;
+}
+
+.einstellungsreiter .reiter[aria-selected="true"] {
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie-stark);
+}
+
+/* ---------- Zeilen ---------- */
+
+.einstellungsliste {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.einstellungszeile {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 14px;
+  min-height: 56px;
+  justify-content: center;
+}
+
+.einstellungszeile + .einstellungszeile,
+.einstellungsliste > * + * .einstellungszeile,
+.einstellungsliste > * + .einstellungszeile {
+  border-top: 1px solid var(--linie);
+}
+
+.einstellungszeile-oben {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--tippflaeche);
+}
+
+.einstellungszeile-symbol {
+  flex: none;
+  color: var(--zeilensymbol);
+}
+
+.einstellungszeile-name {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--groesse-grund);
+  text-align: left;
+}
+
+.einstellungszeile-wert {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-leise);
+  font-size: var(--groesse-mittel);
+  white-space: nowrap;
+}
+
+.einstellungszeile-erklaerung {
+  padding: 0 0 6px 33px;
+}
+
+.einstellungszeile-knopf {
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: var(--groesse-mittel);
+}
+
+.einstellungszeile-unten {
+  align-self: flex-start;
+  margin: 0 0 6px 33px;
+}
+
+/* Chips unter der Zeile (Nachtmodus, Sprache): der Name steht schon in der Zeile. */
+.einstellungszeile .einstellung-auswahl {
+  padding: 0 0 8px 33px;
+}
+
+.einstellungszeile .einstellung-auswahl > .einstellung-name {
+  display: none;
+}
+
+.schriftgroesse-reihe {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.schriftgroesse-reihe .chip {
+  border-radius: 10px;
+  padding: 0;
+  font-weight: 700;
+}
+
+/* Liste der Unterseiten: jede Zeile ein Knopf mit Wert und Pfeil. */
+.seitenzeile {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+}
+
+.seitenzeile-punkt {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--punkt-warnung);
+}
+
+/* ---------- Schalter ---------- */
+
+.schalter {
+  flex: none;
+  position: relative;
+  width: 52px;
+  height: 32px;
+  /* Tippfläche 44 Pixel hoch, ohne den Schalter größer zu zeichnen. */
+  margin: 6px 0;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--schalter-aus);
+  transition: background 0.15s;
+}
+
+.schalter::before {
+  content: "";
+  position: absolute;
+  inset: -6px 0;
+}
+
+.schalter-knopf {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
+  transition: transform 0.15s;
+}
+
+.schalter[aria-checked="true"] {
+  background: var(--gold);
+}
+
+.schalter[aria-checked="true"] .schalter-knopf {
+  transform: translateX(20px);
+  background: var(--navy);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schalter,
+  .schalter-knopf {
+    transition: none;
+  }
+}
+
+/* Nur eine Sprache: die Zeile „Deutsch (…)“ unter dem Namen, ohne den Namen doppelt. */
+.einstellungszeile .einstellungen {
+  margin: 0;
+  padding: 0 0 8px 33px;
+}
+
+.einstellungszeile .einstellungen dt {
+  display: none;
+}

@@ -102,14 +102,13 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(kastenlinks).toHaveCount(13);
   await expect(page.locator('a[href="/training/kap09/"]')).toBeVisible();
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page
-    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radiogroup", { name: "Brettfarbe" })
     .getByRole("radio", { name: "Ahorn & Nussbaum" })
     .click();
   await expect(
     page
-      .getByRole("radiogroup", { name: "Brettfarben" })
+      .getByRole("radiogroup", { name: "Brettfarbe" })
       .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
   await leiste.getByRole("button", { name: "Buch" }).click();
@@ -119,9 +118,8 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   ).toBeAttached();
   // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page
-    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radiogroup", { name: "Brettfarbe" })
     .getByRole("radio", { name: "Marmor grün" })
     .click();
   await leiste.getByRole("button", { name: "Buch" }).click();

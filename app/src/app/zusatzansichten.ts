@@ -17,6 +17,7 @@ import { ALBUM } from "../ui/komponenten/fundstuecke/album";
 import { Fundstueckalbum } from "../ui/komponenten/fundstuecke/Fundstueckalbum";
 import { NaechsterSchrittAnsicht } from "../ui/komponenten/start/NaechsterSchrittAnsicht";
 import { Rueckblick } from "../ui/bildschirme/Rueckblick";
+import { EINSTELLUNGSANSICHTEN } from "../ui/komponenten/einstellungen/einstellungsansichten";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -35,6 +36,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: "naechster", Bildschirm: NaechsterSchrittAnsicht },
   // P12 Monatsrückblick, Wert ist der Monat „2026-10“ (ui/bildschirme/Rueckblick.tsx).
   { kennung: "rueckblick", Bildschirm: Rueckblick },
+  // Unterseiten der Einstellungen (Entwurf K2, 31.10.2026): Bots und Wertung, Daten, Über die App.
+  ...EINSTELLUNGSANSICHTEN,
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

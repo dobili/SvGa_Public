@@ -31,24 +31,11 @@ const SEITEN = [
 const KUERZESTER_ANFANG = 3;
 
 /**
- * Schlüssel, die der Code benutzt, die der Test aber nicht selbst erkennt (geprüft am
- * 26.10.2026; die übrigen Einträge der früheren Liste waren wirklich ungenutzt und sind gelöscht).
- * Alle acht setzt `MerkerWahl` in ui/komponenten/einstellungen/EinstellungenKarte.tsx als
- * `${schluessel}.${w}` zusammen: `schluessel` ist einer der vier Grundschlüssel unten, `w` ist
- * „an“ oder „aus“ (KOORDINATEN).
+ * Schlüssel, die der Code benutzt, die der Test aber nicht selbst erkennt. Seit den neuen
+ * Einstellungen (Entwurf K2, 31.10.2026) leer: Die Schalter setzen keine Schlüssel mehr als
+ * `${schluessel}.${w}` zusammen, die Texte „an“ und „aus“ der Merker sind gelöscht.
  */
-const NOCH_ZU_PRUEFEN: ReadonlySet<string> = new Set([
-  "einstellungen.koordinaten.an",
-  "einstellungen.koordinaten.aus",
-  "einstellungen.wischen.an",
-  "einstellungen.wischen.aus",
-  "einstellungen.zuganimation.an",
-  "einstellungen.zuganimation.aus",
-  "einstellungen.startanimation.an",
-  "einstellungen.startanimation.aus",
-  "einstellungen.feiereffekte.an",
-  "einstellungen.feiereffekte.aus",
-]);
+const NOCH_ZU_PRUEFEN: ReadonlySet<string> = new Set<string>([]);
 
 /** Der Quelltext aller Dateien unter src/ (ohne Tests und Textdateien) und der HTML-Seiten. */
 function quelltext(): string {

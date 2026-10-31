@@ -114,9 +114,9 @@ test("Profil: Wertung in drei Kacheln, Kurve und Zahl im Maßstab der Einstellun
   await expect(karte.getByTestId("wertung-schaetzung")).toContainText(
     "Deine erste gewertete Partie in Blitz ersetzt die Schätzung.",
   );
-  // Der Maßstab steht in den Einstellungen (Reiter „Anzeige“) und gilt danach überall.
+  // Der Maßstab steht in den Einstellungen (Seite „Bots und Wertung“) und gilt danach überall.
   await page.getByRole("button", { name: "Einstellungen" }).click();
-  await page.getByRole("tab", { name: "Anzeige" }).click();
+  await page.getByRole("button", { name: /^Bots und Wertung/ }).click();
   const massstab = page.getByRole("radiogroup", { name: "Maßstab der Wertung" });
   await massstab.getByRole("radio", { name: "chess.com" }).click();
   await page.reload();
@@ -133,7 +133,7 @@ test("Profil: Wertung in drei Kacheln, Kurve und Zahl im Maßstab der Einstellun
   await karte.screenshot({ path: "test-results/bilder/wertung-kacheln.png" });
   // Klassisch 1500 liegt unter der FIDE-Tabelle: „–“ und die Grenze.
   await page.getByRole("button", { name: "Einstellungen" }).click();
-  await page.getByRole("tab", { name: "Anzeige" }).click();
+  await page.getByRole("button", { name: /^Bots und Wertung/ }).click();
   await massstab.getByRole("radio", { name: "FIDE" }).click();
   await page.reload();
   await oeffneProfil(page);

@@ -57,6 +57,11 @@ interface BrettEigenschaften {
   readonly ziehen?: Ziehbedienung | null;
   /** Etwas über dem ganzen Brett, das Tipps durchlässt (R38: Ergebnis der Partie). */
   readonly ueberlagerung?: React.ReactNode;
+  /**
+   * Holz und Brettbilder auch ohne Bedienung zeichnen (Brettvorschau der Einstellungen, 31.10.2026);
+   * sonst bleiben kleine Bretter ohne Knöpfe schlicht.
+   */
+  readonly vollbild?: boolean;
 }
 
 /** Name einer Figur für Bildschirmleser, etwa „weißer Springer“. */
@@ -259,13 +264,15 @@ export function Brett({
   gesperrt = null,
   ziehen = null,
   ueberlagerung = null,
+  vollbild = false,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
   // Holzbilder nur auf bedienbaren Brettern; kleine Bretter in Übersichten bleiben schlicht.
-  const holz = brettfarben === "holz" && beiFeld !== undefined;
+  const bedienbar = beiFeld !== undefined || vollbild;
+  const holz = brettfarben === "holz" && bedienbar;
   // Ebenso die Materialbretter (seit 0.2.84): ein ganzes Brettbild über den schlichten Feldern.
-  const bild = beiFeld !== undefined ? farben.bild : undefined;
+  const bild = bedienbar ? farben.bild : undefined;
   const kennung = useId().replace(/:/g, "");
   const figuren = figurenAusFen(fen);
   // Töne nur auf bedienbaren Brettern; die kleinen Bretter der Übersichten bleiben still.

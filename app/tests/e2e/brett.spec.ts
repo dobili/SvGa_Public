@@ -68,9 +68,10 @@ test("Zuganimation (R37): in den Einstellungen abgeschaltet gleitet nichts", asy
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Bedienung" }).click();
-  const schalter = page.getByRole("radiogroup", { name: "Züge gleiten über das Brett" });
-  await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
-  await schalter.getByRole("radio", { name: "aus" }).click();
+  const schalter = page.getByRole("switch", { name: "Züge gleiten über das Brett" });
+  await expect(schalter).toHaveAttribute("aria-checked", "true");
+  await schalter.click();
+  await expect(schalter).toHaveAttribute("aria-checked", "false");
   await beginnePartie(page);
   await beobachteAnimation(page);
   await page.getByRole("button", { name: /^d2, Bauer/ }).click();
@@ -128,9 +129,10 @@ test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nic
   // In den Einstellungen abgeschaltet: auch beim nächsten Start (neue Sitzung) kein Startbild.
   await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Bedienung" }).click();
-  const schalter = page.getByRole("radiogroup", { name: "Startbild beim Öffnen der App" });
-  await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
-  await schalter.getByRole("radio", { name: "aus" }).click();
+  const schalter = page.getByRole("switch", { name: "Startbild beim Öffnen der App" });
+  await expect(schalter).toHaveAttribute("aria-checked", "true");
+  await schalter.click();
+  await expect(schalter).toHaveAttribute("aria-checked", "false");
   await page.evaluate(() => window.sessionStorage.clear());
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();

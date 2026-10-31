@@ -85,9 +85,10 @@ test("Ziehen per Wischen abgeschaltet: Wischen zieht nicht, Antippen schon", asy
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Bedienung" }).click();
-  const schalter = page.getByRole("radiogroup", { name: "Figuren per Wischen ziehen" });
-  await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
-  await schalter.getByRole("radio", { name: "aus" }).click();
+  const schalter = page.getByRole("switch", { name: "Figuren per Wischen ziehen" });
+  await expect(schalter).toHaveAttribute("aria-checked", "true");
+  await schalter.click();
+  await expect(schalter).toHaveAttribute("aria-checked", "false");
   await beginnePartie(page);
   await expect(page.getByRole("button", { name: /^e2, Bauer/ })).not.toHaveCSS(
     "touch-action",

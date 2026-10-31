@@ -4,6 +4,34 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Einstellungen neu nach Entwurf K2 „Brettvorschau oben“ (Arbeitschat, Zweig `gestaltung-einstellungen`)
+
+Ziel des Autors: Die Einstellungen waren zu technisch, zu textlastig und wirkten wie ein Formular;
+Zielgruppe sind Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. Gewählt: K2.
+
+- **Aufbau:** oben die Brettvorschau (`Brettstudio.tsx`): großes Brett mit Pfeilen, markiertem
+  Feld und letztem Zug, Schalter „Koordinaten“, Farbfelder (`Musterwahl.tsx`, rund) und
+  Figurenkacheln. Darunter drei Reiter Bedienung, Anzeige, Hilfe (Liste `REITER` in
+  `einstellungsreiter.ts`), je Einstellung eine Zeile mit Symbol und Schalter
+  (`Einstellungszeile.tsx`); Erklärungen nur noch hinter dem Fragezeichen. Ganz unten genau
+  einmal die Zeilen „Bots und Wertung“, „Deine Daten“, „Über die App“ (Liste
+  `EINSTELLUNGSSEITEN` in `einstellungsseiten.ts`), jede mit Stand und eigener Seite über die
+  Ansicht „zusatz“ (eine Zeile in `ZUSATZANSICHTEN`).
+- **Eintragen statt umbauen:** Brettfarben und Figurensätze kommen aus `BRETTARTEN` und
+  `BILDSAETZE` (speicher/format.ts), Extras aus `training/extras.ts`; Reiter, Schalter und
+  Unterseiten sind Listen. Feste Trainerlisten gibt es in den Einstellungen nicht.
+- **Abweichungen vom Entwurf:** Die Farbreihe zeigt alle Bretter zum Wischen statt einer Kachel
+  „Holz und mehr“ (nichts versteckt). Figurenkacheln zeigen den Springer auf dem hellen Feld des
+  gewählten Brettes statt auf dunklem Grund, weil der Buchsatz in Navy auf Dunkel verschwände.
+  Gesperrte Extras nennen ihre Bedingung nach einem Tipp unter der Reihe (in den kleinen Feldern
+  ist kein Platz), für Bildschirmleser im Namen. Nachtmodus und Sprache bleiben Chips (drei bzw.
+  zwei Werte), unter ihrer Zeile. Der Maßstab der Wertung steht wie im Entwurf bei den Bots.
+- **Technik:** Schalter sind `role="switch"`; das Brett hat die Angabe `vollbild`, damit die
+  Vorschau Holz und Materialbilder ohne Bedienknöpfe zeigt. Nicht mehr genutzte Texte
+  (Gruppentitel, „an/aus“ der Merker, alte Tourtexte) gelöscht; neue Texte mit der Vorsilbe
+  `einstellungenneu.` in beiden Sprachen. Speicherformat unverändert.
+- Testpunkte N2300 bis N2309.
+
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 
 - Zweig `profil-neu` geprüft und zusammengeführt (Wahl des Autors auf der Auswahlseite):

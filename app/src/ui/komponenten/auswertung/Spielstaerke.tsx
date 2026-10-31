@@ -1,66 +1,34 @@
 /**
- * Karten „Genauigkeit und Spielstärke“ und „Deine Züge“ in der Auswertung, für eine Seite.
+ * Karte „Spielstärke“ im Abschnitt „In Zahlen“ der Auswertung, für eine Seite.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (R56, 23.10.2026, nach Vorschaubildern): Die Auswertung
  * zeigt eine Seite (Umschalter in Auswertung.tsx), oben ein großer Ring mit der Genauigkeit,
  * daneben Urteil und geschätzte Spielstärke mit Spanne, darunter je ein Balken (Skala 50 bis
  * 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik mit Prozent, Urteilswort und
  * Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen stehen als Bullet-Diagramm in
- * Zugklassen.tsx. Die Rechnungen stehen in spiel/genauigkeit.ts.
+ * Zugklassen.tsx. Die Rechnungen stehen in spiel/genauigkeit.ts, gesammelt in seitenzahlen.ts
+ * (seit der Zeitleiste, 31.10.2026, rechnet die Auswertung sie einmal für alle Teile).
  * Entscheidung des Autors (23.10.2026): Die Genauigkeit ist die von Lichess, die Spielstärke
  * kommt aus dem Elo-Modell der Zeitklasse der Partie (spiel/elomodell.ts); hinter dem
  * Fragezeichen die Entsprechung auf chess.com oder beim Weltschachbund (wertungstext.ts).
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/wertung.ts, spiel/elomodell.ts, engine/botstaerke.ts,
- * Zugklassen.tsx, Genauigkeitsbalken.tsx, wertungstext.ts, InfoKnopf, i18n.
+ * Abhängigkeiten: seitenzahlen.ts, spiel/genauigkeit.ts, engine/botstaerke.ts,
+ * Genauigkeitsbalken.tsx, wertungstext.ts, InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
-import { useMemo } from "react";
 import { gegnerstaerke } from "../../../engine/botstaerke";
 import { t } from "../../../i18n/sprache";
-import type { Zugurteil } from "../../../spiel/auswertung";
-import {
-  phasenurteil,
-  spielstaerke,
-  spielstaerkeImMittelspiel,
-  spielstaerkeJePhase,
-  type Seitenbilanz,
-} from "../../../spiel/genauigkeit";
-import { stellungen, type Partie } from "../../../spiel/partie";
-import { type Phase } from "../../../spiel/phasen";
-import { wertungstempo } from "../../../spiel/elomodell";
-import { zugartJeStellung } from "../../../spiel/taktik";
-import { staerkeLetzterPartien } from "../../../spiel/wertung";
-import { sanZuUci } from "../../../spiel/zuege";
-import { useSpeicher } from "../../../speicher/speicher";
-import { Genauigkeitsbalken, type Balkenzeile } from "./Genauigkeitsbalken";
+import { phasenurteil, type Seitenbilanz } from "../../../spiel/genauigkeit";
+import type { Partie } from "../../../spiel/partie";
+import { Genauigkeitsbalken } from "./Genauigkeitsbalken";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { staerketext as angabetext } from "../gegner/staerkeangabe";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 import { entsprichtText } from "../fortschritt/wertungstext";
-import { Zugklassen } from "./Zugklassen";
+import type { Seitenzahlen } from "./seitenzahlen";
 
-/** Ohne jede Schätzung vergleicht „Deine Züge“ mit dieser Stärke (Einsteiger mit Erfahrung). */
-const VERGLEICH_OHNE_SCHAETZUNG = 1200;
 const RING_RADIUS = 40;
 const RING_GROESSE = 100;
 const PROZENT = 100;
-
-/**
- * Mit welcher Stärke werden die Zugklassen verglichen? Für den Leser mit „Deine Spielstärke“
- * (letzte zehn gewertete Partien), sonst mit der Schätzung dieser Partie; für die Engine mit der
- * festen Zahl des Bots. Nicht die Schätzung der Partie zuerst: Eine schwache Partie würde sich
- * sonst mit schwachen Spielern vergleichen und „normal“ aussehen.
- */
-function vergleichsElo(
-  partie: Partie,
-  seite: Color,
-  b: Seitenbilanz,
-  eigeneStaerke: number | null,
-): number {
-  const ausPartie = b.schaetzung?.mitte ?? VERGLEICH_OHNE_SCHAETZUNG;
-  if (seite === partie.einstellung.eigeneFarbe) return eigeneStaerke ?? ausPartie;
-  return partie.einstellung.gegner === "engine" ? gegnerstaerke(partie.einstellung) : ausPartie;
-}
 
 /** Ring mit der Genauigkeit in der Farbe des Urteils. */
 function Ring({ genauigkeit, urteil }: { genauigkeit: number; urteil: string }) {
@@ -156,56 +124,29 @@ function Kartenkopf({ b }: { b: Seitenbilanz }) {
   );
 }
 
-/** Die beiden Karten für die gewählte Seite. */
+/**
+ * Die Karte „Spielstärke“ für die gewählte Seite: Ring, Urteil, Schätzung mit Spanne, beim Bot
+ * seine feste Zahl, darunter die fünf Balken (Phasen, Strategie, Taktik) mit Skala.
+ * Eingaben: Partie, Seite, Zahlen der Seite (seitenzahlen.ts).
+ */
 export function Spielstaerke({
   partie,
-  werte,
-  urteile,
-  beste,
-  phasen,
   seite,
+  zahlen,
 }: {
   partie: Partie;
-  werte: readonly number[];
-  urteile: readonly Zugurteil[];
-  beste: readonly string[];
-  phasen: readonly Phase[];
   seite: Color;
+  zahlen: Seitenzahlen;
 }) {
-  const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
-  const tempo = wertungstempo(partie.einstellung.uhr);
-  const partien = useSpeicher((z) => z.daten.spiel.partien);
-  // Vergleichsstärke der Zugklassen: „Deine Spielstärke“ in der Zeitklasse dieser Partie.
-  const eigeneStaerke = useMemo(
-    () => staerkeLetzterPartien(partien, tempo)?.mitte ?? null,
-    [partien, tempo],
-  );
-  if (urteile.length === 0) return null;
-  const alle = stellungen(partie);
-  const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const args = [partie, werte, urteile, beste, gespielte] as const;
-  const b = spielstaerke(...args, tempo, phasen)[seite];
-  const jePhase = spielstaerkeJePhase(...args, phasen, tempo);
-  const imMittelspiel = spielstaerkeImMittelspiel(...args, phasen, zugarten, tempo);
-  const zeilen: readonly Balkenzeile[] = [
-    { art: "eroeffnung", b: jePhase.eroeffnung[seite] },
-    { art: "mittelspiel", b: jePhase.mittelspiel[seite] },
-    { art: "endspiel", b: jePhase.endspiel[seite] },
-    { art: "strategie", b: imMittelspiel.strategie[seite] },
-    { art: "taktik", b: imMittelspiel.taktik[seite] },
-  ];
   return (
-    <>
-      <section
-        className="karte spielstaerke"
-        data-testid="spielstaerke"
-        data-tour="auswertung-staerke"
-      >
-        <Kartenkopf b={b} />
-        <Gesamt partie={partie} seite={seite} b={b} />
-        <Genauigkeitsbalken zeilen={zeilen} />
-      </section>
-      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} tempo={tempo} />
-    </>
+    <section
+      className="karte spielstaerke"
+      data-testid="spielstaerke"
+      data-tour="auswertung-staerke"
+    >
+      <Kartenkopf b={zahlen.b} />
+      <Gesamt partie={partie} seite={seite} b={zahlen.b} />
+      <Genauigkeitsbalken zeilen={zahlen.zeilen} />
+    </section>
   );
 }

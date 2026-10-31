@@ -33,6 +33,62 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Auswertung neu (31.10.2026)
+
+Die Auswertung nach einer Partie ist nach deiner Wahl neu gebaut (Entwurf F2 „Zeitleiste der
+Partie“): Ergebnis oben, die Partie als Zeitleiste in Momenten, darunter „In Zahlen“, ganz unten
+„Neue Partie“ und „Teilen“. So kommst du zu einer Auswertung: „Spielen“ unten in der Leiste, einen
+schwachen Bot wählen (etwa Derya, Gruppe „Neuling“ oder „Einsteiger“), „Partie beginnen“ und
+etwa 15 bis 20 Züge spielen, gern mit einem absichtlich schlechten Zug; dann aufgeben („Aufgeben“
+unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach einige Sekunden.
+
+- [ ] N2320. **Ergebnis oben:** Direkt unter dem Untertitel, über der Zugliste, eine Kopfzeile mit
+      dem Porträt des Bots, groß „Gewonnen“ (grün), „Verloren“ (rot) oder „Remis“, darunter wie
+      die Partie endete und in welchem Zug („Du hast aufgegeben. · im 18. Zug“), rechts nach der
+      Auswertung deine Genauigkeit („74 %“ und „genau“). Gut lesbar hell und dunkel?
+- [ ] N2321. **Die Partie in Momenten:** Unter dem Brett die Überschrift „Die Partie in
+      Momenten“, ein Umschalter „Weiß (du) | Schwarz (Bot)“, die Verlaufskurve und darunter eine
+      senkrechte Linie mit Abschnitten je Phase („ERÖFFNUNG · ZUG 1 BIS 9 · 87 %“; die Prozente
+      sind deine Genauigkeit in der Phase, die Linie trägt die Farbe des Urteils). Wirkt das
+      weniger wie ein Formular als vorher?
+- [ ] N2322. **Momente:** An der Linie runde Marken mit Karten: das Ende der Theorie mit dem
+      Namen der Eröffnung („Philidor-Verteidigung · 4 Theoriezüge bis 4. dxe5 …“), deine erste
+      klare Abweichung („8. Sc3?“, „Erste klare Abweichung: Gewinnchance 64 % → 52 %.“, „Besser
+      war 8. Dxb7“ in Gold), weitere Fehler, verpasste Gewinne und Patzer mit ihrer Marke, die
+      absichtlichen Fehler des Bots mit einem kleinen Roboter („Absichtlicher Fehler: Derya hat
+      eine Figur hängen lassen (W1).“ und darunter „Du hast es gesehen und genutzt.“ oder „Hast du
+      es gesehen?“) und zuletzt das Ende der Partie mit einer Flagge. Ohne klare Abweichung steht
+      oben eine grüne Karte „Gut gespielt!“.
+- [ ] N2323. **Kleine Bretter und Sprung:** Fehler und Fehler des Bots zeigen rechts ein kleines
+      Brett (gold der bessere Zug, rot der gespielte). „Zur Stellung“ springt nach oben aufs große
+      Brett an genau diese Stelle; die Karte unter dem Brett erklärt dort den Zug wie bisher.
+- [ ] N2324. **Seitenwahl:** Im Umschalter „Schwarz (Bot)“ wählen: Die Zeitleiste zeigt jetzt
+      die Fehler des Bots, ohne „Erste klare Abweichung“; auch „In Zahlen“ wechselt auf den Bot
+      (beide Umschalter bleiben gleich gestellt). Zurück auf „Weiß (du)“.
+- [ ] N2325. **Verlaufskurve wie bisher (dein Wunsch):** Unter der Kurve „Ganze Partie“ und die
+      Phasen als Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der
+      Kurve halten und fahren zeigt den Zug darüber, Loslassen springt dorthin; zwei Finger
+      zoomen. Die roten Punkte sind Fehler. Alles wie vor dem Umbau, nur im neuen Rahmen?
+- [ ] N2326. **In Zahlen:** Überschrift „In Zahlen“, Umschalter Weiß/Schwarz, dann die Karte
+      „SPIELSTÄRKE“ (Ring, Urteil, geschätzte Spielstärke mit Spanne, beim Bot seine feste Zahl,
+      Fragezeichen mit Erklärung, fünf Balken mit Skala 50 bis 100 %) und „DEINE ZÜGE“: weiter
+      die bisherige Grafik, je Zugart ein Balken über den Zonen wenig/normal/viel mit Strich für
+      das Übliche, Warnzeichen bei schwachen Werten, alle zehn Arten; unter 15 eigenen Zügen nur
+      die Anzahlen. Nur Rundungen und Überschriften sind neu.
+- [ ] N2327. **Neue Partie und Teilen:** Ganz unten zwei große Knöpfe „Neue Partie“ und
+      „Teilen“; aus einer eigenen Stellung (etwa „Gegen die Engine spielen“ an einer Abbildung)
+      darunter zusätzlich „Noch einmal aus derselben Stellung“. „Teilen“ öffnet ein Blatt von
+      unten mit „PGN kopieren“ und „PGN als Datei sichern“; das Kreuz oder ein Tipp daneben
+      schließt es.
+- [ ] N2328. **Merken als Blatt:** Einen Zug in der Zugliste antippen, dann rechts unter dem Brett
+      „Merken“: Statt eines Bereichs unten in der Karte öffnet sich ein Blatt von unten mit „Wohin?“
+      (Lernen oder Fehler) und den Feldern wie bisher. Speichern klappt, das Kreuz schließt es.
+- [ ] N2329. **Nichts verloren:** Zugliste mit Zeichen und „Alle Züge zeigen“, Pfeile zum Blättern,
+      Uhren, Bewertungsbalken links am Brett, Drehen, Ruhige Ansicht (blendet die Auswertung aus,
+      Ergebnis und „Neue Partie“ bleiben), „Besserer Zug“/„Bestrafung“ abspielen, Nebenzweig,
+      „Zurücknehmen“ nach dem Ende (nur in ungewerteten Partien), die Meldung „Gruppenmodus frei“ und während der Rechnung
+      „Die Engine wertet die Partie aus …“ mit Balken: alles noch da?
+
 ### Buchseite und Lernpfad neu (31.10.2026)
 
 Die Startseite „Buch“ und „Dein Weg durchs Buch“ sind nach deiner Wahl der Entwürfe neu gebaut:

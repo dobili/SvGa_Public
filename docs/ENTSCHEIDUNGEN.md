@@ -4,6 +4,40 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Auswertung neu: Entwurf F2 „Zeitleiste der Partie“ (Arbeitschat, Zweig `gestaltung-auswertung`)
+
+Ziel des Autors: Die Auswertung war zu technisch, zu textlastig und wirkte wie ein Formular;
+Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. Gewählt: F2.
+
+- **Ergebnis oben** (`partie/Ergebniskopf.tsx`, ersetzt `Partieende.tsx`): Porträt, „Gewonnen“/
+  „Verloren“/„Remis“, wie und in welchem Zug, rechts die Genauigkeit des Lesers. Testkennung
+  `partieende` und Tourziel `partie-ende` bleiben.
+- **Zeitleiste** (`auswertung/Zeitleiste.tsx`): Phasen mit Zugbereich und Genauigkeit der
+  gewählten Seite, Momente als Karten mit Marke, kleinem Brett (vorhandenes statisches `Brett`) und
+  „Zur Stellung“. Die Momente rechnet `auswertung/momente.ts` (Liste `MOMENTQUELLEN`: Theorie,
+  erste Abweichung, Fehler, Fehler der Engine, Ende), die Darstellung `momentdarstellung.ts`
+  (`MOMENTDARSTELLUNG`); eine neue Art ist je ein Eintrag. Die Listen „Fehler und Patzer“ und
+  „Absichtliche Fehler der Engine“ entfallen als eigene Listen. Neu bei den Fehlern der Engine:
+  „Du hast es gesehen und genutzt“ (Antwort war brillant, stark oder bester Zug), „Die Chance hast
+  du nicht genutzt“ (verpasst), sonst „Hast du es gesehen?“ (Pflichtenheft 5.2).
+- **Verlaufskurve** unverändert in der Bedienung (Ganze Partie/Phasen, Fingerfahren, zwei Finger
+  zoomen, Tipp springt; Wunsch des Autors vom 31.10.2026), nur im neuen Rahmen.
+- **Eine Seitenwahl** für Zeitleiste und „In Zahlen“, zweimal gezeigt (oben „Momente von“, unten
+  „Seite“), beide gleich gestellt. Fehler der Engine erscheinen unabhängig von der Seite.
+- **In Zahlen** (`auswertung/Zahlen.tsx`, Liste `ZAHLENABSCHNITTE`): Spielstärke und „Deine Züge“.
+  „Deine Züge“ behält ausdrücklich die Originalgrafik (`Zugklassen.tsx`), nur Rundungen,
+  Überschrift und Abstände im neuen Stil; die Tabelle des Entwurfs ist nicht übernommen. Die
+  Kennzahlen rechnet `seitenzahlen.ts` einmal für Kopfzeile, Zeitleiste und Zahlen.
+- **Abschluss** (`partie/Partieabschluss.tsx`): „Neue Partie“, „Teilen“ (Blatt mit PGN kopieren
+  und als Datei sichern, `PgnTeilen.tsx`), bei eigener Stellung „Noch einmal aus derselben
+  Stellung“; auch in der ruhigen Ansicht.
+- **Blatt** (`auswertung/Blatt.tsx`): Dialog von unten mit Titel, Kreuz, Escape und Tipp daneben;
+  genutzt für „Teilen“ und „Merken“ (`rueckblick/Rueckblickkarte.tsx`).
+- Abweichungen vom Entwurf: Die Genauigkeit des Ergebnisses steht erst nach der Auswertung; die
+  Eröffnungskarte zeigt Theoriezüge der gewählten Seite, aber keine „Eröffnungsziele“ (dafür gibt
+  es keine Daten); Theoriezüge, Ende und „Gut gespielt!“ ohne kleines Brett; Zeichen der Kurve
+  bleiben rot (die Kurve kennt nur „Fehler“). Testpunkte N2320 bis N2329.
+
 ## 31.10.2026 – Buchseite und Lernpfad neu (Arbeitschat, Zweig `gestaltung-buch-lernpfad`)
 
 Ziel des Autors: Die Buchseite und der Lernpfad waren zu technisch, zu textlastig und wirkten wie

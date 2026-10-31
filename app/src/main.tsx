@@ -53,6 +53,7 @@ import "./ui/stil/ziele.css";
 import "./ui/stil/extras.css";
 import "./ui/stil/trainingslook.css";
 import "./ui/stil/checkliste.css";
+import "./ui/stil/auswertungneu.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteNachsenden } from "./app/melden";

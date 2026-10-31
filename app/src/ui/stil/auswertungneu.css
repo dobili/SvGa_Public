@@ -1,0 +1,433 @@
+/*
+ * Auswertung neu nach Entwurf F2 „Zeitleiste der Partie“ (Wahl des Autors, 31.10.2026):
+ * Ergebnis als Kopfzeile, Überschriften der Abschnitte, Zeitleiste mit Phasen, Marken und
+ * kleinen Brettern, Blatt von unten (Teilen, Merken), Abschluss mit Neue Partie und Teilen,
+ * dazu der neue Stil der Karten „Spielstärke“ und „Deine Züge“ (Inhalt unverändert).
+ * Farben nur aus den Tokens in basis.css, damit hell und dunkel stimmen; Urteilsfarben wie
+ * .ringfarbe-* (auswertung.css), Zugklassen wie .klassenmarke-* (spiel.css).
+ */
+
+/* ---------- Ergebnis als Kopfzeile ---------- */
+.ergebniskopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  margin: var(--raster) 0 calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
+  border-radius: calc(var(--radius) * 2);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.ergebniskopf > .gegnerbild {
+  flex: none;
+  width: 3.5rem;
+}
+
+.ergebniskopf > .gegnerbild .gegner-portraet {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.ergebniskopf-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ergebniskopf-titel {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-seite);
+  line-height: 1.15;
+}
+
+.ergebniskopf-gewonnen .ergebniskopf-titel {
+  color: var(--gruen-text);
+}
+
+.ergebniskopf-verloren .ergebniskopf-titel {
+  color: var(--rot-text);
+}
+
+.ergebniskopf-zeile {
+  margin: 2px 0 0;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.ergebniskopf-genau {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.ergebniskopf-genau b {
+  color: var(--text);
+  font-size: var(--groesse-zahl);
+}
+
+.ergebniskopf-genau span {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+/* ---------- Abschnitte der Auswertung ---------- */
+.auswertung {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+  margin-top: calc(var(--raster) * 2);
+}
+
+.auswertung-abschnitt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.auswertung-ueberschrift {
+  margin: calc(var(--raster) * 2) 0 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+}
+
+.auswertung-abschnitt > .hinweis {
+  margin: 0;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.auswertung .verlaufskurve-rahmen {
+  padding: var(--raster);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.auswertung .verlaufskurve {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+/* Fehlerpunkte in der Farbe ihrer Klasse wäre schön; die Kurve kennt nur „Fehler“: Rot mit Rand. */
+.auswertung .verlaufskurve-fehler {
+  fill: #ca3431;
+  stroke: var(--flaeche);
+  stroke-width: 1.5;
+}
+
+/* ---------- Zeitleiste ---------- */
+.zeitleiste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.zeitleiste-gut {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 1.5);
+  border-radius: calc(var(--radius) * 1.5);
+  background: color-mix(in srgb, var(--gruen-text) 14%, var(--flaeche));
+  color: var(--gruen-text);
+}
+
+.zeitleiste-gut .zeitleiste-text {
+  color: var(--text);
+}
+
+.zeitleiste-abschnitt {
+  --linienfarbe: var(--linie-stark);
+  position: relative;
+  padding-left: calc(var(--raster) * 4);
+}
+
+/* Die senkrechte Linie links, je Phase in der Farbe ihres Urteils. */
+.zeitleiste-abschnitt::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 4px;
+  bottom: 0;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--linienfarbe);
+}
+
+.linie-hervorragend {
+  --linienfarbe: #1f7a3a;
+}
+.linie-sehrGut {
+  --linienfarbe: #3b9a52;
+}
+.linie-gut {
+  --linienfarbe: #7fa33a;
+}
+.linie-ungenau {
+  --linienfarbe: var(--gold);
+}
+.linie-fehlerhaft {
+  --linienfarbe: #d9742b;
+}
+.linie-schwach {
+  --linienfarbe: #b33a3a;
+}
+
+.zeitleiste-phase {
+  margin: calc(var(--raster) * 1.5) 0 var(--raster);
+  color: var(--gold-text);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.zeitleiste-liste {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zeitleiste-moment {
+  position: relative;
+}
+
+/* Marke auf der Linie, mittig zur Titelzeile der Karte. */
+.zeitleiste-marke {
+  position: absolute;
+  left: calc(var(--raster) * -4 + 3px);
+  top: calc(var(--raster) * 2);
+}
+
+.zeitleiste-marke .klassenmarke {
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 0 0 3px var(--grund);
+}
+
+.klassenmarke-engine {
+  background: #5c6f8f;
+}
+
+.klassenmarke-ende {
+  background: var(--navy);
+  box-shadow: 0 0 0 1px var(--linie-stark);
+}
+
+.zeitleiste-karte {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.zeitleiste-inhalt {
+  flex: 1;
+  min-width: 0;
+}
+
+.zeitleiste-titel {
+  margin: 0 0 4px;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  line-height: 1.2;
+}
+
+.zeitleiste-text {
+  margin: 0 0 4px;
+  font-size: var(--groesse-mittel);
+}
+
+.zeitleiste-besser {
+  color: var(--gold-text);
+}
+
+.zeitleiste-zusatz {
+  margin: 0 0 4px;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.zeitleiste-sprung {
+  min-height: 40px;
+  margin-top: var(--raster);
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.zeitleiste-brett {
+  flex: none;
+  width: 5.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.zeitleiste-brett .brett svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zeitleiste-hinweis {
+  margin: 0;
+}
+
+/* ---------- In Zahlen: neuer Stil der Karten ---------- */
+.auswertung .karte {
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+.auswertung .spielstaerke .karte-titel,
+.auswertung .zugklassen .karte-titel {
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+
+.auswertung .balken-spur {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.auswertung .zugklasse-spur {
+  border-radius: 8px;
+}
+
+.auswertung .zugklasse-wert {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.auswertung .zugklasse-ueblich {
+  border-radius: 2px;
+}
+
+.auswertung .zugklasse.ist-schwach {
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+.auswertung .zugklasse-anzahl {
+  min-width: 2em;
+  font-size: var(--groesse-klein);
+}
+
+/* ---------- Abschluss: Neue Partie und Teilen ---------- */
+.partieabschluss {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin: calc(var(--raster) * 3) 0 calc(var(--raster) * 2);
+}
+
+.partieabschluss-reihe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--raster);
+}
+
+.partieabschluss button {
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+/* ---------- Blatt von unten ---------- */
+.blatt-grund {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(5, 10, 20, 0.55);
+}
+
+.blatt {
+  width: 100%;
+  max-width: 40rem;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: var(--raster) calc(var(--raster) * 2)
+    calc(var(--raster) * 3 + env(safe-area-inset-bottom));
+  border-radius: calc(var(--radius) * 2.5) calc(var(--radius) * 2.5) 0 0;
+  background: var(--flaeche);
+  color: var(--text);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.blatt-griff {
+  display: block;
+  width: 44px;
+  height: 5px;
+  margin: 0 auto var(--raster);
+  border-radius: 3px;
+  background: var(--linie-stark);
+}
+
+.blatt-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: calc(var(--raster) * 1.5);
+}
+
+.blatt-titel {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+}
+
+.blattliste {
+  display: flex;
+  flex-direction: column;
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: 0 0 0 1px var(--linie);
+  overflow: hidden;
+}
+
+.blattzeile {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  min-height: 56px;
+  padding: 0 calc(var(--raster) * 2);
+  border: none;
+  border-bottom: 1px solid var(--linie);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.blattzeile svg {
+  color: var(--gold-text);
+}
+
+.blattliste > .hinweis,
+.blattliste > .vorformatiert {
+  margin: var(--raster) calc(var(--raster) * 2);
+}

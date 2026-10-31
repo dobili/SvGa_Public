@@ -217,7 +217,7 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await expect(page.getByTestId("partieende")).toBeVisible();
   await starteTour(page);
   const danach = await bisZumEnde(page);
-  expect(danach.join(" ")).toContain("Das Ergebnis.");
+  expect(danach.join(" ")).toContain("Das Ergebnis der Partie");
   // Nach dem Ende stimmt „Wer am Zug ist …“ nicht mehr; der Schritt fällt weg.
   expect(danach.join(" ")).not.toContain("Wer am Zug ist");
 });

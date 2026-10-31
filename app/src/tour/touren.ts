@@ -296,6 +296,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   // Reihenfolge wie auf dem Bildschirm (Befund der Tourprüfung, 25.10.2026). Der Status gilt nur
   // während der Partie, Rückblick und Auswertung erst danach; beide zugleich gibt es nie.
   partie: tour("tour.titel.partie", [
+    // Seit F2 (31.10.2026) steht das Ergebnis als Kopfzeile ganz oben.
+    ziel("partie-ende", "auswertungneu.tour.ende"),
     ziel("partie-zuege", "tour.partie.zuege"),
     ziel("partie-uhr", "tour.partie.uhr"),
     ziel("brett", "tour.partie.brett"),
@@ -304,13 +306,12 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("partie-werkzeuge", "tour.partie.werkzeuge"),
     ziel("partie-status", "tour.partie.status"),
     ziel("rueckblick-karte", "tour.partie.rueckblick"),
-    ziel("partie-ende", "tour.partie.ende"),
+    // Auswertung neu (Entwurf F2, 31.10.2026): Ergebnis oben, Zeitleiste, Zahlen, Abschluss.
     ziel("auswertung", "tour.partie.auswertung"),
-    ziel("auswertung-pgn", "tour.partie.pgn"),
     ziel("auswertung-kurve", "tour.partie.kurve"),
-    ziel("auswertung-abweichung", "tour.partie.abweichung"),
-    ziel("auswertung-patzer", "tour.partie.patzer"),
+    ziel("auswertung-momente", "auswertungneu.tour.momente"),
     ziel("auswertung-staerke", "tour.partie.staerke"),
+    ziel("auswertung-pgn", "auswertungneu.tour.abschluss"),
   ]),
   // Profil (seit 0.2.134): Name und Porträt (seit 0.2.140), Knopf zu den Einstellungen, Wertung,
   // Fortschritt, Partien.

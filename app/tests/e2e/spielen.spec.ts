@@ -142,9 +142,16 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     timeout: ENGINE_FRIST,
   });
   const auswertung = page.getByTestId("auswertung");
-  await expect(auswertung).toContainText("Erste klare Abweichung: 2. g4??", {
-    timeout: ENGINE_FRIST,
-  });
+  // Seit der Auswertung neu (Entwurf F2, 31.10.2026) ist die erste Abweichung ein Moment der
+  // Zeitleiste: Zug als Titel, Satz mit der Gewinnchance, besserer Zug und kleines Brett.
+  const abweichung = page.getByTestId("moment-abweichung");
+  await expect(abweichung).toContainText("2. g4??", { timeout: ENGINE_FRIST });
+  await expect(abweichung).toContainText(/Erste klare Abweichung: Gewinnchance \d+ % → \d+ %/);
+  await expect(abweichung).toContainText("Besser war 2.");
+  await expect(abweichung.locator(".zeitleiste-brett svg")).toBeVisible();
+  // Ergebnis als Kopfzeile oben, mit der Genauigkeit nach der Auswertung.
+  await expect(page.getByTestId("partieende")).toContainText("Verloren");
+  await expect(page.getByTestId("ergebniskopf-genauigkeit")).toContainText("genau");
   await expect(page.getByTestId("partiezuege")).toContainText("2. g4??");
   // Rückblick (Vorschlag H, 0.2.38): Kurve über der Auswertung, Balken links am Brett. Nach
   // 2. g4?? setzt Schwarz matt: Der Balken zeigt „−M“.
@@ -199,7 +206,8 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await bereich.getByRole("radio", { name: "Lernen" }).click();
   await expect(bereich.getByTestId("sammelformular")).toBeVisible();
   await expect(bereich.getByLabel(/^Notiz/)).toHaveValue(/Aus meiner Partie/);
-  await merken.click();
+  // Seit F2 ein Blatt von unten; „Schließen“ macht es zu.
+  await page.getByTestId("merken-blatt").getByRole("button", { name: "Schließen" }).click();
   await expect(bereich).toHaveCount(0);
   // Seit 0.2.121 ohne Schalter „Genauigkeit wie“: Genauigkeit nach Lichess, Spielstärke aus dem
   // Elo-Modell je Zeitklasse, Erklärung hinter dem Fragezeichen.
@@ -216,21 +224,29 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     "aria-checked",
     "true",
   );
-  // R55: Fehler und Patzer eingeklappt, mit der Anzahl.
-  const fehler = page.getByTestId("grobe-patzer");
-  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeHidden();
-  await fehler.locator("summary").click();
-  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeVisible();
+  // Eine Seitenwahl für Zeitleiste und Zahlen: Bei Schwarz gibt es keine Abweichung des Lesers,
+  // die Zeitleiste zeigt aber weiter das Ende der Partie.
   await seiten.getByRole("radio", { name: /^Schwarz/ }).click();
-  await expect(page.getByTestId("grobe-patzer")).toHaveCount(0);
+  await expect(page.getByTestId("moment-abweichung")).toHaveCount(0);
+  await expect(page.getByTestId("moment-ende")).toContainText("Dh4#");
+  await expect(
+    auswertung.getByRole("radiogroup", { name: "Momente von" }).getByRole("radio", {
+      name: /^Schwarz/,
+    }),
+  ).toHaveAttribute("aria-checked", "true");
   await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
-  await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
+  await abweichung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(
     page.getByTestId("partiezuege").getByRole("button", { name: "2. g4, Patzer (??)" }),
   ).not.toHaveAttribute("aria-current");
-  await auswertung.getByRole("button", { name: "PGN kopieren" }).click();
-  await expect(auswertung).toContainText(/PGN/);
+  // PGN seit F2 im Blatt „Teilen“ unten.
+  await page.getByTestId("partieabschluss").getByRole("button", { name: "Teilen" }).click();
+  const teilen = page.getByTestId("teilen-blatt");
+  await teilen.getByRole("button", { name: "PGN kopieren" }).click();
+  await expect(teilen).toContainText(/PGN/);
+  await teilen.getByRole("button", { name: "Schließen" }).click();
+  await expect(teilen).toHaveCount(0);
   await page.screenshot({ path: "test-results/bilder/auswertung.png", fullPage: true });
   await page.getByRole("button", { name: "Zurücknehmen" }).click();
   await expect(page.getByTestId("partieende")).toHaveCount(0);

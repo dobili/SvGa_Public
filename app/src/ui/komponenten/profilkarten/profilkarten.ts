@@ -12,6 +12,8 @@ import { fundstueckeSichtbar } from "../fundstuecke/album";
 import { FundstueckProfilkarte } from "../fundstuecke/FundstueckProfilkarte";
 import { Rekordtafel } from "../rekorde/Rekordtafel";
 import { ExtrasKarte } from "../extras/ExtrasKarte";
+import { hatErreichteZiele } from "../../../training/ziele";
+import { ErreichteZiele } from "../ziele/ErreichteZiele";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -28,4 +30,6 @@ export const PROFILKARTEN: readonly Profilkarte[] = [
   { kennung: "rekorde", rang: 20, sichtbar: () => true, Karte: Rekordtafel },
   // P7 Freischaltbare Extras: immer sichtbar, gesperrte als Silhouette mit Bedingung.
   { kennung: "extras", rang: 50, sichtbar: () => true, Karte: ExtrasKarte },
+  // P13 Eigene Ziele: ab dem ersten erreichten Ziel.
+  { kennung: "ziele", rang: 25, sichtbar: hatErreichteZiele, Karte: ErreichteZiele },
 ];

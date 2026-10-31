@@ -1,0 +1,46 @@
+/*
+ * Eigene Ziele (Gamifizierung P13): Abschnitt „Deine Ziele“ der Wochenkarte, Zielwahl und Karte
+ * „Erreichte Ziele“ im Profil. Farben aus basis.css, damit hell und dunkel stimmen.
+ */
+.zielabschnitt h3 {
+  margin: 0 0 var(--raster);
+}
+
+.zielliste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+}
+
+.zielzeile p {
+  margin: 0 0 calc(var(--raster) * 0.5);
+}
+
+.zielstand {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin-bottom: calc(var(--raster) * 0.5);
+}
+
+.zielbalken {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--linie);
+}
+
+.zielbalken > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--gold);
+}
+
+.zielwahl-bot p {
+  margin: var(--raster) 0;
+}

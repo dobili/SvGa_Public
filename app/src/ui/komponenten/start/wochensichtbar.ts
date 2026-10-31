@@ -19,6 +19,11 @@ function montag(jetzt: Date): string {
   return tagesschluessel(wochenbeginn(jetzt));
 }
 
+/** Hat der Leser in dieser Woche „Später“ getippt? */
+export function spaeterDieseWoche(jetzt: Date): boolean {
+  return liesMerker(MERKER_WOCHENZIEL_SPAETER) === montag(jetzt);
+}
+
 /** Merkt „Später“ für die laufende Woche. */
 export function merkeSpaeter(jetzt: Date): void {
   schreibeMerker(MERKER_WOCHENZIEL_SPAETER, montag(jetzt));
@@ -31,6 +36,9 @@ export function merkeSpaeter(jetzt: Date): void {
  */
 export function wochenkarteSichtbar(daten: Nutzerdaten, jetzt: Date): boolean {
   if (daten.wochen.ziel !== null) return true;
-  if (liesMerker(MERKER_WOCHENZIEL_SPAETER) === montag(jetzt)) return false;
+  // Angeheftete eigene Ziele (P13) stehen auf der Karte, auch ohne Wochenziel und nach „Später“
+  // (beim Übernehmen, 31.10.2026: sonst sah sie nur, wer ein Wochenziel gewählt hatte).
+  if (daten.ziele.angeheftet.length > 0) return true;
+  if (spaeterDieseWoche(jetzt)) return false;
   return lerntage(daten.aktivitaet, "", tagesschluessel(jetzt)).length > 0;
 }

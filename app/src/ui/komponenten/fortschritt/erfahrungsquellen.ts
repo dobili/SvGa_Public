@@ -10,6 +10,7 @@
  * Abhängigkeiten: speicher/format.ts (Typ), training/wochenziel.ts (P4).
  */
 import type { Nutzerdaten } from "../../../speicher/format";
+import { PUNKTE_JE_ZIEL } from "../../../training/ziele";
 import { erreichteWochen } from "../../../training/wochenziel";
 
 /** Eine Quelle: Kennung, Punkte je Einheit, Zahl der Einheiten aus den Nutzerdaten. */
@@ -22,4 +23,5 @@ export interface Erfahrungsquelle {
 /** Alle zusätzlichen Quellen; Pakete fügen je eine Zeile an (Konfliktkarte, Abschnitt 5). */
 export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
   { kennung: "wochenErreicht", gewicht: 30, zaehle: (d) => erreichteWochen(d).length },
+  { kennung: "zieleErreicht", gewicht: PUNKTE_JE_ZIEL, zaehle: (d) => d.ziele.erreicht.length },
 ];

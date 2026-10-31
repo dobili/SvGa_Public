@@ -26,7 +26,7 @@ import {
   type Wochenlage,
 } from "../../../training/wochenziel";
 import { Feuerwerk } from "../bausteine/Feuerwerk";
-import { merkeSpaeter } from "./wochensichtbar";
+import { merkeSpaeter, spaeterDieseWoche } from "./wochensichtbar";
 import { sichtbareAbschnitte, WOCHENABSCHNITTE } from "./wochenabschnitte";
 import { Wochenpunkte, Wochenring } from "./Wochenring";
 import { Zielwahl } from "./Zielwahl";
@@ -100,8 +100,11 @@ export function Wochenkarte() {
   const jetzt = new Date();
   const lage = wochenlage(daten, jetzt);
   const feiern = useWochenfeier(daten, lage.montag);
-  if (spaeter) return null;
   const mitZiel = lage.ziel !== null;
+  // Ohne Wochenziel stehen die Abschnitte (etwa eigene Ziele, P13) unter der Zielwahl; nach
+  // „Später“ bleiben nur sie, und ohne angeheftete Ziele verschwindet die Karte wie bisher.
+  const nurAbschnitte = !mitZiel && (spaeter || spaeterDieseWoche(jetzt));
+  if (nurAbschnitte && daten.ziele.angeheftet.length === 0) return null;
   return (
     <article className="karte wochenkarte" data-testid="wochenkarte">
       {feiern && feiereffekteAn() && <Feuerwerk umfang="klein" />}
@@ -113,9 +116,8 @@ export function Wochenkarte() {
           </button>
         )}
       </div>
-      {mitZiel && !aendern ? (
-        <Wochenstand daten={daten} lage={lage} jetzt={jetzt} />
-      ) : (
+      {mitZiel && !aendern && <Wochenstand daten={daten} lage={lage} jetzt={jetzt} />}
+      {(!mitZiel || aendern) && !nurAbschnitte && (
         <Zielwahl
           aendern={mitZiel}
           fertig={() => setzeAendern(false)}
@@ -125,6 +127,7 @@ export function Wochenkarte() {
           }}
         />
       )}
+      {!mitZiel && <Abschnitte daten={daten} jetzt={jetzt} />}
     </article>
   );
 }

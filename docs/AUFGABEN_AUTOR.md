@@ -33,6 +33,50 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P13: Eigene Ziele (31.10.2026)
+
+Du heftest dir bis zu drei eigene Ziele an, etwa „Besiege Lotte in Schnellschach“ oder „Noch 2 Bots
+für den Orden …“. Sie stehen in der Wochenkarte oben im Buch („Deine Woche“) als Abschnitt „Deine
+Ziele“, unter Wochenziel und Übungsplan. Die Wochenkarte zeigt ihre Abschnitte erst, wenn ein
+Wochenziel gewählt ist; wähle also zuerst in „Deine Woche“ ein Wochenziel (etwa „3 Tage“). Kein
+Ablaufdatum, nicht erreichte Ziele zählt die App nirgends.
+
+- [ ] N2230. **Vorschläge:** Buch öffnen, in „Deine Woche“ steht „Deine Ziele“. Ohne angeheftetes
+      Ziel stehen dort bis zu fünf Vorschläge, das am wenigsten Fehlende zuerst (etwa „Besiege Tom
+      (beliebige Zeitart).“, „Löse alle Übungen von Kapitel 1: noch 3.“, „Dir fehlen noch 24 Bots
+      für den Orden …: Tom, Marie, …“). Jeder hat „Anheften“ und einen Knopf, der direkt hinführt.
+      Verständlich, und klingt jeder Satz natürlich?
+- [ ] N2231. **Anheften und Lösen:** Bei einem Vorschlag „Anheften“ tippen. Das Ziel steht oben mit
+      Balken „x von y“ (bei Ringen) und den Knöpfen „Spielen“, „Üben“ oder „Weiterlesen“ sowie
+      „Lösen“. Die Vorschläge klappen zu; „Ziel wählen“ öffnet sie wieder. „Lösen“ entfernt das Ziel
+      sofort, ohne Nachfrage und ohne Spur.
+- [ ] N2232. **Höchstens drei:** Drei Ziele anheften. Danach gibt es kein „Ziel wählen“ mehr, bis du
+      eines löst.
+- [ ] N2233. **Eigenes Ziel „Bot besiegen“:** „Ziel wählen“ › „Eigenes Ziel: Bot besiegen“. Es
+      erscheint dieselbe Bot-Liste wie beim Spielen (Stufen zum Aufklappen, Sterne für schon
+      besiegte Bots), darunter die Zeitart Blitz, Schnellschach, Klassisch oder egal. Bot und
+      Zeitart wählen, „Anheften“. Einen Bot wählen, den du in dieser Zeitart schon gewertet besiegt
+      hast: Statt „Anheften“ kommt der Satz „Das hast du schon geschafft …“.
+- [ ] N2234. **Spielen:** Bei einem Bot-Ziel „Spielen“ tippen. Der Spielstart öffnet sich mit dem
+      Bot gewählt, „Gewertete Partie“ an und einer Bedenkzeit der Zeitart (Schnellschach etwa
+      10 + 0). Du tippst nur noch „Beginnen“.
+- [ ] N2235. **Erreicht nach der Partie:** Ein leichtes Ziel anheften (eigenes Ziel: Tom, Zeitart
+      egal), dann eine gewertete Partie gegen Tom gewinnen. Zurück im Buch: kleines Feuerwerk
+      (wenn „Feiereffekte“ an) und „Ziel erreicht: Tom besiegt!“; das Ziel ist nicht mehr
+      angeheftet. Die Feier kommt nur einmal (nach Neuladen nicht wieder).
+- [ ] N2236. **Erreichte Ziele im Profil:** Profil öffnen. Unter „Dein Fortschritt“ steht die Karte
+      „Erreichte Ziele“ mit „1 eigenes Ziel erreicht.“ und der Zeile „Tom besiegt · Datum“
+      (neueste zuerst, höchstens zehn Zeilen). Vor dem ersten erreichten Ziel fehlt die Karte.
+- [ ] N2237. **Erfahrungspunkte:** Vor und nach dem erreichten Ziel die Erfahrungspunkte im Profil
+      ansehen: Jedes erreichte Ziel gibt 20 Punkte dazu.
+- [ ] N2238. **Abzeichen „Zehn eigene Ziele“:** Profil › Abzeichen: Das neue Abzeichen steht im
+      Gitter (Banner mit der Zahl 10, hellblau), Bedingung „Zehn selbst gewählte Ziele erreicht“.
+      Zum Ansehen ohne zehn Ziele: Aufgabenseite (drei Sekunden auf das Zahnrad) › „Abzeichen
+      testen“ › „Zehn eigene Ziele: verdienen“ (Meldung wie im echten Fall); danach „Probe
+      beenden“.
+- [ ] N2239. **Englisch:** Sprache auf Englisch: Abschnitt „Your goals“, Vorschläge wie „Beat Lotte
+      in rapid.“, Profilkarte „Goals reached“. Alles übersetzt?
+
 ### Neu in 0.3.25: Serienmodus im Taktiktrainer (Arbeitschat, 31.10.2026)
 
 Neu im Taktiktrainer neben „Runde starten“: der Knopf „Serie ohne Fehler“. Die Aufgaben werden

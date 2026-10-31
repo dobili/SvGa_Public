@@ -4,6 +4,33 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P13: Eigene Ziele mit Vorschlägen (Welle 2, Zweig gami-p13-ziele)
+
+- **E11 nach Empfehlung:** höchstens drei angeheftete Ziele, ohne Ablaufdatum; Lösen mit einem
+  Tipp, nicht erreichte Ziele zählt die App nirgends. Vorschläge (bis fünf) nur aus echten Lücken,
+  sortiert nach dem, was am wenigsten fehlt (Ziel-Gradient). Ein schon erreichtes Ziel lässt sich
+  nicht anheften, sonst gäbe es 20 Erfahrungspunkte ohne Partie.
+- **Ort:** Abschnitt „Deine Ziele“ der Wochenkarte (`WOCHENABSCHNITTE`, Rang 40), keine dritte
+  Startkarte. Folge: Die Ziele erscheinen erst, wenn ein Wochenziel gewählt ist, weil die
+  Wochenkarte ihre Abschnitte nur dann zeigt (wie der Übungsplan P11).
+- **Eintragen statt umbauen:** Zielarten als Liste `ZIELARTEN` (`training/zielarten.ts`: Bot,
+  Ring, Kapitel; P3 trägt „thema“ ein), Vorschlagsarten als Liste `ZIELVORSCHLAGSARTEN`
+  (`training/zielvorschlaege.ts`; P3 und P8 je eine Zeile), Ringe als Liste `ZIELRINGE`
+  (`training/zielringe.ts`; ein Trainer mit eigenem Orden eine Zeile). Dazu je eine Zeile in
+  `NACH_PARTIEENDE`, `ERFAHRUNGSQUELLEN` (20 je Ziel), `PROFILKARTEN` („Erreichte Ziele“, Rang
+  25), Abzeichen-Teilliste `abzeichen-ziele.ts` mit Bild `nachtabzeichen-ziele.ts`.
+- **Ringe ohne Ordenprobe:** Die Ringziele rechnen mit `ringrechnung.ts`, nicht mit
+  `useFortschrittsringe`, weil dieser Hook die Ordenprobe der Aufgabenseite einrechnet; eine
+  Probe soll kein echtes Ziel erfüllen. Die Kennungen sind dieselben wie im Profil.
+- **Prüfen:** nach jeder Partie (Bot- und Bot-Ringziele, `besiegt` steht dann schon fest) und
+  beim Anzeigen der Wochenkarte (mit Verzeichnis der Kapitel, für die Ringe der Buchteile). Feier
+  einmal je Ziel über den Merker `zieleGefeiert`, nur für Ziele der letzten sieben Tage.
+- „Spielen“ nutzt `useSpielvorbelegung()` (Bot und Zeitart vorbelegt, gewertet); der Spielstart
+  bleibt unverändert. Die Bot-Auswahl ist das Gitter der Gegnerwahl (`VorgefertigteGitter`).
+- Abweichung vom Auftrag „nur Schlüssel `ziel.`“: Das Abzeichen braucht die Schlüssel
+  `abzeichen.name.zehnZiele` und `abzeichen.bedingung.zehnZiele`, weil `abzeichenname` sie so
+  zusammensetzt (wie bei allen Abzeichen-Teillisten).
+
 ## 31.10.2026 – Version 0.3.25: Serienmodus im Taktiktrainer übernommen (Opus)
 
 - Zweig `gami-p5-serie` (Welle 2) geprüft und zusammengeführt; Konflikte nur in den Unterlagen.

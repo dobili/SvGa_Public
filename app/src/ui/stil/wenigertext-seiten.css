@@ -1,0 +1,377 @@
+/*
+ * Stil der Runde „Weniger Text: Seiten“ (P1 bis P6, P13, P15; Wahl des Autors, 31.10.2026):
+ * ⓘ-Blase, Leerzustände, Partiekopf mit Chips, Kapitelringe, Lernpfad-Kopf, Denkroutine als
+ * Karten, Bewertungsänderung als Pfeil, Abzeichen „Beta“. Nur Tokens aus basis.css, damit hell
+ * und dunkel stimmen. Bei 360 px Breite darf nichts waagerecht überstehen: Reihen brechen um.
+ */
+
+/* ---------- ⓘ-Blase ---------- */
+
+.mitinfoblase-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.mitinfoblase-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.mitinfoblase-text > * {
+  margin: 0;
+}
+
+.infoblase {
+  position: relative;
+  margin-top: var(--raster);
+  padding: calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--grund);
+  color: var(--text);
+  font-size: var(--groesse-mittel);
+  overflow-wrap: anywhere;
+}
+
+/* Kleiner Pfeil oben rechts, er zeigt zum ⓘ. */
+.infoblase::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  background: var(--grund);
+  border-left: 1px solid var(--linie-stark);
+  border-top: 1px solid var(--linie-stark);
+  transform: rotate(45deg);
+}
+
+.infoblase p {
+  margin: 0 0 var(--raster);
+}
+
+.infoblase p:last-child {
+  margin-bottom: 0;
+}
+
+.infoblase .leise {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+/* ---------- Leerzustand ---------- */
+
+.leerzustand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--raster);
+  text-align: center;
+}
+
+.leerzustand-zeile {
+  margin: 0;
+  color: var(--text-leise);
+}
+
+.leerzustand-knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--raster);
+  text-align: center;
+}
+
+.leerbild {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--raster);
+  color: var(--linie-stark);
+}
+
+.leerbild-kachel {
+  width: 48px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--linie-stark);
+  border-radius: var(--radius);
+}
+
+.leerbild-medaillen svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--linie);
+  stroke: var(--linie-stark);
+  stroke-width: 2;
+}
+
+.leerbild-portraet {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: 2px dashed var(--linie-stark);
+  border-radius: 50%;
+}
+
+.leerbild-plus {
+  position: absolute;
+  right: -6px;
+  bottom: -4px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.leerbild-liste {
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 2px dashed var(--linie-stark);
+  border-radius: var(--radius);
+}
+
+.leerbild-zeilen {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leerbild-zeilen span {
+  display: block;
+  width: 56px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--linie);
+}
+
+.leerbild-zeilen span + span {
+  width: 36px;
+}
+
+/* ---------- Kopf mit ⓘ in Karten ---------- */
+
+.kopfzeile-info .karte-titel {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+/* ---------- Abzeichen „Beta“ ---------- */
+
+.abzeichen-beta {
+  display: inline-block;
+  margin-left: var(--raster);
+  padding: 1px var(--raster);
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.version-mit-info {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.infoblase-links::before {
+  right: auto;
+  left: 28px;
+}
+
+/* ---------- Kapitelseite: Ringe mit Zeichen (P4) ---------- */
+
+.kapitelringe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  gap: var(--raster);
+}
+
+.kapitelring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: calc(var(--raster) / 2);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text);
+  font: inherit;
+}
+
+.kapitelring-ziel {
+  border-color: var(--gold);
+}
+
+.kapitelring-zahl {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.kapitelring-ziel .kapitelring-zahl {
+  color: var(--gold-text);
+  font-weight: 700;
+}
+
+.kapitelring-legende {
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+}
+
+.kapitelring-legende li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kapitelring-legende svg {
+  flex: none;
+  color: var(--gold-text);
+}
+
+/* ---------- Lernpfad-Kopf: Balken, Reste, Ordenssilhouette (P5) ---------- */
+
+.lernpfadkopf {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(var(--raster) * 1.5);
+  margin-bottom: calc(var(--raster) * 2);
+}
+
+.lernpfadkopf-links {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.lernpfadkopf-reste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px calc(var(--raster) * 1.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-mittel);
+}
+
+.lernpfadkopf-reste li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lernpfadkopf-reste svg {
+  color: var(--gold-text);
+}
+
+.lernpfadkopf-orden {
+  flex: none;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.lernpfadkopf-orden .ordenkunst {
+  width: 56px;
+  height: auto;
+}
+
+.lernpfadkopf-fehlend {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+  text-align: center;
+}
+
+/* ---------- Rückblickkarte: Marke und Veränderung als Pfeil (P13) ---------- */
+
+.urteilskopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px var(--raster);
+}
+
+.urteilskopf .infoknopf {
+  margin-left: auto;
+}
+
+.urteilskopf-zug {
+  font-size: var(--groesse-gross);
+}
+
+.urteilsmarke {
+  padding: 2px var(--raster);
+  border-radius: 999px;
+  background: var(--grund);
+  box-shadow: 0 0 0 1px var(--linie);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+}
+
+.urteilsmarke-brillant,
+.urteilsmarke-stark,
+.urteilsmarke-bester,
+.urteilsmarke-sehrGut,
+.urteilsmarke-gut {
+  color: var(--gruen-text);
+}
+
+.urteilsmarke-ungenau,
+.urteilsmarke-fehler,
+.urteilsmarke-verpasst,
+.urteilsmarke-patzer {
+  color: var(--rot-text);
+}
+
+.bewertungsaenderung {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bewertungsaenderung-auf {
+  color: var(--gruen-text);
+}
+
+.bewertungsaenderung-ab {
+  color: var(--rot-text);
+}
+
+.bewertungsaenderung-gleich {
+  color: var(--text-leise);
+}
+
+.urteilskopf-huelle .rueckblick-urteil {
+  margin: var(--raster) 0 0;
+}
+
+.einstellung-mit-blase dd {
+  flex: 1;
+}
+
+.einstellung-mit-blase .infoblase {
+  text-align: left;
+  font-weight: 400;
+}

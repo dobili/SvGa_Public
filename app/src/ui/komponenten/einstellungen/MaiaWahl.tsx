@@ -6,14 +6,18 @@
  * spielen (engine/maia.ts). Das Paket (etwa 96 MB) gehört nicht zur Installation; hier lädt der
  * Leser es auf Wunsch (app/maiapaket.ts), mit Fortschritt und Fehlermeldung. Danach schaltet ein
  * Schalter Maia an und aus; er gilt ab der nächsten Partie (Partieeinstellung „maia“).
- * Abhängigkeiten: app/maiapaket.ts, app/einstellungen.ts, engine/maia-web.ts, maiastand.ts, i18n.
+ * Weniger Text P15 (31.10.2026): Erklärung und Lizenz im ⓘ, der Ladeknopf kompakt im Kopf.
+ * Abhängigkeiten: Infoblase, app/maiapaket.ts, app/einstellungen.ts, engine/maia-web.ts, maiastand.ts, i18n.
  */
-import { useState } from "react";
+import { Download, UserRound } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { aendereEinstellungen, useEinstellungen } from "../../../app/einstellungen";
 import { ladeMaia, loescheMaia, pruefeMaia } from "../../../app/maiapaket";
 import { maiaFreigeben } from "../../../engine/maia-web";
 import { t } from "../../../i18n/sprache";
 import { Auswahl } from "../bausteine/Auswahl";
+import "../../stil/einleitungen.css";
+import { MitInfoblase } from "../bausteine/Infoblase";
 import { useMaiaBereit } from "./maiastand";
 
 const PROZENT = 100;
@@ -21,49 +25,90 @@ const PROZENT = 100;
 const MB = 1000 * 1000;
 /** Größe des Pakets für den Text vor dem Laden (zwei Netze zu 42 MB und die Laufzeit). */
 const PAKET_MB = 96;
+/** Größe der Zeichen im Kopf (Bildpunkte). */
+const LADEZEICHEN = 18;
 
 type Ladezustand =
   | { readonly art: "ruhe" }
   | { readonly art: "laedt"; readonly geladen: number; readonly gesamt: number }
   | { readonly art: "fehler"; readonly meldung: string };
 
-/** Laden mit Fortschritt; danach steht der Schalter da. */
-function Laden({ zustand, setze }: { zustand: Ladezustand; setze: (z: Ladezustand) => void }) {
-  const lade = async () => {
-    setze({ art: "laedt", geladen: 0, gesamt: PAKET_MB * MB });
-    try {
-      await ladeMaia((geladen, gesamt) => setze({ art: "laedt", geladen, gesamt }));
-      await pruefeMaia();
-      setze({ art: "ruhe" });
-    } catch (fehler) {
-      setze({ art: "fehler", meldung: fehler instanceof Error ? fehler.message : String(fehler) });
-    }
-  };
-  if (zustand.art === "laedt") {
-    const anteil = Math.round((zustand.geladen / zustand.gesamt) * PROZENT);
-    return (
-      <div className="maia-laden" role="status">
-        <progress max={PROZENT} value={anteil} aria-label={t("maia.laedt")} />
-        <p className="hinweis">
-          {t("maia.laedtStand", {
-            geladen: String(Math.round(zustand.geladen / MB)),
-            gesamt: String(Math.round(zustand.gesamt / MB)),
-          })}
-        </p>
-      </div>
-    );
+/** Lädt das Paket und meldet den Stand über `setze`. */
+async function ladePaket(setze: (z: Ladezustand) => void) {
+  setze({ art: "laedt", geladen: 0, gesamt: PAKET_MB * MB });
+  try {
+    await ladeMaia((geladen, gesamt) => setze({ art: "laedt", geladen, gesamt }));
+    await pruefeMaia();
+    setze({ art: "ruhe" });
+  } catch (fehler) {
+    setze({ art: "fehler", meldung: fehler instanceof Error ? fehler.message : String(fehler) });
   }
+}
+
+/**
+ * Der Knopf zum Laden; `kompakt` (Weniger Text P15): nur „⬇ 96 MB“ in der Kopfzeile, der volle
+ * Name „Maia laden (etwa 96 MB)“ bleibt für Bildschirmleser.
+ */
+function Ladeknopf({ kompakt, setze }: { kompakt: boolean; setze: (z: Ladezustand) => void }) {
+  const name = t("maia.laden", { mb: String(PAKET_MB) });
   return (
-    <>
-      <button type="button" className="knopf-haupt" onClick={() => void lade()}>
-        {t("maia.laden", { mb: String(PAKET_MB) })}
-      </button>
-      {zustand.art === "fehler" && (
-        <p className="fehlertext" role="alert">
-          {t("maia.fehler", { meldung: zustand.meldung })}
-        </p>
-      )}
-    </>
+    <button
+      type="button"
+      className={kompakt ? "knopf-haupt maia-ladeknopf" : "knopf-haupt"}
+      aria-label={kompakt ? name : undefined}
+      onClick={() => void ladePaket(setze)}
+    >
+      {kompakt && <Download size={LADEZEICHEN} aria-hidden="true" />}
+      {kompakt ? t("wenigertext.seiten.maia.groesse", { mb: String(PAKET_MB) }) : name}
+    </button>
+  );
+}
+
+/** Fortschritt beim Laden oder die Fehlermeldung; in Ruhe nichts. */
+function Ladestand({ zustand }: { zustand: Ladezustand }) {
+  if (zustand.art === "fehler")
+    return (
+      <p className="fehlertext" role="alert">
+        {t("maia.fehler", { meldung: zustand.meldung })}
+      </p>
+    );
+  if (zustand.art !== "laedt") return null;
+  const anteil = Math.round((zustand.geladen / zustand.gesamt) * PROZENT);
+  return (
+    <div className="maia-laden" role="status">
+      <progress max={PROZENT} value={anteil} aria-label={t("maia.laedt")} />
+      <p className="hinweis">
+        {t("maia.laedtStand", {
+          geladen: String(Math.round(zustand.geladen / MB)),
+          gesamt: String(Math.round(zustand.gesamt / MB)),
+        })}
+      </p>
+    </div>
+  );
+}
+
+/**
+ * Kopf des Reiters (Weniger Text P15, 31.10.2026): Zeichen, Titel, Ladeknopf „⬇ 96 MB“ und ⓘ;
+ * Erklärung und Lizenzzeile stehen vollständig in der Blase.
+ */
+function Kopf({ knopf }: { knopf: ReactNode }) {
+  return (
+    <MitInfoblase
+      zeile={
+        <div className="maia-kopf">
+          <UserRound className="titel-symbol" size={LADEZEICHEN} aria-hidden="true" />
+          <h3 className="einstellung-name">{t("maia.titel")}</h3>
+          {knopf}
+        </div>
+      }
+      thema={t("maia.titel")}
+      erklaerung={
+        <>
+          <p>{t("maia.erklaerung")}</p>
+          <p className="leise">{t("maia.lizenz")}</p>
+        </>
+      }
+    />
   );
 }
 
@@ -80,10 +125,10 @@ export function MaiaWahl({ kurz = false }: { kurz?: boolean } = {}) {
     maiaFreigeben();
     await pruefeMaia();
   };
+  const knopf = !bereit && zustand.art !== "laedt" && <Ladeknopf kompakt={!kurz} setze={setze} />;
   return (
     <div className="maia-wahl" data-testid="maia-wahl">
-      {!kurz && <h3 className="einstellung-name">{t("maia.titel")}</h3>}
-      {!kurz && <p className="hinweis">{t("maia.erklaerung")}</p>}
+      {!kurz && <Kopf knopf={knopf} />}
       {bereit ? (
         <>
           <Auswahl
@@ -99,9 +144,11 @@ export function MaiaWahl({ kurz = false }: { kurz?: boolean } = {}) {
           </button>
         </>
       ) : (
-        <Laden zustand={zustand} setze={setze} />
+        <>
+          {kurz && knopf}
+          <Ladestand zustand={zustand} />
+        </>
       )}
-      {!kurz && <p className="hinweis klein">{t("maia.lizenz")}</p>}
     </div>
   );
 }

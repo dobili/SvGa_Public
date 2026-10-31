@@ -43,65 +43,6 @@
   box-shadow: 0 0 0 1px var(--linie);
 }
 
-.schrittliste {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--raster);
-}
-
-.schritt {
-  display: flex;
-  gap: calc(var(--raster) * 1.5);
-  align-items: flex-start;
-}
-
-.schritt p {
-  margin: 0;
-}
-
-.schritt-nummer {
-  flex: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--navy);
-  color: var(--creme);
-  font-weight: 700;
-}
-
-.sicherheitsblick {
-  border-left: 4px solid var(--rot-text);
-  padding-left: calc(var(--raster) * 1.5);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.sicherheitsblick strong {
-  color: var(--rot-text);
-}
-
-.abschluss {
-  font-weight: 700;
-  color: var(--gruen-text);
-}
-
-.phase {
-  border-top: 1px solid var(--linie);
-  padding: var(--raster) 0;
-}
-
-.phase summary {
-  cursor: pointer;
-  min-height: var(--tippflaeche);
-}
-
 .phase-abschnitt h3 {
   font-size: var(--groesse-mittel);
   margin-top: var(--raster);

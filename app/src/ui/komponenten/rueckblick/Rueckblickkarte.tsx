@@ -13,8 +13,11 @@
  * hängt weniger an der Skala; das Material nennt die Erklärung nach den Werten des Buches.
  * Bei einem Theoriezug steht „Theoriezug: Teil einer Eröffnung“ (oder „eines Gambits“), das Wort
  * klappt die zutreffenden Namen auf (Theorieangabe.tsx, Wunsch des Autors, 25.10.2026).
- * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
- * Merkenbereich.tsx, rueckblicktyp.ts.
+ * Seit „Weniger Text“ P13 (31.10.2026) steht oben ein Kopf mit Zugzeichen, Marke („Bester Zug“)
+ * und der Veränderung der Bewertung als Pfeil mit Zahl (Urteilskopf.tsx); Sätze ohne weiteren
+ * Inhalt und „Bewertung +1,5 → +1,6.“ stehen dort im ⓘ.
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/zuege.ts, i18n, Merkenbereich.tsx, rueckblicktyp.ts,
+ * Urteilskopf.tsx.
  */
 import { useId, useState } from "react";
 import { sprache, t, zahlText } from "../../../i18n/sprache";
@@ -23,16 +26,16 @@ import { zugnummer, type Zugurteil } from "../../../spiel/auswertung";
 import type { Zugerklaerung } from "../../../spiel/erklaerung";
 import type { Partie } from "../../../spiel/partie";
 import { MIT_BESSEREM, MIT_STRAFE, type Zweigzug } from "../../../spiel/nebenzweig";
-import { balkentext } from "../../../spiel/rueckblick";
 import { uciZuSan } from "../../../spiel/zuege";
 import { gewinnchanceVorNach, type Chance } from "../auswertung/gewinnchance";
-import { MitInfo } from "../bausteine/InfoKnopf";
 import { Merkenbereich } from "./Merkenbereich";
 import { Blatt } from "../auswertung/Blatt";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import { Theorieliste, Theoriesatz } from "./Theorieangabe";
 import { useTheorieauskunft } from "./useTheorie";
 import type { Rueckblick } from "./rueckblicktyp";
+import { Urteilskopf } from "./Urteilskopf";
+import { NUR_MARKE } from "./urteilsanzeige";
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
 /** Bis zu diesem Verlust ist ein Zug „so gut wie der beste“ (die Anzeige rundet auf 0,0). */
@@ -120,41 +123,33 @@ export function Rueckblickkarte({
       : partie.zuege[index]?.von === "leser"
         ? t("rueckblick.seite.du")
         : t("rueckblick.seite.engine");
+  // Die Stellung `fen` ist die vor dem Zug: Weiß am Zug heißt, Weiß hat gezogen.
+  const weissZog = fen.split(" ")[1] !== "b";
+  const satz = auskunft ? (
+    <Theoriesatz
+      zug={zug}
+      auskunft={auskunft}
+      offen={theorieOffen}
+      beiUmschalten={() => setzeTheorieOffen((o) => !o)}
+      listenId={listenId}
+    />
+  ) : (
+    urteilssatz(zug, urteil, bester, gewinnchanceVorNach(rueckblick.werte, index, weissZog))
+  );
   return (
     <section
       className="karte rueckblickkarte"
       data-testid="rueckblickkarte"
       data-tour="rueckblick-karte"
     >
-      <MitInfo
-        zeile={
-          <p className="rueckblick-urteil">
-            <strong>
-              {auskunft ? (
-                <Theoriesatz
-                  zug={zug}
-                  auskunft={auskunft}
-                  offen={theorieOffen}
-                  beiUmschalten={() => setzeTheorieOffen((o) => !o)}
-                  listenId={listenId}
-                />
-              ) : (
-                urteilssatz(
-                  zug,
-                  urteil,
-                  bester,
-                  gewinnchanceVorNach(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
-                )
-              )}
-            </strong>{" "}
-            {t("rueckblick.bewertung", {
-              vorher: balkentext(rueckblick.werte[index] ?? 0),
-              nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
-            })}
-          </p>
-        }
-        erklaerung={<p>{t("rueckblick.balkenInfo")}</p>}
-        thema={t("rueckblick.balkenThema")}
+      <Urteilskopf
+        zug={zug}
+        klasse={urteil.klasse}
+        vorher={rueckblick.werte[index] ?? 0}
+        nachher={rueckblick.werte[index + 1] ?? 0}
+        weissZog={weissZog}
+        satz={satz}
+        satzSichtbar={auskunft !== null || !NUR_MARKE.has(urteil.klasse)}
       />
       {auskunft && <Theorieliste auskunft={auskunft} offen={theorieOffen} id={listenId} />}
       {erklaerung && (

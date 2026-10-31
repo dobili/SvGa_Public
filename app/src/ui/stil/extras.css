@@ -313,16 +313,6 @@
   flex-direction: column;
 }
 
-.extrasneu-fuss {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.extrasneu-fuss > svg {
-  flex: none;
-}
-
 /* ---------- Gesperrte Vorschau (Profilkarte und Einstellungen) ---------- */
 
 .sperrbild {

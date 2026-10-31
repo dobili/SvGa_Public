@@ -160,8 +160,11 @@ test("Profil: ohne gewertete Partie lädt die Wertungskarte zur ersten Partie ei
 }) => {
   await starteImBrowser(page);
   await oeffneProfil(page);
-  await expect(page.getByTestId("wertung-einladung")).toBeVisible();
+  await expect(page.getByTestId("wertung-einladung")).toContainText("Noch keine Wertung.");
+  // Weniger Text P2 (31.10.2026): die Regeln stehen im ⓘ neben „Deine Wertung“.
+  await expect(page.getByTestId("wertung")).not.toContainText("mindestens zehn Züge");
+  await page.getByRole("button", { name: "Erklärung: Deine Wertung" }).click();
   await expect(page.getByTestId("wertung")).toContainText("mindestens zehn Züge");
-  await page.getByTestId("wertung").getByRole("button", { name: "Partie spielen" }).click();
+  await page.getByTestId("wertung").getByRole("button", { name: "Erste Partie" }).click();
   await expect(vorschlagskarte(page).getByRole("button", { name: /^Spielen/ })).toBeVisible();
 });

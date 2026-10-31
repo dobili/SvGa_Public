@@ -33,6 +33,83 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Weniger Text: Seiten (31.10.2026)
+
+Nach deiner Wahl („alle 15 Punkte umsetzen“) stehen auf vielen Seiten weniger Sätze: Bildzeichen
+sagen dasselbe, und die Erklärungen stehen vollständig hinter einem ⓘ (Kreis mit kleinem i). Ein
+Tipp auf ⓘ öffnet darunter eine Sprechblase, ein zweiter Tipp schließt sie. Bitte jeden Punkt im
+dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts seitlich übersteht.
+
+- [ ] N2350. **Leere Abschnitte (Wertung, Themen, Partien):** Am besten in einem privaten
+      Browserfenster ohne gespeicherte Daten öffnen, unten „Profil“. Unter „Deine Wertung“ stehen
+      drei gestrichelte Kacheln mit Blitz, Stoppuhr und Kaffeetasse, „Noch keine Wertung.“ und der
+      helle Knopf „Erste Partie“ (führt zu „Spielen“). Unter „Deine Themen“ drei graue
+      Medaillenumrisse, „Noch keine Medaille.“ und „Taktik üben“ (öffnet den Taktiktrainer). Unter
+      „Deine Partien“ eine leere, gestrichelte Liste, „Noch keine Partie.“, „Erste Partie“ und
+      darunter wie bisher „Partie einlesen (PGN)“. Wirken die Bilder klar als „hier ist noch nichts“?
+- [ ] N2351. **Leerer Stapel und eigene Bots:** Unten „Training“: Ist nichts zu wiederholen und
+      noch keine Karte angelegt, steht neben dem blassen Kartenstapel „Dein Stapel ist leer.“ mit ⓘ
+      und der Knopf „Übungen lösen“ (führt zum Buch). Das ⓘ zeigt den alten Satz „Noch nichts im
+      Stapel. Löse Übungen im Buch; sie kommen dann zur Wiederholung.“ Dann „Spielen“, Kachel
+      „Eigene Bots“: ohne eigenen Gegner ein leeres Porträt mit goldenem Plus, „Noch kein eigener
+      Gegner.“ und „Neuen Gegner anlegen“ (öffnet das Formular). Das ⓘ neben „Eigene Bots
+      verwalten“ nennt, was ein eigener Gegner enthält.
+- [ ] N2352. **Wertungsregeln hinter ⓘ:** Im Profil steht neben „Deine Wertung“ ein ⓘ (auch,
+      wenn du schon Wertungen hast). Ein Tipp zeigt in der Blase beide alten Sätze vollständig:
+      „Spiel deine erste gewertete Partie … getrennt nach Blitz, Schnellschach und Klassisch.“ und
+      „Es zählen Partien gegen die Engine oder einen Bot mit dem Haken „Gewertete Partie“ … zählen
+      deshalb oft nicht.“ Fehlt dir dort etwas?
+- [ ] N2353. **Partiekopf:** Starte unter „Spielen“ eine Partie gegen einen Bot (etwa Frau
+      Schulz). Unter dem Titel „gegen Frau Schulz“ steht jetzt nur eine Zeile: rundes Porträt mit
+      kleiner Stufennummer unten rechts, ein Chip mit König und „Weiß“ (oder „Schwarz“), ein Chip
+      mit Buch und einem Wort für die Eröffnung („Praxis“, „Buch“ oder „Gewählt“) und rechts ⓘ.
+      Tipp aufs Porträt: Der Satz des Bots erscheint als Sprechblase in Anführungszeichen, ein
+      zweiter Tipp schließt sie. Tipp auf ⓘ: die frühere Zeile „Frau Schulz (Stufe 1 · Neuling) ·
+      du spielst Weiß · Eröffnung wie Menschen dieser Stärke“. Nach dem Ende der Partie steht
+      derselbe Kopf über der Auswertung. Zu zweit oder gegen eine eigene Stufe ohne Bot bleibt die
+      alte Textzeile.
+- [ ] N2354. **Kapitelseite:** Öffne im Buch Kapitel 1. „Dein Fortschritt“ zeigt Ringe mit
+      Zeichen (Raster = Abbildungen, Fragezeichen = Warum-Fragen, Häkchenliste = Lernziele, Puzzle
+      = Übungen) und darunter „0/43“ usw.; der Satz „4 Übungen im Kapitel, noch keine versucht …“
+      ist weg. Der Übungsring ist golden umrandet und hat einen Pfeil nach unten: Ein Tipp rollt zu
+      „Übungen aus dem Buch“. Das ⓘ neben „Dein Fortschritt“ nennt jeden Ring mit Namen und
+      „x von y“, den alten Satz zu den Übungen und den Knopf „Zur Gesamt-Checkliste“.
+- [ ] N2355. **Lernpfad-Kopf:** Im Buch „Als Weg anzeigen“. Oben steht „Kapitel 1“ (oder dein
+      aktuelles Kapitel) mit ⓘ, darunter ein goldener Balken, dann „43 Abbildungen · 4 Übungen“
+      mit kleinen Zeichen (was noch fehlt) und rechts die graue Silhouette des Ordens „Teil
+      Grundlagen“ mit „+ Kap. 0“ (welche Kapitel des Teils sonst noch fehlen). Das ⓘ zeigt beide
+      früheren Sätze: „Noch 43 Abbildungen und 4 Übungen bis zum Ende von Kapitel 1 …“ und
+      „Jede Station ist ein Kapitel …“ (der zweite stand vorher unter dem Weg).
+- [ ] N2356. **Denkroutine als Karten:** Nachschlagen, „Denkroutine“. Fünf Karten mit Nummer,
+      Zeichen und Kurzzeile: 1 Auge „Was hat sich verändert?“, 2 Liste „Schach, Schlag, Drohung
+      zuerst“, 3 Schwerter „Nicht die bequemste“, 4 Waage „Bis zur Ruhe, dann zählen“, 5 rotes
+      Schild „König sicher? Figur gedeckt?“ (Sicherheitsblick). Die Titel sind die des Buches.
+      Tipp auf eine Karte klappt den Buchtext vollständig auf. Darunter „✓ Ziehen · widerlegt oder
+      unsicher? Dann zurück zu Schritt 2.“ Bitte die fünf Kurzzeilen lesen: treffen sie den Schritt?
+- [ ] N2357. **Phasen der Denkroutine:** In der zweiten Karte drei Kacheln Eröffnung (Buch),
+      Mittelspiel (Schwerter), Endspiel (Flagge); die gewählte ist golden umrandet und trägt „Du
+      bist hier“, darunter ihre Werkzeuge aus dem Buch („Ruhiger Zug mit …“, „Achte besonders
+      auf …“). Tipp auf „Mittelspiel“ wechselt beides. Das ⓘ zeigt die drei Sätze „Du bist hier,
+      solange …“; unten steht mit Warnzeichen „In jeder Phase zuerst: Warnsignale …“.
+- [ ] N2358. **Auswertung einer Partie:** Öffne eine beendete Partie und tippe in der Zugliste
+      einen guten Zug an. Die Karte unter dem Brett zeigt oben das Zugzeichen (etwa grüner Stern),
+      den Zug, eine Marke wie „Bester Zug“ und die Veränderung der Bewertung als Pfeil mit Zahl:
+      grün „▲ 0,1“, wenn der Zug die Stellung der ziehenden Seite verbessert, rot „▼ 0,1“, wenn er
+      sie (etwas) verschlechtert, grau „± 0,0“ bei gleich. Kein Balken. Das ⓘ zeigt den früheren
+      Satz („… war der beste Zug.“), „Bewertung +1,5 → +1,6.“ und die Erklärung des Balkens. Bei
+      Fehlern bleibt der Satz mit der Gewinnchance sichtbar. Über der Zeitleiste steht „Die Partie
+      in Momenten“ mit ⓘ statt des Satzes „Die wichtigen Züge auf einen Blick …“. Frage dazu: Soll
+      der Pfeil bei einem besten Zug von Schwarz auch dann rot sein, wenn die Zahl um 0,1 sinkt?
+      So ist es gebaut (Sicht der ziehenden Seite, wie bei der Falle).
+- [ ] N2359. **Kleine Einleitungen:** Profil, Einstellungen, „Bots und Wertung“: oben eine Zeile
+      mit Personenzeichen, „Menschlichere Züge (Maia)“, Knopf „⬇ 96 MB“ und ⓘ (darin der ganze
+      Maia-Text und die Lizenzzeile). „Über die App“: neben der Versionsnummer ein goldenes
+      Abzeichen „BETA“ mit ⓘ (darin der Beta-Satz). Nachschlagen, „Werkzeuge des Buches“: oben
+      „Nach Kapiteln geordnet“ mit ⓘ (die Einleitung). Profil, „Deine Extras“: ⓘ neben der
+      Überschrift mit „Tippe auf ein Extra …“ und „Extras gibt es nur fürs Lernen …“; der
+      Fußsatz unten ist weg. Die Legende bei „Gegner aussuchen“ und der Hinweis bei „Freie Partie“
+      folgen, sobald der Haupt-Chat diese gesperrten Seiten freigibt.
+
 ### Neu in 0.3.41: Einstellungen neu (Arbeitschat, 31.10.2026)
 
 Die Einstellungen sind nach deiner Wahl des Entwurfs K2 „Brettvorschau oben“ neu gebaut: oben ein

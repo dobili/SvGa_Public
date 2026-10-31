@@ -36,7 +36,7 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   const kapitel1 = page.locator(".kapitelliste").getByRole("button", { name: /Grundprinzipien/ });
   await expect(kapitel1).toContainText(/2 von \d+ Abbildungen angesehen/);
   await kapitel1.click();
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^2 von \d+$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^2\/\d+$/);
   await klappeAbschnittAuf(page, "1.4");
   const haken = (nummer: string) =>
     page.getByRole("button", { name: `Abb. ${nummer} als angesehen abhaken` });
@@ -57,8 +57,11 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   const bots = erfolge.getByTestId("erfolge-regal-bots");
   await expect(bots.getByTestId("erfolge-zaehler-bots")).toHaveText("0 von 9");
   await expect(bots.getByRole("img", { name: /^Noch offen: Engine \(Stufe 10\)$/ })).toBeAttached();
-  // Ohne Partien: die Karte „Deine Partien“ mit kurzem Satz (Wunsch des Autors, 25.10.2026).
+  // Ohne Partien: die Karte „Deine Partien“ mit Leerzustand (Weniger Text P1, 31.10.2026); der
+  // frühere Satz steht im ⓘ.
   await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
+  await expect(page.getByTestId("partien-leer")).toContainText("Noch keine Partie.");
+  await page.getByRole("button", { name: "Erklärung: Deine Partien" }).click();
   await expect(page.getByText("Noch keine Partie gespielt.", { exact: false })).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/ich-fortschritt.png", fullPage: true });
 });
@@ -75,18 +78,18 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   const haken = page.getByRole("button", { name: "Abb. 1.3 als angesehen abhaken" });
   await haken.click();
   await expect(haken).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^1 von \d+$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^1\/\d+$/);
   await page.getByRole("button", { name: "Alle abhaken" }).click();
   // Erst nach der Rückfrage (0.2.28); „Abbrechen“ ändert nichts.
   await page.getByRole("button", { name: "Abbrechen" }).click();
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^1 von \d+$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^1\/\d+$/);
   await page.getByRole("button", { name: "Alle abhaken" }).click();
   await page.getByRole("button", { name: "Ja, alle abhaken" }).click();
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^(\d+) von \1$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^(\d+)\/\1$/);
   await page.screenshot({ path: "test-results/bilder/kapitel-abhaken.png", fullPage: true });
   await page.getByRole("button", { name: "Alle zurücksetzen" }).click();
   await page.getByRole("button", { name: "Ja, Haken entfernen" }).click();
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0\/\d+$/);
 });
 
 test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken lösen, zuklappen (0.2.82)", async ({
@@ -103,11 +106,11 @@ test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken löse
   const haken = page.getByRole("button", { name: "Abb. 1.26 als angesehen abhaken" });
   await page.getByRole("button", { name: "Abschnitt 1.4 abhaken" }).click();
   await expect(haken).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("fortschritt-abbildungen")).not.toHaveText(/^0 von/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).not.toHaveText(/^0\//);
   await page.screenshot({ path: "test-results/bilder/kapitel-abschnitte.png", fullPage: true });
   await page.getByRole("button", { name: "Haken in 1.4 lösen" }).click();
   await expect(haken).toHaveAttribute("aria-pressed", "false");
-  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0\/\d+$/);
   // Zuklappen blendet die kleinen Bretter des Abschnitts aus.
   await page.getByRole("heading", { name: /^1\.4 / }).click();
   await expect(haken).toBeHidden();

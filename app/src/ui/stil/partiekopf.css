@@ -1,0 +1,88 @@
+/*
+ * Partiekopf gegen einen Bot (Weniger Text P3, 31.10.2026): Porträt mit Stufenmarke, zwei Chips
+ * (eigene Farbe, Eröffnungsmodus) und ⓘ in einer Zeile; die Blasen darunter. Nur Tokens aus
+ * basis.css; bei 360 px brechen die Chips um, statt überzustehen.
+ */
+
+.partiekopf {
+  margin: 0 0 var(--raster);
+}
+
+.partiekopf-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.partiekopf-portraet {
+  position: relative;
+  flex: none;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  line-height: 0;
+}
+
+.partiekopf .gegnerbild {
+  width: 56px;
+}
+
+.partiekopf .gegner-portraet {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.partiekopf-stufe {
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: var(--flaeche);
+  box-shadow: 0 0 0 2px var(--linie-stark);
+  color: var(--text);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.partiekopf-portraet[aria-expanded="true"] .gegner-portraet {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.partiekopf-chips {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2) var(--raster);
+}
+
+.partiekopf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px calc(var(--raster) * 1.25);
+  border-radius: 999px;
+  background: var(--grund);
+  box-shadow: 0 0 0 1px var(--linie);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.partiekopf-chip svg {
+  color: var(--gold-text);
+}
+
+.partiekopf .infoblase .partie-untertitel {
+  text-align: left;
+}

@@ -1,0 +1,154 @@
+/*
+ * Denkroutine als Karten (Weniger Text P6, 31.10.2026): fünf nummerierte Karten mit Zeichen und
+ * Kurzzeile, der Buchtext klappt auf; drei Phasenkacheln mit „Du bist hier“. Nur Tokens aus
+ * basis.css; bei 360 px brechen Texte um, nichts steht über.
+ */
+
+.denkkarten {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.denkkarte {
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+  background: var(--flaeche);
+}
+
+.denkkarte-kopf {
+  width: 100%;
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+}
+
+.denkkarte-nummer {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.denkkarte-sicherheit .denkkarte-nummer {
+  border-color: var(--rot-text);
+  background: var(--rot-text);
+  color: var(--flaeche);
+}
+
+.denkkarte-zeichen {
+  flex: none;
+  color: var(--gold-text);
+}
+
+.denkkarte-sicherheit .denkkarte-zeichen {
+  color: var(--rot-text);
+}
+
+.denkkarte-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.denkkarte-kurz {
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.denkkarte-pfeil {
+  flex: none;
+  color: var(--text-leise);
+  transition: transform 0.15s;
+}
+
+.denkkarte-kopf[aria-expanded="true"] .denkkarte-pfeil {
+  transform: rotate(180deg);
+}
+
+.denkkarte-buchtext {
+  margin: 0;
+  padding: var(--raster) calc(var(--raster) * 1.5) calc(var(--raster) * 1.5);
+  border-top: 1px solid var(--linie);
+}
+
+.denk-ziehen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--gruen-text);
+}
+
+.denk-ziehen .hinweis {
+  color: var(--text-leise);
+}
+
+.denkphasen {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+}
+
+.denkphase {
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--raster) 4px;
+  border: 2px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-mittel);
+  overflow-wrap: anywhere;
+}
+
+.denkphase.gewaehlt {
+  border-color: var(--gold);
+}
+
+.denkphase .phasenzeichen {
+  color: var(--gold-text);
+}
+
+.denkphase-hier {
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.denk-zuerst {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--raster);
+  margin: 0;
+}
+
+.denk-zuerst svg {
+  flex: none;
+  color: var(--gold-text);
+}

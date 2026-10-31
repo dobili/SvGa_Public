@@ -9,8 +9,11 @@
  * spielbaren Trainer haben keinen Knopf.
  * Abhängigkeiten: useMeisterschaft.ts, Themenmedaille.tsx, MedailleTeilen.tsx, thementexte.ts,
  * training/meisterschaftsstand.ts, training/themennamen.ts, Navigation, Speicher, i18n,
- * Stil in ui/stil/themen.css.
+ * Infoblase.tsx, Leerzustand.tsx, Stil in ui/stil/themen.css.
+ * Weniger Text (P1, 31.10.2026): Einleitung hinter ⓘ, ohne Thema ein Leerzustand.
  */
+
+import { Star, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
@@ -22,10 +25,15 @@ import {
 } from "../../../training/meisterschaftsstand";
 import { trainerZumThema } from "../../../training/themennamen";
 import "../../stil/themen.css";
+import { MitInfoblase } from "../bausteine/Infoblase";
+import { Leerzustand } from "../bausteine/Leerzustand";
 import { MedailleTeilen } from "./MedailleTeilen";
 import { Themenmedaille } from "./Themenmedaille";
 import { fortschrittstext, themenname } from "./thementexte";
 import { useThemenmedaillen } from "./useMeisterschaft";
+
+/** Größe des Sterns vor der Überschrift (Bildpunkte, wie Titelsymbol). */
+const TITELZEICHEN = 18;
 
 /** Was ein aufgeklapptes Thema zeigt: Bedingung, Auffrischen, Üben und Teilen. */
 function Einzelheiten({ medaille }: { medaille: Medaille }) {
@@ -81,19 +89,54 @@ function Thema({
   );
 }
 
-/** Die Karte im Profil. */
+/** Überschrift mit ⓘ: die Regeln der Medaillen, ohne Thema dazu, welche Trainer sie geben. */
+function Kopf({ leer }: { leer: boolean }) {
+  return (
+    <MitInfoblase
+      zeile={
+        <h2 className="karte-titel">
+          <Star className="titel-symbol" size={TITELZEICHEN} aria-hidden="true" />
+          {t("themen.karte.titel")}
+        </h2>
+      }
+      thema={t("themen.karte.titel")}
+      erklaerung={
+        <>
+          {leer && <p>{t("themen.karte.leer")}</p>}
+          <p>{t("themen.karte.einleitung")}</p>
+        </>
+      }
+    />
+  );
+}
+
+/**
+ * Die Karte im Profil. Ohne Thema ein Leerzustand mit Medaillen-Silhouetten und „Taktik üben“
+ * (Weniger Text P1, 31.10.2026); Einleitung und Erklärung stehen im ⓘ der Überschrift.
+ */
 export function Themenkarte() {
+  const { navigiere } = useNavigation();
   const medaillen = useThemenmedaillen();
   const [offen, setzeOffen] = useState<string | null>(null);
   useEffect(() => {
     void aendere((d) => mitNeuenStufen(d, new Date()).daten);
   }, []);
+  const leer = medaillen.length === 0;
   return (
     <section className="karte" data-testid="themenkarte">
-      <h2 className="karte-titel">{t("themen.karte.titel")}</h2>
-      <p className="hinweis">
-        {t(medaillen.length === 0 ? "themen.karte.leer" : "themen.karte.einleitung")}
-      </p>
+      <Kopf leer={leer} />
+      {leer && (
+        <Leerzustand
+          bild="medaillen"
+          zeile={t("wenigertext.seiten.themen.leer")}
+          testid="themen-leer"
+          knopf={{
+            text: t("wenigertext.seiten.knopf.taktik"),
+            symbol: Zap,
+            beiTipp: () => navigiere({ bildschirm: "trainer", kennung: "taktik" }),
+          }}
+        />
+      )}
       <ul className="themenraster">
         {medaillen.map((m) => (
           <Thema

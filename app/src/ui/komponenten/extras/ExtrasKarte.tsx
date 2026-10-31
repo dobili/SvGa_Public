@@ -8,11 +8,11 @@
  * aus `EXTRAARTEN` (nur Arten mit Extras): Eine neue Art erscheint von selbst. Brett und Figuren
  * lassen sich auch in den Einstellungen wählen; dort stehen dieselben Sperren. Nie wegnehmen
  * (E8): Ein gewähltes Extra bleibt gewählt (und zählt als frei), auch wenn die Bedingung gerade
- * nicht erfüllt ist.
- * Abhängigkeiten: training/extras.ts, extrawahl.ts, extralage.ts, extratexte.ts, Extrabuehne.tsx,
+ * nicht erfüllt ist. Weniger Text P15 (31.10.2026): Einleitung und Hinweis im ⓘ der Überschrift.
+ * Abhängigkeiten: Infoblase, training/extras.ts, extrawahl.ts, extralage.ts, extratexte.ts, Extrabuehne.tsx,
  * Extrakachel.tsx, bausteine/Reiter.tsx, profil/spieler.ts, i18n, lucide-react.
  */
-import { CircleHelp, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { useEinstellungen } from "../../../app/einstellungen";
 import { t } from "../../../i18n/sprache";
@@ -26,6 +26,7 @@ import {
   type Extralage,
 } from "../../../training/extras";
 import { useSpielerprofil } from "../../profil/spieler";
+import { MitInfoblase } from "../bausteine/Infoblase";
 import { Reiter } from "../bausteine/Reiter";
 import { Extrabuehne } from "./Extrabuehne";
 import { Extrakachel, type Kachelzustand } from "./Extrakachel";
@@ -96,13 +97,24 @@ export function ExtrasKarte() {
   const frei = EXTRAS.filter((e) => zustandVon(e, gewaehlt, lage) !== "gesperrt").length;
   return (
     <section className="karte extraskarte" data-testid="extras">
-      <div className="extrasneu-kopf">
-        <h2 className="karte-titel">{t("extras.karte.titel")}</h2>
-        <span className="hinweis" data-testid="extras-zaehler">
-          {t("extrasneu.zaehler", { frei, gesamt: EXTRAS.length })}
-        </span>
-      </div>
-      <p className="hinweis">{t("extrasneu.einleitung")}</p>
+      {/* Weniger Text P15 (31.10.2026): Einleitung und Hinweis stehen im ⓘ der Überschrift. */}
+      <MitInfoblase
+        zeile={
+          <div className="extrasneu-kopf">
+            <h2 className="karte-titel">{t("extras.karte.titel")}</h2>
+            <span className="hinweis" data-testid="extras-zaehler">
+              {t("extrasneu.zaehler", { frei, gesamt: EXTRAS.length })}
+            </span>
+          </div>
+        }
+        thema={t("extras.karte.titel")}
+        erklaerung={
+          <>
+            <p>{t("extrasneu.einleitung")}</p>
+            <p>{t("extrasneu.hinweis")}</p>
+          </>
+        }
+      />
       <Extrabuehne gewaehlt={gewaehlt} />
       <div className="extrasneu-reiter">
         <Reiter
@@ -113,10 +125,6 @@ export function ExtrasKarte() {
         />
       </div>
       <Artauswahl art={art} gewaehlt={gewaehlt} lage={lage} />
-      <p className="hinweis extrasneu-fuss">
-        <CircleHelp size={ZEICHENGROESSE} aria-hidden="true" />
-        {t("extrasneu.hinweis")}
-      </p>
     </section>
   );
 }

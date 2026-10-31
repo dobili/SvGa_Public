@@ -8,15 +8,17 @@
  * „Fehler melden“ ist seit R57 (24.10.2026) ein Formular an das Dashboard des Autors
  * (Meldeformular.tsx); Impressum und Datenschutz stehen direkt da (T2, § 5 DDG).
  * Abhängigkeiten: app/offline.ts, app/version.ts, app/geraet.ts, daten/laden.ts, Meldeformular,
- * Knopfsymbol, Navigation, i18n.
+ * Knopfsymbol, Infoblase, Navigation, i18n. Weniger Text P15 (31.10.2026): Beta als Abzeichen an
+ * der Version, der Satz dazu im ⓘ.
  */
-import { useState } from "react";
+import { useId, useState } from "react";
 import { istInstalliert } from "../../../app/geraet";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { aktualisiereJetzt, sucheUpdate, useOfflineStand } from "../../../app/offline";
 import { APP_VERSION } from "../../../app/version";
 import { ladeIndex } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
+import { Blase, Infoknopf } from "../bausteine/Infoblase";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 import { useDaten } from "../bausteine/useDaten";
 import { Meldeformular } from "./Meldeformular";
@@ -35,6 +37,37 @@ function Zeile({ name, wert, testid }: { name: string; wert: string; testid?: st
     <div className="einstellung">
       <dt>{name}</dt>
       <dd data-testid={testid}>{wert}</dd>
+    </div>
+  );
+}
+
+/**
+ * Zeile „App-Version“ mit Abzeichen „Beta“ und ⓘ (Weniger Text P15, 31.10.2026): Der Beta-Hinweis
+ * (Wunsch des Autors, 24.10.2026: die App wird laufend erweitert) steht vollständig in der Blase.
+ */
+function Versionszeile() {
+  const [offen, setzeOffen] = useState(false);
+  const kennung = useId();
+  return (
+    <div className="einstellung einstellung-mit-blase">
+      <dt>{t("ich.version")}</dt>
+      <dd>
+        <span className="version-mit-info">
+          <span data-testid="app-version">{APP_VERSION}</span>
+          <span className="abzeichen-beta">{t("wenigertext.seiten.beta")}</span>
+          <Infoknopf
+            thema={t("wenigertext.seiten.beta")}
+            offen={offen}
+            steuert={kennung}
+            beiTipp={() => setzeOffen(!offen)}
+          />
+        </span>
+        {offen && (
+          <Blase id={kennung}>
+            <p>{t("ich.beta")}</p>
+          </Blase>
+        )}
+      </dd>
     </div>
   );
 }
@@ -134,16 +167,10 @@ export function UeberDieApp() {
   return (
     <section className="karte">
       <dl className="einstellungen">
-        <Zeile
-          name={t("ich.version")}
-          wert={t("ich.versionBeta", { wert: APP_VERSION })}
-          testid="app-version"
-        />
+        <Versionszeile />
         <Zeile name={t("ich.datenstand")} wert={datenstand} />
         <Zeile name={t("ich.offline")} wert={offlineText} testid="offline-stand" />
       </dl>
-      {/* Beta-Hinweis (Wunsch des Autors, 24.10.2026): Die App wird laufend erweitert. */}
-      <p className="hinweis">{t("ich.beta")}</p>
       <Knoepfe angaben={angaben} />
       <p className="rechtliche-links">
         <a href="/datenschutz/">{t("lizenzen.datenschutz")}</a>

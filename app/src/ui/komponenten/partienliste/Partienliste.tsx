@@ -15,7 +15,9 @@
  * Abhängigkeiten: Partiezeile, PartieLoeschen, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
  * i18n.
  */
+import { Play } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import { staerkeDerPartie } from "../../../spiel/wertung";
 import {
@@ -33,6 +35,8 @@ import { Loeschleiste, LoeschmodusKnopf } from "./PartieLoeschen";
 import { Partiezeile } from "./Partiezeile";
 import { PgnImport } from "./PgnImport";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
+import { MitInfoblase } from "../bausteine/Infoblase";
+import { Leerzustand } from "../bausteine/Leerzustand";
 
 /** So viele beendete Partien zeigt die Liste zuerst, je Tipp auf „Weitere“ so viele mehr. */
 const SICHTBAR = 10;
@@ -53,15 +57,40 @@ function sortierwerte(eintrag: Partieeintrag): Sortierwerte {
 }
 
 /**
- * Überschrift der Karte „Deine Partien“ im Stil der anderen Profilkarten (seit 25.10.2026 eine
- * eigene Karte statt eines Abschnitts ohne Rahmen: Wunsch des Autors nach klarer Trennung).
+ * Überschrift „Deine Partien“; `leer`: mit ⓘ, das den früheren Satz zur leeren Liste trägt
+ * (Weniger Text P1, 31.10.2026).
  */
-function Partienkopf() {
-  return (
+function Partienkopf({ leer = false }: { leer?: boolean }) {
+  const titel = (
     <h2 className="karte-titel">
       <Titelsymbol art="partien" />
       {t("spielen.partien")}
     </h2>
+  );
+  if (!leer) return titel;
+  return (
+    <MitInfoblase
+      zeile={titel}
+      thema={t("spielen.partien")}
+      erklaerung={<p>{t("spielen.partienLeer")}</p>}
+    />
+  );
+}
+
+/** Leere Liste mit „Erste Partie“; „Partie einlesen (PGN)“ steht darunter wie bisher. */
+function LeerePartien() {
+  const { wechsleBereich } = useNavigation();
+  return (
+    <Leerzustand
+      bild="liste"
+      zeile={t("wenigertext.seiten.partien.leer")}
+      testid="partien-leer"
+      knopf={{
+        text: t("wenigertext.seiten.knopf.erstePartie"),
+        symbol: Play,
+        beiTipp: () => wechsleBereich("spielen"),
+      }}
+    />
   );
 }
 
@@ -81,8 +110,8 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   if (partien.length === 0)
     return (
       <section className="karte partienliste" data-tour="spielen-partien">
-        <Partienkopf />
-        <p className="hinweis">{t("spielen.partienLeer")}</p>
+        <Partienkopf leer />
+        <LeerePartien />
         <PgnImport />
       </section>
     );

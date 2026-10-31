@@ -7,13 +7,19 @@
  * Karte „Dein nächster Schritt“ und in den Kurzplänen, FaelligeWiederholungen.tsx). Gezählt wird
  * mit useFaelligeUebersicht, also genau wie dort. „Durchgehen“ startet zuerst die Übungen aus dem
  * Buch, sonst den ersten Trainer mit fälligen Aufgaben; die übrigen Trainer tragen auf ihrer Karte
- * die Plakette „fällig“. Ohne Fälliges: der nächste Termin, der Stapel blass.
+ * die Plakette „fällig“. Ohne Fälliges: der nächste Termin, der Stapel blass; ganz leer eine
+ * kurze Zeile mit ⓘ und „Übungen lösen“ (Weniger Text P1, 31.10.2026).
  * Abhängigkeiten: vorhandeneAufgaben.ts, Speicher, Navigation, i18n.
  */
+import { BookOpen } from "lucide-react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { datumText, t, tZahl } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
+import { MitInfoblase } from "../bausteine/Infoblase";
 import { useFaelligeUebersicht, type FaelligeUebersicht } from "./vorhandeneAufgaben";
+
+/** Größe des Buchzeichens im Knopf „Übungen lösen“ (Bildpunkte). */
+const KNOPFZEICHEN = 18;
 
 /** Der gezeichnete Stapel: drei Karten, die oberste mit Brettmuster, dazu die Zahl. */
 function Stapelbild({ anzahl }: { anzahl: number }) {
@@ -38,17 +44,34 @@ function herkunft({ reihe, trainer }: FaelligeUebersicht): string {
   ].join(" · ");
 }
 
-/** Der Hinweis, wenn nichts fällig ist: nächster Termin oder wie Karten in den Stapel kommen. */
+/**
+ * Wenn nichts fällig ist: der nächste Termin; ist der Stapel ganz leer, eine kurze Zeile mit
+ * „Übungen lösen“ (Weniger Text P1, 31.10.2026), der frühere Satz steht im ⓘ.
+ */
 function NichtsFaellig() {
+  const { wechsleBereich } = useNavigation();
   const karten = useSpeicher((z) => z.daten.karten);
   const termine = Object.values(karten).map((k) => Date.parse(k.faellig));
   const naechster = termine.length > 0 ? new Date(Math.min(...termine)) : null;
+  if (naechster)
+    return <p className="hinweis">{t("training.naechsteFaellig", { datum: datumText(naechster) })}</p>;
   return (
-    <p className="hinweis">
-      {naechster
-        ? t("training.naechsteFaellig", { datum: datumText(naechster) })
-        : t("trainingslook.stapelLeer")}
-    </p>
+    <>
+      <MitInfoblase
+        zeile={<p className="leerzustand-zeile">{t("wenigertext.seiten.stapel.leer")}</p>}
+        thema={t("trainingslook.stapelTitel")}
+        erklaerung={<p>{t("trainingslook.stapelLeer")}</p>}
+      />
+      <button
+        type="button"
+        className="knopf-zweit leerzustand-knopf"
+        data-testid="stapel-leer"
+        onClick={() => wechsleBereich("buch")}
+      >
+        <BookOpen size={KNOPFZEICHEN} aria-hidden="true" />
+        {t("wenigertext.seiten.knopf.uebungen")}
+      </button>
+    </>
   );
 }
 

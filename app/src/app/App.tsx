@@ -103,7 +103,13 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
         <Uebung key={ansicht.id} kapitel={ansicht.kapitel} id={ansicht.id} reihe={ansicht.reihe} />
       );
     case "trainer":
-      return <Trainer key={ansicht.kennung} kennung={ansicht.kennung} />;
+      return (
+        <Trainer
+          key={`${ansicht.kennung}-${ansicht.thema ?? ""}`}
+          kennung={ansicht.kennung}
+          thema={ansicht.thema ?? null}
+        />
+      );
     case "zusatz":
       return <Zusatzbildschirm kennung={ansicht.kennung} wert={ansicht.wert ?? null} />;
   }

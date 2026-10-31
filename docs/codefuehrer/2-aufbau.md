@@ -32,17 +32,18 @@ Zur Zeit des Bauens macht die Python-Pipeline aus dem LaTeX des Buches geprüfte
 JSON-Datei je Kapitel mit allen Abbildungen, Pfeilen, Feldmarken und Bildunterschriften). Auf
 dem Gerät läuft danach nur noch die App, ganz ohne Server; sie liest diese Daten.
 
+
 ## Was außerhalb von `app/src/` liegt
 
-| Ort              | Inhalt                                                                                       |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| `pipeline/`      | Python: liest das LaTeX des Buches, prüft es, baut die App-Daten und den Bericht der Befunde |
-| `schemas/`       | Der „Vertrag“ zwischen Pipeline und App: wie die Daten aufgebaut sein müssen                 |
-| `inhalte/`       | Zugfolgen (PGN), vorbereitete Texte, englische Übersetzungen, Lichess-Listen                 |
-| `app/public/`    | Was die App ausliefert: Buchdaten, Bilder der Bretter, Porträts, Stockfish, Maia             |
-| `app/skripte/`   | Hilfsprogramme: Daten kopieren, Bilder erzeugen, Messläufe, Auswertungen                     |
-| `app/tests/e2e/` | Oberflächentests: ein Roboter bedient die App wie ein Mensch (Playwright)                    |
-| `docs/`          | Diese Datei, Entscheidungen, Fortschritt, Aufgaben für dich                                  |
+| Ort | Inhalt |
+| --- | --- |
+| `pipeline/` | Python: liest das LaTeX des Buches, prüft es, baut die App-Daten und den Bericht der Befunde |
+| `schemas/` | Der „Vertrag“ zwischen Pipeline und App: wie die Daten aufgebaut sein müssen |
+| `inhalte/` | Zugfolgen (PGN), vorbereitete Texte, englische Übersetzungen, Lichess-Listen |
+| `app/public/` | Was die App ausliefert: Buchdaten, Bilder der Bretter, Porträts, Stockfish, Maia |
+| `app/skripte/` | Hilfsprogramme: Daten kopieren, Bilder erzeugen, Messläufe, Auswertungen |
+| `app/tests/e2e/` | Oberflächentests: ein Roboter bedient die App wie ein Mensch (Playwright) |
+| `docs/` | Diese Datei, Entscheidungen, Fortschritt, Aufgaben für dich |
 
 ---
 

@@ -33,6 +33,37 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.23: Freischaltbare Extras (Arbeitschat, 31.10.2026)
+
+Neu und nur durch Lernen zu bekommen; alles, was es schon gab, bleibt frei. Porträtrahmen in
+Bronze, Silber und Gold (ab Stufe 3, 6, 9), Brett „Nacht und Gold“ (mit allen Orden der
+Buchteile), Figurensatz „Gold“ (ab Stufe 5, umgefärbter Cburnett) und bunte Konfettifarben für das
+Feuerwerk (ab Stufe 2). Gesperrte Extras stehen als graue Silhouette mit Schloss und Bedingung da.
+Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das Zahnrad) › „Abzeichen
+testen“ › „Nächste Stufe erreichen“ (mehrmals) bzw. „Orden testen“ für die Buchteile; danach
+„Probe beenden“.
+
+- [ ] N2170. **Karte „Deine Extras“:** Profil, unter „Dein Fortschritt“. Vier Reihen
+      (Porträtrahmen, Brett, Figurensatz, Konfettifarben); gesperrte als graue Silhouette mit
+      Schloss und „Ab Stufe …“ bzw. „Mit allen Orden der Buchteile“. Verständlich?
+- [ ] N2171. **Konfettifarben ab Stufe 2:** Probe „Nächste Stufe erreichen“, dann im Profil bei
+      „Bunte Konfettifarben“ auf „Wählen“. Danach eine Partie gewinnen (kleines Feuerwerk über
+      dem Brett): Die Funken sind bunt. „Ablegen“ bringt die Farben der App zurück.
+- [ ] N2172. **Porträtrahmen:** Probe bis Stufe 3, „Rahmen Bronze“ wählen. Dein Porträt oben im
+      Profil, in der Partie und in der Partienliste hat einen Bronzering. Silber (Stufe 6) und
+      Gold (Stufe 9) ebenso. Wirken die Farben edel genug?
+- [ ] N2173. **Figurensatz „Gold“:** Einstellungen › Brett › Figurensatz, Gruppe „Verdient“.
+      Vor Stufe 5 grau mit „Ab Stufe 5“ und nicht wählbar; danach wählbar. Weiße Figuren golden,
+      schwarze im Navy mit goldener Kontur. Gut zu unterscheiden, auf jedem Brett?
+- [ ] N2174. **Brett „Nacht und Gold“:** Einstellungen › Brett › Brettfarben, Gruppe „Verdient“.
+      Gesperrt mit „Mit allen Orden der Buchteile“; nach der Orden-Probe aller fünf Buchteile
+      wählbar. Navy und mattes Gold; Figuren, letzter Zug und Pfeile gut sichtbar?
+- [ ] N2175. **Nie wegnehmen:** Ein gewähltes Extra bleibt gewählt, auch wenn du die Probe
+      beendest (es steht dann als „Gewählt“ da). Erst nach dem Ablegen oder einer anderen Wahl
+      ist es wieder gesperrt. Ist das so richtig?
+- [ ] N2176. **Lizenzen:** Profil › Einstellungen › Lizenzen: Eintrag „Figurensatz Gold
+      (Bearbeitung von Cburnett …)“ mit Lizenztext. Passt der Eintrag?
+
 ### Neu in 0.3.22: Dein nächster Schritt (Arbeitschat, 31.10.2026)
 
 Oben im Buch steht jetzt eine Karte „Dein nächster Schritt“ mit einem Vorschlag und einem Knopf.

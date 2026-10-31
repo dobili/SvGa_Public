@@ -7,9 +7,12 @@
  * Springer und Bauern, gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für
  * Bildschirmleser eine Gruppe von Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck
  * (aria-hidden). Die Kacheln lassen sich in Gruppen mit Überschrift teilen (Figurensätze:
- * Klassisch, Modern, Holz).
+ * Klassisch, Modern, Holz). Seit Gamifizierung P7 kann eine Kachel gesperrt sein (freischaltbares
+ * Extra): Dann zeigt sie die Vorschau als Silhouette, ein Schloss und die Bedingung und lässt
+ * sich nicht wählen.
  * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
  */
+import { Lock } from "lucide-react";
 import { useId } from "react";
 import type { Brettfarben, Figurensatz } from "../../../app/einstellungen";
 import { Figur } from "../../brett/Figur";
@@ -25,6 +28,8 @@ const FELDER: readonly { hell: boolean; figur: string; spalte: number; reihe: nu
 ];
 /** Seitenlänge der Vorschau in Feldern. */
 const SEITE = 2;
+/** Größe des Schlosses auf gesperrten Kacheln. */
+const SCHLOSSGROESSE = 14;
 
 /**
  * Ein Brettausschnitt aus vier Feldern mit Figuren.
@@ -68,6 +73,42 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
   );
 }
 
+/** Eine Kachel; mit Bedingung gesperrt (Silhouette, Schloss, nicht wählbar). */
+function Kachel({
+  gewaehlt,
+  text,
+  bedingung,
+  beiWahl,
+  children,
+}: {
+  gewaehlt: boolean;
+  text: string;
+  bedingung: string | undefined;
+  beiWahl: () => void;
+  children: React.ReactNode;
+}) {
+  const gesperrt = bedingung !== undefined;
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={gewaehlt}
+      aria-disabled={gesperrt || undefined}
+      className={`vorschaukachel${gesperrt ? " vorschaukachel-gesperrt" : ""}`}
+      onClick={gesperrt ? undefined : beiWahl}
+    >
+      {children}
+      <span>{text}</span>
+      {gesperrt && (
+        <span className="vorschaukachel-bedingung">
+          <Lock size={SCHLOSSGROESSE} aria-hidden="true" />
+          {bedingung}
+        </span>
+      )}
+    </button>
+  );
+}
+
 /** Eine Gruppe von Kacheln, optional mit Überschrift. */
 export interface Kachelgruppe<T extends string> {
   readonly titel?: string;
@@ -77,7 +118,8 @@ export interface Kachelgruppe<T extends string> {
 /**
  * Kacheln zur Wahl mit Vorschau; genau eine ist gewählt.
  * Eingaben: Name der Wahl, Werte (oder Gruppen von Werten), gewählter Wert, Beschriftung,
- * Vorschau je Wert, Wahl. Beispiel: Figurensätze in den Gruppen Klassisch, Modern, Holz.
+ * Vorschau je Wert, Wahl, wahlweise eine Sperre je Wert (Text der Bedingung oder undefined).
+ * Beispiel: Figurensätze in den Gruppen Klassisch, Modern, Holz; „Gold“ gesperrt „Ab Stufe 5“.
  */
 export function Vorschauwahl<T extends string>({
   name,
@@ -87,6 +129,7 @@ export function Vorschauwahl<T extends string>({
   text,
   vorschau,
   beiWahl,
+  sperre = () => undefined,
 }: {
   name: string;
   werte?: readonly T[];
@@ -95,6 +138,7 @@ export function Vorschauwahl<T extends string>({
   text: (wert: T) => string;
   vorschau: (wert: T) => React.ReactNode;
   beiWahl: (wert: T) => void;
+  sperre?: (wert: T) => string | undefined;
 }) {
   const alle: readonly Kachelgruppe<T>[] = gruppen ?? [{ werte: werte ?? [] }];
   return (
@@ -105,17 +149,15 @@ export function Vorschauwahl<T extends string>({
           {gruppe.titel && <span className="vorschaugruppe-titel">{gruppe.titel}</span>}
           <div className="vorschaureihe">
             {gruppe.werte.map((wert) => (
-              <button
+              <Kachel
                 key={wert}
-                type="button"
-                role="radio"
-                aria-checked={wert === gewaehlt}
-                className="vorschaukachel"
-                onClick={() => beiWahl(wert)}
+                gewaehlt={wert === gewaehlt}
+                text={text(wert)}
+                bedingung={sperre(wert)}
+                beiWahl={() => beiWahl(wert)}
               >
                 {vorschau(wert)}
-                <span>{text(wert)}</span>
-              </button>
+              </Kachel>
             ))}
           </div>
         </div>

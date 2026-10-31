@@ -40,6 +40,20 @@ Das Skript dafür ist `pipeline/figuren/holz_maserung.py`; es liest die unverän
 Bearbeitung der Holzsätze: Dominik Bilitewski, 2026. Die Bearbeitungen stehen unter
 derselben Lizenz wie das jeweilige Original.
 
+## Gold (freischaltbares Extra)
+
+Der Satz „Gold“ ist eine Bearbeitung von Cburnett (seit Gamifizierung P7, 31.10.2026; wählbar ab
+Stufe 5). Weiße Figuren haben einen goldenen Verlauf und eine dunkelbraune Kontur, schwarze das
+Navy der App mit goldener Kontur und goldenen Innenlinien. Die Formen sind unverändert. Das Skript
+dafür ist `pipeline/figuren/gold_umfaerben.py`; es liest `klassisch-cburnett/` und schreibt
+`gold/` (und die Kopie in `app/public/figuren/gold/`).
+
+| Ordner | Name | Original | Urheber des Originals | Lizenz |
+|---|---|---|---|---|
+| `gold` | Gold | cburnett | Colin M.L. Burnett | GPLv2 oder später (in der App unter GPLv3) |
+
+Bearbeitung des Goldsatzes: Dominik Bilitewski, 2026, unter derselben Lizenz wie das Original.
+
 ## Voraussetzungen
 
 - Die App steht unter **GPLv3 oder später**. Mit reiner GPLv2 wären `klassisch-chessnut`

@@ -47,8 +47,12 @@ export type Ansicht =
       readonly bildschirm: "uebung";
       readonly reihe?: readonly Uebungsverweis[];
     } & Uebungsverweis)
-  /** Ein Trainer: Übungsart wählen und Runden spielen (AP 13). */
-  | { readonly bildschirm: "trainer"; readonly kennung: TrainerKennung }
+  /**
+   * Ein Trainer: Übungsart wählen und Runden spielen (AP 13). Mit Thema (Welle 2 der
+   * Gamifizierung): Themenkennung wie „taktik:gabel“; der Trainer wählt sie vor, soweit er kann
+   * (ui/trainer/trainerthema.ts).
+   */
+  | { readonly bildschirm: "trainer"; readonly kennung: TrainerKennung; readonly thema?: string }
   /**
    * Bildschirm eines Pakets der Gamifizierung oder eines späteren Werkzeugs (app/zusatzansichten.ts),
    * etwa „lernpfad“ oder „rueckblick“ mit dem Monat als Wert.

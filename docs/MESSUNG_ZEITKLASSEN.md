@@ -33,7 +33,7 @@ Gruppen 1 bis 10; Gruppe 10 misst zusätzlich die reinen Spitzenstufen (im Skrip
    `anker-sN`, `neu-gruppeN` und die Bewertungen als `bewertet-N-k.jsonl` zusammen; fehlt ein
    `fertig.txt`, bricht es ab). Ein drittes Argument wählt Gruppen („1 2 3“).
 2. `BOTELO_ORDNER=<ordner> BOTELO_TEMPO=blitz BOTELO_AUSGABE=botstaerke-daten-blitz.ts npx vitest run
---config vitest.messung.config.ts src/engine/botstaerke.messung.ts` (im Ordner app/); für
+   --config vitest.messung.config.ts src/engine/botstaerke.messung.ts` (im Ordner app/); für
    Klassisch `BOTELO_TEMPO=classical`.
 3. Datei nach `app/src/engine/` kopieren und mit Prettier formatieren; `engine/botstaerke-zeitklassen.ts`
    bindet sie ein, `engine/botstaerke.ts` wählt die Zahl nach der Zeitklasse. Für Blitz und
@@ -52,3 +52,4 @@ bei einem Menschen dieser Stärke (`engine/zeitklassenabstand.ts`, Herleitung in
 nur noch einer Prüfung: Der Messlauf schreibt dann eine Prüfdatei, die sich mit der Umrechnung
 vergleichen lässt. Neu erzeugen lässt sich die Tabelle lokal mit
 `buch/arbeit/wertungsvergleich/` (`sammle.py`, `profile2.py`, `profile3.py`, `tabelle.py`).
+

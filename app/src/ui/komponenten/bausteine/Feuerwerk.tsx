@@ -8,10 +8,13 @@
  * „Bewegung reduzieren“ eingestellt hat, sieht nur ein ruhiges, kurzes Aufleuchten. Auch klein
  * über dem Brett nach einer gewonnenen Partie (Ergebnisblende.tsx, Wunsch des Autors): drei
  * Funkenkränze ohne Aufstieg, einmal.
- * Abhängigkeiten: ui/stil/feuerwerk.css.
+ * Seit Gamifizierung P7 kommen die Farben der Funken aus app/konfetti.ts (Extra „Bunte
+ * Konfettifarben“, ab Stufe 2 wählbar); Vorgabe bleiben die Farben der App.
+ * Abhängigkeiten: ui/stil/feuerwerk.css, app/feiereffekte.ts, app/konfetti.ts.
  */
 import type { CSSProperties } from "react";
 import { feiereffekteAn } from "../../../app/feiereffekte";
+import { konfettifarben } from "../../../app/konfetti";
 
 /** Raketen: waagrechte Lage (Anteil der Breite), Höhe des Platzens (Anteil), Verzögerung (s). */
 const RAKETEN: readonly (readonly [number, number, number])[] = [
@@ -25,7 +28,6 @@ const RAKETEN: readonly (readonly [number, number, number])[] = [
 ];
 const FUNKEN = 14;
 const VOLLKREIS = 360;
-const FARBEN = ["var(--gold)", "var(--creme)", "#9fb8e6", "#f2d27a"] as const;
 const PROZENT = 100;
 
 /** Raketen des kleinen Feuerwerks über dem Brett: nah am Schild, kurz nacheinander. */
@@ -43,6 +45,7 @@ export function Feuerwerk({ umfang = "gross" }: { umfang?: "gross" | "klein" }) 
   // Schalter „Feiereffekte“ (Einstellungen › Bedienung): aus → kein Feuerwerk.
   if (!feiereffekteAn()) return null;
   const raketen = umfang === "klein" ? KLEINE_RAKETEN : RAKETEN;
+  const farben = konfettifarben();
   return (
     <div className={`feuerwerk feuerwerk-${umfang}`} aria-hidden="true">
       {raketen.map(([x, y, verzoegerung], r) => (
@@ -54,7 +57,7 @@ export function Feuerwerk({ umfang = "gross" }: { umfang?: "gross" | "klein" }) 
               "--x": `${x * PROZENT}%`,
               "--y": `${y * PROZENT}%`,
               "--verzoegerung": `${verzoegerung}s`,
-              "--farbe": FARBEN[r % FARBEN.length],
+              "--farbe": farben[r % farben.length],
             } as CSSProperties
           }
         >

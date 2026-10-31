@@ -1,1337 +1,624 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>Konzeptkarte der App</title>
-    <meta name="claude:viewport-fit-sides" content="cover" />
-    <!--
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Konzeptkarte der App</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!--
   Konzeptkarte der App „Schach von Grund auf“: alle Dateien unter app/src/, ihr Zweck und ihre
   Verbindungen (Wunsch des Autors vom 26.10.2026). Die Daten erzeugt app/skripte/konzeptkarte.mjs
   in docs/konzeptkarte-daten.js; diese Seite liest sie und zeichnet drei Ebenen: alle Ordner, ein
   Ordner, eine Datei. Erklärung in Worten: docs/codefuehrer/ (die Ordnertexte kommen aus 3-ordner.md).
 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
-    />
-    <style>
-      /* Aufbau: Kopf mit Suche, darunter Karte (SVG) und Steckbrief nebeneinander, am Handy untereinander. */
-      :root {
-        --grund: #f6f4ee;
-        --flaeche: #ffffff;
-        --text: #16253d;
-        --leise: #5b6577;
-        --linie: #d9d4c7;
-        --gold: #b8901f;
-        --gold-hell: #f1e3b5;
-        --nacht: #16253d;
-        --ebene-oberflaeche: #3d6fb0;
-        --ebene-ablauf: #8a5aa8;
-        --ebene-fach: #b8901f;
-        --ebene-grund: #3f8a6b;
-        --kante: rgba(22, 37, 61, 0.16);
-        --kante-aktiv: #b8901f;
-        --schrift: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-        --titel: "Source Serif 4", Georgia, "Times New Roman", serif;
-        --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) {
-          --grund: #0f1a2c;
-          --flaeche: #16253d;
-          --text: #e9e6dc;
-          --leise: #a3acbd;
-          --linie: #2c3d5a;
-          --gold: #d9b44a;
-          --gold-hell: #3a3220;
-          --nacht: #e9e6dc;
-          --ebene-oberflaeche: #6b9be0;
-          --ebene-ablauf: #b48ad3;
-          --ebene-fach: #d9b44a;
-          --ebene-grund: #6cc39d;
-          --kante: rgba(233, 230, 220, 0.14);
-          --kante-aktiv: #d9b44a;
-          color-scheme: dark;
-        }
-      }
-      :root[data-theme="dark"] {
-        --grund: #0f1a2c;
-        --flaeche: #16253d;
-        --text: #e9e6dc;
-        --leise: #a3acbd;
-        --linie: #2c3d5a;
-        --gold: #d9b44a;
-        --gold-hell: #3a3220;
-        --nacht: #e9e6dc;
-        --ebene-oberflaeche: #6b9be0;
-        --ebene-ablauf: #b48ad3;
-        --ebene-fach: #d9b44a;
-        --ebene-grund: #6cc39d;
-        --kante: rgba(233, 230, 220, 0.14);
-        --kante-aktiv: #d9b44a;
-        color-scheme: dark;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--grund);
-        color: var(--text);
-        font: 16px/1.5 var(--schrift);
-        padding-left: max(16px, env(safe-area-inset-left, 0px));
-        padding-right: max(16px, env(safe-area-inset-right, 0px));
-        padding-block: 20px 40px;
-      }
-      .rahmen {
-        max-width: 1280px;
-        margin: 0 auto;
-        display: grid;
-        gap: 16px;
-      }
-      header {
-        display: grid;
-        gap: 8px;
-      }
-      h1 {
-        font: 700 1.9rem/1.15 var(--titel);
-        margin: 0;
-        text-wrap: balance;
-      }
-      h1 .springer {
-        color: var(--gold);
-      }
-      .unterzeile {
-        color: var(--leise);
-        margin: 0;
-        max-width: 70ch;
-      }
-      .werkzeuge {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        align-items: center;
-      }
-      #suche {
-        flex: 1 1 260px;
-        min-width: 0;
-        font: inherit;
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 1px solid var(--linie);
-        background: var(--flaeche);
-        color: var(--text);
-      }
-      #suche:focus-visible,
-      button:focus-visible {
-        outline: 3px solid var(--gold);
-        outline-offset: 2px;
-      }
-      .pfad {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        align-items: center;
-        font-size: 0.95rem;
-      }
-      .pfad button,
-      .knopf {
-        font: inherit;
-        border: 1px solid var(--linie);
-        background: var(--flaeche);
-        color: var(--text);
-        border-radius: 999px;
-        padding: 4px 12px;
-        cursor: pointer;
-      }
-      .pfad button:hover,
-      .knopf:hover {
-        border-color: var(--gold);
-      }
-      .pfad span {
-        color: var(--leise);
-      }
-      .legende {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        font-size: 0.85rem;
-        color: var(--leise);
-      }
-      .legende i {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        margin-right: 6px;
-        vertical-align: middle;
-      }
-      main {
-        display: grid;
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-        gap: 16px;
-        align-items: start;
-      }
-      @media (max-width: 860px) {
-        main {
-          grid-template-columns: minmax(0, 1fr);
-        }
-      }
-      .karte {
-        background: var(--flaeche);
-        border: 1px solid var(--linie);
-        border-radius: 14px;
-        overflow: hidden;
-        position: sticky;
-        top: max(12px, env(safe-area-inset-top, 0px));
-      }
-      @media (max-width: 860px) {
-        .karte {
-          position: static;
-        }
-      }
-      .karte svg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .karte-fuss {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        color: var(--leise);
-        border-top: 1px solid var(--linie);
-      }
-      aside {
-        display: grid;
-        gap: 12px;
-        min-width: 0;
-      }
-      .steckbrief {
-        background: var(--flaeche);
-        border: 1px solid var(--linie);
-        border-radius: 14px;
-        padding: 16px 18px;
-        display: grid;
-        gap: 10px;
-        min-width: 0;
-      }
-      .steckbrief h2 {
-        font: 700 1.3rem/1.2 var(--titel);
-        margin: 0;
-        overflow-wrap: anywhere;
-      }
-      .steckbrief h3 {
-        margin: 6px 0 0;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--leise);
-      }
-      .steckbrief p {
-        margin: 0;
-      }
-      .steckbrief code {
-        font-family: var(--mono);
-        font-size: 0.88em;
-        background: var(--grund);
-        border-radius: 4px;
-        padding: 0 4px;
-        overflow-wrap: anywhere;
-      }
-      .zahlen {
-        color: var(--leise);
-        font-size: 0.9rem;
-        font-variant-numeric: tabular-nums;
-      }
-      .liste {
-        display: grid;
-        gap: 6px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      .liste li {
-        min-width: 0;
-      }
-      .eintrag {
-        width: 100%;
-        text-align: left;
-        font: inherit;
-        color: inherit;
-        background: none;
-        cursor: pointer;
-        border: 1px solid var(--linie);
-        border-radius: 10px;
-        padding: 8px 10px;
-        display: grid;
-        gap: 2px;
-      }
-      .eintrag:hover {
-        border-color: var(--gold);
-        background: var(--gold-hell);
-      }
-      .eintrag b {
-        font-family: var(--mono);
-        font-size: 0.88rem;
-        font-weight: 600;
-        overflow-wrap: anywhere;
-      }
-      .eintrag small {
-        color: var(--leise);
-        font-size: 0.88rem;
-        line-height: 1.4;
-      }
-      .export {
-        border-left: 3px solid var(--linie);
-        padding: 2px 0 2px 10px;
-      }
-      .export code {
-        font-family: var(--mono);
-        font-size: 0.88rem;
-        font-weight: 600;
-      }
-      .export .art {
-        font-size: 0.75rem;
-        color: var(--leise);
-        margin-left: 6px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
-      .export p {
-        color: var(--leise);
-        font-size: 0.92rem;
-      }
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .chip {
-        font: 0.85rem var(--mono);
-        border: 1px solid var(--linie);
-        background: var(--grund);
-        color: var(--text);
-        border-radius: 6px;
-        padding: 2px 8px;
-        cursor: pointer;
-        max-width: 100%;
-        overflow-wrap: anywhere;
-        text-align: left;
-      }
-      .chip:hover {
-        border-color: var(--gold);
-      }
-      svg text {
-        font-family: var(--schrift);
-        fill: var(--text);
-      }
-      svg .knoten {
-        cursor: pointer;
-      }
-      svg .knoten:hover circle,
-      svg .knoten:hover rect {
-        stroke: var(--gold);
-        stroke-width: 3;
-      }
-      svg .knoten:focus {
-        outline: none;
-      }
-      svg .knoten:focus-visible circle,
-      svg .knoten:focus-visible rect {
-        stroke: var(--gold);
-        stroke-width: 4;
-      }
-      .leer {
-        color: var(--leise);
-        font-style: italic;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        svg path {
-          transition:
-            stroke 0.15s,
-            stroke-opacity 0.15s;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="rahmen">
-      <header>
-        <h1><span class="springer">♞</span> Konzeptkarte der App</h1>
-        <p class="unterzeile" id="unterzeile">
-          Alle Dateien der App „Schach von Grund auf“ mit ihrem Zweck und ihren
-          Verbindungen. Tippe einen Ordner an, dann eine Datei. Die Erklärung in
-          Worten steht in <code>docs/codefuehrer/</code>.
-        </p>
-        <div class="werkzeuge">
-          <input
-            id="suche"
-            type="search"
-            placeholder="Suchen: Dateiname, Funktion oder Zweck, etwa „Opposition“ oder „Uhr“"
-            aria-label="Suchen"
-          />
-        </div>
-        <nav class="pfad" id="pfad" aria-label="Ebene"></nav>
-        <div class="legende" aria-hidden="true">
-          <span
-            ><i style="background: var(--ebene-oberflaeche)"></i
-            >Oberfläche</span
-          >
-          <span
-            ><i style="background: var(--ebene-ablauf)"></i>Abläufe und
-            Speicher</span
-          >
-          <span
-            ><i style="background: var(--ebene-fach)"></i>Werkzeuge, Engine,
-            Bots</span
-          >
-          <span><i style="background: var(--ebene-grund)"></i>Grundlagen</span>
-          <span>Linie: „benutzt“, dicker = mehr Verbindungen</span>
-        </div>
-      </header>
-      <main>
-        <section class="karte" aria-label="Karte">
-          <svg
-            id="karte"
-            viewBox="0 0 1000 680"
-            role="img"
-            aria-label="Karte der Verbindungen"
-          ></svg>
-          <div class="karte-fuss" id="fuss"></div>
-        </section>
-        <aside id="steckbrief" aria-live="polite"></aside>
-      </main>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+/* Aufbau: Kopf mit Suche, darunter Karte (SVG) und Steckbrief nebeneinander, am Handy untereinander. */
+:root {
+  --grund: #f6f4ee;
+  --flaeche: #ffffff;
+  --text: #16253d;
+  --leise: #5b6577;
+  --linie: #d9d4c7;
+  --gold: #b8901f;
+  --gold-hell: #f1e3b5;
+  --nacht: #16253d;
+  --ebene-oberflaeche: #3d6fb0;
+  --ebene-ablauf: #8a5aa8;
+  --ebene-fach: #b8901f;
+  --ebene-grund: #3f8a6b;
+  --kante: rgba(22, 37, 61, 0.16);
+  --kante-aktiv: #b8901f;
+  --schrift: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --titel: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --grund: #0f1a2c; --flaeche: #16253d; --text: #e9e6dc; --leise: #a3acbd; --linie: #2c3d5a;
+    --gold: #d9b44a; --gold-hell: #3a3220; --nacht: #e9e6dc;
+    --ebene-oberflaeche: #6b9be0; --ebene-ablauf: #b48ad3; --ebene-fach: #d9b44a; --ebene-grund: #6cc39d;
+    --kante: rgba(233, 230, 220, 0.14); --kante-aktiv: #d9b44a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --grund: #0f1a2c; --flaeche: #16253d; --text: #e9e6dc; --leise: #a3acbd; --linie: #2c3d5a;
+  --gold: #d9b44a; --gold-hell: #3a3220; --nacht: #e9e6dc;
+  --ebene-oberflaeche: #6b9be0; --ebene-ablauf: #b48ad3; --ebene-fach: #d9b44a; --ebene-grund: #6cc39d;
+  --kante: rgba(233, 230, 220, 0.14); --kante-aktiv: #d9b44a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--grund); color: var(--text); font: 16px/1.5 var(--schrift);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.rahmen { max-width: 1280px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: grid; gap: 8px; }
+h1 { font: 700 1.9rem/1.15 var(--titel); margin: 0; text-wrap: balance; }
+h1 .springer { color: var(--gold); }
+.unterzeile { color: var(--leise); margin: 0; max-width: 70ch; }
+.werkzeuge { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+#suche {
+  flex: 1 1 260px; min-width: 0; font: inherit; padding: 10px 14px; border-radius: 10px;
+  border: 1px solid var(--linie); background: var(--flaeche); color: var(--text);
+}
+#suche:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.pfad { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; font-size: 0.95rem; }
+.pfad button, .knopf {
+  font: inherit; border: 1px solid var(--linie); background: var(--flaeche); color: var(--text);
+  border-radius: 999px; padding: 4px 12px; cursor: pointer;
+}
+.pfad button:hover, .knopf:hover { border-color: var(--gold); }
+.pfad span { color: var(--leise); }
+.legende { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: var(--leise); }
+.legende i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 860px) { main { grid-template-columns: minmax(0, 1fr); } }
+.karte {
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: 14px; overflow: hidden;
+  position: sticky; top: max(12px, env(safe-area-inset-top, 0px));
+}
+@media (max-width: 860px) { .karte { position: static; } }
+.karte svg { display: block; width: 100%; height: auto; }
+.karte-fuss { padding: 8px 14px; font-size: 0.85rem; color: var(--leise); border-top: 1px solid var(--linie); }
+aside { display: grid; gap: 12px; min-width: 0; }
+.steckbrief {
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: 14px; padding: 16px 18px;
+  display: grid; gap: 10px; min-width: 0;
+}
+.steckbrief h2 { font: 700 1.3rem/1.2 var(--titel); margin: 0; overflow-wrap: anywhere; }
+.steckbrief h3 {
+  margin: 6px 0 0; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--leise);
+}
+.steckbrief p { margin: 0; }
+.steckbrief code { font-family: var(--mono); font-size: 0.88em; background: var(--grund); border-radius: 4px; padding: 0 4px; overflow-wrap: anywhere; }
+.zahlen { color: var(--leise); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.liste { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.liste li { min-width: 0; }
+.eintrag {
+  width: 100%; text-align: left; font: inherit; color: inherit; background: none; cursor: pointer;
+  border: 1px solid var(--linie); border-radius: 10px; padding: 8px 10px; display: grid; gap: 2px;
+}
+.eintrag:hover { border-color: var(--gold); background: var(--gold-hell); }
+.eintrag b { font-family: var(--mono); font-size: 0.88rem; font-weight: 600; overflow-wrap: anywhere; }
+.eintrag small { color: var(--leise); font-size: 0.88rem; line-height: 1.4; }
+.export { border-left: 3px solid var(--linie); padding: 2px 0 2px 10px; }
+.export code { font-family: var(--mono); font-size: 0.88rem; font-weight: 600; }
+.export .art { font-size: 0.75rem; color: var(--leise); margin-left: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+.export p { color: var(--leise); font-size: 0.92rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: 0.85rem var(--mono); border: 1px solid var(--linie); background: var(--grund); color: var(--text);
+  border-radius: 6px; padding: 2px 8px; cursor: pointer; max-width: 100%; overflow-wrap: anywhere; text-align: left;
+}
+.chip:hover { border-color: var(--gold); }
+svg text { font-family: var(--schrift); fill: var(--text); }
+svg .knoten { cursor: pointer; }
+svg .knoten:hover circle, svg .knoten:hover rect { stroke: var(--gold); stroke-width: 3; }
+svg .knoten:focus { outline: none; }
+svg .knoten:focus-visible circle, svg .knoten:focus-visible rect { stroke: var(--gold); stroke-width: 4; }
+.leer { color: var(--leise); font-style: italic; }
+@media (prefers-reduced-motion: no-preference) { svg path { transition: stroke 0.15s, stroke-opacity 0.15s; } }
+</style>
+</head>
+<body>
+<div class="rahmen">
+  <header>
+    <h1><span class="springer">♞</span> Konzeptkarte der App</h1>
+    <p class="unterzeile" id="unterzeile">Alle Dateien der App „Schach von Grund auf“ mit ihrem Zweck und ihren Verbindungen. Tippe einen Ordner an, dann eine Datei. Die Erklärung in Worten steht in <code>docs/codefuehrer/</code>.</p>
+    <div class="werkzeuge">
+      <input id="suche" type="search" placeholder="Suchen: Dateiname, Funktion oder Zweck, etwa „Opposition“ oder „Uhr“" aria-label="Suchen">
     </div>
-    <script src="konzeptkarte-daten.js"></script>
-    <script>
-      "use strict";
-      const DATEIEN = window.KONZEPTKARTE || [];
-      /** Ordnertexte aus docs/codefuehrer/3-ordner.md (von Menschen geschrieben, Markdown). */
-      const ORDNER = window.KONZEPTKARTE_ORDNER || {};
-      const NS = "http://www.w3.org/2000/svg";
-      /** Maße der Zeichnung: am Handy ein schmaleres Raster mit größerer Schrift, sonst wäre sie winzig. */
-      function masse() {
-        const schmal =
-          (document.querySelector(".karte")?.clientWidth || 1000) < 640;
-        return schmal
-          ? {
-              schmal,
-              B: 600,
-              schrift: 22,
-              klein: 17,
-              box: 230,
-              zeile: 44,
-              proZeile: 3,
-            }
-          : {
-              schmal,
-              B: 1000,
-              schrift: 15,
-              klein: 12,
-              box: 300,
-              zeile: 34,
-              proZeile: 9,
-            };
-      }
-      let M = masse();
+    <nav class="pfad" id="pfad" aria-label="Ebene"></nav>
+    <div class="legende" aria-hidden="true">
+      <span><i style="background:var(--ebene-oberflaeche)"></i>Oberfläche</span>
+      <span><i style="background:var(--ebene-ablauf)"></i>Abläufe und Speicher</span>
+      <span><i style="background:var(--ebene-fach)"></i>Werkzeuge, Engine, Bots</span>
+      <span><i style="background:var(--ebene-grund)"></i>Grundlagen</span>
+      <span>Linie: „benutzt“, dicker = mehr Verbindungen</span>
+    </div>
+  </header>
+  <main>
+    <section class="karte" aria-label="Karte">
+      <svg id="karte" viewBox="0 0 1000 680" role="img" aria-label="Karte der Verbindungen"></svg>
+      <div class="karte-fuss" id="fuss"></div>
+    </section>
+    <aside id="steckbrief" aria-live="polite"></aside>
+  </main>
+</div>
+<script src="konzeptkarte-daten.js"></script>
+<script>
+"use strict";
+const DATEIEN = window.KONZEPTKARTE || [];
+/** Ordnertexte aus docs/codefuehrer/3-ordner.md (von Menschen geschrieben, Markdown). */
+const ORDNER = window.KONZEPTKARTE_ORDNER || {};
+const NS = "http://www.w3.org/2000/svg";
+/** Maße der Zeichnung: am Handy ein schmaleres Raster mit größerer Schrift, sonst wäre sie winzig. */
+function masse() {
+  const schmal = (document.querySelector(".karte")?.clientWidth || 1000) < 640;
+  return schmal
+    ? { schmal, B: 600, schrift: 22, klein: 17, box: 230, zeile: 44, proZeile: 3 }
+    : { schmal, B: 1000, schrift: 15, klein: 12, box: 300, zeile: 34, proZeile: 9 };
+}
+let M = masse();
 
-      /**
-       * Gruppe einer Datei: Oberordner, bei ui/ der Unterordner, bei ui/komponenten/ dessen Unterordner
-       * (seit 26.10.2026); Dateien direkt in src/ sind „Start“.
-       */
-      function gruppeVon(pfad) {
-        const teile = pfad.split("/");
-        if (teile.length === 1) return "start";
-        if (teile[0] === "ui" && teile[1] === "komponenten" && teile.length > 3)
-          return teile.slice(0, 3).join("/");
-        if (teile[0] === "ui" && teile.length > 2) return "ui/" + teile[1];
-        return teile[0];
-      }
+/**
+ * Gruppe einer Datei: Oberordner, bei ui/ der Unterordner, bei ui/komponenten/ dessen Unterordner
+ * (seit 26.10.2026); Dateien direkt in src/ sind „Start“.
+ */
+function gruppeVon(pfad) {
+  const teile = pfad.split("/");
+  if (teile.length === 1) return "start";
+  if (teile[0] === "ui" && teile[1] === "komponenten" && teile.length > 3) return teile.slice(0, 3).join("/");
+  if (teile[0] === "ui" && teile.length > 2) return "ui/" + teile[1];
+  return teile[0];
+}
 
-      /**
-       * Ebene jeder Gruppe (Zeile der Übersicht) und ein Ersatztext, falls 3-ordner.md für eine Gruppe
-       * keinen Abschnitt hat. Die eigentlichen Texte stehen in docs/codefuehrer/3-ordner.md.
-       */
-      const GRUPPEN = {
-        "ui/bildschirme": [
-          "oberflaeche",
-          "Die ganzen Seiten der App: Buch, Abbildung, Spielen, Partie, Training, Profil, Einstellungen, Nachschlagen.",
-        ],
-        "ui/komponenten": [
-          "oberflaeche",
-          "Die Bausteine der Seiten: Karten der Werkzeuge, Gegnerwahl, Uhr, Auswertung, Hinweise. Die use…-Dateien sind die Gehirne der Seiten, etwa usePartie für die laufende Partie.",
-        ],
-        "ui/trainer": [
-          "oberflaeche",
-          "Die Oberfläche der Trainer: je Trainer ein Bereich (Thema und Stufe wählen) und eine Aufgabe am Brett, dazu der Ablauf einer Runde.",
-        ],
-        "ui/brett": [
-          "oberflaeche",
-          "Das Schachbrett: Zeichnen, Figuren, Pfeile und Marken wie im Buch, Antippen und Wischen, das Gleiten der Figuren, Zugtöne.",
-        ],
-        "ui/profil": [
-          "oberflaeche",
-          "Name und Porträt des Lesers, der Porträt-Baukasten.",
-        ],
-        "ui/werkzeuge": [
-          "oberflaeche",
-          "Was eine Werkzeugkarte zeigt, wenn das Werkzeug in einer Stellung nicht greift.",
-        ],
-        tour: [
-          "oberflaeche",
-          "Der Rundgang durch die App: die Schritte als Daten, das Hervorheben der Ziele, das Toursymbol.",
-        ],
-        start: [
-          "ablauf",
-          "Der Startpunkt der App (main.tsx) und der Service Worker (sw.ts), der alles für den Offline-Betrieb bereithält.",
-        ],
-        app: [
-          "ablauf",
-          "Die Hülle: zeigt den aktuellen Bildschirm, Navigation als Stapel, Offline und Updates, Einstellungen, Töne, Maia-Paket, Fehler melden.",
-        ],
-        training: [
-          "ablauf",
-          "Die Logik der Trainer ohne Oberfläche: Aufgaben auswählen und Antworten prüfen, Wiederholung in fünf Kästen, 30-Minuten-Plan, Fehlerdatenbank, Lernsammlung.",
-        ],
-        spiel: [
-          "ablauf",
-          "Die Partie: Züge, Uhr, Ende der Partie, PGN; nach der Partie Zugklassen, Genauigkeit, geschätzte Spielstärke und deine Wertung.",
-        ],
-        speicher: [
-          "ablauf",
-          "Was sich die App auf dem Gerät merkt: Partien, Fortschritt, eigene Bots, Profil; Umwandlung alter Datenstände, Datensicherung.",
-        ],
-        autor: [
-          "ablauf",
-          "Die Aufgabenseite für den Autor: liest docs/AUFGABEN_AUTOR.md, Haken, Notizen, Links in die App.",
-        ],
-        startseite: [
-          "ablauf",
-          "Die Website des Buches: Startseite, Installieren, Trainingsseiten je Kapitel, Sicherheitsregel.",
-        ],
-        admin: [
-          "ablauf",
-          "Das Dashboard unter /admin/: Meldungen der Leser und die Ampel der Prüfungen.",
-        ],
-        sw: [
-          "ablauf",
-          "Teile des Service Workers: welche Dateien vorab geladen werden, Sprachpakete.",
-        ],
-        analyse: [
-          "fach",
-          "Die Werkzeuge des Buches, je Datei eines (k1-zaehlen, k5-felder, k8-opposition …), alle mit derselben Form; register.ts meldet sie an. Sie rechnen nach den Regeln des Buches, ohne Engine.",
-        ],
-        engine: [
-          "fach",
-          "Stockfish im Hintergrund, die zehn Stufen, die Bots mit Charakter und Stil, wie ein Bot menschlich seinen Zug wählt (Wahlmodell, Maia, Fehlerarten), die gemessenen Stärken.",
-        ],
-        schach: [
-          "grund",
-          "Schachlogik in den Begriffen des Buches: Angreifer, Abtausch, Bauernprofil, Drohungen, Fesselungen, Mattbilder, Opposition, Quadrat, Phase, Eröffnungsindex, Theorie.",
-        ],
-        daten: [
-          "grund",
-          "Die Buchdaten laden (eine Datei je Kapitel), Abbildungsnummern verstehen, Glossar suchen; generiert/ sind die Datentypen aus den Schemas.",
-        ],
-        i18n: [
-          "grund",
-          "Alle Texte der Oberfläche (de.json, en.json) und die Funktion t(), die zu einem Schlüssel den Text holt.",
-        ],
-      };
-      const EBENEN = ["oberflaeche", "ablauf", "fach", "grund"];
-      const EBENEN_NAMEN = {
-        oberflaeche: "Oberfläche",
-        ablauf: "Abläufe und Speicher",
-        fach: "Werkzeuge, Engine, Bots",
-        grund: "Grundlagen",
-      };
-      /** Ebene einer Gruppe; Ordner unter ui/ ohne eigenen Eintrag (etwa ui/komponenten/gegner) zählen zur Oberfläche. */
-      const ebeneVon = (gruppe) =>
-        (GRUPPEN[gruppe] || [
-          gruppe.startsWith("ui/") ? "oberflaeche" : "grund",
-        ])[0];
-      const farbe = (gruppe) => `var(--ebene-${ebeneVon(gruppe)})`;
+/**
+ * Ebene jeder Gruppe (Zeile der Übersicht) und ein Ersatztext, falls 3-ordner.md für eine Gruppe
+ * keinen Abschnitt hat. Die eigentlichen Texte stehen in docs/codefuehrer/3-ordner.md.
+ */
+const GRUPPEN = {
+  "ui/bildschirme": ["oberflaeche", "Die ganzen Seiten der App: Buch, Abbildung, Spielen, Partie, Training, Profil, Einstellungen, Nachschlagen."],
+  "ui/komponenten": ["oberflaeche", "Die Bausteine der Seiten: Karten der Werkzeuge, Gegnerwahl, Uhr, Auswertung, Hinweise. Die use…-Dateien sind die Gehirne der Seiten, etwa usePartie für die laufende Partie."],
+  "ui/trainer": ["oberflaeche", "Die Oberfläche der Trainer: je Trainer ein Bereich (Thema und Stufe wählen) und eine Aufgabe am Brett, dazu der Ablauf einer Runde."],
+  "ui/brett": ["oberflaeche", "Das Schachbrett: Zeichnen, Figuren, Pfeile und Marken wie im Buch, Antippen und Wischen, das Gleiten der Figuren, Zugtöne."],
+  "ui/profil": ["oberflaeche", "Name und Porträt des Lesers, der Porträt-Baukasten."],
+  "ui/werkzeuge": ["oberflaeche", "Was eine Werkzeugkarte zeigt, wenn das Werkzeug in einer Stellung nicht greift."],
+  "tour": ["oberflaeche", "Der Rundgang durch die App: die Schritte als Daten, das Hervorheben der Ziele, das Toursymbol."],
+  "start": ["ablauf", "Der Startpunkt der App (main.tsx) und der Service Worker (sw.ts), der alles für den Offline-Betrieb bereithält."],
+  "app": ["ablauf", "Die Hülle: zeigt den aktuellen Bildschirm, Navigation als Stapel, Offline und Updates, Einstellungen, Töne, Maia-Paket, Fehler melden."],
+  "training": ["ablauf", "Die Logik der Trainer ohne Oberfläche: Aufgaben auswählen und Antworten prüfen, Wiederholung in fünf Kästen, 30-Minuten-Plan, Fehlerdatenbank, Lernsammlung."],
+  "spiel": ["ablauf", "Die Partie: Züge, Uhr, Ende der Partie, PGN; nach der Partie Zugklassen, Genauigkeit, geschätzte Spielstärke und deine Wertung."],
+  "speicher": ["ablauf", "Was sich die App auf dem Gerät merkt: Partien, Fortschritt, eigene Bots, Profil; Umwandlung alter Datenstände, Datensicherung."],
+  "autor": ["ablauf", "Die Aufgabenseite für den Autor: liest docs/AUFGABEN_AUTOR.md, Haken, Notizen, Links in die App."],
+  "startseite": ["ablauf", "Die Website des Buches: Startseite, Installieren, Trainingsseiten je Kapitel, Sicherheitsregel."],
+  "admin": ["ablauf", "Das Dashboard unter /admin/: Meldungen der Leser und die Ampel der Prüfungen."],
+  "sw": ["ablauf", "Teile des Service Workers: welche Dateien vorab geladen werden, Sprachpakete."],
+  "analyse": ["fach", "Die Werkzeuge des Buches, je Datei eines (k1-zaehlen, k5-felder, k8-opposition …), alle mit derselben Form; register.ts meldet sie an. Sie rechnen nach den Regeln des Buches, ohne Engine."],
+  "engine": ["fach", "Stockfish im Hintergrund, die zehn Stufen, die Bots mit Charakter und Stil, wie ein Bot menschlich seinen Zug wählt (Wahlmodell, Maia, Fehlerarten), die gemessenen Stärken."],
+  "schach": ["grund", "Schachlogik in den Begriffen des Buches: Angreifer, Abtausch, Bauernprofil, Drohungen, Fesselungen, Mattbilder, Opposition, Quadrat, Phase, Eröffnungsindex, Theorie."],
+  "daten": ["grund", "Die Buchdaten laden (eine Datei je Kapitel), Abbildungsnummern verstehen, Glossar suchen; generiert/ sind die Datentypen aus den Schemas."],
+  "i18n": ["grund", "Alle Texte der Oberfläche (de.json, en.json) und die Funktion t(), die zu einem Schlüssel den Text holt."],
+};
+const EBENEN = ["oberflaeche", "ablauf", "fach", "grund"];
+const EBENEN_NAMEN = { oberflaeche: "Oberfläche", ablauf: "Abläufe und Speicher", fach: "Werkzeuge, Engine, Bots", grund: "Grundlagen" };
+/** Ebene einer Gruppe; Ordner unter ui/ ohne eigenen Eintrag (etwa ui/komponenten/gegner) zählen zur Oberfläche. */
+const ebeneVon = (gruppe) => (GRUPPEN[gruppe] || [gruppe.startsWith("ui/") ? "oberflaeche" : "grund"])[0];
+const farbe = (gruppe) => `var(--ebene-${ebeneVon(gruppe)})`;
 
-      // Verzeichnisse für schnelle Suche: Datei → Eintrag, Datei → wer sie benutzt.
-      const NACH_PFAD = new Map(DATEIEN.map((d) => [d.pfad, d]));
-      const BENUTZT_VON = new Map(DATEIEN.map((d) => [d.pfad, []]));
-      for (const d of DATEIEN)
-        for (const z of d.importe) BENUTZT_VON.get(z)?.push(d.pfad);
-      const JE_GRUPPE = new Map();
-      for (const d of DATEIEN) {
-        const g = gruppeVon(d.pfad);
-        if (!JE_GRUPPE.has(g)) JE_GRUPPE.set(g, []);
-        JE_GRUPPE.get(g).push(d);
-      }
-      /** Verbindungen zwischen Gruppen: "a→b" → Zahl der Importe. */
-      const GRUPPENKANTEN = new Map();
-      for (const d of DATEIEN)
-        for (const z of d.importe) {
-          const a = gruppeVon(d.pfad),
-            b = gruppeVon(z);
-          if (a === b) continue;
-          const k = a + "→" + b;
-          GRUPPENKANTEN.set(k, (GRUPPENKANTEN.get(k) || 0) + 1);
-        }
+// Verzeichnisse für schnelle Suche: Datei → Eintrag, Datei → wer sie benutzt.
+const NACH_PFAD = new Map(DATEIEN.map((d) => [d.pfad, d]));
+const BENUTZT_VON = new Map(DATEIEN.map((d) => [d.pfad, []]));
+for (const d of DATEIEN) for (const z of d.importe) BENUTZT_VON.get(z)?.push(d.pfad);
+const JE_GRUPPE = new Map();
+for (const d of DATEIEN) {
+  const g = gruppeVon(d.pfad);
+  if (!JE_GRUPPE.has(g)) JE_GRUPPE.set(g, []);
+  JE_GRUPPE.get(g).push(d);
+}
+/** Verbindungen zwischen Gruppen: "a→b" → Zahl der Importe. */
+const GRUPPENKANTEN = new Map();
+for (const d of DATEIEN) for (const z of d.importe) {
+  const a = gruppeVon(d.pfad), b = gruppeVon(z);
+  if (a === b) continue;
+  const k = a + "→" + b;
+  GRUPPENKANTEN.set(k, (GRUPPENKANTEN.get(k) || 0) + 1);
+}
 
-      const svg = document.getElementById("karte");
-      const steckbrief = document.getElementById("steckbrief");
-      const fuss = document.getElementById("fuss");
-      const pfadNav = document.getElementById("pfad");
-      const sucheFeld = document.getElementById("suche");
-      let ansicht = { art: "uebersicht" };
+const svg = document.getElementById("karte");
+const steckbrief = document.getElementById("steckbrief");
+const fuss = document.getElementById("fuss");
+const pfadNav = document.getElementById("pfad");
+const sucheFeld = document.getElementById("suche");
+let ansicht = { art: "uebersicht" };
 
-      function el(name, attrs = {}, eltern) {
-        const e = document.createElementNS(NS, name);
-        for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
-        if (eltern) eltern.appendChild(e);
-        return e;
-      }
-      function html(tag, text, klasse) {
-        const e = document.createElement(tag);
-        if (text != null) e.textContent = text;
-        if (klasse) e.className = klasse;
-        return e;
-      }
-      const kurz = (pfad) => pfad.split("/").pop();
+function el(name, attrs = {}, eltern) {
+  const e = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (eltern) eltern.appendChild(e);
+  return e;
+}
+function html(tag, text, klasse) {
+  const e = document.createElement(tag);
+  if (text != null) e.textContent = text;
+  if (klasse) e.className = klasse;
+  return e;
+}
+const kurz = (pfad) => pfad.split("/").pop();
 
-      /** Text mit `code` und **fett** als Knoten, ohne fremdes HTML einzuschleusen. */
-      function zeileMitAuszeichnung(text, eltern) {
-        for (const teil of text.split(/(`[^`]+`|\*\*[^*]+\*\*)/)) {
-          if (!teil) continue;
-          if (teil.startsWith("`"))
-            eltern.append(html("code", teil.slice(1, -1)));
-          else if (teil.startsWith("**"))
-            eltern.append(html("strong", teil.slice(2, -2)));
-          else eltern.append(document.createTextNode(teil));
-        }
-        return eltern;
-      }
+/** Text mit `code` und **fett** als Knoten, ohne fremdes HTML einzuschleusen. */
+function zeileMitAuszeichnung(text, eltern) {
+  for (const teil of text.split(/(`[^`]+`|\*\*[^*]+\*\*)/)) {
+    if (!teil) continue;
+    if (teil.startsWith("`")) eltern.append(html("code", teil.slice(1, -1)));
+    else if (teil.startsWith("**")) eltern.append(html("strong", teil.slice(2, -2)));
+    else eltern.append(document.createTextNode(teil));
+  }
+  return eltern;
+}
 
-      /** Einfaches Markdown (Absätze, Listen mit „- “, `code`, **fett**) als Knoten für den Steckbrief. */
-      function markdown(text) {
-        const huelle = html("div");
-        huelle.style.display = "grid";
-        huelle.style.gap = "8px";
-        for (const block of text.split(/\n\s*\n/)) {
-          const zeilenListe = block.split("\n");
-          if (zeilenListe[0].startsWith("- ")) {
-            const ul = html("ul");
-            ul.style.margin = "0";
-            ul.style.paddingLeft = "1.2em";
-            let punkt = null;
-            for (const z of zeilenListe) {
-              if (z.startsWith("- ")) {
-                punkt = html("li");
-                ul.append(punkt);
-                zeileMitAuszeichnung(z.slice(2), punkt);
-              } else if (punkt) zeileMitAuszeichnung(" " + z.trim(), punkt);
-            }
-            huelle.append(ul);
-          } else {
-            huelle.append(
-              zeileMitAuszeichnung(
-                zeilenListe.map((z) => z.trim()).join(" "),
-                html("p"),
-              ),
-            );
-          }
-        }
-        return huelle;
+/** Einfaches Markdown (Absätze, Listen mit „- “, `code`, **fett**) als Knoten für den Steckbrief. */
+function markdown(text) {
+  const huelle = html("div");
+  huelle.style.display = "grid"; huelle.style.gap = "8px";
+  for (const block of text.split(/\n\s*\n/)) {
+    const zeilenListe = block.split("\n");
+    if (zeilenListe[0].startsWith("- ")) {
+      const ul = html("ul");
+      ul.style.margin = "0"; ul.style.paddingLeft = "1.2em";
+      let punkt = null;
+      for (const z of zeilenListe) {
+        if (z.startsWith("- ")) { punkt = html("li"); ul.append(punkt); zeileMitAuszeichnung(z.slice(2), punkt); }
+        else if (punkt) zeileMitAuszeichnung(" " + z.trim(), punkt);
       }
+      huelle.append(ul);
+    } else {
+      huelle.append(zeileMitAuszeichnung(zeilenListe.map((z) => z.trim()).join(" "), html("p")));
+    }
+  }
+  return huelle;
+}
 
-      /** Der erste Satz eines Ordnertextes, ohne Auszeichnung, für die Liste der Übersicht. */
-      function kurztext(g) {
-        const roh = ORDNER[g] || (GRUPPEN[g] || ["", ""])[1];
-        const flach = roh.replace(/[`*]/g, "").replace(/\s+/g, " ").trim();
-        const ende = flach.search(/[.:](\s|$)/);
-        return ende < 0 ? flach : flach.slice(0, ende + 1);
-      }
-      const zeilen = (liste) => liste.reduce((s, d) => s + d.zeilen, 0);
-      const tausend = (n) => n.toLocaleString("de-DE");
+/** Der erste Satz eines Ordnertextes, ohne Auszeichnung, für die Liste der Übersicht. */
+function kurztext(g) {
+  const roh = ORDNER[g] || (GRUPPEN[g] || ["", ""])[1];
+  const flach = roh.replace(/[`*]/g, "").replace(/\s+/g, " ").trim();
+  const ende = flach.search(/[.:](\s|$)/);
+  return ende < 0 ? flach : flach.slice(0, ende + 1);
+}
+const zeilen = (liste) => liste.reduce((s, d) => s + d.zeilen, 0);
+const tausend = (n) => n.toLocaleString("de-DE");
 
-      /** Knoten im SVG: Kreis mit Beschriftung, antippbar und mit der Tastatur erreichbar. */
-      function knoten(
-        x,
-        y,
-        r,
-        fuellung,
-        beschriftung,
-        unter,
-        aktion,
-        hervor = false,
-      ) {
-        const g = el(
-          "g",
-          {
-            class: "knoten",
-            tabindex: "0",
-            role: "button",
-            "aria-label": beschriftung,
-          },
-          svg,
-        );
-        el(
-          "circle",
-          {
-            cx: x,
-            cy: y,
-            r,
-            fill: fuellung,
-            "fill-opacity": hervor ? 1 : 0.88,
-            stroke: hervor ? "var(--gold)" : "var(--flaeche)",
-            "stroke-width": hervor ? 4 : 2,
-          },
-          g,
-        );
-        const t = el(
-          "text",
-          {
-            x,
-            y: y + r + M.schrift + 2,
-            "text-anchor": "middle",
-            "font-size": M.schrift,
-            "font-weight": 600,
-          },
-          g,
-        );
-        t.textContent = beschriftung;
-        if (unter) {
-          const u = el(
-            "text",
-            {
-              x,
-              y: y + r + M.schrift + M.klein + 4,
-              "text-anchor": "middle",
-              "font-size": M.klein,
-              fill: "var(--leise)",
-            },
-            g,
-          );
-          u.textContent = unter;
-          u.setAttribute("style", "fill: var(--leise)");
-        }
-        g.addEventListener("click", aktion);
-        g.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            aktion();
-          }
-        });
-        return g;
-      }
+/** Knoten im SVG: Kreis mit Beschriftung, antippbar und mit der Tastatur erreichbar. */
+function knoten(x, y, r, fuellung, beschriftung, unter, aktion, hervor = false) {
+  const g = el("g", { class: "knoten", tabindex: "0", role: "button", "aria-label": beschriftung }, svg);
+  el("circle", { cx: x, cy: y, r, fill: fuellung, "fill-opacity": hervor ? 1 : 0.88, stroke: hervor ? "var(--gold)" : "var(--flaeche)", "stroke-width": hervor ? 4 : 2 }, g);
+  const t = el("text", { x, y: y + r + M.schrift + 2, "text-anchor": "middle", "font-size": M.schrift, "font-weight": 600 }, g);
+  t.textContent = beschriftung;
+  if (unter) {
+    const u = el("text", { x, y: y + r + M.schrift + M.klein + 4, "text-anchor": "middle", "font-size": M.klein, fill: "var(--leise)" }, g);
+    u.textContent = unter;
+    u.setAttribute("style", "fill: var(--leise)");
+  }
+  g.addEventListener("click", aktion);
+  g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); aktion(); } });
+  return g;
+}
 
-      /** Gebogene Linie mit Pfeilspitze von a nach b, Dicke nach Zahl der Verbindungen. */
-      function kante(a, b, zahl, hervor, gruppe) {
-        const dx = b.x - a.x,
-          dy = b.y - a.y,
-          laenge = Math.hypot(dx, dy) || 1;
-        const sx = a.x + (dx / laenge) * a.r,
-          sy = a.y + (dy / laenge) * a.r;
-        const ex = b.x - (dx / laenge) * (b.r + 4),
-          ey = b.y - (dy / laenge) * (b.r + 4);
-        const mx = (sx + ex) / 2 - dy * 0.12,
-          my = (sy + ey) / 2 + dx * 0.12;
-        const breite = Math.max(1, Math.min(9, Math.log2(zahl + 1) * 1.4));
-        const p = el(
-          "path",
-          {
-            d: `M${sx},${sy} Q${mx},${my} ${ex},${ey}`,
-            fill: "none",
-            stroke: hervor ? "var(--kante-aktiv)" : "var(--kante)",
-            "stroke-width": breite,
-            "stroke-opacity": hervor ? 0.9 : 1,
-            "marker-end": hervor ? "url(#spitze-gold)" : "url(#spitze)",
-          },
-          gruppe,
-        );
-        const titel = el("title", {}, p);
-        titel.textContent = `${zahl} Verbindungen`;
-        return p;
-      }
+/** Gebogene Linie mit Pfeilspitze von a nach b, Dicke nach Zahl der Verbindungen. */
+function kante(a, b, zahl, hervor, gruppe) {
+  const dx = b.x - a.x, dy = b.y - a.y, laenge = Math.hypot(dx, dy) || 1;
+  const sx = a.x + (dx / laenge) * a.r, sy = a.y + (dy / laenge) * a.r;
+  const ex = b.x - (dx / laenge) * (b.r + 4), ey = b.y - (dy / laenge) * (b.r + 4);
+  const mx = (sx + ex) / 2 - dy * 0.12, my = (sy + ey) / 2 + dx * 0.12;
+  const breite = Math.max(1, Math.min(9, Math.log2(zahl + 1) * 1.4));
+  const p = el("path", {
+    d: `M${sx},${sy} Q${mx},${my} ${ex},${ey}`, fill: "none",
+    stroke: hervor ? "var(--kante-aktiv)" : "var(--kante)", "stroke-width": breite,
+    "stroke-opacity": hervor ? 0.9 : 1, "marker-end": hervor ? "url(#spitze-gold)" : "url(#spitze)",
+  }, gruppe);
+  const titel = el("title", {}, p);
+  titel.textContent = `${zahl} Verbindungen`;
+  return p;
+}
 
-      function spitzen() {
-        const defs = el("defs", {}, svg);
-        for (const [id, f] of [
-          ["spitze", "var(--kante)"],
-          ["spitze-gold", "var(--kante-aktiv)"],
-        ]) {
-          const m = el(
-            "marker",
-            {
-              id,
-              viewBox: "0 0 10 10",
-              refX: 8,
-              refY: 5,
-              markerWidth: 5,
-              markerHeight: 5,
-              orient: "auto-start-reverse",
-            },
-            defs,
-          );
-          el("path", { d: "M0,0 L10,5 L0,10 z", fill: f }, m);
-        }
-      }
+function spitzen() {
+  const defs = el("defs", {}, svg);
+  for (const [id, f] of [["spitze", "var(--kante)"], ["spitze-gold", "var(--kante-aktiv)"]]) {
+    const m = el("marker", { id, viewBox: "0 0 10 10", refX: 8, refY: 5, markerWidth: 5, markerHeight: 5, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0,0 L10,5 L0,10 z", fill: f }, m);
+  }
+}
 
-      /**
-       * Positionen der Gruppen: eine Ebene je Band, Oberfläche oben, Grundlagen unten; am Handy brechen
-       * die Ebenen nach drei Ordnern um. Ergebnis: Positionen, Bänder (für die Beschriftung) und Höhe.
-       */
-      function gruppenpositionen() {
-        const pos = new Map(),
-          baender = [];
-        const maxZeilen = Math.max(...[...JE_GRUPPE.values()].map(zeilen));
-        const rMax = M.schmal ? 46 : 42,
-          rMin = M.schmal ? 16 : 14;
-        const zeilenhoehe = M.schmal ? 170 : 150;
-        let y = 30;
-        for (const ebene of EBENEN) {
-          const gruppen = [...JE_GRUPPE.keys()]
-            .filter((g) => ebeneVon(g) === ebene)
-            .sort(
-              (a, b) => zeilen(JE_GRUPPE.get(b)) - zeilen(JE_GRUPPE.get(a)),
-            );
-          baender.push([ebene, y]);
-          for (let anfang = 0; anfang < gruppen.length; anfang += M.proZeile) {
-            // Die großen Gruppen in die Mitte, die kleinen nach außen.
-            const geordnet = [];
-            gruppen
-              .slice(anfang, anfang + M.proZeile)
-              .forEach((g, i) =>
-                i % 2 ? geordnet.push(g) : geordnet.unshift(g),
-              );
-            const schritt = M.B / (geordnet.length + 1);
-            geordnet.forEach((g, i) => {
-              const r =
-                rMin + rMax * Math.sqrt(zeilen(JE_GRUPPE.get(g)) / maxZeilen);
-              const versatz =
-                !M.schmal && geordnet.length > 6 && i % 2 ? 26 : 0;
-              pos.set(g, { x: schritt * (i + 1), y: y + 70 + versatz, r });
-            });
-            y += zeilenhoehe;
-          }
-          y += 10;
-        }
-        return { pos, baender, hoehe: y };
-      }
-
-      /** Ab so vielen Verbindungen zeigt die Übersicht eine Linie auch ohne Auswahl. */
-      const SCHWELLE = 12;
-      function zeichneUebersicht(hervor) {
-        M = masse();
-        svg.replaceChildren();
-        const { pos, baender, hoehe } = gruppenpositionen();
-        svg.setAttribute("viewBox", `0 0 ${M.B} ${hoehe}`);
-        spitzen();
-        for (const [ebene, y] of baender) {
-          const t = el(
-            "text",
-            {
-              x: 12,
-              y: y + 4,
-              "font-size": M.klein,
-              "letter-spacing": "0.08em",
-            },
-            svg,
-          );
-          t.textContent = EBENEN_NAMEN[ebene].toUpperCase();
-          t.setAttribute("style", "fill: var(--leise)");
-        }
-        const kanten = el("g", {}, svg);
-        const liste = [...GRUPPENKANTEN.entries()].map(([k, n]) => [
-          ...k.split("→"),
-          n,
-        ]);
-        // Ohne Auswahl nur die stärkeren Verbindungen, sonst verdecken die Linien die Ordner; beim
-        // Darüberfahren oder Fokussieren eines Ordners alle seine Linien, gold und obenauf.
-        const linien = liste.map(([a, b, n]) => ({
-          a,
-          b,
-          n,
-          pfad: kante(pos.get(a), pos.get(b), n, false, kanten),
-        }));
-        const hebeHervor = (g) => {
-          for (const l of linien) {
-            const aktiv = g && (l.a === g || l.b === g);
-            l.pfad.style.display = aktiv || l.n >= SCHWELLE ? "" : "none";
-            l.pfad.setAttribute(
-              "stroke",
-              aktiv ? "var(--kante-aktiv)" : "var(--kante)",
-            );
-            l.pfad.setAttribute(
-              "marker-end",
-              aktiv ? "url(#spitze-gold)" : "url(#spitze)",
-            );
-            if (aktiv) kanten.appendChild(l.pfad);
-          }
-        };
-        for (const [g, p] of pos) {
-          const dateien = JE_GRUPPE.get(g);
-          const k = knoten(
-            p.x,
-            p.y,
-            p.r,
-            farbe(g),
-            g === "start" ? "Start" : g.replace(/^ui\/komponenten\//, ""),
-            `${dateien.length} Dateien`,
-            () => zeigeGruppe(g),
-            g === hervor,
-          );
-          k.addEventListener("mouseenter", () => hebeHervor(g));
-          k.addEventListener("focus", () => hebeHervor(g));
-          k.addEventListener("mouseleave", () => hebeHervor(hervor));
-        }
-        hebeHervor(hervor);
-        fuss.textContent = `${DATEIEN.length} Dateien, ${tausend(zeilen(DATEIEN))} Zeilen, ${tausend(DATEIEN.reduce((s, d) => s + d.importe.length, 0))} Verbindungen. Gezeigt sind die stärksten Verbindungen (ab ${SCHWELLE}); fährst du über einen Ordner, erscheinen alle seine. Die Pfeilspitze zeigt auf den benutzten Ordner.`;
-      }
-
-      /** Karte um eine Mitte: links, was die Mitte benutzt; rechts, wer die Mitte benutzt. */
-      function zeichneUmfeld(
-        mitte,
-        beschriftung,
-        benutzt,
-        benutztVon,
-        aufTipp,
-      ) {
-        M = masse();
-        svg.replaceChildren();
-        spitzen();
-        const reihen = Math.max(benutzt.length, benutztVon.length, 1);
-        const hoehe = Math.max(M.schmal ? 520 : 420, 70 + reihen * M.zeile);
-        svg.setAttribute("viewBox", `0 0 ${M.B} ${hoehe}`);
-        const m = { x: M.B / 2, y: hoehe / 2, r: M.schmal ? 36 : 46 };
-        const links = 8 + M.box / 2,
-          rechts = M.B - 8 - M.box / 2;
-        const kopf = (x, text) => {
-          const t = el(
-            "text",
-            {
-              x,
-              y: 26,
-              "text-anchor": "middle",
-              "font-size": M.klein,
-              "letter-spacing": "0.06em",
-            },
-            svg,
-          );
-          t.textContent = text;
-          t.setAttribute("style", "fill: var(--leise)");
-        };
-        kopf(links, `BENUTZT (${benutzt.length})`);
-        kopf(
-          rechts,
-          M.schmal
-            ? `BENUTZT VON (${benutztVon.length})`
-            : `WIRD BENUTZT VON (${benutztVon.length})`,
-        );
-        const kanten = el("g", {}, svg);
-        const zeichen = Math.floor(M.box / (M.schrift * 0.56));
-        const seite = (liste, x, istLinks) => {
-          const schritt = (hoehe - 60) / Math.max(liste.length, 1);
-          liste.forEach((e, i) => {
-            const y = 50 + schritt * (i + 0.5);
-            const p = { x: istLinks ? x + M.box / 2 : x - M.box / 2, y, r: 6 };
-            if (istLinks) kante(m, p, e.zahl || 1, false, kanten);
-            else kante(p, m, e.zahl || 1, false, kanten);
-            const g = el(
-              "g",
-              {
-                class: "knoten",
-                tabindex: "0",
-                role: "button",
-                "aria-label": e.name,
-              },
-              svg,
-            );
-            const h = M.zeile - 8;
-            el(
-              "rect",
-              {
-                x: x - M.box / 2,
-                y: y - h / 2,
-                width: M.box,
-                height: h,
-                rx: 7,
-                fill: "var(--flaeche)",
-                stroke: farbe(e.gruppe),
-                "stroke-width": 1.5,
-              },
-              g,
-            );
-            el(
-              "rect",
-              {
-                x: x - M.box / 2,
-                y: y - h / 2,
-                width: 6,
-                height: h,
-                rx: 2,
-                fill: farbe(e.gruppe),
-              },
-              g,
-            );
-            const t = el(
-              "text",
-              {
-                x: x - M.box / 2 + 14,
-                y: y + M.schrift * 0.36,
-                "font-size": M.schrift * (M.schmal ? 0.82 : 0.87),
-              },
-              g,
-            );
-            const name = M.schmal && e.pfad ? kurz(e.name) : e.name;
-            t.textContent =
-              name.length > zeichen ? name.slice(0, zeichen - 1) + "…" : name;
-            const titel = el("title", {}, g);
-            titel.textContent = e.titel || e.name;
-            const tun = () => aufTipp(e);
-            g.addEventListener("click", tun);
-            g.addEventListener("keydown", (ev) => {
-              if (ev.key === "Enter" || ev.key === " ") {
-                ev.preventDefault();
-                tun();
-              }
-            });
-          });
-        };
-        seite(benutzt, links, true);
-        seite(benutztVon, rechts, false);
-        el(
-          "circle",
-          {
-            cx: m.x,
-            cy: m.y,
-            r: m.r,
-            fill: farbe(mitte),
-            stroke: "var(--gold)",
-            "stroke-width": 4,
-          },
-          svg,
-        );
-        const t = el(
-          "text",
-          {
-            x: m.x,
-            y: m.y + m.r + M.schrift + 4,
-            "text-anchor": "middle",
-            "font-size": M.schrift,
-            "font-weight": 700,
-          },
-          svg,
-        );
-        t.textContent = beschriftung;
-      }
-
-      /** Viele Nachbarn einer Datei werden zu Ordnern mit Zahl zusammengefasst, damit die Karte lesbar bleibt. */
-      const HOECHSTENS_EINZELN = 16;
-      function nachbarn(pfade) {
-        if (pfade.length <= HOECHSTENS_EINZELN) {
-          return pfade.map((p) => ({
-            name: p,
-            pfad: p,
-            gruppe: gruppeVon(p),
-            titel: NACH_PFAD.get(p)?.zweck,
-          }));
-        }
-        const je = new Map();
-        for (const p of pfade)
-          je.set(gruppeVon(p), (je.get(gruppeVon(p)) || 0) + 1);
-        return [...je.entries()]
-          .sort((a, b) => b[1] - a[1])
-          .map(([g, n]) => ({
-            name: `${g === "start" ? "Start" : g} (${n} Dateien)`,
-            gruppe: g,
-            zahl: n,
-            ordner: g,
-          }));
-      }
-
-      function zeigeUebersicht() {
-        ansicht = { art: "uebersicht" };
-        zeichneUebersicht(null);
-        pfad([]);
-        steckbrief.replaceChildren();
-        const k = html("div", null, "steckbrief");
-        k.append(html("h2", "Alle Ordner"));
-        k.append(
-          html(
-            "p",
-            "Oben die Oberfläche, darunter die Abläufe, dann Werkzeuge und Engine, ganz unten die Grundlagen. Die Abhängigkeiten zeigen nach unten: Die Oberfläche benutzt alles, die Schachlogik kennt keine Bildschirme.",
-          ),
-        );
-        const ul = html("ul", null, "liste");
-        for (const ebene of EBENEN) {
-          for (const [g] of [...JE_GRUPPE.entries()].filter(
-            ([g]) => ebeneVon(g) === ebene,
-          )) {
-            ul.append(
-              eintragKnopf(
-                g === "start" ? "Start (main.tsx, sw.ts)" : g,
-                kurztext(g),
-                () => zeigeGruppe(g),
-              ),
-            );
-          }
-        }
-        k.append(ul);
-        steckbrief.append(k);
-      }
-
-      function zeigeGruppe(g) {
-        ansicht = { art: "gruppe", gruppe: g };
-        const dateien = JE_GRUPPE.get(g);
-        const aus = new Map(),
-          ein = new Map();
-        for (const [k, n] of GRUPPENKANTEN) {
-          const [a, b] = k.split("→");
-          if (a === g) aus.set(b, n);
-          if (b === g) ein.set(a, n);
-        }
-        const alsEintraege = (m) =>
-          [...m.entries()]
-            .sort((a, b) => b[1] - a[1])
-            .map(([x, n]) => ({
-              name: `${x === "start" ? "Start" : x} (${n})`,
-              gruppe: x,
-              zahl: n,
-              ordner: x,
-            }));
-        zeichneUmfeld(
-          g,
-          g === "start" ? "Start" : g,
-          alsEintraege(aus),
-          alsEintraege(ein),
-          (e) => zeigeGruppe(e.ordner),
-        );
-        fuss.textContent =
-          "In Klammern: wie viele Verbindungen. Tippe einen Ordner an, um zu ihm zu wechseln, oder rechts eine Datei.";
-        pfad([[g === "start" ? "Start" : g, () => zeigeGruppe(g)]]);
-        steckbrief.replaceChildren();
-        const k = html("div", null, "steckbrief");
-        k.append(html("h2", g === "start" ? "Start" : g));
-        k.append(
-          ORDNER[g]
-            ? markdown(ORDNER[g])
-            : html("p", (GRUPPEN[g] || ["", ""])[1]),
-        );
-        k.append(
-          html(
-            "p",
-            `${dateien.length} Dateien, ${tausend(zeilen(dateien))} Zeilen`,
-            "zahlen",
-          ),
-        );
-        k.append(html("h3", "Dateien"));
-        const ul = html("ul", null, "liste");
-        for (const d of [...dateien].sort((a, b) =>
-          a.pfad.localeCompare(b.pfad, "de"),
-        )) {
-          ul.append(
-            eintragKnopf(
-              d.pfad.replace(/^(ui\/[a-z]+|[a-z0-9]+)\//, ""),
-              d.zweck || "Automatisch erzeugte Datentypen.",
-              () => zeigeDatei(d.pfad),
-            ),
-          );
-        }
-        k.append(ul);
-        steckbrief.append(k);
-      }
-
-      function zeigeDatei(p) {
-        const d = NACH_PFAD.get(p);
-        if (!d) return;
-        ansicht = { art: "datei", pfad: p };
-        const von = BENUTZT_VON.get(p) || [];
-        const tipp = (e) =>
-          e.ordner ? zeigeGruppe(e.ordner) : zeigeDatei(e.pfad);
-        zeichneUmfeld(
-          gruppeVon(p),
-          kurz(p),
-          nachbarn(d.importe),
-          nachbarn(von),
-          tipp,
-        );
-        fuss.textContent =
-          "Links die Dateien, die diese Datei benutzt, rechts die, die sie benutzen. Bei vielen Nachbarn stehen ihre Ordner mit der Zahl der Dateien da.";
-        const g = gruppeVon(p);
-        pfad([
-          [g === "start" ? "Start" : g, () => zeigeGruppe(g)],
-          [kurz(p), () => zeigeDatei(p)],
-        ]);
-        steckbrief.replaceChildren();
-        const k = html("div", null, "steckbrief");
-        k.append(html("h2", d.pfad));
-        k.append(
-          html(
-            "p",
-            `${d.zeilen} Zeilen · benutzt ${d.importe.length} · wird benutzt von ${von.length}`,
-            "zahlen",
-          ),
-        );
-        k.append(
-          html(
-            "p",
-            d.zweck ||
-              "Automatisch erzeugte Datentypen aus den Schemas; nicht von Hand ändern.",
-          ),
-        );
-        if (d.rolle) {
-          k.append(html("h3", "Rolle im Gesamtbild"));
-          k.append(html("p", d.rolle));
-        }
-        const sichtbar = d.exporte.filter((x) => x.art !== "typ");
-        if (sichtbar.length) {
-          k.append(html("h3", `Was die Datei anbietet (${sichtbar.length})`));
-          const ARTEN = {
-            funktion: "Funktion",
-            komponente: "Baustein",
-            wert: "Wert",
-            klasse: "Klasse",
-            sonst: "",
-          };
-          for (const x of sichtbar) {
-            const div = html("div", null, "export");
-            const kopf = html("div");
-            kopf.append(
-              html("code", x.name),
-              html("span", ARTEN[x.art] || "", "art"),
-            );
-            div.append(kopf);
-            if (x.satz) div.append(html("p", x.satz));
-            k.append(div);
-          }
-        }
-        const typen = d.exporte.filter((x) => x.art === "typ");
-        if (typen.length) {
-          k.append(html("h3", "Datentypen"));
-          k.append(html("p", typen.map((x) => x.name).join(", "), "zahlen"));
-        }
-        for (const [titel, liste] of [
-          ["Benutzt", d.importe],
-          ["Wird benutzt von", von],
-        ]) {
-          k.append(html("h3", `${titel} (${liste.length})`));
-          if (!liste.length) {
-            k.append(html("p", "keine", "leer"));
-            continue;
-          }
-          const chips = html("div", null, "chips");
-          for (const z of [...liste].sort()) {
-            const c = html("button", z, "chip");
-            c.type = "button";
-            c.title = NACH_PFAD.get(z)?.zweck || "";
-            c.addEventListener("click", () => zeigeDatei(z));
-            chips.append(c);
-          }
-          k.append(chips);
-        }
-        steckbrief.append(k);
-      }
-
-      function eintragKnopf(titel, text, aktion) {
-        const li = html("li");
-        const b = html("button", null, "eintrag");
-        b.type = "button";
-        b.append(html("b", titel), html("small", text || ""));
-        b.addEventListener("click", () => {
-          aktion();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-        li.append(b);
-        return li;
-      }
-
-      function pfad(stufen) {
-        pfadNav.replaceChildren();
-        const alle = html("button", "Alle Ordner");
-        alle.type = "button";
-        alle.addEventListener("click", zeigeUebersicht);
-        pfadNav.append(alle);
-        for (const [name, aktion] of stufen) {
-          pfadNav.append(html("span", "›"));
-          const b = html("button", name);
-          b.type = "button";
-          b.addEventListener("click", aktion);
-          pfadNav.append(b);
-        }
-      }
-
-      /** Suche über Pfad, Zweck, Rolle und die Namen und Sätze der Exporte. */
-      function suche(text) {
-        const w = text.trim().toLowerCase();
-        if (w.length < 2) {
-          zurueck();
-          return;
-        }
-        const treffer = DATEIEN.map((d) => {
-          let punkte = 0;
-          if (d.pfad.toLowerCase().includes(w)) punkte += 5;
-          if (d.zweck.toLowerCase().includes(w)) punkte += 3;
-          if (d.rolle.toLowerCase().includes(w)) punkte += 1;
-          for (const x of d.exporte) {
-            if (x.name.toLowerCase().includes(w)) punkte += 2;
-            if (x.satz.toLowerCase().includes(w)) punkte += 1;
-          }
-          return [d, punkte];
-        })
-          .filter(([, p]) => p > 0)
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 60);
-        steckbrief.replaceChildren();
-        const k = html("div", null, "steckbrief");
-        k.append(html("h2", `Suche: „${text.trim()}“`));
-        k.append(
-          html(
-            "p",
-            treffer.length
-              ? `${treffer.length}${treffer.length === 60 ? "+" : ""} Dateien`
-              : "Nichts gefunden. Versuche ein Wort aus dem Buch, etwa „Quadrat“, „Fesselung“ oder „Uhr“.",
-            "zahlen",
-          ),
-        );
-        const ul = html("ul", null, "liste");
-        for (const [d] of treffer)
-          ul.append(
-            eintragKnopf(d.pfad, d.zweck, () => {
-              sucheFeld.value = "";
-              zeigeDatei(d.pfad);
-            }),
-          );
-        k.append(ul);
-        steckbrief.append(k);
-      }
-      function zurueck() {
-        if (ansicht.art === "gruppe") zeigeGruppe(ansicht.gruppe);
-        else if (ansicht.art === "datei") zeigeDatei(ansicht.pfad);
-        else zeigeUebersicht();
-      }
-      sucheFeld.addEventListener("input", () => suche(sucheFeld.value));
-      let breiteVorher = masse().schmal;
-      window.addEventListener("resize", () => {
-        if (masse().schmal === breiteVorher) return;
-        breiteVorher = masse().schmal;
-        zurueck();
+/**
+ * Positionen der Gruppen: eine Ebene je Band, Oberfläche oben, Grundlagen unten; am Handy brechen
+ * die Ebenen nach drei Ordnern um. Ergebnis: Positionen, Bänder (für die Beschriftung) und Höhe.
+ */
+function gruppenpositionen() {
+  const pos = new Map(), baender = [];
+  const maxZeilen = Math.max(...[...JE_GRUPPE.values()].map(zeilen));
+  const rMax = M.schmal ? 46 : 42, rMin = M.schmal ? 16 : 14;
+  const zeilenhoehe = M.schmal ? 170 : 150;
+  let y = 30;
+  for (const ebene of EBENEN) {
+    const gruppen = [...JE_GRUPPE.keys()].filter((g) => ebeneVon(g) === ebene)
+      .sort((a, b) => zeilen(JE_GRUPPE.get(b)) - zeilen(JE_GRUPPE.get(a)));
+    baender.push([ebene, y]);
+    for (let anfang = 0; anfang < gruppen.length; anfang += M.proZeile) {
+      // Die großen Gruppen in die Mitte, die kleinen nach außen.
+      const geordnet = [];
+      gruppen.slice(anfang, anfang + M.proZeile).forEach((g, i) => (i % 2 ? geordnet.push(g) : geordnet.unshift(g)));
+      const schritt = M.B / (geordnet.length + 1);
+      geordnet.forEach((g, i) => {
+        const r = rMin + rMax * Math.sqrt(zeilen(JE_GRUPPE.get(g)) / maxZeilen);
+        const versatz = !M.schmal && geordnet.length > 6 && i % 2 ? 26 : 0;
+        pos.set(g, { x: schritt * (i + 1), y: y + 70 + versatz, r });
       });
+      y += zeilenhoehe;
+    }
+    y += 10;
+  }
+  return { pos, baender, hoehe: y };
+}
 
-      if (!DATEIEN.length) {
-        steckbrief.append(
-          html(
-            "p",
-            "Die Daten fehlen: docs/konzeptkarte-daten.js neben dieser Seite ablegen (node skripte/konzeptkarte.mjs im Ordner app/).",
-            "steckbrief",
-          ),
-        );
-      } else {
-        document.getElementById("unterzeile").textContent =
-          `Alle ${DATEIEN.length} Dateien der App „Schach von Grund auf“ mit ihrem Zweck und ihren Verbindungen. Tippe einen Ordner an, dann eine Datei, oder suche ein Wort. Die Erklärung in Worten steht in docs/codefuehrer/.`;
-        zeigeUebersicht();
-      }
-    </script>
-  </body>
+/** Ab so vielen Verbindungen zeigt die Übersicht eine Linie auch ohne Auswahl. */
+const SCHWELLE = 12;
+function zeichneUebersicht(hervor) {
+  M = masse();
+  svg.replaceChildren();
+  const { pos, baender, hoehe } = gruppenpositionen();
+  svg.setAttribute("viewBox", `0 0 ${M.B} ${hoehe}`);
+  spitzen();
+  for (const [ebene, y] of baender) {
+    const t = el("text", { x: 12, y: y + 4, "font-size": M.klein, "letter-spacing": "0.08em" }, svg);
+    t.textContent = EBENEN_NAMEN[ebene].toUpperCase();
+    t.setAttribute("style", "fill: var(--leise)");
+  }
+  const kanten = el("g", {}, svg);
+  const liste = [...GRUPPENKANTEN.entries()].map(([k, n]) => [...k.split("→"), n]);
+  // Ohne Auswahl nur die stärkeren Verbindungen, sonst verdecken die Linien die Ordner; beim
+  // Darüberfahren oder Fokussieren eines Ordners alle seine Linien, gold und obenauf.
+  const linien = liste.map(([a, b, n]) => ({ a, b, n, pfad: kante(pos.get(a), pos.get(b), n, false, kanten) }));
+  const hebeHervor = (g) => {
+    for (const l of linien) {
+      const aktiv = g && (l.a === g || l.b === g);
+      l.pfad.style.display = aktiv || l.n >= SCHWELLE ? "" : "none";
+      l.pfad.setAttribute("stroke", aktiv ? "var(--kante-aktiv)" : "var(--kante)");
+      l.pfad.setAttribute("marker-end", aktiv ? "url(#spitze-gold)" : "url(#spitze)");
+      if (aktiv) kanten.appendChild(l.pfad);
+    }
+  };
+  for (const [g, p] of pos) {
+    const dateien = JE_GRUPPE.get(g);
+    const k = knoten(p.x, p.y, p.r, farbe(g), g === "start" ? "Start" : g.replace(/^ui\/komponenten\//, ""), `${dateien.length} Dateien`, () => zeigeGruppe(g), g === hervor);
+    k.addEventListener("mouseenter", () => hebeHervor(g));
+    k.addEventListener("focus", () => hebeHervor(g));
+    k.addEventListener("mouseleave", () => hebeHervor(hervor));
+  }
+  hebeHervor(hervor);
+  fuss.textContent = `${DATEIEN.length} Dateien, ${tausend(zeilen(DATEIEN))} Zeilen, ${tausend(DATEIEN.reduce((s, d) => s + d.importe.length, 0))} Verbindungen. Gezeigt sind die stärksten Verbindungen (ab ${SCHWELLE}); fährst du über einen Ordner, erscheinen alle seine. Die Pfeilspitze zeigt auf den benutzten Ordner.`;
+}
+
+/** Karte um eine Mitte: links, was die Mitte benutzt; rechts, wer die Mitte benutzt. */
+function zeichneUmfeld(mitte, beschriftung, benutzt, benutztVon, aufTipp) {
+  M = masse();
+  svg.replaceChildren();
+  spitzen();
+  const reihen = Math.max(benutzt.length, benutztVon.length, 1);
+  const hoehe = Math.max(M.schmal ? 520 : 420, 70 + reihen * M.zeile);
+  svg.setAttribute("viewBox", `0 0 ${M.B} ${hoehe}`);
+  const m = { x: M.B / 2, y: hoehe / 2, r: M.schmal ? 36 : 46 };
+  const links = 8 + M.box / 2, rechts = M.B - 8 - M.box / 2;
+  const kopf = (x, text) => {
+    const t = el("text", { x, y: 26, "text-anchor": "middle", "font-size": M.klein, "letter-spacing": "0.06em" }, svg);
+    t.textContent = text; t.setAttribute("style", "fill: var(--leise)");
+  };
+  kopf(links, `BENUTZT (${benutzt.length})`);
+  kopf(rechts, M.schmal ? `BENUTZT VON (${benutztVon.length})` : `WIRD BENUTZT VON (${benutztVon.length})`);
+  const kanten = el("g", {}, svg);
+  const zeichen = Math.floor(M.box / (M.schrift * 0.56));
+  const seite = (liste, x, istLinks) => {
+    const schritt = (hoehe - 60) / Math.max(liste.length, 1);
+    liste.forEach((e, i) => {
+      const y = 50 + schritt * (i + 0.5);
+      const p = { x: istLinks ? x + M.box / 2 : x - M.box / 2, y, r: 6 };
+      if (istLinks) kante(m, p, e.zahl || 1, false, kanten); else kante(p, m, e.zahl || 1, false, kanten);
+      const g = el("g", { class: "knoten", tabindex: "0", role: "button", "aria-label": e.name }, svg);
+      const h = M.zeile - 8;
+      el("rect", { x: x - M.box / 2, y: y - h / 2, width: M.box, height: h, rx: 7, fill: "var(--flaeche)", stroke: farbe(e.gruppe), "stroke-width": 1.5 }, g);
+      el("rect", { x: x - M.box / 2, y: y - h / 2, width: 6, height: h, rx: 2, fill: farbe(e.gruppe) }, g);
+      const t = el("text", { x: x - M.box / 2 + 14, y: y + M.schrift * 0.36, "font-size": M.schrift * (M.schmal ? 0.82 : 0.87) }, g);
+      const name = M.schmal && e.pfad ? kurz(e.name) : e.name;
+      t.textContent = name.length > zeichen ? name.slice(0, zeichen - 1) + "…" : name;
+      const titel = el("title", {}, g); titel.textContent = e.titel || e.name;
+      const tun = () => aufTipp(e);
+      g.addEventListener("click", tun);
+      g.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); tun(); } });
+    });
+  };
+  seite(benutzt, links, true);
+  seite(benutztVon, rechts, false);
+  el("circle", { cx: m.x, cy: m.y, r: m.r, fill: farbe(mitte), stroke: "var(--gold)", "stroke-width": 4 }, svg);
+  const t = el("text", { x: m.x, y: m.y + m.r + M.schrift + 4, "text-anchor": "middle", "font-size": M.schrift, "font-weight": 700 }, svg);
+  t.textContent = beschriftung;
+}
+
+/** Viele Nachbarn einer Datei werden zu Ordnern mit Zahl zusammengefasst, damit die Karte lesbar bleibt. */
+const HOECHSTENS_EINZELN = 16;
+function nachbarn(pfade) {
+  if (pfade.length <= HOECHSTENS_EINZELN) {
+    return pfade.map((p) => ({ name: p, pfad: p, gruppe: gruppeVon(p), titel: NACH_PFAD.get(p)?.zweck }));
+  }
+  const je = new Map();
+  for (const p of pfade) je.set(gruppeVon(p), (je.get(gruppeVon(p)) || 0) + 1);
+  return [...je.entries()].sort((a, b) => b[1] - a[1])
+    .map(([g, n]) => ({ name: `${g === "start" ? "Start" : g} (${n} Dateien)`, gruppe: g, zahl: n, ordner: g }));
+}
+
+function zeigeUebersicht() {
+  ansicht = { art: "uebersicht" };
+  zeichneUebersicht(null);
+  pfad([]);
+  steckbrief.replaceChildren();
+  const k = html("div", null, "steckbrief");
+  k.append(html("h2", "Alle Ordner"));
+  k.append(html("p", "Oben die Oberfläche, darunter die Abläufe, dann Werkzeuge und Engine, ganz unten die Grundlagen. Die Abhängigkeiten zeigen nach unten: Die Oberfläche benutzt alles, die Schachlogik kennt keine Bildschirme."));
+  const ul = html("ul", null, "liste");
+  for (const ebene of EBENEN) {
+    for (const [g] of [...JE_GRUPPE.entries()].filter(([g]) => ebeneVon(g) === ebene)) {
+      ul.append(eintragKnopf(g === "start" ? "Start (main.tsx, sw.ts)" : g, kurztext(g), () => zeigeGruppe(g)));
+    }
+  }
+  k.append(ul);
+  steckbrief.append(k);
+}
+
+function zeigeGruppe(g) {
+  ansicht = { art: "gruppe", gruppe: g };
+  const dateien = JE_GRUPPE.get(g);
+  const aus = new Map(), ein = new Map();
+  for (const [k, n] of GRUPPENKANTEN) {
+    const [a, b] = k.split("→");
+    if (a === g) aus.set(b, n);
+    if (b === g) ein.set(a, n);
+  }
+  const alsEintraege = (m) => [...m.entries()].sort((a, b) => b[1] - a[1])
+    .map(([x, n]) => ({ name: `${x === "start" ? "Start" : x} (${n})`, gruppe: x, zahl: n, ordner: x }));
+  zeichneUmfeld(g, g === "start" ? "Start" : g, alsEintraege(aus), alsEintraege(ein), (e) => zeigeGruppe(e.ordner));
+  fuss.textContent = "In Klammern: wie viele Verbindungen. Tippe einen Ordner an, um zu ihm zu wechseln, oder rechts eine Datei.";
+  pfad([[g === "start" ? "Start" : g, () => zeigeGruppe(g)]]);
+  steckbrief.replaceChildren();
+  const k = html("div", null, "steckbrief");
+  k.append(html("h2", g === "start" ? "Start" : g));
+  k.append(ORDNER[g] ? markdown(ORDNER[g]) : html("p", (GRUPPEN[g] || ["", ""])[1]));
+  k.append(html("p", `${dateien.length} Dateien, ${tausend(zeilen(dateien))} Zeilen`, "zahlen"));
+  k.append(html("h3", "Dateien"));
+  const ul = html("ul", null, "liste");
+  for (const d of [...dateien].sort((a, b) => a.pfad.localeCompare(b.pfad, "de"))) {
+    ul.append(eintragKnopf(d.pfad.replace(/^(ui\/[a-z]+|[a-z0-9]+)\//, ""), d.zweck || "Automatisch erzeugte Datentypen.", () => zeigeDatei(d.pfad)));
+  }
+  k.append(ul);
+  steckbrief.append(k);
+}
+
+function zeigeDatei(p) {
+  const d = NACH_PFAD.get(p);
+  if (!d) return;
+  ansicht = { art: "datei", pfad: p };
+  const von = BENUTZT_VON.get(p) || [];
+  const tipp = (e) => (e.ordner ? zeigeGruppe(e.ordner) : zeigeDatei(e.pfad));
+  zeichneUmfeld(gruppeVon(p), kurz(p), nachbarn(d.importe), nachbarn(von), tipp);
+  fuss.textContent = "Links die Dateien, die diese Datei benutzt, rechts die, die sie benutzen. Bei vielen Nachbarn stehen ihre Ordner mit der Zahl der Dateien da.";
+  const g = gruppeVon(p);
+  pfad([[g === "start" ? "Start" : g, () => zeigeGruppe(g)], [kurz(p), () => zeigeDatei(p)]]);
+  steckbrief.replaceChildren();
+  const k = html("div", null, "steckbrief");
+  k.append(html("h2", d.pfad));
+  k.append(html("p", `${d.zeilen} Zeilen · benutzt ${d.importe.length} · wird benutzt von ${von.length}`, "zahlen"));
+  k.append(html("p", d.zweck || "Automatisch erzeugte Datentypen aus den Schemas; nicht von Hand ändern."));
+  if (d.rolle) { k.append(html("h3", "Rolle im Gesamtbild")); k.append(html("p", d.rolle)); }
+  const sichtbar = d.exporte.filter((x) => x.art !== "typ");
+  if (sichtbar.length) {
+    k.append(html("h3", `Was die Datei anbietet (${sichtbar.length})`));
+    const ARTEN = { funktion: "Funktion", komponente: "Baustein", wert: "Wert", klasse: "Klasse", sonst: "" };
+    for (const x of sichtbar) {
+      const div = html("div", null, "export");
+      const kopf = html("div");
+      kopf.append(html("code", x.name), html("span", ARTEN[x.art] || "", "art"));
+      div.append(kopf);
+      if (x.satz) div.append(html("p", x.satz));
+      k.append(div);
+    }
+  }
+  const typen = d.exporte.filter((x) => x.art === "typ");
+  if (typen.length) { k.append(html("h3", "Datentypen")); k.append(html("p", typen.map((x) => x.name).join(", "), "zahlen")); }
+  for (const [titel, liste] of [["Benutzt", d.importe], ["Wird benutzt von", von]]) {
+    k.append(html("h3", `${titel} (${liste.length})`));
+    if (!liste.length) { k.append(html("p", "keine", "leer")); continue; }
+    const chips = html("div", null, "chips");
+    for (const z of [...liste].sort()) {
+      const c = html("button", z, "chip");
+      c.type = "button"; c.title = NACH_PFAD.get(z)?.zweck || "";
+      c.addEventListener("click", () => zeigeDatei(z));
+      chips.append(c);
+    }
+    k.append(chips);
+  }
+  steckbrief.append(k);
+}
+
+function eintragKnopf(titel, text, aktion) {
+  const li = html("li");
+  const b = html("button", null, "eintrag");
+  b.type = "button";
+  b.append(html("b", titel), html("small", text || ""));
+  b.addEventListener("click", () => { aktion(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+  li.append(b);
+  return li;
+}
+
+function pfad(stufen) {
+  pfadNav.replaceChildren();
+  const alle = html("button", "Alle Ordner");
+  alle.type = "button";
+  alle.addEventListener("click", zeigeUebersicht);
+  pfadNav.append(alle);
+  for (const [name, aktion] of stufen) {
+    pfadNav.append(html("span", "›"));
+    const b = html("button", name);
+    b.type = "button";
+    b.addEventListener("click", aktion);
+    pfadNav.append(b);
+  }
+}
+
+/** Suche über Pfad, Zweck, Rolle und die Namen und Sätze der Exporte. */
+function suche(text) {
+  const w = text.trim().toLowerCase();
+  if (w.length < 2) { zurueck(); return; }
+  const treffer = DATEIEN.map((d) => {
+    let punkte = 0;
+    if (d.pfad.toLowerCase().includes(w)) punkte += 5;
+    if (d.zweck.toLowerCase().includes(w)) punkte += 3;
+    if (d.rolle.toLowerCase().includes(w)) punkte += 1;
+    for (const x of d.exporte) {
+      if (x.name.toLowerCase().includes(w)) punkte += 2;
+      if (x.satz.toLowerCase().includes(w)) punkte += 1;
+    }
+    return [d, punkte];
+  }).filter(([, p]) => p > 0).sort((a, b) => b[1] - a[1]).slice(0, 60);
+  steckbrief.replaceChildren();
+  const k = html("div", null, "steckbrief");
+  k.append(html("h2", `Suche: „${text.trim()}“`));
+  k.append(html("p", treffer.length ? `${treffer.length}${treffer.length === 60 ? "+" : ""} Dateien` : "Nichts gefunden. Versuche ein Wort aus dem Buch, etwa „Quadrat“, „Fesselung“ oder „Uhr“.", "zahlen"));
+  const ul = html("ul", null, "liste");
+  for (const [d] of treffer) ul.append(eintragKnopf(d.pfad, d.zweck, () => { sucheFeld.value = ""; zeigeDatei(d.pfad); }));
+  k.append(ul);
+  steckbrief.append(k);
+}
+function zurueck() {
+  if (ansicht.art === "gruppe") zeigeGruppe(ansicht.gruppe);
+  else if (ansicht.art === "datei") zeigeDatei(ansicht.pfad);
+  else zeigeUebersicht();
+}
+sucheFeld.addEventListener("input", () => suche(sucheFeld.value));
+let breiteVorher = masse().schmal;
+window.addEventListener("resize", () => {
+  if (masse().schmal === breiteVorher) return;
+  breiteVorher = masse().schmal;
+  zurueck();
+});
+
+if (!DATEIEN.length) {
+  steckbrief.append(html("p", "Die Daten fehlen: docs/konzeptkarte-daten.js neben dieser Seite ablegen (node skripte/konzeptkarte.mjs im Ordner app/).", "steckbrief"));
+} else {
+  document.getElementById("unterzeile").textContent = `Alle ${DATEIEN.length} Dateien der App „Schach von Grund auf“ mit ihrem Zweck und ihren Verbindungen. Tippe einen Ordner an, dann eine Datei, oder suche ein Wort. Die Erklärung in Worten steht in docs/codefuehrer/.`;
+  zeigeUebersicht();
+}
+</script>
+</body>
 </html>

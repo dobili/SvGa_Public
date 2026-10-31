@@ -21,6 +21,7 @@ import type { TrainerKennung } from "../../training/trainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { ZUFALL } from "../../training/zufall";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import { TrainerthemaKontext } from "../trainer/trainerthema";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import {
   Ausfuehraufgabe,
@@ -217,17 +218,25 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
 
 /**
  * Der Bildschirm eines Trainers: Übungsart und Einstellungen wählen und eine Runde Aufgaben
- * spielen.
+ * spielen. Mit Thema geöffnet, stellt er es den Bereichen bereit (ui/trainer/trainerthema.ts).
  */
-export function Trainer({ kennung }: { kennung: TrainerKennung }) {
+export function Trainer({
+  kennung,
+  thema = null,
+}: {
+  kennung: TrainerKennung;
+  thema?: string | null;
+}) {
   const eigener = EIGENE_BEREICHE[kennung];
   return (
-    <div className="bildschirm bildschirm-trainer" data-testid="trainer">
-      <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
-      <p className="hinweis trainer-ablauf" data-tour="trainer-ablauf">
-        {t(`trainer.${kennung}.ablauf`)}
-      </p>
-      {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
-    </div>
+    <TrainerthemaKontext value={thema}>
+      <div className="bildschirm bildschirm-trainer" data-testid="trainer">
+        <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
+        <p className="hinweis trainer-ablauf" data-tour="trainer-ablauf">
+          {t(`trainer.${kennung}.ablauf`)}
+        </p>
+        {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
+      </div>
+    </TrainerthemaKontext>
   );
 }

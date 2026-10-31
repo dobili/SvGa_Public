@@ -1,20 +1,21 @@
 # Grundbegriffe
 
-| Wort                      | Bedeutung                                                                                                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datei** (`.ts`, `.tsx`) | Ein Stück Programm in TypeScript, einer Sprache für Web-Apps. `.tsx` enthält zusätzlich Bausteine der Oberfläche.                                                 |
-| **Funktion**              | Ein benanntes Rezept: Eingaben rein, Ergebnis raus. Beispiel: `zaehle(stellung, feld)` gibt Angreifer und Verteidiger eines Feldes zurück.                        |
-| **Komponente**            | Ein Baustein der Oberfläche, Name mit großem Anfangsbuchstaben, etwa `Brett` oder `Partieuhr`. Komponenten setzen sich zu Bildschirmen zusammen (Technik: React). |
-| **Hook** (`use…`)         | Eine Hilfsfunktion für Komponenten, die sich etwas merkt oder im Hintergrund arbeitet, etwa `usePartie` (hält die laufende Partie).                               |
-| **Import**                | Eine Datei benutzt etwas aus einer anderen. Diese Verbindungen sind die Linien der Konzeptkarte.                                                                  |
-| **Dateikopf**             | Der Kommentar oben in jeder Datei: Zweck, „Rolle im Gesamtbild“, Abhängigkeiten, Buchbezug. Das ist die erste Anlaufstelle beim Lesen einer Datei.                |
-| **Test** (`.test.ts`)     | Prüft automatisch, ob eine Datei richtig rechnet, meist an Abbildungen des Buches. Liegt neben der Datei.                                                         |
-| **`-daten.ts`**           | Reine Zahlentabellen, die ein Skript aus Messungen erzeugt (Bot-Stärken, Lichess-Statistiken). Nicht von Hand ändern.                                             |
-| **Engine**                | Stockfish, das Schachprogramm, das im Hintergrund rechnet.                                                                                                        |
-| **FEN**                   | Eine Stellung als eine Textzeile, so speichert das Buch jede Abbildung.                                                                                           |
+| Wort | Bedeutung |
+| --- | --- |
+| **Datei** (`.ts`, `.tsx`) | Ein Stück Programm in TypeScript, einer Sprache für Web-Apps. `.tsx` enthält zusätzlich Bausteine der Oberfläche. |
+| **Funktion** | Ein benanntes Rezept: Eingaben rein, Ergebnis raus. Beispiel: `zaehle(stellung, feld)` gibt Angreifer und Verteidiger eines Feldes zurück. |
+| **Komponente** | Ein Baustein der Oberfläche, Name mit großem Anfangsbuchstaben, etwa `Brett` oder `Partieuhr`. Komponenten setzen sich zu Bildschirmen zusammen (Technik: React). |
+| **Hook** (`use…`) | Eine Hilfsfunktion für Komponenten, die sich etwas merkt oder im Hintergrund arbeitet, etwa `usePartie` (hält die laufende Partie). |
+| **Import** | Eine Datei benutzt etwas aus einer anderen. Diese Verbindungen sind die Linien der Konzeptkarte. |
+| **Dateikopf** | Der Kommentar oben in jeder Datei: Zweck, „Rolle im Gesamtbild“, Abhängigkeiten, Buchbezug. Das ist die erste Anlaufstelle beim Lesen einer Datei. |
+| **Test** (`.test.ts`) | Prüft automatisch, ob eine Datei richtig rechnet, meist an Abbildungen des Buches. Liegt neben der Datei. |
+| **`-daten.ts`** | Reine Zahlentabellen, die ein Skript aus Messungen erzeugt (Bot-Stärken, Lichess-Statistiken). Nicht von Hand ändern. |
+| **Engine** | Stockfish, das Schachprogramm, das im Hintergrund rechnet. |
+| **FEN** | Eine Stellung als eine Textzeile, so speichert das Buch jede Abbildung. |
 
 Die Namen im Code sind deutsch und folgen dem Buch (`zielbilanz`, `todsuenden`, `opposition`),
 ohne Umlaute.
+
 
 ## Woran man sich beim Lesen festhalten kann
 

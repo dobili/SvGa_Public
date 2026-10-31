@@ -4,6 +4,53 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.23: Gamifizierung P7 Extras übernommen, Einstieg für Welle 2 (Opus)
+
+- Zweig `gami-p7-extras` (Welle 1) geprüft und zusammengeführt; Konflikte nur in Listen
+  (`PROFILKARTEN`), Stilimporten, Texten und Unterlagen. In `speicher/format.ts` nur die beiden
+  freigegebenen Listen erweitert. Damit ist Welle 1 vollständig (P1, P2, P4+P11, P5, P7, P9, P10).
+- **Neu für Welle 2:** `ui/komponenten/spielstart/vorbelegung.ts` („Partie gegen diesen Bot“).
+  Rivalen (P8) und eigene Ziele (P13) brauchen beide eine Partie gegen einen bestimmten Bot in
+  einer Zeitart. Statt den gesperrten Spielstart zweimal zu ändern, schreibt der Einstieg nur die
+  Vorlieben um (Bot mit seinen Stufen, gewertet, Bedenkzeit der Zeitart) und öffnet „Spielen“;
+  der Leser sieht die Wahl und tippt „Beginnen“.
+- **Neu für Welle 2:** Trainer mit Thema öffnen. Die Ansicht „trainer“ trägt wahlweise eine
+  Themenkennung („taktik:gabel“); der Trainer gibt sie über `ui/trainer/trainerthema.ts` an seine
+  Bereiche weiter. Meisterschaft (P3), nächster Schritt (P1) und Rückblick (P12) führen so direkt
+  zum Thema; jeder Trainer wertet es aus, sobald er eine Zeile dafür hat (Taktik in Welle 2).
+- Offen gelassen (Empfehlung, wartet wegen Speicherformat): Porträtrahmen und Konfettifarben
+  bleiben Merker auf dem Gerät und fehlen in der Datensicherung. Ein Feld `extras` kommt erst mit
+  der nächsten Formatversion, sobald Welle 2 weitere Felder braucht (Titel und Zubehör aus P3).
+- **Behoben:** Seit 0.3.20 waren zwei Pipeline-Tests rot (`test_wiki.py`). Beim Übernehmen hatte
+  Prettier über `docs/` auch die erzeugten Dateien `konzeptkarte-daten.js` und `konzeptkarte.html`
+  umformatiert; das Wiki liest die Daten als JSON. Beide und fünf nur umformatierte Unterlagen
+  sind wieder im Stand vor 0.3.20. Künftig nur einzelne Markdown-Dateien formatieren.
+- Bekannter Wackler: Oberflächentest „Neuer Orden“ (`ordenkunst.spec.ts`) ist in WebKit
+  gelegentlich rot (das Stück gilt dann schon als bekannt); in Chromium nie. Ursache noch offen.
+
+## 31.10.2026 – Gamifizierung P7: Freischaltbare Extras (Welle 1, Zweig gami-p7-extras)
+
+- **E8 nach Empfehlung:** Porträtrahmen Bronze, Silber, Gold (Stufe 3, 6, 9), Brett „Nacht und
+  Gold“ (alle Orden der Buchteile), Figurensatz „Gold“ (Stufe 5), bunte Konfettifarben (Stufe 2).
+  Titel und Zubehör aus der Meisterschaft kommen in Welle 2. Nichts Bestehendes wird gesperrt.
+- **Eintragen statt umbauen:** Extras als Liste `EXTRAS` in `training/extras.ts` (Kennung, Art,
+  Wert, Bedingung, Bild); Arten `EXTRAARTEN`, Bedingungsarten `PRUEFUNGEN`, Ordengruppen
+  `ORDENGRUPPEN`; die Wahl je Art in `ui/komponenten/extras/extrawahl.ts` (`EXTRAWAHL`). Neue
+  Extras der Arten Brett und Figuren erscheinen von selbst in der Gruppe „Verdient“ der
+  Einstellungen. Profilkarte „Deine Extras“ über `PROFILKARTEN` (Rang 50).
+- **Freischaltung nur abgeleitet** (Stufe aus dem Abzeichenstand, Orden aus den Ringen, jeweils
+  mit Probe der Aufgabenseite); nichts wird gespeichert. **Nie wegnehmen:** Der gewählte Wert gilt
+  immer als frei, auch nach dem Einspielen einer Sicherung oder nach dem Ende einer Probe.
+- **Speicher:** nur `BRETTARTEN` („nacht-gold“) und `BILDSAETZE` („gold“) erweitert, kein neues
+  Feld. Rahmen und Konfettifarben sind Merker auf dem Gerät (`portraetrahmen`, `konfettifarben`)
+  und gehen deshalb nicht in die Datensicherung; ein Feld im Speicher wäre besser (Vorschlag an
+  den Haupt-Chat).
+- **Figurensatz „Gold“:** Cburnett (GPLv2+) umgefärbt mit `pipeline/figuren/gold_umfaerben.py`
+  (Test prüft, dass die eingecheckten Dateien dem Skript entsprechen); Lizenz in
+  `pipeline/figuren/saetze/LIZENZEN.md`, `public/lizenzen/gpl-gold-cburnett.txt` und
+  Lizenzen-Seite.
+- Testpunkte N2170 bis N2176.
+
 ## 31.10.2026 – Version 0.3.22: Gamifizierung P1 Dein nächster Schritt übernommen (Opus)
 
 - Zweig `gami-p1-naechster-schritt` (Welle 1) geprüft und zusammengeführt. Konflikte nur in den

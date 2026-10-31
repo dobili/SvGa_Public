@@ -108,6 +108,16 @@ export const BRETTFARBEN: Readonly<Record<Brettfarben, Brettpalette>> = {
     figur: FARBEN.navy,
     bild: "bretter/marmor-gruen.webp",
   },
+  /**
+   * Freischaltbares Extra „Nacht und Gold“ (Gamifizierung P7): dunkle Felder im Navy der Orden,
+   * helle in mattem Gold; kein Buchwert. Schimmer hellblau, weil Gelbgrün auf Gold untergeht.
+   */
+  "nacht-gold": {
+    hell: "#E3C77E",
+    dunkel: "#1F3050",
+    schimmer: "rgba(110, 170, 255, 0.5)",
+    figur: FARBEN.navy,
+  },
 };
 
 /**

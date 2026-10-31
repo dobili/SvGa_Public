@@ -68,6 +68,7 @@ describe("ansichtAus", () => {
       { bildschirm: "kapitel", nummer: 12 },
       { bildschirm: "begriff", begriff: "Hebel" },
       { bildschirm: "trainer", kennung: "zaehlen" },
+      { bildschirm: "trainer", kennung: "taktik", thema: "taktik:gabel" },
       { bildschirm: "spielen" },
       { bildschirm: "spielen", startFen: "8/8/8/4k3/8/8/4P3/4K3 w - - 0 1", abbildung: "8.3" },
       {

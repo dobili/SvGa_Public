@@ -1,0 +1,83 @@
+/*
+ * Freischaltbare Extras (Gamifizierung P7): Profilkarte „Deine Extras“, gesperrte Kacheln in den
+ * Einstellungen als Silhouette mit Bedingung, Porträtrahmen in Bronze, Silber und Gold.
+ * Farben und Abstände aus basis.css.
+ */
+.extrareihe + .extrareihe {
+  margin-top: var(--raster);
+}
+
+.extrareihe-titel {
+  margin: var(--raster) 0 calc(var(--raster) / 2);
+  font-size: var(--groesse-grund);
+}
+
+.extraliste {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: var(--raster);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.extrakachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  text-align: center;
+}
+
+.extrakachel-bild {
+  width: 56px;
+  height: 56px;
+}
+
+.extrakachel-name {
+  font-size: 0.9em;
+}
+
+/* Gesperrt: Silhouette in mittlerem Grau (hell wie dunkel sichtbar), darunter die Bedingung. */
+.extrakachel-gesperrt .extrakachel-bild,
+.vorschaukachel-gesperrt .brettausschnitt {
+  filter: contrast(0);
+  opacity: 0.45;
+}
+
+.extrakachel-bedingung,
+.vorschaukachel-bedingung {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85em;
+  color: var(--text-leise);
+}
+
+.vorschaukachel-gesperrt {
+  cursor: not-allowed;
+}
+
+/* Porträtrahmen: ein Ring um das Bild des Lesers, überall, wo es erscheint. */
+.spielerbild-rahmen > .gegner-portraet {
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--rahmenfarbe);
+}
+
+.spielerbild-rahmen-bronze {
+  --rahmenfarbe: #b87333;
+}
+
+.spielerbild-rahmen-silber {
+  --rahmenfarbe: #b8c0cc;
+}
+
+.spielerbild-rahmen-gold {
+  --rahmenfarbe: #d9a514;
+}
+
+/* Das Schloss bleibt gleich groß, auch wenn die Bedingung umbricht. */
+.extrakachel-bedingung > svg,
+.vorschaukachel-bedingung > svg {
+  flex: none;
+}

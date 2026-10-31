@@ -1,0 +1,289 @@
+/*
+ * Bereich Training (Entwurf C2) nach Wahl des Autors, 31.10.2026: Kartenstapel, Wischreihen mit
+ * Trainer-Karten, kompakte Kacheln (die Checkliste nach Entwurf D1 steht in checkliste.css).
+ * Farben nur über die Tokens (basis.css, abstimmung.css), damit hell und dunkel passen.
+ * Komponenten in ui/komponenten/training/.
+ */
+
+/* ---------- Kartenstapel ---------- */
+.stapelkarte {
+  flex-direction: row;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+}
+
+.stapeltext {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.stapeltext h2 {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.stapeltext .hinweis {
+  margin: 0;
+}
+
+.stapelbild {
+  position: relative;
+  flex: none;
+  width: 96px;
+  height: 96px;
+}
+
+/* Drei Blätter, leicht gedreht; das vordere trägt ein Brettmuster aus 4 × 4 Feldern. */
+.stapelblatt {
+  position: absolute;
+  inset: 8px 10px 10px 8px;
+  border-radius: 10px;
+  background: var(--flaeche);
+  box-shadow:
+    0 0 0 1px var(--linie-stark),
+    0 2px 6px rgb(0 0 0 / 25%);
+}
+
+.stapelblatt.hinten {
+  transform: rotate(9deg) translate(6px, -4px);
+}
+
+.stapelblatt.mitte {
+  transform: rotate(4deg) translate(3px, -2px);
+}
+
+.stapelblatt.vorn {
+  transform: rotate(-4deg);
+  border: 4px solid var(--creme);
+  background: repeating-conic-gradient(
+      color-mix(in srgb, var(--navy) 45%, var(--creme)) 0 25%,
+      var(--creme) 0 50%
+    )
+    0 0 / 50% 50%;
+}
+
+.stapelzahl {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 6px;
+  border-radius: 16px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: var(--groesse-gross);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.stapelbild.leer {
+  opacity: 0.45;
+}
+
+.stapel-prinzip {
+  margin: calc(var(--raster) * -0.5) var(--raster) 0;
+}
+
+.stapel-prinzip summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  list-style: none;
+  cursor: pointer;
+}
+
+.stapel-prinzip summary::-webkit-details-marker {
+  display: none;
+}
+
+.stapel-prinzip summary svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.stapel-prinzip p {
+  margin: var(--raster) 0 0;
+}
+
+/* ---------- Wischreihen ---------- */
+.trainerreihen {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 3);
+}
+
+.trainerreihe-kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--raster);
+  padding: 0 4px;
+}
+
+.trainerreihe-kopf h2 {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 600;
+}
+
+.trainerreihe-kopf .hinweis {
+  margin: 0;
+  font-size: var(--groesse-klein);
+  white-space: nowrap;
+}
+
+.trainerreihe-karten {
+  display: flex;
+  gap: calc(var(--raster) * 1.5);
+  margin: var(--raster) 0 0;
+  padding: 2px 2px 6px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 2px;
+}
+
+.trainerreihe-karten li {
+  flex: none;
+  width: 8.75rem;
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.trainerkachel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  width: 100%;
+  padding: 0 0 10px;
+  overflow: hidden;
+  border: none;
+  border-radius: 12px;
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie-stark);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.trainerkachel:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.trainerkachel-bild {
+  position: relative;
+  display: block;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--navy) 8%, var(--flaeche));
+  border-bottom: 1px solid var(--linie);
+}
+
+.trainerkachel-bild .brett {
+  max-width: none;
+  margin: 0;
+}
+
+.plakette-faellig {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.trainerkachel-name {
+  padding: 4px 10px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.trainerkachel-stand,
+.trainerkachel-bestwert {
+  padding: 0 10px;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+  line-height: 1.25;
+}
+
+.trainerkachel-stand.neu {
+  color: var(--gold-text);
+}
+
+/* Anteil richtiger Antworten als dünnes Band unten in der Karte. */
+.trainerkachel-band {
+  display: block;
+  height: 4px;
+  margin: auto 10px 0;
+  border-radius: 2px;
+  background: var(--linie);
+}
+
+.trainerkachel-band span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gold-strich);
+}
+
+/* ---------- Kacheln ---------- */
+.trainingskacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: calc(var(--raster) * 1.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trainingskachel {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  width: 100%;
+  height: 100%;
+  min-height: 64px;
+  padding: calc(var(--raster) * 1.5);
+  border: 1.5px dashed var(--linie-stark);
+  border-radius: 12px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.trainingskachel svg {
+  flex: none;
+  color: var(--gold-text);
+}
+
+.trainingskachel-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.trainingskachel-text span {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}

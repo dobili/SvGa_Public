@@ -4,6 +4,42 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Training und Checkliste neu (Entwürfe C2 und D1, Arbeitschat, Zweig `gestaltung-training-checkliste`)
+
+Ziel des Autors: Training und Checkliste waren zu technisch, zu textlastig und wirkten wie ein
+Formular; Zielgruppe Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus.
+
+- **Training (C2):** oben „Dein Stapel für heute“ (`Stapelkarte.tsx`), gezählt mit
+  `useFaelligeUebersicht` wie „Dein nächster Schritt“; „Durchgehen“ startet zuerst die Übungen aus
+  dem Buch, sonst den ersten Trainer mit Fälligem. Die Liste mit einem Knopf je Quelle
+  (`FaelligeWiederholungen.tsx`) bleibt in „Dein nächster Schritt“ und in den Kurzplänen.
+  Die Erklärung der Lernkartei steht kurz unter dem Stapel und ganz zum Aufklappen.
+- **Nichts fällt weg (Wunsch des Autors):** fällige Trainer-Aufgaben je Quelle → Plakette auf der
+  Karte des Trainers (Tipp öffnet ihn), Übungen aus dem Buch → „Durchgehen“; Ablauf je Trainer →
+  im Trainer selbst und in der Kapitelübersicht; Beschreibungen von Lernsammlung und
+  Website-Training → auf deren Seiten. Bewusst weggelassen: Kapiteltitel und Sprung ins Kapitel
+  je Kapitelkopf im Training (das Kapitel steht auf jeder Karte, Kapitel öffnet man im Buch).
+- Je Buchteil eine Wischreihe (`Trainerreihe.tsx`), abgeleitet aus `TRAINER` und `BUCHTEILE`
+  (`trainerreihen.ts`): ein Trainer steht einmal, im Teil seines ersten Kapitels. Karte als
+  ganzer Knopf (Tastatur, axe), Bild aus `TRAINERBILDER` (`trainerbilder.ts`, selbst gebaute
+  Stellungen, Vorgabe Grundstellung für neue Trainer), Stand aus dem Trainerstand („neu · Kap. 2“
+  bzw. „3 Runden · 80 % richtig“ mit Band), Bestwert aus dem Rekord, dessen „Versuchen“ in den
+  Trainer führt, Plakette „N fällig“.
+- **Abweichung vom Entwurf:** „Stufe“ und die fünf Striche des Entwurfs gibt es in den Daten
+  nicht; die Karte zeigt Runden und Trefferquote, das Band zeigt die Quote. Das Brett zeigt alle
+  64 Felder statt eines Ausschnitts (ohne Koordinaten), Feldfarben wie in den Einstellungen.
+  Der Ablauf hinter dem Fragezeichen steht weiter in der Kapitelübersicht und im Trainer.
+- Lernsammlung und „Alle Kapitel“ (Website `/training/`) als gestrichelte Kacheln aus der Liste
+  `TRAININGSKACHELN`. Der Link zur Trainingsseite je Kapitel (DS53, DS54) steht jetzt in der
+  Kapitelübersicht unter den Trainern statt 13-mal im Training.
+- **Checkliste (D1):** Kopf mit Summe, „N Kapitel fertig“ und Band mit 13 Abschnitten
+  (`Checklistenkopf.tsx`, Breite nach Zahl der Punkte); Kapitel als Zeilen in einer Karte mit
+  dem vorhandenen Ring (`Kapitelnummer`), fertige golden mit Haken und „fertig“; Kästchen
+  gezeichnet (gold mit Haken). Daten, Speicher und Abhaken unverändert.
+- Texte mit der Vorsilbe `trainingslook.`; nicht mehr genutzte Schlüssel gelöscht
+  (`training.faellig`, `training.jeKapitel`, `training.kapitel`, `training.kastenText`,
+  `sammlung.karte*`, `checkliste.gesamt`). Speicherformat unverändert.
+
 ## 31.10.2026 – Deine Extras neu: Entwurf E1 „Ankleide“ (Arbeitschat, Zweig `gestaltung-extras`)
 
 Ziel des Autors: Die Karte war zu technisch und wirkte wie ein Formular (graue Kreise, Knöpfe

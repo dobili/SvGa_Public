@@ -239,11 +239,6 @@
 
 /* ---------- Gesamt-Checkliste als Abhakliste (Lernziele je Kapitel) ---------- */
 
-.lernstand-gesamt {
-  font-weight: 600;
-  margin: 0;
-}
-
 .lernkarte {
   background: var(--flaeche);
   border-radius: var(--radius);

@@ -9,13 +9,14 @@
  * damit nicht eine Meldung nach der anderen kommt. Beim ersten Start merkt sie die erreichte Stufe
  * still: Ein Aufstieg wird erst ab dann gemeldet.
  * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, erfahrung.ts, bausteine/Abzeichenbild.tsx,
- * i18n.
+ * teilen/Stueckteilen.tsx (Teilen eines einzelnen neuen Abzeichens, P9), i18n.
  */
 import { useEffect } from "react";
 import { t } from "../../../i18n/sprache";
 import { Abzeichenbild } from "../bausteine/Abzeichenbild";
 import { ABZEICHEN, ABZEICHENZEICHEN, abzeichenname, abzeichenbedingung } from "./abzeichen";
 import { merkeErsteStufe, merkeGefeiert, useAbzeichenstand } from "./abzeichenstand";
+import { AbzeichenTeilen } from "../teilen/Stueckteilen";
 
 /** Höchstens so viele Bilder auf der Karte; die Namen stehen alle darunter. */
 const HOECHSTENS_BILDER = 6;
@@ -89,6 +90,10 @@ export function Abzeichenmeldung() {
         </ul>
         {stand.neueStufe && (
           <p>{t("abzeichenmeldung.stufe", { nummer: stand.stufe.nummer, name: stufenname })}</p>
+        )}
+        {/* P9: ein einzelnes neues Abzeichen lässt sich gleich teilen. */}
+        {neue.length === 1 && neue[0] && (
+          <AbzeichenTeilen kennung={neue[0].kennung} heute klein={false} />
         )}
         <button
           type="button"

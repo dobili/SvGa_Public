@@ -4,6 +4,30 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P9: Teilen ohne Server (Arbeitschat, Zweig gami-p9-teilen)
+
+- Bild: ein SVG 1080 × 1350 (`ui/komponenten/teilen/teilbild.ts`) mit dem Stück aus
+  `ordenkunst/entwuerfe.ts` (`stueckSvg`) als innerem SVG, Überschrift der Art, Name, „Verdient
+  am …“ aus `verdient` (G3), Name der App und Adresse; gerastert über blob:-Bild und Canvas zu PNG
+  (`teileBild.ts`), dann `teileDatei()`, sonst `bieteDateiAn()`. Beide Hilfen in
+  `bausteine/dateiAnbieten.ts` nehmen dafür jetzt auch einen Blob; `kannDateiTeilen` prüft den
+  Dateityp. Schriften im Bild sind Systemschriften (ein Bild aus SVG lädt keine Webschriften).
+- Ein Knopf für alles (`Teilenknopf.tsx`): Arten als Liste `TEILARTEN` (orden, abzeichen, rekord,
+  meisterschaft); Welle 2 setzt für Rekorde und Meisterschaften nur den Knopf ein, mit eigener
+  Zeile statt Datum. Eingebaut unter Orden im Profil, im Abzeichenraster beim aufgeklappten
+  verdienten Abzeichen, in der Ringfeier und in der Abzeichenmeldung (nur bei genau einem neuen
+  Abzeichen). In den Feiern ist das Datum noch nicht gespeichert; dort gilt heute.
+- Herausforderung: Liste `HERAUSFORDERUNGEN` (je Trainer eine Zeile mit der Komponente, die eine
+  Aufgabe aus ihrer Kennung zeigt), Sprung `#aufgabe-<trainer>-<aufgabe>` als ein Eintrag in
+  `SPRUENGE`, Bildschirm als Eintrag „herausforderung“ in `ZUSATZANSICHTEN` (Bereich Training).
+  Taktik: nur Lichess-Aufgaben (E7), Kennung ohne „taktik-“ („l-1Vybh“); Satz je Ziel der Aufgabe
+  (gewinnt, setzt matt, rettet sich). Die Aufgabe läuft wie die Tagesaufgabe als Runde mit einer
+  Aufgabe und zählt wie im Trainer. Teilen des Links über das Teilen-Menü, sonst Zwischenablage.
+- Der Knopf in der gesperrten `ui/trainer/Taktikaufgabe.tsx` kommt als Patch an den
+  Koordinierungs-Chat; bis dahin zeigt die Herausforderungsansicht ihn selbst (der Patch nimmt
+  ihn dort wieder heraus, damit er nicht doppelt erscheint).
+- Datenschutzerklärung: Absatz zum Teilen unter „Speicher auf deinem Gerät“, Stand 31.10.2026.
+
 ## 31.10.2026 – Gamifizierung P4 und P11: Wochenziel und Übungsplan (Arbeitschat C, Welle 1)
 
 - **Wochenkarte** (`ui/komponenten/start/Wochenkarte.tsx`, Rang 20 in `STARTKARTEN`): Mit Ziel

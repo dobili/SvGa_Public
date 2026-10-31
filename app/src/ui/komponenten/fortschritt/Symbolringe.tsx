@@ -6,7 +6,9 @@
  * Namen unter jedem Ring wären es zu viele Wörter für 360 px; deshalb steht im Ring ein Zeichen
  * über der Prozentzahl, und eine Legende unter den Ringen sagt einmal, wofür jedes Zeichen steht.
  * Bildschirmleser hören am Ring selbst den vollen Namen mit „x von y“.
- * Abhängigkeiten: Kreisanzeige (Ring), speicher/fortschritt.ts (Anteil), i18n, lucide-react.
+ * Unter einem Orden steht seit P9 (Gamifizierung) der Knopf „Teilen“ (teilen/Stueckteilen.tsx).
+ * Abhängigkeiten: Kreisanzeige (Ring), teilen/Stueckteilen.tsx, speicher/fortschritt.ts
+ * (Anteil), i18n, lucide-react.
  */
 import type { LucideIcon } from "lucide-react";
 import { t } from "../../../i18n/sprache";
@@ -14,6 +16,7 @@ import type { Anteil } from "../../../speicher/fortschritt";
 import { Ring } from "../bausteine/Kreisanzeige";
 import { Orden } from "../bausteine/Orden";
 import { istVoll } from "./ringrechnung";
+import { OrdenTeilen } from "../teilen/Stueckteilen";
 
 /**
  * Ein Ring der Reihe: Name (zum Vorlesen, und in der Legende, wenn `legende` fehlt), kurzer
@@ -69,6 +72,8 @@ export function Symbolringreihe({
               <span data-testid={ring.testid} aria-hidden="true">
                 {wert}
               </span>
+              {/* P9: ein verdienter Orden lässt sich als Bild teilen. */}
+              {istVoll(ring.anteil) && <OrdenTeilen ring={ring.testid} name={ring.name} />}
             </li>
           );
         })}

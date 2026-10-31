@@ -1,5 +1,6 @@
 /**
- * Text als Datei zum Speichern anbieten (Datensicherung, PGN einer Partie).
+ * Text oder ein Bild als Datei zum Speichern anbieten (Datensicherung, PGN einer Partie, seit P9
+ * auch das Bild zum Teilen).
  *
  * Rolle im Gesamtbild: Gemeinsame Hilfe für alles, was der Leser als Datei sichert. Im Browser
  * ein Herunterladen, auf dem iPhone „Sichern in Dateien“.
@@ -10,7 +11,7 @@
 const FREIGABE_NACH_MS = 60_000;
 
 /** Bietet den Text als Datei zum Speichern an (Herunterladen; auf dem iPhone „Sichern in Dateien“). */
-export function bieteDateiAn(text: string, name: string, typ = "application/json"): void {
+export function bieteDateiAn(text: string | Blob, name: string, typ = "application/json"): void {
   const adresse = URL.createObjectURL(new Blob([text], { type: typ }));
   const verweis = document.createElement("a");
   verweis.href = adresse;
@@ -23,7 +24,7 @@ export function bieteDateiAn(text: string, name: string, typ = "application/json
 }
 
 /** Die Datei als File-Objekt für das Teilen-Menü des Geräts. */
-function alsDatei(text: string, name: string, typ: string): File {
+function alsDatei(text: string | Blob, name: string, typ: string): File {
   return new File([text], name, { type: typ });
 }
 
@@ -32,9 +33,9 @@ function alsDatei(text: string, name: string, typ: string): File {
  * Warum: Auf manchen iPhones landet das Herunterladen nicht dort, wo der Leser die Datei findet
  * (FORTSCHRITT Q3); „Teilen“ öffnet das gewohnte Menü mit Mail, Dateien und Nachrichten.
  */
-export function kannDateiTeilen(): boolean {
+export function kannDateiTeilen(typ = "application/json", probe = "probe.json"): boolean {
   if (typeof navigator.canShare !== "function") return false;
-  return navigator.canShare({ files: [alsDatei("{}", "probe.json", "application/json")] });
+  return navigator.canShare({ files: [alsDatei("{}", probe, typ)] });
 }
 
 /**
@@ -43,7 +44,7 @@ export function kannDateiTeilen(): boolean {
  * Sonderfall: Andere Fehler (etwa ohne Berechtigung) gehen an den Aufrufer weiter.
  */
 export async function teileDatei(
-  text: string,
+  text: string | Blob,
   name: string,
   typ = "application/json",
 ): Promise<boolean> {

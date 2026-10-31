@@ -4,6 +4,34 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P3: Meisterschaft je Thema (Welle 2, Zweig gami-p3-meisterschaft)
+
+- **Regeln nach Vorschlag (E4):** Bronze 5 richtige; Silber 15 richtige und mindestens 70 % der
+  letzten 20; Gold zusätzlich richtige Antworten an 3 Tagen, zwei mindestens 7 Tage auseinander.
+  Als Liste `STUFENREGELN` in `training/meisterschaft.ts` (Stufe, Bedingung, Fortschritt,
+  Erfahrung). Einmal erreicht, bleibt die Stufe; nach 60 Tagen ohne richtige Antwort leise „Zum
+  Auffrischen“.
+- **Kein neues Speicherfeld:** Die Stufen werden aus dem Antwortprotokoll abgeleitet. Damit eine
+  Stufe bleibt, wenn die Quote sinkt oder alte Tage aus dem Protokoll fallen (es hält nur 12
+  Tage), steht die erste Feier wie bei Orden und Abzeichen im vorhandenen Feld `verdient`,
+  Schlüssel `meisterschaft:<stufe>:<thema>`. Geschrieben am Rundenende (Meldung) und still beim
+  Öffnen der Profilkarte.
+- **Themen ohne feste Liste:** aus den Kennungen im Protokoll; Namen über `NAMENSMUSTER` (eine
+  Zeile neu: `<präfix>trainer.motiv.<k>`, damit Überlastung und Rettung ihren Namen haben),
+  Medaillenbilder je Präfix (`THEMENBILDER`) und je Thema (`MOTIV_JE_THEMA`) in
+  `ordenkunst/themenbilder.ts`. Ein neuer Trainer mit eigenem Präfix bekommt Medaillen von selbst.
+- **Eingetragen statt umgebaut:** `ERFAHRUNGSQUELLEN` (Bronze 10, Silber 25, Gold 50, je Stufe
+  eine Quelle; Gold zählt also 85), `PROFILKARTEN` (Rang 10), `NACH_DER_RUNDE`, Abzeichen-Teilliste
+  `abzeichen-meisterschaft.ts` mit Bildern `nachtabzeichen-meisterschaft.ts`, Probe auf der
+  Aufgabenseite, Teilen über den Teilenknopf (Art „meisterschaft“).
+- **Extras (P7):** neue Art „titel“ und Bedingungsart „meisterschaft“ (Zahl der Themen in einer
+  Stufe, wahlweise je Präfix). Titel „Taktiker“ (5 Taktikmotive in Gold) und „Endspielkenner“
+  (3 Endspielthemen in Gold). Der gewählte Titel steht unter dem Namen in der Profilkarte; die
+  Wahl ist wie Rahmen und Konfetti ein Merker auf dem Gerät.
+- **Üben:** öffnet den Trainer mit dem Thema. Der Endspieltrainer wählt die Gruppe des Themas vor
+  (`gruppeZumThema`); der Strukturerkenner hat keine Wahl je Struktur und öffnet wie bisher; den
+  Taktiktrainer stellt der Serien-Chat ein.
+
 ## 31.10.2026 – Version 0.3.23: Gamifizierung P7 Extras übernommen, Einstieg für Welle 2 (Opus)
 
 - Zweig `gami-p7-extras` (Welle 1) geprüft und zusammengeführt; Konflikte nur in Listen

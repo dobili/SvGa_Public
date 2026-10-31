@@ -4,6 +4,21 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.20: Gamifizierung P4+P11 und P9 übernommen (Opus)
+
+- Zweige `gami-p4-wochenziel` und `gami-p9-teilen` (Welle 1) gegen den Code geprüft und
+  zusammengeführt; Konflikte nur in den Listen (`ZUSATZANSICHTEN`), Texten und Unterlagen.
+- Patch aus P9 für die gesperrte Taktikaufgabe eingespielt: Knopf „Freunde herausfordern“ nach
+  einer gelösten Lichess-Aufgabe (E7), der vorläufige Knopf in der Herausforderungsansicht fällt
+  weg.
+- Antworten auf die Fragen aus P4: (1) Ziel und Plan nur über die Wochenkarte zu ändern reicht
+  vorerst (der Reiter „Training“ der Einstellungen ist seit 0.3.2 weg); (2) ein gesenktes Ziel
+  zählt frühere Wochen nachträglich als erreicht, so bleibt es (Widerspruch genügt, N2134);
+  (3) `verdient` trägt auch „woche:<Montag>“, im Kommentar von `speicher/gamifizierung.ts`
+  nachgetragen.
+- Test der Abzeichen: Die Obergrenze von 20 fällt, weil die Pakete eigene Teillisten beitragen
+  (P4 brachte die Zahl schon auf 20).
+
 ## 31.10.2026 – Gamifizierung P9: Teilen ohne Server (Arbeitschat, Zweig gami-p9-teilen)
 
 - Bild: ein SVG 1080 × 1350 (`ui/komponenten/teilen/teilbild.ts`) mit dem Stück aus

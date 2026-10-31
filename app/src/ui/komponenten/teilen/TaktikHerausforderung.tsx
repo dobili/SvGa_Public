@@ -46,8 +46,6 @@ function Herausforderungsrunde({ aufgabe }: { aufgabe: Taktikaufgabe }) {
       <Aufgabe aufgabe={aufgabe} runde={runde} />
       {runde.ergebnis !== null && (
         <>
-          {/* Bis der Knopf in Taktikaufgabe.tsx steht (Patch an den Koordinierungs-Chat), hier. */}
-          <TaktikHerausforderungsknopf aufgabe={aufgabe} />
           <button
             type="button"
             className="knopf-link"

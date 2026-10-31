@@ -28,6 +28,7 @@ import { themaTaktik } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { TaktikHerausforderungsknopf } from "../komponenten/teilen/TaktikHerausforderung";
 import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
@@ -250,6 +251,8 @@ export function Taktikaufgabe({
         </Antwortmeldung>
       )}
       {fertig && motivAbfragen && <MotivBenennen richtig={aufgabe.motiv} />}
+      {/* P9: gelöste Aufgabe aus freier Quelle als Herausforderung teilen (nur Lichess, E7). */}
+      {fertig && <TaktikHerausforderungsknopf aufgabe={aufgabe} />}
     </>
   );
 }

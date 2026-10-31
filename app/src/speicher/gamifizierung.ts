@@ -117,7 +117,10 @@ export interface Zielstand {
 export interface Gamifizierungsdaten {
   readonly themen: Readonly<Record<string, Themenstand>>;
   readonly aktivitaet: Readonly<Record<Tagesschluessel, Tageszaehler>>;
-  /** „orden:<k>“, „abzeichen:<k>“, „rekord:<k>“ → Datum der ersten Feier (G3). */
+  /**
+   * „orden:<k>“, „abzeichen:<k>“, „rekord:<k>“ → Datum der ersten Feier (G3); dazu „woche:<Montag>“
+   * für jede Woche mit erreichtem Wochenziel (P4), damit ein später erhöhtes Ziel keine Woche nimmt.
+   */
   readonly verdient: Readonly<Record<string, string>>;
   readonly rekorde: Readonly<Record<string, Rekord>>;
   readonly duelle: Readonly<Record<string, Duell>>;

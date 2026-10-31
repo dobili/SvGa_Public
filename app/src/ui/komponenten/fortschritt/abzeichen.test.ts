@@ -18,9 +18,8 @@ import { MIN_HALBZUEGE } from "./erfahrung";
 const LANG = Array.from({ length: MIN_HALBZUEGE }, (_, i) => (i % 2 === 0 ? "Nf3" : "Nf6"));
 
 describe("Abzeichen", () => {
-  it("hat 10 bis 20 Abzeichen mit eindeutigen Kennungen; leere Daten erfüllen keins", () => {
+  it("hat mindestens 10 Abzeichen (Teillisten der Pakete kommen dazu) mit eindeutigen Kennungen; leere Daten erfüllen keins", () => {
     expect(ABZEICHEN.length).toBeGreaterThanOrEqual(10);
-    expect(ABZEICHEN.length).toBeLessThanOrEqual(20);
     expect(new Set(ABZEICHEN.map((a) => a.kennung)).size).toBe(ABZEICHEN.length);
     const g = abzeichengrundlageAus(leereDaten(new Date(BEGINN)), 0, false);
     expect(erfuellteAbzeichen(g)).toEqual([]);

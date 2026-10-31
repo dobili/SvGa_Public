@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### P9: Teilen ohne Server (31.10.2026)
+### Neu in 0.3.20: Teilen ohne Server (Arbeitschat, 31.10.2026)
 
 - [ ] N2150. **Abzeichen teilen aus der Meldung:** Aufgabenseite (Profil drei Sekunden halten) ›
       „Abzeichen testen“ › „Erster Sieg: verdienen“. In der Meldung steht über „Weiter“ der Knopf
@@ -66,7 +66,7 @@ Teil fertig ist.
       die Kennung der Aufgabe, sonst verschickt die App nichts). Stand: 31. Oktober 2026. Passt
       der Text für dich?
 
-### P4 und P11: Wochenziel und Übungsplan (31.10.2026)
+### Neu in 0.3.20: Wochenziel und Übungsplan (Arbeitschat, 31.10.2026)
 
 Neu oben im Buch: die Karte „Deine Woche“. Du wählst selbst, an wie vielen Tagen pro Woche du
 üben willst; die Karte zeigt deine Lerntage von Montag bis Sonntag, einen Ring „2 von 3 Tagen“ und

@@ -3,12 +3,14 @@
   des Buches sind vorläufig, bis der Autor sein englisches Buch schreibt (Rückfrage EN1). Absichtlich
   auf Englisch, weil sie Übersetzern als Vorgabe dient.
 -->
+
 # Terminology for the English version of the app "Schach von Grund auf"
 
 Use these English terms consistently. Book-coined terms are provisional (the author will write the
 English book later and may rename them centrally), so always use exactly the form given here.
 
 ## Style
+
 - Address the reader as "you", friendly and plain, short sentences, like the German "du".
 - British/American: use American spelling (color, center, favor), but chess terms as below.
 - Keep every placeholder in curly braces exactly as in German (`{feld}`, `{zug}`, `{farbe}` ...),
@@ -20,6 +22,7 @@ English book later and may rename them centrally), so always use exactly the for
   "S. 12" → "p. 12".
 
 ## Notation (important)
+
 German piece letters in moves become English letters: K→K, D→Q, T→R, L→B, S→N; pawns have no letter.
 Examples: "Lf4" → "Bf4", "Dxd5" → "Qxd5", "Sf3" → "Nf3", "Txe8+" → "Rxe8+", "0-0" stays, "e4" stays,
 "5... Db6" → "5... Qb6". Also in running text: "der Läufer auf f4" → "the bishop on f4".
@@ -28,11 +31,13 @@ Do NOT change letters that are not moves (e.g. "W1" warning sign labels, "F1" ch
 "B6" author question ids, "LAP").
 
 ## Pieces and colors
+
 Bauer pawn · Springer knight · Läufer bishop · Turm rook · Dame queen · König king · Figur piece
 (Leichtfigur minor piece, Schwerfigur major piece) · Weiß White · Schwarz Black (capitalized as
 player names) · am Zug to move · Zug move · Halbzug half-move / ply
 
 ## General chess terms
+
 Schach check · Matt checkmate / mate · Patt stalemate · Remis draw · Aufgeben resign ·
 Rücknahme takeback · Rochade castling (kurze/lange: kingside/queenside) · Umwandlung promotion ·
 en passant · Fesselung pin · Spieß skewer · Gabel fork · Abzug(sschach) discovered attack (check) ·
@@ -57,11 +62,13 @@ strength · Wertung rating · Elo Elo · Stufe level · Bot bot · Gegner oppone
 control / thinking time · Uhr clock · Zuschlag increment · Partie game
 
 ## Move classes (as on chess.com)
+
 Brillant Brilliant (!!) · Stark Great (!) · Bester Zug Best move · Sehr gut Excellent · Gut Good ·
 Buchzug Book move · Ungenauigkeit Inaccuracy (?!) · Fehler Mistake (?) · Verpasst Miss ·
 Patzer Blunder (??)
 
 ## Book-coined tools and terms (provisional English names)
+
 Zählen Counting · Feld zählen count square · Angriffsregel / Goldene Angriffsregel Attack rule /
 Golden attack rule · Todsünden Deadly sins · Schach-Röntgen-Regel Chess X-ray rule · Röntgen X-ray ·
 Zielbilanz Goal balance · Faktorenbilanz Factor balance · Planbilanz Plan balance ·
@@ -78,6 +85,7 @@ Gesamt-Checkliste Master checklist · Steckbrief profile · Werkzeug tool · Wer
 Bündel bundle · Skelett(-Ansicht) skeleton (view)
 
 ## App areas and trainers
+
 Buch Book · Training Training · Spielen Play · Nachschlagen Reference · Einstellungen Settings ·
 Glossar Glossary · Abbildung figure (Abb. Fig.) · Zugfolge move sequence · Übung exercise ·
 Lösung solution · Hinweis hint · Trainer trainer · Zähltrainer Counting trainer · Koordinaten,
@@ -93,4 +101,5 @@ Vorgefertigte Bots Ready-made bots · Eigene Gegner Custom opponents · Ruhige A
 Brett drehen flip board · Koordinaten coordinates · Figurensatz piece set · Nachtmodus dark mode
 
 ## Book title
+
 "Schach von Grund auf" stays German (title of the book; the English title is not yet decided).

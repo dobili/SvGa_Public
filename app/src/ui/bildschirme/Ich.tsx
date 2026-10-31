@@ -1,13 +1,14 @@
 /**
  * Bereich „Profil“ (intern „ich“): oben Name und Porträt des Lesers (ProfilKarte.tsx), dann der
- * Knopf zu den Einstellungen, darunter die Wertung des Lesers (Wertungskurve.tsx), sein
+ * Knopf zu den Einstellungen, darunter die Wertung des Lesers (wertung/Wertungskarte.tsx, seit dem Profil neu am 31.10.2026 mit
+ * drei Kacheln), sein
  * Fortschritt im Buch (Fortschrittsuebersicht.tsx) und seine gespielten Partien (Partienliste.tsx).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (25.10.2026): Die Leiste zeigt ein Profil statt des
  * Zahnrads; wer auf „Spielen“ tippt, will spielen und keine alten Partien sehen, deshalb stehen die
  * gespielten Partien hier. Die Einstellungen selbst liegen auf einem eigenen Bildschirm
  * (Einstellungen.tsx). Die laufende Partie bleibt auf „Spielen“ („Weiterspielen“).
- * Abhängigkeiten: Navigation, Speicher, Wertungskurve, Fortschrittsuebersicht, Partienliste, i18n.
+ * Abhängigkeiten: Navigation, Speicher, Wertungskarte, Fortschrittsuebersicht, Partienliste, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
@@ -17,7 +18,7 @@ import { Fortschrittsuebersicht } from "../komponenten/fortschritt/Fortschrittsu
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Partienliste } from "../komponenten/partienliste/Partienliste";
 import { Profilkarten } from "../komponenten/profilkarten/Profilkarten";
-import { Wertungskurve } from "../komponenten/fortschritt/Wertungskurve";
+import { Wertungskarte } from "../komponenten/wertung/Wertungskarte";
 import { ProfilKarte } from "../profil/ProfilKarte";
 import { LernpfadKnopf } from "../komponenten/lernpfad/LernpfadKnopf";
 
@@ -43,7 +44,7 @@ export function Ich() {
         <Knopfsymbol art="einstellungen" />
         {t("ich.titel")}
       </button>
-      <Wertungskurve punkte={wertung} partien={partien} />
+      <Wertungskarte punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
       {/* Gamifizierung P2: der Fortschritt im Buch als Weg. */}
       <LernpfadKnopf ort="profil" />

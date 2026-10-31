@@ -1,0 +1,109 @@
+/*
+ * Karte „Deine Wertung“ im Profil (Profil neu, Entwurf W3, 31.10.2026): drei Kacheln, Kurve der
+ * gewählten Zeitklasse, Phasen als Balken. Komponenten in ui/komponenten/wertung/.
+ */
+.wertungskacheln {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+}
+
+.wertungskachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--tippflaeche);
+  padding: var(--raster) 4px;
+  border: 2px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--grund);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.wertungskachel.gewaehlt {
+  border-color: var(--gold);
+}
+
+.wertungskachel-klasse,
+.wertungskachel-zusatz {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.wertungskachel-zahl {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-zahl);
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.wertungskachel.geschaetzt .wertungskachel-zahl {
+  color: var(--text-leise);
+}
+
+.wertung-kurvenkopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+}
+
+.wertung-kurvenkopf h3,
+.wertung-phasen h3 {
+  margin: 0;
+  font-size: var(--groesse-grund);
+}
+
+.wertung-plakette {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--grund);
+  box-shadow: 0 0 0 1px var(--linie);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.wertung-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.wertung-schaetzung {
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-left: 3px dashed var(--gold);
+  color: var(--text-leise);
+}
+
+.wertung-phasen ul {
+  list-style: none;
+  margin: var(--raster) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.wertung-phasen li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr 5rem;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.wertung-phasen li.eindruck .fortschrittsbalken-fuellung {
+  opacity: 0.5;
+}
+
+.wertung-phasenzahl {
+  text-align: end;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}

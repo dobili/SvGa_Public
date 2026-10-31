@@ -2,7 +2,7 @@
  * Maßstab der eigenen Wertung: „Lichess“ (wie berechnet) oder umgerechnet auf chess.com oder FIDE,
  * jeweils als Bereich und mit dem Namen der Liste.
  *
- * Rolle im Gesamtbild: Die Karten „Deine Wertung“ (Wertungskurve.tsx) und „Deine Spielstärke“
+ * Rolle im Gesamtbild: Die Karten „Deine Wertung“ (wertung/Wertungskarte.tsx) und „Deine Spielstärke“
  * (LetzteSpielstaerke.tsx) zeigen jede Zahl zur eigenen Wertung wahlweise im Maßstab von Lichess
  * oder umgerechnet. Wunsch des Autors (27.10.2026): beide Listen für jede Zeitklasse, Bereich statt
  * „≈“. Die Rechnung steht in spiel/umrechnung.ts (Tabellen von chessgoals.com); hier nur Wahl,

@@ -12,7 +12,9 @@
  *   Extras, gesperrte als Silhouette mit Bedingung, extras/extrakacheln.ts),
  * - Bedienung: wie die App reagiert (Figuren per Wischen ziehen, Zuganimation, Startanimation,
  *   Ton aus oder an),
- * - Anzeige: Nachtmodus (wie das Gerät, aus oder an, app/farbschema.ts), Schrift, Sprache,
+ * - Anzeige: Nachtmodus (wie das Gerät, aus oder an, app/farbschema.ts), Schrift, Sprache und
+ *   seit dem Profil neu (31.10.2026) der Maßstab der Wertung (Lichess, chess.com, FIDE), den es
+ *   vorher in jeder Wertungskarte gab,
  * - Bots: das Maia-Zusatzpaket (MaiaWahl.tsx),
  * - Hilfe: Toursymbol, Rundgang (P8, R52) und ausgeblendete Erklärkacheln wieder anzeigen.
  * Seit 0.3.2 gibt es den Reiter „Training“ nicht mehr (Wunsch des Autors, 26.10.2026): „Erst selbst
@@ -43,6 +45,8 @@ import { t, type Textschluessel } from "../../../i18n/sprache";
 import { MERKER_WISCHEN } from "../../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../../brett/useZuganimation";
 import { extragruppe, kachelname, useKachelsperre } from "../extras/extrakacheln";
+import { Massstabwahl } from "../fortschritt/Massstabwahl";
+import { useWertungsmassstab } from "../fortschritt/wertungsmassstab";
 import { MaiaWahl } from "./MaiaWahl";
 import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
 import { SprachWahl } from "./SprachWahl";
@@ -289,13 +293,26 @@ function TourWahl() {
   );
 }
 
-/** Anzeige: Nachtmodus, Schriftgröße, Sprache. */
+/** Maßstab der eigenen Wertung, einmal für alle Karten (Profil neu, 31.10.2026). */
+function MassstabEinstellung() {
+  const [massstab, setzeMassstab] = useWertungsmassstab();
+  return (
+    <>
+      <p className="einstellung-name">{t("wertung.massstab.name")}</p>
+      <Massstabwahl massstab={massstab} beiWahl={setzeMassstab} />
+      <p className="hinweis">{t("profil.wertung.massstabHinweis")}</p>
+    </>
+  );
+}
+
+/** Anzeige: Nachtmodus, Schriftgröße, Sprache, Maßstab der Wertung. */
 function AnzeigeBereich() {
   return (
     <>
       <NachtmodusWahl />
       <SchriftgroesseWahl />
       <SprachWahl />
+      <MassstabEinstellung />
     </>
   );
 }

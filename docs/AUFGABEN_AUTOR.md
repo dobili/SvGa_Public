@@ -33,6 +33,47 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P12: Monatsrückblick (31.10.2026)
+
+Am Anfang jedes Monats schaut die App ruhig auf den Vormonat zurück: Kalender mit deinen
+Lerntagen, was du gemacht hast, Wertung, neu verdiente Orden und Abzeichen, neue Rekorde, dein
+sicherstes Thema und eins zum Üben, dazu ein nächster Schritt für den neuen Monat. Ab morgen
+(1. November) siehst du den Oktober echt. Vorher als Probe: Aufgabenseite (drei Sekunden auf
+„Profil“ bzw. das Zahnrad) › „Monatsrückblick testen“ › „Rückblick dieses Monats öffnen“ zeigt den
+laufenden Monat; die Probe ändert nichts.
+
+- [ ] N2210. **Startkarte:** Am 1. bis 7. November steht oben im Buch „Dein Oktober ist fertig“ mit
+      Knopf „Ansehen“ (nur wenn du im Oktober mindestens einen Lerntag hattest). Sie steht direkt
+      unter „Dein nächster Schritt“ und verdrängt solange die Wochenkarte. Ist das so recht?
+- [ ] N2211. **Karte verschwindet:** Nach „Ansehen“ und Zurück ist die Karte weg, auch nach dem
+      Neuladen. Am 8. November kommt sie ohnehin nicht mehr.
+- [ ] N2212. **Kalender:** Oben „Dein Oktober“, darunter „Oktober 2026“, ein Satz wie „Im Oktober
+      hattest du 12 Lerntage.“ und ein Kalender ab Montag; Lerntage gold gefüllt, die übrigen
+      Tage als leiser Kreis. Stimmen die Tage mit deinem Gefühl überein?
+- [ ] N2213. **Ton bei wenig Aktivität:** Bei 2 bis 5 Lerntagen steht „… Jeder zählt.“ dabei, bei
+      einem Tag „Im Oktober hattest du einen Lerntag. Jeder zählt.“ Kein Rot, kein Vergleich mit
+      dem Vormonat. Passt der Ton?
+- [ ] N2214. **Zahlen und Wertung:** Abschnitt „Das hast du gemacht“ (Abbildungen, gelöste
+      Übungen, Antworten in den Trainern, Wiederholungskarten, Partien, Siege; Nullen fehlen).
+      Hast du gewertete Partien gespielt, steht unter „Deine Wertung“ je Zeitklasse der Wert am
+      Monatsanfang und am Monatsende, ohne Farbe. Verständlich?
+- [ ] N2215. **Neu verdient und Rekorde:** Im Oktober verdiente Orden und Abzeichen stehen mit Bild,
+      Namen und Datum unter „Neu verdient“; Rekorde, die im Oktober aufgestellt wurden, unter
+      „Neue Rekorde“. Hinweis: Wird ein Rekord im November verbessert, wandert er in den
+      November (die App merkt sich nur die letzte Verbesserung).
+- [ ] N2216. **Themen:** Unter „Deine Themen“ steht „Am sichersten: … (9 von 10 richtig)“ und, wenn
+      ein anderes Thema unter 70 % liegt, „Zum Üben: …“ mit Knopf „Üben“, der den passenden
+      Trainer öffnet. Erst ab 8 Antworten zu einem Thema erscheint etwas.
+- [ ] N2217. **Nächster Schritt:** „Dein nächster Schritt für November“ zeigt denselben Vorschlag
+      wie die Karte oben im Buch; der Knopf führt dorthin.
+- [ ] N2218. **Teilen:** „Rückblick teilen“ öffnet am Handy das Teilen-Menü mit einem Bild: dunkler
+      Grund, goldener Rahmen, „MONATSRÜCKBLICK“, der Kalender als Punkte (Lerntage gold),
+      „Oktober 2026“, „12 Lerntage“, Name und Adresse der App. Gefällt dir das Bild?
+- [ ] N2219. **Ältere Rückblicke im Profil:** Profil, unter „Dein Fortschritt“: Karte „Rückblicke“
+      mit einem Knopf je abgeschlossenem Monat mit Lerntagen („Oktober 2026“, der jüngste
+      zuerst); er öffnet den Rückblick des Monats. Vor dem 1. November gibt es die Karte noch
+      nicht.
+
 ### Neu in 0.3.23: Freischaltbare Extras (Arbeitschat, 31.10.2026)
 
 Neu und nur durch Lernen zu bekommen; alles, was es schon gab, bleibt frei. Porträtrahmen in

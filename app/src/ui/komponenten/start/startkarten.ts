@@ -15,6 +15,8 @@ import { Wochenkarte } from "./Wochenkarte";
 import { wochenkarteSichtbar } from "./wochensichtbar";
 import { NaechsterSchritt } from "./NaechsterSchritt";
 import { naechsterSchrittSichtbar } from "./naechsterSchrittMerker";
+import { RueckblickStartkarte } from "../rueckblick/RueckblickKarten";
+import { rueckblickkarteJetzt } from "../rueckblick/rueckblickMerker";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
@@ -38,6 +40,8 @@ export const STARTKARTEN: readonly Startkarte[] = [
     sichtbar: (_daten, jetzt) => naechsterSchrittSichtbar(jetzt),
     Karte: NaechsterSchritt,
   },
+  // P12 Monatsrückblick: Rang 15 statt 40, sonst verdrängen P1 und P4 die Karte immer (Bericht).
+  { kennung: "rueckblick", rang: 15, sichtbar: rueckblickkarteJetzt, Karte: RueckblickStartkarte },
 ];
 
 /**

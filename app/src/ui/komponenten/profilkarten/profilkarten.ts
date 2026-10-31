@@ -12,6 +12,8 @@ import { fundstueckeSichtbar } from "../fundstuecke/album";
 import { FundstueckProfilkarte } from "../fundstuecke/FundstueckProfilkarte";
 import { Rekordtafel } from "../rekorde/Rekordtafel";
 import { ExtrasKarte } from "../extras/ExtrasKarte";
+import { RueckblickProfilkarte } from "../rueckblick/RueckblickKarten";
+import { rueckblickeSichtbar } from "../rueckblick/rueckblickwerte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -28,4 +30,6 @@ export const PROFILKARTEN: readonly Profilkarte[] = [
   { kennung: "rekorde", rang: 20, sichtbar: () => true, Karte: Rekordtafel },
   // P7 Freischaltbare Extras: immer sichtbar, gesperrte als Silhouette mit Bedingung.
   { kennung: "extras", rang: 50, sichtbar: () => true, Karte: ExtrasKarte },
+  // P12 Monatsrückblick: ältere Rückblicke, sobald ein Monat mit Lerntagen abgeschlossen ist.
+  { kennung: "rueckblicke", rang: 30, sichtbar: rueckblickeSichtbar, Karte: RueckblickProfilkarte },
 ];

@@ -65,6 +65,8 @@ test("Gangarten: Prüfen ohne Tipp zeigt die Zielfelder, Weiter zur zweiten Aufg
   await page.getByRole("button", { name: /Gangarten/ }).click();
   await page.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("trainer")).toContainText("Zielfelder");
+  // Seit dem Nebenchat: Zu jedem übersehenen Feld steht der Grund da.
+  await expect(page.getByTestId("gangart-begruendung")).toContainText("Dorthin darf die Figur");
   await page.getByRole("button", { name: "Weiter" }).click();
   await expect(page.getByText("Aufgabe 2 von 8")).toBeVisible();
 });

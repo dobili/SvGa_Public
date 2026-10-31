@@ -1,6 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 30.10.2026, Version 0.3.13 (Orden verstreut, Pfeile in den Werkzeugbildern, Tagesserie ohne Verfall; dein Prüfstand vom 30.10. ist eingearbeitet).
+Stand: 31.10.2026, Version 0.3.43 (Testpunkte vorgeprüft: Was ohne dein Auge prüfbar war, ist
+gestrichen und steht in `docs/ENTSCHEIDUNGEN.md`).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +19,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.13“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.43“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,11 +34,59 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.43: Startwahl, Kennzahlen, Karte „Heute“, Orden und Nebenaufgaben (31.10.2026)
+
+- [ ] N2370. **Startwahl:** Am besten in einem privaten Browserfenster schach-von-grund-auf.com/app/
+      öffnen (wie eine frische Installation). Nach der Startanimation fragt die App „Willkommen! Wie
+      möchtest du starten?“ mit drei Knöpfen: „Ich lese das Buch“, „Ich will spielen und Partien
+      auswerten“, „Erst einmal umsehen“, darunter „Später“.
+- [ ] N2371. **Buch-Weg:** „Ich lese das Buch“: Die Tour zeigt Willkommen, die Karte „Heute“, das
+      Weg-Symbol („Dein Weg durchs Buch“), das Nummernfeld, die Kapitel (mit „Schon weiter? Hake
+      Gelesenes ab“), die Leiste, das Toursymbol, im Browser den Tipp zum Installieren und am Ende
+      „Los: Kapitel 0“. Der Knopf öffnet Kapitel 0. Nimmt dich das an die Hand?
+- [ ] N2372. **Spielen-Weg:** In einem neuen privaten Fenster „Ich will spielen …“ wählen: Die App
+      wechselt zu Spielen und zeigt „Schnell eine Partie“, die Kacheln, die Auswertung und das
+      Einlesen einer Partie von Lichess oder chess.com mit dem Knopf „Partie einlesen“ (springt ins
+      Profil zu „Deine Partien“).
+- [ ] N2373. **QR-Adresse:** schach-von-grund-auf.com/app/?start=buch in einem privaten Fenster:
+      Die Frage entfällt, die Buch-Tour beginnt gleich. Profil › Einstellungen › Hilfe › „Rundgang
+      durch die App“ öffnet die Startwahl jederzeit wieder.
+- [ ] N2374. **Kennzahlen im Profil:** Unter Stufe und Erfahrung stehen drei Kacheln: ✓ Übungen
+      gelöst, Hantel Trainer-Durchgänge, Sprechblase Warum-Fragen, je mit großer Zahl. Eine Null
+      steht blass. Die alten Zeilen unter den Orden sind weg.
+- [ ] N2375. **Karte „Heute“ für Neue:** Frisch installiert steht dort „Anfangen · Kapitel 0 ·
+      Abb. 0.1“, auch wenn du vorher kurz in eine andere Abbildung geschaut hast. Eine Abbildung,
+      die nur kurz offen war, wird selbst vorgeschlagen statt übersprungen. Die Tagesaufgabe
+      (Taktik) erscheint erst, wenn Kapitel 0 zu 80 % gelesen oder ein Trainer geschafft ist. Gibt
+      es keine Alternativen, steht das Kreuz „Nicht jetzt“ rechts neben der großen Kachel.
+- [ ] N2400. **Infofenster der Orden:** Profil › „Deine Erfolge“: Tippe auf einen Orden oder ein
+      Abzeichen. Ein Fenster geht von unten auf: Bild, ein Satz, was man dafür tun muss, und der
+      Stand („3 von 10“) oder „Geschafft am …“ mit „Teilen“. Ein offenes Stück zeigt das Bild blass
+      in Farbe („so sieht es aus, wenn du es hast“). Kreuz oder Tipp daneben schließt.
+- [ ] N2401. **Ringe:** Profil, „Dein Fortschritt“: Ein Tipp auf einen Ring (Abbildungen, Übungen,
+      Lernziele, Trainer) öffnet dasselbe Fenster mit der Bedingung des Ordens. Auch Glanzstück und
+      „Als Nächstes“ öffnen es. Bei einem offenen Abzeichen wie „Erste Partie“ führt „Los geht's“
+      direkt dorthin.
+- [ ] N2404. **Nebenaufgaben auf dem Weg:** Dein Weg durchs Buch: Neben jeder Station steht ein
+      kleines Feld mit Stern oder Bild und „0/5“. Nichts ragt über den Rand. Wirkt der Weg noch
+      ruhig?
+- [ ] N2405. **Liste je Kapitel:** Tippe auf ein Feld: „Nebenaufgaben · Kapitel N“ mit Übungen,
+      Lernzielen, Trainern des Kapitels und passenden Abzeichen und Orden. Passen die Stücke vom
+      Niveau her zu den Kapiteln (etwa „Kurzer Prozess“ bei Kapitel 4, Kapitel 12 mit 11 Stücken)?
+- [ ] N2406. **Los geht's:** In der Liste „Übungen Kapitel 1“ → „Los geht's“ öffnet die erste
+      ungelöste Übung; „Trainer Kapitel 0“ den Koordinatentrainer (nach einer Runde 1/1 mit Haken,
+      das Feld an Station 0 wird farbig); „Lernziele Kapitel 2“ die Checkliste.
+- [ ] N2409. **Neue Abzeichen:** Im Regal „Abzeichen“ stehen „Kurzer Prozess“ (Matt in höchstens
+      15 eigenen Zügen aus der Grundstellung) und „Neue Dame“ (eigenen Bauern umgewandelt).
+      Gefallen dir Name, Bild und Bedingung? „Kurzer Prozess“ zählt auch gegen Stufe 1 (als
+      Einsteigerziel); sag, falls nur gewertete Partien oder Bots ab Stufe 3 zählen sollen.
+- [ ] N2410. **Dunkel:** Felder, Liste und Fenster der Nebenaufgaben sind im Dunkelmodus gut lesbar.
+- [ ] N2412. **Trainer-Orden:** Der Ring „Trainings erstmalig absolviert“ zählt jetzt bis 17 (ohne
+      Fehlerdatenbank, die keine Runde hat). Vorher war der Orden unerreichbar; wer alle 17 schon
+      hat, bekommt nach dem Update die Gratulation.
+
 ### Neu in 0.3.42: Erklärungen und Tour geprüft (31.10.2026)
 
-- [ ] N2360. **Ein Zeichen für Erklärungen:** Überall, wo es eine Erklärung gibt (Einstellungen,
-      Training, Startkarte der Trainer, Profil, Spielen), steht jetzt dasselbe „i“ im Kreis; das
-      Fragezeichen gibt es dafür nicht mehr. Ein Tipp klappt die Erklärung auf, ein zweiter zu.
 - [ ] N2361. **Tour im Profil:** Profil öffnen, Toursymbol oben rechts. Die Tour zeigt jetzt auch
       Erfolge (Orden und Abzeichen), den Weg durchs Buch, Themen, Rekorde und Extras; der Schritt
       zur Wertung spricht von Kacheln je Zeitklasse und dem „i“, nicht mehr von Reitern.
@@ -58,25 +107,11 @@ sagen dasselbe, und die Erklärungen stehen vollständig hinter einem ⓘ (Kreis
 Tipp auf ⓘ öffnet darunter eine Sprechblase, ein zweiter Tipp schließt sie. Bitte jeden Punkt im
 dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts seitlich übersteht.
 
-- [ ] N2350. **Leere Abschnitte (Wertung, Themen, Partien):** Am besten in einem privaten
-      Browserfenster ohne gespeicherte Daten öffnen, unten „Profil“. Unter „Deine Wertung“ stehen
-      drei gestrichelte Kacheln mit Blitz, Stoppuhr und Kaffeetasse, „Noch keine Wertung.“ und der
-      helle Knopf „Erste Partie“ (führt zu „Spielen“). Unter „Deine Themen“ drei graue
-      Medaillenumrisse, „Noch keine Medaille.“ und „Taktik üben“ (öffnet den Taktiktrainer). Unter
-      „Deine Partien“ eine leere, gestrichelte Liste, „Noch keine Partie.“, „Erste Partie“ und
-      darunter wie bisher „Partie einlesen (PGN)“. Wirken die Bilder klar als „hier ist noch nichts“?
-- [ ] N2351. **Leerer Stapel und eigene Bots:** Unten „Training“: Ist nichts zu wiederholen und
-      noch keine Karte angelegt, steht neben dem blassen Kartenstapel „Dein Stapel ist leer.“ mit ⓘ
-      und der Knopf „Übungen lösen“ (führt zum Buch). Das ⓘ zeigt den alten Satz „Noch nichts im
-      Stapel. Löse Übungen im Buch; sie kommen dann zur Wiederholung.“ Dann „Spielen“, Kachel
-      „Eigene Bots“: ohne eigenen Gegner ein leeres Porträt mit goldenem Plus, „Noch kein eigener
-      Gegner.“ und „Neuen Gegner anlegen“ (öffnet das Formular). Das ⓘ neben „Eigene Bots
-      verwalten“ nennt, was ein eigener Gegner enthält.
-- [ ] N2352. **Wertungsregeln hinter ⓘ:** Im Profil steht neben „Deine Wertung“ ein ⓘ (auch,
-      wenn du schon Wertungen hast). Ein Tipp zeigt in der Blase beide alten Sätze vollständig:
-      „Spiel deine erste gewertete Partie … getrennt nach Blitz, Schnellschach und Klassisch.“ und
-      „Es zählen Partien gegen die Engine oder einen Bot mit dem Haken „Gewertete Partie“ … zählen
-      deshalb oft nicht.“ Fehlt dir dort etwas?
+- [ ] N2350. **Leere Abschnitte (Wertung, Themen, Partien):** Im Profil ohne Daten: Wirken die
+      gestrichelten Kacheln (Blitz, Stoppuhr, Tasse), die grauen Medaillenumrisse und die leere
+      gestrichelte Liste klar als „hier ist noch nichts“? (Texte und Knöpfe sind vorgeprüft.)
+- [ ] N2352. **Wertungsregeln hinter ⓘ:** Im Profil das ⓘ neben „Deine Wertung“: Fehlt dir in den
+      beiden Sätzen etwas?
 - [ ] N2353. **Partiekopf:** Starte unter „Spielen“ eine Partie gegen einen Bot (etwa Frau
       Schulz). Unter dem Titel „gegen Frau Schulz“ steht jetzt nur eine Zeile: rundes Porträt mit
       kleiner Stufennummer unten rechts, ein Chip mit König und „Weiß“ (oder „Schwarz“), ein Chip
@@ -86,47 +121,10 @@ dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts
       du spielst Weiß · Eröffnung wie Menschen dieser Stärke“. Nach dem Ende der Partie steht
       derselbe Kopf über der Auswertung. Zu zweit oder gegen eine eigene Stufe ohne Bot bleibt die
       alte Textzeile.
-- [ ] N2354. **Kapitelseite:** Öffne im Buch Kapitel 1. „Dein Fortschritt“ zeigt Ringe mit
-      Zeichen (Raster = Abbildungen, Fragezeichen = Warum-Fragen, Häkchenliste = Lernziele, Puzzle
-      = Übungen) und darunter „0/43“ usw.; der Satz „4 Übungen im Kapitel, noch keine versucht …“
-      ist weg. Der Übungsring ist golden umrandet und hat einen Pfeil nach unten: Ein Tipp rollt zu
-      „Übungen aus dem Buch“. Das ⓘ neben „Dein Fortschritt“ nennt jeden Ring mit Namen und
-      „x von y“, den alten Satz zu den Übungen und den Knopf „Zur Gesamt-Checkliste“.
-- [ ] N2355. **Lernpfad-Kopf:** Im Buch „Als Weg anzeigen“. Oben steht „Kapitel 1“ (oder dein
-      aktuelles Kapitel) mit ⓘ, darunter ein goldener Balken, dann „43 Abbildungen · 4 Übungen“
-      mit kleinen Zeichen (was noch fehlt) und rechts die graue Silhouette des Ordens „Teil
-      Grundlagen“ mit „+ Kap. 0“ (welche Kapitel des Teils sonst noch fehlen). Das ⓘ zeigt beide
-      früheren Sätze: „Noch 43 Abbildungen und 4 Übungen bis zum Ende von Kapitel 1 …“ und
-      „Jede Station ist ein Kapitel …“ (der zweite stand vorher unter dem Weg).
-- [ ] N2356. **Denkroutine als Karten:** Nachschlagen, „Denkroutine“. Fünf Karten mit Nummer,
-      Zeichen und Kurzzeile: 1 Auge „Was hat sich verändert?“, 2 Liste „Schach, Schlag, Drohung
-      zuerst“, 3 Schwerter „Nicht die bequemste“, 4 Waage „Bis zur Ruhe, dann zählen“, 5 rotes
-      Schild „König sicher? Figur gedeckt?“ (Sicherheitsblick). Die Titel sind die des Buches.
-      Tipp auf eine Karte klappt den Buchtext vollständig auf. Darunter „✓ Ziehen · widerlegt oder
-      unsicher? Dann zurück zu Schritt 2.“ Bitte die fünf Kurzzeilen lesen: treffen sie den Schritt?
-- [ ] N2357. **Phasen der Denkroutine:** In der zweiten Karte drei Kacheln Eröffnung (Buch),
-      Mittelspiel (Schwerter), Endspiel (Flagge); die gewählte ist golden umrandet und trägt „Du
-      bist hier“, darunter ihre Werkzeuge aus dem Buch („Ruhiger Zug mit …“, „Achte besonders
-      auf …“). Tipp auf „Mittelspiel“ wechselt beides. Das ⓘ zeigt die drei Sätze „Du bist hier,
-      solange …“; unten steht mit Warnzeichen „In jeder Phase zuerst: Warnsignale …“.
-- [ ] N2358. **Auswertung einer Partie:** Öffne eine beendete Partie und tippe in der Zugliste
-      einen guten Zug an. Die Karte unter dem Brett zeigt oben das Zugzeichen (etwa grüner Stern),
-      den Zug, eine Marke wie „Bester Zug“ und die Veränderung der Bewertung als Pfeil mit Zahl:
-      grün „▲ 0,1“, wenn der Zug die Stellung der ziehenden Seite verbessert, rot „▼ 0,1“, wenn er
-      sie (etwas) verschlechtert, grau „± 0,0“ bei gleich. Kein Balken. Das ⓘ zeigt den früheren
-      Satz („… war der beste Zug.“), „Bewertung +1,5 → +1,6.“ und die Erklärung des Balkens. Bei
-      Fehlern bleibt der Satz mit der Gewinnchance sichtbar. Über der Zeitleiste steht „Die Partie
-      in Momenten“ mit ⓘ statt des Satzes „Die wichtigen Züge auf einen Blick …“. Auch ein bester
-      Zug kann rot „▼ 0,1“ zeigen, wenn er die Stellung der ziehenden Seite etwas verschlechtert
-      (deine Entscheidung vom 31.10.).
-- [ ] N2359. **Kleine Einleitungen:** Profil, Einstellungen, „Bots und Wertung“: oben eine Zeile
-      mit Personenzeichen, „Menschlichere Züge (Maia)“, Knopf „⬇ 96 MB“ und ⓘ (darin der ganze
-      Maia-Text und die Lizenzzeile). „Über die App“: neben der Versionsnummer ein goldenes
-      Abzeichen „BETA“ mit ⓘ (darin der Beta-Satz). Nachschlagen, „Werkzeuge des Buches“: oben
-      „Nach Kapiteln geordnet“ mit ⓘ (die Einleitung). Profil, „Deine Extras“: ⓘ neben der
-      Überschrift mit „Tippe auf ein Extra …“ und „Extras gibt es nur fürs Lernen …“; der
-      Fußsatz unten ist weg. Die Legende bei „Gegner aussuchen“ und der Hinweis bei „Freie Partie“
-      folgen, sobald der Haupt-Chat diese gesperrten Seiten freigibt.
+- [ ] N2356. **Denkroutine als Karten:** Nachschlagen, „Denkroutine“: Treffen die fünf Kurzzeilen
+      („Was hat sich verändert?“, „Schach, Schlag, Drohung zuerst“, „Nicht die bequemste“, „Bis zur
+      Ruhe, dann zählen“, „König sicher? Figur gedeckt?“) den Schritt, und sind die Titel die des
+      Buches?
 
 ### Neu in 0.3.42: Weniger Text – Werkzeuge und Trainer (Arbeitschat, 31.10.2026)
 
@@ -138,70 +136,11 @@ Handy nichts seitlich übersteht. Werkzeuge öffnest du so: unten „Buch“, di
 antippen, dann in der Werkzeugleiste unter dem Brett das Werkzeug wählen (manche stecken in einem
 Bündel des Kapitels, etwa „Denkroutine“ oder „Planfindung“; ein Tipp öffnet die Reiter).
 
-- [ ] N2340. **Legende als Pfeilreihe (Röntgen):** Abb. 1.26, Werkzeug „Röntgen“. Unten in der
-      Karte steht statt „Am Brett: Goldene Pfeile: …“ eine Reihe: goldener Pfeil „Weiß“, roter
-      gestrichelter Pfeil „Schwarz“, grauer gepunkteter Pfeil „Abtausch“, rechts das ⓘ. Ein Tipp
-      auf ⓘ zeigt den alten Satz „Am Brett: Goldene Pfeile: Schachs, Gewinnschläge …“. Tippe oben
-      „Sicht“: Die Reihe tauscht die Farben (Gold „Schwarz“, Rot „Weiß“). Sind die drei Pfeile
-      gut zu unterscheiden, auch im hellen Modus?
-- [ ] N2341. **Legende bei weiteren Werkzeugen:** Prüfe drei weitere: Abb. 12.6 „Sicherheitsblick“
-      (goldener Pfeil „Zug“, roter Pfeil „Schlag, Schach“, rotes Feld „bedroht“), Abb. 6.20
-      „Planbilanz“ (Felder Gold „Weiß“, Rot „Schwarz“, Grau „Ziel“) und Abb. 7.18 „Warnsignale“
-      (umrandete Felder „Signal Weiß“, „Signal Schwarz“, „Gabelfeld“). Hinter ⓘ jeweils der ganze alte Satz.
-      Passt jedes Stichwort zu dem, was am Brett markiert ist? Alle 31 Werkzeuge mit Legende haben
-      so eine Reihe; ein unpassendes Stichwort bitte mit Werkzeug melden.
-- [ ] N2342. **Zählen: Hand und „Feld antippen“:** Abb. 1.26, Werkzeug „Zählen“. Über den Karten
-      steht nur noch eine goldene Zeile mit Hand und „Feld antippen“, rechts ⓘ. Ein Tipp auf ⓘ
-      zeigt die Bedienung („Tippe ein Feld auf dem Brett an. Die App zählt …“) und klein „Die
-      Werkzeuge rechnen nach festen Regeln und können sich irren. Maßgeblich ist das Buch.“ Das
-      Kästchen „Nicht mehr anzeigen“ gibt es bei Zählen nicht mehr (bei „Ziehen“ schon). Tippe d4:
-      Die Zeile bleibt stehen, darunter die Karte „Feld d4 zählen“.
-- [ ] N2343. **Statuschip „greift hier nicht“:** Abb. 1.26, Werkzeug „Prüffragen“: Statt des
-      langen Satzes steht ein grauer Chip mit Verbotszeichen „Nur bei Angebot“ und ⓘ; dahinter
-      „Kein Material im Angebot und keine Fesselung im Spiel: …“. „So prüft die App“ bleibt.
-      Dann Abb. 6.27, Werkzeug „Zielbilanz“: Chip „Nicht im Endspiel“, hinter ⓘ „Die Zielbilanz
-      gilt in Eröffnung und Mittelspiel. Hier nicht: Es ist Endspiel.“ Weitere Chips je nach
-      Stellung: „Keine Bauern“, „Keine Figuren“, „Nur Bauernendspiel“, „Faktoren gleich“,
-      „Stellung ruhig“, „Kein Signal“, „Nicht in der Eröffnung“, „Nicht im Mittelspiel“.
-- [ ] N2344. **Kandidaten als Zeilen:** Abb. 12.1, Werkzeug „Kandidaten“ (Bündel „Denkroutine“).
-      Oben „Bewertung der Engine“, nach ein bis drei Sekunden „Stellung jetzt +4,70“ (Zahl je
-      nach Engine) mit ⓘ. Je Kandidat eine Zeile: Zug (etwa „Lxh7+“), Zeichen der Art (Kreis mit
-      Plus = Schach, Blitz = Drohung, Buch = Buchzug), ein Balken für die Bewertung mit Zahl,
-      dann die Veränderung als „▲ 0,67“ grün oder „▼ 3,44“ rot, ganz rechts die Krone beim
-      stärksten Zug laut Engine und die Waage beim Zug mit der besten Bilanz. Darunter klein
-      „↳ Kxh7 · Material −2“. Unter den Zeilen eine Legende der Zeichen. Hinter „Schritte 2 bis 4
-      ausführlich“ ⓘ stehen die alten Sätze vollständig („1. Lxh7+ (Schach)“, „Zwingt nichts: …“,
-      „Rechne jeden Kandidaten bis zur Ruhe …“). Hinter ⓘ an „Stellung jetzt“ steht „Am stärksten
-      nach der Engine: …“. Passt alles auf eine Handybreite?
-- [ ] N2345. **Kandidaten im Schach:** Abb. 12.3, Werkzeug „Kandidaten“: Die Abwehrzüge stehen
-      mit Schild-Zeichen da, beim ersten „↳ Sxe6 · Material … · Gabel: Dame c7 und Turm f8“.
-- [ ] N2346. **Zähltrainer, Frage:** Unten „Training“, „Zählen“, eine Runde „Bilanz zählen“
-      starten. Oben steht groß „d4: Lohnt sich Schlagen?“ (Feld je nach Aufgabe) mit ⓘ; dahinter
-      die Regel (zu Ende tauschen, billigste Figur zuerst, Bauerneinheiten) und der Schalter
-      „Genauer üben: auch Angreifer und Verteidiger zählen“. Der Satz „Tippe das Ergebnis an“
-      entfällt; die Knöpfe „lohnt nicht“, „+1“ … „+9“ stehen wie bisher.
-- [ ] N2347. **Zähltrainer, Antwort:** Tippe ein falsches Ergebnis. Es erscheint ein Banner „✗
-      Nicht ganz · richtig:“ mit dem richtigen Wert als goldenem Chip (deine Antwort bleibt am
-      Knopf markiert). Darunter die Zählung: rote Schwerter mit der Zahl der Angreifer, „:“,
-      goldener Schild mit der Zahl der Verteidiger, daneben „Sc6, Db6 gegen Sf3“ (Namen der
-      Figuren), darunter die Zugfolge wie „Sxd4 Sxd4 Dxd4“; ⓘ zeigt die Rechnung als Sätze.
-      Hat die Aufgabe eine verdeckte Figur, steht eine kleine Marke mit durchgestrichenem Auge
-      „Dd1 verdeckt“ und ⓘ mit dem Satz „Verdeckt: Dame d1 steht hinter …“ (ebenso Marken
-      „gefesselt“, „Batterie“, „Abzug“).
-- [ ] N2348. **Falle oder Köder:** Unter „Training“ „Falle oder Köder“ starten. Oben groß „Falle
-      oder Geschenk?“, darunter roter gestrichelter Pfeil „sein Zug …“ und grauer Pfeil „Angebot
-      …“, eine kleine Zeile „Weiß am Zug · Herkunft · Stufe“ mit ⓘ (dahinter der alte Auftrag).
-      Der Knopf „Warnsignale zeigen“ hat ein Warndreieck. Nach der Entscheidung ein umrandetes
-      Banner „✓ Richtig: Falle“ (oder „Nicht ganz: Geschenk“), bei einer Falle „nach Dxd6“ mit
-      „▼ 11,6“ in Rot (kein Balken), darunter die Fortsetzung und „Besser:“ mit goldenem Chip
-      „→ Th4+“; ⓘ zeigt die alten Sätze (Auflösung, „Fortsetzung laut Engine“, ob die
-      Warnsignale geholfen hätten). Der Bewertungsbalken beim Vorspielen bleibt wie bisher.
-- [ ] N2349. **Taktik-Hinweis:** Unter „Training“ „Taktik“ eine Runde starten und „Hinweis 1“
-      tippen. Statt „Warnsignal: Signale auf dem Brett: W1. Suche nach …“ steht ein roter Chip
-      mit Warndreieck „W1“ und „ungedeckte Figur“ (je nach Aufgabe W1 bis W7, ohne Signal grau
-      „Kein Signal“), rechts ⓘ mit dem alten Satz; darunter drei Kacheln Krone „Schach“,
-      gekreuzte Schwerter „Schlag“, Fadenkreuz „Drohung“ und „erst Motiv suchen, dann rechnen“.
-      „Hinweis 2“ zeigt wie bisher „Motiv: …“.
+- [ ] N2341. **Legende bei weiteren Werkzeugen:** Sicherheitsblick, Planbilanz und Warnsignale sind
+      vorgeprüft. Wenn dir bei einem der übrigen Werkzeuge ein Stichwort der Legende nicht zu dem
+      passt, was am Brett markiert ist: bitte mit Werkzeug melden.
+- [ ] N2344. **Kandidaten als Zeilen:** Abb. 12.1, Werkzeug „Kandidaten“: Bekommen nach einigen
+      Sekunden alle drei Zeilen eine Zahl (in der Prüfung stand bei Db1 einmal noch „–“)?
 
 ### Neu in 0.3.41: Einstellungen neu (Arbeitschat, 31.10.2026)
 
@@ -211,50 +150,12 @@ dann drei Reiter (Bedienung, Anzeige, Hilfe) mit je einer Zeile pro Einstellung,
 einmal die Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Öffnen: unten „Profil“,
 dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
 
-- [ ] N2300. **Brettvorschau:** Oben steht ein großes Brett mit einer Eröffnungsstellung, zwei
-      goldenen Pfeilen (Läufer c4 nach f7, Springer f3 nach g5), einem rot umrandeten Feld f7 und
-      dem letzten Zug g8–f6 leicht hervorgehoben. Darunter „Koordinaten“ mit Schalter. Wirkt das
-      Brett groß und ruhig genug, und passt der Hintergrund dahinter (dunkel: Nachtblau, hell:
-      Creme)?
-- [ ] N2301. **Brettfarbe:** Unter „Brettfarbe“ stehen runde Farbfelder in einer Reihe, die du
-      seitlich wischst: die acht Farben, Holz, die drei Materialbretter und am Ende „Nacht und
-      Gold“ mit Schloss. Tippe „Grün“: Der goldene Ring springt dorthin, und das Brett oben ist
-      sofort grün. Tippe „Nacht und Gold“ (gesperrt): Unter der Reihe steht, wie man es
-      freischaltet; die Wahl bleibt. Öffne danach eine Abbildung: gleiche Farbe wie in der Vorschau?
-- [ ] N2302. **Figuren:** Unter „Figuren“ zeigen Kacheln je einen weißen Springer des Satzes auf
-      dem hellen Feld deines Brettes („wie im Buch“, Cburnett, Merida, Chessnut, Mpchess, Celtic,
-      Spatial, die drei Holzsätze, „Gold“ mit Schloss). Tippe „Merida“: Die Figuren oben wechseln
-      sofort. Beim nächsten Öffnen der Einstellungen ist die gewählte Kachel ins Bild gerückt.
-- [ ] N2303. **Koordinaten:** Schalte „Koordinaten“ unter dem Brett aus: Die Buchstaben und
-      Zahlen am Rand der Vorschau verschwinden sofort. Öffne eine Abbildung: auch dort keine
-      Koordinaten. Danach wieder einschalten.
-- [ ] N2304. **Reiter „Bedienung“:** Fünf Zeilen mit Symbol und Schalter: „Figuren per Wischen
-      ziehen“, „Züge gleiten über das Brett“, „Ton bei Zug und Schlag“, „Feiereffekte“, „Startbild
-      beim Öffnen der App“. Die Erklärung steht nur noch hinter dem Fragezeichen: Tippe es bei
-      „Feiereffekte“, der Text erscheint unter der Zeile, ein zweiter Tipp blendet ihn aus. Lassen
-      sich die Schalter gut treffen?
-- [ ] N2305. **Reiter „Anzeige“:** „Nachtmodus“ mit den Chips „wie das Gerät“, „aus“, „an“ unter
-      der Zeile; „Schriftgröße“ mit „A−“, Prozent und „A+“ rechts in der Zeile (bei Abweichung
-      erscheint darunter „Standard“); „Sprache“ mit Deutsch und der englischen Vorschau. Probiere
-      „A+“ und dann „Standard“.
-- [ ] N2306. **Reiter „Hilfe“:** „Toursymbol oben rechts“ mit Schalter, „Rundgang durch die App“
-      mit dem Knopf „Starten“, „Erklärkacheln von Zählen und Ziehen“ mit „Wieder anzeigen“.
-      Schalte das Toursymbol aus: Der Kompass oben rechts verschwindet; „Starten“ beginnt den
-      Rundgang trotzdem. Danach wieder einschalten.
-- [ ] N2307. **Daten und Über nur einmal:** Wechsle zwischen den drei Reitern. Unter jedem steht
-      dieselbe kurze Liste „Bots und Wertung“, „Deine Daten“, „Über die App“ genau einmal (früher
-      standen die Karten „Daten“ und „Über die App“ lang unter jedem Reiter). Rechts steht der
-      Stand: „ohne Maia · Lichess“ (oder „Maia an“), „noch nie gesichert“ oder „gesichert am …“
-      (ein oranger Punkt, wenn eine Sicherung fällig ist), die Versionsnummer.
-- [ ] N2308. **Unterseiten:** Tippe jede der drei Zeilen. „Bots und Wertung“: Maia laden,
-      schalten, löschen und darunter der Maßstab der Wertung (Lichess, chess.com, FIDE; früher im
-      Reiter „Anzeige“). „Deine Daten“: Sicherung anlegen und einspielen, alle Daten löschen,
-      Anleitung zum Entfernen. „Über die App“: Version, Datenstand, Offline, Update suchen, Fehler
-      melden, Lizenzen, Datenschutz, Impressum. Oben links führt „Einstellungen“ zurück. Fehlt dir
-      etwas, das es vorher gab?
-- [ ] N2309. **Tour der Einstellungen:** Tippe in den Einstellungen den Kompass oben rechts. Die
-      Tour zeigt nacheinander die Brettvorschau, die Reiter Bedienung, Anzeige und Hilfe, dann die
-      Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Stimmen die Texte zu dem, was
+- [ ] N2300. **Brettvorschau:** Profil › Einstellungen: Wirkt das große Brett oben ruhig genug, und
+      passt der Hintergrund (dunkel Nachtblau, hell Creme)?
+- [ ] N2304. **Reiter „Bedienung“:** Lassen sich die fünf Schalter mit dem Finger gut treffen?
+- [ ] N2308. **Unterseiten:** „Bots und Wertung“, „Deine Daten“, „Über die App“: Fehlt dir etwas,
+      das es vorher gab?
+- [ ] N2309. **Tour der Einstellungen:** Kompass oben rechts: Stimmen die sieben Texte zu dem, was
       du siehst?
 
 ### Neu in 0.3.40: Eigene Engine für die Auswertung (31.10.2026)
@@ -284,58 +185,6 @@ eigenen Seiten und „Zuletzt gespielt“. Die Einstellungen von Stärke, Stil, 
 sehen aus wie bisher, nur der Weg dorthin ist neu. Öffnen: Tipp auf „Spielen“ unten in der Leiste.
 Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › Anzeige).
 
-- [ ] N2330. **Startseite:** Von oben nach unten: (nur wenn eine Partie läuft) die Karte „Partie
-      läuft“ mit kleinem Brett, „gegen … · 10 + 0“ und „Weiterspielen“; dann „Schnell eine
-      Partie“; dann (wenn du einen hast) der Rivale; „Deine Spielstärke“; vier Kacheln „Gegner
-      aussuchen“, „Eigene Stufe“, „Eigene Bots“, „Freie Partie“; unten „Zuletzt gespielt“.
-      Nichts ist breiter als der Bildschirm, nichts ragt über den Rand. Die feste Leiste unten mit
-      „Beginnen“ gibt es auf der Startseite nicht mehr.
-- [ ] N2331. **Schnell eine Partie:** Die Karte zeigt einen Bot mit rundem Porträt, Namen,
-      Stufenmarke, „Stufe 3 · Positionsspieler“ (Beispiel) und darunter seine Zahl mit einem
-      Satz: ohne gewertete Partie „gut für den Anfang“ (dann ein Bot der Stufe 1 oder 2), sonst
-      meist „etwa so stark wie du“. Bots, die du in dieser Zeitklasse schon gewertet besiegt hast,
-      kommen erst später dran. „Anderer Vorschlag“ zeigt den nächsten passenden Bot; nach dem
-      letzten beginnt es wieder vorn.
-- [ ] N2332. **Drei Bedenkzeiten und „Spielen“:** Auf der Karte stehen drei Zeiten mit dem
-      Zeichen ihrer Zeitklasse (Blitz, Schnellschach, Klassisch), anfangs 3 + 2, 10 + 0, 30 + 20.
-      Ein Tipp wählt sie; die Zeile darunter („Weiß · 10 + 0 · gewertet“) ändert sich mit. Hast
-      du im Blatt etwa 5 + 3 gewählt, steht 5 + 3 statt 3 + 2 auf der Karte. „Spielen“ beginnt
-      die Partie gegen genau diesen Bot mit dieser Zeit und Farbe. Läuft schon eine Partie,
-      fragt die App erst, ob sie ersetzt werden soll.
-- [ ] N2333. **Blatt „Partie einstellen“:** „Einstellen ›“ oben rechts auf der Karte öffnet von
-      unten ein Blatt mit: Du spielst (Weiß/Schwarz), allen sieben Bedenkzeiten nach Zeitklasse,
-      „Gewertete Partie“ mit Fragezeichen, Spielhilfen (Zurücknehmen, Symbole, Werkzeuge; in
-      gewerteten Partien gesperrt mit dem Satz „Spielhilfen gehen nur in ungewerteten
-      Partien.“) und unten der Zeile „Eröffnung festlegen“ mit der aktuellen Wahl. Schließen mit
-      dem X oben rechts oder mit Tipp auf den dunklen Rand.
-- [ ] N2334. **Eröffnung im Blatt:** Tipp auf „Eröffnung festlegen ›“ zeigt im selben Blatt die
-      Eröffnungswahl wie bisher (wie Menschen dieser Stärke, ohne Buch, aus dem Buch, einzelne
-      Eröffnungen mit Hauptvariante, „Eröffnungen nach Spielstärke“ mit Varianten, Gambits und
-      Quelle). „Zurück zu den Einstellungen“ führt zurück. Mit einem eigenen Bot mit festen
-      Eröffnungen (Seite „Eigene Bots“) stehen dort Hinweis und Haken „Eröffnung des Bots
-      überschreiben“.
-- [ ] N2335. **Gegner aussuchen:** Die Kachel öffnet eine eigene Seite mit „‹ Spielen“ oben
-      links. Oben die Sprechblase des gewählten Bots: Porträt, Name mit Zahl und Fragezeichen
-      (Erklärung der Stärke), darunter golden sein Stil und „So stellt er sich vor“ mit seinem
-      Satz. Darunter wie bisher „Zum Spaß“ und Stufe 1 bis 10 zum Aufklappen, mit Porträts,
-      Zahlen je Zeitklasse, Siegzeichen, „x/8“ und dem Gruppenmodus. Unten klebt eine Leiste mit
-      dem Bot, „Weiß · 10 + 0 · gewertet“ und „Spielen“; ein Tipp auf die Leiste links öffnet das
-      Blatt „Partie einstellen“.
-- [ ] N2336. **Eigene Stufe und Eigene Bots:** „Eigene Stufe“ zeigt oben die geschätzte Zahl
-      („Deine Einstellung 1 · 1 · 1 · etwa …“) und darunter genau die bisherigen Reiter Stärke,
-      Stil, Fehler, Blinde Flecken mit Marke „Menschlich“; unten die Leiste „Eigene Stufe ·
-      Spielen“. „Eigene Bots“ zeigt deine Bots zum Antippen, die Liste mit Bearbeiten und
-      Löschen und „Neuen Gegner anlegen“ mit dem bisherigen Editor. Ohne gewählten eigenen Bot
-      ist „Spielen“ ausgegraut und die Leiste sagt „oben wählen oder anlegen“.
-- [ ] N2337. **Freie Partie:** Die Kachel öffnet eine Seite mit dem Schalter „Mensch (beide Seiten
-      selbst)“ und der Startstellung mit „Stellung aufbauen“ und „Eigene Stellung eingeben
-      (FEN)“. Mit Schalter spielt ihr zu zweit am Gerät, ohne ihn dein zuletzt gewählter Gegner.
-      Nach einer aufgebauten Stellung zeigt das Brett sie, die Leiste sagt „ungewertet“, und im
-      Blatt gibt es zusätzlich „Ohne Uhr“.
-- [ ] N2338. **Aus einer Abbildung:** Im Buch bei Abb. 1.26 „Gegen die Engine spielen“ antippen:
-      „Spielen“ zeigt oben „Aus der Stellung von Abb. 1.26“ mit Brett, darunter „Schnell eine
-      Partie“ (ungewertet, „Ohne Uhr“ möglich). „Spielen“ beginnt aus dieser Stellung. Die
-      Kacheln nehmen die Stellung mit: „Gegner aussuchen“ beginnt dann ebenfalls aus Abb. 1.26.
 - [ ] N2339. **Zuletzt gespielt und Revanche:** Nach ein, zwei Partien gegen Bots stehen sie
       unten (höchstens drei) mit Porträt, Name, „heute · 10 + 0“ und der Ergebnismarke (Pokal,
       Händedruck oder Kreuz). Tipp auf den Namen öffnet die Partie. „Revanche“ zeigt sofort oben
@@ -352,47 +201,10 @@ schwachen Bot wählen (etwa Derya, Gruppe „Neuling“ oder „Einsteiger“), 
 etwa 15 bis 20 Züge spielen, gern mit einem absichtlich schlechten Zug; dann aufgeben („Aufgeben“
 unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach einige Sekunden.
 
-- [ ] N2320. **Ergebnis oben:** Direkt unter dem Untertitel, über der Zugliste, eine Kopfzeile mit
-      dem Porträt des Bots, groß „Gewonnen“ (grün), „Verloren“ (rot) oder „Remis“, darunter wie
-      die Partie endete und in welchem Zug („Du hast aufgegeben. · im 18. Zug“), rechts nach der
-      Auswertung deine Genauigkeit („74 %“ und „genau“). Gut lesbar hell und dunkel?
-- [ ] N2321. **Die Partie in Momenten:** Unter dem Brett die Überschrift „Die Partie in
-      Momenten“, ein Umschalter „Weiß (du) | Schwarz (Bot)“, die Verlaufskurve und darunter eine
-      senkrechte Linie mit Abschnitten je Phase („ERÖFFNUNG · ZUG 1 BIS 9 · 87 %“; die Prozente
-      sind deine Genauigkeit in der Phase, die Linie trägt die Farbe des Urteils). Wirkt das
-      weniger wie ein Formular als vorher?
-- [ ] N2322. **Momente:** An der Linie runde Marken mit Karten: das Ende der Theorie mit dem
-      Namen der Eröffnung („Philidor-Verteidigung · 4 Theoriezüge bis 4. dxe5 …“), deine erste
-      klare Abweichung („8. Sc3?“, „Erste klare Abweichung: Gewinnchance 64 % → 52 %.“, „Besser
-      war 8. Dxb7“ in Gold), weitere Fehler, verpasste Gewinne und Patzer mit ihrer Marke, die
-      absichtlichen Fehler des Bots mit einem kleinen Roboter („Absichtlicher Fehler: Derya hat
-      eine Figur hängen lassen (W1).“ und darunter „Du hast es gesehen und genutzt.“ oder „Hast du
-      es gesehen?“) und zuletzt das Ende der Partie mit einer Flagge. Ohne klare Abweichung steht
-      oben eine grüne Karte „Gut gespielt!“.
-- [ ] N2323. **Kleine Bretter und Sprung:** Fehler und Fehler des Bots zeigen rechts ein kleines
-      Brett (gold der bessere Zug, rot der gespielte). „Zur Stellung“ springt nach oben aufs große
-      Brett an genau diese Stelle; die Karte unter dem Brett erklärt dort den Zug wie bisher.
-- [ ] N2324. **Seitenwahl:** Im Umschalter „Schwarz (Bot)“ wählen: Die Zeitleiste zeigt jetzt
-      die Fehler des Bots, ohne „Erste klare Abweichung“; auch „In Zahlen“ wechselt auf den Bot
-      (beide Umschalter bleiben gleich gestellt). Zurück auf „Weiß (du)“.
-- [ ] N2325. **Verlaufskurve wie bisher (dein Wunsch):** Unter der Kurve „Ganze Partie“ und die
-      Phasen als Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der
-      Kurve halten und fahren zeigt den Zug darüber, Loslassen springt dorthin; zwei Finger
-      zoomen. Die roten Punkte sind Fehler. Alles wie vor dem Umbau, nur im neuen Rahmen?
-- [ ] N2326. **In Zahlen:** Überschrift „In Zahlen“, Umschalter Weiß/Schwarz, dann die Karte
-      „SPIELSTÄRKE“ (Ring, Urteil, geschätzte Spielstärke mit Spanne, beim Bot seine feste Zahl,
-      Fragezeichen mit Erklärung, fünf Balken mit Skala 50 bis 100 %) und „DEINE ZÜGE“: weiter
-      die bisherige Grafik, je Zugart ein Balken über den Zonen wenig/normal/viel mit Strich für
-      das Übliche, Warnzeichen bei schwachen Werten, alle zehn Arten; unter 15 eigenen Zügen nur
-      die Anzahlen. Nur Rundungen und Überschriften sind neu.
-- [ ] N2327. **Neue Partie und Teilen:** Ganz unten zwei große Knöpfe „Neue Partie“ und
-      „Teilen“; aus einer eigenen Stellung (etwa „Gegen die Engine spielen“ an einer Abbildung)
-      darunter zusätzlich „Noch einmal aus derselben Stellung“. „Teilen“ öffnet ein Blatt von
-      unten mit „PGN kopieren“ und „PGN als Datei sichern“; das Kreuz oder ein Tipp daneben
-      schließt es.
-- [ ] N2328. **Merken als Blatt:** Einen Zug in der Zugliste antippen, dann rechts unter dem Brett
-      „Merken“: Statt eines Bereichs unten in der Karte öffnet sich ein Blatt von unten mit „Wohin?“
-      (Lernen oder Fehler) und den Feldern wie bisher. Speichern klappt, das Kreuz schließt es.
+- [ ] N2321. **Die Partie in Momenten:** Wirkt die neue Zeitleiste weniger wie ein Formular als
+      vorher?
+- [ ] N2325. **Verlaufskurve:** Finger auf der Kurve halten und fahren zeigt den Zug, Loslassen
+      springt dorthin, zwei Finger zoomen: alles wie vor dem Umbau?
 - [ ] N2329. **Nichts verloren:** Zugliste mit Zeichen und „Alle Züge zeigen“, Pfeile zum Blättern,
       Uhren, Bewertungsbalken links am Brett, Drehen, Ruhige Ansicht (blendet die Auswertung aus,
       Ergebnis und „Neue Partie“ bleiben), „Besserer Zug“/„Bestrafung“ abspielen, Nebenzweig,
@@ -405,54 +217,12 @@ Die Startseite „Buch“ und „Dein Weg durchs Buch“ sind nach deiner Wahl d
 A2 „Heute“ und B1 „Fünf Landschaften“. Weniger Text, mehr Bild; die Kapitel beginnen weiter oben.
 Bitte jeweils im dunklen und im hellen Modus ansehen (Profil › Einstellungen › Darstellung).
 
-- [ ] N2250. **Kopf der Buchseite:** Oben „SCHACH VON GRUND AUF“ und rechts zwei Symbole: der Weg
-      (geschwungene Linie, öffnet „Dein Weg durchs Buch“) und der Kompass (Tour). Darunter
-      „Buch“ und gleich daneben das Feld „z. B. 1.26“ mit „Öffnen“. Antippen des Feldes zeigt
-      die Zahlenleiste und darunter „Zuletzt: Abb. …“ (führt zur zuletzt geöffneten Abbildung);
-      „1.26“ und „Öffnen“ öffnen die Abbildung.
-- [ ] N2251. **Karte „Heute“ mit Wochenziel:** Oben „Heute“, rechts eine Flamme mit „3 von 4
-      Tagen“ und ein Stift. Darunter sieben Kreise Mo bis So, durch eine Linie verbunden: Tage, an
-      denen du etwas gemacht hast, sind gold gefüllt, heute hat einen goldenen Ring. Der Stift
-      zeigt die Knöpfe 2 3 4 5 7 mit „Abbrechen“ und „Kein Wochenziel“. Ist das Ziel erreicht,
-      steht darunter „Wochenziel geschafft!“ (einmal mit kleinem Feuerwerk), fehlt nur noch ein
-      Tag, „Noch ein Tag für dein Ziel, wenn du magst.“; dazu leise „3 Wochen geschafft · beste
-      Folge 3“.
-- [ ] N2252. **Nächster Schritt als Kacheln:** In der Karte eine große helle Kachel (im hellen
-      Modus dunkel) mit Symbol, Titel und kurzer Zeile, etwa „Tagesaufgabe – 1 Stellung für
-      heute“ oder „Wiederholen – 9 Stellungen · etwa 6 Min“, rechts ein Pfeil. Darunter zwei
-      kleine Kacheln mit den Alternativen (etwa „Weiterlesen – Abb. 6.20“, „Übungen – Kapitel
-      5“). Jede Kachel führt mit einem Tipp hin.
-- [ ] N2253. **Nicht jetzt:** Rechts neben den kleinen Kacheln ein kleines Kreuz. Ein Tipp
-      blendet die Kacheln bis morgen aus; Tageskette und Woche bleiben. Ohne Lerntag
-      verschwindet dann die ganze Karte bis morgen.
-- [ ] N2254. **Woche als Reiter:** Unten in der Karte drei runde Reiter „Aufträge 1/3“ (mit
-      kurzem goldenem Strich), „Plan“ (an einem Übungstag „heute“, sonst die Uhrzeit) und „Ziele“
-      (mit Zahl der angehefteten Ziele). Ein Tipp klappt den Abschnitt darunter auf, ein zweiter
-      Tipp wieder zu. Inhalt wie bisher: Aufträge mit Tauschen, Übungsplan mit Kalender, eigene
-      Ziele. Ist „Reiter nebeneinander“ statt drei Zeilen für dich gut bedienbar?
-- [ ] N2255. **Ohne Wochenziel:** Auf einem Gerät ohne Wochenziel (Stift › „Kein Wochenziel“)
-      steht unter „Heute“ nur die Zeile „Tage pro Woche 2 3 4 5 7“ (die 3 mit goldenem Rand als
-      Vorschlag). Rechts oben „Wochenziel?“ klappt die Erklärung des Lerntags und „Später“ auf;
-      „Später“ blendet die Frage für diese Woche aus.
-- [ ] N2256. **Kapitel weit oben:** Auf deinem Handy beginnt die Liste der Kapitel in der oberen
-      Hälfte des Bildschirms, solange nur die Karte „Heute“ da ist (am Monatsanfang kann der
-      Monatsrückblick als zweite Karte dazukommen; dann rutschen die Kapitel tiefer).
-- [ ] N2257. **Lernpfad, Landschaften:** Weg-Symbol oben rechts im Buch. Der goldene Weg führt
-      durch fünf Bänder, jedes mit „Teil 1 … Teil 5“ und Namen: Grundlagen auf Schachbrettmuster,
-      Eröffnung in der Morgendämmerung mit Sonne, Mittelspiel über Hügel mit Türmen, Endspiel
-      unter Nachthimmel mit Mond und wenigen Sternen, Praxis im Turniersaal mit Lampen, Tischen
-      und Uhren. Gefallen dir die Bilder, hell wie dunkel?
-- [ ] N2258. **Lernpfad, Stationen:** Fertige Kapitel sind goldene Scheiben mit Nummer und
-      kleinem Haken, darunter „fertig“. Das aktuelle Kapitel ist größer, mit goldenem Ring für
-      den Stand, leichtem Schein und der Marke „Du bist hier“; angefangene haben einen
-      Teilring und „12 von 40“; offene sind dunkel mit grauem Rand. Ein Tipp öffnet das Kapitel.
-      Oben steht der Satz, was bis zum Ende des Kapitels fehlt, mit dem Ring des Kapitels daneben;
-      die Erklärung „Jede Station ist ein Kapitel …“ steht jetzt leise unter dem Weg.
-- [ ] N2259. **Lernpfad, Orden und Lesbarkeit:** Am Ende jedes Teils das Bild des Ordens, offen
-      als graue Silhouette, daneben „Orden „Teil Mittelspiel““ und „verdient“ bzw. „noch 3
-      Kapitel“. Alle Kapitelnamen stehen auf einem leicht deckenden Grund und sind auf jedem
-      Bild gut lesbar. Mit „Bewegung reduzieren“ (Bedienungshilfen des Handys) schimmert die
-      aktuelle Station nicht.
+- [ ] N2254. **Woche als Reiter:** Unten in der Karte „Heute“ drei runde Reiter „Aufträge 1/3“,
+      „Plan“ und „Ziele“, ein Tipp klappt auf, ein zweiter zu. Ist „Reiter nebeneinander“ statt
+      drei Zeilen für dich gut bedienbar?
+- [ ] N2257. **Lernpfad, Landschaften:** Weg-Symbol oben rechts im Buch. Fünf Bänder: Grundlagen
+      auf Schachbrettmuster, Eröffnung in der Morgendämmerung, Mittelspiel über Hügeln mit Türmen,
+      Endspiel unter Nachthimmel, Praxis im Turniersaal. Gefallen dir die Bilder, hell wie dunkel?
 
 ### Neu in 0.3.37: Trainer-Startseiten neu (Arbeitschat, 31.10.2026)
 
@@ -463,46 +233,11 @@ kleinere Knöpfe. Die frühere Beschreibung steht hinter „So funktioniert dies
 unten „Training“, beim Trainer „Trainieren“. Am besten im dunklen und im hellen Modus ansehen
 (Einstellungen › Farbschema).
 
-- [ ] N2280. **Taktiktrainer:** Oben links ein Brett (Weiß setzt auf der Grundreihe matt), rechts
-      „Finde den Zug, der gewinnt“. Darunter „Deine Runde · zum Ändern antippen“ mit drei Zeilen:
-      „Aufgaben: Aus dem Buch“, „Motiv: Gemischt · 674“ (Zahl je nach Datenstand), „Stufe: alle
-      Stufen“. Dann der große Knopf „Runde starten · 8 Aufgaben“ und darunter „Serie ohne
-      Fehler“ mit Flamme. Wirkt das ruhiger als vorher, und liest sich alles ohne Erklärung?
-- [ ] N2281. **Zeile antippen:** Im Taktiktrainer auf „Stufe“ tippen: Darunter klappen Chips auf
-      („alle Stufen“, „Stufe 1“ bis „Stufe 5“) mit dem Satz, wie die Stufen gemessen sind. Eine
-      Stufe wählen: Die Zeile klappt zu und zeigt sie. Auf „Motiv“ tippen: Es öffnet sich die
-      gewohnte Auswahlliste des Handys mit allen Motiven und ihrer Anzahl.
-- [ ] N2282. **Letzte Werte bleiben:** Im Taktiktrainer Motiv „Fesselung“ und Stufe 2 wählen, eine
-      Runde starten, zurück zu „Training“ und den Taktiktrainer wieder öffnen: „Deine Runde“ zeigt
-      noch Fesselung und Stufe 2. Das gilt in jedem Trainer (auch nach dem Schließen der App).
-- [ ] N2283. **Lichess-Aufgaben:** Im Taktiktrainer „Aufgaben“ antippen und „Zusätzlich Lichess“
-      wählen. Die Zeile „Motiv“ zeigt nun die Lichess-Themen; unter der Runde steht die
-      Kennzeichnung („Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess …“). „Serie ohne Fehler“
-      verschwindet hier, weil die Serie nur mit Buchaufgaben läuft. Zurück auf „Aus dem Buch“:
-      Die Serie ist wieder da.
+- [ ] N2280. **Taktiktrainer:** Startkarte mit Brett, „Finde den Zug, der gewinnt“, „Deine Runde“
+      mit drei Zeilen, großem Knopf und „Serie ohne Fehler“. Wirkt das ruhiger als vorher, und
+      liest sich alles ohne Erklärung?
 - [ ] N2284. **So funktioniert:** Unten auf der Startkarte „So funktioniert dieser Trainer“
-      antippen: Darunter stehen die frühere Beschreibung des Trainers und weitere Erklärungen
-      (im Taktiktrainer etwa zur Serie). Reicht das, oder fehlt dir etwas, das vorher sichtbar war?
-- [ ] N2285. **Zähltrainer und Röntgen:** Zähltrainer öffnen: eine Zeile „Stufe: gemischt“, der
-      große Knopf startet „Bilanz zählen“, darunter der Modus „Hängende Figuren finden“.
-      Röntgen-Trainer: Brett mit goldenem und rotem Pfeil, Zeile „Stufe“, „Runde starten ·
-      5 Aufgaben“.
-- [ ] N2286. **Endspieltrainer:** Zeilen „Was üben?“ (alle, Mattführung, Bauernendspiele …, mit
-      Anzahl) und „Stufe“, großer Knopf „Runde starten · 6 Stellungen“, darunter „Kurzübungen“.
-      Hast du nicht geschaffte Stellungen, steht dort auch „Wiederholen“ mit der Zahl.
-- [ ] N2287. **Wiederholen als Modus:** In einem Trainer mit fälligen Wiederholungen (etwa
-      „Falle oder Köder“ nach einer falsch gelösten Aufgabe am Vortag) steht unter dem
-      Startknopf „Wiederholen“ mit „3 Aufgaben sind fällig.“ Ohne fällige Aufgaben fehlt der
-      Knopf ganz.
-- [ ] N2288. **Eröffnungstrainer und Zug erraten:** Repertoire-Trainer: Zeilen „Eröffnung“ und
-      „Du spielst: Weiß“. Abweichungsmodus: zusätzlich „Aus: Eröffnungen (Kapitel 2)“ oder
-      „Gambits (Kapitel 3)“. Zug erraten: Zeilen „Quelle“, „Partie“ und „Du spielst“;
-      bei einer berühmten Partie steht ihre Karte mit Quelle und Lizenz unter der Runde.
-- [ ] N2289. **Übrige Trainer:** Koordinaten (Zeile „Übung“, bei „Feld finden“ auch „Stufe“),
-      Planbilanz (Zeile „Übung“, bei LAP „Stufe“), Zielbilanz, Faktorenbilanz, Denkroutine,
-      Studien und Kurzpläne (großer Knopf „15 Minuten starten“, darunter „5 Minuten“, „Taktik auf
-      Zeit“, „Tagesaufgabe“) haben dieselbe Form. 30-Minuten-Plan und Fehlerdatenbank sind
-      unverändert, weil sie keine Runde haben. Passt die Form überall, auch auf 360 Pixel Breite?
+      antippen. Reicht das, oder fehlt dir etwas, das vorher sichtbar war?
 
 ### Neu in 0.3.36: Steckbriefe und Glossar neu (Arbeitschat, 31.10.2026)
 
@@ -511,87 +246,24 @@ Eröffnungen als Baum ihrer ersten Züge (Entwurf H2), das Glossar sieht aus wie
 (Entwurf I3). Weg: „Nachschlagen“ unten in der Leiste, dann „Steckbriefe“ bzw. „Glossar“. Bitte
 hell und dunkel ansehen (Einstellungen, Farbschema).
 
-- [ ] N2290. **Eröffnungsbaum:** In „Steckbriefe“ stehen oben zwei Stämme, „1. e4“ (Königsbauer)
-      und „1. d4“ (Damenbauer), mit goldenen Zugmarken und Linien. Unter 1. e4 folgt
-      „1… e5 2. Sf3“, darunter „2… Sc6“ mit Spanischer, Italienischer und Schottischer Partie,
-      daneben „2… Sf6“ Russisch (Petroff); dann 1… c5 Sizilianisch, 1… e6 Französisch, 1… c6
-      Caro-Kann. Unter 1. d4: 1… d5 mit Damengambit (2. c4) und London-System (2. Lf4), 1… Sf6
-      mit Trompowsky (2. Lg5) und 2. c4 → Königsindisch (2… g6) und „2… e6 3. Sc3“ →
-      Nimzo-Indisch (3… Lb4). Zusammen 13 Karten. Passt die Ordnung so?
-- [ ] N2291. **Zweispringerspiel:** Es hängt unter der Italienischen Partie an „3… Sf6“. Die
-      Zeile „Wer wählt sie?“ nennt auch das Läuferspiel (2. Lc4); im Baum steht der Steckbrief nur
-      einmal, beim Zweispringerspiel. Ist das recht, oder soll er zusätzlich an „2. Lc4“ hängen?
-- [ ] N2292. **Karten im Baum:** Jede Karte zeigt links ein kleines Brett mit der Stellung nach
-      den Zügen (Sizilianisch: weißer Bauer e4, schwarzer c5), daneben den Namen und darunter den
-      Charakter in wenigen Worten („Klassisch und strategisch · Abschnitt 2.2“, vom Anfang der
-      Zeile „Charakter“ des Buches). Lange Unterzeilen enden mit „…“. Ist alles lesbar, auch bei
-      Zweispringerspiel ganz rechts?
-- [ ] N2293. **Steckbrief öffnen:** Tipp auf „Spanische Partie“: Eine eigene Seite mit dem Namen
-      als Titel, darunter groß in Gold „1. e4 e5 2. Sf3 Sc6 3. Lb5“, dann alle Zeilen wie bisher
-      (Wer wählt sie?, Charakter, Theorieaufwand, Passt zu dir, wenn …), das Diagramm
-      „Schlussstellung der Hauptvariante (Abb. 2.11)“ und der Knopf „Im Buch ansehen“. „Steckbriefe“
-      oben links führt zurück zum Baum.
-- [ ] N2294. **Fallenchecks:** Unter dem Baum steht die Karte „Fallenchecks – 14 Fallen aus
-      Kapitel 4, jede mit Prüfung und Stopp-Moment“. Tipp darauf: Die 14 Fallenchecks zum
-      Aufklappen wie bisher (etwa „Klammerfalle“ mit „Wer tappt hinein?“, Prüfungen ✓/◐/✗,
-      Rettender Zug, Stopp-Moment als Diagramm; ein Tipp aufs Diagramm öffnet Abb. 4.2).
-- [ ] N2295. **Glossar als Lexikonseite:** Oben das Suchfeld („Begriff suchen, z. B. Gabel“),
-      darunter eine Reihe Buchstaben-Reiter A bis Z, waagrecht wischbar. Tipp auf „F“: Kopfzeile
-      mit erstem Begriff links, „F · 18 Begriffe“ in der Mitte, letztem Begriff rechts; darunter
-      ein großes goldenes „F“ und die Begriffe als Absätze: Begriff fett, Definition, am Ende in
-      Gold „KAP. 1, 2, 7“. Die Fundstelle in Klammern am Ende der Definition entfällt dort, weil
-      die Kapitel daneben stehen. Wirkt es wie ein Lexikon?
-- [ ] N2296. **Diagramme im Glossar:** Begriffe mit einer Abbildung im Buch zeigen rechts ein
-      kleines Brett mit Nummer darunter (Fesselung: Abb. 1.12). Das sind viele (197 von 255
-      Begriffen). Ist dir das zu viel, oder gerade richtig? (Vorschlag sonst: nur ein Diagramm je
-      drei Begriffe oder nur bei Kapitel-Begriffen.)
-- [ ] N2297. **Begriff öffnen:** Tipp auf „Fesselung“: die Seite wie bisher mit vollem Text,
-      Fundstellen zum Antippen und „Siehe auch“; neu darunter die Diagramme aller Stellen
-      (Abb. 1.12, 2.26, 7.4, je mit Abschnitt). Tipp auf ein Diagramm öffnet die Abbildung.
-      „Zurück“ führt zur Lexikonseite, und dort ist „F“ noch gewählt.
-- [ ] N2298. **Suche:** „gabel“ ins Suchfeld tippen: Die Reiter verschwinden, oben steht „… Treffer“,
-      darunter die passenden Begriffe als Lexikoneinträge (zuerst „Gabel“). Feld leeren: wieder
-      die Seite des gewählten Buchstabens.
-- [ ] N2299. **Tour:** Auf beiden Seiten das Toursymbol oben rechts antippen: Die Schritte zeigen
-      auf Suchfeld, Buchstaben-Reiter und Liste (Glossar) bzw. auf den Baum und die Karte
-      „Fallenchecks“ (Steckbriefe); die Texte passen zur neuen Gestaltung.
-
-### Neu in 0.3.35: Zuganimation gegen die Engine ohne Hänger (31.10.2026)
-
-- [ ] N2315. **Zug gleitet sauber, auch bei schnellem Spiel:** Auf dem älteren Handy (Redmi) mit
-      eingeschaltetem Maia eine Blitzpartie gegen einen Bot spielen und schnell ziehen. Deine
-      Figur gleitet jedes Mal ohne Stocken ins Ziel; erst danach „denkt“ der Bot. Seine Antwort
-      kommt höchstens eine Viertelsekunde später als bisher, seine Uhr verliert dadurch nichts.
-      Falls die Uhranzeige beim Rechnen des Bots noch kurz stockt: notieren (das behebt der
-      nächste Schritt, Maia in einem eigenen Thread).
+- [ ] N2290. **Eröffnungsbaum:** Nachschlagen › Steckbriefe: die zwei Stämme 1. e4 und 1. d4 mit
+      13 Karten. Passt die Ordnung so?
+- [ ] N2291. (unverändert lassen; Frage an dich)
+- [ ] N2292. **Karten im Baum:** Ist auf deinem Handy alles lesbar, auch „Zweispringerspiel und
+      Läuferspiel“ ganz rechts (bricht das Wort sauber um)? Die Unterzeilen enden fast alle mit
+      „…“; stört dich, dass „Abschnitt …“ dadurch meist fehlt?
+- [ ] N2295. **Glossar als Lexikonseite:** Nachschlagen › Glossar, Tipp auf „F“. Wirkt es wie
+      ein Lexikon?
+- [ ] N2296. (unverändert lassen; Frage an dich)
 
 ### Neu in 0.3.34: Profil – Zurückgeholt, was bei der Neugestaltung wegfiel (Arbeitschat, 31.10.2026)
 
 Bei der Neugestaltung des Profils waren ein paar nützliche Dinge weggefallen; sie sind zurück,
 ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der Leiste.
 
-- [ ] N2310. **Verlauf je Phase:** In „Deine Wertung“ unter „Nach Phasen“ einen Balken antippen
-      (etwa „Mittelspiel“): Darunter erscheint die Kurve dieser Phase über die Zeit, im selben
-      Maßstab wie die Zahlen und im Ausschnitt aus „Mehr“, mit „Spanne 1350–1650“. Mit zu wenigen
-      Partien steht stattdessen „Mittelspiel: Für eine Kurve gibt es in dieser Zeitklasse noch zu
-      wenige Partien …“. Ein zweiter Tipp schließt sie. (Braucht mindestens eine ausgewertete
-      gewertete Partie.)
-- [ ] N2311. **Aus deinen Zügen:** Unter den Kacheln steht eine ruhige Zeile „Aus deinen Zügen:
-      etwa 1550 (1150–1950, aus 3 Partien).“ für die gewählte Zeitklasse, im Maßstab aus den
-      Einstellungen (wie „Deine Spielstärke“ unter Spielen). So stehen Ergebnis und Zugqualität
-      nebeneinander.
-- [ ] N2312. **Stand in den Regalen:** In „Deine Erfolge“ steht unter jedem offenen Stück mit
-      zählbarem Fortschritt klein der Stand, etwa „120 von 174“ unter „Mittelspiel“ oder „16 von
-      24“ unter „Stufe 1–3 alle“, ohne Antippen. Verdiente Stücke haben keine Zahl.
-- [ ] N2313. **Rekorde verbessern:** Unter „Teilen“ steht bei jedem aufgestellten Rekord
-      „Verbessern“; der Knopf führt dorthin, wo man ihn schlägt (wie früher „Versuchen“). Probe:
-      einen Trainer eine Runde spielen, dann bei „Richtige Trainerantworten an einem Tag“ auf
-      „Verbessern“ tippen.
-- [ ] N2314. **Was zählt und vorläufig:** Ohne gewertete Partie erklärt die Einladung wieder,
-      welche Partien zählen („… mindestens zehn Züge … schnelle Siege gegen viel schwächere Bots
-      zählen deshalb oft nicht“). In „Mehr“ steht in den ersten zehn Partien „Vorläufig: Die
-      Wertung findet in den ersten zehn Partien ihren Platz (bisher 3).“ und die Erklärung des
-      Maßstabs.
+- [ ] N2310. **Verlauf je Phase:** Erst nach einigen ausgewerteten gewerteten Partien: In „Deine
+      Wertung“ unter „Nach Phasen“ einen Balken antippen: Die Kurve dieser Phase erscheint mit
+      „Spanne …“; ein zweiter Tipp schließt sie.
 
 ### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
 
@@ -599,48 +271,12 @@ Der Bereich „Training“ und die Gesamt-Checkliste sind nach deiner Wahl der E
 (Training C2, Checkliste D1): weniger Text, mehr Bild, am Handy im dunklen Modus gut lesbar.
 Training: Tipp auf „Training“ unten in der Leiste. Checkliste: „Nachschlagen“ › „Gesamt-Checkliste“.
 
-- [ ] N2260. **Stapel für heute:** Ganz oben im Training steht „Dein Stapel für heute“ mit einem
-      gezeichneten Kartenstapel. Ist etwas fällig, trägt der Stapel eine goldene Zahl, daneben
-      steht etwa „3 Karten · 2 Taktiktrainer · 1 Falle oder Köder“ und der Knopf „Durchgehen“.
-      Dieselbe Zahl nennt die Karte „Dein nächster Schritt“ im Buch. Stimmen die Zahlen überein?
-- [ ] N2261. **Durchgehen:** Tipp auf „Durchgehen“. Sind Übungen aus dem Buch fällig, startet
-      zuerst deren Reihe; sonst öffnet sich der erste Trainer mit fälligen Aufgaben (dort
-      „Wiederholen“). Ist nichts fällig, ist der Stapel blass, es gibt keinen Knopf, und darunter
-      steht „Nichts fällig. Als Nächstes am …“. Unter dem Stapel steht kurz, wann Gelöstes
-      wiederkommt; ein Tipp darauf klappt die ganze Erklärung der Lernkartei auf. Passt das?
-- [ ] N2262. **Wischreihen je Buchteil:** Unter dem Stapel stehen fünf Reihen: Grundlagen
-      (Kapitel 0–1 · 3 Trainer), Eröffnung (2–4 · 5), Mittelspiel (5–7 · 3), Endspiel (8–10 · 2),
-      Praxis (11–12 · 5). Jede Reihe lässt sich seitlich wischen; alle 18 Trainer kommen genau
-      einmal vor (Abweichungsmodus mit „Kap. 2–3“, Endspieltrainer mit „Kap. 8–9“).
-- [ ] N2263. **Trainer-Karte:** Jede Karte zeigt ein kleines Brett mit einer typischen Stellung
-      (Röntgen: Dame a8 zielt durch den Läufer auf den König h1; Taktik: Springergabel; Falle
-      oder Köder: Schäferzug), darunter den Namen. Noch nie gespielt: goldenes „neu · Kap. 1“.
-      Gespielt: „3 Runden · 80 % richtig“ und ein goldenes Band nach dem Anteil. Ein Tipp auf die
-      ganze Karte öffnet den Trainer. Erkennst du die Trainer an den Bildern?
-- [ ] N2264. **Fällig auf der Karte und Bestwert:** Löse im Taktiktrainer eine Aufgabe falsch und
-      stelle die Uhr zwei Tage vor (oder warte). Die Karte des Taktiktrainers trägt oben rechts auf
-      dem Brett die Plakette „1 fällig“. Nach einer Serie im Serienmodus steht dort auch
-      „Bestwert: … in Folge“.
-- [ ] N2265. **Kacheln unten:** Unter den Reihen stehen zwei gestrichelte Kacheln:
-      „Lernsammlung“ (Unterzeile „noch leer“ bzw. „1 Stellung“, Tipp öffnet die Lernsammlung) und
-      „Alle Kapitel“ („Übungen auf der Website“, Tipp öffnet die Trainingsseiten der Website).
-- [ ] N2266. **Link zur Trainingsseite eines Kapitels:** Die Links „Training zu diesem Kapitel
-      (Website)“ stehen nicht mehr im Training, sondern im Buch in jedem Kapitel in der Karte
-      „Training und Übungen“ unter den Trainern. Öffne Kapitel 9: Der Link führt zur
-      Trainingsseite von Kapitel 9. Ist der Platz recht?
-- [ ] N2267. **Checkliste, Kopf:** Oben steht groß die Zahl der Haken, daneben „von 77 Punkten“,
-      rechts gold „1 Kapitel fertig“, sobald ein Kapitel ganz abgehakt ist. Darunter ein Band mit
-      13 Abschnitten (0 bis 12, so breit wie das Kapitel Punkte hat), die sich gold füllen. Das
-      Fragezeichen neben „Hake ab, was du sicher kannst.“ erklärt, woher die Punkte kommen.
-- [ ] N2268. **Checkliste, Kapitelzeilen:** Alle Kapitel stehen in einer Karte, je Zeile ein Ring
-      mit der Nummer, die Leitfrage und rechts „4/6“. Ein ganz abgehaktes Kapitel zeigt einen
-      goldenen Kreis mit Haken und „fertig“. Ein Tipp klappt die Zeile auf: die Punkte als
-      abgerundete Kästchen (gold mit Haken, wenn abgehakt), darunter Werkzeug, Fehlerart und
-      „Zu Kapitel …“.
-- [ ] N2269. **Abhaken gleich schnell, hell und dunkel:** Hake in Kapitel 1 einen Punkt ab: Ring,
-      „1/6“, Band und Summe ändern sich sofort, der Haken bleibt nach dem Neuladen. Schalte unter
-      Einstellungen › Anzeige auf „Hell“: Training und Checkliste sind gut lesbar, Gold und
-      Kästchen deutlich zu sehen.
+- [ ] N2261. **Durchgehen:** Unter „Dein Stapel für heute“ steht kurz, wann Gelöstes wiederkommt;
+      ein Tipp zeigt die ganze Erklärung. Passt das so?
+- [ ] N2263. **Trainer-Karte:** Unten „Training“: Jede Karte zeigt ein kleines Brett mit einer
+      typischen Stellung. Erkennst du die Trainer an den Bildern?
+- [ ] N2266. **Link zur Trainingsseite:** Der Link „Training zu diesem Kapitel (Website)“ steht
+      jetzt im Buch in jedem Kapitel in der Karte „Training und Übungen“. Ist der Platz recht?
 
 ### Neu in 0.3.32: Deine Extras neu – „Ankleide“ (Arbeitschat, 31.10.2026)
 
@@ -651,47 +287,11 @@ Extras“. Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf
 „Profil“) › „Abzeichen testen (nur für dich)“ › mehrmals „Nächste Stufe erreichen“; „Probe
 beenden“ stellt alles zurück.
 
-- [ ] N2270. **Kopf und Vorschau:** Oben „Deine Extras“ mit Zähler rechts („4 von 8“: so viele
-      Extras sind frei oder angelegt). Darunter ein Kasten „So siehst du gerade aus“ mit deinem
-      Porträt samt Rahmen, deinem Namen, dem Titel als goldenes Band (falls angelegt) und „Stufe
-      6 · Vorposten“; darunter ein kleines Brett 4 × 4 in deinen Brettfarben mit deinem
-      Figurensatz und daneben „Brett …“, „Figuren …“, „Konfetti …“. Im Hintergrund ruhiges
-      Konfetti in deinen Konfettifarben. Wirkt das einladend, nicht wie ein Formular?
-- [ ] N2271. **Reiter:** Unter der Vorschau die Reiter „Rahmen“, „Brett“, „Figuren“, „Konfetti“,
-      „Titel“ als runde Schaltflächen; der gewählte ist hinterlegt. Auf einem schmalen Handy
-      passen alle fünf in eine Zeile, sonst lässt sich die Zeile seitlich wischen. Ein Tipp zeigt
-      die Kacheln dieser Art.
-- [ ] N2272. **Anlegen durch Antippen:** Mit Stufe 6 (Probe) im Reiter „Rahmen“ auf „Bronze“
-      tippen: Die Kachel bekommt einen goldenen Rand, einen Haken in der Ecke und „Angelegt“;
-      das Porträt oben und überall in der App trägt sofort den Bronzerahmen. Freie, nicht
-      angelegte Kacheln sagen „Antippen zum Anlegen“. Es gibt keine Knöpfe „Wählen“ mehr.
-- [ ] N2273. **Ablegen:** Die angelegte Kachel noch einmal antippen: Der Rahmen ist abgelegt.
-      Alternativ unter den Kacheln klein „Rahmen ablegen“ (erscheint nur, solange ein Extra
-      dieser Art angelegt ist). Bei Brett und Figuren führt Ablegen zurück zu „wie im Buch“.
-- [ ] N2274. **Gesperrte Kacheln:** Gesperrte Extras zeigen die echte Vorschau abgedunkelt (etwa
-      dein Porträt mit Goldrahmen, das Brett „Nacht und Gold“), ein Schloss in der Ecke und die
-      Bedingung („Ab Stufe 9“, „Mit allen Orden der Buchteile“, „5 Themen im Taktiktrainer in
-      Gold“). Bei Stufen und Themen zeigt ein kleiner goldener Balken, wie weit du bist (Stufe 6
-      von 9). Ein Tipp darauf bewirkt nichts. Ist klar, was man tun muss?
-- [ ] N2275. **Vorschau sofort:** Im Reiter „Figuren“ (ab Stufe 5) „Gold“ antippen: Das kleine
-      Brett oben zeigt sofort goldene Figuren, und die Zeile daneben sagt „Figuren Gold“. Im
-      Reiter „Konfetti“ (ab Stufe 2) „Bunt“ antippen: Das Konfetti oben wird bunt.
-- [ ] N2276. **Titel:** Im Reiter „Titel“ stehen „Taktiker“ und „Endspielkenner“ als runder
-      goldener Orden mit dem Namen darunter (das Band passt nicht in eine schmale Kachel). Mit
-      der Probe der Meisterschaft (Aufgabenseite › Themen zur Probe auf Gold, fünf Taktikmotive)
-      lässt sich „Taktiker“ anlegen; dann steht das goldene Band oben in der Vorschau und der
-      Titel unter deinem Namen im Profilkopf.
-- [ ] N2277. **Einstellungen › Brett:** Profil › „Einstellungen“ › Reiter „Brett“, ganz unten
-      bei Brettfarben und Figurensatz die Gruppe „Verdient“: Gesperrte Kacheln zeigen jetzt das
-      echte Brett bzw. die echten Figuren abgedunkelt mit Schloss und darunter die Bedingung,
-      nicht mehr leere graue Kästen. Sieht es nicht mehr nach Ladefehler aus?
-- [ ] N2278. **Hell und dunkel:** Profil › „Einstellungen“ › Darstellung hell, dann dunkel: Die
-      Vorschau, die Reiter, die Kacheln (Rand, Haken, Schloss, Balken) sind in beiden Fällen gut
-      lesbar; im hellen Modus ist die Vorschau leicht grau hinterlegt, im dunklen leicht heller
-      als die Karte.
-- [ ] N2279. **Bildschirmleser (wahlweise):** Mit TalkBack bzw. VoiceOver sagt eine Kachel ihren
-      Namen und Zustand, etwa „Rahmen Silber: angelegt, antippen zum Ablegen“ oder „Rahmen Gold:
-      gesperrt, Ab Stufe 9 (6 von 9)“; die Reiter werden als Reiter angesagt.
+- [ ] N2270. **Extras, Vorschau:** Profil › „Deine Extras“: Kasten „So siehst du gerade aus“ mit
+      Porträt, kleinem Brett und Konfetti im Hintergrund. Wirkt das einladend, nicht wie ein
+      Formular?
+- [ ] N2274. **Gesperrte Extras:** Abgedunkelt mit Schloss, Bedingung und kleinem Balken. Ist
+      klar, was man tun muss?
 
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
@@ -702,54 +302,14 @@ werden zu einem nächsten Schritt. Profil: Tipp auf „Profil“ unten in der Le
 Aufgabenseite (drei Sekunden auf das Zahnrad bzw. „Profil“): „Orden testen“ und „Abzeichen
 testen“; „Probe beenden“ stellt alles zurück.
 
-- [ ] N2240. **Erfolge, Glanzstück:** Unter „Dein Fortschritt“ steht die Karte „Deine Erfolge“
-      mit Zähler oben rechts („27 von 39“). Oben ein flacher Streifen: links „Zuletzt verdient“
-      mit Datum, in der Mitte das Stück mit seinem Namen darunter („Teil Endspiel“), rechts der
-      kurze Satz zur Bedingung und „Teilen“. Er ist etwa halb so hoch wie im Entwurf. Passt die
-      Höhe so?
-- [ ] N2241. **Erfolge ohne verdientes Stück:** Auf einem frischen Gerät (oder nach „Daten
-      löschen“) steht statt des Glanzstücks ein Hinweis wie „Dein erstes Stück wartet: Erste
-      Partie. …“ mit dem Bild als Silhouette. Freundlich genug?
-- [ ] N2242. **Als Nächstes:** Darunter „Als Nächstes“ mit zwei bis vier Stücken, denen am
-      wenigsten fehlt, als Silhouette in einem goldenen Fortschrittsring mit „19 von 24“
-      darunter. Abzeichen erscheinen hier nur, wenn sich ihr Fortschritt zählen lässt (etwa
-      „Fünfzig Partien 41 von 50“, „Drei Rekorde 2 von 3“; nicht „Brillanter Zug“).
-- [ ] N2243. **Regale:** Darunter je Bereich ein Regal zum Wischen mit Zähler („5 von 9“): Buch,
-      Teile des Buches, Bots besiegt, Abzeichen. Verdiente Stücke farbig, offene als Silhouette.
-      Ein Tipp auf ein Stück zeigt darunter Name und Bedingung (bei offenen mit Stand „(2 von
-      78)“), bei verdienten dazu „Teilen“. Probe: Aufgabenseite › „Orden testen“ › einen Teil
-      auf 100 % setzen, dann steht der Orden farbig im Regal. Lässt sich gut wischen?
-- [ ] N2244. **Dein Fortschritt schlanker:** Die Karte „Dein Fortschritt“ zeigt jetzt nur Stufe
-      und EP, die Ringe Abbildungen, Übungen, Lernziele, Trainer und „Je Kapitel“. Die
-      aufklappbaren Ringe für Teile und Bots und das Abzeichengitter sind dort weg (sie stehen in
-      „Deine Erfolge“). Die Erklärung zu Abzeichen und EP steht unten in „Deine Erfolge“ unter
-      „So bekommst du Orden, Abzeichen und EP“.
-- [ ] N2245. **Wertung, Kacheln:** Mit gewerteten Partien stehen oben drei Kacheln Blitz,
-      Schnellschach, Klassisch mit Zahl und „3 Partien“; die Zeitklasse deiner letzten Partie ist
-      gold umrandet, ein Tipp wählt eine andere. Ohne gewertete Partie steht statt der Kacheln
-      eine Einladung mit Knopf „Partie spielen“, der zu „Spielen“ führt.
-- [ ] N2246. **Wertung, Schätzung:** Eine Zeitklasse ohne eigene Partie zeigt „≈ 1460“ und
-      „geschätzt“ in blasser Schrift. Ein Tipp darauf zeigt den Satz „Noch keine gewertete Partie
-      in Klassisch. Die Zahl ist aus deiner Wertung in einer anderen Zeitklasse geschätzt …
-      Deine erste gewertete Partie in Klassisch ersetzt die Schätzung.“ Verständlich?
-- [ ] N2247. **Wertung, Kurve und Maßstab:** Unter den Kacheln die Kurve der gewählten Zeitklasse
-      mit „vorläufig · 3 von 10“ in den ersten zehn Partien. Der Maßstab steht nicht mehr in der
-      Karte, sondern in Einstellungen › Anzeige › „Maßstab der Wertung“. Probe: dort „chess.com“
-      wählen, zurück ins Profil: Unter dem Titel steht „Zahlen wie bei chess.com · ändern in den
-      Einstellungen“, Zahl UND Kurve stehen jetzt im Maßstab von chess.com, darunter „Bereich
-      1190–1490 · chess.com Schnellschach“.
-- [ ] N2248. **Wertung, Phasen und Mehr:** Unter der Kurve „Nach Phasen“ mit drei Balken
-      (Eröffnung, Mittelspiel, Endspiel) und „etwa 1400“; bis zehn Partien blass mit „Ab 10
-      Partien genau; bis dahin nur ein Eindruck.“ (erst nach einer ausgewerteten Partie). „Mehr“
-      klappt Ausschnitt, kurze Erklärung und „Wertung zurücksetzen“ auf.
-- [ ] N2249. **Rekorde:** „Deine Rekorde“ zeigt groß nur die aufgestellten Rekorde mit Zeichen,
-      Wert, Datum und „Teilen“. Darunter „Stell deinen ersten Rekord auf“ (sobald einer steht:
-      „Noch mehr Rekorde“) mit zwei Vorschlägen, je mit kurzem Satz und Knopf „Los“, und „Noch 7
-      weitere Rekorde“ zum Aufklappen. „Höchste Wertung“ sagt dort „Zählt ab der zehnten
-      gewerteten Partie in einer Zeitklasse: noch 7 Partien.“ statt „noch keiner“. Probe: einen
-      Trainer eine Runde spielen, dann stehen „Richtige Trainerantworten an einem Tag“ und
-      „Lerntage in einer Woche“ oben. Hinweis: „vorher“ (der alte Wert) fehlt noch, weil die App
-      ihn nicht speichert.
+- [ ] N2240. **Erfolge, Glanzstück:** Profil › „Deine Erfolge“: Der flache Streifen „Zuletzt
+      verdient“ ist etwa halb so hoch wie im Entwurf. Passt die Höhe so?
+- [ ] N2241. **Erfolge ohne verdientes Stück:** Auf einem frischen Gerät steht „Dein erstes Stück
+      wartet: Erste Partie. …“ mit Silhouette. Freundlich genug?
+- [ ] N2243. **Regale:** Die Regale in „Deine Erfolge“ (Buch, Teile, Bots, Abzeichen) seitlich
+      wischen. Lässt es sich gut wischen?
+- [ ] N2246. **Wertung, Schätzung:** Eine Kachel mit „≈ 1460 geschätzt“ antippen: Ist der Satz
+      darunter verständlich?
 
 ### Neu in 0.3.29: Meisterschaft je Thema (Arbeitschat, 31.10.2026)
 
@@ -761,42 +321,16 @@ Stufe. Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das
 „Themen testen (Meisterschaft)“ › etwa „Fesselung zur Probe auf Silber“; die Probe zählt nur für
 die Karte „Deine Themen“ und die Titel, nicht für Erfahrung und Abzeichen. Danach „Probe beenden“.
 
-- [ ] N2180. **Karte „Deine Themen“:** Profil, ganz oben unter „Dein Fortschritt“. Ohne geübte
-      Themen steht eine Einladung zum Üben. Nach der Probe „Fesselung zur Probe auf Silber“ steht
-      dort eine Sternmedaille mit Turm und Silberrand, darunter „Fesselung“ und der Weg zu Gold
-      („0 von 3 Tagen bis Gold“). Verständlich?
-- [ ] N2181. **Erste echte Medaille:** Training › Taktiktrainer, Motiv „Fesselung“ wählen und
-      fünf Aufgaben richtig lösen. Am Rundenende steht unter dem Ergebnis eine kleine Medaille
-      mit kurzem Glanz und „Fesselung: Bronze!“. Mit ausgeschalteten Feiereffekten
-      (Einstellungen) ohne Glanz. Passt die Meldung?
-- [ ] N2182. **Fortschritt und Bedingung:** Profil › Deine Themen: unter der Bronzemedaille steht
-      „5 von 15 bis Silber“. Ein Tipp auf das Thema zeigt die Bedingung für Silber und die Knöpfe
-      „Üben“ und „Teilen“. Noch nicht erreichte Themen stehen als graue Silhouette mit „… von 5
-      bis Bronze“.
-- [ ] N2183. **Üben:** Im aufgeklappten Thema „Üben“ tippen: Der passende Trainer öffnet sich.
-      Bei einem Endspielthema (etwa Opposition) ist im Endspieltrainer gleich die Gruppe
-      „Bauernendspiele“ gewählt. Den Taktiktrainer stellt ein anderer Arbeitschat auf das Motiv
-      ein; bis dahin öffnet er mit der gewohnten Auswahl.
-- [ ] N2184. **Teilen:** Im aufgeklappten Thema mit Medaille „Teilen“: Es entsteht ein Bild
-      „Meisterschaft“ mit der Medaille groß, „Fesselung: Silber“ und (bei echter Stufe) „Verdient
-      am …“. Gefällt dir das Bild?
-- [ ] N2185. **Medaillenbilder:** Probe für mehrere Themen auf Gold: Jedes Taktikmotiv hat ein
-      eigenes Motiv im Stern (Springer, Turm, Schwerter, Blitz, „+2“, Kreispfeil, fallender König,
-      Hantel, Uhr, Dame, Krone, Haken), Endspielthemen eine Strahlenmedaille, Strukturen ein
-      Sechseck, Falle oder Köder ein Dreieck. Bronze, Silber und Gold gut zu unterscheiden?
-- [ ] N2186. **Abzeichen:** Profil › Abzeichen: drei neue Abzeichen „Erstes Gold“, „Fünf Themen
-      in Silber“, „Alle Taktikmotive in Gold“ mit eigenen Bildern. Mit „Abzeichen testen“ auf der
-      Aufgabenseite lassen sie sich auslösen. Passen Namen und Bilder?
-- [ ] N2187. **Titel „Taktiker“:** Probe für fünf Taktikmotive auf Gold (etwa Fesselung, Spieß,
-      Doppelschach, Hinlenkung, Zwischenzug). Profil › Deine Extras › „Titel unter deinem Namen“:
-      „Titel ‚Taktiker‘“ ist wählbar; nach „Wählen“ steht oben unter deinem Namen in Gold
-      „Taktiker“. „Titel ‚Endspielkenner‘“ bleibt gesperrt mit „3 Themen im Endspieltrainer in
-      Gold“. Gefällt dir der Platz unter dem Namen?
-- [ ] N2188. **Erfahrungspunkte:** Eine echte Bronze bringt 10 Punkte, Silber weitere 25, Gold
-      weitere 50 (Profil › Erfahrung). Die Probe bringt keine Punkte. Passt die Gewichtung?
-- [ ] N2189. **Zum Auffrischen:** Liegt die letzte richtige Antwort eines Themas mit Medaille mehr
-      als 60 Tage zurück, steht leise „Zum Auffrischen“ unter der Medaille; die Stufe bleibt.
-      Prüfbar erst später; ist der Hinweis so recht?
+- [ ] N2181. **Erste echte Medaille:** Fünf Aufgaben eines Motivs richtig lösen. Gefällt dir die
+      Meldung „Fesselung: Bronze!“ mit kurzem Glanz am Rundenende?
+- [ ] N2184. **Teilen:** Profil › Deine Themen, Thema mit Medaille antippen, „Teilen“. Gefällt dir
+      das Bild „Meisterschaft“?
+- [ ] N2185. **Medaillenbilder:** Probe für mehrere Themen auf Bronze, Silber und Gold
+      (Aufgabenseite › Themen testen). Sind die drei Stufen gut zu unterscheiden?
+- [ ] N2186. **Abzeichen der Meisterschaft:** Profil › Deine Erfolge › Regal „Abzeichen“: „Erstes
+      Gold“, „Fünf Themen in Silber“, „Alle Taktikmotive in Gold“. Passen Namen und Bilder?
+- [ ] N2188. **Erfahrungspunkte:** Bronze bringt 10, Silber weitere 25, Gold weitere 50 Punkte
+      (geprüft). Passt die Gewichtung?
 
 ### Neu in 0.3.28: Wochenaufträge (Arbeitschat, 31.10.2026)
 
@@ -809,35 +343,13 @@ nicht dran war, einen Bot eine Stufe über deinem stärksten besiegten schlagen,
 Lernziel abhaken, fällige Karten wiederholen, einen Fehler eintragen, Partien spielen, die
 Tagesaufgabe an mehreren Tagen. Noch nicht auf der Testseite: Zweig `gami-p6-wochenauftraege`.
 
-- [ ] N2190. **Drei Aufträge:** Buch, Karte „Deine Woche“, Abschnitt „Aufträge dieser Woche“
-      über „Wann übst du?“. Drei Zeilen mit Satz, Stand „0 von …“ und Knopf. Klingen die Sätze
+- [ ] N2190. **Wochenaufträge:** Buch › Karte „Heute“ › Reiter „Aufträge“. Klingen die Sätze
       freundlich und freiwillig genug?
-- [ ] N2191. **Fest für die Woche:** App schließen und wieder öffnen, auch nach einer gelösten
-      Übung oder einer Partie: Es bleiben dieselben drei Aufträge. Erst am Montag kommen neue.
-- [ ] N2192. **Knopf führt hin:** Bei jedem Auftrag auf den Knopf tippen („Zur Abbildung“,
-      „Üben“, „Zum Trainer“, „Spielen“ usw.). Er öffnet genau die passende Stelle; beim Trainer
-      den genannten Trainer.
-- [ ] N2193. **Fortschritt zählt mit:** Einen Auftrag teilweise erledigen (etwa eine neue
-      Abbildung 30 Sekunden ansehen), zurück ins Buch: Der Stand steigt („1 von 10“). Was du vor
-      Montag getan hast, zählt nicht.
-- [ ] N2194. **Erledigt:** Einen Auftrag ganz erledigen. Die Zeile wird grün mit Haken und
-      „Erledigt · +15 Erfahrung“, die Knöpfe verschwinden. Im Profil steigen die
-      Erfahrungspunkte um 15.
-- [ ] N2195. **Tauschen:** Bei einem offenen Auftrag „Tauschen“. Es kommt ein anderer Auftrag,
-      der noch nicht in der Liste steht; an dieser Stelle gibt es danach kein „Tauschen“ mehr, an
-      den anderen schon. Erledigte lassen sich nicht tauschen. Genügt einmal je Auftrag?
-- [ ] N2196. **Bot besiegen:** Wenn der Auftrag „Besiege einen Bot der Stufe N“ kommt (sonst
-      tauschen, bis er kommt): „Bot wählen“ öffnet „Spielen“ mit einem Bot dieser Stufe, gewertet.
-      Nach einem Sieg gegen ihn steht der Haken. Passt die Stufe (eine über deinem stärksten
-      besiegten Bot)?
-- [ ] N2197. **Trainer lange nicht dran:** Der Auftrag „Spiele eine Runde im Trainer …“ nennt
-      einen Trainer, den du lange oder nie gespielt hast. Eine Runde dort zu Ende spielen, zurück
-      ins Buch: Haken.
-- [ ] N2198. **Abzeichen „Acht Aufträge“:** Profil › Abzeichen: neues Abzeichen (Raute mit 8)
-      „In einem Kalendermonat acht Wochenaufträge erledigt.“, grau bis zum achten Auftrag in einem
-      Monat. Gefällt Bild und Bedingung?
-- [ ] N2199. **Englisch:** Einstellungen › Sprache Englisch: Abschnitt „This week’s tasks“ mit
-      englischen Sätzen und Knöpfen, „Swap“ statt „Tauschen“. Alles verständlich?
+- [ ] N2195. **Tauschen:** Jeden Auftrag kann man einmal tauschen (geprüft). Genügt das?
+- [ ] N2196. **Bot besiegen:** Der Auftrag „Besiege einen Bot der Stufe N“ nennt eine Stufe über
+      deinem stärksten besiegten Bot. Passt diese Stufe für dich?
+- [ ] N2198. **Abzeichen „Acht Aufträge“:** Profil › Deine Erfolge › Regal „Abzeichen“ (Raute mit
+      8). Gefällt Bild und Bedingung?
 
 ### Neu in 0.3.27: Monatsrückblick (Arbeitschat, 31.10.2026)
 
@@ -848,37 +360,10 @@ sicherstes Thema und eins zum Üben, dazu ein nächster Schritt für den neuen M
 „Profil“ bzw. das Zahnrad) › „Monatsrückblick testen“ › „Rückblick dieses Monats öffnen“ zeigt den
 laufenden Monat; die Probe ändert nichts.
 
-- [ ] N2210. **Startkarte:** Am 1. bis 7. November steht oben im Buch „Dein Oktober ist fertig“ mit
-      Knopf „Ansehen“ (nur wenn du im Oktober mindestens einen Lerntag hattest). Sie steht direkt
-      unter „Dein nächster Schritt“ und verdrängt solange die Wochenkarte. Ist das so recht?
-- [ ] N2211. **Karte verschwindet:** Nach „Ansehen“ und Zurück ist die Karte weg, auch nach dem
-      Neuladen. Am 8. November kommt sie ohnehin nicht mehr.
-- [ ] N2212. **Kalender:** Oben „Dein Oktober“, darunter „Oktober 2026“, ein Satz wie „Im Oktober
-      hattest du 12 Lerntage.“ und ein Kalender ab Montag; Lerntage gold gefüllt, die übrigen
-      Tage als leiser Kreis. Stimmen die Tage mit deinem Gefühl überein?
-- [ ] N2213. **Ton bei wenig Aktivität:** Bei 2 bis 5 Lerntagen steht „… Jeder zählt.“ dabei, bei
-      einem Tag „Im Oktober hattest du einen Lerntag. Jeder zählt.“ Kein Rot, kein Vergleich mit
-      dem Vormonat. Passt der Ton?
-- [ ] N2214. **Zahlen und Wertung:** Abschnitt „Das hast du gemacht“ (Abbildungen, gelöste
-      Übungen, Antworten in den Trainern, Wiederholungskarten, Partien, Siege; Nullen fehlen).
-      Hast du gewertete Partien gespielt, steht unter „Deine Wertung“ je Zeitklasse der Wert am
-      Monatsanfang und am Monatsende, ohne Farbe. Verständlich?
-- [ ] N2215. **Neu verdient und Rekorde:** Im Oktober verdiente Orden und Abzeichen stehen mit Bild,
-      Namen und Datum unter „Neu verdient“; Rekorde, die im Oktober aufgestellt wurden, unter
-      „Neue Rekorde“. Hinweis: Wird ein Rekord im November verbessert, wandert er in den
-      November (die App merkt sich nur die letzte Verbesserung).
-- [ ] N2216. **Themen:** Unter „Deine Themen“ steht „Am sichersten: … (9 von 10 richtig)“ und, wenn
-      ein anderes Thema unter 70 % liegt, „Zum Üben: …“ mit Knopf „Üben“, der den passenden
-      Trainer öffnet. Erst ab 8 Antworten zu einem Thema erscheint etwas.
-- [ ] N2217. **Nächster Schritt:** „Dein nächster Schritt für November“ zeigt denselben Vorschlag
-      wie die Karte oben im Buch; der Knopf führt dorthin.
-- [ ] N2218. **Teilen:** „Rückblick teilen“ öffnet am Handy das Teilen-Menü mit einem Bild: dunkler
-      Grund, goldener Rahmen, „MONATSRÜCKBLICK“, der Kalender als Punkte (Lerntage gold),
-      „Oktober 2026“, „12 Lerntage“, Name und Adresse der App. Gefällt dir das Bild?
-- [ ] N2219. **Ältere Rückblicke im Profil:** Profil, unter „Dein Fortschritt“: Karte „Rückblicke“
-      mit einem Knopf je abgeschlossenem Monat mit Lerntagen („Oktober 2026“, der jüngste
-      zuerst); er öffnet den Rückblick des Monats. Vor dem 1. November gibt es die Karte noch
-      nicht.
+- [ ] N2212. **Rückblick, Kalender:** Ab 1. November den echten Oktober öffnen. Stimmen die
+      goldenen Lerntage mit deinem Gefühl überein?
+- [ ] N2218. **Rückblick teilen:** „Rückblick teilen“ am Handy. Öffnet sich das Teilen-Menü, und
+      gefällt dir das Bild?
 
 ### Neu in 0.3.26: Rivalen unter den Bots (Arbeitschat, 31.10.2026)
 
@@ -890,37 +375,11 @@ Rivale stellt sich vor. Die Karte steht oben im Buch (höchstens zwei Karten zug
 nächster Schritt“ und „Deine Woche“ kommen vorher; „Nicht jetzt“ bzw. „Später“ dort machen Platz).
 Im Bereich Spielen erscheint sie erst, wenn der Haupt-Chat sie dort einträgt.
 
-- [ ] N2200. **Karte erscheint:** Beende eine Partie gegen einen beliebigen Bot (auch ungewertet,
-      Aufgeben genügt). Im Buch steht danach die Karte „Dein Rivale: …“ mit Porträt, Spruch in
-      Anführungszeichen, „Euer Duell: 0 : 0“ (bzw. mit deiner Partie, falls es derselbe Bot war)
-      und Knopf „Herausfordern“. Vor der ersten Partie gegen einen Bot gibt es die Karte nicht.
-- [ ] N2201. **Wahl passend zur Stärke:** Mit Wertung: Ist der Rivale etwas stärker als du (in
-      der Gegnerwahl steht seine Zahl; etwa 50 bis 150 über deiner Wertung im Profil)? Ohne
-      Wertung (frisches Gerät): ein Bot der Stufe 1.
-- [ ] N2202. **Revanche:** Auf „Herausfordern“ bzw. „Revanche“ tippen. „Spielen“ öffnet sich mit
-      dem Rivalen als Gegner, „Gewertete Partie“ angehakt und deiner zuletzt gewählten Bedenkzeit;
-      die Partie beginnt erst mit „Beginnen“.
-- [ ] N2203. **Bilanz und Spruch:** Partie gegen den Rivalen verlieren (Aufgeben) und zurück ins
-      Buch. Die Bilanz zählt die Niederlage („Euer Duell: 0 : 1“), der Spruch passt zum Sieg des
-      Bots (beim Angreifer etwa „Revanche? Ich greife wieder am Königsflügel an.“). Nach einem
-      Remis kommt ein Remis-Spruch und „(1 Remis)“ hinter der Bilanz.
-- [ ] N2204. **Duell gewonnen:** Rivalen in einer gewerteten Partie besiegen (Stufe 1 geht
-      leicht). Im Buch zeigt die Karte „Duell gewonnen!“, „<Name> gratuliert: „…““, ein kleines
-      Feuerwerk (nur mit Schalter „Feiereffekte“ an) und „Dein neuer Rivale: …“. „Weiter“
-      schließt die Feier; sie kommt nicht wieder. Ungewertete Siege zählen nicht.
-- [ ] N2205. **Anderer Rivale:** „Anderer Rivale“ tippen: ein anderer Bot wird Rivale, der Knopf
-      verschwindet bis morgen (auch nach Neuladen). Am nächsten Tag ist er wieder da.
-- [ ] N2206. **Erfahrungspunkte:** Profil › Erfahrung: Ein gewonnenes Duell bringt 40 Punkte
-      (vorher und nachher vergleichen).
-- [ ] N2207. **Abzeichen:** Profil › Abzeichen: „Drei Rivalen besiegt“ (Schild mit gekreuzten
-      Schwertern und Springer) und „Zehn Rivalen besiegt“ (Rosette mit Schwertern und König) als
-      Silhouetten mit Bedingung; nach drei gewonnenen Duellen leuchtet das erste. Gefallen die
-      Bilder?
+- [ ] N2207. **Abzeichen der Rivalen:** Profil › Deine Erfolge › Regal „Abzeichen“: „Drei Rivalen
+      besiegt“ und „Zehn Rivalen besiegt“. Gefallen die Bilder?
 - [ ] N2208. **Sprüche lesen:** Es gibt je Charakter vier Sprüche (Begrüßung, nach Sieg des Bots,
       Remis, nach seiner Niederlage), zwölf Charaktere. Klingen sie freundlich und ohne Druck?
       Wünsche zu einzelnen Sätzen einfach als Text schicken („N2208: Materialist …“).
-- [ ] N2209. **Datensicherung:** Bilanz und Rivale ziehen mit der Datensicherung um (Einstellungen
-      › Sicherung anlegen, auf anderem Gerät einspielen): gleiche Karte, gleiche Bilanz.
 
 ### Neu in 0.3.26: Eigene Ziele (Arbeitschat, 31.10.2026)
 
@@ -930,41 +389,10 @@ Ziele“, unter Wochenziel und Übungsplan. Die Wochenkarte zeigt ihre Abschnitt
 Wochenziel gewählt ist; wähle also zuerst in „Deine Woche“ ein Wochenziel (etwa „3 Tage“). Kein
 Ablaufdatum, nicht erreichte Ziele zählt die App nirgends.
 
-- [ ] N2230. **Vorschläge:** Buch öffnen, in „Deine Woche“ steht „Deine Ziele“. Ohne angeheftetes
-      Ziel stehen dort bis zu fünf Vorschläge, das am wenigsten Fehlende zuerst (etwa „Besiege Tom
-      (beliebige Zeitart).“, „Löse alle Übungen von Kapitel 1: noch 3.“, „Dir fehlen noch 24 Bots
-      für den Orden …: Tom, Marie, …“). Jeder hat „Anheften“ und einen Knopf, der direkt hinführt.
-      Verständlich, und klingt jeder Satz natürlich?
-- [ ] N2231. **Anheften und Lösen:** Bei einem Vorschlag „Anheften“ tippen. Das Ziel steht oben mit
-      Balken „x von y“ (bei Ringen) und den Knöpfen „Spielen“, „Üben“ oder „Weiterlesen“ sowie
-      „Lösen“. Die Vorschläge klappen zu; „Ziel wählen“ öffnet sie wieder. „Lösen“ entfernt das Ziel
-      sofort, ohne Nachfrage und ohne Spur.
-- [ ] N2232. **Höchstens drei:** Drei Ziele anheften. Danach gibt es kein „Ziel wählen“ mehr, bis du
-      eines löst.
-- [ ] N2233. **Eigenes Ziel „Bot besiegen“:** „Ziel wählen“ › „Eigenes Ziel: Bot besiegen“. Es
-      erscheint dieselbe Bot-Liste wie beim Spielen (Stufen zum Aufklappen, Sterne für schon
-      besiegte Bots), darunter die Zeitart Blitz, Schnellschach, Klassisch oder egal. Bot und
-      Zeitart wählen, „Anheften“. Einen Bot wählen, den du in dieser Zeitart schon gewertet besiegt
-      hast: Statt „Anheften“ kommt der Satz „Das hast du schon geschafft …“.
-- [ ] N2234. **Spielen:** Bei einem Bot-Ziel „Spielen“ tippen. Der Spielstart öffnet sich mit dem
-      Bot gewählt, „Gewertete Partie“ an und einer Bedenkzeit der Zeitart (Schnellschach etwa
-      10 + 0). Du tippst nur noch „Beginnen“.
-- [ ] N2235. **Erreicht nach der Partie:** Ein leichtes Ziel anheften (eigenes Ziel: Tom, Zeitart
-      egal), dann eine gewertete Partie gegen Tom gewinnen. Zurück im Buch: kleines Feuerwerk
-      (wenn „Feiereffekte“ an) und „Ziel erreicht: Tom besiegt!“; das Ziel ist nicht mehr
-      angeheftet. Die Feier kommt nur einmal (nach Neuladen nicht wieder).
-- [ ] N2236. **Erreichte Ziele im Profil:** Profil öffnen. Unter „Dein Fortschritt“ steht die Karte
-      „Erreichte Ziele“ mit „1 eigenes Ziel erreicht.“ und der Zeile „Tom besiegt · Datum“
-      (neueste zuerst, höchstens zehn Zeilen). Vor dem ersten erreichten Ziel fehlt die Karte.
-- [ ] N2237. **Erfahrungspunkte:** Vor und nach dem erreichten Ziel die Erfahrungspunkte im Profil
-      ansehen: Jedes erreichte Ziel gibt 20 Punkte dazu.
-- [ ] N2238. **Abzeichen „Zehn eigene Ziele“:** Profil › Abzeichen: Das neue Abzeichen steht im
-      Gitter (Banner mit der Zahl 10, hellblau), Bedingung „Zehn selbst gewählte Ziele erreicht“.
-      Zum Ansehen ohne zehn Ziele: Aufgabenseite (drei Sekunden auf das Zahnrad) › „Abzeichen
-      testen“ › „Zehn eigene Ziele: verdienen“ (Meldung wie im echten Fall); danach „Probe
-      beenden“.
-- [ ] N2239. **Englisch:** Sprache auf Englisch: Abschnitt „Your goals“, Vorschläge wie „Beat Lotte
-      in rapid.“, Profilkarte „Goals reached“. Alles übersetzt?
+- [ ] N2230. **Zielvorschläge:** Buch › Karte „Heute“ › Reiter „Ziele“. Klingt jeder Vorschlag
+      natürlich?
+- [ ] N2238. **Abzeichen „Zehn eigene Ziele“:** Profil › Deine Erfolge › Regal „Abzeichen“
+      (Banner mit 10, hellblau). Gefällt das Bild?
 
 ### Neu in 0.3.25: Serienmodus im Taktiktrainer (Arbeitschat, 31.10.2026)
 
@@ -975,156 +403,10 @@ Das Ergebnis heißt etwa „12 in Folge“ und steht als Rekord „Taktikserie o
 Deine Rekorde. Außerdem wählt der Taktiktrainer jetzt das Motiv vor, wenn „Dein nächster Schritt“
 ein unsicheres Taktikthema vorschlägt.
 
-- [ ] N2220. **Start der Serie:** Training › Taktiktrainer, Quelle „Aus dem Buch“. Unter Thema und
-      Stufe stehen „Runde starten“ und darunter „Serie ohne Fehler“, darunter ein kurzer Satz, wie
-      die Serie funktioniert. Tippe „Serie ohne Fehler“: Oben steht „Serie: 0 in Folge“, die erste
-      Aufgabe hat „Stufe 1“. Verständlich?
-- [ ] N2221. **Weiter ohne Fehler:** Löse die Aufgabe ohne falschen Zug und ohne Hilfe. Der
-      Stand oben springt auf „Serie: 1 in Folge“, darunter erscheint „Weiter“. Nach drei gelösten
-      Aufgaben kommt Stufe 2 (unter dem Brett „· Stufe 2“). Steigt die Schwierigkeit spürbar?
-- [ ] N2222. **Ein Fehler beendet die Serie:** Ziehe in einer Aufgabe einen falschen Zug (roter
-      Pfeil) und löse sie dann zu Ende, oder tippe „Lösung zeigen“. Unter dem Brett steht „Serie
-      vorbei: Diese Aufgabe ging daneben.“ und „N in Folge“ (bei null „Diesmal keine in Folge.
-      Gleich noch einmal?“). Die Lösung bleibt auf dem Brett sichtbar. Passt der Ton?
-- [ ] N2223. **Neuer Rekord:** Schaffe mindestens eine Aufgabe und beende die Serie. Beim ersten
-      Mal steht „Neuer Rekord: N in Folge.“, später nur, wenn du mehr schaffst als bisher, dann mit
-      „(vorher …)“. Darunter „Deine beste Serie: … in Folge“. Gleich viele sind kein Rekord.
-- [ ] N2224. **Serie beenden:** Ab der ersten gelösten Aufgabe steht unter der Aufgabe „Serie
-      beenden“. Tippen beendet die Serie mit „Serie beendet.“ und zählt die bisher gelösten
-      Aufgaben als Ergebnis (und als Rekord). Brauchst du den Knopf, oder lieber weglassen?
-- [ ] N2225. **Neue Serie und andere Übung:** Nach dem Ende startet „Neue Serie“ eine frisch
-      gemischte Serie bei 0; „Andere Übung“ führt zurück zur Auswahl. Mit einem gewählten Motiv
-      (etwa Fesselung) kommen nur Aufgaben dieses Motivs. Richtig?
-- [ ] N2226. **Rekordtafel:** Profil › Deine Rekorde hat jetzt neun Zeilen; neu ist
-      „Taktikserie ohne Fehler“ (vor der ersten Serie „noch keiner“). „Versuchen“ öffnet den
-      Taktiktrainer. Stimmt das?
-- [ ] N2227. **Zählt wie eine Runde:** Nach einer Serie zählt sie in Profil wie eine Runde des
-      Taktiktrainers (Erfahrungspunkte, Abzeichen für Trainer, Lerntag im Wochenziel); die falsch
-      gelöste Aufgabe kommt als Wiederholungskarte in „Fällige Wiederholungen“. Passt das?
-- [ ] N2228. **Motiv vorgewählt aus „Dein nächster Schritt“:** Taktiktrainer, Thema „Fesselung“,
-      Runde starten und bei acht Aufgaben einfach „Lösung zeigen“ und „Weiter“ tippen. Zurück im
-      Buch steht in „Dein nächster Schritt“ (eventuell unter „Lieber etwas anderes?“) „Fesselung
-      klappt noch nicht so sicher (0 von 8 richtig). Eine kurze Runde?“. „Üben“ öffnet den
-      Taktiktrainer mit „Fesselung“ schon im Feld Thema. Aus „Training“ geöffnet steht dort wie
-      bisher „Gemischt“. Stimmt das?
-- [ ] N2229. **Englisch:** Sprache auf Englisch: Knopf „Streak without a mistake“, Stand
-      „Streak: 3 in a row“, Rekord „Tactics streak without a mistake“. Stimmt das?
-
-### Neu in 0.3.24: Trainer-Feinschliff 2 (Nebenchat, 31.10.2026)
-
-- [ ] N2015. **Eignungsprüfung je Trainer (zur Durchsicht):** Jeder Trainer schließt eigene Arten
-      von Stellungen aus. Bitte prüfe die Regeln:
-      Zielbilanz: kein Schach, kein Matt oder Patt, kein laufender Abtausch (die Seite am Zug
-      kann sofort Material gewinnen); hängende eigene Figuren und Fesselungen bleiben erlaubt.
-      Faktorenbilanz: kein Schach, kein Ende, kein sofort gewinnbarer Figurenwert; ein
-      hängender Bauer bleibt erlaubt (Gambits). Planfragen und LAP: kein Schach, kein Ende, kein
-      sofortiger Materialgewinn, keine hängende oder gefesselte eigene Figur (die Warum-Fragen des
-      Buches bleiben unberührt). Wettrennen: nur kein Schach und kein Ende. Denkroutine: Schach
-      ist jetzt erlaubt (wie Abb. 12.3), nur Ende und weniger als zwei Züge fallen weg.
-      Gangarten und Zug aufschreiben: Schach und Fesselung erlaubt, nur Ende fällt weg. Röntgen:
-      kein Schach, kein Ende. Zählen: kein Schach, kein Ende, Lehrbilder ohne König bleiben.
-      Falle oder Köder: kein Schach, kein Ende. Endspiel: nur Ende fällt weg. Gefunden und jetzt
-      ausgeschlossen: 5 Zielbilanz-Aufgaben im Schach, 2 mit Matt oder Patt, 8 Röntgen- und 6
-      Zählstellungen mit Patt. Eine Runde Planfragen enthält jede Stellung nur einmal.
-- [ ] N2016. **Gangarten, Begründung:** Koordinaten-Trainer › Gangarten. Nach dem Prüfen steht zu
-      jedem Feld der Grund: erlaubt oder Schlag, falsche Gangart (mit der Gangart der Figur), Weg
-      versperrt, eigene Figur, Bauer schlägt nicht ins Leere, Fesselung an den König, König
-      würde ins Schach ziehen, Schach bleibt bestehen.
-- [ ] N2017. **Engine bei den Bilanzen:** Nach der Antwort in Zielbilanz, Faktorenbilanz,
-      Planfragen und LAP steht „Was sagt die Engine?“ mit Bewertungsbalken und der besten
-      Fortsetzung zum Durchspielen. Bei Ziel- und Faktorenbilanz sagt ein Satz, ob Bilanz und
-      Engine dieselbe Seite vorn sehen (unter einem halben Bauern gilt „ausgeglichen“). Die
-      Zielbilanz sieht die Seite vorn, die mehr Zielpunkte hat; die Faktorenbilanz die Seite mit
-      mehr Faktoren für sich. Passt diese Lesart?
-- [ ] N2018. **Stufen (zur Durchsicht):** Über der Runde von Zielbilanz, LAP, Denkroutine und
-      Feld finden steht „gemischt, leicht, mittel, schwer“, mit einem Satz, was gemessen wird.
-      Zielbilanz: Zahl der „teils“ (0 leicht, 1–2 mittel, ab 3 schwer). LAP: Abstand zur nächsten
-      Leichtfigur in freien Feldern (zu Hause oder ab 3 leicht, Gleichstand schwer). Denkroutine:
-      legale Züge (bis 25 leicht, bis 40 mittel). Feld finden: leicht nur Weiß, mittel wie bisher,
-      schwer zufällig wechselnd. „Falle oder Köder“ erklärt seine Stufen jetzt mit den
-      Lichess-Wertungen (Stufe 1 unter 1000 bis Stufe 5 über 1900).
-- [ ] N2019. **Wiederholung:** Falsch gelöste Aufgaben aus Zähltrainer, Röntgen-Trainer und
-      LAP-Übung kommen jetzt auch wieder („Wiederholen“ im Trainer, „Fällige Wiederholungen“ im
-      Bereich Training). Der Abweichungsmodus bleibt draußen, weil die Engine die Abweichung jedes
-      Mal neu wählt (zur Durchsicht).
-- [ ] N2020. **Zähltrainer, Abzug:** Steht eine Langschrittfigur hinter einer eigenen Figur, die
-      das Feld selbst nicht angreift, zählt sie nicht mit (Abb. 1.6); nach der Antwort steht
-      „Achtung Abzug: … Zieht … weg, greift … das Feld an“. Solche Aufgaben sind „schwer“.
-- [ ] N2021. **Einheitliche Auflösung:** In allen Trainern erst das Urteil mit Grund, dann die
-      Begründung, zuletzt das Durchspielen mit Balken. Die Denkroutine nennt jetzt, wie weit dein
-      besserer Kandidat hinter dem Zug der Engine liegt.
-- [ ] N2022. **Abbildung öffnen ohne Handytastatur:** Buch › „Abbildung öffnen“ antippen: Statt der
-      Handytastatur erscheint eine Zahlenleiste (Ziffern, Punkt, Löschen). Auf der Seite einer
-      Abbildung ebenso, wenn du auf den Titel tippst.
-- [ ] N2023. **Sprache beim ersten Start:** Auf einem Gerät, das nicht auf Deutsch eingestellt ist
-      (etwa Englisch), fragt die App beim ersten Start auf Englisch und Deutsch, ob sie auf
-      Englisch umstellen soll, mit dem Hinweis auf die Beta-Phase und dass das englische Buch noch
-      nicht erschienen ist. Zum Testen: in einem privaten Fenster mit englischer Browsersprache
-      öffnen. Die Frage kommt nur einmal.
-
-### Neu in 0.3.23: Freischaltbare Extras (Arbeitschat, 31.10.2026)
-
-Neu und nur durch Lernen zu bekommen; alles, was es schon gab, bleibt frei. Porträtrahmen in
-Bronze, Silber und Gold (ab Stufe 3, 6, 9), Brett „Nacht und Gold“ (mit allen Orden der
-Buchteile), Figurensatz „Gold“ (ab Stufe 5, umgefärbter Cburnett) und bunte Konfettifarben für das
-Feuerwerk (ab Stufe 2). Gesperrte Extras stehen als graue Silhouette mit Schloss und Bedingung da.
-Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das Zahnrad) › „Abzeichen
-testen“ › „Nächste Stufe erreichen“ (mehrmals) bzw. „Orden testen“ für die Buchteile; danach
-„Probe beenden“.
-
-- [ ] N2170. **Karte „Deine Extras“:** Profil, unter „Dein Fortschritt“. Vier Reihen
-      (Porträtrahmen, Brett, Figurensatz, Konfettifarben); gesperrte als graue Silhouette mit
-      Schloss und „Ab Stufe …“ bzw. „Mit allen Orden der Buchteile“. Verständlich?
-- [ ] N2171. **Konfettifarben ab Stufe 2:** Probe „Nächste Stufe erreichen“, dann im Profil bei
-      „Bunte Konfettifarben“ auf „Wählen“. Danach eine Partie gewinnen (kleines Feuerwerk über
-      dem Brett): Die Funken sind bunt. „Ablegen“ bringt die Farben der App zurück.
-- [ ] N2172. **Porträtrahmen:** Probe bis Stufe 3, „Rahmen Bronze“ wählen. Dein Porträt oben im
-      Profil, in der Partie und in der Partienliste hat einen Bronzering. Silber (Stufe 6) und
-      Gold (Stufe 9) ebenso. Wirken die Farben edel genug?
-- [ ] N2173. **Figurensatz „Gold“:** Einstellungen › Brett › Figurensatz, Gruppe „Verdient“.
-      Vor Stufe 5 grau mit „Ab Stufe 5“ und nicht wählbar; danach wählbar. Weiße Figuren golden,
-      schwarze im Navy mit goldener Kontur. Gut zu unterscheiden, auf jedem Brett?
-- [ ] N2174. **Brett „Nacht und Gold“:** Einstellungen › Brett › Brettfarben, Gruppe „Verdient“.
-      Gesperrt mit „Mit allen Orden der Buchteile“; nach der Orden-Probe aller fünf Buchteile
-      wählbar. Navy und mattes Gold; Figuren, letzter Zug und Pfeile gut sichtbar?
-- [ ] N2175. **Nie wegnehmen:** Ein gewähltes Extra bleibt gewählt, auch wenn du die Probe
-      beendest (es steht dann als „Gewählt“ da). Erst nach dem Ablegen oder einer anderen Wahl
-      ist es wieder gesperrt. Ist das so richtig?
-- [ ] N2176. **Lizenzen:** Profil › Einstellungen › Lizenzen: Eintrag „Figurensatz Gold
-      (Bearbeitung von Cburnett …)“ mit Lizenztext. Passt der Eintrag?
-
-### Neu in 0.3.22: Dein nächster Schritt (Arbeitschat, 31.10.2026)
-
-Oben im Buch steht jetzt eine Karte „Dein nächster Schritt“ mit einem Vorschlag und einem Knopf.
-Die Reihenfolge: fällige Wiederholungen (ab 3 Karten), Tagesaufgabe, Weiterlesen, offene Übungen
-eines Kapitels (sobald du 80 % seiner Abbildungen gesehen hast), ein unsicheres Thema aus den
-Trainern (mindestens 8 Antworten, unter 70 % richtig), zuletzt die Fehlerdatenbank.
-
-- [ ] N2110. **Karte erscheint:** Öffne die App. Oben im Buch, über dem Nummernfeld, steht „Dein
-      nächster Schritt“ mit einem Satz und einem Knopf. Hast du die Tagesaufgabe heute noch nicht
-      gelöst, heißt es „Die Tagesaufgabe wartet.“ Passt Platz und Ton?
-- [ ] N2111. **Tagesaufgabe:** Tippe „Lösen“. Die Tagesaufgabe öffnet sich direkt (ohne Umweg über
-      Training › Kurzpläne). Löse sie und tippe unten „Zurück zum Buch“. Die Karte schlägt jetzt
-      etwas anderes vor. Stimmt das?
-- [ ] N2112. **Weiterlesen:** Öffne eine Abbildung mitten in einem Kapitel und geh zurück ins
-      Buch. Die Karte sagt „Weiter in Kapitel … : Abb. …“ mit der nächsten Abbildung, die du noch
-      nicht gesehen hast; „Weiterlesen“ öffnet genau sie. Richtig?
-- [ ] N2113. **Lieber etwas anderes?:** Tippe auf „Lieber etwas anderes?“. Es klappen bis zu zwei
-      weitere Vorschläge mit eigenem Knopf auf. Führt jeder Knopf an die richtige Stelle?
-- [ ] N2114. **Nicht jetzt:** Tippe „Nicht jetzt“. Die Karte verschwindet, auch nach einem
-      Neustart der App. Am nächsten Tag ist sie wieder da. Stimmt das?
-- [ ] N2115. **Wiederholungen:** Wenn mindestens 3 Wiederholungen fällig sind (siehe Training ›
-      Fällige Wiederholungen), steht ganz oben „N Wiederholungen sind fällig. Etwa M Minuten.“
-      (etwa 40 Sekunden je Karte). „Wiederholen“ öffnet eine Seite mit den fälligen Karten. Passt
-      die Schätzung?
-- [ ] N2116. **Übungen und Themen:** Hast du in einem Kapitel fast alle Abbildungen gesehen, aber
-      nicht alle Übungen gelöst, kommt „Zu Kapitel N sind noch K Übungen offen.“; „Üben“ startet
-      die erste offene Übung, „Nächste Übung“ führt durch die übrigen. Nach einigen falschen
-      Antworten in einem Taktikmotiv (mindestens 8 Antworten, unter 70 % richtig) kommt etwa
-      „Fesselung klappt noch nicht so sicher (5 von 9 richtig). Eine kurze Runde?“; „Üben“ öffnet
-      den Taktiktrainer (das Motiv wählst du dort selbst). Passt das?
-- [ ] N2117. **Englisch:** Stelle die Sprache auf Englisch: Die Karte heißt „Your next step“, alle
-      Sätze und Knöpfe sind englisch. Stimmt das?
+- [ ] N2221. **Serie wird schwerer:** Taktiktrainer › „Serie ohne Fehler“, einige Aufgaben lösen.
+      Steigt die Schwierigkeit ab Stufe 2 spürbar?
+- [ ] N2224. **Serie beenden:** Ab der ersten gelösten Aufgabe gibt es „Serie beenden“. Brauchst du
+      den Knopf, oder lieber weglassen?
 
 ### Neu in 0.3.21: Rekordtafel (Arbeitschat, 31.10.2026)
 
@@ -1133,30 +415,11 @@ Rekorden (Taktik auf Zeit, beste Tagesserie, richtige Trainerantworten an einem 
 einer Woche, Trefferquote „Zug erraten“, höchste Wertung, stärkster besiegter Bot, längste Partie
 ohne Patzer), je mit Wert, Datum und Knopf „Versuchen“. Ein neuer Rekord erscheint als Meldung.
 
-- [ ] N2140. **Rekordtafel im Profil:** Profil öffnen. Unter „Dein Fortschritt“ steht „Deine
-      Rekorde“ mit acht Zeilen; was du noch nicht hast, steht als „noch keiner“. Hattest du schon
-      eine beste Zeitrunde, steht sie dort mit Datum. Passt das?
-- [ ] N2141. **Neuer Rekord am Rundenende:** Training › Koordinaten › „Feld finden“ eine Runde
-      spielen. Am Ende steht unter dem Ergebnis etwa „Neuer Rekord: 16 richtige Antworten.“
-      (beim ersten Mal ohne „vorher“). Eine zweite Runde am selben Tag bringt den Rekord wieder,
-      dann mit „(vorher 16)“. Zu oft oder genau richtig?
-- [ ] N2142. **Taktik auf Zeit:** Training › Kurzpläne › „Taktik auf Zeit“. Schaffst du mehr
-      richtige als bisher, steht nach der Runde „Neuer Rekord: … richtig in 3 Minuten (vorher …).“
-      Gleich viele sind kein Rekord. Die Zeile „Deine beste Zeitrunde“ zeigt den neuen Wert.
-- [ ] N2143. **Tagesserie:** Kurzpläne › „Tagesaufgabe mit Serie“ an einem neuen Tag bearbeiten.
-      Wird die Serie länger als deine bisher beste, erscheint „Neuer Rekord: … Tage in Folge“.
-- [ ] N2144. **Versuchen:** In der Tafel bei „Taktik auf Zeit“ auf „Versuchen“ tippen: Die
-      Kurzpläne öffnen sich. Bei „Höchste Wertung“ führt der Knopf zu „Spielen“, bei
-      „Richtige Trainerantworten“ zu „Training“. Führen alle Knöpfe an die richtige Stelle?
+- [ ] N2141. **Rekord am Rundenende:** Jede Trainerrunde, die die Tagessumme erhöht, meldet einen
+      neuen Rekord „richtige Antworten an einem Tag (vorher …)“. Zu oft oder genau richtig?
 - [ ] N2145. **Partie-Rekorde:** Eine gewertete Partie gegen einen Bot gewinnen und auswerten
-      lassen, dann das Profil öffnen. „Stärkster besiegter Bot“ zeigt die Zahl des Bots; hattest
-      du keinen Patzer (??), zählt die Partie für „Längste Partie ohne Patzer“ (in Halbzügen).
-      Die Wertung zählt erst ab der zehnten gewerteten Partie einer Zeitklasse. Stimmen die Werte?
-- [ ] N2146. **Datensicherung:** Nach einer Sicherung und dem Einspielen sind die Rekorde mit
-      ihren Daten noch da (sie stehen jetzt in den Nutzerdaten, nicht mehr nur auf dem Gerät).
-- [ ] N2147. **Abzeichen „Drei Rekorde“:** Sobald in Profil › Deine Rekorde drei verschiedene
-      Rekorde stehen, kommt das Abzeichen „Drei Rekorde“ mit eigenem Bild (goldener Stern mit
-      der 3). Passt das?
+      lassen. Zählt sie ohne Patzer für „Längste Partie ohne Patzer“ (in Halbzügen)?
+- [ ] N2147. **Abzeichen „Drei Rekorde“:** goldener Stern mit der 3. Gefällt das Bild?
 
 ### Neu in 0.3.21: Kombo und Fundstücke (Arbeitschat, 31.10.2026)
 
@@ -1164,24 +427,11 @@ Kleine Momente beim Üben, in jedem Trainer mit Runde (Feld finden, Taktik, Ends
 alle übrigen mit „Aufgabe 1 von …“). Die Kurzpläne (Taktik auf Zeit, Tagesaufgabe) zeigen die
 Kombo nicht, weil sie ohne diesen Rundenrahmen laufen.
 
-- [ ] N2160. **Kombo ab drei:** Training › Koordinaten › Feld finden, drei Felder richtig
-      antippen. Neben „Aufgabe 4 von 16“ erscheint ein kleines goldenes Schild „3 in Folge“, bei
-      jeder weiteren richtigen Antwort zählt es weiter und springt kurz auf. Gut sichtbar, aber
-      nicht störend?
-- [ ] N2161. **Fehler beendet leise:** Danach ein falsches Feld antippen. Das Schild verschwindet
-      ohne Meldung, nach drei weiteren richtigen kommt es wieder. Auch „Aufgabe wiederholen“
-      ändert die Folge nicht mehr (die erste Antwort zählt). Passt das?
-- [ ] N2162. **Funkeln bei 5 und 10:** Bei 5 und bei 10 in Folge funkeln acht kleine goldene
-      Punkte um das Schild. Mit Profil › Einstellungen › Bedienung › Feiereffekte „aus“ bleibt
-      nur das Schild, ohne Funkeln. Stimmt das?
+- [ ] N2160. **Kombo:** Feld finden, drei richtige in Folge: Schild „3 in Folge“. Gut sichtbar,
+      aber nicht störend?
 - [ ] N2163. **Ton:** Mit Ton an (Einstellungen) klingt ab der dritten richtigen Antwort in Folge
       ein kurzer heller Ton, jedes Mal einen Halbton höher (höchstens eine Oktave). Ein Fehler
       bleibt still. Angenehm oder zu viel?
-- [ ] N2164. **Erstes Fundstück:** Nach dem Update kommt das erste Fundstück am Ende einer
-      Trainerrunde sicher, sobald du schon zwei Runden fertig hast (sonst in der dritten). Unter
-      dem Ergebnis steht „Fundstück!“ mit einer kleinen Karte: eine Geschichte, etwas Kurioses
-      oder ein Merksatz mit Kapitel, darunter „Liegt jetzt in deinem Album (1 von 83)“ und „Zum
-      Album“. Erscheint es so?
 - [ ] N2165. **Selten und höchstens eins am Tag:** Danach kommt ein Fundstück nur noch etwa jede
       zwölfte Runde, nie zweimal am selben Tag und nie nach einer Runde ganz ohne richtige
       Antwort; keins kommt doppelt. Fühlt sich das selten genug, aber nicht zu selten an?
@@ -1199,39 +449,11 @@ Kombo nicht, weil sie ohne diesen Rundenrahmen laufen.
       beim Lesen melden, wenn ein Kapitel nicht passt oder ein Satz anders klingen soll
       (Kennung steht im Katalog inhalte/de/fundstuecke.json, Text in den Sprachdateien unter
       fundstueck.text.…).
-- [ ] N2168. **Englisch:** Profil › Einstellungen › Sprache Englisch. Schild „3 in a row“,
-      Fundstück „A find!“, Album „Finds“, alle Texte auf Englisch. Stimmt das?
-- [ ] N2169. **Datensicherung:** Nach einem Fund eine Sicherung erstellen und wieder einspielen:
-      Das Fundstück liegt weiter im Album, und am selben Tag kommt kein zweites. Stimmt das?
 
 ### Neu in 0.3.20: Teilen ohne Server (Arbeitschat, 31.10.2026)
 
-- [ ] N2150. **Abzeichen teilen aus der Meldung:** Aufgabenseite (Profil drei Sekunden halten) ›
-      „Abzeichen testen“ › „Erster Sieg: verdienen“. In der Meldung steht über „Weiter“ der Knopf
-      „Teilen“. Am Handy öffnet er das Teilen-Menü (Nachrichten, Mail …) mit einem Bild im
-      Hochformat: dunkler Grund, goldener Rahmen, oben „ABZEICHEN“, das Abzeichen groß, darunter
-      „Erster Sieg“, „Verdient am …“, „Schach von Grund auf“ und die Adresse der Seite. Am Rechner
-      lädt er das Bild herunter und schreibt „Bild gespeichert (Downloads).“ Gefällt dir das Bild?
-- [ ] N2151. **Abzeichen teilen im Profil:** Profil › Dein Fortschritt › Abzeichen aufklappen,
-      ein verdientes Abzeichen antippen. Unter der Bedingung steht ein kleiner Knopf „Teilen“; er
-      teilt dasselbe Bild. Bei grauen (offenen) Abzeichen gibt es keinen Knopf.
-- [ ] N2152. **Orden teilen:** Aufgabenseite › „Orden testen“ › einen Ring auf 100 % setzen. In
-      der Gratulation steht „Teilen“ über „Weiter“; im Profil steht unter jedem Orden (voller
-      Ring) ein kleiner Knopf „Teilen“. Das Bild zeigt oben „ORDEN“ und das Bild des Ordens.
-      Danach beide Proben beenden.
-- [ ] N2153. **Herausforderung öffnen:** Im Browser des Handys
-      schach-von-grund-auf.com/app/#aufgabe-taktik-l-1Vybh öffnen. Die App zeigt „Herausforderung“
-      mit dem Satz „Jemand hat dir diese Aufgabe geschickt. Finde den besten Zug!“ und eine
-      Taktikaufgabe aus der freien Lichess-Datenbank. Lösen oder „Lösung zeigen“; danach stehen
-      „Freunde herausfordern“ und „Mehr Aufgaben im Trainer …“ da. „Zurück“ führt ins Training.
-- [ ] N2154. **Herausforderung weitergeben:** In der geöffneten Herausforderung nach dem Lösen
-      „Freunde herausfordern“ antippen. Das Teilen-Menü bietet den Satz „Schaffst du das? Weiß
-      zieht und gewinnt.“ (bei Matt-Aufgaben „… setzt matt“) mit dem Link an. Ohne Teilen-Menü
-      (Rechner) kommt der Link in die Zwischenablage und die App schreibt „Link kopiert“.
-- [ ] N2155. **Nur freie Aufgaben:** Aufgaben aus dem Buch (Abbildungen in Kapitel 7) lassen sich
-      nicht teilen, und ein Link auf eine von ihnen öffnet keine Aufgabe. Den Knopf „Freunde
-      herausfordern“ im Taktiktrainer selbst baut der Koordinierungs-Chat ein; er erscheint dann
-      nach jeder Lichess-Aufgabe, nicht nach Buchaufgaben.
+- [ ] N2150. **Abzeichen teilen am Handy:** Aufgabenseite › „Abzeichen testen“ › „Erster Sieg:
+      verdienen“, in der Meldung „Teilen“. Öffnet sich das Teilen-Menü, und gefällt dir das Bild?
 - [ ] N2156. **Datenschutz:** schach-von-grund-auf.com/datenschutz/ › „Speicher auf deinem
       Gerät“: Ein neuer Absatz erklärt das Teilen (Bild entsteht auf dem Gerät, Link enthält nur
       die Kennung der Aufgabe, sonst verschickt die App nichts). Stand: 31. Oktober 2026. Passt
@@ -1245,62 +467,16 @@ wie viele Wochen du dein Ziel schon erreicht hast. Darunter planst du, wann du �
 Plan in deinen Kalender ein. Als Lerntag zählt ein Tag mit einer Abbildung, einer Übung, einer
 Trainerfrage, einer Karte oder einer Partie (bloßes Öffnen nicht).
 
-- [ ] N2130. **Frage nach dem Ziel:** Nach dem ersten Lerntag steht oben im Buch „Wie oft willst
-      du pro Woche üben?“ mit 2, 3, 4, 5, 7 Tagen (3 hervorgehoben) und „Später“. Beim allerersten
-      Start ohne Lerntag fragt die App noch nicht. Passt das so?
-- [ ] N2131. **„Später“:** Tippe „Später“. Die Frage verschwindet und kommt erst nächste Woche
-      (ab Montag) wieder. Ist das angenehm, oder soll sie ganz wegbleiben?
-- [ ] N2132. **Deine Woche:** Wähle ein Ziel. Die Karte zeigt sieben Punkte Mo bis So, gefüllt an
-      Tagen mit Lernen, heute mit Rand, und den Ring „x von y Tagen“. Stimmen die Punkte mit deinen
-      Tagen überein? Sieht die Karte auf dem Handy hell und dunkel gut aus?
-- [ ] N2133. **Ziel erreicht:** Erreichst du dein Ziel, steht dort „Wochenziel geschafft. Schön!“,
-      einmal je Woche mit einem kleinen Feuerwerk (aus, wenn „Feiereffekte“ aus sind). Kommt das
-      Feuerwerk genau einmal? Zum Ausprobieren: „Ziel ändern“ und ein Ziel wählen, das du diese
-      Woche schon geschafft hast.
-- [ ] N2134. **Nichts verfällt:** Unter dem Ring stehen „Wochen mit erreichtem Ziel: n“ und ab zwei
-      Wochen hintereinander „Beste Folge: n Wochen“. Eine verpasste Woche wird nicht erwähnt. Wer
-      das Ziel später erhöht, behält die schon erreichten Wochen. Wer es senkt, bekommt frühere
-      Wochen dazu, die das neue Ziel erreicht hätten (schon umgesetzt, Widerspruch genügt).
-- [ ] N2135. **Ziel ändern:** „Ziel ändern“ zeigt die Wahl wieder, mit „Abbrechen“ und „Kein
-      Wochenziel“. Das neue Ziel gilt sofort, auch mitten in der Woche. Die Einstellungen haben
-      seit 0.3.2 keinen Reiter „Training“ mehr; deshalb geht das nur über die Karte. Reicht das?
-- [ ] N2136. **Erfahrung und Abzeichen:** Jede Woche mit erreichtem Ziel bringt 30 EP. Zwei neue
-      Abzeichen im Profil: „Vier gute Wochen“ und „Zwölf gute Wochen“ (Wochen müssen nicht
-      hintereinander liegen), je mit eigenem Bild (Sechseck mit 4, Strahlenkranz mit 12). Gefallen
-      dir Namen und Bilder?
-- [ ] N2137. **Übungsplan:** In der Karte „Übungszeit planen“: Tage antippen, Uhrzeit, freiwillig
-      ein Satz „Wo oder nach was?“, „Plan speichern“. Danach steht „Dein Plan: Mo, Do um 07:30“ und
-      an geplanten Tagen „Heute ist dein Übungstag.“ Klappt Ändern und „Plan entfernen“?
+- [ ] N2136. **Wochenabzeichen:** „Vier gute Wochen“ (Sechseck mit 4) und „Zwölf gute Wochen“
+      (Strahlenkranz mit 12) im Regal „Abzeichen“. Gefallen Namen und Bilder?
+- [ ] N2137. **Übungsplan ändern:** Buch › Karte „Heute“ › Reiter „Plan“: einen gespeicherten Plan
+      ändern und dann „Plan entfernen“. Klappt beides?
 - [ ] N2138. **Kalender auf dem iPhone:** „In meinen Kalender“ (und, wo es angeboten wird,
       „Teilen“) gibt die Datei „schach-ueben.ics“ weiter. Lässt sich der Termin übernehmen, mit
       Wiederholung an deinen Tagen, 20 Minuten lang, Erinnerung zur Startzeit, Titel „Schach üben“
       und deinem Satz in der Beschreibung? Bitte in der installierten App und in Safari.
 - [ ] N2139. **Kalender auf Android:** Dasselbe auf einem Android-Handy (Google Kalender oder der
       Kalender des Herstellers). Wird der Termin übernommen und erinnert er dich?
-
-### Neu in 0.3.19: Lernpfad durchs Buch (Arbeitschat, 31.10.2026)
-
-- [ ] N2120. **Knöpfe:** Im Buch steht über der Kapitelliste der Knopf „Als Weg anzeigen“, im
-      Profil unter „Dein Fortschritt“ der Knopf „Dein Weg durchs Buch“. Beide öffnen den neuen
-      Bildschirm „Dein Weg durchs Buch“; „Zurück“ führt zurück.
-- [ ] N2121. **Der Weg:** Ein geschwungener Weg von oben nach unten mit 13 Stationen (Kapitel 0
-      bis 12, Nummer im Kreis, daneben der Titel). Nach Kapitel 1, 4, 7, 10 und 12 steht der
-      Orden des Buchteils (Grundlagen, Eröffnung, Mittelspiel, Endspiel, Praxis), grau als
-      Silhouette, bis er verdient ist. Bis zur aktuellen Station ist der Weg gold, danach
-      gepunktet.
-- [ ] N2122. **Stationen füllen sich:** Der Ring um eine Kapitelnummer füllt sich gold mit
-      angesehenen Abbildungen und gelösten Übungen des Kapitels (wie die Orden im Profil). Erst
-      wenn beides vollständig ist, wird der Kreis gold mit Haken. Probe: Kapitel 0 öffnen, „Alle
-      abhaken“, zurück zum Weg: Station 0 ist fast voll, oben steht „Noch 3 Übungen bis zum Ende
-      von Kapitel 0. Danach fehlt dir nur noch Kapitel 1 bis zum Orden „Teil Grundlagen“.“
-- [ ] N2123. **Deine Figur:** An der aktuellen Station steht dein Porträt (falls im Profil
-      gewählt), sonst ein goldener Springer. Aktuell ist das Kapitel der zuletzt geöffneten
-      Abbildung, solange es nicht fertig ist, sonst das nächste unfertige. Öffne eine Abbildung
-      aus Kapitel 6 und dann den Weg: Die Figur geht in einer kleinen Bewegung von der vorigen
-      Station zu Kapitel 6 (bei „Bewegung reduzieren“ des Handys ohne Bewegung), und der Weg
-      rollt zur Station.
-- [ ] N2124. **Tipp auf eine Station** öffnet das Kapitel. Bitte auch im dunklen Modus und auf
-      Englisch ansehen (Titel „Your path through the book“).
 
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
@@ -1309,120 +485,19 @@ Tag, was du getan hast, und je Thema, wie viele Trainerantworten richtig waren. 
 werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was schon ein Datum hat
 (angesehene Abbildungen, Übungen, Partien), wird das Tagesprotokoll nachgetragen.
 
-- [ ] N2100. **Update ohne Verlust:** Nach dem Aktualisieren ist alles wie vorher: Fortschritt im
-      Buch, Ringe und Orden, Abzeichen, Partien, Wertung, eigene Bots, Lernsammlung,
+- [ ] N2100. **Update ohne Verlust:** Nach dem Aktualisieren auf deinem Handy ist alles wie
+      vorher: Fortschritt im Buch, Orden, Abzeichen, Partien, Wertung, eigene Bots, Lernsammlung,
       Fehlerdatenbank. Stimmt alles?
-- [ ] N2101. **Schalter „Feiereffekte“:** Profil › Einstellungen › Bedienung, unter „Startbild“.
-      Auf „aus“: Aufgabenseite › „Orden testen“ › einen Ring auf 100 % › „Profil“ öffnen. Die
-      Gratulation kommt, aber ohne Feuerwerk. Wieder „an“: mit Feuerwerk. Passt das?
-- [ ] N2102. **Datensicherung:** Profil › Einstellungen › Daten › Sicherung erstellen, danach
-      wieder einspielen. Alles ist noch da. (Eine Sicherung aus 0.3.18 lässt sich in einer
-      älteren App nicht mehr einspielen; die meldet dann „neuere Version“, statt etwas zu
-      verlieren.)
-
-### Neu in 0.3.17: Orden und Abzeichen mit eigenen Bildern (Nebenchat, 30.10.2026)
-
-Gebaut nach deiner Wahl auf der Entwurfsseite: alle Abzeichen und die Orden für Buch und
-Buchteile im Stil „Nacht und Gold“ (C), die Bot-Orden und die Engine klassisch (A),
-Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des Tages).
-
-- [ ] N2015. **Abzeichen im Profil:** Profil › Dein Fortschritt › „Abzeichen: x von 18“
-      aufklappen. Die Abzeichen stehen zu viert in Reihen, der Name darunter, nicht mehr
-      einzeln untereinander. Jedes hat seine eigene Form (Banner, Schild, Kreis, Raute, Tropfen
-      …). Noch nicht verdiente sind grau, aber mit ihrer echten Form. Tippe auf ein Abzeichen:
-      darunter erscheint die Bedingung, ein zweiter Tipp blendet sie wieder aus.
-- [ ] N2016. **Die drei korrigierten Abzeichen:** Bei „Erst selbst denken“ sitzt das Auge
-      tiefer im Tropfen, bei „Nachgefragt“ ist das Fragezeichen größer und mittig, bei „Eine
-      Woche dabei“ berühren die Flammen den Kalenderrand nicht mehr. Am einfachsten zu sehen
-      über die Aufgabenseite (drei Sekunden auf „Profil“ in der Leiste halten) › „Abzeichen testen“: dort ein
-      Abzeichen zur Probe verdienen, dann erscheint es groß in der Meldung.
-- [ ] N2017. **Orden in den Ringen:** Profil › Dein Fortschritt, die Gruppen „Teile des
-      Buches“ und „Vorgefertigte Bots besiegt“ aufklappen. Die Ringe stehen zu dritt
-      nebeneinander. Über die Aufgabenseite › „Orden testen“ einen Ring auf 100 % setzen: Die
-      Gratulation zeigt jetzt das eigene Bild des Ordens (etwa „Übungen gelöst“: rotes Brett
-      im Lorbeerkranz; Bots: Medaille mit Band und Roboterkopf), und im Profil steht es statt
-      des Rings.
-- [ ] N2018. **Startanimation mit neuem Orden:** Einen Orden oder ein Abzeichen zur Probe
-      verdienen, dann die App ganz schließen und neu öffnen. Springer und Titel laufen genau wie
-      bisher. Danach erscheint das neue Stück unter dem Titel mit Strahlen, darüber „Neuer
-      Orden“ oder „Neues Abzeichen“, darunter sein Name. Dann fliegt es klein zum Reiter
-      „Profil“ unten. Dort bleibt ein goldener Punkt, bis du das Profil öffnest. Ein Tipp
-      überspringt alles wie bisher; der Punkt erscheint dann trotzdem. Hinweis: Beim allerersten
-      Start nach dem Update gilt nichts als neu, damit nicht alle schon gesammelten Stücke auf
-      einmal kommen.
-- [ ] N2019. **Stück des Tages:** Die App noch einmal schließen und öffnen, ohne dass etwas Neues
-      dazugekommen ist. Unter dem Titel erscheint leise eines deiner verdienten Stücke, darunter
-      „Aus deiner Sammlung · x von 36“. Ohne ein einziges verdientes Stück bleibt die
-      Startanimation genau wie bisher.
 
 ### Neu in 0.3.16: Trainer-Feinschliff (Nebenchat, 30.10.2026)
 
-- [ ] N2001. **Zähltrainer, Ergebnis mit einem Tipp:** Training › Zähltrainer › „Bilanz zählen“.
-      Unter dem Brett stehen Knöpfe „lohnt nicht“, „+1“ bis „+9“. Ein Tipp prüft sofort. Wer
-      lieber genau zählt, tippt „Genauer üben: auch Angreifer und Verteidiger zählen“ und prüft
-      dann wie früher. Ist das schnell und klar genug?
-- [ ] N2002. **Zähltrainer, Stufen und Fesselung:** Vor der Übung „leicht“, „mittel“ oder
-      „schwer“ wählen. Leicht hat höchstens drei beteiligte Figuren, schwer viele Figuren, eine
-      Batterie oder eine Fesselung. Eine an den König gefesselte Figur zählt nicht mit (wie
-      Kapitel 1 bei Abb. 1.12 sagt); nach der Antwort steht dann „Achtung Fesselung: …“.
-      Stellungen, in denen die Seite am Zug im Schach steht oder matt ist, kommen nicht mehr vor.
-      Passen die Stufen?
-- [ ] N2003. **Hängende Figuren:** Der Auftrag sagt jetzt, dass auch unterdeckte Figuren und
-      Bauern hängen und der ganze Abtausch zählt. Nach dem Prüfen steht zu jedem übersehenen und
-      jedem falsch getippten Feld der Grund, etwa „e4: 2 gegen 1: Schwarz gewinnt mit dxe4
-      Material“.
-- [ ] N2004. **Notationstastatur:** Koordinaten-Trainer › „Zug aufschreiben“. Statt der
-      Handytastatur setzt du den Zug aus Bausteinen zusammen: Figur (K D T L S, für einen
-      Bauernzug keine), Linie a bis h, Reihe 1 bis 8, dazu x, +, #, =, 0-0, 0-0-0 und Löschen.
-      Der Zug baut sich oben auf. „Lieber mit der Tastatur tippen“ schaltet zurück. Fehlt ein
-      Fall?
-- [ ] N2005. **Feld finden, Sicht:** Unter dem Brett steht deutlich „Weiß spielt von unten“ mit
-      weißem Kreis, nach dem Drehen „Achtung, das Brett ist jetzt gedreht!“ mit schwarzem Kreis,
-      golden aufleuchtend. Fällt der Wechsel jetzt auf?
-- [ ] N2006. **Röntgen-Trainer, Stufen und Texte:** Vor der Runde „leicht“ (2 bis 3 Pfeile),
-      „mittel“ (4 bis 6) oder „schwer“ (7 bis 10, auf mehrere Schritte verteilt) wählen. Dafür
-      kommen auch Stellungen aus den Zugfolgen des Buches dazu („Stellung aus der Zugfolge … nach
-      dem 12. Zug“). Schritt 2 und 3 sagen jetzt klar, dass der ganze Abtausch auf dem Feld zählt.
-      Nach dem Prüfen steht zu jedem übersehenen oder zu viel gesetzten Pfeil die Abtauschfolge
-      mit Ergebnis, etwa „Txe7+ Sxe7 fxe7: +1 Bauerneinheit“, nach Schritt 3 die Drohungen der
-      Gegenseite. Sind schwere Aufgaben schwer genug?
-- [ ] N2007. **Strukturerkenner:** Es gibt keine reinen Bauernstellungen mehr und keine Stellung
-      im Schach. Abb. 5.28 (Spannung d4/e5, laut Buch noch keine Kette), 5.7 (das Gegenbeispiel:
-      e5 ist kein Vorposten), 5.12 (Matt), 5.19, 5.31 und 5.37 sind keine Aufgaben mehr. Eine
-      Kette zählt nur noch, wenn sie verkeilt ist und nirgends Spannung herrscht; ein Doppelbauer
-      nur, wenn sein vorderer Bauer ungedeckt ist. Pläne, die in der Stellung ebenfalls passen,
-      stehen nie als falsche Antwort da. Insgesamt 107 statt 162 Aufgaben. Tippst du einen Bauern
-      als schwach an, der es nicht ist, nennt die App die Bedingung, an der „rückständig“
-      scheitert (etwa „Ein eigener Bauer kann ihn noch decken“). Passen die Pläne jetzt?
-- [ ] N2008. **LAP-Übung:** Planbilanz-Übung › LAP. Es kommen nur ruhige Stellungen ohne
-      hängende oder gefesselte eigene Figur. Nach der Antwort stehen die freien Felder jeder
-      Figur da und der Grund für die Lösung, etwa „Läufer c1 steht noch auf seinem Startfeld“
-      oder „Springer d2 hat nur 2 freie Felder, Läufer b7 hat 3“.
-- [ ] N2009. **Falle oder Köder:** Vor der Entscheidung zeigt „Hinweis: Warnsignale zeigen“ die
-      Warnsignale aus Kapitel 4, nur wenn du willst. Nach der Entscheidung steht nur die Lösung am
-      Brett, darunter die Fortsetzung mit Bewertungsbalken links (◀ ▶ blättern oder
-      „Vorspielen“), und ein Satz, ob ein rotes Warnsignal die Widerlegung vorhergesagt hätte.
-- [ ] N2010. **Denkroutine-Trainer:** Nach dem Vergleich mit der Engine stehen Knöpfe „Engine: …“
-      und „Dein Kandidat …“; jeder zeigt den Zug (und die Antwort) mit Bewertungsbalken zum
-      Durchspielen.
-- [ ] N2011. **Abweichungsmodus, Kapitel 2 und 3:** Oben wählst du „Eröffnungen (Kapitel 2)“ oder
-      „Gambits (Kapitel 3)“. Die Gambits sind die aus Kapitel 3 (Königsgambit bis Lettisches
-      Gambit) und das Damengambit.
-- [ ] N2012. **Abweichungsmodus, Reagieren statt Planzug:** Die Engine wählt jetzt bevorzugt
-      Abweichungen, nach denen dein nächster Buchzug mindestens einen halben Bauern verliert. Vor
-      deinem Zug zeigt „Hinweis: Was will … mit …?“, was der neue Zug angreift oder droht. Nach
-      deinem Zug sagt die App, ob du stur den Buchzug gespielt hast und ob das hier geht.
-- [ ] N2013. **Abweichungsmodus, drei Züge im Vergleich:** Nach deinem Zug stehen der beste Zug
-      der Stellung, der beste Zug für die Eröffnungsziele (so schlecht er sein mag) und dein Zug
-      mit Werten da. Weichen die ersten beiden ab, fragt die App zuerst „Überlege kurz: Warum ist
-      … hier stärker als …?“; „Auflösung zeigen“ bringt die Begründung und die drei Fortsetzungen
-      mit Bewertungsbalken. Die Einschätzung nennt die drei Ziele deiner Seite einzeln statt nur
-      „1 von 3“.
-- [ ] N2014. **Kleinigkeiten:** (1) Werkzeug Denkroutine an einer Abbildung, etwa 12.6: Der
-      Reiter „Sicherheitsblick“ bricht schmal und links um, nicht mehr bildschirmbreit.
-      (2) Repertoire-Trainer: keine Warum-Fragen mehr. (3) Training › „Fällige Wiederholungen“:
-      oben die Gesamtzahl, darunter je Quelle ein Knopf (Übungen aus dem Buch, Falle oder Köder,
-      Strukturerkenner …), dazu „Wie funktioniert das?“ mit dem Prinzip der Lernkartei.
+- [ ] N2002. **Zähltrainer, Stufen:** Passen „leicht“ (höchstens drei beteiligte Figuren) und
+      „schwer“ (viele Figuren, Batterie oder Fesselung)? Zu wählen in der Zeile „Stufe“.
+- [ ] N2006. **Röntgen-Trainer:** Sind Aufgaben der Stufe „schwer“ (7 bis 10 Pfeile) schwer genug?
+- [ ] N2007. **Strukturerkenner:** Passen die Pläne jetzt zum Buch (107 Aufgaben; Abb. 5.28, 5.7,
+      5.12, 5.19, 5.31, 5.37 sind keine Aufgaben mehr)?
+- [ ] N2012. **Abweichungsmodus:** Wählt die Engine Abweichungen, auf die du reagieren musst, und
+      hilft „Hinweis: Was will … mit …?“?
 
 ### Neu in 0.3.15: Phasen in eigenen Partien wie bei Schachexperten (Opus, 30.10.2026)
 
@@ -1432,16 +507,13 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
       getauscht, eine Grundreihe fast leer, oder die Figuren beider Seiten stehen eng
       ineinander. Bei Lichess-Partien liegt der Wechsel jetzt im Mittel um Zug 10 (vorher um
       Zug 5 bis 6). Wirkt der Wechsel in deinen Partien richtig?
-- [ ] N1045. **Grund des Wechsels:** Im Rückblick steht beim Wechsel ins Mittelspiel der Grund:
-      „beide fertig“, „Abtausch“, „Grundreihe“ oder „Kontakt“, jeweils mit einem Satz. Sind die
-      Sätze verständlich?
+- [ ] N1045. **Grund des Wechsels:** Im Rückblick steht beim Wechsel ins Mittelspiel „Neue Phase
+      ab hier.“ mit einem Satz zum Grund. Sind die Sätze verständlich?
 - [ ] N1046. **Endspiel nur mit wenig Material:** Tauscht in einer Partie früh die Damen, bleiben
       aber Türme und Leichtfiguren am Brett, nennt der Rückblick das jetzt „damenloses
       Mittelspiel“. Endspiel ist es in eigenen Partien erst, wenn jede Seite höchstens 13 Punkte
       Figuren hat (etwa Turm, Turm und Läufer) oder nur noch sechs Figuren am Brett stehen, wie bei
       Speelman und Lichess. Passt das zu deinem Gefühl?
-- [ ] N1047. **Abbildungen des Buches unverändert:** An den Abbildungen gilt weiter die Regel des
-      Buches (Kapitel 8, vier Fragen), etwa Abb. 4.21 als Eröffnung. Siehe auch Rückfrage Q7.
 - [ ] N1048. **Bots neu geeicht:** Die Fehlerraten der Bots je Phase, das Elo-Modell der
       Partiebewertung und die Zugwahl sind mit der neuen Phasenregel neu gerechnet (dieselben
       Partien, nur die Phase je Stellung neu). Weil die Eröffnung jetzt länger dauert, verteilen
@@ -1452,40 +524,10 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
 
 ### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
 
-- [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,
-      etwa „Stufe 3 von 10: Zentrum“, rechts die Erfahrungspunkte (EP), darunter ein goldener
-      Balken und „Noch … EP bis zur Stufe …“. Die zehn Stufen heißen nach Begriffen des Buches:
-      Erster Zug, Entwicklung, Zentrum, Rochade, Offene Linie, Vorposten, Freibauer,
-      Kombination, Zugzwang, Meisterplan. Passen Namen und Reihenfolge? Bitte sagen, wenn dir
-      andere Namen lieber sind (etwa die Figuren vom Bauern bis zum König).
-- [ ] N1091. **Woher die EP kommen:** Darunter „Abzeichen: x von 18“ aufklappen. Der zweite
-      Absatz erklärt die Punkte: gelöste Übung 20, beantwortete Warum-Frage 5, vor den
-      Werkzeugen richtig eingeschätzte Abbildung 4, angesehene Abbildung 2, abgehaktes Lernziel
-      5, Trainerrunde 5, jede richtige Trainerantwort 1, Partie ab zehn Zügen 10, Sieg 10 mehr,
-      Bot zum ersten Mal besiegt 25, Eintrag mit Text in Lernsammlung oder Fehlerdatenbank 8,
-      jeder Tag der besten Serie der Tagesaufgabe 5. Die Punkte werden aus deinen vorhandenen
-      Daten gerechnet; wer schon viel gemacht hat, steht gleich auf einer höheren Stufe. Passen
-      die Gewichte und die Schwellen (100, 250, 500, 900, 1400, 2000, 2800, 3800, 5000)?
-- [ ] N1092. **Abzeichengitter:** Im aufgeklappten Teil stehen alle 18 Abzeichen als
-      Sechsecke mit Name und Bedingung; noch nicht verdiente sind grau. Die 18: Erste Partie,
-      Erster Sieg, Zehn, Fünfzig und Hundert Partien, Erstes Matt, Aus eigener Kraft (Sieg ohne
-      Rücknahme und ohne Werkzeuge), Über dich hinaus (Sieg gegen einen mindestens 100 Punkte
-      stärkeren Gegner), Gehalten (Remis gegen einen solchen), Brillanter Zug, Erste Übung,
-      Kapitel gemeistert (alle Übungen eines Kapitels), Nachgefragt (zehn Warum-Fragen), Erst
-      selbst denken (zehn Einschätzungen), Eigene Stellung (Lernsammlung), Aus Fehlern lernen
-      (fünf Fehler mit Satz), Fleißig trainiert (100 richtige Trainerantworten), Eine Woche
-      dabei (sieben Tage hintereinander gelernt oder gespielt). Fehlt dir eines, ist eines zu
-      leicht oder zu schwer?
-- [ ] N1093. **Meldung bei einem neuen Abzeichen:** Spiele eine Partie gegen einen Bot zu Ende
-      (wenn du noch keine hast). Danach erscheint eine schlichte goldene Karte „Neues
-      Abzeichen“ mit dem Sechseck „Erste Partie“ und „Weiter“, ohne Feuerwerk und ohne Ton. Sie
-      kommt nur einmal. Hast du beim ersten Öffnen nach dem Update schon vieles erreicht,
-      stehen alle Abzeichen auf einer einzigen Karte statt vieler Meldungen nacheinander.
-- [ ] N1094. **Abzeichen testen:** Aufgabenseite (Profil drei Sekunden halten) › Karte
-      „Abzeichen testen (nur für dich)“ aufklappen. Ein Tipp auf „Erste Partie: verdienen“
-      zeigt sofort die Meldung; „Nächste Stufe erreichen“ zeigt „Neue Stufe erreicht“. Im Profil
-      stehen dann Abzeichen und Stufe. „Probe beenden“ stellt alles zurück; deine echten Daten
-      ändern sich dabei nicht.
+- [ ] N1090. **Namen der Stufen:** Erster Zug, Entwicklung, Zentrum, Rochade, Offene Linie,
+      Vorposten, Freibauer, Kombination, Zugzwang, Meisterplan. Passen Namen und Reihenfolge?
+- [ ] N1091. **Gewichte der EP:** Profil › Deine Erfolge › „So bekommst du Orden, Abzeichen und
+      EP“. Passen Gewichte und Schwellen (100, 250, 500, 900, 1400, 2000, 2800, 3800, 5000)?
 - [ ] N1095. **Nichts verfällt:** Eine Pause nimmt dir kein Abzeichen und keine Stufe. Ein
       einmal gemeldetes Abzeichen bleibt, auch wenn die Partie dazu später aus der Liste der
       letzten 50 Partien fällt. Es gibt keine Bestenliste, nichts verlässt das Gerät. Passt
@@ -1494,145 +536,43 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
 
 ### Neu in 0.3.14: Feste Eröffnungen für eigene Bots (Opus-Arbeitschat, 30.10.2026)
 
-- [ ] N1080. **Klappe „Eröffnungen“ im Gegnereditor:** Spielen › Eigene Bots › „Neuen Gegner
-      anlegen“ (oder einen bestehenden bearbeiten). Unter den vier Reitern steht die Klappe
-      „Eröffnungen (0)“. Aufklappen: „Noch keine feste Eröffnung.“, darunter „Eröffnungen aus dem
-      Buch“ (Haken je Eröffnung aus Kapitel 2 und 3) und „Eröffnungen nach Spielstärke“ (dieselbe
-      Liste wie im Spielfenster). Ein Tipp auf eine Eröffnung setzt den Haken (goldener Rahmen),
-      ein zweiter Tipp nimmt ihn weg. Die Zahl in der Überschrift zählt mit. Passt das so?
-- [ ] N1081. **Mehrfachauswahl:** Wähle zwei oder drei Eröffnungen (etwa Italienische Partie und
-      London-System, dazu eine aus dem Buch). Oben unter „Gewählt“ stehen sie als kleine Marken
-      mit ✕; ein Tipp auf eine Marke entfernt sie, „Alle entfernen“ leert die Liste.
-- [ ] N1082. **Schnellwahl im Variantenbaum:** In „Eröffnungen nach Spielstärke“ unter einer
-      Eröffnung „Varianten (n)“ aufklappen. Darüber stehen jetzt die Knöpfe „Die häufigsten 3“,
-      „Die häufigsten 5“ und „Alle Varianten“. Sie ersetzen die gewählten Varianten dieser einen
-      Eröffnung durch die häufigsten (andere Eröffnungen bleiben). Einzelne Varianten lassen sich
-      auch einzeln an- und abhaken. Höchstens 40 Eröffnungen je Bot.
-- [ ] N1083. **Regler „Abweichung“:** Sobald mindestens eine Eröffnung gewählt ist, erscheint
-      „Abweichung: 0 %“ mit Regler in Zehnerschritten. 0 % heißt: Der Bot folgt seiner Eröffnung
-      immer, solange du ihre Züge spielst. 100 % heißt: wie ohne Festlegung (er eröffnet wie
-      Menschen seiner Stärke). Dazwischen verlässt er die Eröffnung bei jedem Buchzug mit dieser
-      Wahrscheinlichkeit. Ist die Vorgabe 0 % richtig, oder lieber etwa 20 %?
-- [ ] N1084. **Beschreibung:** Unter dem Editor steht „So stellt er sich vor:“. Mit festen
-      Eröffnungen endet sie mit „Eröffnet gern: Italienische Partie oder London-System.“; ab drei
-      Eröffnungen „Eröffnet gern: A, B (und 2 weitere).“ Gefällt dir der Satz? (Der Doppelpunkt
-      erspart die Beugung der Namen, „Eröffnet gern Italienisch“ ginge nicht für jeden Namen.)
-- [ ] N1085. **Vorrang im Spielfenster:** Den Bot speichern und in „Eigene Bots“ wählen. Unten
-      in der Karte „Partie“ die Klappe „Eröffnung festlegen“ öffnen. Oben steht „<Name> hat feste
-      Eröffnungen: …. Je Partie wählt er eine davon.“, darunter der Haken „Eröffnung des Bots
-      überschreiben“. Die gewohnte Eröffnungswahl darunter ist ausgegraut und nicht bedienbar.
-      Setzt du den Haken, wird sie bedienbar und gilt für die nächste Partie (auch „wie Menschen
-      dieser Stärke“). Der Haken gilt nur, solange du auf dem Bildschirm bist.
-- [ ] N1086. **Partie mit fester Eröffnung:** Einem Bot nur das London-System geben, Abweichung
-      0 %, mit Schwarz eine Partie beginnen. Der Bot spielt 1. d4 und nach 1… d5 2. Lf4. Mit zwei
-      Eröffnungen (etwa Italienische Partie und London-System) wählt er je Partie zufällig eine;
-      bitte drei oder vier Partien beginnen und aufgeben.
+- [ ] N1083. **Abweichung:** Ist die Vorgabe 0 % richtig, oder lieber etwa 20 %?
+- [ ] N1084. **Beschreibung:** „Eröffnet gern: Italienische Partie oder London-System.“, ab drei
+      „Eröffnet gern: A, B (und 1 weitere).“ Gefällt dir der Satz?
 - [ ] N1087. **Abweichung im Spiel:** Denselben Bot auf 100 % stellen: Er eröffnet dann wie ohne
       Festlegung (meist 1. e4). Bei 50 % verlässt er die Linie im Mittel nach ein bis zwei
       Buchzügen. Fühlt sich das richtig an?
-- [ ] N1088. **Bestehende Bots und Sicherung:** Deine schon angelegten eigenen Bots sehen aus wie
-      vorher und spielen wie vorher („Eröffnungen (0)“). Nach Einstellungen › Datensicherung
-      exportieren und wieder einlesen sind die festen Eröffnungen und die Abweichung noch da.
-      Hinweis: Eine ältere App-Version (vor diesem Stand) liest solche Bots ohne Absturz, kennt
-      die Eröffnungen aber nicht; speichert man den Bot dort neu, sind sie weg.
-- [ ] N1089. **Englisch:** Sprache auf Englisch stellen: Klappe „Openings (n)“, „Deviation“,
-      „Override the bot's opening“, Beschreibung „Likes to open with: …“. Die Namen der
-      Eröffnungen nach Spielstärke stehen dann englisch (wie auf Lichess).
 
 ### Neu in 0.3.14: Zusatzaufgaben von Lichess im Taktiktrainer (Opus-Arbeitschat, 30.10.2026)
 
-- [ ] N1070. **Wahl der Quelle:** Training › Taktiktrainer öffnen. Oben steht „Aufgaben“ mit zwei
-      Knöpfen, „Aus dem Buch“ (vorgewählt, alles wie bisher) und „Zusatzaufgaben (Lichess)“.
-      Darunter ein Satz, was gewählt ist. Prüfen: Ist „Aus dem Buch“ vorgewählt und läuft die
-      Runde dort genau wie früher?
-- [ ] N1071. **Kennzeichnung:** „Zusatzaufgaben (Lichess)“ tippen. Darunter steht
-      „Zusatzinhalt (nicht aus dem Buch), Quelle: Lichess-Puzzle-Datenbank (CC0) …“. In jeder
-      Aufgabe steht unter dem Brett „Zusatzaufgabe (nicht aus dem Buch) · Lichess (CC0),
-      Wertung …“. Reicht dir die Kennzeichnung?
-- [ ] N1072. **Themen:** Die Liste „Thema“ hat 20 Themen mit je 50 Aufgaben: Hängende Figur,
-      Gabel und Doppelangriff, Fesselung, Spieß, Abzug und Abzugsschach, Doppelschach,
-      Hinlenkung, Räumung, Beseitigung der Verteidigung, Ablenkung, Zwischenzug, Gefangene
-      Figur, Umwandlung, Wegversperrung, Stiller Zug, Zugzwang, Grundreihenmatt, Mattbilder,
-      Matt in einem Zug, Matt in zwei Zügen (dazu „Alle Themen gemischt“). Passen die Namen zu
-      deinen Begriffen? „Röntgenangriff“ von Lichess ist bewusst nicht dabei, weil „Röntgen“ im
-      Buch die Schach-Röntgen-Regel meint.
+- [ ] N1072. **Lichess-Themen:** Passen die 20 Themennamen zu deinen Begriffen („Röntgenangriff“
+      bewusst nicht dabei)?
 - [ ] N1073. **Stufen:** Stufe 1 bis 5 wählen (Stufe 1: Lichess-Wertung unter 1000, Stufe 5:
       1900 bis 2200). Je Thema und Stufe gibt es zehn Aufgaben. Fühlen sich Stufe 1 leicht und
       Stufe 5 schwer an?
-- [ ] N1074. **Gegnerzug vorgespielt:** Eine Runde starten. Das Brett zeigt kurz (0,7 Sekunden)
-      die Stellung vor dem Zug des Gegners, dann gleitet sein Zug über das Brett und bleibt
-      markiert; erst dann kannst du ziehen. Ist die Pause angenehm?
-- [ ] N1075. **Lösen und falscher Zug:** Eine Aufgabe richtig lösen (die App antwortet mit dem
-      Gegenzug), bei einer anderen einen falschen Zug ziehen: roter Pfeil und Verlust laut
-      Engine wie bei den Buchaufgaben. Hinweis 2 nennt das Thema, Hinweis 3 die Figur.
-- [ ] N1076. **Motivfrage:** Bei „Alle Themen gemischt“ kommt nach dem Lösen „Welches Motiv war
-      es?“, aber nur bei Themen, die zu einem der zwölf Grundmotive aus Kapitel 7 gehören
-      (Räumung zählt zur Hinlenkung, Ablenkung zur Überlastung). Bei einem einzelnen Thema
-      entfällt die Frage. Einverstanden mit der Zuordnung?
-- [ ] N1077. **Wiederholung:** Bei einer Zusatzaufgabe „Lösung zeigen“ tippen. Nach zwei Tagen
-      bietet der Taktiktrainer oben „Wiederholen: 1 Aufgabe ist fällig“ an, auch wenn
-      „Aus dem Buch“ gewählt ist; die Aufgabe kommt mit der Kennzeichnung als Zusatzaufgabe.
+- [ ] N1074. **Gegnerzug vorgespielt:** Ist die Pause von 0,7 Sekunden vor dem Zug des Gegners
+      angenehm?
+- [ ] N1075. **Lichess-Aufgabe, falscher Zug:** Roter Pfeil und Verlust laut Engine wie bei den
+      Buchaufgaben?
+- [ ] N1076. **Motivfrage:** Einverstanden mit der Zuordnung der Lichess-Themen zu den zwölf
+      Grundmotiven (Räumung zur Hinlenkung, Ablenkung zur Überlastung)?
 - [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
       „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
-- [ ] N1079. **Englisch:** Sprache auf Englisch stellen. Die Wahl heißt „From the book“ |
-      „Extra puzzles (Lichess)“, die Themen sind englisch benannt.
 
 ### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
-- [ ] N1060. **Quellenwahl:** Trainer › „Zug erraten“ öffnen. Oben steht „Quelle“ mit drei
-      Knöpfen: „Aus dem Buch“ (gewählt, wie bisher die Meisterpartien aus Kapitel 11),
-      „Berühmte Partien“ und „Aktuelle Turniere“. Bei „Aus dem Buch“ sieht alles aus wie bisher.
-- [ ] N1061. **Berühmte Partien:** „Berühmte Partien“ tippen. Die Liste „Partie“ zeigt etwa 50
-      Klassiker von Anderssen bis Carlsen (Titel „Weiß – Schwarz, Ort Jahr“). Unter der Liste
-      steht eine Karte „Zusatzinhalt (nicht aus dem Buch)“ mit Spielern, Ergebnis, Eröffnung,
-      einem kurzen Text (wer, wann, warum berühmt) und zwei Quellen als Links. Bitte ein paar
-      Kurztexte lesen: Stimmen sie, klingen sie gut? Partien aus dem Buch (Opernpartie,
-      Immergrüne, Lasker–Thomas usw.) kommen hier nicht noch einmal vor.
-- [ ] N1062. **Aktuelle Turniere:** „Aktuelle Turniere“ tippen. Etwa 60 Partien aus August und
-      September 2026 (Olympiade Samarkand, Sinquefield Cup, türkische Liga u. a.), klassische
-      Bedenkzeit, beide Spieler ab 2500, alle entschieden. Die Karte nennt Turnier, Runde, Datum,
-      Wertungen und als Quelle die Lichess-Übertragung mit „CC BY-SA 4.0“ (die Lizenz verlangt
-      diese Namensnennung).
-- [ ] N1063. **Raten wie gewohnt:** Eine berühmte Partie wählen, Seite des Siegers, „Runde
-      starten“. Über dem Brett steht zugeklappt „Zusatzinhalt (nicht aus dem Buch)“ (aufklappen
-      zeigt die Karte). Raten, Hinweis, Pfeile, Engine-Vergleich, Blättern und Analyse
-      funktionieren wie bei den Buchpartien; beim nächsten Mal nennt die App den letzten
-      Durchgang dieser Partie.
-- [ ] N1064. **Offline und Lizenzen:** Nach dem Aktualisieren der App einmal ohne Netz „Berühmte
-      Partien“ und „Aktuelle Turniere“ öffnen: Die Listen kommen trotzdem. Unter Einstellungen ›
-      Lizenzen steht der neue Eintrag „Zusatzpartien für „Zug erraten“ (aktuelle Turniere)“ mit
-      CC BY-SA 4.0.
+- [ ] N1061. **Berühmte Partien:** Bitte ein paar Kurztexte lesen: Stimmen sie, klingen sie gut?
+- [ ] N1064. **Offline:** Ohne Netz „Berühmte Partien“ und „Aktuelle Turniere“ öffnen: Die Listen
+      kommen.
 
 ### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 
-- [ ] N1050. **Koordinaten in der App:** schach-von-grund-auf.com/training/kap00/ öffnen. Unter
-      der Übung zum Koordinatentraining steht wie bisher „Direkt öffnen: Koordinatentraining ↗“
-      (Lichess, neuer Tab) und dahinter neu „In der App: Koordinaten, Notation, Gangarten“. Ein
-      Tipp darauf öffnet die App gleich im Koordinatentrainer (Knöpfe „Feld finden“ usw.).
-      „Zurück“ führt zur Übersicht der Trainer im Bereich Training. Passt das?
-- [ ] N1051. **Taktik und Endspiel in der App:** Auf schach-von-grund-auf.com/training/kap01/
-      steht bei Übungen mit „Aufgabenthemen“ zusätzlich „In der App: Taktiktrainer“, auf
-      /training/kap08/ und /training/kap09/ bei den Lichess-Übungen zu Mattvarianten und
-      Turmendspielen „In der App: Endspieltrainer“. Je einmal antippen: Öffnet sich der richtige
-      Trainer? Die Lichess-Links bleiben daneben, weil das Buch sie nennt.
 - [ ] N1052. **Linkprüfung im Dashboard:** Nach dem nächsten Wartungslauf (schach-von-grund-auf.com/admin/,
       Übersicht, Gruppe „Links“) prüft „App-Texte und Lizenzen“ jetzt auch die Quellen der
       Lizenzseite, die ohne „https://“ dastehen (etwa github.com/niklasf/chessops). Neu ist
       außerdem: Leitet eine Adresse auf eine andere Domain weiter (so sieht eine abgelaufene,
       geparkte Domain aus), wird der Punkt gelb mit „umgeleitet nach …“. Heute sollte alles grün
       sein. Ist es das?
-
-### Neu in 0.3.13: Orden verstreut, Pfeile, Serie ohne Verfall (Opus, 30.10.2026)
-
-- [ ] N1042. **Pfeile in den Werkzeugbildern:** Nachschlagen › Werkzeuge des Buches, ein Werkzeug
-      aufklappen. Neben den goldenen Nummern zeigt jetzt ein goldener Pfeil schräg von unten auf
-      jeden Knopf, den du antippst. Auf dem Brett selbst (bei „Zählen“ das Feld d4) steht nur die
-      Nummer, weil ein Pfeil dort wie ein Pfeil des Werkzeugs aussähe. Passt das?
-- [ ] N1043. **Tagesserie ohne Verfall:** Training › Kurzpläne › Tagesaufgabe. Die Zeile heißt
-      jetzt „Serie: 3 Tage mit Tagesaufgabe. Die Serie verfällt nicht.“ Lässt du einen Tag aus,
-      steht dort „… gerade pausiert. Löse heute die Tagesaufgabe, dann geht sie weiter“; die Zahl
-      bleibt und wächst mit der nächsten gelösten Aufgabe weiter (deine Wahl vom 30.10.). Ist der
-      Text so gut?
 
 ### Neu in 0.3.12: Wiki im Dashboard (Opus, 30.10.2026)
 
@@ -1648,45 +588,8 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
       hinter Cloudflare Access, nie als Datei im Repository. Steht dort „Noch keine Seiten“, ist
       der Lauf noch nicht durch. Ist das Wiki so brauchbar?
 
-### Neu in 0.3.11: Variantenbaum und Gambits (Opus, 30.10.2026)
-
-- [ ] N1038. **Variantenbaum:** In „Eröffnungen nach Spielstärke“ (Spielen › Eröffnung
-      festlegen) steht unter jeder Eröffnung „Varianten (20)“. Aufgeklappt: die 20 häufigsten
-      Varianten nach Lichess als Baum, verzweigt ab dem ersten abweichenden Zug, Geschwister nach
-      Häufigkeit. Jede Zeile nennt den Namen (ohne das, was darüber schon steht), die Züge ab der
-      Verzweigung in deiner Notation und den Anteil an der Eröffnung, etwa unter Italienisch
-      „Two Knights Defense · 3... Sf6 · 34 % dieser Eröffnung“, darunter „Knight Attack · 4. Sg5“.
-      Ein Tipp legt die Variante für den Bot fest. Die Variantennamen bleiben englisch wie in der
-      Lichess-Liste. Ist der Baum so lesbar?
-- [ ] N1039. **Gambits:** Unter „Weiß wählt“ und „Schwarz wählt“ steht „Gambits“: je Band die
-      drei häufigsten, die noch nicht dastehen, beide Seiten zusammen, mit „Weiß spielt es“ oder
-      „Schwarz spielt es“ und der Häufigkeit; der Name nennt die Eröffnung, aus der das Gambit
-      stammt („Sizilianische Verteidigung: Smith-Morra Gambit“). Um 800 sind es Englund-Gambit,
-      Busch-Gass-Gambit und Königsgambit. Das Damengambit zählt nicht als Gambit (wie im Buch).
-      Passt das?
-
-### Neu in 0.3.10: Eröffnungen nach Spielstärke (Opus, 30.10.2026)
-
-- [ ] N1037. **Eröffnungen nach Spielstärke:** Spielen › „Eröffnung festlegen“ aufklappen, darin
-      die neue Klappe „Eröffnungen nach Spielstärke“. Oben „von“ und „bis“ (Bänder 400 bis
-      2800+, Vorgabe 1000 bis 1400). Darunter „Weiß wählt“ und „Schwarz wählt“: Jedes Band
-      bringt die drei häufigsten Eröffnungen, die noch nicht dastehen, also bei drei Bändern neun
-      je Seite. Jede Zeile zeigt den Namen, „Buch 2.3“ bei Eröffnungen aus deinem Buch, „Gambit“
-      bei Gambits und „2,9 % der Partien um 1200“. Ein Tipp legt die Eröffnung fest: Sie steht
-      dann oben in der Auswahl, mit der Hauptvariante darunter, und der Bot folgt ihr, solange du
-      ihre Züge spielst. Gezählt in einem Monat Lichess (September 2026). Passen Aufbau und
-      Vorgabe?
-
 ### Neu in 0.3.9: Bilder im Nachschlagen (Opus, 30.10.2026)
 
-- [ ] N1035. **Steckbriefe mit Diagramm:** Nachschlagen › Steckbriefe, eine Eröffnung aufklappen
-      (etwa Caro-Kann). Unter den vier Zeilen steht jetzt die Schlussstellung der Hauptvariante
-      aus deinem Buch als kleines Brett mit deinen Pfeilen und Feldern, darunter
-      „Schlussstellung der Hauptvariante (Abb. 2.109)“; ein Tipp öffnet die Abbildung. Die App
-      nimmt in jedem Abschnitt die Abbildung, deren Unterschrift mit „Schlussstellung der
-      Hauptvariante“ beginnt; im Sammelabschnitt 2.10 die im Unterabschnitt mit dem Namen der
-      Eröffnung (beim Zweispringerspiel und Läuferspiel die erste der zwei, Abb. 2.128). Bei
-      den Fallenchecks steht der Stopp-Moment ebenso als Brett statt nur als Knopf. Passt das?
 - [ ] N1036. **Werkzeuge mit Bildschirmfoto:** Nachschlagen › Werkzeuge des Buches, ein
       Werkzeug aufklappen (etwa LAP). Unter Erklärung und Regel steht ein Foto aus der App an
       einer Abbildung deines Buches: Gold mit Nummer ist, was du antippst, in dieser
@@ -1699,154 +602,32 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
 
 ### Neu in 0.3.8: eigene Bots stellen sich vor (Opus, 30.10.2026)
 
-- [ ] N1034. **Beschreibung eigener Bots:** Spielen › Eigene Bots › „Neuer Gegner“ (oder einen
-      vorhandenen bearbeiten). Unter den vier Reitern steht „So stellt er sich vor:“ mit zwei
-      bis vier kurzen Sätzen aus deinen Einstellungen, etwa „Ein Gegner für Einsteiger. Spielt
-      im Stil Angreifer. Typisch: lässt Figuren hängen und übersieht Drohungen. Übersieht gern
-      Rückzüge.“ Die Stärke kommt aus dem Mittel der drei Stufen (bis 3 Einsteiger, bis 6
-      Vereinsniveau, bis 8 Fortgeschrittene, darüber starke Spieler), Fehler und blinde Flecken
-      aus den drei höchsten Reglern. Ändere einen Regler oder den Stil: Der Text ändert sich
-      sofort. Derselbe Text steht in der Gegnerwahl in der Sprechblase deines Bots. Klingen die
-      Sätze gut?
-
-### Neu in 0.3.7: Orden für volle Ringe (Opus, 30.10.2026)
-
-- [ ] N1032. **Neue Ringe im Profil:** Profil › Dein Fortschritt. Oben wie bisher Abbildungen,
-      Lernziele und Trainer, neu ein Ring „Übungen gelöst“ (alle 86 Übungen des Buches).
-      Darunter zwei aufklappbare Zeilen, damit es nicht zu viele werden: „Teile des Buches“ mit
-      fünf Ringen nach den Teilen deines Buches (Grundlagen = Kapitel 0 und 1, Eröffnung 2–4,
-      Mittelspiel 5–7, Endspiel 8–10, Praxis 11–12; voll, wenn alle Abbildungen angesehen und
-      alle Übungen gelöst sind) und „Vorgefertigte Bots besiegt“ mit neun Ringen nach deinen
-      Bündeln: Stufe 1–3, 4–5, 6–7 und 8–9 je „jeden Bot einmal“ (gewertet, beliebige Zeitart)
-      und „in allen Zeitarten“, dazu die Engine (Stufe 10) mit dem Superorden für jeden Bot
-      einmal. Die drei alten Ringe je Zeitart sind dafür weg. Die Zeile nennt, wie viele Ringe
-      schon voll sind. Passen Einteilung und Texte?
-- [ ] N1033. **Orden testen:** Aufgabenseite (Profil drei Sekunden halten) › ganz oben „Orden
-      testen (nur für dich)“. Je Ring ein Knopf „… auf 100 % setzen“: Sofort kommen Feuerwerk,
-      Ton und die Gratulation mit dem neuen Orden (Medaille mit Band und dem Zeichen des Rings).
-      Im Profil steht danach statt des Rings der Orden. „Neu starten“ zeigt die Startanimation:
-      Alle 18 Orden stehen im Kranz um den Springer, deine verdienten golden, die übrigen als
-      graue Silhouette. „Probe beenden“ stellt alles zurück; deine echten Fortschritte ändert
-      die Probe nie. Wie gefallen dir Orden und Kranz?
+- [ ] N1034. **Bot stellt sich vor:** Klingen die Sätze unter „So stellt er sich vor:“ gut?
 
 ### Neu in 0.3.6: ein Knopf „Merken“ für Lernsammlung und Fehlerdatenbank (Opus, 30.10.2026)
 
-- [ ] N1029. **Ein Knopf statt zwei Zeilen:** Spiele eine Partie und spiele sie nach. Am Brett
-      steht jetzt das Lesezeichen „Merken“ (wie bei den Abbildungen); die zwei Zeilen „In die
-      Fehlerdatenbank“ und „In die Lernsammlung“ unter der Karte sind weg (dein Beschluss: ein
-      Knopf). Ein Tipp öffnet unter der Karte die Wahl „Lernen | Fehler“. Bei Zügen mit ?, ??
-      oder „verpasst“ ist „Fehler“ vorgewählt, sonst „Lernen“. Ein zweiter Tipp schließt es,
-      ein anderer Zug ebenso.
-- [ ] N1030. **Vorschläge:** Unter „Fehler“ ist die Fehlerart schon gewählt, wenn die
-      Auswertung den Fehler erkennt (etwa hängende Figur oder stehengelassene Drohung →
-      „Kapitel 1: Schach oder Schlag übersehen“, übersehene Taktik → Kapitel 7, Schlagreflex
-      oder vergifteter Bauer → Kapitel 4, Bauernzüge ohne Not → Kapitel 5), und der Satz
-      steht vor: „12... Sxe4: lässt … zu. Besser war 12... h6.“ Unter „Lernen“ steht die
-      Eröffnung wie bisher und als Notiz „Aus meiner Partie, Stellung nach 12... Sxe4.“ Alles
-      lässt sich ändern. Passt die Zuordnung der Fehlerarten zu den Kapiteln?
-- [ ] N1031. **Goldenes Aufleuchten:** Bei einem eigenen Patzer (??) oder verpassten Gewinn
-      leuchtet „Merken“ zweimal kurz golden auf (bei „Bewegung reduzieren“ nur ein goldener
-      Rand). Nur dort, damit es nicht nervt (deine Vorgabe „lieber zu selten als zu oft“).
-      Passt das, oder auch bei einem Fehler (?)?
-
-### Neu in 0.3.5: Pfeile und Verlust nach einem falschen Zug (Opus, 30.10.2026)
-
-- [ ] N1027. **Taktiktrainer, falscher Zug:** Spiele in einer Taktikaufgabe absichtlich einen
-      falschen Zug. Unter dem Brett steht kurz „Die Engine vergleicht beide Züge …“, dann etwa
-      „Dein Zug Dh5 ist laut Engine um etwa 2,1 Bauerneinheiten schwächer als die Lösung (roter
-      Pfeil). Versuch es noch einmal.“ Auf dem Brett zeigt ein roter Pfeil deinen Zug. Die Lösung
-      bleibt verdeckt, damit du es noch einmal versuchen kannst (meine Empfehlung, Widerspruch
-      genügt: dann zeige ich den goldenen Pfeil sofort). Nach dem Lösen oder „Lösung zeigen“ steht
-      der volle Vergleich mit dem Zug der Lösung und beiden Bewertungen. Den goldenen Pfeil siehst
-      du, solange das Brett die Stellung vor deinem falschen Zug zeigt.
-- [ ] N1028. **Buchübungen, falscher Zug:** Dasselbe in den Übungen eines Kapitels (etwa Übung
-      zu Abb. 1.40: statt Sc7+ den Springer nach a7). Erst roter Pfeil und Verlust, nach dem
-      Lösen der Vergleich „dein Zug Sa7 …, Lösung Sc7+ …“. „Zug erraten“ und „Studien“ zeigen
-      Pfeile und Vergleich schon wie bisher; der Abweichungstrainer nennt Verlust und besseren
-      Zug weiter in Worten (dort zeigt das Brett schon die Stellung nach deinem Zug).
-
-### Neu in 0.3.4: Wertung auf chess.com und FIDE als Bereich (Opus, 30.10.2026)
-
-- [ ] N1026. **Drei Schalter statt zwei:** Profil › Deine Wertung (und unter Spielen „Deine
-      Spielstärke“) hat jetzt „Lichess | chess.com | FIDE“, und beide Umrechnungen gibt es für
-      jede Zeitart (dein Wunsch). Statt „≈ 1340“ steht ein Bereich, etwa „1190–1490 chess.com
-      Schnellschach“: In ihm liegt die Hälfte der Spieler, die bei uns dieselbe Zahl hätten.
-      Blitz wird mit chess.com Blitz verglichen, Schnellschach und Klassisch mit chess.com
-      Schnellschach, weil chess.com keine klassische Wertung führt; der Name der Liste steht
-      jeweils dabei. Bei FIDE fehlen Werte unter etwa 1650 (dann ein Strich mit der Grenze, etwa
-      „FIDE erst ab etwa 1730 (Lichess Klassisch)“). Die Kurve bleibt im Maßstab von Lichess, die
-      Wahl bleibt auf dem Gerät. Schon umgesetzt, Widerspruch genügt. Sind die Bereiche zu breit
-      oder gerade richtig?
+- [ ] N1030. **Fehlerarten:** Passt die Zuordnung der Fehlerarten zu den Kapiteln im Blatt
+      „Merken“ (hängende Figur → Kapitel 1, Taktik → 7, Schlagreflex → 4, Bauernzüge → 5)?
+- [ ] N1031. **Aufleuchten:** „Merken“ leuchtet nur bei ?? und verpasstem Gewinn. Soll es auch
+      bei einem Fehler (?) leuchten?
 
 ### Neu in 0.3.3: Kurzpläne und „Keine Fehlerneigung“ (Sonnet, 26.10.2026)
 
 Nach deinen Beschlüssen im Chat umgesetzt; Widerspruch genügt.
 
-- [ ] N1021. **Keine Fehlerneigung:** Eigener Bot, Vorlage „keine Fehler“ (keine Fehlerart und kein
-      blinder Fleck an): Über den Reitern steht nicht mehr „Menschlich.“, sondern „Keine
-      Fehlerneigung.“ in Gold, hinter dem Fragezeichen die Erklärung. Sobald eine Fehlerart oder
-      ein Fleck angehakt ist, kommen die alten Urteile wieder.
-- [ ] N1022. **Neuer Trainer „Kurzpläne“** (Training › Kapitel 12, Stundenglas-Symbol): Vier
-      Angebote. „5 Minuten: nur Wiederholungen“ zeigt Uhr und die fälligen Wiederholungen;
-      „Einheit abschließen“ meldet „Geschafft“. „15 Minuten: Kurzplan“ hat zwei Schritte
-      (5 Minuten Wiederholungen, 10 Minuten Taktik-Themenblock mit Knopf zum Taktiktrainer). Die
-      Einheit bleibt beim Wechsel in einen anderen Bildschirm erhalten (nach drei Stunden verfällt
-      sie). Der Stand liegt nur auf dem Gerät, nicht in der Datensicherung.
 - [ ] N1023. **Taktik auf Zeit:** „Zeitrunde starten“: drei Minuten leichte Taktikaufgaben, Ende
       nach drei Fehlern oder wenn die Zeit um ist; am Ende „X richtig, Y falsch“ und deine beste
       Runde. Prüfe, ob sich die Aufgaben auf dem Handy flott bedienen lassen und ob das Ende
       auch mitten in einer Aufgabe sauber kommt.
-- [ ] N1024. **Tagesaufgabe mit Serie:** Eine leichte Taktikaufgabe pro Tag (am nächsten Tag eine
-      andere). Oben steht „Serie: n Tage in Folge (beste: m)“; sie wächst, wenn du an
-      aufeinanderfolgenden Tagen eine Aufgabe bearbeitest (richtig oder falsch), und fällt nach einem
-      ausgelassenen Tag auf 0. Auch Änderung der Systemzeit zum Testen möglich.
-- [ ] N1025. **Fortschritt:** Der Ring „Trainer ausprobiert“ hat jetzt 18 statt 17 Trainer
-      (Kurzpläne zählt, sobald du eine Einheit abgeschlossen oder eine Runde gespielt hast).
 
 ### Neu in 0.3.2: kleine Korrekturen aus der Ideensammlung (Sonnet, 26.10.2026)
 
 Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurück.
 
-- [ ] N1011. **Eröffnung festlegen:** Spielen › Zahnrad „Eröffnung festlegen“ aufklappen. Unter
-      der Überschrift steht jetzt nur noch die Auswahlliste, ohne das zweite Wort „Eröffnung“.
-- [ ] N1012. **Varianten abspielen:** In der Auswertung einer Partie bei einem Zug mit Fehler:
-      „Besserer Zug“ und „Bestrafung“ stehen nebeneinander in einer Zeile (kürzere Beschriftung).
-      Läuft oder lief eine Variante, erscheint rechts daneben ein Pfeil zurück
-      („Zurück zur Ausgangsstellung“); er führt auch nach dem Ende der Variante zur Stellung der
-      Partie zurück.
 - [ ] N1013. **Zügeraten, Pfeile:** Trainer „Zug erraten“: Hast du den Partiezug selbst
       gefunden (auch mit Hinweis), erscheint kein Pfeil. Bei einem falschen Zug bleiben der
       goldene (Partiezug) und der rote Pfeil (dein Zug).
-- [ ] N1014. **Reiter „Blinde Flecken“:** Eigener Bot oder eigene Stufe: Der Reiter heißt jetzt
-      „Blinde Flecken (n)“. Prüfe, dass alle vier Reiter auf dem Handy in die Zeile passen.
-- [ ] N1015. **Profil:** Sind Name oder Porträt gesetzt, steht oben statt des Knopfes „Name und
-      Porträt“ ein kleiner Stift rechts auf der Karte; er öffnet dieselbe Auswahl. Solange beides
-      leer ist, steht der Textknopf weiter da.
-- [ ] N1016. **Einstellungen ohne „Training“:** Der Reiter „Training“ ist weg, „Brett“ steht
-      jetzt vorn. „Erst selbst denken“ gilt fest in der lockeren Form (Übungen: Hinweise erst nach
-      „Ich habe nachgedacht“), und vor den Werkzeugen an den Abbildungen wird nicht mehr nach einer
-      Einschätzung gefragt. Bitte eine Übung und eine Abbildung mit Werkzeug öffnen; beides soll wie
-      früher mit den Standardwerten laufen. Alte gespeicherte Werte werden ignoriert und bleiben
-      nur im Datenformat (Sicherungen), weil das Entfernen aus dem Format eine eigene Entscheidung
-      ist (Rückwärtsverträglichkeit).
-- [ ] N1017. **Sicherheitsblick ohne Zug:** Denkroutine, Werkzeug „Sicherheitsblick“ an einer
-      Stellung ohne Zugfolge und ohne Buchzug: Es prüft jetzt den besten Kandidaten der
-      Denkroutine (mit dem Satz „Kein Zug ist geplant: Geprüft wird der beste Kandidat …“).
-      Mit geplantem Zug oder Buchzug ändert sich nichts.
 
-- [ ] N1018. **Gegner und Farbe mit Zeichen:** Spielen: „Engine“ trägt ein Chip-Symbol und
-      „Mensch“ ein Personensymbol; „Weiß“ und „Schwarz“ tragen eine weiße und eine schwarze
-      Scheibe. Alles andere ist wie vorher.
-- [ ] N1019. **Bedenkzeit nach Zeitart:** Spielen › „Bedenkzeit“: statt vieler Kacheln steht je
-      Zeitart eine Zeile mit dem Zeichen einmal groß (Blitz, Stoppuhr, Kaffeetasse) und dem Namen
-      links, rechts daneben die Zeiten dieser Art (zum Beispiel Blitz: 3 + 0, 3 + 2, 5 + 3).
-      Außerhalb der Grundstellung kommt eine Zeile „ohne Uhr“ dazu. Prüfe, ob es auf dem Handy
-      ruhiger wirkt und ob die Zeiten in die Zeile passen.
-- [ ] N1020. **Motiv benennen als Liste:** Taktiktrainer, nach einer gelösten Aufgabe mit
-      Grundmotiv: Die zwölf Motive stehen jetzt in einer Auswahlliste („Motiv wählen …“) statt als
-      Knöpfe untereinander. Die erste Wahl zählt, danach steht die Antwort da. Befund der Durchsicht
-      aller Trainer: Die übrigen Chip-Gruppen haben höchstens vier Einträge (Seite, Stufe, Bereich,
-      Waage) und bleiben; alle längeren Wahlen waren schon Listen.
 
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 
@@ -1858,22 +639,6 @@ Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurüc
       Schild „Gewonnen!“ sprühen ein paar Funken, dazu ein kurzer Dreiklang (bei Ton an). Bei
       Remis kommt nur das Schild, bei einer Niederlage wird das Brett kurz grau und das Schild
       sinkt etwas ab, ohne Ton. Passt das Maß?
-- [ ] N996. **Rundgang:** Starte den Rundgang (Zahnrad › Hilfe › „Rundgang durch die App“) und auf
-      einigen Seiten über das Toursymbol. Jeder Schritt zeigt auf das Richtige, auch die neuen
-      Schritte zur Profilkarte, zum Reiter „Bots“, zur Wahl Engine oder Mensch und zu den
-      Werkzeugen am Brett der Partie.
-- [ ] N998. **Planbilanz-Übung:** Training › Planbilanz › Drei Planfragen, einige Runden. Bei „Wo
-      spiele ich?“ ist keine Antwort mehr ein Satz über den Gegner. Fragen aus dem Buch (etwa
-      „Warum spielt Weiß 9. Lc4 noch vor der langen Rochade?“) stehen unter der Überschrift
-      „Eine Frage aus dem Buch zu Abb. …“ statt „Beantworte die Planfragen“.
-
-### Neu in 0.2.143: Maia, Plan C, zwei Zahlensätze, acht Neulinge (Opus, 25.10.2026)
-
-Deine Freigaben vom 25.10.2026: Maia als Komplettpaket, in den Einstellungen ausschaltbar; Plan C;
-eine Neumessung mit und ohne Maia; die Gruppe Neuling auf acht Bots.
-
-- [ ] N987. **Löschen:** Einstellungen › Bots › „Maia vom Gerät löschen“. Danach steht wieder
-      „Laden“, und die Bots spielen ohne Maia (Zahlen wie ohne Maia).
 
 ### Neu in 0.2.131 und 0.2.132: Nutzungsprüfung (DS46 bis DS57, V1 bis V9, T1 bis T4) und deine Ergänzungen (Opus, 25.10.2026)
 
@@ -1883,34 +648,24 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 - [ ] N924. **Querformat in der installierten App (Android):** Die installierte App dreht sich mit
       dem Handy; quer erscheint das Querformat mit dem Brett links. (Wirkt erst nach dem
       nächsten Update der Installation; notfalls die App neu installieren.)
-- [ ] N925. **Fehler melden:** Im Formular steht unter dem Häkchen „Angaben zum Gerät
-      mitschicken“ eine Klappe „Was wird gesendet?“ mit den echten Werten (App-Version,
-      Browser und Gerät, Bildschirm, Sprache; an einer Abbildung auch Nummer und Stellung). Der
-      Satz darunter endet mit dem Link „Mehr in der Datenschutzerklärung“. Oben steht „Fehler im
-      Buch“ jetzt ganz (darf zweizeilig sein), nicht mehr „Fehler im B…“.
-- [ ] N935. **„Spielen“ schneller:** Unten auf „Spielen“ tippen: Der goldene Strich springt sofort
-      dorthin, der Bildschirm folgt gleich. Zurück zu „Buch“ und wieder „Spielen“: spürbar
-      schneller als vorher. „Beginnen“ wirkt sofort gedrückt, die Partie ist schneller da.
-
-### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
-
-Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an den Stand 0.2.128
-(Spinnennetz mit Stil-Mischung, Rücknahme bei den Spielhilfen).
-
-- [ ] N906. **Bedenkzeit als Kacheln:** vier gleich große Kacheln je Zeile, groß die Zeit
-      („3 + 2“), klein die Zeitklasse mit Zeichen (Blitz, Schnellschach, Klassisch). Aus einer
-      eigenen Stellung kommt „∞ ohne Uhr“ dazu.
-
-### Neu in 0.2.124: Admin-Dashboard, Fehler melden, Lichess-Links (R57; Opus, 24.10.2026)
-
-- [ ] N744. **Aufgabe für Claude:** Der Knopf fasst rote und gelbe Prüfungen und alle offenen
-      Meldungen als Auftrag zusammen und kopiert ihn. In einen neuen Chat einfügen genügt.
+- [ ] N935. **„Spielen“ schneller:** Unten auf „Spielen“ tippen: Wechsel und Partiebeginn spürbar
+      flott?
 
 ## Teil 2: Entscheiden
 
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q11 Startwahl und Nebenaufgaben (31.10.2026)
+
+- [ ] Q11-1. **QR-Code im Buch:** Die App versteht jetzt die Adresse
+      `schach-von-grund-auf.com/app/?start=buch`: Wer sie öffnet, landet ohne Frage im Buch-Weg der
+      ersten Tour. Empfehlung: Den QR-Code im Buch auf diese Adresse setzen (wer nur den Link der
+      Website weitergegeben bekommt, sieht dann die Startwahl). Das musst du im Buch ändern.
+- [ ] Q11-2. **Stern auf leeren Feldern:** Ein Feld neben einer Station ohne verdientes Stück zeigt
+      einen goldenen Stern statt einer grauen Silhouette (die wirkte wie ein leerer Platzhalter).
+      Schon umgesetzt, Widerspruch genügt.
 
 ### Q10 Kleinigkeiten aus der Gestaltungsrunde (31.10.2026)
 
@@ -2060,14 +815,13 @@ Beschlossen und in Arbeit sind schon: Lichess-Aufgaben als Zusatzaufgaben, berü
 Turnierpartien für „Zug erraten“, Erfahrungspunkte und Abzeichen, die Tagesserie, die nicht mehr
 verfällt. Übrig aus der Recherche bei Lichess, chess.com und Chessly:
 
-- [ ] Q5-1. **Weitere Trainingsformen (Empfehlung, noch nicht gebaut):** (a) „Nochmal versuchen“
-      an den Schlüsselzügen der Partieauswertung, mit einem Hinweis aus der Denkroutine statt einer
-      KI (wie bei chess.com). (b) Aufgabenserie ohne Uhr: Ein Fehler beendet die Serie, dein
-      Bestwert bleibt nur auf deinem Gerät (wie „Puzzle Streak“ bei Lichess). (c) Eine Abbildung
-      mit Ziel gegen die Engine ausspielen („halte Remis“, „setze matt“). (d) Ein ruhiger
-      Monatsrückblick nur auf deinem Gerät (Gelerntes, stärkstes und schwächstes Thema, ein
-      nächster Schritt mit Kapitel) und Stärken und Schwächen nach Buchthema mit Sprung in die
-      passende Übung. Sag, welche davon du willst („Q5-1 a, c“), dann baue ich sie.
+- [ ] Q5-1. **Zwei weitere Trainingsformen (Empfehlung, noch nicht gebaut):** (a) „Nochmal
+      versuchen“ an den Schlüsselzügen der Partieauswertung, mit einem Hinweis aus der
+      Denkroutine statt einer KI (wie bei chess.com). (c) Eine Abbildung mit Ziel gegen die
+      Engine ausspielen („halte Remis“, „setze matt“). Die beiden anderen Ideen von damals sind
+      inzwischen gebaut: die Serie ohne Uhr (Serienmodus im Taktiktrainer, 0.3.25) und der
+      Monatsrückblick (0.3.27) mit Stärken und Schwächen je Thema (Meisterschaft, 0.3.29). Sag,
+      welche du willst („Q5-1 a, c“), dann baue ich sie.
 
 ### Q3 Eröffnungspaket, Stufe 1: die Datenfrage (30.10.2026)
 
@@ -2097,14 +851,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Verteidigungen (auch „abgelehnt“, „angenommen“, „Gegengambit“) wählt Schwarz, sonst die
       Seite des letzten Zuges. Das Damengambit gilt nicht als Gambit, wie im Buch. Gezählt wird
       im Band dessen, der zieht; beide Spieler einer Partie liegen meist im selben Band.
-- [ ] Q3-2. **Rest des Eröffnungspakets:** Eröffnungen nach Spielstärke, Variantenbaum und
-      Gambits sind gebaut (0.3.10, 0.3.11), feste Eröffnungen für eigene Bots mit Regler
-      „Abweichung“ sind in Arbeit. Offen bleiben die Schnellwahl im Variantenbaum (alle, die
-      häufigsten 3 …) für den Repertoire-Trainer und weitere Fallen für „Falle oder Köder“. Die
-      Fallen brauchen zuerst eine Definition, die du freigibst. Empfehlung: Eine Falle ist ein
+- [ ] Q3-2. **Rest des Eröffnungspakets:** Fertig sind Eröffnungen nach Spielstärke (0.3.10),
+      Variantenbaum und Gambits (0.3.11) und feste Eröffnungen für eigene Bots mit Schnellwahl
+      und Regler „Abweichung“ (0.3.14). Offen bleiben weitere Fallen für „Falle oder Köder“. Sie
+      brauchen zuerst eine Definition, die du freigibst. Empfehlung: Eine Falle ist ein
       Köderzug, der nicht der beste ist und die Stellung deutlich verschlechtert, es sei denn,
       der Gegner antwortet mit dem naheliegenden falschen Zug (Schlagreflex, übersehene Gabel);
-      „naheliegend“ heißt: Menschen seiner Stärke spielen ihn laut Lichess häufig. Einverstanden?
+      „naheliegend“ heißt: Menschen seiner Stärke spielen ihn laut Lichess häufig.
+      Einverstanden? Der Repertoire-Trainer fragt weiter nur die Varianten des Buches ab
+      (Kapitel 2); Varianten von Lichess kämen dort nur auf deinen Wunsch dazu.
 
 ### Q2 Eigene Bots: freie Beschreibung? (30.10.2026)
 
@@ -2113,35 +868,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Vorschlag selbst umschreibst, bräuchte ein neues Feld im Speicher deiner Leser; deshalb
       warte ich damit auf dich. Empfehlung: erst einmal ohne freies Feld, weil der Text sich
       sonst nicht mehr mit den Reglern ändert. Möchtest du das Feld trotzdem?
-
-### Q1 Befunde der Nachsicht im Code (26.10.2026, nur gelesen, nichts geändert)
-
-Antworten auf deine Fragen aus der Ideensammlung. Wo ein Vorschlag steht, ist er noch nicht
-umgesetzt; Widerspruch genügt.
-
-- [ ] Q1-1. **Plus-Symbol in der Partieauswertung:** Es gibt es, aber es sieht nicht wie ein
-      Plus aus. Beim Nachspielen einer Partie (Rückblick) stehen unter der Karte zum gezeigten
-      Zug zwei aufklappbare Zeilen: „In die Fehlerdatenbank“ und „In die Lernsammlung“. Das
-      Lesezeichen mit Plus (wie an den Abbildungen im Buch) gibt es dort nicht, deshalb hast du
-      es vermisst. Die Eröffnung füllt die App in der Lernsammlung schon vor. Vorschlag: Beide
-      Zeilen durch ein Lesezeichen-Symbol neben der Karte ersetzen, das ein gemeinsames Fenster
-      öffnet (beschlossen, siehe Entscheidungen).
-- [ ] Q1-6. **Kürzere Trainingspläne:** Im Buch gibt es nur den 30-Minuten-Plan (Tag A
-      Partietag 5 + 20 + 5 Minuten, Tag B Studientag 5 + 15 + 10 Minuten, Kapitel 12). Der
-      Satz zu wenig Zeit lautet: „Hast du weniger Zeit, kürze zunächst das Themenstudium, nie
-      die Analyse.“ Weitere Pläne stehen nicht im Buch. Die App setzt den 30-Minuten-Plan in
-      `training/dreissigminuten.ts` um (zwei Tagesarten, je drei Schritte mit fester Dauer,
-      Stand auf dem Gerät). Ein Kurzplan müsste von der App stammen und nicht vom Buch; er
-      wäre ein neuer Entwurf und gehört zu dir als Autor, weil das Buch die Quelle ist.
-- [ ] Q1-7. **Wertungsumrechnung:** Die eigene Wertung der App liegt auf dem Maßstab von
-      Lichess, je Zeitklasse (Blitz, Schnellschach, Klassisch). Daneben zeigt die App
-      „entspricht etwa“: Blitz und Schnellschach auf chess.com, Klassisch auf FIDE. chess.com
-      hat keine Wertung für Klassisch, deshalb nimmt Klassisch die FIDE-Liste; sie gilt erst ab
-      etwa 1730 Lichess Klassisch. Die Zahlen stammen aus dem Wertungsvergleich von
-      chessgoals.com (Juli 2026, Selbstangaben, spiel/umrechnung-daten.ts). Eine Umrechnung
-      von Klassisch auf chess.com gäbe es nur über den gemeinsamen Blitzwert; die Streuung wäre
-      groß, ein Bereich statt einer Zahl wäre dann ehrlicher. Der Punkt E4 weiter unten betrifft
-      dasselbe.
 
 ### R57 Dashboard: Einrichtung und Empfehlungen (24.10.2026)
 

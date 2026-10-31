@@ -4,6 +4,100 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.43: Testpunkte vorgeprüft, Startwahl, Orden und Nebenaufgaben
+
+Wunsch des Autors (31.10.2026 abends): „so viele meiner Aufgaben wie möglich, die du ohne mich
+erledigen kannst“. Vier Prüfer gingen die 349 offenen Testpunkte von Teil 1 mit der gebauten App in
+Playwright durch (Handygröße 360/393 px, hell und dunkel; Vorgehen wie am 19.10.2026), dazu Abgleich
+mit den bestehenden Oberflächentests. Ergebnis: 180 gestrichen, 60 überholt, 101 bleiben (Geschmack,
+echtes Gerät, Buchinhalt, Fragen), 75 davon gekürzt. Teil 1 hat jetzt 104 alte und 14 neue Punkte.
+
+- **Gestrichen (180),** ohne Auge des Autors geprüft und in Ordnung: N744, N925, N987, N998, N1012, N1014, N1015, N1017, N1020, N1021, N1022, N1025, N1027, N1028, N1037, N1038, N1039, N1042, N1043, N1047, N1050, N1051, N1062, N1063, N1071, N1077, N1080, N1081, N1082, N1086, N1088, N1089, N1093, N1094, N2003, N2004, N2005, N2008, N2010, N2011, N2013, N2014, N2016, N2018, N2019, N2022, N2023, N2101, N2102, N2142, N2143, N2146, N2152, N2153, N2154, N2155, N2161, N2162, N2164, N2168, N2169, N2176, N2180, N2182, N2183, N2189, N2191, N2192, N2193, N2194, N2197, N2199, N2200, N2201, N2203, N2204, N2205, N2206, N2209, N2211, N2213, N2214, N2215, N2216, N2217, N2219, N2222, N2223, N2225, N2227, N2228, N2229, N2231, N2232, N2233, N2235, N2236, N2237, N2239, N2242, N2244, N2245, N2247, N2248, N2249, N2250, N2251, N2252, N2253, N2255, N2256, N2259, N2260, N2262, N2264, N2265, N2267, N2268, N2269, N2271, N2272, N2273, N2275, N2276, N2278, N2279, N2281, N2282, N2283, N2285, N2286, N2287, N2288, N2289, N2293, N2294, N2297, N2298, N2299, N2301, N2302, N2303, N2305, N2306, N2307, N2311, N2312, N2313, N2314, N2320, N2322, N2323, N2324, N2326, N2327, N2328, N2330, N2331, N2332, N2333, N2334, N2335, N2336, N2337, N2338, N2340, N2342, N2343, N2345, N2346, N2347, N2348, N2349, N2351, N2354, N2355, N2357, N2358, N2359, N2360.
+- **Überholt (60),** durch spätere Umbauten ersetzt:
+  - N906: N1019 und N2333 (Zeilen je Zeitart statt Kacheln).
+  - N996: N2361–N2363 (Touren 0.3.42), tour.spec.ts „jede Tour der Bereiche läuft bis zum Ende durch“.
+  - N1011: N2334 (Eröffnungswahl im Blatt).
+  - N1016: 0.3.41 Einstellungen neu (N2304–N2308): Reiter Bedienung/Anzeige/Hilfe.
+  - N1018: N2333/N2337 (Spielen neu: Mensch als Schalter auf „Freie Partie“). Weiß/Schwarz mit Scheiben im Blatt sind gesehen (n1019-blatt.png).
+  - N1019: N2333 (Bedenkzeit im Blatt). Das Foto zeigt je Zeitart eine Zeile mit Zeichen und Zeiten, alles passt (n1019-blatt.png).
+  - N1024: N1043: Die Serie verfällt nicht mehr (Text „fällt auf 0“ ist falsch).
+  - N1026: N2247/N2308 (Maßstab in Einstellungen › Bots und Wertung, Bereich unter der Kurve); belegt in profil.spec.ts „Wertung in drei Kacheln …“.
+  - N1029: N2328 (Merken als Blatt von unten).
+  - N1032: N2243/N2244/N2312 (Ringe für Teile und Bots stehen als Regale in „Deine Erfolge“).
+  - N1033: Der Kranz aus 18 Orden in der Startanimation ist durch N2018/N2019 (0.3.17) ersetzt. Die Gratulation mit Orden belegt autoraufgaben.spec.ts.
+  - N1035: N2293/N2294 (eigene Steckbriefseite mit Diagramm, Fallenchecks mit Stopp-Moment), geprüft in nachschlagen-gegner.spec.ts.
+  - N1060: N2288 (Zeile „Quelle“ statt drei Knöpfen). Die Vorgabe „Aus dem Buch“ prüft zugerraten-zusatz.spec.ts.
+  - N1070: N2280/N2283 (Zeile „Aufgaben“, Wahl „Zusätzlich Lichess“). Die Vorgabe „Aus dem Buch“ prüft zusatzaufgaben.spec.ts.
+  - N1079: Die Wahl heißt seit N2283 „Aus dem Buch“ | „Zusätzlich Lichess“, englisch „From the book“ | „Extra from Lichess“ (nicht mehr „Extra puzzles (Lichess)“).
+  - N1085: N2334 (Eröffnungswahl im Blatt „Partie einstellen“). Den Vorrang deckt boteroeffnungen.spec.ts ab.
+  - N1092: Sechsecke → eigene Formen (N2015, 0.3.17), Gitter → Regal (N2243); heute 28 Abzeichen. Die Frage „fehlt eines?“ bleibt sinngemäß in den gekürzten Texten.
+  - N2001: N2346/N2347: Die Frage steht mit ⓘ, „Genauer üben“ liegt hinter dem ⓘ, Antwort-Banner neu.
+  - N2009: N2348 (Falle oder Köder neu gestaltet). Den Ablauf mit Warnsignalen und Balken deckt trainer.spec.ts „Falle oder Köder …“ ab.
+  - N2015: N2243/N2244: Abzeichen stehen im Regal „Deine Erfolge“, das Gitter in „Dein Fortschritt“ gibt es nicht mehr; Bedingung per Tipp: ordenkunst.spec.ts „Profil: Abz…
+  - N2017: N2243/N2244 (Ringe für Teile/Bots sind ins Regal gewandert). Die Gratulation mit Ordensbild belegt autoraufgaben.spec.ts „Orden testen: Ring zur Probe voll, Gra…
+  - N2020: N2347 (Zähltrainer-Antwort mit Marke „Abzug“ und ⓘ statt Satz „Achtung Abzug“)
+  - N2021: N2347/N2348/N2344 (Banner, Chips, Kandidaten-Zeilen) haben die Auflösung neu gestaltet
+  - N2110: N2252 (Karte „Heute“ mit großer Kachel „Tagesaufgabe – 1 Stellung für heute“; e2e naechster-schritt.spec.ts)
+  - N2111: N2252 (Kachel statt „Lösen“); Tagesaufgabe direkt + „Zurück zum Buch“ e2e naechster-schritt.spec.ts
+  - N2112: N2252 (Alternative „Weiterlesen – Abb. …“); unit naechsterSchritt.test.ts „liest nach der zuletzt geöffneten Abbildung weiter“
+  - N2113: N2252 (zwei kleine Kacheln statt „Lieber etwas anderes?“)
+  - N2114: N2253 (Kreuz statt „Nicht jetzt“); e2e naechster-schritt.spec.ts
+  - N2115: N2252/N2260 („Wiederholen – 9 Stellungen · etwa 6 Min“, „Durchgehen“); Schätzung unit
+  - N2116: N2228 (Motiv jetzt vorgewählt); Übungen unit „erst ab 80 %“
+  - N2117: Karte heißt jetzt „Heute“/„Today“ (vc-buch englisch: „Today“, „Daily puzzle“, „Start“)
+  - N2120: N2250 (Weg-Symbol oben rechts im Buch); Profil-Knopf „Dein Weg durchs Buch“ besteht (e2e lernpfad.spec.ts)
+  - N2121: N2257/N2258 (Landschaften, Stationen neu)
+  - N2122: N2355 (Satz jetzt hinter ⓘ); Text „Noch 3 Übungen bis zum Ende von Kapitel 0 …“ e2e lernpfad.spec.ts
+  - N2123: N2258 („Du bist hier“ an der aktuellen Station)
+  - N2124: N2257/N2259 (dunkel/hell); Tipp öffnet Kapitel e2e lernpfad.spec.ts
+  - N2130: N2255 (Zeile „Tage pro Woche 2 3 4 5 7“)
+  - N2131: N2255 („Später“ hinter „Wochenziel?“; e2e wochenziel.spec.ts)
+  - N2132: N2251 (Kreise mit Linie, Flamme „x von y Tagen“)
+  - N2133: N2251 („Wochenziel geschafft!“ statt „… Schön!“)
+  - N2134: N2251 („3 Wochen geschafft · beste Folge 3“); Regeln e2e wochenziel.spec.ts
+  - N2135: N2251 (Stift statt „Ziel ändern“)
+  - N2140: N2249 (nur Erreichtes groß, Vorschläge, „Noch 7 weitere Rekorde“)
+  - N2144: N2313/N2249 („Verbessern“ bzw. „Los“); e2e rekorde.spec.ts „Los: Taktik auf Zeit“
+  - N2151: N2243 (Regale in „Deine Erfolge“ mit „Teilen“ bei verdienten Stücken)
+  - N2170: N2270 bis N2274 (Ankleide mit Reitern Rahmen/Brett/Figuren/Konfetti/Titel)
+  - N2171: N2272/N2275 (Antippen statt „Wählen“); e2e extras.spec.ts
+  - N2172: N2272 (Bronze anlegen per Kachel); Rahmen am Porträt e2e extras.spec.ts
+  - N2173: N2302 (Figuren-Kacheln, „Gold“ mit Schloss); Sperre e2e extras.spec.ts
+  - N2174: N2301 („Nacht und Gold“ mit Schloss in der Farbreihe)
+  - N2175: N2273 (Ablegen); „nie wegnehmen“ e2e extras.spec.ts zweiter Test
+  - N2187: Weg „Titel unter deinem Namen › Wählen“ ersetzt durch N2276 (Reiter „Titel“, Antippen); Funktion e2e meisterschaft.spec.ts + vc-profil („Taktiker“ anlegbar, „En…
+  - N2202: N2339: „Revanche“ belegt „Schnell eine Partie“ (Tom, gewertet, „dein gewählter Gegner“, Knopf „Spielen“); e2e rivale.spec.ts, vc-buch
+  - N2210: Karte „Heute“ ersetzt nächsten Schritt + Wochenkarte (A2, N2251/N2256). vc-buch am 3.11.: Rückblickkarte steht unter „Heute“ und verdrängt die Rivalenkarte, nic…
+  - N2220: N2280 (Startkarte G1: „Serie ohne Fehler“ mit Flamme, Beschreibung hinter „So funktioniert“); Start „Serie: 0 in Folge“, Stufe 1 in e2e taktikserie.spec.ts
+  - N2226: N2249/N2313: Tafel zeigt Erreichtes + „Los“/„Verbessern“ statt „Versuchen“; Zeile „Taktikserie ohne Fehler“ öffnet den Trainer (e2e taktikserie.spec.ts), 9 Reko…
+  - N2234: N2339: „Spielen“ belegt „Schnell eine Partie“ (Lotte, Schnellschach 10 + 0), Knopf „Spielen“ statt „Beginnen“; e2e ziele.spec.ts
+  - N2258: Der Kopf mit Satz und Ring und die Erklärung „Jede Station …“ unter dem Weg sind durch N2355 (Lernpfad-Kopf mit Balken und ⓘ) ersetzt. Rest geprüft und in Ordnu…
+  - N2277: Durch die neuen Einstellungen (N2301/N2302, 0.3.41): kein Reiter „Brett“ und keine Gruppe „Verdient“ mehr; gesperrte Brettfarbe/Figuren stehen mit Schloss in de…
+  - N2315: Durch N2316 (0.3.39, Maia im eigenen Thread): dieselbe Probe auf dem Redmi, dort samt Uhr. Der Punkt kann entfallen.
+
+- **Gefundene Fehler, behoben:** Fundstück-Album öffnete in der Höhe des Profils (N2166, jetzt
+  oben); Blätter der Auswertung ohne Seitenrand (doppelte Klasse `.blatt`, jetzt
+  `auswertungsblatt`); doppelter Punkt im Satz von „Merken“ (N1030); „Serie: 1 Tage“ (Einzahl);
+  Steckbriefname „Zweispringe|rspiel“ (N2292, `overflow-wrap: break-word`).
+- **Teil 2 aufgeräumt:** Q1 (Plus-Symbol, Kurzpläne, Wertungsumrechnung) war seit 0.3.3 bis 0.3.6
+  erledigt und ist gestrichen; Q3-2 und Q5-1 nennen nur noch, was offen ist. N2358 entschieden:
+  Ein bester Zug darf rot „▼ 0,1“ zeigen (Sicht der ziehenden Seite).
+- **Profil, Kennzahlen:** Übungen, Trainer-Durchgänge und Warum-Fragen als drei Kacheln unter
+  Stufe und Erfahrung statt loser Zeilen unter den Orden (Befund des Autors mit Bildschirmfoto).
+- **Startwahl der ersten Tour** (Wunsch des Autors): „Ich lese das Buch“ / „Ich will spielen und
+  Partien auswerten“ / „Erst einmal umsehen“; `?start=buch` für den QR-Code im Buch (Q11-1);
+  Hinweis zum Installieren nur im Browser-Tab; Sprungknöpfe in Tourschritten (`starttouren.ts`).
+- **Karte „Heute“:** Ohne gesehene Abbildung beginnt der Vorschlag bei der ersten des Buches; eine
+  nur kurz geöffnete Abbildung wird selbst vorgeschlagen; Tagesaufgabe erst nach Kapitel 0 (80 %)
+  oder einem Trainer; Kreuz neben der Kachel, wenn es keine Alternativen gibt.
+- **Infofenster und Nebenaufgaben** (Wunsch des Autors, Arbeitszweig `orden-nebenaufgaben`):
+  Bedingung, Stand und „Los geht's“ zu jedem Orden und Abzeichen; auf dem Lernpfad je Kapitel ein
+  Bündel mit allen passenden Abzeichen, Orden, Übungen, Lernzielen und Trainern (Zuordnung in
+  `lernpfad/nebenaufgaben.ts`); neue Abzeichen „Kurzer Prozess“ (Kapitel 4) und „Neue Dame“
+  (Kapitel 8), nur aus gespeicherten Partien; Orden „Trainings erstmalig absolviert“ zählt 17
+  Trainer (die Fehlerdatenbank hat keine Runde, der Orden war unerreichbar). Offene Stücke im
+  Fenster blass in Farbe statt Silhouette (Empfehlung, Regel 9). Kein neues Speicherfeld.
+
 ## 31.10.2026 – Gesamtprüfung der Erklärungen und der Tour (0.3.42)
 
 Wunsch des Autors nach den vielen Änderungen an der Oberfläche: Erklärungen in Nachschlagen, die

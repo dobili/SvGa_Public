@@ -6,6 +6,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneSpielseite, spieleVorschlag, ungewertet, zurueckZuSpielen } from "./spielenhilfen";
 
 /** Die Karte der laufenden Tour. */
 function tourkarte(page: Page) {
@@ -202,11 +203,17 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await bereich(page, "Spielen");
   await starteTour(page);
   const spielen = await bisZumEnde(page);
-  expect(spielen.join(" ")).toContain("Art des Gegners");
-  expect(spielen.join(" ")).toContain("Gegen wen du spielst");
-  expect(spielen.join(" ")).toContain("„Beginnen“ startet die Partie");
-  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
-  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  // Seit „Spielen neu“ (J3): Startseite mit Vorschlag, Kacheln; die Leiste auf den Unterseiten.
+  expect(spielen.join(" ")).toContain("Schnell eine Partie");
+  expect(spielen.join(" ")).toContain("Weitere Wege zu einer Partie");
+  await oeffneSpielseite(page, "gegner");
+  await starteTour(page);
+  const gegner = await bisZumEnde(page);
+  expect(gegner.join(" ")).toContain("Die Gegner nach Stufen");
+  expect(gegner.join(" ")).toContain("„Spielen“ startet die Partie");
+  await zurueckZuSpielen(page);
+  await ungewertet(page);
+  await spieleVorschlag(page);
   await starteTour(page);
   const waehrend = await bisZumEnde(page);
   expect(waehrend.join(" ")).toContain("Die Züge der Partie");

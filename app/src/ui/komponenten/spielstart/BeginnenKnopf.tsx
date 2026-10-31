@@ -1,8 +1,8 @@
 /**
  * Der Knopf „Partie beginnen“ mit der Rückfrage, wenn schon eine Partie läuft.
  *
- * Rolle im Gesamtbild: Steht auf dem Bildschirm Spielen in der festen Startleiste
- * (Startleiste.tsx, Spielen.tsx). Der Knopf zeigt den Tipp sofort (gedrückt, für Bildschirmleser
+ * Rolle im Gesamtbild: Steht auf der Karte „Schnell eine Partie“ und in der festen Startleiste
+ * der Unterseiten von „Spielen“ (Entwurf J3; Startleiste.tsx, Vorschlagskarte.tsx). Der Knopf zeigt den Tipp sofort (gedrückt, für Bildschirmleser
  * „beschäftigt“) und beginnt die Partie erst nach diesem Bild (V6, Nutzungsprüfung 25.10.2026);
  * sonst stünde gedrosselt (CPU 4×) gut 0,2 s lang nichts Neues da, bis die Partie fertig
  * gezeichnet ist.
@@ -22,10 +22,16 @@ export function BeginnenKnopf({
   moeglich,
   hinweis,
   beiBeginn,
-  kurz = false,
+  text,
+  vorlesen,
+  gross = false,
 }: {
-  /** Nur „Beginnen“ sichtbar (Startleiste, DS50); Bildschirmleser hören „Partie beginnen“. */
-  kurz?: boolean;
+  /** Sichtbarer Text (seit J3 „Spielen“). */
+  text: string;
+  /** Name für Bildschirmleser, beginnt mit dem sichtbaren Text („Spielen gegen Felix“). */
+  vorlesen?: string;
+  /** Großer Knopf über die ganze Breite (Karte „Schnell eine Partie“). */
+  gross?: boolean;
   laufend: boolean;
   moeglich: boolean;
   hinweis: string | null;
@@ -56,14 +62,14 @@ export function BeginnenKnopf({
       ) : (
         <button
           type="button"
-          className="knopf-haupt"
-          aria-label={kurz ? t("spielen.beginnen") : undefined}
+          className={gross ? "knopf-haupt knopf-spielen-gross" : "knopf-haupt"}
+          aria-label={vorlesen}
           disabled={!moeglich}
           aria-busy={beginnt}
           onClick={() => (laufend ? setzeErsetzen(true) : beginne())}
         >
           <Knopfsymbol art="starten" />
-          {t(kurz ? "spielen.beginnenKurz" : "spielen.beginnen")}
+          {text}
         </button>
       )}
       {hinweis && <p className="hinweis">{hinweis}</p>}

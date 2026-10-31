@@ -4,6 +4,11 @@
  */
 import { expect, type Locator, type Page } from "@playwright/test";
 
+/** Ein Versuch, eine Zeile der Startkarte zu bedienen (ms); danach neu versuchen. */
+const VERSUCH_MS = 1500;
+/** So lange darf eine Zeile der Startkarte brauchen, bis ihr Wert wählbar ist (ms). */
+const ZEILE_WARTEN_MS = 20_000;
+
 /**
  * Alles, was gerade als Werkzeug gewählt ist: Bündel in der Leiste und Symbole am Brett (seit
  * 0.2.30 sitzen Ziehen, Engine, Röntgen und Warnsignale am Brett). Leer, wenn nichts gewählt ist.
@@ -244,16 +249,24 @@ export async function waehleInZeile(
   wert: string | RegExp,
 ): Promise<void> {
   const zeile = seite.getByTestId(testkennung);
-  const liste = zeile.locator("select");
-  if ((await liste.count()) > 0) {
-    const optionen = await liste.locator("option").allTextContents();
-    const text = optionen.find((o) => (typeof wert === "string" ? o === wert : wert.test(o)));
-    if (text === undefined) throw new Error(`„${String(wert)}“ fehlt in ${testkennung}`);
-    await liste.selectOption({ label: text });
-    return;
-  }
-  await zeile.locator("button.startzeile").click();
-  await zeile.locator("button.chip", { hasText: wert }).click();
+  const passt = (o: string) => (typeof wert === "string" ? o === wert : wert.test(o));
+  await expect(zeile).toBeVisible();
+  // Eine Zeile kann beim Laden der Daten ihre Form wechseln (erst wenige Chips, dann die lange
+  // Auswahlliste, etwa die Motive des Taktiktrainers): so lange neu versuchen, bis der Wert da ist.
+  await expect(async () => {
+    const liste = zeile.locator("select");
+    if ((await liste.count()) > 0) {
+      const text = (await liste.locator("option").allTextContents()).find(passt);
+      if (text === undefined) throw new Error(`„${String(wert)}“ fehlt in ${testkennung}`);
+      await liste.selectOption({ label: text }, { timeout: VERSUCH_MS });
+      return;
+    }
+    const chip = zeile.locator("button.chip", { hasText: wert });
+    if ((await chip.count()) === 0) {
+      await zeile.locator("button.startzeile").click({ timeout: VERSUCH_MS });
+    }
+    await chip.click({ timeout: VERSUCH_MS });
+  }).toPass({ timeout: ZEILE_WARTEN_MS });
 }
 
 /** Tippt auf der Startkarte auf den großen Knopf „Runde starten …“. */

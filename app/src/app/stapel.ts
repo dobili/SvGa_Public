@@ -33,6 +33,8 @@ export type Ansicht =
       readonly bildschirm: "spielen";
       readonly startFen?: string;
       readonly abbildung?: string;
+      /** Unterseite (spielstart/spielseiten.tsx) oder „vorbelegt“; fehlt: Startseite (J3). */
+      readonly seite?: string;
     }
   /** Eine Partie gegen die Engine, laufend oder beendet (mit Auswertung). */
   | { readonly bildschirm: "partie"; readonly id: string }

@@ -1,0 +1,410 @@
+/*
+ * Bildschirm „Spielen“ nach Entwurf J3 „Schnell eine Partie“ (Wahl des Autors, 31.10.2026):
+ * Vorschlagskarte, laufende Partie mit kleinem Brett, Kacheln zu den Unterseiten, „Zuletzt
+ * gespielt“, Blatt „Partie einstellen“. Farben nur über die Tokens aus basis.css und
+ * abstimmung.css, damit hell und dunkel stimmen; Tippflächen mindestens 44 px.
+ */
+
+/* ---------- Karte „Partie läuft“ ---------- */
+.laufende-karte {
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.laufende-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.laufende-text p {
+  color: var(--text-leise);
+  font-size: var(--groesse-mittel);
+}
+
+.minibrett {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 6px;
+}
+
+.mb-hell {
+  fill: var(--creme);
+}
+
+.mb-dunkel {
+  /* Dunkle Felder wie im Entwurf; das Brettchen sieht hell und dunkel gleich aus. */
+  fill: #8d9bb3;
+}
+
+.mb-figur {
+  font-size: 9px;
+  fill: #16253d;
+}
+
+/* ---------- Karte „Schnell eine Partie“ ---------- */
+.vorschlagskarte {
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--gold) 14%, var(--flaeche)),
+    var(--flaeche) 70%
+  );
+  gap: calc(var(--raster) * 1.5);
+}
+
+.vorschlag-oben {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.vorschlag-titel {
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+
+.vorschlag-kopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.75);
+}
+
+.vorschlag-kopf > .gegnerbild {
+  flex: none;
+  width: 72px;
+}
+
+.vorschlag-kopf .gegner-portraet {
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--gold);
+}
+
+.vorschlag-wer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.vorschlag-name {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 600;
+}
+
+.vorschlag-zeile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.vorschlag-zeiten {
+  display: flex;
+  gap: var(--raster);
+}
+
+.vorschlag-zeiten .zeitknopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 999px;
+}
+
+.vorschlag-angabe {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+  text-align: center;
+}
+
+.knopf-spielen-gross {
+  width: 100%;
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--raster);
+  font-size: var(--groesse-titel);
+}
+
+.vorschlagskarte .beginnen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.vorschlag-anderer {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tippflaeche);
+  color: var(--text-leise);
+}
+
+/* ---------- Kacheln zu den Unterseiten ---------- */
+.spielkacheln {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--raster) * 1.25);
+}
+
+.spielkachel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 112px;
+  padding: calc(var(--raster) * 1.75);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.spielkachel:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.spielkachel-bild {
+  color: var(--gold-text);
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.spielkachel-gesichter img {
+  width: 30px;
+  height: 30px;
+}
+
+.spielkachel-titel {
+  font-weight: 600;
+  font-size: var(--groesse-grund);
+}
+
+.spielkachel-text {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+  line-height: 1.3;
+}
+
+/* ---------- Zuletzt gespielt ---------- */
+.zuletzt-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.zuletzt-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: 56px;
+}
+
+.zuletzt-zeile + .zuletzt-zeile {
+  border-top: 1px solid var(--linie);
+}
+
+.zuletzt-wer {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.25);
+  min-height: var(--tippflaeche);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.zuletzt-wer > .gegnerbild {
+  flex: none;
+  width: 40px;
+}
+
+.zuletzt-wer .gegner-portraet {
+  border-radius: 50%;
+}
+
+.zuletzt-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.zuletzt-text > span {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.zuletzt-revanche {
+  padding: 0 calc(var(--raster) * 1.25);
+}
+
+/* ---------- Sprechblase: Stil und „So stellt er sich vor“ ---------- */
+.gegner-stil {
+  color: var(--gold-text);
+  font-weight: 600;
+  font-size: var(--groesse-klein);
+}
+
+.gegner-vorstellung-titel {
+  margin-top: 4px;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Freie Partie: Schalter „Mensch“ ---------- */
+.spielen-mensch {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.spielen-mensch > span {
+  flex: 1;
+}
+
+.spielen-mensch > svg {
+  color: var(--gold-text);
+}
+
+/* ---------- Blatt „Partie einstellen“ ---------- */
+.blatt {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(640px, 100vw);
+  max-height: 88vh;
+  margin: auto auto 0;
+  padding: 0;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  background: var(--flaeche);
+  color: var(--text);
+  box-shadow: 0 -6px 24px rgb(0 0 0 / 35%);
+}
+
+.blatt::backdrop {
+  background: rgb(5 10 20 / 55%);
+}
+
+.blatt-inhalt {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+  padding: var(--raster) calc(var(--raster) * 2)
+    calc(var(--raster) * 3 + env(safe-area-inset-bottom));
+}
+
+.blatt-griff {
+  align-self: center;
+  width: 44px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--linie-stark);
+}
+
+.blatt-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blatt-titel {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 600;
+}
+
+.blatt-zu {
+  min-width: var(--tippflaeche);
+  min-height: var(--tippflaeche);
+  justify-content: center;
+}
+
+.blatt-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: 100%;
+  min-height: 56px;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.blatt-zeile-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blatt-zeile-klein {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.blatt-eroeffnung {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.blatt-eroeffnung > .knopf-flach {
+  align-self: flex-start;
+}
+
+/* Handybreite 360 px: Bei wenig Platz rutscht „Weiterspielen“ unter Brett und Text. */
+.laufende-karte {
+  flex-wrap: wrap;
+}
+
+.laufende-text {
+  min-width: 8rem;
+}
+
+.laufende-karte > .knopf-haupt {
+  flex: 1 0 auto;
+}
+
+/* Namen in „Zuletzt gespielt“ in einer Zeile, zur Not gekürzt. */
+.zuletzt-text strong,
+.zuletzt-text > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zuletzt-zeile .ergebnismarke {
+  flex: none;
+}

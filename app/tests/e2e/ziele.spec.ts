@@ -92,7 +92,12 @@ test("Eigene Ziele: Vorschlag anheften, lösen, Spielen, erreicht mit Feier und 
 
   // „Spielen“ öffnet den Spielstart mit Lotte.
   await angeheftet.getByRole("button", { name: "Spielen" }).click();
-  await expect(page.getByRole("button", { name: "Beginnen" }).first()).toBeVisible();
+  // Seit „Spielen neu“ (J3) steht Lotte auf der Karte „Schnell eine Partie“.
+  await expect(page.getByTestId("vorschlag-name")).toHaveText("Lotte");
+  await expect(page.getByRole("radio", { name: "Schnellschach 10 + 0" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
   await page.goBack();
 
   // Sieg in Schnellschach (wie nach einer Partie): erreicht, Feier, Profil.

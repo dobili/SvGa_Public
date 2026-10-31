@@ -33,7 +33,74 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Auswertung neu (31.10.2026)
+### Neu in 0.3.38: Spielen neu (Arbeitschat, 31.10.2026)
+
+Der Bildschirm „Spielen“ ist nach deiner Wahl neu gebaut (Entwurf J3 „Schnell eine Partie“):
+oben ein Vorschlag mit großem Knopf „Spielen“, darunter Rivale, Spielstärke, vier Kacheln zu
+eigenen Seiten und „Zuletzt gespielt“. Die Einstellungen von Stärke, Stil, Fehlern und Flecken
+sehen aus wie bisher, nur der Weg dorthin ist neu. Öffnen: Tipp auf „Spielen“ unten in der Leiste.
+Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › Anzeige).
+
+- [ ] N2330. **Startseite:** Von oben nach unten: (nur wenn eine Partie läuft) die Karte „Partie
+      läuft“ mit kleinem Brett, „gegen … · 10 + 0“ und „Weiterspielen“; dann „Schnell eine
+      Partie“; dann (wenn du einen hast) der Rivale; „Deine Spielstärke“; vier Kacheln „Gegner
+      aussuchen“, „Eigene Stufe“, „Eigene Bots“, „Freie Partie“; unten „Zuletzt gespielt“.
+      Nichts ist breiter als der Bildschirm, nichts ragt über den Rand. Die feste Leiste unten mit
+      „Beginnen“ gibt es auf der Startseite nicht mehr.
+- [ ] N2331. **Schnell eine Partie:** Die Karte zeigt einen Bot mit rundem Porträt, Namen,
+      Stufenmarke, „Stufe 3 · Positionsspieler“ (Beispiel) und darunter seine Zahl mit einem
+      Satz: ohne gewertete Partie „gut für den Anfang“ (dann ein Bot der Stufe 1 oder 2), sonst
+      meist „etwa so stark wie du“. Bots, die du in dieser Zeitklasse schon gewertet besiegt hast,
+      kommen erst später dran. „Anderer Vorschlag“ zeigt den nächsten passenden Bot; nach dem
+      letzten beginnt es wieder vorn.
+- [ ] N2332. **Drei Bedenkzeiten und „Spielen“:** Auf der Karte stehen drei Zeiten mit dem
+      Zeichen ihrer Zeitklasse (Blitz, Schnellschach, Klassisch), anfangs 3 + 2, 10 + 0, 30 + 20.
+      Ein Tipp wählt sie; die Zeile darunter („Weiß · 10 + 0 · gewertet“) ändert sich mit. Hast
+      du im Blatt etwa 5 + 3 gewählt, steht 5 + 3 statt 3 + 2 auf der Karte. „Spielen“ beginnt
+      die Partie gegen genau diesen Bot mit dieser Zeit und Farbe. Läuft schon eine Partie,
+      fragt die App erst, ob sie ersetzt werden soll.
+- [ ] N2333. **Blatt „Partie einstellen“:** „Einstellen ›“ oben rechts auf der Karte öffnet von
+      unten ein Blatt mit: Du spielst (Weiß/Schwarz), allen sieben Bedenkzeiten nach Zeitklasse,
+      „Gewertete Partie“ mit Fragezeichen, Spielhilfen (Zurücknehmen, Symbole, Werkzeuge; in
+      gewerteten Partien gesperrt mit dem Satz „Spielhilfen gehen nur in ungewerteten
+      Partien.“) und unten der Zeile „Eröffnung festlegen“ mit der aktuellen Wahl. Schließen mit
+      dem X oben rechts oder mit Tipp auf den dunklen Rand.
+- [ ] N2334. **Eröffnung im Blatt:** Tipp auf „Eröffnung festlegen ›“ zeigt im selben Blatt die
+      Eröffnungswahl wie bisher (wie Menschen dieser Stärke, ohne Buch, aus dem Buch, einzelne
+      Eröffnungen mit Hauptvariante, „Eröffnungen nach Spielstärke“ mit Varianten, Gambits und
+      Quelle). „Zurück zu den Einstellungen“ führt zurück. Mit einem eigenen Bot mit festen
+      Eröffnungen (Seite „Eigene Bots“) stehen dort Hinweis und Haken „Eröffnung des Bots
+      überschreiben“.
+- [ ] N2335. **Gegner aussuchen:** Die Kachel öffnet eine eigene Seite mit „‹ Spielen“ oben
+      links. Oben die Sprechblase des gewählten Bots: Porträt, Name mit Zahl und Fragezeichen
+      (Erklärung der Stärke), darunter golden sein Stil und „So stellt er sich vor“ mit seinem
+      Satz. Darunter wie bisher „Zum Spaß“ und Stufe 1 bis 10 zum Aufklappen, mit Porträts,
+      Zahlen je Zeitklasse, Siegzeichen, „x/8“ und dem Gruppenmodus. Unten klebt eine Leiste mit
+      dem Bot, „Weiß · 10 + 0 · gewertet“ und „Spielen“; ein Tipp auf die Leiste links öffnet das
+      Blatt „Partie einstellen“.
+- [ ] N2336. **Eigene Stufe und Eigene Bots:** „Eigene Stufe“ zeigt oben die geschätzte Zahl
+      („Deine Einstellung 1 · 1 · 1 · etwa …“) und darunter genau die bisherigen Reiter Stärke,
+      Stil, Fehler, Blinde Flecken mit Marke „Menschlich“; unten die Leiste „Eigene Stufe ·
+      Spielen“. „Eigene Bots“ zeigt deine Bots zum Antippen, die Liste mit Bearbeiten und
+      Löschen und „Neuen Gegner anlegen“ mit dem bisherigen Editor. Ohne gewählten eigenen Bot
+      ist „Spielen“ ausgegraut und die Leiste sagt „oben wählen oder anlegen“.
+- [ ] N2337. **Freie Partie:** Die Kachel öffnet eine Seite mit dem Schalter „Mensch (beide Seiten
+      selbst)“ und der Startstellung mit „Stellung aufbauen“ und „Eigene Stellung eingeben
+      (FEN)“. Mit Schalter spielt ihr zu zweit am Gerät, ohne ihn dein zuletzt gewählter Gegner.
+      Nach einer aufgebauten Stellung zeigt das Brett sie, die Leiste sagt „ungewertet“, und im
+      Blatt gibt es zusätzlich „Ohne Uhr“.
+- [ ] N2338. **Aus einer Abbildung:** Im Buch bei Abb. 1.26 „Gegen die Engine spielen“ antippen:
+      „Spielen“ zeigt oben „Aus der Stellung von Abb. 1.26“ mit Brett, darunter „Schnell eine
+      Partie“ (ungewertet, „Ohne Uhr“ möglich). „Spielen“ beginnt aus dieser Stellung. Die
+      Kacheln nehmen die Stellung mit: „Gegner aussuchen“ beginnt dann ebenfalls aus Abb. 1.26.
+- [ ] N2339. **Zuletzt gespielt und Revanche:** Nach ein, zwei Partien gegen Bots stehen sie
+      unten (höchstens drei) mit Porträt, Name, „heute · 10 + 0“ und der Ergebnismarke (Pokal,
+      Händedruck oder Kreuz). Tipp auf den Namen öffnet die Partie. „Revanche“ zeigt sofort oben
+      „Schnell eine Partie“ mit genau diesem Bot (Satz „dein gewählter Gegner“) und einer Zeit
+      derselben Zeitklasse. Genauso wirken „Revanche“/„Herausfordern“ auf der Rivalenkarte und
+      „Spielen“ an einem angehefteten Ziel („Besiege Lotte in Schnellschach.“).
+
+### Neu in 0.3.38: Auswertung neu (Arbeitschat, 31.10.2026)
 
 Die Auswertung nach einer Partie ist nach deiner Wahl neu gebaut (Entwurf F2 „Zeitleiste der
 Partie“): Ergebnis oben, die Partie als Zeitleiste in Momenten, darunter „In Zahlen“, ganz unten
@@ -89,7 +156,7 @@ unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach ei
       „Zurücknehmen“ nach dem Ende (nur in ungewerteten Partien), die Meldung „Gruppenmodus frei“ und während der Rechnung
       „Die Engine wertet die Partie aus …“ mit Balken: alles noch da?
 
-### Buchseite und Lernpfad neu (31.10.2026)
+### Neu in 0.3.38: Buchseite und Lernpfad neu (Arbeitschat, 31.10.2026)
 
 Die Startseite „Buch“ und „Dein Weg durchs Buch“ sind nach deiner Wahl der Entwürfe neu gebaut:
 A2 „Heute“ und B1 „Fünf Landschaften“. Weniger Text, mehr Bild; die Kapitel beginnen weiter oben.
@@ -1604,16 +1671,16 @@ nur du das Buch änderst.
 
 ### Q9 Cloudflare baut nicht mehr (31.10.2026, dringend)
 
-- [ ] Q9-1. **Die Seite zeigt noch 0.3.31.** Seit etwa 13:20 Uhr bricht der Cloudflare-Build bei
-      jedem Push sofort ab (Beginn und Ende in derselben Sekunde, auch bei Zweigen ohne
-      Codeänderung). Am Code liegt es nicht; die GitHub-Prüfungen bauen dieselben Stände
-      fehlerfrei. Vermutlich ist bei Cloudflare ein Kontingent erschöpft (etwa die Build-Minuten
-      des Monats), weil heute jeder Arbeitszweig zusätzlich eine Vorschau baut. Bitte im
-      Cloudflare-Dashboard unter Workers › schach-von-grund-auf › Builds den letzten
-      fehlgeschlagenen Build öffnen und nachsehen, was dort steht. Empfehlung: unter Settings ›
-      Build die Vorschau-Builds für andere Zweige als `main` ausschalten (du testest ohnehin auf
-      main); danach den letzten Build von `main` neu starten. Ich kann das nicht selbst, weil ich
-      keinen Zugang zu Cloudflare habe (und keinen haben soll).
+- [ ] Q9-1. **Vorschau-Builds bei Cloudflare ausschalten.** Von etwa 13:20 bis 16:45 Uhr brach
+      der Cloudflare-Build bei jedem Push in derselben Sekunde ab, ohne zu bauen; die Seite blieb
+      bei 0.3.31. Dein Neustart um 16:45 hat 0.3.32 sauber gebaut und ausgeliefert, am Code lag es
+      also nicht. Der Vorschau-Build eines Arbeitszweigs, der zur selben Zeit kam, brach wieder
+      sofort ab. Das spricht für eine Grenze bei Cloudflare (ein Build zur selben Zeit oder die
+      Build-Minuten des Monats), die die vielen Arbeitszweige heute ausschöpfen. Empfehlung: im
+      Cloudflare-Dashboard unter Workers › schach-von-grund-auf › Settings › Build die Builds für
+      andere Zweige als `main` ausschalten (du testest ohnehin auf main). Bis dahin prüfe ich nach
+      jedem Push nach main, ob die Seite die neue Version zeigt, und sage dir Bescheid, falls du
+      den Build neu starten musst.
 
 ### Q8 Gamifizierung: Entscheidungen E2 bis E11 (31.10.2026)
 

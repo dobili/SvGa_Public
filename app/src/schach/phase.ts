@@ -22,7 +22,13 @@
  * Stellung, nicht der Zugnummer).
  * Zwei Regeln für Eröffnung und Mittelspiel (S17, Entscheidung des Autors, 17.10.2026): Stellungen
  * des Buches (Abbildungen und Buchlinien) folgen dem Glossar, damit App und Buch übereinstimmen;
- * eigene Partien folgen der Lesart vom 17.10. (eine Seite entwickelt oder Material ungleich).
+ * eigene Partien folgen der Lesart. Seit 0.3.14 (Entscheidungen 11 und 12 des Autors, 30.10.2026,
+ * nach Recherche und Messung an Lichess-Partien) ist die Lesart: Mittelspiel, wenn beide Seiten
+ * entwickelt sind und rochiert haben (wie das Glossar), oder vorher, wenn genug getauscht ist, eine
+ * Grundreihe ausgedünnt ist oder die Lager ineinanderstehen (schach/phasengruende.ts, nach
+ * Lichess). Endspiel in eigenen Partien nur mit wenig Material; an den Abbildungen bleibt die
+ * Regel aus Kapitel 8. Vorher galt „eine Seite entwickelt oder Material ungleich“; das beendete
+ * die Eröffnung im Median schon nach dem 6. Zug, in 78 % mit beiden Seiten unentwickelt.
  */
 import type { Color, Square } from "chessops/types";
 import type { Angriffskarte } from "./angriffskarte";
@@ -30,6 +36,7 @@ import { bauernprofil } from "./bauernprofil";
 import { bauernschwaechen } from "./bauernschwaechen";
 import type { Drohung } from "./drohungen";
 import { koenigsweg } from "./koenigsweg";
+import { ausweg, wenigMaterialFuerEndspiel } from "./phasengruende";
 import { hatRochiert } from "./rochade";
 import { FIGURENWERT, type Stellung } from "./stellung";
 import type { Verlauf } from "./todsuenden";
@@ -68,15 +75,19 @@ export function phasenregel(buchstellung: boolean | undefined, verlauf?: Verlauf
 export type Zusatzregel = "wenigMaterial";
 
 /**
- * Warum die Phase gilt (für die Erklärung am Phasenwechsel): Eröffnung, weil Figuren zu
- * Hause stehen; Mittelspiel, weil beide oder eine Seite entwickelt ist oder das Figurenmaterial
- * ungleich ist; Endspiel nach den vier Fragen oder nach der Zusatzregel.
+ * Warum die Phase gilt (für die Erklärung am Phasenwechsel). Eigene Partien: Eröffnung, solange
+ * Entwicklung und Rochade ausstehen und noch nichts passiert ist; Mittelspiel, weil beide fertig
+ * sind, genug getauscht ist, eine Grundreihe ausgedünnt ist, die Lager ineinanderstehen, oder die
+ * Damen getauscht sind, aber noch viel Material da ist; Endspiel nach den vier Fragen oder nach der
+ * Zusatzregel. Buchstellungen: nach dem Glossar.
  */
 export type Phasengrund =
   | "zuHause"
-  | "beideEntwickelt"
-  | "eineEntwickelt"
-  | "materialUngleich"
+  | "beideFertig"
+  | "abtausch"
+  | "grundreihe"
+  | "kontakt"
+  | "damenlos"
   | "glossarMittelspiel"
   | "glossarEroeffnung"
   | "fragen"
@@ -116,8 +127,6 @@ const ZU_HAUSE_EROEFFNUNG = 2;
 const UEBERWIEGEND = 3;
 /** Figurenmaterial ohne Bauern je Seite, bis zu dem Angriffe selten noch entscheiden. */
 const WENIG_MATERIAL = 13;
-/** Mittelspiel, sobald das Figurenmaterial um eine Leichtfigur ungleich ist (Lesart). */
-const UNGLEICH_AB = 3;
 /** Zusatzregel nach Speelman: Endspiel, wenn jede Seite höchstens so viele Punkte hat (ohne König). */
 export const ENDSPIEL_BIS_PUNKTE = 13;
 
@@ -235,12 +244,11 @@ export function phase(
   };
   const { fragen, zentrumsweg } = endspielfragen(stellung, karte, drohungen);
   const glossar = regel.art === "glossar" ? glossarstand(stellung, ziele, regel.verlauf) : null;
-  const vorEndspiel =
-    fragen.ja >= UEBERWIEGEND
+  const vorEndspiel = glossar
+    ? fragen.ja >= UEBERWIEGEND
       ? null
-      : glossar
-        ? nachGlossar(glossar)
-        : mittelspielOderEroeffnung(stellung, ziele);
+      : nachGlossar(glossar)
+    : nachLesart(stellung, ziele, fragen.ja >= UEBERWIEGEND);
   const buchphase: Phase = vorEndspiel ? vorEndspiel.phase : "endspiel";
   const { phase: ermittelt, zusatz } = mitZusatzregeln(buchphase, stellung);
   const grund: Phasengrund = zusatz ?? vorEndspiel?.grund ?? "fragen";
@@ -296,20 +304,30 @@ function nachGlossar(stand: Readonly<Record<Color, Glossarstand>>): {
     : { phase: "eroeffnung", grund: "glossarEroeffnung", entwickelt: null };
 }
 
-/** Eröffnung oder Mittelspiel mit Grund, wenn die Endspielfragen nicht überwiegend Ja ergeben. */
-function mittelspielOderEroeffnung(
+/**
+ * Die Phase eigener Partien (Lesart seit 0.3.14, Entscheidungen 11 und 12 des Autors): Endspiel
+ * nur, wenn die vier Fragen überwiegend Ja ergeben UND wenig Material da ist (null); sonst
+ * Mittelspiel, wenn beide Seiten entwickelt sind und rochiert haben (Glossar) oder ein Ausweg nach
+ * Lichess greift (Abtausch, Grundreihe, Kontakt); sonst Eröffnung.
+ * Beispiel: Grundstellung → Eröffnung; beide entwickelt und rochiert → Mittelspiel („beideFertig“);
+ * Damen getauscht, aber je zwei Türme und zwei Leichtfiguren → Mittelspiel („damenlos“).
+ * Sonderfall: Ein König, der nie rochiert, hält die Partie nicht in der Eröffnung; spätestens der
+ * Ausweg beendet sie (Grundreihe oder Kontakt).
+ */
+function nachLesart(
   stellung: Stellung,
   ziele: Readonly<Record<Color, Zielbilanz>>,
-): { phase: Phase; grund: Phasengrund; entwickelt: Color | null } {
-  const entwickelte = (["white", "black"] as const).filter((farbe) => istEntwickelt(ziele, farbe));
-  if (entwickelte.length === 2) {
-    return { phase: "mittelspiel", grund: "beideEntwickelt", entwickelt: null };
+  fragenJa: boolean,
+): { phase: Phase; grund: Phasengrund; entwickelt: Color | null } | null {
+  if (fragenJa) {
+    if (wenigMaterialFuerEndspiel(stellung.brett)) return null;
+    return { phase: "mittelspiel", grund: "damenlos", entwickelt: null };
   }
-  const eine = entwickelte[0];
-  if (eine) return { phase: "mittelspiel", grund: "eineEntwickelt", entwickelt: eine };
-  const ungleich =
-    Math.abs(figurenmaterial(stellung, "white") - figurenmaterial(stellung, "black")) >=
-    UNGLEICH_AB;
-  if (ungleich) return { phase: "mittelspiel", grund: "materialUngleich", entwickelt: null };
+  const fertig = (["white", "black"] as const).every(
+    (farbe) => istEntwickelt(ziele, farbe) && hatRochiert(stellung, farbe),
+  );
+  if (fertig) return { phase: "mittelspiel", grund: "beideFertig", entwickelt: null };
+  const grund = ausweg(stellung.brett);
+  if (grund) return { phase: "mittelspiel", grund, entwickelt: null };
   return { phase: "eroeffnung", grund: "zuHause", entwickelt: null };
 }

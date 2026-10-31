@@ -1,3 +1,9 @@
+Stand: 30.10.2026 nachts · **Version 0.3.15** (Zweig `phasen`, Koordinierungs-Chat Opus): Entscheidungen 11 bis 13 fertig: Phasenregel für eigene Partien (Glossar plus Lichess-Gründe, Endspiel nur mit wenig Material), Eichung neu (Menschenprofil, Elo-Modell mit `SCHMAL` 460, Wahlmodell mit und ohne Maia), Bot-Stichprobe ohne messbaren Unterschied (78 Paarungen, +0,2 ± 1,1 Prozentpunkte), daher keine Neumessung. Testpunkte N1044 bis N1048, Buchbefund Q7. Damit sind alle 13 Entscheidungen vom 30.10. umgesetzt. **Nächster Schritt:** Rückmeldung des Autors zu N1041 bis N1095, Q6 und Q7; offen bleibt Q5-1 (weitere Trainingsformen, noch nicht beschlossen).
+
+Stand: 30.10.2026 nachts · Zweig `phasen` (Opus, auf 0.3.14 aufgebaut, noch nicht auf main): Phasenregel (11, 12) und Eichung (13) vollständig: Menschenprofil, Elo-Modell, Wahlmodell mit und ohne Maia neu aus umetikettierten Daten. **Läuft:** Bot-Stichprobe in zwei Messchats, gleiche Paarungen und Saaten (`messplan-nach/ohne/teil-1.txt`, 24 Partien): alt auf c02badf → Zweig `messung-phasenprobe-alt-ohne-1`, neu auf a58bb60 → `messung-phasenprobe-neu-ohne-1`. **Nächster Schritt:** beide Zweige vergleichen (Punkte je Paarung, Mittel und Streuung); liegt der Unterschied in der Messgenauigkeit, Version 0.3.15 nach main; sonst Neumessung nach `skripte/messe-nach.sh` und neue Zahlensätze.
+
+Stand: 30.10.2026 spätabends · Zweig `phasen` (Koordinierungs-Chat Opus, noch nicht auf main): Phasenregel für eigene Partien (Entscheidungen 11, 12: Glossar plus Lichess-Gründe, Endspiel nur mit wenig Material) und Eichung 13 teilweise fertig: Menschenprofil-Phasenfaktoren und Elo-Modell neu (aus umetikettierten Daten in `buch/arbeit`, ohne neue Engine-Läufe), `SCHMAL` 460; Testpunkte N1044–N1048, Buchbefund Q7. Arbeitschats 5–10 sind fertig (Zweige paket-webverweise, paket-meisterpartien, paket-zusatzaufgaben, paket-boteroeffnungen, paket-abzeichen), Prüfung läuft. **Nächster Schritt:** Wahlmodell neu (läuft lokal: `buch/arbeit/zugwahl/wahlmodell.py` mit ELO2=1 PHASE=1 und `/home/user/maia/fit_c1.py` je Zeitklasse; danach `wahlmodell-daten.ts` mit `buch/arbeit/zugwahl/schreibe_ts.py JSON ZIELDATEI` und Prettier und `wahlmodell-maia-daten.ts` mit `/home/user/maia/schreibe_ts.py`), dann Bot-Stichprobe; parallel die fünf Zweige nacheinander nach main übernehmen, danach `phasen`.
+
 Stand: 30.10.2026 spätabends · **Version 0.3.14** (Zweig `zusammenfuehrung`, Koordinierungs-Chat Opus): Pakete 5 bis 10 der Arbeitschats geprüft, zusammengeführt und nachgebessert (Webverweise, Meisterpartien und Turnierpartien für „Zug erraten“, Lichess-Zusatzaufgaben, feste Eröffnungen eigener Bots, Erfahrungspunkte und Abzeichen); Testpunkte N1050 bis N1095, Rückfragen Q6. **Nächster Schritt:** Phasenzweig `phasen` (Entscheidungen 11 bis 13) auf diesen Stand bringen, Wahlmodell neu einspielen (siehe Eintrag darunter auf dem Zweig `phasen`), Bot-Stichprobe, dann 0.3.15.
 
 Stand: 30.10.2026 abends · **Version 0.3.13** (Zweig `kleinpakete`, Koordinierungs-Chat Opus): Entscheidungen 1 bis 13 des Autors angenommen. Selbst gebaut: 1 Orden verstreut, 3 Pfeile in den Werkzeugbildern, 4 Tagesserie ohne Verfall; Prüfstand eingearbeitet (315 Punkte erledigt). **Arbeitschats laufen** (je eigener Zweig, nie nach main): paket-webverweise (5, N1050–1059), paket-meisterpartien (6+7, N1060–1069), paket-zusatzaufgaben (8, N1070–1079), paket-boteroeffnungen (9, N1080–1089), paket-abzeichen (10, N1090–1099). **Nächster Schritt:** Zweige nach Fertigmeldung prüfen und übernehmen; danach Phasenregel (11, 12) in `schach/phase.ts` nur für eigene Partien, Messskript `spiel/phasenvergleich.messung.ts` als Grundlage; Eichung neu (13) aus `buch/arbeit/menschenprofil2`, `tiefe18`, `appmodell` (nur lokal); Bot-Stichprobe über zwei Arbeitschats.
@@ -1361,14 +1367,14 @@ unten). Testpunkte N690–N701 und Rückfragen P4-1 bis P4-7 in `docs/AUFGABEN_A
 - [x] **R48 Planbilanz-Übung** (`training/planablenker.ts` neu, `planbilanztrainer.ts`): Ablenker
       aus Sicht der Seite am Zug, Figuren mit „dein“, nur Mittelspiel (49 Stellungen),
       Hauptkette. Prüflauf `npx vitest run --config vitest.messung.config.ts
-  src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
+src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
       (durchgesehen: alle 49 Stellungen plausibel).
 - [x] **R47 Endspieltrainer** (`training/endspieldrills.ts`, `endspielzugdrills.ts` neu,
       `ui/trainer/Drillaufgabe.tsx`, `pipeline/trainer/endspiel.py`, `endspiel_lichess.py` neu):
       drei neue Kurzübungen, Quadrat als Pfeile aus k8-quadrat, Abb. 8.31 raus, Plausibilität aller
       Buchstellungen über zwölf Züge geprüft (nur 8.31 trivial), 119 freie Lichess-Endspielaufgaben
       (Themen `bauernendspiel`, `damenendspiel` neu). Lauf: `python -m pipeline.trainer.endspiel
-  --lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
+--lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
       Stichprobe entsteht mit `lichess.lies_datenbank(pfad, endspiele=True)` (zwei Minuten).
 - [x] **R49 Strukturerkenner** (`p3-werkzeuge` eingemischt; `training/strukturtrainer.ts`,
       `ui/trainer/Strukturaufgabe.tsx`, `pipeline/trainer/struktur.py`): echte Stellung mit Knopf

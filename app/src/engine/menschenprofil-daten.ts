@@ -9,85 +9,80 @@
  */
 
 export const BAENDER = [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400] as const;
-/**
- * Je Fehlerart: wie oft Menschen eine Gelegenheit zu ihr nutzen (`rate` je Band), Faktor je Phase
- * Median und 90-%-Wert des Verlusts (in Bauern).
- */
 export const GELEGENHEIT = {
   bauernraub: {
     rate: [0.0312, 0.0312, 0.0312, 0.0312, 0.0285, 0.0285, 0.0263, 0.0136, 0.0047, 0.0047, 0.0047],
-    phase: { eroeffnung: 0.87, mittelspiel: 1.14, endspiel: 1.0 },
+    phase: { eroeffnung: 0.97, mittelspiel: 1.15, endspiel: 1.0 },
     median: 1.61,
     p90: 6.5,
   },
   bauernvorstoss: {
     rate: [0.2301, 0.2151, 0.2141, 0.2032, 0.1731, 0.168, 0.168, 0.1633, 0.1544, 0.1322, 0.107],
-    phase: { eroeffnung: 1.0, mittelspiel: 1.0, endspiel: 1.0 },
+    phase: { eroeffnung: 1.0, mittelspiel: 0.84, endspiel: 1.03 },
     median: 1.02,
     p90: 2.84,
   },
   drohungIgnoriert: {
     rate: [0.3004, 0.2638, 0.2209, 0.1838, 0.1629, 0.1438, 0.1161, 0.0951, 0.0822, 0.073, 0.0681],
-    phase: { eroeffnung: 0.99, mittelspiel: 1.05, endspiel: 0.85 },
+    phase: { eroeffnung: 1.01, mittelspiel: 1.06, endspiel: 0.8 },
     median: 1.57,
     p90: 5.79,
   },
   falscherAbtausch: {
     rate: [0.1887, 0.1839, 0.1839, 0.1839, 0.1839, 0.1839, 0.1839, 0.1836, 0.1372, 0.1027, 0.0909],
-    phase: { eroeffnung: 1.0, mittelspiel: 1.08, endspiel: 0.7 },
+    phase: { eroeffnung: 0.63, mittelspiel: 1.15, endspiel: 0.67 },
     median: 0.68,
     p90: 0.88,
   },
   figurHaengen: {
     rate: [0.0328, 0.0249, 0.0192, 0.0161, 0.0138, 0.0124, 0.0107, 0.0083, 0.0064, 0.0048, 0.0033],
-    phase: { eroeffnung: 0.57, mittelspiel: 1.26, endspiel: 0.67 },
+    phase: { eroeffnung: 0.81, mittelspiel: 1.31, endspiel: 0.53 },
     median: 2.53,
     p90: 6.77,
   },
   koenigMitte: {
     rate: [0.2033, 0.1812, 0.1567, 0.1461, 0.1461, 0.1425, 0.1329, 0.1261, 0.1075, 0.0881, 0.0828],
-    phase: { eroeffnung: 1.2, mittelspiel: 1.02, endspiel: 0.67 },
+    phase: { eroeffnung: 1.01, mittelspiel: 1.01, endspiel: 0.37 },
     median: 0.92,
     p90: 2.46,
   },
   koenigPassiv: {
     rate: [0.1777, 0.1777, 0.1777, 0.1777, 0.1777, 0.1777, 0.1777, 0.1777, 0.1777, 0.1668, 0.1457],
-    phase: { eroeffnung: 1.0, mittelspiel: 1.0, endspiel: 1.0 },
+    phase: { eroeffnung: 1.0, mittelspiel: 0.78, endspiel: 1.01 },
     median: 1.06,
     p90: 3.09,
   },
   koenigsschild: {
     rate: [0.0314, 0.0314, 0.0314, 0.0314, 0.0254, 0.0238, 0.0238, 0.0238, 0.023, 0.0188, 0.0133],
-    phase: { eroeffnung: 1.12, mittelspiel: 1.0, endspiel: 1.0 },
+    phase: { eroeffnung: 1.09, mittelspiel: 0.98, endspiel: 1.0 },
     median: 0.96,
     p90: 2.25,
   },
   schlagreflex: {
     rate: [0.1057, 0.0908, 0.0758, 0.0624, 0.0532, 0.0472, 0.0411, 0.0355, 0.0294, 0.0235, 0.0196],
-    phase: { eroeffnung: 0.8, mittelspiel: 1.06, endspiel: 0.88 },
+    phase: { eroeffnung: 0.88, mittelspiel: 1.1, endspiel: 0.8 },
     median: 1.89,
     p90: 5.02,
   },
   taktikUebersehen: {
     rate: [0.18, 0.1687, 0.1536, 0.1372, 0.1287, 0.126, 0.1188, 0.1095, 0.0941, 0.0759, 0.0656],
-    phase: { eroeffnung: 0.74, mittelspiel: 1.1, endspiel: 0.96 },
+    phase: { eroeffnung: 0.83, mittelspiel: 1.14, endspiel: 0.93 },
     median: 1.09,
     p90: 3.35,
   },
   tempoverlust: {
     rate: [0.0507, 0.0472, 0.0404, 0.0314, 0.0254, 0.0207, 0.0146, 0.0098, 0.008, 0.008, 0.008],
-    phase: { eroeffnung: 0.76, mittelspiel: 1.56, endspiel: 1.0 },
+    phase: { eroeffnung: 0.93, mittelspiel: 2.15, endspiel: 1.0 },
     median: 0.95,
     p90: 2.04,
   },
   verfruehteDame: {
     rate: [0.035, 0.0317, 0.0285, 0.0267, 0.0217, 0.0164, 0.0134, 0.01, 0.008, 0.008, 0.008],
-    phase: { eroeffnung: 0.86, mittelspiel: 1.62, endspiel: 1.0 },
+    phase: { eroeffnung: 0.97, mittelspiel: 1.99, endspiel: 1.0 },
     median: 0.84,
     p90: 1.65,
   },
 } as const;
-/** Je blindem Fleck die Zusatzwahrscheinlichkeit, mit der Menschen ihn übersehen, je Band. */
 export const BLIND = {
   rueckzug: [0.464, 0.371, 0.239, 0.234, 0.237, 0.222, 0.147, 0.096, 0.068, 0.053, 0.054],
   diagonale: [0.397, 0.226, 0.16, 0.121, 0.189, 0.153, 0.167, 0.158, 0.09, 0.0, 0.0],
@@ -101,13 +96,11 @@ export const BLIND = {
   zwischenzug: [0.498, 0.299, 0.241, 0.104, 0.146, 0.096, 0.273, 0.26, 0.288, 0.163, 0.146],
   grundreihe: [0.031, 0.0, 0.0, 0.0, 0.0, 0.017, 0.0, 0.0, 0.0, 0.003, 0.049],
 } as const;
-/** Der Kern der Wahl je Band: tau und Exponent der Gewichte, beta für die Wahl in einer Art. */
 export const KERN = {
   tau: [3.0, 0.4, 0.04, 0.04, 0.04, 0.04, 0.04, 0.06, 0.04, 0.08, 0.06],
   exponent: [0.25, 0.25, 0.25, 0.25, 0.35, 0.35, 0.35, 0.5, 0.5, 0.75, 0.75],
   beta: [0.25, 0.25, 0.5, 0.75, 0.75, 0.75, 1.0, 1.25, 1.25, 1.25, 1.5],
 } as const;
-/** Bedenkzeit der Menschen: Anteil der Restzeit je Band und Zugstufe, dazu Zeitnot-Sekunden. */
 export const BEDENKZEIT = {
   zugstufen: [0, 5, 10, 15, 20, 30, 40],
   anteil: {
@@ -131,32 +124,29 @@ export const BEDENKZEIT = {
     "30": [6.51, 6.48, 4.96, 4.62, 4.28, 3.86, 4.21, 3.74, 4.27, 3.88, 3.69],
   },
 } as const;
-/** Faktor auf Fehler ab einem Bauern in Zeitnot („0“ unter 10 s, „10“ bis 30, „30“ bis 60 s). */
 export const ZEITNOT = {
   "0": [1.26, 1.26, 1.26, 1.36, 1.36, 1.36, 1.36, 1.4, 1.4, 1.4, 1.4],
   "10": [1.15, 1.15, 1.15, 1.12, 1.12, 1.12, 1.12, 1.57, 1.57, 1.57, 1.57],
   "30": [1.16, 1.16, 1.16, 1.07, 1.07, 1.07, 1.07, 1.29, 1.29, 1.29, 1.29],
 } as const;
-/** Faktor auf Patzer ab drei Bauern in Zeitnot, Stufen wie bei ZEITNOT. */
 export const ZEITNOT_PATZER = {
   "0": [1.33, 1.33, 1.33, 1.86, 1.86, 1.86, 1.86, 3.18, 3.18, 3.18, 3.18],
   "10": [1.98, 1.98, 1.98, 1.7, 1.7, 1.7, 1.7, 2.69, 2.69, 2.69, 2.69],
   "30": [1.41, 1.41, 1.41, 1.07, 1.07, 1.07, 1.07, 1.91, 1.91, 1.91, 1.91],
 } as const;
-/** Faktor auf die Gelegenheitsrate je Verlustklasse (ab 0,5; 1; 2; 3; 5 Bauern) und Band. */
 export const VERLUSTFAKTOR = {
   klassen: [0.5, 1.0, 2.0, 3.0, 5.0],
   faktor: [
-    [1.346, 1.508, 1.415, 1.085, 0.868],
-    [1.361, 1.5, 1.335, 0.979, 0.767],
-    [1.386, 1.459, 1.266, 0.856, 0.662],
-    [1.415, 1.413, 1.193, 0.774, 0.557],
-    [1.427, 1.442, 1.149, 0.699, 0.496],
-    [1.419, 1.486, 1.202, 0.634, 0.468],
-    [1.422, 1.482, 1.164, 0.58, 0.404],
-    [1.465, 1.45, 1.027, 0.512, 0.342],
-    [1.518, 1.379, 0.96, 0.451, 0.298],
-    [1.509, 1.268, 0.917, 0.432, 0.251],
-    [1.46, 1.171, 0.9, 0.432, 0.213],
+    [1.386, 1.554, 1.4, 1.062, 0.905],
+    [1.393, 1.519, 1.363, 0.954, 0.793],
+    [1.41, 1.458, 1.322, 0.828, 0.66],
+    [1.417, 1.413, 1.227, 0.77, 0.545],
+    [1.412, 1.437, 1.155, 0.708, 0.501],
+    [1.395, 1.482, 1.189, 0.628, 0.469],
+    [1.395, 1.482, 1.129, 0.579, 0.378],
+    [1.431, 1.464, 1.011, 0.531, 0.318],
+    [1.475, 1.41, 0.977, 0.472, 0.285],
+    [1.498, 1.306, 0.934, 0.439, 0.242],
+    [1.491, 1.226, 0.903, 0.438, 0.216],
   ],
 } as const;

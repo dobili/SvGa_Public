@@ -14,12 +14,9 @@ import { farbname } from "./texte";
 /**
  * Der Satz zur Phase. Nach dem Glossar (Stellungen des Buches, S17) nennt er, was noch fehlt.
  * Beispiel: Abb. 12.1 → „Mittelspiel: Beide Seiten sind entwickelt …“; Berliner Verteidigung nach
- * 9. Sc3 → „Mittelspiel: Weiß ist entwickelt (höchstens eine Leichtfigur zu Hause) …“.
+ * 9. Sc3 → „Mittelspiel: Die Damen sind getauscht, aber …“ (seit 0.3.14).
  */
 export function phasensatz(p: Phasenbefund): string {
-  if (p.grund === "eineEntwickelt" && p.entwickelt) {
-    return t("phase.ist.eineEntwickelt", { farbe: farbname(p.entwickelt) });
-  }
   if (p.grund === "glossarEroeffnung" && p.glossar) {
     return t("phase.ist.glossarEroeffnung", { offen: glossarOffen(p.glossar) });
   }

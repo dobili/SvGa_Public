@@ -68,6 +68,32 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
       „Aus deiner Sammlung · x von 36“. Ohne ein einziges verdientes Stück bleibt die
       Startanimation genau wie bisher.
 
+### Neu in 0.3.15: Phasen in eigenen Partien wie bei Schachexperten (Opus, 30.10.2026)
+
+- [ ] N1044. **Mittelspiel beginnt später:** Spiele eine Partie gegen einen Bot und öffne danach
+      den Rückblick. Der Hinweis „Mittelspiel“ kommt jetzt erst, wenn beide Seiten entwickelt sind
+      und rochiert haben (Glossar), oder vorher, wenn schon viel passiert ist: vier Figuren
+      getauscht, eine Grundreihe fast leer, oder die Figuren beider Seiten stehen eng
+      ineinander. Bei Lichess-Partien liegt der Wechsel jetzt im Mittel um Zug 10 (vorher um
+      Zug 5 bis 6). Wirkt der Wechsel in deinen Partien richtig?
+- [ ] N1045. **Grund des Wechsels:** Im Rückblick steht beim Wechsel ins Mittelspiel der Grund:
+      „beide fertig“, „Abtausch“, „Grundreihe“ oder „Kontakt“, jeweils mit einem Satz. Sind die
+      Sätze verständlich?
+- [ ] N1046. **Endspiel nur mit wenig Material:** Tauscht in einer Partie früh die Damen, bleiben
+      aber Türme und Leichtfiguren am Brett, nennt der Rückblick das jetzt „damenloses
+      Mittelspiel“. Endspiel ist es in eigenen Partien erst, wenn jede Seite höchstens 13 Punkte
+      Figuren hat (etwa Turm, Turm und Läufer) oder nur noch sechs Figuren am Brett stehen, wie bei
+      Speelman und Lichess. Passt das zu deinem Gefühl?
+- [ ] N1047. **Abbildungen des Buches unverändert:** An den Abbildungen gilt weiter die Regel des
+      Buches (Kapitel 8, vier Fragen), etwa Abb. 4.21 als Eröffnung. Siehe auch Rückfrage Q7.
+- [ ] N1048. **Bots neu geeicht:** Die Fehlerraten der Bots je Phase, das Elo-Modell der
+      Partiebewertung und die Zugwahl sind mit der neuen Phasenregel neu gerechnet (dieselben
+      Partien, nur die Phase je Stellung neu). Weil die Eröffnung jetzt länger dauert, verteilen
+      sich die Fehlerarten etwas anders auf die Phasen (die meisten kommen in der Eröffnung jetzt
+      etwas öfter vor, weil die späteren Eröffnungszüge schwerer sind). Die Spielstärke bleibt
+      gleich: 78 Paarungen mit je 24 Partien, alt gegen neu mit denselben Zufallszahlen, ergaben +0,2 Prozentpunkte (Messgenauigkeit ±1,1). Fällt dir beim Spielen
+      etwas auf?
+
 ### Neu in 0.3.14: Erfahrungspunkte und Abzeichen (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1090. **Stufe im Profil:** Profil › Dein Fortschritt. Ganz oben steht jetzt deine Stufe,
@@ -533,6 +559,20 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q7 Buchbefund Kapitel 8: Wann beginnt das Endspiel? (30.10.2026)
+
+- [ ] Q7-1. **Endspiel ohne Materialgrenze:** Das Buch erkennt das Endspiel an vier Fragen
+      (Damen vom Brett, Könige vor Mattangriff sicher, König kann ins Zentrum, Bauern entscheiden);
+      überwiegt das Ja, ist es Endspiel. Danach wäre eine Stellung mit je zwei Türmen und zwei
+      Leichtfiguren ohne Damen schon Endspiel. Schachexperten nennen das ein „damenloses
+      Mittelspiel“: Speelman zählt erst ab höchstens 13 Punkten Figuren je Seite (ohne Bauern,
+      etwa Turm, Turm und Läufer) zum Endspiel, Lichess ab höchstens sechs Figuren am Brett. In
+      deinen eigenen Partien rechnet die App schon so (Entscheidung 12). An den Abbildungen gilt
+      weiter das Buch. **Empfehlung:** In Kapitel 8 nach den vier Fragen einen Satz ergänzen, etwa:
+      „Ohne Damen, aber mit vielen Figuren ist es noch ein damenloses Mittelspiel; zum Endspiel
+      wird es, wenn je Seite höchstens etwa Turm, Turm und Leichtfigur übrig sind.“ Sag „Q7-1 ja“
+      (dann gilt die Grenze auch an den Abbildungen) oder „Q7-1 nein“ (alles bleibt, wie es ist).
 
 ### Q6 Webverweise der App (30.10.2026)
 

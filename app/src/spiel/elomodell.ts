@@ -66,8 +66,10 @@ const RUNDUNG = 50;
  * Die Zahl einer Phase erscheint nur, wenn 90 % der Spieler höchstens so weit danebenliegen.
  * 400 statt 350 (24.10.2026): Die halbe Spanne des Mittelspiels liegt bei zehn Schnellschach-Partien
  * bei 395; mit 350 bekäme das Mittelspiel im Schnellschach nie eine Zahl (ENTSCHEIDUNGEN).
+ * 460 statt 400 (30.10.2026, neue Phasenregel): Eröffnung und Mittelspiel liegen bei zehn
+ * Schnellschach-Partien bei 436 und 456; mit 400 bekäme Schnellschach keine Phasenzahl mehr.
  */
-export const SCHMAL = 400;
+export const SCHMAL = 460;
 
 type Zugklasse = "ok" | "ungenau" | "fehler" | "patzer";
 

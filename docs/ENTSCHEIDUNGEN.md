@@ -26,6 +26,47 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 - Bilder als SVG-Text aus eigenen Zeichnungsdaten (`ui/komponenten/ordenkunst/`), keine fremden
   Grafiken.
 
+## 30.10.2026 – Version 0.3.15: Phasen wie bei Schachexperten und Eichung neu (Opus, Entscheidungen 11 bis 13)
+
+- **Regel für eigene Partien** (`schach/phase.ts`, `schach/phasengruende.ts`): Eröffnung, bis
+  beide Seiten entwickelt sind und rochiert haben (Glossar), oder bis einer der drei Gründe von
+  Lichess greift (scalachess `Divider.scala`, nur die Regeln nachgebaut): höchstens 10 Figuren
+  außer Königen und Bauern („Abtausch“), eine Grundreihe mit weniger als vier eigenen Steinen
+  („Grundreihe“), Durchmischung über 150 („Kontakt“). Endspiel, wenn die vier Fragen aus Kapitel
+  8 überwiegend Ja ergeben und wenig Material steht (je Seite höchstens 13 Punkte Figuren nach
+  Speelman, oder höchstens sechs Figuren nach Lichess); sonst „damenloses Mittelspiel“. Der alte
+  Grund „Material ungleich“ entfällt. Abbildungen des Buches behalten die Lesart des Buches;
+  Buchbefund als Rückfrage Q7 an den Autor.
+- **Messung** (`spiel/phasenvergleich.messung.ts`, 5654 Lichess-Partien): Mittelspiel im Median ab
+  Halbzug 20 (Lichess 21, alte Regel 11); Zweifelsfälle 19 %. Endspiel beginnt nie mit mehr als
+  acht Figuren.
+- **Eichung neu ohne Engine-Läufe** (Entscheidung 13): Die gespeicherten Bewertungen in Tiefe 18
+  bleiben; nur die Phase je Stellung wird neu gesetzt (`spiel/phasenumetikett.messung.ts`, lokal),
+  dann laufen die bekannten Skripte. Menschenprofil: 12818 Stellungen von Mittelspiel zu
+  Eröffnung, 3246 von Endspiel zu Mittelspiel; neu sind nur die Phasenfaktoren und der
+  Verlustfaktor in `engine/menschenprofil-daten.ts` (Raten, blinde Flecken, Bedenkzeit gleich).
+  Die alte Datei ließ sich aus den alten Daten genau nachbauen, bevor umgeschrieben wurde.
+  Spielerprofile (Elo-Modell): 322598 Züge von Mittelspiel zu Eröffnung, 93939 von Endspiel zu
+  Mittelspiel. Wahlmodell (mit und ohne Maia): 58744 von 385722 Stellungen mit neuer Phase.
+- **Elo-Modell neu** (`spiel/elomodell-daten.ts`, Generator lokal, vorher an den alten Daten
+  zahlengleich nachgebaut): Die Gesamtschätzung ändert sich kaum (halbe Spanne bei zehn
+  Schnellschach-Partien 311 statt 328). Die Phasen tauschen ihre Schärfe: Die Eröffnung hat jetzt
+  mehr Züge und wird schärfer (Schnellschach 436 statt 531), das Mittelspiel etwas breiter (456
+  statt 395). Damit Schnellschach weiter eine Phasenzahl bekommt, steigt die Schwelle „schmal“
+  (`SCHMAL`) von 400 auf 460, mit derselben Begründung wie am 24.10.2026.
+- **Wahlmodell neu** (`engine/wahlmodell-daten.ts`, `engine/wahlmodell-maia-daten.ts`; Generator
+  `buch/arbeit/zugwahl/schreibe_ts.py`, lokal, an den alten Gewichten zahlengleich geprüft): Die
+  Merkmale bleiben, nur die Phase je Stellung ist neu. Trefferquote an zurückgelegten Stellungen
+  minimal besser (Blitz 39,4 → 39,5 %, Schnellschach 40,7 → 40,8 %, Klassisch 41,5 → 41,5 %), mit
+  Maia Gewicht von ln p_Maia gleich (Blitz 0,84, Schnellschach 0,85, Klassisch 0,74).
+- **Bot-Stichprobe statt Neumessung** (Entscheidung 13: voll nur bei Abweichung über der
+  Messgenauigkeit): zwei Messchats mit denselben Paarungen und Saaten
+  (`messplan-nach/ohne/teil-1` bis `teil-4`, je 24 Partien), alt auf 0.3.14, neu auf dem Zweig
+  `phasen` (Zweige `messung-phasenprobe-alt-ohne-N`, `messung-phasenprobe-neu-ohne-N`). Ergebnis
+  über 78 Paarungen (1872 Partien je Seite): Punkte der Bots alt 41,6 %, neu 41,8 %, Unterschied
+  +0,2 Prozentpunkte (etwa +2 Elo) bei einem Standardfehler von 1,1. Teil 1 allein zeigte +3,1 (Zufall). Die
+  Spielstärke der Bots ist unverändert; Zahlensätze und Gruppen bleiben, keine Neumessung.
+
 ## 30.10.2026 – Version 0.3.14: Pakete 5 bis 10 aus den Arbeitschats übernommen (Opus)
 
 - Die fünf Zweige paket-webverweise, paket-meisterpartien, paket-zusatzaufgaben,

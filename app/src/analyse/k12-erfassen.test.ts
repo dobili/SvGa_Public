@@ -40,8 +40,9 @@ describe("k12-erfassen", () => {
     expect(e.befunde[0]?.zeilen[0]).toBe("Letzter Zug von Schwarz: Sgxe5.");
     expect(e.befunde[0]?.zeilen[1]).toBe("Er droht: Sd3# setzt matt.");
     expect(e.markierungen[0]).toEqual({ typ: "pfeil", farbe: "rot", von: "e5", nach: "d3" });
-    // Seit 0.2.33 (C1.27): Beide Seiten haben nur noch eine Leichtfigur zu Hause (Lf1, Lc8);
-    // dass beide Könige noch nicht rochiert haben, ist eine Frage der Königssicherheit.
-    expect(e.fazit).toMatch(/^Mittelspiel/);
+    // Seit 0.3.14 (Entscheidung 11 des Autors): Beide Könige stehen noch in der Mitte und kaum
+    // etwas ist getauscht, also noch Eröffnung; es ist eine Eröffnungsfalle aus Kapitel 4 (vorher,
+    // nach C1.27, Mittelspiel).
+    expect(e.fazit).toMatch(/^Eröffnung/);
   });
 });

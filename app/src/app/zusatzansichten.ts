@@ -11,6 +11,7 @@
  * Abhängigkeiten: keine.
  */
 import type { ComponentType } from "react";
+import { Lernpfad } from "../ui/bildschirme/Lernpfad";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -20,7 +21,10 @@ export interface Zusatzansicht {
 }
 
 /** Alle Bildschirme der Pakete; je Paket eine Zeile (Konfliktkarte, gamifizierung.md). */
-export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [];
+export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
+  // P2 Lernpfad durchs Buch (ui/bildschirme/Lernpfad.tsx)
+  { kennung: "lernpfad", Bildschirm: Lernpfad },
+];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */
 export function zusatzansicht(

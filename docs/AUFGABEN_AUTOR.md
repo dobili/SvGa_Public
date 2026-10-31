@@ -33,6 +33,30 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P2: Lernpfad durchs Buch (31.10.2026)
+
+- [ ] N2120. **Knöpfe:** Im Buch steht über der Kapitelliste der Knopf „Als Weg anzeigen“, im
+      Profil unter „Dein Fortschritt“ der Knopf „Dein Weg durchs Buch“. Beide öffnen den neuen
+      Bildschirm „Dein Weg durchs Buch“; „Zurück“ führt zurück.
+- [ ] N2121. **Der Weg:** Ein geschwungener Weg von oben nach unten mit 13 Stationen (Kapitel 0
+      bis 12, Nummer im Kreis, daneben der Titel). Nach Kapitel 1, 4, 7, 10 und 12 steht der
+      Orden des Buchteils (Grundlagen, Eröffnung, Mittelspiel, Endspiel, Praxis), grau als
+      Silhouette, bis er verdient ist. Bis zur aktuellen Station ist der Weg gold, danach
+      gepunktet.
+- [ ] N2122. **Stationen füllen sich:** Der Ring um eine Kapitelnummer füllt sich gold mit
+      angesehenen Abbildungen und gelösten Übungen des Kapitels (wie die Orden im Profil). Erst
+      wenn beides vollständig ist, wird der Kreis gold mit Haken. Probe: Kapitel 0 öffnen, „Alle
+      abhaken“, zurück zum Weg: Station 0 ist fast voll, oben steht „Noch 3 Übungen bis zum Ende
+      von Kapitel 0. Danach fehlt dir nur noch Kapitel 1 bis zum Orden „Teil Grundlagen“.“
+- [ ] N2123. **Deine Figur:** An der aktuellen Station steht dein Porträt (falls im Profil
+      gewählt), sonst ein goldener Springer. Aktuell ist das Kapitel der zuletzt geöffneten
+      Abbildung, solange es nicht fertig ist, sonst das nächste unfertige. Öffne eine Abbildung
+      aus Kapitel 6 und dann den Weg: Die Figur geht in einer kleinen Bewegung von der vorigen
+      Station zu Kapitel 6 (bei „Bewegung reduzieren“ des Handys ohne Bewegung), und der Weg
+      rollt zur Station.
+- [ ] N2124. **Tipp auf eine Station** öffnet das Kapitel. Bitte auch im dunklen Modus und auf
+      Englisch ansehen (Titel „Your path through the book“).
+
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
 Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je

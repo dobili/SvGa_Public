@@ -18,6 +18,7 @@ import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
 import { Fundmeldung } from "../komponenten/abbildung/Nummernsprung";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { TourKnopf } from "../../tour/TourKnopf";
+import { LernpfadKnopf } from "../komponenten/lernpfad/LernpfadKnopf";
 
 /** Kapitel 0 bis 12 des Buches. */
 const ANZAHL_KAPITEL = 13;
@@ -171,6 +172,8 @@ export function Buch() {
           {/* Gamifizierung G4: Karten der Pakete (nächster Schritt, Wochenziel …), höchstens zwei. */}
           <Startkarten />
           <Nummernfeld index={index.wert} />
+          {/* Gamifizierung P2: die Kapitel als Weg mit Etappen und Orden (Entscheidung E3). */}
+          <LernpfadKnopf ort="buch" />
           <Kapitelliste index={index.wert} />
         </>
       )}

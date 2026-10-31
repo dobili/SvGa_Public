@@ -111,7 +111,10 @@ test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, conte
 test("Einstellungen zeigen App-Version und Datenstand", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneEinstellungsseite(page, "Über die App");
-  await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+ \(Beta\)$/);
+  // Weniger Text P15 (31.10.2026): „Beta“ als Abzeichen neben der Nummer, der Satz im ⓘ.
+  await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+$/);
+  await page.getByRole("button", { name: "Erklärung: Beta" }).click();
+  await expect(page.getByText("Die App ist eine Beta")).toBeVisible();
   await expect(page.getByText("Auflage 1, Datenlauf vom")).toBeVisible();
 });
 

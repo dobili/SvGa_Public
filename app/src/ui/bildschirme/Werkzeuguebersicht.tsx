@@ -26,6 +26,7 @@ import { useDaten } from "../komponenten/bausteine/useDaten";
 import { BUENDELSYMBOL } from "../komponenten/werkzeugwahl/buendelsymbole";
 import { buendelMit } from "../komponenten/werkzeugwahl/werkzeugordnung";
 import { WERKZEUGBEISPIELE, werkzeugbildpfad } from "../komponenten/nachschlagen/werkzeugbeispiele";
+import { MitInfoblase } from "../komponenten/bausteine/Infoblase";
 
 /** Größe des Werkzeugzeichens (Bildpunkte). */
 const WERKZEUGZEICHEN = 18;
@@ -122,7 +123,12 @@ export function Werkzeuguebersicht() {
   return (
     <div className="bildschirm">
       <Kopfzeile titel={t("werkzeuge.titel")} zurueckText={t("nachschlagen.titel")} />
-      <p className="hinweis">{t("werkzeuge.einleitung")}</p>
+      {/* Weniger Text P15 (31.10.2026): die Einleitung steht im ⓘ. */}
+      <MitInfoblase
+        zeile={<p className="hinweis">{t("wenigertext.seiten.werkzeuge.zeile")}</p>}
+        thema={t("werkzeuge.titel")}
+        erklaerung={<p>{t("werkzeuge.einleitung")}</p>}
+      />
       {nachKapiteln().map(([kapitel, werkzeuge]) => (
         <section key={kapitel} className="karte" data-tour="werkzeuge-kapitel">
           <h2 className="karte-titel">

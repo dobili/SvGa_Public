@@ -1,0 +1,26 @@
+/*
+ * Kleine Einleitungen hinter ⓘ (Weniger Text P15, 31.10.2026): Kopf des Maia-Reiters mit Zeichen,
+ * Titel, kompaktem Ladeknopf „⬇ 96 MB“ und ⓘ. Nur Tokens aus basis.css; bei 360 px bricht der
+ * Titel in zwei Zeilen um, der Knopf bleibt daneben.
+ */
+
+.maia-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.maia-kopf .einstellung-name {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.maia-ladeknopf {
+  min-height: var(--tippflaeche);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 calc(var(--raster) * 1.5);
+  font-size: var(--groesse-grund);
+}

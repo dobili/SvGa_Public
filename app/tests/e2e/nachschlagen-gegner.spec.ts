@@ -74,7 +74,12 @@ test("Eigener Bot mit Porträt; „Spielen“ bleibt in der Startleiste im Bild"
   await expect(page.getByRole("heading", { name: "gegen Tante Erna" })).toBeVisible();
   const gegnerzeile = page.getByTestId("partie-gegnerzeile");
   await expect(gegnerzeile.locator("img")).toHaveAttribute("src", /gegner\/wahl-25\.svg$/);
-  await expect(gegnerzeile).toContainText("Dein eigener Gegner");
+  // Weniger Text P3 (31.10.2026): der Satz des Bots als Sprechblase nach Tipp aufs Porträt.
+  await expect(gegnerzeile).not.toContainText("Dein eigener Gegner");
+  await gegnerzeile.getByTestId("partiekopf-portraet").click();
+  await expect(gegnerzeile.getByTestId("partiekopf-sprechblase")).toContainText(
+    "Dein eigener Gegner",
+  );
 });
 
 test("Eigener Bot mit selbst gebautem Porträt (Baukasten, 0.2.140)", async ({ page }) => {

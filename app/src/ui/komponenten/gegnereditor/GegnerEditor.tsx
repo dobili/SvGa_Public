@@ -10,6 +10,7 @@
  * mit ihrem Namen. Seit Paket 9 (30.10.2026) mit der Klappe „Eröffnungen“ (Eroeffnungsklappe.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
+import { Plus } from "lucide-react";
 import { useState } from "react";
 import { FEHLERARTEN } from "../../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../../engine/gegner";
@@ -34,6 +35,8 @@ import { botbeschreibung } from "./botbeschreibung";
 import { Eroeffnungsklappe } from "./Eroeffnungsklappe";
 import { useEroeffnungsname } from "../spielstart/useEroeffnungsname";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
+import { MitInfoblase } from "../bausteine/Infoblase";
+import { Leerzustand } from "../bausteine/Leerzustand";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
   "-2": "spielen.stil.sehrDefensiv",
@@ -243,8 +246,24 @@ export function GegnerEditor() {
     void aendere((d) => ({ ...d, spiel: mitEigenenGegnern(d.spiel, liste) }));
   return (
     <div className="eigene-gegner" data-testid="eigene-gegner" data-tour="spielen-eigene">
-      <h3 className="unterteil-titel">{t("spielen.eigene.verwalten")}</h3>
-      {eigene.length === 0 && !offen && <p className="hinweis">{t("spielen.eigene.leer")}</p>}
+      {/* Weniger Text P1 (31.10.2026): der Satz, was ein eigener Gegner enthält, steht im ⓘ. */}
+      <MitInfoblase
+        zeile={<h3 className="unterteil-titel">{t("spielen.eigene.verwalten")}</h3>}
+        thema={t("spielen.eigene.verwalten")}
+        erklaerung={<p>{t("spielen.eigene.leer")}</p>}
+      />
+      {eigene.length === 0 && !offen && (
+        <Leerzustand
+          bild="portraet"
+          zeile={t("wenigertext.seiten.eigene.leer")}
+          testid="eigene-leer"
+          knopf={{
+            text: t("spielen.eigene.neu"),
+            symbol: Plus,
+            beiTipp: () => setzeOffen(neuerGegner()),
+          }}
+        />
+      )}
       {eigene.length > 0 && (
         <ul className="gegnerliste">
           {eigene.map((g) => (
@@ -269,10 +288,12 @@ export function GegnerEditor() {
           beiAbbrechen={() => setzeOffen(null)}
         />
       ) : (
-        <button type="button" className="knopf-zweit" onClick={() => setzeOffen(neuerGegner())}>
-          <Knopfsymbol art="neuerGegner" />
-          {t("spielen.eigene.neu")}
-        </button>
+        eigene.length > 0 && (
+          <button type="button" className="knopf-zweit" onClick={() => setzeOffen(neuerGegner())}>
+            <Knopfsymbol art="neuerGegner" />
+            {t("spielen.eigene.neu")}
+          </button>
+        )
       )}
     </div>
   );

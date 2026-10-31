@@ -382,7 +382,11 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
   await page.getByRole("radio", { name: "Rambo" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Rambo");
   await startknopf(page).click();
-  await expect(page.locator(".partie-untertitel")).toContainText("Rambo");
+  // Weniger Text P3: Name im Titel, Stufen und Farbe im ⓘ des Partiekopfs.
+  await expect(page.getByRole("heading", { name: "gegen Rambo" })).toBeVisible();
+  const kopf = page.getByTestId("partie-gegnerzeile");
+  await kopf.getByRole("button", { name: /^Erklärung:/ }).click();
+  await expect(kopf.locator(".partie-untertitel")).toContainText("Rambo");
   await ziehe(page, /^e2,/, "e4");
   await warteAufLeser(page);
   await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();

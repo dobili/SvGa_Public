@@ -8,8 +8,9 @@
  * Kapitelliste (Buch.tsx) und aus dem Profil; eingetragen als Zusatzansicht „lernpfad“
  * (app/zusatzansichten.ts). Kein eigenes Speicherfeld; nur der Merker „lernpfadStation“.
  * Entscheidung E3: eigener Bildschirm, die Kapitelliste bleibt. Gestaltung B1 (31.10.2026): der
- * Satz steht mit dem Ring der aktuellen Station in einer Karte, die Einleitung steht leise unter dem Weg, der Weg
- * führt durch fünf Landschaften (komponenten/lernpfad/Landschaft.tsx).
+ * Weg führt durch fünf Landschaften (komponenten/lernpfad/Landschaft.tsx). Weniger Text P5
+ * (31.10.2026): oben ein Balken mit Resten und Ordenssilhouette (Lernpfadkopf.tsx); der Satz und
+ * die Einleitung stehen im ⓘ.
  * Abhängigkeiten: komponenten/lernpfad/, daten/laden.ts, speicher, app/merker.ts, i18n.
  */
 import { useEffect, useRef, useState } from "react";
@@ -22,12 +23,11 @@ import { useDaten } from "../komponenten/bausteine/useDaten";
 import {
   aktuelleStation,
   etappen,
-  hinweistext,
   kapitelDerNummer,
   MERKER_STATION,
   stationen,
 } from "../komponenten/lernpfad/lernpfad";
-import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
+import { Lernpfadkopf } from "../komponenten/lernpfad/Lernpfadkopf";
 import { Weg } from "../komponenten/lernpfad/Weg";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import "../stil/lernpfad.css";
@@ -56,20 +56,13 @@ function Pfad({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fo
   const titel = (kapitel: number) => index.kapitel.find((k) => k.kapitel === kapitel)?.titel ?? "";
   return (
     <div ref={rahmen}>
-      <div className="karte lernpfad-hinweis">
-        {station && <Kapitelnummer nummer={station.kapitel} anteil={station.anteil} />}
-        <p data-testid="lernpfad-hinweis" aria-live="polite">
-          {hinweistext(liste, aktuell)}
-        </p>
-      </div>
+      <Lernpfadkopf liste={liste} aktuell={aktuell} />
       <Weg
         etappen={etappen(liste, index.kapitel, fortschritt)}
         titel={titel}
         aktuell={station?.kapitel ?? 0}
         vorher={vorher}
       />
-      {/* Erklärung leise unter dem Weg statt darüber (Gestaltung B1: weniger Text vorn). */}
-      <p className="hinweis lernpfad-erklaerung">{t("lernpfad.einleitung")}</p>
     </div>
   );
 }

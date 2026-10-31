@@ -31,6 +31,7 @@ import { Verlaufskurve } from "./Verlaufskurve";
 import { Seitenwahl, Zahlen } from "./Zahlen";
 import { phasenabschnitte } from "./zeitleiste";
 import { Zeitleiste } from "./Zeitleiste";
+import { MitInfoblase } from "../bausteine/Infoblase";
 
 export type { Sprung } from "./sprung";
 
@@ -91,8 +92,12 @@ function Momente(p: AuswertungEigenschaften & { seite: Color; beiSeite: (s: Colo
   const zeichenAn = (index: number) => p.urteile.find((u) => u.index === index)?.zeichen ?? "";
   return (
     <section className="auswertung-abschnitt" data-testid="momente">
-      <h2 className="auswertung-ueberschrift">{t("auswertungneu.momente.titel")}</h2>
-      <p className="hinweis">{t("auswertungneu.momente.text")}</p>
+      {/* Weniger Text P13 (31.10.2026): der Hinweissatz steht im ⓘ der Überschrift. */}
+      <MitInfoblase
+        zeile={<h2 className="auswertung-ueberschrift">{t("auswertungneu.momente.titel")}</h2>}
+        thema={t("auswertungneu.momente.titel")}
+        erklaerung={<p>{t("auswertungneu.momente.text")}</p>}
+      />
       <Seitenwahl
         partie={partie}
         seite={p.seite}

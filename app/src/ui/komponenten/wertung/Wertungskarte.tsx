@@ -7,7 +7,8 @@
  * Karte (fortschritt/Wertungskurve.tsx). Der Maßstab (Lichess, chess.com, FIDE) wird einmal in den
  * Einstellungen gewählt (Reiter „Anzeige“) und bleibt gespeichert wie bisher; die Karte sagt nur,
  * welcher gilt. Zeitklassen ohne eigene Partie zeigen eine markierte Schätzung
- * (wertungskacheln.ts). Ohne jede gewertete Partie steht eine einladende Karte da. Ausschnitt,
+ * (wertungskacheln.ts). Ohne jede gewertete Partie steht ein Leerzustand da (Weniger Text P1:
+ * leere Zeitkacheln, eine Zeile, „Erste Partie“); die Regeln stehen im ⓘ der Überschrift (P2). Ausschnitt,
  * Erklärung und „Wertung zurücksetzen“ liegen im aufklappbaren Bereich „Mehr“ (Wertungsdetail.tsx).
  * Seit dem 31.10.2026 zurückgeholt: „Aus deinen Zügen“ unter den Kacheln (Zugschaetzung.tsx), der
  * Verlauf je Phase (Tipp auf einen Phasenbalken) und der Hinweis, welche Partien zählen.
@@ -15,6 +16,7 @@
  * fortschritt/wertungsmassstab.ts, fortschritt/wertungstext.ts, Navigation, i18n,
  * Stil in ui/stil/wertungskarte.css.
  */
+import { Play } from "lucide-react";
 import { useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t, tZahl } from "../../../i18n/sprache";
@@ -22,6 +24,8 @@ import type { Wertungstempo } from "../../../spiel/elomodell";
 import type { Partieeintrag } from "../../../speicher/partien";
 import type { Wertungspunkt } from "../../../spiel/wertung";
 import "../../stil/wertungskarte.css";
+import { MitInfoblase } from "../bausteine/Infoblase";
+import { Leerzustand } from "../bausteine/Leerzustand";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 import { useWertungsmassstab, type Wertungsmassstab } from "../fortschritt/wertungsmassstab";
 import { zeitklassenname } from "../fortschritt/wertungstext";
@@ -46,14 +50,35 @@ function kachelzahl(kachel: Wertungskachel, massstab: Wertungsmassstab): string 
   return kachel.geschaetzt ? t("profil.wertung.ungefaehr", { zahl }) : String(zahl);
 }
 
-/** Kopf der Karte: Titel und der gewählte Maßstab mit Hinweis auf die Einstellungen. */
+/**
+ * Überschrift „Deine Wertung“ mit ⓘ (Weniger Text P2, 31.10.2026): Die Regeln, welche Partien
+ * zählen, und dass die Wertung je Zeitklasse getrennt steht, stehen vollständig in der Blase.
+ */
+function TitelMitRegeln() {
+  return (
+    <MitInfoblase
+      zeile={
+        <h2 className="karte-titel">
+          <Titelsymbol art="wertung" />
+          {t("profil.wertung.titel")}
+        </h2>
+      }
+      thema={t("profil.wertung.titel")}
+      erklaerung={
+        <>
+          <p>{t("profil.wertung.einladung")}</p>
+          <p>{t("profil.wertung.welchePartien")}</p>
+        </>
+      }
+    />
+  );
+}
+
+/** Kopf der Karte: Titel mit ⓘ und der gewählte Maßstab mit Hinweis auf die Einstellungen. */
 function Kopf({ massstab }: { massstab: Wertungsmassstab }) {
   return (
     <>
-      <h2 className="karte-titel">
-        <Titelsymbol art="wertung" />
-        {t("profil.wertung.titel")}
-      </h2>
+      <TitelMitRegeln />
       <p className="hinweis" data-testid="wertung-massstab">
         {t("profil.wertung.massstab", { liste: t(`wertung.massstab.${massstab}`) })}
       </p>
@@ -93,21 +118,26 @@ function Kachel({
   );
 }
 
-/** Ohne gewertete Partie: eine Einladung statt leerer Kacheln. */
+/**
+ * Ohne gewertete Partie: leere Zeitkacheln, „Noch keine Wertung.“ und „Erste Partie“ (Weniger
+ * Text P1); der frühere Einladungssatz und die Regeln stehen im ⓘ der Überschrift.
+ */
 function Einladung() {
   const { wechsleBereich } = useNavigation();
   return (
     <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
-      <h2 className="karte-titel">
-        <Titelsymbol art="wertung" />
-        {t("profil.wertung.titel")}
-      </h2>
-      <p data-testid="wertung-einladung">{t("profil.wertung.einladung")}</p>
-      {/* Zurückgeholt (31.10.2026): welche Partien zählen, wie früher in der leeren Karte. */}
-      <p className="hinweis">{t("profil.wertung.welchePartien")}</p>
-      <button type="button" className="knopf-haupt" onClick={() => wechsleBereich("spielen")}>
-        {t("profil.wertung.einladungKnopf")}
-      </button>
+      <TitelMitRegeln />
+      <Leerzustand
+        bild="zeitkacheln"
+        zeile={t("wenigertext.seiten.wertung.leer")}
+        testid="wertung-einladung"
+        knopf={{
+          text: t("wenigertext.seiten.knopf.erstePartie"),
+          symbol: Play,
+          beiTipp: () => wechsleBereich("spielen"),
+          haupt: true,
+        }}
+      />
     </section>
   );
 }

@@ -4,6 +4,43 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Weniger Text: Seiten (Runde 4, P1 bis P6, P13, P15; Zweig `wenigertext-seiten`)
+
+Ziel des Autors: Junge Nutzer schreckt viel Text ab; die App soll mit bekannten Bildzeichen
+selbsterklärend sein. Wahl des Autors: alle Punkte umsetzen. Grundsatz „nichts weglassen“: Jeder
+frühere Satz steht weiter sichtbar, als Bildzeichen mit Namen für Bildschirmleser oder hinter ⓘ.
+
+- **Bausteine:** `bausteine/Infoblase.tsx` (ⓘ als Knopf „Erklärung: …“ mit aria-expanded, Blase
+  mit kleinem Pfeil; `MitInfoblase` für Zeile plus Blase) und `bausteine/Leerzustand.tsx` (graues
+  Bild, Zeile mit höchstens fünf Wörtern, Knopf mit Ziel; Bilder Zeitkacheln, Medaillen, Porträt
+  mit Plus, Liste). Der ältere Baustein `MitInfo` (Fragezeichen) bleibt für bestehende Stellen.
+- **P1/P2:** Leerzustände in Wertung („Erste Partie“), Themen („Taktik üben“), Partien („Erste
+  Partie“, PGN bleibt), Stapel („Übungen lösen“) und eigenen Bots („Neuen Gegner anlegen“). Die
+  Wertungsregeln stehen im ⓘ neben „Deine Wertung“, auch mit Wertung.
+- **P3:** Partiekopf gegen Bots (`partie/Partiekopf.tsx`): Porträt mit Stufenmarke, Chip mit
+  König (eigene Farbe), Chip mit Buch (ein Wort: Buch, Praxis, Gewählt), ⓘ mit der alten Zeile,
+  Sprechblase mit dem Satz des Bots nach Tipp aufs Porträt. Freigabe des Koordinators für
+  `ui/komponenten/partie/`. Bei verschiedenen Stufen je Phase keine Marke (die Zeile im ⓘ nennt sie).
+- **P4:** Kapitelseite: Ringe mit Zeichen und „x/y“; der Übungsring ersetzt den Satz und springt zu
+  „Übungen aus dem Buch“; Namen, Satz und „Zur Gesamt-Checkliste“ im ⓘ.
+- **P5:** Lernpfad-Kopf (`lernpfad/Lernpfadkopf.tsx`): Balken, Reste mit Zeichen (aus den Texten
+  der `STATIONSTEILE`), Ordenssilhouette des Teils mit „+ Kap. …“; beide Sätze im ⓘ, der Satz auch
+  als Name des Balkens.
+- **P6:** Denkroutine als fünf Karten (`denkroutine/Schrittkarten.tsx`) mit Zeichen und Kurzzeile
+  der App; Buchtitel unverändert, Buchtext klappt auf. Phasen als drei Kacheln mit „Du bist hier“
+  (`denkroutine/Phasenwahl.tsx`), darunter die Werkzeuge der gewählten Phase; die drei
+  „Du bist hier“-Sätze im ⓘ, „In jeder Phase zuerst …“ mit Warnzeichen.
+- **P13:** Rückblickkarte mit Kopf (`rueckblick/Urteilskopf.tsx`): Zugzeichen, Marke der
+  Zugklasse, Veränderung als Pfeil mit Zahl (Notiz des Autors: kein Balken). Richtung aus Sicht der
+  ziehenden Seite (wie der Verlust in der Falle); „± 0,0“ unter 0,05, „M“ bei Matt. Sätze ohne
+  weiteren Inhalt (brillant, stark, bester, Theoriezug ohne Namen) nur im ⓘ, die übrigen sichtbar.
+  Hinweis über der Zeitleiste im ⓘ.
+- **P15:** Maia (Kopf mit „⬇ 96 MB“, Text und Lizenz im ⓘ), Werkzeuge des Buches, Extras, Beta als
+  Abzeichen an der Version mit ⓘ. Gegner-Legende und Freie Partie liegen in `spielstart/`
+  (gesperrt): als Patch an den Koordinierungs-Chat.
+- **Texte:** neu unter `wenigertext.seiten.*`; weg: `profil.wertung.einladungKnopf`,
+  `ich.versionBeta`.
+
 ## 31.10.2026 – Weniger Text: Werkzeuge und Trainer (Arbeitschat, Zweig `wenigertext-werkzeuge`)
 
 Wahl des Autors (Runde 4 „Weniger Text“, alle Punkte „Umsetzen“): Junge Leser schreckt viel Text

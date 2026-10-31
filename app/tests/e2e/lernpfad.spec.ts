@@ -15,6 +15,11 @@ test("Lernpfad: Stationen, Figur, Satz, Abhaken füllt Station 0, Tipp öffnet d
   await expect(page.locator(".lernpfad-station")).toHaveCount(13);
   await expect(page.locator(".lernpfad-orden")).toHaveCount(5);
   await expect(page.getByTestId("lernpfad-figur")).toHaveAttribute("data-kapitel", "0");
+  // Weniger Text P5 (31.10.2026): oben Balken und Ordenssilhouette, der Satz steht im ⓘ.
+  const kopf = page.locator(".lernpfadkopf");
+  await expect(kopf.getByRole("heading", { name: "Kapitel 0" })).toBeVisible();
+  await expect(kopf.getByRole("progressbar")).toHaveAccessibleName(/bis zum Ende von Kapitel 0\./);
+  await kopf.getByRole("button", { name: /^Erklärung:/ }).click();
   const hinweis = page.getByTestId("lernpfad-hinweis");
   await expect(hinweis).toContainText("bis zum Ende von Kapitel 0.");
   await expect(hinweis).toContainText("nur noch Kapitel 1 bis zum Orden „Teil Grundlagen“");
@@ -31,6 +36,10 @@ test("Lernpfad: Stationen, Figur, Satz, Abhaken füllt Station 0, Tipp öffnet d
   await expect(page.getByTestId("lernpfad-station-0")).toHaveAccessibleName(
     /Kapitel 0: .*, 28 von 31 geschafft/,
   );
+  await page
+    .locator(".lernpfadkopf")
+    .getByRole("button", { name: /^Erklärung:/ })
+    .click();
   await expect(hinweis).toContainText("Noch 3 Übungen bis zum Ende von Kapitel 0.");
   await page.screenshot({ path: "test-results/bilder/lernpfad.png" });
   await page.getByTestId("lernpfad-station-1").click();

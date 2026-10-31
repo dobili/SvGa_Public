@@ -33,6 +33,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P5: Rekordtafel (31.10.2026)
+
+Wettbewerb mit dir selbst statt Bestenliste: Im Profil steht die Karte „Deine Rekorde“ mit acht
+Rekorden (Taktik auf Zeit, beste Tagesserie, richtige Trainerantworten an einem Tag, Lerntage in
+einer Woche, Trefferquote „Zug erraten“, höchste Wertung, stärkster besiegter Bot, längste Partie
+ohne Patzer), je mit Wert, Datum und Knopf „Versuchen“. Ein neuer Rekord erscheint als Meldung.
+
+- [ ] N2140. **Rekordtafel im Profil:** Profil öffnen. Unter „Dein Fortschritt“ steht „Deine
+      Rekorde“ mit acht Zeilen; was du noch nicht hast, steht als „noch keiner“. Hattest du schon
+      eine beste Zeitrunde, steht sie dort mit Datum. Passt das?
+- [ ] N2141. **Neuer Rekord am Rundenende:** Training › Koordinaten › „Feld finden“ eine Runde
+      spielen. Am Ende steht unter dem Ergebnis etwa „Neuer Rekord: 16 richtige Antworten.“
+      (beim ersten Mal ohne „vorher“). Eine zweite Runde am selben Tag bringt den Rekord wieder,
+      dann mit „(vorher 16)“. Zu oft oder genau richtig?
+- [ ] N2142. **Taktik auf Zeit:** Training › Kurzpläne › „Taktik auf Zeit“. Schaffst du mehr
+      richtige als bisher, steht nach der Runde „Neuer Rekord: … richtig in 3 Minuten (vorher …).“
+      Gleich viele sind kein Rekord. Die Zeile „Deine beste Zeitrunde“ zeigt den neuen Wert.
+- [ ] N2143. **Tagesserie:** Kurzpläne › „Tagesaufgabe mit Serie“ an einem neuen Tag bearbeiten.
+      Wird die Serie länger als deine bisher beste, erscheint „Neuer Rekord: … Tage in Folge“.
+- [ ] N2144. **Versuchen:** In der Tafel bei „Taktik auf Zeit“ auf „Versuchen“ tippen: Die
+      Kurzpläne öffnen sich. Bei „Höchste Wertung“ führt der Knopf zu „Spielen“, bei
+      „Richtige Trainerantworten“ zu „Training“. Führen alle Knöpfe an die richtige Stelle?
+- [ ] N2145. **Partie-Rekorde:** Eine gewertete Partie gegen einen Bot gewinnen und auswerten
+      lassen, dann das Profil öffnen. „Stärkster besiegter Bot“ zeigt die Zahl des Bots; hattest
+      du keinen Patzer (??), zählt die Partie für „Längste Partie ohne Patzer“ (in Halbzügen).
+      Die Wertung zählt erst ab der zehnten gewerteten Partie einer Zeitklasse. Stimmen die Werte?
+- [ ] N2146. **Datensicherung:** Nach einer Sicherung und dem Einspielen sind die Rekorde mit
+      ihren Daten noch da (sie stehen jetzt in den Nutzerdaten, nicht mehr nur auf dem Gerät).
+
 ### P10: Kombo und Fundstücke (31.10.2026)
 
 Kleine Momente beim Üben, in jedem Trainer mit Runde (Feld finden, Taktik, Endspiel, Struktur und

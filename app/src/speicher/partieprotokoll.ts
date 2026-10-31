@@ -11,6 +11,8 @@
 import type { Partie } from "../spiel/partie";
 import { ergebnisFuerLeser } from "../spiel/partienfilter";
 import { zaehleAktivitaet } from "./aktivitaet";
+import { REKORDARTEN } from "../training/rekordarten";
+import { pruefeRekorde } from "../training/rekorde";
 import type { Nutzerdaten } from "./format";
 
 /** Eine Wirkung nach dem Partieende: neue Daten aus alten, der Partie und dem Zeitpunkt. */
@@ -24,8 +26,12 @@ const protokolliere: Partiefolge = (daten, partie, jetzt) => {
     : mitPartie;
 };
 
+/** Rekordtafel (P5): Rekorde der Quelle „partie“ prüfen (Lerntage, besiegte Bots …). */
+const rekorde: Partiefolge = (daten, _partie, jetzt) =>
+  pruefeRekorde(daten, { quelle: "partie" }, jetzt, REKORDARTEN).daten;
+
 /** Alle Wirkungen nach dem Partieende; Pakete tragen hier je eine Zeile ein. */
-export const NACH_PARTIEENDE: readonly Partiefolge[] = [protokolliere];
+export const NACH_PARTIEENDE: readonly Partiefolge[] = [protokolliere, rekorde];
 
 /**
  * Wendet die Wirkungen an, wenn die Partie gerade beendet wurde (vorher lief sie noch).

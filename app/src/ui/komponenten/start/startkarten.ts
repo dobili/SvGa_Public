@@ -6,10 +6,12 @@
  * eigene Datei; das Paket trägt hier nur eine Zeile ein. Höchstens zwei Karten stehen zugleich,
  * nach Rang (kleiner zuerst). So kommen später auch Karten neuer Trainer oder Werkzeuge dazu,
  * ohne Buch.tsx zu ändern.
- * Abhängigkeiten: speicher/format.ts (Typ).
+ * Abhängigkeiten: speicher/format.ts (Typ), die Karten der Pakete.
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { NaechsterSchritt } from "./NaechsterSchritt";
+import { naechsterSchrittSichtbar } from "./naechsterSchrittMerker";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
@@ -25,7 +27,14 @@ export interface Startkarte {
 export const HOECHSTENS_STARTKARTEN = 2;
 
 /** Alle Karten; Pakete fügen je eine Zeile an (Konfliktkarte, gamifizierung.md Abschnitt 5). */
-export const STARTKARTEN: readonly Startkarte[] = [];
+export const STARTKARTEN: readonly Startkarte[] = [
+  {
+    kennung: "naechster",
+    rang: 10,
+    sichtbar: (_daten, jetzt) => naechsterSchrittSichtbar(jetzt),
+    Karte: NaechsterSchritt,
+  },
+];
 
 /**
  * Die sichtbaren Karten nach Rang, höchstens zwei.

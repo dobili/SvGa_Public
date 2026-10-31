@@ -4,6 +4,30 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P1: Dein nächster Schritt (Welle 1, Opus, Zweig `gami-p1-naechster-schritt`)
+
+- Karte „Dein nächster Schritt“ oben im Buch (Liste `STARTKARTEN`, Rang 10, Entscheidung E2) nach
+  `docs/nebenchat/gamifizierung.md` P1. Ein Vorschlag mit Knopf, „Lieber etwas anderes?“ mit zwei
+  Alternativen, „Nicht jetzt“ bis zum nächsten Tag (Merker `naechsterSchrittAus`, kein
+  Speicherfeld).
+- **Eintragen statt umbauen** (Wunsch des Autors, 31.10.2026): Die sechs Vorschlagsarten stehen als
+  Liste `VORSCHLAGSARTEN` in `training/vorschlagsarten.ts` (Kennung, Rang, Funktion); ein späterer
+  Trainer trägt eine Zeile ein. Rangfolge: fällige Wiederholungen ab 3 (40 s je Karte),
+  Tagesaufgabe, Weiterlesen (nach der zuletzt geöffneten Abbildung, sonst erstes Kapitel mit
+  Ungesehenem; ganz neue Leser „fangen vorn an“), offene Übungen ab 80 % gesehener Abbildungen,
+  schwächstes Thema unter 70 % (ab 8 Antworten), Vorschlag der Fehlerdatenbank.
+- Thema → Trainer ohne feste Aufzählung: Das Präfix der Themenkennung ist die Kennung des Trainers
+  (`TRAINER`). Den Namen suchen Muster in `training/themennamen.ts` (`themen.name.<präfix>.<teil>`,
+  `<präfix>.thema.<teil>`, `<präfix>.art.<teil>`, für Taktik `zusatzaufgaben.thema.<teil>`), sonst
+  der Name des Trainers.
+- Wiederholungen und Tagesaufgabe öffnen einen eigenen Bildschirm (Liste `ZUSATZANSICHTEN`,
+  Kennung „naechster“), damit „Wiederholen“ und „Lösen“ direkt zur Sache führen, ohne den Bereich
+  zu wechseln. Die Tagesaufgabe bekam dafür einen frei wählbaren Text für den Knopf unten
+  („Zurück zum Buch“).
+- Grenzen: Der Taktiktrainer öffnet ohne vorgewähltes Motiv (seine Dateien sind gesperrt); der
+  Abschnittsname beim Weiterlesen entfällt (er stünde nur in den Kapiteldaten, die die Karte sonst
+  nicht laden müsste). Die Übungen lädt die Karte nur für Kapitel ab 80 % gesehener Abbildungen.
+
 ## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
 
 - Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche

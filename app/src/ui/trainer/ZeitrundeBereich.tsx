@@ -149,8 +149,17 @@ export function TaktikAufZeit({ zurueck }: { zurueck: () => void }) {
   );
 }
 
-/** Die Tagesaufgabe: eine Aufgabe pro Tag, danach zählt die Serie. */
-export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
+/**
+ * Die Tagesaufgabe: eine Aufgabe pro Tag, danach zählt die Serie. Aus „Dein nächster Schritt“
+ * (P1) geöffnet, führt der Knopf unten zurück ins Buch und trägt daher einen eigenen Text.
+ */
+export function Tagesaufgabe({
+  zurueck,
+  zurueckText = t("kurzplan.zurueck"),
+}: {
+  zurueck: () => void;
+  zurueckText?: string;
+}) {
   const daten = useDaten(ladeTaktik, "trainer-taktik");
   const { runde } = useFreieRunde(1);
   const [serie, setzeSerie] = useState(() => serieAus(liesMerker(MERKER_SERIE)));
@@ -196,7 +205,7 @@ export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
       )}
       {fertig && <p className="meldung">{t("kurzplan.tagFertig")}</p>}
       <button type="button" className="knopf-link" onClick={zurueck}>
-        {t("kurzplan.zurueck")}
+        {zurueckText}
       </button>
     </div>
   );

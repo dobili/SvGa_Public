@@ -33,6 +33,39 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P1: Dein nächster Schritt (31.10.2026)
+
+Oben im Buch steht jetzt eine Karte „Dein nächster Schritt“ mit einem Vorschlag und einem Knopf.
+Die Reihenfolge: fällige Wiederholungen (ab 3 Karten), Tagesaufgabe, Weiterlesen, offene Übungen
+eines Kapitels (sobald du 80 % seiner Abbildungen gesehen hast), ein unsicheres Thema aus den
+Trainern (mindestens 8 Antworten, unter 70 % richtig), zuletzt die Fehlerdatenbank.
+
+- [ ] N2110. **Karte erscheint:** Öffne die App. Oben im Buch, über dem Nummernfeld, steht „Dein
+      nächster Schritt“ mit einem Satz und einem Knopf. Hast du die Tagesaufgabe heute noch nicht
+      gelöst, heißt es „Die Tagesaufgabe wartet.“ Passt Platz und Ton?
+- [ ] N2111. **Tagesaufgabe:** Tippe „Lösen“. Die Tagesaufgabe öffnet sich direkt (ohne Umweg über
+      Training › Kurzpläne). Löse sie und tippe unten „Zurück zum Buch“. Die Karte schlägt jetzt
+      etwas anderes vor. Stimmt das?
+- [ ] N2112. **Weiterlesen:** Öffne eine Abbildung mitten in einem Kapitel und geh zurück ins
+      Buch. Die Karte sagt „Weiter in Kapitel … : Abb. …“ mit der nächsten Abbildung, die du noch
+      nicht gesehen hast; „Weiterlesen“ öffnet genau sie. Richtig?
+- [ ] N2113. **Lieber etwas anderes?:** Tippe auf „Lieber etwas anderes?“. Es klappen bis zu zwei
+      weitere Vorschläge mit eigenem Knopf auf. Führt jeder Knopf an die richtige Stelle?
+- [ ] N2114. **Nicht jetzt:** Tippe „Nicht jetzt“. Die Karte verschwindet, auch nach einem
+      Neustart der App. Am nächsten Tag ist sie wieder da. Stimmt das?
+- [ ] N2115. **Wiederholungen:** Wenn mindestens 3 Wiederholungen fällig sind (siehe Training ›
+      Fällige Wiederholungen), steht ganz oben „N Wiederholungen sind fällig. Etwa M Minuten.“
+      (etwa 40 Sekunden je Karte). „Wiederholen“ öffnet eine Seite mit den fälligen Karten. Passt
+      die Schätzung?
+- [ ] N2116. **Übungen und Themen:** Hast du in einem Kapitel fast alle Abbildungen gesehen, aber
+      nicht alle Übungen gelöst, kommt „Zu Kapitel N sind noch K Übungen offen.“; „Üben“ startet
+      die erste offene Übung, „Nächste Übung“ führt durch die übrigen. Nach einigen falschen
+      Antworten in einem Taktikmotiv (mindestens 8 Antworten, unter 70 % richtig) kommt etwa
+      „Fesselung klappt noch nicht so sicher (5 von 9 richtig). Eine kurze Runde?“; „Üben“ öffnet
+      den Taktiktrainer (das Motiv wählst du dort selbst). Passt das?
+- [ ] N2117. **Englisch:** Stelle die Sprache auf Englisch: Die Karte heißt „Your next step“, alle
+      Sätze und Knöpfe sind englisch. Stimmt das?
+
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
 Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je

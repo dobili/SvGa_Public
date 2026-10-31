@@ -90,11 +90,25 @@
   gap: var(--raster);
 }
 
-.wertung-phasen li {
+.wertung-phasenknopf {
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
   display: grid;
   grid-template-columns: 7.5rem 1fr 5rem;
   align-items: center;
   gap: var(--raster);
+}
+
+.wertung-phasenknopf[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
 }
 
 .wertung-phasen li.eindruck .fortschrittsbalken-fuellung {

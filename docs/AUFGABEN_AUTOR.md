@@ -86,6 +86,95 @@ dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
       Tour zeigt nacheinander die Brettvorschau, die Reiter Bedienung, Anzeige und Hilfe, dann die
       Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Stimmen die Texte zu dem, was
       du siehst?
+### Neu in 0.3.36: Steckbriefe und Glossar neu (Arbeitschat, 31.10.2026)
+
+Steckbriefe und Glossar sind nach deiner Wahl der Entwürfe neu gebaut: Die Steckbriefe zeigen die
+Eröffnungen als Baum ihrer ersten Züge (Entwurf H2), das Glossar sieht aus wie eine Lexikonseite
+(Entwurf I3). Weg: „Nachschlagen“ unten in der Leiste, dann „Steckbriefe“ bzw. „Glossar“. Bitte
+hell und dunkel ansehen (Einstellungen, Farbschema).
+
+- [ ] N2290. **Eröffnungsbaum:** In „Steckbriefe“ stehen oben zwei Stämme, „1. e4“ (Königsbauer)
+      und „1. d4“ (Damenbauer), mit goldenen Zugmarken und Linien. Unter 1. e4 folgt
+      „1… e5 2. Sf3“, darunter „2… Sc6“ mit Spanischer, Italienischer und Schottischer Partie,
+      daneben „2… Sf6“ Russisch (Petroff); dann 1… c5 Sizilianisch, 1… e6 Französisch, 1… c6
+      Caro-Kann. Unter 1. d4: 1… d5 mit Damengambit (2. c4) und London-System (2. Lf4), 1… Sf6
+      mit Trompowsky (2. Lg5) und 2. c4 → Königsindisch (2… g6) und „2… e6 3. Sc3“ →
+      Nimzo-Indisch (3… Lb4). Zusammen 13 Karten. Passt die Ordnung so?
+- [ ] N2291. **Zweispringerspiel:** Es hängt unter der Italienischen Partie an „3… Sf6“. Die
+      Zeile „Wer wählt sie?“ nennt auch das Läuferspiel (2. Lc4); im Baum steht der Steckbrief nur
+      einmal, beim Zweispringerspiel. Ist das recht, oder soll er zusätzlich an „2. Lc4“ hängen?
+- [ ] N2292. **Karten im Baum:** Jede Karte zeigt links ein kleines Brett mit der Stellung nach
+      den Zügen (Sizilianisch: weißer Bauer e4, schwarzer c5), daneben den Namen und darunter den
+      Charakter in wenigen Worten („Klassisch und strategisch · Abschnitt 2.2“, vom Anfang der
+      Zeile „Charakter“ des Buches). Lange Unterzeilen enden mit „…“. Ist alles lesbar, auch bei
+      Zweispringerspiel ganz rechts?
+- [ ] N2293. **Steckbrief öffnen:** Tipp auf „Spanische Partie“: Eine eigene Seite mit dem Namen
+      als Titel, darunter groß in Gold „1. e4 e5 2. Sf3 Sc6 3. Lb5“, dann alle Zeilen wie bisher
+      (Wer wählt sie?, Charakter, Theorieaufwand, Passt zu dir, wenn …), das Diagramm
+      „Schlussstellung der Hauptvariante (Abb. 2.11)“ und der Knopf „Im Buch ansehen“. „Steckbriefe“
+      oben links führt zurück zum Baum.
+- [ ] N2294. **Fallenchecks:** Unter dem Baum steht die Karte „Fallenchecks – 14 Fallen aus
+      Kapitel 4, jede mit Prüfung und Stopp-Moment“. Tipp darauf: Die 14 Fallenchecks zum
+      Aufklappen wie bisher (etwa „Klammerfalle“ mit „Wer tappt hinein?“, Prüfungen ✓/◐/✗,
+      Rettender Zug, Stopp-Moment als Diagramm; ein Tipp aufs Diagramm öffnet Abb. 4.2).
+- [ ] N2295. **Glossar als Lexikonseite:** Oben das Suchfeld („Begriff suchen, z. B. Gabel“),
+      darunter eine Reihe Buchstaben-Reiter A bis Z, waagrecht wischbar. Tipp auf „F“: Kopfzeile
+      mit erstem Begriff links, „F · 18 Begriffe“ in der Mitte, letztem Begriff rechts; darunter
+      ein großes goldenes „F“ und die Begriffe als Absätze: Begriff fett, Definition, am Ende in
+      Gold „KAP. 1, 2, 7“. Die Fundstelle in Klammern am Ende der Definition entfällt dort, weil
+      die Kapitel daneben stehen. Wirkt es wie ein Lexikon?
+- [ ] N2296. **Diagramme im Glossar:** Begriffe mit einer Abbildung im Buch zeigen rechts ein
+      kleines Brett mit Nummer darunter (Fesselung: Abb. 1.12). Das sind viele (197 von 255
+      Begriffen). Ist dir das zu viel, oder gerade richtig? (Vorschlag sonst: nur ein Diagramm je
+      drei Begriffe oder nur bei Kapitel-Begriffen.)
+- [ ] N2297. **Begriff öffnen:** Tipp auf „Fesselung“: die Seite wie bisher mit vollem Text,
+      Fundstellen zum Antippen und „Siehe auch“; neu darunter die Diagramme aller Stellen
+      (Abb. 1.12, 2.26, 7.4, je mit Abschnitt). Tipp auf ein Diagramm öffnet die Abbildung.
+      „Zurück“ führt zur Lexikonseite, und dort ist „F“ noch gewählt.
+- [ ] N2298. **Suche:** „gabel“ ins Suchfeld tippen: Die Reiter verschwinden, oben steht „… Treffer“,
+      darunter die passenden Begriffe als Lexikoneinträge (zuerst „Gabel“). Feld leeren: wieder
+      die Seite des gewählten Buchstabens.
+- [ ] N2299. **Tour:** Auf beiden Seiten das Toursymbol oben rechts antippen: Die Schritte zeigen
+      auf Suchfeld, Buchstaben-Reiter und Liste (Glossar) bzw. auf den Baum und die Karte
+      „Fallenchecks“ (Steckbriefe); die Texte passen zur neuen Gestaltung.
+
+### Neu in 0.3.35: Zuganimation gegen die Engine ohne Hänger (31.10.2026)
+
+- [ ] N2315. **Zug gleitet sauber, auch bei schnellem Spiel:** Auf dem älteren Handy (Redmi) mit
+      eingeschaltetem Maia eine Blitzpartie gegen einen Bot spielen und schnell ziehen. Deine
+      Figur gleitet jedes Mal ohne Stocken ins Ziel; erst danach „denkt“ der Bot. Seine Antwort
+      kommt höchstens eine Viertelsekunde später als bisher, seine Uhr verliert dadurch nichts.
+      Falls die Uhranzeige beim Rechnen des Bots noch kurz stockt: notieren (das behebt der
+      nächste Schritt, Maia in einem eigenen Thread).
+
+### Neu in 0.3.34: Profil – Zurückgeholt, was bei der Neugestaltung wegfiel (Arbeitschat, 31.10.2026)
+
+Bei der Neugestaltung des Profils waren ein paar nützliche Dinge weggefallen; sie sind zurück,
+ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der Leiste.
+
+- [ ] N2310. **Verlauf je Phase:** In „Deine Wertung“ unter „Nach Phasen“ einen Balken antippen
+      (etwa „Mittelspiel“): Darunter erscheint die Kurve dieser Phase über die Zeit, im selben
+      Maßstab wie die Zahlen und im Ausschnitt aus „Mehr“, mit „Spanne 1350–1650“. Mit zu wenigen
+      Partien steht stattdessen „Mittelspiel: Für eine Kurve gibt es in dieser Zeitklasse noch zu
+      wenige Partien …“. Ein zweiter Tipp schließt sie. (Braucht mindestens eine ausgewertete
+      gewertete Partie.)
+- [ ] N2311. **Aus deinen Zügen:** Unter den Kacheln steht eine ruhige Zeile „Aus deinen Zügen:
+      etwa 1550 (1150–1950, aus 3 Partien).“ für die gewählte Zeitklasse, im Maßstab aus den
+      Einstellungen (wie „Deine Spielstärke“ unter Spielen). So stehen Ergebnis und Zugqualität
+      nebeneinander.
+- [ ] N2312. **Stand in den Regalen:** In „Deine Erfolge“ steht unter jedem offenen Stück mit
+      zählbarem Fortschritt klein der Stand, etwa „120 von 174“ unter „Mittelspiel“ oder „16 von
+      24“ unter „Stufe 1–3 alle“, ohne Antippen. Verdiente Stücke haben keine Zahl.
+- [ ] N2313. **Rekorde verbessern:** Unter „Teilen“ steht bei jedem aufgestellten Rekord
+      „Verbessern“; der Knopf führt dorthin, wo man ihn schlägt (wie früher „Versuchen“). Probe:
+      einen Trainer eine Runde spielen, dann bei „Richtige Trainerantworten an einem Tag“ auf
+      „Verbessern“ tippen.
+- [ ] N2314. **Was zählt und vorläufig:** Ohne gewertete Partie erklärt die Einladung wieder,
+      welche Partien zählen („… mindestens zehn Züge … schnelle Siege gegen viel schwächere Bots
+      zählen deshalb oft nicht“). In „Mehr“ steht in den ersten zehn Partien „Vorläufig: Die
+      Wertung findet in den ersten zehn Partien ihren Platz (bisher 3).“ und die Erklärung des
+      Maßstabs.
+
 ### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
 
 Der Bereich „Training“ und die Gesamt-Checkliste sind nach deiner Wahl der Entwürfe neu gebaut

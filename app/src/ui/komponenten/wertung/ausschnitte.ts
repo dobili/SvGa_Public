@@ -36,3 +36,9 @@ export const AUSSCHNITTE: readonly Ausschnitt[] = [
 
 /** Beim Öffnen: die letzten 25 Partien. */
 export const STANDARD_AUSSCHNITT = "p25";
+
+/** Der Bereich eines Ausschnitts; unbekannte Kennung: der erste (letzte 10 Partien). */
+export function ausschnittsbereich(kennung: string): Wertungsbereich {
+  const ausschnitt = AUSSCHNITTE.find((a) => a.kennung === kennung) ?? AUSSCHNITTE[0];
+  return ausschnitt ? ausschnitt.bereich : { art: "partien", anzahl: 10 };
+}

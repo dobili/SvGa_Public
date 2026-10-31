@@ -31,6 +31,67 @@ Zielgruppe sind Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Modus. G
   (Gruppentitel, „an/aus“ der Merker, alte Tourtexte) gelöscht; neue Texte mit der Vorsilbe
   `einstellungenneu.` in beiden Sprachen. Speicherformat unverändert.
 - Testpunkte N2300 bis N2309.
+## 31.10.2026 – Steckbriefe und Glossar neu (Arbeitschat, Zweig `gestaltung-nachschlagen`)
+
+Ziel des Autors: Nachschlagen war zu technisch und textlastig und wirkte wie ein Formular.
+Gewählte Entwürfe: H2 „Eröffnungsbaum“ und I3 „Lexikonseite“.
+
+- **Eröffnungsbaum** (`ui/komponenten/nachschlagen/eroeffnungsbaum.ts`, `Eroeffnungsbaum.tsx`):
+  Der Baum entsteht aus den Buchdaten, nicht aus einer Liste. Die Steckbriefe stehen in den
+  Kapiteldaten (nicht in nachschlagen.json); ihre Zeile „Wer wählt sie?“ nennt die
+  kennzeichnenden Züge, die Abbildung „Schlussstellung der Hauptvariante“ trägt die ganze
+  Zugfolge. Kennzugfolge = Hauptvariante bis zum spätesten genannten Zug; der erste genannte Zug
+  muss zur Hauptvariante passen, sonst steht der Steckbrief unter „Weitere Eröffnungen“ (Regel 1:
+  nichts erfinden). Ketten ohne eigene Eröffnung werden zu einer Marke zusammengefasst
+  („1… e5 2. Sf3“), der kennzeichnende Zug bleibt eigene Marke („3… Lb4“). Ein neuer Steckbrief
+  hängt sich von selbst ein. Läuferspiel (2. Lc4) hängt nicht eigens im Baum (Rückfrage N2291).
+- **Steckbrief und Fallenchecks als eigene Seiten** über `ZUSATZANSICHTEN` (Kennungen
+  `steckbrief`, `fallenchecks`), Router unverändert. Inhalt wie bisher, dazu die Kennzüge in Gold.
+- **Unterzeile der Karten:** Anfang der Buchzeile „Charakter“ bis zum ersten Semikolon oder Punkt
+  statt der erfundenen Schlagworte des Entwurfs (Regel 1).
+- **Lexikonseite** (`lexikon.ts`, `Lexikon.tsx`, `Glossar.tsx`): Reiter je Anfangsbuchstabe (A–Z,
+  „#“ zuletzt), Leitwörter, große Initiale, Einträge als Fließtext mit Kapitelangabe; die Fundstelle
+  in Klammern am Ende wird dort weggelassen, der volle Text bleibt auf der Begriffsseite. Der ganze
+  Eintrag ist ein Knopf mit dem Begriff als Namen und der Definition als Beschreibung. Diagramm bei
+  jedem Begriff mit Abbildung (Rückfrage N2296). Der gewählte Buchstabe bleibt in der Sitzung
+  (sessionStorage, nicht im Speicherformat). Begriffsseite neu mit den Diagrammen aller Stellen.
+- **Schlussstellung auch auf Englisch:** `steckbriefbild.ts` erkennt jetzt auch „Final position of
+  the main line“; vorher fehlte das Diagramm in der englischen App.
+- Texte unter `nachschlagenneu.*`; nicht mehr genutzt und gelöscht: `steckbrief.einleitung`,
+  `glossar.buchstaben`, `tour.glossar.buchstaben`, `tour.steckbriefe.eroeffnungen`; alte Stile der
+  Buchstabenleiste entfernt.
+- Befund nebenbei: Die untere Leiste ist bei 360 px Breite 370 px breit (10 px Überstand); nicht
+  in diesem Zweig geändert.
+
+## 31.10.2026 – Zuganimation: Bot rechnet erst nach dem Gleiten (0.3.35)
+
+Befund des Autors: Auf einem sechs Jahre alten Handy hing bei schnellem Spiel mit Maia die
+Animation des eigenen Zuges. Ursache: Der Bot begann sofort nach dem Zug zu rechnen; Maia
+(onnxruntime-web, ein Thread), die Prüfung der Kandidaten und die Phase der Stellung laufen im
+selben Thread wie die Animation. Eine Auswertung im Hintergrund läuft während der Partie nicht.
+Entscheidung: `usePartie.ts` wartet nach dem Zug die Dauer der Animation plus 40 ms ab, erst dann
+bestimmt der Bot Stufe und Zug. Seine Uhr verliert nichts (Bedenkzeit simuliert, `zieheBotMitUhr`).
+Ein Zeitgeber statt `requestAnimationFrame`, damit der Bot auch im Hintergrund zieht. Nächster
+Schritt (Wunsch des Autors, nach den laufenden Übernahmen): Maia in einen eigenen Worker und
+allgemein prüfen, welche Rechnungen auf weitere Kerne gehören.
+
+## 31.10.2026 – Profil: Zurückgeholt (Arbeitschat, Zweig `profil-neu`)
+
+Wunsch des Autors: Bei der Neugestaltung soll nichts Sinnvolles wegfallen. Geprüft gegen alle
+damals gelöschten Texte (`ich.wertung.*`, `fortschritt.gruppe`, `fortschritt.legende`,
+`abzeichen.gruppe`, `rekorde.*`).
+
+- **Zurück:** Verlauf je Phase (Tipp auf einen Phasenbalken, `wertung/Phasenkurve.tsx`, Ausschnitt
+  aus „Mehr“ gilt jetzt für Wertung und Phasen); „Aus deinen Zügen“ als Zeile unter den Kacheln
+  (`wertung/Zugschaetzung.tsx`, im gewählten Maßstab); Stand offener Stücke in den Regalen; bei
+  aufgestellten Rekorden „Verbessern“ (früher „Versuchen“); in der Einladung, welche Partien
+  zählen (früher `ich.wertung.leer`); in „Mehr“ der Satz zu „vorläufig“ und die Erklärung des
+  Maßstabs; die Spanne einer Phase unter ihrer Kurve.
+- **Bewusst nicht zurück:** „noch keiner“ (ersetzt durch Vorschläge), die Zeichenerklärung der
+  Ringe (die Regale tragen Namen unter jedem Stück), „x von y Ringen voll“ und „Abzeichen: x von
+  y“ (Zähler an jedem Regal), die Reiterzeilen „Ansicht“ und „Zeitklasse“ (Balken und Kacheln).
+- Testpunkte N2310 bis N2314.
+
 ## 31.10.2026 – Training und Checkliste neu (Entwürfe C2 und D1, Arbeitschat, Zweig `gestaltung-training-checkliste`)
 
 Ziel des Autors: Training und Checkliste waren zu technisch, zu textlastig und wirkten wie ein

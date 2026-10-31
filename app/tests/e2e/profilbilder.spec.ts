@@ -82,12 +82,17 @@ for (const schema of ["dunkel", "hell"] as const) {
     await oeffneProfil(page);
     const erfolge = page.getByTestId("erfolge");
     await expect(erfolge.getByTestId("erfolge-glanzstueck")).toContainText("Teil Grundlagen");
+    // Zurückgeholt (31.10.2026): Stand offener Stücke im Regal auf einen Blick.
+    await expect(erfolge.getByTestId("stand-orden-teil-eroeffnung")).toHaveText(/^0 von \d+$/);
     await erfolge.screenshot({ path: `test-results/bilder/profil-erfolge-${schema}.png` });
     const wertung = page.getByTestId("wertung");
     await expect(wertung.getByTestId("wertung-zahl-blitz")).toHaveText("1180");
     await wertung.screenshot({ path: `test-results/bilder/profil-wertung-${schema}.png` });
     const rekorde = page.getByTestId("rekordtafel");
     await expect(rekorde.getByTestId("rekord-bot")).toContainText("1474");
+    await expect(
+      rekorde.getByRole("button", { name: "Verbessern: Stärkster besiegter Bot" }),
+    ).toBeVisible();
     await rekorde.screenshot({ path: `test-results/bilder/profil-rekorde-${schema}.png` });
   });
 }

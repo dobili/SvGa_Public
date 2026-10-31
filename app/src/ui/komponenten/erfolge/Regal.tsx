@@ -5,6 +5,8 @@
  *
  * Rolle im Gesamtbild: Ein Regal je Eintrag in ERFOLGSREGALE (erfolgsstuecke.ts). Die testids der
  * Abzeichen bleiben „abzeichen-<kennung>“ wie im früheren Raster; Orden heißen „orden-<kennung>“.
+ * Unter offenen Stücken mit zählbarem Fortschritt steht der Stand („120 von 174“), wie früher an den
+ * Ringen (zurückgeholt am 31.10.2026).
  * Abhängigkeiten: erfolgsstuecke.ts (Typen), Stueckbild.tsx, teilen/Stueckteilen.tsx, i18n.
  */
 import { useState } from "react";
@@ -71,6 +73,12 @@ export function Regal({
                 <span className="erfolg-name" aria-hidden="true">
                   {s.name}
                 </span>
+                {/* Zurückgeholt (31.10.2026): der Stand offener Stücke auf einen Blick. */}
+                {!s.verdient && s.anteil && (
+                  <span className="erfolg-zahl" data-testid={`stand-${s.art}-${s.kennung}`}>
+                    {t("fortschritt.anteil", { ...s.anteil })}
+                  </span>
+                )}
               </button>
             </li>
           );

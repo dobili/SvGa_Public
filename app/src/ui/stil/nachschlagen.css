@@ -43,16 +43,6 @@
   box-shadow: 0 0 0 1px var(--linie);
 }
 
-.begriff-knopf {
-  width: 100%;
-  min-height: var(--tippflaeche);
-  padding: 0 calc(var(--raster) * 2);
-  border: none;
-  border-bottom: 1px solid var(--linie);
-  background: none;
-  text-align: left;
-}
-
 .schrittliste {
   list-style: none;
   margin: 0;

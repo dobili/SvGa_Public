@@ -9,7 +9,9 @@
  * welcher gilt. Zeitklassen ohne eigene Partie zeigen eine markierte Schätzung
  * (wertungskacheln.ts). Ohne jede gewertete Partie steht eine einladende Karte da. Ausschnitt,
  * Erklärung und „Wertung zurücksetzen“ liegen im aufklappbaren Bereich „Mehr“ (Wertungsdetail.tsx).
- * Abhängigkeiten: wertungskacheln.ts, Wertungsdetail.tsx, Phasenbalken.tsx,
+ * Seit dem 31.10.2026 zurückgeholt: „Aus deinen Zügen“ unter den Kacheln (Zugschaetzung.tsx), der
+ * Verlauf je Phase (Tipp auf einen Phasenbalken) und der Hinweis, welche Partien zählen.
+ * Abhängigkeiten: wertungskacheln.ts, Wertungsdetail.tsx, Phasenbalken.tsx, Zugschaetzung.tsx,
  * fortschritt/wertungsmassstab.ts, fortschritt/wertungstext.ts, Navigation, i18n,
  * Stil in ui/stil/wertungskarte.css.
  */
@@ -23,8 +25,10 @@ import "../../stil/wertungskarte.css";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
 import { useWertungsmassstab, type Wertungsmassstab } from "../fortschritt/wertungsmassstab";
 import { zeitklassenname } from "../fortschritt/wertungstext";
+import { ausschnittsbereich, STANDARD_AUSSCHNITT } from "./ausschnitte";
 import { Phasenbalken } from "./Phasenbalken";
 import { Wertungsdetail } from "./Wertungsdetail";
+import { Zugschaetzung } from "./Zugschaetzung";
 import {
   startklasse,
   wertungskacheln,
@@ -99,6 +103,8 @@ function Einladung() {
         {t("profil.wertung.titel")}
       </h2>
       <p data-testid="wertung-einladung">{t("profil.wertung.einladung")}</p>
+      {/* Zurückgeholt (31.10.2026): welche Partien zählen, wie früher in der leeren Karte. */}
+      <p className="hinweis">{t("profil.wertung.welchePartien")}</p>
       <button type="button" className="knopf-haupt" onClick={() => wechsleBereich("spielen")}>
         {t("profil.wertung.einladungKnopf")}
       </button>
@@ -122,6 +128,7 @@ export function Wertungskarte({
   jetzt?: Date;
 }) {
   const [wahl, setzeWahl] = useState<Wertungstempo | null>(null);
+  const [ausschnitt, setzeAusschnitt] = useState(STANDARD_AUSSCHNITT);
   const [massstab] = useWertungsmassstab();
   const kacheln = wertungskacheln(punkte);
   if (punkte.length === 0) return <Einladung />;
@@ -141,11 +148,28 @@ export function Wertungskarte({
           />
         ))}
       </div>
+      {kachel && !kachel.geschaetzt && (
+        <Zugschaetzung partien={partien} tempo={tempo} massstab={massstab} />
+      )}
       {kachel && (
-        <Wertungsdetail kachel={kachel} punkte={punkte} massstab={massstab} jetzt={jetzt} />
+        <Wertungsdetail
+          kachel={kachel}
+          punkte={punkte}
+          massstab={massstab}
+          jetzt={jetzt}
+          ausschnitt={ausschnitt}
+          beiAusschnitt={setzeAusschnitt}
+        />
       )}
       {kachel && !kachel.geschaetzt && (
-        <Phasenbalken punkte={punkte} partien={partien} tempo={tempo} massstab={massstab} />
+        <Phasenbalken
+          punkte={punkte}
+          partien={partien}
+          tempo={tempo}
+          massstab={massstab}
+          bereich={ausschnittsbereich(ausschnitt)}
+          jetzt={jetzt}
+        />
       )}
     </section>
   );

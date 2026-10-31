@@ -160,6 +160,7 @@ test("Profil: ohne gewertete Partie lädt die Wertungskarte zur ersten Partie ei
   await starteImBrowser(page);
   await oeffneProfil(page);
   await expect(page.getByTestId("wertung-einladung")).toBeVisible();
+  await expect(page.getByTestId("wertung")).toContainText("mindestens zehn Züge");
   await page.getByTestId("wertung").getByRole("button", { name: "Partie spielen" }).click();
   await expect(page.getByRole("button", { name: "Partie beginnen" })).toBeVisible();
 });

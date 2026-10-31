@@ -55,7 +55,7 @@ function Laden({ zustand, setze }: { zustand: Ladezustand; setze: (z: Ladezustan
   }
   return (
     <>
-      <button type="button" className="knopf" onClick={() => void lade()}>
+      <button type="button" className="knopf-haupt" onClick={() => void lade()}>
         {t("maia.laden", { mb: String(PAKET_MB) })}
       </button>
       {zustand.art === "fehler" && (

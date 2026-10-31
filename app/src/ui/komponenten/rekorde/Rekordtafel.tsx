@@ -29,12 +29,16 @@ import { Rekordkaestchen, Rekordvorschlag } from "./Rekordvorschlag";
 /** Ansichten, die zugleich ein Hauptbereich sind: „Los“ wechselt dorthin. */
 const BEREICHE: readonly string[] = ["buch", "training", "spielen", "nachschlagen"];
 
-/** Ein aufgestellter Rekord: Zeichen, Name, Wert groß, Datum, Teilen. */
-function Erreicht({ art }: { art: Rekordart }) {
+/**
+ * Ein aufgestellter Rekord: Zeichen, Name, Wert groß, Datum, Teilen und „Verbessern“ (wie früher
+ * „Versuchen“, zurückgeholt am 31.10.2026: wer einen Rekord hat, will ihn schlagen).
+ */
+function Erreicht({ art, oeffne }: { art: Rekordart; oeffne: (ziel: Ansicht) => void }) {
   const rekord = useSpeicher((z) => z.daten.rekorde[art.kennung]);
   if (!rekord) return null;
   const name = rekordname(art.kennung);
   const wert = rekordtext(art.kennung, rekord.wert);
+  const ziel = art.versuchen;
   return (
     <li className="rekord-erreicht" data-testid={`rekord-${art.kennung}`}>
       <Rekordkaestchen zeichen={rekordzeichen(art.kennung)} />
@@ -47,15 +51,27 @@ function Erreicht({ art }: { art: Rekordart }) {
             ` · ${t("rekorde.vorher", { vorher: rekordtext(art.kennung, rekord.vorher) })}`}
         </span>
       </span>
-      <Teilenknopf
-        art="rekord"
-        kennung={art.kennung}
-        name={name}
-        bild={null}
-        zeile={wert}
-        verdient={rekord.datum}
-        klein
-      />
+      <span className="rekord-knoepfe">
+        <Teilenknopf
+          art="rekord"
+          kennung={art.kennung}
+          name={name}
+          bild={null}
+          zeile={wert}
+          verdient={rekord.datum}
+          klein
+        />
+        {ziel && (
+          <button
+            type="button"
+            className="knopf-link"
+            aria-label={t("profil.rekorde.verbessernName", { name })}
+            onClick={() => oeffne(ziel)}
+          >
+            {t("profil.rekorde.verbessern")}
+          </button>
+        )}
+      </span>
     </li>
   );
 }
@@ -116,7 +132,7 @@ export function Rekordtafel() {
       {stand.aufgestellt.length > 0 && (
         <ul className="rekordliste rekord-erreichte">
           {stand.aufgestellt.map((art) => (
-            <Erreicht key={art.kennung} art={art} />
+            <Erreicht key={art.kennung} art={art} oeffne={oeffne} />
           ))}
         </ul>
       )}

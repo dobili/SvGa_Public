@@ -148,37 +148,52 @@ function useAbweichung(partie: Partie | null): number {
   );
 }
 
+/** Puffer nach der Zuganimation, damit ihr letztes Bild sicher gezeichnet ist (ms). */
+const RUHE_NACH_ANIMATION_MS = 40;
+
+/**
+ * Wartet, bis der eben gespielte Zug über das Brett geglitten ist, bevor der Bot rechnet.
+ * Warum: Befund des Autors (31.10.2026, älteres Handy, Maia an, schnelles Spiel): Die Animation
+ * des eigenen Zuges hing, weil die Zugwahl des Bots sofort losrechnete; Maia (engine/maia-web.ts)
+ * und die Prüfung der Kandidaten laufen im selben Thread wie die Animation. Die Uhr des Bots
+ * verliert dabei nichts, seine Bedenkzeit ist simuliert (spiel/botzeit.ts, zieheBotMitUhr).
+ * Sonderfall: Animation aus → nur der kurze Puffer. Bewusst ein Zeitgeber und kein
+ * requestAnimationFrame, damit der Bot auch im Hintergrund zieht.
+ */
+function nachDerAnimation(): Promise<void> {
+  return new Promise((fertig) => {
+    window.setTimeout(fertig, animationsverzugMs() + RUHE_NACH_ANIMATION_MS);
+  });
+}
+
 /** Lässt die Engine ziehen, solange sie am Zug ist; im Notmodus mit Vorzügen. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
   const [fehler, setzeFehler] = useState<string | null>(null);
   const [versuch, setzeVersuch] = useState(0);
   const id = partie?.id ?? "";
-  // Die Stufe hängt an der Phase der Stellung (spiel/phasen.ts, eine ganze Stellungsanalyse).
-  // Seit V6 nur, wenn die Engine am Zug ist, und nur neu bei neuer Stellung oder neuem Zug: Vorher
-  // lief sie bei jedem Takt der Uhr (alle 200 ms) und schon beim Öffnen der Partie mit.
-  const zuege = partie?.zuege;
-  const einstellung = partie?.einstellung;
-  const stufennummer = useMemo(
-    () => (amZugEngine && zuege && einstellung ? stufeFuer({ zuege, einstellung }, fen) : 1),
-    [amZugEngine, zuege, einstellung, fen],
-  );
   const eroeffnung = partie?.einstellung.eroeffnung ?? null;
   const abweichung = useAbweichung(partie);
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;
     let aktiv = true;
     const laeuft = () => aktiv;
-    const jetzige = neueste(id);
     // Paket 9: Je Buchzug verlässt ein eigener Bot seine feste Eröffnung mit der Abweichung.
     const wirksam = mitAbweichung(eroeffnung, abweichung, Math.random);
     const buchzuege = buchzuegeFuer(buch, fen, wirksam);
-    (jetzige ? vorzugFuer(id, jetzige) : Promise.resolve(null))
-      .then((vorzug) =>
-        vorzug === null
-          ? normalerBotzug(id, fen, stufennummer, buchzuege, laeuft)
-          : spieleVorzug(id, fen, vorzug, stufennummer, laeuft),
-      )
+    nachDerAnimation()
+      .then(() => {
+        const jetzige = neueste(id);
+        if (!aktiv || !jetzige) return;
+        // Die Stufe hängt an der Phase der Stellung (spiel/phasen.ts, eine ganze
+        // Stellungsanalyse): erst nach der Animation, nur wenn die Engine am Zug ist.
+        const stufennummer = stufeFuer(jetzige, fen);
+        return vorzugFuer(id, jetzige).then((vorzug) =>
+          vorzug === null
+            ? normalerBotzug(id, fen, stufennummer, buchzuege, laeuft)
+            : spieleVorzug(id, fen, vorzug, stufennummer, laeuft),
+        );
+      })
       .then(() => {
         if (aktiv) setzeFehler(null);
       })
@@ -194,7 +209,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     return () => {
       aktiv = false;
     };
-  }, [id, fen, amZugEngine, buch, stufennummer, eroeffnung, abweichung, versuch]);
+  }, [id, fen, amZugEngine, buch, eroeffnung, abweichung, versuch]);
   return fehler;
 }
 

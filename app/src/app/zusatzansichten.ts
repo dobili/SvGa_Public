@@ -18,6 +18,12 @@ import { Fundstueckalbum } from "../ui/komponenten/fundstuecke/Fundstueckalbum";
 import { NaechsterSchrittAnsicht } from "../ui/komponenten/start/NaechsterSchrittAnsicht";
 import { Rueckblick } from "../ui/bildschirme/Rueckblick";
 import { EINSTELLUNGSANSICHTEN } from "../ui/komponenten/einstellungen/einstellungsansichten";
+import {
+  ANSICHT_FALLENCHECKS,
+  ANSICHT_STECKBRIEF,
+  FallencheckAnsicht,
+  SteckbriefAnsicht,
+} from "../ui/bildschirme/Steckbriefe";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -38,6 +44,9 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: "rueckblick", Bildschirm: Rueckblick },
   // Unterseiten der Einstellungen (Entwurf K2, 31.10.2026): Bots und Wertung, Daten, Über die App.
   ...EINSTELLUNGSANSICHTEN,
+  // Steckbriefe nach Entwurf H2 (31.10.2026): ein Steckbrief (Wert: Name), die Fallenchecks.
+  { kennung: ANSICHT_STECKBRIEF, Bildschirm: SteckbriefAnsicht },
+  { kennung: ANSICHT_FALLENCHECKS, Bildschirm: FallencheckAnsicht },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

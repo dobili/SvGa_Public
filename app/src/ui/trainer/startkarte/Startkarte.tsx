@@ -11,7 +11,6 @@
  */
 import {
   CalendarCheck,
-  ChevronDown,
   CircleHelp,
   Clock,
   Flame,
@@ -115,7 +114,6 @@ function Starthilfe({ kennung, hilfen }: { kennung: TrainerKennung; hilfen: read
       <summary>
         <CircleHelp size={KNOPFZEICHEN} aria-hidden="true" />
         {t("trainerstart.hilfe")}
-        <ChevronDown className="starthilfe-pfeil" size={KNOPFZEICHEN - 2} aria-hidden="true" />
       </summary>
       <p className="trainer-ablauf">{t(`trainer.${kennung}.ablauf`)}</p>
       {hilfen.map((h) => (

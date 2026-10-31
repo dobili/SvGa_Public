@@ -248,10 +248,6 @@
   display: none;
 }
 
-.starthilfe[open] .starthilfe-pfeil {
-  transform: rotate(180deg);
-}
-
 .starthilfe p {
   margin: 0 0 var(--raster);
   font-size: var(--groesse-mittel);

@@ -4,6 +4,13 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.19: Gamifizierung P2 Lernpfad übernommen (Opus)
+
+- Zweig `gami-p2-lernpfad` (Arbeitschat, Welle 1) gegen den Code geprüft: nur erlaubte Dateien,
+  je eine Zeile in `ZUSATZANSICHTEN` sowie je ein Knopf in Buch und Profil, reine Rechnung mit
+  Tests, erweiterbar über `STATIONSTEILE`. Ohne Nachbesserung übernommen. Der Abschnitt des
+  Arbeitschats steht darunter.
+
 ## 31.10.2026 – P2 Lernpfad durchs Buch (Opus, Gamifizierung Welle 1, Chat B)
 
 - Bildschirm „Dein Weg durchs Buch“ als Zusatzansicht `lernpfad` (eine Zeile in

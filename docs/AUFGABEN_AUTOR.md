@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### P2: Lernpfad durchs Buch (31.10.2026)
+### Neu in 0.3.19: Lernpfad durchs Buch (Arbeitschat, 31.10.2026)
 
 - [ ] N2120. **Knöpfe:** Im Buch steht über der Kapitelliste der Knopf „Als Weg anzeigen“, im
       Profil unter „Dein Fortschritt“ der Knopf „Dein Weg durchs Buch“. Beide öffnen den neuen

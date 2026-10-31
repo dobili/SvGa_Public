@@ -10,11 +10,13 @@
  * Quellen: „runde“ (Ende jeder Trainerrunde, ui/trainer/nachDerRunde.ts), „partie“ (Partieende,
  * speicher/partieprotokoll.ts), „zeitrunde“ und „tagesserie“ (ui/trainer/ZeitrundeBereich.tsx);
  * beim Öffnen der Rekordtafel werden alle Werte aus den Nutzerdaten geprüft.
- * Die Aufgabenserie ohne Fehler (Serienmodus im Taktiktrainer) folgt mit Quelle „serie“.
+ * Die Aufgabenserie ohne Fehler (Serienmodus im Taktiktrainer, ui/trainer/TaktikSerie.tsx) meldet
+ * sich mit Quelle „serie“.
  * Abhängigkeiten: training/rekorde.ts (Typ), training/rekordwerte.ts, speicher/rekordmerker.ts.
  */
 import { REKORD_TAGESSERIE, REKORD_TAKTIKZEIT } from "../speicher/rekordmerker";
 import type { Rekordart } from "./rekorde";
+import { QUELLE_SERIE, REKORD_TAKTIKSERIE } from "./taktikserie";
 import {
   besteRatequote,
   hoechsteWertung,
@@ -31,6 +33,7 @@ const SPIELEN = { bildschirm: "spielen" } as const;
 export const REKORDARTEN: readonly Rekordart[] = [
   { kennung: REKORD_TAKTIKZEIT, quellen: ["zeitrunde"], versuchen: KURZPLAENE },
   { kennung: REKORD_TAGESSERIE, quellen: ["tagesserie"], versuchen: KURZPLAENE },
+  { kennung: REKORD_TAKTIKSERIE, quellen: [QUELLE_SERIE], versuchen: { bildschirm: "trainer", kennung: "taktik" } },
   {
     kennung: "trainerTag",
     quellen: ["runde"],

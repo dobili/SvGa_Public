@@ -33,6 +33,50 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.25: Serienmodus im Taktiktrainer (Arbeitschat, 31.10.2026)
+
+Neu im Taktiktrainer neben „Runde starten“: der Knopf „Serie ohne Fehler“. Die Aufgaben werden
+immer schwerer (je drei Aufgaben der Stufen 1 bis 5, danach die schwersten zuerst), es läuft keine
+Uhr. Der erste Fehler beendet die Serie; auch eine Hilfe oder „Lösung zeigen“ zählt als Fehler.
+Das Ergebnis heißt etwa „12 in Folge“ und steht als Rekord „Taktikserie ohne Fehler“ in Profil ›
+Deine Rekorde. Außerdem wählt der Taktiktrainer jetzt das Motiv vor, wenn „Dein nächster Schritt“
+ein unsicheres Taktikthema vorschlägt.
+
+- [ ] N2220. **Start der Serie:** Training › Taktiktrainer, Quelle „Aus dem Buch“. Unter Thema und
+      Stufe stehen „Runde starten“ und darunter „Serie ohne Fehler“, darunter ein kurzer Satz, wie
+      die Serie funktioniert. Tippe „Serie ohne Fehler“: Oben steht „Serie: 0 in Folge“, die erste
+      Aufgabe hat „Stufe 1“. Verständlich?
+- [ ] N2221. **Weiter ohne Fehler:** Löse die Aufgabe ohne falschen Zug und ohne Hilfe. Der
+      Stand oben springt auf „Serie: 1 in Folge“, darunter erscheint „Weiter“. Nach drei gelösten
+      Aufgaben kommt Stufe 2 (unter dem Brett „· Stufe 2“). Steigt die Schwierigkeit spürbar?
+- [ ] N2222. **Ein Fehler beendet die Serie:** Ziehe in einer Aufgabe einen falschen Zug (roter
+      Pfeil) und löse sie dann zu Ende, oder tippe „Lösung zeigen“. Unter dem Brett steht „Serie
+      vorbei: Diese Aufgabe ging daneben.“ und „N in Folge“ (bei null „Diesmal keine in Folge.
+      Gleich noch einmal?“). Die Lösung bleibt auf dem Brett sichtbar. Passt der Ton?
+- [ ] N2223. **Neuer Rekord:** Schaffe mindestens eine Aufgabe und beende die Serie. Beim ersten
+      Mal steht „Neuer Rekord: N in Folge.“, später nur, wenn du mehr schaffst als bisher, dann mit
+      „(vorher …)“. Darunter „Deine beste Serie: … in Folge“. Gleich viele sind kein Rekord.
+- [ ] N2224. **Serie beenden:** Ab der ersten gelösten Aufgabe steht unter der Aufgabe „Serie
+      beenden“. Tippen beendet die Serie mit „Serie beendet.“ und zählt die bisher gelösten
+      Aufgaben als Ergebnis (und als Rekord). Brauchst du den Knopf, oder lieber weglassen?
+- [ ] N2225. **Neue Serie und andere Übung:** Nach dem Ende startet „Neue Serie“ eine frisch
+      gemischte Serie bei 0; „Andere Übung“ führt zurück zur Auswahl. Mit einem gewählten Motiv
+      (etwa Fesselung) kommen nur Aufgaben dieses Motivs. Richtig?
+- [ ] N2226. **Rekordtafel:** Profil › Deine Rekorde hat jetzt neun Zeilen; neu ist
+      „Taktikserie ohne Fehler“ (vor der ersten Serie „noch keiner“). „Versuchen“ öffnet den
+      Taktiktrainer. Stimmt das?
+- [ ] N2227. **Zählt wie eine Runde:** Nach einer Serie zählt sie in Profil wie eine Runde des
+      Taktiktrainers (Erfahrungspunkte, Abzeichen für Trainer, Lerntag im Wochenziel); die falsch
+      gelöste Aufgabe kommt als Wiederholungskarte in „Fällige Wiederholungen“. Passt das?
+- [ ] N2228. **Motiv vorgewählt aus „Dein nächster Schritt“:** Taktiktrainer, Thema „Fesselung“,
+      Runde starten und bei acht Aufgaben einfach „Lösung zeigen“ und „Weiter“ tippen. Zurück im
+      Buch steht in „Dein nächster Schritt“ (eventuell unter „Lieber etwas anderes?“) „Fesselung
+      klappt noch nicht so sicher (0 von 8 richtig). Eine kurze Runde?“. „Üben“ öffnet den
+      Taktiktrainer mit „Fesselung“ schon im Feld Thema. Aus „Training“ geöffnet steht dort wie
+      bisher „Gemischt“. Stimmt das?
+- [ ] N2229. **Englisch:** Sprache auf Englisch: Knopf „Streak without a mistake“, Stand
+      „Streak: 3 in a row“, Rekord „Tactics streak without a mistake“. Stimmt das?
+
 ### Neu in 0.3.24: Trainer-Feinschliff 2 (Nebenchat, 31.10.2026)
 
 - [ ] N2015. **Eignungsprüfung je Trainer (zur Durchsicht):** Jeder Trainer schließt eigene Arten

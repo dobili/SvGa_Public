@@ -40,7 +40,8 @@ export interface Taktikwahl {
   readonly stufe: number | null;
 }
 
-function passtZumThema(aufgabe: Taktikaufgabe, thema: Taktikthema): boolean {
+/** Ob eine Aufgabe zum Thema passt (auch für den Serienmodus, training/taktikserie.ts). */
+export function passtZumThema(aufgabe: Taktikaufgabe, thema: Taktikthema): boolean {
   if (thema === "gemischt") return true;
   if (thema === "mattbilder") return aufgabe.mattbild !== null;
   return aufgabe.motiv === thema;
@@ -52,8 +53,27 @@ function passtZumThema(aufgabe: Taktikaufgabe, thema: Taktikthema): boolean {
  * Beispiel: „spiess“ → 42 (Buch und Lichess zusammen).
  */
 export function anzahlJeThema(aufgaben: readonly Taktikaufgabe[]): Map<Taktikthema, number> {
-  const themen: Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
-  return new Map(themen.map((t) => [t, aufgaben.filter((a) => passtZumThema(a, t)).length]));
+  return new Map(TAKTIKTHEMEN.map((t) => [t, aufgaben.filter((a) => passtZumThema(a, t)).length]));
+}
+
+/** Alle Themen der Auswahl, in ihrer Reihenfolge: gemischt, Mattbilder, die zwölf Motive. */
+export const TAKTIKTHEMEN: readonly Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
+
+/**
+ * Das vorgewählte Thema, wenn der Trainer mit Thema geöffnet wurde (ui/trainer/trainerthema.ts).
+ *
+ * Warum: „Üben“ aus „Dein nächster Schritt“ (P1) oder an einer Medaille (P3) soll gleich beim
+ * Motiv landen, nicht bei „gemischt“.
+ * Eingaben: Thema ohne Präfix („fesselung“) oder null, Zahl der Aufgaben je Thema.
+ * Beispiele: „fesselung“ mit 30 Aufgaben → „fesselung“; null → „gemischt“.
+ * Sonderfall: unbekanntes Thema („gabel“) oder eins ohne Aufgaben → „gemischt“.
+ */
+export function vorgewaehltesThema(
+  thema: string | null,
+  anzahl: ReadonlyMap<Taktikthema, number>,
+): Taktikthema {
+  const bekannt = TAKTIKTHEMEN.find((th) => th === thema);
+  return bekannt !== undefined && (anzahl.get(bekannt) ?? 0) > 0 ? bekannt : "gemischt";
 }
 
 /**

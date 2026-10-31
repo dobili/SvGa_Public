@@ -164,7 +164,8 @@ function schwachesThema({ daten }: Lage): Vorschlag | null {
     werte: { richtig: [...letzte].filter((z) => z === "r").length, anzahl: letzte.length },
     namen: { thema: name },
     knopf: "naechster.knopf.ueben",
-    ziel: { bildschirm: "trainer", kennung: trainer },
+    // Mit Thema geöffnet, wählt der Trainer es gleich vor (ui/trainer/trainerthema.ts).
+    ziel: { bildschirm: "trainer", kennung: trainer, thema: schwach.thema },
   };
 }
 

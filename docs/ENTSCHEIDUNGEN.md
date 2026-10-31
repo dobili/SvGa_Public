@@ -4,6 +4,38 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Steckbriefe und Glossar neu (Arbeitschat, Zweig `gestaltung-nachschlagen`)
+
+Ziel des Autors: Nachschlagen war zu technisch und textlastig und wirkte wie ein Formular.
+Gewählte Entwürfe: H2 „Eröffnungsbaum“ und I3 „Lexikonseite“.
+
+- **Eröffnungsbaum** (`ui/komponenten/nachschlagen/eroeffnungsbaum.ts`, `Eroeffnungsbaum.tsx`):
+  Der Baum entsteht aus den Buchdaten, nicht aus einer Liste. Die Steckbriefe stehen in den
+  Kapiteldaten (nicht in nachschlagen.json); ihre Zeile „Wer wählt sie?“ nennt die
+  kennzeichnenden Züge, die Abbildung „Schlussstellung der Hauptvariante“ trägt die ganze
+  Zugfolge. Kennzugfolge = Hauptvariante bis zum spätesten genannten Zug; der erste genannte Zug
+  muss zur Hauptvariante passen, sonst steht der Steckbrief unter „Weitere Eröffnungen“ (Regel 1:
+  nichts erfinden). Ketten ohne eigene Eröffnung werden zu einer Marke zusammengefasst
+  („1… e5 2. Sf3“), der kennzeichnende Zug bleibt eigene Marke („3… Lb4“). Ein neuer Steckbrief
+  hängt sich von selbst ein. Läuferspiel (2. Lc4) hängt nicht eigens im Baum (Rückfrage N2291).
+- **Steckbrief und Fallenchecks als eigene Seiten** über `ZUSATZANSICHTEN` (Kennungen
+  `steckbrief`, `fallenchecks`), Router unverändert. Inhalt wie bisher, dazu die Kennzüge in Gold.
+- **Unterzeile der Karten:** Anfang der Buchzeile „Charakter“ bis zum ersten Semikolon oder Punkt
+  statt der erfundenen Schlagworte des Entwurfs (Regel 1).
+- **Lexikonseite** (`lexikon.ts`, `Lexikon.tsx`, `Glossar.tsx`): Reiter je Anfangsbuchstabe (A–Z,
+  „#“ zuletzt), Leitwörter, große Initiale, Einträge als Fließtext mit Kapitelangabe; die Fundstelle
+  in Klammern am Ende wird dort weggelassen, der volle Text bleibt auf der Begriffsseite. Der ganze
+  Eintrag ist ein Knopf mit dem Begriff als Namen und der Definition als Beschreibung. Diagramm bei
+  jedem Begriff mit Abbildung (Rückfrage N2296). Der gewählte Buchstabe bleibt in der Sitzung
+  (sessionStorage, nicht im Speicherformat). Begriffsseite neu mit den Diagrammen aller Stellen.
+- **Schlussstellung auch auf Englisch:** `steckbriefbild.ts` erkennt jetzt auch „Final position of
+  the main line“; vorher fehlte das Diagramm in der englischen App.
+- Texte unter `nachschlagenneu.*`; nicht mehr genutzt und gelöscht: `steckbrief.einleitung`,
+  `glossar.buchstaben`, `tour.glossar.buchstaben`, `tour.steckbriefe.eroeffnungen`; alte Stile der
+  Buchstabenleiste entfernt.
+- Befund nebenbei: Die untere Leiste ist bei 360 px Breite 370 px breit (10 px Überstand); nicht
+  in diesem Zweig geändert.
+
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 
 - Zweig `profil-neu` geprüft und zusammengeführt (Wahl des Autors auf der Auswahlseite):

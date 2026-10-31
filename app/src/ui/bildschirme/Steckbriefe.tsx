@@ -1,240 +1,187 @@
 /**
- * Bildschirm „Steckbriefe“: die Eröffnungs-Steckbriefe und die Fallenchecks des Buches zum
- * Nachschlagen.
+ * Bildschirm „Steckbriefe“: die Eröffnungen des Buches als Baum ihrer ersten Züge, dazu die
+ * Seiten „Steckbrief“ (eine Eröffnung vollständig) und „Fallenchecks“.
  *
- * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Nachschlagen zu prüfen. Die Steckbriefe
- * der Eröffnungen (Kapitel 2) und die Fallenchecks (Kapitel 4) stehen in den Buchdaten und sind
- * hier am Stück zu lesen. Jeder Eintrag ist aufklappbar; ein Knopf führt zur passenden Stelle im
- * Buch (erste Abbildung des Abschnitts, Stopp-Moment der Falle).
- * Seit 0.3.9 (Paket F der Ideensammlung) mit Diagramm: bei Eröffnungen die Schlussstellung der
- * Hauptvariante aus dem Buch, bei Fallen der Stopp-Moment (steckbriefbild.ts).
- * Begriffe wie im Buch: „Wer tappt hinein?“, „Prüfung“, „Reicht?“, „Rettender Zug“,
- * „Fallensteller-Test“. Regel 1: Inhalte kommen unverändert aus den Buchdaten.
- * Abhängigkeiten: daten/laden.ts, Buchtext, Kopfzeile, Navigation, Stellungsbild, i18n.
+ * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026, Nachschlagen zu prüfen; seit 0.3.9 mit
+ * Diagrammen (Paket F). Seit 31.10.2026 nach Entwurf H2 „Eröffnungsbaum“ (Wahl des Autors): Die
+ * Eröffnungen hängen an ihren ersten Zügen (1. e4 → 1... c5 Sizilianisch …), mit kleinem Brett
+ * je Eröffnung. Der Baum entsteht aus den Buchdaten (eroeffnungsbaum.ts); ein neuer Steckbrief
+ * hängt sich von selbst ein. Ein Tipp öffnet den vollständigen Steckbrief wie bisher (Zeilen,
+ * Schlussstellung der Hauptvariante, Abschnitt im Buch); die Fallenchecks haben eine eigene Seite.
+ * Beide Seiten sind über die Liste ZUSATZANSICHTEN eingetragen (Kennungen „steckbrief“,
+ * „fallenchecks“), der Router bleibt unverändert.
+ * Regel 1: Inhalte kommen unverändert aus den Buchdaten.
+ * Abhängigkeiten: daten, Navigation, Kopfzeile, Eroeffnungsbaum, steckbriefteile, i18n.
  */
-import { ChevronDown } from "lucide-react";
+import { ChevronRight, TriangleAlert } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
-import { ladeIndex, ladeKapitel, type Abbildung, type Kapitel } from "../../daten/laden";
-import { t } from "../../i18n/sprache";
+import type { Kapitel } from "../../daten/laden";
+import { sprache, t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
-import { Buchtext, type Textaktionen } from "../komponenten/abbildung/Unterschrift";
 import { useDaten } from "../komponenten/bausteine/useDaten";
-import { Stellungsbild } from "../komponenten/nachschlagen/Stellungsbild";
+import { Eroeffnungsbaum } from "../komponenten/nachschlagen/Eroeffnungsbaum";
+import {
+  baueBaum,
+  kennzugfolge,
+  zugbeschriftung,
+} from "../komponenten/nachschlagen/eroeffnungsbaum";
 import { abbildungMitNummer, schlussstellung } from "../komponenten/nachschlagen/steckbriefbild";
+import {
+  Falle,
+  SteckbriefInhalt,
+  type Steckbrief,
+} from "../komponenten/nachschlagen/steckbriefteile";
+import { ersteAbbildung, ladeAlleKapitel } from "../komponenten/nachschlagen/steckbriefdaten";
 
-/** Größe des Pfeils, der zeigt, dass sich ein Eintrag aufklappen lässt. */
-const PFEILGROESSE = 20;
+/** Kennungen der Seiten in ZUSATZANSICHTEN (app/zusatzansichten.ts). */
+export const ANSICHT_STECKBRIEF = "steckbrief";
+export const ANSICHT_FALLENCHECKS = "fallenchecks";
 
-type Steckbrief = Kapitel["steckbriefe"][number];
-type Fallencheck = Kapitel["fallenchecks"][number];
-type Wertung = NonNullable<Fallencheck["zeilen"][number]["wertung"]>;
+/** Größe der Symbole in der Karte „Fallenchecks“. */
+const SYMBOLGROESSE = 24;
 
-/** Alle Kapitel, die das Verzeichnis kennt (für Steckbriefe aus mehreren Kapiteln). */
-async function ladeAlleKapitel(): Promise<readonly Kapitel[]> {
-  const index = await ladeIndex();
-  return Promise.all(index.kapitel.map((k) => ladeKapitel(k.kapitel)));
-}
-
-/** Zeichen und Wort der Bewertung wie im Buch (✓ ◐ ✗ –), nie nur das Zeichen (WCAG 1.4.1). */
-function Bewertung({ wertung }: { wertung: Wertung | null }) {
-  if (!wertung) return null;
-  return (
-    <span className={`steckbrief-wertung wertung-${wertung}`}>
-      {t(`steckbrief.wertung.${wertung}`)}
-    </span>
-  );
-}
-
-/** Erste Abbildung eines Abschnitts („2.2“), damit der Knopf an die Stelle im Buch führt. */
-function ersteAbbildung(kapitel: readonly Kapitel[], abschnitt: string | null): string | null {
-  if (!abschnitt) return null;
-  for (const k of kapitel) {
-    const treffer = k.abbildungen.find((a) => a.abschnitt?.nummer === abschnitt);
-    if (treffer) return treffer.id;
+/** Lädt alle Kapitel und zeigt Laden oder Fehler; sonst den Inhalt. */
+function MitKapiteln({ inhalt }: { inhalt: (kapitel: readonly Kapitel[]) => React.ReactNode }) {
+  const kapitel = useDaten(ladeAlleKapitel, "alle-kapitel");
+  if (kapitel.art === "laedt") return <p className="lade">…</p>;
+  if (kapitel.art === "fehler") {
+    return <p className="fehlertext">{t("buch.ladefehler", { fehler: kapitel.meldung })}</p>;
   }
-  return null;
+  return <>{inhalt(kapitel.wert)}</>;
 }
 
-function Eroeffnung({
-  steckbrief,
-  abbildung,
-  schluss,
-  aktionen,
-}: {
-  steckbrief: Steckbrief;
-  abbildung: string | null;
-  /** Schlussstellung der Hauptvariante, als Diagramm unter den Zeilen. */
-  schluss: Abbildung | null;
-  aktionen: Textaktionen;
-}) {
+/** Die Karte, die zur Seite der Fallenchecks führt, mit ihrer Anzahl und ihren Kapiteln. */
+function Fallenkarte({ kapitel }: { kapitel: readonly Kapitel[] }) {
+  const { navigiere } = useNavigation();
+  const mitFallen = kapitel.filter((k) => k.fallenchecks.length > 0);
+  const anzahl = mitFallen.reduce((summe, k) => summe + k.fallenchecks.length, 0);
+  if (anzahl === 0) return null;
   return (
-    <details className="karte steckbrief" data-testid="steckbrief">
-      <summary className="karte-kopf">
-        <h3>{steckbrief.name}</h3>
-        {steckbrief.abschnitt && (
-          <span className="hinweis">
-            {t("steckbrief.abschnitt", { nummer: steckbrief.abschnitt })}
-          </span>
-        )}
-        <ChevronDown className="aufklapper" size={PFEILGROESSE} aria-hidden="true" />
-      </summary>
-      <dl className="steckbrief-zeilen">
-        {steckbrief.zeilen.map((zeile) => (
-          <div key={zeile.frage}>
-            <dt>{zeile.frage}</dt>
-            <dd>
-              <Buchtext teile={zeile.antwort} aktionen={aktionen} />
-            </dd>
-          </div>
-        ))}
-      </dl>
-      {schluss && (
-        <Stellungsbild
-          abbildung={schluss}
-          text={t("steckbrief.schluss", { nummer: schluss.id })}
-          beiKlick={() => aktionen.beiVerweis(schluss.id)}
-        />
-      )}
-      {abbildung && (
-        <button
-          type="button"
-          className="knopf-zweit"
-          onClick={() => aktionen.beiVerweis(abbildung)}
-        >
-          {t("steckbrief.zumBuch", { nummer: abbildung })}
-        </button>
-      )}
-    </details>
-  );
-}
-
-/**
- * Der Stopp-Moment der Falle: als Diagramm, wenn die Abbildung geladen ist, sonst als Knopf.
- * Beide führen an die Stelle im Buch.
- */
-function StoppKnopf({
-  nummer,
-  bild,
-  aktionen,
-}: {
-  nummer: string;
-  bild: Abbildung | null;
-  aktionen: Textaktionen;
-}) {
-  const text = t("steckbrief.stopp", { nummer });
-  if (bild) {
-    return (
-      <Stellungsbild abbildung={bild} text={text} beiKlick={() => aktionen.beiVerweis(nummer)} />
-    );
-  }
-  return (
-    <button type="button" className="knopf-zweit" onClick={() => aktionen.beiVerweis(nummer)}>
-      {text}
+    <button
+      type="button"
+      className="karte baum-fallen"
+      data-tour="steckbrief-fallen"
+      onClick={() => navigiere({ bildschirm: "zusatz", kennung: ANSICHT_FALLENCHECKS })}
+    >
+      <TriangleAlert size={SYMBOLGROESSE} aria-hidden="true" className="baum-fallen-symbol" />
+      <span>
+        <strong>{t("steckbrief.fallen")}</strong>
+        <small>
+          {t("nachschlagenneu.steckbriefe.fallenZusatz", {
+            anzahl,
+            kapitel: mitFallen.map((k) => k.kapitel).join(", "),
+          })}
+        </small>
+      </span>
+      <ChevronRight size={SYMBOLGROESSE} aria-hidden="true" />
     </button>
   );
 }
 
-function Falle({
-  falle,
-  stoppbild,
-  aktionen,
-}: {
-  falle: Fallencheck;
-  stoppbild: Abbildung | null;
-  aktionen: Textaktionen;
-}) {
+/** Baum, Eröffnungen ohne Kennzugfolge (sollte es nicht geben) und Karte der Fallenchecks. */
+function Uebersicht({ kapitel }: { kapitel: readonly Kapitel[] }) {
+  const { navigiere } = useNavigation();
+  const steckbriefe = kapitel.flatMap((k) => k.steckbriefe);
+  const mitZuegen = steckbriefe.map((s) => ({
+    zuege: kennzugfolge(s, schlussstellung(kapitel, s)) ?? [],
+    wert: s,
+  }));
+  const ohne = mitZuegen.filter((e) => e.zuege.length === 0).map((e) => e.wert);
+  const oeffne = (s: Steckbrief) =>
+    navigiere({ bildschirm: "zusatz", kennung: ANSICHT_STECKBRIEF, wert: s.name });
   return (
-    <details className="karte steckbrief" data-testid="fallencheck">
-      <summary className="karte-kopf">
-        <h3>{falle.name}</h3>
-        {falle.abschnitt && (
-          <span className="hinweis">{t("steckbrief.abschnitt", { nummer: falle.abschnitt })}</span>
-        )}
-        <ChevronDown className="aufklapper" size={PFEILGROESSE} aria-hidden="true" />
-      </summary>
-      <p>
-        <strong>{t("steckbrief.wer")}</strong> <Buchtext teile={falle.wer} aktionen={aktionen} />
+    <>
+      <p className="hinweis">
+        {t("nachschlagenneu.steckbriefe.einleitung", { anzahl: steckbriefe.length })}
       </p>
-      <dl className="steckbrief-zeilen">
-        {falle.zeilen.map((zeile) => (
-          <div key={`${zeile.kennung ?? ""} ${zeile.titel}`}>
-            <dt>
-              {zeile.kennung} {zeile.titel} <Bewertung wertung={zeile.wertung} />
-            </dt>
-            <dd>
-              <Buchtext teile={zeile.text} aktionen={aktionen} />
-            </dd>
-          </div>
-        ))}
-      </dl>
-      {falle.rettung && (
-        <p>
-          <strong>{t("steckbrief.rettung")}</strong>{" "}
-          <Buchtext teile={falle.rettung} aktionen={aktionen} />
-        </p>
+      <h2 className="abschnitt-titel" data-tour="steckbrief-eroeffnungen">
+        {t("steckbrief.eroeffnungen")}
+      </h2>
+      <Eroeffnungsbaum wurzeln={baueBaum(mitZuegen)} beiWahl={oeffne} />
+      {ohne.length > 0 && (
+        <>
+          <h2 className="abschnitt-titel">{t("nachschlagenneu.steckbriefe.weitere")}</h2>
+          <Eroeffnungsbaum
+            wurzeln={[{ zuege: [], pfad: [], eintraege: ohne, kinder: [] }]}
+            beiWahl={oeffne}
+          />
+        </>
       )}
-      {falle.fallensteller && (
-        <p>
-          <strong>{t("steckbrief.fallensteller")}</strong>{" "}
-          <Bewertung wertung={falle.fallensteller.wertung} />{" "}
-          <Buchtext teile={falle.fallensteller.text} aktionen={aktionen} />
-        </p>
-      )}
-      {falle.stopp && <StoppKnopf nummer={falle.stopp} bild={stoppbild} aktionen={aktionen} />}
-    </details>
+      <Fallenkarte kapitel={kapitel} />
+    </>
   );
 }
 
-/**
- * Der Bildschirm „Steckbriefe“: die Eröffnungs-Steckbriefe (Kapitel 2) und Fallenchecks (Kapitel 4)
- * zum Aufklappen, mit Sprung an die passende Stelle im Buch.
- */
+/** Der Bildschirm „Steckbriefe“: die Eröffnungen als Baum, die Fallenchecks als Karte. */
 export function Steckbriefe() {
-  const { navigiere } = useNavigation();
-  const kapitel = useDaten(ladeAlleKapitel, "alle-kapitel");
-  const aktionen: Textaktionen = {
-    beiVerweis: (nummer) => navigiere({ bildschirm: "abbildung", nummer }),
-    beiBegriff: (begriff) => navigiere({ bildschirm: "begriff", begriff }),
-  };
   return (
     <div className="bildschirm">
       <Kopfzeile titel={t("steckbrief.titel")} zurueckText={t("nachschlagen.titel")} />
-      <p className="hinweis">{t("steckbrief.einleitung")}</p>
-      {kapitel.art === "laedt" && <p className="lade">…</p>}
-      {kapitel.art === "fehler" && (
-        <p className="fehlertext">{t("buch.ladefehler", { fehler: kapitel.meldung })}</p>
-      )}
-      {kapitel.art === "fertig" && (
-        <>
-          <h2 className="abschnitt-titel" data-tour="steckbrief-eroeffnungen">
-            {t("steckbrief.eroeffnungen")}
-          </h2>
-          {kapitel.wert.flatMap((k) =>
-            k.steckbriefe.map((s) => (
-              <Eroeffnung
-                key={s.name}
-                steckbrief={s}
-                abbildung={ersteAbbildung(kapitel.wert, s.abschnitt)}
-                schluss={schlussstellung(kapitel.wert, s)}
-                aktionen={aktionen}
+      <MitKapiteln inhalt={(kapitel) => <Uebersicht kapitel={kapitel} />} />
+    </div>
+  );
+}
+
+/** Kopf einer Steckbriefseite: Kennzugfolge in Gold. */
+function Kennzuege({
+  kapitel,
+  steckbrief,
+}: {
+  kapitel: readonly Kapitel[];
+  steckbrief: Steckbrief;
+}) {
+  const zuege = kennzugfolge(steckbrief, schlussstellung(kapitel, steckbrief));
+  if (!zuege) return null;
+  const text = zugbeschriftung({ zuege, pfad: zuege, eintraege: [], kinder: [] }, sprache());
+  return <p className="steckbrief-kennzuege">{text}</p>;
+}
+
+/** Seite „Steckbrief“: eine Eröffnung vollständig. Wert: der Name wie in den Buchdaten. */
+export function SteckbriefAnsicht({ wert }: { readonly wert: string | null }) {
+  return (
+    <div className="bildschirm">
+      <Kopfzeile titel={wert ?? t("steckbrief.titel")} zurueckText={t("steckbrief.titel")} />
+      <MitKapiteln
+        inhalt={(kapitel) => {
+          const steckbrief = kapitel.flatMap((k) => k.steckbriefe).find((s) => s.name === wert);
+          if (!steckbrief) {
+            return (
+              <p className="fehlertext">
+                {t("nachschlagenneu.steckbriefe.unbekannt", { name: wert ?? "" })}
+              </p>
+            );
+          }
+          return (
+            <>
+              <Kennzuege kapitel={kapitel} steckbrief={steckbrief} />
+              <SteckbriefInhalt
+                steckbrief={steckbrief}
+                abbildung={ersteAbbildung(kapitel, steckbrief.abschnitt)}
+                schluss={schlussstellung(kapitel, steckbrief)}
               />
-            )),
-          )}
-          <h2 className="abschnitt-titel" data-tour="steckbrief-fallen">
-            {t("steckbrief.fallen")}
-          </h2>
-          {kapitel.wert.flatMap((k) =>
+            </>
+          );
+        }}
+      />
+    </div>
+  );
+}
+
+/** Seite „Fallenchecks“: alle Fallenchecks des Buches zum Aufklappen. */
+export function FallencheckAnsicht() {
+  return (
+    <div className="bildschirm">
+      <Kopfzeile titel={t("steckbrief.fallen")} zurueckText={t("steckbrief.titel")} />
+      <p className="hinweis">{t("nachschlagenneu.fallen.einleitung")}</p>
+      <MitKapiteln
+        inhalt={(kapitel) =>
+          kapitel.flatMap((k) =>
             k.fallenchecks.map((f) => (
-              <Falle
-                key={f.name}
-                falle={f}
-                stoppbild={abbildungMitNummer(kapitel.wert, f.stopp)}
-                aktionen={aktionen}
-              />
+              <Falle key={f.name} falle={f} stoppbild={abbildungMitNummer(kapitel, f.stopp)} />
             )),
-          )}
-        </>
-      )}
+          )
+        }
+      />
     </div>
   );
 }

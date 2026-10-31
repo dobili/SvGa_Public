@@ -1,0 +1,306 @@
+/*
+ * Steckbriefe und Glossar nach der Wahl des Autors (31.10.2026): Eröffnungsbaum (Entwurf H2,
+ * Eroeffnungsbaum.tsx, Steckbriefe.tsx) und Lexikonseite (Entwurf I3, Lexikon.tsx, Glossar.tsx).
+ * Alle Farben über die Tokens aus basis.css, damit hell und dunkel passen. Eigene Datei, weil
+ * nachschlagen.css an der Grenze von 400 Zeilen steht.
+ */
+
+/* ---------- Eröffnungsbaum ---------- */
+
+.eroeffnungsbaum {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 3);
+}
+
+.baum-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+}
+
+/* Eine Zugmarke: goldene Züge in der Schrift des Buches. */
+.baum-zug {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+  color: var(--gold-text);
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.baum-wurzel .baum-zug {
+  min-height: var(--tippflaeche);
+  padding: 0 14px;
+  font-size: var(--groesse-titel);
+}
+
+/* Ein Ast: senkrechte Linie links, je Knoten ein kurzer Strich zur Marke. */
+.baum-ast {
+  list-style: none;
+  margin: 6px 0 0 10px;
+  padding: 0 0 0 14px;
+  border-left: 2px solid var(--linie-stark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.baum-knoten {
+  position: relative;
+}
+
+.baum-knoten::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 15px;
+  width: 14px;
+  height: 2px;
+  background: var(--linie-stark);
+}
+
+/* Unter dem letzten Knoten endet die Linie (Fläche in der Farbe des Grundes darüber). */
+.baum-knoten:last-child::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 17px;
+  bottom: 0;
+  width: 4px;
+  background: var(--grund);
+}
+
+/* Knoten mit Karte: Marke und Strich mittig zur Karte. */
+.baum-knoten:has(> .baum-zeile > .baum-blatt)::before {
+  top: 27px;
+}
+
+.baum-knoten:has(> .baum-zeile > .baum-blatt):last-child::after {
+  top: 29px;
+}
+
+/* Eine Eröffnung als Karte mit kleinem Brett. */
+.baum-blatt {
+  flex: 1 1 150px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 5px 10px 5px 5px;
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.baum-blatt:hover,
+.baum-blatt:focus-visible {
+  border-color: var(--gold);
+}
+
+.baum-brett {
+  flex: none;
+  width: 40px;
+}
+
+.baum-brett .brett {
+  max-width: none;
+  box-shadow: none;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.baum-blatt-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.baum-blatt-text strong {
+  font-weight: 600;
+  line-height: 1.2;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.baum-blatt-text small {
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Karte zu den Fallenchecks unter dem Baum. */
+.baum-fallen {
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: calc(var(--raster) * 3);
+  border: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.baum-fallen > span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.baum-fallen small {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.baum-fallen-symbol {
+  flex: none;
+  color: var(--gold-text);
+}
+
+/* Seite eines Steckbriefs: die Kennzüge groß in Gold. */
+.steckbrief-kennzuege {
+  margin: 0;
+  color: var(--gold-text);
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  font-weight: 700;
+}
+
+/* ---------- Glossar als Lexikonseite ---------- */
+
+.lexikon-reiter {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--linie);
+}
+
+.lexikon-reiter button {
+  flex: none;
+  min-width: 36px;
+  min-height: var(--tippflaeche);
+  padding: 0 6px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--text-leise);
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-gross);
+  cursor: pointer;
+}
+
+.lexikon-reiter button[aria-pressed="true"] {
+  border-bottom-color: var(--gold);
+  color: var(--gold-text);
+  font-weight: 700;
+}
+
+.lexikon-leitwoerter {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--raster);
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--linie);
+  color: var(--text-leise);
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-fein);
+  letter-spacing: 0.04em;
+}
+
+.lexikon-initiale {
+  margin: var(--raster) 0 0;
+  color: var(--gold-text);
+  font-family: var(--schrift-titel);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.lexikon-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lexikon-eintrag {
+  border-bottom: 1px solid var(--linie);
+}
+
+/* Der ganze Eintrag ist der Knopf; Text fließt um das kleine Diagramm. */
+.lexikon-eintrag > button {
+  display: flow-root;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-grund);
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lexikon-begriff {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+}
+
+.lexikon-kapitel {
+  color: var(--gold-text);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lexikon-bild {
+  float: right;
+  width: 108px;
+  margin: 4px 0 6px 12px;
+  text-align: center;
+}
+
+.lexikon-bild .brett {
+  max-width: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lexikon-bild small {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+}
+
+/* Begriffsseite: Diagramme der Stellen nebeneinander, so weit Platz ist. */
+.begriff-bilder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.begriff-bilder .stellungsbild {
+  width: min(100%, 200px);
+  margin: 0;
+}

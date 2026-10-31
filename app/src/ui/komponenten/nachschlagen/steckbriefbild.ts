@@ -14,8 +14,14 @@ import type { Abbildung, Kapitel, Textteil } from "../../../daten/laden";
 
 type Steckbrief = Kapitel["steckbriefe"][number];
 
-/** Anfang der Bildunterschrift, an dem das Buch die Schlussstellung kennzeichnet. */
-const SCHLUSS_KENNUNG = "Schlussstellung der Hauptvariante";
+/**
+ * Anfang der Bildunterschrift, an dem das Buch die Schlussstellung kennzeichnet, je Sprache der
+ * Buchdaten (seit 31.10.2026 auch Englisch; vorher fehlte das Diagramm in der englischen App).
+ */
+const SCHLUSS_KENNUNGEN: readonly string[] = [
+  "Schlussstellung der Hauptvariante",
+  "Final position of the main line",
+];
 
 /** Die Bildunterschrift als schlichter Text. */
 function klartext(teile: readonly Textteil[]): string {
@@ -44,7 +50,7 @@ export function schlussstellung(
   const kandidaten = alleAbbildungen(kapitel).filter(
     (a) =>
       a.abschnitt?.nummer === steckbrief.abschnitt &&
-      klartext(a.unterschrift).includes(SCHLUSS_KENNUNG),
+      SCHLUSS_KENNUNGEN.some((kennung) => klartext(a.unterschrift).includes(kennung)),
   );
   const imUnterabschnitt = kandidaten.find((a) => a.unterabschnitt === steckbrief.name);
   return imUnterabschnitt ?? kandidaten[0] ?? null;

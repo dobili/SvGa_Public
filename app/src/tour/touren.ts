@@ -259,7 +259,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   ]),
   glossar: tour("tour.titel.glossar", [
     ziel("glossar-suche", "tour.glossar.suche"),
-    ziel("glossar-buchstaben", "tour.glossar.buchstaben"),
+    ziel("glossar-buchstaben", "nachschlagenneu.tour.glossarBuchstaben"),
     ziel("glossar-liste", "tour.glossar.liste"),
   ]),
   begriff: tour("tour.titel.begriff", [ziel("begriff-karte", "tour.begriff.karte")]),
@@ -272,7 +272,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("checkliste-karte", "tour.checkliste.karte"),
   ]),
   steckbriefe: tour("tour.titel.steckbriefe", [
-    ziel("steckbrief-eroeffnungen", "tour.steckbriefe.eroeffnungen"),
+    ziel("steckbrief-eroeffnungen", "nachschlagenneu.tour.steckbriefeBaum"),
     ziel("steckbrief-fallen", "tour.steckbriefe.fallen"),
   ]),
   werkzeuge: tour("tour.titel.werkzeuge", [ziel("werkzeuge-kapitel", "tour.werkzeuge.kapitel")]),

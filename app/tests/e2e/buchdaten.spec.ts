@@ -51,7 +51,7 @@ test("Nachschlagen: Glossar suchen, Stelle öffnen; Denkroutine; Abhakliste mit 
   await page.getByRole("searchbox", { name: "Begriff suchen" }).fill("abschneid");
   await page.getByRole("button", { name: "Abschneiden", exact: true }).click();
   await expect(page.getByText("Im Turmendspiel: Der Turm sperrt")).toBeVisible();
-  await page.getByRole("button", { name: "Abschnitt 9.1" }).click();
+  await page.getByRole("button", { name: "Abschnitt 9.1", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Abb. 9.1" })).toBeVisible();
   await leiste.getByRole("button", { name: "Nachschlagen" }).click();
   await page.getByRole("button", { name: /^Denkroutine/ }).click();

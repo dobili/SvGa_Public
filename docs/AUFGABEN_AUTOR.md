@@ -33,6 +33,58 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Steckbriefe und Glossar neu (31.10.2026)
+
+Steckbriefe und Glossar sind nach deiner Wahl der Entwürfe neu gebaut: Die Steckbriefe zeigen die
+Eröffnungen als Baum ihrer ersten Züge (Entwurf H2), das Glossar sieht aus wie eine Lexikonseite
+(Entwurf I3). Weg: „Nachschlagen“ unten in der Leiste, dann „Steckbriefe“ bzw. „Glossar“. Bitte
+hell und dunkel ansehen (Einstellungen, Farbschema).
+
+- [ ] N2290. **Eröffnungsbaum:** In „Steckbriefe“ stehen oben zwei Stämme, „1. e4“ (Königsbauer)
+      und „1. d4“ (Damenbauer), mit goldenen Zugmarken und Linien. Unter 1. e4 folgt
+      „1… e5 2. Sf3“, darunter „2… Sc6“ mit Spanischer, Italienischer und Schottischer Partie,
+      daneben „2… Sf6“ Russisch (Petroff); dann 1… c5 Sizilianisch, 1… e6 Französisch, 1… c6
+      Caro-Kann. Unter 1. d4: 1… d5 mit Damengambit (2. c4) und London-System (2. Lf4), 1… Sf6
+      mit Trompowsky (2. Lg5) und 2. c4 → Königsindisch (2… g6) und „2… e6 3. Sc3“ →
+      Nimzo-Indisch (3… Lb4). Zusammen 13 Karten. Passt die Ordnung so?
+- [ ] N2291. **Zweispringerspiel:** Es hängt unter der Italienischen Partie an „3… Sf6“. Die
+      Zeile „Wer wählt sie?“ nennt auch das Läuferspiel (2. Lc4); im Baum steht der Steckbrief nur
+      einmal, beim Zweispringerspiel. Ist das recht, oder soll er zusätzlich an „2. Lc4“ hängen?
+- [ ] N2292. **Karten im Baum:** Jede Karte zeigt links ein kleines Brett mit der Stellung nach
+      den Zügen (Sizilianisch: weißer Bauer e4, schwarzer c5), daneben den Namen und darunter den
+      Charakter in wenigen Worten („Klassisch und strategisch · Abschnitt 2.2“, vom Anfang der
+      Zeile „Charakter“ des Buches). Lange Unterzeilen enden mit „…“. Ist alles lesbar, auch bei
+      Zweispringerspiel ganz rechts?
+- [ ] N2293. **Steckbrief öffnen:** Tipp auf „Spanische Partie“: Eine eigene Seite mit dem Namen
+      als Titel, darunter groß in Gold „1. e4 e5 2. Sf3 Sc6 3. Lb5“, dann alle Zeilen wie bisher
+      (Wer wählt sie?, Charakter, Theorieaufwand, Passt zu dir, wenn …), das Diagramm
+      „Schlussstellung der Hauptvariante (Abb. 2.11)“ und der Knopf „Im Buch ansehen“. „Steckbriefe“
+      oben links führt zurück zum Baum.
+- [ ] N2294. **Fallenchecks:** Unter dem Baum steht die Karte „Fallenchecks – 14 Fallen aus
+      Kapitel 4, jede mit Prüfung und Stopp-Moment“. Tipp darauf: Die 14 Fallenchecks zum
+      Aufklappen wie bisher (etwa „Klammerfalle“ mit „Wer tappt hinein?“, Prüfungen ✓/◐/✗,
+      Rettender Zug, Stopp-Moment als Diagramm; ein Tipp aufs Diagramm öffnet Abb. 4.2).
+- [ ] N2295. **Glossar als Lexikonseite:** Oben das Suchfeld („Begriff suchen, z. B. Gabel“),
+      darunter eine Reihe Buchstaben-Reiter A bis Z, waagrecht wischbar. Tipp auf „F“: Kopfzeile
+      mit erstem Begriff links, „F · 18 Begriffe“ in der Mitte, letztem Begriff rechts; darunter
+      ein großes goldenes „F“ und die Begriffe als Absätze: Begriff fett, Definition, am Ende in
+      Gold „KAP. 1, 2, 7“. Die Fundstelle in Klammern am Ende der Definition entfällt dort, weil
+      die Kapitel daneben stehen. Wirkt es wie ein Lexikon?
+- [ ] N2296. **Diagramme im Glossar:** Begriffe mit einer Abbildung im Buch zeigen rechts ein
+      kleines Brett mit Nummer darunter (Fesselung: Abb. 1.12). Das sind viele (197 von 255
+      Begriffen). Ist dir das zu viel, oder gerade richtig? (Vorschlag sonst: nur ein Diagramm je
+      drei Begriffe oder nur bei Kapitel-Begriffen.)
+- [ ] N2297. **Begriff öffnen:** Tipp auf „Fesselung“: die Seite wie bisher mit vollem Text,
+      Fundstellen zum Antippen und „Siehe auch“; neu darunter die Diagramme aller Stellen
+      (Abb. 1.12, 2.26, 7.4, je mit Abschnitt). Tipp auf ein Diagramm öffnet die Abbildung.
+      „Zurück“ führt zur Lexikonseite, und dort ist „F“ noch gewählt.
+- [ ] N2298. **Suche:** „gabel“ ins Suchfeld tippen: Die Reiter verschwinden, oben steht „… Treffer“,
+      darunter die passenden Begriffe als Lexikoneinträge (zuerst „Gabel“). Feld leeren: wieder
+      die Seite des gewählten Buchstabens.
+- [ ] N2299. **Tour:** Auf beiden Seiten das Toursymbol oben rechts antippen: Die Schritte zeigen
+      auf Suchfeld, Buchstaben-Reiter und Liste (Glossar) bzw. auf den Baum und die Karte
+      „Fallenchecks“ (Steckbriefe); die Texte passen zur neuen Gestaltung.
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

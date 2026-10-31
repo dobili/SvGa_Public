@@ -9,13 +9,21 @@ test("Nachschlagen: Steckbriefe mit Fallencheck und Werkzeuge des Buches", async
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Nachschlagen" }).click();
   await page.getByRole("button", { name: /^Steckbriefe/ }).click();
+  // Seit 31.10.2026 (Entwurf H2): die Eröffnungen als Baum ihrer ersten Züge, je eine Karte.
   await expect(page.getByTestId("steckbrief")).toHaveCount(13);
-  // Seit 0.3.9 (Paket F): Diagramm der Schlussstellung der Hauptvariante aus dem Buch.
-  const spanisch = page.getByTestId("steckbrief").filter({ hasText: "Spanische Partie" });
-  await spanisch.locator("summary").click();
+  await expect(page.locator(".baum-wurzel .baum-zug")).toHaveText(["1. e4", "1. d4"]);
+  // Ein Tipp öffnet den vollständigen Steckbrief; seit 0.3.9 (Paket F) mit Diagramm der
+  // Schlussstellung der Hauptvariante aus dem Buch.
+  await page.getByTestId("steckbrief").filter({ hasText: "Spanische Partie" }).click();
+  await expect(page.getByRole("heading", { level: 1, name: "Spanische Partie" })).toBeVisible();
+  await expect(page.getByText("1. e4 e5 2. Sf3 Sc6 3. Lb5")).toBeVisible();
   await expect(
-    spanisch.getByRole("button", { name: "Schlussstellung der Hauptvariante (Abb. 2.11)" }),
+    page.getByRole("button", { name: "Schlussstellung der Hauptvariante (Abb. 2.11)" }),
   ).toBeVisible();
+  await page.getByRole("button", { name: "Steckbriefe", exact: true }).click();
+  // Die Fallenchecks haben eine eigene Seite.
+  await page.getByRole("button", { name: /^Fallenchecks/ }).click();
+  await expect(page.getByTestId("fallencheck")).toHaveCount(14);
   const falle = page.getByTestId("fallencheck").filter({ hasText: "Klammerfalle" });
   await falle.locator("summary").click();
   await expect(falle).toContainText("Wer tappt hinein?");

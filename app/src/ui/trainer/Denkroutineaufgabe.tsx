@@ -16,7 +16,9 @@ import {
   DENKZEIT_S,
   geloest,
   pruefeKandidat,
+  VERLUST_GRENZE,
   type Denkaufgabe,
+  type Denkvergleich,
   type Kandidatpruefung,
 } from "../../training/denkroutinetrainer";
 import { Denkeingabe } from "./Denkeingabe";
@@ -122,6 +124,18 @@ function Vergleich({
 }
 
 /**
+ * Der Grund des Urteils: Wie weit liegt der bessere eigene Kandidat hinter dem Zug der Engine?
+ * Gelöst ist bis 0,5 Bauern (training/denkroutinetrainer.ts, geloest).
+ */
+function urteilssatz(v: Denkvergleich): string {
+  const bester = Math.max(...v.kandidaten.map((k) => k.wert));
+  const abstand = Math.max(0, v.besterWert - bester);
+  return abstand <= VERLUST_GRENZE
+    ? t("denk.urteilGut")
+    : t("denk.urteilAbstand", { abstand: zahlText(abstand, 1), zug: de(v.besterZug) });
+}
+
+/**
  * Eine Aufgabe des Denkroutine-Trainers (Kapitel 12): eine Minute denken, dann zwei Kandidaten mit
  * der stärksten Antwort ziehen und mit der Engine vergleichen.
  */
@@ -191,8 +205,14 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
       {pruefungen && !vollstaendig && (
         <p className="meldung schlecht">{t("denk.unvollstaendig")}</p>
       )}
+      {/* Einheitliche Reihenfolge (Punkt B6 des Nebenchats): Urteil mit Grund, dann der Vergleich
+          und zuletzt das Durchspielen mit Balken. */}
+      {beantwortet && (
+        <Antwortmeldung richtig={runde.ergebnis === true}>
+          {stand.art === "fertig" && vollstaendig ? urteilssatz(stand.vergleich) : undefined}
+        </Antwortmeldung>
+      )}
       <Vergleich stand={stand} pruefungen={pruefungen ?? []} fen={aufgabe.fen} />
-      {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
     </>
   );
 }

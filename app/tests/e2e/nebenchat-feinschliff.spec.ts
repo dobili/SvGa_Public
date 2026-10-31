@@ -76,3 +76,15 @@ test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", asyn
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
+
+test("Abbildung öffnen: Zahlenleiste statt Handytastatur", async ({ page }) => {
+  await starteImBrowser(page);
+  await page.getByLabel("Abbildung öffnen").click();
+  const leiste = page.getByRole("group", { name: "Ziffern für die Abbildungsnummer" });
+  for (const taste of ["5", ".", "2", "8"]) {
+    await leiste.getByRole("button", { name: taste, exact: true }).click();
+  }
+  await expect(page.getByLabel("Abbildung öffnen")).toHaveValue("5.28");
+  await page.getByRole("button", { name: "Öffnen", exact: true }).click();
+  await expect(page.getByText("Abb. 5.28").first()).toBeVisible();
+});

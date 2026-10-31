@@ -251,12 +251,12 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
 /** Nach der Antwort: die Motive der Aufgabe (Fesselung, Batterie), mit Buchbezug. */
 function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
   const stellung = useMemo(() => stellungAusFen(aufgabe.fen), [aufgabe.fen]);
-  const namen = aufgabe.gefesselt.flatMap((feld) => {
+  const name = (feld: string): string => {
     const quadrat = feldAusName(feld);
-    if (quadrat === null || !stellung.ok) return [];
-    const figur = stellung.wert.brett.get(quadrat);
-    return figur ? [figurenname({ feld: quadrat, figur })] : [];
-  });
+    const figur = quadrat !== null && stellung.ok ? stellung.wert.brett.get(quadrat) : undefined;
+    return quadrat !== null && figur ? figurenname({ feld: quadrat, figur }) : feld;
+  };
+  const namen = aufgabe.gefesselt.map(name);
   return (
     <>
       {namen.length > 0 && (
@@ -267,6 +267,11 @@ function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
       {aufgabe.motive.includes("batterie") && (
         <p className="hinweis">{t("zaehltrainer.batterie")}</p>
       )}
+      {aufgabe.abzug.map((p) => (
+        <p key={`${p.hinten}-${p.vorn}`} className="hinweis" data-testid="zaehl-abzug">
+          {t("zaehltrainer.abzug", { hinten: name(p.hinten), vorn: name(p.vorn) })}
+        </p>
+      ))}
     </>
   );
 }

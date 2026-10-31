@@ -16,6 +16,7 @@
 import type { Square } from "chessops/types";
 import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
+import { abzugspaare } from "./zaehlabzug";
 import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
@@ -42,10 +43,12 @@ export interface Zaehlaufgabe {
   readonly motive: readonly Zaehlmotiv[];
   /** Gefesselte Figuren, die hier nicht mitzählen (Felder), für die Erklärung. */
   readonly gefesselt: readonly string[];
+  /** Verdeckte Figuren (Abzug): je die hintere und die vordere Figur (Felder). */
+  readonly abzug: readonly { readonly hinten: string; readonly vorn: string }[];
   readonly stufe: Zaehlstufe;
 }
 
-export type Zaehlmotiv = "batterie" | "fesselung";
+export type Zaehlmotiv = "batterie" | "fesselung" | "abzug";
 export type Zaehlstufe = "leicht" | "mittel" | "schwer";
 export const ZAEHLSTUFEN: readonly Zaehlstufe[] = ["leicht", "mittel", "schwer"];
 /** Bis zu so vielen beteiligten Figuren ist eine Aufgabe ohne Motiv leicht. */
@@ -82,7 +85,12 @@ export function zumZaehlenGeeignet(stellung: Stellung): boolean {
 export function zaehlstufe(a: Pick<Zaehlaufgabe, "angreifer" | "verteidiger" | "motive">): Zaehlstufe {
   const beteiligt = a.angreifer + a.verteidiger;
   const batterie = a.motive.includes("batterie");
-  if (a.motive.includes("fesselung") || beteiligt >= SCHWER_AB || (batterie && beteiligt >= SCHWER_MIT_BATTERIE))
+  if (
+    a.motive.includes("fesselung") ||
+    a.motive.includes("abzug") ||
+    beteiligt >= SCHWER_AB ||
+    (batterie && beteiligt >= SCHWER_MIT_BATTERIE)
+  )
     return "schwer";
   return beteiligt <= LEICHT_BIS && a.motive.length === 0 ? "leicht" : "mittel";
 }
@@ -104,9 +112,14 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
   const bilanz = Math.max(abtausch(stellung.brett, feld, gesperrt)?.bilanz ?? 0, 0);
   const gefesselt = gefesselteAmFeld(p, feld).map(feldname);
   const batterie = [...angreiferListe, ...verteidigerListe].some((a) => a.hinter !== null);
+  const abzug = abzugspaare(stellung, feld).map((p) => ({
+    hinten: feldname(p.hinten),
+    vorn: feldname(p.vorn),
+  }));
   const motive: Zaehlmotiv[] = [
     ...(batterie ? (["batterie"] as const) : []),
     ...(gefesselt.length > 0 ? (["fesselung"] as const) : []),
+    ...(abzug.length > 0 ? (["abzug"] as const) : []),
   ];
   const angreifer = angreiferListe.length;
   const verteidiger = verteidigerListe.length;
@@ -117,6 +130,7 @@ function zaehleFeld(stellung: Stellung, feld: Square): Omit<Zaehlaufgabe, "numme
     bilanz,
     motive,
     gefesselt,
+    abzug,
     stufe: zaehlstufe({ angreifer, verteidiger, motive }),
   };
 }

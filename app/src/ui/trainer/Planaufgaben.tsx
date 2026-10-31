@@ -156,7 +156,6 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           {t("planuebung.lapLoesung", { figur: aufgabe.figur, ziel: aufgabe.ziel ?? "" })}
         </Antwortmeldung>
       )}
-      {beantwortet && <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />}
       {beantwortet && (
         <section className="karte" data-testid="lap-begruendung">
           {lapbegruendung(aufgabe, figur, ziel).map((satz) => (
@@ -164,6 +163,7 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           ))}
         </section>
       )}
+      {beantwortet && <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />}
     </>
   );
 }

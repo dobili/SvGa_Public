@@ -154,3 +154,11 @@
   gap: calc(var(--raster) / 2);
   margin-bottom: var(--raster);
 }
+
+/* Zahlenleiste für Abbildungsnummern (Punkt A3): zwei Reihen zu sechs Tasten. */
+.zahlenleiste {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: calc(var(--raster) / 2);
+}

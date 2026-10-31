@@ -5,6 +5,7 @@
 import { describe, expect, it } from "vitest";
 import { profil } from "../analyse/stellungsprofil";
 import { feldAusName, stellungAusFen, type Stellung } from "../schach/stellung";
+import { abzugspaare } from "./zaehlabzug";
 import { gefesselteAmFeld } from "./zaehlfesselung";
 import { ladeKapitel } from "../schach/buchabbildungen.testhilfe";
 import { buchstellungenAus } from "./buchstellungen";
@@ -83,5 +84,17 @@ describe("Zähltrainer: Stufen an den Buchstellungen", () => {
       expect(runde).toHaveLength(RUNDE);
       expect(runde.every((a) => a.stufe === stufe)).toBe(true);
     }
+  });
+});
+
+describe("Zähltrainer: Motiv Abzug", () => {
+  it("die Dame d1 hinter dem Läufer d3 ist verdeckt, ein Turm hinter dem eigenen Bauern nicht", () => {
+    const fen = "3rk3/8/8/3n4/8/3B4/P7/R2QK3 w - - 0 1";
+    const st = stellungAusFen(fen);
+    if (!st.ok) throw new Error(st.fehler);
+    const d5 = feld("d5");
+    expect(abzugspaare(st.wert, d5)).toEqual([{ hinten: feld("d1"), vorn: feld("d3") }]);
+    expect(abzugspaare(st.wert, feld("a7"))).toEqual([]);
+    expect(zaehlstufe({ angreifer: 1, verteidiger: 1, motive: ["abzug"] })).toBe("schwer");
   });
 });

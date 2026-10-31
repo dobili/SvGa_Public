@@ -11,7 +11,9 @@
 import { useSyncExternalStore } from "react";
 import { entferneMerker, liesMerker } from "../app/merker";
 import { hebeAuf, liesRoh, schreibeRoh } from "./datenbank";
-import { leereDaten, merkerAlsFormat0, wandleUm, type Nutzerdaten } from "./format";
+import { leereDaten, wandleUm, type Nutzerdaten } from "./format";
+import { merkerAlsFormat0 } from "./format0";
+import { mitMerkerRekorden } from "./rekordmerker";
 
 /** Was beim Laden oder Speichern schiefging, für den Hinweis an den Leser. */
 export interface Speicherfehler {
@@ -125,9 +127,17 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
     }
     const ergebnis = wandleUm(roh, jetzt);
     if (ergebnis.ok) {
-      // Ein älteres Format wird sofort im neuen gespeichert.
-      if (ergebnis.vonVersion !== ergebnis.daten.schemaVersion) await schreibeRoh(ergebnis.daten);
-      setze({ daten: ergebnis.daten, geladen: true });
+      // Bestwerte aus Merkern in die Rekorde (Format 7), damit sie in die Sicherung kommen.
+      const daten = mitMerkerRekorden(
+        ergebnis.daten,
+        liesMerker("taktikzeitBeste"),
+        liesMerker("tagesserie"),
+        jetzt,
+      );
+      // Ein älteres Format (oder ein neuer Rekord aus den Merkern) wird sofort gespeichert.
+      if (ergebnis.vonVersion !== daten.schemaVersion || daten !== ergebnis.daten)
+        await schreibeRoh(daten);
+      setze({ daten, geladen: true });
       return;
     }
     await hebeAuf(roh, jetzt);

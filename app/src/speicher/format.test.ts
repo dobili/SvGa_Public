@@ -6,11 +6,12 @@ import { describe, expect, it } from "vitest";
 import {
   einstellungenAus,
   leereDaten,
-  merkerAlsFormat0,
   SCHEMA_VERSION,
   STANDARD_EINSTELLUNGEN,
   wandleUm,
 } from "./format";
+import { merkerAlsFormat0 } from "./format0";
+import { LEERE_GAMIFIZIERUNG } from "./gamifizierung";
 import { LEERES_PROFIL } from "./profil";
 import { LEERER_SPIELSTAND } from "./partien";
 
@@ -114,6 +115,10 @@ describe("Format 1", () => {
         planstand: null,
         // Name und Porträt fehlen in Format 1 und lesen sich leer.
         profil: LEERES_PROFIL,
+        // Format 7: Felder der Gamifizierung leer, das Tagesprotokoll aus den Datumsangaben
+        // nachgetragen (die Übung hat kein gültiges Datum und zählt nicht).
+        ...LEERE_GAMIFIZIERUNG,
+        aktivitaet: { "2026-10-14": { abbildung: 1 } },
       },
       vonVersion: 1,
     });
@@ -246,5 +251,74 @@ describe("Format 2", () => {
     };
     const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
     expect(ergebnis.ok && ergebnis.daten.karten).toEqual({ "uebung:ueb:a": karte });
+  });
+});
+
+describe("Format 7 (Gamifizierung)", () => {
+  it("Format 6 → 7: Felder leer, Tagesprotokoll aus Abbildungen, Übungen und Partien", () => {
+    const format6 = {
+      ...leereDaten(JETZT),
+      schemaVersion: 6,
+      fortschritt: {
+        ...leereDaten(JETZT).fortschritt,
+        gesehen: { "1.1": "2026-10-20T09:00:00.000Z", "1.2": "2026-10-20T10:00:00.000Z" },
+        uebungen: {
+          "ueb:a": { kapitel: 1, versuche: 1, geloest: true, zuletzt: "2026-10-21T09:00:00.000Z" },
+        },
+      },
+    } as Record<string, unknown>;
+    const ohneNeueFelder = Object.fromEntries(
+      Object.entries(format6).filter(([feld]) => !(feld in LEERE_GAMIFIZIERUNG)),
+    );
+    const ergebnis = wandleUm(ohneNeueFelder, JETZT);
+    if (!ergebnis.ok) throw new Error("nicht umgewandelt");
+    expect(ergebnis.vonVersion).toBe(6);
+    expect(ergebnis.daten.schemaVersion).toBe(SCHEMA_VERSION);
+    expect(ergebnis.daten.aktivitaet).toEqual({
+      "2026-10-20": { abbildung: 2 },
+      "2026-10-21": { uebung: 1, uebungGeloest: 1 },
+    });
+    expect(ergebnis.daten.wochen).toEqual(LEERE_GAMIFIZIERUNG.wochen);
+  });
+
+  it("Format 6 behält seine zehn Stufen (keine zweite Umrechnung)", () => {
+    const format6 = { ...leereDaten(JETZT), schemaVersion: 6 };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(format6)), JETZT);
+    expect(ergebnis.ok && ergebnis.daten.spiel).toEqual(format6.spiel);
+  });
+
+  it("Format 7 liest die Felder, Unpassendes fällt weg; Format 8 ist „neuer“", () => {
+    const roh = {
+      ...leereDaten(JETZT),
+      themen: { "taktik:gabel": { richtig: 3, falsch: 1, letzte: "rrxfr", tage: ["b", "a", "a"] } },
+      aktivitaet: { "2026-10-30": { partie: 2, unbekannt: 5 }, leer: {} },
+      rekorde: { taktikZeit: { wert: 14, datum: "2026-10-30" }, kaputt: { wert: "x" } },
+      wochen: {
+        ziel: 3,
+        auftraege: { woche: "2026-10-26", liste: [{ art: "uebung", anzahl: 3 }] },
+      },
+      uebungsplan: { tage: [0, 2, 9], uhrzeit: "18:30", satz: "nach dem Essen" },
+      ziele: { angeheftet: [{ art: "bot", bot: "lotte", zeitart: "rapid" }, { art: "neu" }] },
+    };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
+    if (!ergebnis.ok) throw new Error("nicht gelesen");
+    const d = ergebnis.daten;
+    expect(d.themen["taktik:gabel"]).toEqual({
+      richtig: 3,
+      falsch: 1,
+      letzte: "rrfr",
+      tage: ["a", "b"],
+      zuletzt: "",
+    });
+    expect(d.aktivitaet).toEqual({ "2026-10-30": { partie: 2 } });
+    expect(Object.keys(d.rekorde)).toEqual(["taktikZeit"]);
+    expect(d.wochen.auftraege?.liste).toEqual([{ art: "uebung", anzahl: 3, wert: null }]);
+    expect(d.uebungsplan).toEqual({ tage: [0, 2], uhrzeit: "18:30", satz: "nach dem Essen" });
+    expect(d.ziele.angeheftet).toEqual([{ art: "bot", bot: "lotte", zeitart: "rapid" }]);
+    expect(wandleUm({ ...roh, schemaVersion: SCHEMA_VERSION + 1 }, JETZT)).toEqual({
+      ok: false,
+      grund: "neuer",
+      version: SCHEMA_VERSION + 1,
+    });
   });
 });

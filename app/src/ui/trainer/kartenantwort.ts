@@ -8,6 +8,7 @@
  * Abhängigkeiten: speicher, training/wiederholung.ts, useRunde.
  */
 import { notiereTrainerantwort } from "../../speicher/fortschritt";
+import { notiereThemenantwort } from "../../speicher/themenprotokoll";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import {
   aufgabenAusKarten,
@@ -27,6 +28,8 @@ export function useFaelligeAufgaben(trainer: WiederholterTrainer): string[] {
  * Meldet die Antwort an die Runde und an die Wiederholungskarte der Aufgabe.
  *
  * Beispiel: „Lösung zeigen“ bei „taktik-b-7.6“ → Runde zählt falsch, Karte in Kasten 1.
+ * Gamifizierung G1: Mit Thema (etwa „taktik:gabel“, speicher/themenprotokoll.ts) zählt die
+ * Antwort auch im Antwortprotokoll je Thema.
  * Sonderfall: Eine zweite Antwort auf dieselbe Aufgabe zählt nicht (wie in useRunde).
  */
 export function antworteMitKarte(
@@ -34,9 +37,14 @@ export function antworteMitKarte(
   trainer: WiederholterTrainer,
   aufgabe: string,
   richtig: boolean,
+  thema: string | null = null,
 ): void {
   if (runde.ergebnis !== null) return;
   runde.beantworte(richtig);
   const karte = trainerkarte(trainer, aufgabe);
-  void aendere((daten) => notiereTrainerantwort(daten, karte, richtig, new Date()));
+  const jetzt = new Date();
+  void aendere((daten) => {
+    const mitKarte = notiereTrainerantwort(daten, karte, richtig, jetzt);
+    return thema === null ? mitKarte : notiereThemenantwort(mitKarte, thema, richtig, jetzt);
+  });
 }

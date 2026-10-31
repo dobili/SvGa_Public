@@ -12,6 +12,7 @@ import { BookmarkPlus } from "lucide-react";
 import { useId, useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
+import { zaehleAktivitaet } from "../../../speicher/aktivitaet";
 import { aendere } from "../../../speicher/speicher";
 import {
   EROEFFNUNG_HOECHSTENS,
@@ -140,7 +141,14 @@ export function SammelFormular({
       plan: plan.trim(),
       notiz: notiz.trim(),
     };
-    void aendere((daten) => ({ ...daten, sammlung: mitSammeleintrag(daten.sammlung, eintrag) }));
+    void aendere((daten) =>
+      zaehleAktivitaet(
+        { ...daten, sammlung: mitSammeleintrag(daten.sammlung, eintrag) },
+        "sammlung",
+        1,
+        new Date(),
+      ),
+    );
     setzeGespeichert(true);
     beiGespeichert?.();
   };

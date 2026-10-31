@@ -36,6 +36,7 @@ import { GRUNDSTELLUNG } from "../../../spiel/stellungsbau";
 import { BUCHTIEFE, linienzug, praxiszug, type Praxisbuch } from "../../../engine/praxisbuch";
 import { wertungInZeitklasse } from "../../../engine/zeitklassenabstand";
 import { findePartie, mitPartie } from "../../../speicher/partien";
+import { nachPartieende } from "../../../speicher/partieprotokoll";
 import { aendere, speicherzustand } from "../../../speicher/speicher";
 import { animationsverzugMs } from "../../brett/useZuganimation";
 import { beendeNotmodus, planeNotmodus } from "./botNotmodus";
@@ -47,7 +48,12 @@ export function neueste(id: string): Partie | null {
 
 /** Schreibt eine Partie in den Speicher (laufend oder, wenn beendet, abgelegt). */
 export function schreibe(partie: Partie): void {
-  void aendere((daten) => ({ ...daten, spiel: mitPartie(daten.spiel, partie) }));
+  void aendere((daten) => {
+    // Gamifizierung G2: Gerade beendete Partien kommen ins Tagesprotokoll (und zu den Paketen).
+    const vorherBeendet = findePartie(daten.spiel, partie.id)?.ende != null;
+    const neu = { ...daten, spiel: mitPartie(daten.spiel, partie) };
+    return nachPartieende(neu, partie, vorherBeendet, new Date());
+  });
 }
 
 /** Ändert die neueste Partie mit einer reinen Funktion; Gleiches schreibt nichts. Gibt sie zurück. */

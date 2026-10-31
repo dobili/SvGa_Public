@@ -19,6 +19,7 @@ import type { Endspielergebnis, Massstab } from "../../training/endspieltrainer"
 import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { themaEndspiel } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useEndspielpartie } from "./useEndspielpartie";
@@ -91,7 +92,13 @@ export function Endspielaufgabe({
   const [stufe, setzeStufe] = useState(0);
   useSammelstellung(aufgabe.fen);
   const stand = useEndspielpartie(aufgabe, massstab, (ergebnis) =>
-    antworteMitKarte(runde, "endspiel", aufgabe.id, ergebnis.art === "erreicht" && stufe === 0),
+    antworteMitKarte(
+      runde,
+      "endspiel",
+      aufgabe.id,
+      ergebnis.art === "erreicht" && stufe === 0,
+      themaEndspiel(aufgabe.thema),
+    ),
   );
   const fertig = stand.ergebnis !== null;
   const bedienung = useBrettbedienung(

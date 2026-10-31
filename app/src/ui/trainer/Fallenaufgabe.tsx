@@ -28,6 +28,7 @@ import { Folgespieler } from "./Folgespieler";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+import { THEMA_FALLE } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 
@@ -127,7 +128,7 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
   );
   const farbe = t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b");
   const antworte = (nimmt: boolean) =>
-    antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, nimmt));
+    antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, nimmt), THEMA_FALLE);
   return (
     <>
       <p>

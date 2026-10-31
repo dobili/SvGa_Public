@@ -9,6 +9,7 @@
  */
 import { TRAINER, trainerZuKapitel, type TrainerKennung } from "../training/trainer";
 import { beantworte, uebungskarte, type Antwortergebnis } from "../training/wiederholung";
+import { zaehleAktivitaet } from "./aktivitaet";
 import type { Fortschritt, Nutzerdaten, Trainerstand } from "./format";
 
 /** Zähler „x von y“. */
@@ -41,7 +42,12 @@ export interface Durchgang {
 export function markiereGesehen(daten: Nutzerdaten, abbildung: string, jetzt: Date): Nutzerdaten {
   if (daten.fortschritt.gesehen[abbildung] !== undefined) return daten;
   const gesehen = { ...daten.fortschritt.gesehen, [abbildung]: jetzt.toISOString() };
-  return { ...daten, fortschritt: { ...daten.fortschritt, gesehen } };
+  return zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, gesehen } },
+    "abbildung",
+    1,
+    jetzt,
+  );
 }
 
 /**
@@ -64,7 +70,14 @@ export function setzeGesehen(
   );
   const neu: Record<string, string> = Object.fromEntries(behalten);
   if (gesehen) for (const nummer of abbildungen) neu[nummer] ??= jetzt.toISOString();
-  return { ...daten, fortschritt: { ...daten.fortschritt, gesehen: neu } };
+  // Gamifizierung G2: neu abgehakte Abbildungen zählen wie angesehene.
+  const dazu = Object.keys(neu).length - behalten.length;
+  return zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, gesehen: neu } },
+    "abbildung",
+    dazu,
+    jetzt,
+  );
 }
 
 /**
@@ -86,7 +99,13 @@ export function notiereUebung(
     zuletzt: jetzt.toISOString(),
   };
   const uebungen = { ...daten.fortschritt.uebungen, [uebung.id]: neu };
-  return { ...daten, fortschritt: { ...daten.fortschritt, uebungen } };
+  const mitVersuch = zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, uebungen } },
+    "uebung",
+    1,
+    jetzt,
+  );
+  return uebung.richtig ? zaehleAktivitaet(mitVersuch, "uebungGeloest", 1, jetzt) : mitVersuch;
 }
 
 /**
@@ -111,8 +130,11 @@ export function notiereUebungsergebnis(
     jetzt,
   );
   const kennung = uebungskarte(uebung.id);
-  const karte = beantworte(daten.karten[kennung] ?? null, uebung.ergebnis, jetzt);
-  return { ...mitVersuch, karten: { ...daten.karten, [kennung]: karte } };
+  const alt = daten.karten[kennung] ?? null;
+  const karte = beantworte(alt, uebung.ergebnis, jetzt);
+  const neu = { ...mitVersuch, karten: { ...daten.karten, [kennung]: karte } };
+  // Gamifizierung G2: Eine schon vorhandene Karte zu beantworten ist eine Wiederholung.
+  return alt === null ? neu : zaehleAktivitaet(neu, "karte", 1, jetzt);
 }
 
 /**
@@ -132,7 +154,8 @@ export function notiereTrainerantwort(
   const alt = daten.karten[karte] ?? null;
   if (alt === null && richtig) return daten;
   const neu = beantworte(alt, richtig ? "richtig" : "falsch", jetzt);
-  return { ...daten, karten: { ...daten.karten, [karte]: neu } };
+  const mitKarte = { ...daten, karten: { ...daten.karten, [karte]: neu } };
+  return alt === null ? mitKarte : zaehleAktivitaet(mitKarte, "karte", 1, jetzt);
 }
 
 /** Notiert einen abgeschlossenen Durchgang eines Trainers (Aufgaben und richtige Antworten). */
@@ -150,7 +173,15 @@ export function notiereDurchgang(
     zuletzt: jetzt.toISOString(),
   };
   const trainer = { ...daten.fortschritt.trainer, [kennung]: neu };
-  return { ...daten, fortschritt: { ...daten.fortschritt, trainer } };
+  // Gamifizierung G2: Runde, Antworten und richtige Antworten aller Trainer an einer Stelle.
+  const mitRunde = zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, trainer } },
+    "trainerRunde",
+    1,
+    jetzt,
+  );
+  const mitAntworten = zaehleAktivitaet(mitRunde, "trainerAntwort", durchgang.aufgaben, jetzt);
+  return zaehleAktivitaet(mitAntworten, "trainerRichtig", durchgang.richtig, jetzt);
 }
 
 /**
@@ -216,13 +247,14 @@ export function beantworteteFragen(
 
 /**
  * Merkt eine beantwortete Warum-Frage (richtig oder falsch: Sie gilt als bearbeitet, wie eine
- * Karte im Buch, die man gelesen hat). Beispiel: notiereWarumfrage(daten, "1.26", 0).
+ * Karte im Buch, die man gelesen hat). Beispiel: notiereWarumfrage(daten, "1.26", 0, jetzt).
  * Sonderfall: Schon gemerkt → dieselben Daten (der Speicher schreibt nichts).
  */
 export function notiereWarumfrage(
   daten: Nutzerdaten,
   abbildung: string,
   stelle: number,
+  jetzt: Date,
 ): Nutzerdaten {
   const bisher = daten.fortschritt.warum[abbildung] ?? [];
   if (bisher.includes(stelle)) return daten;
@@ -230,7 +262,12 @@ export function notiereWarumfrage(
     ...daten.fortschritt.warum,
     [abbildung]: [...bisher, stelle].sort((a, b) => a - b),
   };
-  return { ...daten, fortschritt: { ...daten.fortschritt, warum } };
+  return zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, warum } },
+    "warum",
+    1,
+    jetzt,
+  );
 }
 
 /**
@@ -246,7 +283,12 @@ export function notiereEinschaetzung(
 ): Nutzerdaten {
   if (daten.fortschritt.eingeschaetzt[abbildung] !== undefined) return daten;
   const eingeschaetzt = { ...daten.fortschritt.eingeschaetzt, [abbildung]: jetzt.toISOString() };
-  return { ...daten, fortschritt: { ...daten.fortschritt, eingeschaetzt } };
+  return zaehleAktivitaet(
+    { ...daten, fortschritt: { ...daten.fortschritt, eingeschaetzt } },
+    "eingeschaetzt",
+    1,
+    jetzt,
+  );
 }
 
 /**

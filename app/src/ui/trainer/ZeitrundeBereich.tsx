@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { ladeTaktik, type Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
+import { zaehleAktivitaet } from "../../speicher/aktivitaet";
 import { notiereDurchgang } from "../../speicher/fortschritt";
 import { aendere } from "../../speicher/speicher";
 import {
@@ -161,7 +162,12 @@ export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
     schreibeMerker(MERKER_SERIE, JSON.stringify(neu));
     setzeSerie(neu);
     void aendere((d) =>
-      notiereDurchgang(d, "kurzplaene", { aufgaben: 1, richtig: richtig ? 1 : 0 }, new Date()),
+      zaehleAktivitaet(
+        notiereDurchgang(d, "kurzplaene", { aufgaben: 1, richtig: richtig ? 1 : 0 }, new Date()),
+        "tagesaufgabe",
+        1,
+        new Date(),
+      ),
     );
   };
   const mitAbschluss = {

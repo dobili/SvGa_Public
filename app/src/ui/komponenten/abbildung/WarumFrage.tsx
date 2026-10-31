@@ -146,7 +146,7 @@ export function WarumFragen({ hier }: { hier: Abbildung | null }) {
           frage={frage}
           entwurf={entwurf}
           schonBeantwortet={beantwortet?.includes(stelle) ?? false}
-          beiAntwort={() => void aendere((d) => notiereWarumfrage(d, hier.id, stelle))}
+          beiAntwort={() => void aendere((d) => notiereWarumfrage(d, hier.id, stelle, new Date()))}
         />
       ))}
     </>

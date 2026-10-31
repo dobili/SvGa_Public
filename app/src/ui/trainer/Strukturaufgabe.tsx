@@ -26,6 +26,7 @@ import {
 import { pruefeFelder } from "../../training/zaehltrainer";
 import { ZUFALL } from "../../training/zufall";
 import { abgleichsfelder, umschalten } from "./abgleich";
+import { themaStruktur } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { bauernbegruendungen } from "../../training/strukturbegruendung";
 import { Antwortmeldung } from "./Rundenrahmen";
@@ -216,7 +217,13 @@ function Planwahl({
   const waehle = (plan: Plan) => {
     if (gewaehlt) return;
     setzeGewaehlt(plan);
-    antworteMitKarte(runde, "struktur", aufgabe.id, vorher && plan === aufgabe.plan);
+    antworteMitKarte(
+      runde,
+      "struktur",
+      aufgabe.id,
+      vorher && plan === aufgabe.plan,
+      themaStruktur(aufgabe.struktur),
+    );
   };
   const text = `${auftrag} ${t("strukturtrainer.planFrage", { farbe })}`;
   return (

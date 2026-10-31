@@ -7,7 +7,7 @@
  * (Konzept 13: „Jedes frühere Format wird korrekt umgewandelt“).
  * Formate:
  * - Format 0: die Merker der ersten Testversionen im localStorage („svga.einstellungen“,
- *   „svga.lernstand“). Sie werden beim ersten Laden übernommen (merkerAlsFormat0, wandleUm).
+ *   „svga.lernstand“). Sie werden beim ersten Laden übernommen (format0.ts, wandleUm).
  * - Format 1: Einstellungen, Lernstand, Fortschritt, letzte Sicherung.
  * - Format 2 (ab AP 11): dazu „spiel“ mit laufender Partie, beendeten Partien und Vorlieben
  *   (speicher/partien.ts).
@@ -19,6 +19,8 @@
  * - Format 6: zehn statt acht Stufen; gespeicherte Stufen werden umgerechnet
  *   (speicher/stufenskala.ts). Eine ältere App lehnt Format 6 als „neuer“ ab, statt die neuen
  *   Stufen 9 und 10 als falsche Stufen zu lesen.
+ * - Format 7: Felder der Gamifizierung (speicher/gamifizierung.ts, Entscheidung E1 des Autors,
+ *   31.10.2026); das Tagesprotokoll wird aus vorhandenen Datumsangaben nachgetragen (format7.ts).
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), speicher/partien.ts.
  */
@@ -30,10 +32,16 @@ import { LEERER_SPIELSTAND, type Spielstand } from "./partien";
 import { LEERES_PROFIL, profilAus, type Spielerprofil } from "./profil";
 import { spielstandAus } from "./partienLesen";
 import { stufenUmgerechnet } from "./stufenskala";
+import { gamifizierungAus, LEERE_GAMIFIZIERUNG, type Gamifizierungsdaten } from "./gamifizierung";
+import { nachgetragenesProtokoll } from "./format7";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 6;
+export const SCHEMA_VERSION = 7;
+/** Bis zu dieser Version gab es acht Stufen (Umrechnung beim Laden). */
+const LETZTE_ACHT_STUFEN = 5;
+/** Bis zu dieser Version gab es kein Tagesprotokoll (Nachtrag beim Laden). */
+const LETZTE_OHNE_PROTOKOLL = 6;
 
 /**
  * Die Bretter zur Wahl (Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
@@ -151,7 +159,8 @@ export interface Fortschritt {
   readonly eingeschaetzt: Readonly<Record<string, string>>;
 }
 
-export interface Nutzerdaten {
+/** Die Nutzerdaten; die Felder der Gamifizierung (ab Format 7) stehen in Gamifizierungsdaten. */
+export interface Nutzerdaten extends Gamifizierungsdaten {
   readonly schemaVersion: typeof SCHEMA_VERSION;
   readonly angelegt: string;
   readonly einstellungen: Einstellungen;
@@ -201,6 +210,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     zugErraten: {},
     planstand: null,
     profil: LEERES_PROFIL,
+    ...LEERE_GAMIFIZIERUNG,
   };
 }
 
@@ -342,27 +352,8 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     zugErraten: rateverlaufAus(roh.zugErraten),
     planstand: planstandTextAus(roh.planstand),
     profil: profilAus(roh.profil),
+    ...gamifizierungAus(roh),
   };
-}
-
-/**
- * Die Merker aus Format 0 als Rohobjekt (ohne schemaVersion).
- *
- * Eingaben: die Texte der Merker „einstellungen“ und „lernstand“ (null, wenn nicht vorhanden).
- * Ausgabe: Rohobjekt für wandleUm, kaputtes JSON zählt als nicht vorhanden.
- * Beispiel: {"brettfarben":"holz"} und {"1":[0,2]} → Holzbrett, in Kapitel 1 zwei Haken.
- */
-export function merkerAlsFormat0(einstellungen: string | null, lernstand: string | null): Roh {
-  const lies = (text: string | null): unknown => {
-    if (!text) return undefined;
-    try {
-      return JSON.parse(text);
-    } catch (fehler) {
-      console.warn("Merker aus Version 0.2 nicht lesbar, wird leer übernommen:", fehler);
-      return undefined;
-    }
-  };
-  return { einstellungen: lies(einstellungen), lernstand: lies(lernstand) };
 }
 
 /**
@@ -389,6 +380,13 @@ export function wandleUm(roh: unknown, jetzt: Date): Pruefergebnis {
   // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“, Format 4 ohne
   // „sammlung“. Fehlende Teile ergänzt das Lesen leer. Bis Format 5 gab es acht Stufen.
   const umgerechnet =
-    version < SCHEMA_VERSION ? { ...roh, spiel: stufenUmgerechnet(roh.spiel) } : roh;
-  return { ok: true, daten: aktuellesFormatAus(umgerechnet, jetzt), vonVersion: version };
+    version <= LETZTE_ACHT_STUFEN ? { ...roh, spiel: stufenUmgerechnet(roh.spiel) } : roh;
+  const daten = aktuellesFormatAus(umgerechnet, jetzt);
+  // Format 7: Tagesprotokoll aus den Datumsangaben nachtragen, die es schon gibt.
+  if (version > LETZTE_OHNE_PROTOKOLL) return { ok: true, daten, vonVersion: version };
+  return {
+    ok: true,
+    daten: { ...daten, aktivitaet: nachgetragenesProtokoll(daten) },
+    vonVersion: version,
+  };
 }

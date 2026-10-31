@@ -11,6 +11,7 @@
  */
 import { useId, useState } from "react";
 import { t } from "../../i18n/sprache";
+import { zaehleAktivitaet } from "../../speicher/aktivitaet";
 import { aendere } from "../../speicher/speicher";
 import { mitEintrag, SATZ_HOECHSTENS } from "../../training/fehlerdatenbank";
 import { useFehlerarten } from "./useFehlerarten";
@@ -54,7 +55,14 @@ export function FehlerFormular({
       fehlerart: art,
       ...(zug ? { zug } : {}),
     };
-    void aendere((daten) => ({ ...daten, fehler: mitEintrag(daten.fehler, eintrag) }));
+    void aendere((daten) =>
+      zaehleAktivitaet(
+        { ...daten, fehler: mitEintrag(daten.fehler, eintrag) },
+        "fehler",
+        1,
+        new Date(),
+      ),
+    );
     setzeGespeichert(true);
     beiGespeichert?.();
   };

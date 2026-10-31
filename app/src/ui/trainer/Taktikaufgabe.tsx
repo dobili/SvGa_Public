@@ -24,6 +24,7 @@ import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
+import { themaTaktik } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
@@ -168,6 +169,8 @@ export function Taktikaufgabe({
   const vorgespielt = useVorzug(zusatz !== null);
   const fen = stellungNach(aufgabe.fen, zuege);
   const fertig = runde.ergebnis !== null;
+  // Gamifizierung G1: Grundmotiv als Thema (Zusatzaufgaben ohne Grundmotiv zählen nicht).
+  const thema = aufgabe.motiv ? themaTaktik(aufgabe.motiv) : null;
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
     if (!zugaufgabe || fertig || !vorgespielt) return "ungueltig" as const;
     const versuch = spieleZug(fen, von, nach, umwandlung);
@@ -181,13 +184,13 @@ export function Taktikaufgabe({
     const neu = [...zuege, versuch.san, ...(pruefung.antwort ? [pruefung.antwort] : [])];
     setzeZuege(neu);
     if (pruefung.art === "geloest")
-      antworteMitKarte(runde, "taktik", aufgabe.id, !fehler && stufe === 0);
+      antworteMitKarte(runde, "taktik", aufgabe.id, !fehler && stufe === 0, thema);
     return "gespielt" as const;
   };
   const zeigeLoesung = () => {
     setzeGezeigt(true);
     setzeZuege(zugaufgabe?.linien[0] ?? []);
-    antworteMitKarte(runde, "taktik", aufgabe.id, false);
+    antworteMitKarte(runde, "taktik", aufgabe.id, false, thema);
   };
   const bedienung = useBrettbedienung(
     { fen, spiele },

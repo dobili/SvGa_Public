@@ -123,8 +123,8 @@ describe("Fortschritt", () => {
 describe("Warum-Fragen im Fortschritt (0.2.99)", () => {
   const jetzt = new Date("2026-10-19T08:00:00.000Z");
   it("merkt beantwortete Fragen je Abbildung, jede einmal", () => {
-    const einmal = notiereWarumfrage(leereDaten(jetzt), "1.26", 0);
-    const zweimal = notiereWarumfrage(einmal, "1.26", 0);
+    const einmal = notiereWarumfrage(leereDaten(jetzt), "1.26", 0, jetzt);
+    const zweimal = notiereWarumfrage(einmal, "1.26", 0, jetzt);
     expect(zweimal).toBe(einmal);
     expect(einmal.fortschritt.warum).toEqual({ "1.26": [0] });
   });
@@ -137,7 +137,7 @@ describe("Warum-Fragen im Fortschritt (0.2.99)", () => {
   });
 
   it("zählt beantwortete und alle Fragen im Kapitel", () => {
-    const daten = notiereWarumfrage(leereDaten(jetzt), "1.26", 0);
+    const daten = notiereWarumfrage(leereDaten(jetzt), "1.26", 0, jetzt);
     const stand = kapitelfortschritt(daten.fortschritt, 1, ["1.26", "1.27"], [], {
       "1.26": 1,
       "1.27": 2,

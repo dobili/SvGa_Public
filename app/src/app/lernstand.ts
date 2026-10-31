@@ -8,6 +8,7 @@
  * Abhängigkeiten: speicher/speicher.ts, speicher/format.ts.
  */
 import type { Lernstand } from "../speicher/format";
+import { zaehleAktivitaet } from "../speicher/aktivitaet";
 import { aendere, useSpeicher } from "../speicher/speicher";
 
 export type { Lernstand } from "../speicher/format";
@@ -32,7 +33,13 @@ export function abgehakt(stand: Lernstand, kapitel: number, anzahl: number): num
 
 /** Hakt einen Punkt ab oder nimmt den Haken zurück und speichert sofort. */
 export function schalteLernziel(kapitel: number, punkt: number): void {
-  void aendere((daten) => ({ ...daten, lernstand: umschalten(daten.lernstand, kapitel, punkt) }));
+  void aendere((daten) => {
+    const lernstand = umschalten(daten.lernstand, kapitel, punkt);
+    const neu = { ...daten, lernstand };
+    // Gamifizierung G2: Nur das Abhaken zählt im Tagesprotokoll, nicht das Zurücknehmen.
+    const abgehakt = lernstand[kapitel]?.includes(punkt) ?? false;
+    return abgehakt ? zaehleAktivitaet(neu, "lernziel", 1, new Date()) : neu;
+  });
 }
 
 /** Abonniert den Lernstand in einer Komponente. */

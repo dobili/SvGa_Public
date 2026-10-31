@@ -12,6 +12,12 @@ import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
 import { Wochenkarte } from "./Wochenkarte";
 import { wochenkarteSichtbar } from "./wochensichtbar";
+ * Abhängigkeiten: speicher/format.ts (Typ), die Karten der Pakete.
+ */
+import type { ComponentType } from "react";
+import type { Nutzerdaten } from "../../../speicher/format";
+import { NaechsterSchritt } from "./NaechsterSchritt";
+import { naechsterSchrittSichtbar } from "./naechsterSchrittMerker";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
@@ -29,6 +35,12 @@ export const HOECHSTENS_STARTKARTEN = 2;
 /** Alle Karten; Pakete fügen je eine Zeile an (Konfliktkarte, gamifizierung.md Abschnitt 5). */
 export const STARTKARTEN: readonly Startkarte[] = [
   { kennung: "woche", rang: 20, sichtbar: wochenkarteSichtbar, Karte: Wochenkarte },
+  {
+    kennung: "naechster",
+    rang: 10,
+    sichtbar: (_daten, jetzt) => naechsterSchrittSichtbar(jetzt),
+    Karte: NaechsterSchritt,
+  },
 ];
 
 /**

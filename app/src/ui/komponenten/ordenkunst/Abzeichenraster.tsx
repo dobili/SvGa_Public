@@ -7,7 +7,8 @@
  * und Bedingung auf Tipp freigegeben. Ersetzt die Liste „abzeichengitter“ in Erfahrung.tsx;
  * die testids der Einträge bleiben gleich (abzeichen-<kennung>).
  * Abhängigkeiten: fortschritt/abzeichen.ts, fortschritt/abzeichenstand.ts,
- * bausteine/Abzeichenbild.tsx, i18n, Stil in ui/stil/ordenkunst.css.
+ * bausteine/Abzeichenbild.tsx, teilen/Stueckteilen.tsx (Teilen, P9), i18n,
+ * Stil in ui/stil/ordenkunst.css.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
@@ -19,6 +20,7 @@ import {
   abzeichenbedingung,
 } from "../fortschritt/abzeichen";
 import type { Abzeichenstand } from "../fortschritt/abzeichenstand";
+import { AbzeichenTeilen } from "../teilen/Stueckteilen";
 
 /**
  * Das Raster aller Abzeichen; verdiente farbig mit Glanz, offene als Silhouette.
@@ -56,6 +58,9 @@ export function Abzeichenraster({ stand }: { stand: Abzeichenstand }) {
                 <span className="abzeichenraster-bedingung">{abzeichenbedingung(a.kennung)}</span>
               )}
             </button>
+            {/* P9: ein aufgeklapptes, verdientes Abzeichen lässt sich teilen (neben dem Knopf,
+                weil Knöpfe nicht ineinander stehen dürfen). */}
+            {zeigt && verdient && <AbzeichenTeilen kennung={a.kennung} />}
           </li>
         );
       })}

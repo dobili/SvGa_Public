@@ -8,9 +8,10 @@
  * Zeile ein und öffnet ihn mit navigiere({ bildschirm: "zusatz", kennung: "rekorde" }); ein
  * optionaler Wert (etwa der Monat „2026-10“ des Rückblicks) reist mit. App.tsx und stapel.ts
  * bleiben unverändert; der gesicherte Stapel kennt „zusatz“ (stapelMerker.ts).
- * Abhängigkeiten: keine.
+ * Abhängigkeiten: die eingetragenen Bildschirme (ui/komponenten/teilen/Herausforderung.tsx).
  */
 import type { ComponentType } from "react";
+import { Herausforderung } from "../ui/komponenten/teilen/Herausforderung";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -20,7 +21,10 @@ export interface Zusatzansicht {
 }
 
 /** Alle Bildschirme der Pakete; je Paket eine Zeile (Konfliktkarte, gamifizierung.md). */
-export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [];
+export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
+  // P9: geteilte Aufgabe aus einem Link (ui/komponenten/teilen/Herausforderung.tsx).
+  { kennung: "herausforderung", Bildschirm: Herausforderung },
+];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */
 export function zusatzansicht(

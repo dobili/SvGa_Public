@@ -11,7 +11,7 @@
  * Danach zeigt sie die schlichtere Meldung neuer Abzeichen und Stufen (Abzeichenmeldung.tsx), damit
  * die Hülle der App dafür keinen eigenen Platz braucht.
  * Abhängigkeiten: fortschrittsringe.ts (Ringe), Abzeichenmeldung.tsx, Gruppenmodus.tsx (Feierton), Feuerwerk.tsx,
- * app/merker.ts, i18n, lucide-react.
+ * app/merker.ts, teilen/Stueckteilen.tsx (Teilen des neuen Ordens, P9), i18n, lucide-react.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
@@ -20,6 +20,7 @@ import { Orden } from "../bausteine/Orden";
 import { Abzeichenmeldung } from "./Abzeichenmeldung";
 import { merkeGefeiert, offeneRinge, useFortschrittsringe } from "./fortschrittsringe";
 import { Feierton } from "../gegner/Gruppenmodus";
+import { OrdenTeilen } from "../teilen/Stueckteilen";
 
 /**
  * Zeigt die Gratulation für den ersten vollen Ring, der noch keine hatte; „Weiter“ schließt sie,
@@ -53,6 +54,7 @@ export function Ringfeier() {
         />
         <h2>{t("ringfeier.titel")}</h2>
         <p>{t("ringfeier.text", { name: ring.name, gesamt: String(ring.anteil.gesamt) })}</p>
+        <OrdenTeilen ring={ring.testid} name={ring.name} heute klein={false} />
         <button type="button" className="knopf-haupt" onClick={weiter}>
           {t("ringfeier.weiter")}
         </button>

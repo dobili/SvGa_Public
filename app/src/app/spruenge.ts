@@ -5,8 +5,9 @@
  * Rolle im Gesamtbild: App.tsx kennt fest #lizenzen, #aufgaben, #abb-… und #trainer-…; was Pakete
  * oder spätere Werkzeuge an Sprüngen brauchen, tragen sie hier mit einer Zeile ein: ein Muster und
  * die Ansicht dazu. Der erste passende Eintrag gewinnt; der Bereich bestimmt, wohin „Zurück“ führt.
- * Abhängigkeiten: app/stapel.ts (Typen).
+ * Abhängigkeiten: app/stapel.ts (Typen), ui/komponenten/teilen/herausforderungen.ts.
  */
+import { HERAUSFORDERUNGSSPRUNG } from "../ui/komponenten/teilen/herausforderungen";
 import type { Ansicht, Bereich } from "./stapel";
 
 /** Ein Sprungziel: Muster der Adresse und die Ansicht aus dem Treffer. */
@@ -17,7 +18,10 @@ export interface Sprung {
 }
 
 /** Alle zusätzlichen Sprünge; je Paket eine Zeile. */
-export const SPRUENGE: readonly Sprung[] = [];
+export const SPRUENGE: readonly Sprung[] = [
+  // P9: geteilte Aufgabe „#aufgabe-taktik-l-1Vybh“ (ui/komponenten/teilen/herausforderungen.ts).
+  HERAUSFORDERUNGSSPRUNG,
+];
 
 /** Ansicht und Bereich zu einem Sprungziel aus der Liste, oder null. */
 export function zusatzsprung(

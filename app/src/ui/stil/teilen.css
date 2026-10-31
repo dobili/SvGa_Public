@@ -1,0 +1,29 @@
+/*
+ * Teilen (Gamifizierung P9): Knopf „Teilen“ unter Orden und Abzeichen, in den Feiern und
+ * „Freunde herausfordern“ nach einer Taktikaufgabe; darunter eine kurze Zeile, was geschah.
+ */
+.teilen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--raster) / 2) var(--raster);
+}
+
+.teilen-knopf {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+}
+
+.teilen-meldung {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+/* Unter einem Orden im Profil: klein und mittig unter „x von y“. */
+.symbolring .teilen-knopf.klein,
+.abzeichenraster .teilen-knopf.klein {
+  min-height: auto;
+  font-size: var(--groesse-fein);
+}

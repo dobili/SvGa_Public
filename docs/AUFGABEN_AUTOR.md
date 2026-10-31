@@ -33,6 +33,39 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P9: Teilen ohne Server (31.10.2026)
+
+- [ ] N2150. **Abzeichen teilen aus der Meldung:** Aufgabenseite (Profil drei Sekunden halten) ›
+      „Abzeichen testen“ › „Erster Sieg: verdienen“. In der Meldung steht über „Weiter“ der Knopf
+      „Teilen“. Am Handy öffnet er das Teilen-Menü (Nachrichten, Mail …) mit einem Bild im
+      Hochformat: dunkler Grund, goldener Rahmen, oben „ABZEICHEN“, das Abzeichen groß, darunter
+      „Erster Sieg“, „Verdient am …“, „Schach von Grund auf“ und die Adresse der Seite. Am Rechner
+      lädt er das Bild herunter und schreibt „Bild gespeichert (Downloads).“ Gefällt dir das Bild?
+- [ ] N2151. **Abzeichen teilen im Profil:** Profil › Dein Fortschritt › Abzeichen aufklappen,
+      ein verdientes Abzeichen antippen. Unter der Bedingung steht ein kleiner Knopf „Teilen“; er
+      teilt dasselbe Bild. Bei grauen (offenen) Abzeichen gibt es keinen Knopf.
+- [ ] N2152. **Orden teilen:** Aufgabenseite › „Orden testen“ › einen Ring auf 100 % setzen. In
+      der Gratulation steht „Teilen“ über „Weiter“; im Profil steht unter jedem Orden (voller
+      Ring) ein kleiner Knopf „Teilen“. Das Bild zeigt oben „ORDEN“ und das Bild des Ordens.
+      Danach beide Proben beenden.
+- [ ] N2153. **Herausforderung öffnen:** Im Browser des Handys
+      schach-von-grund-auf.com/app/#aufgabe-taktik-l-1Vybh öffnen. Die App zeigt „Herausforderung“
+      mit dem Satz „Jemand hat dir diese Aufgabe geschickt. Finde den besten Zug!“ und eine
+      Taktikaufgabe aus der freien Lichess-Datenbank. Lösen oder „Lösung zeigen“; danach stehen
+      „Freunde herausfordern“ und „Mehr Aufgaben im Trainer …“ da. „Zurück“ führt ins Training.
+- [ ] N2154. **Herausforderung weitergeben:** In der geöffneten Herausforderung nach dem Lösen
+      „Freunde herausfordern“ antippen. Das Teilen-Menü bietet den Satz „Schaffst du das? Weiß
+      zieht und gewinnt.“ (bei Matt-Aufgaben „… setzt matt“) mit dem Link an. Ohne Teilen-Menü
+      (Rechner) kommt der Link in die Zwischenablage und die App schreibt „Link kopiert“.
+- [ ] N2155. **Nur freie Aufgaben:** Aufgaben aus dem Buch (Abbildungen in Kapitel 7) lassen sich
+      nicht teilen, und ein Link auf eine von ihnen öffnet keine Aufgabe. Den Knopf „Freunde
+      herausfordern“ im Taktiktrainer selbst baut der Koordinierungs-Chat ein; er erscheint dann
+      nach jeder Lichess-Aufgabe, nicht nach Buchaufgaben.
+- [ ] N2156. **Datenschutz:** schach-von-grund-auf.com/datenschutz/ › „Speicher auf deinem
+      Gerät“: Ein neuer Absatz erklärt das Teilen (Bild entsteht auf dem Gerät, Link enthält nur
+      die Kennung der Aufgabe, sonst verschickt die App nichts). Stand: 31. Oktober 2026. Passt
+      der Text für dich?
+
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
 Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je

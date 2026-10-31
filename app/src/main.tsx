@@ -40,6 +40,7 @@ import "./ui/stil/auswertung.css";
 import "./ui/stil/zugmarken.css";
 import "./ui/stil/symbolringe.css";
 import "./ui/stil/abzeichen.css";
+import "./ui/stil/teilen.css";
 import "./ui/stil/trainerfeinschliff.css";
 import "./ui/stil/ordenkunst.css";
 import { App } from "./app/App";

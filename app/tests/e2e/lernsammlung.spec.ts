@@ -26,8 +26,8 @@ test("Lernsammlung: Abb. 2.2 sammeln, ordnen, abfragen, als PGN sichern, lösche
   // Nach dem Neuladen steht die Stellung noch in der Sammlung (Speicher, Format 5).
   await page.reload();
   await page.getByRole("navigation").getByRole("button", { name: "Training" }).click();
-  await expect(page.getByTestId("sammelkarte")).toContainText("1 eigene Stellung mit Plan");
-  await page.getByRole("button", { name: "Lernsammlung öffnen" }).click();
+  await expect(page.getByTestId("kachel-sammlung")).toContainText("1 Stellung");
+  await page.getByTestId("kachel-sammlung").getByRole("button").click();
   await expect(page.getByRole("heading", { name: "Lernsammlung" })).toBeVisible();
   const gruppe = page.getByTestId("sammelgruppe");
   await expect(gruppe).toHaveCount(1);

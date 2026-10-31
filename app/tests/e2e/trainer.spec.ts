@@ -227,9 +227,10 @@ test("Wiederholung (U9): falsch gelöste Taktikaufgabe kommt nach einem Tag wied
     .getByRole("button", { name: "Buch" })
     .click();
   await training.click();
+  // Die Karte des Trainers trägt die Plakette „1 fällig“ (Training neu, 31.10.2026).
   await page
-    .getByTestId("faellig")
-    .getByRole("button", { name: /Taktiktrainer: 1 fällig/ })
+    .getByTestId("trainer-taktik")
+    .getByRole("button", { name: /1 fällig/ })
     .click();
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
@@ -362,9 +363,10 @@ test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners 
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Buch" }).click();
   await leiste.getByRole("button", { name: "Training" }).click();
+  // Die Karte des Trainers trägt die Plakette „1 fällig“ (Training neu, 31.10.2026).
   await page
-    .getByTestId("faellig")
-    .getByRole("button", { name: /Strukturerkenner: 1 fällig/ })
+    .getByTestId("trainer-struktur")
+    .getByRole("button", { name: /1 fällig/ })
     .click();
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");

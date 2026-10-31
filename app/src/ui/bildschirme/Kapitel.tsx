@@ -7,7 +7,9 @@
  * Das Kapitelbild folgt, sobald die Bilder des Buches final sind. Oben stehen der Fortschritt
  * des Lesers (AP 12), dann Trainer (Pflichtenheft 7) und Übungen in einer Karte, darunter die
  * Galerie der Abbildungen mit den Abhak-Knöpfen (Abbildungsgalerie.tsx).
- * Abhängigkeiten: daten/laden.ts, Abbildungsgalerie, Kapitelfortschritt, KapitelUebungen, i18n.
+ * Unter den Trainern führt ein Link zur Trainingsseite des Kapitels auf der Website.
+ * Abhängigkeiten: daten/laden.ts, startseite/trainingsseiten.ts, Abbildungsgalerie,
+ * Kapitelfortschritt, KapitelUebungen, i18n.
  */
 import { ladeKapitel, type Kapitel as KapitelDaten } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
@@ -19,6 +21,7 @@ import { Kapitelfortschritt } from "../komponenten/kapitel/Kapitelfortschritt";
 import { trainerZuKapitel } from "../../training/trainer";
 import { Trainerkarte } from "../komponenten/training/Trainerkarte";
 import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
+import { kapiteladresse } from "../../startseite/trainingsseiten";
 
 /**
  * Trainer und Übungen des Kapitels in einer Karte (Konzept 10.1: „Trainer des Kapitels“; seit
@@ -39,6 +42,10 @@ function TrainingUndUebungen({ kapitel }: { kapitel: KapitelDaten }) {
           {trainer.map((eintrag) => (
             <Trainerkarte key={eintrag.kennung} trainer={eintrag} />
           ))}
+          {/* Seit „Training neu“ (31.10.2026) hier statt in der Trainingsübersicht (DS53, DS54). */}
+          <a className="knopf-link links" href={kapiteladresse(kapitel.kapitel)}>
+            {t("training.kasten")}
+          </a>
         </div>
       )}
       <KapitelUebungen kapitel={kapitel} />

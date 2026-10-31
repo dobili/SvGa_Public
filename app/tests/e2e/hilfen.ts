@@ -221,17 +221,13 @@ export async function klappeAbschnittAuf(seite: Page, nummer: string): Promise<v
   );
 }
 
-/** Öffnet einen Trainer über Training › Karte › „Trainieren“. Beispiel: oeffneTrainer(seite, "taktik"). */
+/** Öffnet einen Trainer über Training › Karte des Trainers. Beispiel: oeffneTrainer(seite, "taktik"). */
 export async function oeffneTrainer(seite: Page, kennung: string): Promise<void> {
   await seite
     .getByRole("navigation", { name: "Hauptbereiche" })
     .getByRole("button", { name: "Training" })
     .click();
-  // Ein Trainer für zwei Kapitel (Endspieltrainer) steht zweimal in der Liste: die erste Karte.
-  await seite
-    .getByTestId(`trainer-${kennung}`)
-    .first()
-    .getByRole("button", { name: "Trainieren" })
-    .click();
+  // Seit „Training neu“ (31.10.2026) ist die ganze Karte in der Wischreihe der Knopf.
+  await seite.getByTestId(`trainer-${kennung}`).first().getByRole("button").click();
   await expect(seite.getByTestId("trainer")).toBeVisible();
 }

@@ -1,141 +1,58 @@
 /**
- * Bereich Training: fällige Wiederholungen, 30-Minuten-Plan und alle Trainer je Kapitel.
+ * Bereich Training (Entwurf C2 nach Wahl des Autors, 31.10.2026): oben der Stapel der fälligen
+ * Wiederholungen, darunter je Teil des Buches eine Wischreihe mit Trainer-Karten, unten kompakte
+ * Kacheln (Lernsammlung, alle Kapitel).
  *
- * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Alle Trainer stehen im Menü, unter
- * genau den Namen, die später in den Trainingskästen des Buches stehen (Pflichtenheft 7); die
- * Plakette „folgt mit einem Update“ ist für künftige Trainer gedacht. Ein Tipp zeigt den Ablauf.
- * Je Kapitel eine Karte mit Nummer, die Trainer als Zeilen mit Symbol (Trainerkarte.tsx,
- * Wunsch des Autors: viel Text), Erklärungen hinter dem Fragezeichen. Ein Zeichen rechts in der
- * Kapitelzeile führt zur Trainingsseite der Website (/training/kapNN/, offline vorhanden; DS53,
- * DS54). Die Karte „Lernsammlung“ führt zu den eigenen Stellungen (Kapitel 12, AP 15).
- * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
+ * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Ziel des Autors: weniger Text,
+ * weniger Formular; Einsteiger sehen zuerst, was heute dran ist, und erkennen jeden Trainer an
+ * seinem Bild. Alles kommt aus Listen: Trainer und Teile aus TRAINER und BUCHTEILE
+ * (trainerreihen.ts), Bilder aus TRAINERBILDER, Kacheln aus TRAININGSKACHELN. Der Ablauf eines
+ * Trainers steht im Trainer selbst und in der Kapitelübersicht (Trainerkarte.tsx), der Link zur
+ * Trainingsseite eines Kapitels in der Kapitelübersicht.
+ * Abhängigkeiten: training/trainer.ts, komponenten/training/*, i18n, Tour.
  */
-import { useNavigation } from "../../app/navigationsKontext";
-import { ladeIndex } from "../../daten/laden";
-import { t, tZahl } from "../../i18n/sprache";
-import { TRAINER, trainerZuKapitel } from "../../training/trainer";
-import { kapiteladresse } from "../../startseite/trainingsseiten";
-import { BookmarkPlus, ExternalLink, Globe } from "lucide-react";
-import { useSpeicher } from "../../speicher/speicher";
-import { FaelligeWiederholungen } from "../komponenten/training/FaelligeWiederholungen";
-import { Trainerkarte } from "../komponenten/training/Trainerkarte";
-import { MitInfo } from "../komponenten/bausteine/InfoKnopf";
-import { useDaten } from "../komponenten/bausteine/useDaten";
-import { Titelsymbol } from "../komponenten/bausteine/Titelsymbol";
+import { CircleHelp } from "lucide-react";
+import { useMemo } from "react";
+import { t } from "../../i18n/sprache";
+import { TRAINER, type TrainerKennung } from "../../training/trainer";
 import { TourKnopf } from "../../tour/TourKnopf";
+import { Stapelkarte } from "../komponenten/training/Stapelkarte";
+import { Trainerreihe } from "../komponenten/training/Trainerreihe";
+import { trainerreihen } from "../komponenten/training/trainerreihen";
+import { Trainingskacheln } from "../komponenten/training/Trainingskacheln";
+import { useFaelligeUebersicht } from "../komponenten/training/vorhandeneAufgaben";
 
-const LINKSYMBOL = 20;
+const HILFESYMBOL = 18;
 
-/**
- * Jedes Kapitel mit seinen Trainern und dem Link zur Trainingsseite der Website.
- *
- * Ein Trainer für mehrere Kapitel steht bei jedem davon (Endspieltrainer bei Kapitel 8 und 9),
- * so wie in der Zeile „In der App“ des Buches; sonst fehlte Kapitel 9 samt seiner Trainingsseite.
- */
-function JeKapitel() {
-  const { navigiere } = useNavigation();
-  const index = useDaten(ladeIndex, "index");
-  const titel = (nummer: number) =>
-    index.art === "fertig" ? index.wert.kapitel.find((k) => k.kapitel === nummer)?.titel : "";
-  const kapitel = [...new Set(TRAINER.flatMap((trainer) => trainer.kapitel))].sort((a, b) => a - b);
+/** Die Wischreihen je Teil des Buches, mit der Zahl fälliger Aufgaben je Trainer. */
+function Reihen() {
+  const reihen = useMemo(() => trainerreihen(TRAINER), []);
+  const { trainer } = useFaelligeUebersicht();
+  const faellig = new Map<TrainerKennung, number>(trainer.map((z) => [z.kennung, z.anzahl]));
   return (
-    <>
-      {kapitel.map((nummer) => (
-        <section key={nummer} className="karte trainingskapitel" data-tour="training-kapitel">
-          <div className="trainingskapitel-zeile">
-            <button
-              type="button"
-              className="trainingskapitel-kopf"
-              onClick={() => navigiere({ bildschirm: "kapitel", nummer })}
-            >
-              <span className="kapitelnummer" aria-hidden="true">
-                {nummer}
-              </span>
-              <span>
-                {t("training.kapitel", { nummer })} · {titel(nummer)}
-              </span>
-            </button>
-            <a
-              className="knopf-symbol trainingskapitel-website"
-              href={kapiteladresse(nummer)}
-              aria-label={t("training.kasten")}
-              title={t("training.kasten")}
-            >
-              <ExternalLink size={LINKSYMBOL} aria-hidden="true" />
-            </a>
-          </div>
-          <div className="trainerliste">
-            {trainerZuKapitel(nummer).map((trainer) => (
-              <Trainerkarte key={trainer.kennung} trainer={trainer} />
-            ))}
-          </div>
-        </section>
+    <div className="trainerreihen" data-tour="training-kapitel">
+      {reihen.map((reihe) => (
+        <Trainerreihe key={reihe.teil} reihe={reihe} faellig={faellig} />
       ))}
-    </>
+    </div>
   );
 }
 
-/** Karte „Lernsammlung“ mit der Zahl der Stellungen und dem Weg dorthin. */
-function SammelKarte() {
-  const { navigiere } = useNavigation();
-  const anzahl = useSpeicher((z) => z.daten.sammlung.length);
-  return (
-    <section className="karte" data-testid="sammelkarte" data-tour="training-sammlung">
-      <h2 className="karte-titel mit-symbol">
-        <BookmarkPlus size={LINKSYMBOL} aria-hidden="true" /> {t("sammlung.titel")}
-      </h2>
-      <p className="hinweis">
-        {anzahl === 0 ? t("sammlung.karteLeer") : tZahl("sammlung.karte", anzahl, { anzahl })}
-      </p>
-      <button
-        type="button"
-        className="knopf-zweit"
-        onClick={() => navigiere({ bildschirm: "lernsammlung" })}
-      >
-        {t("sammlung.oeffnen")}
-      </button>
-    </section>
-  );
-}
-
-/**
- * Die Startseite des Bereichs „Training“: fällige Wiederholungen, 30-Minuten-Plan und alle Trainer
- * je Kapitel.
- */
+/** Die Startseite des Bereichs „Training“. */
 export function Training() {
   return (
-    <div className="bildschirm">
+    <div className="bildschirm trainingsseite">
       <header className="seitenkopf">
         <h1>{t("training.titel")}</h1>
         <TourKnopf />
       </header>
-      <section className="karte" data-tour="training-faellig">
-        <h2 className="karte-titel">
-          <Titelsymbol art="wiederholung" />
-          {t("training.faellig")}
-        </h2>
-        <FaelligeWiederholungen />
-      </section>
-      <SammelKarte />
-      <section className="karte" data-tour="training-website">
-        <MitInfo
-          zeile={
-            <h2 className="karte-titel mit-symbol">
-              <Globe size={LINKSYMBOL} aria-hidden="true" /> {t("training.uebersicht.titel")}
-            </h2>
-          }
-          erklaerung={<p>{t("training.kastenText")}</p>}
-          thema={t("training.uebersicht.titel")}
-        />
-        <a className="knopf-zweit" href="/training/">
-          {t("training.seite.uebersicht")}
-        </a>
-      </section>
-      <h2 className="abschnitt-titel">
-        <Titelsymbol art="training" />
-        {t("training.jeKapitel")}
-      </h2>
-      <JeKapitel />
+      <Stapelkarte />
+      <p className="stapel-prinzip hinweis">
+        <CircleHelp size={HILFESYMBOL} aria-hidden="true" />
+        {t("trainingslook.prinzip")}
+      </p>
+      <Reihen />
+      <Trainingskacheln />
     </div>
   );
 }

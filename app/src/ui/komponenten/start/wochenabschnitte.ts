@@ -10,6 +10,7 @@
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { Auftragsabschnitt } from "./Auftragsabschnitt";
 import { Planabschnitt } from "./Planabschnitt";
 
 /** Ein Abschnitt der Wochenkarte. */
@@ -24,6 +25,7 @@ export interface Wochenabschnitt {
 
 /** Alle Abschnitte; Pakete fügen je eine Zeile an. */
 export const WOCHENABSCHNITTE: readonly Wochenabschnitt[] = [
+  { kennung: "auftraege", rang: 20, sichtbar: () => true, Abschnitt: Auftragsabschnitt },
   { kennung: "uebungsplan", rang: 30, sichtbar: () => true, Abschnitt: Planabschnitt },
 ];
 

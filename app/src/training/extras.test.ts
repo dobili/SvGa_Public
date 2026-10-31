@@ -15,8 +15,12 @@ import {
   type Ordengruppe,
 } from "./extras";
 
-function lage(stufe: number, gruppen: readonly Ordengruppe[] = []): Extralage {
-  return { stufe, volleOrdengruppen: new Set(gruppen) };
+function lage(
+  stufe: number,
+  gruppen: readonly Ordengruppe[] = [],
+  themenstufen: Extralage["themenstufen"] = {},
+): Extralage {
+  return { stufe, volleOrdengruppen: new Set(gruppen), themenstufen };
 }
 
 describe("Freischaltregeln", () => {
@@ -79,5 +83,27 @@ describe("Liste der Extras", () => {
   it("jede Art hat mindestens ein Extra und jedes Extra ein Bild", () => {
     for (const art of EXTRAARTEN) expect(extrasDerArt(art).length).toBeGreaterThan(0);
     for (const e of EXTRAS) expect(e.bild).toMatch(/\.svg$/);
+  });
+});
+
+describe("Titel aus der Meisterschaft (P3)", () => {
+  const gold = (praefix: string, anzahl: number) =>
+    Object.fromEntries(
+      Array.from({ length: anzahl }, (_, i) => [`${praefix}:thema${i}`, "gold" as const]),
+    );
+
+  it("„Taktiker“ erst mit fünf Taktikmotiven in Gold", () => {
+    expect(freieExtras(lage(1, [], gold("taktik", 4))).has("titel-taktiker")).toBe(false);
+    expect(freieExtras(lage(1, [], gold("taktik", 5))).has("titel-taktiker")).toBe(true);
+  });
+
+  it("Gold in anderen Trainern zählt nicht für „Taktiker“", () => {
+    expect(freieExtras(lage(1, [], gold("endspiel", 5))).has("titel-taktiker")).toBe(false);
+    expect(freieExtras(lage(1, [], gold("endspiel", 3))).has("titel-endspielkenner")).toBe(true);
+  });
+
+  it("Silber reicht nicht", () => {
+    const silber = { ...gold("taktik", 4), "taktik:x": "silber" as const };
+    expect(bedingungErfuellt(EXTRAS[6].bedingung, lage(1, [], silber))).toBe(false);
   });
 });

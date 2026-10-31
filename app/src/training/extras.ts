@@ -6,26 +6,38 @@
  * gab, bleibt frei; freischaltbar ist nur Neues. Jedes Extra steht als eine Zeile in `EXTRAS`
  * (Kennung, Art, Wert, Bedingung, Bild); spätere Pakete (Titel und Zubehör aus der Meisterschaft
  * P3) tragen eine Zeile ein, neue Arten eine Zeile in `EXTRAARTEN` und, falls nötig, eine neue
- * Bedingungsart in `PRUEFUNGEN`. Die Freischaltung wird nur abgeleitet (Stufe, Orden), nichts
- * wird gespeichert. Grundsatz „nie wegnehmen“: Ein schon gewähltes Extra bleibt gewählt, auch wenn
- * seine Bedingung (etwa nach dem Laden einer Sicherung) nicht erfüllt ist.
+ * Bedingungsart in `PRUEFUNGEN`. Die Freischaltung wird nur abgeleitet (Stufe, Orden,
+ * Meisterschaft P3), nichts wird gespeichert. Grundsatz „nie wegnehmen“: Ein schon gewähltes
+ * Extra bleibt gewählt, auch wenn seine Bedingung (etwa nach dem Laden einer Sicherung) nicht
+ * erfüllt ist.
  * Die Oberfläche (Profilkarte „Deine Extras“, Kacheln in den Einstellungen) liest diese Datei
  * über ui/komponenten/extras/.
- * Abhängigkeiten: keine.
+ * Abhängigkeiten: training/meisterschaft.ts, training/meisterschaftsstand.ts (Meisterschaft, P3).
  */
+import type { Medaillenstufe } from "./meisterschaft";
+import { zaehleThemen } from "./meisterschaftsstand";
 
 /** Die Arten von Extras; je Art eine Zeile, neue Arten (Titel, Zubehör) kommen dazu. */
-export const EXTRAARTEN = ["rahmen", "brett", "figuren", "konfetti"] as const;
+export const EXTRAARTEN = ["rahmen", "brett", "figuren", "konfetti", "titel"] as const;
 export type Extraart = (typeof EXTRAARTEN)[number];
 
 /** Gruppen von Orden, die zusammen eine Bedingung bilden (Ringe des Profils). */
 export const ORDENGRUPPEN = ["buchteile"] as const;
 export type Ordengruppe = (typeof ORDENGRUPPEN)[number];
 
-/** Wann ein Extra frei ist: ab einer Stufe der Erfahrung oder mit allen Orden einer Gruppe. */
+/**
+ * Wann ein Extra frei ist: ab einer Stufe der Erfahrung, mit allen Orden einer Gruppe oder mit
+ * einer Zahl von Themen in einer Stufe der Meisterschaft (P3; `praefix` null: alle Trainer).
+ */
 export type Bedingung =
   | { readonly art: "stufe"; readonly ab: number }
-  | { readonly art: "orden"; readonly gruppe: Ordengruppe };
+  | { readonly art: "orden"; readonly gruppe: Ordengruppe }
+  | {
+      readonly art: "meisterschaft";
+      readonly stufe: Medaillenstufe;
+      readonly anzahl: number;
+      readonly praefix: string | null;
+    };
 
 /** Was die Regeln über den Leser wissen müssen; die Oberfläche rechnet es aus. */
 export interface Extralage {
@@ -33,6 +45,8 @@ export interface Extralage {
   readonly stufe: number;
   /** Ordengruppen, deren Orden alle verdient sind. */
   readonly volleOrdengruppen: ReadonlySet<Ordengruppe>;
+  /** Thema → erreichte Stufe der Meisterschaft (mit Probe der Aufgabenseite). */
+  readonly themenstufen: Readonly<Record<string, Medaillenstufe>>;
 }
 
 /** Ein Extra: Kennung, Art, Wert in der Wahl seiner Art, Bedingung und Bild (Pfad in der App). */
@@ -94,6 +108,21 @@ export const EXTRAS = [
     bedingung: { art: "stufe", ab: 2 },
     bild: "extras/konfetti-bunt.svg",
   },
+  // P3 Meisterschaft: Titel unter dem Namen im Profil.
+  {
+    kennung: "titel-taktiker",
+    art: "titel",
+    wert: "taktiker",
+    bedingung: { art: "meisterschaft", stufe: "gold", anzahl: 5, praefix: "taktik" },
+    bild: "extras/titel-taktiker.svg",
+  },
+  {
+    kennung: "titel-endspielkenner",
+    art: "titel",
+    wert: "endspielkenner",
+    bedingung: { art: "meisterschaft", stufe: "gold", anzahl: 3, praefix: "endspiel" },
+    bild: "extras/titel-endspielkenner.svg",
+  },
 ] as const satisfies readonly Extra[];
 export type Extrakennung = (typeof EXTRAS)[number]["kennung"];
 
@@ -106,6 +135,7 @@ const PRUEFUNGEN: {
 } = {
   stufe: (b, lage) => lage.stufe >= b.ab,
   orden: (b, lage) => lage.volleOrdengruppen.has(b.gruppe),
+  meisterschaft: (b, lage) => zaehleThemen(lage.themenstufen, b.stufe, b.praefix) >= b.anzahl,
 };
 
 /**

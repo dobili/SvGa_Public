@@ -12,6 +12,7 @@ import { fundstueckeSichtbar } from "../fundstuecke/album";
 import { FundstueckProfilkarte } from "../fundstuecke/FundstueckProfilkarte";
 import { Rekordtafel } from "../rekorde/Rekordtafel";
 import { ExtrasKarte } from "../extras/ExtrasKarte";
+import { Themenkarte } from "../themen/Themenkarte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -28,4 +29,6 @@ export const PROFILKARTEN: readonly Profilkarte[] = [
   { kennung: "rekorde", rang: 20, sichtbar: () => true, Karte: Rekordtafel },
   // P7 Freischaltbare Extras: immer sichtbar, gesperrte als Silhouette mit Bedingung.
   { kennung: "extras", rang: 50, sichtbar: () => true, Karte: ExtrasKarte },
+  // P3 Meisterschaft je Thema: immer sichtbar, ohne Themen mit einer Einladung zum Üben.
+  { kennung: "themen", rang: 10, sichtbar: () => true, Karte: Themenkarte },
 ];

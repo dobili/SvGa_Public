@@ -6,7 +6,8 @@
  * vorhandenen Ständen: die Stufe aus dem Abzeichenstand (abzeichenstand.ts), die Orden aus den
  * Fortschrittsringen (fortschrittsringe.ts). Beide zählen die Probe der Aufgabenseite mit, damit
  * der Autor Extras ohne echte Fortschritte prüfen kann. Eine neue Ordengruppe bekommt eine Zeile
- * in `RINGE_DER_GRUPPE`.
+ * in `RINGE_DER_GRUPPE`. Die Stufen der Meisterschaft (P3) kommen aus den Medaillen der
+ * Profilkarte „Deine Themen“, ebenfalls mit Probe.
  * Abhängigkeiten: training/extras.ts, fortschritt/abzeichenstand.ts, fortschritt/fortschrittsringe.ts,
  * fortschritt/ringrechnung.ts.
  */
@@ -22,6 +23,8 @@ import {
 import { useAbzeichenstand } from "../fortschritt/abzeichenstand";
 import { useFortschrittsringe } from "../fortschritt/fortschrittsringe";
 import { istVoll } from "../fortschritt/ringrechnung";
+import { useThemenmedaillen } from "../themen/useMeisterschaft";
+import type { Medaillenstufe } from "../../../training/meisterschaft";
 import type { Symbolringangabe } from "../fortschritt/Symbolringe";
 
 type Ringe = NonNullable<ReturnType<typeof useFortschrittsringe>>;
@@ -51,11 +54,18 @@ export function useExtralage(): Extralage {
   const ringe = useFortschrittsringe();
   const stufe = stand?.stufe.nummer ?? 1;
   const schluessel = [...volleGruppen(ringe)].join(",");
-  // Neue Lage nur, wenn sich Stufe oder Gruppen ändern (die Mengen wären sonst jedes Mal neu).
+  const medaillen = useThemenmedaillen();
+  // Neue Lage nur, wenn sich Stufe, Gruppen oder Medaillen ändern (Mengen wären sonst jedes Mal neu).
   return useMemo(() => {
     const voll = new Set(schluessel.split(","));
-    return { stufe, volleOrdengruppen: new Set(ORDENGRUPPEN.filter((g) => voll.has(g))) };
-  }, [stufe, schluessel]);
+    const themenstufen: Record<string, Medaillenstufe> = {};
+    for (const m of medaillen) if (m.stufe) themenstufen[m.thema] = m.stufe;
+    return {
+      stufe,
+      volleOrdengruppen: new Set(ORDENGRUPPEN.filter((g) => voll.has(g))),
+      themenstufen,
+    };
+  }, [stufe, schluessel, medaillen]);
 }
 
 /** Sperre je Wert einer Art: das sperrende Extra oder undefined (für die Kacheln der Einstellungen). */

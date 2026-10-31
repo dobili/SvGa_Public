@@ -15,6 +15,7 @@ import { Library, type LucideIcon } from "lucide-react";
 import { UEBUNGEN_JE_KAPITEL } from "../../../daten/uebungsliste-daten";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { REKORD_ABZEICHEN } from "./abzeichen-rekorde";
+import { MEISTERSCHAFT_ABZEICHEN } from "./abzeichen-meisterschaft";
 import { GRUNDABZEICHEN } from "./abzeichen-grund";
 import { WOCHEN_ABZEICHEN } from "./abzeichen-wochen";
 
@@ -76,6 +77,7 @@ export const ABZEICHEN: readonly Abzeichenangabe[] = [
   ...GRUNDABZEICHEN,
   ...WOCHEN_ABZEICHEN,
   ...REKORD_ABZEICHEN,
+  ...MEISTERSCHAFT_ABZEICHEN,
 ];
 
 /**

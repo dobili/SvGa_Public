@@ -10,6 +10,7 @@
  * Abhängigkeiten: speicher/format.ts (Typ), training/wochenziel.ts (P4).
  */
 import type { Nutzerdaten } from "../../../speicher/format";
+import { MEISTERSCHAFT_ERFAHRUNG } from "../../../training/meisterschaftsstand";
 import { erreichteWochen } from "../../../training/wochenziel";
 
 /** Eine Quelle: Kennung, Punkte je Einheit, Zahl der Einheiten aus den Nutzerdaten. */
@@ -22,4 +23,6 @@ export interface Erfahrungsquelle {
 /** Alle zusätzlichen Quellen; Pakete fügen je eine Zeile an (Konfliktkarte, Abschnitt 5). */
 export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
   { kennung: "wochenErreicht", gewicht: 30, zaehle: (d) => erreichteWochen(d).length },
+  // P3 Meisterschaft: je Stufe eine Quelle (Bronze 10, Silber 25, Gold 50).
+  ...MEISTERSCHAFT_ERFAHRUNG,
 ];

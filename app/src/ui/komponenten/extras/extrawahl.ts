@@ -4,8 +4,8 @@
  * Rolle im Gesamtbild: training/extras.ts sagt, welche Extras es gibt und wann sie frei sind;
  * diese Datei verbindet jede Art mit ihrer Wahl. Brett und Figuren stehen in den Einstellungen
  * (Speicher, gehen mit der Datensicherung um), Porträtrahmen und Konfettifarben als Merker auf
- * dem Gerät (kein neues Speicherfeld, Format gesperrt). Eine neue Art (Titel, Zubehör) bekommt
- * hier eine Zeile in `EXTRAWAHL`.
+ * dem Gerät (kein neues Speicherfeld, Format gesperrt), ebenso der Titel unter dem Namen (P3).
+ * Eine neue Art (etwa Zubehör) bekommt hier eine Zeile in `EXTRAWAHL`.
  * Abhängigkeiten: training/extras.ts, app/einstellungen.ts, app/merker.ts, app/konfetti.ts, i18n.
  */
 import { useSyncExternalStore } from "react";
@@ -23,8 +23,11 @@ import type { Extraart } from "../../../training/extras";
 
 /** Merker des Porträtrahmens: „bronze“, „silber“, „gold“; fehlt er, gibt es keinen Rahmen. */
 export const MERKER_RAHMEN = "portraetrahmen";
+/** Merker des Titels unter dem Namen (P3): „taktiker“ …; fehlt er, steht kein Titel. */
+export const MERKER_TITEL = "profiltitel";
 /** Wert ohne Rahmen bzw. mit den Farben der App (zum Ablegen eines Extras). */
 const OHNE_RAHMEN = "ohne";
+const OHNE_TITEL = "ohne";
 const KONFETTI_APP = "app";
 
 /** Wie eine Art gewählt wird. */
@@ -68,6 +71,13 @@ export const EXTRAWAHL: readonly Extrawahl[] = [
     lies: () => liesMerker(MERKER_KONFETTI) ?? KONFETTI_APP,
     waehle: (wert) => schreibeMerker(MERKER_KONFETTI, wert),
   },
+  {
+    art: "titel",
+    titel: "themen.extras.art.titel",
+    ohne: OHNE_TITEL,
+    lies: () => liesMerker(MERKER_TITEL) ?? OHNE_TITEL,
+    waehle: (wert) => schreibeMerker(MERKER_TITEL, wert),
+  },
 ];
 
 /** Die Wahl einer Art. */
@@ -79,7 +89,7 @@ export function extrawahl(art: Extraart): Extrawahl | undefined {
 let fassung = 0;
 const zuhoerer = new Set<() => void>();
 beobachteMerker((name) => {
-  if (name !== MERKER_RAHMEN && name !== MERKER_KONFETTI) return;
+  if (name !== MERKER_RAHMEN && name !== MERKER_KONFETTI && name !== MERKER_TITEL) return;
   fassung += 1;
   for (const z of zuhoerer) z();
 });
@@ -99,6 +109,12 @@ export function useGewaehlteExtras(): Readonly<Record<string, string>> {
   const einstellungen = useEinstellungen();
   useMerkerfassung();
   return Object.fromEntries(EXTRAWAHL.map((w) => [w.art, w.lies(einstellungen)]));
+}
+
+/** Der gewählte Titel („ohne“, „taktiker“ …); für die Zeile unter dem Namen im Profil (P3). */
+export function useProfiltitel(): string {
+  useMerkerfassung();
+  return liesMerker(MERKER_TITEL) ?? OHNE_TITEL;
 }
 
 /** Der gewählte Porträtrahmen („ohne“, „bronze“ …); für das Spielerbild. */

@@ -116,9 +116,9 @@ dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts
       sie (etwas) verschlechtert, grau „± 0,0“ bei gleich. Kein Balken. Das ⓘ zeigt den früheren
       Satz („… war der beste Zug.“), „Bewertung +1,5 → +1,6.“ und die Erklärung des Balkens. Bei
       Fehlern bleibt der Satz mit der Gewinnchance sichtbar. Über der Zeitleiste steht „Die Partie
-      in Momenten“ mit ⓘ statt des Satzes „Die wichtigen Züge auf einen Blick …“. Frage dazu: Soll
-      der Pfeil bei einem besten Zug von Schwarz auch dann rot sein, wenn die Zahl um 0,1 sinkt?
-      So ist es gebaut (Sicht der ziehenden Seite, wie bei der Falle).
+      in Momenten“ mit ⓘ statt des Satzes „Die wichtigen Züge auf einen Blick …“. Auch ein bester
+      Zug kann rot „▼ 0,1“ zeigen, wenn er die Stellung der ziehenden Seite etwas verschlechtert
+      (deine Entscheidung vom 31.10.).
 - [ ] N2359. **Kleine Einleitungen:** Profil, Einstellungen, „Bots und Wertung“: oben eine Zeile
       mit Personenzeichen, „Menschlichere Züge (Maia)“, Knopf „⬇ 96 MB“ und ⓘ (darin der ganze
       Maia-Text und die Lizenzzeile). „Über die App“: neben der Versionsnummer ein goldenes

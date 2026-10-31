@@ -147,3 +147,10 @@
 .folgespieler-knoepfe {
   flex-wrap: wrap;
 }
+
+/* Stufenzeile über der Runde (Punkt B2): schmal, mit Abstand zur Runde. */
+.stufenzeile {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+  margin-bottom: var(--raster);
+}

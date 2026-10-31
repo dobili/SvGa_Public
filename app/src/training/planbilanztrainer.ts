@@ -33,6 +33,7 @@ import { phase } from "../schach/phase";
 import { feldname, gegner } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
 import { geeignet } from "./eignung";
+import { lapstufe, type Trainerstufe } from "./stufen";
 import { gegnerErsatz, plansaetze, type Plansaetze } from "./planablenker";
 import { mische, type Zufall } from "./zufall";
 
@@ -214,6 +215,15 @@ export interface Lapaufgabe {
   readonly ziel: string | null;
   /** Alle eigenen Figuren außer König und Bauern, am wenigsten aktive zuerst (Begründung). */
   readonly figuren: readonly Lapfigur[];
+  /** Stufe nach dem Abstand zur nächsten Leichtfigur (training/stufen.ts). */
+  readonly stufe: Trainerstufe;
+}
+
+/** Der Abstand der Lösung zur nächsten Leichtfigur in freien Feldern (ohne zweite: groß). */
+function lapabstand(figuren: readonly Lapfigur[]): number {
+  const leicht = figuren.filter((f) => f.rolle === "knight" || f.rolle === "bishop");
+  const [erste, zweite] = leicht;
+  return erste && zweite ? zweite.freie - erste.freie : Number.POSITIVE_INFINITY;
 }
 
 /**
@@ -243,6 +253,7 @@ export function lapaufgabe(buch: Buchstellung): Lapaufgabe | null {
     figur: feldname(ergebnis.lap.stand.feld),
     ziel: feldname(ergebnis.ziel.ziel),
     figuren,
+    stufe: lapstufe(ergebnis.lap.zuHause, lapabstand(figuren)),
   };
 }
 

@@ -17,8 +17,9 @@ import { makeSan, parseSan } from "chessops/san";
 import type { Buchstellung } from "./buchstellungen";
 import { zuegeAusText } from "./uebungsaufgabe";
 import { fenNach, regelstellung } from "../spiel/zuege";
-import { mische, type Zufall } from "./zufall";
+import type { Zufall } from "./zufall";
 import { geeignet } from "./eignung";
+import { denkstufe, rundeNachStufe, type Trainerstufe } from "./stufen";
 
 /** Feste Denkzeit in Sekunden (Kapitel 12: eine Minute). */
 export const DENKZEIT_S = 60;
@@ -33,6 +34,8 @@ const MINDESTENS_ZUEGE = 8;
 export interface Denkaufgabe {
   readonly nummer: string;
   readonly fen: string;
+  /** Stufe nach der Zahl der legalen Züge (training/stufen.ts). */
+  readonly stufe: Trainerstufe;
 }
 
 /**
@@ -50,7 +53,7 @@ export function denkaufgabe(buch: Buchstellung): Denkaufgabe | null {
   let zuege = 0;
   for (const ziele of regeln.allDests().values()) zuege += ziele.size();
   const genug = regeln.isCheck() || zuege >= MINDESTENS_ZUEGE;
-  return genug ? { nummer: buch.nummer, fen: buch.stellung.fen } : null;
+  return genug ? { nummer: buch.nummer, fen: buch.stellung.fen, stufe: denkstufe(zuege) } : null;
 }
 
 /** Eine Runde aus zufälligen passenden Stellungen. */
@@ -58,11 +61,14 @@ export function denkrunde(
   stellungen: readonly Buchstellung[],
   anzahl: number,
   zufall: Zufall,
+  stufe: Trainerstufe | null = null,
 ): Denkaufgabe[] {
-  return mische(
+  return rundeNachStufe(
     stellungen.flatMap((b) => denkaufgabe(b) ?? []),
+    stufe,
+    anzahl,
     zufall,
-  ).slice(0, anzahl);
+  );
 }
 
 /** Ein Zug aus der Eingabe des Lesers in einer Stellung: Kurznotation wie chessops, oder null. */

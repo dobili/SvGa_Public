@@ -23,6 +23,7 @@ import type { Buchstellung } from "./buchstellungen";
 import { zuegeAusText } from "./uebungsaufgabe";
 import { mische, waehle, zahlBis, type Zufall } from "./zufall";
 import { geeignet } from "./eignung";
+import type { Trainerstufe } from "./stufen";
 
 export type Koordinatenart = "felder" | "notieren" | "ausfuehren" | "gangarten";
 /** Die vier Übungsarten des Koordinatentrainers als Liste. */
@@ -41,6 +42,8 @@ const ANTEIL_SONDERZUEGE = 0.3;
 const ANTEIL_EIGENE_SONDERZUEGE = 0.25;
 /** Anteil der Aufgaben mit einem besonderen Zug (Schlag, Schach, Rochade, Umwandlung). */
 const ANTEIL_BESONDERE = 0.5;
+/** Auf der schweren Stufe von „Feld finden“ ist jede Sicht gleich wahrscheinlich. */
+const HALB = 0.5;
 
 /** Eine Aufgabe „Feld finden“; `gedreht`: Schwarz unten. */
 export interface Feldaufgabe {
@@ -51,16 +54,27 @@ export interface Feldaufgabe {
 }
 
 /**
- * Eine Runde „Feld finden“: erst aus Sicht von Weiß, dann aus Sicht von Schwarz.
+ * Eine Runde „Feld finden“. Mittel (Standard): erst aus Sicht von Weiß, dann aus Sicht von Schwarz.
+ * Leicht: nur aus Sicht von Weiß. Schwer: die Sicht wechselt zufällig (training/stufen.ts).
  *
- * Beispiel: Anzahl 4 → zwei Felder mit Weiß unten, zwei mit Schwarz unten.
+ * Beispiel: Anzahl 4, mittel → zwei Felder mit Weiß unten, zwei mit Schwarz unten.
  */
-export function feldrunde(anzahl: number, zufall: Zufall): Feldaufgabe[] {
+export function feldrunde(
+  anzahl: number,
+  zufall: Zufall,
+  stufe: Trainerstufe | null = null,
+): Feldaufgabe[] {
   const haelfte = Math.ceil(anzahl / 2);
-  return Array.from({ length: anzahl }, (_, i) => ({
+  const gedrehtAn = (i: number): boolean => {
+    if (stufe === "leicht") return false;
+    if (stufe === "schwer") return zufall() < HALB;
+    return i >= haelfte;
+  };
+  const sichten = Array.from({ length: anzahl }, (_, i) => gedrehtAn(i));
+  return sichten.map((gedreht, i) => ({
     feld: `${LINIEN.charAt(zahlBis(LINIEN.length, zufall))}${zahlBis(REIHEN, zufall) + 1}`,
-    gedreht: i >= haelfte,
-    wechsel: i === haelfte && i > 0,
+    gedreht,
+    wechsel: i > 0 && gedreht !== sichten[i - 1],
   }));
 }
 

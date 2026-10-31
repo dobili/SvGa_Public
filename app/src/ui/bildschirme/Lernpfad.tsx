@@ -7,7 +7,9 @@
  * des Kapitels und bis zum nächsten Orden fehlt. Erreichbar über „Als Weg anzeigen“ über der
  * Kapitelliste (Buch.tsx) und aus dem Profil; eingetragen als Zusatzansicht „lernpfad“
  * (app/zusatzansichten.ts). Kein eigenes Speicherfeld; nur der Merker „lernpfadStation“.
- * Entscheidung E3: eigener Bildschirm, die Kapitelliste bleibt.
+ * Entscheidung E3: eigener Bildschirm, die Kapitelliste bleibt. Gestaltung B1 (31.10.2026): der
+ * Satz steht mit dem Ring der aktuellen Station in einer Karte, die Einleitung entfällt, der Weg
+ * führt durch fünf Landschaften (komponenten/lernpfad/Landschaft.tsx).
  * Abhängigkeiten: komponenten/lernpfad/, daten/laden.ts, speicher, app/merker.ts, i18n.
  */
 import { useEffect, useRef, useState } from "react";
@@ -25,9 +27,11 @@ import {
   MERKER_STATION,
   stationen,
 } from "../komponenten/lernpfad/lernpfad";
+import { Kapitelnummer } from "../komponenten/kapitel/Kapitelnummer";
 import { Weg } from "../komponenten/lernpfad/Weg";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import "../stil/lernpfad.css";
+import "../stil/lernpfad-land.css";
 
 /** Ob das Gerät „Bewegung reduzieren“ wünscht (dann springt die Ansicht ohne Gleiten). */
 function bewegungReduziert(): boolean {
@@ -52,9 +56,12 @@ function Pfad({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fo
   const titel = (kapitel: number) => index.kapitel.find((k) => k.kapitel === kapitel)?.titel ?? "";
   return (
     <div ref={rahmen}>
-      <p className="karte lernpfad-hinweis" data-testid="lernpfad-hinweis" aria-live="polite">
-        {hinweistext(liste, aktuell)}
-      </p>
+      <div className="karte lernpfad-hinweis">
+        {station && <Kapitelnummer nummer={station.kapitel} anteil={station.anteil} />}
+        <p data-testid="lernpfad-hinweis" aria-live="polite">
+          {hinweistext(liste, aktuell)}
+        </p>
+      </div>
       <Weg
         etappen={etappen(liste, index.kapitel, fortschritt)}
         titel={titel}
@@ -72,7 +79,6 @@ export function Lernpfad() {
   return (
     <div className="bildschirm bildschirm-lernpfad">
       <Kopfzeile titel={t("lernpfad.titel")} zurueckText={t("lernpfad.zurueck")} />
-      <p className="hinweis">{t("lernpfad.einleitung")}</p>
       {index.art === "laedt" && <p className="lade">…</p>}
       {index.art === "fehler" && (
         <p className="fehlertext">{t("buch.ladefehler", { fehler: index.meldung })}</p>

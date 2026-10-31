@@ -4011,7 +4011,6 @@
   "lernpfad.titel": "Dein Weg durchs Buch",
   "lernpfad.zurueck": "Zurück",
   "lernpfad.knopf": "Als Weg anzeigen",
-  "lernpfad.einleitung": "Jede Station ist ein Kapitel. Am Ende jedes Buchteils wartet sein Orden. Tipp auf eine Station, um das Kapitel zu öffnen.",
   "lernpfad.station": "Kapitel {nummer}: {titel}, {erreicht} von {gesamt} geschafft",
   "lernpfad.stationFertig": "Kapitel {nummer}: {titel}, fertig",
   "lernpfad.rest.abbildungen": "{anzahl} Abbildungen",
@@ -4596,5 +4595,13 @@
   "buchlook.kurz.uebungen": "Kapitel {kapitel}",
   "buchlook.kurz.thema": "{richtig} von {anzahl} richtig",
   "buchlook.kurz.fehler": "Aus deiner Fehlerdatenbank",
-  "buchlook.tourHeute": "Hier steht, was heute dran ist: dein nächster Schritt als große Kachel, darüber deine Lerntage der Woche."
+  "buchlook.tourHeute": "Hier steht, was heute dran ist: dein nächster Schritt als große Kachel, darüber deine Lerntage der Woche.",
+  "buchlook.teil": "Teil {n}",
+  "buchlook.station.fertig": "fertig",
+  "buchlook.station.stand": "{erreicht} von {gesamt}",
+  "buchlook.hier": "Du bist hier",
+  "buchlook.orden.name": "Orden „{orden}“",
+  "buchlook.orden.verdient": "verdient",
+  "buchlook.orden.noch": "noch {n} Kapitel",
+  "buchlook.orden.nochEins": "noch 1 Kapitel"
 }

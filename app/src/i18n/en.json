@@ -4011,7 +4011,6 @@
   "lernpfad.titel": "Your path through the book",
   "lernpfad.zurueck": "Back",
   "lernpfad.knopf": "Show as a path",
-  "lernpfad.einleitung": "Each stop is a chapter. At the end of each part of the book its medal is waiting. Tap a stop to open the chapter.",
   "lernpfad.station": "Chapter {nummer}: {titel}, {erreicht} of {gesamt} done",
   "lernpfad.stationFertig": "Chapter {nummer}: {titel}, finished",
   "lernpfad.rest.abbildungen": "{anzahl} diagrams",
@@ -4596,5 +4595,13 @@
   "buchlook.kurz.uebungen": "Chapter {kapitel}",
   "buchlook.kurz.thema": "{richtig} of {anzahl} correct",
   "buchlook.kurz.fehler": "From your mistake database",
-  "buchlook.tourHeute": "This is what's on today: your next step as a big tile, above it your learning days of the week."
+  "buchlook.tourHeute": "This is what's on today: your next step as a big tile, above it your learning days of the week.",
+  "buchlook.teil": "Part {n}",
+  "buchlook.station.fertig": "done",
+  "buchlook.station.stand": "{erreicht} of {gesamt}",
+  "buchlook.hier": "You are here",
+  "buchlook.orden.name": "Medal “{orden}”",
+  "buchlook.orden.verdient": "earned",
+  "buchlook.orden.noch": "{n} chapters to go",
+  "buchlook.orden.nochEins": "1 chapter to go"
 }

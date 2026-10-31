@@ -47,6 +47,7 @@ import "./ui/stil/trainerfeinschliff.css";
 import "./ui/stil/ordenkunst.css";
 import "./ui/stil/wochenkarte.css";
 import "./ui/stil/heute.css";
+import "./ui/stil/buchkopf.css";
 import "./ui/stil/ziele.css";
 import "./ui/stil/extras.css";
 import { App } from "./app/App";

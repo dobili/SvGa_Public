@@ -1,20 +1,10 @@
 /*
- * Lernpfad „Dein Weg durchs Buch“ (Gamifizierung P2, ui/bildschirme/Lernpfad.tsx).
- * Die Fläche hat das Seitenverhältnis des Koordinatensystems aus wegform.ts; Linie (SVG) und
- * Knöpfe (in Prozent) liegen darin übereinander. Farben über die Größen aus basis.css, damit der
- * dunkle Modus von selbst passt.
+ * Lernpfad „Dein Weg durchs Buch“ (Gamifizierung P2, ui/bildschirme/Lernpfad.tsx), seit der
+ * Gestaltung B1 (31.10.2026) mit fünf Landschaften. Die Fläche hat das Seitenverhältnis des
+ * Koordinatensystems aus wegform.ts; Landschaft, Linie (SVG) und Knöpfe (in Prozent) liegen darin
+ * übereinander. Farben der Landschaften als --land-* je für hell und dunkel (lernpfad-land.css);
+ * Titel und Stände liegen auf leicht deckendem Grund, damit sie auf jedem Bild lesbar bleiben.
  */
-
-.lernpfad-hinweis {
-  margin-bottom: calc(var(--raster) * 2);
-}
-
-.lernpfad-flaeche {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto calc(var(--raster) * 4);
-}
 
 .lernpfad-linie {
   position: absolute;
@@ -27,17 +17,6 @@
 .lernpfad-linie path {
   fill: none;
   stroke-linecap: round;
-}
-
-.lernpfad-linie-offen {
-  stroke: var(--linie-stark);
-  stroke-width: 6;
-  stroke-dasharray: 2 12;
-}
-
-.lernpfad-linie-gegangen {
-  stroke: var(--gold);
-  stroke-width: 7;
 }
 
 .lernpfad-station {
@@ -53,68 +32,6 @@
   background: none;
   color: var(--text);
   cursor: pointer;
-}
-
-.lernpfad-station .kapitel-nummer {
-  width: 44px;
-  height: 44px;
-  border-radius: 22px;
-  border: 4px solid transparent;
-  font-size: var(--groesse-gross);
-}
-
-.lernpfad-station.aktuell .kapitel-nummer {
-  outline: 3px solid var(--gold);
-  outline-offset: 3px;
-}
-
-/* Der Titel steht auf der Seite, die vom Weg wegzeigt, und ragt nicht über den Rand. */
-.lernpfad-titel {
-  position: absolute;
-  top: 50%;
-  width: max-content;
-  max-width: 9.5rem;
-  transform: translateY(-50%);
-  font-size: var(--groesse-klein);
-  line-height: 1.25;
-  color: var(--text-leise);
-  text-align: left;
-}
-
-.titel-rechts .lernpfad-titel {
-  left: calc(100% + var(--raster));
-}
-
-.titel-links .lernpfad-titel {
-  right: calc(100% + var(--raster));
-  text-align: right;
-}
-
-.lernpfad-station.aktuell .lernpfad-titel {
-  color: var(--text);
-  font-weight: 700;
-}
-
-.lernpfad-orden {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  transform: translate(-50%, -50%);
-}
-
-.lernpfad-orden .ordenkunst {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Grund hinter dem Orden, damit die Linie nicht durch die Silhouette scheint. */
-.lernpfad-orden::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-radius: 50%;
-  background: var(--grund);
 }
 
 /* Die eigene Figur steht etwas über ihrer Station und geht beim Öffnen von der letzten dorthin. */
@@ -159,4 +76,226 @@
   align-items: center;
   gap: var(--raster);
   margin: 0 0 calc(var(--raster) * 2);
+}
+
+/* ---------- Satz oben mit dem Ring der aktuellen Station ---------- */
+
+.lernpfad-hinweis {
+  flex-direction: row;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  margin-bottom: calc(var(--raster) * 2);
+  font-size: var(--groesse-mittel);
+}
+
+.lernpfad-hinweis .kapitel-nummer {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 5px solid transparent;
+  font-size: var(--groesse-gross);
+}
+
+/* ---------- Fläche: auf dem Handy von Rand zu Rand, damit die Landschaft den Schirm füllt ---------- */
+
+.lernpfad-flaeche {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto calc(var(--raster) * 4);
+}
+
+@media (max-width: 512px) {
+  .lernpfad-flaeche {
+    width: calc(100% + var(--raster) * 4);
+    max-width: none;
+    margin-inline: calc(var(--raster) * -2);
+  }
+}
+
+.lernpfad-landschaft {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lernpfad-teilname {
+  position: absolute;
+  padding: 2px calc(var(--raster) * 1.25) 4px;
+  border-radius: var(--radius);
+  background: var(--land-schrift-grund);
+}
+
+.lernpfad-teilname .ueberzeile {
+  margin: 0;
+  color: var(--gold-text);
+}
+
+.lernpfad-teilname h2 {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* ---------- Linie: gegangen gold mit Schein, offen gepunktet ---------- */
+
+.lernpfad-linie-offen {
+  stroke: var(--land-punkte);
+  stroke-width: 5;
+  stroke-dasharray: 1 13;
+}
+
+.lernpfad-linie-schein {
+  stroke: var(--gold);
+  stroke-width: 14;
+  opacity: 0.2;
+}
+
+.lernpfad-linie-gegangen {
+  stroke: var(--gold);
+  stroke-width: 5;
+}
+
+/* ---------- Stationen: fertig, aktuell, angefangen, offen ---------- */
+
+.station-marke {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: var(--groesse-gross);
+  font-weight: 700;
+  border: 4px solid transparent;
+  background:
+    linear-gradient(var(--land-station), var(--land-station)) padding-box,
+    conic-gradient(var(--gold) var(--anteil), var(--land-station-rand) 0) border-box;
+  color: var(--land-station-text);
+}
+
+.station-marke.offen {
+  border-width: 2px;
+}
+
+.station-marke.fertig {
+  border: none;
+  background: radial-gradient(circle at 35% 30%, #fff1b8, #e3bf4a 45%, #a8841c);
+  color: var(--navy);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.35);
+}
+
+.station-haken {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+}
+
+.lernpfad-station.aktuell .station-marke {
+  width: 62px;
+  height: 62px;
+  border-width: 5px;
+  font-size: var(--groesse-zahl);
+  box-shadow:
+    0 0 0 7px rgb(227 191 74 / 0.18),
+    0 0 26px rgb(227 191 74 / 0.45);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lernpfad-station.aktuell .station-marke {
+    animation: station-schein 2.4s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes station-schein {
+  to {
+    box-shadow:
+      0 0 0 10px rgb(227 191 74 / 0.12),
+      0 0 34px rgb(227 191 74 / 0.55);
+  }
+}
+
+/* Titel und Stand stehen auf der Seite, die vom Weg wegzeigt, auf leicht deckendem Grund. */
+.lernpfad-titel {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  /* Höchstens 40 % der Breite: auch eine Station nahe der Mitte ragt nicht über den Rand. */
+  max-width: min(10rem, 40vw);
+  padding: 2px 6px;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: var(--land-schrift-grund);
+  line-height: 1.2;
+  text-align: left;
+}
+
+.titel-rechts .lernpfad-titel {
+  left: calc(100% + var(--raster));
+  align-items: flex-start;
+}
+
+.titel-links .lernpfad-titel {
+  right: calc(100% + var(--raster));
+  align-items: flex-end;
+  text-align: right;
+}
+
+.lernpfad-name {
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lernpfad-stand {
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.lernpfad-station.aktuell .lernpfad-name {
+  font-size: var(--groesse-grund);
+}
+
+.lernpfad-hier {
+  margin-bottom: 2px;
+  padding: 1px 8px;
+  border-radius: 99px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+/* ---------- Orden am Ende jeder Etappe ---------- */
+
+.lernpfad-orden {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+}
+
+.lernpfad-orden .ordenkunst {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lernpfad-orden.verdient .lernpfad-name {
+  color: var(--gold-text);
 }

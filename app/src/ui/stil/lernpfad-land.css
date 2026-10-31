@@ -1,0 +1,206 @@
+/*
+ * Farben der fünf Landschaften hinter dem Lernpfad (Gestaltung B1, 31.10.2026;
+ * komponenten/lernpfad/landschaftsbilder.tsx). Dunkel nach den Entwürfen des Autors; hell als
+ * Tagfassung derselben Bilder (Pergament, Morgenrot, grüne Hügel, Abenddämmerung, heller Saal).
+ * Dazu die Farben der Stationen und der deckende Grund unter allen Schriften, der auf jedem Band
+ * den Kontrast sichert (Prüfung: Kapitelnamen in --text auf --land-schrift-grund).
+ */
+:root {
+  --land-schrift-grund: rgb(245 240 230 / 0.86);
+  --land-punkte: #8a7f6a;
+  --land-station: #ffffff;
+  --land-station-rand: #b9ae96;
+  --land-station-text: var(--navy);
+  --land-brett: #efe6d2;
+  --land-brett-feld: rgb(22 37 61 / 0.05);
+  --land-brett-schrift: rgb(125 96 7 / 0.45);
+  --land-morgen-1: #f3ead9;
+  --land-morgen-2: #f5dfbf;
+  --land-morgen-3: #efc48f;
+  --land-sonne: #f2b84a;
+  --land-strahl: rgb(232 160 50 / 0.3);
+  --land-horizont: #e2bf92;
+  --land-huegel-grund: #e6ecdc;
+  --land-huegel-1: #d2dec7;
+  --land-huegel-2: #bfd1b3;
+  --land-huegel-3: #abc29f;
+  --land-turm: #7f957d;
+  --land-fahne: #c9a227;
+  --land-nacht-1: #42557f;
+  --land-nacht-2: #2c3a60;
+  --land-stern: #ffffff;
+  --land-mond: #f5f0e6;
+  --land-saal-1: #efe5d3;
+  --land-saal-2: #e1d2b9;
+  --land-lampe: #8a7448;
+  --land-kabel: #8a8070;
+  --land-licht: rgb(255 205 100 / 0.32);
+  --land-tisch: #b0916b;
+  --land-brettchen: #fbf6ea;
+  --land-uhr: #5a5048;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) {
+    --land-schrift-grund: rgb(15 27 46 / 0.72);
+    --land-punkte: #7c8cab;
+    --land-station: #1b2b45;
+    --land-station-rand: #56688a;
+    --land-station-text: #d3d9e2;
+    --land-brett: #142540;
+    --land-brett-feld: rgb(227 191 74 / 0.06);
+    --land-brett-schrift: rgb(227 191 74 / 0.25);
+    --land-morgen-1: #14233c;
+    --land-morgen-2: #1f2b44;
+    --land-morgen-3: #4a3c27;
+    --land-sonne: #f2c860;
+    --land-strahl: rgb(255 216 119 / 0.16);
+    --land-horizont: #1d2738;
+    --land-huegel-grund: #1d2738;
+    --land-huegel-1: #22353f;
+    --land-huegel-2: #1d3039;
+    --land-huegel-3: #182a33;
+    --land-turm: #2c4250;
+    --land-nacht-1: #0c1526;
+    --land-nacht-2: #0a1120;
+    --land-stern: #f5f0e6;
+    --land-mond: #e9e1c8;
+    --land-saal-1: #1c2234;
+    --land-saal-2: #231f22;
+    --land-lampe: #6b5b3a;
+    --land-kabel: #4a4a50;
+    --land-licht: rgb(255 217 138 / 0.22);
+    --land-tisch: #4a3b2a;
+    --land-brettchen: #d8cdb0;
+    --land-uhr: #2b2b30;
+  }
+}
+
+:root[data-farbschema="dunkel"] {
+  --land-schrift-grund: rgb(15 27 46 / 0.72);
+  --land-punkte: #7c8cab;
+  --land-station: #1b2b45;
+  --land-station-rand: #56688a;
+  --land-station-text: #d3d9e2;
+  --land-brett: #142540;
+  --land-brett-feld: rgb(227 191 74 / 0.06);
+  --land-brett-schrift: rgb(227 191 74 / 0.25);
+  --land-morgen-1: #14233c;
+  --land-morgen-2: #1f2b44;
+  --land-morgen-3: #4a3c27;
+  --land-sonne: #f2c860;
+  --land-strahl: rgb(255 216 119 / 0.16);
+  --land-horizont: #1d2738;
+  --land-huegel-grund: #1d2738;
+  --land-huegel-1: #22353f;
+  --land-huegel-2: #1d3039;
+  --land-huegel-3: #182a33;
+  --land-turm: #2c4250;
+  --land-nacht-1: #0c1526;
+  --land-nacht-2: #0a1120;
+  --land-stern: #f5f0e6;
+  --land-mond: #e9e1c8;
+  --land-saal-1: #1c2234;
+  --land-saal-2: #231f22;
+  --land-lampe: #6b5b3a;
+  --land-kabel: #4a4a50;
+  --land-licht: rgb(255 217 138 / 0.22);
+  --land-tisch: #4a3b2a;
+  --land-brettchen: #d8cdb0;
+  --land-uhr: #2b2b30;
+}
+
+/* Die Klassen der Bilder nehmen nur diese Farben. */
+.land-schlicht {
+  fill: var(--grund);
+}
+.land-brett {
+  fill: var(--land-brett);
+}
+.land-brett-feld {
+  fill: var(--land-brett-feld);
+}
+.land-brett-schrift {
+  fill: var(--land-brett-schrift);
+  font-size: 11px;
+  font-family: var(--schrift);
+}
+.land-morgen-1 {
+  stop-color: var(--land-morgen-1);
+}
+.land-morgen-2 {
+  stop-color: var(--land-morgen-2);
+}
+.land-morgen-3 {
+  stop-color: var(--land-morgen-3);
+}
+.land-sonne {
+  fill: var(--land-sonne);
+  opacity: 0.6;
+}
+.land-strahl {
+  stroke: var(--land-strahl);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.land-horizont {
+  fill: var(--land-horizont);
+}
+.land-huegel-grund {
+  fill: var(--land-huegel-grund);
+}
+.land-huegel-1 {
+  fill: var(--land-huegel-1);
+}
+.land-huegel-2 {
+  fill: var(--land-huegel-2);
+}
+.land-huegel-3 {
+  fill: var(--land-huegel-3);
+}
+.land-turm {
+  fill: var(--land-turm);
+}
+.land-fahne {
+  fill: var(--land-fahne);
+  opacity: 0.7;
+}
+.land-nacht-1 {
+  stop-color: var(--land-nacht-1);
+}
+.land-nacht-2 {
+  stop-color: var(--land-nacht-2);
+}
+.land-stern {
+  fill: var(--land-stern);
+  opacity: 0.7;
+}
+.land-mond {
+  fill: var(--land-mond);
+  opacity: 0.6;
+}
+.land-saal-1 {
+  stop-color: var(--land-saal-1);
+}
+.land-saal-2 {
+  stop-color: var(--land-saal-2);
+}
+.land-lampe {
+  fill: var(--land-lampe);
+}
+.land-kabel {
+  stroke: var(--land-kabel);
+  stroke-width: 1.5;
+}
+.land-licht {
+  fill: var(--land-licht);
+}
+.land-tisch {
+  fill: var(--land-tisch);
+}
+.land-brettchen {
+  fill: var(--land-brettchen);
+}
+.land-uhr {
+  fill: var(--land-uhr);
+}

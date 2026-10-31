@@ -14,7 +14,7 @@ import {
   teilDesKapitels,
   type Stationsteil,
 } from "./lernpfad";
-import { hoehe, knoten, linie } from "./wegform";
+import { baender, hoehe, KOPF, knoten, linie } from "./wegform";
 
 const INDEX = JSON.parse(
   readFileSync(new URL("../../../../public/daten/de/a1/index.json", import.meta.url), "utf8"),
@@ -101,7 +101,7 @@ describe("Lernpfad: aktuelle Station und Satz", () => {
 });
 
 describe("Lernpfad: Form", () => {
-  it("18 Knoten (13 Stationen, 5 Orden) von oben nach unten, Linie durch alle", () => {
+  it("18 Knoten (13 Stationen, 5 Orden) von oben nach unten, fünf Bänder, Linie durch alle", () => {
     const liste = stationen(INDEX.kapitel, LEER);
     const alle = knoten(etappen(liste, INDEX.kapitel, LEER));
     expect(alle).toHaveLength(18);
@@ -113,7 +113,25 @@ describe("Lernpfad: Form", () => {
       "praxis",
     ]);
     expect(alle.every((k, i) => i === 0 || k.y > (alle[i - 1]?.y ?? 0))).toBe(true);
-    expect(alle.at(-1)?.y).toBeLessThan(hoehe(alle.length));
+    const flaeche = hoehe(alle.length, 5);
+    expect(alle.at(-1)?.y).toBeLessThan(flaeche);
+    // Fünf Bänder der Landschaft (Gestaltung B1), lückenlos von 0 bis zur Höhe.
+    const streifen = baender(alle, flaeche);
+    expect(streifen.map((b) => b.teil)).toEqual([
+      "grundlagen",
+      "eroeffnung",
+      "mittelspiel",
+      "endspiel",
+      "praxis",
+    ]);
+    expect(streifen[0]?.y0).toBe(0);
+    expect(streifen.at(-1)?.y1).toBe(flaeche);
+    expect(streifen.every((b, i) => i === 0 || b.y0 === streifen[i - 1]?.y1)).toBe(true);
+    // Jede Station liegt mit Abstand unter dem Kopf ihres Bandes (Platz für „Teil 1“).
+    for (const k of alle) {
+      const band = streifen.find((b) => b.teil === (k.art === "station" ? k.station.teil : k.teil));
+      expect(k.y - (band?.y0 ?? 0)).toBeGreaterThanOrEqual(KOPF);
+    }
     expect(
       linie([
         { x: 180, y: 56 },

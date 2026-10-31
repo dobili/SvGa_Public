@@ -48,6 +48,16 @@ const THEMEN_JE_GRUPPE: Readonly<Record<Endspielgruppe, readonly Endspielthema[]
   leichtfiguren: ["leichtfiguren"],
 };
 
+/**
+ * Die Gruppe, in der ein Endspielthema steht (Vorwahl, wenn der Trainer mit Thema geöffnet wird,
+ * etwa über „Üben“ an einer Medaille der Meisterschaft, P3). Beispiel: „opposition“ → „bauern“.
+ * Sonderfall: unbekanntes Thema oder null → null (dann bleibt „alle“).
+ */
+export function gruppeZumThema(thema: string | null): Endspielgruppe | null {
+  if (thema === null) return null;
+  return GRUPPEN.find((g) => (THEMEN_JE_GRUPPE[g] as readonly string[]).includes(thema)) ?? null;
+}
+
 export interface Endspielwahl {
   readonly gruppe: Endspielgruppe;
   /** Schwierigkeit 1 bis 5, null für alle. */

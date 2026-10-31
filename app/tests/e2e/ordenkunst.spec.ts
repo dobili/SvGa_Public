@@ -24,13 +24,17 @@ async function uebungenVoll(page: Page): Promise<void> {
 test("Neuer Orden: Startanimation zeigt ihn, er fliegt zu „Profil“, der Punkt bleibt bis zum Profil", async ({
   page,
 }) => {
-  await starteImBrowser(page);
-  // Beim letzten Start war nichts verdient; so ist der Orden jetzt neu.
-  await page.addInitScript(() => window.localStorage.setItem("svga.ordenBekannt", ""));
+  // Die Startanimation unterdrückt hier niemand per Startskript: Mehrere Startskripte laufen in
+  // keiner festen Reihenfolge, und in WebKit galt der Orden so gelegentlich schon als bekannt
+  // (Wackler seit 0.3.17, beim Übernehmen von Welle 2 am 31.10.2026 behoben).
+  await starteImBrowser(page, { startanimation: true });
   await uebungenVoll(page);
+  // Beim letzten Start war nichts verdient, und dieser Start ist der erste der Sitzung.
+  await page.evaluate(() => {
+    window.localStorage.setItem("svga.ordenBekannt", "");
+    window.sessionStorage.removeItem("svga.startanimation.sitzung");
+  });
   await page.goto("/app/");
-  await page.addInitScript(() => window.sessionStorage.removeItem("svga.startanimation.sitzung"));
-  await page.reload();
   const stueck = page.getByTestId("startstueck");
   await expect(stueck).toContainText("Neuer Orden");
   await expect(stueck).toContainText("Übungen gelöst");

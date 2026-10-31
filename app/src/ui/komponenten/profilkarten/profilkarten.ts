@@ -16,6 +16,7 @@ import { hatErreichteZiele } from "../../../training/ziele";
 import { ErreichteZiele } from "../ziele/ErreichteZiele";
 import { RueckblickProfilkarte } from "../rueckblick/RueckblickKarten";
 import { rueckblickeSichtbar } from "../rueckblick/rueckblickwerte";
+import { Themenkarte } from "../themen/Themenkarte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -36,4 +37,6 @@ export const PROFILKARTEN: readonly Profilkarte[] = [
   { kennung: "ziele", rang: 25, sichtbar: hatErreichteZiele, Karte: ErreichteZiele },
   // P12 Monatsrückblick: ältere Rückblicke, sobald ein Monat mit Lerntagen abgeschlossen ist.
   { kennung: "rueckblicke", rang: 30, sichtbar: rueckblickeSichtbar, Karte: RueckblickProfilkarte },
+  // P3 Meisterschaft je Thema: immer sichtbar, ohne Themen mit einer Einladung zum Üben.
+  { kennung: "themen", rang: 10, sichtbar: () => true, Karte: Themenkarte },
 ];

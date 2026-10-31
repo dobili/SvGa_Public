@@ -14,6 +14,7 @@ import {
   anzahlJeGruppe,
   endspielrunde,
   GRUPPEN,
+  gruppeZumThema,
   type Endspielgruppe,
   type Endspielwahl,
 } from "../../training/endspieltrainer";
@@ -41,6 +42,7 @@ import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
+import { useTrainerthema } from "./trainerthema";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
 const AUFGABEN_JE_RUNDE = 6;
@@ -77,7 +79,9 @@ function Wahl({
   wiederholung: ReactNode;
   kurz: () => void;
 }) {
-  const [gruppe, setzeGruppe] = useState<Endspielgruppe>("alle");
+  // Mit Thema geöffnet (Meisterschaft P3, nächster Schritt P1): dessen Gruppe vorwählen.
+  const vorwahl = gruppeZumThema(useTrainerthema("endspiel"));
+  const [gruppe, setzeGruppe] = useState<Endspielgruppe>(vorwahl ?? "alle");
   const [stufe, setzeStufe] = useState<number | null>(null);
   return (
     <div className="trainerrunde trainerwahl" data-testid="endspiel-wahl" data-tour="trainer-wahl">

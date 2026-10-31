@@ -13,6 +13,7 @@ import { BUENDELBILDER, botordenAlle, botordenEinmal, engineorden } from "./boto
 import { nacht, type Nachtangabe, type Zeichnung } from "./nachtstil";
 import { neueId } from "./zeichnen";
 import { REKORD_NACHTABZEICHEN } from "./nachtabzeichen-rekorde";
+import { MEISTERSCHAFT_NACHTABZEICHEN } from "./nachtabzeichen-meisterschaft";
 import { GRUND_NACHTABZEICHEN } from "./nachtabzeichen-grund";
 import { WOCHEN_NACHTABZEICHEN } from "./nachtabzeichen-wochen";
 import { ZIEL_NACHTABZEICHEN } from "./nachtabzeichen-ziele";
@@ -43,6 +44,7 @@ const NACHTABZEICHEN: Readonly<Record<string, Nachtangabe>> = {
   ...ZIEL_NACHTABZEICHEN,
   ...RIVALEN_NACHTABZEICHEN,
   ...AUFTRAG_NACHTABZEICHEN,
+  ...MEISTERSCHAFT_NACHTABZEICHEN,
 };
 
 /** Kennungen aller Orden mit eigenem Bild, in der Reihenfolge der Ringe im Profil. */

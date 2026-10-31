@@ -12,6 +12,7 @@
 import type { Nutzerdaten } from "../../../speicher/format";
 import { PUNKTE_JE_ZIEL } from "../../../training/ziele";
 import { erledigteAuftraege, PUNKTE_JE_AUFTRAG } from "../../../training/wochenauftraege";
+import { MEISTERSCHAFT_ERFAHRUNG } from "../../../training/meisterschaftsstand";
 import { erreichteWochen } from "../../../training/wochenziel";
 import { besiegteRivalen } from "../../../training/rivalen";
 
@@ -39,4 +40,6 @@ export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
     gewicht: PUNKTE_JE_AUFTRAG,
     zaehle: (d) => erledigteAuftraege(d.verdient),
   },
+  // P3 Meisterschaft: je Stufe eine Quelle (Bronze 10, Silber 25, Gold 50).
+  ...MEISTERSCHAFT_ERFAHRUNG,
 ];

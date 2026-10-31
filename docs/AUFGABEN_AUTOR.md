@@ -33,6 +33,53 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.29: Meisterschaft je Thema (Arbeitschat, 31.10.2026)
+
+Jedes Thema, das du in einem Trainer übst (die zwölf Taktikmotive, Endspielthemen, Bauernstrukturen,
+Falle oder Köder), bekommt eine Medaille: Bronze für 5 richtige Antworten, Silber für 15 richtige
+mit mindestens 70 % der letzten 20 Antworten richtig, Gold für richtige Antworten an mindestens
+3 verschiedenen Tagen, zwei davon mindestens 7 Tage auseinander. Einmal erreicht, bleibt die
+Stufe. Zum Prüfen ohne echten Fortschritt: Aufgabenseite (drei Sekunden auf das Zahnrad) ›
+„Themen testen (Meisterschaft)“ › etwa „Fesselung zur Probe auf Silber“; die Probe zählt nur für
+die Karte „Deine Themen“ und die Titel, nicht für Erfahrung und Abzeichen. Danach „Probe beenden“.
+
+- [ ] N2180. **Karte „Deine Themen“:** Profil, ganz oben unter „Dein Fortschritt“. Ohne geübte
+      Themen steht eine Einladung zum Üben. Nach der Probe „Fesselung zur Probe auf Silber“ steht
+      dort eine Sternmedaille mit Turm und Silberrand, darunter „Fesselung“ und der Weg zu Gold
+      („0 von 3 Tagen bis Gold“). Verständlich?
+- [ ] N2181. **Erste echte Medaille:** Training › Taktiktrainer, Motiv „Fesselung“ wählen und
+      fünf Aufgaben richtig lösen. Am Rundenende steht unter dem Ergebnis eine kleine Medaille
+      mit kurzem Glanz und „Fesselung: Bronze!“. Mit ausgeschalteten Feiereffekten
+      (Einstellungen) ohne Glanz. Passt die Meldung?
+- [ ] N2182. **Fortschritt und Bedingung:** Profil › Deine Themen: unter der Bronzemedaille steht
+      „5 von 15 bis Silber“. Ein Tipp auf das Thema zeigt die Bedingung für Silber und die Knöpfe
+      „Üben“ und „Teilen“. Noch nicht erreichte Themen stehen als graue Silhouette mit „… von 5
+      bis Bronze“.
+- [ ] N2183. **Üben:** Im aufgeklappten Thema „Üben“ tippen: Der passende Trainer öffnet sich.
+      Bei einem Endspielthema (etwa Opposition) ist im Endspieltrainer gleich die Gruppe
+      „Bauernendspiele“ gewählt. Den Taktiktrainer stellt ein anderer Arbeitschat auf das Motiv
+      ein; bis dahin öffnet er mit der gewohnten Auswahl.
+- [ ] N2184. **Teilen:** Im aufgeklappten Thema mit Medaille „Teilen“: Es entsteht ein Bild
+      „Meisterschaft“ mit der Medaille groß, „Fesselung: Silber“ und (bei echter Stufe) „Verdient
+      am …“. Gefällt dir das Bild?
+- [ ] N2185. **Medaillenbilder:** Probe für mehrere Themen auf Gold: Jedes Taktikmotiv hat ein
+      eigenes Motiv im Stern (Springer, Turm, Schwerter, Blitz, „+2“, Kreispfeil, fallender König,
+      Hantel, Uhr, Dame, Krone, Haken), Endspielthemen eine Strahlenmedaille, Strukturen ein
+      Sechseck, Falle oder Köder ein Dreieck. Bronze, Silber und Gold gut zu unterscheiden?
+- [ ] N2186. **Abzeichen:** Profil › Abzeichen: drei neue Abzeichen „Erstes Gold“, „Fünf Themen
+      in Silber“, „Alle Taktikmotive in Gold“ mit eigenen Bildern. Mit „Abzeichen testen“ auf der
+      Aufgabenseite lassen sie sich auslösen. Passen Namen und Bilder?
+- [ ] N2187. **Titel „Taktiker“:** Probe für fünf Taktikmotive auf Gold (etwa Fesselung, Spieß,
+      Doppelschach, Hinlenkung, Zwischenzug). Profil › Deine Extras › „Titel unter deinem Namen“:
+      „Titel ‚Taktiker‘“ ist wählbar; nach „Wählen“ steht oben unter deinem Namen in Gold
+      „Taktiker“. „Titel ‚Endspielkenner‘“ bleibt gesperrt mit „3 Themen im Endspieltrainer in
+      Gold“. Gefällt dir der Platz unter dem Namen?
+- [ ] N2188. **Erfahrungspunkte:** Eine echte Bronze bringt 10 Punkte, Silber weitere 25, Gold
+      weitere 50 (Profil › Erfahrung). Die Probe bringt keine Punkte. Passt die Gewichtung?
+- [ ] N2189. **Zum Auffrischen:** Liegt die letzte richtige Antwort eines Themas mit Medaille mehr
+      als 60 Tage zurück, steht leise „Zum Auffrischen“ unter der Medaille; die Stufe bleibt.
+      Prüfbar erst später; ist der Hinweis so recht?
+
 ### Neu in 0.3.28: Wochenaufträge (Arbeitschat, 31.10.2026)
 
 Neu in der Karte „Deine Woche“ oben im Buch (erscheint nach dem ersten Lerntag; erst ein

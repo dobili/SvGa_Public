@@ -121,7 +121,7 @@ export interface Gamifizierungsdaten {
    * „orden:<k>“, „abzeichen:<k>“, „rekord:<k>“ → Datum der ersten Feier (G3); dazu „woche:<Montag>“
    * für jede Woche mit erreichtem Wochenziel (P4), damit ein später erhöhtes Ziel keine Woche nimmt;
    * „auftrag:<Montag>:<Stelle>“ für jeden erledigten Wochenauftrag (P6); „rivale:<bot>“ für jeden
-   * besiegten Rivalen (P8). So zählen Erfahrung, Abzeichen und Rückblick auch über Wochen hinweg.
+   * besiegten Rivalen (P8); „meisterschaft:<stufe>:<thema>“ für die erste Feier einer Medaille (P3). So zählen Erfahrung, Abzeichen und Rückblick auch über Wochen hinweg.
    */
   readonly verdient: Readonly<Record<string, string>>;
   readonly rekorde: Readonly<Record<string, Rekord>>;

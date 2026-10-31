@@ -28,6 +28,8 @@ export const NAMENSMUSTER: readonly Namensmuster[] = [
   // „taktik:gabel“ hieß sonst nur „Taktiktrainer“).
   (p, k) => (p === "taktik" ? `motiv.name.${k}` : null),
   (p, k) => (p === "taktik" ? `zusatzaufgaben.thema.${k}` : null),
+  // P3: Motive des Taktiktrainers ohne Zusatzaufgabe (Überlastung, Rettung) und spätere Trainer.
+  (p, k) => `${p}trainer.motiv.${k}`,
 ];
 
 /** Präfix und Teil einer Kennung. Beispiel: „taktik:gabel“ → [„taktik“, „gabel“]; „falle“ → [„falle“, „“]. */

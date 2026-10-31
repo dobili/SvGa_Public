@@ -36,6 +36,7 @@ import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { AbzeichenProbe } from "../komponenten/fortschritt/AbzeichenProbe";
 import { OrdenProbe } from "../komponenten/fortschritt/OrdenProbe";
 import { RueckblickProbe } from "../komponenten/rueckblick/RueckblickKarten";
+import { ThemenProbe } from "../komponenten/themen/ThemenProbe";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 
 const MERKER = "autorAufgaben";
@@ -218,6 +219,7 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
       <OrdenProbe />
       <AbzeichenProbe />
       <RueckblickProbe />
+      <ThemenProbe />
       <Steuerung
         datei={datei}
         stand={stand}

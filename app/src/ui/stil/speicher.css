@@ -93,30 +93,6 @@
   margin-top: 4px;
 }
 
-.fortschritt-liste {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--raster) * 1.5);
-  margin: 0;
-}
-
-.fortschritt-zeile {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.fortschritt-zeile dt {
-  font-size: var(--groesse-klein);
-  color: var(--text-leise);
-}
-
-.fortschritt-zeile dd {
-  margin: 0;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
-
 /*
  * Kachel der Kapitelübersicht mit Kästchen zum Abhaken (0.2.27): Das Kästchen steht in einem
  * eigenen Streifen unten in der Kachel; der Knopf darüber öffnet die Abbildung.
@@ -179,12 +155,6 @@
   display: flex;
   align-items: center;
   gap: 6px;
-}
-
-.fortschritt-zeile dd {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .fortschritt-kapitel {
@@ -318,4 +288,53 @@
 .absturz-technik summary {
   cursor: pointer;
   padding-block: calc(var(--raster) / 2);
+}
+
+/*
+ * Kennzahlen im Profil (0.3.43, Kennzahlen.tsx): drei gleich breite Kacheln mit Zeichen, großer
+ * Zahl und kurzer Zeile, statt Überschrift und Wert untereinander.
+ */
+.kennzahlen {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+  margin: calc(var(--raster) * 2) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kennzahl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: calc(var(--raster) * 1.25) 4px;
+  border-radius: var(--radius);
+  border: 1px solid var(--linie);
+  background: var(--grund);
+  text-align: center;
+}
+
+.kennzahl-zeichen {
+  color: var(--gold-text);
+}
+
+.kennzahl-zahl {
+  font-size: var(--groesse-zahl);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.kennzahl-text {
+  font-size: var(--groesse-fein);
+  line-height: 1.2;
+  color: var(--text-leise);
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.kennzahl.leer .kennzahl-zahl,
+.kennzahl.leer .kennzahl-zeichen {
+  opacity: 0.45;
 }

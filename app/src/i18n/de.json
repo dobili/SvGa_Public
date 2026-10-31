@@ -683,7 +683,6 @@
   "fortschritt.trainerStand": "{name}: {durchgaenge} Durchgänge, {richtig} von {aufgaben} richtig",
   "fortschritt.trainerStandEins": "{name}: 1 Durchgang, {richtig} von {aufgaben} richtig",
   "fortschritt.gesehen": "angesehen",
-  "fortschritt.uebungenGesamt": "{geloest} gelöst",
   "fortschritt.trainerDurchgaenge": "Trainer-Durchgänge",
   "fortschritt.jeKapitel": "Je Kapitel",
   "fortschritt.buendel": "Stufe {stufen}",

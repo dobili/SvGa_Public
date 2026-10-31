@@ -9,7 +9,10 @@
  * für Trainer aus „Training“, die schon einmal abgeschlossen wurden (mindestens ein Durchgang).
  * Oben stehen Stufe und Erfahrungspunkte (Erfahrung.tsx). Seit dem Profil neu (31.10.2026) stehen
  * die Ringe der Teile des Buches und der Bots und die Abzeichen in der Karte „Deine Erfolge“
- * (erfolge/Erfolge.tsx) als Orden und Abzeichen in Regalen.
+ * (erfolge/Erfolge.tsx) als Orden und Abzeichen in Regalen. Die Summen (gelöste Übungen,
+ * Trainer-Durchgänge, Warum-Fragen) stehen seit 0.3.43 als drei Kacheln mit Zeichen und großer Zahl
+ * gleich unter Stufe und Erfahrung, statt als lose Zeilen unter den Orden (Befund des Autors,
+ * 31.10.2026: „sieht verloren aus, zusammenhanglos unter den Abzeichen“).
  * Abhängigkeiten: Erfahrung.tsx, speicher, speicher/besiegt.ts, engine/gegner.ts, app/lernstand.ts,
  * daten/laden.ts, Symbolringe, Kreisanzeige, zeitartzeichen.ts, i18n, lucide-react.
  */
@@ -24,6 +27,7 @@ import { Erfahrung } from "./Erfahrung";
 import { summe, useFortschrittsringe } from "./fortschrittsringe";
 import { Symbolringreihe } from "./Symbolringe";
 import { Titelsymbol } from "../bausteine/Titelsymbol";
+import { Kennzahlen } from "./Kennzahlen";
 
 /** Je Kapitel eine Zeile mit kleinem Ring; ein Tipp öffnet die Kapitelübersicht. */
 function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fortschritt }) {
@@ -86,33 +90,12 @@ export function Fortschrittsuebersicht() {
       </h2>
       {/* Stufe, Erfahrungspunkte und Abzeichen (Wunsch des Autors, freigegeben 30.10.2026). */}
       <Erfahrung />
+      <Kennzahlen
+        uebungen={uebungen.filter((s) => s.geloest).length}
+        durchgaenge={durchgaenge}
+        warum={warum}
+      />
       <Symbolringreihe ringe={buchringe} />
-      {(uebungen.length > 0 || durchgaenge > 0 || warum > 0) && (
-        <dl className="fortschritt-liste">
-          {uebungen.length > 0 && (
-            <div className="fortschritt-zeile">
-              <dt>{t("fortschritt.uebungen")}</dt>
-              <dd>
-                {t("fortschritt.uebungenGesamt", {
-                  geloest: uebungen.filter((s) => s.geloest).length,
-                })}
-              </dd>
-            </div>
-          )}
-          {durchgaenge > 0 && (
-            <div className="fortschritt-zeile">
-              <dt>{t("fortschritt.trainerDurchgaenge")}</dt>
-              <dd>{durchgaenge}</dd>
-            </div>
-          )}
-          {warum > 0 && (
-            <div className="fortschritt-zeile">
-              <dt>{t("fortschritt.warum")}</dt>
-              <dd>{warum}</dd>
-            </div>
-          )}
-        </dl>
-      )}
       <JeKapitel index={index} fortschritt={fortschritt} />
     </section>
   );

@@ -683,7 +683,6 @@
   "fortschritt.trainerStand": "{name}: {durchgaenge} rounds, {richtig} of {aufgaben} correct",
   "fortschritt.trainerStandEins": "{name}: 1 round, {richtig} of {aufgaben} correct",
   "fortschritt.gesehen": "viewed",
-  "fortschritt.uebungenGesamt": "{geloest} solved",
   "fortschritt.trainerDurchgaenge": "Trainer rounds",
   "fortschritt.jeKapitel": "By chapter",
   "fortschritt.buendel": "Level {stufen}",

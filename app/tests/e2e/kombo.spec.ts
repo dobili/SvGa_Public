@@ -43,6 +43,12 @@ async function loeseRunde(page: Page): Promise<void> {
 }
 
 test("Fundstück: das erste kommt in der dritten Runde und liegt im Album", async ({ page }) => {
+  // Ohne festen Zufall käme in Runde 1 oder 2 mit etwa 1/12 je Runde schon ein Fundstück
+  // (gewollt), und der Test wäre nicht wiederholbar. 0,99 liegt über der Chance je Runde; ab
+  // der dritten Runde kommt das erste Fundstück ohne Zufall.
+  await page.addInitScript(() => {
+    Math.random = () => 0.99;
+  });
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
   await page.getByRole("button", { name: /Feld finden/ }).click();

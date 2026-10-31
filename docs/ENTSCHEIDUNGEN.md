@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.21: Gamifizierung P10 Kombo und Fundstücke, P5 Rekordtafel (Opus)
+
+- Zweige `gami-p10-kombo` und `gami-p5-rekorde` (Welle 1) geprüft und zusammengeführt;
+  Konflikte nur in den Listen (`ZUSATZANSICHTEN`, `NACH_DER_RUNDE`, `PROFILKARTEN`), Texten und
+  Unterlagen. Beide nutzen die Listen; P10 änderte wie freigegeben Rundenrahmen und useRunde.
+- **Nach Vorschlag aus P5 ergänzt:** Liste `NACH_AUSWERTUNG` in `speicher/partieprotokoll.ts`,
+  aufgerufen, wenn eine Partie fertig ausgewertet ist (`useAuswertung.ts`). Rekorde aus Wertung
+  und Zugklassen stehen damit gleich fest statt erst beim nächsten Öffnen der Tafel. Abzeichen
+  „Drei Rekorde“ aus dem Plan (eigene Teilliste `abzeichen-rekorde.ts`, Bild, Texte, N2147).
+- Offen gelassen (Empfehlung): keine Erfahrungspunkte für Rekorde (der Plan nennt kein Gewicht);
+  die Kombo erscheint nur in Trainern mit Rundenrahmen, nicht in den Kurzplänen. Erste Rekorde
+  melden sich ohne „vorher“ (Frage in N2141).
+- Oberflächentest „Fundstück in der dritten Runde“ war in etwa jedem sechsten Lauf rot: Mit der
+  gewollten Chance von 1/12 je Runde kam manchmal schon in Runde 1 oder 2 ein Fundstück. Der
+  Test legt den Zufall jetzt fest (Math.random 0,99); die App bleibt unverändert.
+
 ## 31.10.2026 – Gamifizierung P5: Rekordtafel (Arbeitschat, Zweig `gami-p5-rekorde`, Opus)
 
 - **Rekordarten als Liste** (`training/rekordarten.ts`, Wunsch des Autors: eintragen statt

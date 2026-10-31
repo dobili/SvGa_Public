@@ -54,17 +54,18 @@ Tagesprotokoll aus vorhandenen Datumsangaben nachgetragen (`speicher/format7.ts`
 
 **Eintragen statt umbauen (G3, G4, G5):** je Paket eine Zeile in der passenden Liste.
 
-| Liste                                           | Datei                                                                                             | Wofür                                                                    |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `ABZEICHEN` (aus `GRUNDABZEICHEN` + Teillisten) | `fortschritt/abzeichen.ts`; eigene Teilliste `fortschritt/abzeichen-<paket>.ts`                   | Abzeichen; Bedingung bekommt `g.daten` (alle Nutzerdaten)                |
-| Abzeichenbilder                                 | `ordenkunst/entwuerfe.ts` (`NACHTABZEICHEN`); eigene Datei `ordenkunst/nachtabzeichen-<paket>.ts` | Bild je Abzeichen (Test prüft Text und Bild)                             |
-| `ERFAHRUNGSQUELLEN`                             | `fortschritt/erfahrungsquellen.ts`                                                                | Erfahrungspunkte: Kennung, Gewicht, Zählung                              |
-| `STARTKARTEN`                                   | `start/startkarten.ts`                                                                            | Karten oben im Buch (höchstens zwei, nach Rang)                          |
-| `PROFILKARTEN`                                  | `profilkarten/profilkarten.ts`                                                                    | Karten im Profil unter „Dein Fortschritt“                                |
-| `NACH_DER_RUNDE`                                | `ui/trainer/nachDerRunde.ts`                                                                      | Meldung am Ende jeder Trainerrunde (Rundenrahmen)                        |
-| `NACH_PARTIEENDE`                               | `speicher/partieprotokoll.ts`                                                                     | reine Funktion nach dem Ende jeder Partie (Rekorde, Duelle, Ziele)       |
-| `ZUSATZANSICHTEN`                               | `app/zusatzansichten.ts`                                                                          | eigene Bildschirme: `navigiere({ bildschirm: "zusatz", kennung, wert })` |
-| `SPRUENGE`                                      | `app/spruenge.ts`                                                                                 | Sprünge in der Adresse, etwa `#aufgabe-taktik-<id>`                      |
+| Liste                                           | Datei                                                                                             | Wofür                                                                               |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `ABZEICHEN` (aus `GRUNDABZEICHEN` + Teillisten) | `fortschritt/abzeichen.ts`; eigene Teilliste `fortschritt/abzeichen-<paket>.ts`                   | Abzeichen; Bedingung bekommt `g.daten` (alle Nutzerdaten)                           |
+| Abzeichenbilder                                 | `ordenkunst/entwuerfe.ts` (`NACHTABZEICHEN`); eigene Datei `ordenkunst/nachtabzeichen-<paket>.ts` | Bild je Abzeichen (Test prüft Text und Bild)                                        |
+| `ERFAHRUNGSQUELLEN`                             | `fortschritt/erfahrungsquellen.ts`                                                                | Erfahrungspunkte: Kennung, Gewicht, Zählung                                         |
+| `STARTKARTEN`                                   | `start/startkarten.ts`                                                                            | Karten oben im Buch (höchstens zwei, nach Rang)                                     |
+| `PROFILKARTEN`                                  | `profilkarten/profilkarten.ts`                                                                    | Karten im Profil unter „Dein Fortschritt“                                           |
+| `NACH_DER_RUNDE`                                | `ui/trainer/nachDerRunde.ts`                                                                      | Meldung am Ende jeder Trainerrunde (Rundenrahmen)                                   |
+| `NACH_PARTIEENDE`                               | `speicher/partieprotokoll.ts`                                                                     | reine Funktion nach dem Ende jeder Partie (Rekorde, Duelle, Ziele)                  |
+| `NACH_AUSWERTUNG`                               | `speicher/partieprotokoll.ts`                                                                     | reine Funktion, sobald eine Partie ausgewertet ist (Werte, Zugklassen; seit 0.3.21) |
+| `ZUSATZANSICHTEN`                               | `app/zusatzansichten.ts`                                                                          | eigene Bildschirme: `navigiere({ bildschirm: "zusatz", kennung, wert })`            |
+| `SPRUENGE`                                      | `app/spruenge.ts`                                                                                 | Sprünge in der Adresse, etwa `#aufgabe-taktik-<id>`                                 |
 
 Statt fester Router-Platzhalter (G5 alt) gibt es die Ansicht `zusatz`; `app/App.tsx`,
 `app/stapel.ts` und `app/stapelMerker.ts` ändert kein Arbeitschat. Feiern: `verdient` wird bei der

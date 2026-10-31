@@ -4053,6 +4053,8 @@
   "abzeichen.bedingung.wochenziel4": "In vier Wochen dein Wochenziel erreicht. Die Wochen müssen nicht hintereinander liegen.",
   "abzeichen.name.wochenziel12": "Zwölf gute Wochen",
   "abzeichen.bedingung.wochenziel12": "In zwölf Wochen dein Wochenziel erreicht. Die Wochen müssen nicht hintereinander liegen.",
+  "abzeichen.name.dreiRekorde": "Drei Rekorde",
+  "abzeichen.bedingung.dreiRekorde": "Drei verschiedene eigene Rekorde aufgestellt (Profil › Deine Rekorde).",
   "teilen.knopf": "Teilen",
   "teilen.knopfName": "Teilen: {name}",
   "teilen.art.orden": "Orden",

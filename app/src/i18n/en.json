@@ -4053,6 +4053,8 @@
   "abzeichen.bedingung.wochenziel4": "Reached your weekly goal in four weeks. The weeks do not have to be in a row.",
   "abzeichen.name.wochenziel12": "Twelve good weeks",
   "abzeichen.bedingung.wochenziel12": "Reached your weekly goal in twelve weeks. The weeks do not have to be in a row.",
+  "abzeichen.name.dreiRekorde": "Three records",
+  "abzeichen.bedingung.dreiRekorde": "Set three different personal records (Profile › Your records).",
   "teilen.knopf": "Share",
   "teilen.knopfName": "Share: {name}",
   "teilen.art.orden": "Medal",

@@ -15,6 +15,7 @@
  * Engine.
  * Abhängigkeiten: engine/engineDienst.ts, engine/spielbewerter.ts (wertFuer), spiel/, speicher/.
  */
+import { nachAuswertung } from "../../../speicher/partieprotokoll";
 import { useEffect, useState } from "react";
 import { AuftragAbgebrochen, engine, type Staerke } from "../../../engine/engineDienst";
 import { wertFuer } from "../../../engine/spielbewerter";
@@ -139,17 +140,24 @@ function gueltige(id: string, alle: readonly string[]): (Stellungswert | undefin
 
 /** Schreibt die fertige Auswertung in den Speicher und räumt den Zwischenspeicher. */
 function speichere(id: string, werte: readonly Stellungswert[]): void {
-  void aendere((d) => ({
-    ...d,
-    spiel: mitWerten(
-      d.spiel,
+  void aendere((d) =>
+    // Gamifizierung: Wirkungen nach der Auswertung (Rekorde aus Werten und Zugklassen).
+    nachAuswertung(
+      {
+        ...d,
+        spiel: mitWerten(
+          d.spiel,
+          id,
+          werte.map((w) => w.wert),
+          werte.map((w) => w.bester),
+          werte.map((w) => w.abstand),
+          werte.map((w) => w.variante),
+        ),
+      },
       id,
-      werte.map((w) => w.wert),
-      werte.map((w) => w.bester),
-      werte.map((w) => w.abstand),
-      werte.map((w) => w.variante),
+      new Date(),
     ),
-  }));
+  );
   zwischenspeicher.delete(id);
 }
 

@@ -33,6 +33,23 @@ const rekorde: Partiefolge = (daten, _partie, jetzt) =>
 /** Alle Wirkungen nach dem Partieende; Pakete tragen hier je eine Zeile ein. */
 export const NACH_PARTIEENDE: readonly Partiefolge[] = [protokolliere, rekorde];
 
+/** Eine Wirkung nach der Auswertung einer Partie (Werte, Zugklassen): Daten, Kennung, Zeitpunkt. */
+export type Auswertungsfolge = (daten: Nutzerdaten, partieId: string, jetzt: Date) => Nutzerdaten;
+
+/**
+ * Alle Wirkungen nach der Auswertung (Vorschlag aus P5, 31.10.2026): Was erst mit Werten und
+ * Zugklassen feststeht (Wertung, längste Partie ohne Patzer), prüft sich hier statt erst beim
+ * nächsten Öffnen der Rekordtafel. Pakete tragen je eine Zeile ein.
+ */
+export const NACH_AUSWERTUNG: readonly Auswertungsfolge[] = [
+  (daten, _id, jetzt) => pruefeRekorde(daten, { quelle: "partie" }, jetzt, REKORDARTEN).daten,
+];
+
+/** Wendet die Wirkungen nach der Auswertung an. Beispiel: Auswertung fertig → Rekorde geprüft. */
+export function nachAuswertung(daten: Nutzerdaten, partieId: string, jetzt: Date): Nutzerdaten {
+  return NACH_AUSWERTUNG.reduce((d, folge) => folge(d, partieId, jetzt), daten);
+}
+
 /**
  * Wendet die Wirkungen an, wenn die Partie gerade beendet wurde (vorher lief sie noch).
  *

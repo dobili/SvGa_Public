@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### P5: Rekordtafel (31.10.2026)
+### Neu in 0.3.21: Rekordtafel (Arbeitschat, 31.10.2026)
 
 Wettbewerb mit dir selbst statt Bestenliste: Im Profil steht die Karte „Deine Rekorde“ mit acht
 Rekorden (Taktik auf Zeit, beste Tagesserie, richtige Trainerantworten an einem Tag, Lerntage in
@@ -61,8 +61,11 @@ ohne Patzer), je mit Wert, Datum und Knopf „Versuchen“. Ein neuer Rekord ers
       Die Wertung zählt erst ab der zehnten gewerteten Partie einer Zeitklasse. Stimmen die Werte?
 - [ ] N2146. **Datensicherung:** Nach einer Sicherung und dem Einspielen sind die Rekorde mit
       ihren Daten noch da (sie stehen jetzt in den Nutzerdaten, nicht mehr nur auf dem Gerät).
+- [ ] N2147. **Abzeichen „Drei Rekorde“:** Sobald in Profil › Deine Rekorde drei verschiedene
+      Rekorde stehen, kommt das Abzeichen „Drei Rekorde“ mit eigenem Bild (goldener Stern mit
+      der 3). Passt das?
 
-### P10: Kombo und Fundstücke (31.10.2026)
+### Neu in 0.3.21: Kombo und Fundstücke (Arbeitschat, 31.10.2026)
 
 Kleine Momente beim Üben, in jedem Trainer mit Runde (Feld finden, Taktik, Endspiel, Struktur und
 alle übrigen mit „Aufgabe 1 von …“). Die Kurzpläne (Taktik auf Zeit, Tagesaufgabe) zeigen die

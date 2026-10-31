@@ -341,43 +341,6 @@ details[open] > summary:not(:has(.aufklapper))::after {
   color: var(--gold-text);
 }
 
-/* ---------- DS29: Glossar nach Anfangsbuchstaben ---------- */
-.buchstabenleiste {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.buchstabenleiste button {
-  min-width: var(--tippflaeche);
-  min-height: var(--tippflaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--radius);
-  background: var(--flaeche);
-  color: var(--text);
-  font: inherit;
-  font-weight: 700;
-}
-
-.buchstabengruppe {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--raster) / 2);
-}
-
-/* Trenner bleibt beim Scrollen oben stehen, bis der nächste Buchstabe kommt. */
-.buchstabe {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin: 0;
-  padding: 4px var(--raster);
-  background: var(--grund);
-  font-family: var(--schrift-titel);
-  font-size: var(--groesse-titel);
-  color: var(--gold-text);
-}
-
 /* ---------- DS27: Fortschritt als goldener Rand der Kapitelnummer (Kapitelnummer.tsx) ---------- */
 .kapitel-nummer.mit-anteil {
   border: 3px solid transparent;

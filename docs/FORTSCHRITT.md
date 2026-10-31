@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.36**: Steckbriefe als Eröffnungsbaum (H2), Glossar als Lexikonseite (I3), N2290–N2299. Offen aus dem Bericht: untere Leiste bei 360 px 10 px zu breit (prüfen).
+
 Stand: 31.10.2026 · **Version 0.3.35**: Bot rechnet erst nach der Zuganimation (Befund des Autors, N2315). **Danach (Wunsch des Autors):** Maia in einen eigenen Worker; allgemein prüfen, welche Rechnungen auf weitere Kerne gehören (Multicore). Vorher übrige Berichte übernehmen (Buchseite/Lernpfad, Nachschlagen, Trainerstart, Einstellungen, Auswertung, Spielen).
 
 Stand: 31.10.2026 · **Version 0.3.34**: Profil – Zurückgeholt (Verlauf je Phase, Schätzung aus Zügen, Stand in den Regalen; N2310–N2314). 0.3.32 auf main. **Nächster Schritt:** Hängen der Zuganimation gegen die Engine auf schwachen Handys (Befund des Autors); übrige Berichte übernehmen.

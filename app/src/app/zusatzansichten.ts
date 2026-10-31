@@ -17,6 +17,12 @@ import { ALBUM } from "../ui/komponenten/fundstuecke/album";
 import { Fundstueckalbum } from "../ui/komponenten/fundstuecke/Fundstueckalbum";
 import { NaechsterSchrittAnsicht } from "../ui/komponenten/start/NaechsterSchrittAnsicht";
 import { Rueckblick } from "../ui/bildschirme/Rueckblick";
+import {
+  ANSICHT_FALLENCHECKS,
+  ANSICHT_STECKBRIEF,
+  FallencheckAnsicht,
+  SteckbriefAnsicht,
+} from "../ui/bildschirme/Steckbriefe";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -35,6 +41,9 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: "naechster", Bildschirm: NaechsterSchrittAnsicht },
   // P12 Monatsrückblick, Wert ist der Monat „2026-10“ (ui/bildschirme/Rueckblick.tsx).
   { kennung: "rueckblick", Bildschirm: Rueckblick },
+  // Steckbriefe nach Entwurf H2 (31.10.2026): ein Steckbrief (Wert: Name), die Fallenchecks.
+  { kennung: ANSICHT_STECKBRIEF, Bildschirm: SteckbriefAnsicht },
+  { kennung: ANSICHT_FALLENCHECKS, Bildschirm: FallencheckAnsicht },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

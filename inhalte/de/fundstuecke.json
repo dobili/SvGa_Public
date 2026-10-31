@@ -1,0 +1,420 @@
+{
+  "$kommentar": "Fundstücke (Gamifizierung P10 b): Kennung, Art (geschichte, kurios, merksatz) und Kapitel des Buches (bei Merksätzen immer, sonst wenn passend). Die Texte stehen in app/src/i18n/de.json und en.json unter fundstueck.text.<kennung>; eigene Texte, Merksätze nur sinngemäß. Ein weiteres Fundstück: eine Zeile hier und je ein Text. Reihenfolge = Reihenfolge im Album.",
+  "fundstuecke": [
+    {
+      "kennung": "chaturanga",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "schah-mat",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "dame-neu",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "alfil",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "lewis",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "london-1851",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "unsterbliche",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "immergruene",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "morphy",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "oper",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "steinitz",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "lasker",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "capablanca",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "botwinnik",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "menchik",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "fide",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "olympiade",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "schachuhr",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "notation",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "elo",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "schachtuerke",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "deep-blue",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "reykjavik",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "polgar",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "philidor",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "ruy-lopez",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "greco",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "stroebeck",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "fernschach",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "carlsen",
+      "art": "geschichte",
+      "kapitel": null
+    },
+    {
+      "kennung": "zwanzig-zuege",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "85-milliarden",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "shannon",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "laengste-moeglich",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "laengste-turnier",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "narrenmatt",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "roesselsprung",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "acht-damen",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "neun-damen",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "unterverwandlung",
+      "art": "kurios",
+      "kapitel": 10
+    },
+    {
+      "kennung": "rochade",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "en-passant",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "patt-england",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "tote-stellung",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "zwei-springer",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "weiss-rechts",
+      "art": "kurios",
+      "kapitel": 0
+    },
+    {
+      "kennung": "halbes-brett",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "blindschach",
+      "art": "kurios",
+      "kapitel": 12
+    },
+    {
+      "kennung": "handy-engine",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "tablebase",
+      "art": "kurios",
+      "kapitel": 8
+    },
+    {
+      "kennung": "schach960",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "springer-rand",
+      "art": "kurios",
+      "kapitel": null
+    },
+    {
+      "kennung": "entwicklung",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "zentrum",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "figurenwerte",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "schlagreflex",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "rochieren",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "vergifteter-bauer",
+      "art": "merksatz",
+      "kapitel": 1
+    },
+    {
+      "kennung": "fianchetto",
+      "art": "merksatz",
+      "kapitel": 2
+    },
+    {
+      "kennung": "gambit",
+      "art": "merksatz",
+      "kapitel": 3
+    },
+    {
+      "kennung": "falle-geschenk",
+      "art": "merksatz",
+      "kapitel": 4
+    },
+    {
+      "kennung": "bauern-zurueck",
+      "art": "merksatz",
+      "kapitel": 5
+    },
+    {
+      "kennung": "isolani",
+      "art": "merksatz",
+      "kapitel": 5
+    },
+    {
+      "kennung": "vorposten",
+      "art": "merksatz",
+      "kapitel": 5
+    },
+    {
+      "kennung": "bauerninseln",
+      "art": "merksatz",
+      "kapitel": 5
+    },
+    {
+      "kennung": "zwei-schwaechen",
+      "art": "merksatz",
+      "kapitel": 6
+    },
+    {
+      "kennung": "prophylaxe",
+      "art": "merksatz",
+      "kapitel": 6
+    },
+    {
+      "kennung": "gabel",
+      "art": "merksatz",
+      "kapitel": 7
+    },
+    {
+      "kennung": "fesselung",
+      "art": "merksatz",
+      "kapitel": 7
+    },
+    {
+      "kennung": "ueberlastung",
+      "art": "merksatz",
+      "kapitel": 7
+    },
+    {
+      "kennung": "zwischenzug",
+      "art": "merksatz",
+      "kapitel": 7
+    },
+    {
+      "kennung": "grundreihe",
+      "art": "merksatz",
+      "kapitel": 7
+    },
+    {
+      "kennung": "koenig-aktiv",
+      "art": "merksatz",
+      "kapitel": 8
+    },
+    {
+      "kennung": "quadratregel",
+      "art": "merksatz",
+      "kapitel": 8
+    },
+    {
+      "kennung": "opposition",
+      "art": "merksatz",
+      "kapitel": 8
+    },
+    {
+      "kennung": "zugzwang",
+      "art": "merksatz",
+      "kapitel": 8
+    },
+    {
+      "kennung": "tarrasch",
+      "art": "merksatz",
+      "kapitel": 9
+    },
+    {
+      "kennung": "brueckenbau",
+      "art": "merksatz",
+      "kapitel": 9
+    },
+    {
+      "kennung": "philidor-stellung",
+      "art": "merksatz",
+      "kapitel": 9
+    },
+    {
+      "kennung": "ungleichfarbige",
+      "art": "merksatz",
+      "kapitel": 9
+    },
+    {
+      "kennung": "kandidaten",
+      "art": "merksatz",
+      "kapitel": 12
+    },
+    {
+      "kennung": "eigene-fehler",
+      "art": "merksatz",
+      "kapitel": 12
+    },
+    {
+      "kennung": "sicherheitsblick",
+      "art": "merksatz",
+      "kapitel": 12
+    }
+  ]
+}

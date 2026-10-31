@@ -131,3 +131,32 @@ export function spieleTon(art: Ton): void {
   if (art === "zug" || art === "schlag") spieleZugton(art);
   else spieleKlang(art);
 }
+
+/** Grundton der Kombo (Hz, e''), kurz und leise; je Halbton höher um den Faktor 2^(1/12). */
+const KOMBO_GRUNDTON = 659;
+const KOMBO_DAUER = 0.12;
+const KOMBO_LAUTSTAERKE = 0.22;
+const HALBTOENE_JE_OKTAVE = 12;
+
+/**
+ * Spielt den Ton der Kombo (Gamifizierung P10): ein kurzer Sinuston, je richtiger Antwort in
+ * Folge einen Halbton höher (training/kombo.ts, komboHalbtoene).
+ *
+ * Eingabe: Halbtöne über dem Grundton. Beispiel: dritte richtige Antwort in Folge → 0 (659 Hz),
+ * fünfte → 2 (etwa 740 Hz). Sonderfall: Ohne Web Audio oder vor der ersten Berührung bleibt es
+ * still.
+ */
+export function spieleKomboton(halbtoene: number): void {
+  const ctx = holeErzeuger();
+  if (!ctx || ctx.state !== "running") return;
+  const beginn = ctx.currentTime + KLANG_VERSATZ;
+  const quelle = ctx.createOscillator();
+  quelle.type = "sine";
+  quelle.frequency.value = KOMBO_GRUNDTON * 2 ** (halbtoene / HALBTOENE_JE_OKTAVE);
+  const regler = ctx.createGain();
+  regler.gain.setValueAtTime(KOMBO_LAUTSTAERKE, beginn);
+  regler.gain.exponentialRampToValueAtTime(STILLE, beginn + KOMBO_DAUER);
+  quelle.connect(regler).connect(ctx.destination);
+  quelle.start(beginn);
+  quelle.stop(beginn + KOMBO_DAUER);
+}

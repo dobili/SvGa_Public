@@ -1,0 +1,60 @@
+/*
+ * Fundstücke (Gamifizierung P10 b): die kleine Karte am Rundenende und im Album, Lücken im Album
+ * gestrichelt und leise.
+ */
+.fundstueck-meldung {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+  margin: var(--raster) 0;
+  padding: var(--raster);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+}
+
+.fundstueck-meldung .hinweis {
+  margin: 0;
+}
+
+.fundstueck-titel {
+  margin: 0;
+  color: var(--gold-text);
+  font-weight: 700;
+}
+
+.fundstueck {
+  display: grid;
+  gap: 4px;
+}
+
+.fundstueck p {
+  margin: 0;
+}
+
+.fundstueck-zeile {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+}
+
+.fundstueck-album {
+  display: grid;
+  gap: var(--raster);
+  margin: var(--raster) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fundstueck-album > li {
+  padding: var(--raster);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+}
+
+.fundstueck-album > li:has(.fundstueck-luecke) {
+  border-style: dashed;
+  border-color: var(--text-leise);
+}
+
+.fundstueck-luecke .fundstueck-text {
+  color: var(--text-leise);
+}

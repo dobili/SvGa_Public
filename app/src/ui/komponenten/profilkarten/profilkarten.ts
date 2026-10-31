@@ -8,6 +8,8 @@
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { fundstueckeSichtbar } from "../fundstuecke/album";
+import { FundstueckProfilkarte } from "../fundstuecke/FundstueckProfilkarte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -19,4 +21,6 @@ export interface Profilkarte {
 }
 
 /** Alle Karten im Profil; Pakete fügen je eine Zeile an. */
-export const PROFILKARTEN: readonly Profilkarte[] = [];
+export const PROFILKARTEN: readonly Profilkarte[] = [
+  { kennung: "fundstuecke", rang: 40, sichtbar: fundstueckeSichtbar, Karte: FundstueckProfilkarte },
+];

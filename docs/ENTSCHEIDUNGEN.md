@@ -4,6 +4,27 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P10: Kombo und Fundstücke (Welle 1, Zweig gami-p10-kombo, Opus)
+
+- **Kombo (P10 a):** Die Runde zählt richtige Antworten in Folge (`useRunde.ts`, Feld `folge`;
+  nur die erste, gezählte Antwort einer Aufgabe, „Aufgabe wiederholen“ ändert nichts). Der
+  Rundenrahmen zeigt neben dem Stand `bausteine/Kombo.tsx`: ab 3 ein Schild „3 in Folge“, bei 5
+  und 10 ein Funkeln (nur mit `feiereffekteAn()` und nicht bei „Bewegung reduzieren“), Ton über
+  `spieleKomboton` in `app/ton.ts` je Antwort einen Halbton höher, höchstens eine Oktave. Ein
+  Fehler beendet die Kombo ohne Meldung. Die Stufen sind eine Liste (`training/kombo.ts`,
+  `KOMBOSTUFEN`); jeder Trainer mit Rundenrahmen bekommt die Kombo von selbst. `useFreieRunde`
+  (Kurzpläne) zählt die Folge mit, zeigt sie aber nicht (gesperrte Taktikdateien).
+- **Fundstücke (P10 b):** 83 eigene Texte in Deutsch und Englisch (30 Geschichte, 22 Kurioses,
+  31 Merksätze sinngemäß mit Kapitel), Katalog `inhalte/de/fundstuecke.json` (Kennung, Art,
+  Kapitel), Texte als `fundstueck.text.<kennung>` in den Sprachdateien (Englisch kommt so mit dem
+  Sprachpaket). Auswahl in `training/fundstuecke.ts`: etwa jede zwölfte fertige Runde, höchstens
+  eins am Tag (Datum unter `verdient` „fundstueck:<k>“), keine Doppel, nur nach mindestens einer
+  richtigen Antwort. **Empfehlung, schon umgesetzt (Regel 9):** Das erste Fundstück kommt sicher,
+  sobald zwei Runden fertig sind, damit jeder das Album kennenlernt, ohne dass es angekündigt
+  wird. Meldung über `NACH_DER_RUNDE`, Album als Profilkarte (Rang 40, erst nach dem ersten Fund
+  sichtbar) und Bildschirm `zusatz`/`fundstuecke`. Weitere Fundstücke: eine Zeile im Katalog und
+  je ein Text; weitere Arten: eine Zeile in `FUNDSTUECKARTEN`.
+
 ## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
 
 - Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche

@@ -5,14 +5,16 @@
  * Rolle im Gesamtbild: Gemeinsame Hülle aller Trainer (AP 13). Die Aufgaben selbst stehen in den
  * Komponenten der einzelnen Trainer; sie bekommen die Runde und melden ihr Ergebnis. Nach der
  * Antwort steht „In die Lernsammlung“ für die Stellung, die die Aufgabe über sammelstellung.ts
- * meldet.
- * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, i18n.
+ * meldet. Neben dem Stand steht die Kombo (Gamifizierung P10, bausteine/Kombo.tsx) für jeden
+ * Trainer mit diesem Rahmen.
+ * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, Kombo, i18n.
  */
 import { RotateCcw } from "lucide-react";
 import { Fragment, useState } from "react";
 import { t } from "../../i18n/sprache";
 import type { TrainerKennung } from "../../training/trainer";
 import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken";
+import { Kombo } from "../komponenten/bausteine/Kombo";
 import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
 import { SammelstellungKontext } from "./sammelstellung";
 import { NACH_DER_RUNDE } from "./nachDerRunde";
@@ -94,13 +96,16 @@ export function Rundenrahmen({
     return <Ende kennung={kennung} runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
   return (
     <div className="trainerrunde" data-testid="trainerrunde">
-      <p className="hinweis" aria-live="polite" data-tour="runde-stand">
-        {t("trainer.stand", {
-          nummer: runde.index + 1,
-          anzahl: runde.anzahl,
-          richtig: runde.richtig,
-        })}
-      </p>
+      <div className="trainerrunde-kopf">
+        <p className="hinweis" aria-live="polite" data-tour="runde-stand">
+          {t("trainer.stand", {
+            nummer: runde.index + 1,
+            anzahl: runde.anzahl,
+            richtig: runde.richtig,
+          })}
+        </p>
+        <Kombo folge={runde.folge} />
+      </div>
       {/* Wie weit die Runde ist, auf einen Blick (DS6); der Satz darüber bleibt für Vorleser. */}
       <Fortschrittsbalken
         anteil={{ erreicht: runde.index, gesamt: runde.anzahl }}

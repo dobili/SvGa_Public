@@ -33,6 +33,52 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P10: Kombo und Fundstücke (31.10.2026)
+
+Kleine Momente beim Üben, in jedem Trainer mit Runde (Feld finden, Taktik, Endspiel, Struktur und
+alle übrigen mit „Aufgabe 1 von …“). Die Kurzpläne (Taktik auf Zeit, Tagesaufgabe) zeigen die
+Kombo nicht, weil sie ohne diesen Rundenrahmen laufen.
+
+- [ ] N2160. **Kombo ab drei:** Training › Koordinaten › Feld finden, drei Felder richtig
+      antippen. Neben „Aufgabe 4 von 16“ erscheint ein kleines goldenes Schild „3 in Folge“, bei
+      jeder weiteren richtigen Antwort zählt es weiter und springt kurz auf. Gut sichtbar, aber
+      nicht störend?
+- [ ] N2161. **Fehler beendet leise:** Danach ein falsches Feld antippen. Das Schild verschwindet
+      ohne Meldung, nach drei weiteren richtigen kommt es wieder. Auch „Aufgabe wiederholen“
+      ändert die Folge nicht mehr (die erste Antwort zählt). Passt das?
+- [ ] N2162. **Funkeln bei 5 und 10:** Bei 5 und bei 10 in Folge funkeln acht kleine goldene
+      Punkte um das Schild. Mit Profil › Einstellungen › Bedienung › Feiereffekte „aus“ bleibt
+      nur das Schild, ohne Funkeln. Stimmt das?
+- [ ] N2163. **Ton:** Mit Ton an (Einstellungen) klingt ab der dritten richtigen Antwort in Folge
+      ein kurzer heller Ton, jedes Mal einen Halbton höher (höchstens eine Oktave). Ein Fehler
+      bleibt still. Angenehm oder zu viel?
+- [ ] N2164. **Erstes Fundstück:** Nach dem Update kommt das erste Fundstück am Ende einer
+      Trainerrunde sicher, sobald du schon zwei Runden fertig hast (sonst in der dritten). Unter
+      dem Ergebnis steht „Fundstück!“ mit einer kleinen Karte: eine Geschichte, etwas Kurioses
+      oder ein Merksatz mit Kapitel, darunter „Liegt jetzt in deinem Album (1 von 83)“ und „Zum
+      Album“. Erscheint es so?
+- [ ] N2165. **Selten und höchstens eins am Tag:** Danach kommt ein Fundstück nur noch etwa jede
+      zwölfte Runde, nie zweimal am selben Tag und nie nach einer Runde ganz ohne richtige
+      Antwort; keins kommt doppelt. Fühlt sich das selten genug, aber nicht zu selten an?
+      (Empfehlung, schon umgesetzt: das erste sicher, damit jeder das Album kennenlernt, ohne
+      dass es angekündigt wird; Widerspruch genügt.)
+- [ ] N2166. **Album im Profil:** Nach dem ersten Fund steht im Profil unter „Dein Fortschritt“
+      die Karte „Fundstücke“ mit „1 von 83 gefunden“ und „Album öffnen“. Das Album zeigt alle 83
+      Plätze in fester Reihenfolge: gefundene als Karte, die übrigen gestrichelt als „Nr. 12 ·
+      Noch nicht gefunden“. Vor dem ersten Fund gibt es die Karte nicht (Überraschung statt
+      Versprechen). Passt das?
+- [ ] N2167. **Texte lesen:** 83 eigene Texte, 30 aus der Geschichte, 22 Kuriositäten,
+      31 Merksätze. Die Merksätze geben den Gedanken eines Kapitels sinngemäß wieder (etwa
+      „Merksatz · Kapitel 7: Wo zwei Figuren ungedeckt stehen, lohnt sich der Blick nach einer
+      Gabel.“), keine wörtlichen Buchsätze. Sie gelten nach Regel 9 vorerst als abgesegnet; bitte
+      beim Lesen melden, wenn ein Kapitel nicht passt oder ein Satz anders klingen soll
+      (Kennung steht im Katalog inhalte/de/fundstuecke.json, Text in den Sprachdateien unter
+      fundstueck.text.…).
+- [ ] N2168. **Englisch:** Profil › Einstellungen › Sprache Englisch. Schild „3 in a row“,
+      Fundstück „A find!“, Album „Finds“, alle Texte auf Englisch. Stimmt das?
+- [ ] N2169. **Datensicherung:** Nach einem Fund eine Sicherung erstellen und wieder einspielen:
+      Das Fundstück liegt weiter im Album, und am selben Tag kommt kein zweites. Stimmt das?
+
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
 Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je

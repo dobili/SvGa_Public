@@ -9,6 +9,7 @@
  */
 import type { ComponentType } from "react";
 import type { TrainerKennung } from "../../training/trainer";
+import { RekordNachRunde } from "../komponenten/rekorde/NeueRekorde";
 
 /** Was eine Meldung über die fertige Runde weiß. */
 export interface Rundenergebnis {
@@ -25,4 +26,6 @@ export interface NachDerRunde {
 }
 
 /** Alle Meldungen; Pakete fügen je eine Zeile an. */
-export const NACH_DER_RUNDE: readonly NachDerRunde[] = [];
+export const NACH_DER_RUNDE: readonly NachDerRunde[] = [
+  { kennung: "rekorde", Meldung: RekordNachRunde },
+];

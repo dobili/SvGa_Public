@@ -6,16 +6,21 @@
  * die Zeitaufgaben bei chess.com und Lichess). Die Tagesaufgabe ist eine Aufgabe pro Tag; die
  * Serie zählt die Tage in Folge, an denen sie bearbeitet wurde. Beides nutzt die Aufgaben des
  * Taktiktrainers (Taktikaufgabe.tsx) und geht erst am Ende als Durchgang in den Fortschritt.
+ * Seit der Rekordtafel (Gamifizierung P5) steht die beste Zeitrunde als Rekord „taktikZeit“ in den
+ * Nutzerdaten (und damit in der Datensicherung), nicht mehr im Merker; die beste Tagesserie wird
+ * zusätzlich als Rekord „tagesserie“ geschrieben. Ein neuer Rekord erscheint als Meldung.
  * Abhängigkeiten: training/kurzplaene.ts, training/taktiktrainer.ts, useFreieRunde.ts,
- * speicher/fortschritt.ts, app/merker.ts, i18n.
+ * speicher/fortschritt.ts, training/rekorde.ts, app/merker.ts, i18n.
  */
 import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { ladeTaktik, type Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { zaehleAktivitaet } from "../../speicher/aktivitaet";
+import type { Nutzerdaten } from "../../speicher/format";
 import { notiereDurchgang } from "../../speicher/fortschritt";
-import { aendere } from "../../speicher/speicher";
+import { REKORD_TAKTIKZEIT } from "../../speicher/rekordmerker";
+import { useSpeicher } from "../../speicher/speicher";
 import {
   geltendeSerie,
   serieAus,
@@ -27,16 +32,18 @@ import {
   ZEITRUNDE_AUFGABEN,
   ZEITRUNDE_FEHLER,
 } from "../../training/kurzplaene";
+import type { Verbesserung } from "../../training/rekorde";
 import { taktikrunde } from "../../training/taktiktrainer";
 import { ZUFALL } from "../../training/zufall";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { NeueRekorde } from "../komponenten/rekorde/NeueRekorde";
+import { aendereMitRekorden } from "../komponenten/rekorde/useRekordpruefung";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Taktikaufgabe } from "./Taktikaufgabe";
 import { useJetzt } from "./usePlanstand";
 import { useFreieRunde } from "./useFreieRunde";
 
 const MERKER_SERIE = "tagesserie";
-const MERKER_BESTE_ZEITRUNDE = "taktikzeitBeste";
 const LEICHTESTE_STUFE = 1;
 const ZWEITLEICHTESTE_STUFE = 2;
 const SEKUNDEN_JE_MINUTE = 60;
@@ -108,6 +115,8 @@ export function TaktikAufZeit({ zurueck }: { zurueck: () => void }) {
   const [lauf, setzeLauf] = useState(0);
   const [aufgaben, setzeAufgaben] = useState<readonly Aufgabe[] | null>(null);
   const [ergebnis, setzeErgebnis] = useState<{ richtig: number; falsch: number } | null>(null);
+  const [neue, setzeNeue] = useState<readonly Verbesserung[]>([]);
+  const beste = useSpeicher((z) => z.daten.rekorde[REKORD_TAKTIKZEIT]?.wert ?? 0);
   if (daten.art === "laedt") return <p className="lade">…</p>;
   if (daten.art === "fehler")
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
@@ -118,17 +127,17 @@ export function TaktikAufZeit({ zurueck }: { zurueck: () => void }) {
     setzeLauf(lauf + 1);
   };
   const beiEnde = (richtig: number, falsch: number) => {
-    const beste = Number(liesMerker(MERKER_BESTE_ZEITRUNDE) ?? 0);
-    if (richtig > beste) schreibeMerker(MERKER_BESTE_ZEITRUNDE, String(richtig));
     setzeErgebnis({ richtig, falsch });
+    setzeNeue([]);
     setzeAufgaben(null);
     if (richtig + falsch === 0) return;
-    void aendere((d) =>
-      notiereDurchgang(d, "kurzplaene", { aufgaben: richtig + falsch, richtig }, new Date()),
-    );
+    const durchgang = { aufgaben: richtig + falsch, richtig };
+    void aendereMitRekorden((d, jetzt) => notiereDurchgang(d, "kurzplaene", durchgang, jetzt), {
+      quelle: "zeitrunde",
+      wert: richtig,
+    }).then(setzeNeue);
   };
   if (aufgaben) return <Zeitrunde key={lauf} aufgaben={aufgaben} beiEnde={beiEnde} />;
-  const beste = Number(liesMerker(MERKER_BESTE_ZEITRUNDE) ?? 0);
   return (
     <div className="trainerrunde trainerwahl" data-testid="zeit-start">
       <p>{t("kurzplan.zeitText", { fehler: ZEITRUNDE_FEHLER })}</p>
@@ -137,6 +146,7 @@ export function TaktikAufZeit({ zurueck }: { zurueck: () => void }) {
           {t("kurzplan.zeitErgebnis", { richtig: ergebnis.richtig, falsch: ergebnis.falsch })}
         </p>
       )}
+      <NeueRekorde neue={neue} />
       {beste > 0 && <p className="hinweis">{t("kurzplan.zeitBeste", { anzahl: beste })}</p>}
       <button type="button" className="knopf-haupt" onClick={starte}>
         <Knopfsymbol art="starten" />
@@ -149,11 +159,23 @@ export function TaktikAufZeit({ zurueck }: { zurueck: () => void }) {
   );
 }
 
+/** Die bearbeitete Tagesaufgabe als Durchgang und im Tagesprotokoll. */
+function mitTagesaufgabe(daten: Nutzerdaten, richtig: boolean, jetzt: Date): Nutzerdaten {
+  const durchgang = { aufgaben: 1, richtig: richtig ? 1 : 0 };
+  return zaehleAktivitaet(
+    notiereDurchgang(daten, "kurzplaene", durchgang, jetzt),
+    "tagesaufgabe",
+    1,
+    jetzt,
+  );
+}
+
 /** Die Tagesaufgabe: eine Aufgabe pro Tag, danach zählt die Serie. */
 export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
   const daten = useDaten(ladeTaktik, "trainer-taktik");
   const { runde } = useFreieRunde(1);
   const [serie, setzeSerie] = useState(() => serieAus(liesMerker(MERKER_SERIE)));
+  const [neue, setzeNeue] = useState<readonly Verbesserung[]>([]);
   const heute = new Date();
   const fertig = runde.ergebnis !== null;
   // Die erste Antwort schließt die Aufgabe ab: Serie eintragen und als Durchgang zählen.
@@ -161,14 +183,10 @@ export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
     const neu = serieNach(serieAus(liesMerker(MERKER_SERIE)), new Date());
     schreibeMerker(MERKER_SERIE, JSON.stringify(neu));
     setzeSerie(neu);
-    void aendere((d) =>
-      zaehleAktivitaet(
-        notiereDurchgang(d, "kurzplaene", { aufgaben: 1, richtig: richtig ? 1 : 0 }, new Date()),
-        "tagesaufgabe",
-        1,
-        new Date(),
-      ),
-    );
+    void aendereMitRekorden((d, jetzt) => mitTagesaufgabe(d, richtig, jetzt), {
+      quelle: "tagesserie",
+      wert: neu.beste,
+    }).then(setzeNeue);
   };
   const mitAbschluss = {
     ...runde,
@@ -195,6 +213,7 @@ export function Tagesaufgabe({ zurueck }: { zurueck: () => void }) {
         <p className="hinweis">{t("trainer.keineAufgaben")}</p>
       )}
       {fertig && <p className="meldung">{t("kurzplan.tagFertig")}</p>}
+      <NeueRekorde neue={neue} />
       <button type="button" className="knopf-link" onClick={zurueck}>
         {t("kurzplan.zurueck")}
       </button>

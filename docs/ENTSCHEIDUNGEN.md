@@ -4,6 +4,35 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P5: Rekordtafel (Arbeitschat, Zweig `gami-p5-rekorde`, Opus)
+
+- **Rekordarten als Liste** (`training/rekordarten.ts`, Wunsch des Autors: eintragen statt
+  umbauen): je Art Kennung, Quellen, Wert aus den Nutzerdaten (oder vom Anlass mitgebracht) und
+  Ziel des Knopfs „Versuchen“; Texte `rekorde.art.<k>` und `rekorde.wert.<k>`. Ein späterer
+  Trainer trägt eine Zeile ein und ruft `pruefeRekorde(daten, { quelle, wert }, jetzt, REKORDARTEN)`
+  auf; mit Rundenrahmen genügt die Quelle „runde“. Größer ist immer besser; nur ein echter
+  Zuwachs ist ein Rekord (gleich viel und 0 nicht).
+- **Acht Rekorde:** Taktik auf Zeit, beste Tagesserie, richtige Trainerantworten an einem Tag,
+  Lerntage in einer Woche (Lernarten wie beim Wochenziel), beste Quote „Zug erraten“ (ab 10
+  Versuchen), höchste Wertung (ohne die vorläufigen ersten neun Partien einer Zeitklasse, sonst
+  wäre ein Glückssieg in Partie 1 ein Rekord für immer), stärkster besiegter Bot (Zahl des Bots in
+  der Zeitklasse des Sieges), längste ausgewertete Partie ohne Patzer des Lesers (Halbzüge; die
+  Werte stehen schon im Partieeintrag). Die Aufgabenserie ohne Fehler folgt mit dem Serienmodus
+  (Taktiktrainer, gesperrt).
+- **Wann geprüft wird:** Rundenende (`NACH_DER_RUNDE`, Meldung), Partieende (`NACH_PARTIEENDE`,
+  still), Zeitrunde und Tagesaufgabe (Meldung), beim Öffnen der Tafel alle Werte aus den Daten
+  (still). Wertung und Zugklassen stehen erst nach der Auswertung fest; sie kommen beim nächsten
+  Öffnen der Tafel oder nach der nächsten Partie dazu, mit dem Datum dieser Prüfung.
+- **Erste Werte werden gemeldet** („Neuer Rekord: 16 richtige Antworten.“ ohne „vorher“), damit
+  die Tafel sichtbar wächst. Rückbau leicht, wenn es zu oft ist (N2141).
+- Die beste Zeitrunde steht nur noch als Rekord in den Nutzerdaten (und so in der Sicherung); der
+  alte Merker wird beim Laden weiter übernommen (`rekordmerker.ts`), aber nicht mehr geschrieben.
+  Die Tagesserie bleibt im Merker (sie ist der laufende Stand); ihr Bestwert geht als Rekord mit.
+- „Verdient“ bekommt beim ersten Rekord jeder Art `rekord:<k>` (erstes Datum bleibt).
+- Kein Abzeichen „Drei Rekorde“: Es bräuchte Texte unter `abzeichen.`, der Auftrag erlaubte nur
+  `rekorde.`; Vorschlag im Bericht an den Koordinierungs-Chat.
+- Testpunkte N2140 bis N2146.
+
 ## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
 
 - Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche

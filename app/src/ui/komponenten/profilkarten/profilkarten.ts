@@ -8,6 +8,7 @@
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { Rekordtafel } from "../rekorde/Rekordtafel";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
@@ -19,4 +20,6 @@ export interface Profilkarte {
 }
 
 /** Alle Karten im Profil; Pakete fügen je eine Zeile an. */
-export const PROFILKARTEN: readonly Profilkarte[] = [];
+export const PROFILKARTEN: readonly Profilkarte[] = [
+  { kennung: "rekorde", rang: 20, sichtbar: () => true, Karte: Rekordtafel },
+];

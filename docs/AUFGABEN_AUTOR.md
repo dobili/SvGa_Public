@@ -33,6 +33,58 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Buchseite und Lernpfad neu (31.10.2026)
+
+Die Startseite „Buch“ und „Dein Weg durchs Buch“ sind nach deiner Wahl der Entwürfe neu gebaut:
+A2 „Heute“ und B1 „Fünf Landschaften“. Weniger Text, mehr Bild; die Kapitel beginnen weiter oben.
+Bitte jeweils im dunklen und im hellen Modus ansehen (Profil › Einstellungen › Darstellung).
+
+- [ ] N2250. **Kopf der Buchseite:** Oben „SCHACH VON GRUND AUF“ und rechts zwei Symbole: der Weg
+      (geschwungene Linie, öffnet „Dein Weg durchs Buch“) und der Kompass (Tour). Darunter
+      „Buch“ und gleich daneben das Feld „z. B. 1.26“ mit „Öffnen“. Antippen des Feldes zeigt
+      die Zahlenleiste; „1.26“ und „Öffnen“ öffnen die Abbildung. „Zuletzt: Abb. …“ gibt es dort
+      nicht mehr, dafür die Kachel „Weiterlesen“ (N2252).
+- [ ] N2251. **Karte „Heute“ mit Wochenziel:** Oben „Heute“, rechts eine Flamme mit „3 von 4
+      Tagen“ und ein Stift. Darunter sieben Kreise Mo bis So, durch eine Linie verbunden: Tage, an
+      denen du etwas gemacht hast, sind gold gefüllt, heute hat einen goldenen Ring. Der Stift
+      zeigt die Knöpfe 2 3 4 5 7 mit „Abbrechen“ und „Kein Wochenziel“. Ist das Ziel erreicht,
+      steht darunter „Wochenziel geschafft!“ (einmal mit kleinem Feuerwerk).
+- [ ] N2252. **Nächster Schritt als Kacheln:** In der Karte eine große helle Kachel (im hellen
+      Modus dunkel) mit Symbol, Titel und kurzer Zeile, etwa „Tagesaufgabe – 1 Stellung für
+      heute“ oder „Wiederholen – 9 Stellungen · etwa 6 Min“, rechts ein Pfeil. Darunter zwei
+      kleine Kacheln mit den Alternativen (etwa „Weiterlesen – Abb. 6.20“, „Übungen – Kapitel
+      5“). Jede Kachel führt mit einem Tipp hin.
+- [ ] N2253. **Nicht jetzt:** Rechts neben den kleinen Kacheln ein kleines Kreuz. Ein Tipp
+      blendet die Kacheln bis morgen aus; Tageskette und Woche bleiben. Ohne Lerntag
+      verschwindet dann die ganze Karte bis morgen.
+- [ ] N2254. **Woche als Reiter:** Unten in der Karte drei runde Reiter „Aufträge 1/3“ (mit
+      kurzem goldenem Strich), „Plan“ (an einem Übungstag „heute“, sonst die Uhrzeit) und „Ziele“
+      (mit Zahl der angehefteten Ziele). Ein Tipp klappt den Abschnitt darunter auf, ein zweiter
+      Tipp wieder zu. Inhalt wie bisher: Aufträge mit Tauschen, Übungsplan mit Kalender, eigene
+      Ziele. Ist „Reiter nebeneinander“ statt drei Zeilen für dich gut bedienbar?
+- [ ] N2255. **Ohne Wochenziel:** Auf einem Gerät ohne Wochenziel (Stift › „Kein Wochenziel“)
+      steht unter „Heute“ nur die Zeile „Tage pro Woche 2 3 4 5 7“ (die 3 mit goldenem Rand als
+      Vorschlag). Rechts oben „Wochenziel?“ klappt die Erklärung des Lerntags und „Später“ auf;
+      „Später“ blendet die Frage für diese Woche aus.
+- [ ] N2256. **Kapitel weit oben:** Auf deinem Handy beginnt die Liste der Kapitel in der oberen
+      Hälfte des Bildschirms, solange nur die Karte „Heute“ da ist (am Monatsanfang kann der
+      Monatsrückblick als zweite Karte dazukommen; dann rutschen die Kapitel tiefer).
+- [ ] N2257. **Lernpfad, Landschaften:** Weg-Symbol oben rechts im Buch. Der goldene Weg führt
+      durch fünf Bänder, jedes mit „Teil 1 … Teil 5“ und Namen: Grundlagen auf Schachbrettmuster,
+      Eröffnung in der Morgendämmerung mit Sonne, Mittelspiel über Hügel mit Türmen, Endspiel
+      unter Nachthimmel mit Mond und wenigen Sternen, Praxis im Turniersaal mit Lampen, Tischen
+      und Uhren. Gefallen dir die Bilder, hell wie dunkel?
+- [ ] N2258. **Lernpfad, Stationen:** Fertige Kapitel sind goldene Scheiben mit Nummer und
+      kleinem Haken, darunter „fertig“. Das aktuelle Kapitel ist größer, mit goldenem Ring für
+      den Stand, leichtem Schein und der Marke „Du bist hier“; angefangene haben einen
+      Teilring und „12 von 40“; offene sind dunkel mit grauem Rand. Ein Tipp öffnet das Kapitel.
+      Oben steht der Satz, was bis zum Ende des Kapitels fehlt, mit dem Ring des Kapitels daneben.
+- [ ] N2259. **Lernpfad, Orden und Lesbarkeit:** Am Ende jedes Teils das Bild des Ordens, offen
+      als graue Silhouette, daneben „Orden „Teil Mittelspiel““ und „verdient“ bzw. „noch 3
+      Kapitel“. Alle Kapitelnamen stehen auf einem leicht deckenden Grund und sind auf jedem
+      Bild gut lesbar. Mit „Bewegung reduzieren“ (Bedienungshilfen des Handys) schimmert die
+      aktuelle Station nicht.
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

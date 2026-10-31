@@ -22,6 +22,8 @@ import {
   type Haengeaufgabe,
   type Zaehlaufgabe,
 } from "../../training/zaehltrainer";
+import { bilanzkennung, haengekennung } from "../../training/wiederholbar";
+import { antworteMitKarte } from "./kartenantwort";
 import { abgleichsfelder, umschalten } from "./abgleich";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
@@ -190,11 +192,13 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
     : [{ typ: "feld", farbe: "rot", feld: aufgabe.feld }];
   const waehle = (wert: number) => {
     setzeBilanz(wert);
-    if (!genau) runde.beantworte(pruefeBilanz(aufgabe, wert));
+    if (!genau)
+      antworteMitKarte(runde, "zaehlen", bilanzkennung(aufgabe), pruefeBilanz(aufgabe, wert));
   };
   const pruefeGenau = () => {
     if (angreifer === null || verteidiger === null || bilanz === null) return;
-    runde.beantworte(pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig);
+    const richtig = pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig;
+    antworteMitKarte(runde, "zaehlen", bilanzkennung(aufgabe), richtig);
   };
   return (
     <>
@@ -324,7 +328,9 @@ export function Haengeaufgabe({ aufgabe, runde }: { aufgabe: Haengeaufgabe; rund
         <button
           type="button"
           className="knopf-haupt"
-          onClick={() => runde.beantworte(vergleich.richtig)}
+          onClick={() =>
+            antworteMitKarte(runde, "zaehlen", haengekennung(aufgabe), vergleich.richtig)
+          }
         >
           {getippt.length === 0 ? t("zaehltrainer.keineHaengt") : t("trainer.pruefen")}
         </button>

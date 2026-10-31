@@ -10,7 +10,7 @@
  * je nach Übungsart 5 bis 16 Aufgaben und zählt am Ende als Durchgang im Fortschritt.
  * Abhängigkeiten: training/*, ui/trainer/*, Navigation, i18n.
  */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
 import { denkrunde } from "../../training/denkroutinetrainer";
@@ -26,7 +26,10 @@ import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentra
 import type { TrainerKennung } from "../../training/trainer";
 import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { rundeNachStufe, TRAINERSTUFEN, type Trainerstufe } from "../../training/stufen";
+import { lapaufgabenAus } from "../../training/wiederholbar";
 import { ZUFALL } from "../../training/zufall";
+import { useFaelligeAufgaben } from "../trainer/kartenantwort";
+import { Wiederholungsknopf } from "../trainer/Wiederholungsknopf";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import {
@@ -196,6 +199,34 @@ function Stufenzeile({
   );
 }
 
+/**
+ * Fällige LAP-Aufgaben der Planbilanz-Übung als eigene Runde (Punkt B4 des Nebenchats); ohne
+ * fällige Aufgaben steht nichts da.
+ */
+function LapWiederholung({
+  stellungen,
+  kennung,
+}: {
+  stellungen: readonly Buchstellung[];
+  kennung: TrainerKennung;
+}) {
+  const faellig = useFaelligeAufgaben("planbilanz");
+  const vorhanden = useMemo(() => lapaufgabenAus(stellungen, faellig), [stellungen, faellig]);
+  const [laeuft, setzeLaeuft] = useState(false);
+  if (!laeuft)
+    return <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(true)} />;
+  return (
+    <Rundenablauf
+      kennung={kennung}
+      erzeuge={() =>
+        vorhanden.slice(0, ANZAHL.lap).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />)
+      }
+      nochmal={() => setzeLaeuft(false)}
+      zurAuswahl={() => setzeLaeuft(false)}
+    />
+  );
+}
+
 /** Auswahl der Übungsart. */
 function Auswahl({
   arten,
@@ -231,7 +262,13 @@ function Inhalt({
   const [stufe, setzeStufe] = useState<Trainerstufe | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
   if (arten.length === 0) return <p className="hinweis">{t("training.folgt")}</p>;
-  if (art === null) return <Auswahl arten={arten} waehle={setzeArt} />;
+  if (art === null)
+    return (
+      <>
+        {kennung === "planbilanz" && <LapWiederholung stellungen={stellungen} kennung={kennung} />}
+        <Auswahl arten={arten} waehle={setzeArt} />
+      </>
+    );
   return (
     <>
       {hatStufen(art) && <Stufenzeile art={art} stufe={stufe} setze={setzeStufe} />}

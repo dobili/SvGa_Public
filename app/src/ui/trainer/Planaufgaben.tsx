@@ -21,6 +21,8 @@ import {
 } from "../../training/planbilanztrainer";
 import { lapbegruendung } from "../../training/lapbegruendung";
 import { EngineEinschaetzung } from "./EngineEinschaetzung";
+import { lapkennung } from "../../training/wiederholbar";
+import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -137,7 +139,14 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           type="button"
           className="knopf-haupt"
           disabled={figur === null || ziel === null}
-          onClick={() => runde.beantworte(figur === aufgabe.figur && ziel === aufgabe.ziel)}
+          onClick={() =>
+            antworteMitKarte(
+              runde,
+              "planbilanz",
+              lapkennung(aufgabe),
+              figur === aufgabe.figur && ziel === aufgabe.ziel,
+            )
+          }
         >
           {t("trainer.pruefen")}
         </button>

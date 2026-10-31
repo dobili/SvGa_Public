@@ -6,7 +6,7 @@
  * viele Schachs und Schläge man gleichzeitig finden muss (Wunsch des Autors, 30.10.2026).
  * Abhängigkeiten: training/roentgenstufen.ts, daten/laden.ts, Rundenablauf, Roentgenaufgabe.
  */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ladeIndex, ladeKapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { buchstellungenAus } from "../../training/buchstellungen";
@@ -20,7 +20,10 @@ import { ZUFALL } from "../../training/zufall";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Roentgenaufgabe } from "./Roentgentrainer";
+import { roentgenaufgabenAus } from "../../training/wiederholbar";
+import { useFaelligeAufgaben } from "./kartenantwort";
 import { Rundenablauf } from "./Rundenablauf";
+import { Wiederholungsknopf } from "./Wiederholungsknopf";
 
 /** Aufgaben je Runde (wie bisher). */
 const AUFGABEN_JE_RUNDE = 5;
@@ -73,20 +76,27 @@ function Roentgenstufenwahl({
 export function RoentgenBereich() {
   const daten = useDaten(ladeRoentgenstellungen, "roentgenstellungen");
   const [stufe, setzeStufe] = useState<Roentgenstufe | null>(null);
-  const [laeuft, setzeLaeuft] = useState(false);
+  /** null: Auswahl; „runde“: nach Stufe; „wiederholung“: die fälligen Aufgaben. */
+  const [laeuft, setzeLaeuft] = useState<"runde" | "wiederholung" | null>(null);
   const [durchlauf, setzeDurchlauf] = useState(0);
+  const faellig = useFaelligeAufgaben("roentgen");
+  const vorhanden = useMemo(
+    () => (daten.art === "fertig" ? roentgenaufgabenAus(daten.wert, faellig) : []),
+    [daten, faellig],
+  );
   if (daten.art === "laedt") return <p className="lade">…</p>;
   if (daten.art === "fehler")
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
-  if (!laeuft)
+  if (laeuft === null)
     return (
       <div
         className="trainerrunde trainerwahl"
         data-testid="roentgen-wahl"
         data-tour="trainer-wahl"
       >
+        <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft("wiederholung")} />
         <Roentgenstufenwahl stufe={stufe} setze={setzeStufe} />
-        <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft(true)}>
+        <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft("runde")}>
           <Knopfsymbol art="starten" />
           {t("taktiktrainer.starten")}
         </button>
@@ -94,15 +104,18 @@ export function RoentgenBereich() {
     );
   return (
     <Rundenablauf
-      key={`${stufe}-${durchlauf}`}
+      key={`${laeuft}-${stufe}-${durchlauf}`}
       kennung="roentgen"
       erzeuge={() =>
-        roentgenrundeNachStufe(daten.wert, stufe, AUFGABEN_JE_RUNDE, ZUFALL).map((a) => (r) => (
-          <Roentgenaufgabe aufgabe={a} runde={r} />
-        ))
+        (laeuft === "wiederholung"
+          ? vorhanden.slice(0, AUFGABEN_JE_RUNDE)
+          : roentgenrundeNachStufe(daten.wert, stufe, AUFGABEN_JE_RUNDE, ZUFALL)
+        ).map((a) => (r) => <Roentgenaufgabe aufgabe={a} runde={r} />)
       }
-      nochmal={() => setzeDurchlauf(durchlauf + 1)}
-      zurAuswahl={() => setzeLaeuft(false)}
+      nochmal={() =>
+        laeuft === "wiederholung" ? setzeLaeuft(null) : setzeDurchlauf(durchlauf + 1)
+      }
+      zurAuswahl={() => setzeLaeuft(null)}
     />
   );
 }

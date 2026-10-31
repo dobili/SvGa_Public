@@ -54,3 +54,25 @@ test.describe("Sprachangebot beim ersten Start", () => {
     await expect(page.getByTestId("sprachangebot")).toHaveCount(0);
   });
 });
+
+test("Wiederholung: falsch gezählte Aufgabe kommt im Zähltrainer wieder", async ({ page }) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zaehlen");
+  await page.getByRole("button", { name: /Bilanz zählen/ }).click();
+  // Ein Tipp auf „+9“ ist fast immer falsch; dann legt die App eine Karte an.
+  await page.getByTestId("zaehl-ergebnisse").getByRole("button", { name: "+9" }).click();
+  await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
+  const falsch = await page.getByText("Nicht ganz").count();
+  test.skip(falsch === 0, "Zufällig war +9 richtig; dann gibt es keine Karte.");
+  await page.clock.fastForward("48:00:00");
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await leiste.getByRole("button", { name: "Training" }).click();
+  await page
+    .getByTestId("faellig")
+    .getByRole("button", { name: /Zähltrainer: 1 fällig/ })
+    .click();
+  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
+});

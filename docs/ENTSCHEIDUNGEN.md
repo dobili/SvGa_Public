@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P4 und P11: Wochenziel und Übungsplan (Arbeitschat C, Welle 1)
+
+- **Wochenkarte** (`ui/komponenten/start/Wochenkarte.tsx`, Rang 20 in `STARTKARTEN`): Mit Ziel
+  immer sichtbar; ohne Ziel fragt sie erst nach dem ersten Lerntag (ruhiger Einstieg) und nach
+  „Später“ erst in der nächsten Woche wieder (Merker `wochenzielSpaeter`). Kein Vorgabeziel,
+  3 Tage hervorgehoben (E5). Ziel ändern nur über die Karte, weil es den Reiter „Training“ in den
+  Einstellungen seit 0.3.2 nicht mehr gibt.
+- **Erreichte Wochen ohne Zurücksetzen** (`training/wochenziel.ts`): abgeleitet aus dem
+  Tagesprotokoll mit dem jetzigen Ziel, dazu jede einmal erreichte Woche, die die Karte im Feld
+  `verdient` als „woche:<Montag>“ festhält. Warum: Ein später erhöhtes Ziel darf keine erreichte
+  Woche wegnehmen (nichts verfällt), und `wochen` hat nur das Feld `ziel`. Ein gesenktes Ziel
+  zählt frühere Wochen dazu, die es erreicht hätten (geschenkter Fortschritt). Der Schlüssel dient
+  zugleich als „einmal je Woche feiern“ (kleines Feuerwerk, Schalter „Feiereffekte“).
+- **Lerntag** wie in `speicher/aktivitaet.ts` (`LERNARTEN`); Woche ab Montag, Ortszeit.
+- **Erfahrung und Abzeichen:** Quelle `wochenErreicht` mit 30 EP je Woche in
+  `ERFAHRUNGSQUELLEN`; Abzeichen „Vier gute Wochen“ und „Zwölf gute Wochen“ in eigener Teilliste
+  (`abzeichen-wochen.ts`, Bilder in `nachtabzeichen-wochen.ts`). Ihre Texte brauchen die Schlüssel
+  `abzeichen.name.*` und `abzeichen.bedingung.*` (fest in `abzeichenname`), als Ausnahme von der
+  Vorsilbe `woche.`.
+- **Abschnitte der Wochenkarte** als Liste zum Eintragen (`start/wochenabschnitte.ts`): Übungsplan
+  (P11, Rang 30) ist der erste Eintrag; Wochenaufträge (P6, Rang 20) und eigene Ziele (P13,
+  Rang 40) tragen je eine Zeile ein, ohne die Karte umzubauen.
+- **Übungsplan** (`training/uebungsplan.ts`): Kalenderdatei nach RFC 5545 mit CRLF, Faltung nach
+  75 Bytes, Zeit „floating“ (Ortszeit ohne Zeitzone, so steht der Termin überall zur gewählten
+  Uhrzeit), `RRULE:FREQ=WEEKLY;BYDAY=…`, 20 Minuten, `VALARM` zur Startzeit. Weitergabe wie die
+  Datensicherung: Herunterladen und, wo das Gerät es kann, „Teilen“. Kein Push (ohne Server nicht
+  verlässlich). Texte unter `plan.uebung.*`, weil `plan.*` schon das Werkzeug „Plan“ belegt.
+- Oberflächentest `abzeichen.spec.ts` zählt die Abzeichen nicht mehr fest („von \d+“), damit
+  weitere Teillisten ihn nicht ändern müssen.
+
 ## 31.10.2026 – Version 0.3.19: Gamifizierung P2 Lernpfad übernommen (Opus)
 
 - Zweig `gami-p2-lernpfad` (Arbeitschat, Welle 1) gegen den Code geprüft: nur erlaubte Dateien,

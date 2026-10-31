@@ -15,6 +15,7 @@ import { Library, type LucideIcon } from "lucide-react";
 import { UEBUNGEN_JE_KAPITEL } from "../../../daten/uebungsliste-daten";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { GRUNDABZEICHEN } from "./abzeichen-grund";
+import { WOCHEN_ABZEICHEN } from "./abzeichen-wochen";
 
 export { WOCHE } from "./abzeichen-grund";
 import { zugurteile } from "../../../spiel/auswertung";
@@ -70,7 +71,7 @@ export const STAERKER_AB = 100;
  * Buch, Übung), dann je Paket der Gamifizierung seine Teilliste. Pakete fügen hier nur eine Zeile
  * an (Konfliktkarte, docs/nebenchat/gamifizierung.md, Abschnitt 5).
  */
-export const ABZEICHEN: readonly Abzeichenangabe[] = [...GRUNDABZEICHEN];
+export const ABZEICHEN: readonly Abzeichenangabe[] = [...GRUNDABZEICHEN, ...WOCHEN_ABZEICHEN];
 
 /**
  * Name eines Abzeichens („abzeichen.name.<kennung>“). Ein Test prüft, dass es den Text für jedes

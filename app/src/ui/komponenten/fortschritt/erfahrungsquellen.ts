@@ -7,9 +7,10 @@
  * Zählung ein; ebenso später ein neuer Trainer oder ein neues Werkzeug. So ändert niemand die
  * Grundlage selbst. Vorgesehene Gewichte (Vorrecherche): Woche mit erreichtem Ziel 30, Auftrag 15,
  * Bronze 10, Silber 25, Gold 50, Rival besiegt 40, eigenes Ziel erreicht 20.
- * Abhängigkeiten: speicher/format.ts (Typ).
+ * Abhängigkeiten: speicher/format.ts (Typ), training/wochenziel.ts (P4).
  */
 import type { Nutzerdaten } from "../../../speicher/format";
+import { erreichteWochen } from "../../../training/wochenziel";
 
 /** Eine Quelle: Kennung, Punkte je Einheit, Zahl der Einheiten aus den Nutzerdaten. */
 export interface Erfahrungsquelle {
@@ -19,4 +20,6 @@ export interface Erfahrungsquelle {
 }
 
 /** Alle zusätzlichen Quellen; Pakete fügen je eine Zeile an (Konfliktkarte, Abschnitt 5). */
-export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [];
+export const ERFAHRUNGSQUELLEN: readonly Erfahrungsquelle[] = [
+  { kennung: "wochenErreicht", gewicht: 30, zaehle: (d) => erreichteWochen(d).length },
+];

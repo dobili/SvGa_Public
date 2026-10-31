@@ -1,0 +1,114 @@
+/*
+ * Wochenkarte (Gamifizierung P4) und Übungsplan (P11) oben auf der Buch-Startseite: Ring
+ * „2 von 3 Tagen“, sieben Punkte Mo bis So, Abschnitte darunter. Farben aus basis.css, damit
+ * hell und dunkel stimmen; das kleine Feuerwerk liegt über der Karte (position: relative).
+ */
+.wochenkarte {
+  position: relative;
+  overflow: hidden;
+}
+
+.wochenkarte-stand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+}
+
+.wochenring {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  font-weight: 600;
+}
+
+.wochenring svg {
+  width: 48px;
+  height: 48px;
+}
+
+.wochenring-grund {
+  fill: none;
+  stroke: var(--linie);
+}
+
+.wochenring-wert {
+  fill: none;
+  stroke: var(--gold);
+  stroke-linecap: round;
+}
+
+.wochenpunkte {
+  display: flex;
+  gap: calc(var(--raster) * 0.75);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wochenpunkt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--raster) * 0.5);
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.wochenpunkt-punkt {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--linie-stark);
+  box-sizing: border-box;
+}
+
+.wochenpunkt.gelernt .wochenpunkt-punkt {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.wochenpunkt.heute {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.wochenpunkt.heute .wochenpunkt-punkt {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.wochenkarte-erreicht,
+.wochenkarte-heute {
+  font-weight: 600;
+  color: var(--gold-text);
+}
+
+.wochenkarte-wahl,
+.wochenkarte-abschnitt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.wochenkarte-abschnitt {
+  padding-top: calc(var(--raster) * 1.5);
+  border-top: 1px solid var(--linie);
+}
+
+.planwahl input {
+  min-height: var(--tippflaeche);
+  font-size: var(--groesse-grund);
+}
+
+.planwahl-tage button {
+  min-width: var(--tippflaeche);
+  padding: 0 var(--raster);
+}
+
+.planwahl-tage button[aria-pressed="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}

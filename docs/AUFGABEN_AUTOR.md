@@ -33,6 +33,15 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.39: Maia rechnet in einem eigenen Thread (31.10.2026)
+
+- [ ] N2316. **Kein Stocken mehr beim Rechnen des Bots:** Auf dem älteren Handy (Redmi) mit
+      eingeschaltetem Maia eine Blitzpartie gegen einen Bot spielen und schnell ziehen. Deine
+      Figur gleitet ohne Hänger, und auch die Uhr zählt gleichmäßig weiter, während der Bot
+      nachdenkt (vorher konnte sie kurz stehen bleiben). Der Bot spielt so stark wie vorher.
+      Danach einmal den Flugmodus einschalten, die App neu öffnen und wieder gegen einen Bot mit
+      Maia spielen: Es geht auch ohne Netz.
+
 ### Neu in 0.3.38: Spielen neu (Arbeitschat, 31.10.2026)
 
 Der Bildschirm „Spielen“ ist nach deiner Wahl neu gebaut (Entwurf J3 „Schnell eine Partie“):

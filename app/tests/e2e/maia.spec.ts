@@ -29,7 +29,7 @@ test("Reiter „Bots“: Maia laden, einschalten, löschen", async ({ page, brow
   await expect(laden).toBeVisible();
 });
 
-test("mit Maia: der Bot antwortet im Mittelspiel, die Laufzeit läuft unter der Sicherheitsregel", async ({
+test("mit Maia: der Bot antwortet im Mittelspiel, die Laufzeit läuft im Worker unter der Sicherheitsregel", async ({
   page,
   browserName,
 }) => {
@@ -55,14 +55,22 @@ test("mit Maia: der Bot antwortet im Mittelspiel, die Laufzeit läuft unter der 
     .fill("r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 15");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
   await startknopf(page).click();
+  // Seit 0.3.39 rechnet Maia in einem eigenen Worker (engine/maiaWorker.ts).
+  const maiaWorker = page.waitForEvent("worker", (w) => w.url().includes("maiaWorker"));
   await page.getByRole("button", { name: /^h2, Bauer/ }).click();
   await page.getByRole("button", { name: "h3", exact: true }).click();
   await expect(page.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
     timeout: 120_000,
   });
-  const geladen = await page.evaluate(() =>
+  const worker = await maiaWorker;
+  const geladen = await worker.evaluate(() =>
     performance.getEntriesByType("resource").some((e) => e.name.includes("ort.bundle")),
   );
-  expect(geladen, "onnxruntime-web wurde für den Bot-Zug geladen").toBe(true);
+  expect(geladen, "onnxruntime-web wurde im Worker für den Bot-Zug geladen").toBe(true);
+  // Im Hauptthread der Seite liegt die Laufzeit nicht mehr (dort stockte sonst die Animation).
+  const imHauptthread = await page.evaluate(() =>
+    performance.getEntriesByType("resource").some((e) => e.name.includes("ort.bundle")),
+  );
+  expect(imHauptthread, "onnxruntime-web nicht im Hauptthread").toBe(false);
   expect(fehler.filter((f) => /maia|onnx|wasm/i.test(f))).toEqual([]);
 });

@@ -180,7 +180,7 @@ const CREME = "#F5F0E6";
 /**
  * Lässt die WebAssembly-Datei von onnxruntime-web aus dem Bündel (Maia, 0.2.143). Das Bündel der
  * Bibliothek verweist auf sie, die App übergibt sie aber selbst aus dem Maia-Paket
- * (engine/maia-web.ts, env.wasm.wasmBinary); eine zweite Kopie unter assets/ würde 11 MB zur
+ * (engine/maiaWorker.ts, env.wasm.wasmBinary); eine zweite Kopie unter assets/ würde 11 MB zur
  * Installation legen, die niemand lädt.
  */
 function ohneOrtWasm(): Plugin {
@@ -201,6 +201,10 @@ export default defineConfig({
     // Fassung für die Leser (AP 17): ohne Aufgabenseite des Autors und ohne englische Vorschau.
     __VEROEFFENTLICHUNG__: JSON.stringify(process.env.VEROEFFENTLICHUNG === "1"),
   },
+  // Maia rechnet seit 0.3.39 in einem eigenen Worker (engine/maiaWorker.ts). Er lädt
+  // onnxruntime-web erst bei Bedarf nach (dynamischer Import), das geht nur als ES-Modul; die
+  // WebAssembly-Laufzeit kommt auch dort aus dem Maia-Paket statt doppelt unter assets/.
+  worker: { format: "es", plugins: () => [ohneOrtWasm()] },
   build: {
     // Lizenztexte aller eingebauten npm-Pakete (MIT, ISC, GPL) in einer Datei, verlinkt unter
     // Einstellungen › Lizenzen: MIT und ISC verlangen, dass der Text mit ausgeliefert wird

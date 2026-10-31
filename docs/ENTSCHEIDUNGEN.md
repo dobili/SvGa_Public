@@ -4,6 +4,20 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Maia in einem eigenen Worker (0.3.39)
+
+Wunsch des Autors nach dem Befund mit der hängenden Zuganimation: Maia ganz aus dem Hauptthread
+nehmen. Umsetzung: `engine/maiaWorker.ts` rechnet onnxruntime-web (ein Thread, WebAssembly) in
+einem Web Worker; `engine/maia-web.ts` ist nur noch die Verbindung (Maiaverbindung). Die App
+liest Laufzeit und Netz wie bisher aus dem Speicher des Pakets und schickt sie beim ersten Zug
+mit einem Modell hinüber, danach je Zug nur das Brett (Nachrichten in `engine/maiaNachrichten.ts`).
+Ein Fehler oder Absturz lässt den Zug ohne Maia laufen; der nächste Zug startet den Worker neu.
+Vite baut Worker als ES-Modul (`worker.format`), die WebAssembly-Datei bleibt auch dort aus dem
+Bündel. Offline: Worker und Laufzeit stehen im Vorab-Speicher. Geprüft mit `maia.spec.ts`
+(Bot-Zug mit Maia unter der CSP, Laufzeit im Worker statt im Hauptthread) und
+`maia-web.test.ts`. Testpunkt N2316. Weitere Rechnungen auf andere Kerne: siehe nächster Eintrag
+in FORTSCHRITT (Prüfung, welche sich lohnen).
+
 ## 31.10.2026 – Spielen neu: Entwurf J3 „Schnell eine Partie“ (Arbeitschat, Zweig `gestaltung-spielen`)
 
 Ziel des Autors: „Spielen“ war zu technisch, zu textlastig und wirkte wie ein Formular; Zielgruppe

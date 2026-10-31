@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Deine Extras neu (31.10.2026)
+### Neu in 0.3.32: Deine Extras neu – „Ankleide“ (Arbeitschat, 31.10.2026)
 
 Die Profilkarte „Deine Extras“ ist nach deiner Wahl neu gebaut (Entwurf E1 „Ankleide“): oben eine
 Vorschau, wie du gerade aussiehst, darunter Reiter je Art mit Kacheln, die du antippst statt

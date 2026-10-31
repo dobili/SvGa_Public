@@ -5,9 +5,13 @@
  * Orden (Orden.tsx, Medaille mit Band) unterscheiden: Orden stehen für volle Ringe, Abzeichen für
  * besondere Leistungen. Das Gitter im Profil zeigt noch nicht verdiente Abzeichen als graue
  * Silhouette wie die Startanimation die Orden; die Meldung zeigt es groß.
- * Abhängigkeiten: lucide-react (Zeichen), Stil in ui/stil/abzeichen.css.
+ * Seit dem Wunsch des Autors vom 30.10.2026 hat jedes Abzeichen ein eigenes Bild (ordenkunst/):
+ * Wer `kennung` mitgibt, bekommt es; ohne bleibt das Sechseck (etwa das Zeichen der Stufe).
+ * Abhängigkeiten: lucide-react (Zeichen), ordenkunst/, Stil in ui/stil/abzeichen.css.
  */
 import type { LucideIcon } from "lucide-react";
+import { hatOrdenkunst } from "../ordenkunst/entwuerfe";
+import { Ordenkunst } from "../ordenkunst/Ordenkunst";
 
 /** Maße der Zeichnung (Einheiten des viewBox). */
 const GROESSE = 64;
@@ -19,19 +23,33 @@ const INNEN = "32,9 52,20.5 52,43.5 32,55 12,43.5 12,20.5";
 
 /**
  * Das Abzeichenbild. `silhouette`: nur grauer Umriss mit blassem Zeichen (noch nicht verdient).
- * Beispiel: Abzeichen „Erste Partie“ → goldenes Sechseck mit Fahne.
+ * `kennung`: Kennung des Abzeichens (fortschritt/abzeichen.ts); dann sein eigenes Bild.
+ * Beispiel: Abzeichen „Erste Partie“ (kennung „erstePartie“) → Banner mit goldenem Bauern.
  */
 export function Abzeichenbild({
   symbol: Zeichen,
   beschriftung,
   silhouette = false,
   klasse = "",
+  kennung,
 }: {
   symbol: LucideIcon;
   beschriftung: string;
   silhouette?: boolean;
   klasse?: string;
+  kennung?: string;
 }) {
+  if (kennung && hatOrdenkunst("abzeichen", kennung)) {
+    return (
+      <Ordenkunst
+        art="abzeichen"
+        kennung={kennung}
+        beschriftung={beschriftung}
+        silhouette={silhouette}
+        klasse={`abzeichenbild ${klasse}`}
+      />
+    );
+  }
   return (
     <svg
       className={`abzeichenbild ${silhouette ? "abzeichenbild-silhouette" : ""} ${klasse}`.trim()}

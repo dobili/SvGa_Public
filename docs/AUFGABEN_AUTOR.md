@@ -33,6 +33,41 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.17: Orden und Abzeichen mit eigenen Bildern (Nebenchat, 30.10.2026)
+
+Gebaut nach deiner Wahl auf der Entwurfsseite: alle Abzeichen und die Orden für Buch und
+Buchteile im Stil „Nacht und Gold“ (C), die Bot-Orden und die Engine klassisch (A),
+Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des Tages).
+
+- [ ] N2015. **Abzeichen im Profil:** Profil › Dein Fortschritt › „Abzeichen: x von 18“
+      aufklappen. Die Abzeichen stehen zu viert in Reihen, der Name darunter, nicht mehr
+      einzeln untereinander. Jedes hat seine eigene Form (Banner, Schild, Kreis, Raute, Tropfen
+      …). Noch nicht verdiente sind grau, aber mit ihrer echten Form. Tippe auf ein Abzeichen:
+      darunter erscheint die Bedingung, ein zweiter Tipp blendet sie wieder aus.
+- [ ] N2016. **Die drei korrigierten Abzeichen:** Bei „Erst selbst denken“ sitzt das Auge
+      tiefer im Tropfen, bei „Nachgefragt“ ist das Fragezeichen größer und mittig, bei „Eine
+      Woche dabei“ berühren die Flammen den Kalenderrand nicht mehr. Am einfachsten zu sehen
+      über die Aufgabenseite (drei Sekunden auf „Profil“ in der Leiste halten) › „Abzeichen testen“: dort ein
+      Abzeichen zur Probe verdienen, dann erscheint es groß in der Meldung.
+- [ ] N2017. **Orden in den Ringen:** Profil › Dein Fortschritt, die Gruppen „Teile des
+      Buches“ und „Vorgefertigte Bots besiegt“ aufklappen. Die Ringe stehen zu dritt
+      nebeneinander. Über die Aufgabenseite › „Orden testen“ einen Ring auf 100 % setzen: Die
+      Gratulation zeigt jetzt das eigene Bild des Ordens (etwa „Übungen gelöst“: rotes Brett
+      im Lorbeerkranz; Bots: Medaille mit Band und Roboterkopf), und im Profil steht es statt
+      des Rings.
+- [ ] N2018. **Startanimation mit neuem Orden:** Einen Orden oder ein Abzeichen zur Probe
+      verdienen, dann die App ganz schließen und neu öffnen. Springer und Titel laufen genau wie
+      bisher. Danach erscheint das neue Stück unter dem Titel mit Strahlen, darüber „Neuer
+      Orden“ oder „Neues Abzeichen“, darunter sein Name. Dann fliegt es klein zum Reiter
+      „Profil“ unten. Dort bleibt ein goldener Punkt, bis du das Profil öffnest. Ein Tipp
+      überspringt alles wie bisher; der Punkt erscheint dann trotzdem. Hinweis: Beim allerersten
+      Start nach dem Update gilt nichts als neu, damit nicht alle schon gesammelten Stücke auf
+      einmal kommen.
+- [ ] N2019. **Stück des Tages:** Die App noch einmal schließen und öffnen, ohne dass etwas Neues
+      dazugekommen ist. Unter dem Titel erscheint leise eines deiner verdienten Stücke, darunter
+      „Aus deiner Sammlung · x von 36“. Ohne ein einziges verdientes Stück bleibt die
+      Startanimation genau wie bisher.
+
 ### Neu in 0.3.16: Trainer-Feinschliff (Nebenchat, 30.10.2026)
 
 - [ ] N2001. **Zähltrainer, Ergebnis mit einem Tipp:** Training › Zähltrainer › „Bilanz zählen“.

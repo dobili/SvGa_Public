@@ -3967,5 +3967,11 @@
   "abzeichenprobe.erklaerung": "Ein Tipp gibt dir ein Abzeichen zur Probe oder genau so viele Erfahrungspunkte, dass die nächste Stufe erreicht ist. Dann kommt die Meldung wie im echten Fall, und das Profil zeigt Abzeichen und Stufe. Deine echten Fortschritte ändern sich nicht; „Probe beenden“ stellt alles zurück.",
   "abzeichenprobe.stufe": "Nächste Stufe erreichen",
   "abzeichenprobe.verdienen": "{name}: verdienen",
-  "abzeichenprobe.beenden": "Probe beenden"
+  "abzeichenprobe.beenden": "Probe beenden",
+  "startorden.neuerOrden": "Neuer Orden",
+  "startorden.neuesAbzeichen": "Neues Abzeichen",
+  "startorden.sammlung": "Aus deiner Sammlung · {verdient} von {gesamt}",
+  "startorden.teil": "Teil {teil}",
+  "startorden.weitere": "und {anzahl} weitere im Profil",
+  "leiste.profilNeu": "Profil: Neues in deiner Sammlung"
 }

@@ -155,6 +155,7 @@ export function useRueckblick(
         zweigZuege={zweigZuege}
         strafZuege={strafZuege}
         merkenOffen={merkenOffen}
+        beiMerkenZu={() => setzeMerkenBei(null)}
       />
     ) : null;
   const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;

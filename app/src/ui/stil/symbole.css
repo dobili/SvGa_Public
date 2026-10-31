@@ -314,12 +314,6 @@ details[open] > summary:not(:has(.aufklapper))::after {
   border: 2px solid var(--linie-stark);
 }
 
-.partieende-titel {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--raster) * 1.5);
-}
-
 /* ---------- DS26: Zeichen der Partiephasen (Phasenzeichen.tsx) ---------- */
 .phasenzeichen {
   flex: none;

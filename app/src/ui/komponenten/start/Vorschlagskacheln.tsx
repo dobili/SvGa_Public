@@ -56,6 +56,26 @@ export function Vorschlagskacheln({
 }) {
   const [erster, ...weitere] = liste;
   if (!erster) return null;
+  const kreuz = (
+    <button
+      type="button"
+      className="knopf-symbol heute-nicht-jetzt"
+      aria-label={t("naechster.nichtJetzt")}
+      title={t("naechster.nichtJetzt")}
+      onClick={nichtJetzt}
+    >
+      <X size={SYMBOL_KLEIN} aria-hidden="true" />
+    </button>
+  );
+  // Ohne Alternativen steht das Kreuz neben der Hauptkachel statt allein in einer leeren Zeile
+  // (Befund des Autors, 31.10.2026).
+  if (weitere.length === 0)
+    return (
+      <div className="heute-vorschlaege heute-vorschlaege-allein" data-testid="heute-vorschlaege">
+        <Kachel vorschlag={erster} gross />
+        {kreuz}
+      </div>
+    );
   return (
     <div className="heute-vorschlaege" data-testid="heute-vorschlaege">
       <Kachel vorschlag={erster} gross />
@@ -63,15 +83,7 @@ export function Vorschlagskacheln({
         {weitere.map((v) => (
           <Kachel key={v.art} vorschlag={v} gross={false} />
         ))}
-        <button
-          type="button"
-          className="knopf-symbol heute-nicht-jetzt"
-          aria-label={t("naechster.nichtJetzt")}
-          title={t("naechster.nichtJetzt")}
-          onClick={nichtJetzt}
-        >
-          <X size={SYMBOL_KLEIN} aria-hidden="true" />
-        </button>
+        {kreuz}
       </div>
     </div>
   );

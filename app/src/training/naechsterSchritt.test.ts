@@ -68,8 +68,24 @@ describe("Rangfolge der Vorschläge", () => {
   });
 
   it("nennt die offene Tagesaufgabe vor dem Weiterlesen, höchstens drei Vorschläge", () => {
-    const l = lage({ tagesaufgabeErledigt: false }, faelligeKarten(3));
+    const l = lage({ tagesaufgabeErledigt: false }, { ...faelligeKarten(3), ...gesehen("0.1", "0.2") });
     expect(arten(l)).toEqual(["faellig", "tagesaufgabe", "weiterlesen"]);
+  });
+
+  it("schlägt Neulingen noch keine Tagesaufgabe vor, erst nach Kapitel 0 (Niveau)", () => {
+    expect(arten(lage({ tagesaufgabeErledigt: false }))).not.toContain("tagesaufgabe");
+    expect(arten(lage({ tagesaufgabeErledigt: false }, gesehen("0.1")))).not.toContain(
+      "tagesaufgabe",
+    );
+  });
+
+  it("fängt vorn an, wenn eine Abbildung nur kurz offen war, und liest dort weiter", () => {
+    expect(vorschlaege(lage({ zuletzt: "1.2" }))[0]?.ziel).toEqual({
+      bildschirm: "abbildung",
+      nummer: "0.1",
+    });
+    const kurz = vorschlaege(lage({ zuletzt: "1.3" }, gesehen("0.1", "0.2", "1.1")))[0];
+    expect(kurz?.werte).toMatchObject({ nummer: "1.3" });
   });
 
   it("lässt neue Leser vorn anfangen", () => {

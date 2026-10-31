@@ -25,6 +25,9 @@ const SEKUNDEN_JE_MINUTE = 60;
 /** Unter dieser Quote gilt ein Thema als unsicher (P1, Fall 5). */
 export const UNSICHER_UNTER = 0.7;
 
+/** Kapitel mit den Grundlagen (Regeln, Notation); erst danach kommen Aufgaben am Brett. */
+const GRUNDLAGENKAPITEL = 0;
+
 /** Ab diesem Anteil gesehener Abbildungen schlägt die Karte die Übungen eines Kapitels vor. */
 export const GESEHEN_FUER_UEBUNGEN = 0.8;
 
@@ -66,9 +69,23 @@ function faelligeKarten({ daten, jetzt, faelligAnzahl }: Lage): Vorschlag | null
   };
 }
 
+/**
+ * Ob Aufgaben am Brett schon passen: wer die Grundlagen aus Kapitel 0 (Regeln, Notation) zu 80 %
+ * gesehen oder schon einen Trainer abgeschlossen hat. Warum: Ein Neuling, der noch keine Figur
+ * ziehen kann, bekam sonst als Erstes eine Taktikaufgabe (Wunsch des Autors, 31.10.2026: Vorschläge
+ * am Niveau des Nutzers ausrichten). Beispiel: frisch installiert → nein; Kapitel 0 gelesen → ja.
+ */
+function bereitFuerAufgaben({ daten, kapitel }: Lage): boolean {
+  if (Object.values(daten.fortschritt.trainer).some((s) => s.durchgaenge > 0)) return true;
+  const grundlagen = kapitel.find((k) => k.kapitel === GRUNDLAGENKAPITEL);
+  if (!grundlagen || grundlagen.abbildungen.length === 0) return true;
+  const gesehen = grundlagen.abbildungen.filter((n) => daten.fortschritt.gesehen[n] !== undefined);
+  return gesehen.length >= GESEHEN_FUER_UEBUNGEN * grundlagen.abbildungen.length;
+}
+
 /** Fall 2: Die Tagesaufgabe ist heute noch offen. */
 function tagesaufgabe(lage: Lage): Vorschlag | null {
-  if (lage.tagesaufgabeErledigt) return null;
+  if (lage.tagesaufgabeErledigt || !bereitFuerAufgaben(lage)) return null;
   return {
     art: "tagesaufgabe",
     text: "naechster.tagesaufgabe",
@@ -89,16 +106,22 @@ function ungesehenAb(
 }
 
 /**
- * Die nächste ungesehene Abbildung: im Kapitel der zuletzt geöffneten nach ihr, sonst im ersten
- * Kapitel mit ungesehenen Abbildungen. Beispiel: zuletzt 6.20, 6.21 ungesehen → 6.21.
+ * Die nächste ungesehene Abbildung: im Kapitel der zuletzt geöffneten nach ihr (oder sie selbst,
+ * wenn sie nicht lange genug offen war), sonst im ersten Kapitel mit ungesehenen Abbildungen. Ohne
+ * jede gesehene Abbildung die erste des Buches. Beispiel: zuletzt 6.20 gesehen, 6.21 ungesehen →
+ * 6.21; zuletzt 0.10 nur kurz offen, nichts gesehen → 0.1.
  */
 export function naechsteAbbildung(
   lage: Lage,
 ): { readonly kapitel: Kapitelangabe; readonly nummer: string } | null {
   const gesehen = lage.daten.fortschritt.gesehen;
   const aktuell = lage.kapitel.find((k) => lage.zuletzt && k.abbildungen.includes(lage.zuletzt));
-  if (aktuell && lage.zuletzt) {
-    const nummer = ungesehenAb(aktuell, aktuell.abbildungen.indexOf(lage.zuletzt) + 1, gesehen);
+  // Wer noch nichts gesehen hat, fängt vorn an, auch wenn er kurz in eine Abbildung geschaut hat.
+  if (aktuell && lage.zuletzt && Object.keys(gesehen).length > 0) {
+    // Eine nur kurz geöffnete Abbildung gilt nicht als gelesen: dort weiter (Befund des Autors,
+    // 31.10.2026: Vorschlag „Abb. 0.11“, nachdem 0.10 nur kurz offen war).
+    const ab = aktuell.abbildungen.indexOf(lage.zuletzt) + (gesehen[lage.zuletzt] ? 1 : 0);
+    const nummer = ungesehenAb(aktuell, ab, gesehen);
     if (nummer) return { kapitel: aktuell, nummer };
   }
   for (const kapitel of lage.kapitel) {

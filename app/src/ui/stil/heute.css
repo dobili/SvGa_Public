@@ -255,6 +255,17 @@
   font-size: var(--groesse-mittel);
 }
 
+/* Nur die Hauptkachel: das Kreuz rechts daneben in derselben Zeile. */
+.heute-vorschlaege-allein {
+  flex-direction: row;
+  align-items: center;
+}
+
+.heute-vorschlaege-allein .heute-kachel {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .heute-nicht-jetzt {
   flex: none;
   margin-left: auto;

@@ -4,6 +4,29 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P7: Freischaltbare Extras (Welle 1, Zweig gami-p7-extras)
+
+- **E8 nach Empfehlung:** Porträtrahmen Bronze, Silber, Gold (Stufe 3, 6, 9), Brett „Nacht und
+  Gold“ (alle Orden der Buchteile), Figurensatz „Gold“ (Stufe 5), bunte Konfettifarben (Stufe 2).
+  Titel und Zubehör aus der Meisterschaft kommen in Welle 2. Nichts Bestehendes wird gesperrt.
+- **Eintragen statt umbauen:** Extras als Liste `EXTRAS` in `training/extras.ts` (Kennung, Art,
+  Wert, Bedingung, Bild); Arten `EXTRAARTEN`, Bedingungsarten `PRUEFUNGEN`, Ordengruppen
+  `ORDENGRUPPEN`; die Wahl je Art in `ui/komponenten/extras/extrawahl.ts` (`EXTRAWAHL`). Neue
+  Extras der Arten Brett und Figuren erscheinen von selbst in der Gruppe „Verdient“ der
+  Einstellungen. Profilkarte „Deine Extras“ über `PROFILKARTEN` (Rang 50).
+- **Freischaltung nur abgeleitet** (Stufe aus dem Abzeichenstand, Orden aus den Ringen, jeweils
+  mit Probe der Aufgabenseite); nichts wird gespeichert. **Nie wegnehmen:** Der gewählte Wert gilt
+  immer als frei, auch nach dem Einspielen einer Sicherung oder nach dem Ende einer Probe.
+- **Speicher:** nur `BRETTARTEN` („nacht-gold“) und `BILDSAETZE` („gold“) erweitert, kein neues
+  Feld. Rahmen und Konfettifarben sind Merker auf dem Gerät (`portraetrahmen`, `konfettifarben`)
+  und gehen deshalb nicht in die Datensicherung; ein Feld im Speicher wäre besser (Vorschlag an
+  den Haupt-Chat).
+- **Figurensatz „Gold“:** Cburnett (GPLv2+) umgefärbt mit `pipeline/figuren/gold_umfaerben.py`
+  (Test prüft, dass die eingecheckten Dateien dem Skript entsprechen); Lizenz in
+  `pipeline/figuren/saetze/LIZENZEN.md`, `public/lizenzen/gpl-gold-cburnett.txt` und
+  Lizenzen-Seite.
+- Testpunkte N2170 bis N2176.
+
 ## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
 
 - Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche

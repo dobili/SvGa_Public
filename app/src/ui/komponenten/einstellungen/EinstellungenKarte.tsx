@@ -8,7 +8,8 @@
  * Reiter mit Symbolen (Wunsch des Autors, 18.10.2026: nicht alles auf einmal untereinander),
  * geordnet nach dem Wunsch des Autors vom 25.10.2026:
  * - Brett: wie das Brett aussieht (Brettfarben und Figurensätze als Kacheln mit Vorschau, in
- *   Gruppen; Koordinaten),
+ *   Gruppen; Koordinaten; seit Gamifizierung P7 eine Gruppe „Verdient“ mit freischaltbaren
+ *   Extras, gesperrte als Silhouette mit Bedingung, extras/extrakacheln.ts),
  * - Bedienung: wie die App reagiert (Figuren per Wischen ziehen, Zuganimation, Startanimation,
  *   Ton aus oder an),
  * - Anzeige: Nachtmodus (wie das Gerät, aus oder an, app/farbschema.ts), Schrift, Sprache,
@@ -41,6 +42,7 @@ import { liesMerker, schreibeMerker } from "../../../app/merker";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import { MERKER_WISCHEN } from "../../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../../brett/useZuganimation";
+import { extragruppe, kachelname, useKachelsperre } from "../extras/extrakacheln";
 import { MaiaWahl } from "./MaiaWahl";
 import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
 import { SprachWahl } from "./SprachWahl";
@@ -63,6 +65,8 @@ const BRETTGRUPPEN: readonly { titel: Textschluessel; werte: readonly Brettfarbe
     titel: "einstellungen.brettfarben.gruppe.holzMaterial",
     werte: ["holz", "intarsie-ahorn", "holz-klassisch", "marmor-gruen"],
   },
+  // Freischaltbare Extras (Gamifizierung P7): „Nacht und Gold“ und spätere.
+  extragruppe<Brettfarben>("brett"),
 ];
 /** Figurensätze in Gruppen (seit 0.2.82): wie im Buch, dann je drei klassisch, modern, Holz. */
 const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figurensatz[] }[] = [
@@ -79,6 +83,8 @@ const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figuren
     titel: "einstellungen.figurensatz.gruppe.holz",
     werte: BILDSAETZE.filter((s) => s.startsWith("holz-")),
   },
+  // Freischaltbare Extras (Gamifizierung P7): „Gold“ und spätere.
+  extragruppe<Figurensatz>("figuren"),
 ];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
@@ -202,13 +208,17 @@ const BEREICHE: readonly {
 /** Brett: Farben und Figuren mit Vorschau, Koordinaten (wie das Brett aussieht). */
 function BrettBereich() {
   const einstellungen = useEinstellungen();
+  const brettsperre = useKachelsperre("brett", einstellungen.brettfarben);
   return (
     <>
       <Vorschauwahl
         name={t("einstellungen.brettfarben")}
         gruppen={BRETTGRUPPEN.map((g) => ({ ...g, titel: t(g.titel) }))}
         gewaehlt={einstellungen.brettfarben}
-        text={(wert) => t(`einstellungen.brettfarben.${wert}`)}
+        text={(wert) =>
+          kachelname("brett", wert, () => t(`einstellungen.brettfarben.${wert}` as Textschluessel))
+        }
+        sperre={brettsperre}
         vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}
         beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
       />
@@ -238,12 +248,16 @@ function BedienungBereich() {
 /** Figuren: Sätze mit Vorschau auf dem gewählten Brett. */
 function FigurenBereich() {
   const einstellungen = useEinstellungen();
+  const figurensperre = useKachelsperre("figuren", einstellungen.figurensatz);
   return (
     <Vorschauwahl
       name={t("einstellungen.figurensatz")}
       gruppen={FIGURENGRUPPEN.map((g) => ({ ...g, titel: g.titel && t(g.titel) }))}
       gewaehlt={einstellungen.figurensatz}
-      text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
+      text={(wert) =>
+        kachelname("figuren", wert, () => t(`einstellungen.figurensatz.${wert}` as Textschluessel))
+      }
+      sperre={figurensperre}
       vorschau={(wert) => <Brettausschnitt farben={einstellungen.brettfarben} satz={wert} />}
       beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
     />

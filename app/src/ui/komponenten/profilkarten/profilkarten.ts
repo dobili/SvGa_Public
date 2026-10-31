@@ -8,15 +8,19 @@
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { ExtrasKarte } from "../extras/ExtrasKarte";
 
 /** Eine Karte im Profil. */
 export interface Profilkarte {
   readonly kennung: string;
-  /** Reihenfolge: P3 = 10, P5 = 20, P13 = 25, P12 = 30, P10 = 40. */
+  /** Reihenfolge: P3 = 10, P5 = 20, P13 = 25, P12 = 30, P10 = 40, P7 = 50. */
   readonly rang: number;
   readonly sichtbar: (daten: Nutzerdaten) => boolean;
   readonly Karte: ComponentType;
 }
 
 /** Alle Karten im Profil; Pakete fügen je eine Zeile an. */
-export const PROFILKARTEN: readonly Profilkarte[] = [];
+export const PROFILKARTEN: readonly Profilkarte[] = [
+  // P7 Freischaltbare Extras: immer sichtbar, gesperrte als Silhouette mit Bedingung.
+  { kennung: "extras", rang: 50, sichtbar: () => true, Karte: ExtrasKarte },
+];

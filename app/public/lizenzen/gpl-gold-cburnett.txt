@@ -1,0 +1,9 @@
+Figurensatz „Gold“ (Schach von Grund auf, freischaltbares Extra)
+
+Bearbeitung des Figurensatzes cburnett von Colin M. L. Burnett
+(über Lichess, github.com/lichess-org/lila, public/piece/cburnett).
+Original: GNU General Public License, Version 2 oder später.
+Bearbeitung (nur Farben umgefärbt, Formen unverändert): Dominik Bilitewski, 2026,
+unter derselben Lizenz; in dieser App unter der GNU GPL 3.0 (Lizenztext: /lizenzen/gpl-3.0.txt).
+Skript der Bearbeitung: pipeline/figuren/gold_umfaerben.py im Quellcode der App
+(github.com/dobili/SvGa_Public).

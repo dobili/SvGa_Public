@@ -61,6 +61,8 @@ export const BRETTARTEN = [
   "intarsie-ahorn",
   "holz-klassisch",
   "marmor-gruen",
+  // Freischaltbares Extra (Gamifizierung P7, training/extras.ts): mit allen Orden der Buchteile.
+  "nacht-gold",
 ] as const;
 export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";
@@ -81,6 +83,8 @@ export const BILDSAETZE = [
   "holz-kiefer-kirsche",
   "holz-eiche-mahagoni",
   "holz-esche-ebenholz",
+  // Freischaltbares Extra (Gamifizierung P7, training/extras.ts): umgefärbter Cburnett, ab Stufe 5.
+  "gold",
 ] as const;
 export type Bildsatz = (typeof BILDSAETZE)[number];
 /** „buch“: Figuren wie in den Diagrammen des Buches; sonst ein Bildsatz. */

@@ -4,10 +4,13 @@
  *
  * Rolle im Gesamtbild: Gegenstück zu GegnerBild.tsx; dieselben Klassen, damit Größe, Rundung und
  * Grundfarbe überall zu den Bots passen (Profilkopf, Partieuhr, Partienliste).
- * Abhängigkeiten: speicher/profil.ts, spieler.ts, lucide-react.
+ * Seit Gamifizierung P7 trägt das Bild den gewählten Porträtrahmen (Bronze, Silber, Gold), ein
+ * freischaltbares Extra (komponenten/extras/extrawahl.ts).
+ * Abhängigkeiten: speicher/profil.ts, spieler.ts, extras/extrawahl.ts, lucide-react.
  */
 import { CircleUserRound } from "lucide-react";
 import { bildadresse, type Spielerprofil } from "../../speicher/profil";
+import { usePortraetrahmen } from "../komponenten/extras/extrawahl";
 
 /** Größe des Personenzeichens ohne Bild (Bildpunkte). */
 const ZEICHENGROESSE = 22;
@@ -17,8 +20,14 @@ const ZEICHENGROESSE = 22;
  * Beispiel: Profil mit „wahl-07“ → das Porträt wahl-07; ohne Bild mit Namen „Dana“ → „D“.
  */
 export function Spielerbild({ profil }: { profil: Spielerprofil }) {
+  const rahmen = usePortraetrahmen();
+  const rahmenklasse = rahmen === "ohne" ? "" : ` spielerbild-rahmen spielerbild-rahmen-${rahmen}`;
   return (
-    <span className="gegnerbild spielerbild" data-testid="spielerbild">
+    <span
+      className={`gegnerbild spielerbild${rahmenklasse}`}
+      data-testid="spielerbild"
+      data-rahmen={rahmen}
+    >
       {profil.bild ? (
         <img
           className="gegner-portraet"

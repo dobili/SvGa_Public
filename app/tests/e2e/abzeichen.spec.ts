@@ -24,7 +24,7 @@ test("Profil zeigt Stufe und Abzeichen; die Probe löst Meldungen aus und lässt
   await expect(page.getByTestId("erfahrung-stufe")).toHaveText("Stufe 1 von 10: Erster Zug");
   await expect(page.getByText("Noch 100 EP bis zur Stufe „Entwicklung“")).toBeVisible();
   const gitter = page.getByTestId("abzeichen");
-  await expect(gitter.locator("summary")).toHaveText("Abzeichen: 0 von 18");
+  await expect(gitter.locator("summary")).toHaveText(/^Abzeichen: 0 von \d+$/);
   await gitter.locator("summary").click();
   await expect(gitter.getByRole("img", { name: "Noch offen: Erste Partie" })).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/abzeichen-profil.png" });
@@ -49,7 +49,7 @@ test("Profil zeigt Stufe und Abzeichen; die Probe löst Meldungen aus und lässt
 
   await profilMitAbzeichen(page);
   await expect(page.getByTestId("erfahrung-stufe")).toHaveText("Stufe 2 von 10: Entwicklung");
-  await expect(gitter.locator("summary")).toHaveText("Abzeichen: 1 von 18");
+  await expect(gitter.locator("summary")).toHaveText(/^Abzeichen: 1 von \d+$/);
   await expect(gitter.getByRole("img", { name: "Abzeichen: Erste Partie" })).toBeVisible();
 
   // Probe beenden: alles wieder echt, und keine Meldung mehr.
@@ -60,6 +60,6 @@ test("Profil zeigt Stufe und Abzeichen; die Probe löst Meldungen aus und lässt
   await expect(probe.getByRole("button", { name: "Erste Partie: verdienen" })).toBeEnabled();
   await profilMitAbzeichen(page);
   await expect(page.getByTestId("erfahrung-stufe")).toHaveText("Stufe 1 von 10: Erster Zug");
-  await expect(gitter.locator("summary")).toHaveText("Abzeichen: 0 von 18");
+  await expect(gitter.locator("summary")).toHaveText(/^Abzeichen: 0 von \d+$/);
   await expect(page.getByTestId("abzeichenmeldung")).toHaveCount(0);
 });

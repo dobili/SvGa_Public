@@ -6,10 +6,12 @@
  * eigene Datei; das Paket trägt hier nur eine Zeile ein. Höchstens zwei Karten stehen zugleich,
  * nach Rang (kleiner zuerst). So kommen später auch Karten neuer Trainer oder Werkzeuge dazu,
  * ohne Buch.tsx zu ändern.
- * Abhängigkeiten: speicher/format.ts (Typ).
+ * Abhängigkeiten: speicher/format.ts (Typ), die Karten der Pakete (Wochenkarte P4).
  */
 import type { ComponentType } from "react";
 import type { Nutzerdaten } from "../../../speicher/format";
+import { Wochenkarte } from "./Wochenkarte";
+import { wochenkarteSichtbar } from "./wochensichtbar";
 
 /** Eine Karte der Startseite. */
 export interface Startkarte {
@@ -25,7 +27,9 @@ export interface Startkarte {
 export const HOECHSTENS_STARTKARTEN = 2;
 
 /** Alle Karten; Pakete fügen je eine Zeile an (Konfliktkarte, gamifizierung.md Abschnitt 5). */
-export const STARTKARTEN: readonly Startkarte[] = [];
+export const STARTKARTEN: readonly Startkarte[] = [
+  { kennung: "woche", rang: 20, sichtbar: wochenkarteSichtbar, Karte: Wochenkarte },
+];
 
 /**
  * Die sichtbaren Karten nach Rang, höchstens zwei.

@@ -33,6 +33,47 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### P4 und P11: Wochenziel und Übungsplan (31.10.2026)
+
+Neu oben im Buch: die Karte „Deine Woche“. Du wählst selbst, an wie vielen Tagen pro Woche du
+üben willst; die Karte zeigt deine Lerntage von Montag bis Sonntag, einen Ring „2 von 3 Tagen“ und
+wie viele Wochen du dein Ziel schon erreicht hast. Darunter planst du, wann du übst, und trägst den
+Plan in deinen Kalender ein. Als Lerntag zählt ein Tag mit einer Abbildung, einer Übung, einer
+Trainerfrage, einer Karte oder einer Partie (bloßes Öffnen nicht).
+
+- [ ] N2130. **Frage nach dem Ziel:** Nach dem ersten Lerntag steht oben im Buch „Wie oft willst
+      du pro Woche üben?“ mit 2, 3, 4, 5, 7 Tagen (3 hervorgehoben) und „Später“. Beim allerersten
+      Start ohne Lerntag fragt die App noch nicht. Passt das so?
+- [ ] N2131. **„Später“:** Tippe „Später“. Die Frage verschwindet und kommt erst nächste Woche
+      (ab Montag) wieder. Ist das angenehm, oder soll sie ganz wegbleiben?
+- [ ] N2132. **Deine Woche:** Wähle ein Ziel. Die Karte zeigt sieben Punkte Mo bis So, gefüllt an
+      Tagen mit Lernen, heute mit Rand, und den Ring „x von y Tagen“. Stimmen die Punkte mit deinen
+      Tagen überein? Sieht die Karte auf dem Handy hell und dunkel gut aus?
+- [ ] N2133. **Ziel erreicht:** Erreichst du dein Ziel, steht dort „Wochenziel geschafft. Schön!“,
+      einmal je Woche mit einem kleinen Feuerwerk (aus, wenn „Feiereffekte“ aus sind). Kommt das
+      Feuerwerk genau einmal? Zum Ausprobieren: „Ziel ändern“ und ein Ziel wählen, das du diese
+      Woche schon geschafft hast.
+- [ ] N2134. **Nichts verfällt:** Unter dem Ring stehen „Wochen mit erreichtem Ziel: n“ und ab zwei
+      Wochen hintereinander „Beste Folge: n Wochen“. Eine verpasste Woche wird nicht erwähnt. Wer
+      das Ziel später erhöht, behält die schon erreichten Wochen. Wer es senkt, bekommt frühere
+      Wochen dazu, die das neue Ziel erreicht hätten (schon umgesetzt, Widerspruch genügt).
+- [ ] N2135. **Ziel ändern:** „Ziel ändern“ zeigt die Wahl wieder, mit „Abbrechen“ und „Kein
+      Wochenziel“. Das neue Ziel gilt sofort, auch mitten in der Woche. Die Einstellungen haben
+      seit 0.3.2 keinen Reiter „Training“ mehr; deshalb geht das nur über die Karte. Reicht das?
+- [ ] N2136. **Erfahrung und Abzeichen:** Jede Woche mit erreichtem Ziel bringt 30 EP. Zwei neue
+      Abzeichen im Profil: „Vier gute Wochen“ und „Zwölf gute Wochen“ (Wochen müssen nicht
+      hintereinander liegen), je mit eigenem Bild (Sechseck mit 4, Strahlenkranz mit 12). Gefallen
+      dir Namen und Bilder?
+- [ ] N2137. **Übungsplan:** In der Karte „Übungszeit planen“: Tage antippen, Uhrzeit, freiwillig
+      ein Satz „Wo oder nach was?“, „Plan speichern“. Danach steht „Dein Plan: Mo, Do um 07:30“ und
+      an geplanten Tagen „Heute ist dein Übungstag.“ Klappt Ändern und „Plan entfernen“?
+- [ ] N2138. **Kalender auf dem iPhone:** „In meinen Kalender“ (und, wo es angeboten wird,
+      „Teilen“) gibt die Datei „schach-ueben.ics“ weiter. Lässt sich der Termin übernehmen, mit
+      Wiederholung an deinen Tagen, 20 Minuten lang, Erinnerung zur Startzeit, Titel „Schach üben“
+      und deinem Satz in der Beschreibung? Bitte in der installierten App und in Safari.
+- [ ] N2139. **Kalender auf Android:** Dasselbe auf einem Android-Handy (Google Kalender oder der
+      Kalender des Herstellers). Wird der Termin übernommen und erinnert er dich?
+
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
 Unsichtbar für dich, aber die Grundlage aller folgenden Spielelemente: Die App merkt sich jetzt je

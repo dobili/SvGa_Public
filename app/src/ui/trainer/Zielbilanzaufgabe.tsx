@@ -21,6 +21,10 @@ import {
   type Ziel,
   type Zielbilanzaufgabe as Aufgabe,
 } from "../../training/zielbilanztrainer";
+import type { Vorn } from "../../training/faktorentrainer";
+import { zielbilanzVorn } from "../../training/prinzipVsEngine";
+import { zielbilanzVon } from "../../training/zielzug";
+import { EngineEinschaetzung } from "./EngineEinschaetzung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -49,6 +53,13 @@ function vollstaendig(entwurf: Entwurf): Tabelle | null {
 }
 
 /** Die Begründung der App, wie im Werkzeug „Zielbilanz“. */
+/** Wen die Zielbilanz vorn sieht (für den Vergleich mit der Engine, Punkt B3 des Nebenchats). */
+function zielbilanzVornAus(fen: string): Vorn | null {
+  const weiss = zielbilanzVon(fen, "white");
+  const schwarz = zielbilanzVon(fen, "black");
+  return weiss && schwarz ? zielbilanzVorn(weiss, schwarz) : null;
+}
+
 function Begruendung({ fen }: { fen: string }) {
   const ergebnis = useMemo(() => {
     const gelesen = stellungAusFen(fen);
@@ -115,6 +126,13 @@ export function Zielbilanzaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
       )}
       {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
       {beantwortet && <Begruendung fen={aufgabe.fen} />}
+      {beantwortet && (
+        <EngineEinschaetzung
+          fen={aufgabe.fen}
+          gedreht={false}
+          bilanz={zielbilanzVornAus(aufgabe.fen)}
+        />
+      )}
     </>
   );
 }

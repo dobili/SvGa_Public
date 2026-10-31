@@ -20,6 +20,7 @@ import {
   type Wahlfrage,
 } from "../../training/planbilanztrainer";
 import { lapbegruendung } from "../../training/lapbegruendung";
+import { EngineEinschaetzung } from "./EngineEinschaetzung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -89,6 +90,9 @@ export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; ru
         <Frageblock key={f.frage} frage={f} waehle={waehle} />
       ))}
       {runde.ergebnis !== null && <Antwortmeldung richtig={runde.ergebnis} />}
+      {runde.ergebnis !== null && !aufgabe.warum && (
+        <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />
+      )}
       {runde.ergebnis !== null && aufgabe.buchbilanz && (
         <p className="hinweis">{t("planbilanz.buchVerweis", { abbildung: aufgabe.nummer })}</p>
       )}
@@ -143,6 +147,7 @@ export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Run
           {t("planuebung.lapLoesung", { figur: aufgabe.figur, ziel: aufgabe.ziel ?? "" })}
         </Antwortmeldung>
       )}
+      {beantwortet && <EngineEinschaetzung fen={aufgabe.fen} gedreht={aufgabe.seite === "black"} />}
       {beantwortet && (
         <section className="karte" data-testid="lap-begruendung">
           {lapbegruendung(aufgabe, figur, ziel).map((satz) => (

@@ -23,6 +23,8 @@ import {
 } from "../../training/faktorentrainer";
 import { WarumFragenListe } from "../komponenten/abbildung/WarumFrage";
 import { Seitenwahl, Waagenwahl, type Seitenwertung } from "./Faktorwahl";
+import { faktorenVorn } from "../../training/prinzipVsEngine";
+import { EngineEinschaetzung } from "./EngineEinschaetzung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -129,6 +131,13 @@ export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
         </p>
       )}
       {beantwortet && <Bilanz fen={aufgabe.fen} />}
+      {beantwortet && (
+        <EngineEinschaetzung
+          fen={aufgabe.fen}
+          gedreht={false}
+          bilanz={faktorenVorn(Object.values(aufgabe.loesung))}
+        />
+      )}
       {beantwortet && <WarumFragenListe vorbereitet={aufgabe.vorbereitet} />}
     </>
   );

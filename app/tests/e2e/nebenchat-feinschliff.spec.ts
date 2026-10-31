@@ -27,3 +27,30 @@ test("Feld finden: Die Sicht steht deutlich unter dem Brett", async ({ page }) =
   await page.getByRole("button", { name: /Feld finden/ }).click();
   await expect(page.getByTestId("sichtanzeige")).toContainText("Weiß spielt von unten.");
 });
+
+test.describe("Sprachangebot beim ersten Start", () => {
+  test.use({ locale: "en-GB" });
+
+  test("Gerät auf Englisch: Angebot erscheint, „Deutsch behalten“ merkt sich die Antwort", async ({
+    page,
+  }) => {
+    await page.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.tour.angeboten", "ja");
+        window.sessionStorage.setItem("svga.startanimation.sitzung", "ja");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+    await page.goto("/app/");
+    const angebot = page.getByTestId("sprachangebot");
+    await expect(angebot).toContainText("English translation is still in beta");
+    await expect(angebot).toContainText("das englische Buch ist noch nicht erschienen");
+    await page.screenshot({ path: "test-results/bilder/sprachangebot.png" });
+    await angebot.getByRole("button", { name: /Keep German/ }).click();
+    await expect(angebot).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+    await expect(page.getByTestId("sprachangebot")).toHaveCount(0);
+  });
+});

@@ -37,6 +37,7 @@ export async function starteImBrowser(
     weitermachen = false,
     maiaHinweis = false,
     abzeichenMeldung = false,
+    sprachangebot = false,
   }: {
     safariHinweis?: boolean;
     startanimation?: boolean;
@@ -44,6 +45,8 @@ export async function starteImBrowser(
     weitermachen?: boolean;
     maiaHinweis?: boolean;
     abzeichenMeldung?: boolean;
+    /** Das Angebot „auf Englisch umstellen?“ beim ersten Start (Nebenchat, 31.10.2026). */
+    sprachangebot?: boolean;
   } = {},
 ): Promise<void> {
   if (!weitermachen) {
@@ -96,6 +99,15 @@ export async function starteImBrowser(
     await seite.addInitScript(() => {
       try {
         window.localStorage.setItem("svga.abzeichenStill", "ja");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+  }
+  if (!sprachangebot) {
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.sprachangebot", "gefragt");
       } catch (fehler) {
         console.warn("Merker nicht schreibbar:", fehler);
       }

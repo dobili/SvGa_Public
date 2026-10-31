@@ -55,6 +55,7 @@ import { gesicherterStapel } from "./stapelMerker";
 import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
 import { TourAngebot } from "../tour/TourAngebot";
+import { Sprachangebot } from "./Sprachangebot";
 import { TourEbene } from "../tour/TourEbene";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
@@ -209,6 +210,8 @@ function Hauptrahmen() {
       {/* Gratulation bei einem vollen Ring des Fortschritts (seit 0.2.144). */}
       <Ringfeier />
       <TourAngebot />
+      {/* Über der Frage nach dem Rundgang: erst die Sprache (Wunsch des Autors, 31.10.2026). */}
+      <Sprachangebot />
       <TourEbene />
       <Startanimation />
     </div>

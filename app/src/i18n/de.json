@@ -4239,5 +4239,21 @@
   "extras.gruppe": "Verdient",
   "extras.lizenz.gold.name": "Figurensatz Gold (Bearbeitung von Cburnett, Colin M. L. Burnett)",
   "extras.lizenz.gold.lizenz": "GNU GPL 2.0 oder neuer (hier unter GPL 3.0)",
-  "extras.lizenz.gold.herkunft": "Farben umgefärbt, Formen unverändert (Dominik Bilitewski, 2026; Skript pipeline/figuren/gold_umfaerben.py); Original über Lichess (github.com/lichess-org/lila, public/piece/cburnett)"
+  "extras.lizenz.gold.herkunft": "Farben umgefärbt, Formen unverändert (Dominik Bilitewski, 2026; Skript pipeline/figuren/gold_umfaerben.py); Original über Lichess (github.com/lichess-org/lila, public/piece/cburnett)",
+  "rekorde.art.taktikSerie": "Taktikserie ohne Fehler",
+  "rekorde.wert.taktikSerie": "{wert} in Folge",
+  "serie.starten": "Serie ohne Fehler",
+  "serie.erklaerung": "Serie: Aufgaben werden immer schwerer, es läuft keine Uhr. Der erste Fehler beendet die Serie; auch eine Hilfe oder „Lösung zeigen“ zählt als Fehler.",
+  "serie.stand": "Serie: {anzahl} in Folge",
+  "serie.standEins": "Serie: 1 in Folge",
+  "serie.ergebnis": "{anzahl} in Folge",
+  "serie.ergebnisEins": "1 in Folge",
+  "serie.ergebnisNull": "Diesmal keine in Folge. Gleich noch einmal?",
+  "serie.beste": "Deine beste Serie: {anzahl} in Folge",
+  "serie.besteEins": "Deine beste Serie: 1 in Folge",
+  "serie.ende.fehler": "Serie vorbei: Diese Aufgabe ging daneben.",
+  "serie.ende.alle": "Alle Aufgaben dieses Themas ohne Fehler gelöst. Stark!",
+  "serie.ende.aufgehoert": "Serie beendet.",
+  "serie.aufhoeren": "Serie beenden",
+  "serie.nochmal": "Neue Serie"
 }

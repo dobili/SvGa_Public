@@ -4239,5 +4239,21 @@
   "extras.gruppe": "Earned",
   "extras.lizenz.gold.name": "Piece set Gold (adaptation of Cburnett, Colin M. L. Burnett)",
   "extras.lizenz.gold.lizenz": "GNU GPL 2.0 or later (used here under GPL 3.0)",
-  "extras.lizenz.gold.herkunft": "recolored, shapes unchanged (Dominik Bilitewski, 2026; script pipeline/figuren/gold_umfaerben.py); original via Lichess (github.com/lichess-org/lila, public/piece/cburnett)"
+  "extras.lizenz.gold.herkunft": "recolored, shapes unchanged (Dominik Bilitewski, 2026; script pipeline/figuren/gold_umfaerben.py); original via Lichess (github.com/lichess-org/lila, public/piece/cburnett)",
+  "rekorde.art.taktikSerie": "Tactics streak without a mistake",
+  "rekorde.wert.taktikSerie": "{wert} in a row",
+  "serie.starten": "Streak without a mistake",
+  "serie.erklaerung": "Streak: the puzzles get harder and harder, no clock runs. The first mistake ends the streak; a hint or “Show solution” counts as a mistake too.",
+  "serie.stand": "Streak: {anzahl} in a row",
+  "serie.standEins": "Streak: 1 in a row",
+  "serie.ergebnis": "{anzahl} in a row",
+  "serie.ergebnisEins": "1 in a row",
+  "serie.ergebnisNull": "None in a row this time. Try again right away?",
+  "serie.beste": "Your best streak: {anzahl} in a row",
+  "serie.besteEins": "Your best streak: 1 in a row",
+  "serie.ende.fehler": "Streak over: this puzzle went wrong.",
+  "serie.ende.alle": "Every puzzle of this theme solved without a mistake. Great!",
+  "serie.ende.aufgehoert": "Streak ended.",
+  "serie.aufhoeren": "End streak",
+  "serie.nochmal": "New streak"
 }

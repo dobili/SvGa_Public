@@ -5,7 +5,13 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Taktikdaten } from "../daten/trainerdaten";
-import { alsZugaufgabe, anzahlJeThema, pruefeTaktikzug, taktikrunde } from "./taktiktrainer";
+import {
+  alsZugaufgabe,
+  anzahlJeThema,
+  pruefeTaktikzug,
+  taktikrunde,
+  vorgewaehltesThema,
+} from "./taktiktrainer";
 import { festerZufall } from "./zufall";
 
 const DATEI = new URL("../../../inhalte/de/trainer/taktik.json", import.meta.url);
@@ -65,5 +71,23 @@ describe("Taktiktrainer", () => {
       festerZufall(2),
     );
     expect(matt.every((a) => a.mattbild !== null)).toBe(true);
+  });
+});
+
+describe("vorgewaehltesThema", () => {
+  const anzahl = new Map([
+    ["gemischt", 50],
+    ["fesselung", 12],
+    ["umwandlung", 0],
+  ] as const);
+
+  it("wählt das Motiv, mit dem der Trainer geöffnet wurde", () => {
+    expect(vorgewaehltesThema("fesselung", anzahl)).toBe("fesselung");
+  });
+
+  it("bleibt bei „gemischt“ ohne Thema, bei unbekanntem Thema oder ohne Aufgaben", () => {
+    expect(vorgewaehltesThema(null, anzahl)).toBe("gemischt");
+    expect(vorgewaehltesThema("gabel", anzahl)).toBe("gemischt");
+    expect(vorgewaehltesThema("umwandlung", anzahl)).toBe("gemischt");
   });
 });

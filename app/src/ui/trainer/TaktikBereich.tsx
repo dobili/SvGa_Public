@@ -6,6 +6,10 @@
  * (daten/trainerdaten.ts); die Runde läuft im gemeinsamen Rundenablauf. Seit Paket 8 wählt der
  * Leser oben die Quelle: „Aus dem Buch“ (wie bisher) oder „Zusatzaufgaben (Lichess)“ aus
  * zusatzaufgaben.json (ZusatzWahl.tsx). Fällige Wiederholungen beider Quellen kommen in eine Runde.
+ * Gamifizierung P5: Neben der Runde startet die Buchwahl die „Serie ohne Fehler“ (TaktikSerie.tsx);
+ * die Startknöpfe stehen als Liste STARTARTEN, ein späterer Modus ergänzt eine Zeile. Mit Thema
+ * geöffnet („taktik:fesselung“, ui/trainer/trainerthema.ts, etwa aus „Dein nächster Schritt“),
+ * ist das Motiv gleich vorgewählt.
  * Abhängigkeiten: training/taktiktrainer.ts, training/zusatzaufgaben.ts, Rundenablauf,
  * Taktikaufgabe, ZusatzWahl, i18n.
  */
@@ -16,10 +20,13 @@ import { t } from "../../i18n/sprache";
 import {
   anzahlJeThema,
   MOTIVE,
+  TAKTIKTHEMEN,
   taktikrunde,
+  vorgewaehltesThema,
   type Taktikthema,
   type Taktikwahl,
 } from "../../training/taktiktrainer";
+import { serienaufgaben } from "../../training/taktikserie";
 import { ZUFALL } from "../../training/zufall";
 import { zusatzrunde, type Zusatzaufgabe, type Zusatzwahl } from "../../training/zusatzaufgaben";
 import { useDaten } from "../komponenten/bausteine/useDaten";
@@ -32,9 +39,10 @@ import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Auswahlliste } from "./Auswahlliste";
 import type { Runde } from "./useRunde";
 import { Quellenwahl, ZusatzWahl, type Taktikquelle } from "./ZusatzWahl";
+import { TaktikSerie } from "./TaktikSerie";
+import { useTrainerthema } from "./trainerthema";
 
 const AUFGABEN_JE_RUNDE = 8;
-const THEMEN: readonly Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
 
 function themenname(thema: Taktikthema): string {
   if (thema === "gemischt") return t("taktiktrainer.gemischt");
@@ -42,21 +50,49 @@ function themenname(thema: Taktikthema): string {
   return t(`taktiktrainer.motiv.${thema}`);
 }
 
-/** Wahl von Thema und Stufe der Buchaufgaben. */
+/** Gewählt: eine Runde nach Thema und Stufe (Buch oder Zusatz), die fälligen Wiederholungen
+ * oder eine Serie ohne Fehler zum Thema. */
+type Rundenwahl =
+  | Taktikwahl
+  | { readonly zusatz: Zusatzwahl }
+  | { readonly wiederholung: readonly string[] }
+  | { readonly serie: Taktikthema };
+
+/** Ein Startknopf der Buchwahl: Text, Stil, Prüfkennung und was er aus Thema und Stufe startet. */
+interface Startart {
+  readonly kennung: string;
+  readonly text: "taktiktrainer.starten" | "serie.starten";
+  readonly haupt: boolean;
+  readonly wahl: (thema: Taktikthema, stufe: number | null) => Rundenwahl;
+}
+
+/** Die Startknöpfe der Buchwahl; ein neuer Modus ergänzt eine Zeile (Wunsch des Autors). */
+const STARTARTEN: readonly Startart[] = [
+  {
+    kennung: "runde",
+    text: "taktiktrainer.starten",
+    haupt: true,
+    wahl: (thema, stufe) => ({ thema, stufe }),
+  },
+  { kennung: "serie", text: "serie.starten", haupt: false, wahl: (thema) => ({ serie: thema }) },
+];
+
+/** Wahl von Thema und Stufe der Buchaufgaben, darunter die Startknöpfe (Runde, Serie). */
 function BuchWahl({
   anzahl,
   starte,
 }: {
   anzahl: Map<Taktikthema, number>;
-  starte: (wahl: Taktikwahl) => void;
+  starte: (wahl: Rundenwahl) => void;
 }) {
-  const [thema, setzeThema] = useState<Taktikthema>("gemischt");
+  const vorwahl = vorgewaehltesThema(useTrainerthema("taktik"), anzahl);
+  const [thema, setzeThema] = useState<Taktikthema>(vorwahl);
   const [stufe, setzeStufe] = useState<number | null>(null);
   return (
     <>
       <Auswahlliste
         titel={t("taktiktrainer.thema")}
-        eintraege={THEMEN.filter((th) => (anzahl.get(th) ?? 0) > 0).map((th) => ({
+        eintraege={TAKTIKTHEMEN.filter((th) => (anzahl.get(th) ?? 0) > 0).map((th) => ({
           wert: th,
           text: `${themenname(th)} (${anzahl.get(th)})`,
         }))}
@@ -64,17 +100,22 @@ function BuchWahl({
         setze={setzeThema}
       />
       <Stufenwahl stufe={stufe} setze={setzeStufe} />
-      <button type="button" className="knopf-haupt" onClick={() => starte({ thema, stufe })}>
-        <Knopfsymbol art="starten" />
-        {t("taktiktrainer.starten")}
-      </button>
+      {STARTARTEN.map((art) => (
+        <button
+          key={art.kennung}
+          type="button"
+          className={art.haupt ? "knopf-haupt" : "knopf-zweit"}
+          data-testid={`taktik-start-${art.kennung}`}
+          onClick={() => starte(art.wahl(thema, stufe))}
+        >
+          <Knopfsymbol art="starten" />
+          {t(art.text)}
+        </button>
+      ))}
+      <p className="hinweis">{t("serie.erklaerung")}</p>
     </>
   );
 }
-
-/** Gewählt: eine Runde nach Thema und Stufe (Buch oder Zusatz) oder die fälligen Wiederholungen. */
-type Rundenwahl =
-  Taktikwahl | { readonly zusatz: Zusatzwahl } | { readonly wiederholung: readonly string[] };
 
 /** Eine Zusatzaufgabe in der Runde, mit vorgespieltem Gegnerzug. */
 function zusatzaufgabe(z: Zusatzaufgabe, r: Runde, motivAbfragen: boolean) {
@@ -86,7 +127,7 @@ function zusatzaufgabe(z: Zusatzaufgabe, r: Runde, motivAbfragen: boolean) {
 
 /** Die Aufgaben einer Runde als Bausteine für den Rundenablauf. */
 function rundenaufgaben(
-  wahl: Rundenwahl,
+  wahl: Exclude<Rundenwahl, { readonly serie: Taktikthema }>,
   aufgaben: readonly Aufgabe[],
   zusaetze: readonly Zusatzaufgabe[],
 ): Darstellung[] {
@@ -142,6 +183,15 @@ export function TaktikBereich() {
         )}
       </div>
     );
+  if ("serie" in wahl) {
+    const thema = wahl.serie;
+    return (
+      <TaktikSerie
+        erzeuge={() => serienaufgaben(aufgaben, thema, ZUFALL)}
+        zurAuswahl={() => setzeWahl(null)}
+      />
+    );
+  }
   return (
     <Rundenablauf
       key={`${JSON.stringify(wahl)}-${durchlauf}`}

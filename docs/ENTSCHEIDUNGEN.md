@@ -4,6 +4,28 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Gamifizierung P5: Serienmodus „ohne Fehler“ im Taktiktrainer (Arbeitschat, Welle 2)
+
+- **Serie ohne Fehler** (Zweig `gami-p5-serie`): neuer Modus im Taktiktrainer neben der Runde,
+  nur für die Buchaufgaben (taktik.json). Reihenfolge: je drei zufällige Aufgaben der Stufen 1 bis
+  5, danach alle übrigen, schwerste zuerst (`training/taktikserie.ts`). Warum: Die Serie soll
+  leicht beginnen und dann fordern; feste Blöcke machen den Anstieg sichtbar, ohne Uhr. Das
+  Thema der Auswahl gilt auch für die Serie, die Stufe nicht.
+- **Was als Fehler zählt:** wie in der Runde (richtig nur ohne falschen Zug und ohne Hilfe). Die
+  fehlerhafte Aufgabe wird noch zu Ende gezeigt, dann endet die Serie. „Serie beenden“ (ab der
+  ersten gelösten Aufgabe) beendet sie freiwillig und zählt das Erreichte.
+- **Zählung:** Jede Antwort geht wie in der Runde über `antworteMitKarte` ins Antwortprotokoll
+  und in die Wiederholungskarten; am Ende zählt die Serie als Durchgang des Trainers „taktik“
+  (Tagesprotokoll, Erfahrung) und meldet ihren Wert mit Quelle „serie“ an die Rekorde. Neue Zeile
+  `taktikSerie` in `REKORDARTEN`, Meldung „Neuer Rekord“ wie bei der Zeitrunde.
+- **Erweiterbar:** Die Startknöpfe der Buchwahl stehen als Liste `STARTARTEN` in
+  `ui/trainer/TaktikBereich.tsx`; ein weiterer Modus ergänzt eine Zeile. Die Themenliste
+  `TAKTIKTHEMEN` steht jetzt einmal in `training/taktiktrainer.ts`.
+- **Motiv vorwählen:** Mit Thema geöffnet („taktik:fesselung“), wählt der Taktiktrainer das Motiv
+  vor (`vorgewaehltesThema`); unbekannte Themen oder solche ohne Aufgaben bleiben bei „gemischt“.
+  Der Vorschlag „schwaches Thema“ in `training/vorschlagsarten.ts` trägt das Thema jetzt im Ziel,
+  „Üben“ landet also gleich beim Motiv.
+
 ## 31.10.2026 – Version 0.3.23: Gamifizierung P7 Extras übernommen, Einstieg für Welle 2 (Opus)
 
 - Zweig `gami-p7-extras` (Welle 1) geprüft und zusammengeführt; Konflikte nur in Listen

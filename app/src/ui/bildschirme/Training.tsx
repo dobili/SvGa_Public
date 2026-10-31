@@ -47,10 +47,14 @@ export function Training() {
         <TourKnopf />
       </header>
       <Stapelkarte />
-      <p className="stapel-prinzip hinweis">
-        <CircleHelp size={HILFESYMBOL} aria-hidden="true" />
-        {t("trainingslook.prinzip")}
-      </p>
+      {/* Kurz sichtbar, aufgeklappt die ganze Erklärung der Lernkartei (wie bisher). */}
+      <details className="stapel-prinzip hinweis" data-testid="stapel-prinzip">
+        <summary>
+          <CircleHelp size={HILFESYMBOL} aria-hidden="true" />
+          {t("trainingslook.prinzip")}
+        </summary>
+        <p>{t("training.faelligPrinzip")}</p>
+      </details>
       <Reihen />
       <Trainingskacheln />
     </div>

@@ -81,6 +81,9 @@ for (const schema of ["dunkel", "hell"] as const) {
       path: `test-results/bilder/training-neu-${schema}.png`,
       fullPage: true,
     });
+    // Die ganze Erklärung der Lernkartei bleibt hinter der Kurzzeile erreichbar.
+    await page.getByTestId("stapel-prinzip").locator("summary").click();
+    await expect(page.getByTestId("stapel-prinzip")).toContainText("Wie bei einer Lernkartei");
     await leiste.getByRole("button", { name: "Nachschlagen" }).click();
     await page.getByRole("button", { name: /^Gesamt-Checkliste/ }).click();
     await expect(page.getByTestId("lernkarte-0")).toContainText("fertig");

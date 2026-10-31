@@ -46,7 +46,8 @@ Training: Tipp auf „Training“ unten in der Leiste. Checkliste: „Nachschlag
 - [ ] N2261. **Durchgehen:** Tipp auf „Durchgehen“. Sind Übungen aus dem Buch fällig, startet
       zuerst deren Reihe; sonst öffnet sich der erste Trainer mit fälligen Aufgaben (dort
       „Wiederholen“). Ist nichts fällig, ist der Stapel blass, es gibt keinen Knopf, und darunter
-      steht „Nichts fällig. Als Nächstes am …“. Passt das?
+      steht „Nichts fällig. Als Nächstes am …“. Unter dem Stapel steht kurz, wann Gelöstes
+      wiederkommt; ein Tipp darauf klappt die ganze Erklärung der Lernkartei auf. Passt das?
 - [ ] N2262. **Wischreihen je Buchteil:** Unter dem Stapel stehen fünf Reihen: Grundlagen
       (Kapitel 0–1 · 3 Trainer), Eröffnung (2–4 · 5), Mittelspiel (5–7 · 3), Endspiel (8–10 · 2),
       Praxis (11–12 · 5). Jede Reihe lässt sich seitlich wischen; alle 18 Trainer kommen genau

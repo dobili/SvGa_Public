@@ -13,6 +13,12 @@ Formular; Zielgruppe Einsteiger bis etwa 2000 Elo, meist am Handy im dunklen Mod
   `useFaelligeUebersicht` wie „Dein nächster Schritt“; „Durchgehen“ startet zuerst die Übungen aus
   dem Buch, sonst den ersten Trainer mit Fälligem. Die Liste mit einem Knopf je Quelle
   (`FaelligeWiederholungen.tsx`) bleibt in „Dein nächster Schritt“ und in den Kurzplänen.
+  Die Erklärung der Lernkartei steht kurz unter dem Stapel und ganz zum Aufklappen.
+- **Nichts fällt weg (Wunsch des Autors):** fällige Trainer-Aufgaben je Quelle → Plakette auf der
+  Karte des Trainers (Tipp öffnet ihn), Übungen aus dem Buch → „Durchgehen“; Ablauf je Trainer →
+  im Trainer selbst und in der Kapitelübersicht; Beschreibungen von Lernsammlung und
+  Website-Training → auf deren Seiten. Bewusst weggelassen: Kapiteltitel und Sprung ins Kapitel
+  je Kapitelkopf im Training (das Kapitel steht auf jeder Karte, Kapitel öffnet man im Buch).
 - Je Buchteil eine Wischreihe (`Trainerreihe.tsx`), abgeleitet aus `TRAINER` und `BUCHTEILE`
   (`trainerreihen.ts`): ein Trainer steht einmal, im Teil seines ersten Kapitels. Karte als
   ganzer Knopf (Tastatur, axe), Bild aus `TRAINERBILDER` (`trainerbilder.ts`, selbst gebaute

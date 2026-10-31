@@ -91,15 +91,29 @@
 }
 
 .stapel-prinzip {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--raster);
   margin: calc(var(--raster) * -0.5) var(--raster) 0;
 }
 
-.stapel-prinzip svg {
+.stapel-prinzip summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  list-style: none;
+  cursor: pointer;
+}
+
+.stapel-prinzip summary::-webkit-details-marker {
+  display: none;
+}
+
+.stapel-prinzip summary svg {
   flex: none;
   margin-top: 2px;
+}
+
+.stapel-prinzip p {
+  margin: var(--raster) 0 0;
 }
 
 /* ---------- Wischreihen ---------- */

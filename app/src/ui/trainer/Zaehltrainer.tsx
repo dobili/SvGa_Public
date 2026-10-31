@@ -4,12 +4,15 @@
  * Rolle im Gesamtbild: Trainer „zaehlen“ (AP 13). Nach der Antwort zeigt die App ihre Rechnung
  * mit denselben Pfeilen und demselben Satz wie das Werkzeug „Zählen“ (k1-zaehlen.ts). Seit dem
  * Nebenchat (30.10.2026): Ergebnis mit einem Tipp, genaues Zählen umschaltbar, bei hängenden
- * Figuren zu jedem übersehenen oder falsch getippten Feld die Begründung.
- * Abhängigkeiten: training/zaehltrainer.ts, analyse/k1-zaehlen.ts, Trainerbrett, Rundenrahmen.
+ * Figuren zu jedem übersehenen oder falsch getippten Feld die Begründung. Seit der Runde „Weniger
+ * Text“ (P11, 31.10.2026) sind Frage und Antwort von „Bilanz zählen“ knapp: „d4: Lohnt sich
+ * Schlagen?“ mit ⓘ, Banner mit Ergebnis-Chip, Zählung als Zeichen, Motive als Marken
+ * (Zaehlantwort.tsx).
+ * Abhängigkeiten: training/zaehltrainer.ts, analyse/k1-zaehlen.ts, Trainerbrett, Rundenrahmen,
+ * Zaehlantwort.tsx.
  */
 import { useMemo, useState } from "react";
 import { zaehle } from "../../analyse/k1-zaehlen";
-import { figurenname } from "../../analyse/texte";
 import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { feldAusName, stellungAusFen } from "../../schach/stellung";
@@ -26,6 +29,8 @@ import { bilanzkennung, haengekennung } from "../../training/wiederholbar";
 import { antworteMitKarte } from "./kartenantwort";
 import { abgleichsfelder, umschalten } from "./abgleich";
 import { Antwortmeldung } from "./Rundenrahmen";
+import { Motivmarken, Zaehlbanner, Zaehlfrage, Zaehlrechnung } from "./Zaehlantwort";
+import { bilanztext } from "./zaehltexte";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 
@@ -80,36 +85,11 @@ function Zahlwahl({
   );
 }
 
-/** Die Rechnung der App (wie das Werkzeug „Zählen“). */
-function Rechnung({ fen, feld }: { fen: string; feld: string }) {
-  const ergebnis = useMemo(() => {
-    const gelesen = stellungAusFen(fen);
-    const ziel = feldAusName(feld);
-    return gelesen.ok && ziel !== null ? zaehle(gelesen.wert, ziel) : null;
-  }, [fen, feld]);
-  if (!ergebnis) return null;
-  return (
-    <section className="karte" data-testid="zaehl-rechnung">
-      {ergebnis.befunde.map((b) => (
-        <p key={b.kennung}>
-          <strong>{b.titel}:</strong> {b.zeilen.join(", ")}
-        </p>
-      ))}
-      <p>{ergebnis.fazit}</p>
-    </section>
-  );
-}
-
 /** Pfeile der Rechnung, sobald die Antwort steht. */
 function rechnungspfeile(fen: string, feld: string): Markierung[] {
   const gelesen = stellungAusFen(fen);
   const ziel = feldAusName(feld);
   return gelesen.ok && ziel !== null ? zaehle(gelesen.wert, ziel).markierungen.slice() : [];
-}
-
-/** „lohnt nicht“ oder „+3“: die Bilanz als Text. */
-function bilanztext(wert: number): string {
-  return wert === 0 ? t("zaehltrainer.lohntNicht") : `+${wert}`;
 }
 
 /**
@@ -127,8 +107,11 @@ function Ergebniswahl({
 }) {
   const werte = Array.from({ length: HOECHSTE_BILANZ + 1 }, (_, i) => i);
   return (
-    <fieldset className="ergebniswahl" data-testid="zaehl-ergebnisse">
-      <legend>{t("zaehltrainer.bilanz")}</legend>
+    <fieldset
+      className="ergebniswahl"
+      data-testid="zaehl-ergebnisse"
+      aria-label={t("zaehltrainer.bilanz")}
+    >
       {werte.map((w) => (
         <button
           key={w}
@@ -200,19 +183,19 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
     const richtig = pruefeZaehlantwort(aufgabe, { angreifer, verteidiger, bilanz }).richtig;
     antworteMitKarte(runde, "zaehlen", bilanzkennung(aufgabe), richtig);
   };
+  const schalter = beantwortet ? null : (
+    <button type="button" className="knopf-link" onClick={() => setzeGenau(!genau)}>
+      {t(genau ? "zaehltrainer.nurErgebnis" : "zaehltrainer.genauZaehlen")}
+    </button>
+  );
   return (
     <>
-      <p>{t("zaehltrainer.auftragKurz", { feld: aufgabe.feld })}</p>
+      <Zaehlfrage feld={aufgabe.feld} schalter={schalter} />
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
         beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
       />
-      {!beantwortet && (
-        <button type="button" className="knopf-link" onClick={() => setzeGenau(!genau)}>
-          {t(genau ? "zaehltrainer.nurErgebnis" : "zaehltrainer.genauZaehlen")}
-        </button>
-      )}
       {genau && (
         <Anzahlen
           angreifer={angreifer}
@@ -232,49 +215,9 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
           {t("trainer.pruefen")}
         </button>
       )}
-      {beantwortet && (
-        <Antwortmeldung richtig={runde.ergebnis === true}>
-          {runde.ergebnis !== true && bilanz !== null
-            ? t("zaehltrainer.deineAntwort", {
-                antwort: bilanztext(bilanz),
-                richtig: bilanztext(aufgabe.bilanz),
-              })
-            : undefined}
-        </Antwortmeldung>
-      )}
-      {beantwortet && <Motivhinweise aufgabe={aufgabe} />}
-      {beantwortet && <Rechnung fen={aufgabe.fen} feld={aufgabe.feld} />}
-    </>
-  );
-}
-
-/** Nach der Antwort: die Motive der Aufgabe (Fesselung, Batterie), mit Buchbezug. */
-function Motivhinweise({ aufgabe }: { aufgabe: Zaehlaufgabe }) {
-  const stellung = useMemo(() => stellungAusFen(aufgabe.fen), [aufgabe.fen]);
-  const name = (feld: string): string => {
-    const quadrat = feldAusName(feld);
-    const figur = quadrat !== null && stellung.ok ? stellung.wert.brett.get(quadrat) : undefined;
-    return quadrat !== null && figur ? figurenname({ feld: quadrat, figur }) : feld;
-  };
-  const namen = aufgabe.gefesselt.map(name);
-  return (
-    <>
-      {namen.length > 0 && (
-        <p className="meldung" data-testid="zaehl-fesselung">
-          {t("zaehltrainer.fesselung", { figuren: namen.join(", ") })}
-        </p>
-      )}
-      {aufgabe.motive.includes("batterie") && (
-        <p className="hinweis">{t("zaehltrainer.batterie")}</p>
-      )}
-      {aufgabe.abzug.map((p) => (
-        <p key={`${p.hinten}-${p.vorn}`} className="hinweis" data-testid="zaehl-abzug">
-          {t(p.deckt ? "zaehltrainer.abzugDeckung" : "zaehltrainer.abzug", {
-            hinten: name(p.hinten),
-            vorn: name(p.vorn),
-          })}
-        </p>
-      ))}
+      {beantwortet && <Zaehlbanner richtig={runde.ergebnis === true} loesung={aufgabe.bilanz} />}
+      {beantwortet && <Zaehlrechnung fen={aufgabe.fen} feld={aufgabe.feld} />}
+      {beantwortet && <Motivmarken aufgabe={aufgabe} />}
     </>
   );
 }

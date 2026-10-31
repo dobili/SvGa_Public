@@ -4,6 +4,41 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Weniger Text: Werkzeuge und Trainer (Arbeitschat, Zweig `wenigertext-werkzeuge`)
+
+Wahl des Autors (Runde 4 „Weniger Text“, alle Punkte „Umsetzen“): Junge Leser schreckt viel Text
+ab. Umgesetzt sind P7 bis P12 und P14; was vorher als Satz dastand, steht als Bildzeichen mit
+Namen für Bildschirmleser oder vollständig hinter dem Infoknopf (`MitInfo`).
+
+- **P7 Legenden:** Liste `LEGENDEN` in `ui/werkzeuge/legenden.ts` (je Werkzeug Zeichen Pfeil,
+  Feld oder Kennung, Farbe, Stichwort; eintragen statt umbauen), Komponente `Pfeillegende.tsx`.
+  Linienart wie am Brett (Gold durchgezogen, Rot gestrichelt, Grau gepunktet). Ein Test prüft,
+  dass jedes Werkzeug mit Legendensatz eine Reihe hat. Der Satz `werkzeug.<id>.legende` bleibt
+  hinter ⓘ.
+- **P8 Zählen:** Die Erklärkachel von „Zählen“ ist eine Zeile „Feld antippen“ mit Hand; Erklärung
+  und Irrtumshinweis hinter ⓘ. Der Haken „Nicht mehr anzeigen“ entfällt dort (die Zeile ist immer
+  da, ein früher gesetzter Merker wird übergangen); „Ziehen“ bleibt unverändert.
+- **P9 Statuschip:** `leerfall.ts` liefert zum Satz einen Kurzgrund (neues freiwilliges Feld
+  `status` im Werkzeugergebnis, nur von der Oberfläche gesetzt); Prüffragen und Falle melden ihren
+  Leerfall über die Liste `EIGENE_LEERFAELLE`. Die Karte zeigt ⊘-Chip und ⓘ.
+- **P10 Kandidaten:** Zeilen mit Art-Zeichen, Bewertungsbalken (die Bewertung selbst), ▲/▼ für
+  die Veränderung (`Wertpfeil.tsx`, nach der Regel des Autors: Veränderung als Pfeil mit Zahl),
+  Krone (stärkster laut Engine), Waage (beste Bilanz nach Schritt 4), darunter die stärkste
+  Antwort mit Material. Die Befunde der Schritte 2 bis 4 stehen vollständig hinter ⓘ (Liste
+  `BEFUNDE_HINTER_INFO` in `ui/werkzeuge/darstellung.ts`).
+- **P11 Zähltrainer:** Frage „d4: Lohnt sich Schlagen?“, Regel und „Genauer üben“ hinter ⓘ;
+  Antwort als Banner mit Ergebnis-Chip, Zählung als Schwerter : Schild, Zugfolge; Fesselung,
+  Batterie, Verdeckt und Abzug als Marken mit ⓘ (`Zaehlantwort.tsx`).
+- **P12 Falle oder Köder:** Frage groß mit Pfeil-Legende, Auftrag hinter ⓘ; Antwort als Banner,
+  der Verlust als „▼ 11,6“ mit „nach Dxd6“ (kein Balken, `verlustBeimNehmen` ist eine
+  Veränderung), „Besser:“ als goldener Chip, die Sätze hinter ⓘ (`Fallenantwort.tsx`).
+- **P14 Taktik-Hinweis:** Warnsignal als roter Chip mit Kurzname, drei Merkzeichen Schach,
+  Schlag, Drohung (`Warnhinweis.tsx`); in `Taktikaufgabe.tsx` nur der Aufruf (Freigabe für diesen
+  Auftrag).
+- **Texte:** neu unter `wenigertext.werkzeug.*` (de und en); gelöscht, weil ungenutzt:
+  `kandidaten.engine.zeile`, `zaehltrainer.deineAntwort`, `zaehltrainer.auftragKurz`.
+  „Hinweis: Warnsignale zeigen“ heißt jetzt „Warnsignale zeigen“ (mit Warndreieck).
+
 ## 31.10.2026 – Einstellungen neu nach Entwurf K2 „Brettvorschau oben“ (Arbeitschat, Zweig `gestaltung-einstellungen`)
 
 Ziel des Autors: Die Einstellungen waren zu technisch, zu textlastig und wirkten wie ein Formular;

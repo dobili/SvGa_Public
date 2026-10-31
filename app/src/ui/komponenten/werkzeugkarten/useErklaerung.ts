@@ -5,7 +5,8 @@
  * Zählen und Ziehen gleich beim Wählen mit einer Kachel, die stehen bleibt, solange das Werkzeug
  * gewählt ist (wie die Karten der übrigen Werkzeuge). Ein Haken „Nicht mehr anzeigen“ blendet
  * sie dauerhaft aus; die Einstellungen holen sie zurück. Die Wahl ist ein Merker auf dem Gerät
- * (wie die Koordinaten).
+ * (wie die Koordinaten). Seit der Runde „Weniger Text“ (P8) ist „Zählen“ nur eine Zeile ohne
+ * Haken; sie steht immer da, auch wenn früher „Nicht mehr anzeigen“ gesetzt wurde.
  * Abhängigkeiten: app/merker.ts, React.
  */
 import { useState } from "react";
@@ -40,7 +41,7 @@ export function useErklaerung(wahl: string | null): {
   );
   const werkzeug = hatErklaerkachel(wahl) ? wahl : null;
   return {
-    sichtbar: werkzeug !== null && !ausgeblendet.includes(werkzeug),
+    sichtbar: werkzeug === "zaehlen" || (werkzeug !== null && !ausgeblendet.includes(werkzeug)),
     ausblenden: () => {
       if (!werkzeug) return;
       schreibeMerker(merkername(werkzeug), AUSGEBLENDET);

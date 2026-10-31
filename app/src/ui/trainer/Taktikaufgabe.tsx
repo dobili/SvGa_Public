@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Trainer „taktik“ (Pflichtenheft 7: „Gestufte Hilfen: Warnsignal, Motiv,
  * Schlüsselfigur, Lösung. Nach der Lösung benennst du das Motiv.“). Das Warnsignal rechnet das
- * Werkzeug Warnsignale aus Kapitel 7 aus der Stellung. Richtig zählt eine Aufgabe, die ohne
+ * Werkzeug Warnsignale aus Kapitel 7 aus der Stellung (seit P14 der Runde „Weniger Text“ als Chip
+ * mit drei Merkzeichen, Warnhinweis.tsx). Richtig zählt eine Aufgabe, die ohne
  * falschen Zug und ohne Hilfe gelöst ist; das Benennen des Motivs zeigt nur, ob es stimmte. Nach
  * einem falschen Zug zeigen useFalschzug und Falschzugmeldung den roten Pfeil und den Verlust laut Engine.
  * Zusatzaufgaben (Lichess, nicht aus dem Buch, seit Paket 8) bringen ihren Gegnerzug mit: Das
@@ -11,7 +12,6 @@
  * Abhängigkeiten: training/taktiktrainer.ts, analyse/k7-warnsignale.ts, Brettbereich.
  */
 import { useId, useMemo, useState } from "react";
-import { warnsignaleSieben } from "../../analyse/k7-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { sprache, t } from "../../i18n/sprache";
@@ -32,6 +32,7 @@ import { TaktikHerausforderungsknopf } from "../komponenten/teilen/TaktikHerausf
 import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
+import { Warnhinweis } from "./Warnhinweis";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -72,11 +73,6 @@ function Hilfen({
   weiter: () => void;
   zeigeLoesung: () => void;
 }) {
-  const warnsignal = useMemo(() => {
-    const gelesen = stellungAusFen(aufgabe.fen);
-    const eigen = aufgabe.amZug === "w" ? "white" : "black";
-    return gelesen.ok ? warnsignaleSieben(gelesen.wert, eigen).fazit : "";
-  }, [aufgabe]);
   const motiv = themenname
     ? themenname
     : aufgabe.motiv
@@ -86,7 +82,8 @@ function Hilfen({
         : t("taktiktrainer.ohneMotiv");
   return (
     <div className="uebung-hilfe">
-      {stufe >= 1 && <p>{t("taktiktrainer.hilfeWarnsignal", { text: warnsignal })}</p>}
+      {/* Runde „Weniger Text“ (P14): Warnsignal als Chip, drei Merkzeichen, Satz hinter ⓘ. */}
+      {stufe >= 1 && <Warnhinweis fen={aufgabe.fen} amZug={aufgabe.amZug} />}
       {stufe >= 2 && <p data-testid="taktik-motiv">{t("taktiktrainer.hilfeMotiv", { motiv })}</p>}
       {stufe >= HILFEN && <p>{t("taktiktrainer.hilfeFigur")}</p>}
       <div className="knopfzeile">

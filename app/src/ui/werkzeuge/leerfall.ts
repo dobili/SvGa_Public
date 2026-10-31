@@ -1,7 +1,9 @@
 /**
  * Leerfälle der Werkzeugkarten (Rückfrage U12, Entscheidung D1 vom 15.10.2026): Greift ein
  * Werkzeug in einer Stellung nicht, zeigt die Karte statt leerer Befunde einen einzigen Satz:
- * wann das Werkzeug gilt und warum hier nicht.
+ * wann das Werkzeug gilt und warum hier nicht. Seit der Runde „Weniger Text“ (P9, 31.10.2026)
+ * kommt ein Kurzgrund dazu („Nicht im Endspiel“, „Nur bei Angebot“), den die Karte als grauen
+ * Chip zeigt; der Satz steht hinter dem Infoknopf.
  *
  * Rolle im Gesamtbild: Schicht zwischen den Werkzeugen (analyse/, Fables Bereich, unverändert)
  * und der Karte (ui/komponenten/werkzeugkarten/Werkzeugkarte.tsx). Sie bekommt das fertige Ergebnis und die
@@ -34,8 +36,22 @@ interface Lage {
   readonly phase: () => Phase | null;
 }
 
+/** Grund, warum ein Werkzeug hier nicht greift: der Satz und der Kurzgrund für den Chip (P9). */
+interface Grund {
+  readonly satz: string;
+  readonly kurz: string;
+}
+
 /** Grund, warum ein Werkzeug hier nicht greift, oder null, wenn es greift. */
-type Pruefung = (lage: Lage, ergebnis: Werkzeugergebnis) => string | null;
+type Pruefung = (lage: Lage, ergebnis: Werkzeugergebnis) => Grund | null;
+
+/** Die Gründe ohne Phase: Satz unter leerfall.grund.*, Kurzgrund unter wenigertext.werkzeug.status.*. */
+type Grundname = "faktorenGleich" | "keineBauern" | "keineFiguren" | "figuren" | "keinSignal";
+
+/** Ein Grund aus seinem Namen. Beispiel: grund("keineBauern") → „Es steht kein Bauer …“, „Keine Bauern“. */
+function grund(name: Grundname): Grund {
+  return { satz: t(`leerfall.grund.${name}`), kurz: t(`wenigertext.werkzeug.status.${name}`) };
+}
 
 const OHNE_STUFEN: Werkzeugergebnis["stufen"] = [[], [], []];
 
@@ -50,10 +66,13 @@ function mitFiguren(s: Stellung): boolean {
 }
 
 /** Grund „es ist {Phase}“, wenn die Phase eine der genannten ist. */
-function inPhase(lage: Lage, phasen: readonly Phase[]): string | null {
+function inPhase(lage: Lage, phasen: readonly Phase[]): Grund | null {
   const p = lage.phase();
   return p !== null && phasen.includes(p)
-    ? t("leerfall.grund.phase", { phase: t(`phase.name.${p}`) })
+    ? {
+        satz: t("leerfall.grund.phase", { phase: t(`phase.name.${p}`) }),
+        kurz: t(`wenigertext.werkzeug.status.phase.${p}`),
+      }
     : null;
 }
 
@@ -65,9 +84,9 @@ function schachOderSchlag(s: Stellung): boolean {
 }
 
 /** Kein Bauer, oder nicht nur Könige und Bauern: Grund für die Bauernendspiel-Werkzeuge. */
-function keinBauernendspiel(lage: Lage, braucheBauern: boolean): string | null {
-  if (mitFiguren(lage.stellung)) return t("leerfall.grund.figuren");
-  if (braucheBauern && !mitBauern(lage.stellung)) return t("leerfall.grund.keineBauern");
+function keinBauernendspiel(lage: Lage, braucheBauern: boolean): Grund | null {
+  if (mitFiguren(lage.stellung)) return grund("figuren");
+  if (braucheBauern && !mitBauern(lage.stellung)) return grund("keineBauern");
   return null;
 }
 
@@ -86,25 +105,28 @@ const PRUEFUNGEN: Readonly<Record<string, Pruefung>> = {
   // wenn ein Faktor vorn liegt, sonst helfen die Planfragen mehr.
   "k3-faktorenbilanz": (lage, e) =>
     e.fazit === t("faktoren.fazit.gleich") && inPhase(lage, ["mittelspiel"])
-      ? t("leerfall.grund.faktorenGleich")
+      ? grund("faktorenGleich")
       : null,
   // Kapitel 5: Das Skelett sind die Bauern.
-  "k5-felder": (lage) => (mitBauern(lage.stellung) ? null : t("leerfall.grund.keineBauern")),
-  "k5-bauern": (lage) => (mitBauern(lage.stellung) ? null : t("leerfall.grund.keineBauern")),
-  "k5-richtung": (lage) => (mitBauern(lage.stellung) ? null : t("leerfall.grund.keineBauern")),
+  "k5-felder": (lage) => (mitBauern(lage.stellung) ? null : grund("keineBauern")),
+  "k5-bauern": (lage) => (mitBauern(lage.stellung) ? null : grund("keineBauern")),
+  "k5-richtung": (lage) => (mitBauern(lage.stellung) ? null : grund("keineBauern")),
   "k5-figuren": (lage) => {
-    if (!mitBauern(lage.stellung)) return t("leerfall.grund.keineBauern");
-    return mitFiguren(lage.stellung) ? null : t("leerfall.grund.keineFiguren");
+    if (!mitBauern(lage.stellung)) return grund("keineBauern");
+    return mitFiguren(lage.stellung) ? null : grund("keineFiguren");
   },
   // Kapitel 7, Schritt 3: Ruhe gibt es nur zu prüfen, wo etwas in der Luft liegt.
   "k7-ruhe": (lage, e) =>
     e.fazit === t("ruhe.fazit") && !schachOderSchlag(lage.stellung)
-      ? t("leerfall.grund.ruhig", { farbe: farbname(lage.stellung.amZug) })
+      ? {
+          satz: t("leerfall.grund.ruhig", { farbe: farbname(lage.stellung.amZug) }),
+          kurz: t("wenigertext.werkzeug.status.ruhig"),
+        }
       : null,
   // Kapitel 7, Schritt 1: ohne Signal kein Befund.
   "k7-warnsignale": (_lage, e) =>
     e.fazit === t("warnsignale.fazitSieben", { kennungen: t("warnsignale.keine") })
-      ? t("leerfall.grund.keinSignal")
+      ? grund("keinSignal")
       : null,
   // Kapitel 8: die sechs Regeln im Endspiel und auf dem Weg dorthin, nicht in der Eröffnung.
   "k8-regeln": (lage) => inPhase(lage, ["eroeffnung"]),
@@ -113,6 +135,24 @@ const PRUEFUNGEN: Readonly<Record<string, Pruefung>> = {
   "k8-schluesselfelder": (lage) => keinBauernendspiel(lage, true),
   "k8-quadrat": (lage) => keinBauernendspiel(lage, true),
 };
+
+/**
+ * Werkzeuge, die ihren Leerfall selbst als Fazit melden (der Satz bleibt, P9 setzt nur den
+ * Kurzgrund für den Chip): Fazit-Schlüssel → Kurzgrund. Regel: Kapitel 4, die Prüffragen und der
+ * Fallencheck gelten, sobald Material angeboten wird.
+ */
+const EIGENE_LEERFAELLE: Readonly<
+  Record<string, readonly (readonly [Textschluessel, Textschluessel])[]>
+> = {
+  "k4-prueffragen": [["prueffragen.keinAngebot", "wenigertext.werkzeug.status.nurBeiAngebot"]],
+  "k4-falle": [["falle.fazit.nichts", "wenigertext.werkzeug.status.nurBeiAngebot"]],
+};
+
+/** Der Kurzgrund, wenn das Werkzeug selbst sagt, dass es hier nicht greift, sonst null. */
+function eigenerLeerfall(e: Werkzeugergebnis): string | null {
+  const treffer = EIGENE_LEERFAELLE[e.werkzeug]?.find(([fazit]) => t(fazit) === e.fazit);
+  return treffer ? t(treffer[1]) : null;
+}
 
 /**
  * Werkzeuge mit Leerfall nach U12 (für Tests und Dokumentation). Das Turmendspiel (k9-turmbegriffe)
@@ -138,8 +178,8 @@ export function ohneDoppeltenSatz(e: Werkzeugergebnis): Werkzeugergebnis {
 }
 
 /**
- * Das Ergebnis für die Karte: im Leerfall nur der Satz „{gilt} Hier nicht: {grund}“, sonst das
- * Ergebnis ohne doppelten Satz.
+ * Das Ergebnis für die Karte: im Leerfall nur der Satz „{gilt} Hier nicht: {grund}“ und der
+ * Kurzgrund für den grauen Chip (Feld `status`, P9), sonst das Ergebnis ohne doppelten Satz.
  *
  * Warum: Eine volle Karte mit „keine“ in jeder Zeile sagt dem Leser nicht, dass das Werkzeug hier
  * nicht greift (Wunsch des Autors, D1).
@@ -148,6 +188,8 @@ export function ohneDoppeltenSatz(e: Werkzeugergebnis): Werkzeugergebnis {
  * Sonderfall: Lehrbilder ohne Regeln (ohne König) behalten ihr Ergebnis.
  */
 export function mitLeerfall(e: Werkzeugergebnis, kontext: Leerfallkontext): Werkzeugergebnis {
+  const eigen = eigenerLeerfall(e);
+  if (eigen) return { ...ohneDoppeltenSatz(e), status: eigen };
   const pruefe = PRUEFUNGEN[e.werkzeug];
   const { stellung, regel } = kontext;
   if (!pruefe || !stellung.regeln) return ohneDoppeltenSatz(e);
@@ -162,14 +204,15 @@ export function mitLeerfall(e: Werkzeugergebnis, kontext: Leerfallkontext): Werk
       return gemerkt;
     },
   };
-  const grund = pruefe(lage, e);
-  if (grund === null) return ohneDoppeltenSatz(e);
+  const befund = pruefe(lage, e);
+  if (befund === null) return ohneDoppeltenSatz(e);
   const gilt = t(`leerfall.${e.werkzeug}` as Textschluessel);
   return {
     ...e,
     befunde: [],
     markierungen: [],
     stufen: OHNE_STUFEN,
-    fazit: t("leerfall.satz", { gilt, grund }),
+    fazit: t("leerfall.satz", { gilt, grund: befund.satz }),
+    status: befund.kurz,
   };
 }

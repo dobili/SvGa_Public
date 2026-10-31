@@ -1,4 +1,4 @@
-Stand: 31.10.2026 · **Version 0.3.36**: Steckbriefe als Eröffnungsbaum (H2), Glossar als Lexikonseite (I3), N2290–N2299. Offen aus dem Bericht: untere Leiste bei 360 px 10 px zu breit (prüfen).
+Stand: 31.10.2026 · **Version 0.3.36**: Steckbriefe als Eröffnungsbaum (H2), Glossar als Lexikonseite (I3), N2290–N2299. Befund „untere Leiste 10 px zu breit“ nachgemessen: Leiste und Seite bei 360 px genau 360 px breit (Chromium), nicht nachvollziehbar.
 
 Stand: 31.10.2026 · **Version 0.3.35**: Bot rechnet erst nach der Zuganimation (Befund des Autors, N2315). **Danach (Wunsch des Autors):** Maia in einen eigenen Worker; allgemein prüfen, welche Rechnungen auf weitere Kerne gehören (Multicore). Vorher übrige Berichte übernehmen (Buchseite/Lernpfad, Nachschlagen, Trainerstart, Einstellungen, Auswertung, Spielen).
 

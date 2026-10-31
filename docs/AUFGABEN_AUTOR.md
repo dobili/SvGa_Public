@@ -337,10 +337,6 @@ Startanimation nach Entwurf 3 (neues Stück fliegt ins Profil) und 4 (Stück des
 
 ### Neu in 0.3.13: Orden verstreut, Pfeile, Serie ohne Verfall (Opus, 30.10.2026)
 
-- [ ] N1041. **Orden zufällig verteilt:** Aufgabenseite › „Orden testen“ › ein paar Ringe auf
-      100 % setzen, dann „Neu starten“. In der Startanimation stehen die 18 Orden jetzt verstreut
-      im Rand um Springer und Titel statt im Kranz, ohne sich zu überdecken; bei jedem Start an
-      denselben Stellen, damit du deine wiederfindest. Gefällt dir die Verteilung?
 - [ ] N1042. **Pfeile in den Werkzeugbildern:** Nachschlagen › Werkzeuge des Buches, ein Werkzeug
       aufklappen. Neben den goldenen Nummern zeigt jetzt ein goldener Pfeil schräg von unten auf
       jeden Knopf, den du antippst. Auf dem Brett selbst (bei „Zählen“ das Feld d4) steht nur die

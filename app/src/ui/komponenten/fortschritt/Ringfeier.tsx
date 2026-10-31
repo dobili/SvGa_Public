@@ -49,6 +49,7 @@ export function Ringfeier() {
           symbol={ring.symbol}
           beschriftung={t("orden.name", { name: ring.name })}
           klasse="orden-gross"
+          ring={ring.testid}
         />
         <h2>{t("ringfeier.titel")}</h2>
         <p>{t("ringfeier.text", { name: ring.name, gesamt: String(ring.anteil.gesamt) })}</p>

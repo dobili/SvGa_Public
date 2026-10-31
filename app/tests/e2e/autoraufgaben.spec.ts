@@ -112,15 +112,16 @@ test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Start
   await expect(
     probe.getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true }),
   ).toBeDisabled();
-  // Die Startanimation zeigt den Orden golden, die übrigen als Silhouette.
+  // Die Startanimation zeigt den Orden als Stück des Tages (beim ersten Start gilt nichts als neu).
   // Die Hilfe merkt sich vor jedem Laden, dass die Animation schon lief; das hier hebt es auf.
   await page.addInitScript(() => window.sessionStorage.removeItem("svga.startanimation.sitzung"));
   await page.reload();
-  const orden = page.getByTestId("startanimation-orden");
-  await expect(orden.locator(".startorden")).toHaveCount(18);
-  await expect(orden.locator(".startorden.verdient")).toHaveCount(1);
+  const stueck = page.getByTestId("startstueck");
+  await expect(stueck.locator('[data-ordenkunst="uebungen"]')).toBeAttached();
+  await expect(stueck).toContainText("Aus deiner Sammlung");
   await page.screenshot({ path: "test-results/bilder/orden-startanimation.png" });
   await page.getByTestId("startanimation").click();
+  await expect(stueck).toHaveCount(0);
   // Probe beenden: der Ring zählt wieder echt (Aufgabenseite neu öffnen, die Animation wegtippen).
   await page.goto("/app/#aufgaben");
   await page.reload();

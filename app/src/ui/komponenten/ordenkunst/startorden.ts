@@ -12,6 +12,7 @@
  */
 import { useSyncExternalStore } from "react";
 import { beobachteMerker, entferneMerker, liesMerker, schreibeMerker } from "../../../app/merker";
+import { festerZufall } from "../../../training/zufall";
 import type { Stueckart } from "./entwuerfe";
 
 /** Merker: alle Stücke, die beim letzten Start verdient waren („orden:uebungen,abzeichen:warum“). */
@@ -69,8 +70,10 @@ export function planeStart(
   verdient: readonly Stueck[],
   zufall: number,
 ): { plan: Startplan; bekanntNeu: string } {
-  const bekanntNeu = verdient.map(stueckSchluessel).join(",");
   const alt = new Set((bekannt ?? "").split(",").filter(Boolean));
+  // Vereinigung statt Ersetzen: Lädt ein Ring später (Lernziele), gilt sein Orden beim nächsten
+  // Start nicht noch einmal als neu (Prüfung beim Übernehmen, 31.10.2026).
+  const bekanntNeu = [...new Set([...alt, ...verdient.map(stueckSchluessel)])].join(",");
   const neu = bekannt === null ? [] : verdient.filter((s) => !alt.has(stueckSchluessel(s)));
   const erstes = neu[0];
   if (erstes)
@@ -90,6 +93,20 @@ export function planeStart(
       bekanntNeu,
     };
   return { plan: { art: "nichts" }, bekanntNeu };
+}
+
+/** Stellen je Teil des Datums in der Saat (JJJJMMTT). */
+const MONATSSTELLEN = 100;
+
+/**
+ * Zufallszahl 0 bis 1, die einen Tag lang gleich bleibt: So ist das „Stück des Tages“ wirklich
+ * eines je Tag (Ortszeit), statt bei jedem Start ein anderes.
+ * Beispiel: zweimal am 31.10.2026 → dieselbe Zahl; am 1.11. eine andere.
+ */
+export function zufallDesTages(jetzt: Date): number {
+  const saat =
+    (jetzt.getFullYear() * MONATSSTELLEN + jetzt.getMonth() + 1) * MONATSSTELLEN + jetzt.getDate();
+  return festerZufall(saat)();
 }
 
 /** Liest den Merker der beim letzten Start bekannten Stücke. */

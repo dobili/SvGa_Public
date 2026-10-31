@@ -44,7 +44,9 @@ export function Abzeichenraster({ stand }: { stand: Abzeichenstand }) {
                 beschriftung={t(verdient ? "abzeichen.verdient" : "abzeichen.offen", { name })}
                 silhouette={!verdient}
               />
-              <span className="abzeichenraster-name">{name}</span>
+              <span className="abzeichenraster-name" aria-hidden="true">
+                {name}
+              </span>
               {zeigt && (
                 <span className="abzeichenraster-bedingung">
                   {t(`abzeichen.bedingung.${a.kennung}`)}

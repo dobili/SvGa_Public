@@ -41,6 +41,7 @@ function Meldungsbilder({
         <Abzeichenbild
           key={a.kennung}
           symbol={a.symbol}
+          kennung={a.kennung}
           beschriftung={t("abzeichen.verdient", { name: t(`abzeichen.name.${a.kennung}`) })}
           klasse={neue.length === 1 ? "abzeichenbild-gross" : ""}
         />

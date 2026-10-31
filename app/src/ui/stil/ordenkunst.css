@@ -51,7 +51,6 @@
   font-size: var(--groesse-klein);
 }
 
-.anleitung ul.abzeichengitter,
 .anleitung ul.abzeichenraster,
 .abzeichenraster {
   display: grid;
@@ -63,16 +62,6 @@
   font-size: var(--groesse-klein);
 }
 
-.anleitung ul.abzeichengitter li {
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  min-width: 0;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
-.abzeichengitter .abzeichenbild,
 .abzeichenraster .abzeichenbild {
   width: 56px;
   height: 56px;

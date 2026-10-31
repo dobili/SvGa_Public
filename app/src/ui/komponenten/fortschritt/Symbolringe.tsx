@@ -54,7 +54,11 @@ export function Symbolringreihe({
           return (
             <li key={ring.testid} className="symbolring">
               {istVoll(ring.anteil) ? (
-                <Orden symbol={ring.symbol} beschriftung={t("orden.name", { name: ring.name })} />
+                <Orden
+                  symbol={ring.symbol}
+                  beschriftung={t("orden.name", { name: ring.name })}
+                  ring={ring.testid}
+                />
               ) : (
                 <Ring
                   anteil={ring.anteil}

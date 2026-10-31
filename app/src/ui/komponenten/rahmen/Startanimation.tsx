@@ -14,12 +14,18 @@
  * Auch bei der Rückkehr aus dem Hintergrund (Wunsch des Autors, 24.10.2026): War die App auf
  * einem Gerät mit Touch-Bedienung (Handy, Tablet) mindestens 30 Minuten nicht zu sehen, läuft sie
  * 1,8 Sekunden; am Rechner nicht, weil man dort zwischen Fenstern hin- und herwechselt.
- * Abhängigkeiten: app/merker.ts, startanimationRegel.ts, i18n, ui/stil/brett.css.
+ * Orden und Abzeichen (Wunsch des Autors, 30.10.2026): Springer und Titel bleiben unverändert.
+ * Ist seit dem letzten Start ein Stück neu verdient, erscheint es danach unter dem Titel und
+ * fliegt zum Reiter „Profil“ (etwa 4,6 s); sonst erscheint leise ein verdientes Stück des Tages
+ * (3,5 s). Nur beim App-Start, nicht bei der Rückkehr (ordenkunst/useStartorden.tsx). Bis
+ * 0.3.14 standen alle Orden verstreut im Rand.
+ * Abhängigkeiten: app/merker.ts, startanimationRegel.ts, ordenkunst/useStartorden.tsx, i18n,
+ * ui/stil/brett.css.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { liesMerker } from "../../../app/merker";
 import { t } from "../../../i18n/sprache";
-import { OrdenHintergrund } from "../fortschritt/OrdenHintergrund";
+import { useStartorden } from "../ordenkunst/useStartorden";
 import { RUECKKEHR_MS, rueckkehrFaellig } from "./startanimationRegel";
 
 /** Kantenlänge des Startbilds in Bildpunkten (skripte/erzeuge-startbild.mjs). */
@@ -73,14 +79,19 @@ type Lauf = "start" | "rueckkehr" | null;
 /** Die Startanimation; nach ihrer Dauer oder einem Tipp ist sie weg. */
 export function Startanimation() {
   const [lauf, setzeLauf] = useState<Lauf>(() => (startanimationFaellig() ? "start" : null));
+  const orden = useStartorden(lauf === "start");
+  const dauer = lauf === "rueckkehr" ? RUECKKEHR_MS : (orden.dauerMs ?? STARTANIMATION_MS);
+  // Beginn des Laufs: Die Dauer kann sich verlängern, wenn ein Orden dazukommt (nach dem Laden).
+  const beginn = useRef(0);
+  useEffect(() => {
+    if (lauf) beginn.current = Date.now();
+  }, [lauf]);
   useEffect(() => {
     if (!lauf) return;
-    const zeit = setTimeout(
-      () => setzeLauf(null),
-      lauf === "rueckkehr" ? RUECKKEHR_MS : STARTANIMATION_MS,
-    );
+    const rest = Math.max(0, dauer - (Date.now() - beginn.current));
+    const zeit = setTimeout(() => setzeLauf(null), rest);
     return () => clearTimeout(zeit);
-  }, [lauf]);
+  }, [lauf, dauer]);
   useEffect(() => {
     let verstecktSeit: number | null = null;
     const beiWechsel = () => {
@@ -104,8 +115,10 @@ export function Startanimation() {
       data-testid="startanimation"
       aria-label={t("startanimation.ueberspringen")}
       onClick={() => setzeLauf(null)}
+      // Nur die Fläche dauert länger; Springer und Titel behalten ihre 2,5 s (--startanimation-dauer).
+      style={orden.dauerMs ? { animationDuration: `${orden.dauerMs}ms` } : undefined}
     >
-      <OrdenHintergrund />
+      {orden.inhalt}
       <span className="startanimation-schein" aria-hidden="true">
         <img
           className="startanimation-springer"

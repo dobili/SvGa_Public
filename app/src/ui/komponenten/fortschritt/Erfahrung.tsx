@@ -5,12 +5,13 @@
  * bei Chessly, nur auf dem Gerät, ohne Bestenliste. Oben die Stufe mit Namen aus dem Buch und den
  * EP, darunter ein Balken zur nächsten Stufe; aufklappbar das Gitter aller Abzeichen, verdiente
  * golden, offene als graue Silhouette mit ihrer Bedingung (wie die Orden in der Startanimation).
- * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, bausteine/Abzeichenbild.tsx,
+ * Seit dem Wunsch des Autors vom 30.10.2026 als Raster mit eigenen Bildern (ordenkunst/Abzeichenraster.tsx).
+ * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, ordenkunst/Abzeichenraster.tsx,
  * bausteine/Fortschrittsbalken.tsx, i18n.
  */
 import { t } from "../../../i18n/sprache";
-import { Abzeichenbild } from "../bausteine/Abzeichenbild";
 import { Fortschrittsbalken } from "../bausteine/Fortschrittsbalken";
+import { Abzeichenraster } from "../ordenkunst/Abzeichenraster";
 import { ABZEICHEN } from "./abzeichen";
 import { STUFENZAHL, useAbzeichenstand, type Abzeichenstand } from "./abzeichenstand";
 import { STUFEN } from "./erfahrung";
@@ -50,31 +51,7 @@ function Abzeichengitter({ stand }: { stand: Abzeichenstand }) {
       </summary>
       <p className="hinweis">{t("abzeichen.erklaerung")}</p>
       <p className="hinweis">{t("erfahrung.erklaerung")}</p>
-      <ul className="abzeichengitter">
-        {ABZEICHEN.map((a) => {
-          const verdient = stand.verdient.has(a.kennung);
-          const name = t(`abzeichen.name.${a.kennung}`);
-          return (
-            <li
-              key={a.kennung}
-              className={verdient ? "verdient" : "offen"}
-              data-testid={`abzeichen-${a.kennung}`}
-            >
-              <Abzeichenbild
-                symbol={a.symbol}
-                beschriftung={t(verdient ? "abzeichen.verdient" : "abzeichen.offen", { name })}
-                silhouette={!verdient}
-              />
-              <span>
-                <span className="abzeichengitter-name">{name}</span>
-                <span className="abzeichengitter-bedingung">
-                  {t(`abzeichen.bedingung.${a.kennung}`)}
-                </span>
-              </span>
-            </li>
-          );
-        })}
-      </ul>
+      <Abzeichenraster stand={stand} />
     </details>
   );
 }

@@ -4,6 +4,23 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Version 0.3.17: Orden und Abzeichen mit eigenen Bildern aus dem Nebenchat übernommen (Opus)
+
+- Zweig `neben-orden` (auf 0.3.15) auf 0.3.16 zusammengeführt; Konflikte nur in `main.tsx`
+  (beide Stildateien bleiben) und den Unterlagen. Der Patch für die gesperrten Dateien passte
+  sauber und ist eingespielt, die Patch-Datei gelöscht.
+- **Testpunkte umnummeriert:** Beide Nebenchats hatten ab N2001 gezählt; die Punkte der Orden heißen
+  jetzt N2015 bis N2019 (N2001 bis N2014 bleiben beim Trainer-Feinschliff).
+- **Ersetzt:** Die verstreuten Orden im Hintergrund der Startanimation (Entscheidung 1 vom
+  30.10.2026, `ordenplaetze.ts`, 0.3.13) weichen dem neuen Ablauf nach Wahl des Autors im
+  Nebenchat (ein neu verdientes Stück fliegt zu „Profil“, sonst ein Stück des Tages). Testpunkt
+  N1041 ist damit gegenstandslos und gestrichen.
+- **Nachgebessert nach der Prüfung:** (1) Der Merker der bekannten Stücke wurde ersetzt statt
+  ergänzt; lud der Ring „Lernziele“ erst nach der Entscheidung, flog sein Orden beim nächsten Start
+  noch einmal als neu. Jetzt Vereinigung (`planeStart`, Test). (2) Das Stück des Tages wechselte
+  bei jedem Start; jetzt eines je Tag (`zufallDesTages`, Test). (3) Ungenutzte Regeln
+  `.abzeichengitter` gelöscht. (4) Im Abzeichenraster las ein Bildschirmleser den Namen doppelt.
+
 ## 30.10.2026 – Nebenchat: eigene Bilder für Orden und Abzeichen (Zweig neben-orden)
 
 - Wunsch des Autors: Orden und Abzeichen sollen etwas sein, das man haben will; jedes Stück

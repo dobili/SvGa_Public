@@ -63,36 +63,6 @@
   height: 88px;
 }
 
-.abzeichengitter {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-  gap: var(--raster);
-  margin: var(--raster) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.abzeichengitter li {
-  display: flex;
-  align-items: center;
-  gap: var(--raster);
-  font-size: var(--groesse-klein);
-}
-
-.abzeichengitter-name {
-  display: block;
-  font-weight: 600;
-}
-
-.abzeichengitter-bedingung {
-  display: block;
-  color: var(--text-leise);
-}
-
-.abzeichengitter .offen {
-  color: var(--text-leise);
-}
-
 /* Meldung: mehrere neue Abzeichen nebeneinander, darunter ihre Namen. */
 .abzeichenmeldung-bilder {
   display: flex;

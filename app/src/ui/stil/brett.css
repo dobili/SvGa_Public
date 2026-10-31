@@ -148,29 +148,6 @@
 }
 
 /* Rückkehr aus dem Hintergrund (Handy, nach 30 Minuten): kürzer. */
-/* Orden im Rand der Startanimation (Wunsch des Autors, 26.10.2026): offene als Silhouette. */
-.startanimation-orden {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.startorden {
-  position: absolute;
-  width: clamp(28px, 7vmin, 44px);
-  transform: translate(-50%, -50%);
-  color: #f5f0e6;
-}
-
-.startorden .orden {
-  width: 100%;
-  height: auto;
-}
-
-.startorden.verdient {
-  filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.6));
-}
-
 .startanimation-kurz {
   --startanimation-dauer: 1.8s;
 }

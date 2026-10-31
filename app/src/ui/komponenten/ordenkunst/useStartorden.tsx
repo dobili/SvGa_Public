@@ -23,6 +23,7 @@ import {
   planeStart,
   type Startplan,
   type Stueck,
+  zufallDesTages,
 } from "./startorden";
 import { Startstueck } from "./Startstueck";
 
@@ -69,7 +70,11 @@ export function useStartorden(aktiv: boolean): { dauerMs: number | null; inhalt:
     const warte = setTimeout(
       () => {
         if (!verdient) return setzePlan({ art: "nichts" });
-        const { plan: neu, bekanntNeu } = planeStart(liesBekannt(), verdient, Math.random());
+        const { plan: neu, bekanntNeu } = planeStart(
+          liesBekannt(),
+          verdient,
+          zufallDesTages(new Date()),
+        );
         merkeBekannt(bekanntNeu);
         setzePlan(neu);
       },

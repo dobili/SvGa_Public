@@ -7,16 +7,21 @@
  * über der Prozentzahl, und eine Legende unter den Ringen sagt einmal, wofür jedes Zeichen steht.
  * Bildschirmleser hören am Ring selbst den vollen Namen mit „x von y“.
  * Unter einem Orden steht seit P9 (Gamifizierung) der Knopf „Teilen“ (teilen/Stueckteilen.tsx).
- * Abhängigkeiten: Kreisanzeige (Ring), teilen/Stueckteilen.tsx, speicher/fortschritt.ts
- * (Anteil), i18n, lucide-react.
+ * Seit dem 31.10.2026 öffnet ein Tipp auf Ring oder Orden das Infofenster mit Bedingung und Stand
+ * (erfolge/Infofenster.tsx; Wunsch des Autors: Die Orden zeigten vorher gar keine Bedingung).
+ * Abhängigkeiten: Kreisanzeige (Ring), teilen/Stueckteilen.tsx, erfolge/Infofenster.tsx,
+ * erfolge/erfolgsstuecke.ts, speicher/fortschritt.ts (Anteil), i18n, lucide-react.
  */
 import type { LucideIcon } from "lucide-react";
+import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import type { Anteil } from "../../../speicher/fortschritt";
 import { Ring } from "../bausteine/Kreisanzeige";
 import { Orden } from "../bausteine/Orden";
 import { istVoll } from "./ringrechnung";
 import { OrdenTeilen } from "../teilen/Stueckteilen";
+import { ordenAusRing } from "../erfolge/erfolgsstuecke";
+import { Infofenster } from "../erfolge/Infofenster";
 
 /**
  * Ein Ring der Reihe: Name (zum Vorlesen, und in der Legende, wenn `legende` fehlt), kurzer
@@ -41,6 +46,7 @@ export function Symbolringreihe({
   ringe: readonly Symbolringangabe[];
   titel?: string;
 }) {
+  const [offen, setzeOffen] = useState<Symbolringangabe | null>(null);
   if (ringe.length === 0) return null;
   return (
     <div className="symbolringe">
@@ -53,28 +59,39 @@ export function Symbolringreihe({
           });
           return (
             <li key={ring.testid} className="symbolring">
-              {istVoll(ring.anteil) ? (
-                <Orden
-                  symbol={ring.symbol}
-                  beschriftung={t("orden.name", { name: ring.name })}
-                  ring={ring.testid}
-                />
-              ) : (
-                <Ring
-                  anteil={ring.anteil}
-                  beschriftung={`${ring.name}: ${wert}`}
-                  symbol={ring.symbol}
-                />
-              )}
-              <span data-testid={ring.testid} aria-hidden="true">
-                {wert}
-              </span>
+              <button
+                type="button"
+                className="symbolring-knopf"
+                aria-haspopup="dialog"
+                aria-label={`${ring.name}: ${wert}`}
+                onClick={() => setzeOffen(ring)}
+              >
+                {istVoll(ring.anteil) ? (
+                  <Orden
+                    symbol={ring.symbol}
+                    beschriftung={t("orden.name", { name: ring.name })}
+                    ring={ring.testid}
+                  />
+                ) : (
+                  <Ring
+                    anteil={ring.anteil}
+                    beschriftung={`${ring.name}: ${wert}`}
+                    symbol={ring.symbol}
+                  />
+                )}
+                <span data-testid={ring.testid} aria-hidden="true">
+                  {wert}
+                </span>
+              </button>
               {/* P9: ein verdienter Orden lässt sich als Bild teilen. */}
               {istVoll(ring.anteil) && <OrdenTeilen ring={ring.testid} name={ring.name} />}
             </li>
           );
         })}
       </ul>
+      {offen && (
+        <Infofenster stuecke={[ordenAusRing(offen)]} beiSchliessen={() => setzeOffen(null)} />
+      )}
     </div>
   );
 }

@@ -1,39 +1,21 @@
 /**
  * Ein Regal der Karte „Deine Erfolge“ (Entwurf C, 31.10.2026): Titel mit Zähler („5 von 9“) und
- * eine waagrechte Reihe zum Wischen. Verdiente Stücke farbig, offene als Silhouette; ein Tipp zeigt
- * unter der Reihe wie bisher die Bedingung, bei verdienten Stücken dazu „Teilen“.
+ * eine waagrechte Reihe zum Wischen. Verdiente Stücke farbig, offene als Silhouette. Ein Tipp
+ * öffnet seit dem 31.10.2026 das Infofenster (Infofenster.tsx) mit Bedingung, Stand oder Datum,
+ * „Teilen“ und dem Knopf zum Ort; vorher stand die Bedingung als leicht übersehene Zeile unter der
+ * Reihe (Befund des Autors).
  *
  * Rolle im Gesamtbild: Ein Regal je Eintrag in ERFOLGSREGALE (erfolgsstuecke.ts). Die testids der
  * Abzeichen bleiben „abzeichen-<kennung>“ wie im früheren Raster; Orden heißen „orden-<kennung>“.
  * Unter offenen Stücken mit zählbarem Fortschritt steht der Stand („120 von 174“), wie früher an den
  * Ringen (zurückgeholt am 31.10.2026).
- * Abhängigkeiten: erfolgsstuecke.ts (Typen), Stueckbild.tsx, teilen/Stueckteilen.tsx, i18n.
+ * Abhängigkeiten: erfolgsstuecke.ts (Typen), Stueckbild.tsx, Infofenster.tsx, i18n.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
-import { AbzeichenTeilen, OrdenTeilen } from "../teilen/Stueckteilen";
 import { verdientSchluessel, type Erfolgsregal, type Erfolgsstueck } from "./erfolgsstuecke";
+import { Infofenster } from "./Infofenster";
 import { Stueckbild } from "./Stueckbild";
-
-/** Unter der Reihe: Name, Bedingung, Stand und bei verdienten Stücken „Teilen“. */
-function Bedingung({ stueck }: { stueck: Erfolgsstueck }) {
-  return (
-    <div className="regal-bedingung" data-testid="regal-bedingung">
-      <p>
-        <strong>{stueck.name}</strong> · {stueck.bedingung}
-        {stueck.anteil && !stueck.verdient && (
-          <> ({t("fortschritt.anteil", { ...stueck.anteil })})</>
-        )}
-      </p>
-      {stueck.verdient &&
-        (stueck.art === "orden" && stueck.ring ? (
-          <OrdenTeilen ring={stueck.ring} name={stueck.name} />
-        ) : (
-          <AbzeichenTeilen kennung={stueck.kennung} />
-        ))}
-    </div>
-  );
-}
 
 /** Ein Regal. Beispiel: „Bots besiegt · 5 von 9“ mit neun Orden zum Wischen. */
 export function Regal({
@@ -64,11 +46,7 @@ export function Regal({
               className={s.verdient ? "verdient" : "offen"}
               data-testid={`${s.art}-${s.kennung}`}
             >
-              <button
-                type="button"
-                aria-expanded={offen === schluessel}
-                onClick={() => setzeOffen(offen === schluessel ? null : schluessel)}
-              >
+              <button type="button" aria-haspopup="dialog" onClick={() => setzeOffen(schluessel)}>
                 <Stueckbild stueck={s} klasse="erfolg-regal" />
                 <span className="erfolg-name" aria-hidden="true">
                   {s.name}
@@ -84,7 +62,7 @@ export function Regal({
           );
         })}
       </ul>
-      {gewaehlt && <Bedingung stueck={gewaehlt} />}
+      {gewaehlt && <Infofenster stuecke={[gewaehlt]} beiSchliessen={() => setzeOffen(null)} />}
     </section>
   );
 }

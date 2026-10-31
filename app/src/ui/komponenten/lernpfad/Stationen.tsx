@@ -18,6 +18,7 @@ import { t, tZahl } from "../../../i18n/sprache";
 import { Ordenkunst } from "../ordenkunst/Ordenkunst";
 import { ordenname, type Station } from "./lernpfad";
 import type { Knoten } from "./wegform";
+import { BUCHTEILE } from "../fortschritt/ringrechnung";
 
 type Lage = { left: string; top: string };
 const PROZENT = 100;
@@ -71,6 +72,7 @@ export function Stationsknopf(props: {
       aria-current={aktuell ? "step" : undefined}
       data-testid={`lernpfad-station-${station.kapitel}`}
       data-fertig={station.fertig ? "ja" : "nein"}
+      data-tour={aktuell === false ? undefined : "lernpfad-station"}
       onClick={() => navigiere({ bildschirm: "kapitel", nummer: station.kapitel })}
     >
       <Stationsmarke station={station} />
@@ -97,6 +99,8 @@ export function Ordenknoten({
   offen: number;
 }) {
   const name = ordenname(k.teil);
+  // Ziel der Tour „lernpfad“: der Orden der ersten Etappe.
+  const erster = k.teil === BUCHTEILE[0].kennung;
   const stand = k.verdient
     ? t("buchlook.orden.verdient")
     : tZahl("buchlook.orden.noch", offen, { n: offen });
@@ -105,6 +109,7 @@ export function Ordenknoten({
       className={`lernpfad-orden${k.verdient ? " verdient" : ""}${rechts ? " titel-rechts" : " titel-links"}`}
       style={lage}
       data-testid={`lernpfad-orden-${k.teil}`}
+      data-tour={erster === false ? undefined : "lernpfad-orden"}
     >
       <Ordenkunst
         art="orden"

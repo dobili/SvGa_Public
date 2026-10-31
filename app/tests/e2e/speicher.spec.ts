@@ -53,7 +53,10 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   const teile = erfolge.getByTestId("erfolge-regal-teile");
   await expect(teile.getByTestId("erfolge-zaehler-teile")).toHaveText("0 von 5");
   await teile.getByTestId("orden-teil-grundlagen").getByRole("button").click();
-  await expect(teile.getByTestId("regal-bedingung")).toContainText(/\(2 von \d+\)$/);
+  // Seit dem 31.10.2026 im Infofenster: Stand als Balken mit „2 von …“.
+  const fenster = page.getByTestId("infofenster");
+  await expect(fenster.getByTestId("infofenster-stand")).toHaveText(/^2 von \d+$/);
+  await fenster.getByRole("button", { name: "Schließen" }).click();
   const bots = erfolge.getByTestId("erfolge-regal-bots");
   await expect(bots.getByTestId("erfolge-zaehler-bots")).toHaveText("0 von 9");
   await expect(bots.getByRole("img", { name: /^Noch offen: Engine \(Stufe 10\)$/ })).toBeAttached();

@@ -6,19 +6,16 @@
  *
  * Rolle im Gesamtbild: Teil der Karte Erfolge.tsx; Datum aus „verdient“ (useErfolge.ts), Teilen
  * über teilen/Stueckteilen.tsx (P9).
- * Abhängigkeiten: erfolgsstuecke.ts (Typ), Stueckbild.tsx, teilen/Stueckteilen.tsx, i18n.
+ * Ein Tipp auf das Bild öffnet das Infofenster (Infofenster.tsx, 31.10.2026).
+ * Abhängigkeiten: erfolgsstuecke.ts (Typ), Stueckbild.tsx, Infofenster.tsx,
+ * teilen/Stueckteilen.tsx, i18n.
  */
+import { useState } from "react";
 import { datumText, t } from "../../../i18n/sprache";
 import { AbzeichenTeilen, OrdenTeilen } from "../teilen/Stueckteilen";
-import type { Erfolgsstueck } from "./erfolgsstuecke";
+import { glanzname, type Erfolgsstueck } from "./erfolgsstuecke";
+import { Infofenster } from "./Infofenster";
 import { Stueckbild } from "./Stueckbild";
-
-/** Name im Glanzstück: Teile des Buches mit „Teil“ davor („Teil Endspiel“), sonst der Name. */
-function glanzname(stueck: Erfolgsstueck): string {
-  return stueck.ring?.startsWith("ich-teil-")
-    ? t("startorden.teil", { teil: stueck.name })
-    : stueck.name;
-}
 
 /** Teilen je Art. */
 function Teilen({ stueck }: { stueck: Erfolgsstueck }) {
@@ -33,20 +30,27 @@ function Teilen({ stueck }: { stueck: Erfolgsstueck }) {
  * 30.10.2026“, Mitte Orden „Teil Endspiel“, rechts „Teil Endspiel: alle Abbildungen …“, Teilen.
  */
 export function Glanzstueck({ stueck, datum }: { stueck: Erfolgsstueck; datum: string }) {
+  const [offen, setzeOffen] = useState(false);
   return (
     <div className="glanzstueck" data-testid="erfolge-glanzstueck">
       <p className="glanzstueck-links">
         <span>{t("profil.erfolge.zuletzt")}</span>
         <span className="glanzstueck-datum">{datumText(new Date(datum))}</span>
       </p>
-      <div className="glanzstueck-mitte">
+      <button
+        type="button"
+        className="glanzstueck-mitte glanzstueck-knopf"
+        aria-haspopup="dialog"
+        onClick={() => setzeOffen(true)}
+      >
         <Stueckbild stueck={stueck} klasse="erfolg-glanz" />
         <span className="glanzstueck-name">{glanzname(stueck)}</span>
-      </div>
+      </button>
       <div className="glanzstueck-rechts">
         <p>{stueck.bedingung}</p>
         <Teilen stueck={stueck} />
       </div>
+      {offen && <Infofenster stuecke={[stueck]} beiSchliessen={() => setzeOffen(false)} />}
     </div>
   );
 }

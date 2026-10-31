@@ -378,6 +378,14 @@
   outline: none;
 }
 
+/* Das Blatt „Partie einstellen“ (spielenneu.css) setzt für .blatt den Rand auf 0 und gewinnt, sobald
+   Spielen geladen ist; dann klebten Titel und Inhalt dieses Blattes am Bildschirmrand (Befund beim
+   Infofenster, 31.10.2026). Genauer gefasst gilt hier wieder der eigene Rand. */
+.blatt-grund > .blatt {
+  padding: var(--raster) calc(var(--raster) * 2)
+    calc(var(--raster) * 3 + env(safe-area-inset-bottom));
+}
+
 .blatt-griff {
   display: block;
   width: 44px;

@@ -81,7 +81,7 @@ export function Lernpfadkopf({ liste, aktuell }: { liste: readonly Station[]; ak
   const station = liste[aktuell];
   const satz = hinweistext(liste, aktuell);
   return (
-    <div className="karte lernpfadkopf">
+    <div className="karte lernpfadkopf" data-tour="lernpfad-kopf">
       <div className="lernpfadkopf-links">
         <MitInfoblase
           zeile={

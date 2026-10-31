@@ -11,6 +11,7 @@ import {
   oeffneProfil,
   starteImBrowser,
 } from "./hilfen";
+import { oeffneSpielseite } from "./spielenhilfen";
 
 /** Eine Abbildung zählt erst nach 30 Sekunden am Stück (0.2.27); der Test spult die Uhr vor. */
 const VERWEILZEIT_MS = 30_000;
@@ -280,6 +281,8 @@ test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neulade
   // Seit 0.2.80 beim Spielen; seit 0.2.135 (Variante A) im Reiter „Fehler“ als Netz.
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Spielen" }).click();
+  // Seit „Spielen neu“ (J3) auf der Seite „Eigene Stufe“.
+  await oeffneSpielseite(page, "stufe");
   await page.getByRole("tab", { name: "Fehler (9)" }).click();
   const netz = page.getByTestId("fehlernetz");
   const figuren = netz.getByRole("radio", { name: "Figuren: aus", exact: true });
@@ -289,6 +292,7 @@ test("Fehlerarten (0.2.60): eine Achse aus und eine Stufe überleben das Neulade
   await expect(page.getByRole("tab", { name: "Fehler (7)" })).toBeVisible();
   await page.reload();
   await leiste.getByRole("button", { name: "Spielen" }).click();
+  await oeffneSpielseite(page, "stufe");
   await page.getByRole("tab", { name: "Fehler (7)" }).click();
   await expect(figuren).toHaveAttribute("aria-checked", "true");
   await expect(eroeffnung).toHaveAttribute("aria-checked", "true");

@@ -1,0 +1,12 @@
+Auftrag vom Koordinierungs-Chat: „Weniger Text – Seiten“. Zweig: wenigertext-seiten (nur dorthin pushen). Lies zuerst docs/nebenchat/runde4/gemeinsam.txt auf origin/auftraege-welle2 (gilt vollständig).
+
+Deine Punkte (Bilder p01, p02, p03, p04, p05, p06, p13, p15):
+- P1 Leerzustände: je leerer Abschnitt ein graues Bild (leere Zeitkacheln, Medaillen-Silhouetten, Porträt mit Plus, leerer Stapel), eine Zeile mit höchstens fünf Wörtern und ein Knopf mit Ziel („Erste Partie“, „Taktik üben“, „Neuer Gegner“). Betrifft Profil (Wertung, Meisterschaft/Themen, Partien), Training (Stapel), Spielen › Eigene Bots. Eine gemeinsame Komponente für Leerzustände.
+- P2 Wertungsregeln („Es zählen Partien gegen die Engine …“) hinter ⓘ neben „Deine Wertung“.
+- P3 Partiekopf (Partie und Auswertung): Porträt mit Stufenmarke, Königssymbol für die eigene Farbe, Buch-Chip mit einem Wort für den Eröffnungsmodus; die Beschreibung des Bots nur als Sprechblase nach Tipp aufs Porträt.
+- P4 Kapitelseite: Ring „0/4“ mit Übungssymbol und Pfeil nach unten statt des Satzes; Tipp springt zu den Übungen; Ringbeschriftungen und der Link zur Gesamt-Checkliste hinter ⓘ (wie im Bild).
+- P5 Lernpfad-Kopf: Fortschrittsbalken mit Zahlen und Ordenssilhouette am Ende; die beiden Sätze hinter ⓘ.
+- P6 Denkroutine: fünf nummerierte Karten mit Symbol (Auge, Liste, Schwerter, Waage, Schild) und Kurzzeile, der Buchtext klappt per Tipp auf; Phasen als drei Phasenzeichen mit „Du bist hier“.
+- P13 Auswertung: Hinweissatz über der Zeitleiste hinter ⓘ; Urteil „… war der beste Zug. Bewertung +1,5 → +1,6“ als Marke („Bester Zug“ mit Stern) und Veränderung als „▲ 0,1“ (KEIN Balken mit Zahl links und rechts, Notiz des Autors).
+- P15 Einleitungen hinter ⓘ: Maia (Seite „Bots und Wertung“, Lizenzzeile in die ⓘ-Blase oder zu den Lizenzen), „Werkzeuge des Buches“, Legende bei „Gegner aussuchen“, Beta-Text unter „Über die App“ als Abzeichen „Beta“ mit ⓘ; dazu die Hinweise bei den Extras und bei „Freie Partie“.
+Code in ui/komponenten/ (fortschritt, wertung, erfolge, extras, training, partie, auswertung, lernpfad, einstellungen), ui/bildschirme/ (Kapitel, Denkroutine). ui/komponenten/partie/ darfst du für P3 ändern (Freigabe), spiel/ nur lesen. Texte unter wenigertext.seiten.*. Testpunkte N2350 bis N2359, Abschnitt „### Weniger Text: Seiten (31.10.2026)“.

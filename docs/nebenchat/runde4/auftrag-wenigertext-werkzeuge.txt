@@ -1,0 +1,11 @@
+Auftrag vom Koordinierungs-Chat: „Weniger Text – Werkzeuge und Trainer“. Zweig: wenigertext-werkzeuge (nur dorthin pushen). Lies zuerst docs/nebenchat/runde4/gemeinsam.txt auf origin/auftraege-welle2 (gilt vollständig).
+
+Deine Punkte (Bilder p07, p08, p09, p10, p11, p12, p14):
+- P7 Farblegenden der Werkzeuge („Am Brett: Goldene Pfeile …, Rote Pfeile …, Graue Pfeile …“) als Reihe kleiner farbiger Pfeil-Symbole mit 1–2 Wörtern; gilt für alle Werkzeuge mit Legende (eine gemeinsame Komponente mit Liste der Legendeneinträge je Werkzeug, eintragen statt umbauen).
+- P8 Werkzeug „Zählen“: Hand-Symbol + „Feld antippen“; der übrige Bedienhinweis und der Satz „Die Werkzeuge rechnen nach festen Regeln und können sich irren …“ hinter ⓘ.
+- P9 Werkzeuge, die in der Stellung nicht greifen (Prüffragen ohne Angebot, Zielbilanz im Endspiel usw.): grauer Statuschip mit Verbots-Symbol und Kurzgrund („Nur bei Angebot“, „Nicht im Endspiel“), der ganze Satz hinter ⓘ.
+- P10 Kandidaten: Zeilen mit kleinem Bewertungsbalken (hier ist die Bewertung gemeint) und ▲/▼ für die Veränderung, Krone = stärkster laut Engine, Waage = beste Bilanz; die beiden Erklärabsätze hinter ⓘ.
+- P11 Zähltrainer: Frage kurz („d4: Lohnt sich Schlagen?“) mit ⓘ für die Regel; Antwort als „⚔ 2 : 🛡 1“ mit Ergebnis-Chip, Zugfolge darunter, „verdeckt“ als kleine Markierung mit Symbol und Erklärung hinter ⓘ.
+- P12 Falle oder Köder: Frage groß, Pfeil-Legende als Symbole (sein Zug rot, Angebot grau); Antwort als Banner („Richtig: Falle“), Verlust als „▼ 11,6“ (KEIN Balken, siehe gemeinsam.txt), „Besser: …“ als goldener Chip, Erklärsatz zu den Warnsignalen hinter ⓘ.
+- P14 Taktik-Hinweis: Warnsignal als Chip mit Warn-Symbol, darunter drei Merkzeichen Schach, Schlag, Drohung (mit Namen für Bildschirmleser).
+Code vor allem in ui/werkzeuge/ (bzw. wo die Werkzeugausgaben stehen), ui/trainer/ (Zähl-, Fallen-, Taktikaufgabe). Gesperrt bleiben ui/trainer/Taktik*.tsx und training/taktiktrainer.ts laut Liste: P14 darfst du dort ausnahmsweise ändern (Freigabe für diesen Auftrag), sonst nichts daran. Texte unter wenigertext.werkzeug.*. Testpunkte N2340 bis N2349, Abschnitt „### Weniger Text: Werkzeuge und Trainer (31.10.2026)“.

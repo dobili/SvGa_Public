@@ -1,0 +1,163 @@
+[
+ {
+  "id": "p01",
+  "titel": "Leerzustände: Bild, eine Zeile, ein Knopf",
+  "vorher_datei": [
+   "10-training.png",
+   "21-spielen-eigene.png",
+   "50-profil.png"
+  ],
+  "was_wegfaellt": "Erklärsätze ersetzt durch graues Bild + 5-Wort-Zeile + Knopf mit Ziel. Wandert hinter ⓘ: „getrennt nach Blitz, Schnellschach und Klassisch“ (zeigen jetzt die drei leeren Kacheln mit Zeitsymbol), welche Trainer Medaillen geben, was ein eigener Gegner enthält (Name, Stufe je Phase, Fehlerarten, Stil), Stapel: „sie kommen dann zur Wiederholung“. Nichts entfällt.",
+  "kurzbeschreibung_nachher": "Jeder leere Abschnitt zeigt ein graues Platzhalterbild (leere Zeitkacheln, Medaillen-Silhouetten, Porträt mit Plus), eine kurze Zeile und einen Knopf („Erste Partie“, „Taktik üben“, „Neuer Gegner“). Stapel und Partien folgen demselben Muster.",
+  "bild": "p01-vergleich.png"
+ },
+ {
+  "id": "p02",
+  "titel": "Wertungsregeln hinter ⓘ",
+  "vorher_datei": [
+   "50-profil.png"
+  ],
+  "was_wegfaellt": "Nichts, nur hinter ⓘ: der Absatz „Es zählen Partien … zählen deshalb oft nicht“ (43 Wörter) steht vollständig in der Blase.",
+  "kurzbeschreibung_nachher": "Neben „Deine Wertung“ ein ⓘ; ein Tipp öffnet eine kleine Blase mit den Regeln. Darunter der Leerzustand aus P1.",
+  "bild": "p02-vergleich.png"
+ },
+ {
+  "id": "p03",
+  "titel": "Partiekopf: Porträt, Stufe, Farbe, Eröffnung",
+  "vorher_datei": [
+   "30-partie.png",
+   "gebrauch/a1-auswertung.png"
+  ],
+  "was_wegfaellt": "Untertitel „Frau Schulz (Stufe 1 · Neuling) · du spielst Weiß · Eröffnung wie Menschen dieser Stärke“ ersetzt durch Stufenmarke am Porträt, Königssymbol „Weiß“ und Buchsymbol „Praxis“; der Stufenname und der volle Satz stehen im ⓘ. Die Bot-Beschreibung (22–26 Wörter) erscheint nur noch als Sprechblase nach Tipp aufs Porträt. Nichts entfällt.",
+  "kurzbeschreibung_nachher": "Kompakter Kopf: Porträt mit Stufenmarke, Name, zwei Chips (eigene Farbe, Eröffnungsmodus) und ⓘ. Die Beschreibung des Bots öffnet sich als Sprechblase am Porträt.",
+  "bild": "p03-vergleich.png"
+ },
+ {
+  "id": "p04",
+  "titel": "Kapitelseite: Übungen als Ring",
+  "vorher_datei": [
+   "02-kapitel1.png"
+  ],
+  "was_wegfaellt": "Satz „4 Übungen im Kapitel, noch keine versucht. Lösen kannst du sie unten bei „Übungen aus dem Buch““ ersetzt durch einen vierten Ring „0/4“ mit Übungssymbol und Pfeil nach unten; Tipp springt zu den Übungen. Die Beschriftungen der Ringe (Abbildungen angesehen usw.) und der Link „Zur Gesamt-Checkliste“ wandern ins ⓘ.",
+  "kurzbeschreibung_nachher": "„Dein Fortschritt“ zeigt vier Ringe mit Symbolen; der Übungsring ist golden umrandet und führt per Tipp zu „Übungen aus dem Buch“.",
+  "bild": "p04-vergleich.png"
+ },
+ {
+  "id": "p05",
+  "titel": "Lernpfad-Kopf: Balken statt zwei Sätze",
+  "vorher_datei": [
+   "04-lernpfad.png"
+  ],
+  "was_wegfaellt": "Zwei Sätze ersetzt durch Fortschrittsbalken „43 Abb. · 4 Übungen“ und Ordenssilhouette „+ Kap. 0“; beide Sätze vollständig hinter ⓘ.",
+  "kurzbeschreibung_nachher": "Ein Balken bis zum Ende von Kapitel 1 mit Symbolen für Abbildungen und Übungen, rechts die Silhouette des Ordens „Teil Grundlagen“ mit dem Hinweis auf Kapitel 0.",
+  "bild": "p05-vergleich.png"
+ },
+ {
+  "id": "p06",
+  "titel": "Denkroutine: fünf Karten mit Symbol",
+  "vorher_datei": [
+   "45-denkroutine.png"
+  ],
+  "was_wegfaellt": "Nichts vom Buchtext entfällt: Jede Karte klappt den vollständigen Buchtext auf (gezeigt: Karte 1). Die drei „Du bist hier …“-Sätze wandern ins ⓘ der Phasenkarte; „In jeder Phase zuerst: Warnsignale und die Schach-Röntgen-Regel“ wird zur Zeile mit Warnsymbol; „widerlegt oder unsicher? Dann zurück zu Schritt 2“ wird Kurzzeile neben „Ziehen“.",
+  "kurzbeschreibung_nachher": "Fünf nummerierte Karten mit Symbol (Auge, Liste, Schwerter, Waage, Schild) und je einer Kurzzeile; darunter drei Phasenzeichen mit „Du bist hier“-Marke.",
+  "bild": "p06-vergleich.png"
+ },
+ {
+  "id": "p07",
+  "titel": "Werkzeug-Legenden als Pfeilreihe",
+  "vorher_datei": [
+   "gebrauch/w-12_1-Kandidaten.png",
+   "gebrauch/w-12_6-Sicherheitsblick.png",
+   "gebrauch/w-1_26-Röntgen.png"
+  ],
+  "was_wegfaellt": "Sätze „Am Brett: Goldene Pfeile: … Rote Pfeile: … Graue Pfeile: …“ ersetzt durch eine Reihe farbiger Pfeilsymbole mit 1–2 Wörtern; der volle Satz (etwa „im Schach alle Abwehrzüge“, „Nachbarfelder des Königs im Freien“) bleibt hinter ⓘ.",
+  "kurzbeschreibung_nachher": "Je Werkzeug eine Legendenzeile: goldener Pfeil, roter gestrichelter Pfeil, grauer Pfeil bzw. rotes Feld, jeweils mit einem Stichwort.",
+  "bild": "p07-vergleich.png"
+ },
+ {
+  "id": "p08",
+  "titel": "Zählen: Hand + „Feld antippen“",
+  "vorher_datei": [
+   "gebrauch/w-1_26-Zählen.png"
+  ],
+  "was_wegfaellt": "Bedienhinweis (43 Wörter) ersetzt durch Handsymbol + „Feld antippen“; der Hinweis und der Satz „Die Werkzeuge rechnen nach festen Regeln … Maßgeblich ist das Buch“ stehen im ⓘ. Das Kästchen „Nicht mehr anzeigen“ entfällt, weil die Zeile nur noch eine Zeile ist.",
+  "kurzbeschreibung_nachher": "Eine goldene Zeile mit Handsymbol „Feld antippen“ und ⓘ über dem Brett; die Blase erklärt Zählen und enthält einmal klein den Haftungssatz.",
+  "bild": "p08-vergleich.png"
+ },
+ {
+  "id": "p09",
+  "titel": "„Hilft hier nicht“ als Statuschip",
+  "vorher_datei": [
+   "gebrauch/w-1_26-Prüffragen.png",
+   "gebrauch/w-6_27-Zielbilanz.png"
+  ],
+  "was_wegfaellt": "Sätze „Kein Material im Angebot … angeboten wird“ (26 Wörter) und „Die Zielbilanz gilt in Eröffnung und Mittelspiel. Hier nicht: Es ist Endspiel.“ ersetzt durch graue Chips „⊘ Nur bei Angebot“ / „⊘ Nicht im Endspiel“; die Gründe stehen vollständig im ⓘ. „So prüft die App“ bleibt.",
+  "kurzbeschreibung_nachher": "Werkzeugkarten ohne Ergebnis zeigen nur einen grauen Statuschip mit Verbotssymbol und ⓘ.",
+  "bild": "p09-vergleich.png"
+ },
+ {
+  "id": "p10",
+  "titel": "Kandidaten: Zeilen mit Balken und Krone",
+  "vorher_datei": [
+   "gebrauch/w-12_1-Kandidaten.png"
+  ],
+  "was_wegfaellt": "Liste „1. Lxh7+: +5,37 – verbessert die Stellung um 0,67“ usw. ersetzt durch Zeilen mit Bewertungsbalken, ▲/▼-Differenz, Krone (Engine) und Waage (beste Bilanz); Kandidatenart als Symbol (Schach/Drohung), stärkste Antwort und Material als Unterzeile. Die Absätze „Zwingt nichts …“ und „Rechne jeden Kandidaten …“ vollständig hinter ⓘ.",
+  "kurzbeschreibung_nachher": "Eine Kandidatenkarte mit drei Zeilen: Zug, Art, Balken, Wert, Veränderung, Auszeichnung; darunter die stärkste Antwort mit Material; kurze Symbollegende.",
+  "bild": "p10-vergleich.png"
+ },
+ {
+  "id": "p11",
+  "titel": "Zähltrainer: kurze Frage, Antwort als Zählung",
+  "vorher_datei": [
+   "gebrauch/t4-zaehlen-aufgabe.png",
+   "gebrauch/t5-zaehlen-antwort.png"
+  ],
+  "was_wegfaellt": "Frage (29 Wörter) ersetzt durch „d4: Lohnt sich Schlagen?“; die volle Regel (zu Ende tauschen, billigste Figur zuerst) und der Schalter „Genauer üben“ im ⓘ. „Tippe das Ergebnis an“ entfällt (die Knöpfe sprechen für sich). Antwort „2 gegen 1 … Material: +1“ wird „⚔ 2 : 🛡 1“ mit Chip „+1“ und Zugfolge; „Verdeckt: Dame d1 …“ wird Markierung „Dd1 verdeckt“ mit Augensymbol, der Satz im ⓘ.",
+  "kurzbeschreibung_nachher": "Große Frage, Ergebnisknöpfe, nach der Antwort ein Banner mit richtigem Wert als Chip, Angreifer : Verteidiger als Symbole, Zugfolge und eine kleine Verdeckt-Markierung.",
+  "bild": "p11-vergleich.png"
+ },
+ {
+  "id": "p12",
+  "titel": "Falle oder Köder: Frage groß, Antwort als Banner",
+  "vorher_datei": [
+   "gebrauch/t6-falle-aufgabe.png",
+   "gebrauch/t7-falle-antwort.png"
+  ],
+  "was_wegfaellt": "Aufgabe (22 Wörter) ersetzt durch „Falle oder Geschenk?“ und Pfeil-Legende „sein Zug Dxh3“ / „Angebot Dxd6“; „Weiß ist am Zug“ und die Herkunft wandern in eine kleine ⓘ-Zeile. Antwort (27 Wörter) wird Banner „✓ Richtig: Falle“, Balken „nach Dxd6 −11,6“, Fortsetzung und goldener Chip „Besser: Th4+“; der Warnsignal-Satz (26 Wörter) im ⓘ.",
+  "kurzbeschreibung_nachher": "Die Frage steht groß, darunter zwei Pfeilsymbole und die Knöpfe; die Antwort ist ein grünes Banner mit Bewertungsbalken und goldenem Besser-Chip.",
+  "bild": "p12-vergleich.png"
+ },
+ {
+  "id": "p13",
+  "titel": "Auswertung: Urteil als Marke und Mini-Balken",
+  "vorher_datei": [
+   "gebrauch/a2-rueckblickkarte.png"
+  ],
+  "was_wegfaellt": "„7… De7 war der beste Zug. Bewertung +1,5 → +1,6.“ ersetzt durch Sternmarke „Bester Zug“ und Mini-Balken +1,5 → +1,6. Hinweis „Die wichtigen Züge auf einen Blick. Jeder Moment springt aufs Brett oben.“ steht nur noch im ⓘ neben „Die Partie in Momenten“.",
+  "kurzbeschreibung_nachher": "Die Rückblickkarte zeigt Zugzeichen, Zug, eine farbige Marke und einen kleinen Balken; die Überschrift der Momente hat ein ⓘ statt eines Satzes.",
+  "bild": "p13-vergleich.png"
+ },
+ {
+  "id": "p14",
+  "titel": "Taktik-Hinweis: Chip und drei Merkzeichen",
+  "vorher_datei": [
+   "gebrauch/t2-taktik-hinweise.png"
+  ],
+  "was_wegfaellt": "„Warnsignal: Signale auf dem Brett: W1. Suche nach den Motiven dazu, dann rechne Schachs, Schläge, Drohungen.“ ersetzt durch Chip „W1 ungedeckte Figur“ mit Warnsymbol und drei Symbole Schach/Schlag/Drohung mit „erst Motiv suchen, dann rechnen“; ⓘ erklärt W1. „Motiv: ein Mattbild“ bleibt als nächster Hinweis.",
+  "kurzbeschreibung_nachher": "Ein roter Warnsignal-Chip und drei Merkzeichen als kleine Kacheln; Hinweis- und Lösungsknopf wie bisher.",
+  "bild": "p14-vergleich.png"
+ },
+ {
+  "id": "p15",
+  "titel": "Kleine Einleitungen hinter ⓘ",
+  "vorher_datei": [
+   "21-spielen-gegner.png",
+   "43-werkzeuge.png",
+   "61-bots.png",
+   "63-ueber.png"
+  ],
+  "was_wegfaellt": "Nichts, nur hinter ⓘ: Maia-Text (70 Wörter, samt Lizenzzeile), Werkzeuge-Einleitung (32 Wörter), Gegner-Legende „Tipp auf einen Bot …“ (22 Wörter), Beta-Text (27 Wörter). Beta wird zusätzlich ein kleines Abzeichen an der Version.",
+  "kurzbeschreibung_nachher": "Vier kompakte Zeilen mit Symbol und ⓘ; Maia mit Ladeknopf „96 MB“, die Version mit Abzeichen „BETA“. Zwei Blasen zeigen beispielhaft den Inhalt hinter ⓘ.",
+  "bild": "p15-vergleich.png"
+ }
+]

@@ -33,6 +33,34 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Profil: Zurückgeholt (31.10.2026)
+
+Bei der Neugestaltung des Profils waren ein paar nützliche Dinge weggefallen; sie sind zurück,
+ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der Leiste.
+
+- [ ] N2310. **Verlauf je Phase:** In „Deine Wertung“ unter „Nach Phasen“ einen Balken antippen
+      (etwa „Mittelspiel“): Darunter erscheint die Kurve dieser Phase über die Zeit, im selben
+      Maßstab wie die Zahlen und im Ausschnitt aus „Mehr“, mit „Spanne 1350–1650“. Mit zu wenigen
+      Partien steht stattdessen „Mittelspiel: Für eine Kurve gibt es in dieser Zeitklasse noch zu
+      wenige Partien …“. Ein zweiter Tipp schließt sie. (Braucht mindestens eine ausgewertete
+      gewertete Partie.)
+- [ ] N2311. **Aus deinen Zügen:** Unter den Kacheln steht eine ruhige Zeile „Aus deinen Zügen:
+      etwa 1550 (1150–1950, aus 3 Partien).“ für die gewählte Zeitklasse, im Maßstab aus den
+      Einstellungen (wie „Deine Spielstärke“ unter Spielen). So stehen Ergebnis und Zugqualität
+      nebeneinander.
+- [ ] N2312. **Stand in den Regalen:** In „Deine Erfolge“ steht unter jedem offenen Stück mit
+      zählbarem Fortschritt klein der Stand, etwa „120 von 174“ unter „Mittelspiel“ oder „16 von
+      24“ unter „Stufe 1–3 alle“, ohne Antippen. Verdiente Stücke haben keine Zahl.
+- [ ] N2313. **Rekorde verbessern:** Unter „Teilen“ steht bei jedem aufgestellten Rekord
+      „Verbessern“; der Knopf führt dorthin, wo man ihn schlägt (wie früher „Versuchen“). Probe:
+      einen Trainer eine Runde spielen, dann bei „Richtige Trainerantworten an einem Tag“ auf
+      „Verbessern“ tippen.
+- [ ] N2314. **Was zählt und vorläufig:** Ohne gewertete Partie erklärt die Einladung wieder,
+      welche Partien zählen („… mindestens zehn Züge … schnelle Siege gegen viel schwächere Bots
+      zählen deshalb oft nicht“). In „Mehr“ steht in den ersten zehn Partien „Vorläufig: Die
+      Wertung findet in den ersten zehn Partien ihren Platz (bisher 3).“ und die Erklärung des
+      Maßstabs.
+
 ### Neu in 0.3.31: Profil neu – Orden, Wertung, Rekorde (Arbeitschat, 31.10.2026)
 
 Drei Karten im Profil sind neu gebaut, nach deiner Wahl der Entwürfe: „Deine Erfolge“ (Orden und

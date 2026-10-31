@@ -4,6 +4,23 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – Profil: Zurückgeholt (Arbeitschat, Zweig `profil-neu`)
+
+Wunsch des Autors: Bei der Neugestaltung soll nichts Sinnvolles wegfallen. Geprüft gegen alle
+damals gelöschten Texte (`ich.wertung.*`, `fortschritt.gruppe`, `fortschritt.legende`,
+`abzeichen.gruppe`, `rekorde.*`).
+
+- **Zurück:** Verlauf je Phase (Tipp auf einen Phasenbalken, `wertung/Phasenkurve.tsx`, Ausschnitt
+  aus „Mehr“ gilt jetzt für Wertung und Phasen); „Aus deinen Zügen“ als Zeile unter den Kacheln
+  (`wertung/Zugschaetzung.tsx`, im gewählten Maßstab); Stand offener Stücke in den Regalen; bei
+  aufgestellten Rekorden „Verbessern“ (früher „Versuchen“); in der Einladung, welche Partien
+  zählen (früher `ich.wertung.leer`); in „Mehr“ der Satz zu „vorläufig“ und die Erklärung des
+  Maßstabs; die Spanne einer Phase unter ihrer Kurve.
+- **Bewusst nicht zurück:** „noch keiner“ (ersetzt durch Vorschläge), die Zeichenerklärung der
+  Ringe (die Regale tragen Namen unter jedem Stück), „x von y Ringen voll“ und „Abzeichen: x von
+  y“ (Zähler an jedem Regal), die Reiterzeilen „Ansicht“ und „Zeitklasse“ (Balken und Kacheln).
+- Testpunkte N2310 bis N2314.
+
 ## 31.10.2026 – Version 0.3.31: Profil neu übernommen (Orden C, Wertung W3, Rekorde R1) (Opus)
 
 - Zweig `profil-neu` geprüft und zusammengeführt (Wahl des Autors auf der Auswahlseite):

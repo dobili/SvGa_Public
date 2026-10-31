@@ -4585,5 +4585,13 @@
   "profil.erfolge.bot.einmal": "{stufen} einmal",
   "profil.erfolge.bot.alle": "{stufen} alle",
   "profil.erfolge.bedingung.teil": "Alle {gesamt} Abbildungen und Übungen des Buchteils",
-  "profil.erfolge.bedingung.alle": "{name}: alle {gesamt}"
+  "profil.erfolge.bedingung.alle": "{name}: alle {gesamt}",
+  "profil.wertung.welchePartien": "Es zählen Partien gegen die Engine oder einen Bot mit dem Haken „Gewertete Partie“, sobald sie ausgewertet sind. Eine Partie zählt erst, wenn du mindestens zehn Züge gespielt hast, bevor sie entschieden war; schnelle Siege gegen viel schwächere Bots zählen deshalb oft nicht.",
+  "profil.wertung.vorlaeufigSatz": "Vorläufig: Die Wertung findet in den ersten zehn Partien ihren Platz (bisher {anzahl}).",
+  "profil.wertung.ausZuegen": "Aus deinen Zügen: etwa {mitte} ({von}–{bis}, aus {partien} Partien).",
+  "profil.wertung.ausZuegenEins": "Aus deinen Zügen: etwa {mitte} ({von}–{bis}, aus 1 Partie).",
+  "profil.wertung.phasenZuWenig": "{phase}: Für eine Kurve gibt es in dieser Zeitklasse noch zu wenige Partien. Sie erscheint nach ein paar weiteren.",
+  "profil.wertung.spanne": "Spanne {von}–{bis}",
+  "profil.rekorde.verbessern": "Verbessern",
+  "profil.rekorde.verbessernName": "Verbessern: {name}"
 }

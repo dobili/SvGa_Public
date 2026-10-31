@@ -27,8 +27,9 @@ import {
   type Kurzeinheit,
   type Kurzplanart,
 } from "../../training/kurzplaene";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { FaelligeWiederholungen } from "../komponenten/training/FaelligeWiederholungen";
+import type { Startmodus } from "./startkarte/einstellung";
+import { Startkarte } from "./startkarte/Startkarte";
 import { useJetzt } from "./usePlanstand";
 import { Tagesaufgabe, TaktikAufZeit } from "./ZeitrundeBereich";
 
@@ -48,7 +49,26 @@ function useKurzeinheit(): [Kurzeinheit | null, (neu: Kurzeinheit | null) => voi
   return [einheit, aendereEinheit];
 }
 
-/** Ohne laufende Einheit: die vier Angebote. */
+/** Ein weiterer Modus der Startkarte: Kennung, Zeichen, Texte und was er startet. */
+function modus(
+  kennung: "mini" | "zeit" | "tag",
+  symbol: Startmodus["symbol"],
+  starte: () => void,
+): Startmodus {
+  return {
+    kennung,
+    symbol,
+    titel: t(`trainerstart.modus.${kennung}`),
+    text: t(`trainerstart.modus.${kennung}Text`),
+    starte,
+    testkennung: `kurzplan-${kennung}`,
+  };
+}
+
+/**
+ * Ohne laufende Einheit: die Startkarte mit dem 15-Minuten-Plan als großem Knopf und den drei
+ * anderen Angeboten als Modi (Entwurf G1, 31.10.2026).
+ */
 function Start({
   starteEinheit,
   zeige,
@@ -57,29 +77,22 @@ function Start({
   zeige: (ansicht: Ansicht) => void;
 }) {
   return (
-    <div className="trainerrunde trainerwahl" data-testid="kurzplan-start" data-tour="trainer-wahl">
-      <p className="hinweis">{t("kurzplan.vorschlag")}</p>
-      {(["mini", "kurz"] as const).map((plan) => (
-        <button
-          key={plan}
-          type="button"
-          className="knopf-haupt"
-          data-testid={`kurzplan-${plan}`}
-          onClick={() => starteEinheit(plan)}
-        >
-          <Knopfsymbol art="starten" />
-          {t(`kurzplan.${plan}`)}
-        </button>
-      ))}
-      <button type="button" className="knopf-zweit" onClick={() => zeige("zeit")}>
-        <Knopfsymbol art="starten" />
-        {t("kurzplan.zeit")}
-      </button>
-      <button type="button" className="knopf-zweit" onClick={() => zeige("tag")}>
-        <Knopfsymbol art="starten" />
-        {t("kurzplan.tag")}
-      </button>
-    </div>
+    <Startkarte
+      kennung="kurzplaene"
+      testkennung="kurzplan-start"
+      start={{
+        text: t("trainerstart.kurzplan.start"),
+        zusatz: t("trainerstart.kurzplan.zusatz"),
+        starte: () => starteEinheit("kurz"),
+        testkennung: "kurzplan-kurz",
+      }}
+      modi={[
+        modus("mini", "plan", () => starteEinheit("mini")),
+        modus("zeit", "zeit", () => zeige("zeit")),
+        modus("tag", "tag", () => zeige("tag")),
+      ]}
+      hilfen={[t("kurzplan.vorschlag")]}
+    />
   );
 }
 

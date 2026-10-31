@@ -4,7 +4,7 @@
  * Erreichtem, Vorschlägen und „Los“), Übernahme des Merkers der Zeitrunde.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneProfil, oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneProfil, oeffneTrainer, starteImBrowser, starteUebung } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
   page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
@@ -12,7 +12,7 @@ const feld = (page: Page, name: string) =>
 test("Rundenende meldet neue Rekorde, die Tafel im Profil zeigt sie", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "koordinaten");
-  await page.getByRole("button", { name: /Feld finden/ }).click();
+  await starteUebung(page, "Feld finden");
   const auftrag = page.getByTestId("feld-auftrag");
   for (let i = 0; i < 16; i += 1) {
     await expect(page.getByText(`Aufgabe ${i + 1} von 16`)).toBeVisible();
@@ -38,7 +38,7 @@ test("Rundenende meldet neue Rekorde, die Tafel im Profil zeigt sie", async ({ p
 test("Tagesaufgabe: erster Tag der Serie als neuer Rekord", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "kurzplaene");
-  await page.getByRole("button", { name: /Tagesaufgabe mit Serie/ }).click();
+  await page.getByTestId("kurzplan-tag").click();
   const aufgabe = page.getByTestId("tagesaufgabe");
   await aufgabe.getByRole("button", { name: "Hinweis 1" }).click();
   await aufgabe.getByRole("button", { name: "Hinweis 2" }).click();

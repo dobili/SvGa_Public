@@ -226,18 +226,20 @@ test("Trainer: Beschreibung auf der Auswahl sichtbar, ohne Auswahl der Schritt i
   page,
 }) => {
   await starteImBrowser(page);
-  // Taktik hat eine Auswahl: Die Beschreibung steht darüber, die Tour zeigt auf sie.
+  // Seit der Startkarte (Entwurf G1, 31.10.2026) beginnt jeder Trainer mit Beispielbrett und
+  // Satz; die Beschreibung steht zugeklappt unter „So funktioniert dieser Trainer“.
   await oeffneTrainer(page, "taktik");
   await expect(page.getByTestId("taktik-wahl")).toBeVisible();
+  await expect(page.locator(".startkopf")).toBeVisible();
+  await expect(page.locator(".trainer-ablauf")).toBeHidden();
+  await page.getByText("So funktioniert dieser Trainer").click();
   await expect(page.locator(".trainer-ablauf")).toBeVisible();
   await starteTour(page);
   await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
   await page.keyboard.press("Escape");
-  // Die Zielbilanz beginnt gleich mit der Runde: Beschreibung aus, der erste Schritt in der Mitte
-  // (Röntgen hat seit dem Nebenchat, 30.10.2026, eine Stufenwahl).
+  // Auch die Zielbilanz (früher gleich mit der Runde) hat jetzt die Startkarte.
   await oeffneTrainer(page, "zielbilanz");
-  await expect(page.locator(".trainer-ablauf")).toBeHidden();
+  await expect(page.locator(".startkopf")).toBeVisible();
   await starteTour(page);
-  await expect(tourkarte(page)).toContainText("das Fragezeichen an seiner Karte");
-  await expect(page.locator(".tour-karte-mitte")).toBeVisible();
+  await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
 });

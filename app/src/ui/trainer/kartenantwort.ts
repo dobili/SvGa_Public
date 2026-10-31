@@ -4,7 +4,8 @@
  *
  * Rolle im Gesamtbild: Eine falsch gelöste Aufgabe wird zur Wiederholungskarte
  * (speicher/fortschritt.ts, notiereTrainerantwort). Die Auswahl des Trainers fragt hier die
- * fälligen Aufgaben ab und bietet sie als Runde an (Wiederholungsknopf.tsx).
+ * fälligen Aufgaben ab und bietet sie als Runde an (Modus „Wiederholen“ der Startkarte,
+ * ui/trainer/startkarte/einstellung.ts).
  * Abhängigkeiten: speicher, training/wiederholung.ts, useRunde.
  */
 import { useMemo } from "react";

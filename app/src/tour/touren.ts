@@ -66,12 +66,9 @@ function tour(titel: Textschluessel, schritte: readonly Tourschritt[]): Tour {
 }
 
 // Gemeinsame Schritte der Trainer: vorn der Ablauf, hinten die Runde (ohne 30-Minuten-Plan und
-// Fehlerdatenbank, die keine Runden haben).
+// Fehlerdatenbank, die keine Runden haben). Seit der Startkarte (Entwurf G1, 31.10.2026) beginnt
+// jeder Trainer mit Runde mit Beispielbrett und Satz; dorthin zeigt der erste Schritt.
 const ANFANG = ziel("trainer-ablauf", "tour.trainer.ablauf");
-// Trainer ohne Auswahl beginnen gleich mit der Runde; dort ist die Beschreibung ausgeblendet
-// (uebung.css, DS6). Der Schritt steht dann in der Mitte und nennt, wo sie jederzeit steht
-// (Befund der Tourprüfung, 25.10.2026).
-const ANFANG_OHNE_WAHL = ziel("trainer-ablauf", "tour.trainer.ablaufMitte", true);
 const STUFE = ziel("trainer-wahl", "tour.trainer.stufe");
 const WIEDERHOLEN = ziel("trainer-wiederholen", "tour.trainer.wiederholen");
 const RUNDE: readonly Tourschritt[] = [
@@ -159,7 +156,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.zielbilanz": tour("trainer.zielbilanz.name", [
-    ANFANG_OHNE_WAHL,
+    ANFANG,
     mitte("tour.trainer.zielbilanz.ausfuellen"),
     ...RUNDE,
   ]),
@@ -170,7 +167,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.faktorenbilanz": tour("trainer.faktorenbilanz.name", [
-    ANFANG_OHNE_WAHL,
+    ANFANG,
     mitte("tour.trainer.faktorenbilanz.waage"),
     ...RUNDE,
   ]),
@@ -211,7 +208,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ...RUNDE,
   ]),
   "trainer.studien": tour("trainer.studien.name", [
-    ANFANG_OHNE_WAHL,
+    ANFANG,
     mitte("tour.trainer.studien.ziehen"),
     ...RUNDE,
   ]),
@@ -238,7 +235,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("fehler-eintraege", "tour.trainer.fehlerdatenbank.eintraege"),
   ]),
   "trainer.denkroutine": tour("trainer.denkroutine.name", [
-    ANFANG_OHNE_WAHL,
+    ANFANG,
     mitte("tour.trainer.denkroutine.minute"),
     ...RUNDE,
   ]),

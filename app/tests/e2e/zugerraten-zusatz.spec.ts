@@ -4,7 +4,7 @@
  * und Lizenz, Start einer Zusatzpartie wie einer Buchpartie (die Karte steht dann über dem Brett).
  */
 import { expect, test } from "@playwright/test";
-import { oeffneTrainer, starteImBrowser } from "./hilfen";
+import { oeffneTrainer, starteImBrowser, waehleInZeile } from "./hilfen";
 
 test("Zug erraten: Quelle wählen, Zusatzpartie gekennzeichnet und spielbar", async ({ page }) => {
   await starteImBrowser(page);
@@ -13,24 +13,21 @@ test("Zug erraten: Quelle wählen, Zusatzpartie gekennzeichnet und spielbar", as
   const quelle = page.getByTestId("zugerraten-quelle");
   const liste = page.getByTestId("zugerraten-partieliste");
   // Vorgabe: die Partien des Buches, ohne Zusatzkarte.
-  await expect(quelle.getByRole("button", { name: "Aus dem Buch" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await expect(quelle).toContainText("Aus dem Buch");
   await expect(liste.locator("option").first()).toHaveText(/^Morphys Opernpartie/);
   await expect(page.getByTestId("zusatzpartie-karte")).toHaveCount(0);
   // Aktuelle Turniere: Lichess-Übertragung mit Lizenz.
-  await quelle.getByRole("button", { name: "Aktuelle Turniere" }).click();
+  await waehleInZeile(page, "zugerraten-quelle", "Aktuelle Turniere");
   const karte = page.getByTestId("zusatzpartie-karte");
   await expect(karte).toContainText("Zusatzinhalt (nicht aus dem Buch)");
   await expect(page.getByTestId("zusatzpartie-quelle")).toContainText("CC BY-SA 4.0");
   // Berühmte Partien: Kurztext und zwei Quellen.
-  await quelle.getByRole("button", { name: "Berühmte Partien" }).click();
+  await waehleInZeile(page, "zugerraten-quelle", "Berühmte Partien");
   await expect(karte).toContainText("Zusatzinhalt (nicht aus dem Buch)");
   await expect(page.getByTestId("zusatzpartie-quelle").getByRole("link")).toHaveCount(2);
   expect(await liste.locator("option").count()).toBeGreaterThanOrEqual(40);
   await page.screenshot({ path: "test-results/bilder/trainer-zugerraten-zusatz.png" });
-  await wahl.getByRole("button", { name: "Schwarz", exact: true }).click();
+  await waehleInZeile(page, "zeile-seite", "Schwarz");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await expect(runde.getByTestId("zusatzpartie-karte")).toContainText("Zusatzinhalt");

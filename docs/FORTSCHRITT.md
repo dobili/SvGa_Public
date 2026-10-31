@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.41** (Arbeitszweig): Einstellungen neu (K2, Brettvorschau oben, drei Reiter, Seiten Bots und Wertung / Deine Daten / Über die App; N2300–N2309); „Jetzt sichern“ öffnet direkt „Deine Daten“. Damit sind alle Gestaltungs-Chats übernommen. **Nächster Schritt:** CI abwarten, nach main, Live-Version prüfen.
+
 Stand: 31.10.2026 · **Version 0.3.40** (Arbeitszweig): eigene Engine für die Auswertung (zweiter Kern, N2317). **Nächster Schritt:** Bericht Einstellungen (K2) übernehmen, dann alles nach main (Cloudflare prüfen).
 
 Stand: 31.10.2026 · **Version 0.3.39** (Arbeitszweig): Maia rechnet in einem eigenen Worker (N2316). **Nächster Schritt:** Bericht Einstellungen (K2) übernehmen; prüfen, welche weiteren Rechnungen auf andere Kerne gehören (Zugwahl des Bots, Werkzeuge, Auswertung); danach alles nach main, sobald Cloudflare baut.

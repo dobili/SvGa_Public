@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Antwort des Autors auf Q4 (15.10.2026). Erscheint wie der Update-Hinweis
  * oben, aber nur mit eigenen Daten und nach vier Stunden App-Zeit ohne Sicherung
- * (useSicherungshinweis.ts). „Jetzt sichern“ öffnet die Einstellungen, „Später“ blendet ihn aus,
+ * (useSicherungshinweis.ts). „Jetzt sichern“ öffnet die Seite „Deine Daten“ (seit 0.3.41 direkt,
+ * Vorschlag aus der Gestaltung der Einstellungen; vorher nur das Profil), „Später“ blendet ihn aus,
  * „Nicht mehr nachfragen“ schaltet ihn dauerhaft ab.
  * Abhängigkeiten: useSicherungshinweis.ts, Navigation, i18n.
  */
@@ -14,7 +15,7 @@ import { useSicherungshinweis } from "./useSicherungshinweis";
 /** Der Hinweis oben „Zeit für eine Datensicherung“ nach vier Stunden App-Zeit ohne Sicherung. */
 export function SicherungsHinweis() {
   const hinweis = useSicherungshinweis();
-  const { wechsleBereich } = useNavigation();
+  const { wechsleBereich, navigiere } = useNavigation();
   if (!hinweis.faellig) return null;
   return (
     <div
@@ -28,7 +29,9 @@ export function SicherungsHinweis() {
           type="button"
           onClick={() => {
             hinweis.spaeter();
+            // Profil als Grund, darüber „Deine Daten“: Zurück führt ins Profil.
             wechsleBereich("ich");
+            navigiere({ bildschirm: "zusatz", kennung: "einstellungen-daten" });
           }}
         >
           {t("sicherung.hinweis.jetzt")}

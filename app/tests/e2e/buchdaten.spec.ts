@@ -107,14 +107,13 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(page.getByTestId("trainer-denkroutine")).toContainText("Denkroutine-Trainer");
   await expect(page.getByTestId("kachel-kapitel").locator('a[href="/training/"]')).toBeVisible();
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page
-    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radiogroup", { name: "Brettfarbe" })
     .getByRole("radio", { name: "Ahorn & Nussbaum" })
     .click();
   await expect(
     page
-      .getByRole("radiogroup", { name: "Brettfarben" })
+      .getByRole("radiogroup", { name: "Brettfarbe" })
       .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
   await leiste.getByRole("button", { name: "Buch" }).click();
@@ -124,9 +123,8 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   ).toBeAttached();
   // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page
-    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radiogroup", { name: "Brettfarbe" })
     .getByRole("radio", { name: "Marmor grün" })
     .click();
   await leiste.getByRole("button", { name: "Buch" }).click();

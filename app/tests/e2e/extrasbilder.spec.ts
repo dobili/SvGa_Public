@@ -47,8 +47,8 @@ for (const schema of ["dunkel", "hell"] as const) {
     await karte.screenshot({ path: `test-results/bilder/extras-neu-brett-${schema}.png` });
 
     await oeffneEinstellungen(page);
-    await page.getByRole("tab", { name: "Brett" }).click();
-    const figuren = page.getByRole("radiogroup", { name: "Figurensatz" });
+    // Seit den neuen Einstellungen (K2) stehen Brett und Figuren ohne Reiter oben.
+    const figuren = page.getByRole("radiogroup", { name: "Figuren", exact: true });
     await figuren.scrollIntoViewIfNeeded();
     await page.screenshot({ path: `test-results/bilder/extras-neu-einstellungen-${schema}.png` });
   });

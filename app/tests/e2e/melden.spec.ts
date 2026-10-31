@@ -4,7 +4,7 @@
  * Die Schnittstelle /api/melden beantwortet Playwright selbst (im Test gibt es keinen Worker).
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneAbbildung, oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneEinstellungsseite, starteImBrowser } from "./hilfen";
 
 async function fangeMeldungen(page: Page, status = 200): Promise<unknown[]> {
   const gesendet: unknown[] = [];
@@ -21,7 +21,7 @@ async function fangeMeldungen(page: Page, status = 200): Promise<unknown[]> {
 test("Einstellungen: Wunsch senden, mit Geräteangaben", async ({ page }) => {
   const gesendet = await fangeMeldungen(page);
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Über die App");
   await page.getByRole("button", { name: "Fehler melden" }).click();
   const formular = page.getByTestId("meldeformular");
   await formular.getByRole("radio", { name: "Wunsch" }).click();
@@ -59,7 +59,7 @@ test("Abbildung: Fehler im Buch melden schickt Nummer und Stellung", async ({ pa
 test("Serverfehler: Hinweis auf E-Mail und Kopierweg", async ({ page }) => {
   await fangeMeldungen(page, 500);
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Über die App");
   await page.getByRole("button", { name: "Fehler melden" }).click();
   const formular = page.getByTestId("meldeformular");
   await formular.getByLabel(/Was ist passiert/).fill("Brett bleibt leer");
@@ -75,7 +75,7 @@ test("ohne Verbindung: Meldung wartet und geht beim Wiederverbinden hinaus (V9)"
 }) => {
   const gesendet = await fangeMeldungen(page);
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Über die App");
   await page.getByRole("button", { name: "Fehler melden" }).click();
   const formular = page.getByTestId("meldeformular");
   await formular.getByLabel(/Was ist passiert/).fill("Im Zug gemeldet");

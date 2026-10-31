@@ -8,6 +8,7 @@ import {
   klappeAbschnittAuf,
   oeffneAbbildung,
   oeffneEinstellungen,
+  oeffneEinstellungsseite,
   oeffneProfil,
   starteImBrowser,
 } from "./hilfen";
@@ -121,10 +122,9 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   });
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
-      .getByRole("radiogroup", { name: "Brettfarben" })
+      .getByRole("radiogroup", { name: "Brettfarbe" })
       .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
   await oeffneProfil(page);
@@ -136,10 +136,9 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   expect(merker).toEqual([null, null]);
   await page.reload();
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
-      .getByRole("radiogroup", { name: "Brettfarben" })
+      .getByRole("radiogroup", { name: "Brettfarbe" })
       .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
 });
@@ -153,8 +152,8 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await oeffneAbbildung(page, "2.1", "2.1");
   await page.clock.runFor(VERWEILZEIT_MS);
   await oeffneEinstellungen(page);
-  await page.getByRole("tab", { name: "Brett" }).click();
   await page.getByRole("radio", { name: "Grün", exact: true }).click();
+  await page.getByRole("button", { name: /^Deine Daten/ }).click();
   await expect(page.getByTestId("letzte-sicherung")).toHaveText("Noch keine Sicherung angelegt.");
   const [download] = await Promise.all([
     page.waitForEvent("download"),
@@ -173,13 +172,14 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await oeffneProfil(zweite);
   await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^0 von/);
   await zweite.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await zweite.getByRole("button", { name: /^Deine Daten/ }).click();
   await zweite.getByTestId("sicherung-datei").setInputFiles(datei);
   const frage = zweite.getByRole("alertdialog", { name: "Sicherung einspielen" });
   await expect(frage).toContainText("Abbildungen angesehen: 1");
   await zweite.screenshot({ path: "test-results/bilder/sicherung-rueckfrage.png", fullPage: true });
   await frage.getByRole("button", { name: "Ja, Daten ersetzen" }).click();
   await expect(zweite.getByText("Sicherung eingespielt.")).toBeVisible();
-  await zweite.getByRole("tab", { name: "Brett" }).click();
+  await zweite.locator(".kopfzeile").getByRole("button", { name: "Einstellungen" }).click();
   await expect(zweite.getByRole("radio", { name: "Grün", exact: true })).toHaveAttribute(
     "aria-checked",
     "true",
@@ -194,7 +194,7 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
 
 test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", async ({ page }) => {
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
+  await oeffneEinstellungsseite(page, "Deine Daten");
   const auswahl = page.getByTestId("sicherung-datei");
   await auswahl.setInputFiles({
     name: "notizen.json",
@@ -214,8 +214,8 @@ test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", as
     buffer: Buffer.from(leer),
   });
   await page.getByRole("button", { name: "Abbrechen" }).click();
-  await page.getByRole("tab", { name: "Brett" }).click();
-  const brettfarben = page.getByRole("radiogroup", { name: "Brettfarben" });
+  await page.locator(".kopfzeile").getByRole("button", { name: "Einstellungen" }).click();
+  const brettfarben = page.getByRole("radiogroup", { name: "Brettfarbe" });
   await expect(brettfarben.getByRole("radio", { name: "wie im Buch" })).toHaveAttribute(
     "aria-checked",
     "true",
@@ -233,6 +233,7 @@ test("Alle Daten löschen entfernt auch die Datenbank mit dem Fortschritt", asyn
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("button", { name: /^Deine Daten/ }).click();
   await page.getByRole("button", { name: "Alle Daten dieser App löschen" }).click();
   await page.getByRole("button", { name: "Ja, alles löschen" }).click();
   await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible({ timeout: LOESCHZEIT_MS });
@@ -264,6 +265,13 @@ test("Hinweis auf die Datensicherung nach vier Stunden App-Zeit, „Später“ u
   await fastVierStunden();
   await page.clock.runFor(ZWEI_MINUTEN_MS);
   await expect(hinweis).toContainText("ohne Datensicherung");
+  // „Jetzt sichern“ öffnet direkt die Seite „Deine Daten“ (seit 0.3.41) und blendet ihn aus.
+  await hinweis.getByRole("button", { name: "Jetzt sichern" }).click();
+  await expect(page.locator('[data-tour="einstellungen-daten"]')).toBeVisible();
+  await expect(hinweis).toHaveCount(0);
+  await fastVierStunden();
+  await page.clock.runFor(ZWEI_MINUTEN_MS);
+  await expect(hinweis).toBeVisible();
   // „Später“ blendet ihn aus, die Zählung beginnt neu.
   await hinweis.getByRole("button", { name: "Später" }).click();
   await expect(hinweis).toHaveCount(0);

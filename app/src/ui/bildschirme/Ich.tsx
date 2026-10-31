@@ -19,6 +19,7 @@ import { Partienliste } from "../komponenten/partienliste/Partienliste";
 import { Profilkarten } from "../komponenten/profilkarten/Profilkarten";
 import { Wertungskurve } from "../komponenten/fortschritt/Wertungskurve";
 import { ProfilKarte } from "../profil/ProfilKarte";
+import { LernpfadKnopf } from "../komponenten/lernpfad/LernpfadKnopf";
 
 /** Die Profilseite. */
 export function Ich() {
@@ -44,6 +45,8 @@ export function Ich() {
       </button>
       <Wertungskurve punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
+      {/* Gamifizierung P2: der Fortschritt im Buch als Weg. */}
+      <LernpfadKnopf ort="profil" />
       {/* Gamifizierung G4: Karten der Pakete (Themen, Rekorde, Rückblicke …). */}
       <Profilkarten />
       <Partienliste partien={partien} />

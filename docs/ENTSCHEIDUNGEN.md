@@ -4,6 +4,28 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 31.10.2026 – P2 Lernpfad durchs Buch (Opus, Gamifizierung Welle 1, Chat B)
+
+- Bildschirm „Dein Weg durchs Buch“ als Zusatzansicht `lernpfad` (eine Zeile in
+  `ZUSATZANSICHTEN`), Knopf „Als Weg anzeigen“ über der Kapitelliste und „Dein Weg durchs Buch“
+  im Profil unter „Dein Fortschritt“ (E3: eigener Bildschirm, die Kapitelliste bleibt).
+- 13 Stationen in fünf Etappen nach `BUCHTEILE`, am Ende jeder Etappe der Orden des Teils
+  (Ordenkunst, Silhouette bis verdient). Ob er verdient ist, rechnet immer `teilanteil` aus der
+  Ringrechnung, damit Weg und Profil nie verschieden urteilen.
+- Eine Station zählt, was in der Liste `STATIONSTEILE` (`ui/komponenten/lernpfad/lernpfad.ts`)
+  steht: heute Abbildungen und Übungen, wie der Orden. Ein späteres Werkzeug oder ein Trainer, der
+  zu einem Kapitel gehört, trägt eine Zeile mit Text des Rests und Zählung ein (Wunsch des Autors:
+  eintragen statt umbauen). Fertig ist eine Station erst, wenn alles voll ist.
+- Aktuelle Station: das Kapitel der zuletzt geöffneten Abbildung (Merker `zuletzt`), solange es
+  nicht fertig ist, sonst das nächste unfertige danach, sonst das erste unfertige. Grund: Wer in
+  Kapitel 6 liest und vorn eine Übung ausgelassen hat, soll nicht an den Anfang gesetzt werden.
+- Der Satz zum Rest („Noch 12 Abbildungen und 4 Übungen bis zum Ende von Kapitel 6. Danach …“)
+  steht als Karte über dem Weg statt direkt unter der Station: Unter der Station wäre er auf dem
+  Handy mit der nächsten Station zusammengestoßen.
+- Figur: Porträt des Lesers, sonst goldener Springer aus den Buchfiguren (SkakNew-Pfade). Kleine
+  Bewegung von der beim letzten Öffnen gemerkten Station (Merker `lernpfadStation`, nur auf dem
+  Gerät) zur aktuellen; bei „Bewegung reduzieren“ ohne Bewegung. Kein neues Speicherfeld.
+
 ## 31.10.2026 – Version 0.3.18: Gamifizierung, Welle 0 (Grundlage G1 bis G5, Opus)
 
 - Auftrag des Autors über den Nebenchat: Gamifizierung nach der Vorrecherche

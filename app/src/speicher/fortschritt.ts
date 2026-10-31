@@ -7,7 +7,12 @@
  * es die Trainer gibt (AP 13); die Schnittstelle steht schon jetzt fest.
  * Abhängigkeiten: speicher/format.ts, training/trainer.ts.
  */
-import { TRAINER, trainerZuKapitel, type TrainerKennung } from "../training/trainer";
+import {
+  TRAINER,
+  TRAINER_OHNE_RUNDE,
+  trainerZuKapitel,
+  type TrainerKennung,
+} from "../training/trainer";
 import { beantworte, uebungskarte, type Antwortergebnis } from "../training/wiederholung";
 import { zaehleAktivitaet } from "./aktivitaet";
 import type { Fortschritt, Nutzerdaten, Trainerstand } from "./format";
@@ -295,10 +300,15 @@ export function notiereEinschaetzung(
  * Wie viele Trainer aus „Training“ schon einmal abgeschlossen wurden (mindestens ein Durchgang).
  * Warum: dritter Ring „Trainings erstmalig absolviert“ in „Dein Fortschritt“ (Wunsch des Autors,
  * 25.10.2026, Fortschrittsuebersicht.tsx). Gezählt werden nur fertige Trainer.
- * Beispiel: ein Durchgang „Koordinaten“ und zwei „Zählen“ → 2 von 17.
+ * Beispiel: ein Durchgang „Koordinaten“ und zwei „Zählen“ → 2 von 17 (18 Trainer ohne die
+ * Fehlerdatenbank).
  */
 export function erstmalsTrainiert(fortschritt: Fortschritt): Anteil {
-  const fertige = TRAINER.filter((trainer) => trainer.fertig);
+  // Ohne die Fehlerdatenbank: Sie hat keine Runde, der Ring wäre sonst nie voll (Befund beim
+  // Lernpfad mit Nebenaufgaben, 31.10.2026: „0 von 18“, höchstens 17 erreichbar).
+  const fertige = TRAINER.filter(
+    (trainer) => trainer.fertig && !TRAINER_OHNE_RUNDE.has(trainer.kennung),
+  );
   const erreicht = fertige.filter(
     (trainer) => (fortschritt.trainer[trainer.kennung]?.durchgaenge ?? 0) > 0,
   ).length;

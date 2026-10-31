@@ -1,3 +1,5 @@
+Stand: 31.10.2026 · **Version 0.3.34**: Profil – Zurückgeholt (Verlauf je Phase, Schätzung aus Zügen, Stand in den Regalen; N2310–N2314). 0.3.32 auf main. **Nächster Schritt:** Hängen der Zuganimation gegen die Engine auf schwachen Handys (Befund des Autors); übrige Berichte übernehmen.
+
 Stand: 31.10.2026 · **Version 0.3.33**: Training und Checkliste neu (C2, D1; N2260–N2269) übernommen. Neue Arbeitschats: Gestaltung Auswertung (F2, Zugarten-Grafik und Zoom bleiben) und Gestaltung Spielen (J3, Einstellen der eigenen Stufe im alten Design). **Nächster Schritt:** übrige Berichte übernehmen.
 
 Stand: 31.10.2026 · **Version 0.3.32**: Deine Extras neu (E1 „Ankleide“, N2270–N2279) übernommen. Laufend: Gestaltungs-Chats Buch/Lernpfad, Training/Checkliste, Trainerstart, Nachschlagen, Einstellungen; Profil neu 2. Beim Autor: Wahl Auswertung (F1–F3) und Spielen (J1–J3). **Nächster Schritt:** übrige Berichte übernehmen, „alt → neu“ gegen Funktionsverlust prüfen.

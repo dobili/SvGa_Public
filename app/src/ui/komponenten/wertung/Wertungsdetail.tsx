@@ -28,7 +28,7 @@ import {
   type Wertungsmassstab,
 } from "../fortschritt/wertungsmassstab";
 import { zeitklassenname } from "../fortschritt/wertungstext";
-import { AUSSCHNITTE, STANDARD_AUSSCHNITT } from "./ausschnitte";
+import { AUSSCHNITTE } from "./ausschnitte";
 import { kurveImMassstab, type Wertungskachel } from "./wertungskacheln";
 
 /** „+24“, „−12“ oder „±0“. */
@@ -67,8 +67,17 @@ function Zuruecksetzen() {
   );
 }
 
-/** „Mehr“: Ausschnitt der Kurve, kurze Erklärung, Zurücksetzen. */
-function Mehr({ kennung, beiWahl }: { kennung: string; beiWahl: (kennung: string) => void }) {
+/** „Mehr“: Ausschnitt der Kurve (gilt auch für die Phasen), Erklärungen, Zurücksetzen. */
+function Mehr({
+  kennung,
+  beiWahl,
+  vorlaeufig,
+}: {
+  kennung: string;
+  beiWahl: (kennung: string) => void;
+  /** In den ersten zehn Partien ihre Zahl, sonst null. */
+  vorlaeufig: number | null;
+}) {
   return (
     <details className="anleitung wertung-mehr" data-testid="wertung-mehr">
       <summary>{t("profil.wertung.mehr")}</summary>
@@ -88,7 +97,12 @@ function Mehr({ kennung, beiWahl }: { kennung: string; beiWahl: (kennung: string
         ))}
       </select>
       <p className="hinweis">{t("ich.wertung.kurz")}</p>
+      {/* Zurückgeholt (31.10.2026): was „vorläufig“ heißt und wie der Maßstab rechnet. */}
+      {vorlaeufig !== null && (
+        <p className="hinweis">{t("profil.wertung.vorlaeufigSatz", { anzahl: vorlaeufig })}</p>
+      )}
       <p className="hinweis">{t("ich.wertung.erklaerung")}</p>
+      <p className="hinweis">{t("wertung.massstab.erklaerung")}</p>
       <Zuruecksetzen />
     </details>
   );
@@ -146,13 +160,17 @@ export function Wertungsdetail({
   punkte,
   massstab,
   jetzt,
+  ausschnitt: kennung,
+  beiAusschnitt,
 }: {
   kachel: Wertungskachel;
   punkte: readonly Wertungspunkt[];
   massstab: Wertungsmassstab;
   jetzt: Date;
+  /** Kennung des Ausschnitts (ausschnitte.ts); die Karte hält sie, weil auch die Phasen ihn nutzen. */
+  ausschnitt: string;
+  beiAusschnitt: (kennung: string) => void;
 }) {
-  const [kennung, setzeKennung] = useState(STANDARD_AUSSCHNITT);
   if (kachel.geschaetzt) {
     return (
       <p className="wertung-schaetzung" data-testid="wertung-schaetzung">
@@ -180,7 +198,11 @@ export function Wertungsdetail({
         </p>
       )}
       <Unterzeile kachel={kachel} sichtbar={kurve} massstab={massstab} />
-      <Mehr kennung={kennung} beiWahl={setzeKennung} />
+      <Mehr
+        kennung={kennung}
+        beiWahl={beiAusschnitt}
+        vorlaeufig={kachel.vorlaeufig ? kachel.partien : null}
+      />
     </div>
   );
 }

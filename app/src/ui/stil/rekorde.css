@@ -69,3 +69,11 @@
   min-width: 4rem;
   border-radius: 999px;
 }
+
+/* Teilen und „Verbessern“ untereinander rechts (zurückgeholt am 31.10.2026). */
+.rekord-knoepfe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}

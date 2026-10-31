@@ -4620,5 +4620,13 @@
   "trainingslook.checkFertigEins": "1 chapter done",
   "trainingslook.checkHinweis": "Tick off what you can do confidently.",
   "trainingslook.kapitelFertig": "done",
-  "trainingslook.reihenkopfEins": "Chapter {kapitel} · 1 trainer"
+  "trainingslook.reihenkopfEins": "Chapter {kapitel} · 1 trainer",
+  "profil.wertung.welchePartien": "Games against the engine or a bot with the “Rated game” box count once they are analysed. A game only counts if you played at least ten moves before it was decided, so quick wins against much weaker bots often do not count.",
+  "profil.wertung.vorlaeufigSatz": "Provisional: the rating settles during the first ten games (so far {anzahl}).",
+  "profil.wertung.ausZuegen": "From your moves: about {mitte} ({von}–{bis}, from {partien} games).",
+  "profil.wertung.ausZuegenEins": "From your moves: about {mitte} ({von}–{bis}, from 1 game).",
+  "profil.wertung.phasenZuWenig": "{phase}: Not enough games in this time control for a curve yet. It appears after a few more.",
+  "profil.wertung.spanne": "Range {von}–{bis}",
+  "profil.rekorde.verbessern": "Improve",
+  "profil.rekorde.verbessernName": "Improve: {name}"
 }

@@ -9,6 +9,11 @@
  */
 import { defineConfig, devices } from "@playwright/test";
 
+// Abrufe des Service Workers laufen in Chromium durch context.route; nur so prüfen die
+// Offline-Tests echt offline (tests/e2e/offlinehilfen.ts, Fehlertest f3, 01.11.2026). Gesetzt vor
+// dem Start der Browser, in jedem Testprozess, weil jeder diese Datei lädt.
+process.env.PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS = "1";
+
 /** Standardport von vite preview. */
 const STANDARDPORT = "4173";
 const PORT = process.env.PLAYWRIGHT_PORT ?? STANDARDPORT;

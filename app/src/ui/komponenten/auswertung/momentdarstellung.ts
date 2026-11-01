@@ -14,7 +14,7 @@ import type { Theoriequellen } from "../../../schach/theorie";
 import { theorienamen } from "../../../schach/theorienamen";
 import { zugnummer, type Zugklasse, type Zugurteil } from "../../../spiel/auswertung";
 import { stellungen } from "../../../spiel/partie";
-import { uciZuSan } from "../../../spiel/zuege";
+import { sanZuUci, uciZuSan } from "../../../spiel/zuege";
 import type { Partieeintrag } from "../../../speicher/partien";
 import { kurzergebnis } from "../partie/partietexte";
 import { gewinnchanceVorNach } from "./gewinnchance";
@@ -57,11 +57,19 @@ function titelVon(g: Darstellungsgrund, index: number): string {
   return zugtext(g.eintrag.partie, index, zeichen);
 }
 
-/** Der bessere Zug als Text, leer ohne. Beispiel: „18. Sxd4“. */
+/**
+ * Der bessere Zug als Text, leer ohne. Beispiel: „18. Sxd4“.
+ * Sonderfall: Ist der beste Zug der gespielte (der Wert fiel trotzdem, etwa weil die Engine die
+ * Stellung danach kurz anders sah), bleibt es leer; sonst stünde „9... b5?? Besser war 9... b5“
+ * (Befund der Vorprüfung, 1.11.2026).
+ */
 function besserVon(g: Darstellungsgrund, index: number): string {
   const p = g.eintrag.partie;
-  const san = uciZuSan(stellungen(p)[index] ?? "", g.eintrag.beste[index] ?? "");
-  return san ? `${zugnummer(p, index)} ${sanInSprache(san, sprache())}` : "";
+  const fen = stellungen(p)[index] ?? "";
+  const bester = g.eintrag.beste[index] ?? "";
+  const san = uciZuSan(fen, bester);
+  if (!san || sanZuUci(fen, p.zuege[index]?.san ?? "") === bester) return "";
+  return `${zugnummer(p, index)} ${sanInSprache(san, sprache())}`;
 }
 
 /** Gewinnchance der ziehenden Seite vor und nach dem Zug. */

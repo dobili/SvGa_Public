@@ -61,6 +61,22 @@ function umbrechen(woerter: readonly string[]): string {
 }
 
 /**
+ * Der Tag eines Zeitpunkts nach Ortszeit für PGN-Kopf und Dateinamen.
+ *
+ * Warum: Mit dem UTC-Tag stand bei einer Partie kurz nach Mitternacht der Vortag im Kopf
+ * (Fehlertest 1.11.2026). Beispiel: „2026-10-15T08:00:00.000Z“ → „2026.10.15“; mit Trenner „-“
+ * → „2026-10-15“. Sonderfall: Unlesbare Angabe → ihre ersten zehn Zeichen wie bisher.
+ */
+export function pgnDatum(iso: string, trenner = "."): string {
+  const zeit = new Date(iso);
+  if (Number.isNaN(zeit.getTime())) return iso.slice(0, "JJJJ-MM-TT".length).replace(/-/g, trenner);
+  const zweistellig = (z: number) => String(z).padStart(2, "0");
+  return [zeit.getFullYear(), zweistellig(zeit.getMonth() + 1), zweistellig(zeit.getDate())].join(
+    trenner,
+  );
+}
+
+/**
  * Schreibt die Partie als PGN.
  *
  * Eingaben: Partie, Kopfangaben, Kommentare je Halbzug (Index → Text, etwa „Absichtlicher
@@ -75,7 +91,7 @@ export function alsPgn(
   zeichen: ReadonlyMap<number, string> = new Map(),
 ): string {
   const leserWeiss = partie.einstellung.eigeneFarbe === "white";
-  const datum = partie.begonnen.slice(0, "JJJJ-MM-TT".length).replace(/-/g, ".");
+  const datum = pgnDatum(partie.begonnen);
   const ergebnis = pgnErgebnis(partie.ende);
   const start = partie.einstellung.startFen;
   const kopfzeilen = [

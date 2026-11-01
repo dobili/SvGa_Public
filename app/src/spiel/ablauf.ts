@@ -34,6 +34,25 @@ export function zieheMitUhr(
 }
 
 /**
+ * Zug des Lesers (oder im Spiel Mensch gegen Mensch einer der beiden): erst die Zeit prüfen, dann
+ * ziehen.
+ *
+ * Warum: Die Anzeige prüft die Zeit nur im Takt (usePartie.ts, alle 200 ms). Ein Zug zwischen
+ * Ablauf und nächstem Takt bekäme sonst noch den Zuschlag und rettete die Partie (Fehlertest,
+ * 1.11.2026). Regel: Kapitel 0, wer die Zeit überschreitet, verliert (außer bei zu wenig
+ * Material des Gegners). Beispiel: 3 + 2, Restzeit 0 → kein Zug, Partie verloren auf Zeit.
+ * Ausgabe: neue Partie oder null, wenn der Zug nicht geht.
+ */
+export function zieheNachZeitpruefung(
+  partie: Partie,
+  zug: Partiezug,
+  jetztMs: number,
+): Partie | null {
+  const geprueft = pruefeZeit(partie, jetztMs);
+  return geprueft.ende ? geprueft : zieheMitUhr(partie, zug, jetztMs);
+}
+
+/**
  * Die eben angelaufene Uhr beginnt erst nach ``verzugMs``: So lange gleitet der Zug über das
  * Brett (R37, Wunsch des Autors: während der Zuganimation läuft keine Uhr).
  *

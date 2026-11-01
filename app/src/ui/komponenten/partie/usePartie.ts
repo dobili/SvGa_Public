@@ -27,7 +27,7 @@ import {
   pruefeZeit,
   setzeUhrFort,
   mitUhrverzug,
-  zieheMitUhr,
+  zieheNachZeitpruefung,
 } from "../../../spiel/ablauf";
 import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../../engine/zugwahl";
 import {
@@ -290,7 +290,7 @@ export function usePartie(id: string): Partiesteuerung {
     // R37: Die Uhr der Gegenseite läuft erst, wenn der Zug über das Brett geglitten ist.
     spieleLeser: (san) =>
       aendereNeueste(id, (p) =>
-        mitUhrverzug(zieheMitUhr(p, leserzug(san), Date.now()), animationsverzugMs()),
+        mitUhrverzug(zieheNachZeitpruefung(p, leserzug(san), Date.now()), animationsverzugMs()),
       ),
     nimmZurueck: () => aendereNeueste(id, (p) => nimmZurueckMitUhr(p, Date.now())),
     gibAuf: () => aendereNeueste(id, (p) => gibAuf(pausiere(p, Date.now()))),

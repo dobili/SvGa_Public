@@ -37,9 +37,23 @@ const ZAHLENABSCHNITTE: readonly {
   },
   {
     kennung: "zugklassen",
-    inhalt: (z) => <Zugklassen bilanz={z.zahlen.b} elo={z.zahlen.elo} tempo={z.zahlen.tempo} />,
+    inhalt: (z) => (
+      <Zugklassen
+        bilanz={z.zahlen.b}
+        elo={z.zahlen.elo}
+        tempo={z.zahlen.tempo}
+        botName={botnameDerSeite(z.partie, z.seite)}
+      />
+    ),
   },
 ];
+
+/** Name des Bots, wenn die Seite ihm gehört; sonst null (eigene Seite, Mensch gegen Mensch). */
+function botnameDerSeite(partie: Partie, s: Color): string | null {
+  const e = partie.einstellung;
+  if (e.gegner !== "engine" || s === e.eigeneFarbe) return null;
+  return e.botName ?? t("spielstaerke.gegnerName");
+}
 
 /** Name einer Seite: bei der Engine mit ihrem Namen, die eigene Seite mit „(du)“. */
 function seitenname(partie: Partie, s: Color): string {

@@ -14,7 +14,7 @@ import {
   schreibeAppzeit,
   zaehle,
 } from "../../../app/sicherungshinweis";
-import { inhaltsangabe } from "../../../speicher/sicherung";
+import { hatEigeneDaten, inhaltsangabe } from "../../../speicher/sicherung";
 import { useSpeicher } from "../../../speicher/speicher";
 
 /** So oft wird gezählt; eine Minute Ungenauigkeit spielt bei vier Stunden keine Rolle. */
@@ -34,10 +34,7 @@ export interface Sicherungshinweis {
  */
 export function useSicherungshinweis(): Sicherungshinweis {
   const letzte = useSpeicher((z) => z.daten.letzteSicherung);
-  const hatDaten = useSpeicher((z) => {
-    const angabe = inhaltsangabe(z.daten);
-    return angabe.abbildungen + angabe.uebungen + angabe.lernziele > 0;
-  });
+  const hatDaten = useSpeicher((z) => hatEigeneDaten(inhaltsangabe(z.daten)));
   const [stand, setzeStand] = useState(liesAppzeit);
   const [aus, setzeAus] = useState(hinweisAbgeschaltet);
   useEffect(() => {

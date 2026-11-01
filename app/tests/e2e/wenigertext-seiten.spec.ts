@@ -76,6 +76,8 @@ for (const schema of ["dunkel", "hell"] as const) {
     await oeffneSpielseite(page, "eigene");
     const eigene = page.getByTestId("eigene-gegner");
     await expect(eigene.getByTestId("eigene-leer")).toContainText("Noch kein eigener Gegner.");
+    // Ohne Porträts darüber keine Trennlinie und kein Leerraum über „verwalten“ (1.11.2026).
+    await expect(eigene).toHaveCSS("border-top-width", "0px");
     await eigene.screenshot({ path: `test-results/bilder/p01-eigene-${schema}.png` });
     await ohneUeberstand(page);
   });

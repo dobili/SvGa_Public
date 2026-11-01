@@ -10,6 +10,7 @@ import {
   pruefeZeit,
   setzeUhrFort,
   zieheMitUhr,
+  zieheNachZeitpruefung,
 } from "./ablauf";
 import { engineZug } from "./enginezug";
 import { leserzug, neuePartie, type Partie, type Partiezug } from "./partie";
@@ -99,6 +100,16 @@ describe("Ablauf mit Uhr", () => {
     const p = pruefeZeit(zwei, 2 * MINUTE);
     expect(p.ende).toEqual({ art: "zeit", sieger: "black" });
     expect(p.uhr?.laeuft).toBeNull();
+  });
+
+  it("ein Zug nach Ablauf der Zeit rettet nichts mehr (Fehlertest 1.11.2026)", () => {
+    const zwei = zug(zug(partie(true), "e4", 0), "e5", SEKUNDE);
+    const zuSpaet = zieheNachZeitpruefung(zwei, leserzug("Nf3"), 2 * MINUTE);
+    expect(zuSpaet?.ende).toEqual({ art: "zeit", sieger: "black" });
+    expect(zuSpaet?.zuege).toHaveLength(2);
+    const rechtzeitig = zieheNachZeitpruefung(zwei, leserzug("Nf3"), 2 * SEKUNDE);
+    expect(rechtzeitig?.ende).toBeNull();
+    expect(rechtzeitig?.zuege).toHaveLength(3);
   });
 
   it("die Uhr des Bots läuft nicht in echter Zeit ab (seine Zeit ist simuliert, 0.2.117)", () => {

@@ -21,6 +21,8 @@ import { leserzug, type Partie } from "./partie";
 export type Importfehler =
   | { readonly art: "leer" }
   | { readonly art: "unlesbar" }
+  /** Eine Schachvariante (Chess960, Crazyhouse, Atomic …); die App kennt nur normales Schach. */
+  | { readonly art: "variante" }
   | { readonly art: "zug"; readonly zug: string; readonly nummer: number }
   | { readonly art: "ohneZuege" }
   | { readonly art: "ohneErgebnis" };
@@ -66,6 +68,80 @@ function endeAus(
   return { art: zeit ? "zeit" : "aufgabe", sieger };
 }
 
+/** Deutsche Figurenbuchstaben → englische (Kapitel 0, „Wie liest man Schachzüge?“). */
+const DEUTSCHE_FIGUREN: Readonly<Record<string, string>> = { D: "Q", T: "R", L: "B", S: "N" };
+/** Ein Großbuchstabe am Anfang eines Zuges (vor Feld, Linie, Reihe oder Schlag). */
+const FIGUR_VOR_ZUG = /(^|[\s.(])([A-Z])(?=[a-h1-8]?x?[a-h][1-8])/g;
+/** Figurinen („♘f3“, beim Kopieren von Zügen aus manchen Seiten) → englische Buchstaben. */
+const FIGURINEN: Readonly<Record<string, string>> = {
+  "♔": "K",
+  "♕": "Q",
+  "♖": "R",
+  "♗": "B",
+  "♘": "N",
+  "♚": "K",
+  "♛": "Q",
+  "♜": "R",
+  "♝": "B",
+  "♞": "N",
+  "♙": "",
+  "♟": "",
+};
+const FIGURINE = /[♔♕♖♗♘♚♛♜♝♞♙♟]/gu;
+/** Umwandlung mit deutschem Buchstaben („e8=D“). */
+const DEUTSCHE_UMWANDLUNG = /=([DTLS])/g;
+/** Figurenbuchstaben, die eine PGN kennt (englisch; P für Bauer kommt selten vor). */
+const ENGLISCHE_FIGUREN = "KQRBNP";
+/** Kopfzeilen und Kommentare: Dort wird nichts übersetzt oder geprüft. */
+const KOPFZEILE = /^\s*\[.*$/gm;
+const KOMMENTAR = /\{[^}]*\}|;[^\n]*/g;
+
+/** Die letzte Zugnummer („12.“ oder „12...“) vor dieser Stelle; 1, wenn keine dasteht. */
+function zugnummerVor(zugtext: string, stelle: number): number {
+  const nummern = [...zugtext.slice(0, stelle).matchAll(/(\d+)\.+/g)];
+  return Number(nummern[nummern.length - 1]?.[1] ?? 1);
+}
+
+/**
+ * Die Zugfolge einer PGN mit englischen Figurenbuchstaben; deutsche werden übersetzt.
+ *
+ * Warum: Leser dieses Buches schreiben ihre Partien oft deutsch ab („2. Sf3 Sc6 3. Lc4“).
+ * chessops überliest unbekannte Buchstaben und las „Sf3“ stillschweigend als Bauernzug f3, die
+ * eingelesene Partie war dann eine andere (Fehlertest 1.11.2026). Englische Notation nutzt D, T,
+ * L und S nie als Figur, deshalb ist die Übersetzung eindeutig.
+ * Ausgabe: der Text mit übersetzten Zügen (Kopfzeilen bleiben), oder der erste Zug mit einem
+ * unbekannten Buchstaben („Xf3“), damit er als Fehler gemeldet wird statt als Bauernzug.
+ * Beispiel: „1. e4 e5 2. Sf3“ → „1. e4 e5 2. Nf3“, „a8=D“ → „a8=Q“, „2. ♘f3“ → „2. Nf3“.
+ */
+export function inEnglischerNotation(text: string): {
+  text: string;
+  unbekannt: { zug: string; nummer: number } | null;
+} {
+  const uebersetzt = text.replace(/^(?!\s*\[).*$/gm, (zeile) =>
+    zeile
+      .replace(FIGURINE, (f) => FIGURINEN[f] ?? f)
+      .replace(FIGUR_VOR_ZUG, (ganz, vor: string, b: string) =>
+        b in DEUTSCHE_FIGUREN ? `${vor}${DEUTSCHE_FIGUREN[b]}` : ganz,
+      )
+      .replace(DEUTSCHE_UMWANDLUNG, (_, b: string) => `=${DEUTSCHE_FIGUREN[b] ?? b}`),
+  );
+  const zugtext = uebersetzt.replace(KOPFZEILE, "").replace(KOMMENTAR, " ");
+  for (const treffer of zugtext.matchAll(FIGUR_VOR_ZUG)) {
+    const b = treffer[2] ?? "";
+    if (!ENGLISCHE_FIGUREN.includes(b)) {
+      const stelle = (treffer.index ?? 0) + (treffer[1] ?? "").length;
+      const zug = zugtext.slice(stelle).split(/\s/)[0] ?? b;
+      return { text: uebersetzt, unbekannt: { zug, nummer: zugnummerVor(zugtext, stelle) } };
+    }
+  }
+  return { text: uebersetzt, unbekannt: null };
+}
+
+/** Normales Schach? Varianten (Chess960, Crazyhouse, Atomic …) liest die App nicht ein. */
+function normalesSchach(rules: string, variante: string | undefined): boolean {
+  return rules === "chess" && !/960|fischer/i.test(variante ?? "");
+}
+
 /**
  * Liest die erste Partie einer PGN.
  *
@@ -73,7 +149,7 @@ function endeAus(
  * Ausgabe: beendete, ungewertete Partie mit den Namen aus White und Black, oder der Grund.
  * Beispiel: „[Result "0-1"] 1. f3 e5 2. g4 Qh4#“ als Weiß → Matt, Schwarz gewinnt, verloren.
  * Sonderfälle: Eigene Startstellung über die Kopfzeile FEN; Nebenvarianten und Kommentare
- * fallen weg; eine Partie ohne Ergebnis („*“) wird abgelehnt, weil die Liste nur beendete hält.
+ * fallen weg; deutsche Notation wird übersetzt (inEnglischerNotation); Varianten werden abgelehnt; eine Partie ohne Ergebnis („*“) wird abgelehnt, weil die Liste nur beendete hält.
  */
 export function partieAusPgn(
   text: string,
@@ -82,10 +158,16 @@ export function partieAusPgn(
   jetzt: Date,
 ): Importergebnis {
   if (text.trim() === "") return { ok: false, fehler: { art: "leer" } };
-  const spiel = parsePgn(text)[0];
+  const englisch = inEnglischerNotation(text);
+  if (englisch.unbekannt !== null)
+    return { ok: false, fehler: { art: "zug", ...englisch.unbekannt } };
+  const spiel = parsePgn(englisch.text)[0];
   const start = spiel ? startingPosition(spiel.headers) : null;
   if (!spiel || !start || start.isErr) return { ok: false, fehler: { art: "unlesbar" } };
   const pos = start.value;
+  if (!normalesSchach(pos.rules, spiel.headers.get("Variant"))) {
+    return { ok: false, fehler: { art: "variante" } };
+  }
   const startFen = makeFen(pos.toSetup());
   const stellungen = [startFen];
   const zuege = [];

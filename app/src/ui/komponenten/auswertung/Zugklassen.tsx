@@ -110,18 +110,25 @@ function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolea
 
 /**
  * Die Karte für eine Seite.
- * Eingaben: Bilanz der Seite (Anzahl je Klasse), Spielstärke für den Vergleich.
+ * Eingaben: Bilanz der Seite (Anzahl je Klasse), Spielstärke für den Vergleich, Name des Bots,
+ * wenn die Karte seine Seite zeigt (sonst null: „Deine Züge“).
  * Beispiel: 33 Züge, 4 Ungenauigkeiten bei etwa 1400 → „?! Ungenau [4] 121 % des Üblichen · normal“.
+ * Sonderfall: Seite des Bots → „Züge von Derya“ (Befund der Vorprüfung, 1.11.2026: dort stand
+ * „Deine Züge“).
  */
 export function Zugklassen({
   bilanz,
   elo,
   tempo,
+  botName = null,
 }: {
   bilanz: Seitenbilanz;
   elo: number;
   tempo: Wertungstempo;
+  botName?: string | null;
 }) {
+  const titel =
+    botName === null ? t("zugklassen.titel") : t("zugklassen.titelBot", { name: botName });
   const vergleich = bilanz.zuege >= MINDESTZUEGE_VERGLEICH;
   const zeilen = KLASSEN.map((k) =>
     vergleicheKlasse(k, bilanz.klassen[k], bilanz.zuege, elo, tempo),
@@ -132,11 +139,11 @@ export function Zugklassen({
         zeile={
           <h2 className="karte-titel">
             <Titelsymbol art="spielstaerke" />
-            {t("zugklassen.titel")}
+            {titel}
           </h2>
         }
         erklaerung={<p>{t("zugklassen.erklaerung", { elo: Math.round(elo) })}</p>}
-        thema={t("zugklassen.titel")}
+        thema={titel}
       />
       {!vergleich && <p className="hinweis">{t("zugklassen.zuWenig")}</p>}
       <ul className="zugklassen-liste">

@@ -22,6 +22,7 @@ import {
   type Variation,
 } from "../../../training/variationen";
 import { ENTWURF } from "../../../training/variationsquellen";
+import { mitWerten, type Engineergebnis } from "../../../training/variationswerte";
 
 /** Tipp-Pause, nach der ein Text gespeichert wird (Entwurf, Abschnitt 5). */
 export const TIPPPAUSE_MS = 1000;
@@ -39,6 +40,11 @@ export interface Variantenspeicher {
   readonly loesche: () => void;
   readonly grenze: Grenze | null;
   readonly vergissGrenze: () => void;
+  /**
+   * Stufe 3: Trägt Ergebnisse der Engine in die Arbeitskopie ein, ohne zu speichern (das tut die
+   * Warteschlange der Analyse selbst, variantenanalyse.ts) und ohne „geändert“ zu verstellen.
+   */
+  readonly uebernimmWerte: (ergebnisse: ReadonlyMap<string, Engineergebnis>) => void;
 }
 
 /** Schreibt eine Variante in den Speicher (an einer Grenze bleibt der Speicher, wie er war). */
@@ -114,5 +120,11 @@ export function useVariantenspeicher(anfang: Variation): Variantenspeicher {
   // Beim Verlassen des Bildschirms wird Ausstehendes sofort geschrieben.
   useEffect(() => schreibe, [schreibe]);
   const vergissGrenze = useCallback(() => setzeGrenze(null), []);
-  return { variation, aendereVariation, schreibe, loesche, grenze, vergissGrenze };
+  const uebernimmWerte = useCallback((ergebnisse: ReadonlyMap<string, Engineergebnis>) => {
+    const neu = mitWerten(aktuell.current, ergebnisse);
+    if (neu === aktuell.current) return;
+    aktuell.current = neu;
+    setzeVariation(neu);
+  }, []);
+  return { variation, aendereVariation, schreibe, loesche, grenze, vergissGrenze, uebernimmWerte };
 }

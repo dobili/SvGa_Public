@@ -139,7 +139,8 @@ export interface Enginefehler {
   readonly fehler: Fehlerart;
 }
 
-function begrenzt(wert: number): number {
+/** Ein Wert, begrenzt auf ±WERTGRENZE (Matt zählt wie ein klarer Gewinn). */
+export function begrenzt(wert: number): number {
   return Math.max(-WERTGRENZE, Math.min(WERTGRENZE, wert));
 }
 
@@ -305,10 +306,32 @@ export function zugurteile(
   gambits: readonly boolean[] = [],
 ): Zugurteil[] {
   if (werte.length !== partie.zuege.length + 1) return [];
-  const alle = stellungen(partie);
+  const sans = partie.zuege.map((z) => z.san);
+  return zeilenurteile(stellungen(partie), sans, werte, { beste, abstaende, theorie, gambits });
+}
+
+/** Was zeilenurteile außer Stellungen, Zügen und Werten kennt (je Stellung bzw. Halbzug). */
+export interface Zeilenangaben {
+  readonly beste?: readonly string[];
+  readonly abstaende?: readonly number[];
+  readonly theorie?: readonly boolean[];
+  readonly gambits?: readonly boolean[];
+}
+
+/**
+ * Wie zugurteile, aber für eine Zeile aus Stellungen (FEN, ein Eintrag mehr als Züge) und Zügen;
+ * so urteilen auch die Varianten (spiel/variationsurteile.ts) mit denselben Regeln.
+ */
+export function zeilenurteile(
+  alle: readonly string[],
+  sans: readonly string[],
+  werte: readonly number[],
+  angaben: Zeilenangaben = {},
+): Zugurteil[] {
+  const { beste = [], abstaende = [], theorie = [], gambits = [] } = angaben;
   let vorherVerlust = 0;
   let nochTheorie = true;
-  return partie.zuege.map((zug, index) => {
+  return sans.map((san, index) => {
     const fen = alle[index] ?? "";
     const weiss = fen.split(" ")[1] !== "b";
     const vorher = begrenzt(werte[index] ?? 0);
@@ -317,7 +340,7 @@ export function zugurteile(
     const wertVorher = weiss ? vorher : -vorher;
     const u = umstaende(
       fen,
-      zug.san,
+      san,
       beste[index],
       abstaende[index],
       vorherVerlust,
@@ -340,30 +363,6 @@ export function zugurteile(
       klasse,
     };
   });
-}
-
-/** Ein Sprung des Wertes ab dieser Größe, der sofort zurückspringt, ist verdächtig. */
-const AUSREISSER_AB = 3;
-
-/**
- * Stellungen, deren Wert verdächtig ist: Er springt gegenüber der Stellung davor um mindestens 3
- * und springt bei der nächsten Stellung in die Gegenrichtung ebenso weit zurück. Das sieht aus wie
- * ein Patzer, den der Gegner sofort zurückgibt, ist bei kurzer Rechenzeit aber meist ein Fehler
- * der Engine (Opernpartie, 15. Lxd7+ „??“ mit 7,4 bei 500 ms unter Last).
- *
- * Eingabe: Werte je Stellung aus Sicht von Weiß. Ausgabe: Indizes, die die Auswertung mit mehr
- * Rechenzeit nachprüft (ui/komponenten/useAuswertung.ts). Beispiel: [10, 10, 2.6, 10] → [2].
- */
-export function ausreisser(werte: readonly number[]): number[] {
-  const verdaechtig: number[] = [];
-  for (let i = 1; i + 1 < werte.length; i += 1) {
-    const hin = begrenzt(werte[i] ?? 0) - begrenzt(werte[i - 1] ?? 0);
-    const zurueck = begrenzt(werte[i + 1] ?? 0) - begrenzt(werte[i] ?? 0);
-    if (Math.abs(hin) >= AUSREISSER_AB && Math.abs(zurueck) >= AUSREISSER_AB && hin * zurueck < 0) {
-      verdaechtig.push(i);
-    }
-  }
-  return verdaechtig;
 }
 
 /**

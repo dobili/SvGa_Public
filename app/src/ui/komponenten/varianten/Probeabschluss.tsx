@@ -6,51 +6,16 @@
  * Variante oder der Auswertung) zählt für nichts. Am Ende und beim Abbrechen bietet die App an,
  * die Züge als Abzweig an genau dieser Stelle zu speichern (training/probevariante.ts); sonst wird
  * nichts gespeichert. Beides räumt den Platz der Probepartie (speicher/partien.ts, „probe“).
- * Abhängigkeiten: training/probevariante.ts, speicher, engine/gegner.ts, partietexte.ts,
- * variantenwert.ts, Navigation, i18n.
+ * Abhängigkeiten: probespeichern.ts, speicher, variantenwert.ts, Navigation, i18n.
  */
 import { useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
-import { gegnername } from "../../../engine/gegner";
 import { t } from "../../../i18n/sprache";
 import { mitProbe } from "../../../speicher/partien";
-import { aendere, speicherzustand } from "../../../speicher/speicher";
+import { aendere } from "../../../speicher/speicher";
 import type { Partie } from "../../../spiel/partie";
-import { probeAlsVariante } from "../../../training/probevariante";
-import { kurzergebnis } from "../partie/partietexte";
+import { speichereProbe } from "./probespeichern";
 import { merkePfad, varianteAnsicht } from "./variantenwert";
-
-/** „Gegen Lotte zu Ende gespielt: Matt! Du hast gewonnen.“ oder „… gespielt (abgebrochen)“. */
-function probekommentar(partie: Partie): string {
-  const { einstellung } = partie;
-  const eigene = speicherzustand().daten.spiel.eigeneGegner;
-  const gegner =
-    einstellung.gegner === "mensch"
-      ? t("varianten.probe.mensch")
-      : (gegnername(einstellung.bot, einstellung.botName, eigene) ?? t("varianten.probe.engine"));
-  return partie.ende
-    ? t("varianten.probe.kommentar", { gegner, ergebnis: kurzergebnis(partie) })
-    : t("varianten.probe.abgebrochen", { gegner });
-}
-
-/** Speichert die Probepartie als Abzweig; Kennung und Pfad, oder eine Meldung an einer Grenze. */
-function speichere(partie: Partie): { id: string; pfad: readonly string[] } | string {
-  const daten = speicherzustand().daten;
-  const titel = t("varianten.titel.stellung");
-  const jetzt = new Date();
-  const kommentar = probekommentar(partie);
-  const probe = () =>
-    probeAlsVariante(daten.variationen, daten.spiel.partien, partie, kommentar, titel, jetzt);
-  const vorab = probe();
-  if (!vorab) return t("varianten.fehlt");
-  if ("grenze" in vorab) return t(`varianten.grenze.${vorab.grenze}`);
-  void aendere((d) => {
-    const r = probeAlsVariante(d.variationen, d.spiel.partien, partie, kommentar, titel, jetzt);
-    if (!r || "grenze" in r) return d;
-    return { ...d, variationen: r.liste, spiel: mitProbe(d.spiel, null) };
-  });
-  return { id: vorab.id, pfad: vorab.pfad };
-}
 
 /** Der Bereich unter der Probepartie. */
 export function Probeabschluss({ partie }: { partie: Partie }) {
@@ -58,7 +23,7 @@ export function Probeabschluss({ partie }: { partie: Partie }) {
   const [beenden, setzeBeenden] = useState(false);
   const [meldung, setzeMeldung] = useState<string | null>(null);
   const sichere = () => {
-    const ergebnis = speichere(partie);
+    const ergebnis = speichereProbe(partie);
     if (typeof ergebnis === "string") return setzeMeldung(ergebnis);
     merkePfad(ergebnis.id, ergebnis.pfad);
     ersetze(varianteAnsicht(ergebnis.id));

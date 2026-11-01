@@ -10,7 +10,8 @@
  * Texte je Nummer stehen lesbar als eigene Zeilen im Kommentar des Zuges („Rot 2: dann fällt die
  * Dame“), die Legende im Kommentar zur Variante („Legende Rot: Falle“). Beim Einlesen werden diese
  * Zeilen wieder zu Nummerntexten und Legende; erkannt werden die Farbnamen der eingestellten
- * Sprache und die deutschen. Reine Funktionen (die Wörter kommen als Eingabe).
+ * Sprache und die deutschen. Seit Stufe 3 stehen dahinter die Engine-Werte („[%eval …]“,
+ * spiel/variationseval.ts). Reine Funktionen (die Wörter kommen als Eingabe).
  * Abhängigkeiten: chessops/pgn (makeComment, parseComment), training/variationsmarken.ts.
  */
 import type { Markierungsfarbe } from "../analyse/werkzeug";
@@ -25,6 +26,7 @@ import {
   nummerierteMarken,
   STIFTFARBEN,
 } from "../training/variationsmarken";
+import { evalbefehle, werteAusKommentar } from "./variationseval";
 
 /** Die Farbnamen und das Wort „Legende“ einer Sprache. */
 export interface Formwoerter {
@@ -86,7 +88,9 @@ export function nummerntextzeilen(daten: Knotendaten, woerter: Formwoerter): str
  */
 export function kommentarMitFormen(daten: Knotendaten, woerter: Formwoerter): string {
   const zeilen = [daten.kommentar ?? "", ...nummerntextzeilen(daten, woerter)].filter(Boolean);
-  return [zeilen.join("\n"), formenbefehle(daten.marken)].filter(Boolean).join(" ");
+  return [zeilen.join("\n"), formenbefehle(daten.marken), evalbefehle(daten)]
+    .filter(Boolean)
+    .join(" ");
 }
 
 /** Die Legende als Zeilen „Legende Rot: Falle“, in der Reihenfolge der Farbpunkte. */
@@ -153,8 +157,9 @@ export function formenAusKommentar(
   kommentar: string,
   woerter: readonly Formwoerter[],
 ): Knotendaten {
-  const { marken, rest } = markenAus(kommentar);
-  let daten: Knotendaten = marken.length > 0 ? { marken } : {};
+  const werte = werteAusKommentar(kommentar);
+  const { marken, rest } = markenAus(werte.rest);
+  let daten: Knotendaten = { ...werte.werte, ...(marken.length > 0 ? { marken } : {}) };
   const bleibt: string[] = [];
   const nummern = nummerierteMarken(marken);
   for (const zeile of rest.split("\n")) {

@@ -1,0 +1,67 @@
+/*
+ * Variationsbrowser, Stufe 3 (1.11.2026): Fortschritt der Analyse, drei Schalter über dem Brett,
+ * Knopf „Analyse“ und die Marken der Zugarten in der Zugleiste. Farben über die Merkmale aus
+ * basis.css; die Marken selbst kommen aus der Auswertung (Klassenmarke).
+ */
+
+/* Fortschritt: Balken über die ganze Breite, darunter Text und „Abbrechen“ */
+.analysefortschritt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--raster) / 2) var(--raster);
+  margin: calc(var(--raster) / 2) 0;
+}
+
+.analysefortschritt .fortschrittsbalken {
+  flex: 1 1 100%;
+}
+
+.analysefortschritt-text {
+  flex: 1;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+/* Drei Chips nebeneinander; auf schmalen Handys umbrechen sie */
+.analysechips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.analysechip {
+  font-size: var(--groesse-klein);
+}
+
+.analyseknopf .dreht {
+  animation: analyse-drehen 2s linear infinite;
+}
+
+@keyframes analyse-drehen {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analyseknopf .dreht {
+    animation: none;
+  }
+}
+
+/* Karte „Probepartie läuft“ auf „Spielen“: Knöpfe unter Brett und Text, über die ganze Breite */
+.probekarte {
+  flex-wrap: wrap;
+  box-shadow: 0 0 0 2px var(--linie-stark);
+}
+
+.probekarte > .knopfreihe {
+  flex: 1 1 100%;
+}
+
+/* Marke der Zugart hinter dem Zug in der Zugleiste der Variante */
+.variantenleiste .zug .klassenmarke {
+  margin-left: 2px;
+  vertical-align: middle;
+}

@@ -160,16 +160,14 @@ export function SammelAbfrage({
   const [gemischteKennungen] = useState(() => gemischt(kennungen));
   const reihe = eintraegeZu(sammlung, gemischteKennungen);
   const [stelle, setzeStelle] = useState(0);
-  const [offen, setzeOffen] = useState(false);
+  // Aufgedeckt gilt nur für die Stelle, an der aufgedeckt wurde; „Weiter“ deckt so wieder zu.
+  const [offenBei, setzeOffenBei] = useState<number | null>(null);
+  const offen = offenBei === stelle;
   const [varianten, setzeVarianten] = useState(false);
   const eintrag = reihe[stelle];
   if (!eintrag) return null;
   const letzte = stelle + 1 >= reihe.length;
-  const weiter = () => {
-    if (letzte) return beiEnde();
-    setzeStelle(stelle + 1);
-    setzeOffen(false);
-  };
+  const weiter = () => (letzte ? beiEnde() : setzeStelle(stelle + 1));
   const verknuepft = variationenZu(alleVarianten, { art: "sammlung", id: eintrag.id }).length;
   return (
     <section className="karte" data-testid="sammelabfrage">
@@ -181,7 +179,7 @@ export function SammelAbfrage({
           <Planteil eintrag={eintrag} offen={offen} />
           <Abfrageknoepfe
             {...{ offen, verknuepft, letzte, weiter, beiEnde }}
-            aufdecken={() => setzeOffen(true)}
+            aufdecken={() => setzeOffenBei(stelle)}
             varianten={() => setzeVarianten(true)}
           />
         </>

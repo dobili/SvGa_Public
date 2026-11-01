@@ -8,8 +8,8 @@ import {
   zeichenFuer,
   zugnummer,
   zugurteile,
-  ausreisser,
 } from "./auswertung";
+import { ausreisser } from "./ausreisser";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";

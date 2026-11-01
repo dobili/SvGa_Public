@@ -7,7 +7,9 @@
  * blauen Fortsetzungspfeilen am Abzweig (VarianteBrett.tsx), Kommentar zum Zug, Knopfzeile mit
  * Baum, Karte und „Von hier spielen“ (Variantenknoepfe.tsx). Ziehen ist an, solange der Stift aus
  * ist. Stufe 2: Stift mit Leiste statt des Kommentars (Markierstift.tsx), Legende darunter
- * (Legende.tsx), Baum mit Abzweig-Karten (Abzweigkarten.tsx), Karte auf eigener Seite. Ein Entwurf aus einer Quelle wird mit dem ersten eigenen Inhalt gespeichert; danach
+ * (Legende.tsx), Baum mit Abzweig-Karten (Abzweigkarten.tsx), Karte auf eigener Seite. Stufe 3:
+ * Analyse mit Fortschritt unter der Kopfzeile, Zugarten in Leiste und am Brett, Balken, grüner
+ * Engine-Pfeil, drei Schalter über dem Brett (useVariantenanalyse.ts, Analyseanzeige.tsx). Ein Entwurf aus einer Quelle wird mit dem ersten eigenen Inhalt gespeichert; danach
  * wechselt die Ansicht auf die Kennung der Variante, damit sie das Neuladen übersteht.
  * Eingetragen in app/zusatzansichten.ts unter „variante“ (Wert: variantenwert.ts).
  * Abhängigkeiten: komponenten/varianten, Navigation, i18n.
@@ -20,12 +22,21 @@ import type { Pfad } from "../../schach/variationsbaum";
 import type { Variation } from "../../training/variationen";
 import { ENTWURF } from "../../training/variationsquellen";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
+import {
+  Analysechips,
+  Analysefortschritt,
+  Analyseknopf,
+} from "../komponenten/varianten/Analyseanzeige";
 import { Abzweigkarten } from "../komponenten/varianten/Abzweigkarten";
 import { Kommentarzeile } from "../komponenten/varianten/Kommentarzeile";
 import { Legende } from "../komponenten/varianten/Legende";
 import { Markierstift as MarkierstiftLeiste } from "../komponenten/varianten/Markierstift";
 import { useMarkierstift, type Markierstift } from "../komponenten/varianten/useMarkierstift";
 import { useVariante, type Variantenstand } from "../komponenten/varianten/useVariante";
+import {
+  useVariantenanalyse,
+  type Variantenanalyse,
+} from "../komponenten/varianten/useVariantenanalyse";
 import { useVariantenentwurf } from "../komponenten/varianten/useVariantenentwurf";
 import { VarianteBrett } from "../komponenten/varianten/VarianteBrett";
 import { Variantenblatt } from "../komponenten/varianten/Variantenblatt";
@@ -125,13 +136,35 @@ function kommentiere(stand: Variantenstand, pfad: Pfad, setzeSchreibt: (an: bool
   setzeSchreibt(true);
 }
 
-/** Knopfzeile (Baum, Karte, Spielen) und darunter der aufgeklappte Baum. */
-function KnoepfeUndBaum({ stand }: { stand: Variantenstand }) {
+/** Knopfzeile (Analyse, Baum, Karte, Spielen, Abfragen) und darunter der aufgeklappte Baum. */
+function KnoepfeUndBaum({ stand, analyse }: { stand: Variantenstand; analyse: Variantenanalyse }) {
   const [baum, setzeBaum] = useState(false);
   return (
     <>
-      <Variantenknoepfe stand={stand} baum={baum} setzeBaum={setzeBaum} />
+      <Variantenknoepfe
+        stand={stand}
+        baum={baum}
+        setzeBaum={setzeBaum}
+        vorne={<Analyseknopf analyse={analyse} an={stand.variation.analysiert} />}
+      />
       {baum && <Abzweigkarten stand={stand} schliessen={() => setzeBaum(false)} />}
+    </>
+  );
+}
+
+/** Zugleiste, Schalter der Analyse und Brett (Stufe 3: alle mit den Ergebnissen der Analyse). */
+function LeisteUndBrett(props: {
+  stand: Variantenstand;
+  stift: Markierstift;
+  analyse: Variantenanalyse;
+  beiMenue: (pfad: Pfad) => void;
+}) {
+  const { stand, analyse } = props;
+  return (
+    <>
+      <Variantenleiste stand={stand} beiMenue={props.beiMenue} analyse={analyse} />
+      <Analysechips analyse={analyse} />
+      <VarianteBrett stand={stand} stift={props.stift} analyse={analyse} />
     </>
   );
 }
@@ -144,14 +177,15 @@ function Inhalt({ anfang, pfad, wert }: { anfang: Variation; pfad: Pfad; wert: s
   const [schreibt, setzeSchreibt] = useState(false);
   const [blatt, setzeBlatt] = useState(false);
   const stift = useMarkierstift(stand);
+  const analyse = useVariantenanalyse(stand);
   useGespeicherteAnsicht(stand, wert, schreibt || blatt || menue !== null || stift.an);
   return (
     <>
       <VarianteKopf titel={stand.variation.titel} beiBlatt={() => setzeBlatt(true)} />
       <Variantenmeldung stand={stand} />
+      <Analysefortschritt analyse={analyse} />
       <Variantenkommentar text={stand.variation.kommentar} />
-      <Variantenleiste stand={stand} beiMenue={setzeMenue} />
-      <VarianteBrett stand={stand} stift={stift} />
+      <LeisteUndBrett stand={stand} stift={stift} analyse={analyse} beiMenue={setzeMenue} />
       <UnterDemBrett
         stand={stand}
         stift={stift}
@@ -159,7 +193,7 @@ function Inhalt({ anfang, pfad, wert }: { anfang: Variation; pfad: Pfad; wert: s
         setzeSchreibt={setzeSchreibt}
         beiMenue={() => setzeMenue(stand.pfad)}
       />
-      <KnoepfeUndBaum stand={stand} />
+      <KnoepfeUndBaum stand={stand} analyse={analyse} />
       <Zugmenue
         stand={stand}
         pfad={menue}

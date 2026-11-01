@@ -8,6 +8,8 @@
  * (Frage d). Eigene Züge stehen in Gold, Züge der Engine mit kleinem Chip-Zeichen. Langes Drücken
  * auf einen Zug öffnet das Menü am Zug (Zugmenue.tsx). Die Chips tragen dieselben Zeichen wie die
  * blauen Pfeile am Brett (Fortsetzungspfeile.tsx): Stern für die Hauptfortsetzung, sonst die Zahl.
+ * Stufe 3: Nach der Analyse steht hinter jedem Zug die Marke seiner Zugart (dieselbe wie in der
+ * Partieauswertung, Klassenmarke), solange der Schalter „Symbole“ an ist.
  * Abhängigkeiten: schach/variationsbaum.ts, Zugknoepfe.tsx, useLangerDruck.ts, i18n, lucide.
  */
 import { Cpu, GitFork, Undo2 } from "lucide-react";
@@ -19,9 +21,13 @@ import {
   type Leistenzug,
   type Pfad,
 } from "../../../schach/variationsbaum";
+import type { Zugklasse } from "../../../spiel/auswertung";
+import { pfadSchluessel } from "../../../spiel/variationsurteile";
+import { Klassenmarke } from "../auswertung/Auswertungssymbole";
 import { useLangerDruck } from "../bausteine/useLangerDruck";
 import { Zugknoepfe } from "../brettbedienung/Zugknoepfe";
 import { fortsetzungschips } from "./fortsetzungen";
+import type { Variantenanalyse } from "./useVariantenanalyse";
 import type { Variantenstand } from "./useVariante";
 import { nummerVor } from "./variantentexte";
 
@@ -29,17 +35,31 @@ const SYMBOL = 14;
 /** So lange drückt man auf einen Zug, bis das Menü aufgeht (wie lange Druck sonst im Handy). */
 const LANGER_DRUCK_MS = 500;
 
+/** Marke der Zugart (Stufe 3) mit Text für Bildschirmleser; ohne Klasse nichts. */
+function Zugartmarke({ klasse }: { klasse: Zugklasse | null }) {
+  if (!klasse) return null;
+  return (
+    <>
+      <Klassenmarke klasse={klasse} />
+      <span className="nur-vorlesen">{t(`zugklasse.${klasse}`)}</span>
+    </>
+  );
+}
+
 /** Ein Zug der Zeile: Tipp springt hin, langer Druck öffnet das Menü. */
 function Zugknopf({
   zug,
   erster,
   aktuell,
+  klassenmarke,
   beiTipp,
   beiMenue,
 }: {
   zug: Leistenzug;
   erster: boolean;
   aktuell: boolean;
+  /** Zugart nach der Analyse (Stufe 3), sonst null. */
+  klassenmarke: Zugklasse | null;
   beiTipp: () => void;
   beiMenue: () => void;
 }) {
@@ -61,6 +81,7 @@ function Zugknopf({
       {zug.engine && (
         <Cpu className="zug-engine" size={SYMBOL} aria-label={t("varianten.engineZug")} />
       )}
+      <Zugartmarke klasse={klassenmarke} />
       {zug.kommentiert && (
         <span className="kommentarpunkt" aria-label={t("varianten.hatKommentar")} />
       )}
@@ -94,8 +115,22 @@ function useSichtbar(pfad: Pfad) {
   return behaelter;
 }
 
+/** Die Zugart eines Zuges, wenn die Symbole an sind (Stufe 3). */
+function klasseAm(analyse: Variantenanalyse, pfad: Pfad): Zugklasse | null {
+  if (!analyse.zeige.symbole) return null;
+  return analyse.urteile.get(pfadSchluessel(pfad))?.klasse ?? null;
+}
+
 /** Die Zeile durch den gezeigten Pfad. */
-function Zeile({ stand, beiMenue }: { stand: Variantenstand; beiMenue: (p: Pfad) => void }) {
+function Zeile({
+  stand,
+  analyse,
+  beiMenue,
+}: {
+  stand: Variantenstand;
+  analyse: Variantenanalyse;
+  beiMenue: (p: Pfad) => void;
+}) {
   const zeile = zeileDurch(stand.variation, stand.pfad, sprache());
   const behaelter = useSichtbar(stand.pfad);
   if (zeile.length === 0) return <p className="hinweis">{t("varianten.nochKeineZuege")}</p>;
@@ -113,6 +148,7 @@ function Zeile({ stand, beiMenue }: { stand: Variantenstand; beiMenue: (p: Pfad)
               zug={zug}
               erster={index === 0}
               aktuell={index === stand.pfad.length - 1}
+              klassenmarke={klasseAm(analyse, zug.pfad)}
               beiTipp={() => stand.springe(zug.pfad)}
               beiMenue={() => beiMenue(zug.pfad)}
             />
@@ -169,9 +205,11 @@ function Weiterchips({ stand }: { stand: Variantenstand }) {
 /** Die Zugleiste der Variante mit Knöpfen; ``beiMenue`` öffnet das Menü am Zug. */
 export function Variantenleiste({
   stand,
+  analyse,
   beiMenue,
 }: {
   stand: Variantenstand;
+  analyse: Variantenanalyse;
   beiMenue: (pfad: Pfad) => void;
 }) {
   const zurueckAus = !stand.kann.zurueck;
@@ -183,7 +221,7 @@ export function Variantenleiste({
       data-tour="variante-leiste"
     >
       <Pfadzeile stand={stand} />
-      <Zeile stand={stand} beiMenue={beiMenue} />
+      <Zeile stand={stand} analyse={analyse} beiMenue={beiMenue} />
       <Weiterchips stand={stand} />
       <Zugknoepfe
         gesperrt={{ anfang: zurueckAus, zurueck: zurueckAus, vor: vorAus, ende: vorAus }}

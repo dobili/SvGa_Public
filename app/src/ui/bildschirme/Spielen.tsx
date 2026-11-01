@@ -14,6 +14,7 @@
  * Die Wahl merkt sich der Speicher (Vorlieben, useSpielwahl.ts).
  * Abhängigkeiten: spielstart/ (useSpielwahl, useVorschlaege, Vorschlagskarte, PartieEinstellen,
  * LaufendeKarte, ZuletztGespielt, spielseiten, Startstellung, vorbelegung), Rivalenkarte,
+ * varianten/Probekarte (nicht beendete Probepartie),
  * LetzteSpielstaerke, Kopfzeile, TourKnopf, Navigation, Speicher, i18n.
  */
 import { useState } from "react";
@@ -36,6 +37,7 @@ import { VORBELEGT } from "../komponenten/spielstart/vorbelegung";
 import { Vorschlagskarte } from "../komponenten/spielstart/Vorschlagskarte";
 import { ZuletztGespielt } from "../komponenten/spielstart/ZuletztGespielt";
 import { probewertAus, type Probeherkunft } from "../../spiel/probepartie";
+import { Probekarte } from "../komponenten/varianten/Probekarte";
 import "../stil/spielenneu.css";
 
 /** Die Kacheln zu den Unterseiten; sie reichen eine Stellung aus einer Abbildung weiter. */
@@ -143,6 +145,8 @@ function Startseite(p: { startFen?: string; abbildung?: string; vorbelegt: boole
         </header>
       )}
       {spiel.laufend && <LaufendeKarte partie={spiel.laufend} />}
+      {/* Eine nicht beendete Probepartie (Varianten, Format 8) findet man hier wieder. */}
+      <Probekarte />
       {/* DS51: Aus einer Abbildung oder eigenen Stellung ist die Stellung die Hauptsache. */}
       {!ausGrund && <Startstellung fen={sw.fen} abbildung={sw.abbildung} setzeFen={sw.uebernimm} />}
       {spielbar(sw.fen) ? (

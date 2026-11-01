@@ -33,6 +33,19 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.47: Meisterpartien statt Studien, gespeicherte Werte (1.11.2026)
+
+- [ ] N2570. Varianten → Neue Variante: Statt „Studie (Kapitel 10)“ steht jetzt die Kachel „Meisterpartie“
+      (Krone). Oben „Quelle“: „Aus dem Buch“ listet die Meisterpartien aus Kapitel 11 (etwa Morphys
+      Opernpartie) und öffnet sie wie die Abbildung, mit den Varianten des Buches. „Berühmte Partien“
+      und „Aktuelle Turniere“ listen die Zusatzpartien von „Zug erraten“ (Hinweis „Zusatzinhalt“);
+      „Adolf Anderssen – Lionel Kieseritzky“ öffnet die Unsterbliche Partie als Variante ab der
+      Grundstellung. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
+      Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
+      Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler
+      „läuft … von …“ zählt nur diese.
+
 ### Neu in 0.3.46: Variationsbrowser, Zurück-Taste (1.11.2026)
 
 - [ ] N2500. Training: Kachel „Varianten“ (noch leer) öffnen; „Neue Variante“ zeigt sieben Kacheln.
@@ -94,7 +107,7 @@ Teil fertig ist.
       wählen, Vorschau „Buch … · Praxis … Züge“ → Öffnen: Variante öffnet nach 3. Lc4 mit vielen Fortsetzungen; nach
       3... Lc5 stehen auch 4. Sg5 (Übung 8) und 4. b4 (Evans); erster Praxiszug hinter dem Buch mit „Praxis (Lichess)“.
 - [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
-      Wiener Partie) und die Kachel „Studie (Kapitel 10)“ (Saavedra) ausprobieren.
+      Wiener Partie) ausprobieren.
 - [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
       Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
 - [ ] N2528. Variante (etwa aus Abb. 2.40) → „Abfragen“: Seite wählen, „Ab dem Anfang“, falscher Zug zeigt den

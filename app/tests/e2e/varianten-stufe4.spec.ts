@@ -1,6 +1,6 @@
 /**
  * Oberflächentests für den Variationsbrowser, Stufe 4 (1.11.2026): ganze Eröffnung aus Buch und
- * Praxis laden, eine Variante abfragen (falsch, „andere Linie“, richtig, Ergebnis), eine Variante
+ * Praxis laden, eine Meisterpartie (Buch und Klassiker) öffnen, eine Variante abfragen (falsch, „andere Linie“, richtig, Ergebnis), eine Variante
  * mit einem Lernsammlungs-Eintrag verknüpfen und in der Abfrage der Sammlung abfragen, eine Übung
  * erst nach dem Lösen als Variante öffnen.
  */
@@ -55,6 +55,23 @@ test("Ganze Eröffnung: Italienisch aus Buch und Praxis, mit Herkunft und Abzwei
   await expect(page.getByTestId("variantenkommentar")).toContainText("Buch:");
   await page.getByTestId("variantenkommentar").locator("summary").click();
   await expect(page.getByTestId("variantenkommentar")).toContainText("Praxis: Lichess");
+});
+
+test("Meisterpartie: Buchpartie aus Kapitel 11 und berühmter Klassiker als Variante", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneVarianten(page);
+  await page.getByRole("button", { name: "Neue Variante" }).click();
+  await page.getByRole("button", { name: "Meisterpartie" }).click();
+  const liste = page.getByTestId("varianten-meisterpartien");
+  await expect(liste.getByRole("button").first()).toContainText("Abb. 11.");
+  await page.getByTestId("meisterpartien-quelle").selectOption("klassiker");
+  await liste.getByRole("button", { name: /Adolf Anderssen – Lionel Kieseritzky/ }).click();
+  await expect(page.getByTestId("variantentitel")).toHaveText(
+    "Adolf Anderssen – Lionel Kieseritzky",
+  );
+  await expect(page.getByTestId("variantenzeile")).toContainText("e4");
 });
 
 test("Variante abfragen: falsch, andere Linie, richtig, Ergebnis", async ({ page }) => {

@@ -73,6 +73,15 @@ export function partienAus(kapitel: Kapitel, seite: Color): Repertoireaufgabe[] 
 }
 
 /**
+ * Die Zugfolgen des Kapitels, die ganze Partien sind (wie bei „Zug erraten“, mindestens 30
+ * Halbzüge in der Hauptvariante). Warum: Das Blatt „Neue Variante“ bietet sie als Meisterpartien
+ * an (Wunsch des Autors, 1.11.2026). Beispiel: Kapitel 11 → Morphys Opernpartie, ….
+ */
+export function meisterpartienAus(kapitel: Kapitel): Beispiel[] {
+  return ausAbschnitten(kapitel).filter((b) => aufgabeAus(b, "white", PARTIE_MINDESTENS) !== null);
+}
+
+/**
  * Eine Partie zum Zugerraten: aus dem Buch oder, mit `zusatz`, eine Zusatzpartie (berühmte
  * Klassiker, aktuelle Turniere; training/zusatzpartien.ts, Wunsch des Autors, 30.10.2026).
  */

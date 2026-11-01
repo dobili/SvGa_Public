@@ -1,18 +1,17 @@
 /**
- * Unterseiten „Eröffnung“ und „Studie“ des Blatts „Neue Variante aus …“ (Stufe 4).
+ * Unterseite „Eröffnung“ des Blatts „Neue Variante aus …“ (Stufe 4).
  *
  * Rolle im Gesamtbild: Variationsbrowser, Stufe 4 (Wunsch des Autors, 1.11.2026). „Eröffnung“
  * lädt eine ganze Eröffnung mit allen Abzweigen: aus dem Buch (alle Zugfolgen von Kapitel 2 und 3
  * zu dieser Eröffnung, Buchzeichen bleiben) und/oder aus der Praxis (Lichess, Band wählbar), dazu
  * die Eröffnungen, die nur die Praxis kennt. Vorab steht die Größe; wird der Baum größer als eine
  * Variante fassen kann (600 Züge, Format 8), sagt es eine Meldung, statt still zu kürzen.
- * „Studie“ listet die Studien aus Kapitel 10 und öffnet ihren Buchbaum wie eine Abbildung.
+ * Die Studien aus Kapitel 10 sind seit 1.11.2026 durch Meisterpartien ersetzt (Meisterpartien.tsx).
  * Abhängigkeiten: eroeffnungsentwurf.ts, variantenwert.ts, daten/laden.ts, training/rivalen.ts,
  * training/praxisfortsetzung.ts, Speicher, Navigation, i18n.
  */
 import { useMemo, useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
-import { ladeKapitel } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
 import { bandindexFuer, WERTUNG_OHNE_PARTIEN } from "../../../training/praxisfortsetzung";
@@ -28,11 +27,6 @@ import {
   type Eroeffnungsdaten,
 } from "./eroeffnungsentwurf";
 import { alsWert, varianteAnsicht } from "./variantenwert";
-
-/** Kapitel der Studien („Studien und Kuriositäten“). */
-const KAPITEL_STUDIEN = 10;
-/** Abschnitte mit Nummer („10.2“); Übungen heißen „Übung 73“ und bleiben draußen. */
-const ABSCHNITT = /^\d+\.\d+$/;
 
 /** Die Eröffnungen, die nur die Praxis kennt, als Gruppe der Auswahl. */
 function PraxisGruppe({ daten }: { daten: Eroeffnungsdaten }) {
@@ -201,41 +195,4 @@ export function EroeffnungWahl() {
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
   const band = bandindexFuer(daten.wert.fortsetzungen, wertung ?? WERTUNG_OHNE_PARTIEN);
   return <EroeffnungsForm daten={daten.wert} band={band} />;
-}
-
-/** Unterseite „Studie“: die Studien aus Kapitel 10 mit ihrer ersten Abbildung. */
-export function StudienWahl() {
-  const { navigiere } = useNavigation();
-  const kapitel = useDaten(() => ladeKapitel(KAPITEL_STUDIEN), `kapitel-${KAPITEL_STUDIEN}`);
-  if (kapitel.art === "laedt") return <p className="lade">…</p>;
-  if (kapitel.art === "fehler")
-    return <p className="fehlertext">{t("buch.ladefehler", { fehler: kapitel.meldung })}</p>;
-  const k = kapitel.wert;
-  const studien = k.beispiele
-    .filter(
-      (b) => b.status !== "konstruiert" && b.abschnitt !== null && ABSCHNITT.test(b.abschnitt),
-    )
-    .flatMap((b) => {
-      const erste = k.abbildungen.find((a) => a.beispiel?.id === b.id);
-      return erste ? [{ id: b.id, titel: b.titel, nummer: erste.id }] : [];
-    });
-  return (
-    <ul className="quellenliste neuquelle" data-testid="varianten-studien">
-      {studien.map((s) => (
-        <li key={s.id}>
-          <button
-            type="button"
-            className="knopf-zweit"
-            onClick={() =>
-              navigiere(
-                varianteAnsicht(alsWert({ art: "abbildung", nummer: s.nummer, pfad: null })),
-              )
-            }
-          >
-            {t("abbildung.titel", { nummer: s.nummer })} · {s.titel}
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
 }

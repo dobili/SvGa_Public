@@ -4,6 +4,20 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.47: Meisterpartien statt Studien, gespeicherte Werte übernehmen
+
+- **Meisterpartien statt Studien** (Wunsch des Autors, 1.11.2026: „beim Variationen anlegen statt
+  der Studien die Meisterpartien auswählen“): Kachel „Meisterpartie“ im Blatt „Neue Variante“
+  (`varianten/Meisterpartien.tsx`) mit drei Quellen wie bei „Zug erraten“: Buch (Kapitel 11, ganze
+  Partien ab 30 Halbzügen, `meisterpartienAus`, geöffnet als Abbildung mit dem Buchbaum),
+  berühmte Klassiker und aktuelle Turniere (Zusatzpartien, geöffnet als Zugfolge ab der
+  Grundstellung). Die Kachel „Studie (Kapitel 10)“ entfällt; Studien bleiben über ihre Abbildungen
+  als Variante erreichbar.
+- **Gespeicherte Werte übernehmen** (Einwand des Autors: Neu rechnen ist sinnlos): Eine Variante
+  aus einer ausgewerteten Partie bekommt Wert, besten Zug und Abstand jeder Partiestellung aus dem
+  Partieeintrag (`ergebnisseAusPartie`, gleiche Engine und Tiefe 18); die Analyse rechnet nur
+  Stellungen ohne Wert.
+
 ## 1.11.2026 – Version 0.3.46: Variationsbrowser Stufe 1 bis 4, Zurück-Taste
 
 - **Stufe 1** (`varianten-stufe1`): Bildschirme „Varianten“ und „Variante“, Zugnavigation mit

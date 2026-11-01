@@ -76,14 +76,14 @@ describe("Spielstand", () => {
     expect(stand.partien[0]?.partie.id).toBe(`p${MAX_PARTIEN}`);
   });
 
-  it("eine beendete Partie läuft nach der Rücknahme wieder", () => {
+  it("eine beendete Partie wird nie wieder die laufende (Q12-2)", () => {
     const p = partie("a");
     const beendet = { ...p, ende: { art: "aufgabe", sieger: "black" } as const };
     const abgelegt = mitPartie(mitLaufender(LEERER_SPIELSTAND, p), beendet);
     expect(abgelegt.laufend).toBeNull();
-    const wieder = mitPartie(abgelegt, p);
-    expect(wieder.laufend).toEqual(p);
-    expect(wieder.partien).toEqual([]);
+    const danach = mitPartie(abgelegt, p);
+    expect(danach).toBe(abgelegt);
+    expect(danach.partien[0]?.partie.ende).not.toBeNull();
   });
 
   it("schreibt die Auswertung zur richtigen Partie", () => {

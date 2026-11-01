@@ -11,7 +11,8 @@
  * Wunsch des Autors (R56, 23.10.2026): Unter der Kurve stehen „Ganze Partie“ und die Phasen als
  * Knöpfe; eine Phase zieht ihren Abschnitt auf die volle Breite. Finger auf der Kurve halten und
  * fahren zeigt darüber den Zug („23. Sf5“), Loslassen springt dorthin; zwei Finger zoomen
- * (useKurvenzoom.ts).
+ * (useKurvenzoom.ts). Seit 1.11.2026 rücken dieselben Knöpfe in der Zeitleiste darunter den
+ * Abschnitt der Phase nach vorn (beiPhase).
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/auswertung.ts, useKurvenzoom.ts, i18n.
  */
 import type { Zugklasse, Zugurteil } from "../../../spiel/auswertung";
@@ -42,24 +43,41 @@ function Zoomknoepfe({
   gezeigt,
   ganz,
   beiWahl,
+  beiPhase,
 }: {
   phasen: Partial<Record<Phase, Ausschnitt>>;
   gezeigt: Ausschnitt;
   ganz: boolean;
   beiWahl: (a: Ausschnitt | null) => void;
+  beiPhase?: (phase: Phase | null) => void;
 }) {
   const vorhanden = PHASEN_DER_KURVE.filter((ph) => phasen[ph] !== undefined);
   if (vorhanden.length < 2) return null;
   return (
     <div className="verlaufskurve-zoom" role="group" aria-label={t("rueckblick.zoom")}>
-      <button type="button" aria-pressed={ganz} onClick={() => beiWahl(null)}>
+      <button
+        type="button"
+        aria-pressed={ganz}
+        onClick={() => {
+          beiWahl(null);
+          beiPhase?.(null);
+        }}
+      >
         {t("rueckblick.ganzePartie")}
       </button>
       {vorhanden.map((ph) => {
         const a = phasen[ph];
         const an = !ganz && a !== undefined && a.von === gezeigt.von && a.bis === gezeigt.bis;
         return (
-          <button key={ph} type="button" aria-pressed={an} onClick={() => beiWahl(a ?? null)}>
+          <button
+            key={ph}
+            type="button"
+            aria-pressed={an}
+            onClick={() => {
+              beiWahl(a ?? null);
+              beiPhase?.(ph);
+            }}
+          >
             {t(`phase.name.${ph}`)}
           </button>
         );
@@ -81,12 +99,15 @@ export function Verlaufskurve({
   wechsel,
   beiStelle,
   zugname,
+  beiPhase,
 }: {
   werte: readonly number[];
   urteile: readonly Zugurteil[];
   wechsel?: Readonly<Record<Phase, number | null>>;
   beiStelle: (stelle: number) => void;
   zugname?: (stelle: number) => string;
+  /** Tipp auf „Ganze Partie“ (null) oder eine Phase, für die Zeitleiste darunter (1.11.2026). */
+  beiPhase?: (phase: Phase | null) => void;
 }) {
   const zoom = useKurvenzoom(werte.length, beiStelle);
   const { von, bis } = zoom.ausschnitt;
@@ -150,6 +171,7 @@ export function Verlaufskurve({
         gezeigt={zoom.ausschnitt}
         ganz={zoom.ganz}
         beiWahl={zoom.zeige}
+        beiPhase={beiPhase}
       />
     </div>
   );

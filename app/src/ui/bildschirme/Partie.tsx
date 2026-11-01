@@ -60,6 +60,7 @@ import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
 import { auswertungImHintergrund, kerneDesGeraets } from "../komponenten/auswertung/hintergrund";
 import { RuhigSchalter } from "../komponenten/partie/RuhigSchalter";
 import { useSeitenzahlen } from "../komponenten/auswertung/seitenzahlen";
+import { scrolleZumBrett } from "../komponenten/auswertung/brettsprung";
 import { usePartie, type Partiesteuerung } from "../komponenten/partie/usePartie";
 import {
   useWerkzeugwahl,
@@ -292,7 +293,8 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   const leser = leserAmZug(partie);
   const springe = (sprung: Sprung) => {
     setzeAnsicht({ ...sprung, zuege: partie.zuege.length });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Seit 1.11.2026 so weit, dass das Brett ganz zu sehen ist (nicht mehr ganz nach oben).
+    requestAnimationFrame(scrolleZumBrett);
   };
   return (
     <>

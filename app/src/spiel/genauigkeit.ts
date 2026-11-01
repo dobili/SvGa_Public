@@ -11,6 +11,8 @@
  * Zahl spürbar). Dazu ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com)
  * und die Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
+ * Der beste Zug der Engine zählt in der Genauigkeit mit 100 (Entscheidung des Autors Q12-3,
+ * 1.11.2026, wie seine Zugklasse); das Elo-Modell bekommt die gemessenen Werte, an denen es geeicht ist.
  * Für Spielstärke und Urteilswort zählen nur die Züge bis zur Entscheidung der Partie
  * (spiel/entscheidung.ts). Die Spielstärke kommt aus dem Elo-Modell je Zeitklasse
  * (spiel/elomodell.ts: Kennzahlen der Züge bis zur Entscheidung, Maßstab Lichess, Spanne für 90 %
@@ -131,7 +133,9 @@ function seitenbilanz(
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
   const gewertete = eigene.filter((z) => z.gewertet);
   const innen = partiegenauigkeit(gewertete);
-  const kennzahlen = kennzahlenAus(gewertete.map(kennzahlzug), innen);
+  // Das Elo-Modell ist an gemessenen Werten geeicht: Es bekommt sie ohne die Regel Q12-3.
+  const gemessen = partiegenauigkeit(gewertete.map((z) => ({ ...z, genauigkeit: z.messung })));
+  const kennzahlen = kennzahlenAus(gewertete.map(kennzahlzug), gemessen);
   const schaetzung =
     gewertete.length >= mindestensZuege && kennzahlen
       ? wertungsschaetzung(tempo, kennzahlen, 1, phase)
@@ -157,7 +161,10 @@ interface Zugbilanz {
   readonly seite: Color;
   readonly phase: Phase | null;
   readonly urteil: Zugurteil;
+  /** Zuggenauigkeit für die Anzeige: beim besten Zug der Engine 100 (Q12-3). */
   readonly genauigkeit: number;
+  /** Zuggenauigkeit aus dem gemessenen Verlust an Gewinnchance (für das Elo-Modell). */
+  readonly messung: number;
   readonly gewicht: number;
   readonly bester: boolean;
   /** Stellung vor dem Zug entschieden (siehe ENTSCHIEDEN_AB). */
@@ -171,8 +178,8 @@ interface Zugbilanz {
 /** Der Zug, wie das Elo-Modell ihn braucht (spiel/elomodell.ts). */
 function kennzahlzug(z: Zugbilanz): Kennzahlzug {
   return {
-    verlust: z.urteil.verlust,
-    genauigkeit: z.genauigkeit,
+    verlust: z.urteil.messverlust ?? z.urteil.verlust,
+    genauigkeit: z.messung,
     nachher: z.nachher,
     phase: z.phase,
   };
@@ -203,11 +210,15 @@ function zugbilanzen(
     const phase = phasen[urteil.index] ?? null;
     const gewicht = gewichte[urteil.index] ?? GEWICHT_MINDESTENS;
     const wertNachher = werte[urteil.index + 1] ?? 0;
+    const messung = zuggenauigkeit(verlustProzent);
     return {
       seite,
       phase,
       urteil,
-      genauigkeit: zuggenauigkeit(verlustProzent),
+      // Q12-3: Der beste Zug der Engine kostet keine Genauigkeit (sonst drückte ein einziger
+      // Messfehler das harmonische Mittel, obwohl der Zug „Bester Zug“ heißt).
+      genauigkeit: bester ? zuggenauigkeit(0) : messung,
+      messung,
       gewicht,
       bester,
       entschieden,

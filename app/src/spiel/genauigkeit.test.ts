@@ -120,7 +120,7 @@ describe("Genauigkeit und Spielstärke", () => {
   it("Bilanz je Seite: Zeichen, beste Züge, Genauigkeit; Schätzung erst ab zehn Zügen", () => {
     const p = partie();
     const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
-    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "g1f3", "g8f6", "h5f7", ""];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "g1f3", "d8e7", "h5f7", ""];
     const abstaende = [0, 0, 0, 0, 0, 0, 5, 0];
     const urteile = zugurteile(p, werte, beste, abstaende);
     const gespielte = ["e2e4", "e7e5", "d1h5", "b8c6", "f1c4", "g8f6", "h5f7"];
@@ -141,7 +141,7 @@ describe("Genauigkeit und Spielstärke", () => {
   it("Mittelspiel nach Zugart: nur Züge des Mittelspiels, getrennt nach Taktik und Strategie", () => {
     const p = partie();
     const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
-    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "g1f3", "g8f6", "h5f7", ""];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "g1f3", "d8e7", "h5f7", ""];
     const urteile = zugurteile(p, werte, beste, [0, 0, 0, 0, 0, 0, 5, 0]);
     const phasen: Phase[] = [
       "eroeffnung",
@@ -168,5 +168,20 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(je.taktik.white.zuege).toBe(2);
     expect(je.taktik.black.zuege).toBe(1);
     expect(je.taktik.white.spielstaerke).toBeNull();
+  });
+
+  it("Q12-3: der beste Zug kostet keine Genauigkeit; das Elo-Modell sieht die gemessenen Werte", () => {
+    const p = partie();
+    const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
+    const gespielte = ["e2e4", "e7e5", "d1h5", "b8c6", "f1c4", "g8f6", "h5f7"];
+    const mitBestem = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "h5f7", ""];
+    const ohne = [...mitBestem.slice(0, 5), "d8e7", ...mitBestem.slice(6)];
+    const bilanz = (beste: string[]) =>
+      spielstaerke(p, werte, zugurteile(p, werte, beste), beste, gespielte).black;
+    // 3... Sf6 als Zug der Engine: Genauigkeit wie drei fehlerfreie Züge; sonst deutlich darunter.
+    expect(bilanz(mitBestem).genauigkeit).toBeGreaterThan(99);
+    expect(bilanz(ohne).genauigkeit).toBeLessThan(bilanz(mitBestem).genauigkeit ?? 0);
+    expect(bilanz(mitBestem).zeichen["??"]).toBe(0);
+    expect(bilanz(mitBestem).kennzahlen).toEqual(bilanz(ohne).kennzahlen);
   });
 });

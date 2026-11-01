@@ -1,0 +1,270 @@
+/*
+ * Zeitleiste der Auswertung „Die Partie in Momenten“ als waagerecht wischbare Reihe (Wunsch des
+ * Autors, 1.11.2026; vorher hohe Karten untereinander, Entwurf F2).
+ *
+ * Aufbau: Stand „3 von 12“ mit Knöpfen, darunter die Reihe mit Einrasten (scroll-snap). Je Phase
+ * eine schmale Abschnittskarte, je Moment eine Karte von etwa 80 % der Breite (höchstens 22rem),
+ * damit die nächste rechts herausschaut. Oben an jeder Karte ein Rand in der Urteilsfarbe der
+ * Phase (--linienfarbe aus .linie-*, auswertungneu.css), dazu der Name der Phase: Bedeutung nie
+ * nur über Farbe. Bei „Bewegung reduzieren“ rollt die Reihe ohne Gleiten.
+ * Farben nur aus den Tokens in basis.css, damit hell und dunkel stimmen.
+ */
+
+.zeitleiste {
+  --linienfarbe: var(--linie-stark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.zeitleiste-gut {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 1.5);
+  border-radius: calc(var(--radius) * 1.5);
+  background: color-mix(in srgb, var(--gruen-text) 14%, var(--flaeche));
+  color: var(--gruen-text);
+}
+
+.zeitleiste-gut .zeitleiste-text {
+  color: var(--text);
+}
+
+/* ---------- Stand und Blättern ---------- */
+.zeitleiste-stand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: calc(var(--raster) / 2);
+}
+
+.zeitleiste-zaehler {
+  margin: 0 calc(var(--raster) / 2);
+  min-width: 4.5em;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.zeitleiste-blaettern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.zeitleiste-blaettern:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ---------- Die Reihe ---------- */
+.zeitleiste-reihe {
+  position: relative; /* offsetParent der Karten für das Blättern (useWischreihe.ts) */
+  display: flex;
+  align-items: stretch;
+  gap: calc(var(--raster) * 1.5);
+  margin: 0;
+  padding: 2px 0 calc(var(--raster) * 1.5);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+.zeitleiste-reihe:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zeitleiste-reihe {
+    scroll-behavior: auto;
+  }
+}
+
+/* Oben ein gerader Streifen in der Urteilsfarbe der Phase (Hintergrundbild, von den runden Ecken
+   beschnitten); --kartengrund trägt die Fläche darunter. */
+.zeitleiste-reihe > li {
+  --kartengrund: var(--flaeche);
+  flex: none;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--linie);
+  border-radius: calc(var(--radius) * 1.5);
+  background:
+    linear-gradient(var(--linienfarbe), var(--linienfarbe)) top / 100% 4px no-repeat,
+    var(--kartengrund);
+}
+
+/* ---------- Abschnittskarte einer Phase ---------- */
+.zeitleiste-reihe > .zeitleiste-abschnitt {
+  --kartengrund: color-mix(in srgb, var(--linienfarbe) 10%, var(--flaeche));
+  /* Mindestens so breit, dass „MITTELSPIEL“ auch bei 320 Pixeln in eine Zeile passt. */
+  width: clamp(7.5rem, 32%, 8.5rem);
+  justify-content: center;
+  padding: calc(var(--raster) * 1.5) var(--raster);
+}
+
+.zeitleiste-phase {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  color: var(--gold-text);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.zeitleiste-phase-zuege {
+  color: var(--text-leise);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.zeitleiste-phase-prozent {
+  display: flex;
+  flex-direction: column;
+  margin: var(--raster) 0 0;
+  font-size: var(--groesse-zahl);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.zeitleiste-phase-urteil {
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+/* ---------- Karte eines Moments ---------- */
+.zeitleiste-moment {
+  width: min(80%, 22rem);
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 1.5) calc(var(--raster) * 1.5);
+}
+
+.zeitleiste-oben {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--raster);
+}
+
+.zeitleiste-inhalt {
+  flex: 1;
+  min-width: 0;
+}
+
+.zeitleiste-phasenmarke {
+  margin: 0 0 4px;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.zeitleiste-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin-bottom: 4px;
+}
+
+.zeitleiste-marke {
+  flex: none;
+  display: inline-flex;
+}
+
+.zeitleiste-marke .klassenmarke {
+  width: 24px;
+  height: 24px;
+}
+
+.klassenmarke-engine {
+  background: #5c6f8f;
+}
+
+.klassenmarke-ende {
+  background: var(--navy);
+  box-shadow: 0 0 0 1px var(--linie-stark);
+}
+
+.zeitleiste-titel {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  line-height: 1.2;
+}
+
+.zeitleiste-gut .zeitleiste-titel {
+  margin-bottom: 4px;
+}
+
+.zeitleiste-text {
+  margin: 0 0 4px;
+  font-size: var(--groesse-mittel);
+}
+
+.zeitleiste-besser {
+  color: var(--gold-text);
+}
+
+.zeitleiste-zusatz {
+  margin: 0 0 4px;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+/* Der Knopf sitzt unten, damit er in allen Karten der Reihe auf einer Höhe steht. */
+.zeitleiste-fuss {
+  margin-top: auto;
+  padding-top: var(--raster);
+}
+
+.zeitleiste-sprung {
+  min-height: 44px;
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Das kleine Brett wird auf schmalen Karten kleiner, damit der Satz daneben Platz hat. */
+.zeitleiste-brett {
+  flex: none;
+  width: clamp(3.75rem, 24%, 4.75rem);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.zeitleiste-brett .brett svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zeitleiste-hinweis {
+  margin: 0;
+}

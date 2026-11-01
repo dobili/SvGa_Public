@@ -2,7 +2,7 @@
  * Oberflächentests für das Spiel gegen die Engine (AP 11): Partie beginnen, ziehen, Antwort der
  * Engine, Rücknahme, Fortsetzen nach dem Neuladen, Start an einer Abbildung mit Schwarz,
  * ein Zug, der ein Matt erlaubt, wird ohne Rückfrage gespielt (seit 0.2.32), Ergebnis und
- * Rücknahme nach dem Matt; Neuladen mitten im Nachdenken behält die verbrauchte Zeit (N180);
+ * nach dem Matt kein Zurücknehmen (Q12-2); Neuladen mitten im Nachdenken behält die verbrauchte Zeit (N180);
  * die Zugliste klappt auf und bleibt nach dem Neuladen aufgeklappt (26.10.2026).
  */
 import { expect, type Page } from "@playwright/test";
@@ -133,7 +133,7 @@ test("Abb. 1.26: gegen die Engine mit Schwarz, ruhige Ansicht, Aufgeben", async 
   await expect(page.getByRole("heading", { name: "Deine Partien" })).toBeVisible();
 });
 
-test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurücknehmen", async ({
+test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt kein Zurücknehmen", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -267,9 +267,9 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await teilen.getByRole("button", { name: "Schließen" }).click();
   await expect(teilen).toHaveCount(0);
   await page.screenshot({ path: "test-results/bilder/auswertung.png", fullPage: true });
-  await page.getByRole("button", { name: "Zurücknehmen" }).click();
-  await expect(page.getByTestId("partieende")).toHaveCount(0);
-  await expect(page.getByTestId("partiezuege")).toHaveText("Noch keine Züge.");
+  // Q12-2 (1.11.2026): Nach dem Ende gibt es kein Zurücknehmen mehr, die Partie bleibt beendet.
+  await expect(page.getByRole("button", { name: "Zurücknehmen" })).toHaveCount(0);
+  await expect(page.getByTestId("partieende")).toBeVisible();
 });
 
 test("Werkzeuge in der Partie (0.2.33): Röntgen, W1–W7, Zählen am Brett, Bündel, Ziehen bleibt", async ({

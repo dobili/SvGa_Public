@@ -3,14 +3,15 @@
  * Aufgeben.
  *
  * Rolle im Gesamtbild: Teil des Partie-Bildschirms. Zurücknehmen nimmt den eigenen Zug samt
- * Antwort zurück (Pflichtenheft 5.2, abschaltbar beim Start der Partie), auch nach dem Ende.
+ * Antwort zurück (Pflichtenheft 5.2, abschaltbar beim Start der Partie), aber nur bis zum Ende:
+ * Nach dem Ende fehlt der Knopf (Entscheidung des Autors Q12-2, 1.11.2026; eine erneut beendete
+ * Partie zählte sonst doppelt in Tagesprotokoll, Siegen, Rekorden, Rivale und Zielen).
  * Aufgeben fragt einmal nach. In der ruhigen Ansicht bleibt nur die Zeile.
  * Abhängigkeiten: spiel/partie.ts, ui/komponenten/partie/usePartie.ts, i18n.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import { amZug, type Partie } from "../../../spiel/partie";
-import { useSpeicher } from "../../../speicher/speicher";
 import type { Partiesteuerung } from "./usePartie";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 
@@ -37,15 +38,11 @@ export function Partiestatus({
 }) {
   const [aufgeben, setzeAufgeben] = useState(false);
   const eigenerZug = partie.zuege.some((z) => z.von === "leser");
-  // Nach dem Ende wird die Partie durch die Rücknahme wieder die laufende; eine andere laufende
-  // Partie darf dabei nicht verloren gehen.
-  const andereLaeuft = useSpeicher(
-    (z) => z.daten.spiel.laufend?.id !== partie.id && z.daten.spiel.laufend !== null,
-  );
-  const zuruecknehmbar = partie.einstellung.ruecknahmeErlaubt && !(partie.ende && andereLaeuft);
+  // Q12-2: nach dem Ende kein Zurücknehmen (spiel/partie.ts, nimmZurueck).
+  const zuruecknehmbar = partie.einstellung.ruecknahmeErlaubt && !partie.ende;
   return (
-    // Tourziel nur während der Partie: Danach steht hier höchstens „Zurücknehmen“, der Text der
-    // Tour („Wer am Zug ist …“) stimmte nicht mehr (Befund der Tourprüfung, 25.10.2026).
+    // Tourziel nur während der Partie: Danach steht hier nichts mehr, der Text der Tour („Wer am
+    // Zug ist …“) stimmte nicht mehr (Befund der Tourprüfung, 25.10.2026).
     <section className="partiestatus" data-tour={partie.ende ? undefined : "partie-status"}>
       {/* Nach dem Ende steht das Ergebnis in der Karte darunter (Partieende). */}
       {!partie.ende && (

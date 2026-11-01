@@ -44,8 +44,8 @@ function ergebniswort(partie: Partie): string {
  *
  * Eingaben: die Partie. Ausgabe: Blende oder nichts.
  * Beispiel: 2. g4?? Dh4# → „Verloren“ mit rotem Kreuz und darunter „Matt. Die Engine hat
- * gewonnen.“, nach gut 3 s weg. Sonderfall: Eine schon beendete Partie öffnen zeigt nichts; eine
- * Rücknahme nach dem Ende und ein neues Ende zeigen sie wieder.
+ * gewonnen.“, nach gut 3 s weg. Sonderfall: Eine schon beendete Partie öffnen zeigt nichts (nach
+ * dem Ende gibt es seit Q12-2 keine Rücknahme, also auch kein zweites Ende).
  */
 export function Ergebnisblende({ partie }: { partie: Partie }) {
   const beendet = partie.ende !== null;

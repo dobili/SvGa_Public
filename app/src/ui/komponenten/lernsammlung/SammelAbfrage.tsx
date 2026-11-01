@@ -4,12 +4,15 @@
  * Rolle im Gesamtbild: Kapitel 12 lässt die Lernsammlung regelmäßig abfragen („Eigene
  * Lernsammlung anlegen und abfragen“, Werkzeugkasten). Die App mischt die Einträge einer Gruppe
  * oder der ganzen Sammlung und zeigt sie nacheinander; erst „Plan zeigen“ deckt Plan und Notiz
- * auf. Gespeichert wird dabei nichts.
- * Abhängigkeiten: training/zufall.ts, Trainerbrett, sammeltexte.ts, i18n.
+ * auf. Gespeichert wird dabei nichts. Die Abfrage merkt sich nur die Kennungen und liest jeden
+ * Eintrag aus dem aktuellen Stand der Sammlung: Ein geänderter Plan gilt sofort, ein gelöschter
+ * Eintrag fällt weg (Wunsch des Autors, 1.11.2026).
+ * Abhängigkeiten: training/lernsammlung.ts, Trainerbrett, sammeltexte.ts, Speicher, i18n.
  */
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
-import type { Sammeleintrag } from "../../../training/lernsammlung";
+import { useSpeicher } from "../../../speicher/speicher";
+import { eintraegeZu } from "../../../training/lernsammlung";
 import { Trainerbrett } from "../../trainer/Trainerbrett";
 import { fundstelle } from "./sammeltexte";
 
@@ -26,17 +29,19 @@ function gemischt<T>(liste: readonly T[]): T[] {
 }
 
 /**
- * Die Abfrage. Eingaben: Einträge, Ende (zurück zur Sammlung).
+ * Die Abfrage. Eingaben: Kennungen der Einträge, Ende (zurück zur Sammlung).
  * Beispiel: drei Einträge der Spanischen Partie → drei Stellungen in zufälliger Folge.
  */
 export function SammelAbfrage({
-  liste,
+  kennungen,
   beiEnde,
 }: {
-  liste: readonly Sammeleintrag[];
+  kennungen: readonly string[];
   beiEnde: () => void;
 }) {
-  const [reihe] = useState(() => gemischt(liste));
+  const sammlung = useSpeicher((z) => z.daten.sammlung);
+  const [gemischteKennungen] = useState(() => gemischt(kennungen));
+  const reihe = eintraegeZu(sammlung, gemischteKennungen);
   const [stelle, setzeStelle] = useState(0);
   const [offen, setzeOffen] = useState(false);
   const eintrag = reihe[stelle];

@@ -15,6 +15,7 @@ import {
   Eye,
   Flag,
   Lightbulb,
+  Pencil,
   Play,
   Plus,
   RefreshCw,
@@ -43,6 +44,8 @@ const ZEICHEN = {
   teilen: Share2,
   kopieren: Copy,
   loeschen: Trash2,
+  /** Einen eigenen Eintrag ändern (Lernsammlung, Fehlerdatenbank). */
+  bearbeiten: Pencil,
   neu: Plus,
   neuerGegner: UserPlus,
   zuruecknehmen: Undo2,

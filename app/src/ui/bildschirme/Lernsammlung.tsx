@@ -6,14 +6,17 @@
  * „Lernsammlung“ im Training und nach jedem Speichern („Lernsammlung öffnen“). Einträge kommen
  * meist von der Abbildung, aus dem Rückblick einer Partie oder nach einer Trainer-Aufgabe („In die
  * Lernsammlung“).
- * Abhängigkeiten: training/lernsammlung.ts, training/sammlungpgn.ts, SammelFormular,
- * Sammeleintrag, SammelAbfrage, dateiAnbieten.ts, Speicher, i18n.
+ * Jeder Eintrag lässt sich bearbeiten und löschen; nach dem Löschen holt „Rückgängig“ ihn zurück
+ * (Wunsch des Autors, 1.11.2026).
+ * Abhängigkeiten: training/lernsammlung.ts, training/sammlungpgn.ts, training/eintragspflege.ts,
+ * SammelFormular, Sammeleintrag, SammelAbfrage, useRueckgaengig, dateiAnbieten.ts, Speicher, i18n.
  * Buchbezug: Kapitel 12, Abschnitt 12.4 „Lernsammlung“.
  */
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { useSpeicher } from "../../speicher/speicher";
+import { mitSammeleintragZurueck, ohneSammeleintragIn } from "../../training/eintragspflege";
 import { nachEroeffnung, type Sammeleintrag } from "../../training/lernsammlung";
 import { pgnDatum } from "../../spiel/pgn";
 import { sammlungAlsPgn } from "../../training/sammlungpgn";
@@ -25,6 +28,10 @@ import { SammelFormular } from "../komponenten/lernsammlung/SammelFormular";
 import { pgntexte } from "../komponenten/lernsammlung/sammeltexte";
 import { Trainerbrett } from "../trainer/Trainerbrett";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { useLoeschenMitRueckgaengig } from "../komponenten/bausteine/useRueckgaengig";
+
+/** Startet die Abfrage mit diesen Einträgen. */
+type Frage = (eintraege: readonly Sammeleintrag[]) => void;
 
 /** Neue Stellung als FEN, etwa aus einer Vereinspartie. */
 function NeueStellung() {
@@ -49,6 +56,7 @@ function NeueStellung() {
         key={gueltig ?? "leer"}
         fen={gueltig}
         herkunft={{ herkunft: "fen", quelle: "" }}
+        mitSprung={false}
       />
     </details>
   );
@@ -108,9 +116,11 @@ function kurzname(eroeffnung: string): string {
 function Gruppen({
   liste,
   frage,
+  beiLoeschen,
 }: {
   liste: readonly Sammeleintrag[];
-  frage: (eintraege: readonly Sammeleintrag[]) => void;
+  frage: Frage;
+  beiLoeschen: (id: string) => void;
 }) {
   return nachEroeffnung(liste).map((gruppe) => {
     const titel = gruppe.eroeffnung || t("sammlung.ohneEroeffnung");
@@ -125,7 +135,7 @@ function Gruppen({
           {t("sammlung.gruppe", { name: titel, anzahl: gruppe.eintraege.length })}
         </summary>
         {gruppe.eintraege.map((e) => (
-          <SammeleintragKarte key={e.id} eintrag={e} />
+          <SammeleintragKarte key={e.id} eintrag={e} beiLoeschen={beiLoeschen} />
         ))}
         <button type="button" className="knopf-zweit" onClick={() => frage(gruppe.eintraege)}>
           {t("sammlung.gruppeAbfragen")}
@@ -137,13 +147,7 @@ function Gruppen({
 }
 
 /** Ganze Sammlung: abfragen und als PGN für Lichess, mit kurzer Anleitung. */
-function Gesamt({
-  liste,
-  frage,
-}: {
-  liste: readonly Sammeleintrag[];
-  frage: (eintraege: readonly Sammeleintrag[]) => void;
-}) {
+function Gesamt({ liste, frage }: { liste: readonly Sammeleintrag[]; frage: Frage }) {
   return (
     <section className="karte">
       <h2 className="karte-titel">{t("sammlung.alle", { anzahl: liste.length })}</h2>
@@ -167,12 +171,18 @@ function Gesamt({
  */
 export function Lernsammlung() {
   const liste = useSpeicher((z) => z.daten.sammlung);
-  const [abfrage, setzeAbfrage] = useState<readonly Sammeleintrag[] | null>(null);
+  const [abfrage, setzeAbfrage] = useState<readonly string[] | null>(null);
+  const frage: Frage = (eintraege) => setzeAbfrage(eintraege.map((e) => e.id));
+  const { loesche, leiste } = useLoeschenMitRueckgaengig({
+    liste,
+    entfernen: ohneSammeleintragIn,
+    zurueckholen: mitSammeleintragZurueck,
+  });
   return (
     <div className="bildschirm" data-testid="lernsammlung">
       <Kopfzeile titel={t("sammlung.titel")} zurueckText={t("trainer.zurueck")} />
       {abfrage ? (
-        <SammelAbfrage liste={abfrage} beiEnde={() => setzeAbfrage(null)} />
+        <SammelAbfrage kennungen={abfrage} beiEnde={() => setzeAbfrage(null)} />
       ) : (
         <>
           <p className="hinweis" data-tour="sammlung-einleitung">
@@ -184,11 +194,12 @@ export function Lernsammlung() {
             </p>
           ) : (
             <>
-              <Gesamt liste={liste} frage={setzeAbfrage} />
-              <Gruppen liste={liste} frage={setzeAbfrage} />
+              <Gesamt liste={liste} frage={frage} />
+              <Gruppen liste={liste} frage={frage} beiLoeschen={loesche} />
             </>
           )}
           <NeueStellung />
+          {leiste}
         </>
       )}
     </div>

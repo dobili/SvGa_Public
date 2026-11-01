@@ -3,39 +3,28 @@
  * auswerten, passenden Trainer vorschlagen, Einträge mit Stellung ansehen und löschen.
  *
  * Rolle im Gesamtbild: Pflichtenheft 5.3, Konzept 4.7 (Nutzerdaten „fehler“, Format 4). Neue
- * Einträge kommen meist aus dem Rückblick einer Partie („In die Fehlerdatenbank“); hier geht es
- * auch mit einer Stellung als FEN, etwa aus einer Partie im Verein.
- * Abhängigkeiten: training/fehlerdatenbank.ts, FehlerFormular, Trainerbrett, Speicher,
- * Navigation, i18n.
+ * Einträge kommen meist aus dem Rückblick einer Partie („Merken“ › „Fehler“); hier geht es
+ * auch mit einer Stellung als FEN, etwa aus einer Partie im Verein. Jeder Eintrag lässt sich
+ * bearbeiten und löschen, mit Rückgängig (Wunsch des Autors, 1.11.2026). Erreichbar über die
+ * Kachel „Fehlerdatenbank“ oben im Training und die Reihe „Praxis“ (Kapitel 12).
+ * Abhängigkeiten: training/fehlerdatenbank.ts, training/eintragspflege.ts, FehlerFormular,
+ * FehlerEintrag, useRueckgaengig, Trainerbrett, Speicher, Navigation, i18n.
  */
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
-import { datumText, sprache, t } from "../../i18n/sprache";
-import { sanInSprache } from "../../schach/notation";
+import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
-import { aendere, useSpeicher } from "../../speicher/speicher";
-import {
-  auswertung,
-  ohneEintrag,
-  vorschlag,
-  WOCHEN,
-  type Fehlereintrag,
-} from "../../training/fehlerdatenbank";
+import { useSpeicher } from "../../speicher/speicher";
+import { mitFehlerZurueck, ohneFehlerIn } from "../../training/eintragspflege";
+import { auswertung, vorschlag, WOCHEN, type Fehlereintrag } from "../../training/fehlerdatenbank";
+import { useLoeschenMitRueckgaengig } from "../komponenten/bausteine/useRueckgaengig";
+import { FehlerEintrag } from "./FehlerEintrag";
 import { FehlerFormular } from "./FehlerFormular";
-import { useFehlerarten, type Fehlerart } from "./useFehlerarten";
+import { artName, useFehlerarten, type Fehlerart } from "./useFehlerarten";
 import { Trainerbrett } from "./Trainerbrett";
-import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 
 /** So viele Einträge zeigt die Liste zuerst; der Rest auf Wunsch. */
 const ERSTE_EINTRAEGE = 10;
-
-/** Name einer Fehlerart, oder „Kapitel n“, solange die Checkliste lädt. */
-function artName(arten: readonly Fehlerart[], kapitel: number): string {
-  const art = arten.find((a) => a.kapitel === kapitel);
-  return art
-    ? t("fehlerdb.artName", { kapitel, name: art.name })
-    : t("fehlerdb.kapitel", { kapitel });
-}
 
 /** Neuer Eintrag mit einer Stellung als FEN. */
 function NeuerEintrag() {
@@ -56,7 +45,12 @@ function NeuerEintrag() {
       />
       {gelesen && !gelesen.ok && <p className="fehlertext">{t("fehlerdb.fenUngueltig")}</p>}
       {gueltig && <Trainerbrett fen={gueltig} beschriftung={t("fehlerdb.stellung")} />}
-      <FehlerFormular key={gueltig ?? "leer"} fen={gueltig} beiGespeichert={() => setzeFen("")} />
+      <FehlerFormular
+        key={gueltig ?? "leer"}
+        fen={gueltig}
+        beiGespeichert={() => setzeFen("")}
+        mitSprung={false}
+      />
     </section>
   );
 }
@@ -112,33 +106,17 @@ function Auswertung({
   );
 }
 
-/** Ein Eintrag, zugeklappt mit Datum, Fehlerart und Satz; offen mit Brett und Löschen. */
-function Eintrag({ eintrag, arten }: { eintrag: Fehlereintrag; arten: readonly Fehlerart[] }) {
-  const datum = datumText(new Date(eintrag.datum));
-  const loeschen = () =>
-    void aendere((daten) => ({ ...daten, fehler: ohneEintrag(daten.fehler, eintrag.id) }));
-  return (
-    <details className="karte" data-testid="fehlerdb-eintrag">
-      <summary>
-        {datum} · {artName(arten, eintrag.fehlerart)}
-        {eintrag.zug ? ` · ${sanInSprache(eintrag.zug, sprache())}` : ""}
-      </summary>
-      {eintrag.satz && <p>{eintrag.satz}</p>}
-      <Trainerbrett fen={eintrag.fen} beschriftung={t("fehlerdb.stellung")} />
-      <button type="button" className="knopf-zweit" onClick={loeschen}>
-        <Knopfsymbol art="loeschen" />
-        {t("fehlerdb.loeschen")}
-      </button>
-    </details>
-  );
-}
-
 /**
  * Der Trainer „Fehlerdatenbank“ (Kapitel 12): eigene Fehler eintragen, je Fehlerart auswerten,
- * passenden Trainer vorschlagen, Einträge ansehen und löschen.
+ * passenden Trainer vorschlagen, Einträge ansehen, bearbeiten und löschen.
  */
 export function FehlerBereich() {
   const liste = useSpeicher((z) => z.daten.fehler);
+  const { loesche, leiste } = useLoeschenMitRueckgaengig({
+    liste,
+    entfernen: ohneFehlerIn,
+    zurueckholen: mitFehlerZurueck,
+  });
   const arten = useFehlerarten();
   const [alle, setzeAlle] = useState(false);
   const neueste = [...liste].reverse();
@@ -157,7 +135,7 @@ export function FehlerBereich() {
             {t("fehlerdb.eintraege", { anzahl: liste.length })}
           </h2>
           {sichtbar.map((e) => (
-            <Eintrag key={e.id} eintrag={e} arten={arten} />
+            <FehlerEintrag key={e.id} eintrag={e} arten={arten} beiLoeschen={loesche} />
           ))}
           {!alle && neueste.length > ERSTE_EINTRAEGE && (
             <button type="button" className="knopf-link" onClick={() => setzeAlle(true)}>
@@ -166,6 +144,7 @@ export function FehlerBereich() {
           )}
         </>
       )}
+      {leiste}
     </>
   );
 }

@@ -110,13 +110,41 @@ export function mitSammeleintrag(
   return [...liste, eintrag].slice(-HOECHSTENS_SAMMLUNG);
 }
 
-/** Ändert Plan, Notiz oder Eröffnung eines Eintrags (Kennung und Stellung bleiben). */
+/** Was sich an einem Eintrag nachträglich ändern lässt: die Felder des Formulars beim Anlegen. */
+export type Sammelaenderung = Partial<Pick<Sammeleintrag, "plan" | "notiz" | "eroeffnung">>;
+
+/**
+ * Ändert Plan, Notiz oder Eröffnung eines Eintrags (Kennung, Datum, Stellung und Fundstelle
+ * bleiben). Die Längen begrenzt sie wie das Lesen, damit kein Eingabeweg mehr speichert.
+ * Beispiel: Plan „“ → „Druck auf e5“: Die nächste Abfrage zeigt den neuen Plan.
+ */
 export function geaenderterEintrag(
   liste: readonly Sammeleintrag[],
   id: string,
-  teil: Partial<Pick<Sammeleintrag, "plan" | "notiz" | "eroeffnung">>,
+  teil: Sammelaenderung,
 ): Sammeleintrag[] {
-  return liste.map((e) => (e.id === id ? { ...e, ...teil } : e));
+  const begrenzt: Sammelaenderung = {
+    ...(teil.plan !== undefined ? { plan: teil.plan.slice(0, PLAN_HOECHSTENS) } : {}),
+    ...(teil.notiz !== undefined ? { notiz: teil.notiz.slice(0, NOTIZ_HOECHSTENS) } : {}),
+    ...(teil.eroeffnung !== undefined
+      ? { eroeffnung: teil.eroeffnung.slice(0, EROEFFNUNG_HOECHSTENS) }
+      : {}),
+  };
+  return liste.map((e) => (e.id === id ? { ...e, ...begrenzt } : e));
+}
+
+/**
+ * Die Einträge zu Kennungen, in deren Reihenfolge, aus dem aktuellen Stand der Sammlung.
+ * Warum: Die Abfrage merkt sich nur die Kennungen; so zeigt sie nach einer Änderung den neuen
+ * Plan, und ein inzwischen gelöschter Eintrag fällt einfach weg.
+ * Beispiel: Kennungen [b, x, a] mit x gelöscht → [Eintrag b, Eintrag a].
+ */
+export function eintraegeZu(
+  liste: readonly Sammeleintrag[],
+  kennungen: readonly string[],
+): Sammeleintrag[] {
+  const nachKennung = new Map(liste.map((e) => [e.id, e]));
+  return kennungen.flatMap((id) => nachKennung.get(id) ?? []);
 }
 
 /** Entfernt einen Eintrag aus der Lernsammlung. */

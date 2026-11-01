@@ -239,3 +239,29 @@
   font-size: var(--groesse-grund);
   font-weight: 600;
 }
+
+/* Löschen mit „Rückgängig“ (Lernsammlung, Fehlerdatenbank, 1.11.2026): schwebt über der Leiste,
+   mittig, wie der Rückweg zur Aufgabenseite. */
+.rueckgaengig-leiste {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--leiste-hoehe) + env(safe-area-inset-bottom) + var(--raster));
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  max-width: calc(100vw - var(--raster) * 4);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--flaeche);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+.rueckgaengig-leiste .knopf-zweit {
+  flex: none;
+  white-space: nowrap;
+}

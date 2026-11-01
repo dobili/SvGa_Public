@@ -1,6 +1,6 @@
 /**
- * Kompakte Kacheln unten im Bereich Training (Entwurf C2, 31.10.2026): Lernsammlung und „Alle
- * Kapitel“ (die Trainingsseiten der Website), als Liste zum Eintragen.
+ * Kompakte Kacheln im Bereich Training (Entwurf C2, 31.10.2026): Lernsammlung, Fehlerdatenbank
+ * und „Alle Kapitel“ (die Trainingsseiten der Website), als Liste zum Eintragen.
  *
  * Rolle im Gesamtbild: Ersetzt die Karten „Lernsammlung“ und „Training zu den Kapiteln“. Die
  * Kacheln stehen als Liste in trainingskacheln.ts (TRAININGSKACHELN).
@@ -28,7 +28,10 @@ function Kachelinhalt({ kachel }: { kachel: Trainingskachel }) {
   );
 }
 
-/** Die Kacheln nebeneinander. Beispiel: „Lernsammlung · noch leer“, „Alle Kapitel · Website“. */
+/**
+ * Die Kacheln nebeneinander. Beispiel: „Lernsammlung · noch leer“, „Fehlerdatenbank · 2
+ * Einträge“, „Alle Kapitel · Website“.
+ */
 export function Trainingskacheln() {
   const { navigiere } = useNavigation();
   return (

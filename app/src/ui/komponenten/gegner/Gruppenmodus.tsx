@@ -9,11 +9,12 @@
  * Anzeige. Die Gratulation erscheint einmal je Gruppe (Merker auf dem Gerät, app/merker.ts) nach
  * dem Ende der Partie, die den letzten Bot der Stufe besiegt hat, und feiert mit Feuerwerk
  * (Feuerwerk.tsx) und Feierton (app/ton.ts).
- * Abhängigkeiten: engine/gruppe.ts, engine/gegner.ts, gegnerportraet.ts, app/merker.ts,
+ * Abhängigkeiten: app/blattstapel.ts, engine/gruppe.ts, engine/gegner.ts, gegnerportraet.ts, app/merker.ts,
  * app/ton.ts, app/einstellungen.ts, Feuerwerk.tsx, speicher, i18n, lucide-react.
  */
 import { Users } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { liesMerker, schreibeMerker } from "../../../app/merker";
 import {
   freieGruppen,
@@ -128,14 +129,16 @@ export function Gruppenfreischaltung({ gegnerBot }: { gegnerBot: string | null }
   const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   // Geschlossene Gruppen dieser Anzeige; der Merker hält sie dauerhaft fest.
   const [geschlossen, setzeGeschlossen] = useState<readonly Stufennummer[]>([]);
-  if (gruppenstufe(gegnerBot) !== null) return null;
   const offen = nochNichtGratuliert(besiegt).filter((n) => !geschlossen.includes(n));
-  const erste = offen[0];
-  if (erste === undefined) return null;
+  const erste = gruppenstufe(gegnerBot) === null ? offen[0] : undefined;
   const weiter = () => {
+    if (erste === undefined) return;
     merkeGratuliert([erste]);
     setzeGeschlossen([...geschlossen, erste]);
   };
+  // Die Zurück-Taste wirkt wie „Weiter“ (app/blattstapel.ts).
+  useZurueckSchliesst(erste !== undefined, weiter);
+  if (erste === undefined) return null;
   return (
     <div
       className="gruppen-gratulation"

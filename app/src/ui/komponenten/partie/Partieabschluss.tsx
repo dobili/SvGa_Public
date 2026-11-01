@@ -6,10 +6,13 @@
  * (Partieende.tsx); das Ergebnis selbst steht jetzt als Kopfzeile oben (Ergebniskopf.tsx), die
  * nächsten Schritte am Ende der Seite, wo man nach dem Lesen ankommt. „Teilen“ öffnet ein Blatt
  * mit PGN kopieren und PGN als Datei sichern (PgnTeilen.tsx). Auch in der ruhigen Ansicht da.
+ * „Neue Partie“ wechselt in den Bereich „Spielen“ (useOeffne), auch wenn die Partie aus dem Profil
+ * geöffnet wurde; so stimmt die Leiste unten (Fehlertest f3, 01.11.2026). „Noch einmal“ legt die
+ * Spielseite mit der Stellung auf den Stapel, Zurück führt zur Auswertung.
  * Abhängigkeiten: app/navigationsKontext, spiel/wertung.ts, Blatt.tsx, PgnTeilen.tsx, i18n.
  */
 import { useState } from "react";
-import { useNavigation } from "../../../app/navigationsKontext";
+import { useNavigation, useOeffne } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import type { Zugurteil } from "../../../spiel/auswertung";
 import type { Partie } from "../../../spiel/partie";
@@ -27,6 +30,7 @@ export function Partieabschluss({
   urteile: readonly Zugurteil[];
 }) {
   const { navigiere } = useNavigation();
+  const oeffne = useOeffne();
   const [teilen, setzeTeilen] = useState(false);
   const { startFen, abbildung } = partie.einstellung;
   const eigeneStellung = !ausGrundstellung(partie);
@@ -36,7 +40,7 @@ export function Partieabschluss({
         <button
           type="button"
           className="knopf-haupt"
-          onClick={() => navigiere({ bildschirm: "spielen" })}
+          onClick={() => oeffne({ bildschirm: "spielen" })}
         >
           <Knopfsymbol art="neu" />
           {t("partie.neu")}

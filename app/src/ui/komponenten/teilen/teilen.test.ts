@@ -101,6 +101,12 @@ describe("Herausforderung per Link", () => {
     expect(leseHerausforderung("#aufgabe-endspiel-x", ["taktik"])).toBeNull();
     expect(leseHerausforderung("#aufgabe-taktik-<script>", ["taktik"])).toBeNull();
     expect(leseHerausforderung("#abb-1.26", ["taktik"])).toBeNull();
+    expect(leseHerausforderung("#aufgabe-taktik-", ["taktik"])).toBeNull();
+    expect(leseHerausforderung(`#aufgabe-taktik-${"a".repeat(41)}`, ["taktik"])).toBeNull();
+    // Anhängsel der Messenger fallen weg (Fehlertest f3).
+    expect(leseHerausforderung("#aufgabe-taktik-l-1Vybh?fbclid=x", ["taktik"])).toEqual(ziel);
+    expect(leseHerausforderung("#aufgabe-taktik-l-1Vybh#x", ["taktik"])).toEqual(ziel);
+    expect(leseHerausforderung("#aufgabe-taktik-b-7.6", ["taktik"])).toBeNull();
     expect(ausAnsichtswert(alsAnsichtswert({ trainer: "taktik", aufgabe: "l-1Vybh" }))).toEqual(
       ziel,
     );
@@ -130,6 +136,12 @@ describe("Herausforderung per Link", () => {
       bereich: "training",
       ansicht: { bildschirm: "zusatz", kennung: "herausforderung", wert: "taktik:l-1Vybh" },
     });
-    expect(zusatzsprung("#aufgabe-unbekannt-1", [HERAUSFORDERUNGSSPRUNG])).toBeNull();
+    // Kaputte Links öffnen die Herausforderung ohne Wert; sie zeigt dann einen Hinweis (f3).
+    const ohneWert = { bildschirm: "zusatz", kennung: "herausforderung" };
+    expect(zusatzsprung("#aufgabe-unbekannt-1", [HERAUSFORDERUNGSSPRUNG])?.ansicht).toEqual(
+      ohneWert,
+    );
+    expect(zusatzsprung("#aufgabe-", [HERAUSFORDERUNGSSPRUNG])?.ansicht).toEqual(ohneWert);
+    expect(zusatzsprung("#abb-1.26", [HERAUSFORDERUNGSSPRUNG])).toBeNull();
   });
 });

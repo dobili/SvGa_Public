@@ -7,9 +7,11 @@
  * Startbildschirm verschwindet; das kann eine Web-App nicht selbst.
  * Oben steht eine kurze Zeile mit Fragezeichen (Wunsch des Autors); dahinter die Erklärung, auch
  * dass auf dem iPhone App und Safari-Tab getrennte Speicher haben.
- * Abhängigkeiten: app/loeschen.ts, speicher/speicher.ts, Datensicherung, InfoKnopf, i18n.
+ * Die Zurück-Taste beantwortet die Rückfrage mit „Nein“ (app/blattstapel.ts).
+ * Abhängigkeiten: app/blattstapel.ts, app/loeschen.ts, speicher/speicher.ts, Datensicherung, InfoKnopf, i18n.
  */
 import { useState } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { loescheAlleDaten } from "../../../app/loeschen";
 import { t } from "../../../i18n/sprache";
 import { vergiss } from "../../../speicher/speicher";
@@ -45,6 +47,7 @@ function Anleitung() {
  */
 export function DatenLoeschen() {
   const [stand, setzeStand] = useState<Stand>("ruhe");
+  useZurueckSchliesst(stand === "nachfrage", () => setzeStand("ruhe"));
   const loesche = async () => {
     setzeStand("laeuft");
     const fehler = await loescheAlleDaten();

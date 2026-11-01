@@ -6,9 +6,11 @@
  * Konzept 9.4: sanfter Hinweis alle vier Wochen. Vor dem Einspielen fragt die App nach und
  * nennt, was in der Sicherung steckt, denn das Einspielen ersetzt alle Daten auf dem Gerät.
  * Neben der Überschrift steht ein Fragezeichen (Erklärung anfangs eingeklappt).
- * Abhängigkeiten: speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n.
+ * Die Zurück-Taste bricht die Rückfrage vor dem Einspielen ab (app/blattstapel.ts).
+ * Abhängigkeiten: app/blattstapel.ts, speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n.
  */
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { APP_VERSION } from "../../../app/version";
 import { datumText, t } from "../../../i18n/sprache";
 import {
@@ -69,6 +71,7 @@ function Rueckfrage({
   ersetzen: () => void;
   abbrechen: () => void;
 }) {
+  useZurueckSchliesst(true, abbrechen);
   const angabe = inhaltsangabe(sicherung.daten);
   return (
     <div className="nachfrage" role="alertdialog" aria-label={t("sicherung.importieren")}>

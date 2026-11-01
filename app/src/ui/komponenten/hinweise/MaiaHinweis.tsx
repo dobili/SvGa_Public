@@ -5,14 +5,17 @@
  * Rolle im Gesamtbild: Maia (MaiaWahl.tsx) steht sonst nur unter Zahnrad › Bots, und wer die
  * Einstellungen nicht durchsieht, spielt nie mit ihr. Das Fenster erklärt sie in zwei Sätzen und
  * enthält gleich den Knopf zum Laden und den Schalter (MaiaWahl in Kurzform).
- * Abhängigkeiten: MaiaWahl.tsx, i18n; Aussehen wie die Gratulation (ui/stil/gegnerbild.css).
+ * Die Zurück-Taste schließt es wie „Weiter“ (app/blattstapel.ts).
+ * Abhängigkeiten: MaiaWahl.tsx, app/blattstapel.ts, i18n; Aussehen wie die Gratulation (ui/stil/gegnerbild.css).
  */
 import { createPortal } from "react-dom";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { t } from "../../../i18n/sprache";
 import { MaiaWahl } from "../einstellungen/MaiaWahl";
 
 /** Das Fenster über allem: Titel, Erklärung, Laden oder Schalter, Weg in die Einstellungen. */
 export function MaiaHinweis({ schliessen }: { schliessen: () => void }) {
+  useZurueckSchliesst(true, schliessen);
   return createPortal(
     <div className="gruppen-gratulation" role="dialog" aria-modal="true" data-testid="maia-hinweis">
       <div className="gruppen-gratulation-karte">

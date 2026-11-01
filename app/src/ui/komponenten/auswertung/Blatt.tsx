@@ -8,11 +8,13 @@
  * sichtbarer Knopf „Schließen“. Gezeigt über ein Portal am Ende der Seite, damit kein Elternteil
  * die feste Lage stört. Klasse `auswertungsblatt` (seit 0.3.43), weil `.blatt` aus spielenneu.css
  * sonst den Innenabstand auf null setzte (Befund der Vorprüfung, 31.10.2026).
- * Abhängigkeiten: react-dom (Portal), i18n, lucide.
+ * Die Zurück-Taste des Geräts schließt nur das Blatt (app/blattstapel.ts, Fehlertest f3).
+ * Abhängigkeiten: react-dom (Portal), app/blattstapel.ts, i18n, lucide.
  */
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { t } from "../../../i18n/sprache";
 
 const SYMBOLGROESSE = 20;
@@ -35,6 +37,7 @@ export function Blatt({
 }) {
   const kennung = useId();
   const flaeche = useRef<HTMLDivElement>(null);
+  useZurueckSchliesst(true, beiSchliessen);
   useEffect(() => {
     const vorher = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     flaeche.current?.focus();

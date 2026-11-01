@@ -60,7 +60,10 @@ test("Herausforderung: der Link öffnet die Lichess-Aufgabe, danach lässt sie s
     },
   ]);
   await page.screenshot({ path: "test-results/bilder/teilen-herausforderung.png" });
-  // Ein Link auf eine Aufgabe aus dem Buch öffnet nichts.
+  // Ein Link auf eine Aufgabe aus dem Buch öffnet keine Aufgabe (E7), sondern einen Hinweis.
   await ladeMitSprung(page, "/app/#aufgabe-taktik-b-7.6");
-  await expect(page.getByTestId("herausforderung")).toHaveCount(0);
+  await expect(page.getByTestId("herausforderung-ungueltig")).toHaveText(
+    "Dieser Link ist ungültig oder unvollständig.",
+  );
+  await expect(page.getByTestId("herausforderung").locator(".brett")).toHaveCount(0);
 });

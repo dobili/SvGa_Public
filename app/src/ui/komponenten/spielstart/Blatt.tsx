@@ -5,10 +5,12 @@
  * Formular auf der Seite, sondern hinter „Einstellen ›“ (Wunsch des Autors, 31.10.2026: weniger
  * Formular, weniger Text). Das Blatt ist ein natives modales Dialogfeld: Fokus bleibt darin,
  * Escape und der Knopf „Schließen“ schließen es, ein Tipp auf den dunklen Rand ebenso.
- * Abhängigkeiten: i18n, lucide-react, Stil in ui/stil/spielenneu.css.
+ * Die Zurück-Taste schließt nur das Blatt, auch außerhalb von Android-Chrome (app/blattstapel.ts).
+ * Abhängigkeiten: app/blattstapel.ts, i18n, lucide-react, Stil in ui/stil/spielenneu.css.
  */
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, type ReactNode } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { t } from "../../../i18n/sprache";
 
 /** Größe des Schließen-Zeichens (Bildpunkte). */
@@ -33,6 +35,7 @@ export function Blatt({
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const titelId = useId();
+  useZurueckSchliesst(offen, schliessen);
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;

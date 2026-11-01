@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Eingetragen in app/zusatzansichten.ts unter „herausforderung“; der Sprung
  * (herausforderungen.ts) gibt Trainer und Aufgabe als Wert „taktik:l-1Vybh“ mit. Der Bildschirm
  * zeigt Kopfzeile und Einladung; die Aufgabe selbst zeigt der Eintrag des Trainers in
- * HERAUSFORDERUNGEN.
+ * HERAUSFORDERUNGEN. Ohne lesbaren Wert (kaputter Link) steht dort „Dieser Link ist ungültig
+ * oder unvollständig.“; einen bekannten Trainer mit unbekannter Aufgabe erklärt der Trainer selbst.
  * Abhängigkeiten: herausforderungen.ts, herausforderungslink.ts, Kopfzeile, i18n.
  */
 import { t } from "../../../i18n/sprache";
@@ -23,7 +24,9 @@ export function Herausforderung({ wert }: { readonly wert: string | null }) {
       {ziel && art ? (
         <art.Aufgabe aufgabe={ziel.aufgabe} />
       ) : (
-        <p className="hinweis">{t("teilen.unbekannt")}</p>
+        <p className="hinweis" data-testid="herausforderung-ungueltig">
+          {t(ziel ? "teilen.unbekannt" : "teilen.ungueltig")}
+        </p>
       )}
     </div>
   );

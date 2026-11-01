@@ -15,6 +15,7 @@ import {
   waehleWerkzeug,
   warteAufOffline,
 } from "./hilfen";
+import { gibNetzFrei, netzGesperrtFuerWorker, sperreNetz } from "./offlinehilfen";
 
 /** Höchstens so lange darf die Engine im Browser für eine Bewertung rechnen. */
 const ENGINE_FRIST_MS = 30_000;
@@ -90,10 +91,17 @@ test("Engine bewertet Abb. 1.26 auf dem Gerät; Fortsetzung und letzter Zug auf 
   await page.screenshot({ path: "test-results/bilder/engine.png", fullPage: true });
 });
 
-test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, context }) => {
+test("offline: nach dem ersten Laden geht alles ohne Netz", async ({
+  page,
+  context,
+  browserName,
+}) => {
   await starteImBrowser(page);
   await warteAufOffline(page);
-  await context.setOffline(true);
+  // Echt offline, auch für den Service Worker (offlinehilfen.ts); die Gegenprobe zeigt, dass die
+  // Sperre wirkt. Sie geht nur in Chromium, WebKit meldet die Abrufe des Workers nicht.
+  await sperreNetz(context);
+  if (browserName === "chromium") expect(await netzGesperrtFuerWorker(page)).toBe(true);
   // Auch die Startseite des Buches kommt ohne Netz (Entscheidung 15.10.2026).
   await page.goto("/");
   await expect(page.getByTestId("installationsteil")).toBeVisible();
@@ -105,7 +113,7 @@ test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, conte
   await expect(page.getByTestId("werkzeugkarte")).toContainText("2 gegen 1");
   await page.getByRole("button", { name: "Engine", exact: true }).click();
   await expect(page.getByTestId("engine-messung")).toBeVisible({ timeout: 30_000 });
-  await context.setOffline(false);
+  await gibNetzFrei(context);
 });
 
 test("Einstellungen zeigen App-Version und Datenstand", async ({ page }) => {

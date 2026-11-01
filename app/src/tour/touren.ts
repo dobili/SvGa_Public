@@ -164,6 +164,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   "trainer.repertoire": tour("trainer.repertoire.name", [
     ANFANG,
     ziel("trainer-wahl", "tour.trainer.repertoire.wahl"),
+    ziel("repertoire-praxis", "tour.trainer.repertoire.praxis"),
     mitte("tour.trainer.repertoire.ziehen"),
     ...RUNDE,
   ]),

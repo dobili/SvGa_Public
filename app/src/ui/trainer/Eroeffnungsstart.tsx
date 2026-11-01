@@ -8,6 +8,7 @@
  * Abhängigkeiten: training/repertoiretrainer.ts, startkarte/*, i18n.
  */
 import type { Color } from "chessops/types";
+import type { ReactNode } from "react";
 import { t } from "../../i18n/sprache";
 import type { TrainerKennung } from "../../training/trainer";
 import type { Repertoireeroeffnung } from "../../training/repertoiretrainer";
@@ -22,7 +23,9 @@ export interface Eroeffnungswahl {
 }
 
 /**
- * Startkarte mit Eröffnung und Seite; `vorne` sind Zeilen davor (Abweichungsmodus: Kapitel).
+ * Startkarte mit Eröffnung und Seite; `vorne` sind Zeilen davor (Zeile „Aus“: Kapitel), `feld`
+ * ist der Name der gemerkten Eröffnung (Repertoire-Trainer: „gambit“ für Kapitel 3, damit die
+ * Wahl aus Kapitel 2 bleibt), `hinweis` steht unter den Zeilen (Schalter „Praxis“).
  *
  * Beispiel: Repertoire-Trainer → „Eröffnung: Spanische Partie · Du spielst: Weiß“.
  * Sonderfall: Ohne Eröffnungen bleibt der Startknopf gesperrt.
@@ -31,17 +34,21 @@ export function Eroeffnungsstart({
   kennung,
   eroeffnungen,
   vorne = [],
+  feld = "eroeffnung",
+  hinweis = null,
   zusatz,
   starte,
 }: {
   kennung: TrainerKennung;
   eroeffnungen: readonly Repertoireeroeffnung[];
   vorne?: readonly Einstellung[];
+  feld?: string;
+  hinweis?: ReactNode;
   zusatz: string;
   starte: (wahl: Eroeffnungswahl) => void;
 }) {
   const kennungen = eroeffnungen.map((e) => e.id);
-  const [id, setzeId] = useGemerkt(kennung, "eroeffnung", kennungen, kennungen[0] ?? "");
+  const [id, setzeId] = useGemerkt(kennung, feld, kennungen, kennungen[0] ?? "");
   const [seite, setzeSeite] = useGemerkt<Color>(kennung, "seite", SEITEN, "white");
   const gewaehlt = eroeffnungen.find((e) => e.id === id) ?? null;
   const eroeffnungszeile = einstellung({
@@ -58,6 +65,7 @@ export function Eroeffnungsstart({
       kennung={kennung}
       testkennung={`${kennung}-wahl`}
       zeilen={[...vorne, ...(gewaehlt ? [eroeffnungszeile] : []), seitenzeile(seite, setzeSeite)]}
+      hinweis={hinweis}
       start={{
         zusatz,
         gesperrt: gewaehlt === null,

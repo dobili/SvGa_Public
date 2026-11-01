@@ -47,6 +47,11 @@ export interface Repertoireaufgabe {
   readonly seite: Color;
   /** Die Warum-Fragen an Zügen der Linie, nach Halbzug geordnet (W10). */
   readonly fragen?: readonly Schluesselfrage[];
+  /**
+   * Woher die Züge stammen: aus dem Buch (Vorgabe) oder aus der Praxis (Lichess, nicht aus dem
+   * Buch; training/praxisrepertoire.ts). Die Oberfläche kennzeichnet Züge aus der Praxis.
+   */
+  readonly herkunft?: "buch" | "praxis";
 }
 
 /** Brett und Seite am Zug einer FEN: daran erkennt der Trainer die Stellung einer Abbildung. */

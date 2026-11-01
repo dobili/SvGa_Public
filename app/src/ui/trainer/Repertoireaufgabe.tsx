@@ -7,6 +7,8 @@
  * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt. Warum-Fragen (W10) zeigt
  * der Trainer nicht mehr: Sie haben mit dem Einprägen der Züge nichts zu tun (Wunsch des Autors,
  * 30.10.2026); sie stehen weiter an den Abbildungen des Kapitels.
+ * Varianten aus der Praxis (Lichess, Wunsch des Autors vom 1.11.2026) laufen gleich, mit eigenem
+ * Auftrag und dem Hinweis, dass die Züge nicht aus dem Buch stammen.
  * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag. Dort zeigt ein falscher Zug den
  * eigenen Zug als roten und den Zug der Studie als goldenen Pfeil, und die Engine vergleicht beide
  * (Zugvergleich; R46, Wunsch des Autors, 23.10.2026).
@@ -68,6 +70,8 @@ export function Repertoireaufgabe({
   const fen = stellungNach(aufgabe.startFen, zuege);
   useSammelstellung(fen);
   const fertig = runde.ergebnis !== null;
+  // Züge aus der Praxis (Lichess) stammen nicht aus dem Buch: eigener Auftrag und Kennzeichnung.
+  const praxis = aufgabe.herkunft === "praxis";
   const zaehle = () => {
     setzeFehler(fehler + 1);
     setzeZeige(true);
@@ -102,11 +106,16 @@ export function Repertoireaufgabe({
     <>
       <p className="trainer-auftrag">
         {auftrag ??
-          t("repertoiretrainer.auftrag", {
+          t(praxis ? "repertoiretrainer.auftragPraxis" : "repertoiretrainer.auftrag", {
             titel: aufgabe.titel,
             farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
           })}
       </p>
+      {praxis && (
+        <p className="hinweis" data-testid="repertoire-herkunft">
+          {t("repertoiretrainer.praxis.herkunft")}
+        </p>
+      )}
       {stellung.ok && (
         <Brettbereich
           stellung={stellung.wert}
@@ -122,7 +131,13 @@ export function Repertoireaufgabe({
       </p>
       {!fertig && zeige && (
         <p className="meldung schlecht">
-          {t(fehlversuch ? "studien.falsch" : "repertoiretrainer.buchzug")}
+          {t(
+            fehlversuch
+              ? "studien.falsch"
+              : praxis
+                ? "repertoiretrainer.praxiszug"
+                : "repertoiretrainer.buchzug",
+          )}
         </p>
       )}
       {!fertig && fehlversuch && vergleich && (

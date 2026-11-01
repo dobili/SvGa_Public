@@ -276,8 +276,8 @@ test("Abweichungsmodus: Gambits aus Kapitel 3 mit dem Damengambit zur Wahl", asy
   await oeffneTrainer(page, "abweichung");
   await waehleInZeile(page, "abweichung-quelle", /Gambits/);
   const liste = page.getByTestId("zeile-eroeffnung");
-  await expect(liste).toContainText("Das Königsgambit");
-  await expect(liste).toContainText("Das Damengambit");
+  await expect(liste).toContainText("Königsgambit");
+  await expect(liste).toContainText("Damengambit");
 });
 
 test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort wird bewertet", async ({

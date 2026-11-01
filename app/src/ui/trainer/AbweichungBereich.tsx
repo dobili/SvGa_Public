@@ -20,29 +20,16 @@ import { useEroeffnungsindex } from "../komponenten/bausteine/useEroeffnungsinde
 import { Abweichungsaufgabe } from "./Abweichungsaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Eroeffnungsstart, type Eroeffnungswahl } from "./Eroeffnungsstart";
-import { aufgabenzahl, einstellung, type Einstellung } from "./startkarte/einstellung";
+import { BUCHQUELLEN, quellenzeile, type Eroeffnungsquelle } from "./eroeffnungsquelle";
+import { aufgabenzahl } from "./startkarte/einstellung";
 import { useGemerkt } from "./startkarte/useGemerkt";
 
 const KAPITEL_EROEFFNUNGEN = 2;
-const KAPITEL_GAMBITS = 3;
-const QUELLEN = ["kapitel2", "kapitel3"] as const;
-type Quelle = (typeof QUELLEN)[number];
-
 /**
  * Eröffnungen aus Kapitel 2 oder Gambits aus Kapitel 3 (mit dem Damengambit): derselbe Trainer,
- * zwei Einstiege (Empfehlung im Nebenchat, vom Autor freigegeben am 30.10.2026).
+ * zwei Einstiege (Zeile „Aus“, eroeffnungsquelle.ts).
  */
-function kapitelzeile(quelle: Quelle, setze: (q: Quelle) => void): Einstellung {
-  return einstellung({
-    kennung: "kapitel",
-    titel: t("trainerstart.zeile.gambit"),
-    symbol: "quelle",
-    optionen: QUELLEN.map((q) => ({ wert: q, text: t(`abweichung.wahl.${q}`) })),
-    wert: quelle,
-    setze,
-    testkennung: "abweichung-quelle",
-  });
-}
+const KAPITEL_GAMBITS = 3;
 const AUFGABEN_JE_RUNDE = 3;
 
 /**
@@ -55,7 +42,12 @@ export function AbweichungBereich() {
     `kapitel-${KAPITEL_EROEFFNUNGEN}`,
   );
   const gambitdaten = useDaten(() => ladeKapitel(KAPITEL_GAMBITS), `kapitel-${KAPITEL_GAMBITS}`);
-  const [quelle, setzeQuelle] = useGemerkt<Quelle>("abweichung", "kapitel", QUELLEN, "kapitel2");
+  const [quelle, setzeQuelle] = useGemerkt<Eroeffnungsquelle>(
+    "abweichung",
+    "kapitel",
+    BUCHQUELLEN,
+    "kapitel2",
+  );
   // Index der Kapitel 2 und 3 (wie beim Spiel gegen die Engine).
   const index = useEroeffnungsindex(PARTIEKAPITEL);
   const [wahl, setzeWahl] = useState<Eroeffnungswahl | null>(null);
@@ -70,7 +62,7 @@ export function AbweichungBereich() {
       <Eroeffnungsstart
         kennung="abweichung"
         eroeffnungen={liste}
-        vorne={[kapitelzeile(quelle, setzeQuelle)]}
+        vorne={[quellenzeile(BUCHQUELLEN, quelle, setzeQuelle, "abweichung-quelle")]}
         zusatz={aufgabenzahl(AUFGABEN_JE_RUNDE)}
         starte={setzeWahl}
       />

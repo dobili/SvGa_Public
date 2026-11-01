@@ -5,9 +5,11 @@
  * „Titel antippen = umbenennen“, der Kommentar zur Variante ist „über den Titel erreichbar“).
  * Wunsch des Autors zu Frage g: Varianten sind editierbar und löschbar; Löschen fragt einmal nach.
  * Texte speichern nach der Tipp-Pause (useVariantenspeicher.ts).
- * Abhängigkeiten: training/variationen.ts, spiel/variationspgn.ts, PgnTeilen.tsx, Blatt, i18n.
+ * Die Zurück-Taste beantwortet die Nachfrage zum Löschen mit „Nein“ (app/blattstapel.ts).
+ * Abhängigkeiten: app/blattstapel.ts, training/variationen.ts, spiel/variationspgn.ts, PgnTeilen.tsx, Blatt, i18n.
  */
 import { useState } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { t } from "../../../i18n/sprache";
 import { KOMMENTAR_HOECHSTENS, TITEL_HOECHSTENS } from "../../../training/variationen";
 import { variationAlsPgn } from "../../../spiel/variationspgn";
@@ -19,6 +21,7 @@ import type { Variantenstand } from "./useVariante";
 /** Löschen mit einer Nachfrage. */
 function Loeschen({ beiLoeschen }: { beiLoeschen: () => void }) {
   const [frage, setzeFrage] = useState(false);
+  useZurueckSchliesst(frage, () => setzeFrage(false));
   if (!frage) {
     return (
       <button type="button" className="knopf-gefahr" onClick={() => setzeFrage(true)}>

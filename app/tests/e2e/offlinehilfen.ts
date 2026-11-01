@@ -6,23 +6,30 @@
  * 200). Ein Offline-Test konnte so grün sein, obwohl eine Datei nur aus dem Netz kam. Mit
  * `PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS=1` (playwright.config.ts) laufen in Chromium
  * auch die Abrufe des Service Workers durch `context.route`; dort bricht `sperreNetz` alles ab.
- * WebKit kennt diesen Weg nicht: Dort bleibt es bei setOffline und der Route für die Seite, und
- * die Gegenprobe `netzGesperrtFuerWorker` läuft nur in Chromium.
+ * WebKit kennt diesen Weg nicht, und dort fängt die Route schon die Abrufe der Seite ab, bevor
+ * der Service Worker sie beantwortet (CI 1.11.2026: „page.goto: Blocked by Web Inspector“). In
+ * WebKit bleibt es deshalb bei setOffline, und die Gegenprobe `netzGesperrtFuerWorker` läuft nur
+ * in Chromium.
  */
 import type { BrowserContext, Page } from "@playwright/test";
 
 /** Jede Adresse, auch die der Service Worker. */
 const ALLES = "**/*";
 
-/** Sperrt das Netz für Seite und Service Worker (Chromium) bis `gibNetzFrei`. */
+/** Ob der Kontext in Chromium läuft (nur dort trifft die Route den Service Worker). */
+function istChromium(kontext: BrowserContext): boolean {
+  return kontext.browser()?.browserType().name() === "chromium";
+}
+
+/** Sperrt das Netz für Seite und Service Worker (in Chromium auch per Route) bis `gibNetzFrei`. */
 export async function sperreNetz(kontext: BrowserContext): Promise<void> {
   await kontext.setOffline(true);
-  await kontext.route(ALLES, (weg) => weg.abort("internetdisconnected"));
+  if (istChromium(kontext)) await kontext.route(ALLES, (weg) => weg.abort("internetdisconnected"));
 }
 
 /** Gibt das Netz wieder frei. */
 export async function gibNetzFrei(kontext: BrowserContext): Promise<void> {
-  await kontext.unroute(ALLES);
+  if (istChromium(kontext)) await kontext.unroute(ALLES);
   await kontext.setOffline(false);
 }
 

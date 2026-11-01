@@ -101,3 +101,27 @@ test("kaputter Herausforderungslink: Hinweis statt stillem Start auf „Buch“"
   await ladeMitSprung(page, "/app/#aufgabe-taktik-l-1Vybh?fbclid=abc");
   await expect(page.getByText("Jemand hat dir diese Aufgabe geschickt.")).toBeVisible();
 });
+
+test("Variante: Zurück beantwortet erst die Nachfrage, dann schließt es das Blatt", async ({
+  page,
+}) => {
+  await page.setViewportSize(HANDY);
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Training" }).click();
+  await page.getByTestId("kachel-varianten").getByRole("button").click();
+  await page.getByRole("button", { name: "PGN", exact: true }).click();
+  const feld = page.getByTestId("varianten-einfuegen");
+  await feld.getByLabel("PGN oder FEN").fill('[Event "Probe"]\n\n1. e4 c5 *');
+  await feld.getByRole("button", { name: "Einlesen" }).click();
+  await expect(page.getByTestId("variantentitel")).toHaveText("Probe");
+  await page.getByTestId("variantentitel").click();
+  const variantenblatt = page.getByTestId("variantenblatt");
+  await variantenblatt.getByRole("button", { name: "Variante löschen" }).click();
+  await expect(variantenblatt.getByRole("alertdialog")).toBeVisible();
+  await page.goBack();
+  await expect(variantenblatt.getByRole("alertdialog")).toHaveCount(0);
+  await expect(variantenblatt).toBeVisible();
+  await page.goBack();
+  await expect(variantenblatt).not.toBeVisible();
+  await expect(page.getByTestId("variantentitel")).toHaveText("Probe");
+});

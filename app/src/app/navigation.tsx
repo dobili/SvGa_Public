@@ -64,6 +64,8 @@ export function NavigationsRahmen({
   // Ob das nächste „popstate“ vom Rahmen selbst kommt (Wächter eines Blattes abgeräumt).
   const eigenesZurueck = useRef(false);
   const blaetterVorher = useRef(0);
+  // Ob das nächste „popstate“ vom Knopf „Zurück“ der App kommt (dann ohne Blätter).
+  const ansichtZurueck = useRef(false);
 
   // Jeden Stand sichern (V2).
   useEffect(() => {
@@ -96,7 +98,9 @@ export function NavigationsRahmen({
         eigenesZurueck.current = false;
         return;
       }
-      if (schliesseOberstesBlatt()) return;
+      const knopf = ansichtZurueck.current;
+      ansichtZurueck.current = false;
+      if (!knopf && schliesseOberstesBlatt()) return;
       if (tiefe.current > 1) {
         ausfuehren({ art: "zurueck" });
       }
@@ -107,7 +111,10 @@ export function NavigationsRahmen({
 
   const zurueck = useCallback(() => {
     // Der Knopf in der App geht denselben Weg wie die Zurück-Taste, damit der Verlauf stimmt.
-    if (waechterAktiv.current) {
+    // Er meint die Ansicht, nicht ein offenes Blatt (etwa „Löschen“ im Blatt einer Variante,
+    // das danach zur Liste zurückgeht); deshalb überspringt das folgende popstate die Blätter.
+    if (waechterAktiv.current && tiefe.current > 1) {
+      ansichtZurueck.current = true;
       window.history.back();
     } else {
       ausfuehren({ art: "zurueck" });

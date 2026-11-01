@@ -96,7 +96,14 @@ describe("Partie", () => {
     const p = spiele(partie(), "f3", "e5", "g4", "Qh4#");
     expect(p.ende).toEqual({ art: "matt", sieger: "black" });
     expect(ziehe(p, leserzug("a3"))).toBeNull();
-    expect(nimmZurueck(p)?.ende).toBeNull();
+    // Q12-2 (1.11.2026): Nach dem Ende gibt es keine Rücknahme mehr.
+    expect(nimmZurueck(p)).toBeNull();
+  });
+
+  it("Rücknahme nach Aufgabe: null, die Partie bleibt beendet", () => {
+    const p = gibAuf(spiele(partie(), "e4", "e5"));
+    expect(p.ende).not.toBeNull();
+    expect(nimmZurueck(p)).toBeNull();
   });
 
   it("Aufgabe", () => {

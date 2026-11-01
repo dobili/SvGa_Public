@@ -137,11 +137,14 @@ export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
 /**
  * Schreibt den neuen Stand einer Partie: beendet → abgelegt, sonst die laufende Partie.
  *
- * Warum: Nach einer Rücknahme am Ende (etwa nach Matt) läuft die Partie wieder; sie verlässt
- * dann die Liste der beendeten Partien und ist wieder die laufende.
+ * Sonderfall: Eine schon beendete Partie wird nie wieder die laufende (Entscheidung des Autors
+ * Q12-2, 1.11.2026: nach dem Ende kein Zurücknehmen). Ein Stand ohne Ende zu einer abgelegten
+ * Partie bleibt deshalb ohne Wirkung; sonst zählten Tagesprotokoll, Siege und Rekorde die Partie
+ * beim zweiten Ende doppelt.
  */
 export function mitPartie(stand: Spielstand, partie: Partie): Spielstand {
   if (partie.ende) return legeAb(stand, partie);
+  if (stand.partien.some((e) => e.partie.id === partie.id && e.partie.ende)) return stand;
   const partien = stand.partien.filter((e) => e.partie.id !== partie.id);
   return { ...stand, laufend: partie, partien };
 }

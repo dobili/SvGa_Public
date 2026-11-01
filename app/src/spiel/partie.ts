@@ -219,13 +219,16 @@ export function leserzug(san: string): Partiezug {
 /**
  * Nimmt den letzten eigenen Zug zurück, samt der Antwort der Engine, falls schon gespielt.
  *
- * Warum: Pflichtenheft 5.2 „Zugrücknahme (abschaltbar)“. Danach ist wieder der Leser am Zug,
- * ein Partieende (etwa Matt durch die Engine) ist aufgehoben.
- * Ausgabe: neue Partie oder null, wenn Rücknahme abgeschaltet ist oder kein eigener Zug existiert.
+ * Warum: Pflichtenheft 5.2 „Zugrücknahme (abschaltbar)“. Danach ist wieder der Leser am Zug.
+ * Ausgabe: neue Partie oder null, wenn Rücknahme abgeschaltet ist, kein eigener Zug existiert oder
+ * die Partie beendet ist.
  * Beispiel: 1. e4 e5 → Rücknahme → Grundstellung, Weiß am Zug.
+ * Sonderfall: Nach dem Ende (auch ungewertet) gibt es keine Rücknahme mehr (Entscheidung des
+ * Autors Q12-2, 1.11.2026). Bis 0.3.44 hob sie das Ende auf; eine erneut beendete Partie zählten
+ * Tagesprotokoll, Siege, Rekorde, Rivale und Ziele dann doppelt.
  */
 export function nimmZurueck(partie: Partie): Partie | null {
-  if (!partie.einstellung.ruecknahmeErlaubt) return null;
+  if (!partie.einstellung.ruecknahmeErlaubt || partie.ende) return null;
   const letzterEigener = partie.zuege.map((z) => z.von).lastIndexOf("leser");
   if (letzterEigener < 0) return null;
   return {

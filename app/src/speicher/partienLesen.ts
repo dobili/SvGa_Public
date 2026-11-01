@@ -7,6 +7,7 @@
  * Abhängigkeiten: speicher/partien.ts (Typen, Vorgaben), spiel/partie.ts, spiel/uhr.ts,
  * spiel/wertung.ts, engine/fehlerart.ts, engine/stufen.ts.
  */
+import { probeherkunftAus, type Probeherkunft } from "../spiel/probepartie";
 import type { Color } from "chessops/types";
 import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
@@ -135,6 +136,12 @@ function hilfenAus(roh: unknown): Spielhilfen {
   return { symbole: roh.symbole !== false, werkzeuge: roh.werkzeuge !== false };
 }
 
+/** Die Herkunft einer Probepartie (Format 8), nur wenn gespeichert. */
+function probeteil(roh: unknown): { probe?: Probeherkunft } {
+  const probe = probeherkunftAus(roh);
+  return probe ? { probe } : {};
+}
+
 function einstellungAus(roh: unknown): Partie["einstellung"] | null {
   if (!istObjekt(roh) || typeof roh.startFen !== "string" || !ladbar(roh.startFen)) return null;
   const eigeneFarbe = farbeAus(roh.eigeneFarbe);
@@ -156,6 +163,7 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     gewertet: roh.gewertet === true,
     // Seit 0.2.143: mit Maia nur, wenn so gespeichert (ältere Partien ohne).
     ...(roh.maia === true ? { maia: true } : {}),
+    ...probeteil(roh.probe),
     ...gegnerprofilAus(roh),
   };
 }
@@ -337,14 +345,22 @@ function wertungspunktAus(roh: unknown): Wertungspunkt | null {
   };
 }
 
+/** Eine Partie ohne Probepartie (für „laufend“) und nur eine Probepartie (für „probe“). */
+const ohneProbe = (p: Partie | null) => (p?.einstellung.probe ? null : p);
+const nurProbe = (p: Partie | null) => (p?.einstellung.probe ? p : null);
+
 /** Der Spielstand aus Rohdaten; ohne Daten (Format 0 und 1) leer. */
 export function spielstandAus(roh: unknown): Spielstand {
   if (!istObjekt(roh)) return LEERER_SPIELSTAND;
   const partien = Array.isArray(roh.partien) ? roh.partien.map(eintragAus) : [];
   const wertung = Array.isArray(roh.wertung) ? roh.wertung.map(wertungspunktAus) : [];
-  const gueltige = partien.filter((e): e is Partieeintrag => e !== null).slice(0, MAX_PARTIEN);
+  const gueltige = partien
+    .filter((e): e is Partieeintrag => e !== null && !e.partie.einstellung.probe)
+    .slice(0, MAX_PARTIEN);
   return {
-    laufend: partieAus(roh.laufend),
+    // Eine Probepartie gehört nie in „laufend“ oder „partien“, nur in „probe“ (Format 8).
+    laufend: ohneProbe(partieAus(roh.laufend)),
+    probe: nurProbe(partieAus(roh.probe)),
     partien: gueltige,
     vorlieben: vorliebenAus(roh.vorlieben),
     wertung: wertung.filter((w): w is Wertungspunkt => w !== null).slice(-MAX_WERTUNGSPUNKTE),

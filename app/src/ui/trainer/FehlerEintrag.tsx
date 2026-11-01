@@ -15,6 +15,8 @@ import { aendere } from "../../speicher/speicher";
 import { mitGeaendertemFehler } from "../../training/eintragspflege";
 import type { Fehlereintrag } from "../../training/fehlerdatenbank";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { VariantenHinweis } from "../komponenten/varianten/VariantenHinweis";
+import { alsWert } from "../komponenten/varianten/variantenwert";
 import { Fehlerfelder, type Fehlerwerte } from "./Fehlerfelder";
 import { Trainerbrett } from "./Trainerbrett";
 import { artName, type Fehlerart } from "./useFehlerarten";
@@ -81,6 +83,10 @@ export function FehlerEintrag({
       </summary>
       {!bearbeiten && eintrag.satz && <p>{eintrag.satz}</p>}
       <Trainerbrett fen={eintrag.fen} beschriftung={t("fehlerdb.stellung")} />
+      <VariantenHinweis
+        quelle={{ art: "fehler", id: eintrag.id }}
+        wert={alsWert({ art: "fehler", id: eintrag.id })}
+      />
       {bearbeiten ? (
         <Bearbeiten eintrag={eintrag} beiFertig={() => setzeBearbeiten(false)} />
       ) : (

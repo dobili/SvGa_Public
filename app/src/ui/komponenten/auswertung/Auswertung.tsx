@@ -33,6 +33,7 @@ import { Seitenwahl, Zahlen } from "./Zahlen";
 import { phasenabschnitte } from "./zeitleiste";
 import { Zeitleiste, type Phasenwahl } from "./Zeitleiste";
 import { MitInfoblase } from "../bausteine/Infoblase";
+import { Variantenzahl } from "../varianten/VariantenHinweis";
 
 export type { Sprung } from "./sprung";
 
@@ -147,6 +148,8 @@ export function Auswertung(p: AuswertungEigenschaften) {
         <Auswertungsfortschritt erledigt={p.stand.erledigt} gesamt={p.stand.gesamt} />
       )}
       {p.stand.art === "fehler" && <p className="fehlertext">{p.stand.meldung}</p>}
+      {/* Eigene Varianten aus dieser Partie (Wunsch des Autors zu Frage g, 1.11.2026). */}
+      <Variantenzahl quelle={{ art: "partie", id: p.eintrag.partie.id }} />
       {/* Ohne Züge (sofort aufgegeben) bleibt ein Satz statt einer leeren Fläche; sonst fehlte
           auch das Tourziel „auswertung“, sobald der Fortschritt verschwindet. */}
       {p.stand.art === "fertig" && !fertig && (

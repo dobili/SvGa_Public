@@ -8,6 +8,7 @@
  * des Autors, 14.10.2026).
  * Abhängigkeiten: schach/variantenbaum.ts, i18n, Zugknoepfe.tsx.
  */
+import { GitFork } from "lucide-react";
 import { Fragment, useEffect, useRef } from "react";
 import { sprache, t } from "../../../i18n/sprache";
 import { eigeneAlsText } from "../../../schach/weiterspielen";
@@ -20,6 +21,8 @@ import {
   type Beispiel,
   type Halbzug,
 } from "../../../schach/variantenbaum";
+
+const SYMBOL_VARIANTE = 18;
 
 /** „5.“ vor weißen Zügen, „5...“ vor einem schwarzen Zug am Anfang oder nach einer Abzweigung. */
 function nummerVor(halbzug: Halbzug, erster: boolean): string {
@@ -51,8 +54,11 @@ function Knoepfe({ stand }: { stand: Nachspielstand }) {
   );
 }
 
-/** Die eigenen Züge hinter der Buchstellung, mit „Zurück zur Buchvariante“. */
-function EigeneZeile({ stand }: { stand: Nachspielstand }) {
+/**
+ * Die eigenen Züge hinter der Buchstellung, mit „Zurück zur Buchvariante“ und, an der Abbildung,
+ * „Als Variante speichern“ (Variationsbrowser, Frage a, 1.11.2026).
+ */
+function EigeneZeile({ stand, beiVariante }: { stand: Nachspielstand; beiVariante?: () => void }) {
   const texte = eigeneAlsText(stand.buchFen, stand.eigene.zuege, sprache());
   return (
     <div className="eigene-zuege" data-testid="eigene-zuege">
@@ -78,6 +84,12 @@ function EigeneZeile({ stand }: { stand: Nachspielstand }) {
       >
         {t("zugleiste.zurBuchvariante")}
       </button>
+      {beiVariante && (
+        <button type="button" className="chip variantenspeichern" onClick={beiVariante}>
+          <GitFork size={SYMBOL_VARIANTE} aria-hidden="true" />{" "}
+          {t("varianten.alsVarianteSpeichern")}
+        </button>
+      )}
     </div>
   );
 }
@@ -149,7 +161,13 @@ function Zuege({ halbzuege, pfad, beiPfad }: ZeilenEigenschaften) {
  * Beispiel aus dem Buch: Abb. 1.26 steht nach 5... Db6; „Vor“ zeigt 6. Ld3?!, „Anfang“ die
  * Grundstellung. Zieht der Leser selbst, erscheinen seine Züge darunter.
  */
-export function Zugleiste({ stand }: { stand: Nachspielstand }) {
+export function Zugleiste({
+  stand,
+  beiVariante,
+}: {
+  stand: Nachspielstand;
+  beiVariante?: () => void;
+}) {
   const sprachcode = sprache();
   const { beispiel, pfad, setzePfad: beiPfad } = stand;
   const halbzuege = beispiel ? zeile(beispiel, pfad, sprachcode) : [];
@@ -163,7 +181,7 @@ export function Zugleiste({ stand }: { stand: Nachspielstand }) {
       data-tour="zugleiste"
     >
       {beispiel && <Zuege halbzuege={halbzuege} pfad={pfad} beiPfad={beiPfad} />}
-      {stand.eigene.zuege.length > 0 && <EigeneZeile stand={stand} />}
+      {stand.eigene.zuege.length > 0 && <EigeneZeile stand={stand} beiVariante={beiVariante} />}
       {andere.length > 0 && (
         <p className="abzweigungen">
           <span>{t("zugleiste.andere")}</span>

@@ -70,6 +70,8 @@ export function nachPartieende(
   vorherBeendet: boolean,
   jetzt: Date,
 ): Nutzerdaten {
-  if (!partie.ende || vorherBeendet || partie.einstellung.importiert) return daten;
+  // Eingelesene Partien und Probepartien (Format 8) zählen nicht.
+  const zaehlt = !partie.einstellung.importiert && !partie.einstellung.probe;
+  if (!partie.ende || vorherBeendet || !zaehlt) return daten;
   return NACH_PARTIEENDE.reduce((d, folge) => folge(d, partie, jetzt), daten);
 }

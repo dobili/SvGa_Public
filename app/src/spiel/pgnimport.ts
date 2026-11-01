@@ -96,6 +96,25 @@ const ENGLISCHE_FIGUREN = "KQRBNP";
 const KOPFZEILE = /^\s*\[.*$/gm;
 const KOMMENTAR = /\{[^}]*\}|;[^\n]*/g;
 
+/** Kopfzeilen und Kommentare zusammen: Sie bleiben beim Übersetzen, wie sie sind. */
+const GESCHUETZT = /^\s*\[.*$|\{[^}]*\}|;[^\n]*/gm;
+
+/**
+ * Wendet ``aendere`` nur auf den Text außerhalb von Kopfzeilen und Kommentaren an.
+ * Warum: Ein Kommentar wie „{ später Dh5 }“ ist Text des Lesers und bleibt deutsch (Stufe 2 der
+ * Varianten: PGN hin und zurück); vorher wurde er zu „später Qh5“.
+ */
+function ausserhalbVon(text: string, aendere: (teil: string) => string): string {
+  let ergebnis = "";
+  let stelle = 0;
+  for (const treffer of text.matchAll(GESCHUETZT)) {
+    const anfang = treffer.index ?? 0;
+    ergebnis += aendere(text.slice(stelle, anfang)) + treffer[0];
+    stelle = anfang + treffer[0].length;
+  }
+  return ergebnis + aendere(text.slice(stelle));
+}
+
 /** Die letzte Zugnummer („12.“ oder „12...“) vor dieser Stelle; 1, wenn keine dasteht. */
 function zugnummerVor(zugtext: string, stelle: number): number {
   const nummern = [...zugtext.slice(0, stelle).matchAll(/(\d+)\.+/g)];
@@ -117,8 +136,8 @@ export function inEnglischerNotation(text: string): {
   text: string;
   unbekannt: { zug: string; nummer: number } | null;
 } {
-  const uebersetzt = text.replace(/^(?!\s*\[).*$/gm, (zeile) =>
-    zeile
+  const uebersetzt = ausserhalbVon(text, (teil) =>
+    teil
       .replace(FIGURINE, (f) => FIGURINEN[f] ?? f)
       .replace(FIGUR_VOR_ZUG, (ganz, vor: string, b: string) =>
         b in DEUTSCHE_FIGUREN ? `${vor}${DEUTSCHE_FIGUREN[b]}` : ganz,
@@ -138,7 +157,7 @@ export function inEnglischerNotation(text: string): {
 }
 
 /** Normales Schach? Varianten (Chess960, Crazyhouse, Atomic …) liest die App nicht ein. */
-function normalesSchach(rules: string, variante: string | undefined): boolean {
+export function normalesSchach(rules: string, variante: string | undefined): boolean {
   return rules === "chess" && !/960|fischer/i.test(variante ?? "");
 }
 

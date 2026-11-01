@@ -72,6 +72,12 @@ export interface Spielvorlieben {
 
 export interface Spielstand {
   readonly laufend: Partie | null;
+  /**
+   * Die Probepartie „von hier“ (Format 8, spiel/probepartie.ts), laufend oder beendet, bis der
+   * Leser sie als Variante speichert oder verwirft. Sie steht nie in „laufend“ oder „partien“ und
+   * zählt deshalb für nichts (Wunsch des Autors, 1.11.2026).
+   */
+  readonly probe: Partie | null;
   /** Neueste zuerst. */
   readonly partien: readonly Partieeintrag[];
   readonly vorlieben: Spielvorlieben;
@@ -101,6 +107,7 @@ export const STANDARD_VORLIEBEN: Spielvorlieben = {
 /** Der Spielstand vor der ersten Partie: nichts gespielt, keine Wertung, keine eigenen Gegner. */
 export const LEERER_SPIELSTAND: Spielstand = {
   laufend: null,
+  probe: null,
   partien: [],
   vorlieben: STANDARD_VORLIEBEN,
   wertung: [],
@@ -111,7 +118,13 @@ export const LEERER_SPIELSTAND: Spielstand = {
 /** Die Partie mit dieser Kennung, laufend oder beendet; null, wenn es sie nicht (mehr) gibt. */
 export function findePartie(stand: Spielstand, id: string): Partie | null {
   if (stand.laufend?.id === id) return stand.laufend;
+  if (stand.probe?.id === id) return stand.probe;
   return stand.partien.find((e) => e.partie.id === id)?.partie ?? null;
+}
+
+/** Merkt die Probepartie (null: verworfen oder als Variante gespeichert). */
+export function mitProbe(stand: Spielstand, partie: Partie | null): Spielstand {
+  return { ...stand, probe: partie };
 }
 
 /** Merkt die laufende Partie (null: keine mehr). */
@@ -143,6 +156,8 @@ export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
  * beim zweiten Ende doppelt.
  */
 export function mitPartie(stand: Spielstand, partie: Partie): Spielstand {
+  // Eine Probepartie bleibt in ihrem eigenen Platz, auch beendet (zählt für nichts).
+  if (partie.einstellung.probe) return { ...stand, probe: partie };
   if (partie.ende) return legeAb(stand, partie);
   if (stand.partien.some((e) => e.partie.id === partie.id && e.partie.ende)) return stand;
   const partien = stand.partien.filter((e) => e.partie.id !== partie.id);

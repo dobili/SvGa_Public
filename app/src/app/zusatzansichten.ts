@@ -24,6 +24,9 @@ import {
   FallencheckAnsicht,
   SteckbriefAnsicht,
 } from "../ui/bildschirme/Steckbriefe";
+import { Variante } from "../ui/bildschirme/Variante";
+import { Varianten } from "../ui/bildschirme/Varianten";
+import { ANSICHT_VARIANTENKARTE, Variantenkarte } from "../ui/bildschirme/Variantenkarte";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -47,6 +50,12 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   // Steckbriefe nach Entwurf H2 (31.10.2026): ein Steckbrief (Wert: Name), die Fallenchecks.
   { kennung: ANSICHT_STECKBRIEF, Bildschirm: SteckbriefAnsicht },
   { kennung: ANSICHT_FALLENCHECKS, Bildschirm: FallencheckAnsicht },
+  // Variationsbrowser Stufe 1 (1.11.2026): Liste (Wert: Filter) und eine Variante (Wert: Kennung
+  // oder Quelle eines Entwurfs, ui/komponenten/varianten/variantenwert.ts).
+  { kennung: "varianten", Bildschirm: Varianten },
+  { kennung: "variante", Bildschirm: Variante },
+  // Stufe 2: der ganze Baum als verschiebbare Karte (Wert: Kennung der Variante).
+  { kennung: ANSICHT_VARIANTENKARTE, Bildschirm: Variantenkarte },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

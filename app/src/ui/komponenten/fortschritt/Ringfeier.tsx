@@ -6,7 +6,8 @@
  *
  * Rolle im Gesamtbild: Liegt in der Hülle der App (app/App.tsx) und erscheint auf jedem
  * Bildschirm, sobald ein Ring voll ist (Buch, Teile des Buches, Bündel der Bots;
- * fortschrittsringe.ts). Je Ring nur einmal (Merker auf dem Gerät); wer einen Ring schon voll
+ * fortschrittsringe.ts). Je Ring nur einmal (Merker auf dem Gerät, dazu das Datum in „verdient“,
+ * das mit der Datensicherung umzieht); wer einen Ring schon voll
  * hatte, bevor es die Gratulation gab, bekommt sie beim ersten Start einmal nachgereicht.
  * Danach zeigt sie die schlichtere Meldung neuer Abzeichen und Stufen (Abzeichenmeldung.tsx), damit
  * die Hülle der App dafür keinen eigenen Platz braucht.
@@ -19,6 +20,8 @@ import { Feuerwerk } from "../bausteine/Feuerwerk";
 import { Orden } from "../bausteine/Orden";
 import { Abzeichenmeldung } from "./Abzeichenmeldung";
 import { merkeGefeiert, offeneRinge, useFortschrittsringe } from "./fortschrittsringe";
+import { useOrdenprobe } from "./ordenprobe";
+import { useSpeicher } from "../../../speicher/speicher";
 import { Feierton } from "../gegner/Gruppenmodus";
 import { OrdenTeilen } from "../teilen/Stueckteilen";
 
@@ -29,9 +32,12 @@ import { OrdenTeilen } from "../teilen/Stueckteilen";
  */
 export function Ringfeier() {
   const ringe = useFortschrittsringe();
+  const verdient = useSpeicher((z) => z.daten.verdient);
+  const probe = useOrdenprobe();
   const [geschlossen, setzeGeschlossen] = useState<readonly string[]>([]);
   if (!ringe) return null;
-  const offen = offeneRinge([...ringe.buchringe, ...ringe.teilringe, ...ringe.botringe]).filter(
+  const alle = [...ringe.buchringe, ...ringe.teilringe, ...ringe.botringe];
+  const offen = offeneRinge(alle, undefined, verdient, probe).filter(
     (r) => !geschlossen.includes(r.testid),
   );
   const ring = offen[0];

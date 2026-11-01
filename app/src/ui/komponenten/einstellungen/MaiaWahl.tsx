@@ -7,7 +7,8 @@
  * Leser es auf Wunsch (app/maiapaket.ts), mit Fortschritt und Fehlermeldung. Danach schaltet ein
  * Schalter Maia an und aus; er gilt ab der nächsten Partie (Partieeinstellung „maia“).
  * Weniger Text P15 (31.10.2026): Erklärung und Lizenz im ⓘ, der Ladeknopf kompakt im Kopf.
- * Abhängigkeiten: Infoblase, app/maiapaket.ts, app/einstellungen.ts, engine/maia-web.ts, maiastand.ts, i18n.
+ * Abhängigkeiten: Infoblase, app/maiapaket.ts, app/einstellungen.ts, engine/maia-web.ts, maiastand.ts,
+ * maialadezustand.ts, i18n.
  */
 import { Download, UserRound } from "lucide-react";
 import { useState, type ReactNode } from "react";
@@ -19,6 +20,7 @@ import { Auswahl } from "../bausteine/Auswahl";
 import "../../stil/einleitungen.css";
 import { MitInfoblase } from "../bausteine/Infoblase";
 import { useMaiaBereit } from "./maiastand";
+import { zustandNachFehler, type Ladezustand } from "./maialadezustand";
 
 const PROZENT = 100;
 // Dezimale Megabyte wie die Angabe im Knopf (vorher MiB: „96 MB“ im Knopf, „91 MB“ beim Laden).
@@ -28,11 +30,6 @@ const PAKET_MB = 96;
 /** Größe der Zeichen im Kopf (Bildpunkte). */
 const LADEZEICHEN = 18;
 
-type Ladezustand =
-  | { readonly art: "ruhe" }
-  | { readonly art: "laedt"; readonly geladen: number; readonly gesamt: number }
-  | { readonly art: "fehler"; readonly meldung: string };
-
 /** Lädt das Paket und meldet den Stand über `setze`. */
 async function ladePaket(setze: (z: Ladezustand) => void) {
   setze({ art: "laedt", geladen: 0, gesamt: PAKET_MB * MB });
@@ -41,7 +38,8 @@ async function ladePaket(setze: (z: Ladezustand) => void) {
     await pruefeMaia();
     setze({ art: "ruhe" });
   } catch (fehler) {
-    setze({ art: "fehler", meldung: fehler instanceof Error ? fehler.message : String(fehler) });
+    console.warn("Maia nicht geladen:", fehler);
+    setze(zustandNachFehler(fehler, typeof navigator === "undefined" || navigator.onLine));
   }
 }
 
@@ -66,10 +64,12 @@ function Ladeknopf({ kompakt, setze }: { kompakt: boolean; setze: (z: Ladezustan
 
 /** Fortschritt beim Laden oder die Fehlermeldung; in Ruhe nichts. */
 function Ladestand({ zustand }: { zustand: Ladezustand }) {
-  if (zustand.art === "fehler")
+  if (zustand.art === "fehler" || zustand.art === "ohneNetz")
     return (
       <p className="fehlertext" role="alert">
-        {t("maia.fehler", { meldung: zustand.meldung })}
+        {zustand.art === "ohneNetz"
+          ? t("maia.ohneNetz")
+          : t("maia.fehler", { meldung: zustand.meldung })}
       </p>
     );
   if (zustand.art !== "laedt") return null;

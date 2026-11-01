@@ -1,10 +1,17 @@
 /**
  * Oberflächentests zu den Fehlern aus dem dritten großen Fehlertest (f3, 01.11.2026): geteilte
  * Links bei offener App, Startwahl und Touren mit der Leiste unten, Zurück-Taste über der
- * Startwahl, „Los geht's“ aus dem Profil. Jeder Test hält einen behobenen Fehler fest.
+ * Startwahl, „Los geht's“ aus dem Profil, Maia ohne Netz, voller Gerätespeicher. Jeder Test hält
+ * einen behobenen Fehler fest.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
+import {
+  oeffneAbbildung,
+  oeffneEinstellungen,
+  oeffneEinstellungsseite,
+  oeffneProfil,
+  starteImBrowser,
+} from "./hilfen";
 
 /** Breite eines kleinen Handys. */
 const HANDY = { width: 360, height: 800 };
@@ -82,4 +89,57 @@ test("„Los geht's“ im Profil zu „Erste Partie“: Bereich Spielen, Leiste 
   await page.getByTestId("infofenster").getByRole("button", { name: "Los geht's" }).click();
   await expect(page.getByRole("heading", { name: "Spielen" })).toBeVisible();
   await expect(aktiverBereich(page)).toHaveAccessibleName("Spielen");
+});
+
+test("Maia laden ohne Netz: ein klarer Satz statt „Failed to fetch“", async ({ page, context }) => {
+  await page.setViewportSize(HANDY);
+  await starteImBrowser(page);
+  await oeffneEinstellungsseite(page, "Bots und Wertung");
+  await context.setOffline(true);
+  const wahl = page.getByTestId("maia-wahl");
+  await wahl.getByRole("button", { name: /^Maia laden/ }).click();
+  await expect(wahl.getByRole("alert")).toHaveText(
+    /^Ohne Internetverbindung lässt sich Maia nicht laden\./,
+  );
+  await expect(wahl).not.toContainText("Failed to fetch");
+  await context.setOffline(false);
+});
+
+/** Verweilzeit, nach der eine Abbildung als angesehen zählt (wie speicher.spec.ts). */
+const VERWEILZEIT_MS = 31_000;
+
+test("voller Gerätespeicher: eigene Meldung, kein Absturz, nichts geht verloren", async ({
+  page,
+}) => {
+  await page.setViewportSize(HANDY);
+  // Die Datenbank meldet „voll“, solange window.voll gilt (wie ein Browser bei vollem Speicher).
+  await page.addInitScript(() => {
+    const fenster = window as unknown as { voll: boolean };
+    fenster.voll = false;
+    const put = IDBObjectStore.prototype.put;
+    IDBObjectStore.prototype.put = function (...werte: Parameters<typeof put>) {
+      if (fenster.voll) throw new DOMException("Der Speicher ist voll", "QuotaExceededError");
+      return put.apply(this, werte);
+    };
+  });
+  await page.clock.install();
+  await starteImBrowser(page);
+  await page.evaluate(() => ((window as unknown as { voll: boolean }).voll = true));
+  await oeffneAbbildung(page, "1.26", "1.26");
+  await page.clock.runFor(VERWEILZEIT_MS);
+  const hinweis = page.locator(".speicher-hinweis");
+  await expect(hinweis).toContainText("Der Speicher dieses Geräts ist voll");
+  await expect(page.getByTestId("absturzseite")).toHaveCount(0);
+  // Wieder Platz: Das nächste Speichern schreibt alles nach, der Hinweis geht.
+  await page.evaluate(() => ((window as unknown as { voll: boolean }).voll = false));
+  await page
+    .getByRole("navigation", { name: "Hauptbereiche" })
+    .getByRole("button", { name: "Buch", exact: true })
+    .click();
+  await oeffneAbbildung(page, "1.27", "1.27");
+  await page.clock.runFor(VERWEILZEIT_MS);
+  await expect(hinweis).toHaveCount(0);
+  await page.reload();
+  await oeffneProfil(page);
+  await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
 });

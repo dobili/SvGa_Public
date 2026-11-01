@@ -18,8 +18,10 @@ import { mitMerkerRekorden } from "./rekordmerker";
 /** Was beim Laden oder Speichern schiefging, für den Hinweis an den Leser. */
 export interface Speicherfehler {
   /** „laden“: kein Zugriff auf den Speicher; „speichern“: der letzte Stand fehlt auf dem
-   * Gerät; „neuer“ und „kaputt“: gespeicherte Daten unlesbar, aufgehoben, Neubeginn. */
-  readonly art: "laden" | "speichern" | "neuer" | "kaputt";
+   * Gerät; „voll“: ebenso, weil der Speicher des Geräts voll ist (QuotaExceededError, eigener
+   * Satz mit dem, was hilft); „neuer“ und „kaputt“: gespeicherte Daten unlesbar, aufgehoben,
+   * Neubeginn. */
+  readonly art: "laden" | "speichern" | "voll" | "neuer" | "kaputt";
   readonly meldung: string;
 }
 
@@ -55,6 +57,15 @@ let schreibkette: Promise<void> = Promise.resolve();
 function setze(teil: Partial<Speicherzustand>): void {
   zustand = { ...zustand, ...teil };
   abonnenten.forEach((abonnent) => abonnent());
+}
+
+/**
+ * Art eines Fehlers beim Schreiben: „voll“, wenn der Browser den Speicher des Geräts voll meldet
+ * (QuotaExceededError), sonst „speichern“.
+ * Beispiel: DOMException „QuotaExceededError“ → „voll“; TypeError → „speichern“.
+ */
+export function speicherfehlerArt(fehler: unknown): "speichern" | "voll" {
+  return fehler instanceof Error && fehler.name === "QuotaExceededError" ? "voll" : "speichern";
 }
 
 function alsMeldung(fehler: unknown): string {
@@ -232,11 +243,12 @@ export function speichere(daten: Nutzerdaten): Promise<boolean> {
     try {
       await schreibeRoh(zustand.daten);
       meldeAndereTabs();
-      if (zustand.fehler?.art === "speichern") setze({ fehler: null });
+      if (zustand.fehler?.art === "speichern" || zustand.fehler?.art === "voll")
+        setze({ fehler: null });
       return true;
     } catch (fehler) {
       console.error("Speichern fehlgeschlagen:", fehler);
-      setze({ fehler: { art: "speichern", meldung: alsMeldung(fehler) } });
+      setze({ fehler: { art: speicherfehlerArt(fehler), meldung: alsMeldung(fehler) } });
       return false;
     } finally {
       ausstehend -= 1;

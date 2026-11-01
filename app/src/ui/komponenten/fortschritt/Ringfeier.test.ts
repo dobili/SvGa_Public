@@ -16,4 +16,16 @@ describe("Ringfeier", () => {
     expect(offeneRinge(ringe, new Set()).map((r) => r.testid)).toEqual(["a", "d"]);
     expect(offeneRinge(ringe, new Set(["a"])).map((r) => r.testid)).toEqual(["d"]);
   });
+
+  it("ein Orden mit Datum in „verdient“ ist gefeiert, auch ohne Merker (Sicherung, f3)", () => {
+    const ringe = [ring("ich-uebungen", 3, 3), ring("ich-bots-10", 1, 1)];
+    const verdient = { "orden:uebungen": "2026-10-12T10:00:00.000Z" };
+    expect(offeneRinge(ringe, new Set(), verdient, new Set()).map((r) => r.testid)).toEqual([
+      "ich-bots-10",
+    ]);
+    // Zur Probe zählt nur der Merker: Die Probe zeigt die Gratulation trotzdem.
+    expect(
+      offeneRinge(ringe, new Set(), verdient, new Set(["ich-uebungen"])).map((r) => r.testid),
+    ).toEqual(["ich-uebungen", "ich-bots-10"]);
+  });
 });

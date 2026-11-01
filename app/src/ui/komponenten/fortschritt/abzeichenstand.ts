@@ -111,6 +111,21 @@ export interface Abzeichenstand {
   readonly grundlage: Abzeichengrundlage;
 }
 
+/**
+ * Braucht ein verdientes Abzeichen noch eine Meldung? Nein, wenn der Merker es als gefeiert kennt
+ * oder (außer zur Probe) seine erste Feier schon ein Datum in „verdient“ hat: So meldet ein neues
+ * Gerät nach dem Einspielen einer Datensicherung nicht jedes alte Abzeichen noch einmal
+ * (Fehlertest f3, 01.11.2026). Beispiel: „abzeichen:erstePartie“ am 12.10. → keine Meldung.
+ */
+export function istNeu(
+  kennung: string,
+  merker: Pick<Merkerstand, "gefeiert" | "probe">,
+  verdientDaten: Readonly<Record<string, string>>,
+): boolean {
+  if (merker.gefeiert.has(kennung)) return false;
+  return merker.probe.has(kennung) || verdientDaten[`abzeichen:${kennung}`] === undefined;
+}
+
 /** Stand der Erfahrung und der Abzeichen; null, solange der Speicher lädt. */
 export function useAbzeichenstand(): Abzeichenstand | null {
   const geladen = useSpeicher((z) => z.geladen);
@@ -136,7 +151,7 @@ export function useAbzeichenstand(): Abzeichenstand | null {
     return {
       stufe,
       verdient,
-      neu: [...verdient].filter((k) => !merker.gefeiert.has(k)),
+      neu: [...verdient].filter((k) => istNeu(k, merker, daten.verdient)),
       neueStufe: merker.stufeGefeiert !== null && stufe.nummer > merker.stufeGefeiert,
       still: merker.still,
       stufeUngemerkt: merker.stufeGefeiert === null,

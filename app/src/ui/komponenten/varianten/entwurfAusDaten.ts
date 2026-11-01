@@ -38,6 +38,7 @@ export function ausPartieeintrag(
   stelle: number,
   engine: boolean,
   jetzt: Date,
+  gegner = false,
 ): Variation | null {
   const { partie } = eintrag;
   const zuege = partie.zuege.map((z) => z.san);
@@ -59,6 +60,7 @@ export function ausPartieeintrag(
       startFen,
       zuege,
       eigeneFarbe: partie.einstellung.eigeneFarbe,
+      gegner,
       klassen: urteile.map((u) => u.klasse),
       beste: eintrag.beste,
       varianten: eintrag.varianten,
@@ -86,7 +88,9 @@ export function entwurfAusDaten(
       return ausStellung(quelle.art, quelle.fen, t("varianten.titel.stellung"), jetzt);
     case "partie": {
       const eintrag = daten.spiel.partien.find((e) => e.partie.id === quelle.id);
-      return eintrag ? ausPartieeintrag(eintrag, quelle.stelle, quelle.engine, jetzt) : null;
+      return eintrag
+        ? ausPartieeintrag(eintrag, quelle.stelle, quelle.engine, jetzt, quelle.gegner === true)
+        : null;
     }
     case "fehler": {
       const fehler = daten.fehler.find((f) => f.id === quelle.id);

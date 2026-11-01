@@ -73,10 +73,11 @@ describe("Karte (Mindmap)", () => {
     const zeile = (text: string) => mitBrett.knoten.find((k) => k.text === text)?.zeile;
     // 3. Sxe5 zweigt in Zeile 0 ab: Zeilen 1 bis 3 bleiben frei, Sxe4 steht in Zeile 4.
     expect(zeile("3... Sxe4?!")).toBe(4);
-    // 4. De2 zweigt in Zeile 4 ab: 4... Sf6 erst in Zeile 8, danach 3... Sc6 in Zeile 9.
+    // 4. De2 zweigt in Zeile 4 ab: 4... Sf6 erst in Zeile 8. Jede Linie endet mit einem
+    // Endbrett, das ebenfalls drei Zeilen braucht: 3... Sc6 erst in Zeile 12.
     expect(zeile("4... Sf6")).toBe(8);
-    expect(zeile("3... Sc6")).toBe(9);
-    expect(mitBrett.zeilen).toBe(10);
+    expect(zeile("3... Sc6")).toBe(12);
+    expect(mitBrett.zeilen).toBe(13);
   });
 });
 

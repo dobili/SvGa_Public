@@ -30,6 +30,8 @@ export interface Partieauswertung {
   /** Die Züge der Partie (englische Kurznotation). */
   readonly zuege: readonly string[];
   readonly eigeneFarbe: Color;
+  /** Auch an Fehlern des Gegners (Wunsch des Autors, 1.11.2026); fehlt: nur eigene. */
+  readonly gegner?: boolean;
   /** Zugklasse je Halbzug (spiel/auswertung.ts, zugurteile); leer ohne Auswertung. */
   readonly klassen: readonly (Zugklasse | null)[];
   /** Bester Zug je Stellung (UCI). */
@@ -106,7 +108,8 @@ export function mitEngineFolgen(
   auswertung.klassen.forEach((klasse, index) => {
     const weiss = index % 2 === 0 ? weissBeginnt : !weissBeginnt;
     const seite: Color = weiss ? "white" : "black";
-    if (!klasse || !FOLGEN_BEI.has(klasse) || seite !== auswertung.eigeneFarbe) return;
+    const zaehlt = seite === auswertung.eigeneFarbe || auswertung.gegner === true;
+    if (!klasse || !FOLGEN_BEI.has(klasse) || !zaehlt) return;
     // Ein unlesbarer Partiezug beendet die Hauptlinie; dahinter gibt es keinen Platz für Folgen.
     if (index >= pfad.length) return;
     const hier = () => ({ startFen: baum.startFen, zuege: stand.zuege });
@@ -116,5 +119,44 @@ export function mitEngineFolgen(
     const strafe = mitFolge(hier(), pfad.slice(0, index + 1), folgeAm(auswertung, index + 1), texte.strafe);
     stand = { zuege: strafe.zuege, gekuerzt: stand.gekuerzt || strafe.gekuerzt };
   });
+  return stand;
+}
+
+/** Ein Zug im Baum mit seiner Zugart aus der Analyse der Variante (spiel/variationsurteile.ts). */
+export interface Baumfehler {
+  /** Pfad bis einschließlich des Zuges. */
+  readonly pfad: Pfad;
+  readonly klasse: Zugklasse;
+}
+
+/**
+ * Legt die Engine-Folgen an den Fehlern einer analysierten Variante an, wie bei einer Partie.
+ *
+ * Warum: Wunsch des Autors (1.11.2026): Nach der Analyse einer Variante sollen auf Wunsch an
+ * Fehlern „Besser war“ und „So wird bestraft“ als Abzweige entstehen, wie beim Öffnen einer
+ * ausgewerteten Partie. Eine Variante hat keine eigene Farbe: Es zählen die Fehler beider Seiten.
+ * Eingaben: Baum, Fehler mit Pfad und Zugart (nur FOLGEN_BEI zählt), die Folge (UCI) ab einem Pfad
+ * (Hauptvariante der Engine, sonst ihr bester Zug, variantenanalyse.ts), Texte.
+ * Ausgabe: neuer Baum, „gekürzt“ an der Grenze. Schon vorhandene Folgen ändern nichts.
+ * Beispiel: 1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6?? → nach 3. Lc4 „Besser war“ 3... g6, nach 3... Sf6
+ * „So wird bestraft“ 4. Dxf7#.
+ */
+export function mitBaumfolgen(
+  baum: Zugbaum,
+  fehler: readonly Baumfehler[],
+  folgeAb: (pfad: Pfad) => readonly string[],
+  texte: Folgentexte,
+): { zuege: readonly Variationsknoten[]; gekuerzt: boolean } {
+  let stand = { zuege: baum.zuege, gekuerzt: false };
+  for (const { pfad, klasse } of fehler) {
+    if (!FOLGEN_BEI.has(klasse) || pfad.length === 0) continue;
+    const hier = () => ({ startFen: baum.startFen, zuege: stand.zuege });
+    const davor = pfad.slice(0, -1);
+    const besser = mitFolge(hier(), davor, folgeAb(davor), texte.besser);
+    stand = { zuege: besser.zuege, gekuerzt: stand.gekuerzt || besser.gekuerzt };
+    if (!MIT_STRAFE.has(klasse)) continue;
+    const strafe = mitFolge(hier(), pfad, folgeAb(pfad), texte.strafe);
+    stand = { zuege: strafe.zuege, gekuerzt: stand.gekuerzt || strafe.gekuerzt };
+  }
   return stand;
 }

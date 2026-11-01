@@ -21,6 +21,8 @@ import {
   neueVariationskennung,
   type Variation,
 } from "../../../training/variationen";
+import { Folgenwahl } from "./Folgenwahl";
+import { useFolgenwahl } from "./folgenstand";
 import { alsWert, varianteAnsicht, type Entwurfsquelle } from "./variantenwert";
 
 /** Höchstens so viele Einträge zeigen die Listen der Quellen (neueste zuerst). */
@@ -66,21 +68,19 @@ export function AbbildungWahl() {
 export function PartieWahl() {
   const oeffne = useOeffne();
   const partien = useSpeicher((z) => z.daten.spiel.partien);
-  const [engine, setzeEngine] = useState(false);
+  // Vorab an wie am Gabel-Knopf der Partie (PartieGabel.tsx); gilt nur für ausgewertete Partien.
+  const [folgen, setzeFolgen] = useFolgenwahl();
   if (partien.length === 0) return <p className="hinweis">{t("varianten.neu.keinePartien")}</p>;
   return (
     <div className="neuquelle">
-      <label className="schalterzeile">
-        <input type="checkbox" checked={engine} onChange={(e) => setzeEngine(e.target.checked)} />
-        <span>{t("varianten.engine.schalter")}</span>
-      </label>
+      <Folgenwahl stand={folgen} setze={setzeFolgen} />
       <ul className="quellenliste">
         {partien.slice(0, LISTENLAENGE).map((e) => (
           <li key={e.partie.id}>
             <button
               type="button"
               className="knopf-zweit"
-              onClick={() => oeffne({ art: "partie", id: e.partie.id, stelle: 0, engine })}
+              onClick={() => oeffne({ art: "partie", id: e.partie.id, stelle: 0, ...folgen })}
             >
               {t("varianten.neu.partieZeile", {
                 datum: datumText(new Date(e.partie.begonnen)),

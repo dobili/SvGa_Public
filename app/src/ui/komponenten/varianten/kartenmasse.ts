@@ -19,6 +19,11 @@ export const KARTE = { spalte: 152, zeile: 50, breite: 76, hoehe: 32, rand: 24, 
  * Brett und den senkrechten Linien links und rechts bleiben (152 − 136) / 2 = 8 Bildpunkte.
  */
 export const ABZWEIGBRETT = { groesse: 136, abstand: 6 } as const;
+/**
+ * Aufteilung der 136 Bildpunkte: Brett, Lücke, Bewertungsbalken rechts daneben (Wunsch des
+ * Autors, 1.11.2026: „welche Variante die beste für Schwarz und welche für Weiß wäre“).
+ */
+export const BRETTTEILE = { brett: 124, luecke: 4, balken: 8 } as const;
 /** Radius des Kommentarpunkts und sein Abstand von der Ecke. */
 export const PUNKT = { radius: 3.5, abstand: 7 } as const;
 /** Grundlinie der Schrift relativ zur Mitte des Knotens. */
@@ -41,10 +46,21 @@ export function brettecke(k: Pick<Kartenknoten, "spalte" | "zeile">): { x: numbe
   };
 }
 
-/** Größe der ganzen Karte (bei Zoom 1). */
+/** Linke obere Ecke des Endbretts rechts neben dem letzten Zug einer Linie (bei Zoom 1). */
+export function endbrettecke(k: Pick<Kartenknoten, "spalte" | "zeile">): { x: number; y: number } {
+  const m = knotenmitte(k);
+  return { x: m.x + KARTE.breite / 2 + ABZWEIGBRETT.abstand, y: m.y - KARTE.hoehe / 2 };
+}
+
+/** Größe der ganzen Karte (bei Zoom 1); rechts und unten mit Platz für ein Endbrett. */
 export function kartengroesse(layout: Kartenlayout): { breite: number; hoehe: number } {
   return {
-    breite: 2 * KARTE.rand + (layout.spalten - 1) * KARTE.spalte + KARTE.breite,
-    hoehe: 2 * KARTE.rand + (layout.zeilen - 1) * KARTE.zeile + KARTE.hoehe,
+    breite:
+      2 * KARTE.rand +
+      (layout.spalten - 1) * KARTE.spalte +
+      KARTE.breite +
+      ABZWEIGBRETT.abstand +
+      ABZWEIGBRETT.groesse,
+    hoehe: 2 * KARTE.rand + (layout.zeilen - 1) * KARTE.zeile + ABZWEIGBRETT.groesse,
   };
 }

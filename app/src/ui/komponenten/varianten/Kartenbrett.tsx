@@ -1,6 +1,7 @@
 /**
- * Kleine Bretter an den Abzweigen der Variantenkarte: die Stellung am Abzweig mit den blauen,
- * nummerierten Fortsetzungspfeilen.
+ * Kleine Bretter in der Variantenkarte: unter jedem Abzweig die Stellung mit den blauen,
+ * nummerierten Fortsetzungspfeilen, rechts neben dem letzten Zug jeder Linie ihre Endstellung;
+ * daneben ein schmaler Bewertungsbalken, wenn die Stellung analysiert ist.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (1.11.2026): „in der Karte einer Variation an den
  * Abzweigungen auch die konkrete Abzweigstellung mit den blauen Pfeilen, so kann man sich viel
@@ -9,7 +10,9 @@
  * ganzen Eröffnung leicht bleiben, sind die dunklen Felder ein einziger Pfad und jede Figur ein
  * Verweis (<use>) auf eines von zwölf Symbolen. Farben und Figurensatz wie in den Einstellungen;
  * die Pfeile sind dieselben wie am großen Brett (Fortsetzungspfeile.tsx). Ein Tipp aufs Brett
- * wählt den Abzweig wie ein Tipp auf seinen Knoten.
+ * wählt den Abzweig wie ein Tipp auf seinen Knoten. Endstellungen und Balken: weitere Wünsche des
+ * Autors vom 1.11.2026 („für jede Variante die Endstellung als Diagramm“, „Stellungsbewertungsbalken
+ * neben dem Diagramm“, damit man beim Scrollen sieht, welche Linie Weiß und welche Schwarz liegt).
  * Abhängigkeiten: ui/brett (Maße, Figur), Fortsetzungspfeile.tsx, kartenmasse.ts, app/einstellungen.
  */
 import { memo } from "react";
@@ -19,13 +22,18 @@ import { BRETT, BRETTFARBEN, FELD } from "../../brett/masse";
 import type { Kartenknoten } from "../../../schach/baumlayout";
 import type { Fortsetzungschip } from "./fortsetzungen";
 import { Fortsetzungspfeile } from "./Fortsetzungspfeile";
-import { ABZWEIGBRETT, brettecke } from "./kartenmasse";
+import { balkenanteil, balkentext } from "../../../spiel/rueckblick";
+import { BRETTTEILE, brettecke, endbrettecke } from "./kartenmasse";
 
-/** Ein Brett der Karte: Stelle des Knotens, Stellung und die Fortsetzungen als Pfeile. */
+/** Ein Brett der Karte: Stelle des Knotens, Stellung, Fortsetzungen als Pfeile, Art und Wert. */
 export interface Abzweigbrett {
   readonly stelle: number;
   readonly fen: string;
   readonly chips: readonly Fortsetzungschip[];
+  /** „abzweig“: unter dem Knoten, mit Pfeilen; „ende“: rechts neben dem letzten Zug. */
+  readonly art: "abzweig" | "ende";
+  /** Bewertung aus Sicht von Weiß in Bauern; null ohne Analyse (dann kein Balken). */
+  readonly wert: number | null;
 }
 
 const REIHEN = 8;
@@ -74,7 +82,32 @@ export function Figurensymbole() {
   );
 }
 
-/** Ein Brett unter dem Knoten ``k``. */
+/** Schmaler Bewertungsbalken rechts neben dem Brett: unten Weiß, oben Schwarz, Wert als Titel. */
+function Kartenbalken({ ecke, wert }: { ecke: { x: number; y: number }; wert: number }) {
+  const x = ecke.x + BRETTTEILE.brett + BRETTTEILE.luecke;
+  const weiss = balkenanteil(wert) * BRETTTEILE.brett;
+  return (
+    <g className="kk-balken" data-testid="kartenbalken">
+      <title>{balkentext(wert)}</title>
+      <rect
+        x={x}
+        y={ecke.y}
+        width={BRETTTEILE.balken}
+        height={BRETTTEILE.brett}
+        className="kk-balken-schwarz"
+      />
+      <rect
+        x={x}
+        y={ecke.y + BRETTTEILE.brett - weiss}
+        width={BRETTTEILE.balken}
+        height={weiss}
+        className="kk-balken-weiss"
+      />
+    </g>
+  );
+}
+
+/** Ein Brett unter dem Knoten ``k`` (Abzweig) oder rechts daneben (Endstellung). */
 export const Kartenbrett = memo(function Kartenbrett({
   brett,
   k,
@@ -84,14 +117,19 @@ export const Kartenbrett = memo(function Kartenbrett({
 }) {
   const { brettfarben } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
-  const ecke = brettecke(k);
+  const ecke = brett.art === "ende" ? endbrettecke(k) : brettecke(k);
   return (
-    <g data-knoten={brett.stelle} data-testid="kartenbrett" className="kk-brett">
+    <g
+      data-knoten={brett.stelle}
+      data-testid={brett.art === "ende" ? "kartenendbrett" : "kartenbrett"}
+      className="kk-brett"
+    >
+      {brett.wert !== null && <Kartenbalken ecke={ecke} wert={brett.wert} />}
       <svg
         x={ecke.x}
         y={ecke.y}
-        width={ABZWEIGBRETT.groesse}
-        height={ABZWEIGBRETT.groesse}
+        width={BRETTTEILE.brett}
+        height={BRETTTEILE.brett}
         viewBox={`0 0 ${BRETT} ${BRETT}`}
       >
         <rect width={BRETT} height={BRETT} fill={farben.hell} />

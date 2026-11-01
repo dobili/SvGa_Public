@@ -197,3 +197,14 @@
   stroke: var(--linie-stark);
   stroke-width: 6;
 }
+
+/* Bewertungsbalken neben den Brettern der Karte: unten Weiß, oben Schwarz. */
+.kk-balken-schwarz {
+  fill: var(--navy);
+  stroke: var(--linie-stark);
+  stroke-width: 1;
+}
+
+.kk-balken-weiss {
+  fill: var(--creme);
+}

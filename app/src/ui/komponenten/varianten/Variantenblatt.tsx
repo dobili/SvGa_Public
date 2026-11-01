@@ -73,7 +73,8 @@ function Felder({ stand }: { stand: Variantenstand }) {
 
 /**
  * Das Blatt. Eingaben: Zustand, offen, Schließen, was nach dem Löschen geschieht (zurück zur Liste).
- * Sonderfall: Ein Entwurf (noch nichts gespeichert) wird beim Umbenennen gespeichert.
+ * Sonderfall: Ein Entwurf bleibt auch beim Umbenennen ungespeichert, bis der Leser „Speichern“
+ * tippt (Wunsch des Autors, 1.11.2026).
  */
 export function Variantenblatt({
   stand,

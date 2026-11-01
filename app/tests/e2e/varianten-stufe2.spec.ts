@@ -74,7 +74,7 @@ test("Stift: Pfeile und Rahmen mit Nummern je Farbe, Legende, Radierer, Neuladen
   await page.reload();
   await page.getByRole("navigation").getByRole("button", { name: "Training" }).click();
   await page.getByTestId("kachel-varianten").getByRole("button").click();
-  await page.getByTestId("variantenkarte").getByRole("button").click();
+  await page.getByTestId("variantenkarte").getByRole("button").first().click();
   await expect(page.getByTestId("markennummer")).toHaveCount(2);
   await expect(page.getByTestId("legende")).toContainText("Sxe4 ist gierig");
 });

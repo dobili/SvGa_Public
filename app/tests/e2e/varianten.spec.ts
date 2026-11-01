@@ -83,7 +83,7 @@ test("Variante aus Abb. 2.40: Abzweig, Pfeile, Kommentar, Hauptvariante, Lösche
   const karte = page.getByTestId("variantenkarte");
   await expect(karte).toHaveCount(1);
   await expect(karte).toContainText("Abb. 2.40");
-  await karte.getByRole("button").click();
+  await karte.getByRole("button").first().click();
   await page.getByRole("button", { name: "Zum Ende" }).click();
   await expect(page.getByTestId("kommentarzeile")).toContainText("Dame deckt e5");
 
@@ -340,4 +340,32 @@ test("Speichern nur per Abfrage: Zurück fragt, „Nicht speichern“ verwirft, 
   await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
   await frage.getByRole("button", { name: "Abbrechen" }).click();
   await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+});
+
+test("Liste: Stift benennt um, Papierkorb löscht nach Nachfrage; Titel mit Stift", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneVarianten(page);
+  await page.getByRole("button", { name: "Neue Variante" }).click();
+  await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
+  await ziehe(page, "e2", "e4");
+  await page.getByTestId("variante-speichern").click();
+  // Der Titel zeigt einen Stift und öffnet das Blatt.
+  await expect(page.getByTestId("variantentitel").locator(".variantentitel-stift")).toBeVisible();
+  await page.getByRole("button", { name: "Zurück" }).first().click();
+  const karte = page.getByTestId("variantenkarte");
+  await expect(karte).toHaveCount(1);
+  await karte.getByTestId("variante-bearbeiten").click();
+  const blatt = page.getByTestId("variantenlistenblatt");
+  await blatt.getByLabel("Name").fill("Mein Königsbauer");
+  await blatt.getByRole("button", { name: "Speichern", exact: true }).click();
+  await expect(karte).toContainText("Mein Königsbauer");
+  await karte.getByTestId("variante-loeschen").click();
+  await expect(blatt).toContainText("„Mein Königsbauer“ endgültig löschen?");
+  await blatt.getByRole("button", { name: "Abbrechen" }).click();
+  await expect(karte).toHaveCount(1);
+  await karte.getByTestId("variante-loeschen").click();
+  await blatt.getByRole("button", { name: "Ja, löschen" }).click();
+  await expect(page.getByTestId("varianten-leer")).toBeVisible();
 });

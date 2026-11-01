@@ -73,7 +73,7 @@ test("Analyse: Fortschritt, Zugarten, Balken, Engine-Pfeil, Schalter, Nachrechne
   // Die Schalter merkt das Gerät; die Werte stehen im Speicher.
   await page.reload();
   await oeffneVarianten(page);
-  await page.getByTestId("variantenkarte").getByRole("button").click();
+  await page.getByTestId("variantenkarte").getByRole("button").first().click();
   await expect(page.getByTestId("analysechip-symbole")).toHaveAttribute("aria-pressed", "false");
   await page.getByTestId("analysechip-symbole").click();
   await page.getByTestId("analysechip-balken").click();
@@ -92,6 +92,26 @@ test("Analyse: Fortschritt, Zugarten, Balken, Engine-Pfeil, Schalter, Nachrechne
   const pgn = await readFile(await (await herunterladen).path(), "utf8");
   expect(pgn).toContain("[%eval ");
   expect(pgn).toContain("[%svgb ");
+});
+
+test("Nach der Analyse: Engine-Folgen als Abzweige, Endbretter und Balken in der Karte", async ({
+  page,
+}) => {
+  test.setTimeout(ANALYSE_FRIST * 2);
+  await starteImBrowser(page);
+  await liesEin(page, '[Event "Folgen"]\n\n1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6 4. Qxf7# *');
+  await page.getByTestId("analyseknopf").click();
+  await expect(page.getByTestId("analysefortschritt")).toHaveCount(0, { timeout: ANALYSE_FRIST });
+  // 3... Sf6?? ist ein Patzer: Der Knopf legt „Besser war“ und „So wird bestraft“ an.
+  const folgen = page.getByTestId("analysefolgen");
+  await expect(folgen).toBeVisible();
+  await folgen.click();
+  await expect(folgen).toHaveCount(0, { timeout: ANALYSE_FRIST });
+  await page.getByTestId("kartenknopf").click();
+  await expect(page.locator(".kk-knoten.engine").first()).toBeVisible();
+  // Jede Linie endet mit einem Endbrett; analysierte Bretter haben einen Balken.
+  expect(await page.getByTestId("kartenendbrett").count()).toBeGreaterThanOrEqual(2);
+  expect(await page.getByTestId("kartenbalken").count()).toBeGreaterThanOrEqual(2);
 });
 
 test("Analyse abbrechen: Fertiges bleibt, der Knopf ist wieder aus", async ({ page }) => {

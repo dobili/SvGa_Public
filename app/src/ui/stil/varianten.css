@@ -350,3 +350,41 @@
 .variantenhinweis:empty {
   display: none;
 }
+
+/* Liste „Varianten“: Stift und Papierkorb neben jeder Karte (Wunsch des Autors, 1.11.2026). */
+.variantenkarte {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.variantenkarte .variantenkarte-knopf {
+  flex: 1;
+  min-width: 0;
+}
+
+.variantenkarte-aktionen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Titel der Variante: der Stift zeigt, dass er antippbar ist. */
+.variantentitel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.variantentitel-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.variantentitel-stift {
+  flex: none;
+  color: var(--gold-text);
+}

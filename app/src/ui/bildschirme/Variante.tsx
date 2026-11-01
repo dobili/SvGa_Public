@@ -15,7 +15,7 @@
  * Eingetragen in app/zusatzansichten.ts unter „variante“ (Wert: variantenwert.ts).
  * Abhängigkeiten: komponenten/varianten, Navigation, i18n.
  */
-import { NotebookText, Share2 } from "lucide-react";
+import { NotebookText, Pencil, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
@@ -40,6 +40,7 @@ import {
 } from "../komponenten/varianten/useVariantenanalyse";
 import { useVariantenentwurf } from "../komponenten/varianten/useVariantenentwurf";
 import { VarianteBrett } from "../komponenten/varianten/VarianteBrett";
+import { Analysefolgen } from "../komponenten/varianten/Analysefolgen";
 import { Speicherfrage } from "../komponenten/varianten/Speicherfrage";
 import { useSpeicherfrage, type Speicherfragen } from "../komponenten/varianten/useSpeicherfrage";
 import { Variantenblatt } from "../komponenten/varianten/Variantenblatt";
@@ -52,6 +53,8 @@ import "../stil/spielenneu.css";
 import "../stil/variantenstift.css";
 
 const SYMBOL = 18;
+/** Größe des Stifts hinter dem Titel. */
+const TITELSTIFT = 16;
 
 /** Nach dem ersten Speichern: Ansicht auf die Kennung umstellen und den Pfad merken. */
 function useGespeicherteAnsicht(stand: Variantenstand, wert: string | null, ruhig: boolean) {
@@ -89,8 +92,12 @@ function VarianteKopf(props: { titel: string; beiBlatt: () => void; beiZurueck: 
           className="knopf-flach variantentitel"
           onClick={beiBlatt}
           data-testid="variantentitel"
+          data-tour="variante-titel"
+          aria-label={t("varianten.titelBearbeiten", { titel: titel || t("varianten.ohneTitel") })}
         >
-          {titel || t("varianten.ohneTitel")}
+          {/* Das Stift-Zeichen zeigt, dass der Titel antippbar ist (Wunsch des Autors, 1.11.2026). */}
+          <span className="variantentitel-text">{titel || t("varianten.ohneTitel")}</span>
+          <Pencil size={TITELSTIFT} aria-hidden="true" className="variantentitel-stift" />
         </button>
       }
       zurueckText={t("varianten.zurueck")}
@@ -200,6 +207,7 @@ function Inhalt({ anfang, pfad, wert }: { anfang: Variation; pfad: Pfad; wert: s
       />
       <Variantenmeldung stand={stand} />
       <Analysefortschritt analyse={analyse} />
+      <Analysefolgen stand={stand} analyse={analyse} />
       <Variantenkommentar text={stand.variation.kommentar} />
       <LeisteUndBrett stand={stand} stift={stift} analyse={analyse} beiMenue={setzeMenue} />
       <UnterDemBrett

@@ -11,7 +11,8 @@
  * hängt senkrecht unter seinem Abzweig und läuft dann nach rechts. Unter jedem Abzweig bleiben
  * BRETTZEILEN Zeilen frei für das kleine Brett mit den Fortsetzungspfeilen (Wunsch des Autors,
  * 1.11.2026: „an den Abzweigungen auch die konkrete Abzweigstellung mit den blauen Pfeilen“); die
- * weiteren Fortsetzungen beginnen erst darunter.
+ * weiteren Fortsetzungen beginnen erst darunter. Ebenso rechts neben dem letzten Zug jeder Linie
+ * für ihre Endstellung (Wunsch des Autors, 1.11.2026): Darunter bleiben dieselben Zeilen frei.
  * Abhängigkeiten: chessops, schach/notation.ts, schach/variationsbaum.ts, training/variationen.ts.
  * Buchbezug: Kapitel 0, „Wie liest man Schachzüge?“ (Hauptvariante zuerst, „...“ für Schwarz).
  */
@@ -104,6 +105,10 @@ function legeFortsetzungen(
     const danach = pos.clone();
     danach.play(zug);
     legeFortsetzungen(lauf, stelle, k.weiter, danach);
+    // Ende einer Linie: Ihr Endbrett steht rechts daneben und reicht über die nächsten Zeilen.
+    if (k.weiter.length === 0) {
+      lauf.naechsteZeile = Math.max(lauf.naechsteZeile, zeile + 1 + lauf.platz);
+    }
   });
 }
 

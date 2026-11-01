@@ -33,6 +33,36 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.48: Bearbeiten und Löschen auffindbar (1.11.2026)
+
+- [ ] N2574. Training › Varianten: Neben jeder Variante stehen ein Stift und ein Papierkorb. Der Stift öffnet
+      Name und Kommentar („Speichern“ übernimmt, „Abbrechen“ nicht), der Papierkorb fragt „„…“ endgültig
+      löschen?“. In einer geöffneten Variante steht hinter dem Titel ein goldener Stift; Antippen öffnet
+      Name, Kommentar, Teilen und Löschen. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2576. **Engine-Folgen vorab an:** Eine ausgewertete Partie mit mindestens einem eigenen Fehler, Patzer oder
+      verpassten Gewinn öffnen → Gabel-Knopf am Brett: Der Schalter „Engine-Folgen übernehmen („Besser
+      war …“, „So wird bestraft“)“ ist jetzt schon angehakt → „Öffnen“. An jedem eigenen Fehler zweigt
+      „Besser war (Engine)“ ab, bei Fehler und Patzer zusätzlich nach deinem Zug „So wird bestraft
+      (Engine)“. Ungenauigkeiten bekommen keine Folgen. Ebenso unter Varianten › Neue Variante ›
+      Partie. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2577. **Fehler des Gegners:** Am Gabel-Knopf einer ausgewerteten Partie steht unter „Engine-Folgen
+      übernehmen“ der Haken „Auch an Fehlern des Gegners“ (vorab an). Mit beiden Haken bekommen auch die
+      Fehler des Gegners „Besser war (Engine)“ und „So wird bestraft (Engine)“. Ebenso unter Neue Variante ›
+      Partie. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5
+      2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
+      Folgen übernehmen (+… Züge)“. Antippen legt an Fehlern, Patzern und verpassten Gewinnen beider Seiten
+      „Besser war“ und „So wird bestraft“ als Abzweige an (Züge mit Chip-Zeichen „Engine“); danach
+      verschwindet der Knopf. Ungenauigkeiten bekommen nichts.
+- [ ] N2579. **Karte:** Rechts neben dem letzten Zug jeder Linie steht ihre Endstellung als kleines Brett.
+      Nach der Analyse steht neben jedem Brett der Karte (Abzweige und Endstellungen) ein schmaler
+      Bewertungsbalken (unten Weiß, oben Schwarz): So sieht man beim Scrollen, welche Linie wem liegt.
+- [ ] N2580. **Baumansicht:** Nach der Analyse steht links an jedem kleinen Brett der Abzweig-Karten der
+      Bewertungsbalken mit Zahl.
+- [ ] N2575. Touren (Kompass): Die Tour der Variante beginnt mit dem Titel (Bearbeiten, Löschen), die Tour der
+      Liste nennt Stift und Papierkorb, die Touren von Lernsammlung und Fehlerdatenbank sagen, dass ein
+      aufgeklappter Eintrag „Bearbeiten“ und „Löschen“ (mit „Rückgängig“) hat.
+
 ### Neu in 0.3.47: Meisterpartien statt Studien, gespeicherte Werte (1.11.2026)
 
 - [ ] N2570. Varianten → Neue Variante: Statt „Studie (Kapitel 10)“ steht jetzt die Kachel „Meisterpartie“

@@ -17,7 +17,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { sprache, t } from "../../i18n/sprache";
 import { kartenlayout, knotenstelle, type Kartenlayout } from "../../schach/baumlayout";
-import { fenAm, type Pfad } from "../../schach/variationsbaum";
+import { fenAm, knotenAm, type Pfad } from "../../schach/variationsbaum";
+import { HUNDERTSTEL } from "../../training/variationswerte";
 import type { Variation } from "../../training/variationen";
 import { useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "../komponenten/bausteine/InfoKnopf";
@@ -162,15 +163,33 @@ function Zeichenlegende() {
   );
 }
 
+/** Bewertung einer Stellung aus den Knotendaten (Hundertstel → Bauern); null ohne Analyse. */
+function wertAm(variation: Variation, pfad: Pfad): number | null {
+  const daten = pfad.length === 0 ? variation.start : knotenAm(variation, pfad);
+  return daten?.w === undefined ? null : daten.w / HUNDERTSTEL;
+}
+
 /**
- * Die Bretter der Abzweige: Stellung und Fortsetzungspfeile je Knoten mit mehr als einer
- * Fortsetzung. Beispiel: Abb. 2.40 → ein Brett nach 3. Sxe5 mit Stern an d7–d6 und „2“ an f6–e4.
+ * Die Bretter der Karte: unter jedem Abzweig Stellung und Fortsetzungspfeile, rechts neben dem
+ * letzten Zug jeder Linie die Endstellung; dazu je der Wert für den Balken.
+ * Beispiel: Abb. 2.40 → ein Brett nach 3. Sxe5 mit Stern an d7–d6 und „2“ an f6–e4, dazu je ein
+ * Endbrett am Ende von 3... d6 und von 3... Sxe4.
  */
 function abzweigbretter(variation: Variation, layout: Kartenlayout): Abzweigbrett[] {
+  const mitNachfolger = new Set(layout.kanten.map((k) => k.von));
   return layout.knoten.flatMap((k, stelle) => {
-    if (k.abzweige === 0) return [];
     const fen = fenAm(variation, k.pfad);
-    return fen ? [{ stelle, fen, chips: fortsetzungschips(variation, k.pfad, sprache()) }] : [];
+    if (!fen) return [];
+    const wert = wertAm(variation, k.pfad);
+    const bretter: Abzweigbrett[] = [];
+    if (k.abzweige > 0) {
+      const chips = fortsetzungschips(variation, k.pfad, sprache());
+      bretter.push({ stelle, fen, chips, art: "abzweig", wert });
+    }
+    if (stelle > 0 && !mitNachfolger.has(stelle)) {
+      bretter.push({ stelle, fen, chips: [], art: "ende", wert });
+    }
+    return bretter;
   });
 }
 

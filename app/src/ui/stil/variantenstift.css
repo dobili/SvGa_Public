@@ -325,3 +325,15 @@
 .abzweigtext .hinweis {
   font-size: var(--groesse-fein);
 }
+
+/* Baumansicht: Bewertungsbalken links neben dem kleinen Brett (Wunsch des Autors, 1.11.2026). */
+.abzweigbrett {
+  display: flex;
+  gap: 4px;
+  align-items: stretch;
+}
+
+.abzweigbrett .brett {
+  flex: 1;
+  min-width: 0;
+}

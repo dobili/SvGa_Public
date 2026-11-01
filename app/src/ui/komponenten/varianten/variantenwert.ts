@@ -28,8 +28,10 @@ export type Entwurfsquelle =
       readonly art: "partie";
       readonly id: string;
       readonly stelle: number;
-      /** Engine-Folgen „Besser war …“ und „So wird bestraft“ übernehmen (Vorgabe aus). */
+      /** Engine-Folgen „Besser war …“ und „So wird bestraft“ übernehmen. */
       readonly engine: boolean;
+      /** Die Folgen auch an Fehlern des Gegners (Wunsch des Autors, 1.11.2026). */
+      readonly gegner?: boolean;
     }
   | { readonly art: "fehler" | "sammlung"; readonly id: string }
   /** Stufe 4: ganze Eröffnung aus Buch und/oder Praxis (eroeffnungsentwurf.ts). */
@@ -64,7 +66,10 @@ export function alsWert(quelle: Entwurfsquelle): string {
   const teile: (string | number)[] = [NEU, quelle.art];
   if (quelle.art === "fen" || quelle.art === "stellung") teile.push(quelle.fen);
   if (quelle.art === "abbildung") teile.push(quelle.nummer, (quelle.pfad ?? []).join(ZUGTRENNER));
-  if (quelle.art === "partie") teile.push(quelle.id, quelle.stelle, quelle.engine ? 1 : 0);
+  // Engine-Folgen: 0 aus, 1 nur eigene Fehler, 2 auch die des Gegners.
+  if (quelle.art === "partie") {
+    teile.push(quelle.id, quelle.stelle, quelle.engine ? (quelle.gegner ? 2 : 1) : 0);
+  }
   if (quelle.art === "fehler" || quelle.art === "sammlung") teile.push(quelle.id);
   if (quelle.art === "eroeffnung") {
     const schalter = `${quelle.buch ? 1 : 0}${quelle.praxis ? 1 : 0}`;
@@ -115,7 +120,15 @@ function quelleAus(art: string, rest: readonly string[]): Entwurfsquelle | null 
   if (art === "abbildung" && a) {
     return { art, nummer: a, pfad: rest.length > 1 ? b.split(ZUGTRENNER).filter(Boolean) : null };
   }
-  if (art === "partie" && a) return { art, id: a, stelle: Number(b) || 0, engine: c === "1" };
+  if (art === "partie" && a) {
+    return {
+      art,
+      id: a,
+      stelle: Number(b) || 0,
+      engine: c === "1" || c === "2",
+      gegner: c === "2",
+    };
+  }
   if ((art === "fehler" || art === "sammlung") && a) return { art, id: a };
   return quelleStufe4(art, rest);
 }

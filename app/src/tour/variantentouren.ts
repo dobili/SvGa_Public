@@ -43,6 +43,8 @@ export const VARIANTENTOUREN: Readonly<Record<Variantentour, Tour>> = {
   variante: {
     titel: "tour.titel.variante",
     schritte: [
+      // Wunsch des Autors (1.11.2026): Bearbeiten und Löschen müssen in der Tour vorkommen.
+      am("variante-titel", "tour.variante.titel"),
       am("variante-leiste", "tour.variante.leiste"),
       am("brett", "tour.variante.brett"),
       am("variante-kommentar", "tour.variante.kommentar"),

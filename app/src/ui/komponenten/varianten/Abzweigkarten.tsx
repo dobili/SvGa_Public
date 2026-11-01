@@ -6,7 +6,7 @@
  * Bild c). Die Pfeile sind dieselben wie am großen Brett (Fortsetzungspfeile.tsx: blau gepunktet,
  * Stern an der Hauptfortsetzung, Wunsch des Autors zu Frage b), die Knöpfe tragen dieselbe Marke
  * (★, 2, 3 …). Ein Tipp auf einen Knopf springt in der Variante zu diesem Zug und holt die
- * Zugleiste ins Bild. Bei sehr vielen Abzweigen stehen zuerst ERSTE_KARTEN Karten da, der Rest
+ * Zugleiste ins Bild. Nach der Analyse steht links am Brett der Bewertungsbalken. Bei sehr vielen Abzweigen stehen zuerst ERSTE_KARTEN Karten da, der Rest
  * auf Wunsch (jede Karte zeichnet ein ganzes Brett).
  * Abhängigkeiten: schach/abzweigkarten.ts, fortsetzungen.ts, Fortsetzungspfeile.tsx, ui/brett,
  * useVariante.ts, i18n, lucide-react.
@@ -23,6 +23,9 @@ import { fenAm } from "../../../schach/variationsbaum";
 import { Brett } from "../../brett/Brett";
 import { fortsetzungschips, STERN } from "./fortsetzungen";
 import { Fortsetzungspfeile } from "./Fortsetzungspfeile";
+import { HUNDERTSTEL } from "../../../training/variationswerte";
+import { Bewertungsbalken } from "../rueckblick/Bewertungsbalken";
+import { knotendatenAm } from "./useMarkierstift";
 import type { Variantenstand } from "./useVariante";
 
 const SYMBOL = 18;
@@ -89,6 +92,8 @@ function Karte({ karte, stand }: { karte: Abzweigkarte; stand: Variantenstand })
     ? t("varianten.baum.nach", { zug: karte.nach })
     : t("varianten.baum.start");
   const einrueckung = Math.min(karte.tiefe, TIEFSTE_EINRUECKUNG);
+  // Bewertungsbalken neben dem Brett, wenn die Stellung analysiert ist (Wunsch des Autors, 1.11.2026).
+  const wert = knotendatenAm(stand.variation, karte.pfad).w;
   return (
     <li className={`abzweigkarte tiefe-${einrueckung}`} data-testid="abzweigkarte">
       {karte.in && (
@@ -99,6 +104,7 @@ function Karte({ karte, stand }: { karte: Abzweigkarte; stand: Variantenstand })
       )}
       <div className="abzweiginhalt">
         <div className="abzweigbrett">
+          {wert !== undefined && <Bewertungsbalken wert={wert / HUNDERTSTEL} gedreht={false} />}
           <Brett
             fen={fen}
             markierungen={[]}

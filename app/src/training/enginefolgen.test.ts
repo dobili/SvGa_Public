@@ -3,7 +3,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { fortsetzungenAm, knotenAm } from "../schach/variationsbaum";
-import { mitEngineFolgen, type Partieauswertung } from "./enginefolgen";
+import { mitBaumfolgen, mitEngineFolgen, type Partieauswertung } from "./enginefolgen";
 import { ausPartie } from "./variationsquellen";
 
 const JETZT = new Date("2026-11-01T10:00:00.000Z");
@@ -64,5 +64,38 @@ describe("Engine-Folgen", () => {
     const v = baum();
     const leer = { ...AUSWERTUNG, klassen: [], beste: [], varianten: [] };
     expect(mitEngineFolgen(v, leer, TEXTE).zuege).toBe(v.zuege);
+  });
+});
+
+describe("Engine-Folgen auch für den Gegner und in Varianten (1.11.2026)", () => {
+  it("legt mit „gegner“ auch am Fehler des Gegners (2. Dh5) die bessere Folge an", () => {
+    const v = baum();
+    const mitGegner = { ...AUSWERTUNG, varianten: [[], [], ["g1f3"], [], [], ["g7g6"], ["h5f7"]] };
+    const neu = { ...v, zuege: mitEngineFolgen(v, { ...mitGegner, gegner: true }, TEXTE).zuege };
+    expect(fortsetzungenAm(neu, ZUEGE.slice(0, 2)).map((k) => k.zug)).toEqual(["Qh5", "Nf3"]);
+    expect(knotenAm(neu, [...ZUEGE.slice(0, 2), "Nf3"])?.kommentar).toBe("Besser war");
+  });
+
+  it("legt in einer Variante an jedem Fehler beider Seiten die Folgen an, nur einmal", () => {
+    const v = baum();
+    const folgen: Record<string, string[]> = {
+      [ZUEGE.slice(0, 5).join(" ")]: ["g7g6", "h5f3"],
+      [ZUEGE.join(" ")]: ["h5f7"],
+      [ZUEGE.slice(0, 2).join(" ")]: ["g1f3"],
+    };
+    const fehler = [
+      { pfad: ZUEGE.slice(0, 3), klasse: "fehler" as const },
+      { pfad: ZUEGE, klasse: "patzer" as const },
+      { pfad: ZUEGE.slice(0, 4), klasse: "ungenau" as const },
+    ];
+    const ab = (pfad: readonly string[]) => folgen[pfad.join(" ")] ?? [];
+    const einmal = { ...v, zuege: mitBaumfolgen(v, fehler, ab, TEXTE).zuege };
+    expect(fortsetzungenAm(einmal, ZUEGE.slice(0, 2)).map((k) => k.zug)).toEqual(["Qh5", "Nf3"]);
+    expect(fortsetzungenAm(einmal, ZUEGE.slice(0, 5)).map((k) => k.zug)).toEqual(["Nf6", "g6"]);
+    expect(knotenAm(einmal, [...ZUEGE, "Qxf7#"])?.kommentar).toBe("So wird bestraft");
+    // Ungenauigkeiten bekommen nichts; ein zweiter Lauf ändert nichts mehr.
+    expect(fortsetzungenAm(einmal, ZUEGE.slice(0, 3)).map((k) => k.zug)).toEqual(["Nc6"]);
+    const zweimal = mitBaumfolgen(einmal, fehler, ab, TEXTE).zuege;
+    expect(zweimal).toEqual(einmal.zuege);
   });
 });

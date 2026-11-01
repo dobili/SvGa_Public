@@ -16,6 +16,8 @@ import { t } from "../../../i18n/sprache";
 import { spielbar, type Partie } from "../../../spiel/partie";
 import { alsProbewert } from "../../../spiel/probepartie";
 import { Blatt } from "../spielstart/Blatt";
+import { Folgenwahl } from "./Folgenwahl";
+import { useFolgenwahl, type Folgenstand } from "./folgenstand";
 import { GabelSchalter, Variantenzahl } from "./VariantenHinweis";
 import { alsWert, varianteAnsicht } from "./variantenwert";
 
@@ -30,22 +32,18 @@ function Gabelwahl({
 }: {
   id: string;
   ausgewertet: boolean;
-  beiOeffnen: (engine: boolean) => void;
+  beiOeffnen: (folgen: Folgenstand) => void;
   beiSpielen: (() => void) | null;
 }) {
-  const [engine, setzeEngine] = useState(false);
+  // Vorab an (Rückmeldungen des Autors, 1.11.2026); abwählen geht weiter.
+  const [folgen, setzeFolgen] = useFolgenwahl();
   return (
     <div className="neuquelle">
-      {ausgewertet && (
-        <label className="schalterzeile">
-          <input type="checkbox" checked={engine} onChange={(e) => setzeEngine(e.target.checked)} />
-          <span>{t("varianten.engine.schalter")}</span>
-        </label>
-      )}
+      {ausgewertet && <Folgenwahl stand={folgen} setze={setzeFolgen} />}
       <button
         type="button"
         className="knopf-haupt"
-        onClick={() => beiOeffnen(engine && ausgewertet)}
+        onClick={() => beiOeffnen({ ...folgen, engine: folgen.engine && ausgewertet })}
       >
         {t("varianten.neu.oeffnen")}
       </button>
@@ -80,8 +78,8 @@ export function PartieGabel({ partie, stelle, fen, ausgewertet }: Gabeleingaben)
     setzeOffen(false);
     navigiere(ansicht);
   };
-  const oeffne = (engine: boolean) =>
-    geheZu(varianteAnsicht(alsWert({ art: "partie", id, stelle, engine })));
+  const oeffne = ({ engine, gegner }: Folgenstand) =>
+    geheZu(varianteAnsicht(alsWert({ art: "partie", id, stelle, engine, gegner })));
   const probe = alsProbewert({ art: "partie", id, stelle, farbe: partie.einstellung.eigeneFarbe });
   const spiele = () => geheZu({ bildschirm: "spielen", startFen: fen, probe });
   const inhalt = (

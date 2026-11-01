@@ -89,7 +89,7 @@ const Zeichnung = memo(function Zeichnung({
       })}
       {bretter.map((b) => {
         const k = layout.knoten[b.stelle];
-        return k ? <Kartenbrett key={b.stelle} brett={b} k={k} /> : null;
+        return k ? <Kartenbrett key={`${b.art}-${b.stelle}`} brett={b} k={k} /> : null;
       })}
       {layout.knoten.map((k, i) => (
         <Knoten key={k.pfad.join(" ")} k={k} stelle={i} aktuell={i === aktuell} />

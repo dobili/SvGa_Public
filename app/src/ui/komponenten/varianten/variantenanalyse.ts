@@ -194,6 +194,18 @@ export class Analysewarteschlange {
   }
 }
 
+/**
+ * Hauptvarianten der Engine je Stellung, nur für die Sitzung (nicht im Speicherformat): Daraus
+ * legt „Engine-Folgen übernehmen“ nach der Analyse „Besser war“ und „So wird bestraft“ an
+ * (Analysefolgen.tsx). Fehlt eine, nimmt die App den gespeicherten besten Zug.
+ */
+const FOLGEN = new Map<string, readonly string[]>();
+
+/** Die Hauptvariante der Engine (UCI) zu einer Stellung aus dieser Sitzung; leer, wenn keine. */
+export function engineFolgeAm(fen: string): readonly string[] {
+  return FOLGEN.get(fen) ?? [];
+}
+
 /** Ein Ergebnis von bewerteStellung (Bauern) für den Speicher (Hundertstel, ganze Zahlen). */
 function alsErgebnis(wert: number, bester: string, abstand: number): Engineergebnis {
   return {
@@ -214,6 +226,7 @@ async function bewerteMitEngine(
 ): Promise<Engineergebnis | null> {
   if (endwert(fen) === null && !spielbar(fen)) return null;
   const wert = await bewerteStellung(fen, laeuft);
+  if (wert && wert.variante.length > 0) FOLGEN.set(fen, wert.variante);
   return wert ? alsErgebnis(wert.wert, wert.bester, wert.abstand) : null;
 }
 

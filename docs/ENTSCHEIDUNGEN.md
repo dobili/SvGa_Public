@@ -4,6 +4,34 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.48: Bearbeiten und Löschen auffindbar
+
+- **Anlass** (Autor, 1.11.2026): Löschen kam in keiner Tour vor, der antippbare Titel war nicht als
+  solcher zu erkennen, und in der Liste „Varianten“ ließ sich nichts bearbeiten oder löschen.
+- **Liste:** Stift und Papierkorb je Variante (`Variantenkarte.tsx`, `Listenblatt.tsx`); Name und
+  Kommentar übernimmt erst „Speichern“, Löschen fragt mit dem Namen der Variante nach.
+- **Titel:** goldener Stift hinter dem Titel der Variante, Name für Bildschirmleser „…: bearbeiten,
+  teilen oder löschen“, Tourziel `variante-titel`.
+- **Touren:** neuer erster Schritt der Variante (Titel), Texte der Liste, Lernsammlung und
+  Fehlerdatenbank nennen Bearbeiten und Löschen mit Rückgängig.
+- **Engine-Folgen vorab an** (Rückmeldung des Autors, 1.11.2026: Er hatte „Besser war“ und
+  „So wird bestraft“ in der Variante erwartet und den Schalter übersehen): Der Schalter
+  „Engine-Folgen übernehmen“ ist am Gabel-Knopf der Partie und unter Neue Variante › Partie
+  vorab angehakt; abwählen geht weiter. Folgen gibt es an eigenen Fehlern, Patzern und
+  verpassten Gewinnen, nicht an Ungenauigkeiten.
+- **Auch Fehler des Gegners** (Autor, 1.11.2026: in seinen Partien machte vor allem der Gegner
+  Fehler): zweiter Haken „Auch an Fehlern des Gegners“, vorab an (`Folgenwahl.tsx`, Feld `gegner`
+  in `mitEngineFolgen`; im Wert der Ansicht „2“ statt „1“).
+- **Engine-Folgen nach der Analyse einer Variante** (Wunsch des Autors): Knopf „Engine-Folgen
+  übernehmen“ (`Analysefolgen.tsx`, `mitBaumfolgen`), beide Seiten, weil eine Variante keine
+  eigene Farbe hat. Die Hauptvarianten der Engine merkt sich die Analyse nur für die Sitzung
+  (`engineFolgeAm`), damit das Speicherformat bleibt; ohne sie kommt der gespeicherte beste Zug.
+- **Karte: Endstellungen und Balken; Baum: Balken** (Wünsche des Autors): Endbrett rechts neben
+  dem letzten Zug jeder Linie (darunter bleiben wie am Abzweig drei Zeilen frei), daneben wie am
+  Abzweig ein Balken 8 px (Brett 124 px); in der Baumansicht `Bewertungsbalken` links am Brett.
+- **Regel für später:** Jede Aktion, die Daten ändert oder löscht, steht in der Tour ihres
+  Bildschirms; antippbare Texte tragen ein Zeichen (Stift, Pfeil).
+
 ## 1.11.2026 – Version 0.3.47: Meisterpartien statt Studien, gespeicherte Werte übernehmen
 
 - **Meisterpartien statt Studien** (Wunsch des Autors, 1.11.2026: „beim Variationen anlegen statt

@@ -1,7 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 1.11.2026, Version 0.3.44 (Nachtaufträge: Lizenzen geprüft, Wiki aktualisiert, großer
-Fehlertest mit 16 behobenen Fehlern).
+Stand: 1.11.2026, Version 0.3.45 (Q12 umgesetzt, Zeitleiste waagerecht, Repertoire mit Gambits und
+Praxis, Lernsammlung und Fehlerdatenbank bearbeitbar, elf weitere Fehler behoben).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -19,7 +19,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.44“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.45“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,6 +33,85 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.45: Zeitleiste, Repertoire, Sammlungen bearbeiten, Fehlertest Teil 3 (1.11.2026)
+
+- [ ] N2480. Nach dem Ende kein Zurücknehmen: Spiele eine ungewertete Partie mit erlaubter
+      Rücknahme bis zum Ende (etwa aufgeben). Unter dem Brett steht kein „Zurücknehmen“ mehr, auch
+      nicht, wenn du die Partie später im Profil unter „Deine Partien“ wieder öffnest. Während der
+      Partie ist der Knopf wie bisher da.
+- [ ] N2481. Bester Zug ohne „?“: Öffne die Auswertung einer Partie, in der du schon klar
+      verloren standest. Züge mit dem Stern „Bester Zug“ tragen nirgends „?!“, „?“ oder „??“ (Zugliste,
+      Momente, Zahlen „Deine Züge“), auch wenn die Gewinnchance dabei weiter fällt.
+- [ ] N2482. Die Partie in Momenten wischen: In der Auswertung stehen die Momente nebeneinander.
+      Wische mit dem Daumen nach links: Die Karten rasten ein, rechts schaut die nächste heraus, oben
+      zählt „2 von 7“ usw. mit. Jede Phase beginnt mit einer schmalen Karte „Mittelspiel · Zug … · %“.
+- [ ] N2483. Blättern mit Knöpfen: Die Pfeile neben „1 von 7“ gehen einen Moment weiter oder
+      zurück, auch bei zwei schnellen Tipps; am Anfang ist der linke Pfeil grau, am Ende der rechte.
+- [ ] N2484. Phasenknöpfe: Tippe unter der Kurve auf „Mittelspiel“: Kurve zoomt wie bisher und die
+      Reihe rückt die Karte „Mittelspiel“ nach vorn; „Ganze Partie“ springt an den Anfang.
+- [ ] N2485. Zur Stellung: Tippe in einer Karte auf „Zur Stellung“. Das Brett oben ist danach ganz
+      zu sehen (auf kleinem Handy samt „Merken“ darunter), nicht mehr unten angeschnitten.
+- [ ] N2486. Bewegung reduzieren: Stelle am Handy „Bewegung reduzieren“ ein. Blättern in den
+      Momenten und „Zur Stellung“ springen ohne Gleiten.
+- [ ] N2487. Hell und dunkel, Querformat, Tablet: Die Momente sehen in hellem und dunklem Design
+      gut aus; im Querformat steht das Brett links und „Zur Stellung“ scrollt nicht unnötig.
+- [ ] N2530. Repertoire-Trainer (Training › Repertoire-Trainer): Unter „Deine Runde“ steht die Zeile
+      „Aus“. Tippe sie an und wähle „Gambits (Kapitel 3)“. Unter „Eröffnung“ stehen jetzt die Gambits des
+      Buches mit kurzem Namen (Königsgambit, Evans-Gambit, Dänisches Gambit, …, Damengambit). Wähle
+      „Königsgambit“, Seite Weiß, „Runde starten“: Nach 1. e4 e5 ziehst du 2. f4, die App antwortet exf4.
+      Stimmen die Varianten mit Kapitel 3 überein?
+- [ ] N2531. Zurück zur Auswahl, „Aus“ auf „Eröffnungen (Kapitel 2)“: Die zuletzt gewählte Eröffnung aus
+      Kapitel 2 ist noch da, und beim Wechsel auf Gambits das zuletzt gewählte Gambit.
+- [ ] N2532. Der Repertoire-Trainer steht jetzt auch bei Kapitel 3 unter „Die Trainer zu diesem
+      Kapitel“. Passt das so?
+- [ ] N2533. Hake „Auch Eröffnungen aus der Praxis (Lichess)“ an: „Aus“ springt auf „Praxis (Lichess)“,
+      darunter der Hinweis, dass die Züge nicht aus dem Buch stammen, „Noch nichts gewählt.“ und ein
+      gesperrter Knopf „Runde starten · keine Variante“; darunter die offene Klappe „Eröffnungen nach
+      Spielstärke“. Öffne bei „Italienische Partie“ die „Varianten“ und tippe „Die häufigsten 3“: Über dem
+      Knopf steht „3 gewählt“, der Knopf heißt „Runde starten · 3 Varianten“.
+- [ ] N2534. Starte die Runde als Weiß: Über dem Brett steht der Name der Variante, „wie echte Spieler
+      sie auf Lichess am häufigsten spielen“ und „Aus der Praxis, Lichess (nicht aus dem Buch)“. Ein falscher
+      Zug zeigt „Nicht der Zug dieser Variante“ und den richtigen Zug als Pfeil.
+- [ ] N2535. Schließe die App und öffne den Trainer wieder: Schalter, Quelle und die gewählten Varianten
+      sind noch da. Haken weg: zurück auf „Eröffnungen (Kapitel 2)“, die Lichess-Liste verschwindet.
+- [ ] N2536. Rundgang im Repertoire-Trainer (Kompass oben rechts): Ein Schritt erklärt die Zeile „Aus“,
+      ein weiterer den Schalter „Praxis“; der Schritt zum Ziehen erwähnt keine Warum-Fragen mehr.
+- [ ] N2540. Training öffnen: Direkt unter „Dein Stapel für heute“ stehen drei Kacheln: Lernsammlung, Fehlerdatenbank (Datenbank-Symbol) und Alle Kapitel. Die Kachel Fehlerdatenbank zeigt „noch leer“ bzw. die Zahl der Einträge und öffnet die Fehlerdatenbank.
+- [ ] N2541. Eine Partie spielen, in der Auswertung auf einen Zug gehen, „Merken“, dann „Fehler“, dann „In die Fehlerdatenbank“: Es erscheint „In der Fehlerdatenbank gespeichert. Zur Fehlerdatenbank“. Der Link führt hin, und der Eintrag steht dort.
+- [ ] N2542. Dasselbe mit „Lernen“ und „Speichern“: „In der Lernsammlung gespeichert. Zur Lernsammlung“ führt in die Lernsammlung.
+- [ ] N2543. Lernsammlung: einen Eintrag aufklappen. Hat er keinen Plan, heißt der Knopf „Plan ergänzen“, sonst „Bearbeiten“. Die Felder Plan, Notiz und Eröffnung sind beschriftet wie beim Anlegen. Plan ändern und „Änderung speichern“: Der neue Plan steht in der Zeile, und „Abfragen“ zeigt ihn.
+- [ ] N2544. Lernsammlung: Eine geänderte Eröffnung verschiebt den Eintrag in die passende Gruppe.
+- [ ] N2545. Lernsammlung: „Löschen“ entfernt den Eintrag sofort. Unten schwebt „Gelöscht. Rückgängig“; ein Tipp holt ihn an dieselbe Stelle zurück. Nach etwa 10 Sekunden verschwindet die Leiste.
+- [ ] N2546. Fehlerdatenbank: einen Eintrag aufklappen, „Bearbeiten“, Fehlerart und Satz ändern, „Änderung speichern“. Die Zeile und die Auswertung je Fehlerart zählen den Fehler jetzt beim neuen Kapitel.
+- [ ] N2547. Fehlerdatenbank: „Eintrag löschen“, dann „Rückgängig“: Der Eintrag ist wieder da, die Auswertung zählt ihn wieder.
+- [ ] N2548. Tour im Training (Kompass oben rechts): Nach der Lernsammlung kommt ein Schritt zur Fehlerdatenbank.
+- [ ] N2490. Geteilten Link bei offener App öffnen: App offen lassen, dann im selben Browser-Tab
+      die Adresse schach-von-grund-auf.com/app/#aufgabe-taktik-l-1Vybh eingeben. Die Aufgabe
+      „Herausforderung“ öffnet sich sofort; „Training“ oben links führt zur Trainingsübersicht.
+- [ ] N2491. Profil › Einstellungen › Hilfe › „Rundgang durch die App“ › „Ich will spielen und
+      Partien auswerten“: Die Tour läuft auf „Spielen“, unten ist „Spielen“ golden markiert (nicht
+      mehr „Profil“).
+- [ ] N2492. Rundgang aus den Einstellungen öffnen und, solange die Frage „Wie möchtest du
+      starten?“ zu sehen ist, die Zurück-Taste (Android) drücken: Die Frage schließt sich.
+- [ ] N2493. Profil › Abzeichen „Erste Partie“ antippen › „Los geht's“: Spielen öffnet, unten ist
+      „Spielen“ markiert. Profil › Orden „Teil Endspiel“ › „Los geht's“: Kapitel 8 öffnet.
+- [ ] N2494. Ohne Internet (Flugmodus) Profil › Einstellungen › Bots und Wertung › „Maia laden“:
+      Es erscheint „Ohne Internetverbindung lässt sich Maia nicht laden …“ (kein „Failed to fetch“).
+- [ ] N2495. Datensicherung von einem Gerät mit verdienten Abzeichen auf einem zweiten Gerät (oder
+      nach „Alle Daten löschen“) einspielen: Es kommen keine Gratulationen zu alten Ringen oder
+      Abzeichen.
+- [ ] N2496. Orden-Probe (Aufgabenseite › Orden testen › ein Ring auf 100 %): Die Gratulation hat
+      den Fokus auf „Weiter“ (Tastatur am Rechner: Tab bleibt in der Karte, Esc schließt sie).
+- [ ] N2497. Handy auf Englisch stellen, App-Daten löschen, App über den QR-Code des Buches
+      (…/app/?start=buch) öffnen: Zuerst kommt die Frage nach der Sprache, die Tour „Mit dem Buch
+      starten“ erst danach.
+- [ ] N2498. App am Abend auf „Buch“ offen lassen, am nächsten Morgen wieder nach vorn holen:
+      „Heute“ zeigt den neuen Tag (am 1. eines Monats steht „Dein … ist fertig“), ohne etwas
+      anzutippen.
+- [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
+      Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
+      Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.
 
 ### Neu in 0.3.44: Lizenzen, Wiki und großer Fehlertest (Nacht 31.10./1.11.2026)
 
@@ -722,6 +801,20 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q13 Kleinigkeiten vom 1.11.2026 (schon umgesetzt, Widerspruch genügt)
+
+- [ ] Q13-1. **Genauigkeit:** Der beste Zug zählt in der angezeigten Genauigkeit mit 100 (sonst
+      drückt ein Messsprung die Zahl, obwohl der Zug „Bester Zug“ heißt). Die Schätzung deiner
+      Spielstärke rechnet weiter mit den gemessenen Werten.
+- [ ] Q13-2. **Phasen in der Zeitleiste:** eigene schmale Karte je Phase und der Phasenname oben auf
+      jeder Moment-Karte.
+- [ ] Q13-3. **Gambitnamen** kurz ohne Artikel („Königsgambit“), auch im Abweichungsmodus.
+- [ ] Q13-4. **Praxis-Runde:** bis zu sechs der gewählten Varianten, gemischt.
+- [ ] Q13-5. **Training:** Die Kacheln Lernsammlung, Fehlerdatenbank und Alle Kapitel stehen oben
+      direkt unter dem Stapel statt ganz unten.
+- [ ] Q13-6. **Löschen** in Lernsammlung und Fehlerdatenbank ohne Rückfrage, dafür zehn Sekunden
+      „Rückgängig“.
 
 ### Q12 Aus den Nachtaufträgen (1.11.2026)
 

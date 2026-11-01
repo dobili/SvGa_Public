@@ -4,6 +4,30 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.45: Q12, Zeitleiste, Repertoire, Sammlungen, Fehlertest Teil 3
+
+- **Q12-2/Q12-3** (Zweig `q12-zeitleiste`): kein Zurücknehmen nach dem Ende (`nimmZurueck` gibt
+  bei beendeter Partie null, eine abgelegte beendete Partie wird nie wieder laufend); der beste Zug
+  bekommt nie ?!, ?, ?? oder „verpasst“ (`spiel/auswertung.ts`, Verlust 0, gemessener Wert als
+  `messverlust` nur im Rechenergebnis); angezeigte Genauigkeit zählt ihn mit 100, das Elo-Modell
+  rechnet mit den gemessenen Werten (Q13-1). Zeitleiste waagerecht wischbar (`zeitleiste.css`),
+  „Zur Stellung“ zeigt das ganze Brett (`brettsprung.ts`).
+- **Repertoire-Trainer** (Zweig `repertoire-gambits`, Wunsch des Autors): Gambits aus Kapitel 3,
+  optional „Praxis (Lichess)“ mit Variantenbaum wie bei den Bots; Wahl im Gerätemerker.
+- **Lernsammlung und Fehlerdatenbank** (Zweig `sammlung-bearbeiten`, Wunsch des Autors): bearbeiten
+  mit allen Feldern, löschen mit Rückgängig (`training/eintragspflege.ts`), Kachel
+  Fehlerdatenbank oben, Bestätigung mit Sprung nach „Merken“.
+- **„Zur Stellung“ an einem Fehler** zeigt den Fehlerzug selbst (Befund: „Merken“ trug bei
+  12. O-O-O?? den Zug davor ein); das kleine Brett bleibt bei der Stellung davor mit Pfeilen.
+- **Fehlertest Teil 3** (Zweig `fehlertest-3`): elf Fehler behoben (Links bei offener App über
+  hashchange, Bereichswechsel bei Startwahl, Touren, „Los geht's“ und Aufträgen über `useOeffne`,
+  Zurück-Taste schließt die Startwahl, klare Meldungen bei vollem Speicher und Maia ohne Netz,
+  keine alten Gratulationen nach dem Einspielen, Fokus und Esc in Gratulationen, Teil-Orden mit
+  Ziel, Tour wartet auf die Sprachfrage, Neuzeichnen beim Tageswechsel). Offen mit Empfehlung:
+  Zurück-Taste schließt bei offenem Blatt den ganzen Bildschirm (natives `<dialog>`), kaputte
+  Herausforderungslinks still, Offline-Tests in Playwright härten
+  (`PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS`), 30-Minuten-Plan ohne `useOeffne`.
+
 ## 1.11.2026 – Variationsbrowser: Entscheidungen der Runde 5
 
 Wunsch des Autors: ein Variationsbrowser für Partien, Abbildungen, eigene Stellungen,

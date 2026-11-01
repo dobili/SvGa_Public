@@ -50,7 +50,7 @@ function band(ueberzeile: string, titel: string): string {
     </header>`;
 }
 
-/** Fuß mit Startseite, App, Impressum und Datenschutz. */
+/** Fuß mit Startseite, App, Impressum, Datenschutz und Lizenzen (wie die Startseite). */
 function fuss(): string {
   return `
     <footer class="startseite-fuss">
@@ -58,6 +58,7 @@ function fuss(): string {
       <a class="knopf-link klein" href="/app/">{{training.seite.app}}</a>
       <a class="knopf-link klein" href="/impressum/">{{installation.impressum}}</a>
       <a class="knopf-link klein" href="/datenschutz/">{{installation.datenschutz}}</a>
+      <a class="knopf-link klein" href="/app/#lizenzen">{{installation.lizenzen}}</a>
     </footer>`;
 }
 

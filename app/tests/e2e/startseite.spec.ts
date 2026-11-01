@@ -63,6 +63,12 @@ test("Impressum, Datenschutz und Lizenzen aus der Fußzeile", async ({ page }) =
   const text = await antwort.text();
   for (const paket of ["chessops", "react", "lucide-react", "idb", "@badrap/result"])
     expect(text).toContain(`## ${paket} - `);
+  // Seit der Lizenzprüfung vom 1.11.2026: die in onnxruntime-web gebündelten Bibliotheken und
+  // der Hilfscode der Bauwerkzeuge mit eigenen Lizenztexten, beide auf der Seite verlinkt.
+  for (const datei of ["onnxruntime-bausteine.txt", "mit-bauwerkzeuge.txt", "cc-by-sa-4.0.txt"]) {
+    await expect(page.locator(`a[href="/lizenzen/${datei}"]`)).toBeVisible();
+    expect((await page.request.get(`/lizenzen/${datei}`)).ok(), datei).toBe(true);
+  }
 });
 
 // Die Datenschutzerklärung sagt: keine Inhalte anderer Anbieter, nichts wird mitgeladen

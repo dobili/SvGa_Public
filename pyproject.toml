@@ -4,6 +4,7 @@ name = "schach-von-grund-auf-pipeline"
 version = "0.1.0"
 description = "Datengewinnung aus den LaTeX-Quellen des Buches für die Companion-App"
 requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
 
 [tool.pytest.ini_options]
 testpaths = ["pipeline/tests"]

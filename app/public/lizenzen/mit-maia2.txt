@@ -2,11 +2,13 @@ Maia-2: neuronale Netze für menschenähnliche Schachzüge (Blitz und Schnellsch
 halber Genauigkeit (app/public/maia/), von der App unverändert gerechnet.
 Herkunft: Python-Paket maia2 0.10.0 (PyPI), CSSLab, University of Toronto (csslab, josephtang@cs.toronto.edu).
 Autoren laut Paket: Zhenwei Tang, Difan Jiao, Reid McIlroy-Young, Jon Kleinberg, Siddhartha Sen, Ashton Anderson.
-Das Paket nennt die MIT-Lizenz; sein Lizenztext lautet:
+Das Paket nennt die MIT-Lizenz. Sein Lizenztext trägt nur die Vorlage „[year] [fullname]“; das
+Repository github.com/CSSLab/maia2 (Datei LICENSE, geprüft am 1.11.2026) nennt „Copyright (c) 2024
+CSSLab“. Der Lizenztext lautet damit:
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2024 CSSLab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -14,6 +14,7 @@
 import type { Chess } from "chessops/chess";
 import { makeSan, parseSan } from "chessops/san";
 import type { Knoten } from "../daten/generiert/beispiel";
+import { vereinige } from "../schach/baumvereinigung";
 import { stellungAus, type Pfad } from "../schach/variationsbaum";
 import type { Fehlereintrag } from "./fehlerdatenbank";
 import { GRUNDSTELLUNG, type Sammeleintrag } from "./lernsammlung";
@@ -88,8 +89,11 @@ export function linieAlsKnoten(
   return { knoten, pfad };
 }
 
-/** Der Buchbaum als Variationsknoten, Züge geprüft und in der Schreibweise von chessops. */
-function ausBuchbaum(pos: Chess, knoten: readonly Knoten[]): Variationsknoten[] {
+/**
+ * Der Buchbaum als Variationsknoten, Züge geprüft und in der Schreibweise von chessops; die
+ * Zugzeichen des Buches bleiben. Auch für die ganze Eröffnung (training/eroeffnungsvariante.ts).
+ */
+export function ausBuchbaum(pos: Chess, knoten: readonly Knoten[]): Variationsknoten[] {
   return knoten.flatMap((k) => {
     const zug = parseSan(pos, k.zug);
     if (!zug) return [];
@@ -175,4 +179,26 @@ export function ausStellung(
   jetzt: Date,
 ): Variation | null {
   return entwurf({ titel, quelle: { art }, startFen: art === "grund" ? GRUNDSTELLUNG : fen }, jetzt);
+}
+
+/**
+ * Entwurf aus Lösungslinien ab einer Stellung (Übung ohne Zugfolge des Buches, gelöste
+ * Trainer-Aufgabe): die erste Linie ist die Hauptvariante, jede weitere ein Abzweig.
+ *
+ * Warum: Stufe 4, „Übungen und Trainer-Aufgaben erst nach dem Lösen“; die Variante öffnet an der
+ * Aufgabe, die Lösung steht dahinter, bis der Leser weiterblättert.
+ * Beispiel: Übung „Drohung ignoriert?“ (Abb. 1.40), Lösung 1. Sc7+ → Baum mit Sc7+.
+ * Sonderfall: Ein unspielbarer Zug beendet seine Linie (linieAlsKnoten).
+ */
+export function ausLinien(
+  teile: { readonly titel: string; readonly quelle: Variationsquelle; readonly fen: string },
+  linien: readonly (readonly string[])[],
+  herkunft: Zugherkunft,
+  jetzt: Date,
+): Variation | null {
+  const zuege = linien.reduce<Variationsknoten[]>(
+    (baum, linie) => vereinige(baum, linieAlsKnoten(teile.fen, linie, herkunft).knoten),
+    [],
+  );
+  return entwurf({ titel: teile.titel, quelle: teile.quelle, startFen: teile.fen, zuege }, jetzt);
 }

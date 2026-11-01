@@ -157,7 +157,7 @@ export function Taktikaufgabe({
   motivAbfragen?: boolean;
   zusatz?: Zusatzanzeige | null;
 }) {
-  useSammelstellung(aufgabe.fen);
+  useSammelstellung(aufgabe.fen, { fen: aufgabe.fen, zuege: aufgabe.loesung });
   const zugaufgabe = useMemo(() => alsZugaufgabe(aufgabe), [aufgabe]);
   const [zuege, setzeZuege] = useState<readonly string[]>([]);
   const [stufe, setzeStufe] = useState(0);

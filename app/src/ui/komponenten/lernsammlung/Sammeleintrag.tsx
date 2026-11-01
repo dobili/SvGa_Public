@@ -6,6 +6,8 @@
  * Felder wie das Anlegen (Sammelfelder.tsx: Plan, Notiz, Eröffnung; Wunsch des Autors,
  * 1.11.2026); Stellung, Fundstelle und Datum bleiben. Ohne Plan heißt der Knopf „Plan
  * ergänzen“. Löschen übernimmt der Bildschirm (mit Rückgängig, bausteine/useRueckgaengig.tsx).
+ * Unter der Notiz lässt sich eine Variante verknüpfen, neu anlegen oder lösen; verknüpfte
+ * Varianten lassen sich abfragen (Variationsbrowser, Stufe 4).
  * Abhängigkeiten: training/eintragspflege.ts, speicher/speicher.ts, Trainerbrett, Sammelfelder,
  * sammeltexte.ts, Navigation, i18n.
  */
@@ -21,6 +23,9 @@ import { Sammelfelder, type Sammelwerte } from "./Sammelfelder";
 import { fundstelle } from "./sammeltexte";
 import { VariantenHinweis } from "../varianten/VariantenHinweis";
 import { alsWert } from "../varianten/variantenwert";
+import { ausSammlung } from "../../../training/variationsquellen";
+import { Variantenwahl } from "../varianten/Variantenwahl";
+import { useVariantenwahl } from "../varianten/variantenwahlSpeichern";
 
 /** Die Felder des Anlegens zum Bearbeiten, mit Speichern und Abbrechen. */
 function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig: () => void }) {
@@ -29,6 +34,8 @@ function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig:
     notiz: eintrag.notiz,
     eroeffnung: eintrag.eroeffnung,
   });
+  const variante = useVariantenwahl();
+  const ziel = { art: "sammlung", id: eintrag.id } as const;
   const speichern = () => {
     const teil = {
       plan: werte.plan.trim(),
@@ -36,14 +43,19 @@ function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig:
       eroeffnung: werte.eroeffnung.trim(),
     };
     void aendere((daten) => mitGeaendertemSammeleintrag(daten, eintrag.id, teil));
-    beiFertig();
+    const titel = teil.eroeffnung || t("varianten.titel.sammlung");
+    // An der Grenze bleibt das Formular offen und sagt es; Plan und Notiz sind gespeichert.
+    if (variante.wende(ziel, () => ausSammlung({ ...eintrag, ...teil }, titel, new Date())))
+      beiFertig();
   };
   return (
     <div className="fehlerformular" data-testid="sammel-bearbeiten">
       <Sammelfelder
         werte={werte}
         beiAenderung={(teil) => setzeWerte((alt) => ({ ...alt, ...teil }))}
+        zusatz={<Variantenwahl ziel={ziel} wahl={variante.wahl} beiWahl={variante.setzeWahl} />}
       />
+      {variante.meldung && <p className="fehlertext">{variante.meldung}</p>}
       <div className="knopfreihe">
         <button type="button" className="knopf-haupt" onClick={speichern}>
           <Knopfsymbol art="speichern" />

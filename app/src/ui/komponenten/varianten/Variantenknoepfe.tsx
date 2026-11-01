@@ -1,6 +1,7 @@
 /**
  * Die Knopfzeile unter dem Brett der Variante: „Baum“ (Abzweig-Karten aufklappen), „Karte“ (der
- * ganze Baum auf eigener Seite) und „Von hier spielen“.
+ * ganze Baum auf eigener Seite), „Von hier spielen“ und „Abfragen“ (Stufe 4: die Variante ab der
+ * gezeigten Stellung Zug für Zug spielen lassen, bildschirme/VariantenAbfrage.tsx).
  *
  * Rolle im Gesamtbild: Teil des Bildschirms „Variante“ (Entwurf, Abschnitt 3, Punkt 7: Knopfzeile
  * Markieren, Baum, Analyse, Drehen, Speichern). Markieren und Drehen stehen als Schalter am Brett,
@@ -10,14 +11,14 @@
  * Abhängigkeiten: Navigation, spiel/partie.ts, spiel/probepartie.ts, variantenwert.ts,
  * Variantenkarte.tsx (Kennung), i18n, lucide-react.
  */
-import { Map as Kartensymbol, Network, Play } from "lucide-react";
+import { GraduationCap, Map as Kartensymbol, Network, Play } from "lucide-react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import { spielbar } from "../../../spiel/partie";
 import { alsProbewert } from "../../../spiel/probepartie";
 import { ENTWURF } from "../../../training/variationsquellen";
 import type { Variantenstand } from "./useVariante";
-import { merkePfad, varianteAnsicht } from "./variantenwert";
+import { abfrageAnsicht, merkePfad, varianteAnsicht } from "./variantenwert";
 
 const SYMBOL = 18;
 /** Kennung des Bildschirms „Karte“ (wie in ui/bildschirme/Variantenkarte.tsx). */
@@ -47,7 +48,27 @@ function useSprungziele(stand: Variantenstand) {
     const probe = alsProbewert({ art: "variante", id, pfad: stand.pfad });
     navigiere({ bildschirm: "spielen", startFen: stand.fen, probe });
   };
-  return { karte, spiele };
+  const frage = () => {
+    const id = gespeichert();
+    if (id) navigiere(abfrageAnsicht({ art: "variante", id, pfad: stand.pfad }));
+  };
+  return { karte, spiele, frage };
+}
+
+/** „Abfragen“ (Stufe 4); gesperrt, solange die Variante keine Züge hat. */
+function Abfrageknopf({ gesperrt, beiTipp }: { gesperrt: boolean; beiTipp: () => void }) {
+  return (
+    <button
+      type="button"
+      className="knopf-zweit"
+      disabled={gesperrt}
+      data-tour="variante-abfragen"
+      data-testid="variante-abfragen"
+      onClick={beiTipp}
+    >
+      <GraduationCap size={SYMBOL} aria-hidden="true" /> {t("variantenabfrage.knopf")}
+    </button>
+  );
 }
 
 /**
@@ -64,7 +85,7 @@ export function Variantenknoepfe({
   baum: boolean;
   setzeBaum: (offen: boolean) => void;
 }) {
-  const { karte, spiele } = useSprungziele(stand);
+  const { karte, spiele, frage } = useSprungziele(stand);
   return (
     <div className="knopfreihe variantenknoepfe">
       <button
@@ -88,6 +109,7 @@ export function Variantenknoepfe({
       >
         <Play size={SYMBOL} aria-hidden="true" /> {t("varianten.vonHierSpielen")}
       </button>
+      <Abfrageknopf gesperrt={stand.variation.zuege.length === 0} beiTipp={frage} />
     </div>
   );
 }

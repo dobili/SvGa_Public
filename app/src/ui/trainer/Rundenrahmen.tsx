@@ -6,17 +6,20 @@
  * Komponenten der einzelnen Trainer; sie bekommen die Runde und melden ihr Ergebnis. Nach der
  * Antwort steht „In die Lernsammlung“ für die Stellung, die die Aufgabe über sammelstellung.ts
  * meldet. Neben dem Stand steht die Kombo (Gamifizierung P10, bausteine/Kombo.tsx) für jeden
- * Trainer mit diesem Rahmen.
- * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, Kombo, i18n.
+ * Trainer mit diesem Rahmen. Daneben „Als Variante öffnen“ mit Stellung und, wenn die Aufgabe sie
+ * meldet, ihrer Lösung (Variationsbrowser, Stufe 4: erst nach der Antwort, damit die Lösung
+ * verborgen bleibt).
+ * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, Kombo, VariantenHinweis, i18n.
  */
 import { RotateCcw } from "lucide-react";
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { t } from "../../i18n/sprache";
 import type { TrainerKennung } from "../../training/trainer";
 import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken";
 import { Kombo } from "../komponenten/bausteine/Kombo";
 import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
-import { SammelstellungKontext } from "./sammelstellung";
+import { AufgabenGabel } from "../komponenten/varianten/VariantenHinweis";
+import { SammelstellungKontext, type Loesungslinie } from "./sammelstellung";
 import { NACH_DER_RUNDE } from "./nachDerRunde";
 import type { Runde } from "./useRunde";
 
@@ -92,6 +95,11 @@ export function Rundenrahmen({
   children: React.ReactNode;
 }) {
   const [stellung, setzeStellung] = useState<string | null>(null);
+  const [linie, setzeLinie] = useState<Loesungslinie | null>(null);
+  const melde = useCallback((fen: string, loesung: Loesungslinie | null) => {
+    setzeStellung(fen);
+    setzeLinie(loesung);
+  }, []);
   if (runde.fertig)
     return <Ende kennung={kennung} runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
   return (
@@ -112,7 +120,7 @@ export function Rundenrahmen({
         beschriftung={t("trainer.rundenfortschritt")}
       />
       {/* Der Schlüssel setzt die Aufgabe bei „Aufgabe wiederholen“ auf den Anfang zurück. */}
-      <SammelstellungKontext value={setzeStellung}>
+      <SammelstellungKontext value={melde}>
         <Fragment key={runde.versuch}>{children}</Fragment>
       </SammelstellungKontext>
       {runde.ergebnis !== null && stellung && (
@@ -121,6 +129,9 @@ export function Rundenrahmen({
           fen={stellung}
           herkunft={{ herkunft: "trainer", quelle: kennung }}
         />
+      )}
+      {runde.ergebnis !== null && stellung && (
+        <AufgabenGabel titel={t(`trainer.${kennung}.name`)} fen={stellung} linie={linie} />
       )}
       {runde.ergebnis !== null && (
         <div className="knopfzeile">

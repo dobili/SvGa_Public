@@ -26,6 +26,7 @@ import {
 } from "../ui/bildschirme/Steckbriefe";
 import { Variante } from "../ui/bildschirme/Variante";
 import { Varianten } from "../ui/bildschirme/Varianten";
+import { VariantenAbfrage } from "../ui/bildschirme/VariantenAbfrage";
 import { ANSICHT_VARIANTENKARTE, Variantenkarte } from "../ui/bildschirme/Variantenkarte";
 
 /** Ein Bildschirm eines Pakets. */
@@ -54,6 +55,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   // oder Quelle eines Entwurfs, ui/komponenten/varianten/variantenwert.ts).
   { kennung: "varianten", Bildschirm: Varianten },
   { kennung: "variante", Bildschirm: Variante },
+  // Stufe 4: eine Variante oder die Varianten eines Eintrags abfragen (Wert: variantenwert.ts).
+  { kennung: "variante-abfrage", Bildschirm: VariantenAbfrage },
   // Stufe 2: der ganze Baum als verschiebbare Karte (Wert: Kennung der Variante).
   { kennung: ANSICHT_VARIANTENKARTE, Bildschirm: Variantenkarte },
 ];

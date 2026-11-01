@@ -44,7 +44,10 @@ export function dateiteil(titel: string): string {
   return teil || "variante";
 }
 
-/** Die Quellen des Blatts „Neue Variante aus …“ in der Reihenfolge des Bildes h. */
+/**
+ * Die Quellen des Blatts „Neue Variante aus …“ in der Reihenfolge des Bildes h; dahinter die
+ * Quellen der Stufe 4 (ganze Eröffnung, Studie aus Kapitel 10).
+ */
 export const NEUQUELLEN = [
   "grund",
   "abbildung",
@@ -53,5 +56,7 @@ export const NEUQUELLEN = [
   "einfuegen",
   "fehler",
   "sammlung",
+  "eroeffnung",
+  "studie",
 ] as const;
 export type Neuquelle = (typeof NEUQUELLEN)[number];

@@ -8,7 +8,9 @@
  * Brett: erst selbst denken, dann Erklärung lesen und sich einschätzen.
  * Eine Reihe von Übungen (Kapitel oder fällige Wiederholungen) geht mit „Nächste Übung“ weiter.
  * Nach einem falschen Zug zeigt Falschzugmeldung, wie viel er laut Engine verliert (roter Pfeil;
- * Wunsch des Autors, 27.10.2026).
+ * Wunsch des Autors, 27.10.2026). Nach dem Lösen (oder „Lösung zeigen“) öffnet „Als Variante
+ * öffnen“ die Übung mit ihrer Lösung im Variationsbrowser (Stufe 4; vorher nicht, damit die
+ * Lösung verborgen bleibt).
  * Abhängigkeiten: useUebung.ts, training/uebungsaufgabe.ts, Brettbereich, Falschzugmeldung,
  * Navigation, i18n.
  */
@@ -28,6 +30,8 @@ import { useDaten } from "../komponenten/bausteine/useDaten";
 import { HOECHSTE_STUFE, useUebung, type Uebungssteuerung } from "../komponenten/kapitel/useUebung";
 import { Falschzugmeldung } from "../trainer/Falschzugmeldung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { GabelKnopf } from "../komponenten/varianten/VariantenHinweis";
+import { alsWert } from "../komponenten/varianten/variantenwert";
 
 const OHNE_WAHL = () => undefined;
 
@@ -225,6 +229,9 @@ function Inhalt({
       )}
       {fertig && <Erklaerung uebung={uebung} />}
       {aufgabe.art === "denken" && s.hilfeFrei && <Einschaetzung s={s} />}
+      {(s.status !== "offen" || s.eingeschaetzt) && (
+        <GabelKnopf wert={alsWert({ art: "uebung", kapitel: kapitel.kapitel, id: uebung.id })} />
+      )}
       {(s.status !== "offen" || s.eingeschaetzt) && <Weiter reihe={reihe} hier={uebung.id} />}
     </div>
   );

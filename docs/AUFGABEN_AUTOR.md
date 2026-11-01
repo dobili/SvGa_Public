@@ -1,7 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 1.11.2026, Version 0.3.45 (Q12 umgesetzt, Zeitleiste waagerecht, Repertoire mit Gambits und
-Praxis, Lernsammlung und Fehlerdatenbank bearbeitbar, elf weitere Fehler behoben).
+Stand: 1.11.2026, Version 0.3.46 (Variationsbrowser Stufe 1 bis 4, Zurück-Taste, Größenbudget 35 MB).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -19,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.45“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.46“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,6 +32,89 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.46: Variationsbrowser, Zurück-Taste (1.11.2026)
+
+- [ ] N2500. Training: Kachel „Varianten“ (noch leer) öffnen; „Neue Variante“ zeigt sieben Kacheln.
+- [ ] N2501. Abb. 2.40 → Brettschalter „Variante“: Zugleiste mit Gabel „2“ nach 3. Sxe5, Chips „★ 3... d6!“ und „2 3... Sxe4?!“, auf dem Brett zwei blaue gepunktete Pfeile mit Stern und „2“.
+- [ ] N2502. Dort 3... De7 ziehen: Status „Gespeichert unter Varianten“, Gabel zeigt „3“, De7 in Gold.
+- [ ] N2503. Langer Druck auf einen Zug öffnet das Menü (Zugzeichen, Zur Hauptvariante machen, Kommentar, Ab hier löschen); nach „Ab hier löschen“ holt „Rückgängig“ die Züge zurück.
+- [ ] N2504. „+ Notiz zu diesem Zug“: Text schreiben, App schließen und neu öffnen – der Kommentar ist da, der Zug hat einen goldenen Punkt.
+- [ ] N2505. Titel antippen: umbenennen, Kommentar zur Variante (erscheint eingeklappt oben), PGN in Lichess als Studie einfügen (Varianten, Kommentare, Zeichen kommen an), Variante löschen mit Rückfrage.
+- [ ] N2506. Abb. 2.2 mit „Ziehen“ eigene Züge spielen, in „Deine Züge“ „Als Variante speichern“: Variante öffnet am letzten eigenen Zug; an der Abbildung steht danach „1 eigene Variante ›“.
+- [ ] N2507. Liste: „PGN“ → eine Lichess-PGN mit Varianten einfügen → Variante öffnet mit allen Abzweigen; FEN einfügen öffnet die Stellung.
+- [ ] N2508. Neue Variante aus Partie, Fehlerdatenbank, Lernsammlung und „Stellung aufbauen“ ausprobieren (Titel, Kommentare aus Satz bzw. Plan).
+- [ ] N2509. Ausgewertete eigene Partie mit Patzer: Gabel im Rückblick → Schalter „Engine-Folgen übernehmen“ → Abzweige „Besser war (Engine)“ und „So wird bestraft (Engine)“ (kursiv mit Chip-Zeichen), einzeln löschbar.
+- [ ] N2510. Partienliste und Auswertung zeigen die Zahl eigener Varianten einer Partie.
+- [ ] N2511. „Von hier spielen“ in einer Variante: Spielen zeigt „Probepartie: zählt nicht“, Partie gegen einen Bot, „Probepartie beenden“ → „Als Variante speichern“ → Züge als Abzweig mit Kommentar; Partienliste, Wertung, Rekorde und Tagesziel unverändert.
+- [ ] N2512. „Von hier spielen“ aus dem Gabel-Blatt der Auswertung: Farbe wie in der Partie; nach „Verwerfen“ bleibt nichts gespeichert.
+- [ ] N2513. Datensicherung mit Varianten: Rückfrage nennt „Varianten: n“; Einspielen auf einem zweiten Gerät bringt sie mit.
+- [ ] N2514. Tour auf beiden neuen Bildschirmen (Kompass oben rechts).
+- [ ] N2515. Englisch: beide Bildschirme in englischer Sprache ansehen.
+- [ ] N2516. Abb. 2.40 → „Variante“ → Schalter „Stift“: Gold wählen, d8 und h4 antippen (Pfeil mit „1“), e5 zweimal antippen
+      (goldener Rahmen mit „2“ in der Ecke), Rot f6–e4 (rot „1“). Status „Gespeichert unter Varianten“, die blauen Pfeile sind
+      weg, solange der Stift an ist.
+- [ ] N2517. Denselben Pfeil noch einmal setzen nimmt ihn weg, die Nummern rücken nach. Radierer leert die Stellung,
+      „Rückgängig“ holt alles zurück.
+- [ ] N2518. Legende: Goldzeile beschriften („Druck“), Rot aufklappen und „Rot 1“ beschriften; „Fertig“ – die Legende zeigt
+      nur das Beschriftete; App schließen und neu öffnen, alles ist noch da.
+- [ ] N2519. Eigenen Zug 3... De7 ziehen, „Baum“: Karte „nach 3. Sxe5“ mit Mini-Brett, Pfeilen ★/2/3 und drei Knöpfen
+      (Hauptvariante, „7 Züge · 1 Abzweig“, „1 Zug · eigene“), darunter eingerückt „in 3... Sxe4?!“. Tipp auf „3... Sxe4?!“
+      springt dorthin.
+- [ ] N2520. „Karte“: ganze Variante als Karte, Hauptvariante oben gold, De7 in Gold; mit einem Finger in alle Richtungen
+      schieben, mit zwei Fingern zoomen, −/+/„Alles zeigen“/„Zur Stellung“ ausprobieren.
+- [ ] N2521. Auf der Karte einen Zug antippen: Die Variante öffnet genau an dieser Stellung; „Zurück“ in der Variante führt
+      zur Abbildung (kein zweiter Entwurf).
+- [ ] N2522. Karte „Als Liste“: alle Züge, Abzweige eingerückt; mit VoiceOver/TalkBack bedienbar.
+- [ ] N2523. Titel antippen → „PGN kopieren“ und in Lichess als Studie einfügen: Pfeile und Rahmen erscheinen (Gold als
+      Gelb, Grau als Blau), die Texte „Gold 2: …“ und „Legende Gold: …“ stehen im Kommentar. Dieselbe PGN in der App unter
+      „Varianten → PGN“ einlesen: genaue Farben, Nummern und Texte kommen zurück.
+- [ ] N2524. Eine Lichess-Studie mit Pfeilen als PGN einlesen: Pfeile und Felder in Gold/Rot/Grün/Blau sind da; Englisch
+      einstellen und Stift, Legende, Baum und Karte ansehen; Tour auf Variante und Karte (Kompass).
+- [ ] N2560. Varianten → PGN: „1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sxe4 4. De2 Sf6 5. Sc6+“ einlesen, „Analyse“ antippen: oben
+      läuft „Analyse … von … Stellungen“, du kannst dabei weiter blättern und ziehen.
+- [ ] N2561. Nach der Analyse: hinter jedem Zug ein Symbol (4... Sf6 rotes „??“, 5. Sc6+ grüner Stern), am Brett
+      dieselbe Marke am Zielfeld, links der Balken mit Zahl, ein grüner Pfeil zeigt den besten Zug der gezeigten Stellung.
+- [ ] N2562. Die Chips „Symbole“, „Balken“, „Engine-Pfeil“ blenden je ihr Teil aus und ein; App schließen und neu öffnen:
+      die Wahl ist gemerkt, die Werte sind noch da (keine neue Analyse).
+- [ ] N2563. In der analysierten Variante einen neuen Zug ziehen: nur er wird nachgerechnet („Analyse 1 von 1“), danach
+      hat er Symbol und Balken.
+- [ ] N2564. Analyse einer langen Variante starten und „Abbrechen“ tippen: Der Knopf ist wieder aus, fertige Stellungen
+      behalten ihre Symbole; „Analyse“ noch einmal rechnet nur den Rest.
+- [ ] N2565. Analyse starten und die Variante verlassen (etwa ins Buch): später zurück – die Analyse ist im Hintergrund
+      fertig geworden.
+- [ ] N2566. Titel → „Als PGN-Datei sichern“ und in Lichess als Studie einfügen: Lichess zeigt die Bewertungen
+      (`[%eval]`). Dieselbe Datei in der App einlesen: Symbole und Balken sind sofort da.
+- [ ] N2567. Eine Lichess-Studie mit Engine-Bewertungen als PGN einlesen: Balken sofort; Symbole erst nach „Analyse“.
+- [ ] N2568. „Von hier spielen“, ein paar Züge, dann über die Leiste zu „Spielen“: oben die Karte „Probepartie läuft“
+      („zählt nicht · gegen …“); „Weiterspielen“ führt zurück, „Beenden“ bietet „Als Variante speichern“ und „Verwerfen“.
+- [ ] N2569. Englisch einstellen und Analyse, Chips, ⓘ und die Probekarte ansehen; Tour der Variante (Kompass) zeigt den
+      Schritt „Analysis“.
+- [ ] N2525. Varianten → Neue Variante → „Ganze Eröffnung“: Italienische Partie, „Aus der Praxis“ anhaken, Band
+      wählen, Vorschau „Buch … · Praxis … Züge“ → Öffnen: Variante öffnet nach 3. Lc4 mit vielen Fortsetzungen; nach
+      3... Lc5 stehen auch 4. Sg5 (Übung 8) und 4. b4 (Evans); erster Praxiszug hinter dem Buch mit „Praxis (Lichess)“.
+- [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
+      Wiener Partie) und die Kachel „Studie (Kapitel 10)“ (Saavedra) ausprobieren.
+- [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
+      Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
+- [ ] N2528. Variante (etwa aus Abb. 2.40) → „Abfragen“: Seite wählen, „Ab dem Anfang“, falscher Zug zeigt den
+      Pfeil, ein Zug aus einem anderen Abzweig gilt nicht als Fehler, Linien nacheinander, Ergebnis am Ende.
+- [ ] N2529. Lernsammlung: beim Anlegen (oder Bearbeiten) unter „Notiz“ eine Variante wählen bzw. „Neue Variante
+      aus dieser Stellung“; am Eintrag „Varianten abfragen (1)“; in „Abfragen“ nach „Plan zeigen“ „Varianten abfragen“.
+      Dasselbe beim Bearbeiten eines Fehlereintrags; „lösen“ nimmt die Verknüpfung wieder weg.
+- [ ] N2555. Buch › „Dein Weg durchs Buch“ › ein Bündel „Nebenaufgaben“ antippen, dann die
+      Zurück-Taste (Android) oder die Zurück-Geste: Nur das Fenster schließt sich, der Lernpfad
+      bleibt. Ein zweites Zurück führt zum Buch.
+- [ ] N2556. Profil › ein Abzeichen antippen › Zurück-Taste: Das Fenster schließt sich, die App
+      bleibt offen. Dasselbe mit „Teilen“ unter einer ausgewerteten Partie und mit „Partie
+      einstellen“ auf Spielen.
+- [ ] N2557. Einen Link `schach-von-grund-auf.com/app/#aufgabe-taktik-` (abgeschnitten) öffnen:
+      Es erscheint „Dieser Link ist ungültig oder unvollständig.“ (nicht still das Buch). Ein Link mit
+      angehängtem `?fbclid=abc` hinter der Kennung öffnet die Aufgabe normal.
+- [ ] N2558. Eine Partie aus dem Profil öffnen › „Neue Partie“: Spielen öffnet, unten ist
+      „Spielen“ golden markiert. Training › 30-Minuten-Plan › Partietag › „Zum Spielen“: ebenso.
+- [ ] N2559. Während einer Tour (Einstellungen › Hilfe › Rundgang) die Zurück-Taste drücken: Die
+      Tour endet, die Seite darunter bleibt stehen (früher ging die App zusätzlich zurück).
 
 ### Neu in 0.3.45: Zeitleiste, Repertoire, Sammlungen bearbeiten, Fehlertest Teil 3 (1.11.2026)
 
@@ -813,6 +895,62 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q14 Variationsbrowser und Zurück-Taste (1.11.2026, schon umgesetzt, Widerspruch genügt)
+
+- [ ] Q14-1. **Pfeile in den Abzweig-Karten:** Bild c zeigte Gold für die Hauptfortsetzung und Blau
+      für die anderen. Nach deinem Wunsch zu Frage b („nur blau mit Nummer, gepunktet, Stern“)
+      zeigen die Karten dieselben blauen Pfeile mit ★/2/3 wie das große Brett und die Chips.
+      Empfehlung: so lassen (ein Zeichensystem für Fortsetzungen, kein Gold, das mit eigenen
+      goldenen Pfeilen verwechselt wird).
+- [ ] Q14-2. **Bedienung des Stifts:** „Feld zweimal antippen = Rahmen, Feld dann Ziel = Pfeil“
+      (kein Wischen). Wischen würde die Figur mitziehen und das Scrollen über dem Brett sperren.
+      Empfehlung: so lassen; Wischen später als Zusatz, falls gewünscht.
+- [ ] Q14-3. **Fortsetzungspfeile im Stift-Modus ausgeblendet**, Ziehen aus (getrennte Modi, Entwurf
+      Abschnitt 8). Empfehlung: so lassen.
+- [ ] Q14-4. **Karte:** Ein Knoten je Halbzug (auch ohne Abzweig), jeder Ast in eigener Zeile unter
+      allem Bisherigen (kreuzungsfrei, dafür bei vielen Ästen hoch). Empfehlung: so lassen; eine
+      Verdichtung (Ketten zu einem Knoten) wäre später möglich.
+- [ ] Q14-5. **PGN-Texte:** Nummerntexte und Legende stehen als lesbare Zeilen im Kommentar (Lichess
+      zeigt sie), statt in einem unsichtbaren Befehl. Eine eigene Kommentarzeile, die zufällig „Rot
+      1: …“ heißt, würde beim Einlesen zum Nummerntext, wenn es Rot 1 gibt. Empfehlung: so lassen.
+- [ ] Q14-6. **Grüner Pfeil = bester Zug in der gezeigten Stellung** (was die Engine jetzt spielen
+      würde), nicht „was statt des letzten Zuges besser gewesen wäre“. Bild A zeigt den Pfeil so.
+      Empfehlung: so lassen; „Besser war …“ bleibt Sache der Engine-Folgen.
+- [ ] Q14-7. **Abbrechen schaltet die Analyse aus** (kein automatisches Nachrechnen neuer Züge mehr,
+      bis „Analyse“ wieder an ist). Empfehlung: so lassen – wer abbricht, will die Engine nicht im
+      Hintergrund.
+- [ ] Q14-8. **Die Analyse läuft weiter, wenn man die Variante verlässt** (Bild A: „im
+      Hintergrund“). Empfehlung: so lassen.
+- [ ] Q14-9. **Eigener PGN-Befehl `%svgb`** für besten Zug und Abstand (Lichess überliest ihn). Ohne
+      ihn müsste jede eingelesene App-PGN neu analysiert werden. Empfehlung: so lassen.
+- [ ] Q14-10. **Chips standardmäßig alle an.** Bild B zeigte den Engine-Pfeil aus; Bild A alle drei.
+      Empfehlung: an lassen (sonst sucht man nach der Analyse den Pfeil).
+- [ ] Q14-11. **Kein Code-Splitting** (siehe oben): bringt fürs Budget nichts, der Start wird kaum
+      schneller.
+- [ ] Q14-12. **Verknüpfen hängt die Variante um:** Ohne Formatänderung kann eine Variante nur eine
+      Quelle haben. Verknüpfen mit einem Lernsammlungs-/Fehlereintrag setzt deshalb ihre Quelle auf
+      den Eintrag; der Hinweis „n eigene Varianten“ an der früheren Quelle (z. B. Abb. 2.40) zählt
+      sie danach nicht mehr, Lösen macht sie zur „Stellung“ (nicht zurück zur Abbildung).
+      Empfehlung: so lassen (eine Variante, ein Ort, Änderungen gelten überall). Alternative ohne
+      Formatänderung: beim Verknüpfen eine Kopie anlegen (dann zwei getrennte Varianten). Eine echte
+      Mehrfachverknüpfung bräuchte ein neues Feld (Format 9) – bewusst nicht gebaut.
+- [ ] Q14-13. **Praxiszüge als Herkunft „partie“:** Lichess-Züge tragen die vorhandene Herkunft
+      „partie“ (Züge echter Partien) plus Kommentar „Praxis (Lichess)“ am ersten Praxiszug hinter
+      dem Buch; eine eigene Herkunft „praxis“ wäre eine Formatänderung (ältere Format-8-Leser
+      machten daraus eigene goldene Züge). Empfehlung: so lassen.
+- [ ] Q14-14. **Trainer-Lösungen:** Nur Taktik und Repertoire melden ihre Lösung; die anderen
+      Trainer öffnen nur die Stellung. Empfehlung: so lassen, bei Bedarf weitere Trainer nachziehen
+      (je eine Zeile `useSammelstellung`).
+- [ ] Q14-15. **Kerne bei kurzen Steckbriefen:** Königsindisch hat den Kern 1. d4 Sf6 2. c4 g6
+      (Lichess), Sizilianisch 1. e4 c5; dadurch kommen zu Sizilianisch auch Smith-Morra und andere
+      Systeme. Empfehlung: so lassen (gewollt: „alle Abzweigungen“).
+- [ ] Q14-16. **Tour und Zurück-Taste:** Zurück beendet jetzt nur die Tour; die App geht nicht mehr
+      zusätzlich zurück. Empfehlung: so lassen, weil es dieselbe Regel ist wie bei allen Fenstern.
+      Schon umgesetzt in acbc60f, Widerspruch genügt.
+- [ ] Q14-17. **„Neue Partie“:** Zurück führt danach nicht mehr zur Auswertung. Empfehlung: so
+      lassen, weil die Leiste stimmt und die Auswertung im Profil bleibt. Schon umgesetzt,
+      Widerspruch genügt.
 
 ### Q13 Kleinigkeiten vom 1.11.2026 (schon umgesetzt, Widerspruch genügt)
 

@@ -128,8 +128,12 @@ test("Karte: öffnen, verschieben, zoomen, Zug antippen, Liste", async ({ page }
   const vorTaste = await kartenlage(page);
   await page.keyboard.press("ArrowLeft");
   expect((await kartenlage(page))[0]).toBeCloseTo((vorTaste[0] ?? 0) + 60, 0);
-  // Tipp auf einen Zug springt zurück in die Variante.
-  await page.locator(".kk-knoten", { hasText: "3... Sxe4?!" }).click();
+  // Tipp auf einen Zug springt zurück in die Variante. Vorher alles zeigen, damit der Knoten
+  // nicht unter den Knöpfen der Karte liegt (in CI mit anderer Fenstergröße so gesehen).
+  await page.getByRole("button", { name: "Alles zeigen" }).click();
+  const ziel = page.locator(".kk-knoten", { hasText: "3... Sxe4?!" });
+  await expect(ziel).toBeInViewport();
+  await ziel.click();
   await expect(page.getByTestId("variante")).toBeVisible();
   await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert");
   await expect(page.getByTestId("variantenzeile")).toContainText("Sxe4?!");
@@ -145,7 +149,9 @@ test("Karte: öffnen, verschieben, zoomen, Zug antippen, Liste", async ({ page }
   await expect(page.getByTestId("variante")).toHaveCount(0);
 });
 
-test("Karte: zwei Finger zoomen", async ({ page }) => {
+test("Karte: zwei Finger zoomen", async ({ page, browserName }) => {
+  // Der Test erzeugt die Berührungen über eine CDP-Sitzung, die es nur in Chromium gibt.
+  test.skip(browserName !== "chromium", "Berührungen über CDP gibt es nur in Chromium");
   await oeffneVariante(page);
   await page.getByTestId("kartenknopf").click();
   const rahmen = await page.getByTestId("kartenflaeche").boundingBox();

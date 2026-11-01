@@ -4,6 +4,28 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.46: Variationsbrowser Stufe 1 bis 4, Zurück-Taste
+
+- **Stufe 1** (`varianten-stufe1`): Bildschirme „Varianten“ und „Variante“, Zugnavigation mit
+  Abzweig-Marken, Chips und blauen gepunkteten Fortsetzungspfeilen (Stern am Hauptzug), Kommentare,
+  sieben Quellen, Gabel-Knöpfe und Hinweise an Abbildung, Auswertung, Partienliste, Fehler und
+  Sammlung, PGN mit Varianten, Engine-Folgen übernehmen, Probepartien (`spiel.probe`, zählen für
+  nichts), Speicherformat 8 mit stiller Umwandlung.
+- **Stufe 2** (`varianten-stufe2`): Stift mit Nummern je Farbe und Legende, Abzweig-Karten,
+  Karte als Mindmap auf eigener Seite (SVG, verschieben, zoomen, Liste), `[%cal]`/`[%csl]`.
+- **Stufe 3** (`varianten-stufe3`): Analyse mit der zweiten Engine (Tiefe 18), gleiche Zugarten wie
+  die Partieauswertung (`zeilenurteile`), Symbole, Balken, grüner Engine-Pfeil, drei Schalter,
+  `[%eval]`; Karte „Probepartie läuft“ auf Spielen.
+- **Stufe 4** (`varianten-stufe4`): Übungen und Trainer-Aufgaben nach dem Lösen, Steckbriefe,
+  Studien; ganze Eröffnung aus Buch (Kapitel 2/3) oder Praxis als Baum; Varianten an Lernsammlung
+  und Fehlern verknüpfen und abfragen; „Variante abfragen“.
+- **Zurück-Taste** (`zurueck-dialog`): schließt nur das oberste Blatt/Fenster (`app/blattstapel.ts`),
+  Hinweis bei kaputten Herausforderungslinks, echter Offline-Test in Chromium.
+- Zwei Oberflächentests der Karte gehärtet (Knoten vor dem Tipp sichtbar; Zoom mit zwei Fingern nur
+  in Chromium, weil er CDP braucht).
+- Offen: Beim Anlegen einer Variante aus einer ausgewerteten Partie rechnet die Analyse die Werte
+  neu, statt die gespeicherten zu übernehmen.
+
 ## 1.11.2026 – Größenbudget der App 35 MB statt 25 MB
 
 Entscheidung des Autors: Die eigene Obergrenze aus Konzept 11.2 (alle ausgelieferten Dateien

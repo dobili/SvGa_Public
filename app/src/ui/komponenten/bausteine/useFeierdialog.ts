@@ -6,9 +6,11 @@
  * Bildschirm. Im Fehlertest f3 (01.11.2026) blieb der Fokus dabei hinter der Karte (Tab und
  * Bildschirmleser landeten auf Knöpfen, die gerade nicht bedienbar sind), und Esc tat nichts,
  * anders als bei Tour, Startwahl und Blättern (WCAG 2.4.3).
- * Abhängigkeiten: React, tour/haltFokus.ts.
+ * Die Zurück-Taste des Geräts wirkt ebenfalls wie „Weiter“ (app/blattstapel.ts).
+ * Abhängigkeiten: React, app/blattstapel.ts, tour/haltFokus.ts.
  */
 import { useEffect, useRef, type KeyboardEvent, type RefObject } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { haltFokus } from "../../../tour/haltFokus";
 
 /**
@@ -26,6 +28,7 @@ export function useFeierdialog(
   readonly tasten: (ereignis: KeyboardEvent<HTMLDivElement>) => void;
 } {
   const knopf = useRef<HTMLButtonElement>(null);
+  useZurueckSchliesst(schluessel !== null, weiter);
   useEffect(() => {
     if (schluessel === null) return;
     const vorher = document.activeElement instanceof HTMLElement ? document.activeElement : null;

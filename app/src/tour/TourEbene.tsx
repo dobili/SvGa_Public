@@ -16,6 +16,7 @@
  */
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { useZurueckSchliesst } from "../app/blattstapel";
 import { useOeffne } from "../app/navigationsKontext";
 import { haltFokus } from "./haltFokus";
 import { t } from "../i18n/sprache";
@@ -111,11 +112,8 @@ function LaufendeTour({ kennung }: { kennung: TourKennung }) {
     zeigeZiel(schritt?.ziel ?? null);
     karte.current?.focus();
   }, [stelle, schritt]);
-  // Die Zurück-Taste des Geräts beendet die Tour; die App geht dabei wie gewohnt zurück.
-  useEffect(() => {
-    window.addEventListener("popstate", beendeTour);
-    return () => window.removeEventListener("popstate", beendeTour);
-  }, []);
+  // Die Zurück-Taste des Geräts beendet nur die Tour, die Ansicht bleibt (app/blattstapel.ts).
+  useZurueckSchliesst(true, beendeTour);
   if (!schritt || stelle === null) return null;
 
   // Nummer und Rand nach den Schritten, die sich gerade zeigen lassen (useZielbeobachtung).

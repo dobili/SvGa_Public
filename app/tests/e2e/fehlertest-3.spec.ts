@@ -69,16 +69,19 @@ test("Startwahl „Ich lese das Buch“ legt kein zweites Buch auf den Stapel", 
   expect(await stapel(page)).toEqual(["buch"]);
 });
 
-test("Zurück-Taste bei offener Startwahl schließt sie wie „Später“", async ({ page }) => {
+test("Zurück-Taste bei offener Startwahl schließt nur sie, wie „Später“", async ({ page }) => {
   await page.setViewportSize(HANDY);
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Hilfe" }).click();
   await page.getByRole("button", { name: "Rundgang durch die App" }).click();
   await expect(page.getByTestId("tour-angebot")).toBeVisible();
+  // Seit app/blattstapel.ts schließt Zurück nur das oberste Fenster; die Einstellungen bleiben.
+  await page.goBack();
+  await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
+  await expect(page.getByRole("tab", { name: "Hilfe" })).toBeVisible();
   await page.goBack();
   await expect(page.getByRole("heading", { name: "Profil", level: 1 })).toBeVisible();
-  await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
 });
 
 test("„Los geht's“ im Profil zu „Erste Partie“: Bereich Spielen, Leiste passend", async ({

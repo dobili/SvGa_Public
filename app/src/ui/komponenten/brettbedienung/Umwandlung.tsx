@@ -3,8 +3,10 @@
  *
  * Rolle im Gesamtbild: Erscheint, wenn ein Bauer die letzte Reihe erreicht, beim Weiterspielen an
  * einer Abbildung (Brettbereich.tsx) wie im Stellungseditor (Stellungseditor.tsx).
- * Abhängigkeiten: schach/weiterspielen.ts (UMWANDLUNGEN), schach/stellung.ts, i18n.
+ * Die Zurück-Taste bricht die Umwandlung ab (app/blattstapel.ts), statt das Brett zu verlassen.
+ * Abhängigkeiten: app/blattstapel.ts, schach/weiterspielen.ts (UMWANDLUNGEN), schach/stellung.ts, i18n.
  */
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { t } from "../../../i18n/sprache";
 import { ROLLENBUCHSTABE, type Rolle } from "../../../schach/stellung";
 import { UMWANDLUNGEN } from "../../../schach/weiterspielen";
@@ -14,6 +16,7 @@ import { UMWANDLUNGEN } from "../../../schach/weiterspielen";
  * oder Abbruch).
  */
 export function Umwandlung({ beiWahl }: { beiWahl: (rolle: Rolle | null) => void }) {
+  useZurueckSchliesst(true, () => beiWahl(null));
   return (
     <div className="umwandlung" role="dialog" aria-label={t("zugleiste.umwandlung")}>
       <span>{t("zugleiste.umwandlung")}</span>

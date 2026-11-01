@@ -15,6 +15,7 @@
  */
 import { BookOpen, Compass, Swords, type LucideIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type RefObject } from "react";
+import { useZurueckSchliesst } from "../app/blattstapel";
 import type { Bereich } from "../app/stapel";
 import { useNavigation } from "../app/navigationsKontext";
 import { useSprachangebotFaellig } from "../app/sprachangebot";
@@ -152,13 +153,10 @@ export function TourAngebot() {
   }, [erststart, mitBuch, sprachfrage, waehle]);
   const offen = aufWunsch || (erststart && !mitBuch);
   useEffect(() => {
-    if (!offen) return;
-    erster.current?.focus();
-    // Die Zurück-Taste des Geräts schließt die Frage wie „Später“, so wie sie eine Tour beendet;
-    // sonst stünde die Frage über dem Bildschirm, zu dem die App zurückgeht.
-    window.addEventListener("popstate", spaeter);
-    return () => window.removeEventListener("popstate", spaeter);
+    if (offen) erster.current?.focus();
   }, [offen]);
+  // Die Zurück-Taste des Geräts schließt nur die Frage, wie „Später“ (app/blattstapel.ts).
+  useZurueckSchliesst(offen, spaeter);
   if (!offen) return null;
   return <Startwahlkarte erster={erster} waehle={waehle} spaeter={spaeter} />;
 }

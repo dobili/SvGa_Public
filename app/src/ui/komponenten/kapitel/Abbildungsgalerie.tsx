@@ -11,10 +11,12 @@
  * in 1.1 lösen“; ein Pfeil vorn zeigt, ob ein Abschnitt auf- oder zugeklappt ist. Abbildungen
  * mit Warum-Fragen tragen oben rechts ein Zeichen (gesperrt, offen, beantwortet), erklärt in der
  * Legende über der Galerie (Zusatzsymbol.tsx).
- * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
+ * Die Zurück-Taste beantwortet eine Rückfrage mit „Nein“ (app/blattstapel.ts).
+ * Abhängigkeiten: app/blattstapel.ts, daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
 import { Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useZurueckSchliesst } from "../../../app/blattstapel";
 import { useNavigation } from "../../../app/navigationsKontext";
 import type { Abbildung, Kapitel, Textteil } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
@@ -103,6 +105,7 @@ function Nachfrage({
   kapitel: Kapitel;
   beiEnde: () => void;
 }) {
+  useZurueckSchliesst(true, beiEnde);
   const abhaken = frage === "abhaken";
   return (
     <div

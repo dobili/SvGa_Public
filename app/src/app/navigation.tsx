@@ -11,9 +11,22 @@
  * 25.10.2026), und der Anfangsstapel kann ein wiederhergestellter sein. Steht die Seite nach
  * einem Neuladen schon auf dem Wächter-Eintrag, übernimmt der Rahmen ihn, statt einen weiteren
  * anzulegen; so führt die Zurück-Taste auch nach dem Neuladen eine Ansicht zurück.
- * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, React.
+ * Offene Blätter und Fenster (app/blattstapel.ts) brauchen den Wächter ebenfalls: Die
+ * Zurück-Taste schließt zuerst das oberste von ihnen und lässt die Ansicht stehen (Fehlertest f3,
+ * 01.11.2026). Schließt ein Blatt auf anderem Weg und braucht sonst nichts den Wächter, geht der
+ * Rahmen selbst einen Schritt im Verlauf zurück; dieses eigene Zurück übergeht er danach.
+ * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, blattstapel.ts, React.
  */
-import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
+import { abonniereBlaetter, anzahlOffenerBlaetter, schliesseOberstesBlatt } from "./blattstapel";
 import { NavigationsKontext, type Navigation } from "./navigationsKontext";
 import { oben, schritt, type Stapel } from "./stapel";
 import { sichereStapel } from "./stapelMerker";
@@ -45,23 +58,45 @@ export function NavigationsRahmen({
   children: ReactNode;
 }) {
   const [stapel, ausfuehren] = useReducer(schritt, undefined, anfang);
+  const blaetter = useSyncExternalStore(abonniereBlaetter, anzahlOffenerBlaetter);
   const tiefe = useRef(stapel.ansichten.length);
   const waechterAktiv = useRef(istWaechter(window.history.state));
+  // Ob das nächste „popstate“ vom Rahmen selbst kommt (Wächter eines Blattes abgeräumt).
+  const eigenesZurueck = useRef(false);
+  const blaetterVorher = useRef(0);
 
-  // Wächter setzen, sobald es etwas zum Zurückgehen gibt; jeden Stand sichern (V2).
+  // Jeden Stand sichern (V2).
   useEffect(() => {
     sichereStapel(stapel);
     tiefe.current = stapel.ansichten.length;
-    if (stapel.ansichten.length > 1 && !waechterAktiv.current) {
-      window.history.pushState(WAECHTER, "");
-      waechterAktiv.current = true;
-    }
   }, [stapel]);
 
-  // Zurück-Taste: Der Browser hat den Wächter verlassen; die App geht eine Ansicht zurück.
+  // Wächter setzen, sobald es etwas zum Zurückgehen oder ein offenes Blatt gibt.
+  useEffect(() => {
+    const bedarf = stapel.ansichten.length > 1 || blaetter > 0;
+    const blattGeschlossen = blaetterVorher.current > 0 && blaetter === 0;
+    blaetterVorher.current = blaetter;
+    if (bedarf && !waechterAktiv.current) {
+      window.history.pushState(WAECHTER, "");
+      waechterAktiv.current = true;
+    } else if (!bedarf && waechterAktiv.current && blattGeschlossen) {
+      // Das Blatt schloss über einen Knopf: Sein Wächter würde sonst ein Drücken verschlucken.
+      eigenesZurueck.current = true;
+      waechterAktiv.current = false;
+      window.history.back();
+    }
+  }, [stapel, blaetter]);
+
+  // Zurück-Taste: Der Browser hat den Wächter verlassen; die App schließt das oberste Blatt
+  // oder geht eine Ansicht zurück.
   useEffect(() => {
     const beiZurueck = () => {
       waechterAktiv.current = false;
+      if (eigenesZurueck.current) {
+        eigenesZurueck.current = false;
+        return;
+      }
+      if (schliesseOberstesBlatt()) return;
       if (tiefe.current > 1) {
         ausfuehren({ art: "zurueck" });
       }

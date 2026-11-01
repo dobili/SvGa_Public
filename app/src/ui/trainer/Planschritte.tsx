@@ -10,7 +10,7 @@
  * Taktikaufgabe, Speicher, Navigation, i18n.
  */
 import { useState } from "react";
-import { useNavigation } from "../../app/navigationsKontext";
+import { useNavigation, useOeffne } from "../../app/navigationsKontext";
 import { ladeTaktik } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { mitVorlieben } from "../../speicher/partien";
@@ -60,16 +60,17 @@ function PlanTaktik() {
 
 /**
  * Zum Spiel gegen die Engine. Seit 0.2.91 stellt der Knopf vorher die Bedenkzeit 10 + 0 ein
- * (Kapitel 12, Partietag); der Leser kann sie beim Spielen noch ändern.
+ * (Kapitel 12, Partietag); der Leser kann sie beim Spielen noch ändern. Der Knopf wechselt in den
+ * Bereich „Spielen“ (useOeffne), damit die Leiste unten stimmt (Fehlertest f3, 01.11.2026).
  */
 function PlanPartie() {
-  const { navigiere } = useNavigation();
+  const oeffne = useOeffne();
   const zumSpielen = async () => {
     await aendere((d) => ({
       ...d,
       spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, uhr: UHR_PARTIETAG }),
     }));
-    navigiere({ bildschirm: "spielen" });
+    oeffne({ bildschirm: "spielen" });
   };
   return (
     <>

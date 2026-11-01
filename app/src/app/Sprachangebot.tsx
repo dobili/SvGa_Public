@@ -8,11 +8,12 @@
  * gemerkte Sprachwahl und nur, wenn die erste Sprache des Geräts nicht Deutsch ist. Der Text steht
  * auf Englisch und Deutsch, denn wer ihn liest, versteht vielleicht noch kein Deutsch. Er liegt
  * über der Frage nach dem Rundgang, die danach in der gewählten Sprache erscheint.
- * Abhängigkeiten: app/sprachangebot.ts, app/sprachwahl.ts, app/merker.ts, i18n, tour/haltFokus.ts.
+ * Abhängigkeiten: app/blattstapel.ts, app/sprachangebot.ts, app/sprachwahl.ts, app/merker.ts, i18n, tour/haltFokus.ts.
  */
 import { useEffect, useId, useRef, useState } from "react";
 import { t } from "../i18n/sprache";
 import { haltFokus } from "../tour/haltFokus";
+import { useZurueckSchliesst } from "./blattstapel";
 import { useNavigation } from "./navigationsKontext";
 import { schreibeMerker } from "./merker";
 import { MERKER_SPRACHANGEBOT, sprachangebotFaellig } from "./sprachangebot";
@@ -36,11 +37,13 @@ export function Sprachangebot() {
   useEffect(() => {
     if (sichtbar) ja.current?.focus();
   }, [sichtbar]);
-  if (!sichtbar) return null;
   const behalten = () => {
     schreibeMerker(MERKER_SPRACHANGEBOT, "gefragt");
     setzeOffen(false);
   };
+  // Die Zurück-Taste behält Deutsch wie der erste Knopf (app/blattstapel.ts).
+  useZurueckSchliesst(sichtbar, behalten);
+  if (!sichtbar) return null;
   const englisch = async () => {
     schreibeMerker(MERKER_SPRACHANGEBOT, "gefragt");
     // Gelingt der Wechsel, baut die App sich neu auf (neuer Schlüssel), das Fenster verschwindet.

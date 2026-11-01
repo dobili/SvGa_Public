@@ -19,7 +19,8 @@ import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
 import { abzugspaare } from "./zaehlabzug";
 import { gefesselteAmFeld, gesperrteFuer } from "./zaehlfesselung";
-import { feldname, gegner, type Stellung } from "../schach/stellung";
+import { feldAusName, feldname, gegner, stellungAusFen, type Stellung } from "../schach/stellung";
+import { fenMitZugrecht } from "./roentgentrainer";
 import type { Buchstellung } from "./buchstellungen";
 import { mische, type Zufall } from "./zufall";
 import { geeignet } from "./eignung";
@@ -214,6 +215,24 @@ export function zaehlrunde(
   // Fehlt es an Aufgaben ohne Gewinn, füllen weitere mit Gewinn die Runde auf.
   const rest = mitGewinn.slice(erste.length, erste.length + anzahl - erste.length - zweite.length);
   return mische([...erste, ...zweite, ...rest], zufall);
+}
+
+/**
+ * Die Stellung einer Zählaufgabe, wie das Brett sie zeigt: mit der schlagenden Seite am Zug.
+ *
+ * Warum (Bug-Test 1.11.2026): „Lohnt sich Schlagen?“ fragt die Seite, die die Figur auf dem Feld
+ * angreift. Das Buchbild hat oft die andere Seite am Zug, und unter dem Brett stand dann
+ * „Schwarz am Zug“, obwohl Weiß schlägt. Rechnung, Pfeile und Kennung der Karte hängen nicht
+ * davon ab, wer am Zug ist; nur die Anzeige ändert sich.
+ * Beispiel: weißer Läufer greift den Springer d5 an, Buchbild „Schwarz am Zug“ → Weiß am Zug.
+ * Sonderfall: unlesbare Stellung oder leeres Feld → die Stellung unverändert.
+ */
+export function zaehlfen(aufgabe: Pick<Zaehlaufgabe, "fen" | "feld">): string {
+  const gelesen = stellungAusFen(aufgabe.fen);
+  const feld = feldAusName(aufgabe.feld);
+  if (!gelesen.ok || feld === null) return aufgabe.fen;
+  const figur = gelesen.wert.brett.get(feld);
+  return figur ? fenMitZugrecht(gelesen.wert, gegner(figur.color)) : aufgabe.fen;
 }
 
 /** Prüft eine Antwort: Jede der drei Zahlen muss stimmen. */

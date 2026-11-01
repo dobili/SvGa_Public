@@ -24,6 +24,7 @@ import {
   pruefeZaehlantwort,
   type Haengeaufgabe,
   type Zaehlaufgabe,
+  zaehlfen,
 } from "../../training/zaehltrainer";
 import { bilanzkennung, haengekennung } from "../../training/wiederholbar";
 import { antworteMitKarte } from "./kartenantwort";
@@ -192,7 +193,7 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
     <>
       <Zaehlfrage feld={aufgabe.feld} schalter={schalter} />
       <Trainerbrett
-        fen={aufgabe.fen}
+        fen={zaehlfen(aufgabe)}
         markierungen={markierungen}
         beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
       />

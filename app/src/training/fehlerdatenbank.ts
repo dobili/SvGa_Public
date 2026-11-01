@@ -44,13 +44,17 @@ type Roh = Record<string, unknown>;
 const istObjekt = (w: unknown): w is Roh =>
   typeof w === "object" && w !== null && !Array.isArray(w);
 
+/** Ob eine Zahl eine Fehlerart der Gesamt-Checkliste ist (Kapitel 0 bis 12). */
+function istFehlerart(kapitel: number): boolean {
+  return Number.isInteger(kapitel) && kapitel >= 0 && kapitel <= LETZTES_KAPITEL;
+}
+
 /** Ein Eintrag aus Rohdaten, oder null, wenn etwas Wesentliches fehlt. */
 function eintragAus(roh: unknown): Fehlereintrag | null {
   if (!istObjekt(roh)) return null;
   const { id, datum, fen, satz, fehlerart, zug } = roh;
   if (typeof id !== "string" || typeof datum !== "string" || typeof fen !== "string") return null;
-  if (typeof fehlerart !== "number" || !Number.isInteger(fehlerart)) return null;
-  if (fehlerart < 0 || fehlerart > LETZTES_KAPITEL) return null;
+  if (typeof fehlerart !== "number" || !istFehlerart(fehlerart)) return null;
   return {
     id,
     datum,
@@ -79,6 +83,30 @@ export function mitEintrag(
   eintrag: Fehlereintrag,
 ): Fehlereintrag[] {
   return [...liste, eintrag].slice(-HOECHSTENS_EINTRAEGE);
+}
+
+/** Was sich an einem Fehler nachträglich ändern lässt: die Felder des Formulars beim Anlegen. */
+export type Fehleraenderung = Partial<Pick<Fehlereintrag, "satz" | "fehlerart">>;
+
+/**
+ * Ändert Fehlerart oder Satz eines Eintrags; Kennung, Datum, Stellung und Zug bleiben.
+ * Warum: Wer später merkt, dass ein Fehler eher in ein anderes Kapitel gehört, korrigiert ihn,
+ * und die Auswertung zählt ihn dann dort. Sonderfall: Eine Fehlerart außerhalb 0 bis 12 bleibt
+ * unbeachtet, der Satz wird wie beim Lesen gekürzt.
+ * Beispiel: Fehlerart 1 → 7: Die Auswertung zählt den Fehler bei Kapitel 7.
+ */
+export function geaenderterFehler(
+  liste: readonly Fehlereintrag[],
+  id: string,
+  teil: Fehleraenderung,
+): Fehlereintrag[] {
+  const begrenzt: Fehleraenderung = {
+    ...(teil.satz !== undefined ? { satz: teil.satz.slice(0, SATZ_HOECHSTENS) } : {}),
+    ...(teil.fehlerart !== undefined && istFehlerart(teil.fehlerart)
+      ? { fehlerart: teil.fehlerart }
+      : {}),
+  };
+  return liste.map((e) => (e.id === id ? { ...e, ...begrenzt } : e));
 }
 
 /** Entfernt einen Eintrag. */

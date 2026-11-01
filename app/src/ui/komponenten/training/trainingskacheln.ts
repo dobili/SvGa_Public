@@ -1,13 +1,15 @@
 /**
- * Die Kacheln unten im Bereich Training (Entwurf C2, 31.10.2026) als Liste zum Eintragen:
- * Lernsammlung und „Alle Kapitel“ (die Trainingsseiten der Website).
+ * Die Kacheln im Bereich Training (Entwurf C2, 31.10.2026) als Liste zum Eintragen:
+ * Lernsammlung, Fehlerdatenbank und „Alle Kapitel“ (die Trainingsseiten der Website). Seit
+ * 1.11.2026 stehen sie oben unter dem Stapel, und die Fehlerdatenbank hat eine eigene Kachel
+ * (Wunsch des Autors: Er fand sie nach „Merken“ in der Reihe „Praxis“ nicht wieder).
  *
  * Rolle im Gesamtbild: Ein späteres Werkzeug mit eigener Seite trägt hier eine Zeile ein (Symbol,
  * Titel, Unterzeile, Ziel); das Ziel ist ein Bildschirm der App oder eine Adresse der Website.
  * Gezeichnet werden die Kacheln in Trainingskacheln.tsx.
  * Abhängigkeiten: lucide, i18n, app/stapel.ts (Ansicht), speicher/format.ts (Nutzerdaten).
  */
-import { BookmarkPlus, Map as KartenSymbol, type LucideIcon } from "lucide-react";
+import { BookmarkPlus, Database, Map as KartenSymbol, type LucideIcon } from "lucide-react";
 import type { Ansicht } from "../../../app/stapel";
 import { t, tZahl, type Textschluessel } from "../../../i18n/sprache";
 import type { Nutzerdaten } from "../../../speicher/format";
@@ -34,6 +36,16 @@ export const TRAININGSKACHELN: readonly Trainingskachel[] = [
       tZahl("trainingslook.sammlung", daten.sammlung.length, { anzahl: daten.sammlung.length }),
     ziel: { ansicht: { bildschirm: "lernsammlung" } },
     tour: "training-sammlung",
+  },
+  {
+    // Dasselbe Symbol wie der Trainer in der Reihe „Praxis“ (trainersymbole.ts).
+    kennung: "fehler",
+    symbol: Database,
+    titel: "trainer.fehlerdatenbank.name",
+    unterzeile: (daten) =>
+      tZahl("trainingslook.fehler", daten.fehler.length, { anzahl: daten.fehler.length }),
+    ziel: { ansicht: { bildschirm: "trainer", kennung: "fehlerdatenbank" } },
+    tour: "training-fehler",
   },
   {
     kennung: "kapitel",

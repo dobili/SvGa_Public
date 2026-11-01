@@ -2,65 +2,45 @@
  * Ein Eintrag der Lernsammlung: zugeklappt Fundstelle und Plan, offen mit Brett, Notiz,
  * Sprung zur Abbildung, Bearbeiten und Löschen.
  *
- * Rolle im Gesamtbild: Teil des Bildschirms Lernsammlung (AP 15). Bearbeiten ändert Plan, Notiz
- * und Eröffnung; Stellung und Fundstelle bleiben.
- * Abhängigkeiten: training/lernsammlung.ts, speicher/speicher.ts, Trainerbrett, sammeltexte.ts,
- * Navigation, i18n.
+ * Rolle im Gesamtbild: Teil des Bildschirms Lernsammlung (AP 15). Bearbeiten zeigt dieselben
+ * Felder wie das Anlegen (Sammelfelder.tsx: Plan, Notiz, Eröffnung; Wunsch des Autors,
+ * 1.11.2026); Stellung, Fundstelle und Datum bleiben. Ohne Plan heißt der Knopf „Plan
+ * ergänzen“. Löschen übernimmt der Bildschirm (mit Rückgängig, bausteine/useRueckgaengig.tsx).
+ * Abhängigkeiten: training/eintragspflege.ts, speicher/speicher.ts, Trainerbrett, Sammelfelder,
+ * sammeltexte.ts, Navigation, i18n.
  */
 import { useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import { aendere } from "../../../speicher/speicher";
-import {
-  EROEFFNUNG_HOECHSTENS,
-  geaenderterEintrag,
-  NOTIZ_HOECHSTENS,
-  ohneSammeleintrag,
-  PLAN_HOECHSTENS,
-  type Sammeleintrag,
-} from "../../../training/lernsammlung";
+import { mitGeaendertemSammeleintrag } from "../../../training/eintragspflege";
+import type { Sammeleintrag } from "../../../training/lernsammlung";
 import { Trainerbrett } from "../../trainer/Trainerbrett";
-import { fundstelle } from "./sammeltexte";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
+import { Sammelfelder, type Sammelwerte } from "./Sammelfelder";
+import { fundstelle } from "./sammeltexte";
 
-/** Felder zum Bearbeiten von Plan, Notiz und Eröffnung. */
+/** Die Felder des Anlegens zum Bearbeiten, mit Speichern und Abbrechen. */
 function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig: () => void }) {
-  const [plan, setzePlan] = useState(eintrag.plan);
-  const [notiz, setzeNotiz] = useState(eintrag.notiz);
-  const [eroeffnung, setzeEroeffnung] = useState(eintrag.eroeffnung);
+  const [werte, setzeWerte] = useState<Sammelwerte>({
+    plan: eintrag.plan,
+    notiz: eintrag.notiz,
+    eroeffnung: eintrag.eroeffnung,
+  });
   const speichern = () => {
-    const teil = { plan: plan.trim(), notiz: notiz.trim(), eroeffnung: eroeffnung.trim() };
-    void aendere((daten) => ({
-      ...daten,
-      sammlung: geaenderterEintrag(daten.sammlung, eintrag.id, teil),
-    }));
+    const teil = {
+      plan: werte.plan.trim(),
+      notiz: werte.notiz.trim(),
+      eroeffnung: werte.eroeffnung.trim(),
+    };
+    void aendere((daten) => mitGeaendertemSammeleintrag(daten, eintrag.id, teil));
     beiFertig();
   };
   return (
-    <div className="fehlerformular">
-      <input
-        type="text"
-        className="textfeld"
-        aria-label={t("sammlung.plan")}
-        maxLength={PLAN_HOECHSTENS}
-        value={plan}
-        onChange={(e) => setzePlan(e.target.value)}
-      />
-      <textarea
-        className="textfeld"
-        aria-label={t("sammlung.notiz")}
-        maxLength={NOTIZ_HOECHSTENS}
-        rows={2}
-        value={notiz}
-        onChange={(e) => setzeNotiz(e.target.value)}
-      />
-      <input
-        type="text"
-        className="textfeld"
-        aria-label={t("sammlung.eroeffnung")}
-        maxLength={EROEFFNUNG_HOECHSTENS}
-        value={eroeffnung}
-        onChange={(e) => setzeEroeffnung(e.target.value)}
+    <div className="fehlerformular" data-testid="sammel-bearbeiten">
+      <Sammelfelder
+        werte={werte}
+        beiAenderung={(teil) => setzeWerte((alt) => ({ ...alt, ...teil }))}
       />
       <div className="knopfreihe">
         <button type="button" className="knopf-haupt" onClick={speichern}>
@@ -87,18 +67,52 @@ function Inhalt({ eintrag }: { eintrag: Sammeleintrag }) {
   );
 }
 
+/** Die Knöpfe unter einem Eintrag: zur Abbildung, Bearbeiten (oder Plan ergänzen), Löschen. */
+function Knoepfe({
+  eintrag,
+  beiBearbeiten,
+  beiLoeschen,
+}: {
+  eintrag: Sammeleintrag;
+  beiBearbeiten: () => void;
+  beiLoeschen: () => void;
+}) {
+  const { navigiere } = useNavigation();
+  return (
+    <div className="knopfreihe">
+      {eintrag.herkunft === "abbildung" && (
+        <button
+          type="button"
+          className="knopf-zweit"
+          onClick={() => navigiere({ bildschirm: "abbildung", nummer: eintrag.quelle })}
+        >
+          {t("sammlung.zurAbbildung", { nummer: eintrag.quelle })}
+        </button>
+      )}
+      <button type="button" className="knopf-zweit" onClick={beiBearbeiten}>
+        <Knopfsymbol art="bearbeiten" />
+        {eintrag.plan ? t("sammlung.bearbeiten") : t("sammlung.planErgaenzen")}
+      </button>
+      <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
+        <Knopfsymbol art="loeschen" />
+        {t("sammlung.loeschen")}
+      </button>
+    </div>
+  );
+}
+
 /**
  * Ein Eintrag der Lernsammlung: zugeklappt Fundstelle und Plan, aufgeklappt mit Brett, Notiz,
- * Sprung zur Abbildung, Bearbeiten und Löschen.
+ * Sprung zur Abbildung, Bearbeiten und Löschen. `beiLoeschen` löscht mit Rückgängig.
  */
-export function SammeleintragKarte({ eintrag }: { eintrag: Sammeleintrag }) {
-  const { navigiere } = useNavigation();
+export function SammeleintragKarte({
+  eintrag,
+  beiLoeschen,
+}: {
+  eintrag: Sammeleintrag;
+  beiLoeschen: (id: string) => void;
+}) {
   const [bearbeiten, setzeBearbeiten] = useState(false);
-  const loeschen = () =>
-    void aendere((daten) => ({
-      ...daten,
-      sammlung: ohneSammeleintrag(daten.sammlung, eintrag.id),
-    }));
   return (
     <details className="sammeleintrag" data-testid="sammeleintrag">
       <summary>
@@ -109,27 +123,14 @@ export function SammeleintragKarte({ eintrag }: { eintrag: Sammeleintrag }) {
       {bearbeiten ? (
         <Bearbeiten eintrag={eintrag} beiFertig={() => setzeBearbeiten(false)} />
       ) : (
-        <Inhalt eintrag={eintrag} />
-      )}
-      {!bearbeiten && (
-        <div className="knopfreihe">
-          {eintrag.herkunft === "abbildung" && (
-            <button
-              type="button"
-              className="knopf-zweit"
-              onClick={() => navigiere({ bildschirm: "abbildung", nummer: eintrag.quelle })}
-            >
-              {t("sammlung.zurAbbildung", { nummer: eintrag.quelle })}
-            </button>
-          )}
-          <button type="button" className="knopf-zweit" onClick={() => setzeBearbeiten(true)}>
-            {t("sammlung.bearbeiten")}
-          </button>
-          <button type="button" className="knopf-zweit" onClick={loeschen}>
-            <Knopfsymbol art="loeschen" />
-            {t("sammlung.loeschen")}
-          </button>
-        </div>
+        <>
+          <Inhalt eintrag={eintrag} />
+          <Knoepfe
+            eintrag={eintrag}
+            beiBearbeiten={() => setzeBearbeiten(true)}
+            beiLoeschen={() => beiLoeschen(eintrag.id)}
+          />
+        </>
       )}
     </details>
   );

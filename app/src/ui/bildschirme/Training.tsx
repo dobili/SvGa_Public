@@ -1,7 +1,8 @@
 /**
  * Bereich Training (Entwurf C2 nach Wahl des Autors, 31.10.2026): oben der Stapel der fälligen
- * Wiederholungen, darunter je Teil des Buches eine Wischreihe mit Trainer-Karten, unten kompakte
- * Kacheln (Lernsammlung, alle Kapitel).
+ * Wiederholungen, darunter kompakte Kacheln (Lernsammlung, Fehlerdatenbank, alle Kapitel; seit
+ * 1.11.2026 oben, damit die eigenen Sammlungen ohne Suchen erreichbar sind), dann je Teil des
+ * Buches eine Wischreihe mit Trainer-Karten.
  *
  * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Ziel des Autors: weniger Text,
  * weniger Formular; Einsteiger sehen zuerst, was heute dran ist, und erkennen jeden Trainer an
@@ -55,8 +56,8 @@ export function Training() {
         </summary>
         <p>{t("training.faelligPrinzip")}</p>
       </details>
-      <Reihen />
       <Trainingskacheln />
+      <Reihen />
     </div>
   );
 }

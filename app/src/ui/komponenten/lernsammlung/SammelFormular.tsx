@@ -9,17 +9,15 @@
  * Abhängigkeiten: training/lernsammlung.ts, speicher/speicher.ts, useEroeffnungsindex, i18n.
  */
 import { BookmarkPlus } from "lucide-react";
-import { useId, useState } from "react";
+import { useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import { zaehleAktivitaet } from "../../../speicher/aktivitaet";
 import { aendere } from "../../../speicher/speicher";
 import {
-  EROEFFNUNG_HOECHSTENS,
   eroeffnungsnameFuer,
   mitSammeleintrag,
   NOTIZ_HOECHSTENS,
-  PLAN_HOECHSTENS,
   type Herkunft,
   type Sammelverlauf,
 } from "../../../training/lernsammlung";
@@ -27,6 +25,7 @@ import { Aufklapper } from "../bausteine/Aufklapper";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { useEroeffnungsindex } from "../bausteine/useEroeffnungsindex";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
+import { Sammelfelder, type Sammelwerte } from "./Sammelfelder";
 
 /** Größe des Lesezeichens am Brett, wie die anderen Brettschalter. */
 const SYMBOLGROESSE = 20;
@@ -47,57 +46,24 @@ function neueKennung(): string {
   return `s-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
-/** Ein beschriftetes Textfeld (eine Zeile oder mehrere). */
-function Feld({
-  name,
-  wert,
-  laenge,
-  beispiel,
-  zeilen,
-  beiAenderung,
-}: {
-  name: string;
-  wert: string;
-  laenge: number;
-  beispiel: string;
-  zeilen?: number;
-  beiAenderung: (wert: string) => void;
-}) {
-  const id = useId();
-  const gemeinsam = {
-    id,
-    className: "textfeld",
-    maxLength: laenge,
-    value: wert,
-    placeholder: beispiel,
-  };
-  return (
-    <>
-      <label className="einstellung-name" htmlFor={id}>
-        {name}
-      </label>
-      {zeilen ? (
-        <textarea {...gemeinsam} rows={zeilen} onChange={(e) => beiAenderung(e.target.value)} />
-      ) : (
-        <input {...gemeinsam} type="text" onChange={(e) => beiAenderung(e.target.value)} />
-      )}
-    </>
-  );
-}
-
-/** Bestätigung nach dem Speichern, mit Weg zur Sammlung. */
-function Gespeichert() {
+/**
+ * Bestätigung nach dem Speichern, mit Sprung zur Sammlung (Wunsch des Autors, 1.11.2026: nach
+ * „Merken“ gleich sehen, wo der Eintrag liegt). In der Sammlung selbst entfällt der Sprung.
+ */
+function Gespeichert({ mitSprung }: { mitSprung: boolean }) {
   const { navigiere } = useNavigation();
   return (
-    <p className="meldung gut" role="status">
+    <p className="meldung gut" role="status" data-testid="sammlung-gespeichert">
       {t("sammlung.gespeichert")}{" "}
-      <button
-        type="button"
-        className="knopf-link"
-        onClick={() => navigiere({ bildschirm: "lernsammlung" })}
-      >
-        {t("sammlung.oeffnen")}
-      </button>
+      {mitSprung && (
+        <button
+          type="button"
+          className="knopf-link"
+          onClick={() => navigiere({ bildschirm: "lernsammlung" })}
+        >
+          {t("sammlung.oeffnen")}
+        </button>
+      )}
     </p>
   );
 }
@@ -113,6 +79,7 @@ export function SammelFormular({
   beiGespeichert,
   mitErklaerung = false,
   vorschlagNotiz = "",
+  mitSprung = true,
 }: {
   fen: string | null;
   herkunft: Sammelherkunft;
@@ -121,10 +88,14 @@ export function SammelFormular({
   vorschlagNotiz?: string;
   /** Kopfzeile mit Fragezeichen (unter dem Brett der Abbildung, Wunsch des Autors 19.10.2026). */
   mitErklaerung?: boolean;
+  /** Nach dem Speichern „Zur Lernsammlung“ zeigen (nicht in der Sammlung selbst). */
+  mitSprung?: boolean;
 }) {
   const index = useEroeffnungsindex(KAPITEL_MIT_INDEX);
-  const [plan, setzePlan] = useState("");
-  const [notiz, setzeNotiz] = useState(vorschlagNotiz.slice(0, NOTIZ_HOECHSTENS));
+  const [werte, setzeWerte] = useState({
+    plan: "",
+    notiz: vorschlagNotiz.slice(0, NOTIZ_HOECHSTENS),
+  });
   // null: die Eröffnung der App gilt; sobald der Leser tippt, gilt seine.
   const [eigeneEroeffnung, setzeEroeffnung] = useState<string | null>(null);
   const [gespeichert, setzeGespeichert] = useState(false);
@@ -138,8 +109,8 @@ export function SammelFormular({
       fen,
       ...herkunft,
       eroeffnung: eroeffnung.trim(),
-      plan: plan.trim(),
-      notiz: notiz.trim(),
+      plan: werte.plan.trim(),
+      notiz: werte.notiz.trim(),
     };
     void aendere((daten) =>
       zaehleAktivitaet(
@@ -152,7 +123,12 @@ export function SammelFormular({
     setzeGespeichert(true);
     beiGespeichert?.();
   };
-  if (gespeichert) return <Gespeichert />;
+  const aendern = (teil: Partial<Sammelwerte>) => {
+    const { eroeffnung: neueEroeffnung, ...rest } = teil;
+    if (neueEroeffnung !== undefined) setzeEroeffnung(neueEroeffnung);
+    setzeWerte((alt) => ({ ...alt, ...rest }));
+  };
+  if (gespeichert) return <Gespeichert mitSprung={mitSprung} />;
   return (
     <div className="fehlerformular" data-testid="sammelformular">
       {mitErklaerung && (
@@ -162,28 +138,7 @@ export function SammelFormular({
           thema={t("sammlung.erklaerungThema")}
         />
       )}
-      <Feld
-        name={t("sammlung.plan")}
-        wert={plan}
-        laenge={PLAN_HOECHSTENS}
-        beispiel={t("sammlung.planBeispiel")}
-        beiAenderung={setzePlan}
-      />
-      <Feld
-        name={t("sammlung.notiz")}
-        wert={notiz}
-        laenge={NOTIZ_HOECHSTENS}
-        beispiel={t("sammlung.notizBeispiel")}
-        zeilen={2}
-        beiAenderung={setzeNotiz}
-      />
-      <Feld
-        name={t("sammlung.eroeffnung")}
-        wert={eroeffnung}
-        laenge={EROEFFNUNG_HOECHSTENS}
-        beispiel={t("sammlung.eroeffnungBeispiel")}
-        beiAenderung={setzeEroeffnung}
-      />
+      <Sammelfelder werte={{ ...werte, eroeffnung }} beiAenderung={aendern} />
       <button type="button" className="knopf-haupt" disabled={fen === null} onClick={speichern}>
         <Knopfsymbol art="speichern" />
         {t("sammlung.speichern")}

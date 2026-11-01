@@ -139,6 +139,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   training: tour("tour.titel.training", [
     ziel("training-faellig", "tour.training.faellig"),
     ziel("training-sammlung", "tour.training.sammlung"),
+    ziel("training-fehler", "tour.training.fehler"),
     ziel("training-website", "tour.training.website"),
     ziel("training-kapitel", "tour.training.kapitel"),
   ]),

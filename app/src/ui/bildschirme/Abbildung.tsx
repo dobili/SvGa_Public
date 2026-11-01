@@ -22,7 +22,12 @@ import { schreibeMerker } from "../../app/merker";
 import { useNavigation } from "../../app/navigationsKontext";
 import { letzterZugAus } from "../../engine/letzterzug";
 import { hauptlinie } from "../../schach/variantenbaum";
-import { ladeKapitel, type Abbildung as AbbildungDaten, type Kapitel } from "../../daten/laden";
+import {
+  ladeIndex,
+  ladeKapitel,
+  type Abbildung as AbbildungDaten,
+  type Kapitel,
+} from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
@@ -248,6 +253,12 @@ export function Abbildung({ nummer }: { nummer: string }) {
   const kapitel = useDaten(() => ladeKapitel(kapitelnummer), `kapitel-${kapitelnummer}`);
   const abbildung =
     kapitel.art === "fertig" ? kapitel.wert.abbildungen.find((a) => a.id === nummer) : undefined;
+  // Ein Sprung wie #abb-99.99 nennt ein Kapitel, das es nicht gibt: Das ist keine kaputte
+  // Installation, sondern eine falsche Nummer (Bug-Test 1.11.2026).
+  const index = useDaten(ladeIndex, "index");
+  const unbekanntesKapitel =
+    index.art === "fertig" && !index.wert.kapitel.some((k) => k.kapitel === kapitelnummer);
+  const nichtGefunden = unbekanntesKapitel || (kapitel.art === "fertig" && !abbildung);
   const [sprung, setzeSprung] = useState(false);
   return (
     <div className="bildschirm bildschirm-abbildung">
@@ -262,10 +273,10 @@ export function Abbildung({ nummer }: { nummer: string }) {
       />
       {sprung && <Nummernfeld beiSchliessen={() => setzeSprung(false)} />}
       {kapitel.art === "laedt" && <p className="lade">…</p>}
-      {kapitel.art === "fehler" && (
+      {kapitel.art === "fehler" && !unbekanntesKapitel && (
         <p className="fehlertext">{t("buch.ladefehler", { fehler: kapitel.meldung })}</p>
       )}
-      {kapitel.art === "fertig" && !abbildung && (
+      {nichtGefunden && (
         <p className="fehlertext">{t("buch.nichtGefunden", { eingabe: nummer })}</p>
       )}
       {kapitel.art === "fertig" && abbildung && (

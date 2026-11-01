@@ -138,7 +138,7 @@ export function inEnglischerNotation(text: string): {
 }
 
 /** Normales Schach? Varianten (Chess960, Crazyhouse, Atomic …) liest die App nicht ein. */
-function normalesSchach(rules: string, variante: string | undefined): boolean {
+export function normalesSchach(rules: string, variante: string | undefined): boolean {
   return rules === "chess" && !/960|fischer/i.test(variante ?? "");
 }
 

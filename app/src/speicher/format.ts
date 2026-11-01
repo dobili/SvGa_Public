@@ -21,8 +21,11 @@
  *   Stufen 9 und 10 als falsche Stufen zu lesen.
  * - Format 7: Felder der Gamifizierung (speicher/gamifizierung.ts, Entscheidung E1 des Autors,
  *   31.10.2026); das Tagesprotokoll wird aus vorhandenen Datumsangaben nachgetragen (format7.ts).
+ * - Format 8: dazu „variationen“, die eigenen Varianten (training/variationen.ts, Frage i des
+ *   Autors vom 1.11.2026). Eine ältere App lehnt Format 8 als „neuer“ ab und hebt die Daten auf.
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
- * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), speicher/partien.ts.
+ * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), training/variationen*
+ * (Varianten), speicher/partien.ts.
  */
 import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { sammlungAus, type Sammeleintrag } from "../training/lernsammlung";
@@ -34,10 +37,13 @@ import { spielstandAus } from "./partienLesen";
 import { stufenUmgerechnet } from "./stufenskala";
 import { gamifizierungAus, LEERE_GAMIFIZIERUNG, type Gamifizierungsdaten } from "./gamifizierung";
 import { nachgetragenesProtokoll } from "./format7";
+import { figurensatzAus } from "./format0";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
+import type { Variation } from "../training/variationen";
+import { variationenAus } from "../training/variationenLesen";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 7;
+export const SCHEMA_VERSION = 8;
 /** Bis zu dieser Version gab es acht Stufen (Umrechnung beim Laden). */
 const LETZTE_ACHT_STUFEN = 5;
 /** Bis zu dieser Version gab es kein Tagesprotokoll (Nachtrag beim Laden). */
@@ -186,6 +192,8 @@ export interface Nutzerdaten extends Gamifizierungsdaten {
   readonly planstand: string | null;
   /** Name und Porträt des Lesers (speicher/profil.ts); zusätzliches Feld. */
   readonly profil: Spielerprofil;
+  /** Eigene Varianten (ab Format 8, training/variationen.ts). */
+  readonly variationen: readonly Variation[];
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -214,6 +222,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     zugErraten: {},
     planstand: null,
     profil: LEERES_PROFIL,
+    variationen: [],
     ...LEERE_GAMIFIZIERUNG,
   };
 }
@@ -233,31 +242,8 @@ function alsZahl(wert: unknown): number {
 }
 
 /**
- * Einstellungen aus Rohdaten; Unbekanntes ergibt den Standard (Format 0 und 1 gleich). Figurensatz
- * und Ton kamen in 0.2.33 ohne neue Formatversion dazu: Fehlen sie, gilt der Standard.
- */
-
-/**
- * Alte Namen der Figurensätze und ihr Nachfolger: „kontrastreich“ (bis 0.2.38) und „klassisch“
- * (bis 0.2.80) waren die Figuren von Colin Burnett; „holz“ (bis 0.2.80, umgefärbte Merida-Figuren)
- * wird der erste neue Holzsatz, damit der Leser weiter Holzfiguren sieht.
- */
-const ALTE_SAETZE: ReadonlyMap<string, Bildsatz> = new Map([
-  ["kontrastreich", "klassisch-cburnett"],
-  ["klassisch", "klassisch-cburnett"],
-  ["holz", "holz-kiefer-kirsche"],
-]);
-
-/** Der Figurensatz aus Rohdaten; alte Namen werden übernommen, Unbekanntes ist „buch“. */
-function figurensatzAus(roh: unknown): Figurensatz {
-  if (typeof roh !== "string") return "buch";
-  const alt = ALTE_SAETZE.get(roh);
-  if (alt) return alt;
-  return BILDSAETZE.find((satz) => satz === roh) ?? "buch";
-}
-/**
  * Liest die gespeicherten Einstellungen (Brettfarben, Figuren, Ton, Strenge und weitere); was fehlt
- * oder nicht passt, bekommt die Vorgabe.
+ * oder nicht passt, bekommt die Vorgabe (Format 0 und 1 gleich; Figurensatz und Ton seit 0.2.33).
  */
 export function einstellungenAus(roh: unknown): Einstellungen {
   if (!istObjekt(roh)) return STANDARD_EINSTELLUNGEN;
@@ -356,6 +342,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     zugErraten: rateverlaufAus(roh.zugErraten),
     planstand: planstandTextAus(roh.planstand),
     profil: profilAus(roh.profil),
+    variationen: variationenAus(roh.variationen),
     ...gamifizierungAus(roh),
   };
 }
@@ -382,7 +369,8 @@ export function wandleUm(roh: unknown, jetzt: Date): Pruefergebnis {
   if (version > SCHEMA_VERSION) return { ok: false, grund: "neuer", version };
   // Jedes ältere Format ist eine Teilmenge des neueren: Format 0 (Merker) ohne Fortschritt und
   // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“, Format 4 ohne
-  // „sammlung“. Fehlende Teile ergänzt das Lesen leer. Bis Format 5 gab es acht Stufen.
+  // „sammlung“, Format 7 ohne „variationen“. Fehlende Teile ergänzt das Lesen leer. Bis Format 5
+  // gab es acht Stufen.
   const umgerechnet =
     version <= LETZTE_ACHT_STUFEN ? { ...roh, spiel: stufenUmgerechnet(roh.spiel) } : roh;
   const daten = aktuellesFormatAus(umgerechnet, jetzt);

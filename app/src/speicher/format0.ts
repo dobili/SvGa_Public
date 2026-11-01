@@ -3,9 +3,11 @@
  *
  * Rolle im Gesamtbild: Aus speicher/format.ts ausgelagert (Welle 0 der Gamifizierung, damit die
  * Datei unter 400 Zeilen bleibt). Wer vor 0.2.20 die App nutzte, hatte Einstellungen und
- * Lernstand nur in Merkern; das erste Laden übernimmt sie (speicher/speicher.ts).
- * Abhängigkeiten: keine.
+ * Lernstand nur in Merkern; das erste Laden übernimmt sie (speicher/speicher.ts). Dazu die alten
+ * Namen der Figurensätze (seit Format 8 hier, damit format.ts unter 400 Zeilen bleibt).
+ * Abhängigkeiten: speicher/format.ts (nur Typen und die Liste der Bildsätze).
  */
+import { BILDSAETZE, type Bildsatz, type Figurensatz } from "./format";
 
 /**
  * Die Merker aus Format 0 als Rohobjekt (ohne schemaVersion).
@@ -28,4 +30,23 @@ export function merkerAlsFormat0(
     }
   };
   return { einstellungen: lies(einstellungen), lernstand: lies(lernstand) };
+}
+
+/**
+ * Alte Namen der Figurensätze und ihr Nachfolger: „kontrastreich“ (bis 0.2.38) und „klassisch“
+ * (bis 0.2.80) waren die Figuren von Colin Burnett; „holz“ (bis 0.2.80, umgefärbte Merida-Figuren)
+ * wird der erste neue Holzsatz, damit der Leser weiter Holzfiguren sieht.
+ */
+const ALTE_SAETZE: ReadonlyMap<string, Bildsatz> = new Map([
+  ["kontrastreich", "klassisch-cburnett"],
+  ["klassisch", "klassisch-cburnett"],
+  ["holz", "holz-kiefer-kirsche"],
+]);
+
+/** Der Figurensatz aus Rohdaten; alte Namen werden übernommen, Unbekanntes ist „buch“. */
+export function figurensatzAus(roh: unknown): Figurensatz {
+  if (typeof roh !== "string") return "buch";
+  const alt = ALTE_SAETZE.get(roh);
+  if (alt) return alt;
+  return BILDSAETZE.find((satz) => satz === roh) ?? "buch";
 }

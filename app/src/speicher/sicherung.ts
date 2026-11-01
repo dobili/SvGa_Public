@@ -42,6 +42,8 @@ export interface Inhaltsangabe {
   readonly lernziele: number;
   /** Gespeicherte Partien (gespielt und eingelesen). */
   readonly partien: number;
+  /** Eigene Varianten (ab Format 8). */
+  readonly varianten: number;
 }
 
 /**
@@ -109,15 +111,17 @@ export function inhaltsangabe(daten: Nutzerdaten): Inhaltsangabe {
     uebungen: Object.values(daten.fortschritt.uebungen).filter((s) => s.geloest).length,
     lernziele: Object.values(daten.lernstand).reduce((summe, punkte) => summe + punkte.length, 0),
     partien: daten.spiel.partien.length,
+    varianten: daten.variationen.length,
   };
 }
 
 /**
  * Gibt es eigene Daten, die eine Sicherung wert sind? Seit dem Fehlertest (1.11.2026) zählen
- * auch Partien: Wer nur spielte, bekam nie den Hinweis auf die Sicherung.
+ * auch Partien: Wer nur spielte, bekam nie den Hinweis auf die Sicherung; ebenso Varianten.
  */
 export function hatEigeneDaten(angabe: Inhaltsangabe): boolean {
-  return angabe.abbildungen + angabe.uebungen + angabe.lernziele + angabe.partien > 0;
+  const { abbildungen, uebungen, lernziele, partien, varianten } = angabe;
+  return abbildungen + uebungen + lernziele + partien + varianten > 0;
 }
 
 /**

@@ -556,7 +556,7 @@
   "sicherung.teilen": "Sicherung teilen (Mail, Dateien)",
   "sicherung.geteilt": "Sicherung „{datei}“ weitergegeben. Bewahre sie gut auf.",
   "sicherung.importieren": "Sicherung einspielen",
-  "sicherung.frage": "Sicherung vom {datum} (App {version}) mit Abbildungen angesehen: {abbildungen}, Lernziele abgehakt: {lernziele}, Übungen gelöst: {uebungen}, Partien: {partien}. Sie ersetzt alle Daten auf diesem Gerät.",
+  "sicherung.frage": "Sicherung vom {datum} (App {version}) mit Abbildungen angesehen: {abbildungen}, Lernziele abgehakt: {lernziele}, Übungen gelöst: {uebungen}, Partien: {partien}, Varianten: {varianten}. Sie ersetzt alle Daten auf diesem Gerät.",
   "sicherung.ersetzen": "Ja, Daten ersetzen",
   "sicherung.abbrechen": "Abbrechen",
   "sicherung.eingespielt": "Sicherung eingespielt.",

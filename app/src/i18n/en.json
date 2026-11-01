@@ -556,7 +556,7 @@
   "sicherung.teilen": "Share backup (email, Files)",
   "sicherung.geteilt": "Backup “{datei}” shared. Keep it in a safe place.",
   "sicherung.importieren": "Restore backup",
-  "sicherung.frage": "Backup from {datum} (app {version}) with figures viewed: {abbildungen}, learning goals checked: {lernziele}, exercises solved: {uebungen}, games: {partien}. It replaces all data on this device.",
+  "sicherung.frage": "Backup from {datum} (app {version}) with figures viewed: {abbildungen}, learning goals checked: {lernziele}, exercises solved: {uebungen}, games: {partien}, variations: {varianten}. It replaces all data on this device.",
   "sicherung.ersetzen": "Yes, replace data",
   "sicherung.abbrechen": "Cancel",
   "sicherung.eingespielt": "Backup restored.",

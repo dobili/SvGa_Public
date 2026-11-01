@@ -166,3 +166,26 @@ test("Gratulation zum vollen Ring: Fokus auf „Weiter“, Tab bleibt in der Kar
   await expect(voll).toBeDisabled();
   await probe.getByRole("button", { name: "Probe beenden" }).click();
 });
+
+test.describe("englisches Gerät", () => {
+  test.use({ locale: "en-US" });
+
+  test("QR-Code ?start=buch: erst die Frage nach der Sprache, dann die Tour", async ({ page }) => {
+    await page.setViewportSize(HANDY);
+    await starteImBrowser(page, { sprachangebot: true, tourAngebot: true });
+    await page.evaluate(() => {
+      window.localStorage.removeItem("svga.tour.angeboten");
+      window.localStorage.removeItem("svga.sprachangebot");
+    });
+    await page.goto("/app/?start=buch");
+    const frage = page.getByTestId("sprachangebot");
+    await expect(frage).toBeVisible();
+    // Die Tour wartet; sie läge sonst über der Frage, und die Frage wäre nicht bedienbar.
+    await expect(page.getByTestId("tour")).toHaveCount(0);
+    await frage.getByRole("button", { name: "Keep German · Deutsch behalten" }).click();
+    await expect(frage).toHaveCount(0);
+    await expect(
+      page.getByTestId("tour").getByRole("heading", { name: "Mit dem Buch starten" }),
+    ).toBeVisible();
+  });
+});

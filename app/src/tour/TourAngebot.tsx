@@ -11,12 +11,13 @@
  * den Trainingsseiten der Website): Dann erst beim nächsten normalen Start. Einstellungen › Hilfe
  * öffnet sie jederzeit wieder (tourStand.ts). Gleich, wie die Antwort ausfällt, merkt sich das
  * Gerät, dass gefragt wurde (tourMerker.ts).
- * Abhängigkeiten: tourMerker.ts, tourStand.ts, Navigation, i18n, lucide-react.
+ * Abhängigkeiten: tourMerker.ts, tourStand.ts, app/sprachangebot.ts, Navigation, i18n, lucide-react.
  */
 import { BookOpen, Compass, Swords, type LucideIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type RefObject } from "react";
 import type { Bereich } from "../app/stapel";
 import { useNavigation } from "../app/navigationsKontext";
+import { useSprachangebotFaellig } from "../app/sprachangebot";
 import { t, type Textschluessel } from "../i18n/sprache";
 import { haltFokus } from "./haltFokus";
 import { merkeAngeboten, useTourMerker } from "./tourMerker";
@@ -142,10 +143,13 @@ export function TourAngebot() {
   const erster = useRef<HTMLButtonElement>(null);
   const erststart =
     ohneSprung && !merker.angeboten && merker.symbolAn && ansicht.bildschirm === "buch";
+  // Erst die Sprache (Wunsch des Autors, 31.10.2026): Die Frage danach liegt über der Startwahl;
+  // der Buch-Weg aus dem QR-Code beginnt erst, wenn sie beantwortet ist.
+  const sprachfrage = useSprachangebotFaellig();
   useEffect(() => {
     // QR-Code im Buch: gleich der Buch-Weg, ohne Frage.
-    if (erststart && mitBuch && WEGE[0]) waehle(WEGE[0]);
-  }, [erststart, mitBuch, waehle]);
+    if (erststart && mitBuch && !sprachfrage && WEGE[0]) waehle(WEGE[0]);
+  }, [erststart, mitBuch, sprachfrage, waehle]);
   const offen = aufWunsch || (erststart && !mitBuch);
   useEffect(() => {
     if (!offen) return;

@@ -7,10 +7,19 @@
  * (Brettbereich.tsx, zusätzliche Schalter). Ist der Stift an, bekommt das Brett die Bedienung des
  * Stifts (useMarkierstift.ts) und die Fortsetzungspfeile treten zurück, damit sie nicht mit den
  * eigenen blauen Pfeilen verwechselt werden. Die eigenen Marken zeigt das Brett immer.
+ * Stufe 3 (nach der Analyse, je mit eigenem Schalter): Bewertungsbalken links (wie beim Nachspielen
+ * einer Partie, Bewertungsbalken.tsx), Marke der Zugart am Zielfeld (Zugmarke.tsx) und ein grüner
+ * Pfeil für den besten Zug der Engine in der gezeigten Stellung.
  * Abhängigkeiten: brettbedienung (Brettbereich, useBrettbedienung), training/variationsmarken.ts,
  * Fortsetzungspfeile.tsx, Markennummern.tsx, useMarkierstift.ts, i18n, lucide-react.
  */
 import { PenLine } from "lucide-react";
+import type { Markierung } from "../../../analyse/werkzeug";
+import { pfadSchluessel } from "../../../spiel/variationsurteile";
+import { HUNDERTSTEL } from "../../../training/variationswerte";
+import { Bewertungsbalken } from "../rueckblick/Bewertungsbalken";
+import { Zugmarke } from "../rueckblick/Zugmarke";
+import type { Variantenanalyse } from "./useVariantenanalyse";
 import { useMemo } from "react";
 import { sprache, t } from "../../../i18n/sprache";
 import { stellungAusFen } from "../../../schach/stellung";
@@ -26,6 +35,29 @@ import { knotendatenAm, type Markierstift } from "./useMarkierstift";
 import type { Variantenstand } from "./useVariante";
 
 const SYMBOL = 20;
+/** UCI: zwei Zeichen Startfeld, zwei Zeichen Zielfeld. */
+const FELD = 2;
+
+/** Der grüne Pfeil für den besten Zug der Engine (Stufe 3), wenn bekannt und gewünscht. */
+function enginepfeil(stand: Variantenstand, analyse: Variantenanalyse): Markierung[] {
+  const bester = knotendatenAm(stand.variation, stand.pfad).b;
+  if (!analyse.zeige.pfeil || !bester) return [];
+  return [
+    {
+      typ: "pfeil",
+      farbe: "gruen",
+      von: bester.slice(0, FELD),
+      nach: bester.slice(FELD, 2 * FELD),
+    },
+  ];
+}
+
+/** Der Bewertungsbalken links am Brett, wenn die Stellung einen Wert hat und er gewünscht ist. */
+function balkenFuer(stand: Variantenstand, analyse: Variantenanalyse) {
+  const wert = knotendatenAm(stand.variation, stand.pfad).w;
+  if (!analyse.zeige.balken || wert === undefined) return null;
+  return (gedreht: boolean) => <Bewertungsbalken wert={wert / HUNDERTSTEL} gedreht={gedreht} />;
+}
 
 /** Start- und Zielfeld des Zuges, der zur gezeigten Stellung führte. */
 function letzterZugVon(stand: Variantenstand) {
@@ -60,17 +92,29 @@ function Stiftschalter({ stift }: { stift: Markierstift }) {
  * Beispiel: Abb. 2.40 nach 3. Sxe5 → zwei blaue Pfeile (★ und 2); Stift an, Rot, d1 und h5
  * antippen → roter Pfeil mit Nummer 1, die blauen Pfeile sind weg, solange der Stift an ist.
  */
-export function VarianteBrett({ stand, stift }: { stand: Variantenstand; stift: Markierstift }) {
+export function VarianteBrett({
+  stand,
+  stift,
+  analyse,
+}: {
+  stand: Variantenstand;
+  stift: Markierstift;
+  analyse: Variantenanalyse;
+}) {
   const ziehen = useBrettbedienung(stand, "ziehen", () => undefined);
   const stellung = useMemo(() => stellungAusFen(stand.fen), [stand.fen]);
   const chips = fortsetzungschips(stand.variation, stand.pfad, sprache());
   const marken = knotendatenAm(stand.variation, stand.pfad).marken;
+  const letzter = letzterZugVon(stand);
+  const urteil = analyse.urteile.get(pfadSchluessel(stand.pfad));
+  const klasse = analyse.zeige.symbole && urteil ? urteil.klasse : null;
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   return (
     <Brettbereich
       stellung={stellung.wert}
-      markierungen={alsMarkierungen(marken)}
-      letzterZug={letzterZugVon(stand)}
+      markierungen={[...alsMarkierungen(marken), ...enginepfeil(stand, analyse)]}
+      letzterZug={letzter}
+      seitenleiste={balkenFuer(stand, analyse)}
       bedienung={stift.an ? stift.bedienung : ziehen}
       beschriftung={stand.variation.titel}
       zusatzSchalter={<Stiftschalter stift={stift} />}
@@ -78,6 +122,7 @@ export function VarianteBrett({ stand, stift }: { stand: Variantenstand; stift: 
         <>
           {!stift.an && <Fortsetzungspfeile chips={chips} gedreht={gedreht} />}
           <Markennummern marken={nummerierteMarken(marken)} gedreht={gedreht} />
+          <Zugmarke feld={letzter?.nach ?? null} klasse={klasse} gedreht={gedreht} />
         </>
       )}
     />

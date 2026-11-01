@@ -23,7 +23,8 @@ import {
   type Staerke,
 } from "../../../engine/engineDienst";
 import { wertFuer } from "../../../engine/spielbewerter";
-import { ausreisser, endwert } from "../../../spiel/auswertung";
+import { ausreisser } from "../../../spiel/ausreisser";
+import { endwert } from "../../../spiel/auswertung";
 import { stellungen, type Partie } from "../../../spiel/partie";
 import { mitWerten, type Partieeintrag } from "../../../speicher/partien";
 import { aendere } from "../../../speicher/speicher";
@@ -61,7 +62,7 @@ export type Auswertungsstand =
   | { readonly art: "fehler"; readonly meldung: string };
 
 /** Das Ergebnis für eine Stellung: Wert aus Sicht von Weiß, bester Zug, Abstand zum zweitbesten. */
-interface Stellungswert {
+export interface Stellungswert {
   readonly fen: string;
   readonly wert: number;
   readonly bester: string;
@@ -81,9 +82,10 @@ function pause(ms: number): Promise<void> {
 
 /**
  * Wert (aus Sicht von Weiß), bester Zug und Abstand zum zweitbesten Zug einer Stellung; null,
- * wenn die Auswertung inzwischen nicht mehr laufen soll.
+ * wenn die Auswertung inzwischen nicht mehr laufen soll. Auch die Analyse der Varianten rechnet
+ * hiermit (varianten/variantenanalyse.ts), mit derselben Tiefe wie die Partieauswertung.
  */
-async function bewerteStellung(
+export async function bewerteStellung(
   fen: string,
   laeuft: () => boolean,
   rechenzeitMs = RECHENZEIT_MS,

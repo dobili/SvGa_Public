@@ -58,20 +58,22 @@ function Bearbeiten({ eintrag, beiFertig }: { eintrag: Fehlereintrag; beiFertig:
       />
       <Variantenwahl ziel={ziel} wahl={variante.wahl} beiWahl={variante.setzeWahl} />
       {variante.meldung && <p className="fehlertext">{variante.meldung}</p>}
-      <div className="knopfreihe">
-        <button
-          type="button"
-          className="knopf-haupt"
-          disabled={werte.art === null}
-          onClick={speichern}
-        >
-          <Knopfsymbol art="speichern" />
-          {t("fehlerdb.aenderungSpeichern")}
-        </button>
-        <button type="button" className="knopf-zweit" onClick={beiFertig}>
-          {t("fehlerdb.abbrechen")}
-        </button>
-      </div>
+      <Formularknoepfe gesperrt={werte.art === null} speichern={speichern} abbrechen={beiFertig} />
+    </div>
+  );
+}
+
+/** „Änderung speichern“ und „Abbrechen“ unter dem Formular. */
+function Formularknoepfe(p: { gesperrt: boolean; speichern: () => void; abbrechen: () => void }) {
+  return (
+    <div className="knopfreihe">
+      <button type="button" className="knopf-haupt" disabled={p.gesperrt} onClick={p.speichern}>
+        <Knopfsymbol art="speichern" />
+        {t("fehlerdb.aenderungSpeichern")}
+      </button>
+      <button type="button" className="knopf-zweit" onClick={p.abbrechen}>
+        {t("fehlerdb.abbrechen")}
+      </button>
     </div>
   );
 }

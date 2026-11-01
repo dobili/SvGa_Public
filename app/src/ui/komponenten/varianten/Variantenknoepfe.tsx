@@ -5,12 +5,14 @@
  *
  * Rolle im Gesamtbild: Teil des Bildschirms „Variante“ (Entwurf, Abschnitt 3, Punkt 7: Knopfzeile
  * Markieren, Baum, Analyse, Drehen, Speichern). Markieren und Drehen stehen als Schalter am Brett,
- * gespeichert wird von selbst, die Analyse folgt mit Stufe 3. Karte und Spielen brauchen eine
+ * gespeichert wird von selbst; den Knopf „Analyse“ (Stufe 3, Analyseanzeige.tsx) reicht der Bildschirm
+ * als ersten Knopf herein (`vorne`). Karte und Spielen brauchen eine
  * Kennung: Ein Entwurf wird vorher gespeichert und die Ansicht auf die Kennung umgestellt, damit
  * „Zurück“ zur gespeicherten Variante führt und nicht einen neuen Entwurf anlegt.
  * Abhängigkeiten: Navigation, spiel/partie.ts, spiel/probepartie.ts, variantenwert.ts,
  * Variantenkarte.tsx (Kennung), i18n, lucide-react.
  */
+import type { ReactNode } from "react";
 import { GraduationCap, Map as Kartensymbol, Network, Play } from "lucide-react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
@@ -72,7 +74,8 @@ function Abfrageknopf({ gesperrt, beiTipp }: { gesperrt: boolean; beiTipp: () =>
 }
 
 /**
- * Die Knopfzeile. Eingaben: Stand, ob der Baum offen ist, Umschalten des Baums.
+ * Die Knopfzeile. Eingaben: Stand, ob der Baum offen ist, Umschalten des Baums, ein Knopf vorne
+ * (Stufe 3: „Analyse“).
  * Beispiel: „Karte“ in einem Entwurf aus Abb. 2.40 → Variante gespeichert, Karte geöffnet;
  * „Zurück“ auf der Karte führt zur gespeicherten Variante.
  */
@@ -80,14 +83,17 @@ export function Variantenknoepfe({
   stand,
   baum,
   setzeBaum,
+  vorne = null,
 }: {
   stand: Variantenstand;
   baum: boolean;
   setzeBaum: (offen: boolean) => void;
+  vorne?: ReactNode;
 }) {
   const { karte, spiele, frage } = useSprungziele(stand);
   return (
     <div className="knopfreihe variantenknoepfe">
+      {vorne}
       <button
         type="button"
         className="knopf-zweit"

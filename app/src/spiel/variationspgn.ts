@@ -6,7 +6,8 @@
  * Lichess liest die Dateien als Studie. Geschrieben und gelesen wird über chessops/pgn (makePgn,
  * parsePgn); Kommentare werden beim Lesen von Befehlen wie „[%cal …]“ befreit (parseComment).
  * Zugzeichen stehen direkt am Zug („Sxe4?!“), wie im Buch. Seit Stufe 2 reisen Pfeile, Felder,
- * Nummerntexte und Legende mit (spiel/variationsformen.ts); Engine-Werte folgen. Deutsche Figurenbuchstaben übersetzt der Import wie beim
+ * Nummerntexte und Legende mit (spiel/variationsformen.ts), seit Stufe 3 die Engine-Werte als
+ * „[%eval …]“ (spiel/variationseval.ts). Deutsche Figurenbuchstaben übersetzt der Import wie beim
  * Einlesen von Partien (spiel/pgnimport.ts). Reine Funktionen.
  * Abhängigkeiten: chessops, spiel/pgnimport.ts, spiel/pgn.ts, spiel/variationsformen.ts,
  * spiel/formwoerter.ts, training/variationen.ts, training/variationsquellen.ts.
@@ -182,7 +183,10 @@ function ausPgnKnoten(
 function vorwegAus(kommentare: readonly string[], woerter: readonly Formwoerter[]) {
   const daten = formenAusKommentar(kommentare.join("\n"), woerter);
   const gelesen = legendeAusKommentar(daten.kommentar ?? "", woerter);
+  const { w, b, a } = daten;
   const start: Knotendaten = {
+    // Stufe 3: Engine-Werte der Startstellung („[%eval …]“ vor dem ersten Zug).
+    ...(w !== undefined ? { w, ...(b ? { b } : {}), ...(a !== undefined ? { a } : {}) } : {}),
     ...(daten.marken ? { marken: daten.marken.slice(0, MARKEN_HOECHSTENS) } : {}),
     ...(daten.nummerntexte ? { nummerntexte: daten.nummerntexte } : {}),
   };

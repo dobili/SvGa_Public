@@ -47,6 +47,8 @@ export const VARIANTENTOUREN: Readonly<Record<Variantentour, Tour>> = {
       am("brett", "tour.variante.brett"),
       am("variante-kommentar", "tour.variante.kommentar"),
       am("variante-stift", "tour.variante.stift"),
+      // Stufe 3: Analyse auf Knopfdruck, Symbole, Balken und Engine-Pfeil ausblendbar.
+      am("variante-analyse", "tour.variante.analyse"),
       am("variante-baum", "tour.variante.baum"),
       am("variante-spielen", "tour.variante.spielen"),
       am("variante-abfragen", "tour.variante.abfragen"),

@@ -40,9 +40,13 @@ export function herausforderungsart(
   return liste.find((h) => h.trainer === trainer);
 }
 
-/** Der Sprung „#aufgabe-<trainer>-<aufgabe>“ für app/spruenge.ts; „Zurück“ führt ins Training. */
+/**
+ * Der Sprung „#aufgabe-<trainer>-<aufgabe>“ für app/spruenge.ts; „Zurück“ führt ins Training.
+ * Ein unlesbarer Link (abgeschnitten, unbekannter Trainer) öffnet die Herausforderung ohne Wert;
+ * sie sagt dann, dass der Link ungültig ist, statt still auf „Buch“ zu starten (Fehlertest f3).
+ */
 export const HERAUSFORDERUNGSSPRUNG: Sprung = {
-  muster: /^#aufgabe-.+$/,
+  muster: /^#aufgabe-.*$/,
   bereich: "training",
   ansicht: (treffer) => {
     const ziel = leseHerausforderung(
@@ -51,6 +55,6 @@ export const HERAUSFORDERUNGSSPRUNG: Sprung = {
     );
     return ziel
       ? { bildschirm: "zusatz", kennung: HERAUSFORDERUNG_ANSICHT, wert: alsAnsichtswert(ziel) }
-      : null;
+      : { bildschirm: "zusatz", kennung: HERAUSFORDERUNG_ANSICHT };
   },
 };

@@ -16,6 +16,8 @@ export const HERAUSFORDERUNG_VORSILBE = "#aufgabe-";
 export const HERAUSFORDERUNG_ANSICHT = "herausforderung";
 /** Erlaubte Zeichen der Aufgabenkennung in der Adresse (Lichess-Kennungen, Bindestriche). */
 const KENNUNG = /^[A-Za-z0-9_-]{1,40}$/;
+/** Wo ein Anhängsel hinter der Kennung beginnt („?fbclid=…“, „&…“, ein zweites „#“, Leerzeichen). */
+const ANHAENGSEL = /[?&#\s]/;
 
 /** Was in der Adresse steht: Trainer und Kennung der Aufgabe in der Adresse („l-1Vybh“). */
 export interface Herausforderungsziel {
@@ -34,7 +36,10 @@ export function herausforderungslink(trainer: string, aufgabe: string): string {
 /**
  * Liest eine Adresse; nur Trainer aus der Liste `trainer` zählen (der längste passende gewinnt,
  * damit Kennungen mit Bindestrich eindeutig bleiben). Null bei allem anderen.
- * Beispiel: („#aufgabe-taktik-l-1Vybh“, ["taktik"]) → { trainer: "taktik", aufgabe: "l-1Vybh" }.
+ * Anhängsel hinter der Kennung (etwa „?fbclid=…“, das Messenger anhängen) fallen weg: Die
+ * Kennung endet vor „?“, „&“, einem weiteren „#“ oder einem Leerzeichen (Fehlertest f3).
+ * Beispiel: („#aufgabe-taktik-l-1Vybh“, ["taktik"]) → { trainer: "taktik", aufgabe: "l-1Vybh" };
+ * („#aufgabe-taktik-l-1Vybh?fbclid=x“, ["taktik"]) → dasselbe.
  */
 export function leseHerausforderung(
   hash: string,
@@ -46,7 +51,7 @@ export function leseHerausforderung(
     .sort((a, b) => b.length - a.length)
     .find((k) => rest.startsWith(`${k}-`));
   if (!passend) return null;
-  const aufgabe = rest.slice(passend.length + 1);
+  const aufgabe = rest.slice(passend.length + 1).split(ANHAENGSEL)[0] ?? "";
   return KENNUNG.test(aufgabe) ? { trainer: passend, aufgabe } : null;
 }
 

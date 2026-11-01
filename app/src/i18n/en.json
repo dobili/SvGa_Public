@@ -4094,6 +4094,7 @@
   "teilen.einladung": "Someone sent you this puzzle. Find the best move!",
   "teilen.zumTrainer": "More puzzles in the trainer “{trainer}”",
   "teilen.unbekannt": "This puzzle does not exist in this version of the app. The link may be incomplete.",
+  "teilen.ungueltig": "This link is invalid or incomplete.",
   "kombo.inFolge": "{anzahl} in a row",
   "fundstueck.titel": "A find!",
   "fundstueck.art.geschichte": "From history",

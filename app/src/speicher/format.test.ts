@@ -14,6 +14,7 @@ import { merkerAlsFormat0 } from "./format0";
 import { LEERE_GAMIFIZIERUNG } from "./gamifizierung";
 import { LEERES_PROFIL } from "./profil";
 import { LEERER_SPIELSTAND } from "./partien";
+import { linieAlsKnoten } from "../training/variationsquellen";
 
 const JETZT = new Date("2026-10-15T10:00:00.000Z");
 
@@ -115,6 +116,8 @@ describe("Format 1", () => {
         planstand: null,
         // Name und Porträt fehlen in Format 1 und lesen sich leer.
         profil: LEERES_PROFIL,
+        // Format 8: keine Varianten.
+        variationen: [],
         // Format 7: Felder der Gamifizierung leer, das Tagesprotokoll aus den Datumsangaben
         // nachgetragen (die Übung hat kein gültiges Datum und zählt nicht).
         ...LEERE_GAMIFIZIERUNG,
@@ -320,5 +323,48 @@ describe("Format 7 (Gamifizierung)", () => {
       grund: "neuer",
       version: SCHEMA_VERSION + 1,
     });
+  });
+});
+
+describe("Format 8 (Varianten)", () => {
+  const GRUND = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+  const VARIANTE = {
+    id: "var-1",
+    titel: "Petroff-Falle",
+    angelegt: "2026-11-01T10:00:00.000Z",
+    geaendert: "2026-11-01T10:05:00.000Z",
+    quelle: { art: "abbildung", nummer: "2.40" },
+    startFen: GRUND,
+    startpfad: ["e4"],
+    start: {},
+    zuege: linieAlsKnoten(GRUND, ["e4", "e5"]).knoten,
+    kommentar: "Warum Sxe4 nicht geht",
+    legende: {},
+    analysiert: false,
+  };
+
+  it("Format 7 → 8 ohne Verlust: nur „variationen“ kommt leer dazu", () => {
+    const eintrag = { id: "s", datum: "2026-10-01", fen: GRUND, herkunft: "fen", quelle: "" };
+    const format7: Record<string, unknown> = {
+      ...leereDaten(JETZT),
+      schemaVersion: 7,
+      lernstand: { 2: [0, 1] },
+      sammlung: [{ ...eintrag, eroeffnung: "", plan: "Druck auf e5", notiz: "" }],
+    };
+    delete format7.variationen;
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(format7)), JETZT);
+    if (!ergebnis.ok) throw new Error("nicht gelesen");
+    expect(ergebnis.vonVersion).toBe(7);
+    const { variationen, schemaVersion, ...rest } = ergebnis.daten;
+    expect(schemaVersion).toBe(8);
+    expect(variationen).toEqual([]);
+    expect({ ...rest, schemaVersion: 7 }).toEqual(format7);
+  });
+
+  it("liest die Varianten und übersteht eine Sicherung als JSON", () => {
+    const roh = { ...leereDaten(JETZT), variationen: [VARIANTE, { id: "kaputt" }] };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
+    if (!ergebnis.ok) throw new Error("nicht gelesen");
+    expect(ergebnis.daten.variationen).toEqual([VARIANTE]);
   });
 });

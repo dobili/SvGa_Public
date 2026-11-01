@@ -19,6 +19,8 @@ import { Trainerbrett } from "../../trainer/Trainerbrett";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 import { Sammelfelder, type Sammelwerte } from "./Sammelfelder";
 import { fundstelle } from "./sammeltexte";
+import { VariantenHinweis } from "../varianten/VariantenHinweis";
+import { alsWert } from "../varianten/variantenwert";
 
 /** Die Felder des Anlegens zum Bearbeiten, mit Speichern und Abbrechen. */
 function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig: () => void }) {
@@ -125,6 +127,10 @@ export function SammeleintragKarte({
       ) : (
         <>
           <Inhalt eintrag={eintrag} />
+          <VariantenHinweis
+            quelle={{ art: "sammlung", id: eintrag.id }}
+            wert={alsWert({ art: "sammlung", id: eintrag.id })}
+          />
           <Knoepfe
             eintrag={eintrag}
             beiBearbeiten={() => setzeBearbeiten(true)}

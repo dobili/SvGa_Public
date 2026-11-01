@@ -8,6 +8,7 @@ import { markiereGesehen, notiereUebung } from "./fortschritt";
 import {
   DATEIKENNUNG,
   dateiname,
+  inhaltsangabe,
   pruefeSicherung,
   sicherungAlsText,
   sicherungFaellig,
@@ -15,6 +16,7 @@ import {
 import { frischeUmgebung } from "./testhilfen";
 import { partieAusPgn } from "../spiel/pgnimport";
 import { legeAb } from "./partien";
+import { ausStellung } from "../training/variationsquellen";
 
 const JETZT = new Date("2026-10-15T10:00:00.000Z");
 const TAG_MS = 86_400_000;
@@ -133,6 +135,18 @@ describe("Hinweis alle vier Wochen", () => {
     if (!ergebnis.ok) throw new Error("nicht eingelesen");
     const nurPartien = { ...leer, spiel: legeAb(leer.spiel, ergebnis.partie) };
     expect(sicherungFaellig(nurPartien, spaeter(28))).toBe(true);
+  });
+
+  it("zählt Varianten in der Inhaltsangabe und erinnert auch, wer nur Varianten hat", () => {
+    const variante = ausStellung("grund", "", "Meine Variante", JETZT);
+    if (!variante) throw new Error("keine Variante");
+    const nurVarianten = { ...leereDaten(JETZT), variationen: [{ ...variante, id: "var-1" }] };
+    expect(inhaltsangabe(nurVarianten).varianten).toBe(1);
+    expect(sicherungFaellig(nurVarianten, spaeter(28))).toBe(true);
+    // Eine Sicherung mit Varianten kommt unverändert zurück (Rundreise über den Text).
+    const text = sicherungAlsText(nurVarianten, "0.3.45", JETZT);
+    const zurueck = pruefeSicherung(text, JETZT);
+    expect(zurueck.ok && zurueck.daten.variationen).toEqual(nurVarianten.variationen);
   });
 
   it("erinnert nach vier Wochen ohne Sicherung, danach wieder vier Wochen Ruhe", () => {

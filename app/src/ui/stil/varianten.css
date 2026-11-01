@@ -1,0 +1,352 @@
+/*
+ * Variationsbrowser, Stufe 1 (1.11.2026): Liste „Varianten“, Bildschirm „Variante“, Blätter.
+ * Farben nur über die Merkmale aus basis.css, damit hell und dunkel stimmen. Eigene Züge in Gold
+ * (Frage b), Züge der Engine mit kleinem Chip-Zeichen, Kommentar als goldener Punkt (Frage d).
+ */
+
+/* Zugleiste der Variante */
+.variantenleiste .zug.eigen {
+  color: var(--gold-text);
+  font-style: normal;
+}
+
+.variantenleiste .zug.engine {
+  font-style: italic;
+}
+
+.zug-engine {
+  margin-left: 2px;
+  vertical-align: -2px;
+  color: var(--text-leise);
+}
+
+.kommentarpunkt {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  vertical-align: super;
+}
+
+.gabelmarke {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 2px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.variantenpfad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.variantenpfad strong {
+  color: var(--text);
+}
+
+.variantenpfad .knopf-link {
+  margin-left: auto;
+}
+
+.weiterchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.weiterchip-marke {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #2f6fd1;
+  color: #f5f0e6;
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.weiterchip.haupt {
+  border-color: #2f6fd1;
+}
+
+/* Blaue Fortsetzungspfeile über dem Brett; Tipps gehen durch auf die Felder. */
+.brett svg.fortsetzungspfeile {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Kommentar zum Zug unter dem Brett */
+.kommentarzeile {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--raster);
+  margin-top: var(--raster);
+}
+
+.kommentarzeile-zeichen {
+  flex: none;
+  margin-top: 12px;
+  color: var(--gold-text);
+}
+
+.kommentartext {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  padding: 10px 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.kommentartext.leer {
+  color: var(--text-leise);
+}
+
+.kommentarfeld {
+  flex: 1;
+  min-height: 88px;
+  font: inherit;
+  padding: var(--raster);
+  border-radius: var(--radius);
+  border: 1px solid var(--gold);
+  background: var(--flaeche);
+  color: var(--text);
+}
+
+.variantenmeldung p {
+  margin: 0 0 4px;
+}
+
+.variantenstatus {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--groesse-klein);
+}
+
+.variantenmeldung-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.variantentitel {
+  font: inherit;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.variantenkommentar summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.variantenkommentar p {
+  white-space: pre-wrap;
+  margin: var(--raster) 0 0;
+}
+
+.variantenknoepfe {
+  margin-top: var(--raster);
+}
+
+/* Blätter: Menü am Zug, Variante, Neue Variante */
+.zugmenue,
+.variantenblatt,
+.neuquelle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.zeichenwahl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.variantenblatt .feld,
+.neuquelle .feld {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.variantenblatt input,
+.variantenblatt textarea,
+.neuquelle input[type="text"],
+.neuquelle textarea {
+  font: inherit;
+  padding: var(--raster);
+  border-radius: var(--radius);
+  border: 1px solid var(--linie-stark);
+  background: var(--flaeche);
+  color: var(--text);
+}
+
+.variantenblatt textarea {
+  min-height: 96px;
+}
+
+.neukacheln {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--raster);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.neukachel {
+  width: 100%;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--raster);
+  border-radius: var(--radius);
+  border: 1px solid var(--linie-stark);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-klein);
+  text-align: center;
+}
+
+.neukachel svg {
+  color: var(--gold-text);
+}
+
+.quellenliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quellenliste .knopf-zweit {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schalterzeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+}
+
+/* Liste „Varianten“ */
+.variantenliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.variantenkarte-knopf {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: var(--raster);
+  border-radius: var(--radius);
+  border: 1px solid var(--linie);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+}
+
+.variantenkarte-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.variantenkarte-text strong {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.variantenquelle {
+  padding: 0 8px;
+  border-radius: 10px;
+  border: 1px solid var(--gold);
+  color: var(--gold-text);
+  font-size: var(--groesse-fein);
+}
+
+.variantenkopf .knopf-haupt {
+  flex: 1;
+}
+
+/* Gabel-Knopf und Hinweis „2 eigene Varianten“ an den Quellen */
+.variantenhinweis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  margin: var(--raster) 0;
+}
+
+.variantenhinweis .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold-text);
+  border-color: var(--gold);
+}
+
+.variantenmarke {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--gold-text);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.variantenhinweis:empty {
+  display: none;
+}

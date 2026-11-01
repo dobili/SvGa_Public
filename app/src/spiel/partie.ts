@@ -9,6 +9,7 @@
  * einem Neuladen fortsetzen.
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
+import type { Probeherkunft } from "./probepartie";
 import type { Stilmix, Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
 import type { BlinderFleck } from "../engine/blindeFlecken";
@@ -103,6 +104,11 @@ export interface Partieeinstellung {
    * (spiel/pgnimport.ts); fehlend bei allen in der App gespielten Partien.
    */
   readonly importiert?: { readonly weiss: string; readonly schwarz: string };
+  /**
+   * Seit Format 8: eine Probepartie „von hier“ aus einer Variante oder einer Auswertung
+   * (spiel/probepartie.ts); sie zählt nirgends und liegt nur im Feld „probe“ des Spielstands.
+   */
+  readonly probe?: Probeherkunft;
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

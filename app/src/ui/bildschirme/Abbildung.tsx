@@ -50,6 +50,8 @@ import { Brettsymbole } from "../komponenten/werkzeugwahl/Brettsymbole";
 import { Reiterleiste, Werkzeugleiste } from "../komponenten/werkzeugwahl/Werkzeugleiste";
 import { useWerkzeugwahl } from "../komponenten/werkzeugwahl/useWerkzeugwahl";
 import { Zugleiste } from "../komponenten/brettbedienung/Zugleiste";
+import { GabelSchalter, Variantenzahl } from "../komponenten/varianten/VariantenHinweis";
+import { useAbbildungsvariante } from "../komponenten/varianten/useAbbildungsvariante";
 
 /** Knöpfe für die vorige und nächste Abbildung im selben Kapitel. */
 function Blaettern({ kapitel, nummer }: { kapitel: Kapitel; nummer: string }) {
@@ -105,6 +107,8 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
   // Skelett-Ansicht: nur im Bündel „Skelett-Röntgen“ (früher das Knochensymbol am Brett).
   const [skelett, setzeSkelett] = useState(false);
   const [sammeln, setzeSammeln] = useState(false);
+  // Variationsbrowser (1.11.2026): Gabel am Brett, „Als Variante speichern“ bei eigenen Zügen.
+  const variante = useAbbildungsvariante(kapitel, abbildung, nachspielen);
   const skelettAn = skelett && werkzeug.buendel === "skelett";
   const stellung = useMemo(() => stellungAusFen(nachspielen.fen), [nachspielen.fen]);
   const sicht = useSicht(nachspielen.fen);
@@ -173,7 +177,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
     <>
       {/* Zugleiste über dem Brett, Werkzeuge und ihre Ergebnisse direkt darunter: So erscheint
           eine Auswertung dort, wo der Leser gerade getippt hat (Wunsch des Autors, 0.2.2). */}
-      {mitZugleiste && <Zugleiste stand={nachspielen} />}
+      {mitZugleiste && <Zugleiste stand={nachspielen} beiVariante={variante.oeffne} />}
       <Brettbereich
         stellung={stellung.wert}
         markierungen={
@@ -196,8 +200,17 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
           <Brettsymbole kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
         }
         skelett={skelettAn}
-        zusatzSchalter={<SammelSchalter an={sammeln} beiKlick={() => setzeSammeln(!sammeln)} />}
+        zusatzSchalter={
+          <>
+            <SammelSchalter an={sammeln} beiKlick={() => setzeSammeln(!sammeln)} />
+            <GabelSchalter beiTipp={variante.oeffne} gesperrt={!mitRegeln} />
+          </>
+        }
       />
+      {variante.meldung && <p className="fehlertext">{variante.meldung}</p>}
+      <div className="variantenhinweis">
+        <Variantenzahl quelle={{ art: "abbildung", nummer: abbildung.id }} />
+      </div>
       {sammeln && (
         <SammelFormular
           key={nachspielen.fen}

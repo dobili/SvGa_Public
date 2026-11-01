@@ -109,6 +109,18 @@ Teil fertig ist.
 - [ ] N2498. App am Abend auf „Buch“ offen lassen, am nächsten Morgen wieder nach vorn holen:
       „Heute“ zeigt den neuen Tag (am 1. eines Monats steht „Dein … ist fertig“), ohne etwas
       anzutippen.
+- [ ] N2550. Repertoire-Trainer, Haken „Auch Eröffnungen aus der Praxis (Lichess)“: Unter dem
+      Hinweis „nicht aus dem Buch“ steht jetzt ein Satz: „Nach dem Namen geht jede Variante mit den
+      häufigsten Zügen von Spielern um 1200 weiter …“. Hast du schon gewertete Partien gegen die Bots
+      gespielt, steht dort dein Band („dein Band nach deiner Wertung“). Ist der Satz verständlich?
+- [ ] N2551. Wähle bei „Sizilianische Verteidigung“ unter „Varianten“ nur „Old Sicilian“, Seite
+      Weiß, „Runde starten“. Die Variante endet nicht mehr nach 2… Sc6, sondern geht weiter: 3. Lc4 e6
+      4. O-O d5 5. exd5 exd5 6. Lb5 Ld7 7. Te1+ (ohne Wertung, Band 1200). Fühlt sich die Länge
+      richtig an?
+- [ ] N2552. Dasselbe als Schwarz mit „Englische Eröffnung“ (1. c4): Früher gab es als Schwarz
+      keine Aufgabe, jetzt ziehst du die häufigsten Antworten (etwa 1… e5 …). Startknopf: „1 Variante“.
+- [ ] N2553. Ohne Netz (Flugmodus, App schon installiert): Die Runde aus der Praxis ist trotzdem
+      verlängert.
 - [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
       Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
       Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.

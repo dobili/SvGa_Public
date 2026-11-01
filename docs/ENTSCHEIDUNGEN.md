@@ -4,6 +4,15 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Größenbudget der App 35 MB statt 25 MB
+
+Entscheidung des Autors: Die eigene Obergrenze aus Konzept 11.2 (alle ausgelieferten Dateien
+zusammen, ohne Maia-Paket) steigt von 25 auf 35 MB. Grund: Mit Variationsbrowser, Repertoire und
+Praxis-Fortsetzungen stand die App bei 24,9 MB. Vorab geladen werden weiter knapp 19 MB; das
+englische Sprachpaket (6,4 MB) kommt nur auf Wahl. Browser und Handys könnten technisch weit mehr
+speichern; die Prüfung beim Build (`skripte/pruefe-groesse.mjs`) bleibt als Schutz gegen
+unbemerktes Wachstum.
+
 ## 1.11.2026 – Version 0.3.45: Q12, Zeitleiste, Repertoire, Sammlungen, Fehlertest Teil 3
 
 - **Q12-2/Q12-3** (Zweig `q12-zeitleiste`): kein Zurücknehmen nach dem Ende (`nimmZurueck` gibt

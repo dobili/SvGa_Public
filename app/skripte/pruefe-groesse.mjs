@@ -1,7 +1,9 @@
 // Prüft nach dem Build, ob die ausgelieferte App ins Größenbudget passt.
 //
 // Warum: Nach der Installation lädt das Gerät alle Dateien für die Offline-Nutzung.
-// Das Konzept (Abschnitt 11.2) setzt dafür eine Obergrenze von 25 MB. Wird sie
+// Das Konzept (Abschnitt 11.2) setzte dafür eine Obergrenze von 25 MB; der Autor hat sie am
+// 1.11.2026 auf 35 MB angehoben (Variationsbrowser, Repertoire; vorab geladen werden weiter
+// knapp 19 MB, der Rest ist das englische Sprachpaket auf Wahl). Wird sie
 // überschritten, schlägt der Build fehl, damit es nicht unbemerkt passiert.
 // Seit V4 (Nutzungsprüfung 25.10.2026) lädt das Gerät nicht mehr alles vorab: Die Dateien einer
 // weiteren Sprache (daten/en/**, assets/sprachpaket-en-…js) kommen erst, wenn der Leser sie wählt
@@ -14,8 +16,9 @@ import { fileURLToPath } from "node:url";
 const HIER = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(HIER, "../dist");
 
-/** Obergrenze aus Konzept Abschnitt 11.2: 25 MB. */
-const OBERGRENZE_BYTES = 25 * 1024 * 1024;
+/** Obergrenze in MB (Konzept 11.2: 25, Entscheidung des Autors 1.11.2026: 35). */
+const OBERGRENZE_MB = 35;
+const OBERGRENZE_BYTES = OBERGRENZE_MB * 1024 * 1024;
 const BYTES_JE_MB = 1024 * 1024;
 
 /** Dateien eines Sprachpakets, wie in src/sw/dateiliste.ts (Deutsch gehört zum Kern). */
@@ -60,12 +63,12 @@ function mb(bytes) {
 async function main() {
   const { alles, sprachpakete, ohneListe, zusatz } = await ordnergroesse(DIST);
   if (alles > OBERGRENZE_BYTES) {
-    console.error(`Größenbudget überschritten: ${mb(alles)} MB (Obergrenze 25 MB).`);
+    console.error(`Größenbudget überschritten: ${mb(alles)} MB (Obergrenze ${OBERGRENZE_MB} MB).`);
     process.exit(1);
   }
   const vorab = alles - sprachpakete - ohneListe;
   console.log(
-    `Größenbudget eingehalten: ${mb(alles)} MB von 25 MB ` +
+    `Größenbudget eingehalten: ${mb(alles)} MB von ${OBERGRENZE_MB} MB ` +
       `(vorab geladen höchstens ${mb(vorab)} MB, Sprachpakete auf Wahl ${mb(sprachpakete)} MB); ` +
       `Zusatzpaket Maia ${mb(zusatz)} MB.`,
   );

@@ -41,7 +41,7 @@ Version 0.3.43.
   Meldungen am Rundenende (`ui/trainer/nachDerRunde.ts`) und nach der Partie
   (`speicher/partieprotokoll.ts`) tragen je eine Zeile ein, ohne Router oder Bildschirme zu ändern.
 - **Offline:** Der Service Worker lädt beim ersten Aufruf den Kern vorab, weitere Sprachen erst bei
-  Bedarf (`sw/dateiliste.ts`); Größenbudget 25 MB für alles zusammen, geprüft beim Build
+  Bedarf (`sw/dateiliste.ts`); Größenbudget 35 MB für alles zusammen (bis 1.11.2026: 25 MB), geprüft beim Build
   (`app/skripte/pruefe-groesse.mjs`). Neue Versionen werden gemeldet, aktualisiert wird nur nach
   Tippen.
 - **Navigation** als Stapel ohne Adressen (`app/stapel.ts`); die Zurück-Taste von Android führt

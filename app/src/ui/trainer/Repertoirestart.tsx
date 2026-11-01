@@ -33,7 +33,7 @@ import {
   quellenzeile,
   type Eroeffnungsquelle,
 } from "./eroeffnungsquelle";
-import { Praxisauswahl, Praxisschalter } from "./Praxiswahl";
+import { Praxiskopf, Praxisliste, Praxisschalter } from "./Praxiswahl";
 import { seitenzeile, SEITEN, type Einstellung } from "./startkarte/einstellung";
 import { Startkarte } from "./startkarte/Startkarte";
 import { useGemerkt, useGemerkterText } from "./startkarte/useGemerkt";
@@ -67,6 +67,7 @@ function Praxisstart({
   const [text, setzeText] = useGemerkterText(KENNUNG, "praxiswahl");
   const [seite, setzeSeite] = useGemerkt<Color>(KENNUNG, "seite", SEITEN, "white");
   const werte = wahlAusText(text);
+  const setzeWerte = (neu: readonly string[]) => setzeText(wahlAlsText(neu));
   const linien = daten.art === "fertig" ? praxislinien(daten.wert, werte, sprache() === "de") : [];
   const anzahl = praxisanzahl(linien, seite, jeRunde);
   return (
@@ -77,9 +78,10 @@ function Praxisstart({
       hinweis={
         <>
           {schalter}
-          <Praxisauswahl werte={werte} setze={(neu) => setzeText(wahlAlsText(neu))} />
+          <Praxiskopf werte={werte} setze={setzeWerte} />
         </>
       }
+      nachStart={<Praxisliste werte={werte} setze={setzeWerte} />}
       start={{
         zusatz: variantenzahl(anzahl),
         gesperrt: anzahl === 0,

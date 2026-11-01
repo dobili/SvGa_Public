@@ -769,7 +769,7 @@
   "repertoiretrainer.buchzug": "Not the book's move. The arrow shows it; play it.",
   "repertoiretrainer.zeigen": "Show move",
   "repertoiretrainer.fertig": "End of the line, mistakes and hints: {fehler}.",
-  "repertoiretrainer.auftragPraxis": "{titel}: Play {farbe}'s moves as real players most often play them on Lichess. The app replies.",
+  "repertoiretrainer.auftragPraxis": "“{titel}”: Play {farbe}'s moves as real players most often play them on Lichess. The app replies.",
   "repertoiretrainer.praxiszug": "Not the move of this line. The arrow shows it; play it.",
   "repertoiretrainer.praxis.herkunft": "From practice, Lichess (not from the book)",
   "repertoiretrainer.praxis.schalter": "Also openings from practice (Lichess)",

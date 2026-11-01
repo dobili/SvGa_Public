@@ -27,13 +27,13 @@ export function Praxisschalter({ an, setze }: { an: boolean; setze: (an: boolean
 }
 
 /**
- * Die Auswahl der Varianten aus der Praxis: Kennzeichnung, Klappe nach Spielstärke mit Haken,
- * die Zahl der gewählten und „Alle entfernen“.
+ * Kopf der Auswahl aus der Praxis (über dem Startknopf): Kennzeichnung, Zahl der gewählten
+ * Varianten und „Alle entfernen“.
  *
  * Eingaben: gewählte Werte („praxis:Name“), Rückruf mit der neuen Liste.
- * Beispiel: Italienisch, „Die häufigsten 3“ → drei Varianten gewählt.
+ * Beispiel: drei Varianten gewählt → „3 gewählt · Alle entfernen“.
  */
-export function Praxisauswahl({
+export function Praxiskopf({
   werte,
   setze,
 }: {
@@ -45,26 +45,43 @@ export function Praxisauswahl({
       <p className="hinweis" data-testid="repertoire-praxishinweis">
         {t("repertoiretrainer.praxis.kennzeichnung")}
       </p>
-      <Staerkewahl
-        praefix="repertoire-staerke"
-        offen
-        erklaerung={t("repertoiretrainer.praxis.erklaerung")}
-        wahl={{
-          ist: (wert) => werte.includes(wert),
-          beiWahl: (wert) => setze(umgeschaltet(werte, wert)),
-          beiSchnellwahl: (familie, anzahl) => setze(mitSchnellwahl(werte, familie, anzahl)),
-        }}
-      />
-      <div className="knopfreihe">
+      <div className="praxisauswahl-zahl">
         <span className="hinweis" data-testid="repertoire-praxisanzahl">
           {tZahl("repertoiretrainer.praxis.gewaehlt", werte.length, { anzahl: werte.length })}
         </span>
         {werte.length > 0 && (
-          <button type="button" className="knopf-zweit" onClick={() => setze([])}>
+          <button type="button" className="knopf-link" onClick={() => setze([])}>
             {t("spielen.boteroeffnung.alleEntfernen")}
           </button>
         )}
       </div>
     </div>
+  );
+}
+
+/**
+ * Die lange Liste unter dem Startknopf: die Klappe nach Spielstärke mit Haken, offen. Warum unter
+ * dem Knopf: Die Liste ist lang; so bleibt der Start ohne Blättern erreichbar.
+ *
+ * Beispiel: Italienisch, „Die häufigsten 3“ → drei Varianten gewählt.
+ */
+export function Praxisliste({
+  werte,
+  setze,
+}: {
+  werte: readonly string[];
+  setze: (werte: readonly string[]) => void;
+}) {
+  return (
+    <Staerkewahl
+      praefix="repertoire-staerke"
+      offen
+      erklaerung={t("repertoiretrainer.praxis.erklaerung")}
+      wahl={{
+        ist: (wert) => werte.includes(wert),
+        beiWahl: (wert) => setze(umgeschaltet(werte, wert)),
+        beiSchnellwahl: (familie, anzahl) => setze(mitSchnellwahl(werte, familie, anzahl)),
+      }}
+    />
   );
 }

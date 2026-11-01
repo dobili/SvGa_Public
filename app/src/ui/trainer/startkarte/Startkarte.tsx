@@ -129,8 +129,9 @@ function Starthilfe({ kennung, hilfen }: { kennung: TrainerKennung; hilfen: read
  * Die Startkarte eines Trainers.
  *
  * Eingaben: Trainer, Einstellzeilen (dürfen fehlen), Startknopf (oder null), weitere Modi,
- * ein Hinweis unter der Runde (etwa die Herkunft von Zusatzaufgaben), weitere Erklärungen für
- * „So funktioniert“ und die Prüfkennung.
+ * ein Hinweis unter der Runde (etwa die Herkunft von Zusatzaufgaben), Inhalt unter dem Startknopf
+ * (`nachStart`, etwa die lange Auswahl aus der Praxis im Repertoire-Trainer), weitere Erklärungen
+ * für „So funktioniert“ und die Prüfkennung.
  * Beispiel: Taktiktrainer mit „Aufgaben“, „Motiv“, „Stufe“, Startknopf und „Serie ohne Fehler“.
  */
 export function Startkarte({
@@ -139,6 +140,7 @@ export function Startkarte({
   start,
   modi = [],
   hinweis = null,
+  nachStart = null,
   hilfen = [],
   testkennung,
 }: {
@@ -147,6 +149,7 @@ export function Startkarte({
   start: Startknopf | null;
   modi?: readonly Startmodus[];
   hinweis?: ReactNode;
+  nachStart?: ReactNode;
   hilfen?: readonly string[];
   testkennung: string;
 }) {
@@ -164,6 +167,7 @@ export function Startkarte({
         )}
         {hinweis}
         {start && <Hauptknopf start={start} />}
+        {nachStart}
       </div>
       {modi.map((m) => (
         <Modusknopf key={m.kennung} modus={m} />

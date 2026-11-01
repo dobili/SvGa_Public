@@ -769,7 +769,7 @@
   "repertoiretrainer.buchzug": "Nicht der Zug des Buches. Der Pfeil zeigt ihn; zieh ihn nach.",
   "repertoiretrainer.zeigen": "Zug zeigen",
   "repertoiretrainer.fertig": "Variante zu Ende, Fehler und Hilfen: {fehler}.",
-  "repertoiretrainer.auftragPraxis": "{titel}: Ziehe die Züge von {farbe}, wie echte Spieler sie auf Lichess am häufigsten spielen. Die App antwortet.",
+  "repertoiretrainer.auftragPraxis": "„{titel}“: Ziehe die Züge von {farbe}, wie echte Spieler sie auf Lichess am häufigsten spielen. Die App antwortet.",
   "repertoiretrainer.praxiszug": "Nicht der Zug dieser Variante. Der Pfeil zeigt ihn; zieh ihn nach.",
   "repertoiretrainer.praxis.herkunft": "Aus der Praxis, Lichess (nicht aus dem Buch)",
   "repertoiretrainer.praxis.schalter": "Auch Eröffnungen aus der Praxis (Lichess)",

@@ -145,3 +145,34 @@ function teilsignatur(daten: Knotendaten, weiter: readonly Variationsknoten[]): 
 export function wertesignatur(v: Variation): string {
   return `${v.startFen}${teilsignatur(v.start, v.zuege)}`;
 }
+
+/**
+ * Die gespeicherte Auswertung einer Partie als Ergebnisse je Stellung, damit eine Variante aus
+ * dieser Partie nicht neu rechnen muss (Wunsch des Autors, 1.11.2026: „Warum nimmt man nicht die
+ * gespeicherte?“). Gleiche Engine und Tiefe wie die Analyse der Varianten.
+ * Eingaben: Stellungen der Partie (Start und nach jedem Zug), Werte in Bauern aus Sicht von Weiß,
+ * beste Züge (UCI) und Abstände in Bauern, je Stellung. Ausgabe: FEN → Ergebnis in Hundertstel.
+ * Sonderfall: Passt die Zahl der Werte nicht zu den Stellungen (nicht ausgewertete oder alte
+ * Partie), gibt es nichts; dann rechnet die Analyse wie bisher selbst.
+ * Beispiel: 1. e4 mit Werten [0,3, 0,25] → zwei Ergebnisse, { w: 30, b: "e2e4", … } für den Start.
+ */
+export function ergebnisseAusPartie(
+  fens: readonly string[],
+  werte: readonly number[],
+  beste: readonly string[],
+  abstaende: readonly number[],
+): Map<string, Engineergebnis> {
+  const ergebnisse = new Map<string, Engineergebnis>();
+  if (werte.length === 0 || werte.length !== fens.length) return ergebnisse;
+  fens.forEach((fen, i) => {
+    const wert = werte[i];
+    if (wert === undefined) return;
+    const bester = beste[i];
+    ergebnisse.set(fen, {
+      w: Math.round(wert * HUNDERTSTEL),
+      a: Math.round((abstaende[i] ?? 0) * HUNDERTSTEL),
+      ...(bester ? { b: bester } : {}),
+    });
+  });
+  return ergebnisse;
+}

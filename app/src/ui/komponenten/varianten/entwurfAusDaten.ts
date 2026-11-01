@@ -2,6 +2,8 @@
  * Entwürfe aus den eigenen Daten: Grundstellung, Stellung, Partie (auf Wunsch mit Engine-Folgen),
  * Fehler, Lernsammlung und Lösungslinien (gelöste Trainer-Aufgaben), jeweils mit einem Titel in der Sprache des Lesers.
  *
+ * Eine Variante aus einer ausgewerteten Partie übernimmt deren Engine-Werte (seit 1.11.2026), statt
+ * sie bei der Analyse neu zu rechnen.
  * Rolle im Gesamtbild: Bindeglied zwischen dem Wert der Ansicht (variantenwert.ts) und den reinen
  * Quellen (training/variationsquellen.ts, training/enginefolgen.ts). Die Abbildung braucht die
  * Buchdaten und steht deshalb im Hook useVariantenentwurf.ts.
@@ -12,6 +14,8 @@ import { datumText, t } from "../../../i18n/sprache";
 import type { Nutzerdaten } from "../../../speicher/format";
 import type { Partieeintrag } from "../../../speicher/partien";
 import { zugurteile } from "../../../spiel/auswertung";
+import { stellungen } from "../../../spiel/partie";
+import { ergebnisseAusPartie, mitWerten } from "../../../training/variationswerte";
 import { mitEngineFolgen } from "../../../training/enginefolgen";
 import type { Variation } from "../../../training/variationen";
 import {
@@ -39,7 +43,14 @@ export function ausPartieeintrag(
   const zuege = partie.zuege.map((z) => z.san);
   const startFen = partie.einstellung.startFen;
   const titel = t("varianten.titel.partie", { datum: tag(partie.begonnen) });
-  const v = ausPartie({ id: partie.id, startFen, zuege }, stelle, titel, jetzt);
+  const roh = ausPartie({ id: partie.id, startFen, zuege }, stelle, titel, jetzt);
+  const werte = ergebnisseAusPartie(
+    stellungen(partie),
+    eintrag.werte,
+    eintrag.beste,
+    eintrag.abstaende,
+  );
+  const v = roh ? mitWerten(roh, werte) : null;
   if (!v || !engine) return v;
   const urteile = zugurteile(partie, eintrag.werte, eintrag.beste, eintrag.abstaende);
   const folgen = mitEngineFolgen(
@@ -54,7 +65,7 @@ export function ausPartieeintrag(
     },
     { besser: t("varianten.engine.besser"), strafe: t("varianten.engine.strafe") },
   );
-  return { ...v, zuege: folgen.zuege };
+  return mitWerten({ ...v, zuege: folgen.zuege }, werte);
 }
 
 /**

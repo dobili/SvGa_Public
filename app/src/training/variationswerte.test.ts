@@ -5,10 +5,12 @@
 import { describe, expect, it } from "vitest";
 import { fenAm } from "../schach/variationsbaum";
 import type { Variation, Variationsknoten } from "./variationen";
-import { ausStellung, linieAlsKnoten } from "./variationsquellen";
+import { ausPartie, ausStellung, linieAlsKnoten } from "./variationsquellen";
+
 import {
   baumstellungen,
   bewertungsstand,
+  ergebnisseAusPartie,
   hatWerte,
   istBewertet,
   mitWerten,
@@ -87,5 +89,24 @@ describe("Werte im Variantenbaum", () => {
     expect(baumstellungen(baum)).toHaveLength(7);
     // Startstellung, 2 × 1. Zug, 2 × 2. Zug, 1 gemeinsame Stellung nach dem 3. Zug.
     expect(offeneStellungen(baum)).toHaveLength(6);
+  });
+});
+
+describe("Werte aus einer ausgewerteten Partie (1.11.2026)", () => {
+  it("übernimmt die gespeicherten Werte, sodass die Analyse nichts mehr rechnen muss", () => {
+    const partie = { id: "p", startFen: GRUND, zuege: ["e4", "e5"] };
+    const v = ausPartie(partie, 0, "Partie", new Date(2026, 10, 1));
+    if (!v) throw new Error("Variante");
+    const fens = baumstellungen(v).map((s) => s.fen);
+    expect(offeneStellungen(v)).toHaveLength(3);
+    const werte = ergebnisseAusPartie(fens, [0.3, 0.25, 0.2], ["e2e4", "e7e5", "g1f3"], [0.1, 0, 0]);
+    const mit = mitWerten(v, werte);
+    expect(offeneStellungen(mit)).toEqual([]);
+    expect(mit.start).toMatchObject({ w: 30, b: "e2e4", a: 10 });
+  });
+
+  it("übernimmt nichts, wenn die Partie nicht (vollständig) ausgewertet ist", () => {
+    expect(ergebnisseAusPartie(["a", "b"], [], [], []).size).toBe(0);
+    expect(ergebnisseAusPartie(["a", "b"], [0.1], ["e2e4"], []).size).toBe(0);
   });
 });

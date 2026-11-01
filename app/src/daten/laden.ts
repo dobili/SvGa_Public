@@ -17,6 +17,7 @@ import {
   eroeffnungsbaenderAus,
   type Eroeffnungsbaender,
 } from "../spiel/eroeffnungsbaender";
+import { praxisfortsetzungenAus, type Praxisfortsetzungen } from "../training/praxisfortsetzung";
 import { zusatzpartienAus, type Zusatzpartie } from "../training/zusatzpartien";
 import type { Glossar } from "./generiert/glossar";
 import {
@@ -211,6 +212,27 @@ export function ladePraxisbuch(): Promise<Praxisbuch> {
     });
   }
   return praxisbuch;
+}
+
+let praxisfortsetzungen: Promise<Praxisfortsetzungen> | null = null;
+
+/**
+ * Lädt die Fortsetzungen der Varianten aus der Praxis (training/praxisfortsetzung.ts) für den
+ * Repertoire-Trainer, unabhängig von der Sprache (etwa 130 kB, gepackt 20 kB).
+ * Einmal geladen; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladePraxisfortsetzungen(): Promise<Praxisfortsetzungen> {
+  if (!praxisfortsetzungen) {
+    praxisfortsetzungen = ladeJson<unknown>("/daten/praxisfortsetzungen.json").then((roh) => {
+      const daten = praxisfortsetzungenAus(roh);
+      if (!daten) throw new Error("/daten/praxisfortsetzungen.json: unbekanntes Format");
+      return daten;
+    });
+    praxisfortsetzungen.catch(() => {
+      praxisfortsetzungen = null;
+    });
+  }
+  return praxisfortsetzungen;
 }
 
 let zusatzpartien: Promise<readonly Zusatzpartie[]> | null = null;

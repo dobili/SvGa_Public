@@ -9,13 +9,16 @@
  * gewählten Werten die Linien und aus den Linien die Aufgaben des Repertoire-Trainers
  * (training/repertoiretrainer.ts). Die Züge stammen nicht aus dem Buch; die Aufgaben tragen
  * deshalb die Herkunft „praxis“, die Oberfläche kennzeichnet sie. Reine Funktionen.
+ * Seit dem Wunsch des Autors zu N2538 (1.11.2026) geht jede Linie nach dem Namen mit den
+ * häufigsten Folgezügen im Band des Lesers weiter (training/praxisfortsetzung.ts).
  * Abhängigkeiten: spiel/eroeffnungsbaender.ts, spiel/partie.ts (Vorsilbe), training/zufall.ts,
- * training/uebungsaufgabe.ts (kanonischeLinie).
+ * training/uebungsaufgabe.ts (kanonischeLinie), training/praxisfortsetzung.ts.
  */
 import type { Color } from "chessops/types";
 import { alsPraxiseintraege, type Eroeffnungsbaender } from "../spiel/eroeffnungsbaender";
 import { PRAXIS_VORSILBE } from "../spiel/partie";
 import { GRUNDSTELLUNG } from "../spiel/stellungsbau";
+import { folgezuege, type Praxisfortsetzungen } from "./praxisfortsetzung";
 import type { Repertoireaufgabe } from "./repertoiretrainer";
 import { kanonischeLinie } from "./uebungsaufgabe";
 import { mische, type Zufall } from "./zufall";
@@ -28,6 +31,14 @@ export interface Praxislinie {
   readonly titel: string;
   /** Züge in englischer Kurznotation, regelgerecht geschrieben (mit Schachzeichen). */
   readonly linie: readonly string[];
+  /** So viele Halbzüge am Ende sind häufigste Folgezüge nach dem Namen (0: nicht verlängert). */
+  readonly angehaengt: number;
+}
+
+/** Womit verlängert wird: die Fortsetzungen und der Index des Bandes (des Lesers). */
+export interface Verlaengerung {
+  readonly daten: Praxisfortsetzungen;
+  readonly band: number;
 }
 
 /** Trennzeichen der gemerkten Wahl (Lichess-Namen enthalten keinen Zeilenumbruch). */
@@ -58,38 +69,71 @@ export function praxisname(daten: Eroeffnungsbaender, name: string, deutsch: boo
   return familie ? `${familie.nameDe}${name.slice(familie.name.length)}` : name;
 }
 
-/** Ist `kurz` echter Anfang von `lang` (ganze Züge)? */
-function istAnfang(kurz: readonly string[], lang: readonly string[]): boolean {
-  return kurz.length < lang.length && kurz.every((z, i) => lang[i] === z);
+/**
+ * Ohne Doppelte und ohne Linien, die echter Anfang einer anderen sind (ganze Züge). Warum über
+ * Mengen: Mit „Alle Varianten“ sind es Hunderte Linien; der paarweise Vergleich kostete auf dem
+ * Handy spürbar Zeit, so sind es höchstens 20 Anfänge je Linie.
+ */
+function ohneAnfaengeUndDoppelte<T extends { readonly linie: readonly string[] }>(
+  linien: readonly T[],
+): T[] {
+  const anfaenge = new Set<string>();
+  for (const { linie } of linien) {
+    for (let laenge = 1; laenge < linie.length; laenge++) anfaenge.add(linie.slice(0, laenge).join(" "));
+  }
+  const gesehen = new Set<string>();
+  return linien.filter(({ linie }) => {
+    const text = linie.join(" ");
+    if (anfaenge.has(text) || gesehen.has(text)) return false;
+    gesehen.add(text);
+    return true;
+  });
 }
 
 /**
- * Die Linien zu den gewählten Werten, in der Reihenfolge der Wahl. Doppelte Zugfolgen und
- * Linien, die Anfang einer anderen gewählten Linie sind, fallen weg: Wer „Old Sicilian“ und
- * „Open“ wählt, übt die längere und zieht die kürzere dabei mit.
+ * Die Linie zu einer Zugfolge, verlängert um die häufigsten Folgezüge im Band; ist die
+ * Verlängerung regelwidrig (Daten passen nicht), bleibt die Linie bis zum Namen.
+ * Beispiel: „e4 c5 Nf3 Nc6“, Band 1200 → e4 c5 Nf3 Nc6 Bc4 e6 O-O d5 … (9 angehängt).
+ */
+function linieZu(
+  folge: string,
+  verlaengerung: Verlaengerung | null,
+): { linie: string[]; angehaengt: number } | null {
+  const name = folge.split(" ");
+  const dazu = verlaengerung ? folgezuege(verlaengerung.daten, folge, verlaengerung.band) : [];
+  const lang = dazu.length > 0 ? kanonischeLinie(GRUNDSTELLUNG, [...name, ...dazu]) : null;
+  if (lang) return { linie: lang, angehaengt: dazu.length };
+  const kurz = kanonischeLinie(GRUNDSTELLUNG, name);
+  return kurz ? { linie: kurz, angehaengt: 0 } : null;
+}
+
+/**
+ * Die Linien zu den gewählten Werten, in der Reihenfolge der Wahl, auf Wunsch verlängert.
+ * Doppelte Zugfolgen und Linien, die Anfang einer anderen gewählten Linie sind, fallen weg: Wer
+ * „Old Sicilian“ und „Open“ wählt, übt die längere und zieht die kürzere dabei mit. Verglichen
+ * wird nach der Verlängerung: Führt die Fortsetzung der kürzeren in die längere, bleibt nur diese.
  *
- * Eingaben: Daten der Eröffnungen nach Spielstärke, gewählte Werte („praxis:Name“), Sprache.
- * Beispiel: [„praxis:Italian Game“] → [{ titel: „Italienische Partie“, linie: e4 e5 Nf3 Nc6 Bc4 }].
+ * Eingaben: Daten der Eröffnungen nach Spielstärke, gewählte Werte („praxis:Name“), Sprache,
+ * Verlängerung (null: nur bis zum Namen, etwa solange die Fortsetzungen laden).
+ * Beispiel: [„praxis:Italian Game“], ohne Verlängerung → [{ titel: „Italienische Partie“,
+ * linie: e4 e5 Nf3 Nc6 Bc4, angehaengt: 0 }].
  * Sonderfall: Unbekannte Werte (etwa nach neuen Daten) und regelwidrige Folgen fallen weg.
  */
 export function praxislinien(
   daten: Eroeffnungsbaender,
   werte: readonly string[],
   deutsch: boolean,
+  verlaengerung: Verlaengerung | null = null,
 ): Praxislinie[] {
   const folgen = new Map<string, string>();
   for (const [name, folge] of alsPraxiseintraege(daten)) if (!folgen.has(name)) folgen.set(name, folge);
   const linien = werte.flatMap((wert) => {
     const name = wert.slice(PRAXIS_VORSILBE.length);
     const folge = folgen.get(name);
-    const linie = folge ? kanonischeLinie(GRUNDSTELLUNG, folge.split(" ")) : null;
-    return linie ? [{ wert, titel: praxisname(daten, name, deutsch), linie }] : [];
+    const zu = folge ? linieZu(folge, verlaengerung) : null;
+    return zu ? [{ wert, titel: praxisname(daten, name, deutsch), ...zu }] : [];
   });
-  return linien.filter(
-    (l, i) =>
-      !linien.some((m) => istAnfang(l.linie, m.linie)) &&
-      linien.findIndex((m) => m.linie.join(" ") === l.linie.join(" ")) === i,
-  );
+  return ohneAnfaengeUndDoppelte(linien);
 }
 
 /** Hat der Leser auf dieser Seite in der Linie mindestens einen Zug? (Weiß beginnt.) */

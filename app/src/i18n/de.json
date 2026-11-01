@@ -778,6 +778,8 @@
   "repertoiretrainer.praxis.gewaehlt": "{anzahl} gewählt",
   "repertoiretrainer.praxis.gewaehltEins": "1 gewählt",
   "repertoiretrainer.praxis.gewaehltNull": "Noch nichts gewählt.",
+  "repertoiretrainer.praxis.verlaengerung": "Nach dem Namen geht jede Variante mit den häufigsten Zügen von Spielern um {band} weiter (dein Band nach deiner Wertung), solange die Stellung oft genug vorkam, höchstens zehn Halbzüge.",
+  "repertoiretrainer.praxis.verlaengerungOhneWertung": "Nach dem Namen geht jede Variante mit den häufigsten Zügen von Spielern um {band} weiter, solange die Stellung oft genug vorkam, höchstens zehn Halbzüge. Sobald du gewertete Partien spielst, nimmt der Trainer dein eigenes Band.",
   "studien.auftrag": "{titel}: Finde die Lösung für {farbe}, Zug für Zug. Die App antwortet wie im Buch.",
   "studien.pruefungenTitel": "Die vier Prüfungen für Studien (Kapitel 10)",
   "studien.pruefung1": "Was will der Gegner? Suche zuerst seine beste Verteidigung, oft ein Patt.",

@@ -27,24 +27,37 @@ export function Praxisschalter({ an, setze }: { an: boolean; setze: (an: boolean
 }
 
 /**
- * Kopf der Auswahl aus der Praxis (über dem Startknopf): Kennzeichnung, Zahl der gewählten
- * Varianten und „Alle entfernen“.
+ * Kopf der Auswahl aus der Praxis (über dem Startknopf): Kennzeichnung, Satz zur Verlängerung,
+ * Zahl der gewählten Varianten und „Alle entfernen“.
  *
- * Eingaben: gewählte Werte („praxis:Name“), Rückruf mit der neuen Liste.
- * Beispiel: drei Varianten gewählt → „3 gewählt · Alle entfernen“.
+ * Eingaben: gewählte Werte („praxis:Name“), Rückruf mit der neuen Liste, Untergrenze des Bandes
+ * der Verlängerung (null: noch nicht geladen, dann ohne Satz), ob es die Wertung des Lesers ist.
+ * Beispiel: drei Varianten gewählt, Band 1200 → „… Spieler um 1200 …“, „3 gewählt · Alle entfernen“.
  */
 export function Praxiskopf({
   werte,
   setze,
+  band,
+  eigene,
 }: {
   werte: readonly string[];
   setze: (werte: readonly string[]) => void;
+  band: number | null;
+  eigene: boolean;
 }) {
+  const satz = eigene
+    ? "repertoiretrainer.praxis.verlaengerung"
+    : "repertoiretrainer.praxis.verlaengerungOhneWertung";
   return (
     <div className="praxisauswahl" data-testid="repertoire-praxisauswahl">
       <p className="hinweis" data-testid="repertoire-praxishinweis">
         {t("repertoiretrainer.praxis.kennzeichnung")}
       </p>
+      {band !== null && (
+        <p className="hinweis" data-testid="repertoire-praxisverlaengerung">
+          {t(satz, { band })}
+        </p>
+      )}
       <div className="praxisauswahl-zahl">
         <span className="hinweis" data-testid="repertoire-praxisanzahl">
           {tZahl("repertoiretrainer.praxis.gewaehlt", werte.length, { anzahl: werte.length })}

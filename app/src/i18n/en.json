@@ -778,6 +778,8 @@
   "repertoiretrainer.praxis.gewaehlt": "{anzahl} selected",
   "repertoiretrainer.praxis.gewaehltEins": "1 selected",
   "repertoiretrainer.praxis.gewaehltNull": "Nothing selected yet.",
+  "repertoiretrainer.praxis.verlaengerung": "After its name, each line continues with the moves players around {band} play most often (your band, from your rating), as long as the position occurred often enough, at most ten half-moves.",
+  "repertoiretrainer.praxis.verlaengerungOhneWertung": "After its name, each line continues with the moves players around {band} play most often, as long as the position occurred often enough, at most ten half-moves. Once you play rated games, the trainer uses your own band.",
   "studien.auftrag": "{titel}: Find the solution for {farbe}, move by move. The app replies as in the book.",
   "studien.pruefungenTitel": "The four checks for studies (Chapter 10)",
   "studien.pruefung1": "What does the opponent want? First look for their best defense, often a stalemate.",

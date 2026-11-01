@@ -19,7 +19,6 @@ import { liesMerker, schreibeMerker } from "../../../app/merker";
 import type { Theoriequellen } from "../../../schach/theorie";
 import type { Zugurteil } from "../../../spiel/auswertung";
 import { urteileImBaum } from "../../../spiel/variationsurteile";
-import { ENTWURF } from "../../../training/variationsquellen";
 import {
   bewertungsstand,
   hatWerte,
@@ -95,7 +94,8 @@ function useAbgleich(stand: Variantenstand): void {
   }, [uebernimmWerte]);
   const signatur = useMemo(() => wertesignatur(v), [v]);
   useEffect(() => {
-    if (!v.analysiert || v.id === ENTWURF) return;
+    // Auch ein ungespeicherter Entwurf wird analysiert; seine Werte bleiben in der Arbeitskopie.
+    if (!v.analysiert) return;
     const offen = offeneStellungen(v).filter((f) => !variantenanalyse.kennt(f));
     if (offen.length > 0) variantenanalyse.fordere(v.id, offen);
     // Maßgeblich sind Züge und Werte (Signatur), nicht jeder Tastendruck im Kommentar.

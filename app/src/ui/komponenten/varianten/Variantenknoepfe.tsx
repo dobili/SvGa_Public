@@ -5,10 +5,10 @@
  *
  * Rolle im Gesamtbild: Teil des Bildschirms „Variante“ (Entwurf, Abschnitt 3, Punkt 7: Knopfzeile
  * Markieren, Baum, Analyse, Drehen, Speichern). Markieren und Drehen stehen als Schalter am Brett,
- * gespeichert wird von selbst; den Knopf „Analyse“ (Stufe 3, Analyseanzeige.tsx) reicht der Bildschirm
+ * „Speichern“ in der Statuszeile (Variantenmeldung.tsx); den Knopf „Analyse“ (Stufe 3, Analyseanzeige.tsx) reicht der Bildschirm
  * als ersten Knopf herein (`vorne`). Karte und Spielen brauchen eine
- * Kennung: Ein Entwurf wird vorher gespeichert und die Ansicht auf die Kennung umgestellt, damit
- * „Zurück“ zur gespeicherten Variante führt und nicht einen neuen Entwurf anlegt.
+ * Kennung: Ein Entwurf wird vorher nach Rückfrage gespeichert und die Ansicht auf die Kennung
+ * umgestellt, damit „Zurück“ zur gespeicherten Variante führt und nicht einen neuen Entwurf anlegt.
  * Abhängigkeiten: Navigation, spiel/partie.ts, spiel/probepartie.ts, variantenwert.ts,
  * Variantenkarte.tsx (Kennung), i18n, lucide-react.
  */
@@ -19,6 +19,7 @@ import { t } from "../../../i18n/sprache";
 import { spielbar } from "../../../spiel/partie";
 import { alsProbewert } from "../../../spiel/probepartie";
 import { ENTWURF } from "../../../training/variationsquellen";
+import type { Speicherfragen } from "./useSpeicherfrage";
 import type { Variantenstand } from "./useVariante";
 import { abfrageAnsicht, merkePfad, varianteAnsicht } from "./variantenwert";
 
@@ -27,33 +28,29 @@ const SYMBOL = 18;
 const ANSICHT_KARTE = "variantenkarte";
 
 /**
- * „Karte“ und „Von hier spielen“; beide brauchen die Kennung der Variante. Ein Entwurf wird dafür
- * gespeichert und die Ansicht auf die Kennung umgestellt.
+ * „Karte“, „Von hier spielen“ und „Abfragen“ brauchen die Kennung der Variante. Ein Entwurf wird
+ * dafür nur nach Rückfrage gespeichert (useSpeicherfrage.ts); danach steht die Ansicht auf der
+ * Kennung, damit „Zurück“ zur gespeicherten Variante führt.
  */
-function useSprungziele(stand: Variantenstand) {
+function useSprungziele(stand: Variantenstand, fragen: Speicherfragen) {
   const { ersetze, navigiere } = useNavigation();
-  const gespeichert = (): string | null => {
-    if (stand.variation.id !== ENTWURF) return stand.variation.id;
-    const id = stand.aendereVariation(stand.variation, "sofort");
-    if (!id) return null;
-    merkePfad(id, stand.pfad);
-    ersetze(varianteAnsicht(id));
-    return id;
-  };
-  const karte = () => {
-    const id = gespeichert();
-    if (id) navigiere({ bildschirm: "zusatz", kennung: ANSICHT_KARTE, wert: id });
-  };
-  const spiele = () => {
-    const id = gespeichert();
-    if (!id) return;
-    const probe = alsProbewert({ art: "variante", id, pfad: stand.pfad });
-    navigiere({ bildschirm: "spielen", startFen: stand.fen, probe });
-  };
-  const frage = () => {
-    const id = gespeichert();
-    if (id) navigiere(abfrageAnsicht({ art: "variante", id, pfad: stand.pfad }));
-  };
+  const mitKennung = (weiter: (id: string) => void) =>
+    fragen.mitKennung((id) => {
+      if (stand.variation.id === ENTWURF) {
+        merkePfad(id, stand.pfad);
+        ersetze(varianteAnsicht(id));
+      }
+      weiter(id);
+    });
+  const karte = () =>
+    mitKennung((id) => navigiere({ bildschirm: "zusatz", kennung: ANSICHT_KARTE, wert: id }));
+  const spiele = () =>
+    mitKennung((id) => {
+      const probe = alsProbewert({ art: "variante", id, pfad: stand.pfad });
+      navigiere({ bildschirm: "spielen", startFen: stand.fen, probe });
+    });
+  const frage = () =>
+    mitKennung((id) => navigiere(abfrageAnsicht({ art: "variante", id, pfad: stand.pfad })));
   return { karte, spiele, frage };
 }
 
@@ -76,21 +73,23 @@ function Abfrageknopf({ gesperrt, beiTipp }: { gesperrt: boolean; beiTipp: () =>
 /**
  * Die Knopfzeile. Eingaben: Stand, ob der Baum offen ist, Umschalten des Baums, ein Knopf vorne
  * (Stufe 3: „Analyse“).
- * Beispiel: „Karte“ in einem Entwurf aus Abb. 2.40 → Variante gespeichert, Karte geöffnet;
+ * Beispiel: „Karte“ in einem Entwurf aus Abb. 2.40 → Rückfrage, „Speichern“ → Karte geöffnet;
  * „Zurück“ auf der Karte führt zur gespeicherten Variante.
  */
 export function Variantenknoepfe({
   stand,
+  fragen,
   baum,
   setzeBaum,
   vorne = null,
 }: {
   stand: Variantenstand;
+  fragen: Speicherfragen;
   baum: boolean;
   setzeBaum: (offen: boolean) => void;
   vorne?: ReactNode;
 }) {
-  const { karte, spiele, frage } = useSprungziele(stand);
+  const { karte, spiele, frage } = useSprungziele(stand, fragen);
   return (
     <div className="knopfreihe variantenknoepfe">
       {vorne}

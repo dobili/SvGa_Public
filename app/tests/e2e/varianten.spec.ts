@@ -56,8 +56,10 @@ test("Variante aus Abb. 2.40: Abzweig, Pfeile, Kommentar, Hauptvariante, Lösche
   await expect(page.getByTestId("weiterchips").getByRole("button")).toHaveCount(2);
   await expect(page.getByTestId("fortsetzungspfeil")).toHaveCount(2);
   await expect(page.locator(".fortsetzungspfeile text").first()).toHaveText("★");
-  // Eigener Zug 3... De7 wird dritte Fortsetzung und speichert die Variante.
+  // Eigener Zug 3... De7 wird dritte Fortsetzung; gespeichert wird erst auf „Speichern“.
   await ziehe(page, "d8", "e7");
+  await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+  await page.getByTestId("variante-speichern").click();
   await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert");
   await expect(page.getByTestId("variantenzeile").locator(".gabelmarke")).toContainText("3");
   await expect(page.getByTestId("variantenzeile").locator(".zug.eigen")).toHaveText("De7");
@@ -266,6 +268,8 @@ test("zwei Tabs: eine Variante im ersten Tab überlebt eine Änderung im zweiten
   await page.getByRole("button", { name: "Neue Variante" }).click();
   await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
   await ziehe(page, "e2", "e4");
+  await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+  await page.getByTestId("variante-speichern").click();
   await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert");
   // Der zweite Tab ändert etwas anderes und speichert seinen ganzen Stand.
   await oeffneProfil(zweite);
@@ -290,6 +294,10 @@ test("Probepartie von hier: zählt nicht, Züge als Abzweig in die Variante", as
   await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
   await ziehe(page, "e2", "e4");
   await page.getByRole("button", { name: "Von hier spielen" }).click();
+  await page
+    .getByTestId("variante-speicherfrage")
+    .getByRole("button", { name: "Speichern", exact: true })
+    .click();
   await expect(page.getByTestId("probehinweis")).toBeVisible();
   await page
     .getByTestId("vorschlagskarte")
@@ -304,4 +312,32 @@ test("Probepartie von hier: zählt nicht, Züge als Abzweig in die Variante", as
   // Nichts davon steht in der Partienliste.
   await oeffneProfil(page);
   await expect(page.locator(".partienliste li.partieeintrag")).toHaveCount(0);
+});
+
+test("Speichern nur per Abfrage: Zurück fragt, „Nicht speichern“ verwirft, „Speichern“ legt an", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneVarianten(page);
+  await page.getByRole("button", { name: "Neue Variante" }).click();
+  await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
+  await ziehe(page, "e2", "e4");
+  await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+  await page.getByRole("button", { name: "Zurück" }).first().click();
+  const frage = page.getByTestId("variante-speicherfrage");
+  await frage.getByRole("button", { name: "Nicht speichern" }).click();
+  await expect(page.getByTestId("varianten-leer")).toBeVisible();
+  await page.getByRole("button", { name: "Neue Variante" }).click();
+  await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
+  await ziehe(page, "d2", "d4");
+  await page.getByRole("button", { name: "Zurück" }).first().click();
+  await frage.getByRole("button", { name: "Speichern", exact: true }).click();
+  await expect(page.getByTestId("variantenkarte")).toHaveCount(1);
+  // Die untere Leiste fragt ebenso; „Abbrechen“ bleibt in der Variante.
+  await page.getByRole("button", { name: "Neue Variante" }).first().click();
+  await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
+  await ziehe(page, "c2", "c4");
+  await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
+  await frage.getByRole("button", { name: "Abbrechen" }).click();
+  await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
 });

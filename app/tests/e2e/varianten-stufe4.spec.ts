@@ -27,6 +27,8 @@ async function petroffVariante(seite: Page): Promise<void> {
   await oeffneAbbildung(seite, "2.40", "2.40");
   await seite.getByTestId("gabelschalter").click();
   await ziehe(seite, ".bildschirm-variante", "d8", "e7");
+  await expect(seite.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+  await seite.getByTestId("variante-speichern").click();
   await expect(seite.getByTestId("variantenstatus")).toContainText("Gespeichert");
 }
 
@@ -67,10 +69,8 @@ test("Meisterpartie: Buchpartie aus Kapitel 11 und berühmter Klassiker als Vari
   const liste = page.getByTestId("varianten-meisterpartien");
   await expect(liste.getByRole("button").first()).toContainText("Abb. 11.");
   await page.getByTestId("meisterpartien-quelle").selectOption("klassiker");
-  await liste.getByRole("button", { name: /Adolf Anderssen – Lionel Kieseritzky/ }).click();
-  await expect(page.getByTestId("variantentitel")).toHaveText(
-    "Adolf Anderssen – Lionel Kieseritzky",
-  );
+  await liste.getByRole("button", { name: /^Anderssen – Kieseritzky/ }).click();
+  await expect(page.getByTestId("variantentitel")).toContainText("Anderssen – Kieseritzky");
   await expect(page.getByTestId("variantenzeile")).toContainText("e4");
 });
 
@@ -114,7 +114,7 @@ test("Lernsammlung: Variante beim Anlegen verknüpfen und in der Abfrage abfrage
   const formular = page.getByTestId("sammelformular");
   await formular.getByLabel("Plan").fill("Erst d6, dann Sxe4");
   await formular.getByLabel("Variante").selectOption({ label: "Abb. 2.40" });
-  await formular.getByRole("button", { name: "Speichern" }).click();
+  await formular.getByRole("button", { name: "Speichern", exact: true }).click();
   await expect(page.getByText("In der Lernsammlung gespeichert.")).toBeVisible();
 
   await page.getByRole("navigation").getByRole("button", { name: "Training" }).click();

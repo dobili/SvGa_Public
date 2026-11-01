@@ -13,6 +13,13 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   berühmte Klassiker und aktuelle Turniere (Zusatzpartien, geöffnet als Zugfolge ab der
   Grundstellung). Die Kachel „Studie (Kapitel 10)“ entfällt; Studien bleiben über ihre Abbildungen
   als Variante erreichbar.
+- **Speichern nur per Abfrage** (Wunsch des Autors, 1.11.2026: „Ob eine Variante gespeichert wird,
+  sollte nie automatisch passieren, sondern stets per Abfrage“): Ein Entwurf bleibt ungespeichert,
+  bis der Leser „Speichern“ tippt (Statuszeile) oder eine Rückfrage bejaht: beim Verlassen
+  (Zurück, Zurück-Taste, untere Leiste über `app/verlassenswaechter.ts`) und vor Karte, Spielen,
+  Abfragen (`useSpeicherfrage.ts`). Gabel-Knopf mit eigenen Zügen fragt; „Als Variante speichern“
+  und „Einlesen und speichern“ gelten als Antwort. Gespeicherte Varianten speichern Änderungen wie
+  bisher von selbst. Auch Entwürfe werden analysiert; die Werte bleiben in der Arbeitskopie.
 - **Gespeicherte Werte übernehmen** (Einwand des Autors: Neu rechnen ist sinnlos): Eine Variante
   aus einer ausgewerteten Partie bekommt Wert, besten Zug und Abstand jeder Partiestellung aus dem
   Partieeintrag (`ergebnisseAusPartie`, gleiche Engine und Tiefe 18); die Analyse rechnet nur

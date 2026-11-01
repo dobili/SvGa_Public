@@ -51,6 +51,7 @@ import { Reiterleiste, Werkzeugleiste } from "../komponenten/werkzeugwahl/Werkze
 import { useWerkzeugwahl } from "../komponenten/werkzeugwahl/useWerkzeugwahl";
 import { Zugleiste } from "../komponenten/brettbedienung/Zugleiste";
 import { GabelSchalter, Variantenzahl } from "../komponenten/varianten/VariantenHinweis";
+import { EigeneZuegeFrage } from "../komponenten/varianten/EigeneZuegeFrage";
 import { useAbbildungsvariante } from "../komponenten/varianten/useAbbildungsvariante";
 
 /** Knöpfe für die vorige und nächste Abbildung im selben Kapitel. */
@@ -179,7 +180,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
     <>
       {/* Zugleiste über dem Brett, Werkzeuge und ihre Ergebnisse direkt darunter: So erscheint
           eine Auswertung dort, wo der Leser gerade getippt hat (Wunsch des Autors, 0.2.2). */}
-      {mitZugleiste && <Zugleiste stand={nachspielen} beiVariante={variante.oeffne} />}
+      {mitZugleiste && <Zugleiste stand={nachspielen} beiVariante={variante.speichere} />}
       <Brettbereich
         stellung={stellung.wert}
         markierungen={
@@ -205,11 +206,12 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
         zusatzSchalter={
           <>
             <SammelSchalter an={sammeln} beiKlick={() => setzeSammeln(!sammeln)} />
-            <GabelSchalter beiTipp={variante.oeffne} gesperrt={!mitRegeln} />
+            <GabelSchalter beiTipp={variante.gabel} gesperrt={!mitRegeln} />
           </>
         }
       />
       {variante.meldung && <p className="fehlertext">{variante.meldung}</p>}
+      <EigeneZuegeFrage variante={variante} />
       <div className="variantenhinweis">
         <Variantenzahl quelle={{ art: "abbildung", nummer: abbildung.id }} />
       </div>

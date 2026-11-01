@@ -42,6 +42,8 @@ test("Stift: Pfeile und Rahmen mit Nummern je Farbe, Legende, Radierer, Neuladen
   await tippe(page, "h4", "e5", "e5");
   await page.getByRole("radio", { name: "Rot" }).click();
   await tippe(page, "f6", "e4");
+  await expect(page.getByTestId("variantenstatus")).toContainText("nicht gespeichert");
+  await page.getByTestId("variante-speichern").click();
   await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert");
   const nummern = page.getByTestId("markennummer");
   await expect(nummern).toHaveCount(3);
@@ -103,6 +105,10 @@ test("Baum: Abzweig-Karten mit Brett, Pfeilen und Knöpfen; Sprung in die Varian
 test("Karte: öffnen, verschieben, zoomen, Zug antippen, Liste", async ({ page }) => {
   await oeffneVariante(page);
   await page.getByTestId("kartenknopf").click();
+  await page
+    .getByTestId("variante-speicherfrage")
+    .getByRole("button", { name: "Speichern", exact: true })
+    .click();
   await expect(page.getByTestId("variantenkarte")).toBeVisible();
   const knoten = page.getByTestId("kartenknoten");
   expect(await knoten.count()).toBeGreaterThan(10);
@@ -154,6 +160,10 @@ test("Karte: zwei Finger zoomen", async ({ page, browserName }) => {
   test.skip(browserName !== "chromium", "Berührungen über CDP gibt es nur in Chromium");
   await oeffneVariante(page);
   await page.getByTestId("kartenknopf").click();
+  await page
+    .getByTestId("variante-speicherfrage")
+    .getByRole("button", { name: "Speichern", exact: true })
+    .click();
   const rahmen = await page.getByTestId("kartenflaeche").boundingBox();
   if (!rahmen) throw new Error("Fläche");
   const mitte = { x: rahmen.x + rahmen.width / 2, y: rahmen.y + rahmen.height / 2 };

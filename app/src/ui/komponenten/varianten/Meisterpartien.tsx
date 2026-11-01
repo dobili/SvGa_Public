@@ -3,7 +3,7 @@
  * Verzweigen.
  *
  * Rolle im Gesamtbild: Variationsbrowser, Stufe 4. Wunsch des Autors (1.11.2026): Statt der
- * Studien aus Kapitel 10 bietet das Blatt Meisterpartien an. Drei Quellen wie bei „Zug erraten“:
+ * Studien aus Kapitel 10 bietet das Blatt Meisterpartien an, genau die von „Zug erraten“:
  * die Meisterpartien des Buches (Kapitel 11, geöffnet wie eine Abbildung, mit den Varianten und
  * Zeichen des Buches), berühmte Klassiker und aktuelle Turnierpartien (Zusatzinhalt mit Quelle
  * und Lizenz, training/zusatzpartien.ts; geöffnet als Zugfolge ab der Grundstellung).
@@ -17,8 +17,8 @@ import { sprache, t } from "../../../i18n/sprache";
 import { GRUNDSTELLUNG } from "../../../training/lernsammlung";
 import { meisterpartienAus } from "../../../training/studientrainer";
 import {
-  inSprache,
   PARTIEQUELLEN,
+  partietitel,
   type Partiequelle,
   type Zusatzpartie,
 } from "../../../training/zusatzpartien";
@@ -29,8 +29,6 @@ import { alsWert, varianteAnsicht } from "./variantenwert";
 const KAPITEL_MEISTERPARTIEN = 11;
 /** Zugtrenner der Zusatzpartien (englische Kurznotation, durch Leerzeichen getrennt). */
 const ZUGTRENNER = " ";
-/** Länge der Jahreszahl am Anfang des Datums („1851“ oder „2026-09-12“). */
-const JAHRESLAENGE = 4;
 
 const QUELLENTEXT = {
   buch: "zugerraten.quelleBuch",
@@ -85,13 +83,12 @@ function Buchpartien() {
   return <Partieliste zeilen={zeilen} />;
 }
 
-/** Eine Zusatzpartie als Zeile: „Anderssen – Kieseritzky · London 1851“. */
+/** Eine Zusatzpartie als Zeile, mit demselben Titel wie bei „Zug erraten“ (partietitel). */
 function zusatzzeile(p: Zusatzpartie): Partiezeile {
-  const titel = `${p.weiss} – ${p.schwarz}`;
-  const ereignis = `${inSprache(p.ereignis, sprache())} ${p.datum.slice(0, JAHRESLAENGE)}`;
+  const titel = partietitel(p, sprache());
   const zuege = p.zuege.split(ZUGTRENNER).filter(Boolean);
   const wert = alsWert({ art: "linie", titel, fen: GRUNDSTELLUNG, zuege });
-  return { id: p.id, text: `${titel} · ${ereignis}`, wert };
+  return { id: p.id, text: titel, wert };
 }
 
 /** Klassiker oder Turnierpartien aus den Zusatzpartien. */

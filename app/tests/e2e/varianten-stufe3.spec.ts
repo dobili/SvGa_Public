@@ -113,6 +113,10 @@ test("Probepartie läuft: Karte auf Spielen mit Weiterspielen und Beenden", asyn
   await ziehe(page, "e2", "e4");
   await page.getByRole("button", { name: "Von hier spielen" }).click();
   await page
+    .getByTestId("variante-speicherfrage")
+    .getByRole("button", { name: "Speichern", exact: true })
+    .click();
+  await page
     .getByTestId("vorschlagskarte")
     .getByRole("button", { name: /^Spielen/ })
     .click();

@@ -15,7 +15,7 @@
  * Zurück-Taste schließt zuerst das oberste von ihnen und lässt die Ansicht stehen (Fehlertest f3,
  * 01.11.2026). Schließt ein Blatt auf anderem Weg und braucht sonst nichts den Wächter, geht der
  * Rahmen selbst einen Schritt im Verlauf zurück; dieses eigene Zurück übergeht er danach.
- * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, blattstapel.ts, React.
+ * Abhängigkeiten: stapel.ts, stapelMerker.ts, navigationsKontext.ts, blattstapel.ts, verlassenswaechter.ts, React.
  */
 import {
   useCallback,
@@ -27,6 +27,7 @@ import {
   type ReactNode,
 } from "react";
 import { abonniereBlaetter, anzahlOffenerBlaetter, schliesseOberstesBlatt } from "./blattstapel";
+import { bewacheWechsel } from "./verlassenswaechter";
 import { NavigationsKontext, type Navigation } from "./navigationsKontext";
 import { oben, schritt, type Stapel } from "./stapel";
 import { sichereStapel } from "./stapelMerker";
@@ -128,7 +129,7 @@ export function NavigationsRahmen({
       navigiere: (ansicht) => ausfuehren({ art: "navigiere", ansicht }),
       ersetze: (ansicht) => ausfuehren({ art: "ersetze", ansicht }),
       zurueck,
-      wechsleBereich: (bereich) => ausfuehren({ art: "bereich", bereich }),
+      wechsleBereich: (bereich) => bewacheWechsel(() => ausfuehren({ art: "bereich", bereich })),
     }),
     [stapel, zurueck],
   );

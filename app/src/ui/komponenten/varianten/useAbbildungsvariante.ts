@@ -4,8 +4,11 @@
  *
  * Rolle im Gesamtbild: Frage a (Empfehlung A, Bild a): Ohne eigene Züge öffnet der Gabel-Knopf
  * einen Entwurf aus dem Buchbaum an der gezeigten Stelle. Hat der Leser schon selbst gezogen,
- * speichert die App den Buchbaum samt seiner Züge sofort als Variante (eigener Inhalt) und öffnet
- * sie am zuletzt gezeigten eigenen Zug. An einer Grenze bleibt alles, wie es ist, mit Meldung.
+ * fragt der Gabel-Knopf erst (Wunsch des Autors, 1.11.2026: gespeichert wird nur per Abfrage):
+ * „Speichern“ legt den Buchbaum samt seiner Züge als Variante an und öffnet sie am zuletzt
+ * gezeigten eigenen Zug, „Nur das Buch“ öffnet den Entwurf ohne sie. „Als Variante speichern“ in
+ * der Zugleiste ist selbst die Antwort und speichert gleich. An einer Grenze bleibt alles, wie es
+ * ist, mit Meldung.
  * Abhängigkeiten: training/variationsquellen.ts, schach/variationsaenderung.ts, speicher,
  * brettbedienung/useNachspielen.ts, variantenwert.ts, Navigation.
  */
@@ -57,6 +60,19 @@ function speichereSofort(variation: Variation): Grenze | null {
   return null;
 }
 
+/** Was die Abbildung von außen bedient. */
+export interface Abbildungsvariante {
+  /** Gabel-Knopf: ohne eigene Züge der Entwurf, mit eigenen Zügen erst die Frage. */
+  readonly gabel: () => void;
+  /** „Als Variante speichern“: speichert Buchbaum und eigene Züge und öffnet die Variante. */
+  readonly speichere: () => void;
+  /** Öffnet den Entwurf aus dem Buchbaum ohne die eigenen Züge. */
+  readonly nurBuch: () => void;
+  readonly frage: boolean;
+  readonly schliesseFrage: () => void;
+  readonly meldung: string | null;
+}
+
 /**
  * Was der Gabel-Knopf an der Abbildung tut, und eine Meldung an einer Grenze.
  * Beispiel aus dem Buch: Abb. 2.40, Leser zieht 3... Sc6 4. Sxc6 → „Als Variante speichern“ →
@@ -66,15 +82,17 @@ export function useAbbildungsvariante(
   kapitel: Kapitel,
   abbildung: Abbildung,
   stand: Nachspielstand,
-): { readonly oeffne: () => void; readonly meldung: string | null } {
+): Abbildungsvariante {
   const { navigiere } = useNavigation();
   const [meldung, setzeMeldung] = useState<string | null>(null);
-  const oeffne = () => {
-    if (stand.eigene.zuege.length === 0) {
-      const pfad = stand.beispiel ? stand.pfad : null;
-      navigiere(varianteAnsicht(alsWert({ art: "abbildung", nummer: abbildung.id, pfad })));
-      return;
-    }
+  const [frage, setzeFrage] = useState(false);
+  const nurBuch = () => {
+    setzeFrage(false);
+    const pfad = stand.beispiel ? stand.pfad : null;
+    navigiere(varianteAnsicht(alsWert({ art: "abbildung", nummer: abbildung.id, pfad })));
+  };
+  const speichere = () => {
+    setzeFrage(false);
     const variation = mitEigenenZuegen(kapitel, abbildung, stand);
     const grenze = variation ? speichereSofort(variation) : null;
     setzeMeldung(grenze ? t(`varianten.grenze.${grenze}`) : null);
@@ -82,5 +100,6 @@ export function useAbbildungsvariante(
     merkePfad(variation.id, variation.startpfad);
     navigiere(varianteAnsicht(variation.id));
   };
-  return { oeffne, meldung };
+  const gabel = () => (stand.eigene.zuege.length === 0 ? nurBuch() : setzeFrage(true));
+  return { gabel, speichere, nurBuch, frage, schliesseFrage: () => setzeFrage(false), meldung };
 }

@@ -39,8 +39,16 @@ Teil fertig ist.
       (Krone). Oben „Quelle“: „Aus dem Buch“ listet die Meisterpartien aus Kapitel 11 (etwa Morphys
       Opernpartie) und öffnet sie wie die Abbildung, mit den Varianten des Buches. „Berühmte Partien“
       und „Aktuelle Turniere“ listen die Zusatzpartien von „Zug erraten“ (Hinweis „Zusatzinhalt“);
-      „Adolf Anderssen – Lionel Kieseritzky“ öffnet die Unsterbliche Partie als Variante ab der
+      „Anderssen – Kieseritzky, Freie Partie, London 1851“ öffnet die Unsterbliche Partie als Variante ab der
       Grundstellung. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2572. **Speichern nur per Abfrage:** Neue Variante aus der Grundstellung, 1. e4 ziehen: oben steht
+      „Geändert · nicht gespeichert“ mit dem Knopf „Speichern“; in der Liste „Varianten“ ist noch nichts.
+      „Zurück“ (oben, Zurück-Taste oder untere Leiste) fragt „Variante speichern?“ mit Speichern, Nicht
+      speichern, Abbrechen. „Karte“, „Von hier spielen“ und „Abfragen“ fragen vorher „Dafür muss die
+      Variante gespeichert sein“. An einer Abbildung mit eigenen Zügen fragt der Gabel-Knopf „Deine
+      Züge … speichern?“ (oder „Nur das Buch öffnen“); „Als Variante speichern“ in der Zugleiste und
+      „Einlesen und speichern“ bei PGN sind selbst die Antwort. Eine gespeicherte Variante speichert
+      Änderungen weiter von selbst. Schon umgesetzt, Widerspruch genügt.
 - [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
       Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
       Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler

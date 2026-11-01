@@ -13,7 +13,13 @@ import { useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { eroeffnungFuerPartie } from "../../../spiel/boteroeffnung";
 import { EROEFFNUNG_PRAXIS, neuePartie } from "../../../spiel/partie";
-import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../../speicher/partien";
+import {
+  mitLaufender,
+  mitProbe,
+  mitVorlieben,
+  type Spielvorlieben,
+} from "../../../speicher/partien";
+import type { Probeherkunft } from "../../../spiel/probepartie";
 import { aendere, useSpeicher } from "../../../speicher/speicher";
 import { gegnerprofil } from "../../bildschirme/gegnerprofil";
 import { useMaiaAktiv } from "../einstellungen/maiastand";
@@ -54,7 +60,11 @@ function anfangswahl(fen: string, vorlieben: Spielvorlieben): Wahl {
 }
 
 /** Legt die Partie an, merkt die Vorlieben und öffnet die Partie. */
-function useBeginne(fen: string, abbildung: string | undefined): (wahl: Wahl) => void {
+function useBeginne(
+  fen: string,
+  abbildung: string | undefined,
+  probe?: Probeherkunft,
+): (wahl: Wahl) => void {
   const { navigiere } = useNavigation();
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   // Seit 0.2.143: mit Maia, wenn das Paket geladen und eingeschaltet ist (gilt für die Partie).
@@ -63,7 +73,8 @@ function useBeginne(fen: string, abbildung: string | undefined): (wahl: Wahl) =>
     const v = wahl.vorlieben;
     const engine = v.gegner === "engine";
     const bot = engine ? v.bot : null;
-    const gewertet = wirdGewertet(fen, v);
+    // Eine Probepartie (Format 8) zählt nie, also auch nicht für die Wertung.
+    const gewertet = !probe && wirdGewertet(fen, v);
     const einstellung = {
       ...gegnerprofil(bot, eigene, v),
       startFen: fen,
@@ -92,10 +103,12 @@ function useBeginne(fen: string, abbildung: string | undefined): (wahl: Wahl) =>
       hilfen: gewertet ? OHNE_HILFEN : v.hilfen,
       // Nur Partien gegen die Engine aus der Grundstellung zählen (Wunsch des Autors).
       gewertet,
+      ...(probe ? { probe } : {}),
     };
     const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
     if (!partie) return;
-    void aendere((d) => ({ ...d, spiel: mitLaufender(mitVorlieben(d.spiel, v), partie) }));
+    const ablage = probe ? mitProbe : mitLaufender;
+    void aendere((d) => ({ ...d, spiel: ablage(mitVorlieben(d.spiel, v), partie) }));
     navigiere({ bildschirm: "partie", id: partie.id });
   };
 }
@@ -107,10 +120,15 @@ function useBeginne(fen: string, abbildung: string | undefined): (wahl: Wahl) =>
 export function useSpielwahl(
   startFen: string | undefined,
   abbildung: string | undefined,
+  probe?: Probeherkunft,
 ): Spielwahl {
   const vorlieben = useSpeicher((z) => z.daten.spiel.vorlieben);
   const [fen, setzeFen] = useState(startFen ?? GRUNDSTELLUNG);
-  const [wahl, setzeWahl] = useState<Wahl>(() => anfangswahl(fen, vorlieben));
+  // Probepartie aus einer Auswertung: die Farbe, die der Leser in der Partie hatte (umstellbar).
+  const [wahl, setzeWahl] = useState<Wahl>(() => {
+    const anfang = anfangswahl(fen, vorlieben);
+    return probe?.art === "partie" ? { ...anfang, farbe: probe.farbe } : anfang;
+  });
   // Die Vorlieben können sich auch woanders ändern (Vorbelegung, Eigene Stufe schreibt selbst):
   // Dann gilt der Speicher (Zustand beim Zeichnen angleichen, wie in der React-Doku).
   const [gesehen, setzeGesehen] = useState(vorlieben);
@@ -137,7 +155,7 @@ export function useSpielwahl(
       setzeFen(neu);
       setzeWahl({ ...aktuell, farbe: seiteAmZug(neu) });
     },
-    beginne: useBeginne(fen, abbildungGilt),
+    beginne: useBeginne(fen, abbildungGilt, probe),
   };
 }
 

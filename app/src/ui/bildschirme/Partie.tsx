@@ -56,6 +56,7 @@ import type { Zweigart } from "../komponenten/rueckblick/Nebenzweig";
 import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRueckblick";
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
 import { PartieGabel } from "../komponenten/varianten/PartieGabel";
+import { Probeabschluss } from "../komponenten/varianten/Probeabschluss";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
 import { auswertungImHintergrund, kerneDesGeraets } from "../komponenten/auswertung/hintergrund";
@@ -218,8 +219,13 @@ function Spielfeld({
         zusatzSchalter={
           <>
             {rb.merken}
-            {partie.ende && (
-              <PartieGabel id={partie.id} stelle={stelle} ausgewertet={!!rueckblick} />
+            {partie.ende && !partie.einstellung.probe && (
+              <PartieGabel
+                partie={partie}
+                stelle={stelle}
+                fen={alle[stelle] ?? s.fen}
+                ausgewertet={!!rueckblick}
+              />
             )}
             <RuhigSchalter ruhig={ruhig} />
           </>
@@ -295,6 +301,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   const zahlen = useSeitenzahlen({ eintrag, urteile, phasen });
   const ruhig = vorlieben.ruhigeAnsicht;
   const leser = leserAmZug(partie);
+  const probe = partie.einstellung.probe !== undefined;
   const springe = (sprung: Sprung) => {
     setzeAnsicht({ ...sprung, zuege: partie.zuege.length });
     // Seit 1.11.2026 so weit, dass das Brett ganz zu sehen ist (nicht mehr ganz nach oben).
@@ -354,7 +361,9 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         }
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
-      {partie.ende && <Gruppenfreischaltung gegnerBot={partie.einstellung.bot} />}
+      {/* Probepartie (Format 8): zählt nicht; am Ende „Als Variante speichern“ statt Abschluss. */}
+      {probe && <Probeabschluss partie={partie} />}
+      {partie.ende && !probe && <Gruppenfreischaltung gegnerBot={partie.einstellung.bot} />}
       {partie.ende && eintrag && !ruhig && (
         <Auswertung
           eintrag={eintrag}
@@ -366,7 +375,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
           beiSprung={springe}
         />
       )}
-      {partie.ende && <Partieabschluss partie={partie} urteile={urteile} />}
+      {partie.ende && !probe && <Partieabschluss partie={partie} urteile={urteile} />}
     </>
   );
 }

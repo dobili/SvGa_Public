@@ -94,6 +94,7 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
           startFen={ansicht.startFen}
           abbildung={ansicht.abbildung}
           seite={ansicht.seite}
+          probe={ansicht.probe}
         />
       );
     case "partie":

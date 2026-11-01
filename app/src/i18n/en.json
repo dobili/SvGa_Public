@@ -5133,5 +5133,13 @@
   "tour.variante.leiste": "The fork with a number shows branches. A long press on a move opens the menu.",
   "tour.variante.brett": "Make a move: a new move becomes a branch. Blue arrows show the continuations, ★ the main line.",
   "tour.variante.kommentar": "Note on the move; it saves itself.",
-  "tour.variante.spielen": "Play from here against the engine or a bot."
+  "tour.variante.spielen": "Play from here against the engine or a bot.",
+  "varianten.probe.titel": "Trial game",
+  "varianten.probe.hinweis": "Trial game: does not count (no game list, rating, records). At the end you can save it as a variation.",
+  "varianten.probe.beenden": "End trial game",
+  "varianten.probe.verwerfen": "Discard",
+  "varianten.probe.kommentar": "Played out against {gegner}: {ergebnis}",
+  "varianten.probe.abgebrochen": "Played against {gegner} (stopped).",
+  "varianten.probe.engine": "the engine",
+  "varianten.probe.mensch": "a human"
 }

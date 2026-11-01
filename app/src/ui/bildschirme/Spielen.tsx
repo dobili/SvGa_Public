@@ -35,6 +35,7 @@ import { useVorschlaege } from "../komponenten/spielstart/useVorschlaege";
 import { VORBELEGT } from "../komponenten/spielstart/vorbelegung";
 import { Vorschlagskarte } from "../komponenten/spielstart/Vorschlagskarte";
 import { ZuletztGespielt } from "../komponenten/spielstart/ZuletztGespielt";
+import { probewertAus, type Probeherkunft } from "../../spiel/probepartie";
 import "../stil/spielenneu.css";
 
 /** Die Kacheln zu den Unterseiten; sie reichen eine Stellung aus einer Abbildung weiter. */
@@ -69,7 +70,15 @@ function Spielkacheln({ sw }: { sw: Spielwahl }) {
 }
 
 /** Die Karte „Schnell eine Partie“ mit Blatt; spielt immer gegen den Vorschlag. */
-function Schnellstart({ sw, vorbelegt }: { sw: Spielwahl; vorbelegt: boolean }) {
+function Schnellstart({
+  sw,
+  vorbelegt,
+  probe = false,
+}: {
+  sw: Spielwahl;
+  vorbelegt: boolean;
+  probe?: boolean;
+}) {
   const spiel = useSpeicher((z) => z.daten.spiel);
   const [blatt, setzeBlatt] = useState(false);
   const stand = useVorschlaege(vorbelegt ? sw.wahl.vorlieben.bot : null, sw.fen);
@@ -91,7 +100,8 @@ function Schnellstart({ sw, vorbelegt }: { sw: Spielwahl; vorbelegt: boolean }) 
         wahl={wahl}
         fen={sw.fen}
         eigene={spiel.eigeneGegner}
-        laufend={spiel.laufend !== null}
+        // Eine Probepartie ersetzt die laufende Partie nicht (eigener Platz, Format 8).
+        laufend={!probe && spiel.laufend !== null}
         beiUhr={(uhr) => sw.mit({ uhr })}
         beiEinstellen={() => setzeBlatt(true)}
         beiAnderer={stand.naechster}
@@ -99,6 +109,21 @@ function Schnellstart({ sw, vorbelegt }: { sw: Spielwahl; vorbelegt: boolean }) 
       />
       <PartieEinstellen sw={blattwahl} offen={blatt} schliessen={() => setzeBlatt(false)} />
     </>
+  );
+}
+
+/** Probepartie „von hier“ (Format 8): nur Stellung und Gegnerwahl, mit Hinweis „zählt nicht“. */
+function Probestart({ startFen, probe }: { startFen?: string; probe: Probeherkunft }) {
+  const sw = useSpielwahl(startFen, undefined, probe);
+  return (
+    <div className="bildschirm bildschirm-spielen spielen-start" data-testid="spielen">
+      <Kopfzeile titel={t("varianten.probe.titel")} zurueckText={t("spielen.zurueck")} />
+      <p className="hinweis probehinweis" data-testid="probehinweis">
+        {t("varianten.probe.hinweis")}
+      </p>
+      <Startstellung fen={sw.fen} abbildung={undefined} setzeFen={sw.uebernimm} />
+      {spielbar(sw.fen) && <Schnellstart sw={sw} vorbelegt={false} probe />}
+    </div>
   );
 }
 
@@ -142,11 +167,15 @@ export function Spielen({
   startFen,
   abbildung,
   seite,
+  probe,
 }: {
   startFen?: string;
   abbildung?: string;
   seite?: string;
+  probe?: string;
 }) {
+  const herkunft = probewertAus(probe);
+  if (herkunft) return <Probestart startFen={startFen} probe={herkunft} />;
   const unterseite = spielseite(seite);
   if (unterseite) return <unterseite.Seite startFen={startFen} abbildung={abbildung} />;
   return <Startseite startFen={startFen} abbildung={abbildung} vorbelegt={seite === VORBELEGT} />;

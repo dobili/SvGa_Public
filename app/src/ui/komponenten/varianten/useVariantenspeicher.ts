@@ -28,8 +28,11 @@ export const TIPPPAUSE_MS = 1000;
 
 export interface Variantenspeicher {
   readonly variation: Variation;
-  /** Übernimmt eine geänderte Variante; false an einer Grenze (dann bleibt alles, wie es war). */
-  readonly aendereVariation: (neu: Variation, art: "sofort" | "pause") => boolean;
+  /**
+   * Übernimmt eine geänderte Variante; Ausgabe ihre Kennung (ein Entwurf bekommt hier eine), an
+   * einer Grenze null (dann bleibt alles, wie es war).
+   */
+  readonly aendereVariation: (neu: Variation, art: "sofort" | "pause") => string | null;
   /** Schreibt eine ausstehende Änderung sofort (Verlassen eines Textfeldes). */
   readonly schreibe: () => void;
   /** Löscht die Variante aus dem Speicher; die Arbeitskopie wird danach nie mehr geschrieben. */
@@ -95,11 +98,11 @@ export function useVariantenspeicher(anfang: Variation): Variantenspeicher {
       const fertig = { ...neu, id, geaendert: jetzt.toISOString() };
       const erreicht = grenzeFuer(speicherzustand().daten.variationen, fertig);
       setzeGrenze(erreicht);
-      if (erreicht) return false;
+      if (erreicht) return null;
       aktuell.current = fertig;
       setzeVariation(fertig);
       plane(art);
-      return true;
+      return id;
     },
     [plane],
   );

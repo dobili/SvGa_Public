@@ -19,6 +19,7 @@ import { stellungAusFen } from "../../schach/stellung";
 import { fenAm, type Pfad } from "../../schach/variationsbaum";
 import { zugFelder } from "../../schach/weiterspielen";
 import { spielbar } from "../../spiel/partie";
+import { alsProbewert } from "../../spiel/probepartie";
 import type { Variation } from "../../training/variationen";
 import { ENTWURF } from "../../training/variationsquellen";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
@@ -118,17 +119,30 @@ function VarianteBrett({ stand }: { stand: Variantenstand }) {
   );
 }
 
-/** „Von hier spielen“ mit der gezeigten Stellung (Wunsch des Autors, 1.11.2026). */
-function Spielknopf({ fen }: { fen: string }) {
+/**
+ * „Von hier spielen“ mit der gezeigten Stellung (Wunsch des Autors, 1.11.2026): eine Probepartie,
+ * die nicht zählt; am Ende lassen sich ihre Züge hier als Abzweig speichern. Ein Entwurf wird
+ * vorher gespeichert, damit die Züge einen Ort haben.
+ */
+function Spielknopf({ stand }: { stand: Variantenstand }) {
   const { navigiere } = useNavigation();
+  const spiele = () => {
+    const id =
+      stand.variation.id === ENTWURF
+        ? stand.aendereVariation(stand.variation, "sofort")
+        : stand.variation.id;
+    if (!id) return;
+    const probe = alsProbewert({ art: "variante", id, pfad: stand.pfad });
+    navigiere({ bildschirm: "spielen", startFen: stand.fen, probe });
+  };
   return (
     <div className="knopfreihe variantenknoepfe">
       <button
         type="button"
         className="knopf-zweit"
-        disabled={!spielbar(fen)}
+        disabled={!spielbar(stand.fen)}
         data-tour="variante-spielen"
-        onClick={() => navigiere({ bildschirm: "spielen", startFen: fen })}
+        onClick={spiele}
       >
         <Play size={SYMBOL} aria-hidden="true" /> {t("varianten.vonHierSpielen")}
       </button>
@@ -161,7 +175,7 @@ function Inhalt({ anfang, pfad, wert }: { anfang: Variation; pfad: Pfad; wert: s
         setzeOffen={setzeSchreibt}
         beiMenue={() => setzeMenue(stand.pfad)}
       />
-      <Spielknopf fen={stand.fen} />
+      <Spielknopf stand={stand} />
       <Zugmenue
         stand={stand}
         pfad={menue}

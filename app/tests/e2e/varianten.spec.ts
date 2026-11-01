@@ -282,3 +282,26 @@ test("zwei Tabs: eine Variante im ersten Tab überlebt eine Änderung im zweiten
   await oeffneProfil(page);
   await expect(page.locator(".partienliste li.partieeintrag")).toHaveCount(1);
 });
+
+test("Probepartie von hier: zählt nicht, Züge als Abzweig in die Variante", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneVarianten(page);
+  await page.getByRole("button", { name: "Neue Variante" }).click();
+  await page.getByTestId("varianten-neu").getByRole("button", { name: "Grundstellung" }).click();
+  await ziehe(page, "e2", "e4");
+  await page.getByRole("button", { name: "Von hier spielen" }).click();
+  await expect(page.getByTestId("probehinweis")).toBeVisible();
+  await page
+    .getByTestId("vorschlagskarte")
+    .getByRole("button", { name: /^Spielen/ })
+    .click();
+  await expect(page.getByTestId("probeabschluss")).toBeVisible();
+  // Abbrechen bietet „Als Variante speichern“ an; die Züge kommen an die Stelle nach 1. e4.
+  await page.getByRole("button", { name: "Probepartie beenden" }).click();
+  await page.getByRole("button", { name: "Als Variante speichern" }).click();
+  await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert");
+  await expect(page.getByTestId("variantenzeile")).toContainText("1. e4");
+  // Nichts davon steht in der Partienliste.
+  await oeffneProfil(page);
+  await expect(page.locator(".partienliste li.partieeintrag")).toHaveCount(0);
+});

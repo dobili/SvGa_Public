@@ -5133,5 +5133,13 @@
   "tour.variante.leiste": "Die Gabel mit Zahl zeigt Abzweige. Langes Drücken auf einen Zug öffnet das Menü.",
   "tour.variante.brett": "Zieh: Ein neuer Zug wird ein Abzweig. Blaue Pfeile zeigen die Fortsetzungen, ★ die Hauptvariante.",
   "tour.variante.kommentar": "Notiz zum Zug; sie speichert sich selbst.",
-  "tour.variante.spielen": "Von hier gegen Engine oder Bot spielen."
+  "tour.variante.spielen": "Von hier gegen Engine oder Bot spielen.",
+  "varianten.probe.titel": "Probepartie",
+  "varianten.probe.hinweis": "Probepartie: zählt nicht (keine Partienliste, Wertung, Rekorde). Am Ende kannst du sie als Variante speichern.",
+  "varianten.probe.beenden": "Probepartie beenden",
+  "varianten.probe.verwerfen": "Verwerfen",
+  "varianten.probe.kommentar": "Gegen {gegner} zu Ende gespielt: {ergebnis}",
+  "varianten.probe.abgebrochen": "Gegen {gegner} gespielt (abgebrochen).",
+  "varianten.probe.engine": "die Engine",
+  "varianten.probe.mensch": "einen Menschen"
 }

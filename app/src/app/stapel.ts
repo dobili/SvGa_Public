@@ -35,6 +35,8 @@ export type Ansicht =
       readonly abbildung?: string;
       /** Unterseite (spielstart/spielseiten.tsx) oder „vorbelegt“; fehlt: Startseite (J3). */
       readonly seite?: string;
+      /** Probepartie „von hier“ (Format 8): Herkunft als Text, spiel/probepartie.ts. */
+      readonly probe?: string;
     }
   /** Eine Partie gegen die Engine, laufend oder beendet (mit Auswertung). */
   | { readonly bildschirm: "partie"; readonly id: string }

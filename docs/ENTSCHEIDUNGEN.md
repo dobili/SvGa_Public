@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Variationsbrowser: Entscheidungen der Runde 5
+
+Wunsch des Autors: ein Variationsbrowser für Partien, Abbildungen, eigene Stellungen,
+Fehlerdatenbank und Lernsammlung mit Varianten, Kommentaren, Markierungen und Engine-Analyse.
+Entwurf mit neun Fragen und Bildern auf der Auswahlseite; der Autor wählte überall die Empfehlung:
+eigener Bildschirm „Varianten“ mit Kachel im Training und Gabel-Knopf an den Quellen (a),
+Zugnavigation als eine Zeile mit Abzweig-Marken und Fortsetzungs-Chips (b), Baum als
+Abzweig-Karten (c), Kommentare unter dem Brett (d), Stift-Modus mit Nummern je Farbe und Legende
+(e), Analyse-Knopf mit drei Schaltern, Engine-Pfeil grün (f), eigene Liste mit Hinweis an der
+Quelle, PGN mit Varianten und Pfeilen (g), Quellen der ersten Stufe ohne Übungen und Studien (h),
+**neues Feld `variationen`, Speicherformat 8 mit stiller Migration (i, ausdrücklich freigegeben)**.
+Notizen des Autors: Fortsetzungen zusätzlich als blaue, gepunktete Pfeile mit Nummer am Brett,
+der Hauptzug mit Stern; zusätzlich eine eigene Seite mit dem Baum als in alle Richtungen
+scrollbare Karte (Mindmap, Stufe 2); Hinweise auf Varianten auch an gespielten Partien;
+Varianten müssen löschbar und bearbeitbar sein. Stufe 1 ist im Zweig `varianten-stufe1` in Arbeit.
+
 ## 1.11.2026 – Antworten des Autors zu Q12
 
 - **Q12-1 Cover-Bild:** mit dem Bildgenerator von Google Gemini erstellt. Einordnung (keine

@@ -4,7 +4,7 @@
  * Bedingung, „Üben“ und Teilen; Probe auf der Aufgabenseite schaltet den Titel „Taktiker“ frei.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneProfil, oeffneTrainer, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneProfil, oeffneTrainer, starteImBrowser } from "./hilfen";
 
 /** Aufgaben je Runde im Trainer „Falle oder Köder“. */
 const FALLEN_JE_RUNDE = 8;
@@ -88,8 +88,7 @@ test("Probe auf Gold schaltet den Titel „Taktiker“ frei, er steht unter dem 
   page,
 }) => {
   await starteImBrowser(page);
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("themen-probe");
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Fesselung zur Probe auf Silber" }).click();

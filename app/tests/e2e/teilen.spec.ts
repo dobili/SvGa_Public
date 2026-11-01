@@ -5,7 +5,7 @@
  * Buchaufgabe öffnet nichts (E7).
  */
 import { expect, test } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { ladeMitSprung, starteImBrowser } from "./hilfen";
 
 test("Abzeichen teilen: die Meldung bietet ein PNG zum Herunterladen an", async ({ page }) => {
   await starteImBrowser(page, { abzeichenMeldung: true });
@@ -13,8 +13,7 @@ test("Abzeichen teilen: die Meldung bietet ein PNG zum Herunterladen an", async 
   await page.addInitScript(() => {
     Object.defineProperty(navigator, "canShare", { value: undefined, configurable: true });
   });
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("abzeichen-probe");
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Erster Sieg: verdienen" }).click();
@@ -45,8 +44,7 @@ test("Herausforderung: der Link öffnet die Lichess-Aufgabe, danach lässt sie s
       configurable: true,
     });
   });
-  await page.goto("/app/#aufgabe-taktik-l-1Vybh");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgabe-taktik-l-1Vybh");
   const ansicht = page.getByTestId("herausforderung");
   await expect(ansicht.getByRole("heading", { name: "Herausforderung" })).toBeVisible();
   await expect(ansicht.getByText("Jemand hat dir diese Aufgabe geschickt.")).toBeVisible();
@@ -63,7 +61,6 @@ test("Herausforderung: der Link öffnet die Lichess-Aufgabe, danach lässt sie s
   ]);
   await page.screenshot({ path: "test-results/bilder/teilen-herausforderung.png" });
   // Ein Link auf eine Aufgabe aus dem Buch öffnet nichts.
-  await page.goto("/app/#aufgabe-taktik-b-7.6");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgabe-taktik-b-7.6");
   await expect(page.getByTestId("herausforderung")).toHaveCount(0);
 });

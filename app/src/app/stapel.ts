@@ -89,6 +89,17 @@ export function startansicht(bereich: Bereich): Ansicht {
   return { bildschirm: "spielen" };
 }
 
+/**
+ * Der Bereich, dessen erste Ansicht diese ist, sonst null.
+ * Warum: Wer aus einer Tour oder der Startwahl zu „Spielen“ oder „Profil“ springt, soll im Bereich
+ * stehen (Leiste unten passend), statt die Ansicht über den alten Bereich zu legen.
+ * Beispiel: { bildschirm: "ich" } → "ich"; { bildschirm: "kapitel", nummer: 0 } → null.
+ */
+export function bereichDerStartansicht(ansicht: Ansicht): Bereich | null {
+  const bereiche: readonly Bereich[] = ["buch", "training", "spielen", "nachschlagen", "ich"];
+  return bereiche.find((b) => JSON.stringify(startansicht(b)) === JSON.stringify(ansicht)) ?? null;
+}
+
 /** Ein neuer Stapel für einen Bereich. */
 export function neuerStapel(bereich: Bereich): Stapel {
   return { bereich, ansichten: [startansicht(bereich)] };

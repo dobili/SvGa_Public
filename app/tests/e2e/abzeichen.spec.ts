@@ -5,7 +5,7 @@
  * Daten zu ändern; „Probe beenden“ stellt alles zurück.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneProfil, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneProfil, starteImBrowser } from "./hilfen";
 
 /** Öffnet das Profil frisch (Neuladen beginnt beim Buch); die Abzeichen stehen im Regal. */
 async function profilMitAbzeichen(page: Page): Promise<void> {
@@ -29,8 +29,7 @@ test("Profil zeigt Stufe und Abzeichen; die Probe löst Meldungen aus und lässt
   await page.screenshot({ path: "test-results/bilder/abzeichen-profil.png" });
 
   // Probe auf der Aufgabenseite: ein Abzeichen, dann die nächste Stufe.
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("abzeichen-probe");
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Erste Partie: verdienen" }).click();
@@ -52,8 +51,7 @@ test("Profil zeigt Stufe und Abzeichen; die Probe löst Meldungen aus und lässt
   await expect(gitter.getByRole("img", { name: "Abzeichen: Erste Partie" })).toBeVisible();
 
   // Probe beenden: alles wieder echt, und keine Meldung mehr.
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Probe beenden" }).click();
   await expect(probe.getByRole("button", { name: "Erste Partie: verdienen" })).toBeEnabled();

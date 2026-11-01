@@ -5,6 +5,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import {
   klappeAbschnittAuf,
+  ladeMitSprung,
   oeffneAbbildung,
   oeffneEinstellungen,
   starteImBrowser,
@@ -158,8 +159,7 @@ test("Sprung auf eine Abbildung aus einem Kapitel, das es nicht gibt, nennt die 
   // Bug-Test 1.11.2026: #abb-99.99 meldete „Die Buchdaten konnten nicht geladen werden“, als wäre
   // die Installation kaputt.
   await starteImBrowser(page);
-  await page.goto("/app/#abb-99.99");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#abb-99.99");
   await expect(page.getByText("Abbildung 99.99 gibt es nicht.")).toBeVisible();
   await expect(page.getByText(/konnten nicht geladen werden/)).toHaveCount(0);
 });

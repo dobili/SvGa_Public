@@ -5,7 +5,7 @@
  * mit jeder Version der Aufgabendatei; der Test nimmt deshalb den ersten Punkt, den es gibt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { ladeMitSprung, starteImBrowser } from "./hilfen";
 
 const profilKnopf = (page: Page) =>
   page
@@ -14,8 +14,7 @@ const profilKnopf = (page: Page) =>
 
 /** Die Adresse /app/#aufgaben öffnet die Seite beim Start der App (am Rechner). */
 async function oeffneUeberAdresse(page: Page): Promise<void> {
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
 }
 
 test("Langer Druck auf „Profil“ öffnet die Aufgabenseite, ein kurzer Tipp das Profil", async ({
@@ -123,8 +122,7 @@ test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Start
   await page.getByTestId("startanimation").click();
   await expect(stueck).toHaveCount(0);
   // Probe beenden: der Ring zählt wieder echt (Aufgabenseite neu öffnen, die Animation wegtippen).
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   await page.getByTestId("startanimation").click();
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Probe beenden" }).click();

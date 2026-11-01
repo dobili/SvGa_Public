@@ -37,6 +37,8 @@ export interface Knotendaten {
   readonly marken?: readonly string[];
   /** Stufe 2: Texte je Nummer und Farbe („R2“ → „dann fällt die Dame“). */
   readonly nummerntexte?: Readonly<Record<string, string>>;
+  /** Format 9: Marken ohne Nummer, als Text wie in `marken` („Gd4“). */
+  readonly ohneNummer?: readonly string[];
   /** Stufe 3: Engine-Wert aus Sicht von Weiß in Hundertstel. */
   readonly w?: number;
   /** Stufe 3: bester Zug der Engine (UCI). */
@@ -82,6 +84,11 @@ export interface Variation {
   readonly kommentar: string;
   /** Stufe 2: Text je Farbe („Rot = Falle“). */
   readonly legende: Readonly<Partial<Record<Markierungsfarbe, string>>>;
+  /**
+   * Format 9: Farben, deren Marken in der ganzen Variante keine Nummern tragen (der Farbtext der
+   * Legende gilt dann für alle). Fehlt in älteren Ständen: alle Farben mit Nummern.
+   */
+  readonly nummernAus?: readonly Markierungsfarbe[];
   /** Stufe 3: Analyse gewünscht. */
   readonly analysiert: boolean;
 }

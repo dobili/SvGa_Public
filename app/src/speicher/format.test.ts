@@ -356,7 +356,7 @@ describe("Format 8 (Varianten)", () => {
     if (!ergebnis.ok) throw new Error("nicht gelesen");
     expect(ergebnis.vonVersion).toBe(7);
     const { variationen, schemaVersion, ...rest } = ergebnis.daten;
-    expect(schemaVersion).toBe(8);
+    expect(schemaVersion).toBe(SCHEMA_VERSION);
     expect(variationen).toEqual([]);
     expect({ ...rest, schemaVersion: 7 }).toEqual(format7);
   });

@@ -9,7 +9,11 @@
  * Marke ist ihre Stelle unter den Marken derselben Farbe in dieser Stellung, über Pfeile und
  * Felder hinweg (Gold 1 Pfeil, Gold 2 Feld). Texte je Nummer stehen in `nummerntexte` unter dem
  * Schlüssel Farbbuchstabe + Nummer („R2“); verschiebt das Wegnehmen einer Marke die Nummern,
- * wandern die Texte mit. Reine Funktionen.
+ * wandern die Texte mit. Seit Format 9 (Wunsch des Autors, 1.11.2026) kann eine Marke ohne Nummer
+ * sein (Feld `ohneNummer` des Knotens, die Marken als Text) oder eine ganze Farbe (Feld `nummernAus`
+ * der Variante): Solche Marken zählen nicht mit, die folgenden rücken auf. So bekommt etwa ein
+ * Bereich aus mehreren Feldern nur eine Nummer, und gleichartige Pfeile brauchen keine. Reine
+ * Funktionen.
  * Abhängigkeiten: analyse/werkzeug.ts (Markierung), training/variationen.ts (Typen, Grenzen).
  * Buchbezug: Kapitel 1, Einleitung zu den Abbildungen (Gold, Rot, Grau als Linienarten).
  */
@@ -39,9 +43,23 @@ export interface Nummerierte {
   readonly von: string;
   /** Zielfeld eines Pfeils; null bei einem Feldrahmen. */
   readonly nach: string | null;
+  /** Nummer je Farbe ab 1; 0 bei einer Marke ohne Nummer. */
   readonly nummer: number;
-  /** Schlüssel für `nummerntexte`, etwa „R2“. */
+  /** Schlüssel für `nummerntexte`, etwa „R2“; leer bei einer Marke ohne Nummer. */
   readonly schluessel: string;
+  /** Die Marke im Speicherformat („Ge2e4“). */
+  readonly text: string;
+}
+
+/** Welche Marken keine Nummer bekommen: einzelne (als Text) und ganze Farben (Format 9). */
+export interface Nummernwahl {
+  readonly ohneNummer?: readonly string[];
+  readonly farbenAus?: readonly Markierungsfarbe[];
+}
+
+/** Hat die Marke eine Nummer? */
+export function hatNummer(m: Nummerierte): boolean {
+  return m.nummer > 0;
 }
 
 /** Die Farbe zu einem Farbbuchstaben; undefined bei Fremdem. */
@@ -56,21 +74,27 @@ export function markeAlsText(farbe: Markierungsfarbe, von: string, nach: string 
 
 /**
  * Liest die Marken einer Stellung und nummeriert sie je Farbe.
- * Beispiel: ["Ge2e4", "Rd1h5", "Ge8"] → Gold 1 (Pfeil e2–e4), Rot 1 (Pfeil), Gold 2 (Feld e8).
+ * Beispiel: ["Ge2e4", "Rd1h5", "Ge8"] → Gold 1 (Pfeil e2–e4), Rot 1 (Pfeil), Gold 2 (Feld e8);
+ * mit { ohneNummer: ["Ge2e4"] } → Gold e2–e4 ohne Nummer, Feld e8 wird Gold 1.
  * Sonderfall: Unlesbare Einträge fallen weg und zählen nicht mit.
  */
-export function nummerierteMarken(marken: readonly string[] | undefined): Nummerierte[] {
+export function nummerierteMarken(
+  marken: readonly string[] | undefined,
+  wahl: Nummernwahl = {},
+): Nummerierte[] {
   const zaehler = new Map<Markierungsfarbe, number>();
   const ergebnis: Nummerierte[] = [];
   for (const text of marken ?? []) {
     const teile = MARKE.exec(text);
     const farbe = teile ? farbeVonBuchstabe(teile[1] ?? "") : undefined;
     if (!teile || !farbe) continue;
-    const nummer = (zaehler.get(farbe) ?? 0) + 1;
-    zaehler.set(farbe, nummer);
     const von = teile[2] ?? "";
     const nach = teile[3] ?? null;
-    ergebnis.push({ farbe, von, nach, nummer, schluessel: FARBBUCHSTABE[farbe] + nummer });
+    const ohne = wahl.ohneNummer?.includes(text) === true || wahl.farbenAus?.includes(farbe) === true;
+    const nummer = ohne ? 0 : (zaehler.get(farbe) ?? 0) + 1;
+    if (!ohne) zaehler.set(farbe, nummer);
+    const schluessel = ohne ? "" : FARBBUCHSTABE[farbe] + nummer;
+    ergebnis.push({ farbe, von, nach, nummer, schluessel, text });
   }
   return ergebnis;
 }
@@ -95,15 +119,19 @@ function aufgeraeumt(
   daten: Knotendaten,
   marken: readonly string[],
   texte: Readonly<Record<string, string>>,
+  ohneNummer?: readonly string[],
 ): Knotendaten {
   const rest: { -readonly [K in keyof Knotendaten]: Knotendaten[K] } = { ...daten };
   delete rest.marken;
   delete rest.nummerntexte;
+  delete rest.ohneNummer;
   const gefuellt = Object.entries(texte).filter(([, v]) => v !== "");
+  const ohne = (ohneNummer ?? daten.ohneNummer ?? []).filter((m) => marken.includes(m));
   return {
     ...rest,
     ...(marken.length > 0 ? { marken: [...marken] } : {}),
     ...(gefuellt.length > 0 ? { nummerntexte: Object.fromEntries(gefuellt) } : {}),
+    ...(ohne.length > 0 ? { ohneNummer: ohne } : {}),
   };
 }
 
@@ -115,6 +143,7 @@ function texteNachEntfernen(
   daten: Knotendaten,
   weg: Nummerierte,
 ): Readonly<Record<string, string>> {
+  if (!hatNummer(weg)) return daten.nummerntexte ?? {};
   const buchstabe = FARBBUCHSTABE[weg.farbe];
   const neu: Record<string, string> = {};
   for (const [schluessel, text] of Object.entries(daten.nummerntexte ?? {})) {
@@ -147,9 +176,10 @@ export function mitMarke(
   farbe: Markierungsfarbe,
   von: string,
   nach: string | null,
+  farbenAus: readonly Markierungsfarbe[] = [],
 ): Markenergebnis {
   const ziel = nach === von ? null : nach;
-  const alle = nummerierteMarken(daten.marken);
+  const alle = nummerierteMarken(daten.marken, { ohneNummer: daten.ohneNummer, farbenAus });
   const stelle = alle.findIndex((m) => m.von === von && m.nach === ziel);
   const alt = alle[stelle];
   const marken = alle.map((m) => markeAlsText(m.farbe, m.von, m.nach));
@@ -163,6 +193,50 @@ export function mitMarke(
   if (marken.length >= MARKEN_HOECHSTENS) return { art: "voll" };
   const neu = [...marken, markeAlsText(farbe, von, ziel)];
   return { art: "gesetzt", daten: aufgeraeumt(daten, neu, daten.nummerntexte ?? {}) };
+}
+
+/**
+ * Die Texte je Nummer, nachdem eine Marke wieder eine Nummer bekommt (Gegenstück zu
+ * texteNachEntfernen): Texte dieser Farbe ab ihrer neuen Nummer rücken eine Nummer weiter.
+ */
+function texteNachEinfuegen(
+  daten: Knotendaten,
+  neu: Nummerierte,
+): Readonly<Record<string, string>> {
+  const buchstabe = FARBBUCHSTABE[neu.farbe];
+  const ergebnis: Record<string, string> = {};
+  for (const [schluessel, text] of Object.entries(daten.nummerntexte ?? {})) {
+    const nummer = schluessel.startsWith(buchstabe) ? Number(schluessel.slice(1)) : 0;
+    ergebnis[nummer >= neu.nummer ? buchstabe + (nummer + 1) : schluessel] = text;
+  }
+  return ergebnis;
+}
+
+/**
+ * Schaltet die Nummer einer Marke aus oder wieder an; die Texte der folgenden Nummern wandern mit.
+ *
+ * Warum: Wunsch des Autors (1.11.2026): Ein Bereich aus mehreren Feldern oder mehrere gleichartige
+ * Pfeile brauchen nicht je eine Nummer. Eingaben: Knotendaten, die Marke als Text („Gd4“), ob sie
+ * ohne Nummer sein soll, die Farben ohne Nummern der Variante.
+ * Beispiel: Gold d4, e4, d5 (1, 2, 3) mit Text „Zentrum“ an 3; e4 ohne Nummer → d5 wird Gold 2 und
+ * behält „Zentrum“.
+ * Sonderfall: Ihr eigener Text fällt beim Ausschalten weg (es gibt keine Nummer mehr dafür).
+ */
+export function mitNummerAus(
+  daten: Knotendaten,
+  text: string,
+  aus: boolean,
+  farbenAus: readonly Markierungsfarbe[] = [],
+): Knotendaten {
+  const vorher = nummerierteMarken(daten.marken, { ohneNummer: daten.ohneNummer, farbenAus });
+  const marke = vorher.find((m) => m.text === text);
+  if (!marke || hatNummer(marke) !== aus) return daten;
+  const liste = daten.ohneNummer ?? [];
+  const ohneNummer = aus ? [...liste, text] : liste.filter((m) => m !== text);
+  if (aus) return aufgeraeumt(daten, daten.marken ?? [], texteNachEntfernen(daten, marke), ohneNummer);
+  const danach = nummerierteMarken(daten.marken, { ohneNummer, farbenAus }).find((m) => m.text === text);
+  const texte = danach ? texteNachEinfuegen(daten, danach) : daten.nummerntexte ?? {};
+  return aufgeraeumt(daten, daten.marken ?? [], texte, ohneNummer);
 }
 
 /** Alle Marken und Nummerntexte der Stellung weg (Radierer); Kommentar und Werte bleiben. */

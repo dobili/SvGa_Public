@@ -1,3 +1,5 @@
+Stand: 1.11.2026 · **Version 0.3.50**: Marken ohne Nummer je Marke und je Farbe (Format 9, N2582–N2584). **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2584 und Q11–Q14 einarbeiten.
+
 Stand: 1.11.2026 · **Version 0.3.49**: In Varianten goldener Pfeil zum besseren Zug wie in der Partieauswertung, grüner Pfeil entfällt (N2581). **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2581 und Q11–Q14 einarbeiten.
 
 Stand: 1.11.2026 · **Version 0.3.48**: Bearbeiten und Löschen auffindbar (Stift und Papierkorb in der Liste „Varianten“, Stift am Titel, Touren nennen Löschen, Engine-Folgen vorab an und auch für den Gegner, Engine-Folgen nach der Analyse einer Variante, Endstellungen und Balken in Karte und Baum; N2574–N2580). **Auf main und live seit 1.11.2026 spätabends (CI grün mit Chromium und WebKit).** **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2580 und Q11–Q14 einarbeiten.

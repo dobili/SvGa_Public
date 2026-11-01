@@ -26,7 +26,7 @@ import { sprache, t } from "../../../i18n/sprache";
 import { stellungAusFen } from "../../../schach/stellung";
 import { fenAm } from "../../../schach/variationsbaum";
 import { zugFelder } from "../../../schach/weiterspielen";
-import { alsMarkierungen, nummerierteMarken } from "../../../training/variationsmarken";
+import { alsMarkierungen, hatNummer, nummerierteMarken } from "../../../training/variationsmarken";
 import { Brettbereich } from "../brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../brettbedienung/useBrettbedienung";
 import { fortsetzungschips } from "./fortsetzungen";
@@ -122,7 +122,13 @@ export function VarianteBrett({
       ueberlagerung={(gedreht: boolean) => (
         <>
           {!stift.an && <Fortsetzungspfeile chips={chips} gedreht={gedreht} />}
-          <Markennummern marken={nummerierteMarken(marken)} gedreht={gedreht} />
+          <Markennummern
+            marken={nummerierteMarken(marken, {
+              ohneNummer: knotendatenAm(stand.variation, stand.pfad).ohneNummer,
+              farbenAus: stand.variation.nummernAus,
+            }).filter(hatNummer)}
+            gedreht={gedreht}
+          />
           <Zugmarke feld={letzter?.nach ?? null} klasse={klasse} gedreht={gedreht} />
         </>
       )}

@@ -95,3 +95,21 @@ describe("Import", () => {
     expect(ergebnis.ok && ergebnis.gekuerzt).toBe(true);
   });
 });
+
+describe("Marken ohne Nummer in der PGN (Format 9)", () => {
+  it("schreibt sie mit kleinem Farbbuchstaben und liest sie so wieder ein", () => {
+    const v = gelesen("1. e4 e5 *");
+    const erster = v.zuege[0];
+    if (!erster) throw new Error("Zug");
+    const mitMarken = {
+      ...v,
+      nummernAus: ["rot" as const],
+      zuege: [{ ...erster, marken: ["Gd4", "Ge4", "Rd1h5"], ohneNummer: ["Ge4"] }],
+    };
+    const pgn = variationAlsPgn(mitMarken);
+    expect(pgn).toContain("[%svga Gd4,ge4,rd1h5]");
+    const wieder = gelesen(pgn).zuege[0];
+    expect(wieder?.marken).toEqual(["Gd4", "Ge4", "Rd1h5"]);
+    expect(wieder?.ohneNummer).toEqual(["Ge4", "Rd1h5"]);
+  });
+});

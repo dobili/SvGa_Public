@@ -9,6 +9,7 @@ import {
   farbenIn,
   mitLegendentext,
   mitMarke,
+  mitNummerAus,
   mitNummerntext,
   nummerierteMarken,
   ohneMarken,
@@ -99,5 +100,33 @@ describe("Texte", () => {
     const legende = mitLegendentext({}, "rot", "Falle");
     expect(legende).toEqual({ rot: "Falle" });
     expect(mitLegendentext(legende, "rot", "")).toEqual({});
+  });
+});
+
+describe("Marken ohne Nummer (Format 9, Wunsch des Autors 1.11.2026)", () => {
+  const BEREICH = ["Gd4", "Ge4", "Gd5", "Rd1h5"];
+
+  it("überspringt einzelne Marken und ganze Farben beim Zählen", () => {
+    const einzeln = nummerierteMarken(BEREICH, { ohneNummer: ["Ge4"] });
+    expect(einzeln.map((m) => m.nummer)).toEqual([1, 0, 2, 1]);
+    expect(einzeln[1]?.schluessel).toBe("");
+    const farbe = nummerierteMarken(BEREICH, { farbenAus: ["gold"] });
+    expect(farbe.map((m) => m.nummer)).toEqual([0, 0, 0, 1]);
+  });
+
+  it("schaltet die Nummer einer Marke aus und an; die Texte der folgenden wandern mit", () => {
+    const daten = { marken: BEREICH, nummerntexte: { G2: "zweites", G3: "Zentrum" } };
+    const aus = mitNummerAus(daten, "Ge4", true);
+    expect(aus.ohneNummer).toEqual(["Ge4"]);
+    expect(aus.nummerntexte).toEqual({ G2: "Zentrum" });
+    const an = mitNummerAus(aus, "Ge4", false);
+    expect(an.ohneNummer).toBeUndefined();
+    expect(an.nummerntexte).toEqual({ G3: "Zentrum" });
+  });
+
+  it("vergisst „ohne Nummer“, wenn die Marke weggenommen wird", () => {
+    const daten = { marken: ["Gd4", "Ge4"], ohneNummer: ["Ge4"] };
+    const ergebnis = mitMarke(daten, "gold", "e4", null);
+    expect(ergebnis.art === "entfernt" && ergebnis.daten).toEqual({ marken: ["Gd4"] });
   });
 });

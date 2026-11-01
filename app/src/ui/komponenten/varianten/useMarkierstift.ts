@@ -25,9 +25,17 @@ export function knotendatenAm(v: Variation, pfad: Pfad): Knotendaten {
   return pfad.length === 0 ? v.start : (knotenAm(v, pfad) ?? {});
 }
 
-/** Knotendaten (Wurzel oder Zug) mit den Marken und Nummerntexten aus ``daten``; der Rest bleibt. */
+/**
+ * Knotendaten (Wurzel oder Zug) mit Marken, Nummerntexten und Marken ohne Nummer (Format 9) aus
+ * ``daten``; der Rest bleibt.
+ */
 function mitDaten<T extends Knotendaten>(k: T, daten: Knotendaten): T {
-  const roh = { ...k, marken: daten.marken, nummerntexte: daten.nummerntexte };
+  const roh = {
+    ...k,
+    marken: daten.marken,
+    nummerntexte: daten.nummerntexte,
+    ohneNummer: daten.ohneNummer,
+  };
   // Leere Felder fallen ganz weg, damit der Speicher keine „undefined“-Einträge trägt.
   return Object.fromEntries(Object.entries(roh).filter(([, wert]) => wert !== undefined)) as T;
 }
@@ -107,7 +115,8 @@ export function useMarkierstift(stand: Variantenstand): Markierstift {
   const beiFeld = (feld: string) => {
     if (!hier) return setzeStart({ fen, feld });
     setzeStart(null);
-    const ergebnis = mitMarke(knotendatenAm(v, pfad), farbe, hier, feld === hier ? null : feld);
+    const nach = feld === hier ? null : feld;
+    const ergebnis = mitMarke(knotendatenAm(v, pfad), farbe, hier, nach, v.nummernAus);
     setzeVoll(ergebnis.art === "voll");
     if (ergebnis.art !== "voll") setze(ergebnis.daten);
   };

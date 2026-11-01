@@ -6,7 +6,9 @@
  * Zeilen zeigen nur ‚beschriften …‘.“ Der Farbtext gilt für die ganze Variante (Feld `legende`),
  * die Nummerntexte nur für die gezeigte Stellung (Feld `nummerntexte` des Knotens). Im Stift-Modus
  * sind alle Zeilen Eingabefelder; sonst steht nur da, was beschriftet ist. Gespeichert wird nach
- * der Tipp-Pause und beim Verlassen des Feldes (useVariantenspeicher.ts).
+ * der Tipp-Pause und beim Verlassen des Feldes (useVariantenspeicher.ts). Seit Format 9 (Wunsch
+ * des Autors, 1.11.2026) im Stift-Modus je Farbe der Haken „Nummern“ und je Marke „ohne Nummer“ /
+ * „Nummer geben“ (Nummernschalter.tsx); Marken ohne Nummer stehen dann mit ihrem Feld in der Liste.
  * Abhängigkeiten: training/variationsmarken.ts, useMarkierstift.ts (Knotendaten), useVariante.ts,
  * bausteine/InfoKnopf.tsx, i18n, lucide-react.
  */
@@ -19,14 +21,16 @@ import {
   farbenIn,
   mitLegendentext,
   mitNummerntext,
+  hatNummer,
   nummerierteMarken,
   type Nummerierte,
 } from "../../../training/variationsmarken";
+import { Farbnummern, Markennummer } from "./Nummernschalter";
 import { FARBEN } from "../../brett/masse";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { knotendatenAm, variationMitDaten } from "./useMarkierstift";
 import type { Variantenstand } from "./useVariante";
-import { farbname } from "./variantentexte";
+import { farbname, markenname } from "./variantentexte";
 
 const SYMBOL = 16;
 /** Linienmuster je Farbe wie am Brett: Rot gestrichelt, Grau gepunktet, sonst durchgezogen. */
@@ -112,6 +116,8 @@ function Nummernliste({
   return (
     <ul className="legendennummernliste">
       {marken.map((m) => {
+        if (!hatNummer(m))
+          return bearbeiten ? <OhneNummer key={m.text} stand={stand} marke={m} /> : null;
         const text = daten.nummerntexte?.[m.schluessel] ?? "";
         if (!bearbeiten && !text) return null;
         const aendere = (neu: string) =>
@@ -129,10 +135,25 @@ function Nummernliste({
               aendere={aendere}
               fertig={stand.schreibe}
             />
+            {bearbeiten && <Markennummer stand={stand} marke={m} />}
           </li>
         );
       })}
     </ul>
+  );
+}
+
+/** Eine Marke ohne Nummer in der aufgeklappten Liste: Strich, Feld oder Pfeil, „Nummer geben“. */
+function OhneNummer({ stand, marke }: { stand: Variantenstand; marke: Nummerierte }) {
+  const farbeAus = stand.variation.nummernAus?.includes(marke.farbe) === true;
+  return (
+    <li data-testid="marke-ohne-nummer">
+      <span className={`nummernmarke nummernmarke-${marke.farbe}`} aria-hidden="true">
+        –
+      </span>
+      <span className="legendentext">{markenname(marke)}</span>
+      {!farbeAus && <Markennummer stand={stand} marke={marke} />}
+    </li>
   );
 }
 
@@ -175,7 +196,12 @@ function Farbzeile({
     <li className="legendenzeile" data-testid={`legende-${farbe}`}>
       <div className="legendenkopf">
         <Linienmuster farbe={farbe} />
-        <span className="legendennummern">{marken.map((m) => m.nummer).join(" ")}</span>
+        <span className="legendennummern">
+          {marken
+            .filter(hatNummer)
+            .map((m) => m.nummer)
+            .join(" ")}
+        </span>
         <Legendentext
           text={v.legende[farbe] ?? ""}
           name={t("varianten.legende.farbtext", { farbe: name })}
@@ -185,6 +211,7 @@ function Farbzeile({
         />
         {(bearbeiten || mitTexten) && <Klappe offen={offen} setzeOffen={setzeOffen} name={name} />}
       </div>
+      {offen && bearbeiten && <Farbnummern stand={stand} farbe={farbe} name={name} />}
       {offen && <Nummernliste stand={stand} marken={marken} name={name} bearbeiten={bearbeiten} />}
     </li>
   );
@@ -197,7 +224,8 @@ function Farbzeile({
  */
 export function Legende({ stand, bearbeiten }: { stand: Variantenstand; bearbeiten: boolean }) {
   const daten = knotendatenAm(stand.variation, stand.pfad);
-  const marken = nummerierteMarken(daten.marken);
+  const wahl = { ohneNummer: daten.ohneNummer, farbenAus: stand.variation.nummernAus };
+  const marken = nummerierteMarken(daten.marken, wahl);
   if (marken.length === 0) return null;
   return (
     <section className="karte legende" data-testid="legende">

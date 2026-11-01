@@ -12,6 +12,7 @@
  * Abhängigkeiten: chessops, spiel/pgnimport.ts, spiel/pgn.ts, spiel/variationsformen.ts,
  * spiel/formwoerter.ts, training/variationen.ts, training/variationsquellen.ts.
  */
+import type { Markierungsfarbe } from "../analyse/werkzeug";
 import type { Position } from "chessops/chess";
 import { makeFen } from "chessops/fen";
 import {
@@ -51,14 +52,15 @@ import { inEnglischerNotation, normalesSchach, type Importfehler } from "./pgnim
 function alsPgnKnoten(
   zuege: readonly Variationsknoten[],
   woerter: Formwoerter,
+  farbenAus: readonly Markierungsfarbe[] = [],
 ): ChildNode<PgnNodeData>[] {
   return zuege.map((k) => {
-    const kommentar = kommentarMitFormen(k, woerter);
+    const kommentar = kommentarMitFormen(k, woerter, farbenAus);
     const knoten = new ChildNode<PgnNodeData>({
       san: k.zug + (k.zeichen ?? ""),
       ...(kommentar ? { comments: [kommentar] } : {}),
     });
-    knoten.children = alsPgnKnoten(k.weiter, woerter);
+    knoten.children = alsPgnKnoten(k.weiter, woerter, farbenAus);
     return knoten;
   });
 }
@@ -68,7 +70,7 @@ function vorwegkommentare(variation: Variation, woerter: Formwoerter): string[] 
   const zurVariante = [variation.kommentar, ...legendenzeilen(variation.legende, woerter)];
   const vorweg = [
     zurVariante.filter(Boolean).join("\n"),
-    kommentarMitFormen(variation.start, woerter),
+    kommentarMitFormen(variation.start, woerter, variation.nummernAus),
   ];
   return vorweg.filter((s) => s !== "");
 }
@@ -96,7 +98,7 @@ export function variationAlsPgn(
   spiel.headers.set("Result", "*");
   const vorweg = vorwegkommentare(variation, woerter);
   if (vorweg.length > 0) spiel.comments = vorweg;
-  spiel.moves.children = alsPgnKnoten(variation.zuege, woerter);
+  spiel.moves.children = alsPgnKnoten(variation.zuege, woerter, variation.nummernAus);
   return makePgn(spiel);
 }
 
@@ -189,6 +191,7 @@ function vorwegAus(kommentare: readonly string[], woerter: readonly Formwoerter[
     ...(w !== undefined ? { w, ...(b ? { b } : {}), ...(a !== undefined ? { a } : {}) } : {}),
     ...(daten.marken ? { marken: daten.marken.slice(0, MARKEN_HOECHSTENS) } : {}),
     ...(daten.nummerntexte ? { nummerntexte: daten.nummerntexte } : {}),
+    ...(daten.ohneNummer ? { ohneNummer: daten.ohneNummer } : {}),
   };
   return { kommentar: gelesen.text, legende: gelesen.legende, start };
 }

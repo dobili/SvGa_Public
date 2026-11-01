@@ -19,12 +19,13 @@ import { makeComment, parseComment, type CommentShapeColor } from "chessops/pgn"
 import { parseSquare, makeSquare } from "chessops/util";
 import type { Knotendaten } from "../training/variationen";
 import {
-  farbeVonBuchstabe,
   markeAlsText,
   mitLegendentext,
   mitNummerntext,
+  hatNummer,
   nummerierteMarken,
   STIFTFARBEN,
+  type Nummernwahl,
 } from "../training/variationsmarken";
 import { evalbefehle, werteAusKommentar } from "./variationseval";
 
@@ -52,16 +53,20 @@ const AUS_LICHESS: Readonly<Record<CommentShapeColor, Markierungsfarbe>> = {
 };
 
 /** Der eigene Befehl mit den genauen Farben (Buchstaben der App, Reihenfolge = Nummern). */
+// Format 9: ein kleiner Farbbuchstabe heißt „ohne Nummer“ (gd4 = goldener Rahmen ohne Nummer).
 const SVGA =
-  /\s?\[%svga\s([GRSNB][a-h][1-8](?:[a-h][1-8])?(?:,[GRSNB][a-h][1-8](?:[a-h][1-8])?)*)\]\s?/;
+  /\s?\[%svga\s([GRSNBgrsnb][a-h][1-8](?:[a-h][1-8])?(?:,[GRSNBgrsnb][a-h][1-8](?:[a-h][1-8])?)*)\]\s?/;
 const SVGA_ALLE = new RegExp(SVGA.source, "g");
 
 /**
  * Die Befehle zu den Marken einer Stellung: „[%csl …] [%cal …] [%svga …]“; leer ohne Marken.
  * Beispiel: ["Ge2e4", "Se8"] → „[%csl Be8] [%cal Ye2e4] [%svga Ge2e4,Se8]“.
  */
-export function formenbefehle(marken: readonly string[] | undefined): string {
-  const liste = nummerierteMarken(marken);
+export function formenbefehle(
+  marken: readonly string[] | undefined,
+  wahl: Nummernwahl = {},
+): string {
+  const liste = nummerierteMarken(marken, wahl);
   if (liste.length === 0) return "";
   const shapes = liste.flatMap((m) => {
     const von = parseSquare(m.von);
@@ -70,13 +75,19 @@ export function formenbefehle(marken: readonly string[] | undefined): string {
       ? []
       : [{ color: LICHESS[m.farbe], from: von, to: nach }];
   });
-  const svga = liste.map((m) => markeAlsText(m.farbe, m.von, m.nach)).join(",");
+  const svga = liste.map((m) => (hatNummer(m) ? m.text : m.text.toLowerCase())).join(",");
   return `${makeComment({ shapes })} [%svga ${svga}]`.trim();
 }
 
 /** Die Zeilen „Rot 2: dann fällt die Dame“ zu den Nummerntexten, in der Reihenfolge der Marken. */
-export function nummerntextzeilen(daten: Knotendaten, woerter: Formwoerter): string[] {
-  return nummerierteMarken(daten.marken).flatMap((m) => {
+export function nummerntextzeilen(
+  daten: Knotendaten,
+  woerter: Formwoerter,
+  farbenAus: readonly Markierungsfarbe[] = [],
+): string[] {
+  const wahl = { ohneNummer: daten.ohneNummer, farbenAus };
+  return nummerierteMarken(daten.marken, wahl).flatMap((m) => {
+    if (!hatNummer(m)) return [];
     const text = daten.nummerntexte?.[m.schluessel];
     return text ? [`${woerter.farbe[m.farbe]} ${m.nummer}: ${text}`] : [];
   });
@@ -86,9 +97,16 @@ export function nummerntextzeilen(daten: Knotendaten, woerter: Formwoerter): str
  * Der ganze PGN-Kommentar einer Stellung: Kommentar, Nummerntexte als Zeilen, dann die Befehle.
  * Ausgabe: leer, wenn es nichts zu sagen gibt.
  */
-export function kommentarMitFormen(daten: Knotendaten, woerter: Formwoerter): string {
-  const zeilen = [daten.kommentar ?? "", ...nummerntextzeilen(daten, woerter)].filter(Boolean);
-  return [zeilen.join("\n"), formenbefehle(daten.marken), evalbefehle(daten)]
+export function kommentarMitFormen(
+  daten: Knotendaten,
+  woerter: Formwoerter,
+  farbenAus: readonly Markierungsfarbe[] = [],
+): string {
+  const zeilen = [daten.kommentar ?? "", ...nummerntextzeilen(daten, woerter, farbenAus)].filter(
+    Boolean,
+  );
+  const wahl = { ohneNummer: daten.ohneNummer, farbenAus };
+  return [zeilen.join("\n"), formenbefehle(daten.marken, wahl), evalbefehle(daten)]
     .filter(Boolean)
     .join(" ");
 }
@@ -115,16 +133,18 @@ function farbeVonName(name: string, woerter: readonly Formwoerter[]): Markierung
 }
 
 /** Marken aus „%svga“ (bevorzugt) oder aus den Lichess-Formen; dazu der Rest des Kommentars. */
-function markenAus(kommentar: string): { marken: string[]; rest: string } {
+function markenAus(kommentar: string): { marken: string[]; ohneNummer: string[]; rest: string } {
   const svga = SVGA.exec(kommentar);
   const ohneSvga = kommentar.replace(SVGA_ALLE, " ");
   const gelesen = parseComment(ohneSvga);
   if (svga?.[1]) {
-    const marken = svga[1].split(",").filter((m) => farbeVonBuchstabe(m.charAt(0)) !== undefined);
-    return {
-      marken: nummerierteMarken(marken).map((m) => markeAlsText(m.farbe, m.von, m.nach)),
-      rest: gelesen.text,
-    };
+    const roh = svga[1].split(",");
+    // Kleiner Farbbuchstabe: Marke ohne Nummer (Format 9).
+    const klein = new Set(roh.filter((m) => m.charAt(0) !== m.charAt(0).toUpperCase()));
+    const gross = roh.map((m) => m.charAt(0).toUpperCase() + m.slice(1));
+    const marken = nummerierteMarken(gross).map((m) => m.text);
+    const ohneNummer = [...klein].map((m) => m.charAt(0).toUpperCase() + m.slice(1));
+    return { marken, ohneNummer: ohneNummer.filter((m) => marken.includes(m)), rest: gelesen.text };
   }
   const marken = gelesen.shapes.map((s) =>
     markeAlsText(
@@ -133,7 +153,7 @@ function markenAus(kommentar: string): { marken: string[]; rest: string } {
       s.from === s.to ? null : makeSquare(s.to),
     ),
   );
-  return { marken, rest: gelesen.text };
+  return { marken, ohneNummer: [], rest: gelesen.text };
 }
 
 /** Eine Zeile „Rot 2: Text“ → Schlüssel „R2“ und Text; null, wenn die Zeile anders aussieht. */
@@ -158,10 +178,14 @@ export function formenAusKommentar(
   woerter: readonly Formwoerter[],
 ): Knotendaten {
   const werte = werteAusKommentar(kommentar);
-  const { marken, rest } = markenAus(werte.rest);
-  let daten: Knotendaten = { ...werte.werte, ...(marken.length > 0 ? { marken } : {}) };
+  const { marken, ohneNummer, rest } = markenAus(werte.rest);
+  let daten: Knotendaten = {
+    ...werte.werte,
+    ...(marken.length > 0 ? { marken } : {}),
+    ...(ohneNummer.length > 0 ? { ohneNummer } : {}),
+  };
   const bleibt: string[] = [];
-  const nummern = nummerierteMarken(marken);
+  const nummern = nummerierteMarken(marken, { ohneNummer });
   for (const zeile of rest.split("\n")) {
     const gelesen = nummerntextAus(zeile, woerter);
     const marke =

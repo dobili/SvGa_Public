@@ -102,6 +102,19 @@ describe("Lesen aus Rohdaten (Format 8)", () => {
 });
 
 describe("Lesen aus Rohdaten: spätere Stufen", () => {
+  it("liest Marken ohne Nummer und Farben ohne Nummern (Format 9), Fremdes fällt weg", () => {
+    const roh = {
+      ...variation("format9"),
+      nummernAus: ["rot", "lila", "rot"],
+      start: { marken: ["Gd4", "Ge4"], ohneNummer: ["Ge4", "Gh8", 3] },
+    };
+    const [v] = variationenAus([roh]);
+    expect(v?.nummernAus).toEqual(["rot"]);
+    expect(v?.start).toEqual({ marken: ["Gd4", "Ge4"], ohneNummer: ["Ge4"] });
+    const [alt] = variationenAus([variation("format8")]);
+    expect(alt && "nummernAus" in alt).toBe(false);
+  });
+
   it("behält die Felder späterer Stufen und verwirft Fremdes darin", () => {
     const roh = {
       ...variation("stufe2"),

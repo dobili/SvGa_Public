@@ -10,6 +10,7 @@ import { t } from "../../../i18n/sprache";
 import type { Leistenzug } from "../../../schach/variationsbaum";
 import type { Variationsquelle } from "../../../training/variationen";
 import type { Markierungsfarbe } from "../../../analyse/werkzeug";
+import type { Nummerierte } from "../../../training/variationsmarken";
 
 /** Der Name einer Stiftfarbe in der Sprache („Rot“). */
 export function farbname(farbe: Markierungsfarbe): string {
@@ -60,3 +61,10 @@ export const NEUQUELLEN = [
   "meisterpartie",
 ] as const;
 export type Neuquelle = (typeof NEUQUELLEN)[number];
+
+/** „Feld d4“ oder „Pfeil d1–h5“: so heißt eine Marke ohne Nummer in der Liste. */
+export function markenname(m: Nummerierte): string {
+  return m.nach
+    ? t("varianten.legende.pfeil", { von: m.von, nach: m.nach })
+    : t("varianten.legende.feld", { feld: m.von });
+}

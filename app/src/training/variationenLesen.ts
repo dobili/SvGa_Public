@@ -66,6 +66,10 @@ export function knotendatenAus(roh: Roh): Knotendaten {
     ? roh.marken.filter((m): m is string => typeof m === "string" && MARKE.test(m))
     : [];
   const nummerntexte = nummerntexteAus(roh.nummerntexte);
+  // Format 9: Marken ohne Nummer; nur solche, die es in dieser Stellung gibt.
+  const ohneNummer = Array.isArray(roh.ohneNummer)
+    ? roh.ohneNummer.filter((m): m is string => typeof m === "string" && marken.includes(m))
+    : [];
   const w = ganzzahl(roh.w);
   const a = ganzzahl(roh.a);
   const b = typeof roh.b === "string" && UCI.test(roh.b) ? roh.b : undefined;
@@ -73,6 +77,7 @@ export function knotendatenAus(roh: Roh): Knotendaten {
     ...(kommentar ? { kommentar } : {}),
     ...(marken.length > 0 ? { marken: marken.slice(0, MARKEN_HOECHSTENS) } : {}),
     ...(nummerntexte ? { nummerntexte } : {}),
+    ...(ohneNummer.length > 0 ? { ohneNummer } : {}),
     ...(w !== undefined ? { w } : {}),
     ...(b ? { b } : {}),
     ...(a !== undefined && a >= 0 ? { a } : {}),
@@ -133,6 +138,12 @@ function legendeAus(roh: unknown): Partial<Record<Markierungsfarbe, string>> {
   );
 }
 
+/** Format 9: die Farben ohne Nummern (nur bekannte, jede einmal); leer fällt das Feld weg. */
+function nummernAusFeld(roh: unknown): { nummernAus?: readonly Markierungsfarbe[] } {
+  const farben = Array.isArray(roh) ? FARBEN.filter((f) => roh.includes(f)) : [];
+  return farben.length > 0 ? { nummernAus: farben } : {};
+}
+
 /** Eine Variante aus Rohdaten, oder null, wenn Kennung, Titel oder Startstellung fehlen. */
 function variationAus(roh: unknown, gesamt: Budget): Variation | null {
   if (!istObjekt(roh) || typeof roh.id !== "string" || typeof roh.startFen !== "string") {
@@ -159,6 +170,7 @@ function variationAus(roh: unknown, gesamt: Budget): Variation | null {
     zuege,
     kommentar: text(roh.kommentar, KOMMENTAR_HOECHSTENS),
     legende: legendeAus(roh.legende),
+    ...nummernAusFeld(roh.nummernAus),
     analysiert: roh.analysiert === true,
   };
 }

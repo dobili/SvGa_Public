@@ -33,6 +33,17 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
+
+- [ ] N2582. Variante → Stift: drei goldene Felder nebeneinander (je zweimal antippen) und ein roter Pfeil. In der
+      Legende „Nummern von Gold“ aufklappen: Jede Nummer hat „ohne Nummer“. Zweimal antippen (an 2 und 3) → am
+      Brett nur noch Gold 1, die Felder bleiben markiert; die beiden stehen in der Liste als „– Feld e4“ mit
+      „Nummer geben“. Beschriftete Nummern behalten ihren Text, auch wenn sie dadurch eine neue Nummer
+      bekommen.
+- [ ] N2583. „Nummern von Rot“ aufklappen, Haken „Nummern“ weg: Alle roten Marken der ganzen Variante sind ohne
+      Nummer, der Text bei „Rot“ in der Legende gilt für alle. Haken wieder an: Die Nummern sind zurück.
+- [ ] N2584. PGN der Variante sichern und wieder einlesen: Marken ohne Nummer bleiben ohne Nummer.
+
 ### Neu in 0.3.49: Goldener Pfeil in Varianten wie in der Auswertung (1.11.2026)
 
 - [ ] N2581. Analysierte Variante: Steht ein Zug am Brett, der nicht der beste war (etwa 3... Sf6?? im Schäfermatt),

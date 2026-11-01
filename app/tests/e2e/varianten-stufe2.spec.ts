@@ -102,6 +102,35 @@ test("Baum: Abzweig-Karten mit Brett, Pfeilen und Knöpfen; Sprung in die Varian
   await expect(baum).toHaveCount(0);
 });
 
+test("Nummern: ein Bereich mit nur einer Nummer, eine Farbe ganz ohne Nummern", async ({
+  page,
+}) => {
+  await oeffneVariante(page);
+  await page.getByTestId("stiftschalter").click();
+  // Drei goldene Rahmen d4, e4, d5 (je zweimal antippen) und ein roter Pfeil.
+  await tippe(page, "d4", "d4", "e4", "e4", "d5", "d5");
+  await page.getByRole("radio", { name: "Rot" }).click();
+  await tippe(page, "f6", "e4");
+  const nummern = page.getByTestId("markennummer");
+  await expect(nummern).toHaveCount(4);
+  // e4 und d5 ohne Nummer: Der Bereich trägt nur noch Gold 1.
+  await page.getByRole("button", { name: "Nummern von Gold" }).click();
+  const gold = page.getByTestId("legende-gold");
+  // Nach dem ersten Tipp steht bei e4 „Nummer geben“; die zweite „ohne Nummer“ ist dann d5.
+  await gold.getByRole("button", { name: "ohne Nummer" }).nth(1).click();
+  await gold.getByRole("button", { name: "ohne Nummer" }).nth(1).click();
+  await expect(nummern).toHaveCount(2);
+  await expect(gold.getByTestId("marke-ohne-nummer")).toHaveCount(2);
+  // Rot ganz ohne Nummern; die Markierungen bleiben.
+  await page.getByRole("button", { name: "Nummern von Rot" }).click();
+  await page.getByLabel("Nummern für Rot").uncheck();
+  await expect(nummern).toHaveCount(1);
+  await expect(page.locator(".bildschirm-variante .brett polygon").first()).toBeVisible();
+  // „Nummer geben“ holt sie zurück.
+  await gold.getByRole("button", { name: "Nummer geben" }).first().click();
+  await expect(nummern).toHaveCount(2);
+});
+
 test("Karte: öffnen, verschieben, zoomen, Zug antippen, Liste", async ({ page }) => {
   await oeffneVariante(page);
   await page.getByTestId("kartenknopf").click();

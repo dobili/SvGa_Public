@@ -4,6 +4,18 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.50: Marken ohne Nummer (Format 9)
+
+- **Wunsch und Wahl des Autors:** Ein Bereich aus mehreren Feldern oder mehrere gleichartige Pfeile
+  brauchen nicht je eine Nummer. Gewählt: je Marke („ohne Nummer“ / „Nummer geben“) und je Farbe
+  (Haken „Nummern“), beides im Stift-Modus in der aufgeklappten Legende (`Nummernschalter.tsx`).
+- **Format 9** (Ja des Autors): je Stellung `ohneNummer` (Marken als Text), je Variante
+  `nummernAus` (Farben). Format 8 ist eine Teilmenge; umgewandelt wird nichts, eine ältere App
+  lehnt Format 9 als „neuer“ ab. Marken ohne Nummer zählen nicht mit; die Texte der folgenden
+  Nummern wandern mit (`mitNummerAus`).
+- **PGN:** im eigenen Befehl `[%svga …]` ein kleiner Farbbuchstabe für „ohne Nummer“ (`gd4`);
+  Lichess sieht die Marken wie bisher.
+
 ## 1.11.2026 – Version 0.3.49: Goldener Pfeil in Varianten
 
 - **Entscheidung des Autors:** In Varianten zeigt wie in der Partieauswertung ein goldener Pfeil

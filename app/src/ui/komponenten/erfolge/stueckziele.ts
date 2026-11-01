@@ -7,9 +7,10 @@
  * des Lernpfads bringen ihr Ziel selbst mit (Feld `ziel`). Stücke, die zu einem Kapitel passen
  * („Nachgefragt“: Warum-Fragen an den Abbildungen), öffnen das Kapitel, bei dem sie auf dem
  * Lernpfad stehen. Reine Daten und Funktionen.
- * Abhängigkeiten: app/stapel.ts (Ansicht), erfolgsstuecke.ts.
+ * Abhängigkeiten: app/stapel.ts (Ansicht), erfolgsstuecke.ts, fortschritt/ringrechnung.ts (Teile).
  */
 import type { Ansicht } from "../../../app/stapel";
+import { BUCHTEILE } from "../fortschritt/ringrechnung";
 import { verdientSchluessel, type Erfolgsstueck } from "./erfolgsstuecke";
 
 /** Ein Ziel: feste Ansicht oder abhängig vom Kapitel der Nebenaufgabe. */
@@ -65,6 +66,11 @@ const ZIELE: Readonly<Record<string, Ziel>> = {
   "abzeichen:erstesGold": PROFIL,
   "abzeichen:fuenfSilber": PROFIL,
   "abzeichen:alleTaktikGold": { bildschirm: "trainer", kennung: "taktik" },
+  // Orden der fünf Teile des Buches: das erste Kapitel des Teils (Fehlertest f3, 01.11.2026:
+  // im Profil hatten sie als einzige Orden keinen Knopf).
+  ...Object.fromEntries(
+    BUCHTEILE.map((teil) => [`orden:teil-${teil.kennung}`, KAPITEL(teil.kapitel[0])]),
+  ),
 };
 
 /**

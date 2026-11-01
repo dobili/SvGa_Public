@@ -11,12 +11,13 @@
  * Abhängigkeiten: abzeichenstand.ts, abzeichen.ts, erfahrung.ts, bausteine/Abzeichenbild.tsx,
  * teilen/Stueckteilen.tsx (Teilen eines einzelnen neuen Abzeichens, P9), i18n.
  */
-import { useEffect } from "react";
+import { useEffect, useId } from "react";
 import { t } from "../../../i18n/sprache";
 import { Abzeichenbild } from "../bausteine/Abzeichenbild";
 import { ABZEICHEN, ABZEICHENZEICHEN, abzeichenname, abzeichenbedingung } from "./abzeichen";
 import { merkeErsteStufe, merkeGefeiert, useAbzeichenstand } from "./abzeichenstand";
 import { AbzeichenTeilen } from "../teilen/Stueckteilen";
+import { useFeierdialog } from "../bausteine/useFeierdialog";
 
 /** Höchstens so viele Bilder auf der Karte; die Namen stehen alle darunter. */
 const HOECHSTENS_BILDER = 6;
@@ -62,7 +63,17 @@ export function Abzeichenmeldung() {
   useEffect(() => {
     if (ungemerkt) merkeErsteStufe(nummer);
   }, [ungemerkt, nummer]);
-  if (!stand || stand.still || (stand.neu.length === 0 && !stand.neueStufe)) return null;
+  const titelId = useId();
+  const sichtbar = stand !== null && !stand.still && (stand.neu.length > 0 || stand.neueStufe);
+  const weiter = () => {
+    if (stand) merkeGefeiert(stand.neu, stand.stufe.nummer);
+  };
+  // Fokus auf „Weiter“, Esc wie „Weiter“ (Fehlertest f3); neu, sobald sich die Liste ändert.
+  const { knopf, tasten } = useFeierdialog(
+    sichtbar ? `${stand.neu.join(",")}|${stand.stufe.nummer}` : null,
+    weiter,
+  );
+  if (!stand || !sichtbar) return null;
   const neue = ABZEICHEN.filter((a) => stand.neu.includes(a.kennung));
   const stufenname = t(`erfahrung.stufe.${stand.stufe.kennung}`);
   const titel =
@@ -74,11 +85,13 @@ export function Abzeichenmeldung() {
       className="gruppen-gratulation"
       role="dialog"
       aria-modal="true"
+      aria-labelledby={titelId}
       data-testid="abzeichenmeldung"
+      onKeyDown={tasten}
     >
       <div className="gruppen-gratulation-karte">
         <Meldungsbilder neue={neue} stufenname={stufenname} />
-        <h2>{titel}</h2>
+        <h2 id={titelId}>{titel}</h2>
         <ul className="abzeichenmeldung-liste">
           {neue.map((a) => (
             <li key={a.kennung}>
@@ -95,11 +108,7 @@ export function Abzeichenmeldung() {
         {neue.length === 1 && neue[0] && (
           <AbzeichenTeilen kennung={neue[0].kennung} heute klein={false} />
         )}
-        <button
-          type="button"
-          className="knopf-haupt"
-          onClick={() => merkeGefeiert(stand.neu, stand.stufe.nummer)}
-        >
+        <button ref={knopf} type="button" className="knopf-haupt" onClick={weiter}>
           {t("abzeichenmeldung.weiter")}
         </button>
       </div>

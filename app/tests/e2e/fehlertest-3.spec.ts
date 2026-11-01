@@ -1,11 +1,12 @@
 /**
  * Oberflächentests zu den Fehlern aus dem dritten großen Fehlertest (f3, 01.11.2026): geteilte
  * Links bei offener App, Startwahl und Touren mit der Leiste unten, Zurück-Taste über der
- * Startwahl, „Los geht's“ aus dem Profil, Maia ohne Netz, voller Gerätespeicher. Jeder Test hält
- * einen behobenen Fehler fest.
+ * Startwahl, „Los geht's“ aus dem Profil, Maia ohne Netz, voller Gerätespeicher, Fokus und Esc
+ * der Gratulationen. Jeder Test hält einen behobenen Fehler fest.
  */
 import { expect, test, type Page } from "@playwright/test";
 import {
+  ladeMitSprung,
   oeffneAbbildung,
   oeffneEinstellungen,
   oeffneEinstellungsseite,
@@ -142,4 +143,26 @@ test("voller Gerätespeicher: eigene Meldung, kein Absturz, nichts geht verloren
   await page.reload();
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
+});
+
+test("Gratulation zum vollen Ring: Fokus auf „Weiter“, Tab bleibt in der Karte, Esc schließt", async ({
+  page,
+}) => {
+  await page.setViewportSize(HANDY);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await starteImBrowser(page);
+  await ladeMitSprung(page, "/app/#aufgaben");
+  const probe = page.getByTestId("orden-probe");
+  await probe.locator("summary").click();
+  const voll = probe.getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true });
+  await voll.click();
+  const feier = page.getByRole("dialog", { name: "Ring voll, herzlichen Glückwunsch!" });
+  await expect(feier.getByRole("button", { name: "Weiter" })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(feier.locator(":focus")).toHaveCount(1);
+  await page.keyboard.press("Escape");
+  await expect(page.getByTestId("ringfeier")).toHaveCount(0);
+  // Der Probeknopf ist danach gesperrt; der Fokus kann nicht zu ihm zurück.
+  await expect(voll).toBeDisabled();
+  await probe.getByRole("button", { name: "Probe beenden" }).click();
 });

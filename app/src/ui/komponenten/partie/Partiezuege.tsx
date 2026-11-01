@@ -191,7 +191,9 @@ export function Partiezuege({
   const marken = phasenmarken(phasen);
   const zeile = useRef<HTMLParagraphElement>(null);
   const [aufgeklappt, umschalten] = useAufgeklappt();
-  useEffect(() => rolleZumZug(zeile.current, aufgeklappt), [stelle, zuege.length, aufgeklappt]);
+  useEffect(() => {
+    rolleZumZug(zeile.current, aufgeklappt);
+  }, [stelle, zuege.length, aufgeklappt]);
   return (
     <section
       className={aufgeklappt ? "zugleiste partiezuege aufgeklappt" : "zugleiste partiezuege"}

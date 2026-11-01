@@ -127,7 +127,9 @@ export function EngineKarte({
     ],
     [fortsetzung, jetzt, urteil, letzterZug],
   );
-  useEffect(() => beiMarkierungen(markierungen), [beiMarkierungen, markierungen]);
+  useEffect(() => {
+    beiMarkierungen(markierungen);
+  }, [beiMarkierungen, markierungen]);
   const erste = jetzt?.varianten[0];
 
   return (

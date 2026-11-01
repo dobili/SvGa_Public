@@ -19,7 +19,9 @@ import { Fundstueckkarte } from "./Fundstueckkarte";
 export function Fundstueckalbum() {
   // Das Album beginnt oben, nicht in der Höhe, in der man im Profil stand (Befund der
   // Vorprüfung N2166, 31.10.2026).
-  useEffect(() => window.scrollTo({ top: 0 }), []);
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   const gefunden = useSpeicher((z) => z.daten.fundstuecke);
   const schon = new Set(gefunden);
   return (

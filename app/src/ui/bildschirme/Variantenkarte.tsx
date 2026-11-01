@@ -201,7 +201,9 @@ export function Variantenkarte({ wert }: { wert: string | null }) {
   const variation = useSpeicher((z) => z.daten.variationen.find((v) => v.id === wert));
   const geladen = useSpeicher((z) => z.geladen);
   // Die Karte beginnt oben, auch wenn die Variante weit unten verlassen wurde (Baum offen).
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const layout = useMemo(
     () => (variation ? kartenlayout(variation, sprache(), t("varianten.karte.start")) : null),
     [variation],

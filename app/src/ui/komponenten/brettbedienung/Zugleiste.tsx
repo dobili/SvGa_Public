@@ -118,7 +118,9 @@ function zeigeImBehaelter(behaelter: HTMLElement | null, knopf: HTMLElement | nu
 function Zuege({ halbzuege, pfad, beiPfad }: ZeilenEigenschaften) {
   const behaelter = useRef<HTMLParagraphElement>(null);
   const aktuell = useRef<HTMLButtonElement>(null);
-  useEffect(() => zeigeImBehaelter(behaelter.current, aktuell.current), [pfad]);
+  useEffect(() => {
+    zeigeImBehaelter(behaelter.current, aktuell.current);
+  }, [pfad]);
   return (
     <p ref={behaelter} className="zugzeile" aria-label={t("zugleiste.zeile")}>
       {halbzuege.map((halbzug, index) => {

@@ -25,7 +25,9 @@ import { merkeRueckblickGesehen } from "../komponenten/rueckblick/rueckblickMerk
 export function Rueckblick({ wert }: { readonly wert: string | null }) {
   const daten = useSpeicher((z) => z.daten);
   const monat = useMemo(() => monatAusSchluessel(wert) ?? vormonat(monatVon(new Date())), [wert]);
-  useEffect(() => merkeRueckblickGesehen(monat, new Date()), [monat]);
+  useEffect(() => {
+    merkeRueckblickGesehen(monat, new Date());
+  }, [monat]);
   const angabe = { daten, monat };
   const abschnitte = sichtbareRueckblickabschnitte(RUECKBLICKABSCHNITTE, angabe);
   return (

@@ -119,7 +119,9 @@ function Kurzstand({ stueck }: { stueck: Erfolgsstueck }) {
 /** „Zurück zur Liste“; nimmt beim Erscheinen den Fokus, weil die Zeile der Liste verschwindet. */
 function Zurueck({ beiTipp }: { beiTipp: () => void }) {
   const knopf = useRef<HTMLButtonElement>(null);
-  useEffect(() => knopf.current?.focus(), []);
+  useEffect(() => {
+    knopf.current?.focus();
+  }, []);
   return (
     <button ref={knopf} type="button" className="knopf-link infofenster-zurueck" onClick={beiTipp}>
       <ChevronLeft size={SYMBOL} aria-hidden="true" />

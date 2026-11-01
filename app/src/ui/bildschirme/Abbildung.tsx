@@ -139,7 +139,9 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
   // Tipp auf den Hintergrund: kein Werkzeug, also wieder die Markierungen des Buches.
   useHintergrundTipp(wahl !== null, werkzeug.abwaehlen);
 
-  useEffect(() => schreibeMerker("zuletzt", abbildung.id), [abbildung.id]);
+  useEffect(() => {
+    schreibeMerker("zuletzt", abbildung.id);
+  }, [abbildung.id]);
   // Es zählt die Abbildung, deren Stellung gerade auf dem Brett steht (ohne eigene Züge).
   useGesehen(nachspielen.eigene.stelle === 0 ? nachspielen.abbildungHier?.id : undefined);
 

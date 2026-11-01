@@ -173,7 +173,7 @@ test("Laden aus Grundstellung, FEN, Stellungseditor, Partie (mit Engine-Folgen),
   const quelle = async (name: string) => {
     await oeffneVarianten(page);
     await page.getByRole("button", { name: "Neue Variante" }).click();
-    await page.getByTestId("varianten-neu").getByRole("button", { name }).click();
+    await page.getByTestId("varianten-neu").getByRole("button", { name, exact: true }).click();
   };
   await quelle("Grundstellung");
   await expect(page.getByTestId("variantentitel")).toHaveText("Neue Variante");

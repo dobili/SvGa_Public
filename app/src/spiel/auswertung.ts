@@ -99,8 +99,16 @@ const MATT = WERTGRENZE;
 export interface Zugurteil {
   /** Index des Halbzuges in der Partie. */
   readonly index: number;
-  /** Verlust gegenüber der Stellung davor, aus Sicht der ziehenden Seite (nie negativ). */
+  /**
+   * Verlust gegenüber der Stellung davor, aus Sicht der ziehenden Seite (nie negativ); beim besten
+   * Zug der Engine 0 (Q12-3).
+   */
   readonly verlust: number;
+  /**
+   * Der gemessene Verlust ohne die Regel Q12-3 (Unterschied der Werte vor und nach dem Zug), für
+   * das geeichte Elo-Modell (spiel/elomodell.ts); fehlt er, gilt `verlust`.
+   */
+  readonly messverlust?: number;
   readonly zeichen: Zugzeichen | null;
   readonly klasse: Zugklasse;
 }
@@ -203,10 +211,32 @@ function brillant(verlust: number, u: Zugumstaende): boolean {
  * Opernpartie, Abb. 11.4, ebenso), siehe `brillant`; „stark“ gibt es nur, solange die Stellung nach dem Zug nicht entschieden ist (ab ±5; sonst
  * bekäme in einem Mattangriff jeder Zug ein „!“, Opernpartie neun statt eins bei chess.com, und
  * die verlierende Seite für jeden einzigen Zug, der nicht sofort verliert: acht „!“ statt null).
+ * Sonderfall (Entscheidung des Autors Q12-3, 1.11.2026): Der beste Zug der Engine bekommt nie
+ * „?!“, „?“, „??“ oder „verpasst“, auch wenn der gemessene Verlust groß ist (etwa weil die
+ * Stellung vorher schon verloren war und die Engine das erst nach dem Zug sieht); er zählt mit
+ * Verlust 0 (bester, stark oder brillant).
  */
 export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
-  const wertNachher = u.wertVorher - verlust;
-  const nochKlarGewonnen = wertNachher >= KLAR_GEWONNEN;
+  // Q12-3: Der beste Zug verliert nichts gegen sich selbst (siehe zugurteile).
+  const v = u.warBester ? 0 : verlust;
+  const schwach = u.warBester ? null : schwacheKlasse(v, u);
+  if (schwach) return schwach;
+  if (u.buch) return "buch";
+  if (brillant(v, u)) return "brillant";
+  const wertNachher = u.wertVorher - v;
+  const bestraft = u.vorherVerlust >= GRENZE_FEHLER;
+  const entschieden = Math.abs(wertNachher) >= KLAR_GEWONNEN;
+  if (u.warBester && (u.einziger || bestraft) && !entschieden) return "stark";
+  if (u.warBester) return "bester";
+  return v < SEHR_GUT_UNTER ? "sehrGut" : "gut";
+}
+
+/**
+ * Die Klassen ab einem halben Bauern Verlust (ungenau, fehler, verpasst, patzer) und der Theoriezug
+ * eines Gambits, oder null; nie für den besten Zug (klasseVon).
+ */
+function schwacheKlasse(verlust: number, u: Zugumstaende): Zugklasse | null {
+  const nochKlarGewonnen = u.wertVorher - verlust >= KLAR_GEWONNEN;
   if (nochKlarGewonnen && verlust >= GRENZE_PATZER) return "ungenau";
   if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "gut";
   if (verpasst(verlust, u)) return "verpasst";
@@ -217,13 +247,7 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   if (verlust >= GRENZE_PATZER) return "patzer";
   if (verlust >= GRENZE_FEHLER) return "fehler";
   if (verlust >= GRENZE_UNGENAU) return "ungenau";
-  if (u.buch) return "buch";
-  if (brillant(verlust, u)) return "brillant";
-  const bestraft = u.vorherVerlust >= GRENZE_FEHLER;
-  const entschieden = Math.abs(wertNachher) >= KLAR_GEWONNEN;
-  if (u.warBester && (u.einziger || bestraft) && !entschieden) return "stark";
-  if (u.warBester) return "bester";
-  return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
+  return null;
 }
 
 /**
@@ -301,10 +325,20 @@ export function zugurteile(
       nochTheorie && theorie[index] === true,
       gambits[index] === true,
     );
-    vorherVerlust = verlust;
-    const klasse = klasseVon(verlust, u);
+    // Q12-3: Der beste Zug der Engine verliert nichts gegen sich selbst (wie in der Engine-Karte,
+    // engine/letzterzug.ts). Was die getrennten Rechnungen vor und nach dem Zug trennt, ist ein
+    // Messfehler (Horizont), kein Fehler des Spielers.
+    const fair = u.warBester ? 0 : verlust;
+    vorherVerlust = fair;
+    const klasse = klasseVon(fair, u);
     nochTheorie = klasse === "buch";
-    return { index, verlust, zeichen: ZEICHEN_JE_KLASSE[klasse], klasse };
+    return {
+      index,
+      verlust: fair,
+      messverlust: verlust,
+      zeichen: ZEICHEN_JE_KLASSE[klasse],
+      klasse,
+    };
   });
 }
 

@@ -65,7 +65,7 @@ describe("Auswertung", () => {
   it("„!“ für den einzigen guten Zug: bester Zug und mindestens 1,2 Abstand zum zweitbesten", () => {
     const p = partie();
     const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
-    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "h5f7", ""];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "d8e7", "h5f7", ""];
     const abstaende = [0, 0, 0, 1.5, 1.1, 0, 5, 0];
     const zeichen = zugurteile(p, werte, beste, abstaende).map((u) => u.zeichen);
     // 2... Sc6: bester Zug mit Abstand 1,5 → „!“; 3. Lc4: Abstand 1,1 reicht nicht; 4. Dxf7# ist
@@ -250,5 +250,41 @@ describe("Theoriezug (Klasse „buch“, seit dem Wunsch des Autors vom 25.10.20
 
   it("ohne Angabe gibt es keine Theoriezüge (so rechnen Spielstärke und Wertung)", () => {
     expect(zugurteile(partie(), werte).some((u) => u.klasse === "buch")).toBe(false);
+  });
+});
+
+describe("Bester Zug nie ein „?“ (Entscheidung des Autors Q12-3, 1.11.2026)", () => {
+  const bester = {
+    warBester: true,
+    einziger: false,
+    opfer: false,
+    vorherVerlust: 0,
+    wertVorher: -1,
+    abstand: 0,
+    imSchach: false,
+    buch: false,
+  };
+  it("klasseVon: auch bei großem gemessenem Verlust kein ungenau, fehler, verpasst oder patzer", () => {
+    for (const verlust of [0.5, 1.2, 3, 9]) expect(klasseVon(verlust, bester)).toBe("bester");
+    // Nach einem Fehler des Gegners wäre derselbe Verlust „verpasst“; der beste Zug ist „stark“.
+    expect(klasseVon(1, { ...bester, vorherVerlust: 2 })).toBe("stark");
+    expect(klasseVon(1, { ...bester, warBester: false, vorherVerlust: 2 })).toBe("verpasst");
+    // In klar gewonnener Stellung bleibt der beste Zug „bester“ (vorher „gut“ oder „ungenau“).
+    expect(klasseVon(4, { ...bester, wertVorher: 9 })).toBe("bester");
+  });
+
+  it("zugurteile: Verlust 0, gemessener Verlust bleibt für das Elo-Modell, kein Zeichen", () => {
+    // 3... Sf6 ist hier der Zug der Engine, obwohl der Wert danach auf Matt springt.
+    const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "h5f7", ""];
+    const urteile = zugurteile(partie(), werte, beste);
+    const sf6 = urteile[5];
+    expect(sf6?.klasse).toBe("bester");
+    expect(sf6?.zeichen).toBeNull();
+    expect(sf6?.verlust).toBe(0);
+    expect(sf6?.messverlust).toBeCloseTo(10.3, 5);
+    // Ohne Fehler davor ist 4. Dxf7# keine Strafe: kein „stark“ aus dem gemessenen Verlust.
+    expect(urteile[6]?.klasse).toBe("bester");
+    expect(urteile[2]?.zeichen).toBe("?!");
   });
 });

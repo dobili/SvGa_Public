@@ -5,11 +5,11 @@
  * zusammen (eine Partie je Variante), Import der ersten Partie einer Datei mit allen Varianten.
  * Lichess liest die Dateien als Studie. Geschrieben und gelesen wird über chessops/pgn (makePgn,
  * parsePgn); Kommentare werden beim Lesen von Befehlen wie „[%cal …]“ befreit (parseComment).
- * Zugzeichen stehen direkt am Zug („Sxe4?!“), wie im Buch. Pfeile, Felder und Engine-Werte
- * kommen mit Stufe 2 und 3 dazu. Deutsche Figurenbuchstaben übersetzt der Import wie beim
+ * Zugzeichen stehen direkt am Zug („Sxe4?!“), wie im Buch. Seit Stufe 2 reisen Pfeile, Felder,
+ * Nummerntexte und Legende mit (spiel/variationsformen.ts); Engine-Werte folgen. Deutsche Figurenbuchstaben übersetzt der Import wie beim
  * Einlesen von Partien (spiel/pgnimport.ts). Reine Funktionen.
- * Abhängigkeiten: chessops, spiel/pgnimport.ts, spiel/pgn.ts, training/variationen.ts,
- * training/variationsquellen.ts.
+ * Abhängigkeiten: chessops, spiel/pgnimport.ts, spiel/pgn.ts, spiel/variationsformen.ts,
+ * spiel/formwoerter.ts, training/variationen.ts, training/variationsquellen.ts.
  */
 import type { Position } from "chessops/chess";
 import { makeFen } from "chessops/fen";
@@ -17,7 +17,6 @@ import {
   ChildNode,
   defaultGame,
   makePgn,
-  parseComment,
   parsePgn,
   startingPosition,
   type Node,
@@ -28,36 +27,63 @@ import { GRUNDSTELLUNG } from "../training/lernsammlung";
 import {
   HOECHSTENS_FORTSETZUNGEN,
   HOECHSTENS_KNOTEN,
+  MARKEN_HOECHSTENS,
   ZUGKOMMENTAR_HOECHSTENS,
   ZUGZEICHEN,
+  type Knotendaten,
   type Variation,
   type Variationsknoten,
 } from "../training/variationen";
 import { entwurf } from "../training/variationsquellen";
+import { formwoerter } from "./formwoerter";
 import { pgnDatum } from "./pgn";
+import {
+  formenAusKommentar,
+  kommentarMitFormen,
+  legendeAusKommentar,
+  legendenzeilen,
+  type Formwoerter,
+} from "./variationsformen";
 import { inEnglischerNotation, normalesSchach, type Importfehler } from "./pgnimport";
 
-/** Der Zugbaum als Knoten von chessops; das Zugzeichen hängt am Zug. */
-function alsPgnKnoten(zuege: readonly Variationsknoten[]): ChildNode<PgnNodeData>[] {
+/** Der Zugbaum als Knoten von chessops; das Zugzeichen hängt am Zug, Formen am Kommentar. */
+function alsPgnKnoten(
+  zuege: readonly Variationsknoten[],
+  woerter: Formwoerter,
+): ChildNode<PgnNodeData>[] {
   return zuege.map((k) => {
+    const kommentar = kommentarMitFormen(k, woerter);
     const knoten = new ChildNode<PgnNodeData>({
       san: k.zug + (k.zeichen ?? ""),
-      ...(k.kommentar ? { comments: [k.kommentar] } : {}),
+      ...(kommentar ? { comments: [kommentar] } : {}),
     });
-    knoten.children = alsPgnKnoten(k.weiter);
+    knoten.children = alsPgnKnoten(k.weiter, woerter);
     return knoten;
   });
+}
+
+/** Kommentar zur Variante mit den Legendenzeilen, danach die Startstellung mit ihren Formen. */
+function vorwegkommentare(variation: Variation, woerter: Formwoerter): string[] {
+  const zurVariante = [variation.kommentar, ...legendenzeilen(variation.legende, woerter)];
+  const vorweg = [
+    zurVariante.filter(Boolean).join("\n"),
+    kommentarMitFormen(variation.start, woerter),
+  ];
+  return vorweg.filter((s) => s !== "");
 }
 
 /**
  * Eine Variante als PGN.
  *
  * Kopf: Event = Titel, Date = Tag des Anlegens, bei anderer Startstellung SetUp und FEN.
- * Kommentar zur Variante und zur Startstellung stehen vor dem ersten Zug.
+ * Kommentar zur Variante (mit der Legende) und zur Startstellung stehen vor dem ersten Zug.
  * Beispiel: Petroff-Falle → „[Event "Petroff-Falle"] … 1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6
  * (3... Nxe4?! 4. Qe2) *“.
  */
-export function variationAlsPgn(variation: Variation): string {
+export function variationAlsPgn(
+  variation: Variation,
+  woerter: Formwoerter = formwoerter()[0],
+): string {
   const spiel = defaultGame<PgnNodeData>(() => new Map());
   spiel.headers.set("Event", variation.titel || "?");
   spiel.headers.set("Site", "Schach von Grund auf");
@@ -67,23 +93,33 @@ export function variationAlsPgn(variation: Variation): string {
     spiel.headers.set("FEN", variation.startFen);
   }
   spiel.headers.set("Result", "*");
-  const vorweg = [variation.kommentar, variation.start.kommentar ?? ""].filter((s) => s !== "");
+  const vorweg = vorwegkommentare(variation, woerter);
   if (vorweg.length > 0) spiel.comments = vorweg;
-  spiel.moves.children = alsPgnKnoten(variation.zuege);
+  spiel.moves.children = alsPgnKnoten(variation.zuege, woerter);
   return makePgn(spiel);
 }
 
 /** Alle Varianten in einer Datei, eine Partie je Variante. */
 export function variationenAlsPgn(liste: readonly Variation[]): string {
-  return liste.map(variationAlsPgn).join("\n");
+  const woerter = formwoerter()[0];
+  return liste.map((v) => variationAlsPgn(v, woerter)).join("\n");
 }
 
-/** Text eines PGN-Kommentars ohne Befehle wie „[%cal Ge2e4]“. */
-function kommentartext(kommentare: readonly string[] | undefined): string {
-  return (kommentare ?? [])
-    .map((k) => parseComment(k).text.trim())
-    .filter((k) => k !== "")
-    .join(" ");
+/**
+ * Kommentar, Marken und Nummerntexte aus den PGN-Kommentaren eines Zuges (Befehle wie
+ * „[%cal Ge2e4]“ werden zu Marken, spiel/variationsformen.ts); gekürzt auf die Grenzen.
+ */
+function knotendatenAus(
+  kommentare: readonly string[],
+  woerter: readonly Formwoerter[],
+): Knotendaten {
+  const daten = formenAusKommentar(kommentare.join("\n"), woerter);
+  const kommentar = (daten.kommentar ?? "").slice(0, ZUGKOMMENTAR_HOECHSTENS);
+  return {
+    ...daten,
+    ...(daten.marken ? { marken: daten.marken.slice(0, MARKEN_HOECHSTENS) } : {}),
+    ...(kommentar ? { kommentar } : {}),
+  };
 }
 
 /** NAG $1 bis $6 sind die Zugzeichen ! ? !! ?? !? ?! in dieser Reihenfolge (PGN-Standard). */
@@ -101,6 +137,7 @@ function zeichenAus(nags: readonly number[] | undefined) {
 interface Lesestand {
   rest: number;
   gekuerzt: boolean;
+  readonly woerter: readonly Formwoerter[];
 }
 
 /** Die Fortsetzungen eines PGN-Knotens; ein unmöglicher Zug beendet seinen Ast. */
@@ -123,18 +160,33 @@ function ausPgnKnoten(
     const danach = pos.clone();
     danach.play(zug);
     const zeichen = zeichenAus(kind.data.nags);
-    const kommentar = kommentartext([
-      ...(kind.data.startingComments ?? []),
-      ...(kind.data.comments ?? []),
-    ]).slice(0, ZUGKOMMENTAR_HOECHSTENS);
+    const daten = knotendatenAus(
+      [...(kind.data.startingComments ?? []), ...(kind.data.comments ?? [])],
+      stand.woerter,
+    );
     ergebnis.push({
       zug: san,
       ...(zeichen ? { zeichen } : {}),
-      ...(kommentar ? { kommentar } : {}),
+      ...daten,
       weiter: ausPgnKnoten(kind, danach, stand),
     });
   }
   return ergebnis;
+}
+
+/**
+ * Die Kommentare vor dem ersten Zug: Pfeile, Felder und Nummerntexte gehören zur Startstellung
+ * (so schreibt sie der Export, so schreibt Lichess die Formen der Startstellung), der Text ist
+ * wie in Stufe 1 der Kommentar zur Variante; Zeilen „Legende Rot: …“ werden zur Legende.
+ */
+function vorwegAus(kommentare: readonly string[], woerter: readonly Formwoerter[]) {
+  const daten = formenAusKommentar(kommentare.join("\n"), woerter);
+  const gelesen = legendeAusKommentar(daten.kommentar ?? "", woerter);
+  const start: Knotendaten = {
+    ...(daten.marken ? { marken: daten.marken.slice(0, MARKEN_HOECHSTENS) } : {}),
+    ...(daten.nummerntexte ? { nummerntexte: daten.nummerntexte } : {}),
+  };
+  return { kommentar: gelesen.text, legende: gelesen.legende, start };
 }
 
 /** Ergebnis des Imports: Entwurf (Quelle „pgn“), ob gekürzt wurde, oder der Grund. */
@@ -162,7 +214,12 @@ function titelAus(kopf: Map<string, string>, ersatz: string): string {
  * Sonderfälle: Über 600 Züge oder 30 Fortsetzungen je Stellung wird gekürzt und das gemeldet
  * („gekuerzt“). Eine Partie ganz ohne Züge ist erlaubt (nur die Stellung aus FEN).
  */
-export function variationAusPgn(text: string, ersatztitel: string, jetzt: Date): Variationsimport {
+export function variationAusPgn(
+  text: string,
+  ersatztitel: string,
+  jetzt: Date,
+  woerter: readonly Formwoerter[] = formwoerter(),
+): Variationsimport {
   if (text.trim() === "") return { ok: false, fehler: { art: "leer" } };
   const englisch = inEnglischerNotation(text);
   if (englisch.unbekannt) return { ok: false, fehler: { art: "zug", ...englisch.unbekannt } };
@@ -172,18 +229,20 @@ export function variationAusPgn(text: string, ersatztitel: string, jetzt: Date):
   if (!normalesSchach(start.value.rules, spiel.headers.get("Variant"))) {
     return { ok: false, fehler: { art: "variante" } };
   }
-  const stand: Lesestand = { rest: HOECHSTENS_KNOTEN, gekuerzt: false };
+  const stand: Lesestand = { rest: HOECHSTENS_KNOTEN, gekuerzt: false, woerter };
   const zuege = ausPgnKnoten(spiel.moves, start.value, stand);
+  const vorweg = vorwegAus(spiel.comments ?? [], woerter);
   const variation = entwurf(
     {
       titel: titelAus(spiel.headers, ersatztitel),
       quelle: { art: "pgn" },
       startFen: makeFen(start.value.toSetup()),
       zuege,
-      kommentar: kommentartext(spiel.comments),
+      kommentar: vorweg.kommentar,
     },
     jetzt,
   );
   if (!variation) return { ok: false, fehler: { art: "unlesbar" } };
-  return { ok: true, variation, gekuerzt: stand.gekuerzt };
+  const mitFormen = { ...variation, start: vorweg.start, legende: vorweg.legende };
+  return { ok: true, variation: mitFormen, gekuerzt: stand.gekuerzt };
 }

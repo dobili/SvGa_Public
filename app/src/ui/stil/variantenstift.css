@@ -1,0 +1,327 @@
+/*
+ * Variationsbrowser, Stufe 2 (1.11.2026): Stift mit fünf Farbpunkten, Nummern am Brett, Legende,
+ * Knopfzeile und Baum mit Abzweig-Karten. Farben der Marken sind die Buchfarben (wie am Brett,
+ * in beiden Farbschemata gleich); alles andere über die Merkmale aus basis.css.
+ */
+
+/* Knopfzeile unter dem Brett: Baum und Karte nebeneinander, Spielen darunter */
+.variantenknoepfe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.variantenknoepfe > :last-child {
+  grid-column: 1 / -1;
+}
+
+/* Nummern der eigenen Marken über dem Brett */
+.brett svg.markennummern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Leiste des Stifts */
+.stiftleiste {
+  margin-top: var(--raster);
+}
+
+.stiftzeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.stiftfarben {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.stiftpunkt {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  padding: 0;
+  cursor: pointer;
+}
+
+.stiftpunkt[aria-checked="true"] {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.stiftpunkt-gold {
+  background: #d9a514;
+}
+
+.stiftpunkt-rot {
+  background: #dc4444;
+}
+
+.stiftpunkt-grau {
+  background: #8a93a0;
+}
+
+.stiftpunkt-gruen {
+  background: #2e8b57;
+}
+
+.stiftpunkt-blau {
+  background: #2f6fd1;
+}
+
+.stiftfertig {
+  flex: none;
+}
+
+.stiftmeldung {
+  margin: 6px 0 0;
+  font-size: var(--groesse-klein);
+}
+
+/* Legende */
+.legende {
+  margin-top: var(--raster);
+}
+
+.legendentitel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: var(--groesse-mittel);
+}
+
+.legendenliste,
+.legendennummernliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legendenzeile + .legendenzeile {
+  border-top: 1px solid var(--linie);
+}
+
+.legendenkopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+}
+
+.legendenlinie {
+  flex: none;
+  width: 28px;
+  height: 8px;
+}
+
+.legendennummern {
+  flex: none;
+  min-width: 2.5em;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.legendentext {
+  flex: 1;
+}
+
+.legendenfeld {
+  flex: 1;
+  min-width: 0;
+  min-height: 36px;
+  padding: 4px 6px;
+  border: none;
+  border-bottom: 1px solid var(--linie);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.legendenfeld::placeholder {
+  color: var(--text-leise);
+  font-style: italic;
+}
+
+.legendenfeld:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+.legendenklappe {
+  flex: none;
+}
+
+.legendennummernliste li {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding-left: 36px;
+  min-height: 40px;
+}
+
+.nummernmarke {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #16253d;
+  color: #f5f0e6;
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.nummernmarke-gold {
+  background: #d9a514;
+  color: #16253d;
+}
+
+.nummernmarke-rot {
+  background: #dc4444;
+}
+
+.nummernmarke-grau {
+  background: #8a93a0;
+}
+
+.nummernmarke-gruen {
+  background: #2e8b57;
+}
+
+.nummernmarke-blau {
+  background: #2f6fd1;
+}
+
+/* Baum: Abzweig-Karten untereinander */
+.abzweigbaum {
+  margin-top: var(--raster);
+}
+
+.abzweigbaum-kopf {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.abzweigbaum-kopf h2 {
+  margin: 0;
+  font-size: var(--groesse-mittel);
+}
+
+.abzweigbaum-kopf .knopf-symbol {
+  margin-left: auto;
+}
+
+.abzweigliste {
+  list-style: none;
+  margin: var(--raster) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.abzweigkarte {
+  padding: var(--raster);
+  border-radius: var(--radius);
+  background: var(--grund);
+  border: 1px solid var(--linie);
+}
+
+.abzweigkarte.tiefe-1 {
+  margin-left: 12px;
+  border-left: 3px solid var(--gold);
+}
+
+.abzweigkarte.tiefe-2 {
+  margin-left: 24px;
+  border-left: 3px solid var(--gold);
+}
+
+.abzweigkarte.tiefe-3 {
+  margin-left: 36px;
+  border-left: 3px solid var(--gold);
+}
+
+.abzweigweg {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 6px;
+}
+
+.abzweiginhalt {
+  display: grid;
+  grid-template-columns: minmax(0, 44%) 1fr;
+  gap: var(--raster);
+  align-items: start;
+}
+
+.abzweigbrett .brett {
+  position: relative;
+  width: 100%;
+}
+
+.abzweigknoepfe {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.abzweigknoepfe h3 {
+  margin: 0;
+  font-size: var(--groesse-grund);
+}
+
+.abzweigknopf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--tippflaeche);
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--linie);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.abzweigknopf.aktuell {
+  border-color: var(--gold);
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.abzweigmarke {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background: #2f6fd1;
+  color: #f5f0e6;
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.abzweigtext {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.abzweigtext strong.eigen {
+  color: var(--gold-text);
+}
+
+.abzweigtext .hinweis {
+  font-size: var(--groesse-fein);
+}

@@ -2,7 +2,8 @@
  * Touren der Bildschirme „Varianten“ (Liste) und „Variante“ (Brett), kurz und mit bekannten
  * Zeichen (Wunsch des Autors: wenig Text).
  *
- * Rolle im Gesamtbild: Variationsbrowser, Stufe 1 (1.11.2026). Eigene Datei, damit touren.ts
+ * Rolle im Gesamtbild: Variationsbrowser, Stufe 1 (1.11.2026), seit Stufe 2 mit Stift, Baum und
+ * der Karte des ganzen Baums. Eigene Datei, damit touren.ts
  * unter 400 Zeilen bleibt; touren.ts nimmt die Touren mit einer Zeile auf und fragt hier, welche
  * Tour zu einem Bildschirm der Ansicht „zusatz“ gehört.
  * Abhängigkeiten: touren.ts (nur Typen), i18n (Schlüssel).
@@ -12,14 +13,15 @@ import type { Tour, Tourschritt } from "./touren";
 
 /**
  * Kennungen der Touren; zugleich die Kennungen der Bildschirme in ZUSATZANSICHTEN. Stufe 4:
- * „variante-abfrage“ (Variante abfragen).
+ * „variante-abfrage“ (Variante abfragen); Stufe 2: „variantenkarte“.
  */
-export type Variantentour = "varianten" | "variante" | "variante-abfrage";
+export type Variantentour = "varianten" | "variante" | "variante-abfrage" | "variantenkarte";
 
 const VARIANTENBILDSCHIRME: readonly Variantentour[] = [
   "varianten",
   "variante",
   "variante-abfrage",
+  "variantenkarte",
 ];
 
 /** Schritt mit Ziel; fehlt das Ziel, steht der Text in der Mitte. */
@@ -44,6 +46,8 @@ export const VARIANTENTOUREN: Readonly<Record<Variantentour, Tour>> = {
       am("variante-leiste", "tour.variante.leiste"),
       am("brett", "tour.variante.brett"),
       am("variante-kommentar", "tour.variante.kommentar"),
+      am("variante-stift", "tour.variante.stift"),
+      am("variante-baum", "tour.variante.baum"),
       am("variante-spielen", "tour.variante.spielen"),
       am("variante-abfragen", "tour.variante.abfragen"),
     ],
@@ -51,6 +55,14 @@ export const VARIANTENTOUREN: Readonly<Record<Variantentour, Tour>> = {
   "variante-abfrage": {
     titel: "tour.titel.variantenabfrage",
     schritte: [am("abfrage-vorbereitung", "tour.variantenabfrage.vorbereitung")],
+  },
+  // Stufe 2: die Karte des ganzen Baums.
+  variantenkarte: {
+    titel: "tour.titel.variantenkarte",
+    schritte: [
+      am("karte-flaeche", "tour.variantenkarte.flaeche"),
+      am("karte-knoepfe", "tour.variantenkarte.knoepfe"),
+    ],
   },
 };
 

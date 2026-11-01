@@ -256,9 +256,10 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt kein Zurü
   await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await abweichung.getByRole("button", { name: "Zur Stellung" }).click();
+  // Seit 1.11.2026 zeigt „Zur Stellung“ den Fehlerzug selbst, damit „Merken“ ihn meint.
   await expect(
     page.getByTestId("partiezuege").getByRole("button", { name: "2. g4, Patzer (??)" }),
-  ).not.toHaveAttribute("aria-current");
+  ).toHaveAttribute("aria-current", /.+/);
   // PGN seit F2 im Blatt „Teilen“ unten.
   await page.getByTestId("partieabschluss").getByRole("button", { name: "Teilen" }).click();
   const teilen = page.getByTestId("teilen-blatt");

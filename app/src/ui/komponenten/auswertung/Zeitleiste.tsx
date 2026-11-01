@@ -144,7 +144,11 @@ function Momentkarte({
       {bild.zusatz && <p className="zeitleiste-zusatz">{bild.zusatz}</p>}
       {sprung && (
         <div className="zeitleiste-fuss">
-          <button type="button" className="zeitleiste-sprung" onClick={() => beiSprung(sprung)}>
+          <button
+            type="button"
+            className="zeitleiste-sprung"
+            onClick={() => beiSprung(bild.ziel ?? sprung)}
+          >
             {t("auswertung.zurStellung")}
           </button>
         </div>

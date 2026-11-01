@@ -130,6 +130,8 @@ test("Auswertung: nach „Merken“ Bestätigung mit Sprung in Fehlerdatenbank u
   await bestaetigung.getByRole("button", { name: "Zur Fehlerdatenbank" }).click();
   await expect(page.getByTestId("fehlerdb-eintrag")).toHaveCount(1);
   await expect(page.getByTestId("fehlerdb-eintrag").locator("summary")).toContainText("Kapitel");
+  // „Zur Stellung“ zeigt den Fehlerzug selbst: Eingetragen ist 12. O-O-O, nicht der Zug davor.
+  await expect(page.getByTestId("fehlerdb-eintrag")).toContainText("O-O-O");
 
   // Zurück zur Partie, diesmal „Lernen“: Sprung zur Lernsammlung.
   await page.goBack();

@@ -37,6 +37,13 @@ export interface Momentbild {
   readonly sprung: Sprung | null;
   /** Kleines Brett mit der Stellung des Sprungs? */
   readonly brett: boolean;
+  /**
+   * Wohin „Zur Stellung“ das große Brett stellt, wenn es nicht der Sprung des kleinen Bretts ist:
+   * bei einem Fehler die Stellung nach dem Fehlerzug, damit Karte und „Merken“ diesen Zug meinen
+   * (Befund 1.11.2026: „Merken“ trug bei 12. O-O-O?? den Zug davor ein). Das kleine Brett zeigt
+   * weiter die Stellung davor mit goldenem und rotem Pfeil.
+   */
+  readonly ziel?: Sprung;
 }
 
 /** Was die Darstellung braucht. */
@@ -116,6 +123,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     zusatz: "",
     besser: besserVon(g, m.index),
     sprung: sprungZu(g.eintrag, m.index),
+    ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
   }),
   fehler: (g, m) => ({
@@ -128,6 +136,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     zusatz: "",
     besser: besserVon(g, m.index),
     sprung: sprungZu(g.eintrag, m.index),
+    ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
   }),
   engine: (g, m) => {

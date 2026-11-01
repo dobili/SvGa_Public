@@ -123,6 +123,7 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
     const roh = await liesRoh();
     if (roh === undefined) {
       setze({ daten: await ersterStart(jetzt), geladen: true });
+      tabkanal();
       return;
     }
     const ergebnis = wandleUm(roh, jetzt);
@@ -138,6 +139,7 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
       if (ergebnis.vonVersion !== daten.schemaVersion || daten !== ergebnis.daten)
         await schreibeRoh(daten);
       setze({ daten, geladen: true });
+      tabkanal();
       return;
     }
     await hebeAuf(roh, jetzt);
@@ -169,6 +171,53 @@ export function lade(jetzt: Date = new Date()): Promise<void> {
   return ladevorgang;
 }
 
+/** Name des Kanals, über den sich Tabs und installierte App gegenseitig Schreibvorgänge melden. */
+const TABKANAL = "schach-von-grund-auf/speicher";
+let kanal: BroadcastChannel | null = null;
+/** Eigene Schreibvorgänge, die noch ausstehen; solange übernimmt der Tab keinen fremden Stand. */
+let ausstehend = 0;
+
+/**
+ * Liest den Stand neu, nachdem ein anderer Tab geschrieben hat.
+ *
+ * Warum: Jeder Tab hält den ganzen Stand im Speicher und schreibt ihn vollständig. Ohne diesen
+ * Abgleich überschrieb ein zweiter, älterer Tab beim nächsten Speichern alles, was der erste
+ * inzwischen gespeichert hatte (Fehlertest 1.11.2026: Name im ersten Tab weg, nachdem im zweiten
+ * eine Partie eingelesen wurde). Sonderfall: Unlesbare oder neuere Daten lässt der Tab liegen;
+ * steht ein eigener Schreibvorgang aus, gilt dessen Stand (sonst ginge die eigene Änderung verloren).
+ */
+async function uebernimmAusAnderemTab(): Promise<void> {
+  if (ausstehend > 0) return;
+  try {
+    const ergebnis = wandleUm(await liesRoh(), new Date());
+    if (ergebnis.ok && ausstehend === 0) setze({ daten: ergebnis.daten });
+  } catch (fehler) {
+    console.warn("Stand eines anderen Tabs nicht lesbar:", fehler);
+  }
+}
+
+/** Der Kanal zu den anderen Tabs, beim ersten Gebrauch geöffnet; null ohne BroadcastChannel. */
+function tabkanal(): BroadcastChannel | null {
+  if (kanal || typeof BroadcastChannel === "undefined") return kanal;
+  kanal = new BroadcastChannel(TABKANAL);
+  kanal.onmessage = () => {
+    if (!zustand.geladen) return;
+    schreibkette = schreibkette.then(uebernimmAusAnderemTab);
+  };
+  // Node (Tests): Der offene Kanal soll den Prozess nicht am Beenden hindern.
+  (kanal as BroadcastChannel & { unref?: () => void }).unref?.();
+  return kanal;
+}
+
+/** Meldet den anderen Tabs, dass ein neuer Stand gespeichert ist. */
+function meldeAndereTabs(): void {
+  try {
+    tabkanal()?.postMessage("geschrieben");
+  } catch (fehler) {
+    console.warn("Andere Tabs nicht erreichbar:", fehler);
+  }
+}
+
 /**
  * Setzt einen neuen Stand und schreibt ihn sofort.
  *
@@ -178,15 +227,19 @@ export function lade(jetzt: Date = new Date()): Promise<void> {
  */
 export function speichere(daten: Nutzerdaten): Promise<boolean> {
   setze({ daten });
+  ausstehend += 1;
   const vorgang = schreibkette.then(async () => {
     try {
       await schreibeRoh(zustand.daten);
+      meldeAndereTabs();
       if (zustand.fehler?.art === "speichern") setze({ fehler: null });
       return true;
     } catch (fehler) {
       console.error("Speichern fehlgeschlagen:", fehler);
       setze({ fehler: { art: "speichern", meldung: alsMeldung(fehler) } });
       return false;
+    } finally {
+      ausstehend -= 1;
     }
   });
   schreibkette = vorgang.then(() => undefined);

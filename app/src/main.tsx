@@ -58,6 +58,7 @@ import "./ui/stil/auswertungneu.css";
 import "./ui/stil/wenigertext-werkzeuge.css";
 import "./ui/stil/wenigertext-trainer.css";
 import "./ui/stil/varianten.css";
+import "./ui/stil/varianten4.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteNachsenden } from "./app/melden";

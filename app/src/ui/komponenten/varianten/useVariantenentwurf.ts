@@ -3,8 +3,10 @@
  *
  * Rolle im Gesamtbild: Der Bildschirm „Variante“ (ui/bildschirme/Variante.tsx) fragt hier nach
  * dem Anfangsstand. Gespeicherte Varianten kommen aus dem Speicher, Entwürfe aus der Quelle
- * (entwurfAusDaten.ts); eine Abbildung lädt dazu ihr Kapitel (Buchbaum, Frage h).
- * Abhängigkeiten: daten/laden.ts, speicher, training/variationsquellen.ts, variantenwert.ts.
+ * (entwurfAusDaten.ts); eine Abbildung oder Übung lädt dazu ihr Kapitel (Buchbaum, Frage h), eine
+ * ganze Eröffnung die Kapitel 2 und 3 und die Praxisdaten (Stufe 4, eroeffnungsentwurf.ts).
+ * Abhängigkeiten: daten/laden.ts, speicher, training/variationsquellen.ts, variantenwert.ts,
+ * uebungsentwurf.ts, eroeffnungsentwurf.ts.
  */
 import { useMemo } from "react";
 import { ladeKapitel, type Kapitel } from "../../../daten/laden";
@@ -15,6 +17,12 @@ import type { Variation } from "../../../training/variationen";
 import { ausAbbildung } from "../../../training/variationsquellen";
 import { useDaten, type Ladezustand } from "../bausteine/useDaten";
 import { entwurfAusDaten } from "./entwurfAusDaten";
+import {
+  eroeffnungsentwurf,
+  ladeEroeffnungsdaten,
+  type Eroeffnungsdaten,
+} from "./eroeffnungsentwurf";
+import { ausUebung } from "./uebungsentwurf";
 import { gemerkterPfad, wertAus, type Entwurfsquelle } from "./variantenwert";
 
 /** Anfangsstand des Bildschirms. */
@@ -44,9 +52,25 @@ function ausKapitel(
   return v ? { art: "fertig", variation: v, pfad: v.startpfad } : { art: "fehlt" };
 }
 
-/** Kapitelnummer einer Abbildung („2.40“ → 2); 0, wenn keine Abbildung verlangt ist. */
+/** Kapitelnummer einer Abbildung („2.40“ → 2) oder Übung; 0, wenn kein Kapitel nötig ist. */
 function kapitelVon(quelle: Entwurfsquelle | null): number {
+  if (quelle?.art === "uebung") return quelle.kapitel;
   return quelle?.art === "abbildung" ? Number(quelle.nummer.split(".")[0]) : 0;
+}
+
+/** Der Anfang aus einem fertigen Entwurf (oder „fehlt“). */
+function alsAnfang(v: Variation | null): Anfang {
+  return v ? { art: "fertig", variation: v, pfad: v.startpfad } : { art: "fehlt" };
+}
+
+/** Entwurf aus geladenen Daten (Kapitel oder Eröffnungsdaten), sobald sie da sind. */
+function ausGeladenem<T>(
+  zustand: Ladezustand<T | null>,
+  baue: (wert: T) => Variation | null,
+): Anfang {
+  if (zustand.art === "laedt") return { art: "laedt" };
+  if (zustand.art !== "fertig" || !zustand.wert) return { art: "fehlt" };
+  return alsAnfang(baue(zustand.wert));
 }
 
 /**
@@ -63,6 +87,11 @@ export function useVariantenentwurf(wert: string | null): Anfang {
     () => (kapitelnummer > 0 ? ladeKapitel(kapitelnummer) : Promise.resolve(null)),
     `varianten-kapitel-${kapitelnummer}`,
   );
+  const mitEroeffnung = quelle?.art === "eroeffnung";
+  const eroeffnungen = useDaten<Eroeffnungsdaten | null>(
+    () => (mitEroeffnung ? ladeEroeffnungsdaten() : Promise.resolve(null)),
+    `varianten-eroeffnungen-${mitEroeffnung ? 1 : 0}`,
+  );
   const geladen = useSpeicher((z) => z.geladen);
   const daten = useSpeicher((z) => z.daten);
   return useMemo((): Anfang => {
@@ -74,10 +103,14 @@ export function useVariantenentwurf(wert: string | null): Anfang {
         ? { art: "fertig", variation: v, pfad: gemerkterPfad(v.id) ?? v.startpfad }
         : { art: "fehlt" };
     }
-    if (gelesen.quelle.art === "abbildung") return ausKapitel(kapitel, gelesen.quelle);
-    const v = entwurfAusDaten(gelesen.quelle, daten, new Date());
-    return v ? { art: "fertig", variation: v, pfad: v.startpfad } : { art: "fehlt" };
+    const q = gelesen.quelle;
+    if (q.art === "abbildung") return ausKapitel(kapitel, q);
+    if (q.art === "uebung") return ausGeladenem(kapitel, (k) => ausUebung(k, q.id, new Date()));
+    if (q.art === "eroeffnung") {
+      return ausGeladenem(eroeffnungen, (d) => eroeffnungsentwurf(d, q, new Date()));
+    }
+    return alsAnfang(entwurfAusDaten(q, daten, new Date()));
     // Nur beim Öffnen: Spätere Änderungen hält der Bildschirm selbst (useVariante.ts).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gelesen, geladen, kapitel.art]);
+  }, [gelesen, geladen, kapitel.art, eroeffnungen.art]);
 }

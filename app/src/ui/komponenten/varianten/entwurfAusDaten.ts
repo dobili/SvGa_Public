@@ -1,6 +1,6 @@
 /**
  * Entwürfe aus den eigenen Daten: Grundstellung, Stellung, Partie (auf Wunsch mit Engine-Folgen),
- * Fehler und Lernsammlung, jeweils mit einem Titel in der Sprache des Lesers.
+ * Fehler, Lernsammlung und Lösungslinien (gelöste Trainer-Aufgaben), jeweils mit einem Titel in der Sprache des Lesers.
  *
  * Rolle im Gesamtbild: Bindeglied zwischen dem Wert der Ansicht (variantenwert.ts) und den reinen
  * Quellen (training/variationsquellen.ts, training/enginefolgen.ts). Die Abbildung braucht die
@@ -16,6 +16,7 @@ import { mitEngineFolgen } from "../../../training/enginefolgen";
 import type { Variation } from "../../../training/variationen";
 import {
   ausFehler,
+  ausLinien,
   ausPartie,
   ausSammlung,
   ausStellung,
@@ -62,7 +63,7 @@ export function ausPartieeintrag(
  * „Fehler vom 28.10.2026“.
  */
 export function entwurfAusDaten(
-  quelle: Exclude<Entwurfsquelle, { art: "abbildung" }>,
+  quelle: Exclude<Entwurfsquelle, { art: "abbildung" | "eroeffnung" | "uebung" }>,
   daten: Nutzerdaten,
   jetzt: Date,
 ): Variation | null {
@@ -80,6 +81,10 @@ export function entwurfAusDaten(
       const fehler = daten.fehler.find((f) => f.id === quelle.id);
       const titel = fehler ? t("varianten.titel.fehler", { datum: tag(fehler.datum) }) : "";
       return fehler ? ausFehler(fehler, titel, jetzt) : null;
+    }
+    case "linie": {
+      const teile = { titel: quelle.titel, quelle: { art: "fen" } as const, fen: quelle.fen };
+      return ausLinien(teile, [quelle.zuege], "partie", jetzt);
     }
     case "sammlung": {
       const eintrag = daten.sammlung.find((s) => s.id === quelle.id);

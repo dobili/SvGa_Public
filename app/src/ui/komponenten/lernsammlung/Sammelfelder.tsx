@@ -5,10 +5,11 @@
  * Rolle im Gesamtbild: Dasselbe Feld-Trio steht beim Anlegen (SammelFormular.tsx) und beim
  * Bearbeiten eines Eintrags (Sammeleintrag.tsx), damit beides gleich aussieht und gleich viel
  * erlaubt (Wunsch des Autors, 1.11.2026: nachträglich alle Felder des Anlegens ändern).
- * Später kommt hier auch die Angabe von Variationen hinzu (Variationsbrowser), unter der Notiz.
+ * Unter der Notiz steht auf Wunsch das Feld „Variante“ (Variationsbrowser, Stufe 4:
+ * varianten/Variantenwahl.tsx), als ``zusatz`` hereingereicht.
  * Abhängigkeiten: training/lernsammlung.ts (Längen), i18n.
  */
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import { t } from "../../../i18n/sprache";
 import {
   EROEFFNUNG_HOECHSTENS,
@@ -65,15 +66,18 @@ export interface Sammelwerte {
 }
 
 /**
- * Plan, Notiz und Eröffnung. Eingaben: die Werte und was bei einer Änderung geschieht.
+ * Plan, Notiz und Eröffnung. Eingaben: die Werte, was bei einer Änderung geschieht und ein Feld
+ * unter der Notiz (``zusatz``, die Variante).
  * Beispiel: Abb. 2.2 → Eröffnung „Spanische Partie“ vorgefüllt, Plan und Notiz leer.
  */
 export function Sammelfelder({
   werte,
   beiAenderung,
+  zusatz,
 }: {
   werte: Sammelwerte;
   beiAenderung: (teil: Partial<Sammelwerte>) => void;
+  zusatz?: ReactNode;
 }) {
   return (
     <>
@@ -92,6 +96,7 @@ export function Sammelfelder({
         zeilen={NOTIZZEILEN}
         beiAenderung={(notiz) => beiAenderung({ notiz })}
       />
+      {zusatz}
       <Feld
         name={t("sammlung.eroeffnung")}
         wert={werte.eroeffnung}

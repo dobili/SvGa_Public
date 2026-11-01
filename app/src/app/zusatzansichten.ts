@@ -26,6 +26,7 @@ import {
 } from "../ui/bildschirme/Steckbriefe";
 import { Variante } from "../ui/bildschirme/Variante";
 import { Varianten } from "../ui/bildschirme/Varianten";
+import { VariantenAbfrage } from "../ui/bildschirme/VariantenAbfrage";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -53,6 +54,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   // oder Quelle eines Entwurfs, ui/komponenten/varianten/variantenwert.ts).
   { kennung: "varianten", Bildschirm: Varianten },
   { kennung: "variante", Bildschirm: Variante },
+  // Stufe 4: eine Variante oder die Varianten eines Eintrags abfragen (Wert: variantenwert.ts).
+  { kennung: "variante-abfrage", Bildschirm: VariantenAbfrage },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

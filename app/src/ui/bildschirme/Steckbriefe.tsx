@@ -10,6 +10,8 @@
  * Schlussstellung der Hauptvariante, Abschnitt im Buch); die Fallenchecks haben eine eigene Seite.
  * Beide Seiten sind über die Liste ZUSATZANSICHTEN eingetragen (Kennungen „steckbrief“,
  * „fallenchecks“), der Router bleibt unverändert.
+ * Unter einem Steckbrief öffnet „Ganze Eröffnung als Variante“ alle Zugfolgen des Buches zu dieser
+ * Eröffnung als einen Baum (Variationsbrowser, Stufe 4).
  * Regel 1: Inhalte kommen unverändert aus den Buchdaten.
  * Abhängigkeiten: daten, Navigation, Kopfzeile, Eroeffnungsbaum, steckbriefteile, i18n.
  */
@@ -32,6 +34,8 @@ import {
   type Steckbrief,
 } from "../komponenten/nachschlagen/steckbriefteile";
 import { ersteAbbildung, ladeAlleKapitel } from "../komponenten/nachschlagen/steckbriefdaten";
+import { GabelKnopf } from "../komponenten/varianten/VariantenHinweis";
+import { alsWert } from "../komponenten/varianten/variantenwert";
 
 /** Kennungen der Seiten in ZUSATZANSICHTEN (app/zusatzansichten.ts). */
 export const ANSICHT_STECKBRIEF = "steckbrief";
@@ -136,6 +140,19 @@ function Kennzuege({
   return <p className="steckbrief-kennzuege">{text}</p>;
 }
 
+/** „Ganze Eröffnung als Variante“: alle Zugfolgen des Buches zur Eröffnung (Stufe 4). */
+function EroeffnungsGabel({ beispiel }: { beispiel: string | null }) {
+  if (!beispiel) return null;
+  const quelle = {
+    art: "eroeffnung",
+    schluessel: beispiel,
+    buch: true,
+    praxis: false,
+    band: 0,
+  } as const;
+  return <GabelKnopf text={t("varianten.eroeffnung.ganz")} wert={alsWert(quelle)} />;
+}
+
 /** Seite „Steckbrief“: eine Eröffnung vollständig. Wert: der Name wie in den Buchdaten. */
 export function SteckbriefAnsicht({ wert }: { readonly wert: string | null }) {
   return (
@@ -151,14 +168,16 @@ export function SteckbriefAnsicht({ wert }: { readonly wert: string | null }) {
               </p>
             );
           }
+          const schluss = schlussstellung(kapitel, steckbrief);
           return (
             <>
               <Kennzuege kapitel={kapitel} steckbrief={steckbrief} />
               <SteckbriefInhalt
                 steckbrief={steckbrief}
                 abbildung={ersteAbbildung(kapitel, steckbrief.abschnitt)}
-                schluss={schlussstellung(kapitel, steckbrief)}
+                schluss={schluss}
               />
+              <EroeffnungsGabel beispiel={schluss?.beispiel?.id ?? null} />
             </>
           );
         }}

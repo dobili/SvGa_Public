@@ -68,7 +68,7 @@ export function Repertoireaufgabe({
   const [fehlversuch, setzeFehlversuch] = useState<Fehlversuch | null>(null);
   const vergleich = useRatevergleich(fehlversuch);
   const fen = stellungNach(aufgabe.startFen, zuege);
-  useSammelstellung(fen);
+  useSammelstellung(fen, { fen: aufgabe.startFen, zuege: aufgabe.linie });
   const fertig = runde.ergebnis !== null;
   // Züge aus der Praxis (Lichess) stammen nicht aus dem Buch: eigener Auftrag und Kennzeichnung.
   const praxis = aufgabe.herkunft === "praxis";

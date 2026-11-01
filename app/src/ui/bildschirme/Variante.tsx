@@ -4,14 +4,15 @@
  * Rolle im Gesamtbild: Variationsbrowser, Stufe 1 (Entwurf vom 1.11.2026, Abschnitt 3). Von oben
  * nach unten wie an den Abbildungen: Kopfzeile (Titel antippen = Blatt mit Name, Kommentar, PGN,
  * Löschen), Kommentar zur Variante eingeklappt, Zugleiste (Variantenleiste.tsx), Brett mit den
- * blauen Fortsetzungspfeilen am Abzweig, Kommentar zum Zug, „Von hier spielen“. Ziehen ist immer
+ * blauen Fortsetzungspfeilen am Abzweig, Kommentar zum Zug, „Von hier spielen“ und „Abfragen“
+ * (Stufe 4, bildschirme/VariantenAbfrage.tsx). Ziehen ist immer
  * an. Ein Entwurf aus einer Quelle wird mit dem ersten eigenen Inhalt gespeichert; danach
  * wechselt die Ansicht auf die Kennung der Variante, damit sie das Neuladen übersteht.
  * Eingetragen in app/zusatzansichten.ts unter „variante“ (Wert: variantenwert.ts).
  * Abhängigkeiten: komponenten/varianten, brettbedienung (Brettbereich, useBrettbedienung),
  * Navigation, i18n.
  */
-import { NotebookText, Play, Share2 } from "lucide-react";
+import { GraduationCap, NotebookText, Play, Share2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
@@ -33,7 +34,7 @@ import { useVariantenentwurf } from "../komponenten/varianten/useVariantenentwur
 import { Variantenblatt } from "../komponenten/varianten/Variantenblatt";
 import { Variantenleiste } from "../komponenten/varianten/Variantenleiste";
 import { Variantenmeldung } from "../komponenten/varianten/Variantenmeldung";
-import { merkePfad, varianteAnsicht } from "../komponenten/varianten/variantenwert";
+import { abfrageAnsicht, merkePfad, varianteAnsicht } from "../komponenten/varianten/variantenwert";
 import { Zugmenue } from "../komponenten/varianten/Zugmenue";
 import "../stil/spielenneu.css";
 import { sprache } from "../../i18n/sprache";
@@ -146,7 +147,35 @@ function Spielknopf({ stand }: { stand: Variantenstand }) {
       >
         <Play size={SYMBOL} aria-hidden="true" /> {t("varianten.vonHierSpielen")}
       </button>
+      <Abfrageknopf stand={stand} />
     </div>
+  );
+}
+
+/**
+ * „Abfragen“ (Stufe 4): die Variante ab der gezeigten Stellung Zug für Zug spielen lassen wie im
+ * Repertoire-Trainer. Ein Entwurf wird vorher gespeichert, damit die Abfrage ihn findet.
+ */
+function Abfrageknopf({ stand }: { stand: Variantenstand }) {
+  const { navigiere } = useNavigation();
+  const frage = () => {
+    const id =
+      stand.variation.id === ENTWURF
+        ? stand.aendereVariation(stand.variation, "sofort")
+        : stand.variation.id;
+    if (id) navigiere(abfrageAnsicht({ art: "variante", id, pfad: stand.pfad }));
+  };
+  return (
+    <button
+      type="button"
+      className="knopf-zweit"
+      disabled={stand.variation.zuege.length === 0}
+      data-tour="variante-abfragen"
+      data-testid="variante-abfragen"
+      onClick={frage}
+    >
+      <GraduationCap size={SYMBOL} aria-hidden="true" /> {t("variantenabfrage.knopf")}
+    </button>
   );
 }
 

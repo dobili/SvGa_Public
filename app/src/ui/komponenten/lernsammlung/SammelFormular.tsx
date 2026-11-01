@@ -5,8 +5,10 @@
  * Abbildung (Symbol am Brett), im Rückblick einer Partie (unter dem Zug), nach jeder
  * Trainer-Aufgabe und im Bildschirm der Lernsammlung (Stellung als FEN). Die Eröffnung schlägt
  * die App vor (training/lernsammlung.ts, eroeffnungsnameFuer); der Leser darf sie ändern.
- * Dazu der Knopf SammelKnopf, der das Formular aufklappt.
- * Abhängigkeiten: training/lernsammlung.ts, speicher/speicher.ts, useEroeffnungsindex, i18n.
+ * Dazu der Knopf SammelKnopf, der das Formular aufklappt. Unter der Notiz lässt sich eine Variante
+ * verknüpfen oder neu anlegen (Variationsbrowser, Stufe 4, Variantenwahl.tsx).
+ * Abhängigkeiten: training/lernsammlung.ts, speicher/speicher.ts, useEroeffnungsindex,
+ * varianten/Variantenwahl, i18n.
  */
 import { BookmarkPlus } from "lucide-react";
 import { useState } from "react";
@@ -26,6 +28,9 @@ import { MitInfo } from "../bausteine/InfoKnopf";
 import { useEroeffnungsindex } from "../bausteine/useEroeffnungsindex";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 import { Sammelfelder, type Sammelwerte } from "./Sammelfelder";
+import { ausSammlung } from "../../../training/variationsquellen";
+import { Variantenwahl } from "../varianten/Variantenwahl";
+import { useVariantenwahl } from "../varianten/variantenwahlSpeichern";
 
 /** Größe des Lesezeichens am Brett, wie die anderen Brettschalter. */
 const SYMBOLGROESSE = 20;
@@ -48,9 +53,10 @@ function neueKennung(): string {
 
 /**
  * Bestätigung nach dem Speichern, mit Sprung zur Sammlung (Wunsch des Autors, 1.11.2026: nach
- * „Merken“ gleich sehen, wo der Eintrag liegt). In der Sammlung selbst entfällt der Sprung.
+ * „Merken“ gleich sehen, wo der Eintrag liegt). In der Sammlung selbst entfällt der Sprung. Passt
+ * eine neue Variante nicht mehr (Grenze), steht die Meldung dahinter.
  */
-function Gespeichert({ mitSprung }: { mitSprung: boolean }) {
+function Gespeichert({ mitSprung, meldung }: { mitSprung: boolean; meldung: string | null }) {
   const { navigiere } = useNavigation();
   return (
     <p className="meldung gut" role="status" data-testid="sammlung-gespeichert">
@@ -64,6 +70,7 @@ function Gespeichert({ mitSprung }: { mitSprung: boolean }) {
           {t("sammlung.oeffnen")}
         </button>
       )}
+      {meldung && <span className="fehlertext"> {meldung}</span>}
     </p>
   );
 }
@@ -99,6 +106,7 @@ export function SammelFormular({
   // null: die Eröffnung der App gilt; sobald der Leser tippt, gilt seine.
   const [eigeneEroeffnung, setzeEroeffnung] = useState<string | null>(null);
   const [gespeichert, setzeGespeichert] = useState(false);
+  const variante = useVariantenwahl();
   const vorschlag = fen ? eroeffnungsnameFuer(index, fen, herkunft.verlauf) : "";
   const eroeffnung = eigeneEroeffnung ?? vorschlag;
   const speichern = () => {
@@ -120,6 +128,10 @@ export function SammelFormular({
         new Date(),
       ),
     );
+    const titel = eintrag.eroeffnung || t("varianten.titel.sammlung");
+    variante.wende({ art: "sammlung", id: eintrag.id }, () =>
+      ausSammlung(eintrag, titel, new Date()),
+    );
     setzeGespeichert(true);
     beiGespeichert?.();
   };
@@ -128,7 +140,7 @@ export function SammelFormular({
     if (neueEroeffnung !== undefined) setzeEroeffnung(neueEroeffnung);
     setzeWerte((alt) => ({ ...alt, ...rest }));
   };
-  if (gespeichert) return <Gespeichert mitSprung={mitSprung} />;
+  if (gespeichert) return <Gespeichert mitSprung={mitSprung} meldung={variante.meldung} />;
   return (
     <div className="fehlerformular" data-testid="sammelformular">
       {mitErklaerung && (
@@ -138,7 +150,11 @@ export function SammelFormular({
           thema={t("sammlung.erklaerungThema")}
         />
       )}
-      <Sammelfelder werte={{ ...werte, eroeffnung }} beiAenderung={aendern} />
+      <Sammelfelder
+        werte={{ ...werte, eroeffnung }}
+        beiAenderung={aendern}
+        zusatz={<Variantenwahl ziel={null} wahl={variante.wahl} beiWahl={variante.setzeWahl} />}
+      />
       <button type="button" className="knopf-haupt" disabled={fen === null} onClick={speichern}>
         <Knopfsymbol art="speichern" />
         {t("sammlung.speichern")}

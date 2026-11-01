@@ -1,5 +1,6 @@
 /**
- * Blatt „Neue Variante aus …“ mit den sieben Quellen als Kacheln.
+ * Blatt „Neue Variante aus …“ mit den Quellen als Kacheln (sieben aus Stufe 1, dazu Eröffnung und
+ * Studie aus Stufe 4, Buchquellen.tsx).
  *
  * Rolle im Gesamtbild: Frage h (Empfehlung B, Bild h): Grundstellung, Abbildung, Partie, Stellung
  * aufbauen (vorhandener Stellungseditor), PGN/FEN einfügen, Fehlerdatenbank, Lernsammlung. Eine
@@ -12,7 +13,9 @@ import {
   BookmarkPlus,
   ClipboardPaste,
   Grid3x3,
+  Library,
   PencilRuler,
+  Sparkles,
   Swords,
   TriangleAlert,
   type LucideIcon,
@@ -22,6 +25,7 @@ import { t } from "../../../i18n/sprache";
 import { GRUNDSTELLUNG } from "../../../training/lernsammlung";
 import { Blatt } from "../spielstart/Blatt";
 import { Stellungseditor } from "../spielstart/Stellungseditor";
+import { EroeffnungWahl, StudienWahl } from "./Buchquellen";
 import { AbbildungWahl, EinfuegenWahl, EintragWahl, PartieWahl } from "./Neuquellen";
 import { alsWert, varianteAnsicht } from "./variantenwert";
 import { NEUQUELLEN, type Neuquelle } from "./variantentexte";
@@ -36,6 +40,8 @@ const SYMBOLE: Readonly<Record<Neuquelle, LucideIcon>> = {
   einfuegen: ClipboardPaste,
   fehler: TriangleAlert,
   sammlung: BookmarkPlus,
+  eroeffnung: Library,
+  studie: Sparkles,
 };
 
 /** Die Unterseite einer Quelle. */
@@ -45,6 +51,8 @@ function Unterseite({ quelle, zurueck }: { quelle: Neuquelle; zurueck: () => voi
   if (quelle === "partie") return <PartieWahl />;
   if (quelle === "einfuegen") return <EinfuegenWahl />;
   if (quelle === "fehler" || quelle === "sammlung") return <EintragWahl art={quelle} />;
+  if (quelle === "eroeffnung") return <EroeffnungWahl />;
+  if (quelle === "studie") return <StudienWahl />;
   return (
     <Stellungseditor
       start={GRUNDSTELLUNG}
@@ -54,7 +62,7 @@ function Unterseite({ quelle, zurueck }: { quelle: Neuquelle; zurueck: () => voi
   );
 }
 
-/** Die sieben Kacheln. */
+/** Die Kacheln. */
 function Kacheln({ beiWahl }: { beiWahl: (q: Neuquelle) => void }) {
   return (
     <ul className="neukacheln">

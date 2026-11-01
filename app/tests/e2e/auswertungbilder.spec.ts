@@ -30,12 +30,14 @@ for (const schema of ["dunkel", "hell"] as const) {
     await expect(page.getByTestId("zugklasse-patzer").locator(".zugklasse-spur")).toBeVisible();
     await page.screenshot({ path: `test-results/bilder/auswertung-${schema}.png`, fullPage: true });
     // Befunde der Vorprüfung (1.11.2026): Auf der Seite des Bots heißt die Karte nach ihm, und
-    // unter 9... b5?? steht kein „Besser war 9... b5“ (der beste Zug war der gespielte).
+    // unter 9... b5 steht kein „Besser war 9... b5“ (der beste Zug war der gespielte). Seit Q12-3
+    // (1.11.2026) bekommt 9... b5 als bester Zug auch kein „??“ mehr, obwohl die Gewinnchance fällt.
     await expect(page.getByTestId("zugklassen")).toContainText("Deine Züge");
     const seiten = page.getByTestId("in-zahlen").getByRole("radiogroup", { name: "Seite" });
     await seiten.getByRole("radio", { name: "Schwarz (Derya)" }).click();
     await expect(page.getByTestId("zugklassen")).toContainText("Züge von Derya");
     await expect(zeitleiste).toContainText("9... b5");
+    await expect(zeitleiste).not.toContainText("9... b5?");
     await expect(zeitleiste).not.toContainText("Besser war 9... b5");
     await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
     await expect(page.getByTestId("zugklassen")).toContainText("Deine Züge");

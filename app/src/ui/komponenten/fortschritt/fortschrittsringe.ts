@@ -185,6 +185,8 @@ export function useFortschrittsringe(): {
 
 /** Merker der Ringe, deren Gratulation schon gezeigt wurde („ich-abbildungen,ich-bots-blitz“). */
 const MERKER_GEFEIERT = "ringeGefeiert";
+/** Merker der geprobten Ringe (ordenprobe.ts), hier nur gelesen. */
+const MERKER_PROBE = "ordenProbe";
 
 function gefeiert(): Set<string> {
   return new Set((liesMerker(MERKER_GEFEIERT) ?? "").split(",").filter(Boolean));
@@ -196,15 +198,40 @@ function gefeiert(): Set<string> {
  */
 export function merkeGefeiert(testid: string): void {
   schreibeMerker(MERKER_GEFEIERT, [...gefeiert(), testid].join(","));
+  // Eine Probe des Autors schreibt kein Datum (wie bei den Abzeichen): Sonst stünde ein falsches
+  // in den Daten, und die echte Feier fiele später aus (offeneRinge, Fehlertest f3).
+  if (geprobt().has(testid)) return;
   // Gamifizierung G3: das Datum der ersten Feier in die Nutzerdaten (Schlüssel wie startorden.ts).
-  const schluessel = `orden:${ordenkennungAusRing(testid)}`;
-  void aendere((d) => mitVerdient(d, [schluessel], new Date()));
+  void aendere((d) => mitVerdient(d, [ordenschluessel(testid)], new Date()));
 }
 
-/** Volle Ringe ohne Gratulation, in der Reihenfolge der Profilkarte. */
+/** Schlüssel eines Ringordens in „verdient“. Beispiel: „ich-bots-10“ → „orden:engine“. */
+function ordenschluessel(testid: string): string {
+  return `orden:${ordenkennungAusRing(testid)}`;
+}
+
+/** Die Ringe, die gerade nur zur Probe voll sind (Merker „ordenProbe“, ordenprobe.ts). */
+function geprobt(): Set<string> {
+  return new Set((liesMerker(MERKER_PROBE) ?? "").split(",").filter(Boolean));
+}
+
+/**
+ * Volle Ringe ohne Gratulation, in der Reihenfolge der Profilkarte.
+ * Sonderfall (Fehlertest f3, 01.11.2026): Ein Ring, dessen Orden schon ein Datum in „verdient“
+ * hat, ist gefeiert, auch wenn der Merker auf diesem Gerät fehlt (Datensicherung auf einem neuen
+ * Gerät eingespielt, Merker gelöscht); sonst käme jede alte Gratulation noch einmal. Zur Probe
+ * des Autors (`probe`) zählt nur der Merker.
+ */
 export function offeneRinge(
   ringe: readonly Symbolringangabe[],
   schon: ReadonlySet<string> = gefeiert(),
+  verdient: Readonly<Record<string, string>> = {},
+  probe: ReadonlySet<string> = geprobt(),
 ): Symbolringangabe[] {
-  return ringe.filter((r) => istVoll(r.anteil) && !schon.has(r.testid));
+  return ringe.filter(
+    (r) =>
+      istVoll(r.anteil) &&
+      !schon.has(r.testid) &&
+      (probe.has(r.testid) || verdient[ordenschluessel(r.testid)] === undefined),
+  );
 }

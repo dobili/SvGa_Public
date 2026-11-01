@@ -6,7 +6,7 @@
  * test-results/bilder/ für den Bericht an den Autor.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
 
 /** Stufe des Probestands (Schwellen aus fortschritt/erfahrung.ts, über die Probe erreicht). */
 const PROBESTUFE = 6;
@@ -21,8 +21,7 @@ async function setzeMerker(page: Page, schema: "hell" | "dunkel"): Promise<void>
 
 /** Hebt die Stufe über die Probe der Aufgabenseite bis zur Probestufe. */
 async function hebeStufe(page: Page): Promise<void> {
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("abzeichen-probe");
   await probe.locator("summary").click();
   const knopf = probe.getByRole("button", { name: "Nächste Stufe erreichen" });

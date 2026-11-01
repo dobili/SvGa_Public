@@ -4,10 +4,11 @@
  * Rolle im Gesamtbild: Teil von app/Sprachangebot.tsx (Wunsch des Autors, 31.10.2026): einmal je
  * Gerät, ohne gemerkte Sprachwahl, wenn die erste Sprache des Geräts nicht Deutsch ist und es
  * Englisch gibt.
- * Abhängigkeiten: app/merker.ts, app/sprachwahl.ts (Merker der Sprachwahl), i18n.
+ * Abhängigkeiten: app/merker.ts, app/sprachwahl.ts (Merker der Sprachwahl), i18n, React.
  */
+import { useSyncExternalStore } from "react";
 import { verfuegbareSprachen } from "../i18n/sprache";
-import { liesMerker } from "./merker";
+import { beobachteMerker, liesMerker } from "./merker";
 import { MERKER_SPRACHE } from "./sprachwahl";
 
 const ENGLISCH = "en";
@@ -34,5 +35,19 @@ export function sprachangebotFaellig(): boolean {
     liesMerker(MERKER_SPRACHE) === null &&
     ersteGeraetesprache() !== DEUTSCH &&
     verfuegbareSprachen().includes(ENGLISCH)
+  );
+}
+
+/**
+ * Ob das Angebot fällig ist, für eine Komponente: Sie zeichnet neu, sobald der Leser antwortet
+ * (die Antwort schreibt einen Merker). Warum: Mit `?start=buch` (QR-Code im Buch) wartet die Tour,
+ * bis die Frage nach der Sprache beantwortet ist; sonst lag die Tour über der Frage, und die Frage
+ * war nicht bedienbar (Fehlertest f3, 01.11.2026).
+ */
+export function useSprachangebotFaellig(): boolean {
+  return useSyncExternalStore(
+    (geaendert) => beobachteMerker(() => geaendert()),
+    sprachangebotFaellig,
+    sprachangebotFaellig,
   );
 }

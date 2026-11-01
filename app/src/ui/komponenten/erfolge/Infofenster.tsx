@@ -16,7 +16,7 @@
  */
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useNavigation } from "../../../app/navigationsKontext";
+import { useNavigation, useOeffne } from "../../../app/navigationsKontext";
 import { datumText, t } from "../../../i18n/sprache";
 import { useSpeicher } from "../../../speicher/speicher";
 import "../../stil/infofenster.css";
@@ -71,7 +71,8 @@ function Stueckansicht({
   kapitel: number;
   beiSchliessen: () => void;
 }) {
-  const { ansicht, navigiere } = useNavigation();
+  const { ansicht } = useNavigation();
+  const oeffne = useOeffne();
   const ziel = stueckziel(stueck, kapitel);
   return (
     <div className="infofenster-stueck">
@@ -87,7 +88,7 @@ function Stueckansicht({
           className="knopf-haupt infofenster-los"
           onClick={() => {
             beiSchliessen();
-            navigiere(ziel);
+            oeffne(ziel);
           }}
         >
           {t("infofenster.los")}

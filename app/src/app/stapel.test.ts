@@ -1,6 +1,6 @@
 /** Tests für die Navigation als Stapel (Konzept 6.6). */
 import { describe, expect, it } from "vitest";
-import { neuerStapel, oben, schritt } from "./stapel";
+import { bereichDerStartansicht, neuerStapel, oben, schritt } from "./stapel";
 
 describe("Navigationsstapel", () => {
   it("öffnet, ersetzt und geht zurück", () => {
@@ -32,5 +32,13 @@ describe("Navigationsstapel", () => {
     });
     stapel = schritt(stapel, { art: "bereich", bereich: "training" });
     expect(stapel.ansichten).toEqual([{ bildschirm: "training" }]);
+  });
+
+  it("erkennt die Startseite eines Bereichs (Sprünge aus Startwahl und Tour, Fehlertest f3)", () => {
+    expect(bereichDerStartansicht({ bildschirm: "ich" })).toBe("ich");
+    expect(bereichDerStartansicht({ bildschirm: "spielen" })).toBe("spielen");
+    expect(bereichDerStartansicht({ bildschirm: "spielen", seite: "gegner" })).toBeNull();
+    expect(bereichDerStartansicht({ bildschirm: "kapitel", nummer: 0 })).toBeNull();
+    expect(bereichDerStartansicht({ bildschirm: "einstellungen" })).toBeNull();
   });
 });

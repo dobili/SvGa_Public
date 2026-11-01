@@ -85,6 +85,35 @@ describe("Speicher", () => {
     expect(speicher.speicherzustand().fehler).toBeNull();
   });
 
+  it("meldet einen vollen Gerätespeicher eigens und behält den Stand (Fehlertest f3)", async () => {
+    frischeUmgebung();
+    const speicher = await import("./speicher");
+    const datenbank = await import("./datenbank");
+    await speicher.lade(JETZT);
+    vi.spyOn(console, "error").mockImplementation(() => undefined);
+    const voll = Object.assign(new Error("voll"), { name: "QuotaExceededError" });
+    vi.spyOn(datenbank, "schreibeRoh").mockRejectedValueOnce(voll);
+    expect(
+      await speicher.aendere((d) => ({
+        ...d,
+        einstellungen: { ...d.einstellungen, strenge: "streng" },
+      })),
+    ).toBe(false);
+    expect(speicher.speicherzustand().fehler?.art).toBe("voll");
+    // Im Arbeitsspeicher bleibt der neue Stand; das nächste Speichern schreibt ihn mit.
+    expect(speicher.speicherzustand().daten.einstellungen.strenge).toBe("streng");
+    expect(await speicher.aendere((d) => ({ ...d }))).toBe(true);
+    expect(speicher.speicherzustand().fehler).toBeNull();
+    expect(await datenbank.liesRoh()).toMatchObject({ einstellungen: { strenge: "streng" } });
+  });
+
+  it("Art des Schreibfehlers: nur QuotaExceededError ist „voll“", async () => {
+    const { speicherfehlerArt } = await import("./speicher");
+    expect(speicherfehlerArt(new DOMException("x", "QuotaExceededError"))).toBe("voll");
+    expect(speicherfehlerArt(new TypeError("x"))).toBe("speichern");
+    expect(speicherfehlerArt("QuotaExceededError")).toBe("speichern");
+  });
+
   it("schreibt nichts, wenn sich nichts ändert", async () => {
     frischeUmgebung();
     const speicher = await import("./speicher");

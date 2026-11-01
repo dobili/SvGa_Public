@@ -50,7 +50,7 @@ import { Bildschirmgrenze } from "./Bildschirmgrenze";
 import { useEinstellungen } from "./einstellungen";
 import { NavigationsRahmen } from "./navigation";
 import { useNavigation } from "./navigationsKontext";
-import { neuerStapel, type Ansicht, type Stapel } from "./stapel";
+import { neuerStapel, type Ansicht, type Bereich, type Stapel } from "./stapel";
 import { gesicherterStapel } from "./stapelMerker";
 import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
@@ -58,6 +58,7 @@ import { TourAngebot } from "../tour/TourAngebot";
 import { Sprachangebot } from "./Sprachangebot";
 import { TourEbene } from "../tour/TourEbene";
 import { zusatzsprung } from "./spruenge";
+import { useTageswechsel } from "./tageswechsel";
 import { zusatzansicht } from "./zusatzansichten";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
@@ -188,20 +189,26 @@ function ansichtZumSprung(hash: string): Ansicht | null {
 }
 
 /**
+ * Der Bereich, in dem ein Sprungziel liegt, oder null ohne Sprung. Ein Trainer gehört zum Bereich
+ * Training, damit „Zurück“ zur Übersicht der Trainer führt; Pakete nennen ihren Bereich selbst
+ * (app/spruenge.ts); alles andere liegt beim Buch.
+ */
+function bereichZumSprung(hash: string): Bereich | null {
+  const sprung = ansichtZumSprung(hash);
+  if (!sprung) return null;
+  if (sprung.bildschirm === "trainer") return "training";
+  return zusatzsprung(hash)?.bereich ?? "buch";
+}
+
+/**
  * Der Stapel beim Start: Ein Sprungziel in der Adresse beginnt beim Buch, ein Trainer beim
  * Training (der Sprung folgt in Hauptrahmen); sonst der gesicherte Stapel, wenn er sich
  * wiederherstellen lässt (V2), und im Zweifel das Buch wie bisher. Auch ein Sprachwechsel baut den Rahmen neu auf und bleibt so auf
  * dem Bildschirm, auf dem der Leser die Sprache gewählt hat.
  */
 function anfangsstapel(): Stapel {
-  const sprung = ansichtZumSprung(window.location.hash);
-  // Ein Trainer gehört zum Bereich Training, damit „Zurück“ zur Übersicht der Trainer führt.
-  if (sprung)
-    return neuerStapel(
-      sprung.bildschirm === "trainer"
-        ? "training"
-        : (zusatzsprung(window.location.hash)?.bereich ?? "buch"),
-    );
+  const bereich = bereichZumSprung(window.location.hash);
+  if (bereich) return neuerStapel(bereich);
   return gesicherterStapel() ?? neuerStapel("buch");
 }
 
@@ -215,17 +222,39 @@ function useTonEntsperren() {
   }, [an]);
 }
 
-function Hauptrahmen() {
-  const { navigiere } = useNavigation();
-  useTonEntsperren();
+/**
+ * Öffnet das Sprungziel der Adresse und entfernt es aus ihr: beim Start und wieder, wenn sich bei
+ * offener App nur der Teil hinter „#“ ändert (etwa ein zweiter geteilter Link im selben Tab, der
+ * Browser lädt dann nicht neu). Wie beim Start beginnt der Bereich des Ziels neu, damit „Zurück“
+ * dorthin führt, wo es die Beschriftung sagt (bei einer Herausforderung: „Training“). Unbekannte
+ * Sprungziele bleiben in der Adresse und ändern nichts.
+ */
+function useSprungAusDerAdresse() {
+  const { navigiere, wechsleBereich } = useNavigation();
   useEffect(() => {
-    const ziel = ansichtZumSprung(window.location.hash);
-    if (!ziel) return;
-    window.history.replaceState(window.history.state, "", window.location.pathname);
-    navigiere(ziel);
-    // Nur beim Start: Die Navigation ändert sich danach, der Sprung soll nicht wiederkommen.
+    const folge = (beimStart: boolean) => {
+      const ziel = ansichtZumSprung(window.location.hash);
+      const bereich = bereichZumSprung(window.location.hash);
+      if (!ziel || !bereich) return;
+      window.history.replaceState(window.history.state, "", window.location.pathname);
+      // Beim Start steht der Bereich schon (anfangsstapel); später wie beim Start dorthin.
+      if (!beimStart) wechsleBereich(bereich);
+      navigiere(ziel);
+    };
+    folge(true);
+    const beiAenderung = () => folge(false);
+    window.addEventListener("hashchange", beiAenderung);
+    return () => window.removeEventListener("hashchange", beiAenderung);
+    // Beide rufen nur den festen Reducer auf; der Horcher bleibt für die ganze Sitzung.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+}
+
+function Hauptrahmen() {
+  useTonEntsperren();
+  useSprungAusDerAdresse();
+  // Neuer Tag bei offener App: neu zeichnen, damit „Heute“ und Co. nicht beim alten Tag bleiben.
+  useTageswechsel();
   return (
     <div className="rahmen">
       <UpdateHinweis />

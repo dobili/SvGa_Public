@@ -16,7 +16,7 @@
  */
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
-import { useNavigation } from "../app/navigationsKontext";
+import { useOeffne } from "../app/navigationsKontext";
 import { haltFokus } from "./haltFokus";
 import { t } from "../i18n/sprache";
 import { merkeGesehen } from "./tourMerker";
@@ -93,7 +93,8 @@ function useTourablauf(kennung: TourKennung) {
 /** Die Tour, solange sie läuft; der Fokus kehrt danach dorthin zurück, wo er vorher war. */
 function LaufendeTour({ kennung }: { kennung: TourKennung }) {
   const { schritte, stelle, ende, blaettere } = useTourablauf(kennung);
-  const { navigiere } = useNavigation();
+  // Sprung eines Schritts (starttouren.ts): Startseite eines Bereichs wechselt den Bereich.
+  const springe = useOeffne();
   const { rechteck, zeigbar } = useZielbeobachtung(schritte, stelle);
   const karte = useRef<HTMLDivElement>(null);
   const titelId = useId();
@@ -183,9 +184,8 @@ function LaufendeTour({ kennung }: { kennung: TourKennung }) {
               type="button"
               className="knopf-haupt tour-sprung"
               onClick={() => {
-                const ziel = schritt.sprung?.ansicht;
                 ende();
-                if (ziel) navigiere(ziel);
+                if (schritt.sprung) springe(schritt.sprung.ansicht);
               }}
             >
               {t(schritt.sprung.text)}

@@ -7,7 +7,7 @@
  * legt sie ab; der Bronzerahmen bleibt gesperrt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
 
 /** Öffnet das Profil frisch (Neuladen beginnt beim Buch) und liefert die Karte der Extras. */
 async function extraskarte(page: Page) {
@@ -45,8 +45,7 @@ test("Gesperrte Extras zeigen ihre Bedingung; nach der Probe-Stufe legt Antippen
   await expect(gold).toHaveAttribute("aria-checked", "false");
 
   // Probe auf der Aufgabenseite: nächste Stufe (Stufe 2).
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("abzeichen-probe");
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Nächste Stufe erreichen" }).click();

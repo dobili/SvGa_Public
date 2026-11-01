@@ -5,7 +5,7 @@
  * Buchstaben (seit P6 in der englischen Unterschrift), die Lizenzen kommen aus der Sprachdatei.
  */
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneAbbildung, oeffneEinstellungen, starteImBrowser } from "./hilfen";
 
 test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und Lizenzen", async ({
   page,
@@ -36,8 +36,7 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
   await page.getByRole("radio", { name: "Deutsch" }).click();
 
   // Der Sprung über die Adresse wirkt beim Start der App (wie aus der Fußzeile der Startseite).
-  await page.goto("/app/#lizenzen");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#lizenzen");
   await expect(page.getByRole("heading", { name: "Lizenzen", level: 1 })).toBeVisible();
   await expect(
     page.getByText("Stockfish 19 (Stockfish.js von Nathan Rugg, Chess.com)"),

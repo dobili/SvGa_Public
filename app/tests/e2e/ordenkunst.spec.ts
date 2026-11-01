@@ -5,14 +5,13 @@
  * Abzeichen in Reihen; ein Tipp zeigt die Bedingung.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { ladeMitSprung, starteImBrowser } from "./hilfen";
 
 const leiste = (page: Page) => page.getByRole("navigation", { name: "Hauptbereiche" });
 
 /** Setzt den Ring „Übungen gelöst“ über die Aufgabenseite zur Probe auf voll. */
 async function uebungenVoll(page: Page): Promise<void> {
-  await page.goto("/app/#aufgaben");
-  await page.reload();
+  await ladeMitSprung(page, "/app/#aufgaben");
   const probe = page.getByTestId("orden-probe");
   await probe.locator("summary").click();
   await probe

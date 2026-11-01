@@ -304,3 +304,15 @@ export async function oeffneReiter(seite: Page, kennung: string): Promise<void> 
   if ((await reiter.getAttribute("aria-expanded")) !== "true") await reiter.click();
   await expect(reiter).toHaveAttribute("aria-expanded", "true");
 }
+
+/**
+ * Lädt die App neu mit einem Sprungziel in der Adresse („/app/#aufgaben“), wie beim Öffnen eines
+ * Links. Seit dem Fehlertest f3 (01.11.2026) folgt die offene App auch einem Sprung, bei dem sich
+ * nur der Teil hinter „#“ ändert, und entfernt ihn dabei aus der Adresse; ein `page.reload()`
+ * danach fände ihn nicht mehr. Der Umweg über eine leere Seite lädt die App deshalb ganz neu (mit
+ * allen Startskripten aus `addInitScript`).
+ */
+export async function ladeMitSprung(seite: Page, adresse: string): Promise<void> {
+  await seite.goto("about:blank");
+  await seite.goto(adresse);
+}

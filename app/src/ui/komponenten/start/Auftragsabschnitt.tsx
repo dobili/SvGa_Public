@@ -12,7 +12,7 @@
  */
 import { Check } from "lucide-react";
 import { useEffect } from "react";
-import { useNavigation } from "../../../app/navigationsKontext";
+import { useOeffne } from "../../../app/navigationsKontext";
 import { ladeIndex } from "../../../daten/laden";
 import { t } from "../../../i18n/sprache";
 import type { Nutzerdaten } from "../../../speicher/format";
@@ -86,10 +86,10 @@ function tausche(stelle: number, kapitel: readonly Kapitelangabe[]): void {
 
 /** Führt den Knopf aus: Ansicht öffnen oder Bot vorbelegen. */
 function useKnopf(): (ziel: Knopfziel) => void {
-  const { navigiere } = useNavigation();
+  const oeffne = useOeffne();
   const spiele = useSpielvorbelegung();
   return (ziel) =>
-    ziel.art === "bot" ? spiele({ bot: ziel.bot, tempo: null }) : navigiere(ziel.ansicht);
+    ziel.art === "bot" ? spiele({ bot: ziel.bot, tempo: null }) : oeffne(ziel.ansicht);
 }
 
 /** Knopf zum Ziel und, wenn möglich, „Tauschen“. */

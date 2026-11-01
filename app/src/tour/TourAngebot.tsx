@@ -11,12 +11,13 @@
  * den Trainingsseiten der Website): Dann erst beim nächsten normalen Start. Einstellungen › Hilfe
  * öffnet sie jederzeit wieder (tourStand.ts). Gleich, wie die Antwort ausfällt, merkt sich das
  * Gerät, dass gefragt wurde (tourMerker.ts).
- * Abhängigkeiten: tourMerker.ts, tourStand.ts, Navigation, i18n, lucide-react.
+ * Abhängigkeiten: tourMerker.ts, tourStand.ts, app/sprachangebot.ts, Navigation, i18n, lucide-react.
  */
 import { BookOpen, Compass, Swords, type LucideIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type RefObject } from "react";
-import type { Ansicht } from "../app/stapel";
+import type { Bereich } from "../app/stapel";
 import { useNavigation } from "../app/navigationsKontext";
+import { useSprachangebotFaellig } from "../app/sprachangebot";
 import { t, type Textschluessel } from "../i18n/sprache";
 import { haltFokus } from "./haltFokus";
 import { merkeAngeboten, useTourMerker } from "./tourMerker";
@@ -26,11 +27,11 @@ import type { TourKennung } from "./touren";
 const SYMBOLGROESSE = 28;
 const WEGSYMBOLGROESSE = 24;
 
-/** Ein Weg der Startwahl: Zeichen, Beschriftung, Bildschirm und Tour. */
+/** Ein Weg der Startwahl: Zeichen, Beschriftung, Bereich (dessen Startseite) und Tour. */
 interface Startweg {
   readonly zeichen: LucideIcon;
   readonly text: Textschluessel;
-  readonly ansicht: Ansicht;
+  readonly bereich: Bereich;
   readonly tour: TourKennung;
 }
 
@@ -38,19 +39,19 @@ const WEGE: readonly Startweg[] = [
   {
     zeichen: BookOpen,
     text: "starttour.wahl.buch",
-    ansicht: { bildschirm: "buch" },
+    bereich: "buch",
     tour: "start.buch",
   },
   {
     zeichen: Swords,
     text: "starttour.wahl.spielen",
-    ansicht: { bildschirm: "spielen" },
+    bereich: "spielen",
     tour: "start.spielen",
   },
   {
     zeichen: Compass,
     text: "starttour.wahl.umsehen",
-    ansicht: { bildschirm: "buch" },
+    bereich: "buch",
     tour: "haupt",
   },
 ];
@@ -60,13 +61,20 @@ function startMitBuch(): boolean {
   return new URLSearchParams(window.location.search).get("start") === "buch";
 }
 
+/** „Später“: Die Frage gilt als gestellt, die Wahl schließt (auch Esc und die Zurück-Taste). */
+function spaeter(): void {
+  merkeAngeboten();
+  schliesseStartwahl();
+}
+
 /** Merkt die Frage, schließt die Wahl, geht zum Bildschirm des Weges und startet seine Tour. */
 function useWegWahl() {
-  const { navigiere } = useNavigation();
+  const { wechsleBereich } = useNavigation();
   return (weg: Startweg) => {
     merkeAngeboten();
     schliesseStartwahl();
-    navigiere(weg.ansicht);
+    // Der Bereich des Weges von vorn, auch aus den Einstellungen: Leiste und „Zurück“ passen so.
+    wechsleBereich(weg.bereich);
     starteTour(weg.tour);
   };
 }
@@ -135,23 +143,22 @@ export function TourAngebot() {
   const erster = useRef<HTMLButtonElement>(null);
   const erststart =
     ohneSprung && !merker.angeboten && merker.symbolAn && ansicht.bildschirm === "buch";
+  // Erst die Sprache (Wunsch des Autors, 31.10.2026): Die Frage danach liegt über der Startwahl;
+  // der Buch-Weg aus dem QR-Code beginnt erst, wenn sie beantwortet ist.
+  const sprachfrage = useSprachangebotFaellig();
   useEffect(() => {
     // QR-Code im Buch: gleich der Buch-Weg, ohne Frage.
-    if (erststart && mitBuch && WEGE[0]) waehle(WEGE[0]);
-  }, [erststart, mitBuch, waehle]);
+    if (erststart && mitBuch && !sprachfrage && WEGE[0]) waehle(WEGE[0]);
+  }, [erststart, mitBuch, sprachfrage, waehle]);
   const offen = aufWunsch || (erststart && !mitBuch);
   useEffect(() => {
-    if (offen) erster.current?.focus();
+    if (!offen) return;
+    erster.current?.focus();
+    // Die Zurück-Taste des Geräts schließt die Frage wie „Später“, so wie sie eine Tour beendet;
+    // sonst stünde die Frage über dem Bildschirm, zu dem die App zurückgeht.
+    window.addEventListener("popstate", spaeter);
+    return () => window.removeEventListener("popstate", spaeter);
   }, [offen]);
   if (!offen) return null;
-  return (
-    <Startwahlkarte
-      erster={erster}
-      waehle={waehle}
-      spaeter={() => {
-        merkeAngeboten();
-        schliesseStartwahl();
-      }}
-    />
-  );
+  return <Startwahlkarte erster={erster} waehle={waehle} spaeter={spaeter} />;
 }

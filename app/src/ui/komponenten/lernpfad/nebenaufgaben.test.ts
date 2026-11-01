@@ -71,6 +71,21 @@ describe("Nebenaufgaben", () => {
     expect(ohneOrt).toEqual(["abzeichen:woche"]);
   });
 
+  it("die Orden der Teile führen zum ersten Kapitel ihres Teils (Fehlertest f3)", () => {
+    expect(stueckziel(stueck("orden", "teil-grundlagen"))).toEqual({
+      bildschirm: "kapitel",
+      nummer: 0,
+    });
+    expect(stueckziel(stueck("orden", "teil-endspiel"))).toEqual({
+      bildschirm: "kapitel",
+      nummer: 8,
+    });
+    expect(stueckziel(stueck("orden", "teil-praxis"))).toEqual({
+      bildschirm: "kapitel",
+      nummer: 11,
+    });
+  });
+
   it("verteilt die Stücke, lässt Teile weg, zählt doppelte einmal und hängt Unbekanntes ans Ende", () => {
     const stuecke = [
       stueck("abzeichen", "warum"),

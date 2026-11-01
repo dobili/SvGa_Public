@@ -133,9 +133,10 @@ export function stellungsschluessel(fen: string): string {
 
 /**
  * „Ein strategisches Gegenbeispiel: das Wolga-Gambit“ → „Wolga-Gambit“. Ohne „das“ braucht ein
- * Adjektiv davor die starke Endung: „Das Dänische Gambit“ → „Dänisches Gambit“.
+ * Adjektiv davor die starke Endung: „Das Dänische Gambit“ → „Dänisches Gambit“. Auch die
+ * Gambitliste der Trainer nutzt diese Namen (training/abweichungstrainer.ts, gambitsAus).
  */
-function ohneArtikel(titel: string): string {
+export function ohneArtikel(titel: string): string {
   const nachDoppelpunkt = titel.includes(":") ? titel.slice(titel.lastIndexOf(":") + 1) : titel;
   const text = nachDoppelpunkt.trim();
   const ohne = text.replace(ARTIKEL, "").trim();

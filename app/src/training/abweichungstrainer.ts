@@ -15,6 +15,7 @@
 import type { Color } from "chessops/types";
 import type { Kapitel } from "../daten/generiert/kapitel";
 import { buchbeispiele } from "../daten/buchbeispiele";
+import { ohneArtikel } from "../schach/eroeffnungsindex";
 import { eroeffnungenAus, varianten, type Repertoireeroeffnung } from "./repertoiretrainer";
 import { mische, type Zufall } from "./zufall";
 
@@ -103,17 +104,20 @@ const GAMBITABSCHNITT = /^3\.(?:[4-9]|10)$/;
 const DAMENGAMBIT = /Damengambit/;
 
 /**
- * Die Gambits für den Abweichungsmodus in Kapitel 3: die Zugfolgen der Gambit-Abschnitte von
+ * Die Gambits für den Abweichungsmodus und den Repertoire-Trainer in Kapitel 3: die Zugfolgen der Gambit-Abschnitte von
  * Kapitel 3 (nur solche mit „Gambit“ im Titel und übbaren Varianten) und das Damengambit aus
  * Kapitel 2.
- * Warum: Kapitel 3 hat keine Steckbriefe; ohne diese Auswahl fehlten die Gambits ganz.
+ * Warum: Kapitel 3 hat keine Steckbriefe; ohne diese Auswahl fehlten die Gambits ganz. Die Namen
+ * stehen ohne Vorspann und Artikel wie im Eröffnungsindex (wenig Platz auf der Startkarte).
  * Beispiel: Königsgambit, Evans-Gambit, Dänisches Gambit, …, Lettisches Gambit, Damengambit.
  */
 export function gambitsAus(kapitel3: Kapitel, kapitel2: Kapitel): Repertoireeroeffnung[] {
   const gambits = buchbeispiele(kapitel3)
     .filter((b) => b.abschnitt !== null && GAMBITABSCHNITT.test(b.abschnitt))
     .filter((b) => /gambit/i.test(b.titel) && varianten(b).length > 0)
-    .map((b) => ({ id: b.id, titel: b.titel.replace(/\\,/g, " "), beispiel: b }));
-  const damengambit = eroeffnungenAus(kapitel2).filter((e) => DAMENGAMBIT.test(e.titel));
+    .map((b) => ({ id: b.id, titel: ohneArtikel(b.titel.replace(/\\,/g, " ")), beispiel: b }));
+  const damengambit = eroeffnungenAus(kapitel2)
+    .filter((e) => DAMENGAMBIT.test(e.titel))
+    .map((e) => ({ ...e, titel: ohneArtikel(e.titel) }));
   return [...gambits, ...damengambit];
 }

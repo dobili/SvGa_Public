@@ -252,3 +252,11 @@
   margin: 0 0 var(--raster);
   font-size: var(--groesse-mittel);
 }
+
+/* Repertoire-Trainer, Praxis: Zahl der gewählten Varianten und „Alle entfernen“ in einer Zeile. */
+.praxisauswahl-zahl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+}

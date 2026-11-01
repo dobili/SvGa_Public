@@ -112,3 +112,19 @@ export function useGemerkteWortstufe(
   const [wert, setze] = useGemerkt(trainer, feld, WORTSTUFENWERTE, GEMISCHT);
   return [wortstufeAus(wert), (stufe) => setze(stufe ?? GEMISCHT)];
 }
+
+/**
+ * Ein gemerkter freier Text eines Trainers (ohne Liste erlaubter Werte), etwa die gewählten
+ * Varianten aus der Praxis im Repertoire-Trainer; prüfen muss der Trainer selbst.
+ *
+ * Beispiel: useGemerkterText("repertoire", "praxiswahl") → ["praxis:Italian Game", setze].
+ * Sonderfall: Ohne gemerkten Wert ist der Text leer.
+ */
+export function useGemerkterText(trainer: string, feld: string): [string, (text: string) => void] {
+  const [text, setzeText] = useState<string>(() => gemerkteWerte(trainer)[feld] ?? "");
+  const setze = (neu: string) => {
+    merkeWert(trainer, feld, neu);
+    setzeText(neu);
+  };
+  return [text, setze];
+}

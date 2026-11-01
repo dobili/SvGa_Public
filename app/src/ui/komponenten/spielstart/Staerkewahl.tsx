@@ -161,13 +161,19 @@ function Seite({
  * Die Klappe mit Bändern und den beiden Listen. Seit Paket 9 mit `wahl` statt eines einzelnen
  * Wertes: Im Spielfenster ist genau ein Wert gewählt, im Gegnereditor mehrere (Haken).
  * `praefix` hält die Kennungen der Bandfelder eindeutig, wenn zwei Klappen auf dem Bildschirm sind.
+ * Der Repertoire-Trainer (1.11.2026) gibt eine eigene `erklaerung` (kein Bot) und öffnet die
+ * Klappe gleich (`offen`), weil der Leser sie eben erst mit dem Schalter „Praxis“ angefordert hat.
  */
 export function Staerkewahl({
   wahl,
   praefix = "staerke",
+  erklaerung = t("spielen.staerkewahl.erklaerung"),
+  offen = false,
 }: {
   wahl: Staerkewahlart;
   praefix?: string;
+  erklaerung?: string;
+  offen?: boolean;
 }) {
   const daten = useDaten(ladeEroeffnungsbaender, "eroeffnungsbaender");
   const [von, setzeVon] = useState<number | null>(null);
@@ -177,9 +183,9 @@ export function Staerkewahl({
   const a = von ?? Math.max(0, d.baender.indexOf(VORGABE_VON));
   const b = bis ?? Math.max(0, d.baender.indexOf(VORGABE_BIS));
   return (
-    <details className="unterabschnitt staerkewahl" data-testid="staerkewahl">
+    <details className="unterabschnitt staerkewahl" data-testid="staerkewahl" open={offen}>
       <summary>{t("spielen.staerkewahl.titel")}</summary>
-      <p className="hinweis">{t("spielen.staerkewahl.erklaerung")}</p>
+      <p className="hinweis">{erklaerung}</p>
       <div className="staerkewahl-baender">
         <Bandfeld
           daten={d}

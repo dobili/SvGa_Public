@@ -6,68 +6,18 @@
  * Impressum und Datenschutz stehen als statische Seiten neben der Startseite des Buches
  * (/impressum/, /datenschutz/); hier nur die Verweise.
  * Alle Texte dieser Seite stehen in der Sprachdatei, damit es sie auch englisch gibt (AP 18).
- * Abhängigkeiten: Kopfzeile, i18n.
+ * Die Liste der Bausteine steht in lizenzbausteine.ts.
+ * Abhängigkeiten: Kopfzeile, i18n, lizenzbausteine.ts.
  */
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
-
-/** Öffentlicher Quellcode der App, wie ihn die GPL verlangt; als Link, nicht nur als Text. */
-const QUELLCODE = "https://github.com/dobili/SvGa_Public";
-/**
- * Lizenztexte der eingebauten npm-Pakete mit Copyright-Zeilen, erzeugt von Vite beim Build
- * (build.license in vite.config.ts); MIT und ISC verlangen, dass der Text mitkommt.
- */
-const PAKETTEXTE = "/lizenzen/bausteine.txt";
-
-/**
- * Bausteine mit Lizenz; Name, Lizenz und Herkunft stehen in der Sprachdatei
- * (lizenzen.<kennung>.…), dazu wahlweise der Lizenztext und eine Adresse der Quelle.
- */
-const BAUSTEINE = [
-  { kennung: "app", text: "/lizenzen/gpl-3.0.txt", quelle: QUELLCODE },
-  { kennung: "buch" },
-  { kennung: "stockfish", text: "/engine/LIZENZ-stockfish.txt" },
-  { kennung: "maia", text: "/lizenzen/mit-maia2.txt" },
-  { kennung: "onnxruntime", text: "/lizenzen/mit-onnxruntime.txt" },
-  { kennung: "chessops", text: PAKETTEXTE },
-  { kennung: "skaknew", text: "/lizenzen/lppl-1.3c.txt" },
-  { kennung: "cburnett", text: "/lizenzen/gpl-3.0.txt" },
-  { kennung: "mpchess", text: "/lizenzen/gpl-3.0.txt" },
-  { kennung: "chessnut", text: "/lizenzen/apache-2.0-chessnut.txt" },
-  { kennung: "celtic", text: "/lizenzen/mit-chess-art.txt" },
-  { kennung: "eiche", text: "/lizenzen/mit-chess-art.txt" },
-  { kennung: "kiefer" },
-  // Figurensatz „Gold“ (Extra P7): Texte unter extras.lizenz.gold.
-  { kennung: "gold", extra: true, text: "/lizenzen/gpl-gold-cburnett.txt" },
-  { kennung: "schriften", text: "/lizenzen/ofl-source-sans-3.txt" },
-  { kennung: "holzbilder" },
-  { kennung: "materialbretter", text: "/lizenzen/agpl-3.0.txt" },
-  { kennung: "portraets", text: "/lizenzen/cc-by-4.0.txt" },
-  { kennung: "eroeffnungsnamen" },
-  { kennung: "puzzles" },
-  { kennung: "zusatzpartien", quelle: "https://database.lichess.org/#broadcasts" },
-  { kennung: "react", text: PAKETTEXTE },
-  { kennung: "workbox", text: PAKETTEXTE },
-  { kennung: "lucide", text: PAKETTEXTE },
-  { kennung: "idb", text: PAKETTEXTE },
-  { kennung: "badrap", text: PAKETTEXTE },
-] as const satisfies readonly {
-  kennung: string;
-  /** Freischaltbares Extra (Gamifizierung P7): Texte unter „extras.lizenz.“ statt „lizenzen.“. */
-  extra?: boolean;
-  text?: string;
-  quelle?: string;
-}[];
+import { BAUSTEINE, type Lizenzbaustein } from "./lizenzbausteine";
 
 /** Ein Text eines Bausteins: Name, Lizenz oder Herkunft. */
-function bausteintext(
-  baustein: (typeof BAUSTEINE)[number],
-  feld: "name" | "lizenz" | "herkunft",
-): string {
-  const schluessel =
-    "extra" in baustein
-      ? `extras.lizenz.${baustein.kennung}.${feld}`
-      : `lizenzen.${baustein.kennung}.${feld}`;
+function bausteintext(baustein: Lizenzbaustein, feld: "name" | "lizenz" | "herkunft"): string {
+  const schluessel = baustein.extra
+    ? `extras.lizenz.${baustein.kennung}.${feld}`
+    : `lizenzen.${baustein.kennung}.${feld}`;
   return t(schluessel as Textschluessel);
 }
 
@@ -95,14 +45,14 @@ export function Lizenzen({ beiZurueck }: { beiZurueck?: () => void }) {
               <strong>{bausteintext(baustein, "name")}</strong>
               <br />
               {bausteintext(baustein, "lizenz")} ·{" "}
-              {"quelle" in baustein ? (
+              {baustein.quelle ? (
                 <a href={baustein.quelle} target="_blank" rel="noreferrer">
                   {bausteintext(baustein, "herkunft")}
                 </a>
               ) : (
                 bausteintext(baustein, "herkunft")
               )}
-              {"text" in baustein && (
+              {baustein.text && (
                 <>
                   {" · "}
                   <a href={baustein.text} target="_blank" rel="noreferrer">

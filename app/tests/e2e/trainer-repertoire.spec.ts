@@ -108,3 +108,44 @@ test("Repertoire-Trainer: Italienisch aus der Praxis, die häufigsten 3, als Wei
   await oeffneTrainer(page, "repertoire");
   await expect(page.getByTestId("repertoire-praxisanzahl")).toHaveText("3 gewählt");
 });
+
+// Wunsch des Autors zu N2538 (1.11.2026): Nach dem Namen geht die Variante mit den häufigsten
+// Folgezügen im Band des Lesers weiter; ohne Wertung im Band 1200.
+test("Repertoire-Trainer: Old Sicilian aus der Praxis, verlängert im Band 1200", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "repertoire");
+  await page.getByTestId("repertoire-praxis").getByRole("checkbox").check();
+  await expect(page.getByTestId("repertoire-praxisverlaengerung")).toContainText("um 1200");
+  const zeile = page.getByTestId("staerkewahl").locator("li", {
+    has: page.getByRole("button", { name: /^Sizilianische Verteidigung/ }),
+  });
+  await zeile.getByTestId("variantenbaum").locator("summary").first().click();
+  await zeile.getByRole("button", { name: /^Old Sicilian/ }).click();
+  await expect(page.getByTestId("repertoire-praxisanzahl")).toHaveText("1 gewählt");
+  await waehleInZeile(page, "zeile-seite", "Weiß");
+  await page
+    .getByTestId("repertoire-wahl")
+    .getByRole("button", { name: /Runde starten/ })
+    .click();
+  const runde = page.getByTestId("trainerrunde");
+  const zuege = page.getByTestId("repertoire-zuege");
+  // Bis zum Namen (2... Sc6), dann die Fortsetzung der Spieler um 1200 (Lichess 2026-09)
+  const weiss: readonly (readonly [string, string, string])[] = [
+    ["e2", "e4", "1. e4 c5"],
+    ["g1", "f3", "1. e4 c5 2. Sf3 Sc6"],
+    ["f1", "c4", "1. e4 c5 2. Sf3 Sc6 3. Lc4 e6"],
+    ["e1", "g1", "1. e4 c5 2. Sf3 Sc6 3. Lc4 e6 4. O-O d5"],
+    ["e4", "d5", "1. e4 c5 2. Sf3 Sc6 3. Lc4 e6 4. O-O d5 5. exd5 exd5"],
+    ["c4", "b5", "1. e4 c5 2. Sf3 Sc6 3. Lc4 e6 4. O-O d5 5. exd5 exd5 6. Lb5 Ld7"],
+  ];
+  for (const [von, nach, text] of weiss) {
+    await ziehe(page, von, nach);
+    await expect(zuege).toHaveText(text);
+  }
+  await expect(runde).not.toContainText("Variante zu Ende");
+  await ziehe(page, "f1", "e1");
+  await expect(runde).toContainText("Variante zu Ende, Fehler und Hilfen: 0");
+  await page.screenshot({ path: `${BILDER}/repertoire-verlaengert.png` });
+});

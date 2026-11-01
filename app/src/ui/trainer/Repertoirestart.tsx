@@ -8,23 +8,35 @@
  * zeichnet Eroeffnungsstart.tsx die Karte, für die Praxis diese Datei mit der Auswahl aus
  * Praxiswahl.tsx. Gemerkt wird alles im Gerätemerker des Trainers („quelle“, „eroeffnung“,
  * „gambit“, „praxis“, „praxiswahl“, „seite“); das Speicherformat bleibt unverändert.
+ * Die Varianten aus der Praxis gehen nach dem Namen mit den häufigsten Folgezügen im Band des
+ * Lesers weiter (Wunsch des Autors zu N2538, training/praxisfortsetzung.ts); das Band kommt aus
+ * seiner Wertung (training/rivalen.ts, eigeneWertung), ohne Wertung 1200.
  * Abhängigkeiten: training/repertoiretrainer.ts, training/praxisrepertoire.ts,
- * training/abweichungstrainer.ts (gambitsAus), Eroeffnungsstart, Startkarte, Praxiswahl, i18n.
+ * training/praxisfortsetzung.ts, training/abweichungstrainer.ts (gambitsAus), Eroeffnungsstart,
+ * Startkarte, Praxiswahl, speicher.ts, i18n.
  */
 import type { Color } from "chessops/types";
-import type { ReactNode } from "react";
-import { ladeEroeffnungsbaender } from "../../daten/laden";
+import { useMemo, type ReactNode } from "react";
+import { ladeEroeffnungsbaender, ladePraxisfortsetzungen } from "../../daten/laden";
 import type { Kapitel } from "../../daten/generiert/kapitel";
 import { sprache, tZahl } from "../../i18n/sprache";
+import { useSpeicher } from "../../speicher/speicher";
 import { gambitsAus } from "../../training/abweichungstrainer";
+import {
+  bandindexFuer,
+  WERTUNG_OHNE_PARTIEN,
+  type Praxisfortsetzungen,
+} from "../../training/praxisfortsetzung";
 import {
   praxisanzahl,
   praxislinien,
   wahlAlsText,
   wahlAusText,
   type Praxislinie,
+  type Verlaengerung,
 } from "../../training/praxisrepertoire";
 import { eroeffnungenAus } from "../../training/repertoiretrainer";
+import { eigeneWertung } from "../../training/rivalen";
 import { useDaten } from "../komponenten/bausteine/useDaten";
 import { Eroeffnungsstart, type Eroeffnungswahl } from "./Eroeffnungsstart";
 import {
@@ -51,6 +63,19 @@ function variantenzahl(anzahl: number): string {
   return tZahl("trainerstart.varianten", anzahl, { anzahl });
 }
 
+/** Die Verlängerung im Band des Lesers, null, solange die Fortsetzungen laden (oder fehlen). */
+function useVerlaengerung(): { verlaengerung: Verlaengerung | null; eigene: boolean } {
+  const fortsetzungen = useDaten(ladePraxisfortsetzungen, "praxisfortsetzungen");
+  const wertung = useSpeicher((z) => eigeneWertung(z.daten)?.wert ?? null);
+  const daten: Praxisfortsetzungen | null =
+    fortsetzungen.art === "fertig" ? fortsetzungen.wert : null;
+  const verlaengerung = useMemo(
+    () => (daten ? { daten, band: bandindexFuer(daten, wertung ?? WERTUNG_OHNE_PARTIEN) } : null),
+    [daten, wertung],
+  );
+  return { verlaengerung, eigene: wertung !== null };
+}
+
 /** Die Karte für die Praxis: Zeilen „Aus“ und Seite, Auswahl der Varianten, Startknopf. */
 function Praxisstart({
   vorne,
@@ -66,9 +91,16 @@ function Praxisstart({
   const daten = useDaten(ladeEroeffnungsbaender, "eroeffnungsbaender");
   const [text, setzeText] = useGemerkterText(KENNUNG, "praxiswahl");
   const [seite, setzeSeite] = useGemerkt<Color>(KENNUNG, "seite", SEITEN, "white");
+  const { verlaengerung, eigene } = useVerlaengerung();
   const werte = wahlAusText(text);
   const setzeWerte = (neu: readonly string[]) => setzeText(wahlAlsText(neu));
-  const linien = daten.art === "fertig" ? praxislinien(daten.wert, werte, sprache() === "de") : [];
+  const baender = daten.art === "fertig" ? daten.wert : null;
+  // Warum gemerkt: Mit „Alle Varianten“ sind es viele Linien, jede wird Zug für Zug geprüft.
+  const linien = useMemo(
+    () =>
+      baender ? praxislinien(baender, wahlAusText(text), sprache() === "de", verlaengerung) : [],
+    [baender, text, verlaengerung],
+  );
   const anzahl = praxisanzahl(linien, seite, jeRunde);
   return (
     <Startkarte
@@ -78,7 +110,12 @@ function Praxisstart({
       hinweis={
         <>
           {schalter}
-          <Praxiskopf werte={werte} setze={setzeWerte} />
+          <Praxiskopf
+            werte={werte}
+            setze={setzeWerte}
+            band={verlaengerung ? (verlaengerung.daten.baender[verlaengerung.band] ?? null) : null}
+            eigene={eigene}
+          />
         </>
       }
       nachStart={<Praxisliste werte={werte} setze={setzeWerte} />}

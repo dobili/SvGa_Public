@@ -71,6 +71,45 @@ def ganze_datei(pfad: str, bereich: str, titel: str, datei: Path) -> Wikiseite:
     )
 
 
+#: Listenpunkt, der mit einem Buchbefund beginnt: „- **Buchbefund B7:** …“, „- **Befund an den Autor …“.
+BEFUNDPUNKT = re.compile(r"^(\s*)- (?:[A-Z]\d+\. )?\*\*(?:buchbefund|befund an den autor)", re.IGNORECASE)
+#: Überschrift unterhalb der Abschnittsebene („### …“ bis „###### …“).
+UNTERTITEL = re.compile(r"^(#{3,6}) ")
+
+
+def ohne_buchbefunde(text: str) -> str:
+    """Entfernt Unterabschnitte (### bis ######) mit „Buchbefund“ im Titel und Listenpunkte, die
+    mit einem Buchbefund beginnen, samt ihren eingerückten Folgezeilen.
+
+    Warum: Der Filter nach Abschnittstiteln reicht nicht; in ENTSCHEIDUNGEN.md stehen Befunde auch
+    als Unterabschnitt („#### B. Buchbefunde aus der Textarbeit“) oder als einzelner Punkt in einem
+    sonst harmlosen Abschnitt (Prüfung für das Wiki, 1.11.2026).
+    Beispiel: „- **Buchbefund B7:** Link …\\n  Folgezeile\\n- Weiter“ → „- Weiter“.
+    """
+    behalten: list[str] = []
+    titelebene = 0  # > 0: innerhalb eines ausgelassenen Unterabschnitts dieser Ebene
+    punkteinzug = -1  # >= 0: innerhalb eines ausgelassenen Listenpunkts mit diesem Einzug
+    for zeile in text.splitlines():
+        titel = UNTERTITEL.match(zeile)
+        if titel and titelebene and len(titel.group(1)) <= titelebene:
+            titelebene = 0
+        if titelebene:
+            continue
+        if titel and AUSGESCHLOSSEN.search(zeile):
+            titelebene = len(titel.group(1))
+            continue
+        einzug = len(zeile) - len(zeile.lstrip())
+        if punkteinzug >= 0 and zeile.strip() and einzug > punkteinzug:
+            continue
+        punkteinzug = -1
+        punkt = BEFUNDPUNKT.match(zeile)
+        if punkt:
+            punkteinzug = len(punkt.group(1))
+            continue
+        behalten.append(zeile)
+    return "\n".join(behalten)
+
+
 def entscheidungen(wurzel: Path) -> list[Wikiseite]:
     """Je Abschnitt von ENTSCHEIDUNGEN.md eine Seite, ohne Buchbefunde."""
     datei = wurzel / "docs" / "ENTSCHEIDUNGEN.md"
@@ -83,7 +122,7 @@ def entscheidungen(wurzel: Path) -> list[Wikiseite]:
         while pfad in vergeben:  # gleiche Überschrift zweimal: Nummer anhängen
             pfad, nummer = f"entscheidungen/{kennung(titel)}-{nummer}", nummer + 1
         vergeben.add(pfad)
-        seiten.append(Wikiseite(pfad, "projekt", titel, inhalt, "docs/ENTSCHEIDUNGEN.md"))
+        seiten.append(Wikiseite(pfad, "projekt", titel, ohne_buchbefunde(inhalt), "docs/ENTSCHEIDUNGEN.md"))
     return seiten
 
 
@@ -95,7 +134,7 @@ def fortschritt(wurzel: Path) -> Wikiseite:
         "projekt/fortschritt",
         "projekt",
         "Fortschritt (neueste Stände)",
-        "\n\n".join(staende),
+        ohne_buchbefunde("\n\n".join(staende)),
         "docs/FORTSCHRITT.md",
     )
 

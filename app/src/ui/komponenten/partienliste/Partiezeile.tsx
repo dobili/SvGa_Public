@@ -35,6 +35,7 @@ import { GegnerBild } from "../gegner/GegnerBild";
 import { partiezahlen, type Seitenzahl } from "./partiezahlen";
 import { Stufenmarke } from "../gegner/Stufenmarke";
 import { ZEITARTZEICHEN } from "../bausteine/zeitartzeichen";
+import { Variantenmarke } from "../varianten/VariantenHinweis";
 
 /** Größe der Figur für die gespielte Farbe (Bildpunkte). */
 const FIGURGROESSE = 22;
@@ -339,6 +340,7 @@ export function Partiezeile({
             <Ergebnismarke partie={partie} />
             <Seitenfigur partie={partie} />
             <Zeitzeichen partie={partie} />
+            <Variantenmarke quelle={{ art: "partie", id: partie.id }} />
           </span>
           <Kleingedruckt partie={partie} kennung={ids.klein} />
         </span>

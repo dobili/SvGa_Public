@@ -36,8 +36,10 @@ export interface Leistenzug {
   /** Zahl der Fortsetzungen nach diesem Zug, wenn es mehr als eine gibt; sonst 0. */
   readonly abzweige: number;
   readonly kommentiert: boolean;
-  /** Eigener Zug des Lesers (nicht aus Buch oder Partie). */
+  /** Eigener Zug des Lesers (nicht aus Buch, Partie oder Engine). */
   readonly eigen: boolean;
+  /** Zug aus den Engine-Folgen („Besser war …“, „So wird bestraft“). */
+  readonly engine: boolean;
 }
 
 /** Die Stellung als chessops-Objekt; null bei einer FEN ohne Regeln (Lehrbild ohne König). */
@@ -128,6 +130,7 @@ export function zeileDurch(baum: Zugbaum, pfad: Pfad, sprachcode: string): Leist
       abzweige: k.weiter.length > 1 ? k.weiter.length : 0,
       kommentiert: (k.kommentar ?? "") !== "",
       eigen: k.herkunft === undefined,
+      engine: k.herkunft === "engine",
     });
   }
   return zeile;

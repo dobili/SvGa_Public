@@ -55,6 +55,7 @@ import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partie/partiewe
 import type { Zweigart } from "../komponenten/rueckblick/Nebenzweig";
 import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRueckblick";
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
+import { PartieGabel } from "../komponenten/varianten/PartieGabel";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
 import { auswertungImHintergrund, kerneDesGeraets } from "../komponenten/auswertung/hintergrund";
@@ -217,6 +218,9 @@ function Spielfeld({
         zusatzSchalter={
           <>
             {rb.merken}
+            {partie.ende && (
+              <PartieGabel id={partie.id} stelle={stelle} ausgewertet={!!rueckblick} />
+            )}
             <RuhigSchalter ruhig={ruhig} />
           </>
         }

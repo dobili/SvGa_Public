@@ -22,6 +22,8 @@ import {
 import { Trainerbrett } from "../../trainer/Trainerbrett";
 import { fundstelle } from "./sammeltexte";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
+import { VariantenHinweis } from "../varianten/VariantenHinweis";
+import { alsWert } from "../varianten/variantenwert";
 
 /** Felder zum Bearbeiten von Plan, Notiz und Eröffnung. */
 function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig: () => void }) {
@@ -110,6 +112,12 @@ export function SammeleintragKarte({ eintrag }: { eintrag: Sammeleintrag }) {
         <Bearbeiten eintrag={eintrag} beiFertig={() => setzeBearbeiten(false)} />
       ) : (
         <Inhalt eintrag={eintrag} />
+      )}
+      {!bearbeiten && (
+        <VariantenHinweis
+          quelle={{ art: "sammlung", id: eintrag.id }}
+          wert={alsWert({ art: "sammlung", id: eintrag.id })}
+        />
       )}
       {!bearbeiten && (
         <div className="knopfreihe">

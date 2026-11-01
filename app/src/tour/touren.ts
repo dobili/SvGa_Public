@@ -14,6 +14,7 @@ import type { Ansicht } from "../app/stapel";
 import type { Textschluessel } from "../i18n/sprache";
 import type { TrainerKennung } from "../training/trainer";
 import { STARTTOUREN } from "./starttouren";
+import { VARIANTENTOUREN, zusatztour, type Variantentour } from "./variantentouren";
 
 /** Ein Schritt der Tour. */
 export interface Tourschritt {
@@ -49,6 +50,7 @@ export type TourKennung =
   | "training"
   | `trainer.${TrainerKennung}`
   | "lernsammlung"
+  | Variantentour
   | "nachschlagen"
   | "glossar"
   | "begriff"
@@ -67,7 +69,7 @@ function ziel(kennung: string, text: Textschluessel, ersatzMitte = false): Tours
   return { ziel: kennung, ersatzMitte, text };
 }
 
-/** Ein Schritt ohne Ziel, immer in der Mitte: Begrüßung, Erklärung einer Runde. */
+/** Ein Schritt ohne Ziel, immer in der Mitte (Begrüßung, Erklärung einer Runde). */
 function mitte(text: Textschluessel): Tourschritt {
   return { ziel: null, ersatzMitte: true, text };
 }
@@ -77,8 +79,7 @@ function tour(titel: Textschluessel, schritte: readonly Tourschritt[]): Tour {
 }
 
 // Gemeinsame Schritte der Trainer: vorn der Ablauf, hinten die Runde (ohne 30-Minuten-Plan und
-// Fehlerdatenbank, die keine Runden haben). Seit der Startkarte (Entwurf G1, 31.10.2026) beginnt
-// jeder Trainer mit Runde mit Beispielbrett und Satz; dorthin zeigt der erste Schritt.
+// Fehlerdatenbank). Seit der Startkarte (G1, 31.10.2026) zeigt der erste Schritt auf sie.
 const ANFANG = ziel("trainer-ablauf", "tour.trainer.ablauf");
 const STUFE = ziel("trainer-wahl", "tour.trainer.stufe");
 const WIEDERHOLEN = ziel("trainer-wiederholen", "tour.trainer.wiederholen");
@@ -92,6 +93,7 @@ const RUNDE: readonly Tourschritt[] = [
 /** Alle Rundgänge der App mit Titel und Schritten, nach Kennung. */
 export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   ...STARTTOUREN,
+  ...VARIANTENTOUREN,
   haupt: tour("tour.titel.haupt", [
     mitte("tour.haupt.willkommen"),
     ziel("leiste-buch", "tour.haupt.buch"),
@@ -139,6 +141,7 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
   training: tour("tour.titel.training", [
     ziel("training-faellig", "tour.training.faellig"),
     ziel("training-sammlung", "tour.training.sammlung"),
+    ziel("training-varianten", "tour.training.varianten"),
     ziel("training-website", "tour.training.website"),
     ziel("training-kapitel", "tour.training.kapitel"),
   ]),
@@ -285,9 +288,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("steckbrief-fallen", "tour.steckbriefe.fallen"),
   ]),
   werkzeuge: tour("tour.titel.werkzeuge", [ziel("werkzeuge-kapitel", "tour.werkzeuge.kapitel")]),
-  // Teil B (P8-44, 24.10.2026): Spielen, Partie mit Auswertung und Rückblick. Schritte, deren Ziel
-  // gerade fehlt (etwa das Gitter der eigenen Bots, die Auswertung vor dem Partieende), überspringt
-  // die Tour.
+  // Teil B (P8-44, 24.10.2026): Spielen, Partie mit Auswertung und Rückblick. Schritte ohne Ziel
+  // (Gitter der eigenen Bots, Auswertung vor dem Partieende) überspringt die Tour.
   spielen: tour("tour.titel.spielen", [
     ziel("spielen-laufend", "tour.spielen.laufend"),
     // Seit „Spielen neu“ (Entwurf J3, 31.10.2026): Startseite von oben nach unten, danach die
@@ -326,16 +328,14 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("auswertung-staerke", "tour.partie.staerke"),
     ziel("auswertung-pgn", "auswertungneu.tour.abschluss"),
   ]),
-  // Lernpfad „Dein Weg durchs Buch“ (Zusatzansicht, seit 31.10.2026 mit Nebenaufgaben): Kopf,
-  // aktuelle Station, ihr Bündel der Nebenaufgaben, Orden der ersten Etappe.
+  // Lernpfad (seit 31.10.2026): Kopf, Station, ihr Bündel der Nebenaufgaben, Orden der 1. Etappe.
   lernpfad: tour("tour.titel.lernpfad", [
     ziel("lernpfad-kopf", "tour.lernpfad.kopf"),
     ziel("lernpfad-station", "tour.lernpfad.station"),
     ziel("lernpfad-nebenaufgaben", "tour.lernpfad.nebenaufgaben"),
     ziel("lernpfad-orden", "tour.lernpfad.orden"),
   ]),
-  // Profil (seit 0.2.134): Name und Porträt (seit 0.2.140), Knopf zu den Einstellungen, Wertung,
-  // Fortschritt, Partien.
+  // Profil (seit 0.2.134): Name, Porträt, Einstellungen, Wertung, Fortschritt, Partien.
   ich: tour("tour.titel.ich", [
     ziel("profil-karte", "tour.ich.profilkarte"),
     ziel("profil-einstellungen", "einstellungenneu.tour.einstieg"),
@@ -389,10 +389,9 @@ export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
     case "spielen":
     case "partie":
       return ansicht.bildschirm;
-    // Bildschirme der Pakete (app/zusatzansichten.ts) haben vorerst keine eigene Tour, außer dem
-    // Lernpfad (seit 31.10.2026, wegen der Nebenaufgaben).
+    // Bildschirme der Pakete (app/zusatzansichten.ts): Lernpfad und Varianten (variantentouren.ts).
     case "zusatz":
-      return ansicht.kennung === "lernpfad" ? "lernpfad" : null;
+      return zusatztour(ansicht.kennung);
     case "lizenzen":
     case "autoraufgaben":
       return null;

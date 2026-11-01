@@ -99,6 +99,9 @@ describe("Lesen aus Rohdaten (Format 8)", () => {
     expect(variationenAus(undefined)).toEqual([]);
   });
 
+});
+
+describe("Lesen aus Rohdaten: spätere Stufen", () => {
   it("behält die Felder späterer Stufen und verwirft Fremdes darin", () => {
     const roh = {
       ...variation("stufe2"),
@@ -123,6 +126,9 @@ describe("Lesen aus Rohdaten (Format 8)", () => {
     });
   });
 
+});
+
+describe("Lesen aus Rohdaten: Grenzen", () => {
   it("liest nicht mehr als die Grenzen und keinen Startpfad außerhalb des Baums", () => {
     const lang = { ...variation("lang", springerkette(700)), startpfad: ["d4"] };
     const [v] = variationenAus([lang, lang]);
@@ -153,6 +159,9 @@ describe("Quellen", () => {
     expect(ausAbbildung({ nummer: "0.1", fen: "8/8/8/8/8/8/8/8 w - - 0 1", beispiel: null, pfad: [] }, "", JETZT)).toBeNull();
   });
 
+});
+
+describe("Quellen aus eigenen Daten", () => {
   it("macht aus Partie, Fehler und Sammlung Entwürfe mit Herkunft", () => {
     const partie = ausPartie({ id: "p1", startFen: GRUND, zuege: ["e4", "e5", "Qh5"] }, 2, "P", JETZT);
     expect(partie?.startpfad).toEqual(["e4", "e5"]);

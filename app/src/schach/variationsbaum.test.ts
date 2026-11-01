@@ -117,7 +117,9 @@ describe("Zugbaum ändern", () => {
       "Qe2",
     ]);
   });
+});
 
+describe("Zugbaum ändern: löschen, Zugdaten, Folgen", () => {
   it("löscht ab hier und gibt den Pfad davor zurück", () => {
     const ergebnis = ohneAbHier(PETROFF, [...BIS_SXE5, "Nxe4"]);
     expect(ergebnis.pfad).toEqual(BIS_SXE5);

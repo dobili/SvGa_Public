@@ -9,6 +9,12 @@
 import { t } from "../../../i18n/sprache";
 import type { Leistenzug } from "../../../schach/variationsbaum";
 import type { Variationsquelle } from "../../../training/variationen";
+import type { Markierungsfarbe } from "../../../analyse/werkzeug";
+
+/** Der Name einer Stiftfarbe in der Sprache („Rot“). */
+export function farbname(farbe: Markierungsfarbe): string {
+  return t(`varianten.farbe.${farbe}`);
+}
 
 /**
  * „5.“ vor weißen Zügen, „5...“ vor einem schwarzen Zug am Anfang der Zeile.

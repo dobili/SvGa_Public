@@ -148,6 +148,20 @@ export function mitZugdaten(baum: Zugbaum, pfad: Pfad, teil: Zugaenderung): Knot
   return ersetzeAm(baum.zuege, pfad, (k) => geaenderterKnoten(k, teil)) ?? baum.zuege;
 }
 
+/**
+ * Ersetzt die Daten der Stellung nach ``pfad`` (Marken, Nummerntexte) durch ``aenderung``.
+ * Stufe 2 (Stift): Die Marken gehören zur Stellung, also zum Knoten des Zuges davor.
+ * Sonderfall: Der leere Pfad (Startstellung) hat keinen Knoten; dafür gibt es `start`.
+ */
+export function mitKnotendaten(
+  baum: Zugbaum,
+  pfad: Pfad,
+  aenderung: (knoten: Variationsknoten) => Variationsknoten,
+): Knotenliste {
+  if (pfad.length === 0) return baum.zuege;
+  return ersetzeAm(baum.zuege, pfad, aenderung) ?? baum.zuege;
+}
+
 /** Ergebnis von mitLinie: der neue Baum, der Pfad am Ende und der Pfad des ersten neuen Zuges. */
 export interface Linienergebnis {
   readonly zuege: Knotenliste;

@@ -4,48 +4,40 @@
  * Rolle im Gesamtbild: Variationsbrowser, Stufe 1 (Entwurf vom 1.11.2026, Abschnitt 3). Von oben
  * nach unten wie an den Abbildungen: Kopfzeile (Titel antippen = Blatt mit Name, Kommentar, PGN,
  * Löschen), Kommentar zur Variante eingeklappt, Zugleiste (Variantenleiste.tsx), Brett mit den
- * blauen Fortsetzungspfeilen am Abzweig, Kommentar zum Zug, „Von hier spielen“. Ziehen ist immer
- * an. Ein Entwurf aus einer Quelle wird mit dem ersten eigenen Inhalt gespeichert; danach
+ * blauen Fortsetzungspfeilen am Abzweig (VarianteBrett.tsx), Kommentar zum Zug, Knopfzeile mit
+ * Baum, Karte und „Von hier spielen“ (Variantenknoepfe.tsx). Ziehen ist an, solange der Stift aus
+ * ist. Stufe 2: Stift mit Leiste statt des Kommentars (Markierstift.tsx), Legende darunter
+ * (Legende.tsx), Baum mit Abzweig-Karten (Abzweigkarten.tsx), Karte auf eigener Seite. Ein Entwurf aus einer Quelle wird mit dem ersten eigenen Inhalt gespeichert; danach
  * wechselt die Ansicht auf die Kennung der Variante, damit sie das Neuladen übersteht.
  * Eingetragen in app/zusatzansichten.ts unter „variante“ (Wert: variantenwert.ts).
- * Abhängigkeiten: komponenten/varianten, brettbedienung (Brettbereich, useBrettbedienung),
- * Navigation, i18n.
+ * Abhängigkeiten: komponenten/varianten, Navigation, i18n.
  */
-import { NotebookText, Play, Share2 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { NotebookText, Share2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
-import { stellungAusFen } from "../../schach/stellung";
-import { fenAm, type Pfad } from "../../schach/variationsbaum";
-import { zugFelder } from "../../schach/weiterspielen";
-import { spielbar } from "../../spiel/partie";
-import { alsProbewert } from "../../spiel/probepartie";
+import type { Pfad } from "../../schach/variationsbaum";
 import type { Variation } from "../../training/variationen";
 import { ENTWURF } from "../../training/variationsquellen";
-import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
-import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
-import { fortsetzungschips } from "../komponenten/varianten/fortsetzungen";
-import { Fortsetzungspfeile } from "../komponenten/varianten/Fortsetzungspfeile";
+import { Abzweigkarten } from "../komponenten/varianten/Abzweigkarten";
 import { Kommentarzeile } from "../komponenten/varianten/Kommentarzeile";
+import { Legende } from "../komponenten/varianten/Legende";
+import { Markierstift as MarkierstiftLeiste } from "../komponenten/varianten/Markierstift";
+import { useMarkierstift, type Markierstift } from "../komponenten/varianten/useMarkierstift";
 import { useVariante, type Variantenstand } from "../komponenten/varianten/useVariante";
 import { useVariantenentwurf } from "../komponenten/varianten/useVariantenentwurf";
+import { VarianteBrett } from "../komponenten/varianten/VarianteBrett";
 import { Variantenblatt } from "../komponenten/varianten/Variantenblatt";
+import { Variantenknoepfe } from "../komponenten/varianten/Variantenknoepfe";
 import { Variantenleiste } from "../komponenten/varianten/Variantenleiste";
 import { Variantenmeldung } from "../komponenten/varianten/Variantenmeldung";
 import { merkePfad, varianteAnsicht } from "../komponenten/varianten/variantenwert";
 import { Zugmenue } from "../komponenten/varianten/Zugmenue";
 import "../stil/spielenneu.css";
-import { sprache } from "../../i18n/sprache";
+import "../stil/variantenstift.css";
 
 const SYMBOL = 18;
-
-/** Start- und Zielfeld des Zuges, der zur gezeigten Stellung führte. */
-function letzterZugVon(stand: Variantenstand) {
-  const san = stand.pfad.at(-1);
-  const vorher = san ? fenAm(stand.variation, stand.pfad.slice(0, -1)) : null;
-  return vorher && san ? zugFelder(vorher, san) : null;
-}
 
 /** Nach dem ersten Speichern: Ansicht auf die Kennung umstellen und den Pfad merken. */
 function useGespeicherteAnsicht(stand: Variantenstand, wert: string | null, ruhig: boolean) {
@@ -101,52 +93,46 @@ function VarianteKopf({ titel, beiBlatt }: { titel: string; beiBlatt: () => void
   );
 }
 
-/** Das Brett: Ziehen immer an, blaue Fortsetzungspfeile am Abzweig. */
-function VarianteBrett({ stand }: { stand: Variantenstand }) {
-  const bedienung = useBrettbedienung(stand, "ziehen", () => undefined);
-  const stellung = useMemo(() => stellungAusFen(stand.fen), [stand.fen]);
-  const chips = fortsetzungschips(stand.variation, stand.pfad, sprache());
-  if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
+/** Unter dem Brett: Kommentar zum Zug oder, im Stift-Modus, die Leiste des Stifts; dann die Legende. */
+function UnterDemBrett(props: {
+  stand: Variantenstand;
+  stift: Markierstift;
+  schreibt: boolean;
+  setzeSchreibt: (offen: boolean) => void;
+  beiMenue: () => void;
+}) {
+  const { stand, stift } = props;
   return (
-    <Brettbereich
-      stellung={stellung.wert}
-      markierungen={[]}
-      letzterZug={letzterZugVon(stand)}
-      bedienung={bedienung}
-      beschriftung={stand.variation.titel}
-      ueberlagerung={(gedreht: boolean) => <Fortsetzungspfeile chips={chips} gedreht={gedreht} />}
-    />
+    <>
+      {stift.an ? (
+        <MarkierstiftLeiste stift={stift} />
+      ) : (
+        <Kommentarzeile
+          stand={stand}
+          offen={props.schreibt}
+          setzeOffen={props.setzeSchreibt}
+          beiMenue={props.beiMenue}
+        />
+      )}
+      <Legende stand={stand} bearbeiten={stift.an} />
+    </>
   );
 }
 
-/**
- * „Von hier spielen“ mit der gezeigten Stellung (Wunsch des Autors, 1.11.2026): eine Probepartie,
- * die nicht zählt; am Ende lassen sich ihre Züge hier als Abzweig speichern. Ein Entwurf wird
- * vorher gespeichert, damit die Züge einen Ort haben.
- */
-function Spielknopf({ stand }: { stand: Variantenstand }) {
-  const { navigiere } = useNavigation();
-  const spiele = () => {
-    const id =
-      stand.variation.id === ENTWURF
-        ? stand.aendereVariation(stand.variation, "sofort")
-        : stand.variation.id;
-    if (!id) return;
-    const probe = alsProbewert({ art: "variante", id, pfad: stand.pfad });
-    navigiere({ bildschirm: "spielen", startFen: stand.fen, probe });
-  };
+/** „Kommentar“ im Menü am Zug: zu diesem Zug springen und das Schreibfeld öffnen. */
+function kommentiere(stand: Variantenstand, pfad: Pfad, setzeSchreibt: (an: boolean) => void) {
+  stand.springe(pfad);
+  setzeSchreibt(true);
+}
+
+/** Knopfzeile (Baum, Karte, Spielen) und darunter der aufgeklappte Baum. */
+function KnoepfeUndBaum({ stand }: { stand: Variantenstand }) {
+  const [baum, setzeBaum] = useState(false);
   return (
-    <div className="knopfreihe variantenknoepfe">
-      <button
-        type="button"
-        className="knopf-zweit"
-        disabled={!spielbar(stand.fen)}
-        data-tour="variante-spielen"
-        onClick={spiele}
-      >
-        <Play size={SYMBOL} aria-hidden="true" /> {t("varianten.vonHierSpielen")}
-      </button>
-    </div>
+    <>
+      <Variantenknoepfe stand={stand} baum={baum} setzeBaum={setzeBaum} />
+      {baum && <Abzweigkarten stand={stand} schliessen={() => setzeBaum(false)} />}
+    </>
   );
 }
 
@@ -157,30 +143,28 @@ function Inhalt({ anfang, pfad, wert }: { anfang: Variation; pfad: Pfad; wert: s
   const [menue, setzeMenue] = useState<Pfad | null>(null);
   const [schreibt, setzeSchreibt] = useState(false);
   const [blatt, setzeBlatt] = useState(false);
-  useGespeicherteAnsicht(stand, wert, schreibt || blatt || menue !== null);
-  const kommentiere = (p: Pfad) => {
-    stand.springe(p);
-    setzeSchreibt(true);
-  };
+  const stift = useMarkierstift(stand);
+  useGespeicherteAnsicht(stand, wert, schreibt || blatt || menue !== null || stift.an);
   return (
     <>
       <VarianteKopf titel={stand.variation.titel} beiBlatt={() => setzeBlatt(true)} />
       <Variantenmeldung stand={stand} />
       <Variantenkommentar text={stand.variation.kommentar} />
       <Variantenleiste stand={stand} beiMenue={setzeMenue} />
-      <VarianteBrett stand={stand} />
-      <Kommentarzeile
+      <VarianteBrett stand={stand} stift={stift} />
+      <UnterDemBrett
         stand={stand}
-        offen={schreibt}
-        setzeOffen={setzeSchreibt}
+        stift={stift}
+        schreibt={schreibt}
+        setzeSchreibt={setzeSchreibt}
         beiMenue={() => setzeMenue(stand.pfad)}
       />
-      <Spielknopf stand={stand} />
+      <KnoepfeUndBaum stand={stand} />
       <Zugmenue
         stand={stand}
         pfad={menue}
         schliessen={() => setzeMenue(null)}
-        beiKommentar={kommentiere}
+        beiKommentar={(p) => kommentiere(stand, p, setzeSchreibt)}
       />
       <Variantenblatt
         stand={stand}

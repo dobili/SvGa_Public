@@ -33,6 +33,12 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.49: Goldener Pfeil in Varianten wie in der Auswertung (1.11.2026)
+
+- [ ] N2581. Analysierte Variante: Steht ein Zug am Brett, der nicht der beste war (etwa 3... Sf6?? im Schäfermatt),
+      zeigt ein goldener Pfeil den besseren Zug, wie in der Partieauswertung. Der grüne Pfeil für den
+      besten nächsten Zug ist weg. Der Schalter „Engine-Pfeil“ blendet den goldenen Pfeil aus und ein.
+
 ### Neu in 0.3.48: Bearbeiten und Löschen auffindbar (1.11.2026)
 
 - [ ] N2574. Training › Varianten: Neben jeder Variante stehen ein Stift und ein Papierkorb. Der Stift öffnet

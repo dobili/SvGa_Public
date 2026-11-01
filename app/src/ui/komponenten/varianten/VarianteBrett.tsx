@@ -8,8 +8,8 @@
  * Stifts (useMarkierstift.ts) und die Fortsetzungspfeile treten zurück, damit sie nicht mit den
  * eigenen blauen Pfeilen verwechselt werden. Die eigenen Marken zeigt das Brett immer.
  * Stufe 3 (nach der Analyse, je mit eigenem Schalter): Bewertungsbalken links (wie beim Nachspielen
- * einer Partie, Bewertungsbalken.tsx), Marke der Zugart am Zielfeld (Zugmarke.tsx) und ein grüner
- * Pfeil für den besten Zug der Engine in der gezeigten Stellung.
+ * einer Partie, Bewertungsbalken.tsx), Marke der Zugart am Zielfeld (Zugmarke.tsx) und ein goldener
+ * Pfeil zum besseren Zug, wenn der gezeigte Zug nicht der beste war (wie in der Partieauswertung).
  * Abhängigkeiten: brettbedienung (Brettbereich, useBrettbedienung), training/variationsmarken.ts,
  * Fortsetzungspfeile.tsx, Markennummern.tsx, useMarkierstift.ts, i18n, lucide-react.
  */
@@ -17,6 +17,7 @@ import { PenLine } from "lucide-react";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { pfadSchluessel } from "../../../spiel/variationsurteile";
 import { HUNDERTSTEL } from "../../../training/variationswerte";
+import { rueckblickMarken } from "../../../spiel/rueckblick";
 import { Bewertungsbalken } from "../rueckblick/Bewertungsbalken";
 import { Zugmarke } from "../rueckblick/Zugmarke";
 import type { Variantenanalyse } from "./useVariantenanalyse";
@@ -35,28 +36,28 @@ import { knotendatenAm, type Markierstift } from "./useMarkierstift";
 import type { Variantenstand } from "./useVariante";
 
 const SYMBOL = 20;
-/** UCI: zwei Zeichen Startfeld, zwei Zeichen Zielfeld. */
-const FELD = 2;
-
-/** Der grüne Pfeil für den besten Zug der Engine (Stufe 3), wenn bekannt und gewünscht. */
-function enginepfeil(stand: Variantenstand, analyse: Variantenanalyse): Markierung[] {
-  const bester = knotendatenAm(stand.variation, stand.pfad).b;
-  if (!analyse.zeige.pfeil || !bester) return [];
-  return [
-    {
-      typ: "pfeil",
-      farbe: "gruen",
-      von: bester.slice(0, FELD),
-      nach: bester.slice(FELD, 2 * FELD),
-    },
-  ];
-}
 
 /** Der Bewertungsbalken links am Brett, wenn die Stellung einen Wert hat und er gewünscht ist. */
 function balkenFuer(stand: Variantenstand, analyse: Variantenanalyse) {
   const wert = knotendatenAm(stand.variation, stand.pfad).w;
   if (!analyse.zeige.balken || wert === undefined) return null;
   return (gedreht: boolean) => <Bewertungsbalken wert={wert / HUNDERTSTEL} gedreht={gedreht} />;
+}
+
+/**
+ * Der goldene Pfeil zum besseren Zug, wenn der gezeigte Zug nicht der beste war: wie in der
+ * Partieauswertung (spiel/rueckblick.ts, rueckblickMarken), unter dem Schalter „Engine-Pfeil“.
+ * Entscheidung des Autors (1.11.2026): nur noch Gold; der frühere grüne Pfeil für den besten
+ * nächsten Zug entfällt, weil er nach dem Zug sonst zu Gold wechselte.
+ */
+function besserpfeil(stand: Variantenstand, analyse: Variantenanalyse): Markierung[] {
+  const san = stand.pfad.at(-1);
+  const davor = stand.pfad.slice(0, -1);
+  const vorher = san ? fenAm(stand.variation, davor) : null;
+  const bester = knotendatenAm(stand.variation, davor).b;
+  if (!analyse.zeige.pfeil || !san || !vorher || !bester) return [];
+  const urteil = analyse.urteile.get(pfadSchluessel(stand.pfad));
+  return rueckblickMarken(vorher, san, urteil, bester).filter((m) => m.typ === "pfeil");
 }
 
 /** Start- und Zielfeld des Zuges, der zur gezeigten Stellung führte. */
@@ -112,7 +113,7 @@ export function VarianteBrett({
   return (
     <Brettbereich
       stellung={stellung.wert}
-      markierungen={[...alsMarkierungen(marken), ...enginepfeil(stand, analyse)]}
+      markierungen={[...alsMarkierungen(marken), ...besserpfeil(stand, analyse)]}
       letzterZug={letzter}
       seitenleiste={balkenFuer(stand, analyse)}
       bedienung={stift.an ? stift.bedienung : ziehen}

@@ -4,6 +4,14 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.49: Goldener Pfeil in Varianten
+
+- **Entscheidung des Autors:** In Varianten zeigt wie in der Partieauswertung ein goldener Pfeil
+  den besseren Zug, wenn der gezeigte Zug nicht der beste war (`rueckblickMarken`, gleiche
+  Zugarten). Der grüne Pfeil für den besten nächsten Zug entfällt: Er wechselte nach dem Zug zu
+  Gold und zeigte so zweimal dasselbe. Den besten nächsten Zug gibt es weiter über
+  „Engine-Folgen übernehmen“ und „Von hier spielen“.
+
 ## 1.11.2026 – Version 0.3.48: Bearbeiten und Löschen auffindbar
 
 - **Anlass** (Autor, 1.11.2026): Löschen kam in keiner Tour vor, der antippbare Titel war nicht als

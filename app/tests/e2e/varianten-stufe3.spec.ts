@@ -62,7 +62,7 @@ test("Analyse: Fortschritt, Zugarten, Balken, Engine-Pfeil, Schalter, Nachrechne
   await expect(page.getByTestId("zugmarke-brett")).toBeVisible();
   await page.getByRole("button", { name: "Einen Halbzug zurück" }).click();
   await expect(page.getByTestId("bewertungsbalken")).toBeVisible();
-  // Grüner Pfeil: der beste Zug der Engine (Dxf7#); aus und wieder an.
+  // Goldener Pfeil: der bessere Zug statt 3... Sf6?? (wie in der Partieauswertung); aus und an.
   const mitPfeil = await pfeilspitzen(page);
   await page.getByTestId("analysechip-pfeil").click();
   await expect.poll(() => pfeilspitzen(page)).toBe(mitPfeil - 1);

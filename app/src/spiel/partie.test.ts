@@ -18,7 +18,7 @@ import {
   type Partieeinstellung,
   type Partiezug,
 } from "./partie";
-import { alsPgn } from "./pgn";
+import { alsPgn, pgnDatum } from "./pgn";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 const ABB_1_26 = "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 4 6";
@@ -140,6 +140,13 @@ describe("PGN", () => {
     expect(pgn).toContain('[Result "0-1"]');
     expect(pgn).not.toContain("SetUp");
     expect(pgn.trim().endsWith("1. f3 e5 2. g4 Qh4# 0-1")).toBe(true);
+  });
+
+  it("Datum im Kopf nach Ortszeit, auch kurz nach Mitternacht (Fehlertest 1.11.2026)", () => {
+    const mitternacht = new Date(2026, 10, 1, 0, 30).toISOString();
+    const p = { ...spiele(partie({}), "e4"), begonnen: mitternacht };
+    expect(alsPgn(p, KOPF)).toContain('[Date "2026.11.01"]');
+    expect(pgnDatum(mitternacht, "-")).toBe("2026-11-01");
   });
 
   it("eigene Startstellung mit Schwarz am Zug und Kommentar zum Engine-Fehler", () => {

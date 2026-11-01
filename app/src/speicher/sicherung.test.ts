@@ -13,6 +13,8 @@ import {
   sicherungFaellig,
 } from "./sicherung";
 import { frischeUmgebung } from "./testhilfen";
+import { partieAusPgn } from "../spiel/pgnimport";
+import { legeAb } from "./partien";
 
 const JETZT = new Date("2026-10-15T10:00:00.000Z");
 const TAG_MS = 86_400_000;
@@ -107,6 +109,13 @@ describe("Prüfung der Datei", () => {
   it("benennt die Datei mit dem Datum", () => {
     expect(dateiname(JETZT)).toBe("schach-von-grund-auf-sicherung-2026-10-15.json");
   });
+
+  it("nimmt den Tag nach Ortszeit, auch kurz nach Mitternacht (Fehlertest 1.11.2026)", () => {
+    // Ortszeit 1.11.2026, 0:30 Uhr: in Berlin noch 31.10. nach UTC.
+    expect(dateiname(new Date(2026, 10, 1, 0, 30))).toBe(
+      "schach-von-grund-auf-sicherung-2026-11-01.json",
+    );
+  });
 });
 
 describe("Hinweis alle vier Wochen", () => {
@@ -116,6 +125,14 @@ describe("Hinweis alle vier Wochen", () => {
   it("schweigt ohne eigene Daten und in den ersten vier Wochen", () => {
     expect(sicherungFaellig(leereDaten(JETZT), spaeter(100))).toBe(false);
     expect(sicherungFaellig(mitDaten, spaeter(27))).toBe(false);
+  });
+
+  it("erinnert auch, wer nur Partien gespielt hat (Fehlertest 1.11.2026)", () => {
+    const leer = leereDaten(JETZT);
+    const ergebnis = partieAusPgn("1. f3 e5 2. g4 Qh4# 0-1", "white", "i-1", JETZT);
+    if (!ergebnis.ok) throw new Error("nicht eingelesen");
+    const nurPartien = { ...leer, spiel: legeAb(leer.spiel, ergebnis.partie) };
+    expect(sicherungFaellig(nurPartien, spaeter(28))).toBe(true);
   });
 
   it("erinnert nach vier Wochen ohne Sicherung, danach wieder vier Wochen Ruhe", () => {

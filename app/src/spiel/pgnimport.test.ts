@@ -55,4 +55,65 @@ describe("partieAusPgn", () => {
     expect(e.partie.einstellung.importiert).toEqual({ weiss: "?", schwarz: "?" });
     expect(e.partie.begonnen).toBe(JETZT.toISOString());
   });
+
+  it("deutsche Notation wird übersetzt, nicht als Bauernzug gelesen (Fehlertest 1.11.2026)", () => {
+    const e = partieAusPgn("1. e4 e5 2. Sf3 Sc6 3. Lc4 Lc5 4. O-O Dh4 1-0", "white", "d", JETZT);
+    if (!e.ok) throw new Error("nicht eingelesen");
+    expect(e.partie.zuege.map((z) => z.san)).toEqual([
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "O-O",
+      "Qh4",
+    ]);
+    const umwandlung = partieAusPgn(
+      '[FEN "8/P6k/8/8/8/8/8/K7 w - - 0 1"]\n\n1. a8=D 1-0',
+      "white",
+      "u",
+      JETZT,
+    );
+    if (!umwandlung.ok) throw new Error("nicht eingelesen");
+    expect(umwandlung.partie.zuege[0]?.san).toBe("a8=Q");
+    const figurinen = partieAusPgn("1. e4 e5 2. ♘f3 ♞c6 1-0", "white", "f", JETZT);
+    if (!figurinen.ok) throw new Error("nicht eingelesen");
+    expect(figurinen.partie.zuege.map((z) => z.san)).toEqual(["e4", "e5", "Nf3", "Nc6"]);
+    // Unbekannte Figurenbuchstaben bleiben ein Fehler statt ein stiller Bauernzug.
+    expect(partieAusPgn("1. e4 e5 2. Xf3 1-0", "white", "x", JETZT)).toMatchObject({
+      ok: false,
+      fehler: { art: "zug", zug: "Xf3", nummer: 2 },
+    });
+  });
+
+  it("Kommentare, Uhrzeiten von chess.com, Zeichen und Varianten von Lichess fallen weg", () => {
+    const pgn =
+      "1. e4 {[%clk 0:02:59.9]} 1... e5 {[%clk 0:02:58]} 2. Nf3!? (2. f4 exf4) 2... Nc6 $1 1-0";
+    const e = partieAusPgn(pgn, "white", "k", JETZT);
+    if (!e.ok) throw new Error("nicht eingelesen");
+    expect(e.partie.zuege.map((z) => z.san)).toEqual(["e4", "e5", "Nf3", "Nc6"]);
+  });
+
+  it("Schachvarianten werden abgelehnt", () => {
+    const varianten = [
+      '[Variant "Crazyhouse"]\n\n1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. P@d5 1-0',
+      '[Variant "Atomic"]\n\n1. e4 e5 1-0',
+      '[Variant "Chess960"]\n[FEN "bbqnnrkr/pppppppp/8/8/8/8/PPPPPPPP/BBQNNRKR w HFhf - 0 1"]\n\n1. e4 e5 1-0',
+    ];
+    for (const pgn of varianten) {
+      expect(partieAusPgn(pgn, "white", "v", JETZT)).toEqual({
+        ok: false,
+        fehler: { art: "variante" },
+      });
+    }
+    // „From Position“ von Lichess ist normales Schach ab eigener Stellung.
+    const ab = partieAusPgn(
+      '[Variant "From Position"]\n[FEN "8/P6k/8/8/8/8/8/K7 w - - 0 1"]\n\n1. a8=Q 1-0',
+      "white",
+      "f",
+      JETZT,
+    );
+    expect(ab.ok).toBe(true);
+  });
 });

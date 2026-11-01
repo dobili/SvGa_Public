@@ -40,11 +40,18 @@ export interface Inhaltsangabe {
   readonly abbildungen: number;
   readonly uebungen: number;
   readonly lernziele: number;
+  /** Gespeicherte Partien (gespielt und eingelesen). */
+  readonly partien: number;
 }
 
-/** Dateiname mit Datum, etwa „schach-von-grund-auf-sicherung-2026-10-15.json“. */
+/**
+ * Dateiname mit dem Tag nach Ortszeit, etwa „schach-von-grund-auf-sicherung-2026-10-15.json“.
+ * Sonderfall: Kurz nach Mitternacht stand vorher der Vortag im Namen (UTC; Fehlertest 1.11.2026).
+ */
 export function dateiname(jetzt: Date): string {
-  return `schach-von-grund-auf-sicherung-${jetzt.toISOString().slice(0, "JJJJ-MM-TT".length)}.json`;
+  const zweistellig = (z: number) => String(z).padStart(2, "0");
+  const tag = `${jetzt.getFullYear()}-${zweistellig(jetzt.getMonth() + 1)}-${zweistellig(jetzt.getDate())}`;
+  return `schach-von-grund-auf-sicherung-${tag}.json`;
 }
 
 /** Die Sicherungsdatei als Text (rein, für Tests). */
@@ -101,7 +108,16 @@ export function inhaltsangabe(daten: Nutzerdaten): Inhaltsangabe {
     abbildungen: Object.keys(daten.fortschritt.gesehen).length,
     uebungen: Object.values(daten.fortschritt.uebungen).filter((s) => s.geloest).length,
     lernziele: Object.values(daten.lernstand).reduce((summe, punkte) => summe + punkte.length, 0),
+    partien: daten.spiel.partien.length,
   };
+}
+
+/**
+ * Gibt es eigene Daten, die eine Sicherung wert sind? Seit dem Fehlertest (1.11.2026) zählen
+ * auch Partien: Wer nur spielte, bekam nie den Hinweis auf die Sicherung.
+ */
+export function hatEigeneDaten(angabe: Inhaltsangabe): boolean {
+  return angabe.abbildungen + angabe.uebungen + angabe.lernziele + angabe.partien > 0;
 }
 
 /**
@@ -111,8 +127,7 @@ export function inhaltsangabe(daten: Nutzerdaten): Inhaltsangabe {
  * gibt es nichts zu sichern.
  */
 export function sicherungFaellig(daten: Nutzerdaten, jetzt: Date): boolean {
-  const angabe = inhaltsangabe(daten);
-  if (angabe.abbildungen + angabe.uebungen + angabe.lernziele === 0) return false;
+  if (!hatEigeneDaten(inhaltsangabe(daten))) return false;
   const seit = daten.letzteSicherung ?? daten.angelegt;
   const tage = (jetzt.getTime() - new Date(seit).getTime()) / MS_JE_TAG;
   return tage >= HINWEIS_NACH_TAGEN;

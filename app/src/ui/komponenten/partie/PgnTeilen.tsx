@@ -13,7 +13,7 @@ import { stufe } from "../../../engine/stufen";
 import { t } from "../../../i18n/sprache";
 import { enginefehler, type Zugurteil } from "../../../spiel/auswertung";
 import type { Partie } from "../../../spiel/partie";
-import { alsPgn } from "../../../spiel/pgn";
+import { alsPgn, pgnDatum } from "../../../spiel/pgn";
 import { useSpielerprofil } from "../../profil/spieler";
 import { bieteDateiAn } from "../bausteine/dateiAnbieten";
 
@@ -60,7 +60,7 @@ export function PgnTeilen({ partie, urteile }: { partie: Partie; urteile: readon
       setzeMeldung(t("pgn.nichtKopiert"));
     }
   };
-  const datei = `partie-${partie.begonnen.slice(0, "JJJJ-MM-TT".length)}.pgn`;
+  const datei = `partie-${pgnDatum(partie.begonnen, "-")}.pgn`;
   return (
     <div className="pgn blattliste" data-testid="pgn-teilen">
       <button type="button" className="blattzeile" onClick={() => void kopiere()}>

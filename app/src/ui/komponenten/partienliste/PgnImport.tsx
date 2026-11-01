@@ -8,7 +8,7 @@
  * Abhängigkeiten: spiel/pgnimport.ts, speicher, Navigation, Aufklapper, Segmentwahl, i18n.
  */
 import type { Color } from "chessops/types";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigation } from "../../../app/navigationsKontext";
 import { t } from "../../../i18n/sprache";
 import { partieAusPgn, type Importfehler } from "../../../spiel/pgnimport";
@@ -42,16 +42,23 @@ function Formular() {
   const [text, setzeText] = useState("");
   const [farbe, setzeFarbe] = useState<Color>("white");
   const [fehler, setzeFehler] = useState<Importfehler | null>(null);
+  // Ein Doppeltipp legte die Partie zweimal ab (Fehlertest 1.11.2026): einmal genügt.
+  const abgelegt = useRef(false);
   const einlesen = () => {
+    if (abgelegt.current) return;
     const ergebnis = partieAusPgn(text, farbe, neueKennung(), new Date());
     if (!ergebnis.ok) {
       setzeFehler(ergebnis.fehler);
       return;
     }
+    abgelegt.current = true;
     const { partie } = ergebnis;
-    void aendere((d) => ({ ...d, spiel: legeAb(d.spiel, partie) })).then(() =>
-      navigiere({ bildschirm: "partie", id: partie.id }),
-    );
+    aendere((d) => ({ ...d, spiel: legeAb(d.spiel, partie) }))
+      .then(() => navigiere({ bildschirm: "partie", id: partie.id }))
+      .catch((grund: unknown) => {
+        console.error("Eingelesene Partie nicht gespeichert:", grund);
+        abgelegt.current = false;
+      });
   };
   const ladeDatei = (datei: File | undefined) => {
     if (!datei) return;

@@ -5,7 +5,7 @@
  * extra Seite öffnende Darstellung des Baums als in alle Richtungen scrollbare Karte/Mindmap“.
  * Geöffnet über den Knopf „Karte“ der Variante (Variante.tsx); Wert der Ansicht ist die Kennung
  * der Variante (ein Entwurf wird vorher gespeichert). Oben Knöpfe zum Zoomen, „Alles zeigen“, „Zur
- * Stellung“ und der Wechsel zur Liste (Kartenliste.tsx, zugänglich für Tastatur und
+ * Stellung“ und der Wechsel zur Liste; an jedem Abzweig ein kleines Brett mit den blauen Pfeilen (Kartenliste.tsx, zugänglich für Tastatur und
  * Bildschirmleser); darunter eine kurze Legende der Zeichen. Ein Tipp auf einen Zug merkt ihn als
  * gezeigte Stellung und kehrt zur Variante zurück, die dort weitermacht.
  * Eingetragen in app/zusatzansichten.ts unter „variantenkarte“.
@@ -17,12 +17,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { sprache, t } from "../../i18n/sprache";
 import { kartenlayout, knotenstelle, type Kartenlayout } from "../../schach/baumlayout";
-import type { Pfad } from "../../schach/variationsbaum";
+import { fenAm, type Pfad } from "../../schach/variationsbaum";
+import type { Variation } from "../../training/variationen";
 import { useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "../komponenten/bausteine/InfoKnopf";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { Kartenflaeche, type Kartensteuerung } from "../komponenten/varianten/Kartenflaeche";
+import type { Abzweigbrett } from "../komponenten/varianten/Kartenbrett";
 import { Kartenliste } from "../komponenten/varianten/Kartenliste";
+import { fortsetzungschips } from "../komponenten/varianten/fortsetzungen";
 import { ZOOM } from "../komponenten/varianten/useKartenbewegung";
 import {
   ANSICHT_VARIANTE,
@@ -159,8 +162,26 @@ function Zeichenlegende() {
   );
 }
 
+/**
+ * Die Bretter der Abzweige: Stellung und Fortsetzungspfeile je Knoten mit mehr als einer
+ * Fortsetzung. Beispiel: Abb. 2.40 → ein Brett nach 3. Sxe5 mit Stern an d7–d6 und „2“ an f6–e4.
+ */
+function abzweigbretter(variation: Variation, layout: Kartenlayout): Abzweigbrett[] {
+  return layout.knoten.flatMap((k, stelle) => {
+    if (k.abzweige === 0) return [];
+    const fen = fenAm(variation, k.pfad);
+    return fen ? [{ stelle, fen, chips: fortsetzungschips(variation, k.pfad, sprache()) }] : [];
+  });
+}
+
 /** Karte oder Liste einer gespeicherten Variante. */
-function Inhalt({ id, layout, pfad }: { id: string; layout: Kartenlayout; pfad: Pfad }) {
+function Inhalt(props: {
+  id: string;
+  layout: Kartenlayout;
+  bretter: readonly Abzweigbrett[];
+  pfad: Pfad;
+}) {
+  const { id, layout, pfad } = props;
   const springe = useSprung(id);
   const steuerung = useRef<Kartensteuerung>(null);
   const [liste, setzeListe] = useState(false);
@@ -180,6 +201,7 @@ function Inhalt({ id, layout, pfad }: { id: string; layout: Kartenlayout; pfad: 
           <p className="hinweis kartenhinweis">{t("varianten.karte.hinweis")}</p>
           <Kartenflaeche
             layout={layout}
+            bretter={props.bretter}
             aktuell={aktuell}
             anfang={{ x: 0, y: 0, s: 1 }}
             beiWahl={waehle}
@@ -208,6 +230,10 @@ export function Variantenkarte({ wert }: { wert: string | null }) {
     () => (variation ? kartenlayout(variation, sprache(), t("varianten.karte.start")) : null),
     [variation],
   );
+  const bretter = useMemo(
+    () => (variation && layout ? abzweigbretter(variation, layout) : []),
+    [variation, layout],
+  );
   const titel = variation
     ? t("varianten.karte.titel", { titel: variation.titel || t("varianten.ohneTitel") })
     : t("varianten.karte.knopf");
@@ -220,6 +246,7 @@ export function Variantenkarte({ wert }: { wert: string | null }) {
         <Inhalt
           id={variation.id}
           layout={layout}
+          bretter={bretter}
           pfad={gemerkterPfad(variation.id) ?? variation.startpfad}
         />
       )}

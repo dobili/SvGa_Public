@@ -21,22 +21,28 @@ const SCHRIFT = 0.22 * FELD;
 /** Die Schrift sitzt optisch mittig, wenn die Grundlinie um ein Drittel der Größe tiefer liegt. */
 const GRUNDLINIE = SCHRIFT / 3;
 
-/** Gepunktete Linie mit Navy-Kontur wie die Buchpfeile. */
-function Punktlinie({ linie }: { linie: { x1: number; y1: number; x2: number; y2: number } }) {
-  const muster = `0 ${PUNKTABSTAND}`;
+/** Gepunktete Linie mit Navy-Kontur wie die Buchpfeile; ``faktor`` macht sie dicker. */
+function Punktlinie({
+  linie,
+  faktor,
+}: {
+  linie: { x1: number; y1: number; x2: number; y2: number };
+  faktor: number;
+}) {
+  const muster = `0 ${PUNKTABSTAND * faktor}`;
   return (
     <>
       <line
         {...linie}
         stroke={FARBEN.navy}
-        strokeWidth={PFEIL.breite + 2 * PFEIL.kontur}
+        strokeWidth={(PFEIL.breite + 2 * PFEIL.kontur) * faktor}
         strokeLinecap="round"
         strokeDasharray={muster}
       />
       <line
         {...linie}
         stroke={FARBEN.blau}
-        strokeWidth={PFEIL.breite}
+        strokeWidth={PFEIL.breite * faktor}
         strokeLinecap="round"
         strokeDasharray={muster}
       />
@@ -45,22 +51,30 @@ function Punktlinie({ linie }: { linie: { x1: number; y1: number; x2: number; y2
 }
 
 /** Kreis mit Nummer oder Stern in der Mitte des Pfeils. */
-function Nummernkreis({ mitte, marke }: { mitte: { x: number; y: number }; marke: string }) {
+function Nummernkreis({
+  mitte,
+  marke,
+  faktor,
+}: {
+  mitte: { x: number; y: number };
+  marke: string;
+  faktor: number;
+}) {
   return (
     <>
       <circle
         cx={mitte.x}
         cy={mitte.y}
-        r={KREIS}
+        r={KREIS * faktor}
         fill={FARBEN.blau}
         stroke={FARBEN.creme}
-        strokeWidth={PFEIL.kontur * 2}
+        strokeWidth={PFEIL.kontur * 2 * faktor}
       />
       <text
         x={mitte.x}
-        y={mitte.y + GRUNDLINIE}
+        y={mitte.y + GRUNDLINIE * faktor}
         textAnchor="middle"
-        fontSize={SCHRIFT}
+        fontSize={SCHRIFT * faktor}
         fontWeight={700}
         fill={FARBEN.creme}
         fontFamily="'Source Sans 3', sans-serif"
@@ -76,10 +90,12 @@ function Fortsetzungspfeil({
   chip,
   gedreht,
   versatz,
+  faktor,
 }: {
   chip: Fortsetzungschip;
   gedreht: boolean;
   versatz: number;
+  faktor: number;
 }) {
   const form = chip.von && chip.nach ? pfeilform(chip.von, chip.nach, gedreht, versatz) : null;
   if (!form) return null;
@@ -92,14 +108,14 @@ function Fortsetzungspfeil({
   const mitte = { x: (linie.x1 + linie.x2) / 2, y: (linie.y1 + linie.y2) / 2 };
   return (
     <g data-testid="fortsetzungspfeil">
-      <Punktlinie linie={linie} />
+      <Punktlinie linie={linie} faktor={faktor} />
       <polygon
         points={form.spitze.map((p) => `${p.x},${p.y}`).join(" ")}
         fill={FARBEN.blau}
         stroke={FARBEN.navy}
         strokeWidth={PFEIL.kontur}
       />
-      <Nummernkreis mitte={mitte} marke={chip.marke} />
+      <Nummernkreis mitte={mitte} marke={chip.marke} faktor={faktor} />
     </g>
   );
 }
@@ -107,13 +123,16 @@ function Fortsetzungspfeil({
 /**
  * Alle Pfeile eines Abzweigs; ohne Abzweig (eine oder keine Fortsetzung) nichts.
  * Beispiel: Petroff nach 3. Sxe5 → Pfeil d7–d6 mit Stern, Pfeil f6–e4 mit „2“.
+ * ``faktor`` macht Linie, Punkte und Kreis dicker (kleine Bretter der Karte, Kartenbrett.tsx).
  */
 export function Fortsetzungspfeile({
   chips,
   gedreht,
+  faktor = 1,
 }: {
   chips: readonly Fortsetzungschip[];
   gedreht: boolean;
+  faktor?: number;
 }) {
   if (chips.length < 2) return null;
   const wege = chips.map((c) => ({ von: c.von ?? "", nach: c.nach ?? "" }));
@@ -126,6 +145,7 @@ export function Fortsetzungspfeile({
           chip={chip}
           gedreht={gedreht}
           versatz={versaetze[i] ?? 0}
+          faktor={faktor}
         />
       ))}
     </svg>

@@ -112,6 +112,10 @@ test("Karte: öffnen, verschieben, zoomen, Zug antippen, Liste", async ({ page }
   await expect(page.getByTestId("variantenkarte")).toBeVisible();
   const knoten = page.getByTestId("kartenknoten");
   expect(await knoten.count()).toBeGreaterThan(10);
+  // An jedem Abzweig ein kleines Brett mit den blauen Pfeilen (nach 3. Sxe5: Stern und „2“).
+  const bretter = page.getByTestId("kartenbrett");
+  expect(await bretter.count()).toBeGreaterThanOrEqual(2);
+  await expect(bretter.first().getByTestId("fortsetzungspfeil")).toHaveCount(2);
   await expect(page.locator(".kk-knoten.aktuell")).toContainText("Sxe5");
   // Verschieben mit der Maus.
   const flaeche = page.getByTestId("kartenflaeche");
@@ -199,8 +203,12 @@ test("PGN: Pfeile, Felder, Nummerntexte und Legende hin und zurück", async ({ p
   expect(pgn).toContain("Legende Gold: Druck");
   await page.keyboard.press("Escape");
 
-  // Einlesen einer Lichess-PGN: Grün und Gelb, Pfeil und Feld.
+  // Einlesen einer Lichess-PGN: Grün und Gelb, Pfeil und Feld. Der geänderte Entwurf fragt vorher.
   await page.getByRole("navigation").getByRole("button", { name: "Training" }).click();
+  await page
+    .getByTestId("variante-speicherfrage")
+    .getByRole("button", { name: "Nicht speichern" })
+    .click();
   await page.getByTestId("kachel-varianten").getByRole("button").click();
   await page.getByRole("button", { name: "PGN", exact: true }).click();
   await page.getByLabel("PGN oder FEN").fill("1. e4 { [%csl Gd5][%cal Ye2e4,Rd1h5] } e5 *");

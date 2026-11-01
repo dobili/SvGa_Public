@@ -8,7 +8,10 @@
  * weiter rechts als die Stellung davor. Die erste Fortsetzung bleibt in der Zeile ihres
  * Vorgängers (die Hauptvariante ist also die oberste Zeile), jede weitere Fortsetzung beginnt in
  * der ersten freien Zeile unter allem, was bis dahin liegt. So kreuzen sich die Äste nie: Ein Ast
- * hängt senkrecht unter seinem Abzweig und läuft dann nach rechts.
+ * hängt senkrecht unter seinem Abzweig und läuft dann nach rechts. Unter jedem Abzweig bleiben
+ * BRETTZEILEN Zeilen frei für das kleine Brett mit den Fortsetzungspfeilen (Wunsch des Autors,
+ * 1.11.2026: „an den Abzweigungen auch die konkrete Abzweigstellung mit den blauen Pfeilen“); die
+ * weiteren Fortsetzungen beginnen erst darunter.
  * Abhängigkeiten: chessops, schach/notation.ts, schach/variationsbaum.ts, training/variationen.ts.
  * Buchbezug: Kapitel 0, „Wie liest man Schachzüge?“ (Hauptvariante zuerst, „...“ für Schwarz).
  */
@@ -48,6 +51,9 @@ export interface Kartenlayout {
   readonly zeilen: number;
 }
 
+/** Zeilen, die unter einem Abzweig für sein Brett frei bleiben (Maße in kartenmasse.ts). */
+export const BRETTZEILEN = 3;
+
 /** Was beim Durchlaufen mitläuft. */
 interface Lauf {
   readonly knoten: Kartenknoten[];
@@ -55,6 +61,8 @@ interface Lauf {
   /** Erste noch freie Zeile. */
   naechsteZeile: number;
   readonly sprachcode: string;
+  /** Freie Zeilen unter einem Abzweig (BRETTZEILEN, in Tests auch 0). */
+  readonly platz: number;
 }
 
 /** Der Text eines Zuges: Nummer bei Weiß und am Anfang einer Zeile, sonst nur der Zug. */
@@ -76,6 +84,8 @@ function legeFortsetzungen(
   zuege.forEach((k, i) => {
     const zug = parseSan(pos, k.zug);
     if (!zug) return;
+    // Unter dem Abzweig bleibt Platz für sein Brett; der Ast beginnt darunter.
+    if (i > 0) lauf.naechsteZeile = Math.max(lauf.naechsteZeile, oben.zeile + 1 + lauf.platz);
     const zeile = i === 0 ? oben.zeile : lauf.naechsteZeile;
     if (i > 0) lauf.naechsteZeile += 1;
     const haupt = oben.haupt && i === 0;
@@ -100,15 +110,22 @@ function legeFortsetzungen(
 /**
  * Berechnet die Karte einer Variante.
  *
- * Eingaben: Baum, Sprache der Züge, Text der Startstellung („Start“).
+ * Eingaben: Baum, Sprache der Züge, Text der Startstellung („Start“), freie Zeilen unter einem
+ * Abzweig (Vorgabe BRETTZEILEN).
  * Ausgabe: Knoten (Startstellung zuerst, dann in Lesereihenfolge), Linien, Größe in Spalten und
  * Zeilen.
  * Beispiel aus dem Buch: Abb. 2.40 (Petroff) mit 3... d6 und 3... Sxe4?! → Zeile 0: Start, 1. e4,
- * e5, 2. Sf3, Sf6, 3. Sxe5, d6 …; Zeile 1 beginnt in Spalte 6 mit „3... Sxe4?!“.
+ * e5, 2. Sf3, Sf6, 3. Sxe5, d6 …; unter 3. Sxe5 steht das Brett, Zeile 4 beginnt in Spalte 6 mit
+ * „3... Sxe4?!“.
  * Sonderfall: Ein unspielbarer Zug beendet seinen Ast (wie in der Zugleiste).
  */
-export function kartenlayout(baum: Zugbaum, sprachcode: string, starttext: string): Kartenlayout {
-  const lauf: Lauf = { knoten: [], kanten: [], naechsteZeile: 1, sprachcode };
+export function kartenlayout(
+  baum: Zugbaum,
+  sprachcode: string,
+  starttext: string,
+  platz = BRETTZEILEN,
+): Kartenlayout {
+  const lauf: Lauf = { knoten: [], kanten: [], naechsteZeile: 1, sprachcode, platz };
   lauf.knoten.push({
     pfad: [],
     spalte: 0,

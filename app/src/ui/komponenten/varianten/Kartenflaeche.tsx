@@ -7,12 +7,14 @@
  * der Knoten kommt aus schach/baumlayout.ts, Verschieben und Zoomen aus useKartenbewegung.ts.
  * Gezeichnet wird mit SVG und den Farbmerkmalen aus basis.css (hell und dunkel): Hauptvariante
  * mit goldener Linie und kräftigem Rahmen, eigene Züge in Gold, Züge der Engine gestrichelt und
- * kursiv, Kommentar als goldener Punkt, die gezeigte Stellung gefüllt. Die Zeichnung ist für
+ * kursiv, Kommentar als goldener Punkt, die gezeigte Stellung gefüllt. Unter jedem Abzweig steht
+ * ein kleines Brett mit den blauen Fortsetzungspfeilen (Kartenbrett.tsx). Die Zeichnung ist für
  * Bildschirmleser verborgen; sie bekommen die Liste (Kartenliste.tsx).
- * Abhängigkeiten: schach/baumlayout.ts, kartenmasse.ts, useKartenbewegung.ts, React.
+ * Abhängigkeiten: schach/baumlayout.ts, kartenmasse.ts, Kartenbrett.tsx, useKartenbewegung.ts, React.
  */
 import { memo, useImperativeHandle, useRef, type Ref, type RefObject } from "react";
 import type { Kartenknoten, Kartenlayout } from "../../../schach/baumlayout";
+import { Figurensymbole, Kartenbrett, type Abzweigbrett } from "./Kartenbrett";
 import { KARTE, kartengroesse, knotenmitte, PUNKT, SCHRIFTVERSATZ } from "./kartenmasse";
 import { begrenzt, useKartenbewegung, type Ansichtslage } from "./useKartenbewegung";
 
@@ -64,12 +66,15 @@ function Knoten({ k, stelle, aktuell }: { k: Kartenknoten; stelle: number; aktue
 const Zeichnung = memo(function Zeichnung({
   layout,
   aktuell,
+  bretter,
 }: {
   layout: Kartenlayout;
   aktuell: number;
+  bretter: readonly Abzweigbrett[];
 }) {
   return (
     <>
+      {bretter.length > 0 && <Figurensymbole />}
       {layout.kanten.map((kante) => {
         const von = layout.knoten[kante.von];
         const nach = layout.knoten[kante.nach];
@@ -81,6 +86,10 @@ const Zeichnung = memo(function Zeichnung({
             d={linienpfad(von, nach)}
           />
         );
+      })}
+      {bretter.map((b) => {
+        const k = layout.knoten[b.stelle];
+        return k ? <Kartenbrett key={b.stelle} brett={b} k={k} /> : null;
       })}
       {layout.knoten.map((k, i) => (
         <Knoten key={k.pfad.join(" ")} k={k} stelle={i} aktuell={i === aktuell} />
@@ -142,11 +151,13 @@ function useSteuerung(
 
 /**
  * Die Fläche mit der Karte.
- * Eingaben: Layout, Stelle der gezeigten Stellung, Anfangslage, was ein Tipp auf einen Knoten tut,
- * Steuerung für die Knöpfe (ref), Beschriftung für Bildschirmleser und Tastatur.
+ * Eingaben: Layout, Bretter der Abzweige, Stelle der gezeigten Stellung, Anfangslage, was ein Tipp
+ * auf einen Knoten tut, Steuerung für die Knöpfe (ref), Beschriftung für Bildschirmleser und
+ * Tastatur.
  */
 export function Kartenflaeche({
   layout,
+  bretter,
   aktuell,
   anfang,
   beiWahl,
@@ -154,6 +165,7 @@ export function Kartenflaeche({
   beschriftung,
 }: {
   layout: Kartenlayout;
+  bretter: readonly Abzweigbrett[];
   aktuell: number;
   anfang: Ansichtslage;
   beiWahl: (stelle: number) => void;
@@ -178,7 +190,7 @@ export function Kartenflaeche({
     >
       <svg aria-hidden="true">
         <g transform={`translate(${lage.x} ${lage.y}) scale(${lage.s})`} data-testid="kartenlage">
-          <Zeichnung layout={layout} aktuell={aktuell} />
+          <Zeichnung layout={layout} aktuell={aktuell} bretter={bretter} />
         </g>
       </svg>
     </div>

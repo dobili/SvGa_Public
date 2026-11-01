@@ -20,6 +20,13 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   Abfragen (`useSpeicherfrage.ts`). Gabel-Knopf mit eigenen Zügen fragt; „Als Variante speichern“
   und „Einlesen und speichern“ gelten als Antwort. Gespeicherte Varianten speichern Änderungen wie
   bisher von selbst. Auch Entwürfe werden analysiert; die Werte bleiben in der Arbeitskopie.
+- **Bretter an den Abzweigen der Karte** (Wunsch des Autors, 1.11.2026: „an den Abzweigungen
+  auch die konkrete Abzweigstellung mit den blauen Pfeilen“): `Kartenbrett.tsx` zeichnet unter
+  jedem Abzweig ein Brett (136 px bei Zoom 1) mit den Fortsetzungspfeilen (doppelt so dick wie am
+  großen Brett). Dafür ist die Spalte 152 statt 88 px breit, und unter jedem Abzweig bleiben drei
+  Zeilen frei (`BRETTZEILEN` in `schach/baumlayout.ts`), sodass sich Bretter, Linien und Äste nie
+  überdecken. Dunkle Felder als ein Pfad, Figuren als `<use>` auf zwölf Symbole, damit auch große
+  Eröffnungsbäume flüssig bleiben.
 - **Gespeicherte Werte übernehmen** (Einwand des Autors: Neu rechnen ist sinnlos): Eine Variante
   aus einer ausgewerteten Partie bekommt Wert, besten Zug und Abstand jeder Partiestellung aus dem
   Partieeintrag (`ergebnisseAusPartie`, gleiche Engine und Tiefe 18); die Analyse rechnet nur

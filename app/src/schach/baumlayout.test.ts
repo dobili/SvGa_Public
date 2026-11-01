@@ -37,7 +37,7 @@ const PETROFF: Zugbaum = {
 };
 
 describe("Karte (Mindmap)", () => {
-  const karte = kartenlayout(PETROFF, "de", "Start");
+  const karte = kartenlayout(PETROFF, "de", "Start", 0);
 
   it("legt die Hauptvariante in Zeile 0, eine Spalte je Halbzug", () => {
     const haupt = karte.knoten.filter((k) => k.zeile === 0).map((k) => k.text);
@@ -66,6 +66,17 @@ describe("Karte (Mindmap)", () => {
     expect(sc6).toMatchObject({ spalte: 6, zeile: 3, herkunft: undefined });
     expect(karte.zeilen).toBe(4);
     expect(karte.spalten).toBe(10);
+  });
+
+  it("lässt unter jedem Abzweig Platz für sein Brett (1.11.2026)", () => {
+    const mitBrett = kartenlayout(PETROFF, "de", "Start");
+    const zeile = (text: string) => mitBrett.knoten.find((k) => k.text === text)?.zeile;
+    // 3. Sxe5 zweigt in Zeile 0 ab: Zeilen 1 bis 3 bleiben frei, Sxe4 steht in Zeile 4.
+    expect(zeile("3... Sxe4?!")).toBe(4);
+    // 4. De2 zweigt in Zeile 4 ab: 4... Sf6 erst in Zeile 8, danach 3... Sc6 in Zeile 9.
+    expect(zeile("4... Sf6")).toBe(8);
+    expect(zeile("3... Sc6")).toBe(9);
+    expect(mitBrett.zeilen).toBe(10);
   });
 });
 

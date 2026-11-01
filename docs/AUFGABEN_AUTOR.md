@@ -49,6 +49,10 @@ Teil fertig ist.
       Züge … speichern?“ (oder „Nur das Buch öffnen“); „Als Variante speichern“ in der Zugleiste und
       „Einlesen und speichern“ bei PGN sind selbst die Antwort. Eine gespeicherte Variante speichert
       Änderungen weiter von selbst. Schon umgesetzt, Widerspruch genügt.
+- [ ] N2573. **Bretter in der Karte:** Abb. 2.40 als Variante → „Karte“: Unter „3. Sxe5“ und „4. De2!“ steht je
+      ein kleines Brett mit der Stellung am Abzweig und den blauen gepunkteten Pfeilen (Stern am
+      Hauptzug, „2“, „3“ …); die Nebenäste beginnen darunter. Ein Tipp aufs Brett springt zu diesem
+      Abzweig. Zoomen macht die Bretter größer. Schon umgesetzt, Widerspruch genügt.
 - [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
       Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
       Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler

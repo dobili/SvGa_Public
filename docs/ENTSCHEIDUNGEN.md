@@ -4,6 +4,20 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Antworten des Autors zu Q12
+
+- **Q12-1 Cover-Bild:** mit dem Bildgenerator von Google Gemini erstellt. Einordnung (keine
+  Rechtsberatung): Google beansprucht an erzeugten Bildern keine Rechte, der Autor darf das Bild
+  frei nutzen, auch für Buch, App-Symbol und Website. Ein eigenes Urheberrecht entsteht an rein
+  maschinell erzeugten Bildern nach deutschem Recht aber meist nicht (keine persönliche geistige
+  Schöpfung); andere könnten das Bild dann ebenfalls verwenden. Die Lizenzseite bleibt bei „alle
+  Rechte vorbehalten“; nichts zu ändern.
+- **Q12-2:** Nach dem Ende einer Partie gibt es kein Zurücknehmen mehr (statt eines neuen
+  Speicherfelds „schon gezählt“). Umsetzung im Zweig `q12-zeitleiste`.
+- **Q12-3:** Der beste Zug der Engine bekommt nie „?“, „??“ oder „?!“. Umsetzung im selben Zweig.
+- Dazu Wunsch des Autors: Zeitleiste der Auswertung waagerecht wischbar, „Zur Stellung“ scrollt so,
+  dass das Brett ganz zu sehen ist.
+
 ## 1.11.2026 – Version 0.3.44: Nachtaufträge (Lizenzen, Wiki, großer Fehlertest)
 
 Wunsch des Autors (31.10.2026 abends): nach 0.3.43 Lizenzen prüfen, Wiki aktualisieren, ausgiebiger

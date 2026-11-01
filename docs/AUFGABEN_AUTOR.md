@@ -725,22 +725,6 @@ nur du das Buch änderst.
 
 ### Q12 Aus den Nachtaufträgen (1.11.2026)
 
-- [ ] Q12-1. **Rechte am Cover-Bild:** App-Symbol, Startbild, `cover.webp` und das Teilen-Bild sind
-      Ausschnitte des Buchcovers (goldener Springer); die Lizenzseite führt sie als „alle Rechte
-      vorbehalten“. Hast du das Bild selbst gestaltet, oder stammt es von einem Gestalter, einer
-      Bilddatenbank oder einem Bildgenerator? Empfehlung: selbst gemacht → nichts zu tun; sonst
-      prüfen, ob die Lizenz auch App-Symbol und Website abdeckt, und den Urheber nennen, falls
-      verlangt.
-- [ ] Q12-2. **Partie nach dem Ende zurücknehmen:** Nach einer ungewerteten Partie geht
-      „Zurücknehmen“ weiter (gewollt). Wird sie danach erneut beendet, zählen Tagesprotokoll,
-      Siege, Rekorde, Rivale und Ziele sie ein zweites Mal; so ließen sich Siege sammeln.
-      Empfehlung: an der Partie ein Merkmal „schon gezählt“ speichern (neues Feld im Speicher,
-      deshalb warte ich auf dein Ja). Alternative ohne neues Feld: nach dem Ende kein Zurücknehmen
-      mehr. Sag „Q12-2 Merkmal“ oder „Q12-2 sperren“.
-- [ ] Q12-3. **Bester Zug nie „?“:** Spielt man genau den besten Zug der Engine, kann er in seltenen
-      Fällen trotzdem „?“ bekommen (wenn die Stellung schon vorher verloren war). Empfehlung: Ein
-      Zug, der dem besten gleicht, bekommt nie „?“ oder „??“. Das ändert Zugklassen und Genauigkeit
-      leicht, deshalb erst nach deinem Ja.
 - [ ] Q12-4. **Brett bis 8 px an den Rand:** Die Vorprüfung meinte, das Brett im Zähltrainer und bei
       „Falle oder Köder“ wirke bei schmalen Handys angeschnitten. Im Browser fehlt nichts; Brett
       und Marke „am Zug“ liegen wie überall 8 px vom Rand. Empfehlung: so lassen. Ist auf deinem

@@ -98,6 +98,9 @@
    selten. Die Nachfrage vor dem Ausführen bleibt. */
 .galeriekopf > .knopfreihe {
   flex-direction: row;
+  /* Bei großer Schrift auf 320 Pixeln passt „Alle zurücksetzen“ nicht neben „Alle abhaken“ und
+     schob die ganze Seite breiter (Bug-Test 1.11.2026): dann untereinander. */
+  flex-wrap: wrap;
 }
 
 .galeriekopf > .knopfreihe > .knopf-zweit {
@@ -122,6 +125,11 @@
 
 .abschnittsklappe-titel {
   flex: 1;
+  /* Lange Wörter („Qualitätsopfer“) brechen um, statt die Zeile bei großer Schrift auf 320 Pixeln
+     über den Rand zu schieben (Bug-Test 1.11.2026). */
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
   font-size: var(--groesse-grund);
   font-weight: 700;
 }

@@ -6,8 +6,9 @@
  * Fortsetzung, grobe Patzer markiert“) und 5.2 („In Zug 12 hat die Engine eine Figur hängen
  * lassen. Hast du es gesehen?“). Ziel des Autors: weniger technisch, weniger Text, kein Formular;
  * Einsteiger am Handy, meist dunkel. Aufbau: Fortschritt der Engine, „Die Partie in Momenten“
- * (Verlaufskurve mit Fehlerpunkten und Ausschnitt, darunter die Zeitleiste mit Phasen und
- * Momenten: erste klare Abweichung oder „Gut gespielt!“, Fehler und Patzer, absichtliche Fehler
+ * (Verlaufskurve mit Fehlerpunkten und Ausschnitt, darunter die Zeitleiste als waagerecht
+ * wischbare Reihe mit Phasen und Momenten, seit 1.11.2026; die Knöpfe der Phasen an der Kurve
+ * rücken auch den Abschnitt der Reihe nach vorn: erste klare Abweichung oder „Gut gespielt!“, Fehler und Patzer, absichtliche Fehler
  * der Engine, Ende; jeder Moment springt aufs Brett), dann „In Zahlen“ (Seitenwahl,
  * Spielstärke, Deine Züge; Zahlen.tsx). Eine Seitenwahl gilt für beide Teile (Voreinstellung die
  * eigene Seite, R55/R56). Ergebnis oben und Knöpfe unten stehen außerhalb (Ergebniskopf.tsx,
@@ -30,7 +31,7 @@ import type { Auswertungsstand } from "./useAuswertung";
 import { Verlaufskurve } from "./Verlaufskurve";
 import { Seitenwahl, Zahlen } from "./Zahlen";
 import { phasenabschnitte } from "./zeitleiste";
-import { Zeitleiste } from "./Zeitleiste";
+import { Zeitleiste, type Phasenwahl } from "./Zeitleiste";
 import { MitInfoblase } from "../bausteine/Infoblase";
 
 export type { Sprung } from "./sprung";
@@ -87,6 +88,7 @@ interface AuswertungEigenschaften {
 /** „Die Partie in Momenten“: Überschrift, Seitenwahl, Kurve, Zeitleiste. */
 function Momente(p: AuswertungEigenschaften & { seite: Color; beiSeite: (s: Color) => void }) {
   const partie = p.eintrag.partie;
+  const [phasenwahl, setzePhasenwahl] = useState<Phasenwahl | null>(null);
   const kontext: Momentkontext = { partie, urteile: p.urteile, seite: p.seite };
   const alle = momente(kontext);
   const zeichenAn = (index: number) => p.urteile.find((u) => u.index === index)?.zeichen ?? "";
@@ -109,6 +111,7 @@ function Momente(p: AuswertungEigenschaften & { seite: Color; beiSeite: (s: Colo
         urteile={p.urteile}
         wechsel={phasenwechsel(p.phasen)}
         beiStelle={(stelle) => p.beiSprung({ stelle, marken: [] })}
+        beiPhase={(phase) => setzePhasenwahl((alt) => ({ phase, mal: (alt?.mal ?? 0) + 1 }))}
         zugname={(stelle) =>
           stelle === 0
             ? t("rueckblick.startstellung")
@@ -116,11 +119,13 @@ function Momente(p: AuswertungEigenschaften & { seite: Color; beiSeite: (s: Colo
         }
       />
       <Zeitleiste
+        key={p.seite}
         abschnitte={phasenabschnitte(partie, p.phasen, alle)}
         grund={{ eintrag: p.eintrag, urteile: p.urteile, theorie: p.theorie }}
         jePhase={p.zahlen?.[p.seite].jePhase ?? null}
         gedreht={partie.einstellung.eigeneFarbe === "black"}
         gutGespielt={gutGespielt(kontext)}
+        phasenwahl={phasenwahl}
         beiSprung={p.beiSprung}
       />
       <OhneEnginefehler eintrag={p.eintrag} gezeigt={alle.some((m) => m.art === "engine")} />

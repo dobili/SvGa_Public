@@ -1,7 +1,8 @@
 /*
  * Auswertung neu nach Entwurf F2 „Zeitleiste der Partie“ (Wahl des Autors, 31.10.2026):
- * Ergebnis als Kopfzeile, Überschriften der Abschnitte, Zeitleiste mit Phasen, Marken und
- * kleinen Brettern, Blatt von unten (Teilen, Merken), Abschluss mit Neue Partie und Teilen,
+ * Ergebnis als Kopfzeile, Überschriften der Abschnitte, Urteilsfarben der Phasen (die Zeitleiste
+ * selbst steht seit 1.11.2026 in zeitleiste.css), Blatt von unten (Teilen, Merken), Abschluss mit
+ * Neue Partie und Teilen,
  * dazu der neue Stil der Karten „Spielstärke“ und „Deine Züge“ (Inhalt unverändert).
  * Farben nur aus den Tokens in basis.css, damit hell und dunkel stimmen; Urteilsfarben wie
  * .ringfarbe-* (auswertung.css), Zugklassen wie .klassenmarke-* (spiel.css).
@@ -121,45 +122,7 @@
   stroke-width: 1.5;
 }
 
-/* ---------- Zeitleiste ---------- */
-.zeitleiste {
-  display: flex;
-  flex-direction: column;
-  gap: var(--raster);
-}
-
-.zeitleiste-gut {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--raster) * 1.5);
-  padding: calc(var(--raster) * 1.5);
-  border-radius: calc(var(--radius) * 1.5);
-  background: color-mix(in srgb, var(--gruen-text) 14%, var(--flaeche));
-  color: var(--gruen-text);
-}
-
-.zeitleiste-gut .zeitleiste-text {
-  color: var(--text);
-}
-
-.zeitleiste-abschnitt {
-  --linienfarbe: var(--linie-stark);
-  position: relative;
-  padding-left: calc(var(--raster) * 4);
-}
-
-/* Die senkrechte Linie links, je Phase in der Farbe ihres Urteils. */
-.zeitleiste-abschnitt::before {
-  content: "";
-  position: absolute;
-  left: 13px;
-  top: 4px;
-  bottom: 0;
-  width: 4px;
-  border-radius: 2px;
-  background: var(--linienfarbe);
-}
-
+/* ---------- Urteilsfarben (Zeitleiste in zeitleiste.css, Werkzeugkarten) ---------- */
 .linie-hervorragend {
   --linienfarbe: #1f7a3a;
 }
@@ -177,118 +140,6 @@
 }
 .linie-schwach {
   --linienfarbe: #b33a3a;
-}
-
-.zeitleiste-phase {
-  margin: calc(var(--raster) * 1.5) 0 var(--raster);
-  color: var(--gold-text);
-  font-size: var(--groesse-fein);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.zeitleiste-liste {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--raster) * 1.5);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.zeitleiste-moment {
-  position: relative;
-}
-
-/* Marke auf der Linie, mittig zur Titelzeile der Karte. */
-.zeitleiste-marke {
-  position: absolute;
-  left: calc(var(--raster) * -4 + 3px);
-  top: calc(var(--raster) * 2);
-}
-
-.zeitleiste-marke .klassenmarke {
-  width: 24px;
-  height: 24px;
-  box-shadow: 0 0 0 3px var(--grund);
-}
-
-.klassenmarke-engine {
-  background: #5c6f8f;
-}
-
-.klassenmarke-ende {
-  background: var(--navy);
-  box-shadow: 0 0 0 1px var(--linie-stark);
-}
-
-.zeitleiste-karte {
-  display: flex;
-  align-items: flex-start;
-  gap: calc(var(--raster) * 1.5);
-  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
-  border-radius: calc(var(--radius) * 1.5);
-  background: var(--flaeche);
-  box-shadow: 0 0 0 1px var(--linie);
-}
-
-.zeitleiste-inhalt {
-  flex: 1;
-  min-width: 0;
-}
-
-.zeitleiste-titel {
-  margin: 0 0 4px;
-  font-family: var(--schrift-titel);
-  font-size: var(--groesse-titel);
-  line-height: 1.2;
-}
-
-.zeitleiste-text {
-  margin: 0 0 4px;
-  font-size: var(--groesse-mittel);
-}
-
-.zeitleiste-besser {
-  color: var(--gold-text);
-}
-
-.zeitleiste-zusatz {
-  margin: 0 0 4px;
-  color: var(--text-leise);
-  font-size: var(--groesse-klein);
-}
-
-.zeitleiste-sprung {
-  min-height: 40px;
-  margin-top: var(--raster);
-  padding: 0 calc(var(--raster) * 2);
-  border: 1px solid var(--linie-stark);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-size: var(--groesse-klein);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.zeitleiste-brett {
-  flex: none;
-  width: 5.5rem;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.zeitleiste-brett .brett svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.zeitleiste-hinweis {
-  margin: 0;
 }
 
 /* ---------- In Zahlen: neuer Stil der Karten ---------- */

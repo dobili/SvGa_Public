@@ -7,6 +7,9 @@
 import { expect, test, type Page } from "@playwright/test";
 import { ladeMitSprung, starteImBrowser } from "./hilfen";
 
+/** So lange wartet ein Tipp auf die Startanimation, bevor er aufgibt (ms). */
+const KURZ = 3000;
+
 const profilKnopf = (page: Page) =>
   page
     .getByRole("navigation", { name: "Hauptbereiche" })
@@ -123,7 +126,11 @@ test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Start
   await expect(stueck).toHaveCount(0);
   // Probe beenden: der Ring zählt wieder echt (Aufgabenseite neu öffnen, die Animation wegtippen).
   await ladeMitSprung(page, "/app/#aufgaben");
-  await page.getByTestId("startanimation").click();
+  // Die Animation kann unter Last von selbst enden, während der Tipp noch wartet (in CI mit
+  // WebKit und lokal mit neuem Chromium gesehen): dann zählt nur, dass sie weg ist.
+  const animation = page.getByTestId("startanimation");
+  await animation.click({ timeout: KURZ }).catch(() => undefined);
+  await expect(animation).toHaveCount(0);
   await probe.locator("summary").click();
   await probe.getByRole("button", { name: "Probe beenden" }).click();
   await expect(

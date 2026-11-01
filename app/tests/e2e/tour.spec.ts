@@ -26,17 +26,26 @@ async function starteTour(page: Page): Promise<void> {
   await expect(tourkarte(page)).toBeVisible();
 }
 
-/** Tippt „Weiter“ bis „Fertig“ und gibt die Texte aller gezeigten Schritte zurück. */
+/**
+ * Tippt „Weiter“ bis „Fertig“ und gibt die Texte aller gezeigten Schritte zurück. Die Zahl der
+ * Schritte kann während der Tour wachsen, wenn Ziele mit den Daten nachkommen (unter Last im
+ * Gesamtlauf am 1.11.2026 gesehen: „Schritt 1 von 7“ wurde zu „von 8“); deshalb liest die Schleife
+ * den Stand je Schritt neu, statt die Anzahl am Anfang festzuhalten.
+ */
 async function bisZumEnde(page: Page): Promise<string[]> {
   const karte = tourkarte(page);
-  const stand = await karte.getByText(/^Schritt \d+ von \d+$/).textContent();
-  const anzahl = Number(/von (\d+)/.exec(stand ?? "")?.[1]);
   const texte: string[] = [];
-  for (let schritt = 1; schritt <= anzahl; schritt += 1) {
-    await expect(karte.getByText(`Schritt ${schritt} von ${anzahl}`)).toBeVisible();
+  const HOECHSTENS = 40;
+  for (let schritt = 1; schritt <= HOECHSTENS; schritt += 1) {
+    const stand = karte.getByText(new RegExp(`^Schritt ${schritt} von \\d+$`));
+    await expect(stand).toBeVisible();
+    const anzahl = Number(/von (\d+)/.exec((await stand.textContent()) ?? "")?.[1]);
     texte.push((await karte.locator(".tour-text").textContent()) ?? "");
-    const name = schritt === anzahl ? "Fertig" : "Weiter";
-    await karte.getByRole("button", { name }).click();
+    if (schritt >= anzahl) {
+      await karte.getByRole("button", { name: "Fertig" }).click();
+      break;
+    }
+    await karte.getByRole("button", { name: "Weiter" }).click();
   }
   await expect(page.getByTestId("tour")).toHaveCount(0);
   return texte;

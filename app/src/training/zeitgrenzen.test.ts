@@ -2,14 +2,15 @@
  * Grenzfälle der Zeitrechnung im Fehlertest f3 (01.11.2026): Ende der Sommerzeit (Sonntag,
  * 25.10.2026, 3 Uhr wird 2 Uhr), Wochen- und Monatswechsel um Mitternacht und der Jahreswechsel,
  * jeweils in der Ortszeit Berlin. Betroffen sind Tagesprotokoll, Wochenziel, Tagesserie,
- * Monatsrückblick und der Rekord „Lerntage in einer Woche“; alle rechnen mit Tagesschlüsseln der
- * Ortszeit (training/kurzplaene.ts, tagesschluessel).
+ * Monatsrückblick, der Rekord „Lerntage in einer Woche“ und das Neuzeichnen um Mitternacht
+ * (app/tageswechsel.ts); alle rechnen mit Tagesschlüsseln der Ortszeit (training/kurzplaene.ts).
  */
 process.env.TZ = "Europe/Berlin";
 
 import { describe, expect, it } from "vitest";
 import { lerntage, wochentage, zaehleAktivitaet } from "../speicher/aktivitaet";
 import { leereDaten, type Nutzerdaten } from "../speicher/format";
+import { msBisMorgen } from "../app/tageswechsel";
 import { LEERE_SERIE, serieNach, seriePausiert, tagesschluessel } from "./kurzplaene";
 import { meisteLerntageInEinerWoche } from "./rekordwerte";
 import {
@@ -148,5 +149,15 @@ describe("Monatsrückblick an den Grenzen", () => {
     expect(vormonat(monatVon(ort(2027, 1, 3))).schluessel).toBe("2026-12");
     expect(rueckblickkarteSichtbar(dezember.aktivitaet, ort(2027, 1, 3), null)).toBe(true);
     expect(rueckblickkarteSichtbar(dezember.aktivitaet, ort(2027, 1, 3), "2026-12")).toBe(false);
+  });
+});
+
+describe("Neuzeichnen um Mitternacht (app/tageswechsel.ts)", () => {
+  it("wartet bis kurz nach Mitternacht, am Tag der Umstellung 25 Stunden", () => {
+    expect(msBisMorgen(ort(2026, 10, 31, 23, 59))).toBe(61_000);
+    expect(msBisMorgen(ort(2026, 10, 25, 0, 0))).toBe(25 * 3_600_000 + 1000);
+    expect(tagesschluessel(new Date(ort(2026, 12, 31, 23, 59).getTime() + msBisMorgen(ort(2026, 12, 31, 23, 59))))).toBe(
+      "2027-01-01",
+    );
   });
 });

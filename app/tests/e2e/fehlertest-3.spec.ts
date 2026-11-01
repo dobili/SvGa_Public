@@ -2,7 +2,8 @@
  * Oberflächentests zu den Fehlern aus dem dritten großen Fehlertest (f3, 01.11.2026): geteilte
  * Links bei offener App, Startwahl und Touren mit der Leiste unten, Zurück-Taste über der
  * Startwahl, „Los geht's“ aus dem Profil, Maia ohne Netz, voller Gerätespeicher, Fokus und Esc
- * der Gratulationen. Jeder Test hält einen behobenen Fehler fest.
+ * der Gratulationen, Tour und Frage nach der Sprache, neuer Tag bei offener App. Jeder Test hält
+ * einen behobenen Fehler fest.
  */
 import { expect, test, type Page } from "@playwright/test";
 import {
@@ -186,6 +187,34 @@ test.describe("englisches Gerät", () => {
     await expect(frage).toHaveCount(0);
     await expect(
       page.getByTestId("tour").getByRole("heading", { name: "Mit dem Buch starten" }),
+    ).toBeVisible();
+  });
+});
+
+test.describe("Ortszeit Berlin", () => {
+  test.use({ timezoneId: "Europe/Berlin" });
+
+  test("App offen über Mitternacht: nach der Rückkehr steht der neue Tag da", async ({ page }) => {
+    await page.setViewportSize(HANDY);
+    await page.clock.install({ time: new Date("2026-10-31T23:58:00+01:00") });
+    await starteImBrowser(page);
+    await oeffneAbbildung(page, "1.26", "1.26");
+    await page.clock.runFor(VERWEILZEIT_MS);
+    await page
+      .getByRole("navigation", { name: "Hauptbereiche" })
+      .getByRole("button", { name: "Buch", exact: true })
+      .click();
+    await expect(page.getByTestId("rueckblick-karte")).toHaveCount(0);
+    // Die Nacht vergeht im Hintergrund; am Morgen kommt die App wieder nach vorn.
+    await page.clock.setSystemTime(new Date("2026-11-01T08:00:00+01:00"));
+    await page.evaluate(() => {
+      Object.defineProperty(document, "visibilityState", { value: "visible", configurable: true });
+      document.dispatchEvent(new Event("visibilitychange"));
+    });
+    await expect(
+      page
+        .getByTestId("rueckblick-karte")
+        .getByRole("heading", { name: "Dein Oktober ist fertig" }),
     ).toBeVisible();
   });
 });

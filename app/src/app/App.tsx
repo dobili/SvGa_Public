@@ -58,6 +58,7 @@ import { TourAngebot } from "../tour/TourAngebot";
 import { Sprachangebot } from "./Sprachangebot";
 import { TourEbene } from "../tour/TourEbene";
 import { zusatzsprung } from "./spruenge";
+import { useTageswechsel } from "./tageswechsel";
 import { zusatzansicht } from "./zusatzansichten";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
@@ -252,6 +253,8 @@ function useSprungAusDerAdresse() {
 function Hauptrahmen() {
   useTonEntsperren();
   useSprungAusDerAdresse();
+  // Neuer Tag bei offener App: neu zeichnen, damit „Heute“ und Co. nicht beim alten Tag bleiben.
+  useTageswechsel();
   return (
     <div className="rahmen">
       <UpdateHinweis />

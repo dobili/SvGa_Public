@@ -151,3 +151,15 @@ test("Barrierefreiheit: Training, Nachschlagen, Einstellungen, Kapitelübersicht
   await page.getByRole("button", { name: /Grundprinzipien des Schachs/ }).click();
   expect(await schwer()).toEqual([]);
 });
+
+test("Sprung auf eine Abbildung aus einem Kapitel, das es nicht gibt, nennt die falsche Nummer", async ({
+  page,
+}) => {
+  // Bug-Test 1.11.2026: #abb-99.99 meldete „Die Buchdaten konnten nicht geladen werden“, als wäre
+  // die Installation kaputt.
+  await starteImBrowser(page);
+  await page.goto("/app/#abb-99.99");
+  await page.reload();
+  await expect(page.getByText("Abbildung 99.99 gibt es nicht.")).toBeVisible();
+  await expect(page.getByText(/konnten nicht geladen werden/)).toHaveCount(0);
+});

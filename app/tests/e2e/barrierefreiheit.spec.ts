@@ -111,3 +111,18 @@ test("360 px Breite: kein waagerechtes Scrollen auf den Hauptbildschirmen", asyn
   await oeffneTrainer(page, "taktik");
   expect(await ueberstand(), "Taktiktrainer").toBeLessThanOrEqual(0);
 });
+
+test("320 px und Schrift 150 %: Kapitelseite ohne waagerechtes Scrollen", async ({ page }) => {
+  // Bug-Test 1.11.2026: „Alle zurücksetzen“ und lange Abschnittstitel („Qualitätsopfer“) schoben
+  // die Seite 14 Pixel breiter, die Leiste unten ragte über den Rand.
+  await page.setViewportSize({ width: 320, height: 640 });
+  await page.addInitScript(() => window.localStorage.setItem("svga.schriftgroesse", "150"));
+  await starteImBrowser(page);
+  await page.getByRole("button", { name: /Mittelspielstrategie/ }).click();
+  await expect(page.getByRole("heading", { name: "Kapitel 6" })).toBeVisible();
+  await expect(page.locator(".abschnittsklappe").first()).toBeVisible();
+  const ueberstand = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  );
+  expect(ueberstand).toBeLessThanOrEqual(0);
+});

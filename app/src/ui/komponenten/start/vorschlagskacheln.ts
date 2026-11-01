@@ -15,6 +15,7 @@ import {
   Puzzle,
   RefreshCw,
   Sparkles,
+  Swords,
   Target,
   type LucideIcon,
 } from "lucide-react";
@@ -51,6 +52,7 @@ export const KACHELARTEN: Readonly<Record<string, Kachelart>> = {
   uebungen: { Symbol: Dumbbell, titel: "buchlook.kachel.uebungen", kurz: "buchlook.kurz.uebungen" },
   thema: { Symbol: Target, titelAusNamen: "thema", kurz: "buchlook.kurz.thema" },
   fehler: { Symbol: ListChecks, titelAusNamen: "trainer", kurz: "buchlook.kurz.fehler" },
+  partie: { Symbol: Swords, titel: "buchlook.kachel.partie", kurz: "buchlook.kurz.partie" },
 };
 
 /** Für unbekannte Arten: Funkeln, Knopftext und ganzer Satz. */
@@ -69,7 +71,7 @@ export function kacheltexte(vorschlag: Vorschlag, klein = false): { titel: strin
   const art = kachelart(vorschlag);
   const name = art.titelAusNamen ? vorschlag.namen?.[art.titelAusNamen] : undefined;
   const titel = name ? t(name) : t(art.titel ?? vorschlag.knopf);
-  const zeile = klein ? (art.kurzKlein ?? art.kurz) : art.kurz;
+  const zeile = vorschlag.kurz ?? (klein ? (art.kurzKlein ?? art.kurz) : art.kurz);
   const kurz = zeile ? t(zeile, vorschlag.werte) : vorschlagstext(vorschlag);
   return { titel, kurz };
 }

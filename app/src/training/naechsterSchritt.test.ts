@@ -9,6 +9,7 @@ import {
   naechsterSchrittSichtbar,
 } from "../ui/komponenten/start/naechsterSchrittMerker";
 import {
+  kapitelFuerUebungen,
   tagesaufgabeHeuteErledigt,
   vorschlaege,
   type Kapitelangabe,
@@ -140,12 +141,53 @@ describe("Rangfolge der Vorschläge", () => {
 
   it("übernimmt den Vorschlag der Fehlerdatenbank", () => {
     const eintrag = { id: "f1", datum: GESTERN, fen: "8/8/8/8/8/8/8/8 w - - 0 1", satz: "" };
-    const fehler = [{ ...eintrag, fehlerart: 1 }];
+    const fehler = [{ ...eintrag, fehlerart: 1 }, { ...eintrag, id: "f2", fehlerart: 1 }];
     const alles = gesehen("0.1", "0.2", "1.1", "1.2", "1.3", "1.4", "1.5");
     const v = vorschlaege(lage({}, { ...alles, fehler }))[0];
     expect(v?.art).toBe("fehler");
     expect(v?.werte).toEqual({ kapitel: 1 });
     expect(v?.ziel).toEqual({ bildschirm: "trainer", kennung: "roentgen" });
+  });
+
+  it("schlägt bei sehr vielen fälligen Karten eine Portion vor (Bug-Test 1.11.2026)", () => {
+    const [erster] = vorschlaege(lage({ faelligAnzahl: 200 }, faelligeKarten(3)));
+    expect(erster?.text).toBe("naechster.faelligViele");
+    expect(erster?.werte).toEqual({ anzahl: 200, portion: 20, minuten: 14 });
+    expect(erster?.kurz).toBe("buchlook.kurz.faelligViele");
+    const [genau] = vorschlaege(lage({ faelligAnzahl: 20 }, faelligeKarten(3)));
+    expect(genau?.text).toBe("naechster.faellig");
+    expect(genau?.kurz).toBeUndefined();
+  });
+
+  it("nimmt die Übungen des zuletzt gelesenen Kapitels vor denen von Kapitel 0", () => {
+    const daten = gesehen("0.1", "0.2", "1.1", "1.2", "1.3", "1.4", "1.5");
+    const uebungen = { 0: ["n"], 1: ["e"] };
+    const v = vorschlaege(lage({ uebungen, zuletzt: "1.5" }, daten)).find((x) => x.art === "uebungen");
+    expect(v?.werte).toEqual({ kapitel: 1, anzahl: 1 });
+    const ohneZuletzt = vorschlaege(lage({ uebungen }, daten)).find((x) => x.art === "uebungen");
+    expect(ohneZuletzt?.werte).toMatchObject({ kapitel: 1 });
+  });
+
+  it("zieht das Kapitel eines eigenen Ziels vor, auch wenn es noch nicht gelesen ist", () => {
+    const leer = leereDaten(JETZT);
+    const ziele = { ...leer.ziele, angeheftet: [{ art: "kapitel" as const, kapitel: 1 }] };
+    const daten = { ...gesehen("0.1", "0.2"), ziele };
+    const v = vorschlaege(lage({ uebungen: { 0: ["n"], 1: ["e"] }, zuletzt: "0.2" }, daten));
+    expect(v.find((x) => x.art === "uebungen")?.werte).toEqual({ kapitel: 1, anzahl: 1 });
+    expect(kapitelFuerUebungen({ ...leer, ziele }, KAPITEL)).toEqual([1]);
+  });
+
+  it("meldet einen einzelnen Eintrag der Fehlerdatenbank noch nicht als Häufung", () => {
+    const eintrag = { id: "f1", datum: GESTERN, fen: "8/8/8/8/8/8/8/8 w - - 0 1", satz: "" };
+    expect(arten(lage({}, { fehler: [{ ...eintrag, fehlerart: 1 }] }))).not.toContain("fehler");
+  });
+
+  it("schlägt zuletzt eine Partie vor, aber nicht dem Neuling", () => {
+    expect(arten(lage())).not.toContain("partie");
+    const alles = gesehen("0.1", "0.2", "1.1", "1.2", "1.3", "1.4", "1.5");
+    expect(vorschlaege(lage({}, alles))).toEqual([
+      expect.objectContaining({ art: "partie", ziel: { bildschirm: "spielen" } }),
+    ]);
   });
 
   it("nimmt eingetragene Arten nach Rang auf", () => {

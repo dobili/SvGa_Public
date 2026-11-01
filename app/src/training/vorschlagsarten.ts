@@ -6,19 +6,28 @@
  * ein (Kennung, Rang, Funktion); Lücken im Rang lassen Platz dazwischen (Wunsch des Autors,
  * 31.10.2026: eintragen statt umbauen).
  * Rangfolge nach gamifizierung.md P1: fällige Wiederholungen, Tagesaufgabe, Weiterlesen, offene
- * Übungen, schwaches Thema, Fehlerdatenbank.
+ * Übungen, schwaches Thema, Fehlerdatenbank; zuletzt eine Partie (Bug-Test 1.11.2026: wer alles
+ * erledigt hatte, bekam gar keinen Vorschlag mehr).
  * Abhängigkeiten: training/wiederholung.ts, training/themenstand.ts, training/themennamen.ts,
  * training/fehlerdatenbank.ts.
  */
 import type { Nutzerdaten } from "../speicher/format";
 import type { Kapitelangabe, Lage, Vorschlag, Vorschlagsart } from "./naechsterSchritt";
-import { auswertung, vorschlag as fehlervorschlag } from "./fehlerdatenbank";
+import { auswertung, VORSCHLAG_WOCHEN, vorschlag as fehlervorschlag } from "./fehlerdatenbank";
 import { schwaechstesThema } from "./themenstand";
 import { themennameSchluessel, trainerZumThema } from "./themennamen";
 import { faellige } from "./wiederholung";
 
 /** Erst ab so vielen fälligen Karten lohnt der Vorschlag (P1, Fall 1). */
 export const FAELLIG_AB = 3;
+/**
+ * Bei mehr fälligen Karten schlägt die Karte eine Portion dieser Größe vor (etwa 14 Minuten).
+ * Warum: „200 Wiederholungen, etwa 134 Minuten“ schreckt ab (Bug-Test 1.11.2026); die Lernkartei
+ * verträgt es, in Portionen abzuarbeiten.
+ */
+export const FAELLIG_PORTION = 20;
+/** Erst ab so vielen Einträgen der letzten vier Wochen „häufen sich“ Fehler einer Art. */
+export const FEHLER_AB = 2;
 /** Geschätzte Sekunden je Wiederholungskarte. */
 const SEKUNDEN_JE_KARTE = 40;
 const SEKUNDEN_JE_MINUTE = 60;
@@ -34,24 +43,50 @@ export const GESEHEN_FUER_UEBUNGEN = 0.8;
 /** Kennung der eigenen Ansicht für Wiederholung und Tagesaufgabe (app/zusatzansichten.ts). */
 export const NAECHSTER_ANSICHT = "naechster";
 
+/** Kapitel, deren Übungen ein angeheftetes Ziel verlangt (P13, Zielart „kapitel“). */
+function zielkapitel(daten: Nutzerdaten): number[] {
+  return daten.ziele.angeheftet.flatMap((z) => (z.art === "kapitel" ? [z.kapitel] : []));
+}
+
 /**
- * Kapitel, deren Abbildungen zu mindestens 80 % gesehen sind; nur für sie lädt die Karte die
- * Übungen (damit der Start nicht alle Kapitel lädt).
- * Beispiel: Kapitel 1 mit 40 Abbildungen, 33 gesehen → dabei; 31 gesehen → nicht.
+ * Kapitel, deren Abbildungen zu mindestens 80 % gesehen sind, dazu die Kapitel eigener Ziele;
+ * nur für sie lädt die Karte die Übungen (damit der Start nicht alle Kapitel lädt).
+ * Beispiel: Kapitel 1 mit 40 Abbildungen, 33 gesehen → dabei; 31 gesehen → nicht, außer der
+ * Leser hat sich „Übungen von Kapitel 1“ als Ziel angeheftet.
  */
 export function kapitelFuerUebungen(
   daten: Nutzerdaten,
   kapitel: readonly Kapitelangabe[],
 ): number[] {
   const gesehen = daten.fortschritt.gesehen;
+  const ziele = zielkapitel(daten);
   return kapitel
     .filter(
       (k) =>
-        k.abbildungen.length > 0 &&
-        k.abbildungen.filter((n) => gesehen[n] !== undefined).length >=
-          GESEHEN_FUER_UEBUNGEN * k.abbildungen.length,
+        ziele.includes(k.kapitel) ||
+        (k.abbildungen.length > 0 &&
+          k.abbildungen.filter((n) => gesehen[n] !== undefined).length >=
+            GESEHEN_FUER_UEBUNGEN * k.abbildungen.length),
     )
     .map((k) => k.kapitel);
+}
+
+/**
+ * Reihenfolge der Kapitel für offene Übungen: erst die eigener Ziele, dann das Kapitel der
+ * zuletzt geöffneten Abbildung, dann die übrigen nach Abstand zu ihm (bei Gleichstand das frühere).
+ * Warum (Bug-Test 1.11.2026): Wer mitten in Kapitel 6 liest, bekam „Zu Kapitel 0 sind noch 3
+ * Übungen offen“ (Notation lesen) statt der Übungen, die zum frisch Gelesenen passen.
+ * Beispiel: zuletzt 6.33, Kapitel 0 bis 6 gelesen → 6, 5, 4, …, 0; Ziel Kapitel 2 → 2, 6, 5, …
+ */
+export function uebungskapitelFolge(lage: Lage): number[] {
+  const kandidaten = kapitelFuerUebungen(lage.daten, lage.kapitel);
+  const ziele = zielkapitel(lage.daten);
+  const zuletzt = lage.zuletzt;
+  const aktuell =
+    lage.kapitel.find((k) => zuletzt !== null && k.abbildungen.includes(zuletzt))?.kapitel ??
+    Math.max(...kandidaten);
+  const schluessel = (n: number) => (ziele.includes(n) ? -1 : Math.abs(aktuell - n));
+  return [...kandidaten].sort((a, b) => schluessel(a) - schluessel(b) || a - b);
 }
 
 
@@ -59,11 +94,14 @@ export function kapitelFuerUebungen(
 function faelligeKarten({ daten, jetzt, faelligAnzahl }: Lage): Vorschlag | null {
   const anzahl = faelligAnzahl ?? faellige(daten.karten, jetzt).length;
   if (anzahl < FAELLIG_AB) return null;
-  const minuten = Math.max(1, Math.ceil((anzahl * SEKUNDEN_JE_KARTE) / SEKUNDEN_JE_MINUTE));
+  const portion = Math.min(anzahl, FAELLIG_PORTION);
+  const minuten = Math.max(1, Math.ceil((portion * SEKUNDEN_JE_KARTE) / SEKUNDEN_JE_MINUTE));
+  const viele = anzahl > FAELLIG_PORTION;
   return {
     art: "faellig",
-    text: "naechster.faellig",
-    werte: { anzahl, minuten },
+    text: viele ? "naechster.faelligViele" : "naechster.faellig",
+    werte: viele ? { anzahl, portion, minuten } : { anzahl, minuten },
+    ...(viele ? { kurz: "buchlook.kurz.faelligViele" as const } : {}),
     knopf: "naechster.knopf.wiederholen",
     ziel: { bildschirm: "zusatz", kennung: NAECHSTER_ANSICHT, wert: "wiederholung" },
   };
@@ -149,9 +187,10 @@ function weiterlesen(lage: Lage): Vorschlag | null {
   };
 }
 
-/** Fall 4: offene Übungen im ersten Kapitel, dessen Abbildungen zu 80 % gesehen sind. */
-function offeneUebungen({ daten, kapitel, uebungen }: Lage): Vorschlag | null {
-  for (const nummer of kapitelFuerUebungen(daten, kapitel)) {
+/** Fall 4: offene Übungen, Kapitel in der Folge von uebungskapitelFolge. */
+function offeneUebungen(lage: Lage): Vorschlag | null {
+  const { daten, uebungen } = lage;
+  for (const nummer of uebungskapitelFolge(lage)) {
     const offen = (uebungen[nummer] ?? []).filter(
       (id) => daten.fortschritt.uebungen[id]?.geloest !== true,
     );
@@ -194,8 +233,13 @@ function schwachesThema({ daten }: Lage): Vorschlag | null {
 
 /** Fall 6: der Vorschlag der Fehlerdatenbank (häufigste Fehlerart der letzten vier Wochen). */
 function fehlerdatenbank({ daten, jetzt }: Lage): Vorschlag | null {
-  const treffer = fehlervorschlag(auswertung(daten.fehler, jetzt));
+  const zahlen = auswertung(daten.fehler, jetzt);
+  const treffer = fehlervorschlag(zahlen);
   if (!treffer) return null;
+  // Ein einzelner Eintrag „häuft sich“ noch nicht (Bug-Test 1.11.2026).
+  const art = zahlen.find((z) => z.fehlerart === treffer.fehlerart);
+  const juengst = (art?.jeWoche ?? []).slice(0, VORSCHLAG_WOCHEN).reduce((a, b) => a + b, 0);
+  if (juengst < FEHLER_AB) return null;
   return {
     art: "fehler",
     text: "naechster.fehler",
@@ -203,6 +247,22 @@ function fehlerdatenbank({ daten, jetzt }: Lage): Vorschlag | null {
     namen: { trainer: `trainer.${treffer.trainer}.name` },
     knopf: "naechster.knopf.trainer",
     ziel: { bildschirm: "trainer", kennung: treffer.trainer },
+  };
+}
+
+/**
+ * Zuletzt: eine Partie gegen die Engine, wer schon Aufgaben am Brett lösen kann. Warum: Ohne sie
+ * blieb die Karte leer, sobald alles gelesen, geübt und wiederholt war; als Alternative passt sie
+ * immer, denn das Buch will das Gelernte in Partien anwenden.
+ */
+function partie(lage: Lage): Vorschlag | null {
+  if (!bereitFuerAufgaben(lage)) return null;
+  return {
+    art: "partie",
+    text: "naechster.partie",
+    werte: {},
+    knopf: "naechster.knopf.spielen",
+    ziel: { bildschirm: "spielen" },
   };
 }
 
@@ -214,4 +274,5 @@ export const VORSCHLAGSARTEN: readonly Vorschlagsart[] = [
   { kennung: "uebungen", rang: 40, ermittle: offeneUebungen },
   { kennung: "thema", rang: 50, ermittle: schwachesThema },
   { kennung: "fehler", rang: 60, ermittle: fehlerdatenbank },
+  { kennung: "partie", rang: 90, ermittle: partie },
 ];

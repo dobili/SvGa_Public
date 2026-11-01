@@ -13,6 +13,7 @@ import {
   haengendeFiguren,
   ZAEHLSTUFEN,
   zaehlfelder,
+  zaehlfen,
   zaehlrunde,
   zaehlstufe,
   zumZaehlenGeeignet,
@@ -118,5 +119,15 @@ describe("Zähltrainer: Motiv Abzug", () => {
     expect(abzugspaare(st.wert, feld("e5"))).toEqual([
       { hinten: feld("b2"), vorn: feld("c3"), farbe: "white" },
     ]);
+  });
+});
+
+describe("Zähltrainer: Seite am Zug unter dem Brett", () => {
+  it("zeigt die schlagende Seite am Zug, nicht die des Buchbildes (Bug-Test 1.11.2026)", () => {
+    // e4 ist ein weißer Bauer, Schwarz schlägt: Unter dem Brett steht „Schwarz am Zug“.
+    expect(zaehlfen({ fen: UNTERDECKT, feld: "e4" }).split(" ")[1]).toBe("b");
+    // d6 ist ein schwarzer Läufer, Weiß schlägt: Das Buchbild hat Weiß am Zug, es bleibt.
+    expect(zaehlfen({ fen: UNTERDECKT, feld: "d6" })).toBe(UNTERDECKT);
+    expect(zaehlfen({ fen: UNTERDECKT, feld: "e3" })).toBe(UNTERDECKT);
   });
 });

@@ -38,7 +38,7 @@ const WOCHE_TAGE = 7;
 /** So viele Wochen zeigt die Auswertung. */
 export const WOCHEN = 8;
 /** Der Vorschlag schaut auf die letzten vier Wochen. */
-const VORSCHLAG_WOCHEN = 4;
+export const VORSCHLAG_WOCHEN = 4;
 
 type Roh = Record<string, unknown>;
 const istObjekt = (w: unknown): w is Roh =>

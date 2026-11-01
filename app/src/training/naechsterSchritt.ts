@@ -55,6 +55,8 @@ export interface Vorschlag {
   readonly namen?: Readonly<Record<string, Textschluessel>>;
   readonly knopf: Textschluessel;
   readonly ziel: Ansicht;
+  /** Eigene Kurzzeile der Kachel statt der der Art (etwa sehr viele fällige Karten). */
+  readonly kurz?: Textschluessel;
 }
 
 /** Eine Art von Vorschlag; kleiner Rang kommt zuerst. */

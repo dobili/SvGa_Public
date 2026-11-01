@@ -1,7 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 31.10.2026, Version 0.3.43 (Testpunkte vorgeprüft: Was ohne dein Auge prüfbar war, ist
-gestrichen und steht in `docs/ENTSCHEIDUNGEN.md`).
+Stand: 1.11.2026, Version 0.3.44 (Nachtaufträge: Lizenzen geprüft, Wiki aktualisiert, großer
+Fehlertest mit 16 behobenen Fehlern).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -19,7 +19,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.43“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.44“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,6 +33,72 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.44: Lizenzen, Wiki und großer Fehlertest (Nacht 31.10./1.11.2026)
+
+- [ ] N2440. Karte „Heute“ mitten im Buch: Lies in Kapitel 6 ein paar Abbildungen (Kapitel 0 bis
+      5 abgehakt, Übungen offen). Die Übungskachel nennt jetzt Kapitel 5 (das zuletzt gelesene
+      fertige Kapitel), nicht mehr Kapitel 0.
+- [ ] N2441. Karte „Heute“ mit eigenem Ziel: Hefte unter „Ziele“ das Ziel „Übungen von Kapitel 3“
+      an. Die Übungskachel nennt jetzt Kapitel 3, auch wenn du dort noch nicht fertig gelesen hast.
+- [ ] N2442. Karte „Heute“ mit sehr vielen fälligen Karten (über 20): Statt „etwa 134 Minuten“
+      steht „Fang mit 20 an, das dauert etwa 14 Minuten“; die Kachel zeigt „200 fällig · 20 in etwa
+      14 Min“.
+- [ ] N2443. Karte „Heute“, alles erledigt (Tagesaufgabe gelöst, Kapitel gelesen): Als letzte
+      Kachel steht „Partie · Gegen die Engine“; ein Tipp öffnet Spielen. Neulinge vor Kapitel 0
+      sehen sie nicht.
+- [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
+      markierten Feld schlagen würde (fünf Aufgaben durchtippen).
+- [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
+      mit Symbolen, Bündel als Chips).
+- [ ] N2446. Kapitelseite bei großer Schrift (Einstellungen › Schriftgröße 150 %) auf dem Handy:
+      nichts ragt über den Rand, „Alle abhaken“ und „Alle zurücksetzen“ stehen bei Platzmangel
+      untereinander.
+- [ ] N2460. Auswertung einer Partie gegen einen Bot: Unter „In Zahlen“ auf „Schwarz (Botname)“
+      tippen. Die Karte heißt jetzt „Züge von Botname“ statt „Deine Züge“; auf der eigenen Seite
+      weiter „Deine Züge“.
+- [ ] N2461. Spielen → Eigene Bots ohne eigenen Gegner: Über „Eigene Bots verwalten“ steht keine
+      leere Fläche mit Trennlinie mehr.
+- [ ] N2462. Profil → Partie einlesen (PGN): „1. e4 e5 2. Lc4 Sc6 3. Dh5 Sf6 4. Dxf7# 1-0“
+      einfügen (deutsche Notation) und doppelt auf „Einlesen und auswerten“ tippen. Erwartet: Schäfermatt
+      wird erkannt, in der Partienliste steht die Partie genau einmal.
+- [ ] N2463. Partie einlesen mit einer Crazyhouse- oder Chess960-PGN von Lichess: Meldung „Das ist
+      eine Schachvariante …“ statt einer kaputten Partie.
+- [ ] N2464. Zwei Tabs (oder installierte App und Browser-Tab) offen: im einen den Namen im Profil
+      ändern, im anderen eine Übung lösen oder Partie einlesen; danach beide neu laden. Erwartet: Name
+      und die andere Änderung sind beide da.
+- [ ] N2465. Datensicherung → „Sicherung einspielen“: Die Rückfrage nennt jetzt auch die Zahl der
+      Partien.
+- [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
+      Die Partie endet auf Zeit, der Zug wird nicht mehr ausgeführt.
+- [ ] N2467. Nach Mitternacht (0–1 Uhr) eine Partie als PGN herunterladen bzw. eine Sicherung
+      anlegen: Datei- und PGN-Datum zeigen den heutigen Tag, nicht gestern.
+- [ ] N2420. Einstellungen (Zahnrad) › Lizenzen: Neu sind „In onnxruntime-web enthalten:
+      protobuf.js, long.js, FlatBuffers, guid-typescript“, „Bibliotheken in der
+      WebAssembly-Laufzeit von onnxruntime“, „Schrift Source Serif 4 (Adobe)“, „Häufige
+      Eröffnungszüge ‚Aus der Praxis‘ …“ und „Hilfscode der Bauwerkzeuge …“. Bei jedem öffnet
+      „Lizenztext“ einen lesbaren Text (der für die WebAssembly-Laufzeit nur mit Internet).
+- [ ] N2421. Lizenzen, Eintrag „Zusatzpartien für ‚Zug erraten‘“: „Lizenztext“ öffnet den Text
+      der CC BY-SA 4.0, auch im Flugmodus.
+- [ ] N2422. Impressum (Startseite unten): Abschnitt „Quelltext und Rechte“ nennt „Version 3
+      oder (nach deiner Wahl) jeder späteren Version“, den Link zum Quelltext und „Einstellungen ›
+      Lizenzen“; der Link „Lizenzen“ unten führt zur Lizenzseite der App.
+- [ ] N2423. Eine Trainingsseite (schach-von-grund-auf.com/training/) und die Datenschutzseite
+      zeigen unten den Link „Lizenzen“.
+- [ ] N2424. Sprache Englisch: Die Lizenzseite zeigt auch die neuen Einträge auf Englisch.
+- [ ] N2430. Dashboard › Wiki (nach dem Zusammenführen und dem nächsten Push nach main):
+      Seite „Die Ordner der App“ öffnen und nach „Lernpfad“ suchen. Erwartet: ein Abschnitt
+      „ui/komponenten/lernpfad“ mit Stationen, Landschaften und Nebenaufgaben.
+- [ ] N2431. Dashboard › Wiki: Seite „Acht Wege durch den Code“ öffnen. Erwartet: acht Abläufe,
+      darunter „Belohnungen“ und „Der erste Start: Startwahl und Touren“. Verständlich ohne
+      Programmierkenntnisse? Notiz, was unklar ist.
+- [ ] N2432. Dashboard › Wiki: Suche nach „Buchbefund B7“ und nach „Zeit-Zählhilfe“. Erwartet:
+      kein Treffer (Buchbefunde bleiben aus dem Wiki).
+- [ ] N2433. Konzeptkarte (docs/konzeptkarte.html auf GitHub über „Raw“ oder lokal) auf dem
+      Handy öffnen. Erwartet: neue Kreise wie „lernpfad“, „erfolge“, „start“; ein Tipp zeigt einen
+      kurzen Text ohne abgeschnittenes „:“ am Ende.
+- [ ] N2434. Codeführer „Woher die Zahlen kommen“: Stimmen die Zahlen in „Die App in Zahlen“ mit
+      deinem Eindruck überein (765 Abbildungen, 16 Trainer, 84 Bots)?
 
 ### Neu in 0.3.43: Startwahl, Kennzahlen, Karte „Heute“, Orden und Nebenaufgaben (31.10.2026)
 
@@ -656,6 +722,33 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q12 Aus den Nachtaufträgen (1.11.2026)
+
+- [ ] Q12-1. **Rechte am Cover-Bild:** App-Symbol, Startbild, `cover.webp` und das Teilen-Bild sind
+      Ausschnitte des Buchcovers (goldener Springer); die Lizenzseite führt sie als „alle Rechte
+      vorbehalten“. Hast du das Bild selbst gestaltet, oder stammt es von einem Gestalter, einer
+      Bilddatenbank oder einem Bildgenerator? Empfehlung: selbst gemacht → nichts zu tun; sonst
+      prüfen, ob die Lizenz auch App-Symbol und Website abdeckt, und den Urheber nennen, falls
+      verlangt.
+- [ ] Q12-2. **Partie nach dem Ende zurücknehmen:** Nach einer ungewerteten Partie geht
+      „Zurücknehmen“ weiter (gewollt). Wird sie danach erneut beendet, zählen Tagesprotokoll,
+      Siege, Rekorde, Rivale und Ziele sie ein zweites Mal; so ließen sich Siege sammeln.
+      Empfehlung: an der Partie ein Merkmal „schon gezählt“ speichern (neues Feld im Speicher,
+      deshalb warte ich auf dein Ja). Alternative ohne neues Feld: nach dem Ende kein Zurücknehmen
+      mehr. Sag „Q12-2 Merkmal“ oder „Q12-2 sperren“.
+- [ ] Q12-3. **Bester Zug nie „?“:** Spielt man genau den besten Zug der Engine, kann er in seltenen
+      Fällen trotzdem „?“ bekommen (wenn die Stellung schon vorher verloren war). Empfehlung: Ein
+      Zug, der dem besten gleicht, bekommt nie „?“ oder „??“. Das ändert Zugklassen und Genauigkeit
+      leicht, deshalb erst nach deinem Ja.
+- [ ] Q12-4. **Brett bis 8 px an den Rand:** Die Vorprüfung meinte, das Brett im Zähltrainer und bei
+      „Falle oder Köder“ wirke bei schmalen Handys angeschnitten. Im Browser fehlt nichts; Brett
+      und Marke „am Zug“ liegen wie überall 8 px vom Rand. Empfehlung: so lassen. Ist auf deinem
+      Handy wirklich etwas abgeschnitten (gerundete Ecken), schick ein Foto, dann rücke ich alle
+      Bretter auf 16 px ein.
+- [ ] Q12-5. **Karte „Heute“, Partie als letzte Kachel:** Ist alles erledigt, schlägt die Karte
+      eine Partie gegen die Engine vor, statt leer zu bleiben (nicht für Neulinge vor Kapitel 0).
+      Schon umgesetzt, Widerspruch genügt.
 
 ### Q11 Startwahl und Nebenaufgaben (31.10.2026)
 

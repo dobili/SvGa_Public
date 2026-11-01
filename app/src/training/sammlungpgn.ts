@@ -12,6 +12,7 @@
  * Abhängigkeiten: training/lernsammlung.ts. Reine Funktionen.
  */
 import { GRUNDSTELLUNG, type Sammeleintrag } from "./lernsammlung";
+import { pgnDatum } from "../spiel/pgn";
 
 /** Feld der FEN mit der Seite am Zug und mit der Zugnummer. */
 const FEN_SEITE = 1;
@@ -50,9 +51,6 @@ export function zugtext(startFen: string, zuege: readonly string[]): string {
 }
 
 /** Datum für den PGN-Kopf: „2026.10.18“. */
-function pgnDatum(iso: string): string {
-  return iso.slice(0, "JJJJ-MM-TT".length).replace(/-/g, ".");
-}
 
 /** Texte, die die Oberfläche beisteuert (Sprache der App). */
 export interface Pgntexte {

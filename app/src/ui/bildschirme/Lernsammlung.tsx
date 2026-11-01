@@ -15,6 +15,7 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { useSpeicher } from "../../speicher/speicher";
 import { nachEroeffnung, type Sammeleintrag } from "../../training/lernsammlung";
+import { pgnDatum } from "../../spiel/pgn";
 import { sammlungAlsPgn } from "../../training/sammlungpgn";
 import { bieteDateiAn } from "../komponenten/bausteine/dateiAnbieten";
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
@@ -66,7 +67,7 @@ function PgnKnoepfe({ liste, name }: { liste: readonly Sammeleintrag[]; name: st
       setzeMeldung(t("sammlung.pgnNichtKopiert"));
     }
   };
-  const datei = `lernsammlung-${name}-${new Date().toISOString().slice(0, "JJJJ-MM-TT".length)}.pgn`;
+  const datei = `lernsammlung-${name}-${pgnDatum(new Date().toISOString(), "-")}.pgn`;
   return (
     <div className="pgn" data-tour="sammlung-pgn">
       <div className="knopfreihe">

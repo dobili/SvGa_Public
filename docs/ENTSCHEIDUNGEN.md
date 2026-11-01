@@ -4,6 +4,34 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 1.11.2026 – Version 0.3.44: Nachtaufträge (Lizenzen, Wiki, großer Fehlertest)
+
+Wunsch des Autors (31.10.2026 abends): nach 0.3.43 Lizenzen prüfen, Wiki aktualisieren, ausgiebiger
+Fehlertest mit Grenzfällen. Vier Arbeitszweige, je mit Bericht:
+
+- **Lizenzen** (`nacht-lizenzen`): fehlende Texte für die in onnxruntime-web gebündelten Bausteine
+  (protobuf.js, long.js, FlatBuffers, guid-typescript), die WebAssembly-Laufzeit (beim
+  Maia-Paket), Hilfscode der Bauwerkzeuge, Source Serif 4, CC BY-SA 4.0 offline; Maia-2-Copyright
+  „2024 CSSLab“; Stockfish-Netze (ODbL-Daten von Leela) und Feather genannt; Impressum mit
+  GPL-3.0-or-later, Quellcode und Link „Lizenzen“; Liste der Lizenzseite in
+  `ui/bildschirme/lizenzbausteine.ts` mit Test gegen fehlende Einträge. Rückfrage Q12-1 (Cover).
+- **Wiki** (`nacht-wiki`): Architektur, Begriffe, Codeführer und Konzeptkarte gegen den Code von
+  0.3.43 geprüft und ergänzt (acht Abläufe, neue Ordner, „Die App in Zahlen“); Buchbefunde aus
+  Unterabschnitten und Listenpunkten werden jetzt herausgefiltert (zwei waren durchgerutscht).
+- **Fehlertest Buch und Training** (`nacht-fehlertest-1`): Karte „Heute“ an 16 Lernständen
+  geprüft und stimmiger gemacht (Übungen aus dem gelesenen Kapitel oder dem angehefteten Ziel,
+  Wiederholung in Portionen von 20, Fehlerdatenbank erst ab zwei Einträgen, Partie als letzte
+  Kachel); Zähltrainer zeigt die schlagende Seite; `#abb-99.99` meldet die fehlende Abbildung;
+  Werkzeugfotos neu erzeugt; Kapitelseite bei 320 px und großer Schrift ohne Überstand.
+- **Fehlertest Spielen und Profil** (`nacht-fehlertest-2`): „Besser war“ entfällt, wenn der beste
+  Zug der gespielte war; „Züge von …“ auf der Seite des Bots; keine leere Fläche bei Eigene Bots;
+  Zug nach Zeitablauf zählt nicht mehr; PGN in deutscher Notation (S, L, T, D, K, Figurinen) wird
+  übersetzt statt still falsch gelesen; Schachvarianten abgelehnt; Doppeltipp beim Einlesen; der
+  Sicherungshinweis zählt auch Partien; Datum in Dateinamen und PGN nach Ortszeit; zwei Tabs
+  melden sich ihre Schreibvorgänge (BroadcastChannel) statt sich zu überschreiben. Rückfragen
+  Q12-2 (doppelt gezählte Partie, braucht Speicherfeld) und Q12-3 (bester Zug nie „?“).
+- Platte war zeitweise voll: alte Arbeitskopien und Zwischenspeicher entfernt.
+
 ## 31.10.2026 – Version 0.3.43: Testpunkte vorgeprüft, Startwahl, Orden und Nebenaufgaben
 
 Wunsch des Autors (31.10.2026 abends): „so viele meiner Aufgaben wie möglich, die du ohne mich

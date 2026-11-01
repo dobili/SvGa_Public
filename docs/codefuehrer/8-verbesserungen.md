@@ -24,6 +24,22 @@ CI, zwei Prüfmessungen. Einzelheiten in `docs/ENTSCHEIDUNGEN.md`.
 - [ ] **Versionsangaben innerhalb von Funktionen:** Die Dateiköpfe sind auf dem heutigen Stand,
       in den Funktionen stehen noch Hinweise wie „(seit 0.2.88)“. Bei Gelegenheit mitkürzen.
       Aufwand: klein, schrittweise.
+- [ ] **Veraltete Dateinamen in Kommentaren** (Durchsicht 1.11.2026 für das Wiki): Einige
+      Kommentare nennen Dateien, die beim Umbau der Startseiten und des Profils am 31.10.2026
+      umbenannt oder ersetzt wurden, etwa `GegnerWahl.tsx` (heute `Gegnerstufen.tsx` und die
+      Unterseite „Gegner aussuchen“), `NaechsterSchritt.tsx` und `Wochenkarte.tsx` (heute
+      `Heutekarte.tsx`), `Wertungskurve.tsx` (heute `Wertungskurvenbild.tsx` und
+      `ui/komponenten/wertung/`), `Partieende.tsx`, `Bereich.tsx`, `Auswahlliste.tsx`,
+      `ZusatzWahl.tsx`, `Wiederholungsknopf.tsx`, `Falschzug.tsx`, `koenigUndAktivitaet.ts`,
+      `useSprache.ts`. Die Konzeptkarte zeigt diese Sätze unverändert. Aufwand: klein.
+- [ ] **Zwei Erklärsymbole und zwei Blätter:** `InfoKnopf`/`MitInfo` und `Infoblase`/`MitInfoblase`
+      tun fast dasselbe (seit 0.3.42 beide mit ⓘ); ebenso gibt es `Blatt.tsx` zweimal
+      (`ui/komponenten/auswertung/` und `ui/komponenten/spielstart/`). Zusammenlegen spart Code und
+      macht das Verhalten überall gleich. Aufwand: mittel (viele Fundstellen, Oberflächentests).
+- [ ] **19 exportierte Werte ohne Kommentar** meldet `node skripte/konzeptkarte.mjs`, meist Listen
+      und Grenzwerte (etwa `TRAINERSTUFEN`, `ZUSATZTHEMENLISTE`, `GRUNDSTELLUNG`). Aufwand: klein.
+- [ ] **Testdaten in der Konzeptkarte:** Das Skript lässt Dateien mit „testdaten“ im Namen weg,
+      nicht aber Dateien im Ordner `speicher/testdaten/`; sie erscheinen als Modul. Aufwand: klein.
 - [ ] **Zeittests unter Last:** Die Prüfungen „unter 50 ms“ (`analyse/alleAbbildungen.test.ts`) und
       einige 5-Sekunden-Grenzen scheitern, wenn mehrere Prüfläufe gleichzeitig laufen. In der CI
       laufen sie zuverlässig; lokal hilft ein einzelner Wiederholungslauf. Aufwand: klein.

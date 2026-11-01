@@ -10,7 +10,12 @@
 | **Dateikopf** | Der Kommentar oben in jeder Datei: Zweck, „Rolle im Gesamtbild“, Abhängigkeiten, Buchbezug. Das ist die erste Anlaufstelle beim Lesen einer Datei. |
 | **Test** (`.test.ts`) | Prüft automatisch, ob eine Datei richtig rechnet, meist an Abbildungen des Buches. Liegt neben der Datei. |
 | **`-daten.ts`** | Reine Zahlentabellen, die ein Skript aus Messungen erzeugt (Bot-Stärken, Lichess-Statistiken). Nicht von Hand ändern. |
-| **Engine** | Stockfish, das Schachprogramm, das im Hintergrund rechnet. |
+| **Engine** | Stockfish, das Schachprogramm, das im Hintergrund rechnet. Die App startet zwei: eine für Werkzeuge und Bots, eine eigene für die Auswertung der Partie. |
+| **Maia** | Ein Netz, das gelernt hat, wie Menschen einer bestimmten Wertung ziehen. Die Bots fragen es, damit ihre Fehler menschlich wirken (Zusatzpaket, nur auf Wunsch geladen). |
+| **Worker** | Ein Hintergrund-Thread des Browsers. Stockfish und Maia rechnen dort, damit die Oberfläche flüssig bleibt. |
+| **Liste zum Eintragen** | Eine Tabelle im Code (`STARTKARTEN`, `PROFILKARTEN`, `ZUSATZANSICHTEN` …), in die ein neues Teil eine Zeile einträgt, statt bestehende Bildschirme zu ändern. |
+| **Zusatzansicht** | Ein Bildschirm, der über die Liste `app/zusatzansichten.ts` eingehängt ist, etwa der Lernpfad oder der Monatsrückblick. |
+| **Merker** | Eine kleine Angabe nur auf dem Gerät (etwa „Tour schon gesehen“), getrennt von den eigentlichen Daten im Speicher. |
 | **FEN** | Eine Stellung als eine Textzeile, so speichert das Buch jede Abbildung. |
 
 Die Namen im Code sind deutsch und folgen dem Buch (`zielbilanz`, `todsuenden`, `opposition`),

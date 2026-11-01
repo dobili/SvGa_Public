@@ -35,7 +35,7 @@ function Abschluss({ partie }: { partie: Partie }) {
   const verwirf = () => void aendere((d) => ({ ...d, spiel: mitProbe(d.spiel, null) }));
   return (
     <>
-      <div className="knopfreihe">
+      <div className="knopfreihe probekarte-knoepfe">
         <button type="button" className="knopf-haupt" onClick={sichere}>
           {t("varianten.alsVarianteSpeichern")}
         </button>
@@ -68,7 +68,7 @@ export function Probekarte() {
         </h2>
         <p>{t("varianten.probe.zeile", { gegner: probegegner(probe) })}</p>
       </div>
-      <div className="knopfreihe">
+      <div className="knopfreihe probekarte-knoepfe">
         <button
           type="button"
           className="knopf-haupt"

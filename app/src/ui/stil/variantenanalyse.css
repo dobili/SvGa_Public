@@ -30,7 +30,10 @@
   gap: calc(var(--raster) / 2);
 }
 
-.analysechip {
+/* Schmaler als ein normaler Chip, damit alle drei mit dem ⓘ in eine Zeile eines Handys passen */
+.chip.analysechip {
+  padding: 0 10px;
+  gap: 4px;
   font-size: var(--groesse-klein);
 }
 
@@ -58,6 +61,16 @@
 
 .probekarte > .knopfreihe {
   flex: 1 1 100%;
+}
+
+.probekarte-knoepfe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.probekarte-knoepfe > button {
+  justify-content: center;
+  text-align: center;
 }
 
 /* Marke der Zugart hinter dem Zug in der Zugleiste der Variante */

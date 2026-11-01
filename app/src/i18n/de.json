@@ -3506,6 +3506,7 @@
   "spielstaerke.zeile.strategie": "Strategie",
   "spielstaerke.zeile.taktik": "Taktik",
   "zugklassen.titel": "Deine Züge",
+  "zugklassen.titelBot": "Züge von {name}",
   "zugklassen.erklaerung": "Jede Zeile zählt eine Art von Zügen, etwa gute Züge, Fehler oder Patzer; im Kästchen steht, wie viele du davon gespielt hast. Der Balken vergleicht das mit Spielern einer Stärke von etwa {elo}: Der dunkle Strich ist das Übliche, die graue Zone „normal“. Bei guten Zügen ist viel gut, bei schwachen wenig. „▸“ heißt: weit über dem Üblichen. Theoriezüge sind bekannte Eröffnungszüge. Bei einem Bot wird mit seiner eigenen Zahl verglichen.",
   "zugklassen.zuWenig": "Für einen Vergleich mit dem Üblichen braucht es mindestens 15 eigene Züge; bis dahin stehen nur die Anzahlen da.",
   "zugklassen.relativ": "{prozent} % des Üblichen · {urteil}",

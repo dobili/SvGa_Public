@@ -134,6 +134,16 @@ for (const schema of ["dunkel", "hell"] as const) {
     // „Deine Züge“ mit der Originalgrafik: 17 eigene Züge, also Balken mit Zonen.
     await expect(page.getByTestId("zugklasse-patzer").locator(".zugklasse-spur")).toBeVisible();
     await page.screenshot({ path: `test-results/bilder/auswertung-${schema}.png`, fullPage: true });
+    // Befunde der Vorprüfung (1.11.2026): Auf der Seite des Bots heißt die Karte nach ihm, und
+    // unter 9... b5?? steht kein „Besser war 9... b5“ (der beste Zug war der gespielte).
+    await expect(page.getByTestId("zugklassen")).toContainText("Deine Züge");
+    const seiten = page.getByTestId("in-zahlen").getByRole("radiogroup", { name: "Seite" });
+    await seiten.getByRole("radio", { name: "Schwarz (Derya)" }).click();
+    await expect(page.getByTestId("zugklassen")).toContainText("Züge von Derya");
+    await expect(zeitleiste).toContainText("9... b5");
+    await expect(zeitleiste).not.toContainText("Besser war 9... b5");
+    await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
+    await expect(page.getByTestId("zugklassen")).toContainText("Deine Züge");
     await page.getByTestId("partieabschluss").getByRole("button", { name: "Teilen" }).click();
     await expect(page.getByTestId("teilen-blatt")).toBeVisible();
     await page.screenshot({ path: `test-results/bilder/auswertung-teilen-${schema}.png` });

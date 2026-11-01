@@ -279,6 +279,13 @@
   padding-top: calc(var(--raster) * 1.5);
 }
 
+/* Ohne Porträts darüber (noch kein eigener Bot) trennt die Linie nichts: weg mit ihr und dem
+   Abstand (Befund der Vorprüfung, 1.11.2026: leere Fläche mit Trennlinie über „verwalten“). */
+.eigene-gegner:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 /* ---------- Gruppen in der Vorschauwahl (Figurensätze, seit 0.2.82) ---------- */
 
 .vorschaugruppe {

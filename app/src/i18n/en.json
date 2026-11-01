@@ -3506,6 +3506,7 @@
   "spielstaerke.zeile.strategie": "Strategy",
   "spielstaerke.zeile.taktik": "Tactics",
   "zugklassen.titel": "Your moves",
+  "zugklassen.titelBot": "Moves by {name}",
   "zugklassen.erklaerung": "Each row counts one kind of move, such as good moves, mistakes or blunders; the box shows how many you played. The bar compares this with players of a strength of about {elo}: the dark line is the usual value, the grey zone is “normal”. For good moves many is good, for weak ones few. “▸” means far above the usual. Theory moves are known opening moves. For a bot, the comparison uses its own rating.",
   "zugklassen.zuWenig": "A comparison with the usual needs at least 15 of your own moves; until then only the counts are shown.",
   "zugklassen.relativ": "{prozent} % of usual · {urteil}",

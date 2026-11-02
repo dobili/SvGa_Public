@@ -1,4 +1,4 @@
-Stand: 1.11.2026 · **Version 0.3.50**: Marken ohne Nummer je Marke und je Farbe (Format 9, N2582–N2584). **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2584 und Q11–Q14 einarbeiten.
+Stand: 1.11.2026 · **Version 0.3.50**: Marken ohne Nummer je Marke und je Farbe (Format 9, N2582–N2584). **Auf main und live seit 2.11.2026 nachts, mit 0.3.49 (CI grün mit Chromium und WebKit).** **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2584 und Q11–Q14 einarbeiten.
 
 Stand: 1.11.2026 · **Version 0.3.49**: In Varianten goldener Pfeil zum besseren Zug wie in der Partieauswertung, grüner Pfeil entfällt (N2581). **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2581 und Q11–Q14 einarbeiten.
 

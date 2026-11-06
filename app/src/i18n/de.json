@@ -1071,6 +1071,8 @@
   "taktiktrainer.benennenWaehlen": "Motiv wählen …",
   "taktiktrainer.benennen": "Welches Motiv war es?",
   "taktiktrainer.motivWar": "Das Motiv: {motiv}.",
+  "taktiktrainer.motivAuch": "Ebenfalls dabei: {motive}.",
+  "taktiktrainer.motiveWaren": "Zutreffend waren: {motive}.",
   "taktiktrainer.motiv.doppelangriff": "Doppelangriff",
   "taktiktrainer.motiv.fesselung": "Fesselung",
   "taktiktrainer.motiv.spiess": "Spieß",

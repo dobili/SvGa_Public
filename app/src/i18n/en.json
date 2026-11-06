@@ -1071,6 +1071,8 @@
   "taktiktrainer.benennenWaehlen": "Choose a motif …",
   "taktiktrainer.benennen": "Which motif was it?",
   "taktiktrainer.motivWar": "The motif: {motiv}.",
+  "taktiktrainer.motivAuch": "Also involved: {motive}.",
+  "taktiktrainer.motiveWaren": "Correct answers: {motive}.",
   "taktiktrainer.motiv.doppelangriff": "Double attack",
   "taktiktrainer.motiv.fesselung": "Pin",
   "taktiktrainer.motiv.spiess": "Skewer",

@@ -1,7 +1,7 @@
 {
   "name": "schach-von-grund-auf",
   "private": true,
-  "version": "0.3.50",
+  "version": "0.3.51",
   "description": "Companion-App zum Buch „Schach von Grund auf“",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -26,6 +26,7 @@
     "messen:vergleich": "vitest run --config vitest.messung.config.ts src/spiel/vergleich.messung.ts",
     "messen:eichung": "vitest run --config vitest.messung.config.ts src/spiel/eichung.messung.ts",
     "messen:loesungen": "vitest run --config vitest.messung.config.ts src/training/loesungen.messung.ts",
+    "messen:alternativen": "vitest run --config vitest.messung.config.ts src/training/taktikalternativen.messung.ts",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

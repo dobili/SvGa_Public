@@ -58,7 +58,9 @@ Grundlagen (Claude Docs, nur lesen):
    festhalten und dann sofort umsetzen („Schon umgesetzt in …, Widerspruch genügt“). Widerspricht
    der Autor später, wird es zurückgebaut. Nur warten, wenn Umsetzen und späterer Rückbau
    verwickelte Probleme machen könnten (etwa Datenformate im Speicher der Leser, Löschen von
-   Buchdaten, Veröffentlichung). Ergänzung (Wunsch des Autors, 17.10.2026 nachts): Texte, die der
+   Buchdaten, Veröffentlichung). Ausnahme für die Beta (Wunsch des Autors, 6.11.2026): Solange es
+   keine echten Leser gibt, darf das Speicherformat jederzeit geändert werden, wenn es sinnvoll
+   ist, auch wenn dabei Speicherstände verloren gehen; dafür nicht mehr fragen. Ergänzung (Wunsch des Autors, 17.10.2026 nachts): Texte, die der
    Autor absegnen soll (Entwürfe von Erklärungen, Fragen, Sätzen in der App), gelten vorerst als
    abgesegnet und kommen in die App; er liest sie später. Buchbefunde (Fehler oder Widersprüche
    im Buch) bleiben Rückfragen, weil nur er das Buch ändert.

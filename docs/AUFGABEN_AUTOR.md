@@ -64,9 +64,34 @@ Teil fertig ist.
       Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
       sie erst, wenn auch Warum-Fragen und Lernziele erledigt sind. Ein Orden, den du schon hast, bleibt
       golden (im ⓘ: „Den Orden „Teil …“ hast du schon.“); er zählt weiter nur Abbildungen und Übungen.
+- [ ] N2596. Ausgewertete Partie: einen Fehler (?) antippen, unter der Zugliste „Besserer Zug“ oder „Bestrafung“
+      wählen. Die Folge steht in Klammern hinter dem Fehler, darunter „Linie: Partie / Besserer Zug /
+      Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
+      markierter Zug passen immer zusammen; Zurück am ersten Zug oder „Zurück zur Partie“ führt in
+      die Partie zurück.
+- [ ] N2597. Karte „Heute“ › „Wann übst du?“ › Übungszeit planen: Wochentage und Dauer wählen (10 bis 60
+      Minuten), keine Uhrzeit mehr. An einem Plantag steht beim Öffnen „Heute ist dein Übungstag: 0 von
+      20 Minuten geschafft“ mit Balken und „Jetzt üben“. Ein paar Minuten in der App üben (lesen,
+      ziehen, lösen): Die Zahl steigt etwa jede Minute; wer drei Minuten nichts antippt, zählt nicht
+      weiter. Im Reiter der Karte steht „7/20 Min“.
 - [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
       Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
       Wertung zählt der stärkste besiegte Bot.
+
+### Neu in 0.3.51: Taktiktrainer – mehrere Motive und gleich schnelle Matts (6.11.2026)
+
+Deine Frage: „Können mehrere Motive gleichzeitig zutreffen?“ Ja, bei gut der Hälfte der Aufgaben
+(574 von 1067 mit Motiv). Bei „Welches Motiv war es?“ zählt jetzt jedes zutreffende Motiv; die
+Meldung nennt die anderen. Gleich gute andere Züge gibt es laut Engine fast nie (Lichess-Aufgaben
+sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso schnell ist.
+
+- [ ] N2594. Training → Taktiktrainer, Motiv „Hinlenkung“ oder gemischt: Aufgabe lösen (etwa Abb. 7.14:
+  Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
+  Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
+  Zutreffend waren: …“ mit allen passenden Motiven.
+- [ ] N2595. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
+  spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
+  langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
 
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
@@ -1021,13 +1046,13 @@ nur du das Buch änderst.
       schon), mit Name, kurzem Satz („Typischer Plan: …“, aus dem Buch, wo das Buch das Thema hat) und
       Link ins Kapitel. Ich baue das nach dem Umbau der Auswertung (Punkt „besserer Zug“), weil beide
       dieselben Dateien berühren. Widerspruch genügt.
-- [ ] Q15-2. **Plan statt Kalender.** Heute speichert der Plan Wochentage und Uhrzeit für den
+- [ ] Q15-2. **Plan statt Kalender.** Schon umgesetzt in 0.3.51 (N2597, deine Antwort vom 6.11.2026:
+      Format frei in der Beta). Vorher speicherte der Plan Wochentage und Uhrzeit für den
       Kalendertermin. Dein Vorschlag: Wochentage und Dauer planen, das Training zählt automatisch mit,
       und beim Öffnen der App an einem Plantag erinnert die Karte „Heute“ an das anstehende Training
       („Heute 20 Minuten geplant, 5 erledigt“). Empfehlung: genau so, Uhrzeit und Kalenderdatei
       entfallen; gezählt wird die Zeit in Trainern, Übungen, Wiederholungen und Partien, die die App
-      schon misst. **Frage, weil sich das Speicherformat ändert** (Dauer statt Uhrzeit im Plan):
-      Einverstanden? Bis zu deiner Antwort bleibt der Plan, wie er ist.
+      neu misst (aktive Minuten).
 - [ ] Q15-3. **Ziele und Aufträge passend zur Spielstärke.** Schon umgesetzt in 0.3.51 (N2592): Ziele
       schlagen nur Bots und Bot-Orden vor, die höchstens 300 Punkte über deiner Zahl liegen (Wertung,
       sonst stärkster besiegter Bot, sonst 700). Die Wochenaufträge verlangten schon vorher nur die

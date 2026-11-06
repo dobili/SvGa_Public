@@ -47,7 +47,7 @@ from pipeline.lesen.verzeichnis import Verweisverzeichnis, baue_verzeichnis
 from pipeline.pruefen.buch import pruefe_buch
 from pipeline.texte.loesungen import uebernimm_erklaerungen
 from pipeline.texte.vorbereitet import schreibe_uebersicht as schreibe_vorbereitet
-from pipeline.texte.vorbereitet import uebernimm_vorbereitete
+from pipeline.texte.vorbereitet import uebernimm_vorbereitete, warum_je_abbildung
 from pipeline.zugfolgen.baum import Beispiel
 from pipeline.zugfolgen.empfehlungen import lies_empfehlungen
 from pipeline.zugfolgen.freigabe import (
@@ -347,7 +347,7 @@ def _baue_glossardatei(
 
 
 def _verzeichnis(kapiteldaten: list[dict[str, Any]], einstellungen: argparse.Namespace) -> dict[str, Any]:
-    """index.json: Sprache, Auflage, Datenstand, Kapitel mit ihren Abbildungen, Glossar."""
+    """index.json: Sprache, Auflage, Datenstand, Kapitel mit Abbildungen und Warum-Fragen, Glossar."""
     return {
         "schemaVersion": 1,
         "sprache": einstellungen.sprache,
@@ -359,6 +359,7 @@ def _verzeichnis(kapiteldaten: list[dict[str, Any]], einstellungen: argparse.Nam
                 "titel": daten["titel"],
                 "datei": f"kap{daten['kapitel']:02d}.json",
                 "abbildungen": [a["id"] for a in daten["abbildungen"]],
+                "warum": warum_je_abbildung(daten["abbildungen"]),
             }
             for daten in kapiteldaten
         ],

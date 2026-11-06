@@ -254,6 +254,19 @@ def _fragezeilen(eintrag: dict[str, Any]) -> list[str]:
     return zeilen
 
 
+def warum_je_abbildung(abbildungen: list[dict[str, Any]]) -> dict[str, int]:
+    """Zahl der Warum-Fragen je Abbildung eines Kapitels, nur Abbildungen mit Fragen.
+
+    Warum: Der Lernpfad der App (Wunsch des Autors, 6.11.2026) zählt die Warum-Fragen jedes
+    Kapitels, lädt dafür aber nur ``index.json``, nicht alle Kapiteldateien. Deshalb steht die
+    Zahl dort je Kapitel als ``warum``; ``pipeline.pruefen.daten`` vergleicht sie mit den Kapiteln.
+    Eingabe: die Abbildungen der Kapiteldatei (mit ``vorbereitet``, wie sie in die App kommen).
+    Beispiel: Kapitel 1 → {„1.26“: 1, …}; Kapitel 0 ohne Fragen → {}.
+    """
+    zahlen = {a["id"]: len((a.get("vorbereitet") or {}).get("fragen", [])) for a in abbildungen}
+    return {nummer: anzahl for nummer, anzahl in zahlen.items() if anzahl > 0}
+
+
 __all__ = [
     "bewerte_fragen",
     "dateiname",
@@ -264,4 +277,5 @@ __all__ = [
     "schreibe_uebersicht",
     "texte_fuer_app",
     "uebernimm_vorbereitete",
+    "warum_je_abbildung",
 ]

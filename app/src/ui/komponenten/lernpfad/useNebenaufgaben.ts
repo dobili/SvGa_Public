@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Holt die Stücke der Karte „Deine Erfolge“ (erfolge/useErfolge.ts, dieselbe
  * Rechnung wie im Profil, mit Probe des Autors), den Lernstand, den Fortschritt und die Zahl der
  * Lernziele je Kapitel und rechnet daraus mit nebenaufgaben.ts und kapitelaufgaben.ts die
- * Nebenaufgaben je Kapitel. Nichts wird gespeichert.
+ * Nebenaufgaben je Kapitel. Nichts wird gespeichert. Die Zahl der Lernziele je Kapitel
+ * (useLernzielzahlen) braucht seit dem 6.11.2026 auch der Weg selbst (Stationsteil „Lernziele“).
  * Abhängigkeiten: nebenaufgaben.ts, kapitelaufgaben.ts, erfolge/useErfolge.ts, daten/laden.ts,
  * bausteine/useDaten.ts, app/lernstand.ts, speicher, React.
  */
@@ -18,8 +19,21 @@ import { useErfolge } from "../erfolge/useErfolge";
 import { kapitelaufgaben } from "./kapitelaufgaben";
 import { nebenaufgabenJeKapitel } from "./nebenaufgaben";
 
-/** Kein Lernziel, solange nachschlagen.json lädt. */
-const OHNE_LERNZIELE: ReadonlyMap<number, number> = new Map();
+/** Kein Lernziel, solange nachschlagen.json lädt oder fehlt. */
+export const OHNE_LERNZIELE: ReadonlyMap<number, number> = new Map();
+
+/**
+ * Zahl der Lernziele je Kapitel aus nachschlagen.json; null, solange die Datei lädt, leer, wenn
+ * sie nicht zu laden ist (dann zählen Lernziele nirgends mit). Beispiel: get(0) → 8.
+ */
+export function useLernzielzahlen(): ReadonlyMap<number, number> | null {
+  const nachschlagen = useDaten(ladeNachschlagen, "nachschlagen");
+  return useMemo(() => {
+    if (nachschlagen.art === "laedt") return null;
+    if (nachschlagen.art === "fehler") return OHNE_LERNZIELE;
+    return new Map(nachschlagen.wert.lernziele.map((z) => [z.kapitel, z.punkte.length]));
+  }, [nachschlagen]);
+}
 
 /**
  * Die Nebenaufgaben je Kapitel für diese Kapitelnummern; null, solange Erfolge oder Speicher
@@ -32,18 +46,11 @@ export function useNebenaufgaben(
   const erfolge = useErfolge();
   const fortschritt = useSpeicher((z) => z.daten.fortschritt);
   const lernstand = useLernstand();
-  const nachschlagen = useDaten(ladeNachschlagen, "nachschlagen");
-  const lernziele = useMemo(
-    () =>
-      nachschlagen.art === "fertig"
-        ? new Map(nachschlagen.wert.lernziele.map((z) => [z.kapitel, z.punkte.length]))
-        : OHNE_LERNZIELE,
-    [nachschlagen],
-  );
+  const zahlen = useLernzielzahlen();
   return useMemo(() => {
     if (!erfolge) return null;
     const alle = erfolge.regale.flatMap((r) => r.stuecke);
-    const quelle = { fortschritt, lernstand, lernziele };
+    const quelle = { fortschritt, lernstand, lernziele: zahlen ?? OHNE_LERNZIELE };
     return nebenaufgabenJeKapitel(alle, kapitel, (k) => kapitelaufgaben(k, quelle));
-  }, [erfolge, fortschritt, lernstand, lernziele, kapitel]);
+  }, [erfolge, fortschritt, lernstand, zahlen, kapitel]);
 }

@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 from pipeline.bauen.__main__ import pruefe_schema
+from pipeline.texte.vorbereitet import warum_je_abbildung
 
 
 def pruefe_datenordner(ordner: Path) -> list[str]:
@@ -63,6 +64,9 @@ def _pruefe_kapitel(ordner: Path, eintrag: dict) -> list[str]:
     nummern = [abbildung["id"] for abbildung in kapitel.get("abbildungen", [])]
     if nummern != eintrag["abbildungen"]:
         fehler.append(f"{pfad.name}: Abbildungen weichen vom Verzeichnis ab")
+    # „warum“ ist freiwillig (ältere Daten haben es nicht); wenn es da ist, muss es stimmen.
+    if "warum" in eintrag and eintrag["warum"] != warum_je_abbildung(kapitel.get("abbildungen", [])):
+        fehler.append(f"{pfad.name}: Warum-Fragen weichen vom Verzeichnis ab")
     if kapitel.get("kapitel") != eintrag["kapitel"]:
         fehler.append(f"{pfad.name}: Kapitelnummer weicht vom Verzeichnis ab")
     return fehler

@@ -1,7 +1,9 @@
 /**
  * Oberflächentest „Dein Weg durchs Buch“ (Gamifizierung P2): Knopf über der Kapitelliste und im
  * Profil, 13 Stationen mit Orden, Figur an der aktuellen Station, Satz zum Rest, Station füllt sich
- * nach dem Abhaken, Tipp auf eine Station öffnet das Kapitel. Bildschirmfoto in Handygröße.
+ * nach dem Abhaken, Tipp auf eine Station öffnet das Kapitel. Seit dem 6.11.2026 zählen auch die
+ * Lernziele der Gesamt-Checkliste (Kapitel 0: 28 Abbildungen, 3 Übungen, 8 Lernziele, keine
+ * Warum-Frage). Bildschirmfoto in Handygröße.
  */
 import { expect, test } from "@playwright/test";
 import { oeffneProfil, starteImBrowser } from "./hilfen";
@@ -23,7 +25,7 @@ test("Lernpfad: Stationen, Figur, Satz, Abhaken füllt Station 0, Tipp öffnet d
   const hinweis = page.getByTestId("lernpfad-hinweis");
   await expect(hinweis).toContainText("bis zum Ende von Kapitel 0.");
   await expect(hinweis).toContainText("nur noch Kapitel 1 bis zum Orden „Teil Grundlagen“");
-  // Kapitel 0 ganz abhaken: Die Station zeigt alle Abbildungen, es fehlen nur die Übungen.
+  // Kapitel 0 ganz abhaken: Die Station zeigt alle Abbildungen, es fehlen Übungen und Lernziele.
   await page.getByRole("button", { name: "Zurück" }).click();
   await page
     .locator(".kapitelliste")
@@ -34,13 +36,13 @@ test("Lernpfad: Stationen, Figur, Satz, Abhaken füllt Station 0, Tipp öffnet d
   await page.goBack();
   await page.getByTestId("lernpfad-knopf-buch").click();
   await expect(page.getByTestId("lernpfad-station-0")).toHaveAccessibleName(
-    /Kapitel 0: .*, 28 von 31 geschafft/,
+    /Kapitel 0: .*, 28 von 39 geschafft/,
   );
   await page
     .locator(".lernpfadkopf")
     .getByRole("button", { name: /^Erklärung:/ })
     .click();
-  await expect(hinweis).toContainText("Noch 3 Übungen bis zum Ende von Kapitel 0.");
+  await expect(hinweis).toContainText("Noch 3 Übungen und 8 Lernziele bis zum Ende von Kapitel 0.");
   await page.screenshot({ path: "test-results/bilder/lernpfad.png" });
   await page.getByTestId("lernpfad-station-1").click();
   await expect(page.getByRole("heading", { name: "Kapitel 1", level: 1 })).toBeVisible();

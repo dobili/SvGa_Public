@@ -914,7 +914,8 @@
   white-space: normal;
 }
 
-/* Knöpfe unter dem Brett, die die Varianten des Rückblicks abspielen (0.3.0). */
+/* Knopfreihe der Varianten: seit 0.3.0, die Knöpfe des Rückblicks unter dem Brett entfielen am
+   6.11.2026 (Linienknöpfe oben, zugleiste.css); die Regeln gelten weiter im Variantenmodus. */
 .variantenknoepfe {
   display: flex;
   flex-wrap: wrap;

@@ -7,19 +7,22 @@
  * stehen die Zweige wie im Variantenmodus als eingeschobene Variante hinter dem Zug, zu dem die
  * Karte sie nennt, in Klammern mit dem Zeichen ihres Knopfes (Glühbirne, Schwerter);
  * aufgeklappt steht jeder Zweig eingerückt in eigener Zeile. Der gezeigte Zug ist markiert wie
- * in der Partie. Die Wahl der Linie nutzt die Chips „Weiter: …“ des Variantenmodus
- * (Variantenleiste.tsx), im Zweig dazu die Pfadzeile mit „Zurück zur Partie“.
+ * in der Partie. Die Wahl der Linie ist seit dem Wunsch des Autors vom 6.11.2026 eine Zeile mit
+ * drei Symbolknöpfen, die immer dasteht (feste Höhe, damit beim Durchgehen nichts springt);
+ * „Partie“ führt zurück zum Zug der Partie.
  * Abhängigkeiten: spiel/nebenzweig.ts (Typ), linienstand.ts (Typ), useLinie.ts (Typ), lucide, i18n.
  */
-import { GitFork, Lightbulb, Swords, Undo2, type LucideIcon } from "lucide-react";
+import { GitCommitHorizontal, Lightbulb, Pause, Swords, type LucideIcon } from "lucide-react";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import type { Zweigart } from "../../../spiel/nebenzweig";
 import type { Partiezweige } from "./linienstand";
 import type { Liniennavigation } from "./useLinie";
 
 const SYMBOL = 14;
+/** Symbole der Linienknöpfe: groß genug zum Erkennen, die Tippfläche bleibt 44 Pixel. */
+const SYMBOL_KNOPF = 20;
 
-/** Die Zweige in der Reihenfolge der Karte und der Knöpfe unter dem Brett. */
+/** Die Zweige in der Reihenfolge der Karte und der Linienknöpfe. */
 const ARTEN: readonly { art: Zweigart; Symbol: LucideIcon; text: Textschluessel }[] = [
   { art: "besser", Symbol: Lightbulb, text: "rueckblick.abspielenBesser" },
   { art: "strafe", Symbol: Swords, text: "rueckblick.abspielenStrafe" },
@@ -69,34 +72,27 @@ export function Zweigeinschuebe({ zweige }: { zweige: Partiezweige }) {
   );
 }
 
-/** Im Zweig: „⑂ Bestrafung › 2... Dh4#“ und „Zurück zur Partie“, wie die Pfadzeile der Varianten. */
-function Zweigpfad({ zweige, navigation }: { zweige: Partiezweige; navigation: Liniennavigation }) {
-  const zweig = zweige.zweig;
-  const art = ARTEN.find((a) => a.art === zweig?.art);
-  if (!zweig || !art) return null;
-  const erster = zweige.linien[art.art][0];
-  return (
-    <p className="variantenpfad zweigpfad" data-testid="zweigpfad">
-      <GitFork size={SYMBOL} aria-hidden="true" />
-      <span>{t(art.text)}</span>
-      <span aria-hidden="true">›</span>
-      <strong>{erster?.text ?? ""}</strong>
-      <button
-        type="button"
-        className="knopf-link klein"
-        data-testid="zweig-zur-partie"
-        onClick={() => navigation.waehle(null)}
-      >
-        <Undo2 size={SYMBOL} aria-hidden="true" /> {t("rueckblick.zweigZurPartie")}
-      </button>
-    </p>
-  );
+/** Ein Knopf der Linienwahl: nur Symbol, Name als aria-label und title. */
+interface Linienknopf {
+  readonly wahl: Zweigart | null;
+  readonly Symbol: LucideIcon;
+  readonly text: Textschluessel;
 }
 
+const KNOEPFE: readonly Linienknopf[] = [
+  { wahl: null, Symbol: GitCommitHorizontal, text: "partie.linie.partie" },
+  ...ARTEN.map((a) => ({ wahl: a.art, Symbol: a.Symbol, text: a.text })),
+];
+
 /**
- * Wahl der Linie an der gezeigten Stelle: „Linie: Partie · Besserer Zug · Bestrafung“; die
- * gezeigte ist gedrückt. Darüber im Zweig die Pfadzeile mit „Zurück zur Partie“.
- * Beispiel: nach 2. g4?? führt „Bestrafung“ zu 2... Dh4#, „Partie“ zurück zu 2. g4??.
+ * Die Linienwahl über den Zugknöpfen: „Linie: [Partie] [💡] [⚔] Bestrafung“ in einer Zeile fester
+ * Höhe, auch an Zügen ohne Engine-Folge (dann sind deren Knöpfe gesperrt).
+ *
+ * Warum: Wunsch des Autors (6.11.2026). Vorher erschienen die Chips nur nach Fehlern und brachen
+ * auf dem Handy in zwei Zeilen um; beim Durchgehen sprang deshalb das Brett, und der Daumen traf
+ * neben „Vor“. Die Knöpfe unter dem Brett sind entfallen: Ein Tipp auf einen Zweig spielt ihn hier
+ * vor (useLinie.ts), während des Vorspielens zeigt sein Knopf „Anhalten“.
+ * Beispiel: nach 8. Sc3? sind beide Zweige frei; nach 1. e4 (bester Zug) nur „Partie“.
  */
 export function Linienwahl({
   zweige,
@@ -106,29 +102,39 @@ export function Linienwahl({
   navigation: Liniennavigation;
 }) {
   const art = zweige.zweig?.art ?? null;
-  const chip = (wahl: Zweigart | null, text: Textschluessel, Symbol: LucideIcon | null) => (
-    <button
-      key={wahl ?? "partie"}
-      type="button"
-      className="chip weiterchip"
-      aria-pressed={art === wahl}
-      data-testid={`linie-${wahl ?? "partie"}`}
-      onClick={() => navigation.waehle(wahl)}
-    >
-      {Symbol && <Symbol size={SYMBOL} aria-hidden="true" />}
-      {t(text)}
-    </button>
-  );
-  return (
-    <div className="linienwahl">
-      <Zweigpfad zweige={zweige} navigation={navigation} />
-      <p className="abzweigungen weiterchips" role="group" aria-label={t("partie.linie.wahl")}>
-        <span>{t("partie.linie.wahl")}</span>
-        {chip(null, "partie.linie.partie", null)}
-        {ARTEN.filter((a) => zweige.linien[a.art].length > 0).map((a) =>
-          chip(a.art, a.text, a.Symbol),
+  const gezeigt = KNOEPFE.find((k) => k.wahl === art) ?? KNOEPFE[0];
+  const knopf = ({ wahl, Symbol, text }: Linienknopf) => {
+    const laeuft = wahl !== null && navigation.laeuft === wahl;
+    const name = laeuft ? t("rueckblick.abspielenHalt") : t(text);
+    return (
+      <button
+        key={wahl ?? "partie"}
+        type="button"
+        className="knopf-symbol linienknopf"
+        aria-pressed={art === wahl}
+        aria-label={name}
+        title={name}
+        disabled={wahl !== null && zweige.linien[wahl].length === 0}
+        data-testid={`linie-${wahl ?? "partie"}`}
+        onClick={() => navigation.waehle(wahl)}
+      >
+        {laeuft ? (
+          <Pause size={SYMBOL_KNOPF} aria-hidden="true" />
+        ) : (
+          <Symbol size={SYMBOL_KNOPF} aria-hidden="true" />
         )}
-      </p>
+      </button>
+    );
+  };
+  return (
+    <div className="linienwahl" role="group" aria-label={t("partie.linie.wahl")}>
+      <span className="linienwahl-titel" aria-hidden="true">
+        {t("partie.linie.wahl")}
+      </span>
+      {KNOEPFE.map(knopf)}
+      <span className="linienwahl-name" data-testid="linienname">
+        {gezeigt ? t(gezeigt.text) : ""}
+      </span>
     </div>
   );
 }

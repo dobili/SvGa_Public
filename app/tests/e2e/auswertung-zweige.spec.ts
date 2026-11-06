@@ -5,7 +5,8 @@
  * 8. Sc3? war 8. Dxb7 besser; die Bestrafung ist 8... c6.
  * Geprüft wird: Beide Zweige stehen hinter 8. Sc3 in der Zugliste, die Wahl der Linie zeigt den
  * Zweig am Brett und markiert seinen Zug (nicht mehr 8. Sc3), „Zurück“ und Pfeil links gehen vom
- * ersten Zug des Zweigs an den Abzweig, „Zurück zur Partie“ und „Partie“ führen zu 8. Sc3.
+ * ersten Zug des Zweigs an den Abzweig, „Partie“ führt zu 8. Sc3. Die Lage beim Durchgehen prüft
+ * auswertung-ruhig.spec.ts.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffnePartie } from "./auswertungpartie";
@@ -39,13 +40,13 @@ test("Engine-Folgen als Zweige in der Zugliste, Navigation durch die gewählte L
   await page.getByTestId("linie-besser").click();
   await expect(markiert(page)).toHaveText("8. Dxb7");
   await expect(feldB7(page)).toHaveAccessibleName(/Dame/);
-  await expect(page.getByTestId("zweigpfad")).toContainText("Zurück zur Partie");
+  await expect(page.getByTestId("linienname")).toHaveText("Besserer Zug");
   await expect(page.getByRole("button", { name: "Einen Halbzug vor" })).toBeDisabled();
   // „Zurück“ am ersten Zug des Zweigs: an den Abzweig, die Stellung vor 8. Sc3 (nach 7... De7).
   await page.getByRole("button", { name: "Einen Halbzug zurück" }).click();
   await expect(markiert(page)).toHaveText(/7\.\.\. De7|De7/);
   await expect(feldB7(page)).toHaveAccessibleName(/Bauer/);
-  await expect(page.getByTestId("zweigpfad")).toHaveCount(0);
+  await expect(page.getByTestId("linienname")).toHaveText("Partie");
 
   // „Bestrafung“ und Pfeil links: zurück zu 8. Sc3 in der Partie.
   await zuege.getByRole("button", { name: /^8\. Sc3, / }).click();
@@ -56,10 +57,10 @@ test("Engine-Folgen als Zweige in der Zugliste, Navigation durch die gewählte L
   await expect(markiert(page)).toHaveText(/8\. Sc3/);
   await expect(page.getByTestId("linie-partie")).toHaveAttribute("aria-pressed", "true");
 
-  // Ein Zug im Zweig antippen und „Zurück zur Partie“.
+  // Ein Zug im Zweig antippen und „Partie“ (seit 6.11.2026 statt „Zurück zur Partie“ oben).
   await page.getByTestId("zugvariante-besser").getByRole("button", { name: "8. Dxb7" }).click();
   await expect(markiert(page)).toHaveText("8. Dxb7");
-  await page.getByTestId("zweig-zur-partie").click();
+  await page.getByTestId("linie-partie").click();
   await expect(markiert(page)).toHaveText(/8\. Sc3/);
   await expect(feldB7(page)).toHaveAccessibleName(/Bauer/);
   // Pfeil rechts geht in der Partie weiter (8... c6 wurde gespielt).

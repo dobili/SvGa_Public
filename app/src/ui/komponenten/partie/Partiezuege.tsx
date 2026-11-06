@@ -14,7 +14,9 @@
  * Ende“ abgesetzt von „Zurück“ und „Vor“ (Zugknoepfe.tsx).
  * Im Rückblick stehen die Engine-Folgen zum gezeigten Zug als Nebenzweige in der Zeile, darunter
  * die Wahl der Linie; die Zugknöpfe gehen durch die gewählte Linie (Fehlermeldung des Autors,
- * 6.11.2026; Partiezweige.tsx, useLinie.ts).
+ * 6.11.2026; Partiezweige.tsx, useLinie.ts). Die Wahl der Linie steht im Rückblick immer da, und
+ * die aufgeklappte Zeile hat dann eine feste Höhe: Beim Durchgehen bleiben Brett und Zugknöpfe,
+ * wo sie sind (Wunsch des Autors, 6.11.2026: Er tippte neben „Vor“, weil die Ansicht sprang).
  * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
  * app/merker.ts, Auswertungssymbole.tsx, Zugknoepfe.tsx, Partiezweige.tsx, useLinie.ts.
  */
@@ -174,9 +176,15 @@ export function Partiezuege({
   useEffect(() => {
     rolleZumZug(zeile.current, aufgeklappt);
   }, [stelle, zuege.length, aufgeklappt, imZweig?.art, imZweig?.schritt]);
+  const stilklassen = [
+    "zugleiste",
+    "partiezuege",
+    aufgeklappt ? "aufgeklappt" : "",
+    zweige ? "mit-linien" : "",
+  ];
   return (
     <section
-      className={aufgeklappt ? "zugleiste partiezuege aufgeklappt" : "zugleiste partiezuege"}
+      className={stilklassen.filter(Boolean).join(" ")}
       aria-label={t("partie.zuege")}
       data-tour="partie-zuege"
     >
@@ -205,7 +213,7 @@ export function Partiezuege({
         ))}
       </p>
       <Aufklappknopf offen={aufgeklappt} beiTipp={umschalten} />
-      {mitZweigen && zweige && <Linienwahl zweige={zweige} navigation={navigation} />}
+      {zweige && <Linienwahl zweige={zweige} navigation={navigation} />}
       <Zugknoepfe gesperrt={navigation.gesperrt} beiRichtung={navigation.beiRichtung} />
     </section>
   );

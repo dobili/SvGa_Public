@@ -194,15 +194,16 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt kein Zurü
   // Dazu die Strafe: 2... Dh4# als eigener Zweig.
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
-  // Seit 0.3.0 spielen Knöpfe unter dem Brett die Varianten langsam ab, bis zum letzten Zug.
-  const abspielen = page.getByTestId("abspielen-besser");
+  // Seit 0.3.0 lassen sich die Varianten langsam abspielen, bis zum letzten Zug; seit 6.11.2026
+  // über die Linienknöpfe oben in der Zugleiste (die Knöpfe unter dem Brett sind entfallen).
+  const abspielen = page.getByTestId("linie-besser");
   await abspielen.click();
-  await expect(abspielen).toHaveText("Anhalten");
+  await expect(abspielen).toHaveAttribute("aria-label", "Anhalten");
   await expect(zweig.locator(".zweigzug").last()).toHaveAttribute("aria-pressed", "true", {
     timeout: ENGINE_FRIST,
   });
-  await expect(abspielen).toHaveText("Besserer Zug", { timeout: ENGINE_FRIST });
-  await page.getByTestId("abspielen-strafe").click();
+  await expect(abspielen).toHaveAttribute("aria-label", "Besserer Zug", { timeout: ENGINE_FRIST });
+  await page.getByTestId("linie-strafe").click();
   await expect(page.getByTestId("nebenzweig-strafe").locator(".zweigzug").first()).toHaveAttribute(
     "aria-pressed",
     "true",

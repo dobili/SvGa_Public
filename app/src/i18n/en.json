@@ -2985,7 +2985,6 @@
   "rueckblick.zweigZurPartie": "Back to the game",
   "rueckblick.abspielenBesser": "Better move",
   "rueckblick.abspielenStrafe": "Punishment",
-  "rueckblick.abspielenZurueck": "Back to the starting position",
   "rueckblick.abspielenHalt": "Pause",
   "rueckblick.phasenwechsel": "New phase from here. {text}",
   "rueckblick.bewertung": "Evaluation {vorher} → {nachher}.",

@@ -290,10 +290,64 @@
   white-space: normal;
 }
 
+/* Wahl der Linie (Wunsch des Autors, 6.11.2026): immer da, eine Zeile fester Höhe, drei
+   Symbolknöpfe und der Name der gezeigten Linie; so springt beim Durchgehen nichts. */
 .partiezuege .linienwahl {
   grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  height: var(--tippflaeche);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
 }
 
-.linienwahl .weiterchips {
-  margin: calc(var(--raster) / 2) 0 0;
+.linienwahl-titel {
+  flex: none;
+  margin-right: calc(var(--raster) / 2);
+}
+
+.linienknopf {
+  flex: none;
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.linienknopf[aria-pressed="true"] {
+  color: var(--gold-text);
+  background: var(--flaeche);
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.linienknopf:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.linienwahl-name {
+  min-width: 0;
+  margin-left: calc(var(--raster) / 2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+}
+
+/* Die einzeilige Zugzeile hat eine feste Höhe, ob mit Zweigen oder ohne. Aufgeklappt mit
+   Engine-Folgen ebenfalls: Sonst wüchse sie an jedem Fehler um die Zeilen der Zweige.
+   overflow-anchor: Ragt die Zeile oben aus dem Bild, wählte der Browser einen Zug in ihr als Anker
+   und rollte beim Blättern der Zeile (rolleZumZug) die ganze Seite mit; das Brett sprang. */
+.partiezuege .zugzeile {
+  height: var(--tippflaeche);
+  overflow-anchor: none;
+}
+
+.partiezuege.aufgeklappt .zugzeile {
+  height: auto;
+}
+
+.partiezuege.aufgeklappt.mit-linien .zugzeile {
+  height: calc(var(--tippflaeche) * 5);
+  align-content: flex-start;
 }

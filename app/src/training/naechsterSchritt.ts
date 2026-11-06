@@ -12,6 +12,7 @@
  * Abhängigkeiten: training/vorschlagsarten.ts, training/kurzplaene.ts, Typen aus Speicher,
  * Navigation und Sprache.
  */
+import { rangFuerWeg, type Startweg } from "./startweg";
 import type { Ansicht } from "../app/stapel";
 import type { Textschluessel, Textwerte } from "../i18n/sprache";
 import type { Nutzerdaten } from "../speicher/format";
@@ -43,6 +44,8 @@ export interface Lage {
    * (ui/komponenten/training/vorhandeneAufgaben.ts); fehlt die Angabe, zählen alle fälligen Karten.
    */
   readonly faelligAnzahl?: number;
+  /** Startweg des Lesers (training/startweg.ts); ohne Angabe die Grundreihenfolge. */
+  readonly weg?: Startweg;
 }
 
 /** Ein Vorschlag: Satz, Knopf und Ziel. */
@@ -75,15 +78,17 @@ export const HOECHSTENS_VORSCHLAEGE = 3;
  * Eingaben: Lage, optional eine eigene Liste von Arten (für Tests).
  * Ausgabe: Vorschläge, der wichtigste zuerst; leer, wenn es nichts vorzuschlagen gibt.
  * Beispiel: 4 fällige Karten, Tagesaufgabe offen, Kapitel 6 halb gelesen →
- * Wiederholen, Tagesaufgabe, Weiterlesen.
+ * Wiederholen, Tagesaufgabe, Weiterlesen. Auf dem Spielweg rücken Partie, Thema und Kurzplan vor.
  */
 export function vorschlaege(
   lage: Lage,
   arten: readonly Vorschlagsart[] = VORSCHLAGSARTEN,
   hoechstens: number = HOECHSTENS_VORSCHLAEGE,
 ): Vorschlag[] {
+  const weg = lage.weg ?? "buch";
+  const rang = (art: Vorschlagsart) => rangFuerWeg(art.kennung, art.rang, weg);
   return [...arten]
-    .sort((a, b) => a.rang - b.rang)
+    .sort((a, b) => rang(a) - rang(b))
     .map((art) => art.ermittle(lage))
     .filter((v): v is Vorschlag => v !== null)
     .slice(0, hoechstens);

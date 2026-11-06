@@ -13,6 +13,7 @@
  * Gerät, dass gefragt wurde (tourMerker.ts).
  * Abhängigkeiten: tourMerker.ts, tourStand.ts, app/sprachangebot.ts, Navigation, i18n, lucide-react.
  */
+import { merkeStartweg, type Startweg } from "../training/startweg";
 import { BookOpen, Compass, Swords, type LucideIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type RefObject } from "react";
 import { useZurueckSchliesst } from "../app/blattstapel";
@@ -29,28 +30,33 @@ const SYMBOLGROESSE = 28;
 const WEGSYMBOLGROESSE = 24;
 
 /** Ein Weg der Startwahl: Zeichen, Beschriftung, Bereich (dessen Startseite) und Tour. */
-interface Startweg {
+interface Startwegwahl {
+  /** Der gemerkte Weg (training/startweg.ts): steuert die Vorschläge der Karte „Heute“. */
+  readonly weg: Startweg;
   readonly zeichen: LucideIcon;
   readonly text: Textschluessel;
   readonly bereich: Bereich;
   readonly tour: TourKennung;
 }
 
-const WEGE: readonly Startweg[] = [
+const WEGE: readonly Startwegwahl[] = [
   {
     zeichen: BookOpen,
+    weg: "buch",
     text: "starttour.wahl.buch",
     bereich: "buch",
     tour: "start.buch",
   },
   {
     zeichen: Swords,
+    weg: "spielen",
     text: "starttour.wahl.spielen",
     bereich: "spielen",
     tour: "start.spielen",
   },
   {
     zeichen: Compass,
+    weg: "umsehen",
     text: "starttour.wahl.umsehen",
     bereich: "buch",
     tour: "haupt",
@@ -71,8 +77,9 @@ function spaeter(): void {
 /** Merkt die Frage, schließt die Wahl, geht zum Bildschirm des Weges und startet seine Tour. */
 function useWegWahl() {
   const { wechsleBereich } = useNavigation();
-  return (weg: Startweg) => {
+  return (weg: Startwegwahl) => {
     merkeAngeboten();
+    merkeStartweg(weg.weg);
     schliesseStartwahl();
     // Der Bereich des Weges von vorn, auch aus den Einstellungen: Leiste und „Zurück“ passen so.
     wechsleBereich(weg.bereich);
@@ -87,7 +94,7 @@ function Startwahlkarte({
   spaeter,
 }: {
   erster: RefObject<HTMLButtonElement | null>;
-  waehle: (weg: Startweg) => void;
+  waehle: (weg: Startwegwahl) => void;
   spaeter: () => void;
 }) {
   const titelId = useId();

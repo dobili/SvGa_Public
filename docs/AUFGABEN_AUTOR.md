@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 1.11.2026, Version 0.3.46 (Variationsbrowser Stufe 1 bis 4, Zurück-Taste, Größenbudget 35 MB).
+Stand: 6.11.2026, Version 0.3.51 (Meldungen vom 6.11.2026).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.46“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.51“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,36 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.51: Deine Meldungen vom 6.11.2026
+
+- [ ] N2585. Zug eingeben: Läufer antippen (Zielfelder erscheinen), dann eine eigene Figur ganz am Rand zu
+      einem Zielfeld des Läufers antippen (etwa den Springer direkt neben einem Läuferziel). Jetzt ist
+      die neue Figur gewählt, der Läufer zieht nicht. Ein Tipp knapp neben ein Zielfeld auf ein leeres
+      Feld zieht weiter dorthin.
+- [ ] N2586. Röntgentrainer, Schritt 1 (Schachs): Ein Schach übersehen, das zugleich ein Verlustschlag ist (wie
+      Lxf7+ auf deinem Bildschirmfoto). Unter „Übersehen“ steht jetzt „Lxf7+ gibt Schach und gehört deshalb
+      dazu, auch wenn der Schlag Material kostet (Lxf7+ …: −2 Bauerneinheiten).“ In Schritt 2 (Schläge)
+      musst du diesen Schlag nicht markieren. Zu deiner Frage: Die Markierung war richtig verlangt, aber
+      als Schach, nicht als Schlag; nur der Satz war irreführend.
+- [ ] N2587. 10-Minuten-Partie gegen einen Bot zu Ende spielen: Die Auswertung danach ist nach wenigen
+      Sekunden fertig (vorher etwa 20 Sekunden). Grund: Jeder Zug hat die gerade rechnende Stellung
+      verworfen und neu angefangen; jetzt wird das Ergebnis behalten und eine laufende Rechnung
+      weiterverwendet.
+- [ ] N2588. Auswertung, Zeitleiste: Kacheln „Absichtlicher Fehler der Engine“ erscheinen nur noch, wenn der Zug
+      wirklich ein Fehler, Patzer oder verpasster Gewinn war, nicht bei kleinen Ungenauigkeiten.
+- [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
+      Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
+      aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
+- [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
+      jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
+- [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
+      stellen: Die Karte „Heute“ schlägt nach fälligen Wiederholungen zuerst Partie, Taktikthema und
+      Kurzplan vor. Die Startwahl der ersten Tour (Einstellungen › Hilfe › Rundgang) stellt das
+      ebenfalls ein.
+- [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
+      Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
+      Wertung zählt der stärkste besiegte Bot.
 
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
@@ -967,6 +997,47 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q15 Deine Ideen vom 6.11.2026: Phasenkarten, Training planen, Empfehlungen
+
+- [ ] Q15-1. **Karten für Mittelspiel und Endspiel (wie die Eröffnungskarte).** Was sich zuverlässig
+      algorithmisch einordnen lässt:
+      Endspiele nach Material, das ist eindeutig: Bauernendspiel, Turmendspiel, Leichtfigurenendspiel
+      (Läufer gegen Läufer gleich- oder ungleichfarbig, Springer gegen Springer, Läufer gegen Springer),
+      Damenendspiel, Turm gegen Leichtfigur, Qualität mehr. Dazu Merkmale mit sicherer Erkennung:
+      Freibauer, entfernter Freibauer, Mehrbauer, Opposition im Bauernendspiel, bis 7 Steine das
+      genaue Ergebnis aus der Tablebase (nur online).
+      Mittelspiele nach der Bauernstruktur, auch das ist eine reine Rechnung: Isolani, hängende Bauern,
+      Karlsbader Struktur (Minoritätsangriff), Maroczy-Aufbau, Igel, Stonewall, französische und
+      königsindische Bauernkette, offenes oder geschlossenes Zentrum, dazu entgegengesetzte Rochaden
+      (Bauernsturm), Läuferpaar und ungleichfarbige Läufer. Nicht zuverlässig sind Einordnungen nach
+      Plänen („Angriff am Damenflügel“), die lasse ich weg.
+      Empfehlung: In der Auswertung je eine Karte dort, wo die Phase beginnt (die App bestimmt die Phasen
+      schon), mit Name, kurzem Satz („Typischer Plan: …“, aus dem Buch, wo das Buch das Thema hat) und
+      Link ins Kapitel. Ich baue das nach dem Umbau der Auswertung (Punkt „besserer Zug“), weil beide
+      dieselben Dateien berühren. Widerspruch genügt.
+- [ ] Q15-2. **Plan statt Kalender.** Heute speichert der Plan Wochentage und Uhrzeit für den
+      Kalendertermin. Dein Vorschlag: Wochentage und Dauer planen, das Training zählt automatisch mit,
+      und beim Öffnen der App an einem Plantag erinnert die Karte „Heute“ an das anstehende Training
+      („Heute 20 Minuten geplant, 5 erledigt“). Empfehlung: genau so, Uhrzeit und Kalenderdatei
+      entfallen; gezählt wird die Zeit in Trainern, Übungen, Wiederholungen und Partien, die die App
+      schon misst. **Frage, weil sich das Speicherformat ändert** (Dauer statt Uhrzeit im Plan):
+      Einverstanden? Bis zu deiner Antwort bleibt der Plan, wie er ist.
+- [ ] Q15-3. **Ziele und Aufträge passend zur Spielstärke.** Schon umgesetzt in 0.3.51 (N2592): Ziele
+      schlagen nur Bots und Bot-Orden vor, die höchstens 300 Punkte über deiner Zahl liegen (Wertung,
+      sonst stärkster besiegter Bot, sonst 700). Die Wochenaufträge verlangten schon vorher nur die
+      Stufe über deinem stärksten besiegten Bot. Selbst angeheftete Ziele bleiben, wie sie sind.
+      Widerspruch genügt. Plan, Ziele und Aufträge auf einer Karte zusammenzuführen hängt an Q15-2.
+- [ ] Q15-4. **Kurzpläne in den Empfehlungen:** Schon umgesetzt in 0.3.51 (N2590), Widerspruch
+      genügt.
+- [ ] Q15-5. **Vorschläge nach der Startwahl (Buch, Spielen, Umsehen)** und in den Einstellungen änderbar:
+      Wer „Spielen“ gewählt hat, bekommt Partie und Taktik zuerst, wer „Buch“ gewählt hat, Weiterlesen
+      und Übungen. Die Wahl liegt nur auf dem Gerät (wie andere Merker), kein neues Speicherfeld.
+      Dazu dezent Schwächen aus den eigenen Partien je Phase („In deinen letzten 10 Partien gingen die
+      meisten Punkte im Endspiel verloren → Kapitel 9 und Endspieltrainer“), erst ab 5 ausgewerteten
+      Partien und nur als Vorschlag, ohne Versprechen. Der erste Teil (Startweg, Einstellung, Reihenfolge)
+      ist schon umgesetzt in 0.3.51 (N2591); die Schwächen je Phase folgen als nächstes Paket nach
+      Q15-1. Widerspruch genügt.
 
 ### Q14 Variationsbrowser und Zurück-Taste (1.11.2026, schon umgesetzt, Widerspruch genügt)
 

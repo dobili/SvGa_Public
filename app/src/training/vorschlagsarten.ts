@@ -7,7 +7,7 @@
  * 31.10.2026: eintragen statt umbauen).
  * Rangfolge nach gamifizierung.md P1: fällige Wiederholungen, Tagesaufgabe, Weiterlesen, offene
  * Übungen, schwaches Thema, Fehlerdatenbank; zuletzt eine Partie (Bug-Test 1.11.2026: wer alles
- * erledigt hatte, bekam gar keinen Vorschlag mehr).
+ * erledigt hatte, bekam gar keinen Vorschlag mehr); davor ein Kurzplan (Wunsch des Autors, 6.11.2026).
  * Abhängigkeiten: training/wiederholung.ts, training/themenstand.ts, training/themennamen.ts,
  * training/fehlerdatenbank.ts.
  */
@@ -266,6 +266,22 @@ function partie(lage: Lage): Vorschlag | null {
   };
 }
 
+/**
+ * Vor der Partie: ein fertig zusammengestellter Kurzplan (15 Minuten, Trainer „Kurzpläne“).
+ * Warum: Wunsch des Autors (6.11.2026), die 15- und 30-Minuten-Pläne in die Empfehlungen der
+ * Startseite zu holen; wer wenig Zeit hat, muss dann nichts selbst auswählen.
+ */
+function kurzplan(lage: Lage): Vorschlag | null {
+  if (!bereitFuerAufgaben(lage)) return null;
+  return {
+    art: "kurzplan",
+    text: "naechster.kurzplan",
+    werte: {},
+    knopf: "naechster.knopf.kurzplan",
+    ziel: { bildschirm: "trainer", kennung: "kurzplaene" },
+  };
+}
+
 /** Alle Arten; ein neuer Trainer ergänzt eine Zeile mit eigenem Rang. */
 export const VORSCHLAGSARTEN: readonly Vorschlagsart[] = [
   { kennung: "faellig", rang: 10, ermittle: faelligeKarten },
@@ -274,5 +290,6 @@ export const VORSCHLAGSARTEN: readonly Vorschlagsart[] = [
   { kennung: "uebungen", rang: 40, ermittle: offeneUebungen },
   { kennung: "thema", rang: 50, ermittle: schwachesThema },
   { kennung: "fehler", rang: 60, ermittle: fehlerdatenbank },
+  { kennung: "kurzplan", rang: 80, ermittle: kurzplan },
   { kennung: "partie", rang: 90, ermittle: partie },
 ];

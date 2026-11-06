@@ -13,6 +13,7 @@ import { WERTUNGSTEMPI } from "../spiel/elomodell";
 import type { Ziel } from "../speicher/gamifizierung";
 import { BOTBUENDEL, botsDesBuendels } from "../ui/komponenten/fortschritt/ringrechnung";
 import { zielartVon } from "./zielarten";
+import { eigeneZahl, inReichweite, REICHWEITE } from "./zielreichweite";
 import { anheftsperre, zielschluessel } from "./ziele";
 import { offeneUebungen, ringstaende, type Ringstand } from "./zielringe";
 import type { Zielanzeige, Zielkontext } from "./zieltypen";
@@ -100,6 +101,7 @@ export const ZIELVORSCHLAGSARTEN: readonly Zielvorschlagsart[] = [
  * Eingaben: Kontext, optional Arten und Höchstzahl (Tests). Ausgabe: höchstens fünf Vorschläge.
  * Beispiel: Kapitel 1 mit 1 offenen Übung, Ring 4–5 mit 2 fehlenden Bots → Kapitel 1, dann Ring.
  * Sonderfall: drei Ziele angeheftet → trotzdem Vorschläge (die Karte zeigt sie dann nicht).
+ * Bots und Bot-Orden nur in Reichweite der eigenen Spielstärke (zielreichweite.ts, Q15-3).
  */
 export function zielvorschlaege(
   kontext: Zielkontext,
@@ -109,10 +111,12 @@ export function zielvorschlaege(
   const gesehen = new Set<string>();
   const offen = { ...kontext, daten: { ...kontext.daten, ziele: { ...kontext.daten.ziele, angeheftet: [] } } };
   const angeheftet = new Set(kontext.daten.ziele.angeheftet.map(zielschluessel));
+  const grenze = eigeneZahl(kontext.daten) + REICHWEITE;
   return [...arten]
     .sort((a, b) => a.rang - b.rang)
     .flatMap((a) => a.ermittle(kontext))
     .filter((v) => v.fehlend > 0 && anheftsperre(v.ziel, offen) === null)
+    .filter((v) => inReichweite(v.ziel, grenze))
     .filter((v) => {
       const schluessel = zielschluessel(v.ziel);
       if (angeheftet.has(schluessel) || gesehen.has(schluessel)) return false;

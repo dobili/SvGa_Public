@@ -12,6 +12,7 @@
  * Abhängigkeiten: Tageskette.tsx, Vorschlagskacheln.tsx, Wochenreiter.tsx, wochensichtbar.ts,
  * naechsterSchrittMerker.ts, Feuerwerk.tsx, Speicher, i18n.
  */
+import { liesStartweg } from "../../../training/startweg";
 import { useState } from "react";
 import { feiereffekteAn } from "../../../app/feiereffekte";
 import { useSpeicher } from "../../../speicher/speicher";
@@ -40,7 +41,10 @@ function useHeuteZustand() {
   const mitZiel = woche.ziel !== null;
   const wocheSichtbar = wochenkarteSichtbar(daten, jetzt) && !(spaeter && !mitZiel);
   const frageOffen = !mitZiel && !spaeter && !spaeterDieseWoche(jetzt) && wocheSichtbar;
-  const liste = !aus && naechsterSchrittSichtbar(jetzt) && lage ? vorschlaege(lage) : [];
+  const liste =
+    !aus && naechsterSchrittSichtbar(jetzt) && lage
+      ? vorschlaege({ ...lage, weg: liesStartweg() })
+      : [];
   const nichtJetzt = () => {
     blendeNaechsterSchrittAus(new Date());
     setzeAus(true);

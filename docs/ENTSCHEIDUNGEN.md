@@ -4,6 +4,36 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 6.11.2026 – Version 0.3.51: Meldungen des Autors vom 6.11.2026
+
+- **Trefferfläche:** Steht unter dem Finger eine eigene Figur, gewinnt sie immer (Toleranz 0 statt
+  0,1 Feldbreiten). Grund: Läufer gewählt, Springer dicht neben einem Läuferziel angetippt, der
+  Läufer zog. Auf leeren Feldern bleibt die großzügige Fläche zu Zielfeldern.
+- **Röntgentrainer:** Die Lösung war richtig (Schritt 1 verlangt jedes Schach, auch ein
+  Verlustschach wie Lxf7+), aber die Begründung beschrieb nur den Schlag mit −2. Jetzt nennt sie im
+  Schritt der Schachs (und bei den Schachs der Gegenseite) das Schach zuerst und sagt, dass es trotz
+  Materialverlust dazugehört.
+- **Auswertung im Hintergrund:** Der eigene Worker (0.3.40) war nicht langsamer; aber jeder Zug
+  startete die Auswertung neu, die gerade rechnende Stellung (bis 8 s) wurde zu Ende gerechnet,
+  verworfen und danach noch einmal gerechnet, auch beim Übergang ins Partieende. Jetzt: Zwischenspeicher
+  nach FEN, eine laufende Rechnung wird weiterverwendet (`ergebnisFuer` in `useAuswertung.ts`).
+- **Zeitleiste:** Absichtliche Fehler der Engine nur, wenn die Auswertung den Zug als Fehler,
+  Patzer oder verpassten Gewinn einstuft.
+- **Kapitelseite:** Jeder Ring ist ein Knopf: Abbildungen und Warum-Fragen rollen zur Galerie,
+  Lernziele öffnen die Checkliste mit aufgeklappter Kapitelkarte (`checkliste` mit `kapitel`),
+  Übungen rollen zu den Übungen (golden wie bisher).
+- **Kurzplan in den Vorschlägen** (Q15-4, Regel 9): neue Vorschlagsart „kurzplan“ (Rang 80, vor der
+  Partie), sobald der Leser Aufgaben am Brett lösen kann.
+- **Startweg** (Q15-5, Regel 9): Die Startwahl der ersten Tour merkt sich den Weg (Merker
+  `startweg`, nur auf dem Gerät, kein Speicherfeld); Einstellungen › Bedienung „Was zuerst kommt“.
+  Auf dem Spielweg rücken Partie, schwaches Thema und Kurzplan direkt hinter die fälligen
+  Wiederholungen (`training/startweg.ts`).
+- **Ziele in Reichweite** (Q15-3, Regel 9): Zielvorschläge nur für Bots und Bot-Orden bis 300 über
+  der eigenen Zahl (Wertung, sonst stärkster besiegter Bot, sonst 700; `training/zielreichweite.ts`).
+  300 Punkte heißen etwa 15 % Gewinnchance, also schwer, aber erreichbar.
+- **Offen als Rückfrage:** Plan mit Dauer statt Uhrzeit (Q15-2, Speicherformat). Phasenkarten
+  (Q15-1) und Schwächen je Phase folgen als nächste Pakete.
+
 ## 1.11.2026 – Version 0.3.50: Marken ohne Nummer (Format 9)
 
 - **Wunsch und Wahl des Autors:** Ein Bereich aus mehreren Feldern oder mehrere gleichartige Pfeile

@@ -9,8 +9,11 @@
  * Abhängigkeiten: app/merker.ts, app/einstellungen.ts, app/feiereffekte.ts, brett/useZiehen,
  * brett/useZuganimation, rahmen/Startanimation, tour/, werkzeugkarten/useErklaerung, i18n.
  */
+import { liesStartweg, merkeStartweg, STARTWEGE, type Startweg } from "../../../training/startweg";
+import { Segmentwahl } from "../bausteine/Segmentwahl";
 import {
   Compass,
+  Signpost,
   Footprints,
   Hand,
   Lightbulb,
@@ -117,6 +120,34 @@ function TonZeile() {
   );
 }
 
+/**
+ * Startweg (Buch, Spielen, Umsehen): bestimmt, was die Karte „Heute“ zuerst vorschlägt (Wunsch
+ * des Autors, 6.11.2026). Nur auf dem Gerät gemerkt, wie die Startwahl der ersten Tour.
+ */
+function StartwegZeile() {
+  const [weg, setzeWeg] = useState<Startweg>(liesStartweg());
+  const name = t("einstellungen.startweg");
+  return (
+    <Einstellungszeile
+      symbol={Signpost}
+      name={name}
+      erklaerung={t("einstellungen.startweg.hinweis")}
+      unten={
+        <Segmentwahl
+          name={name}
+          werte={STARTWEGE}
+          gewaehlt={weg}
+          text={(wert) => t(`einstellungen.startweg.${wert}`)}
+          beiWahl={(neu) => {
+            merkeStartweg(neu);
+            setzeWeg(neu);
+          }}
+        />
+      }
+    />
+  );
+}
+
 /** Reiter „Bedienung“: Wischen, Gleiten, Ton, Feiereffekte, Startbild (wie die App reagiert). */
 export function BedienungZeilen() {
   return (
@@ -128,6 +159,7 @@ export function BedienungZeilen() {
       {FEIERSCHALTER.map((s) => (
         <MerkerZeile key={s.merker} schalter={s} />
       ))}
+      <StartwegZeile />
     </>
   );
 }

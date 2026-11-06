@@ -182,10 +182,15 @@ describe("Rangfolge der Vorschläge", () => {
     expect(arten(lage({}, { fehler: [{ ...eintrag, fehlerart: 1 }] }))).not.toContain("fehler");
   });
 
-  it("schlägt zuletzt eine Partie vor, aber nicht dem Neuling", () => {
+  it("schlägt zuletzt Kurzplan und Partie vor, aber nicht dem Neuling", () => {
     expect(arten(lage())).not.toContain("partie");
+    expect(arten(lage())).not.toContain("kurzplan");
     const alles = gesehen("0.1", "0.2", "1.1", "1.2", "1.3", "1.4", "1.5");
     expect(vorschlaege(lage({}, alles))).toEqual([
+      expect.objectContaining({
+        art: "kurzplan",
+        ziel: { bildschirm: "trainer", kennung: "kurzplaene" },
+      }),
       expect.objectContaining({ art: "partie", ziel: { bildschirm: "spielen" } }),
     ]);
   });

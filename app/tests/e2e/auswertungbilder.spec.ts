@@ -21,8 +21,9 @@ for (const schema of ["dunkel", "hell"] as const) {
     await expect(zeitleiste.getByTestId("moment-abweichung")).toContainText("8. Sc3?");
     await expect(zeitleiste.getByTestId("moment-abweichung")).toContainText("Besser war 8. Dxb7");
     await expect(zeitleiste.getByTestId("moment-fehler")).toContainText("12. O-O-O??");
-    await expect(zeitleiste.getByTestId("moment-engine")).toHaveCount(3);
-    await expect(zeitleiste.getByTestId("moment-engine").nth(1)).toContainText(
+    // Nur die zwei echten Patzer der Engine, nicht die Kleinigkeit 7... De7 (6.11.2026).
+    await expect(zeitleiste.getByTestId("moment-engine")).toHaveCount(2);
+    await expect(zeitleiste.getByTestId("moment-engine").first()).toContainText(
       "Du hast es gesehen und genutzt.",
     );
     await expect(zeitleiste.getByTestId("moment-ende")).toContainText("Matt");

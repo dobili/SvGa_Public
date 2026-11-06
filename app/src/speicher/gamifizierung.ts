@@ -53,6 +53,8 @@ export const AKTIVITAETSARTEN = [
   "sammlung",
   "fehler",
   "tagesaufgabe",
+  /** Aktive Minuten in der App (app/uebungszeit.ts), für den Übungsplan (Q15-2). */
+  "minuten",
 ] as const;
 export type Aktivitaetsart = (typeof AKTIVITAETSARTEN)[number];
 export type Tageszaehler = Readonly<Partial<Record<Aktivitaetsart, number>>>;
@@ -96,8 +98,8 @@ export interface Wochenstand {
 /** Selbst geplante Übungszeit (P11): Wochentage 0 = Montag bis 6 = Sonntag. */
 export interface Uebungsplan {
   readonly tage: readonly number[];
-  /** „HH:MM“, Ortszeit. */
-  readonly uhrzeit: string;
+  /** Geplante Übungszeit je Plantag in Minuten (seit 6.11.2026 statt einer Uhrzeit, Q15-2). */
+  readonly minuten: number;
   readonly satz: string;
 }
 
@@ -246,14 +248,20 @@ function wochenAus(roh: unknown): Wochenstand {
 }
 
 const WOCHENTAGE = 7;
-const UHRZEIT = /^([01]\d|2[0-3]):[0-5]\d$/;
+/** Pläne vor dem 6.11.2026 hatten eine Uhrzeit statt einer Dauer; sie bekommen diese Dauer. */
+const ALTE_PLAENE_MINUTEN = 20;
+const HOECHSTENS_MINUTEN = 240;
 
 function uebungsplanAus(roh: unknown): Uebungsplan | null {
   if (!istObjekt(roh) || !Array.isArray(roh.tage)) return null;
   const tage = roh.tage.filter((t): t is number => Number.isInteger(t) && t >= 0 && t < WOCHENTAGE);
-  const uhrzeit = text(roh.uhrzeit);
-  if (tage.length === 0 || !UHRZEIT.test(uhrzeit)) return null;
-  return { tage: [...new Set(tage)].sort((x, y) => x - y), uhrzeit, satz: text(roh.satz) };
+  const roheMinuten = roh.minuten;
+  const minuten =
+    typeof roheMinuten === "number" && Number.isInteger(roheMinuten) && roheMinuten > 0
+      ? Math.min(roheMinuten, HOECHSTENS_MINUTEN)
+      : ALTE_PLAENE_MINUTEN;
+  if (tage.length === 0) return null;
+  return { tage: [...new Set(tage)].sort((x, y) => x - y), minuten, satz: text(roh.satz) };
 }
 
 const ZEITARTEN = new Set(["blitz", "rapid", "classical", "egal"]);

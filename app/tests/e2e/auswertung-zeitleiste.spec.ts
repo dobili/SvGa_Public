@@ -16,8 +16,8 @@ const KARTENANTEIL = 0.8;
 const TOLERANZ = 0.05;
 /** Höher als dieser Anteil des Fensters darf die Reihe nicht sein (vorher etwa 2,5 Fenster). */
 const HOECHSTENS_FENSTER = 0.6;
-/** Die Partie hat sieben Momente der eigenen Seite. */
-const MOMENTE = 7;
+/** Die Partie hat sechs Momente (seit 6.11.2026 ohne die Kleinigkeit der Engine 7... De7). */
+const MOMENTE = 6;
 
 /** Rechteck eines Elements; der Test bricht ab, wenn es keines hat. */
 async function rechteck(page: Page, testid: string, nr = 0) {

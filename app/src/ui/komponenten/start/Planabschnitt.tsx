@@ -1,92 +1,58 @@
 /**
- * Abschnitt „Wann übst du?“ der Wochenkarte (Gamifizierung P11): Plan zeigen, ändern und als
- * Kalenderdatei weitergeben; an geplanten Tagen „Heute ist dein Übungstag.“
+ * Abschnitt „Wann übst du?“ der Wochenkarte (Gamifizierung P11, neu gefasst am 6.11.2026): Plan
+ * zeigen und ändern; an Übungstagen der Stand „7 von 20 Minuten geschafft“ mit Knopf „Jetzt üben“.
  *
- * Rolle im Gesamtbild: Eintrag in WOCHENABSCHNITTE (Rang 30). Ohne Server kann die App nicht
- * erinnern; der Leser trägt den Plan in seinen eigenen Kalender ein (training/uebungsplan.ts).
- * Weitergabe wie bei der Datensicherung: Herunterladen (iPhone: „Zum Kalender hinzufügen“) und,
- * wo das Gerät es kann, das Teilen-Menü. Nichts geht an einen Server.
- * Abhängigkeiten: training/uebungsplan.ts, bausteine/dateiAnbieten.ts, Planwahl.tsx, Speicher.
+ * Rolle im Gesamtbild: Eintrag in WOCHENABSCHNITTE (Rang 30). Wunsch des Autors (Q15-2): statt
+ * Kalendertermin Wochentage und Dauer, das Training zählt mit (app/uebungszeit.ts), und die Karte
+ * „Heute“ erinnert beim Öffnen der App. „Jetzt üben“ öffnet die Kurzpläne, die eine Einheit fertig
+ * zusammenstellen.
+ * Abhängigkeiten: training/uebungsplan.ts, Planwahl.tsx, Speicher, Navigation, i18n.
  */
 import { useState } from "react";
+import { useNavigation } from "../../../app/navigationsKontext";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import type { Uebungsplan } from "../../../speicher/gamifizierung";
 import { useSpeicher } from "../../../speicher/speicher";
-import { heuteGeplant, ICS_DATEI, ICS_TYP, kalenderdatei } from "../../../training/uebungsplan";
-import { bieteDateiAn, kannDateiTeilen, teileDatei } from "../bausteine/dateiAnbieten";
+import { planstandHeute, type Planstand } from "../../../training/uebungsplan";
 import { Planwahl } from "./Planwahl";
 import { Reiterwort } from "./Reiterstand";
 
-/** Die Kalenderdatei zum Plan in der Sprache der Oberfläche. */
-function datei(plan: Uebungsplan): string {
-  return kalenderdatei(
-    plan,
-    {
-      titel: t("plan.uebung.termin.titel"),
-      beschreibung: t("plan.uebung.termin.beschreibung"),
-      erinnerung: t("plan.uebung.termin.erinnerung"),
-    },
-    new Date(),
-  );
-}
-
-/** Meldung zu einem Fehler beim Anbieten oder Teilen. */
-function fehlermeldung(fehler: unknown): { text: string; fehler: boolean } {
-  const grund = fehler instanceof Error ? fehler.message : String(fehler);
-  return { text: t("plan.uebung.fehler", { fehler: grund }), fehler: true };
-}
-
-/** „Mo, Mi, Fr um 18:00“. */
+/** „Mo, Mi, Fr, je 20 Minuten“. */
 function zusammenfassung(plan: Uebungsplan): string {
   const tage = plan.tage.map((tag) => t(`woche.tag.${tag}` as Textschluessel)).join(", ");
-  return t("plan.uebung.zusammenfassung", { tage, uhrzeit: plan.uhrzeit });
+  return t("plan.uebung.zusammenfassung", { tage, minuten: plan.minuten });
 }
 
-/** Knöpfe zur Weitergabe der Kalenderdatei mit Meldung darunter. */
-function Kalenderknoepfe({ plan }: { plan: Uebungsplan }) {
-  const [meldung, setzeMeldung] = useState<{ text: string; fehler: boolean } | null>(null);
-  const anbieten = () => {
-    try {
-      bieteDateiAn(datei(plan), ICS_DATEI, ICS_TYP);
-      setzeMeldung({ text: t("plan.uebung.angeboten", { datei: ICS_DATEI }), fehler: false });
-    } catch (fehler) {
-      console.error("Kalenderdatei nicht angeboten:", fehler);
-      setzeMeldung(fehlermeldung(fehler));
-    }
-  };
-  const teilen = async () => {
-    try {
-      if (await teileDatei(datei(plan), ICS_DATEI, ICS_TYP))
-        setzeMeldung({ text: t("plan.uebung.geteilt"), fehler: false });
-    } catch (fehler) {
-      console.error("Kalenderdatei nicht geteilt:", fehler);
-      setzeMeldung(fehlermeldung(fehler));
-    }
-  };
+/** Der Stand von heute mit Balken und Knopf zu den Kurzplänen. */
+function Heutestand({ stand }: { stand: Planstand }) {
+  const { navigiere } = useNavigation();
+  const werte = { geschafft: Math.min(stand.geschafft, stand.geplant), geplant: stand.geplant };
   return (
-    <>
-      <div className="knopfzeile">
-        <button type="button" className="knopf-zweit" onClick={anbieten}>
-          {t("plan.uebung.kalender")}
+    <div data-testid="planstand-heute">
+      <p className="wochenkarte-heute">
+        {t(stand.fertig ? "plan.uebung.heuteFertig" : "plan.uebung.heute", {
+          ...werte,
+          geschafft: stand.geschafft,
+        })}
+      </p>
+      <progress max={stand.geplant} value={werte.geschafft} aria-label={t("plan.uebung.titel")} />
+      {!stand.fertig && (
+        <button
+          type="button"
+          className="knopf-haupt"
+          onClick={() => navigiere({ bildschirm: "trainer", kennung: "kurzplaene" })}
+        >
+          {t("plan.uebung.losgehen")}
         </button>
-        {kannDateiTeilen() && (
-          <button type="button" className="knopf-zweit" onClick={() => void teilen()}>
-            {t("plan.uebung.teilen")}
-          </button>
-        )}
-      </div>
-      {meldung && (
-        <p className={meldung.fehler ? "fehlertext" : "hinweis"} role="status">
-          {meldung.text}
-        </p>
       )}
-    </>
+    </div>
   );
 }
 
-/** Der Abschnitt mit Plan, Hinweis für heute und Kalender. */
+/** Der Abschnitt mit Plan und Stand von heute. */
 export function Planabschnitt() {
-  const plan = useSpeicher((z) => z.daten.uebungsplan);
+  const daten = useSpeicher((z) => z.daten);
+  const plan = daten.uebungsplan;
   const [waehlen, setzeWaehlen] = useState(false);
   if (waehlen) return <Planwahl plan={plan} fertig={() => setzeWaehlen(false)} />;
   if (plan === null)
@@ -97,11 +63,10 @@ export function Planabschnitt() {
         </button>
       </div>
     );
+  const stand = planstandHeute(daten, new Date());
   return (
     <div className="wochenkarte-abschnitt" data-testid="uebungsplan">
-      {heuteGeplant(plan, new Date()) && (
-        <p className="wochenkarte-heute">{t("plan.uebung.heute")}</p>
-      )}
+      {stand && <Heutestand stand={stand} />}
       <div className="karte-kopf">
         <p>{zusammenfassung(plan)}</p>
         <button type="button" className="knopf-zweit" onClick={() => setzeWaehlen(true)}>
@@ -109,18 +74,21 @@ export function Planabschnitt() {
         </button>
       </div>
       {plan.satz && <p className="hinweis">{plan.satz}</p>}
-      <Kalenderknoepfe plan={plan} />
     </div>
   );
 }
 
-/** Stand im Reiter der Karte „Heute“: „heute“ an einem Übungstag, sonst die Uhrzeit; ohne Plan nichts. */
+/** Stand im Reiter der Karte „Heute“: „7/20 Min“ an einem Übungstag, sonst die Dauer; ohne Plan nichts. */
 export function PlanStand() {
-  const plan = useSpeicher((z) => z.daten.uebungsplan);
+  const daten = useSpeicher((z) => z.daten);
+  const plan = daten.uebungsplan;
   if (plan === null) return null;
-  return heuteGeplant(plan, new Date()) ? (
-    <Reiterwort text={t("buchlook.planHeute")} betont />
-  ) : (
-    <Reiterwort text={plan.uhrzeit} />
+  const stand = planstandHeute(daten, new Date());
+  if (!stand) return <Reiterwort text={t("plan.uebung.dauerWert", { minuten: plan.minuten })} />;
+  return (
+    <Reiterwort
+      text={t("buchlook.planStand", { geschafft: stand.geschafft, geplant: stand.geplant })}
+      betont={!stand.fertig}
+    />
   );
 }

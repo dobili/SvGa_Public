@@ -316,7 +316,8 @@ describe("Format 7 (Gamifizierung)", () => {
     expect(d.aktivitaet).toEqual({ "2026-10-30": { partie: 2 } });
     expect(Object.keys(d.rekorde)).toEqual(["taktikZeit"]);
     expect(d.wochen.auftraege?.liste).toEqual([{ art: "uebung", anzahl: 3, wert: null }]);
-    expect(d.uebungsplan).toEqual({ tage: [0, 2], uhrzeit: "18:30", satz: "nach dem Essen" });
+    // Alte Pläne mit Uhrzeit bekommen 20 Minuten (Q15-2, 6.11.2026).
+    expect(d.uebungsplan).toEqual({ tage: [0, 2], minuten: 20, satz: "nach dem Essen" });
     expect(d.ziele.angeheftet).toEqual([{ art: "bot", bot: "lotte", zeitart: "rapid" }]);
     expect(wandleUm({ ...roh, schemaVersion: SCHEMA_VERSION + 1 }, JETZT)).toEqual({
       ok: false,

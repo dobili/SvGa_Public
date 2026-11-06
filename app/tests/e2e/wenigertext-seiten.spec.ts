@@ -100,7 +100,7 @@ for (const schema of ["dunkel", "hell"] as const) {
     await fortschritt.getByRole("button", { name: /Zu „Übungen aus dem Buch“ springen/ }).click();
     await expect(page.getByTestId("kapitel-uebungen")).toBeInViewport();
     // Wunsch des Autors, 6.11.2026: Jeder Ring führt dorthin, wo man ihn füllt.
-    await fortschritt.getByRole("button", { name: /Zu den Abbildungen springen/ }).click();
+    await fortschritt.getByRole("button", { name: /^Abbildungen angesehen: .*Zu den Abbildungen springen/ }).click();
     await expect(page.getByTestId("abbildungsgalerie")).toBeInViewport();
     await fortschritt.getByRole("button", { name: /Checkliste des Kapitels öffnen/ }).click();
     await expect(page.getByTestId("lernkarte-1")).toHaveAttribute("open", "");

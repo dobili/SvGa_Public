@@ -1,6 +1,6 @@
 /**
- * Wahl des Übungsplans (Gamifizierung P11): Wochentage, Uhrzeit und ein freiwilliger Satz
- * „Wo oder nach was?“ (Wenn-dann-Plan).
+ * Wahl des Übungsplans (Gamifizierung P11): Wochentage, Dauer je Übungstag (seit 6.11.2026 statt
+ * einer Uhrzeit, Q15-2) und ein freiwilliger Satz „Wo oder nach was?“ (Wenn-dann-Plan).
  *
  * Rolle im Gesamtbild: Teil des Abschnitts „Wann übst du?“ der Wochenkarte (Planabschnitt.tsx).
  * Gespeichert wird im Feld `uebungsplan` (training/uebungsplan.ts, mitUebungsplan).
@@ -10,10 +10,16 @@ import { useId, useState } from "react";
 import { t, type Textschluessel } from "../../../i18n/sprache";
 import type { Uebungsplan } from "../../../speicher/gamifizierung";
 import { aendere } from "../../../speicher/speicher";
-import { istPlan, mitUebungsplan, VORGABE_UHRZEIT } from "../../../training/uebungsplan";
+import {
+  istPlan,
+  mitUebungsplan,
+  PLANDAUERN,
+  VORGABE_MINUTEN,
+} from "../../../training/uebungsplan";
+import { Segmentwahl } from "../bausteine/Segmentwahl";
 
 const WOCHENTAGE = [0, 1, 2, 3, 4, 5, 6] as const;
-/** Höchstlänge des Satzes (eine Zeile auf dem Handy, passt in die Kalenderbeschreibung). */
+/** Höchstlänge des Satzes (eine Zeile auf dem Handy). */
 const SATZ_ZEICHEN = 80;
 
 interface Eigenschaften {
@@ -46,22 +52,24 @@ function Tagwahl({ tage, schalte }: { tage: readonly number[]; schalte: (tag: nu
   );
 }
 
-/** Uhrzeit und Satz „Wo oder nach was?“. */
+/** Dauer je Übungstag und Satz „Wo oder nach was?“. */
 function Zeitfelder(e: {
-  uhrzeit: string;
+  minuten: number;
   satz: string;
-  setzeUhrzeit: (uhrzeit: string) => void;
+  setzeMinuten: (minuten: number) => void;
   setzeSatz: (satz: string) => void;
 }) {
   const kennung = useId();
+  const werte = PLANDAUERN.map(String);
   return (
     <>
-      <label htmlFor={`${kennung}-uhrzeit`}>{t("plan.uebung.uhrzeit")}</label>
-      <input
-        id={`${kennung}-uhrzeit`}
-        type="time"
-        value={e.uhrzeit}
-        onChange={(ereignis) => e.setzeUhrzeit(ereignis.target.value)}
+      <p>{t("plan.uebung.dauer")}</p>
+      <Segmentwahl
+        name={t("plan.uebung.dauer")}
+        werte={werte}
+        gewaehlt={String(e.minuten)}
+        text={(wert) => t("plan.uebung.dauerWert", { minuten: wert })}
+        beiWahl={(wert) => e.setzeMinuten(Number(wert))}
       />
       <label htmlFor={`${kennung}-satz`}>{t("plan.uebung.satz")}</label>
       <input
@@ -79,16 +87,16 @@ function Zeitfelder(e: {
 /** Das Formular des Plans. */
 export function Planwahl({ plan, fertig }: Eigenschaften) {
   const [tage, setzeTage] = useState<readonly number[]>(plan?.tage ?? []);
-  const [uhrzeit, setzeUhrzeit] = useState(plan?.uhrzeit ?? VORGABE_UHRZEIT);
+  const [minuten, setzeMinuten] = useState(plan?.minuten ?? VORGABE_MINUTEN);
   const [satz, setzeSatz] = useState(plan?.satz ?? "");
-  const neu = { tage, uhrzeit, satz };
+  const neu = { tage, minuten, satz };
   const schalte = (tag: number) =>
     setzeTage((alt) => (alt.includes(tag) ? alt.filter((x) => x !== tag) : [...alt, tag]));
   return (
     <div className="wochenkarte-abschnitt planwahl" data-testid="planwahl">
       <p className="karte-titel">{t("plan.uebung.titel")}</p>
       <Tagwahl tage={tage} schalte={schalte} />
-      <Zeitfelder {...{ uhrzeit, satz, setzeUhrzeit, setzeSatz }} />
+      <Zeitfelder {...{ minuten, satz, setzeMinuten, setzeSatz }} />
       <p className="hinweis">{t("plan.uebung.hinweis")}</p>
       <div className="knopfzeile">
         <button

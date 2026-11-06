@@ -9,6 +9,8 @@
  * gehen Knöpfe, Pfeiltasten, Zweigknöpfe der Karte und das Abspielen über denselben Stand
  * (linienstand.ts). Die Stelle in der Partie gehört weiter dem Partie-Bildschirm (Sprünge aus
  * der Zeitleiste); der Zweig gilt nur für die Stelle, an der er gewählt wurde.
+ * Seit dem Wunsch des Autors (6.11.2026, Knöpfe unter dem Brett entfallen) spielt hier auch ein
+ * Tipp auf einen Linienknopf die Folge Zug für Zug vor; jeder Schritt von Hand hält das an.
  * Abhängigkeiten: React, linienstand.ts, rueckblick/Nebenzweig.tsx (Typ Zweigwahl).
  */
 import { useEffect, useRef, useState } from "react";
@@ -36,9 +38,16 @@ interface GemerkterZweig {
 /** Was useLinie liefert: der Stand und wie man ihn ändert. */
 export interface Linie {
   readonly stand: Linienstand;
-  /** Für die Karte und die Knöpfe „abspielen“ (Rueckblickkarte.tsx, Variantenknoepfe.tsx). */
+  /** Für die Zweige der Karte (Rueckblickkarte.tsx, Nebenzweig.tsx). */
   readonly zweigwahl: Zweigwahl;
+  /** Ein Schritt von Hand (Knopf, Taste, Zug antippen); hält das Vorspielen an. */
   readonly geheZu: (neu: Linienstand) => void;
+  /** Der Zweig, der gerade vorgespielt wird, sonst null. */
+  readonly laeuft: Zweigart | null;
+  /** Ein Schritt des Vorspielens: zeigt den Stand und spielt den Zweig weiter vor. */
+  readonly spiele: (neu: Linienstand) => void;
+  /** Hält das Vorspielen an; die gezeigte Stellung bleibt. */
+  readonly halt: () => void;
 }
 
 /**
@@ -53,22 +62,41 @@ export function useLinie(
   beiStelle: (stelle: number) => void,
 ): Linie {
   const [zweig, setzeZweig] = useState<GemerkterZweig | null>(null);
+  const [vorspiel, setzeVorspiel] = useState<Zweigart | null>(null);
   const hier = zweig?.stelle === stelle && zweig.anker === anker ? zweig : null;
   const stand: Linienstand = {
     stelle,
     zweig: hier ? { art: hier.art, schritt: hier.schritt } : null,
   };
-  const geheZu = (neu: Linienstand) => {
+  const zeige = (neu: Linienstand) => {
     if (neu.stelle !== stelle) beiStelle(neu.stelle);
     // Ein neuer Zweig liegt immer an derselben Stelle (linienschritt, waehleLinie).
     setzeZweig(neu.zweig ? { stelle: neu.stelle, anker, ...neu.zweig } : null);
   };
+  const halt = () => setzeVorspiel(null);
   const zweigwahl: Zweigwahl = {
     art: stand.zweig?.art ?? null,
     schritt: stand.zweig?.schritt ?? null,
-    setze: (art, schritt) => setzeZweig(schritt === null ? null : { stelle, anker, art, schritt }),
+    setze: (art, schritt) => {
+      halt();
+      setzeZweig(schritt === null ? null : { stelle, anker, art, schritt });
+    },
   };
-  return { stand, zweigwahl, geheZu };
+  return {
+    stand,
+    zweigwahl,
+    geheZu: (neu) => {
+      halt();
+      zeige(neu);
+    },
+    // Vorgespielt wird nur der gezeigte Zweig; ein Sprung anderswohin beendet es von selbst.
+    laeuft: hier && hier.art === vorspiel ? vorspiel : null,
+    spiele: (neu) => {
+      setzeVorspiel(neu.zweig?.art ?? null);
+      zeige(neu);
+    },
+    halt,
+  };
 }
 
 /** Ob eine Taste dem Feld gehört, in dem sie gedrückt wurde (Eingabe, Auswahl, Regler). */
@@ -101,12 +129,66 @@ function usePfeiltasten(aktiv: boolean, beiRichtung: (richtung: Zugrichtung) => 
   }, [aktiv]);
 }
 
+/** Zeit je Zug beim Vorspielen: langsam genug, um jeden Zug am Brett zu verfolgen (seit 0.3.0). */
+export const TAKT_MS = 1200;
+
+/**
+ * Spielt den Zweig `linie.laeuft` Zug für Zug weiter vor, bis zu seinem letzten Zug; dort hält es
+ * an, die letzte Stellung bleibt stehen.
+ */
+function useVorspielen(linie: Linie, laengen: Zweiglaengen): void {
+  const aktuell = useRef(linie);
+  useEffect(() => {
+    aktuell.current = linie;
+  });
+  const laeuft = linie.laeuft;
+  const { stelle, zweig } = linie.stand;
+  const schritt = zweig?.schritt ?? 0;
+  const laenge = laeuft ? laengen[laeuft] : 0;
+  useEffect(() => {
+    if (laeuft === null) return;
+    if (schritt >= laenge) {
+      aktuell.current.halt();
+      return;
+    }
+    const zeitgeber = setTimeout(
+      () => aktuell.current.spiele({ stelle, zweig: { art: laeuft, schritt: schritt + 1 } }),
+      TAKT_MS,
+    );
+    return () => clearTimeout(zeitgeber);
+  }, [laeuft, stelle, schritt, laenge]);
+}
+
+/**
+ * Was ein Tipp auf einen Linienknopf tut (Wunsch des Autors, 6.11.2026).
+ * „Partie“ (null): zurück zum Zug der Partie. Ein anderer Zweig: von vorn vorspielen. Der
+ * gezeigte Zweig: Läuft er, hält er an; sonst spielt er weiter vor, vom letzten Zug wieder von vorn.
+ * Beispiel: an 8. Sc3? zeigt „Bestrafung“ 8... c6 und spielt die Folge dahinter Zug für Zug vor.
+ */
+function waehleOderSpiele(linie: Linie, art: Zweigart | null, laengen: Zweiglaengen): void {
+  const zweig = linie.stand.zweig;
+  if (art === null || laengen[art] === 0) {
+    linie.geheZu(waehleLinie(linie.stand, art, laengen));
+    return;
+  }
+  if (linie.laeuft === art) {
+    linie.halt();
+    return;
+  }
+  const weiter = zweig?.art === art && zweig.schritt < laengen[art];
+  linie.spiele(weiter ? linie.stand : waehleLinie(linie.stand, art, laengen));
+}
+
 /** Zugknöpfe der Zugliste: gesperrte Richtungen und was ein Tipp tut. */
 export interface Liniennavigation {
   readonly gesperrt: Readonly<Record<Zugrichtung, boolean>>;
   readonly beiRichtung: (richtung: Zugrichtung) => void;
-  /** Wahl der Linie an der gezeigten Stelle: null = Partie. */
+  /** Tipp auf einen Linienknopf an der gezeigten Stelle: null = Partie (waehleOderSpiele). */
   readonly waehle: (art: Zweigart | null) => void;
+  /** Der Zweig, der gerade vorgespielt wird, sonst null. */
+  readonly laeuft: Zweigart | null;
+  /** Länge beider Zweige am gezeigten Zug (0 = Knopf gesperrt). */
+  readonly laengen: Zweiglaengen;
 }
 
 /**
@@ -123,9 +205,12 @@ export function useLiniennavigation(
   const beiRichtung = (richtung: Zugrichtung) =>
     linie.geheZu(linienschritt(linie.stand, richtung, laengen, anzahl));
   usePfeiltasten(mitTasten, beiRichtung);
+  useVorspielen(linie, laengen);
   return {
     gesperrt: liniensperren(linie.stand, laengen, anzahl),
     beiRichtung,
-    waehle: (art) => linie.geheZu(waehleLinie(linie.stand, art, laengen)),
+    waehle: (art) => waehleOderSpiele(linie, art, laengen),
+    laeuft: linie.laeuft,
+    laengen,
   };
 }

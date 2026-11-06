@@ -8,10 +8,11 @@
  * (spiel/erklaerung.ts, ohne Engine); während der Partie bleibt alles aus. Beginnt mit der
  * Stellung nach dem gezeigten Zug eine neue Phase, erklärt die Karte, warum (Wunsch des Autors;
  * analyse/phasentext.ts).
- * Dazu die Knöpfe unter dem Brett, die die beiden Varianten der Karte langsam abspielen
- * (Variantenknoepfe.tsx, Wunsch des Autors, 26.10.2026).
+ * Die beiden Varianten der Karte liefert der Hook als Zweige für die Zugliste; vorgespielt werden
+ * sie über die Linienknöpfe oben (partie/Partiezweige.tsx). Die Knöpfe unter dem Brett sind seit
+ * dem Wunsch des Autors vom 6.11.2026 entfallen.
  * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, spiel/phasen.ts, Bewertungsbalken,
- * Rueckblickkarte, Variantenknoepfe, rueckblicktyp.ts.
+ * Rueckblickkarte, rueckblicktyp.ts.
  */
 import { useMemo, useState, type ReactNode } from "react";
 import { phasensatz, zusatzsatz } from "../../../analyse/phasentext";
@@ -33,7 +34,6 @@ import type { Zweigwahl } from "./Nebenzweig";
 import { MerkenSchalter } from "./Merkenbereich";
 import { istGelegenheit } from "./merken";
 import { Rueckblickkarte } from "./Rueckblickkarte";
-import { Variantenknoepfe } from "./Variantenknoepfe";
 import type { Rueckblick } from "./rueckblicktyp";
 
 /** Die Züge beider Zweige am gezeigten Zug; leer, wo die Karte den Zweig nicht nennt. */
@@ -104,8 +104,6 @@ export function useRueckblick(
   karte: ReactNode;
   /** Knopf „Merken“ am Brett (Lernsammlung oder Fehlerdatenbank), ohne Zug null. */
   merken: ReactNode;
-  /** Die Knöpfe „abspielen“ unter dem Brett (seit 0.3.0), sonst null. */
-  abspielen: ReactNode;
   /** Der gezeigte Zug des Nebenzweigs (seit 0.2.85), sonst null. */
   zweigzug: Zweigzug | null;
   /** Die Zweige, die die Karte zum gezeigten Zug nennt (leer = gibt es nicht), seit 6.11.2026. */
@@ -145,7 +143,6 @@ export function useRueckblick(
       leiste: null,
       karte: null,
       merken: null,
-      abspielen: null,
       zweigzug: null,
       linien: KEINE_LINIEN,
     };
@@ -190,7 +187,6 @@ export function useRueckblick(
   // Nur Züge eines Zweigs, den es hier gibt: So passen Brett, Zugliste und Knöpfe zusammen.
   const gewaehlt = zweig.art ? linien[zweig.art] : [];
   const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
-  const abspielen = <Variantenknoepfe besser={linien.besser} strafe={linien.strafe} wahl={zweig} />;
   const merken =
     index >= 0 ? (
       <MerkenSchalter
@@ -200,5 +196,5 @@ export function useRueckblick(
         beiKlick={() => setzeMerkenBei(merkenOffen ? null : index)}
       />
     ) : null;
-  return { marken, leiste, karte, merken, abspielen, zweigzug, linien };
+  return { marken, leiste, karte, merken, zweigzug, linien };
 }

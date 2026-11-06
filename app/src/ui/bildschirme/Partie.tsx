@@ -235,8 +235,6 @@ function Spielfeld({
           </>
         )}
       />
-      {/* Varianten der Karte zum Abspielen direkt unter dem Brett (Wunsch des Autors, 0.3.0). */}
-      {rb.abspielen}
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {engineKarte}
       {rb.karte}

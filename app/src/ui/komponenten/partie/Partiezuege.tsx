@@ -12,8 +12,11 @@
  * ausklappbar machen.“): Ein Knopf neben der Zeile klappt alle Züge auf, umbrochen über mehrere
  * Zeilen; das Gerät merkt sich die Wahl. Die Zugknöpfe stehen darunter, „Zum Anfang“ und „Zum
  * Ende“ abgesetzt von „Zurück“ und „Vor“ (Zugknoepfe.tsx).
+ * Im Rückblick stehen die Engine-Folgen zum gezeigten Zug als Nebenzweige in der Zeile, darunter
+ * die Wahl der Linie; die Zugknöpfe gehen durch die gewählte Linie (Fehlermeldung des Autors,
+ * 6.11.2026; Partiezweige.tsx, useLinie.ts).
  * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react,
- * app/merker.ts, Auswertungssymbole.tsx, Zugknoepfe.tsx.
+ * app/merker.ts, Auswertungssymbole.tsx, Zugknoepfe.tsx, Partiezweige.tsx, useLinie.ts.
  */
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Fragment, useEffect, useRef, useState } from "react";
@@ -23,7 +26,10 @@ import { eigeneAlsText } from "../../../schach/weiterspielen";
 import type { Zugklasse } from "../../../spiel/auswertung";
 import { phasenwechsel, type Phase } from "../../../spiel/phasen";
 import { Klassenmarke } from "../auswertung/Auswertungssymbole";
-import { Zugknoepfe, type Zugrichtung } from "../brettbedienung/Zugknoepfe";
+import { Zugknoepfe } from "../brettbedienung/Zugknoepfe";
+import { zweigeSichtbar, type Partiezweige } from "./linienstand";
+import { Linienwahl, Zweigeinschuebe } from "./Partiezweige";
+import type { Liniennavigation } from "./useLinie";
 
 const SYMBOLGROESSE = 22;
 const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
@@ -132,43 +138,11 @@ function Phasenmarke({ phase }: { phase: Phase | undefined }) {
 }
 
 /**
- * Die vier Zugknöpfe der Partie; gesperrt ist ein Knopf, dessen Ziel die gezeigte Stelle ist
- * oder außerhalb der Partie liegt.
- */
-function Partieknoepfe({
-  stelle,
-  anzahl,
-  beiStelle,
-}: {
-  stelle: number;
-  anzahl: number;
-  beiStelle: (stelle: number) => void;
-}) {
-  const ziele: Readonly<Record<Zugrichtung, number>> = {
-    anfang: 0,
-    zurueck: stelle - 1,
-    vor: stelle + 1,
-    ende: anzahl,
-  };
-  const gesperrt = (ziel: number) => ziel === stelle || ziel < 0 || ziel > anzahl;
-  return (
-    <Zugknoepfe
-      gesperrt={{
-        anfang: gesperrt(ziele.anfang),
-        zurueck: gesperrt(ziele.zurueck),
-        vor: gesperrt(ziele.vor),
-        ende: gesperrt(ziele.ende),
-      }}
-      beiRichtung={(richtung) => beiStelle(ziele[richtung])}
-    />
-  );
-}
-
-/**
  * Eingaben: Startstellung, Züge in SAN, gezeigte Stelle (Zahl der Halbzüge), Zugzeichen und
  * Zugklassen der Auswertung je Halbzug (nach dem Ende), Phase je Stellung (für „M“ und „E“),
- * Wechsel der Stelle.
- * Beispiel: 1. e4 e5 2. Sf3, Stelle 3 → „2. Sf3“ hervorgehoben.
+ * Wechsel der Stelle, die Zugknöpfe (useLinie.ts) und im Rückblick die Zweige am gezeigten Zug.
+ * Beispiel: 1. e4 e5 2. Sf3, Stelle 3 → „2. Sf3“ hervorgehoben. Nach 2. g4?? (Stelle 4) steht
+ * dahinter „(💡 2. e4 …) (⚔ 2... Dh4#)“; im Zweig ist dessen Zug markiert, nicht 2. g4.
  */
 export function Partiezuege({
   startFen,
@@ -178,6 +152,8 @@ export function Partiezuege({
   klassen = [],
   phasen = [],
   beiStelle,
+  navigation,
+  zweige = null,
 }: {
   startFen: string;
   zuege: readonly string[];
@@ -186,14 +162,18 @@ export function Partiezuege({
   klassen?: readonly (Zugklasse | null)[];
   phasen?: readonly Phase[];
   beiStelle: (stelle: number) => void;
+  navigation: Liniennavigation;
+  zweige?: Partiezweige | null;
 }) {
   const texte = eigeneAlsText(startFen, zuege, sprache());
   const marken = phasenmarken(phasen);
   const zeile = useRef<HTMLParagraphElement>(null);
   const [aufgeklappt, umschalten] = useAufgeklappt();
+  const mitZweigen = zweige !== null && zweigeSichtbar(zweige);
+  const imZweig = zweige?.zweig ?? null;
   useEffect(() => {
     rolleZumZug(zeile.current, aufgeklappt);
-  }, [stelle, zuege.length, aufgeklappt]);
+  }, [stelle, zuege.length, aufgeklappt, imZweig?.art, imZweig?.schritt]);
   return (
     <section
       className={aufgeklappt ? "zugleiste partiezuege aufgeklappt" : "zugleiste partiezuege"}
@@ -208,7 +188,7 @@ export function Partiezuege({
             <button
               type="button"
               className="zug"
-              aria-current={index === stelle - 1 ? "step" : undefined}
+              aria-current={index === stelle - 1 && !imZweig ? "step" : undefined}
               aria-label={
                 klassen[index] ? `${text}, ${t(`zugklasse.${klassen[index]}`)}` : undefined
               }
@@ -220,11 +200,13 @@ export function Partiezuege({
                 klasse={klassen[index] ?? null}
               />
             </button>{" "}
+            {mitZweigen && zweige && index === stelle - 1 && <Zweigeinschuebe zweige={zweige} />}
           </Fragment>
         ))}
       </p>
       <Aufklappknopf offen={aufgeklappt} beiTipp={umschalten} />
-      <Partieknoepfe stelle={stelle} anzahl={zuege.length} beiStelle={beiStelle} />
+      {mitZweigen && zweige && <Linienwahl zweige={zweige} navigation={navigation} />}
+      <Zugknoepfe gesperrt={navigation.gesperrt} beiRichtung={navigation.beiRichtung} />
     </section>
   );
 }

@@ -13,12 +13,12 @@
 import { ChevronLeft, ChevronRight, Undo2 } from "lucide-react";
 import { Fragment } from "react";
 import { t } from "../../../i18n/sprache";
-import type { Zweigzug } from "../../../spiel/nebenzweig";
+import type { Zweigart, Zweigzug } from "../../../spiel/nebenzweig";
 
 const SYMBOL = 18;
 
-/** Die beiden Zweige: der bessere Zug und die Strafe für den gespielten. */
-export type Zweigart = "besser" | "strafe";
+/** Typ aus spiel/nebenzweig.ts, weitergegeben für Dateien, die ihn von hier importieren. */
+export type { Zweigart } from "../../../spiel/nebenzweig";
 
 /** Der gewählte Zweig und Schritt (1 = nach dem ersten Zug) und ihr Setzer; null = Partie. */
 export interface Zweigwahl {

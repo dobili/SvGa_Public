@@ -25,7 +25,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
-import { spieleZug, zugFelder } from "../../schach/weiterspielen";
+import { zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
 import { useSpeicher } from "../../speicher/speicher";
 import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
@@ -45,6 +45,8 @@ import { Partiestatus } from "../komponenten/partie/Partiestatus";
 import { Partietitel } from "../komponenten/partie/Partietitel";
 import { Partieuhr } from "../komponenten/partie/Partieuhr";
 import { Partiezuege } from "../komponenten/partie/Partiezuege";
+import { useLinie, useLiniennavigation } from "../komponenten/partie/useLinie";
+import type { Zweigart } from "../../spiel/nebenzweig";
 import { Untertitel } from "../komponenten/partie/Partieuntertitel";
 import {
   PartieLeiste,
@@ -52,12 +54,11 @@ import {
   PartieWerkzeugkarten,
 } from "../komponenten/partie/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partie/partiewerkzeug";
-import type { Zweigart } from "../komponenten/rueckblick/Nebenzweig";
 import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRueckblick";
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
 import { PartieGabel } from "../komponenten/varianten/PartieGabel";
 import { Probeabschluss } from "../komponenten/varianten/Probeabschluss";
-import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
+import { useLeserzug } from "../komponenten/partie/useLeserzug";
 import { useAuswertung } from "../komponenten/auswertung/useAuswertung";
 import { auswertungImHintergrund, kerneDesGeraets } from "../komponenten/auswertung/hintergrund";
 import { RuhigSchalter } from "../komponenten/partie/RuhigSchalter";
@@ -78,25 +79,6 @@ function Uhr({ s, farbe }: { s: Partiesteuerung; farbe: Farbe }) {
   const partie = s.partie;
   if (!partie?.uhr) return null;
   return <Partieuhr partie={partie} farbe={farbe} uhr={partie.uhr} jetztMs={s.jetztMs} />;
-}
-
-/**
- * Der Zug des Lesers: Tippen auf Figur und Zielfeld spielt den Zug sofort. Ist „Zählen“ gewählt,
- * zählt ein Tipp stattdessen das Feld.
- */
-function useLeserzug(s: Partiesteuerung, gezeigt: string, zaehlen: boolean) {
-  return useBrettbedienung(
-    {
-      fen: gezeigt,
-      spiele: (von, nach, rolle) => {
-        const versuch = spieleZug(gezeigt, von, nach, rolle);
-        if (versuch.art === "gespielt") s.spieleLeser(versuch.san);
-        return versuch.art;
-      },
-    },
-    zaehlen ? "zaehlen" : "ziehen",
-    () => undefined,
-  );
 }
 
 /** Eine gewählte Stelle in der Zugliste, mit Markierungen (Sprung aus der Auswertung). */
@@ -140,18 +122,17 @@ function Spielfeld({
   const sans = partie.zuege.map((z) => z.san);
   const gewaehlt = ansicht?.zuege === sans.length ? ansicht : null;
   const stelle = gewaehlt?.stelle ?? sans.length;
-  // Nebenzweig „Besser war …“ (0.2.85): gilt nur für die Stelle, an der er gewählt wurde.
-  const [zweig, setzeZweig] = useState<{ stelle: number; art: Zweigart; schritt: number } | null>(
-    null,
+  const zuStelle = (neu: number) => beiAnsicht({ zuege: sans.length, stelle: neu, marken: [] });
+  // Nebenzweige „Besser war …“ und „Bestrafung“ (0.2.85): gelten nur für die Stelle, an der sie
+  // gewählt wurden; seit 6.11.2026 gehen Zugknöpfe und Pfeiltasten durch sie (useLinie.ts).
+  const linie = useLinie(stelle, gewaehlt, zuStelle);
+  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen, linie.zweigwahl);
+  const navigation = useLiniennavigation(
+    linie,
+    { besser: rb.linien.besser.length, strafe: rb.linien.strafe.length },
+    sans.length,
+    rueckblick !== null,
   );
-  const hier = zweig?.stelle === stelle ? zweig : null;
-  const zweigwahl = {
-    art: hier?.art ?? null,
-    schritt: hier?.schritt ?? null,
-    setze: (art: Zweigart, schritt: number | null) =>
-      setzeZweig(schritt === null ? null : { stelle, art, schritt }),
-  };
-  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen, zweigwahl);
   const gezeigt = rb.zweigzug?.nachher ?? alle[stelle] ?? s.fen;
   // Spielhilfen (0.2.41): Symbole und Werkzeuge nur, wenn vor der Partie gewählt; die großen
   // Werkzeuge verschwinden nach dem Ende, die Symbole bleiben.
@@ -195,7 +176,17 @@ function Spielfeld({
         zeichen={zeichen}
         klassen={klassen}
         phasen={phasen}
-        beiStelle={(neu) => beiAnsicht({ zuege: sans.length, stelle: neu, marken: [] })}
+        beiStelle={zuStelle}
+        navigation={navigation}
+        zweige={
+          rueckblick && {
+            linien: rb.linien,
+            zweig: rb.zweigzug ? linie.stand.zweig : null,
+            klasse: klassen[stelle - 1] ?? null,
+            beiZug: (art: Zweigart, schritt: number) =>
+              linie.geheZu({ stelle, zweig: { art, schritt } }),
+          }
+        }
       />
       <Uhr s={s} farbe={gegnerVon(partie.einstellung.eigeneFarbe)} />
       <Brettbereich

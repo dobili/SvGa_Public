@@ -71,8 +71,16 @@ export interface Stellungswert {
   readonly variante: readonly string[];
 }
 
-/** Zwischenspeicher je Partie: je Stellung das Ergebnis, gültig, solange die FEN passt. */
-const zwischenspeicher = new Map<string, (Stellungswert | undefined)[]>();
+/**
+ * Zwischenspeicher je Partie: je FEN das Ergebnis. Nach FEN statt nach Halbzug, damit ein
+ * Ergebnis, das nach dem nächsten Zug noch eintrifft, nicht verloren geht (Meldung des Autors,
+ * 6.11.2026: Nach einer 10-Minuten-Partie dauerte die Auswertung noch etwa 20 Sekunden. Grund:
+ * Jeder Zug startete die Auswertung neu, die laufende Stellung wurde fertig gerechnet, aber
+ * verworfen, und die neue Runde wartete darauf und rechnete sie noch einmal).
+ */
+const zwischenspeicher = new Map<string, Map<string, Stellungswert>>();
+/** Stellungen, die gerade rechnen: Eine neue Runde hängt sich an, statt zu warten und neu zu rechnen. */
+const laufend = new Map<string, Promise<Stellungswert | null>>();
 
 function pause(ms: number): Promise<void> {
   return new Promise((erfuellen) => {
@@ -138,10 +146,46 @@ async function nachpruefen(
   return true;
 }
 
-/** Die gültigen Einträge des Zwischenspeichers zu den Stellungen der Partie. */
-function gueltige(id: string, alle: readonly string[]): (Stellungswert | undefined)[] {
-  const bisher = zwischenspeicher.get(id) ?? [];
-  return alle.map((fen, i) => (bisher[i]?.fen === fen ? bisher[i] : undefined));
+/** Der Zwischenspeicher einer Partie (FEN → Ergebnis), angelegt beim ersten Zugriff. */
+function speicherDer(id: string): Map<string, Stellungswert> {
+  const bisher = zwischenspeicher.get(id);
+  if (bisher) return bisher;
+  const neu = new Map<string, Stellungswert>();
+  zwischenspeicher.set(id, neu);
+  return neu;
+}
+
+/**
+ * Das Ergebnis einer Stellung: aus dem Zwischenspeicher, aus einer schon laufenden Rechnung
+ * (auch einer früheren Runde) oder neu gerechnet. Jedes Ergebnis kommt in den Zwischenspeicher,
+ * auch wenn die Runde, die es angestoßen hat, inzwischen beendet ist.
+ * Sonderfall: Liefert die fremde Rechnung nichts (sie wurde vor dem Start beendet), rechnet
+ * diese Runde selbst, solange sie laufen soll.
+ */
+export async function ergebnisFuer(
+  id: string,
+  fen: string,
+  laeuft: () => boolean,
+  rechenzeitMs: number,
+): Promise<Stellungswert | null> {
+  const speicher = speicherDer(id);
+  const bekannt = speicher.get(fen);
+  if (bekannt) return bekannt;
+  const fremd = laufend.get(fen);
+  if (fremd) {
+    const ergebnis = await fremd;
+    if (ergebnis || !laeuft()) return ergebnis;
+  }
+  const eigene = bewerteStellung(fen, laeuft, rechenzeitMs).then((ergebnis) => {
+    if (ergebnis) speicher.set(fen, ergebnis);
+    return ergebnis;
+  });
+  laufend.set(fen, eigene);
+  try {
+    return await eigene;
+  } finally {
+    if (laufend.get(fen) === eigene) laufend.delete(fen);
+  }
 }
 
 /** Schreibt die fertige Auswertung in den Speicher und räumt den Zwischenspeicher. */
@@ -188,15 +232,13 @@ export function useAuswertung(
     if (!aktivieren) return;
     let aktiv = true;
     const alle = stellungen(partie);
-    const werte = gueltige(id, alle);
-    zwischenspeicher.set(id, werte);
+    const werte: (Stellungswert | undefined)[] = alle.map(() => undefined);
     const weiter = async () => {
       for (let i = 0; i < alle.length; i += 1) {
         if (!aktiv) return;
-        if (werte[i]) continue;
         if (nachher) setzeStand({ art: "laeuft", erledigt: i, gesamt: alle.length });
         const rechenzeit = nachher ? RECHENZEIT_MS : RECHENZEIT_IM_SPIEL_MS;
-        const ergebnis = await bewerteStellung(alle[i] ?? "", () => aktiv, rechenzeit);
+        const ergebnis = await ergebnisFuer(id, alle[i] ?? "", () => aktiv, rechenzeit);
         if (!ergebnis) return;
         werte[i] = ergebnis;
       }

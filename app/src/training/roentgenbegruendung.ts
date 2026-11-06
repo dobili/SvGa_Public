@@ -16,7 +16,12 @@ import { abtausch } from "../schach/abtausch";
 import type { Schlagzug } from "../schach/drohungen";
 import { feldname, ROLLENBUCHSTABE, stellungAusFen } from "../schach/stellung";
 import { zugtext as de } from "../analyse/texte";
-import { fenMitZugrecht, type Pfeil, type Roentgenaufgabe } from "./roentgentrainer";
+import {
+  fenMitZugrecht,
+  type Pfeil,
+  type Roentgenaufgabe,
+  type Roentgenschritt,
+} from "./roentgentrainer";
 
 /** „Sxe7“ oder „fxe7“: ein Rückschlag in der Kurzschreibweise des Buches. */
 function rueckschlagText(rolle: Role, von: Square, nach: Square): string {
@@ -49,37 +54,52 @@ function schlagfolgeText(fen: string, schlag: Schlagzug): string {
   return [de(schlag.san), ...rueck.map((s) => rueckschlagText(s.figur.rolle, s.figur.feld, schlag.nach))].join(" ");
 }
 
-/** Der Satz zu einem Pfeil einer Seite: Schach, Schlag mit Folge, oder keins von beiden. */
-function satzZuPfeil(fen: string, farbe: Color, pfeil: Pfeil): string {
+/**
+ * Der Satz zu einem Pfeil einer Seite: Schach, Schlag mit Folge, oder keins von beiden.
+ * Im Schritt der Schachs (und bei den Schachs der Gegenseite) zählt ein Schach auch dann, wenn
+ * der Schlag Material kostet: Dann sagt der Satz das ausdrücklich (Meldung des Autors,
+ * 6.11.2026: „Lxf7+ Dxf7 Dxf7 Kxf7: −2“ stand unter „Übersehen“, ohne das Schach zu nennen).
+ */
+function satzZuPfeil(fen: string, farbe: Color, pfeil: Pfeil, schachZaehlt: boolean): string {
   const gelesen = stellungAusFen(fen);
   if (!gelesen.ok) return pfeil;
   const p = profil(gelesen.wert);
   const passt = (z: { von: Square; nach: Square }) => `${feldname(z.von)}-${feldname(z.nach)}` === pfeil;
   const schlag = (p.schlaegeVon(farbe) ?? []).find(passt);
+  const schach = (p.schachsVon(farbe) ?? []).find(passt);
+  if (schach && schachZaehlt && (!schlag || schlag.bilanz < 0)) {
+    if (!schlag) return t("roentgentrainer.grund.schach", { zug: de(schach.san) });
+    return t("roentgentrainer.grund.schachTrotzVerlust", {
+      zug: de(schach.san),
+      folge: schlagfolgeText(fen, schlag),
+      ergebnis: ergebnisText(schlag.bilanz),
+    });
+  }
   if (schlag) {
     return t("roentgentrainer.grund.schlag", {
       folge: schlagfolgeText(fen, schlag),
       ergebnis: ergebnisText(schlag.bilanz),
     });
   }
-  const schach = (p.schachsVon(farbe) ?? []).find(passt);
   if (schach) return t("roentgentrainer.grund.schach", { zug: de(schach.san) });
   return t("roentgentrainer.grund.keins", { pfeil });
 }
 
 /**
  * Die Sätze zu einem geprüften Schritt: erst die übersehenen, dann die zu viel gesetzten Pfeile.
- * Eingaben: Aufgabe, Seite des Schritts, Pfeile. Ausgabe: je Pfeil ein Satz.
+ * Eingaben: Aufgabe, Seite des Schritts, Pfeile, Schritt (im Schritt „schlaege“ zählen Schachs
+ * nicht). Ausgabe: je Pfeil ein Satz.
  */
 export function roentgenbegruendungen(
   aufgabe: Roentgenaufgabe,
   farbe: Color,
   pfeile: readonly Pfeil[],
+  schritt: Roentgenschritt = "schlaege",
 ): string[] {
   const gelesen = stellungAusFen(aufgabe.fen);
   if (!gelesen.ok) return [];
   const fen = fenMitZugrecht(gelesen.wert, farbe);
-  return pfeile.map((pfeil) => satzZuPfeil(fen, farbe, pfeil));
+  return pfeile.map((pfeil) => satzZuPfeil(fen, farbe, pfeil, schritt !== "schlaege"));
 }
 
 /**

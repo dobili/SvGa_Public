@@ -79,6 +79,12 @@ describe("Momente der Zeitleiste", () => {
     expect(gutGespielt({ partie: p, urteile: u, seite: "black" })).toBe(false);
   });
 
+  it("Absichtliche Kleinigkeiten der Engine erscheinen nicht (nur wirkliche Fehler)", () => {
+    const u = urteile(["buch", "buch", "gut", "gut", "gut", "ungenau", "bester"]);
+    const m = momente({ partie: p, urteile: u, seite: "white" });
+    expect(m.map((x) => x.art)).not.toContain("engine");
+  });
+
   it("Ohne klare Abweichung: „Gut gespielt!“ für den Leser", () => {
     const u = urteile(["gut", "gut", "gut", "gut", "gut", "patzer", "bester"]);
     expect(gutGespielt({ partie: p, urteile: u, seite: "white" })).toBe(true);

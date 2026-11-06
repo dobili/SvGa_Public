@@ -21,7 +21,8 @@ export type Ansicht =
   | { readonly bildschirm: "glossar" }
   | { readonly bildschirm: "begriff"; readonly begriff: string }
   | { readonly bildschirm: "denkroutine" }
-  | { readonly bildschirm: "checkliste" }
+  /** Mit `kapitel` steht die Karte dieses Kapitels offen im Blick (Ring der Kapitelseite). */
+  | { readonly bildschirm: "checkliste"; readonly kapitel?: number }
   /** Steckbriefe der Eröffnungen und Fallenchecks (seit 0.2.99). */
   | { readonly bildschirm: "steckbriefe" }
   /** Alle Werkzeuge des Buches nach Kapiteln (seit 0.2.99). */

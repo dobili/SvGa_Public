@@ -13,8 +13,12 @@ import { FELD } from "./masse";
 
 /** So weit (Anteil der Feldbreite) neben einem Zielfeld zählt ein Tipp noch für dieses Feld. */
 export const TOLERANZ_ZIELFELD = 0.25;
-/** Kleiner, wenn unter dem Finger eine eigene Figur steht: Dann ist ein Wechsel der Figur gemeint. */
-export const TOLERANZ_EIGENE_FIGUR = 0.1;
+/**
+ * Steht unter dem Finger eine eigene Figur, ist ein Wechsel der Figur gemeint: dann zieht kein
+ * Zielfeld daneben den Tipp an (Fehlermeldung des Autors, 6.11.2026: Läufer gewählt, Springer
+ * dicht neben einem Zielfeld angetippt, der Läufer zog). Bis dahin 0,1 Feldbreiten.
+ */
+export const TOLERANZ_EIGENE_FIGUR = 0;
 /** Liegen zwei Zielfelder näher beieinander als dieser Anteil, ist der Tipp mehrdeutig. */
 const MEHRDEUTIG = 0.06;
 

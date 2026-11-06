@@ -81,7 +81,7 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "denkroutine":
       return <Denkroutine />;
     case "checkliste":
-      return <Checkliste />;
+      return <Checkliste kapitel={ansicht.kapitel} />;
     case "steckbriefe":
       return <Steckbriefe />;
     case "werkzeuge":

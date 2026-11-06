@@ -20,6 +20,7 @@ import {
   vergleicheSchritt,
   type Pfeil,
   type Roentgenaufgabe,
+  type Roentgenschritt,
   type Schrittvergleich,
 } from "../../training/roentgentrainer";
 import { gegnerdrohungen, roentgenbegruendungen } from "../../training/roentgenbegruendung";
@@ -129,7 +130,14 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
         </>
       )}
       {vergleich && <Schrittergebnis vergleich={vergleich} />}
-      {vergleich && <Pfeilgruende aufgabe={aufgabe} farbe={loesung.farbe} vergleich={vergleich} />}
+      {vergleich && (
+        <Pfeilgruende
+          aufgabe={aufgabe}
+          farbe={loesung.farbe}
+          schritt={schritt}
+          vergleich={vergleich}
+        />
+      )}
       {vergleich && schritt === "gegner" && <Drohungen aufgabe={aufgabe} />}
       {vergleich && stelle + 1 < SCHRITTE.length && (
         <button type="button" className="knopf-haupt" onClick={naechster}>
@@ -167,19 +175,21 @@ function Schrittergebnis({ vergleich }: { vergleich: Schrittvergleich }) {
 function Pfeilgruende({
   aufgabe,
   farbe,
+  schritt,
   vergleich,
 }: {
   aufgabe: Roentgenaufgabe;
   farbe: Color;
+  schritt: Roentgenschritt;
   vergleich: Schrittvergleich;
 }) {
   const fehlend = useMemo(
-    () => roentgenbegruendungen(aufgabe, farbe, vergleich.fehlend),
-    [aufgabe, farbe, vergleich.fehlend],
+    () => roentgenbegruendungen(aufgabe, farbe, vergleich.fehlend, schritt),
+    [aufgabe, farbe, vergleich.fehlend, schritt],
   );
   const falsch = useMemo(
-    () => roentgenbegruendungen(aufgabe, farbe, vergleich.falsch),
-    [aufgabe, farbe, vergleich.falsch],
+    () => roentgenbegruendungen(aufgabe, farbe, vergleich.falsch, schritt),
+    [aufgabe, farbe, vergleich.falsch, schritt],
   );
   if (fehlend.length === 0 && falsch.length === 0) return null;
   return (

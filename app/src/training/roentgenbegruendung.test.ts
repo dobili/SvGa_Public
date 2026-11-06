@@ -28,6 +28,17 @@ describe("Röntgen-Trainer: Begründungen", () => {
     expect(leerer).toContain("weder Schach noch Schlag");
   });
 
+  it("nennt im Schritt der Schachs ein Verlust-Schach als Schach (Lxf7+, Meldung vom 6.11.2026)", () => {
+    // Italienisch: Lxf7+ kostet nach Kxf7 eine Figur gegen einen Bauern, gibt aber Schach.
+    const fen = "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1";
+    const italienisch = { ...AUFGABE, fen };
+    const [alsSchach] = roentgenbegruendungen(italienisch, "white", ["c4-f7"], "schachs");
+    expect(alsSchach).toContain("gibt Schach");
+    expect(alsSchach).toContain("−2 Bauerneinheiten");
+    const [alsSchlag] = roentgenbegruendungen(italienisch, "white", ["c4-f7"], "schlaege");
+    expect(alsSchlag).not.toContain("gibt Schach");
+  });
+
   it("nennt die Drohungen der Gegenseite (Schläge mit Gewinn)", () => {
     expect(Array.isArray(gegnerdrohungen(AUFGABE))).toBe(true);
   });

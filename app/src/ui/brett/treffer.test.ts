@@ -34,8 +34,9 @@ describe("Trefferfeld", () => {
     expect(trefferfeld(punktIn("e4", 0.5, 0.8), false, ziele)).toBe("e4");
   });
 
-  it("zieht auf einer eigenen Figur weniger stark und gibt neben dem Brett nichts", () => {
-    expect(trefferfeld(punktIn("g3", 0.15, 0.5), false, springerZiele, TOLERANZ_EIGENE_FIGUR)).toBe(
+  it("bevorzugt eine eigene Figur unter dem Finger und gibt neben dem Brett nichts", () => {
+    // Auch ganz am Rand zum Zielfeld f3: Die eigene Figur auf g3 gilt (Wechsel der Figur).
+    expect(trefferfeld(punktIn("g3", 0.02, 0.5), false, springerZiele, TOLERANZ_EIGENE_FIGUR)).toBe(
       "g3",
     );
     expect(trefferfeld({ x: -10, y: 10 }, false, springerZiele)).toBeNull();

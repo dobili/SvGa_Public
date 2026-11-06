@@ -43,11 +43,18 @@ interface Ringangaben {
 /** Größe des Pfeils neben „0/4“ (Bildpunkte). */
 const PFEILGROESSE = 14;
 
+/** Wohin ein Ring führt: Vorlesetext und ob er golden hervorgehoben ist (nur die Übungen). */
+interface Ringsprung {
+  readonly beiTipp: () => void;
+  readonly text: Textschluessel;
+  readonly golden: boolean;
+}
+
 /**
- * Ein Ring mit Zeichen und darunter „x/y“; mit `beiTipp` ein Knopf mit goldenem Rahmen und
- * Pfeil nach unten (der Übungsring springt zu „Übungen aus dem Buch“).
+ * Ein Ring mit Zeichen und darunter „x/y“ als Knopf; die Übungen mit goldenem Rahmen und Pfeil
+ * nach unten (sie springen zu „Übungen aus dem Buch“).
  */
-function Symbolring({ ring, beiTipp }: { ring: Ringangaben; beiTipp?: () => void }) {
+function Symbolring({ ring, sprung }: { ring: Ringangaben; sprung: Ringsprung }) {
   const { name, anteil, symbol, testid } = ring;
   const voll = t("fortschritt.anteil", { erreicht: anteil.erreicht, gesamt: anteil.gesamt });
   const inhalt = (
@@ -60,17 +67,16 @@ function Symbolring({ ring, beiTipp }: { ring: Ringangaben; beiTipp?: () => void
             gesamt: anteil.gesamt,
           })}
         </span>
-        {beiTipp && <ArrowDown size={PFEILGROESSE} aria-hidden="true" />}
+        {sprung.golden && <ArrowDown size={PFEILGROESSE} aria-hidden="true" />}
       </span>
     </>
   );
-  if (!beiTipp) return <div className="kapitelring">{inhalt}</div>;
   return (
     <button
       type="button"
-      className="kapitelring kapitelring-ziel"
-      aria-label={t("wenigertext.seiten.kapitel.sprung", { name, anteil: voll })}
-      onClick={beiTipp}
+      className={sprung.golden ? "kapitelring kapitelring-ziel" : "kapitelring"}
+      aria-label={t(sprung.text, { name, anteil: voll })}
+      onClick={sprung.beiTipp}
     >
       {inhalt}
     </button>
@@ -87,11 +93,38 @@ function useLernziele(kapitel: number): Anteil | null {
   return { erreicht: abgehakt(stand, kapitel, ziele.punkte.length), gesamt: ziele.punkte.length };
 }
 
-/** Springt zu „Übungen aus dem Buch“ weiter unten im Kapitel. */
-function zuDenUebungen() {
+/** Rollt zu einem Teil der Kapitelseite (Abbildungen, Übungen). */
+function rolleZu(testid: string) {
   document
-    .querySelector('[data-testid="kapitel-uebungen"]')
+    .querySelector(`[data-testid="${testid}"]`)
     ?.scrollIntoView?.({ behavior: "smooth", block: "start" });
+}
+
+/**
+ * Wohin ein Tipp auf den Ring führt (Wunsch des Autors, 6.11.2026): Abbildungen und Warum-Fragen
+ * zur Galerie, Lernziele zur Karte des Kapitels in der Gesamt-Checkliste, Übungen zu den Übungen.
+ */
+function useRingziel(kapitel: number): (testid: string) => Ringsprung {
+  const { navigiere } = useNavigation();
+  return (testid) => {
+    if (testid === "fortschritt-lernziele")
+      return {
+        beiTipp: () => navigiere({ bildschirm: "checkliste", kapitel }),
+        text: "wenigertext.seiten.kapitel.sprungCheckliste",
+        golden: false,
+      };
+    if (testid === "fortschritt-uebungen")
+      return {
+        beiTipp: () => rolleZu("kapitel-uebungen"),
+        text: "wenigertext.seiten.kapitel.sprung",
+        golden: true,
+      };
+    return {
+      beiTipp: () => rolleZu("abbildungsgalerie"),
+      text: "wenigertext.seiten.kapitel.sprungAbbildungen",
+      golden: false,
+    };
+  };
 }
 
 /**
@@ -183,6 +216,7 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
     fragenJeAbbildung(kapitel.abbildungen),
   );
   const { ringe, uebungen } = kapitelringe(stand, lernziele);
+  const ziel = useRingziel(kapitel.kapitel);
   const folgen =
     uebungen && stand.uebungen.versucht === 0
       ? t("fortschritt.uebungenFolgen", { gesamt: stand.uebungen.gesamt })
@@ -201,9 +235,9 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
       />
       <div className="kapitelringe">
         {ringe.map((ring) => (
-          <Symbolring key={ring.testid} ring={ring} />
+          <Symbolring key={ring.testid} ring={ring} sprung={ziel(ring.testid)} />
         ))}
-        {uebungen && <Symbolring ring={uebungen} beiTipp={zuDenUebungen} />}
+        {uebungen && <Symbolring ring={uebungen} sprung={ziel(uebungen.testid)} />}
       </div>
       <Trainerstaende eintraege={stand.trainer.filter((eintrag) => eintrag.stand !== null)} />
     </section>

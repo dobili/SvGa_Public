@@ -12,6 +12,7 @@
  * und „4/6“; fertige Kapitel golden mit Haken und „fertig“. Aufgeklappt die Punkte zum Abhaken.
  * Abhängigkeiten: daten/laden.ts, app/lernstand.ts, Checklistenkopf.tsx, Navigation, i18n.
  */
+import { useEffect, useRef } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { abgehakt, schalteLernziel, useLernstand, type Lernstand } from "../../app/lernstand";
 import { ladeNachschlagen, type Nachschlagen } from "../../daten/laden";
@@ -52,18 +53,26 @@ function Kapitelkarte({
   ziele,
   spalten,
   stand,
+  offen = false,
 }: {
   zeile: Zeile;
   ziele: Lernziele | undefined;
   spalten: readonly string[];
   stand: Lernstand;
+  offen?: boolean;
 }) {
   const { navigiere } = useNavigation();
+  const karte = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (offen) karte.current?.scrollIntoView?.({ block: "start" });
+  }, [offen]);
   const anzahl = ziele?.punkte.length ?? 0;
   const fertig = ziele ? abgehakt(stand, zeile.kapitel, anzahl) : 0;
   const ganz = anzahl > 0 && fertig >= anzahl;
   return (
     <details
+      ref={karte}
+      open={offen || undefined}
       className={ganz ? "lernkarte ganz" : "lernkarte"}
       data-testid={`lernkarte-${zeile.kapitel}`}
       data-tour="checkliste-karte"
@@ -97,7 +106,7 @@ function Kapitelkarte({
   );
 }
 
-function Inhalt({ daten }: { daten: Nachschlagen }) {
+function Inhalt({ daten, kapitel }: { daten: Nachschlagen; kapitel?: number }) {
   const stand = useLernstand();
   const liste = daten.checkliste;
   if (!liste) return null;
@@ -115,6 +124,7 @@ function Inhalt({ daten }: { daten: Nachschlagen }) {
             ziele={zuKapitel.get(zeile.kapitel)}
             spalten={liste.spalten}
             stand={stand}
+            offen={zeile.kapitel === kapitel}
           />
         ))}
       </div>
@@ -122,15 +132,19 @@ function Inhalt({ daten }: { daten: Nachschlagen }) {
   );
 }
 
-/** Bildschirm „Gesamt-Checkliste“. Beispiel: Kapitel 1 mit sechs Lernzielen zum Abhaken. */
-export function Checkliste() {
+/**
+ * Bildschirm „Gesamt-Checkliste“. Beispiel: Kapitel 1 mit sechs Lernzielen zum Abhaken.
+ * Mit `kapitel` (Tipp auf den Lernziel-Ring der Kapitelseite, Wunsch des Autors 6.11.2026) ist
+ * die Karte dieses Kapitels aufgeklappt und in den Blick gerollt.
+ */
+export function Checkliste({ kapitel }: { kapitel?: number } = {}) {
   const daten = useDaten(ladeNachschlagen, "nachschlagen");
   return (
     <div className="bildschirm">
       <Kopfzeile titel={t("checkliste.titel")} zurueckText={t("nachschlagen.titel")} />
       {daten.art === "laedt" && <p className="lade">…</p>}
       {daten.art === "fehler" && <p className="fehlertext">{daten.meldung}</p>}
-      {daten.art === "fertig" && <Inhalt daten={daten.wert} />}
+      {daten.art === "fertig" && <Inhalt daten={daten.wert} kapitel={kapitel} />}
     </div>
   );
 }

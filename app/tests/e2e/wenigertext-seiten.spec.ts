@@ -99,6 +99,12 @@ for (const schema of ["dunkel", "hell"] as const) {
     await ohneUeberstand(page);
     await fortschritt.getByRole("button", { name: /Zu „Übungen aus dem Buch“ springen/ }).click();
     await expect(page.getByTestId("kapitel-uebungen")).toBeInViewport();
+    // Wunsch des Autors, 6.11.2026: Jeder Ring führt dorthin, wo man ihn füllt.
+    await fortschritt.getByRole("button", { name: /Zu den Abbildungen springen/ }).click();
+    await expect(page.getByTestId("abbildungsgalerie")).toBeInViewport();
+    await fortschritt.getByRole("button", { name: /Checkliste des Kapitels öffnen/ }).click();
+    await expect(page.getByTestId("lernkarte-1")).toHaveAttribute("open", "");
+    await expect(page.getByTestId("lernkarte-1")).toBeInViewport();
   });
 
   test(`P6, P15: Denkroutine, Werkzeuge, Maia, Beta, Extras (${schema})`, async ({ page }) => {

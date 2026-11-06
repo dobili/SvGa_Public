@@ -95,14 +95,25 @@ function fehler(k: Momentkontext): readonly Moment[] {
     .map((u) => ({ art: "fehler", index: u.index, klasse: u.klasse, zahl: 0 }));
 }
 
-/** Die absichtlichen Fehler der Engine (Protokoll der Partie), gleich welche Seite gewählt ist. */
+/**
+ * Die absichtlichen Fehler der Engine (Protokoll der Partie), gleich welche Seite gewählt ist,
+ * aber nur, wenn die Auswertung den Zug als Fehler, Patzer oder verpassten Gewinn einstuft
+ * (Wunsch des Autors, 6.11.2026: keine absichtlichen Kleinigkeiten, nur wirkliche Fehler).
+ */
 function engine(k: Momentkontext): readonly Moment[] {
-  return enginefehler(k.partie).map((f) => ({
-    art: "engine",
-    index: f.index,
-    klasse: null,
-    zahl: 0,
-  }));
+  const klasseAn = new Map(k.urteile.map((u) => [u.index, u.klasse]));
+  const wirklich = (index: number) => {
+    const klasse = klasseAn.get(index);
+    return klasse !== undefined && FEHLERKLASSEN.has(klasse);
+  };
+  return enginefehler(k.partie)
+    .filter((f) => wirklich(f.index))
+    .map((f) => ({
+      art: "engine",
+      index: f.index,
+      klasse: null,
+      zahl: 0,
+    }));
 }
 
 /** Der letzte Zug der Partie, wenn sie beendet ist. */

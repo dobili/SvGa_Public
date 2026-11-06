@@ -19,9 +19,14 @@ export const MERKER_STARTWEG = "startweg";
 
 /**
  * Ränge, die der Spielweg vorzieht (zwischen Wiederholung, Rang 10, und Tagesaufgabe, Rang 20):
- * Partie, schwaches Thema (meist Taktik) und Kurzplan.
+ * Partie, Schwäche aus den Partien, schwaches Thema (meist Taktik) und Kurzplan.
  */
-const VORRANG_SPIELEN: Readonly<Record<string, number>> = { partie: 12, thema: 14, kurzplan: 16 };
+const VORRANG_SPIELEN: Readonly<Record<string, number>> = {
+  partie: 12,
+  phase: 13,
+  thema: 14,
+  kurzplan: 16,
+};
 
 /** Der gemerkte Startweg; ohne gültigen Merker der Buchweg. */
 export function liesStartweg(): Startweg {

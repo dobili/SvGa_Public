@@ -74,6 +74,12 @@ Teil fertig ist.
       20 Minuten geschafft“ mit Balken und „Jetzt üben“. Ein paar Minuten in der App üben (lesen,
       ziehen, lösen): Die Zahl steigt etwa jede Minute; wer drei Minuten nichts antippt, zählt nicht
       weiter. Im Reiter der Karte steht „7/20 Min“.
+- [ ] N2598. Mindestens 5 gewertete Partien gegen Bots in derselben Zeitart spielen und auswerten lassen. Liegt eine
+      Phase deutlich (mindestens etwa 150 Punkte) unter deiner Schätzung, steht auf der Karte „Heute“
+      die Kachel „Aus deinen Partien“: „Ein Hinweis aus deinen letzten 8 Partien: Im Endspiel spielst
+      du etwa 250 Punkte schwächer als sonst …“ mit Kapitel und Trainer (Eröffnung: Kapitel 2,
+      Repertoire; Mittelspiel: Kapitel 7, Taktik; Endspiel: Kapitel 8, Endspieltrainer). Bei weniger
+      Partien oder ausgeglichenen Phasen kommt kein Hinweis.
 - [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
       Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
       Wertung zählt der stärkste besiegte Bot.
@@ -1066,8 +1072,8 @@ nur du das Buch änderst.
       Dazu dezent Schwächen aus den eigenen Partien je Phase („In deinen letzten 10 Partien gingen die
       meisten Punkte im Endspiel verloren → Kapitel 9 und Endspieltrainer“), erst ab 5 ausgewerteten
       Partien und nur als Vorschlag, ohne Versprechen. Der erste Teil (Startweg, Einstellung, Reihenfolge)
-      ist schon umgesetzt in 0.3.51 (N2591); die Schwächen je Phase folgen als nächstes Paket nach
-      Q15-1. Widerspruch genügt.
+      ist schon umgesetzt in 0.3.51 (N2591), die Schwächen je Phase ebenfalls (N2598). Widerspruch
+      genügt.
 
 ### Q14 Variationsbrowser und Zurück-Taste (1.11.2026, schon umgesetzt, Widerspruch genügt)
 

@@ -11,6 +11,7 @@
 import {
   BookOpen,
   Dumbbell,
+  LineChart,
   ListChecks,
   Puzzle,
   RefreshCw,
@@ -53,6 +54,7 @@ export const KACHELARTEN: Readonly<Record<string, Kachelart>> = {
   uebungen: { Symbol: Dumbbell, titel: "buchlook.kachel.uebungen", kurz: "buchlook.kurz.uebungen" },
   thema: { Symbol: Target, titelAusNamen: "thema", kurz: "buchlook.kurz.thema" },
   fehler: { Symbol: ListChecks, titelAusNamen: "trainer", kurz: "buchlook.kurz.fehler" },
+  phase: { Symbol: LineChart, titel: "buchlook.kachel.phase", kurz: "buchlook.kurz.phase" },
   kurzplan: { Symbol: Timer, titel: "buchlook.kachel.kurzplan", kurz: "buchlook.kurz.kurzplan" },
   partie: { Symbol: Swords, titel: "buchlook.kachel.partie", kurz: "buchlook.kurz.partie" },
 };

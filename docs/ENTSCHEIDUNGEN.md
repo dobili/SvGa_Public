@@ -41,7 +41,12 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   `linienstand.ts`) steuert Knöpfe, Pfeiltasten, Zweigwahl und Abspielen. Ursache des Springens:
   Die Zugknöpfe kannten nur die Partiestelle, der Zweig fiel stillschweigend weg.
 - **Phasenkarten (Q15-1):** Einordnung als reine Rechnung fertig (`schach/phasentypen.ts`), Karten
-  in der Auswertung folgen; Schwächen je Phase danach.
+  in der Auswertung folgen.
+- **Schwäche je Phase** (Q15-5, Wunsch des Autors): neue Vorschlagsart „phase“ (Rang 55, auf dem
+  Spielweg 13) aus der Phasenschätzung der letzten zehn gewerteten Partien (`training/
+  phasenschwaeche.ts`): erst ab 5 Partien und 150 Punkten Abstand zur Gesamtschätzung, Text mit
+  „etwa“ und „vermutlich“, dazu Kapitel und Trainer der Phase (2/Repertoire, 7/Taktik,
+  8/Endspiel).
 
 ## 6.11.2026 – Taktiktrainer: mehrere Motive, gleich schnelle Matts
 

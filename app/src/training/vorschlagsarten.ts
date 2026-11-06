@@ -11,11 +11,13 @@
  * Abhängigkeiten: training/wiederholung.ts, training/themenstand.ts, training/themennamen.ts,
  * training/fehlerdatenbank.ts.
  */
+import type { Textschluessel } from "../i18n/sprache";
 import type { Nutzerdaten } from "../speicher/format";
 import type { Kapitelangabe, Lage, Vorschlag, Vorschlagsart } from "./naechsterSchritt";
 import { auswertung, VORSCHLAG_WOCHEN, vorschlag as fehlervorschlag } from "./fehlerdatenbank";
 import { schwaechstesThema } from "./themenstand";
 import { themennameSchluessel, trainerZumThema } from "./themennamen";
+import { phasenschwaeche, UEBEN_JE_PHASE } from "./phasenschwaeche";
 import { faellige } from "./wiederholung";
 
 /** Erst ab so vielen fälligen Karten lohnt der Vorschlag (P1, Fall 1). */
@@ -267,6 +269,28 @@ function partie(lage: Lage): Vorschlag | null {
 }
 
 /**
+ * Fall 5b: Die schwächste Phase aus den eigenen Partien (training/phasenschwaeche.ts), mit Kapitel
+ * und Trainer dazu. Warum dezent: Es ist eine Schätzung über wenige Partien; der Text sagt „etwa“
+ * und verspricht nichts (Wunsch des Autors, 6.11.2026).
+ */
+function phase({ daten }: Lage): Vorschlag | null {
+  const schwaeche = phasenschwaeche(daten);
+  if (!schwaeche) return null;
+  const ueben = UEBEN_JE_PHASE[schwaeche.phase];
+  return {
+    art: "phase",
+    text: "naechster.phase",
+    werte: { anzahl: schwaeche.partien, abstand: schwaeche.abstand, kapitel: ueben.kapitel },
+    namen: {
+      phase: `naechster.phase.${schwaeche.phase}` as Textschluessel,
+      trainer: `trainer.${ueben.trainer}.name` as Textschluessel,
+    },
+    knopf: "naechster.knopf.trainer",
+    ziel: { bildschirm: "trainer", kennung: ueben.trainer },
+  };
+}
+
+/**
  * Vor der Partie: ein fertig zusammengestellter Kurzplan (15 Minuten, Trainer „Kurzpläne“).
  * Warum: Wunsch des Autors (6.11.2026), die 15- und 30-Minuten-Pläne in die Empfehlungen der
  * Startseite zu holen; wer wenig Zeit hat, muss dann nichts selbst auswählen.
@@ -289,6 +313,7 @@ export const VORSCHLAGSARTEN: readonly Vorschlagsart[] = [
   { kennung: "weiterlesen", rang: 30, ermittle: weiterlesen },
   { kennung: "uebungen", rang: 40, ermittle: offeneUebungen },
   { kennung: "thema", rang: 50, ermittle: schwachesThema },
+  { kennung: "phase", rang: 55, ermittle: phase },
   { kennung: "fehler", rang: 60, ermittle: fehlerdatenbank },
   { kennung: "kurzplan", rang: 80, ermittle: kurzplan },
   { kennung: "partie", rang: 90, ermittle: partie },

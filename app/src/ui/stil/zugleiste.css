@@ -255,3 +255,45 @@
 .partiezuege.aufgeklappt .zug {
   white-space: nowrap;
 }
+
+/* Engine-Folgen als Nebenzweige in der Zugliste der Partie (Fehlermeldung des Autors, 6.11.2026):
+   in Klammern und leiser hinter dem Zug, gewählt mit goldenem Zeichen; aufgeklappt eingerückt in
+   eigener Zeile wie eine Variante. */
+.zugvariante {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-inline: 2px 6px;
+  color: var(--text-leise);
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+
+.zugvariante.gewaehlt {
+  color: var(--text);
+}
+
+.zugvariante .zug {
+  color: inherit;
+}
+
+.zugvariante-zeichen {
+  flex: none;
+  color: var(--gold);
+}
+
+.partiezuege.aufgeklappt .zugvariante {
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  padding-left: calc(var(--raster) * 2);
+  border-left: 2px solid var(--linie-stark);
+  white-space: normal;
+}
+
+.partiezuege .linienwahl {
+  grid-column: 1 / -1;
+}
+
+.linienwahl .weiterchips {
+  margin: calc(var(--raster) / 2) 0 0;
+}

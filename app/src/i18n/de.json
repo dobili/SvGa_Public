@@ -2860,6 +2860,8 @@
   "partie.zuege": "Gespielte Züge",
   "partie.nochKeineZuege": "Noch keine Züge.",
   "partie.alleZuegeZeigen": "Alle Züge zeigen",
+  "partie.linie.wahl": "Linie:",
+  "partie.linie.partie": "Partie",
   "partie.wenigerZuegeZeigen": "Weniger Züge zeigen",
   "partie.duBistAmZug": "Du bist am Zug.",
   "partie.engineDenkt": "Die Engine denkt …",

@@ -18,7 +18,13 @@ import { phasensatz, zusatzsatz } from "../../../analyse/phasentext";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../../spiel/phasen";
 import { erklaereZug, type Zugerklaerung } from "../../../spiel/erklaerung";
-import { MIT_BESSEREM, MIT_STRAFE, zweigzuege, type Zweigzug } from "../../../spiel/nebenzweig";
+import {
+  MIT_BESSEREM,
+  MIT_STRAFE,
+  zweigzuege,
+  type Zweigart,
+  type Zweigzug,
+} from "../../../spiel/nebenzweig";
 import type { Partie } from "../../../spiel/partie";
 import { rueckblickMarken } from "../../../spiel/rueckblick";
 import { sanZuUci } from "../../../spiel/zuege";
@@ -29,6 +35,11 @@ import { istGelegenheit } from "./merken";
 import { Rueckblickkarte } from "./Rueckblickkarte";
 import { Variantenknoepfe } from "./Variantenknoepfe";
 import type { Rueckblick } from "./rueckblicktyp";
+
+/** Die Züge beider Zweige am gezeigten Zug; leer, wo die Karte den Zweig nicht nennt. */
+export type Zweiglinien = Readonly<Record<Zweigart, readonly Zweigzug[]>>;
+
+const KEINE_LINIEN: Zweiglinien = { besser: [], strafe: [] };
 
 /** Typ aus rueckblicktyp.ts, weitergegeben für Dateien, die ihn von hier importieren. */
 export type { Rueckblick } from "./rueckblicktyp";
@@ -97,6 +108,8 @@ export function useRueckblick(
   abspielen: ReactNode;
   /** Der gezeigte Zug des Nebenzweigs (seit 0.2.85), sonst null. */
   zweigzug: Zweigzug | null;
+  /** Die Zweige, die die Karte zum gezeigten Zug nennt (leer = gibt es nicht), seit 6.11.2026. */
+  linien: Zweiglinien;
 } {
   const index = stelle - 1;
   // „Merken“ gilt für den Zug, an dem es geöffnet wurde; ein anderer Zug schließt es.
@@ -127,7 +140,15 @@ export function useRueckblick(
     [rueckblick, alle, index],
   );
   if (!rueckblick)
-    return { marken: [], leiste: null, karte: null, merken: null, abspielen: null, zweigzug: null };
+    return {
+      marken: [],
+      leiste: null,
+      karte: null,
+      merken: null,
+      abspielen: null,
+      zweigzug: null,
+      linien: KEINE_LINIEN,
+    };
   const marken =
     index >= 0
       ? [
@@ -158,19 +179,18 @@ export function useRueckblick(
         beiMerkenZu={() => setzeMerkenBei(null)}
       />
     ) : null;
-  const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;
-  const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
   // Dieselben Bedingungen wie in der Karte, damit nur abspielbar ist, was dort auch steht.
   const klasse = index >= 0 ? rueckblick.urteile[index]?.klasse : undefined;
   const mitBesser = klasse !== undefined && MIT_BESSEREM.has(klasse) && !!rueckblick.beste[index];
   const mitStrafe = klasse !== undefined && MIT_STRAFE.has(klasse);
-  const abspielen = (
-    <Variantenknoepfe
-      besser={mitBesser ? zweigZuege : []}
-      strafe={mitStrafe ? strafZuege : []}
-      wahl={zweig}
-    />
-  );
+  const linien: Zweiglinien = {
+    besser: mitBesser ? zweigZuege : [],
+    strafe: mitStrafe ? strafZuege : [],
+  };
+  // Nur Züge eines Zweigs, den es hier gibt: So passen Brett, Zugliste und Knöpfe zusammen.
+  const gewaehlt = zweig.art ? linien[zweig.art] : [];
+  const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
+  const abspielen = <Variantenknoepfe besser={linien.besser} strafe={linien.strafe} wahl={zweig} />;
   const merken =
     index >= 0 ? (
       <MerkenSchalter
@@ -180,5 +200,5 @@ export function useRueckblick(
         beiKlick={() => setzeMerkenBei(merkenOffen ? null : index)}
       />
     ) : null;
-  return { marken, leiste, karte, merken, abspielen, zweigzug };
+  return { marken, leiste, karte, merken, abspielen, zweigzug, linien };
 }

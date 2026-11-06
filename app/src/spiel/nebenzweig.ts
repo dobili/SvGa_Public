@@ -24,6 +24,9 @@ export const MIT_BESSEREM: ReadonlySet<Zugklasse> = new Set([
 /** Bei diesen Klassen zeigt sie, wie der Gegner den Fehler bestraft. */
 export const MIT_STRAFE: ReadonlySet<Zugklasse> = new Set(["fehler", "patzer"]);
 
+/** Die beiden Zweige: der bessere Zug und die Strafe für den gespielten. */
+export type Zweigart = "besser" | "strafe";
+
 /** Ein Zug des Nebenzweigs. */
 export interface Zweigzug {
   /** „10. exf4“, „10... Sf6“ oder „Sf6“ (deutsche Figurenbuchstaben). */

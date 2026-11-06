@@ -4,6 +4,39 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 6.11.2026 – Taktiktrainer: mehrere Motive, gleich schnelle Matts
+
+- **Frage des Autors:** „Können mehrere Motive gleichzeitig zutreffen? Aufgaben durchgehen; alle
+  zulässigen Lösungen akzeptieren.“ Bisher trug jede Aufgabe genau ein Motiv (Buch: Unterabschnitt
+  oder Motivtext; Lichess: nur Aufgaben mit genau einem Motiv-Thema), „Welches Motiv war es?“
+  prüfte nur dagegen; als Züge galten die Lösung, „akzeptiert“ (Buch, erster Zug) und jedes Matt
+  in einem Zug.
+- **Gemessen (alle 674 Aufgaben und 1000 Zusatzaufgaben):** Der Motiverkenner der App
+  (`schach/taktikmotive.ts`, auf die zwölf Grundmotive abgebildet) findet bei 574 der 1067
+  Aufgaben mit Motiv mehr als ein Motiv (Buch und Lichess 254 von 467, Zusatz 320 von 600). Am
+  häufigsten: Hinlenkung mit Gabel (64), Hinlenkung mit Beseitigung (44), Zwischenzug mit
+  Doppelangriff (40), Doppelschach mit Doppelangriff (38). Beispiele: Abb. 7.14 Hinlenkung und
+  Gabel, 7.18 Beseitigung, Gabel und Fesselung, 7.57 Beseitigung, Fesselung und Hinlenkung.
+- **Umgesetzt (Motive):** Richtig ist das Motiv der Daten und jedes erkannte
+  (`training/taktikmotivwahl.ts`); die Meldung nennt die übrigen („Ebenfalls dabei: …“, bei
+  falscher Wahl „Zutreffend waren: …“). Ausnahme Rettung (Motiv 12): nur „Rettung“, weil der
+  Erkenner beim Dauerschach und Pattopfer (7.27, 7.29) nebenbei einen Doppelangriff sieht, der
+  nichts gewinnt. Die Themenrunden filtern weiter nach dem Motiv der Daten.
+- **Gemessen (Züge):** Stockfish lite, Tiefe 14, drei Varianten an jedem der rund 3900 Züge des
+  Lesers (`npm run messen:alternativen`). Gleichwertig (Matt nicht langsamer, sonst höchstens
+  0,3 Bauern schlechter): nur Abb. 7.60, 2. Dh1+ statt 2. Dh5+ (beide Matt in zwei). Drei weitere
+  Treffer sind Rechentiefe: Die Engine sieht dort selbst die Lösung nicht als gewonnen
+  (Lichess Iw8ka, Zusatz czEeW, 799KO). Langsamere Matts als Alternative gibt es an 19 Zügen (etwa 7.11 Sc5+ statt
+  Sd6+); sie bleiben falsch, wie bei Lichess.
+- **Umgesetzt (Züge):** Bei Mattaufgaben gilt jeder Zug, der beweisbar in nicht mehr eigenen
+  Zügen mattsetzt als der Rest der Lösung (`schach/mattsuche.ts`: alle Antworten des Gegners,
+  eigene Folgezüge nur Schachs, höchstens drei Züge; kann ein Matt übersehen, meldet nie ein
+  falsches). Die Gegenseite antwortet mit ihrer zähesten Verteidigung. Ein Durchlauf über alle
+  Mattaufgaben und alle legalen Züge (51 525) nimmt genau 7.60 Dh1+ an, wie die Engine. Bei
+  Gewinnaufgaben fand die Engine keinen zuverlässig gleich guten Zug; dort bleibt es bei Lösung
+  und „akzeptiert“ (eine Laufzeitprüfung mit Engine wäre langsam und nicht verlässlicher).
+  Speicherformat unverändert.
+
 ## 1.11.2026 – Version 0.3.50: Marken ohne Nummer (Format 9)
 
 - **Wunsch und Wahl des Autors:** Ein Bereich aus mehreren Feldern oder mehrere gleichartige Pfeile

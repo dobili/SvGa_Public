@@ -9,7 +9,8 @@
  * einem falschen Zug zeigen useFalschzug und Falschzugmeldung den roten Pfeil und den Verlust laut Engine.
  * Zusatzaufgaben (Lichess, nicht aus dem Buch, seit Paket 8) bringen ihren Gegnerzug mit: Das
  * Brett zeigt erst die Stellung davor und spielt ihn nach kurzer Pause vor (useVorzug.ts).
- * Abhängigkeiten: training/taktiktrainer.ts, analyse/k7-warnsignale.ts, Brettbereich.
+ * Abhängigkeiten: training/taktiktrainer.ts, training/taktikmotivwahl.ts, analyse/k7-warnsignale.ts,
+ * Brettbereich.
  */
 import { useId, useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -18,7 +19,14 @@ import { sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
-import { alsZugaufgabe, MOTIVE, pruefeTaktikzug } from "../../training/taktiktrainer";
+import {
+  alsZugaufgabe,
+  MOTIVE,
+  pruefeTaktikzug,
+  type Taktikmotiv,
+} from "../../training/taktiktrainer";
+import { pruefeMotivwahl, zutreffendeMotive } from "../../training/taktikmotivwahl";
+import { aufzaehlung } from "../../analyse/texte";
 import { loesungszug, stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../komponenten/brettbedienung/useBrettbedienung";
@@ -102,15 +110,34 @@ function Hilfen({
   );
 }
 
+/** Der Satz unter der Wahl: bei richtiger Wahl die übrigen zutreffenden Motive, sonst alle. */
+function motivsatz(zutreffend: readonly Taktikmotiv[], gewaehlt: Taktikmotiv): string {
+  const urteil = pruefeMotivwahl(zutreffend, gewaehlt);
+  const namen = (liste: readonly Taktikmotiv[]) =>
+    aufzaehlung(liste.map((m) => t(`taktiktrainer.motiv.${m}`)));
+  if (urteil.richtig)
+    return urteil.weitere.length > 0
+      ? t("taktiktrainer.motivAuch", { motive: namen(urteil.weitere) })
+      : t("taktiktrainer.motivWar", { motiv: namen(zutreffend) });
+  return zutreffend.length > 1
+    ? t("taktiktrainer.motiveWaren", { motive: namen(zutreffend) })
+    : t("taktiktrainer.motivWar", { motiv: namen(zutreffend) });
+}
+
 /**
  * Nach dem Lösen: das Motiv benennen (nur bei Aufgaben mit Grundmotiv).
  * Seit 0.3.2 als Auswahlliste statt zwölf Chips untereinander (Wunsch des Autors, 26.10.2026):
  * ruhiger, auf dem Handy öffnet sie die gewohnte Auswahl des Systems. Die erste Wahl zählt.
+ * Seit der Frage des Autors vom 6.11.2026 („Können mehrere Motive gleichzeitig zutreffen?“) gilt
+ * jedes zutreffende Motiv als richtig: das Motiv der Daten und jedes, das der Motiverkenner an der
+ * Lösung findet (training/taktikmotivwahl.ts); der Satz darunter nennt die übrigen.
  */
-function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
-  const [gewaehlt, setzeGewaehlt] = useState<string | null>(null);
+function MotivBenennen({ aufgabe }: { aufgabe: Aufgabe }) {
+  const [gewaehlt, setzeGewaehlt] = useState<Taktikmotiv | null>(null);
   const kennung = useId();
-  if (!richtig) return null;
+  const zutreffend = useMemo(() => zutreffendeMotive(aufgabe), [aufgabe]);
+  if (zutreffend.length === 0) return null;
+  const waehle = (wert: string) => setzeGewaehlt(MOTIVE.find((m) => m === wert) ?? null);
   return (
     <div className="auswahlliste" data-testid="motiv-benennen">
       <label className="einstellung-name" htmlFor={kennung}>
@@ -121,7 +148,7 @@ function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
         className="auswahlfeld"
         value={gewaehlt ?? ""}
         disabled={gewaehlt !== null}
-        onChange={(e) => setzeGewaehlt(e.target.value || null)}
+        onChange={(e) => waehle(e.target.value)}
       >
         <option value="">{t("taktiktrainer.benennenWaehlen")}</option>
         {MOTIVE.map((m) => (
@@ -131,8 +158,8 @@ function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
         ))}
       </select>
       {gewaehlt && (
-        <Antwortmeldung richtig={gewaehlt === richtig}>
-          {t("taktiktrainer.motivWar", { motiv: t(`taktiktrainer.motiv.${richtig}`) })}
+        <Antwortmeldung richtig={zutreffend.includes(gewaehlt)}>
+          {motivsatz(zutreffend, gewaehlt)}
         </Antwortmeldung>
       )}
     </div>
@@ -247,7 +274,7 @@ export function Taktikaufgabe({
           })}
         </Antwortmeldung>
       )}
-      {fertig && motivAbfragen && <MotivBenennen richtig={aufgabe.motiv} />}
+      {fertig && motivAbfragen && <MotivBenennen aufgabe={aufgabe} />}
       {/* P9: gelöste Aufgabe aus freier Quelle als Herausforderung teilen (nur Lichess, E7). */}
       {fertig && <TaktikHerausforderungsknopf aufgabe={aufgabe} />}
     </>

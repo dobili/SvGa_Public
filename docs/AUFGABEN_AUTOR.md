@@ -33,6 +33,21 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Taktiktrainer – mehrere Motive und gleich schnelle Matts (6.11.2026)
+
+Deine Frage: „Können mehrere Motive gleichzeitig zutreffen?“ Ja, bei gut der Hälfte der Aufgaben
+(574 von 1067 mit Motiv). Bei „Welches Motiv war es?“ zählt jetzt jedes zutreffende Motiv; die
+Meldung nennt die anderen. Gleich gute andere Züge gibt es laut Engine fast nie (Lichess-Aufgaben
+sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso schnell ist.
+
+- [ ] N2585. Training → Taktiktrainer, Motiv „Hinlenkung“ oder gemischt: Aufgabe lösen (etwa Abb. 7.14:
+  Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
+  Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
+  Zutreffend waren: …“ mit allen passenden Motiven.
+- [ ] N2586. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
+  spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
+  langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
+
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
 - [ ] N2582. Variante → Stift: drei goldene Felder nebeneinander (je zweimal antippen) und ein roter Pfeil. In der

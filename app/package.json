@@ -26,6 +26,7 @@
     "messen:vergleich": "vitest run --config vitest.messung.config.ts src/spiel/vergleich.messung.ts",
     "messen:eichung": "vitest run --config vitest.messung.config.ts src/spiel/eichung.messung.ts",
     "messen:loesungen": "vitest run --config vitest.messung.config.ts src/training/loesungen.messung.ts",
+    "messen:alternativen": "vitest run --config vitest.messung.config.ts src/training/taktikalternativen.messung.ts",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

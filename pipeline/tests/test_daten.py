@@ -42,3 +42,19 @@ def test_entwurf_wird_nur_fuer_die_veroeffentlichung_gemeldet(tmp_path, capsys):
     assert finde_entwuerfe(tmp_path) == ["kap01.json: Entwurf z-test"]
     assert main(["--veroeffentlichung", str(tmp_path)]) == 1
     assert "Entwurf z-test" in capsys.readouterr().out
+
+
+def test_warum_fragen_im_verzeichnis_passen_zu_den_kapiteln(tmp_path):
+    """Lernpfad (6.11.2026): index.json zählt die Warum-Fragen je Abbildung wie die Kapitel."""
+    index = json.loads((DATEN / "index.json").read_text(encoding="utf-8"))
+    kapitel1 = next(e for e in index["kapitel"] if e["kapitel"] == 1)
+    assert kapitel1["warum"]["1.26"] == 1
+    kapitel1["warum"]["1.26"] = 2
+    (tmp_path / "index.json").write_text(json.dumps(index), encoding="utf-8")
+    for datei in DATEN.glob("*.json"):
+        if datei.name != "index.json":
+            (tmp_path / datei.name).write_text(datei.read_text(encoding="utf-8"), encoding="utf-8")
+    assert pruefe_datenordner(tmp_path) == ["kap01.json: Warum-Fragen weichen vom Verzeichnis ab"]
+    del kapitel1["warum"]
+    (tmp_path / "index.json").write_text(json.dumps(index), encoding="utf-8")
+    assert pruefe_datenordner(tmp_path) == []

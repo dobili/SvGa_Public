@@ -63,6 +63,14 @@
             "items": {
               "type": "string"
             }
+          },
+          "warum": {
+            "description": "Zahl der Warum-Fragen je Abbildung, nur Abbildungen mit Fragen (für den Lernpfad, 6.11.2026). Freiwillig, damit ältere Daten gültig bleiben.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 1
+            }
           }
         }
       }

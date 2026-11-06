@@ -1,6 +1,9 @@
 /**
- * Kopf des Lernpfads: die aktuelle Station als Balken mit den Resten (Abbildungen, Übungen) und
- * rechts die Silhouette des Ordens ihres Buchteils mit den Kapiteln, die dafür noch fehlen.
+ * Kopf des Lernpfads: die aktuelle Station als Balken mit den Resten (Abbildungen, Übungen,
+ * Warum-Fragen, Lernziele) und rechts die Silhouette des Ordens ihres Buchteils mit den Kapiteln,
+ * die dafür noch fehlen. Ob der Orden verdient ist, sagt die Etappe (Ringrechnung, nur
+ * Abbildungen und Übungen), nicht die Stationen: Ein erhaltener Orden bleibt golden, auch wenn
+ * noch Warum-Fragen oder Lernziele offen sind (6.11.2026).
  *
  * Rolle im Gesamtbild: Runde „Weniger Text“, Punkt P5 (Wahl des Autors, 31.10.2026). Vorher
  * standen oben zwei Sätze („Noch 43 Abbildungen und 4 Übungen bis zum Ende von Kapitel 1. Danach
@@ -11,12 +14,12 @@
  * Abhängigkeiten: lernpfad.ts, Fortschrittsbalken, Infoblase, Ordenkunst, lucide-react, i18n,
  * Stil in ui/stil/wenigertext-seiten.css.
  */
-import { Circle, LayoutGrid, Puzzle, type LucideIcon } from "lucide-react";
+import { Circle, CircleHelp, LayoutGrid, ListChecks, Puzzle, type LucideIcon } from "lucide-react";
 import { t, tZahl, type Textschluessel } from "../../../i18n/sprache";
 import { Fortschrittsbalken } from "../bausteine/Fortschrittsbalken";
 import { MitInfoblase } from "../bausteine/Infoblase";
 import { Ordenkunst } from "../ordenkunst/Ordenkunst";
-import { hinweistext, ordenname, type Station } from "./lernpfad";
+import { hinweistext, ordenname, type Etappe, type Station } from "./lernpfad";
 
 /** Größe der Zeichen vor den Resten (Bildpunkte). */
 const ZEICHENGROESSE = 16;
@@ -25,6 +28,8 @@ const ZEICHENGROESSE = 16;
 const RESTZEICHEN: Readonly<Partial<Record<Textschluessel, LucideIcon>>> = {
   "lernpfad.rest.abbildungen": LayoutGrid,
   "lernpfad.rest.uebungen": Puzzle,
+  "lernpfad.rest.warum": CircleHelp,
+  "lernpfad.rest.lernziele": ListChecks,
 };
 
 /** Die Reste der Station mit Zeichen: „▦ 43 Abbildungen · 🧩 4 Übungen“. */
@@ -48,10 +53,11 @@ function Reste({ station }: { station: Station }) {
 }
 
 /** Rechts: der Orden des Teils als Silhouette (golden, sobald verdient), darunter „+ Kap. 0“. */
-function Teilorden({ liste, station }: { liste: readonly Station[]; station: Station }) {
-  const imTeil = liste.filter((s) => s.teil === station.teil);
-  const verdient = imTeil.every((s) => s.fertig);
-  const fehlend = imTeil.filter((s) => !s.fertig && s.kapitel !== station.kapitel);
+function Teilorden(props: { liste: readonly Station[]; station: Station; verdient: boolean }) {
+  const { liste, station, verdient } = props;
+  const fehlend = liste.filter(
+    (s) => s.teil === station.teil && !s.fertig && s.kapitel !== station.kapitel,
+  );
   const orden = ordenname(station.teil);
   return (
     <span className="lernpfadkopf-orden">
@@ -61,7 +67,7 @@ function Teilorden({ liste, station }: { liste: readonly Station[]; station: Sta
         silhouette={!verdient}
         beschriftung={t(verdient ? "lernpfad.ordenVerdient" : "lernpfad.ordenOffen", { orden })}
       />
-      {fehlend.length > 0 && (
+      {!verdient && fehlend.length > 0 && (
         <span className="lernpfadkopf-fehlend" aria-hidden="true">
           {t("wenigertext.seiten.lernpfad.plus", {
             kapitel: fehlend.map((s) => s.kapitel).join(", "),
@@ -77,9 +83,15 @@ function Teilorden({ liste, station }: { liste: readonly Station[]; station: Sta
  * „43 Abbildungen · 4 Übungen“, rechts die Silhouette „Teil Grundlagen“ mit „+ Kap. 0“.
  * Sonderfall: ohne Station (Daten fehlen) nur der Satz im ⓘ.
  */
-export function Lernpfadkopf({ liste, aktuell }: { liste: readonly Station[]; aktuell: number }) {
+export function Lernpfadkopf(props: {
+  liste: readonly Station[];
+  aktuell: number;
+  etappen: readonly Etappe[];
+}) {
+  const { liste, aktuell, etappen } = props;
   const station = liste[aktuell];
-  const satz = hinweistext(liste, aktuell);
+  const verdient = etappen.some((e) => e.teil === station?.teil && e.ordenVerdient);
+  const satz = hinweistext(liste, aktuell, verdient);
   return (
     <div className="karte lernpfadkopf" data-tour="lernpfad-kopf">
       <div className="lernpfadkopf-links">
@@ -100,7 +112,7 @@ export function Lernpfadkopf({ liste, aktuell }: { liste: readonly Station[]; ak
         {station && <Fortschrittsbalken anteil={station.anteil} beschriftung={satz} />}
         {station && <Reste station={station} />}
       </div>
-      {station && <Teilorden liste={liste} station={station} />}
+      {station && <Teilorden liste={liste} station={station} verdient={verdient} />}
     </div>
   );
 }

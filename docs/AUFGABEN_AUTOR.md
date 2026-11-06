@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 6.11.2026, Version 0.3.51 (Meldungen vom 6.11.2026).
+Stand: 6.11.2026, Version 0.3.52 (Linienknöpfe, 7.11.2026).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.51“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.52“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,16 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)
+
+- [ ] N2599. Eine ausgewertete Partie auf dem Handy öffnen und mit Vor/Zurück (oder den Pfeiltasten) ganz durchgehen,
+      einmal einzeilig und einmal aufgeklappt. Über der Zugnavigation steht immer die Zeile „Linie:“ mit drei
+      Symbolen (Partie, Glühbirne, Schwerter) in einer Zeile; Glühbirne und Schwerter sind nur an Fehlern
+      antippbar, sonst ausgegraut. Brett und Weiter-Knopf bleiben genau an ihrem Platz. Unter dem Brett gibt es
+      keine Knöpfe „Besserer Zug“ und „Bestrafung“ mehr. An einem Fehler spielt ein Tipp auf Glühbirne oder
+      Schwerter die Folge Zug für Zug vor (nochmal tippen hält an); danach geht man mit Vor/Zurück selbst durch,
+      „Partie“ (erstes Symbol) führt zurück.
 
 ### Neu in 0.3.51: Deine Meldungen vom 6.11.2026
 

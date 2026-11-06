@@ -4,6 +4,16 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 7.11.2026 – Version 0.3.52: Linienknöpfe in der Zugfolgenleiste
+
+- **Wunsch des Autors:** Die Knöpfe „Besserer Zug“ und „Bestrafung“ unter dem Brett entfallen; die
+  Linienwahl oben übernimmt ihre Aufgabe (Tipp auf einen nicht gewählten Zweig spielt ihn vor, Tipp
+  auf den gewählten hält an). Nur Symbole, eine Zeile, immer da (ausgegraut, wo es keinen Zweig
+  gibt), damit beim Durchgehen nichts springt. Die Pfadzeile „Zurück zur Partie“ oben entfällt
+  (änderte die Höhe), „Partie“ führt zurück. Aufgeklappte Zugliste mit fester Höhe,
+  `overflow-anchor: none` gegen das Mitrollen der Seite. Test `auswertung-ruhig.spec.ts` misst
+  Brett und „Vor“ nach jedem Schritt.
+
 ## 6.11.2026 – Version 0.3.51: Meldungen des Autors vom 6.11.2026
 
 - **Trefferfläche:** Steht unter dem Finger eine eigene Figur, gewinnt sie immer (Toleranz 0 statt

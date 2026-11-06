@@ -28,3 +28,4 @@ app/training/
 
 # Native Engine für die Messung je Zeitklasse (skripte/messe-zeitklasse.sh lädt sie)
 app/.engine/
+*.tsbuildinfo

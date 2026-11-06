@@ -120,6 +120,12 @@ export function SammelFormular({
       plan: werte.plan.trim(),
       notiz: werte.notiz.trim(),
     };
+    const titel = eintrag.eroeffnung || t("varianten.titel.sammlung");
+    variante.wende({ art: "sammlung", id: eintrag.id }, () =>
+      ausSammlung(eintrag, titel, new Date()),
+    );
+    // „Gespeichert“ erst, wenn der Speicher geschrieben hat (Fehlertest 6.11.2026: unter Last kam
+    // ein Neuladen dazwischen und die Stellung fehlte, obwohl die Meldung schon stand).
     void aendere((daten) =>
       zaehleAktivitaet(
         { ...daten, sammlung: mitSammeleintrag(daten.sammlung, eintrag) },
@@ -127,13 +133,10 @@ export function SammelFormular({
         1,
         new Date(),
       ),
-    );
-    const titel = eintrag.eroeffnung || t("varianten.titel.sammlung");
-    variante.wende({ art: "sammlung", id: eintrag.id }, () =>
-      ausSammlung(eintrag, titel, new Date()),
-    );
-    setzeGespeichert(true);
-    beiGespeichert?.();
+    ).then(() => {
+      setzeGespeichert(true);
+      beiGespeichert?.();
+    });
   };
   const aendern = (teil: Partial<Sammelwerte>) => {
     const { eroeffnung: neueEroeffnung, ...rest } = teil;

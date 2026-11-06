@@ -37,8 +37,8 @@ for (const schema of ["dunkel", "hell"] as const) {
     const seiten = page.getByTestId("in-zahlen").getByRole("radiogroup", { name: "Seite" });
     await seiten.getByRole("radio", { name: "Schwarz (Derya)" }).click();
     await expect(page.getByTestId("zugklassen")).toContainText("Züge von Derya");
-    await expect(zeitleiste).toContainText("9... b5");
-    await expect(zeitleiste).not.toContainText("9... b5?");
+    // 9... b5 war der beste Zug: kein „?“ und seit 6.11.2026 auch keine Kachel als Engine-Fehler.
+    await expect(zeitleiste).not.toContainText("9... b5");
     await expect(zeitleiste).not.toContainText("Besser war 9... b5");
     await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
     await expect(page.getByTestId("zugklassen")).toContainText("Deine Züge");

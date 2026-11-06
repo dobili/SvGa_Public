@@ -4,7 +4,6 @@
  * erreichte Wochen fest (ein höheres Ziel nimmt keine weg), und der Übungsplan bietet eine
  * Kalenderdatei an. Die Uhr steht fest auf Donnerstag, 29.10.2026, damit die Woche bekannt ist.
  */
-import { readFile } from "node:fs/promises";
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneReiter, starteImBrowser } from "./hilfen";
 
@@ -113,7 +112,7 @@ test("Wochenziel: „Später“ blendet die Frage für diese Woche aus", async (
   await expect(page.getByTestId("wochenziel-wahl")).toHaveCount(0);
 });
 
-test("Übungsplan: Tage und Uhrzeit wählen, heute ist Übungstag, Kalenderdatei wird angeboten", async ({
+test("Übungsplan: Tage und Dauer wählen, heute ist Übungstag mit Minutenstand", async ({
   page,
 }) => {
   await page.clock.setFixedTime(JETZT);
@@ -131,20 +130,14 @@ test("Übungsplan: Tage und Uhrzeit wählen, heute ist Übungstag, Kalenderdatei
     "aria-pressed",
     "true",
   );
-  await wahl.getByLabel("Uhrzeit").fill("07:30");
+  // Seit 6.11.2026 (Q15-2): Dauer statt Uhrzeit, keine Kalenderdatei mehr.
+  await expect(wahl.getByLabel("Uhrzeit")).toHaveCount(0);
+  await wahl.getByRole("radio", { name: "30 Min" }).click();
   await wahl.getByLabel("Wo oder nach was? (freiwillig)").fill("nach dem Frühstück, am Tisch");
   await wahl.getByRole("button", { name: "Plan speichern" }).click();
   const plan = karte.getByTestId("uebungsplan");
-  await expect(plan.getByText("Dein Plan: Mo, Do um 07:30")).toBeVisible();
-  await expect(plan.getByText("Heute ist dein Übungstag.")).toBeVisible();
-
-  const herunterladen = page.waitForEvent("download");
-  await plan.getByRole("button", { name: "In meinen Kalender" }).click();
-  const datei = await herunterladen;
-  expect(datei.suggestedFilename()).toBe("schach-ueben.ics");
-  const inhalt = await readFile(await datei.path(), "utf8");
-  expect(inhalt).toContain("RRULE:FREQ=WEEKLY;BYDAY=MO,TH\r\n");
-  expect(inhalt).toContain("DTSTART:20261029T073000\r\n");
-  expect(inhalt.replace(/\r\n /g, "")).toContain("nach dem Frühstück\\, am Tisch");
-  await expect(plan.getByRole("status")).toContainText("schach-ueben.ics");
+  await expect(plan.getByText("Dein Plan: Mo, Do, je 30 Minuten")).toBeVisible();
+  await expect(plan.getByTestId("planstand-heute")).toContainText("von 30 Minuten geschafft");
+  await expect(plan.getByRole("button", { name: "Jetzt üben" })).toBeVisible();
+  await expect(plan.getByRole("button", { name: "In meinen Kalender" })).toHaveCount(0);
 });

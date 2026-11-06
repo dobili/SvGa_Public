@@ -2,8 +2,8 @@
  * Eine fertig ausgewertete Partie für die Oberflächentests der Auswertung: gegen Derya mit den
  * Zügen der Opernpartie (1858); Werte und beste Züge sind für das Bild erfunden, damit ein
  * Fehler (8. Sc3?), ein Patzer (12. O-O-O??) und drei absichtliche Fehler der Engine vorkommen:
- * zwei echte Patzer (9... b5, 12... Td8) und eine Kleinigkeit (7... De7), die die Zeitleiste seit
- * dem 6.11.2026 nicht mehr zeigt (nur wirkliche Fehler, Wunsch des Autors).
+ * ein echter Patzer (12... Td8) und zwei Kleinigkeiten (7... De7, 9... b5 als bester Zug), die die
+ * Zeitleiste seit dem 6.11.2026 nicht mehr zeigt (nur wirkliche Fehler, Wunsch des Autors).
  * Ohne Engine: Die App liest die Werte aus dem Speicher (IndexedDB).
  * Ausgelagert aus auswertungbilder.spec.ts (1.11.2026), weil auch auswertung-zeitleiste.spec.ts
  * sie braucht.
@@ -32,11 +32,10 @@ const ENGINEFEHLER: Readonly<Record<number, string>> = {
 };
 /**
  * Beste Züge: meist der gespielte; beim Fehler 8. Sc3? war 8. Dxb7 besser, beim Patzer 12. Lxd7+,
- * bei den Patzern der Engine 9... Sd7 und 12... De6.
+ * beim Patzer der Engine 12... De6.
  */
 const ANDERS: Readonly<Record<number, string>> = {
   14: "b3b7",
-  17: "b8d7",
   22: "b5d7",
   23: "e7e6",
 };

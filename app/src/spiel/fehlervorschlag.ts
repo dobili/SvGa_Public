@@ -52,21 +52,22 @@ const KAPITEL_JE_ART: Readonly<Partial<Record<Fehlerart, number>>> = {
 /**
  * Das Kapitel der Checkliste für einen Zug der eigenen Partie, oder null ohne klare Zuordnung.
  *
- * Eingaben: Stellung vor dem Zug, Zug (Kurznotation), Antwort der Engine (UCI, leer, wenn
- * unbekannt), Verlust in Bauerneinheiten, bester Zug (UCI) oder null.
+ * Eingaben: Stellung vor dem Zug, Zug (Kurznotation), Widerlegung der Engine (UCI, bis sechs
+ * Halbzüge, leer, wenn unbekannt; spiel/erklaerung.ts, widerlegungAus), Verlust in
+ * Bauerneinheiten, bester Zug (UCI) oder null.
  * Beispiel: Rückblick, 12... Sxe4?? lässt Dxh7# zu → Drohung ignoriert → Kapitel 1.
  * Sonderfall: „ungenau“ und blinde Flecken haben kein Kapitel; unlesbare Stellung → null.
  */
 export function kapitelvorschlag(
   vorherFen: string,
   san: string,
-  antwort: string,
+  widerlegung: readonly string[],
   verlust: number,
   bester: string | null,
 ): number | null {
   const lage = lageVon(vorherFen);
   const uci = sanZuUci(vorherFen, san);
   if (!lage || !uci) return null;
-  const befund = fehlerbefundIn(lage, uci, antwort ? [antwort] : [], verlust, bester);
+  const befund = fehlerbefundIn(lage, uci, widerlegung, verlust, bester);
   return KAPITEL_JE_ART[befund.art] ?? null;
 }

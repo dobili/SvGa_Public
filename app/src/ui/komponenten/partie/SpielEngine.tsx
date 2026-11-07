@@ -20,7 +20,7 @@ import { AuftragAbgebrochen, engine, type Bewertung } from "../../../engine/engi
 import { urteilUeberLetztenZug, wertNachDemZug } from "../../../engine/letzterzug";
 import { wertAlsZahl, wertInWorten } from "../../../engine/wertInWorten";
 import { t } from "../../../i18n/sprache";
-import { erklaereZug } from "../../../spiel/erklaerung";
+import { erklaereZug, widerlegungAus } from "../../../spiel/erklaerung";
 import { urteilsmarkierung } from "../werkzeugkarten/useZugurteil";
 import {
   brauchtWarum,
@@ -67,7 +67,7 @@ async function rechne(
         zug.vorherFen,
         zug.danachFen,
         zug.uci,
-        danach.besterZug ?? "",
+        widerlegungAus(danach.besterZug ?? undefined, danach.varianten[0]?.zuege),
         urteil.verlust,
         urteil.besterZug,
       )

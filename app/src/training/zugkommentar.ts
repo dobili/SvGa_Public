@@ -131,7 +131,7 @@ function fehlerkommentar(
     vorherFen,
     danach,
     eigenUci,
-    urteil.eigeneFolge[1] ?? "",
+    urteil.eigeneFolge.slice(1),
     urteil.unterschied,
     sanZuUci(vorherFen, partie),
     vorigerZug,

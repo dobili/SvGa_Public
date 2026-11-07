@@ -5,7 +5,8 @@
  * Einrasten, die nächste Karte schaut rechts heraus, Stand „1 von 7“, Blättern mit Knöpfen und
  * Tastatur, die Knöpfe der Phasen an der Kurve rücken den Abschnitt nach vorn, bei „Bewegung
  * reduzieren“ kein weiches Scrollen. „Zur Stellung“ scrollt so, dass das Brett ganz zu sehen ist
- * (gemessen am Rechteck des Brettes im Fenster), auf kleinem und großem Bildschirm.
+ * (gemessen am Rechteck des Brettes im Fenster), auf kleinem und großem Bildschirm. Seit 7.11.2026
+ * auch die Warum-Zeile mit Kapitel und „Üben“ an der Fehlerkarte (Konzept „Fehler mit Buchbezug“).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffnePartie } from "./auswertungpartie";
@@ -96,3 +97,27 @@ for (const [breite, hoehe] of [
     expect(b?.unten ?? Infinity).toBeLessThanOrEqual(b?.sichtUnten ?? 0);
   });
 }
+
+// Konzept „Fehler mit Buchbezug“ (7.11.2026): Die Fehlerkarte trägt eine Warum-Zeile mit Kapitel,
+// und „Üben“ öffnet den passenden Trainer. An 12. O-O-O?? meldet die Erkennung die stehende
+// Drohung Sxe4 (W3, Kapitel 1, Schach-Röntgen-Regel).
+test("Warum-Zeile mit Kapitel und Üben an 12. O-O-O??", async ({ page }) => {
+  await page.setViewportSize({ width: 393, height: 851 });
+  await starteImBrowser(page);
+  await oeffnePartie(page, "dunkel");
+  const karte = page.getByTestId("moment-fehler").filter({ hasText: "12. O-O-O??" });
+  const zeile = karte.getByTestId("warumzeile");
+  await expect(zeile).toHaveAttribute("data-kennung", "W3");
+  await expect(zeile).toContainText("Drohung stehen gelassen (Kapitel 1, Schach-Röntgen-Regel)");
+  // Der Satz klappt auf Tipp auf, damit die Reihe niedrig bleibt.
+  const satz = zeile.getByText("Die Drohung Sxe4 stand schon vor deinem Zug", { exact: false });
+  await expect(satz).toBeHidden();
+  await zeile.getByText("Drohung stehen gelassen").click();
+  await expect(satz).toBeVisible();
+  // Bei den Fehlern der Engine keine Warum-Zeile (nur Karten der gewählten Seite, Konzept 4.1).
+  await expect(page.getByTestId("moment-engine").getByTestId("warumzeile")).toHaveCount(0);
+  await karte.getByRole("button", { name: "Üben: Schach-Röntgen-Trainer" }).click();
+  const trainer = page.getByTestId("trainer");
+  await expect(trainer).toBeVisible();
+  await expect(trainer.getByRole("heading", { name: "Schach-Röntgen-Trainer" })).toBeVisible();
+});

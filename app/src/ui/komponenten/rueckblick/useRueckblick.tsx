@@ -18,7 +18,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import { phasensatz, zusatzsatz } from "../../../analyse/phasentext";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../../spiel/phasen";
-import { erklaereZug, type Zugerklaerung } from "../../../spiel/erklaerung";
+import { erklaereZug, widerlegungAus, type Zugerklaerung } from "../../../spiel/erklaerung";
 import {
   MIT_BESSEREM,
   MIT_STRAFE,
@@ -62,7 +62,8 @@ function erklaerungFuer(
     vorher,
     danach,
     uci,
-    rb.beste[index + 1] ?? "",
+    // Die ganze Widerlegung (bis sechs Halbzüge), damit ein Rückschlag mitzählt (Anhang B)
+    widerlegungAus(rb.beste[index + 1], rb.varianten?.[index + 1]),
     urteil.verlust,
     rb.beste[index] ?? null,
     sans[index - 1] ?? null,

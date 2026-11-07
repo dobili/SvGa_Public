@@ -1,6 +1,6 @@
 /** Tests der Erklärung im Rückblick an Stellungen aus dem Buch (dieselben wie in engine/fehlerart.test.ts). */
 import { describe, expect, it } from "vitest";
-import { erklaereZug, fehlerartText } from "./erklaerung";
+import { erklaereZug, fehlerartText, widerlegungAus } from "./erklaerung";
 import { fenNach, uciZuSan } from "./zuege";
 
 /** Abb. 1.13, Schwarz am Zug nach 2. Dh5: Weiß droht Dxe5+. */
@@ -23,7 +23,7 @@ function danach(fen: string, uci: string): string {
 
 describe("Erklärung im Rückblick", () => {
   it("2... Sf6?? lässt die Drohung Dxe5+ stehen: Satz, roter Pfeil h5–e5, rotes Feld e5", () => {
-    const e = erklaereZug(NACH_DH5, danach(NACH_DH5, "g8f6"), "g8f6", "h5e5", 3);
+    const e = erklaereZug(NACH_DH5, danach(NACH_DH5, "g8f6"), "g8f6", ["h5e5"], 3);
     expect(e?.text).toBe("lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).");
     expect(e?.marken).toEqual([
       { typ: "pfeil", farbe: "rot", von: "h5", nach: "e5" },
@@ -33,13 +33,13 @@ describe("Erklärung im Rückblick", () => {
   });
 
   it("2... La3?? lässt den Läufer hängen: Feld a3 mit W1", () => {
-    const e = erklaereZug(LAEUFER_A3, danach(LAEUFER_A3, "f8a3"), "f8a3", "b2a3", 3);
+    const e = erklaereZug(LAEUFER_A3, danach(LAEUFER_A3, "f8a3"), "f8a3", ["b2a3"], 3);
     expect(e?.text).toBe("lässt Läufer a3 ungedeckt hängen (W1).");
     expect(e?.marken).toEqual([{ typ: "feld", farbe: "rot", feld: "a3", text: "W1" }]);
   });
 
   it("Dd6?? stellt die Dame in die Springergabel: Pfeil g5–f7, Ziele h8 und d6", () => {
-    const e = erklaereZug(GABEL, danach(GABEL, "a6d6"), "a6d6", "g5f7", 9);
+    const e = erklaereZug(GABEL, danach(GABEL, "a6d6"), "a6d6", ["g5f7"], 9);
     expect(e?.text).toBe(
       "übersieht die Gabel: Springer g5 nach f7 trifft König h8 und Dame d6. Der König muss ziehen, Dame d6 geht verloren.",
     );
@@ -48,16 +48,16 @@ describe("Erklärung im Rückblick", () => {
   });
 
   it("Sxd5?? verliert laut Abtausch den Springer: Figur hängen statt Schlagreflex (0.2.118)", () => {
-    const e = erklaereZug(MITTELSPIEL, danach(MITTELSPIEL, "c3d5"), "c3d5", "e6d5", 2);
+    const e = erklaereZug(MITTELSPIEL, danach(MITTELSPIEL, "c3d5"), "c3d5", ["e6d5"], 2);
     expect(e?.text).toBe("lässt Springer d5 ungedeckt hängen (W1).");
   });
 
   it("3... Df6?! ist die verfrühte Dame; ein unauffälliger Zug hat keine Erklärung", () => {
-    expect(erklaereZug(VOR_DF6, danach(VOR_DF6, "d8f6"), "d8f6", "", 1)?.text).toBe(
+    expect(erklaereZug(VOR_DF6, danach(VOR_DF6, "d8f6"), "d8f6", [], 1)?.text).toBe(
       "zieht die Dame zu früh (Kapitel 1): Erst die Leichtfiguren entwickeln.",
     );
-    expect(erklaereZug(NACH_DH5, danach(NACH_DH5, "b8c6"), "b8c6", "", 0)).toBeNull();
-    expect(erklaereZug("unsinn", "unsinn", "e2e4", "", 0)).toBeNull();
+    expect(erklaereZug(NACH_DH5, danach(NACH_DH5, "b8c6"), "b8c6", [], 0)).toBeNull();
+    expect(erklaereZug("unsinn", "unsinn", "e2e4", [], 0)).toBeNull();
   });
 });
 
@@ -69,7 +69,7 @@ describe("Ausgelassener Schlag (0.2.85)", () => {
   const danach = fenNach(vorher, "Rab1") ?? "";
 
   it("nach dem Schlag des Gegners: „schlägt nicht zurück“, rotes Feld f4", () => {
-    const e = erklaereZug(vorher, danach, "a1b1", "f4g6", 6.2, "e3f4", "Nxf4");
+    const e = erklaereZug(vorher, danach, "a1b1", ["f4g6"], 6.2, "e3f4", "Nxf4");
     expect(e?.text).toBe(
       "schlägt nicht zurück: exf4 nahm den Springer f4 wieder, so fehlt das Material (Kapitel 1, Abtausch).",
     );
@@ -77,9 +77,34 @@ describe("Ausgelassener Schlag (0.2.85)", () => {
   });
 
   it("ohne vorigen Schlag und bei kleinem Verlust kein Satz zum Schlag", () => {
-    const klein = erklaereZug(vorher, danach, "a1b1", "f4g6", 0.6, "e3f4", "Nxf4");
+    const klein = erklaereZug(vorher, danach, "a1b1", ["f4g6"], 0.6, "e3f4", "Nxf4");
     expect(klein?.text ?? "").not.toContain("schlägt nicht zurück");
-    const ohne = erklaereZug(vorher, danach, "a1b1", "f4g6", 6.2, "e3f4", null);
+    const ohne = erklaereZug(vorher, danach, "a1b1", ["f4g6"], 6.2, "e3f4", null);
     expect(ohne?.text ?? "").not.toContain("schlägt nicht zurück");
+  });
+});
+
+describe("Widerlegung mit mehreren Halbzügen (Konzept Fehler mit Buchbezug, Anhang B)", () => {
+  // 1. d4 d5 2. Lg5, Schwarz am Zug: 2... Sf6 erlaubt Lxf6 exf6, einen gewöhnlichen Abtausch.
+  const VOR_SF6 = "rnbqkbnr/ppp1pppp/8/3p2B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2";
+  const NACH_SF6 = danach(VOR_SF6, "g8f6");
+
+  it("mit nur dem ersten Zug Lxf6 meldete die Erkennung den Abtausch als Fehler", () => {
+    // Ohne Rückschlag sieht es aus, als gewinne Weiß einen Springer (Fehlalarm vor dem 7.11.2026).
+    const e = erklaereZug(VOR_SF6, NACH_SF6, "g8f6", ["g5f6"], 1);
+    expect(e?.text).toBe("übersieht das Motiv Fesselung: Lxf6 schlägt Springer f6.");
+  });
+
+  it("mit dem Rückschlag exf6 ist es kein Fehlalarm mehr", () => {
+    const e = erklaereZug(VOR_SF6, NACH_SF6, "g8f6", ["g5f6", "e7f6", "e2e3"], 1);
+    expect(e).toBeNull();
+  });
+
+  it("widerlegungAus nimmt die gespeicherte Variante, sonst den besten Zug", () => {
+    expect(widerlegungAus("g5f6", ["g5f6", "e7f6"])).toEqual(["g5f6", "e7f6"]);
+    expect(widerlegungAus("g5f6", [])).toEqual(["g5f6"]);
+    expect(widerlegungAus("g5f6", ["e2e3"])).toEqual(["g5f6"]);
+    expect(widerlegungAus(undefined, undefined)).toEqual([]);
+    expect(widerlegungAus("a", ["a", "b", "c", "d", "e", "f", "g", "h"])).toHaveLength(6);
   });
 });

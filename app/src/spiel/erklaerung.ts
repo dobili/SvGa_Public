@@ -192,6 +192,30 @@ function erklaerungZu(
   };
 }
 
+/**
+ * So viele Halbzüge der Widerlegung prüft die Fehlererkennung; so viele speichert die Auswertung
+ * je Stellung (speicher/partieeintrag.ts, `varianten`).
+ */
+export const WIDERLEGUNG_HALBZUEGE = 6;
+
+/**
+ * Die Widerlegung eines Zuges aus der gespeicherten Auswertung: die Hauptvariante der Engine in
+ * der Stellung nach dem Zug, sonst (ältere Auswertungen ohne Varianten) nur ihr bester Zug.
+ *
+ * Eingaben: bester Zug und Hauptvariante der Stellung nach dem Zug (Index des Zuges + 1).
+ * Beispiel: beste „g5f6“, Variante [„g5f6“, „e7f6“, „e2e3“] → diese drei Halbzüge.
+ * Sonderfall: Beginnt die Variante nicht mit dem besten Zug, gilt nur der beste Zug; ohne beides leer.
+ */
+export function widerlegungAus(
+  bester: string | undefined,
+  variante: readonly string[] | undefined,
+): readonly string[] {
+  if (variante && variante.length > 0 && (!bester || variante[0] === bester)) {
+    return variante.slice(0, WIDERLEGUNG_HALBZUEGE);
+  }
+  return bester ? [bester] : [];
+}
+
 /** Ab diesem Verlust (Zeichen „?“) lohnt der Satz zum ausgelassenen Schlag. */
 const SCHLAG_AB_VERLUST = 1.2;
 
@@ -228,20 +252,24 @@ function ausgelassenerSchlag(
 /**
  * Erklärt einen Zug mit Zeichen: Fehlerart nach den Regeln des Buches, in Worten und am Brett.
  *
- * Eingaben: Stellung vor dem Zug (FEN), Stellung danach (FEN), der Zug (UCI), die beste Antwort
- * der Engine in der Stellung danach (UCI, darf leer sein), der Verlust in Bauerneinheiten, der
+ * Eingaben: Stellung vor dem Zug (FEN), Stellung danach (FEN), der Zug (UCI), die Widerlegung
+ * der Engine in der Stellung danach (UCI, beginnt mit ihrer besten Antwort, darf leer sein; es
+ * zählen höchstens sechs Halbzüge), der Verlust in Bauerneinheiten, der
  * beste Zug der Engine vor dem Zug (UCI, für „passiver König“ und den ausgelassenen Schlag), der
  * Zug des Gegners davor in SAN (für „schlägt nicht zurück“).
  * Ausgabe: Satz und Markierungen, oder null, wenn keine Regel passt („ungenau“).
  * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? → „lässt die Drohung Dxe5+ stehen (gewinnt den
  * Bauern)“, roter Pfeil h5–e5, rotes Feld e5.
  * Sonderfall: Eine unlesbare Stellung oder ein unmöglicher Zug ergibt null.
+ * Warum die ganze Widerlegung (Konzept „Fehler mit Buchbezug“, Anhang B, 7.11.2026): Mit nur
+ * ihrem ersten Zug sah die Fehlererkennung kein Zurückschlagen; ein gewöhnlicher Abtausch (Lxf6
+ * exf6) erschien so als „Figur hängt“ oder „Bauer eingestellt“.
  */
 export function erklaereZug(
   vorherFen: string,
   danachFen: string,
   uci: string,
-  antwort: string,
+  widerlegung: readonly string[],
   verlust: number,
   bester: string | null = null,
   vorigerSan: string | null = null,
@@ -252,8 +280,9 @@ export function erklaereZug(
     verlust >= SCHLAG_AB_VERLUST ? ausgelassenerSchlag(vorherFen, uci, bester, vorigerSan) : null;
   // Der fehlende Rückschlag ist der Kern des Fehlers; ein anderer Schlag nur, wenn sonst nichts passt.
   if (schlag && vorigerSan?.includes("x")) return schlag;
-  const befund = fehlerbefundIn(lage, uci, antwort ? [antwort] : [], verlust, bester);
-  return erklaerungZu(befund, danachFen, antwort, uci) ?? schlag;
+  const folge = widerlegung[0] ? widerlegung.slice(0, WIDERLEGUNG_HALBZUEGE) : [];
+  const befund = fehlerbefundIn(lage, uci, folge, verlust, bester);
+  return erklaerungZu(befund, danachFen, folge[0] ?? "", uci) ?? schlag;
 }
 
 /** Die Fehlerart in Worten, wie das Buch sie nennt („eine Drohung ignoriert“), für Tests und PGN. */

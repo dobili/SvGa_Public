@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 6.11.2026, Version 0.3.52 (Linienknöpfe, 7.11.2026).
+Stand: 6.11.2026, Version 0.3.53 (Aussehen im Profil, Buchbezug der Fehler, 7.11.2026).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.52“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.53“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,18 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.53: Aussehen nur noch im Profil, Fehler mit Buchbezug (7.11.2026)
+
+- [ ] N2600. Profil → Einstellungen: Oben gibt es keine Brettvorschau mehr, nur die Zeile „Aussehen (Brett, Figuren,
+      Rahmen) im Profil wählen“. Ein Tipp führt zur Profilkarte „Dein Aussehen“ (bisher „Deine Extras“), Reiter
+      „Brett“ offen. Dort stehen alle Bretter, die freischaltbaren mit Schloss und Bedingung („Nacht und Gold“: „Mit
+      allen Orden der Buchteile“). „Grün“ antippen: Vorschau und jede Abbildung im Buch werden grün. Reiter „Figuren“
+      ebenso (etwa „Merida“; „Gold“ mit Schloss „Ab Stufe 5“). Der Schalter „Koordinaten“ steht unter den Brettern.
+- [ ] N2601. Auswertung einer Partie mit Fehler oder Patzer: Auf der Fehlerkarte der Zeitleiste steht unter „Besser war“
+      eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1, Schach-Röntgen-Regel)“. Tipp klappt den Satz
+      auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
+      Fehlt die Zeile, wo ein klarer Grund erkennbar ist? Bei „Verpasst“ gibt es nur die Zeile zum besseren Zug.
 
 ### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)
 
@@ -1043,6 +1055,14 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q16 Aussehen im Profil (7.11.2026, schon umgesetzt, Widerspruch genügt)
+
+- [ ] Q16-1. Die Karte heißt jetzt „Dein Aussehen“ statt „Deine Extras“, der Zähler „4 von 8 Extras“ bleibt.
+- [ ] Q16-2. Weitere Ideen für die Karte (nicht gebaut, sag Bescheid, was du willst): Farbe der Pfeile und
+      Feldmarkierungen (freischaltbar wie Konfetti), Farbe der Hervorhebung des letzten Zugs, Porträt-Hintergrund,
+      später „Zubehör“ aus der Meisterschaft als eigener Reiter, ein freischaltbares „Klangset“ (Holz, Klick). Nachtmodus,
+      Schriftgröße und Sprache bleiben in den Einstellungen, weil sie die ganze App betreffen.
 
 ### Q15 Deine Ideen vom 6.11.2026: Phasenkarten, Training planen, Empfehlungen
 

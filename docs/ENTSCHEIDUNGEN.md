@@ -4,6 +4,18 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 7.11.2026 – Version 0.3.53: Aussehen nur im Profil, Fehler mit Buchbezug (Teil 1)
+
+- **Aussehen (Wunsch des Autors):** Brett, Figuren und Koordinaten wählt man nur noch in der
+  Profilkarte „Dein Aussehen“ (Reiter Brett/Figuren zeigen alle freien und freischaltbaren
+  Stücke); in den Einstellungen führt eine Zeile dorthin. Brettstudio und Musterwahl entfallen.
+  Nachtmodus, Schriftgröße, Sprache bleiben in den Einstellungen (wirken auf die ganze App).
+- **Fehler mit Buchbezug (Konzept docs/KONZEPT_FEHLER_BUCHBEZUG.md, vom Autor freigegeben):**
+  Nebenbefund behoben (Fehlererkennung bekommt die ganze Widerlegung, kein Fehlalarm bei
+  normalem Abtausch); Warum-Zeilen W2–W10 auf den Karten der Zeitleiste mit „Üben“;
+  Erkennungsschicht F1–F10 und W1 (analyse/findekategorien*.ts, warumfalle.ts). Einbau der
+  Findezeilen, Messlauf und Startseiten-Empfehlung folgen in der nächsten Version.
+
 ## 7.11.2026 – Version 0.3.52: Linienknöpfe in der Zugfolgenleiste
 
 - **Wunsch des Autors:** Die Knöpfe „Besserer Zug“ und „Bestrafung“ unter dem Brett entfallen; die

@@ -45,11 +45,11 @@ export interface Momentbild {
    */
   readonly ziel?: Sprung;
   /**
-   * Das Urteil, zu dem die Karte eine Warum-Zeile sucht (Konzept „Fehler mit Buchbezug“ 4.1, seit
-   * 7.11.2026): bei Fehler, Patzer und der ersten klaren Abweichung; bei „Verpasst“ und den
-   * übrigen Momenten null.
+   * Das Urteil, zu dem die Karte Warum- und Findezeile sucht (Konzept „Fehler mit Buchbezug“ 4.1,
+   * seit 7.11.2026): bei Fehler, Patzer, Verpasst und der ersten klaren Abweichung; bei den
+   * übrigen Momenten null. Bei „Verpasst“ gibt es nur die Findezeile (spiel/buchzuege.ts).
    */
-  readonly warum: Zugurteil | null;
+  readonly buchbezug: Zugurteil | null;
 }
 
 /** Was die Darstellung braucht. */
@@ -62,7 +62,7 @@ export interface Darstellungsgrund {
 /** Klassen einer Antwort, die einen Fehler der Engine sicher genutzt haben. */
 const GENUTZT: ReadonlySet<Zugklasse> = new Set<Zugklasse>(["brillant", "stark", "bester"]);
 /** Ohne Moment: alles leer. */
-const LEER = { zusatz: "", besser: "", sprung: null, brett: false, warum: null } as const;
+const LEER = { zusatz: "", besser: "", sprung: null, brett: false, buchbezug: null } as const;
 
 /** Der Zug mit seinem Zeichen („2. g4??“). */
 function titelVon(g: Darstellungsgrund, index: number): string {
@@ -110,11 +110,10 @@ function reaktion(g: Darstellungsgrund, index: number): string {
 }
 
 /**
- * Das Urteil für die Warum-Zeile: bei „Verpasst“ keines, weil dort die Findezeile zählt und die
- * Warum-Zeile entfällt (Konzept 4.1).
+ * Das Urteil für Warum- und Findezeile. Bei „Verpasst“ entfällt die Warum-Zeile, dort zählt die
+ * Findezeile (Konzept 4.1); das regelt spiel/buchzuege.ts.
  */
-function warumVon(g: Darstellungsgrund, m: Moment): Zugurteil | null {
-  if (m.klasse === "verpasst") return null;
+function buchbezugVon(g: Darstellungsgrund, m: Moment): Zugurteil | null {
   return g.urteile.find((u) => u.index === m.index) ?? null;
 }
 
@@ -140,7 +139,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     sprung: sprungZu(g.eintrag, m.index),
     ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
-    warum: warumVon(g, m),
+    buchbezug: buchbezugVon(g, m),
   }),
   fehler: (g, m) => ({
     marke: m.klasse ?? "fehler",
@@ -154,7 +153,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     sprung: sprungZu(g.eintrag, m.index),
     ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
-    warum: warumVon(g, m),
+    buchbezug: buchbezugVon(g, m),
   }),
   engine: (g, m) => {
     const p = g.eintrag.partie;
@@ -170,7 +169,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
       besser: "",
       sprung: sprungNach(g.eintrag, m.index),
       brett: true,
-      warum: null,
+      buchbezug: null,
     };
   },
   ende: (g, m) => ({

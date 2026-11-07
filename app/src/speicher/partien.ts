@@ -18,6 +18,7 @@ import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
+import type { Buchkuerzelstand } from "../spiel/buchkuerzel";
 import type { Gegnerart, Partie, Spielhilfen } from "../spiel/partie";
 import type { Uhreinstellung } from "../spiel/uhr";
 import { mitGewerteterPartie, type Wertungspunkt } from "../spiel/wertung";
@@ -177,12 +178,27 @@ export function mitWerten(
   abstaende: readonly number[] = [],
   varianten: readonly (readonly string[])[] = [],
 ): Spielstand {
+  // Neue Werte machen alte Kürzel ungültig (spiel/buchkuerzel.ts); sie werden nachgerechnet.
   const partien = stand.partien.map((e) =>
-    e.partie.id === id ? { ...e, werte, beste, abstaende, varianten } : e,
+    e.partie.id === id ? { partie: e.partie, werte, beste, abstaende, varianten } : e,
   );
   const eintrag = partien.find((e) => e.partie.id === id);
   const wertung = eintrag ? mitGewerteterPartie(stand.wertung, eintrag) : stand.wertung;
   return { ...stand, partien, wertung };
+}
+
+/**
+ * Legt die Kürzel „Fehler mit Buchbezug“ zu einer ausgewerteten Partie (Format 10,
+ * spiel/buchkuerzel.ts). Sonderfall: Gibt es die Partie nicht mehr, bleibt alles, wie es war.
+ */
+export function mitBuchkuerzeln(
+  stand: Spielstand,
+  id: string,
+  buchbezug: Buchkuerzelstand,
+): Spielstand {
+  if (!stand.partien.some((e) => e.partie.id === id)) return stand;
+  const partien = stand.partien.map((e) => (e.partie.id === id ? { ...e, buchbezug } : e));
+  return { ...stand, partien };
 }
 
 /**

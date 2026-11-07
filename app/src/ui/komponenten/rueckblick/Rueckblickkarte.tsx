@@ -16,8 +16,10 @@
  * Seit „Weniger Text“ P13 (31.10.2026) steht oben ein Kopf mit Zugzeichen, Marke („Bester Zug“)
  * und der Veränderung der Bewertung als Pfeil mit Zahl (Urteilskopf.tsx); Sätze ohne weiteren
  * Inhalt und „Bewertung +1,5 → +1,6.“ stehen dort im ⓘ.
- * Abhängigkeiten: spiel/auswertung.ts, spiel/zuege.ts, i18n, Merkenbereich.tsx, rueckblicktyp.ts,
- * Urteilskopf.tsx.
+ * Seit dem 7.11.2026 steht unter „Besser war …“ ab „ungenau“ die Findezeile (Findehinweis.tsx,
+ * Konzept „Fehler mit Buchbezug“): mit welcher Idee des Buches der bessere Zug zu finden war.
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/zuege.ts, spiel/buchzuege.ts, i18n, Merkenbereich.tsx,
+ * rueckblicktyp.ts, Urteilskopf.tsx, Findehinweis.tsx.
  */
 import { useId, useState } from "react";
 import { sprache, t, zahlText } from "../../../i18n/sprache";
@@ -28,6 +30,8 @@ import type { Partie } from "../../../spiel/partie";
 import { MIT_BESSEREM, MIT_STRAFE, type Zweigzug } from "../../../spiel/nebenzweig";
 import { uciZuSan } from "../../../spiel/zuege";
 import { gewinnchanceVorNach, type Chance } from "../auswertung/gewinnchance";
+import { FINDE_KLASSEN } from "../../../spiel/buchzuege";
+import { Findehinweis } from "./Findehinweis";
 import { Merkenbereich } from "./Merkenbereich";
 import { Blatt } from "../auswertung/Blatt";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
@@ -160,6 +164,9 @@ export function Rueckblickkarte({
       {MIT_STRAFE.has(urteil.klasse) && <Nebenzweig zuege={strafZuege} art="strafe" wahl={zweig} />}
       {bester && MIT_BESSEREM.has(urteil.klasse) && (
         <Nebenzweig zuege={zweigZuege} art="besser" wahl={zweig} />
+      )}
+      {bester && FINDE_KLASSEN.has(urteil.klasse) && (
+        <Findehinweis rueckblick={rueckblick} partie={partie} urteil={urteil} />
       )}
       {phasenwechsel && (
         <p className="rueckblick-phase" data-testid="rueckblick-phase">

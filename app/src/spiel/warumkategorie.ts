@@ -8,15 +8,17 @@
  * der Bots); diese Datei ordnet ihr Ergebnis den Kategorien zu und wählt nach der Reihenfolge aus
  * Konzept 4.1 (Genaues vor Faustregel). W8 und W9 kommen nur ohne taktischen Grund, weil
  * fehlerbefundIn die Faustregeln erst nach allen taktischen Arten prüft; W10 nur im Endspiel. W1
- * (Falle aus dem Buch) braucht den Stellungsvergleich mit den Fallen und kommt später.
+ * (Falle aus dem Buch) prüft den genauen Stellungsvergleich mit den Fallen des Kapitels 4
+ * (analyse/warumfalle.ts) und steht vor allem anderen; ohne Fallenindex schweigt W1.
  * Rein: keine Engine, kein Speicher; die Widerlegung kommt aus der gespeicherten Auswertung.
  * Abhängigkeiten: engine/fehlerart.ts, engine/zugprobe.ts, spiel/buchbezug.ts, analyse/texte.ts,
- * training/taktikmotivwahl.ts (Motiv → Thema des Taktiktrainers), chessops.
+ * analyse/warumfalle.ts, training/taktikmotivwahl.ts (Motiv → Thema des Taktiktrainers), chessops.
  */
 import { normalizeMove } from "chessops/chess";
 import { makeFen } from "chessops/fen";
 import { makeSquare, parseUci } from "chessops/util";
 import { figurenname, zugtext } from "../analyse/texte";
+import { warumFalle, type Fallenindex } from "../analyse/warumfalle";
 import {
   fehlerbefundIn,
   lageVon,
@@ -41,6 +43,11 @@ export interface Warumbefund {
   readonly quelle: Textschluessel;
   /** Thema für „Üben“, genauer als die Tabelle (etwa „taktik:fesselung“); sonst das der Tabelle. */
   readonly thema: string | null;
+  /**
+   * Das Feld, um das es geht (hängende Figur bei W4, Schlagfeld bei W5), sonst nicht gesetzt.
+   * Damit lässt die Karte eine Findezeile weg, die dasselbe Feld meint (Konzept 4.1).
+   */
+  readonly feld?: string;
 }
 
 /** Was die Prüfung zu einem Zug braucht. */
@@ -55,6 +62,8 @@ export interface Warumeingabe {
   readonly verlust: number;
   /** Bester Zug der Engine vor dem Zug (UCI) oder null. */
   readonly bester: string | null;
+  /** Die Fallen des Kapitels 4 für W1 (analyse/warumfalle.ts); ohne Angabe schweigt W1. */
+  readonly fallenindex?: Fallenindex;
 }
 
 /** Alles, was die einzelnen Regeln lesen. */
@@ -115,6 +124,20 @@ function endetImMatt(p: Zugprobe, widerlegung: readonly string[]): boolean {
   return regeln.isCheckmate() && regeln.turn === ziehende;
 }
 
+/**
+ * W1 Falle aus dem Buch: Der Zug ist der Fehlzug einer Falle des Fallenkabinetts, in genau der
+ * Stellung des Buches. Regel: Kapitel 4, Fallenkabinett, Stopp-Moment.
+ */
+const falle: Regel = (f) => {
+  const index = f.e.fallenindex;
+  const treffer = index ? warumFalle(f.e.vorherFen, f.e.uci, index) : null;
+  if (!treffer) return null;
+  const { falle: name, stopp } = treffer.details;
+  return stopp
+    ? befundMit("W1", "buchbezug.W1.textStopp", { falle: name, abbildung: stopp })
+    : befundMit("W1", "buchbezug.W1.text", { falle: name });
+};
+
 /** W2 Matt zugelassen: eine Mattdrohung bleibt stehen, oder die Widerlegung setzt matt. */
 const mattZugelassen: Regel = (f) => {
   const { drohung } = f.befund;
@@ -161,7 +184,8 @@ const verrechnet: Regel = (f) => {
   if (f.p.geschlagen === null) return null;
   const schlag = f.lage.schlaege.find((s) => s.von === f.p.zug.from && s.nach === f.p.zug.to);
   if (!schlag || schlag.bilanz > VERRECHNET_BIS) return null;
-  return befundMit("W5", "buchbezug.W5.text", { feld: makeSquare(schlag.nach) });
+  const feld = makeSquare(schlag.nach);
+  return { ...befundMit("W5", "buchbezug.W5.text", { feld }), feld };
 };
 
 /**
@@ -173,11 +197,15 @@ const eingestellt: Regel = (f) => {
   if ((art !== "figurHaengen" && art !== "bauerEingestellt") || haengt === null) return null;
   const figur = f.p.danach.board.get(haengt);
   const name = figur ? figurenname({ feld: haengt, figur }) : makeSquare(haengt);
+  const feld = makeSquare(haengt);
   if (art === "bauerEingestellt") {
-    return befundMit("W4", "buchbezug.W4.textBauer", { figur: name }, "buchbezug.W4.quelleBauer");
+    const quelle = "buchbezug.W4.quelleBauer";
+    return { ...befundMit("W4", "buchbezug.W4.textBauer", { figur: name }, quelle), feld };
   }
-  if (haengt === f.p.zug.to) return befundMit("W4", "buchbezug.W4.textGezogen", { figur: name });
-  return befundMit("W4", "buchbezug.W4.textW1", { figur: name }, "buchbezug.W4.quelleW1");
+  if (haengt === f.p.zug.to)
+    return { ...befundMit("W4", "buchbezug.W4.textGezogen", { figur: name }), feld };
+  const quelle = "buchbezug.W4.quelleW1";
+  return { ...befundMit("W4", "buchbezug.W4.textW1", { figur: name }, quelle), feld };
 };
 
 /** W7 Taktik des Gegners übersehen, mit dem Motiv als Thema des Taktiktrainers. */
@@ -230,8 +258,9 @@ const endspielregel: Regel = (f) => {
   return f.lage.phase === "endspiel" && text ? befundMit("W10", text) : null;
 };
 
-/** Die Regeln in der Reihenfolge von WARUM_REIHENFOLGE (spiel/buchbezug.ts, ohne W1). */
+/** Die Regeln in der Reihenfolge von WARUM_REIHENFOLGE (spiel/buchbezug.ts). */
 const REGELN: readonly Regel[] = [
+  falle,
   mattZugelassen,
   drohungStehen(true),
   patt,
@@ -254,7 +283,7 @@ const REGELN: readonly Regel[] = [
  * (spiel/erklaerung.ts, widerlegungAus), sonst zählt kein Rückschlag.
  * Ausgabe: Kennung, Satz mit Werten, Fundstelle und Thema für „Üben“.
  * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? lässt Dxe5+ stehen → W3 „Die Drohung Dxe5+ stand
- * schon vor deinem Zug …“, Schach-Röntgen-Trainer.
+ * schon vor deinem Zug …“, Schach-Röntgen-Trainer. Abb. 4.13, 6. Sxd5?? → W1 Elefantenfalle.
  * Sonderfälle: unlesbare Stellung oder unmöglicher Zug → null; „ungenau“ ohne Regel → null.
  */
 export function warumKategorie(e: Warumeingabe): Warumbefund | null {

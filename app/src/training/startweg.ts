@@ -19,10 +19,12 @@ export const MERKER_STARTWEG = "startweg";
 
 /**
  * Ränge, die der Spielweg vorzieht (zwischen Wiederholung, Rang 10, und Tagesaufgabe, Rang 20):
- * Partie, Schwäche aus den Partien, schwaches Thema (meist Taktik) und Kurzplan.
+ * Partie, Muster und Schwäche aus den Partien, schwaches Thema (meist Taktik) und Kurzplan.
  */
 const VORRANG_SPIELEN: Readonly<Record<string, number>> = {
   partie: 12,
+  // Muster aus den Partien (Konzept „Fehler mit Buchbezug“ 4.3) vor der Phase, weil genauer.
+  muster: 12.5,
   phase: 13,
   thema: 14,
   kurzplan: 16,

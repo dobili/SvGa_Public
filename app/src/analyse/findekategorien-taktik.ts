@@ -119,10 +119,25 @@ function findemotiv(motive: readonly Motiv[]): Findemotiv | null {
 }
 
 /**
+ * Erklärt schon der Schlag des besten Zuges den ganzen Gewinn (Abtauschbilanz mindestens so groß)?
+ * Dann ist es ein guter Schlag (F4, Zählen), kein Motiv. Warum (Messlauf 7.11.2026): 25. Dxb2
+ * nahm eine ungedeckte Dame und hieß „Fesselung“, 19. Dxg4+ nahm einen Läufer und hieß
+ * „Kombination“.
+ */
+function schlagErklaertGewinn(lage: Findelage, gewinn: number): boolean {
+  const { best } = lage;
+  if (!best.geschlagen) return false;
+  const schlag = schlaege(lage.regeln).find(
+    (s) => s.von === best.zug.from && s.nach === best.zug.to,
+  );
+  return schlag !== undefined && schlag.bilanz >= gewinn;
+}
+
+/**
  * F3 Motiv im besseren Zug: Die Fortsetzung gewinnt mindestens zwei Bauern (Material nach der
  * zweiten Antwort des Gegners), und die Motiverkennung findet ein Motiv. Ein-Zug-Motive mit
  * Namen, Folge-Motive nur als „Kombination“ (Konzept 5.4). Die Widerlegung des gespielten Zuges
- * gewinnt nicht ebenso viel.
+ * gewinnt nicht ebenso viel, und der Gewinn ist nicht schon der Schlag selbst (dann F4).
  *
  * Regel: Kapitel 7, „Die zwölf Grundmotive“; Warnsignale W1, W2, W6.
  * Beispiel: Abb. 7.47, 1. Sc7+ Kd8 2. Sxa8 → Gabel, Gewinn 5.
@@ -133,6 +148,7 @@ export function f3Motiv(lage: Findelage): Findetreffer | null {
   if (gewinn < schwellen.motivGewinnAb) return null;
   const gespielt = materialgewinn(lage, lage.folgeGespielt, schwellen.motivMaterialNach);
   if (gespielt >= schwellen.motivGewinnAb) return null;
+  if (schlagErklaertGewinn(lage, gewinn)) return null;
   const san = lage.folgeBest.slice(0, schwellen.motivHalbzuege).map((h) => h.san);
   const befund = erkenneMotive(lage.regeln, san);
   const motiv = befund ? findemotiv(befund.motive) : null;

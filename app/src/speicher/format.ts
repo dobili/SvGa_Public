@@ -26,6 +26,11 @@
  * - Format 9: Marken ohne Nummer (Feld „ohneNummer“ je Stellung, „nummernAus“ je Variante, Wunsch
  *   des Autors vom 1.11.2026). Format 8 ist eine Teilmenge davon: Fehlt das Feld, tragen alle
  *   Marken Nummern wie bisher; umgewandelt wird nichts.
+ * - Format 10: Kürzel „Fehler mit Buchbezug“ je ausgewerteter Partie (Feld „buchbezug“ im
+ *   Partieeintrag, spiel/buchkuerzel.ts, Konzept docs/KONZEPT_FEHLER_BUCHBEZUG.md 4.2). Format 9
+ *   ist eine Teilmenge: Fehlt das Feld, rechnet die App die Kürzel im Leerlauf nach
+ *   (useBuchkuerzelNachtrag); umgewandelt wird nichts. Eine ältere App lehnt Format 10 als
+ *   „neuer“ ab und hebt die Daten auf.
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), training/variationen*
  * (Varianten), speicher/partien.ts.
@@ -46,7 +51,7 @@ import type { Variation } from "../training/variationen";
 import { variationenAus } from "../training/variationenLesen";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 9;
+export const SCHEMA_VERSION = 10;
 /** Bis zu dieser Version gab es acht Stufen (Umrechnung beim Laden). */
 const LETZTE_ACHT_STUFEN = 5;
 /** Bis zu dieser Version gab es kein Tagesprotokoll (Nachtrag beim Laden). */

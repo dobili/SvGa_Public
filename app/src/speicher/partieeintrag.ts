@@ -6,8 +6,9 @@
  * Steht er in einer eigenen Datei, benutzen sich speicher/partien.ts und spiel/wertung.ts nicht
  * mehr gegenseitig (Ordnung im Code, docs/codefuehrer/8-verbesserungen.md). Von außen geht der
  * Import weiter über speicher/partien.ts, das den Typ weiterreicht.
- * Abhängigkeiten: spiel/partie.ts (Typ).
+ * Abhängigkeiten: spiel/partie.ts, spiel/buchkuerzel.ts (Typen).
  */
+import type { Buchkuerzelstand } from "../spiel/buchkuerzel";
 import type { Partie } from "../spiel/partie";
 
 /** Eine beendete Partie mit ihrer Auswertung. */
@@ -28,4 +29,9 @@ export interface Partieeintrag {
    * Auswertungen.
    */
   readonly varianten: readonly (readonly string[])[];
+  /**
+   * Kürzel „Fehler mit Buchbezug“ je Zug des Lesers (seit Format 10, spiel/buchkuerzel.ts), einmal
+   * nach der Auswertung gerechnet; fehlt bei älteren Partien und wird dann nachgerechnet.
+   */
+  readonly buchbezug?: Buchkuerzelstand;
 }

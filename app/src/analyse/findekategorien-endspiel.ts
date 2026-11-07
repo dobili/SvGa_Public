@@ -71,7 +71,7 @@ function datenbankEntscheidet(lage: Findelage): boolean {
  * F6 Opposition und Schlüsselfelder: reines Bauernendspiel, der beste Zug ist ein Königszug, der
  * die Opposition nimmt oder ein Schlüsselfeld betritt. Bei König und Bauer gegen König zeigt die
  * Datenbank, dass nur der beste Zug das Ergebnis hält; mit mehr Bauern erfüllt der gespielte Zug
- * die Regel nicht und verliert mindestens einen Bauern.
+ * die Regel nicht, verliert mindestens einen Bauern, und der Gegner hat keinen Freibauern.
  *
  * Regel: Kapitel 8, Regel 2 („Wer die Opposition hat …“) und Schlüsselfelder.
  * Beispiel: Abb. 8.23 (Kg2, Bd2 gegen Kf7): Nur 1. Kf3! (Fernopposition) gewinnt; 1. Kg3 nicht.
@@ -85,6 +85,10 @@ export function f6Opposition(lage: Findelage): Findetreffer | null {
   if (!datenbank) {
     if (lage.verlust < lage.schwellen.oppositionVerlustAb) return null;
     if (koenigsidee(lage, lage.gespielt) !== null) return null;
+    // Hat der Gegner einen Freibauern, entscheidet meist das Wettrennen, nicht die Opposition
+    // (Messlauf 7.11.2026: „Kg7 nimmt die Opposition“, während der f-Bauer auf f2 stand).
+    const fremde = bauernschwaechen(lage.regeln.board, gegner(lage.seite)).freibauern;
+    if (fremde.length > 0) return null;
   }
   const feld = makeSquare(lage.best.zug.to);
   return { kennung: "F6", details: { zug: lage.best.san, feld, idee, datenbank } };
@@ -151,7 +155,9 @@ export function f7Freibauer(lage: Findelage): Findetreffer | null {
   const zug = best.san;
   if (laeuftDurch(lage, best) && !laeuftDurch(lage, gespielt))
     return { kennung: "F7", details: { zug, feld: makeSquare(best.zug.to), idee: "freibauer" } };
-  if (wandeltUm(lage, lage.folgeBest) && !wandeltUm(lage, lage.folgeGespielt))
+  // Wandelt der gespielte Zug selbst um, erfüllt er die Idee ebenso (Messlauf 7.11.2026).
+  const umgewandelt = gespielt.zug.promotion !== undefined;
+  if (!umgewandelt && wandeltUm(lage, lage.folgeBest) && !wandeltUm(lage, lage.folgeGespielt))
     return { kennung: "F7", details: { zug, idee: "umwandlung" } };
   if (best.figur.role !== "king") return null;
   const verpasst = verpassteQuadrate(gespielt, eingeholte(lage, best));

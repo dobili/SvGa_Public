@@ -20,6 +20,7 @@ export function Dialog({
   wirkungen,
   variablen,
   heldname,
+  beiKnoten,
   beiEnde,
 }: {
   readonly json: string;
@@ -27,6 +28,8 @@ export function Dialog({
   readonly wirkungen: Wirkungen;
   readonly variablen: Dialogvariablen;
   readonly heldname: string;
+  /** Ein Knoten der Geschichte wurde erreicht (für Quests), auch der Startknoten. */
+  readonly beiKnoten: (knoten: string) => void;
   readonly beiEnde: (variablen: Dialogvariablen) => void;
 }) {
   // Die Geschichte lebt, solange der Dialog offen ist; die Oberwelt baut den Dialog je Knoten neu
@@ -39,9 +42,21 @@ export function Dialog({
   const [letzteZeile, setzeLetzteZeile] = useState<Dialogschritt | null>(() =>
     schritt.art === "zeile" ? schritt : null,
   );
+  const [gemeldeterKnoten, setzeGemeldetenKnoten] = useState<string | null>(null);
+
+  /** Meldet den aktuellen Knoten einmal, sobald er sich ändert. */
+  const meldeKnoten = () => {
+    const knoten = geschichte.knoten();
+    if (knoten && knoten !== gemeldeterKnoten) {
+      setzeGemeldetenKnoten(knoten);
+      beiKnoten(knoten);
+    }
+  };
 
   const weiter = () => {
+    meldeKnoten();
     const naechster = geschichte.weiter();
+    meldeKnoten();
     if (naechster.art === "ende") {
       beiEnde(geschichte.variablen());
       return;

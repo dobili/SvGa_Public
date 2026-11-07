@@ -105,6 +105,8 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     szene = (INHALTE / "dialoge" / "de" / "maple-falls-dachboden.ink").read_text(encoding="utf-8")
     assert "=== ambrose_erwacht ===" in szene
     assert 'beginnePartie("mapleFalls.ersteLektion")' in szene
+    # Belohnungen kommen aus der Quest, nicht doppelt aus dem Dialog.
+    assert 'gibKarte("fingerzeig")' not in szene
     karte = json.loads((INHALTE / "karten" / "maple-falls-dachboden.json").read_text(encoding="utf-8"))
     assert karte["width"] * karte["height"] == len(karte["layers"][0]["data"])
     objekte = next(e for e in karte["layers"] if e["type"] == "objectgroup")

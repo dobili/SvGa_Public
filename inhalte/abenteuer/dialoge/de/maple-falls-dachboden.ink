@@ -58,8 +58,8 @@ Und du, {held}, hältst einen König wie einen Suppenlöffel. #sprecher:ambrose
 === erste_lektion ===
 Wir fangen vorne an. Nicht mit Tricks. Mit der einen Frage, die jeder Zug beantworten muss: Was hängt? #sprecher:ambrose
 Nimm das hier. Es ist kein Zauber. Es ist ein Fingerzeig. #sprecher:ambrose #klang:karte
-~ gibKarte("fingerzeig")
-~ setzeSzene("akt1.ambroseErwacht")
+// Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
+// Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest.
 Und jetzt: Du gegen mich. Nur ein paar Züge. Ich will sehen, wie du denkst. #sprecher:ambrose
 * [„Jetzt?“]
     Die Zeit, in der ich warten konnte, ist vorbei. #sprecher:ambrose

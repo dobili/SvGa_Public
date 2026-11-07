@@ -4,6 +4,22 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 7.11.2026 – Version 0.3.54: Fehler mit Buchbezug vollständig
+
+- **Findezeilen F1–F10** (Glühbirne) auf den Karten der Zeitleiste und im Rückblick Zug für Zug
+  (ab „?!“), W1 „Falle aus dem Buch“ in der Warum-Erkennung. Zugeklappt nur Kurzname und Kapitel
+  (Höhe der Zeitleiste bei 320 px), aufgeklappt Satz mit Fundstelle. Doppeltes entfällt (gleicher
+  Trainer und gleiches Thema), ein „Üben“ je Karte, das der ersten Zeile.
+- **Messlauf** an 597 Lichess-Partien (12 509 Fehlzüge): 56 % der Fehler, Patzer und Verpasst
+  bekommen eine Kategorie, 8,6 ms je Fehlzug. Schwellen nach Fehlalarmen nachgestellt (F3 nicht,
+  wenn der Schlag selbst gewinnt; F10 nur bis 5 freie Felder und nur ruhige Züge; F9/F10 nie bei
+  Patzer/Verpasst; F6 ohne Datenbank nicht gegen gegnerischen Freibauern). Bericht
+  `docs/MESSUNG_BUCHBEZUG.md`.
+- **Speicherung:** Kategorien je Partie (Feld `buchbezug` mit Regelversion), SCHEMA_VERSION erhöht;
+  fehlende Kürzel rechnet die App im Leerlauf nach.
+- **Startseite:** Vorschlag „Muster aus deinen Partien“ (ab 5 ausgewerteten Partien, Kategorie in
+  ≥ 3 Partien und ≥ 30 %), ruht nach dem Üben bis zur nächsten Partie.
+
 ## 7.11.2026 – Version 0.3.53: Aussehen nur im Profil, Fehler mit Buchbezug (Teil 1)
 
 - **Aussehen (Wunsch des Autors):** Brett, Figuren und Koordinaten wählt man nur noch in der

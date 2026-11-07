@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 6.11.2026, Version 0.3.53 (Aussehen im Profil, Buchbezug der Fehler, 7.11.2026).
+Stand: 6.11.2026, Version 0.3.54 (Fehler mit Buchbezug vollständig, 7.11.2026).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.53“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.54“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,6 +33,19 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
+
+- [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
+      war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
+      der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
+      und Glühbirnen-Zeile dasselbe (gleicher Trainer, gleiches Thema), steht nur die Warum-Zeile da.
+- [ ] N2603. Im Rückblick Zug für Zug zu einem Zug mit „?!“ oder „?“ gehen: Unter „Besser war …“ steht die Glühbirnen-
+      Zeile mit Kapitel; aufgeklappt gibt es einen eigenen Knopf „Üben“. Bei „gut“ und „sehr gut“ erscheint sie nie.
+- [ ] N2604. Nach mindestens 5 ausgewerteten Partien, in denen in 3 oder mehr derselbe Fehler vorkam, zeigt die Karte
+      „Heute“ eine Kachel wie „Drohung stehen gelassen · 3 von 5 Partien · Kapitel 1“. Der Knopf öffnet den Trainer; nach
+      dem Üben verschwindet die Kachel bis zur nächsten Partie. (Ältere Partien bekommen die Kürzel im Leerlauf
+      nachberechnet.)
+
 ### Neu in 0.3.53: Aussehen nur noch im Profil, Fehler mit Buchbezug (7.11.2026)
 
 - [ ] N2600. Profil → Einstellungen: Oben gibt es keine Brettvorschau mehr, nur die Zeile „Aussehen (Brett, Figuren,
@@ -41,8 +54,8 @@ Teil fertig ist.
       allen Orden der Buchteile“). „Grün“ antippen: Vorschau und jede Abbildung im Buch werden grün. Reiter „Figuren“
       ebenso (etwa „Merida“; „Gold“ mit Schloss „Ab Stufe 5“). Der Schalter „Koordinaten“ steht unter den Brettern.
 - [ ] N2601. Auswertung einer Partie mit Fehler oder Patzer: Auf der Fehlerkarte der Zeitleiste steht unter „Besser war“
-      eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1, Schach-Röntgen-Regel)“. Tipp klappt den Satz
-      auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
+      eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1)“. Tipp klappt den Satz mit der ganzen
+      Fundstelle auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
       Fehlt die Zeile, wo ein klarer Grund erkennbar ist? Bei „Verpasst“ gibt es nur die Zeile zum besseren Zug.
 
 ### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)

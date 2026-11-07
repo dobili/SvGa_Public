@@ -7,8 +7,25 @@
       "typ": "haupt",
       "ort": "mapleFalls",
       "haupt": true,
-      "start": { "art": "ort", "karte": "mapleFalls.dachboden" },
+      "start": {
+        "art": "ort",
+        "karte": "mapleFalls.wohnzimmer"
+      },
       "schritte": [
+        {
+          "text": "quest.dasBrett.ankunft",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.ankunft"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.ankunft"
+            }
+          ]
+        },
         {
           "text": "quest.dasBrett.schritt1",
           "ereignis": {
@@ -23,8 +40,15 @@
             "knoten": "maple-falls-dachboden.ambrose_erwacht"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.ambroseErwacht" },
-            { "art": "karte", "karte": "fingerzeig" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.ambroseErwacht"
+            },
+            {
+              "art": "karte",
+              "karte": "fingerzeig"
+            }
           ]
         },
         {
@@ -35,8 +59,160 @@
             "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.erstePartie" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.erstePartie"
+            }
           ]
+        },
+        {
+          "text": "quest.dasBrett.lektion",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-dachboden.nach_erster_partie"
+          }
+        },
+        {
+          "text": "quest.dasBrett.abend",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.erster_abend"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.ersterAbend"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.viertesBrett",
+      "titel": "quest.viertesBrett.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-aussen.juno_trifft"
+      },
+      "voraussetzung": ["mapleFalls.dasBrett"],
+      "schritte": [
+        {
+          "text": "quest.viertesBrett.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-clubraum.coach_erstes_treffen"
+          }
+        },
+        {
+          "text": "quest.viertesBrett.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "mapleFalls.reiheSam"
+          }
+        },
+        {
+          "text": "quest.viertesBrett.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "mapleFalls.reiheJuno"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "gefahrenradar"
+            }
+          ]
+        },
+        {
+          "text": "quest.viertesBrett.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "mapleFalls.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        },
+        {
+          "text": "quest.viertesBrett.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-clubraum.coach_nach_sieg"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.besserWerden",
+      "titel": "quest.besserWerden.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-clubraum.victor_trifft"
+      },
+      "voraussetzung": ["mapleFalls.viertesBrett"],
+      "schritte": [
+        {
+          "text": "quest.besserWerden.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-clubraum.victor_trifft"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.victorTrifft"
+            }
+          ]
+        },
+        {
+          "text": "quest.besserWerden.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "mapleFalls.victor",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.besserWerden.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-clubraum.victor_ambrose"
+          }
+        },
+        {
+          "text": "quest.besserWerden.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.aufbruch"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.aufbruch"
+            }
+          ]
+        },
+        {
+          "text": "quest.besserWerden.schritt5",
+          "ereignis": {
+            "art": "ort",
+            "karte": "mapleFalls.park",
+            "ausloeser": "bushaltestelle"
+          }
         }
       ]
     },
@@ -46,14 +222,24 @@
       "typ": "begegnung",
       "ort": "mapleFalls",
       "haupt": false,
-      "start": { "art": "dialog", "knoten": "maple-falls-clubraum.sam_klagt" },
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-clubraum.sam_klagt"
+      },
       "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
         {
           "text": "quest.samsDame.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "mapleFalls.todsuenden" },
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "mapleFalls.todsuenden"
+          },
           "wirkungen": [
-            { "art": "steckbrief", "gegner": "mapleFalls.sam", "zeile": 0 },
+            {
+              "art": "steckbrief",
+              "gegner": "mapleFalls.sam",
+              "zeile": 0
+            },
             {
               "art": "zustand",
               "gegner": "mapleFalls.coachDelgado",
@@ -69,7 +255,11 @@
             "ausgang": ["sieg"]
           },
           "wirkungen": [
-            { "art": "karte", "karte": "zweiteChance", "anzahl": 2 }
+            {
+              "art": "karte",
+              "karte": "zweiteChance",
+              "anzahl": 2
+            }
           ]
         }
       ]
@@ -80,7 +270,10 @@
       "typ": "raetsel",
       "ort": "mapleFalls",
       "haupt": false,
-      "start": { "art": "dialog", "knoten": "maple-falls-park.bibliothekar" },
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-park.bibliothekar_sucht"
+      },
       "schritte": [
         {
           "text": "quest.verlorenesBrett.schritt1",
@@ -88,8 +281,65 @@
             "art": "ort",
             "karte": "mapleFalls.park",
             "ausloeser": "parkbank"
+          }
+        },
+        {
+          "text": "quest.verlorenesBrett.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "mapleFalls.parkbankRaetsel"
+          }
+        },
+        {
+          "text": "quest.verlorenesBrett.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-park.bibliothekar_brief"
           },
-          "wirkungen": [{ "art": "fragment", "halbzug": 0 }]
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 0
+            },
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.lilysSpringer",
+      "titel": "quest.lilysSpringer.titel",
+      "typ": "hilfe",
+      "ort": "mapleFalls",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-aussen.lily_fragt"
+      },
+      "voraussetzung": ["mapleFalls.dasBrett"],
+      "schritte": [
+        {
+          "text": "quest.lilysSpringer.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "mapleFalls.springerLily"
+          }
+        },
+        {
+          "text": "quest.lilysSpringer.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-aussen.lily_danke"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
         }
       ]
     }

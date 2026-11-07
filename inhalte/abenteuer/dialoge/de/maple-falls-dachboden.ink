@@ -19,12 +19,22 @@ EXTERNAL beginnePartie(begegnung)
 VAR held = "Du"
 VAR ambroseVertrauen = 0
 VAR brettBeruehrt = false
+// Ergänzt mit dem Auftrag mittel-1 (Dialoge Maple Falls): ausgangErsteLektion, reiheSamBestanden,
+// reiheJunoBestanden und nadelMapleFalls setzt die Hülle nach Partie, Aufgabenrunde und Clubkampf
+// (Vorschlag im Bericht); die übrigen setzt Ink selbst.
+VAR ersteLektionBesprochen = false
+VAR clubBeigetreten = false
+VAR kenntHale = false
+VAR ausgangErsteLektion = ""
+VAR reiheSamBestanden = false
+VAR reiheJunoBestanden = false
+VAR nadelMapleFalls = 0
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
 { brettBeruehrt:
     Das alte Brett. Die Figuren stehen noch so, wie du sie verlassen hast. #sprecher:erzaehler
-    -> ambrose_wartet
+    -> ambrose
 }
 * [Die Decke wegziehen] -> brett_beruehren
 * [Lieber nicht anfassen]
@@ -78,4 +88,54 @@ Nun? Hast du das Brett nur zum Anschauen hochgetragen? #sprecher:ambrose
     -> partie_beginnt
 * [„Später.“]
     Später. Das Wort, mit dem mein Rivale mich in den Tod warten ließ. #sprecher:ambrose #stimmung:bitter
+    -> END
+
+// Ab hier ergänzt (Story-Bibel, Szene 3 Nachgespräch und Gespräche allein mit Ambrose).
+
+=== ambrose ===
+{
+- ausgangErsteLektion == "": -> ambrose_wartet
+- not ersteLektionBesprochen: -> nach_erster_partie
+- else: -> ambrose_rat
+}
+
+=== nach_erster_partie ===
+~ ersteLektionBesprochen = true
+{ausgangErsteLektion:
+- "sieg": Du hast gewonnen. Glück ist der Anfang jeder Begabung. Der Rest ist Arbeit. #sprecher:ambrose #stimmung:stolz
+- "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose
+- else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose
+}
+Nun zu der Karte, die ich dir gab. Der Fingerzeig. #sprecher:ambrose
+In einer Partie zeigt er dir die Figur, die arbeiten will. Welcher Zug, das findest du selbst. #sprecher:ambrose
+Einmal je Partie darfst du ihn spielen. Er geht nicht verloren. #sprecher:ambrose
+* [„Und was ist mit der Frage von vorhin?“]
+    Was hängt? Gut, dass du fragst. #sprecher:ambrose
+* [„Kann ich nicht einfach immer den Fingerzeig nehmen?“]
+    Dann lernst du nur, auf Finger zu sehen. Hör lieber zu. #sprecher:ambrose #stimmung:streng
+- Eine Figur hängt, wenn sie angegriffen wird und niemand sie schützt. #sprecher:ambrose
+Oder wenn mehr Figuren sie angreifen, als sie verteidigen. Zähle beide Seiten. Immer. #sprecher:ambrose
+Wer mehr wissen will: Kapitel 1, Abschnitt 1.4. Ein Buch, das ich gern geschrieben hätte. #sprecher:ambrose
+* [„Zählen. Verstanden.“]
+    ~ ambroseVertrauen = ambroseVertrauen + 1
+    Das sagen viele. Wir werden sehen. #sprecher:ambrose
+* [„Das klingt langweilig.“]
+    Langweilig ist ein verlorener Turm. Zählen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
+- Deine Mutter erwähnte ein Schachteam an deiner Schule. #sprecher:ambrose
+Geh hin. Nimm mich mit. Ich will sehen, wie man heute spielt. #sprecher:ambrose
+-> END
+
+=== ambrose_rat ===
+{
+- not clubBeigetreten: Die Schule, {held}. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
+- not (reiheSamBestanden and reiheJunoBestanden): Erst die Aufgaben deiner Mitspieler. Wer die Aufgaben scheut, scheut auch den Gegner. #sprecher:ambrose
+- nadelMapleFalls == 0: Die Trainerin wartet. Und denk daran: Sie sieht nur ihren eigenen Angriff. #sprecher:ambrose
+- not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
+- else: Cedar Creek? Den Namen habe ich nie gehört. Ich war allerdings eine Weile verhindert. #sprecher:ambrose
+}
++ [„Erzähl mir von früher.“]
+    {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose
+    -> END
++ [„Bis später.“]
+    Später. Ja. Geh nur. #sprecher:ambrose #stimmung:bitter
     -> END

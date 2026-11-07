@@ -7,7 +7,7 @@ import { expect, test } from "@playwright/test";
 import {
   klappeAbschnittAuf,
   oeffneAbbildung,
-  oeffneEinstellungen,
+  oeffneAussehen,
   oeffneEinstellungsseite,
   oeffneProfil,
   starteImBrowser,
@@ -127,12 +127,8 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
     localStorage.setItem("svga.lernstand", '{"1":[0]}');
   });
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
-  await expect(
-    page
-      .getByRole("radiogroup", { name: "Brettfarbe" })
-      .getByRole("radio", { name: "Ahorn & Nussbaum" }),
-  ).toHaveAttribute("aria-checked", "true");
+  let karte = await oeffneAussehen(page, "Brett");
+  await expect(karte.getByTestId("wahl-brett-holz")).toHaveAttribute("aria-pressed", "true");
   await oeffneProfil(page);
   await expect(page.getByTestId("ich-lernziele")).toHaveText(/^1 von \d+$/);
   const merker = await page.evaluate(() => [
@@ -141,12 +137,8 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   ]);
   expect(merker).toEqual([null, null]);
   await page.reload();
-  await oeffneEinstellungen(page);
-  await expect(
-    page
-      .getByRole("radiogroup", { name: "Brettfarbe" })
-      .getByRole("radio", { name: "Ahorn & Nussbaum" }),
-  ).toHaveAttribute("aria-checked", "true");
+  karte = await oeffneAussehen(page, "Brett");
+  await expect(karte.getByTestId("wahl-brett-holz")).toHaveAttribute("aria-pressed", "true");
 });
 
 test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async ({
@@ -157,9 +149,9 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await starteImBrowser(page);
   await oeffneAbbildung(page, "2.1", "2.1");
   await page.clock.runFor(VERWEILZEIT_MS);
-  await oeffneEinstellungen(page);
-  await page.getByRole("radio", { name: "Grün", exact: true }).click();
-  await page.getByRole("button", { name: /^Deine Daten/ }).click();
+  const karte = await oeffneAussehen(page, "Brett");
+  await karte.getByTestId("wahl-brett-gruen").click();
+  await oeffneEinstellungsseite(page, "Deine Daten");
   await expect(page.getByTestId("letzte-sicherung")).toHaveText("Noch keine Sicherung angelegt.");
   const [download] = await Promise.all([
     page.waitForEvent("download"),
@@ -185,11 +177,8 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await zweite.screenshot({ path: "test-results/bilder/sicherung-rueckfrage.png", fullPage: true });
   await frage.getByRole("button", { name: "Ja, Daten ersetzen" }).click();
   await expect(zweite.getByText("Sicherung eingespielt.")).toBeVisible();
-  await zweite.locator(".kopfzeile").getByRole("button", { name: "Einstellungen" }).click();
-  await expect(zweite.getByRole("radio", { name: "Grün", exact: true })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
+  const zweiteKarte = await oeffneAussehen(zweite, "Brett");
+  await expect(zweiteKarte.getByTestId("wahl-brett-gruen")).toHaveAttribute("aria-pressed", "true");
   await oeffneProfil(zweite);
   await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await zweite.reload();
@@ -220,12 +209,9 @@ test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", as
     buffer: Buffer.from(leer),
   });
   await page.getByRole("button", { name: "Abbrechen" }).click();
-  await page.locator(".kopfzeile").getByRole("button", { name: "Einstellungen" }).click();
-  const brettfarben = page.getByRole("radiogroup", { name: "Brettfarbe" });
-  await expect(brettfarben.getByRole("radio", { name: "wie im Buch" })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
+  // Die abgebrochene Sicherung hat nichts geändert: Das Brett bleibt „wie im Buch“.
+  const karte = await oeffneAussehen(page, "Brett");
+  await expect(karte.getByTestId("wahl-brett-buch")).toHaveAttribute("aria-pressed", "true");
 });
 
 /** Das Löschen der Datenbanken dauert unter Last (parallele Tests) gelegentlich länger als 5 s. */

@@ -1,8 +1,8 @@
 /**
  * Texte der Extras (Gamifizierung P7): Name eines Extras und Text seiner Bedingung.
  *
- * Rolle im Gesamtbild: Profilkarte „Deine Extras“ und Kacheln der Einstellungen zeigen dieselben
- * Namen und Bedingungen; die Texte stehen unter den Vorsilben „extras.“ (Namen, Bedingungen) und
+ * Rolle im Gesamtbild: Die Profilkarte „Dein Aussehen“ (Kacheln, Vorschau oben) zeigt diese Namen
+ * und Bedingungen; die Texte stehen unter den Vorsilben „extras.“ (Namen, Bedingungen) und
  * „extrasneu.“ (Kurznamen der Kacheln, Reiter; Gestaltung vom 31.10.2026) in den Sprachdateien.
  * Fehlt einem neuen Extra der Kurzname oder einer neuen Art der Reitertext, gilt der lange Name
  * bzw. die Kennung der Art: Neues erscheint also auch ohne Text, nur weniger schön.

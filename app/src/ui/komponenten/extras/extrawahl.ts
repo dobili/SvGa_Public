@@ -7,12 +7,17 @@
  * dem Gerät (kein neues Speicherfeld, Format gesperrt), ebenso der Titel unter dem Namen (P3).
  * Eine neue Art (etwa Zubehör) bekommt hier eine Zeile in `EXTRAWAHL`; die Profilkarte zeigt sie
  * dann mit eigenem Reiter, in der Vorschau oben und mit „Ablegen“ (seit 31.10.2026).
+ * Seit „Aussehen im Profil“ (Wunsch des Autors, 7.11.2026) wählt man Brett und Figuren nur noch
+ * in der Profilkarte: `grundwerte` nennt die immer freien Werte einer Art (alle Brettfarben und
+ * Figurensätze, die kein Extra sind), `Zusatz` eine Zeile unter den Kacheln (Koordinaten beim
+ * Brett). Ein neues Brett in speicher/format.ts erscheint so von selbst in der Karte.
  * Abhängigkeiten: training/extras.ts, app/einstellungen.ts, app/merker.ts, app/konfetti.ts,
- * speicher/format.ts (Standard der Einstellungen), i18n.
+ * speicher/format.ts (Standard und Listen der Einstellungen), Koordinatenschalter.tsx, i18n.
  */
-import { useSyncExternalStore } from "react";
+import { useSyncExternalStore, type ComponentType } from "react";
 import {
   aendereEinstellungen,
+  BILDSAETZE,
   useEinstellungen,
   type Brettfarben,
   type Einstellungen,
@@ -21,8 +26,9 @@ import {
 import { MERKER_KONFETTI } from "../../../app/konfetti";
 import { beobachteMerker, liesMerker, schreibeMerker } from "../../../app/merker";
 import { istTextschluessel, t } from "../../../i18n/sprache";
-import { STANDARD_EINSTELLUNGEN } from "../../../speicher/format";
-import type { Extraart } from "../../../training/extras";
+import { BRETTARTEN, STANDARD_EINSTELLUNGEN } from "../../../speicher/format";
+import { extraZu, type Extraart } from "../../../training/extras";
+import { Koordinatenschalter } from "./Koordinatenschalter";
 
 /** Merker des Porträtrahmens: „bronze“, „silber“, „gold“; fehlt er, gibt es keinen Rahmen. */
 export const MERKER_RAHMEN = "portraetrahmen";
@@ -49,11 +55,23 @@ interface Extrawahl {
   readonly waehle: (wert: string) => void;
   /** Name eines Werts, der kein Extra ist (etwa „holz“ → „Holz“, „app“ → „Farben der App“). */
   readonly name: (wert: string) => string;
+  /** Immer freie Werte, die vor den Extras als Kacheln stehen (Brett: „wie im Buch“, „Grün“ …). */
+  readonly grundwerte?: readonly string[];
+  /** Eine Zeile unter den Kacheln dieser Art (Brett: Schalter „Koordinaten“). */
+  readonly Zusatz?: ComponentType;
 }
 
-/** Text eines Schlüssels aus Vorsilbe und Wert, sonst der Wert selbst. */
-function textOder(vorsilbe: string, wert: string): string {
-  const schluessel = `${vorsilbe}${wert}`;
+/** Die Werte einer Art ohne die, die ein Extra sind. Beispiel: Bretter ohne „nacht-gold“. */
+function ohneExtras(art: Extraart, werte: readonly string[]): readonly string[] {
+  return werte.filter((wert) => !extraZu(art, wert));
+}
+
+/**
+ * Text eines Schlüssels, sonst der Wert selbst. Der Schlüssel steht als Vorlage im Aufruf, damit
+ * die Prüfung auf ungenutzte Texte (i18n/ungenutzt.test.ts) ihn findet.
+ * Beispiel: („einstellungen.brettfarben.holz“, „holz“) → „Ahorn & Nussbaum“.
+ */
+function textOder(schluessel: string, wert: string): string {
   return istTextschluessel(schluessel) ? t(schluessel) : wert;
 }
 
@@ -73,7 +91,9 @@ export const EXTRAWAHL: readonly Extrawahl[] = [
     ort: "zeile",
     lies: (e) => e.brettfarben,
     waehle: (wert) => aendereEinstellungen({ brettfarben: wert as Brettfarben }),
-    name: (wert) => textOder("einstellungen.brettfarben.", wert),
+    name: (wert) => textOder(`einstellungen.brettfarben.${wert}`, wert),
+    grundwerte: ohneExtras("brett", BRETTARTEN),
+    Zusatz: Koordinatenschalter,
   },
   {
     art: "figuren",
@@ -81,7 +101,8 @@ export const EXTRAWAHL: readonly Extrawahl[] = [
     ort: "zeile",
     lies: (e) => e.figurensatz,
     waehle: (wert) => aendereEinstellungen({ figurensatz: wert as Figurensatz }),
-    name: (wert) => textOder("einstellungen.figurensatz.", wert),
+    name: (wert) => textOder(`einstellungen.figurensatz.${wert}`, wert),
+    grundwerte: ohneExtras("figuren", ["buch", ...BILDSAETZE]),
   },
   {
     art: "konfetti",

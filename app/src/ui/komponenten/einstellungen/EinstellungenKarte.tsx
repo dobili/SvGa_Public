@@ -1,11 +1,11 @@
 /**
- * Karte „Einstellungen“ unter der Brettvorschau: die übrigen Einstellungen in drei Reitern
+ * Karte „Einstellungen“ unter der Zeile zum Aussehen: die Einstellungen in drei Reitern
  * (Bedienung, Anzeige, Hilfe), je Einstellung eine Zeile.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
  * Auflage des Buches, …“. Seit dem Entwurf K2 „Brettvorschau oben“ (Wahl des Autors, 31.10.2026):
- * - Brett (Farben, Figuren, Koordinaten) steht nicht mehr in einem Reiter, sondern groß oben
- *   (Brettstudio.tsx),
+ * - Brett (Farben, Figuren, Koordinaten) steht nicht mehr hier, sondern seit dem Wunsch des
+ *   Autors vom 7.11.2026 nur in der Profilkarte „Dein Aussehen“ (AussehenKnopf.tsx führt hin),
  * - Bedienung: Wischen, Gleiten, Ton, Feiereffekte, Startbild (schalterzeilen.tsx),
  * - Anzeige: Nachtmodus, Schriftgröße, Sprache (anzeigezeilen.tsx),
  * - Hilfe: Toursymbol, Rundgang, Erklärkacheln (schalterzeilen.tsx),

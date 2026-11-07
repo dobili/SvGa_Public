@@ -292,6 +292,16 @@
   color: var(--gold-text);
 }
 
+/* Zusatzzeile unter den Kacheln (Reiter „Brett“: Koordinaten), seit 7.11.2026. */
+.extrasneu-koordinaten {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--raster) * 1.5);
+  margin-top: var(--raster);
+  font-size: var(--groesse-mittel);
+}
+
 .extrasneu-ablegen {
   align-self: flex-start;
   display: inline-flex;

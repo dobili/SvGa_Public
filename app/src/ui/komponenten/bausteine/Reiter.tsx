@@ -15,7 +15,7 @@ export interface ReiterEintrag<T extends string> {
   readonly wert: T;
   readonly text: string;
   readonly symbol?: LucideIcon;
-  /** Ziel-Kennung für die Tour (tour/touren.ts), etwa „einstellungen-reiter-brett“. */
+  /** Ziel-Kennung für die Tour (tour/touren.ts), etwa „einstellungen-reiter-hilfe“. */
   readonly tour?: string;
 }
 

@@ -9,6 +9,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import {
   oeffneAbbildung,
+  oeffneAussehen,
   oeffneEinstellungen,
   oeffneEinstellungsseite,
   starteImBrowser,
@@ -235,19 +236,17 @@ test("Rochade über das Zielfeld des Königs (Abb. 0.12), wie bei Chess.com", as
   await expect(page.getByRole("button", { name: "f1, Turm (Weiß)" })).toBeVisible();
 });
 
-test("Brett drehen; Koordinaten in den Einstellungen; Skelett-Ansicht im Bündel Skelett-Röntgen (0.2.30)", async ({
+test("Brett drehen; Koordinaten in „Dein Aussehen“; Skelett-Ansicht im Bündel Skelett-Röntgen (0.2.30)", async ({
   page,
 }) => {
   await starteImBrowser(page);
-  await oeffneEinstellungen(page);
-  const koordinaten = page.getByRole("switch", { name: "Koordinaten" });
+  // Seit 7.11.2026 (Wunsch des Autors) im Reiter „Brett“ der Profilkarte, nicht mehr in den
+  // Einstellungen.
+  const karte = await oeffneAussehen(page, "Brett");
+  const koordinaten = karte.getByRole("switch", { name: "Koordinaten" });
   await expect(koordinaten).toHaveAttribute("aria-checked", "true");
   await koordinaten.click();
   await expect(koordinaten).toHaveAttribute("aria-checked", "false");
-  // Die Brettvorschau oben zeigt die Koordinaten sofort nicht mehr.
-  await expect(page.locator(".brettstudio .brett svg text").filter({ hasText: /^a$/ })).toHaveCount(
-    0,
-  );
   await page.getByRole("button", { name: "Buch", exact: true }).click();
   await oeffneAbbildung(page, "5.17", "5.17");
   const drehen = page.getByRole("button", { name: "Brett drehen" });
@@ -312,18 +311,17 @@ test("Nummernsprung (0.2.39): ein Tipp auf den Titel öffnet das Nummernfeld, �
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
 });
 
-test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am Brett", async ({
+test("Figurensatz (Dein Aussehen) und Ton (Einstellungen, 0.2.33): klassische Figuren am Brett", async ({
   page,
 }) => {
   await starteImBrowser(page);
+  // Den Figurensatz wählt man seit 7.11.2026 im Profil (Karte „Dein Aussehen“).
+  const karte = await oeffneAussehen(page, "Figuren");
+  await karte.getByTestId("wahl-figuren-klassisch-chessnut").click();
   await oeffneEinstellungen(page);
   // Seit 0.2.80 stehen die Bereiche der Darstellung auf Reitern; „Training“ gibt es seit 0.3.2
   // nicht mehr („Erst selbst denken“ gilt fest).
   await expect(page.getByRole("tab", { name: "Training" })).toHaveCount(0);
-  await page
-    .getByRole("radiogroup", { name: "Figuren", exact: true })
-    .getByRole("radio", { name: "Chessnut" })
-    .click();
   await page.getByRole("tab", { name: "Bedienung" }).click();
   const ton = page.getByRole("switch", { name: "Ton bei Zug und Schlag" });
   await expect(ton).toHaveAttribute("aria-checked", "false");

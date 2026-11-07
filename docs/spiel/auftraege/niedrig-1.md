@@ -1,7 +1,6 @@
 # Auftrag niedrig-1: Tiled-Karten für Maple Falls in Platzhalterkacheln
 
-**Stand:** offen (Haupt-Chat, 07.11.2026, zweiter Auftrag; die Aufgabenzuordnung ist
-zusammengeführt)
+**Stand:** erledigt (niedrig-1, 07.11.2026)
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/*.json` (neu; `maple-falls-dachboden.json` nur, wenn
@@ -48,4 +47,97 @@ Grafik, `orte.json`, Code; Cedar Creek (späterer Auftrag).
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+Vier Karten neu in `inhalte/abenteuer/karten/`: `maple-falls-wohnzimmer.json` (14 × 10),
+`maple-falls-aussen.json` (28 × 20), `maple-falls-clubraum.json` (16 × 12),
+`maple-falls-park.json` (28 × 20). Aufbau, Ebenen und Kachelsatz kopiert aus der Dachbodenkarte
+(unverändert). Das Erzeugungsskript prüft per Breitensuche, dass jeder Auslöser von `start` aus
+erreichbar ist und jede Figur und jeder Gegenstand ein freies Nachbarfeld hat. Prüfungen: pytest
+8 bestanden, Paket gebaut, Prettier sauber.
+
+Fehlt in `orte.json` (nicht ergänzt, aber in den Karten schon als Auslöser angelegt):
+
+- Übergang `schule` (aussen ↔ clubraum), auf beiden Karten gleich benannt.
+- Übergang `park` (aussen ↔ park), auf beiden Karten gleich benannt.
+- Übergang `landstrasse` am rechten Parkrand (Weg nach Cedar Creek), Ziel noch offen.
+- Die Figuren Lily, Juno, Mr. Abernathy und Victor aus der Story-Bibel fehlen in `orte.json`;
+  in den Karten stehen sie deshalb nicht.
+- Nach `orte.json` ist `start` ein einziger Auslöser je Ort; jede Karte hat ihr eigenes `start`.
+  Beim Betreten über einen Übergang gilt der Zielauslöser.
+
+Skizzen (Legende: `#` Wand/Hecke, `T` Teppich als Weg/Straße, `K` Kiste (Möbel, Halfpipe, Bank),
+`B` Brett, `L` Lampe (im Clubraum: Pokale), `F` Fenster, `t` Treppe; Kleinbuchstaben = Auslöser
+(`s` start, sonst Anfangsbuchstabe: `h` haustuer, `s` an der Wand/Tür auch `schule`, `p` park bzw.
+parkbank, `l` landstrasse), Großbuchstaben = Figuren (`M` mutter, `C` coachDelgado, `S` sam bzw.
+skaterJo). Im Park sind die Wandblöcke rechts Platzhalter für Fluss/Ufer.
+
+```text
+maple-falls-wohnzimmer.json
+####F####F####
+#t     L     #
+#          KK#
+#            #
+#   TTTTT M  #
+#   TTTTT    #
+#   TTTTT    #
+#K           #
+#K    s     K#
+######h#######
+
+maple-falls-aussen.json
+############################
+#                          #
+# #######        ######### #
+# #F###F#        ##F###F## #
+# #######        ######### #
+# #######        ######### #
+# ###h###        ####s#### #
+#    s               T     #
+#    T      K        T     #
+#TTTTTTTTTTTTTTTTTTTTTTTTTTp
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#              L        L  #
+#  ##F#F##                 #
+#  #######                 #
+#  #######                 #
+#  #######                 #
+#  #######                 #
+#                          #
+############################
+
+maple-falls-clubraum.json
+####F###F###F###
+# LL           #
+#            KC#
+#            K #
+#              #
+#  BS B  B     #
+#              #
+#              #
+#  B  B  B     #
+#              #
+#       s      #
+########s#######
+
+maple-falls-park.json
+############################
+#                     #### #
+#                     #### #
+#     KKKKK           #### #
+#     KKKKK           #### #
+#     KKKKK           #### #
+#       S             #### #
+#                     #### #
+#           pK             #
+psTTTTTTTTTTTTTTTTTTTTTTTTTl
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                     #### #
+#    L         L      #### #
+#                     #### #
+#                     #### #
+#                     #### #
+#                     #### #
+#                     #### #
+############################
+```

@@ -191,6 +191,21 @@ erledigte Aufgaben und die Karten. Entscheidung: **Belohnungen vergibt die Quest
 Ink-Funktionen `gibKarte`/`setzeSzene` bleiben für Belohnungen ohne Quest; das Ink-Beispiel ruft
 `gibKarte` deshalb nicht mehr auf.
 
+**Schritt 8d erledigt (Karten in der Partie, Clubnadel):** Deckwahl vor der Partie (bis drei
+Karten, höchstens eine Vorgabe, Regelwerk R24), Vorgaben ändern die Startstellung (R26, gespiegelt
+bei schwarzem Gegner) und zählen als Halbzug 0; die Kartenleiste in der Partie spielt Fingerzeig
+(Startfeld des besten Zuges), Gefahrenradar (rote Warnsignale), Zweite Chance (eigener Zug samt
+Antwort zurück, unabhängig von der Rücknahme-Einstellung), Flüstern (drei Pfeile) und Mentor-Zug
+(bester Zug als eigener Zug); jede Karte einmal je Partie, höchstens eine je eigenem Zug, nur am
+Zug und wenn die Engine nicht denkt; Verbrauchskarten werden sofort abgezogen. Nach einem
+Clubkampf (Gegner = Clubchef des Ortes) rechnet die Oberwelt die Clubnadel (R17 bis R21: Gold ohne
+Karten, Silber bis zwei leichte, Bronze sonst oder bei Remis; Wiedereinstieg höchstens Silber ohne
+Sanduhr), hält die beste je Club und zeigt sie in Ergebnis und Tagebuch. Regeln als reine
+Funktionen in `regeln/karten.ts` (19 Tests). Vertragsänderungen: `Partiekarten` im Spielstand,
+`Kartensorte.zeitpunkt` mit „nachher“ (V3), Kommentar zur Vorgabe (V4), Leisten bekommen
+`Partiesteuerung` und Markierungs-Rückruf. Noch offen: Sanduhr und Wiedereinstieg (8e), Zeitbonus
+(braucht die Uhr des Zeitdruck-Spezialisten, Staffel 2), Mentor-Zug-Sperre in Akt 3 (R29).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

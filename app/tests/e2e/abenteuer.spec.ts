@@ -47,9 +47,19 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
       else await page.waitForTimeout(100);
     }
   }
+  // Ambrose hat den Fingerzeig gegeben: Deckwahl vor der Partie, die Karte ins Deck.
+  await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible({ timeout: 10000 });
+  await page.getByRole("button", { name: "Fingerzeig" }).click();
+  await page.getByRole("button", { name: "Mit 1 Karten spielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
   await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible();
   await expect(page.getByText("gegen Ambrose")).toBeVisible();
+  // Die Karte spielen: Die Engine markiert das Startfeld, die Karte ist danach verbraucht.
+  const karte = page.getByTestId("abenteuer-karte-fingerzeig");
+  await expect(karte).toBeEnabled({ timeout: 10000 });
+  await karte.click();
+  await expect(karte).toHaveAttribute("aria-pressed", "true", { timeout: 20000 });
+  await expect(karte).toBeDisabled();
 
   // Zurück in die Welt: Die Partie läuft noch, „Weiterspielen“ führt zur selben Partie.
   await page.goto("/app/#abenteuer");

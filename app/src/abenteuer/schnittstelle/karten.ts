@@ -34,7 +34,11 @@ export type Kartenwirkung =
   | { readonly art: "fluestern"; readonly kandidaten: number }
   /** Ambrose zieht für den Leser den Engine-Zug (in Akt 3 gesperrt, im Finale freiwillig). */
   | { readonly art: "mentorzug" }
-  /** Vorgabe vor Partiebeginn: der Gegner startet ohne diese Figur auf diesem Feld (FEN-Feld wie „f7“, „g8“). */
+  /**
+   * Vorgabe vor Partiebeginn: der Gegner startet ohne die Figur auf diesem Feld. Das Feld gilt aus
+   * Sicht eines weißen Gegners („f2“, „g1“); spielt der Gegner Schwarz, wird die Reihe gespiegelt
+   * (Regelwerk R26: f2 → f7, g1 → g8).
+   */
   | { readonly art: "vorgabe"; readonly feld: string }
   /** Mehr Bedenkzeit, nur gegen den Zeitdruck-Spezialisten der Landesmeisterschaft. */
   | { readonly art: "zeitbonus"; readonly sekunden: number }
@@ -53,8 +57,11 @@ export interface Kartensorte {
   readonly stufe: Kartenstufe;
   readonly art: Kartenart;
   readonly wirkung: Kartenwirkung;
-  /** Nur vor Partiebeginn spielbar (Vorgaben) oder während der Partie. */
-  readonly zeitpunkt: "vorher" | "waehrend";
+  /**
+   * Vor Partiebeginn (Vorgaben, Zeitbonus), während der Partie, oder nachher (Sanduhr beim Angebot
+   * des Wiedereinstiegs, Regelwerk R25).
+   */
+  readonly zeitpunkt: "vorher" | "waehrend" | "nachher";
 }
 
 /** Besitz einer Kartensorte im Spielstand: dauerhafte Karten zählen 1, Verbrauchskarten die Anzahl. */

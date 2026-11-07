@@ -231,3 +231,37 @@
   margin: 0;
   padding-left: calc(var(--raster) * 2.5);
 }
+
+/* Karten in der Leiste und die Deckwahl vor der Partie. */
+.abenteuer-karte {
+  min-height: 40px;
+  padding: 0 calc(var(--raster) * 1.5);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.abenteuer-karte:disabled {
+  opacity: 0.5;
+}
+
+.abenteuer-karte[aria-pressed="true"] {
+  background: var(--gold);
+}
+
+.abenteuer-karte-meldung {
+  flex-basis: 100%;
+  font-style: italic;
+}
+
+.abenteuer-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.abenteuer-deck button[aria-pressed="true"] {
+  background: var(--gold);
+}

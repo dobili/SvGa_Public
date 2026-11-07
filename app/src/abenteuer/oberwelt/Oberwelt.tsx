@@ -29,12 +29,15 @@ import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
 import { gerechneteStaerke } from "../regeln/gegnerstaerke";
+import { besteNadel, clubnadel, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import type { Gegnerprofil, Gegnerzustand } from "../schnittstelle/gegnerprofil";
-import type { Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
+import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
+import type { Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
-import { farbeAus } from "../anbindung/partiestart";
+import { GRUNDSTELLUNG, farbeAus } from "../anbindung/partiestart";
+import { Deckwahl } from "./Deckwahl";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
 import {
@@ -179,6 +182,10 @@ export function Oberwelt() {
   const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
+  // Eine Begegnung, für die der Leser gerade sein Deck wählt (Regelwerk R24).
+  const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
+  // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
+  const [neueNadel, setzeNeueNadel] = useState<Nadelstufe | null>(null);
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
   // Der aktuelle Stand für Rückrufe aus Phaser und Dialogen, die nicht neu gerendert werden.
   const standRef = useRef(stand);
@@ -254,17 +261,41 @@ export function Oberwelt() {
       if (e) {
         setzeErgebnis(e);
         offenesErgebnis.current = e;
-        schreibe({
-          ...aktuell,
-          laufendePartie: null,
-          protokoll: [
-            ...aktuell.protokoll,
-            {
-              ergebnis: e,
-              ort: aktuell.position.karte.split(".")[0] ?? "",
-              gegner: kennung.split("#")[0] ?? "",
-            },
-          ],
+        const begegnung = kennung.split("#")[0] ?? "";
+        void ladeSpieldaten().then((daten) => {
+          // Clubkampf: Der Gegner ist der Clubchef des Ortes → Clubnadel (Regelwerk R18 bis R21).
+          const b = daten.begegnungen.find((x) => x.kennung === begegnung);
+          const ort = daten.orte.find((o) => o.club?.chef === b?.gegner);
+          const nadel = ort ? clubnadel(e.ausgang, aktuell.partiekarten) : null;
+          const alt = ort ? aktuell.clubs.find((c) => c.kennung === ort.kennung) : undefined;
+          const clubs =
+            ort && nadel
+              ? [
+                  ...aktuell.clubs.filter((c) => c.kennung !== ort.kennung),
+                  {
+                    kennung: ort.kennung,
+                    nadel: besteNadel(alt?.nadel ?? null, nadel),
+                    aufgabenreihe: alt?.aufgabenreihe ?? false,
+                    versuche: (alt?.versuche ?? 0) + 1,
+                    steckbrief: alt?.steckbrief ?? [],
+                  },
+                ]
+              : aktuell.clubs;
+          setzeNeueNadel(nadel);
+          schreibe({
+            ...(standRef.current ?? aktuell),
+            clubs,
+            laufendePartie: null,
+            partiekarten: null,
+            protokoll: [
+              ...aktuell.protokoll,
+              {
+                ergebnis: e,
+                ort: aktuell.position.karte.split(".")[0] ?? "",
+                gegner: b?.gegner ?? begegnung,
+              },
+            ],
+          });
         });
       } else {
         setzeOffenePartie(kennung);
@@ -291,8 +322,10 @@ export function Oberwelt() {
     const aktuell = standRef.current;
     if (!t || !w || !aktuell) return;
     const a = w.ort.ausloeser.find((x) => x.name === t.name);
-    if (t.typ === "ausloeser" && a?.art === "uebergang" && a.ziel && t.darauf) {
-      wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
+    if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf) {
+      // Ein Übergang ohne Ziel (etwa die Landstraße nach Cedar Creek) ist noch nicht gebaut.
+      if (a.ziel) wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
+      else setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte: a.name }));
       return;
     }
     melde({ art: "ort", karte: aktuell.position.karte, ausloeser: t.name }, w);
@@ -348,9 +381,9 @@ export function Oberwelt() {
   useEffect(() => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
     szene?.laufenErlaubt(
-      dialog === null && ergebnis === null && offenePartie === null && !tagebuch,
+      dialog === null && ergebnis === null && offenePartie === null && !tagebuch && !deckwahl,
     );
-  }, [dialog, ergebnis, offenePartie, tagebuch, welt]);
+  }, [dialog, ergebnis, offenePartie, tagebuch, deckwahl, welt]);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
@@ -405,25 +438,68 @@ export function Oberwelt() {
     },
   };
 
-  /** Dialog zu Ende: Variablen sichern, dann eine angestoßene Partie starten. */
+  /**
+   * Startet die Partie zu einem Auftrag mit dem gewählten Deck: Vorgaben ändern die Startstellung
+   * und zählen als gespielt (Halbzug 0, Regelwerk R24, R26); Position und laufende Partie werden
+   * gesichert, dann übernimmt die App.
+   */
+  const startePartie = (auftrag: Partieauftrag, deck: readonly string[]) => {
+    const aktuell = standRef.current ?? stand;
+    const sorten = (welt?.daten.karten ?? []) as unknown as readonly Kartensorte[];
+    const gegnerfarbe = auftrag.farbe === "white" ? "black" : "white";
+    let startstellung = auftrag.startstellung;
+    const vorher: Kartenspiel[] = [];
+    let karten = aktuell.karten;
+    for (const kennung of deck) {
+      const sorte = sorten.find((s) => s.kennung === kennung);
+      if (!sorte || sorte.zeitpunkt !== "vorher") continue;
+      if (sorte.wirkung.art === "vorgabe") {
+        const fen = startstellung.art === "fen" ? startstellung.fen : GRUNDSTELLUNG;
+        const neu = vorgabeFen(fen, sorte.wirkung.feld, gegnerfarbe);
+        if (neu) startstellung = { art: "fen", fen: neu };
+      }
+      vorher.push({ kennung, stufe: sorte.stufe, halbzug: 0 });
+      if (sorte.art === "verbrauch") {
+        karten = karten
+          .map((k) => (k.kennung === kennung ? { ...k, anzahl: k.anzahl - 1 } : k))
+          .filter((k) => k.anzahl > 0);
+      }
+    }
+    const szene = spiel.current ? szeneVon(spiel.current) : null;
+    const position = szene
+      ? { ...szene.position(), karte: aktuell.position.karte }
+      : aktuell.position;
+    const mitPartie: Abenteuerstand = {
+      ...aktuell,
+      karten,
+      position,
+      laufendePartie: auftrag.kennung,
+      partiekarten: {
+        deck: deck.filter((k) => !vorher.some((v) => v.kennung === k)),
+        gespielt: vorher,
+        wiedereinstieg: auftrag.format.art === "wiedereinstieg",
+        letzterHalbzug: null,
+      },
+    };
+    standRef.current = mitPartie;
+    setzeStand(mitPartie);
+    setzeDeckwahl(null);
+    void dienste
+      .schreibeStand(mitPartie)
+      .then(() => dienste.startePartie({ ...auftrag, startstellung, deck: { karten: deck } }));
+  };
+
+  /** Dialog zu Ende: Variablen sichern, dann eine angestoßene Partie starten (ggf. Deck wählen). */
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
     const aktuell = standRef.current ?? stand;
     const auftrag = auftragInArbeit.current;
     auftragInArbeit.current = null;
     const neu = { ...aktuell, dialogvariablen: { ...aktuell.dialogvariablen, ...variablen } };
-    if (auftrag) {
-      const szene = spiel.current ? szeneVon(spiel.current) : null;
-      const position = szene
-        ? { ...szene.position(), karte: aktuell.position.karte }
-        : aktuell.position;
-      const mitPartie = { ...neu, position, laufendePartie: auftrag.kennung };
-      standRef.current = mitPartie;
-      setzeStand(mitPartie);
-      void dienste.schreibeStand(mitPartie).then(() => dienste.startePartie(auftrag));
-    } else {
-      schreibe(neu);
-    }
+    schreibe(neu);
+    if (!auftrag) return;
+    if (auftrag.kartenErlaubt && neu.karten.length > 0) setzeDeckwahl(auftrag);
+    else startePartie(auftrag, []);
   };
 
   const gegnername = (e: Partieergebnis) => {
@@ -467,6 +543,14 @@ export function Oberwelt() {
           beiEnde={beiDialogende}
         />
       )}
+      {deckwahl && welt && (
+        <Deckwahl
+          besitz={stand.karten}
+          sorten={welt.daten.karten}
+          beiWahl={(deck) => startePartie(deckwahl, deck)}
+          beiAbbruch={() => setzeDeckwahl(null)}
+        />
+      )}
       {tagebuch && welt && (
         <Tagebuch stand={stand} daten={welt.daten} beiSchliessen={() => setzeTagebuch(false)} />
       )}
@@ -486,10 +570,29 @@ export function Oberwelt() {
             </strong>
           </p>
           <p>{tSpiel("ergebnis.zuege", { anzahl: Math.ceil(ergebnis.halbzuege / 2) })}</p>
+          {ergebnis.gespielteKarten.length > 0 && (
+            <p>{tSpiel("ergebnis.karten", { anzahl: ergebnis.gespielteKarten.length })}</p>
+          )}
+          {neueNadel && (
+            <p>
+              <strong>
+                {tSpiel(`ergebnis.nadel.${neueNadel}`, {
+                  club: tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name"),
+                })}
+              </strong>
+            </p>
+          )}
           {ergebnis.momente.length > 0 && (
             <p>{tSpiel("ergebnis.momente", { anzahl: ergebnis.momente.length })}</p>
           )}
-          <button type="button" className="knopf-haupt" onClick={() => setzeErgebnis(null)}>
+          <button
+            type="button"
+            className="knopf-haupt"
+            onClick={() => {
+              setzeErgebnis(null);
+              setzeNeueNadel(null);
+            }}
+          >
             {tSpiel("ergebnis.weiter")}
           </button>
         </section>

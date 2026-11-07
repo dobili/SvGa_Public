@@ -354,7 +354,12 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
       {/* Erweiterungspunkt (Entscheidung A4, 07.11.2026): Leisten der Pakete, etwa die
           Kartenleiste des Schach-Abenteuers (ui/komponenten/partie/partieerweiterungen.ts). */}
       {passendeErweiterungen(partie.einstellung).map((e) => (
-        <e.Leiste key={e.kennung} partiekennung={partie.einstellung.abenteuer?.kennung ?? ""} />
+        <e.Leiste
+          key={e.kennung}
+          partiekennung={partie.einstellung.abenteuer?.kennung ?? ""}
+          steuerung={s}
+          beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
+        />
       ))}
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
       {/* Probepartie (Format 8): zählt nicht; am Ende „Als Variante speichern“ statt Abschluss. */}

@@ -81,5 +81,17 @@
   "tagebuch.erledigt": "Erledigt",
   "tagebuch.karten": "Deine Hilfskarten",
   "tagebuch.keineKarten": "Noch keine. Ambrose hat welche.",
-  "tagebuch.schliessen": "Schließen"
+  "tagebuch.schliessen": "Schließen",
+  "deck.titel": "Karten für die Partie",
+  "deck.hinweis": "Bis zu {max} Karten. Ohne Karten gibt es Gold.",
+  "deck.keine": "Du hast noch keine Karten.",
+  "deck.ohne": "Ohne Karten spielen",
+  "deck.los": "Mit {anzahl} Karten spielen",
+  "deck.vorgabeHinweis": "Vorgabe: Der Gegner beginnt ohne eine Figur.",
+  "ergebnis.nadel.gold": "Goldnadel für {club}!",
+  "ergebnis.nadel.silber": "Silbernadel für {club}.",
+  "ergebnis.nadel.bronze": "Bronzenadel für {club}.",
+  "ergebnis.karten": "Gespielte Karten: {anzahl}.",
+  "tagebuch.nadeln": "Clubnadeln",
+  "tagebuch.keineNadeln": "Noch keine."
 }

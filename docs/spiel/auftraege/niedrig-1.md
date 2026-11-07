@@ -1,143 +1,54 @@
-# Auftrag niedrig-1: Tiled-Karten für Maple Falls in Platzhalterkacheln
+# Auftrag niedrig-1: Prüfung der Tiled-Karten in der Pipeline
 
-**Stand:** erledigt (niedrig-1, 07.11.2026)
+**Stand:** offen (Haupt-Chat, 07.11.2026, dritter Auftrag; die vier Karten von Maple Falls sind
+zusammengeführt, die fehlenden Übergänge `schule`, `park`, `landstrasse` stehen jetzt in
+`orte.json`, `landstrasse` noch ohne Ziel)
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/karten/*.json` (neu; `maple-falls-dachboden.json` nur, wenn
-nötig, dann im Bericht nennen), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests/test_abenteuer.py`
-(Python-Umgebung: `python3 -m venv .venv && . .venv/bin/activate && pip install -r pipeline/requirements.txt`),
-dann in `app/`: `npm ci` (einmal), `node skripte/baue-abenteuerpaket.mjs`, zuletzt
-`npx prettier --check ../inhalte/abenteuer`.
+**Darf ändern:** `pipeline/tests/test_abenteuer_karten.py` (neu), `pipeline/abenteuer/__init__.py`
+und `pipeline/abenteuer/karten.py` (neu; reine Prüffunktionen ohne Oberfläche),
+`docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (alle Tests),
+`ruff check pipeline` und `ruff format --check pipeline`
 
 ## Ziel
 
-Die vier übrigen Karten von Maple Falls aus `inhalte/abenteuer/orte.json` (`mapleFalls.wohnzimmer`,
-`mapleFalls.aussen`, `mapleFalls.clubraum`, `mapleFalls.park`) als Tiled-JSON, genau im Aufbau
-der vorhandenen `karten/maple-falls-dachboden.json` und nach den Regeln in
-`inhalte/abenteuer/README.md` (Abschnitt Tiled-Karten). Grafik ist noch Platzhalter (acht
-Kacheln: 1 Boden, 2 Wand, 3 Kiste, 4 Teppich, 5 Brett, 6 Treppe, 7 Lampe, 8 Fenster; Kollision
-tragen 2, 3, 5, 7, 8). Die Karten sollen trotzdem die Räume der Story-Bibel (`05_Story_Bibel.md`,
-Abschnitt Welt) in Größe und Anordnung abbilden, damit später nur die Kacheln getauscht werden.
+Die Regeln aus `inhalte/abenteuer/README.md` (Abschnitt Tiled-Karten) und dein eigenes
+Erzeugungsskript haben Prüfungen, die bisher nur beim Erzeugen laufen. Sie sollen als Test in
+der Pipeline bei jedem Push laufen, damit auch Karten der Helfer für Cedar Creek und spätere
+Städte nichts kaputtmachen, was die Oberwelt braucht (`app/src/abenteuer/oberwelt/szene.ts`,
+`Oberwelt.tsx`).
 
 ## Vorgaben
 
-1. **Größen:** Innenräume 12 × 10 bis 16 × 12 Kacheln, Außenkarten 24 × 18 bis 32 × 24. Immer ein
-   geschlossener Rand aus Wandkacheln (außen: Kachel 2 als Hecke oder Zaun).
-2. **Ebenen:** `boden`, `waende`, `objekte` als Kachelebenen, `ausloeser` als Objektebene, Namen
-   und Reihenfolge wie im Beispiel. Kachelsatz eingebettet wie im Beispiel (`platzhalter`,
-   `../grafik/platzhalter.png`, 4 × 4, Kollision je Kachel).
-3. **Auslöser:** Für jeden Übergang aus `orte.json` ein Objekt mit genau dem Namen
-   (`treppe`/`treppeOben`, `haustuer`, …) auf beiden Seiten; auf jeder Karte ein `start`-Objekt
-   mit `richtung`; Gegenstände (`parkbank`, `brett`) als Objekte; Figuren als Objekte mit
-   `type = "figur"` und dem Figurnamen aus `orte.json` (`name` = Teil nach dem Punkt, etwa
-   `coachDelgado`), an sinnvollen Stellen (Coach am Lehrertisch, Sam an einem Brett, Jo im Park).
-   Fehlende Übergänge oder Figuren in `orte.json` nicht selbst ergänzen, sondern im Bericht nennen.
-4. **Begehbarkeit:** Jeder Auslöser muss von `start` aus erreichbar sein (zu Fuß, ohne
-   Kollisionskacheln zu durchqueren); vor jedem Gegenstand und jeder Figur mindestens eine freie
-   Kachel, von der aus man sie ansieht.
-5. **Erzeugung:** Mit einem kleinen Python-Skript (mit `-I`, nicht ins Repository), damit die
-   Datenfelder (`data`, 120 bis 768 Zahlen) fehlerfrei sind; die JSON-Dateien mit Einrückung 1 wie
-   das Beispiel. Im Bericht je Karte eine ASCII-Skizze (Zeichen je Kachel), damit der Haupt-Chat sie
-   ohne Tiled prüfen kann.
+1. **Modul `pipeline/abenteuer/karten.py`** mit reinen Funktionen (Docstrings auf Deutsch wie
+   in der übrigen Pipeline): Karte laden, Kachelebenen und Objektebene finden, Kollisionskacheln
+   aus dem eingebetteten Kachelsatz lesen, Begehbarkeit (Breitensuche von `start`), Auslöser und
+   Figuren mit Kachelkoordinaten.
+2. **Test `pipeline/tests/test_abenteuer_karten.py`**, je Karte in `inhalte/abenteuer/karten/`
+   (über `orte.json` gefunden, Feld `karten[].datei`):
+   - Ebenen `boden`, `waende`, `objekte` als Kachelebenen mit `width × height` Zahlen,
+     `ausloeser` als Objektebene; Kachelsatz eingebettet, Bild `../grafik/platzhalter.png`.
+   - Genau ein Objekt `start` mit Eigenschaft `richtung` (oben, unten, links, rechts).
+   - Jedes Objekt der Ebene `ausloeser` ohne `type = "figur"` hat einen Namen, der in
+     `orte.json` unter `ausloeser` erklärt ist; jede Figur (`type = "figur"`) ist in `orte.json`
+     unter `figuren` des Ortes eingetragen (Name = Teil nach dem Punkt).
+   - Jeder Übergang mit `ziel` in `orte.json` hat auf der Zielkarte ein Objekt mit dem
+     Zielnamen (`ziel.ausloeser`); Übergänge ohne `ziel` (etwa `landstrasse`) sind erlaubt und
+     werden im Testbericht als „offen“ gezählt, nicht als Fehler.
+   - Jeder Auslöser und jede Figur ist von `start` aus zu Fuß erreichbar (Kollisionskacheln
+     nicht betretbar; Gegenstände und Figuren zählen als erreichbar, wenn ein freies Nachbarfeld
+     erreichbar ist).
+   - Rand geschlossen: Die äußerste Reihe und Spalte der Ebene `waende` ist überall Kollision,
+     außer an Übergängen.
+3. Die vorhandenen fünf Karten müssen bestehen; wo eine nicht besteht, die Karte nicht ändern,
+   sondern den Befund in den Bericht (der Haupt-Chat entscheidet).
+4. Kein Code in `app/`; keine Änderung an `orte.json`.
 
 ## Was nicht dazugehört
 
-Grafik, `orte.json`, Code; Cedar Creek (späterer Auftrag).
+Neue Karten (Cedar Creek kommt, sobald mittel-2 die Daten geliefert hat), Grafik.
 
 ## Bericht
 
-Vier Karten neu in `inhalte/abenteuer/karten/`: `maple-falls-wohnzimmer.json` (14 × 10),
-`maple-falls-aussen.json` (28 × 20), `maple-falls-clubraum.json` (16 × 12),
-`maple-falls-park.json` (28 × 20). Aufbau, Ebenen und Kachelsatz kopiert aus der Dachbodenkarte
-(unverändert). Das Erzeugungsskript prüft per Breitensuche, dass jeder Auslöser von `start` aus
-erreichbar ist und jede Figur und jeder Gegenstand ein freies Nachbarfeld hat. Prüfungen: pytest
-8 bestanden, Paket gebaut, Prettier sauber.
-
-Fehlt in `orte.json` (nicht ergänzt, aber in den Karten schon als Auslöser angelegt):
-
-- Übergang `schule` (aussen ↔ clubraum), auf beiden Karten gleich benannt.
-- Übergang `park` (aussen ↔ park), auf beiden Karten gleich benannt.
-- Übergang `landstrasse` am rechten Parkrand (Weg nach Cedar Creek), Ziel noch offen.
-- Die Figuren Lily, Juno, Mr. Abernathy und Victor aus der Story-Bibel fehlen in `orte.json`;
-  in den Karten stehen sie deshalb nicht.
-- Nach `orte.json` ist `start` ein einziger Auslöser je Ort; jede Karte hat ihr eigenes `start`.
-  Beim Betreten über einen Übergang gilt der Zielauslöser.
-
-Skizzen (Legende: `#` Wand/Hecke, `T` Teppich als Weg/Straße, `K` Kiste (Möbel, Halfpipe, Bank),
-`B` Brett, `L` Lampe (im Clubraum: Pokale), `F` Fenster, `t` Treppe; Kleinbuchstaben = Auslöser
-(`s` start, sonst Anfangsbuchstabe: `h` haustuer, `s` an der Wand/Tür auch `schule`, `p` park bzw.
-parkbank, `l` landstrasse), Großbuchstaben = Figuren (`M` mutter, `C` coachDelgado, `S` sam bzw.
-skaterJo). Im Park sind die Wandblöcke rechts Platzhalter für Fluss/Ufer.
-
-```text
-maple-falls-wohnzimmer.json
-####F####F####
-#t     L     #
-#          KK#
-#            #
-#   TTTTT M  #
-#   TTTTT    #
-#   TTTTT    #
-#K           #
-#K    s     K#
-######h#######
-
-maple-falls-aussen.json
-############################
-#                          #
-# #######        ######### #
-# #F###F#        ##F###F## #
-# #######        ######### #
-# #######        ######### #
-# ###h###        ####s#### #
-#    s               T     #
-#    T      K        T     #
-#TTTTTTTTTTTTTTTTTTTTTTTTTTp
-#TTTTTTTTTTTTTTTTTTTTTTTTTT#
-#                          #
-#              L        L  #
-#  ##F#F##                 #
-#  #######                 #
-#  #######                 #
-#  #######                 #
-#  #######                 #
-#                          #
-############################
-
-maple-falls-clubraum.json
-####F###F###F###
-# LL           #
-#            KC#
-#            K #
-#              #
-#  BS B  B     #
-#              #
-#              #
-#  B  B  B     #
-#              #
-#       s      #
-########s#######
-
-maple-falls-park.json
-############################
-#                     #### #
-#                     #### #
-#     KKKKK           #### #
-#     KKKKK           #### #
-#     KKKKK           #### #
-#       S             #### #
-#                     #### #
-#           pK             #
-psTTTTTTTTTTTTTTTTTTTTTTTTTl
-#TTTTTTTTTTTTTTTTTTTTTTTTTT#
-#                          #
-#                     #### #
-#    L         L      #### #
-#                     #### #
-#                     #### #
-#                     #### #
-#                     #### #
-#                     #### #
-############################
-```
+(vom Helfer auszufüllen)

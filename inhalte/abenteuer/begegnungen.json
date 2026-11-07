@@ -5,24 +5,36 @@
       "kennung": "mapleFalls.ersteLektion",
       "gegner": "mapleFalls.ambrose",
       "farbe": "white",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
-      "kartenErlaubt": false
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true
     },
     {
       "kennung": "mapleFalls.samRevanche",
       "gegner": "mapleFalls.sam",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true
     },
     {
       "kennung": "mapleFalls.clubkampf",
       "gegner": "mapleFalls.coachDelgado",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true
     }
   ]

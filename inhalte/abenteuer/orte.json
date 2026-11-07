@@ -70,7 +70,10 @@
         }
       ],
       "ausloeser": [
-        { "name": "start", "art": "start" },
+        {
+          "name": "start",
+          "art": "start"
+        },
         {
           "name": "brett",
           "art": "gegenstand",
@@ -87,12 +90,35 @@
         {
           "name": "haustuer",
           "art": "uebergang",
-          "ziel": { "karte": "mapleFalls.aussen", "ausloeser": "haustuer" }
+          "ziel": {
+            "karte": "mapleFalls.aussen",
+            "ausloeser": "haustuer"
+          }
         },
         {
           "name": "parkbank",
           "art": "gegenstand",
           "dialog": "maple-falls-park.parkbank"
+        },
+        {
+          "name": "schule",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "ausloeser": "schule"
+          }
+        },
+        {
+          "name": "park",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.park",
+            "ausloeser": "park"
+          }
+        },
+        {
+          "name": "landstrasse",
+          "art": "uebergang"
         }
       ],
       "club": {

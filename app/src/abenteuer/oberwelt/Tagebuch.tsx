@@ -58,6 +58,23 @@ export function Tagebuch({
           </ul>
         </>
       )}
+      <h3>{tSpiel("tagebuch.nadeln")}</h3>
+      {stand.clubs.filter((c) => c.nadel).length === 0 ? (
+        <p>{tSpiel("tagebuch.keineNadeln")}</p>
+      ) : (
+        <ul>
+          {stand.clubs
+            .filter((c) => c.nadel)
+            .map((c) => {
+              const ort = daten.orte.find((o) => o.kennung === c.kennung);
+              return (
+                <li key={c.kennung}>
+                  {tSpiel(ort?.club?.name ?? c.kennung)}: {tSpiel(`nadel.${c.nadel ?? "bronze"}`)}
+                </li>
+              );
+            })}
+        </ul>
+      )}
       <h3>{tSpiel("tagebuch.karten")}</h3>
       {stand.karten.length === 0 ? (
         <p>{tSpiel("tagebuch.keineKarten")}</p>

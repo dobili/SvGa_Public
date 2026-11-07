@@ -8,7 +8,9 @@
       "bild": "karten/fingerzeig.webp",
       "stufe": "leicht",
       "art": "dauerhaft",
-      "wirkung": { "art": "fingerzeig" },
+      "wirkung": {
+        "art": "fingerzeig"
+      },
       "zeitpunkt": "waehrend"
     },
     {
@@ -18,7 +20,9 @@
       "bild": "karten/gefahrenradar.webp",
       "stufe": "leicht",
       "art": "dauerhaft",
-      "wirkung": { "art": "gefahrenradar" },
+      "wirkung": {
+        "art": "gefahrenradar"
+      },
       "zeitpunkt": "waehrend"
     },
     {
@@ -28,7 +32,9 @@
       "bild": "karten/zweite-chance.webp",
       "stufe": "leicht",
       "art": "verbrauch",
-      "wirkung": { "art": "zweiteChance" },
+      "wirkung": {
+        "art": "zweiteChance"
+      },
       "zeitpunkt": "waehrend"
     },
     {
@@ -38,7 +44,10 @@
       "bild": "karten/fluestern.webp",
       "stufe": "mittel",
       "art": "verbrauch",
-      "wirkung": { "art": "fluestern", "kandidaten": 3 },
+      "wirkung": {
+        "art": "fluestern",
+        "kandidaten": 3
+      },
       "zeitpunkt": "waehrend"
     },
     {
@@ -48,7 +57,9 @@
       "bild": "karten/mentorzug.webp",
       "stufe": "mittel",
       "art": "verbrauch",
-      "wirkung": { "art": "mentorzug" },
+      "wirkung": {
+        "art": "mentorzug"
+      },
       "zeitpunkt": "waehrend"
     },
     {
@@ -58,7 +69,10 @@
       "bild": "karten/bauernvorgabe.webp",
       "stufe": "stark",
       "art": "verbrauch",
-      "wirkung": { "art": "vorgabe", "feld": "f2" },
+      "wirkung": {
+        "art": "vorgabe",
+        "feld": "f2"
+      },
       "zeitpunkt": "vorher"
     },
     {
@@ -68,7 +82,10 @@
       "bild": "karten/springervorgabe.webp",
       "stufe": "stark",
       "art": "verbrauch",
-      "wirkung": { "art": "vorgabe", "feld": "g1" },
+      "wirkung": {
+        "art": "vorgabe",
+        "feld": "g1"
+      },
       "zeitpunkt": "vorher"
     },
     {
@@ -78,7 +95,10 @@
       "bild": "karten/zeitbonus.webp",
       "stufe": "leicht",
       "art": "verbrauch",
-      "wirkung": { "art": "zeitbonus", "sekunden": 120 },
+      "wirkung": {
+        "art": "zeitbonus",
+        "sekunden": 120
+      },
       "zeitpunkt": "vorher"
     },
     {
@@ -88,8 +108,10 @@
       "bild": "karten/sanduhr.webp",
       "stufe": "mittel",
       "art": "verbrauch",
-      "wirkung": { "art": "sanduhr" },
-      "zeitpunkt": "waehrend"
+      "wirkung": {
+        "art": "sanduhr"
+      },
+      "zeitpunkt": "nachher"
     }
   ]
 }

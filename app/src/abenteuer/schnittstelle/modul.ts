@@ -19,7 +19,9 @@
  * ui/komponenten/partie/usePartie.ts (Partiesteuerung), training/wiederholung.ts.
  */
 import type { ComponentType } from "react";
+import type { Markierung } from "../../analyse/werkzeug";
 import type { Partieeinstellung } from "../../spiel/partie";
+import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import type { Gegnerprofil, Gegnerzustand, Gerechnetestaerke } from "./gegnerprofil";
 import type { Paketzustand } from "./paket";
@@ -88,13 +90,23 @@ export interface Appdienste {
   readonly zurueck: () => void;
 }
 
+/** Was die Partieansicht einer Leiste gibt (ui/komponenten/partie/usePartie.ts, Partiesteuerung). */
+export interface Leisteneigenschaften {
+  readonly partiekennung: string;
+  readonly steuerung: Partiesteuerung;
+  readonly beiMarkierungen: (markierungen: readonly Markierung[]) => void;
+}
+
 /** Eine Partie-Erweiterung für den Erweiterungspunkt in Partie.tsx (Entscheidung A4). */
 export interface Partieerweiterung {
   readonly kennung: string;
   /** Zeigt die Erweiterung diese Partie an? Nur für Partien mit Feld `abenteuer`. */
   readonly passt: (einstellung: Partieeinstellung) => boolean;
-  /** Die Leiste unter dem Brett; bekommt die Partiekennung des Abenteuers. */
-  readonly Leiste: ComponentType<{ readonly partiekennung: string }>;
+  /**
+   * Die Leiste unter dem Brett: Partiekennung des Abenteuers, die Steuerung der Partie (Züge
+   * spielen, zurücknehmen, ob die Engine denkt) und ein Rückruf für Markierungen am Brett.
+   */
+  readonly Leiste: ComponentType<Leisteneigenschaften>;
 }
 
 /**

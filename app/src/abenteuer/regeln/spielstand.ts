@@ -13,6 +13,7 @@
 import {
   ABENTEUER_VERSION,
   type Abenteuerstand,
+  type Partiekarten,
   type Weltposition,
 } from "../schnittstelle/spielstand";
 
@@ -53,6 +54,7 @@ export function leererAbenteuerstand(
     fragmente: { gefunden: [] },
     protokoll: [],
     laufendePartie: null,
+    partiekarten: null,
     dialogvariablen: {},
     spielzeitSekunden: 0,
   };
@@ -95,10 +97,22 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     fragmente: { gefunden: liste(istObjekt(roh.fragmente) ? roh.fragmente.gefunden : []) },
     protokoll: liste(roh.protokoll),
     laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,
+    partiekarten: partiekartenAus(roh.partiekarten),
     dialogvariablen: istObjekt(roh.dialogvariablen)
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},
     spielzeitSekunden: zahl(roh.spielzeitSekunden),
+  };
+}
+
+/** Die Karten der laufenden Partie; null, wenn keine oder unlesbar. */
+function partiekartenAus(roh: unknown): Partiekarten | null {
+  if (!istObjekt(roh) || !Array.isArray(roh.deck)) return null;
+  return {
+    deck: roh.deck.filter((k): k is string => typeof k === "string"),
+    gespielt: liste(roh.gespielt),
+    wiedereinstieg: roh.wiedereinstieg === true,
+    letzterHalbzug: typeof roh.letzterHalbzug === "number" ? roh.letzterHalbzug : null,
   };
 }
 

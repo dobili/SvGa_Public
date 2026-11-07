@@ -1,4 +1,5 @@
 {
+  "abenteuer.karteFehler": "The card could not be played right now. Try again on your next move.",
   "abenteuer.menue": "Game menu",
   "abenteuer.menueSpeichern": "Your progress is saved automatically.",
   "abenteuer.zurueckZurApp": "Back to the app",

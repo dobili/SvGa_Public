@@ -102,8 +102,8 @@
         },
         "wirkung": { "$ref": "#/$defs/wirkung" },
         "zeitpunkt": {
-          "description": "Vorgaben nur vor Partiebeginn, alles andere während der Partie",
-          "enum": ["vorher", "waehrend"]
+          "description": "Vorgaben und Zeitbonus vor Partiebeginn, die meisten während der Partie, die Sanduhr nachher (Regelwerk R25)",
+          "enum": ["vorher", "waehrend", "nachher"]
         }
       }
     }

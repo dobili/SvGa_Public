@@ -13,7 +13,7 @@
  * Phaser, damit Zurück-Taste, Neuladen und Gerätewechsel sie behalten.
  * Abhängigkeiten: schnittstelle/partie.ts, schnittstelle/karten.ts.
  */
-import type { Kartenbesitz } from "./karten";
+import type { Kartenbesitz, Kartenspiel } from "./karten";
 import type { Nadelstufe, Partieergebnis } from "./partie";
 
 /** Version dieses Spielstandformats; wächst unabhängig von SCHEMA_VERSION der App. */
@@ -84,6 +84,19 @@ export interface Protokolleintrag {
   readonly gegner: string;
 }
 
+/**
+ * Die Karten der laufenden Partie (Regelwerk R24): das gewählte Deck, was davon schon gespielt
+ * wurde, und ob die Partie ein Wiedereinstieg ist (R20). Liegt im Spielstand, nicht in der Partie
+ * der App, damit ein Neuladen mitten in der Partie nichts vergisst.
+ */
+export interface Partiekarten {
+  readonly deck: readonly string[];
+  readonly gespielt: readonly Kartenspiel[];
+  readonly wiedereinstieg: boolean;
+  /** Halbzug, in dem zuletzt eine Karte gespielt wurde (höchstens eine je eigenem Zug). */
+  readonly letzterHalbzug: number | null;
+}
+
 /** Gesammelte Partiefragmente von Ambroses alter Partie (Dokument 02, 3.3), als Halbzugindizes. */
 export interface Fragmente {
   readonly gefunden: readonly number[];
@@ -116,6 +129,8 @@ export interface Abenteuerstand {
   readonly protokoll: readonly Protokolleintrag[];
   /** Kennung der laufenden Begegnung, solange die Partie in der App offen ist; null sonst. */
   readonly laufendePartie: string | null;
+  /** Deck und gespielte Karten der laufenden Partie; null ohne laufende Partie. */
+  readonly partiekarten: Partiekarten | null;
   /** Globale Ink-Variablen (über alle Szenen), etwa „ambroseVertrauen“: 3. */
   readonly dialogvariablen: Readonly<Record<string, number | string | boolean>>;
   /** Gesamte Spielzeit in Sekunden, für den Vergleich mit dem Zeitbudget je Club (Entscheidung A7). */

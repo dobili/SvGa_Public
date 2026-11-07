@@ -1,6 +1,10 @@
 {
+  "abenteuer.menue": "Game menu",
+  "abenteuer.menueSpeichern": "Your progress is saved automatically.",
+  "abenteuer.zurueckZurApp": "Back to the app",
+  "abenteuer.paketLoeschen": "Remove game package from device (progress is kept)",
+  "abenteuer.menueSchliessen": "Keep playing",
   "abenteuer.titel": "Chess Adventure",
-  "abenteuer.zurueck": "Back",
   "abenteuer.einleitung": "A chess adventure: travel from town to town, learn with Ambrose and challenge the chess clubs. The game is an add-on package; your progress stays in your data.",
   "abenteuer.laden": "Download game",
   "abenteuer.laedt": "Loading … (about {mb} MB)",

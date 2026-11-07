@@ -36,6 +36,11 @@ export interface Zusatzansicht {
   /** Kennung in der Ansicht, etwa „lernpfad“, „themen“, „rekorde“, „rueckblick“, „fundstuecke“. */
   readonly kennung: string;
   readonly Bildschirm: ComponentType<{ readonly wert: string | null }>;
+  /**
+   * Vollbild (Entscheidung D1 des Autors, 07.11.2026, Schach-Abenteuer): Die App zeigt keine
+   * untere Leiste; der Bildschirm bringt seinen eigenen Rückweg mit (Spielmenü).
+   */
+  readonly vollbild?: boolean;
 }
 
 /** Alle Bildschirme der Pakete; je Paket eine Zeile (Konfliktkarte, gamifizierung.md). */
@@ -62,7 +67,7 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   // Stufe 2: der ganze Baum als verschiebbare Karte (Wert: Kennung der Variante).
   { kennung: ANSICHT_VARIANTENKARTE, Bildschirm: Variantenkarte },
   // Schach-Abenteuer (docs/spiel/, Schritt 5): die Hülle lädt das Spiel erst auf Wunsch.
-  { kennung: ANSICHT_ABENTEUER, Bildschirm: AbenteuerAnsicht },
+  { kennung: ANSICHT_ABENTEUER, Bildschirm: AbenteuerAnsicht, vollbild: true },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

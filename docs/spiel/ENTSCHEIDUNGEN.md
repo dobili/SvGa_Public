@@ -157,6 +157,40 @@ Ambrose → Partie der App gegen das Gegnerprofil → „Zurück zur Stadt“ mi
   `07_Aufgabenzuordnung.md`); ihre Vorschläge für die Verträge (V1–V9 des Regelwerks, Vorschläge
   der Bibel) prüft der Haupt-Chat mit Schritt 8.
 
+## 07.11.2026 – Schritt 8 begonnen: Vollbild (D1) und Beta-Zweig (D2)
+
+- **Zweig `beta` angelegt** (Freigabe des Autors) und gepusht; Anleitung für Cloudflare
+  (Vorschau-Adresse, Access nur für den Autor, Installation neben der App) in
+  `docs/spiel/BETA_ANLEITUNG.md`. Der Haupt-Chat pusht jeden geprüften Stand des Spiels
+  auch auf `beta`.
+- **Vollbild umgesetzt:** Zusatzansichten tragen `vollbild` (`app/zusatzansichten.ts`); App.tsx
+  blendet die untere Leiste für die Zusatzansicht „abenteuer“ und für Partien mit Feld
+  `abenteuer` aus (`useVollbild`). Die Hülle hat keine Kopfzeile mehr; der Menüknopf oben rechts
+  öffnet das Spielmenü (Zurück zur App, Paket löschen, Weiterspielen). Die Partie behält ihre
+  eigene Kopfzeile der Brettansicht („Spielen“ als Zurück), das Spiel findet eine laufende
+  Partie wieder.
+- **Plan für den Rest von Schritt 8**, in dieser Reihenfolge: (a) Raumwechsel über Übergänge und
+  Figuren als Objekte der Karten (damit die Karten von niedrig-1 spielbar werden), (b) Quest-
+  Auswertung als reine Funktion (Ereignisse dialog, partie, aufgaben, ort → Schritte, Wirkungen)
+  mit Clubtagebuch im Spielmenü, (c) Karten in der Partie (Deckwahl, Fingerzeig, Gefahrenradar,
+  Zweite Chance, Flüstern, Mentor-Zug, Vorgabe) und Clubnadel nach Regelwerk, (d) Kipppunkt und
+  Wiedereinstieg, (e) Aufgabenrunden mit Rückweg, (f) Namenswahl und Abenteuerwertung
+  (Regelwerk V1), dazu die Vertragsvorschläge V2 bis V9 des Regelwerks.
+- **Fund im Oberflächentest:** Verlässt der Leser die Welt, bevor Phaser den Helden angelegt hat,
+  fragte die Hülle die Position des Helden ab und stürzte ab (1 von 6 Läufen). Die Szene liefert
+  jetzt bis `create()` die Startposition.
+
+**Schritt 8b/8c erledigt (Raumwechsel, Figuren, Quests):** Figuren stehen als Objekte
+(`type = "figur"`) auf den Tiled-Karten, mit Kollision und „Sprechen“; Übergänge wechseln die
+Karte, der Held erscheint auf dem gleichnamigen Auslöser der Zielkarte (der Startauslöser löst
+erst nach dem Verlassen wieder aus); fehlende Karten melden sich statt abzustürzen. Die
+Quest-Auswertung ist eine reine Funktion (`regeln/quests.ts`, 11 Tests) über Ereignisse „ort“,
+„dialog“ (Knoten aus dem Ink-Pfad), „partie“, „aufgaben“; Wirkungen (Karte, Steckbrief, Zustand,
+Szene, Fragment) kommen in den Spielstand, das Clubtagebuch (Knopf oben links) zeigt offene und
+erledigte Aufgaben und die Karten. Entscheidung: **Belohnungen vergibt die Quest** (Daten), die
+Ink-Funktionen `gibKarte`/`setzeSzene` bleiben für Belohnungen ohne Quest; das Ink-Beispiel ruft
+`gibKarte` deshalb nicht mehr auf.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

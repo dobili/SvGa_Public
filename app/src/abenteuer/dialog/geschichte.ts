@@ -106,6 +106,16 @@ export class Geschichte {
     return wahlen.length > 0 ? { art: "wahl", wahlen } : { art: "ende" };
   }
 
+  /**
+   * Der Knoten, in dem die Geschichte gerade steht (erster Teil des Ink-Pfads, etwa
+   * „ambrose_erwacht“ aus „ambrose_erwacht.0.3“); null am Ende. Quests warten auf Knoten.
+   */
+  knoten(): string | null {
+    const pfad = this.story.state.currentPathString;
+    if (!pfad) return null;
+    return pfad.split(".")[0] ?? null;
+  }
+
   /** Wählt eine der angebotenen Antworten (Index wie in `weiter()`). */
   waehle(index: number): void {
     this.story.ChooseChoiceIndex(index);

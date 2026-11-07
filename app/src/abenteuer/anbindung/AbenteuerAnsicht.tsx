@@ -1,20 +1,23 @@
 /**
- * Die Hülle des Abenteuers in der App: Zusatzansicht „abenteuer“ (app/zusatzansichten.ts).
+ * Die Hülle des Abenteuers in der App: Zusatzansicht „abenteuer“ (app/zusatzansichten.ts), im
+ * Vollbild ohne Kopfzeile und Leiste der App (Entscheidung D1 des Autors, 07.11.2026).
  *
  * Rolle im Gesamtbild: Dieser kleine Teil gehört zum Kern der App. Er zeigt die Startkarte
  * (Paket laden, Spielstand anlegen), lädt das eigentliche Spiel erst dann als eigenen Baustein
  * (dynamischer Import von modul/abenteuer.tsx → assets/abenteuer-*.js, nicht vorab geladen) und
- * übergibt ihm die Dienste der App (anbindung/dienste.ts). Im Prototyp (Schritt 5) gibt es noch
- * keine Einstellungsseite; Laden und Löschen des Pakets stehen hier.
+ * übergibt ihm die Dienste der App (anbindung/dienste.ts). Das Spielmenü (Knopf oben rechts) ist
+ * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen.
  * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
- * Kopfzeile der App.
+ * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
  */
 import { useEffect, useState, type ComponentType } from "react";
+import { useZurueckSchliesst } from "../../app/blattstapel";
+import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { speicherzustand } from "../../speicher/speicher";
 import { ANFANGSPARTIEN } from "../../spiel/wertung";
-import { Kopfzeile } from "../../ui/komponenten/rahmen/Kopfzeile";
 import "../abenteuer.css";
+import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuermodul } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
@@ -49,6 +52,7 @@ function Startkarte({
   const laedt = zustand.art === "laedt";
   return (
     <section className="karte abenteuer-start" data-testid="abenteuer-start">
+      <h1 className="abenteuer-start-titel">{t("abenteuer.titel")}</h1>
       <p>{t("abenteuer.einleitung")}</p>
       {zustand.art === "fehler" && (
         <p className="fehlertext">
@@ -84,15 +88,50 @@ function Startkarte({
   );
 }
 
+/** Das Spielmenü: der Rückweg in die App und das Löschen des Pakets. */
+function Spielmenue({
+  beiSchliessen,
+  beiZurueck,
+  beiLoeschen,
+}: {
+  beiSchliessen: () => void;
+  beiZurueck: () => void;
+  beiLoeschen: () => void;
+}) {
+  useZurueckSchliesst(true, beiSchliessen);
+  return (
+    <section
+      className="abenteuer-menue"
+      role="dialog"
+      aria-label={t("abenteuer.menue")}
+      data-testid="abenteuer-menue"
+    >
+      <h2>{t("abenteuer.menue")}</h2>
+      <p>{t("abenteuer.menueSpeichern")}</p>
+      <button type="button" className="knopf-haupt" onClick={beiZurueck}>
+        {t("abenteuer.zurueckZurApp")}
+      </button>
+      <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
+        {t("abenteuer.paketLoeschen")}
+      </button>
+      <button type="button" className="knopf-zweit" onClick={beiSchliessen}>
+        {t("abenteuer.menueSchliessen")}
+      </button>
+    </section>
+  );
+}
+
 /** Die Zusatzansicht: Startkarte oder, wenn Paket und Spielstand da sind, die Oberwelt. */
 export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const dienste = useAppdienste();
+  const { zurueck } = useNavigation();
   const stand = useAbenteuerstand();
   const [zustand, setzeZustand] = useState<Paketzustand>({ art: "fehlt" });
   const [Oberwelt, setzeOberwelt] = useState<ComponentType<{
     readonly wert: string | null;
   }> | null>(null);
   const [offen, setzeOffen] = useState(false);
+  const [menue, setzeMenue] = useState(false);
 
   useEffect(() => {
     let aktiv = true;
@@ -132,13 +171,36 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     });
   };
 
+  const loesche = () => {
+    void loeschePaket().then(() => {
+      setzeMenue(false);
+      setzeOffen(false);
+      setzeZustand({ art: "fehlt" });
+    });
+  };
+
   return (
     <div className="bildschirm bildschirm-abenteuer" data-testid="abenteuer">
-      <Kopfzeile titel={t("abenteuer.titel")} zurueckText={t("abenteuer.zurueck")} />
+      <button
+        type="button"
+        className="abenteuer-menueknopf"
+        aria-label={t("abenteuer.menue")}
+        data-testid="abenteuer-menueknopf"
+        onClick={() => setzeMenue(true)}
+      >
+        ☰
+      </button>
       {offen && Oberwelt && stand ? (
         <Oberwelt wert={wert} />
       ) : (
         <Startkarte zustand={zustand} beiLaden={lade} beiStart={starte} />
+      )}
+      {menue && (
+        <Spielmenue
+          beiSchliessen={() => setzeMenue(false)}
+          beiZurueck={zurueck}
+          beiLoeschen={loesche}
+        />
       )}
     </div>
   );

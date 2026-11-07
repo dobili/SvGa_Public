@@ -31,6 +31,10 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await aktion.click();
   await expect(page.getByTestId("abenteuer-dialog")).toBeVisible();
   await expect(page.getByTestId("abenteuer-dialog")).toContainText("Staub, Kisten");
+  // Die Hauptquest hat beim Betreten begonnen und steht im Tagebuch; der Dialog bleibt offen.
+  await page.getByTestId("abenteuer-tagebuchknopf").click();
+  await expect(page.getByTestId("abenteuer-tagebuch")).toContainText("Das Brett auf dem Dachboden");
+  await page.getByRole("button", { name: "Schließen" }).click();
 
   // Immer die erste Wahl, sonst „Weiter“, bis die Partie beginnt.
   for (let i = 0; i < 40; i++) {

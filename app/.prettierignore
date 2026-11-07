@@ -12,3 +12,5 @@ test-results/
 package-lock.json
 .wrangler/
 training/
+# Zusatzpaket des Schach-Abenteuers (erzeugt von skripte/baue-abenteuerpaket.mjs)
+public/abenteuer/

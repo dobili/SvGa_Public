@@ -101,7 +101,7 @@ export const BAUSTEINE: readonly Lizenzbaustein[] = [
   { kennung: "lucide", text: PAKETTEXTE, pakete: ["lucide-react"] },
   { kennung: "idb", text: PAKETTEXTE, pakete: ["idb"] },
   // Schach-Abenteuer (docs/spiel/LIZENZEN.md): Oberwelt und Dialoge, nur im Zusatzpaket.
-  { kennung: "phaser", text: PAKETTEXTE, pakete: ["phaser"] },
+  { kennung: "phaser", text: PAKETTEXTE, pakete: ["phaser", "eventemitter3"] },
   { kennung: "inkjs", text: PAKETTEXTE, pakete: ["inkjs"] },
   { kennung: "badrap", text: PAKETTEXTE, pakete: ["@badrap/result"] },
 ];

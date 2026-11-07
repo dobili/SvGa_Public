@@ -8,7 +8,15 @@
  * Abhängigkeiten: app/stapel.ts (Typen), ui/komponenten/teilen/herausforderungen.ts.
  */
 import { HERAUSFORDERUNGSSPRUNG } from "../ui/komponenten/teilen/herausforderungen";
+import { ANSICHT_ABENTEUER } from "../abenteuer/schnittstelle/modul";
 import type { Ansicht, Bereich } from "./stapel";
+
+/** Schach-Abenteuer (Schritt 5): „#abenteuer“ öffnet die Startkarte des Spiels im Bereich Spielen. */
+const ABENTEUERSPRUNG: Sprung = {
+  muster: /^#abenteuer$/,
+  bereich: "spielen",
+  ansicht: () => ({ bildschirm: "zusatz", kennung: ANSICHT_ABENTEUER }),
+};
 
 /** Ein Sprungziel: Muster der Adresse und die Ansicht aus dem Treffer. */
 export interface Sprung {
@@ -21,6 +29,7 @@ export interface Sprung {
 export const SPRUENGE: readonly Sprung[] = [
   // P9: geteilte Aufgabe „#aufgabe-taktik-l-1Vybh“ (ui/komponenten/teilen/herausforderungen.ts).
   HERAUSFORDERUNGSSPRUNG,
+  ABENTEUERSPRUNG,
 ];
 
 /** Ansicht und Bereich zu einem Sprungziel aus der Liste, oder null. */

@@ -54,6 +54,7 @@ import {
   PartieWerkzeugkarten,
 } from "../komponenten/partie/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partie/partiewerkzeug";
+import { passendeErweiterungen } from "../komponenten/partie/partieerweiterungen";
 import { useRueckblick, type Rueckblick } from "../komponenten/rueckblick/useRueckblick";
 import { SpielEngine } from "../komponenten/partie/SpielEngine";
 import { PartieGabel } from "../komponenten/varianten/PartieGabel";
@@ -350,6 +351,11 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
             : null
         }
       />
+      {/* Erweiterungspunkt (Entscheidung A4, 07.11.2026): Leisten der Pakete, etwa die
+          Kartenleiste des Schach-Abenteuers (ui/komponenten/partie/partieerweiterungen.ts). */}
+      {passendeErweiterungen(partie.einstellung).map((e) => (
+        <e.Leiste key={e.kennung} partiekennung={partie.einstellung.abenteuer?.kennung ?? ""} />
+      ))}
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
       {/* Probepartie (Format 8): zählt nicht; am Ende „Als Variante speichern“ statt Abschluss. */}
       {probe && <Probeabschluss partie={partie} />}

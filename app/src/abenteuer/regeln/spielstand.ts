@@ -10,7 +10,11 @@
  * Prüfung je Feld kommt mit den Spielsystemen (Schritt 8).
  * Abhängigkeiten: schnittstelle/spielstand.ts (Typ).
  */
-import { ABENTEUER_VERSION, type Abenteuerstand, type Weltposition } from "../schnittstelle/spielstand";
+import {
+  ABENTEUER_VERSION,
+  type Abenteuerstand,
+  type Weltposition,
+} from "../schnittstelle/spielstand";
 
 /** Wo das Abenteuer beginnt: der Dachboden in Maple Falls, Blick nach oben (zum Brett). */
 export const STARTPOSITION: Weltposition = {

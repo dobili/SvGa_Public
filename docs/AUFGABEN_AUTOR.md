@@ -33,6 +33,33 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
+
+Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein
+Dialog, eine Partie der App, zurück. Platzhaltergrafik. Einstieg nur über die Adresse, damit es
+sonst niemand findet: schach-von-grund-auf.com/app/#abenteuer (oder in der installierten App die
+Adresse mit „#abenteuer“ öffnen).
+
+- [ ] N2605. Adresse /app/#abenteuer öffnen: Startkarte „Schach-Abenteuer“ mit dem Knopf „Spiel herunterladen“. Tippen:
+      Balken läuft, dann steht „Spielen“ da (das Paket ist im Prototyp unter 1 MB; echte Grafik und Musik kommen später).
+      Flugmodus an, App neu laden, wieder /app/#abenteuer: „Spielen“ steht sofort da, ohne Laden.
+- [ ] N2606. „Spielen“: Ein Dachboden aus farbigen Kacheln, unten links ein Steuerkreuz. Mit dem Kreuz laufen (der blaue
+      Kasten ist der Held); Wände, Kisten und Lampe halten auf. Vor das grün-weiße Brett stellen (von unten, Blick nach
+      oben): rechts unten erscheint der runde Knopf „Ansehen“.
+- [ ] N2607. „Ansehen“: Dialogkasten unten, „Weiter“ blättert Zeile für Zeile, Antworten als Knöpfe. Ambrose erwacht und
+      gibt den „Fingerzeig“ (Karte, noch ohne Wirkung). Am Ende beginnt die Partie gegen Ambrose in der normalen
+      Partieansicht: Titel „gegen Ambrose“, unter dem Brett die gelbe Leiste „Schach-Abenteuer“. Ambrose spielt etwa auf
+      deiner Stärke (ohne Wertung wie ein Einsteiger), ohne Spielhilfen, ungewertet.
+- [ ] N2608. Partie zu Ende spielen (oder aufgeben): Unter der Auswertung steht „Zurück zur Stadt“. Tippen: zurück auf den
+      Dachboden, oben eine Karte „Gewonnen/Verloren gegen Ambrose“ mit Zugzahl; „Weiter“ schließt sie. Die Partie steht
+      zusätzlich in der Partienliste der App.
+- [ ] N2609. Mitten in der Partie über „Spielen“ in der Leiste unten weggehen, dann /app/#abenteuer, „Spielen“: Karte „Deine
+      Partie läuft noch“ mit „Weiterspielen“ (führt in dieselbe Partie) und „Partie aufgeben und in der Stadt bleiben“.
+- [ ] N2610. Android-Zurück-Taste im Dialog schließt nur den Dialog; außerhalb führt sie aus dem Spiel. Beim Verlassen und
+      Zurückkommen steht der Held dort, wo du ihn verlassen hast.
+- [ ] N2611. Profil › Einstellungen › Deine Daten › Sicherung: Die Sicherung enthält jetzt den Spielstand (Format 11);
+      nach „Alle Daten löschen“ ist auch das Paket weg und die Startkarte zeigt wieder „Spiel herunterladen“.
+
 ### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
 
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser

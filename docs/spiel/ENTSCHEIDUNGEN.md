@@ -99,6 +99,36 @@ Formatregeln in `inhalte/abenteuer/README.md`, Prüfung in `pipeline/tests/test_
 `boden`, `waende`, `objekte`, `ausloeser`, Kollision am Kachelsatz, Auslöser-Bedeutung in
 `orte.json`; Spieltexte als eigene Datei mit Schlüsselmuster `bereich.name.feld`.
 
+**Schritt 5 erledigt (technischer Prototyp, Version 0.3.55):** Startkarte → Zusatzpaket laden →
+Oberwelt (Phaser, Dachboden in Platzhaltergrafik, Steuerkreuz) → Brett ansehen → Ink-Dialog mit
+Ambrose → Partie der App gegen das Gegnerprofil → „Zurück zur Stadt“ mit Ergebnis; Oberflächentest
+`tests/e2e/abenteuer.spec.ts`, Testpunkte N2605–N2611. Entscheidungen dabei:
+
+- **Code-Baustein als Paket des Service Workers:** `assets/abenteuer-*.js` (Phaser, inkjs, Spiel,
+  1,5 MB) läuft über denselben Weg wie die Sprachpakete (`sw/dateiliste.ts`, Cache
+  `sprachpaket-abenteuer`): erst beim ersten Abruf, dann offline, Aufräumen bei neuer Fassung. Kein
+  neuer Service-Worker-Code nötig. Die Daten des Spiels (`public/abenteuer/`) lädt
+  `paket/paketlader.ts` in den Cache `abenteuer-<version>` mit Prüfsummen; `paket.json` zuletzt.
+- **Einstieg nur über „#abenteuer“** (`app/spruenge.ts`), bis das Spiel etwas zu zeigen hat; eine
+  Karte auf „Spielen“ kommt mit Schritt 9.
+- **Auslöser zählen auch vor dem Helden** (Kachel in Blickrichtung), weil Gegenstände Kollision
+  haben; man steht davor und sieht sie an, wie in Rollenspielen in Draufsicht.
+- **Story-Gegner spielen als „eigene Stufe mit Stil“** (`bot: null`, `stilname`, Gewichte,
+  Häufigkeit, Stufen je Phase) ohne gespeicherten eigenen Bot; feste Eröffnungen wählen je Partie
+  eine (`anbindung/partiestart.ts`). Der Name im Profil ist ein Textschlüssel und wird beim
+  Anlegen der Partie übersetzt.
+- **Vertrag ergänzt:** `Partieauftrag.begegnung` (Kennung aus `begegnungen.json`, auf die Quests
+  warten; `kennung` ist je Versuch eindeutig) und `Appdienste.zeigePartie` (laufende Partie wieder
+  öffnen). Neue Datendatei `begegnungen.json` mit Schema.
+- **Spielstand beim ersten Start:** Eingangswertung fest, wenn die App schon 10 gewertete Partien
+  hat, sonst läuft sie mit (Feld `eingangPartien`); Heldname vorerst „Du“ (Namenswahl: Schritt 8).
+- **Phaser beenden:** erst nach dem Hochfahren zerstören (`beendeOberwelt`), sonst stürzte die
+  Ansicht ab, wenn der Leser sofort wieder ging (Fund im Oberflächentest).
+- **Noch nicht im Prototyp** (Schritt 8): Karten in der Partie (die Leiste zeigt nur die Begegnung),
+  Schlüsselmomente der Leserzüge, Kipppunkt und Wiedereinstieg, Quest-Auswertung, Kartenwechsel
+  über Übergänge, Aufgabenrunden mit Rückweg, Deckwahl, Namenswahl, Einstellungsseite (Paket
+  löschen).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

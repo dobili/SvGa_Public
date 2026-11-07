@@ -6,12 +6,12 @@ Nutzung; es wird nur Material verwendet, das kommerziell erlaubt ist. Keine Rech
 npm-Pakete brauchen zusätzlich Einträge in `app/src/ui/bildschirme/lizenzbausteine.ts`,
 `app/src/i18n/de.json`, `en.json` und `docs/LIZENZEN.md`, sonst wird `lizenzbausteine.test.ts` rot.
 
-## Geplante Abhängigkeiten (noch nicht eingebaut)
+## Abhängigkeiten (eingebaut seit Schritt 5, 07.11.2026)
 
-| Paket  | Version | Lizenz | Zweck                                       | Stand                                   |
-| ------ | ------- | ------ | ------------------------------------------- | --------------------------------------- |
-| phaser | 4.2.1   | MIT    | Oberwelt: Kacheln, Figuren, Kamera, Eingabe | Entscheidung A12, Einbau in Schritt 5   |
-| inkjs  | 2.4.0   | MIT    | Dialoge (Laufzeit und Compiler beim Build)  | Entscheidung A11, Einbau in Schritt 4/5 |
+| Paket  | Version | Lizenz | Zweck                                       | Stand                              |
+| ------ | ------- | ------ | ------------------------------------------- | ---------------------------------- |
+| phaser | 4.2.1   | MIT    | Oberwelt: Kacheln, Figuren, Kamera, Eingabe | eingebaut, mit eventemitter3 (MIT) |
+| inkjs  | 2.4.0   | MIT    | Dialoge (Laufzeit und Compiler beim Build)  | eingebaut (Compiler beim Build)    |
 
 ## Material
 

@@ -28,6 +28,8 @@ import { Variante } from "../ui/bildschirme/Variante";
 import { Varianten } from "../ui/bildschirme/Varianten";
 import { VariantenAbfrage } from "../ui/bildschirme/VariantenAbfrage";
 import { ANSICHT_VARIANTENKARTE, Variantenkarte } from "../ui/bildschirme/Variantenkarte";
+import { AbenteuerAnsicht } from "../abenteuer/anbindung/AbenteuerAnsicht";
+import { ANSICHT_ABENTEUER } from "../abenteuer/schnittstelle/modul";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -59,6 +61,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: "variante-abfrage", Bildschirm: VariantenAbfrage },
   // Stufe 2: der ganze Baum als verschiebbare Karte (Wert: Kennung der Variante).
   { kennung: ANSICHT_VARIANTENKARTE, Bildschirm: Variantenkarte },
+  // Schach-Abenteuer (docs/spiel/, Schritt 5): die Hülle lädt das Spiel erst auf Wunsch.
+  { kennung: ANSICHT_ABENTEUER, Bildschirm: AbenteuerAnsicht },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

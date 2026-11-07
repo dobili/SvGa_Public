@@ -1,0 +1,155 @@
+/* Schach-Abenteuer: Oberwelt, Steuerkreuz, Dialogfenster, Startkarte (docs/spiel/04_Architektur.md 8). */
+
+.abenteuer-welt {
+  position: relative;
+  width: 100%;
+  /* Die Oberwelt füllt den Bildschirm bis zur unteren Leiste der App. */
+  height: calc(100dvh - var(--unten-fest) - env(safe-area-inset-top) - var(--raster) * 12);
+  min-height: 240px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #1a1612;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.abenteuer-welt canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Steuerkreuz unten links, Aktionsknopf unten rechts; groß genug für Daumen (48 px). */
+.abenteuer-steuerkreuz {
+  position: absolute;
+  left: calc(var(--raster) * 2);
+  bottom: calc(var(--raster) * 2);
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  grid-template-rows: repeat(3, 48px);
+  gap: 2px;
+}
+
+.abenteuer-steuerkreuz button,
+.abenteuer-aktion {
+  min-width: 48px;
+  min-height: 48px;
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.75);
+  color: var(--navy);
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+  touch-action: none;
+}
+
+.abenteuer-steuerkreuz button:active,
+.abenteuer-aktion:active {
+  background: var(--gold);
+}
+
+.abenteuer-aktion {
+  position: absolute;
+  right: calc(var(--raster) * 2);
+  bottom: calc(var(--raster) * 3);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.abenteuer-aktion[hidden] {
+  display: none;
+}
+
+/* Dialogfenster unten über der Welt, wie ein Textkasten in Rollenspielen. */
+.abenteuer-dialog {
+  position: absolute;
+  left: calc(var(--raster) * 1.5);
+  right: calc(var(--raster) * 1.5);
+  bottom: calc(var(--raster) * 1.5);
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
+  border-radius: var(--radius);
+  background: rgba(22, 37, 61, 0.94);
+  color: var(--creme);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.abenteuer-dialog-sprecher {
+  margin: 0 0 var(--raster);
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.abenteuer-dialog-text {
+  margin: 0;
+  min-height: 3em;
+  font-size: var(--groesse-gross);
+  line-height: 1.4;
+}
+
+.abenteuer-dialog-wahlen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin-top: calc(var(--raster) * 1.5);
+}
+
+.abenteuer-dialog-wahlen button,
+.abenteuer-dialog-weiter {
+  min-height: 44px;
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--creme);
+  font-size: var(--groesse);
+  text-align: left;
+}
+
+.abenteuer-dialog-weiter {
+  margin-top: var(--raster);
+  align-self: flex-end;
+  text-align: center;
+}
+
+/* Startkarte und Meldungen in der Ansicht. */
+.abenteuer-start {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+}
+
+.abenteuer-fortschritt {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: rgba(22, 37, 61, 0.15);
+}
+
+.abenteuer-fortschritt > div {
+  height: 100%;
+  background: var(--gold);
+}
+
+.abenteuer-ergebnis {
+  position: absolute;
+  inset: calc(var(--raster) * 4) calc(var(--raster) * 2) auto;
+  padding: calc(var(--raster) * 2);
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.96);
+  color: var(--navy);
+}
+
+/* Die Kartenleiste in der Partie (Erweiterungspunkt, Entscheidung A4). */
+.abenteuer-kartenleiste {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: rgba(201, 162, 39, 0.12);
+  font-size: var(--groesse-klein);
+}

@@ -73,6 +73,8 @@ export interface Appdienste {
   readonly startePartie: (auftrag: Partieauftrag) => Promise<void>;
   /** Ergebnis einer beendeten Partie des Abenteuers, solange die App sie hält; null sonst. */
   readonly liesErgebnis: (kennung: string) => Promise<Partieergebnis | null>;
+  /** Öffnet eine noch laufende Partie des Abenteuers wieder (Kennung des Partieauftrags). */
+  readonly zeigePartie: (kennung: string) => void;
   /** Startet eine Aufgabenrunde in der App; das Ergebnis kommt beim Rückweg. */
   readonly starteAufgaben: (auftrag: Aufgabenauftrag) => Promise<void>;
   readonly liesAufgabenergebnis: (kennung: string) => Promise<Aufgabenergebnis | null>;

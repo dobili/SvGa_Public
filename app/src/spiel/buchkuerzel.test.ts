@@ -72,11 +72,12 @@ describe("Kürzel im Speicher", () => {
     expect(mitBuchkuerzeln(mit, "gibt-es-nicht", STAND)).toBe(mit);
   });
 
-  it("Format 9 ohne Kürzel wird Format 10, die Partie bleibt; Format 10 behält die Kürzel", () => {
+  it("Format 9 ohne Kürzel wird aktuell, die Partie bleibt; ab Format 10 bleiben die Kürzel", () => {
     const daten = { ...leereDaten(JETZT), spiel: stand(eintrag) };
     const alt = wandleUm(JSON.parse(JSON.stringify({ ...daten, schemaVersion: 9 })), JETZT);
-    expect(SCHEMA_VERSION).toBe(10);
-    expect(alt.ok && alt.daten.schemaVersion).toBe(10);
+    // Seit Format 11 (Schach-Abenteuer) ist das aktuelle Format höher als 10; die Kürzel kamen mit 10.
+    expect(SCHEMA_VERSION).toBeGreaterThanOrEqual(10);
+    expect(alt.ok && alt.daten.schemaVersion).toBe(SCHEMA_VERSION);
     expect(alt.ok && alt.daten.spiel.partien[0]?.buchbezug).toBeUndefined();
     expect(alt.ok && alt.daten.spiel.partien[0]?.werte.length).toBe(OPER.werte.length);
     const mitKuerzeln = { ...daten, spiel: mitBuchkuerzeln(daten.spiel, OPER.partie.id, STAND) };

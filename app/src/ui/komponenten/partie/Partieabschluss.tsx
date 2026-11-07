@@ -32,10 +32,22 @@ export function Partieabschluss({
   const { navigiere } = useNavigation();
   const oeffne = useOeffne();
   const [teilen, setzeTeilen] = useState(false);
-  const { startFen, abbildung } = partie.einstellung;
+  const { startFen, abbildung, abenteuer } = partie.einstellung;
   const eigeneStellung = !ausGrundstellung(partie);
   return (
     <section className="partieabschluss" data-testid="partieabschluss">
+      {/* Partie des Schach-Abenteuers (Format 11): zurück in die Welt, das Spiel liest das
+          Ergebnis beim Rückweg (abenteuer/oberwelt/Oberwelt.tsx). */}
+      {abenteuer && (
+        <button
+          type="button"
+          className="knopf-haupt"
+          data-testid="partie-zurueck-zur-stadt"
+          onClick={() => navigiere({ bildschirm: "zusatz", kennung: "abenteuer" })}
+        >
+          {t("partie.zurueckZurStadt")}
+        </button>
+      )}
       <div className="partieabschluss-reihe">
         <button
           type="button"

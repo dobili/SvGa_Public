@@ -55,8 +55,10 @@ export type Startstellung =
  * kartenErlaubt true, zaehltFuerApp true.
  */
 export interface Partieauftrag {
-  /** Kennung dieser Begegnung im Spiel, zum Beispiel „ironwood.clubkampf.1“ (eindeutig je Versuch). */
+  /** Kennung dieses Versuchs, eindeutig (Begegnung plus Zeitstempel), zum Beispiel „ironwood.clubkampf#m3k9“. */
   readonly kennung: string;
+  /** Die Begegnung aus den Spieldaten (inhalte/abenteuer/begegnungen.json), auf die Quests warten. */
+  readonly begegnung: string;
   readonly profil: Gegnerprofil;
   readonly zustand: Gegnerzustand;
   /** Die aus Profil, Zustand und Wertung gerechnete Stärke, damit das Ergebnis sie festhalten kann. */

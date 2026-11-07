@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "orte": [
+    {
+      "kennung": "mapleFalls",
+      "name": "ort.mapleFalls.name",
+      "nummer": 1,
+      "staffel": 1,
+      "karten": [
+        {
+          "kennung": "mapleFalls.dachboden",
+          "datei": "karten/maple-falls-dachboden.json",
+          "name": "ort.mapleFalls.dachboden",
+          "innen": true,
+          "musik": "musik/dachboden.ogg"
+        },
+        {
+          "kennung": "mapleFalls.wohnzimmer",
+          "datei": "karten/maple-falls-wohnzimmer.json",
+          "name": "ort.mapleFalls.wohnzimmer",
+          "innen": true
+        },
+        {
+          "kennung": "mapleFalls.aussen",
+          "datei": "karten/maple-falls-aussen.json",
+          "name": "ort.mapleFalls.aussen",
+          "innen": false,
+          "musik": "musik/maple-falls.ogg"
+        },
+        {
+          "kennung": "mapleFalls.clubraum",
+          "datei": "karten/maple-falls-clubraum.json",
+          "name": "ort.mapleFalls.clubraum",
+          "innen": true
+        },
+        {
+          "kennung": "mapleFalls.park",
+          "datei": "karten/maple-falls-park.json",
+          "name": "ort.mapleFalls.park",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "mapleFalls.mutter",
+          "name": "figur.mutter.name",
+          "sprite": "figuren/mutter.png",
+          "dialog": "maple-falls-wohnzimmer.mutter"
+        },
+        {
+          "kennung": "mapleFalls.coachDelgado",
+          "name": "figur.coachDelgado.name",
+          "sprite": "figuren/coach-delgado.png",
+          "dialog": "maple-falls-clubraum.coach",
+          "gegner": "mapleFalls.coachDelgado"
+        },
+        {
+          "kennung": "mapleFalls.sam",
+          "name": "figur.sam.name",
+          "sprite": "figuren/sam.png",
+          "dialog": "maple-falls-clubraum.sam",
+          "gegner": "mapleFalls.sam"
+        },
+        {
+          "kennung": "mapleFalls.skaterJo",
+          "name": "figur.skaterJo.name",
+          "sprite": "figuren/skater-jo.png",
+          "dialog": "maple-falls-park.skater_jo",
+          "gegner": "mapleFalls.skaterJo"
+        }
+      ],
+      "ausloeser": [
+        { "name": "start", "art": "start" },
+        {
+          "name": "brett",
+          "art": "gegenstand",
+          "dialog": "maple-falls-dachboden.dachboden_brett"
+        },
+        {
+          "name": "treppe",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
+            "ausloeser": "treppeOben"
+          }
+        },
+        {
+          "name": "haustuer",
+          "art": "uebergang",
+          "ziel": { "karte": "mapleFalls.aussen", "ausloeser": "haustuer" }
+        },
+        {
+          "name": "parkbank",
+          "art": "gegenstand",
+          "dialog": "maple-falls-park.parkbank"
+        }
+      ],
+      "club": {
+        "name": "club.mapleFalls.name",
+        "kapitel": [0, 1],
+        "chef": "mapleFalls.coachDelgado",
+        "mitglieder": ["mapleFalls.sam"],
+        "aufgaben": {
+          "minuten": 12,
+          "buchuebungen": [
+            "ueb:droh-ignorieren",
+            "ueb:zaehlen-vorstoss",
+            "ueb:angriff-zaehlen"
+          ],
+          "themen": ["zaehlen", "haengend", "matt1"]
+        }
+      }
+    }
+  ]
+}

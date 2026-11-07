@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-gegner.schema.json",
+  "title": "Gegner des Schach-Abenteuers",
+  "description": "Gegnerprofile des Spiels (docs/spiel/04_Architektur.md, Abschnitt 2; Typ Gegnerprofil in app/src/abenteuer/schnittstelle/gegnerprofil.ts). Jede Figur, die Schach spielt, hat genau ein Profil; das Spiel rechnet daraus vor jeder Partie eine Partieeinstellung der App. Fehlerarten und blinde Flecken heißen wie in app/src/engine/fehlerart-typen.ts, Stile wie in app/src/engine/stile.ts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "gegner"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "gegner": { "type": "array", "items": { "$ref": "#/$defs/profil" } }
+  },
+  "$defs": {
+    "kennung": {
+      "description": "Ort.Figur in Kleinbuchstaben, zum Beispiel „mapleFalls.coachDelgado“",
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "textschluessel": {
+      "description": "Schlüssel in den Spieltexten (inhalte/abenteuer/texte/de.json)",
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
+    },
+    "rolle": {
+      "enum": ["strasse", "clubmitglied", "clubchef", "story", "turnier"]
+    },
+    "phase": { "enum": ["eroeffnung", "mittelspiel", "endspiel"] },
+    "fehlerart": {
+      "description": "Fehlerarten der Bots (app/src/engine/fehlerart-typen.ts); die Liste wird beim Bau der Spieldaten gegen den Code geprüft",
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*$"
+    },
+    "stilname": {
+      "enum": [
+        "angreifer",
+        "positionsspieler",
+        "taktiker",
+        "verteidiger",
+        "draufgaenger",
+        "vereinfacher",
+        "universell"
+      ]
+    },
+    "staerke": {
+      "description": "Zielstärke (Architektur Abschnitt 4): fest in Elo, relativ zur aktuellen Wertung oder relativ zur Eingangswertung",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "elo"],
+          "properties": {
+            "art": { "const": "fest" },
+            "elo": { "type": "integer", "minimum": 300, "maximum": 3200 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "versatz"],
+          "properties": {
+            "art": { "enum": ["aktuell", "eingang"] },
+            "versatz": { "type": "integer", "minimum": -600, "maximum": 1200 }
+          }
+        }
+      ]
+    },
+    "eroeffnung": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art"],
+          "properties": { "art": { "enum": ["praxis", "frei"] } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "eroeffnungen", "abweichung"],
+          "properties": {
+            "art": { "const": "fest" },
+            "eroeffnungen": {
+              "description": "Werte wie in der Eröffnungswahl der App: „praxis:Italian Game“ oder ein Name aus dem Buch",
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 40,
+              "items": { "type": "string", "maxLength": 120 }
+            },
+            "abweichung": {
+              "description": "Prozent, mit der der Gegner je Buchzug seine Eröffnung verlässt",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        }
+      ]
+    },
+    "steckbriefzeile": {
+      "description": "Aus dem Profil erzeugte Zeile im Clubtagebuch (Entscheidung C7)",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["art", "wert"],
+      "properties": {
+        "art": { "enum": ["fehlerart", "fleck", "stil", "eroeffnung"] },
+        "wert": { "type": "string", "minLength": 1 }
+      }
+    },
+    "profil": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kennung",
+        "name",
+        "rolle",
+        "portraet",
+        "staerke",
+        "stil",
+        "eroeffnung",
+        "steckbrief"
+      ],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kennung" },
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "rolle": { "$ref": "#/$defs/rolle" },
+        "portraet": {
+          "description": "Datei im Zusatzpaket, relativ zum Paketordner",
+          "type": "string",
+          "pattern": "^portraets/[a-z0-9-]+\\.(webp|png|svg)$"
+        },
+        "staerke": { "$ref": "#/$defs/staerke" },
+        "phasenversatz": {
+          "description": "Abweichung je Phase in Stufen (−3 bis 3); fehlend: keine",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "eroeffnung": { "type": "integer", "minimum": -3, "maximum": 3 },
+            "mittelspiel": { "type": "integer", "minimum": -3, "maximum": 3 },
+            "endspiel": { "type": "integer", "minimum": -3, "maximum": 3 }
+          }
+        },
+        "gewichte": {
+          "description": "Gewicht je Fehlerart oder blindem Fleck: 0 aus, 1 wie Menschen, bis 3",
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/fehlerart" },
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3
+          }
+        },
+        "stil": {
+          "description": "Ein Stilname oder eine Mischung je Stil in Prozent (50 bis 125, höchstens einer je Achse, wie engine/stile.ts)",
+          "oneOf": [
+            { "$ref": "#/$defs/stilname" },
+            {
+              "type": "object",
+              "propertyNames": { "$ref": "#/$defs/stilname" },
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 50,
+                "maximum": 125
+              },
+              "minProperties": 1
+            }
+          ]
+        },
+        "eroeffnung": { "$ref": "#/$defs/eroeffnung" },
+        "menschlich": {
+          "description": "Spielt mit Maia, wenn geladen; fehlend: ja. Konzernspieler: nein",
+          "type": "boolean"
+        },
+        "steckbrief": {
+          "type": "array",
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/steckbriefzeile" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-texte.schema.json",
+  "title": "Spieltexte des Schach-Abenteuers",
+  "description": "Oberflächentexte des Spiels je Sprache (inhalte/abenteuer/texte/de.json, später en.json): flache Schlüssel wie in app/src/i18n/de.json, Platzhalter in geschweiften Klammern. Dialoge stehen nicht hier, sondern in Ink-Dateien. Getrennt von de.json der App, damit deren Prüfung auf unbenutzte Texte und die 480-KB-Datei unberührt bleiben (Architektur Abschnitt 9).",
+  "type": "object",
+  "propertyNames": {
+    "description": "Bereich.Name, zum Beispiel „figur.ambrose.name“, „karte.fingerzeig.spruch“",
+    "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
+  },
+  "additionalProperties": {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 400
+  },
+  "minProperties": 1
+}

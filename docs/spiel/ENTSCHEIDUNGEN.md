@@ -80,6 +80,16 @@ Steckbrief.
 Kamera (`public/_headers`, Permissions-Policy `camera=()`); QR-Lesen braucht sie. Frage an den
 Autor vor der Umsetzung des Tauschs (frühestens Schritt 8).
 
+**Schritt 4 erledigt (Datenformate):** Schemas `schemas/abenteuer-{gegner,karten,quests,orte,texte}.schema.json`
+(die App erzeugt daraus Typen in `app/src/daten/generiert/abenteuer-*.ts`, wie bei den Buchdaten),
+Beispiele in `inhalte/abenteuer/` (Maple Falls: vier Gegner, neun Karten, drei Quests, ein Ort mit
+Club und Aufgabenreihe, Spieltexte, Ink-Szene „Fund des Bretts“, Tiled-Karte „Dachboden“),
+Formatregeln in `inhalte/abenteuer/README.md`, Prüfung in `pipeline/tests/test_abenteuer.py`
+(Schemas und Querverweise). Entscheidungen dabei: Dialogformat Ink mit Tags `#sprecher`,
+`#stimmung`, `#klang`, `#pause` und sechs festen externen Funktionen; Tiled-Karten mit Ebenen
+`boden`, `waende`, `objekte`, `ausloeser`, Kollision am Kachelsatz, Auslöser-Bedeutung in
+`orte.json`; Spieltexte als eigene Datei mit Schlüsselmuster `bereich.name.feld`.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

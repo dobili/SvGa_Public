@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-orte.schema.json",
+  "title": "Orte des Schach-Abenteuers",
+  "description": "Die Welt: je Ort seine Karten (Tiled-Dateien im Zusatzpaket), die Figuren darauf mit ihrem Dialog und Profil, der Club mit Buchkapitel, Aufgabenreihe und Clubchef. Positionen der Figuren und Auslöser stehen in der Tiled-Datei (Objektebene „ausloeser“), nicht hier; hier steht, was ein Auslöser bedeutet.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "orte"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "orte": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/ort" }
+    }
+  },
+  "$defs": {
+    "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+    "kartenkennung": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "figurkennung": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "textschluessel": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
+    },
+    "karte": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "datei", "name", "innen"],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kartenkennung" },
+        "datei": {
+          "description": "Tiled-JSON im Zusatzpaket, relativ zum Paketordner",
+          "type": "string",
+          "pattern": "^karten/[a-z0-9-]+\\.json$"
+        },
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "innen": { "type": "boolean" },
+        "musik": {
+          "description": "Musikstück im Zusatzpaket; fehlend: das des Ortes",
+          "type": "string",
+          "pattern": "^musik/[a-z0-9-]+\\.(ogg|m4a)$"
+        }
+      }
+    },
+    "figur": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "name", "sprite", "dialog"],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/figurkennung" },
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "sprite": {
+          "description": "Spritesheet im Zusatzpaket (4 Richtungen, 4 Bilder je Richtung)",
+          "type": "string",
+          "pattern": "^figuren/[a-z0-9-]+\\.png$"
+        },
+        "dialog": {
+          "description": "Ink-Knoten beim Ansprechen (Datei.Knoten); die Szene entscheidet selbst nach Spielstand",
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
+        },
+        "gegner": {
+          "description": "Kennung im Gegnerverzeichnis, wenn die Figur Schach spielt",
+          "$ref": "#/$defs/figurkennung"
+        }
+      }
+    },
+    "ausloeser": {
+      "description": "Bedeutung eines Objekts der Ebene „ausloeser“ in der Tiled-Datei (gleicher Name)",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "art"],
+      "properties": {
+        "name": { "$ref": "#/$defs/kennung" },
+        "art": { "enum": ["uebergang", "dialog", "gegenstand", "start"] },
+        "ziel": {
+          "description": "uebergang: Zielkarte und Auslösername dort, an dem der Held erscheint",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["karte", "ausloeser"],
+          "properties": {
+            "karte": { "$ref": "#/$defs/kartenkennung" },
+            "ausloeser": { "$ref": "#/$defs/kennung" }
+          }
+        },
+        "dialog": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
+        }
+      }
+    },
+    "club": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "kapitel", "chef", "mitglieder", "aufgaben"],
+      "properties": {
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "kapitel": {
+          "description": "Buchkapitel des Clubs (Stellungnahme Abschnitt 3); das erste ist das Hauptkapitel",
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "integer", "minimum": 0, "maximum": 12 }
+        },
+        "chef": { "$ref": "#/$defs/figurkennung" },
+        "mitglieder": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/figurkennung" }
+        },
+        "aufgaben": {
+          "description": "Aufgabenreihe vor dem Clubkampf (Architektur Abschnitt 5): Buchübungen und Themen der Trainer, Zahl aus dem Zeitbudget",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minuten", "buchuebungen", "themen"],
+          "properties": {
+            "minuten": { "type": "integer", "minimum": 5, "maximum": 30 },
+            "buchuebungen": {
+              "description": "Labels der Übungen des Buches, zum Beispiel „ueb:taktik-a03“",
+              "type": "array",
+              "items": { "type": "string", "pattern": "^ueb:[a-z0-9-]+$" }
+            },
+            "themen": {
+              "description": "Motive und Themen der Trainer der App (training/taktiktrainer.ts, zusatzaufgaben.ts)",
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9:]*$" }
+            }
+          }
+        }
+      }
+    },
+    "ort": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kennung",
+        "name",
+        "nummer",
+        "karten",
+        "figuren",
+        "ausloeser"
+      ],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kennung" },
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "nummer": {
+          "description": "Reihenfolge in der Welt (1 = Maple Falls)",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "staffel": { "type": "integer", "minimum": 1, "maximum": 2 },
+        "karten": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/karte" }
+        },
+        "figuren": { "type": "array", "items": { "$ref": "#/$defs/figur" } },
+        "ausloeser": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ausloeser" }
+        },
+        "club": { "$ref": "#/$defs/club" }
+      }
+    }
+  }
+}

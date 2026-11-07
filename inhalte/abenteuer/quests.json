@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "quests": [
+    {
+      "kennung": "mapleFalls.dasBrett",
+      "titel": "quest.dasBrett.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "mapleFalls.dachboden" },
+      "schritte": [
+        {
+          "text": "quest.dasBrett.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-dachboden.brett_beruehren"
+          }
+        },
+        {
+          "text": "quest.dasBrett.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-dachboden.ambrose_erwacht"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.ambroseErwacht" },
+            { "art": "karte", "karte": "fingerzeig" }
+          ]
+        },
+        {
+          "text": "quest.dasBrett.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "mapleFalls.ersteLektion",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.erstePartie" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.samsDame",
+      "titel": "quest.samsDame.titel",
+      "typ": "begegnung",
+      "ort": "mapleFalls",
+      "haupt": false,
+      "start": { "art": "dialog", "knoten": "maple-falls-clubraum.sam_klagt" },
+      "voraussetzung": ["mapleFalls.dasBrett"],
+      "schritte": [
+        {
+          "text": "quest.samsDame.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "mapleFalls.todsuenden" },
+          "wirkungen": [
+            { "art": "steckbrief", "gegner": "mapleFalls.sam", "zeile": 0 },
+            {
+              "art": "zustand",
+              "gegner": "mapleFalls.coachDelgado",
+              "analysiert": true
+            }
+          ]
+        },
+        {
+          "text": "quest.samsDame.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "mapleFalls.samRevanche",
+            "ausgang": ["sieg"]
+          },
+          "wirkungen": [
+            { "art": "karte", "karte": "zweiteChance", "anzahl": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.verlorenesBrett",
+      "titel": "quest.verlorenesBrett.titel",
+      "typ": "raetsel",
+      "ort": "mapleFalls",
+      "haupt": false,
+      "start": { "art": "dialog", "knoten": "maple-falls-park.bibliothekar" },
+      "schritte": [
+        {
+          "text": "quest.verlorenesBrett.schritt1",
+          "ereignis": {
+            "art": "ort",
+            "karte": "mapleFalls.park",
+            "ausloeser": "parkbank"
+          },
+          "wirkungen": [{ "art": "fragment", "halbzug": 0 }]
+        }
+      ]
+    }
+  ]
+}

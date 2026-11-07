@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-karten.schema.json",
+  "title": "Hilfskarten des Schach-Abenteuers",
+  "description": "Kartensorten (Typ Kartensorte in app/src/abenteuer/schnittstelle/karten.ts). Karten ändern Informationen, Züge oder die Startstellung, nie die Zugregeln. Stufe und Art bestimmen die Clubnadel: Gold ohne Karten, Silber mit höchstens zwei leichten, sonst Bronze.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "karten"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "karten": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/karte" }
+    }
+  },
+  "$defs": {
+    "textschluessel": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
+    },
+    "feld": {
+      "description": "Feld der Figur, die der Gegner bei einer Vorgabe nicht bekommt (Schreibweise aus Sicht des Gegners: Weiß f2, Schwarz f7; das Spiel spiegelt je nach Farbe)",
+      "type": "string",
+      "pattern": "^[a-h][1-8]$"
+    },
+    "wirkung": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art"],
+          "properties": {
+            "art": {
+              "enum": [
+                "fingerzeig",
+                "gefahrenradar",
+                "zweiteChance",
+                "mentorzug",
+                "sanduhr"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "kandidaten"],
+          "properties": {
+            "art": { "const": "fluestern" },
+            "kandidaten": { "type": "integer", "minimum": 2, "maximum": 3 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "feld"],
+          "properties": {
+            "art": { "const": "vorgabe" },
+            "feld": { "$ref": "#/$defs/feld" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "sekunden"],
+          "properties": {
+            "art": { "const": "zeitbonus" },
+            "sekunden": { "type": "integer", "minimum": 30, "maximum": 600 }
+          }
+        }
+      ]
+    },
+    "karte": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kennung",
+        "name",
+        "spruch",
+        "bild",
+        "stufe",
+        "art",
+        "wirkung",
+        "zeitpunkt"
+      ],
+      "properties": {
+        "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "name": { "$ref": "#/$defs/textschluessel" },
+        "spruch": {
+          "description": "Ambroses Satz auf der Karte (Textschlüssel)",
+          "$ref": "#/$defs/textschluessel"
+        },
+        "bild": {
+          "type": "string",
+          "pattern": "^karten/[a-z0-9-]+\\.(webp|png)$"
+        },
+        "stufe": { "enum": ["leicht", "mittel", "stark"] },
+        "art": {
+          "description": "dauerhaft: einmal je Partie, bleibt im Besitz; verbrauch: verschwindet nach dem Spielen",
+          "enum": ["dauerhaft", "verbrauch"]
+        },
+        "wirkung": { "$ref": "#/$defs/wirkung" },
+        "zeitpunkt": {
+          "description": "Vorgaben nur vor Partiebeginn, alles andere während der Partie",
+          "enum": ["vorher", "waehrend"]
+        }
+      }
+    }
+  }
+}

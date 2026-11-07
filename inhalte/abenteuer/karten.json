@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "karten": [
+    {
+      "kennung": "fingerzeig",
+      "name": "karte.fingerzeig.name",
+      "spruch": "karte.fingerzeig.spruch",
+      "bild": "karten/fingerzeig.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": { "art": "fingerzeig" },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "gefahrenradar",
+      "name": "karte.gefahrenradar.name",
+      "spruch": "karte.gefahrenradar.spruch",
+      "bild": "karten/gefahrenradar.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": { "art": "gefahrenradar" },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "zweiteChance",
+      "name": "karte.zweiteChance.name",
+      "spruch": "karte.zweiteChance.spruch",
+      "bild": "karten/zweite-chance.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": { "art": "zweiteChance" },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "fluestern",
+      "name": "karte.fluestern.name",
+      "spruch": "karte.fluestern.spruch",
+      "bild": "karten/fluestern.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": { "art": "fluestern", "kandidaten": 3 },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "mentorzug",
+      "name": "karte.mentorzug.name",
+      "spruch": "karte.mentorzug.spruch",
+      "bild": "karten/mentorzug.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": { "art": "mentorzug" },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "bauernvorgabe",
+      "name": "karte.bauernvorgabe.name",
+      "spruch": "karte.bauernvorgabe.spruch",
+      "bild": "karten/bauernvorgabe.webp",
+      "stufe": "stark",
+      "art": "verbrauch",
+      "wirkung": { "art": "vorgabe", "feld": "f2" },
+      "zeitpunkt": "vorher"
+    },
+    {
+      "kennung": "springervorgabe",
+      "name": "karte.springervorgabe.name",
+      "spruch": "karte.springervorgabe.spruch",
+      "bild": "karten/springervorgabe.webp",
+      "stufe": "stark",
+      "art": "verbrauch",
+      "wirkung": { "art": "vorgabe", "feld": "g1" },
+      "zeitpunkt": "vorher"
+    },
+    {
+      "kennung": "zeitbonus",
+      "name": "karte.zeitbonus.name",
+      "spruch": "karte.zeitbonus.spruch",
+      "bild": "karten/zeitbonus.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": { "art": "zeitbonus", "sekunden": 120 },
+      "zeitpunkt": "vorher"
+    },
+    {
+      "kennung": "sanduhr",
+      "name": "karte.sanduhr.name",
+      "spruch": "karte.sanduhr.spruch",
+      "bild": "karten/sanduhr.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": { "art": "sanduhr" },
+      "zeitpunkt": "waehrend"
+    }
+  ]
+}

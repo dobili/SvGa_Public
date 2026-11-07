@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-quests.schema.json",
+  "title": "Quests des Schach-Abenteuers",
+  "description": "Haupt- und Nebenaufgaben als Folge von Schritten. Jeder Schritt wartet auf ein Ereignis (Dialog erreicht, Partie gewonnen, Aufgabenrunde bestanden, Ort betreten) und kann Belohnungen auslösen (Karte, Steckbriefzeile, Zustand eines Gegners, Szene der Haupthandlung). Der Stand je Quest liegt im Spielstand (Typ Queststand). Drei Quest-Typen nach Dokument 02, 3.3: raetsel (Stellung aus der Welt), hilfe (Dialog und Belohnung), begegnung (verändert einen Gegner).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "quests"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "quests": { "type": "array", "items": { "$ref": "#/$defs/quest" } }
+  },
+  "$defs": {
+    "kennung": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "textschluessel": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
+    },
+    "ereignis": {
+      "description": "Worauf ein Schritt wartet",
+      "oneOf": [
+        {
+          "description": "Ein Ink-Knoten wurde erreicht (Datei.Knoten)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "knoten"],
+          "properties": {
+            "art": { "const": "dialog" },
+            "knoten": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
+            }
+          }
+        },
+        {
+          "description": "Eine Begegnung endete mit diesem Ausgang (Partieauftrag mit dieser Begegnungskennung)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "begegnung", "ausgang"],
+          "properties": {
+            "art": { "const": "partie" },
+            "begegnung": { "$ref": "#/$defs/kennung" },
+            "ausgang": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "enum": ["sieg", "remis", "niederlage"] }
+            }
+          }
+        },
+        {
+          "description": "Eine Aufgabenrunde wurde bestanden",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "runde"],
+          "properties": {
+            "art": { "const": "aufgaben" },
+            "runde": { "$ref": "#/$defs/kennung" }
+          }
+        },
+        {
+          "description": "Eine Karte (Tiled) wurde betreten oder ein Auslöser darin berührt",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "karte"],
+          "properties": {
+            "art": { "const": "ort" },
+            "karte": {
+              "type": "string",
+              "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+            },
+            "ausloeser": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+          }
+        }
+      ]
+    },
+    "wirkung": {
+      "description": "Was beim Erreichen eines Schritts passiert",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "karte"],
+          "properties": {
+            "art": { "const": "karte" },
+            "karte": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+            "anzahl": { "type": "integer", "minimum": 1, "maximum": 5 }
+          }
+        },
+        {
+          "description": "Schaltet die n-te Steckbriefzeile eines Gegners frei",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "gegner", "zeile"],
+          "properties": {
+            "art": { "const": "steckbrief" },
+            "gegner": { "$ref": "#/$defs/kennung" },
+            "zeile": { "type": "integer", "minimum": 0, "maximum": 3 }
+          }
+        },
+        {
+          "description": "Setzt den sichtbaren Zustand eines Gegners (abgelenkt: Faktor auf die Fehlerhäufigkeit und Grund; analysiert)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "gegner"],
+          "properties": {
+            "art": { "const": "zustand" },
+            "gegner": { "$ref": "#/$defs/kennung" },
+            "faktor": { "type": "number", "minimum": 0.5, "maximum": 2 },
+            "grund": { "$ref": "#/$defs/textschluessel" },
+            "analysiert": { "type": "boolean" }
+          }
+        },
+        {
+          "description": "Setzt Akt und Szene der Haupthandlung",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "akt", "szene"],
+          "properties": {
+            "art": { "const": "szene" },
+            "akt": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "szene": {
+              "type": "string",
+              "pattern": "^akt[1-5]\\.[a-z][a-zA-Z0-9]*$"
+            }
+          }
+        },
+        {
+          "description": "Ein Partiefragment von Ambroses alter Partie (Halbzugindex)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "halbzug"],
+          "properties": {
+            "art": { "const": "fragment" },
+            "halbzug": { "type": "integer", "minimum": 0, "maximum": 200 }
+          }
+        }
+      ]
+    },
+    "schritt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "ereignis"],
+      "properties": {
+        "text": {
+          "description": "Was im Clubtagebuch als nächster Schritt steht (Textschlüssel)",
+          "$ref": "#/$defs/textschluessel"
+        },
+        "ereignis": { "$ref": "#/$defs/ereignis" },
+        "wirkungen": { "type": "array", "items": { "$ref": "#/$defs/wirkung" } }
+      }
+    },
+    "quest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kennung",
+        "titel",
+        "typ",
+        "ort",
+        "haupt",
+        "start",
+        "schritte"
+      ],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kennung" },
+        "titel": { "$ref": "#/$defs/textschluessel" },
+        "typ": { "enum": ["raetsel", "hilfe", "begegnung", "haupt"] },
+        "ort": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "haupt": {
+          "description": "Teil der Haupthandlung?",
+          "type": "boolean"
+        },
+        "start": {
+          "description": "Wodurch die Quest angenommen wird",
+          "$ref": "#/$defs/ereignis"
+        },
+        "voraussetzung": {
+          "description": "Quests, die vorher erledigt sein müssen",
+          "type": "array",
+          "items": { "$ref": "#/$defs/kennung" }
+        },
+        "schritte": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/schritt" }
+        }
+      }
+    }
+  }
+}

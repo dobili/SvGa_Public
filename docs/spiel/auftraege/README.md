@@ -12,9 +12,11 @@ seiner Nummer: `mittel-1.md`, `mittel-2.md`, `niedrig-1.md` … Der Helfer liest
    Auftragsdatei.
 2. Steht in der Auftragsdatei unter **Stand** „kein Auftrag“: nichts tun, dem Autor melden und
    warten.
-3. Sonst: auf dem in der Datei genannten Zweig arbeiten (`git checkout -b <zweig> origin/<basis>`
-   oder den Zweig holen, wenn er schon existiert). Nie auf `main` oder auf dem Zweig des
-   Haupt-Chats pushen.
+3. Sonst: auf dem eigenen Zweig der Sitzung arbeiten (jede Helfer-Sitzung hat einen festen Zweig
+   `claude/…`, auf den sie allein pushen darf; der in der Auftragsdatei genannte Zweigname ist nur
+   ein Vorschlag). Den Zweig im Bericht nennen. Vor dem Start den Zweig des Haupt-Chats
+   hereinholen (`git merge origin/claude/friendly-shannon-y8bf90`), damit die Basis aktuell ist.
+   Nie auf `main` oder auf den Zweig des Haupt-Chats pushen.
 4. Nur die Dateien anfassen, die unter **Darf ändern** stehen. Alles andere ist gesperrt; nötige
    Änderungen dort als Vorschlag in den Bericht schreiben.
 5. Vor jedem Push: Prüfungen laut Auftrag (Dokumente: `npx prettier --check` im Ordner `app/`;

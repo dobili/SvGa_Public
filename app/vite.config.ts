@@ -195,6 +195,10 @@ function ohneOrtWasm(): Plugin {
   };
 }
 
+/** Vorschau-Build eines anderen Zweigs als main (Cloudflare Workers Builds): die Beta-Fassung. */
+const BETA =
+  typeof process.env.WORKERS_CI_BRANCH === "string" && process.env.WORKERS_CI_BRANCH !== "main";
+
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(paket.version),
@@ -253,8 +257,11 @@ export default defineConfig({
       },
       manifest: {
         id: "/",
-        name: "Schach von Grund auf",
-        short_name: "Schach",
+        // Vorschau-Builds anderer Zweige (Cloudflare Workers Builds setzt WORKERS_CI_BRANCH) heißen
+        // „Beta“, damit der Autor sie neben der richtigen App installieren und unterscheiden kann
+        // (Wunsch des Autors, 07.11.2026: Entwicklerversion für das Schach-Abenteuer).
+        name: BETA ? "Schach von Grund auf (Beta)" : "Schach von Grund auf",
+        short_name: BETA ? "Schach Beta" : "Schach",
         description: "Die App zum Buch „Schach von Grund auf“",
         lang: "de",
         // Die App liegt unter /app/; die Kennung bleibt „/“, damit bestehende Installationen

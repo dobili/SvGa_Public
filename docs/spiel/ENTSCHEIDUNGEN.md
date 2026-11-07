@@ -129,6 +129,34 @@ Ambrose → Partie der App gegen das Gegnerprofil → „Zurück zur Stadt“ mi
   über Übergänge, Aufgabenrunden mit Rückweg, Deckwahl, Namenswahl, Einstellungsseite (Paket
   löschen).
 
+## 07.11.2026 – Rückfragen des Autors nach dem Prototyp
+
+- **Grafik:** Die farbigen Kacheln des Prototyps sind Platzhalter (`skripte/baue-abenteuerpaket.mjs`
+  zeichnet acht einfarbige Kacheln und einen Kasten als Helden). Das fertige Spiel bekommt
+  gezeichnete Pixelkacheln (LimeZu, 16 px Quellgröße, dreifach gezeichnet) mit Animationen,
+  dazu hochauflösende Porträts und Oberfläche; Phaser und Tiled sind von der Kachelgröße
+  unabhängig (`04_Architektur.md`, Abschnitt 10).
+- **Oberfläche im Spiel (D1, Wunsch des Autors):** Im Spiel tritt die Oberfläche der App
+  vollständig zurück: keine Kopfzeile, keine untere Leiste; stattdessen ein Spielmenü (Speichern
+  ist automatisch, „Zurück zur App“, Einstellungen des Spiels). Start aus der App bleibt. Die
+  Partie selbst läuft weiter in der Brettansicht der App (Entscheidung Dokument 02), bekommt aber
+  im Abenteuer dieselbe Vollbildhülle. Umsetzung: Zusatzansichten können „vollbild“ sein
+  (App.tsx blendet die Leiste aus), Schritt 8.
+- **Beta-Fassung zum Testen (D2, Wunsch des Autors):** Keine Updates der richtigen App für das
+  Spiel, bis es fertig ist; Changelog für die Leser wird mit dem nächsten Update nötig.
+  Umsetzung: Cloudflare Workers Builds baut jeden Zweig als Vorschau mit eigener Adresse
+  (`<zweig>-schach-von-grund-auf.<konto>.workers.dev`); eine andere Adresse ist für den Browser
+  eine eigene App mit eigenem Speicher, also neben der richtigen App installierbar. Vorschau-Builds
+  heißen jetzt „Schach von Grund auf (Beta)“ / „Schach Beta“ (vite.config.ts, über
+  `WORKERS_CI_BRANCH`), damit die Symbole unterscheidbar sind. Vorschlag: fester Zweig `beta`,
+  auf den der Haupt-Chat den Stand des Spiels pusht; Zugriff nur für den Autor über Cloudflare
+  Access auf der Vorschau-Adresse (wie `/admin`). Offen: Freigabe des Autors für den Zweig `beta`.
+- **Helfer-Chats:** Sie können den Haupt-Chat nicht direkt anschreiben; das Repository ist der
+  Kanal (Bericht in der Auftragsdatei, Push auf den eigenen Zweig, der Autor sagt „weiter“). Alle
+  drei ersten Aufträge sind erledigt und zusammengeführt (`05_Story_Bibel.md`, `06_Regelwerk.md`,
+  `07_Aufgabenzuordnung.md`); ihre Vorschläge für die Verträge (V1–V9 des Regelwerks, Vorschläge
+  der Bibel) prüft der Haupt-Chat mit Schritt 8.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

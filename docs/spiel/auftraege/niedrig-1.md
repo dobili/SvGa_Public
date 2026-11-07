@@ -1,51 +1,51 @@
-# Auftrag niedrig-1: Aufgabenzuordnung je Club auszählen
+# Auftrag niedrig-1: Tiled-Karten für Maple Falls in Platzhalterkacheln
 
-**Stand:** erledigt (niedrig-1, 07.11.2026)
-**Zweig:** `abenteuer-aufgabenzuordnung`, Basis `claude/friendly-shannon-y8bf90`
-**Darf ändern:** `docs/spiel/07_Aufgabenzuordnung.md` (neu), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** `cd app && npx prettier --check ../docs/spiel`
+**Stand:** offen (Haupt-Chat, 07.11.2026, zweiter Auftrag; die Aufgabenzuordnung ist
+zusammengeführt)
+**Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
+`claude/friendly-shannon-y8bf90` (vorher hereinholen)
+**Darf ändern:** `inhalte/abenteuer/karten/*.json` (neu; `maple-falls-dachboden.json` nur, wenn
+nötig, dann im Bericht nennen), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests/test_abenteuer.py`
+(Python-Umgebung: `python3 -m venv .venv && . .venv/bin/activate && pip install -r pipeline/requirements.txt`),
+dann in `app/`: `npm ci` (einmal), `node skripte/baue-abenteuerpaket.mjs`, zuletzt
+`npx prettier --check ../inhalte/abenteuer`.
 
 ## Ziel
 
-Für jeden der acht Clubs (Zuordnung in `03_Technische_Stellungnahme.md`, Abschnitt 3) eine
-belastbare Liste, welche Aufgaben die App dafür schon hat. Das Ergebnis füllt später
-`orte.json` (Feld `club.aufgaben`) und zeigt, wo Aufgaben fehlen.
+Die vier übrigen Karten von Maple Falls aus `inhalte/abenteuer/orte.json` (`mapleFalls.wohnzimmer`,
+`mapleFalls.aussen`, `mapleFalls.clubraum`, `mapleFalls.park`) als Tiled-JSON, genau im Aufbau
+der vorhandenen `karten/maple-falls-dachboden.json` und nach den Regeln in
+`inhalte/abenteuer/README.md` (Abschnitt Tiled-Karten). Grafik ist noch Platzhalter (acht
+Kacheln: 1 Boden, 2 Wand, 3 Kiste, 4 Teppich, 5 Brett, 6 Treppe, 7 Lampe, 8 Fenster; Kollision
+tragen 2, 3, 5, 7, 8). Die Karten sollen trotzdem die Räume der Story-Bibel (`05_Story_Bibel.md`,
+Abschnitt Welt) in Größe und Anordnung abbilden, damit später nur die Kacheln getauscht werden.
 
-## Vorgehen
+## Vorgaben
 
-1. Buchübungen: `app/public/daten/de/a1/kap00.json` bis `kap12.json`, Schlüssel `uebungen`
-   (Felder `id`, `nummer`, `kapitel`, `abbildungen`, `erklaerung.motiv`). Je Club die passenden
-   Labels (`ueb:…`) mit Nummer und Motiv auflisten.
-2. Trainer-Aufgaben: `inhalte/de/trainer/taktik.json`, `endspiel.json`, `falle.json`,
-   `struktur.json` (Schemas in `schemas/trainer-*.schema.json`) und
-   `app/public/daten/zusatzaufgaben.json` (Themen in `app/src/training/zusatzaufgaben.ts`,
-   `ZUSATZTHEMEN`). Je Club und Thema die Anzahl je Schwierigkeit 1 bis 5 auszählen (kleines
-   Python-Skript mit `-I`, nicht ins Repository; nur die Tabellen ins Dokument).
-3. Für jeden Club eine Tabelle: Thema, Quelle, Anzahl je Schwierigkeit, Kennungen der Themen
-   so, wie `app/src/training/taktiktrainer.ts` (`MOTIVE`, `TAKTIKTHEMEN`) und die Trainer sie
-   erwarten.
-4. Lücken benennen: Themen mit weniger als 15 Aufgaben oder ohne Schwierigkeit 1–2 (für
-   Einsteiger), mit Vorschlag, woher Nachschub käme (Lichess-Themen, Buchabbildungen).
-5. Prüfen, ob die drei Beispiel-Labels in `inhalte/abenteuer/orte.json` (`ueb:droh-ignorieren`,
-   `ueb:zaehlen-vorstoss`, `ueb:angriff-zaehlen`) existieren; wenn nicht, die richtigen Labels
-   im Bericht nennen (die Datei selbst ist gesperrt).
+1. **Größen:** Innenräume 12 × 10 bis 16 × 12 Kacheln, Außenkarten 24 × 18 bis 32 × 24. Immer ein
+   geschlossener Rand aus Wandkacheln (außen: Kachel 2 als Hecke oder Zaun).
+2. **Ebenen:** `boden`, `waende`, `objekte` als Kachelebenen, `ausloeser` als Objektebene, Namen
+   und Reihenfolge wie im Beispiel. Kachelsatz eingebettet wie im Beispiel (`platzhalter`,
+   `../grafik/platzhalter.png`, 4 × 4, Kollision je Kachel).
+3. **Auslöser:** Für jeden Übergang aus `orte.json` ein Objekt mit genau dem Namen
+   (`treppe`/`treppeOben`, `haustuer`, …) auf beiden Seiten; auf jeder Karte ein `start`-Objekt
+   mit `richtung`; Gegenstände (`parkbank`, `brett`) als Objekte; Figuren als Objekte mit
+   `type = "figur"` und dem Figurnamen aus `orte.json` (`name` = Teil nach dem Punkt, etwa
+   `coachDelgado`), an sinnvollen Stellen (Coach am Lehrertisch, Sam an einem Brett, Jo im Park).
+   Fehlende Übergänge oder Figuren in `orte.json` nicht selbst ergänzen, sondern im Bericht nennen.
+4. **Begehbarkeit:** Jeder Auslöser muss von `start` aus erreichbar sein (zu Fuß, ohne
+   Kollisionskacheln zu durchqueren); vor jedem Gegenstand und jeder Figur mindestens eine freie
+   Kachel, von der aus man sie ansieht.
+5. **Erzeugung:** Mit einem kleinen Python-Skript (mit `-I`, nicht ins Repository), damit die
+   Datenfelder (`data`, 120 bis 768 Zahlen) fehlerfrei sind; die JSON-Dateien mit Einrückung 1 wie
+   das Beispiel. Im Bericht je Karte eine ASCII-Skizze (Zeichen je Kachel), damit der Haupt-Chat sie
+   ohne Tiled prüfen kann.
 
 ## Was nicht dazugehört
 
-Keine Änderung an Daten oder Code; keine neuen Aufgaben erfinden.
+Grafik, `orte.json`, Code; Cedar Creek (späterer Auftrag).
 
 ## Bericht
 
-Ergebnis in `docs/spiel/07_Aufgabenzuordnung.md`: je Club Buchübungen (Nummer, Label, Motiv) und
-Tabelle Thema/Quelle/S1–S5, dazu eine Lückenliste.
-
-- Die drei Labels in `orte.json` existieren: `ueb:droh-ignorieren` (Nr. 4), `ueb:zaehlen-vorstoss`
-  (Nr. 5), `ueb:angriff-zaehlen` (Nr. 7). Keine Korrektur nötig.
-- Taktiktrainer kennt kein Thema „Matt in 1/2“; Club 2 bekommt das nur über die Zusatzthemen
-  `matt1`, `matt2` (je 50) und `mattbilder` (Taktik und Zusatz).
-- Echte Lücken: Club 6 (Struktur nur Buch, fast alles S3, viele Strukturen unter 15) und Club 8
-  (Buchendspiele einzeln klein, kaum S1–S2; Lichess nur Bauern-, Turm-, Damen-,
-  Leichtfigurenendspiele). Club 1 hat außer `haengend` keine gezählten Trainerdaten.
-- Vorschlag (nicht umgesetzt): In Stellungnahme Abschnitt 3 bei Club 2 fehlen Übung 43
-  (Erstickungsmatt) und 48 (Damiano-Matt), die auch zu Mattbildern gehören (48 steht bei Club 7).
-  `falle.json` hat 137 Aufgaben (17 Buch, 60 `falle`, 60 `geschenk` von Lichess).
+(vom Helfer auszufüllen)

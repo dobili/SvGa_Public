@@ -66,8 +66,7 @@ Eine Frau, die Gesetze macht und pfeift. Ich mag sie jetzt schon. #sprecher:ambr
 
 === coach_reihe_offen ===
 {
-- not reiheSamBestanden and not reiheJunoBestanden: Sam und Juno haben Aufgaben für dich. Such dir aus, wen du zuerst nervst. #sprecher:coachDelgado
-- not reiheSamBestanden: Juno hast du geschafft. Jetzt Sam. Er tut streng, ist aber fair. #sprecher:coachDelgado
+- not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. Sam tut streng, ist aber fair. #sprecher:coachDelgado
 - else: Sam hast du geschafft. Jetzt noch Juno. Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado
 }
 -> END
@@ -207,9 +206,14 @@ Ein Rivale wird zum Freund. Das ist die schönste Eröffnung, die es gibt. #spre
 
 === juno ===
 {
+- not reiheSamBestanden: -> juno_erst_sam
 - not reiheJunoBestanden: -> juno_reihe
 - else: -> juno_club_alltag
 }
+
+=== juno_erst_sam ===
+Erst Sam, dann ich. Der Coach will das so. Und Sam wird sonst grummelig. #sprecher:juno
+-> END
 
 === juno_reihe ===
 Ich hab Aufgaben für dich! Ich hab sie aufgeschrieben, aber ich kann meine Schrift nicht lesen. #sprecher:juno

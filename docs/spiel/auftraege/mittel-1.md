@@ -59,7 +59,7 @@ Läufe mit zufälligen Wahlen, 1904 Läufe ohne Laufzeitfehler und ohne Sackgass
 
 **Dateien und Knoten** (Einstiege fett):
 
-- `maple-falls-wohnzimmer.ink`: **mutter** → ankunft (Szene 1), erster_abend (4), aufbruch (13),
+- `maple-falls-wohnzimmer.ink`: **mutter** → ankunft (Szene 1), ankunft_kurz, erster_abend (4), aufbruch (13),
   mutter_alltag.
 - `maple-falls-dachboden.ink` (ergänzt, alle alten Knoten unverändert bis auf eine Zeile): neuer
   Verteiler **ambrose** → ambrose_wartet (wie bisher, solange die erste Partie fehlt),
@@ -74,7 +74,7 @@ Läufe mit zufälligen Wahlen, 1904 Läufe ohne Laufzeitfehler und ohne Sackgass
 - `maple-falls-clubraum.ink`: **coach** → coach_erstes_treffen (Szene 5), coach_reihe_offen,
   coach_clubkampf, coach_partie, coach_nach_sieg (Szene 11), coach_nach_niederlage, coach_alltag;
   **sam** → sam_erstes_treffen, sam_reihe (Szene 6), sam_klagt, sam_klagt_wieder (Szene 9),
-  sam_revanche_angebot, sam_nach_revanche, sam_alltag; **juno** (im Club) → juno_reihe (Szene 6),
+  sam_revanche_angebot, sam_nach_revanche, sam_alltag; **juno** (im Club) → juno_erst_sam, juno_reihe (Szene 6),
   juno_club_alltag; **victor** → victor_trifft, victor_wartet, victor_partie, victor_nachher,
   victor_niederlage, victor_ueberrascht, victor_ambrose (Szene 12), victor_weg.
 - `maple-falls-park.ink`: **bibliothekar** → bibliothekar_sucht, bibliothekar_wartet,
@@ -82,14 +82,36 @@ Läufe mit zufälligen Wahlen, 1904 Läufe ohne Laufzeitfehler und ohne Sackgass
   parkbank_raetsel; **skater_jo** → jo_erstes_treffen, jo_angebot, jo_duell, jo_nach_sieg,
   jo_nach_niederlage (Szene 10); **bushaltestelle** (Szene 13, zweiter Teil).
 
-**Quests** (`quests.json`, nur `ort: "mapleFalls"`): `mapleFalls.dasBrett` (um Ankunft,
-Nachgespräch und Abend erweitert), `mapleFalls.viertesBrett` (Aufgabenreihe, Clubkampf),
-`mapleFalls.besserWerden` (Victor, Aufbruch), `mapleFalls.samsDame` (unverändert),
-`mapleFalls.verlorenesBrett` (Rätsel in drei Schritten), `mapleFalls.lilysSpringer` (Hilfe).
-Karten nach R27: Fingerzeig (Ambrose erwacht), Gefahrenradar (erste Aufgabenreihe Club 1, am
-zweiten Block), Mentor-Zug (erste Clubnadel), zweimal Zweite Chance (Sam), Flüstern (Rätsel und
-Hilfe), Partiefragment 0 (Abernathy). Der erste Straßensieg (Zweite Chance) und „alle
-Nebenquests“ (Springervorgabe) sind Regeln, keine Quests, und stehen deshalb nicht in den Daten.
+**Quests** (`quests.json`, nur `ort: "mapleFalls"`), geprüft gegen die Quest-Auswertung aus
+Schritt 8c (`regeln/quests.ts`: Schritte streng der Reihe nach, Start nur über das Startereignis):
+
+| Quest                        | Start                             | Schritte                                                                                                   |
+| ---------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `mapleFalls.dasBrett`        | Dachboden betreten (wie bisher)   | brett_beruehren, ambrose_erwacht, Partie ersteLektion (unverändert)                                        |
+| `mapleFalls.ersterAbend`     | dachboden.nach_erster_partie      | wohnzimmer.erster_abend (Szene)                                                                            |
+| `mapleFalls.viertesBrett`    | clubraum.coach_erstes_treffen     | Runde reiheSam, Runde reiheJuno (Gefahrenradar), Clubkampf (Mentor-Zug), coach_nach_sieg                   |
+| `mapleFalls.besserWerden`    | clubraum.victor_trifft            | victor_wartet (Szene), Partie victor, victor_ambrose, wohnzimmer.aufbruch (Szene), Auslöser bushaltestelle |
+| `mapleFalls.samsDame`        | clubraum.sam_klagt, nach dasBrett | Runde todsuenden (Steckbrief, analysiert), Revanche-Sieg (2 × Zweite Chance)                               |
+| `mapleFalls.verlorenesBrett` | park.bibliothekar_sucht           | Auslöser parkbank, Runde parkbankRaetsel, bibliothekar_brief (Fragment 0, Flüstern)                        |
+| `mapleFalls.lilysSpringer`   | aussen.lily_lektion               | Runde springerLily, lily_danke (Flüstern)                                                                  |
+
+Karten nach R27. Der erste Straßensieg (Zweite Chance) und „alle Nebenquests“ (Springervorgabe)
+sind Regeln, keine Quests, und stehen deshalb nicht in den Daten.
+
+**Nachgebessert nach Schritt 8b/8c** (zweiter Durchgang, Basis hereingeholt, ein Konflikt in
+`texte/de.json` gelöst, beide Seiten hatten nur angehängt): Mit der strengen Reihenfolge hatte
+mein erster Stand drei Sackgassen, jetzt behoben. (1) Sam und Juno waren frei wählbar, die Quest
+wartete aber erst auf Sam: Juno stellt ihre Aufgaben jetzt erst nach Sam („Erst Sam, dann ich“).
+(2) „Ich will besser werden“ begann und wartete auf denselben Knoten: der erste Schritt ist
+jetzt `victor_wartet`. (3) Einmalige Startknoten mit Voraussetzung konnten verpasst werden:
+Voraussetzungen nur noch, wo die Reihenfolge der Welt sie sicher erfüllt (Sams Dame,
+Erster Abend); Lilys Quest beginnt mit dem wiederholbaren Knoten `lily_lektion`; die Parkbank
+bietet das Rätsel erst an, wenn man Mr. Abernathy getroffen hat. Weil das Spiel auf dem Dachboden
+beginnt (`regeln/spielstand.ts`), überspringt Mama die Ankunft mit der Kiste, wenn das Brett
+schon berührt ist (`ankunft_kurz`); die Szene `akt1.ankunft` setzt der Dialog. „Das Brett“
+bleibt bei drei Schritten, weil `quests.test.ts` das so erwartet; Nachgespräch und Abend sind
+deshalb die eigene Quest „Ein Abend im neuen Haus“. Prüfungen danach: pytest 8, Paketbau,
+Prettier, Durchspielen (1960 Läufe ohne Fehler), `npm run pruefen` (2350 Tests) bestanden.
 
 **Entscheidungen mit Begründung:**
 
@@ -105,9 +127,8 @@ Nebenquests“ (Springervorgabe) sind Regeln, keine Quests, und stehen deshalb n
    werden; die Datei ist für mich gesperrt.
 2. **Wirkungen stehen in `quests.json`, nicht im Ink.** Ink ruft nur `beginnePartie`,
    `beginneAufgaben` und für Szenen mit Varianten `setzeSzene` auf (erster Schultag, Clubnadel,
-   Victor-Niederlage oder -Überraschung). So gibt es keine doppelten Karten. Ausnahme ist das
-   vorhandene Beispiel (`gibKarte("fingerzeig")` und die Szene im Dachboden), das ich nicht
-   ändern durfte; Fingerzeig ist dauerhaft, ein zweiter Erhalt schadet nach R27 nicht.
+   Victor-Niederlage oder -Überraschung, Ankunft). So gibt es keine doppelten Karten; der
+   Haupt-Chat hat das Beispiel im Dachboden mit Schritt 8c genauso umgestellt.
 3. **Satzlänge:** Zeilen mit vier und mehr Sätzen und lange Zeilen mit drei vollen Sätzen sind
    geteilt. Kurze Fragmente wie „Fast immer.“ zählen nicht als eigener Satz, wie im Beispiel des
    Haupt-Chats („Ein Meister. Einst.“). Keine Zeile ist länger als etwa 110 Zeichen.
@@ -164,7 +185,10 @@ Runde), `nadelMapleFalls` (0 keine, 1 Bronze, 2 Silber, 3 Gold).
    `akt1.ambroseErwacht`, `akt1.erstePartie`, `akt1.ersterAbend`, `akt1.ersterSchultag`,
    `akt1.clubnadelMapleFalls`, `akt1.victorTrifft`, `akt1.victorNiederlage`,
    `akt1.victorUeberrascht`, `akt1.aufbruch`.
-6. **Bibel, Szene 12** an R33 anpassen (Trainingsstellung statt echter Partie), damit beide
+6. **Startort:** Die Bibel beginnt im Wohnzimmer (Szene 1, Kiste auf den Dachboden tragen),
+   `regeln/spielstand.ts` auf dem Dachboden. Beides funktioniert (`ankunft_kurz`); schöner wäre
+   der Start im Wohnzimmer, sobald dessen Karte gebaut ist.
+7. **Bibel, Szene 12** an R33 anpassen (Trainingsstellung statt echter Partie), damit beide
    Dokumente gleich sagen.
 
 **Offene Fragen:** keine, die blockieren. Zu prüfen bleibt die Bewertung der vorgeschlagenen

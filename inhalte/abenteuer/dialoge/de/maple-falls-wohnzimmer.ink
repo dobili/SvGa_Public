@@ -7,9 +7,14 @@
 //
 // Variablen: Die mit „Gesehen“ setzt diese Datei selbst. ausgangErsteLektion und nadelMapleFalls
 // setzt die Hülle nach der Partie bzw. dem Clubkampf (Vorschlag im Bericht mittel-1); solange sie
-// leer bzw. 0 sind, bleibt Mama beim Alltagsgespräch.
+// leer bzw. 0 sind, bleibt Mama beim Alltagsgespräch. Das Spiel beginnt heute auf dem Dachboden
+// (regeln/spielstand.ts); wer das Brett schon berührt hat, bekommt eine kurze Begrüßung statt der
+// Ankunft mit der Kiste.
+
+EXTERNAL setzeSzene(kennung)
 
 VAR held = "Du"
+VAR brettBeruehrt = false
 VAR ankunftGesehen = false
 VAR ersterAbendGesehen = false
 VAR aufbruchGesehen = false
@@ -19,7 +24,8 @@ VAR nadelMapleFalls = 0
 
 === mutter ===
 {
-- not ankunftGesehen: -> ankunft
+- not ankunftGesehen and not brettBeruehrt: -> ankunft
+- not ankunftGesehen: -> ankunft_kurz
 - ausgangErsteLektion != "" and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
 - else: -> mutter_alltag
@@ -27,6 +33,7 @@ VAR nadelMapleFalls = 0
 
 === ankunft ===
 ~ ankunftGesehen = true
+~ setzeSzene("akt1.ankunft")
 Der Umzugswagen ist weg. Im Wohnzimmer stehen nur Kartons, ein Sofa und ein Pizzakarton. #sprecher:erzaehler
 Da bist du ja, {held}. Willkommen in Maple Falls. #sprecher:mutter #stimmung:froh
 Ich weiß, es sieht noch nicht nach Zuhause aus. Gib dem Haus eine Woche. #sprecher:mutter
@@ -44,6 +51,13 @@ In der Reihenfolge. #sprecher:mutter
 * [„Erst Pizza?“]
     Netter Versuch. Erst die Kiste. #sprecher:mutter #stimmung:ernst
 - -> END
+
+=== ankunft_kurz ===
+~ ankunftGesehen = true
+~ setzeSzene("akt1.ankunft")
+Da bist du ja, {held}. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter
+Gib dem Haus eine Woche. Dann ist es ein Zuhause. #sprecher:mutter #stimmung:froh
+-> mutter
 
 === erster_abend ===
 ~ ersterAbendGesehen = true

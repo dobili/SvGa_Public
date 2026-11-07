@@ -76,6 +76,9 @@ Ich bin gerührt. Und beleidigt, es fehlt ein Bauer. #sprecher:ambrose
 
 === parkbank ===
 {
+- not abernathyGetroffen:
+    Auf der Bank liegt ein kleines grünes Brett. Es gehört sicher jemandem. #sprecher:erzaehler
+    -> END
 - not parkbankBrettGefunden: -> parkbank_fund
 - not parkbankRaetselBestanden: -> parkbank_raetsel
 - else:

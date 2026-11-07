@@ -9,23 +9,9 @@
       "haupt": true,
       "start": {
         "art": "ort",
-        "karte": "mapleFalls.wohnzimmer"
+        "karte": "mapleFalls.dachboden"
       },
       "schritte": [
-        {
-          "text": "quest.dasBrett.ankunft",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "maple-falls-wohnzimmer.ankunft"
-          },
-          "wirkungen": [
-            {
-              "art": "szene",
-              "akt": 1,
-              "szene": "akt1.ankunft"
-            }
-          ]
-        },
         {
           "text": "quest.dasBrett.schritt1",
           "ereignis": {
@@ -65,16 +51,23 @@
               "szene": "akt1.erstePartie"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "kennung": "mapleFalls.ersterAbend",
+      "titel": "quest.ersterAbend.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-dachboden.nach_erster_partie"
+      },
+      "voraussetzung": ["mapleFalls.dasBrett"],
+      "schritte": [
         {
-          "text": "quest.dasBrett.lektion",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "maple-falls-dachboden.nach_erster_partie"
-          }
-        },
-        {
-          "text": "quest.dasBrett.abend",
+          "text": "quest.ersterAbend.schritt1",
           "ereignis": {
             "art": "dialog",
             "knoten": "maple-falls-wohnzimmer.erster_abend"
@@ -97,17 +90,9 @@
       "haupt": true,
       "start": {
         "art": "dialog",
-        "knoten": "maple-falls-aussen.juno_trifft"
+        "knoten": "maple-falls-clubraum.coach_erstes_treffen"
       },
-      "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
-        {
-          "text": "quest.viertesBrett.schritt1",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "maple-falls-clubraum.coach_erstes_treffen"
-          }
-        },
         {
           "text": "quest.viertesBrett.schritt2",
           "ereignis": {
@@ -161,13 +146,12 @@
         "art": "dialog",
         "knoten": "maple-falls-clubraum.victor_trifft"
       },
-      "voraussetzung": ["mapleFalls.viertesBrett"],
       "schritte": [
         {
           "text": "quest.besserWerden.schritt1",
           "ereignis": {
             "art": "dialog",
-            "knoten": "maple-falls-clubraum.victor_trifft"
+            "knoten": "maple-falls-clubraum.victor_wartet"
           },
           "wirkungen": [
             {
@@ -226,7 +210,6 @@
         "art": "dialog",
         "knoten": "maple-falls-clubraum.sam_klagt"
       },
-      "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
         {
           "text": "quest.samsDame.schritt1",
@@ -262,7 +245,8 @@
             }
           ]
         }
-      ]
+      ],
+      "voraussetzung": ["mapleFalls.dasBrett"]
     },
     {
       "kennung": "mapleFalls.verlorenesBrett",
@@ -317,9 +301,8 @@
       "haupt": false,
       "start": {
         "art": "dialog",
-        "knoten": "maple-falls-aussen.lily_fragt"
+        "knoten": "maple-falls-aussen.lily_lektion"
       },
-      "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
         {
           "text": "quest.lilysSpringer.schritt1",

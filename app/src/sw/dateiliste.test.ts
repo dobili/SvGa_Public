@@ -8,6 +8,9 @@ describe("Sprachpaket einer Datei", () => {
     expect(sprachpaketVon("/daten/en/trainer/taktik.json")).toBe("en");
     expect(sprachpaketVon("daten/en/eroeffnungen-lichess.json")).toBe("en");
     expect(sprachpaketVon("assets/sprachpaket-en-Bx3f_9.js")).toBe("en");
+    // Der Code des Schach-Abenteuers geht denselben Weg (Paket „abenteuer“).
+    expect(sprachpaketVon("assets/abenteuer-Cx9f_2.js")).toBe("abenteuer");
+    expect(sprachpaketVon("/assets/abenteuer-Cx9f_2.js")).toBe("abenteuer");
   });
 
   it("lässt Deutsches und Gemeinsames im Kern", () => {

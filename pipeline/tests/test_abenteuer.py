@@ -23,6 +23,7 @@ DATEIEN = {
     "karten.json": "abenteuer-karten.schema.json",
     "quests.json": "abenteuer-quests.schema.json",
     "orte.json": "abenteuer-orte.schema.json",
+    "begegnungen.json": "abenteuer-begegnungen.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
 }
 
@@ -60,6 +61,10 @@ def test_querverweise_stimmen():
             ziel = ausloeser.get("ziel")
             if ziel and ziel["karte"] not in kartenkennungen:
                 fehler.append(f"{ort['kennung']}: Übergang nach unbekannter Karte {ziel['karte']}")
+
+    for begegnung in _lade("begegnungen.json")["begegnungen"]:
+        if begegnung["gegner"] not in gegner:
+            fehler.append(f"{begegnung['kennung']}: Gegner {begegnung['gegner']} fehlt")
 
     questkennungen = {q["kennung"] for q in quests}
     for quest in quests:

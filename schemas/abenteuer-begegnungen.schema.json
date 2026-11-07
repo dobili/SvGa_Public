@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-begegnungen.schema.json",
+  "title": "Begegnungen des Schach-Abenteuers",
+  "description": "Eine Begegnung ist eine Partie, die die Geschichte auslöst (Ink: beginnePartie(kennung)); sie nennt Gegner, Farbe, Format, Startstellung und ob Karten erlaubt sind. Daraus baut das Spiel zur Laufzeit den Partieauftrag (app/src/abenteuer/schnittstelle/partie.ts) mit Deck, Zustand und gerechneter Stärke.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "begegnungen"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "begegnungen": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/begegnung" }
+    }
+  },
+  "$defs": {
+    "kennung": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "format": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art"],
+          "properties": { "art": { "const": "partie" } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege", "mindestvorteil"],
+          "properties": {
+            "art": { "const": "stellungsduell" },
+            "zuege": { "type": "integer", "minimum": 5, "maximum": 30 },
+            "mindestvorteil": { "type": "number", "minimum": 0, "maximum": 5 }
+          }
+        }
+      ]
+    },
+    "startstellung": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art"],
+          "properties": { "art": { "const": "grundstellung" } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "fen"],
+          "properties": {
+            "art": { "const": "fen" },
+            "fen": { "type": "string", "minLength": 10 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "nummer"],
+          "properties": {
+            "art": { "const": "abbildung" },
+            "nummer": {
+              "type": "string",
+              "pattern": "^[0-9]{1,2}\\.[0-9]{1,3}$"
+            }
+          }
+        }
+      ]
+    },
+    "begegnung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kennung",
+        "gegner",
+        "farbe",
+        "format",
+        "startstellung",
+        "kartenErlaubt"
+      ],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kennung" },
+        "gegner": { "$ref": "#/$defs/kennung" },
+        "farbe": {
+          "description": "Farbe des Lesers; „zufall“ wechselt",
+          "enum": ["white", "black", "zufall"]
+        },
+        "format": { "$ref": "#/$defs/format" },
+        "startstellung": { "$ref": "#/$defs/startstellung" },
+        "kartenErlaubt": { "type": "boolean" },
+        "zaehltFuerApp": {
+          "description": "Fehlend: ja für Partien aus der Grundstellung (Entscheidung A2)",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

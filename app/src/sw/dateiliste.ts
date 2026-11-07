@@ -32,6 +32,13 @@ const KERNSPRACHE = "de";
 const DATENORDNER = /^\/?daten\/([a-z]{2})\//;
 /** Sprachdatei der Oberfläche als eigener Baustein: assets/sprachpaket-<sprache>-<hash>.js */
 const SPRACHBAUSTEIN = /^\/?assets\/sprachpaket-([a-z]{2})-[\w-]+\.js$/;
+/**
+ * Der Code des Schach-Abenteuers (Phaser, inkjs, Spiel; vite.config.ts chunkFileNames) als
+ * eigenes Paket „abenteuer“: Er geht denselben Weg wie ein Sprachpaket (erst auf Wunsch, dann
+ * offline), damit der Kern um 1,5 MB kleiner bleibt (docs/spiel/04_Architektur.md, Abschnitt 7).
+ */
+const ABENTEUERBAUSTEIN = /^\/?assets\/abenteuer-[\w-]+\.js$/;
+export const PAKET_ABENTEUER = "abenteuer";
 
 /**
  * Zu welchem Sprachpaket gehört eine Datei?
@@ -44,6 +51,7 @@ const SPRACHBAUSTEIN = /^\/?assets\/sprachpaket-([a-z]{2})-[\w-]+\.js$/;
  * "daten/de/a1/kap01.json" → null; "daten/praxisbuch.json" → null (gilt für alle Sprachen).
  */
 export function sprachpaketVon(pfad: string): string | null {
+  if (ABENTEUERBAUSTEIN.test(pfad)) return PAKET_ABENTEUER;
   const code = DATENORDNER.exec(pfad)?.[1] ?? SPRACHBAUSTEIN.exec(pfad)?.[1] ?? null;
   return code === KERNSPRACHE ? null : code;
 }

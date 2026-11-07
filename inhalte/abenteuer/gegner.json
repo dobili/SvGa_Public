@@ -2,12 +2,42 @@
   "schemaVersion": 1,
   "gegner": [
     {
+      "kennung": "mapleFalls.ambrose",
+      "name": "figur.ambrose.name",
+      "rolle": "story",
+      "portraet": "portraets/ambrose.webp",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "ungenau": 1.2
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:King's Gambit", "praxis:Italian Game"],
+        "abweichung": 30
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
       "kennung": "mapleFalls.coachDelgado",
       "name": "figur.coachDelgado.name",
       "rolle": "clubchef",
       "portraet": "portraets/coach-delgado.webp",
-      "staerke": { "art": "eingang", "versatz": 220 },
-      "phasenversatz": { "endspiel": -1 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 220
+      },
+      "phasenversatz": {
+        "endspiel": -1
+      },
       "gewichte": {
         "drohungIgnoriert": 1.6,
         "figurHaengen": 1.3,
@@ -20,9 +50,18 @@
         "abweichung": 20
       },
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Italian Game" },
-        { "art": "fehlerart", "wert": "drohungIgnoriert" },
-        { "art": "stil", "wert": "positionsspieler" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Italian Game"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
       ]
     },
     {
@@ -30,20 +69,41 @@
       "name": "figur.sam.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/sam.webp",
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "verfruehteDame": 2, "koenigMitte": 1.5 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "verfruehteDame": 2,
+        "koenigMitte": 1.5
+      },
       "stil": "draufgaenger",
-      "eroeffnung": { "art": "praxis" },
-      "steckbrief": [{ "art": "fehlerart", "wert": "verfruehteDame" }]
+      "eroeffnung": {
+        "art": "praxis"
+      },
+      "steckbrief": [
+        {
+          "art": "fehlerart",
+          "wert": "verfruehteDame"
+        }
+      ]
     },
     {
       "kennung": "mapleFalls.skaterJo",
       "name": "figur.skaterJo.name",
       "rolle": "strasse",
       "portraet": "portraets/skater-jo.webp",
-      "staerke": { "art": "aktuell", "versatz": -100 },
-      "stil": { "angreifer": 110, "taktiker": 80 },
-      "eroeffnung": { "art": "frei" },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": {
+        "angreifer": 110,
+        "taktiker": 80
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": []
     },
     {
@@ -51,8 +111,13 @@
       "name": "figur.victor.name",
       "rolle": "story",
       "portraet": "portraets/victor.webp",
-      "staerke": { "art": "eingang", "versatz": 500 },
-      "gewichte": { "ungenau": 0.6 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 500
+      },
+      "gewichte": {
+        "ungenau": 0.6
+      },
       "stil": "positionsspieler",
       "eroeffnung": {
         "art": "fest",
@@ -61,8 +126,14 @@
       },
       "menschlich": true,
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Ruy Lopez" },
-        { "art": "stil", "wert": "positionsspieler" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Ruy Lopez"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
       ]
     }
   ]

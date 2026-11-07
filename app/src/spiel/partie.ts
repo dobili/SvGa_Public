@@ -109,6 +109,13 @@ export interface Partieeinstellung {
    * (spiel/probepartie.ts); sie zählt nirgends und liegt nur im Feld „probe“ des Spielstands.
    */
   readonly probe?: Probeherkunft;
+  /**
+   * Seit Format 11: eine Begegnung des Schach-Abenteuers (app/src/abenteuer/, Entscheidung A2).
+   * Die Kennung nennt den Partieauftrag des Spiels; die Partieansicht zeigt dann die Kartenleiste
+   * und „Zurück zur Stadt“, und das Spiel übernimmt das Ergebnis beim Rückweg in den Spielstand.
+   * Fehlend bei allen gewöhnlichen Partien.
+   */
+  readonly abenteuer?: { readonly kennung: string };
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

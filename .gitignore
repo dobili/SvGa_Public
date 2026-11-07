@@ -12,6 +12,8 @@ app/public/engine/
 app/public/maia/ort/
 app/public/daten/de/trainer/
 app/public/daten/en/trainer/
+# Zusatzpaket des Schach-Abenteuers, erzeugt aus inhalte/abenteuer/ (app/skripte/baue-abenteuerpaket.mjs)
+app/public/abenteuer/
 app/src/daten/generiert/
 .wrangler/
 

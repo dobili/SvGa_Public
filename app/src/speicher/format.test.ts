@@ -118,6 +118,8 @@ describe("Format 1", () => {
         profil: LEERES_PROFIL,
         // Format 8: keine Varianten.
         variationen: [],
+        // Format 11: kein Spielstand des Abenteuers.
+        abenteuer: null,
         // Format 7: Felder der Gamifizierung leer, das Tagesprotokoll aus den Datumsangaben
         // nachgetragen (die Übung hat kein gültiges Datum und zählt nicht).
         ...LEERE_GAMIFIZIERUNG,

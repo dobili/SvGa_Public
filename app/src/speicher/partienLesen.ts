@@ -165,8 +165,16 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     // Seit 0.2.143: mit Maia nur, wenn so gespeichert (ältere Partien ohne).
     ...(roh.maia === true ? { maia: true } : {}),
     ...probeteil(roh.probe),
+    ...abenteuerteil(roh.abenteuer),
     ...gegnerprofilAus(roh),
   };
+}
+
+/** Die Begegnung des Schach-Abenteuers (Format 11), nur wenn gespeichert. */
+function abenteuerteil(roh: unknown): { abenteuer?: { readonly kennung: string } } {
+  return istObjekt(roh) && typeof roh.kennung === "string"
+    ? { abenteuer: { kennung: roh.kennung } }
+    : {};
 }
 
 /**

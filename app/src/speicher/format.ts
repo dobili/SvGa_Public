@@ -31,6 +31,9 @@
  *   ist eine Teilmenge: Fehlt das Feld, rechnet die App die Kürzel im Leerlauf nach
  *   (useBuchkuerzelNachtrag); umgewandelt wird nichts. Eine ältere App lehnt Format 10 als
  *   „neuer“ ab und hebt die Daten auf.
+ * - Format 11: dazu „abenteuer“, der Spielstand des Schach-Abenteuers (app/src/abenteuer/,
+ *   Entscheidung A3 des Autors, 07.11.2026). Format 10 ist eine Teilmenge: Fehlt das Feld, gibt
+ *   es keinen Spielstand (null). Der Stand hat eine eigene Version (abenteuer/regeln/spielstand.ts).
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), training/variationen*
  * (Varianten), speicher/partien.ts.
@@ -49,9 +52,11 @@ import { figurensatzAus } from "./format0";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 import type { Variation } from "../training/variationen";
 import { variationenAus } from "../training/variationenLesen";
+import { abenteuerstandAus } from "../abenteuer/regeln/spielstand";
+import type { Abenteuerstand } from "../abenteuer/schnittstelle/spielstand";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 10;
+export const SCHEMA_VERSION = 11;
 /** Bis zu dieser Version gab es acht Stufen (Umrechnung beim Laden). */
 const LETZTE_ACHT_STUFEN = 5;
 /** Bis zu dieser Version gab es kein Tagesprotokoll (Nachtrag beim Laden). */
@@ -202,6 +207,8 @@ export interface Nutzerdaten extends Gamifizierungsdaten {
   readonly profil: Spielerprofil;
   /** Eigene Varianten (ab Format 8, training/variationen.ts). */
   readonly variationen: readonly Variation[];
+  /** Spielstand des Schach-Abenteuers (ab Format 11); null, solange keines begonnen wurde. */
+  readonly abenteuer: Abenteuerstand | null;
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -231,6 +238,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     planstand: null,
     profil: LEERES_PROFIL,
     variationen: [],
+    abenteuer: null,
     ...LEERE_GAMIFIZIERUNG,
   };
 }
@@ -351,6 +359,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     planstand: planstandTextAus(roh.planstand),
     profil: profilAus(roh.profil),
     variationen: variationenAus(roh.variationen),
+    abenteuer: abenteuerstandAus(roh.abenteuer),
     ...gamifizierungAus(roh),
   };
 }

@@ -30,11 +30,16 @@ const NICHT_IN_DER_LISTE = /^admin\//;
  * etwa 96 MB, zählt nicht zur Obergrenze der App; es wird eigens ausgewiesen.
  */
 const ZUSATZPAKET = /^maia\//;
+/**
+ * Das Schach-Abenteuer (Schritt 5, docs/spiel/04_Architektur.md 7): Daten unter abenteuer/ und
+ * der Code-Baustein assets/abenteuer-*.js kommen erst auf Wunsch; sie zählen nicht zur Obergrenze.
+ */
+const ABENTEUER = /^(abenteuer\/|assets\/abenteuer-)/;
 
 /** Größe aller Dateien unterhalb eines Ordners, getrennt nach Kern, Sprachpaketen und Rest. */
 async function ordnergroesse(
   ordner,
-  summen = { alles: 0, sprachpakete: 0, ohneListe: 0, zusatz: 0 },
+  summen = { alles: 0, sprachpakete: 0, ohneListe: 0, zusatz: 0, abenteuer: 0 },
 ) {
   for (const eintrag of await readdir(ordner, { withFileTypes: true })) {
     const pfad = join(ordner, eintrag.name);
@@ -46,6 +51,10 @@ async function ordnergroesse(
     const relativ = relative(DIST, pfad).split(sep).join("/");
     if (ZUSATZPAKET.test(relativ)) {
       summen.zusatz += groesse;
+      continue;
+    }
+    if (ABENTEUER.test(relativ)) {
+      summen.abenteuer += groesse;
       continue;
     }
     summen.alles += groesse;
@@ -61,7 +70,7 @@ function mb(bytes) {
 }
 
 async function main() {
-  const { alles, sprachpakete, ohneListe, zusatz } = await ordnergroesse(DIST);
+  const { alles, sprachpakete, ohneListe, zusatz, abenteuer } = await ordnergroesse(DIST);
   if (alles > OBERGRENZE_BYTES) {
     console.error(`Größenbudget überschritten: ${mb(alles)} MB (Obergrenze ${OBERGRENZE_MB} MB).`);
     process.exit(1);
@@ -70,7 +79,7 @@ async function main() {
   console.log(
     `Größenbudget eingehalten: ${mb(alles)} MB von ${OBERGRENZE_MB} MB ` +
       `(vorab geladen höchstens ${mb(vorab)} MB, Sprachpakete auf Wahl ${mb(sprachpakete)} MB); ` +
-      `Zusatzpaket Maia ${mb(zusatz)} MB.`,
+      `Zusatzpaket Maia ${mb(zusatz)} MB, Schach-Abenteuer ${mb(abenteuer)} MB.`,
   );
 }
 

@@ -217,6 +217,13 @@ export default defineConfig({
           fileURLToPath(new URL(pfad, import.meta.url)),
         ]),
       ),
+      output: {
+        // Das Schach-Abenteuer (src/abenteuer/modul/abenteuer.tsx) ist ein eigener Baustein mit
+        // festem Namensmuster, damit der Service Worker ihn wie ein Sprachpaket erst auf Wunsch
+        // lädt (src/sw/dateiliste.ts) und das Größenbudget ihn als Zusatzpaket ausweist.
+        chunkFileNames: (baustein) =>
+          baustein.name === "abenteuer" ? "assets/abenteuer-[hash].js" : "assets/[name]-[hash].js",
+      },
     },
   },
   plugins: [
@@ -239,7 +246,9 @@ export default defineConfig({
         // Vorabladen umgeleitet und die Installation scheitern.
         // Maia (0.2.143) ist ein Zusatzpaket von etwa 96 MB; der Leser lädt es nur auf Wunsch
         // (src/engine/maiapaket.ts), es gehört nicht zur Installation.
-        globIgnores: ["admin/**", "maia/**"],
+        // Das Schach-Abenteuer (Zusatzpaket seit Schritt 5, docs/spiel/04_Architektur.md 7) lädt
+        // seine Daten selbst in einen eigenen Cache (src/abenteuer/paket/paketlader.ts).
+        globIgnores: ["admin/**", "maia/**", "abenteuer/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,
       },
       manifest: {

@@ -37,6 +37,8 @@ const KACHELFARBEN = [
 /** Farben des Helden: Körper und das Merkmal, das die Blickrichtung zeigt. */
 const HELD_KOERPER = [38, 70, 120];
 const HELD_GESICHT = [255, 220, 180];
+/** Farbe der übrigen Figuren (ein Platzhalter für alle, bis die Spritesheets da sind). */
+const FIGUR_KOERPER = [120, 60, 90];
 
 /** Die Dateien des Pakets mit Gruppe und Staffel (schnittstelle/paket.ts). */
 const dateien = [];
@@ -142,7 +144,7 @@ function platzhalterKacheln() {
 }
 
 /** Der Held: vier Bilder (unten, links, rechts, oben) als Spritesheet 64 × 16. */
-function platzhalterHeld() {
+function platzhalterHeld(koerper = HELD_KOERPER) {
   const breite = KACHEL * 4;
   const pixel = Buffer.alloc(breite * KACHEL * 4);
   const gesichter = [
@@ -154,7 +156,7 @@ function platzhalterHeld() {
   gesichter.forEach(([gx, gy, gb, gh], richtung) => {
     const kx = richtung * KACHEL;
     for (let y = 2; y < KACHEL - 1; y++) {
-      for (let x = 3; x < KACHEL - 3; x++) setzePixel(pixel, breite, kx + x, y, HELD_KOERPER);
+      for (let x = 3; x < KACHEL - 3; x++) setzePixel(pixel, breite, kx + x, y, koerper);
     }
     for (let y = gy; y < gy + gh; y++) {
       for (let x = gx; x < gx + gb; x++) setzePixel(pixel, breite, kx + x, y, HELD_GESICHT);
@@ -186,6 +188,7 @@ async function main() {
   await uebersetzeDialoge("de");
   await schreibe("grafik/platzhalter.png", platzhalterKacheln(), "grafik");
   await schreibe("grafik/held.png", platzhalterHeld(), "grafik");
+  await schreibe("grafik/figur.png", platzhalterHeld(FIGUR_KOERPER), "grafik");
   // Die Version: App-Version plus Kurzhash aller Inhalte, damit jede Änderung einen neuen Cache
   // bekommt (Stellungnahme, Abschnitt 4: Schwäche des Maia-Pakets ohne Versionsvergleich).
   const inhaltshash = createHash("sha256")

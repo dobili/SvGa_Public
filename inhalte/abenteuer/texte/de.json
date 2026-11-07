@@ -69,5 +69,17 @@
   "ergebnis.weiter": "Weiter",
   "ergebnis.partieLaeuft": "Deine Partie läuft noch.",
   "ergebnis.weiterspielen": "Weiterspielen",
-  "ergebnis.aufgeben": "Partie aufgeben und in der Stadt bleiben"
+  "ergebnis.aufgeben": "Partie aufgeben und in der Stadt bleiben",
+  "oberwelt.karteFehlt": "Dorthin geht es noch nicht ({karte} ist noch nicht gebaut).",
+  "oberwelt.dialogFehlt": "Dieser Dialog fehlt noch ({datei}).",
+  "quest.begonnen": "Neue Aufgabe: {titel}",
+  "quest.erledigt": "Erledigt: {titel}",
+  "tagebuch.knopf": "Tagebuch",
+  "tagebuch.titel": "Clubtagebuch",
+  "tagebuch.laufend": "Offene Aufgaben",
+  "tagebuch.nichtsOffen": "Gerade nichts. Sieh dich um.",
+  "tagebuch.erledigt": "Erledigt",
+  "tagebuch.karten": "Deine Hilfskarten",
+  "tagebuch.keineKarten": "Noch keine. Ambrose hat welche.",
+  "tagebuch.schliessen": "Schließen"
 }

@@ -31,10 +31,19 @@ const BILD_JE_RICHTUNG: Readonly<Record<Richtung, number>> = {
 const EBENEN = ["boden", "waende", "objekte"] as const;
 const AUSLOESER_EBENE = "ausloeser";
 
+/** Ein Auslöser, auf dem der Held steht oder den er ansieht: Name und Art aus der Tiled-Datei. */
+export interface Ausloesertreffer {
+  readonly name: string;
+  /** „ausloeser“ (Übergang, Gegenstand, Start) oder „figur“ (Objekt mit type = figur). */
+  readonly typ: "ausloeser" | "figur";
+  /** Der Held steht selbst darauf (true) oder nur davor (false). */
+  readonly darauf: boolean;
+}
+
 /** Was die Szene nach oben meldet. */
 export interface Melder {
-  /** Der Held steht auf einem Auslöser (Name aus der Tiled-Datei) oder auf keinem (null). */
-  readonly beiAusloeser: (name: string | null) => void;
+  /** Der Held steht auf einem Auslöser oder vor einer Figur, oder auf nichts (null). */
+  readonly beiAusloeser: (treffer: Ausloesertreffer | null) => void;
 }
 
 /** Was die Szene zum Aufbau braucht. */
@@ -44,6 +53,8 @@ export interface Szenendaten {
   /** Adressen der Bilder (Objekt-Adressen aus dem Paket). */
   readonly kachelbild: string;
   readonly heldbild: string;
+  /** Spritesheet für alle Figuren (Platzhalter; später je Figur aus orte.json). */
+  readonly figurbild: string;
   /** Name des Kachelsatzes in der Tiled-Datei. */
   readonly kachelsatz: string;
   readonly start: Weltposition;
@@ -53,9 +64,12 @@ export interface Szenendaten {
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
 interface Ausloeser {
   readonly name: string;
+  readonly typ: "ausloeser" | "figur";
   readonly x: number;
   readonly y: number;
 }
+
+const FIGUR_TYP = "figur";
 
 export class Oberweltszene extends Phaser.Scene {
   /** Der Held; null, bis create() gelaufen ist (die Hülle kann vorher schon fragen). */
@@ -65,6 +79,8 @@ export class Oberweltszene extends Phaser.Scene {
   private blick: Richtung;
   private ausloeser: Ausloeser[] = [];
   private letzterAusloeser: string | null = null;
+  /** Der Auslöser, auf dem der Held startet (Übergang zurück): erst melden, wenn er ihn verlässt. */
+  private startAusloeserOffen = true;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
 
   constructor(private readonly daten: Szenendaten) {
@@ -75,6 +91,10 @@ export class Oberweltszene extends Phaser.Scene {
   preload(): void {
     this.load.image("kacheln", this.daten.kachelbild);
     this.load.spritesheet("held", this.daten.heldbild, { frameWidth: KACHEL, frameHeight: KACHEL });
+    this.load.spritesheet("figur", this.daten.figurbild, {
+      frameWidth: KACHEL,
+      frameHeight: KACHEL,
+    });
   }
 
   create(): void {
@@ -111,7 +131,24 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.startFollow(held, true);
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = this.liesAusloeser(karte);
+    this.stelleFigurenAuf(held);
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
+  }
+
+  /** Figuren der Karte als feste Sprites mit Kollision: Der Held bleibt vor ihnen stehen. */
+  private stelleFigurenAuf(held: Phaser.Physics.Arcade.Sprite): void {
+    const gruppe = this.physics.add.staticGroup();
+    for (const a of this.ausloeser) {
+      if (a.typ !== FIGUR_TYP) continue;
+      const figur = gruppe.create(
+        a.x * KACHEL + KACHEL / 2,
+        a.y * KACHEL + KACHEL / 2,
+        "figur",
+        BILD_JE_RICHTUNG.unten,
+      ) as Phaser.Physics.Arcade.Sprite;
+      figur.setName(a.name);
+    }
+    this.physics.add.collider(held, gruppe);
   }
 
   /** Die Objekte der Ebene „ausloeser“ als Kachelkoordinaten. */
@@ -121,6 +158,7 @@ export class Oberweltszene extends Phaser.Scene {
       .filter((o) => typeof o.name === "string" && o.name.length > 0)
       .map((o) => ({
         name: o.name,
+        typ: o.type === FIGUR_TYP ? ("figur" as const) : ("ausloeser" as const),
         x: Math.round((o.x ?? 0) / KACHEL),
         y: Math.round((o.y ?? 0) / KACHEL),
       }));
@@ -184,14 +222,23 @@ export class Oberweltszene extends Phaser.Scene {
   private meldeAusloeser(): void {
     const { x, y, richtung } = this.position();
     const vorne = KACHEL_VOR[richtung];
-    const treffer =
-      this.ausloeser.find((a) => a.x === x && a.y === y) ??
-      this.ausloeser.find((a) => a.x === x + vorne.x && a.y === y + vorne.y) ??
-      null;
+    const darauf = this.ausloeser.find((a) => a.x === x && a.y === y) ?? null;
+    const davor = this.ausloeser.find((a) => a.x === x + vorne.x && a.y === y + vorne.y) ?? null;
+    const treffer = darauf ?? davor;
     const name = treffer?.name ?? null;
     if (name === this.letzterAusloeser) return;
+    // Der Startauslöser (etwa die Tür, durch die der Held kam) zählt erst nach dem Verlassen.
+    if (this.startAusloeserOffen) {
+      this.startAusloeserOffen = false;
+      if (darauf) {
+        this.letzterAusloeser = darauf.name;
+        return;
+      }
+    }
     this.letzterAusloeser = name;
-    this.daten.melder.beiAusloeser(name);
+    this.daten.melder.beiAusloeser(
+      treffer ? { name: treffer.name, typ: treffer.typ, darauf: treffer === darauf } : null,
+    );
   }
 }
 

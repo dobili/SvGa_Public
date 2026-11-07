@@ -201,3 +201,33 @@
   background: rgba(201, 162, 39, 0.12);
   font-size: var(--groesse-klein);
 }
+
+/* Tagebuchknopf oben links; das Tagebuch selbst nutzt die Menükarte. */
+.abenteuer-tagebuchknopf {
+  position: absolute;
+  top: var(--raster);
+  left: var(--raster);
+  z-index: 3;
+  min-height: 44px;
+  padding: 0 calc(var(--raster) * 1.5);
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.85);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.abenteuer-tagebuch {
+  max-height: calc(100% - var(--raster) * 12);
+  overflow-y: auto;
+}
+
+.abenteuer-tagebuch h3 {
+  margin: var(--raster) 0 0;
+  font-size: var(--groesse);
+}
+
+.abenteuer-tagebuch ul {
+  margin: 0;
+  padding-left: calc(var(--raster) * 2.5);
+}

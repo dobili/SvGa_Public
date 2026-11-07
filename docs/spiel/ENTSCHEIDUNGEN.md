@@ -180,6 +180,17 @@ Ambrose → Partie der App gegen das Gegnerprofil → „Zurück zur Stadt“ mi
   fragte die Hülle die Position des Helden ab und stürzte ab (1 von 6 Läufen). Die Szene liefert
   jetzt bis `create()` die Startposition.
 
+**Schritt 8b/8c erledigt (Raumwechsel, Figuren, Quests):** Figuren stehen als Objekte
+(`type = "figur"`) auf den Tiled-Karten, mit Kollision und „Sprechen“; Übergänge wechseln die
+Karte, der Held erscheint auf dem gleichnamigen Auslöser der Zielkarte (der Startauslöser löst
+erst nach dem Verlassen wieder aus); fehlende Karten melden sich statt abzustürzen. Die
+Quest-Auswertung ist eine reine Funktion (`regeln/quests.ts`, 11 Tests) über Ereignisse „ort“,
+„dialog“ (Knoten aus dem Ink-Pfad), „partie“, „aufgaben“; Wirkungen (Karte, Steckbrief, Zustand,
+Szene, Fragment) kommen in den Spielstand, das Clubtagebuch (Knopf oben links) zeigt offene und
+erledigte Aufgaben und die Karten. Entscheidung: **Belohnungen vergibt die Quest** (Daten), die
+Ink-Funktionen `gibKarte`/`setzeSzene` bleiben für Belohnungen ohne Quest; das Ink-Beispiel ruft
+`gibKarte` deshalb nicht mehr auf.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

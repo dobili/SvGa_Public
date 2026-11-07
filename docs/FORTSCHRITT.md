@@ -1,3 +1,5 @@
+Stand: 7.11.2026 · **Version 0.3.52** (auf main seit 7.11.2026 nachts, CI grün mit Chromium und WebKit): Linienknöpfe in der Zugfolgenleiste (eine Zeile, immer da, Vorspielen per Tipp), Knöpfe unter dem Brett entfallen, nichts springt beim Durchgehen (N2599).
+
 Stand: 6.11.2026 · **Version 0.3.51** (auf main seit 6.11.2026 abends, CI grün mit Chromium und WebKit): Meldungen des Autors vom 6.11.2026 (Trefferfläche, Röntgen-Begründung, Auswertungstempo, Zeitleiste, Kapitelringe, Kurzplan und Startweg in den Vorschlägen; N2585 ff., Q15). **In Arbeit (Teilaufträge):** besserer Zug in der Auswertung als echte Variante, Warum-Fragen und Lernziele als Stationsbedingungen der Karte, Taktiktrainer mit mehreren Motiven. **Danach:** Phasenkarten Mittel-/Endspiel (Q15-1), Ziele nach Spielstärke (Q15-3), Schwächen je Phase (Q15-5), Plan mit Dauer nach Antwort auf Q15-2.
 
 Stand: 1.11.2026 · **Version 0.3.50**: Marken ohne Nummer je Marke und je Farbe (Format 9, N2582–N2584). **Auf main und live seit 2.11.2026 nachts, mit 0.3.49 (CI grün mit Chromium und WebKit).** **Nächster Schritt:** Rückmeldungen des Autors zu N2370–N2584 und Q11–Q14 einarbeiten.

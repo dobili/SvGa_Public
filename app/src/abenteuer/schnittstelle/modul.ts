@@ -1,0 +1,117 @@
+/**
+ * Modulgrenze zwischen App und Abenteuer: Was die App dem Spiel gibt (Dienste) und was das Spiel
+ * der App gibt (Ansichten und Einhängepunkte).
+ *
+ * Rolle im Gesamtbild: Die App kennt vom Spiel nur diese Datei und den dynamischen Import des
+ * Moduls; das Spiel kennt von der App nur die Dienste, die es hier bekommt. So bleibt die
+ * Buchbegleitung (Stufe 1 der App) unberührt, und das Spiel lässt sich später in ein privates
+ * Repository verschieben (Wunsch des Autors, Entscheidung A10), ohne dass die App sich ändert.
+ * Einhängepunkte der App (alle klein, Stellungnahme Abschnitt 2):
+ *   1. app/zusatzansichten.ts: eine Zeile { kennung: "abenteuer", Bildschirm } (Oberwelt).
+ *   2. ui/bildschirme/Partie.tsx: Liste PARTIE_ERWEITERUNGEN, in die das Spiel die Kartenleiste
+ *      einträgt (Entscheidung A4).
+ *   3. spiel/partie.ts: optionales Feld `abenteuer` in der Partieeinstellung (Partiekennung).
+ *   4. speicher/format.ts: Feld `abenteuer` in den Nutzerdaten, Format 11.
+ *   5. vite.config.ts, skripte/pruefe-groesse.mjs, sw/dateiliste.ts, public/_headers: das Paket
+ *      liegt außerhalb von Precache und Budget.
+ * Hier nur Typen; die Verdrahtung ist Schritt 5 (Prototyp).
+ * Abhängigkeiten: React (Komponententypen), schnittstelle/*, spiel/partie.ts (Partieeinstellung),
+ * ui/komponenten/partie/usePartie.ts (Partiesteuerung), training/wiederholung.ts.
+ */
+import type { ComponentType } from "react";
+import type { Partieeinstellung } from "../../spiel/partie";
+import type { Antwortergebnis } from "../../training/wiederholung";
+import type { Gegnerprofil, Gegnerzustand, Gerechnetestaerke } from "./gegnerprofil";
+import type { Paketzustand } from "./paket";
+import type { Partieauftrag, Partieergebnis } from "./partie";
+import type { Abenteuerstand } from "./spielstand";
+
+/** Kennung der Zusatzansicht in app/zusatzansichten.ts; der Wert ist frei für die Oberwelt. */
+export const ANSICHT_ABENTEUER = "abenteuer";
+
+/**
+ * Eine Aufgabenrunde, die das Spiel in der App startet (Clubmitglieder stellen Aufgaben).
+ * Quelle: Buchübungen des Kapitels und Motivaufgaben der Trainer (Entscheidung A7: Umfang nach
+ * Zeitbudget, nicht nach fester Zahl).
+ */
+export interface Aufgabenauftrag {
+  readonly kennung: string;
+  /** Buchkapitel des Clubs, für die Buchübungen. */
+  readonly kapitel: number;
+  /** Motive und Themen der Trainer, wie in training/taktiktrainer.ts („doppelangriff“, „matt2“ …). */
+  readonly themen: readonly string[];
+  /** Zahl der Aufgaben und Zielschwierigkeit 1–5 (aus der Wertung des Lesers gerechnet). */
+  readonly anzahl: number;
+  readonly schwierigkeit: number;
+  /** Zählt die Runde für Wiederholung und Tagesprotokoll der App (Entscheidung A8)? */
+  readonly zaehltFuerApp: boolean;
+}
+
+/** Ergebnis einer Aufgabenrunde für das Spiel. */
+export interface Aufgabenergebnis {
+  readonly kennung: string;
+  readonly ergebnisse: readonly Antwortergebnis[];
+  readonly sekunden: number;
+}
+
+/**
+ * Dienste, die die App dem Spiel beim Laden übergibt. Alles, was das Spiel von der App braucht,
+ * geht durch dieses Objekt; nichts anderes importiert das Spiel aus `ui/` oder `speicher/`.
+ */
+export interface Appdienste {
+  /** Aktuelle Wertung des Lesers (klassische Zeitklasse) oder null ohne Wertung. */
+  readonly wertung: () => number | null;
+  /**
+   * Rechnet Profil und Zustand in Stufe je Phase und Häufigkeit um (reine Funktion des Spiels, hier
+   * damit die App die Partieeinstellung bauen kann, ohne das Spiel zu kennen).
+   */
+  readonly baueEinstellung: (
+    auftrag: Partieauftrag,
+    staerke: Gerechnetestaerke,
+  ) => Partieeinstellung;
+  /** Legt die Partie an und wechselt in die Partieansicht; Ergebnis kommt über `liesErgebnis`. */
+  readonly startePartie: (auftrag: Partieauftrag) => Promise<void>;
+  /** Ergebnis einer beendeten Partie des Abenteuers, solange die App sie hält; null sonst. */
+  readonly liesErgebnis: (kennung: string) => Promise<Partieergebnis | null>;
+  /** Startet eine Aufgabenrunde in der App; das Ergebnis kommt beim Rückweg. */
+  readonly starteAufgaben: (auftrag: Aufgabenauftrag) => Promise<void>;
+  readonly liesAufgabenergebnis: (kennung: string) => Promise<Aufgabenergebnis | null>;
+  /** Spielstand lesen und als Ganzes schreiben (Feld `abenteuer` der Nutzerdaten). */
+  readonly liesStand: () => Abenteuerstand | null;
+  readonly schreibeStand: (stand: Abenteuerstand) => Promise<void>;
+  /** Zustand des Zusatzpakets und Laden mit Fortschritt. */
+  readonly paket: () => Paketzustand;
+  readonly ladePaket: (fortschritt: (geladen: number, gesamt: number) => void) => Promise<void>;
+  /** Zurück zur vorigen Ansicht der App (Stapel), zum Beispiel nach dem Spielende. */
+  readonly zurueck: () => void;
+}
+
+/** Eine Partie-Erweiterung für den Erweiterungspunkt in Partie.tsx (Entscheidung A4). */
+export interface Partieerweiterung {
+  readonly kennung: string;
+  /** Zeigt die Erweiterung diese Partie an? Nur für Partien mit Feld `abenteuer`. */
+  readonly passt: (einstellung: Partieeinstellung) => boolean;
+  /** Die Leiste unter dem Brett; bekommt die Partiekennung des Abenteuers. */
+  readonly Leiste: ComponentType<{ readonly partiekennung: string }>;
+}
+
+/**
+ * Was das dynamisch geladene Modul exportiert. Die App ruft `verbinde(dienste)` einmal auf und
+ * trägt danach `Oberwelt` als Zusatzansicht und `partieerweiterung` in Partie.tsx ein.
+ */
+export interface Abenteuermodul {
+  readonly verbinde: (dienste: Appdienste) => void;
+  /** Bildschirm der Oberwelt; der Wert der Ansicht ist frei (etwa „start“, „ort:ironwood“). */
+  readonly Oberwelt: ComponentType<{ readonly wert: string | null }>;
+  readonly partieerweiterung: Partieerweiterung;
+  /** Für die Startkarte der App: Kurzstand („Club 3 von 8, 2 Clubnadeln“) oder null ohne Spielstand. */
+  readonly kurzstand: () => { readonly clubs: number; readonly nadeln: number } | null;
+}
+
+/** Signatur des dynamischen Imports in der App; die Datei ist der Einstieg des Chunks. */
+export type Modullader = () => Promise<Abenteuermodul>;
+
+/** Für die Einstufung beim ersten Start (Entscheidung A5): Wertung der App oder erste Story-Partie. */
+export type Eingangswertung =
+  | { readonly art: "appWertung"; readonly elo: number }
+  | { readonly art: "erstePartie"; readonly profil: Gegnerprofil; readonly zustand: Gegnerzustand };

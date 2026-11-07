@@ -26,20 +26,61 @@ die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) o
   am Kipppunkt (letzte Stellung vor dem entscheidenden Fehler), einmal je Partie; gegen Clubchefs
   dann höchstens Silber. Entscheidung offen (B1, B2).
 
-## Offen (Entscheidungsseite, Stand 07.11.2026)
+## 07.11.2026 – Antworten des Autors (Entscheidungsseite) und Schritt 3
 
-Teil 1, aus der Stellungnahme: A1 Ordner `abenteuer/` und Arbeitsname · A2 Zählen Story-Partien
-für die App (Empfehlung: Partienliste, Tagesprotokoll, Erfahrung, Rekorde ja; Elo, Rivalen, Duelle
-nein) · A3 Spielstand Format 11 (im Chat schon zugestimmt) · A4 Kartenleiste als Erweiterungspunkt
-in `Partie.tsx` · A5 keine eigene Einstufung · A6 Gegnerstärke relativ zur Wertung · A7
-Aufgabenreihen aus Buch und Lichess · A8 Aufgaben zählen für Wiederholung und Tagesprotokoll ·
-A9 Maia auf dem iPhone getestet? · A10 privates Repository für Grafik, Porträts, Musik · A11 Ink je
-Sprache, Deutsch zuerst · A12 Phaser 4 · A13 Zweigname.
+**Angenommen wie empfohlen:** A1 Ordner `app/src/abenteuer/`, Arbeitsname „Schach-Abenteuer“ ·
+A2 Story-Partien zählen für Partienliste, Tagesprotokoll, Erfahrung, Rekorde, nicht für Elo,
+Rivalen, Duelle · A3 Spielstand als Feld `abenteuer` der Nutzerdaten, Format 11 · A4 Kartenleiste
+als Erweiterungspunkt in `Partie.tsx` · A5 keine eigene Einstufung · A8 Aufgaben zählen für
+Wiederholung und Tagesprotokoll · A9 Maia auf dem iPhone geladen und offline benutzt (Cache-Weg
+bewiesen) · A10 privates Repository für Grafik, Porträts, Musik · A11 Ink je Sprache, Deutsch
+zuerst · A12 Phaser 4 · B1 Wiedereinstieg am Kipppunkt · B2 Wiedereinstieg kostenlos, Clubnadel
+dann höchstens Silber · C2 Schummeln mit der Partieauswertung aufdecken · C3 Ambroses
+Erinnerungen als Zugerraten · C4 Phaser nur für die Oberwelt · C6 „Clubnadel“ · C7 wachsender
+Steckbrief.
 
-Teil 2, Idee des Autors: B1 Wiedereinstieg am Kipppunkt · B2 Kosten (höchstens Silber, Karte,
-oder ohne Folgen).
+**Anders entschieden oder ergänzt:**
 
-Teil 3, Vorschläge von Claude:
+- **A6 Gegnerstärke (Autor: „Später, erläutern“):** Nicht alle Clubs 150 über der eigenen Wertung;
+  der Leser soll sich anstrengen, lernen und am Ende besser sein; Karten und Vorgaben sind dafür
+  da, stärkere Gegner schlagbar zu machen, und erhöhen den Wiederspielwert. Umsetzung: zwei
+  Bezugspunkte (Eingangswertung E beim Start, aktuelle Wertung A); Clubchef n = E + 160 + 60·n,
+  Straße A − 100 bis A, Landesmeisterschaft E + 650 bis 800, Post-Game + 300. Tabelle und
+  Begründung in `04_Architektur.md`, Abschnitt 4; Zahlen in einer Datei, Anpassung nach den
+  Testpartien des Autors.
+- **A7 Aufgabenreihen (Autor: Nein):** Nicht sechs Aufgaben fest, sondern Umfang aus einem
+  Zeitbudget je Club. Richtwerte: Clubbesuch 60 bis 90 Minuten, Aufgabenreihe 10 bis 15 Minuten,
+  daraus 12 bis 15 Aufgaben auf zwei bis drei Clubmitglieder verteilt, Schwierigkeit aus der
+  Wertung, bestanden ab 70 Prozent (`04_Architektur.md`, Abschnitt 5). Die Spielzeit wird im
+  Spielstand gezählt, um die Richtwerte nachzumessen.
+- **A10 Ergänzung des Autors:** Der ganze Spielcode darf später in ein privates Repository ziehen,
+  um das Spiel notfalls kostenpflichtig anbieten zu können. Folge: Modulgrenze so streng, dass das
+  Spiel als Ganzes umziehen kann (`04_Architektur.md`, Abschnitt 1). Hinweis dort: Die
+  GPL-Abhängigkeiten der App (chessops, Stockfish, Lichess-Bretter) bleiben; Verkauf ist unter der
+  GPL erlaubt, Käufer haben Anspruch auf den Quelltext. Keine Rechtsberatung.
+- **A13 Zweigname:** offen gelassen; Arbeit bleibt auf `claude/friendly-shannon-y8bf90`.
+- **C1 Stellungsduelle (Autor: Später, mit Ergänzung):** Ausgangsstellungen nicht nur aus dem
+  Buch, sondern auch aus Lichess-Eröffnungen, aus den Meisterpartien des Trainers „Zug erraten“
+  oder aus Bot-gegen-Bot-Partien im Hintergrund, die eine zufällige Stellung passend zur
+  Spielstärke erzeugen. Aufgenommen als `Startstellung` (grundstellung, fen, abbildung,
+  meisterpartie) in `schnittstelle/partie.ts`; Bot-gegen-Bot als spätere Quelle vorgemerkt.
+- **C3 Ergänzung des Autors:** Der Fundus an Meisterpartien im Trainer darf dafür erweitert
+  werden (später, mit Lizenzprüfung der Quellen: Partien sind frei, Kommentare nicht).
+- **C5 Testbericht (Autor: Nein):** Kein Kindertest, der Autor testet selbst. Kein Testbericht;
+  stattdessen zählt der Spielstand die Spielzeit, damit die Richtwerte geprüft werden können.
+- **Grafik (Frage des Autors):** Orientierung an den späten DS-Spielen statt am Game Boy ist
+  möglich und ändert nichts an Phaser, Tiled oder Plan: 16-Pixel-Kacheln dreifach gezeichnet,
+  animierte Kacheln, hochauflösende Oberfläche und Porträts in App-Optik, Tag-Nacht-Tönung.
+  Gekippte 3D-Perspektive der DS-Spiele nicht, weil Kosten und Grafikpaket dagegensprechen
+  (`04_Architektur.md`, Abschnitt 10).
+
+**Schritt 3 erledigt:** `04_Architektur.md`, Verträge in `app/src/abenteuer/schnittstelle/`
+(`modul.ts`, `gegnerprofil.ts`, `partie.ts`, `karten.ts`, `spielstand.ts`, `paket.ts`,
+`tausch.ts`), `LIZENZEN.md` angelegt. Noch offen aus `tausch.ts`: Die App verbietet heute die
+Kamera (`public/_headers`, Permissions-Policy `camera=()`); QR-Lesen braucht sie. Frage an den
+Autor vor der Umsetzung des Tauschs (frühestens Schritt 8).
+
+## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil
   ausspielen, Sieg nach 10 bis 15 Zügen bei gehaltenem Vorteil oder Matt; 5 bis 10 Minuten statt

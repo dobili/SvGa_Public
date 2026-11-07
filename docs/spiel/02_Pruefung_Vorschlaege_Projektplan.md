@@ -47,15 +47,15 @@ Die Kernerkenntnis: In diesem Spiel kommt die Spielzeit nicht aus der Welt, sond
 
 Trotzdem ist der Inhalt für einen Alleingang groß. Grobe Schätzung des Eigenaufwands (Stunden, in denen du selbst prüfen, entscheiden, testen und freigeben musst, auch wenn Claude das meiste schreibt und baut):
 
-| Baustein | Deine Zeit |
-| --- | --- |
-| Story, Figuren, Drehbuch mit allen Dialogen (8 Städte) | 60–100 Std. |
-| Prototyp, Schnittstelle zur Bot-Engine, Spielsystem | 40–70 Std. |
-| Kachelsystem, Weltgenerator, 12 Karten prüfen und nachbessern | 50–90 Std. |
-| Quests, Aufgabenreihen, Gegnerprofile, Balance | 40–60 Std. |
-| Porträts, Musik, Sound, Lizenzen | 20–40 Std. |
-| Tests mit Kindern, Fehlerbehebung, Veröffentlichung | 40–60 Std. |
-| **Summe** | **250–420 Std.** |
+| Baustein                                                      | Deine Zeit       |
+| ------------------------------------------------------------- | ---------------- |
+| Story, Figuren, Drehbuch mit allen Dialogen (8 Städte)        | 60–100 Std.      |
+| Prototyp, Schnittstelle zur Bot-Engine, Spielsystem           | 40–70 Std.       |
+| Kachelsystem, Weltgenerator, 12 Karten prüfen und nachbessern | 50–90 Std.       |
+| Quests, Aufgabenreihen, Gegnerprofile, Balance                | 40–60 Std.       |
+| Porträts, Musik, Sound, Lizenzen                              | 20–40 Std.       |
+| Tests mit Kindern, Fehlerbehebung, Veröffentlichung           | 40–60 Std.       |
+| **Summe**                                                     | **250–420 Std.** |
 
 Bei 4 bis 6 Stunden pro Woche sind das ein bis zwei Jahre. Das ist machbar, aber nur, wenn das Projekt in Etappen fertig wird, die jede für sich veröffentlicht werden können. Deshalb die Empfehlung in Abschnitt 3: Staffel 1 mit vier Clubs, erst danach entscheiden, ob Staffel 2 folgt.
 
@@ -89,15 +89,15 @@ Weitere Risiken beim Umfang:
 
 ### 2.5 Lizenzen
 
-| Material | Stand | Was zu tun ist |
-| --- | --- | --- |
-| LimeZu Modern Interiors / Exteriors (Vollversion, itch.io) | Nutzung in kommerziellen Projekten laut Seite erlaubt, Namensnennung nötig, Weiterverkauf verboten | Vollversion kaufen, Lizenztext beim Kauf speichern, Credits im Abspann |
-| Phaser | MIT | Lizenzhinweis im Abspann |
-| inkjs oder Yarn Spinner (Dialoge) | MIT | Lizenzhinweis |
-| Pixel-Schriften | je nach Schrift | nur SIL-OFL- oder CC0-Schriften verwenden |
-| Musik und Sounds | offen | CC0/CC-BY von OpenGameArt oder Kevin MacLeod (CC-BY) oder selbst erzeugt; KI-Musikdienste nur, wenn der Tarif kommerzielle Nutzung erlaubt |
-| KI-Porträts | offen | Nutzungsbedingungen des Dienstes prüfen; KI-Bilder genießen in Deutschland und den USA voraussichtlich keinen Urheberschutz, andere dürfen sie also kopieren; für dich ist das Risiko gering |
-| Namen | offen | „Perfect Move“ und „ZERO“ auf bestehende Marken prüfen; Pokémon, Hikaru no Go, reale Großmeister nirgends nennen |
+| Material                                                   | Stand                                                                                              | Was zu tun ist                                                                                                                                                                               |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LimeZu Modern Interiors / Exteriors (Vollversion, itch.io) | Nutzung in kommerziellen Projekten laut Seite erlaubt, Namensnennung nötig, Weiterverkauf verboten | Vollversion kaufen, Lizenztext beim Kauf speichern, Credits im Abspann                                                                                                                       |
+| Phaser                                                     | MIT                                                                                                | Lizenzhinweis im Abspann                                                                                                                                                                     |
+| inkjs oder Yarn Spinner (Dialoge)                          | MIT                                                                                                | Lizenzhinweis                                                                                                                                                                                |
+| Pixel-Schriften                                            | je nach Schrift                                                                                    | nur SIL-OFL- oder CC0-Schriften verwenden                                                                                                                                                    |
+| Musik und Sounds                                           | offen                                                                                              | CC0/CC-BY von OpenGameArt oder Kevin MacLeod (CC-BY) oder selbst erzeugt; KI-Musikdienste nur, wenn der Tarif kommerzielle Nutzung erlaubt                                                   |
+| KI-Porträts                                                | offen                                                                                              | Nutzungsbedingungen des Dienstes prüfen; KI-Bilder genießen in Deutschland und den USA voraussichtlich keinen Urheberschutz, andere dürfen sie also kopieren; für dich ist das Risiko gering |
+| Namen                                                      | offen                                                                                              | „Perfect Move“ und „ZERO“ auf bestehende Marken prüfen; Pokémon, Hikaru no Go, reale Großmeister nirgends nennen                                                                             |
 
 Grundregel: Ein kostenloses Spiel, das ein Buch bewirbt, zählt mit hoher Wahrscheinlichkeit als kommerzielle Nutzung. Also nur Material verwenden, das kommerziell erlaubt ist. Das ist keine Rechtsberatung.
 
@@ -177,25 +177,25 @@ Kennzeichnung: **[Dein Konzept]** = aus dem Chat, **[Mein Vorschlag]** = neu von
 
 Aufwand = Zeit des Autors (Prüfen, Entscheiden, Testen); Claude macht die Schreib- und Bauarbeit. Modell: **Fable** für Fundament und Architektur, **Opus** für Inhalte in Menge, **Claude Code** für alles, was Code und Repository berührt (dort mit Opus; Fable nur für Schritt 3 und 5).
 
-| Nr. | Schritt | Ziel und Ergebnis | Hängt ab von | Aufwand | Modell |
-| --- | --- | --- | --- | --- | --- |
-| 0 | Rahmen festlegen | Entscheidungen aus Abschnitt 5 treffen; Staffel-Schnitt, Zielalter, Scope. Ergebnis: eine Seite „Projektvertrag“ | – | 2–3 Std. | Chat (Fable) |
-| 1 | Story-Bibel | Figuren mit Hintergrund und Sprechweise, Welt, Zeitlinie, die vier Akte Szene für Szene, Dialog-Stilregeln. Ergebnis: Dokument Story-Bibel | 0 | 15–25 Std. | Fable (Struktur), Opus (Ausarbeitung) |
-| 2 | Regelwerk final | Karten, Orden, Ligen, Remis, Niederlage, Bedenkzeit, Zustände „abgelenkt/analysiert“, Punktesystem. Ergebnis: Dokument Regelwerk mit Tabellen, später direkt in JSON übernehmbar | 0 | 6–10 Std. | Fable |
-| 3 | Architektur und Schnittstelle | Vertrag zwischen Spiel und App: Gegnerprofil (Stärke, Fehlerrate, Eröffnungen, Motive, Stil, Zustand), Partie-Ergebnis (Resultat, Karten, Schlüsselmomente, PGN), Modulgrenze, Cache-Strategie, Spielstand-Schema, Export. Ergebnis: Architekturdokument im Repository plus TypeScript-Interfaces ohne Implementierung | 2, Einblick in bestehenden Code | 8–12 Std. | Claude Code mit Fable |
-| 4 | Datenformate | Dialoge in Ink (inkjs) oder Yarn Spinner, Quests als JSON-Schema, Gegnerprofile als JSON, Karten als JSON, Karten in Tiled-JSON, Lokalisierungsdateien (de, später en). Ergebnis: Schemata plus ein Beispiel pro Format | 3 | 4–6 Std. | Claude Code (Opus) |
-| 5 | Technischer Prototyp | Phaser als lazy geladenes Modul in der PWA, ein Raum, eine laufende Figur, ein Dialog, Übergang in die vorhandene Brettansicht, Partie gegen Bot mit Profil, Rückweg mit Ergebnis. Ergebnis: lauffähiger Prototyp auf dem Handy | 3, 4 | 15–25 Std. | Claude Code (Fable für die Verbindung, dann Opus) |
-| 6 | Asset-Grundstock | LimeZu-Vollversion kaufen, Lizenzen ablegen, Kachelkatalog erstellen (jede genutzte Kachel benannt), 10–15 Bausteine (Klassenzimmer, Flur, Straße, Park, Wohnzimmer, Dachboden, Bibliothek), eine Pixel-Schrift, Platzhalter-Porträts. Ergebnis: Asset-Ordner mit Katalog | 5 | 10–15 Std. | Claude Code (Opus) mit Screenshot-Schleife |
-| 7 | Weltgenerator | Werkzeug, das aus einer Ortsbeschreibung (Text/JSON) eine Tiled-Karte aus Bausteinen baut, Kollision und Übergänge setzt, Screenshot erzeugt. Ergebnis: Generator plus erste Karte Maple Falls außen und innen | 6 | 15–25 Std. | Claude Code (Fable) |
-| 8 | Spielsysteme | Dialogsystem, Questsystem, Kartenverwaltung, Orden, Spielstand, Menü/Clubtagebuch, Einstufung, Lernübersicht für Eltern. Ergebnis: alle Systeme in Maple Falls nutzbar | 5, 7 | 25–40 Std. | Claude Code (Opus) |
-| 9 | Vertikaler Schnitt | Maple Falls komplett: Intro, Fund des Bretts, 3 Nebenquests, Aufgabenreihe, Straßengegner, Clubkampf, Orden, erste Karte, Victor-Szene. Ergebnis: 60–90 Minuten spielbar | 1, 2, 8 | 20–30 Std. | Claude Code (Opus); Dialoge aus Schritt 1 |
-| 10 | Test mit Kindern | 5–8 Kinder (Familie, Freunde, Verein, nicht eigene Schüler ohne Klärung) spielen den Schnitt; Beobachtungsbogen: Wo abgebrochen, was unverstanden, was gefiel. Ergebnis: Liste von Änderungen; Go/No-Go für Staffel 1 | 9 | 10–15 Std. | – (Autor), Auswertung mit Opus |
-| 11 | Ausbau Staffel 1 | Cedar Creek, Riverton, Ironwood plus Cliffhanger; Drehbuch, Karten, Quests, Gegnerprofile, Balance | 10 | 50–80 Std. | Opus (Drehbuch), Claude Code (Opus) |
-| 12 | Audio und Porträts | Musik-Loops (3–5 Stücke), Sounds, 8–10 Porträts mit einheitlichem Stil, Karten-Bilder | 11 | 15–25 Std. | Bild-/Musikdienst (Autor), Einbau Claude Code |
-| 13 | Download und Update | Optionales Laden in der App, Fortschrittsanzeige, Versionierung, Spielstand-Migration, Speicherwarnung auf iOS | 5, 11 | 8–12 Std. | Claude Code (Opus) |
-| 14 | Qualität und Recht | Testplan (Gerätematrix: iOS Safari, Android Chrome, Desktop; Offline-Test; Speicherlöschung), Abspann mit Credits, Impressum und Datenschutzerklärung aktualisieren, Markencheck der Namen | 13 | 10–15 Std. | Opus (Checklisten), Autor |
-| 15 | Veröffentlichung Staffel 1 | Zweiter Kindertest, Website-Seite zum Spiel, Freundeskarte, Installationsanleitung, Hinweis im Buch (Kasten) | 14 | 10–15 Std. | Opus, Autor |
-| 16 | Staffel 2 | Akte 3–4, Landesmeisterschaft, Ligen, Post-Game, Ghost Town, Abschied | 15 | 80–130 Std. | wie 11–15 |
+| Nr. | Schritt                       | Ziel und Ergebnis                                                                                                                                                                                                                                                                                                      | Hängt ab von                    | Aufwand     | Modell                                            |
+| --- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ----------- | ------------------------------------------------- |
+| 0   | Rahmen festlegen              | Entscheidungen aus Abschnitt 5 treffen; Staffel-Schnitt, Zielalter, Scope. Ergebnis: eine Seite „Projektvertrag“                                                                                                                                                                                                       | –                               | 2–3 Std.    | Chat (Fable)                                      |
+| 1   | Story-Bibel                   | Figuren mit Hintergrund und Sprechweise, Welt, Zeitlinie, die vier Akte Szene für Szene, Dialog-Stilregeln. Ergebnis: Dokument Story-Bibel                                                                                                                                                                             | 0                               | 15–25 Std.  | Fable (Struktur), Opus (Ausarbeitung)             |
+| 2   | Regelwerk final               | Karten, Orden, Ligen, Remis, Niederlage, Bedenkzeit, Zustände „abgelenkt/analysiert“, Punktesystem. Ergebnis: Dokument Regelwerk mit Tabellen, später direkt in JSON übernehmbar                                                                                                                                       | 0                               | 6–10 Std.   | Fable                                             |
+| 3   | Architektur und Schnittstelle | Vertrag zwischen Spiel und App: Gegnerprofil (Stärke, Fehlerrate, Eröffnungen, Motive, Stil, Zustand), Partie-Ergebnis (Resultat, Karten, Schlüsselmomente, PGN), Modulgrenze, Cache-Strategie, Spielstand-Schema, Export. Ergebnis: Architekturdokument im Repository plus TypeScript-Interfaces ohne Implementierung | 2, Einblick in bestehenden Code | 8–12 Std.   | Claude Code mit Fable                             |
+| 4   | Datenformate                  | Dialoge in Ink (inkjs) oder Yarn Spinner, Quests als JSON-Schema, Gegnerprofile als JSON, Karten als JSON, Karten in Tiled-JSON, Lokalisierungsdateien (de, später en). Ergebnis: Schemata plus ein Beispiel pro Format                                                                                                | 3                               | 4–6 Std.    | Claude Code (Opus)                                |
+| 5   | Technischer Prototyp          | Phaser als lazy geladenes Modul in der PWA, ein Raum, eine laufende Figur, ein Dialog, Übergang in die vorhandene Brettansicht, Partie gegen Bot mit Profil, Rückweg mit Ergebnis. Ergebnis: lauffähiger Prototyp auf dem Handy                                                                                        | 3, 4                            | 15–25 Std.  | Claude Code (Fable für die Verbindung, dann Opus) |
+| 6   | Asset-Grundstock              | LimeZu-Vollversion kaufen, Lizenzen ablegen, Kachelkatalog erstellen (jede genutzte Kachel benannt), 10–15 Bausteine (Klassenzimmer, Flur, Straße, Park, Wohnzimmer, Dachboden, Bibliothek), eine Pixel-Schrift, Platzhalter-Porträts. Ergebnis: Asset-Ordner mit Katalog                                              | 5                               | 10–15 Std.  | Claude Code (Opus) mit Screenshot-Schleife        |
+| 7   | Weltgenerator                 | Werkzeug, das aus einer Ortsbeschreibung (Text/JSON) eine Tiled-Karte aus Bausteinen baut, Kollision und Übergänge setzt, Screenshot erzeugt. Ergebnis: Generator plus erste Karte Maple Falls außen und innen                                                                                                         | 6                               | 15–25 Std.  | Claude Code (Fable)                               |
+| 8   | Spielsysteme                  | Dialogsystem, Questsystem, Kartenverwaltung, Orden, Spielstand, Menü/Clubtagebuch, Einstufung, Lernübersicht für Eltern. Ergebnis: alle Systeme in Maple Falls nutzbar                                                                                                                                                 | 5, 7                            | 25–40 Std.  | Claude Code (Opus)                                |
+| 9   | Vertikaler Schnitt            | Maple Falls komplett: Intro, Fund des Bretts, 3 Nebenquests, Aufgabenreihe, Straßengegner, Clubkampf, Orden, erste Karte, Victor-Szene. Ergebnis: 60–90 Minuten spielbar                                                                                                                                               | 1, 2, 8                         | 20–30 Std.  | Claude Code (Opus); Dialoge aus Schritt 1         |
+| 10  | Test mit Kindern              | 5–8 Kinder (Familie, Freunde, Verein, nicht eigene Schüler ohne Klärung) spielen den Schnitt; Beobachtungsbogen: Wo abgebrochen, was unverstanden, was gefiel. Ergebnis: Liste von Änderungen; Go/No-Go für Staffel 1                                                                                                  | 9                               | 10–15 Std.  | – (Autor), Auswertung mit Opus                    |
+| 11  | Ausbau Staffel 1              | Cedar Creek, Riverton, Ironwood plus Cliffhanger; Drehbuch, Karten, Quests, Gegnerprofile, Balance                                                                                                                                                                                                                     | 10                              | 50–80 Std.  | Opus (Drehbuch), Claude Code (Opus)               |
+| 12  | Audio und Porträts            | Musik-Loops (3–5 Stücke), Sounds, 8–10 Porträts mit einheitlichem Stil, Karten-Bilder                                                                                                                                                                                                                                  | 11                              | 15–25 Std.  | Bild-/Musikdienst (Autor), Einbau Claude Code     |
+| 13  | Download und Update           | Optionales Laden in der App, Fortschrittsanzeige, Versionierung, Spielstand-Migration, Speicherwarnung auf iOS                                                                                                                                                                                                         | 5, 11                           | 8–12 Std.   | Claude Code (Opus)                                |
+| 14  | Qualität und Recht            | Testplan (Gerätematrix: iOS Safari, Android Chrome, Desktop; Offline-Test; Speicherlöschung), Abspann mit Credits, Impressum und Datenschutzerklärung aktualisieren, Markencheck der Namen                                                                                                                             | 13                              | 10–15 Std.  | Opus (Checklisten), Autor                         |
+| 15  | Veröffentlichung Staffel 1    | Zweiter Kindertest, Website-Seite zum Spiel, Freundeskarte, Installationsanleitung, Hinweis im Buch (Kasten)                                                                                                                                                                                                           | 14                              | 10–15 Std.  | Opus, Autor                                       |
+| 16  | Staffel 2                     | Akte 3–4, Landesmeisterschaft, Ligen, Post-Game, Ghost Town, Abschied                                                                                                                                                                                                                                                  | 15                              | 80–130 Std. | wie 11–15                                         |
 
 ### Reihenfolge und Meilensteine
 
@@ -216,26 +216,26 @@ Bis M4 sind das rund 225–355 Stunden Autorenzeit; bei 5 Std. pro Woche etwa ei
 
 ## 5. Offene Entscheidungen
 
-| Frage | Empfehlung |
-| --- | --- |
-| Staffeln oder ein großer Wurf? | Staffeln. Staffel 1 mit vier Clubs, Entscheidung über Staffel 2 nach dem Kindertest. |
-| Muss Staffel 1 zum Bucherscheinen fertig sein? | Nein. Die Buchbegleitung (Stufe 1 der App) hat Vorrang; das Spiel kommt als Update, das ist sogar ein zweiter Marketing-Anlass. |
-| Zielalter | 10 bis 15, Lesbarkeit und Partielänge auf Zehnjährige ausrichten; Jugendliche kommen mit. |
-| Geist: historisch angelehnt oder erfunden? | Erfunden, als Zeitgenosse von Paul Morphy; Morphy als reale Figur im Hintergrund erwähnen. |
-| Held/Heldin wählbar? | Ja, Name und Figur (zwei bis vier Varianten); Dialoge geschlechtsneutral schreiben, um Doppelarbeit zu vermeiden. |
-| Sprache | Deutsch zuerst, alle Texte von Anfang an in Lokalisierungsdateien; Englisch mit der englischen Buchausgabe. |
-| Namen (Perfect Move, ZERO, Maple Falls, Ambrose, Victor) | Vorläufig behalten, vor Veröffentlichung Markencheck; „ZERO“ wegen der Nähe zu AlphaZero eher umbenennen. |
-| Dialogsystem | Ink (inkjs, MIT): bewährt, verzweigt gut, von Claude in Menge gut schreibbar. Yarn Spinner als Alternative. |
-| Phaser oder eigener Renderer? | Phaser. Spart Zeit, Tiled-Import fertig; Partien laufen in der vorhandenen Brettansicht. |
-| Karten: Verbrauch oder dauerhaft? | Beides: dauerhafte Grundkarten plus seltene Verbrauchskarten. |
-| Mentor-Zug behalten? | Ja, aber in Akt 3 gesperrt und im Finale freiwillig; das trägt die Story. |
-| Bedenkzeit | Keine Uhr im Hauptspiel; nur ein Spezialgegner mit Uhr. |
-| Remis gegen Clubchefs | Bronze mit Aufforderung zur Revanche. |
-| Niederlage | Analyse durch Ambrose, Gegner wird beim nächsten Versuch sichtbar überheblich (höhere Fehlerrate). |
-| Tausch per QR | Ja, nur Karte gegen Karte, ohne Server; Freundeskarte zur Installation dazu. |
-| Telemetrie | Nein. Rückmeldung nur über Kindertests und eine Feedback-Mailadresse für Eltern. |
-| Musik: lizenzfrei, gekauft oder KI? | CC0/CC-BY-Loops für Staffel 1; KI-Musik nur mit Tarif, der kommerzielle Nutzung erlaubt. |
-| Porträts | Bild-KI mit kommerziellem Tarif, ein fester Stilprompt und Referenzbild je Figur; alternativ ein Pixel-Artist für die sechs Hauptfiguren (Budget ca. 200–500 €). |
-| App-Store-Eintrag später? | Erst nach Staffel 1 prüfen; bringt Reichweite bei Kindern, kostet Altersfreigabe, Entwicklerkonten und Pflege. |
-| Tests mit eigenen Schülern | Vorher mit Schulleitung klären; bis dahin Familie, Freunde, Verein. |
-| Kostenpflichtig oder kostenlos? | Kostenlos bleiben. Ein Preis zerstört die Mundpropaganda und schafft Jugendschutz- und Zahlungsfragen. |
+| Frage                                                    | Empfehlung                                                                                                                                                       |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Staffeln oder ein großer Wurf?                           | Staffeln. Staffel 1 mit vier Clubs, Entscheidung über Staffel 2 nach dem Kindertest.                                                                             |
+| Muss Staffel 1 zum Bucherscheinen fertig sein?           | Nein. Die Buchbegleitung (Stufe 1 der App) hat Vorrang; das Spiel kommt als Update, das ist sogar ein zweiter Marketing-Anlass.                                  |
+| Zielalter                                                | 10 bis 15, Lesbarkeit und Partielänge auf Zehnjährige ausrichten; Jugendliche kommen mit.                                                                        |
+| Geist: historisch angelehnt oder erfunden?               | Erfunden, als Zeitgenosse von Paul Morphy; Morphy als reale Figur im Hintergrund erwähnen.                                                                       |
+| Held/Heldin wählbar?                                     | Ja, Name und Figur (zwei bis vier Varianten); Dialoge geschlechtsneutral schreiben, um Doppelarbeit zu vermeiden.                                                |
+| Sprache                                                  | Deutsch zuerst, alle Texte von Anfang an in Lokalisierungsdateien; Englisch mit der englischen Buchausgabe.                                                      |
+| Namen (Perfect Move, ZERO, Maple Falls, Ambrose, Victor) | Vorläufig behalten, vor Veröffentlichung Markencheck; „ZERO“ wegen der Nähe zu AlphaZero eher umbenennen.                                                        |
+| Dialogsystem                                             | Ink (inkjs, MIT): bewährt, verzweigt gut, von Claude in Menge gut schreibbar. Yarn Spinner als Alternative.                                                      |
+| Phaser oder eigener Renderer?                            | Phaser. Spart Zeit, Tiled-Import fertig; Partien laufen in der vorhandenen Brettansicht.                                                                         |
+| Karten: Verbrauch oder dauerhaft?                        | Beides: dauerhafte Grundkarten plus seltene Verbrauchskarten.                                                                                                    |
+| Mentor-Zug behalten?                                     | Ja, aber in Akt 3 gesperrt und im Finale freiwillig; das trägt die Story.                                                                                        |
+| Bedenkzeit                                               | Keine Uhr im Hauptspiel; nur ein Spezialgegner mit Uhr.                                                                                                          |
+| Remis gegen Clubchefs                                    | Bronze mit Aufforderung zur Revanche.                                                                                                                            |
+| Niederlage                                               | Analyse durch Ambrose, Gegner wird beim nächsten Versuch sichtbar überheblich (höhere Fehlerrate).                                                               |
+| Tausch per QR                                            | Ja, nur Karte gegen Karte, ohne Server; Freundeskarte zur Installation dazu.                                                                                     |
+| Telemetrie                                               | Nein. Rückmeldung nur über Kindertests und eine Feedback-Mailadresse für Eltern.                                                                                 |
+| Musik: lizenzfrei, gekauft oder KI?                      | CC0/CC-BY-Loops für Staffel 1; KI-Musik nur mit Tarif, der kommerzielle Nutzung erlaubt.                                                                         |
+| Porträts                                                 | Bild-KI mit kommerziellem Tarif, ein fester Stilprompt und Referenzbild je Figur; alternativ ein Pixel-Artist für die sechs Hauptfiguren (Budget ca. 200–500 €). |
+| App-Store-Eintrag später?                                | Erst nach Staffel 1 prüfen; bringt Reichweite bei Kindern, kostet Altersfreigabe, Entwicklerkonten und Pflege.                                                   |
+| Tests mit eigenen Schülern                               | Vorher mit Schulleitung klären; bis dahin Familie, Freunde, Verein.                                                                                              |
+| Kostenpflichtig oder kostenlos?                          | Kostenlos bleiben. Ein Preis zerstört die Mundpropaganda und schafft Jugendschutz- und Zahlungsfragen.                                                           |

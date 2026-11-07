@@ -153,20 +153,20 @@ Alle Namen sind Platzhalter. Der Umfang orientiert sich an den Pokémon-Spielen 
 
 ### Orte und Clubs
 
-| Nr. | Ort | Club / Clubchef | Buchthema | Story-Ereignis |
-| --- | --- | --- | --- | --- |
-| 1 | Maple Falls (Heimatstadt) | Schulteam, Coach Delgado | Regeln, Figurenwerte | Fund des Schachbretts, erster Sieg, erstes Treffen mit Victor |
-| 2 | Cedar Creek | Bibliotheksclub, Mrs. Okafor | Matt in einem und zwei Zügen | Erste Hilfskarte, Ambrose erzählt von 1860 |
-| 3 | Riverton | Parkschach-Schnellspieler „Slick“ | Gabel und Doppelangriff | Perfect Move kauft den ersten Club auf |
-| 4 | Ironwood | Stahlwerker-Club, Big Joe | Fesselung und Spieß | Mutter verbietet Turnierreisen – Nebenstory zur Versöhnung |
-| 5 | Silicon Bay | Konzern-Akademie, Dr. Lin | Eröffnungsgrundsätze | Held entdeckt Schummelgeräte; Ambrose ist von ZERO fasziniert |
-| 6 | Old Harbor | Seemannsclub, Kapitänin Reyes | Bauernstruktur und Pläne | Tiefpunkt: Vorwurf, mit dem Geist zu schummeln; Held spielt ohne Ambrose |
-| 7 | Desert Springs | Wunderkind Mira (10 Jahre) | Angriff auf den König, Opfer | Ambrose lehrt das romantische Opfer; Versöhnung mit dem Geist |
-| 8 | Summit City | Großmeisterin Ward | Endspiele | Victors Krise, Held hilft ihm |
-| 9 | Crossroads (Rastort) | – | Wiederholung | Treffpunkt aller Rivalen, Nebenquests |
-| 10 | Pinewood Camp | Sommer-Schachcamp | Taktik-Mix | Freundschaften, Gegner „abgelenkt“-Nebenstories |
-| 11 | Ghost Town Ruins | – | Studie aus dem 19. Jahrhundert | Ambrose findet sein altes Grab, Geheimnis des Rivalen |
-| 12 | Capital Arena | Landesmeisterschaft | alles | Finale, WM-Qualifikation |
+| Nr. | Ort                       | Club / Clubchef                   | Buchthema                      | Story-Ereignis                                                           |
+| --- | ------------------------- | --------------------------------- | ------------------------------ | ------------------------------------------------------------------------ |
+| 1   | Maple Falls (Heimatstadt) | Schulteam, Coach Delgado          | Regeln, Figurenwerte           | Fund des Schachbretts, erster Sieg, erstes Treffen mit Victor            |
+| 2   | Cedar Creek               | Bibliotheksclub, Mrs. Okafor      | Matt in einem und zwei Zügen   | Erste Hilfskarte, Ambrose erzählt von 1860                               |
+| 3   | Riverton                  | Parkschach-Schnellspieler „Slick“ | Gabel und Doppelangriff        | Perfect Move kauft den ersten Club auf                                   |
+| 4   | Ironwood                  | Stahlwerker-Club, Big Joe         | Fesselung und Spieß            | Mutter verbietet Turnierreisen – Nebenstory zur Versöhnung               |
+| 5   | Silicon Bay               | Konzern-Akademie, Dr. Lin         | Eröffnungsgrundsätze           | Held entdeckt Schummelgeräte; Ambrose ist von ZERO fasziniert            |
+| 6   | Old Harbor                | Seemannsclub, Kapitänin Reyes     | Bauernstruktur und Pläne       | Tiefpunkt: Vorwurf, mit dem Geist zu schummeln; Held spielt ohne Ambrose |
+| 7   | Desert Springs            | Wunderkind Mira (10 Jahre)        | Angriff auf den König, Opfer   | Ambrose lehrt das romantische Opfer; Versöhnung mit dem Geist            |
+| 8   | Summit City               | Großmeisterin Ward                | Endspiele                      | Victors Krise, Held hilft ihm                                            |
+| 9   | Crossroads (Rastort)      | –                                 | Wiederholung                   | Treffpunkt aller Rivalen, Nebenquests                                    |
+| 10  | Pinewood Camp             | Sommer-Schachcamp                 | Taktik-Mix                     | Freundschaften, Gegner „abgelenkt“-Nebenstories                          |
+| 11  | Ghost Town Ruins          | –                                 | Studie aus dem 19. Jahrhundert | Ambrose findet sein altes Grab, Geheimnis des Rivalen                    |
+| 12  | Capital Arena             | Landesmeisterschaft               | alles                          | Finale, WM-Qualifikation                                                 |
 
 ### Handlungsbogen in vier Akten
 
@@ -207,27 +207,27 @@ Grundsatz: Es wird immer reguläres Schach gespielt. Hilfen verändern Informati
 
 ### Orden
 
-| Orden | Bedingung |
-| --- | --- |
-| Gold | Sieg ohne Hilfskarten |
+| Orden  | Bedingung                               |
+| ------ | --------------------------------------- |
+| Gold   | Sieg ohne Hilfskarten                   |
 | Silber | Sieg mit höchstens zwei leichten Karten |
-| Bronze | Sieg mit beliebigen Karten |
+| Bronze | Sieg mit beliebigen Karten              |
 
 - Ein Orden kann jederzeit durch eine erneute Partie verbessert werden.
 - Qualifikation (erster Entwurf, siehe Korrektur im Prüfdokument): 8 Bronze oder mehr → Bronze-Liga; mindestens 5 Silber oder besser → Silber-Liga; mindestens 6 Gold → Gold-Liga.
 
 ### Hilfskarten
 
-| Karte | Stufe | Wirkung | Erhalt |
-| --- | --- | --- | --- |
-| Fingerzeig | leicht | Markiert die Figur, die bewegt werden sollte | Aufgabenreihe gelöst |
-| Gefahrenradar | leicht | Zeigt bedrohte eigene Figuren | Aufgabenreihe gelöst |
-| Zweite Chance | leicht | Einen Zug zurücknehmen | Straßensieg |
-| Ambroses Flüstern | mittel | Zeigt die drei besten Kandidatenzüge | Nebenaufgabe |
-| Mentor-Zug | mittel | Der Geist führt einen Engine-Zug aus | Clubsieg |
-| Bauernvorgabe | stark | Gegner startet ohne einen Bauern (f2/f7) | seltene Belohnung |
-| Springervorgabe | stark | Gegner startet ohne einen Springer | seltene Belohnung |
-| Zeitbonus | leicht | Mehr Bedenkzeit in Zeitpartien | Camp-Aufgaben |
+| Karte             | Stufe  | Wirkung                                      | Erhalt               |
+| ----------------- | ------ | -------------------------------------------- | -------------------- |
+| Fingerzeig        | leicht | Markiert die Figur, die bewegt werden sollte | Aufgabenreihe gelöst |
+| Gefahrenradar     | leicht | Zeigt bedrohte eigene Figuren                | Aufgabenreihe gelöst |
+| Zweite Chance     | leicht | Einen Zug zurücknehmen                       | Straßensieg          |
+| Ambroses Flüstern | mittel | Zeigt die drei besten Kandidatenzüge         | Nebenaufgabe         |
+| Mentor-Zug        | mittel | Der Geist führt einen Engine-Zug aus         | Clubsieg             |
+| Bauernvorgabe     | stark  | Gegner startet ohne einen Bauern (f2/f7)     | seltene Belohnung    |
+| Springervorgabe   | stark  | Gegner startet ohne einen Springer           | seltene Belohnung    |
+| Zeitbonus         | leicht | Mehr Bedenkzeit in Zeitpartien               | Camp-Aufgaben        |
 
 - Pro Partie höchstens drei Karten im Deck, jede Karte einmal pro Partie.
 - Starke Karten nur vor Partiebeginn spielbar (Vorgabe), nicht mitten im Spiel.

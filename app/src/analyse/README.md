@@ -35,6 +35,9 @@
 | `k12-kandidaten.ts`       | Denkroutine Schritte 2 bis 4: Kandidaten, stärkste Antwort, Bilanz                                               |
 | `k12-sicherheitsblick.ts` | Die drei Fragen vor dem Ziehen zu einem Zug (Buchzug oder eigener Zug)                                           |
 | `k8-elementarmatt.ts`     | Kasten, Matt- und Pattzüge, Sperr-, Abwarte- und Treibezüge bei Dame, Turm, zwei Läufern                         |
+| `findekategorien.ts`      | Finde-Kategorien F1 bis F10 (Konzept Fehler mit Buchbezug, 3.2): Auswahl nach Priorität, Schwellen in `-lage.ts` |
+| `findekategorien-….ts`    | `-lage` Eingabe, Schwellen, Lage; `-taktik` F1 bis F5; `-endspiel` F6, F7; `-plan` F8 bis F10                    |
+| `warumfalle.ts`           | W1 „Falle aus dem Buch“: Fehlzüge der Fallenchecks aus Kapitel 4 per Stellungsvergleich                          |
 
 Ein neues Werkzeug: Datei `kN-name.ts` anlegen, in `register.ts` eintragen, Grundbausteine über
 `profil(stellung)` holen, Referenztests mit Buchabbildungen schreiben (siehe `k1-zaehlen.test.ts`

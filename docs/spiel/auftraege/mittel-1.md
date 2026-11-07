@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Story-Bibel, Teil 1 (Akt 1, Maple Falls und Cedar Creek)
 
-**Stand:** offen (Haupt-Chat, 07.11.2026)
+**Stand:** fertig (Helfer mittel-1, 07.11.2026)
 **Zweig:** `abenteuer-story-bibel`, Basis `claude/friendly-shannon-y8bf90`
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neu), `docs/spiel/auftraege/mittel-1.md`
 **Prüfung vor dem Push:** `cd app && npx prettier --check ../docs/spiel`
@@ -43,4 +43,58 @@ Keine Ink-Dateien, keine JSON-Daten, kein Code; das kommt in Folgeaufträgen aus
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig:** `docs/spiel/05_Story_Bibel.md` mit allen fünf geforderten Teilen: Figuren (Held,
+Ambrose, Mama, Victor mit Vater, Coach Delgado, Sam, Juno als beste Freundin, Mrs. Okafor, je drei
+bis vier Nebenfiguren in Maple Falls und Cedar Creek, jeweils Hintergrund, Sprechweise mit drei
+Beispielsätzen, Rolle, Verhältnis zum Schach), Zeitlinie 1831 bis 2026, Welt (je Stadt
+Außenkarte und drei Innenräume, vorhandene Kennungen aus `orte.json` übernommen), 25 Szenen mit
+Ort, Figuren, Zweck, Ereignis und Kennung samt Zeitrechnung, Dialog-Stilregeln (Länge,
+Lesealter, Geschlechtsneutralität, Ambroses Sprache in fünf Regeln, Tags und Funktionen), zehn
+offene Fragen mit Empfehlung. Prüfung `npx prettier --check ../docs/spiel` bestanden.
+
+**Entscheidungen mit Begründung:**
+
+- **Zweig:** Gearbeitet auf `claude/schach-abenteuer-mittel-1-cl431d` (Basis
+  `claude/friendly-shannon-y8bf90`) statt `abenteuer-story-bibel`, weil die Sitzung des Helfers
+  fest auf diesen Zweig eingestellt ist und nur dorthin pushen darf. Inhaltlich ändert das nichts.
+- **Erzwungene Niederlage gegen Victor:** echte Partie aus der Grundstellung (E + 500) mit zwei
+  Dialogvarianten statt gestellter Verluststellung, weil das Spiel „echtes Schach ohne Tricks“
+  verspricht.
+- **Zeitlinie:** Ambrose 1831 bis 1866, Match 1858, Revanche als Fernpartie 1865/66; die
+  unbeendete Fernpartie ist die Quelle der Partiefragmente und die Stellung auf dem Brett. So
+  passen alle Sätze des vorhandenen Ink-Beispiels („New Orleans, 1858“, „hundertsechzig Jahre“,
+  „Später“).
+- **Erinnerung (C3):** `klassik-paulsen-morphy` (New York 1857), weil Ambrose sie als Augenzeuge
+  erzählen kann und das Damenopfer zu Club 2 (Matt) passt.
+- **Park** bleibt eigene kleine Außenkarte und wird der Stadtrand mit dem Weg nach Cedar Creek.
+- **Beste Freundin** Juno statt bester Freund, weil Sam schon ein Junge im Team ist.
+- **Zustände:** „analysiert“ in Maple Falls (vorhandene Quest „Sams Dame“), „abgelenkt“ in Cedar
+  Creek (Sternennacht, ohne Absicht des Helden).
+
+**Offen (Folgeaufträge):** Ink-Dateien der Szenen 1 und 4 bis 25; Quests und Gegnerprofile für
+Cedar Creek (Okafor E + 280, Dex, Mae, Rosa); neue Einträge in `orte.json`, `quests.json`,
+`texte/de.json`; Züge der erfundenen Fernpartie von 1866 (mit Engine bauen, Endspiel am Schluss).
+
+**Fragen an den Autor:** stehen in Abschnitt 6 der Bibel (zehn Stück, je mit Empfehlung, keine
+blockiert den Auftrag). Wichtigste: Wie offen über die Jahre 1860 bis 1865 sprechen (Empfehlung:
+gar nicht konkret); „Urenkel“ stimmt rechnerisch nicht (Empfehlung: „Nachfahre“).
+
+**Vorschläge für gesperrte Dateien (Haupt-Chat):**
+
+1. `inhalte/abenteuer/orte.json`: Ort `cedarCreek` mit Karten `cedarCreek.aussen`, `.bibliothek`,
+   `.archiv`, `.waschsalon`; Figuren `juno`, `abernathy`, `lily` in Maple Falls und `okafor`,
+   `dex`, `mae`, `boateng`, `rosa`, `victor` in Cedar Creek; Club `club.cedarCreek.name` mit
+   Kapitel 7 und 8.
+2. `inhalte/abenteuer/gegner.json`: Profil für Ambrose als Lehrer in `mapleFalls.ersteLektion`
+   (feste Stärke etwa 900, hohe Fehlerhäufigkeit) und für `cedarCreek.okafor`
+   (Zielstärke Eingang + 280, Fallensteller, Grundreihe).
+3. `schnittstelle/partie.ts` (nur Idee): Die Einstufung aus der ersten Partie sollte die
+   Genauigkeit der Züge nutzen, nicht nur das Ergebnis; sonst verfälscht Ambroses hohe
+   Fehlerhäufigkeit die Eingangswertung.
+4. Optional für die Victor-Partie: eine Zuggrenze im `Partieauftrag` (etwa 40 Züge, danach ruft
+   der Vater Victor weg und die Stellung entscheidet die Dialogvariante). Das würde lange Partien
+   gegen einen fast unschlagbaren Gegner kürzen; nur nötig, wenn die Testpartien des Autors das
+   zeigen.
+5. `texte/de.json`: Schlüssel `figur.juno.name`, `figur.okafor.name`, `ort.cedarCreek.*`,
+   `quest.lilysSpringer.*`, `quest.trockner.*`, `quest.archivOrdnen.*`, `quest.sternennacht.*`,
+   `quest.erinnerungNewYork.*`.

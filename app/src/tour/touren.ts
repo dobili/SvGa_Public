@@ -353,7 +353,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-filter", "tour.spielen.filter"),
   ]),
   einstellungen: tour("tour.titel.einstellungen", [
-    ziel("einstellungen-reiter-brett", "einstellungenneu.tour.brett"),
+    // Seit 7.11.2026 (Wunsch des Autors): Brett und Figuren nur im Profil, oben führt eine Zeile hin.
+    ziel("einstellungen-aussehen", "einstellungenneu.tour.aussehen"),
     ziel("einstellungen-reiter-bedienung", "tour.ich.reiterBedienung"),
     ziel("einstellungen-reiter-anzeige", "tour.ich.reiterAnzeige"),
     ziel("einstellungen-reiter-hilfe", "tour.ich.reiterHilfe"),

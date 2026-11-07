@@ -12,14 +12,7 @@
  * fortschritt/ringrechnung.ts.
  */
 import { useMemo } from "react";
-import {
-  ORDENGRUPPEN,
-  sperre,
-  type Extra,
-  type Extraart,
-  type Extralage,
-  type Ordengruppe,
-} from "../../../training/extras";
+import { ORDENGRUPPEN, type Extralage, type Ordengruppe } from "../../../training/extras";
 import { useAbzeichenstand } from "../fortschritt/abzeichenstand";
 import { useFortschrittsringe } from "../fortschritt/fortschrittsringe";
 import { istVoll } from "../fortschritt/ringrechnung";
@@ -66,10 +59,4 @@ export function useExtralage(): Extralage {
       themenstufen,
     };
   }, [stufe, schluessel, medaillen]);
-}
-
-/** Sperre je Wert einer Art: das sperrende Extra oder undefined (für die Kacheln der Einstellungen). */
-export function useSperre(art: Extraart, gewaehlt: string): (wert: string) => Extra | undefined {
-  const lage = useExtralage();
-  return (wert) => sperre(art, wert, gewaehlt, lage);
 }

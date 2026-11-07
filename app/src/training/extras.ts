@@ -10,7 +10,8 @@
  * Meisterschaft P3), nichts wird gespeichert. Grundsatz „nie wegnehmen“: Ein schon gewähltes
  * Extra bleibt gewählt, auch wenn seine Bedingung (etwa nach dem Laden einer Sicherung) nicht
  * erfüllt ist.
- * Die Oberfläche (Profilkarte „Deine Extras“, Kacheln in den Einstellungen) liest diese Datei
+ * Die Oberfläche (Profilkarte „Dein Aussehen“, seit 7.11.2026 die einzige Wahl von Brett und
+ * Figuren) liest diese Datei
  * über ui/komponenten/extras/.
  * Abhängigkeiten: training/meisterschaft.ts, training/meisterschaftsstand.ts (Meisterschaft, P3).
  */

@@ -1,13 +1,14 @@
 /**
  * Oberflächentests der freischaltbaren Extras (Gamifizierung P7, Profilkarte neu nach Entwurf E1
  * „Ankleide“ seit 31.10.2026): Die Karte zeigt oben die Vorschau, darunter je Art einen Reiter;
- * gesperrte Extras stehen abgedunkelt mit Schloss und Bedingung da. In den Einstellungen steht
- * der Figurensatz „Gold“ gesperrt mit „Ab Stufe 5“ und lässt sich nicht wählen. Nach einer
+ * gesperrte Extras stehen abgedunkelt mit Schloss und Bedingung da. Seit 7.11.2026 heißt sie „Dein
+ * Aussehen“ und ist die einzige Wahl von Brett und Figuren: Im Reiter „Figuren“ steht der
+ * Figurensatz „Gold“ gesperrt mit „Ab Stufe 5“ und lässt sich nicht wählen. Nach einer
  * Probe-Stufe auf der Aufgabenseite legt Antippen die bunten Konfettifarben an, erneutes Antippen
  * legt sie ab; der Bronzerahmen bleibt gesperrt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { ladeMitSprung, oeffneEinstellungen, oeffneProfil, starteImBrowser } from "./hilfen";
+import { ladeMitSprung, oeffneProfil, starteImBrowser } from "./hilfen";
 
 /** Öffnet das Profil frisch (Neuladen beginnt beim Buch) und liefert die Karte der Extras. */
 async function extraskarte(page: Page) {
@@ -15,7 +16,7 @@ async function extraskarte(page: Page) {
   await page.reload();
   await oeffneProfil(page);
   const karte = page.getByTestId("extras");
-  await expect(karte.getByRole("heading", { name: "Deine Extras" })).toBeVisible();
+  await expect(karte.getByRole("heading", { name: "Dein Aussehen" })).toBeVisible();
   return karte;
 }
 
@@ -37,12 +38,15 @@ test("Gesperrte Extras zeigen ihre Bedingung; nach der Probe-Stufe legt Antippen
   await karte.scrollIntoViewIfNeeded();
   await page.screenshot({ path: "test-results/bilder/extras-gesperrt.png" });
 
-  // Einstellungen: „Gold“ ist gesperrt und bleibt bei einem Tipp ungewählt.
-  await oeffneEinstellungen(page);
-  const gold = page.getByRole("radio", { name: /Gold.*Ab Stufe 5/ });
+  // Reiter „Figuren“: „Gold“ ist gesperrt und bleibt bei einem Tipp ungewählt; die freien Sätze
+  // stehen davor, „wie im Buch“ ist gewählt.
+  await karte.getByRole("tab", { name: "Figuren" }).click();
+  const gold = karte.getByTestId("extra-figuren-gold");
+  await expect(gold).toContainText("Ab Stufe 5");
   await expect(gold).toHaveAttribute("aria-disabled", "true");
   await gold.click({ force: true });
-  await expect(gold).toHaveAttribute("aria-checked", "false");
+  await expect(gold).toHaveAttribute("aria-pressed", "false");
+  await expect(karte.getByTestId("wahl-figuren-buch")).toHaveAttribute("aria-pressed", "true");
 
   // Probe auf der Aufgabenseite: nächste Stufe (Stufe 2).
   await ladeMitSprung(page, "/app/#aufgaben");

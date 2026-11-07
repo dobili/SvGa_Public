@@ -143,6 +143,19 @@ export async function oeffneProfil(seite: Page): Promise<void> {
     .click();
 }
 
+/**
+ * Öffnet im Profil die Karte „Dein Aussehen“ mit einem Reiter („Brett“, „Figuren“, „Rahmen“ …).
+ * Seit dem Wunsch des Autors vom 7.11.2026 wählt man Brett und Figuren nur noch dort; eine
+ * Kachel ist dann `karte.getByTestId("wahl-brett-gruen")` (immer frei) oder
+ * `karte.getByTestId("extra-figuren-gold")` (Extra).
+ */
+export async function oeffneAussehen(seite: Page, reiter: string): Promise<Locator> {
+  await oeffneProfil(seite);
+  const karte = seite.getByTestId("extras");
+  await karte.getByRole("tab", { name: reiter, exact: true }).click();
+  return karte;
+}
+
 /** Öffnet die Einstellungen: Profil, dann der Knopf „Einstellungen“ oben (seit 0.2.134). */
 export async function oeffneEinstellungen(seite: Page): Promise<void> {
   await oeffneProfil(seite);

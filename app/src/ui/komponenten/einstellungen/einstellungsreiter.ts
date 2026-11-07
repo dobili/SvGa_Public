@@ -1,5 +1,5 @@
 /**
- * Die Reiter der Einstellungen unter der Brettvorschau: Bedienung, Anzeige, Hilfe.
+ * Die Reiter der Einstellungen unter der Zeile zum Aussehen: Bedienung, Anzeige, Hilfe.
  *
  * Rolle im Gesamtbild: Entwurf K2 (Wahl des Autors, 31.10.2026). Ein neuer Reiter ist ein Eintrag
  * in `REITER` (eintragen statt umbauen); EinstellungenKarte.tsx zeigt sie in dieser Reihenfolge.

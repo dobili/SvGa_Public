@@ -1,10 +1,10 @@
 /**
- * Echte Vorschau eines Extras (Gestaltung „Deine Extras neu“, 31.10.2026): das eigene Porträt mit
+ * Echte Vorschau eines Extras (Gestaltung „Deine Extras neu“, 31.10.2026, seit 7.11.2026 „Dein Aussehen“): das eigene Porträt mit
  * dem Rahmen, ein Brettausschnitt in den Brettfarben oder mit dem Figurensatz, Konfetti in den
  * Farben, ein runder Orden für den Titel (das Titelband steht in der Vorschau oben).
  *
- * Rolle im Gesamtbild: Die Kacheln der Profilkarte „Deine Extras“ zeigen, wie ein Extra am Leser
- * aussieht, nicht ein Sinnbild. Je Art eine Zeile in `VORSCHAUEN`; eine neue Art ohne Zeile zeigt
+ * Rolle im Gesamtbild: Die Kacheln der Profilkarte „Dein Aussehen“ zeigen, wie ein Extra (oder
+ * ein immer freies Brett, ein Figurensatz) am Leser aussieht, nicht ein Sinnbild. Je Art eine Zeile in `VORSCHAUEN`; eine neue Art ohne Zeile zeigt
  * das Bild aus training/extras.ts (Feld `bild`). Alles ist Schmuck (aria-hidden), der Name steht
  * als Text auf der Kachel.
  * Abhängigkeiten: app/konfetti.ts, app/einstellungen.ts, training/extras.ts, profil/Spielerbild,
@@ -149,10 +149,27 @@ const VORSCHAUEN: Partial<
   ),
 };
 
+/**
+ * Die Vorschau eines Werts einer Art, auch eines immer freien (Brett „Grün“, Figuren „Merida“;
+ * seit „Aussehen im Profil“, 7.11.2026). Ohne Zeile in `VORSCHAUEN` nichts.
+ */
+export function Wertvorschau({
+  art,
+  wert,
+  kontext,
+}: {
+  art: Extraart;
+  wert: string;
+  kontext: Vorschaukontext;
+}) {
+  const vorschau = VORSCHAUEN[art];
+  return vorschau ? <>{vorschau(wert, kontext)}</> : null;
+}
+
 /** Die Vorschau eines Extras; ohne eigene Zeile das Bild aus der Liste der Extras. */
 export function Extravorschau({ extra, kontext }: { extra: Extra; kontext: Vorschaukontext }) {
-  const vorschau = VORSCHAUEN[extra.art];
-  if (vorschau) return <>{vorschau(extra.wert, kontext)}</>;
+  if (VORSCHAUEN[extra.art])
+    return <Wertvorschau art={extra.art} wert={extra.wert} kontext={kontext} />;
   return (
     <img className="extravorschau-bild" src={`${import.meta.env.BASE_URL}${extra.bild}`} alt="" />
   );

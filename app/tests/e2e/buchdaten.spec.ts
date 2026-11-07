@@ -7,7 +7,7 @@ import {
   klappeAbschnittAuf,
   ladeMitSprung,
   oeffneAbbildung,
-  oeffneEinstellungen,
+  oeffneAussehen,
   starteImBrowser,
 } from "./hilfen";
 
@@ -88,7 +88,7 @@ test("Nachschlagen: Glossar suchen, Stelle öffnen; Denkroutine; Abhakliste mit 
   ).toHaveAttribute("href", "/training/kap01/");
 });
 
-test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async ({ page }) => {
+test("Training zeigt alle Trainer, „Dein Aussehen“ ändert die Brettfarben", async ({ page }) => {
   await starteImBrowser(page);
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Training" }).click();
@@ -107,27 +107,18 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(page.getByText("folgt mit einem Update")).toHaveCount(0);
   await expect(page.getByTestId("trainer-denkroutine")).toContainText("Denkroutine-Trainer");
   await expect(page.getByTestId("kachel-kapitel").locator('a[href="/training/"]')).toBeVisible();
-  await oeffneEinstellungen(page);
-  await page
-    .getByRole("radiogroup", { name: "Brettfarbe" })
-    .getByRole("radio", { name: "Ahorn & Nussbaum" })
-    .click();
-  await expect(
-    page
-      .getByRole("radiogroup", { name: "Brettfarbe" })
-      .getByRole("radio", { name: "Ahorn & Nussbaum" }),
-  ).toHaveAttribute("aria-checked", "true");
+  // Brett und Figuren wählt man seit 7.11.2026 in der Profilkarte „Dein Aussehen“.
+  let karte = await oeffneAussehen(page, "Brett");
+  await karte.getByRole("button", { name: "Ahorn & Nussbaum: antippen zum Anlegen" }).click();
+  await expect(karte.getByTestId("wahl-brett-holz")).toHaveAttribute("aria-pressed", "true");
   await leiste.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
   await expect(
     page.locator('.brett pattern image[href$="holz/dunkel.webp"]').first(),
   ).toBeAttached();
   // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
-  await oeffneEinstellungen(page);
-  await page
-    .getByRole("radiogroup", { name: "Brettfarbe" })
-    .getByRole("radio", { name: "Marmor grün" })
-    .click();
+  karte = await oeffneAussehen(page, "Brett");
+  await karte.getByTestId("wahl-brett-marmor-gruen").click();
   await leiste.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
   await expect(

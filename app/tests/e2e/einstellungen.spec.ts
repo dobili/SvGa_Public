@@ -1,12 +1,19 @@
 /**
- * Oberflächentests der Einstellungen nach dem Entwurf K2 „Brettvorschau oben“ (Wahl des Autors,
- * 31.10.2026): große Brettvorschau mit Farbfeldern und Figurenkacheln, drei Reiter, darunter genau
- * einmal die Unterseiten „Bots und Wertung“, „Deine Daten“, „Über die App“. Dazu Bildschirmfotos
- * in Handybreite (360 Pixel), dunkel und hell, unter test-results/bilder/ für den Bericht.
+ * Oberflächentests der Einstellungen nach dem Entwurf K2 (Wahl des Autors, 31.10.2026): drei
+ * Reiter, darunter genau einmal die Unterseiten „Bots und Wertung“, „Deine Daten“, „Über die App“.
+ * Seit dem Wunsch des Autors vom 7.11.2026 gibt es dort keine Brettvorschau und keine Wahl von
+ * Brett und Figuren mehr; oben führt die Zeile „Aussehen … im Profil wählen“ zur Profilkarte „Dein
+ * Aussehen“, deren Wahl auf allen Brettern der App gilt. Dazu Bildschirmfotos in Handybreite
+ * (360 Pixel), dunkel und hell, unter test-results/bilder/ für den Bericht.
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
-import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneAussehen, oeffneEinstellungen, starteImBrowser } from "./hilfen";
+
+/** Name der Zeile, die aus den Einstellungen zur Profilkarte „Dein Aussehen“ führt. */
+const AUSSEHEN = "Aussehen (Brett, Figuren, Rahmen) im Profil wählen";
+/** Dunkles Feld des Brettes „Grün“ (ui/brett/masse.ts). */
+const GRUEN_DUNKEL = "#769656";
 
 /** Breite eines kleinen Android-Handys (Pflichtenheft 2). */
 const HANDY = { width: 360, height: 800 };
@@ -28,23 +35,15 @@ async function ueberstand(page: Page): Promise<number> {
   );
 }
 
-test("Brettvorschau: Farbe und Figuren gelten sofort in der Vorschau, Reiter und Seiten je einmal", async ({
+test("Aussehen: Einstellungen ohne doppelte Wahl, die Zeile führt zur Karte, Reiter und Seiten je einmal", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
-  const vorschau = page.locator(".brettstudio .brett");
-  await expect(vorschau.getByRole("img")).toBeVisible();
-  await page
-    .getByRole("radiogroup", { name: "Brettfarbe" })
-    .getByRole("radio", { name: "Grün", exact: true })
-    .click();
-  await expect(vorschau.locator('rect[fill="#769656"]').first()).toBeAttached();
-  await page
-    .getByRole("radiogroup", { name: "Figuren", exact: true })
-    .getByRole("radio", { name: "Merida" })
-    .click();
-  await expect(vorschau.locator("image[href$='klassisch-merida/wN.svg']")).toHaveCount(2);
+  // Keine Brettvorschau und keine Wahl von Brett und Figuren mehr in den Einstellungen.
+  await expect(page.getByRole("radiogroup", { name: /Brett|Figuren/ })).toHaveCount(0);
+  await expect(page.locator(".brett")).toHaveCount(0);
+  await expect(page.getByRole("switch", { name: "Koordinaten" })).toHaveCount(0);
   // Drei Reiter, „Bedienung“ vorn; die Unterseiten stehen genau einmal darunter.
   await expect(page.getByRole("tab")).toHaveText(["Bedienung", "Anzeige", "Hilfe"]);
   await expect(page.getByRole("tab", { name: "Bedienung" })).toHaveAttribute(
@@ -72,6 +71,47 @@ test("Brettvorschau: Farbe und Figuren gelten sofort in der Vorschau, Reiter und
   }
 });
 
+test("Aussehen: Die Zeile in den Einstellungen öffnet die Karte im Profil, die Wahl gilt am Brett", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneEinstellungen(page);
+  await page.getByRole("button", { name: AUSSEHEN }).click();
+  const karte = page.getByTestId("extras");
+  await expect(karte.getByRole("heading", { name: "Dein Aussehen" })).toBeInViewport();
+  await expect(karte.getByRole("tab", { name: "Brett", exact: true })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
+  // Frei und gesperrt in einer Reihe: „wie im Buch“ gewählt, „Nacht und Gold“ mit Schloss.
+  await expect(karte.getByTestId("wahl-brett-buch")).toHaveAttribute("aria-pressed", "true");
+  await expect(karte.getByTestId("extra-brett-nacht-gold")).toHaveAttribute(
+    "aria-disabled",
+    "true",
+  );
+  await karte.getByTestId("wahl-brett-gruen").click();
+  await expect(karte.getByTestId("wahl-brett-gruen")).toHaveAttribute("aria-pressed", "true");
+  await expect(karte.getByTestId("wahl-brett-buch")).toHaveAttribute("aria-pressed", "false");
+  const buehne = karte.getByTestId("extras-buehne");
+  await expect(buehne.locator(`rect[fill="${GRUEN_DUNKEL}"]`).first()).toBeAttached();
+  await karte.getByRole("tab", { name: "Figuren", exact: true }).click();
+  await karte.getByTestId("wahl-figuren-klassisch-merida").click();
+  await expect(buehne.locator("image[href$='klassisch-merida/wN.svg']")).toHaveCount(1);
+  await expect(karte.getByTestId("extra-figuren-gold")).toContainText("Ab Stufe 5");
+  // Die Wahl gilt auf jedem Brett der App, etwa an Abbildung 1.26.
+  await page.getByRole("button", { name: "Buch", exact: true }).click();
+  await oeffneAbbildung(page, "1.26", "1.26");
+  const brett = page.locator(".brettbereich .brett");
+  await expect(brett.locator(`rect[fill="${GRUEN_DUNKEL}"]`).first()).toBeAttached();
+  await expect(brett.locator("image[href$='klassisch-merida/wK.svg']")).toHaveCount(1);
+  // Koordinaten stehen im Reiter „Brett“ der Karte.
+  const brettreiter = await oeffneAussehen(page, "Brett");
+  await expect(brettreiter.getByRole("switch", { name: "Koordinaten" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+});
+
 test("Erklärung hinter dem Fragezeichen, Schriftgröße in einer Zeile", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneEinstellungen(page);
@@ -95,7 +135,7 @@ for (const schema of ["dunkel", "hell"] as const) {
     );
     await starteImBrowser(page);
     await oeffneEinstellungen(page);
-    await expect(page.locator(".brettstudio .brett")).toBeVisible();
+    await expect(page.getByRole("button", { name: AUSSEHEN })).toBeVisible();
     // Die feste Leiste läge auf Ganzseitenbildern mitten im Bild; für die Bilder ausgeblendet.
     await page.addStyleTag({ content: ".leiste { visibility: hidden; }" });
     expect(await ueberstand(page)).toBeLessThanOrEqual(0);

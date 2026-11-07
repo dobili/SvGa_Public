@@ -64,9 +64,18 @@ export interface Findeschwellen {
   readonly abstandZweitbesterAb: number;
   /** F10: Verliert die Widerlegung so viel Material, hat der Fehler einen taktischen Grund. */
   readonly taktischerGrundAb: number;
+  /**
+   * F10: höchstens so viele freie Felder hat die Figur, damit sie wirklich „am wenigsten aktiv“
+   * ist. Messlauf 7.11.2026: Ein Springer mit sechs freien Feldern als „LAP“ war kein Hinweis;
+   * der Läufer c1 der Buchabbildung 6.20 hat fünf und muss dabei sein.
+   */
+  readonly lapFreieFelderBis: number;
 }
 
-/** Die Schwellen nach dem Konzept (Abschnitte 3.2 und 5). */
+/**
+ * Die Schwellen nach dem Konzept (Abschnitte 3.2 und 5), nachgestellt im Messlauf vom 7.11.2026
+ * (docs/MESSUNG_BUCHBEZUG.md): neu lapFreieFelderBis.
+ */
 export const FINDE_SCHWELLEN: Findeschwellen = {
   verlustAb: 0.5,
   mattAb: 50,
@@ -84,6 +93,7 @@ export const FINDE_SCHWELLEN: Findeschwellen = {
   faustregelVerlustAb: 0.5,
   abstandZweitbesterAb: 0.3,
   taktischerGrundAb: 1,
+  lapFreieFelderBis: 5,
 };
 
 /** Was nur mit Buchdaten geht (F8). Fehlt es, schweigt die Kategorie. */

@@ -11,12 +11,13 @@
  * und deren Urteilsfarbe. Eine Karte zeigt die Marke der Zugklasse (Bedeutung nie nur über Farbe:
  * Zeichen und vorgelesener Name), Zug, kurzen Text, bei Fehlern den besseren Zug, ein kleines Brett
  * und „Zur Stellung“ (springt aufs Brett oben). Fehlerkarten tragen seit dem 7.11.2026 höchstens eine
- * Warum-Zeile mit Kapitel und „Üben“ (Warumzeile.tsx, Konzept „Fehler mit Buchbezug“). Über der Reihe steht der Stand („3 von 12“) mit
+ * Warum-Zeile und eine Findezeile mit Kapitel und „Üben“ (Buchzeilen.tsx, Konzept „Fehler mit
+ * Buchbezug“); „Verpasst“ nur die Findezeile. Über der Reihe steht der Stand („3 von 12“) mit
  * Knöpfen zum Blättern für Tastatur und Maus; die Reihe selbst ist mit Tab erreichbar und blättert
  * mit den Pfeiltasten, Pos1 und Ende. Die Knöpfe „Ganze Partie“ und je Phase an der Kurve rücken den Abschnitt
  * nach vorn (`phasenwahl`). Ohne klare Abweichung steht oben „Gut gespielt!“.
  * Abhängigkeiten: momente.ts, zeitleiste.ts, momentdarstellung.ts, useWischreihe.ts,
- * Warumzeile.tsx, ui/brett/Brett.tsx, i18n, lucide.
+ * Buchzeilen.tsx, buchzeilen.ts, spiel/buchzuege.ts, ui/brett/Brett.tsx, i18n, lucide.
  */
 import { Bot, ChevronLeft, ChevronRight, Flag, ThumbsUp } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -30,8 +31,9 @@ import { momentbild, type Darstellungsgrund, type Momentmarke } from "./momentda
 import type { Moment } from "./momente";
 import type { Sprung } from "./sprung";
 import { useWischreihe } from "./useWischreihe";
-import { Uebenknopf, Warumtext } from "./Warumzeile";
-import { useWarumzeile } from "./warumzeile";
+import { WARUM_KLASSEN } from "../../../spiel/buchzuege";
+import { Buchzeiletext, Uebenknopf } from "./Buchzeilen";
+import { gleichesUeben, useBuchzeilen } from "./buchzeilen";
 import type { Phasenabschnitt } from "./zeitleiste";
 import "../../stil/zeitleiste.css";
 
@@ -118,7 +120,11 @@ function Momentkarte({
   beiSprung,
 }: Momentkarteneingaben) {
   const bild = momentbild(grund, moment);
-  const warum = useWarumzeile(grund.eintrag, bild.warum);
+  const { warum, finde } = useBuchzeilen(grund.eintrag, bild.buchbezug, WARUM_KLASSEN);
+  // Warum vor Finden: Das „Üben“ unten gehört zur ersten Zeile; die zweite trägt ihr eigenes im
+  // aufgeklappten Satz, wenn sie einen anderen Trainer öffnet.
+  const erste = warum ?? finde;
+  const findeUeben = warum !== null && finde !== null && !gleichesUeben(warum, finde);
   const sprung = bild.sprung;
   const fen = sprung ? (stellungen(grund.eintrag.partie)[sprung.stelle] ?? "") : "";
   return (
@@ -146,7 +152,8 @@ function Momentkarte({
         </p>
       )}
       {bild.zusatz && <p className="zeitleiste-zusatz">{bild.zusatz}</p>}
-      {warum && <Warumtext zeile={warum} />}
+      {warum && <Buchzeiletext zeile={warum} art="warum" />}
+      {finde && <Buchzeiletext zeile={finde} art="finde" ueben={findeUeben} />}
       {sprung && (
         <div className="zeitleiste-fuss">
           <button
@@ -156,7 +163,7 @@ function Momentkarte({
           >
             {t("auswertung.zurStellung")}
           </button>
-          {warum && <Uebenknopf zeile={warum} />}
+          {erste && <Uebenknopf zeile={erste} />}
         </div>
       )}
     </li>

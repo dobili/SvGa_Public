@@ -254,6 +254,16 @@
   color: var(--gold-text);
 }
 
+/* „Üben“ der Findezeile im aufgeklappten Satz (zweiter Trainer auf der Karte, Rückblick). */
+.zeitleiste-warum .zeitleiste-sprung {
+  margin-top: 4px;
+}
+
+/* Findezeile in der Rückblickkarte unter „Besser war …“. */
+.rueckblick-findezeile {
+  margin-top: calc(var(--raster) / 2);
+}
+
 /* Der Knopf sitzt unten, damit er in allen Karten der Reihe auf einer Höhe steht. */
 .zeitleiste-fuss {
   margin-top: auto;

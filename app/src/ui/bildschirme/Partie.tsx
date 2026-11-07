@@ -344,6 +344,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
                 beste: eintrag.beste,
                 urteile,
                 varianten: eintrag.varianten,
+                abstaende: eintrag.abstaende,
                 theorie,
               }
             : null

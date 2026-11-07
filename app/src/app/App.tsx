@@ -60,6 +60,7 @@ import { TourEbene } from "../tour/TourEbene";
 import { zusatzsprung } from "./spruenge";
 import { useTageswechsel } from "./tageswechsel";
 import { useUebungszeit } from "./uebungszeit";
+import { useBuchkuerzelNachtrag } from "../ui/komponenten/auswertung/useBuchkuerzelNachtrag";
 import { zusatzansicht } from "./zusatzansichten";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
@@ -258,6 +259,8 @@ function Hauptrahmen() {
   // Neuer Tag bei offener App: neu zeichnen, damit „Heute“ und Co. nicht beim alten Tag bleiben.
   useTageswechsel();
   useUebungszeit();
+  // Kürzel „Fehler mit Buchbezug“ je ausgewerteter Partie, im Leerlauf (Startseite, Muster).
+  useBuchkuerzelNachtrag();
   return (
     <div className="rahmen">
       <UpdateHinweis />

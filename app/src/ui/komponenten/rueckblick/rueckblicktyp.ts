@@ -18,6 +18,8 @@ export interface Rueckblick {
   readonly urteile: readonly Zugurteil[];
   /** Hauptvariante der Engine je Stellung (UCI); leer bei älteren Auswertungen (R5). */
   readonly varianten?: readonly (readonly string[])[];
+  /** Abstand zum zweitbesten Zug je Stellung (für die Faustregeln der Findezeile, 7.11.2026). */
+  readonly abstaende?: readonly number[];
   /** Quellen der Theorie-Erkennung für die Namen bei einem Theoriezug (25.10.2026). */
   readonly theorie?: Theoriequellen | null;
 }

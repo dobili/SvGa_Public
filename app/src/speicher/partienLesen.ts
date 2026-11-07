@@ -7,6 +7,7 @@
  * Abhängigkeiten: speicher/partien.ts (Typen, Vorgaben), spiel/partie.ts, spiel/uhr.ts,
  * spiel/wertung.ts, engine/fehlerart.ts, engine/stufen.ts.
  */
+import { buchkuerzelAus } from "../spiel/buchkuerzel";
 import { probeherkunftAus, type Probeherkunft } from "../spiel/probepartie";
 import type { Color } from "chessops/types";
 import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
@@ -298,12 +299,15 @@ function eintragAus(roh: unknown): Partieeintrag | null {
     Array.isArray(roh.abstaende) && roh.abstaende.every(istZahl) ? roh.abstaende : [];
   // Hauptvarianten seit 0.2.56; ohne sie fehlt nur „Danach etwa …“ in der Rückblickkarte.
   const varianten = variantenAus(roh.varianten);
+  // Kürzel „Fehler mit Buchbezug“ seit Format 10; ohne sie rechnet die App bei Bedarf nach.
+  const buchbezug = buchkuerzelAus(roh.buchbezug);
   return {
     partie,
     werte,
     beste,
     abstaende: abstaende.length === werte.length ? abstaende : [],
     varianten: varianten.length === werte.length ? varianten : [],
+    ...(buchbezug ? { buchbezug } : {}),
   };
 }
 

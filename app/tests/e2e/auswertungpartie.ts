@@ -78,8 +78,8 @@ export function eintrag() {
   };
 }
 
-/** Schreibt die Partie in IndexedDB; false, solange die App noch nichts gespeichert hat. */
-function schreibePartie(neu: ReturnType<typeof eintrag>): Promise<boolean> {
+/** Schreibt die Partien in IndexedDB; false, solange die App noch nichts gespeichert hat. */
+function schreibePartien(neu: readonly unknown[]): Promise<boolean> {
   return new Promise<boolean>((fertig, fehler) => {
     const anfrage = indexedDB.open("schach-von-grund-auf");
     anfrage.onerror = () => fehler(anfrage.error);
@@ -94,10 +94,7 @@ function schreibePartie(neu: ReturnType<typeof eintrag>): Promise<boolean> {
           fertig(false);
           return;
         }
-        const schreiben = bereich.put(
-          { ...alt, spiel: { ...alt.spiel, partien: [neu] } },
-          "aktuell",
-        );
+        const schreiben = bereich.put({ ...alt, spiel: { ...alt.spiel, partien: neu } }, "aktuell");
         schreiben.onsuccess = () => {
           db.close();
           fertig(true);
@@ -114,7 +111,7 @@ export async function oeffnePartie(page: Page, schema: "hell" | "dunkel"): Promi
     window.localStorage.setItem("svga.farbschema", farbschema);
   }, schema);
   await page.goto("/app/");
-  await expect.poll(() => page.evaluate(schreibePartie, eintrag())).toBe(true);
+  await expect.poll(() => page.evaluate(schreibePartien, [eintrag()])).toBe(true);
   await page.reload();
   await oeffneProfil(page);
   await page
@@ -122,4 +119,14 @@ export async function oeffnePartie(page: Page, schema: "hell" | "dunkel"): Promi
     .first()
     .locator(".partiezeile-oeffnen")
     .click();
+}
+
+/**
+ * Spielt mehrere ausgewertete Partien ein (neueste zuerst) und lädt die App neu, etwa für die
+ * Startseite („Muster aus deinen Partien“, seit 7.11.2026).
+ */
+export async function spielePartienEin(page: Page, partien: readonly unknown[]): Promise<void> {
+  await page.goto("/app/");
+  await expect.poll(() => page.evaluate(schreibePartien, partien)).toBe(true);
+  await page.reload();
 }

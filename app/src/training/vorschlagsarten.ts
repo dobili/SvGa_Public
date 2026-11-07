@@ -8,8 +8,12 @@
  * Rangfolge nach gamifizierung.md P1: fällige Wiederholungen, Tagesaufgabe, Weiterlesen, offene
  * Übungen, schwaches Thema, Fehlerdatenbank; zuletzt eine Partie (Bug-Test 1.11.2026: wer alles
  * erledigt hatte, bekam gar keinen Vorschlag mehr); davor ein Kurzplan (Wunsch des Autors, 6.11.2026).
+ * Seit dem 7.11.2026 steht vor der schwächsten Phase das „Muster aus deinen Partien“ (Konzept
+ * „Fehler mit Buchbezug“ 4.3): genauer als die Phase; zeigen beide auf denselben Trainer, entfällt
+ * der Phasen-Vorschlag.
  * Abhängigkeiten: training/wiederholung.ts, training/themenstand.ts, training/themennamen.ts,
- * training/fehlerdatenbank.ts.
+ * training/fehlerdatenbank.ts, training/phasenschwaeche.ts, training/musterausPartien.ts,
+ * spiel/buchbezug.ts.
  */
 import type { Textschluessel } from "../i18n/sprache";
 import type { Nutzerdaten } from "../speicher/format";
@@ -18,6 +22,8 @@ import { auswertung, VORSCHLAG_WOCHEN, vorschlag as fehlervorschlag } from "./fe
 import { schwaechstesThema } from "./themenstand";
 import { themennameSchluessel, trainerZumThema } from "./themennamen";
 import { phasenschwaeche, UEBEN_JE_PHASE } from "./phasenschwaeche";
+import { musterFuer } from "./musterausPartien";
+import { BUCHBEZUG } from "../spiel/buchbezug";
 import { faellige } from "./wiederholung";
 
 /** Erst ab so vielen fälligen Karten lohnt der Vorschlag (P1, Fall 1). */
@@ -277,6 +283,9 @@ function phase({ daten }: Lage): Vorschlag | null {
   const schwaeche = phasenschwaeche(daten);
   if (!schwaeche) return null;
   const ueben = UEBEN_JE_PHASE[schwaeche.phase];
+  // Das Muster ist genauer; zeigt es auf denselben Trainer, sagt die Phase nichts Neues.
+  const muster = musterFuer(daten);
+  if (muster && BUCHBEZUG[muster.kennung].trainer === ueben.trainer) return null;
   return {
     art: "phase",
     text: "naechster.phase",
@@ -287,6 +296,28 @@ function phase({ daten }: Lage): Vorschlag | null {
     },
     knopf: "naechster.knopf.trainer",
     ziel: { bildschirm: "trainer", kennung: ueben.trainer },
+  };
+}
+
+/**
+ * Fall 5a: ein Muster aus den eigenen Partien (training/musterausPartien.ts): eine Kategorie
+ * „Fehler mit Buchbezug“ in mindestens 3 der letzten 10 ausgewerteten Partien, mit Trainer und
+ * Kapitel. Dezent wie der Phasen-Vorschlag: „Dazu passt vermutlich …“ (Konzept 4.3).
+ */
+function muster({ daten }: Lage): Vorschlag | null {
+  const gefunden = musterFuer(daten);
+  if (!gefunden) return null;
+  const bezug = BUCHBEZUG[gefunden.kennung];
+  const themenname = bezug.thema ? themennameSchluessel(bezug.thema) : null;
+  return {
+    art: "muster",
+    text: "naechster.muster",
+    werte: { anzahl: gefunden.anzahl, partien: gefunden.partien, kapitel: bezug.kapitel[0] ?? 0 },
+    namen: { kategorie: bezug.anzeige, trainer: themenname ?? `trainer.${bezug.trainer}.name` },
+    knopf: "naechster.knopf.ueben",
+    ziel: bezug.thema
+      ? { bildschirm: "trainer", kennung: bezug.trainer, thema: bezug.thema }
+      : { bildschirm: "trainer", kennung: bezug.trainer },
   };
 }
 
@@ -313,6 +344,7 @@ export const VORSCHLAGSARTEN: readonly Vorschlagsart[] = [
   { kennung: "weiterlesen", rang: 30, ermittle: weiterlesen },
   { kennung: "uebungen", rang: 40, ermittle: offeneUebungen },
   { kennung: "thema", rang: 50, ermittle: schwachesThema },
+  { kennung: "muster", rang: 52, ermittle: muster },
   { kennung: "phase", rang: 55, ermittle: phase },
   { kennung: "fehler", rang: 60, ermittle: fehlerdatenbank },
   { kennung: "kurzplan", rang: 80, ermittle: kurzplan },

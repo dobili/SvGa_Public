@@ -15,6 +15,7 @@ import {
   ListChecks,
   Puzzle,
   RefreshCw,
+  Repeat,
   Sparkles,
   Swords,
   Target,
@@ -55,6 +56,8 @@ export const KACHELARTEN: Readonly<Record<string, Kachelart>> = {
   thema: { Symbol: Target, titelAusNamen: "thema", kurz: "buchlook.kurz.thema" },
   fehler: { Symbol: ListChecks, titelAusNamen: "trainer", kurz: "buchlook.kurz.fehler" },
   phase: { Symbol: LineChart, titel: "buchlook.kachel.phase", kurz: "buchlook.kurz.phase" },
+  // Muster aus deinen Partien (Konzept „Fehler mit Buchbezug“ 4.3): Titel ist die Kategorie.
+  muster: { Symbol: Repeat, titelAusNamen: "kategorie", kurz: "buchlook.kurz.muster" },
   kurzplan: { Symbol: Timer, titel: "buchlook.kachel.kurzplan", kurz: "buchlook.kurz.kurzplan" },
   partie: { Symbol: Swords, titel: "buchlook.kachel.partie", kurz: "buchlook.kurz.partie" },
 };

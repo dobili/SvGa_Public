@@ -99,8 +99,8 @@ Nebenquests“ (Springervorgabe) sind Regeln, keine Quests, und stehen deshalb n
    Stellung selbst: Er spielt nicht von vorn gegen Anfänger, sondern gibt eine Trainingsstellung
    mit einer Figur weniger für Schwarz („Halt sie, wenn du kannst“). Ambrose sagt offen, dass sie
    verloren ist. Vorschlag für die Stellung (Spanisch, Tschigorin-Aufbau, Schwarz am Zug, Springer
-   a5 fehlt): `r1b2rk1/2q1bppp/p2p1n2/1pp1p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 2 12`. Gültig
-   nach chessops-Regeln (geprüft mit python-chess); die Bewertung (Ziel −2,5 bis −4) habe ich ohne
+   a5 fehlt): `r1b2rk1/2q1bppp/p2p1n2/1pp1p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 2 12`. Legal
+   (geprüft mit python-chess); die Bewertung (Ziel −2,5 bis −4) habe ich ohne
    Engine nicht gemessen, bitte mit Tiefe 12 prüfen. Die Bibel (Szene 12) sollte an R33 angepasst
    werden; die Datei ist für mich gesperrt.
 2. **Wirkungen stehen in `quests.json`, nicht im Ink.** Ink ruft nur `beginnePartie`,

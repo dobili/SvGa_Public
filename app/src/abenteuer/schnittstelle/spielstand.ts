@@ -96,9 +96,14 @@ export interface Fragmente {
  */
 export interface Abenteuerstand {
   readonly version: typeof ABENTEUER_VERSION;
-  /** Wann das Abenteuer begann (ISO) und mit welcher Eingangswertung (Entscheidung A6). */
+  /** Wann das Abenteuer begann (ISO). */
   readonly begonnen: string;
+  /**
+   * Eingangswertung E (Entscheidung A6, Architektur Abschnitt 4): läuft in den ersten 10 gewerteten
+   * Partien mit der aktuellen Wertung mit und ist danach fest; `eingangPartien` zählt sie.
+   */
   readonly eingangswertung: number;
+  readonly eingangPartien: number;
   /** Name und Figurvariante des Helden (nur Vorname oder Spitzname, bleibt lokal). */
   readonly held: { readonly name: string; readonly variante: number };
   readonly handlung: Handlungsstand;

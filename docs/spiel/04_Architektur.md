@@ -62,7 +62,7 @@ Zählen für die App (Entscheidung A2): Mit `zaehltFuerApp: true` landet die Par
 
 Der Einwand des Autors ist richtig: Wenn jeder Clubchef nur 150 über der aktuellen Wertung läge, würde der Leser nie merken, dass er besser wird, und die Karten wären überflüssig. Deshalb zwei Bezugspunkte (`Zielstaerke`):
 
-- **Eingangswertung** E: die Wertung des Lesers beim Start des Abenteuers (aus der App, sonst aus der ersten Story-Partie, Entscheidung A5). Sie wird einmal im Spielstand festgehalten und ändert sich nicht.
+- **Eingangswertung** E: die Wertung des Lesers zu Beginn des Abenteuers. Sie ist erst fest, wenn genug gewertete Partien vorliegen (Wunsch des Autors, 07.11.2026): Hat die App schon mindestens 10 gewertete Partien, ist E die Wertung beim Start. Sonst läuft E in den ersten 10 Partien (gewertete Partien der App plus Story-Partien aus der Grundstellung) mit der aktuellen Wertung mit und wird danach eingefroren; der Spielstand hält `eingangswertung` und die Zahl der gezählten Partien. Clubchefs vor dem Einfrieren rechnen mit dem vorläufigen E; das betrifft höchstens Club 1 und 2.
 - **Aktuelle Wertung** A: die laufende Wertung der App; sie steigt, wenn der Leser besser wird.
 
 | Gegner                        | Zielstärke                                 | Beispiel bei E = 800                       |

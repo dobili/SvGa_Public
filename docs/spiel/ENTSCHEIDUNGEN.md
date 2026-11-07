@@ -80,6 +80,15 @@ Steckbrief.
 Kamera (`public/_headers`, Permissions-Policy `camera=()`); QR-Lesen braucht sie. Frage an den
 Autor vor der Umsetzung des Tauschs (frühestens Schritt 8).
 
+- **A6 Ergänzung des Autors (07.11.2026, nach Schritt 4):** Die Eingangswertung E wird über die
+  ersten 5 bis 10 Partien festgelegt, wenn die App nicht genug gewertete Partien hat. Umsetzung:
+  E läuft mit der aktuellen Wertung mit, bis 10 gewertete Partien (App plus Story aus der
+  Grundstellung) vorliegen, dann eingefroren; Feld `eingangPartien` im Spielstand.
+- **Quelltext bei Verkauf unter der GPL (Frage des Autors):** nicht jedem Käufer schicken; es
+  genügt, den Quelltext am selben Ort wie das Programm anzubieten (GPLv3, Abschnitt 6d: Download
+  von derselben Stelle, ohne Aufpreis), etwa ein Link in den Einstellungen und auf der Website.
+  Keine Rechtsberatung.
+
 **Schritt 4 erledigt (Datenformate):** Schemas `schemas/abenteuer-{gegner,karten,quests,orte,texte}.schema.json`
 (die App erzeugt daraus Typen in `app/src/daten/generiert/abenteuer-*.ts`, wie bei den Buchdaten),
 Beispiele in `inhalte/abenteuer/` (Maple Falls: vier Gegner, neun Karten, drei Quests, ein Ort mit

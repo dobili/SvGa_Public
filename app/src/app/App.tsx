@@ -62,6 +62,8 @@ import { useTageswechsel } from "./tageswechsel";
 import { useUebungszeit } from "./uebungszeit";
 import { useBuchkuerzelNachtrag } from "../ui/komponenten/auswertung/useBuchkuerzelNachtrag";
 import { zusatzansicht } from "./zusatzansichten";
+import { findePartie } from "../speicher/partien";
+import { useSpeicher } from "../speicher/speicher";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
 function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
@@ -125,6 +127,23 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "zusatz":
       return <Zusatzbildschirm kennung={ansicht.kennung} wert={ansicht.wert ?? null} />;
   }
+}
+
+/**
+ * Zeigt die oberste Ansicht Vollbild (ohne Leiste)? Ja für Zusatzansichten mit „vollbild“ und für
+ * Partien des Schach-Abenteuers (Feld `abenteuer` der Partieeinstellung), damit das Spiel auch
+ * während der Partie sein eigenes Gesicht behält.
+ */
+function useVollbild(): boolean {
+  const { ansicht } = useNavigation();
+  const partieId = ansicht.bildschirm === "partie" ? ansicht.id : null;
+  const abenteuerpartie = useSpeicher(
+    (z) =>
+      partieId !== null &&
+      findePartie(z.daten.spiel, partieId)?.einstellung.abenteuer !== undefined,
+  );
+  if (ansicht.bildschirm === "zusatz") return zusatzansicht(ansicht.kennung)?.vollbild === true;
+  return abenteuerpartie;
 }
 
 /** Ein Bildschirm aus der Liste der Pakete (app/zusatzansichten.ts); unbekannt → das Buch. */
@@ -261,8 +280,9 @@ function Hauptrahmen() {
   useUebungszeit();
   // Kürzel „Fehler mit Buchbezug“ je ausgewerteter Partie, im Leerlauf (Startseite, Muster).
   useBuchkuerzelNachtrag();
+  const vollbild = useVollbild();
   return (
-    <div className="rahmen">
+    <div className={vollbild ? "rahmen rahmen-vollbild" : "rahmen"}>
       <UpdateHinweis />
       <SicherungsHinweis />
       <SafariHinweis />
@@ -271,7 +291,9 @@ function Hauptrahmen() {
         <GeschuetzterBildschirm />
       </main>
       <AufgabenRueckweg />
-      <Leiste />
+      {/* Im Schach-Abenteuer (Zusatzansicht mit „vollbild“ und seine Partien) tritt die
+          Oberfläche der App zurück (Entscheidung D1 des Autors, 07.11.2026). */}
+      {!vollbild && <Leiste />}
       {/* Gratulation bei einem vollen Ring des Fortschritts (seit 0.2.144). */}
       <Ringfeier />
       <TourAngebot />

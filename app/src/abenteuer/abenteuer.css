@@ -3,11 +3,11 @@
 .abenteuer-welt {
   position: relative;
   width: 100%;
-  /* Die Oberwelt füllt den Bildschirm bis zur unteren Leiste der App. */
-  height: calc(100dvh - var(--unten-fest) - env(safe-area-inset-top) - var(--raster) * 12);
+  /* Vollbild (Entscheidung D1): die Oberwelt füllt den Bildschirm; die App zeigt keine Leiste. */
+  height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   min-height: 240px;
+  border-radius: 0;
   overflow: hidden;
-  border-radius: var(--radius);
   background: #1a1612;
   touch-action: none;
   user-select: none;
@@ -113,11 +113,59 @@
   text-align: center;
 }
 
+/* Die Ansicht selbst ohne Ränder; die Startkarte bekommt ihre Ränder zurück. */
+.bildschirm-abenteuer {
+  padding: 0;
+  padding-top: env(safe-area-inset-top);
+  gap: 0;
+  position: relative;
+}
+
 /* Startkarte und Meldungen in der Ansicht. */
 .abenteuer-start {
   display: flex;
   flex-direction: column;
   gap: calc(var(--raster) * 2);
+  margin: calc(var(--raster) * 7) calc(var(--raster) * 2) calc(var(--raster) * 2);
+}
+
+.abenteuer-start-titel {
+  margin: 0;
+  font-size: var(--groesse-gross);
+}
+
+/* Menüknopf oben rechts über allem; Spielmenü als Karte über der Welt. */
+.abenteuer-menueknopf {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + var(--raster));
+  right: var(--raster);
+  z-index: 3;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.85);
+  color: var(--navy);
+  font-size: 22px;
+}
+
+.abenteuer-menue {
+  position: absolute;
+  inset: calc(var(--raster) * 8) calc(var(--raster) * 2) auto;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  padding: calc(var(--raster) * 2);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--navy);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.abenteuer-menue h2 {
+  margin: 0;
+  font-size: var(--groesse-gross);
 }
 
 .abenteuer-fortschritt {

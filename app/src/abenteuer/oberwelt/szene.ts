@@ -58,7 +58,8 @@ interface Ausloeser {
 }
 
 export class Oberweltszene extends Phaser.Scene {
-  private held!: Phaser.Physics.Arcade.Sprite;
+  /** Der Held; null, bis create() gelaufen ist (die Hülle kann vorher schon fragen). */
+  private held: Phaser.Physics.Arcade.Sprite | null = null;
   private readonly gedrueckt = new Set<Richtung>();
   private laufen = true;
   private blick: Richtung;
@@ -94,19 +95,20 @@ export class Oberweltszene extends Phaser.Scene {
       feste.push(ebene);
     }
     const { x, y } = this.daten.start;
-    this.held = this.physics.add.sprite(
+    const held = this.physics.add.sprite(
       x * KACHEL + KACHEL / 2,
       y * KACHEL + KACHEL / 2,
       "held",
       BILD_JE_RICHTUNG[this.blick],
     );
-    this.held.setCollideWorldBounds(true);
-    const koerper = this.held.body as Phaser.Physics.Arcade.Body;
+    this.held = held;
+    held.setCollideWorldBounds(true);
+    const koerper = held.body as Phaser.Physics.Arcade.Body;
     koerper.setSize(KACHEL - 4, KACHEL - 4).setOffset(2, 2);
-    for (const ebene of feste) this.physics.add.collider(this.held, ebene);
+    for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
     this.cameras.main.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
-    this.cameras.main.startFollow(this.held, true);
+    this.cameras.main.startFollow(held, true);
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = this.liesAusloeser(karte);
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
@@ -138,6 +140,8 @@ export class Oberweltszene extends Phaser.Scene {
 
   /** Wo der Held steht, in Kachelkoordinaten (für den Spielstand beim Verlassen). */
   position(): Weltposition {
+    // Vor create() (Verlassen während des Hochfahrens) gilt die Startposition weiter.
+    if (!this.held) return { ...this.daten.start, richtung: this.blick };
     return {
       karte: "",
       x: Math.floor(this.held.x / KACHEL),
@@ -157,6 +161,7 @@ export class Oberweltszene extends Phaser.Scene {
   }
 
   override update(): void {
+    if (!this.held) return;
     const richtung = this.laufen ? this.gewuenschteRichtung() : null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);

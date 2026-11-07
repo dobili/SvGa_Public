@@ -170,6 +170,11 @@ h3 {
   padding-bottom: calc(var(--leiste-hoehe) + env(safe-area-inset-bottom) + var(--raster) * 2);
 }
 
+/* Vollbild (Schach-Abenteuer, Entscheidung D1): keine Leiste, also kein Platz dafür. */
+.rahmen-vollbild .inhalt {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .bildschirm {
   display: flex;
   flex-direction: column;

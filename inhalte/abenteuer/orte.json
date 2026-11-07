@@ -67,6 +67,25 @@
           "sprite": "figuren/skater-jo.png",
           "dialog": "maple-falls-park.skater_jo",
           "gegner": "mapleFalls.skaterJo"
+        },
+        {
+          "kennung": "mapleFalls.juno",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "maple-falls-aussen.juno",
+          "gegner": "mapleFalls.juno"
+        },
+        {
+          "kennung": "mapleFalls.abernathy",
+          "name": "figur.abernathy.name",
+          "sprite": "figuren/abernathy.png",
+          "dialog": "maple-falls-park.bibliothekar"
+        },
+        {
+          "kennung": "mapleFalls.lily",
+          "name": "figur.lily.name",
+          "sprite": "figuren/lily.png",
+          "dialog": "maple-falls-aussen.lily"
         }
       ],
       "ausloeser": [
@@ -108,6 +127,181 @@
             "ueb:angriff-zaehlen"
           ],
           "themen": ["zaehlen", "haengend", "matt1"]
+        }
+      }
+    },
+    {
+      "kennung": "cedarCreek",
+      "name": "ort.cedarCreek.name",
+      "nummer": 2,
+      "staffel": 1,
+      "karten": [
+        {
+          "kennung": "cedarCreek.aussen",
+          "datei": "karten/cedar-creek-aussen.json",
+          "name": "ort.cedarCreek.aussen",
+          "innen": false,
+          "musik": "musik/cedar-creek.ogg"
+        },
+        {
+          "kennung": "cedarCreek.bibliothek",
+          "datei": "karten/cedar-creek-bibliothek.json",
+          "name": "ort.cedarCreek.bibliothek",
+          "innen": true,
+          "musik": "musik/bibliothek.ogg"
+        },
+        {
+          "kennung": "cedarCreek.archiv",
+          "datei": "karten/cedar-creek-archiv.json",
+          "name": "ort.cedarCreek.archiv",
+          "innen": true
+        },
+        {
+          "kennung": "cedarCreek.waschsalon",
+          "datei": "karten/cedar-creek-waschsalon.json",
+          "name": "ort.cedarCreek.waschsalon",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "cedarCreek.okafor",
+          "name": "figur.okafor.name",
+          "sprite": "figuren/okafor.png",
+          "dialog": "cedar-creek-bibliothek.okafor",
+          "gegner": "cedarCreek.okafor"
+        },
+        {
+          "kennung": "cedarCreek.dex",
+          "name": "figur.dex.name",
+          "sprite": "figuren/dex.png",
+          "dialog": "cedar-creek-bibliothek.dex",
+          "gegner": "cedarCreek.dex"
+        },
+        {
+          "kennung": "cedarCreek.mae",
+          "name": "figur.mae.name",
+          "sprite": "figuren/mae.png",
+          "dialog": "cedar-creek-bibliothek.mae",
+          "gegner": "cedarCreek.mae"
+        },
+        {
+          "kennung": "cedarCreek.boateng",
+          "name": "figur.boateng.name",
+          "sprite": "figuren/boateng.png",
+          "dialog": "cedar-creek-waschsalon.boateng"
+        },
+        {
+          "kennung": "cedarCreek.rosa",
+          "name": "figur.rosa.name",
+          "sprite": "figuren/rosa.png",
+          "dialog": "cedar-creek-aussen.rosa",
+          "gegner": "cedarCreek.rosa"
+        },
+        {
+          "kennung": "cedarCreek.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "cedar-creek-aussen.victor"
+        }
+      ],
+      "ausloeser": [
+        { "name": "bushaltestelle", "art": "start" },
+        {
+          "name": "busZurueck",
+          "art": "dialog",
+          "dialog": "cedar-creek-aussen.bus_zurueck"
+        },
+        {
+          "name": "bibliothekTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.bibliothek",
+            "ausloeser": "bibliothekAusgang"
+          }
+        },
+        {
+          "name": "bibliothekAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "bibliothekTuer"
+          }
+        },
+        {
+          "name": "kellertreppe",
+          "art": "uebergang",
+          "ziel": { "karte": "cedarCreek.archiv", "ausloeser": "kellerAusgang" }
+        },
+        {
+          "name": "kellerAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.bibliothek",
+            "ausloeser": "kellertreppe"
+          }
+        },
+        {
+          "name": "waschsalonTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.waschsalon",
+            "ausloeser": "waschsalonAusgang"
+          }
+        },
+        {
+          "name": "waschsalonAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "waschsalonTuer"
+          }
+        },
+        {
+          "name": "plakat",
+          "art": "gegenstand",
+          "dialog": "cedar-creek-aussen.plakat"
+        },
+        {
+          "name": "steg",
+          "art": "gegenstand",
+          "dialog": "cedar-creek-aussen.steg"
+        },
+        {
+          "name": "trockner",
+          "art": "gegenstand",
+          "dialog": "cedar-creek-waschsalon.trockner"
+        },
+        {
+          "name": "karton1858",
+          "art": "gegenstand",
+          "dialog": "cedar-creek-archiv.karton"
+        },
+        {
+          "name": "programmheft",
+          "art": "gegenstand",
+          "dialog": "cedar-creek-archiv.programmheft"
+        }
+      ],
+      "club": {
+        "name": "club.cedarCreek.name",
+        "kapitel": [7, 8],
+        "chef": "cedarCreek.okafor",
+        "mitglieder": ["cedarCreek.dex", "cedarCreek.mae"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:taktik-a02",
+            "ueb:taktik-a08",
+            "ueb:taktik-a09",
+            "ueb:taktik-a12",
+            "ueb:taktik-a13",
+            "ueb:taktik-a14",
+            "ueb:taktik-a15",
+            "ueb:damenmatt",
+            "ueb:turmmatt"
+          ],
+          "themen": ["matt1", "matt2", "mattbilder", "grundreihenmatt"]
         }
       }
     }

@@ -92,6 +92,186 @@
           "wirkungen": [{ "art": "fragment", "halbzug": 0 }]
         }
       ]
+    },
+    {
+      "kennung": "cedarCreek.archiv1858",
+      "titel": "quest.archiv1858.titel",
+      "typ": "haupt",
+      "ort": "cedarCreek",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "cedarCreek.bibliothek" },
+      "schritte": [
+        {
+          "text": "quest.archiv1858.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-bibliothek.okafor"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.bibliotheksclub" }
+          ]
+        },
+        {
+          "text": "quest.archiv1858.schritt2",
+          "ereignis": {
+            "art": "ort",
+            "karte": "cedarCreek.archiv",
+            "ausloeser": "karton1858"
+          }
+        },
+        {
+          "text": "quest.archiv1858.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-archiv.erzaehlung_1858"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.erzaehlung1858" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.clubkampf",
+      "titel": "quest.clubkampfCedarCreek.titel",
+      "typ": "haupt",
+      "ort": "cedarCreek",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "cedarCreek.aussen" },
+      "schritte": [
+        {
+          "text": "quest.clubkampfCedarCreek.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-aussen.ankunft"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.ankunftCedarCreek" }
+          ]
+        },
+        {
+          "text": "quest.clubkampfCedarCreek.schritt2",
+          "ereignis": { "art": "aufgaben", "runde": "cedarCreek.reiheDex" }
+        },
+        {
+          "text": "quest.clubkampfCedarCreek.schritt3",
+          "ereignis": { "art": "aufgaben", "runde": "cedarCreek.reiheMae" },
+          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+        },
+        {
+          "text": "quest.clubkampfCedarCreek.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "cedarCreek.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 1, "szene": "akt1.clubnadelCedarCreek" },
+            { "art": "karte", "karte": "mentorzug" }
+          ]
+        },
+        {
+          "text": "quest.clubkampfCedarCreek.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-aussen.ende_akt1"
+          },
+          "wirkungen": [{ "art": "szene", "akt": 1, "szene": "akt1.ende" }]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.trockner",
+      "titel": "quest.trockner.titel",
+      "typ": "raetsel",
+      "ort": "cedarCreek",
+      "haupt": false,
+      "start": { "art": "dialog", "knoten": "cedar-creek-waschsalon.boateng" },
+      "schritte": [
+        {
+          "text": "quest.trockner.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "cedarCreek.trocknerStellung"
+          },
+          "wirkungen": [
+            { "art": "steckbrief", "gegner": "cedarCreek.okafor", "zeile": 0 },
+            { "art": "karte", "karte": "fluestern" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.archivOrdnen",
+      "titel": "quest.archivOrdnen.titel",
+      "typ": "hilfe",
+      "ort": "cedarCreek",
+      "haupt": false,
+      "start": { "art": "dialog", "knoten": "cedar-creek-archiv.ordnen" },
+      "schritte": [
+        {
+          "text": "quest.archivOrdnen.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-archiv.ordnen_fertig"
+          },
+          "wirkungen": [{ "art": "karte", "karte": "fluestern" }]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.sternennacht",
+      "titel": "quest.sternennacht.titel",
+      "typ": "begegnung",
+      "ort": "cedarCreek",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "cedar-creek-bibliothek.mae_einladung"
+      },
+      "schritte": [
+        {
+          "text": "quest.sternennacht.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-aussen.sterne"
+          },
+          "wirkungen": [
+            {
+              "art": "zustand",
+              "gegner": "cedarCreek.okafor",
+              "faktor": 1.3,
+              "grund": "zustand.schlechtGeschlafen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.erinnerungNewYork",
+      "titel": "quest.erinnerungNewYork.titel",
+      "typ": "begegnung",
+      "ort": "cedarCreek",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "cedarCreek.archiv",
+        "ausloeser": "programmheft"
+      },
+      "voraussetzung": ["cedarCreek.archiv1858"],
+      "schritte": [
+        {
+          "text": "quest.erinnerungNewYork.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "cedarCreek.erinnerungNewYork"
+          },
+          "wirkungen": [
+            { "art": "fragment", "halbzug": 1 },
+            { "art": "karte", "karte": "bauernvorgabe" }
+          ]
+        }
+      ]
     }
   ]
 }

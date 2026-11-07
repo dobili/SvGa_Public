@@ -232,10 +232,35 @@
   font-size: var(--groesse-klein);
 }
 
+/* Warum-Zeile mit Buchbezug (Konzept „Fehler mit Buchbezug“, 7.11.2026): klein, mit Knopf „Üben“. */
+.zeitleiste-warum {
+  margin: 0 0 4px;
+  font-size: var(--groesse-klein);
+}
+
+.zeitleiste-warum-kopf {
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.zeitleiste-warum-text {
+  margin: 0;
+  color: var(--text-leise);
+}
+
+.zeitleiste-warum-symbol {
+  margin-right: 4px;
+  vertical-align: -2px;
+  color: var(--gold-text);
+}
+
 /* Der Knopf sitzt unten, damit er in allen Karten der Reihe auf einer Höhe steht. */
 .zeitleiste-fuss {
   margin-top: auto;
   padding-top: var(--raster);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
 }
 
 .zeitleiste-sprung {

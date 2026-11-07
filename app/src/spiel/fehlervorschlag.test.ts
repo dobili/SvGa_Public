@@ -9,16 +9,16 @@ const MITTELSPIEL = "r2q1rk1/pp2bppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 
 
 describe("Vorschlag für die Fehlerdatenbank", () => {
   it("eine stehengelassene Drohung gehört zu Kapitel 1 (Schach oder Schlag übersehen)", () => {
-    expect(kapitelvorschlag(NACH_DH5, "Nf6", "h5e5", 3, "b8c6")).toBe(1);
+    expect(kapitelvorschlag(NACH_DH5, "Nf6", ["h5e5"], 3, "b8c6")).toBe(1);
   });
 
   it("eine hängende Figur ebenso", () => {
-    expect(kapitelvorschlag(MITTELSPIEL, "Nd5", "", 3, null)).toBe(1);
+    expect(kapitelvorschlag(MITTELSPIEL, "Nd5", [], 3, null)).toBe(1);
   });
 
   it("ohne klare Fehlerart oder mit unlesbarem Zug kein Vorschlag", () => {
-    expect(kapitelvorschlag(MITTELSPIEL, "a3", "", 0.1, null)).toBeNull();
-    expect(kapitelvorschlag(MITTELSPIEL, "Qxh8", "", 1, null)).toBeNull();
-    expect(kapitelvorschlag("kein fen", "e4", "", 1, null)).toBeNull();
+    expect(kapitelvorschlag(MITTELSPIEL, "a3", [], 0.1, null)).toBeNull();
+    expect(kapitelvorschlag(MITTELSPIEL, "Qxh8", [], 1, null)).toBeNull();
+    expect(kapitelvorschlag("kein fen", "e4", [], 1, null)).toBeNull();
   });
 });

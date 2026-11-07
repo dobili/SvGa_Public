@@ -16,7 +16,7 @@ import { BookmarkPlus } from "lucide-react";
 import { useState } from "react";
 import { t } from "../../../i18n/sprache";
 import { fenNachZuegen } from "../../../schach/weiterspielen";
-import type { Zugerklaerung } from "../../../spiel/erklaerung";
+import { widerlegungAus, type Zugerklaerung } from "../../../spiel/erklaerung";
 import { kapitelvorschlag } from "../../../spiel/fehlervorschlag";
 import type { Partie } from "../../../spiel/partie";
 import { FehlerFormular } from "../../trainer/FehlerFormular";
@@ -107,7 +107,7 @@ export function Merkenbereich({
   const art = kapitelvorschlag(
     fen,
     san,
-    rueckblick.beste[index + 1] ?? "",
+    widerlegungAus(rueckblick.beste[index + 1], rueckblick.varianten?.[index + 1]),
     urteil?.verlust ?? 0,
     rueckblick.beste[index] || null,
   );

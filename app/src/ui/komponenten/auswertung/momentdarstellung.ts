@@ -44,6 +44,12 @@ export interface Momentbild {
    * weiter die Stellung davor mit goldenem und rotem Pfeil.
    */
   readonly ziel?: Sprung;
+  /**
+   * Das Urteil, zu dem die Karte eine Warum-Zeile sucht (Konzept „Fehler mit Buchbezug“ 4.1, seit
+   * 7.11.2026): bei Fehler, Patzer und der ersten klaren Abweichung; bei „Verpasst“ und den
+   * übrigen Momenten null.
+   */
+  readonly warum: Zugurteil | null;
 }
 
 /** Was die Darstellung braucht. */
@@ -56,7 +62,7 @@ export interface Darstellungsgrund {
 /** Klassen einer Antwort, die einen Fehler der Engine sicher genutzt haben. */
 const GENUTZT: ReadonlySet<Zugklasse> = new Set<Zugklasse>(["brillant", "stark", "bester"]);
 /** Ohne Moment: alles leer. */
-const LEER = { zusatz: "", besser: "", sprung: null, brett: false } as const;
+const LEER = { zusatz: "", besser: "", sprung: null, brett: false, warum: null } as const;
 
 /** Der Zug mit seinem Zeichen („2. g4??“). */
 function titelVon(g: Darstellungsgrund, index: number): string {
@@ -103,6 +109,15 @@ function reaktion(g: Darstellungsgrund, index: number): string {
   return t("auswertungneu.engine.frage");
 }
 
+/**
+ * Das Urteil für die Warum-Zeile: bei „Verpasst“ keines, weil dort die Findezeile zählt und die
+ * Warum-Zeile entfällt (Konzept 4.1).
+ */
+function warumVon(g: Darstellungsgrund, m: Moment): Zugurteil | null {
+  if (m.klasse === "verpasst") return null;
+  return g.urteile.find((u) => u.index === m.index) ?? null;
+}
+
 type Darstellung = (g: Darstellungsgrund, m: Moment) => Momentbild;
 
 /** Je Momentart die Karte. Neue Art: Eintrag hier und in MOMENTQUELLEN (momente.ts). */
@@ -125,6 +140,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     sprung: sprungZu(g.eintrag, m.index),
     ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
+    warum: warumVon(g, m),
   }),
   fehler: (g, m) => ({
     marke: m.klasse ?? "fehler",
@@ -138,6 +154,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
     sprung: sprungZu(g.eintrag, m.index),
     ziel: { stelle: m.index + 1, marken: [] },
     brett: true,
+    warum: warumVon(g, m),
   }),
   engine: (g, m) => {
     const p = g.eintrag.partie;
@@ -153,6 +170,7 @@ export const MOMENTDARSTELLUNG: Readonly<Record<Momentart, Darstellung>> = {
       besser: "",
       sprung: sprungNach(g.eintrag, m.index),
       brett: true,
+      warum: null,
     };
   },
   ende: (g, m) => ({

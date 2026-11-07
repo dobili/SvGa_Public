@@ -215,7 +215,7 @@ test("Sicherung aus einer neueren App wird abgewiesen, Grenze von 200 Varianten 
   page,
 }) => {
   await starteImBrowser(page);
-  await spieleEin(page, { schemaVersion: 10 }, "9.9.9");
+  await spieleEin(page, { schemaVersion: 11 }, "9.9.9");
   await expect(page.getByText(/aus einer neueren Version der App/)).toBeVisible();
   const variante = (i: number) => ({
     id: `var-${i}`,

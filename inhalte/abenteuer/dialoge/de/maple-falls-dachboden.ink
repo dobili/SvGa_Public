@@ -24,6 +24,7 @@ VAR brettBeruehrt = false
 // Aufgabenrunde und Clubkampf (regeln/dialogvariablen.ts); endeAkt1Gesehen setzt
 // cedar-creek-aussen.ink; die übrigen setzt Ink in dieser Datei.
 VAR ersteLektionBesprochen = false
+VAR ambroseErwachtGesehen = false
 VAR clubBeigetreten = false
 VAR kenntHale = false
 VAR ausgangMapleFallsErsteLektion = ""
@@ -57,6 +58,7 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
     -> dachboden_brett
 
 === ambrose_erwacht ===
+~ ambroseErwachtGesehen = true
 Ambrose Whitlock, zu Diensten. New Orleans, 1858. Ich habe gegen Männer gespielt, deren Namen du in Büchern findest. #sprecher:ambrose #stimmung:stolz
 Und du, {held}, hältst einen König wie einen Suppenlöffel. #sprecher:ambrose
 * [„Ich kann kaum Schach.“]
@@ -96,6 +98,7 @@ Nun? Hast du das Brett nur zum Anschauen hochgetragen? #sprecher:ambrose
 
 === ambrose ===
 {
+- not ambroseErwachtGesehen: -> ambrose_erwacht
 - ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie
 - else: -> ambrose_rat

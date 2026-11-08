@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Akt 4 abstimmen und das ganze Abenteuer durchsimulieren
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, neunzehnter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, neunzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** alle Ink-Dateien, `quests.json`, `runden.json`, `begegnungen.json`, `funde.json`,
@@ -27,7 +27,83 @@ Fund „Hales Seite“ gibt mittel-2 als Gegenstand `halesSeite`; der Saloon lie
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**1. Akt 4 abgestimmt (Commit 76d88e57).**
+
+- Capital Arena: Novas Aussage hat drei Fassungen. `novaHilfeZugesagt`: Der Held steht neben ihr wie
+  versprochen, sie dankt. Nur `novaBitteGehoert` (in Crossroads abgelehnt): Sie sucht den Helden im
+  Saal und schafft es allein. Keins von beiden: Sie steht allein da. Dazu passen Novas Satz nach der
+  Aussage und ihr Daumen bei der Ankunft (Szene 103).
+- Ghost Town: Victor liest `hatHalesSeite` (die Seite liegt beim Helden, der Held gibt sie nach der
+  Partie zurück) und `victorSeiteGegeben` (Seite gegeben, aber nicht mehr im Besitz: Victor kennt sie
+  auswendig). Fehlt beides, zieht Victor sie selbst aus seinem Buch.
+
+**2. Gesamtsimulation vom Dachboden bis zum Abspann.**
+
+Ein Spieler-Simulator (Node, inkjs), der wie `Oberwelt.tsx` arbeitet: Figuren und Auslöser aus den
+gezeichneten Tiled-Karten, Knoten werden gemeldet, sobald eine Zeile darin steht, Quests streng der
+Reihe nach. Übergänge mit Dialog prüfen `wenn` nach dem Dialog, Übergänge ohne Dialog gelten sofort;
+`reise`, Läden (Gegenstände), Funde, Karten, `zeigeAbspann()` sind eingebaut. Jede Begegnung läuft
+abgebrochen → niederlage → remis → sieg, jede Runde erst nicht bestanden, dann bestanden; die Wahlen
+sind zufällig mit festem Startwert. Der Simulator geht die Gebiete in der Reihenfolge der Bibel ab,
+fasst in jedem Gebiet alles an, bis sich nichts mehr ändert, und reist am Ende mit der Monatskarte
+dorthin zurück, wo noch Quests offen sind.
+
+**Ergebnis mit vier Startwerten:** In allen vier Läufen kommt der Abspann, alle Hauptquests von Akt 1
+bis Akt 4 sind fertig, alle 26 Orte außer dem Bayou werden besucht. Offen bleibt in einem Lauf die
+Nebenquest `desertSprings.erinnerung1858` (in den anderen drei fertig, also ein Zufall der Wahlen).
+Den Bayou erreicht man über `portDelacroix.bayou`, sobald `musikhausOffen` gilt; der Simulator macht
+die Rückkehr nach Port Delacroix nur für die offenen Quests und geht nicht mehr hinaus.
+
+**Gefunden und behoben (meine Dateien):**
+
+1. _Akt 1, Dachboden (Sackgasse):_ Wer den König fallen lässt und wegrennt, hat `brettBeruehrt`; beim
+   zweiten Mal sprang der Dialog direkt zu Ambroses Knoten, `ambrose_erwacht` kam nie, die erste
+   Hauptquest `mapleFalls.dasBrett` hing. Jetzt führt `ambrose` zuerst nach `ambrose_erwacht`, bis er
+   gesehen ist (`ambroseErwachtGesehen`).
+2. _Akt 1, Wohnzimmer (Sackgasse):_ Mama zeigte den ersten Abend schon vor dem Gespräch mit Ambrose
+   nach der ersten Partie; die Quest `mapleFalls.ersterAbend` beginnt aber erst dort und wartete dann
+   für immer. Mama wartet jetzt auf `ersteLektionBesprochen`.
+3. _Akt 1, Clubraum (Sackgasse):_ In `orte.json` gibt es weder Victor in Maple Falls noch Juno im
+   Clubraum; `victor_trifft` (Start von `mapleFalls.besserWerden`, setzt `kenntHale`) und Junos Reihe
+   waren unerreichbar, also kam niemand aus Maple Falls heraus. Der Coach führt jetzt zu Junos Reihe
+   (nach Sams Reihe) und zu Victor (nach der Clubnadel). Folge: `victor_weg` ist nicht mehr erreichbar
+   (nur ein Alltagssatz).
+4. _Quest `ironwood.turnierheft` (Sackgasse, Haupt-Chat):_ Start und erster Schritt warteten auf
+   denselben Knoten `oma_ruth_heft`, der nur einmal kommt. Start jetzt beim Betreten von Mamas Zimmer.
+   Eine Prüfung aller Quests auf dieses Muster fand sonst nichts.
+5. _Port Delacroix:_ Wer nach dem Clubkampf gleich den Wüstenzug nahm, ließ die Hauptquest
+   `portDelacroix.tiefpunkt` für immer offen (letzter Schritt war Odiles Handschlag). Der Handschlag
+   bleibt als Szene, ist aber kein Questschritt mehr.
+6. _Ghost Town:_ Ebenso fehlte die Nacht (Szene 101), wenn man nach der Fernpartie sofort zum Bus ging.
+   Der Bus-Dialog spielt die Nacht jetzt vorher.
+
+**Für den Haupt-Chat oder niedrig-1 (nicht meine Dateien):**
+
+- Figuren ohne Platz auf einer gezeichneten Karte: `mapleFalls.juno`, `mapleFalls.lily`,
+  `mapleFalls.abernathy`, `pinewoodCamp.lou`, `pinewoodCamp.tamsin`. Ohne sie fehlen in der App Junos
+  Begegnung draußen, Lilys Springer-Quest, der Bibliothekar mit dem Brief (Fragment, `kenntHale`!) und
+  zwei Kinder im Camp. Der Simulator setzt sie ersatzweise auf die Karte ihrer Dialogdatei.
+- In `orte.json` eine Figur `mapleFalls.victor` (Clubraum, `maple-falls-clubraum.victor`) und Juno im
+  Clubraum wären sauberer als der Umweg über den Coach.
+- Knoten, die in keinem Lauf vorkamen, sind nur andere Reihenfolgen (etwa Mama vor dem Dachboden,
+  Henri vor dem Vorwurf): `maple-falls-wohnzimmer.ankunft`, `cedar-creek-aussen.ankunft`,
+  `cedar-creek-archiv.karton_fremd`, `maple-falls-aussen.juno_zum_club`,
+  `maple-falls-clubraum.victor_ueberrascht`, `port-delacroix-werkstatt.henri_vorher`,
+  `riverton-aussen.albescu_wartet`, `desert-springs-garage.garage_wartet`; dazu der Bayou (siehe oben).
+- Variablen: Nur von der Hülle gesetzt und in Ink gelesen (richtig so): `hatFahrrad`, `hatLaterne`,
+  `hatLimo`, `hatHalesSeite`, `mentorzugFreiGespielt`, `siegeRivertonHarlan`. Deklariert, aber nicht
+  benutzt (harmlos, mittel-2): `held` in `silicon-bay-lobby`, `summit-city-aussen`,
+  `summit-city-bergstation`; `nadelSummitCity` in `summit-city-aussen`. Nie gesetzte Variablen, die
+  eine Szene sperren, gibt es nicht mehr.
+
+**Das Skript:** liegt vorerst nur lokal (`gesamtsimulation.cjs`, etwa 300 Zeilen, Laufzeit etwa vier
+Minuten je Startwert, die Ausgabe nennt hängende Quests, nie erreichte Knoten, Figuren ohne Karte und
+nie besuchte Orte). Vorschlag laut Vorgabe 3: als `pipeline/abenteuer/gesamtsimulation.cjs` mit einem
+Test in `pipeline/tests/`, der es mit Node aufruft (übersprungen ohne Node) und verlangt, dass alle
+Hauptquests fertig werden und der Abspann kommt. Ich lege es ab, sobald der Haupt-Chat zustimmt.
+
+**Prüfungen:** pytest 595 bestanden, `npm run pruefen` grün (2422 Tests), Abenteuerpaket baut,
+Zufallsdurchläufe aller Knoten ohne Fehler.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

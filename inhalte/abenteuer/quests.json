@@ -1518,13 +1518,6 @@
               "szene": "akt3.clubnadelPortDelacroix"
             }
           ]
-        },
-        {
-          "text": "quest.tiefpunkt.schritt5",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "port-delacroix-turnhalle.odile_nach_partie"
-          }
         }
       ]
     },

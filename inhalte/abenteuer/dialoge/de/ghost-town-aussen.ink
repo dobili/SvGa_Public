@@ -3,7 +3,8 @@
 //
 // Szenen der Bibel (Abschnitt 29): Ankunft über die Staubstraße (Ende von Szene 97), 98 Ghost Town
 // (Hauptquest ghostTown.fernpartie, das Grab), 101 Die Nacht in Ghost Town (nach der Fernpartie).
-// Einstiege wie in orte.json: ankunft_zu_fuss, pruitt, weg_pinewood, grab, nacht, weg_capital.
+// Einstiege wie in orte.json: ankunft_zu_fuss, pruitt, weg_pinewood, grab, nacht, weg_capital. Wer
+// nach der Fernpartie gleich zum Bus geht, erlebt vorher die Nacht (Quest ghostTown.fernpartie).
 //
 // Variablen: fernpartieGespielt setzt ghost-town-saloon.ink; die übrigen setzt diese Datei.
 
@@ -31,7 +32,11 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
 -> END
 
 === weg_capital ===
-{fernpartieGespielt:
+{
+- fernpartieGespielt and not ambroseSagtEsGesehen:
+    Der Bus fährt erst am Morgen. Du wartest auf den Stufen des Saloons. #sprecher:erzaehler
+    -> nacht_ambrose
+- fernpartieGespielt:
     Ein Bus hält am Ortsrand: „Große Seen, Capital Arena“. Victor steigt mit dir ein. #sprecher:erzaehler
 - else:
     Am Ortsrand steht ein Bus nach Norden. Erst willst du hier etwas zu Ende bringen. #sprecher:erzaehler

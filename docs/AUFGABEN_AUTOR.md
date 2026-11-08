@@ -144,6 +144,10 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2626. Reisebrett (Eisenwaren Ironwood, 100 Münzen; laut Bibel schenkt Juno es später in Akt 3): Überall, auch
       in Häusern, erscheint links der Knopf „Übungspartie“. Er startet eine freie Partie gegen Ambrose mit Wahl der
       Bedenkzeit und Karten; sie zählt für die Partienliste und deine Abenteuerwertung, nicht für Nadeln.
+- [ ] N2627. Porträts: In jedem Dialog steht links neben dem Namen der sprechenden Figur jetzt ein kleines
+      Pixel-Porträt (60 Figuren, selbst erzeugt, frei verwendbar). In Erinnerungen (London) zeigt Ambrose sein junges
+      Gesicht. Sag, welche Figur anders aussehen soll (Haar, Hautton, Kleidung, Brille, Bart); das ist schnell
+      geändert.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

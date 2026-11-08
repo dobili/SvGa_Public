@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Pixel-Porträts aller Figuren per Skript
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, elfter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der elfte Auftrag, Porträts, ist zusammengeführt, danke: Paketbau packt sie, gegner.json zeigt auf .svg, der Dialog zeigt sie neben dem Namen, `#stimmung:jung` nimmt ambrose-jung; patel kam dazu. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs` (neu), die erzeugten Bilder unter

@@ -10,6 +10,7 @@
 import { useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { tSpiel } from "../texte/texte";
+import { Portraet } from "./Portraet";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
 const ERZAEHLER = "erzaehler";
@@ -83,7 +84,10 @@ export function Dialog({
       data-testid="abenteuer-dialog"
     >
       {sprecher !== ERZAEHLER && (
-        <p className="abenteuer-dialog-sprecher">{tSpiel(`figur.${sprecher}.name`)}</p>
+        <div className="abenteuer-dialog-kopf">
+          <Portraet sprecher={sprecher} stimmung={zeile?.tags.stimmung ?? null} />
+          <p className="abenteuer-dialog-sprecher">{tSpiel(`figur.${sprecher}.name`)}</p>
+        </div>
       )}
       <p className="abenteuer-dialog-text">{zeile?.text ?? ""}</p>
       {schritt.art === "wahl" ? (

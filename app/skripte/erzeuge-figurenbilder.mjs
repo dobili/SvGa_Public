@@ -88,6 +88,7 @@ const FIGUREN = {
   ray: ["short01", "hellgrau", "h6", "variant18", "03396c", "light01", "", "variant05"], // Busfahrer a. D.
   harlan: ["short04", "weiss", "h2", "variant21", "a9a9a9", "light06", "variant07", ""], // Uhrmacher
   pops: ["short01", "grau", "h8", "variant15", "ae0001", "", "variant04", "variant06"], // Zeitungsstand
+  patel: ["short05", "schwarz", "h6", "variant12", "2e7d32", "", "variant02", ""], // Kiosk im Park
   albescu: ["long06", "braun", "h3", "variant13", "44c585", "", "", ""], // Fahrradwerkstatt
   nova: ["long14", "blond", "h4", "variant09", "ff6f69", "", "", ""], // 16, Werbegesicht
   schaffner: ["short07", "dunkelbraun", "h4", "variant19", "03396c", "", "variant01", "variant09"], // Route 2

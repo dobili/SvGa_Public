@@ -79,6 +79,26 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
+.abenteuer-dialog-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin: 0 0 var(--raster);
+}
+
+.abenteuer-dialog-kopf .abenteuer-dialog-sprecher {
+  margin: 0;
+}
+
+/* Pixel-Porträts scharf vergrößern, nicht weichzeichnen. */
+.abenteuer-dialog-portraet {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  image-rendering: pixelated;
+  flex: none;
+}
+
 .abenteuer-dialog-sprecher {
   margin: 0 0 var(--raster);
   color: var(--gold);

@@ -568,6 +568,12 @@ geladenes Spiel aussieht und arbeitet wie bisher; jede Änderung dem Autor im Ch
 „Schach-Abenteuer“ auf „Spielen“ und das Extra „Brett Riverton-Pavillon“ waren auch ohne Spiel
 sichtbar; jetzt nur mit geladenem Spiel oder Spielstand.
 
+**Porträts (Q17-2, 8.11.2026):** 61 Pixel-Porträts aus `app/skripte/erzeuge-figurenbilder.mjs`
+(DiceBear Pixel Art 9.4.3, Gestaltung CC0, Code MIT; nur zum Erzeugen installiert), abgelegt in
+`inhalte/abenteuer/portraets/`, im Zusatzpaket unter `portraets/` (ein gleichnamiges Bild im privaten
+Ordner geht vor). Der Dialog zeigt das Porträt des Sprechers (`#sprecher`, camelCase → kebab-case),
+mit `#stimmung:jung` die junge Fassung. Ein Test prüft, dass jeder Sprecher ein Porträt hat.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

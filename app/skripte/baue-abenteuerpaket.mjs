@@ -206,6 +206,13 @@ async function main() {
     );
   }
   await uebersetzeDialoge("de");
+  // Porträts (Q17-2): die erzeugten Pixel-Porträts; ein gleichnamiges Bild im privaten Ordner
+  // (gekaufte oder gezeichnete Grafik) geht vor.
+  for (const name of (await readdir(join(QUELLE, "portraets"))).filter((d) => d.endsWith(".svg"))) {
+    const privat = join(PRIVAT, "portraets", name);
+    const quelle = existsSync(privat) ? privat : join(QUELLE, "portraets", name);
+    await schreibe(`portraets/${name}`, await readFile(quelle), "grafik");
+  }
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
   await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));

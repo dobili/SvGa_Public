@@ -5,6 +5,7 @@ import {
   variablenAusBesitz,
   variablenNachFund,
   variablenNachNadel,
+  variablenNachDialog,
   variablenNachPartie,
   variablenNachRunde,
 } from "./dialogvariablen";
@@ -63,5 +64,22 @@ describe("Dialogvariablen aus Ergebnissen", () => {
   it("zählt die Nadel von 0 bis 3", () => {
     expect(variablenNachNadel("mapleFalls", null)).toEqual({ nadelMapleFalls: 0 });
     expect(variablenNachNadel("cedarCreek", "gold")).toEqual({ nadelCedarCreek: 3 });
+  });
+});
+
+describe("Variablen nach einem Dialog", () => {
+  it("ein Fund während des Dialogs bleibt, auch wenn Ink den Startwert zurückgibt", () => {
+    const vorher = { gefundenSchluessel: false };
+    const jetzt = { gefundenSchluessel: true, muenzenX: 1 };
+    const ausInk = { gefundenSchluessel: false, albescuGetroffen: true };
+    expect(variablenNachDialog(vorher, jetzt, ausInk)).toEqual({
+      gefundenSchluessel: true,
+      muenzenX: 1,
+      albescuGetroffen: true,
+    });
+  });
+
+  it("was Ink selbst ändert, gewinnt sonst", () => {
+    expect(variablenNachDialog({ a: 1 }, { a: 1 }, { a: 2 })).toEqual({ a: 2 });
   });
 });

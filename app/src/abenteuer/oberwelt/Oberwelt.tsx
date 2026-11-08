@@ -35,6 +35,7 @@ import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
 import {
   variablenAusBesitz,
+  variablenNachDialog,
   variablenNachBesuch,
   variablenNachFund,
 } from "../regeln/dialogvariablen";
@@ -130,6 +131,8 @@ export function Oberwelt() {
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
+  // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
+  const variablenBeimOeffnen = useRef<Abenteuerstand["dialogvariablen"]>({});
   // Eine Begegnung, für die der Leser gerade sein Deck wählt (Regelwerk R24).
   const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
   // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
@@ -351,6 +354,7 @@ export function Oberwelt() {
   const oeffneDialog = (verweis: string) => {
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
+    variablenBeimOeffnen.current = (standRef.current ?? stand)?.dialogvariablen ?? {};
     liesPaketJson<object>(`dialoge/${SPRACHE}/${datei}.json`)
       .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
       .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
@@ -656,7 +660,12 @@ export function Oberwelt() {
     const aktuell = standRef.current ?? stand;
     const auftrag = auftragInArbeit.current;
     auftragInArbeit.current = null;
-    const neu = { ...aktuell, dialogvariablen: { ...aktuell.dialogvariablen, ...variablen } };
+    const dialogvariablen = variablenNachDialog(
+      variablenBeimOeffnen.current,
+      aktuell.dialogvariablen,
+      variablen,
+    );
+    const neu = { ...aktuell, dialogvariablen };
     schreibe(neu);
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;

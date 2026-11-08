@@ -12,10 +12,12 @@
  * Schwierigkeit 2) → vier Aufgaben: die Übung aus Abbildung 1.40, dann drei Hängeaufgaben.
  */
 import type {
+  Endspielaufgabe,
   Fallenaufgabe,
   Strukturaufgabe,
   Taktikaufgabe as Aufgabe,
 } from "../../daten/trainerdaten";
+import { endspielrunde, type Massstab } from "../../training/endspieltrainer";
 import { fallenrunde } from "../../training/fallentrainer";
 import { strukturrunde } from "../../training/strukturtrainer";
 import { MOTIVE, taktikrunde, type Taktikthema } from "../../training/taktiktrainer";
@@ -33,12 +35,16 @@ export type Rundenaufgabe =
   | { readonly art: "taktik"; readonly aufgabe: Aufgabe; readonly motivAbfragen: boolean }
   | { readonly art: "zusatz"; readonly aufgabe: Zusatzaufgabe }
   | { readonly art: "falle"; readonly aufgabe: Fallenaufgabe }
-  | { readonly art: "struktur"; readonly aufgabe: Strukturaufgabe };
+  | { readonly art: "struktur"; readonly aufgabe: Strukturaufgabe }
+  | { readonly art: "endspiel"; readonly aufgabe: Endspielaufgabe };
 
 /** Aufgaben der Trainer „Falle oder Köder“ (Kapitel 4) und „Strukturen“ (Kapitel 5), falls geladen. */
 export interface Weitere {
   readonly fallen: readonly Fallenaufgabe[];
   readonly strukturen: readonly Strukturaufgabe[];
+  /** Aufgaben des Endspieltrainers (Kapitel 8 und 9) und sein Maßstab, falls geladen. */
+  readonly endspiele?: readonly Endspielaufgabe[];
+  readonly massstab?: Massstab;
 }
 
 /** Mischt die Listen abwechselnd, bis `anzahl` erreicht ist (jedes Thema kommt gleich oft dran). */
@@ -90,6 +96,14 @@ export function rundenaufgaben(
         art: "falle" as const,
         aufgabe,
       }));
+    }
+    if (thema === "endspiel") {
+      return endspielrunde(
+        weitere.endspiele ?? [],
+        { gruppe: "alle", stufe },
+        auftrag.anzahl,
+        zufall,
+      ).map((aufgabe) => ({ art: "endspiel" as const, aufgabe }));
     }
     if (thema === "struktur") {
       return strukturrunde(weitere.strukturen, stufe, auftrag.anzahl, zufall).map((aufgabe) => ({

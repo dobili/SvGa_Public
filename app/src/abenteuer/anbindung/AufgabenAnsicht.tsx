@@ -19,16 +19,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeZusatzaufgaben } from "../../daten/laden";
-import { ladeFallen, ladeStrukturen, ladeTaktik } from "../../daten/trainerdaten";
+import { ladeEndspiele, ladeFallen, ladeStrukturen, ladeTaktik } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { aendere } from "../../speicher/speicher";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
+import { Endspielaufgabe } from "../../ui/trainer/Endspielaufgabe";
 import { Fallenaufgabe } from "../../ui/trainer/Fallenaufgabe";
 import { Strukturaufgabe } from "../../ui/trainer/Strukturaufgabe";
 import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
+import type { Massstab } from "../../training/endspieltrainer";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
@@ -40,10 +42,13 @@ import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 function Runde({
   auftrag,
   aufgaben,
+  massstab,
   beiEnde,
 }: {
   auftrag: Aufgabenauftrag;
   aufgaben: readonly Rundenaufgabe[];
+  /** Maßstab des Endspieltrainers (nur für Endspielaufgaben nötig). */
+  massstab: Massstab | null;
   beiEnde: (ergebnisse: readonly Antwortergebnis[], sekunden: number) => void;
 }) {
   const runde = useRunde("taktik", aufgaben.length);
@@ -76,7 +81,13 @@ function Runde({
   return (
     <Rundenrahmen kennung="taktik" runde={mitProtokoll} nochmal={() => {}} zurAuswahl={null}>
       <div key={runde.index} className="trainer-aufgabe">
-        {aktuelle.art === "falle" ? (
+        {aktuelle.art === "endspiel" ? (
+          massstab ? (
+            <Endspielaufgabe aufgabe={aktuelle.aufgabe} massstab={massstab} runde={mitProtokoll} />
+          ) : (
+            <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+          )
+        ) : aktuelle.art === "falle" ? (
           <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
         ) : aktuelle.art === "struktur" ? (
           <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
@@ -129,16 +140,21 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
   const zusaetze = useDaten(ladeZusatzaufgaben, "zusatzaufgaben");
   const fallen = useDaten(ladeFallen, "trainer-falle");
   const strukturen = useDaten(ladeStrukturen, "trainer-struktur");
+  const endspiele = useDaten(ladeEndspiele, "trainer-endspiel");
   const aufgaben = useMemo(() => {
     if (!auftrag || taktik.art !== "fertig" || zusaetze.art !== "fertig") return null;
-    if (fallen.art === "laedt" || strukturen.art === "laedt") return null;
+    if (fallen.art === "laedt" || strukturen.art === "laedt" || endspiele.art === "laedt")
+      return null;
     // Fehlen die Daten eines Trainers, fallen nur seine Themen weg (wie unbekannte Themen).
     const weitere = {
       fallen: fallen.art === "fertig" ? fallen.wert.aufgaben : [],
       strukturen: strukturen.art === "fertig" ? strukturen.wert.aufgaben : [],
+      ...(endspiele.art === "fertig"
+        ? { endspiele: endspiele.wert.aufgaben, massstab: endspiele.wert.massstab }
+        : {}),
     };
     return rundenaufgaben(auftrag, taktik.wert.aufgaben, zusaetze.wert, undefined, weitere);
-  }, [auftrag, taktik, zusaetze, fallen, strukturen]);
+  }, [auftrag, taktik, zusaetze, fallen, strukturen, endspiele]);
   const beiEnde = (ergebnisse: readonly Antwortergebnis[], sekunden: number) => {
     if (!auftrag) return;
     void aendere((d) => ({
@@ -186,7 +202,12 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
         </section>
       )}
       {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
-        <Runde auftrag={auftrag} aufgaben={aufgaben} beiEnde={beiEnde} />
+        <Runde
+          auftrag={auftrag}
+          aufgaben={aufgaben}
+          massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
+          beiEnde={beiEnde}
+        />
       )}
     </div>
   );

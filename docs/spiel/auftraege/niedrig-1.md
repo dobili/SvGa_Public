@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: die 17 Karten von Akt 3
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die 17 Kartendateien aus der Tabelle unten (neu), `docs/spiel/auftraege/niedrig-1.md`
@@ -572,4 +572,121 @@ port-delacroix-musikhaus.json
 #              #
 #       s      #
 ########m#######
+```
+
+**Teil 3: Weg 6 und Desert Springs (5 Karten, gepusht).** 470 Tests bestanden, 0 übersprungen;
+Prettier und Paketbau sauber. Damit sind alle 17 Karten von Akt 3 gezeichnet.
+
+- `weg-delacroix-desert-canyonpfad` (28 × 20): roter Fels oben und unten, `tafel` am Bahnhof,
+  Miras flacher `stein`, `fundEidechsenhaut`; `eidechsen`, `roadrunner`, `wanderin` (morgen).
+- `weg-delacroix-desert-felsbogen` (28 × 20): Felsbogen mit Pfeilern, `aussichtspunkt` darunter,
+  Eisenbahnbrücke unten mit `fundNieten`, `holloway` am Abstieg; `geier`, `eidechse`,
+  `fotograf` (abend).
+- `desert-springs-aussen` (32 × 24): Motel mit `dot`, Garage (`garageTuer`), Diner, Tankstelle mit
+  `buck` am Auto, alter Bahnhof mit `antiquariatTuer` und `bahnhof`, Kakteen; `canyon` links;
+  `tankwartlehrling`, `touristen`, `wartender`, `eidechsen`, `geier`, `hund` vor dem Diner.
+- `desert-springs-garage` (14 × 10): Werkbank, Reifenstapel mit Brett, `mira`, `tomas`.
+- `desert-springs-antiquariat` (14 × 10): Bücherregale, Kisten mit Briefen, `okoro`; `kundin`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Miras Dosenpokal (Garage), Nachlass des
+  Brückenbauers als Auslöser (Antiquariat). Desert Springs hat keinen Übergang nach Akt 4; die
+  rechte Straßenseite ist deshalb geschlossen.
+
+Checkliste 6 für alle 17 Karten: Größe und Rand [x] (Kartentest), Belebung [x] (außen je mindestens
+zwei Statisten und Tiere, Silicon Bay nur Maschinen), Figuren an ihren Orten [x]; Geräusch, Musik,
+Tönung, Matten und Questspuren offen wie bisher (Grafik oder `orte.json`).
+
+```text
+weg-delacroix-desert-canyonpfad.json
+############################
+############################
+############################
+############################
+############################
+############################
+#                sK        #
+#            L             #
+#   t                      #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#       #####         f    #
+#       #####              #
+############################
+############################
+############################
+############################
+############################
+############################
+
+weg-delacroix-desert-felsbogen.json
+############################
+############################
+############################
+############################
+############################
+#         ##TTTT##         #
+#         ##TaTT##         #
+#         ##TTTT##         #
+#                    H     #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#     KfKK                 #
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+desert-springs-aussen.json
+################################
+#                              #
+# ###########      #######     #
+# ##F###F########  ##F#F##     #
+# ###############  #######     #
+# ###############  #######     #
+# ############g##  #######     #
+#  D  m                        #
+#                L             #
+#                              #
+cTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                              #
+#             L             L  #
+#        b                     #
+#  ####a####        KK  KK     #
+#  #F#######        KK         #
+#  #########          B        #
+#  #########          K        #
+#  #########                   #
+#                              #
+#                              #
+#                              #
+################################
+
+desert-springs-garage.json
+##############
+#KKKKK     L #
+#            #
+#            #
+#   M   TKK  #
+#   B    KK  #
+#            #
+#            #
+#      s     #
+#######g######
+
+desert-springs-antiquariat.json
+####F#####F###
+#            #
+#K   O      K#
+#K  KKK     K#
+#K          K#
+#K          K#
+#K      KKK K#
+#            #
+#      s     #
+#######a######
 ```

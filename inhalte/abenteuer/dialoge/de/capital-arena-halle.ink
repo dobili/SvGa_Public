@@ -11,7 +11,8 @@
 // marcus, nova, tobias, kade, victor, turniertafel, pressetisch, fanshop.
 //
 // Variablen: ausgangCapitalArena<Begegnung> und mentorzugFreiGespielt setzt die Hülle (R42),
-// arenaGesehen setzt capital-arena-aussen.ink; die übrigen setzt diese Datei.
+// arenaGesehen setzt capital-arena-aussen.ink, novaBitteGehoert und novaHilfeZugesagt
+// crossroads-raststaette.ink (Szene 93); die übrigen setzt diese Datei.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL oeffneLaden(laden)
@@ -24,6 +25,8 @@ VAR ausgangCapitalArenaRunde4 = ""
 VAR ausgangCapitalArenaHalbfinale = ""
 VAR ausgangCapitalArenaFinale = ""
 VAR mentorzugFreiGespielt = false
+VAR novaBitteGehoert = false
+VAR novaHilfeZugesagt = false
 VAR vorrundeGeschafft = false
 VAR aussageGesehen = false
 VAR vorDemFinaleGesehen = false
@@ -148,12 +151,26 @@ Juno springt auf der Tribüne auf und ruft deinen Namen. #sprecher:erzaehler
 
 === aussage ===
 ~ aussageGesehen = true
-Am Pressetisch steht Nova neben Dr. Lin. Die Turnierleiterin hört zu, Graham Hale auch. #sprecher:erzaehler
+{
+- novaHilfeZugesagt:
+    Am Pressetisch steht Nova neben Dr. Lin. Du stellst dich an ihre andere Seite, wie versprochen. #sprecher:erzaehler
+- novaBitteGehoert:
+    Am Pressetisch steht Nova neben Dr. Lin. Sie sucht im Saal, bis sie dich findet. Dann atmet sie aus. #sprecher:erzaehler
+- else:
+    Am Pressetisch steht Nova neben Dr. Lin, sehr gerade und sehr blass. #sprecher:erzaehler
+}
+Die Turnierleiterin hört zu, Graham Hale auch. #sprecher:erzaehler
 Bei Perfect Move haben wir mit Geräten gespielt. Mit einem Empfänger im Ohr. Ich auch. #sprecher:nova #stimmung:ernst
 Dr. Lin legt die Spielberichte auf den Tisch und daneben den kleinen Empfänger aus dem Serverraum. #sprecher:erzaehler
 Achtundneunzig Prozent Genauigkeit mit Gerät, vierundsiebzig ohne. Die Zahlen lügen nicht. #sprecher:lin
 Graham Hale wird blass. Er hat davon nichts gewusst. #sprecher:erzaehler
 Victor stellt sich neben Nova. „Ich hab es gesehen. In Silicon Bay.“ #sprecher:erzaehler
+{
+- novaHilfeZugesagt:
+    Nova greift kurz nach deiner Hand. „Danke. Allein hätte ich es mir anders überlegt.“ #sprecher:erzaehler
+- novaBitteGehoert:
+    Nova nickt dir zu. Sie hat es allein geschafft, und du warst im Saal. #sprecher:erzaehler
+}
 Im Halbfinale läuft ein Funkprüfer mit. Wer ein Gerät trägt, wird gefunden. #sprecher:turnierleiterin
 Wer ehrlich spielt, hat nichts zu fürchten. Das gilt auch für Erwachsene. #sprecher:ambrose
 -> END
@@ -256,6 +273,8 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
 {
 - gespielt(ausgangCapitalArenaRunde3):
     Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an. #sprecher:nova #stimmung:froh
+- aussageGesehen and novaHilfeZugesagt:
+    Du hast neben mir gestanden. Das vergesse ich nicht. Jetzt bin ich frei. #sprecher:nova #stimmung:froh
 - aussageGesehen:
     Ich hab es gesagt. Alles. Jetzt bin ich frei. Und ein bisschen müde. #sprecher:nova
 - else:

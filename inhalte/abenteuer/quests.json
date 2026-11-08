@@ -1141,10 +1141,7 @@
       "typ": "begegnung",
       "ort": "ironwood",
       "haupt": false,
-      "start": {
-        "art": "dialog",
-        "knoten": "ironwood-mamas-zimmer.oma_ruth_heft"
-      },
+      "start": { "art": "ort", "karte": "ironwood.mamasZimmer" },
       "schritte": [
         {
           "text": "quest.turnierheft.schritt1",
@@ -1521,13 +1518,6 @@
               "szene": "akt3.clubnadelPortDelacroix"
             }
           ]
-        },
-        {
-          "text": "quest.tiefpunkt.schritt5",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "port-delacroix-turnhalle.odile_nach_partie"
-          }
         }
       ]
     },

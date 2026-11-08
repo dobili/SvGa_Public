@@ -7,7 +7,9 @@
 //
 // Variablen: Die mit „Gesehen“ setzt diese Datei selbst. ausgangMapleFallsErsteLektion und
 // nadelMapleFalls setzt die Hülle nach der Partie bzw. dem Clubkampf (regeln/dialogvariablen.ts); solange sie
-// leer bzw. 0 sind, bleibt Mama beim Alltagsgespräch. Das Spiel beginnt heute auf dem Dachboden
+// leer bzw. 0 sind, bleibt Mama beim Alltagsgespräch. Den Abend gibt es erst, wenn Ambrose die
+// erste Partie besprochen hat (ersteLektionBesprochen aus maple-falls-dachboden.ink), weil die Quest
+// mapleFalls.ersterAbend erst dort beginnt. Das Spiel beginnt heute auf dem Dachboden
 // (regeln/spielstand.ts); wer das Brett schon berührt hat, bekommt eine kurze Begrüßung statt der
 // Ankunft mit der Kiste.
 
@@ -20,13 +22,17 @@ VAR ersterAbendGesehen = false
 VAR aufbruchGesehen = false
 VAR kenntHale = false
 VAR ausgangMapleFallsErsteLektion = ""
+VAR ersteLektionBesprochen = false
 VAR nadelMapleFalls = 0
 
 === mutter ===
 {
 - not ankunftGesehen and not brettBeruehrt: -> ankunft
 - not ankunftGesehen: -> ankunft_kurz
-- ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen" and not ersterAbendGesehen: -> erster_abend
+- ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen" and not ersteLektionBesprochen:
+    Bist du oben fertig? Die Pizza wird kalt, aber ein paar Minuten hat sie noch. #sprecher:mutter
+    -> END
+- ersteLektionBesprochen and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
 - else: -> mutter_alltag
 }

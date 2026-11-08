@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Figuren und Objekte auf der Hochebene
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, Hochebene, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Karten der Hochebene (`inhalte/abenteuer/karten/hochebene*.json`),

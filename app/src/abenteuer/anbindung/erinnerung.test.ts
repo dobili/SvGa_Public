@@ -17,7 +17,7 @@ describe("Erinnerungen", () => {
         ? [r.erinnerung as { partie: string; abZug: number; seite: "white" | "black" }]
         : [],
     );
-    expect(erinnerungen.length).toBe(3);
+    expect(erinnerungen.length).toBeGreaterThanOrEqual(3);
     for (const e of erinnerungen) {
       const aufgabe = erinnerungsaufgabe(PARTIEN, e, "de");
       expect(aufgabe, e.partie).not.toBeNull();

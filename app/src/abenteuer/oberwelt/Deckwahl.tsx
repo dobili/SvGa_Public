@@ -26,6 +26,7 @@ export function Deckwahl({
   groesse = DECKGROESSE,
   sprueche = false,
   zeitwahl,
+  farbeFrei = false,
   steckbrief = [],
   beiWahl,
   beiAbbruch,
@@ -40,24 +41,35 @@ export function Deckwahl({
   readonly sprueche?: boolean;
   /** Darf der Leser die Bedenkzeit wählen? */
   readonly zeitwahl: boolean;
+  /** Wird die Farbe ausgelost? Nur dann gibt es die Karte Farbwahl in der Auswahl. */
+  readonly farbeFrei?: boolean;
   /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
   readonly steckbrief?: readonly string[];
-  readonly beiWahl: (deck: readonly string[], zeit: Zeitklasse) => void;
+  readonly beiWahl: (
+    deck: readonly string[],
+    zeit: Zeitklasse,
+    farbe: "white" | "black" | null,
+  ) => void;
   readonly beiAbbruch: () => void;
 }) {
   const [deck, setzeDeck] = useState<readonly string[]>([]);
   const [zeit, setzeZeit] = useState<Zeitklasse>("ohne");
+  const [farbe, setzeFarbe] = useState<"white" | "black">("white");
   useZurueckSchliesst(true, beiAbbruch);
   const alleSorten = sorten as unknown as readonly Kartensorte[];
   const waehlbar = besitz.filter((k) => {
     const sorte = alleSorten.find((s) => s.kennung === k.kennung);
     if (sorte?.spruch_art && !sprueche) return false;
+    if (sorte?.wirkung.art === "farbwahl" && !farbeFrei) return false;
     return sorte !== undefined && sorte.zeitpunkt !== "nachher";
   });
   const schalte = (kennung: string) => {
     if (deck.includes(kennung)) setzeDeck(deck.filter((k) => k !== kennung));
     else if (deckErlaubt(deck, kennung, alleSorten, groesse)) setzeDeck([...deck, kennung]);
   };
+  const mitFarbwahl = deck.some(
+    (k) => alleSorten.find((s) => s.kennung === k)?.wirkung.art === "farbwahl",
+  );
   const mitVorgabe = deck.some(
     (k) => alleSorten.find((s) => s.kennung === k)?.wirkung.art === "vorgabe",
   );
@@ -130,11 +142,28 @@ export function Deckwahl({
         </p>
       ))}
       {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
+      {mitFarbwahl && (
+        <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.farbe")}>
+          {(["white", "black"] as const).map((f) => (
+            <button
+              key={f}
+              type="button"
+              role="radio"
+              className="abenteuer-karte"
+              aria-checked={farbe === f}
+              data-testid={`abenteuer-farbe-${f}`}
+              onClick={() => setzeFarbe(f)}
+            >
+              {tSpiel(`deck.farbe.${f}`)}
+            </button>
+          ))}
+        </div>
+      )}
       <button
         type="button"
         className="knopf-haupt"
         data-testid="abenteuer-deck-los"
-        onClick={() => beiWahl(deck, zeit)}
+        onClick={() => beiWahl(deck, zeit, mitFarbwahl ? farbe : null)}
       >
         {deck.length === 0 ? tSpiel("deck.ohne") : tSpiel("deck.los", { anzahl: deck.length })}
       </button>

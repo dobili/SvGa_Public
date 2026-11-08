@@ -35,9 +35,14 @@ import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
 import {
   variablenAusBesitz,
+  variablenNachDialog,
   variablenNachBesuch,
   variablenNachFund,
 } from "../regeln/dialogvariablen";
+
+/** Gegenstand „Reisebrett“ und seine Begegnung (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
+const REISEBRETT = "reisebrett";
+const UEBUNGSPARTIE = "reisebrett.ambrose";
 
 /** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
 const MONATSKARTE = "monatskarte";
@@ -126,6 +131,8 @@ export function Oberwelt() {
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
+  // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
+  const variablenBeimOeffnen = useRef<Abenteuerstand["dialogvariablen"]>({});
   // Eine Begegnung, für die der Leser gerade sein Deck wählt (Regelwerk R24).
   const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
   // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
@@ -347,6 +354,7 @@ export function Oberwelt() {
   const oeffneDialog = (verweis: string) => {
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
+    variablenBeimOeffnen.current = (standRef.current ?? stand)?.dialogvariablen ?? {};
     liesPaketJson<object>(`dialoge/${SPRACHE}/${datei}.json`)
       .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
       .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
@@ -607,6 +615,17 @@ export function Oberwelt() {
   };
 
   /**
+   * Reisebrett (docs/spiel/11, I3): überall eine freie Übungspartie gegen Ambrose, mit Wahl der
+   * Bedenkzeit und Karten wie jede Begegnung; sie zählt für Partienliste und Abenteuerwertung.
+   */
+  const starteUebungspartie = () => {
+    const aktuell = standRef.current ?? stand;
+    if (!welt) return;
+    const auftrag = auftragFuer(UEBUNGSPARTIE, welt.daten, aktuell);
+    if (auftrag) setzeDeckwahl(auftrag);
+  };
+
+  /**
    * Wiedereinstieg (Regelwerk R14): dieselbe Begegnung ab dem Kipppunkt, gleiches Profil und
    * gleicher Zustand, Farbe aus dem Zugrecht der Stellung, Karten nach R15.
    */
@@ -641,7 +660,12 @@ export function Oberwelt() {
     const aktuell = standRef.current ?? stand;
     const auftrag = auftragInArbeit.current;
     auftragInArbeit.current = null;
-    const neu = { ...aktuell, dialogvariablen: { ...aktuell.dialogvariablen, ...variablen } };
+    const dialogvariablen = variablenNachDialog(
+      variablenBeimOeffnen.current,
+      aktuell.dialogvariablen,
+      variablen,
+    );
+    const neu = { ...aktuell, dialogvariablen };
     schreibe(neu);
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;
@@ -698,6 +722,16 @@ export function Oberwelt() {
           <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
             {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
           </span>
+          {welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl && (
+            <button
+              type="button"
+              className="abenteuer-tagebuchknopf abenteuer-reisebrettknopf"
+              onClick={starteUebungspartie}
+              data-testid="abenteuer-reisebrettknopf"
+            >
+              {tSpiel("reisebrett.knopf")}
+            </button>
+          )}
           {welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog && (
             <button
               type="button"
@@ -742,9 +776,14 @@ export function Oberwelt() {
           sprueche={spruecheErlaubt(deckwahl.profil.rolle)}
           zeitwahl={deckwahl.zeitwahl === true}
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
-          beiWahl={(deck, zeit) =>
+          farbeFrei={deckwahl.farbeFrei === true}
+          beiWahl={(deck, zeit, farbe) =>
             startePartie(
-              deckwahl.zeitwahl ? { ...deckwahl, uhr: ZEITKLASSEN[zeit] } : deckwahl,
+              {
+                ...deckwahl,
+                ...(deckwahl.zeitwahl ? { uhr: ZEITKLASSEN[zeit] } : {}),
+                ...(farbe ? { farbe } : {}),
+              },
               deck,
             )
           }

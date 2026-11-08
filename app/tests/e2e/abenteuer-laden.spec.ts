@@ -116,3 +116,17 @@ test("Monatskarte: Reisen in eine besuchte Stadt", async ({ page }) => {
   await expect(page.getByTestId("abenteuer-meldung")).toHaveCount(0);
   await expect(page.getByTestId("abenteuer-reisenknopf")).toBeVisible({ timeout: 15000 });
 });
+
+test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) => {
+  const stand = { ...STAND, gegenstaende: ["reisebrett"] };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-reisebrettknopf").click();
+  await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible();
+  await page.getByTestId("abenteuer-deck-los").click();
+  await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible({ timeout: 30000 });
+});

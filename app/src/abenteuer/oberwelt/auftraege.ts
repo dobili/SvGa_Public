@@ -131,6 +131,7 @@ export function auftragFuer(
     zaehltFuerApp: b.zaehltFuerApp ?? b.startstellung.art === "grundstellung",
     uhr: typeof b.zeit === "object" ? b.zeit : null,
     zeitwahl: b.zeit === "wahl",
+    farbeFrei: b.farbe === "zufall",
   };
 }
 

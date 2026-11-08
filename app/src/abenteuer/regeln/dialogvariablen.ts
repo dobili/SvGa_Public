@@ -76,3 +76,23 @@ export function variablenNachBesuch(ort: string): Variablen {
 export function variablenNachNadel(ort: string, nadel: Nadelstufe | null): Variablen {
   return { [`nadel${grossAnfang(ort)}`]: nadel ? NADELWERT[nadel] : 0 };
 }
+
+/**
+ * Die Variablen nach einem Dialog: Ink gibt am Ende alle seine Variablen zurück, auch solche, die
+ * die Hülle während des Dialogs gesetzt hat (gibFund setzt `gefundenSchluessel`, Ink kennt noch den
+ * Startwert false). Was die Hülle seit dem Öffnen geändert hat, gewinnt deshalb gegen Ink
+ * (Befund mittel-2, 8.11.2026: Albescu bot den Schuppen nie an).
+ * Eingaben: Variablen beim Öffnen, Variablen der Hülle jetzt, Variablen aus Ink.
+ * Beispiel: vorher {gefundenSchluessel: false}, jetzt {gefundenSchluessel: true}, Ink
+ * {gefundenSchluessel: false, albescuGetroffen: true} → {gefundenSchluessel: true, albescuGetroffen: true}.
+ */
+export function variablenNachDialog(
+  vorher: Variablen,
+  jetzt: Variablen,
+  ausInk: Variablen,
+): Variablen {
+  const vonDerHuelle = Object.fromEntries(
+    Object.entries(jetzt).filter(([name, wert]) => vorher[name] !== wert),
+  );
+  return { ...jetzt, ...ausInk, ...vonDerHuelle };
+}

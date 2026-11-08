@@ -361,6 +361,18 @@
       },
       "spruch_art": true,
       "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "farbwahl",
+      "name": "karte.farbwahl.name",
+      "spruch": "karte.farbwahl.spruch",
+      "bild": "karten/farbwahl.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "farbwahl"
+      },
+      "zeitpunkt": "vorher"
     }
   ]
 }

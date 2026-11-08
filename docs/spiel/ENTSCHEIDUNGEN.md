@@ -549,6 +549,19 @@ Mit Lupe öffnet sich vor jeder Partie die Deckwahl und zeigt zwei Steckbriefzei
 Immunität gegen Sprüche (`oberwelt/steckbrieftext.ts`); damit steht die Immunität wie in S4
 verlangt vor der Partie sichtbar.
 
+**Antworten des Autors über die Entscheidungsseite (8.11.2026, abends):** Q20-1, -2, -4 bis -11 und
+Q19-1 bis -4: Empfehlung folgen. Q20-3 nein: Die Lupe gibt es nur nach drei Siegen gegen Harlan
+(Siegzähler `siege<Begegnung>` gebaut, auch für später), nicht im Laden. Q19-2, Notiz „Für was gibt
+es Bronze? … in Clubs mit Vorgabe spielen, dann nur ein minderwertiger Orden“: So ist es schon
+(Regelwerk R21): Gold ohne Karten, Silber mit höchstens zwei leichten Karten, Bronze mit einer
+mittleren oder starken Karte; Vorgaben sind stark, ein Clubkampf mit Vorgabe bringt also höchstens
+Bronze, ebenso ein Remis gegen den Clubchef. Q10-1, Notiz (Spielidee): Die Farbe ist zufällig oder
+von der Geschichte vorgegeben; neu die Karte „Farbwahl“ (leicht, Kiosk 10 Münzen), nur wo die
+Begegnung die Farbe auslost. Q17-1 ja (Kauf durch den Autor offen), Q17-2: Porträts per Skript
+(DiceBear Pixel Art, CC0) statt umgewandelter Bilder aus dem Netz (Urheberrecht).
+Hinweis des Autors (8.11.2026): Der Spiel-Chat ist nur für das Spiel zuständig; Fragen und
+Änderungen der App selbst betreut ein anderer Chat, Empfehlungen dazu sind willkommen.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

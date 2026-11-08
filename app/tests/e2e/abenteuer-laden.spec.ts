@@ -95,3 +95,24 @@ test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ pag
   await expect(page.getByTestId("abenteuer-tagebuchknopf")).toHaveCount(0);
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveCount(0);
 });
+
+test("Monatskarte: Reisen in eine besuchte Stadt", async ({ page }) => {
+  const stand = {
+    ...STAND,
+    besuchteOrte: ["mapleFalls", "cedarCreek"],
+    gegenstaende: ["monatskarte"],
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-reisenknopf").click();
+  const reisen = page.getByTestId("abenteuer-reisen");
+  await expect(reisen).toBeVisible();
+  await reisen.getByRole("button", { name: "Cedar Creek" }).click();
+  await expect(reisen).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer-meldung")).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer-reisenknopf")).toBeVisible({ timeout: 15000 });
+});

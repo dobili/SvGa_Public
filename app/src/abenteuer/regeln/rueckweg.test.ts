@@ -59,6 +59,7 @@ describe("standNachPartie", () => {
     expect(r.stand.protokoll[0]).toMatchObject({ gegner: "mapleFalls.coachDelgado" });
     expect(r.stand.dialogvariablen).toEqual({
       ausgangMapleFallsClubkampf: "sieg",
+      siegeMapleFallsClubkampf: 1,
       nadelMapleFalls: 3,
     });
   });

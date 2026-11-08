@@ -212,7 +212,7 @@
       "steller": "portDelacroix.remy",
       "reihe": true,
       "buchuebungen": ["ueb:bauernloch-erkennen", "ueb:skelett-roentgen"],
-      "themen": ["umwandlung"]
+      "themen": ["struktur"]
     },
     {
       "kennung": "portDelacroix.reiheLou",
@@ -220,7 +220,7 @@
       "steller": "portDelacroix.lou",
       "reihe": true,
       "buchuebungen": ["ueb:guter-schlechter-laeufer", "ueb:lap-spanisch"],
-      "themen": ["umwandlung"]
+      "themen": ["struktur"]
     },
     {
       "kennung": "portDelacroix.simultan",

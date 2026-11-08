@@ -39,6 +39,9 @@ import {
   variablenNachFund,
 } from "../regeln/dialogvariablen";
 
+/** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
+const MONATSKARTE = "monatskarte";
+
 /** Gegenstand „Lupe des Uhrmachers“ (docs/spiel/11, I1): Steckbrief vor jeder Partie. */
 const LUPE = "lupe";
 
@@ -72,6 +75,8 @@ import {
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
 import { lupenzeilen } from "./steckbrieftext";
+import { Reisen } from "./Reisen";
+import { reiseziele } from "./reiseziele";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
@@ -120,6 +125,7 @@ export function Oberwelt() {
   const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
+  const [reisen, setzeReisen] = useState(false);
   // Eine Begegnung, für die der Leser gerade sein Deck wählt (Regelwerk R24).
   const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
   // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
@@ -692,6 +698,16 @@ export function Oberwelt() {
           <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
             {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
           </span>
+          {welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog && (
+            <button
+              type="button"
+              className="abenteuer-tagebuchknopf abenteuer-reisenknopf"
+              onClick={() => setzeReisen(true)}
+              data-testid="abenteuer-reisenknopf"
+            >
+              {tSpiel("reisen.knopf")}
+            </button>
+          )}
         </>
       )}
       {fehler && (
@@ -745,6 +761,16 @@ export function Oberwelt() {
             schreibe(kaufe(standRef.current ?? stand, ware, sorten, new Date()));
           }}
           beiSchliessen={() => setzeOffenerLaden(null)}
+        />
+      )}
+      {reisen && welt && (
+        <Reisen
+          ziele={reiseziele(welt.daten.orte, stand.besuchteOrte, welt.ort.kennung)}
+          beiWahl={(karte) => {
+            setzeReisen(false);
+            wechsleKarte(karte, "start");
+          }}
+          beiSchliessen={() => setzeReisen(false)}
         />
       )}
       {tagebuch && welt && (

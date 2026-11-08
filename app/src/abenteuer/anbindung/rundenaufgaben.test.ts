@@ -72,3 +72,22 @@ describe("rundenaufgaben", () => {
     ).toHaveLength(1);
   });
 });
+
+describe("Themen falle und struktur", () => {
+  it("nimmt Aufgaben aus den Trainern Falle oder Köder und Strukturen", async () => {
+    const { readFileSync } = await import("node:fs");
+    const lies = (datei: string) =>
+      JSON.parse(
+        readFileSync(new URL(`../../../public/daten/de/trainer/${datei}`, import.meta.url), "utf8"),
+      ) as {
+        aufgaben: never[];
+      };
+    const weitere = {
+      fallen: lies("falle.json").aufgaben,
+      strukturen: lies("struktur.json").aufgaben,
+    };
+    const auftrag = { ...AUFTRAG, buchuebungen: [], themen: ["falle", "struktur"], anzahl: 4 };
+    const runde = rundenaufgaben(auftrag, [], [], () => 0.5, weitere);
+    expect(runde.map((r) => r.art).sort()).toEqual(["falle", "falle", "struktur", "struktur"]);
+  });
+});

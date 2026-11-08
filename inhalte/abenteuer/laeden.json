@@ -72,6 +72,11 @@
           "art": "gegenstand",
           "kennung": "lupe",
           "preis": 90
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "monatskarte",
+          "preis": 80
         }
       ]
     },

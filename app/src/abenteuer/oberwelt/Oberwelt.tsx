@@ -10,7 +10,9 @@
  * eine Begegnung starten, dann baut diese Datei den Partieauftrag und übergibt ihn den Diensten.
  * Alles, was passiert (Karte betreten, Knoten erreicht, Partie beendet), geht als Ereignis an die
  * Quest-Auswertung (regeln/quests.ts), deren Wirkungen hier in den Spielstand kommen.
- * Noch offen (Schritt 8c ff.): Karten in der Partie, Kipppunkt, Aufgabenrunden.
+ * Nach einer Niederlage sucht die App den Kipppunkt (Regelwerk R14); die Ergebniskarte bietet
+ * dann den Wiedereinstieg an, der dieselbe Begegnung ab dieser Stellung neu startet (R15, R20).
+ * Noch offen (Schritt 8f ff.): Aufgabenrunden, Namenswahl, Abenteuerwertung.
  * Abhängigkeiten: oberwelt/szene.ts, oberwelt/Steuerkreuz.tsx, oberwelt/Tagebuch.tsx,
  * dialog/Dialog.tsx, daten/laden.ts, paket/paketlader.ts, regeln/gegnerstaerke.ts,
  * regeln/quests.ts, modul/abenteuer.tsx (Dienste).
@@ -33,8 +35,8 @@ import { besteNadel, clubnadel, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import type { Gegnerprofil, Gegnerzustand } from "../schnittstelle/gegnerprofil";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
-import type { Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
-import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
+import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
+import type { Abenteuerstand, Partiekarten, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { GRUNDSTELLUNG, farbeAus } from "../anbindung/partiestart";
 import { Deckwahl } from "./Deckwahl";
@@ -121,6 +123,49 @@ function auftragFuer(
   };
 }
 
+/** Wer in einer FEN am Zug ist (zweites Feld); fehlt es, Weiß. */
+function amZugIn(fen: string): "white" | "black" {
+  return fen.split(" ")[1] === "b" ? "black" : "white";
+}
+
+/**
+ * Darf nach dieser Niederlage ein Wiedereinstieg angeboten werden (Regelwerk R14, Punkte 1, 5,
+ * 6)? Nur ganze Partien, nur einmal je Begegnung, nicht nach einem verlorenen Wiedereinstieg.
+ */
+function wiedereinstiegMoeglich(
+  ergebnis: Partieergebnis,
+  begegnung: string,
+  daten: Spieldaten,
+  stand: Abenteuerstand,
+): boolean {
+  if (ergebnis.ausgang !== "niederlage") return false;
+  const b = daten.begegnungen.find((x) => x.kennung === begegnung);
+  if (!b || b.format.art !== "partie") return false;
+  if (stand.partiekarten?.wiedereinstieg) return false;
+  return !stand.protokoll.some(
+    (p) => p.wiedereinstieg && p.ergebnis.kennung.split("#")[0] === begegnung,
+  );
+}
+
+/**
+ * Karten des Wiedereinstiegs (Regelwerk R15): Bis zum Kipppunkt gespielte Karten bleiben
+ * gespielt; dauerhafte Karten, die erst danach kamen, kehren ins Deck zurück, verbrauchte nicht.
+ */
+function kartenFuerWiedereinstieg(
+  vorherige: Partiekarten | null,
+  gespielt: readonly Kartenspiel[],
+  kipppunkt: Kipppunkt,
+  sorten: readonly Kartensorte[],
+): { deck: readonly string[]; gespielt: readonly Kartenspiel[] } {
+  const bisKipppunkt = gespielt.filter((k) => k.halbzug <= kipppunkt.halbzug);
+  const zurueck = gespielt
+    .filter((k) => k.halbzug > kipppunkt.halbzug)
+    .filter((k) => sorten.find((s) => s.kennung === k.kennung)?.art === "dauerhaft")
+    .map((k) => k.kennung);
+  const deck = [...new Set([...(vorherige?.deck ?? []), ...zurueck])];
+  return { deck, gespielt: bisKipppunkt };
+}
+
 /** Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. */
 async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
   const daten = await ladeSpieldaten();
@@ -186,6 +231,10 @@ export function Oberwelt() {
   const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
   // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
   const [neueNadel, setzeNeueNadel] = useState<Nadelstufe | null>(null);
+  // Kipppunkt der zuletzt verlorenen Partie: „suche“ während Ambrose nachsieht (Regelwerk R14).
+  const [kipppunkt, setzeKipppunkt] = useState<Kipppunkt | "suche" | null>(null);
+  // Deck und gespielte Karten der gerade beendeten Partie, für den Wiedereinstieg (R15).
+  const vorherigeKarten = useRef<Partiekarten | null>(null);
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
   // Der aktuelle Stand für Rückrufe aus Phaser und Dialogen, die nicht neu gerendert werden.
   const standRef = useRef(stand);
@@ -282,6 +331,14 @@ export function Oberwelt() {
                 ]
               : aktuell.clubs;
           setzeNeueNadel(nadel);
+          vorherigeKarten.current = aktuell.partiekarten;
+          if (wiedereinstiegMoeglich(e, begegnung, daten, aktuell)) {
+            setzeKipppunkt("suche");
+            void dienste
+              .sucheKipppunkt(kennung)
+              .then((k) => setzeKipppunkt(k))
+              .catch(() => setzeKipppunkt(null));
+          }
           schreibe({
             ...(standRef.current ?? aktuell),
             clubs,
@@ -293,6 +350,7 @@ export function Oberwelt() {
                 ergebnis: e,
                 ort: aktuell.position.karte.split(".")[0] ?? "",
                 gegner: b?.gegner ?? begegnung,
+                wiedereinstieg: aktuell.partiekarten?.wiedereinstieg ?? false,
               },
             ],
           });
@@ -443,12 +501,16 @@ export function Oberwelt() {
    * und zählen als gespielt (Halbzug 0, Regelwerk R24, R26); Position und laufende Partie werden
    * gesichert, dann übernimmt die App.
    */
-  const startePartie = (auftrag: Partieauftrag, deck: readonly string[]) => {
+  const startePartie = (
+    auftrag: Partieauftrag,
+    deck: readonly string[],
+    schonGespielt: readonly Kartenspiel[] = [],
+  ) => {
     const aktuell = standRef.current ?? stand;
     const sorten = (welt?.daten.karten ?? []) as unknown as readonly Kartensorte[];
     const gegnerfarbe = auftrag.farbe === "white" ? "black" : "white";
     let startstellung = auftrag.startstellung;
-    const vorher: Kartenspiel[] = [];
+    const vorher: Kartenspiel[] = [...schonGespielt];
     let karten = aktuell.karten;
     for (const kennung of deck) {
       const sorte = sorten.find((s) => s.kennung === kennung);
@@ -487,6 +549,33 @@ export function Oberwelt() {
     void dienste
       .schreibeStand(mitPartie)
       .then(() => dienste.startePartie({ ...auftrag, startstellung, deck: { karten: deck } }));
+  };
+
+  /**
+   * Wiedereinstieg (Regelwerk R14): dieselbe Begegnung ab dem Kipppunkt, gleiches Profil und
+   * gleicher Zustand, Farbe aus dem Zugrecht der Stellung, Karten nach R15.
+   */
+  const starteWiedereinstieg = (e: Partieergebnis, k: Kipppunkt) => {
+    const aktuell = standRef.current ?? stand;
+    if (!welt) return;
+    const begegnung = e.kennung.split("#")[0] ?? "";
+    const auftrag = auftragFuer(begegnung, welt.daten, aktuell, dienste.wertung());
+    if (!auftrag) return;
+    const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
+    const karten = kartenFuerWiedereinstieg(vorherigeKarten.current, e.gespielteKarten, k, sorten);
+    setzeErgebnis(null);
+    setzeNeueNadel(null);
+    setzeKipppunkt(null);
+    startePartie(
+      {
+        ...auftrag,
+        farbe: amZugIn(k.fen),
+        format: { art: "wiedereinstieg", vorherigeKennung: e.kennung },
+        startstellung: { art: "fen", fen: k.fen },
+      },
+      karten.deck,
+      karten.gespielt,
+    );
   };
 
   /** Dialog zu Ende: Variablen sichern, dann eine angestoßene Partie starten (ggf. Deck wählen). */
@@ -585,12 +674,27 @@ export function Oberwelt() {
           {ergebnis.momente.length > 0 && (
             <p>{tSpiel("ergebnis.momente", { anzahl: ergebnis.momente.length })}</p>
           )}
+          {kipppunkt === "suche" && <p className="lade">{tSpiel("ergebnis.kipppunktSuche")}</p>}
+          {kipppunkt && kipppunkt !== "suche" && (
+            <>
+              <p>{tSpiel("ergebnis.kipppunkt", { zug: Math.floor(kipppunkt.halbzug / 2) + 1 })}</p>
+              <button
+                type="button"
+                className="knopf-haupt"
+                onClick={() => starteWiedereinstieg(ergebnis, kipppunkt)}
+                data-testid="abenteuer-wiedereinstieg"
+              >
+                {tSpiel("ergebnis.nochEinmal", { zug: Math.floor(kipppunkt.halbzug / 2) + 1 })}
+              </button>
+            </>
+          )}
           <button
             type="button"
-            className="knopf-haupt"
+            className={kipppunkt && kipppunkt !== "suche" ? "knopf-zweit" : "knopf-haupt"}
             onClick={() => {
               setzeErgebnis(null);
               setzeNeueNadel(null);
+              setzeKipppunkt(null);
             }}
           >
             {tSpiel("ergebnis.weiter")}

@@ -25,7 +25,7 @@ import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import type { Gegnerprofil, Gegnerzustand, Gerechnetestaerke } from "./gegnerprofil";
 import type { Paketzustand } from "./paket";
-import type { Partieauftrag, Partieergebnis } from "./partie";
+import type { Kipppunkt, Partieauftrag, Partieergebnis } from "./partie";
 import type { Abenteuerstand } from "./spielstand";
 
 /** Kennung der Zusatzansicht in app/zusatzansichten.ts; der Wert ist frei für die Oberwelt. */
@@ -77,6 +77,11 @@ export interface Appdienste {
   readonly liesErgebnis: (kennung: string) => Promise<Partieergebnis | null>;
   /** Öffnet eine noch laufende Partie des Abenteuers wieder (Kennung des Partieauftrags). */
   readonly zeigePartie: (kennung: string) => void;
+  /**
+   * Sucht in einer verlorenen Partie den Kipppunkt (Regelwerk R14) mit der Engine der App; null,
+   * wenn es keinen gibt oder die Partie nicht mehr in der App liegt.
+   */
+  readonly sucheKipppunkt: (kennung: string) => Promise<Kipppunkt | null>;
   /** Startet eine Aufgabenrunde in der App; das Ergebnis kommt beim Rückweg. */
   readonly starteAufgaben: (auftrag: Aufgabenauftrag) => Promise<void>;
   readonly liesAufgabenergebnis: (kennung: string) => Promise<Aufgabenergebnis | null>;

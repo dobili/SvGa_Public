@@ -82,6 +82,8 @@ export interface Protokolleintrag {
   /** Ort und Rolle, damit das Clubtagebuch die Partie einordnen kann. */
   readonly ort: string;
   readonly gegner: string;
+  /** War diese Partie ein Wiedereinstieg (R14: einmal je Begegnung)? Fehlend: nein. */
+  readonly wiedereinstieg?: boolean;
 }
 
 /**

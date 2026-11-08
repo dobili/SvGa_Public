@@ -17,14 +17,31 @@ import { neuePartie } from "../../spiel/partie";
 import { aktuelleWertung } from "../../spiel/wertung";
 import { useMaiaAktiv } from "../../ui/komponenten/einstellungen/maiastand";
 import { neueKennung } from "../../ui/komponenten/spielstart/spielwahl";
+import { auswertungsEngine } from "../../engine/engineDienst";
+import { wertFuer } from "../../engine/fallenurteil";
 import { ladePaket, paketzustand } from "../paket/paketlader";
 import type { Appdienste } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
 import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
+import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
+
+/** Rechenzeit und Tiefe je Stellung bei der Kipppunktsuche (klein, damit das Angebot schnell kommt). */
+const KIPPPUNKT_MS = 600;
+const KIPPPUNKT_TIEFE = 10;
+
+/** Bewertung einer Stellung aus Sicht des Lesers mit der Auswertungs-Engine der App. */
+const bewerteFuerKipppunkt: Bewerter = async (fen, farbe) => {
+  const bewertung = await auswertungsEngine.bewerte(fen, KIPPPUNKT_MS, 1, {
+    art: "tiefe",
+    tiefe: KIPPPUNKT_TIEFE,
+  });
+  const wert = bewertung.varianten[0]?.wert;
+  return wert ? wertFuer(wert, farbe) : 0;
+};
 
 /** Der letzte bekannte Paketzustand, damit `paket()` sofort antworten kann (Vertrag ist synchron). */
 let bekannterPaketzustand: Paketzustand = { art: "fehlt" };
@@ -90,11 +107,18 @@ export function useAppdienste(): Appdienste {
       liesErgebnis: async (kennung) => {
         const partie = findeAbenteuerpartie(kennung);
         const stand = standJetzt();
-        return partie ? partieergebnisAus(partie, [], stand?.held.name ?? "", new Date()) : null;
+        const gespielt = stand?.partiekarten?.gespielt ?? [];
+        return partie
+          ? partieergebnisAus(partie, gespielt, stand?.held.name ?? "", new Date())
+          : null;
       },
       zeigePartie: (kennung) => {
         const id = laufendePartieId(kennung);
         if (id) navigiere({ bildschirm: "partie", id });
+      },
+      sucheKipppunkt: async (kennung) => {
+        const partie = findeAbenteuerpartie(kennung);
+        return partie ? sucheKipppunkt(partie, bewerteFuerKipppunkt) : null;
       },
       // Aufgabenrunden mit Rückweg kommen mit den Spielsystemen (Schritt 8, Baustein F7).
       starteAufgaben: async () => {},

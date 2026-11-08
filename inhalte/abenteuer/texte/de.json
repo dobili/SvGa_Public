@@ -93,5 +93,8 @@
   "ergebnis.nadel.bronze": "Bronzenadel für {club}.",
   "ergebnis.karten": "Gespielte Karten: {anzahl}.",
   "tagebuch.nadeln": "Clubnadeln",
-  "tagebuch.keineNadeln": "Noch keine."
+  "tagebuch.keineNadeln": "Noch keine.",
+  "ergebnis.kipppunkt": "Ambrose: „Hier ist es passiert, in Zug {zug}. Noch einmal von hier?“",
+  "ergebnis.nochEinmal": "Noch einmal von Zug {zug}",
+  "ergebnis.kipppunktSuche": "Ambrose sieht sich die Partie an …"
 }

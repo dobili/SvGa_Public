@@ -419,6 +419,11 @@ Fahrrad 120). Die Pipeline verbietet Mentor-Zug, Sanduhr und Vorgaben in Läden 
 oben rechts in der Welt und im Tagebuch. Oberflächentest `abenteuer-laden.spec.ts`. Fahrkarten
 und Extras im Laden folgen mit der Schnellreise-Regel und der Anbindung an „Dein Aussehen“.
 
+**Riverton-Karten zusammengeführt (niedrig-1):** sieben Karten (Zedernwald, Bahndamm, Riverton
+außen, Pavillon, Bahnhofshalle, Wohnwagen, Schuppen), Übergang `zedernwald` in Cedar Creek. Offen
+für mittel-1: Uhr mit Klebeband, Fahrplantafel und Fundbüro-Schild aus 09, 5.4 stehen noch nicht
+in `orte.json` (Dinge zum Ansehen für Riverton, mit dem nächsten Dialogauftrag).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

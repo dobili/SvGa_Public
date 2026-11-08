@@ -718,3 +718,14 @@ bestanden, die sechs Karten nicht mehr übersprungen.
 - `summit-city-bergstation`: `fundMurmeltierpfeife`, `haraldsen`; `skifahrerin`.
 - `summit-city-bergladen`: `theke`, `sol`; `kunde`.
 - `desert-springs-aussen`: `highway` rechts am Straßenrand (Kachel 31/10), Rand dort offen.
+
+**Teil 2: Weg 8 und Crossroads (4 Karten, gepusht).** 520 Tests bestanden.
+
+- `weg-summit-crossroads-geysirbecken`: Geysirkegel (Wand), `tafel`, `fundBisonhaar`, `bisons`
+  (Herde als Gegenstand), `bell`; `rangerin`, `touristen`, `bison`, `rabe`.
+- `weg-summit-crossroads-praerie`: Weizenfeld oben, Farmhaus, `sturmkeller`, `ray`; `sturmjaeger`,
+  `bauer`, `praeriehund`, `falke`.
+- `crossroads-aussen`: Kreuzung zweier Straßen, Raststätte (`raststaetteTuer`), Zapfsäulen,
+  `wegweiser`, `nova`, `slick`, `mira`, `bigJoe` am Gehweg; `fernfahrer`, `reisende`, `tankwart`,
+  `streuner` (folgt), `kraehe`.
+- `crossroads-raststaette`: Theke, `variantenTisch`, `postkarten`, `darlene`, `rosie`; `kellnerin`.

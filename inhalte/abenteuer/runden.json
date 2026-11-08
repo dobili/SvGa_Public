@@ -244,6 +244,40 @@
         "abZug": 1,
         "seite": "white"
       }
+    },
+    {
+      "kennung": "wegDelacroixDesert.tafel",
+      "ort": "wegDelacroixDesert",
+      "steller": "wegDelacroixDesert.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "desertSprings.reiheTomas",
+      "ort": "desertSprings",
+      "steller": "desertSprings.tomas",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a10", "ueb:taktik-a11"],
+      "themen": ["mattbilder", "hinlenkung"]
+    },
+    {
+      "kennung": "desertSprings.reiheDot",
+      "ort": "desertSprings",
+      "steller": "desertSprings.dot",
+      "reihe": true,
+      "buchuebungen": ["ueb:morphy-opfer-checkliste", "ueb:taktik-a14"],
+      "themen": ["doppelschach", "abzug"]
+    },
+    {
+      "kennung": "desertSprings.siegel",
+      "ort": "desertSprings",
+      "steller": "desertSprings.okoro",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["fesselung"],
+      "anzahl": 1
     }
   ]
 }

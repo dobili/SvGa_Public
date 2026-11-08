@@ -1135,6 +1135,172 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegDelacroixDesert.tafelCanyon",
+      "titel": "quest.tafelCanyon.titel",
+      "typ": "raetsel",
+      "ort": "wegDelacroixDesert",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegDelacroixDesert.canyonpfad",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelCanyon.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegDelacroixDesert.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.versoehnung",
+      "titel": "quest.versoehnung.titel",
+      "typ": "haupt",
+      "ort": "desertSprings",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegDelacroixDesert.canyonpfad"
+      },
+      "schritte": [
+        {
+          "text": "quest.versoehnung.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.mira_stein"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.miraStein"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.versoehnung_abend"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.versoehnung"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.reiheTomas"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt4",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.reiheDot"
+          }
+        },
+        {
+          "text": "quest.versoehnung.schritt5",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "desertSprings.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.clubnadelDesertSprings"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt6",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-aussen.abend_motel"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.abendMotel"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt7",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-aussen.bahnhof_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.ende"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.brief",
+      "titel": "quest.brief.titel",
+      "typ": "raetsel",
+      "ort": "desertSprings",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "desert-springs-garage.dot_okoro"
+      },
+      "schritte": [
+        {
+          "text": "quest.brief.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.siegel"
+          }
+        },
+        {
+          "text": "quest.brief.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-antiquariat.okoro_brief"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 7
+            },
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

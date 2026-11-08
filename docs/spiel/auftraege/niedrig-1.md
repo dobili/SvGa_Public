@@ -1,8 +1,6 @@
 # Auftrag niedrig-1: Tiled-Karten für Cedar Creek
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, vierter Auftrag; die Kartenprüfung aus dem dritten
-Auftrag ist zusammengeführt, der Befund `treppeOben` ist erledigt: Auslöser haben jetzt ein
-optionales Feld `karte`, siehe `inhalte/abenteuer/README.md`)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/cedar-creek-*.json` (neu, vier Dateien),
@@ -55,3 +53,87 @@ Weitere Städte, Grafik, Änderungen an Maple Falls.
 ## Bericht
 
 (vom Helfer auszufüllen)
+
+Zweig: `abenteuer-aufgabenzuordnung`. Vier Karten neu: `cedar-creek-aussen.json` (28 × 20),
+`cedar-creek-bibliothek.json` (16 × 12), `cedar-creek-archiv.json` (14 × 10),
+`cedar-creek-waschsalon.json` (12 × 10), alle Objekte mit den Namen aus der Vorgabe. Prüfungen:
+292 Pipeline-Tests bestanden, 0 übersprungen; ruff, Prettier und Paketbau sauber.
+
+- Teständerung (erlaubt, weil eine Regel fehlte): `start` gilt im Test jetzt immer als erklärt.
+  Cedar Creek hat in `orte.json` keinen Auslöser `start` (nur `bushaltestelle` mit Art `start`),
+  das README nennt `start` aber als Standardeinstieg jeder Karte. Alternative: `start` in
+  `orte.json` bei Cedar Creek eintragen, dann kann die Ausnahme im Test wieder weg.
+- Wasser: Der Platzhalter-Kachelsatz hat keine Wasserkachel (1–8). Der Bach rechts auf der
+  Außenkarte ist deshalb aus Wandkacheln (2), der Steg eine Kiste (3) am Ufer. Beim Tausch der
+  Grafik braucht es eine Wasserkachel mit Kollision.
+- `bushaltestelle` und `start` liegen auf derselben Kachel, das Schild `busZurueck` direkt darüber
+  (betretbar, also ein Auslöser zum Draufgehen; soll es Kollision haben, dort eine Lampe setzen).
+- Die Türen auf der Außenkarte liegen in den Hauswänden, nicht am Kartenrand; innen liegen alle
+  Übergänge am Rand.
+
+Skizzen (Legende wie beim zweiten Auftrag; `#` Wand, im Bach rechts Wasser, `T` Weg, `K` Kiste,
+`L` Lampe, `F` Fenster; Kleinbuchstaben Auslöser mit Anfangsbuchstaben, bei `start` und
+`bushaltestelle` sichtbar nur einer; Großbuchstaben Figuren: `V` victor, `R` rosa, `O` okafor,
+`D` dex, `M` mae, `B` boateng; im Waschsalon `t` = trockner):
+
+```text
+cedar-creek-aussen.json
+############################
+#                      #####
+#         #########    #####
+#         ##F###F##    #####
+#         #########    #####
+#         #########    #####
+#         ####b####    #####
+#  b      p   T        #####
+#  b          T     V  #####
+#TTTTTTTTTTTTTTTTTTTTTT#####
+#TTTTTTTTTTTTTTTTTTTTTT#####
+#     T               s#####
+#     T         R  L   #####
+#  ###w###             #####
+#  #F###F#             #####
+#  #######             #####
+#  #######             #####
+#  #######             #####
+#                      #####
+############################
+
+cedar-creek-bibliothek.json
+####F######F####
+#          O  L#
+# KKKKK   KKK  #
+# KKKKK        #
+#              #
+#              k
+#  KKD         #
+#              #
+#  KK    KKM   #
+#              #
+#       s      #
+########b#######
+
+cedar-creek-archiv.json
+##k###########
+# s         L#
+#          p #
+#    KKKKK   #
+#            #
+#            #
+#    KKkKK   #
+#            #
+#KK          #
+##############
+
+cedar-creek-waschsalon.json
+###F####F###
+# KKKKKKKK #
+#          #
+#K         #
+#K    KKB  #
+#t         #
+#K         #
+#         L#
+#     s    #
+######w#####
+```

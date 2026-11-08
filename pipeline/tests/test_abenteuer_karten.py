@@ -75,7 +75,8 @@ def test_genau_ein_start_mit_richtung(ort: dict, eintrag: dict):
 
 @pytest.mark.parametrize(("ort", "eintrag"), _mit_befund(BEFUNDE_ERKLAERT))
 def test_ausloeser_und_figuren_erklaert(ort: dict, eintrag: dict):
-    erklaert = {a["name"] for a in ort["ausloeser"]}
+    # start ist laut README immer der Standardeinstieg, auch ohne Eintrag in orte.json.
+    erklaert = {"start"} | {a["name"] for a in ort["ausloeser"]}
     figuren = {f["kennung"].split(".", 1)[1] for f in ort["figuren"]}
     for objekt in k.objekte(_karte(eintrag)):
         if objekt.figur:

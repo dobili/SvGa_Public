@@ -3,7 +3,8 @@
 //
 // Szenen der Story-Bibel (Abschnitt 11): 30 Pops’ Zeitungsstand (Laden riverton.zeitungsstand),
 // 31 Der Uhrmacher (Begegnung riverton.harlan, Wahl der Zeitklasse), 35 Flashback London 1851
-// (Runde riverton.flashbackLondon, Quest riverton.flashbackLondon, erst nach den Bildschirmtischen),
+// (die Uhr reist in die Erinnerung erinnerungLondon, dort am Schachtisch die Runde
+// riverton.flashbackLondon; Quest riverton.flashbackLondon, erst nach den Bildschirmtischen),
 // Rätsel Mr. Odums letzte Aufgabe (Runde riverton.odumAufgabe, Quest riverton.odum).
 // Einstiege wie in orte.json: harlan, pops, zug, uhr, zeitungsstand, fund_zeitungsausschnitt,
 // fund_taubenfeder.
@@ -118,10 +119,10 @@ Die große Uhr schlägt. Draußen leuchten die Bildschirmtische im Regen. #sprec
 Ich war einmal jünger als du jetzt. Fast. London, 1851. #sprecher:ambrose #stimmung:fern
 Ein Kaffeehaus am Strand, Zeitungsleser, Kaffeeduft. Hinter zwei Spielern stand ein junger Mann, der nicht atmen wollte. #sprecher:ambrose
 Das war ich. #sprecher:ambrose
-Herr Anderssen spielte gegen Herrn Kieseritzky. Spiel mit mir nach, was ich sah. #sprecher:ambrose
-Du hast Weiß. #sprecher:ambrose
+Komm mit. Ich zeige dir, was ich sah. Schließ die Augen und hör der Uhr zu. #sprecher:ambrose
 * [„Zeig es mir.“]
-    ~ beginneAufgaben("riverton.flashbackLondon")
+    Die Uhr schlägt noch einmal, langsamer. Die Bahnhofshalle verblasst zu einem braunen Bild. #sprecher:erzaehler
+    ~ reise("erinnerungLondon.strand", "ankunft")
     -> END
 * [„Später.“]
     Später. Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. #sprecher:ambrose

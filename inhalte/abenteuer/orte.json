@@ -1314,6 +1314,89 @@
           "themen": ["fesselung", "spiess"]
         }
       }
+    },
+    {
+      "kennung": "erinnerungLondon",
+      "name": "ort.erinnerungLondon.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "erinnerung",
+      "karten": [
+        {
+          "kennung": "erinnerungLondon.strand",
+          "datei": "karten/erinnerung-london-strand.json",
+          "name": "ort.erinnerungLondon.strand",
+          "innen": false
+        },
+        {
+          "kennung": "erinnerungLondon.kaffeehaus",
+          "datei": "karten/erinnerung-london-kaffeehaus.json",
+          "name": "ort.erinnerungLondon.kaffeehaus",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "erinnerungLondon.zeitungsjunge",
+          "name": "figur.zeitungsjunge.name",
+          "sprite": "figuren/zeitungsjunge.png",
+          "dialog": "erinnerung-london.zeitungsjunge"
+        },
+        {
+          "kennung": "erinnerungLondon.kellner",
+          "name": "figur.kellner.name",
+          "sprite": "figuren/kellner.png",
+          "dialog": "erinnerung-london.kellner"
+        },
+        {
+          "kennung": "erinnerungLondon.zeitungsleser",
+          "name": "figur.zeitungsleser.name",
+          "sprite": "figuren/zeitungsleser.png",
+          "dialog": "erinnerung-london.zeitungsleser"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "ankunft",
+          "art": "start"
+        },
+        {
+          "name": "kaffeehausTuer",
+          "art": "uebergang",
+          "dialog": "erinnerung-london.kaffeehaus_betreten",
+          "ziel": {
+            "karte": "erinnerungLondon.kaffeehaus",
+            "ausloeser": "tuer"
+          }
+        },
+        {
+          "name": "tuer",
+          "karte": "erinnerungLondon.kaffeehaus",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "erinnerungLondon.strand",
+            "ausloeser": "kaffeehausTuer"
+          }
+        },
+        {
+          "name": "droschke",
+          "karte": "erinnerungLondon.strand",
+          "art": "gegenstand",
+          "dialog": "erinnerung-london.droschke"
+        },
+        {
+          "name": "schachtisch",
+          "karte": "erinnerungLondon.kaffeehaus",
+          "art": "gegenstand",
+          "dialog": "erinnerung-london.schachtisch"
+        },
+        {
+          "name": "rueckkehr",
+          "karte": "erinnerungLondon.kaffeehaus",
+          "art": "dialog",
+          "dialog": "erinnerung-london.rueckkehr"
+        }
+      ]
     }
   ]
 }

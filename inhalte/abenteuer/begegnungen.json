@@ -166,6 +166,58 @@
       "startstellung": { "art": "grundstellung" },
       "kartenErlaubt": true,
       "zeit": "wahl"
+    },
+    {
+      "kennung": "wegIronwoodSilicon.joggerin",
+      "gegner": "wegIronwoodSilicon.joggerin",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "4.41" },
+      "kartenErlaubt": true,
+      "zeit": { "sekunden": 180, "zuschlag": 2 }
+    },
+    {
+      "kennung": "siliconBay.dash",
+      "gegner": "siliconBay.dash",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "1.19" },
+      "kartenErlaubt": true,
+      "zeit": { "sekunden": 180, "zuschlag": 2 }
+    },
+    {
+      "kennung": "wegSiliconDelacroix.schiffskoch",
+      "gegner": "wegSiliconDelacroix.schiffskoch",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "6.25" },
+      "kartenErlaubt": true,
+      "zeit": { "sekunden": 600, "zuschlag": 5 }
+    },
+    {
+      "kennung": "portDelacroix.batiste",
+      "gegner": "portDelacroix.batiste",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "6.5" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "desertSprings.buck",
+      "gegner": "desertSprings.buck",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "1.36" },
+      "kartenErlaubt": true,
+      "zeit": { "sekunden": 180, "zuschlag": 2 }
+    },
+    {
+      "kennung": "portDelacroix.celeste",
+      "gegner": "portDelacroix.celeste",
+      "farbe": "white",
+      "format": { "art": "partie" },
+      "startstellung": { "art": "grundstellung" },
+      "kartenErlaubt": true
     }
   ]
 }

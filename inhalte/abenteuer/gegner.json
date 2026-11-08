@@ -426,6 +426,188 @@
         { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
         { "art": "fleck", "wert": "roentgen" }
       ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon.joggerin",
+      "name": "figur.joggerin.name",
+      "rolle": "strasse",
+      "portraet": "portraets/joggerin.webp",
+      "immunGegen": ["grossesMaul"],
+      "staerke": { "art": "aktuell", "versatz": -100 },
+      "gewichte": { "schlagreflex": 1.4 },
+      "stil": "draufgaenger",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "draufgaenger" },
+        { "art": "fehlerart", "wert": "schlagreflex" }
+      ]
+    },
+    {
+      "kennung": "siliconBay.dash",
+      "name": "figur.dash.name",
+      "rolle": "strasse",
+      "portraet": "portraets/dash.webp",
+      "immunGegen": ["grossesMaul", "ablenkung"],
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "drohungIgnoriert": 1.5, "schlagreflex": 1.3 },
+      "stil": { "angreifer": 110, "draufgaenger": 90 },
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "angreifer" },
+        { "art": "fehlerart", "wert": "drohungIgnoriert" }
+      ]
+    },
+    {
+      "kennung": "siliconBay.nova",
+      "name": "figur.nova.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/nova.webp",
+      "staerke": { "art": "aktuell", "versatz": 50 },
+      "gewichte": { "ungenau": 0.7 },
+      "stil": "universell",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Sicilian Defense"],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        { "art": "eroeffnung", "wert": "praxis:Sicilian Defense" },
+        { "art": "stil", "wert": "universell" }
+      ]
+    },
+    {
+      "kennung": "siliconBay.theo",
+      "name": "figur.theo.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/theo.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "tempoverlust": 1.4, "koenigMitte": 1.2 },
+      "stil": "positionsspieler",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "positionsspieler" },
+        { "art": "fehlerart", "wert": "tempoverlust" }
+      ]
+    },
+    {
+      "kennung": "wegSiliconDelacroix.schiffskoch",
+      "name": "figur.schiffskoch.name",
+      "rolle": "strasse",
+      "portraet": "portraets/schiffskoch.webp",
+      "immunGegen": ["ablenkung"],
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "falscherAbtausch": 1.4 },
+      "stil": "vereinfacher",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "vereinfacher" },
+        { "art": "fehlerart", "wert": "falscherAbtausch" }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.batiste",
+      "name": "figur.batiste.name",
+      "rolle": "strasse",
+      "portraet": "portraets/batiste.webp",
+      "immunGegen": ["kuehlerKopf", "gruebelfalle", "grossesMaul", "ablenkung"],
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigPassiv": 1.3, "bauernzugOhneNot": 0.7 },
+      "stil": "verteidiger",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "koenigPassiv" }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.remy",
+      "name": "figur.remy.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/remy.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigsschild": 1.4 },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:King's Gambit"],
+        "abweichung": 20
+      },
+      "steckbrief": [
+        { "art": "stil", "wert": "angreifer" },
+        { "art": "eroeffnung", "wert": "praxis:King's Gambit" },
+        { "art": "fehlerart", "wert": "koenigsschild" }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.lou",
+      "name": "figur.lou.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/lou.webp",
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "bauernvorstoss": 1.5 },
+      "stil": "positionsspieler",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "positionsspieler" },
+        { "art": "fehlerart", "wert": "bauernvorstoss" }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.celeste",
+      "name": "figur.celeste.name",
+      "rolle": "story",
+      "portraet": "portraets/celeste.webp",
+      "staerke": { "art": "aktuell", "versatz": -300 },
+      "gewichte": { "figurHaengen": 2, "ungenau": 1.5 },
+      "stil": "universell",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [{ "art": "fehlerart", "wert": "figurHaengen" }]
+    },
+    {
+      "kennung": "desertSprings.buck",
+      "name": "figur.buck.name",
+      "rolle": "strasse",
+      "portraet": "portraets/buck.webp",
+      "staerke": { "art": "aktuell", "versatz": -100 },
+      "gewichte": { "schlagreflex": 1.5 },
+      "stil": "angreifer",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "angreifer" },
+        { "art": "fehlerart", "wert": "schlagreflex" }
+      ]
+    },
+    {
+      "kennung": "desertSprings.tomas",
+      "name": "figur.tomas.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/tomas.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigPassiv": 1.3 },
+      "stil": "verteidiger",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "koenigPassiv" }
+      ]
+    },
+    {
+      "kennung": "desertSprings.dot",
+      "name": "figur.dot.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/dot.webp",
+      "staerke": { "art": "aktuell", "versatz": 50 },
+      "gewichte": { "taktikUebersehen": 1.2 },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Queen's Gambit Declined"],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
+        { "art": "stil", "wert": "positionsspieler" }
+      ]
     }
   ]
 }

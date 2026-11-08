@@ -729,3 +729,13 @@ bestanden, die sechs Karten nicht mehr übersprungen.
   `wegweiser`, `nova`, `slick`, `mira`, `bigJoe` am Gehweg; `fernfahrer`, `reisende`, `tankwart`,
   `streuner` (folgt), `kraehe`.
 - `crossroads-raststaette`: Theke, `variantenTisch`, `postkarten`, `darlene`, `rosie`; `kellnerin`.
+
+**Teil 3: Weg 9 und Pinewood Camp (3 Karten, gepusht).** 535 Tests bestanden.
+
+- `weg-crossroads-pinewood-huetten`: zwei Wanderhütten, Holzstapel, `tafel`; `wanderin`, `baer`
+  (abend, weicht aus), `reh`.
+- `weg-crossroads-pinewood-riesenbaeume`: Riesenbäume als Kistenblöcke, `rangerhaus`, `greta`;
+  `ranger`, `eichhoernchen`, `specht`.
+- `pinewood-camp-aussen`: vier Hütten, See unten links, Kanus, `lagerfeuer`, `kiosk`, `ezra`,
+  `hollis`, `dex`, `mae`, `lou`, `tamsin`; `betreuer` (abend), `kanufahrer`, `campkinder`,
+  `libellen`, `reh`, `froesche` (abend).

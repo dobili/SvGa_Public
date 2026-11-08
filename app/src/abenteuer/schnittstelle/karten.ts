@@ -52,8 +52,11 @@ export type Kartenwirkung =
   | { readonly art: "zeitnot"; readonly zuege: number }
   /** Ein Werkzeug des Buches auf die Stellung (docs/spiel/11, K2, K6), etwa „k5-bauern“. */
   | { readonly art: "werkzeug"; readonly werkzeug: string }
-  /** Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei vor der Partie (S7). */
-  | { readonly art: "drohung" | "waage" | "remis" | "schmeichelei" }
+  /**
+   * Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei vor der Partie (S7), Farbwahl
+   * (Idee des Autors, 8.11.2026: die eigene Farbe wählen, wo die Geschichte keine festlegt).
+   */
+  | { readonly art: "drohung" | "waage" | "remis" | "schmeichelei" | "farbwahl" }
   /** Wiedereinstieg am Kipppunkt ohne Abzug bei der Clubnadel (Post-Game, Entscheidung B2). */
   | { readonly art: "sanduhr" };
 

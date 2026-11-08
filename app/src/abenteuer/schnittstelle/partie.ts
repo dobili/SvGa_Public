@@ -82,6 +82,8 @@ export interface Partieauftrag {
   readonly uhr: { readonly sekunden: number; readonly zuschlag: number } | null;
   /** Darf der Leser die Bedenkzeit vor der Partie wählen (Begegnung „zeit“: „wahl“)? */
   readonly zeitwahl?: boolean;
+  /** Wird die Farbe ausgelost (Begegnung „farbe“: „zufall“)? Dann darf die Karte Farbwahl sie bestimmen. */
+  readonly farbeFrei?: boolean;
 }
 
 /**

@@ -580,5 +580,11 @@
   "quest.versoehnung.schritt7": "Geh zum Bahnhof, wenn du abreisen willst.",
   "quest.brief.titel": "Der Brief",
   "quest.brief.schritt1": "Löse im Antiquariat die Stellung auf dem Siegel.",
-  "quest.brief.schritt2": "Lies den Brief mit Ambrose."
+  "quest.brief.schritt2": "Lies den Brief mit Ambrose.",
+  "karte.farbwahl.name": "Farbwahl",
+  "karte.farbwahl.spruch": "Weiß oder Schwarz? Heute entscheidest du, nicht der Zufall.",
+  "karte.farbwahl.erklaerung": "Wo die Farbe sonst ausgelost wird, wählst du sie selbst. Übe mit der Farbe, deren Eröffnungen du besser kennst, oder mit der, die du lernen willst. Kapitel 2, Eröffnung: Mit Weiß hast du das erste Tempo.",
+  "deck.farbe": "Deine Farbe",
+  "deck.farbe.white": "Weiß",
+  "deck.farbe.black": "Schwarz"
 }

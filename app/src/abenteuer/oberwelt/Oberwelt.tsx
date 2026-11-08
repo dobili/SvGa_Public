@@ -776,9 +776,14 @@ export function Oberwelt() {
           sprueche={spruecheErlaubt(deckwahl.profil.rolle)}
           zeitwahl={deckwahl.zeitwahl === true}
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
-          beiWahl={(deck, zeit) =>
+          farbeFrei={deckwahl.farbeFrei === true}
+          beiWahl={(deck, zeit, farbe) =>
             startePartie(
-              deckwahl.zeitwahl ? { ...deckwahl, uhr: ZEITKLASSEN[zeit] } : deckwahl,
+              {
+                ...deckwahl,
+                ...(deckwahl.zeitwahl ? { uhr: ZEITKLASSEN[zeit] } : {}),
+                ...(farbe ? { farbe } : {}),
+              },
               deck,
             )
           }

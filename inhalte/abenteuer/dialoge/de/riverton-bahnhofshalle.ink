@@ -22,7 +22,6 @@ VAR harlanGetroffen = false
 VAR ausgangRivertonHarlan = ""
 VAR siegeRivertonHarlan = 0
 VAR lupeGeschenkt = false
-VAR hatLupe = false
 VAR popsGetroffen = false
 VAR bildschirmtischeGesehen = false
 VAR flashbackLondonBestanden = false
@@ -42,15 +41,11 @@ VAR taubenfederGefunden = false
 }
 
 // Nach drei Siegen schenkt Harlan seine Lupe (docs/spiel/05, Szene 31a; Quest riverton.lupe gibt
-// den Gegenstand). Wer sie schon im Zeitungsstand gekauft hat, bekommt dafür sein Lob.
+// den Gegenstand); nur so, nicht im Laden (Antwort des Autors zu Q20-3).
 === harlan_lupe ===
 ~ lupeGeschenkt = true
 Dreimal. Das hat seit dem Bahnstreik keiner geschafft. #sprecher:harlan
-{hatLupe:
-    Ah, Sie haben schon eine Lupe. Pops verkauft meine alten. Dann behalten Sie sie mit meinem Segen. #sprecher:harlan
-- else:
-    Er nimmt die Lupenbrille ab und legt sie dir in die Hand. „Wer genau hinsieht, braucht keine Eile.“ #sprecher:erzaehler
-}
+Er nimmt die Lupenbrille ab und legt sie dir in die Hand. „Wer genau hinsieht, braucht keine Eile.“ #sprecher:erzaehler
 Vor jeder Partie wirst du jetzt mehr über deinen Gegner wissen. Vorbereitung ist ein halber Sieg. #sprecher:ambrose
 -> END
 

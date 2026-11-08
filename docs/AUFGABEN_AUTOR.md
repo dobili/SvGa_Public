@@ -129,11 +129,12 @@ Adresse mit „#abenteuer“ öffnen).
       Morphy (1858, ab Zug 17 mit Schwarz). Geschafft ab der Hälfte der Züge. In Riverton führt die Uhr zuerst
       in die Erinnerung selbst: London in Sepia, du läufst als junger Ambrose über den Strand ins Kaffeehaus
       (ohne Tagebuch und Münzen), am Schachtisch beginnt das Raten, die Uhr im Kaffeehaus bringt dich zurück.
-- [ ] N2623. Lupe des Uhrmachers (Zeitungsstand Riverton, 90 Münzen): Mit ihr erscheint vor jeder Partie in
-      „Karten für die Partie“ der Abschnitt „Was die Lupe verrät“: zwei Zeilen aus dem Steckbrief des Gegners
-      (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen. Neu: Nach
-      drei Siegen gegen Mr. Harlan schenkt er dir die Lupe (Quest „Die Lupe des Uhrmachers“); hast du sie schon
-      gekauft, lobt er dich nur.
+- [ ] N2623. Lupe des Uhrmachers: Gewinne dreimal gegen Mr. Harlan (Bahnhofshalle Riverton); beim nächsten Gespräch
+      schenkt er dir seine Lupe (Quest „Die Lupe des Uhrmachers“; im Laden gibt es sie nicht). Danach erscheint vor
+      jeder Partie in „Karten für die Partie“ der Abschnitt „Was die Lupe verrät“: zwei Zeilen aus dem Steckbrief
+      des Gegners (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen.
+      Neu ist auch die Karte „Farbwahl“ (Kiosk, 10 Münzen): Wo die Farbe sonst ausgelost wird, wählst du Weiß
+      oder Schwarz selbst.
 - [ ] N2624. Monatskarte (Zeitungsstand Riverton, 80 Münzen): Draußen erscheint unter „Tagebuch“ der Knopf „Reisen“.
       Er listet alle Städte, die du schon besucht hast (nicht die aktuelle); ein Tipp bringt dich an den Anfang
       der Stadt, ohne die Wege zu laufen. In Häusern und Erinnerungen gibt es den Knopf nicht.
@@ -1174,73 +1175,27 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
-Zum Abhaken gibt es alle Punkte dieses Teils auch als Seite mit „Empfehlung folgen“, „Nein“ und Notiz
-(Wunsch des Autors, 8.11.2026): https://claude.ai/artifact/Kumk513LwSbbDJ3wJ2aJC3 (privat, nur für
-dich). Claude liest die Antworten von dort und arbeitet sie hier ein.
+Antworten des Autors zu Fragen der App über die Entscheidungsseite (8.11.2026, für den App-Chat;
+der Spiel-Chat ändert an der App nichts): Q10-1 ja (Notiz: Farbwahl im Spiel als Karte, ist im
+Spiel umgesetzt), Q10-2 Rückfrage „Betrifft das die Anzeige im Spiel oder unter Profil?“, Q10-3 ja,
+Q10-4 ja, Q10-5 ja, Q11-1 Rückfrage „Erläuter mir das bitte“, Q12-4 ja, Q16-1 ja.
 
-### Q20 Schach-Abenteuer: Entscheidungen vom 8.11.2026 (schon umgesetzt oder empfohlen, Widerspruch genügt)
+Zum Abhaken gibt es die Fragen zum Schach-Abenteuer auch als Seite mit „Empfehlung folgen“, „Nein“
+und Notiz (Wunsch des Autors, 8.11.2026): https://claude.ai/artifact/Kumk513LwSbbDJ3wJ2aJC3 (privat,
+nur für dich). Der Spiel-Chat liest die Antworten von dort und arbeitet sie hier ein.
 
-- [ ] Q20-1. **Limo für Jo auch nach einem Sieg:** Die Bibel wollte die Limo-Quest nur nach einer Niederlage. Weil
-      man die Limo jetzt am Kiosk kauft, startet sie nach dem ersten Duell gleich wie es ausging, und Jo ist danach
-      „analysiert“. Empfehlung: so lassen. Schon umgesetzt.
-- [ ] Q20-2. **Ablenkung im Laden:** Die Regel „Zeitkarten nie im Laden“ (Z4) gilt nur für Sprüche, die die Uhr
-      ändern; „Ablenkung“ (der nächste Zug des Gegners hastig) bleibt für 10 Münzen im Kiosk. Schon umgesetzt.
-- [ ] Q20-3. **Lupe des Uhrmachers zweimal erreichbar:** für 90 Münzen im Zeitungsstand Riverton und als Geschenk
-      von Mr. Harlan nach drei Siegen (wie in der Bibel). Schon umgesetzt.
-- [ ] Q20-4. **Balancing nach der Münzrechnung von mittel-2:** Fahrrad nicht im ersten Laden, Kartentasche 450
-      statt 300, „Was droht?“ 60 statt 45, Remisangebot nicht im Clubkampf, Straßensiege nur beim ersten Sieg je
-      Gegner und Tag 10 Münzen (danach 2). Schon umgesetzt.
-- [ ] Q20-5. **Geburtsort Ambroses:** geboren und aufgewachsen in Port Delacroix (Klavierwerkstatt), Schach in den
-      Kaffeehäusern von New Orleans. Empfehlung so übernehmen (Story-Bibel ist angepasst).
-- [ ] Q20-6. **Hurrikan und Jahreszeit in Akt 3:** Der Hurrikan war im letzten Spätsommer; Akt 3 zeigt den
-      Wiederaufbau im nassen Winter, damit der Ton Hoffnung bleibt statt Katastrophe. Empfehlung so übernehmen.
-- [ ] Q20-7. **Wer erhebt in Akt 3 den Vorwurf (Schummeln)?** Empfehlung: Remy, ein Kind aus der Stadt, das dem
-      Konzern misstraut; nicht Nova und kein Erwachsener. Er entschuldigt sich später (Szene 69).
-- [ ] Q20-8. **Nova bleibt in Akt 3 ohne Auflösung:** Der Held schweigt aus Rücksicht; den Beweis legt er in Akt 4
-      zusammen mit Dr. Lin vor. Empfehlung so übernehmen.
-- [ ] Q20-9. **Erinnerung mit einer Partie vor 1850:** Für den Flashback in Akt 3 die Sammlung der Klassiker um eine
-      gemeinfreie Partie aus den 1830er Jahren erweitern; bis dahin der Anfang der Unsterblichen. Empfehlung so.
-- [ ] Q20-10. **Céleste ohne Bekehrung:** Sie bleibt ohne Schachinteresse; genau das ist die Lehre für Ambrose.
-      Empfehlung so übernehmen.
-- [ ] Q20-11. **Echte Grafik auch online:** Die veröffentlichte App wird auf GitHub gebaut. Damit die gekauften
-      Bilder (Q17) dort ankommen, braucht der GitHub-Bau einen Lesezugang zum privaten Repository (ein „Deploy Key“,
-      den du in GitHub einträgst; ich schreibe die Anleitung, sobald das Repository da ist). Empfehlung: ja.
+### Q17 Grafik für das Schach-Abenteuer (8.11.2026; deine Antworten vom 8.11. abends eingearbeitet)
 
-### Q19 Weitere Karten und Gegenstände im Schach-Abenteuer (8.11.2026, großteils umgesetzt, Widerspruch genügt)
-
-- [ ] Q19-1. **Grundsätze:** Karten ändern nie die Zugregeln, nur Informationen, Zeit oder die Startstellung; jede
-      Karte lehrt eine Frage aus dem Buch; Gold gibt es nur ohne Karten; starke Karten (Vorgaben, Mentor-Zug) bleiben
-      unverkäuflich. Nicht geplant sind Karten, die Figuren verschieben, Züge verbieten oder den König schützen.
-- [ ] Q19-2. **Schon gebaut (N2620), dein „je mehr, desto besser“:** 16 neue Karten und die Kartentasche, siehe
-      N2620. Noch offen aus der Liste: „Was droht?“ (leicht, zeigt als roten Pfeil, was der Gegner spielen würde, wenn
-      er jetzt am Zug wäre; Kapitel 4 und 12) und „Abzählen“ (leicht, ein Feld antippen: Angreifer und Verteidiger;
-      Kapitel 1). Danach „Limo“ (Geschenk für Straßengegner, 5 Münzen, bringt eine Steckbriefzeile) und der Spruch
-      „Schmeichelei“ (Gegner wird überheblich und spielt schwächer).
-- [ ] Q19-3. **Später:** „Remisangebot“ (Gegner nimmt bei ausgeglichener Stellung an), „Schutzengel“ (fünf Züge lang
-      fragt die App „Bist du sicher?“, wenn ein Zug Material verliert), „Waage“ (wer steht besser, ohne Zahl),
-      „Spickzettel“ (Eröffnung des Gegners vorab), „Auszeit“ (eigene Uhr hält einen Zug). Gegenstände: Lupe des
-      Uhrmachers (zwei Steckbriefzeilen vor jeder Partie), Kartentasche (vier statt drei Karten, ab Akt 3, 300
-      Münzen), Reisebrett (überall eine Übungspartie gegen Ambrose oder Juno), Partienotizbuch (drei Schlüsselmomente
-      je Partie im Tagebuch), Monatskarte (Schnellreise).
-- [ ] Q19-4. **Brücke zum Buch:** Wer in der App ein Kapitel abschließt, bekommt im Spiel dessen Karte geschenkt
-      (Kapitel 1 → Abzählen, Kapitel 4 → Gefahrenradar, Kapitel 12 → Was droht?). Ambrose: „Das hast du nicht im
-      Park gelernt, sondern im Buch.“
-
-### Q17 Grafik für das Schach-Abenteuer (8.11.2026, Entscheidung nötig, nichts umgesetzt)
-
-- [ ] Q17-1. **Kacheln und Figuren kaufen.** Der Prototyp läuft mit farbigen Platzhalterkacheln. Für den Look der späten
-      DS-Pokémon (deine Antwort vom 7.11.) empfehle ich die Pixelpakete von LimeZu auf itch.io: „Modern Interiors“
-      (Innenräume, Figuren, Möbel) und „Modern Exteriors“ (Stadt, Park, Straßen), zusammen etwa 20 bis 30 Euro, Lizenz
-      für kommerzielle Spiele, Weitergabe der Grafiken verboten. Deshalb dürfen sie nicht ins öffentliche Repository:
-      Sie liegen wie die Buchquellen in einem privaten Repository (Vorschlag: `dobili/schach-abenteuer-inhalte`), lokal
-      unter `app/inhalte-privat/`, und der Paketbau nimmt sie, wenn sie da sind, sonst die Platzhalter. Diesen Weg baue
-      ich schon vor; kaufen und das private Repository anlegen kannst nur du. Sag Bescheid, wenn beides da ist, dann
-      zeichnet niedrig-1 die Karten damit nach.
-- [ ] Q17-2. **Porträts der Figuren** (Ambrose, Coach Delgado, Sam, Juno, Mrs. Okafor, Victor …) für die Dialoge:
-      Empfehlung ist ein einheitlicher Stil, gezeichnet nach Vorlage (Pixel-Porträt 64 × 64 oder gezeichnet in
-      der Optik der App). Ohne Zeichner bleibt es bei Namen und Farbfeld. Wenn du selbst zeichnen oder jemanden
-      fragen willst, brauche ich pro Figur ein PNG; die Liste der Figuren steht in `inhalte/abenteuer/orte.json`.
-      Für Ambrose zusätzlich eine junge Fassung (20 Jahre, für die Erinnerungen) und ein Laufbild als Held.
+- [ ] Q17-1. **Kacheln und Figuren kaufen:** Deine Antwort: ja. Offen ist nur der Kauf: die Pixelpakete
+      „Modern Interiors“ und „Modern Exteriors“ von LimeZu auf itch.io (zusammen etwa 20 bis 30 Euro, Lizenz für
+      kommerzielle Spiele, Weitergabe der Bilddateien verboten) und ein privates Repository
+      `dobili/schach-abenteuer-inhalte` für die Bilder. Sag Bescheid, wenn beides da ist; dann richte ich den
+      Paketbau und den Lesezugang des GitHub-Baus ein (Q20-11, von dir bestätigt).
+- [ ] Q17-2. **Porträts:** Deine Frage, ob ich sie selbst erstellen kann: ja. Die Pixel-Porträts entstehen per
+      Skript aus einer Beschreibung je Figur (Haar, Hautton, Kleidung, Brille, Bart, Alter) mit dem Stil
+      „Pixel Art“ von DiceBear (frei, CC0, wie schon die Porträts der Bots der App mit DiceBear entstehen); für
+      Ambrose zusätzlich eine junge Fassung. Bilder aus dem Netz umzuwandeln empfehle ich nicht: Auch verfremdet
+      bleiben sie urheberrechtlich geschützt. Schon beauftragt, Widerspruch genügt.
 
 ### Q16 Aussehen im Profil (7.11.2026, schon umgesetzt, Widerspruch genügt)
 

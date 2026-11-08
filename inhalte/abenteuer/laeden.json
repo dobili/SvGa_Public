@@ -35,6 +35,11 @@
           "art": "karte",
           "kennung": "roentgenblick",
           "preis": 30
+        },
+        {
+          "art": "karte",
+          "kennung": "farbwahl",
+          "preis": 10
         }
       ]
     },
@@ -67,11 +72,6 @@
           "art": "karte",
           "kennung": "remisangebot",
           "preis": 35
-        },
-        {
-          "art": "gegenstand",
-          "kennung": "lupe",
-          "preis": 90
         },
         {
           "art": "gegenstand",

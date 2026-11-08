@@ -92,12 +92,12 @@
           }
         },
         {
-          "description": "Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei (S7, vor der Partie: Gegner überheblich)",
+          "description": "Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei (S7, vor der Partie: Gegner überheblich), Farbwahl (vor der Partie die eigene Farbe wählen, nur wo die Geschichte keine Farbe festlegt)",
           "type": "object",
           "additionalProperties": false,
           "required": ["art"],
           "properties": {
-            "art": { "enum": ["drohung", "waage", "remis", "schmeichelei"] }
+            "art": { "enum": ["drohung", "waage", "remis", "schmeichelei", "farbwahl"] }
           }
         }
       ]

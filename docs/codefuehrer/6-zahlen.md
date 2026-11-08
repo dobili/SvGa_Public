@@ -12,8 +12,8 @@
 | Stufen der Erfahrung | 10 (von „Erster Zug“ bis „Meisterplan“) |
 | Texte der Oberfläche | rund 5 000, auf Deutsch und Englisch mit denselben Schlüsseln |
 | Dateien im App-Code (ohne Tests) | rund 940 mit zusammen etwa 117 000 Zeilen |
-| Testdateien | 290 neben dem Code (Vitest) und 64 Oberflächentests (Playwright) |
-| Datenformat auf dem Gerät | Version 7 |
+| Testdateien | 338 neben dem Code (Vitest) und 77 Oberflächentests (Playwright), Stand 0.3.54 |
+| Datenformat auf dem Gerät | Version 10 (Stand 0.3.54) |
 
 ## Gemessene Tabellen
 

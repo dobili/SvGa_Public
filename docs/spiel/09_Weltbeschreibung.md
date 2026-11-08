@@ -91,6 +91,45 @@ Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
 
 Tiere laufen auf kurzen Wegen, weichen dem Helden aus und sind nie Kollision.
 
+## 4a. Was die Menschen tun (und was die Tiere tun)
+
+Eine Welt wirkt lebendig, wenn jeder Ort einen Alltag hat, der ohne den Helden weiterläuft.
+Deshalb hat jede Karte neben den Handlungsfiguren **Statisten mit Tätigkeit** (Objekte
+`type = "statist"` mit `tun` und Laufweg) und **Tiere mit Verhalten** (`type = "tier"`). Beides
+ohne Spielwirkung, aber mit einem Satz, wenn man sie anspricht. Regel: Die Tätigkeit passt zum
+Ort, zur Tageszeit und zum Wirtschaftszweig des Ortes; nichts steht nur herum.
+
+| Ort            | Woher die Leute leben               | Was man sieht (Statisten, Tätigkeit)                                                                                                            | Tiere und ihr Verhalten                                                                                       |
+| -------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Maple Falls    | Schule, Diner, Ahornsirup, Pendler  | Briefträgerin auf Runde, Kind mit Ball vor der Schule, Mann harkt Laub, Kellnerin wischt Tische im Diner, Skater im Park, Rentner auf der Bank  | Eichhörnchen hortet Nüsse, Enten folgen, wer stehen bleibt, Katze schläft auf der Veranda, Krähen fliegen auf |
+| Route 1        | Felder, Hof, Angler                 | Bauer auf Traktor (fährt hin und her), Joggerin, Radfahrer überholt, Angler am Steg, Wanderer mit Karte                                         | Rehe am Waldrand (morgens), Kühe am Zaun, Reiher fliegt auf, Hase läuft weg                                   |
+| Cedar Creek    | Bibliothek, Waschsalon, Holz, Rente | Mr. Boateng faltet Wäsche, Leserin mit Bücherstapel, Kinder auf der Bibliothekstreppe, Mann repariert Steg, Busfahrer raucht an der Haltestelle | Hund wartet vor dem Waschsalon und wedelt, Reiher steht still, Motten um die Lampe, Eichelhäher ruft          |
+| Riverton       | Bahn, Hafen am Fluss, Markt         | Pendler mit Schirmen, Straßenmusiker unter der Brücke, Parkschachspieler mit Uhr (klopfen), Zeitungsverkäufer, Kinder springen in Pfützen       | Tauben picken und fliegen auf, Möwen streiten um Pommes, Ratten huschen an der Bahn                           |
+| Ironwood       | Stahlwerk, Kneipe, Reihenhäuser     | Schichtwechsel am Werkstor (Gruppen laufen), Frau trägt Kohle, Kinder spielen Straßenschach mit Kreide, Mann füttert Tauben, Kantinenkoch       | Werkskatze schläft am Ofen, Krähen auf Trägern, Fledermäuse abends                                            |
+| Silicon Bay    | Konzern, Cafés, Lieferdienste       | Alle schauen auf Bildschirme, Lieferroboter rollt, Wachmann, Besucher mit Namensschildern, niemand spielt am Brett                              | nur Drohne und Staubsaugerroboter (Absicht: die Stadt hat keine Tiere)                                        |
+| Old Harbor     | Fischerei, Fähre, Kneipe            | Fischer flicken Netze, Kistenträger, Kapitänin am Kai, Kinder angeln, Kellner stapelt Stühle gegen den Sturm                                    | Möwen klauen Fisch, Seehund taucht auf und ab, Krabben am Kai, Hafenkatze lauert                              |
+| Desert Springs | Motel, Diner, Tankstelle, Touristen | Tankwart, Motelputzfrau, Mira mit Schachbuch im Schatten, Touristen fotografieren, Mann wartet auf den Bus                                      | Eidechsen sonnen sich und huschen weg, Roadrunner rennt vorbei, Geier kreisen                                 |
+| Summit City    | Seilbahn, Hütten, Wanderer          | Wanderer mit Rucksack, Seilbahnwärter, Holzhacker, Ward mit Thermoskanne am Fenster                                                             | Murmeltier pfeift, Ziegen fressen, Adler zieht Kreise                                                         |
+| Crossroads     | Raststätte                          | Fernfahrer, Reisende aller Städte (Figuren aus früheren Orten tauchen wieder auf), Tankwart, Kellnerin                                          | streunender Hund, der den Helden ein Stück begleitet                                                          |
+| Pinewood Camp  | Camp, Betreuer                      | Kinder am See, Betreuer pfeift, Lagerfeuer am Abend, Kanus                                                                                      | Libellen, ein Reh am Seeufer, Frösche am Abend                                                                |
+| Ghost Town     | niemand                             | Wind, ein Plakat flattert, Staubteufel; ein alter Mann mit Metalldetektor als einzige Figur                                                     | Klapperschlange (Geräusch), Geier, eine Eule im Saloon                                                        |
+| Capital Arena  | Turnier                             | Zuschauer, Schiedsrichter, Reporter mit Mikrofon, Spieler mit Kopfhörern, Eltern mit Kaffee                                                     | keine, außer einem Hund im Publikum (Spielwitz)                                                               |
+
+**Tagesrhythmus:** Dieselbe Karte zeigt zu anderer Tageszeit andere Statisten: morgens
+Briefträgerin und Schulkinder, mittags Handwerker und Kundschaft, abends Spaziergänger und
+Lichter in den Fenstern, nachts fast niemand (nur die Szene, die nachts spielt). Technisch:
+Statisten tragen `wann` (morgen, tag, abend, nacht); die Oberwelt zeigt nur die passenden.
+
+**Tiere mit Tun:** Tiere haben ein Verhalten statt nur eines Laufwegs: `ausweichen` (läuft weg,
+wenn der Held näher als drei Kacheln kommt), `folgen` (Enten, Hund: ein Stück hinterher),
+`sitzen` (Katze, Reiher: ändert nur die Blickrichtung), `fliegen` (Krähen, Möwen: fliegen auf und
+kommen zurück). Ein angesprochenes Tier antwortet mit einem Geräusch im Dialogfenster („Quak.“).
+
+**Warum das zur Geschichte passt:** Die Tätigkeiten erzählen die Wirtschaft des Ortes und damit
+den Konflikt mit Perfect Move: In Riverton verlieren die Parkschachspieler ihren Platz, in
+Ironwood hängt der Club an der Kantine des Werks, in Silicon Bay tut niemand etwas mit den
+Händen. Wer die Statisten anspricht, hört davon in einem Satz.
+
 ## 5. Die Orte (Lage, Areale, Verbindungen, Innenräume)
 
 Je Ort: Bild in zwei Sätzen, Außenkarte(n), Innenräume mit Inventar, Verbindungen. Für Maple Falls
@@ -202,7 +241,8 @@ Arena als Halle mit Tribünen (Landesmeisterschaft). Details kommen mit der Bibe
 ## 7. Was die Technik dafür noch braucht (Haupt-Chat, nach Schritt 10)
 
 - Tönung je Karte und Szene (Phaser-Kamera-Tint), Lampen als Lichtkreise.
-- Tiere und Statisten als Objekte `type = "tier"` / `"statist"` mit Laufweg (zwei Punkte).
+- Tiere und Statisten als Objekte `type = "tier"` / `"statist"` mit Laufweg (zwei Punkte),
+  Tätigkeit `tun`, Tageszeit `wann` und Verhalten (ausweichen, folgen, sitzen, fliegen).
 - Animierte Kacheln (Tiled-Animationen werden von Phaser unterstützt) und Partikel (Regen, Rauch).
 - Bedingte Objektkacheln (`objekte`-Ebene mit Eigenschaft `wenn` = Dialogvariable).
 - Hintergrundgeräusch je Karte (`geraeusch` in `orte.json`), Musik gibt es schon.

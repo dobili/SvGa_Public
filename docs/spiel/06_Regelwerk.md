@@ -158,10 +158,12 @@ Bedingungen, alle nötig:
 
 Ablauf: neuer `Partieauftrag` mit `format: wiedereinstieg`, `startstellung: fen` des Kipppunkts, gleichem Profil, gleichem Zustand (keine neue Überheblichkeit), gleichem Deck. Folgen für die Clubnadel: R20. Gegen Straßengegner ohne Folgen.
 
+Umsetzung (Stand Schritt 8, `anbindung/kipppunkt.ts`, `oberwelt/auftraege.ts`): Die Suche geht vom Partieende rückwärts über die Stellungen mit dem Leser am Zug ab Halbzug 20 und nimmt die erste innerhalb ±1,0 Bauern. Bewertet werden höchstens 20 Stellungen mit der Auswertungs-Engine (Tiefe 10, höchstens 0,6 Sekunden je Stellung), damit das Angebot nach wenigen Sekunden kommt. Punkt 2 und 3 sind damit vereinfacht: Gesucht wird nicht ab dem größten Verlust, sondern ab dem Ende; in fast allen verlorenen Partien ist das dieselbe Stellung, weil nach dem entscheidenden Fehler keine Stellung mehr innerhalb ±1,0 liegt. Der Zug aus dieser Stellung ist Ambroses „Hier ist es passiert“ (ab 3 Bauern Verlust ein Patzer). Liegt keine der 20 Stellungen im Fenster, gibt es kein Angebot.
+
 ### R15 Karten im Wiedereinstieg
 
 - Karten, die in der verlorenen Partie bis zum Kipppunkt gespielt wurden, zählen für die Nadel weiter; dauerhafte Karten davon sind im Wiedereinstieg nicht noch einmal spielbar.
-- Karten, die nach dem Kipppunkt gespielt wurden, zählen nicht; verbrauchte Karten bleiben verbraucht.
+- Karten, die nach dem Kipppunkt gespielt wurden, zählen nicht. Dauerhafte Karten davon kehren ins Deck zurück und sind im Wiedereinstieg wieder spielbar; verbrauchte Karten bleiben verbraucht (`kartenFuerWiedereinstieg`).
 
 ### R16 Uhr
 
@@ -325,16 +327,33 @@ Daten aus `inhalte/abenteuer/karten.json`; Wirkung als Ablauf der Kartenleiste.
 
 - Buchübungen: alle in `club.aufgaben.buchuebungen` genannten, höchstens 3, je 120 Sekunden.
 - Motivaufgaben: (T · 60 − 120 · Zahl der Buchübungen) / Sekunden je Aufgabe, abgerundet, aus den `themen` des Clubs.
-- Gesamtzahl begrenzt auf 8 bis 15.
+- Gesamtzahl begrenzt auf 8 bis 15 (im Prototyp noch nicht umgesetzt; R30a rechnet ohne Grenze).
 - Beispiel Club 1 (T = 12, drei Buchübungen), A = 800: 3 Buchübungen + (720 − 360) / 60 = 6 Motivaufgaben = 9 Aufgaben. Mit T = 15: 3 + 9 = 12.
 - Das Spiel ist ohne Buch spielbar: Die Buchübungen kommen aus den Daten der App (Abbildung mit FEN), der Leser braucht das Buch nicht.
 
+### R30a Datenformat der Runden (`runden.json`, Schritt 8f)
+
+| Feld           | Bedeutung                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `kennung`      | Runde, wie sie Ink mit `beginneAufgaben(kennung)` und Quests mit Ereignis `aufgaben` nennen (`cedarCreek.reiheDex`) |
+| `ort`          | Ort, dessen Club das Zeitbudget liefert (`club.aufgaben.minuten` in `orte.json`)                                    |
+| `steller`      | Figur, die die Aufgaben stellt                                                                                      |
+| `reihe`        | `true`: Block der Aufgabenreihe vor dem Clubkampf; `false`: Nebenquest, Rätsel, Erinnerung                          |
+| `buchuebungen` | Labels der Buchübungen dieses Blocks, Teilmenge von `club.aufgaben.buchuebungen`                                    |
+| `themen`       | Themen der Motivaufgaben (Lichess-Zusatzaufgaben oder Buchmotive des Taktiktrainers); leer: nur Buchübungen         |
+| `anzahl`       | Feste Zahl der Motivaufgaben (Rätsel, Erinnerung); fehlt sie, gilt das Zeitbudget                                   |
+
+- Zeitbudget je Block: Motivaufgaben des Clubs nach R30 (Zeitbudget minus höchstens drei Buchübungen à 120 Sekunden, geteilt durch die Sekunden je Aufgabe), gleichmäßig auf die Blöcke mit `reihe: true` verteilt, abgerundet, mindestens eine. Beispiel Cedar Creek, 15 Minuten, Schwierigkeit 2, zwei Blöcke: (900 − 360) / 60 = 9, also 4 Motivaufgaben je Block plus die Buchübungen des Blocks.
+- Schwierigkeit: aus der Wertung der App (Tabelle R30), bis die Abenteuerwertung A (R2) gebaut ist; ohne Wertung Schwierigkeit 1.
+- Grenzen des Prototyps: (1) Es gibt noch kein „mit Hilfe“ (R31), Aufgaben zählen richtig 1 oder falsch 0. (2) Nur Buchübungen mit Lösungszug laufen in der Runde (sie liegen im Taktiktrainer); Zählübungen (`ueb:zaehlen-vorstoss`, `ueb:angriff-zaehlen`) und Mattführungen (`ueb:damenmatt`, `ueb:turmmatt`) fallen heraus. (3) Das Thema `zaehlen` hat noch keinen Trainer in der Runde. (4) Erinnerungen (Zugerraten) laufen vorerst als Mattbilder-Runde mit fester Zahl.
+
 ### R31 Verteilung, Bestehen, zweite Runde
 
-- Die Aufgaben kommen in Blöcken zu 4 bis 6 von den Clubmitgliedern (`club.mitglieder`), Buchübungen zuerst. Reichen die Mitglieder nicht, stellt der Clubchef den letzten Block.
+- Die Aufgaben kommen in Blöcken von den Figuren, die `runden.json` als `steller` nennt (in der Regel die Clubmitglieder), Buchübungen zuerst. Die Blockgröße folgt aus R30a; Richtwert 4 bis 6.
+- Alle Blöcke mit `reihe: true` eines Clubs bestanden → `Clubstand.aufgabenreihe`. Jeder Block wird einzeln bestanden und einzeln wiederholt.
 - Wertung je Aufgabe: richtig 1, mit Hilfe 0,5, falsch 0 (Stufen des Trainers der App).
 - Bestanden ab 70 Prozent der möglichen Punkte. Beispiel 9 Aufgaben: ab 6,3 Punkten, also etwa 6 richtige und eine mit Hilfe.
-- Nicht bestanden: Dasselbe Mitglied stellt eine zweite Runde mit neuen Aufgaben (keine aus der ersten), gleiche Zahl, Schwierigkeit eine Stufe niedriger (mindestens 1). Weitere Runden wie die zweite, ohne Grenze.
+- Nicht bestanden: Dasselbe Mitglied stellt eine zweite Runde mit neuen Aufgaben (keine aus der ersten), gleiche Zahl, Schwierigkeit eine Stufe niedriger (mindestens 1). Jeder weitere Versuch eine Stufe leichter als der vorige, mindestens 1, ohne Grenze („Noch eine Runde, eine Stufe leichter“).
 - Die bestandene Aufgabenreihe ist Voraussetzung für den Clubkampf (`Clubstand.aufgabenreihe`).
 - Erinnerungen Ambroses (Zugerraten, Entscheidung C3) folgen derselben 70-Prozent-Grenze, gezählt über die Züge der Partie, die der Leser errät.
 
@@ -346,7 +365,7 @@ Jede Aufgabenrunde im Spiel hat `zaehltFuerApp: true`: Sie läuft durch `NACH_DE
 
 ### R33 Story-Partie mit festem Verlauf: Victor zu Beginn
 
-- Victor (Rolle `story`, E + 500) spielt Weiß; der Leser übernimmt Schwarz in einer schon schlechten Stellung um Zug 12 (Bewertung −2,5 bis −4 Bauern aus Sicht des Lesers, Tiefe 12). Ambrose erzählt, wie es dazu kam („Du hast schon zwei Figuren verloren“). Die Stellung legt die Story-Bibel fest.
+- Victor (Rolle `story`, E + 500) spielt Weiß; der Leser übernimmt Schwarz in einer schon schlechten Stellung um Zug 12 (Bewertung −2,5 bis −4 Bauern aus Sicht des Lesers, Tiefe 12). Victor begründet die Stellung selbst („Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen.“, `maple-falls-clubraum.ink`, Knoten `victor_wartet`). Die Stellung steht fest: Begegnung `mapleFalls.victor` in `begegnungen.json` (Spanisch, Zug 12, Schwarz am Zug, ein Springer weniger). Die Engine-Prüfung des dritten Auftrags von mittel-2 ergab für die heutige Stellung etwa −6,5 bis −7 (außerhalb); ein Ersatz im Bereich steht im Bericht und wird nach Bestätigung des Haupt-Chats eingetragen.
 - Karten gesperrt, kein Wiedereinstieg, keine Überheblichkeit, keine Ablenkung, zählt weder für die App noch für A (`zaehltFuerApp: false`).
 - Jeder Ausgang führt die Story weiter, mit zwei Dialogvarianten: Niederlage → Victor herablassend, Ambrose tröstet („Er hat nicht dich besiegt, sondern diese Stellung“). Remis oder Sieg → Victor fassungslos („Glück gehabt“), Dialogvariable `victorUeberrascht` = 1, Sammelstück „Ambroses Notiz“ mit der Stellung.
 - Grund: Dokument 02, 2.7 verlangt, dass der Leser die Niederlage nicht als unfair erlebt; die schlechte Stellung erklärt sie, beide Varianten verhindern eine Sackgasse.
@@ -419,7 +438,16 @@ Eine Story-Partie zählt für A (R2) und für `eingangPartien` (R3), wenn alle g
 - Grundlage: Dokument 02, 2.1 (18 Stunden Hauptspiel) und `04_Architektur.md`, Abschnitt 5 (Clubbesuch 60 bis 90 Minuten ohne Wiederholungen).
 - Nachmessen: `spielzeitSekunden` reicht für die Summe; für die Tabelle braucht es die Spielzeit je Ort (Vorschlag V7). Liegt ein Testlauf des Autors um mehr als ein Drittel daneben, werden zuerst R30 (Aufgabenzahl) und R13 (Zugzahl der Duelle) angepasst, nicht die Stärke.
 
-## 9. Offene Fragen an den Autor
+## 9. Welt
+
+### R41 Reise zwischen Orten
+
+- Übergänge (`art: uebergang` in `orte.json`) verbinden nur Karten desselben Ortes.
+- Zwischen Orten reist der Held über einen Dialog: Die Ink-Szene ruft die externe Funktion `reise(karte, ausloeser)` auf, zum Beispiel an der Bushaltestelle im Park von Maple Falls `reise("cedarCreek.aussen", "bushaltestelle")` und in Cedar Creek am Auslöser `busZurueck` zurück zum Park. So kann die Geschichte die Reise erlauben oder verweigern („Heute fährt er ohne dich“).
+- Auslöser dürfen das Feld `karte` tragen, wenn derselbe Name auf mehreren Karten eines Ortes vorkommt oder ein Rückweg eindeutig sein muss; getrennte Namen je Seite (`bibliothekTuer` / `bibliothekAusgang`) gehen weiter.
+- Ein Pipeline-Test prüft, dass jedes `reise`-Ziel als Karte und Auslöser existiert.
+
+## 10. Offene Fragen an den Autor
 
 | Nr. | Frage                                                                                           | Empfehlung (schon so ins Regelwerk geschrieben, Widerspruch genügt)                                                                                                                  |
 | --- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

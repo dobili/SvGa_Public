@@ -76,6 +76,7 @@ interface OffenerDialog {
 export function Oberwelt() {
   const dienste = appdienste();
   const rahmen = useRef<HTMLDivElement>(null);
+  const kachelanzeige = useRef<HTMLSpanElement>(null);
   const spiel = useRef<Phaser.Game | null>(null);
   const [stand, setzeStand] = useState<Abenteuerstand | null>(() => dienste.liesStand());
   const [geladeneWelt, setzeWelt] = useState<Weltdaten | null>(null);
@@ -312,7 +313,13 @@ export function Oberwelt() {
           figurbild: w.figurbild,
           kachelsatz: KACHELSATZ,
           start: stand.position,
-          melder: { beiAusloeser: beiTreffer },
+          melder: {
+            beiAusloeser: beiTreffer,
+            // Kachel des Helden ohne Neuzeichnen in ein verstecktes Feld (Oberflächentests).
+            beiKachel: (x, y) => {
+              if (kachelanzeige.current) kachelanzeige.current.textContent = `${x},${y}`;
+            },
+          },
         });
       })
       .catch((f: unknown) => setzeFehler(f instanceof Error ? f.message : String(f)));
@@ -532,6 +539,7 @@ export function Oberwelt() {
   return (
     <div className="abenteuer-welt" data-testid="abenteuer-welt">
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
+      <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />
       <button
         type="button"
         className="abenteuer-tagebuchknopf"

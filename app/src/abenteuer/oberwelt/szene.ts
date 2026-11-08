@@ -44,6 +44,8 @@ export interface Ausloesertreffer {
 export interface Melder {
   /** Der Held steht auf einem Auslöser oder vor einer Figur, oder auf nichts (null). */
   readonly beiAusloeser: (treffer: Ausloesertreffer | null) => void;
+  /** Der Held hat eine neue Kachel erreicht (für Anzeige und Oberflächentests), nur bei Änderung. */
+  readonly beiKachel?: (x: number, y: number) => void;
 }
 
 /** Was die Szene zum Aufbau braucht. */
@@ -79,6 +81,8 @@ export class Oberweltszene extends Phaser.Scene {
   private blick: Richtung;
   private ausloeser: Ausloeser[] = [];
   private letzterAusloeser: string | null = null;
+  /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
+  private letzteKachel: string | null = null;
   /** Der Auslöser, auf dem der Held startet (Übergang zurück): erst melden, wenn er ihn verlässt. */
   private startAusloeserOffen = true;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
@@ -212,6 +216,16 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung === "unten") koerper.setVelocityY(TEMPO);
     }
     this.meldeAusloeser();
+    this.meldeKachel();
+  }
+
+  /** Meldet die Kachel des Helden nach oben, wenn sie sich geändert hat. */
+  private meldeKachel(): void {
+    const { x, y } = this.position();
+    const kachel = `${x},${y}`;
+    if (kachel === this.letzteKachel) return;
+    this.letzteKachel = kachel;
+    this.daten.melder.beiKachel?.(x, y);
   }
 
   /**

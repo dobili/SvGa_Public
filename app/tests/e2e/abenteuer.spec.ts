@@ -6,11 +6,22 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 
-/** Hält eine Pfeiltaste eine Weile; der Held läuft mit 56 Kachelpixeln je Sekunde. */
-async function laufe(seite: Page, taste: string, ms: number): Promise<void> {
+/** Die Kachel des Helden („x,y“), die die Oberwelt in ein verstecktes Feld schreibt. */
+async function kachel(seite: Page): Promise<string> {
+  return (await seite.getByTestId("abenteuer-kachel").textContent()) ?? "";
+}
+
+/**
+ * Hält eine Pfeiltaste, bis der Held die Zielkachel erreicht (höchstens 6 Sekunden). Feste
+ * Zeiten taugen nicht: WebKit auf dem iPhone zeichnet langsamer, der Held läuft dann kürzer.
+ */
+async function laufeBis(seite: Page, taste: string, ziel: string): Promise<void> {
   await seite.keyboard.down(taste);
-  await seite.waitForTimeout(ms);
-  await seite.keyboard.up(taste);
+  try {
+    await expect.poll(() => kachel(seite), { timeout: 6000 }).toBe(ziel);
+  } finally {
+    await seite.keyboard.up(taste);
+  }
 }
 
 test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
@@ -30,9 +41,11 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
 
-  // Der Held steht auf (2,7) und schaut nach oben; das Brett liegt auf (5,4): rechts, dann hoch.
-  await laufe(page, "ArrowRight", 900);
-  await laufe(page, "ArrowUp", 900);
+  // Der Held steht auf (2,7) und schaut nach oben; das Brett liegt auf (5,4): rechts bis (5,7),
+  // dann hoch bis (5,5), das Brett ist Kollision und liegt dann vor ihm.
+  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,7");
+  await laufeBis(page, "ArrowRight", "5,7");
+  await laufeBis(page, "ArrowUp", "5,5");
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 5000 });
   // WebKit auf dem iPhone lädt die Dialogdatei aus dem Zwischenspeicher manchmal langsam, und ein

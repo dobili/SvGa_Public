@@ -543,6 +543,12 @@ Quest-Wirkung `gegenstandWeg`; Limo (5 Münzen) im Kiosk. Die Dialoge der Limo-Q
 über der Welt, Ambrose (Figurbild) als Held, kein Tagebuch, keine Münzanzeige. London als begehbare
 Erinnerung bauen niedrig-1 (Karten) und mittel-1 (Ort, Dialoge).
 
+**Lupe des Uhrmachers (I1, 8.11.2026):** Gegenstand `lupe`, vorerst im Zeitungsstand Riverton für 90
+Münzen (die Szene 31a „Harlan nach drei Siegen“ braucht einen Zähler für Siege, der noch fehlt).
+Mit Lupe öffnet sich vor jeder Partie die Deckwahl und zeigt zwei Steckbriefzeilen und die
+Immunität gegen Sprüche (`oberwelt/steckbrieftext.ts`); damit steht die Immunität wie in S4
+verlangt vor der Partie sichtbar.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

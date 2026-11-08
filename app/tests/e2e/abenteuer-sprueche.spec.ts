@@ -92,6 +92,7 @@ test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
       { kennung: "abzaehlen", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" },
       { kennung: "waage", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" },
     ],
+    gegenstaende: ["lupe"],
   };
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
@@ -108,6 +109,8 @@ test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
     else if (await weiter.isVisible()) await weiter.click();
     else await page.waitForTimeout(100);
   }
+  // Die Lupe des Uhrmachers verrät Jos Steckbrief (ihr blinder Fleck: Rückzüge).
+  await expect(page.getByTestId("abenteuer-lupe")).toContainText("Rückzüge");
   await deckwahl.getByRole("button", { name: "Abzählen" }).click();
   await deckwahl.getByRole("button", { name: "Waage" }).click();
   await page.getByTestId("abenteuer-deck-los").click();

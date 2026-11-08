@@ -39,6 +39,19 @@ import {
   variablenNachFund,
 } from "../regeln/dialogvariablen";
 
+/** Gegenstand „Lupe des Uhrmachers“ (docs/spiel/11, I1): Steckbrief vor jeder Partie. */
+const LUPE = "lupe";
+
+/** Was die Lupe über einen Gegner verrät; leer ohne Lupe oder ohne Gegnerdaten. */
+function lupeFuer(
+  gegenstaende: readonly string[],
+  gegner: Weltdaten["daten"]["gegner"],
+  kennung: string,
+): readonly string[] {
+  const daten = gegenstaende.includes(LUPE) ? gegner.find((g) => g.kennung === kennung) : undefined;
+  return daten ? lupenzeilen(daten) : [];
+}
+
 /** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
 const FAHRRAD = "fahrrad";
 const FAHRRAD_TEMPO = 2;
@@ -58,6 +71,7 @@ import {
   wiedereinstiegMoeglich,
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
+import { lupenzeilen } from "./steckbrieftext";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
@@ -639,7 +653,8 @@ export function Oberwelt() {
       return;
     }
     if (!auftrag) return;
-    if ((auftrag.kartenErlaubt && neu.karten.length > 0) || auftrag.zeitwahl)
+    const mitLupe = neu.gegenstaende.includes(LUPE);
+    if ((auftrag.kartenErlaubt && neu.karten.length > 0) || auftrag.zeitwahl || mitLupe)
       setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);
   };
@@ -707,6 +722,7 @@ export function Oberwelt() {
           groesse={deckgroesse(stand.gegenstaende)}
           sprueche={spruecheErlaubt(deckwahl.profil.rolle)}
           zeitwahl={deckwahl.zeitwahl === true}
+          steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           beiWahl={(deck, zeit) =>
             startePartie(
               deckwahl.zeitwahl ? { ...deckwahl, uhr: ZEITKLASSEN[zeit] } : deckwahl,

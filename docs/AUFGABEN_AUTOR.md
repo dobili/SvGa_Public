@@ -129,6 +129,9 @@ Adresse mit „#abenteuer“ öffnen).
       Morphy (1858, ab Zug 17 mit Schwarz). Geschafft ab der Hälfte der Züge. In Riverton führt die Uhr zuerst
       in die Erinnerung selbst: London in Sepia, du läufst als junger Ambrose über den Strand ins Kaffeehaus
       (ohne Tagebuch und Münzen), am Schachtisch beginnt das Raten, die Uhr im Kaffeehaus bringt dich zurück.
+- [ ] N2623. Lupe des Uhrmachers (Zeitungsstand Riverton, 90 Münzen): Mit ihr erscheint vor jeder Partie in
+      „Karten für die Partie“ der Abschnitt „Was die Lupe verrät“: zwei Zeilen aus dem Steckbrief des Gegners
+      (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

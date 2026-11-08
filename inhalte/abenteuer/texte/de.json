@@ -470,5 +470,13 @@
   "figur.dot.name": "Dot",
   "figur.lin.name": "Dr. Lin",
   "figur.odile.name": "Miss Odile",
-  "figur.mira.name": "Mira"
+  "figur.mira.name": "Mira",
+  "steckbrief.titel": "Was die Lupe verrät",
+  "steckbrief.schwaeche": "Schwäche: {text}",
+  "steckbrief.stil": "Stil: {text}",
+  "steckbrief.eroeffnung": "Lieblingseröffnung: {text}",
+  "steckbrief.fleck.rueckzug": "Blinder Fleck: übersieht Rückzüge",
+  "steckbrief.fleck.roentgen": "Blinder Fleck: übersieht Angriffe durch andere Figuren hindurch",
+  "steckbrief.immun": "Diese Sprüche verpuffen hier: {karten}",
+  "gegenstand.lupe.name": "Lupe des Uhrmachers"
 }

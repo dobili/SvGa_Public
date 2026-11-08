@@ -26,6 +26,7 @@ export function Deckwahl({
   groesse = DECKGROESSE,
   sprueche = false,
   zeitwahl,
+  steckbrief = [],
   beiWahl,
   beiAbbruch,
 }: {
@@ -39,6 +40,8 @@ export function Deckwahl({
   readonly sprueche?: boolean;
   /** Darf der Leser die Bedenkzeit wählen? */
   readonly zeitwahl: boolean;
+  /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
+  readonly steckbrief?: readonly string[];
   readonly beiWahl: (deck: readonly string[], zeit: Zeitklasse) => void;
   readonly beiAbbruch: () => void;
 }) {
@@ -66,6 +69,16 @@ export function Deckwahl({
       data-testid="abenteuer-deckwahl"
     >
       <h2>{tSpiel("deck.titel")}</h2>
+      {steckbrief.length > 0 && (
+        <div className="abenteuer-steckbrief" data-testid="abenteuer-lupe">
+          <h3>{tSpiel("steckbrief.titel")}</h3>
+          <ul>
+            {steckbrief.map((zeile) => (
+              <li key={zeile}>{zeile}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       {zeitwahl && (
         <>
           <h3>{tSpiel("deck.zeit")}</h3>

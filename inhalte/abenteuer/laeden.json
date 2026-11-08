@@ -67,6 +67,11 @@
           "art": "karte",
           "kennung": "remisangebot",
           "preis": 35
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "lupe",
+          "preis": 90
         }
       ]
     },

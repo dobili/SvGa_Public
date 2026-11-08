@@ -5,38 +5,37 @@
 // Kapitel 1 bis 3, Straßengegnerin Nia (Jos Freundin, Blitz 3 + 2, Stellungsduell aus
 // Abbildung 3.77), Fund „altes Partieformular“ (E4, wird später im Archiv von Cedar Creek
 // entschlüsselt), Rastbank am Fluss, Ortsschild von Cedar Creek.
-// Einstiege: „tafel“, „wanderer“, „gegnerin“, „fund_formular“, „rast“, „schild_cedar“.
+// Einstiege: „tafel“, „wanderer“, „gegnerin“, „fund_formular“, „fund_muenzen“, „rast“,
+// „schild_cedar“.
 //
-// Kennungen: Die Schemas erlauben nur zwei Teile (ort.name); die Route heißt deshalb
-// „wegMapleCedar“, die Begegnung „wegMapleCedar.nia“ (Variable ausgangWegMapleCedarNia, R42) und
-// die Runde „wegMapleCedar.tafelLandstrasse“ (Variable tafelLandstrasseBestanden, eindeutig auch
-// mit weiteren Routen). Beide setzt die Hülle (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie
-// nicht gespielt (R35). gibFund kommt mit Schritt 11.
+// Kennungen (zweiteilig, wie die Schemas verlangen): Begegnung „wegMapleCedar.nia“ (Variable
+// ausgangWegMapleCedarNia, R42), Runde „wegMapleCedar.tafel“ (runden.json, Variable
+// tafelBestanden). Beide setzt die Hülle (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie
+// nicht gespielt (R35). gibFund kommt mit Schritt 11. Auslöser wie in orte.json: tafel,
+// fundFormular, rast, fundMuenzen, schildCedar; Figuren wanderer und gegnerin.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
-VAR tafelLandstrasseBestanden = false
+VAR tafelBestanden = false
 VAR wandererBesuche = 0
 VAR niaGetroffen = false
 VAR ausgangWegMapleCedarNia = ""
 VAR formularGefunden = false
+VAR muenzenGefunden = false
 
 // ---------------------------------------------------------------- Rätseltafel
 
 === tafel ===
-{tafelLandstrasseBestanden:
+{tafelBestanden:
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
     -> END
 }
 Am Ortsausgang hängt eine Holztafel mit drei Schachdiagrammen: „Matt in eins. Wer alle drei findet, kennt den Weg.“ #sprecher:erzaehler
 * [Die Aufgaben lösen]
-    // Die Runde fehlt noch in runden.json (Haupt-Chat, Schritt 10; Runden brauchen dort bisher
-    // einen Ort mit Club). Sobald sie da ist, hier einkommentieren:
     ~ beginneAufgaben("wegMapleCedar.tafel")
-    Du betrachtest die Diagramme eine Weile. Die Lösung musst du dir noch aufschreiben. #sprecher:erzaehler
     -> END
 * [Weitergehen]
     -> END
@@ -131,6 +130,17 @@ Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ gibFund("formular1857")
 Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen. #sprecher:ambrose #stimmung:traurig
 Heb es gut auf, {held}. #sprecher:ambrose
+-> END
+
+=== fund_muenzen ===
+{muenzenGefunden:
+    Die alte Kiste am Flussufer ist leer. #sprecher:erzaehler
+    -> END
+}
+~ muenzenGefunden = true
+Zwischen zwei Steinen am Ufer klemmt eine kleine Holzkiste. Darin klimpern Münzen. #sprecher:erzaehler
+~ gibFund("muenzenFlussweg")
+Ein Schatz am Wegrand. Zu meiner Zeit hätte man dafür ein Abendessen bekommen, mit Nachtisch. #sprecher:ambrose #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Rast und Schild

@@ -3130,7 +3130,8 @@
           "kennung": "ghostTown.victor",
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
-          "dialog": "ghost-town-saloon.victor"
+          "dialog": "ghost-town-saloon.victor",
+          "gegner": "summitCity.victor"
         }
       ],
       "ausloeser": [

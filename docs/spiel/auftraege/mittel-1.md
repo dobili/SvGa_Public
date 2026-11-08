@@ -53,7 +53,7 @@ Punkten in Ink (`ausgang<Begegnung>`).
   Finale (E + 700). Die Turnierstärken sind die Werte der Bronze-Liga; die Liga legt nach R22
   ihren Aufschlag darauf. Keiner ist gegen Sprüche immun (Bibel: keine Sprüche im Turnier, Sol
   nicht immun).
-- **4 Begegnungen** in `begegnungen.json`: `summitCity.clubkampf` (Wahl der Zeit, Karten erlaubt),
+- **5 Begegnungen** in `begegnungen.json`: `ghostTown.fernpartie` (Stellungsduell, siehe Entscheidung 4), `summitCity.clubkampf` (Wahl der Zeit, Karten erlaubt),
   `summitCity.victorFrei` (Grundstellung, ohne Uhr, Karten erlaubt), `summitCity.sol`
   (Stellungsduell 3 + 2), `pinewoodCamp.hollis` (Stellungsduell ohne Uhr).
 - **62 Textschlüssel** (Orte, Karten, Figuren, Club, `steckbrief.fleck.ruhig` für Marcus).
@@ -75,9 +75,11 @@ Punkten in Ink (`ausgang<Begegnung>`).
    Lagerfeuer, Turniertafel). Begegnungen für L1 bis L10, für die Vorrunde, das Halbfinale und das
    Finale folgen mit der neuen Technik (Bibel, Abschnitt 34). Die Gegnerprofile der Meisterschaft
    sind schon da.
-4. **Fernpartie ohne Begegnung:** Die Endspielstellung entsteht erst mit der Engine (Folgeauftrag
-   Fernpartie, mittel-2); Victor im Saloon hat deshalb noch keinen Gegner-Eintrag. Für die Partie
-   kann `summitCity.victor` (E + 400) dienen, wie es die Bibel verlangt.
+4. **Fernpartie (Nachtrag nach Bibel, Abschnitt 35):** Begegnung `ghostTown.fernpartie` als
+   Stellungsduell aus der Duell-FEN `6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41` (Turm gegen zwei
+   Springer, +1,44 bis +1,85 nach der Bibel), 15 Züge, Mindestvorteil 1,0, Leser Weiß, ohne Uhr,
+   Karten gesperrt. Gegner ist `summitCity.victor` (Story, E + 400); Victor im Saloon trägt diesen
+   Gegner. Fragment 8 (Ward, Erinnerung Hastings) fehlt noch, bis die Quests von Akt 4 stehen.
 5. **Anschluss an Akt 3:** Neue Auslöser in bestehenden Orten: `desertSprings.highway` (zum Weg 7,
    wenn `endeAkt3Gesehen`), `portDelacroix.bayou` (zum Bayou, wenn `musikhausOffen`) und die Figur
    `portDelacroix.blaeser` im Musikhaus (L1). Die Karten von Desert Springs und Port Delacroix sind
@@ -87,7 +89,7 @@ Punkten in Ink (`ausgang<Begegnung>`).
 6. **Flashback in Ghost Town:** Der Übergang `abzeichen` im Saloon führt nach dem Fund des
    Postreiterabzeichens (`abzeichenGefunden`) in die Erinnerung; `rueckkehr` führt zurück an
    dieselbe Stelle.
-7. **Porträts:** `portraets/<name>.svg` wie bisher; Victor und Nova nutzen ihre vorhandenen Bilder.
+7. **Porträts:** `portraets/<name>.svg` mit den Namen der 20 Porträts von mittel-2 (alle vorhanden); Victor und Nova nutzen ihre vorhandenen Bilder, Ray Castillo heißt als Figur `figuren/ray-castillo.png`.
 
 **Zu zeichnende Karten (für niedrig-1).** 25 Karten; je Karte ein `start` für die erste Karte eines
 Weges, sonst Ankunft an den genannten Objekten:

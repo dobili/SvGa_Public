@@ -325,6 +325,21 @@
         "nummer": "6.14"
       },
       "kartenErlaubt": true
+    },
+    {
+      "kennung": "ghostTown.fernpartie",
+      "gegner": "summitCity.victor",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 15,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41"
+      },
+      "kartenErlaubt": false
     }
   ]
 }

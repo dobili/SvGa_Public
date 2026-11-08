@@ -477,6 +477,15 @@ aufgelöst, neu „Die fehlende Seite“ (Hales Notizbuch) für Akt 4. Nachgezog
 Delacroix geboren (eine Tagesreise flussab von New Orleans, wo er später spielte), Old Harbor ist
 in 09 überall ersetzt.
 
+**Landschaften und ihre Varianten (Wunsch des Autors, 8.11.2026, 14 Uhr):** Zehn Nebenschauplätze
+nach Vorbildern aus den USA, jeder als Weg mit einer Schachvariante, die die Leute dort aus gutem
+Grund spielen (`10`, Abschnitt 3a; `09`, Abschnitt 5.9): Port Delacroix Schach960 (Jazz, nie zweimal
+dasselbe Stück), Wanderweg Blindschach (kein Brett im Rucksack), Canyon Drei-Schach (Echo),
+Geysire Atomschach, Sumpf Nebelschach, Prärie Entenschach („der Twister“), Leuchtturm König der
+Hügel, Wüstenstraße Königsrennen, Hochebene ein eigenes Spiel mit Falke und Bison, Bergstadt der
+Drache; Tandem und Räuberschach im Camp. Hauptstory und Clubs bleiben klassisch. Reihenfolge nach
+Aufwand: erst die Varianten der vorhandenen Engine, dann Fairy-Stockfish als Zusatzpaket.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

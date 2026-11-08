@@ -285,6 +285,17 @@ Straßen (alle Rivalen, Nebenquests, Varianten-Tisch); Pinewood Camp zwischen Ri
 Nationalpark (O3); Ghost Town als verlassene Goldgräberstadt mit Saloon und Friedhof (Ambroses
 Grab, Sepia auch am Tag); Capital Arena als Halle mit Tribünen (Landesmeisterschaft).
 
+### 5.9 Landschaften für Wege in Akt 3 und 4 (Wunsch des Autors, 8.11.2026)
+
+Vorbilder aus den USA, mit erfundenen Namen, je als Weg mit zwei Karten und einer eigenen
+Schachvariante (`10_Sprueche_Schauplaetze_Varianten.md`, Abschnitt 3a): Appalachen-Wanderweg
+„Long Ridge Trail“ (Hütten, Bärenspuren, Herbstlaub), Geysirbecken „Steamwell Basin“ (Dampf,
+Bisons, Holzstege), Sumpf „Bayou Noir“ (Luftboote, Nebel, Alligatoraugen), Prärie „Wide Plains“ in
+der Tornado-Saison (Weizen, Sturmjäger, Keller), Große Seen „Northlight“ (Leuchtturm, Fähre, Eis),
+Wüstenstraße „Old Mother Road“ (Diner, Motel, Neon), Felsentürme der Hochebene (das erfundene Volk,
+O5), Canyon „Echo Canyon“ vor Desert Springs, Nationalpark „Red Giants“ mit Riesenbäumen
+(Pinewood Camp). Wetter nur als Szene (Abschnitt 2), Tiere mit Verhalten (Abschnitt 4a).
+
 ## 6. Checkliste je Karte (für niedrig-1 beim Zeichnen)
 
 - [ ] Größe nach Abschnitt 3.6, Rand geschlossen außer an Übergängen.

@@ -98,6 +98,43 @@ Zur Abwechslung, nie Pflicht für die Hauptstory, meist in Crossroads (Rastort) 
   nicht für A (R37). Blindschach trainiert aber das Vorstellen von Stellungen (Kapitel 11,
   Varianten berechnen), das nennt Ambrose.
 
+## 3a. Landschaften als Wege, jede mit „ihrer“ Variante (L1 bis L10; Wunsch des Autors, 8.11.2026)
+
+Grundsatz: Die Hauptstory mit den Clubs bleibt klassisches Schach. Auf Nebenschauplätzen, meist
+Wegen zwischen den Städten (zwei Karten, Tafel, Funde, ein Straßengegner, eine arbeitende Figur),
+spielen die Leute eine Variante, die zu ihrer Landschaft passt, und erzählen, warum. Jede Variante
+lernt der Held dort kennen; danach steht sie am Varianten-Tisch in Crossroads. Belohnung Münzen,
+Funde, ein Extra; keine Nadeln, kein Einfluss auf Elo oder A.
+
+| Nr. | Landschaft (Vorbild, erfundener Name)                                | Variante (gängig online)                                                                                                                                         | Warum die Leute dort so spielen (Story)                                                                                                                                           | Figur, Tier, Ereignis                                                    | Engine           |
+| --- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------- |
+| L1  | Port Delacroix (New Orleans)                                         | Schach960 (Grundreihe gemischt)                                                                                                                                  | Stadt des Jazz: „Wir spielen nie zweimal dasselbe Stück.“ Die Musiker im Zelt spielen jede Partie aus einer neuen Startstellung; Ambrose war als Kind dagegen und lernt es jetzt. | Bläser, Pelikane, Hurrikan-Nachwehen                                     | vorhanden        |
+| L2  | Appalachen-Wanderweg („Long Ridge Trail“)                            | Blindschach                                                                                                                                                      | Wer wochenlang wandert, trägt kein Brett: An den Hütten spielt man im Kopf und ruft die Züge.                                                                                     | Wanderin mit Riesenrucksack, Hüttenwirt, Schwarzbär (nur Spuren)         | vorhanden        |
+| L3  | Canyon vor Desert Springs („Echo Canyon“)                            | Drei-Schach (dreimal Schach gewinnt)                                                                                                                             | Jedes Schach hallt dreimal von den Wänden; die Kletterer spielen, bis das dritte Echo verklungen ist.                                                                             | Kletterer, Felsenbögen, Eidechsen                                        | Fairy-Stockfish  |
+| L4  | Geysirbecken („Steamwell Basin“, Yellowstone)                        | Atomschach (beim Schlagen explodiert alles drumherum)                                                                                                            | Der Boden brodelt; die Rangerinnen spielen zum Spaß „wie der Alte Treue“, bei jedem Schlag ein Ausbruch. Lehrt nebenbei: vorher zählen.                                           | Rangerin, Bisons, die den Weg versperren, Ausbruch zur vollen Stunde     | Fairy-Stockfish  |
+| L5  | Sumpf („Bayou Noir“, Everglades/Bayou)                               | Nebelschach (man sieht nur Felder, die die eigenen Figuren erreichen)                                                                                            | Im Nebel über dem Wasser sieht man nur, was nah ist; der Luftboot-Führer spielt so seit Jahrzehnten.                                                                              | Luftboot, Alligatoraugen, Reiher, Nebel am Morgen                        | eigene Bot-Logik |
+| L6  | Prärie in der Tornado-Saison („Wide Plains“)                         | Entenschach (eine Ente blockiert ein Feld; jeder setzt sie nach dem Zug)                                                                                         | Der Sturm stellt sich überall in den Weg: Die Sturmjäger nennen die Ente „den Twister“.                                                                                           | Sturmjäger im Wagen, Weizenfelder, Tornado am Horizont, Partie im Keller | prüfen           |
+| L7  | Große Seen mit Leuchtturm („Lake Superior“-Art, „Northlight“)        | König der Hügel (der König auf einem Zentrumsfeld gewinnt)                                                                                                       | „Der König muss zum Leuchtturm“: Der Leuchtturmwärter erzählt von Kapitänen, die bei Sturm den Hafen suchten.                                                                     | Leuchtturmwärter, Fähre, Eis im Winter, Möwen                            | Fairy-Stockfish  |
+| L8  | Wüstenstraße mit Diner und Motel („Route 66“-Art, „Old Mother Road“) | Königsrennen (wer zuerst die letzte Reihe erreicht, ohne Schach)                                                                                                 | Fernfahrer im Diner: Wer zuerst ankommt, zahlt nicht. Ein Rennen ohne Angriff, nur Weg.                                                                                           | Fernfahrer, Kellnerin, Neonschilder, Roadrunner                          | Fairy-Stockfish  |
+| L9  | Felsentürme der Hochebene (Monument Valley; das erfundene Volk, O5)  | eigenes Spiel auf Seirawan-Grundlage, mit zwei eigenen Figuren (Falke: Läufer + Springer; Bison: Turm + Springer), eigener Name und eigene Geschichte des Volkes | Das Volk hat das Spiel aus seinen eigenen Geschichten von Falke und Bison; Begegnung auf Augenhöhe (Leitplanken O5, Sensibilitätslesung).                                         | Lehrerin, Mechaniker, Schülerin; Falken über den Felsen                  | Fairy-Stockfish  |
+| L10 | Bergstadt Summit City mit Drachensage                                | Drache als Märchenfigur (Dame + Springer), wie in modernen Varianten mit Zusatzfiguren                                                                           | Alte Bergwerkssage vom Drachen im Gipfel; im Wintermarkt spielen alle einmal im Jahr mit dem Drachen.                                                                             | Bergführer, Murmeltier, Seilbahn                                         | Fairy-Stockfish  |
+
+**Zusätzlich für Gruppenszenen:** Tandem-Schach (Bughouse, zwei gegen zwei, geschlagene Figuren
+gehen an den Partner) im Sommercamp (Pinewood Camp, Nationalpark mit Riesenbäumen): mit einem
+Bot als Partner; aufwendig, deshalb als letzte Variante. Räuberschach (Antichess, wer alles
+verliert, gewinnt) als Lagerfeuer-Spaß im Camp, ebenfalls mit Fairy-Stockfish.
+
+**Was „prüfen“ und „eigene Bot-Logik“ heißt:** Ob Fairy-Stockfish Entenschach unterstützt, ist
+nicht bestätigt; vor dem Bau im Quelltext (`variants.ini`, Option `UCI_Variant`) nachsehen. Für
+Nebelschach gibt es keine Engine mit verdeckter Information; ein einfacher Bot spielt dann mit
+der Engine auf der vollen Stellung und begrenzt sich selbst auf sichtbare Felder (ehrlich genug für
+einen Nebenschauplatz).
+
+**Reihenfolge:** Erst L1 und L2 (laufen mit der vorhandenen Engine, Akt 3 und 4), dann das
+Zusatzpaket Fairy-Stockfish mit L3, L4, L7, L8, danach L9 und L10 (eigene Figuren brauchen eigene
+Figurenbilder, mit der Grafik), zuletzt L5, L6 und Tandem. Jede Landschaft wird ein Weg in Akt 3
+oder 4; die Zuordnung zu den Etappen macht die Story-Bibel von Akt 4.
+
 ## 4. Reihenfolge
 
 1. S1 bis S6 kommen mit Schritt 13 (Zeitklassen und Zeitkarten): nur Namen, Texte, Sperre im Club.

@@ -326,6 +326,8 @@
         "abZug": 11,
         "seite": "black"
       }
-    }
+    },
+    { "kennung":  "wegPinewoodGhost.tafel", "ort":  "wegPinewoodGhost", "steller":  "wegPinewoodGhost.tafel", "reihe":  false, "buchuebungen":  [], "themen":  ["abzug", "doppelschach"], "anzahl":  3},
+    { "kennung":  "wegGhostCapital.tafel", "ort":  "wegGhostCapital", "steller":  "wegGhostCapital.tafel", "reihe":  false, "buchuebungen":  [], "themen":  ["endspiel"], "anzahl":  3}
   ]
 }

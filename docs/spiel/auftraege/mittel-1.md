@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Dialoge und Quests für Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, achtzehnter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, achtzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Ink-Dateien dieser Orte und der Erinnerung `erinnerung-siedlung.ink` (neu),
@@ -28,7 +28,68 @@ Punkten in Ink (`ausgang<Begegnung>`).
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Erledigt.**
+
+- **Acht Ink-Dateien neu:** `weg-pinewood-ghost.ink` (Szene 97, Juniper mit Drei-Schach, Tafel),
+  `ghost-town-aussen.ink` (Ankunft, Mr. Pruitt, Szene 98 das Grab, Szene 101 die Nacht),
+  `ghost-town-saloon.ink` (Szene 100 Fernpartie mit Victor, Auslöser des Flashbacks über das
+  Postreiterabzeichen), `erinnerung-siedlung.ink` (Szene 99 Die letzte Kerze),
+  `weg-ghost-capital.ink` (Szene 102, Abe Lindgren mit König der Hügel, Tafel, Linse),
+  `capital-arena-aussen.ink` (Ankunft, Szene 103 mit der Liga aus den acht Nadeln, Mama, Juno,
+  Szene 109 Abschied mit `zeigeAbspann()`), `capital-arena-halle.ink` (Szenen 104 bis 108),
+  `bayou.ink` (L5, Theron). Dazu die Knoten `bayou` in `port-delacroix-aussen.ink` und `blaeser`
+  in `port-delacroix-musikhaus.ink` (L1). Alle Knoten aus `orte.json` sind vorhanden.
+- **Begegnungen:** `capitalArena.runde1` bis `runde4` (Turnier, Farbe zufällig, Wahl der Zeit,
+  Runde 4 fest 5 + 3), `capitalArena.halbfinale` (Kade, `freieKarten: ["mentorzug"]`,
+  `abgelenktAb: {halbzug: 40, faktor: 1.5}`), `capitalArena.finale` (Victor, keine Karten).
+  `ghostTown.fernpartie` stand schon aus dem letzten Auftrag.
+- **Runden:** `wegPinewoodGhost.tafel` (Abzug, Doppelschach), `wegGhostCapital.tafel` (Thema
+  `endspiel`).
+- **Quests:** Hauptquest `ghostTown.fernpartie` (Grab, Flashback, Partie bei jedem Ausgang, Victor,
+  Nacht; Szenen `akt4.ghostTown` bis `akt4.ambroseSagtEs`), Hauptquest `capitalArena.meisterschaft`
+  (Arena, Vorrunde geschafft, Aussage, Halbfinale gewonnen, vor dem Finale, Finale bei jedem
+  Ausgang, Abschied; Szenen `akt4.arena` bis `akt4.abschied`), zwei Tafel-Quests.
+- **Funde:** `postreiterabzeichen`, `schlussstellungFernpartie` (Extra `brett-fernpartie-1866`),
+  `leuchtturmlinse` (10 Münzen), `teilnehmerausweis`. **Laden:** `capitalArena.fanshop` (Schal 20,
+  Teilnehmeranstecker 10, beides ohne Spielwirkung). 30 neue Textschlüssel.
+- **Prüfungen:** pytest 470 bestanden, `npm run pruefen` grün (2422 Tests), das Paket baut. Die
+  Simulation spielt von Weg 10 bis zum Abschied, mit abgebrochener Fernpartie, verlorener
+  Vorrunde (1,5 Punkte, dann Wiederholung von Runde 1), verlorenem Halbfinale und Remis im Finale:
+  alle vier Quests fertig. Zufallsdurchläufe aller Knoten ohne Fehler.
+
+**Entscheidungen.**
+
+1. **Turniermodus in Ink:** `punkt()` zählt Sieg 1 und Remis ½, `punktetext()` schreibt „1,5“.
+   Die Turnierleiterin bietet die nächste ungespielte Runde an; sind alle gespielt und es reicht
+   nicht, bietet sie die erste nicht gewonnene Runde noch einmal an. Ab 2,5 Punkten geht es weiter.
+2. **Halbfinale nur mit Sieg:** Ein K.-o.-Spiel braucht einen Sieger; bei Remis oder Niederlage
+   spielt man noch einmal. Ambrose sagt vor der Partie „Ein einziges Mal …“, im Gang vor dem
+   Finale je nach `mentorzugFreiGespielt` „Das war meine unsterbliche Partie. Mit dir.“ oder „Du
+   hast mich nicht gerufen. Und trotzdem gewonnen.“ Im Finale schweigt er.
+3. **Flashback 1866 ohne Klassikersammlung:** Die Fernpartie steht nicht in `klassiker.json` (nicht
+   meine Datei); deshalb rät der Held die vier Züge 37. Txd7, 38. Da3, 39. Dg3+, 40. Kxg3 als Wahl
+   im Dialog, mit je zwei legalen falschen Zügen und freundlicher Berichtigung, und am Ende einer
+   Zählung („Vier von vier“). Mit einer Klassiker-Kennung für die Fernpartie ließe sich das auf
+   eine Runde mit `erinnerung` (ab Zug 37, Weiß) umstellen.
+4. **Reihenfolge in Ghost Town:** Grab → Abzeichen (erst nach dem Grab zu finden; mit Laterne
+   anders erzählt, aber ohne Laterne nicht gesperrt) → Erinnerung → Fernpartie → Nacht. Der Bus
+   zur Arena fährt erst nach der Fernpartie (`fernpartieGespielt`, Bedingung in `orte.json`).
+5. **Hales Seite und Brief:** Victor liest `gefundenHalesSeite` (angenommener Fund `halesSeite` von
+   mittel-2, Szene 88) und `briefGelesen`; fehlen sie, kennt er Hales Antwort auswendig. Nichts
+   ist hart gesperrt, damit die Hauptquest nicht an einer Nebenquest hängt.
+6. **Liga in Ink:** Juno zählt die Nadeln der acht Clubs selbst zusammen und nennt die Liga (R22).
+7. **Sprecher ohne Porträt:** Postreiter und Bläserin sprechen als Erzähler (der Porträt-Test
+   verlangt für jeden Sprecher ein Bild).
+8. **Varianten** (Drei-Schach, König der Hügel, Nebelschach, Schach960) werden nur erzählt, bis die
+   Technik da ist.
+
+**Offen (nicht meine Dateien):**
+
+- Keine Sprüche im Turnier (S2): `kartenErlaubt` gilt für alle Karten. Vorschlag: den Turniergegnern
+  in `gegner.json` `immunGegen` mit den Spruchkarten geben (außer Kühler Kopf für Tobias, der ist
+  eine Zeitkarte), oder ein Begegnungsfeld `spruecheErlaubt: false`.
+- Fragment 8 (Ward, Summit City) bei mittel-2.
+- Fund `halesSeite` (mittel-2): Name bitte so, sonst die Variable in `ghost-town-saloon.ink` anpassen.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

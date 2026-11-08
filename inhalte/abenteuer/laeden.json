@@ -192,6 +192,23 @@
           "preis": 20
         }
       ]
+    },
+    {
+      "kennung": "capitalArena.fanshop",
+      "ort": "capitalArena",
+      "name": "laden.fanshop.name",
+      "angebot": [
+        {
+          "art": "gegenstand",
+          "kennung": "schal",
+          "preis": 20
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "teilnehmeranstecker",
+          "preis": 10
+        }
+      ]
     }
   ]
 }

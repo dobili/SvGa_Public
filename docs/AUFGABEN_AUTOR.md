@@ -131,7 +131,9 @@ Adresse mit „#abenteuer“ öffnen).
       (ohne Tagebuch und Münzen), am Schachtisch beginnt das Raten, die Uhr im Kaffeehaus bringt dich zurück.
 - [ ] N2623. Lupe des Uhrmachers (Zeitungsstand Riverton, 90 Münzen): Mit ihr erscheint vor jeder Partie in
       „Karten für die Partie“ der Abschnitt „Was die Lupe verrät“: zwei Zeilen aus dem Steckbrief des Gegners
-      (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen.
+      (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen. Neu: Nach
+      drei Siegen gegen Mr. Harlan schenkt er dir die Lupe (Quest „Die Lupe des Uhrmachers“); hast du sie schon
+      gekauft, lobt er dich nur.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
@@ -1174,9 +1176,8 @@ dich). Claude liest die Antworten von dort und arbeitet sie hier ein.
       „analysiert“. Empfehlung: so lassen. Schon umgesetzt.
 - [ ] Q20-2. **Ablenkung im Laden:** Die Regel „Zeitkarten nie im Laden“ (Z4) gilt nur für Sprüche, die die Uhr
       ändern; „Ablenkung“ (der nächste Zug des Gegners hastig) bleibt für 10 Münzen im Kiosk. Schon umgesetzt.
-- [ ] Q20-3. **Lupe des Uhrmachers im Laden:** Laut Bibel schenkt Mr. Harlan sie nach drei Siegen; dafür fehlt
-      noch ein Zähler für Siege je Gegner. Empfehlung: jetzt für 90 Münzen im Zeitungsstand Riverton, später
-      zusätzlich als Geschenk von Harlan. Schon umgesetzt.
+- [ ] Q20-3. **Lupe des Uhrmachers zweimal erreichbar:** für 90 Münzen im Zeitungsstand Riverton und als Geschenk
+      von Mr. Harlan nach drei Siegen (wie in der Bibel). Schon umgesetzt.
 - [ ] Q20-4. **Balancing nach der Münzrechnung von mittel-2:** Fahrrad nicht im ersten Laden, Kartentasche 450
       statt 300, „Was droht?“ 60 statt 45, Remisangebot nicht im Clubkampf, Straßensiege nur beim ersten Sieg je
       Gegner und Tag 10 Münzen (danach 2). Schon umgesetzt.

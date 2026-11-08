@@ -512,5 +512,7 @@
   "figur.arceneaux.name": "Mrs. Arceneaux",
   "figur.henri.name": "Henri Whitlock-Duval",
   "figur.holloway.name": "Mrs. Holloway",
-  "figur.okoro.name": "Mr. Okoro"
+  "figur.okoro.name": "Mr. Okoro",
+  "quest.lupe.titel": "Die Lupe des Uhrmachers",
+  "quest.lupe.schritt1": "Gewinne dreimal gegen Mr. Harlan in der Bahnhofshalle."
 }

@@ -1,8 +1,6 @@
 # Auftrag niedrig-1: Prüfung der Tiled-Karten in der Pipeline
 
-**Stand:** offen (Haupt-Chat, 07.11.2026, dritter Auftrag; die vier Karten von Maple Falls sind
-zusammengeführt, die fehlenden Übergänge `schule`, `park`, `landstrasse` stehen jetzt in
-`orte.json`, `landstrasse` noch ohne Ziel)
+**Stand:** fertig (niedrig-1, 07.11.2026)
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `pipeline/tests/test_abenteuer_karten.py` (neu), `pipeline/abenteuer/__init__.py`
@@ -52,3 +50,23 @@ Neue Karten (Cedar Creek kommt, sobald mittel-2 die Daten geliefert hat), Grafik
 ## Bericht
 
 (vom Helfer auszufüllen)
+
+Zweig: `abenteuer-aufgabenzuordnung`. Neu: `pipeline/abenteuer/__init__.py`,
+`pipeline/abenteuer/karten.py` (Laden, Ebenen, Kollision aus dem Kachelsatz, Objekte mit
+Kachelkoordinaten, Breitensuche, Erreichbarkeit, offene Randfelder) und
+`pipeline/tests/test_abenteuer_karten.py` (je Karte aus `orte.json`: Ebenen und Kachelsatz, genau
+ein `start` mit `richtung`, Auslöser und Figuren erklärt, Zielobjekte der Übergänge, Erreichbarkeit,
+geschlossener Rand außer an Übergängen). Übergänge ohne `ziel` werden gezählt und ausgegeben
+(derzeit 1: `landstrasse`). Prüfungen: alle Pipeline-Tests bestanden (271, 1 erwartet
+fehlgeschlagen), `ruff check` und `ruff format --check` sauber.
+
+Befund (Karte nicht geändert, als strikt erwarteter Fehlschlag `BEFUNDE_ERKLAERT` im Test
+vermerkt): Die Wohnzimmerkarte hat den Auslöser `treppeOben`, der in `orte.json` nur als Ziel von
+`treppe` vorkommt, aber nicht unter `ausloeser` erklärt ist. Vorschlag: in `orte.json` einen
+Übergang `treppeOben` mit Ziel `mapleFalls.dachboden` / `treppe` ergänzen; danach den Eintrag in
+`BEFUNDE_ERKLAERT` löschen (der Test meldet das selbst, weil er strikt ist).
+
+Hinweis: Die Auslöser gelten je Ort, nicht je Karte. `schule` hat ein Ziel `mapleFalls.clubraum`,
+gilt aber auch auf der Clubraumkarte selbst (dort müsste es nach `aussen` führen); ebenso
+`haustuer` und `park`. Das prüft der Test nicht; für Rückwege braucht `orte.json` vermutlich
+Auslöser je Karte oder getrennte Namen.

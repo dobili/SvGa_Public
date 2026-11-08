@@ -1,85 +1,36 @@
-# Auftrag niedrig-1: kein Auftrag
+# Auftrag niedrig-1: Karten für den Weg Cedar Creek → Riverton und für Riverton
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechste Auftrag ist zusammengeführt, danke.
-Der nächste Auftrag kommt, sobald mittel-2 die Spieldaten für Riverton und Ironwood geliefert hat:
-dann Dialoge (mittel-1) und Karten (niedrig-1) für Akt 2. Bis dahin nichts tun und warten.)
-
-## Letzter Auftrag (erledigt, zur Nachlese)
-
-**Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), bitte frisch auf
-`origin/claude/friendly-shannon-y8bf90` aufsetzen (dein Zweig hat die Statisten der Route wieder
-entfernt; der Hauptzweig hat sie, und der Kartentest überspringt `type` statist/tier)
-**Darf ändern:** alle Karten in `inhalte/abenteuer/karten/` von Maple Falls und Cedar Creek,
-`docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/`
-`npx prettier --check ../inhalte/abenteuer` und `node skripte/baue-abenteuerpaket.mjs`
+**Stand:** offen (Haupt-Chat, 08.11.2026, siebter Auftrag; Spieldaten von mittel-2 sind
+zusammengeführt, 686bc02d)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
+**Darf ändern:** `inhalte/abenteuer/karten/weg-cedar-riverton-1.json`, `-2.json`,
+`riverton-*.json` (fünf Dateien, neu), `inhalte/abenteuer/karten/cedar-creek-aussen.json` (nur
+das Objekt `zedernwald` als Übergang am Rand, Rand dort offen), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (für die neuen
+Karten darf nichts mehr übersprungen werden), in `app/` Prettier und Paketbau
 
 ## Ziel
 
-Die neun Karten der beiden Städte nach 09 lebendig machen, wie du es bei der Route schon getan hast.
+Die sieben Karten aus `orte.json` (Orte `wegCedarRiverton` und `riverton`) zeichnen, mit allen
+Objekten, die `orte.json` dort als Auslöser und Figuren nennt, belebt nach `09_Weltbeschreibung.md`
+(Abschnitte 3, 4, 4a, 5.4, Checkliste 6) und passend zur Story-Bibel Akt 2 (Szenen in Riverton).
 
 ## Vorgaben
 
-1. **Außenkarten** (`maple-falls-aussen`, `maple-falls-park`, `cedar-creek-aussen`): je mindestens
-   zwei Tiere und zwei Statisten nach Abschnitt 4 und 4a (`type` tier/statist mit `von`, `bis`,
-   `tun`, `wann`, `verhalten` wie auf der Route), Laufwege frei.
-2. **Innenräume:** Objekte zum Ansehen mit genau diesen Namen (`type` ausloeser, Kollision oder
-   freies Nachbarfeld, mittel-1 trägt sie gleichzeitig in `orte.json` ein): Wohnzimmer
-   `fotoGrandma`, `kartonKueche`, `pizzakarton`; Dachboden `hutschachtel`, `spiegel`,
-   `zeitungen1961`; Clubraum `pokalvitrine`, `brettOhneDame`, `plakatZaehlen`; Bibliothek
-   `zeitungsregal`, `globus`, `schildFluestern`; Archiv `boxerfoto`, `wasserfleck`; Waschsalon
-   `zettelTurm`, `comicheft`, `automat`. Dazu je Innenraum ein Statist, wo es passt (Kellnerin,
-   Leserin, Mr. Boateng ist schon Figur).
-3. Bis mittel-1 fertig ist, scheitert dein Kartentest an den neuen Namen („fehlt in orte.json“).
-   Dann bitte die Karten trotzdem pushen und im Bericht vermerken; der Haupt-Chat führt beide
-   zusammen.
-4. Checkliste aus Abschnitt 6 je Karte im Bericht abhaken.
+1. **Objekte:** jeder Auslöser und jede Figur des Ortes auf der Karte, auf die sie gehören
+   (Auslöser mit `karte` nur dort; sonst nach Sinn: Türen außen und innen jeweils ihr Gegenstück).
+   Namen genau wie in `orte.json`, `start` mit `richtung` je Karte.
+2. **Größen:** Außen 32 × 24 (Riverton ist größer als Cedar Creek: Park mit Pavillon, Brücke,
+   Bahnhof, Kanal), Wegkarten 28 × 20, Innen nach 09 (Pavillon offen und regnerisch, Bahnhofshalle
+   groß, Wohnwagen eng, Schuppen klein mit Fahrrad).
+3. **Belebung:** Statisten und Tiere nach 4a (Riverton: Pendler mit Schirmen, Straßenmusiker,
+   Parkschachspieler, Tauben, Möwen; Weg: Bahndamm und Zedernwald nach Bibel).
+4. **Cedar Creek:** Übergang `zedernwald` am Rand der Außenkarte (der Weg nach Riverton beginnt dort).
 
 ## Was nicht dazugehört
 
-Neue Karten, Grafik, `orte.json`.
+Ironwood und der Weg dorthin, `orte.json`, Grafik.
 
 ## Bericht
 
 (vom Helfer auszufüllen)
-
-Zweig: `abenteuer-aufgabenzuordnung`, frisch auf `c84d3af9` aufgesetzt. Ein Force-Push war nicht
-erlaubt; der alte Zweigstand ist deshalb per `git merge -s ours` angehängt, sein Inhalt (das
-Entfernen der Statisten auf der Route) ist verworfen. Alle Positionen von Hand gesetzt und per
-Skript geprüft: Objekte zum Ansehen auf freier Kachel oder auf Kollision mit erreichbarem
-Nachbarfeld; Laufwege nur über von `start` erreichbare Felder; keine zwei Objekte auf einer Kachel.
-
-- maple-falls-wohnzimmer: `fotoGrandma` (2,0 Wand), `kartonKueche` (12,2 Kiste), `pizzakarton`
-  (9,7 Boden); kein Statist (Mama ist Figur).
-- maple-falls-dachboden: `hutschachtel` (2,1 Kiste), `spiegel` (11,5 Wand), `zeitungen1961`
-  (9,8 Kiste); kein Statist.
-- maple-falls-clubraum: `pokalvitrine` (2,1 Pokale), `brettOhneDame` (9,8 Brett), `plakatZaehlen`
-  (0,6 Wand); Statist `schuelerin` (räumt Figuren ein).
-- maple-falls-aussen: `brieftraegerin` (morgen), `laubharker`, `kindMitBall`; `eichhoernchen`
-  (ausweichen), `katze` (sitzen).
-- maple-falls-park: `rentner` (auf der Bank), `kioskbesucher`; `enten` (folgen), `kraehen` (fliegen).
-- cedar-creek-aussen: `busfahrer`, `stegbauer`; `hund` (folgen, vor dem Waschsalon), `reiher`
-  (sitzen), `eichelhaeher` (morgen, fliegen).
-- cedar-creek-bibliothek: `zeitungsregal` (6,3 Regal), `globus` (13,6 Boden), `schildFluestern`
-  (0,4 Wand); Statist `leserin`.
-- cedar-creek-archiv: `boxerfoto` (13,4 Wand), `wasserfleck` (6,9 Wand); kein Statist.
-- cedar-creek-waschsalon: `zettelTurm` (11,3 Wand), `comicheft` (6,4 Stuhl), `automat` (10,7);
-  Statist `kundin`.
-
-Prüfungen: Prettier und Paketbau sauber. Pytest: 296 bestanden, 7 erwartet fehlgeschlagen
-(Vorgabe 3): `test_ausloeser_und_figuren_erklaert` für die sechs Innenräume und
-`test_ink_szene_und_tiled_karte_liegen_bereit`, alle nur wegen der 17 neuen Namen, die mittel-1
-in `orte.json` einträgt.
-
-Checkliste Abschnitt 6 (für alle neun Karten gleich, die Platzhalter begrenzen es):
-
-- [x] Größe und Rand unverändert.
-- [x] Außen vier bewegte Dinge: je zwei bis drei Tiere und Statisten; die animierte Kachel
-      (Wasserfall, Flagge, Bach, Neon) fehlt mangels Grafik.
-- [x] Innen drei Dinge zum Ansehen (Archiv zwei wie vorgegeben, dazu das Programmheft); mit
-      Schachbezug: `brettOhneDame`, `plakatZaehlen`, `zettelTurm`, `wasserfleck` (Springer).
-- [ ] Geräusch und Musik in `orte.json`: für mich gesperrt.
-- [ ] Tönung (`toenung`): kommt mit der Grafik.
-- [ ] Matten, Vordächer, hellere Wege: Wege sind Teppichkacheln, Matten fehlen im Platzhaltersatz.
-- [ ] Spur einer Quest (Ebene `objekte` mit Bedingung): braucht die Technik aus Abschnitt 7.
-- [x] Figuren an ihren Orten aus der Bibel (unverändert).

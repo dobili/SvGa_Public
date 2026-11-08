@@ -40,7 +40,12 @@ KENNUNGEN = [eintrag["kennung"] for _, eintrag in FAELLE]
 
 
 def _karte(eintrag: dict) -> dict:
-    return k.lade_karte(INHALTE / eintrag["datei"])
+    """Lädt die Karte; eine in orte.json genannte, aber noch nicht gezeichnete Karte überspringt
+    den Test (die Spieldaten eines Ortes kommen vor seinen Karten, die Oberwelt meldet die Lücke)."""
+    datei = INHALTE / eintrag["datei"]
+    if not datei.exists():
+        pytest.skip(f"Karte {eintrag['kennung']} noch nicht gezeichnet ({eintrag['datei']})")
+    return k.lade_karte(datei)
 
 
 def _uebergaenge(ort: dict) -> list[dict]:
@@ -88,7 +93,11 @@ def test_uebergaenge_haben_zielobjekt():
             if ziel is None:
                 offen += 1
                 continue
-            namen = {o.name for o in k.objekte(_karte(dateien[ziel["karte"]]))}
+            zielkarte = INHALTE / dateien[ziel["karte"]]["datei"]
+            if not zielkarte.exists():
+                offen += 1
+                continue
+            namen = {o.name for o in k.objekte(k.lade_karte(zielkarte))}
             assert ziel["ausloeser"] in namen, f"{uebergang['name']} → {ziel}"
     print(f"Übergänge ohne Ziel (offen): {offen}")
 

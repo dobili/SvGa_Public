@@ -10,6 +10,7 @@
 // bis dahin endet jo_duell ohne Partie.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginnePartie(begegnung)
 
 VAR held = "Du"
 VAR abernathyGetroffen = false
@@ -127,8 +128,8 @@ Wer verliert, holt Limo. #sprecher:skaterJo
     -> END
 
 === jo_duell ===
-// Begegnung mapleFalls.skaterJo (Stellungsduell, Regelwerk C1) fehlt noch in begegnungen.json.
-// Sobald sie da ist, hier: ~ beginnePartie("mapleFalls.skaterJo") und EXTERNAL oben ergänzen.
+// Stellungsduell aus Abbildung 1.21 (Regelwerk C1, R13), Begegnung in begegnungen.json.
+~ beginnePartie("mapleFalls.skaterJo")
 Jo stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 -> END
 

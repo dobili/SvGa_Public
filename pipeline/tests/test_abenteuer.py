@@ -65,6 +65,16 @@ def test_querverweise_stimmen():
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         if begegnung["gegner"] not in gegner:
             fehler.append(f"{begegnung['kennung']}: Gegner {begegnung['gegner']} fehlt")
+    begegnungen = {b["kennung"] for b in _lade("begegnungen.json")["begegnungen"]}
+    for quest in quests:
+        for schritt in quest["schritte"]:
+            ereignis = schritt["ereignis"]
+            if ereignis["art"] == "partie" and ereignis["begegnung"] not in begegnungen:
+                fehler.append(f"{quest['kennung']}: Begegnung {ereignis['begegnung']} fehlt")
+    for ink in sorted((INHALTE / "dialoge" / "de").glob("*.ink")):
+        for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', ink.read_text("utf-8"), re.M):
+            if aufruf not in begegnungen:
+                fehler.append(f"{ink.name}: Begegnung {aufruf} fehlt")
 
     questkennungen = {q["kennung"] for q in quests}
     for quest in quests:

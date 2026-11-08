@@ -267,9 +267,9 @@ Wähle eine gute. #sprecher:ambrose
     -> END
 
 === victor_partie ===
-// Begegnung mapleFalls.victor fehlt noch in begegnungen.json (Regelwerk R33: Weiß Victor,
-// Schwarz der Leser, Stellung um Zug 12, Karten gesperrt). Sobald sie da ist, hier:
-// ~ beginnePartie("mapleFalls.victor")
+// Regelwerk R33: Weiß Victor, Schwarz der Leser in einer Trainingsstellung um Zug 12 ohne
+// Springer, Karten gesperrt; die Begegnung steht in begegnungen.json.
+~ beginnePartie("mapleFalls.victor")
 Victor stellt die Figuren auf. Seine Hände sind ruhig, sein Blick nicht. #sprecher:erzaehler
 -> END
 

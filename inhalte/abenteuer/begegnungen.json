@@ -38,36 +38,59 @@
       "kartenErlaubt": true
     },
     {
-      "kennung": "mapleFalls.joDuell",
+      "kennung": "mapleFalls.skaterJo",
       "gegner": "mapleFalls.skaterJo",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "1.21" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "1.21"
+      },
       "kartenErlaubt": true
     },
     {
-      "kennung": "mapleFalls.victorHerausforderung",
+      "kennung": "mapleFalls.victor",
       "gegner": "mapleFalls.victor",
       "farbe": "black",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
-      "kartenErlaubt": true,
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "r1b2rk1/2q1bppp/p2p1n2/1pp1p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 2 12"
+      },
+      "kartenErlaubt": false,
       "zaehltFuerApp": false
     },
     {
       "kennung": "cedarCreek.rosaDuell",
       "gegner": "cedarCreek.rosa",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "1.41" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "1.41"
+      },
       "kartenErlaubt": true
     },
     {
       "kennung": "cedarCreek.clubkampf",
       "gegner": "cedarCreek.okafor",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true
     }
   ]

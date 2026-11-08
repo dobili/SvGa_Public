@@ -91,3 +91,22 @@ describe("Themen falle und struktur", () => {
     expect(runde.map((r) => r.art).sort()).toEqual(["falle", "falle", "struktur", "struktur"]);
   });
 });
+
+describe("Thema endspiel", () => {
+  it("nimmt Aufgaben aus dem Endspieltrainer", async () => {
+    const { readFileSync } = await import("node:fs");
+    const daten = JSON.parse(
+      readFileSync(
+        new URL("../../../public/daten/de/trainer/endspiel.json", import.meta.url),
+        "utf8",
+      ),
+    ) as { aufgaben: never[] };
+    const auftrag = { ...AUFTRAG, buchuebungen: [], themen: ["endspiel"], anzahl: 3 };
+    const runde = rundenaufgaben(auftrag, [], [], () => 0.5, {
+      fallen: [],
+      strukturen: [],
+      endspiele: daten.aufgaben,
+    });
+    expect(runde.map((r) => r.art)).toEqual(["endspiel", "endspiel", "endspiel"]);
+  });
+});

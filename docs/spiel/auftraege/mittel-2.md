@@ -1,24 +1,38 @@
-# Auftrag mittel-2: Porträts der Figuren von Akt 4 und die Fernpartie 1865/66
+# Auftrag mittel-2: Dialoge und Quests für Weg 7, Summit City, Weg 8, Crossroads, Weg 9, Pinewood Camp
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, Porträts und Fernpartie, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, vierzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs`, `inhalte/abenteuer/portraets/` (nur neue
-Bilder), `docs/spiel/05_Story_Bibel.md` (nur der Abschnitt zur Fernpartie), `docs/spiel/auftraege/mittel-2.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
+**Darf ändern:** die Ink-Dateien dieser Orte (neu), `desert-springs-aussen.ink` (nur `highway`),
+`quests.json`, `runden.json`, `begegnungen.json` (nur neue Einträge dieser Orte), `funde.json`,
+`laeden.json`, `texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/mittel-2.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
 
 ## Ziel
 
-1. Porträts für alle neuen Figuren aus deiner Technikliste (Abschnitt 34, Punkt 8) außer der
-   Vell-Familie (Rückfrage Q21-1 offen); Kennungen wie sie mittel-1 gerade in `gegner.json` und
-   `orte.json` einträgt (bitte vorher abstimmen über die Bibel: kebab-case des Namens).
-2. Die Fernpartie Ambrose gegen Hale 1865/66 (Technikliste Punkt 6) als PGN konstruieren: mit einer
-   Engine (Stockfish im Ordner `app/`, `node_modules` oder `public/engine`) glaubwürdige Züge der
-   Zeit, Fragmente 0 bis 8 als Halbzüge festlegen, die Endstellung für das Stellungsduell nach R13
-   prüfen (Vorteil etwa +1), Ambroses letzter Zug für das Zugerraten. Ergebnis in der Bibel
-   (Abschnitt Fernpartie) mit PGN und Halbzügen.
+Wie bei Akt 3: Dialoge, Quests, Runden, Funde und Läden nach der Story-Bibel Teil 4 für
+`wegDesertSummit`, `summitCity`, `wegSummitCrossroads`, `crossroads`, `wegCrossroadsPinewood`,
+`pinewoodCamp`. Knotenliste im Bericht des siebzehnten Auftrags in `mittel-1.md`. mittel-1 schreibt
+parallel Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou. Neue Einträge in gemeinsamen Dateien
+bitte in einem eigenen Block; der Haupt-Chat führt zusammen.
+
+Neue Technik, die ihr in Akt 4 nutzen könnt (Haupt-Chat, 8.11.2026, Einzelheiten in
+`docs/spiel/ENTSCHEIDUNGEN.md`): Ink-Funktion `zeigeAbspann()` (Abspann nach dem Dialog);
+Begegnungsfelder `freieKarten` (Halbfinale: `["mentorzug"]`, setzt `mentorzugFreiGespielt`),
+`abgelenktAb {halbzug, faktor}` (Stärkewechsel, Halbfinale) und `variante: "blind"` (Blindschach);
+Runden mit `erinnerung` (Zugerraten einer Klassikerpartie) und den Themen `falle`, `struktur`,
+`endspiel`; Siegzähler `siege<Begegnung>`; Turnierrunden ohne neue Technik als Begegnungen mit
+Punkten in Ink (`ausgang<Begegnung>`).
+
+Varianten an euren Orten: nur Blindschach ist gebaut; für andere Varianten (Varianten-Tisch in
+Crossroads, Räuberschach, Tandem) die Dialoge so schreiben, dass sie vorerst eine klassische Partie
+oder einen Hinweis „kommt bald“ anbieten, und im Bericht auflisten.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig** auf `abenteuer-regelwerk` (Basis 19d3d91a hereingeholt). Prüfungen: `pytest pipeline/tests`
 470, `npm run pruefen` 362 Dateien und 2418 Tests, Prettier.

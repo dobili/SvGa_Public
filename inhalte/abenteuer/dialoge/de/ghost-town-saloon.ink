@@ -7,7 +7,7 @@
 // Karten gesperrt). Einstiege wie in orte.json: victor, brett, fund_abzeichen.
 //
 // Variablen: ausgangGhostTownFernpartie und hatLaterne setzt die Hülle (R42); briefGelesen setzt
-// desert-springs-antiquariat.ink, gefundenHalesSeite die Hülle beim Fund von Hales Seite (Szene 88,
+// desert-springs-antiquariat.ink, hatHalesSeite die Hülle aus dem Besitz (Gegenstand halesSeite, Quest siliconBay.fehlendeSeite) (Szene 88,
 // mittel-2), grabGesehen ghost-town-aussen.ink, kerzeGesehen erinnerung-siedlung.ink; die übrigen
 // setzt diese Datei. Funde merkt sich Ink zusätzlich selbst.
 
@@ -17,7 +17,7 @@ EXTERNAL gibFund(kennung)
 VAR grabGesehen = false
 VAR kerzeGesehen = false
 VAR briefGelesen = false
-VAR gefundenHalesSeite = false
+VAR hatHalesSeite = false
 VAR hatLaterne = false
 VAR abzeichenGefunden = false
 VAR ausgangGhostTownFernpartie = ""
@@ -51,7 +51,7 @@ Ihr legt alles auf den Tisch: das Brett und die Fragmente aus allen Städten. #s
 {briefGelesen:
     Dazu Hales Brief aus dem Antiquariat: „Ich warte.“ #sprecher:erzaehler
 }
-{gefundenHalesSeite:
+{hatHalesSeite:
     Victor legt die Seite aus dem Notizbuch daneben. Darauf steht Hales Antwort: 40… b5. #sprecher:erzaehler
 - else:
     Victor kennt Hales Antwort auswendig: 40… b5. Sein Großvater hat sie ihm oft vorgelesen. #sprecher:erzaehler

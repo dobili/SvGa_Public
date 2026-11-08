@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Dialoge und Quests für Weg 7, Summit City, Weg 8, Crossroads, Weg 9, Pinewood Camp
 
-**Stand:** fertig (mittel-2, 08.11.2026; Auftrag vom Haupt-Chat, vierzehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der vierzehnte Auftrag ist zusammengeführt, danke; mittel-1 fragt Hales Seite jetzt als Besitz ab (`hatHalesSeite`). Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Ink-Dateien dieser Orte (neu), `desert-springs-aussen.ink` (nur `highway`),

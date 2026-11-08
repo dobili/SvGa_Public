@@ -2393,7 +2393,26 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "hochebene.kira",
+          "name": "figur.kira.name",
+          "sprite": "figuren/kira.png",
+          "dialog": "hochebene.kira"
+        },
+        {
+          "kennung": "hochebene.annek",
+          "name": "figur.annek.name",
+          "sprite": "figuren/annek.png",
+          "dialog": "hochebene.annek"
+        },
+        {
+          "kennung": "hochebene.joss",
+          "name": "figur.joss.name",
+          "sprite": "figuren/joss.png",
+          "dialog": "hochebene.joss"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -2426,6 +2445,24 @@
             "karte": "hochebene.felsentuerme",
             "ausloeser": "weiterSchule"
           }
+        },
+        {
+          "name": "steintisch",
+          "karte": "hochebene.felsentuerme",
+          "art": "gegenstand",
+          "dialog": "hochebene.steintisch"
+        },
+        {
+          "name": "werkstatt",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.werkstatt"
+        },
+        {
+          "name": "aushang",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.aushang"
         }
       ]
     },

@@ -2240,18 +2240,26 @@ seltsam. Und doch: Auch hier gewinnt, wer den Weg kennt.“ Buchbezug: Kapitel 8
 Endspiel (der König muss laufen). Etwa 12 Minuten.
 
 **82. Die Hochebene** · Abzweig `hochebene` · L9 (O5), eigenes Spiel · N begegnung `hochebene.falkeUndBison`
-Ort `hochebene.felsentuerme`, `hochebene.schule` · die Lehrerin Annek Vell (sie), der Mechaniker
-Joss Vell (er), die Schülerin Kira (13, sie). Ereignis: Begegnung auf Augenhöhe (O5, Leitplanken).
-Am Rand der Hochebene liegt der Ort der Vell-Familien, eines erfundenen Volkes mit eigener
-Geschichte; die Lehrerin unterrichtet in einer gewöhnlichen Schule mit Turnhalle und Bus. Ihre
-Familien spielen seit Generationen „Falkenweg“, ein Spiel auf dem Schachbrett mit zwei eigenen
-Figuren, Falke und Bison, aus ihren eigenen Geschichten (V5, Seirawan-Grundlage). Kira bringt
-{held} das Spiel bei, {held} verliert zuerst; Annek lernt im Gegenzug Schach und erkennt
-Gemeinsamkeiten: „Euer Springer springt wie unser Falke. Nur feiger.“ Ambrose hört zu und sagt
-wenig: „Ich habe gelernt, dass man Spiele nicht erklärt, sondern lernt.“ Keine Kostüme, keine
-heiligen Zeichen, keine Weisheit aus dem Nebel: moderne Menschen mit einem eigenen Spiel.
-Belohnung: Fund „Falkenfeder aus Holz“ (Spielfigur, Geschenk von Kira), Extra „Falkenweg“ am
-Varianten-Tisch. Etwa 15 Minuten. Rückfrage an den Autor in Abschnitt 33.
+Ort `hochebene.felsentuerme`, `hochebene.schule` · die Schülerin Kira Vell (13, sie), ihre Tante, die
+Lehrerin Annek Vell (sie, Mathematik und Sport), der Mechaniker Joss Vell (er). Ereignis: Begegnung
+auf Augenhöhe (O5, Leitplanken; Antwort des Autors zu Q21-1: Empfehlung folgen, Sensibilitätslesung
+vor der Veröffentlichung). Die Vell-Familien leben seit über hundert Jahren auf der Hochebene; die
+Hälfte der Schule heißt Vell. Ihr eigenes Spiel heißt einfach „Falke und Bison“: Schach mit zwei
+zusätzlichen Figuren (Falke: Läufer oder Springer; Bison: Turm oder Springer; eingesetzt, wenn eine
+Figur der Grundreihe zum ersten Mal zieht; V5, Seirawan-Grundlage). Die Herkunft ist
+Familiengeschichte, kein heiliges Wissen: Kiras Urgroßmutter schnitzte die zwei Figuren in einem
+Winter, als die Straße zugeschneit war und dem Schulschach zwei Figuren fehlten, den Falken wegen der
+Falken über den Felstürmen, den Bison, „weil ihr Bruder so stur war“. Kira erklärt das Spiel am
+Steintisch nach der Schule und gewinnt eine kurze Vorführpartie gegen {held}; Ambrose: „Ich habe
+gelernt, dass man Spiele nicht erklärt, sondern lernt.“ An der Schule bringt {held} Annek Schach bei;
+sie erkennt Gemeinsamkeiten: „Euer Springer springt wie unser Falke. Nur feiger.“ Joss repariert den
+Schulbus und erzählt, wie ein Mann von Perfect Move eine App aus dem Spiel machen wollte („Bei uns
+sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast. Das reicht.“). Keine Kostüme,
+keine Federn, keine heiligen Zeichen, keine Weisheit aus dem Nebel: Menschen von heute mit Berufen,
+Humor und einem eigenen Spiel. Belohnung: Fund „Falke aus Holz“ (Kiras Werkstück, statt einer Feder,
+um das Klischee zu meiden), Variante „Falke und Bison“ später am Varianten-Tisch
+(`varianteFalkeUndBisonGelernt`). Bis die Variante gebaut ist, erklärt Kira und vertröstet auf das
+nächste Mal. Etwa 15 Minuten.
 
 **83. Ankunft in Summit City** · `akt4.ankunftSummit` · H `summitCity.endspiel`
 Ort `summitCity.aussen` · Mama, Juno (Sommerferien), Ambrose. Ereignis: Dialog. Seilbahn, Holzhütten,

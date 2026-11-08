@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Die Hochebene mit den Vell-Familien
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, fünfzehnter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; Auftrag vom Haupt-Chat, fünfzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json` (nur der Ort `hochebene`: Figuren und Auslöser),
@@ -29,7 +29,81 @@ Gemeinschaft gegen; schreib deshalb so, dass die Gegenlesung wenig ändern muss.
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis e198937a hereingeholt). Prüfungen: `pytest pipeline/tests`
+595 bestanden, `npm run pruefen` 362 Dateien und 2422 Tests, Paketbau läuft, Prettier für die
+geänderten Dateien (außer `quests.json`, das schon vorher nicht formatiert war; nur angefügt).
+
+**Inhalt**
+
+- **Figuren** in `orte.json` (Ort `hochebene`): `hochebene.kira` (Kira Vell, 13, Schülerin, am
+  Steintisch bei den Felstürmen), `hochebene.annek` (Annek Vell, Lehrerin für Mathematik und Sport,
+  ihre Tante), `hochebene.joss` (Joss Vell, Mechaniker, hält den Schulbus am Leben). Neue Auslöser
+  `steintisch` (Felstürme), `werkstatt` und `aushang` (Schule).
+- **Porträts** per Skript: `annek`, `joss`, `kira` (heutige Kleidung, kein Schmuck, keine Tracht;
+  durchgesehen). Dazu `blaeser` und `postreiter`, die das Skript als fehlend meldete (Figuren von
+  mittel-1).
+- **Dialog** `hochebene.ink`: `kira` mit `kira_regel` und `kira_vorfuehren` (Regel, Herkunft als
+  Familiengeschichte, kurze Vorführpartie, die {held} verliert, Ambroses Satz, Vertröstung),
+  `kira_geschenk`, `kira_alltag`; `annek` mit `annek_erstes_treffen` und `annek_schach` („Euer
+  Springer springt wie unser Falke. Nur feiger.“), `annek_alltag`; `joss` (der Mann von Perfect Move
+  und die App; „Bei uns sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast“),
+  `joss_alltag`; `steintisch`, `werkstatt`, `aushang` (nach Anneks Lektion: „Schach-AG, freitags“),
+  `zurueck`.
+- **Quest** `hochebene.falkeUndBison` (Begegnung, Start beim Betreten der Felstürme): Kira zeigt das
+  Spiel, {held} bringt Annek Schach bei, Kira schenkt den Falken.
+- **Fund** `falkeAusHolz` (Kiras Werkstück aus dem Werkunterricht). Variable
+  `varianteFalkeUndBisonGelernt` für den Varianten-Tisch.
+- **Bibel** Szene 82 neu gefasst.
+- **Simulation:** ein Durchgang in ungünstiger Reihenfolge (Schule vor den Felstürmen), Quest
+  erledigt, Fund da; 300 Zufallsdurchläufe ohne Fehler, jede Zeile mit Sprecher.
+
+**Entscheidungen**
+
+1. **Name des Spiels:** „Falke und Bison“ wie im Auftrag; „Falkenweg“ aus der alten Bibel fällt weg
+   („bei uns heißt das Spiel einfach Falke und Bison“, nüchtern statt exotisch).
+2. **Herkunft des Spiels als Familiengeschichte:** Die Urgroßmutter schnitzte zwei Ersatzfiguren,
+   als dem Schulschach im Winter zwei fehlten; Falke wegen der Falken über den Felstürmen, Bison
+   „weil ihr Bruder so stur war“. Damit gibt es keine Legende, keine Ahnen, nichts Heiliges.
+3. **Fund „Falke aus Holz“ statt „Falkenfeder aus Holz“:** Federn stehen auf der Liste der
+   Klischees.
+4. **Wörter, die nicht vorkommen:** Volk, Stamm, Reservat, Häuptling, Geister, Ahnen, Zeremonie,
+   heilig, Natur als Lehrerin. Die Figuren sehen Ambrose nicht und sagen nichts Geheimnisvolles über
+   ihn; „Vell“ ist ein Familienname, keine Volksbezeichnung.
+5. **Ambrose** sagt nur zwei Sätze, beide über das Spielen.
+6. **Variante** nicht gebaut: Kira führt vor und vertröstet (`VARIANTE-FEHLT` in
+   `kira_vorfuehren`). Die Zeile am Varianten-Tisch (`crossroads-raststaette.ink`) durfte ich nicht
+   ändern; Vorschlag für den Haupt-Chat: dort
+   `{varianteFalkeUndBisonGelernt: Falke und Bison, von Kira an den Felstürmen. Kommt bald an den Tisch.}`
+   ergänzen (und `varianteFalkeUndBisonGelernt` in die Bedingung „kennst noch keine“ aufnehmen).
+7. **Nicht geändert, aber nicht mehr stimmig** (außerhalb von Szene 82): Bibel Abschnitt 28
+   (Tabelle, Figuren „Lehrerin, Mechaniker, Schülerin“ stimmt noch) und Abschnitt 30 (Fundtabelle
+   „Falkenfeder aus Holz“, Satz bleibt gleich): Zeile in „Falke aus Holz“ umbenennen.
+
+**Für die Gegenlesung besonders ansehen**
+
+1. Ob es überhaupt passt, dass eine erfundene Gemeinschaft an eine reale Landschaft (Hochebene mit
+   roten Felstürmen) angelehnt ist; der Ort hat keinen realen Namen.
+2. Kiras Erklärung der Herkunft (`kira_regel`): Ist die Familiengeschichte unverfänglich?
+3. Joss und der Konzern (`joss`): Der Witz über die Großtante und die App, damit die Figur nicht als
+   „gegen Technik“ gelesen wird (er repariert ja alles).
+4. Anneks Satz „Euer Springer springt wie unser Falke. Nur feiger.“ („euer“/„unser“ als Gegensatz).
+5. Die Bilder `annek`, `joss`, `kira` (Hauttöne h6/h7, Frisuren) und die Karte der Hochebene
+   (Gestaltung durch niedrig-1, Weltbeschreibung 5.9: keine Zeichen, keine Deko aus fremden Kulturen).
+6. Der Aushang „Falke-und-Bison-Turnier der Schule“: das Spiel als gewöhnlicher Schulsport.
+
+**Für niedrig-1: Objekte auf den Karten der Hochebene**
+
+| Karte                    | Objekt       | Art                   | Hinweis                                |
+| ------------------------ | ------------ | --------------------- | -------------------------------------- |
+| `hochebene.felsentuerme` | `kira`       | Figur                 | am Steintisch                          |
+| `hochebene.felsentuerme` | `steintisch` | Auslöser (Gegenstand) | flacher Stein mit eingeritzten Feldern |
+| `hochebene.schule`       | `annek`      | Figur                 | vor der Turnhalle, am Basketballkorb   |
+| `hochebene.schule`       | `joss`       | Figur                 | an der Werkstatt neben dem Schulbus    |
+| `hochebene.schule`       | `werkstatt`  | Auslöser (Gegenstand) | offene Werkstatt, Werkbank             |
+| `hochebene.schule`       | `aushang`    | Auslöser (Gegenstand) | Schwarzes Brett an der Schulwand       |
+
+Figurenbilder (Sprites) `figuren/kira.png`, `figuren/annek.png`, `figuren/joss.png` fehlen noch wie
+bei den anderen Figuren von Akt 4.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

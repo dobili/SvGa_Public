@@ -1,9 +1,158 @@
-// Abzweig Hochebene an Weg 7 (Akt 4, Szene 82 der Story-Bibel, Landschaft L9, Weltbeschreibung
-// 5.9): Felstürme und eine gewöhnliche Schule am Rand der Hochebene.
+// Abzweig Hochebene an Weg 7 (Akt 4, Szene 82 der Story-Bibel, Landschaft L9, O5, Weltbeschreibung
+// 5.9): Felstürme und eine gewöhnliche Schule mit Turnhalle, Bushaltestelle und Werkstatt.
 //
-// Die Figuren und das Spiel „Falkenweg“ (Vell-Familien, O5) warten auf die Antwort des Autors zu
-// Frage Q21-1 (Bibel Abschnitt 33, Frage 1). Bis dahin ist die Hochebene ein stiller Ort ohne
-// Figuren; diese Datei erzählt nur den Rückweg. Einstieg wie in orte.json: zurueck.
+// Die Vell-Familien sind erfunden: Familien, die seit über hundert Jahren auf der Hochebene leben
+// und ein eigenes Spiel auf dem Schachbrett haben, „Falke und Bison“ (V5, Seirawan-Grundlage: Falke
+// = Läufer + Springer, Bison = Turm + Springer). Leitplanken (O5, Antwort des Autors zu Q21-1):
+// keine realen Gemeinschaften, Orte, Zeremonien oder Symbole; keine Federn, Kostüme, „weise Alte“
+// oder Naturmystik; die Figuren sind Menschen von heute mit Berufen, Humor und eigener Meinung.
+// Die Herkunft des Spiels ist Familiengeschichte, kein heiliges Wissen. Vor der Veröffentlichung
+// liest jemand aus einer indigenen Gemeinschaft gegen (Sensibilitätslesung).
+//
+// Figuren: Kira Vell (13, Schülerin, am Steintisch bei den Felstürmen), Annek Vell (Lehrerin) und
+// Joss Vell (Mechaniker) an der Schule. Quest hochebene.falkeUndBison: Kira erklärt das Spiel,
+// {held} bringt Annek Schach bei, Kira schenkt den Falken aus Holz (Fund falkeAusHolz).
+// Variante: „Falke und Bison“ ist noch nicht gebaut (VARIANTE-FEHLT); Kira zeigt eine kurze
+// Partie und vertröstet auf das nächste Mal.
+// Einstiege wie in orte.json: zurueck, kira, annek, joss, steintisch, werkstatt, aushang.
+// Variablen: alle setzt diese Datei; den Fund merkt sie sich selbst (falkeGeschenkt).
+
+EXTERNAL gibFund(kennung)
+
+VAR held = "Du"
+VAR kiraGetroffen = false
+VAR annekGetroffen = false
+VAR annekSchachGelernt = false
+VAR jossGetroffen = false
+VAR falkeGeschenkt = false
+VAR varianteFalkeUndBisonGelernt = false
+
+// ---------------------------------------------------------------- Kira am Steintisch
+
+=== kira ===
+{
+- not kiraGetroffen: -> kira_regel
+- annekSchachGelernt and not falkeGeschenkt: -> kira_geschenk
+- else: -> kira_alltag
+}
+
+=== kira_regel ===
+~ kiraGetroffen = true
+~ varianteFalkeUndBisonGelernt = true
+Am Fuß der Felstürme steht ein flacher Steintisch. Ein Mädchen mit Schulrucksack und Basketball unter dem Arm stellt Figuren auf ein abgegriffenes Brett. #sprecher:erzaehler
+Spielst du Schach? Dann setz dich. Das hier ist fast Schach. Nur besser. #sprecher:kira #stimmung:froh
+Ich bin Kira. Der Bus fährt in einer halben Stunde, das reicht für eine Erklärung. #sprecher:kira
+Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
+Der Falke zieht wie ein Läufer oder springt wie ein Springer. Der Bison zieht wie ein Turm oder springt wie ein Springer. #sprecher:kira
+Man setzt sie ein, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann landen sie auf dem Feld, das frei wird. #sprecher:kira
+Bei uns heißt das Spiel einfach Falke und Bison. Meine Urgroßmutter hat die zwei geschnitzt, in einem Winter, als die Straße zugeschneit war und dem Schulschach zwei Figuren fehlten. #sprecher:kira
+Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr Bruder so stur war. Sagt jedenfalls meine Oma. #sprecher:kira #stimmung:lacht
+-> kira_vorfuehren
+
+=== kira_vorfuehren ===
+Kira zeigt es dir an einer kurzen Partie. Du ziehst vorsichtig, sie zieht schnell. #sprecher:erzaehler
+Im neunten Zug springt ihr Falke über deine Bauern, und dein König hat kein Feld mehr. #sprecher:erzaehler
+Das passiert allen beim ersten Mal. Mein Cousin hat ein Jahr gebraucht. #sprecher:kira
+Ambrose sieht lange auf das Brett. #sprecher:erzaehler
+Ich habe gelernt, dass man Spiele nicht erklärt, sondern lernt. #sprecher:ambrose #stimmung:friedlich
+// VARIANTE-FEHLT: Falke und Bison (L9). Bis es gebaut ist, nur die Regel, die Vorführung und eine Vertröstung.
+Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira
+-> END
+
+=== kira_geschenk ===
+~ falkeGeschenkt = true
+Kira kommt vom Bus gerannt. #sprecher:erzaehler
+Tante Annek hat erzählt, dass du ihr Schach beigebracht hast. Sie hat beim Abendessen nur noch von Springern geredet. #sprecher:kira #stimmung:lacht
+Sie legt dir einen kleinen Falken aus Holz in die Hand. Die Flügel sind eckig, die Unterseite ist mit Filz beklebt. #sprecher:erzaehler
+Den hab ich im Werkunterricht gemacht. Damit du nicht vergisst, wie man fliegt. Auf dem Brett, meine ich. #sprecher:kira
+~ gibFund("falkeAusHolz")
+-> END
+
+=== kira_alltag ===
+{~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden. Oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig. Mit Uhr. Ich hab eine.} #sprecher:kira
++ [„Erklär mir die Regeln noch einmal.“]
+    Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira
+    -> END
++ [„Bis bald, Kira.“]
+    -> END
+
+// ---------------------------------------------------------------- Annek an der Schule
+
+=== annek ===
+{
+- not annekGetroffen: -> annek_erstes_treffen
+- kiraGetroffen and not annekSchachGelernt: -> annek_schach
+- else: -> annek_alltag
+}
+
+=== annek_erstes_treffen ===
+~ annekGetroffen = true
+Vor der Schule wirft eine Frau in Trainingsjacke Körbe. Sie trifft dreimal hintereinander und tut so, als wäre das normal. #sprecher:erzaehler
+Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. Suchst du jemanden? #sprecher:annek
+{kiraGetroffen:
+    -> annek_schach
+- else:
+    Wenn du ein Brett im Rucksack hast, geh zu den Felstürmen. Meine Nichte sitzt da jeden Nachmittag und gewinnt gegen alle. #sprecher:annek
+    -> END
+}
+
+=== annek_schach ===
+~ annekSchachGelernt = true
+Kira hat dich also schon verlieren lassen. Gut. Dann bist du dran. #sprecher:annek #stimmung:lacht
+Ich wollte immer Schach lernen. Aber jeder, der es mir erklären wollte, hat nach fünf Minuten von Eröffnungen geredet. #sprecher:annek
+Ihr setzt euch auf die Treppe vor der Turnhalle. Du stellst die Figuren auf und erklärst, eine nach der anderen. #sprecher:erzaehler
+Annek nimmt den Springer in die Hand und lässt ihn über die Bauern hüpfen. #sprecher:erzaehler
+Euer Springer springt wie unser Falke. Nur feiger. Er darf danach nicht weiterfliegen. #sprecher:annek
+Und der Turm ist ein Bison, der das Springen verlernt hat. Armes Tier. #sprecher:annek
+Nach einer halben Stunde spielt sie ihre erste Partie. Sie verliert, lacht und baut sofort neu auf. #sprecher:erzaehler
+Zwei Spiele auf demselben Brett. Ich dachte immer, es gäbe nur eins. #sprecher:ambrose #stimmung:friedlich
+-> END
+
+=== annek_alltag ===
+{~Ich habe meiner Klasse heute das Springerproblem gegeben. Ein Feld nach dem anderen, ohne eins zweimal. Sie hassen mich.|Kira sagt, ich spiele Schach wie Basketball. Ich glaube, das ist ein Kompliment.|Wenn der Bus wieder streikt, rufe ich Joss. Der repariert alles außer schlechter Laune.} #sprecher:annek
+-> END
+
+// ---------------------------------------------------------------- Joss in der Werkstatt
+
+=== joss ===
+{jossGetroffen: -> joss_alltag}
+~ jossGetroffen = true
+Neben der Schule steht eine offene Werkstatt. Unter dem Schulbus schauen zwei Stiefel hervor. #sprecher:erzaehler
+Moment! #sprecher:joss
+Ein Mann rollt auf einem Brett hervor, Öl an der Stirn. #sprecher:erzaehler
+Joss Vell. Ich halte den Bus am Leben, die Traktoren und die Heizung der Schule. Alles, was älter ist als ich. #sprecher:joss
+Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss
+Ich hab ihm gesagt: Bei uns sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast. Das reicht. #sprecher:joss #stimmung:lacht
+Er hat nicht gelacht. Seine Schuhe waren danach auch nicht mehr neu. Hier oben ist alles Staub. #sprecher:joss
+Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose
+-> END
+
+=== joss_alltag ===
+{~Schach? Zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer. Ich verliere jeden Mittag.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.|Kira hat den Falken im Werkunterricht gemacht. Besser als meiner damals. Sag ihr das nicht.} #sprecher:joss
+-> END
+
+// ---------------------------------------------------------------- Gegenstände
+
+=== steintisch ===
+{kiraGetroffen:
+    Auf dem Steintisch sind die Felder eingeritzt, halb verwittert. Daneben hat jemand mit Kreide „Kira 14, Cousin 3“ geschrieben. #sprecher:erzaehler
+- else:
+    Ein flacher Stein wie ein Tisch, mit eingeritzten Feldern. Acht mal acht. #sprecher:erzaehler
+}
+-> END
+
+=== werkstatt ===
+{~In der Werkstatt hängen Schraubenschlüssel nach Größe sortiert. Ein Radio spielt leise.|Auf der Werkbank liegt ein halb geschnitzter Bison neben einem Vergaser.|An der Wand ein Kalender mit dem Spielplan der Schulmannschaft.} #sprecher:erzaehler
+-> END
+
+=== aushang ===
+Am Schwarzen Brett der Schule hängen Zettel: „Basketball dienstags“, „Busfahrplan Sommer“ und „Falke-und-Bison-Turnier der Schule, Anmeldung bei Frau Vell“. #sprecher:erzaehler
+{annekSchachGelernt:
+    Darunter, ganz neu und mit Filzstift: „Schach-AG, freitags. Anfänger willkommen. Die Lehrerin auch.“ #sprecher:erzaehler
+}
+-> END
+
+// ---------------------------------------------------------------- Rückweg
 
 === zurueck ===
 Die Schotterstraße führt zurück zur Bergstraße. Hinter dir kreist ein Falke über den Felstürmen. #sprecher:erzaehler

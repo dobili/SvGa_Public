@@ -231,6 +231,12 @@
       "ort": "pinewoodCamp",
       "name": "fund.marshmallowStock.name",
       "text": "fund.marshmallowStock.text"
+    },
+    {
+      "kennung": "falkeAusHolz",
+      "ort": "hochebene",
+      "name": "fund.falkeAusHolz.name",
+      "text": "fund.falkeAusHolz.text"
     }
   ]
 }

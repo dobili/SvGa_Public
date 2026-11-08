@@ -754,5 +754,14 @@
   "laden.campkiosk.name": "Kiosk des Pinewood Camps",
   "gegenstand.seilbahnkarte.name": "Seilbahnkarte",
   "gegenstand.marshmallows.name": "Marshmallows",
-  "gegenstand.halesSeite.name": "Hales Seite"
+  "gegenstand.halesSeite.name": "Hales Seite",
+  "figur.kira.name": "Kira Vell",
+  "figur.annek.name": "Annek Vell",
+  "figur.joss.name": "Joss Vell",
+  "quest.falkeUndBison.titel": "Falke und Bison",
+  "quest.falkeUndBison.schritt1": "Lass dir von Kira an den Felstürmen ihr Spiel zeigen.",
+  "quest.falkeUndBison.schritt2": "Bring Annek an der Schule Schach bei.",
+  "quest.falkeUndBison.schritt3": "Sprich noch einmal mit Kira.",
+  "fund.falkeAusHolz.name": "Falke aus Holz",
+  "fund.falkeAusHolz.text": "Eine Spielfigur aus Kiras Werkunterricht, für das Spiel Falke und Bison. „Damit du nicht vergisst, wie man fliegt.“"
 }

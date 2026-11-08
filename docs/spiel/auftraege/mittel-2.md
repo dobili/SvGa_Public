@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Gegner und Begegnungen von Akt 3 als Daten
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, neunter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, neunter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/gegner.json` (nur neue Einträge für Akt 3),
@@ -28,7 +28,66 @@ Gegner und Begegnungen, damit Karten und Dialoge später nur noch darauf verweis
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis 43dc8988 hereingeholt), mit einer Lücke: die drei
+Clubchefs und ihre Clubkämpfe (unten, fertig zum Einfügen).
+
+**Neue Gegner** (`gegner.json`, Steckbrief je mindestens eine Zeile):
+
+| Kennung                           | Rolle        | Stärke  | Stil                          | Immun gegen                                       |
+| --------------------------------- | ------------ | ------- | ----------------------------- | ------------------------------------------------- |
+| `wegIronwoodSilicon.joggerin`     | strasse      | A − 100 | draufgaenger                  | grossesMaul                                       |
+| `siliconBay.dash`                 | strasse      | A − 50  | angreifer/draufgaenger        | grossesMaul, ablenkung                            |
+| `siliconBay.nova`                 | clubmitglied | A + 50  | universell, Sizilianisch      | –                                                 |
+| `siliconBay.theo`                 | clubmitglied | A ± 0   | positionsspieler              | –                                                 |
+| `wegSiliconDelacroix.schiffskoch` | strasse      | A − 50  | vereinfacher                  | ablenkung                                         |
+| `portDelacroix.batiste`           | strasse      | A ± 0   | verteidiger                   | kuehlerKopf, gruebelfalle, grossesMaul, ablenkung |
+| `portDelacroix.remy`              | clubmitglied | A ± 0   | angreifer, Königsgambit       | –                                                 |
+| `portDelacroix.lou`               | clubmitglied | A − 50  | positionsspieler              | –                                                 |
+| `portDelacroix.celeste`           | story        | A − 300 | universell                    | –                                                 |
+| `desertSprings.buck`              | strasse      | A − 100 | angreifer                     | –                                                 |
+| `desertSprings.tomas`             | clubmitglied | A ± 0   | verteidiger                   | –                                                 |
+| `desertSprings.dot`               | clubmitglied | A + 50  | positionsspieler, Damengambit | –                                                 |
+
+Die Namen der Konter passen: `spruch.konter.joggerin|dash|schiffskoch|batiste|buck` gibt es.
+
+**Neue Begegnungen** (`begegnungen.json`): Stellungsduelle 10 Züge, Mindestvorteil 1,0, Leser Weiß,
+alle Abbildungen im dritten und zweiten Auftrag mit der Engine geprüft (Tiefe 12):
+`wegIronwoodSilicon.joggerin` (Abb. 4.41, +0,98, Uhr 3 + 2), `siliconBay.dash` (Abb. 1.19, +1,74,
+3 + 2), `wegSiliconDelacroix.schiffskoch` (Abb. 6.25, +0,81, 10 + 5), `portDelacroix.batiste`
+(Abb. 6.5, +0,84, ohne Uhr), `desertSprings.buck` (Abb. 1.36, +0,84, 3 + 2); dazu
+`portDelacroix.celeste` (Partie aus der Grundstellung, ohne Uhr, Szene 68). **Texte:** 14 neue
+`figur.*.name`, darunter schon Dr. Lin, Miss Odile und Mira.
+
+**Prüfungen:** `pytest pipeline/tests` 375 bestanden; `npm run pruefen` bestanden (358 Dateien, 2407 Tests).
+
+**Was nicht passt oder fehlt**
+
+1. **Clubchefs nicht angelegt:** Der Pipeline-Test rechnet den Soll-Versatz eines Clubchefs aus der
+   Clubnummer seines Ortes in `orte.json`; Silicon Bay, Port Delacroix und Desert Springs haben dort
+   noch keinen Eintrag, also wäre der Soll-Wert 160 und der Test rot. Sobald die Orte (Nummern 5,
+   6, 7, mit Club und `chef`) stehen, diese Einträge anhängen:
+
+```json
+{"kennung":"siliconBay.lin","name":"figur.lin.name","rolle":"clubchef","portraet":"portraets/lin.webp","staerke":{"art":"eingang","versatz":460},"phasenversatz":{"eroeffnung":1,"mittelspiel":-1},"gewichte":{"koenigPassiv":1.5,"taktikUebersehen":0.8},"stil":"positionsspieler","eroeffnung":{"art":"fest","eroeffnungen":["praxis:Italian Game","praxis:Queen's Gambit Declined"],"abweichung":5},"steckbrief":[{"art":"eroeffnung","wert":"praxis:Italian Game"},{"art":"fehlerart","wert":"koenigPassiv"},{"art":"stil","wert":"positionsspieler"}]}
+{"kennung":"portDelacroix.odile","name":"figur.odile.name","rolle":"clubchef","portraet":"portraets/odile.webp","staerke":{"art":"eingang","versatz":520},"gewichte":{"koenigsschild":1.6,"tempoverlust":1.2},"stil":"positionsspieler","eroeffnung":{"art":"fest","eroeffnungen":["praxis:French Defense","praxis:English Opening"],"abweichung":15},"steckbrief":[{"art":"stil","wert":"positionsspieler"},{"art":"fehlerart","wert":"koenigsschild"},{"art":"eroeffnung","wert":"praxis:French Defense"}]}
+{"kennung":"desertSprings.mira","name":"figur.mira.name","rolle":"clubchef","portraet":"portraets/mira.webp","staerke":{"art":"eingang","versatz":580},"phasenversatz":{"endspiel":-1},"gewichte":{"falscherAbtausch":1.6,"drohungIgnoriert":1.2},"stil":{"angreifer":120,"taktiker":100},"eroeffnung":{"art":"fest","eroeffnungen":["praxis:King's Gambit","praxis:Italian Game: Evans Gambit"],"abweichung":10},"steckbrief":[{"art":"stil","wert":"angreifer"},{"art":"fehlerart","wert":"falscherAbtausch"},{"art":"eroeffnung","wert":"praxis:King's Gambit"}]}
+```
+
+Begegnungen dazu (Clubkampf Port Delacroix ohne Karten nach R28, Szene 67):
+
+```json
+{"kennung":"siliconBay.clubkampf","gegner":"siliconBay.lin","farbe":"zufall","format":{"art":"partie"},"startstellung":{"art":"grundstellung"},"kartenErlaubt":true,"zeit":"wahl"}
+{"kennung":"portDelacroix.clubkampf","gegner":"portDelacroix.odile","farbe":"zufall","format":{"art":"partie"},"startstellung":{"art":"grundstellung"},"kartenErlaubt":false,"zeit":"wahl"}
+{"kennung":"desertSprings.clubkampf","gegner":"desertSprings.mira","farbe":"zufall","format":{"art":"partie"},"startstellung":{"art":"grundstellung"},"kartenErlaubt":true,"zeit":"wahl"}
+```
+
+Alle Eröffnungsnamen kommen in `praxisbuch.json` vor oder werden im Code schon benutzt. 2. **Orte ohne Eintrag:** `siliconBay`, `portDelacroix`, `desertSprings` und die Wege
+`wegIronwoodSilicon`, `wegSiliconDelacroix`, `wegDelacroixDesert` fehlen in `orte.json`; die
+Gegner-Kennungen folgen schon der Bibel. 3. **Buck aus Kapitel 1 statt 8:** Die Bibel (Szene 74) nennt Abb. 8.44; der Auftrag will das Kapitel
+des Clubs (Desert Springs: Königsangriff, Kapitel 1.6), deshalb Abb. 1.36 (Goldene Angriffsregel).
+8.44 bleibt frei für Summit City. 4. **Batiste immun gegen „Kühler Kopf“:** wörtlich nach „alles außer Schmeichelei“; die Karte
+wirkt auf die eigene Uhr, Immunität dagegen ändert nichts. Vorschlag: aus der Liste nehmen. 5. **Erinnerung 1858** (Szene 77) und die Joggerin-Stellung aus Kapitel 2 fehlen weiter; die
+Erinnerung braucht eine mit der Engine gebaute Stellung aus Ambroses erfundener Partie. 6. **Mama** reist mit nach Port Delacroix, spielt aber keine Partie; kein Profil nötig.
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

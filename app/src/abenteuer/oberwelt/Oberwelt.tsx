@@ -179,7 +179,11 @@ export function Oberwelt() {
     if (!erste) return;
     schreibe(ergebnis.stand);
     setzeMeldung(
-      tSpiel("karte.lernkarte", { kapitel: erste.kapitel ?? 0, karte: tSpiel(erste.name) }),
+      tSpiel("karte.lernkarte", {
+        kapitel: erste.kapitel ?? 0,
+        karte: tSpiel(erste.name),
+        satz: tSpiel(`karte.${erste.kennung}.geschenkt`),
+      }),
     );
     // Einmal je Aufbau, sobald die Welt da ist.
     // eslint-disable-next-line react-hooks/exhaustive-deps

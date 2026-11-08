@@ -105,6 +105,12 @@ def test_querverweise_stimmen():
         konter = [f"spruch.konter.{name}.{n}" in texte for n in (1, 2)]
         if any(konter) and not all(konter):
             fehler.append(f"{profil['kennung']}: Antworten auf Sprüche unvollständig")
+    # Jede Karte hat Ambroses Erklärung, jede Lernkarte ihren Satz beim Schenken (docs/spiel/11).
+    for karte in _lade("karten.json")["karten"]:
+        schluessel = [f"karte.{karte['kennung']}.erklaerung"]
+        if "kapitel" in karte:
+            schluessel.append(f"karte.{karte['kennung']}.geschenkt")
+        fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
     # Werkzeugkarten (docs/spiel/11): das Werkzeug gibt es in der App.
     analyse = HAUPTORDNER / "app" / "src" / "analyse"
     for karte in _lade("karten.json")["karten"]:

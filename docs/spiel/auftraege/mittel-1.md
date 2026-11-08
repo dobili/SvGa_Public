@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Kartentexte und Ambroses Erklärungen
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, elfter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der elfte Auftrag, Kartentexte, ist zusammengeführt, danke; die Erklärungen stehen in der Deckwahl, die Sätze beim Schenken in der Meldung der Lernkarte. Röntgenblick bleibt Ladenkarte ohne Kapitel. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel, bestehende nur bei den

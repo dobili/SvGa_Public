@@ -111,6 +111,11 @@ export function Deckwahl({
           })}
         </div>
       )}
+      {deck.map((kennung) => (
+        <p key={kennung} className="abenteuer-karte-erklaerung">
+          {tSpiel(`karte.${kennung}.erklaerung`)}
+        </p>
+      ))}
       {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
       <button
         type="button"

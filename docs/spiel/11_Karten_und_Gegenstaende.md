@@ -21,35 +21,35 @@ Grübelfalle, Großes Maul), Gegenstände Fahrrad und Laterne.
 
 ## 2. Neue Hilfskarten
 
-| Nr. | Karte                 | Stufe  | Wirkung                                                                                                  | Buch, Werkzeug der App                                  | Woher                               |
-| --- | --------------------- | ------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------- |
-| K1  | **Was droht?**        | leicht | Zeigt als roten Pfeil, was der Gegner spielen würde, wenn er jetzt am Zug wäre (Nullzug der Engine).     | Kapitel 4 und 12, Frage „Was will der Gegner?“          | Laden, dauerhaft                    |
-| K2  | **Abzählen**          | leicht | Ein Feld antippen: Zahl der Angreifer und Verteidiger, grün oder rot.                                    | Kapitel 1, Zählen von Angreifern und Verteidigern       | Aufgabenrunde Kapitel 1             |
-| K3  | **Waage**             | leicht | Sagt grob, wer besser steht (deutlich Weiß, ausgeglichen, deutlich Schwarz), ohne Zahl und ohne Zug.     | Kapitel 12, Stellungsbeurteilung                        | Laden                               |
-| K4  | **Schutzengel**       | mittel | Für die nächsten fünf eigenen Züge: Verliert ein Zug Material (zwei Bauern oder mehr), fragt die App einmal „Bist du sicher?“. | Kapitel 4, Vorsichtsprüfung vor jedem Zug (W1–W7)       | Nebenquest, Verbrauch               |
-| K5  | **Remisangebot**      | mittel | Der Gegner nimmt Remis an, wenn die Stellung etwa ausgeglichen ist (Engine ±0,5); sonst lehnt er ab, die Karte ist trotzdem weg. | Kapitel 12, Remis als Ergebnis, Stellung ehrlich beurteilen | Laden Riverton, Verbrauch           |
-| K6  | **Plan des Buches**   | mittel | Nennt ein Merkmal der Stellung aus den Werkzeugen der Kapitel 5 bis 7 (schwacher Bauer, offene Linie, schlechter Läufer) als Satz. | Kapitel 5–7, Werkzeuge der App                          | Clubchef-Sieg (Akt 3)               |
-| K7  | **Spickzettel**       | leicht | Vor der Partie: Der Gegner spielt die Eröffnung aus seinem Steckbrief sicher, und der Leser sieht ihren Namen. | Kapitel 11, Eröffnungen; Eröffnungsnamen der App        | Vorbereitungsquest (C7)             |
-| K8  | **Auszeit**           | leicht | Hält die eigene Uhr für einen Zug an (nur mit Uhr).                                                       | Kapitel 12, Zeiteinteilung                              | Laden, Verbrauch                    |
+| Nr. | Karte               | Stufe  | Wirkung                                                                                                                            | Buch, Werkzeug der App                                      | Woher                     |
+| --- | ------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------- |
+| K1  | **Was droht?**      | leicht | Zeigt als roten Pfeil, was der Gegner spielen würde, wenn er jetzt am Zug wäre (Nullzug der Engine).                               | Kapitel 4 und 12, Frage „Was will der Gegner?“              | Laden, dauerhaft          |
+| K2  | **Abzählen**        | leicht | Ein Feld antippen: Zahl der Angreifer und Verteidiger, grün oder rot.                                                              | Kapitel 1, Zählen von Angreifern und Verteidigern           | Aufgabenrunde Kapitel 1   |
+| K3  | **Waage**           | leicht | Sagt grob, wer besser steht (deutlich Weiß, ausgeglichen, deutlich Schwarz), ohne Zahl und ohne Zug.                               | Kapitel 12, Stellungsbeurteilung                            | Laden                     |
+| K4  | **Schutzengel**     | mittel | Für die nächsten fünf eigenen Züge: Verliert ein Zug Material (zwei Bauern oder mehr), fragt die App einmal „Bist du sicher?“.     | Kapitel 4, Vorsichtsprüfung vor jedem Zug (W1–W7)           | Nebenquest, Verbrauch     |
+| K5  | **Remisangebot**    | mittel | Der Gegner nimmt Remis an, wenn die Stellung etwa ausgeglichen ist (Engine ±0,5); sonst lehnt er ab, die Karte ist trotzdem weg.   | Kapitel 12, Remis als Ergebnis, Stellung ehrlich beurteilen | Laden Riverton, Verbrauch |
+| K6  | **Plan des Buches** | mittel | Nennt ein Merkmal der Stellung aus den Werkzeugen der Kapitel 5 bis 7 (schwacher Bauer, offene Linie, schlechter Läufer) als Satz. | Kapitel 5–7, Werkzeuge der App                              | Clubchef-Sieg (Akt 3)     |
+| K7  | **Spickzettel**     | leicht | Vor der Partie: Der Gegner spielt die Eröffnung aus seinem Steckbrief sicher, und der Leser sieht ihren Namen.                     | Kapitel 11, Eröffnungen; Eröffnungsnamen der App            | Vorbereitungsquest (C7)   |
+| K8  | **Auszeit**         | leicht | Hält die eigene Uhr für einen Zug an (nur mit Uhr).                                                                                | Kapitel 12, Zeiteinteilung                                  | Laden, Verbrauch          |
 
 ## 3. Neue Sprüche (nur gegen Straßengegner)
 
-| Nr. | Spruch            | Stufe  | Wirkung                                                                                                    | Grundlage in der App                         |
-| --- | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| S7  | **Schmeichelei**  | leicht | Vor der Partie: „Du bist bestimmt der Beste im Park.“ Der Gegner wird überheblich (Zustand wie R8).        | Zustand der Gegner (Regelwerk R8, R9)         |
-| S8  | **Pokerface**     | mittel | Der Held tut, als hätte er etwas übersehen; der Gegner greift drei Züge lang lieber an als zu verteidigen (Stil „angriffslustig“). | Stilmischung der Bots (engine/stil)           |
-| S9  | **Ablenkung**     | leicht | „Schau mal, ein Waschbär!“ Der nächste Zug des Gegners kommt aus einer schwächeren Stufe.                    | Stufen je Zug (botzug.ts), wie Großes Maul    |
+| Nr. | Spruch           | Stufe  | Wirkung                                                                                                                            | Grundlage in der App                       |
+| --- | ---------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| S7  | **Schmeichelei** | leicht | Vor der Partie: „Du bist bestimmt der Beste im Park.“ Der Gegner wird überheblich (Zustand wie R8).                                | Zustand der Gegner (Regelwerk R8, R9)      |
+| S8  | **Pokerface**    | mittel | Der Held tut, als hätte er etwas übersehen; der Gegner greift drei Züge lang lieber an als zu verteidigen (Stil „angriffslustig“). | Stilmischung der Bots (engine/stil)        |
+| S9  | **Ablenkung**    | leicht | „Schau mal, ein Waschbär!“ Der nächste Zug des Gegners kommt aus einer schwächeren Stufe.                                          | Stufen je Zug (botzug.ts), wie Großes Maul |
 
 ## 4. Gegenstände (dauerhaft, einmal)
 
-| Nr. | Gegenstand          | Wirkung                                                                                                  | Woher                                 |
-| --- | ------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| I1  | **Lupe des Uhrmachers** | Vor jeder Partie zwei Zeilen aus dem Steckbrief des Gegners sehen (Schwächen, Immunität gegen Sprüche). | Mr. Harlan nach drei Siegen           |
-| I2  | **Kartentasche**    | Vier statt drei Karten im Deck (nur Akt 3 und Post-Game, nicht im Finale).                                | Laden Ironwood, teuer (300 Münzen)    |
-| I3  | **Reisebrett**      | Überall in der Welt eine freie Partie gegen Ambrose oder Juno (Übungspartie, zählt nicht für Nadeln).      | Juno, nach Akt 2                      |
-| I4  | **Partienotizbuch** | Nach jeder Partie hält Ambrose die drei wichtigsten Momente im Tagebuch fest (Kipppunkt, bester Zug, Fehler). | Bibliothek Cedar Creek                |
-| I5  | **Limo**            | Verbrauch: Geschenk für Straßengegner (Jo: „Wer verliert, holt Limo.“); bringt eine Steckbriefzeile oder eine Revanche mit Vorteil. | Kiosk, 5 Münzen                       |
-| I6  | **Monatskarte**     | Schnellreise zwischen besuchten Städten (Fahrkarten-Regel aus 08).                                       | Bahnhof Riverton                      |
+| Nr. | Gegenstand              | Wirkung                                                                                                                             | Woher                              |
+| --- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| I1  | **Lupe des Uhrmachers** | Vor jeder Partie zwei Zeilen aus dem Steckbrief des Gegners sehen (Schwächen, Immunität gegen Sprüche).                             | Mr. Harlan nach drei Siegen        |
+| I2  | **Kartentasche**        | Vier statt drei Karten im Deck (nur Akt 3 und Post-Game, nicht im Finale).                                                          | Laden Ironwood, teuer (300 Münzen) |
+| I3  | **Reisebrett**          | Überall in der Welt eine freie Partie gegen Ambrose oder Juno (Übungspartie, zählt nicht für Nadeln).                               | Juno, nach Akt 2                   |
+| I4  | **Partienotizbuch**     | Nach jeder Partie hält Ambrose die drei wichtigsten Momente im Tagebuch fest (Kipppunkt, bester Zug, Fehler).                       | Bibliothek Cedar Creek             |
+| I5  | **Limo**                | Verbrauch: Geschenk für Straßengegner (Jo: „Wer verliert, holt Limo.“); bringt eine Steckbriefzeile oder eine Revanche mit Vorteil. | Kiosk, 5 Münzen                    |
+| I6  | **Monatskarte**         | Schnellreise zwischen besuchten Städten (Fahrkarten-Regel aus 08).                                                                  | Bahnhof Riverton                   |
 
 ## 5. Brücke zum Buch (Lernkarten)
 

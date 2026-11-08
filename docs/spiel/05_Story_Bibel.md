@@ -425,6 +425,66 @@ mit leichtem Vorteil, gewonnen nach 10 bis 15 Zügen bei gehaltenem Vorteil oder
 A − 100. Remis zählt als Sieg (Dokument 02, 2.7). Wiederholbar, bei Sieg Limo-Witz und Karte
 Zweite Chance beim ersten Sieg. Etwa 8 Minuten.
 
+**10a. Limo für Jo** · N begegnung `mapleFalls.limo` · Gegenstand Limo (11, I5)
+Ort `mapleFalls.park` (Halfpipe und Kiosk von Mr. Patel) · Jo, Mr. Patel, Ambrose. Auslöser:
+{held} verliert ein Duell gegen Jo. Jo grinst: „Fünf Minuten, eine Partie. Wer verliert, holt Limo.“
+Ereignis: Laden und Dialog. Am Kiosk kostet eine Limo 5 Münzen; Mr. Patel: „Für Jo? Die mit dem
+zerkratzten Brett? Die trinkt nur Zitrone.“ {held} bringt die Limo zur Halfpipe. Jo trinkt, setzt
+sich auf die Kante und erzählt mehr als sonst: „Ich greif immer an. Rückwärts zieh ich nicht gern.
+Ist so.“ Ambrose: „Eine Limonade für eine Schwäche. Ein guter Handel.“ Belohnung: Steckbriefzeile
+für Jo (sie zieht ungern zurück) und beim nächsten Duell Jos Zustand „analysiert“. Wer Jo schon
+geschlagen hat, kann die Limo trotzdem bringen: dann nur die Steckbriefzeile und Jos Satz
+„Revanche, wenn ich satt bin.“ Etwa 3 Minuten.
+
+Quest-Schritte (Format wie `quests.json`):
+
+```json
+{
+  "kennung": "mapleFalls.limo",
+  "titel": "quest.limo.titel",
+  "typ": "begegnung",
+  "ort": "mapleFalls",
+  "haupt": false,
+  "start": {
+    "art": "partie",
+    "begegnung": "mapleFalls.skaterJo",
+    "ausgang": ["niederlage"]
+  },
+  "schritte": [
+    {
+      "text": "quest.limo.schritt1",
+      "ereignis": { "art": "dialog", "knoten": "maple-falls-park.jo_limo" }
+    },
+    {
+      "text": "quest.limo.schritt2",
+      "ereignis": { "art": "dialog", "knoten": "maple-falls-park.patel_limo" },
+      "wirkungen": [{ "art": "gegenstand", "gegenstand": "limo" }]
+    },
+    {
+      "text": "quest.limo.schritt3",
+      "ereignis": {
+        "art": "dialog",
+        "knoten": "maple-falls-park.jo_limo_gebracht"
+      },
+      "wirkungen": [
+        { "art": "steckbrief", "gegner": "mapleFalls.skaterJo", "zeile": 0 },
+        {
+          "art": "zustand",
+          "gegner": "mapleFalls.skaterJo",
+          "analysiert": true
+        }
+      ]
+    }
+  ]
+}
+```
+
+Texte: „Limo für Jo“; „Hör dir an, was Jo will.“; „Kauf am Kiosk eine Limo (5 Münzen).“; „Bring
+Jo die Limo.“ Daten dazu: Jos Profil braucht eine Steckbriefzeile (`{ "art": "fleck", "wert":
+"rueckzug" }`, passt zu „rückwärts zieh ich nicht gern“), die Limo eine Ware am Kiosk (5) und eine
+Wirkung, die den Gegenstand beim Übergeben verbraucht (Bericht). Den Kauf öffnet der Dialog mit
+`oeffneLaden("mapleFalls.kiosk")`; die Quest wartet auf den Knoten danach.
+
 **11. Clubkampf Maple Falls** · `akt1.clubnadelMapleFalls` · H `mapleFalls.clubkampf`
 Ort `mapleFalls.clubraum` · Coach Delgado, Juno, Sam als Zuschauer. Ereignis: Partie gegen den
 Clubchef (Zielstärke E + 220, Italienisch, Gegnerprofil vorhanden). Kartenwahl vor der Partie
@@ -600,15 +660,21 @@ entfallen zuerst Szene 21 (optional) und Szene 23 (Straße), dann wird die Erinn
 Damit kommen beide Zustände aus dem Regelwerk in Akt 1 einmal vor: „analysiert“ in Maple Falls,
 „abgelenkt“ in Cedar Creek.
 
-### Hilfskarten in Akt 1 (Vorschlag für das Regelwerk)
+### Hilfskarten und Gegenstände in Akt 1
 
-| Karte             | Wo                                 | Warum hier                                                                                        |
-| ----------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Fingerzeig        | Szene 2, Ambrose                   | erste Karte, im Ink-Beispiel schon so                                                             |
-| Gefahrenradar     | Szene 8, Lilys Springer            | passt zur Frage „Was hängt?“                                                                      |
-| Zweite Chance     | Szene 9 (zwei) und Szene 10 (eine) | häufige leichte Karte, macht Anfänger mutiger                                                     |
-| Ambroses Flüstern | Szene 18, Archiv                   | erste mittlere Karte, als Dank für Hilfe                                                          |
-| Mentor-Zug        | Szene 24, Clubsieg Cedar Creek     | Clubsieg nach Konzeptsammlung; nicht schon in Club 1, damit Ambrose ihn als Vertrauensbeweis gibt |
+Stand nach den Spieldaten (`quests.json`, `laeden.json`) und dem achten Auftrag; Preise und
+Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
+
+| Karte oder Gegenstand | Wo                                                                                        | Warum hier                                            |
+| --------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Fingerzeig            | Szene 2, Ambrose                                                                          | erste Karte, im Ink-Beispiel schon so                 |
+| Gefahrenradar         | Clubnadel Maple Falls (Quest `mapleFalls.viertesBrett`)                                   | passt zur Frage „Was hängt?“                          |
+| Mentor-Zug            | erste Clubnadel Maple Falls und Cedar Creek (R27)                                         | erste Nadel je Club                                   |
+| Zweite Chance         | Szene 9 (zwei), Straßensiege, erste Reihe Cedar Creek                                     | häufige leichte Karte, macht Anfänger mutiger         |
+| Ambroses Flüstern     | Szenen 7, 8, 17, 18 (Rätsel und Hilfe, R27)                                               | erste mittlere Karte, als Dank für Hilfe              |
+| Bauernvorgabe         | Szene 20, Erinnerung New York                                                             | erste Erinnerung der Staffel                          |
+| Limo                  | Szene 10a, Kiosk Maple Falls (5 Münzen)                                                   | erste kleine Geschichte mit Gegenstand und Steckbrief |
+| Laden Maple Falls     | Kiosk Mr. Patel: Zweite Chance, Gefahrenradar, Flüstern, Röntgenblick, Ablenkung, Fahrrad | erster Laden; das Fahrrad dort ist zu früh (11, 7.4)  |
 
 ## 5. Dialog-Stilregeln
 
@@ -1021,6 +1087,15 @@ Ort `riverton.bahnhofshalle` · Pops. Ereignis: Laden (G2, G5; `oeffneLaden("riv
 in Abschnitt 13. Pops erzählt, dass Slicks Lehrer, der alte Mr. Odum, hier jeden Morgen eine
 Zeitung kaufte und die Schachspalte zuerst las. Etwa 3 Minuten.
 
+**30a. Die Monatskarte** · Gegenstand Monatskarte (11, I6)
+Ort `riverton.bahnhofshalle` · Pops, Mr. Quinn (Schaffner in der Pause), Ambrose. Ereignis: Laden.
+Pops hängt ein neues Schild auf: „Monatskarte – alle Züge und Busse zwischen besuchten Städten“
+(80 Münzen). Mr. Quinn trinkt Kaffee daneben: „Damit fährst du, wohin du willst. Nur nicht in
+Städte, in denen du noch nie warst. Die musst du erst mal finden.“ (W2: Schnellreise nur nach dem
+ersten Fußweg.) Ambrose: „Ein Billett für einen ganzen Monat. Zu meiner Zeit kaufte man dafür ein
+Pferd.“ Wirkung: Schnellreise zwischen allen besuchten Städten ohne einzelne Fahrkarten. Etwa 2
+Minuten.
+
 **31. Der Uhrmacher** · S `riverton.harlan` · Zeit (Vorgabe 5)
 Ort `riverton.bahnhofshalle` (Bank unter der großen Uhr) · Mr. Harlan, Juno, Ambrose. Ereignis: Stellungsduell
 aus einer Abbildung des Buches (Kapitel 3, Abbildung 3.77, Weiß am Zug etwa +1,6, geprüft im
@@ -1032,6 +1107,15 @@ Blitz (3 + 2) wählt, sieht den Effekt: Harlan gerät nach wenigen Zügen in Zei
 beim ersten Sieg **Zweite Chance** (R27). Lehre: Die Zeitklasse ist eine ehrliche Hilfe, sie kostet
 keine Nadel (Z2). Harlan nach der Partie: „Die Unruh tickt für alle gleich. Nur nicht für mich.“
 Etwa 8 Minuten.
+
+**31a. Die Lupe des Uhrmachers** · Gegenstand Lupe (11, I1)
+Ort `riverton.bahnhofshalle` · Mr. Harlan, Ambrose. Auslöser: der dritte Sieg gegen Mr. Harlan (in
+beliebiger Zeitklasse). Ereignis: Dialog. Harlan nimmt die Lupenbrille ab, putzt sie lange und gibt
+{held} seine alte Taschenlupe: „Ich habe sie fünfzig Jahre an Uhrwerken benutzt. Du siehst damit
+nicht die Zahnräder, sondern die Schwächen. Bei mir: Ich denke zu lange.“ Ambrose: „Ein ehrliches
+Werkzeug. Es zeigt nur, was ohnehin da ist.“ Wirkung: Vor jeder Partie zwei Zeilen aus dem
+Steckbrief des Gegners sichtbar, auch ohne Vorbereitungsquest, Immunität gegen Sprüche
+eingeschlossen. Der Zustand „analysiert“ bleibt den Quests vorbehalten. Etwa 2 Minuten.
 
 **32. Aufgabenreihe Riverton** · Runden `riverton.reiheTamsin`, `riverton.reiheRay`
 Ort `riverton.pavillon` · Tamsin, Ray. Ereignis: Aufgaben nach R30a, Zeitbudget 15
@@ -1055,7 +1139,8 @@ Ort `riverton.pavillon` · Slick, Tamsin. Ereignis: Aufgaben und Dialog. Tamsin 
 Runde Blitz zwischen Slick und Ray zu beobachten und mitzuzählen (Runde `riverton.slickBeobachten`,
 3 Aufgaben: Welche Drohung hat Slick übersehen?). Wirkung: Slick **analysiert**, zwei
 Steckbriefzeilen (Fehlerart „übersieht stille Drohungen“, Eröffnung „Schottisch“; C7). Tamsin: „Er
-guckt nur nach vorn. Nie nach hinten.“ Belohnung zusätzlich: Karte **Zeitdruck** (Z3, Nebenquest).
+guckt nur nach vorn. Nie nach hinten.“ Belohnung zusätzlich: Karte **Zeitdruck** (Z3, heute „Grübelfalle“) und der **Spickzettel**
+(K7): Tamsin schreibt Slicks Lieblingseröffnung auf einen Zettel.
 Etwa 7 Minuten.
 
 **35. Flashback: London, 1851** · `akt2.flashbackLondon` · N begegnung (Erinnerung)
@@ -1107,6 +1192,17 @@ Dort öffnet Oma Ruth, umarmt {held} lange und zeigt Mamas altes Zimmer: eine Si
 Foto „Jugendmeisterschaft 2001, Finale – Laura M., Stahlwerker-Club Ironwood“ und, unter Glas, das
 Partieformular des Finales mit einem Kreis um den 33. Zug. Oma Ruth: „Sie hat es eingerahmt und nie
 wieder angesehen.“ Fund F „Foto von 2001“ (Hauptquest-Gegenstand). Etwa 7 Minuten.
+
+**39a. Mamas Turnierheft** · Gegenstand Partienotizbuch (11, I4)
+Ort `ironwood.mamasZimmer` · Oma Ruth, Ambrose. Auslöser: nach Szene 39, beim zweiten Besuch bei Oma
+Ruth. Ereignis: Dialog. Oma Ruth holt aus der Schreibtischschublade ein dickes, blaues Heft: Mamas
+Partienotizbuch von damals, jede Turnierpartie mit Datum, Gegner und drei Sätzen „Was ich gelernt
+habe“. Die letzte beschriebene Seite ist das Finale 2001, danach nur leere Seiten. „Sie hat es mir
+dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt.“ Ambrose: „Drei Sätze nach jeder
+Partie. Ihre Mutter war eine ordentliche Spielerin. Ich war das nie.“ Wirkung: Nach jeder Partie
+hält Ambrose im Tagebuch die drei wichtigsten Momente fest (Kipppunkt, bester Zug, Fehler), auf
+den leeren Seiten von Mamas Heft. In Szene 43 sieht Mama das Heft und lacht: „Du schreibst ja in
+mein Heft.“ Etwa 3 Minuten.
 
 **40. Die Eisenbrücke** · W `wegRivertonIronwood` · Zeit (Vorgabe 5, Zeitnot-Trick)
 Ort `wegRivertonIronwood.kanalweg`, `wegRivertonIronwood.bruecke` · Ambrose, Juno, Mr. Dale. Ereignis: Rätseltafel
@@ -1312,15 +1408,20 @@ Ladenware ist er hier als Verbrauchskarte gedacht (G2). Das braucht entweder ein
 
 ## 14. Hilfskarten und Zeitkarten in Akt 2
 
-| Karte           | Wo                                            | Warum hier                                                 |
-| --------------- | --------------------------------------------- | ---------------------------------------------------------- |
-| Kühler Kopf     | Szene 27, Schaffner am Bahndamm (erster Sieg) | erste Partie mit Uhr, Zeit als Hilfe wird spürbar (Z3, Z4) |
-| Grübelfalle     | Szene 37, Slicks Wohnwagen (Abschied)         | Slick bringt den ersten Spruch bei (docs/spiel/10, S1)     |
-| Großes Maul     | Szene 40, Ambrose auf der Brücke (Geschenk)   | Z6, mit dem ehrlichen Satz aus Kapitel 12, Abschnitt 12.5  |
-| Bauernvorgabe   | Szene 35, Flashback London (≥ 70 %)           | Erinnerung nach R27                                        |
-| Flüstern        | Szene 41, Rätsel im Museum                    | Rätsel nach R27                                            |
-| Zweite Chance   | Szenen 31, 32, 45, 46                         | Straßensiege und Aufgabenreihen nach R27                   |
-| Springervorgabe | alle Nebenquests einer Stadt                  | R27; in Akt 2 realistisch erst in Ironwood                 |
+| Karte               | Wo                                                                                                                                                             | Warum hier                                                 |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Kühler Kopf         | Szene 27, Schaffner am Bahndamm (erster Sieg)                                                                                                                  | erste Partie mit Uhr, Zeit als Hilfe wird spürbar (Z3, Z4) |
+| Grübelfalle         | Szene 37, Slicks Wohnwagen (Abschied)                                                                                                                          | Slick bringt den ersten Spruch bei (docs/spiel/10, S1)     |
+| Großes Maul         | Szene 40, Ambrose auf der Brücke (Geschenk)                                                                                                                    | Z6, mit dem ehrlichen Satz aus Kapitel 12, Abschnitt 12.5  |
+| Bauernvorgabe       | Szene 35, Flashback London (≥ 70 %)                                                                                                                            | Erinnerung nach R27                                        |
+| Flüstern            | Szene 41, Rätsel im Museum                                                                                                                                     | Rätsel nach R27                                            |
+| Zweite Chance       | Szenen 31, 32, 45, 46                                                                                                                                          | Straßensiege und Aufgabenreihen nach R27                   |
+| Springervorgabe     | alle Nebenquests einer Stadt                                                                                                                                   | R27; in Akt 2 realistisch erst in Ironwood                 |
+| Spickzettel (K7)    | Szene 34, Zuschauen im Pavillon (zu den Steckbriefzeilen)                                                                                                      | Vorbereitung lohnt sich: Slicks Eröffnung steht fest       |
+| Monatskarte         | Szene 30a, Zeitungsstand (80 Münzen)                                                                                                                           | Schnellreise nach dem ersten Fußweg (W2)                   |
+| Lupe des Uhrmachers | Szene 31a, dritter Sieg gegen Mr. Harlan                                                                                                                       | Belohnung für Ausdauer, zeigt Steckbriefzeilen             |
+| Partienotizbuch     | Szene 39a, Oma Ruth gibt Mamas Turnierheft                                                                                                                     | verbindet Mamas Geschichte mit Ambroses Rückblick          |
+| Läden               | Riverton: Fingerzeig, Zweite Chance, Waage, Schmeichelei, Remisangebot; Ironwood: Zweite Chance, Flüstern, Fahrrad, Laterne, Auszeit, Was droht?, Kartentasche | Preise und Bedenken in 11, Abschnitt 7                     |
 
 ## 15. Offene Fragen an den Autor (Akt 2)
 
@@ -1608,6 +1709,14 @@ Ort `ironwood.aussen` (Bushaltestelle an der Schnellstraße) · Mama, Juno, Ambr
 Mama erlaubt das Turnier in Silicon Bay („Ich hab Nachtschicht. Juno, du passt auf.“). Ambrose
 starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Etwa 3 Minuten.
 
+**51a. Das Reisebrett** · Gegenstand Reisebrett (11, I3)
+Ort `ironwood.aussen` (Bushaltestelle) · Juno, Ambrose. Ereignis: Dialog. Bevor der Bus fährt, drückt
+Juno {held} eine kleine Holzkiste in die Hand: ihr Reisebrett mit Magnetfiguren, auf dem Deckel
+Sticker und „Clubtagebuch, Außenstelle“. „Damit du nicht vergisst, wie man verliert. Spiel mit
+Ambrose. Oder mit mir, wenn ich anrufe.“ Ambrose: „Ein Brett für die Tasche. Meines ist schwerer.
+Und gesprächiger.“ Wirkung: überall in der Welt eine freie Übungspartie gegen Ambrose oder Juno
+(zählt nicht für Nadeln und nicht für A). Etwa 2 Minuten.
+
 **52. Die Raststätte** · W `wegIronwoodSilicon`
 Ort `wegIronwoodSilicon.raststaette`, `.glasbruecke` · Juno, Fernfahrerin, Joggerin. Ereignis:
 Rätseltafel (3 Eröffnungsfallen, Münzen), Weisheit, Stellungsduell mit Uhr gegen die Joggerin
@@ -1712,8 +1821,9 @@ Miss Odile singt beim Sortieren. Ohne Ambrose fühlt sich das gut und einsam zug
 Ort `portDelacroix.aussen` · Mr. Batiste. Ereignis: Stellungsduell ohne Uhr aus Kapitel 6
 (Abbildung 6.5, geprüft im dritten Auftrag), Zielstärke A ± 0. Batiste ist gegen beide Sprüche
 immun („Junge Leute reden. Das Wasser hört nicht zu.“), das steht nach dem ersten Versuch im
-Steckbrief. Wer ihn schlagen will, muss einfach gut spielen. Belohnung: 10 Münzen, Zweite Chance
-beim ersten Sieg. Etwa 8 Minuten.
+Steckbrief. Wer ihn schlagen will, muss einfach gut spielen. Belohnung: 10 Münzen, beim ersten Sieg Zweite Chance und der
+Spruch **Pokerface** (S8); Batiste: „Mach ein Gesicht wie das Wasser. Dann weiß keiner, was
+darunter ist.“ Etwa 8 Minuten.
 
 **66. Flashback: Die Werkstatt** · `akt3.flashbackWerkstatt` · F (Port Delacroix)
 Ort Sepia-Karte `flashback.werkstatt` · der junge Ambrose als Held. Auslöser: Vor der Werkstatt
@@ -1756,7 +1866,8 @@ Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Kinder der Stadt. Ereign
 drei Duelle, Datenauftrag), jedes Kind spendet einen Dollar in die Kasse für das Musikhaus. Remy
 spielt das dritte Brett und entschuldigt sich danach: „Ich hab dich beobachtet. Du redest mit dem
 Brett, aber du spielst allein. Tut mir leid.“ Belohnung: 30 Münzen (gehen in die Kasse), Wiederaufbau
-Schritt 2. Etwa 10 Minuten.
+Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas
+verlierst, was dir wichtig ist.“ Etwa 10 Minuten.
 
 **70. Das Schild** · N hilfe `portDelacroix.wiederaufbau` (Besuch 3 von 3)
 Ort `portDelacroix.musikhaus` · Miss Odile, Remy, Lou, Henri, Mama. Ereignis: Dialog, Ort. Beim
@@ -1925,14 +2036,19 @@ Kühler Kopf aus Akt 2 (Zeitbonus).
 
 ## 23. Hilfskarten, Sprüche und Sperren in Akt 3
 
-| Karte oder Regel     | Wo                                      | Warum                                              |
-| -------------------- | --------------------------------------- | -------------------------------------------------- |
-| Grübelfalle (S1)     | Szene 54, erster Sieg gegen Dash        | erste Spruchkarte, im Park von Silicon Bay         |
-| Großes Maul (S1)     | Szene 74, erster Sieg gegen Buck        | ersetzt den Zeitnot-Trick aus Akt 2 dem Namen nach |
-| Mentor-Zug gesperrt  | Szenen 63 bis 73                        | R29, Tiefpunkt bis Versöhnung                      |
-| Alle Karten gesperrt | Szene 67                                | R28, Clubkampf ohne Ambrose                        |
-| Springervorgabe      | Szene 70 (alle Nebenquests einer Stadt) | R27                                                |
-| Flüstern             | Szene 76                                | R27, Rätsel                                        |
+| Karte oder Regel     | Wo                                      | Warum                                                          |
+| -------------------- | --------------------------------------- | -------------------------------------------------------------- |
+| Grübelfalle (S1)     | Szene 54, erster Sieg gegen Dash        | erste Spruchkarte, im Park von Silicon Bay                     |
+| Großes Maul (S1)     | Szene 74, erster Sieg gegen Buck        | ersetzt den Zeitnot-Trick aus Akt 2 dem Namen nach             |
+| Mentor-Zug gesperrt  | Szenen 63 bis 73                        | R29, Tiefpunkt bis Versöhnung                                  |
+| Alle Karten gesperrt | Szene 67                                | R28, Clubkampf ohne Ambrose                                    |
+| Springervorgabe      | Szene 70 (alle Nebenquests einer Stadt) | R27                                                            |
+| Flüstern             | Szene 76                                | R27, Rätsel                                                    |
+| Reisebrett           | Szene 51a, Juno zum Abschied            | freie Übungspartien überall (11, I3)                           |
+| Pokerface (S8)       | Szene 65, erster Sieg gegen Mr. Batiste | „ein Gesicht wie das Wasser“; danach Laden Port Delacroix (30) |
+| Schutzengel (K4)     | Szene 69, Benefiz-Simultan              | Dank des Clubs; danach Laden Desert Springs (50)               |
+| Spickzettel (K7)     | Laden Silicon Bay (20)                  | erste käufliche Vorbereitung                                   |
+| Kartentasche (I2)    | Vorschlag: Laden Silicon Bay (350)      | vier Karten erst ab Akt 3 (11, 7.4)                            |
 
 Immunität im Steckbrief (S4): Dash immun gegen „Großes Maul“, Batiste immun gegen beide. Das
 Format der Steckbriefzeile kennt dafür noch keine Art (Bericht).

@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Gegenstände und Karten in der Geschichte, Limo-Nebenquest
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, achter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, achter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (Abschnitt „Hilfskarten und Zeitkarten“ je Akt und
@@ -33,7 +33,50 @@ Partienotizbuch, Monatskarte, Spickzettel, Pokerface, Schutzengel.
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis d31d0671 hereingeholt). Prettier über `docs/spiel`
+besteht.
+
+**Was neu ist**
+
+- **Dokument 11, Abschnitt 6** auf den gebauten Stand gebracht (27 Karten, drei Gegenstände) mit
+  Reihenfolge für das Ungebaute; **Abschnitt 7 „Verteilung und Preise“**: 7.1 Münzen, die man bis
+  zu jedem Ort realistisch hat (aus `regeln/muenzen.ts`, Funden, Runden; Akt 3 geplant): etwa 110
+  nach Maple Falls, 245 nach Akt 1, 530 nach Akt 2, 990 nach Akt 3. 7.2 alle 27 Karten plus
+  Spickzettel, Pokerface, Schutzengel mit Herkunft, Preis, Akt, Münzen bis dahin. 7.3 Gegenstände
+  (Limo, Fahrrad, Laterne, Monatskarte, Lupe, Partienotizbuch, Kartentasche, Reisebrett). 7.4 was
+  zu stark oder zu früh wirkt.
+- **Story-Bibel:** neue Szenen **10a Limo für Jo** (mit Quest-Schritten im Format von
+  `quests.json`), **30a Monatskarte** (Pops, 80 Münzen), **31a Lupe des Uhrmachers** (Harlan nach
+  drei Siegen), **39a Mamas Turnierheft** (Partienotizbuch von Oma Ruth), **51a Reisebrett** (Juno
+  zum Abschied); Szene 34 gibt zusätzlich den Spickzettel, Szene 65 Pokerface, Szene 69 den
+  Schutzengel. Kartentabellen je Akt ergänzt; die von Akt 1 an die Spieldaten angepasst
+  (Gefahrenradar und Mentor-Zug kommen laut `quests.json` schon mit der Nadel von Maple Falls).
+
+**Preise, die ich ändern würde, und was zu stark wirkt** (Einzelheiten in 11, 7.4)
+
+1. **Fahrrad in Maple Falls (120):** am Ende von Maple Falls bezahlbar, entwertet den Schlüssel in
+   Riverton. Streichen oder 180; bei Edna 120 lassen.
+2. **Kartentasche (300, Ironwood):** in Akt 2 erreichbar (≈ 530 Münzen), vier Karten machen die
+   Clubkämpfe von Akt 2 leicht. Nach Silicon Bay, 350, oder Wirkung erst ab Akt 3.
+3. **Remisangebot im Clubkampf:** sichert in ausgeglichener Stellung eine Bronzenadel ohne Sieg.
+   Im Clubkampf sperren oder Remis durch die Karte ohne Nadel.
+4. **Ablenkung im Laden:** widerspricht Z4 (Zeitkarten nie im Laden); als Belohnung vergeben
+   oder Z4 auf die Uhr-Sprüche beschränken.
+5. **Straßensiege ohne Grenze:** 10 Münzen je Sieg, beliebig oft; Vorschlag: nur der erste Sieg je
+   Gegner und Tag zählt voll, danach 2.
+6. **Was droht? (45, dauerhaft):** auf 60, weil die Karte jede Partie mitspielt.
+
+**Abweichungen in den Daten, die mir aufgefallen sind**
+
+- `riverton.flashbackLondon` gibt eine Bauernvorgabe, obwohl laut ENTSCHEIDUNGEN nur die erste
+  Erinnerung je Staffel sie gibt (Cedar Creek war die erste). Vorschlag: 20 Münzen statt Karte.
+- Jo (`mapleFalls.skaterJo`) hat keinen Steckbrief; die Limo-Quest braucht eine Zeile (Vorschlag
+  `fleck: rueckzug`).
+- Für Verbrauchsgegenstände (Limo) fehlt eine Wirkung „Gegenstand abgeben“ (etwa
+  `{ "art": "gegenstandWeg", "gegenstand": "limo" }` oder eine Dialogfunktion).
+- Neue Dialogknoten für mittel-1: `maple-falls-park.jo_limo`, `.patel_limo`, `.jo_limo_gebracht`.
+
+**Offen:** nichts Blockierendes.
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

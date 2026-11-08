@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Gesamtsimulation dauerhaft ablegen
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zwanzigster Auftrag; der neunzehnte ist zusammengeführt, danke)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, zwanzigster Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `pipeline/abenteuer/gesamtsimulation.cjs` (neu), `pipeline/tests/test_abenteuer_simulation.py`
@@ -27,6 +27,48 @@ Dein Vorschlag ist angenommen: Das Skript der Gesamtsimulation kommt nach
    eine Minute drücken lässt, gern ohne diese Bedingung; dann im Bericht sagen.
 4. Victor und Juno im Clubraum: Bleibt beim Umweg über den Coach (Figuren in `orte.json` können nicht
    bedingt erscheinen, und Victor dauerhaft im Clubraum passt nicht zur Geschichte). Kein Handlungsbedarf.
+
+## Bericht
+
+**Erledigt.**
+
+- `pipeline/abenteuer/gesamtsimulation.cjs` (Erkunden, Bericht, Aufruf) und
+  `pipeline/abenteuer/gesamtsimulation-regeln.cjs` (Spieldaten, Spielstand, Quests, Dialoge, Folgen
+  wie in der App). **Entscheidung:** zwei Dateien statt einer, weil eine Datei fast 500 Zeilen hätte
+  und CLAUDE.md, Regel 4, unter 400 verlangt. Dateikopf auf Deutsch mit Zweck, Aufruf und Ausgabe,
+  Pfade nur innerhalb des Repositorys (inkjs aus `app/node_modules`).
+- Aufruf aus dem Hauptordner: `node pipeline/abenteuer/gesamtsimulation.cjs --startwert 1`
+  (dazu `--sekunden N` als Zeitbudget, `--ersatz a.b,c.d` setzt bekannte Figuren ohne Karte
+  ersatzweise auf die Karte ihrer Dialogdatei). Ausgabe: Abspann ja oder nein, besuchte Orte,
+  offene Quests (hängend oder nie begonnen), nie erreichte Knoten, Figuren ohne Karte, Rückkehr mit
+  der Monatskarte, nie besuchte Orte, Meldungen (fehlende Dialoge, Knoten, Karten, Begegnungen).
+  **Rückgabewert 1**, wenn eine Hauptquest nicht fertig wird, eine begonnene Quest hängt, der
+  Abspann fehlt oder Daten fehlen; sonst 0. Nie begonnene Nebenquests zählen nicht (manche sind
+  freiwillig, etwa die Feier in Ironwood, die es nur vor dem Clubkampf gibt).
+- Figuren ohne Karte werden nur noch gemeldet, nicht mehr ersatzweise gesetzt (außer mit
+  `--ersatz`). Der Test führt die fünf bekannten (`mapleFalls.juno`, `mapleFalls.abernathy`,
+  `mapleFalls.lily`, `pinewoodCamp.lou`, `pinewoodCamp.tamsin`) in `BEKANNT_OHNE_KARTE`, mit
+  Kommentar: Steht eine davon auf ihrer Karte, schlägt der Test fehl, bis der Eintrag gelöscht ist.
+- `pipeline/tests/test_abenteuer_simulation.py`: ein Startwert, nur mit `ABENTEUER_SIMULATION=1`
+  (sonst `pytest.skip` mit Begründung; ebenso ohne Node oder ohne `app/node_modules/inkjs`).
+  Prüft Rückgabewert 0, Abspann, keine offene Hauptquest und die Liste der Figuren ohne Karte.
+- **Laufzeit:** etwa 64 Sekunden für einen Startwert, also nicht deutlich unter einer Minute; die
+  Bedingung `ABENTEUER_SIMULATION=1` bleibt. Schneller wurde der Lauf vor allem durch gezieltes
+  Laufen: Der Spieler sucht mit einer Breitensuche die erreichbare Karte des Gebiets, die er am
+  längsten nicht besucht hat, statt zufällig umherzugehen, und fasst Dinge, die sich im selben
+  Zustand nichts mehr tun, nicht immer wieder an.
+- Mit den Startwerten 1 bis 4: in allen Läufen Abspann, alle Hauptquests fertig, Rückgabewert 0.
+  Nie begonnen bleiben nur `mapleFalls.verlorenesBrett` und `mapleFalls.lilysSpringer` (Lily und
+  der Bibliothekar fehlen auf der Karte) und in zwei Läufen die freiwillige `ironwood.feier`.
+
+**Befund des Skripts, behoben:** `cedar-creek-archiv.ink`: Wer beim Ordnen „Später helfen“ sagte und
+danach die Clubnadel holte, bekam das Ordnen nie wieder angeboten (Bedingung `nadelCedarCreek ==
+0`), die Quest `cedarCreek.archivOrdnen` hing. Neu: `ordnenAngeboten`, einmal angeboten bleibt
+das Angebot.
+
+**Prüfungen:** pytest 595 bestanden, 2 übersprungen (die Simulation ohne Umgebungsvariable); mit
+`ABENTEUER_SIMULATION=1` beide bestanden (64 Sekunden). ruff sauber, `npm run pruefen` grün
+(2422 Tests).
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

@@ -304,3 +304,137 @@ erinnerung-london-kaffeehaus.json
 #       s      #
 ########t#######
 ```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Die Tabelle aus `mittel-1.md` habe ich dort nicht gefunden;
+Objekte, Figuren und Kartenzuordnung (Feld `karte`) stammen deshalb direkt aus `orte.json`.
+Figuren ohne `karte` sind nach Bibel und 09 verteilt.
+
+**Teil 1: Weg 4 und Silicon Bay (6 Karten, gepusht).** 415 Tests bestanden, keiner der sechs
+übersprungen; Prettier und Paketbau sauber.
+
+- `weg-ironwood-silicon-raststaette` (28 × 20): Leitplanke der Schnellstraße oben, Lkw, Raststätte
+  mit Kaffeeautomat (`tafel`), `fundAnstecker`, Fernfahrerin `kowalczyk` am Lkw; `fernfahrer`,
+  `reisende`, `kraehe`, `hund`.
+- `weg-ironwood-silicon-glasbruecke` (28 × 20): Brücke über der Autobahn, `fundOhrstoepsel`,
+  `joggerin`; `pendlerin` (morgen), `lieferroboter`, `drohne`.
+- `silicon-bay-aussen` (32 × 24): Akademie und Konzernzentrale (Lobby) oben, Straßenbahngleis,
+  Straße, `hotel` unten links, Food-Truck mit Bank (`rosie`, `dash`), `victor`, `busIronwood` an
+  der Haltestelle, `glasbruecke` links, `faehre` rechts; `angestellte`, `wachmann`, `besucher`;
+  nur Maschinen als „Tiere“ (09, 4): `lieferroboter`, `drohne`.
+- `silicon-bay-akademie` (18 × 12): sechs Bildschirmbretter, Lins Schreibtisch, `lin`, `nova` an
+  der Fensterbank, `theo` an der Datenwand, `serverraumTuer` rechts am Rand; `schueler`,
+  `saugroboter`.
+- `silicon-bay-serverraum` (12 × 10): drei Serverreihen, `schummelgeraete` in einer Schublade.
+- `silicon-bay-lobby` (14 × 10): `vitrineHale`, `empfangsroboter`; `besuchergruppe`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Rangliste, Glaspokal, Zettel „Drei Ziele“
+  (Akademie, 09 5.6).
+
+```text
+weg-ironwood-silicon-raststaette.json
+############################
+#                          #
+############################
+############################
+#                          #
+#                          #
+#  KKK              KKKK   #
+#  KKKK             KKKK   #
+#       L          L       #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#          t               #
+#         #### ####        #
+#         ##F###F##        #
+#         #########        #
+#         #########     f  #
+#         #########        #
+#                          #
+#                          #
+############################
+
+weg-ironwood-silicon-glasbruecke.json
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+#TTTTTTTTLTTTTTTTTLTTTTTTTT#
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTJTTTTTT#
+#TTTTTTTTTTTTfTTTTTTTTTTTTT#
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+silicon-bay-aussen.json
+################################
+#  ##########     ###########  #
+#  ##F####F##     ##F#####F##  #
+#  ##########     ###########  #
+#  ##########     ###########  #
+#  ####a#####     #####l#####  #
+#                              #
+##############  ################
+#                              #
+#                              #
+gTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTf
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#           b             V    #
+#           L                  #
+#     h                LL      #
+#  #######     RKKKK           #
+#  ##F##F#      KKKK           #
+#  #######                     #
+#  #######       KKD           #
+#  #######                     #
+#  #######                     #
+#                              #
+#                              #
+################################
+
+silicon-bay-akademie.json
+####F########F####
+#L  N       L    #
+# T        KKK   #
+#                #
+#  B  B          #
+#                s
+#                #
+#  B  B   B  B   #
+#                #
+#                #
+#        s       #
+#########a########
+
+silicon-bay-serverraum.json
+############
+# KKKKKKKK #
+#          #
+#          #
+# KKKKKKKK #
+ss         #
+#          #
+# KKKKKKKK #
+#         s#
+############
+
+silicon-bay-lobby.json
+###F######F###
+#            #
+#            #
+#    KvKK    #
+#            #
+#          E #
+#KK          #
+#            #
+#      s     #
+#######l######
+```

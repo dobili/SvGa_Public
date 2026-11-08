@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 6,
+  "nextobjectid": 10,
   "properties": [
     {
       "name": "kennung",
@@ -213,6 +213,128 @@
           "height": 16,
           "rotation": 0,
           "visible": true
+        },
+        {
+          "id": 6,
+          "name": "rentner",
+          "type": "statist",
+          "x": 224,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "14,8"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "14,8"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "sitzt auf der Bank und füttert Tauben"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "kioskbesucher",
+          "type": "statist",
+          "x": 128,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "8,12"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "12,12"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "holt sich ein Eis"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "enten",
+          "type": "tier",
+          "x": 256,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "16,15"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "20,15"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "folgen"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "kraehen",
+          "type": "tier",
+          "x": 192,
+          "y": 32,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "12,2"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "16,2"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "fliegen"
+            }
+          ]
         }
       ]
     }

@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 5,
+  "nextobjectid": 10,
   "properties": [
     {
       "name": "kennung",
@@ -191,6 +191,161 @@
           "height": 16,
           "rotation": 0,
           "visible": true
+        },
+        {
+          "id": 5,
+          "name": "brieftraegerin",
+          "type": "statist",
+          "x": 32,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "2,11"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "12,11"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "trägt Briefe aus"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "morgen"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "laubharker",
+          "type": "statist",
+          "x": 128,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "8,7"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "10,7"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "harkt Laub vor dem Haus"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "kindMitBall",
+          "type": "statist",
+          "x": 368,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "23,7"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "25,7"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "spielt Ball vor der Schule"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "eichhoernchen",
+          "type": "tier",
+          "x": 160,
+          "y": 16,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "10,1"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "14,1"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "ausweichen"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "katze",
+          "type": "tier",
+          "x": 176,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "11,12"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "11,12"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "sitzen"
+            }
+          ]
         }
       ]
     }

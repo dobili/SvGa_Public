@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 7,
+  "nextobjectid": 11,
   "properties": [
     {
       "name": "kennung",
@@ -165,6 +165,72 @@
           "height": 16,
           "rotation": 0,
           "visible": true
+        },
+        {
+          "id": 7,
+          "name": "zeitungsregal",
+          "type": "ausloeser",
+          "x": 96,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 8,
+          "name": "globus",
+          "type": "ausloeser",
+          "x": 208,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 9,
+          "name": "schildFluestern",
+          "type": "ausloeser",
+          "x": 0,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "leserin",
+          "type": "statist",
+          "x": 32,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "2,4"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "8,4"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "trägt einen Bücherstapel"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
         }
       ]
     }

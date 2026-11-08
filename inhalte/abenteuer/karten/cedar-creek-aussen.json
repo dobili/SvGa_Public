@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 10,
+  "nextobjectid": 15,
   "properties": [
     {
       "name": "kennung",
@@ -246,6 +246,161 @@
           "height": 16,
           "rotation": 0,
           "visible": true
+        },
+        {
+          "id": 10,
+          "name": "busfahrer",
+          "type": "statist",
+          "x": 64,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "4,8"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "5,8"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "raucht an der Haltestelle"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "stegbauer",
+          "type": "statist",
+          "x": 336,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "21,13"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "21,13"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "repariert den Steg"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "hund",
+          "type": "tier",
+          "x": 112,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "7,12"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "8,12"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "folgen"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "reiher",
+          "type": "tier",
+          "x": 352,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "22,15"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "22,15"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "sitzen"
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "eichelhaeher",
+          "type": "tier",
+          "x": 304,
+          "y": 16,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "19,1"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "22,1"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "morgen"
+            },
+            {
+              "name": "verhalten",
+              "type": "string",
+              "value": "fliegen"
+            }
+          ]
         }
       ]
     }

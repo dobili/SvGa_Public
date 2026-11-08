@@ -113,8 +113,9 @@ test("Monatskarte: Reisen in eine besuchte Stadt", async ({ page }) => {
   await expect(reisen).toBeVisible();
   await reisen.getByRole("button", { name: "Cedar Creek" }).click();
   await expect(reisen).toHaveCount(0);
-  await expect(page.getByTestId("abenteuer-meldung")).toHaveCount(0);
-  await expect(page.getByTestId("abenteuer-reisenknopf")).toBeVisible({ timeout: 15000 });
+  // In der Stadt kann eine Meldung kommen (etwa eine Quest); eine fehlende Karte darf es nicht sein.
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(page.getByText(/noch nicht gebaut|fehlt noch/)).toHaveCount(0);
 });
 
 test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) => {

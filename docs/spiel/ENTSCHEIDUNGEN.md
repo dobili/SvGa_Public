@@ -247,6 +247,29 @@ geht weiter, denn ein Name ohne `karte` bleibt erlaubt.
   (kein Auftrag), bis die Aufgabenrunden (8f) das Datenformat festlegen; so bleibt das Guthaben
   geschont (Wunsch des Autors).
 
+**Schritt 8f erledigt (Aufgabenrunden mit Rückweg, R30 bis R32):** Neue Datei
+`inhalte/abenteuer/runden.json` (Schema `abenteuer-runden`): je Runde Steller, Buchübungen,
+Themen, ob sie zur Aufgabenreihe gehört, optional eine feste Zahl (Rätsel, Erinnerung). Der Umfang
+der Reihenblöcke folgt R30 aus dem Zeitbudget des Clubs (12 Minuten, drei Buchübungen à 120 s,
+Rest durch die Sekunden je Aufgabe der Schwierigkeit, verteilt auf die Blöcke); die Schwierigkeit
+kommt aus der Wertung der App (bis die Abenteuerwertung A in 8h steht) und sinkt je weiterem
+Versuch um eine Stufe (R31). Die App spielt die Runde in einer eigenen Vollbild-Zusatzansicht im
+Rundenrahmen des Taktiktrainers (`anbindung/AufgabenAnsicht.tsx`): Buchübungen sind die Aufgaben
+des Taktiktrainers mit `herkunft.uebung`, Motivaufgaben kommen aus den Lichess-Zusatzaufgaben
+oder den Buchmotiven; die Runde zählt für Wiederholung und Tagesprotokoll wie eine Taktikrunde
+(R32). Das Ergebnis je Aufgabe geht in den Spielstand, die Oberwelt wertet aus: bestanden ab 70
+Prozent → Quest-Ereignis `aufgaben`; alle Reihenblöcke bestanden → `Clubstand.aufgabenreihe`;
+sonst „Noch eine Runde, eine Stufe leichter“. Grenzen des Prototyps (Rückfrage, Empfehlung
+umgesetzt): (1) „mit Hilfe“ (halber Punkt) gibt es noch nicht, Taktikaufgaben melden nur richtig
+oder falsch; (2) Buchübungen ohne Lösungszug (Zählübungen „ueb:zaehlen-vorstoss“,
+„ueb:angriff-zaehlen“, Mattführungen „ueb:damenmatt“, „ueb:turmmatt“) liegen nicht im
+Taktiktrainer und fallen aus der Runde heraus, ebenso das Thema „zaehlen“ (eigener Trainer); dafür
+später der Zähltrainer als Aufgabenart; (3) Erinnerungen (Zugerraten, C3) laufen vorerst als
+Mattbilder-Runde. Vertrag: `schnittstelle/aufgaben.ts` (Auftrag mit Runde, Steller, Versuch;
+Rundenstand), Spielstand mit `laufendeAufgaben`, `aufgabenergebnis`, `runden` (V6).
+`Oberwelt.tsx` in drei Dateien geteilt (`auftraege.ts`, `weltdaten.ts`), bleibt aber über 400
+Zeilen; die Rückwege (Partie, Runde) wandern in 8g in einen eigenen Hook.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

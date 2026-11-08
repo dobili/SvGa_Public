@@ -148,5 +148,13 @@
   "quest.sternennacht.schritt1": "Komm am Abend zum Steg und schau mit Mae Sternschnuppen.",
   "quest.erinnerungNewYork.titel": "Erinnerung: New York, 1857",
   "quest.erinnerungNewYork.schritt1": "Errate mit Ambrose die Züge der Partie aus dem Programmheft.",
-  "zustand.ueberheblich": "ist überheblich geworden"
+  "zustand.ueberheblich": "ist überheblich geworden",
+  "aufgaben.bestanden": "Aufgaben bestanden: {punkte} von {moeglich} Punkten.",
+  "aufgaben.nichtBestanden": "{punkte} von {moeglich} Punkten. Das reicht noch nicht; es braucht 70 Prozent.",
+  "aufgaben.nochEinmal": "Noch eine Runde, eine Stufe leichter",
+  "aufgaben.reiheBestanden": "Die Aufgabenreihe von {club} ist geschafft. Der Clubkampf wartet.",
+  "aufgaben.laeuft": "Deine Aufgabenrunde läuft noch.",
+  "aufgaben.weiter": "Weitermachen",
+  "aufgaben.abbrechen": "Runde abbrechen",
+  "aufgaben.fehlt": "Diese Aufgabenrunde kennt das Spiel nicht: {runde}."
 }

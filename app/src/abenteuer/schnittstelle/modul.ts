@@ -22,39 +22,19 @@ import type { ComponentType } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Partieeinstellung } from "../../spiel/partie";
 import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
-import type { Antwortergebnis } from "../../training/wiederholung";
 import type { Gegnerprofil, Gegnerzustand, Gerechnetestaerke } from "./gegnerprofil";
 import type { Paketzustand } from "./paket";
 import type { Kipppunkt, Partieauftrag, Partieergebnis } from "./partie";
+import type { Aufgabenauftrag, Aufgabenergebnis } from "./aufgaben";
 import type { Abenteuerstand } from "./spielstand";
 
 /** Kennung der Zusatzansicht in app/zusatzansichten.ts; der Wert ist frei für die Oberwelt. */
 export const ANSICHT_ABENTEUER = "abenteuer";
 
-/**
- * Eine Aufgabenrunde, die das Spiel in der App startet (Clubmitglieder stellen Aufgaben).
- * Quelle: Buchübungen des Kapitels und Motivaufgaben der Trainer (Entscheidung A7: Umfang nach
- * Zeitbudget, nicht nach fester Zahl).
- */
-export interface Aufgabenauftrag {
-  readonly kennung: string;
-  /** Buchkapitel des Clubs, für die Buchübungen. */
-  readonly kapitel: number;
-  /** Motive und Themen der Trainer, wie in training/taktiktrainer.ts („doppelangriff“, „matt2“ …). */
-  readonly themen: readonly string[];
-  /** Zahl der Aufgaben und Zielschwierigkeit 1–5 (aus der Wertung des Lesers gerechnet). */
-  readonly anzahl: number;
-  readonly schwierigkeit: number;
-  /** Zählt die Runde für Wiederholung und Tagesprotokoll der App (Entscheidung A8)? */
-  readonly zaehltFuerApp: boolean;
-}
-
-/** Ergebnis einer Aufgabenrunde für das Spiel. */
-export interface Aufgabenergebnis {
-  readonly kennung: string;
-  readonly ergebnisse: readonly Antwortergebnis[];
-  readonly sekunden: number;
-}
+/** Der Vertrag für Aufgabenrunden liegt in schnittstelle/aufgaben.ts. */
+export type { Aufgabenauftrag, Aufgabenergebnis } from "./aufgaben";
+/** Kennung der Zusatzansicht, in der die App eine Aufgabenrunde des Spiels spielt. */
+export const ANSICHT_AUFGABEN = "abenteuer-aufgaben";
 
 /**
  * Dienste, die die App dem Spiel beim Laden übergibt. Alles, was das Spiel von der App braucht,

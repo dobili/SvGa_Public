@@ -10,6 +10,7 @@
  * Prüfung je Feld kommt mit den Spielsystemen (Schritt 8).
  * Abhängigkeiten: schnittstelle/spielstand.ts (Typ).
  */
+import type { Aufgabenauftrag, Aufgabenergebnis } from "../schnittstelle/aufgaben";
 import {
   ABENTEUER_VERSION,
   type Abenteuerstand,
@@ -55,6 +56,9 @@ export function leererAbenteuerstand(
     protokoll: [],
     laufendePartie: null,
     partiekarten: null,
+    laufendeAufgaben: null,
+    aufgabenergebnis: null,
+    runden: [],
     dialogvariablen: {},
     spielzeitSekunden: 0,
   };
@@ -98,6 +102,13 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     protokoll: liste(roh.protokoll),
     laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,
     partiekarten: partiekartenAus(roh.partiekarten),
+    laufendeAufgaben: istObjekt(roh.laufendeAufgaben)
+      ? (roh.laufendeAufgaben as unknown as Aufgabenauftrag)
+      : null,
+    aufgabenergebnis: istObjekt(roh.aufgabenergebnis)
+      ? (roh.aufgabenergebnis as unknown as Aufgabenergebnis)
+      : null,
+    runden: liste(roh.runden),
     dialogvariablen: istObjekt(roh.dialogvariablen)
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},

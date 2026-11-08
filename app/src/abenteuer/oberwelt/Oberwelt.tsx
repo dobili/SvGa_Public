@@ -12,33 +12,37 @@
  * Quest-Auswertung (regeln/quests.ts), deren Wirkungen hier in den Spielstand kommen.
  * Nach einer Niederlage sucht die App den Kipppunkt (Regelwerk R14); die Ergebniskarte bietet
  * dann den Wiedereinstieg an, der dieselbe Begegnung ab dieser Stellung neu startet (R15, R20).
- * Noch offen (Schritt 8f ff.): Aufgabenrunden, Namenswahl, Abenteuerwertung.
+ * Aufgabenrunden (R30 bis R32): `beginneAufgaben(runde)` aus dem Dialog baut aus runden.json, dem
+ * Club des Ortes und der Wertung den Aufgabenauftrag (regeln/aufgaben.ts); die App spielt ihn, das
+ * Ergebnis kommt beim Rückweg zurück, bestanden ab 70 Prozent, sonst eine leichtere Runde.
+ * Noch offen (Schritt 8g ff.): Namenswahl, Abenteuerwertung.
  * Abhängigkeiten: oberwelt/szene.ts, oberwelt/Steuerkreuz.tsx, oberwelt/Tagebuch.tsx,
  * dialog/Dialog.tsx, daten/laden.ts, paket/paketlader.ts, regeln/gegnerstaerke.ts,
  * regeln/quests.ts, modul/abenteuer.tsx (Dienste).
  */
 import { useEffect, useRef, useState } from "react";
 import type Phaser from "phaser";
-import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
-import {
-  findeKarte,
-  ladeSpieldaten,
-  type Gegnerdaten,
-  type Ortdaten,
-  type Spieldaten,
-} from "../daten/laden";
+import { liesPaketJson } from "../paket/paketlader";
+import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
-import { gerechneteStaerke } from "../regeln/gegnerstaerke";
+import { mitRundenergebnis, reiheBestanden, wertung as rundenwertung } from "../regeln/aufgaben";
 import { besteNadel, clubnadel, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
-import type { Gegnerprofil, Gegnerzustand } from "../schnittstelle/gegnerprofil";
+import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
-import { GRUNDSTELLUNG, farbeAus } from "../anbindung/partiestart";
+import { GRUNDSTELLUNG } from "../anbindung/partiestart";
+import {
+  amZugIn,
+  auftragFuer,
+  auftragFuerRunde,
+  kartenFuerWiedereinstieg,
+  wiedereinstiegMoeglich,
+} from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
@@ -49,178 +53,22 @@ import {
   type Ausloesertreffer,
   type Richtung,
 } from "./szene";
-
-/** Bilder des Prototyps im Paket (bis die LimeZu-Kacheln da sind, Entscheidung A10). */
-const KACHELBILD = "grafik/platzhalter.png";
-const HELDBILD = "grafik/held.png";
-const FIGURBILD = "grafik/figur.png";
-const KACHELSATZ = "platzhalter";
-const SPRACHE = "de";
-
-/** Was zum Aufbau der Szene geladen wurde. */
-interface Weltdaten {
-  /** Kennung der geladenen Karte; passt sie nicht mehr zum Spielstand, gilt die Welt als alt. */
-  readonly kennung: string;
-  readonly daten: Spieldaten;
-  readonly ort: Ortdaten;
-  readonly karte: object;
-  readonly kachelbild: string;
-  readonly heldbild: string;
-  readonly figurbild: string;
-}
+import {
+  KACHELSATZ,
+  SPRACHE,
+  aktionFuer,
+  ausloeserFuer,
+  figurZu,
+  ladeWelt,
+  objektposition,
+  type Weltdaten,
+} from "./weltdaten";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
   readonly json: string;
   readonly datei: string;
   readonly knoten: string;
-}
-
-/** Ein Gegnerprofil aus den Spieldaten (die Formen stimmen, das Schema hat sie geprüft). */
-function profilAus(daten: Gegnerdaten): Gegnerprofil {
-  return daten as unknown as Gegnerprofil;
-}
-
-/** Zustand eines Gegners aus dem Spielstand; ohne Eintrag normal. */
-function zustandAus(stand: Abenteuerstand, gegner: string): Gegnerzustand {
-  const figur = stand.figuren.find((f) => f.kennung === gegner);
-  return {
-    haeufigkeitsfaktor: figur?.abgelenkt?.faktor ?? 1,
-    grund: figur?.abgelenkt?.grund ?? null,
-    analysiert: figur?.analysiert ?? false,
-  };
-}
-
-/** Baut den Partieauftrag einer Begegnung; null, wenn die Spieldaten sie nicht kennen. */
-function auftragFuer(
-  begegnung: string,
-  daten: Spieldaten,
-  stand: Abenteuerstand,
-  wertung: number | null,
-): Partieauftrag | null {
-  const b = daten.begegnungen.find((x) => x.kennung === begegnung);
-  const gegner = b && daten.gegner.find((g) => g.kennung === b.gegner);
-  if (!b || !gegner) return null;
-  const profil = profilAus(gegner);
-  const zustand = zustandAus(stand, gegner.kennung);
-  const staerke = gerechneteStaerke(profil, zustand, {
-    aktuell: wertung,
-    eingang: stand.eingangswertung > 0 ? stand.eingangswertung : null,
-  });
-  return {
-    kennung: `${begegnung}#${Date.now().toString(36)}`,
-    begegnung,
-    profil,
-    zustand,
-    staerke,
-    farbe: farbeAus(b.farbe, Math.random),
-    format: b.format,
-    startstellung: b.startstellung,
-    deck: { karten: [] },
-    kartenErlaubt: b.kartenErlaubt,
-    zaehltFuerApp: b.zaehltFuerApp ?? b.startstellung.art === "grundstellung",
-    uhr: null,
-  };
-}
-
-/** Wer in einer FEN am Zug ist (zweites Feld); fehlt es, Weiß. */
-function amZugIn(fen: string): "white" | "black" {
-  return fen.split(" ")[1] === "b" ? "black" : "white";
-}
-
-/**
- * Darf nach dieser Niederlage ein Wiedereinstieg angeboten werden (Regelwerk R14, Punkte 1, 5,
- * 6)? Nur ganze Partien, nur einmal je Begegnung, nicht nach einem verlorenen Wiedereinstieg.
- */
-function wiedereinstiegMoeglich(
-  ergebnis: Partieergebnis,
-  begegnung: string,
-  daten: Spieldaten,
-  stand: Abenteuerstand,
-): boolean {
-  if (ergebnis.ausgang !== "niederlage") return false;
-  const b = daten.begegnungen.find((x) => x.kennung === begegnung);
-  if (!b || b.format.art !== "partie") return false;
-  if (stand.partiekarten?.wiedereinstieg) return false;
-  return !stand.protokoll.some(
-    (p) => p.wiedereinstieg && p.ergebnis.kennung.split("#")[0] === begegnung,
-  );
-}
-
-/**
- * Karten des Wiedereinstiegs (Regelwerk R15): Bis zum Kipppunkt gespielte Karten bleiben
- * gespielt; dauerhafte Karten, die erst danach kamen, kehren ins Deck zurück, verbrauchte nicht.
- */
-function kartenFuerWiedereinstieg(
-  vorherige: Partiekarten | null,
-  gespielt: readonly Kartenspiel[],
-  kipppunkt: Kipppunkt,
-  sorten: readonly Kartensorte[],
-): { deck: readonly string[]; gespielt: readonly Kartenspiel[] } {
-  const bisKipppunkt = gespielt.filter((k) => k.halbzug <= kipppunkt.halbzug);
-  const zurueck = gespielt
-    .filter((k) => k.halbzug > kipppunkt.halbzug)
-    .filter((k) => sorten.find((s) => s.kennung === k.kennung)?.art === "dauerhaft")
-    .map((k) => k.kennung);
-  const deck = [...new Set([...(vorherige?.deck ?? []), ...zurueck])];
-  return { deck, gespielt: bisKipppunkt };
-}
-
-/** Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. */
-async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
-  const daten = await ladeSpieldaten();
-  const fund = findeKarte(daten, kartenkennung);
-  if (!fund) throw new Error(`Karte ${kartenkennung} fehlt in orte.json`);
-  const [karte, kachelbild, heldbild, figurbild] = await Promise.all([
-    liesPaketJson<object>(fund.karte.datei),
-    paketdateiAlsAdresse(KACHELBILD),
-    paketdateiAlsAdresse(HELDBILD),
-    paketdateiAlsAdresse(FIGURBILD),
-  ]);
-  return { kennung: kartenkennung, daten, ort: fund.ort, karte, kachelbild, heldbild, figurbild };
-}
-
-/** Das Objekt `name` einer Tiled-Karte in Kachelkoordinaten, oder null. */
-function objektposition(karte: object, name: string): { x: number; y: number } | null {
-  const ebenen = (karte as { layers?: readonly { type?: string; objects?: readonly unknown[] }[] })
-    .layers;
-  for (const ebene of ebenen ?? []) {
-    if (ebene.type !== "objectgroup") continue;
-    for (const o of ebene.objects ?? []) {
-      const objekt = o as { name?: string; x?: number; y?: number };
-      if (objekt.name === name) {
-        return { x: Math.round((objekt.x ?? 0) / 16), y: Math.round((objekt.y ?? 0) / 16) };
-      }
-    }
-  }
-  return null;
-}
-
-/**
- * Die Bedeutung eines Auslösers auf einer Karte: Ein Eintrag mit passendem Feld `karte` geht vor
- * (der Rückweg einer Tür), sonst gilt der Eintrag des Ortes ohne Karte.
- */
-function ausloeserFuer(ort: Ortdaten, karte: string, name: string) {
-  const passende = ort.ausloeser.filter((x) => x.name === name);
-  return passende.find((x) => x.karte === karte) ?? passende.find((x) => !x.karte);
-}
-
-/** Figur einer Karte zu einem Objektnamen („coachDelgado“ → Figur `ort.coachDelgado`). */
-function figurZu(ort: Ortdaten, name: string) {
-  return ort.figuren.find((f) => f.kennung === `${ort.kennung}.${name}` || f.kennung === name);
-}
-
-/** Der Knopftext zu einem Treffer der Karte; null, wenn er nichts auslöst. */
-function aktionFuer(w: Weltdaten, treffer: Ausloesertreffer | null): string | null {
-  if (!treffer) return null;
-  if (treffer.typ === "figur") {
-    return figurZu(w.ort, treffer.name) ? tSpiel("oberwelt.aktion.sprechen") : null;
-  }
-  const a = ausloeserFuer(w.ort, w.kennung, treffer.name);
-  if (!a) return null;
-  if (a.art === "gegenstand") return tSpiel("oberwelt.aktion.ansehen");
-  if (a.art === "dialog") return tSpiel("oberwelt.aktion.sprechen");
-  return null;
 }
 
 export function Oberwelt() {
@@ -247,6 +95,20 @@ export function Oberwelt() {
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
   // Eine Reise, die ein Dialog angestoßen hat (Bus); sie geschieht, wenn der Dialog zu ist.
   const reiseInArbeit = useRef<{ karte: string; ausloeser: string } | null>(null);
+  // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
+  const rundeInArbeit = useRef<string | null>(null);
+  // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
+  const [rundenergebnis, setzeRundenergebnis] = useState<{
+    auftrag: Aufgabenauftrag;
+    punkte: number;
+    moeglich: number;
+    bestanden: boolean;
+    reiheGeschafft: boolean;
+  } | null>(null);
+  // Eine Aufgabenrunde, die in der App noch offen ist (ohne Ergebnis zurückgekommen).
+  const [offeneRunde, setzeOffeneRunde] = useState<Aufgabenauftrag | null>(null);
+  // Eine bestandene Runde, die als Quest-Ereignis noch auf die Welt wartet.
+  const offeneRundenmeldung = useRef<string | null>(null);
   // Der aktuelle Stand für Rückrufe aus Phaser und Dialogen, die nicht neu gerendert werden.
   const standRef = useRef(stand);
   useEffect(() => {
@@ -374,6 +236,93 @@ export function Oberwelt() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** Eine bestandene Aufgabenrunde als Quest-Ereignis, sobald die Welt da ist. */
+  const meldeRunde = (w: Weltdaten) => {
+    const runde = offeneRundenmeldung.current;
+    if (!runde) return;
+    offeneRundenmeldung.current = null;
+    melde({ art: "aufgaben", runde }, w);
+  };
+
+  // Rückweg der Aufgabenrunde (R31): Ergebnis auswerten, Rundenstand und Aufgabenreihe fortschreiben.
+  useEffect(() => {
+    const auftrag = stand?.laufendeAufgaben;
+    if (!auftrag) return;
+    void Promise.all([dienste.liesAufgabenergebnis(auftrag.kennung), ladeSpieldaten()]).then(
+      ([ergebnis, daten]) => {
+        const aktuell = standRef.current;
+        if (!aktuell) return;
+        if (!ergebnis) {
+          setzeOffeneRunde(auftrag);
+          return;
+        }
+        const w = rundenwertung(ergebnis);
+        const runden = mitRundenergebnis(aktuell.runden, auftrag, ergebnis);
+        const runde = daten.runden.find((r) => r.kennung === auftrag.runde);
+        const bloecke = daten.runden.filter((r) => r.ort === runde?.ort && r.reihe);
+        const ort = daten.orte.find((o) => o.kennung === runde?.ort);
+        const alt = ort ? aktuell.clubs.find((c) => c.kennung === ort.kennung) : undefined;
+        const reiheJetzt =
+          !!runde?.reihe &&
+          reiheBestanden(
+            runden,
+            bloecke.map((b) => b.kennung),
+          );
+        const clubs =
+          ort && reiheJetzt && !alt?.aufgabenreihe
+            ? [
+                ...aktuell.clubs.filter((c) => c.kennung !== ort.kennung),
+                {
+                  kennung: ort.kennung,
+                  nadel: alt?.nadel ?? null,
+                  aufgabenreihe: true,
+                  versuche: alt?.versuche ?? 0,
+                  steckbrief: alt?.steckbrief ?? [],
+                },
+              ]
+            : aktuell.clubs;
+        setzeRundenergebnis({
+          auftrag,
+          punkte: w.punkte,
+          moeglich: w.moeglich,
+          bestanden: w.bestanden,
+          reiheGeschafft: reiheJetzt && !alt?.aufgabenreihe,
+        });
+        if (w.bestanden) offeneRundenmeldung.current = auftrag.runde;
+        schreibe({
+          ...(standRef.current ?? aktuell),
+          runden,
+          clubs,
+          laufendeAufgaben: null,
+          aufgabenergebnis: null,
+        });
+        if (w.bestanden && weltRef.current) meldeRunde(weltRef.current);
+      },
+    );
+    // Nur beim Aufbau, wie der Rückweg der Partie.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /** Startet eine Aufgabenrunde: Position sichern, Auftrag an die App (sie merkt ihn im Stand). */
+  const starteRunde = (runde: string) => {
+    const aktuell = standRef.current ?? stand;
+    if (!welt || !aktuell) return;
+    const auftrag = auftragFuerRunde(runde, welt.daten, aktuell, dienste.wertung());
+    if (!auftrag) {
+      setzeMeldung(tSpiel("aufgaben.fehlt", { runde }));
+      return;
+    }
+    const szene = spiel.current ? szeneVon(spiel.current) : null;
+    const position = szene
+      ? { ...szene.position(), karte: aktuell.position.karte }
+      : aktuell.position;
+    const mitPosition = { ...aktuell, position };
+    standRef.current = mitPosition;
+    setzeStand(mitPosition);
+    setzeRundenergebnis(null);
+    void dienste.schreibeStand(mitPosition).then(() => dienste.starteAufgaben(auftrag));
+  };
+
   /** Ein gelesenes Partieergebnis als Quest-Ereignis, sobald die Welt da ist. */
   const meldeErgebnis = (w: Weltdaten) => {
     const e = offenesErgebnis.current;
@@ -415,6 +364,7 @@ export function Oberwelt() {
         // Karte betreten (Quests), dann ein Partieergebnis, das auf die Welt gewartet hat.
         melde({ art: "ort", karte: w.kennung }, w);
         meldeErgebnis(w);
+        meldeRunde(w);
         spiel.current = starteOberwelt(rahmen.current, {
           karte: w.karte,
           kachelbild: w.kachelbild,
@@ -450,9 +400,15 @@ export function Oberwelt() {
   useEffect(() => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
     szene?.laufenErlaubt(
-      dialog === null && ergebnis === null && offenePartie === null && !tagebuch && !deckwahl,
+      dialog === null &&
+        ergebnis === null &&
+        offenePartie === null &&
+        rundenergebnis === null &&
+        offeneRunde === null &&
+        !tagebuch &&
+        !deckwahl,
     );
-  }, [dialog, ergebnis, offenePartie, tagebuch, deckwahl, welt]);
+  }, [dialog, ergebnis, offenePartie, rundenergebnis, offeneRunde, tagebuch, deckwahl, welt]);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
@@ -496,7 +452,9 @@ export function Oberwelt() {
       if (welt)
         auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell, dienste.wertung());
     },
-    beginneAufgaben: () => setzeMeldung(tSpiel("oberwelt.nochNichtGebaut")),
+    beginneAufgaben: (runde) => {
+      rundeInArbeit.current = runde;
+    },
     reise: (karte, ausloeser) => {
       reiseInArbeit.current = { karte, ausloeser };
     },
@@ -603,6 +561,12 @@ export function Oberwelt() {
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;
     if (reise) wechsleKarte(reise.karte, reise.ausloeser);
+    const runde = rundeInArbeit.current;
+    rundeInArbeit.current = null;
+    if (runde) {
+      starteRunde(runde);
+      return;
+    }
     if (!auftrag) return;
     if (auftrag.kartenErlaubt && neu.karten.length > 0) setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);
@@ -715,6 +679,68 @@ export function Oberwelt() {
             }}
           >
             {tSpiel("ergebnis.weiter")}
+          </button>
+        </section>
+      )}
+      {rundenergebnis && (
+        <section
+          className="abenteuer-ergebnis"
+          role="status"
+          data-testid="abenteuer-rundenergebnis"
+        >
+          <p>
+            <strong>
+              {tSpiel(rundenergebnis.bestanden ? "aufgaben.bestanden" : "aufgaben.nichtBestanden", {
+                punkte: rundenergebnis.punkte,
+                moeglich: rundenergebnis.moeglich,
+              })}
+            </strong>
+          </p>
+          {rundenergebnis.reiheGeschafft && (
+            <p>
+              {tSpiel("aufgaben.reiheBestanden", {
+                club: tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name"),
+              })}
+            </p>
+          )}
+          {!rundenergebnis.bestanden && (
+            <button
+              type="button"
+              className="knopf-haupt"
+              onClick={() => starteRunde(rundenergebnis.auftrag.runde)}
+              data-testid="abenteuer-runde-nochmal"
+            >
+              {tSpiel("aufgaben.nochEinmal")}
+            </button>
+          )}
+          <button
+            type="button"
+            className={rundenergebnis.bestanden ? "knopf-haupt" : "knopf-zweit"}
+            onClick={() => setzeRundenergebnis(null)}
+          >
+            {tSpiel("ergebnis.weiter")}
+          </button>
+        </section>
+      )}
+      {offeneRunde && (
+        <section className="abenteuer-ergebnis" role="status">
+          <p>{tSpiel("aufgaben.laeuft")}</p>
+          <button
+            type="button"
+            className="knopf-haupt"
+            onClick={() => void dienste.starteAufgaben(offeneRunde)}
+          >
+            {tSpiel("aufgaben.weiter")}
+          </button>
+          <button
+            type="button"
+            className="knopf-zweit"
+            onClick={() => {
+              setzeOffeneRunde(null);
+              schreibe({ ...(standRef.current ?? stand), laufendeAufgaben: null });
+            }}
+          >
+            {tSpiel("aufgaben.abbrechen")}
           </button>
         </section>
       )}

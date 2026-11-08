@@ -68,6 +68,12 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2613. Vom Wohnzimmer durch die Haustür nach draußen und wieder hinein, von draußen in die Schule und zurück, in
       den Park und zurück, vom Wohnzimmer über die Treppe auf den Dachboden und zurück: Jeder Weg führt auf die richtige
       Karte, der Held steht in der Tür und löst sie erst aus, wenn er sie verlässt und wieder betritt.
+- [ ] N2614. Nach der ersten Partie ins Wohnzimmer, zur Haustür hinaus, in die Schule, mit Coach Delgado und dann mit Sam
+      sprechen, bis Sam seine Aufgaben stellt: Die App zeigt „Aufgaben von Sam“ im gewohnten Trainerrahmen (Aufgabe x
+      von n), zuerst die Buchübung „Drohung ignoriert?“ (Abb. 1.40), dann Hängeaufgaben. Am Ende „Runde fertig“ und
+      „Zurück zur Stadt“; im Clubraum erscheint „Aufgaben bestanden: … Punkten“ (ab 70 Prozent) oder „Das reicht noch
+      nicht“ mit „Noch eine Runde, eine Stufe leichter“. Im Tagebuch rückt die Quest „Das vierte Brett“ einen Schritt
+      weiter. Die Runde steht auch in der App unter Trainer › Taktik als gespielte Runde.
 
 ### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
 

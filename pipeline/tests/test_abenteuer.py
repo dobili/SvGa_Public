@@ -24,6 +24,7 @@ DATEIEN = {
     "quests.json": "abenteuer-quests.schema.json",
     "orte.json": "abenteuer-orte.schema.json",
     "begegnungen.json": "abenteuer-begegnungen.schema.json",
+    "runden.json": "abenteuer-runden.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
 }
 
@@ -67,6 +68,25 @@ def test_querverweise_stimmen():
         if begegnung["gegner"] not in gegner:
             fehler.append(f"{begegnung['kennung']}: Gegner {begegnung['gegner']} fehlt")
     begegnungen = {b["kennung"] for b in _lade("begegnungen.json")["begegnungen"]}
+    runden = _lade("runden.json")["runden"]
+    rundenkennungen = {r["kennung"] for r in runden}
+    for runde in runden:
+        ort = next((o for o in orte if o["kennung"] == runde["ort"]), None)
+        if ort is None or not ort.get("club"):
+            fehler.append(f"{runde['kennung']}: Ort {runde['ort']} ohne Club")
+            continue
+        if runde["steller"] not in {f["kennung"] for f in ort["figuren"]}:
+            fehler.append(f"{runde['kennung']}: Steller {runde['steller']} fehlt in orte.json")
+        fremd = set(runde["buchuebungen"]) - set(ort["club"]["aufgaben"]["buchuebungen"])
+        if fremd:
+            fehler.append(f"{runde['kennung']}: Buchübungen {sorted(fremd)} nicht beim Club")
+        if not runde["themen"] and not runde["buchuebungen"]:
+            fehler.append(f"{runde['kennung']}: weder Themen noch Buchübungen")
+    for quest in quests:
+        for schritt in quest["schritte"]:
+            ereignis = schritt["ereignis"]
+            if ereignis["art"] == "aufgaben" and ereignis["runde"] not in rundenkennungen:
+                fehler.append(f"{quest['kennung']}: Runde {ereignis['runde']} fehlt in runden.json")
     for quest in quests:
         for schritt in quest["schritte"]:
             ereignis = schritt["ereignis"]
@@ -77,6 +97,9 @@ def test_querverweise_stimmen():
         for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', quelle, re.M):
             if aufruf not in begegnungen:
                 fehler.append(f"{ink.name}: Begegnung {aufruf} fehlt")
+        for runde in re.findall(r'^\s*~\s*beginneAufgaben\("([^"]+)"\)', quelle, re.M):
+            if runde not in rundenkennungen:
+                fehler.append(f"{ink.name}: Runde {runde} fehlt in runden.json")
         for karte in re.findall(r'^\s*~\s*reise\("([^"]+)",', quelle, re.M):
             if karte not in alle_karten:
                 fehler.append(f"{ink.name}: Reise nach unbekannter Karte {karte}")

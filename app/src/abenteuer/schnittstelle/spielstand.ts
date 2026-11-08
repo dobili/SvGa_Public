@@ -13,6 +13,7 @@
  * Phaser, damit Zurück-Taste, Neuladen und Gerätewechsel sie behalten.
  * Abhängigkeiten: schnittstelle/partie.ts, schnittstelle/karten.ts.
  */
+import type { Aufgabenauftrag, Aufgabenergebnis, Rundenstand } from "./aufgaben";
 import type { Kartenbesitz, Kartenspiel } from "./karten";
 import type { Nadelstufe, Partieergebnis } from "./partie";
 
@@ -133,6 +134,12 @@ export interface Abenteuerstand {
   readonly laufendePartie: string | null;
   /** Deck und gespielte Karten der laufenden Partie; null ohne laufende Partie. */
   readonly partiekarten: Partiekarten | null;
+  /** Die Aufgabenrunde, die gerade in der App läuft (R30); null sonst. */
+  readonly laufendeAufgaben: Aufgabenauftrag | null;
+  /** Ergebnis der zuletzt beendeten Runde, bis die Oberwelt es ausgewertet hat. */
+  readonly aufgabenergebnis: Aufgabenergebnis | null;
+  /** Stand je gespielter Runde (bestanden, Versuche), Grundlage für Clubstand.aufgabenreihe. */
+  readonly runden: readonly Rundenstand[];
   /** Globale Ink-Variablen (über alle Szenen), etwa „ambroseVertrauen“: 3. */
   readonly dialogvariablen: Readonly<Record<string, number | string | boolean>>;
   /** Gesamte Spielzeit in Sekunden, für den Vergleich mit dem Zeitbudget je Club (Entscheidung A7). */

@@ -40,6 +40,17 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Beispiel: `dialoge/de/maple-falls-dachboden.ink` (Fund des Bretts, Ambrose erwacht, erste Karte,
   Übergang in die erste Partie).
 
+## Aufgabenrunden (`runden.json`)
+
+- Eine Runde (Ink: `beginneAufgaben("ort.runde")`) nennt Steller (Figur), Buchübungen (`ueb:…`,
+  Teilmenge von `club.aufgaben.buchuebungen` des Ortes), Themen der Trainer (`haengend`, `matt1`,
+  `mattbilder`, Motive wie `doppelangriff`) und `reihe` (gehört zur Aufgabenreihe vor dem
+  Clubkampf). Die Zahl der Motivaufgaben folgt dem Zeitbudget des Clubs (Regelwerk R30), außer die
+  Runde nennt `anzahl` (Rätsel, Erinnerungen).
+- Buchübungen müssen als Aufgaben des Taktiktrainers vorliegen (Lösungszug); Zählübungen und
+  Mattführungen fallen derzeit heraus.
+- Quests warten mit `{ "art": "aufgaben", "runde": "ort.runde" }` auf die bestandene Runde.
+
 ## Tiled-Karten (`karten/<ort>-<karte>.json`)
 
 - Orthogonal, 16-px-Kacheln, JSON-Export von Tiled 1.11 (Claude schreibt die Dateien direkt; der

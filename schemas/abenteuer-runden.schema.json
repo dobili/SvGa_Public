@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-runden.schema.json",
+  "title": "Aufgabenrunden des Schach-Abenteuers",
+  "description": "Eine Aufgabenrunde ist eine Folge von Aufgaben, die eine Figur stellt (Ink: beginneAufgaben(kennung)); Regelwerk R30 bis R32. Buchübungen kommen aus dem Taktiktrainer der App (Aufgaben mit herkunft.uebung), Motivaufgaben aus den Themen; die Zahl der Motivaufgaben folgt dem Zeitbudget des Clubs (club.aufgaben.minuten in orte.json) oder steht fest (anzahl). Runden mit reihe = true bilden zusammen die Aufgabenreihe vor dem Clubkampf (Clubstand.aufgabenreihe).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runden"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "runden": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/runde" }
+    }
+  },
+  "$defs": {
+    "kennung": {
+      "type": "string",
+      "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+    },
+    "runde": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "ort", "steller", "reihe", "buchuebungen", "themen"],
+      "properties": {
+        "kennung": { "$ref": "#/$defs/kennung" },
+        "ort": {
+          "description": "Kennung des Ortes (orte.json), dessen Club das Zeitbudget liefert",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "steller": {
+          "description": "Figur, die die Aufgaben stellt (orte.json, figuren[].kennung)",
+          "$ref": "#/$defs/kennung"
+        },
+        "reihe": {
+          "description": "Teil der Aufgabenreihe vor dem Clubkampf (R31)? Nebenquests: false",
+          "type": "boolean"
+        },
+        "buchuebungen": {
+          "description": "Labels der Übungen des Buches, Teilmenge von club.aufgaben.buchuebungen",
+          "type": "array",
+          "items": { "type": "string", "pattern": "^ueb:[a-z0-9-]+$" }
+        },
+        "themen": {
+          "description": "Themen der Motivaufgaben (training/zusatzaufgaben.ts, taktiktrainer.ts); leer: nur Buchübungen",
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+        },
+        "anzahl": {
+          "description": "Feste Zahl der Motivaufgaben (Rätsel, Erinnerung); fehlt sie, rechnet R30 aus dem Zeitbudget",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      }
+    }
+  }
+}

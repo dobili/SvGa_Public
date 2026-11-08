@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "runden": [
+    {
+      "kennung": "mapleFalls.reiheSam",
+      "ort": "mapleFalls",
+      "steller": "mapleFalls.sam",
+      "reihe": true,
+      "buchuebungen": ["ueb:droh-ignorieren", "ueb:zaehlen-vorstoss"],
+      "themen": ["haengend"]
+    },
+    {
+      "kennung": "mapleFalls.reiheJuno",
+      "ort": "mapleFalls",
+      "steller": "mapleFalls.juno",
+      "reihe": true,
+      "buchuebungen": ["ueb:angriff-zaehlen"],
+      "themen": ["matt1"]
+    },
+    {
+      "kennung": "mapleFalls.todsuenden",
+      "ort": "mapleFalls",
+      "steller": "mapleFalls.sam",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 5
+    },
+    {
+      "kennung": "mapleFalls.parkbankRaetsel",
+      "ort": "mapleFalls",
+      "steller": "mapleFalls.abernathy",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "mapleFalls.springerLily",
+      "ort": "mapleFalls",
+      "steller": "mapleFalls.lily",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "cedarCreek.reiheDex",
+      "ort": "cedarCreek",
+      "steller": "cedarCreek.dex",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a02", "ueb:taktik-a08"],
+      "themen": ["matt1", "matt2"]
+    },
+    {
+      "kennung": "cedarCreek.reiheMae",
+      "ort": "cedarCreek",
+      "steller": "cedarCreek.mae",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a09"],
+      "themen": ["mattbilder", "grundreihenmatt"]
+    },
+    {
+      "kennung": "cedarCreek.trocknerStellung",
+      "ort": "cedarCreek",
+      "steller": "cedarCreek.boateng",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "cedarCreek.erinnerungNewYork",
+      "ort": "cedarCreek",
+      "steller": "cedarCreek.okafor",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 4
+    }
+  ]
+}

@@ -20,7 +20,7 @@ import { neueKennung } from "../../ui/komponenten/spielstart/spielwahl";
 import { auswertungsEngine } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/fallenurteil";
 import { ladePaket, paketzustand } from "../paket/paketlader";
-import type { Appdienste } from "../schnittstelle/modul";
+import { ANSICHT_AUFGABEN, type Appdienste } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
 import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -121,8 +121,21 @@ export function useAppdienste(): Appdienste {
         return partie ? sucheKipppunkt(partie, bewerteFuerKipppunkt) : null;
       },
       // Aufgabenrunden mit Rückweg kommen mit den Spielsystemen (Schritt 8, Baustein F7).
-      starteAufgaben: async () => {},
-      liesAufgabenergebnis: async () => null,
+      // Aufgabenrunde (R30 bis R32): Auftrag in den Spielstand, dann die Zusatzansicht der App;
+      // das Ergebnis legt die Ansicht am Ende in den Spielstand, die Oberwelt liest es zurück.
+      starteAufgaben: async (auftrag) => {
+        await aendere((d) => ({
+          ...d,
+          abenteuer: d.abenteuer
+            ? { ...d.abenteuer, laufendeAufgaben: auftrag, aufgabenergebnis: null }
+            : d.abenteuer,
+        }));
+        navigiere({ bildschirm: "zusatz", kennung: ANSICHT_AUFGABEN, wert: auftrag.kennung });
+      },
+      liesAufgabenergebnis: async (kennung) => {
+        const ergebnis = standJetzt()?.aufgabenergebnis ?? null;
+        return ergebnis?.kennung === kennung ? ergebnis : null;
+      },
       liesStand: standJetzt,
       schreibeStand: async (stand) => {
         await aendere((d) => ({ ...d, abenteuer: stand }));

@@ -1,0 +1,153 @@
+/**
+ * Aufträge der Oberwelt an die App (Regelwerk R12, R14, R15, R30, R31): Partieauftrag zu einer
+ * Begegnung, Wiedereinstieg am Kipppunkt und Aufgabenauftrag zu einer Runde.
+ *
+ * Rolle im Gesamtbild: Reine Funktionen über Spieldaten und Spielstand, ausgelagert aus
+ * oberwelt/Oberwelt.tsx; die Oberwelt ruft sie, wenn ein Dialog eine Partie oder Runde anstößt
+ * oder die Ergebniskarte den Wiedereinstieg anbietet.
+ * Abhängigkeiten: regeln/gegnerstaerke.ts, regeln/aufgaben.ts, anbindung/partiestart.ts.
+ * Beispiel: `auftragFuer("mapleFalls.ersteLektion", daten, stand, 900)` → Profil Ambrose,
+ * gerechnete Stärke aus Profil, Zustand und Wertung, Farbe nach der Begegnung.
+ */
+import { farbeAus } from "../anbindung/partiestart";
+import type { Gegnerdaten, Spieldaten } from "../daten/laden";
+import { motivanzahl, schwierigkeitAus, schwierigkeitDesVersuchs } from "../regeln/aufgaben";
+import { gerechneteStaerke } from "../regeln/gegnerstaerke";
+import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
+import type { Gegnerprofil, Gegnerzustand } from "../schnittstelle/gegnerprofil";
+import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
+import type { Kipppunkt, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
+import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
+
+/** Ein Gegnerprofil aus den Spieldaten (die Formen stimmen, das Schema hat sie geprüft). */
+function profilAus(daten: Gegnerdaten): Gegnerprofil {
+  return daten as unknown as Gegnerprofil;
+}
+
+/** Zustand eines Gegners aus dem Spielstand; ohne Eintrag normal. */
+function zustandAus(stand: Abenteuerstand, gegner: string): Gegnerzustand {
+  const figur = stand.figuren.find((f) => f.kennung === gegner);
+  return {
+    haeufigkeitsfaktor: figur?.abgelenkt?.faktor ?? 1,
+    grund: figur?.abgelenkt?.grund ?? null,
+    analysiert: figur?.analysiert ?? false,
+  };
+}
+
+/** Baut den Partieauftrag einer Begegnung; null, wenn die Spieldaten sie nicht kennen. */
+export function auftragFuer(
+  begegnung: string,
+  daten: Spieldaten,
+  stand: Abenteuerstand,
+  wertung: number | null,
+): Partieauftrag | null {
+  const b = daten.begegnungen.find((x) => x.kennung === begegnung);
+  const gegner = b && daten.gegner.find((g) => g.kennung === b.gegner);
+  if (!b || !gegner) return null;
+  const profil = profilAus(gegner);
+  const zustand = zustandAus(stand, gegner.kennung);
+  const staerke = gerechneteStaerke(profil, zustand, {
+    aktuell: wertung,
+    eingang: stand.eingangswertung > 0 ? stand.eingangswertung : null,
+  });
+  return {
+    kennung: `${begegnung}#${Date.now().toString(36)}`,
+    begegnung,
+    profil,
+    zustand,
+    staerke,
+    farbe: farbeAus(b.farbe, Math.random),
+    format: b.format,
+    startstellung: b.startstellung,
+    deck: { karten: [] },
+    kartenErlaubt: b.kartenErlaubt,
+    zaehltFuerApp: b.zaehltFuerApp ?? b.startstellung.art === "grundstellung",
+    uhr: null,
+  };
+}
+
+/** Wer in einer FEN am Zug ist (zweites Feld); fehlt es, Weiß. */
+export function amZugIn(fen: string): "white" | "black" {
+  return fen.split(" ")[1] === "b" ? "black" : "white";
+}
+
+/**
+ * Darf nach dieser Niederlage ein Wiedereinstieg angeboten werden (Regelwerk R14, Punkte 1, 5,
+ * 6)? Nur ganze Partien, nur einmal je Begegnung, nicht nach einem verlorenen Wiedereinstieg.
+ */
+export function wiedereinstiegMoeglich(
+  ergebnis: Partieergebnis,
+  begegnung: string,
+  daten: Spieldaten,
+  stand: Abenteuerstand,
+): boolean {
+  if (ergebnis.ausgang !== "niederlage") return false;
+  const b = daten.begegnungen.find((x) => x.kennung === begegnung);
+  if (!b || b.format.art !== "partie") return false;
+  if (stand.partiekarten?.wiedereinstieg) return false;
+  return !stand.protokoll.some(
+    (p) => p.wiedereinstieg && p.ergebnis.kennung.split("#")[0] === begegnung,
+  );
+}
+
+/**
+ * Karten des Wiedereinstiegs (Regelwerk R15): Bis zum Kipppunkt gespielte Karten bleiben
+ * gespielt; dauerhafte Karten, die erst danach kamen, kehren ins Deck zurück, verbrauchte nicht.
+ */
+export function kartenFuerWiedereinstieg(
+  vorherige: Partiekarten | null,
+  gespielt: readonly Kartenspiel[],
+  kipppunkt: Kipppunkt,
+  sorten: readonly Kartensorte[],
+): { deck: readonly string[]; gespielt: readonly Kartenspiel[] } {
+  const bisKipppunkt = gespielt.filter((k) => k.halbzug <= kipppunkt.halbzug);
+  const zurueck = gespielt
+    .filter((k) => k.halbzug > kipppunkt.halbzug)
+    .filter((k) => sorten.find((s) => s.kennung === k.kennung)?.art === "dauerhaft")
+    .map((k) => k.kennung);
+  const deck = [...new Set([...(vorherige?.deck ?? []), ...zurueck])];
+  return { deck, gespielt: bisKipppunkt };
+}
+
+/**
+ * Baut den Aufgabenauftrag zu einer Runde (Regelwerk R30, R31): Buchübungen und Themen aus
+ * runden.json, Umfang aus dem Zeitbudget des Clubs, Schwierigkeit aus der Wertung und dem
+ * Versuch. Null, wenn die Runde oder ihr Club fehlt.
+ */
+export function auftragFuerRunde(
+  runde: string,
+  daten: Spieldaten,
+  stand: Abenteuerstand,
+  wertung: number | null,
+): Aufgabenauftrag | null {
+  const r = daten.runden.find((x) => x.kennung === runde);
+  const ort = r && daten.orte.find((o) => o.kennung === r.ort);
+  const club = ort?.club;
+  if (!r || !ort || !club) return null;
+  const versuch = (stand.runden.find((x) => x.kennung === runde)?.versuche ?? 0) + 1;
+  const schwierigkeit = schwierigkeitDesVersuchs(schwierigkeitAus(wertung), versuch);
+  const anzahl = motivanzahl(
+    {
+      buchuebungen: r.buchuebungen,
+      themen: r.themen,
+      anzahl: r.anzahl ?? null,
+      minuten: club.aufgaben.minuten,
+      buchuebungenDesClubs: club.aufgaben.buchuebungen.length,
+      bloecke: daten.runden.filter((x) => x.ort === r.ort && x.reihe).length,
+    },
+    schwierigkeit,
+  );
+  const steller = ort.figuren.find((f) => f.kennung === r.steller);
+  return {
+    kennung: `${runde}#${Date.now().toString(36)}`,
+    runde,
+    steller: steller?.name ?? r.steller,
+    kapitel: club.kapitel[0] ?? 0,
+    buchuebungen: r.buchuebungen,
+    themen: r.themen,
+    anzahl,
+    schwierigkeit,
+    versuch,
+    zaehltFuerApp: true,
+  };
+}

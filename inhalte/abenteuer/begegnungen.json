@@ -218,6 +218,45 @@
       "format": { "art": "partie" },
       "startstellung": { "art": "grundstellung" },
       "kartenErlaubt": true
+    },
+    {
+      "kennung": "siliconBay.clubkampf",
+      "gegner": "siliconBay.lin",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "portDelacroix.clubkampf",
+      "gegner": "portDelacroix.odile",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "desertSprings.clubkampf",
+      "gegner": "desertSprings.mira",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
     }
   ]
 }

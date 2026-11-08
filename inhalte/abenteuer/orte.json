@@ -1397,6 +1397,858 @@
           "dialog": "erinnerung-london.rueckkehr"
         }
       ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon",
+      "name": "ort.wegIronwoodSilicon.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegIronwoodSilicon.raststaette",
+          "datei": "karten/weg-ironwood-silicon-raststaette.json",
+          "name": "ort.wegIronwoodSilicon.raststaette",
+          "innen": false
+        },
+        {
+          "kennung": "wegIronwoodSilicon.glasbruecke",
+          "datei": "karten/weg-ironwood-silicon-glasbruecke.json",
+          "name": "ort.wegIronwoodSilicon.glasbruecke",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegIronwoodSilicon.kowalczyk",
+          "name": "figur.kowalczyk.name",
+          "sprite": "figuren/kowalczyk.png",
+          "dialog": "weg-ironwood-silicon.kowalczyk"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.joggerin",
+          "name": "figur.joggerin.name",
+          "sprite": "figuren/joggerin.png",
+          "dialog": "weg-ironwood-silicon.joggerin",
+          "gegner": "wegIronwoodSilicon.joggerin"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckIronwood",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "uebergang",
+          "dialog": "weg-ironwood-silicon.zurueck_ironwood",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "busSiliconBay"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.tafel"
+        },
+        {
+          "name": "fundAnstecker",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.fund_anstecker"
+        },
+        {
+          "name": "weiterGlasbruecke",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegIronwoodSilicon.glasbruecke",
+            "ausloeser": "zurueckRaststaette"
+          }
+        },
+        {
+          "name": "zurueckRaststaette",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegIronwoodSilicon.raststaette",
+            "ausloeser": "weiterGlasbruecke"
+          }
+        },
+        {
+          "name": "fundOhrstoepsel",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.fund_ohrstoepsel"
+        },
+        {
+          "name": "weiterSilicon",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "uebergang",
+          "dialog": "silicon-bay-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "glasbruecke"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "siliconBay",
+      "name": "ort.siliconBay.name",
+      "nummer": 5,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "siliconBay.aussen",
+          "datei": "karten/silicon-bay-aussen.json",
+          "name": "ort.siliconBay.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "siliconBay.akademie",
+          "datei": "karten/silicon-bay-akademie.json",
+          "name": "ort.siliconBay.akademie",
+          "innen": true
+        },
+        {
+          "kennung": "siliconBay.serverraum",
+          "datei": "karten/silicon-bay-serverraum.json",
+          "name": "ort.siliconBay.serverraum",
+          "innen": true
+        },
+        {
+          "kennung": "siliconBay.lobby",
+          "datei": "karten/silicon-bay-lobby.json",
+          "name": "ort.siliconBay.lobby",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "siliconBay.lin",
+          "name": "figur.lin.name",
+          "sprite": "figuren/lin.png",
+          "dialog": "silicon-bay-akademie.lin",
+          "gegner": "siliconBay.lin"
+        },
+        {
+          "kennung": "siliconBay.nova",
+          "name": "figur.nova.name",
+          "sprite": "figuren/nova.png",
+          "dialog": "silicon-bay-akademie.nova",
+          "gegner": "siliconBay.nova"
+        },
+        {
+          "kennung": "siliconBay.theo",
+          "name": "figur.theo.name",
+          "sprite": "figuren/theo.png",
+          "dialog": "silicon-bay-akademie.theo",
+          "gegner": "siliconBay.theo"
+        },
+        {
+          "kennung": "siliconBay.dash",
+          "name": "figur.dash.name",
+          "sprite": "figuren/dash.png",
+          "dialog": "silicon-bay-aussen.dash",
+          "gegner": "siliconBay.dash"
+        },
+        {
+          "kennung": "siliconBay.rosie",
+          "name": "figur.rosie.name",
+          "sprite": "figuren/rosie.png",
+          "dialog": "silicon-bay-aussen.rosie"
+        },
+        {
+          "kennung": "siliconBay.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "silicon-bay-lobby.victor"
+        },
+        {
+          "kennung": "siliconBay.empfangsroboter",
+          "name": "figur.empfangsroboter.name",
+          "sprite": "figuren/empfangsroboter.png",
+          "dialog": "silicon-bay-lobby.empfangsroboter"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "glasbruecke",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "dialog": "silicon-bay-aussen.glasbruecke",
+          "ziel": {
+            "karte": "wegIronwoodSilicon.glasbruecke",
+            "ausloeser": "weiterSilicon"
+          }
+        },
+        {
+          "name": "akademieTuer",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.akademie",
+            "ausloeser": "akademieAusgang"
+          }
+        },
+        {
+          "name": "akademieAusgang",
+          "karte": "siliconBay.akademie",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "akademieTuer"
+          }
+        },
+        {
+          "name": "serverraumTuer",
+          "karte": "siliconBay.akademie",
+          "art": "uebergang",
+          "dialog": "silicon-bay-akademie.serverraum_zu",
+          "wenn": "serverraumOffen",
+          "ziel": {
+            "karte": "siliconBay.serverraum",
+            "ausloeser": "serverraumAusgang"
+          }
+        },
+        {
+          "name": "serverraumAusgang",
+          "karte": "siliconBay.serverraum",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.akademie",
+            "ausloeser": "serverraumTuer"
+          }
+        },
+        {
+          "name": "lobbyTuer",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.lobby",
+            "ausloeser": "lobbyAusgang"
+          }
+        },
+        {
+          "name": "lobbyAusgang",
+          "karte": "siliconBay.lobby",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "lobbyTuer"
+          }
+        },
+        {
+          "name": "schummelgeraete",
+          "karte": "siliconBay.serverraum",
+          "art": "gegenstand",
+          "dialog": "silicon-bay-serverraum.schummelgeraete"
+        },
+        {
+          "name": "vitrineHale",
+          "karte": "siliconBay.lobby",
+          "art": "gegenstand",
+          "dialog": "silicon-bay-lobby.vitrine"
+        },
+        {
+          "name": "hotel",
+          "karte": "siliconBay.aussen",
+          "art": "gegenstand",
+          "dialog": "silicon-bay-aussen.hotel"
+        },
+        {
+          "name": "busIronwood",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.bus_ironwood"
+        },
+        {
+          "name": "faehre",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "dialog": "silicon-bay-aussen.faehre",
+          "wenn": "nadelSiliconBay",
+          "ziel": {
+            "karte": "wegSiliconDelacroix.faehre",
+            "ausloeser": "start"
+          }
+        }
+      ],
+      "club": {
+        "name": "club.siliconBay.name",
+        "kapitel": [1, 2, 4],
+        "chef": "siliconBay.lin",
+        "mitglieder": ["siliconBay.theo", "siliconBay.nova"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:spannung-halten",
+            "ueb:k2-italienisch-sg5",
+            "ueb:k2-carokann-h4",
+            "ueb:lasker-falle"
+          ],
+          "themen": ["haengend", "gefangen"]
+        }
+      }
+    },
+    {
+      "kennung": "wegSiliconDelacroix",
+      "name": "ort.wegSiliconDelacroix.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegSiliconDelacroix.faehre",
+          "datei": "karten/weg-silicon-delacroix-faehre.json",
+          "name": "ort.wegSiliconDelacroix.faehre",
+          "innen": false
+        },
+        {
+          "kennung": "wegSiliconDelacroix.deich",
+          "datei": "karten/weg-silicon-delacroix-deich.json",
+          "name": "ort.wegSiliconDelacroix.deich",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegSiliconDelacroix.schiffskoch",
+          "name": "figur.schiffskoch.name",
+          "sprite": "figuren/schiffskoch.png",
+          "dialog": "weg-silicon-delacroix.schiffskoch",
+          "gegner": "wegSiliconDelacroix.schiffskoch"
+        },
+        {
+          "kennung": "wegSiliconDelacroix.guidry",
+          "name": "figur.guidry.name",
+          "sprite": "figuren/guidry.png",
+          "dialog": "weg-silicon-delacroix.guidry"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckSilicon",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "uebergang",
+          "dialog": "weg-silicon-delacroix.zurueck_silicon",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "faehre"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.tafel"
+        },
+        {
+          "name": "fundFlaschenpost",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.fund_flaschenpost"
+        },
+        {
+          "name": "weiterDeich",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegSiliconDelacroix.deich",
+            "ausloeser": "zurueckFaehre"
+          }
+        },
+        {
+          "name": "zurueckFaehre",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegSiliconDelacroix.faehre",
+            "ausloeser": "weiterDeich"
+          }
+        },
+        {
+          "name": "fundMuschel",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.fund_muschel"
+        },
+        {
+          "name": "weiterDelacroix",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "uebergang",
+          "dialog": "port-delacroix-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "deich"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix",
+      "name": "ort.portDelacroix.name",
+      "nummer": 6,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "portDelacroix.aussen",
+          "datei": "karten/port-delacroix-aussen.json",
+          "name": "ort.portDelacroix.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "portDelacroix.turnhalle",
+          "datei": "karten/port-delacroix-turnhalle.json",
+          "name": "ort.portDelacroix.turnhalle",
+          "innen": true
+        },
+        {
+          "kennung": "portDelacroix.werkstatt",
+          "datei": "karten/port-delacroix-werkstatt.json",
+          "name": "ort.portDelacroix.werkstatt",
+          "innen": true
+        },
+        {
+          "kennung": "portDelacroix.musikhaus",
+          "datei": "karten/port-delacroix-musikhaus.json",
+          "name": "ort.portDelacroix.musikhaus",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "portDelacroix.odile",
+          "name": "figur.odile.name",
+          "sprite": "figuren/odile.png",
+          "dialog": "port-delacroix-turnhalle.odile",
+          "gegner": "portDelacroix.odile"
+        },
+        {
+          "kennung": "portDelacroix.remy",
+          "name": "figur.remy.name",
+          "sprite": "figuren/remy.png",
+          "dialog": "port-delacroix-turnhalle.remy",
+          "gegner": "portDelacroix.remy"
+        },
+        {
+          "kennung": "portDelacroix.lou",
+          "name": "figur.lou.name",
+          "sprite": "figuren/lou.png",
+          "dialog": "port-delacroix-turnhalle.lou",
+          "gegner": "portDelacroix.lou"
+        },
+        {
+          "kennung": "portDelacroix.batiste",
+          "name": "figur.batiste.name",
+          "sprite": "figuren/batiste.png",
+          "dialog": "port-delacroix-aussen.batiste",
+          "gegner": "portDelacroix.batiste"
+        },
+        {
+          "kennung": "portDelacroix.arceneaux",
+          "name": "figur.arceneaux.name",
+          "sprite": "figuren/arceneaux.png",
+          "dialog": "port-delacroix-aussen.arceneaux"
+        },
+        {
+          "kennung": "portDelacroix.henri",
+          "name": "figur.henri.name",
+          "sprite": "figuren/henri.png",
+          "dialog": "port-delacroix-werkstatt.henri"
+        },
+        {
+          "kennung": "portDelacroix.celeste",
+          "name": "figur.celeste.name",
+          "sprite": "figuren/celeste.png",
+          "dialog": "port-delacroix-werkstatt.celeste",
+          "gegner": "portDelacroix.celeste"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "deich",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "dialog": "port-delacroix-aussen.deich",
+          "ziel": {
+            "karte": "wegSiliconDelacroix.deich",
+            "ausloeser": "weiterDelacroix"
+          }
+        },
+        {
+          "name": "turnhalleTuer",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.turnhalle",
+            "ausloeser": "turnhalleAusgang"
+          }
+        },
+        {
+          "name": "turnhalleAusgang",
+          "karte": "portDelacroix.turnhalle",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "turnhalleTuer"
+          }
+        },
+        {
+          "name": "werkstattTuer",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.werkstatt",
+            "ausloeser": "werkstattAusgang"
+          }
+        },
+        {
+          "name": "werkstattAusgang",
+          "karte": "portDelacroix.werkstatt",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "werkstattTuer"
+          }
+        },
+        {
+          "name": "musikhausTuer",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.musikhaus",
+            "ausloeser": "musikhausAusgang"
+          }
+        },
+        {
+          "name": "musikhausAusgang",
+          "karte": "portDelacroix.musikhaus",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "musikhausTuer"
+          }
+        },
+        {
+          "name": "brettHaus1",
+          "karte": "portDelacroix.aussen",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-aussen.brett_haus1"
+        },
+        {
+          "name": "brettHaus2",
+          "karte": "portDelacroix.aussen",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-aussen.brett_haus2"
+        },
+        {
+          "name": "brettHaus3",
+          "karte": "portDelacroix.aussen",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-aussen.brett_haus3"
+        },
+        {
+          "name": "brettHaus4",
+          "karte": "portDelacroix.aussen",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-aussen.brett_haus4"
+        },
+        {
+          "name": "gebaeckstand",
+          "karte": "portDelacroix.aussen",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-aussen.gebaeckstand"
+        },
+        {
+          "name": "werkbank",
+          "karte": "portDelacroix.werkstatt",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-werkstatt.werkbank"
+        },
+        {
+          "name": "schild",
+          "karte": "portDelacroix.musikhaus",
+          "art": "gegenstand",
+          "dialog": "port-delacroix-musikhaus.schild"
+        },
+        {
+          "name": "wuestenzug",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "dialog": "port-delacroix-aussen.wuestenzug",
+          "wenn": "nadelPortDelacroix",
+          "ziel": {
+            "karte": "wegDelacroixDesert.canyonpfad",
+            "ausloeser": "start"
+          }
+        }
+      ],
+      "club": {
+        "name": "club.portDelacroix.name",
+        "kapitel": [5, 6],
+        "chef": "portDelacroix.odile",
+        "mitglieder": ["portDelacroix.remy", "portDelacroix.lou"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:bauernloch-erkennen",
+            "ueb:guter-schlechter-laeufer",
+            "ueb:skelett-roentgen",
+            "ueb:lap-spanisch"
+          ],
+          "themen": ["umwandlung"]
+        }
+      }
+    },
+    {
+      "kennung": "wegDelacroixDesert",
+      "name": "ort.wegDelacroixDesert.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegDelacroixDesert.canyonpfad",
+          "datei": "karten/weg-delacroix-desert-canyonpfad.json",
+          "name": "ort.wegDelacroixDesert.canyonpfad",
+          "innen": false
+        },
+        {
+          "kennung": "wegDelacroixDesert.felsbogen",
+          "datei": "karten/weg-delacroix-desert-felsbogen.json",
+          "name": "ort.wegDelacroixDesert.felsbogen",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegDelacroixDesert.holloway",
+          "name": "figur.holloway.name",
+          "sprite": "figuren/holloway.png",
+          "dialog": "weg-delacroix-desert.holloway"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckDelacroix",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "uebergang",
+          "dialog": "weg-delacroix-desert.zurueck_delacroix",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "wuestenzug"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.tafel"
+        },
+        {
+          "name": "fundEidechsenhaut",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_eidechsenhaut"
+        },
+        {
+          "name": "stein",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.mira_stein"
+        },
+        {
+          "name": "weiterFelsbogen",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDelacroixDesert.felsbogen",
+            "ausloeser": "zurueckCanyon"
+          }
+        },
+        {
+          "name": "zurueckCanyon",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDelacroixDesert.canyonpfad",
+            "ausloeser": "weiterFelsbogen"
+          }
+        },
+        {
+          "name": "aussichtspunkt",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.versoehnung"
+        },
+        {
+          "name": "fundNieten",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_nieten"
+        },
+        {
+          "name": "weiterDesert",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "uebergang",
+          "dialog": "desert-springs-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "desertSprings.aussen",
+            "ausloeser": "canyon"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings",
+      "name": "ort.desertSprings.name",
+      "nummer": 7,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "desertSprings.aussen",
+          "datei": "karten/desert-springs-aussen.json",
+          "name": "ort.desertSprings.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "desertSprings.garage",
+          "datei": "karten/desert-springs-garage.json",
+          "name": "ort.desertSprings.garage",
+          "innen": true
+        },
+        {
+          "kennung": "desertSprings.antiquariat",
+          "datei": "karten/desert-springs-antiquariat.json",
+          "name": "ort.desertSprings.antiquariat",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "desertSprings.mira",
+          "name": "figur.mira.name",
+          "sprite": "figuren/mira.png",
+          "dialog": "desert-springs-garage.mira",
+          "gegner": "desertSprings.mira"
+        },
+        {
+          "kennung": "desertSprings.tomas",
+          "name": "figur.tomas.name",
+          "sprite": "figuren/tomas.png",
+          "dialog": "desert-springs-garage.tomas",
+          "gegner": "desertSprings.tomas"
+        },
+        {
+          "kennung": "desertSprings.dot",
+          "name": "figur.dot.name",
+          "sprite": "figuren/dot.png",
+          "dialog": "desert-springs-garage.dot",
+          "gegner": "desertSprings.dot"
+        },
+        {
+          "kennung": "desertSprings.buck",
+          "name": "figur.buck.name",
+          "sprite": "figuren/buck.png",
+          "dialog": "desert-springs-aussen.buck",
+          "gegner": "desertSprings.buck"
+        },
+        {
+          "kennung": "desertSprings.okoro",
+          "name": "figur.okoro.name",
+          "sprite": "figuren/okoro.png",
+          "dialog": "desert-springs-antiquariat.okoro"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "canyon",
+          "karte": "desertSprings.aussen",
+          "art": "uebergang",
+          "dialog": "desert-springs-aussen.canyon",
+          "ziel": {
+            "karte": "wegDelacroixDesert.felsbogen",
+            "ausloeser": "weiterDesert"
+          }
+        },
+        {
+          "name": "garageTuer",
+          "karte": "desertSprings.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "desertSprings.garage",
+            "ausloeser": "garageAusgang"
+          }
+        },
+        {
+          "name": "garageAusgang",
+          "karte": "desertSprings.garage",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "desertSprings.aussen",
+            "ausloeser": "garageTuer"
+          }
+        },
+        {
+          "name": "antiquariatTuer",
+          "karte": "desertSprings.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "desertSprings.antiquariat",
+            "ausloeser": "antiquariatAusgang"
+          }
+        },
+        {
+          "name": "antiquariatAusgang",
+          "karte": "desertSprings.antiquariat",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "desertSprings.aussen",
+            "ausloeser": "antiquariatTuer"
+          }
+        },
+        {
+          "name": "motel",
+          "karte": "desertSprings.aussen",
+          "art": "gegenstand",
+          "dialog": "desert-springs-aussen.motel"
+        },
+        {
+          "name": "bahnhof",
+          "karte": "desertSprings.aussen",
+          "art": "dialog",
+          "dialog": "desert-springs-aussen.bahnhof"
+        }
+      ],
+      "club": {
+        "name": "club.desertSprings.name",
+        "kapitel": [7, 1],
+        "chef": "desertSprings.mira",
+        "mitglieder": ["desertSprings.tomas", "desertSprings.dot"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:morphy-opfer-checkliste",
+            "ueb:taktik-a10",
+            "ueb:taktik-a11",
+            "ueb:taktik-a14"
+          ],
+          "themen": ["hinlenkung", "beseitigung", "abzug", "doppelschach"]
+        }
+      }
     }
   ]
 }

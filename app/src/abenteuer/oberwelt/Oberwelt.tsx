@@ -589,6 +589,7 @@ export function Oberwelt() {
         wiedereinstieg: auftrag.format.art === "wiedereinstieg",
         letzterHalbzug: null,
         gegner: auftrag.profil.kennung,
+        uhr: auftrag.uhr,
       },
     };
     standRef.current = mitPartie;
@@ -617,6 +618,8 @@ export function Oberwelt() {
     startePartie(
       {
         ...auftrag,
+        // Dieselbe Bedenkzeit wie in der verlorenen Partie (gewählt oder fest).
+        uhr: vorherigeKarten.current?.uhr ?? auftrag.uhr,
         farbe: amZugIn(k.fen),
         format: { art: "wiedereinstieg", vorherigeKennung: e.kennung },
         startstellung: { art: "fen", fen: k.fen },

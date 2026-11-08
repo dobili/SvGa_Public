@@ -160,7 +160,15 @@ function partiekartenAus(roh: unknown): Partiekarten | null {
     wiedereinstieg: roh.wiedereinstieg === true,
     letzterHalbzug: typeof roh.letzterHalbzug === "number" ? roh.letzterHalbzug : null,
     ...(typeof roh.gegner === "string" ? { gegner: roh.gegner } : {}),
+    ...uhrAus(roh.uhr),
   };
+}
+
+/** Die Uhr der laufenden Partie, nur wenn lesbar (Sekunden und Zuschlag als Zahlen). */
+function uhrAus(roh: unknown): Pick<Partiekarten, "uhr"> {
+  if (!istObjekt(roh) || typeof roh.sekunden !== "number" || typeof roh.zuschlag !== "number")
+    return {};
+  return { uhr: { sekunden: roh.sekunden, zuschlag: roh.zuschlag } };
 }
 
 function zahl(wert: unknown): number {

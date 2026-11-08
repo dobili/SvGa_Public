@@ -103,6 +103,8 @@ export interface Partiekarten {
    * (nur Straßengegner), gegen welche er immun ist und wie er antwortet. Fehlt in älteren Ständen.
    */
   readonly gegner?: string;
+  /** Bedenkzeit der Partie (Schritt 13); ein Wiedereinstieg spielt mit derselben Uhr. */
+  readonly uhr?: { readonly sekunden: number; readonly zuschlag: number } | null;
 }
 
 /** Gesammelte Partiefragmente von Ambroses alter Partie (Dokument 02, 3.3), als Halbzugindizes. */

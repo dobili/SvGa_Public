@@ -913,15 +913,17 @@ leere Umschlag“ (Szene 41).
 ## 10. Welt in Akt 2
 
 Grundsatz wie in Teil 1: je Stadt eine Außenkarte und zwei bis drei Innenräume; dazu je Route zwei
-Karten (W1). Kennungen nach `inhalte/abenteuer/README.md`; Routen heißen `route2`, `route3`
-(Route 1 ist Maple Falls → Cedar Creek, W5).
+Karten (W1). Kennungen nach `inhalte/abenteuer/README.md`; Wege sind Orte mit `art: "weg"`
+(Schritt 10) und heißen wie `wegMapleCedar` (Route 1): Route 2 ist `wegCedarRiverton`, Route 3
+`wegRivertonIronwood`. Das Fahrrad ist der Gegenstand `fahrrad` (Quest-Wirkung `gegenstand`), die
+Schnellreise prüft `besuchtRiverton` und `besuchtIronwood`.
 
-### 10.1 Route 2: Cedar Creek → Riverton (`route2`, Schnellreise mit dem Zug)
+### 10.1 Route 2: Cedar Creek → Riverton (`wegCedarRiverton`, Schnellreise mit dem Zug)
 
-| Karte               | Zweck                                                | Stationen (W4)                                                                                                                         | Atmosphäre                                                              |
-| ------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `route2.zedernwald` | Waldweg ab dem Steg von Cedar Creek, am Bach entlang | Rätseltafel am Wegweiser (3 Doppelangriffe, Münzen), Fund „Pfeilspitze“, Wanderin mit Weisheit                                         | Rote Zedern, Moos, ein Specht, Sonnenflecken.                           |
-| `route2.bahndamm`   | Feldweg neben den Gleisen bis zum Bahnhof Riverton   | Straßengegner mit Uhr: Juno fordert einen Zugschaffner heraus und verliert, dann ist {held} dran (Szene 27); Fund „Fahrkarte von 1958“ | Ein Güterzug rattert vorbei, Schotter, Löwenzahn, in der Ferne Brücken. |
+| Karte                         | Zweck                                                | Stationen (W4)                                                                                                                         | Atmosphäre                                                              |
+| ----------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `wegCedarRiverton.zedernwald` | Waldweg ab dem Steg von Cedar Creek, am Bach entlang | Rätseltafel am Wegweiser (3 Doppelangriffe, Münzen), Fund „Pfeilspitze“, Wanderin mit Weisheit                                         | Rote Zedern, Moos, ein Specht, Sonnenflecken.                           |
+| `wegCedarRiverton.bahndamm`   | Feldweg neben den Gleisen bis zum Bahnhof Riverton   | Straßengegner mit Uhr: Juno fordert einen Zugschaffner heraus und verliert, dann ist {held} dran (Szene 27); Fund „Fahrkarte von 1958“ | Ein Güterzug rattert vorbei, Schotter, Löwenzahn, in der Ferne Brücken. |
 
 Die Wanderin am Wegweiser (Mrs. Fenwick, sie, Rucksack und Stock) sagt einen Satz Schachweisheit:
 „Wer angreift, soll zuerst zählen, wer verteidigt.“ (Buch Kapitel 1, Abschnitt 1.4). Erstes Mal zu
@@ -944,12 +946,12 @@ Brücke und Bahnhof, Backstein und Regen. Herbst, Laub in den Pfützen, Schach i
 Der Handyladen verkauft Tablets von Perfect Move und ist bewusst kein Laden für {held}: Gekauft
 wird am Zeitungsstand von Pops (Abschnitt 13). Ergänzt in `09`, Abschnitt 5.4.
 
-### 10.3 Route 3: Riverton → Ironwood (`route3`, Kanalweg, das Fahrrad lohnt sich)
+### 10.3 Route 3: Riverton → Ironwood (`wegRivertonIronwood`, Kanalweg, das Fahrrad lohnt sich)
 
-| Karte             | Zweck                                                     | Stationen (W4)                                                                                 | Atmosphäre                                                       |
-| ----------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `route3.kanalweg` | Treidelpfad am Kanal, an stillgelegten Fabriken vorbei    | Rätseltafel an der Bushaltestelle ohne Bus (2 Fesselungen), Fund „Zahnrad“, Bauer mit Weisheit | Leere Hallen, Graffiti mit Schachfiguren, Krähen auf den Zäunen. |
-| `route3.bruecke`  | Eisenbrücke über den Kanal, dann der Abhang nach Ironwood | Ambrose und der Zeitnot-Trick (Szene 40), Fund „Nietenkopf mit Initialen“                      | Wind, das Tal tief unten, Rauch aus dem Stahlwerk am Horizont.   |
+| Karte                          | Zweck                                                     | Stationen (W4)                                                                                 | Atmosphäre                                                       |
+| ------------------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `wegRivertonIronwood.kanalweg` | Treidelpfad am Kanal, an stillgelegten Fabriken vorbei    | Rätseltafel an der Bushaltestelle ohne Bus (2 Fesselungen), Fund „Zahnrad“, Bauer mit Weisheit | Leere Hallen, Graffiti mit Schachfiguren, Krähen auf den Zäunen. |
+| `wegRivertonIronwood.bruecke`  | Eisenbrücke über den Kanal, dann der Abhang nach Ironwood | Ambrose und der Zeitnot-Trick (Szene 40), Fund „Nietenkopf mit Initialen“                      | Wind, das Tal tief unten, Rauch aus dem Stahlwerk am Horizont.   |
 
 Die Route ist doppelt so lang wie Route 2 (zu Fuß etwa 15 Minuten, mit Fahrrad etwa 8; W3, W6):
 Das Fahrrad aus dem Schuppen (Szene 33) lohnt sich hier zum ersten Mal spürbar. Der Bauer am
@@ -984,15 +986,15 @@ Quest. Münzen nach G1, Karten nach Regelwerk R27, Zeitkarten nur auf Wegen und 
 ### Route 2 und Riverton
 
 **26. Aufbruch nach Riverton** · `akt2.aufbruch` · H `riverton.parkclub`
-Ort `cedarCreek.aussen` (Steg), dann `route2.zedernwald` · Juno, Ambrose. Ereignis: Dialog. Juno
+Ort `cedarCreek.aussen` (Steg), dann `wegCedarRiverton.zedernwald` · Juno, Ambrose. Ereignis: Dialog. Juno
 zeigt die Nachricht über den Parkclub von Riverton; Coach Delgado kann nicht mit, Mama erlaubt den
 Ausflug mit Juno („Mit dem Zug zurück, vor dem Dunkelwerden.“). Der erste Weg wird gegangen (W2).
 Ambrose über den Wald: „Bäume, die älter sind als ich. Endlich jemand in meinem Alter.“ Etwa 3
 Minuten.
 
-**27. Am Bahndamm** · W `route2` · S `route2.schaffner`
-Ort `route2.zedernwald`, `route2.bahndamm` · Juno, Mr. Quinn (Zugschaffner in der Pause, er),
-Mrs. Fenwick. Ereignis: Rätseltafel (Runde `route2.tafelWegweiser`, 3 Doppelangriffe, 5 Münzen),
+**27. Am Bahndamm** · W `wegCedarRiverton` · S `wegCedarRiverton.schaffner`
+Ort `wegCedarRiverton.zedernwald`, `wegCedarRiverton.bahndamm` · Juno, Mr. Quinn (Zugschaffner in der Pause, er),
+Mrs. Fenwick. Ereignis: Rätseltafel (Runde `wegCedarRiverton.tafelWegweiser`, 3 Doppelangriffe, 5 Münzen),
 Wanderin mit Weisheit, Straßengegner mit Uhr: Stellungsduell 3 + 2 (R13, W4), Zielstärke A − 100.
 Juno spielt zuerst und verliert lachend („Ich hab die Zeit gewonnen. Er hatte mehr übrig.“). Sieg:
 10 Münzen und beim ersten Sieg die Karte **Zeitbonus** (Z3, Z4). Funde F „Pfeilspitze“, F
@@ -1106,9 +1108,9 @@ Foto „Jugendmeisterschaft 2001, Finale – Laura M., Stahlwerker-Club Ironwood
 Partieformular des Finales mit einem Kreis um den 33. Zug. Oma Ruth: „Sie hat es eingerahmt und nie
 wieder angesehen.“ Fund F „Foto von 2001“ (Hauptquest-Gegenstand). Etwa 7 Minuten.
 
-**40. Die Eisenbrücke** · W `route3` · Zeit (Vorgabe 5, Zeitnot-Trick)
-Ort `route3.kanalweg`, `route3.bruecke` · Ambrose, Juno, Mr. Dale. Ereignis: Rätseltafel
-(Runde `route3.tafelHaltestelle`, 2 Fesselungen, 5 Münzen), Bauer mit Weisheit, Funde F „Zahnrad“
+**40. Die Eisenbrücke** · W `wegRivertonIronwood` · Zeit (Vorgabe 5, Zeitnot-Trick)
+Ort `wegRivertonIronwood.kanalweg`, `wegRivertonIronwood.bruecke` · Ambrose, Juno, Mr. Dale. Ereignis: Rätseltafel
+(Runde `wegRivertonIronwood.tafelHaltestelle`, 2 Fesselungen, 5 Münzen), Bauer mit Weisheit, Funde F „Zahnrad“
 und F „Nietenkopf mit Initialen J. H.“ (der Ingenieur hat diese Brücke gebaut; Ambrose erkennt die
 Initialen nicht oder will sie nicht erkennen). Auf der Brücke, im Wind, erklärt Ambrose den
 **Zeitnot-Trick** (Z6) und schenkt die Karte (Verbrauchskarte, mittlere Stufe, einmal):
@@ -1231,10 +1233,10 @@ Kürzungen, falls der Spielzeitzähler mehr zeigt: zuerst Szene 45 (Straße), da
 
 ### Verteilung der Nebenquests
 
-| Stadt    | rätsel                                    | hilfe                               | begegnung                                                               |
-| -------- | ----------------------------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
-| Riverton | Rätseltafel `route2.tafelWegweiser` (Weg) | `riverton.schuppen` (E4, Fahrrad)   | `riverton.zuschauen` (analysiert), Flashback `riverton.flashbackLondon` |
-| Ironwood | `ironwood.postsack` (E4 neu)              | Mamas Partie (Hauptquest, kein Typ) | `ironwood.feier` (abgelenkt), Erinnerung `ironwood.erinnerungBird`      |
+| Stadt    | rätsel                                              | hilfe                               | begegnung                                                               |
+| -------- | --------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
+| Riverton | Rätseltafel `wegCedarRiverton.tafelWegweiser` (Weg) | `riverton.schuppen` (E4, Fahrrad)   | `riverton.zuschauen` (analysiert), Flashback `riverton.flashbackLondon` |
+| Ironwood | `ironwood.postsack` (E4 neu)                        | Mamas Partie (Hauptquest, kein Typ) | `ironwood.feier` (abgelenkt), Erinnerung `ironwood.erinnerungBird`      |
 
 Damit kommen beide Zustände aus dem Regelwerk wieder je einmal vor, in umgekehrter Reihenfolge wie
 in Akt 1 (Riverton analysiert, Ironwood abgelenkt). In Ironwood ersetzt Mamas Partie die

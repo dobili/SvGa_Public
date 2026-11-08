@@ -1,6 +1,10 @@
-# Auftrag mittel-1: Läden in Riverton und Ironwood anschließen, Laterne am Schließfach
+# Auftrag mittel-1: kein Auftrag
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, neunter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der neunte Auftrag, Läden und Laterne, ist
+zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/dialoge/de/riverton-bahnhofshalle.ink`,
 `ironwood-aussen.ink`, `ironwood-umkleide.ink`, `inhalte/abenteuer/texte/de.json` (nur neue

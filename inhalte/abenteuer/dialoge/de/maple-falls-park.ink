@@ -13,6 +13,7 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL oeffneLaden(laden)
 
 VAR held = "Du"
 VAR abernathyGetroffen = false
@@ -23,6 +24,7 @@ VAR joGetroffen = false
 VAR ausgangMapleFallsSkaterJo = ""
 VAR aufbruchGesehen = false
 VAR ankunftCedarCreekGesehen = false
+VAR patelGetroffen = false
 
 // ---------------------------------------------------------------- Mr. Abernathy
 
@@ -172,3 +174,30 @@ Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprec
     -> END
 * [Noch nicht]
     -> END
+
+// ---------------------------------------------------------------- Kiosk (G2) und Ortsausgang (W5)
+// Laden mapleFalls.kiosk mit Mr. Patel; oeffneLaden kommt mit Schritt 12 (laeden.json).
+// Der Ortsausgang „landstrasse“ führt auf die Route nach Cedar Creek (weg-maple-cedar.ink).
+
+=== kiosk ===
+{patelGetroffen:
+    {~Na, {held}? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel
+- else:
+    ~ patelGetroffen = true
+    Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
+    Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
+    Zahlen kannst du mit Münzen. Die bekommst du für Siege und gelöste Rätsel, das weiß hier jedes Kind. #sprecher:patel
+}
+~ oeffneLaden("mapleFalls.kiosk")
+-> END
+
+=== landstrasse ===
+{
+- not aufbruchGesehen:
+    Hier beginnt die Landstraße nach Cedar Creek. Für heute bleibst du lieber in der Stadt. #sprecher:erzaehler
+- ankunftCedarCreekGesehen:
+    Die Landstraße nach Cedar Creek. Du kennst den Weg schon. #sprecher:erzaehler
+- else:
+    Zu Fuß? Gut. Der Bus fährt später auch. #sprecher:ambrose
+}
+-> END

@@ -157,5 +157,10 @@
   "aufgaben.abbrechen": "Runde abbrechen",
   "aufgaben.fehlt": "Diese Aufgabenrunde kennt das Spiel nicht: {runde}.",
   "quest.clubkampfCedarCreek.bibliothek": "Geh in die Stadtbibliothek zum Schachclub.",
-  "tagebuch.wertung": "Deine Spielstärke im Abenteuer: {wertung}"
+  "tagebuch.wertung": "Deine Spielstärke im Abenteuer: {wertung}",
+  "figur.nia.name": "Nia",
+  "figur.patel.name": "Mr. Patel",
+  "figur.wanderer.name": "Wanderer",
+  "fund.formular1857.name": "Altes Partieformular",
+  "fund.formular1857.text": "Ein vergilbtes Partieformular in einer Blechdose, eng beschrieben in einer Handschrift, die Ambrose kennt, aber nicht mehr lesen kann."
 }

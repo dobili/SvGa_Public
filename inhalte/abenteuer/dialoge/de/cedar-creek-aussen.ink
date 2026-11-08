@@ -216,3 +216,21 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     -> END
 * [Noch bleiben]
     -> END
+
+// ---------------------------------------------------------------- Ankunft zu Fuß (W5)
+// Ankunft über den Flussweg statt mit dem Bus; setzt dieselbe Variable wie „ankunft“, damit die
+// Ankunft mit dem Bus danach nicht noch einmal läuft.
+
+=== ankunft_zu_fuss ===
+{ankunftCedarCreekGesehen:
+    Der Flussweg endet an der Bushaltestelle von Cedar Creek. #sprecher:erzaehler
+    -> END
+}
+~ ankunftCedarCreekGesehen = true
+Der Flussweg endet zwischen roten Zedern an der Bushaltestelle. Vor dir eine Bibliothek aus Backstein. #sprecher:erzaehler
+Da bist du ja! Zu Fuß? #sprecher:juno #stimmung:froh
+Respekt. Wir sind mit dem Bus vorgefahren. #sprecher:juno
+Auswärtsspiel im Bibliotheksclub, Leute! Die Chefin dort ist eine Legende, die niemand kennt. #sprecher:coachDelgado #klang:pfiff
+Seht euch ruhig um. Der Bus fährt erst am Abend zurück. #sprecher:coachDelgado
+Ein Weg zu Fuß, ein Fluss, eine fremde Stadt. So reiste ich, als ich jung war. #sprecher:ambrose #stimmung:stolz
+-> END

@@ -1,29 +1,27 @@
-# Auftrag niedrig-1: die 25 Karten von Akt 4
+# Auftrag niedrig-1: Figuren und Objekte auf der Hochebene
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zwölfte Auftrag, die 25 Karten von Akt 4, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, dreizehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** die neuen Kartendateien von Akt 4, dazu in den vorhandenen Karten
-`desert-springs-aussen.json` den Auslöser `highway` und in `port-delacroix-aussen.json` den
-Auslöser `bayou` und die Figur `blaeser` (im Musikhaus: `port-delacroix-musikhaus.json`),
+**Darf ändern:** die Karten der Hochebene (`inhalte/abenteuer/karten/hochebene*.json`),
 `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (125 übersprungene Tests
-werden mit jeder Karte weniger), in `app/` Prettier und Paketbau
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
 
 ## Ziel
 
-Akt 4 steht in `orte.json`. Die Tabelle aller Karten mit Dateien, Größen, Objekten und Figuren
-steht im Bericht des siebzehnten Auftrags von mittel-1 in `docs/spiel/auftraege/mittel-1.md`
-(Abschnitt „Für niedrig-1“); wenn sie dort fehlt, Objekte und Zuordnung wie beim letzten Mal direkt
-aus `orte.json`. Orte: Story-Bibel Teil 4 (Abschnitt 27 bis 31), Weltbeschreibung 5.9 bis 5.14.
+mittel-2 hat die Hochebene mit Figuren gefüllt (kira, annek, joss) und neue Auslöser angelegt
+(steintisch, werkstatt, aushang). Die Liste der Objekte steht im Bericht des fünfzehnten Auftrags in
+`docs/spiel/auftraege/mittel-2.md` (Abschnitt „Für niedrig-1“). Ergänze sie auf der Karte.
 
-## Vorgaben
-
-Wie bei Akt 3; nach jeder Stadt pushen (Summit City mit Weg, Crossroads mit Weg, Pinewood Camp mit
-Weg, Ghost Town mit Weg und Erinnerung, Capital Arena, Bayou und Hochebene zuletzt). Die Hochebene
-neutral ohne Figuren (Rückfrage Q21-1 offen).
+Gestaltung nach Weltbeschreibung 5.9: eine heutige Siedlung auf der Hochebene, Werkstatt, Schule,
+Steintisch zum Spielen; keine Zeichen, Muster oder Deko aus realen Kulturen, keine Tipis, keine
+Federn. Im Zweifel schlicht und modern.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 (vom Helfer auszufüllen)
 

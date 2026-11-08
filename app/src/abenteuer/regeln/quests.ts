@@ -153,6 +153,10 @@ export function wendeWirkungAn(
         figuren: [...stand.figuren.filter((f) => f.kennung !== wirkung.gegner), figur],
       };
     }
+    case "gegenstand":
+      return stand.gegenstaende.includes(wirkung.gegenstand)
+        ? stand
+        : { ...stand, gegenstaende: [...stand.gegenstaende, wirkung.gegenstand] };
     case "szene":
       return { ...stand, handlung: { ...stand.handlung, akt: wirkung.akt, szene: wirkung.szene } };
     case "fragment": {

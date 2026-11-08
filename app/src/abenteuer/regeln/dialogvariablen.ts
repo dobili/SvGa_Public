@@ -33,6 +33,11 @@ export function variablenNachRunde(runde: string, bestanden: boolean): Variablen
   return { [`${name}Bestanden`]: true };
 }
 
+/** Variable zum ersten Besuch eines Ortes: `besuchtCedarCreek` = true (W2: Schnellreise frei). */
+export function variablenNachBesuch(ort: string): Variablen {
+  return { [`besucht${grossAnfang(ort)}`]: true };
+}
+
 /** Variable zur besten Nadel eines Clubs: `nadelMapleFalls` = 3 für Gold. */
 export function variablenNachNadel(ort: string, nadel: Nadelstufe | null): Variablen {
   return { [`nadel${grossAnfang(ort)}`]: nadel ? NADELWERT[nadel] : 0 };

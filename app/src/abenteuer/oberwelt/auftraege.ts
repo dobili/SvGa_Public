@@ -166,8 +166,10 @@ export function auftragFuerRunde(
 ): Aufgabenauftrag | null {
   const r = daten.runden.find((x) => x.kennung === runde);
   const ort = r && daten.orte.find((o) => o.kennung === r.ort);
-  const club = ort?.club;
-  if (!r || !ort || !club) return null;
+  if (!r || !ort) return null;
+  // Wege haben keinen Club: nur Runden mit fester Zahl (R30a), Budget 0.
+  const club = ort.club ?? null;
+  if (!club && r.anzahl === undefined) return null;
   const versuch = (stand.runden.find((x) => x.kennung === runde)?.versuche ?? 0) + 1;
   const schwierigkeit = schwierigkeitDesVersuchs(schwierigkeitAus(stand.wertung), versuch);
   const anzahl = motivanzahl(
@@ -175,18 +177,20 @@ export function auftragFuerRunde(
       buchuebungen: r.buchuebungen,
       themen: r.themen,
       anzahl: r.anzahl ?? null,
-      minuten: club.aufgaben.minuten,
-      buchuebungenDesClubs: club.aufgaben.buchuebungen.length,
+      minuten: club?.aufgaben.minuten ?? 0,
+      buchuebungenDesClubs: club?.aufgaben.buchuebungen.length ?? 0,
       bloecke: daten.runden.filter((x) => x.ort === r.ort && x.reihe).length,
     },
     schwierigkeit,
   );
   const steller = ort.figuren.find((f) => f.kennung === r.steller);
+  // Kein Figurname (Rätseltafel): Textschlüssel nach dem Muster figur.<name>.name.
+  const stellername = steller?.name ?? `figur.${r.steller.split(".").pop() ?? r.steller}.name`;
   return {
     kennung: `${runde}#${Date.now().toString(36)}`,
     runde,
-    steller: steller?.name ?? r.steller,
-    kapitel: club.kapitel[0] ?? 0,
+    steller: stellername,
+    kapitel: club?.kapitel[0] ?? 0,
     buchuebungen: r.buchuebungen,
     themen: r.themen,
     anzahl,

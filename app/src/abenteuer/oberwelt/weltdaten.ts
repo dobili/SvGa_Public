@@ -26,6 +26,8 @@ export interface Weltdaten {
   readonly kennung: string;
   readonly daten: Spieldaten;
   readonly ort: Ortdaten;
+  /** Innenraum (kein Fahrrad, keine Tiere draußen)? */
+  readonly innen: boolean;
   readonly karte: object;
   readonly kachelbild: string;
   readonly heldbild: string;
@@ -43,7 +45,16 @@ export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
     paketdateiAlsAdresse(HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
   ]);
-  return { kennung: kartenkennung, daten, ort: fund.ort, karte, kachelbild, heldbild, figurbild };
+  return {
+    kennung: kartenkennung,
+    daten,
+    ort: fund.ort,
+    innen: fund.karte.innen,
+    karte,
+    kachelbild,
+    heldbild,
+    figurbild,
+  };
 }
 
 /** Das Objekt `name` einer Tiled-Karte in Kachelkoordinaten, oder null. */

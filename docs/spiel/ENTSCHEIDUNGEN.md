@@ -364,6 +364,17 @@ Innenräumen, Inventar und Verbindungen; Checkliste je Karte; Technikliste (Tön
 Statisten, animierte Kacheln, bedingte Objekte, Geräusche). mittel-2 richtet Akt 2 danach aus,
 niedrig-1 zeichnet die Routenkarten nach Abschnitt 5.2.
 
+**Schritt 10 begonnen (Wege, Grundlage):** Ein Weg ist ein Ort mit `art: "weg"` (Nummer 0, ohne
+Club) in `orte.json`; nur seine Übergänge dürfen in andere Orte führen (Pipeline prüft das). So
+bleibt alles Vorhandene (Karten laden, Übergänge, Figuren, Quests, Kartentest) unverändert nutzbar;
+eine eigene `wege.json` ist nicht nötig. Angelegt: `wegMapleCedar` mit „Landstraße“ und
+„Flussweg“ (Karten zeichnet niedrig-1), Park-Ausgang `landstrasse`, Rätseltafel als Runde mit
+fester Zahl (Steller ohne Figur: Textschlüssel `figur.tafel.name`), Gegnerin Nia (vorläufiges
+Profil, mittel-1 füllt es). Spielstand: `gegenstaende` (Quest-Wirkung `gegenstand`; Fahrrad
+verdoppelt das Tempo draußen) und `besuchteOrte` mit Dialogvariable `besucht<Ort>` für die
+Schnellreise nach dem ersten Fußweg (W2; der Bus-Dialog prüft sie). Auslösernamen sind camelCase
+(Schema), Ink-Knoten dürfen Unterstriche behalten.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

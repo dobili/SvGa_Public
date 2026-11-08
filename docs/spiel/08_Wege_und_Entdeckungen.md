@@ -66,7 +66,9 @@ Alles Folgende gilt als Empfehlung „schon so geplant, Widerspruch genügt“ (
   Minute auf der Uhr des Gegners, Verbrauchskarte, leicht) und „Zeitgeschenk“ (Gegner verliert
   keine Zeit beim nächsten Zug, dauerhaft, Spielwitz ohne Vorteil: fürs Album). Zeitkarten zählen
   für die Nadel als leichte Karten (R17); „Sanduhr“ (R25) bleibt die Ausnahme.
-- **Z6 Zeitnot-Trick** (Wunsch des Autors, 8.11.2026): Ambrose gaukelt dem Gegner Zeitnot vor.
+- **Z6 Zeitnot-Trick** (Wunsch des Autors, 8.11.2026; neu begründet als Spruch „Großes Maul“ des
+  Helden, nicht als Trick des Geistes, siehe `10_Sprueche_Schauplaetze_Varianten.md`, S1 bis S6):
+  Der Gegner spielt nach einer Provokation zu schnell.
   Die Uhr bleibt unverändert; die Engine spielt für die nächsten 5 gegnerischen Züge wie in
   Zeitnot (Stufe „30“ aus `engine/menschenprofil.ts`: mehr Fehler, Patzerneigung, kurze
   Bedenkzeit). Wirkt auch in Partien ohne Uhr, deshalb mittlere Karte (R17: Silber höchstens),

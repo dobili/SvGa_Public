@@ -446,6 +446,24 @@ Läden in Riverton (Pops: Fingerzeig, Zweite Chance) und Ironwood (Edna: Zweite 
 Fahrrad, Laterne) stehen jetzt in `laeden.json`; mittel-1 schließt sie an. Offen: Fahrkarten und
 Extras als Waren, der Zeitnot-Trick als eigene Karte (Schritt 13; bis dahin Zeitbonus).
 
+## 08.11.2026 – Ideen des Autors: Sprüche, Schauplätze, Varianten
+
+Entwurf in `docs/spiel/10_Sprueche_Schauplaetze_Varianten.md` (Widerspruch genügt):
+
+- **Zeitkarten als Sprüche des Helden** (Straßenschach-Kultur wie im Washington Square Park):
+  „Großes Maul“ (provoziert, Gegner spielt fünf Züge zu schnell), „Grübelfalle“ (sät Zweifel,
+  Gegner verliert eine Minute), „Kühler Kopf“ (+2 Minuten). Nur gegen Straßen- und Parkgegner, nie
+  im Clubkampf oder Turnier (dort Ruhe wie nach FIDE); frech, nie beleidigend; Gegner reden zurück,
+  manche sind immun.
+- **Schauplätze:** Port Delacroix (an New Orleans angelehnt) als Ambroses Geburtsstadt mit einem
+  vom Hurrikan zerstörten Club und seinen Nachfahren (Klavierbauer, Teenager ohne Schachinteresse),
+  zugleich Tiefpunkt und Versöhnung in Akt 3; Nationalpark mit Riesenbäumen (Pinewood Camp), Canyon
+  vor Desert Springs; ein erfundenes Volk der Hochebene mit eigenem Strategiespiel, Begegnung auf
+  Augenhöhe, mit Leitplanken und Sensibilitätslesung vor der Veröffentlichung.
+- **Varianten abseits der Clubs:** Schach960 und Blindschach zuerst (laufen mit der vorhandenen
+  Engine), König der Hügel, Drei-Schach und Märchenfiguren später mit Fairy-Stockfish als
+  Zusatzpaket; zählen nicht für Elo und A.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

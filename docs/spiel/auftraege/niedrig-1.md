@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: fünf Figuren auf die Karten von Maple Falls und Pinewood Camp
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, vierzehnter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/karten/pinewood-camp-aussen.json`,
@@ -13,12 +13,12 @@ mittel-1 hat bei der Gesamtsimulation gefunden, dass fünf Figuren aus `orte.jso
 gezeichneten Karte stehen. Ohne sie fehlen Junos Begegnung draußen, Lilys Springer-Quest, der
 Bibliothekar mit dem Brief (setzt `kenntHale`, wichtig für die Hauptgeschichte) und zwei Kinder im Camp.
 
-| Figur | Karte (Dialogdatei) | Platz |
-| ----- | ------------------- | ----- |
-| `juno` | `maple-falls-aussen.json` (`maple-falls-aussen.juno`) | auf dem Weg zwischen Haus und Schule |
-| `lily` | `maple-falls-aussen.json` (`maple-falls-aussen.lily`) | im Park oder auf der Straße, gut sichtbar |
-| `abernathy` | `maple-falls-park.json` (`maple-falls-park.bibliothekar`) | an einer Bank im Park, gern mit Buch; der Name auf der Karte ist `abernathy` |
-| `lou`, `tamsin` | `pinewood-camp-aussen.json` | bei den Hütten oder am Lagerfeuer, nebeneinander |
+| Figur           | Karte (Dialogdatei)                                       | Platz                                                                        |
+| --------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `juno`          | `maple-falls-aussen.json` (`maple-falls-aussen.juno`)     | auf dem Weg zwischen Haus und Schule                                         |
+| `lily`          | `maple-falls-aussen.json` (`maple-falls-aussen.lily`)     | im Park oder auf der Straße, gut sichtbar                                    |
+| `abernathy`     | `maple-falls-park.json` (`maple-falls-park.bibliothekar`) | an einer Bank im Park, gern mit Buch; der Name auf der Karte ist `abernathy` |
+| `lou`, `tamsin` | `pinewood-camp-aussen.json`                               | bei den Hütten oder am Lagerfeuer, nebeneinander                             |
 
 ## Vorgaben
 
@@ -922,3 +922,21 @@ zTTTTTTTTTTTTTTTTTTTTTTTTTT#
 #                          #
 ############################
 ```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Fünf Figuren gesetzt (Typ `figur`, 16 × 16, begehbare Kachel,
+kein Übergang und nicht davor; die Dialogdateien passen zu den vermuteten Karten):
+
+- `maple-falls-aussen`: `juno` auf Kachel 14/7 (Gehweg zwischen Haus und Schule), `lily` auf 17/11
+  (Gehweg unter der Straße, gut sichtbar).
+- `maple-falls-park`: `abernathy` auf 11/8, direkt links neben der Parkbank.
+- `pinewood-camp-aussen`: `lou` auf 4/14 und `tamsin` auf 5/14, nebeneinander am Lagerfeuer.
+
+Ursache bei Pinewood: Mein Kartengenerator vom zwölften Auftrag hatte nur vier Plätze für Figuren
+am Gehweg und hat die übrigen zwei stillschweigend weggelassen. Ich habe danach alle Orte gegen
+`orte.json` geprüft: Außer diesen fünf Figuren fehlt auf keiner gezeichneten Karte eine Figur oder
+ein Auslöser. Vorschlag für den Kartentest (für mich gesperrt): zusätzlich prüfen, dass jede Figur
+und jeder Auslöser eines Ortes auf mindestens einer seiner Karten steht.
+
+Prüfungen: 595 Tests bestanden, Prettier und Paketbau sauber. Im Spiel geprüft (Entwicklungsserver,
+Chromium, Spielstand auf die Karte gesetzt): Alle fünf Figuren stehen im Bild neben dem Helden.
+Bildschirmfotos liegen nur lokal beim Helfer, nicht im Repository.

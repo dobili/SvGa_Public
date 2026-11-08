@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 16,
+  "nextobjectid": 18,
   "properties": [
     {
       "name": "kennung",
@@ -468,6 +468,28 @@
               "value": "sitzen"
             }
           ]
+        },
+        {
+          "id": 16,
+          "name": "lou",
+          "type": "figur",
+          "x": 64,
+          "y": 224,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "tamsin",
+          "type": "figur",
+          "x": 80,
+          "y": 224,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

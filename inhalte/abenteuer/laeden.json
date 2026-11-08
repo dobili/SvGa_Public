@@ -6,10 +6,70 @@
       "ort": "mapleFalls",
       "name": "laden.kiosk.name",
       "angebot": [
-        { "art": "karte", "kennung": "zweiteChance", "preis": 20 },
-        { "art": "karte", "kennung": "gefahrenradar", "preis": 35 },
-        { "art": "karte", "kennung": "fluestern", "preis": 40 },
-        { "art": "gegenstand", "kennung": "fahrrad", "preis": 120 }
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "gefahrenradar",
+          "preis": 35
+        },
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "fahrrad",
+          "preis": 120
+        }
+      ]
+    },
+    {
+      "kennung": "riverton.zeitungsstand",
+      "ort": "riverton",
+      "name": "laden.zeitungsstand.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "fingerzeig",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.eisenwaren",
+      "ort": "ironwood",
+      "name": "laden.eisenwaren.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "fahrrad",
+          "preis": 120
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "laterne",
+          "preis": 60
+        }
       ]
     }
   ]

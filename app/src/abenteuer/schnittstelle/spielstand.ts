@@ -133,7 +133,12 @@ export interface Abenteuerstand {
    * Zielstärke der laufenden Partie vor dem Zustandsfaktor und ob sie für A zählt (R38, geprüft
    * beim Start); null ohne laufende Partie.
    */
-  readonly laufendeWertung: { readonly zielElo: number; readonly zaehlt: boolean } | null;
+  readonly laufendeWertung: {
+    readonly zielElo: number;
+    readonly zaehlt: boolean;
+    /** Sichtbarer Zustand des Gegners (R8, R9): Textschlüssel von Name und Grund; null ohne. */
+    readonly zustand: { readonly gegner: string; readonly grund: string } | null;
+  } | null;
   /** Name und Figurvariante des Helden (nur Vorname oder Spitzname, bleibt lokal). */
   readonly held: { readonly name: string; readonly variante: number };
   readonly handlung: Handlungsstand;

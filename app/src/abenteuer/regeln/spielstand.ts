@@ -102,7 +102,16 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     appWertungZuletzt: typeof roh.appWertungZuletzt === "number" ? roh.appWertungZuletzt : null,
     wertungPartien: zahl(roh.wertungPartien),
     laufendeWertung: istObjekt(roh.laufendeWertung)
-      ? { zielElo: zahl(roh.laufendeWertung.zielElo), zaehlt: roh.laufendeWertung.zaehlt === true }
+      ? {
+          zielElo: zahl(roh.laufendeWertung.zielElo),
+          zaehlt: roh.laufendeWertung.zaehlt === true,
+          zustand: istObjekt(roh.laufendeWertung.zustand)
+            ? {
+                gegner: text(roh.laufendeWertung.zustand.gegner),
+                grund: text(roh.laufendeWertung.zustand.grund),
+              }
+            : null,
+        }
       : null,
     held: { name: text(roh.held.name), variante: zahl(roh.held.variante) },
     handlung,

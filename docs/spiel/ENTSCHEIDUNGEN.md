@@ -305,7 +305,9 @@ Dialogvariablen) mit Tests; `Oberwelt.tsx` ist von 978 auf 699 Zeilen geschrumpf
   Stufe 4 mit 1,12 (etwa wie zuvor gemeint, aber richtig geeicht).
 - **V8, R9:** `Gegnerzustand.ueberheblich` als eigener Faktor (1 + 0,15 je Niederlage seit dem
   letzten Sieg oder Remis, höchstens 1,6; nur Clubchef, Clubmitglied, Turnier), aus dem Protokoll
-  gezählt. **R10:** Im zweiten Durchlauf +300 auf Z.
+  gezählt; die Kartenleiste unter dem Brett nennt den sichtbaren Zustand („Coach Delgado ist
+  überheblich geworden.“, „Mrs. Okafor hat schlecht geschlafen.“). **R10:** Im zweiten Durchlauf
+  +300 auf Z.
 - **V7:** `spielzeitJeOrt` im Spielstand, beim Verlassen der Welt fortgeschrieben.
 - **V9:** Pipeline prüft die Versatzbereiche je Rolle (Straße −150 bis 0, Clubmitglied −100 bis
   +50, Clubchef genau 160 + 60 · Clubnummer).

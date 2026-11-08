@@ -52,6 +52,20 @@ export function ueberheblichkeit(
   return Math.min(UEBERHEBLICH_MAX, 1 + UEBERHEBLICH_JE_NIEDERLAGE * niederlagen);
 }
 
+/**
+ * Der sichtbare Zustand eines Gegners vor der Partie (R8, R9): abgelenkt mit seinem Grund, sonst
+ * überheblich, sonst null. Textschlüssel für die Kartenleiste der App.
+ */
+export function sichtbarerZustand(
+  auftrag: Pick<Partieauftrag, "profil" | "zustand">,
+): { gegner: string; grund: string } | null {
+  if (auftrag.zustand.grund) return { gegner: auftrag.profil.name, grund: auftrag.zustand.grund };
+  if (auftrag.zustand.ueberheblich > 1) {
+    return { gegner: auftrag.profil.name, grund: "zustand.ueberheblich" };
+  }
+  return null;
+}
+
 /** Zustand eines Gegners aus dem Spielstand; ohne Eintrag normal. */
 function zustandAus(stand: Abenteuerstand, gegner: string, rolle: Gegnerrolle): Gegnerzustand {
   const figur = stand.figuren.find((f) => f.kennung === gegner);

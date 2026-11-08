@@ -290,3 +290,8 @@
   gap: 0.5rem;
   align-items: center;
 }
+
+/* Sichtbarer Zustand des Gegners in der Kartenleiste (Regelwerk R8, R9). */
+.abenteuer-zustand {
+  font-style: italic;
+}

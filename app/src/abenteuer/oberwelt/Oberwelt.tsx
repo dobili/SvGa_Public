@@ -42,6 +42,7 @@ import {
   auftragFuer,
   auftragFuerRunde,
   kartenFuerWiedereinstieg,
+  sichtbarerZustand,
   wiedereinstiegMoeglich,
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
@@ -452,7 +453,11 @@ export function Oberwelt() {
       position,
       laufendePartie: auftrag.kennung,
       // Für die Abenteuerwertung (R2, R38): Zielstärke vor dem Zustandsfaktor und ob sie zählt.
-      laufendeWertung: { zielElo: auftrag.staerke.zielElo, zaehlt: zaehltFuerA(auftrag) },
+      laufendeWertung: {
+        zielElo: auftrag.staerke.zielElo,
+        zaehlt: zaehltFuerA(auftrag),
+        zustand: sichtbarerZustand(auftrag),
+      },
       partiekarten: {
         deck: deck.filter((k) => !vorher.some((v) => v.kennung === k)),
         gespielt: vorher,

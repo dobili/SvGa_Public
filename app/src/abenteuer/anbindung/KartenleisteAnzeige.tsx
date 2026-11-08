@@ -104,10 +104,18 @@ export function KartenleisteAnzeige({
 
   const partie = steuerung.partie;
   const karten = stand?.partiekarten ?? null;
+  // Sichtbarer Zustand des Gegners (R8, R9): „Coach Delgado ist überheblich geworden.“
+  const zustand = stand?.laufendeWertung?.zustand ?? null;
+  const zustandszeile = zustand && (
+    <span className="abenteuer-zustand" data-testid="abenteuer-zustand">
+      {t("abenteuer.zustand", { gegner: tSpiel(zustand.gegner), zustand: tSpiel(zustand.grund) })}
+    </span>
+  );
   if (!stand || !partie || !karten || karten.deck.length === 0) {
     return (
       <aside className="abenteuer-kartenleiste" data-testid="abenteuer-kartenleiste">
         <strong>{t("abenteuer.kartenleiste")}</strong>
+        {zustandszeile}
         <span>{t("abenteuer.kartenleisteHinweis", { begegnung })}</span>
       </aside>
     );
@@ -167,6 +175,7 @@ export function KartenleisteAnzeige({
   return (
     <aside className="abenteuer-kartenleiste" data-testid="abenteuer-kartenleiste">
       <strong>{t("abenteuer.kartenleiste")}</strong>
+      {zustandszeile}
       {karten.deck.map((kennung) => {
         const sorte = sorten.find((s) => s.kennung === kennung) as Kartensorte | undefined;
         if (!sorte) return null;

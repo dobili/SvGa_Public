@@ -80,8 +80,8 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2616. Tagebuch im Abenteuer: Unter den offenen Aufgaben steht „Deine Spielstärke im Abenteuer: N“; N ist beim Start
       deine Wertung der App (klassisch) oder 600 ohne Wertung. Nach einer ganzen Partie gegen Ambrose ohne Flüstern oder
       Mentor-Zug ändert sich N (Sieg etwa +25 bei gleich starkem Gegner); nach einer Partie mit Vorgabe oder einem
-      Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, spielt er in der dritten Partie spürbar lockerer
-      (mehr Fehler); die Anzeige „überheblich“ vor der Partie kommt noch.
+      Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, steht in der dritten Partie unter dem Brett in der
+      gelben Leiste „Coach Delgado ist überheblich geworden.“, und er spielt spürbar lockerer (mehr Fehler).
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

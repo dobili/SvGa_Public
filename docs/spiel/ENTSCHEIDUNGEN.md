@@ -349,7 +349,10 @@ Creek ersetzt den Bus-Sprung, der Bus bleibt Schnellreise nach dem ersten Fußwe
 das Album und die Extras der App statt neuer Systeme; Münzen sind reine Spielwährung ohne
 Echtgeld, Gold bleibt unkäuflich; Zeitkarten zählen als leichte Karten; Flashbacks nutzen die
 Oberwelt mit Sepia-Tönung. Reihenfolge: nach Schritt 9 (Akt 1 spielen) die Schritte 10 Wege,
-11 Entdeckungen, 12 Münzen und Läden, 13 Zeit, 14 Flashbacks. Rückfragen als Q18.
+11 Entdeckungen, 12 Münzen und Läden, 13 Zeit, 14 Flashbacks. Antworten des Autors (8.11.2026,
+08:05 Uhr): Blitz auch im Clubkampf ja, Reihenfolge in Ordnung, Geldsystem einbauen; neue Karte
+„Zeitnot-Trick“ (Z6: Ambrose gaukelt dem Gegner für fünf Züge Zeitnot vor, die Uhr bleibt; wirkt
+auch ohne Uhr, deshalb mittlere Karte). Q18 damit erledigt.
 
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 

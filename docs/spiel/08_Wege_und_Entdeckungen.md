@@ -54,9 +54,9 @@ Alles Folgende gilt als Empfehlung „schon so geplant, Widerspruch genügt“ (
 
 ## 3. Zeit als Hilfe (Z1 bis Z5)
 
-- **Z1 Wahl der Zeitklasse vor Partien gegen Straße und Clubmitglieder:** ohne Uhr (wie bisher),
-  Schnellschach 10 + 5, Blitz 3 + 2. Clubkämpfe bleiben ohne Uhr (R16), außer der Leser wählt
-  eine Uhr freiwillig; die Nadel ändert sich dadurch nicht.
+- **Z1 Wahl der Zeitklasse vor jeder Partie, auch im Clubkampf** (Entscheidung des Autors,
+  8.11.2026): ohne Uhr (wie bisher), Schnellschach 10 + 5, Blitz 3 + 2. Die Nadel ändert sich durch
+  die Uhr nicht; R16 wird entsprechend angepasst.
 - **Z2 Warum das hilft:** Die Engine der App spielt mit Uhr nach gemessenen Bedenkzeiten
   (`engine/bedenkzeit-daten.ts`) und schwächer in Zeitnot (unter 60, 30, 10 Sekunden). Wer selbst
   schnell ist, kann den Gegner in Zeitnot treiben. Das ist ehrlich erspielt, deshalb ohne Folge für
@@ -66,6 +66,13 @@ Alles Folgende gilt als Empfehlung „schon so geplant, Widerspruch genügt“ (
   Minute auf der Uhr des Gegners, Verbrauchskarte, leicht) und „Zeitgeschenk“ (Gegner verliert
   keine Zeit beim nächsten Zug, dauerhaft, Spielwitz ohne Vorteil: fürs Album). Zeitkarten zählen
   für die Nadel als leichte Karten (R17); „Sanduhr“ (R25) bleibt die Ausnahme.
+- **Z6 Zeitnot-Trick** (Wunsch des Autors, 8.11.2026): Ambrose gaukelt dem Gegner Zeitnot vor.
+  Die Uhr bleibt unverändert; die Engine spielt für die nächsten 5 gegnerischen Züge wie in
+  Zeitnot (Stufe „30“ aus `engine/menschenprofil.ts`: mehr Fehler, Patzerneigung, kurze
+  Bedenkzeit). Wirkt auch in Partien ohne Uhr, deshalb mittlere Karte (R17: Silber höchstens),
+  Verbrauchskarte, einmal je Partie. Technisch: `Partiesteuerung` bekommt
+  `setzeGefuehlteZeitnot(stufe, zuege)`, die Zugwahl des Bots nimmt statt der echten Restzeit die
+  vorgegaukelte Stufe, solange Züge übrig sind.
 - **Z4 Belohnungen:** Zeitkarten gibt es nur auf Routen und für Nebenquests (nicht im Laden), damit
   sich die Wege lohnen.
 - **Z5 Vertrag:** `Partieauftrag.uhr` ist schon da; `Kartensorte.wirkung` bekommt die Arten
@@ -85,7 +92,7 @@ Alles Folgende gilt als Empfehlung „schon so geplant, Widerspruch genügt“ (
 - **F3 Kosten:** je Flashback eine kleine Karte, ein Dialog, ein Figurenbild; die Technik ist die
   der Oberwelt mit einem Flag `flashback` an der Karte (Tönung, andere Heldenfigur, kein Tagebuch).
 
-## 5. Geld und Läden (G1 bis G6)
+## 5. Geld und Läden (G1 bis G6, vom Autor am 8.11.2026 gewünscht: „bitte gerne einbauen“)
 
 - **G1 Münzen** (Spielwährung, nie Echtgeld, keine Käufe in der App): Siege gegen Straßengegner
   (10), bestandene Aufgabenrunden (5 bis 15), Rätseltafeln (5), Funde (5 bis 20), Clubnadel (50).
@@ -117,6 +124,8 @@ Schritt 10 kommt vor dem Rest, weil die Route den Bus-Sprung ersetzt und die and
 (Funde, Tafeln, Gegner mit Uhr) ihre Bühne brauchen. Alles bleibt in Staffel 1 (Maple Falls,
 Cedar Creek, Stadt 3); die Landesmeisterschaft rückt entsprechend nach hinten.
 
-## 7. Fragen an den Autor (Empfehlung ist eingetragen)
+## 7. Antworten des Autors (8.11.2026)
 
-Stehen in `docs/AUFGABEN_AUTOR.md` als Q18.
+Blitz auch im Clubkampf: ja. Reihenfolge: in Ordnung. Geldsystem: ja, einbauen. Zusätzliche
+Karte „Zeitnot-Trick“ (Z6). Die übrigen Empfehlungen (Wege, Entdeckungen, Flashbacks) gelten als
+abgesegnet (Regel 9). Offen bleibt nur die Grafik (Q17).

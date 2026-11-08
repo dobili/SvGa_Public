@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Pixel-Porträts aller Figuren per Skript
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, elfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs` (neu), die erzeugten Bilder unter
@@ -31,7 +31,46 @@ Bots der App mit DiceBear „Personas“ zeichnet (Vorbild für Aufbau, Aufruf, 
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis b795b32e hereingeholt).
+
+**Lizenz (zuerst geprüft):** `@dicebear/pixel-art` 9.4.3, `package.json`: „license“: „MIT“ (Code);
+`LICENSE`: „Design … Source: Pixel Art (Figma) … Designer: DiceBear … License: CC0 1.0“, Code MIT
+(Florian Körner); ebenso im `README.md`. Öffentliche und kommerzielle Nutzung erlaubt, Nennung
+freiwillig. Eingetragen in `docs/spiel/LIZENZEN.md` (Abschnitt Material). Das Paket ist nur zum
+Erzeugen installiert (`npm install --no-save`), nicht in `package.json` und nicht in der App.
+
+**Skript** `app/skripte/erzeuge-figurenbilder.mjs` (Aufbau wie `erzeuge-gegnerbilder.mjs`):
+Tabelle mit 60 Einträgen (Frisur, Haarfarbe, Hautton, Kleidung, Kleidungsfarbe, Brille, Bart, Hut)
+für alle Porträtnamen aus `gegner.json` und den Figuren in `orte.json`, dazu `ambrose-jung`.
+Deterministisch (Startwert = Name), standardmäßig nur fehlende Bilder, `--alle` erzeugt neu,
+`--pruefen` meldet Figuren ohne Tabelleneintrag (heute keine). Graue und weiße Haare für die
+Älteren als eigene Farbwerte, acht Hauttöne über alle Städte verteilt.
+
+**Bilder:** 60 SVG zu 128 × 128 (Raster 32 × 32), ohne Hintergrund, zusammen 244 KB, in
+`inhalte/abenteuer/portraets/`. Durchgesehen als Kontaktbogen; Ambrose alt (mit Bart) und jung
+unterscheiden sich, Victor erscheint in allen Orten mit demselben Bild.
+
+**Prüfungen:** `pytest pipeline/tests` 470, `npm run pruefen` 361 Dateien und 2414 Tests (auch ohne
+das Pixel-Art-Paket in `node_modules`, wie in der CI), Paketbau läuft.
+
+**Was im Paketbau und in der Anzeige fehlt (Vorschläge)**
+
+1. **Paketbau:** `baue-abenteuerpaket.mjs` packt heute keine Porträts. Vorschlag: alle
+   `inhalte/abenteuer/portraets/*.svg` als Gruppe `portraets` ins Paket (wie `karten/`); liegt
+   unter `app/inhalte-privat/abenteuer/portraets/` eine gleichnamige Datei (später gekaufte oder
+   gezeichnete Bilder), geht sie vor, wie bei der Grafik.
+2. **Pfade in `gegner.json`:** `portraet` zeigt auf `portraets/<name>.webp`; die Bilder sind SVG.
+   Entweder die Pfade auf `.svg` umstellen (Schema erlaubt `svg`) oder beim Laden die Endung
+   ignorieren und den Namen nehmen.
+3. **Dialog:** Porträt links neben der Sprechblase, aus dem Tag `#sprecher:<kennung>`. Die Kennungen
+   sind camelCase (`bigJoe`, `omaRuth`, `coachDelgado`), die Dateien kebab-case (`big-joe.svg`):
+   eine kleine Umrechnung (camelCase → kebab) genügt; `erzaehler` ohne Bild, `ambrose` in Orten der
+   Art `erinnerung` als `ambrose-jung`. Größe 64 bis 96 Pixel mit `image-rendering: pixelated`.
+4. **Stimmungen** (`#stimmung:froh`, `traurig`, `streng`, …): Der Stil kennt Münder `happy01–13` und
+   `sad01–10`. Vorschlag: für Hauptfiguren je Stimmung eine zweite Datei (`ambrose-traurig.svg`) mit
+   anderem Mund erzeugen; das Skript kann dafür eine zweite Tabelle bekommen.
+5. **Partieansicht:** Das Porträt des Gegners aus `gegner.json` statt des Bot-Porträts der App
+   (Stellungnahme, Abschnitt 1: „Clubchefs und Story-Figuren brauchen eigene Porträts“).
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

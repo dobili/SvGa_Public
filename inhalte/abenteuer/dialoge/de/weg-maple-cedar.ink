@@ -9,8 +9,8 @@
 // „schild_cedar“.
 //
 // Kennungen (zweiteilig, wie die Schemas verlangen): Begegnung „wegMapleCedar.nia“ (Variable
-// ausgangWegMapleCedarNia, R42), Runde „wegMapleCedar.tafel“ (runden.json, Variable
-// tafelBestanden). Beide setzt die Hülle (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie
+// ausgangWegMapleCedarNia, R42), Runde „wegMapleCedar.tafel“ (runden.json, Variable in der
+// Langform wegMapleCedarTafelBestanden, damit sie nicht mit anderen Tafeln kollidiert). Beide setzt die Hülle (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie
 // nicht gespielt (R35). gibFund kommt mit Schritt 11. Auslöser wie in orte.json: tafel,
 // fundFormular, rast, fundMuenzen, schildCedar; Figuren wanderer und gegnerin.
 
@@ -19,7 +19,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
-VAR tafelBestanden = false
+VAR wegMapleCedarTafelBestanden = false
 VAR wandererBesuche = 0
 VAR niaGetroffen = false
 VAR ausgangWegMapleCedarNia = ""
@@ -29,7 +29,7 @@ VAR muenzenGefunden = false
 // ---------------------------------------------------------------- Rätseltafel
 
 === tafel ===
-{tafelBestanden:
+{wegMapleCedarTafelBestanden:
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
     -> END
 }

@@ -10,14 +10,14 @@
 // Ankunft der Übergang nach Riverton (riverton-aussen.ankunft_zu_fuss).
 //
 // Variablen: ausgangWegCedarRivertonSchaffner setzt die Hülle (regeln/dialogvariablen.ts),
-// „abgebrochen“ zählt wie nicht gespielt (R35). Die Tafel prüft kein „…Bestanden“, weil die
-// Runde wie die Tafel von Route 1 auf „tafel“ endet und beide dieselbe Variable tafelBestanden
-// teilen würden (Bericht); sie bleibt einfach lösbar. Funde merkt sich Ink selbst.
+// „abgebrochen“ zählt wie nicht gespielt (R35). Die Tafel fragt die Langform
+// wegCedarRivertonTafelBestanden ab (eindeutig je Route). Funde merkt sich Ink selbst.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR wegCedarRivertonTafelBestanden = false
 VAR fenwickGetroffen = false
 VAR quinnGetroffen = false
 VAR ausgangWegCedarRivertonSchaffner = ""
@@ -42,6 +42,10 @@ Eine Dame, die Bücher im Kopf trägt und Moos an den Stiefeln. Sie gefällt mir
 // ---------------------------------------------------------------- Rätseltafel
 
 === tafel ===
+{wegCedarRivertonTafelBestanden:
+    Auf der Tafel am Wegweiser steht in Kreide: „Gelöst! Gute Reise.“ #sprecher:erzaehler
+    -> END
+}
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
 Doppelangriffe. Ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
 * [Die Aufgaben lösen]

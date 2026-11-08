@@ -15,6 +15,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR ambroseVertrauen = 0
@@ -27,6 +28,7 @@ VAR victorCedarCreekGesehen = false
 VAR nadelCedarCreek = 0
 VAR endeAkt1Gesehen = false
 VAR aufbruchRivertonGesehen = false
+VAR gefundenSchluessel = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -62,6 +64,7 @@ Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 - not ankunftCedarCreekGesehen: -> ankunft
 - nadelCedarCreek > 0 and not endeAkt1Gesehen: -> ende_akt1
 - maeEingeladen and not sternennachtGesehen and nadelCedarCreek == 0: -> sterne_angebot
+- not gefundenSchluessel: -> fund_schluessel
 - else: -> steg_alltag
 }
 
@@ -109,6 +112,16 @@ Ich hatte sie fast. Dann sagte jemand „Später“. #sprecher:ambrose #stimmung
 Oh. Der Schachclub im Park von Riverton wird „neu aufgestellt“. #sprecher:juno
 Mit Perfect Move. #sprecher:juno
 Neu aufgestellt. So nennt man es, wenn jemand die Figuren vom Brett wischt. #sprecher:ambrose #stimmung:streng
+-> END
+
+=== fund_schluessel ===
+// Übergreifender Fund E4.2 (Bibel, Szene 23): Auflösung in Riverton bei Mrs. Albescu (Szene 33).
+// gefundenSchluessel setzt die Hülle bei gibFund (regeln/dialogvariablen.ts).
+Im Schilf am Steg glänzt etwas Rostiges: ein großer Schlüssel mit einem Ring aus Messing. #sprecher:erzaehler
+Den hat ein Angler verloren. Vor zwei Jahren schon. #sprecher:rosa
+Nimm ihn ruhig, mir schließt er nichts auf. #sprecher:rosa
+~ gibFund("schluessel")
+Ein Schlüssel ohne Tür. Irgendwo wartet eine Tür ohne Schlüssel. #sprecher:ambrose
 -> END
 
 === steg_alltag ===

@@ -701,16 +701,11 @@
       "typ": "haupt",
       "ort": "ironwood",
       "haupt": true,
-      "start": { "art": "dialog", "knoten": "maple-falls-wohnzimmer.verbot" },
+      "start": {
+        "art": "dialog",
+        "knoten": "ironwood-kantine.big_joe_erkennt"
+      },
       "schritte": [
-        {
-          "text": "quest.mamasFinale.schritt1",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "maple-falls-wohnzimmer.verbot"
-          },
-          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.verbot" }]
-        },
         {
           "text": "quest.mamasFinale.schritt2",
           "ereignis": {
@@ -718,15 +713,22 @@
             "knoten": "ironwood-mamas-zimmer.oma_ruth"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.fotoGefunden" },
-            { "art": "gegenstand", "gegenstand": "foto2001" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.fotoGefunden"
+            },
+            {
+              "art": "gegenstand",
+              "gegenstand": "foto2001"
+            }
           ]
         },
         {
           "text": "quest.mamasFinale.schritt3",
           "ereignis": {
             "art": "dialog",
-            "knoten": "maple-falls-wohnzimmer.foto_zeigen"
+            "knoten": "ironwood-kantine.mama_foto"
           }
         },
         {
@@ -737,7 +739,11 @@
             "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.mamasPartie" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.mamasPartie"
+            }
           ]
         }
       ]

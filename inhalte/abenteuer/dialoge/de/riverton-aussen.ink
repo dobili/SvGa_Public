@@ -11,8 +11,8 @@
 // Die Ankunft läuft auch beim ersten Gespräch draußen, falls der Übergang sie nicht gezeigt hat.
 //
 // Variablen: nadelRiverton setzt die Hülle (Zahl, R42). schuppenOffen setzt albescu_schluessel,
-// clubkampfRivertonBesprochen setzt riverton-pavillon.ink. schluesselGefunden soll der Fund am Steg
-// in Cedar Creek setzen; den gibt es noch nicht (Bericht mittel-1, siebter Auftrag).
+// clubkampfRivertonBesprochen setzt riverton-pavillon.ink. gefundenSchluessel setzt die Hülle,
+// sobald der Schlüssel am Steg in Cedar Creek gefunden ist (cedar-creek-aussen.fund_schluessel).
 
 EXTERNAL gibFund(kennung)
 
@@ -22,7 +22,7 @@ VAR novaGesehen = false
 VAR victorRivertonGesehen = false
 VAR bildschirmtischeGesehen = false
 VAR albescuGetroffen = false
-VAR schluesselGefunden = false
+VAR gefundenSchluessel = false
 VAR schuppenOffen = false
 VAR holzlaeuferGefunden = false
 VAR nadelRiverton = 0
@@ -84,7 +84,7 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 {
 - not ankunftRivertonGesehen: -> ankunft
 - not albescuGetroffen: -> albescu_erstes_treffen
-- schluesselGefunden and not schuppenOffen: -> albescu_schluessel
+- gefundenSchluessel and not schuppenOffen: -> albescu_schluessel
 - schuppenOffen: -> albescu_alltag
 - else: -> albescu_wartet
 }

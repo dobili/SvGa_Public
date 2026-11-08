@@ -2,7 +2,13 @@
 import { describe, expect, it } from "vitest";
 import kartendatei from "../../../../inhalte/abenteuer/karten.json";
 import type { Kartensorte } from "../schnittstelle/karten";
-import { deckErlaubt, deckgroesse, mitLernkarten, neueLernkarten } from "./karten";
+import {
+  deckErlaubt,
+  deckgroesse,
+  mentorzugGesperrt,
+  mitLernkarten,
+  neueLernkarten,
+} from "./karten";
 import { leererAbenteuerstand } from "./spielstand";
 
 const SORTEN = kartendatei.karten as unknown as Kartensorte[];
@@ -34,5 +40,13 @@ describe("Kartentasche", () => {
     const drei = ["fingerzeig", "gefahrenradar", "waage"];
     expect(deckErlaubt(drei, "abzaehlen", SORTEN)).toBe(false);
     expect(deckErlaubt(drei, "abzaehlen", SORTEN, 4)).toBe(true);
+  });
+});
+
+describe("Mentor-Zug in Akt 3 (R29)", () => {
+  it("ist zwischen Tiefpunkt und Versöhnung gesperrt", () => {
+    expect(mentorzugGesperrt({})).toBe(false);
+    expect(mentorzugGesperrt({ tiefpunktGesehen: true })).toBe(true);
+    expect(mentorzugGesperrt({ tiefpunktGesehen: true, versoehnungGesehen: true })).toBe(false);
   });
 });

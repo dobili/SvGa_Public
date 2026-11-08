@@ -27,6 +27,7 @@ export function Deckwahl({
   sprueche = false,
   zeitwahl,
   farbeFrei = false,
+  mentorGesperrt = false,
   steckbrief = [],
   beiWahl,
   beiAbbruch,
@@ -43,6 +44,8 @@ export function Deckwahl({
   readonly zeitwahl: boolean;
   /** Wird die Farbe ausgelost? Nur dann gibt es die Karte Farbwahl in der Auswahl. */
   readonly farbeFrei?: boolean;
+  /** Regel R29: Mentor-Zug zwischen Tiefpunkt und Versöhnung gesperrt. */
+  readonly mentorGesperrt?: boolean;
   /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
   readonly steckbrief?: readonly string[];
   readonly beiWahl: (
@@ -61,6 +64,7 @@ export function Deckwahl({
     const sorte = alleSorten.find((s) => s.kennung === k.kennung);
     if (sorte?.spruch_art && !sprueche) return false;
     if (sorte?.wirkung.art === "farbwahl" && !farbeFrei) return false;
+    if (sorte?.wirkung.art === "mentorzug" && mentorGesperrt) return false;
     return sorte !== undefined && sorte.zeitpunkt !== "nachher";
   });
   const schalte = (kennung: string) => {

@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Fehlende Funde, Läden und die Erinnerung 1858 in Akt 3
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, sechzehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechzehnte Auftrag ist zusammengeführt, danke; die Sperre des Mentor-Zugs nach R29 macht jetzt die Deckwahl. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/funde.json`, `laeden.json`, `begegnungen.json`, `runden.json`,

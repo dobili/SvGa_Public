@@ -27,7 +27,7 @@ import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
-import { deckgroesse, mitLernkarten, vorgabeFen } from "../regeln/karten";
+import { deckgroesse, mentorzugGesperrt, mitLernkarten, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
@@ -777,6 +777,7 @@ export function Oberwelt() {
           zeitwahl={deckwahl.zeitwahl === true}
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           farbeFrei={deckwahl.farbeFrei === true}
+          mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
           beiWahl={(deck, zeit, farbe) =>
             startePartie(
               {

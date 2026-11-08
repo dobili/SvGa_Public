@@ -218,3 +218,12 @@ export function mitLernkarten(
     neu,
   };
 }
+
+/**
+ * Regel R29: Zwischen „Tiefpunkt“ (Port Delacroix) und „Versöhnung“ (Desert Springs) ist der
+ * Mentor-Zug gesperrt; Ambrose hat {held} verlassen und zieht nicht für ihn.
+ * Beispiel: tiefpunktGesehen true, versoehnungGesehen false → gesperrt.
+ */
+export function mentorzugGesperrt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
+  return variablen.tiefpunktGesehen === true && variablen.versoehnungGesehen !== true;
+}

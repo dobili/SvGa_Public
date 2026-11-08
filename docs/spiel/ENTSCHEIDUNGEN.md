@@ -574,6 +574,13 @@ sichtbar; jetzt nur mit geladenem Spiel oder Spielstand.
 Ordner geht vor). Der Dialog zeigt das Porträt des Sprechers (`#sprecher`, camelCase → kebab-case),
 mit `#stimmung:jung` die junge Fassung. Ein Test prüft, dass jeder Sprecher ein Porträt hat.
 
+**Akt 3 vollständig in Daten (8.11.2026, abends):** Funde, Läden (Foodtruck Silicon Bay,
+Gebäckstand Port Delacroix, Antiquariat Desert Springs), Erinnerung 1858 (Bird–Morphy ab Zug 11 mit
+Schwarz, bei Mira), Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene).
+Buck bleibt bei Abbildung 1.36: 8.44 steht bei Stockfish Tiefe 28 auf +2,84, zu viel für ein
+Stellungsduell nach R13 (Befund mittel-1). R29 gebaut: Zwischen Tiefpunkt und Versöhnung steht der
+Mentor-Zug nicht zur Wahl im Deck (`mentorzugGesperrt`).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

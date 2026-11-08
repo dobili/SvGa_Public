@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 5,
+  "nextobjectid": 9,
   "properties": [
     {
       "name": "kennung",
@@ -134,6 +134,72 @@
           "height": 16,
           "rotation": 0,
           "visible": true
+        },
+        {
+          "id": 5,
+          "name": "zettelTurm",
+          "type": "ausloeser",
+          "x": 176,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 6,
+          "name": "comicheft",
+          "type": "ausloeser",
+          "x": 96,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 7,
+          "name": "automat",
+          "type": "ausloeser",
+          "x": 160,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 8,
+          "name": "kundin",
+          "type": "statist",
+          "x": 48,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "3,7"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "5,7"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "wartet auf ihre Wäsche"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
         }
       ]
     }

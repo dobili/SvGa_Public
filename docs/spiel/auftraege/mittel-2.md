@@ -1,35 +1,39 @@
-# Auftrag mittel-2: Dialoge und Quests für Weg 4 und Silicon Bay
+# Auftrag mittel-2: Pixel-Porträts aller Figuren per Skript
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, zehnter Auftrag)
+**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/dialoge/de/weg-ironwood-silicon.ink`, `silicon-bay-*.ink` (neu),
-`inhalte/abenteuer/dialoge/de/ironwood-aussen.ink` (nur `bus_silicon_bay`: Reise nach
-`wegIronwoodSilicon.raststaette`, Auslöser `start`, Szene 51/52), `inhalte/abenteuer/quests.json`,
-`inhalte/abenteuer/runden.json`, `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel),
+**Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs` (neu), die erzeugten Bilder unter
+`inhalte/abenteuer/portraets/` (neu, oder wohin der Paketbau `portraets/` heute liest, bitte
+nachsehen in `app/skripte/baue-abenteuerpaket.mjs`), `docs/spiel/LIZENZEN.md`,
 `docs/spiel/auftraege/mittel-2.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen` und Paketbau
 
 ## Ziel
 
-Akt 3 steht in `orte.json` (Weg 4, Silicon Bay); niedrig-1 zeichnet parallel die Karten, mittel-1
-schreibt Weg 5 und Port Delacroix. Du schreibst die Dialoge und Quests für Weg 4 und Silicon Bay
-(Szenen der Bibel unter „Weg 4 und Silicon Bay“).
+Der Autor fragte, ob wir die Porträts selbst erstellen können (Q17-2): ja, per Skript im Stil
+„Pixel Art“ von DiceBear, deterministisch je Figur, wie `app/skripte/erzeuge-gegnerbilder.mjs` die
+Bots der App mit DiceBear „Personas“ zeichnet (Vorbild für Aufbau, Aufruf, Kommentare).
 
 ## Vorgaben
 
-1. Die Knoten, auf die `orte.json` verweist, stehen im Bericht des vierzehnten Auftrags von
-   mittel-1 in `docs/spiel/auftraege/mittel-1.md` (Abschnitt „Für die Dialoge“). Jede Ink-Datei
-   mit Dateikopf wie die vorhandenen (Einstiege, Variablen, EXTERNAL nur was gebraucht wird).
-2. Szenen nach Abschnitt 20 der Story-Bibel, Stilregeln aus Abschnitt 5; Partien über
-   `beginnePartie` mit den Begegnungen aus `begegnungen.json`, Runden über `beginneAufgaben`,
-   Karten über `gibKarte`, Funde über `gibFund`, Weiterreise mit `reise`.
-3. Quests deiner Szenen in `quests.json` (Hauptquest der Stadt und Nebenquests), Runden in
-   `runden.json`, neue Texte in `texte/de.json`. Hängt bitte neue Einträge jeweils in einem eigenen
-   Block hinter die Einträge von Akt 2; der Haupt-Chat führt die Arbeit beider Helfer zusammen.
-4. Prüfung mit der Simulation wie bei der Limo-Quest: Jede Hauptquest muss durchspielbar sein.
+1. **Lizenz zuerst prüfen:** die Lizenz des Stils „pixel-art“ im Paket `@dicebear/pixel-art`
+   (package.json, LICENSE) lesen und in `LIZENZEN.md` des Spiels mit Fundstelle eintragen. Nur
+   weiter, wenn sie die Nutzung in einer öffentlichen App erlaubt (erwartet: CC0); sonst Stand
+   „Frage“ und berichten. Die Pakete nur zum Erzeugen installieren (`npm install --no-save`).
+2. Eine Tabelle im Skript: je Figur aus `gegner.json` und den Figuren in `orte.json` (Kennung,
+   Porträtpfad aus `gegner.json` wo vorhanden) Haar, Haarfarbe, Hautton, Kleidung, Brille, Bart,
+   passend zur Story-Bibel (Abschnitte Figuren, Sprechweisen) und zu den Namen. Vielfalt bei
+   Hauttönen und Alter, nichts Klischeehaftes. Ambrose zweimal: alt und jung (`ambrose-jung`).
+3. Ausgabe als SVG (oder PNG, falls der Paketbau nur das kennt) in einheitlicher Größe; der
+   Paketbau soll sie statt der Platzhalter nehmen. Was dafür im Paketbau oder in der Anzeige des
+   Dialogs fehlt (Porträt neben der Sprechblase), im Bericht als Vorschlag beschreiben.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig** auf `abenteuer-regelwerk` (Basis d0437d2c hereingeholt).
 

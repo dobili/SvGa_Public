@@ -1,33 +1,36 @@
-# Auftrag mittel-1: Dialoge und Quests für Weg 5 und Port Delacroix
+# Auftrag mittel-1: Fehlende Funde, Läden und die Erinnerung 1858 in Akt 3
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, fünfzehnter Auftrag, beide Pushes)
+**Stand:** offen (Haupt-Chat, 08.11.2026, sechzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/dialoge/de/weg-silicon-delacroix.ink`, `port-delacroix-*.ink` (neu),
-`inhalte/abenteuer/quests.json`, `inhalte/abenteuer/runden.json`, `inhalte/abenteuer/texte/de.json`
-(nur neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
+**Darf ändern:** `inhalte/abenteuer/funde.json`, `laeden.json`, `begegnungen.json`, `runden.json`,
+`quests.json`, `texte/de.json` (nur neue Schlüssel), die Ink-Dateien von Akt 3, `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
 
 ## Ziel
 
-Wie mittel-2 für Silicon Bay schreibst du die Dialoge und Quests für Weg 5 und Port Delacroix
-(Szenen der Bibel unter „Weg 5 und Port Delacroix“), danach, falls Zeit bleibt, Weg 6 und Desert
-Springs in einem zweiten Push. Port Delacroix: Clubkampf ohne Ambrose (R28), Ambroses Geburtsort.
+Die Lücken, die du und mittel-2 gemeldet habt (Berichte in `mittel-1.md` und `mittel-2.md`):
 
-## Vorgaben
-
-1. Die Knoten, auf die `orte.json` verweist, stehen im Bericht des vierzehnten Auftrags von
-   mittel-1 in `docs/spiel/auftraege/mittel-1.md` (Abschnitt „Für die Dialoge“). Jede Ink-Datei
-   mit Dateikopf wie die vorhandenen (Einstiege, Variablen, EXTERNAL nur was gebraucht wird).
-2. Szenen nach Abschnitt 20 der Story-Bibel, Stilregeln aus Abschnitt 5; Partien über
-   `beginnePartie` mit den Begegnungen aus `begegnungen.json`, Runden über `beginneAufgaben`,
-   Karten über `gibKarte`, Funde über `gibFund`, Weiterreise mit `reise`.
-3. Quests deiner Szenen in `quests.json` (Hauptquest der Stadt und Nebenquests), Runden in
-   `runden.json`, neue Texte in `texte/de.json`. Hängt bitte neue Einträge jeweils in einem eigenen
-   Block hinter die Einträge von Akt 2; der Haupt-Chat führt die Arbeit beider Helfer zusammen.
-4. Prüfung mit der Simulation wie bei der Limo-Quest: Jede Hauptquest muss durchspielbar sein.
+1. **Funde** in `funde.json` mit Texten, und die auskommentierten `gibFund`-Aufrufe aktivieren:
+   anstecker, ohrstoepsel, zeroTablet (mittel-2), flaschenpost, muschelMitLoch,
+   erstesBrettMusikhaus, eidechsenhaut, nietenCanyonbruecke, Hales Brief (deine).
+2. **Läden:** `siliconBay.foodtruck` und der Laden von Okoro (Desert Springs), Waren nach
+   `docs/spiel/11_Karten_und_Gegenstaende.md`, Abschnitt 7 (Preise, Münzen je Akt); Karten Pokerface
+   und Schutzengel gibt es inzwischen nicht als eigene Wirkung, bitte die Aufrufe auf vorhandene
+   Karten umstellen (etwa Ablenkung, Was droht?) oder weglassen und berichten.
+3. **Buck:** 10 Münzen nach dem Sieg; die Startstellung prüfen (Bibel 8.44, Daten 1.36) und die
+   der Bibel nehmen, wenn sie zum Duell passt (Vorteil etwa +1 für den Leser).
+4. **Erinnerung 1858 (Szene 77):** Runde mit `erinnerung` (Partie aus `inhalte/zusatzpartien/klassiker.json`,
+   ab Zug, Seite; das Format kennt keinen Endzug, die Partie läuft bis zum Ende), Quest und Dialog.
+   Auch den Werkstatt-Flashback gern auf dieses Format umstellen, falls er noch Mattbilder nutzt.
+5. **Mentor-Zug nach `versoehnungGesehen` (R29):** als Quest-Wirkung `karte mentorzug`, wenn das
+   die Regel erfüllt; sonst im Bericht beschreiben, was die Hülle dafür bräuchte.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt (erster Push: Weg 5 und Port Delacroix).**
 

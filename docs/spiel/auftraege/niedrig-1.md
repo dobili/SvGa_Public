@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: die 17 Karten von Akt 3
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der elfte Auftrag, alle 17 Karten von Akt 3, ist zusammengeführt, danke. Die Tabelle in mittel-1.md hatte ich versehentlich überschrieben, sie steht wieder dort. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die 17 Kartendateien aus der Tabelle unten (neu), `docs/spiel/auftraege/niedrig-1.md`

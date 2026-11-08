@@ -42,7 +42,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.ersteLektion",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           },
           "wirkungen": [
             {
@@ -64,7 +68,9 @@
         "art": "dialog",
         "knoten": "maple-falls-dachboden.nach_erster_partie"
       },
-      "voraussetzung": ["mapleFalls.dasBrett"],
+      "voraussetzung": [
+        "mapleFalls.dasBrett"
+      ],
       "schritte": [
         {
           "text": "quest.ersterAbend.schritt1",
@@ -118,7 +124,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -166,7 +175,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.victor",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           }
         },
         {
@@ -235,7 +248,9 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.samRevanche",
-            "ausgang": ["sieg"]
+            "ausgang": [
+              "sieg"
+            ]
           },
           "wirkungen": [
             {
@@ -246,7 +261,9 @@
           ]
         }
       ],
-      "voraussetzung": ["mapleFalls.dasBrett"]
+      "voraussetzung": [
+        "mapleFalls.dasBrett"
+      ]
     },
     {
       "kennung": "mapleFalls.verlorenesBrett",
@@ -332,7 +349,10 @@
       "typ": "haupt",
       "ort": "cedarCreek",
       "haupt": true,
-      "start": { "art": "ort", "karte": "cedarCreek.bibliothek" },
+      "start": {
+        "art": "ort",
+        "karte": "cedarCreek.bibliothek"
+      },
       "schritte": [
         {
           "text": "quest.archiv1858.schritt1",
@@ -341,7 +361,11 @@
             "knoten": "cedar-creek-bibliothek.okafor_erstes_treffen"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.bibliotheksclub" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.bibliotheksclub"
+            }
           ]
         },
         {
@@ -359,7 +383,11 @@
             "knoten": "cedar-creek-archiv.erzaehlung_1858"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.erzaehlung1858" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.erzaehlung1858"
+            }
           ]
         }
       ]
@@ -370,34 +398,65 @@
       "typ": "haupt",
       "ort": "cedarCreek",
       "haupt": true,
-      "start": { "art": "ort", "karte": "cedarCreek.aussen" },
+      "start": {
+        "art": "ort",
+        "karte": "cedarCreek.aussen"
+      },
       "schritte": [
         {
           "text": "quest.clubkampfCedarCreek.bibliothek",
-          "ereignis": { "art": "ort", "karte": "cedarCreek.bibliothek" },
+          "ereignis": {
+            "art": "ort",
+            "karte": "cedarCreek.bibliothek"
+          },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.ankunftCedarCreek" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.ankunftCedarCreek"
+            }
           ]
         },
         {
           "text": "quest.clubkampfCedarCreek.schritt2",
-          "ereignis": { "art": "aufgaben", "runde": "cedarCreek.reiheDex" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "cedarCreek.reiheDex"
+          }
         },
         {
           "text": "quest.clubkampfCedarCreek.schritt3",
-          "ereignis": { "art": "aufgaben", "runde": "cedarCreek.reiheMae" },
-          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "cedarCreek.reiheMae"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
         },
         {
           "text": "quest.clubkampfCedarCreek.schritt4",
           "ereignis": {
             "art": "partie",
             "begegnung": "cedarCreek.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 1, "szene": "akt1.clubnadelCedarCreek" },
-            { "art": "karte", "karte": "mentorzug" }
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.clubnadelCedarCreek"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
           ]
         },
         {
@@ -406,7 +465,13 @@
             "art": "dialog",
             "knoten": "cedar-creek-aussen.ende_akt1"
           },
-          "wirkungen": [{ "art": "szene", "akt": 1, "szene": "akt1.ende" }]
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 1,
+              "szene": "akt1.ende"
+            }
+          ]
         }
       ]
     },
@@ -428,8 +493,15 @@
             "runde": "cedarCreek.trocknerStellung"
           },
           "wirkungen": [
-            { "art": "steckbrief", "gegner": "cedarCreek.okafor", "zeile": 0 },
-            { "art": "karte", "karte": "fluestern" }
+            {
+              "art": "steckbrief",
+              "gegner": "cedarCreek.okafor",
+              "zeile": 0
+            },
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
           ]
         }
       ]
@@ -440,7 +512,10 @@
       "typ": "hilfe",
       "ort": "cedarCreek",
       "haupt": false,
-      "start": { "art": "dialog", "knoten": "cedar-creek-archiv.ordnen" },
+      "start": {
+        "art": "dialog",
+        "knoten": "cedar-creek-archiv.ordnen"
+      },
       "schritte": [
         {
           "text": "quest.archivOrdnen.schritt1",
@@ -448,7 +523,12 @@
             "art": "dialog",
             "knoten": "cedar-creek-archiv.ordnen_fertig"
           },
-          "wirkungen": [{ "art": "karte", "karte": "fluestern" }]
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
         }
       ]
     },
@@ -491,7 +571,9 @@
         "karte": "cedarCreek.archiv",
         "ausloeser": "programmheft"
       },
-      "voraussetzung": ["cedarCreek.archiv1858"],
+      "voraussetzung": [
+        "cedarCreek.archiv1858"
+      ],
       "schritte": [
         {
           "text": "quest.erinnerungNewYork.schritt1",
@@ -500,8 +582,14 @@
             "runde": "cedarCreek.erinnerungNewYork"
           },
           "wirkungen": [
-            { "art": "fragment", "halbzug": 1 },
-            { "art": "karte", "karte": "bauernvorgabe" }
+            {
+              "art": "fragment",
+              "halbzug": 1
+            },
+            {
+              "art": "karte",
+              "karte": "bauernvorgabe"
+            }
           ]
         }
       ]
@@ -512,46 +600,93 @@
       "typ": "haupt",
       "ort": "riverton",
       "haupt": true,
-      "start": { "art": "ort", "karte": "wegCedarRiverton.zedernwald" },
+      "start": {
+        "art": "ort",
+        "karte": "wegCedarRiverton.zedernwald"
+      },
       "schritte": [
         {
           "text": "quest.parkclub.schritt1",
-          "ereignis": { "art": "ort", "karte": "wegCedarRiverton.bahndamm" },
-          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.aufbruch" }]
+          "ereignis": {
+            "art": "ort",
+            "karte": "wegCedarRiverton.bahndamm"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.aufbruch"
+            }
+          ]
         },
         {
           "text": "quest.parkclub.schritt2",
-          "ereignis": { "art": "dialog", "knoten": "riverton-aussen.ankunft" },
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "riverton-aussen.ankunft"
+          },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.ankunftRiverton" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.ankunftRiverton"
+            }
           ]
         },
         {
           "text": "quest.parkclub.schritt3",
-          "ereignis": { "art": "dialog", "knoten": "riverton-pavillon.slick" },
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "riverton-pavillon.slick"
+          },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.bildschirmtische" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.bildschirmtische"
+            }
           ]
         },
         {
           "text": "quest.parkclub.schritt4",
-          "ereignis": { "art": "aufgaben", "runde": "riverton.reiheTamsin" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "riverton.reiheTamsin"
+          }
         },
         {
           "text": "quest.parkclub.schritt5",
-          "ereignis": { "art": "aufgaben", "runde": "riverton.reiheRay" },
-          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "riverton.reiheRay"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
         },
         {
           "text": "quest.parkclub.schritt6",
           "ereignis": {
             "art": "partie",
             "begegnung": "riverton.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.clubnadelRiverton" },
-            { "art": "karte", "karte": "mentorzug" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.clubnadelRiverton"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
           ]
         },
         {
@@ -561,7 +696,11 @@
             "knoten": "riverton-wohnwagen.slick_abschied"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.pavillonGeraeumt" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.pavillonGeraeumt"
+            }
           ]
         }
       ]
@@ -580,7 +719,10 @@
       "schritte": [
         {
           "text": "quest.tafelWegweiser.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "wegCedarRiverton.tafel" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCedarRiverton.tafel"
+          }
         }
       ]
     },
@@ -601,7 +743,12 @@
             "art": "dialog",
             "knoten": "riverton-schuppen.fahrrad"
           },
-          "wirkungen": [{ "art": "gegenstand", "gegenstand": "fahrrad" }]
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "fahrrad"
+            }
+          ]
         }
       ]
     },
@@ -623,9 +770,21 @@
             "runde": "riverton.slickBeobachten"
           },
           "wirkungen": [
-            { "art": "steckbrief", "gegner": "riverton.slick", "zeile": 0 },
-            { "art": "steckbrief", "gegner": "riverton.slick", "zeile": 1 },
-            { "art": "zustand", "gegner": "riverton.slick", "analysiert": true }
+            {
+              "art": "steckbrief",
+              "gegner": "riverton.slick",
+              "zeile": 0
+            },
+            {
+              "art": "steckbrief",
+              "gegner": "riverton.slick",
+              "zeile": 1
+            },
+            {
+              "art": "zustand",
+              "gegner": "riverton.slick",
+              "analysiert": true
+            }
           ]
         }
       ]
@@ -644,8 +803,16 @@
       "schritte": [
         {
           "text": "quest.odum.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "riverton.odumAufgabe" },
-          "wirkungen": [{ "art": "karte", "karte": "fluestern" }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "riverton.odumAufgabe"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
         }
       ]
     },
@@ -668,8 +835,14 @@
             "runde": "riverton.flashbackLondon"
           },
           "wirkungen": [
-            { "art": "fragment", "halbzug": 3 },
-            { "art": "muenzen", "anzahl": 20 }
+            {
+              "art": "fragment",
+              "halbzug": 3
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
           ]
         }
       ]
@@ -736,7 +909,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.mama",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           },
           "wirkungen": [
             {
@@ -754,38 +931,72 @@
       "typ": "haupt",
       "ort": "ironwood",
       "haupt": true,
-      "start": { "art": "ort", "karte": "ironwood.aussen" },
+      "start": {
+        "art": "ort",
+        "karte": "ironwood.aussen"
+      },
       "schritte": [
         {
           "text": "quest.clubkampf.schritt1",
-          "ereignis": { "art": "dialog", "knoten": "ironwood-kantine.big_joe" }
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-kantine.big_joe"
+          }
         },
         {
           "text": "quest.clubkampf.schritt2",
-          "ereignis": { "art": "aufgaben", "runde": "ironwood.reiheHank" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "ironwood.reiheHank"
+          }
         },
         {
           "text": "quest.clubkampf.schritt3",
-          "ereignis": { "art": "aufgaben", "runde": "ironwood.reihePriya" },
-          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "ironwood.reihePriya"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
         },
         {
           "text": "quest.clubkampf.schritt4",
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.clubnadelIronwood" },
-            { "art": "karte", "karte": "mentorzug" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.clubnadelIronwood"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
           ]
         },
         {
           "text": "quest.clubkampf.schritt5",
-          "ereignis": { "art": "dialog", "knoten": "ironwood-aussen.kauf" },
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-aussen.kauf"
+          },
           "wirkungen": [
-            { "art": "szene", "akt": 2, "szene": "akt2.ironwoodVerkauft" }
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.ironwoodVerkauft"
+            }
           ]
         },
         {
@@ -794,7 +1005,13 @@
             "art": "dialog",
             "knoten": "ironwood-aussen.einladung"
           },
-          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.einladung" }]
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 2,
+              "szene": "akt2.einladung"
+            }
+          ]
         }
       ]
     },
@@ -812,11 +1029,24 @@
       "schritte": [
         {
           "text": "quest.postsack.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "ironwood.siegelStellung" },
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "ironwood.siegelStellung"
+          },
           "wirkungen": [
-            { "art": "gegenstand", "gegenstand": "umschlagOhneBrief" },
-            { "art": "steckbrief", "gegner": "ironwood.bigJoe", "zeile": 0 },
-            { "art": "karte", "karte": "fluestern" }
+            {
+              "art": "gegenstand",
+              "gegenstand": "umschlagOhneBrief"
+            },
+            {
+              "art": "steckbrief",
+              "gegner": "ironwood.bigJoe",
+              "zeile": 0
+            },
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
           ]
         }
       ]
@@ -831,11 +1061,16 @@
         "art": "dialog",
         "knoten": "ironwood-kantine.feier_einladung"
       },
-      "voraussetzung": ["ironwood.mamasFinale"],
+      "voraussetzung": [
+        "ironwood.mamasFinale"
+      ],
       "schritte": [
         {
           "text": "quest.feier.schritt1",
-          "ereignis": { "art": "dialog", "knoten": "ironwood-kantine.feier" },
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-kantine.feier"
+          },
           "wirkungen": [
             {
               "art": "zustand",
@@ -861,8 +1096,16 @@
       "schritte": [
         {
           "text": "quest.erinnerungBird.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "ironwood.erinnerungBird" },
-          "wirkungen": [{ "art": "fragment", "halbzug": 4 }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "ironwood.erinnerungBird"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 4
+            }
+          ]
         }
       ]
     },
@@ -898,12 +1141,23 @@
       "typ": "begegnung",
       "ort": "ironwood",
       "haupt": false,
-      "start": { "art": "dialog", "knoten": "ironwood-mamas-zimmer.oma_ruth_heft" },
+      "start": {
+        "art": "dialog",
+        "knoten": "ironwood-mamas-zimmer.oma_ruth_heft"
+      },
       "schritte": [
         {
           "text": "quest.turnierheft.schritt1",
-          "ereignis": { "art": "dialog", "knoten": "ironwood-mamas-zimmer.oma_ruth_heft" },
-          "wirkungen": [{ "art": "gegenstand", "gegenstand": "notizbuch" }]
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-mamas-zimmer.oma_ruth_heft"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "notizbuch"
+            }
+          ]
         }
       ]
     },
@@ -924,7 +1178,12 @@
             "art": "dialog",
             "knoten": "riverton-bahnhofshalle.harlan_lupe"
           },
-          "wirkungen": [{ "art": "gegenstand", "gegenstand": "lupe" }]
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "lupe"
+            }
+          ]
         }
       ]
     },
@@ -970,7 +1229,10 @@
       "typ": "haupt",
       "ort": "siliconBay",
       "haupt": true,
-      "start": { "art": "ort", "karte": "wegIronwoodSilicon.raststaette" },
+      "start": {
+        "art": "ort",
+        "karte": "wegIronwoodSilicon.raststaette"
+      },
       "schritte": [
         {
           "text": "quest.akademie.schritt1",
@@ -979,8 +1241,15 @@
             "karte": "wegIronwoodSilicon.glasbruecke"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 3, "szene": "akt3.abfahrt" },
-            { "art": "gegenstand", "gegenstand": "reisebrett" }
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.abfahrt"
+            },
+            {
+              "art": "gegenstand",
+              "gegenstand": "reisebrett"
+            }
           ]
         },
         {
@@ -990,33 +1259,67 @@
             "knoten": "silicon-bay-aussen.ankunft_zu_fuss"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 3, "szene": "akt3.ankunftSiliconBay" }
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.ankunftSiliconBay"
+            }
           ]
         },
         {
           "text": "quest.akademie.schritt3",
-          "ereignis": { "art": "dialog", "knoten": "silicon-bay-akademie.lin" },
-          "wirkungen": [{ "art": "szene", "akt": 3, "szene": "akt3.akademie" }]
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-akademie.lin"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.akademie"
+            }
+          ]
         },
         {
           "text": "quest.akademie.schritt4",
-          "ereignis": { "art": "aufgaben", "runde": "siliconBay.reiheTheo" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "siliconBay.reiheTheo"
+          }
         },
         {
           "text": "quest.akademie.schritt5",
-          "ereignis": { "art": "aufgaben", "runde": "siliconBay.reiheNova" },
-          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "siliconBay.reiheNova"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
         },
         {
           "text": "quest.akademie.schritt6",
           "ereignis": {
             "art": "partie",
             "begegnung": "siliconBay.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
-            { "art": "szene", "akt": 3, "szene": "akt3.clubnadelSiliconBay" },
-            { "art": "karte", "karte": "mentorzug" }
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.clubnadelSiliconBay"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
           ]
         },
         {
@@ -1026,7 +1329,11 @@
             "knoten": "silicon-bay-aussen.hotel_nacht"
           },
           "wirkungen": [
-            { "art": "szene", "akt": 3, "szene": "akt3.ambroseGebannt" }
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.ambroseGebannt"
+            }
           ]
         }
       ]
@@ -1044,10 +1351,21 @@
       "schritte": [
         {
           "text": "quest.spielberichte.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "siliconBay.auswertung" },
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "siliconBay.auswertung"
+          },
           "wirkungen": [
-            { "art": "steckbrief", "gegner": "siliconBay.lin", "zeile": 0 },
-            { "art": "zustand", "gegner": "siliconBay.lin", "analysiert": true }
+            {
+              "art": "steckbrief",
+              "gegner": "siliconBay.lin",
+              "zeile": 0
+            },
+            {
+              "art": "zustand",
+              "gegner": "siliconBay.lin",
+              "analysiert": true
+            }
           ]
         },
         {
@@ -1056,7 +1374,12 @@
             "art": "dialog",
             "knoten": "silicon-bay-serverraum.schummelgeraete"
           },
-          "wirkungen": [{ "art": "gegenstand", "gegenstand": "ohrempfaenger" }]
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "ohrempfaenger"
+            }
+          ]
         }
       ]
     },
@@ -1074,7 +1397,10 @@
       "schritte": [
         {
           "text": "quest.tafelRaststaette.schritt1",
-          "ereignis": { "art": "aufgaben", "runde": "wegIronwoodSilicon.tafel" }
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegIronwoodSilicon.tafel"
+          }
         }
       ]
     },
@@ -1096,7 +1422,396 @@
             "art": "dialog",
             "knoten": "silicon-bay-lobby.vitrine_foto"
           },
-          "wirkungen": [{ "art": "gegenstand", "gegenstand": "notizbuchseite" }]
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "notizbuchseite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegSiliconDelacroix.tafelSalon",
+      "titel": "quest.tafelSalon.titel",
+      "typ": "raetsel",
+      "ort": "wegSiliconDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegSiliconDelacroix.faehre",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelSalon.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSiliconDelacroix.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.tiefpunkt",
+      "titel": "quest.tiefpunkt.titel",
+      "typ": "haupt",
+      "ort": "portDelacroix",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "portDelacroix.turnhalle"
+      },
+      "schritte": [
+        {
+          "text": "quest.tiefpunkt.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.vorwurf"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.tiefpunkt"
+            }
+          ]
+        },
+        {
+          "text": "quest.tiefpunkt.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.reiheRemy"
+          }
+        },
+        {
+          "text": "quest.tiefpunkt.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.reiheLou"
+          }
+        },
+        {
+          "text": "quest.tiefpunkt.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.clubkampf",
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.clubnadelPortDelacroix"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        },
+        {
+          "text": "quest.tiefpunkt.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.odile_nach_partie"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.wiederaufbau",
+      "titel": "quest.wiederaufbau.titel",
+      "typ": "hilfe",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "port-delacroix-turnhalle.odile_bretter"
+      },
+      "schritte": [
+        {
+          "text": "quest.wiederaufbau.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-aussen.bretter_vollstaendig"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.wiederaufbau.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.simultan"
+          }
+        },
+        {
+          "text": "quest.wiederaufbau.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.odile_nach_simultan"
+          }
+        },
+        {
+          "text": "quest.wiederaufbau.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-musikhaus.schild_aufhaengen"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "springervorgabe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.nachfahren",
+      "titel": "quest.nachfahren.titel",
+      "typ": "begegnung",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "port-delacroix-werkstatt.henri_foto"
+      },
+      "schritte": [
+        {
+          "text": "quest.nachfahren.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.celeste",
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
+          }
+        },
+        {
+          "text": "quest.nachfahren.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-werkstatt.celeste_nach_partie"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.nachfahren"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.flashbackWerkstatt",
+      "titel": "quest.flashbackWerkstatt.titel",
+      "typ": "begegnung",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "portDelacroix.werkstatt",
+        "ausloeser": "werkbank"
+      },
+      "schritte": [
+        {
+          "text": "quest.flashbackWerkstatt.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.flashbackWerkstatt"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.flashbackWerkstatt"
+            },
+            {
+              "art": "fragment",
+              "halbzug": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDelacroixDesert.tafelCanyon",
+      "titel": "quest.tafelCanyon.titel",
+      "typ": "raetsel",
+      "ort": "wegDelacroixDesert",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegDelacroixDesert.canyonpfad",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelCanyon.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegDelacroixDesert.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.versoehnung",
+      "titel": "quest.versoehnung.titel",
+      "typ": "haupt",
+      "ort": "desertSprings",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegDelacroixDesert.canyonpfad"
+      },
+      "schritte": [
+        {
+          "text": "quest.versoehnung.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.mira_stein"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.miraStein"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.versoehnung_abend"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.versoehnung"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.reiheTomas"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt4",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.reiheDot"
+          }
+        },
+        {
+          "text": "quest.versoehnung.schritt5",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "desertSprings.clubkampf",
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.clubnadelDesertSprings"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt6",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-aussen.abend_motel"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.abendMotel"
+            }
+          ]
+        },
+        {
+          "text": "quest.versoehnung.schritt7",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-aussen.bahnhof_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.ende"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.brief",
+      "titel": "quest.brief.titel",
+      "typ": "raetsel",
+      "ort": "desertSprings",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "desert-springs-garage.dot_okoro"
+      },
+      "schritte": [
+        {
+          "text": "quest.brief.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.siegel"
+          }
+        },
+        {
+          "text": "quest.brief.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-antiquariat.okoro_brief"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 7
+            },
+            {
+              "art": "karte",
+              "karte": "fluestern"
+            }
+          ]
         }
       ]
     }

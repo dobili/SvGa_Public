@@ -726,6 +726,366 @@
           "wert": "praxis:King's Gambit"
         }
       ]
+    },
+    {
+      "kennung": "summitCity.ward",
+      "name": "figur.ward.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/ward.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 640
+      },
+      "phasenversatz": {
+        "eroeffnung": -1,
+        "endspiel": 1
+      },
+      "gewichte": {
+        "tempoverlust": 1.6
+      },
+      "stil": {
+        "vereinfacher": 120,
+        "positionsspieler": 100
+      },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Queen's Gambit Declined"],
+        "abweichung": 25
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "vereinfacher"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "tempoverlust"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Queen's Gambit Declined"
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.kit",
+      "name": "figur.kit.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/kit.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "phasenversatz": {
+        "endspiel": 1
+      },
+      "gewichte": {
+        "bauernzugOhneNot": 1.3
+      },
+      "stil": "universell",
+      "eroeffnung": {
+        "art": "praxis"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "universell"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "bauernzugOhneNot"
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.haraldsen",
+      "name": "figur.haraldsen.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/haraldsen.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "phasenversatz": {
+        "endspiel": 1
+      },
+      "gewichte": {
+        "koenigPassiv": 1.3
+      },
+      "stil": "verteidiger",
+      "eroeffnung": {
+        "art": "praxis"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigPassiv"
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.sol",
+      "name": "figur.sol.name",
+      "rolle": "strasse",
+      "portraet": "portraets/sol.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "taktikUebersehen": 1.3
+      },
+      "stil": "draufgaenger",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "draufgaenger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "taktikUebersehen"
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.victor",
+      "name": "figur.victor.name",
+      "rolle": "story",
+      "portraet": "portraets/victor.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 400
+      },
+      "menschlich": true,
+      "gewichte": {
+        "ungenau": 0.8
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Ruy Lopez"],
+        "abweichung": 20
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Ruy Lopez"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp.hollis",
+      "name": "figur.hollis.name",
+      "rolle": "strasse",
+      "portraet": "portraets/hollis.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "koenigszugOhneNot": 1.3
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigszugOhneNot"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.bea",
+      "name": "figur.bea.name",
+      "rolle": "turnier",
+      "portraet": "portraets/bea.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 550
+      },
+      "gewichte": {
+        "koenigPassiv": 1.2
+      },
+      "stil": "verteidiger",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:French Defense"],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:French Defense"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.marcus",
+      "name": "figur.marcus.name",
+      "rolle": "turnier",
+      "portraet": "portraets/marcus.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 583
+      },
+      "gewichte": {
+        "ruhig": 1.8
+      },
+      "stil": "taktiker",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Sicilian Defense"],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        },
+        {
+          "art": "fleck",
+          "wert": "ruhig"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.nova",
+      "name": "figur.nova.name",
+      "rolle": "turnier",
+      "portraet": "portraets/nova.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 617
+      },
+      "gewichte": {
+        "ungenau": 0.9
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Sicilian Defense"],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Sicilian Defense"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.tobias",
+      "name": "figur.tobias.name",
+      "rolle": "turnier",
+      "portraet": "portraets/tobias.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 650
+      },
+      "gewichte": {
+        "schlagreflex": 1.3
+      },
+      "stil": "draufgaenger",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Scotch Game"],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "draufgaenger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kade",
+      "name": "figur.kade.name",
+      "rolle": "turnier",
+      "portraet": "portraets/kade.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 650
+      },
+      "menschlich": false,
+      "gewichte": {
+        "drohungIgnoriert": 1.3
+      },
+      "stil": "universell",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Queen's Pawn Game: London System"],
+        "abweichung": 5
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Queen's Pawn Game: London System"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.victor",
+      "name": "figur.victor.name",
+      "rolle": "turnier",
+      "portraet": "portraets/victor.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 700
+      },
+      "menschlich": true,
+      "gewichte": {
+        "ungenau": 0.6
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Ruy Lopez"],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Ruy Lopez"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
     }
   ]
 }

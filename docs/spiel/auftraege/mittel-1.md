@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Akt 4 in orte.json, gegner.json und begegnungen.json
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, siebzehnter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, siebzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json`, `gegner.json`, `begegnungen.json` (nur neue Einträge für Akt 4),
@@ -22,7 +22,128 @@ noch offen; den Ort bitte neutral benennen, die Figuren dort erst nach der Antwo
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig:**
+
+- **13 Orte** in `orte.json` (Staffel 2): Städte `summitCity` (Nr. 8, Club 8), `crossroads` (9),
+  `pinewoodCamp` (10), `ghostTown` (11), `capitalArena` (12); Wege `wegDesertSummit`,
+  `wegSummitCrossroads`, `wegCrossroadsPinewood`, `wegPinewoodGhost`, `wegGhostCapital`; die
+  Abzweigung `hochebene` und die Rückkehr `bayou` (L5) als Ort-Art `weg`; die Erinnerung
+  `erinnerungSiedlung` (Szene 99, Sepia) als Ort-Art `erinnerung`. 25 Karten, alle Übergänge in
+  beiden Richtungen, Hauptroute Desert Springs → Summit City → Crossroads → Pinewood Camp → Ghost
+  Town → Capital Arena. Sperren: Weg 8 nach der Nadel von Summit City (`nadelSummitCity`), Weg 11
+  nach der Fernpartie (`fernpartieGespielt`).
+- **Club 8** „Endspielrunde in der Berghütte“: Kapitel 8 und 9, Chefin Ward, Mitglieder Kit und
+  Haraldsen, zwölf Buchübungen aus 07 (Opposition bis falscher Läufer), Themen `endspiel` und
+  `umwandlung`.
+- **12 Gegner** in `gegner.json` mit Steckbrief: Ward (Clubchefin, E + 640, Endspiel +1,
+  Eröffnung −1, Schwäche Tempoverlust, Damengambit mit 25 % Abweichung), Kit und Haraldsen
+  (Clubmitglieder, Endspiel +1), Sol (Straße, A − 50), Victor frei (Story, E + 400, Szene 88),
+  Hollis (Straße, A − 100), die Turniergegner Bea (E + 550), Marcus (E + 583, blinder Fleck
+  stille Züge), Nova (E + 617), Tobias (E + 650), Kade (E + 650, `menschlich: false`) und Victor im
+  Finale (E + 700). Die Turnierstärken sind die Werte der Bronze-Liga; die Liga legt nach R22
+  ihren Aufschlag darauf. Keiner ist gegen Sprüche immun (Bibel: keine Sprüche im Turnier, Sol
+  nicht immun).
+- **4 Begegnungen** in `begegnungen.json`: `summitCity.clubkampf` (Wahl der Zeit, Karten erlaubt),
+  `summitCity.victorFrei` (Grundstellung, ohne Uhr, Karten erlaubt), `summitCity.sol`
+  (Stellungsduell 3 + 2), `pinewoodCamp.hollis` (Stellungsduell ohne Uhr).
+- **62 Textschlüssel** (Orte, Karten, Figuren, Club, `steckbrief.fleck.ruhig` für Marcus).
+- Prüfungen: pytest 470 bestanden (die neuen Karten sind noch nicht gezeichnet und werden
+  übersprungen), `npm run pruefen` grün, Abenteuerpaket baut.
+
+**Entscheidungen:**
+
+1. **Stellungen der Straßenduelle, geprüft mit Stockfish 19:** Die Bibel nennt für Sol 8.44 oder
+   8.48; beide sind zu groß (8.44: +2,84 bei Tiefe 28, 8.48: +6,1). Kein Diagramm aus Kapitel 8 mit
+   Weiß am Zug liegt bei etwa +1 (alle Werte zwischen 0 und +0,4 oder über +2,4). Aus Kapitel 9
+   lagen 9.41 und 9.53 bei +1,1 und +0,8, aber beide sind theoretisch remis (falscher Läufer,
+   Randbauer). **Sol** spielt deshalb **6.21** (+0,84 bei Tiefe 24), **Hollis** wie in der Bibel
+   **6.14** (+0,83 bei Tiefe 24); 6.5 bleibt bei Batiste.
+2. **Hochebene neutral (Q21-1 offen):** Ort `hochebene` mit den Karten `felsentuerme` und `schule`
+   (eine Schule passt zu beiden Antworten), noch ohne Figuren und ohne Begegnung.
+3. **Varianten und Meisterschaft ohne Begegnungen:** Figuren und Auslöser stehen (Earl, Bell, Ray,
+   Greta, Juniper, Abe, Theron, die Bläserin im Musikhaus, Drachenbrunnen, Varianten-Tisch,
+   Lagerfeuer, Turniertafel). Begegnungen für L1 bis L10, für die Vorrunde, das Halbfinale und das
+   Finale folgen mit der neuen Technik (Bibel, Abschnitt 34). Die Gegnerprofile der Meisterschaft
+   sind schon da.
+4. **Fernpartie ohne Begegnung:** Die Endspielstellung entsteht erst mit der Engine (Folgeauftrag
+   Fernpartie, mittel-2); Victor im Saloon hat deshalb noch keinen Gegner-Eintrag. Für die Partie
+   kann `summitCity.victor` (E + 400) dienen, wie es die Bibel verlangt.
+5. **Anschluss an Akt 3:** Neue Auslöser in bestehenden Orten: `desertSprings.highway` (zum Weg 7,
+   wenn `endeAkt3Gesehen`), `portDelacroix.bayou` (zum Bayou, wenn `musikhausOffen`) und die Figur
+   `portDelacroix.blaeser` im Musikhaus (L1). Die Karten von Desert Springs und Port Delacroix sind
+   schon gezeichnet; die Rückwege zielen deshalb vorerst auf vorhandene Objekte (`bahnhof` und
+   `deich`). Sobald niedrig-1 die Objekte `highway` und `bayou` ergänzt, sollen die Rückwege
+   dorthin zeigen.
+6. **Flashback in Ghost Town:** Der Übergang `abzeichen` im Saloon führt nach dem Fund des
+   Postreiterabzeichens (`abzeichenGefunden`) in die Erinnerung; `rueckkehr` führt zurück an
+   dieselbe Stelle.
+7. **Porträts:** `portraets/<name>.svg` wie bisher; Victor und Nova nutzen ihre vorhandenen Bilder.
+
+**Zu zeichnende Karten (für niedrig-1).** 25 Karten; je Karte ein `start` für die erste Karte eines
+Weges, sonst Ankunft an den genannten Objekten:
+
+| Karte                                                          | Datei                                              | Art   | Objekte (Figuren und Auslöser)                                                                                              |
+| -------------------------------------------------------------- | -------------------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------- |
+| `wegDesertSummit.diner` (Diner an der Wüstenstraße)            | `karten/weg-desert-summit-diner.json`              | außen | earl; start, zurueckDesert, tafel, fundNeonK, weiterBergstrasse                                                             |
+| `wegDesertSummit.bergstrasse` (Bergstraße)                     | `karten/weg-desert-summit-bergstrasse.json`        | außen | –; zurueckDiner, abzweigHochebene, weiterSummit                                                                             |
+| `hochebene.felsentuerme` (Felsentürme)                         | `karten/hochebene-felsentuerme.json`               | außen | –; start, zurueckBergstrasse, weiterSchule                                                                                  |
+| `hochebene.schule` (Schule am Rand der Hochebene)              | `karten/hochebene-schule.json`                     | außen | –; zurueckFelsentuerme                                                                                                      |
+| `summitCity.aussen` (Summit City, Talstation)                  | `karten/summit-city-aussen.json`                   | außen | sol; wegDesert, huetteTuer, bergladenTuer, seilbahnTal, drachenbrunnen, wegCrossroads                                       |
+| `summitCity.huette` (Hütte der Großmeisterin)                  | `karten/summit-city-huette.json`                   | innen | ward, kit, haraldsen; huetteAusgang, pokal, kaminfeuer                                                                      |
+| `summitCity.bergstation` (Bergstation der Seilbahn)            | `karten/summit-city-bergstation.json`              | innen | victor; seilbahnBerg, fundMurmeltierpfeife                                                                                  |
+| `summitCity.bergladen` (Bergladen)                             | `karten/summit-city-bergladen.json`                | innen | –; bergladenAusgang, theke                                                                                                  |
+| `wegSummitCrossroads.geysirbecken` (Geysirbecken)              | `karten/weg-summit-crossroads-geysirbecken.json`   | außen | bell; start, zurueckSummit, tafel, fundBisonhaar, bisons, weiterPraerie                                                     |
+| `wegSummitCrossroads.praerie` (Prärie)                         | `karten/weg-summit-crossroads-praerie.json`        | außen | ray; zurueckGeysirbecken, sturmkeller, weiterCrossroads                                                                     |
+| `crossroads.aussen` (Crossroads, Kreuzung)                     | `karten/crossroads-aussen.json`                    | außen | slick, mira, bigJoe, rosie; wegSummit, raststaetteTuer, wegweiser, wegPinewood                                              |
+| `crossroads.raststaette` (Raststätte von Darlene)              | `karten/crossroads-raststaette.json`               | innen | darlene, nova; raststaetteAusgang, variantenTisch, postkarten                                                               |
+| `wegCrossroadsPinewood.huetten` (Schutzhütte am Fernwanderweg) | `karten/weg-crossroads-pinewood-huetten.json`      | außen | greta; start, zurueckCrossroads, tafel, weiterRiesenbaeume                                                                  |
+| `wegCrossroadsPinewood.riesenbaeume` (Unter den Riesenbäumen)  | `karten/weg-crossroads-pinewood-riesenbaeume.json` | außen | –; zurueckHuetten, rangerhaus, weiterCamp                                                                                   |
+| `pinewoodCamp.aussen` (Pinewood Camp am See)                   | `karten/pinewood-camp-aussen.json`                 | außen | ezra, hollis, dex, mae, lou, tamsin; wegCrossroads, lagerfeuer, kiosk, wegGhost                                             |
+| `wegPinewoodGhost.canyonrand` (Canyonrand)                     | `karten/weg-pinewood-ghost-canyonrand.json`        | außen | juniper; start, zurueckCamp, tafel, weiterStaubstrasse                                                                      |
+| `wegPinewoodGhost.staubstrasse` (Staubstraße)                  | `karten/weg-pinewood-ghost-staubstrasse.json`      | außen | –; zurueckCanyonrand, weiterGhost                                                                                           |
+| `ghostTown.aussen` (Ghost Town, Hauptstraße)                   | `karten/ghost-town-aussen.json`                    | außen | pruitt; wegPinewood, saloonTuer, grab, sternenhimmel, wegCapital                                                            |
+| `ghostTown.saloon` (Saloon)                                    | `karten/ghost-town-saloon.json`                    | innen | victor; saloonAusgang, fernpartieBrett, abzeichen                                                                           |
+| `erinnerungSiedlung.huette` (Bretterhütte, 1866)               | `karten/erinnerung-siedlung-huette.json`           | innen | postreiter; ankunft, kerze, rueckkehr                                                                                       |
+| `wegGhostCapital.seeufer` (Seeufer)                            | `karten/weg-ghost-capital-seeufer.json`            | außen | –; start, zurueckGhost, tafel, weiterLeuchtturm                                                                             |
+| `wegGhostCapital.leuchtturm` (Leuchtturm)                      | `karten/weg-ghost-capital-leuchtturm.json`         | außen | abe; zurueckSeeufer, fundLinse, weiterCapital                                                                               |
+| `capitalArena.aussen` (Capital Arena, Vorplatz)                | `karten/capital-arena-aussen.json`                 | außen | mama, juno; wegGhost, halleTuer, treppe                                                                                     |
+| `capitalArena.halle` (Turnierhalle)                            | `karten/capital-arena-halle.json`                  | innen | turnierleiterin, lin, grahamHale, bea, marcus, nova, tobias, kade, victor; halleAusgang, turniertafel, pressetisch, fanshop |
+| `bayou.steg` (Bootssteg im Bayou)                              | `karten/bayou-steg.json`                           | außen | theron; start, zurueckDelacroix, nebel                                                                                      |
+
+**Für die Dialoge (Knoten aus `orte.json`):**
+
+- `bayou.ink`: theron, zurueck_delacroix, nebel
+- `capital-arena-aussen.ink`: ankunft_zu_fuss, mama, juno, weg_ghost, halle_betreten, treppe
+- `capital-arena-halle.ink`: turnierleiterin, lin, graham_hale, bea, marcus, nova, tobias, kade, victor, turniertafel, pressetisch, fanshop
+- `crossroads-aussen.ink`: ankunft_zu_fuss, slick, mira, big_joe, rosie, weg_summit, wegweiser, weg_pinewood
+- `crossroads-raststaette.ink`: darlene, nova, varianten_tisch, fund_postkarte
+- `desert-springs-aussen.ink`: highway
+- `erinnerung-siedlung.ink`: postreiter, kerze, rueckkehr
+- `ghost-town-aussen.ink`: ankunft_zu_fuss, pruitt, weg_pinewood, grab, nacht, weg_capital
+- `ghost-town-saloon.ink`: victor, brett, fund_abzeichen
+- `hochebene.ink`: zurueck
+- `pinewood-camp-aussen.ink`: ankunft_zu_fuss, ezra, hollis, dex, mae, lou, tamsin, weg_crossroads, lagerfeuer, kiosk, weg_ghost
+- `port-delacroix-aussen.ink`: bayou
+- `port-delacroix-musikhaus.ink`: blaeser
+- `summit-city-aussen.ink`: ankunft_zu_fuss, sol, weg_desert, seilbahn, drachenfest, weg_crossroads
+- `summit-city-bergladen.ink`: theke
+- `summit-city-bergstation.ink`: victor, fund_pfeife
+- `summit-city-huette.ink`: ward, kit, haraldsen, pokal, kaminfeuer
+- `weg-crossroads-pinewood.ink`: greta, zurueck_crossroads, tafel, rangerhaus
+- `weg-desert-summit.ink`: earl, zurueck_desert, tafel, fund_neon, abzweig_hochebene
+- `weg-ghost-capital.ink`: abe, zurueck_ghost, tafel, fund_linse
+- `weg-pinewood-ghost.ink`: juniper, zurueck_camp, tafel
+- `weg-summit-crossroads.ink`: bell, ray, zurueck_summit, tafel, fund_bisonhaar, bisons, sturmkeller
+
+**Offen für den Haupt-Chat:**
+
+- Runden für Akt 4 (`runden.json` war nicht freigegeben): `summitCity.reiheKit`,
+  `summitCity.reiheHaraldsen`, `summitCity.erinnerungHastings` (`klassik-steinitz-bardeleben`, Weiß
+  ab Zug 17), die Tafeln der fünf Wege.
+- Läden aus Abschnitt 31 (`summitCity.bergladen`, `crossroads.raststaette`, `pinewoodCamp.kiosk`,
+  `capitalArena.fanshop`), Funde aus Abschnitt 30, Quests.
+- Thema `endspiel` für Runden ist noch nicht an den Endspieltrainer angeschlossen; bis dahin wirkt
+  im Club nur `umwandlung`.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

@@ -927,6 +927,214 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegSiliconDelacroix.tafelSalon",
+      "titel": "quest.tafelSalon.titel",
+      "typ": "raetsel",
+      "ort": "wegSiliconDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegSiliconDelacroix.faehre",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelSalon.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSiliconDelacroix.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.tiefpunkt",
+      "titel": "quest.tiefpunkt.titel",
+      "typ": "haupt",
+      "ort": "portDelacroix",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "portDelacroix.turnhalle"
+      },
+      "schritte": [
+        {
+          "text": "quest.tiefpunkt.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.vorwurf"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.tiefpunkt"
+            }
+          ]
+        },
+        {
+          "text": "quest.tiefpunkt.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.reiheRemy"
+          }
+        },
+        {
+          "text": "quest.tiefpunkt.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.reiheLou"
+          }
+        },
+        {
+          "text": "quest.tiefpunkt.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.clubnadelPortDelacroix"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        },
+        {
+          "text": "quest.tiefpunkt.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.odile_nach_partie"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.wiederaufbau",
+      "titel": "quest.wiederaufbau.titel",
+      "typ": "hilfe",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "port-delacroix-turnhalle.odile_bretter"
+      },
+      "schritte": [
+        {
+          "text": "quest.wiederaufbau.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-aussen.bretter_vollstaendig"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.wiederaufbau.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.simultan"
+          }
+        },
+        {
+          "text": "quest.wiederaufbau.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.odile_nach_simultan"
+          }
+        },
+        {
+          "text": "quest.wiederaufbau.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-musikhaus.schild_aufhaengen"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "springervorgabe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.nachfahren",
+      "titel": "quest.nachfahren.titel",
+      "typ": "begegnung",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "port-delacroix-werkstatt.henri_foto"
+      },
+      "schritte": [
+        {
+          "text": "quest.nachfahren.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.celeste",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.nachfahren.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "port-delacroix-werkstatt.celeste_nach_partie"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.nachfahren"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.flashbackWerkstatt",
+      "titel": "quest.flashbackWerkstatt.titel",
+      "typ": "begegnung",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "portDelacroix.werkstatt",
+        "ausloeser": "werkbank"
+      },
+      "schritte": [
+        {
+          "text": "quest.flashbackWerkstatt.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "portDelacroix.flashbackWerkstatt"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 3,
+              "szene": "akt3.flashbackWerkstatt"
+            },
+            {
+              "art": "fragment",
+              "halbzug": 5
+            }
+          ]
+        }
+      ]
     }
   ]
 }

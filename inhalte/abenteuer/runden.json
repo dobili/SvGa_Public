@@ -196,6 +196,54 @@
         "abZug": 17,
         "seite": "black"
       }
+    },
+    {
+      "kennung": "wegSiliconDelacroix.tafel",
+      "ort": "wegSiliconDelacroix",
+      "steller": "wegSiliconDelacroix.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["umwandlung"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "portDelacroix.reiheRemy",
+      "ort": "portDelacroix",
+      "steller": "portDelacroix.remy",
+      "reihe": true,
+      "buchuebungen": ["ueb:bauernloch-erkennen", "ueb:skelett-roentgen"],
+      "themen": ["umwandlung"]
+    },
+    {
+      "kennung": "portDelacroix.reiheLou",
+      "ort": "portDelacroix",
+      "steller": "portDelacroix.lou",
+      "reihe": true,
+      "buchuebungen": ["ueb:guter-schlechter-laeufer", "ueb:lap-spanisch"],
+      "themen": ["umwandlung"]
+    },
+    {
+      "kennung": "portDelacroix.simultan",
+      "ort": "portDelacroix",
+      "steller": "portDelacroix.odile",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff", "fesselung"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "portDelacroix.flashbackWerkstatt",
+      "ort": "portDelacroix",
+      "steller": "portDelacroix.ambrose",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 1,
+      "erinnerung": {
+        "partie": "klassik-unsterbliche",
+        "abZug": 1,
+        "seite": "white"
+      }
     }
   ]
 }

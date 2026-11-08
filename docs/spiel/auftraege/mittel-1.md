@@ -1,6 +1,11 @@
-# Auftrag mittel-1: Sprüche für die Zeitkarten und Konter der Straßengegner
+# Auftrag mittel-1: kein Auftrag
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, zehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zehnte Auftrag, Sprüche und Konter, ist
+zusammengeführt, danke; der Vorschlag `immunGegen` kommt mit Schritt 13. Bis der nächste Auftrag
+per Nachricht kommt, bitte nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
 **Prüfung vor dem Push:** pytest `test_abenteuer.py`, Prettier

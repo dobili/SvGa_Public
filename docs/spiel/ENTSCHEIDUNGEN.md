@@ -464,6 +464,11 @@ Entwurf in `docs/spiel/10_Sprueche_Schauplaetze_Varianten.md` (Widerspruch genü
   Engine), König der Hügel, Drei-Schach und Märchenfiguren später mit Fairy-Stockfish als
   Zusatzpaket; zählen nicht für Elo und A.
 
+**Sprüche geschrieben (mittel-1):** je acht Sprüche für „Großes Maul“, „Grübelfalle“, „Kühler Kopf“,
+Ambroses Satz beim ersten Spruch, je zwei Konter für sieben Straßengegner; nur über die Partie,
+nie über Menschen. Vorschlag für Schritt 13: Feld `immunGegen` im Gegnerprofil (Rosa gegen alle
+Sprüche, Harlan nur gegen „Großes Maul“, bei ihm wirkt die Grübelfalle doppelt).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

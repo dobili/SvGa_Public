@@ -61,6 +61,8 @@ export interface Szenendaten {
   readonly kachelsatz: string;
   readonly start: Weltposition;
   readonly melder: Melder;
+  /** Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1). */
+  readonly tempofaktor?: number;
 }
 
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
@@ -210,10 +212,11 @@ export class Oberweltszene extends Phaser.Scene {
     if (richtung) {
       this.blick = richtung;
       this.held.setFrame(BILD_JE_RICHTUNG[richtung]);
-      if (richtung === "links") koerper.setVelocityX(-TEMPO);
-      if (richtung === "rechts") koerper.setVelocityX(TEMPO);
-      if (richtung === "oben") koerper.setVelocityY(-TEMPO);
-      if (richtung === "unten") koerper.setVelocityY(TEMPO);
+      const tempo = TEMPO * (this.daten.tempofaktor ?? 1);
+      if (richtung === "links") koerper.setVelocityX(-tempo);
+      if (richtung === "rechts") koerper.setVelocityX(tempo);
+      if (richtung === "oben") koerper.setVelocityY(-tempo);
+      if (richtung === "unten") koerper.setVelocityY(tempo);
     }
     this.meldeAusloeser();
     this.meldeKachel();

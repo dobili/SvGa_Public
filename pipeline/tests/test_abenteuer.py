@@ -58,10 +58,20 @@ def test_querverweise_stimmen():
             for kennung in [club["chef"], *club["mitglieder"]]:
                 if kennung not in figuren or kennung not in gegner:
                     fehler.append(f"{ort['kennung']}: Clubmitglied {kennung} fehlt")
+        # Übergänge bleiben im Ort; nur Wege (art weg) verbinden Orte (docs/spiel/08, W1).
+        alle = {k["kennung"]: o for o in orte for k in o["karten"]}
         for ausloeser in ort["ausloeser"]:
             ziel = ausloeser.get("ziel")
-            if ziel and ziel["karte"] not in kartenkennungen:
+            if not ziel:
+                continue
+            zielort = alle.get(ziel["karte"])
+            if zielort is None:
                 fehler.append(f"{ort['kennung']}: Übergang nach unbekannter Karte {ziel['karte']}")
+            elif ziel["karte"] not in kartenkennungen and "weg" not in (
+                ort.get("art", "stadt"),
+                zielort.get("art", "stadt"),
+            ):
+                fehler.append(f"{ort['kennung']}: Übergang in anderen Ort ohne Weg: {ziel['karte']}")
 
     alle_karten = {k["kennung"] for ort in orte for k in ort["karten"]}
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
@@ -86,12 +96,19 @@ def test_querverweise_stimmen():
     rundenkennungen = {r["kennung"] for r in runden}
     for runde in runden:
         ort = next((o for o in orte if o["kennung"] == runde["ort"]), None)
-        if ort is None or not ort.get("club"):
-            fehler.append(f"{runde['kennung']}: Ort {runde['ort']} ohne Club")
+        if ort is None:
+            fehler.append(f"{runde['kennung']}: Ort {runde['ort']} fehlt")
             continue
-        if runde["steller"] not in {f["kennung"] for f in ort["figuren"]}:
+        # Ohne Club (Wege) braucht die Runde eine feste Zahl (R30a); das Budget kommt vom Club.
+        if not ort.get("club") and "anzahl" not in runde:
+            fehler.append(f"{runde['kennung']}: Ort {runde['ort']} ohne Club braucht anzahl")
+        # Steller: eine Figur des Ortes oder ein Auslöser mit Namen figur.<name>.name (Tafel).
+        figuren_hier = {f["kennung"] for f in ort["figuren"]}
+        stellername = runde["steller"].split(".")[-1]
+        if runde["steller"] not in figuren_hier and f"figur.{stellername}.name" not in texte:
             fehler.append(f"{runde['kennung']}: Steller {runde['steller']} fehlt in orte.json")
-        fremd = set(runde["buchuebungen"]) - set(ort["club"]["aufgaben"]["buchuebungen"])
+        erlaubt = set(ort["club"]["aufgaben"]["buchuebungen"]) if ort.get("club") else set()
+        fremd = set(runde["buchuebungen"]) - erlaubt
         if fremd:
             fehler.append(f"{runde['kennung']}: Buchübungen {sorted(fremd)} nicht beim Club")
         if not runde["themen"] and not runde["buchuebungen"]:

@@ -174,6 +174,14 @@
           "name": "bushaltestelle",
           "art": "dialog",
           "dialog": "maple-falls-park.bushaltestelle"
+        },
+        {
+          "name": "landstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.landstrasse",
+            "ausloeser": "zurueckPark"
+          }
         }
       ],
       "club": {
@@ -372,6 +380,107 @@
           "themen": ["matt1", "matt2", "mattbilder", "grundreihenmatt"]
         }
       }
+    },
+    {
+      "kennung": "wegMapleCedar",
+      "name": "ort.wegMapleCedar.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegMapleCedar.landstrasse",
+          "datei": "karten/weg-maple-cedar-1.json",
+          "name": "ort.wegMapleCedar.landstrasse",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        },
+        {
+          "kennung": "wegMapleCedar.flussweg",
+          "datei": "karten/weg-maple-cedar-2.json",
+          "name": "ort.wegMapleCedar.flussweg",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegMapleCedar.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "weg-maple-cedar.wanderer"
+        },
+        {
+          "kennung": "wegMapleCedar.gegnerin",
+          "name": "figur.nia.name",
+          "sprite": "figuren/nia.png",
+          "dialog": "weg-maple-cedar.gegnerin",
+          "gegner": "wegMapleCedar.nia"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckPark",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.park",
+            "ausloeser": "landstrasse"
+          }
+        },
+        {
+          "name": "tafel",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.tafel"
+        },
+        {
+          "name": "fundFormular",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_formular"
+        },
+        {
+          "name": "weiterFluss",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.flussweg",
+            "ausloeser": "zurueckLandstrasse"
+          }
+        },
+        {
+          "name": "zurueckLandstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.landstrasse",
+            "ausloeser": "weiterFluss"
+          }
+        },
+        {
+          "name": "rast",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.rast"
+        },
+        {
+          "name": "fundMuenzen",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_muenzen"
+        },
+        {
+          "name": "schildCedar",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.schild_cedar"
+        },
+        {
+          "name": "weiterCedar",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "bushaltestelle"
+          }
+        }
+      ]
     }
   ]
 }

@@ -196,6 +196,40 @@
         "abZug": 17,
         "seite": "black"
       }
+    },
+    {
+      "kennung": "wegIronwoodSilicon.tafel",
+      "ort": "wegIronwoodSilicon",
+      "steller": "wegIronwoodSilicon.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["falle"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "siliconBay.reiheTheo",
+      "ort": "siliconBay",
+      "steller": "siliconBay.theo",
+      "reihe": true,
+      "buchuebungen": [],
+      "themen": ["haengend"]
+    },
+    {
+      "kennung": "siliconBay.reiheNova",
+      "ort": "siliconBay",
+      "steller": "siliconBay.nova",
+      "reihe": true,
+      "buchuebungen": [],
+      "themen": ["falle"]
+    },
+    {
+      "kennung": "siliconBay.auswertung",
+      "ort": "siliconBay",
+      "steller": "siliconBay.victor",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 3
     }
   ]
 }

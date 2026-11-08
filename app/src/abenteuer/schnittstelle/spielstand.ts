@@ -105,6 +105,8 @@ export interface Partiekarten {
   readonly gegner?: string;
   /** Bedenkzeit der Partie (Schritt 13); ein Wiedereinstieg spielt mit derselben Uhr. */
   readonly uhr?: { readonly sekunden: number; readonly zuschlag: number } | null;
+  /** Freie Karten der Begegnung (R29), liegen zusätzlich im Deck und kosten nichts. */
+  readonly frei?: readonly string[];
 }
 
 /** Gesammelte Partiefragmente von Ambroses alter Partie (Dokument 02, 3.3), als Halbzugindizes. */

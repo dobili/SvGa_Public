@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Porträts der Figuren von Akt 4 und die Fernpartie 1865/66
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, dreizehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, Porträts und Fernpartie, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs`, `inhalte/abenteuer/portraets/` (nur neue
@@ -20,7 +20,33 @@ Bilder), `docs/spiel/05_Story_Bibel.md` (nur der Abschnitt zur Fernpartie), `doc
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis 19d3d91a hereingeholt). Prüfungen: `pytest pipeline/tests`
+470, `npm run pruefen` 362 Dateien und 2418 Tests, Prettier.
+
+**1. Porträts Akt 4:** 20 neue Einträge in `erzeuge-figurenbilder.mjs`, 20 neue SVG (zusammen jetzt
+81). Namen (kebab-case des Namens, bei Doppelung mit Nachnamen; **für mittel-1 als Dateinamen in
+`gegner.json` und `orte.json`**): `ward`, `kit`, `haraldsen`, `sol`, `darlene`, `hollis`, `ezra`,
+`pruitt`, `bea`, `marcus`, `tobias`, `kade`, `turnierleiterin`, `earl` (Fernfahrer Earl Dubois),
+`bell` (Rangerin am Geysir), `ray-castillo` (Sturmjäger; `ray` ist Rivertons Ray), `greta`,
+`juniper`, `abe`, `theron`. Die Vell-Familie fehlt absichtlich (Q21-1 offen). Kontaktbogen
+durchgesehen. `--pruefen` meldet heute nichts, weil mittel-1 die Figuren noch nicht eingetragen
+hat; sobald andere Namen kommen, meldet das Skript sie.
+
+**2. Fernpartie** in der Bibel, neuer Abschnitt 35: Evans-Gambit (Eröffnung von Hand), danach mit
+Stockfish 19 je Zug eine menschliche Wahl unter den Zügen bis 0,35 Bauern unter dem besten; 40 Züge,
+PGN mit Kopfzeilen, deutsche Lesefassung. Ambroses Doppelopfer 35. Lxh6 gxh6 36. Sxf6+ als Höhepunkt,
+Hale hält mit zwei Springern gegen den Turm.
+
+- **Fragmente 0 bis 8**: Fragment n = Halbzüge 8n + 1 bis 8n + 8 (Tabelle mit Herkunft je Akt; die
+  vorhandenen Quest-Wirkungen 0 bis 7 passen, Fragment 8 kommt mit Wards Erinnerung).
+- **Zugerraten** im Flashback: Halbzüge 73 bis 79, Ambroses letzter Zug **40. Kxg3**; Hales Antwort
+  **40… b5** (Halbzug 80) steht auf der Seite.
+- **Endstellung** für das Stellungsduell `6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41`: +1,44
+  (Tiefe 14), +1,44 (16), +1,85 (18), kein schnelles Matt, R13 erfüllt. Ein erster Kandidat (Seed 63)
+  sah bei Tiefe 14 gut aus, stieg aber bei Tiefe 16 bis 18 auf +3 bis +4; deshalb prüft die Suche
+  jetzt drei Tiefen.
+- Vorschlag Begegnung `ghostTown.fernpartie`: Stellungsduell 15 Züge, Mindestvorteil 1,0, Leser Weiß,
+  ohne Uhr, Karten gesperrt, Victor (story, E + 400).
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

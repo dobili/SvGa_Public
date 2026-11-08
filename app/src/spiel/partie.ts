@@ -117,7 +117,20 @@ export interface Partieeinstellung {
    * vor diesen Halbzug spielt der Bot wie in Zeitnot, weil der Leser den Spruch „Großes Maul“
    * gespielt hat (spiel/botzeit.ts, wahlRestzeit); die echte Uhr bleibt unberührt.
    */
-  readonly abenteuer?: { readonly kennung: string; readonly zeitnotBis?: number };
+  readonly abenteuer?: {
+    readonly kennung: string;
+    readonly zeitnotBis?: number;
+    /**
+     * Stärkewechsel mitten in der Partie (Halbfinale des Abenteuers, Konzern-Junior ohne Gerät):
+     * ab diesem Halbzug macht der Bot um `faktor` häufiger Fehler (spiel/botzeit.ts, wahlHaeufigkeit).
+     */
+    readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
+    /**
+     * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10, V1): „blind“ blendet die
+     * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
+     */
+    readonly variante?: "blind";
+  };
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

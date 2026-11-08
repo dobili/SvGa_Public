@@ -177,7 +177,13 @@ function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
     typeof roh.zeitnotBis === "number" && Number.isInteger(roh.zeitnotBis) && roh.zeitnotBis > 0
       ? { zeitnotBis: roh.zeitnotBis }
       : {};
-  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis } };
+  const wechsel = roh.abgelenktAb;
+  const abgelenktAb =
+    istObjekt(wechsel) && typeof wechsel.halbzug === "number" && typeof wechsel.faktor === "number"
+      ? { abgelenktAb: { halbzug: wechsel.halbzug, faktor: wechsel.faktor } }
+      : {};
+  const variante = roh.variante === "blind" ? { variante: "blind" as const } : {};
+  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis, ...abgelenktAb, ...variante } };
 }
 
 /**

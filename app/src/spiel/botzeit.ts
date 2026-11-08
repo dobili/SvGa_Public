@@ -59,6 +59,18 @@ export function wahlRestzeit(partie: Partie, jetztMs: number): number | null {
   return echt === null ? GEFUEHLTE_ZEITNOT_MS : Math.min(echt, GEFUEHLTE_ZEITNOT_MS);
 }
 
+/**
+ * Fehlerhäufigkeit für die Zugwahl: die der Partie, ab `einstellung.abenteuer.abgelenktAb.halbzug`
+ * mal dem Faktor (Halbfinale des Abenteuers: Das Signal des Geräts fällt aus, der Gegner spielt
+ * allein und abgelenkt). Ohne Feld unverändert.
+ * Beispiel: Grundwert 1, abgelenktAb {40, 1,5}, nach 40 Halbzügen → 1,5.
+ */
+export function wahlHaeufigkeit(partie: Partie, grund: number | undefined): number | undefined {
+  const wechsel = partie.einstellung.abenteuer?.abgelenktAb;
+  if (!wechsel || partie.zuege.length < wechsel.halbzug) return grund;
+  return (grund ?? 1) * wechsel.faktor;
+}
+
 /** Zielfeld eines UCI-Zuges („e4d5“ → „d5“). */
 function ziel(uci: string): string {
   return uci.slice(BEZUGSFELD_LAENGE, 2 * BEZUGSFELD_LAENGE);

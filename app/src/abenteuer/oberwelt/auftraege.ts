@@ -128,10 +128,16 @@ export function auftragFuer(
     startstellung: b.startstellung,
     deck: { karten: [] },
     kartenErlaubt: b.kartenErlaubt,
-    zaehltFuerApp: b.zaehltFuerApp ?? b.startstellung.art === "grundstellung",
+    // Varianten zählen nie für die App und die Abenteuerwertung (Bibel Akt 4, Technikliste 4).
+    zaehltFuerApp: b.variante
+      ? false
+      : (b.zaehltFuerApp ?? b.startstellung.art === "grundstellung"),
     uhr: typeof b.zeit === "object" ? b.zeit : null,
     zeitwahl: b.zeit === "wahl",
     farbeFrei: b.farbe === "zufall",
+    ...(b.freieKarten ? { freieKarten: b.freieKarten } : {}),
+    ...(b.abgelenktAb ? { abgelenktAb: b.abgelenktAb } : {}),
+    ...(b.variante ? { variante: b.variante } : {}),
   };
 }
 

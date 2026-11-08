@@ -103,7 +103,11 @@ export function partieeinstellungAus(
     hilfen: { symbole: false, werkzeuge: false },
     gewertet: false,
     eroeffnung: eroeffnungAus(profil, startFen, zufall),
-    abenteuer: { kennung: auftrag.kennung },
+    abenteuer: {
+      kennung: auftrag.kennung,
+      ...(auftrag.abgelenktAb ? { abgelenktAb: auftrag.abgelenktAb } : {}),
+      ...(auftrag.variante ? { variante: auftrag.variante } : {}),
+    },
   };
 }
 

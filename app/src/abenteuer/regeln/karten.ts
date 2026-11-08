@@ -35,7 +35,7 @@ export const HOECHSTBESTAND = 9;
 
 /** Die Kartenstufe einer Partie aus den gespielten Karten (R17), als Nadelstufe. */
 export function kartenstufeDerPartie(gespielt: readonly Kartenspiel[]): Nadelstufe {
-  const zaehlend = gespielt.filter((k) => !ZAEHLT_NICHT.has(k.kennung));
+  const zaehlend = gespielt.filter((k) => !ZAEHLT_NICHT.has(k.kennung) && k.frei !== true);
   if (zaehlend.length === 0) return "gold";
   const schwer = zaehlend.some((k) => k.stufe !== "leicht");
   if (schwer || zaehlend.length > LEICHTE_FUER_SILBER) return "bronze";
@@ -148,9 +148,20 @@ export function mitGespielterKarte(
 ): Abenteuerstand {
   const karten = stand.partiekarten;
   if (!karten) return stand;
-  const spiel: Kartenspiel = { kennung: sorte.kennung, stufe: sorte.stufe, halbzug };
+  // Freie Karten der Begegnung (R29) kommen nicht aus dem Besitz und merken sich ihr Spielen
+  // als Dialogvariable (`mentorzugFreiGespielt`, für den Extra-Abspann).
+  const frei = karten.frei?.includes(sorte.kennung) === true;
+  const spiel: Kartenspiel = {
+    kennung: sorte.kennung,
+    stufe: sorte.stufe,
+    halbzug,
+    ...(frei ? { frei } : {}),
+  };
+  const dialogvariablen = frei
+    ? { ...stand.dialogvariablen, [`${sorte.kennung}FreiGespielt`]: true }
+    : stand.dialogvariablen;
   const besitz =
-    sorte.art === "verbrauch"
+    !frei && sorte.art === "verbrauch"
       ? stand.karten
           .map((k) => (k.kennung === sorte.kennung ? { ...k, anzahl: k.anzahl - 1 } : k))
           .filter((k) => k.anzahl > 0)
@@ -158,6 +169,7 @@ export function mitGespielterKarte(
   return {
     ...stand,
     karten: besitz,
+    dialogvariablen,
     partiekarten: { ...karten, gespielt: [...karten.gespielt, spiel], letzterHalbzug: halbzug },
   };
 }

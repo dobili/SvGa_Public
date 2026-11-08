@@ -146,6 +146,20 @@ function useVollbild(): boolean {
   return abenteuerpartie;
 }
 
+/**
+ * Blindschach des Schach-Abenteuers (Variante „blind“ einer Partie): Der Rahmen bekommt eine
+ * Klasse, die die Figuren auf dem Brett ausblendet (abenteuer.css). Ohne Spiel immer false.
+ */
+function useBlindschach(): boolean {
+  const { ansicht } = useNavigation();
+  const partieId = ansicht.bildschirm === "partie" ? ansicht.id : null;
+  return useSpeicher(
+    (z) =>
+      partieId !== null &&
+      findePartie(z.daten.spiel, partieId)?.einstellung.abenteuer?.variante === "blind",
+  );
+}
+
 /** Ein Bildschirm aus der Liste der Pakete (app/zusatzansichten.ts); unbekannt → das Buch. */
 function Zusatzbildschirm({ kennung, wert }: { kennung: string; wert: string | null }) {
   const eintrag = zusatzansicht(kennung);
@@ -281,8 +295,13 @@ function Hauptrahmen() {
   // Kürzel „Fehler mit Buchbezug“ je ausgewerteter Partie, im Leerlauf (Startseite, Muster).
   useBuchkuerzelNachtrag();
   const vollbild = useVollbild();
+  const blind = useBlindschach();
   return (
-    <div className={vollbild ? "rahmen rahmen-vollbild" : "rahmen"}>
+    <div
+      className={["rahmen", vollbild && "rahmen-vollbild", blind && "rahmen-blindschach"]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <UpdateHinweis />
       <SicherungsHinweis />
       <SafariHinweis />

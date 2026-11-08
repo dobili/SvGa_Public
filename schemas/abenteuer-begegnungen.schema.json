@@ -91,6 +91,25 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "variante": {
+          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar. Varianten zählen nie für Nadeln, Wertung oder die App",
+          "enum": ["blind"]
+        },
+        "abgelenktAb": {
+          "description": "Stärkewechsel mitten in der Partie (Akt 4, Halbfinale): ab diesem Halbzug macht der Gegner um den Faktor häufiger Fehler",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["halbzug", "faktor"],
+          "properties": {
+            "halbzug": { "type": "integer", "minimum": 1, "maximum": 300 },
+            "faktor": { "type": "number", "minimum": 1, "maximum": 3 }
+          }
+        },
+        "freieKarten": {
+          "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+        },
         "zeit": {
           "description": "Bedenkzeit (Schritt 13): „wahl“ lässt den Leser vor der Partie wählen (ohne Uhr, Schnellschach, Blitz); eine feste Uhr gehört zur Geschichte (Schaffner 3 + 2). Fehlend: ohne Uhr",
           "oneOf": [

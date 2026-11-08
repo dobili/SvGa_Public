@@ -101,3 +101,14 @@ describe("eroeffnungAus und farbeAus", () => {
     expect(farbeAus("zufall", () => 0.7)).toBe("black");
   });
 });
+
+describe("Varianten und Stärkewechsel (Akt 4)", () => {
+  it("geben Variante und Stärkewechsel an die Partie weiter", () => {
+    const e = partieeinstellungAus(
+      { ...AUFTRAG, variante: "blind", abgelenktAb: { halbzug: 40, faktor: 1.5 } },
+      false,
+    );
+    expect(e.abenteuer?.variante).toBe("blind");
+    expect(e.abenteuer?.abgelenktAb).toEqual({ halbzug: 40, faktor: 1.5 });
+  });
+});

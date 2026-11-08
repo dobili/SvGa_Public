@@ -127,6 +127,27 @@ const FIGUREN = {
   dot: ["short14", "weiss", "h2", "variant22", "cc6192", "light05", "", ""], // Motel, 70
   buck: ["short06", "grau", "h3", "variant18", "ae0001", "", "variant08", "variant10"], // Tankwart
   okoro: ["short01", "weiss", "h8", "variant21", "614f8a", "light04", "variant03", ""], // Antiquariat
+  // Akt 4 (Story-Bibel Teil 4, Abschnitt 27; Namen in kebab-case, bei Doppelung mit Nachnamen)
+  ward: ["short14", "hellgrau", "h2", "variant22", "614f8a", "light06", "", ""], // Großmeisterin, Mitte 60
+  kit: ["long03", "dunkelbraun", "h5", "variant17", "d11141", "", "", "variant08"], // 15, Bergführerkind
+  haraldsen: ["short01", "weiss", "h1", "variant19", "03396c", "", "variant06", "variant05"], // Seilbahn
+  sol: ["long12", "schwarz", "h6", "variant17", "00b159", "dark02", "", ""], // Bergführerin
+  darlene: ["long18", "blond", "h3", "variant13", "ff6f69", "", "", ""], // Raststätte Crossroads
+  hollis: ["long11", "rot", "h2", "variant16", "5f705c", "", "", "variant07"], // Rangerin
+  ezra: ["short18", "dunkelbraun", "h7", "variant10", "ffc425", "", "", ""], // Camp-Betreuer, 20
+  pruitt: ["short01", "weiss", "h3", "variant18", "83623b", "", "variant07", "variant10"], // Ghost Town
+  bea: ["long09", "blond", "h1", "variant05", "428bca", "light03", "", ""], // Vorrunde, Maes Schwester
+  marcus: ["short22", "schwarz", "h8", "variant11", "d11141", "", "", ""], // Vorrunde, Taktiker
+  tobias: ["short15", "rot", "h1", "variant12", "ffd969", "dark05", "", ""], // Zeitdruck-Spezialist
+  kade: ["short03", "blond", "h2", "variant23", "a9a9a9", "", "", ""], // Konzern-Junior
+  turnierleiterin: ["short12", "grau", "h6", "variant23", "323232", "light01", "", ""], // Capital Arena
+  earl: ["short06", "grau", "h3", "variant14", "2663a3", "", "variant04", "variant01"], // Fernfahrer, L8
+  bell: ["long06", "braun", "h4", "variant16", "5f705c", "", "", "variant07"], // Rangerin am Geysir, L4
+  "ray-castillo": ["short10", "schwarz", "h5", "variant15", "88d8b0", "", "variant02", "variant02"], // Sturmjäger, L6
+  greta: ["long20", "hellgrau", "h2", "variant17", "a04b5d", "", "", ""], // Hüttenwirtin, L2
+  juniper: ["long13", "kupfer", "h3", "variant16", "ff6f69", "", "", ""], // Kletterin, L3
+  abe: ["short05", "weiss", "h4", "variant20", "2663a3", "", "variant08", "variant09"], // Leuchtturm, L7
+  theron: ["short02", "grau", "h8", "variant18", "ffeead", "", "variant05", "variant03"], // Luftboot, L5
   // Erinnerung London 1851
   kellner: ["short03", "dunkelbraun", "h2", "variant20", "323232", "", "variant01", ""],
   zeitungsjunge: ["short24", "rot", "h1", "variant04", "83623b", "", "", "variant09"],

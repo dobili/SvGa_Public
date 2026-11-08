@@ -75,7 +75,8 @@ export function nachStoryPartie(
   gespielteKarten: readonly Kartenspiel[],
 ): Abenteuerstand {
   const s = punkte(ausgang);
-  if (s === null || gespielteKarten.some((k) => k.stufe !== "leicht")) return stand;
+  if (s === null || gespielteKarten.some((k) => k.frei !== true && k.stufe !== "leicht"))
+    return stand;
   const k = stand.wertungPartien < PARTIEN_MIT_GROSSEM_K ? K_ANFANG : K_DANACH;
   const wertung = Math.max(
     A_MIN,

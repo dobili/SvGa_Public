@@ -28,6 +28,7 @@ export function Deckwahl({
   zeitwahl,
   farbeFrei = false,
   mentorGesperrt = false,
+  freieKarten = [],
   steckbrief = [],
   beiWahl,
   beiAbbruch,
@@ -46,6 +47,8 @@ export function Deckwahl({
   readonly farbeFrei?: boolean;
   /** Regel R29: Mentor-Zug zwischen Tiefpunkt und Versöhnung gesperrt. */
   readonly mentorGesperrt?: boolean;
+  /** Freie Karten der Begegnung (R29), liegen ohne Besitz zusätzlich im Deck. */
+  readonly freieKarten?: readonly string[];
   /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
   readonly steckbrief?: readonly string[];
   readonly beiWahl: (
@@ -146,6 +149,15 @@ export function Deckwahl({
         </p>
       ))}
       {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
+      {freieKarten.length > 0 && (
+        <p data-testid="abenteuer-freie-karten">
+          {tSpiel("deck.frei", {
+            karten: freieKarten
+              .map((k) => tSpiel(alleSorten.find((s) => s.kennung === k)?.name ?? k))
+              .join(", "),
+          })}
+        </p>
+      )}
       {mitFarbwahl && (
         <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.farbe")}>
           {(["white", "black"] as const).map((f) => (

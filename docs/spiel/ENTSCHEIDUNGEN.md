@@ -581,6 +581,23 @@ Buck bleibt bei Abbildung 1.36: 8.44 steht bei Stockfish Tiefe 28 auf +2,84, zu 
 Stellungsduell nach R13 (Befund mittel-1). R29 gebaut: Zwischen Tiefpunkt und Versöhnung steht der
 Mentor-Zug nicht zur Wahl im Deck (`mentorzugGesperrt`).
 
+**Freie Karten (R29, Vorschlag V6 gebaut, 8.11.2026):** Begegnungen können `freieKarten` tragen
+(Halbfinale: `["mentorzug"]`). Sie liegen ohne Besitz zusätzlich im Deck, werden nicht verbraucht,
+zählen nicht für Nadel und Abenteuerwertung (`Kartenspiel.frei`) und setzen beim Spielen
+`<kennung>FreiGespielt` (für den Extra-Abspann: `mentorzugFreiGespielt`). Die Deckwahl nennt sie.
+Stärkewechsel mitten in der Partie (Halbfinale): Begegnungsfeld `abgelenktAb {halbzug, faktor}`, ab dem
+Halbzug macht der Bot um den Faktor häufiger Fehler (`wahlHaeufigkeit`). Turniermodus der Landesmeisterschaft: ohne neue Technik über Begegnungen und Ink (Punkte aus
+`ausgang…`-Variablen, Wiederholen über den Dialog); der Haupt-Chat baut nur, was Ink nicht kann.
+
+**Abspann (Akt 4, Technikliste Punkt 7, 8.11.2026):** Ink-Funktion `zeigeAbspann()`; die Oberwelt
+zeigt danach `oberwelt/Abspann.tsx`: alle Figuren der Welt mit Porträt, Mitwirkende, und den
+Extra-Abspann (Ambroses Zettel), wenn `mentorzugFreiGespielt` nicht gesetzt ist.
+
+**Erste Variante: Blindschach (V1/L2, 8.11.2026):** Begegnungsfeld `variante: "blind"`; die
+Partie trägt `einstellung.abenteuer.variante`, der Rahmen der App bekommt `rahmen-blindschach`, die
+Figuren des Bretts sind unsichtbar (die Zugliste bleibt). Varianten zählen nie für App, Wertung
+oder Nadeln (`zaehltFuerApp` false). Schach960 und die Varianten mit Fairy-Stockfish folgen.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

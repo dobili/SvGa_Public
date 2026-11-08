@@ -161,6 +161,9 @@ function partiekartenAus(roh: unknown): Partiekarten | null {
     letzterHalbzug: typeof roh.letzterHalbzug === "number" ? roh.letzterHalbzug : null,
     ...(typeof roh.gegner === "string" ? { gegner: roh.gegner } : {}),
     ...uhrAus(roh.uhr),
+    ...(Array.isArray(roh.frei)
+      ? { frei: roh.frei.filter((k): k is string => typeof k === "string") }
+      : {}),
   };
 }
 

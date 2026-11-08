@@ -2578,3 +2578,77 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
    Pruitt, Bea, Marcus, Tobias, Kade, Turnierleiterin, die Vell-Familie, Figuren der Wege.
 9. **Post-Game:** zweiter Durchlauf (+300, R10), getrennte Nadeln des zweiten Durchlaufs (V5),
    Bonusgegner „Echo“.
+
+## 35. Die Fernpartie Whitlock–Hale 1865/66
+
+Erfundene Partie (C3: „Ambroses eigene Partie bleibt erfunden“), konstruiert am 08.11.2026 mit
+Stockfish 19 (lite, aus `app/node_modules`, über python-chess, nur lokal): Eröffnung von Hand
+gesetzt (Evans-Gambit mit Lasker-Verteidigung 7… d6, 8… Lb6, eine Eröffnung der Zeit und Ambroses
+Lieblingsgambit), danach je Zug eine Wahl unter den Zügen, die höchstens 0,35 Bauern schlechter
+waren als der beste (Tiefe 10), damit die Partie menschlich wirkt. Ambrose führt Weiß, Hale Schwarz.
+Charakter: Ambrose opfert im Angriff (35. Lxh6, 36. Sxf6+), Hale verteidigt nüchtern und hält mit zwei
+Springern gegen den Turm; die Partie endet unvollendet im Endspiel (Teil 1, Zeitlinie; Dokument 02,
+2.2).
+
+**PGN** (englische Kurznotation wie in den Daten der App):
+
+```pgn
+[Event "Fernpartie (Revanche)"]
+[Site "New Orleans – Norden, per Brief"]
+[Date "1865.??.??"]
+[White "Whitlock, Ambrose"]
+[Black "Hale, Josiah"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O d6 8. cxd4 Bb6
+9. Nc3 Na5 10. Bb5+ Bd7 11. Rb1 Ne7 12. h3 Bxb5 13. Rxb5 Qd7 14. Kh2 f6 15. d5 Nc4
+16. Nd4 c6 17. Rb3 Bxd4 18. Qxd4 Na5 19. Rb1 b6 20. dxc6 Naxc6 21. Qa4 O-O 22. Bf4 Rad8
+23. Rfd1 Na5 24. Qa3 Nec6 25. Nb5 Qe6 26. Nxd6 Rd7 27. Rd5 h6 28. Rbd1 Rfd8 29. Qa4 Kh7
+30. Nb5 Kg8 31. Nc7 Qe7 32. Rxd7 Rxd7 33. Nd5 Qf7 34. Bd2 Qe6 35. Bxh6 gxh6 36. Nxf6+ Qxf6
+37. Rxd7 Qxf2 38. Qa3 Nc4 39. Qg3+ Qxg3+ 40. Kxg3 b5 *
+```
+
+Deutsch zum Vorlesen: 1. e4 e5 2. Sf3 Sc6 3. Lc4 Lc5 4. b4 Lxb4 5. c3 La5 6. d4 exd4 7. 0-0 d6 8. cxd4
+Lb6 … 35. Lxh6 gxh6 36. Sxf6+ Dxf6 37. Txd7 Dxf2 38. Da3 Sc4 39. Dg3+ Dxg3+ 40. Kxg3 b5.
+
+**Was wann geschah (Halbzüge, 1 = 1. e4):**
+
+| Halbzüge | Züge                  | Bedeutung                                                                                                                         |
+| -------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 1–72     | 1. e4 bis 36… Dxf6    | die neun Fragmente (unten), über alle Akte verteilt                                                                               |
+| 73–79    | 37. Txd7 bis 40. Kxg3 | Zugerraten im Flashback „Die letzte Kerze“ (Akt 4, Szene 99): vier weiße Züge, Ambroses letzter Zug ist **40. Kxg3** (Halbzug 79) |
+| 80       | 40… b5                | Hales Antwort auf der herausgerissenen Seite (Akt 3, Szene 57; Akt 4, Szene 88)                                                   |
+| ab 81    | 41. Weiß am Zug       | Stellungsduell in Ghost Town (Akt 4, Szene 100): {held} mit Ambroses Seite (Weiß), Victor mit Hales                               |
+
+**Fragmente** (Dokument 02, 3.3; das Feld `halbzug` der Quest-Wirkung `fragment` ist die Nummer des
+Fragments): Fragment n enthält die Halbzüge 8n + 1 bis 8n + 8, also die Züge 4n + 1 bis 4n + 4.
+
+| Fragment | Halbzüge | Züge  | Woher (Akt, Szene)                          | Inhalt                                         |
+| -------- | -------- | ----- | ------------------------------------------- | ---------------------------------------------- |
+| 0        | 1–8      | 1–4   | Akt 1, Szene 7: Abernathys Brett im Park    | Italienisch, 4. b4: das Evans-Gambit           |
+| 1        | 9–16     | 5–8   | Akt 1, Szene 20: Erinnerung New York        | Gambit angenommen, Hale gibt den Bauern zurück |
+| 2        | 17–24    | 9–12  | Akt 2: Partieformular, Boateng entziffert   | 10. Lb5+: Ambrose greift sofort an             |
+| 3        | 25–32    | 13–16 | Akt 2, Szene 35: Flashback London           | 15. d5: Weiß gewinnt Raum                      |
+| 4        | 33–40    | 17–20 | Akt 2, Szene 47: Erinnerung Bird–Morphy     | 20. dxc6: die Stellung öffnet sich             |
+| 5        | 41–48    | 21–24 | Akt 3, Szene 66: Flashback Werkstatt        | beide rochieren und bringen die Türme          |
+| 6        | 49–56    | 25–28 | Akt 3, Szene 77: Erinnerung 1858            | 26. Sxd6: Ambroses Springer dringt ein         |
+| 7        | 57–64    | 29–32 | Akt 3, Szene 76: Hales Brief                | der Springer tanzt bis c7, Tausch auf d7       |
+| 8        | 65–72    | 33–36 | Akt 4, Szene 85: Erinnerung Hastings (Ward) | **35. Lxh6! gxh6 36. Sxf6+!**: das Doppelopfer |
+
+Hinweis für die Daten: Die vorhandenen Wirkungen `fragment` passen zu dieser Tabelle (Maple Falls 0,
+Cedar Creek 1 und 2, Riverton 3, Ironwood 4, Port Delacroix 5, Desert Springs 6 und 7); Fragment 8
+(Ward, Summit City) fehlt noch, bis die Quests von Akt 4 stehen.
+
+**Stellungen** (FEN):
+
+- Nach Fragment 8 (Halbzug 72, vor 37. Txd7): `6k1/p2r4/1pn2q1p/n7/Q3P3/7P/P4PPK/3R4 w - - 0 37`
+- Vor Ambroses letztem Zug (Halbzug 78): `6k1/p2R4/1pn4p/8/2n1P3/6qP/P5PK/8 w - - 0 40`
+- **Startstellung des Stellungsduells** (nach Hales Antwort, Halbzug 80):
+  `6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41`. Weiß: König g3, Turm d7, Bauern a2, e4, g2, h3;
+  Schwarz: König g8, Springer c4 und c6, Bauern a7, b5, h6. Bewertung für Weiß +1,44 (Tiefe 14),
+  +1,44 (Tiefe 16), +1,85 (Tiefe 18), kein schnelles Matt: R13 (+0,8 bis +2,5) erfüllt.
+  Vorschlag für die Begegnung `ghostTown.fernpartie`: Stellungsduell, 15 Züge, Mindestvorteil 1,0,
+  Leser Weiß, ohne Uhr, Karten gesperrt (Szene 100), Victor als Gegner (Rolle `story`, E + 400).
+
+Buchbezug: Turm gegen zwei Springer ist ein Endspiel der Kapitel 8 und 9 (Aktivität des Königs,
+Freibauern); Ambroses Doppelopfer gehört zu Kapitel 1, Abschnitt 1.6 (Goldene Angriffsregel).

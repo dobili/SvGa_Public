@@ -81,6 +81,7 @@ import {
 import { Deckwahl } from "./Deckwahl";
 import { lupenzeilen } from "./steckbrieftext";
 import { Reisen } from "./Reisen";
+import { Abspann } from "./Abspann";
 import { reiseziele } from "./reiseziele";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
@@ -151,6 +152,8 @@ export function Oberwelt() {
   } | null>(null);
   // Ein Laden, den ein Dialog geöffnet hat (G5); er erscheint, wenn der Dialog zu ist.
   const ladenInArbeit = useRef<string | null>(null);
+  const abspannInArbeit = useRef(false);
+  const [abspann, setzeAbspann] = useState(false);
   const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
   // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
   const rundeInArbeit = useRef<string | null>(null);
@@ -499,6 +502,9 @@ export function Oberwelt() {
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
   const wirkungen: Wirkungen = {
+    zeigeAbspann: () => {
+      abspannInArbeit.current = true;
+    },
     oeffneLaden: (kennung) => {
       ladenInArbeit.current = kennung;
     },
@@ -598,7 +604,11 @@ export function Oberwelt() {
         zustand: sichtbarerZustand(auftrag),
       },
       partiekarten: {
-        deck: deck.filter((k) => !vorher.some((v) => v.kennung === k)),
+        deck: [
+          ...deck.filter((k) => !vorher.some((v) => v.kennung === k)),
+          ...(auftrag.freieKarten ?? []).filter((k) => !deck.includes(k)),
+        ],
+        ...(auftrag.freieKarten ? { frei: auftrag.freieKarten } : {}),
         gespielt: vorher,
         wiedereinstieg: auftrag.format.art === "wiedereinstieg",
         letzterHalbzug: null,
@@ -670,6 +680,10 @@ export function Oberwelt() {
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;
     if (reise) wechsleKarte(reise.karte, reise.ausloeser);
+    if (abspannInArbeit.current) {
+      abspannInArbeit.current = false;
+      setzeAbspann(true);
+    }
     const laden = ladenInArbeit.current;
     ladenInArbeit.current = null;
     if (laden) setzeOffenerLaden(laden);
@@ -687,7 +701,13 @@ export function Oberwelt() {
     }
     if (!auftrag) return;
     const mitLupe = neu.gegenstaende.includes(LUPE);
-    if ((auftrag.kartenErlaubt && neu.karten.length > 0) || auftrag.zeitwahl || mitLupe)
+    const mitFreien = (auftrag.freieKarten?.length ?? 0) > 0;
+    if (
+      (auftrag.kartenErlaubt && neu.karten.length > 0) ||
+      auftrag.zeitwahl ||
+      mitLupe ||
+      mitFreien
+    )
       setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);
   };
@@ -778,6 +798,7 @@ export function Oberwelt() {
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
+          freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
             startePartie(
               {
@@ -802,6 +823,9 @@ export function Oberwelt() {
           }}
           beiSchliessen={() => setzeOffenerLaden(null)}
         />
+      )}
+      {abspann && welt && (
+        <Abspann stand={stand} daten={welt.daten} beiSchliessen={() => setzeAbspann(false)} />
       )}
       {reisen && welt && (
         <Reisen

@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Karten der Erinnerung London 1851
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zehnter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/erinnerung-london-strand.json`,
@@ -257,3 +257,60 @@ Immunität (Vorschlag; „immun“ heißt: `spruch.immun`, Karte trotzdem verbra
   für `gruebelfalle` und `ablenkung` (schaut ständig auf die Smartwatch).
 - **Schiffskoch:** immun gegen `ablenkung` (arbeitet in einer lauten Kombüse); anfällig für
   `grossesMaul` (steht unter Zeitdruck, die Suppe muss raus) und `gruebelfalle`.
+
+Zweig: `abenteuer-aufgabenzuordnung`. Zwei Karten neu. Prüfungen: 375 Pipeline-Tests bestanden,
+Paketbau sauber, Prettier für die neuen Karten sauber (`inhalte/abenteuer/runden.json` meldet
+Prettier, die Datei ist nicht von mir). Handprüfung mit `pipeline/abenteuer/karten.py`: beide Karten
+alles von `start` erreichbar, Rand geschlossen.
+
+- `erinnerung-london-strand` (28 × 20): drei Häuserzeilen mit Ladenfronten, Kaffeehaustür im
+  dritten Haus, Straße Reihe 9–11 mit Droschke, Gaslaternen beidseits, Themse unten (Reihen 15–18,
+  als Wand). Objekte: `start` (Richtung oben) und `ankunft` nebeneinander am Gehweg (Kartentest
+  verlangt `start`, wie bei `bushaltestelle`), `kaffeehausTuer`, `droschke`, Figur
+  `zeitungsjunge`; Belebung `passanten` (tag), `tauben`, `laternenanzuender` (abend),
+  `droschkenpferd` (sitzen, vor der Droschke; zusätzlich zur Vorgabe).
+- `erinnerung-london-kaffeehaus` (16 × 12): Theke, Zeitungsständer, Tische, `schachtisch` (Brett
+  in der Mitte), `rueckkehr` (große Uhr in der oberen Wand, von unten ansprechbar), `tuer` unten,
+  `start` vor der Tür; Figuren `kellner` (hinter der Theke), `zeitungsleser` (am Ständer);
+  Belebung `gaeste` (schauen der Partie zu).
+
+Kein Übergang am Kartenrand: Die Erinnerung beginnt über `ankunft`, endet über `rueckkehr`.
+Sobald mittel-1 den Ort in `orte.json` einträgt, prüft der Kartentest beide Karten selbst.
+
+```text
+erinnerung-london-strand.json
+############################
+#                          #
+# ###### ###### ######     #
+# #F##F# #F##F# #F##F#     #
+# ###### ###### ######     #
+# ###### ###### ######     #
+# ###### ###### ##k###     #
+#                          #
+#   L      L  Z   L     L  #
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#TTTTTdKTTTTTTTTTTTTTTTTTTT#
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+# sa                       #
+#   L      L      L     L  #
+#                          #
+############################
+############################
+############################
+############################
+############################
+
+erinnerung-london-kaffeehaus.json
+###F####r###F###
+#              #
+#K         KKKK#
+#KZ          K #
+#  K           #
+#      s       #
+#          K   #
+#              #
+#  K        K  #
+#              #
+#       s      #
+########t#######
+```

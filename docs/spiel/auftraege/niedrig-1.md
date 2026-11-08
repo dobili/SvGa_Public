@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: fünf Figuren auf die Karten von Maple Falls und Pinewood Camp
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der vierzehnte Auftrag, fünf Figuren, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/karten/pinewood-camp-aussen.json`,

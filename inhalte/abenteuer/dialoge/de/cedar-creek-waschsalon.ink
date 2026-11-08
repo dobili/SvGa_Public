@@ -5,11 +5,10 @@
 // Einstiege wie in orte.json: „boateng“, „trockner“. Die Quest beginnt mit dem ersten Gespräch
 // (Knoten boateng_erstes_treffen); der Trockner bietet das Rätsel erst danach an, damit die Runde
 // nicht vor dem Start der Quest gelöst wird.
-// trocknerStellungBestanden setzt die Hülle (Vorschlag V-Dialog im Bericht mittel-1).
+// trocknerStellungBestanden setzt die Hülle (regeln/dialogvariablen.ts).
 
 EXTERNAL beginneAufgaben(runde)
 
-VAR held = "Du"
 VAR boatengGetroffen = false
 VAR boatengLagos = false
 VAR trocknerStellungBestanden = false

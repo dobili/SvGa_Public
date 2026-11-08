@@ -3,13 +3,12 @@
 // Szenen der Story-Bibel (docs/spiel/05_Story_Bibel.md, Abschnitt 4): 5 Erster Schultag, erster
 // Teil (Juno an der Bushaltestelle, akt1.ersterSchultag), 8 Lilys Springer (Hilfe-Quest
 // mapleFalls.lilysSpringer). Einstiege: „juno“ und „lily“; beide verzweigen nach dem Spielstand.
-// springerLilyBestanden setzt die Hülle nach der Aufgabenrunde mapleFalls.springerLily (Vorschlag
-// im Bericht mittel-1). Belohnungen stehen in quests.json.
+// springerLilyBestanden setzt die Hülle nach der Aufgabenrunde mapleFalls.springerLily
+// (regeln/dialogvariablen.ts). Belohnungen stehen in quests.json.
 
 EXTERNAL beginneAufgaben(runde)
 
-VAR held = "Du"
-VAR ausgangErsteLektion = ""
+VAR ausgangMapleFallsErsteLektion = ""
 VAR junoGetroffen = false
 VAR clubBeigetreten = false
 VAR lilyGetroffen = false
@@ -19,7 +18,7 @@ VAR nadelMapleFalls = 0
 
 === juno ===
 {
-- not junoGetroffen and ausgangErsteLektion != "": -> juno_trifft
+- not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> juno_trifft
 - not junoGetroffen: -> juno_frueh
 - not clubBeigetreten: -> juno_zum_club
 - else: -> juno_alltag

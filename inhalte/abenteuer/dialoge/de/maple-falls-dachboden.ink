@@ -19,16 +19,18 @@ EXTERNAL beginnePartie(begegnung)
 VAR held = "Du"
 VAR ambroseVertrauen = 0
 VAR brettBeruehrt = false
-// Ergänzt mit dem Auftrag mittel-1 (Dialoge Maple Falls): ausgangErsteLektion, reiheSamBestanden,
-// reiheJunoBestanden und nadelMapleFalls setzt die Hülle nach Partie, Aufgabenrunde und Clubkampf
-// (Vorschlag im Bericht); die übrigen setzt Ink selbst.
+// Ergänzt mit dem Auftrag mittel-1 (Dialoge Maple Falls): ausgangMapleFallsErsteLektion,
+// reiheSamBestanden, reiheJunoBestanden und nadelMapleFalls setzt die Hülle nach Partie,
+// Aufgabenrunde und Clubkampf (regeln/dialogvariablen.ts); endeAkt1Gesehen setzt
+// cedar-creek-aussen.ink; die übrigen setzt Ink in dieser Datei.
 VAR ersteLektionBesprochen = false
 VAR clubBeigetreten = false
 VAR kenntHale = false
-VAR ausgangErsteLektion = ""
+VAR ausgangMapleFallsErsteLektion = ""
 VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR nadelMapleFalls = 0
+VAR endeAkt1Gesehen = false
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
@@ -94,14 +96,14 @@ Nun? Hast du das Brett nur zum Anschauen hochgetragen? #sprecher:ambrose
 
 === ambrose ===
 {
-- ausgangErsteLektion == "": -> ambrose_wartet
+- ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie
 - else: -> ambrose_rat
 }
 
 === nach_erster_partie ===
 ~ ersteLektionBesprochen = true
-{ausgangErsteLektion:
+{ausgangMapleFallsErsteLektion:
 - "sieg": Du hast gewonnen. Glück ist der Anfang jeder Begabung. Der Rest ist Arbeit. #sprecher:ambrose #stimmung:stolz
 - "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose
 - else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose
@@ -131,6 +133,7 @@ Geh hin. Nimm mich mit. Ich will sehen, wie man heute spielt. #sprecher:ambrose
 - not (reiheSamBestanden and reiheJunoBestanden): Erst die Aufgaben deiner Mitspieler. Wer die Aufgaben scheut, scheut auch den Gegner. #sprecher:ambrose
 - nadelMapleFalls == 0: Die Trainerin wartet. Und denk daran: Sie sieht nur ihren eigenen Angriff. #sprecher:ambrose
 - not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
+- endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus, {held}. #sprecher:ambrose
 - else: Cedar Creek? Den Namen habe ich nie gehört. Ich war allerdings eine Weile verhindert. #sprecher:ambrose
 }
 + [„Erzähl mir von früher.“]

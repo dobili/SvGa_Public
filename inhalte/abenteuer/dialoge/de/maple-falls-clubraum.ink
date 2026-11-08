@@ -5,12 +5,10 @@
 // Teil (akt1.ersterSchultag), 6 Aufgabenreihe (Runden mapleFalls.reiheSam, mapleFalls.reiheJuno),
 // 9 Sams Dame (mapleFalls.samsDame), 11 Clubkampf (akt1.clubnadelMapleFalls), 12 Victor
 // (akt1.victorTrifft, akt1.victorNiederlage oder akt1.victorUeberrascht, Regelwerk R33).
-// Einstiege: „coach“, „sam“, „juno“, „victor“. Nach einer Partie oder Aufgabenrunde öffnet die
-// Hülle wieder den Einstieg der Figur (Vorschlag im Bericht mittel-1); er verzweigt dann über die
-// Variablen, die die Hülle setzt: ausgang… (sieg, remis, niederlage), …Bestanden, nadelMapleFalls.
-//
-// Victors Partie braucht die Begegnung mapleFalls.victor in begegnungen.json (für diesen Auftrag
-// gesperrt); bis dahin endet der Knoten victor_partie ohne Partie (siehe Bericht).
+// Einstiege: „coach“, „sam“, „juno“, „victor“. Nach einer Partie oder Aufgabenrunde spricht der
+// Held die Figur wieder an; ihr Einstieg verzweigt dann über die Variablen, die die Hülle setzt
+// (regeln/dialogvariablen.ts): ausgangMapleFalls… (sieg, remis, niederlage, abgebrochen),
+// …Bestanden, nadelMapleFalls. „abgebrochen“ zählt wie nicht gespielt (Regelwerk R35).
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
@@ -18,7 +16,6 @@ EXTERNAL setzeSzene(kennung)
 
 VAR held = "Du"
 VAR ambroseVertrauen = 0
-VAR junoGetroffen = false
 VAR clubBeigetreten = false
 VAR samGetroffen = false
 VAR samKlagt = false
@@ -26,12 +23,12 @@ VAR samVersoehnt = false
 VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR todsuendenBestanden = false
-VAR ausgangSamRevanche = ""
-VAR ausgangClubkampf = ""
+VAR ausgangMapleFallsSamRevanche = ""
+VAR ausgangMapleFallsClubkampf = ""
 VAR nadelMapleFalls = 0
 VAR clubkampfBesprochen = 0
 VAR victorGesehen = false
-VAR ausgangVictor = ""
+VAR ausgangMapleFallsVictor = ""
 VAR victorUeberrascht = 0
 VAR kenntHale = false
 
@@ -42,7 +39,7 @@ VAR kenntHale = false
 - not clubBeigetreten: -> coach_erstes_treffen
 - not (reiheSamBestanden and reiheJunoBestanden): -> coach_reihe_offen
 - nadelMapleFalls > clubkampfBesprochen: -> coach_nach_sieg
-- nadelMapleFalls == 0 and ausgangClubkampf != "": -> coach_nach_niederlage
+- nadelMapleFalls == 0 and ausgangMapleFallsClubkampf == "niederlage": -> coach_nach_niederlage
 - nadelMapleFalls == 0: -> coach_clubkampf
 - else: -> coach_alltag
 }
@@ -87,7 +84,7 @@ Ich spiele ehrlich. Du auch. Und danach gibt es Kekse, egal wie es ausgeht. #spr
 
 === coach_nach_sieg ===
 ~ clubkampfBesprochen = nadelMapleFalls
-{ausgangClubkampf == "remis":
+{ausgangMapleFallsClubkampf == "remis":
     Remis! Das war knapp. #sprecher:coachDelgado
     Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado
 - else:
@@ -129,9 +126,9 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 - not reiheSamBestanden: -> sam_reihe
 - not samKlagt: -> sam_klagt
 - not todsuendenBestanden: -> sam_klagt_wieder
-- todsuendenBestanden and ausgangSamRevanche == "": -> sam_revanche_angebot
-- ausgangSamRevanche == "sieg" and not samVersoehnt: -> sam_nach_revanche
-- ausgangSamRevanche != "" and ausgangSamRevanche != "sieg": -> sam_revanche_angebot
+- todsuendenBestanden and (ausgangMapleFallsSamRevanche == "" or ausgangMapleFallsSamRevanche == "abgebrochen"): -> sam_revanche_angebot
+- ausgangMapleFallsSamRevanche == "sieg" and not samVersoehnt: -> sam_nach_revanche
+- ausgangMapleFallsSamRevanche != "" and ausgangMapleFallsSamRevanche != "sieg": -> sam_revanche_angebot
 - else: -> sam_alltag
 }
 
@@ -178,7 +175,7 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam
     -> END
 
 === sam_revanche_angebot ===
-{ausgangSamRevanche == "":
+{ausgangMapleFallsSamRevanche == "":
     Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam
 - else:
     Noch mal! Diesmal mache ich alles richtig. Fast alles. #sprecher:sam
@@ -235,7 +232,7 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
 === victor ===
 {
 - not victorGesehen: -> victor_trifft
-- ausgangVictor == "": -> victor_wartet
+- ausgangMapleFallsVictor == "" or ausgangMapleFallsVictor == "abgebrochen": -> victor_wartet
 - not kenntHale: -> victor_nachher
 - else: -> victor_weg
 }
@@ -275,7 +272,7 @@ Victor stellt die Figuren auf. Seine Hände sind ruhig, sein Blick nicht. #sprec
 
 === victor_nachher ===
 ~ kenntHale = true
-{ausgangVictor == "niederlage":
+{ausgangMapleFallsVictor == "niederlage":
     -> victor_niederlage
 - else:
     -> victor_ueberrascht
@@ -301,7 +298,7 @@ Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #spr
 
 === victor_ambrose ===
 Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehler
-{ausgangVictor == "niederlage":
+{ausgangMapleFallsVictor == "niederlage":
     Er hat nicht dich besiegt, sondern diese Stellung. Und in der Stellung hast du dich gewehrt. #sprecher:ambrose
 - else:
     Du hast eine verlorene Stellung gehalten. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz

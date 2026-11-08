@@ -75,6 +75,11 @@ export interface Appdienste {
   readonly ladePaket: (fortschritt: (geladen: number, gesamt: number) => void) => Promise<void>;
   /** Zurück zur vorigen Ansicht der App (Stapel), zum Beispiel nach dem Spielende. */
   readonly zurueck: () => void;
+  /**
+   * Buchkapitel, deren Übungen der Leser in der App alle gelöst hat (Lernkarten, docs/spiel/11,
+   * Abschnitt 5). Beispiel: Kapitel 1 und 4 fertig → [1, 4].
+   */
+  readonly fertigeKapitel: () => readonly number[];
 }
 
 /** Was die Partieansicht einer Leiste gibt (ui/komponenten/partie/usePartie.ts, Partiesteuerung). */

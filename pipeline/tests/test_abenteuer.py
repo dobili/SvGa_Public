@@ -105,6 +105,12 @@ def test_querverweise_stimmen():
         konter = [f"spruch.konter.{name}.{n}" in texte for n in (1, 2)]
         if any(konter) and not all(konter):
             fehler.append(f"{profil['kennung']}: Antworten auf Sprüche unvollständig")
+    # Werkzeugkarten (docs/spiel/11): das Werkzeug gibt es in der App.
+    analyse = HAUPTORDNER / "app" / "src" / "analyse"
+    for karte in _lade("karten.json")["karten"]:
+        werkzeug = karte["wirkung"].get("werkzeug")
+        if werkzeug and not (analyse / f"{werkzeug}.ts").exists():
+            fehler.append(f"{karte['kennung']}: Werkzeug {werkzeug} fehlt in app/src/analyse")
     for kennung in sprueche:
         for n in range(1, 9):
             if f"spruch.{kennung}.{n}" not in texte:

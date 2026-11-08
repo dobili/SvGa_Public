@@ -25,6 +25,16 @@
           "art": "gegenstand",
           "kennung": "fahrrad",
           "preis": 120
+        },
+        {
+          "art": "karte",
+          "kennung": "ablenkung",
+          "preis": 10
+        },
+        {
+          "art": "karte",
+          "kennung": "roentgenblick",
+          "preis": 30
         }
       ]
     },
@@ -42,6 +52,21 @@
           "art": "karte",
           "kennung": "zweiteChance",
           "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "waage",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "schmeichelei",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "remisangebot",
+          "preis": 35
         }
       ]
     },
@@ -69,6 +94,21 @@
           "art": "gegenstand",
           "kennung": "laterne",
           "preis": 60
+        },
+        {
+          "art": "karte",
+          "kennung": "auszeit",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "wasDroht",
+          "preis": 45
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "kartentasche",
+          "preis": 300
         }
       ]
     }

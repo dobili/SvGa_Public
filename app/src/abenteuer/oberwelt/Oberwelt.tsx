@@ -27,7 +27,7 @@ import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
-import { vorgabeFen } from "../regeln/karten";
+import { deckgroesse, mitLernkarten, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
@@ -53,11 +53,12 @@ import {
   auftragFuer,
   auftragFuerRunde,
   kartenFuerWiedereinstieg,
+  mitSchmeichelei,
   sichtbarerZustand,
   wiedereinstiegMoeglich,
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
-import { ZEITKLASSEN } from "../regeln/zeitkarten";
+import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
@@ -165,6 +166,24 @@ export function Oberwelt() {
     // Nur beim Aufbau; danach ändert nur diese Komponente den Stand.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Lernkarten (docs/spiel/11, Abschnitt 5): abgeschlossene Buchkapitel der App schenken Karten.
+  const lernkartenGeprueft = useRef(false);
+  useEffect(() => {
+    const aktuell = standRef.current;
+    if (!welt || !aktuell || lernkartenGeprueft.current) return;
+    lernkartenGeprueft.current = true;
+    const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
+    const ergebnis = mitLernkarten(aktuell, dienste.fertigeKapitel(), sorten, new Date());
+    const erste = ergebnis.neu[0];
+    if (!erste) return;
+    schreibe(ergebnis.stand);
+    setzeMeldung(
+      tSpiel("karte.lernkarte", { kapitel: erste.kapitel ?? 0, karte: tSpiel(erste.name) }),
+    );
+    // Einmal je Aufbau, sobald die Welt da ist.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [welt]);
 
   /** Ein Ereignis der Welt: Quests fortschreiben, Wirkungen anwenden, Meldungen zeigen. */
   const melde = (ereignis: Questereignis, w: Weltdaten | null = weltRef.current) => {
@@ -502,10 +521,11 @@ export function Oberwelt() {
    * gesichert, dann übernimmt die App.
    */
   const startePartie = (
-    auftrag: Partieauftrag,
+    auftragDerBegegnung: Partieauftrag,
     deck: readonly string[],
     schonGespielt: readonly Kartenspiel[] = [],
   ) => {
+    let auftrag = auftragDerBegegnung;
     const aktuell = standRef.current ?? stand;
     const sorten = (welt?.daten.karten ?? []) as unknown as readonly Kartensorte[];
     const gegnerfarbe = auftrag.farbe === "white" ? "black" : "white";
@@ -515,6 +535,9 @@ export function Oberwelt() {
     for (const kennung of deck) {
       const sorte = sorten.find((s) => s.kennung === kennung);
       if (!sorte || sorte.zeitpunkt !== "vorher") continue;
+      // Sprüche nur gegen Straßengegner (docs/spiel/10, S2); sonst bleibt die Karte unberührt.
+      if (sorte.spruch_art && !spruecheErlaubt(auftrag.profil.rolle)) continue;
+      if (sorte.wirkung.art === "schmeichelei") auftrag = mitSchmeichelei(auftrag, aktuell);
       if (sorte.wirkung.art === "vorgabe") {
         const fen = startstellung.art === "fen" ? startstellung.fen : GRUNDSTELLUNG;
         const neu = vorgabeFen(fen, sorte.wirkung.feld, gegnerfarbe);
@@ -669,6 +692,8 @@ export function Oberwelt() {
           besitz={stand.karten}
           sorten={welt.daten.karten}
           mitKarten={deckwahl.kartenErlaubt}
+          groesse={deckgroesse(stand.gegenstaende)}
+          sprueche={spruecheErlaubt(deckwahl.profil.rolle)}
           zeitwahl={deckwahl.zeitwahl === true}
           beiWahl={(deck, zeit) =>
             startePartie(

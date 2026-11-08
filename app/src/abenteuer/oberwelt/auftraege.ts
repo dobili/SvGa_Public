@@ -66,6 +66,28 @@ export function sichtbarerZustand(
   return null;
 }
 
+/** So überheblich macht die Schmeichelei (wie zwei verlorene Partien, Regelwerk R9). */
+export const SCHMEICHELEI_UEBERHEBLICH = 1.3;
+
+/**
+ * Schmeichelei vor der Partie (docs/spiel/11, S7): Der Gegner wird mindestens so überheblich wie
+ * nach zwei Niederlagen des Lesers; die Stärke wird mit dem neuen Zustand neu gerechnet.
+ * Beispiel: Skater Jo, nicht überheblich → ueberheblich 1,3, Häufigkeit der Fehler höher.
+ */
+export function mitSchmeichelei(auftrag: Partieauftrag, stand: Abenteuerstand): Partieauftrag {
+  const zustand = {
+    ...auftrag.zustand,
+    ueberheblich: Math.max(auftrag.zustand.ueberheblich, SCHMEICHELEI_UEBERHEBLICH),
+  };
+  const staerke = gerechneteStaerke(
+    auftrag.profil,
+    zustand,
+    { aktuell: stand.wertung, eingang: stand.eingangswertung },
+    stand.handlung.durchlauf >= 2 ? POST_GAME_AUFSCHLAG : 0,
+  );
+  return { ...auftrag, zustand, staerke };
+}
+
 /** Zustand eines Gegners aus dem Spielstand; ohne Eintrag normal. */
 function zustandAus(stand: Abenteuerstand, gegner: string, rolle: Gegnerrolle): Gegnerzustand {
   const figur = stand.figuren.find((f) => f.kennung === gegner);

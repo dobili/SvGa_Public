@@ -23,6 +23,8 @@ export function Deckwahl({
   besitz,
   sorten,
   mitKarten,
+  groesse = DECKGROESSE,
+  sprueche = false,
   zeitwahl,
   beiWahl,
   beiAbbruch,
@@ -31,6 +33,10 @@ export function Deckwahl({
   readonly sorten: readonly Kartendaten[];
   /** Erlaubt die Begegnung Karten (Story-Sperre, R24)? */
   readonly mitKarten: boolean;
+  /** Deckgröße: 3, mit der Kartentasche 4. */
+  readonly groesse?: number;
+  /** Sind Sprüche erlaubt (nur gegen Straßengegner)? Sonst stehen sie nicht zur Wahl. */
+  readonly sprueche?: boolean;
   /** Darf der Leser die Bedenkzeit wählen? */
   readonly zeitwahl: boolean;
   readonly beiWahl: (deck: readonly string[], zeit: Zeitklasse) => void;
@@ -42,11 +48,12 @@ export function Deckwahl({
   const alleSorten = sorten as unknown as readonly Kartensorte[];
   const waehlbar = besitz.filter((k) => {
     const sorte = alleSorten.find((s) => s.kennung === k.kennung);
+    if (sorte?.spruch_art && !sprueche) return false;
     return sorte !== undefined && sorte.zeitpunkt !== "nachher";
   });
   const schalte = (kennung: string) => {
     if (deck.includes(kennung)) setzeDeck(deck.filter((k) => k !== kennung));
-    else if (deckErlaubt(deck, kennung, alleSorten)) setzeDeck([...deck, kennung]);
+    else if (deckErlaubt(deck, kennung, alleSorten, groesse)) setzeDeck([...deck, kennung]);
   };
   const mitVorgabe = deck.some(
     (k) => alleSorten.find((s) => s.kennung === k)?.wirkung.art === "vorgabe",
@@ -80,7 +87,7 @@ export function Deckwahl({
           {ZEITKLASSEN[zeit] && <p>{tSpiel("deck.zeitHinweis")}</p>}
         </>
       )}
-      {mitKarten && <p>{tSpiel("deck.hinweis", { max: DECKGROESSE })}</p>}
+      {mitKarten && <p>{tSpiel("deck.hinweis", { max: groesse })}</p>}
       {!mitKarten ? null : waehlbar.length === 0 ? (
         <p>{tSpiel("deck.keine")}</p>
       ) : (
@@ -94,7 +101,7 @@ export function Deckwahl({
                 type="button"
                 className="abenteuer-karte"
                 aria-pressed={gewaehlt}
-                disabled={!gewaehlt && !deckErlaubt(deck, k.kennung, alleSorten)}
+                disabled={!gewaehlt && !deckErlaubt(deck, k.kennung, alleSorten, groesse)}
                 onClick={() => schalte(k.kennung)}
               >
                 {tSpiel(sorte?.name ?? k.kennung)}

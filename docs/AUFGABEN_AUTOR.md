@@ -104,6 +104,19 @@ Adresse mit „#abenteuer“ öffnen).
       eigenen Zeile; Rosa und Mr. Harlan sind gegen manche Sprüche immun („lässt sich nicht beirren“), die Karte ist
       dann trotzdem weg. Nebenbei behoben: Die Stellungsduelle aus Buchabbildungen (Jo, Rosa, Nia, Schaffner, Harlan,
       Gus) starteten bisher gar nicht, man stand nach „Los“ wieder in der Welt.
+- [ ] N2620. Neue Karten (16 Stück): In den Läden gibt es jetzt auch Ablenkung (Spruch, 10 Münzen) und Röntgenblick
+      (Kiosk Maple Falls), Waage, Schmeichelei und Remisangebot (Zeitungsstand Riverton), Auszeit, Was droht? und die
+      Kartentasche für 300 Münzen (Eisenwaren Ironwood; danach passen vier Karten ins Deck). Werkzeugkarten nutzen die
+      Werkzeuge des Buches auf der Partiestellung: Abzählen (sucht deine meistbedrohte Figur und zählt), Röntgenblick,
+      Zielkompass, Faktorenwaage, Bauernkompass, Planfinder, Taktikspürnase, Endspielkompass, Turmregel, Phasenblick.
+      „Was droht?“ zeigt als roten Pfeil, was der Gegner spielen würde, wenn er dran wäre (nur Schläge und Schachs
+      zählen als Drohung). „Waage“ sagt, wer besser steht. „Remisangebot“: Der Gegner nimmt bei ausgeglichener
+      Stellung an, sonst lehnt er ab. „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
+      Lernkarten: Wer in der App alle Übungen eines Kapitels gelöst hat, bekommt beim nächsten Öffnen der Welt die
+      Karte des Kapitels geschenkt (Kapitel 1 Abzählen, 2 Zielkompass, 3 Faktorenwaage, 4 Gefahrenradar, 5
+      Bauernkompass, 6 Planfinder, 7 Taktikspürnase, 8 Endspielkompass, 9 Turmregel, 11 Phasenblick, 12 Was droht?),
+      mit der Meldung „Für Kapitel 1 im Buch: …“. Zum Ausprobieren ein Kapitel in der App fertig lösen, dann die Welt
+      öffnen. Sprüche erscheinen in der Deckwahl nur vor Partien gegen Straßengegner.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
@@ -1135,12 +1148,13 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
-### Q19 Weitere Karten und Gegenstände im Schach-Abenteuer (8.11.2026, Empfehlung, wird umgesetzt, Widerspruch genügt)
+### Q19 Weitere Karten und Gegenstände im Schach-Abenteuer (8.11.2026, großteils umgesetzt, Widerspruch genügt)
 
 - [ ] Q19-1. **Grundsätze:** Karten ändern nie die Zugregeln, nur Informationen, Zeit oder die Startstellung; jede
       Karte lehrt eine Frage aus dem Buch; Gold gibt es nur ohne Karten; starke Karten (Vorgaben, Mentor-Zug) bleiben
       unverkäuflich. Nicht geplant sind Karten, die Figuren verschieben, Züge verbieten oder den König schützen.
-- [ ] Q19-2. **Als Nächstes gebaut:** „Was droht?“ (leicht, zeigt als roten Pfeil, was der Gegner spielen würde, wenn
+- [ ] Q19-2. **Schon gebaut (N2620), dein „je mehr, desto besser“:** 16 neue Karten und die Kartentasche, siehe
+      N2620. Noch offen aus der Liste: „Was droht?“ (leicht, zeigt als roten Pfeil, was der Gegner spielen würde, wenn
       er jetzt am Zug wäre; Kapitel 4 und 12) und „Abzählen“ (leicht, ein Feld antippen: Angreifer und Verteidiger;
       Kapitel 1). Danach „Limo“ (Geschenk für Straßengegner, 5 Münzen, bringt eine Steckbriefzeile) und der Spruch
       „Schmeichelei“ (Gegner wird überheblich und spielt schwächer).

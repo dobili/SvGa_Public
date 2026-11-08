@@ -50,6 +50,10 @@ export type Kartenwirkung =
    * kaum noch Zeit. Die echte Uhr bleibt unberührt; wirkt auch ohne Uhr.
    */
   | { readonly art: "zeitnot"; readonly zuege: number }
+  /** Ein Werkzeug des Buches auf die Stellung (docs/spiel/11, K2, K6), etwa „k5-bauern“. */
+  | { readonly art: "werkzeug"; readonly werkzeug: string }
+  /** Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei vor der Partie (S7). */
+  | { readonly art: "drohung" | "waage" | "remis" | "schmeichelei" }
   /** Wiedereinstieg am Kipppunkt ohne Abzug bei der Clubnadel (Post-Game, Entscheidung B2). */
   | { readonly art: "sanduhr" };
 
@@ -75,6 +79,8 @@ export interface Kartensorte {
    * Straßengegner spielbar, nie im Clubkampf oder Turnier, und manche Gegner sind immun.
    */
   readonly spruch_art?: boolean;
+  /** Lernkarte: geschenkt, wenn der Leser in der App alle Übungen dieses Buchkapitels löst. */
+  readonly kapitel?: number;
 }
 
 /** Besitz einer Kartensorte im Spielstand: dauerhafte Karten zählen 1, Verbrauchskarten die Anzahl. */
@@ -92,6 +98,9 @@ export interface Deck {
 
 /** Höchstens so viele Karten je Partie (Konzept: Deck-Taktik). */
 export const DECKGROESSE = 3;
+
+/** Mit dem Gegenstand „Kartentasche“ passt eine Karte mehr ins Deck (docs/spiel/11, I2). */
+export const DECKGROESSE_MIT_TASCHE = 4;
 
 /** Eine in der Partie gespielte Karte; steht im Partieergebnis und bestimmt die Clubnadel. */
 export interface Kartenspiel {

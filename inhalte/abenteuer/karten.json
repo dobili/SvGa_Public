@@ -23,6 +23,7 @@
       "wirkung": {
         "art": "gefahrenradar"
       },
+      "kapitel": 4,
       "zeitpunkt": "waehrend"
     },
     {
@@ -140,6 +141,223 @@
       "wirkung": {
         "art": "zeitnot",
         "zuege": 5
+      },
+      "spruch_art": true,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "abzaehlen",
+      "name": "karte.abzaehlen.name",
+      "spruch": "karte.abzaehlen.spruch",
+      "bild": "karten/abzaehlen.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k1-zaehlen"
+      },
+      "kapitel": 1,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "roentgenblick",
+      "name": "karte.roentgenblick.name",
+      "spruch": "karte.roentgenblick.spruch",
+      "bild": "karten/roentgenblick.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k1-roentgen"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "zielkompass",
+      "name": "karte.zielkompass.name",
+      "spruch": "karte.zielkompass.spruch",
+      "bild": "karten/zielkompass.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k2-zielbilanz"
+      },
+      "kapitel": 2,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "faktorenwaage",
+      "name": "karte.faktorenwaage.name",
+      "spruch": "karte.faktorenwaage.spruch",
+      "bild": "karten/faktorenwaage.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k3-faktorenbilanz"
+      },
+      "kapitel": 3,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "bauernkompass",
+      "name": "karte.bauernkompass.name",
+      "spruch": "karte.bauernkompass.spruch",
+      "bild": "karten/bauernkompass.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k5-bauern"
+      },
+      "kapitel": 5,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "planfinder",
+      "name": "karte.planfinder.name",
+      "spruch": "karte.planfinder.spruch",
+      "bild": "karten/planfinder.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k6-wo"
+      },
+      "kapitel": 6,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "taktikspuernase",
+      "name": "karte.taktikspuernase.name",
+      "spruch": "karte.taktikspuernase.spruch",
+      "bild": "karten/taktikspuernase.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k7-erzwingend"
+      },
+      "kapitel": 7,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "endspielkompass",
+      "name": "karte.endspielkompass.name",
+      "spruch": "karte.endspielkompass.spruch",
+      "bild": "karten/endspielkompass.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k8-regeln"
+      },
+      "kapitel": 8,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "turmregel",
+      "name": "karte.turmregel.name",
+      "spruch": "karte.turmregel.spruch",
+      "bild": "karten/turmregel.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k9-turmbegriffe"
+      },
+      "kapitel": 9,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "phasenblick",
+      "name": "karte.phasenblick.name",
+      "spruch": "karte.phasenblick.spruch",
+      "bild": "karten/phasenblick.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k11-phase"
+      },
+      "kapitel": 11,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "wasDroht",
+      "name": "karte.wasDroht.name",
+      "spruch": "karte.wasDroht.spruch",
+      "bild": "karten/was-droht.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "drohung"
+      },
+      "kapitel": 12,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "waage",
+      "name": "karte.waage.name",
+      "spruch": "karte.waage.spruch",
+      "bild": "karten/waage.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "waage"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "remisangebot",
+      "name": "karte.remisangebot.name",
+      "spruch": "karte.remisangebot.spruch",
+      "bild": "karten/remisangebot.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "remis"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "auszeit",
+      "name": "karte.auszeit.name",
+      "spruch": "karte.auszeit.spruch",
+      "bild": "karten/auszeit.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeit",
+        "wer": "leser",
+        "sekunden": 60
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "schmeichelei",
+      "name": "karte.schmeichelei.name",
+      "spruch": "karte.schmeichelei.spruch",
+      "bild": "karten/schmeichelei.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "schmeichelei"
+      },
+      "spruch_art": true,
+      "zeitpunkt": "vorher"
+    },
+    {
+      "kennung": "ablenkung",
+      "name": "karte.ablenkung.name",
+      "spruch": "karte.ablenkung.spruch",
+      "bild": "karten/ablenkung.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeitnot",
+        "zuege": 1
       },
       "spruch_art": true,
       "zeitpunkt": "waehrend"

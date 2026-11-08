@@ -84,3 +84,37 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await expect(meldung).toContainText("im Park redet man");
   await expect(karte).toBeDisabled();
 });
+
+test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
+  const stand = {
+    ...STAND,
+    karten: [
+      { kennung: "abzaehlen", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" },
+      { kennung: "waage", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" },
+    ],
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-aktion").click();
+  const deckwahl = page.getByTestId("abenteuer-deckwahl");
+  for (let i = 0; i < 20 && !(await deckwahl.isVisible()); i++) {
+    const weiter = page.locator(".abenteuer-dialog-weiter");
+    const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
+    if (await wahl.isVisible()) await wahl.click();
+    else if (await weiter.isVisible()) await weiter.click();
+    else await page.waitForTimeout(100);
+  }
+  await deckwahl.getByRole("button", { name: "Abzählen" }).click();
+  await deckwahl.getByRole("button", { name: "Waage" }).click();
+  await page.getByTestId("abenteuer-deck-los").click();
+  const abzaehlen = page.getByTestId("abenteuer-karte-abzaehlen");
+  await expect(abzaehlen).toBeEnabled({ timeout: 30000 });
+  await abzaehlen.click();
+  const meldung = page.locator(".abenteuer-karte-meldung");
+  await expect(meldung).toBeVisible();
+  await expect(abzaehlen).toBeDisabled();
+});

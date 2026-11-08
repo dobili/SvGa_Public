@@ -510,6 +510,18 @@ den Kapiteldaten auf (Oberflächentest `abenteuer-sprueche.spec.ts`). Offen: Die
 Steckbrief stehen, sobald es eine Steckbriefansicht gibt; ein Wiedereinstieg spielt ohne die
 gewählte Uhr.
 
+**Weitere Karten (8.11.2026, Wunsch des Autors „je mehr, desto besser“, docs/spiel/11):** Zwei neue
+Wirkungsarten: `werkzeug` (ein Werkzeug des Buches mit Bedarf nur „stellung“, Abzählen wählt das
+Feld selbst: eigene Figur mit dem größten Überhang an Angreifern) und `drohung`/`waage`/`remis`/
+`schmeichelei`. 16 Karten, davon 11 Lernkarten mit Feld `kapitel` (Gefahrenradar bekam Kapitel 4);
+Lernkarten schenkt die Oberwelt beim Aufbau, wenn `Appdienste.fertigeKapitel` (alle Übungen des
+Kapitels gelöst) sie nennt, gemerkt in `lernkarte<Kennung>`. „Was droht?“ rechnet den Nullzug
+(nicht im Schach) und nennt nur Schläge und Schachs als Drohung. Remisangebot: angenommen bis
+±0,5 (AUSGEGLICHEN_BIS), Ende „vereinbart“. Schmeichelei: überheblich mindestens 1,3, Stärke neu
+gerechnet. Sprüche fehlen in der Deckwahl außer gegen Straßengegner. Kartentasche (Gegenstand,
+300 Münzen): Deck 4. Nicht gebaut: Schutzengel (bräuchte eine Bewertung jedes eigenen Zuges
+während der Bot rechnet), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

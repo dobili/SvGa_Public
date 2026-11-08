@@ -11,6 +11,9 @@
  */
 import { useMemo } from "react";
 import { ladeKapitel } from "../../daten/laden";
+import { UEBUNGEN_JE_KAPITEL } from "../../daten/uebungsliste-daten";
+import type { Fortschritt } from "../../speicher/format";
+import { geloesteUebungen } from "../../speicher/fortschritt";
 import { useNavigation } from "../../app/navigationsKontext";
 import { findePartie, mitLaufender } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
@@ -99,6 +102,15 @@ async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<s
   return partie.id;
 }
 
+/** Kapitel, deren Übungen alle gelöst sind (Lernkarten des Abenteuers). */
+function fertigeKapitel(fortschritt: Fortschritt): readonly number[] {
+  return Object.entries(UEBUNGEN_JE_KAPITEL)
+    .filter(
+      ([n, liste]) => liste.length > 0 && geloesteUebungen(fortschritt, Number(n)) >= liste.length,
+    )
+    .map(([n]) => Number(n));
+}
+
 /** Die beendete Partie einer Begegnung, wo immer die App sie hält (laufend oder in der Liste). */
 function findeAbenteuerpartie(kennung: string) {
   const spiel = speicherzustand().daten.spiel;
@@ -166,6 +178,7 @@ export function useAppdienste(): Appdienste {
         await aktualisierePaketzustand();
       },
       zurueck,
+      fertigeKapitel: () => fertigeKapitel(speicherzustand().daten.fortschritt),
     }),
     [navigiere, zurueck, mitMaia],
   );

@@ -15,12 +15,14 @@ import { parseSquare } from "chessops/util";
 import type { Color } from "chessops/types";
 import {
   DECKGROESSE,
+  DECKGROESSE_MIT_TASCHE,
   type Kartensorte,
   type Kartenspiel,
   type Kartenstufe,
 } from "../schnittstelle/karten";
 import type { Ausgang, Nadelstufe } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
+import { wendeWirkungenAn } from "./quests";
 
 /** Rangfolge der Nadeln (R21: beste bleibt). */
 const NADELRANG: Readonly<Record<Nadelstufe, number>> = { bronze: 1, silber: 2, gold: 3 };
@@ -88,13 +90,17 @@ export function vorgabeFen(fen: string, feld: string, gegnerfarbe: Color): strin
   return makeFen(setup.value);
 }
 
-/** Darf diese Karte ins Deck (R24: Größe, jede Sorte einmal, höchstens eine Vorgabe)? */
+/**
+ * Darf diese Karte ins Deck (R24: Größe, jede Sorte einmal, höchstens eine Vorgabe)? Die Größe
+ * ist 3, mit der Kartentasche 4 (deckgroesse).
+ */
 export function deckErlaubt(
   deck: readonly string[],
   neu: string,
   sorten: readonly Kartensorte[],
+  groesse: number = DECKGROESSE,
 ): boolean {
-  if (deck.length >= DECKGROESSE || deck.includes(neu)) return false;
+  if (deck.length >= groesse || deck.includes(neu)) return false;
   const sorte = sorten.find((s) => s.kennung === neu);
   if (!sorte || sorte.zeitpunkt === "nachher") return false;
   if (sorte.wirkung.art === "vorgabe") {
@@ -159,4 +165,56 @@ export function mitGespielterKarte(
 /** Stufe einer Karte zu ihrer Kennung (für Anzeige und Protokoll). */
 export function stufeVon(kennung: string, sorten: readonly Kartensorte[]): Kartenstufe | null {
   return sorten.find((s) => s.kennung === kennung)?.stufe ?? null;
+}
+
+/** Die Deckgröße des Lesers: 3, mit dem Gegenstand „Kartentasche“ 4 (docs/spiel/11, I2). */
+export function deckgroesse(gegenstaende: readonly string[]): number {
+  return gegenstaende.includes("kartentasche") ? DECKGROESSE_MIT_TASCHE : DECKGROESSE;
+}
+
+/**
+ * Lernkarten (docs/spiel/11, Abschnitt 5): Karten, deren Buchkapitel der Leser in der App
+ * abgeschlossen hat und die er noch nie geschenkt bekam (Dialogvariable lernkarte<Kennung>).
+ * Beispiel: Kapitel 1 fertig, Abzählen noch nicht geschenkt → [Abzählen].
+ */
+export function neueLernkarten(
+  stand: Abenteuerstand,
+  fertigeKapitel: readonly number[],
+  sorten: readonly Kartensorte[],
+): readonly Kartensorte[] {
+  return sorten.filter(
+    (s) =>
+      s.kapitel !== undefined &&
+      fertigeKapitel.includes(s.kapitel) &&
+      stand.dialogvariablen[lernkartenvariable(s.kennung)] !== true,
+  );
+}
+
+/** Dialogvariable, die eine geschenkte Lernkarte merkt: „lernkarteAbzaehlen“. */
+export function lernkartenvariable(kennung: string): string {
+  return `lernkarte${kennung.charAt(0).toUpperCase()}${kennung.slice(1)}`;
+}
+
+/**
+ * Schenkt alle neuen Lernkarten: Karte in den Besitz, Variable gesetzt. Ausgabe: neuer Stand und
+ * die geschenkten Sorten (für die Meldung „Für Kapitel 1 im Buch: …“).
+ */
+export function mitLernkarten(
+  stand: Abenteuerstand,
+  fertigeKapitel: readonly number[],
+  sorten: readonly Kartensorte[],
+  jetzt: Date,
+): { readonly stand: Abenteuerstand; readonly neu: readonly Kartensorte[] } {
+  const neu = neueLernkarten(stand, fertigeKapitel, sorten);
+  if (neu.length === 0) return { stand, neu };
+  const mitKarten = wendeWirkungenAn(
+    stand,
+    neu.map((s) => ({ art: "karte", karte: s.kennung }) as const),
+    jetzt,
+  );
+  const variablen = Object.fromEntries(neu.map((s) => [lernkartenvariable(s.kennung), true]));
+  return {
+    stand: { ...mitKarten, dialogvariablen: { ...mitKarten.dialogvariablen, ...variablen } },
+    neu,
+  };
 }

@@ -80,6 +80,25 @@
             "art": { "const": "zeitnot" },
             "zuege": { "type": "integer", "minimum": 1, "maximum": 10 }
           }
+        },
+        {
+          "description": "Ein Werkzeug des Buches auf die aktuelle Stellung (docs/spiel/11, K2, K6): Markierungen und Fazit wie im Buch; nur Werkzeuge, die allein die Stellung brauchen",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "werkzeug"],
+          "properties": {
+            "art": { "const": "werkzeug" },
+            "werkzeug": { "type": "string", "pattern": "^k[0-9]+-[a-z]+$" }
+          }
+        },
+        {
+          "description": "Was droht? (K1), Waage (K3), Remisangebot (K5), Schmeichelei (S7, vor der Partie: Gegner überheblich)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art"],
+          "properties": {
+            "art": { "enum": ["drohung", "waage", "remis", "schmeichelei"] }
+          }
         }
       ]
     },
@@ -113,6 +132,12 @@
           "enum": ["dauerhaft", "verbrauch"]
         },
         "wirkung": { "$ref": "#/$defs/wirkung" },
+        "kapitel": {
+          "description": "Lernkarte (docs/spiel/11, Abschnitt 5): wer in der App alle Übungen dieses Buchkapitels löst, bekommt die Karte im Spiel geschenkt",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
         "spruch_art": {
           "description": "Ein Spruch des Helden (docs/spiel/10, S1 bis S6): nur gegen Straßengegner, nie im Club oder Turnier; Texte spruch.<kennung>.1 bis .8",
           "type": "boolean"

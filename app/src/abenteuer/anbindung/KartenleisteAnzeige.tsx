@@ -10,6 +10,7 @@
  * Antwort zurück, Flüstern zeigt drei Kandidaten als Pfeile, Mentor-Zug spielt den besten Zug.
  * Sprüche (Schritt 13): Kühler Kopf und Grübelfalle verschieben Bedenkzeit, Großes Maul setzt
  * gefühlte Zeitnot (anbindung/spruchkarte.ts); nur gegen Straßengegner, Zeitkarten nur mit Uhr.
+ * Werkzeugkarten, Was droht?, Waage und Remisangebot (docs/spiel/11) in anbindung/kartenwirkungen.ts.
  * Abhängigkeiten: engine/engineDienst.ts, analyse/k4-warnsignale.ts, schach/stellung.ts,
  * spiel/zuege.ts, speicher (Spielstand), daten/laden.ts (Kartensorten), regeln/karten.ts, i18n.
  */
@@ -27,6 +28,7 @@ import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/lad
 import { kartenSpielbar, mitGespielterKarte } from "../regeln/karten";
 import { passtZurPartie, spruecheErlaubt } from "../regeln/zeitkarten";
 import { spieleZeitkarte } from "./spruchkarte";
+import { drohung, remisangebot, waage, werkzeugkarte, type Kartenanzeige } from "./kartenwirkungen";
 import type { Kartensorte } from "../schnittstelle/karten";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Leisteneigenschaften } from "../schnittstelle/modul";
@@ -38,6 +40,17 @@ const FINGERZEIG_MS = 1500;
 const FLUESTERN_MS = 2500;
 const MENTOR_MS = 3000;
 const KANDIDATEN = 3;
+
+/** Werkzeugkarte, Drohung oder Waage: was die Karte am Brett und in der Sprechblase zeigt. */
+function zeigeKarte(
+  wirkung: Kartensorte["wirkung"],
+  fen: string,
+  eigene: Partie["einstellung"]["eigeneFarbe"],
+): Promise<Kartenanzeige> {
+  if (wirkung.art === "werkzeug")
+    return Promise.resolve(werkzeugkarte(fen, wirkung.werkzeug, eigene));
+  return wirkung.art === "drohung" ? drohung(fen) : waage(fen);
+}
 
 /** Dialogvariable: Ambrose hat beim ersten Spruch erklärt, wo Sprüche hingehören. */
 const SPRUCH_ERKLAERT = "spruchErklaert";
@@ -185,6 +198,23 @@ export function KartenleisteAnzeige({
           const folge = spieleZeitkarte(partie, sorte, gegner);
           await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, folge.partie) }));
           zeilen = folge.zeilen;
+          break;
+        }
+        case "werkzeug":
+        case "drohung":
+        case "waage": {
+          const anzeige = await zeigeKarte(sorte.wirkung, fen, partie.einstellung.eigeneFarbe);
+          beiMarkierungen([...anzeige.markierungen]);
+          if (anzeige.text) zeilen = [anzeige.text];
+          break;
+        }
+        case "remis": {
+          const name = tSpiel(gegner?.name ?? "");
+          const remis = await remisangebot(partie, fen);
+          if (remis) await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, remis) }));
+          zeilen = [
+            tSpiel(remis ? "karte.remis.angenommen" : "karte.remis.abgelehnt", { gegner: name }),
+          ];
           break;
         }
         default:

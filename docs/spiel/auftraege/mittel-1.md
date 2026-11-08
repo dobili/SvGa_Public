@@ -1,31 +1,34 @@
-# Auftrag mittel-1: Akt 4 abstimmen und das ganze Abenteuer durchsimulieren
+# Auftrag mittel-1: Gesamtsimulation dauerhaft ablegen
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, neunzehnter Auftrag)
+**Stand:** offen (Haupt-Chat, 08.11.2026, zwanzigster Auftrag; der neunzehnte ist zusammengeführt, danke)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** alle Ink-Dateien, `quests.json`, `runden.json`, `begegnungen.json`, `funde.json`,
-`texte/de.json` (nur neue Schlüssel oder Korrekturen), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
+**Darf ändern:** `pipeline/abenteuer/gesamtsimulation.cjs` (neu), `pipeline/tests/test_abenteuer_simulation.py`
+(neu), Ink-Dateien und `quests.json` nur für Befunde des Skripts, `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Akt 4 kommt von zwei Helfern. mittel-2 setzt Variablen, die deine Szenen lesen sollten:
-`novaBitteGehoert`, `novaHilfeZugesagt` (Crossroads) und `victorSeiteGegeben` (Summit City). Den
-Fund „Hales Seite“ gibt mittel-2 als Gegenstand `halesSeite`; der Saloon liest schon `hatHalesSeite`.
+Dein Vorschlag ist angenommen: Das Skript der Gesamtsimulation kommt nach
+`pipeline/abenteuer/gesamtsimulation.cjs`, damit jeder spätere Umbau gegen Sackgassen geprüft wird.
 
 ## Vorgaben
 
-1. Novas Aussage in der Arena und Victors Szenen in Ghost Town auf diese Variablen abstimmen
-   (Bibel Teil 4), auch für den Fall, dass der Leser in Crossroads abgelehnt hat.
-2. Eine **Gesamtsimulation** vom Dachboden in Maple Falls bis zum Abspann: alle Hauptquests in
-   Reihenfolge, Partien mit Sieg, Niederlage und Remis, Runden bestanden und nicht bestanden,
-   Reisen zwischen den Orten (`reise`, Übergänge mit `wenn`). Sackgassen, nie gesetzte oder nie
-   gelesene Variablen und Knoten ohne Einstieg im Bericht auflisten und, wo es deine Dateien sind,
-   beheben.
-3. Das Skript der Simulation gern unter `pipeline/abenteuer/` ablegen, falls es dauerhaft nützt
-   (dann mit Test in `pipeline/tests/`; Datei vorher im Bericht ankündigen, nicht in die App).
+1. Dateikopf auf Deutsch (Zweck, Aufruf, Ausgabe), Kommentare nach CLAUDE.md, keine Pfade außerhalb
+   des Repositorys. Aufruf aus dem Hauptordner: `node pipeline/abenteuer/gesamtsimulation.cjs --startwert 1`.
+   Ausgabe: hängende Quests, nie erreichte Knoten, Figuren ohne Karte; Rückgabewert ungleich 0 bei
+   Sackgassen oder fehlendem Abspann.
+2. Figuren ohne Karte nicht mehr ersatzweise setzen, sondern als Befund melden (niedrig-1 setzt die
+   fünf Figuren gerade auf die Karten; bis dahin darf der Test sie als bekannte Ausnahme führen, mit
+   Kommentar, damit die Liste danach gelöscht wird).
+3. Test `pipeline/tests/test_abenteuer_simulation.py`: läuft mit einem Startwert und nur, wenn die
+   Umgebungsvariable `ABENTEUER_SIMULATION=1` gesetzt ist (sonst `pytest.skip` mit Begründung), damit
+   der gewöhnliche Testlauf schnell bleibt. Wenn sich die Laufzeit für einen Startwert deutlich unter
+   eine Minute drücken lässt, gern ohne diese Bedingung; dann im Bericht sagen.
+4. Victor und Juno im Clubraum: Bleibt beim Umweg über den Coach (Figuren in `orte.json` können nicht
+   bedingt erscheinen, und Victor dauerhaft im Clubraum passt nicht zur Geschichte). Kein Handlungsbedarf.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 **1. Akt 4 abgestimmt (Commit 76d88e57).**
 

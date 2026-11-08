@@ -1,23 +1,38 @@
-# Auftrag niedrig-1: Figuren und Objekte auf der Hochebene
+# Auftrag niedrig-1: fünf Figuren auf die Karten von Maple Falls und Pinewood Camp
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, Hochebene, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, vierzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** die Karten der Hochebene (`inhalte/abenteuer/karten/hochebene*.json`),
+**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/karten/pinewood-camp-aussen.json`,
 `docs/spiel/auftraege/niedrig-1.md`
 **Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
 
 ## Ziel
 
-mittel-2 hat die Hochebene mit Figuren gefüllt (kira, annek, joss) und neue Auslöser angelegt
-(steintisch, werkstatt, aushang). Die Liste der Objekte steht im Bericht des fünfzehnten Auftrags in
-`docs/spiel/auftraege/mittel-2.md` (Abschnitt „Für niedrig-1“). Ergänze sie auf der Karte.
+mittel-1 hat bei der Gesamtsimulation gefunden, dass fünf Figuren aus `orte.json` auf keiner
+gezeichneten Karte stehen. Ohne sie fehlen Junos Begegnung draußen, Lilys Springer-Quest, der
+Bibliothekar mit dem Brief (setzt `kenntHale`, wichtig für die Hauptgeschichte) und zwei Kinder im Camp.
 
-Gestaltung nach Weltbeschreibung 5.9: eine heutige Siedlung auf der Hochebene, Werkstatt, Schule,
-Steintisch zum Spielen; keine Zeichen, Muster oder Deko aus realen Kulturen, keine Tipis, keine
-Federn. Im Zweifel schlicht und modern.
+| Figur | Karte (Dialogdatei) | Platz |
+| ----- | ------------------- | ----- |
+| `juno` | `maple-falls-aussen.json` (`maple-falls-aussen.juno`) | auf dem Weg zwischen Haus und Schule |
+| `lily` | `maple-falls-aussen.json` (`maple-falls-aussen.lily`) | im Park oder auf der Straße, gut sichtbar |
+| `abernathy` | `maple-falls-park.json` (`maple-falls-park.bibliothekar`) | an einer Bank im Park, gern mit Buch; der Name auf der Karte ist `abernathy` |
+| `lou`, `tamsin` | `pinewood-camp-aussen.json` | bei den Hütten oder am Lagerfeuer, nebeneinander |
+
+## Vorgaben
+
+1. Objekte vom Typ `figur` in der Ebene `ausloeser`, `name` = Kurzname wie oben (so wie
+   `coachDelgado` im Clubraum), Größe 16 × 16, auf einer begehbaren Kachel, nicht auf einem
+   Übergang und nicht im Weg eines Übergangs.
+2. Steht die Dialogdatei einer Figur auf einer anderen Karte als oben vermutet, gilt die Dialogdatei.
+3. Am Ende im Spiel kurz prüfen: Paketbau ohne Fehler, die Figur steht im Bild (Bildschirmfoto genügt).
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 (vom Helfer auszufüllen)
 

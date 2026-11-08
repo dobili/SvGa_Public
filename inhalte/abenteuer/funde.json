@@ -166,6 +166,32 @@
       "ort": "desertSprings",
       "name": "fund.halesBrief.name",
       "text": "fund.halesBrief.text"
+    },
+    {
+      "kennung": "postreiterabzeichen",
+      "ort": "ghostTown",
+      "name": "fund.postreiterabzeichen.name",
+      "text": "fund.postreiterabzeichen.text"
+    },
+    {
+      "kennung": "schlussstellungFernpartie",
+      "ort": "ghostTown",
+      "name": "fund.schlussstellungFernpartie.name",
+      "text": "fund.schlussstellungFernpartie.text",
+      "extra": "brett-fernpartie-1866"
+    },
+    {
+      "kennung": "leuchtturmlinse",
+      "ort": "wegGhostCapital",
+      "name": "fund.leuchtturmlinse.name",
+      "text": "fund.leuchtturmlinse.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "teilnehmerausweis",
+      "ort": "capitalArena",
+      "name": "fund.teilnehmerausweis.name",
+      "text": "fund.teilnehmerausweis.text"
     }
   ]
 }

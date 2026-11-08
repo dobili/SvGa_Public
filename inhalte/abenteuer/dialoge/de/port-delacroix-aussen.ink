@@ -6,7 +6,8 @@
 // portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Kühler Kopf statt
 // Pokerface, das keine eigene Wirkung hat), Gebäckstand von Mrs. Arceneaux (Laden
 // portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
-// Einstiege wie in orte.json: ankunft_zu_fuss, deich, batiste, arceneaux, brett_haus1 bis
+// Seit Akt 4 führt am Kai ein Luftboot in den Bayou (bayou, wenn musikhausOffen, bayou.ink).
+// Einstiege wie in orte.json: ankunft_zu_fuss, deich, bayou, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
 //
 // Ambrose schweigt nach dem Vorwurf (Szene 63) bis zu den Nachfahren (Szene 68,
@@ -30,6 +31,7 @@ VAR batisteKarteGegeben = false
 VAR ausgangPortDelacroixBatiste = ""
 VAR arceneauxGetroffen = false
 VAR nadelPortDelacroix = 0
+VAR musikhausOffen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -192,3 +194,13 @@ Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux
 
 === gebaeckstand ===
 -> arceneaux
+
+// ---------------------------------------------------------------- Luftboot in den Bayou (Akt 4)
+
+=== bayou ===
+{musikhausOffen:
+    Am Kai wartet ein Luftboot mit einem riesigen Propeller. Es fährt hinaus in den Bayou. #sprecher:erzaehler
+- else:
+    Am Kai liegt ein Luftboot unter einer Plane. „Wenn das Musikhaus wieder offen ist“, steht auf einem Zettel. #sprecher:erzaehler
+}
+-> END

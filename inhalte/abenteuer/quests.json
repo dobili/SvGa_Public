@@ -1804,6 +1804,231 @@
           }
         }
       ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.tafelCanyonrand",
+      "titel": "quest.tafelCanyonrand.titel",
+      "typ": "raetsel",
+      "ort": "wegPinewoodGhost",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegPinewoodGhost.canyonrand",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelCanyonrand.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegPinewoodGhost.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "ghostTown.fernpartie",
+      "titel": "quest.fernpartie.titel",
+      "typ": "haupt",
+      "ort": "ghostTown",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "ghostTown.aussen"
+      },
+      "schritte": [
+        {
+          "text": "quest.fernpartie.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ghost-town-aussen.grab_erstes"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.ghostTown"
+            }
+          ]
+        },
+        {
+          "text": "quest.fernpartie.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "erinnerung-siedlung.letzter_brief"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.flashbackKerze"
+            }
+          ]
+        },
+        {
+          "text": "quest.fernpartie.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "ghostTown.fernpartie",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.fernpartie.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ghost-town-saloon.victor_nach_fernpartie"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.fernpartie"
+            }
+          ]
+        },
+        {
+          "text": "quest.fernpartie.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ghost-town-aussen.nacht_ambrose"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.ambroseSagtEs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.tafelSeeufer",
+      "titel": "quest.tafelSeeufer.titel",
+      "typ": "raetsel",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegGhostCapital.seeufer",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelSeeufer.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegGhostCapital.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.meisterschaft",
+      "titel": "quest.meisterschaft.titel",
+      "typ": "haupt",
+      "ort": "capitalArena",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "capitalArena.aussen"
+      },
+      "schritte": [
+        {
+          "text": "quest.meisterschaft.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.arena_ankunft"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.arena"
+            }
+          ]
+        },
+        {
+          "text": "quest.meisterschaft.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.vorrunde_geschafft"
+          }
+        },
+        {
+          "text": "quest.meisterschaft.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.aussage"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.aussage"
+            }
+          ]
+        },
+        {
+          "text": "quest.meisterschaft.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.halbfinale",
+            "ausgang": ["sieg"]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.halbfinale"
+            }
+          ]
+        },
+        {
+          "text": "quest.meisterschaft.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.vor_dem_finale"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.vorDemFinale"
+            }
+          ]
+        },
+        {
+          "text": "quest.meisterschaft.schritt6",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.finale",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.finale"
+            }
+          ]
+        },
+        {
+          "text": "quest.meisterschaft.schritt7",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.abschied"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.abschied"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

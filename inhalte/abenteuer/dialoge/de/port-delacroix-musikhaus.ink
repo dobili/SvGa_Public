@@ -2,7 +2,8 @@
 // Clubraum (Story-Bibel 19.4). Gegenstand: das Schild.
 //
 // Szene der Bibel (Abschnitt 20): 70 Das Schild (Quest portDelacroix.wiederaufbau, Besuch 3 von 3,
-// frühestens nach Desert Springs). Einstieg wie in orte.json: schild.
+// frühestens nach Desert Springs). Einstiege wie in orte.json: schild, blaeser (Akt 4, L1 Schach960,
+// noch ohne Technik: die Bläserin erzählt nur).
 // Beim Aufhängen gibt es den Fund „Erstes Brett im neuen Musikhaus“ (gibFund). Variablen: nadelDesertSprings setzt die Hülle (R42), simultanGedankt die Turnhalle,
 // musikhausOffen setzt diese Datei.
 
@@ -43,4 +44,16 @@ Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jema
 
 === schild_offen ===
 {~Über der Tür hängt das Schild. Drinnen klappern Figuren, Henris Klavier spielt dazu.|Lou hat ihr Muschelregal bekommen. Remy übt im Nebenraum.|Miss Odile singt beim Aufräumen. Im Takt der Figuren.} #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Die Bläserin (Akt 4, L1)
+
+=== blaeser ===
+{musikhausOffen:
+    Eine Bläserin putzt ihre Posaune und lacht dich an. „Bei uns stehen die Figuren jeden Abend anders.“ #sprecher:erzaehler
+    „Schach960. Wir würfeln die Grundreihe aus, wie eine neue Melodie. Auswendig lernen hilft nichts.“ #sprecher:erzaehler
+    Eine Partie, die jeden Abend neu beginnt. Das hätte den Kaffeehäusern gutgetan. #sprecher:ambrose #stimmung:lacht
+- else:
+    In der Ruine liegt ein verbeultes Notenpult. Noch spielt hier niemand. #sprecher:erzaehler
+}
 -> END

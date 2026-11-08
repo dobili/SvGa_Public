@@ -340,6 +340,92 @@
         "fen": "6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41"
       },
       "kartenErlaubt": false
+    },
+    {
+      "kennung": "capitalArena.runde1",
+      "gegner": "capitalArena.bea",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "capitalArena.runde2",
+      "gegner": "capitalArena.marcus",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "capitalArena.runde3",
+      "gegner": "capitalArena.nova",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "capitalArena.runde4",
+      "gegner": "capitalArena.tobias",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 300,
+        "zuschlag": 3
+      }
+    },
+    {
+      "kennung": "capitalArena.halbfinale",
+      "gegner": "capitalArena.kade",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "freieKarten": ["mentorzug"],
+      "abgelenktAb": {
+        "halbzug": 40,
+        "faktor": 1.5
+      },
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "capitalArena.finale",
+      "gegner": "capitalArena.victor",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zeit": "wahl"
     }
   ]
 }

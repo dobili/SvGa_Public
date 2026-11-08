@@ -11,6 +11,8 @@
  * Spiels (Bestehen, zweite Runde) kennt diese Datei nicht; sie liefert nur die Antworten.
  * Abhängigkeiten: ui/trainer (Rundenrahmen, useRunde, Taktikaufgabe), training/taktiktrainer.ts,
  * training/zusatzaufgaben.ts, anbindung/dienste.ts (Spielstand), schnittstelle/aufgaben.ts.
+ * Erinnerungen (Auftrag mit `erinnerung`) spielen statt der Runde das Zugerraten einer
+ * Klassikerpartie (ErinnerungsRunde.tsx, docs/spiel/08, F1).
  * Sonderfall: Taktikaufgaben melden nur richtig oder falsch; „mit Hilfe“ (halber Punkt) bleibt
  * den Buchübungen der App vorbehalten und kommt hier noch nicht vor.
  */
@@ -29,6 +31,7 @@ import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
+import { ErinnerungsRunde } from "./ErinnerungsRunde";
 import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 
 /** Die Runde selbst; eigene Komponente, damit `useRunde` die fertige Aufgabenliste bekommt. */
@@ -135,7 +138,7 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
             aufgabenergebnis: {
               kennung: auftrag.kennung,
               ergebnisse: Array.from(
-                { length: aufgaben?.length ?? 0 },
+                { length: auftrag.erinnerung ? 1 : (aufgaben?.length ?? 0) },
                 (_, i) => ergebnisse[i] ?? "falsch",
               ),
               sekunden,
@@ -155,16 +158,23 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
           <ZurueckKnopf />
         </section>
       )}
-      {auftrag && (taktik.art === "laedt" || zusaetze.art === "laedt") && (
+      {auftrag?.erinnerung && (
+        <ErinnerungsRunde
+          erinnerung={auftrag.erinnerung}
+          beiEnde={beiEnde}
+          zurueck={<ZurueckKnopf />}
+        />
+      )}
+      {auftrag && !auftrag.erinnerung && (taktik.art === "laedt" || zusaetze.art === "laedt") && (
         <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
       )}
-      {auftrag && aufgaben && aufgaben.length === 0 && (
+      {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length === 0 && (
         <section className="karte">
           <p className="hinweis">{t("trainer.keineAufgaben")}</p>
           <ZurueckKnopf />
         </section>
       )}
-      {auftrag && aufgaben && aufgaben.length > 0 && (
+      {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
         <Runde auftrag={auftrag} aufgaben={aufgaben} beiEnde={beiEnde} />
       )}
     </div>

@@ -32,6 +32,16 @@ export interface Aufgabenauftrag {
   readonly versuch: number;
   /** Zählt die Runde für Wiederholung und Tagesprotokoll der App (R32, Entscheidung A8)? */
   readonly zaehltFuerApp: boolean;
+  /**
+   * Erinnerung Ambroses (docs/spiel/08, F1; Entscheidung C3): statt Motivaufgaben eine
+   * Klassikerpartie aus inhalte/zusatzpartien/klassiker.json Zug für Zug erraten, ab `abZug` mit
+   * der Seite `seite`. Beispiel: Paulsen gegen Morphy, New York 1857, ab Zug 13 mit Schwarz.
+   */
+  readonly erinnerung?: {
+    readonly partie: string;
+    readonly abZug: number;
+    readonly seite: "white" | "black";
+  };
 }
 
 /** Ergebnis einer Aufgabenrunde für das Spiel. */

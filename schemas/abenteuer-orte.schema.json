@@ -164,8 +164,8 @@
           "maximum": 12
         },
         "art": {
-          "description": "stadt (Vorgabe) oder weg: eine begehbare Route zwischen zwei Städten (docs/spiel/08, W1). Übergänge von und zu einem Weg dürfen in einen anderen Ort führen.",
-          "enum": ["stadt", "weg"]
+          "description": "stadt (Vorgabe), weg: eine begehbare Route zwischen zwei Städten (docs/spiel/08, W1), oder erinnerung: ein Flashback in Ambroses Zeit (F1, Sepia, Ambrose als Held, kein Tagebuch). Übergänge von und zu einem Weg oder einer Erinnerung dürfen in einen anderen Ort führen.",
+          "enum": ["stadt", "weg", "erinnerung"]
         },
         "staffel": { "type": "integer", "minimum": 1, "maximum": 2 },
         "karten": {

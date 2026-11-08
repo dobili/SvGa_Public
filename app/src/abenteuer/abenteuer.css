@@ -1,5 +1,10 @@
 /* Schach-Abenteuer: Oberwelt, Steuerkreuz, Dialogfenster, Startkarte (docs/spiel/04_Architektur.md 8). */
 
+/* Erinnerungen Ambroses (docs/spiel/08, F1): die Welt in Sepia, wie ein altes Foto. */
+.abenteuer-welt-erinnerung canvas {
+  filter: sepia(0.85) contrast(0.95) brightness(1.05);
+}
+
 .abenteuer-welt {
   position: relative;
   width: 100%;

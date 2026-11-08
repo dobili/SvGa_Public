@@ -220,5 +220,6 @@ export function auftragFuerRunde(
     schwierigkeit,
     versuch,
     zaehltFuerApp: true,
+    ...(r.erinnerung ? { erinnerung: r.erinnerung } : {}),
   };
 }

@@ -1,29 +1,36 @@
-# Auftrag niedrig-1: Antworten der Gegner aus Akt 3 auf Sprüche
+# Auftrag niedrig-1: Karten der Erinnerung London 1851
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der neunte Auftrag, Antworten aus Akt 3, ist zusammengeführt, danke; die Immunitäten kommen mit den Gegnerprofilen von Akt 3. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
-
-<!-- vorher: fertig --> (niedrig-1, 08.11.2026)
+**Stand:** offen (Haupt-Chat, 08.11.2026, zehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests/test_abenteuer.py -q`
+**Darf ändern:** `inhalte/abenteuer/karten/erinnerung-london-strand.json`,
+`inhalte/abenteuer/karten/erinnerung-london-kaffeehaus.json` (neu), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
+(die Kartenprüfung der Pipeline greift erst, wenn mittel-1 den Ort in `orte.json` eingetragen hat)
 
 ## Ziel
 
-Straßengegner antworten auf Sprüche des Helden (`docs/spiel/10_Sprueche_Schauplaetze_Varianten.md`,
-S4). Für Akt 1 und 2 gibt es die Antworten schon (`spruch.konter.skaterJo.1` usw. in `texte/de.json`,
-dort als Vorbild ansehen). Akt 3 steht in `docs/spiel/05_Story_Bibel.md` (Teil „Akt 3“).
+Ort `erinnerungLondon` (neue Ort-Art `erinnerung`, `nummer` 0): Ambrose ist 20, London 1851.
+Die Technik steht (Haupt-Chat, 08.11.2026): Karten eines Ortes mit `art: "erinnerung"` erscheinen in
+Sepia, der Held ist das Figurbild (Ambrose), Tagebuch und Münzen sind ausgeblendet; Übergänge in
+und aus einer Erinnerung dürfen in andere Orte führen. Feste Namen, damit beide Helfer parallel
+arbeiten können:
+
+- Karte `erinnerungLondon.strand`, Datei `karten/erinnerung-london-strand.json` (28 × 20, außen):
+  Straße „Strand“ mit Gaslaternen, Droschken, Ladenfronten, Themse am Rand. Objekte: `ankunft`
+  (Start), `kaffeehausTuer` (Übergang), `droschke` (ansehen), `zeitungsjunge` (Figur), Belebung
+  `passanten`, `tauben`, `laternenanzuender` (abend).
+- Karte `erinnerungLondon.kaffeehaus`, Datei `karten/erinnerung-london-kaffeehaus.json` (16 × 12,
+  innen): Kaffeehaus mit Tischen, Zeitungsständer, Theke. Objekte: `tuer` (Übergang zurück auf die
+  Straße), `schachtisch` (Anderssen und Kieseritzky, startet das Zugerraten), `rueckkehr`
+  (die große Uhr an der Wand: zurück in die Gegenwart), Figuren `kellner`, `zeitungsleser`;
+  Belebung `gaeste`.
 
 ## Vorgaben
 
-1. Für jeden Straßengegner aus Akt 3 der Story-Bibel zwei Antworten:
-   `spruch.konter.<name>.1` und `.2`, wobei `<name>` der letzte Teil der geplanten Gegnerkennung ist
-   (bei „portDelacroix.marisol“ also „marisol“; steht keine Kennung in der Bibel, eine kurze in
-   Kleinbuchstaben ohne Umlaute vorschlagen und im Bericht nennen).
-2. Ton wie die Vorbilder: eine Zeile, frech oder gelassen, passend zum Steckbrief der Figur, nie
-   beleidigend, nichts über Aussehen, Herkunft oder Familie.
-3. Im Bericht: welche Gegner gegen welchen Spruch immun sein sollten (grossesMaul, gruebelfalle,
-   schmeichelei, ablenkung) und warum.
+Wie beim achten Auftrag (Ironwood): Tiled-JSON im Format der vorhandenen Karten, Belebung nach
+`09_Weltbeschreibung.md` sinngemäß für das London von 1851 (Story-Bibel Szene 35), Kollisionen,
+Objektebene mit genau den Namen oben.
 
 ## Bericht
 

@@ -535,6 +535,14 @@ Bauernvorgabe (nur die erste Erinnerung der Staffel gibt sie); Jo bekam die Stec
 die die Uhr ändern. Nachgezogen: Straßensiege bringen 10 Münzen nur beim ersten Sieg je Gegner und Tag, danach 2;
 Quest-Wirkung `gegenstandWeg`; Limo (5 Münzen) im Kiosk. Die Dialoge der Limo-Quest schreibt mittel-1.
 
+**Schritt 14 Erinnerungen (8.11.2026):** Runden können eine `erinnerung` tragen (Partie aus
+`klassiker.json`, ab Zug, Seite); die Aufgabenansicht spielt sie im Zugerraten der App
+(`anbindung/ErinnerungsRunde.tsx`), ein Ergebnis „richtig“ ab der Hälfte getroffener Züge. New York
+1857 (Paulsen–Morphy ab 13 mit Schwarz), London 1851 (Unsterbliche ab 17 mit Weiß), Bird–Morphy
+1858 (ab 17 mit Schwarz) statt der bisherigen Mattbilder. Neue Ort-Art `erinnerung`: Sepia-Filter
+über der Welt, Ambrose (Figurbild) als Held, kein Tagebuch, keine Münzanzeige. London als begehbare
+Erinnerung bauen niedrig-1 (Karten) und mittel-1 (Ort, Dialoge).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

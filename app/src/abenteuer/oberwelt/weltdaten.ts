@@ -28,6 +28,11 @@ export interface Weltdaten {
   readonly ort: Ortdaten;
   /** Innenraum (kein Fahrrad, keine Tiere draußen)? */
   readonly innen: boolean;
+  /**
+   * Erinnerung Ambroses (Ort-Art „erinnerung“, docs/spiel/08, F1 und F3): Sepia-Tönung, Ambrose
+   * als Held (Bild einer Figur statt des Helden), kein Tagebuch.
+   */
+  readonly erinnerung: boolean;
   readonly karte: object;
   readonly kachelbild: string;
   readonly heldbild: string;
@@ -42,7 +47,7 @@ export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
   const [karte, kachelbild, heldbild, figurbild] = await Promise.all([
     liesPaketJson<object>(fund.karte.datei),
     paketdateiAlsAdresse(KACHELBILD),
-    paketdateiAlsAdresse(HELDBILD),
+    paketdateiAlsAdresse(fund.ort.art === "erinnerung" ? FIGURBILD : HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   return {
@@ -50,6 +55,7 @@ export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
     daten,
     ort: fund.ort,
     innen: fund.karte.innen,
+    erinnerung: fund.ort.art === "erinnerung",
     karte,
     kachelbild,
     heldbild,

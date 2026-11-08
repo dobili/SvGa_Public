@@ -654,20 +654,28 @@ export function Oberwelt() {
   const aktuellerLaden = welt && offenerLaden ? ladenDaten(welt, offenerLaden) : undefined;
 
   return (
-    <div className="abenteuer-welt" data-testid="abenteuer-welt">
+    <div
+      className={welt?.erinnerung ? "abenteuer-welt abenteuer-welt-erinnerung" : "abenteuer-welt"}
+      data-testid="abenteuer-welt"
+    >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />
-      <button
-        type="button"
-        className="abenteuer-tagebuchknopf"
-        onClick={() => setzeTagebuch(true)}
-        data-testid="abenteuer-tagebuchknopf"
-      >
-        {tSpiel("tagebuch.knopf")}
-      </button>
-      <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
-        {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
-      </span>
+      {/* In Erinnerungen (Ambroses Zeit) gibt es weder Tagebuch noch Münzen des Helden (F3). */}
+      {!welt?.erinnerung && (
+        <>
+          <button
+            type="button"
+            className="abenteuer-tagebuchknopf"
+            onClick={() => setzeTagebuch(true)}
+            data-testid="abenteuer-tagebuchknopf"
+          >
+            {tSpiel("tagebuch.knopf")}
+          </button>
+          <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
+            {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
+          </span>
+        </>
+      )}
       {fehler && (
         <p className="fehlertext abenteuer-ergebnis">{tSpiel("oberwelt.fehler", { fehler })}</p>
       )}

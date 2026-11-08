@@ -69,10 +69,10 @@ def test_querverweise_stimmen():
             zielort = alle.get(ziel["karte"])
             if zielort is None:
                 fehler.append(f"{ort['kennung']}: Übergang nach unbekannter Karte {ziel['karte']}")
-            elif ziel["karte"] not in kartenkennungen and "weg" not in (
+            elif ziel["karte"] not in kartenkennungen and not {"weg", "erinnerung"} & {
                 ort.get("art", "stadt"),
                 zielort.get("art", "stadt"),
-            ):
+            }:
                 fehler.append(f"{ort['kennung']}: Übergang in anderen Ort ohne Weg: {ziel['karte']}")
 
     alle_karten = {k["kennung"] for ort in orte for k in ort["karten"]}
@@ -111,6 +111,15 @@ def test_querverweise_stimmen():
         if "kapitel" in karte:
             schluessel.append(f"karte.{karte['kennung']}.geschenkt")
         fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
+    # Erinnerungen (docs/spiel/08, F1): die Partie gibt es unter den Klassikern.
+    klassiker = json.loads(
+        (HAUPTORDNER / "inhalte" / "zusatzpartien" / "klassiker.json").read_text(encoding="utf-8")
+    )
+    klassiker_ids = {p["id"] for p in klassiker}
+    for runde in _lade("runden.json")["runden"]:
+        erinnerung = runde.get("erinnerung")
+        if erinnerung and erinnerung["partie"] not in klassiker_ids:
+            fehler.append(f"{runde['kennung']}: Partie {erinnerung['partie']} fehlt in klassiker.json")
     # Werkzeugkarten (docs/spiel/11): das Werkzeug gibt es in der App.
     analyse = HAUPTORDNER / "app" / "src" / "analyse"
     for karte in _lade("karten.json")["karten"]:

@@ -102,3 +102,30 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await expect(ergebnis).toHaveCount(0);
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toHaveCount(0);
 });
+
+test("Erinnerung New York 1857: Zugerraten der Partie Paulsen gegen Morphy", async ({ page }) => {
+  const stand = {
+    ...STAND,
+    position: { karte: "cedarCreek.archiv", x: 2, y: 5, richtung: "oben" },
+    laufendeAufgaben: {
+      ...STAND.laufendeAufgaben,
+      kennung: "cedarCreek.erinnerungNewYork#e2e",
+      runde: "cedarCreek.erinnerungNewYork",
+      steller: "figur.okafor.name",
+      buchuebungen: [],
+      themen: [],
+      anzahl: 1,
+      erinnerung: { partie: "klassik-paulsen-morphy", abZug: 13, seite: "black" },
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
+  await page.getByRole("button", { name: "Weitermachen" }).click();
+  await expect(page.getByTestId("abenteuer-aufgaben")).toBeVisible();
+  await expect(page.locator(".trainer-auftrag")).toContainText("Paulsen", { timeout: 20000 });
+  await expect(page.locator(".trainer-auftrag")).toContainText("Schwarz");
+});

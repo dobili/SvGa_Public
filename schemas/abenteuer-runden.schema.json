@@ -52,6 +52,17 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 30
+        },
+        "erinnerung": {
+          "description": "Erinnerung Ambroses (docs/spiel/08, F1; Entscheidung C3): statt Motivaufgaben eine Klassikerpartie Zug für Zug erraten, ab diesem Zug mit dieser Seite",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["partie", "abZug", "seite"],
+          "properties": {
+            "partie": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+            "abZug": { "type": "integer", "minimum": 1, "maximum": 200 },
+            "seite": { "enum": ["white", "black"] }
+          }
         }
       }
     }

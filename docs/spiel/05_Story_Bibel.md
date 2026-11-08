@@ -2502,7 +2502,7 @@ Kürzungen, falls nötig: Vorrunde der Meisterschaft als vier Stellungsduelle st
 | Ort           | Fund                           | Wo                           | Satz                                                   | Wirkung                              |
 | ------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------ | ------------------------------------ |
 | Weg 7         | Neonbuchstabe „K“              | hinter dem Diner             | Earl: „Das K von King's Diner. Ist seit '89 kaputt.“   | 10 Münzen                            |
-| Hochebene     | Falkenfeder aus Holz           | Geschenk von Kira (Szene 82) | Kira: „Damit du nicht vergisst, wie man fliegt.“       | Extra „Falkenweg“ am Varianten-Tisch |
+| Hochebene     | Falke aus Holz                 | Geschenk von Kira (Szene 82) | Kira: „Damit du nicht vergisst, wie man fliegt.“       | Extra „Falke und Bison“ am Varianten-Tisch |
 | Summit City   | Hales Seite                    | Victor (Szene 88)            | „Für den Tag, an dem jemand weiterspielt.“             | Auflösung „Die fehlende Seite“       |
 | Summit City   | Drachenschuppe aus Glas        | Drachenfest (Szene 90)       | „Ein Drache, der Licht fängt.“                         | Extra „Drachenfigur“                 |
 | Summit City   | Murmeltierpfeife               | Bergstation (versteckt)      | „Pfeif, und sie pfeifen zurück.“                       | 5 Münzen                             |

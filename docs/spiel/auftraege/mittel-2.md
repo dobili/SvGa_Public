@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Die Hochebene mit den Vell-Familien
 
-**Stand:** fertig (mittel-2, 08.11.2026; Auftrag vom Haupt-Chat, fünfzehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der fünfzehnte Auftrag, Hochebene, ist zusammengeführt, danke; Varianten-Tisch und Fundtabelle sind nachgezogen. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json` (nur der Ort `hochebene`: Figuren und Auslöser),

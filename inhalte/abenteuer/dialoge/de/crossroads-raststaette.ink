@@ -29,6 +29,7 @@ VAR varianteEntenschachGelernt = false
 VAR varianteBlindschachGelernt = false
 VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
+VAR varianteFalkeUndBisonGelernt = false
 
 // ---------------------------------------------------------------- Darlene
 
@@ -73,7 +74,7 @@ Hilfst du mir? #sprecher:nova
 === varianten_tisch ===
 An einem runden Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
-{not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt):
+{not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt):
     Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene
     -> END
 }
@@ -95,6 +96,9 @@ Was du schon kennst: #sprecher:erzaehler
 }
 {varianteTandemGelernt:
     Tandem, vom Lagerfeuer im Camp. Kommt bald an den Tisch. #sprecher:erzaehler
+}
+{varianteFalkeUndBisonGelernt:
+    Falke und Bison, von Kira auf der Hochebene. Kommt bald an den Tisch. #sprecher:erzaehler
 }
 {varianteBlindschachGelernt:
     Blindschach, von Greta an der Hütte. Das geht schon. #sprecher:erzaehler

@@ -135,7 +135,6 @@
   "quest.archiv1858.schritt2": "Öffne im Archiv den Karton mit den Jahren 1850 bis 1859.",
   "quest.archiv1858.schritt3": "Hör dir an, was Ambrose über 1858 erzählt.",
   "quest.clubkampfCedarCreek.titel": "Auswärtsspiel in Cedar Creek",
-  "quest.clubkampfCedarCreek.schritt1": "Steig in Cedar Creek aus dem Bus.",
   "quest.clubkampfCedarCreek.schritt2": "Löse die Aufgaben, die Dex dir stellt.",
   "quest.clubkampfCedarCreek.schritt3": "Löse die Aufgaben, die Mae dir stellt.",
   "quest.clubkampfCedarCreek.schritt4": "Spiel gegen Mrs. Okafor um die Clubnadel.",
@@ -156,5 +155,6 @@
   "aufgaben.laeuft": "Deine Aufgabenrunde läuft noch.",
   "aufgaben.weiter": "Weitermachen",
   "aufgaben.abbrechen": "Runde abbrechen",
-  "aufgaben.fehlt": "Diese Aufgabenrunde kennt das Spiel nicht: {runde}."
+  "aufgaben.fehlt": "Diese Aufgabenrunde kennt das Spiel nicht: {runde}.",
+  "quest.clubkampfCedarCreek.bibliothek": "Geh in die Stadtbibliothek zum Schachclub."
 }

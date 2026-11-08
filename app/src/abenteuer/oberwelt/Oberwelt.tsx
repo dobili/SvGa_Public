@@ -31,6 +31,11 @@ import { vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
+import { variablenNachBesuch } from "../regeln/dialogvariablen";
+
+/** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
+const FAHRRAD = "fahrrad";
+const FAHRRAD_TEMPO = 2;
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
@@ -302,6 +307,18 @@ export function Oberwelt() {
         setzeTreffer(null);
         setzeWelt(w);
         weltRef.current = w;
+        // Erster Besuch eines Ortes (W2): merken, Dialogvariable `besucht<Ort>` für den Bus.
+        const aktuell = standRef.current;
+        if (aktuell && !aktuell.besuchteOrte.includes(w.ort.kennung)) {
+          schreibe({
+            ...aktuell,
+            besuchteOrte: [...aktuell.besuchteOrte, w.ort.kennung],
+            dialogvariablen: {
+              ...aktuell.dialogvariablen,
+              ...variablenNachBesuch(w.ort.kennung),
+            },
+          });
+        }
         // Karte betreten (Quests), dann ein Partieergebnis, das auf die Welt gewartet hat.
         melde({ art: "ort", karte: w.kennung }, w);
         meldeErgebnis(w);
@@ -313,6 +330,8 @@ export function Oberwelt() {
           figurbild: w.figurbild,
           kachelsatz: KACHELSATZ,
           start: stand.position,
+          // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
+          tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
           melder: {
             beiAusloeser: beiTreffer,
             // Kachel des Helden ohne Neuzeichnen in ein verstecktes Feld (Oberflächentests).

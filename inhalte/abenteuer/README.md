@@ -64,7 +64,9 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `start` mit `richtung` ist der Standardeinstieg. Übergänge (`ziel.karte`, `ziel.ausloeser`)
   gelten je Ort; heißt der Rückweg gleich (Tür „schule“ auf beiden Karten), bekommt der zweite
   Eintrag in `orte.json` das Feld `karte` und geht auf dieser Karte vor. Zwischen Orten reist man
-  nicht über Übergänge, sondern über einen Dialog (Bus) mit `~ reise("ort.karte", "ausloeser")`.
+  nicht über Übergänge, sondern über einen Dialog (Bus) mit `~ reise("ort.karte", "ausloeser")`,
+  oder zu Fuß über einen Weg: ein Ort mit `art: "weg"` (Nummer 0, ohne Club), dessen Übergänge in
+  die Nachbarstädte führen dürfen (docs/spiel/08, W1; Beispiel `wegMapleCedar`).
 - Figuren stehen nicht in der Tiled-Datei, sondern als Objekte mit dem Namen der Figur in der
   Ebene `ausloeser` (später: `type = "figur"`), damit `orte.json` die Wahrheit über Dialog und
   Gegner bleibt.

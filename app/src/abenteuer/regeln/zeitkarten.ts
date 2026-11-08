@@ -50,9 +50,12 @@ export function immunGegen(immun: readonly string[] | undefined, kennung: string
  */
 export function passtZurPartie(
   sorte: Kartensorte,
-  lage: { readonly uhr: boolean; readonly sprueche: boolean },
+  lage: { readonly uhr: boolean; readonly sprueche: boolean; readonly remis?: boolean },
 ): boolean {
   if (sorte.spruch_art === true && !lage.sprueche) return false;
+  // Kein Remisangebot im Clubkampf und gegen Story-Gegner: es sicherte sonst eine Bronzenadel
+  // ohne Sieg (Befund mittel-2, docs/spiel/11, 7.4).
+  if (sorte.wirkung.art === "remis" && lage.remis === false) return false;
   return sorte.wirkung.art !== "zeit" || lage.uhr;
 }
 
@@ -105,4 +108,9 @@ const KONTER_JE_GEGNER = 2;
 /** Ganze Zahl von 1 bis anzahl. */
 function zufallszahl(anzahl: number, zufall: () => number): number {
   return Math.min(anzahl, Math.floor(zufall() * anzahl) + 1);
+}
+
+/** Nimmt dieser Gegner ein Remisangebot überhaupt in Betracht? Straße und Clubmitglieder ja. */
+export function remisMoeglich(rolle: Gegnerrolle | null): boolean {
+  return rolle === "strasse" || rolle === "clubmitglied";
 }

@@ -105,13 +105,13 @@ Adresse mit „#abenteuer“ öffnen).
       dann trotzdem weg. Nebenbei behoben: Die Stellungsduelle aus Buchabbildungen (Jo, Rosa, Nia, Schaffner, Harlan,
       Gus) starteten bisher gar nicht, man stand nach „Los“ wieder in der Welt.
 - [ ] N2620. Neue Karten (16 Stück): In den Läden gibt es jetzt auch Ablenkung (Spruch, 10 Münzen) und Röntgenblick
-      (Kiosk Maple Falls), Waage, Schmeichelei und Remisangebot (Zeitungsstand Riverton), Auszeit, Was droht? und die
-      Kartentasche für 300 Münzen (Eisenwaren Ironwood; danach passen vier Karten ins Deck). Werkzeugkarten nutzen die
+      (Kiosk Maple Falls), Waage, Schmeichelei und Remisangebot (Zeitungsstand Riverton), Auszeit, Was droht? (60) und die
+      Kartentasche für 450 Münzen (Eisenwaren Ironwood; danach passen vier Karten ins Deck). Werkzeugkarten nutzen die
       Werkzeuge des Buches auf der Partiestellung: Abzählen (sucht deine meistbedrohte Figur und zählt), Röntgenblick,
       Zielkompass, Faktorenwaage, Bauernkompass, Planfinder, Taktikspürnase, Endspielkompass, Turmregel, Phasenblick.
       „Was droht?“ zeigt als roten Pfeil, was der Gegner spielen würde, wenn er dran wäre (nur Schläge und Schachs
-      zählen als Drohung). „Waage“ sagt, wer besser steht. „Remisangebot“: Der Gegner nimmt bei ausgeglichener
-      Stellung an, sonst lehnt er ab. „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
+      zählen als Drohung). „Waage“ sagt, wer besser steht. „Remisangebot“ (nicht im Clubkampf): Der Gegner nimmt
+      bei ausgeglichener Stellung an, sonst lehnt er ab. „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
       Lernkarten: Wer in der App alle Übungen eines Kapitels gelöst hat, bekommt beim nächsten Öffnen der Welt die
       Karte des Kapitels geschenkt (Kapitel 1 Abzählen, 2 Zielkompass, 3 Faktorenwaage, 4 Gefahrenradar, 5
       Bauernkompass, 6 Planfinder, 7 Taktikspürnase, 8 Endspielkompass, 9 Turmregel, 11 Phasenblick, 12 Was droht?),

@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Gegenstände und Karten in der Geschichte, Limo-Nebenquest
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, achter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achte Auftrag, Verteilung und Preise, ist zusammengeführt, danke; Empfehlungen 1 bis 4 und 6 sowie die Datenbefunde sind umgesetzt, siehe ENTSCHEIDUNGEN. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (Abschnitt „Hilfskarten und Zeitkarten“ je Akt und

@@ -669,7 +669,7 @@
           },
           "wirkungen": [
             { "art": "fragment", "halbzug": 3 },
-            { "art": "karte", "karte": "bauernvorgabe" }
+            { "art": "muenzen", "anzahl": 20 }
           ]
         }
       ]

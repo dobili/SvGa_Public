@@ -104,7 +104,12 @@
       "eroeffnung": {
         "art": "frei"
       },
-      "steckbrief": []
+      "steckbrief": [
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
+        }
+      ]
     },
     {
       "kennung": "mapleFalls.victor",

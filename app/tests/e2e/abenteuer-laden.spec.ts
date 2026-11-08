@@ -1,7 +1,7 @@
 /**
  * Schach-Abenteuer, Kiosk im Park (Schritt 12, docs/spiel/08 G1 bis G6): Ein Spielstand mit 50
- * Münzen steht vor Patels Kiosk; der Dialog öffnet den Laden, „Zweite Chance“ kostet 20, das
- * Fahrrad ist zu teuer, die Münzen oben rechts zeigen den neuen Stand.
+ * Münzen steht vor Patels Kiosk; der Dialog öffnet den Laden, „Zweite Chance“ kostet 20, danach ist
+ * Flüstern zu teuer, die Münzen oben rechts zeigen den neuen Stand.
  */
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
@@ -70,9 +70,10 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   }
   await expect(laden).toBeVisible();
   await expect(page.getByTestId("abenteuer-laden-muenzen")).toHaveText("Deine Münzen: 50");
-  await expect(laden.getByRole("button", { name: /Fahrrad/ })).toBeDisabled();
   await laden.getByRole("button", { name: /Zweite Chance/ }).click();
   await expect(page.getByTestId("abenteuer-laden-muenzen")).toHaveText("Deine Münzen: 30");
+  // Flüstern kostet 40: jetzt zu teuer.
+  await expect(laden.getByRole("button", { name: /Flüstern/ })).toBeDisabled();
   await laden.getByRole("button", { name: "Fertig" }).click();
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("30 Münzen");
 });

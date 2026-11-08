@@ -110,3 +110,14 @@ describe("Wann ein Spruch wirkt", () => {
     expect(konterschluessel("cedarCreek.rosa", () => 0.6)).toBe("spruch.konter.rosa.2");
   });
 });
+
+describe("Remisangebot", () => {
+  it("nur gegen Straßengegner und Clubmitglieder", async () => {
+    const { remisMoeglich } = await import("./zeitkarten");
+    expect(remisMoeglich("strasse")).toBe(true);
+    expect(remisMoeglich("clubchef")).toBe(false);
+    const remis = sorte({ wirkung: { art: "remis" } });
+    expect(passtZurPartie(remis, { uhr: false, sprueche: false, remis: false })).toBe(false);
+    expect(passtZurPartie(remis, { uhr: false, sprueche: false, remis: true })).toBe(true);
+  });
+});

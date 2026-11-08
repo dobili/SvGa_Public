@@ -526,6 +526,15 @@ während der Bot rechnet), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notiz
 schiffskoch. Immunitäten für die Gegnerprofile von Akt 3 (vorgemerkt): Dash grossesMaul und
 ablenkung, Batiste alles außer schmeichelei, Buck keine, Joggerin grossesMaul, Schiffskoch ablenkung.
 
+**Balancing nach mittel-2 (8.11.2026, docs/spiel/11, 7.4; Regel 9, Widerspruch genügt):** Fahrrad
+nicht mehr im Kiosk Maple Falls (nur Ironwood, 120); Kartentasche 450 statt 300 (in Akt 2 ein
+echter Verzicht); Was droht? 60 statt 45; Remisangebot nur gegen Straßengegner und Clubmitglieder
+(sonst sicherte es eine Bronzenadel ohne Sieg); `riverton.flashbackLondon` gibt 20 Münzen statt der
+Bauernvorgabe (nur die erste Erinnerung der Staffel gibt sie); Jo bekam die Steckbriefzeile
+„Fleck Rückzug“. Ablenkung bleibt im Laden: Z4 („Zeitkarten nie im Laden“) gilt nur für Sprüche,
+die die Uhr ändern. Offen: Münzgrenze für Straßensiege (nur der erste Sieg je Gegner und Tag voll),
+die Wirkung „Gegenstand abgeben“ für die Limo-Quest und deren Dialoge.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

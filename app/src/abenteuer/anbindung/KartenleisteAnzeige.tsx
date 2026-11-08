@@ -26,7 +26,7 @@ import { leserAmZug, type Partie } from "../../spiel/partie";
 import { uciZuSan } from "../../spiel/zuege";
 import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
 import { kartenSpielbar, mitGespielterKarte } from "../regeln/karten";
-import { passtZurPartie, spruecheErlaubt } from "../regeln/zeitkarten";
+import { passtZurPartie, remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
 import { spieleZeitkarte } from "./spruchkarte";
 import { drohung, remisangebot, waage, werkzeugkarte, type Kartenanzeige } from "./kartenwirkungen";
 import type { Kartensorte } from "../schnittstelle/karten";
@@ -162,6 +162,7 @@ export function KartenleisteAnzeige({
   const partielage = {
     uhr: partie.uhr !== null,
     sprueche: spruecheErlaubt(gegner?.rolle ?? null),
+    remis: remisMoeglich(gegner?.rolle ?? null),
   };
 
   /** Spielt eine Karte: Wirkung ausführen, dann im Spielstand verbuchen. */

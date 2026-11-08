@@ -22,11 +22,6 @@
           "preis": 40
         },
         {
-          "art": "gegenstand",
-          "kennung": "fahrrad",
-          "preis": 120
-        },
-        {
           "art": "karte",
           "kennung": "ablenkung",
           "preis": 10
@@ -103,12 +98,12 @@
         {
           "art": "karte",
           "kennung": "wasDroht",
-          "preis": 45
+          "preis": 60
         },
         {
           "art": "gegenstand",
           "kennung": "kartentasche",
-          "preis": 300
+          "preis": 450
         }
       ]
     }

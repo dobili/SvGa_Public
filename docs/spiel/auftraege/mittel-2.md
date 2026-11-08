@@ -1,82 +1,34 @@
-# Auftrag mittel-2: Gegenstände und Karten in der Geschichte, Limo-Nebenquest
+# Auftrag mittel-2: Gegner und Begegnungen von Akt 3 als Daten
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achte Auftrag, Verteilung und Preise, ist zusammengeführt, danke; Empfehlungen 1 bis 4 und 6 sowie die Datenbefunde sind umgesetzt, siehe ENTSCHEIDUNGEN. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, neunter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `docs/spiel/05_Story_Bibel.md` (Abschnitt „Hilfskarten und Zeitkarten“ je Akt und
-neue Szenen), `docs/spiel/11_Karten_und_Gegenstaende.md` (Abschnitt 6 und ein neuer Abschnitt 7
-„Verteilung und Preise“), `docs/spiel/auftraege/mittel-2.md`
-**Prüfung vor dem Push:** im Ordner `app/` `npx prettier --check ../docs/spiel` (falls die Dateien
-schon so formatiert sind), sonst nur sorgfältig lesen
+**Darf ändern:** `inhalte/abenteuer/gegner.json` (nur neue Einträge für Akt 3),
+`inhalte/abenteuer/begegnungen.json` (nur neue Einträge), `inhalte/abenteuer/texte/de.json` (nur neue
+Schlüssel, etwa `figur.<name>.name`), `docs/spiel/auftraege/mittel-2.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Der Autor will viele Karten und Gegenstände („je mehr, desto besser“, Balancing später). Gebaut
-sind 27 Karten, die Gegenstände Fahrrad, Laterne und Kartentasche, Läden in Maple Falls, Riverton
-und Ironwood (`inhalte/abenteuer/laeden.json`) und Lernkarten aus dem Buch. Noch nicht verteilt
-sind die Ideen aus `11_Karten_und_Gegenstaende.md`: Limo, Lupe des Uhrmachers, Reisebrett,
-Partienotizbuch, Monatskarte, Spickzettel, Pokerface, Schutzengel.
+Akt 3 steht in der Story-Bibel (dein siebter Auftrag); als Nächstes braucht er Daten. Zuerst die
+Gegner und Begegnungen, damit Karten und Dialoge später nur noch darauf verweisen.
 
 ## Vorgaben
 
-1. Abschnitt 7 in Dokument 11: Tabelle aller Karten und Gegenstände mit Herkunft (Szene, Laden,
-   Lernkarte), Preis und Akt; die Münzen, die man bis zum jeweiligen Laden realistisch hat
-   (Münzregeln in `docs/spiel/08_Wege_und_Entdeckungen.md`, G1 bis G6), daneben. Ziel: In jedem Akt
-   gibt es etwas Neues zu kaufen, nichts Starkes ist zu früh erreichbar (Grundsätze G1 bis G5).
-2. Limo-Nebenquest für Akt 1 (Park Maple Falls): Jo will nach einer Niederlage des Lesers Limo;
-   der Leser kauft sie am Kiosk (5 Münzen) und bringt sie ihr; dafür eine Steckbriefzeile über Jo
-   oder eine Revanche mit Vorteil. Als Szene in der Story-Bibel, mit Quest-Schritten (Format wie die
-   vorhandenen Quests), ohne Ink-Dateien.
-3. Für Lupe, Reisebrett, Partienotizbuch und Monatskarte je eine Szene in Akt 2 oder 3, in der der
-   Gegenstand ins Spiel kommt (wer gibt ihn, warum, was sagt Ambrose).
-4. Im Bericht: Vorschläge für Preise, die du ändern würdest, und was davon zu stark wirkt.
+1. Je Gegner aus Akt 3 (Clubchefs, Clubmitglieder, Straßengegner, Story) ein Profil wie die
+   vorhandenen: Kennung `<ort>.<name>`, Rolle, Stärke nach den Versatzbereichen (Pipeline-Test
+   prüft: Straße −150..0 auf A, Clubmitglied −100..+50, Clubchef genau E + 160 + 60 · Clubnummer),
+   Stil, Eröffnung, Steckbrief mit mindestens einer Zeile.
+2. `immunGegen` nach den Vorschlägen von niedrig-1 (ENTSCHEIDUNGEN, „Antworten aus Akt 3“): Dash
+   grossesMaul und ablenkung, Batiste alle Sprüche außer schmeichelei, Joggerin grossesMaul,
+   Schiffskoch ablenkung. Die Kennungen müssen zu den Konter-Texten passen (`spruch.konter.<name>`).
+3. Begegnungen: Clubkämpfe und Partien mit `zeit: "wahl"`, Stellungsduelle aus Abbildungen des
+   Buches (Kapitel des Clubs, mit Nummer, Vorteil etwa +1), Uhren wie in der Bibel.
+4. Was nicht passt oder fehlt (Clubnummern, Orte ohne Eintrag in `orte.json`), im Bericht nennen.
 
 ## Bericht
 
-**Fertig** auf `abenteuer-regelwerk` (Basis d31d0671 hereingeholt). Prettier über `docs/spiel`
-besteht.
-
-**Was neu ist**
-
-- **Dokument 11, Abschnitt 6** auf den gebauten Stand gebracht (27 Karten, drei Gegenstände) mit
-  Reihenfolge für das Ungebaute; **Abschnitt 7 „Verteilung und Preise“**: 7.1 Münzen, die man bis
-  zu jedem Ort realistisch hat (aus `regeln/muenzen.ts`, Funden, Runden; Akt 3 geplant): etwa 110
-  nach Maple Falls, 245 nach Akt 1, 530 nach Akt 2, 990 nach Akt 3. 7.2 alle 27 Karten plus
-  Spickzettel, Pokerface, Schutzengel mit Herkunft, Preis, Akt, Münzen bis dahin. 7.3 Gegenstände
-  (Limo, Fahrrad, Laterne, Monatskarte, Lupe, Partienotizbuch, Kartentasche, Reisebrett). 7.4 was
-  zu stark oder zu früh wirkt.
-- **Story-Bibel:** neue Szenen **10a Limo für Jo** (mit Quest-Schritten im Format von
-  `quests.json`), **30a Monatskarte** (Pops, 80 Münzen), **31a Lupe des Uhrmachers** (Harlan nach
-  drei Siegen), **39a Mamas Turnierheft** (Partienotizbuch von Oma Ruth), **51a Reisebrett** (Juno
-  zum Abschied); Szene 34 gibt zusätzlich den Spickzettel, Szene 65 Pokerface, Szene 69 den
-  Schutzengel. Kartentabellen je Akt ergänzt; die von Akt 1 an die Spieldaten angepasst
-  (Gefahrenradar und Mentor-Zug kommen laut `quests.json` schon mit der Nadel von Maple Falls).
-
-**Preise, die ich ändern würde, und was zu stark wirkt** (Einzelheiten in 11, 7.4)
-
-1. **Fahrrad in Maple Falls (120):** am Ende von Maple Falls bezahlbar, entwertet den Schlüssel in
-   Riverton. Streichen oder 180; bei Edna 120 lassen.
-2. **Kartentasche (300, Ironwood):** in Akt 2 erreichbar (≈ 530 Münzen), vier Karten machen die
-   Clubkämpfe von Akt 2 leicht. Nach Silicon Bay, 350, oder Wirkung erst ab Akt 3.
-3. **Remisangebot im Clubkampf:** sichert in ausgeglichener Stellung eine Bronzenadel ohne Sieg.
-   Im Clubkampf sperren oder Remis durch die Karte ohne Nadel.
-4. **Ablenkung im Laden:** widerspricht Z4 (Zeitkarten nie im Laden); als Belohnung vergeben
-   oder Z4 auf die Uhr-Sprüche beschränken.
-5. **Straßensiege ohne Grenze:** 10 Münzen je Sieg, beliebig oft; Vorschlag: nur der erste Sieg je
-   Gegner und Tag zählt voll, danach 2.
-6. **Was droht? (45, dauerhaft):** auf 60, weil die Karte jede Partie mitspielt.
-
-**Abweichungen in den Daten, die mir aufgefallen sind**
-
-- `riverton.flashbackLondon` gibt eine Bauernvorgabe, obwohl laut ENTSCHEIDUNGEN nur die erste
-  Erinnerung je Staffel sie gibt (Cedar Creek war die erste). Vorschlag: 20 Münzen statt Karte.
-- Jo (`mapleFalls.skaterJo`) hat keinen Steckbrief; die Limo-Quest braucht eine Zeile (Vorschlag
-  `fleck: rueckzug`).
-- Für Verbrauchsgegenstände (Limo) fehlt eine Wirkung „Gegenstand abgeben“ (etwa
-  `{ "art": "gegenstandWeg", "gegenstand": "limo" }` oder eine Dialogfunktion).
-- Neue Dialogknoten für mittel-1: `maple-falls-park.jo_limo`, `.patel_limo`, `.jo_limo_gebracht`.
-
-**Offen:** nichts Blockierendes.
+(vom Helfer auszufüllen)
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

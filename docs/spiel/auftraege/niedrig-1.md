@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: die 25 Karten von Akt 4
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zwölfter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die neuen Kartendateien von Akt 4, dazu in den vorhandenen Karten
@@ -694,4 +694,160 @@ desert-springs-antiquariat.json
 #            #
 #      s     #
 #######a######
+```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Die Tabelle aus `mittel-1.md` fehlt auch diesmal; Objekte,
+Kartenzuordnung (`karte`) und Ziele stammen aus `orte.json`. Figuren ohne `karte` sind nach Sinn
+verteilt (unten je Karte). Die 25 Karten sind mit einem Baukasten-Skript erzeugt (Straße in der
+Mitte, Ortsübergänge links/rechts/oben/unten am Rand, Häuser mit Türen oben und unten an der
+Straße, Gegenstände als Kisten am Straßenrand, Figuren am Gehweg, Innenräume mit Ausgang unten),
+dazu je Karte Landschaftsbausteine (Felsen, Gebäude, Wasser). Das Skript prüft Erreichbarkeit
+und freie Laufwege; danach prüft der Kartentest. Skizzen am Ende.
+
+**Teil 1: Weg 7 und Summit City (6 Karten) und `highway` in Desert Springs, gepusht.** 500 Tests
+bestanden, die sechs Karten nicht mehr übersprungen.
+
+- `weg-desert-summit-diner`: Diner, parkende Lkw, `tafel`, `fundNeonK`, `earl`; `trucker`,
+  `kellnerin`, `kojote` (abend), `eidechse`.
+- `weg-desert-summit-bergstrasse`: Serpentine zwischen Felsen, `abzweigHochebene` oben; `radler`,
+  `ziegen`, `adler`.
+- `summit-city-aussen`: Hütte, Bergladen, Talstation (`seilbahnTal`), `drachenbrunnen`, `kit`,
+  `victor`, Bergsee unten; `wanderer`, `seilbahnwaerter`, `holzhacker`, `murmeltier`, `ziegen`,
+  `adler`.
+- `summit-city-huette`: Kamin, `pokal`, `kaminfeuer`, `ward`; `gast` (abend).
+- `summit-city-bergstation`: `fundMurmeltierpfeife`, `haraldsen`; `skifahrerin`.
+- `summit-city-bergladen`: `theke`, `sol`; `kunde`.
+- `desert-springs-aussen`: `highway` rechts am Straßenrand (Kachel 31/10), Rand dort offen.
+
+**Teil 2: Weg 8 und Crossroads (4 Karten, gepusht).** 520 Tests bestanden.
+
+- `weg-summit-crossroads-geysirbecken`: Geysirkegel (Wand), `tafel`, `fundBisonhaar`, `bisons`
+  (Herde als Gegenstand), `bell`; `rangerin`, `touristen`, `bison`, `rabe`.
+- `weg-summit-crossroads-praerie`: Weizenfeld oben, Farmhaus, `sturmkeller`, `ray`; `sturmjaeger`,
+  `bauer`, `praeriehund`, `falke`.
+- `crossroads-aussen`: Kreuzung zweier Straßen, Raststätte (`raststaetteTuer`), Zapfsäulen,
+  `wegweiser`, `nova`, `slick`, `mira`, `bigJoe` am Gehweg; `fernfahrer`, `reisende`, `tankwart`,
+  `streuner` (folgt), `kraehe`.
+- `crossroads-raststaette`: Theke, `variantenTisch`, `postkarten`, `darlene`, `rosie`; `kellnerin`.
+
+**Teil 3: Weg 9 und Pinewood Camp (3 Karten, gepusht).** 535 Tests bestanden.
+
+- `weg-crossroads-pinewood-huetten`: zwei Wanderhütten, Holzstapel, `tafel`; `wanderin`, `baer`
+  (abend, weicht aus), `reh`.
+- `weg-crossroads-pinewood-riesenbaeume`: Riesenbäume als Kistenblöcke, `rangerhaus`, `greta`;
+  `ranger`, `eichhoernchen`, `specht`.
+- `pinewood-camp-aussen`: vier Hütten, See unten links, Kanus, `lagerfeuer`, `kiosk`, `ezra`,
+  `hollis`, `dex`, `mae`, `lou`, `tamsin`; `betreuer` (abend), `kanufahrer`, `campkinder`,
+  `libellen`, `reh`, `froesche` (abend).
+
+**Teil 4: Weg 10, Ghost Town und Erinnerung (5 Karten, gepusht).** 560 Tests bestanden.
+
+- `weg-pinewood-ghost-canyonrand`: Canyonwand oben, Abgrund unten, `tafel`; `kletterer`, `geier`,
+  `eidechse`.
+- `weg-pinewood-ghost-staubstrasse`: Kakteen, Felsen, `juniper`; `staubteufel` (als Statist,
+  wirbelt über die Straße), `klapperschlange`, `geier`.
+- `ghost-town-aussen`: Saloon (`saloonTuer`), verlassene Häuser, Friedhof unten links mit `grab`,
+  `sternenhimmel`, `victor`; `metallsucher`, `plakat` (flattert), `eule` (abend), `geier`.
+- `ghost-town-saloon`: Theke, `fernpartieBrett`, `pruitt`, `abzeichen` als Übergang in der oberen
+  Wand (geschlossen, von unten ansprechbar); `wind` (Schwingtür, abend).
+- `erinnerung-siedlung-huette` (12 × 10): ohne Ausgang am Rand; `start` und `ankunft`
+  nebeneinander, `rueckkehr` in der oberen Wand, `kerze`, `postreiter`; `pferd`.
+
+**Teil 5: Weg 11 und Capital Arena (4 Karten, gepusht).** 580 Tests bestanden.
+
+- `weg-ghost-capital-seeufer`: See unten, Bootshaus, `tafel`; `fischer` (morgen),
+  `spaziergaenger` (abend), `moewen`, `enten`.
+- `weg-ghost-capital-leuchtturm`: Felsen, Leuchtturm mit Lampe oben, See unten, `fundLinse`, `abe`;
+  `faehrmann`, `moewe`, `seehund`.
+- `capital-arena-aussen`: Arena (`halleTuer`), Vorplatz, `treppe`, `mama`, `juno`; nur ein
+  Ortsübergang (`wegGhost` links), rechter Rand geschlossen; `zuschauer`, `reporter`, `eltern`,
+  `tauben`, `hund`.
+- `capital-arena-halle` (24 × 14): `turniertafel`, `pressetisch`, `fanshop`, Tribünen, neun
+  Figuren in zwei Reihen (`turnierleiterin`, `lin`, `grahamHale`, `bea`, `marcus`, `nova`,
+  `tobias`, `kade`, `victor`); `schiedsrichter`, `publikum`.
+
+**Teil 6: Bayou, Hochebene und Port Delacroix (3 Karten neu, 2 geändert, gepusht).** 595 Tests
+bestanden, 0 übersprungen. Damit sind alle 25 Karten von Akt 4 gezeichnet.
+
+- `bayou-steg`: Wasser oben und unten, Steg, `nebel`, `theron`; `luftbootfahrer` (morgen),
+  `alligator`, `reiher`. Nur ein Übergang (`zurueckDelacroix` links).
+- `hochebene-felsentuerme` und `hochebene-schule`: neutral ohne Figuren und Statisten (Q21-1
+  offen), nur Felstürme bzw. ein Gebäude und Tiere (`adler`, `eidechse`, `ziegen`).
+- `port-delacroix-aussen`: `bayou` rechts am Straßenrand (Kachel 31/11, direkt unter
+  `wuestenzug`), Rand dort offen. Der Statist `blaeser` heißt jetzt `trompeter`, damit er nicht
+  mit der neuen Figur verwechselt wird.
+- `port-delacroix-musikhaus`: Figur `blaeser` (Kachel 11/9).
+
+Prettier meldet weiter `inhalte/abenteuer/runden.json` (nicht von mir); alle Karten sind sauber.
+
+Checkliste 6 für alle 25 Karten: Größe und Rand [x] (Kartentest), Belebung [x], Figuren [x];
+Geräusch, Musik, Tönung, Matten und Questspuren offen wie bisher. Die Karten sind schematisch
+(Baukasten); wer später die Grafik tauscht, sollte die Anordnung je Ort nach 09 verfeinern.
+
+```text
+bayou-steg.json
+############################
+############################
+############################
+############################
+############################
+############################
+#                          #
+#                   KK     #
+#    T                     #
+zTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#  n                       #
+#         KKK              #
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+hochebene-felsentuerme.json
+############################
+#         ###              #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###            ###      #
+#  ###            ###      #
+#                          #
+#                          #
+zTTTTTTTTTTTTTTTTTTTTTTTTTTw
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                          #
+#   ###              ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###           #
+#            ###           #
+############################
+
+hochebene-schule.json
+############################
+#                          #
+#        ##########        #
+#        ##F####F##        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#                          #
+#                          #
+zTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                          #
+#    KKK            KKK    #
+#    KKK            KKK    #
+#    KKK            KKK    #
+#                          #
+#                          #
+#                          #
+############################
 ```

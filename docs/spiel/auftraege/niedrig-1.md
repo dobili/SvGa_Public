@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Figuren und Objekte auf der Hochebene
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, dreizehnter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Karten der Hochebene (`inhalte/abenteuer/karten/hochebene*.json`),
@@ -845,6 +845,64 @@ zTTTTTTTTTTTTTTTTTTTTTTTTTT#
 #    KKK            KKK    #
 #    KKK            KKK    #
 #                          #
+#                          #
+#                          #
+############################
+```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Beide Karten der Hochebene neu erzeugt (gleiche Größe und
+Übergänge), Objekte nach der Tabelle in `mittel-2.md`. Prüfungen: 595 Tests bestanden, Prettier für
+die Karten und Paketbau sauber.
+
+- `hochebene-felsentuerme`: Felstürme wie bisher; `steintisch` (Brettkachel) auf einer flachen
+  Stelle zwischen zwei Türmen, `kira` direkt daneben; Belebung `wanderer`, `adler`, `eidechse`.
+- `hochebene-schule`: schlichte, moderne Siedlung: Schulgebäude mit `aushang` an der Wand (neben
+  der Tür, von der Straße aus ansprechbar), Turnhalle mit Basketballkorb (Lampenkachel) und `annek`
+  davor, Werkstatt unterhalb der Straße mit `werkstatt`, Schulbus (Kisten) daneben, `joss` zwischen
+  Werkstatt und Straße; Belebung `schulkinder`, `lehrerin` (morgen), `hund`, `adler`.
+- Keine Zeichen, Muster oder Deko aus realen Kulturen, nur Platzhalterkacheln.
+
+```text
+hochebene-felsentuerme.json
+############################
+#         ###              #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###            ###      #
+#  ###          sK###      #
+#                          #
+#                          #
+zTTTTTTTTTTTTTTTTTTTTTTTTTTw
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                          #
+#   ###              ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###           #
+#            ###           #
+############################
+
+hochebene-schule.json
+############################
+#                          #
+#  #########   ########    #
+#  ##F###F##   ###F####    #
+#  #########   ########    #
+#  #########   ########    #
+#  ####a####   ########    #
+#                       L  #
+#                      A   #
+zTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                   J      #
+#              ##w##       #
+#              ##### KKK   #
+#              ##### KKK   #
+#              #####       #
 #                          #
 #                          #
 ############################

@@ -438,12 +438,16 @@ Ort `mapleFalls.clubraum` · Victor, Graham Hale, Coach Delgado, Juno ·
 Ink `maple-falls-clubraum.victor`. Graham Hale stellt dem Schulamt im Clubraum das Pilotprojekt
 vor; Victor wartet gelangweilt, sieht die Clubnadel und fordert {held} heraus („Zeig mal, was eine
 Nadel hier wert ist.“). Ambrose hört den Namen Hale und verstummt mitten im Satz.
-Ereignis: Partie gegen Victor (Zielstärke E + 500, Spanisch, menschlich; Profil
-`mapleFalls.victor`). Entscheidung zur erzwungenen Niederlage (Dokument 02, 2.7): **echte Partie
-aus der Grundstellung mit zwei Dialogvarianten**, keine gestellte schlechte Stellung. Begründung:
-Das Spiel verspricht echtes Schach ohne heimliche Tricks (Konzeptsammlung, Regelwerk); eine
-gestellte Verluststellung wäre der erste Trick. Bei E + 500 verliert fast jeder, und wer gewinnt,
-hat es verdient. Karten sind erlaubt; die Partie zählt für keine Nadel, deshalb kein Kipppunkt.
+Ereignis: Partie gegen Victor (Zielstärke E + 500, menschlich; Profil `mapleFalls.victor`,
+Begegnung `mapleFalls.victor`) nach Regelwerk R33: **Trainingsstellung** aus dem Spanier um Zug
+12, {held} hat Schwarz und einen Springer weniger, Karten gesperrt, kein Wiedereinstieg, zählt
+nicht für die App. Victor begründet die Stellung selbst (`maple-falls-clubraum.ink`, Knoten
+`victor_wartet`): „Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen.“
+Ambrose: „Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten.“
+Entscheidung des Haupt-Chats (08.11.2026, `ENTSCHEIDUNGEN.md`): R33 statt der früheren Fassung
+dieser Szene (echte Partie aus der Grundstellung). Grund: Dokument 02, 2.7 will, dass {held} die
+Niederlage nicht als unfair erlebt; die Stellung erklärt sie offen, und Victors Satz zeigt seinen
+Trainingsalltag. Ein Trick ist das nicht, weil es vor der Partie gesagt wird.
 
 - **Variante Niederlage** (der Normalfall): Victor: „Du hast in Zug zwölf verloren. Den Rest hast
   du nur nicht gemerkt.“ Er geht, ohne die Hand zu geben; Graham Hale ruft ihn weg. Juno: „Der war
@@ -459,13 +463,17 @@ Hales.“ Ziel im Tagebuch: „Ich will besser werden.“ Etwa 30 Minuten.
 
 **13. Aufbruch** · `akt1.aufbruch`
 Ort `mapleFalls.wohnzimmer`, dann `mapleFalls.park` · Mama, Juno. Ereignis: Dialog. Mama erlaubt
-das Auswärtsspiel („Mit dem Coach im Schulbus? Gut. Brett nicht verlieren.“). Am Park wartet der
-Schulbus; Ausgang nach Cedar Creek wird geöffnet. Etwa 3 Minuten.
+das Auswärtsspiel („Mit dem Coach im Schulbus? Gut. Brett nicht verlieren.“). An der
+Bushaltestelle im Park (Auslöser `bushaltestelle`, Ink `maple-falls-park.bushaltestelle`) wartet
+der Schulbus; „Einsteigen“ ruft `reise("cedarCreek.aussen", "bushaltestelle")` (Regelwerk R41).
+Vorher sagt die Haltestelle nur: „Heute fährt er ohne dich.“ Etwa 3 Minuten.
 
 ### Cedar Creek
 
 **14. Ankunft in Cedar Creek** · `akt1.ankunftCedarCreek`
-Ort `cedarCreek.aussen` · Coach Delgado, Juno, Sam. Ereignis: Dialog. Das Auswärtsspiel der
+Ort `cedarCreek.aussen` (Ankunft am Auslöser `bushaltestelle`) · Coach Delgado, Juno, Sam.
+Ereignis: Dialog. Zurück nach Maple Falls geht es jederzeit mit dem Bus am Auslöser `busZurueck`
+(Dialog, `reise` zum Park). Das Auswärtsspiel der
 Kreisliga findet im Bibliotheksclub statt; der Coach sagt, die Clubchefin sei „eine Legende, die
 niemand kennt“. Auf einem Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner
 Stadt.“ Ambrose: „Ein Plakat, das droht. Wie reizend.“ Etwa 3 Minuten.
@@ -541,8 +549,12 @@ Gegner schwächen über die Story). Wichtig: {held} plant das nicht; es ist ein 
 eine Folge hat. Nach der Partie Mrs. Okafor: „Revanche, wenn ich ausgeschlafen bin!“ Etwa 5 Minuten.
 
 **23. Rosa am Steg** · S `cedarCreek.rosa`
-Ort `cedarCreek.aussen` · Rosa. Ereignis: Stellungsduell mit einem Mattbild (Kapitel 7, Abschnitt
-7.4), Zielstärke A − 50. Etwa 8 Minuten.
+Ort `cedarCreek.aussen` · Rosa. Ereignis: Stellungsduell aus Abbildung 1.41 (Buch Kapitel 1,
+Abschnitt 1.6, Goldene Angriffsregel: Königsangriff, Weiß am Zug etwa +1,1), 10 Züge, Mindestvorteil
+1,0, Zielstärke A − 50 (Begegnung `cedarCreek.rosaDuell`). Nicht mehr „Mattbild aus 7.4“: Alle
+Stellungen dort sind erzwungene Matts, und Regelwerk R13 verlangt einen Vorteil von +0,8 bis +2,5
+ohne Matt in drei oder weniger; 1.41 ist die nächste passende Stellung mit Königsangriff. Rosa
+dazu: „Ruhig, ruhig. Der König läuft nicht weg, wenn du zappelst.“ Etwa 8 Minuten.
 
 **24. Clubkampf Cedar Creek** · `akt1.clubnadelCedarCreek` · H `cedarCreek.clubkampf`
 Ort `cedarCreek.bibliothek` · Mrs. Okafor, Team Maple Falls als Zuschauer. Ereignis: Partie gegen

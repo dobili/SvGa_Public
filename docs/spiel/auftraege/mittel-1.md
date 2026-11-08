@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Fehlende Funde, Läden und die Erinnerung 1858 in Akt 3
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, sechzehnter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, sechzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/funde.json`, `laeden.json`, `begegnungen.json`, `runden.json`,
@@ -28,7 +28,59 @@ Die Lücken, die du und mittel-2 gemeldet habt (Berichte in `mittel-1.md` und `m
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Erledigt.**
+
+1. **Funde:** neun Einträge in `funde.json` mit Name und Text: `anstecker` (5 Münzen),
+   `ohrstoepsel`, `zeroTablet` (von mittel-2), `flaschenpost` (10), `muschelMitLoch` (5),
+   `erstesBrettMusikhaus` (Extra `brett-musikhaus-am-kai`), `eidechsenhaut` (5),
+   `nietenCanyonbruecke`, `halesBrief`. Münzen nach der Fundtabelle der Bibel (Abschnitt 21). Alle
+   `gibFund`-Aufrufe sind aktiv, auch in `weg-ironwood-silicon.ink` und `silicon-bay-akademie.ink`.
+   Die Dialoge behalten ihre eigenen Merker (Befund 1 von mittel-2: `gefunden<Fund>` würde beim
+   Dialogende überschrieben).
+2. **Läden:** `siliconBay.foodtruck` (Rosie: Zweite Chance 20, Flüstern 40, Waage 15),
+   `portDelacroix.gebaeckstand` (Mrs. Arceneaux: Zweite Chance 20, Fingerzeig 15, Remisangebot 35),
+   `desertSprings.antiquariat` (Mr. Okoro: Flüstern 40, Was droht? 60, Zweite Chance 20). Preise wie in
+   den Läden von Akt 1 und 2 (11, Abschnitt 7.2). Die drei Figuren öffnen ihren Laden nach dem
+   Gespräch (`oeffneLaden`). Keine Sprüche im Laden (Z4), kein Mentor-Zug und keine Vorgabe (G3).
+   **Pokerface** wird bei Batistes erstem Sieg zu Zweite Chance (Bibel) und Kühler Kopf, der ruhigen
+   Zeitkarte, die zu „ein Gesicht wie das Wasser“ passt. **Schutzengel** wird bei Miss Odile nach der
+   Simultan zu „Was droht?“: Diese Karte zeigt, was man verlieren kann.
+3. **Buck:** Buck hat die Rolle `strasse`, also schreibt die Hülle beim Sieg schon 10 Münzen gut
+   (`MUENZEN.strassensieg`); dafür brauchte es nichts Neues. Startstellung geprüft mit Stockfish 19:
+   Abbildung 8.44 (Bauernendspiel, Mehrheit und Durchbruch) steht bei Tiefe 28 auf +2,84 für Weiß,
+   über der Grenze von R13 (+0,8 bis +2,5) und weit über „etwa +1“. Abbildung 1.36 steht bei Tiefe
+   20 auf +1,10. **Entscheidung:** Buck bleibt bei 1.36, `begegnungen.json` unverändert.
+4. **Erinnerung 1858 (Szene 77):** Runde `desertSprings.erinnerung1858` mit
+   `klassik-bird-morphy` ab Zug 11 mit Schwarz, Quest `desertSprings.erinnerung1858` (begegnung,
+   Fragment 6, 20 Münzen, danach Miras Satz „Das Opfer war richtig!“ und Ambroses Antwort). Angeboten
+   wird sie bei Mira nach dem Clubkampf („Ambrose will dir etwas zeigen“), am Abend in der Garage.
+   **Entscheidung:** Die Bibel will Ambroses erfundene Partie gegen Hale mit Weiß. Die Sammlung hat
+   vor 1866 nur drei Partien, alle schon benutzt. Ambrose erzählt deshalb, er habe 1858 geopfert wie
+   Morphy im selben Jahr in London und dann gezögert; der Held spielt Morphys Züge. Das Jahr stimmt,
+   und Miras Satz passt genau. Nachteile: Schwarz statt Weiß, und der Schluss ab Zug 17 kommt auch
+   in Ironwood vor. Besser wäre eine weitere gemeinfreie Partie aus der Zeit vor 1866 in
+   `klassiker.json` (Vorschlag von mittel-2). Den Werkstatt-Flashback musste ich nicht umstellen: er
+   nutzt das Erinnerungsformat schon (Unsterbliche ab Zug 1 mit Weiß); `mattbilder` steht nur, weil
+   der Test Themen verlangt.
+5. **Mentor-Zug (R29):** Die Quest gibt den Mentor-Zug aus Port Delacroix nicht mehr beim Clubkampf,
+   sondern bei der Versöhnung (`desertSprings.versoehnung`, Schritt 2, `versoehnung_abend`); Ambrose
+   sagt dazu: „Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben.“ Weil der Wüstenzug erst nach
+   der Nadel von Port Delacroix fährt, ist der Sieg dann immer schon errungen. Das erfüllt „erst nach
+   der Versöhnung spielbar“ für diese Karte. **Rest für die Hülle:** Mentor-Züge aus früheren Clubs
+   kann der Held zwischen Vorwurf und Versöhnung noch spielen. Eine vollständige Sperre bräuchte in
+   der Hülle die Regel „Mentor-Zug nicht spielbar, wenn `tiefpunktGesehen` und nicht
+   `versoehnungGesehen`“ (beide Dialogvariablen gibt es).
+
+**Prüfungen:** pytest 470 bestanden; `npm run pruefen` vollständig grün (361 Dateien, 2414 Tests);
+Abenteuerpaket baut. Simulation von der Fähre bis zum Schild: alle neun Quests von Akt 3 fertig,
+Funde, Läden und Karten feuern an der richtigen Stelle. Zufallsdurchläufe aller Knoten ohne Fehler.
+`quests.json` und `runden.json` sind mit prettier formatiert (das betraf auch eine Zeile des
+Haupt-Chats).
+
+**Weiter offen (nicht in diesem Auftrag):** Fahrkarten und Album-Waren aus Abschnitt 22 der Bibel
+(Fährfahrkarte, Zugfahrkarte, Bretthintergrund, Spende, altes Schachbuch) gibt es als Gegenstand oder
+Extra noch nicht; die Monatskarte deckt das Reisen ab. Funde ohne Auslöser in `orte.json`:
+Trompetenmundstück, Miras Pokal, Holzdame, Altes Foto (Szene 68).
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

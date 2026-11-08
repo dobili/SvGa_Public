@@ -4,8 +4,10 @@
 // Szenen der Bibel (Abschnitt 20): 75 Aufgabenreihen (Runden desertSprings.reiheTomas,
 // desertSprings.reiheDot), 78 Clubkampf (Begegnung desertSprings.clubkampf, Karten erlaubt, der
 // Mentor-Zug ist nach der Versöhnung wieder frei), Dots Hinweis auf das Antiquariat (Szene 76).
-// Einstiege wie in orte.json: mira, tomas, dot. Die Szene 77 (Erinnerung 1858) wartet auf ihre
-// Stellung (Folgeauftrag mit der Engine, Bericht).
+// Szene 77 Erinnerung 1858 (Runde desertSprings.erinnerung1858, Quest gleichen Namens): Ambrose
+// erzählt Mira am Abend nach dem Clubkampf von seiner letzten Partie gegen Hale. Weil die Sammlung
+// vor 1866 keine freie Partie mehr hat, rät der Held Morphys Züge aus Bird–Morphy 1858 (Bericht).
+// Einstiege wie in orte.json: mira, tomas, dot.
 //
 // Der Club beginnt erst nach der Versöhnung (Hauptquest desertSprings.versoehnung, streng der
 // Reihe nach). Variablen: reiheTomasBestanden, reiheDotBestanden, ausgangDesertSpringsClubkampf
@@ -15,6 +17,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR held = "Du"
 VAR miraSteinGesehen = false
 VAR versoehnungGesehen = false
 VAR reiheTomasBestanden = false
@@ -25,6 +28,8 @@ VAR clubkampfDesertSpringsNadel = 0
 VAR tomasGetroffen = false
 VAR dotGetroffen = false
 VAR dotOkoroErzaehlt = false
+VAR erinnerung1858Bestanden = false
+VAR erinnerung1858Besprochen = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -43,6 +48,7 @@ VAR dotOkoroErzaehlt = false
 {
 - not versoehnungGesehen: -> garage_wartet
 - nadelDesertSprings > clubkampfDesertSpringsNadel: -> mira_nach_sieg
+- erinnerung1858Bestanden and not erinnerung1858Besprochen: -> mira_nach_erinnerung
 - not (reiheTomasBestanden and reiheDotBestanden): -> mira_reihe_offen
 - nadelDesertSprings == 0 and ausgangDesertSpringsClubkampf == "niederlage": -> mira_nach_niederlage
 - nadelDesertSprings == 0: -> mira_clubkampf
@@ -90,12 +96,35 @@ Auch für Port Delacroix schreibe ich dir noch eine Notiz. Ich war dort nicht st
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira
++ {nadelDesertSprings > 0 and not erinnerung1858Bestanden} [„Ambrose will dir etwas zeigen.“]
+    -> mira_erinnerung
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     Jetzt. #sprecher:mira
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Bis später, Mira.“]
     -> END
+
+// ---------------------------------------------------------------- Erinnerung 1858 (Szene 77)
+
+=== mira_erinnerung ===
+Es wird Abend. Tomás zieht das Garagentor halb herunter, Mira setzt sich im Schneidersitz vor dein Brett. #sprecher:erzaehler
+1858 spielte ich meine letzte Partie gegen Hale. Ich opferte, so wie Morphy es im selben Jahr in London tat. #sprecher:ambrose
+Aber dann zögerte ich. Morphy zögerte nicht. #sprecher:ambrose
+Spiel seine Züge, {held}. Dann sehen wir, was ich hätte tun sollen. #sprecher:ambrose
+* [Die Partie spielen]
+    ~ beginneAufgaben("desertSprings.erinnerung1858")
+    -> END
+* [„Ein andermal.“]
+    Ich habe hundertsechzig Jahre gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose
+    -> END
+
+=== mira_nach_erinnerung ===
+~ erinnerung1858Besprochen = true
+Mira springt auf. #sprecher:erzaehler
+Das Opfer war richtig! Du hast nur danach gezögert! #sprecher:mira
+Hundertsechzig Jahre, und ein Kind sagt es mir. #sprecher:ambrose #stimmung:lacht
+-> END
 
 // ---------------------------------------------------------------- Tomás
 

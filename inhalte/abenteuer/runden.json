@@ -6,25 +6,16 @@
       "ort": "mapleFalls",
       "steller": "mapleFalls.sam",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:droh-ignorieren",
-        "ueb:zaehlen-vorstoss"
-      ],
-      "themen": [
-        "haengend"
-      ]
+      "buchuebungen": ["ueb:droh-ignorieren", "ueb:zaehlen-vorstoss"],
+      "themen": ["haengend"]
     },
     {
       "kennung": "mapleFalls.reiheJuno",
       "ort": "mapleFalls",
       "steller": "mapleFalls.juno",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:angriff-zaehlen"
-      ],
-      "themen": [
-        "matt1"
-      ]
+      "buchuebungen": ["ueb:angriff-zaehlen"],
+      "themen": ["matt1"]
     },
     {
       "kennung": "mapleFalls.todsuenden",
@@ -32,9 +23,7 @@
       "steller": "mapleFalls.sam",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "haengend"
-      ],
+      "themen": ["haengend"],
       "anzahl": 5
     },
     {
@@ -43,9 +32,7 @@
       "steller": "mapleFalls.abernathy",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "matt1"
-      ],
+      "themen": ["matt1"],
       "anzahl": 3
     },
     {
@@ -54,9 +41,7 @@
       "steller": "mapleFalls.lily",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "doppelangriff"
-      ],
+      "themen": ["doppelangriff"],
       "anzahl": 3
     },
     {
@@ -64,27 +49,16 @@
       "ort": "cedarCreek",
       "steller": "cedarCreek.dex",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a02",
-        "ueb:taktik-a08"
-      ],
-      "themen": [
-        "matt1",
-        "matt2"
-      ]
+      "buchuebungen": ["ueb:taktik-a02", "ueb:taktik-a08"],
+      "themen": ["matt1", "matt2"]
     },
     {
       "kennung": "cedarCreek.reiheMae",
       "ort": "cedarCreek",
       "steller": "cedarCreek.mae",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a09"
-      ],
-      "themen": [
-        "mattbilder",
-        "grundreihenmatt"
-      ]
+      "buchuebungen": ["ueb:taktik-a09"],
+      "themen": ["mattbilder", "grundreihenmatt"]
     },
     {
       "kennung": "cedarCreek.trocknerStellung",
@@ -92,9 +66,7 @@
       "steller": "cedarCreek.boateng",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "matt2"
-      ],
+      "themen": ["matt2"],
       "anzahl": 3
     },
     {
@@ -103,9 +75,7 @@
       "steller": "cedarCreek.okafor",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "mattbilder"
-      ],
+      "themen": ["mattbilder"],
       "anzahl": 1,
       "erinnerung": {
         "partie": "klassik-paulsen-morphy",
@@ -119,9 +89,7 @@
       "steller": "wegMapleCedar.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "matt1"
-      ],
+      "themen": ["matt1"],
       "anzahl": 3
     },
     {
@@ -130,9 +98,7 @@
       "steller": "wegCedarRiverton.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "doppelangriff"
-      ],
+      "themen": ["doppelangriff"],
       "anzahl": 3
     },
     {
@@ -140,26 +106,16 @@
       "ort": "riverton",
       "steller": "riverton.tamsin",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a01",
-        "ueb:droh-ignorieren"
-      ],
-      "themen": [
-        "doppelangriff"
-      ]
+      "buchuebungen": ["ueb:taktik-a01", "ueb:droh-ignorieren"],
+      "themen": ["doppelangriff"]
     },
     {
       "kennung": "riverton.reiheRay",
       "ort": "riverton",
       "steller": "riverton.ray",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a06",
-        "ueb:k2-zweispringer-la4"
-      ],
-      "themen": [
-        "doppelangriff"
-      ]
+      "buchuebungen": ["ueb:taktik-a06", "ueb:k2-zweispringer-la4"],
+      "themen": ["doppelangriff"]
     },
     {
       "kennung": "riverton.slickBeobachten",
@@ -167,9 +123,7 @@
       "steller": "riverton.tamsin",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "doppelangriff"
-      ],
+      "themen": ["doppelangriff"],
       "anzahl": 3
     },
     {
@@ -178,9 +132,7 @@
       "steller": "riverton.pops",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "doppelangriff"
-      ],
+      "themen": ["doppelangriff"],
       "anzahl": 1
     },
     {
@@ -189,9 +141,7 @@
       "steller": "riverton.ambrose",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "mattbilder"
-      ],
+      "themen": ["mattbilder"],
       "anzahl": 1,
       "erinnerung": {
         "partie": "klassik-unsterbliche",
@@ -205,9 +155,7 @@
       "steller": "wegRivertonIronwood.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "fesselung"
-      ],
+      "themen": ["fesselung"],
       "anzahl": 2
     },
     {
@@ -215,24 +163,16 @@
       "ort": "ironwood",
       "steller": "ironwood.hank",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a04"
-      ],
-      "themen": [
-        "fesselung"
-      ]
+      "buchuebungen": ["ueb:taktik-a04"],
+      "themen": ["fesselung"]
     },
     {
       "kennung": "ironwood.reihePriya",
       "ort": "ironwood",
       "steller": "ironwood.priya",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a03"
-      ],
-      "themen": [
-        "spiess"
-      ]
+      "buchuebungen": ["ueb:taktik-a03"],
+      "themen": ["spiess"]
     },
     {
       "kennung": "ironwood.siegelStellung",
@@ -240,9 +180,7 @@
       "steller": "ironwood.teague",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "fesselung"
-      ],
+      "themen": ["fesselung"],
       "anzahl": 1
     },
     {
@@ -251,9 +189,7 @@
       "steller": "ironwood.ambrose",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "mattbilder"
-      ],
+      "themen": ["mattbilder"],
       "anzahl": 1,
       "erinnerung": {
         "partie": "klassik-bird-morphy",
@@ -267,9 +203,7 @@
       "steller": "wegIronwoodSilicon.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "falle"
-      ],
+      "themen": ["falle"],
       "anzahl": 3
     },
     {
@@ -278,9 +212,7 @@
       "steller": "siliconBay.theo",
       "reihe": true,
       "buchuebungen": [],
-      "themen": [
-        "haengend"
-      ]
+      "themen": ["haengend"]
     },
     {
       "kennung": "siliconBay.reiheNova",
@@ -288,9 +220,7 @@
       "steller": "siliconBay.nova",
       "reihe": true,
       "buchuebungen": [],
-      "themen": [
-        "falle"
-      ]
+      "themen": ["falle"]
     },
     {
       "kennung": "siliconBay.auswertung",
@@ -298,9 +228,7 @@
       "steller": "siliconBay.victor",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "haengend"
-      ],
+      "themen": ["haengend"],
       "anzahl": 3
     },
     {
@@ -309,9 +237,7 @@
       "steller": "wegSiliconDelacroix.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "umwandlung"
-      ],
+      "themen": ["umwandlung"],
       "anzahl": 3
     },
     {
@@ -336,10 +262,7 @@
       "steller": "portDelacroix.odile",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "doppelangriff",
-        "fesselung"
-      ],
+      "themen": ["doppelangriff", "fesselung"],
       "anzahl": 3
     },
     {
@@ -348,9 +271,7 @@
       "steller": "portDelacroix.ambrose",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "mattbilder"
-      ],
+      "themen": ["mattbilder"],
       "anzahl": 1,
       "erinnerung": {
         "partie": "klassik-unsterbliche",
@@ -364,9 +285,7 @@
       "steller": "wegDelacroixDesert.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "mattbilder"
-      ],
+      "themen": ["mattbilder"],
       "anzahl": 3
     },
     {
@@ -374,28 +293,16 @@
       "ort": "desertSprings",
       "steller": "desertSprings.tomas",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:taktik-a10",
-        "ueb:taktik-a11"
-      ],
-      "themen": [
-        "mattbilder",
-        "hinlenkung"
-      ]
+      "buchuebungen": ["ueb:taktik-a10", "ueb:taktik-a11"],
+      "themen": ["mattbilder", "hinlenkung"]
     },
     {
       "kennung": "desertSprings.reiheDot",
       "ort": "desertSprings",
       "steller": "desertSprings.dot",
       "reihe": true,
-      "buchuebungen": [
-        "ueb:morphy-opfer-checkliste",
-        "ueb:taktik-a14"
-      ],
-      "themen": [
-        "doppelschach",
-        "abzug"
-      ]
+      "buchuebungen": ["ueb:morphy-opfer-checkliste", "ueb:taktik-a14"],
+      "themen": ["doppelschach", "abzug"]
     },
     {
       "kennung": "desertSprings.siegel",
@@ -403,10 +310,22 @@
       "steller": "desertSprings.okoro",
       "reihe": false,
       "buchuebungen": [],
-      "themen": [
-        "fesselung"
-      ],
+      "themen": ["fesselung"],
       "anzahl": 1
+    },
+    {
+      "kennung": "desertSprings.erinnerung1858",
+      "ort": "desertSprings",
+      "steller": "desertSprings.ambrose",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 1,
+      "erinnerung": {
+        "partie": "klassik-bird-morphy",
+        "abZug": 11,
+        "seite": "black"
+      }
     }
   ]
 }

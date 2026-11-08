@@ -10,11 +10,12 @@
 //
 // Variablen: ausgangWegIronwoodSiliconJoggerin und wegIronwoodSiliconTafelBestanden setzt die
 // Hülle (R42), „abgebrochen“ zählt wie nicht gespielt (R35). Die Funde (Anstecker, Ohrstöpsel)
-// merkt sich Ink selbst; als Einträge für funde.json vorgeschlagen (Bericht). ohrstoepselGefunden
+// gibt gibFund; Ink merkt sie sich zusätzlich selbst. ohrstoepselGefunden
 // liest auch silicon-bay-serverraum.ink.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR wegIronwoodSiliconTafelBestanden = false
@@ -112,6 +113,7 @@ An der Raststätte wartet der Bus zurück nach Ironwood. Der Fahrer winkt. #spre
     -> END
 }
 ~ ansteckerGefunden = true
+~ gibFund("anstecker")
 Auf dem Boden glänzt ein Anstecker: „ZERO – Spiel wie die Zukunft.“ #sprecher:erzaehler
 Gratis. Natürlich. #sprecher:juno
 -> END
@@ -122,6 +124,7 @@ Gratis. Natürlich. #sprecher:juno
     -> END
 }
 ~ ohrstoepselGefunden = true
+~ gibFund("ohrstoepsel")
 Am Geländer klemmt ein winziger, schwarzer Ohrstöpsel. Er ist schwerer, als er aussieht. #sprecher:erzaehler
 Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambrose
 -> END

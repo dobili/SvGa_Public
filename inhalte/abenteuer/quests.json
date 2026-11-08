@@ -42,11 +42,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.ersteLektion",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {
@@ -68,9 +64,7 @@
         "art": "dialog",
         "knoten": "maple-falls-dachboden.nach_erster_partie"
       },
-      "voraussetzung": [
-        "mapleFalls.dasBrett"
-      ],
+      "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
         {
           "text": "quest.ersterAbend.schritt1",
@@ -124,10 +118,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -175,11 +166,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.victor",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -248,9 +235,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.samRevanche",
-            "ausgang": [
-              "sieg"
-            ]
+            "ausgang": ["sieg"]
           },
           "wirkungen": [
             {
@@ -261,9 +246,7 @@
           ]
         }
       ],
-      "voraussetzung": [
-        "mapleFalls.dasBrett"
-      ]
+      "voraussetzung": ["mapleFalls.dasBrett"]
     },
     {
       "kennung": "mapleFalls.verlorenesBrett",
@@ -442,10 +425,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "cedarCreek.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -571,9 +551,7 @@
         "karte": "cedarCreek.archiv",
         "ausloeser": "programmheft"
       },
-      "voraussetzung": [
-        "cedarCreek.archiv1858"
-      ],
+      "voraussetzung": ["cedarCreek.archiv1858"],
       "schritte": [
         {
           "text": "quest.erinnerungNewYork.schritt1",
@@ -672,10 +650,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "riverton.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -909,11 +884,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.mama",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {
@@ -968,10 +939,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1061,9 +1029,7 @@
         "art": "dialog",
         "knoten": "ironwood-kantine.feier_einladung"
       },
-      "voraussetzung": [
-        "ironwood.mamasFinale"
-      ],
+      "voraussetzung": ["ironwood.mamasFinale"],
       "schritte": [
         {
           "text": "quest.feier.schritt1",
@@ -1305,10 +1271,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "siliconBay.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1496,20 +1459,13 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
               "art": "szene",
               "akt": 3,
               "szene": "akt3.clubnadelPortDelacroix"
-            },
-            {
-              "art": "karte",
-              "karte": "mentorzug"
             }
           ]
         },
@@ -1591,11 +1547,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.celeste",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -1703,6 +1655,10 @@
               "art": "szene",
               "akt": 3,
               "szene": "akt3.versoehnung"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
             }
           ]
         },
@@ -1731,10 +1687,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "desertSprings.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1812,6 +1765,43 @@
               "karte": "fluestern"
             }
           ]
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.erinnerung1858",
+      "titel": "quest.erinnerung1858.titel",
+      "typ": "begegnung",
+      "ort": "desertSprings",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "desert-springs-garage.mira_erinnerung"
+      },
+      "schritte": [
+        {
+          "text": "quest.erinnerung1858.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.erinnerung1858"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 6
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.erinnerung1858.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-garage.mira_nach_erinnerung"
+          }
         }
       ]
     }

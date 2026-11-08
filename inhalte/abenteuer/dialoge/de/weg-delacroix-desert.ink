@@ -4,16 +4,17 @@
 // Stationen (W4): Wanderin Mrs. Holloway mit einer Weisheit (Kapitel 1, Abschnitt 1.6),
 // Rätseltafel am Wanderschild (Runde wegDelacroixDesert.tafel, drei Königsangriffe), Mira auf
 // ihrem Stein (Szene 72, Hauptquest desertSprings.versoehnung), die Versöhnung am Felsbogen
-// (Szene 73, R29 endet), Funde Eidechsenhaut und Nieten J. H. an der Canyonbrücke.
+// (Szene 73, R29 endet: die Quest gibt erst hier den Mentor-Zug aus Port Delacroix), Funde Eidechsenhaut und Nieten J. H. an der Canyonbrücke.
 // Einstiege wie in orte.json: holloway, zurueck_delacroix, tafel, fund_eidechsenhaut, mira_stein,
 // versoehnung, fund_nieten. Die Ankunft erzählt desert-springs-aussen.ankunft_zu_fuss.
 //
 // Ambrose spricht nur, wenn er nach den Nachfahren wieder redet (ambroseSprichtWieder); die
-// Versöhnung setzt die Variable in jedem Fall. Die Funde fehlen noch in funde.json, die Aufrufe
-// stehen als Kommentar bereit. Variablen: wegDelacroixDesertTafelBestanden setzt die Hülle (R42),
+// Versöhnung setzt die Variable in jedem Fall. Die Funde gibt gibFund; Ink merkt sie sich
+// zusätzlich selbst. Variablen: wegDelacroixDesertTafelBestanden setzt die Hülle (R42),
 // versoehnungGesehen und miraSteinGesehen setzt diese Datei.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR ambroseSprichtWieder = false
@@ -112,6 +113,7 @@ Er zeigt dir mit dem alten Brett zwei Stellungen nebeneinander: einmal ein Opfer
 Ein Opfer ist schön, wenn genug Figuren mitkommen. Das ist die Goldene Angriffsregel, Kapitel 1, Abschnitt 1.6. #sprecher:ambrose
 Morphy wusste das. Er opferte nur, wenn seine Figuren schon bereitstanden. Kapitel 11, Abschnitt 11.2. #sprecher:ambrose
 Ab jetzt spielen wir wieder zusammen. Aber du entscheidest. #sprecher:ambrose #stimmung:froh
+Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben. Jetzt darfst du ihn spielen. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Funde
@@ -123,7 +125,7 @@ Ab jetzt spielen wir wieder zusammen. Aber du entscheidest. #sprecher:ambrose #s
 }
 ~ eidechsenhautGefunden = true
 Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil. #sprecher:erzaehler
-// ~ gibFund("eidechsenhaut")  (Fund fehlt noch in funde.json)
+~ gibFund("eidechsenhaut")
 {ambroseSprichtWieder:
     Sie hat sich aus der alten Haut befreit. Manchmal muss man das. #sprecher:ambrose
 }
@@ -136,7 +138,7 @@ Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil. 
 }
 ~ nietenCanyonGefunden = true
 Unter dem Felsbogen läuft eine alte Eisenbahnbrücke. Auf jeder Niete stehen dieselben Buchstaben: J. H. #sprecher:erzaehler
-// ~ gibFund("nietenCanyonbruecke")  (Fund fehlt noch in funde.json)
+~ gibFund("nietenCanyonbruecke")
 {gefundenNietenkopf:
     Wie auf dem Nietenkopf von der Brücke bei Ironwood. #sprecher:erzaehler
 }

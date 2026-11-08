@@ -14,6 +14,7 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR linGetroffen = false
@@ -138,6 +139,7 @@ Nach zehn Zügen dreht er den Bildschirm zu dir. #sprecher:erzaehler
 Einundsiebzig Prozent Genauigkeit. Das ist … menschlich. #sprecher:theo
 Hier. Ein Tablet mit ZERO. Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo
 ~ zeroTabletGeschenkt = true
+~ gibFund("zeroTablet")
 Auf dem Tablet gewinnt die Maschine eine Partie in zwölf Sekunden. Kein einziger Fehler. #sprecher:erzaehler
 Kein einziger Fehler. Nicht einer. #sprecher:ambrose #stimmung:gebannt
 -> theo_reihe

@@ -126,6 +126,72 @@
           "preis": 100
         }
       ]
+    },
+    {
+      "kennung": "siliconBay.foodtruck",
+      "ort": "siliconBay",
+      "name": "laden.foodtruck.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "karte",
+          "kennung": "waage",
+          "preis": 15
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.gebaeckstand",
+      "ort": "portDelacroix",
+      "name": "laden.gebaeckstand.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "fingerzeig",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "remisangebot",
+          "preis": 35
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.antiquariat",
+      "ort": "desertSprings",
+      "name": "laden.antiquariat.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "karte",
+          "kennung": "wasDroht",
+          "preis": 60
+        },
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        }
+      ]
     }
   ]
 }

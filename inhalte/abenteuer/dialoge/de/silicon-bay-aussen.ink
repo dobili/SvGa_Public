@@ -5,8 +5,7 @@
 // gruebelfalle), 61 Die Nacht mit dem Tablet (Auslöser hotel, akt3.ambroseGebannt), dazu Bus
 // zurück nach Ironwood und die Fähre nach Port Delacroix (nach der Clubnadel).
 // Einstiege wie in orte.json: ankunft_zu_fuss, dash, rosie, glasbruecke, hotel, bus_ironwood,
-// faehre. Rosies Laden (siliconBay.foodtruck) steht noch nicht in laeden.json; bis dahin
-// erzählt sie nur (Bericht).
+// faehre. Rosie öffnet nach dem Gespräch ihren Laden (siliconBay.foodtruck).
 //
 // Variablen: ausgangSiliconBayDash, ausgangSiliconBayClubkampf und nadelSiliconBay setzt die
 // Hülle (R42). Victor holt {held} und Juno bei der Ankunft ab.
@@ -14,6 +13,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL oeffneLaden(laden)
 
 VAR held = "Du"
 VAR ausgangSiliconBayDash = ""
@@ -101,13 +101,17 @@ Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
 === rosie ===
 {rosieGetroffen:
     {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie
-    -> END
+    -> rosie_laden
 }
 ~ rosieGetroffen = true
 Aus dem Food-Truck duftet es nach Bohnen und Mais. Eine Frau mit Kochmütze lehnt sich aus dem Fenster. #sprecher:erzaehler
 Willkommen in Silicon Bay. Ich bin das Einzige hier, das nicht leuchtet. #sprecher:rosie
-Karten und Fahrkarten verkauf ich auch, sobald der Chef mir einen Kühlschrank für Papier erlaubt. #sprecher:rosie
+Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie
 Eine Köchin, die lacht. In dieser Stadt aus Glas ist das ein Wunder. #sprecher:ambrose
+-> rosie_laden
+
+=== rosie_laden ===
+~ oeffneLaden("siliconBay.foodtruck")
 -> END
 
 // ---------------------------------------------------------------- Hotel (Szene 61)

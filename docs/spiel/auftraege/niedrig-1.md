@@ -1,36 +1,26 @@
-# Auftrag niedrig-1: Karten der Erinnerung London 1851
+# Auftrag niedrig-1: die 17 Karten von Akt 3
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zehnte Auftrag, Karten London 1851, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/karten/erinnerung-london-strand.json`,
-`inhalte/abenteuer/karten/erinnerung-london-kaffeehaus.json` (neu), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
-(die Kartenprüfung der Pipeline greift erst, wenn mittel-1 den Ort in `orte.json` eingetragen hat)
+**Darf ändern:** die 17 Kartendateien aus der Tabelle unten (neu), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (jede gezeichnete Karte
+nimmt einen übersprungenen Test in die Prüfung auf), in `app/` Prettier und Paketbau
 
 ## Ziel
 
-Ort `erinnerungLondon` (neue Ort-Art `erinnerung`, `nummer` 0): Ambrose ist 20, London 1851.
-Die Technik steht (Haupt-Chat, 08.11.2026): Karten eines Ortes mit `art: "erinnerung"` erscheinen in
-Sepia, der Held ist das Figurbild (Ambrose), Tagebuch und Münzen sind ausgeblendet; Übergänge in
-und aus einer Erinnerung dürfen in andere Orte führen. Feste Namen, damit beide Helfer parallel
-arbeiten können:
-
-- Karte `erinnerungLondon.strand`, Datei `karten/erinnerung-london-strand.json` (28 × 20, außen):
-  Straße „Strand“ mit Gaslaternen, Droschken, Ladenfronten, Themse am Rand. Objekte: `ankunft`
-  (Start), `kaffeehausTuer` (Übergang), `droschke` (ansehen), `zeitungsjunge` (Figur), Belebung
-  `passanten`, `tauben`, `laternenanzuender` (abend).
-- Karte `erinnerungLondon.kaffeehaus`, Datei `karten/erinnerung-london-kaffeehaus.json` (16 × 12,
-  innen): Kaffeehaus mit Tischen, Zeitungsständer, Theke. Objekte: `tuer` (Übergang zurück auf die
-  Straße), `schachtisch` (Anderssen und Kieseritzky, startet das Zugerraten), `rueckkehr`
-  (die große Uhr an der Wand: zurück in die Gegenwart), Figuren `kellner`, `zeitungsleser`;
-  Belebung `gaeste`.
+Akt 3 steht in `orte.json`. Die Tabelle aller 17 Karten mit Dateinamen, Größen, Objekten und
+Figuren steht im Bericht des vierzehnten Auftrags von mittel-1 in
+`docs/spiel/auftraege/mittel-1.md` (Abschnitt „Für niedrig-1: zu zeichnende Karten“). Beschreibung
+der Orte: Story-Bibel Abschnitt 19, Weltbeschreibung `09_Weltbeschreibung.md` (5.6 bis 5.9).
 
 ## Vorgaben
 
-Wie beim achten Auftrag (Ironwood): Tiled-JSON im Format der vorhandenen Karten, Belebung nach
-`09_Weltbeschreibung.md` sinngemäß für das London von 1851 (Story-Bibel Szene 35), Kollisionen,
-Objektebene mit genau den Namen oben.
+1. Wie bei Ironwood: Belebung nach 09 (Statisten, Tiere, Tageszeiten), Kollisionen, genau die
+   Objektnamen der Tabelle, je Karte genau ein `start` mit `richtung`.
+2. In dieser Reihenfolge und nach jeder Stadt pushen: Weg 4 und Silicon Bay (6 Karten), Weg 5 und
+   Port Delacroix (6), Weg 6 und Desert Springs (5). Port Delacroix nach dem Hurrikan: Wiederaufbau
+   im nassen Winter, Bretter vor Häusern, Gerüste.
 
 ## Bericht
 

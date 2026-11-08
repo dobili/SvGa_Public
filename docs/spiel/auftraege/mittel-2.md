@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Story-Bibel Akt 2 (Riverton, Ironwood) mit Wegen und Entdeckungen
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, fünfter Auftrag; Regelwerk ist auf Stand 8h, danke)
+**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, fünfter Auftrag; Regelwerk ist auf Stand 8h, danke)
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-regelwerk`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 2“ anhängen; Akt 1 nur, wo Akt 2
@@ -45,4 +45,54 @@ Akt 3 und 4, Spieldaten (JSON), Dialoge (Ink), Karten.
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis 82e19ccc hereingeholt). `05_Story_Bibel.md` hat einen
+neuen Teil 2 „Akt 2“ (Abschnitte 7 bis 15, Szenen 26 bis 50); Prettier besteht.
+
+**Inhalt nach Vorgaben**
+
+1. **Zwei Städte:** Riverton (Club 3, Slick, E + 340, Gabeln; Mitglieder Tamsin, Ray; Straße
+   Mr. Harlan; Nebenfiguren Nova, Pops, Mrs. Albescu) und Ironwood (Club 4, Big Joe, E + 400,
+   Fesselung und Spieß; Mitglieder Hank, Priya; Straße Gus; Nebenfiguren Edna, Mr. Teague).
+   Buchübungen und Abschnitte nach `07_Aufgabenzuordnung.md` (Riverton 35, 40, 4, 10; Ironwood 37,
+   38, 17, 22). Vorbereitung: Riverton „analysiert“ (Szene 34), Ironwood „abgelenkt“ (Szene 44,
+   die Feier aus dem Beispiel in `gegnerprofil.ts`). Rätsel: Rätseltafel Route 2 und das Siegel
+   im Museum (Szene 41). Erinnerungen: Flashback London (Szene 35) und Bird gegen Morphy (Szene 47).
+2. **Wege:** `route2` (Zedernwald, Bahndamm; Schnellreise Zug) und `route3` (Fabrikstraße,
+   Eisenbrücke; Fahrrad lohnt sich), je mit Rätseltafel, Straßengegner mit Uhr bzw. Ambrose-Szene,
+   Funden und einer Figur mit Weisheit (Kapitel 1.4 bzw. Kapitel 5).
+3. **Entdeckungen:** 13 Funde mit Satz und Wirkung (Abschnitt 12), Figurensatz „Waldholz“ über drei
+   Orte; E4 weitergeführt (Partieformular → Boateng → Fragment 2; Schlüssel → Schuppen →
+   Fahrrad) und neu **„Umschlag ohne Brief“** mit **„Nietenkopf J. H.“**, Auflösung in Akt 3
+   (Brief in Desert Springs, Hale hat auf Ambrose gewartet).
+4. **Läden:** Pops’ Kiosk (Riverton) und Ednas Eisenwaren (Ironwood) mit Preisen nach G2/G4.
+5. **Zeit:** Szene 31 (Blitz gegen den langsamen Uhrmacher ist die richtige Wahl), Szene 40
+   (Ambrose erklärt und schenkt den Zeitnot-Trick). Buchbezug: Kapitel 12, Abschnitt 12.5, kurzes
+   Zitat „Ist bloß dein Gegner in Zeitnot, blitze nicht mit, sondern nutze die Zeit, die du hast.“
+   Eine „gefühlte Zeitnot“ kennt das Buch nicht (in den Buchquellen nachgesehen).
+6. **Flashback London 1851:** `klassik-unsterbliche` (Anderssen gegen Kieseritzky), Zugerraten mit
+   Weiß ab Zug 17 bis zum Matt; Kaffeehaus ohne Namen.
+7. **Mama und Victor:** Mamas Geheimnis (Finale 2001, Big Joe als Trainer) mit Verbot, Foto,
+   eigener Partie und Versöhnung; Victor zweimal ohne Partie, vom Verteidigen der Tische zum
+   abgebrochenen Satz vor seinem Vater und zur Einladung nach Silicon Bay (Cliffhanger).
+
+**Akt 1 geändert (vorbereitet für Akt 2):** Szene 23 (Rosa am Steg) bekommt den Fund
+„verrosteter Schlüssel“ mit einem Satz von Rosa (E4, Auflösung Szene 33).
+
+**Vorschläge und Abweichungen (für Regelwerk, Daten, Code)**
+
+- **R27 Erinnerungen:** Nur die erste Erinnerung einer Staffel gibt die Bauernvorgabe, weitere 20
+  Münzen (Szene 47; Frage 4 in Abschnitt 15).
+- **Fingerzeig im Laden:** In `karten.json` dauerhaft, G2 verkauft ihn als Verbrauchskarte. Entweder
+  eine Sorte „Fingerzeig (einmal)“ anlegen oder G2 auf „Zweite Chance, Flüstern“ beschränken.
+- **Neue Gegner und Profile** für die Daten: `riverton.slick`, `riverton.tamsin`, `riverton.ray`,
+  `riverton.harlan`, `route2.schaffner`, `ironwood.bigJoe`, `ironwood.hank`, `ironwood.priya`,
+  `ironwood.gus`, `mapleFalls.mutter` (Rolle `story`, E + 250, eingerostet, blinder Fleck `roentgen`).
+- **Stellungsduelle:** Harlan aus Abb. 3.77, Gus aus Abb. 6.14 (beide im dritten Auftrag
+  geprüft); für den Schaffner (Route 2) noch eine Stellung aus Kapitel 7.2, Motiv 1 suchen.
+- **Neue Dialogvariable** `mamaSpielt` (Szene 43) für das Verzeichnis R42; Ambroses neue
+  Stimmung `fern`.
+- **Flashback-Karte** `flashback.london` braucht das Flag `flashback` (F3) und eine Heldenfigur
+  „junger Ambrose“.
+- Zeitlinie: Ergänzung 1851, 1858, 1866 (Brief), 2001 (Mamas Finale) in Abschnitt 8.
+
+**Offen:** nichts Blockierendes; sechs Fragen mit Empfehlung in Abschnitt 15 der Bibel.

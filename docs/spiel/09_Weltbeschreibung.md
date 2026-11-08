@@ -296,6 +296,64 @@ Wüstenstraße „Old Mother Road“ (Diner, Motel, Neon), Felsentürme der Hoch
 O5), Canyon „Echo Canyon“ vor Desert Springs, Nationalpark „Red Giants“ mit Riesenbäumen
 (Pinewood Camp). Wetter nur als Szene (Abschnitt 2), Tiere mit Verhalten (Abschnitt 4a).
 
+### 5.9 Weg 7 und die Hochebene (Akt 4)
+
+- **Weg `wegDesertSummit`:** `diner` (Wüstenstraße mit Diner und Motel, Neonschilder, Fernfahrer,
+  Roadrunner; L8 Königsrennen) und `bergstrasse` (Serpentinen hinauf, Pinien, erster kühler Wind).
+- **Abzweig `hochebene` (L9, O5):** `felsentuerme` (rote Felstürme, weiter Himmel, Falken als Kreise)
+  und `schule` (gewöhnliche Schule mit Turnhalle, Bushaltestelle, Basketballkorb, Werkstatt des
+  Mechanikers daneben). Keine heiligen Zeichen, keine Kostüme, keine Deko aus fremden Kulturen;
+  die Gestaltung vor der Veröffentlichung mit der Sensibilitätslesung abstimmen (10, O5).
+
+### 5.10 Summit City (Akt 4, Club 8)
+
+Bergstadt mit Seilbahn, Holzhütten und Gipfelfelsen, heller Bergsommer, nachts kühl.
+
+- **Außen `aussen`:** Talstation der Seilbahn, Marktplatz mit Drachenbrunnen (L10, Drachenfest am
+  Abend), Hütten, Gipfelfelsen mit Sol, Murmeltiere am Hang, Ziegen.
+- **Innen `huette`:** Wards Berghütte: Kaminfeuer, Bücherregal, ein altes Holzbrett, Endspieldiagramme
+  an der Wand; Club, Aufgabenreihen, Clubkampf. Zum Ansehen: ein Pokal von 1985, ein Foto vom
+  Gipfel, eine Teekanne mit Sprung.
+- **Innen `bergstation`:** Bergstation der Seilbahn über den Wolken, Bank am Fenster (Szene 88).
+- **Innen `bergladen`:** Laden von Haraldsen (Seile, Karten, Seilbahnkarten).
+- **Verbindungen:** Weg 7 (Desert Springs), Weg 8 (Crossroads), Seilbahn zwischen Tal- und Bergstation.
+
+### 5.11 Weg 8 und Crossroads (Akt 4)
+
+- **Weg `wegSummitCrossroads`:** `geysirbecken` (brodelnder Boden, Dampf, Holzstege, Bisons auf dem
+  Weg, Ausbruch zur vollen Stunde; L4) und `praerie` (Weizenfelder, Windräder, Tornado am Horizont,
+  Sturmkeller; L6).
+- **Crossroads:** Raststätte an der Kreuzung von vier Straßen. Außen `aussen`: Tankstelle, Parkplatz
+  mit dem Werksbus aus Ironwood und Rosies Food-Truck, Wegweiser in alle Städte. Innen
+  `raststaette`: Diner mit Tresen, der Varianten-Tisch, Darlenes Laden, eine Wand mit Postkarten
+  aller Städte. Hier tauchen Figuren aus früheren Orten wieder auf (Statisten, 09 Abschnitt 4a).
+
+### 5.12 Weg 9 und Pinewood Camp (Akt 4, O3)
+
+- **Weg `wegCrossroadsPinewood`:** `huetten` (Fernwanderweg mit Schutzhütte, Hüttenwirtin, Wanderer
+  mit Riesenrucksäcken; L2) und `riesenbaeume` (Mammutbäume, Nebel am Morgen, Bärenspuren, ein
+  Ranger-Häuschen).
+- **Pinewood Camp** im Red-Giants-Nationalpark: Außen `aussen` mit Hütten am See, Lagerfeuerplatz
+  (Tandem und Räuberschach am Abend), Kanus, Libellen, ein Reh am Ufer; Kiosk des Camps.
+
+### 5.13 Weg 10 und Ghost Town (Akt 4)
+
+- **Weg `wegPinewoodGhost`:** `canyonrand` (Kletterwand, Seile, Echo; L3) und `staubstrasse`
+  (Mittagshitze, Staubteufel, Sepia beginnt).
+- **Ghost Town:** verlassene Goldgräberstadt, Sepia auch am Tag (09, 5.8). Außen `aussen`: Hauptstraße
+  mit Holzfassaden, Friedhof mit dem Grab ohne Namen, Mr. Pruitt mit Metalldetektor, Geier.
+  Innen `saloon`: Schwingtür, staubiger Tisch mit dem Brett (Fernpartie, Szene 100), Postreiterabzeichen
+  (versteckt). Erinnerungskarte `flashback.siedlung` (1866, Bretterhütte, Kerze) über die
+  vorhandene Ort-Art `erinnerung`.
+
+### 5.14 Weg 11 und Capital Arena (Akt 4)
+
+- **Weg `wegGhostCapital`:** `seeufer` (großer See, Fähre, Möwen) und `leuchtturm` (rot-weißer Turm,
+  Wärterhaus; L7).
+- **Capital Arena:** Außen `aussen` (Vorplatz, Treppe, Fahnen, langer Sommerabend; Abschied Szene
+  109). Innen `halle`: Turnierhalle mit Tribünen, Brettreihen, Bühne für das Finale, Pressetisch,
+  Fanshop am Eingang; Zuschauer aus allen Städten als Statisten.
+
 ## 6. Checkliste je Karte (für niedrig-1 beim Zeichnen)
 
 - [ ] Größe nach Abschnitt 3.6, Rand geschlossen außer an Übergängen.

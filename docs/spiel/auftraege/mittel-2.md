@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Story-Bibel Akt 4
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zwölfter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, zwölfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 4“ anhängen),
@@ -30,7 +30,44 @@ Frage 4 und Antworten des Autors in `ENTSCHEIDUNGEN.md`, Q20), Ambroses Abschied
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis 85951f66 hereingeholt). `05_Story_Bibel.md` hat Teil 4
+„Akt 4“ (Abschnitte 25 bis 34, Szenen 81 bis 110); `09_Weltbeschreibung.md` neue Abschnitte 5.9 bis
+5.14 zu den Orten und Wegen von Akt 4. Prettier besteht.
+
+**Inhalt nach Vorgaben**
+
+1. **Form wie Akt 3:** Kern in sieben Sätzen, Zeitlinie, Figuren (Ward als Clubchefin 8 mit E + 640,
+   Kit, Haraldsen, Sol; Darlene, Hollis, Ezra, Pruitt; vier Vorrundengegner, Kade Sterling als
+   Konzern-Junior), Welt mit fünf Wegen, Szenenliste mit Ort, Figuren, Zweck, Dauer, Buchbezug,
+   Quests und Belohnungen, Funde, Läden, Karten und Sperren, sechs offene Fragen mit Empfehlung.
+   Victors Krise und Befreiung (Summit City), die fehlende Seite, die Fernpartie in Ghost Town
+   (Victor spielt Hales Züge), Novas Aussage mit Dr. Lin (Bibel Akt 3, Frage 4), Halbfinale,
+   Finale, Ambroses Abschied, Post-Game.
+2. **Landschaften L1 bis L10** als Nebenschauplätze mit ihrer Variante (Abschnitt 28): L8 und L9 an
+   Weg 7, L10 in Summit City, L4 und L6 an Weg 8, L2 an Weg 9, L3 an Weg 10, L7 an Weg 11, L1 und L5
+   als freiwillige Rückkehr nach Port Delacroix; Tandem und Räuberschach im Camp. Hauptstory und
+   Clubs bleiben klassisch. **O5** (Szene 82): erfundene „Vell-Familien“, moderne Figuren (Lehrerin,
+   Mechaniker, Schülerin), eigenes Spiel „Falkenweg“ mit Falke und Bison, keine Kostüme, keine
+   heiligen Zeichen; **Rückfrage an den Autor** in Abschnitt 33, Frage 1.
+3. **R29 und Extra-Abspann:** Szene 106 (Mentor-Zug frei als vierte Karte, ohne Verbrauch;
+   „unsterbliche Partie mit dir“), Szene 109 (Extra-Abspann nur ohne Mentor-Zug: Zettel „Du hast mich
+   nicht gebraucht“). Finale ohne Karten (R28).
+4. **Technikliste** in Abschnitt 34 (Turniermodus, Stärkewechsel mitten in der Partie, freie vierte
+   Karte, Varianten mit Fairy-Stockfish, Varianten-Tisch, Fernpartie bauen, Abspann, neue
+   Figurenbilder, Post-Game).
+
+**Entscheidungen und Hinweise**
+
+- **Erinnerung in Summit City** ist Wards Erinnerung (Steinitz gegen von Bardeleben, Hastings 1895,
+  `klassik-steinitz-bardeleben`), nicht Ambroses: Er starb 1866, und vor 1866 hat die Sammlung keine
+  unbenutzte Partie mehr.
+- **Halbfinale:** Der Konzern schickt Kade mit Gerät; Nova spielt in der Vorrunde ehrlich und sagt
+  aus. So wird Nova nicht zur Gegnerin, die man vorführt, und das Aufdecken geschieht im Spiel.
+- **Vorrunde** nach Regelwerk Frage F4 (Sieg 1, Remis ½, weiter ab 2,5 von 4).
+- **Fragment 8** kommt aus Wards Erinnerung; Hales Antwort steht auf der Seite (Szene 88). Die
+  Fernpartie selbst muss ein Folgeauftrag mit der Engine bauen (Technikliste, Punkt 6).
+- Neue Dialogvariablen: `fernpartieGespielt`, `mentorzugImHalbfinaleGespielt`,
+  `variante<Name>Gelernt`.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

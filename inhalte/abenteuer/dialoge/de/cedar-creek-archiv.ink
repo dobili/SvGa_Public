@@ -18,6 +18,7 @@ VAR ambroseVertrauen = 0
 VAR kenntHale = false
 VAR okaforGetroffen = false
 VAR archivGeordnet = false
+VAR ordnenAngeboten = false
 VAR erzaehlung1858Gesehen = false
 VAR erinnerungNewYorkBestanden = false
 VAR nadelCedarCreek = 0
@@ -27,7 +28,7 @@ VAR nadelCedarCreek = 0
 === karton ===
 {
 - not okaforGetroffen: -> karton_fremd
-- not archivGeordnet and nadelCedarCreek == 0: -> ordnen
+- not archivGeordnet and (nadelCedarCreek == 0 or ordnenAngeboten): -> ordnen
 - not erzaehlung1858Gesehen: -> karton_1858
 - else: -> karton_alltag
 }
@@ -39,6 +40,9 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose
 -> END
 
 === ordnen ===
+// Wer einmal „Später helfen“ gesagt hat, darf auch nach der Clubnadel noch ordnen (Quest
+// cedarCreek.archivOrdnen beginnt hier; Befund der Gesamtsimulation).
+~ ordnenAngeboten = true
 Der Keller riecht nach altem Papier. Zehn Kartons stehen in einer Pfütze, auf jedem eine Jahreszahl. #sprecher:erzaehler
 Mrs. Okafor kommt die Treppe herunter. Die Regale links sind für das neunzehnte Jahrhundert, rechts für das zwanzigste. #sprecher:okafor
 * [Anfangen]

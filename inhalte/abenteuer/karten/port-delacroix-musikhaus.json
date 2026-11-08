@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 5,
+  "nextobjectid": 6,
   "properties": [
     {
       "name": "kennung",
@@ -165,6 +165,17 @@
               "value": "tag"
             }
           ]
+        },
+        {
+          "id": 5,
+          "name": "blaeser",
+          "type": "figur",
+          "x": 176,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: die 25 Karten von Akt 4
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zwölfter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die neuen Kartendateien von Akt 4, dazu in den vorhandenen Karten
@@ -765,3 +765,89 @@ bestanden, die sechs Karten nicht mehr übersprungen.
 - `capital-arena-halle` (24 × 14): `turniertafel`, `pressetisch`, `fanshop`, Tribünen, neun
   Figuren in zwei Reihen (`turnierleiterin`, `lin`, `grahamHale`, `bea`, `marcus`, `nova`,
   `tobias`, `kade`, `victor`); `schiedsrichter`, `publikum`.
+
+**Teil 6: Bayou, Hochebene und Port Delacroix (3 Karten neu, 2 geändert, gepusht).** 595 Tests
+bestanden, 0 übersprungen. Damit sind alle 25 Karten von Akt 4 gezeichnet.
+
+- `bayou-steg`: Wasser oben und unten, Steg, `nebel`, `theron`; `luftbootfahrer` (morgen),
+  `alligator`, `reiher`. Nur ein Übergang (`zurueckDelacroix` links).
+- `hochebene-felsentuerme` und `hochebene-schule`: neutral ohne Figuren und Statisten (Q21-1
+  offen), nur Felstürme bzw. ein Gebäude und Tiere (`adler`, `eidechse`, `ziegen`).
+- `port-delacroix-aussen`: `bayou` rechts am Straßenrand (Kachel 31/11, direkt unter
+  `wuestenzug`), Rand dort offen. Der Statist `blaeser` heißt jetzt `trompeter`, damit er nicht
+  mit der neuen Figur verwechselt wird.
+- `port-delacroix-musikhaus`: Figur `blaeser` (Kachel 11/9).
+
+Prettier meldet weiter `inhalte/abenteuer/runden.json` (nicht von mir); alle Karten sind sauber.
+
+Checkliste 6 für alle 25 Karten: Größe und Rand [x] (Kartentest), Belebung [x], Figuren [x];
+Geräusch, Musik, Tönung, Matten und Questspuren offen wie bisher. Die Karten sind schematisch
+(Baukasten); wer später die Grafik tauscht, sollte die Anordnung je Ort nach 09 verfeinern.
+
+```text
+bayou-steg.json
+############################
+############################
+############################
+############################
+############################
+############################
+#                          #
+#                   KK     #
+#    T                     #
+zTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#  n                       #
+#         KKK              #
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+hochebene-felsentuerme.json
+############################
+#         ###              #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###    ###     ###  ### #
+#  ###            ###      #
+#  ###            ###      #
+#                          #
+#                          #
+zTTTTTTTTTTTTTTTTTTTTTTTTTTw
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                          #
+#   ###              ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###     ###   #
+#   ###      ###           #
+#            ###           #
+############################
+
+hochebene-schule.json
+############################
+#                          #
+#        ##########        #
+#        ##F####F##        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#                          #
+#                          #
+zTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#                          #
+#    KKK            KKK    #
+#    KKK            KKK    #
+#    KKK            KKK    #
+#                          #
+#                          #
+#                          #
+############################
+```

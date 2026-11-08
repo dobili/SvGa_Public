@@ -33,7 +33,7 @@ import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
-import { variablenNachBesuch } from "../regeln/dialogvariablen";
+import { variablenNachBesuch, variablenNachFund } from "../regeln/dialogvariablen";
 
 /** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
 const FAHRRAD = "fahrrad";
@@ -449,8 +449,13 @@ export function Oberwelt() {
     gibFund: (kennung) => {
       const aktuell = standRef.current ?? stand;
       const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
-      const neu = mitFund(aktuell, kennung, new Date(), fund?.muenzen ?? 0);
-      if (neu === aktuell) return;
+      const mit = mitFund(aktuell, kennung, new Date(), fund?.muenzen ?? 0);
+      if (mit === aktuell) return;
+      // Dialogvariable `gefunden<Fund>` für spätere Bedingungen (übergreifende Quests, E4).
+      const neu = {
+        ...mit,
+        dialogvariablen: { ...mit.dialogvariablen, ...variablenNachFund(kennung) },
+      };
       schreibe(neu);
       setzeMeldung(tSpiel("fund.gefunden", { name: tSpiel(fund?.name ?? kennung) }));
     },
@@ -586,7 +591,8 @@ export function Oberwelt() {
     if (laden) setzeOffenerLaden(laden);
     const uebergang = uebergangNachDialog.current;
     uebergangNachDialog.current = null;
-    if (uebergang && (!uebergang.wenn || neu.dialogvariablen[uebergang.wenn] === true)) {
+    // `wenn` gilt als erfüllt bei true, einer Zahl über 0 (Nadel) oder einem nicht leeren Text.
+    if (uebergang && (!uebergang.wenn || Boolean(neu.dialogvariablen[uebergang.wenn]))) {
       wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
     }
     const runde = rundeInArbeit.current;

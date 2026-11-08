@@ -26,11 +26,22 @@ export function variablenNachPartie(begegnung: string, ausgang: Ausgang): Variab
   return { [`ausgang${name}`]: ausgang };
 }
 
-/** Variable zu einer bestandenen Runde: `reiheSamBestanden` = true (nicht bestanden ändert nichts). */
+/**
+ * Variablen zu einer bestandenen Runde: Kurzform `reiheSamBestanden` (wie in Akt 1) und Langform
+ * mit Ort `wegMapleCedarTafelBestanden`, weil Kurzformen über Orte hinweg gleich sein können
+ * (jede Rätseltafel heißt „tafel“). Nicht bestanden ändert nichts.
+ */
 export function variablenNachRunde(runde: string, bestanden: boolean): Variablen {
   if (!bestanden) return {};
-  const name = runde.split(".").pop() ?? runde;
-  return { [`${name}Bestanden`]: true };
+  const teile = runde.split(".");
+  const name = teile.pop() ?? runde;
+  const ort = teile.join("");
+  return { [`${name}Bestanden`]: true, [`${ort}${grossAnfang(name)}Bestanden`]: true };
+}
+
+/** Variable zu einem Fund: `gefundenSchluessel` = true (für Bedingungen in Dialogen). */
+export function variablenNachFund(fund: string): Variablen {
+  return { [`gefunden${grossAnfang(fund)}`]: true };
 }
 
 /** Variable zum ersten Besuch eines Ortes: `besuchtCedarCreek` = true (W2: Schnellreise frei). */

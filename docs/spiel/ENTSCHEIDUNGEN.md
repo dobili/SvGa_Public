@@ -429,6 +429,13 @@ Kantine, Mamas Zimmer, Umkleide, Museum); alle Karten von Akt 1 und 2 sind gezei
 Kartentest überspringt nichts mehr. Offen für mittel-1 (Dinge zum Ansehen aus 09, 5.5): Schichtplan,
 Kaffeemaschine, Werksfoto, Poster, Standuhr, Nieten „J. H.“.
 
+**Riverton-Dialoge zusammengeführt (mittel-1) und drei Befunde behoben:** `wenn` an Übergängen
+gilt bei true, Zahl über 0 oder nicht leerem Text (die Nadel ist eine Zahl); jeder Fund setzt die
+Dialogvariable `gefunden<Fund>`; Runden setzen neben der Kurzform die Langform mit Ort
+(`wegMapleCedarTafelBestanden`), weil alle Rätseltafeln „tafel“ heißen. Fund `schluessel` (Steg in
+Cedar Creek) angelegt; mittel-1 vergibt ihn im nächsten Auftrag. Zug ohne Fahrkartenabfrage
+bleibt bis zur Schnellreise-Regel.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

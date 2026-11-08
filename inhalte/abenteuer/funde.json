@@ -101,6 +101,12 @@
       "name": "fund.glasfunke.name",
       "text": "fund.glasfunke.text",
       "muenzen": 10
+    },
+    {
+      "kennung": "schluessel",
+      "ort": "cedarCreek",
+      "name": "fund.schluessel.name",
+      "text": "fund.schluessel.text"
     }
   ]
 }

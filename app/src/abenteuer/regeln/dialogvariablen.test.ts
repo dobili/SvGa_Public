@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import {
   variablenNachBesuch,
+  variablenNachFund,
   variablenNachNadel,
   variablenNachPartie,
   variablenNachRunde,
@@ -18,7 +19,14 @@ describe("Dialogvariablen aus Ergebnissen", () => {
   });
 
   it("merkt bestandene Runden unter dem Namen der Runde", () => {
-    expect(variablenNachRunde("mapleFalls.reiheSam", true)).toEqual({ reiheSamBestanden: true });
+    expect(variablenNachRunde("mapleFalls.reiheSam", true)).toEqual({
+      reiheSamBestanden: true,
+      mapleFallsReiheSamBestanden: true,
+    });
+    expect(variablenNachRunde("wegMapleCedar.tafel", true)).toMatchObject({
+      wegMapleCedarTafelBestanden: true,
+    });
+    expect(variablenNachFund("schluessel")).toEqual({ gefundenSchluessel: true });
     expect(variablenNachRunde("mapleFalls.reiheSam", false)).toEqual({});
   });
 

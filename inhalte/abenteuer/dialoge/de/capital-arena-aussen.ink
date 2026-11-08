@@ -8,7 +8,7 @@
 //
 // Die Liga zählt Ink aus den Nadeln der acht Clubs (R22: Gold 3, Silber 2, Bronze 1; Bronze-Liga ab
 // 8, Silber ab 16, Gold ab 22 Punkten). Variablen: nadel<Ort> und ausgangCapitalArenaFinale setzt
-// die Hülle (R42); die übrigen setzt diese Datei.
+// die Hülle (R42), novaHilfeZugesagt crossroads-raststaette.ink; die übrigen setzt diese Datei.
 
 EXTERNAL gibFund(kennung)
 EXTERNAL zeigeAbspann()
@@ -26,6 +26,7 @@ VAR ankunftCapitalArenaGesehen = false
 VAR arenaGesehen = false
 VAR ausgangCapitalArenaFinale = ""
 VAR abschiedGesehen = false
+VAR novaHilfeZugesagt = false
 
 === function ligapunkte() ===
 ~ return nadelMapleFalls + nadelCedarCreek + nadelRiverton + nadelIronwood + nadelSiliconBay + nadelPortDelacroix + nadelDesertSprings + nadelSummitCity
@@ -73,6 +74,9 @@ Juno schlägt das Tagebuch auf. „Acht Nadeln. Das sind {ligapunkte()} Punkte f
     Bronze-Liga! Du bist dabei, und das ist das Wichtigste! #sprecher:juno #stimmung:froh
 }
 Dr. Lin und Nova gehen mit einer Mappe und einem kleinen Beutel zur Turnierleitung. #sprecher:erzaehler
+{novaHilfeZugesagt:
+    Nova dreht sich kurz um und hebt den Daumen. Nach der Vorrunde, heißt das. #sprecher:erzaehler
+}
 Am Eingang bekommst du deinen Teilnehmerausweis: „{held}, Maple Falls“. #sprecher:erzaehler
 ~ gibFund("teilnehmerausweis")
 Heute ist Ruhe am Brett. Und heute spielt man ehrlich. #sprecher:ambrose #stimmung:friedlich

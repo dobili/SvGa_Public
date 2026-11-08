@@ -5,7 +5,8 @@
 // Teil (akt1.ersterSchultag), 6 Aufgabenreihe (Runden mapleFalls.reiheSam, mapleFalls.reiheJuno),
 // 9 Sams Dame (mapleFalls.samsDame), 11 Clubkampf (akt1.clubnadelMapleFalls), 12 Victor
 // (akt1.victorTrifft, akt1.victorNiederlage oder akt1.victorUeberrascht, Regelwerk R33).
-// Einstiege: „coach“, „sam“, „juno“, „victor“. Nach einer Partie oder Aufgabenrunde spricht der
+// Einstiege: „coach“, „sam“, „juno“, „victor“. In orte.json gibt es für Juno im Clubraum und für
+// Victor keine eigene Figur; der Coach führt deshalb zu beiden (Befund mittel-1, Gesamtsimulation). Nach einer Partie oder Aufgabenrunde spricht der
 // Held die Figur wieder an; ihr Einstieg verzweigt dann über die Variablen, die die Hülle setzt
 // (regeln/dialogvariablen.ts): ausgangMapleFalls… (sieg, remis, niederlage, abgebrochen),
 // …Bestanden, nadelMapleFalls. „abgebrochen“ zählt wie nicht gespielt (Regelwerk R35).
@@ -39,6 +40,7 @@ VAR kenntHale = false
 - not clubBeigetreten: -> coach_erstes_treffen
 - not (reiheSamBestanden and reiheJunoBestanden): -> coach_reihe_offen
 - nadelMapleFalls > clubkampfBesprochen: -> coach_nach_sieg
+- nadelMapleFalls > 0 and not kenntHale: -> victor
 - nadelMapleFalls == 0 and ausgangMapleFallsClubkampf == "niederlage": -> coach_nach_niederlage
 - nadelMapleFalls == 0: -> coach_clubkampf
 - else: -> coach_alltag
@@ -65,6 +67,10 @@ Eine Frau, die Gesetze macht und pfeift. Ich mag sie jetzt schon. #sprecher:ambr
 {
 - not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. Sam tut streng, ist aber fair. #sprecher:coachDelgado
 - else: Sam hast du geschafft. Jetzt noch Juno. Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado
+}
+{reiheSamBestanden:
+    Juno winkt dir vom Nebentisch zu, ein Heft in der Hand. #sprecher:erzaehler
+    -> juno
 }
 -> END
 

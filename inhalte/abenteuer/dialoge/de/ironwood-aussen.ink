@@ -3,8 +3,8 @@
 // Weltbeschreibung 5.5).
 //
 // Szenen der Bibel: 38 Nicht Ironwood (hier als Anruf von Mama bei der Ankunft, akt2.verbot),
-// 39 Weg zu Oma Ruth (Haustür, wenn elmStreetBekannt), 42 Ednas Fenster (vorerst Gespräch, es gibt
-// noch keinen Laden ironwood.eisenwaren), 45 Gus am Güterbahnhof (Begegnung ironwood.gus),
+// 39 Weg zu Oma Ruth (Haustür, wenn elmStreetBekannt), 42 Ednas Fenster (Laden ironwood.eisenwaren,
+// hatFahrrad und hatLaterne leitet die Hülle aus dem Besitz ab), 45 Gus am Güterbahnhof (Begegnung ironwood.gus),
 // 49 Der Kauf (akt2.ironwoodVerkauft, Quest ironwood.clubkampf), 50 Einladung nach Silicon Bay
 // (akt2.einladung, Ende der Staffel).
 // Einstiege wie in orte.json: Figuren gus, edna, victor, graham_hale; Übergänge ankunft_zu_fuss,
@@ -18,6 +18,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL setzeSzene(kennung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL oeffneLaden(laden)
 
 VAR ankunftIronwoodGesehen = false
 VAR elmStreetBekannt = false
@@ -25,6 +26,8 @@ VAR mamaSpielt = false
 VAR gusGetroffen = false
 VAR ausgangIronwoodGus = ""
 VAR ednaGetroffen = false
+VAR hatFahrrad = false
+VAR hatLaterne = false
 VAR nadelIronwood = 0
 VAR kaufGesehen = false
 VAR einladungGesehen = false
@@ -137,12 +140,23 @@ Pause vorbei, Partie gewonnen. Für mich. Morgen wieder? #sprecher:gus
 === edna ===
 {ednaGetroffen:
     {~Kauf das Gute. Das Billige kaufst du zweimal.|Laternen, Schrauben, Fahrradteile. Das hält.|Joe kauft seit dreißig Jahren seine Schrauben bei mir. Für das Stahlbrett, sagt er.} #sprecher:edna
-    -> END
+    -> edna_laden
 }
 ~ ednaGetroffen = true
 Hinter einem Verkaufsfenster voller Schrauben, Laternen und Fahrradketten sitzt eine alte Dame mit Lesebrille. #sprecher:erzaehler
 Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
-Bald hab ich auch ein Rad im Fenster, für alle, die keins haben. Und eine Laterne für dunkle Ecken. #sprecher:edna
+{
+- hatFahrrad and hatLaterne:
+    Rad und Laterne hast du schon, sehe ich. Gute Wahl. Schrauben brauchst du immer. #sprecher:edna
+- hatFahrrad:
+    Ein Rad hast du schon. Aber eine Laterne für dunkle Ecken? Die Umkleide im Werk ist finster. #sprecher:edna
+- else:
+    Im Fenster steht ein Rad für alle, die keins haben. Und Laternen für dunkle Ecken. #sprecher:edna
+}
+-> edna_laden
+
+=== edna_laden ===
+~ oeffneLaden("ironwood.eisenwaren")
 -> END
 
 // ---------------------------------------------------------------- Victor und Graham Hale

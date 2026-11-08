@@ -1,7 +1,7 @@
 // Ort: Bahnhofshalle von Riverton (Akt 2). Figuren: Mr. Harlan, Pops. Gegenstände: große Uhr,
 // Zeitungsstand, Funde Zeitungsausschnitt und Taubenfeder; Dialog-Auslöser zugCedar.
 //
-// Szenen der Story-Bibel (Abschnitt 11): 30 Pops’ Zeitungsstand (vorerst Gespräch ohne Laden),
+// Szenen der Story-Bibel (Abschnitt 11): 30 Pops’ Zeitungsstand (Laden riverton.zeitungsstand),
 // 31 Der Uhrmacher (Begegnung riverton.harlan, Wahl der Zeitklasse), 35 Flashback London 1851
 // (Runde riverton.flashbackLondon, Quest riverton.flashbackLondon, erst nach den Bildschirmtischen),
 // Rätsel Mr. Odums letzte Aufgabe (Runde riverton.odumAufgabe, Quest riverton.odum).
@@ -15,6 +15,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL oeffneLaden(laden)
 
 VAR harlanGetroffen = false
 VAR ausgangRivertonHarlan = ""
@@ -77,13 +78,18 @@ Das ist keine Schande. #sprecher:ambrose
 === pops ===
 {popsGetroffen:
     {~Ein Kiosk ist eine Bibliothek, die man essen kann.|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops
-    -> END
+    -> pops_laden
 }
 ~ popsGetroffen = true
 Hinter einem Zeitungsstand voller Hefte und Taschenschachspiele sitzt ein Mann mit Strickweste. #sprecher:erzaehler
 Pops. Zeitungen, Limo, Taschenschach. Seit dreißig Jahren. #sprecher:pops
 Der alte Mr. Odum hat hier jeden Morgen eine Zeitung gekauft. Er las die Schachspalte zuerst, noch vor dem Wetter. #sprecher:pops
 Er hat Slick das Spielen beigebracht. Und halb Riverton dazu. #sprecher:pops
+Schau dich um. Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops
+-> pops_laden
+
+=== pops_laden ===
+~ oeffneLaden("riverton.zeitungsstand")
 -> END
 
 // ---------------------------------------------------------------- Zug nach Cedar Creek

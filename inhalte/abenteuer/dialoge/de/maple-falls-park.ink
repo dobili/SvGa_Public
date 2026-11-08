@@ -25,6 +25,9 @@ VAR ausgangMapleFallsSkaterJo = ""
 VAR aufbruchGesehen = false
 VAR ankunftCedarCreekGesehen = false
 VAR patelGetroffen = false
+VAR hatLimo = false
+VAR limoGefragt = false
+VAR limoGebracht = false
 
 // ---------------------------------------------------------------- Mr. Abernathy
 
@@ -111,7 +114,9 @@ Zähl, {held}. Wer greift an, wer verteidigt? #sprecher:ambrose
 === skater_jo ===
 {
 - not joGetroffen: -> jo_erstes_treffen
+- limoGefragt and hatLimo and not limoGebracht: -> jo_limo_gebracht
 - ausgangMapleFallsSkaterJo == "" or ausgangMapleFallsSkaterJo == "abgebrochen": -> jo_angebot
+- not limoGefragt: -> jo_limo
 - ausgangMapleFallsSkaterJo == "niederlage": -> jo_nach_niederlage
 - else: -> jo_nach_sieg
 }
@@ -147,12 +152,47 @@ Wer im Park gewinnt, gewinnt bald auch im Club. #sprecher:ambrose
     -> END
 
 === jo_nach_niederlage ===
-Limo, bitte. Mit Eis. #sprecher:skaterJo
+{limoGebracht:
+    Gewonnen! Die Limo war gut, aber die Revanche ist besser. #sprecher:skaterJo
+- else:
+    Limo, bitte. Mit Eis. #sprecher:skaterJo
+}
 Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprecher:ambrose
 + [„Revanche.“]
     -> jo_duell
 + [„Später.“]
     -> END
+
+// ---------------------------------------------------------------- Limo für Jo (Bibel, Szene 10a)
+// Quest mapleFalls.limo: beginnt mit jo_limo (nach dem ersten Duell, gleich wie es ausging),
+// erledigt mit jo_limo_gebracht (nur mit hatLimo; die Hülle leitet den Besitz ab, die Quest nimmt
+// die Limo wieder weg). Die Limo kauft man im Kiosk von Mr. Patel (laeden.json, 5 Münzen).
+
+=== jo_limo ===
+~ limoGefragt = true
+{ausgangMapleFallsSkaterJo == "niederlage":
+    Fünf Minuten, eine Partie. Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo
+- else:
+    Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo
+}
+Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo
++ [„Ich hol eine.“]
+    Ich warte. Ich hab ja Zeit, ich bin Skaterin. #sprecher:skaterJo
+    -> END
++ [„Erst noch eine Partie.“]
+    -> jo_duell
+
+=== jo_limo_gebracht ===
+~ limoGebracht = true
+Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Dose auf einmal und setzt sich auf die Kante der Halfpipe. #sprecher:erzaehler
+{ausgangMapleFallsSkaterJo == "niederlage":
+    Okay. Weil du so nett bist: Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo
+- else:
+    Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo
+    Nur so viel: Rückwärts zieh ich nicht gern. Revanche, wenn ich satt bin. #sprecher:skaterJo
+}
+Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung:lacht
+-> END
 
 // ---------------------------------------------------------------- Bushaltestelle
 
@@ -187,6 +227,9 @@ Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprec
     Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
     Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
     Zahlen kannst du mit Münzen. Die bekommst du für Siege und gelöste Rätsel, das weiß hier jedes Kind. #sprecher:patel
+}
+{limoGefragt and not limoGebracht and not hatLimo:
+    Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel
 }
 ~ oeffneLaden("mapleFalls.kiosk")
 -> END

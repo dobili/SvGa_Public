@@ -448,5 +448,7 @@
   "karte.endspielkompass.geschenkt": "Im Buch hast du gelernt, wie man ein Endspiel gewinnt. Ich habe das nie so ordentlich gelernt.",
   "karte.turmregel.geschenkt": "Türme hinter Freibauern, sagt dein Buch. Ich sage: Recht hat es.",
   "karte.phasenblick.geschenkt": "Du hast im Buch ganze Partien nachgespielt. Jetzt erkennst du, wo du in deiner eigenen stehst.",
-  "karte.wasDroht.geschenkt": "Das hast du nicht im Park gelernt, sondern im Buch. Frag dich jetzt bei jedem Zug, was der Gegner will."
+  "karte.wasDroht.geschenkt": "Das hast du nicht im Park gelernt, sondern im Buch. Frag dich jetzt bei jedem Zug, was der Gegner will.",
+  "quest.limo.titel": "Limo für Jo",
+  "quest.limo.schritt1": "Kauf bei Mr. Patel eine Zitronenlimo und bring sie Jo an die Halfpipe."
 }

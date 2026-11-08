@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Limo für Jo (Dialoge und Quest)
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, zwölfter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, zwölfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/dialoge/de/maple-falls-park.ink`, `inhalte/abenteuer/quests.json`
@@ -27,5 +27,32 @@ Die Limo ist ein Gegenstand im Kiosk (5 Münzen, `laeden.json`), Ink sieht den B
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig:**
 
+- `maple-falls-park.ink`: neue Knoten `jo_limo` (Jo bittet um Zitronenlimo, nach einer Niederlage
+  „Wer verliert, holt Limo“, nach einem Sieg „Limo geht eigentlich auf mich. Aber ich bin pleite.“)
+  und `jo_limo_gebracht` (nur mit `hatLimo`; nach einer Niederlage erzählt Jo ihre Schwäche, nach
+  einem Sieg nur kurz und „Revanche, wenn ich satt bin“; Ambrose: „Eine Limonade für eine Schwäche.
+  Ein guter Handel.“). Abzweigung in `skater_jo`: Limo bringen geht vor; nach dem ersten Duell
+  fragt Jo einmal nach Limo. Im Kiosk sagt Mr. Patel „Für Jo? … Die trinkt nur Zitrone.“, solange
+  Jo wartet und der Leser noch keine Limo hat (ohne neue Technik, nur über Variablen). Nach dem
+  Überbringen verlangt Jo bei der nächsten Niederlage keine Limo mehr. Neue Variablen:
+  `hatLimo` (Hülle), `limoGefragt`, `limoGebracht` (Ink).
+- `quests.json`: `mapleFalls.limo` (begegnung). **Abweichung vom Entwurf der Bibel:** Start ist der
+  Dialog `jo_limo` statt der Niederlage, und es gibt keinen Schritt `patel_limo` mit der Wirkung
+  `gegenstand limo`. Gründe: Die Limo wird jetzt im Laden gekauft (eine Quest-Wirkung würde sie
+  verschenken), und die Bibel will die Limo auch nach einem Sieg erlauben; mit dem Start „Partie
+  verloren“ würde die Quest für Sieger nie beginnen und die Limo nie abgenommen. Einziger Schritt:
+  `jo_limo_gebracht` mit `gegenstandWeg` limo, Steckbriefzeile 0 für Jo und `zustand analysiert`.
+- `texte/de.json`: `quest.limo.titel` („Limo für Jo“), `quest.limo.schritt1`.
+
+**Vorschlag:** Die Bibel gibt „analysiert“ nur, wenn man Jo noch nicht geschlagen hat; Quest-Wirkungen
+kennen keine Bedingung, deshalb bekommt jeder den Zustand. Das ist harmlos (Jo bleibt schlagbar).
+Wer es genau will, bräuchte eine Bedingung an Wirkungen (etwa `wenn: ausgangMapleFallsSkaterJo ==
+niederlage`) oder `setzeZustand` aus Ink.
+
+Prüfungen: pytest alle (375), Paketbau, Prettier, Durchspielen (10116 Läufe ohne Fehler),
+Simulation beider Wege (erst verloren, erst gewonnen; jeweils Limo kaufen und bringen: Quest
+fertig), Simulation Akt 1 weiterhin mit allen 13 Quests, `npm run pruefen` (2405 Tests).
+
+**Offene Fragen:** keine.

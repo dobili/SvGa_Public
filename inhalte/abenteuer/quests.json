@@ -891,6 +891,42 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "mapleFalls.limo",
+      "titel": "quest.limo.titel",
+      "typ": "begegnung",
+      "ort": "mapleFalls",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-park.jo_limo"
+      },
+      "schritte": [
+        {
+          "text": "quest.limo.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-park.jo_limo_gebracht"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstandWeg",
+              "gegenstand": "limo"
+            },
+            {
+              "art": "steckbrief",
+              "gegner": "mapleFalls.skaterJo",
+              "zeile": 0
+            },
+            {
+              "art": "zustand",
+              "gegner": "mapleFalls.skaterJo",
+              "analysiert": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

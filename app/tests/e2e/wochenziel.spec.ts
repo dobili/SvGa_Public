@@ -140,4 +140,12 @@ test("Übungsplan: Tage und Dauer wählen, heute ist Übungstag mit Minutenstand
   await expect(plan.getByTestId("planstand-heute")).toContainText("von 30 Minuten geschafft");
   await expect(plan.getByRole("button", { name: "Jetzt üben" })).toBeVisible();
   await expect(plan.getByRole("button", { name: "In meinen Kalender" })).toHaveCount(0);
+  // N2137 (Vorprüfung 8.11.2026): Ein gespeicherter Plan lässt sich ändern und entfernen.
+  await plan.getByRole("button", { name: "Ändern" }).click();
+  await wahl.getByRole("button", { name: "Samstag" }).click();
+  await wahl.getByRole("button", { name: "Plan speichern" }).click();
+  await expect(plan.getByText("Dein Plan: Mo, Do, Sa, je 30 Minuten")).toBeVisible();
+  await plan.getByRole("button", { name: "Ändern" }).click();
+  await wahl.getByRole("button", { name: "Plan entfernen" }).click();
+  await expect(karte.getByRole("button", { name: "Übungszeit planen" })).toBeVisible();
 });

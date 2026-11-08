@@ -5,8 +5,12 @@
       "kennung": "reisebrett.ambrose",
       "gegner": "mapleFalls.ambrose",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true,
       "zeit": "wahl"
     },
@@ -127,17 +131,34 @@
       "kennung": "wegCedarRiverton.schaffner",
       "gegner": "wegCedarRiverton.schaffner",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "3.75" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "3.75"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 180, "zuschlag": 2 }
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     },
     {
       "kennung": "riverton.harlan",
       "gegner": "riverton.harlan",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "3.77" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "3.77"
+      },
       "kartenErlaubt": true,
       "zeit": "wahl"
     },
@@ -145,8 +166,12 @@
       "kennung": "riverton.clubkampf",
       "gegner": "riverton.slick",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true,
       "zeit": "wahl"
     },
@@ -154,25 +179,43 @@
       "kennung": "ironwood.gus",
       "gegner": "ironwood.gus",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "6.14" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.14"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 600, "zuschlag": 5 }
+      "zeit": {
+        "sekunden": 600,
+        "zuschlag": 5
+      }
     },
     {
       "kennung": "ironwood.mama",
       "gegner": "ironwood.mama",
       "farbe": "black",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true
     },
     {
       "kennung": "ironwood.clubkampf",
       "gegner": "ironwood.bigJoe",
       "farbe": "zufall",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true,
       "zeit": "wahl"
     },
@@ -180,52 +223,103 @@
       "kennung": "wegIronwoodSilicon.joggerin",
       "gegner": "wegIronwoodSilicon.joggerin",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "4.41" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "4.41"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 180, "zuschlag": 2 }
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     },
     {
       "kennung": "siliconBay.dash",
       "gegner": "siliconBay.dash",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "1.19" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "1.19"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 180, "zuschlag": 2 }
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     },
     {
       "kennung": "wegSiliconDelacroix.schiffskoch",
       "gegner": "wegSiliconDelacroix.schiffskoch",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "6.25" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.25"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 600, "zuschlag": 5 }
+      "zeit": {
+        "sekunden": 600,
+        "zuschlag": 5
+      }
     },
     {
       "kennung": "portDelacroix.batiste",
       "gegner": "portDelacroix.batiste",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "6.5" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.5"
+      },
       "kartenErlaubt": true
     },
     {
       "kennung": "desertSprings.buck",
       "gegner": "desertSprings.buck",
       "farbe": "white",
-      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
-      "startstellung": { "art": "abbildung", "nummer": "1.36" },
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "1.36"
+      },
       "kartenErlaubt": true,
-      "zeit": { "sekunden": 180, "zuschlag": 2 }
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     },
     {
       "kennung": "portDelacroix.celeste",
       "gegner": "portDelacroix.celeste",
       "farbe": "white",
-      "format": { "art": "partie" },
-      "startstellung": { "art": "grundstellung" },
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
       "kartenErlaubt": true
     },
     {
@@ -407,7 +501,9 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "freieKarten": ["mentorzug"],
+      "freieKarten": [
+        "mentorzug"
+      ],
       "abgelenktAb": {
         "halbzug": 40,
         "faktor": 1.5
@@ -426,6 +522,19 @@
       },
       "kartenErlaubt": false,
       "zeit": "wahl"
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.blindschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "variante": "blind"
     }
   ]
 }

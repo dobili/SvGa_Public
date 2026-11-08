@@ -192,6 +192,45 @@
       "ort": "capitalArena",
       "name": "fund.teilnehmerausweis.name",
       "text": "fund.teilnehmerausweis.text"
+    },
+    {
+      "kennung": "neonK",
+      "ort": "wegDesertSummit",
+      "name": "fund.neonK.name",
+      "text": "fund.neonK.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "murmeltierpfeife",
+      "ort": "summitCity",
+      "name": "fund.murmeltierpfeife.name",
+      "text": "fund.murmeltierpfeife.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "drachenschuppe",
+      "ort": "summitCity",
+      "name": "fund.drachenschuppe.name",
+      "text": "fund.drachenschuppe.text"
+    },
+    {
+      "kennung": "bisonhaar",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.bisonhaar.name",
+      "text": "fund.bisonhaar.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "postkarteStaedte",
+      "ort": "crossroads",
+      "name": "fund.postkarteStaedte.name",
+      "text": "fund.postkarteStaedte.text"
+    },
+    {
+      "kennung": "marshmallowStock",
+      "ort": "pinewoodCamp",
+      "name": "fund.marshmallowStock.name",
+      "text": "fund.marshmallowStock.text"
     }
   ]
 }

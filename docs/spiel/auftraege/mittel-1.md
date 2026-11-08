@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Dialoge und Quests für Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, achtzehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achtzehnte Auftrag ist zusammengeführt, danke. Zu deinem offenen Punkt: Sprüche sind im Turnier schon gesperrt, weil die Turniergegner die Rolle `turnier` haben und Sprüche nur gegen `strasse` gehen. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Ink-Dateien dieser Orte und der Erinnerung `erinnerung-siedlung.ink` (neu),

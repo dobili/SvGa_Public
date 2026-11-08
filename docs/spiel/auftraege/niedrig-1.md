@@ -15,6 +15,11 @@ Hand (Erreichbarkeit, Rand) und schreibe das Ergebnis in den Bericht.
 
 ## Ziel
 
+Neu seit heute: `docs/spiel/09_Weltbeschreibung.md` (Abschnitte 3, 4, 5.2 und 6) beschreibt, wie die
+beiden Karten aussehen und was sie lebendig macht; bitte danach zeichnen, soweit die
+Platzhalterkacheln es hergeben (Tiere und Statisten als Objekte `type = "tier"` bzw. `"statist"`
+mit zwei Punkten `von`/`bis` als Eigenschaften, die Technik dafür kommt vom Haupt-Chat).
+
 Die erste begehbare Route (W5): Karte 1 „Landstraße“ (28 × 20, Felder, Zaun, Straße von links nach
 rechts, Rätseltafel am Anfang), Karte 2 „Flussweg“ (28 × 20, Bach rechts wie in Cedar Creek, Steg,
 Bank, Ortsschild am Ende). Platzhalterkacheln wie bisher.

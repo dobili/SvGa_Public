@@ -10,14 +10,15 @@
 // anspricht, erlebt zuerst den Vorwurf.
 //
 // Ambrose schweigt nach dem Vorwurf bis zu den Nachfahren (ambroseSprichtWieder, gesetzt in
-// port-delacroix-werkstatt.ink), außer einem Satz je Szene. Die Karte Schutzengel (Szene 69) fehlt
-// noch in karten.json; der Aufruf steht als Kommentar bereit.
+// port-delacroix-werkstatt.ink), außer einem Satz je Szene. Statt der Karte Schutzengel (Szene 69,
+// keine eigene Wirkung) gibt Miss Odile „Was droht?“.
 // Variablen: reiheRemyBestanden, reiheLouBestanden, simultanBestanden,
 // ausgangPortDelacroixClubkampf und nadelPortDelacroix setzt die Hülle (R42); bretterGesammelt
 // zählt port-delacroix-aussen.ink; die übrigen setzt diese Datei.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibKarte(kennung)
 
 VAR tiefpunktGesehen = false
 VAR ambroseSprichtWieder = false
@@ -138,9 +139,9 @@ Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dolla
 Die Kasse klingelt. Drei Dollar, und ein Vierter, den Mrs. Arceneaux dazulegt. #sprecher:erzaehler
 Remy bleibt am dritten Brett sitzen, als die anderen schon gehen. #sprecher:erzaehler
 Ich hab dich beobachtet. Du redest mit dem Brett, aber du spielst allein. Tut mir leid. #sprecher:remy #stimmung:still
-Miss Odile drückt dir eine Karte in die Hand. #sprecher:erzaehler
+Miss Odile drückt dir eine Karte in die Hand: „Was droht?“ #sprecher:erzaehler
 Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
-// ~ gibKarte("schutzengel")  (Karte fehlt noch in karten.json)
+~ gibKarte("wasDroht")
 -> END
 
 // ---------------------------------------------------------------- Remy

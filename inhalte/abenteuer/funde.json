@@ -107,6 +107,65 @@
       "ort": "cedarCreek",
       "name": "fund.schluessel.name",
       "text": "fund.schluessel.text"
+    },
+    {
+      "kennung": "anstecker",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.anstecker.name",
+      "text": "fund.anstecker.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "ohrstoepsel",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.ohrstoepsel.name",
+      "text": "fund.ohrstoepsel.text"
+    },
+    {
+      "kennung": "zeroTablet",
+      "ort": "siliconBay",
+      "name": "fund.zeroTablet.name",
+      "text": "fund.zeroTablet.text"
+    },
+    {
+      "kennung": "flaschenpost",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.flaschenpost.name",
+      "text": "fund.flaschenpost.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "muschelMitLoch",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.muschelMitLoch.name",
+      "text": "fund.muschelMitLoch.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "erstesBrettMusikhaus",
+      "ort": "portDelacroix",
+      "name": "fund.erstesBrettMusikhaus.name",
+      "text": "fund.erstesBrettMusikhaus.text",
+      "extra": "brett-musikhaus-am-kai"
+    },
+    {
+      "kennung": "eidechsenhaut",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.eidechsenhaut.name",
+      "text": "fund.eidechsenhaut.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "nietenCanyonbruecke",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.nietenCanyonbruecke.name",
+      "text": "fund.nietenCanyonbruecke.text"
+    },
+    {
+      "kennung": "halesBrief",
+      "ort": "desertSprings",
+      "name": "fund.halesBrief.name",
+      "text": "fund.halesBrief.text"
     }
   ]
 }

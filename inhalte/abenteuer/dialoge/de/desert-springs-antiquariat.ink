@@ -5,11 +5,12 @@
 // derselben Stellung wie auf dem Umschlag aus Ironwood (Runde desertSprings.siegel), Hales Brief
 // von 1866, Partiefragment 7. Einstieg wie in orte.json: okoro.
 //
-// Der Gegenstand „Hales Brief“ und der Laden von Mr. Okoro fehlen noch in funde.json und
-// laeden.json (Bericht). Variablen: siegelBestanden und gefundenUmschlag setzt die Hülle (R42);
+// Hales Brief ist ein Fund (gibFund); Mr. Okoro hat den Laden desertSprings.antiquariat. Variablen: siegelBestanden und gefundenUmschlag setzt die Hülle (R42);
 // dotOkoroErzaehlt setzt desert-springs-garage.ink; briefGelesen setzt diese Datei.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
+EXTERNAL oeffneLaden(laden)
 
 VAR okoroGetroffen = false
 VAR dotOkoroErzaehlt = false
@@ -30,7 +31,7 @@ VAR briefGelesen = false
 ~ okoroGetroffen = true
 Zwischen Regalen voller Bücher sitzt ein alter Herr mit Lesebrille und klebt einen Buchrücken. #sprecher:erzaehler
 Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemandem gehört. #sprecher:okoro
--> END
+-> okoro_laden
 
 === okoro_kiste ===
 ~ okoroGetroffen = true
@@ -56,8 +57,13 @@ Das Siegel bricht mit einem leisen Knacken. Der Brief ist von 1866, die Schrift 
 Darunter stehen Züge, sauber notiert. Die letzten Züge, die Hale vorschlug. #sprecher:erzaehler
 Er hat gewartet. Er hat wirklich gewartet. #sprecher:ambrose #stimmung:still
 Behalt den Brief. Bei dir ist er besser aufgehoben als in meinem Keller. #sprecher:okoro
+~ gibFund("halesBrief")
 -> END
 
 === okoro_alltag ===
 {~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Die Familie Hale hat Brücken gebaut, von hier bis in den Norden. Das steht in den Büchern hier.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro
+-> okoro_laden
+
+=== okoro_laden ===
+~ oeffneLaden("desertSprings.antiquariat")
 -> END

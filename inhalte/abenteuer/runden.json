@@ -417,6 +417,22 @@
         "fesselung"
       ],
       "anzahl": 1
+    },
+    {
+      "kennung": "desertSprings.erinnerung1858",
+      "ort": "desertSprings",
+      "steller": "desertSprings.ambrose",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": [
+        "mattbilder"
+      ],
+      "anzahl": 1,
+      "erinnerung": {
+        "partie": "klassik-bird-morphy",
+        "abZug": 11,
+        "seite": "black"
+      }
     }
   ]
 }

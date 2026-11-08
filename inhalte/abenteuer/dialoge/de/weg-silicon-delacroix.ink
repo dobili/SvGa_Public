@@ -8,13 +8,13 @@
 // Einstiege wie in orte.json: schiffskoch, guidry, zurueck_silicon, tafel, fund_flaschenpost,
 // fund_muschel.
 //
-// Funde: In funde.json gibt es für Akt 3 noch keine Einträge; die Aufrufe stehen als Kommentar
-// bereit (Bericht mittel-1, fünfzehnter Auftrag), bis dahin merkt sich Ink den Fund selbst.
+// Funde gibt gibFund; Ink merkt sie sich zusätzlich selbst.
 // Variablen: ausgangWegSiliconDelacroixSchiffskoch und wegSiliconDelacroixTafelBestanden setzt die
 // Hülle (R42); „abgebrochen“ zählt wie nicht gespielt (R35).
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR ausgangWegSiliconDelacroixSchiffskoch = ""
 VAR wegSiliconDelacroixTafelBestanden = false
@@ -106,7 +106,7 @@ Die Fähre legt bald wieder ab, zurück nach Silicon Bay. #sprecher:erzaehler
 }
 ~ flaschenpostGefunden = true
 Zwischen zwei Rettungsringen klemmt eine Flasche mit einem gerollten Zettel darin. Darauf ein Schachdiagramm und „Wer findet den Zug?“. #sprecher:erzaehler
-// ~ gibFund("flaschenpost")  (Fund fehlt noch in funde.json)
+~ gibFund("flaschenpost")
 Jemand hat ein Rätsel ins Meer geworfen. Das ist die schönste Art, Post zu verschicken. #sprecher:ambrose
 -> END
 
@@ -117,6 +117,6 @@ Jemand hat ein Rätsel ins Meer geworfen. Das ist die schönste Art, Post zu ver
 }
 ~ muschelGefunden = true
 Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für eine Kette gemacht. #sprecher:erzaehler
-// ~ gibFund("muschelMitLoch")  (Fund fehlt noch in funde.json)
+~ gibFund("muschelMitLoch")
 Meine Schwester sammelte solche. Sie fädelte sie auf und trug sie sonntags. #sprecher:ambrose #stimmung:fern
 -> END

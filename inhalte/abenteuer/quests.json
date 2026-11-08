@@ -1466,10 +1466,6 @@
               "art": "szene",
               "akt": 3,
               "szene": "akt3.clubnadelPortDelacroix"
-            },
-            {
-              "art": "karte",
-              "karte": "mentorzug"
             }
           ]
         },
@@ -1659,6 +1655,10 @@
               "art": "szene",
               "akt": 3,
               "szene": "akt3.versoehnung"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
             }
           ]
         },
@@ -1765,6 +1765,43 @@
               "karte": "fluestern"
             }
           ]
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.erinnerung1858",
+      "titel": "quest.erinnerung1858.titel",
+      "typ": "begegnung",
+      "ort": "desertSprings",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "desert-springs-garage.mira_erinnerung"
+      },
+      "schritte": [
+        {
+          "text": "quest.erinnerung1858.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "desertSprings.erinnerung1858"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 6
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.erinnerung1858.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-garage.mira_nach_erinnerung"
+          }
         }
       ]
     }

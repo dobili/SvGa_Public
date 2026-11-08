@@ -3,9 +3,10 @@
 //
 // Szene der Bibel (Abschnitt 20): 70 Das Schild (Quest portDelacroix.wiederaufbau, Besuch 3 von 3,
 // frühestens nach Desert Springs). Einstieg wie in orte.json: schild.
-// Der Fund „Erstes Brett im neuen Musikhaus“ fehlt noch in funde.json; der Aufruf steht als
-// Kommentar bereit. Variablen: nadelDesertSprings setzt die Hülle (R42), simultanGedankt die Turnhalle,
+// Beim Aufhängen gibt es den Fund „Erstes Brett im neuen Musikhaus“ (gibFund). Variablen: nadelDesertSprings setzt die Hülle (R42), simultanGedankt die Turnhalle,
 // musikhausOffen setzt diese Datei.
+
+EXTERNAL gibFund(kennung)
 
 VAR simultanGedankt = false
 VAR nadelDesertSprings = 0
@@ -36,7 +37,7 @@ Miss Odile, Remy, Lou, Henri und Mama warten unter der Tür. Jemand reicht dir e
 Du hängst das Schild über die Tür: „Musik- und Schachclub Port Delacroix, seit 1889“. #sprecher:erzaehler #pause
 Remy spielt drei Töne auf der Trompete. Alle klatschen. #sprecher:erzaehler
 Seit 1889. Und wieder. #sprecher:odile #stimmung:froh
-// ~ gibFund("erstesBrettMusikhaus")  (Fund fehlt noch in funde.json)
+~ gibFund("erstesBrettMusikhaus")
 Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jemand. #sprecher:ambrose #stimmung:froh
 -> END
 

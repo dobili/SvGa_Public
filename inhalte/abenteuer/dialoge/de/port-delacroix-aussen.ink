@@ -3,8 +3,9 @@
 //
 // Szenen der Bibel: Ankunft über den Deich (Ende von Szene 62), 64 Bretter sammeln (Quest
 // portDelacroix.wiederaufbau, Besuch 1: vier Häuser), 65 Batiste am Kai (Begegnung
-// portDelacroix.batiste, immun gegen Sprüche), Gebäckstand von Mrs. Arceneaux (vorerst Gespräch,
-// es gibt noch keinen Laden), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
+// portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Kühler Kopf statt
+// Pokerface, das keine eigene Wirkung hat), Gebäckstand von Mrs. Arceneaux (Laden
+// portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
 // Einstiege wie in orte.json: ankunft_zu_fuss, deich, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
 //
@@ -13,6 +14,8 @@
 // nadelPortDelacroix setzt die Hülle (R42), die übrigen setzt Ink.
 
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL oeffneLaden(laden)
+EXTERNAL gibKarte(kennung)
 
 VAR ankunftPortDelacroixGesehen = false
 VAR ambroseSprichtWieder = false
@@ -23,6 +26,7 @@ VAR brettHaus2Gesehen = false
 VAR brettHaus3Gesehen = false
 VAR brettHaus4Gesehen = false
 VAR batisteGetroffen = false
+VAR batisteKarteGegeben = false
 VAR ausgangPortDelacroixBatiste = ""
 VAR arceneauxGetroffen = false
 VAR nadelPortDelacroix = 0
@@ -148,7 +152,13 @@ Eine Stellung, du hast Weiß. Ohne Uhr, das Meer hat auch keine. #sprecher:batis
 
 === batiste_nach_sieg ===
 Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
-Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. #sprecher:batiste
+{not batisteKarteGegeben:
+    ~ batisteKarteGegeben = true
+    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. #sprecher:batiste
+    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine für einen kühlen Kopf. #sprecher:erzaehler
+    ~ gibKarte("zweiteChance")
+    ~ gibKarte("kuehlerKopf")
+}
 + [„Noch eine Partie.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
@@ -168,11 +178,16 @@ Das Wasser war ruhiger als du. Noch einmal? #sprecher:batiste
 === arceneaux ===
 {arceneauxGetroffen:
     {~Beignets, frisch aus dem Fett! Für Helfer die Hälfte.|Remy ist mein Enkel. Er ist hitzig, aber ein guter Junge.|Das Musikhaus kommt wieder. Die Kuchen für die Eröffnung hab ich schon bei mir selbst bestellt.} #sprecher:arceneaux
-    -> END
+    -> arceneaux_laden
 }
 ~ arceneauxGetroffen = true
 Vor der Turnhalle steht ein Gebäckstand, Puderzucker überall. Eine alte Dame wischt sich die Hände an der Schürze ab. #sprecher:erzaehler
 Arceneaux. Wer hilft, bekommt Gebäck. Wer nicht hilft, bekommt auch Gebäck, aber mit schlechtem Gewissen. #sprecher:arceneaux
+Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux
+-> arceneaux_laden
+
+=== arceneaux_laden ===
+~ oeffneLaden("portDelacroix.gebaeckstand")
 -> END
 
 === gebaeckstand ===

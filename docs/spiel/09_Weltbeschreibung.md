@@ -21,9 +21,9 @@ Hauptstadt. So fühlt sich jede Etappe wie ein Stück Weg an, nicht wie ein Spru
                                                                       v
    [5 Silicon Bay] <--Schnellstraße (Bus)-- [4 Ironwood] (Stahl, Rauch, Brücken)
          |
-   Küstenstraße (Fähre)
+   Küstenfähre (zwei Tage nach Süden, ab Akt 3 verlässt die Reise Ashford)
          v
-   [6 Old Harbor] --Wüstenstraße (Zug)--> [7 Desert Springs] --Bergstraße--> [8 Summit City]
+   [6 Port Delacroix] (Delta, Ambroses Geburtsstadt) --Wüstenzug, Canyon zu Fuß--> [7 Desert Springs] --Bergstraße--> [8 Summit City]
                                                  |
                                           [9 Crossroads] (Rastort, alle Wege kreuzen sich)
                                                  |
@@ -31,7 +31,9 @@ Hauptstadt. So fühlt sich jede Etappe wie ein Stück Weg an, nicht wie ein Spru
 ```
 
 Richtung der Reise: von klein und warm (Holz, Ahorn) über laut und grau (Stahl, Glas) zu weit und
-hell (Küste, Wüste, Berge) und zurück in die Mitte (Hauptstadt). Die Grafik folgt dieser Kurve:
+hell (Küste, Wüste, Berge) und zurück in die Mitte (Hauptstadt). Ab Akt 3 weitet sich die Reise
+über Ashford hinaus auf das ganze Land (Landesmeisterschaft, `10_Sprueche_Schauplaetze_Varianten.md`,
+O1 bis O7): Port Delacroix liegt im Delta des Südens, Desert Springs hinter einem Canyon im Westen. Die Grafik folgt dieser Kurve:
 Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
 
 ## 2. Jahreszeiten und Tageszeiten
@@ -226,29 +228,62 @@ fällt der erste Schnee.
 Glasstadt am Wasser, Kunstlicht, keine Jahreszeit, keine Tiere. Konzern-Akademie mit
 Bildschirmen statt Brettern. Die Welt ist hier sauber und falsch.
 
-- **Außen:** Campus mit Glasgebäuden, Straßenbahn, Werbetafeln (ZERO-Arbeitsname), ein
-  Food-Truck (Laden).
-- **Innen:** Akademie (Glasbüro, Bildschirme, Dr. Lin), Serverraum (Fund, Schummelgerät), die
-  Straßenbahn als Innenraum für einen Dialog.
-- **Verbindungen:** Bus (Ironwood), Fähre (Old Harbor).
+- **Außen `aussen`:** Campus mit Glasgebäuden, Straßenbahn, Werbetafeln (ZERO-Arbeitsname), der
+  Food-Truck von Rosie (Laden) mit einer Bank davor (Dash spielt dort Blitz), Lieferroboter.
+- **Innen `akademie`:** Glasbüro mit Bildschirmbrettern, Dr. Lins Schreibtisch mit einem einzigen
+  Holzbrett, Nova auf der Fensterbank, Theo am Datenwand; zum Ansehen: Rangliste auf einem
+  Bildschirm, ein Pokal aus Glas, ein Zettel „Drei Ziele“ in Dr. Lins Handschrift.
+- **Innen `serverraum`:** kühl, blinkend, Schubladen; Fund der Ohrempfänger (Beweis für Akt 4).
+- **Innen `lobby`:** Firmengeschichte mit der Vitrine „Hale – Ingenieure seit 1850“ (Rechenschieber,
+  Brückenzeichnung, Notizbuch mit herausgerissener Seite), ein Empfangsroboter.
+- **Verbindungen:** Weg `wegIronwoodSilicon` (Raststätte, Glasbrücke; Bus von Ironwood bis zur
+  Raststätte), Küstenfähre nach Port Delacroix (Weg `wegSiliconDelacroix`).
 
-### 5.7 Old Harbor (Akt 3, Tiefpunkt)
+### 5.7 Port Delacroix (Akt 3, Tiefpunkt und Versöhnung; ersetzt Old Harbor)
 
-Hafen, Sturm, Gischt, Fischkisten, eine Kneipe mit Brettern aus Treibholz. Hier spielt der Held
-ohne Ambrose; die Karte ist dunkler als alle davor.
+Hafenstadt im Delta, Ambroses Geburtsstadt, eine Tagesreise flussab von New Orleans (O1, an diese
+Gegend angelehnt, mit erfundenem Namen). Im letzten Spätsommer hat ein Hurrikan das alte Musikhaus
+am Kai zerstört; Akt 3 zeigt den nassen Winter danach: abgedeckte Dächer, Bauzäune, Zelte, und
+überall Musik und Menschen, die mit den Händen helfen. Sturm und Regen, danach Sonne über den
+Baustellen (O6). Der Ton ist Hoffnung, nicht Trauer.
 
-- **Außen:** Kai, Fähranleger, Leuchtturm (Lichtkegel animiert), Fischmarkt (Laden).
-- **Innen:** Hafenkneipe (Club), Leuchtturmstube (Flashback), Fischhalle.
-- **Verbindungen:** Fähre (Silicon Bay), Küstenzug nach Desert Springs.
+- **Außen `aussen`:** Kai mit Fischerbooten (Mr. Batiste flickt dort Boote), Ruine des Musikhauses
+  mit Bauzaun, zwei Zelte (Notzelt, Clubzelt), Turnhalle der Schule, Gebäckstand von Mrs. Arceneaux
+  (Laden), Rue des Facteurs mit der Klavierwerkstatt, Sandsäcke, ein Bläser auf einer Kiste.
+- **Innen `turnhalle`:** Ausweichquartier des Clubs: Basketballkörbe, Klapptische, gerettete
+  Bretter aller Sorten; zum Ansehen: eine Spendenkasse, ein nasses Notenheft, ein Plakat „Wir
+  spielen weiter“.
+- **Innen `werkstatt`:** Klavierwerkstatt Whitlock-Duval: Klaviere unter Planen, Hobelbank,
+  Geruch nach Holz, das alte Foto eines jungen Mannes mit Schachbrett (Ambrose), Célestes Laptop
+  auf einem Flügel; Auslöser des Flashbacks.
+- **Innen `musikhaus`:** erst Ruine (nasse Dielen, Himmel durchs Dach), nach dem dritten Besuch der
+  neue Clubraum mit Klavier, Brettern und dem Schild „seit 1889“ (Spur nach Regel 4).
+- **Fauna und Statisten:** Pelikane und Möwen am Kai, ein Reiher im Bauzaun, eine Katze auf dem
+  Bootsdach; Handwerker auf Dächern, Helfer mit Sandsäcken, Kinder spielen Ball zwischen Zelten.
+- **Verbindungen:** Küstenfähre (Silicon Bay; Weg `wegSiliconDelacroix` mit Fährdeck und Deich),
+  Wüstenzug nach Desert Springs (Weg `wegDelacroixDesert`).
 
-### 5.8 Desert Springs, Summit City, Crossroads, Pinewood Camp, Ghost Town, Capital Arena (Akt 3 und 4)
+Old Harbor aus der Konzeptsammlung entfällt (O1): Die Turnhalle (später das Musikhaus) ersetzt die
+Hafenkneipe als Clubraum, die Klavierwerkstatt die Leuchtturmstube als Ort des Flashbacks.
 
-Je ein Bild für die Grafikplanung: Wüstenstadt mit Motel und Diner (Mira, Wunderkind; Garage als
-Clubraum); Bergstadt mit Seilbahn und Berghütte (Großmeisterin Ward, Endspiele am Kaminfeuer);
-Crossroads als Raststätte an einem Kreuz von vier Straßen (alle Rivalen, Nebenquests, Laden);
-Pinewood Camp mit Hütten am See (Sommer, Lagerfeuer, Bretter auf Baumstümpfen); Ghost Town als
-verlassene Goldgräberstadt mit Saloon und Friedhof (Ambroses Grab, Sepia auch am Tag); Capital
-Arena als Halle mit Tribünen (Landesmeisterschaft). Details kommen mit der Bibel zu Akt 3 und 4.
+### 5.8 Desert Springs mit Canyon (Akt 3), Summit City, Crossroads, Pinewood Camp, Ghost Town, Capital Arena (Akt 4)
+
+**Weg `wegDelacroixDesert` (O4):** Der Wüstenzug hält an einem einsamen Bahnhof oberhalb des
+Canyons; zwei Wegkarten: `canyonpfad` (roter Fels, Hitze als Tönung, Eidechsen, Roadrunner, Miras
+flacher Stein) und `felsbogen` (Felsbogen, darunter die Eisenbahnbrücke von 1879 mit den Nieten
+„J. H.“, Abstieg zur Stadt im Abendlicht).
+
+**Desert Springs (Akt 3):** Wüstenstadt mit Motel, Diner und Tankstelle, erste Wärme und blühende
+Kakteen. Außen: Motel mit Garage (Club), Diner, Tankstelle (Buck spielt auf der Motorhaube), alter
+Bahnhof mit Antiquariat. Innen: `garage` (Werkbank, Ölgeruch, ein Brett auf einem Reifenstapel,
+Miras Dosenpokal), `antiquariat` (Bücherstapel, Briefe in Kisten, der Nachlass eines Brückenbauers;
+Laden von Mr. Okoro). Tiere: Eidechsen, Geier als Kreise, ein Hund vor dem Diner.
+
+Je ein Bild für Akt 4 (Details mit der Bibel zu Akt 4): Bergstadt mit Seilbahn und Berghütte
+(Großmeisterin Ward, Endspiele am Kaminfeuer); Crossroads als Raststätte an einem Kreuz von vier
+Straßen (alle Rivalen, Nebenquests, Varianten-Tisch); Pinewood Camp zwischen Riesenbäumen im
+Nationalpark (O3); Ghost Town als verlassene Goldgräberstadt mit Saloon und Friedhof (Ambroses
+Grab, Sepia auch am Tag); Capital Arena als Halle mit Tribünen (Landesmeisterschaft).
 
 ## 6. Checkliste je Karte (für niedrig-1 beim Zeichnen)
 

@@ -1340,3 +1340,618 @@ Zu jeder Frage meine Empfehlung; nach Regel 9 gilt sie, bis du widersprichst.
    Akt 3 nicht aus dem Nichts kommt.
 6. **Victor ohne Partie in Akt 2.** Empfehlung: ja; seine Entwicklung läuft über zwei Gespräche, die
    nächste Partie gegen ihn gehört nach Silicon Bay.
+
+---
+
+# Teil 3: Akt 3 (Staffel 2: Silicon Bay, Port Delacroix, Desert Springs)
+
+Stand: 08.11.2026, Helfer-Chat mittel-2. Grundlage zusätzlich zu Teil 1 und 2:
+`10_Sprueche_Schauplaetze_Varianten.md` (Sprüche S1 bis S6, Schauplätze O1, O2, O4, O6),
+`06_Regelwerk.md` (R4 Zielstärken, R27 Karten, R28 und R29 Story-Sperren), `07_Aufgabenzuordnung.md`
+(Clubs 5 bis 7), `08_Wege_und_Entdeckungen.md` und `09_Weltbeschreibung.md`. Stilregeln wie in
+Abschnitt 5. Port Delacroix ersetzt Old Harbor (O1). Alle Namen sind Arbeitsnamen; „ZERO“ soll vor
+der Veröffentlichung umbenannt werden (Dokument 02, Abschnitt 5).
+
+## 16. Der Kern von Akt 3 in sieben Sätzen
+
+1. In Silicon Bay sieht {held} die Konzern-Akademie von innen: Bildschirme statt Bretter, eine
+   ehrliche Trainerin, Dr. Lin, und eine Champion-Spielerin, Nova, deren Partien zu genau sind.
+2. Ambrose ist von der Maschine ZERO gebannt: Sie spielt die makellosen Partien, von denen er sein
+   Leben lang geträumt hat.
+3. In Port Delacroix, Ambroses Geburtsstadt im Delta, hat ein Hurrikan das alte Musikhaus mit dem
+   Schachclub zerstört; der Club spielt in einer Turnhalle weiter, und {held} hilft beim
+   Wiederaufbau.
+4. Dort wirft man {held} vor, mit dem Brett zu schummeln wie der Konzern mit der Maschine; {held}
+   spielt den Clubkampf allein, und Ambrose zieht sich zu ZERO zurück (Tiefpunkt).
+5. Ambrose findet seine Nachfahren, die Klavierbauer Whitlock-Duval, die ohne Schach glücklich
+   sind; die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen.
+6. Im Canyon vor Desert Springs versöhnen sich {held} und Ambrose; er lehrt das romantische Opfer
+   und erzählt endlich, wie er 1866 auf der Reise zu Hale starb.
+7. In Desert Springs findet {held} den Brief zum leeren Umschlag: Hale hat auf Ambrose gewartet.
+
+## 17. Zeitlinie, Ergänzung für Akt 3
+
+| Jahr         | Ereignis                                                                                                                                                                                                            |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1831         | Ambrose wird in **Port Delacroix** geboren, einer Hafenstadt im Delta eine Tagesreise flussab von New Orleans; Teil 1 nennt New Orleans, weil er dort spielte (siehe Bericht).                                      |
+| 1840         | Der neunjährige Ambrose fegt Sägespäne in der Klavierwerkstatt seines Vaters und lernt dort Schach auf einem Brett aus Resthölzern (Flashback, Szene 66).                                                           |
+| 1852         | Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor (Flashback, Szene 66).                                                 |
+| 1866         | Hale schreibt aus dem Westen: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose bricht auf und stirbt unterwegs; der Brief erreicht ihn nie (Umschlag in Ironwood, Brief in Desert Springs). |
+| 1879         | Josiah Hale baut die Eisenbahnbrücke über den Canyon bei Desert Springs, seine letzte Brücke; die Nieten tragen „J. H.“ wie in Ironwood.                                                                            |
+| 1885         | Hale stirbt in Desert Springs. Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie (übergreifende Quest für Akt 4).                                                                              |
+| letztes Jahr | Ein Hurrikan trifft Port Delacroix im Spätsommer und zerstört das alte Musikhaus. Akt 3 spielt im Winter und Frühjahr danach: Wiederaufbau.                                                                         |
+
+## 18. Figuren in Akt 3
+
+### 18.1 Weiterentwicklung der Hauptfiguren
+
+**Ambrose.** Akt 3 ist sein Akt (Konzeptsammlung, Charakterentwicklung). Er läuft fast zur
+Maschine über: Theo schenkt {held} in Silicon Bay ein Tablet des Konzerns, und nachts „schaut“
+Ambrose ZERO beim Spielen zu. Er wird stiller, spricht von „vollkommenen“ Partien und findet
+{held}s Fehler plötzlich unerträglich. Nach dem Vorwurf in Port Delacroix verstummt er ganz. Bei
+den Whitlock-Duvals sieht er, dass seine Familie ohne ihn und ohne Schach glücklich geworden ist,
+und im Canyon begreift er, dass Schach durch Menschen schön wird, die Fehler machen. Neue
+Stimmungen: `gebannt` (vor dem Bildschirm), `still` (im Tiefpunkt, nur ein Satz je Szene).
+Erst jetzt spricht er über 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter).
+
+- „Sie zweifelt nie. Siehst du, wie schön das ist? … Oder wie leer?“
+- „Ich bin in dieser Werkstatt aufgewachsen. Sie riecht noch genauso.“
+- „Ich bin nicht angekommen, {held}. Aber er hat gewartet. Das reicht mir.“
+
+**Victor.** Er ist in Silicon Bay zu Hause und Gastgeber des Akademie-Turniers. Als er sieht, wie
+Nova vor einer Partie ein winziges Gerät ins Ohr steckt, sagt er zum ersten Mal laut: „Das ist
+falsch.“ Er schweigt danach vor seinem Vater, aber er gibt {held} die Spielberichte der Akademie
+(Szene 56). In Port Delacroix taucht er nicht auf; er schickt eine einzige Nachricht: „Ich glaube
+dir. Wegen des Bretts.“
+
+**Juno** kommt nach Silicon Bay mit und fährt danach zurück (Schule); in Port Delacroix und Desert
+Springs ruft sie nur an. **Mama** fährt mit nach Port Delacroix (Turnier der Region, Abschnitt 2.3)
+und hilft beim Wiederaufbau mit ihren Händen als Krankenpflegerin im Notzelt.
+
+### 18.2 Silicon Bay
+
+**Dr. Lin** (Clubchefin 5). Dr. Evelyn Lin, Mitte vierzig, sie. Leitet die Schachakademie von
+Perfect Move, war früher Turnierspielerin und glaubt an gute Eröffnungen und ehrliche Arbeit. Sie
+weiß nicht, dass manche ihrer Schützlinge Geräte tragen, und wird in Akt 4 beim Aufdecken helfen
+(Dokument 02, 2.7). Stil: Lehrbuch, saubere Eröffnungen, Grundsätze aus Kapitel 1 (drei Ziele,
+vier Todsünden). Schwäche: Sobald die Stellung das Lehrbuch verlässt, spielt sie vorsichtig und
+passiv (Phasenversatz Eröffnung +1, Mittelspiel −1; Fehlerart `koenigPassiv` im Endspiel). Sprechweise:
+genau, freundlich, Fragen wie im Unterricht.
+
+- „Drei Ziele: Zentrum, Entwicklung, König in Sicherheit. Welches hast du vergessen?“
+- „Ich bringe hier Kindern Schach bei. Die Bildschirme helfen. Glaube ich.“
+- „Das sind die Spielberichte meiner Klasse. Ich habe sie nie so genau angesehen.“
+
+Zielstärke E + 460 (Club 5, R4). Eröffnung: Italienisch und Damengambit, abweichungsarm.
+
+**Nova** (Clubmitglied). Siehe Teil 2, 9.2. In Silicon Bay stellt sie eine Aufgabenreihe
+(Eröffnungsfallen) und lächelt dabei zu viel. Ihr Geheimnis: Sie spielt Turniere mit einem
+Ohrgerät, weil ihr Vertrag es verlangt; sie hasst es. Rolle in Akt 3: Ihre Partien sind der erste
+Beweis (Szene 56), aber sie bittet {held}, noch nichts zu sagen („Wenn das rauskommt, bin ich die
+Schuldige. Nicht die.“). Auflösung in Akt 4.
+
+**Theo** (Clubmitglied). Theodore Park, 14, er, Datenfreak der Akademie, hält Zahlen für die einzige
+Wahrheit, ist aber neugierig und ehrlich. Stellt die Aufgabenreihe zu Eröffnungsgrundsätzen.
+Schenkt {held} ein Tablet mit ZERO („Damit trainierst du in einer Woche mehr als in einem Jahr.“).
+Beispiel: „Du hast 71 Prozent Genauigkeit. Das ist … menschlich.“
+
+**Dash** (Straßengegner, Sprüche). Dashiell Moore, 19, er, Lieferradfahrer, spielt in der Mittagspause
+auf der Bank vor dem Food-Truck Blitz um Burritos und redet ununterbrochen (S4). Nicht immun gegen
+„Grübelfalle“, aber immun gegen „Großes Maul“ („Ich spiel immer schnell, Kleines.“; Steckbrief).
+Zielstärke A − 50. Eigene Sprüche: „Tick, tack, dein König hat Angst.“ – „Denkst du noch oder
+verlierst du schon?“
+
+**Rosie** (Laden). Rosalind Ortiz, Food-Truck-Besitzerin, sie, Anfang dreißig, verkauft Burritos
+und am Fenster Karten und Fahrkarten („Ich bin das Einzige in dieser Stadt, das nicht leuchtet.“).
+
+### 18.3 Port Delacroix
+
+**Miss Odile** (Clubchefin 6). Odile Fontaine, Anfang sechzig, sie, Musiklehrerin, leitet den
+Schachclub seit dreißig Jahren im alten Musikhaus am Kai. Nach dem Hurrikan spielt der Club in der
+Turnhalle der Schule und in zwei Zelten. Ruhig, unerschütterlich, singt beim Aufräumen. Stil:
+Positionsspielerin der Bauernstrukturen (Kapitel 5 und 6), langsame Pläne. Schwäche: verteidigt
+schlecht gegen schnelle Angriffe am Königsflügel (Fehlerart `koenigsschild` hoch). Sprechweise:
+Musik als Bild, „Takt“, „Melodie“.
+
+- „Bauern sind die Melodie. Die Figuren spielen nur dazu.“
+- „Das Wasser hat das Haus genommen, nicht die Musik.“
+- „Spiel langsam. Ein Plan ist kein Sprint.“
+
+Zielstärke E + 520 (Club 6, R4). Eröffnung: Französisch und Englisch.
+
+**Remy** (Clubmitglied). Rémy Arceneaux, 16, er, Trompeter in einer Schulband, stolz auf seine Stadt
+und misstrauisch gegen Fremde, seit Perfect Move nach dem Sturm „Hilfe“ angeboten hat: Bildschirme
+statt eines neuen Musikhauses. Er erhebt den Schummelvorwurf (Szene 63). Stellt die Aufgabenreihe zu
+Bauernstrukturen. Später entschuldigt er sich (Szene 69). Beispiel: „Hier hilft man mit den Händen.
+Nicht mit Bildschirmen.“
+
+**Lou** (Clubmitglied). Louise Thibodeaux, 12, sie, sammelt Muscheln und Pläne („Ich hab einen Plan.
+Er ist noch nicht fertig, aber er ist gut.“). Stellt die Aufgabenreihe zu Plänen (Kapitel 6).
+
+**Mr. Batiste** (Straßengegner, Sprüche). Lucien Batiste, Ende fünfzig, er, flickt am Kai Boote und
+spielt dabei Schach auf einem umgedrehten Eimer. Gelassen, immun gegen beide Sprüche („Junge Leute
+reden. Das Wasser hört nicht zu.“; Steckbrief). Zielstärke A ± 0. Eigene Sprüche: langsame
+Lebensweisheiten, die nichts mit der Partie zu tun haben und gerade dadurch ablenken.
+
+**Henri Whitlock-Duval** (Nebenfigur). Fünfzig, er, Klavierbauer in sechster Generation, Werkstatt
+in der Rue des Facteurs. Der Sturm hat das Dach beschädigt, die Klaviere sind gerettet. Freundlich,
+geschäftig, keine Ahnung von Schach. Beispiel: „Ein Klavier hat zweihundertdreißig Saiten. Jede
+muss stimmen. Ihr Schach hat nur vierundsechzig Felder? Klingt erholsam.“
+
+**Céleste Whitlock-Duval** (Nebenfigur). 15, sie, Henris Tochter, macht Musik am Laptop, skatet,
+findet Schach „was für alte Leute“ (O2). Nicht unhöflich, nur ehrlich gelangweilt. Rolle: die eine
+Partie aus Neugier (Szene 68). Beispiel: „Also, ich schieb die Pferde einfach rum, okay?“
+
+**Mrs. Arceneaux** (Laden). Remys Großmutter, verkauft am Gebäckstand vor der Turnhalle Gebäck,
+Karten und Fahrkarten; der Erlös geht in den Wiederaufbau.
+
+### 18.4 Desert Springs und der Canyon
+
+**Mira** (Clubchefin 7). Mira Castillo, 10, sie, Wunderkind, trainiert allein auf einem flachen
+Stein im Canyon, weil es dort still ist. Ernst, schnell, mag Opfer, weil sie „schöner sind als
+Recht haben“; genau Ambroses Schach. Club: die Garage ihres Bruders am Motel. Stil: Angreiferin,
+opferfreudig. Schwäche: opfert auch, wenn es nicht geht (Fehlerart `falscherAbtausch`, Phasenversatz
+Endspiel −1). Sprechweise: kurze Sätze, sehr direkt, manchmal ein Kinderwitz.
+
+- „Ich opfere den Läufer. Weil ich kann.“
+- „Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.“
+- „Du hast mich geschlagen. Noch mal. Jetzt.“
+
+Zielstärke E + 580 (Club 7, R4). Eröffnung: Königsgambit und Evans-Gambit (Kapitel 3).
+
+**Tomás** (Clubmitglied). Tomás Castillo, 17, er, Miras Bruder, Mechaniker in der Garage, spielt
+solide und passt auf seine Schwester auf. Stellt die Aufgabenreihe zu Mattbildern mit Opfer.
+
+**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren
+Fernschach per Post und hat Briefe aus aller Welt. Stellt die Aufgabenreihe zum Königsangriff und
+kennt das Antiquariat, in dem der Brief liegt (Szene 76).
+
+**Buck** (Straßengegner, Sprüche). Buck Harmon, sechzig, er, Tankwart, spielt auf der Motorhaube
+und hat für jede Lage einen Spruch. Nicht immun („Na, jetzt willst du's aber wissen!“). Zielstärke
+A − 100. Eigene Sprüche: „Hier draußen fährt keiner langsam. Auch nicht am Brett.“
+
+**Mr. Okoro** (Laden, Antiquariat). Samuel Okoro, siebzig, er, führt das Antiquariat im alten
+Bahnhof; verkauft Karten, Fahrkarten und alte Bücher. Hütet den Nachlass der Familie Hale aus
+Desert Springs, ohne es zu wissen.
+
+### 18.5 Sprechweisen auf einen Blick (Ergänzung)
+
+| Figur      | Erkennungszeichen                            |
+| ---------- | -------------------------------------------- |
+| Dr. Lin    | Lehrerfragen, „drei Ziele“, freundlich genau |
+| Theo       | Prozente und Daten, ehrlich neugierig        |
+| Dash       | Sprüche ohne Pause, Rhythmus, nie gemein     |
+| Miss Odile | Musik, Takt, Melodie, singt beim Aufräumen   |
+| Remy       | stolz, misstrauisch, „mit den Händen“        |
+| Céleste    | gelangweilt ehrlich, Laptop-Musik, „okay?“   |
+| Mira       | kurze Sätze, sehr direkt, „noch mal“         |
+| Buck       | Tankstellen-Sprüche, laut, herzlich          |
+
+## 19. Welt in Akt 3
+
+Bilder, Areale und Innenräume nach `09_Weltbeschreibung.md`, Abschnitte 5.6 bis 5.8 (in diesem
+Auftrag ergänzt). Jahreszeit: Winter bis Frühjahr (09, Abschnitt 2); Silicon Bay ohne Jahreszeit,
+Port Delacroix nasser Winter mit Stürmen und Sonne über den Baustellen, Desert Springs erste Wärme.
+Wege heißen wie die Wege-Orte aus Schritt 10.
+
+### 19.1 Weg 4: Ironwood → Silicon Bay (`wegIronwoodSilicon`, Bus)
+
+| Karte                            | Zweck                                                    | Stationen (W4)                                                                                              |
+| -------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `wegIronwoodSilicon.raststaette` | Raststätte an der Schnellstraße, wo der Bus Pause macht  | Rätseltafel am Kaffeeautomaten (3 Eröffnungsfallen), Fund „Werbe-Anstecker ZERO“, Fernfahrerin mit Weisheit |
+| `wegIronwoodSilicon.glasbruecke` | Fußgängerbrücke aus Glas in die Stadt, darunter Autobahn | Straßengegnerin mit Uhr: eine Joggerin mit Smartwatch (Stellungsduell 3 + 2), Fund „verlorener Ohrstöpsel“  |
+
+Der Bus hält an der Raststätte, den Rest geht {held} zu Fuß über die Glasbrücke (W2). Die
+Fernfahrerin (Mrs. Kowalczyk, sie) sagt: „Erst die Figuren raus, dann die Dame.“ (Kapitel 1,
+Abschnitt 1.2). Der verlorene Ohrstöpsel ist in Wahrheit ein Empfänger (Fund, Szene 56).
+
+### 19.2 Silicon Bay (Ort 5, `siliconBay`)
+
+| Karte                   | Art   | Zweck                                                            | Figuren                       |
+| ----------------------- | ----- | ---------------------------------------------------------------- | ----------------------------- |
+| `siliconBay.aussen`     | außen | Campus, Straßenbahn, Werbetafeln, Food-Truck, Bank vor dem Truck | Rosie, Dash, Statisten aus 09 |
+| `siliconBay.akademie`   | innen | Glasbüro mit Bildschirmen: Club, Aufgabenreihen, Clubkampf       | Dr. Lin, Nova, Theo           |
+| `siliconBay.serverraum` | innen | Kühl, blinkend; Fund der Schummelgeräte                          | –                             |
+| `siliconBay.lobby`      | innen | Firmengeschichte mit Vitrine der Familie Hale (übergreifend)     | Empfangsroboter, Victor       |
+
+### 19.3 Weg 5: Silicon Bay → Port Delacroix (`wegSiliconDelacroix`, Küstenfähre)
+
+| Karte                        | Zweck                                      | Stationen (W4)                                                                                                         |
+| ---------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `wegSiliconDelacroix.faehre` | Deck der Küstenfähre, zwei Tage nach Süden | Rätseltafel im Salon (3 Bauernstrukturen), Straßengegner mit Uhr: der Schiffskoch (Schnellschach), Fund „Flaschenpost“ |
+| `wegSiliconDelacroix.deich`  | Deichweg vom Anleger in die Stadt          | Fund „Muschel mit Loch“, Helfer mit Sandsäcken mit Weisheit, erster Blick auf die Schäden                              |
+
+Die Fähre ist eine begehbare Karte (zwei Decks); Möwen, Gischt, ein Delfin als einmalige Animation.
+Weisheit am Deich (Mr. Guidry, er): „Ein Loch im Deich ist wie ein Loch in der Bauernkette. Man
+stopft es, bevor es größer wird.“ (Kapitel 5, Bauernstrukturen). Schnellreise danach: Fähre (15
+Münzen) oder Küstenzug.
+
+### 19.4 Port Delacroix (Ort 6, `portDelacroix`)
+
+| Karte                     | Art   | Zweck                                                                     | Figuren                             |
+| ------------------------- | ----- | ------------------------------------------------------------------------- | ----------------------------------- |
+| `portDelacroix.aussen`    | außen | Kai mit Booten, Ruine des Musikhauses, Zelte, Turnhalle, Rue des Facteurs | Mr. Batiste, Mrs. Arceneaux, Helfer |
+| `portDelacroix.turnhalle` | innen | Ausweichquartier des Clubs: Aufgabenreihen, Clubkampf, Benefiz-Simultan   | Miss Odile, Remy, Lou               |
+| `portDelacroix.werkstatt` | innen | Klavierwerkstatt Whitlock-Duval, Flashback-Auslöser                       | Henri, Céleste                      |
+| `portDelacroix.musikhaus` | innen | Ruine, nach dem Wiederaufbau der neue Clubraum (Spur: Schild, Bretter)    | Miss Odile (dritter Besuch)         |
+
+### 19.5 Weg 6: Port Delacroix → Desert Springs (`wegDelacroixDesert`, Wüstenzug und Canyon)
+
+| Karte                           | Zweck                                                     | Stationen (W4)                                                                                                               |
+| ------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `wegDelacroixDesert.canyonpfad` | Pfad vom Wüstenbahnhof durch den Canyon                   | Rätseltafel am Wanderschild (3 Königsangriffe), Fund „Eidechsenhaut“, Wanderin mit Weisheit, Mira auf ihrem Stein (Szene 72) |
+| `wegDelacroixDesert.felsbogen`  | Felsbogen und Eisenbahnbrücke von 1879, Abstieg zur Stadt | Versöhnung (Szene 73), Fund „Nieten J. H. an der Brücke“ (Auflösung)                                                         |
+
+Der Wüstenzug hält an einem einsamen Bahnhof oberhalb des Canyons; der Pfad nach Desert Springs
+ist der erste Weg (O4). Hitze als Tönung, Eidechsen, ein Roadrunner, Geier als Kreise (09).
+Weisheit der Wanderin (Mrs. Holloway, sie): „Wer angreift, braucht mehr Figuren am König als der Verteidiger.“
+(Kapitel 1, Abschnitt 1.6, Goldene Angriffsregel).
+
+### 19.6 Desert Springs (Ort 7, `desertSprings`)
+
+| Karte                       | Art   | Zweck                                                   | Figuren          |
+| --------------------------- | ----- | ------------------------------------------------------- | ---------------- |
+| `desertSprings.aussen`      | außen | Motel, Diner, Tankstelle, alter Bahnhof mit Antiquariat | Buck, Statisten  |
+| `desertSprings.garage`      | innen | Club in der Garage am Motel: Aufgabenreihen, Clubkampf  | Mira, Tomás, Dot |
+| `desertSprings.antiquariat` | innen | Antiquariat im alten Bahnhof: der Brief, Laden          | Mr. Okoro        |
+
+## 20. Szenenliste Akt 3
+
+Etwa 5 bis 6 Stunden mit drei Wegen. Kennungen: Szenen `akt3.name`, Quests `ort.name`. Sprüche nur
+gegen Straßengegner (S2), nie im Club. Mentor-Zug ist von Szene 63 (Tiefpunkt) bis Szene 73
+(Versöhnung) gesperrt (R29); im Clubkampf von Port Delacroix sind alle Karten gesperrt (R28).
+
+### Weg 4 und Silicon Bay
+
+**51. Abfahrt im Schnee** · `akt3.abfahrt` · H `siliconBay.akademie`
+Ort `ironwood.aussen` (Bushaltestelle an der Schnellstraße) · Mama, Juno, Ambrose. Ereignis: Dialog.
+Mama erlaubt das Turnier in Silicon Bay („Ich hab Nachtschicht. Juno, du passt auf.“). Ambrose
+starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Etwa 3 Minuten.
+
+**52. Die Raststätte** · W `wegIronwoodSilicon`
+Ort `wegIronwoodSilicon.raststaette`, `.glasbruecke` · Juno, Fernfahrerin, Joggerin. Ereignis:
+Rätseltafel (3 Eröffnungsfallen, Münzen), Weisheit, Stellungsduell mit Uhr gegen die Joggerin
+(Abbildung aus Kapitel 2 oder 4, Auswahl im Datenauftrag nach R13), Funde. Etwa 12 Minuten.
+
+**53. Glas und Licht** · `akt3.ankunftSiliconBay`
+Ort `siliconBay.aussen` · Juno, Victor, Ambrose. Ereignis: Dialog. Niemand spielt an einem Brett,
+alle schauen auf Bildschirme; ein Lieferroboter fährt {held} fast um. Victor holt die beiden ab,
+höflich und müde. Ambrose: „Kein Baum. Keine Taube. Wo wohnen hier die Tiere?“ Victor: „Die stören
+die Sensoren.“ Etwa 4 Minuten.
+
+**54. Dash am Food-Truck** · S `siliconBay.dash` · Sprüche (S1 bis S4)
+Ort `siliconBay.aussen` · Dash, Rosie, Ambrose. Ereignis: Stellungsduell mit Uhr (Blitz 3 + 2),
+Zielstärke A − 50. Dash redet von der ersten Sekunde an. Zum ersten Mal kann {held} selbst einen
+Spruch spielen („Grübelfalle“ wirkt, „Großes Maul“ prallt ab: „Ich spiel immer schnell, Kleines.“).
+Ambrose vorher: „Im Park redet man. Hier ist ein Park, wenn auch einer aus Glas.“ Belohnung beim
+ersten Sieg: Karte **Grübelfalle** (Zeitkarte, S1), 10 Münzen. Etwa 8 Minuten.
+
+**55. Die Akademie** · `akt3.akademie` · H `siliconBay.akademie`
+Ort `siliconBay.akademie` · Dr. Lin, Nova, Theo, Victor. Ereignis: Dialog. Dr. Lin begrüßt {held}
+herzlich und zeigt die Bildschirmbretter. Theo misst {held}s Genauigkeit bei einer Probepartie
+(„71 Prozent. Menschlich.“) und schenkt {held} ein Tablet mit ZERO. Nova lächelt in eine Kamera und
+setzt sich danach still auf die Fensterbank. Ambrose sieht ZERO auf dem Tablet eine Partie in zwölf
+Sekunden gewinnen (`#stimmung:gebannt`): „Kein einziger Fehler. Nicht einer.“ Etwa 6 Minuten.
+
+**56. Die Spielberichte** · N begegnung `siliconBay.spielberichte` · Buchbezug Kapitel 12.2
+Ort `siliconBay.akademie`, `siliconBay.serverraum` · Victor, Dr. Lin, Nova. Ereignis: Dialog und
+Aufgaben. Victor gibt {held} heimlich die Spielberichte der Akademie (Entscheidung C2): Mit der
+Partieauswertung der App sieht {held}, dass Novas Turnierpartien 98 Prozent Genauigkeit haben,
+ihre Trainingspartien 74 (Runde `siliconBay.auswertung`, 3 Aufgaben: „Welcher Zug ist zu gut?“,
+Buch Kapitel 12, Abschnitt 12.2, Partieanalyse ohne Selbsttäuschung). Im Serverraum findet {held}
+eine Schublade mit winzigen Empfängern (Fund „Ohrempfänger“, passt zum Ohrstöpsel von der
+Glasbrücke). Nova kommt dazu: „Bitte. Noch nicht. Wenn das rauskommt, bin ich die Schuldige.“
+{held} schweigt (keine Wahl, Akt 4 löst auf). Wirkung: Steckbriefzeile Dr. Lin, Dr. Lin
+**analysiert**. Etwa 10 Minuten.
+
+**57. Die Vitrine der Hales** · `akt3.vitrine` · übergreifend (neu, Akt 4)
+Ort `siliconBay.lobby` · Victor, Ambrose. Ereignis: Dialog, Fund. In der Lobby steht eine Vitrine
+„Hale – Ingenieure seit 1850“: ein Rechenschieber, eine Brückenzeichnung, und ein aufgeschlagenes
+Notizbuch, aus dem eine Seite herausgerissen ist. Auf der linken Seite stehen Schachzüge in
+altmodischer Notation. Ambrose erkennt seine eigene Fernpartie (`#pause`): „Das sind meine Züge.
+Und das … das war seine Antwort, auf der Seite, die fehlt.“ Victor: „Mein Vater sagt, die Seite war
+schon immer weg.“ Fund **„Foto der Notizbuchseite“** (übergreifende Quest, Abschnitt 21). Etwa 5
+Minuten.
+
+**58. Aufgabenreihe Silicon Bay** · Runden `siliconBay.reiheTheo`, `siliconBay.reiheNova`
+Ort `siliconBay.akademie` · Theo, Nova. Ereignis: Aufgaben nach R30a. Theo: Eröffnungsgrundsätze
+(Buch Kapitel 1, Abschnitte 1.1 bis 1.3; Übungen 6, 8, 9 nach `07_Aufgabenzuordnung.md`). Nova:
+Fallen (Kapitel 4, Abschnitte 4.1 bis 4.3; Übungen 19, 20, 21, Thema `falle`). Erste bestandene
+Reihe: Zweite Chance. Etwa 15 Minuten.
+
+**59. Warum man im Club schweigt** · `akt3.schweigen` · Sprüche (S2)
+Ort `siliconBay.akademie`, vor dem Clubkampf · Ambrose, {held}. Ereignis: Dialog (kurz). {held}
+will vor der Partie gegen Dr. Lin einen Spruch üben. Ambrose: „Am Brett eines Clubs schweigt man.
+Im Park redet man.“ {held}: „Warum?“ Ambrose: „Im Park spielt man um eine Limonade. Im Club um die
+Ehre des anderen. Wer ihn stört, nimmt ihm die Partie weg, nicht nur die Zeit.“ Dazu: Auch in
+echten Turnieren gilt Ruhe, und den Gegner abzulenken ist verboten. Die Sprüche sind im Clubkampf
+nicht spielbar (S2); die Kartenleiste zeigt sie grau. Etwa 2 Minuten.
+
+**60. Clubkampf Silicon Bay** · `akt3.clubnadelSiliconBay` · H `siliconBay.akademie`
+Ort `siliconBay.akademie` · Dr. Lin, Victor, Juno. Ereignis: Partie gegen die Clubchefin
+(Zielstärke E + 460), Wahl der Zeitklasse, Karten (keine Sprüche). Dr. Lin spielt die Eröffnung
+lehrbuchrein und wird im Mittelspiel vorsichtig; Ambrose rät zu Mut („Lass sie das Buch zuklappen.“).
+Belohnung: **Clubnadel Silicon Bay**, Ambroses Notiz, Mentor-Zug (R27), 50 Münzen. Dr. Lin nach der
+Partie: „Ich habe Sie nichts gelehrt. Sie mich.“ (Sie siezt aus Respekt, einmal.) Etwa 30 Minuten.
+
+**61. Die Nacht mit dem Tablet** · `akt3.ambroseGebannt`
+Ort `siliconBay.aussen` (Hotel, Nacht) · Ambrose, {held}. Ereignis: Dialog. {held} wacht nachts auf;
+das Tablet leuchtet neben dem Brett, ZERO spielt Partie um Partie gegen sich selbst. Ambrose: „Ich
+habe zugesehen. Die ganze Nacht. Sie spielt, wie ich immer spielen wollte.“ {held}: „Und ich?“
+Ambrose antwortet nicht. Juno fährt am Morgen zurück: „Pass auf ihn auf. Er klingt komisch.“ Etwa
+3 Minuten.
+
+### Weg 5 und Port Delacroix
+
+**62. Auf der Fähre** · W `wegSiliconDelacroix` · Flashback-Vorbereitung
+Ort `wegSiliconDelacroix.faehre`, `.deich` · Mama, Ambrose, Schiffskoch Mr. Ruiz (er). Ereignis:
+Rätseltafel (3 Bauernstrukturen), Stellungsduell mit Uhr gegen den Schiffskoch (Schnellschach,
+Sprüche erlaubt, er ist nicht immun), Funde, Weisheit am Deich. Mama fährt mit: Das Regionalturnier
+findet in Port Delacroix statt, und sie hat sich als Helferin im Notzelt gemeldet. Ambrose ist
+unruhig, je näher die Küste kommt: „Diese Luft. Salz und Holz. Ich kenne diese Luft.“ Am Deich der
+erste Blick auf die Stadt: abgedeckte Dächer, Bauzäune, Musik aus einem Zelt. Etwa 15 Minuten.
+
+**63. Der Vorwurf** · `akt3.tiefpunkt` · H `portDelacroix.tiefpunkt` · R28, R29
+Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama, Ambrose. Ereignis: Dialog. Beim
+Regionalturnier gewinnt {held} eine Partie mit einem Zug, den Remy für „unmöglich“ hält. Er hat
+gesehen, wie {held} vorher mit dem Brett geflüstert hat, und sagt vor allen: „Du schummelst. Wie die
+mit ihren Bildschirmen. Nur altmodischer.“ Stille in der Halle. {held} kann nichts beweisen. Ambrose
+sagt nur: „Er hat nicht ganz unrecht.“ (`#stimmung:still`). {held} entscheidet: „Dann spiele ich
+ohne dich.“ Ab jetzt: Mentor-Zug gesperrt (R29), Clubkampf ohne Karten (R28), Ambrose schweigt bis
+Szene 68 außer einem Satz je Szene. Mama nimmt {held} danach in den Arm: „Ich weiß, wie sich das
+anfühlt. Fast.“ Etwa 5 Minuten.
+
+**64. Bretter sammeln** · N hilfe `portDelacroix.wiederaufbau` (Besuch 1 von 3)
+Ort `portDelacroix.aussen` · Miss Odile, Helfer, Mrs. Arceneaux. Ereignis: Ort und Dialog. Der Club
+braucht Bretter; {held} geht durch die Stadt und sammelt bei den Familien gerettete Bretter und
+Figuren (vier Auslöser an Häusern, je ein Satz: „Das hat mein Großvater geschnitzt. Nehmt es.“).
+Miss Odile singt beim Sortieren. Ohne Ambrose fühlt sich das gut und einsam zugleich an. Belohnung:
+20 Münzen, Wiederaufbau Schritt 1. Etwa 8 Minuten.
+
+**65. Batiste am Kai** · S `portDelacroix.batiste` · Sprüche (S4, immun)
+Ort `portDelacroix.aussen` · Mr. Batiste. Ereignis: Stellungsduell ohne Uhr aus Kapitel 6
+(Abbildung 6.5, geprüft im dritten Auftrag), Zielstärke A ± 0. Batiste ist gegen beide Sprüche
+immun („Junge Leute reden. Das Wasser hört nicht zu.“), das steht nach dem ersten Versuch im
+Steckbrief. Wer ihn schlagen will, muss einfach gut spielen. Belohnung: 10 Münzen, Zweite Chance
+beim ersten Sieg. Etwa 8 Minuten.
+
+**66. Flashback: Die Werkstatt** · `akt3.flashbackWerkstatt` · F (Port Delacroix)
+Ort Sepia-Karte `flashback.werkstatt` · der junge Ambrose als Held. Auslöser: Vor der Werkstatt
+Whitlock-Duval riecht {held} frisch gehobeltes Holz; Ambrose, der seit Tagen schweigt, sagt: „Hier.
+Hier war es.“ Teil 1 (1840, etwa 1 Minute): Der neunjährige Ambrose fegt Späne, der Vater stellt
+Figuren aus Resthölzern auf: „Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede
+Taste, jede Figur muss ihren Platz kennen.“ Teil 2 (1852, etwa 3 Minuten): Ambrose, 21, zurück aus
+London, spielt Vater und der kleinen Schwester Claire den Anfang der „Unsterblichen Partie“ vor:
+Zugerraten von `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß von Zug 1
+bis Zug 11 (Königsgambit, der Läufer wird schon im 5. Zug angegriffen). Claire klatscht bei jedem
+Opfer. Zurück in der Gegenwart, leise: „Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“
+Belohnung: **Partiefragment 5**. Hinweis: Die Sammlung hat vor 1866 nur drei Partien, alle schon
+benutzt; deshalb der Anfang der Partie, deren Ende der Flashback in Riverton zeigt (Bericht).
+Etwa 4 Minuten.
+
+**67. Clubkampf Port Delacroix (ohne Ambrose)** · `akt3.clubnadelPortDelacroix` · H `portDelacroix.tiefpunkt`
+Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama. Ereignis: Partie gegen die Clubchefin
+(Zielstärke E + 520), **keine Karten** (R28), Wahl der Zeitklasse erlaubt. Ambrose schweigt; vor der
+Partie nur ein Satz: „Spiel deine Partie.“ Miss Odile: „Ein Plan ist kein Sprint.“ Nach der Partie
+bei jedem Ausgang: Miss Odile reicht {held} die Hand und sagt vor allen: „Das war deine Partie. Jeder
+hier hat es gesehen.“ Remy schweigt, aber nickt. Belohnung: **Clubnadel Port Delacroix** (bei Sieg;
+ohne Karten ist Gold möglich), Ambroses Notiz erst nach Szene 73 (er kommentiert nicht), 50 Münzen,
+Mentor-Zug wie R27, aber erst nach der Versöhnung spielbar. Etwa 30 Minuten.
+
+**68. Die Nachfahren** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren` · O2
+Ort `portDelacroix.werkstatt` · Henri, Céleste, Ambrose. Ereignis: Dialog, dann Partie. Henri zeigt
+die Werkstatt, die Klaviere, ein altes Foto an der Wand: ein junger Mann mit einem Schachbrett, „ein
+Vorfahr, keiner weiß mehr, wer“. Ambrose bricht sein Schweigen: „Das bin ich.“ (`#pause`) Céleste
+findet Schach langweilig, aber das alte Brett in {held}s Rucksack „sieht cool aus“. Sie spielt eine
+Partie aus Neugier (Begegnung aus der Grundstellung, Rolle `story`, sehr schwach, A − 300; zählt
+für die App), schiebt „die Pferde rum“ und verliert gern: „Okay, das war nicht so schlecht. Aber ich
+geh jetzt skaten.“ Ambrose, zum ersten Mal seit Tagen warm: „Sie muss es nicht lieben. Es reicht,
+dass sie einmal gespielt hat.“ (O2) Dann zu {held}: „Ich wollte, dass alles, was ich war, Schach
+ist. Hier sehe ich: Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. Mit dir.“
+Wirkung: Dialogvariable `ambroseSprichtWieder`. Etwa 12 Minuten.
+
+**69. Die Benefiz-Simultan** · N hilfe `portDelacroix.wiederaufbau` (Besuch 2 von 3)
+Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Kinder der Stadt. Ereignis: Benefiz-Simultan:
+{held} spielt nacheinander drei kurze Stellungsduelle gegen Kinder der Stadt (Aufgabenformat oder
+drei Duelle, Datenauftrag), jedes Kind spendet einen Dollar in die Kasse für das Musikhaus. Remy
+spielt das dritte Brett und entschuldigt sich danach: „Ich hab dich beobachtet. Du redest mit dem
+Brett, aber du spielst allein. Tut mir leid.“ Belohnung: 30 Münzen (gehen in die Kasse), Wiederaufbau
+Schritt 2. Etwa 10 Minuten.
+
+**70. Das Schild** · N hilfe `portDelacroix.wiederaufbau` (Besuch 3 von 3)
+Ort `portDelacroix.musikhaus` · Miss Odile, Remy, Lou, Henri, Mama. Ereignis: Dialog, Ort. Beim
+dritten Besuch (frühestens nach Desert Springs, Schnellreise mit der Fähre) ist das Dach des
+Musikhauses neu; Henri hat ein Klavier gestiftet. {held} hängt das Schild auf: „Musik- und Schachclub
+Port Delacroix, seit 1889“. Spur auf der Karte (09, Regel 4): Bretter auf den Tischen, das Schild
+über der Tür. Belohnung: Karte **Springervorgabe** (R27: alle Nebenquests der Stadt), Fund „Erstes
+Brett im neuen Musikhaus“ (Bretthintergrund „Musikhaus am Kai“), Dialogvariable `musikhausOffen`.
+Etwa 5 Minuten.
+
+### Weg 6 und Desert Springs
+
+**71. Der Wüstenzug** · W `wegDelacroixDesert`
+Ort `wegDelacroixDesert.canyonpfad` · Ambrose, Mrs. Holloway. Ereignis: Rätseltafel (3
+Königsangriffe), Weisheit, Fund „Eidechsenhaut“. Der Zug hält an einem einsamen Bahnhof; dann zu
+Fuß in den Canyon. Hitze, Stille, ein Roadrunner. Ambrose spricht wieder, aber vorsichtig: „Ich war
+nie in einer Wüste. Sie ist so still wie ein Club.“ Etwa 8 Minuten.
+
+**72. Mira auf dem Stein** · `akt3.miraStein`
+Ort `wegDelacroixDesert.canyonpfad` · Mira, Ambrose. Ereignis: Dialog. Mitten im Canyon sitzt ein
+Mädchen auf einem flachen Stein und spielt gegen sich selbst. Sie opfert gerade ihre Dame. Ambrose
+ist hingerissen: „Sie spielt wie ich mit zwanzig. Nur besser.“ Mira: „Wer bist du? Bist du gut?
+Dann komm morgen in die Garage.“ Etwa 3 Minuten.
+
+**73. Die Versöhnung** · `akt3.versoehnung` · H `desertSprings.versoehnung` · R29 endet
+Ort `wegDelacroixDesert.felsbogen` (Abend, Licht wie Kupfer) · Ambrose, {held}. Ereignis: Dialog. Am
+Felsbogen bleibt {held} stehen. Ambrose bittet um Verzeihung, auf seine Art: „Ich habe einer Maschine
+zugesehen, weil sie nie zweifelt. Aber ich habe vergessen, dass du zweifelst. Und trotzdem spielst.
+Das ist schöner.“ Wahl: „Ich hab dich vermisst.“ / „Du warst ein Idiot.“ / „Erzähl mir von 1866.“
+Bei jeder Wahl erzählt er kurz und ohne Einzelheiten: Hale hatte geschrieben, er solle kommen; er
+brach auf, wurde unterwegs krank und kam nie an. „Ich bin nicht angekommen. Darum warte ich noch.“
+Er lehrt das **romantische Opfer** (Buch Kapitel 1, Abschnitt 1.6, Goldene Angriffsregel; Kapitel
+11, Abschnitt 11.2, Morphy) in einer Lektion mit zwei Bildschirmen. Ab jetzt ist der Mentor-Zug
+wieder spielbar (R29). Unter dem Felsbogen läuft die alte Eisenbahnbrücke; an ihren Nieten steht
+„J. H.“. Fund **„Nieten J. H. an der Canyonbrücke“** (Auflösung von „Nietenkopf J. H.“ aus Akt 2:
+Hale baute nach 1866 weiter, bis hierher). Ambrose: „Er hat gelebt. Lange. Gut so.“ Etwa 8 Minuten.
+
+**74. Buck an der Tankstelle** · S `desertSprings.buck` · Sprüche
+Ort `desertSprings.aussen` · Buck. Ereignis: Stellungsduell mit Uhr (Blitz) aus Kapitel 8
+(Abbildung 8.44, geprüft im dritten Auftrag), Zielstärke A − 100, Sprüche erlaubt, Buck nicht immun
+und mit eigenen Sprüchen („Hier draußen fährt keiner langsam. Auch nicht am Brett.“). Belohnung:
+Karte **Großes Maul** beim ersten Sieg (S1, Zeitkarte), 10 Münzen. Etwa 8 Minuten.
+
+**75. Aufgabenreihe Desert Springs** · Runden `desertSprings.reiheTomas`, `desertSprings.reiheDot`
+Ort `desertSprings.garage` · Tomás, Dot. Ereignis: Aufgaben nach R30a. Tomás: Mattbilder mit Opfer
+(Buch Kapitel 7, Abschnitt 7.4; Übungen 44, 45, 48). Dot: Königsangriff (Kapitel 1, Abschnitt 1.6;
+Kapitel 6, Abschnitte 6.3, 6.6; Übungen 7, 27, 33, 34). Erste bestandene Reihe: Zweite Chance. Etwa
+15 Minuten.
+
+**76. Der Brief** · N rätsel `desertSprings.brief` · E4 (Auflösung „Umschlag ohne Brief“)
+Ort `desertSprings.antiquariat` · Mr. Okoro, Dot, Ambrose. Ereignis: Stellungsrätsel und Dialog. Dot
+erzählt, dass Mr. Okoro „den Kram von einem alten Brückenbauer“ im Keller hat. In einer Kiste liegt
+ein Bündel Briefe; einer ist mit einem Siegel verschlossen, auf dem dieselbe Stellung geprägt ist
+wie auf dem Umschlag aus Ironwood (Runde `desertSprings.siegel`, 1 Aufgabe, Thema `fesselung`). Wer
+den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Das Siegel passt. Der Brief, 1866, von Josiah
+Hale: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett. Ich warte.“ Ambrose liest mit
+{held} (`#pause`), dann: „Er hat gewartet. Er hat wirklich gewartet.“ Wirkung: Gegenstand
+**„Hales Brief“**, Fragment 7 (die letzten Züge, die Hale vorschlug), Dialogvariable `briefGelesen`.
+Belohnung: Flüstern (R27, Rätsel). Etwa 8 Minuten.
+
+**77. Erinnerung: Das letzte Spiel 1858** · N begegnung (Erinnerung) `desertSprings.erinnerung1858`
+Ort `desertSprings.garage` (Abend) · Ambrose, Mira. Ereignis: Stellungsduell aus Ambroses erfundener
+siebter Matchpartie gegen Hale (1858), am Moment seines tollkühnen Opfers: Diesmal spielt {held} die
+Stellung weiter, mit Weiß, gegen Hale (Rolle `story`, E + 500). Die Stellung baut ein Folgeauftrag
+mit der Engine (erfunden, C3: „Ambroses eigene Partie bleibt erfunden“; Vorteil +0,8 bis +2,5 nach
+R13, weil das Opfer korrekt war und Ambrose es nur falsch fortsetzte). Mira schaut zu und ruft:
+„Das Opfer war richtig! Du hast nur danach gezögert!“ Ambrose lacht: „Hundertsechzig Jahre, und ein
+Kind sagt es mir.“ Belohnung: **Partiefragment 6** (keine weitere starke Karte, ENTSCHEIDUNGEN 08.11.: nur die
+erste Erinnerung je Staffel gibt die Bauernvorgabe), 20 Münzen. Etwa 10 Minuten.
+
+**78. Clubkampf Desert Springs** · `akt3.clubnadelDesertSprings` · H `desertSprings.versoehnung`
+Ort `desertSprings.garage` · Mira, Tomás, Dot, Ambrose. Ereignis: Partie gegen die Clubchefin
+(Zielstärke E + 580), Wahl der Zeitklasse, Karten erlaubt (Mentor-Zug wieder frei). Ambrose und
+{held} spielen zum ersten Mal wieder „gemeinsam“: Er kommentiert, aber {held} entscheidet. Mira
+opfert früh; wer kühl rechnet, gewinnt. Belohnung: **Clubnadel Desert Springs**, Ambroses Notiz
+(jetzt auch für Port Delacroix nachgeholt), 50 Münzen, Mentor-Zug (R27). Mira: „Noch mal. Jetzt.“
+Etwa 30 Minuten.
+
+**79. Abend am Motel** · `akt3.abendMotel`
+Ort `desertSprings.aussen` (Nacht, Sterne) · Ambrose, {held}, Anruf von Juno, Nachricht von Victor.
+Ereignis: Dialog. Juno ruft an und zählt die Nadeln: sieben. Victor schreibt: „Ich glaube dir. Wegen
+des Bretts.“ und „Landesmeisterschaft im Sommer. Ich hab gehört, Nova spielt auch.“ Ambrose blickt
+auf das Tablet, das {held} in den Rucksack gesteckt hat: „Gib es Theo zurück, wenn du ihn siehst.
+Ich brauche es nicht mehr.“ Etwa 4 Minuten.
+
+**80. Rückweg und Ausblick** · `akt3.ende`
+Ort Schnellreise nach Port Delacroix (Szene 70, falls offen) oder nach Maple Falls · Mama, Ambrose.
+Ereignis: Dialog. Mama auf der Rückfahrt: „Nächster Halt: Summit City. Großmeisterin Ward. Ich hab
+schon Urlaub eingereicht.“ Ende von Akt 3. Etwa 3 Minuten.
+
+### Zeitrechnung
+
+| Teil                                                            | Minuten                                               |
+| --------------------------------------------------------------- | ----------------------------------------------------- |
+| Wege beim ersten Mal (52, 62, 71)                               | etwa 35                                               |
+| Dialoge und Laufen (51, 53, 55, 57, 59, 61, 63, 72, 73, 79, 80) | etwa 50                                               |
+| Partien Hauptstory (60, 67, 78)                                 | etwa 90                                               |
+| Aufgabenreihen (58, 75)                                         | etwa 30                                               |
+| Nebenquests, Flashback, Erinnerung (56, 64, 66, 68–70, 76, 77)  | etwa 65                                               |
+| Straßengegner (54, 65, 74)                                      | etwa 24                                               |
+| **Summe**                                                       | **etwa 295, also 5 bis 6 Stunden mit Wiederholungen** |
+
+Kürzungen, falls nötig: zuerst Szene 74 (Straße), dann Szene 77 (Erinnerung kürzer), dann der dritte
+Wiederaufbau-Besuch als reiner Dialog.
+
+### Verteilung der Nebenquests
+
+| Stadt          | rätsel                                | hilfe                                       | begegnung                                            |
+| -------------- | ------------------------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| Silicon Bay    | Rätseltafel Weg 4                     | –                                           | `siliconBay.spielberichte` (analysiert, C2)          |
+| Port Delacroix | Rätseltafel Weg 5                     | `portDelacroix.wiederaufbau` (drei Besuche) | `portDelacroix.nachfahren` (O2), Flashback Werkstatt |
+| Desert Springs | `desertSprings.brief` (E4, Auflösung) | –                                           | Erinnerung 1858                                      |
+
+Der Zustand „abgelenkt“ kommt in Akt 3 nicht vor; nach dem Tiefpunkt wäre eine Ablenkungs-Quest
+gegen Miss Odile unpassend, und Mira ist zehn Jahre alt. Stattdessen wirken die Sprüche gegen
+Straßengegner.
+
+## 21. Entdeckungen in Akt 3
+
+| Ort            | Fund                                | Wo                               | Satz                                                             | Wirkung                                     |
+| -------------- | ----------------------------------- | -------------------------------- | ---------------------------------------------------------------- | ------------------------------------------- |
+| Weg 4          | Werbe-Anstecker ZERO                | Raststätte, Boden                | Juno: „Gratis. Natürlich.“                                       | 5 Münzen                                    |
+| Weg 4          | verlorener Ohrstöpsel               | Glasbrücke                       | „Für einen Ohrstöpsel ist er sehr schwer.“                       | Hinweis zu Szene 56                         |
+| Silicon Bay    | Ohrempfänger                        | Serverraum, Schublade (Szene 56) | „Das ist kein Kopfhörer.“                                        | Beweisstück für Akt 4                       |
+| Silicon Bay    | Foto der Notizbuchseite             | Lobby, Vitrine (Szene 57)        | Ambrose: „Das sind meine Züge.“                                  | übergreifend, Akt 4 (neu)                   |
+| Silicon Bay    | Holzdame im Blumenkübel             | Campus (versteckt)               | „Die einzige Holzfigur in dieser Stadt.“                         | E3: Figurensatz „Waldholz“-Ergänzung (Dame) |
+| Weg 5          | Flaschenpost                        | Fährdeck, Reling                 | „Ein Brief ohne Absender. Wie romantisch.“                       | 10 Münzen                                   |
+| Weg 5          | Muschel mit Loch                    | Deich (versteckt)                | Lou später: „Die bringt Glück. Steht fest.“                      | 5 Münzen                                    |
+| Port Delacroix | Altes Foto mit Brett                | Werkstatt (Szene 68)             | Ambrose: „Das bin ich.“                                          | Album                                       |
+| Port Delacroix | Trompetenmundstück                  | Ruine des Musikhauses            | Remy: „Das ist meins! Ich dachte, es ist weg.“ (Remy freut sich) | 10 Münzen                                   |
+| Port Delacroix | Erstes Brett im neuen Musikhaus     | Szene 70                         | „Seit 1889. Und wieder.“                                         | E3: Bretthintergrund „Musikhaus am Kai“     |
+| Weg 6          | Eidechsenhaut                       | Canyonpfad                       | „Sie hat sich umgezogen und ist weg.“                            | 5 Münzen                                    |
+| Weg 6          | Nieten J. H. an der Canyonbrücke    | Felsbogen (Szene 73)             | „Er hat gelebt. Lange.“                                          | Auflösung Akt 2                             |
+| Desert Springs | Hales Brief                         | Antiquariat (Szene 76)           | „Ich warte.“                                                     | Auflösung Akt 2, Fragment 7                 |
+| Desert Springs | Miras erster Pokal (aus einer Dose) | Garage                           | „Ich hab ihn selbst gemacht. Von Slick inspiriert.“              | 10 Münzen                                   |
+
+**Übergreifende Quests (E4):**
+
+1. **„Umschlag ohne Brief“ (aus Akt 2) – aufgelöst** in Szene 76: Das Siegel passt, Hale hat auf
+   Ambrose gewartet. Voraussetzung im Datenauftrag: Gegenstand `umschlagOhneBrief`.
+2. **„Nietenkopf J. H.“ (aus Akt 2) – aufgelöst** in Szene 73: dieselben Nieten an der Canyonbrücke
+   von 1879; Hale baute weiter und lebte lange.
+3. **„Die fehlende Seite“ (neu, geht in Akt 4 auf):** Das Foto der Notizbuchseite aus der Vitrine
+   der Hales (Szene 57) zeigt Ambroses Züge der Fernpartie; Hales Antwort stand auf der
+   herausgerissenen Seite. Plan für Akt 4: Victor hat die Seite seit Jahren in seinem Schachbuch
+   versteckt, weil sein Vater sie „wertlos“ fand; er gibt sie {held} nach seiner Krise (Summit City).
+   Mit Hales Brief (Fragment 7), der Seite und allen Fragmenten wird in Ghost Town die Fernpartie
+   vollständig, und Ambrose spielt sie am Ende mit {held} zu Ende.
+
+## 22. Läden in Akt 3
+
+| Laden                        | Figur          | Angebot                                                                             | Preis |
+| ---------------------------- | -------------- | ----------------------------------------------------------------------------------- | ----- |
+| `siliconBay.foodtruck`       | Rosie          | Zweite Chance                                                                       | 20    |
+|                              |                | Ambroses Flüstern                                                                   | 40    |
+|                              |                | Fährfahrkarte Silicon Bay ↔ Port Delacroix                                          | 15    |
+| `portDelacroix.gebaeckstand` | Mrs. Arceneaux | Zweite Chance (Erlös für das Musikhaus)                                             | 20    |
+|                              |                | Bretthintergrund „Delta bei Sonnenuntergang“ (Extra)                                | 60    |
+|                              |                | Spende für das Musikhaus (Album, ohne Wirkung)                                      | 10    |
+| `desertSprings.antiquariat`  | Mr. Okoro      | Ambroses Flüstern                                                                   | 40    |
+|                              |                | Zugfahrkarte Port Delacroix ↔ Desert Springs                                        | 15    |
+|                              |                | Altes Schachbuch (Album, Text „Ein Buch, das ich gern geschrieben hätte“ – Ambrose) | 30    |
+
+Zeitkarten (Sprüche) gibt es nie im Laden (Z4): Grübelfalle (Szene 54), Großes Maul (Szene 74),
+Kühler Kopf aus Akt 2 (Zeitbonus).
+
+## 23. Hilfskarten, Sprüche und Sperren in Akt 3
+
+| Karte oder Regel     | Wo                                      | Warum                                              |
+| -------------------- | --------------------------------------- | -------------------------------------------------- |
+| Grübelfalle (S1)     | Szene 54, erster Sieg gegen Dash        | erste Spruchkarte, im Park von Silicon Bay         |
+| Großes Maul (S1)     | Szene 74, erster Sieg gegen Buck        | ersetzt den Zeitnot-Trick aus Akt 2 dem Namen nach |
+| Mentor-Zug gesperrt  | Szenen 63 bis 73                        | R29, Tiefpunkt bis Versöhnung                      |
+| Alle Karten gesperrt | Szene 67                                | R28, Clubkampf ohne Ambrose                        |
+| Springervorgabe      | Szene 70 (alle Nebenquests einer Stadt) | R27                                                |
+| Flüstern             | Szene 76                                | R27, Rätsel                                        |
+
+Immunität im Steckbrief (S4): Dash immun gegen „Großes Maul“, Batiste immun gegen beide. Das
+Format der Steckbriefzeile kennt dafür noch keine Art (Bericht).
+
+## 24. Offene Fragen an den Autor (Akt 3)
+
+1. **Geburtsort Ambroses.** Teil 1 nennt New Orleans, O1 Port Delacroix. Empfehlung: geboren und
+   aufgewachsen in Port Delacroix (Klavierwerkstatt), Schach in den Kaffeehäusern von New Orleans;
+   die Zeile 1831 in Teil 1 wird angepasst (Bericht, Haupt-Chat).
+2. **Hurrikan und Jahreszeit.** O1 sagt Spätsommer, 09 setzt Akt 3 in Winter und Frühjahr.
+   Empfehlung: Der Hurrikan war im letzten Spätsommer; Akt 3 zeigt den Wiederaufbau im nassen
+   Winter. So bleibt der Ton Hoffnung statt Katastrophe.
+3. **Wer erhebt den Vorwurf?** Empfehlung: Remy, ein Kind aus der Stadt, das dem Konzern misstraut;
+   nicht Nova (sie hat selbst ein Geheimnis) und kein Erwachsener (Dokument 02, 2.3). Er entschuldigt
+   sich in Szene 69.
+4. **Nova in Akt 3 noch ohne Auflösung.** Empfehlung: ja; {held} schweigt aus Rücksicht, der Beweis
+   (Spielberichte, Empfänger) wird in Akt 4 zusammen mit Dr. Lin vorgelegt.
+5. **Flashback mit einer schon benutzten Partie.** Empfehlung: die Sammlung um eine öffentliche Partie
+   vor 1850 erweitern (C3 erlaubt das), etwa aus den Matches der 1830er Jahre, und den Flashback
+   dann umstellen; bis dahin der Anfang der Unsterblichen.
+6. **Céleste ohne Bekehrung.** Empfehlung: Sie bleibt ohne Schachinteresse; genau das ist die Lehre
+   für Ambrose (O2).

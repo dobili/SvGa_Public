@@ -69,7 +69,9 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Ebene `ausloeser` (später: `type = "figur"`), damit `orte.json` die Wahrheit über Dialog und
   Gegner bleibt.
 - Kachelsätze sind eingebettet (kein `.tsx`), Bildpfad relativ zum Paketordner. Im Prototyp:
-  `grafik/platzhalter.png` (CC0), 4 × 4 Kacheln.
+  `grafik/platzhalter.png` (CC0), 4 × 4 Kacheln. Gekaufte Grafik (LimeZu) liegt nur lokal unter
+  `app/inhalte-privat/abenteuer/grafik/` (gleiche Dateinamen); der Paketbau nimmt sie, wenn sie da
+  ist, sonst zeichnet er die Platzhalter.
 - Beispiel: `karten/maple-falls-dachboden.json` (12 × 10, Auslöser `start`, `brett`, `treppe`),
   erzeugt mit einem kleinen Skript; die Kacheln 1–8 sind Boden, Wand, Kiste, Teppich, Brett,
   Treppe, Lampe, Fenster.

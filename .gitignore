@@ -14,6 +14,8 @@ app/public/daten/de/trainer/
 app/public/daten/en/trainer/
 # Zusatzpaket des Schach-Abenteuers, erzeugt aus inhalte/abenteuer/ (app/skripte/baue-abenteuerpaket.mjs)
 app/public/abenteuer/
+# Gekaufte Grafik des Schach-Abenteuers (LimeZu-Lizenz, Entscheidung A10): nur lokal.
+app/inhalte-privat/
 app/src/daten/generiert/
 .wrangler/
 

@@ -8,6 +8,7 @@
 // Platzhaltergrafik zeichnen (Schritt 5: bis die LimeZu-Kacheln da sind), paket.json schreiben.
 // Aufruf: node skripte/baue-abenteuerpaket.mjs (läuft in „npm run vorbereiten“).
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
@@ -19,6 +20,12 @@ const { Compiler } = require("inkjs/compiler/Compiler");
 
 const HIER = dirname(fileURLToPath(import.meta.url));
 const QUELLE = resolve(HIER, "../../inhalte/abenteuer");
+/**
+ * Gekaufte Grafik (LimeZu, Entscheidung A10; Rückfrage Q17): liegt nur lokal, nie im öffentlichen
+ * Repository (.gitignore), wie die Buchquellen. Gibt es dort eine Datei gleichen Namens, nimmt der
+ * Paketbau sie statt des Platzhalters.
+ */
+const PRIVAT = resolve(HIER, "../inhalte-privat/abenteuer");
 const ZIEL = resolve(HIER, "../public/abenteuer");
 const PAKET = JSON.parse(await readFile(resolve(HIER, "../package.json"), "utf8"));
 
@@ -50,6 +57,16 @@ async function kopiereJson(unterordner, name, gruppe) {
 }
 
 /** Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. */
+/** Eine Grafik: aus dem privaten Ordner, wenn vorhanden, sonst der gezeichnete Platzhalter. */
+async function schreibeGrafik(pfad, platzhalter) {
+  const privat = join(PRIVAT, pfad);
+  if (existsSync(privat)) {
+    await schreibe(pfad, await readFile(privat), "grafik");
+    return;
+  }
+  await schreibe(pfad, platzhalter(), "grafik");
+}
+
 async function schreibe(pfad, inhalt, gruppe, staffel = 1) {
   const voll = join(ZIEL, pfad);
   await mkdir(dirname(voll), { recursive: true });
@@ -187,9 +204,9 @@ async function main() {
     );
   }
   await uebersetzeDialoge("de");
-  await schreibe("grafik/platzhalter.png", platzhalterKacheln(), "grafik");
-  await schreibe("grafik/held.png", platzhalterHeld(), "grafik");
-  await schreibe("grafik/figur.png", platzhalterHeld(FIGUR_KOERPER), "grafik");
+  await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
+  await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
+  await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));
   // Die Version: App-Version plus Kurzhash aller Inhalte, damit jede Änderung einen neuen Cache
   // bekommt (Stellungnahme, Abschnitt 4: Schwäche des Maia-Pakets ohne Versionsvergleich).
   const inhaltshash = createHash("sha256")

@@ -1117,6 +1117,21 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q17 Grafik für das Schach-Abenteuer (8.11.2026, Entscheidung nötig, nichts umgesetzt)
+
+- [ ] Q17-1. **Kacheln und Figuren kaufen.** Der Prototyp läuft mit farbigen Platzhalterkacheln. Für den Look der späten
+      DS-Pokémon (deine Antwort vom 7.11.) empfehle ich die Pixelpakete von LimeZu auf itch.io: „Modern Interiors“
+      (Innenräume, Figuren, Möbel) und „Modern Exteriors“ (Stadt, Park, Straßen), zusammen etwa 20 bis 30 Euro, Lizenz
+      für kommerzielle Spiele, Weitergabe der Grafiken verboten. Deshalb dürfen sie nicht ins öffentliche Repository:
+      Sie liegen wie die Buchquellen in einem privaten Repository (Vorschlag: `dobili/schach-abenteuer-inhalte`), lokal
+      unter `app/inhalte-privat/`, und der Paketbau nimmt sie, wenn sie da sind, sonst die Platzhalter. Diesen Weg baue
+      ich schon vor; kaufen und das private Repository anlegen kannst nur du. Sag Bescheid, wenn beides da ist, dann
+      zeichnet niedrig-1 die Karten damit nach.
+- [ ] Q17-2. **Porträts der Figuren** (Ambrose, Coach Delgado, Sam, Juno, Mrs. Okafor, Victor …) für die Dialoge:
+      Empfehlung ist ein einheitlicher Stil, gezeichnet nach Vorlage (Pixel-Porträt 64 × 64 oder gezeichnet in
+      der Optik der App). Ohne Zeichner bleibt es bei Namen und Farbfeld. Wenn du selbst zeichnen oder jemanden
+      fragen willst, brauche ich pro Figur ein PNG; die Liste der Figuren steht in `inhalte/abenteuer/orte.json`.
+
 ### Q16 Aussehen im Profil (7.11.2026, schon umgesetzt, Widerspruch genügt)
 
 - [ ] Q16-1. Die Karte heißt jetzt „Dein Aussehen“ statt „Deine Extras“, der Zähler „4 von 8 Extras“ bleibt.

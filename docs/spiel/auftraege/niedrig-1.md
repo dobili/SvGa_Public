@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Karten für den Weg Riverton → Ironwood und für Ironwood
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, achter Auftrag; Riverton ist zusammengeführt, danke)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/weg-riverton-ironwood-1.json`, `-2.json`,
 `ironwood-*.json` (fünf Dateien, neu), `docs/spiel/auftraege/niedrig-1.md`
@@ -31,3 +31,159 @@ Auftrag: alle Auslöser und Figuren des Ortes, belebt nach `09_Weltbeschreibung.
 ## Bericht
 
 (vom Helfer auszufüllen)
+
+Zweig: `abenteuer-aufgabenzuordnung`. Sieben Karten neu. Prüfungen: 375 Pipeline-Tests bestanden,
+0 übersprungen; Prettier und Paketbau sauber.
+
+Zuordnung (orte.json nennt keine `karte`, also nach Sinn):
+
+- `weg-riverton-ironwood-1` Kanalweg (28 × 20): Kanal oben, drei leere Fabriken unten; `start`,
+  `zurueckRiverton`, `tafel`, `fundZahnrad`, Figur `dale`, `weiterBruecke`; Belebung `angler`,
+  `radfahrerin` (morgen), `enten`, `ratten`.
+- `weg-riverton-ironwood-2` Brücke (28 × 20): Fluss quer, Brücke in Reihe 9–10; `start`,
+  `zurueckKanalweg`, `fundNietenkopf` (vor der Brücke), `zeitnotTrick`, `weiterIronwood`;
+  `brueckenwaerter`, `kraehen`, `moewe`.
+- `ironwood-aussen` (32 × 24): Werk oben links (Werkstor mit `umkleideTuer`), Kantine, Eisenwaren
+  mit `eisenwarenfenster`, Straße, Güterbahnhof mit Kabeltrommeln, Elm Street mit
+  `haustuerRuth`, alter Bahnhof mit `museumTuer`; `start`, `bushaltestelle`, `busRiverton`,
+  `busSiliconBay` an der Haltestelle rechts; `kanalweg` links am Rand; `kreidebrett`,
+  `fundGlasfunke`; Figuren `gus` (an der Kabeltrommel), `edna` (am Verkaufsfenster), `victor`,
+  `grahamHale` (am Werkstor); Belebung `schichtwechsel` (morgen), `kreidekinder`,
+  `kohlentraegerin` (abend), `taubenfuetterer`, `rauch`, `funken` (abend), `kraehen`,
+  `fledermaeuse` (abend), `werkskatzeAussen`.
+- `ironwood-kantine` (18 × 12): drei lange Tische, Ofen, `pokalregal`, `stahlbrett`, Figuren
+  `bigJoe` (am Stahlbrett), `hank`, `priya`; `kantinenkoch`, `werkskatze` (am Ofen, sitzen).
+- `ironwood-mamas-zimmer` (12 × 10): `medaille`, `partieformular2001`, Figuren `mama`, `omaRuth`.
+- `ironwood-umkleide` (12 × 10): Spinde, `schliessfach`; `arbeiter`.
+- `ironwood-museum` (16 × 12): Schaukästen, Standuhr, `postsack`, `vitrine1858`, Figur `teague`;
+  `besucherin`.
+
+Laut 09 (5.5), aber nicht in `orte.json`, daher nicht gezeichnet: Nieten „J. H.“ an der Brücke in
+Ironwood selbst (nur `fundNietenkopf` auf der Wegkarte), Schichtplan, Kaffeemaschine mit Beule,
+Foto der Werksmannschaft (Kantine), Poster (Mamas Zimmer), Standuhr als Auslöser (Museum).
+`rauch` steht auf einer begehbaren Kachel neben dem Werk, weil der Kartentest Laufwege nur auf
+erreichbaren Feldern zulässt; die eigentliche Rauchanimation am Schornstein ist Grafik.
+
+```text
+weg-riverton-ironwood-1.json
+############################
+#                          #
+#                          #
+#                          #
+############################
+############################
+############################
+#                     L    #
+#   t       D              #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#               f          #
+#                          #
+# ######  ######  ######   #
+# #F##F#  #F##F#  #F##F#   #
+# ######  ######  ######   #
+# ######  ######  ######   #
+# ######  ######  ######   #
+#                          #
+############################
+
+weg-riverton-ironwood-2.json
+############################
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ########## L      #
+#      f ##########        #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#        ##########        #
+#        ##########  z     #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+#        ##########        #
+############################
+
+ironwood-aussen.json
+################################
+#  ##############              #
+#  ##############  ####### #####
+#  ##F#######F###  ##F#### #####
+#  ##############  ####### #####
+#  ##############  ####### #####
+#  ######u#######  ###k### #e###
+#                           bE #
+#          G               bsLb#
+kTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#              G               #
+#             KKK              #
+#     k       KKK V            #
+#                              #
+#                              #
+#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                              #
+# ##h## #####       ####m####  #
+# ##### #####       #########  #
+# ##### #####       #########  #
+# ##### #####       #########  #
+#           f                  #
+################################
+
+ironwood-kantine.json
+####F########F####
+#KpK            L#
+#                #
+#                #
+#  KKKKKK  KKKK  #
+#    H      P    #
+#                #
+#  KKKKKK   sB   #
+#                #
+#                #
+#        s       #
+#########k########
+
+ironwood-mamas-zimmer.json
+#####F######
+#KKK     mK#
+#KKK       #
+#          #
+#   M      #
+#         p#
+#       O  #
+#          #
+#     s    #
+######z#####
+
+ironwood-umkleide.json
+############
+#KKKKKKKsKK#
+#          #
+#          #
+#K         #
+#K  KKKK   #
+#K         #
+#K         #
+#     s    #
+######u#####
+
+ironwood-museum.json
+####F######F####
+#             L#
+#              #
+# KKK  KvK     #
+#              #
+#              #
+#          KKK #
+# KpK      KKK #
+#         T    #
+#              #
+#       s      #
+########m#######
+```

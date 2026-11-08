@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Porträts der Figuren von Akt 4 und die Fernpartie 1865/66
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, dreizehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, Porträts und Fernpartie, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs`, `inhalte/abenteuer/portraets/` (nur neue

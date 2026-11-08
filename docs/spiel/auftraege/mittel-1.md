@@ -43,7 +43,7 @@ Auslöser in `orte.json` (nur angehängt, je mit `karte` der Innenkarte, Art `ge
 Durchspielen aller Knoten (5760 Läufe ohne Fehler), jeder Gegenstand einzeln beim ersten und
 zweiten Ansehen, Variablen-Durchsicht (keine Probleme), `npm run pruefen` (2379 Tests).
 
-**Was man sieht** (erster Satz / zweiter Satz; Ambrose bei elf von 17 beim ersten Mal):
+**Was man sieht** (erster Satz / zweiter Satz; Ambrose bei zwölf von 17 beim ersten Mal):
 
 | Raum       | Gegenstand        | Inhalt in Kürze                                                                    |
 | ---------- | ----------------- | ---------------------------------------------------------------------------------- |

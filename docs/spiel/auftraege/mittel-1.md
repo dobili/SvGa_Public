@@ -48,7 +48,7 @@ Karten (niedrig-1) und Dialoge folgen können, braucht es die Orte mit festen Ke
   mittel-2; der Test für E + 160 + 60 · Clubnummer ist grün.
 - `begegnungen.json`: `siliconBay.clubkampf`, `portDelacroix.clubkampf` (`kartenErlaubt: false`,
   Szene 67 ohne Ambrose, R28), `desertSprings.clubkampf`, alle mit `zeit: "wahl"`.
-- `texte/de.json`: 31 neue Schlüssel (Orts- und Kartennamen, drei Clubnamen, acht Figurennamen:
+- `texte/de.json`: 34 neue Schlüssel (Orts- und Kartennamen, drei Clubnamen, acht Figurennamen:
   Rosie, Empfangsroboter, Mrs. Kowalczyk, Mr. Guidry, Mrs. Arceneaux, Henri Whitlock-Duval,
   Mrs. Holloway, Mr. Okoro).
 

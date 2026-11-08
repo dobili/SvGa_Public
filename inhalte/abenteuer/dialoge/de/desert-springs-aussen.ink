@@ -5,7 +5,8 @@
 // desertSprings.buck, Blitz, Sprüche erlaubt, beim ersten Sieg die Karte Großes Maul), 79 Abend am
 // Motel (Anruf von Juno, Nachricht von Victor), 80 Rückweg und Ausblick (Ende von Akt 3, Reise
 // nach Port Delacroix oder Maple Falls).
-// Einstiege wie in orte.json: ankunft_zu_fuss, buck, canyon, motel, bahnhof.
+// Einstiege wie in orte.json: ankunft_zu_fuss, buck, canyon, motel, bahnhof, highway (Akt 4:
+// Aufbruch über Weg 7 nach Summit City, Szene 81 der Bibel).
 //
 // Variablen: ausgangDesertSpringsBuck und nadelDesertSprings setzt die Hülle (R42);
 // versoehnungGesehen setzt weg-delacroix-desert.ink; die übrigen setzt diese Datei.
@@ -22,6 +23,7 @@ VAR ausgangDesertSpringsBuck = ""
 VAR nadelDesertSprings = 0
 VAR abendMotelGesehen = false
 VAR endeAkt3Gesehen = false
+VAR highwayAufbruchGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -144,3 +146,18 @@ Der Zug fährt gleich. Wohin? #sprecher:erzaehler
     -> END
 + [„Noch nicht.“]
     -> END
+
+// ---------------------------------------------------------------- Highway nach Summit City (Akt 4)
+
+=== highway ===
+{highwayAufbruchGesehen:
+    Der Highway führt nach Norden, durch die Wüste, Richtung Berge. #sprecher:erzaehler
+    -> END
+}
+~ highwayAufbruchGesehen = true
+Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
+Die Fahrkarten hab ich zurückgegeben. Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter
+Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
+Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
+Die Straße flimmert. Nach einer Stunde taucht ein Diner mit Neonschild auf. Mama hält an. #sprecher:erzaehler
+-> END

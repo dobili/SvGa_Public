@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Dialoge und Quests für Weg 7, Summit City, Weg 8, Crossroads, Weg 9, Pinewood Camp
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, vierzehnter Auftrag)
+**Stand:** fertig (mittel-2, 08.11.2026; Auftrag vom Haupt-Chat, vierzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die Ink-Dateien dieser Orte (neu), `desert-springs-aussen.ink` (nur `highway`),
@@ -30,7 +30,121 @@ oder einen Hinweis „kommt bald“ anbieten, und im Bericht auflisten.
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig** auf `abenteuer-regelwerk` (Basis 40b183ac hereingeholt). Prüfungen: `pytest pipeline/tests`
+470 bestanden, `npm run pruefen` 362 Dateien und 2422 Tests, Paketbau kompiliert alle Ink-Dateien,
+Simulation (siehe unten).
+
+**Dialoge** (alle Knoten aus der Liste in `mittel-1.md`, dazu Unterknoten):
+
+- `weg-desert-summit.ink` (Szene 81): `earl` (Königsrennen, Regel mit Buchbezug Kapitel 8),
+  `tafel`, `fund_neon`, `zurueck_desert`, `abzweig_hochebene`.
+- `hochebene.ink`: nur `zurueck` (stiller Ort ohne Figuren, bis Q21-1 beantwortet ist).
+- `summit-city-aussen.ink`: `ankunft_zu_fuss` mit `ankunft_summit` (Szene 83: Mama, Juno, Plakate,
+  Victor mit dem Mann im Anzug), `sol` (Szene 89, beim ersten Sieg Kühler Kopf), `seilbahn` (Hinweis
+  auf Victor nach der Krise), `drachenfest` (Szene 90, Regel, Drachenschuppe), `weg_desert`,
+  `weg_crossroads` (Abschied von Summit City).
+- `summit-city-huette.ink`: `ward` mit `ward_lektion` (Szene 84, Opposition), `ward_erinnerung` und
+  `ward_nach_erinnerung` (Szene 85), `victor_krise` (Szene 87, Buchbezug Kapitel 12.6),
+  Clubkampf, Niederlage, Sieg, Alltag mit Revanche; `kit`, `haraldsen` (Szene 86), `pokal`,
+  `kaminfeuer`.
+- `summit-city-bergstation.ink`: `victor` mit `victor_bergstation` (Wahl „Dann spielen wir“ /
+  „Erzähl“), `victor_spielen`, `victor_seite` (Szene 88, jeder Ausgang, Hales Seite, Ambroses
+  „Ein Hale eben“), `fund_pfeife`.
+- `summit-city-bergladen.ink`: `theke` (Laden, Haraldsen ist in der Hütte, Blechdose).
+- `weg-summit-crossroads.ink` (Szene 92): `bell` (Atomschach, Buchbezug Kapitel 1), `ray`
+  (Entenschach, Tomás’ und Miras Onkel), `tafel`, `bisons` (warten oder vorbeigehen),
+  `fund_bisonhaar`, `sturmkeller`, `zurueck_summit`.
+- `crossroads-aussen.ink` (Szene 93): `ankunft_zu_fuss` mit `ankunft_crossroads`, `slick`, `mira`
+  (mit Tomás), `big_joe`, `rosie` (öffnet `siliconBay.foodtruck`), `wegweiser`, `weg_summit`,
+  `weg_pinewood`.
+- `crossroads-raststaette.ink`: `darlene` (Laden), `nova` mit `nova_bitte` (beide Antworten führen
+  weiter), `varianten_tisch` (listet alle gelernten Varianten, Blindschach spielbar),
+  `fund_postkarte`.
+- `weg-crossroads-pinewood.ink` (Szene 94): `greta` (Blindschach gegen Ambrose, Buchbezug
+  Kapitel 11), `tafel`, `rangerhaus`, `zurueck_crossroads`.
+- `pinewood-camp-aussen.ink` (Szenen 95 und 96): `ankunft_zu_fuss` mit `ankunft_camp`, `ezra`
+  (Regeln Räuberschach und Tandem), `lagerfeuer` mit `lagerfeuer_abend` (Mae zeigt Sterne,
+  Ambroses leiser Satz, Marshmallow-Stock), `hollis` (beim ersten Sieg Zweite Chance), `dex`, `mae`,
+  `lou`, `tamsin`, `kiosk`, `weg_crossroads`, `weg_ghost`.
+- `desert-springs-aussen.ink`, nur `highway`: Mama hat die Fahrkarten zurückgegeben und leiht Dots
+  Auto; Juno kommt mit dem Bus nach Summit City.
+
+**Daten** (jeweils eigener Block am Ende der Datei, nur Zeilen angefügt):
+
+- `begegnungen.json`: `wegCrossroadsPinewood.blindschach` (Gegner `mapleFalls.ambrose`, Farbe
+  Zufall, Partie aus der Grundstellung, Karten gesperrt, `variante: "blind"`).
+- `runden.json`: `summitCity.reiheKit` (`umwandlung`, `endspiel`), `summitCity.reiheHaraldsen`
+  (`endspiel`), `summitCity.erinnerungHastings` (`klassik-steinitz-bardeleben` ab Zug 17 mit
+  Weiß), Tafeln `wegDesertSummit.tafel` (`endspiel`, 3), `wegSummitCrossroads.tafel` (`haengend`,
+  3, „vorher zählen“), `wegCrossroadsPinewood.tafel` (`matt2`, 3, „erst rechnen“).
+- `quests.json`: Haupt `summitCity.endspiel` (7 Schritte: Ankunft, Lektion, Kit mit Zweiter Chance,
+  Haraldsen, Victors Niederlage, Bergstation, Clubkampf mit Mentor-Zug), `summitCity.erinnerungHastings`
+  (Fragment 8, 20 Münzen), Haupt `crossroads.treffpunkt` (Ankunft, Novas Bitte), Haupt
+  `pinewoodCamp.sommercamp` (Ankunft, Lagerfeuer), Tafel-Quests `wegDesertSummit.tafelDiner`,
+  `wegSummitCrossroads.tafelGeysir`, `wegCrossroadsPinewood.tafelHuette`. **Geändert:**
+  `siliconBay.fehlendeSeite` bekommt Schritt 2 (`summit-city-bergstation.victor_seite`, Gegenstand
+  `halesSeite`).
+- `funde.json`: `neonK` (10 Münzen), `murmeltierpfeife` (5), `drachenschuppe`, `bisonhaar` (5),
+  `postkarteStaedte`, `marshmallowStock`.
+- `laeden.json`: `summitCity.bergladen` (Zweite Chance 20, Flüstern 40, Endspielkompass 60,
+  Seilbahnkarte 15), `crossroads.raststaette` (Zweite Chance, Fingerzeig, Gefahrenradar, Flüstern,
+  Waage, Remisangebot, Was droht?, Farbwahl, Limo zu den Preisen der früheren Läden),
+  `pinewoodCamp.kiosk` (Limo 5, Marshmallows 5).
+- `texte/de.json`: 42 neue Schlüssel (Quests, Funde, Läden, Gegenstände `seilbahnkarte`,
+  `marshmallows`, `halesSeite`).
+
+**Simulation** mit inkjs (Knoten wie im Spiel gemeldet, Variablen beim Dialogende zurückgeschrieben
+wie in `Oberwelt.beiDialogende`, Quests wie `regeln/quests.ts`): ein Durchgang von `highway` bis
+`weg_ghost` mit verlorener und gewonnener Sol-Partie, abgebrochener und verlorener Partie gegen
+Victor, verlorenem und gewonnenem Clubkampf; alle sieben neuen Quests erledigt, „Die fehlende Seite“
+aus Akt 3 schließt an der Bergstation. Dazu 300 Zufallsdurchläufe je Datei mit zufälligen Variablen
+und Wahlen: keine Fehler, jede Zeile hat einen Sprecher, alle Knoten aus `orte.json` vorhanden.
+
+**Varianten, die noch fehlen** (in den Dialogen mit `VARIANTE-FEHLT` markiert; die Figur erklärt
+die Regel, setzt `variante<Name>Gelernt` und vertröstet in der Welt, etwa „alle Bretter belegt“):
+
+1. Königsrennen (Earl, `weg-desert-summit.earl_angebot`)
+2. Drache (Drachenfest, `summit-city-aussen.drachenfest_angebot`)
+3. Atomschach (Bell, `weg-summit-crossroads.bell_angebot`)
+4. Entenschach (Ray, `weg-summit-crossroads.ray_angebot`)
+5. Tandem und Räuberschach (Ezra und Lagerfeuer, `pinewood-camp-aussen.lagerfeuer_abend`)
+6. Varianten-Tisch: alle außer Blindschach „kommt bald“
+7. Falkenweg (Hochebene): wartet auf Q21-1, keine Figuren, kein Dialog außer dem Rückweg.
+
+Sobald eine Variante gebaut ist, genügt je eine Begegnung und ein `beginnePartie` an der markierten
+Stelle (und eine Wahl am Varianten-Tisch).
+
+**Entscheidungen**
+
+1. **Blindschach gegen Ambrose:** Greta hat kein Gegnerprofil, und `gegner.json` war nicht
+   freigegeben. Die Bibel gibt Ambrose den Satz „Ich habe zwölf Jahre lang Partien in Briefen
+   gespielt“; deshalb spielt er (`mapleFalls.ambrose`, Stärke wie der Leser). Greta schreibt mit.
+   Wer später eine eigene Gegnerin will: Gegner `wegCrossroadsPinewood.greta` anlegen und nur
+   `gegner` in der Begegnung tauschen.
+2. **Reihen ohne Buchübungen:** Die zwölf Buchübungen des Clubs (`ueb:opposition-anwenden` usw.)
+   gibt es im Taktiktrainer noch nicht; die Reihen nutzen die Themen `endspiel` (jetzt
+   angeschlossen) und `umwandlung`.
+3. **Fragment 8:** Ward findet nach der Erinnerung einen Zettel mit vier Zugpaaren der Fernpartie
+   in ihrem Heft (Wirkung `fragment` mit `halbzug: 8`, wie die Fragmente 6 und 7).
+4. **Hales Seite** als Gegenstand in Schritt 2 der Akt-3-Quest, nicht in der Hauptquest, damit der
+   Gegenstand nur einmal kommt. Die Hauptquest setzt dort nur die Szene `akt4.bergstation`.
+5. **Neue Szenen-Kennungen:** `akt4.novaBitte`, `akt4.lagerfeuer` (dazu die aus der Bibel).
+6. **Drachenschuppe** schon beim Erklären der Regel (Geschenk für alle, die zum ersten Mal
+   mitmachen), weil man die Variante noch nicht spielen kann.
+7. **Darlenes Laden** ohne Bretthintergründe: `laeden.json` kennt nur Karten und Gegenstände.
+   Vorschlag für die Hülle: Warenart `extra` (Bretthintergründe aller Städte, je 40).
+8. **Marshmallows und Seilbahnkarte** sind Gegenstände ohne Wirkung (Album). Die Seilbahn fährt
+   ohne Karte; eine Sperre bräuchte `wenn` in `orte.json` (nicht freigegeben).
+9. **Anreise über Weg 7:** Mama fährt mit Dots Auto, Juno kommt mit dem Bus nach Summit City; so
+   passen die Fahrkarten vom Ende von Akt 3 und das Diner an der Straße zusammen.
+10. **Bisons** blockieren nur erzählt (Wahl „Warten“); der Übergang zur Prärie hat keine Sperre.
+
+**Für mittel-1 und die Capital Arena:** `novaBitteGehoert` und `novaHilfeZugesagt`
+(Crossroads, Szene 93), `victorSeiteGegeben`, `victorKriseGesehen`, `variante<Name>Gelernt`,
+`lagerfeuerGesehen`. Rückweg von Weg 7 zeigt weiter auf `bahnhof` (Entscheidung 5 von mittel-1).
+
+**Hinweis:** `runden.json` war schon vor diesem Auftrag nicht mit Prettier formatiert; ich habe nur
+angefügt, nicht umformatiert. `quests.json` besteht Prettier.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

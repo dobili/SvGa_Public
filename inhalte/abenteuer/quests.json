@@ -1391,6 +1391,19 @@
               "gegenstand": "notizbuchseite"
             }
           ]
+        },
+        {
+          "text": "quest.fehlendeSeite.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-bergstation.victor_seite"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "halesSeite"
+            }
+          ]
         }
       ]
     },
@@ -1802,6 +1815,296 @@
             "art": "dialog",
             "knoten": "desert-springs-garage.mira_nach_erinnerung"
           }
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.endspiel",
+      "titel": "quest.summitEndspiel.titel",
+      "typ": "haupt",
+      "ort": "summitCity",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegDesertSummit.diner"
+      },
+      "schritte": [
+        {
+          "text": "quest.summitEndspiel.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-aussen.ankunft_summit"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.ankunftSummit"
+            }
+          ]
+        },
+        {
+          "text": "quest.summitEndspiel.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-huette.ward_lektion"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.ward"
+            }
+          ]
+        },
+        {
+          "text": "quest.summitEndspiel.schritt3",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "summitCity.reiheKit"
+          },
+          "wirkungen": [
+            {
+              "art": "karte",
+              "karte": "zweiteChance"
+            }
+          ]
+        },
+        {
+          "text": "quest.summitEndspiel.schritt4",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "summitCity.reiheHaraldsen"
+          }
+        },
+        {
+          "text": "quest.summitEndspiel.schritt5",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-huette.victor_krise"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.victorKrise"
+            }
+          ]
+        },
+        {
+          "text": "quest.summitEndspiel.schritt6",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-bergstation.victor_seite"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.bergstation"
+            }
+          ]
+        },
+        {
+          "text": "quest.summitEndspiel.schritt7",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "summitCity.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.clubnadelSummit"
+            },
+            {
+              "art": "karte",
+              "karte": "mentorzug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.erinnerungHastings",
+      "titel": "quest.erinnerungHastings.titel",
+      "typ": "begegnung",
+      "ort": "summitCity",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "summit-city-huette.ward_erinnerung"
+      },
+      "schritte": [
+        {
+          "text": "quest.erinnerungHastings.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "summitCity.erinnerungHastings"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 8
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.erinnerungHastings.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-huette.ward_nach_erinnerung"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.tafelDiner",
+      "titel": "quest.tafelDiner.titel",
+      "typ": "raetsel",
+      "ort": "wegDesertSummit",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegDesertSummit.diner",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelDiner.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegDesertSummit.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "wegSummitCrossroads.tafelGeysir",
+      "titel": "quest.tafelGeysir.titel",
+      "typ": "raetsel",
+      "ort": "wegSummitCrossroads",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegSummitCrossroads.geysirbecken",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelGeysir.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSummitCrossroads.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "crossroads.treffpunkt",
+      "titel": "quest.treffpunkt.titel",
+      "typ": "haupt",
+      "ort": "crossroads",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegSummitCrossroads.geysirbecken"
+      },
+      "schritte": [
+        {
+          "text": "quest.treffpunkt.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "crossroads-aussen.ankunft_crossroads"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.crossroads"
+            }
+          ]
+        },
+        {
+          "text": "quest.treffpunkt.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "crossroads-raststaette.nova_bitte"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.novaBitte"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.tafelHuette",
+      "titel": "quest.tafelHuette.titel",
+      "typ": "raetsel",
+      "ort": "wegCrossroadsPinewood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegCrossroadsPinewood.huetten",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelHuette.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCrossroadsPinewood.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp.sommercamp",
+      "titel": "quest.sommercamp.titel",
+      "typ": "haupt",
+      "ort": "pinewoodCamp",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegCrossroadsPinewood.huetten"
+      },
+      "schritte": [
+        {
+          "text": "quest.sommercamp.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "pinewood-camp-aussen.ankunft_camp"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.camp"
+            }
+          ]
+        },
+        {
+          "text": "quest.sommercamp.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "pinewood-camp-aussen.lagerfeuer_abend"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 4,
+              "szene": "akt4.lagerfeuer"
+            }
+          ]
         }
       ]
     }

@@ -433,6 +433,76 @@
         "abZug": 11,
         "seite": "black"
       }
+    },
+    {
+      "kennung": "summitCity.reiheKit",
+      "ort": "summitCity",
+      "steller": "summitCity.kit",
+      "reihe": true,
+      "buchuebungen": [],
+      "themen": [
+        "umwandlung",
+        "endspiel"
+      ]
+    },
+    {
+      "kennung": "summitCity.reiheHaraldsen",
+      "ort": "summitCity",
+      "steller": "summitCity.haraldsen",
+      "reihe": true,
+      "buchuebungen": [],
+      "themen": [
+        "endspiel"
+      ]
+    },
+    {
+      "kennung": "summitCity.erinnerungHastings",
+      "ort": "summitCity",
+      "steller": "summitCity.ward",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": [
+        "mattbilder"
+      ],
+      "anzahl": 1,
+      "erinnerung": {
+        "partie": "klassik-steinitz-bardeleben",
+        "abZug": 17,
+        "seite": "white"
+      }
+    },
+    {
+      "kennung": "wegDesertSummit.tafel",
+      "ort": "wegDesertSummit",
+      "steller": "wegDesertSummit.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": [
+        "endspiel"
+      ],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegSummitCrossroads.tafel",
+      "ort": "wegSummitCrossroads",
+      "steller": "wegSummitCrossroads.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": [
+        "haengend"
+      ],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.tafel",
+      "ort": "wegCrossroadsPinewood",
+      "steller": "wegCrossroadsPinewood.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": [
+        "matt2"
+      ],
+      "anzahl": 3
     }
   ]
 }

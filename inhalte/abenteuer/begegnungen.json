@@ -340,6 +340,19 @@
         "fen": "6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41"
       },
       "kartenErlaubt": false
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.blindschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "variante": "blind"
     }
   ]
 }

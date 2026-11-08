@@ -192,6 +192,102 @@
           "preis": 20
         }
       ]
+    },
+    {
+      "kennung": "summitCity.bergladen",
+      "ort": "summitCity",
+      "name": "laden.bergladen.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "karte",
+          "kennung": "endspielkompass",
+          "preis": 60
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "seilbahnkarte",
+          "preis": 15
+        }
+      ]
+    },
+    {
+      "kennung": "crossroads.raststaette",
+      "ort": "crossroads",
+      "name": "laden.raststaette.name",
+      "angebot": [
+        {
+          "art": "karte",
+          "kennung": "zweiteChance",
+          "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "fingerzeig",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "gefahrenradar",
+          "preis": 35
+        },
+        {
+          "art": "karte",
+          "kennung": "fluestern",
+          "preis": 40
+        },
+        {
+          "art": "karte",
+          "kennung": "waage",
+          "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "remisangebot",
+          "preis": 35
+        },
+        {
+          "art": "karte",
+          "kennung": "wasDroht",
+          "preis": 60
+        },
+        {
+          "art": "karte",
+          "kennung": "farbwahl",
+          "preis": 10
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "limo",
+          "preis": 5
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp.kiosk",
+      "ort": "pinewoodCamp",
+      "name": "laden.campkiosk.name",
+      "angebot": [
+        {
+          "art": "gegenstand",
+          "kennung": "limo",
+          "preis": 5
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "marshmallows",
+          "preis": 5
+        }
+      ]
     }
   ]
 }

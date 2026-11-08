@@ -13,6 +13,7 @@ const LAGE: Extralage = {
     "taktik:spiess": "silber",
     "endspiel:opposition": "gold",
   },
+  abenteuerfunde: new Set(),
 };
 
 describe("extrafortschritt", () => {

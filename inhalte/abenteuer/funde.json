@@ -33,14 +33,14 @@
       "ort": "wegCedarRiverton",
       "name": "fund.holzspringer.name",
       "text": "fund.holzspringer.text",
-      "extra": "abenteuer:waldholz1"
+      "extra": "figuren-waldholz"
     },
     {
       "kennung": "pavillonspringer",
       "ort": "riverton",
       "name": "fund.pavillonspringer.name",
       "text": "fund.pavillonspringer.text",
-      "extra": "abenteuer:rivertonPavillon"
+      "extra": "brett-pavillon"
     },
     {
       "kennung": "zeitungsausschnitt",
@@ -61,7 +61,7 @@
       "ort": "riverton",
       "name": "fund.holzlaeufer.name",
       "text": "fund.holzlaeufer.text",
-      "extra": "abenteuer:waldholz2"
+      "extra": "figuren-waldholz"
     },
     {
       "kennung": "zahnrad",
@@ -93,7 +93,7 @@
       "ort": "ironwood",
       "name": "fund.holzturm.name",
       "text": "fund.holzturm.text",
-      "extra": "abenteuer:waldholz3"
+      "extra": "figuren-waldholz"
     },
     {
       "kennung": "glasfunke",

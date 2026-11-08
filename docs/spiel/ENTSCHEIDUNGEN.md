@@ -486,6 +486,14 @@ Hügel, Wüstenstraße Königsrennen, Hochebene ein eigenes Spiel mit Falke und 
 Drache; Tandem und Räuberschach im Camp. Hauptstory und Clubs bleiben klassisch. Reihenfolge nach
 Aufwand: erst die Varianten der vorhandenen Engine, dann Fairy-Stockfish als Zusatzpaket.
 
+**Extras aus Funden (Schritt 11 fertig, E3):** Neue Freischaltbedingung „Fund im Schach-Abenteuer“
+in den Extras der App (`training/extras.ts`, Art `abenteuer`); erstes Extra: Bretthintergrund
+„Riverton-Pavillon“ (Springer aus dem Pavillon). Ein Fund mit Extra meldet „Dafür gibt es etwas
+Neues in ‚Dein Aussehen‘“. Der Figurensatz „Waldholz“ (drei Funde) braucht eigene Figurenbilder
+und kommt mit der Grafik; das Extra ist in `funde.json` schon vermerkt. Lizenzen: Prüfpunkte für
+Fairy-Stockfish und Figurenbilder der Märchenfiguren in `docs/spiel/LIZENZEN.md` (Wunsch des
+Autors: bei Zusatzpaketen auf Lizenzen achten).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

@@ -13,6 +13,16 @@ npm-Pakete brauchen zusätzlich Einträge in `app/src/ui/bildschirme/lizenzbaust
 | phaser | 4.2.1   | MIT    | Oberwelt: Kacheln, Figuren, Kamera, Eingabe | eingebaut, mit eventemitter3 (MIT) |
 | inkjs  | 2.4.0   | MIT    | Dialoge (Laufzeit und Compiler beim Build)  | eingebaut (Compiler beim Build)    |
 
+## Geplant (nicht eingebaut; vor dem Einbau prüfen)
+
+| Paket                                                   | Lizenz  | Zweck                                                         | Vor dem Einbau prüfen                                                                                                                                                                                                                                |
+| ------------------------------------------------------- | ------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fairy-Stockfish (WebAssembly)                           | GPL-3.0 | Schachvarianten abseits der Clubs (`10`, Abschnitte 3 und 3a) | Lizenz des WebAssembly-Baus und seiner Varianten-Netze (NNUE) einzeln nachsehen; Quelltextangebot wie bei Stockfish (Lizenzdatei im Zusatzpaket, Hinweis in „Über die App“); passt zur GPL der App; als Zusatzpaket wie Maia, nur auf Wunsch geladen |
+| Figurenbilder für Märchenfiguren (Drache, Falke, Bison) | offen   | eigene Figuren der Varianten L9, L10                          | nur selbst gezeichnet, CC0 oder kommerziell erlaubt mit Nennung; nicht aus Spielen oder Seiten kopieren                                                                                                                                              |
+
+Grundsatz für jedes Zusatzpaket: Lizenz und Herkunft stehen hier, bevor es gebaut wird; Lizenztext
+liegt im Paket; npm-Pakete zusätzlich in `lizenzbausteine.ts` (sonst ist der Lizenztest rot).
+
 ## Material
 
 | Material                                          | Lizenz                                                                         | Was zu tun ist                                                                                                    | Stand     |

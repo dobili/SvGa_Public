@@ -82,6 +82,8 @@ export const BRETTARTEN = [
   "marmor-gruen",
   // Freischaltbares Extra (Gamifizierung P7, training/extras.ts): mit allen Orden der Buchteile.
   "nacht-gold",
+  // Freischaltbares Extra aus dem Schach-Abenteuer (Fund im Park von Riverton).
+  "pavillon",
 ] as const;
 export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";

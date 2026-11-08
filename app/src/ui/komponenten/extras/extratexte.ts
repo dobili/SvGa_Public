@@ -27,6 +27,7 @@ const BEDINGUNGSTEXTE: {
   stufe: (b) => t("extras.bedingung.stufe", { stufe: b.ab }),
   orden: (b) => t(`extras.bedingung.orden.${b.gruppe}`),
   meisterschaft: (b) => meisterschaftstext(b),
+  abenteuer: (b) => t("extras.bedingung.abenteuer", { anzahl: b.funde.length }),
 };
 
 /**

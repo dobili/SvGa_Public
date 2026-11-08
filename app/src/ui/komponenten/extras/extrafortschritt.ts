@@ -29,6 +29,10 @@ const FORTSCHRITTE: {
     erreicht: zaehleThemen(lage.themenstufen, b.stufe, b.praefix),
     ziel: b.anzahl,
   }),
+  abenteuer: (b, lage) =>
+    b.funde.length > 1
+      ? { erreicht: b.funde.filter((f) => lage.abenteuerfunde.has(f)).length, ziel: b.funde.length }
+      : null,
 };
 
 /**

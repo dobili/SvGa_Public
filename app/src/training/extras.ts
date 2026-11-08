@@ -38,7 +38,9 @@ export type Bedingung =
       readonly stufe: Medaillenstufe;
       readonly anzahl: number;
       readonly praefix: string | null;
-    };
+    }
+  /** Funde im Schach-Abenteuer (docs/spiel/08, E3): alle genannten Funde im Spielstand. */
+  | { readonly art: "abenteuer"; readonly funde: readonly string[] };
 
 /** Was die Regeln über den Leser wissen müssen; die Oberfläche rechnet es aus. */
 export interface Extralage {
@@ -48,6 +50,8 @@ export interface Extralage {
   readonly volleOrdengruppen: ReadonlySet<Ordengruppe>;
   /** Thema → erreichte Stufe der Meisterschaft (mit Probe der Aufgabenseite). */
   readonly themenstufen: Readonly<Record<string, Medaillenstufe>>;
+  /** Kennungen der Funde im Schach-Abenteuer (leer ohne Spielstand). */
+  readonly abenteuerfunde: ReadonlySet<string>;
 }
 
 /** Ein Extra: Kennung, Art, Wert in der Wahl seiner Art, Bedingung und Bild (Pfad in der App). */
@@ -109,6 +113,14 @@ export const EXTRAS = [
     bedingung: { art: "stufe", ab: 2 },
     bild: "extras/konfetti-bunt.svg",
   },
+  // Schach-Abenteuer (docs/spiel/08, E3): Bretthintergrund für den Springer aus dem Pavillon.
+  {
+    kennung: "brett-pavillon",
+    art: "brett",
+    wert: "pavillon",
+    bedingung: { art: "abenteuer", funde: ["pavillonspringer"] },
+    bild: "extras/brett-pavillon.svg",
+  },
   // P3 Meisterschaft: Titel unter dem Namen im Profil.
   {
     kennung: "titel-taktiker",
@@ -137,6 +149,7 @@ const PRUEFUNGEN: {
   stufe: (b, lage) => lage.stufe >= b.ab,
   orden: (b, lage) => lage.volleOrdengruppen.has(b.gruppe),
   meisterschaft: (b, lage) => zaehleThemen(lage.themenstufen, b.stufe, b.praefix) >= b.anzahl,
+  abenteuer: (b, lage) => b.funde.every((f) => lage.abenteuerfunde.has(f)),
 };
 
 /**

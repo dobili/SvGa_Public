@@ -20,7 +20,7 @@ function lage(
   gruppen: readonly Ordengruppe[] = [],
   themenstufen: Extralage["themenstufen"] = {},
 ): Extralage {
-  return { stufe, volleOrdengruppen: new Set(gruppen), themenstufen };
+  return { stufe, volleOrdengruppen: new Set(gruppen), themenstufen, abenteuerfunde: new Set() };
 }
 
 describe("Freischaltregeln", () => {
@@ -105,5 +105,11 @@ describe("Titel aus der Meisterschaft (P3)", () => {
   it("Silber reicht nicht", () => {
     const silber = { ...gold("taktik", 4), "taktik:x": "silber" as const };
     expect(bedingungErfuellt(EXTRAS[6].bedingung, lage(1, [], silber))).toBe(false);
+  });
+
+  it("ein Fund im Schach-Abenteuer schaltet den Pavillon frei", () => {
+    expect(freieExtras(lage(1)).has("brett-pavillon")).toBe(false);
+    const mitFund = { ...lage(1), abenteuerfunde: new Set(["pavillonspringer"]) };
+    expect(freieExtras(mitFund).has("brett-pavillon")).toBe(true);
   });
 });

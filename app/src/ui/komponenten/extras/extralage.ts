@@ -17,6 +17,7 @@ import { useAbzeichenstand } from "../fortschritt/abzeichenstand";
 import { useFortschrittsringe } from "../fortschritt/fortschrittsringe";
 import { istVoll } from "../fortschritt/ringrechnung";
 import { useThemenmedaillen } from "../themen/useMeisterschaft";
+import { useSpeicher } from "../../../speicher/speicher";
 import type { Medaillenstufe } from "../../../training/meisterschaft";
 import type { Symbolringangabe } from "../fortschritt/Symbolringe";
 
@@ -48,6 +49,10 @@ export function useExtralage(): Extralage {
   const stufe = stand?.stufe.nummer ?? 1;
   const schluessel = [...volleGruppen(ringe)].join(",");
   const medaillen = useThemenmedaillen();
+  // Funde des Schach-Abenteuers (docs/spiel/08, E3) als Text, damit useMemo stabil bleibt.
+  const funde = useSpeicher((z) =>
+    (z.daten.abenteuer?.funde ?? []).map((f) => f.kennung).join(","),
+  );
   // Neue Lage nur, wenn sich Stufe, Gruppen oder Medaillen ändern (Mengen wären sonst jedes Mal neu).
   return useMemo(() => {
     const voll = new Set(schluessel.split(","));
@@ -57,6 +62,7 @@ export function useExtralage(): Extralage {
       stufe,
       volleOrdengruppen: new Set(ORDENGRUPPEN.filter((g) => voll.has(g))),
       themenstufen,
+      abenteuerfunde: new Set(funde ? funde.split(",") : []),
     };
-  }, [stufe, schluessel, medaillen]);
+  }, [stufe, schluessel, medaillen, funde]);
 }

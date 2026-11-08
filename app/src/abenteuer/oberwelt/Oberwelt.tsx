@@ -461,7 +461,11 @@ export function Oberwelt() {
         dialogvariablen: { ...mit.dialogvariablen, ...variablenNachFund(kennung) },
       };
       schreibe(neu);
-      setzeMeldung(tSpiel("fund.gefunden", { name: tSpiel(fund?.name ?? kennung) }));
+      setzeMeldung(
+        tSpiel(fund?.extra ? "fund.gefundenExtra" : "fund.gefunden", {
+          name: tSpiel(fund?.name ?? kennung),
+        }),
+      );
     },
     gibKarte: (kennung) => {
       const aktuell = standRef.current ?? stand;

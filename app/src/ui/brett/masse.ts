@@ -112,6 +112,16 @@ export const BRETTFARBEN: Readonly<Record<Brettfarben, Brettpalette>> = {
    * Freischaltbares Extra „Nacht und Gold“ (Gamifizierung P7): dunkle Felder im Navy der Orden,
    * helle in mattem Gold; kein Buchwert. Schimmer hellblau, weil Gelbgrün auf Gold untergeht.
    */
+  /**
+   * Freischaltbares Extra „Riverton-Pavillon“ (Schach-Abenteuer, Fund im Park von Riverton):
+   * grün gestrichenes Holz und Leinen wie die Bretter im Parkpavillon; kein Buchwert.
+   */
+  pavillon: {
+    hell: "#E4D8B4",
+    dunkel: "#4E6B4C",
+    schimmer: "rgba(255, 214, 102, 0.55)",
+    figur: FARBEN.navy,
+  },
   "nacht-gold": {
     hell: "#E3C77E",
     dunkel: "#1F3050",

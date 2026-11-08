@@ -1,32 +1,35 @@
-# Auftrag mittel-1: Dialoge und Quests für Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou
+# Auftrag mittel-1: Akt 4 abstimmen und das ganze Abenteuer durchsimulieren
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achtzehnte Auftrag ist zusammengeführt, danke. Zu deinem offenen Punkt: Sprüche sind im Turnier schon gesperrt, weil die Turniergegner die Rolle `turnier` haben und Sprüche nur gegen `strasse` gehen. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, neunzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** die Ink-Dateien dieser Orte und der Erinnerung `erinnerung-siedlung.ink` (neu),
-`port-delacroix-aussen.ink` (nur `bayou`), `port-delacroix-musikhaus.ink` (nur `blaeser`),
-`quests.json`, `runden.json`, `begegnungen.json`, `funde.json`, `laeden.json`, `texte/de.json` (nur
-neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
+**Darf ändern:** alle Ink-Dateien, `quests.json`, `runden.json`, `begegnungen.json`, `funde.json`,
+`texte/de.json` (nur neue Schlüssel oder Korrekturen), `docs/spiel/auftraege/mittel-1.md`
 **Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
 
 ## Ziel
 
-Dialoge, Quests, Runden, Begegnungen für `wegPinewoodGhost`, `ghostTown` (Fernpartie mit Victor,
-Flashback 1866 als Erinnerung, Duell-FEN aus Bibel Abschnitt 35), `wegGhostCapital`, `capitalArena`
-(Landesmeisterschaft: Vorrunde als vier Begegnungen mit Punkten in Ink, Novas Aussage, Halbfinale
-gegen Kade mit `abgelenktAb` und `freieKarten`, Finale ohne Karten nach R28, Ambroses Abschied mit
-`zeigeAbspann()`), `bayou`. mittel-2 schreibt parallel Weg 7 bis Pinewood Camp. Neue Einträge in
-gemeinsamen Dateien in einem eigenen Block.
+Akt 4 kommt von zwei Helfern. mittel-2 setzt Variablen, die deine Szenen lesen sollten:
+`novaBitteGehoert`, `novaHilfeZugesagt` (Crossroads) und `victorSeiteGegeben` (Summit City). Den
+Fund „Hales Seite“ gibt mittel-2 als Gegenstand `halesSeite`; der Saloon liest schon `hatHalesSeite`.
 
-Neue Technik, die ihr in Akt 4 nutzen könnt (Haupt-Chat, 8.11.2026, Einzelheiten in
-`docs/spiel/ENTSCHEIDUNGEN.md`): Ink-Funktion `zeigeAbspann()` (Abspann nach dem Dialog);
-Begegnungsfelder `freieKarten` (Halbfinale: `["mentorzug"]`, setzt `mentorzugFreiGespielt`),
-`abgelenktAb {halbzug, faktor}` (Stärkewechsel, Halbfinale) und `variante: "blind"` (Blindschach);
-Runden mit `erinnerung` (Zugerraten einer Klassikerpartie) und den Themen `falle`, `struktur`,
-`endspiel`; Siegzähler `siege<Begegnung>`; Turnierrunden ohne neue Technik als Begegnungen mit
-Punkten in Ink (`ausgang<Begegnung>`).
+## Vorgaben
+
+1. Novas Aussage in der Arena und Victors Szenen in Ghost Town auf diese Variablen abstimmen
+   (Bibel Teil 4), auch für den Fall, dass der Leser in Crossroads abgelehnt hat.
+2. Eine **Gesamtsimulation** vom Dachboden in Maple Falls bis zum Abspann: alle Hauptquests in
+   Reihenfolge, Partien mit Sieg, Niederlage und Remis, Runden bestanden und nicht bestanden,
+   Reisen zwischen den Orten (`reise`, Übergänge mit `wenn`). Sackgassen, nie gesetzte oder nie
+   gelesene Variablen und Knoten ohne Einstieg im Bericht auflisten und, wo es deine Dateien sind,
+   beheben.
+3. Das Skript der Simulation gern unter `pipeline/abenteuer/` ablegen, falls es dauerhaft nützt
+   (dann mit Test in `pipeline/tests/`; Datei vorher im Bericht ankündigen, nicht in die App).
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt.**
 

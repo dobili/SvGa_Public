@@ -169,5 +169,8 @@
   "fund.formular1857.name": "Altes Partieformular",
   "fund.formular1857.text": "Ein vergilbtes Partieformular in einer Blechdose, eng beschrieben in einer Handschrift, die Ambrose kennt, aber nicht mehr lesen kann.",
   "fund.muenzenFlussweg.name": "Kiste am Flussufer",
-  "fund.muenzenFlussweg.text": "Eine kleine Holzkiste zwischen zwei Steinen am Flussweg, darin ein paar Münzen."
+  "fund.muenzenFlussweg.text": "Eine kleine Holzkiste zwischen zwei Steinen am Flussweg, darin ein paar Münzen.",
+  "fund.gefunden": "Gefunden: {name}. Es steht jetzt im Tagebuch.",
+  "tagebuch.funde": "Funde",
+  "tagebuch.keineFunde": "Noch nichts gefunden. Schau dich auf den Wegen um."
 }

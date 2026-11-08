@@ -9,6 +9,7 @@
 import type { BegegnungenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-begegnungen";
 import type { GegnerDesSchachAbenteuers } from "../../daten/generiert/abenteuer-gegner";
 import type { AufgabenrundenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-runden";
+import type { FundeDesSchachAbenteuers } from "../../daten/generiert/abenteuer-funde";
 import type { HilfskartenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-karten";
 import type { OrteDesSchachAbenteuers } from "../../daten/generiert/abenteuer-orte";
 import type { QuestsDesSchachAbenteuers } from "../../daten/generiert/abenteuer-quests";
@@ -20,6 +21,7 @@ export type Questdaten = QuestsDesSchachAbenteuers["quests"][number];
 export type Ortdaten = OrteDesSchachAbenteuers["orte"][number];
 export type Begegnungsdaten = BegegnungenDesSchachAbenteuers["begegnungen"][number];
 export type Rundendaten = AufgabenrundenDesSchachAbenteuers["runden"][number];
+export type Funddaten = FundeDesSchachAbenteuers["funde"][number];
 
 /** Alle Verzeichnisse des Spiels auf einmal. */
 export interface Spieldaten {
@@ -29,6 +31,7 @@ export interface Spieldaten {
   readonly orte: readonly Ortdaten[];
   readonly begegnungen: readonly Begegnungsdaten[];
   readonly runden: readonly Rundendaten[];
+  readonly funde: readonly Funddaten[];
 }
 
 let vorrat: Promise<Spieldaten> | null = null;
@@ -42,14 +45,16 @@ export function ladeSpieldaten(): Promise<Spieldaten> {
     liesPaketJson<OrteDesSchachAbenteuers>("daten/orte.json"),
     liesPaketJson<BegegnungenDesSchachAbenteuers>("daten/begegnungen.json"),
     liesPaketJson<AufgabenrundenDesSchachAbenteuers>("daten/runden.json"),
+    liesPaketJson<FundeDesSchachAbenteuers>("daten/funde.json"),
   ])
-    .then(([g, k, q, o, b, r]) => ({
+    .then(([g, k, q, o, b, r, f]) => ({
       gegner: g.gegner,
       karten: k.karten,
       quests: q.quests,
       orte: o.orte,
       begegnungen: b.begegnungen,
       runden: r.runden,
+      funde: f.funde,
     }))
     .catch((fehler: unknown) => {
       vorrat = null;

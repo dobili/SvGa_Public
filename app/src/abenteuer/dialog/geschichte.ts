@@ -24,6 +24,8 @@ export interface Wirkungen {
   readonly beginneAufgaben: (runde: string) => void;
   readonly setzeZustand: (gegner: string, faktor: number, grund: string) => void;
   readonly schalteSteckbrief: (gegner: string, zeile: number) => void;
+  /** Ein Fund kommt in den Spielstand (funde.json; docs/spiel/08, E1). */
+  readonly gibFund: (kennung: string) => void;
   /** Reise auf eine Karte eines anderen Ortes (Bus nach Cedar Creek); wirkt nach dem Dialog. */
   readonly reise: (karte: string, ausloeser: string) => void;
 }
@@ -58,6 +60,7 @@ export class Geschichte {
   constructor(json: string, wirkungen: Wirkungen, variablen: Dialogvariablen, heldname: string) {
     this.story = new Story(json);
     this.story.BindExternalFunction("gibKarte", (k: string) => wirkungen.gibKarte(k), false);
+    this.story.BindExternalFunction("gibFund", (k: string) => wirkungen.gibFund(k), false);
     this.story.BindExternalFunction("setzeSzene", (k: string) => wirkungen.setzeSzene(k), false);
     this.story.BindExternalFunction(
       "beginnePartie",

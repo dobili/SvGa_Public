@@ -395,6 +395,14 @@ sperrt so bis `aufbruchGesehen`, `weiterCedar` zeigt die Ankunft zu Fuß. Sechst
 Wege; mittel-1 Dinge zum Ansehen in den Innenräumen; niedrig-1 Statisten, Tiere und dieselben
 Objekte in den Karten von Maple Falls und Cedar Creek.
 
+**Schritt 11 begonnen (Funde):** Neue Datei `inhalte/abenteuer/funde.json` (Schema
+`abenteuer-funde`: Kennung, Ort, Name, Text, optional Münzen und Extra der App); Dialogfunktion
+`gibFund(kennung)` legt den Fund einmal in den Spielstand (`funde`), zeigt „Gefunden: …“ und
+listet ihn im Tagebuch unter „Funde“. Pipeline prüft, dass jeder `gibFund`-Aufruf einen Fund
+nennt, der existiert. Münzen (Schritt 12) und Extras (Anbindung an „Dein Aussehen“) wirken noch
+nicht; die Felder stehen schon in den Daten. Erste Funde: altes Partieformular und die Kiste am
+Flussweg (Route 1).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

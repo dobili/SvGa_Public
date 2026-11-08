@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "funde": [
+    {
+      "kennung": "formular1857",
+      "ort": "wegMapleCedar",
+      "name": "fund.formular1857.name",
+      "text": "fund.formular1857.text"
+    },
+    {
+      "kennung": "muenzenFlussweg",
+      "ort": "wegMapleCedar",
+      "name": "fund.muenzenFlussweg.name",
+      "text": "fund.muenzenFlussweg.text",
+      "muenzen": 15
+    }
+  ]
+}

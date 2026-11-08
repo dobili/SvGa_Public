@@ -92,6 +92,22 @@ export function Tagebuch({
           })}
         </ul>
       )}
+      <h3>{tSpiel("tagebuch.funde")}</h3>
+      {stand.funde.length === 0 ? (
+        <p>{tSpiel("tagebuch.keineFunde")}</p>
+      ) : (
+        <ul data-testid="abenteuer-funde">
+          {stand.funde.map((f) => {
+            const fund = daten.funde.find((x) => x.kennung === f.kennung);
+            return (
+              <li key={f.kennung}>
+                <strong>{tSpiel(fund?.name ?? f.kennung)}</strong>
+                {fund && <> – {tSpiel(fund.text)}</>}
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}
       </button>

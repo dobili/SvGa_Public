@@ -25,6 +25,7 @@ DATEIEN = {
     "orte.json": "abenteuer-orte.schema.json",
     "begegnungen.json": "abenteuer-begegnungen.schema.json",
     "runden.json": "abenteuer-runden.schema.json",
+    "funde.json": "abenteuer-funde.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
 }
 
@@ -93,6 +94,15 @@ def test_querverweise_stimmen():
             if staerke != {"art": "eingang", "versatz": soll}:
                 fehler.append(f"{profil['kennung']}: Clubchef braucht eingang + {soll}, hat {staerke}")
     runden = _lade("runden.json")["runden"]
+    funde = _lade("funde.json")["funde"]
+    fundkennungen = {f["kennung"] for f in funde}
+    ortkennungen = {o["kennung"] for o in orte}
+    for fund in funde:
+        if fund["ort"] not in ortkennungen:
+            fehler.append(f"{fund['kennung']}: Ort {fund['ort']} fehlt in orte.json")
+        for schluessel in (fund["name"], fund["text"]):
+            if schluessel not in texte:
+                fehler.append(f"{fund['kennung']}: Text {schluessel} fehlt")
     rundenkennungen = {r["kennung"] for r in runden}
     for runde in runden:
         ort = next((o for o in orte if o["kennung"] == runde["ort"]), None)
@@ -128,6 +138,9 @@ def test_querverweise_stimmen():
         for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', quelle, re.M):
             if aufruf not in begegnungen:
                 fehler.append(f"{ink.name}: Begegnung {aufruf} fehlt")
+        for fund in re.findall(r'^\s*~\s*gibFund\("([^"]+)"\)', quelle, re.M):
+            if fund not in fundkennungen:
+                fehler.append(f"{ink.name}: Fund {fund} fehlt in funde.json")
         for runde in re.findall(r'^\s*~\s*beginneAufgaben\("([^"]+)"\)', quelle, re.M):
             if runde not in rundenkennungen:
                 fehler.append(f"{ink.name}: Runde {runde} fehlt in runden.json")

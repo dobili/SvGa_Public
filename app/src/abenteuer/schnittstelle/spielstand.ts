@@ -149,6 +149,8 @@ export interface Abenteuerstand {
   readonly karten: readonly Kartenbesitz[];
   /** Gegenstände im Besitz (docs/spiel/08: fahrrad, taschenlampe, fahrkarte …). */
   readonly gegenstaende: readonly string[];
+  /** Gefundene Dinge (docs/spiel/08, E1): Kennung aus funde.json und Zeitpunkt (ISO). */
+  readonly funde: readonly { readonly kennung: string; readonly gefunden: string }[];
   /** Orte, die der Held schon betreten hat (W2: Schnellreise erst nach dem ersten Fußweg). */
   readonly besuchteOrte: readonly string[];
   readonly fragmente: Fragmente;

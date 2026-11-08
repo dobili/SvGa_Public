@@ -192,6 +192,7 @@ async function main() {
     "orte.json",
     "begegnungen.json",
     "runden.json",
+    "funde.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

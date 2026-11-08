@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-funde.schema.json",
+  "title": "Funde des Schach-Abenteuers",
+  "description": "Ein Fund ist etwas, das der Held auf einer Karte entdeckt (Ink: gibFund(kennung); docs/spiel/08, E1 bis E5). Er steht im Tagebuch und später im Album der App; manche Funde bringen Münzen oder schalten ein Extra frei, andere werden erst viel später gebraucht (übergreifende Quests, E4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "funde"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "funde": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fund" }
+    }
+  },
+  "$defs": {
+    "fund": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "ort", "name", "text"],
+      "properties": {
+        "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "ort": {
+          "description": "Ort oder Weg aus orte.json, wo der Fund liegt (für die Sammelnadel je Ort, E5)",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "name": { "type": "string", "pattern": "^fund\\.[a-zA-Z0-9]+\\.name$" },
+        "text": { "type": "string", "pattern": "^fund\\.[a-zA-Z0-9]+\\.text$" },
+        "muenzen": {
+          "description": "Münzen beim Finden (G1; wirkt mit Schritt 12)",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "extra": {
+          "description": "Extra der App, das der Fund freischaltet (E3; wirkt, sobald die Extras angebunden sind)",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9:-]*$"
+        }
+      }
+    }
+  }
+}

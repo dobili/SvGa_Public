@@ -29,6 +29,7 @@ import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
 import { vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
+import { mitFund } from "../regeln/funde";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
 import { variablenNachBesuch } from "../regeln/dialogvariablen";
@@ -421,6 +422,14 @@ export function Oberwelt() {
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
   const wirkungen: Wirkungen = {
+    gibFund: (kennung) => {
+      const aktuell = standRef.current ?? stand;
+      const neu = mitFund(aktuell, kennung, new Date());
+      if (neu === aktuell) return;
+      schreibe(neu);
+      const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
+      setzeMeldung(tSpiel("fund.gefunden", { name: tSpiel(fund?.name ?? kennung) }));
+    },
     gibKarte: (kennung) => {
       const aktuell = standRef.current ?? stand;
       schreibe(wendeWirkungenAn(aktuell, [{ art: "karte", karte: kennung }], new Date()));

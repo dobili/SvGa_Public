@@ -57,6 +57,7 @@ export function leererAbenteuerstand(
     figuren: [],
     karten: [],
     gegenstaende: [],
+    funde: [],
     besuchteOrte: [],
     fragmente: { gefunden: [] },
     protokoll: [],
@@ -124,6 +125,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     karten: liste(roh.karten),
     gegenstaende: liste<string>(roh.gegenstaende).filter((g) => typeof g === "string"),
     besuchteOrte: liste<string>(roh.besuchteOrte).filter((o) => typeof o === "string"),
+    funde: liste<{ kennung: string; gefunden: string }>(roh.funde).filter(
+      (f) => istObjekt(f) && typeof f.kennung === "string",
+    ),
     fragmente: { gefunden: liste(istObjekt(roh.fragmente) ? roh.fragmente.gefunden : []) },
     protokoll: liste(roh.protokoll),
     laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,

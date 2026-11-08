@@ -11,17 +11,27 @@ async function kachel(seite: Page): Promise<string> {
   return (await seite.getByTestId("abenteuer-kachel").textContent()) ?? "";
 }
 
+/** Höchstens so viele Schritte je Weg (die Räume sind kleiner). */
+const MAX_SCHRITTE = 20;
+
 /**
- * Hält eine Pfeiltaste, bis der Held die Zielkachel erreicht (höchstens 6 Sekunden). Feste
- * Zeiten taugen nicht: WebKit auf dem iPhone zeichnet langsamer, der Held läuft dann kürzer.
+ * Läuft Kachel für Kachel zum Ziel: Taste drücken, bis der Held die Kachel wechselt, loslassen,
+ * prüfen. Gehaltene Tasten taugen nicht: WebKit auf dem iPhone fragt die Kachel zu selten ab, und
+ * der Held lief am Ziel vorbei bis zur Wand (CI 8.11.2026).
  */
 async function laufeBis(seite: Page, taste: string, ziel: string): Promise<void> {
-  await seite.keyboard.down(taste);
-  try {
-    await expect.poll(() => kachel(seite), { timeout: 6000 }).toBe(ziel);
-  } finally {
-    await seite.keyboard.up(taste);
+  for (let i = 0; i < MAX_SCHRITTE && (await kachel(seite)) !== ziel; i++) {
+    const vorher = await kachel(seite);
+    await seite.keyboard.down(taste);
+    try {
+      await expect.poll(() => kachel(seite), { timeout: 3000, intervals: [20] }).not.toBe(vorher);
+    } finally {
+      await seite.keyboard.up(taste);
+    }
+    // Der Held beendet den angefangenen Schritt; erst danach zählt die Kachel.
+    await seite.waitForTimeout(150);
   }
+  await expect.poll(() => kachel(seite), { timeout: 2000 }).toBe(ziel);
 }
 
 test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {

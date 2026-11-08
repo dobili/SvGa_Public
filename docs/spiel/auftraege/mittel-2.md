@@ -1,34 +1,37 @@
-# Auftrag mittel-2: Dialoge und Quests für Weg 7, Summit City, Weg 8, Crossroads, Weg 9, Pinewood Camp
+# Auftrag mittel-2: Die Hochebene mit den Vell-Familien
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der vierzehnte Auftrag ist zusammengeführt, danke; mittel-1 fragt Hales Seite jetzt als Besitz ab (`hatHalesSeite`). Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, fünfzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** die Ink-Dateien dieser Orte (neu), `desert-springs-aussen.ink` (nur `highway`),
-`quests.json`, `runden.json`, `begegnungen.json` (nur neue Einträge dieser Orte), `funde.json`,
-`laeden.json`, `texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/mittel-2.md`
+**Darf ändern:** `inhalte/abenteuer/orte.json` (nur der Ort `hochebene`: Figuren und Auslöser),
+`hochebene.ink`, `quests.json`, `funde.json`, `texte/de.json` (nur neue Schlüssel),
+`app/skripte/erzeuge-figurenbilder.mjs` und `inhalte/abenteuer/portraets/` (nur neue Bilder),
+`docs/spiel/05_Story_Bibel.md` (Szene 82), `docs/spiel/auftraege/mittel-2.md`
 **Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
 
 ## Ziel
 
-Wie bei Akt 3: Dialoge, Quests, Runden, Funde und Läden nach der Story-Bibel Teil 4 für
-`wegDesertSummit`, `summitCity`, `wegSummitCrossroads`, `crossroads`, `wegCrossroadsPinewood`,
-`pinewoodCamp`. Knotenliste im Bericht des siebzehnten Auftrags in `mittel-1.md`. mittel-1 schreibt
-parallel Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou. Neue Einträge in gemeinsamen Dateien
-bitte in einem eigenen Block; der Haupt-Chat führt zusammen.
+Der Autor hat Q21-1 mit „Empfehlung folgen“ beantwortet: Die Hochebene zeigt die erfundenen
+Vell-Familien, kurz und respektvoll, mit heutigen Figuren und ihrem eigenen Spiel (Variante
+„Falke und Bison“, L9; die Technik dafür fehlt noch, die Partie bitte wie die anderen Varianten
+vorerst erklären und vertrösten). Vor der Veröffentlichung liest jemand aus einer indigenen
+Gemeinschaft gegen; schreib deshalb so, dass die Gegenlesung wenig ändern muss.
 
-Neue Technik, die ihr in Akt 4 nutzen könnt (Haupt-Chat, 8.11.2026, Einzelheiten in
-`docs/spiel/ENTSCHEIDUNGEN.md`): Ink-Funktion `zeigeAbspann()` (Abspann nach dem Dialog);
-Begegnungsfelder `freieKarten` (Halbfinale: `["mentorzug"]`, setzt `mentorzugFreiGespielt`),
-`abgelenktAb {halbzug, faktor}` (Stärkewechsel, Halbfinale) und `variante: "blind"` (Blindschach);
-Runden mit `erinnerung` (Zugerraten einer Klassikerpartie) und den Themen `falle`, `struktur`,
-`endspiel`; Siegzähler `siege<Begegnung>`; Turnierrunden ohne neue Technik als Begegnungen mit
-Punkten in Ink (`ausgang<Begegnung>`).
+## Vorgaben
 
-Varianten an euren Orten: nur Blindschach ist gebaut; für andere Varianten (Varianten-Tisch in
-Crossroads, Räuberschach, Tandem) die Dialoge so schreiben, dass sie vorerst eine klassische Partie
-oder einen Hinweis „kommt bald“ anbieten, und im Bericht auflisten.
+1. Keine realen Stämme, Orte, Zeremonien oder Symbole; keine Klischees (Federn, Tipis, „weise
+   Alte“, Naturmystik); die Figuren sind Menschen von heute mit Berufen, Humor und eigenen Ansichten
+   über Schach und den Konzern.
+2. Figuren in `orte.json` (Ort `hochebene`), Porträts per Skript, Dialoge, eine kleine Quest und
+   ein Fund; ihre Szene in der Bibel aktualisieren.
+3. Im Bericht: die Stellen, die die Gegenlesung besonders ansehen sollte, und die Objekte, die
+   niedrig-1 auf der Karte der Hochebene ergänzen muss.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig** auf `abenteuer-regelwerk` (Basis 40b183ac hereingeholt). Prüfungen: `pytest pipeline/tests`
 470 bestanden, `npm run pruefen` 362 Dateien und 2422 Tests, Paketbau kompiliert alle Ink-Dateien,

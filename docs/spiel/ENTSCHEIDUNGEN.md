@@ -598,6 +598,14 @@ Partie trägt `einstellung.abenteuer.variante`, der Rahmen der App bekommt `rahm
 Figuren des Bretts sind unsichtbar (die Zugliste bleibt). Varianten zählen nie für App, Wertung
 oder Nadeln (`zaehltFuerApp` false). Schach960 und die Varianten mit Fairy-Stockfish folgen.
 
+**Antworten des Autors zu Akt 4 (Q21, 8.11.2026, 21:50):** alle Empfehlungen angenommen. Q21-1:
+Die Hochebene zeigt die erfundenen „Vell-Familien“ als kurze, respektvolle Begegnung mit heutigen
+Figuren und eigenem Spiel; **vor der Veröffentlichung liest jemand aus einer indigenen Gemeinschaft
+gegen** (Sensibilitätslesung, Auftrag nach außen, gehört zur Freigabe). Q21-2 Halbfinale mit
+Stärkewechsel (gebaut: `abgelenktAb`), Q21-3 ein Vertriebschef geht, Hale bleibt einsichtig, Q21-4
+gleich gutes Ende bei jedem Ausgang des Finales, Q21-5 endgültiger Abschied mit Extra-Abspann
+(gebaut), Q21-6 zuerst drei Landschaften mit Varianten (L1, L2, L8; Blindschach gebaut).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

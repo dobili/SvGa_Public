@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Gesamtsimulation dauerhaft ablegen
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, zwanzigster Auftrag)
+**Stand:** fertig, zusammengeführt (Haupt-Chat, 08.11.2026, zwanzigster Auftrag; Ausnahmeliste geleert, weil niedrig-1 die fünf Figuren gesetzt hat)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `pipeline/abenteuer/gesamtsimulation.cjs` (neu), `pipeline/tests/test_abenteuer_simulation.py`

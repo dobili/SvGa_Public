@@ -23,16 +23,9 @@ INKJS = HAUPTORDNER / "app" / "node_modules" / "inkjs"
 STARTWERT = 1
 ZEITBUDGET_SEKUNDEN = 240
 
-# Bekannte Befunde: Diese Figuren stehen noch auf keiner gezeichneten Karte; niedrig-1 setzt sie
-# gerade (Auftrag vom 08.11.2026). Sobald eine Figur auf ihrer Karte steht, schlägt der Test fehl
-# und der Eintrag muss hier weg; ist die Liste leer, die Ausnahme ganz entfernen.
-BEKANNT_OHNE_KARTE = {
-    "mapleFalls.juno",
-    "mapleFalls.abernathy",
-    "mapleFalls.lily",
-    "pinewoodCamp.lou",
-    "pinewoodCamp.tamsin",
-}
+# Bekannte Figuren ohne Platz auf einer Karte (seit 08.11.2026 keine mehr). Steht eine später auf
+# ihrer Karte, schlägt der Test fehl und der Eintrag muss hier weg.
+BEKANNT_OHNE_KARTE: set[str] = set()
 
 
 def _lauf() -> subprocess.CompletedProcess[str]:

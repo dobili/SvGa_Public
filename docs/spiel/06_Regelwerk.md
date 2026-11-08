@@ -37,16 +37,17 @@ Ergebnis ist ein `Gerechnetestaerke` (zielElo = Z, stufenJePhase, haeufigkeit = 
 ### R2 Aktuelle Wertung A
 
 - A ist die **Abenteuerwertung** im Spielstand, nicht direkt die Wertung der App. Grund: Story-Partien zählen nicht für die Elo-Wertung der App (Entscheidung A2). Ein Kind, das nur das Abenteuer spielt, hätte sonst eine Wertung, die nie steigt, und die Straßengegner würden nie stärker.
-- Start: A = Wertung der App (klassische Zeitklasse, `Appdienste`), wenn vorhanden; sonst **600** (Startwert). Die erste Partie mit Schätzung (`Partieergebnis.geschaetzteStaerke`) ersetzt den Startwert, wenn der Leser keine App-Wertung hatte.
-- Nach jeder gewerteten Partie der App: A += Änderung der App-Wertung seit dem letzten Lesen.
+- Start: A = Wertung der App (klassische Zeitklasse, `Appdienste`), wenn vorhanden; sonst **600** (`A_START`). Offen: Die Schätzung aus den Zügen (`Partieergebnis.geschaetzteStaerke`) liefert die App noch nicht; sobald sie da ist, ersetzt die erste Schätzung den Startwert 600.
+- Nach jeder gewerteten Partie der App: A += Änderung der App-Wertung seit dem letzten Lesen (`mitAppWertung`, beim Aufbau der Oberwelt). Liest das Spiel zum ersten Mal eine App-Wertung und hat noch keine Story-Partie für A gezählt, übernimmt A sie ganz (ersetzt den Startwert).
 - Nach jeder Story-Partie, die R38 als „zählt für A“ einstuft: A += K · (S − W), mit S = 1 / 0,5 / 0 für Sieg / Remis / Niederlage, W = 1 / (1 + 10^((Z − A) / 400)), K = 32 in den ersten 10 solchen Partien, danach 20 (wie `spiel/wertung.ts`). Z ist die Zielstärke **vor** dem Zustandsfaktor.
-- A ist nie kleiner als 100.
-- Vertrag: braucht zwei Felder im Spielstand (siehe Bericht, Vorschlag V1).
+- A ist nie kleiner als 100 (`A_MIN`).
+- Umsetzung (Schritt 8h, `regeln/wertung.ts`): Felder im Spielstand `wertung` (A), `appWertungZuletzt` (zuletzt gelesene App-Wertung, null ohne), `wertungPartien` (für A gezählte Story-Partien, steuert K) und `laufendeWertung` (Zielstärke Z vor dem Zustandsfaktor, ob die Partie nach R38 zählt, sichtbarer Zustand; beim Start gesetzt, beim Rückweg gelesen). Straße, Clubmitglieder und Aufgabenrunden rechnen mit A; das Tagebuch zeigt A als „Deine Spielstärke im Abenteuer“.
 
 ### R3 Eingangswertung E
 
 - Hat die App beim Start mindestens 10 gewertete Partien, ist E = A beim Start und sofort fest (`eingangPartien` = 10).
 - Sonst gilt E = A, bis `eingangPartien` 10 erreicht; gezählt werden gewertete Partien der App und Story-Partien, die für A zählen (R38). Danach ist E fest (Entscheidung A6, Ergänzung des Autors).
+- Umsetzung (Schritt 8h): Nach jeder Story-Partie, die für A zählt, folgt E dem neuen A und `eingangPartien` steigt um 1 (`nachStoryPartie`). Bekannte Abweichung: Gewertete Partien der App zählen noch nicht für `eingangPartien`, und eine Änderung der App-Wertung verschiebt A, aber nicht das noch laufende E.
 - Clubchefs, die vor dem Einfrieren gespielt werden, rechnen mit dem vorläufigen E. Eine schon gewonnene Clubnadel bleibt, auch wenn E später steigt.
 
 ### R4 Zielstärke je Rolle
@@ -59,7 +60,7 @@ Ergebnis ist ein `Gerechnetestaerke` (zielElo = Z, stufenJePhase, haeufigkeit = 
 | `story`               | E oder fest | frei, Begründung in der Story-Bibel | Victor am Anfang: E + 500  |
 | `turnier`             | E           | nach Liga (R22)                     | Silber-Liga: 1450 bis 1600 |
 
-Die Versatzbereiche sind Prüfregeln: Ein Test der Pipeline (`test_abenteuer.py`) meldet Profile außerhalb. Der Clubchef-Versatz folgt aus der Clubnummer in `orte.json` (Coach Delgado, Club 1: 220 ✓).
+Die Versatzbereiche sind Prüfregeln: Der Test `test_abenteuer.py` meldet Profile außerhalb (Schritt 8h, Vorschlag V9). Der Clubchef-Versatz folgt aus der Clubnummer in `orte.json` (Coach Delgado, Club 1: 220 ✓).
 
 ### R5 Bezugspunkt für Akt und Durchlauf
 
@@ -73,7 +74,7 @@ Die Versatzbereiche sind Prüfregeln: Ein Test der Pipeline (`test_abenteuer.py`
 - h₀ = 1,4^(−d / 150). Also: 150 unter dem Eichpunkt h₀ = 1,4 (mehr Fehler), auf dem Eichpunkt 1,0, 150 darüber etwa 0,71 (weniger Fehler).
 - Startwerte: Eichpunkt 300 · s, bis die gemessenen Stärken aus `engine/botstaerke-daten.ts` übernommen werden; Basis 1,4 je 150 Elo. Beides wird mit einem Test gegen die gemessenen Bot-Stärken geeicht.
 
-Abweichung von `04_Architektur.md`, Abschnitt 4 (dort „Stufe aufgerundet, Häufigkeit linear 1,4 am unteren bis 0,7 am oberen Rand“): Wenn Stufe s auf 300 · s geeicht ist, müsste am oberen Rand h = 1 stehen, nicht 0,7, sonst spielt der Gegner dort stärker als sein Ziel. Mit dem Runden auf die nächste Stufe liegt der Eichpunkt in der Mitte, und 1,4 und 0,7 bleiben die Ränder. Vorschlag V2 im Bericht.
+Umgesetzt in `regeln/gegnerstaerke.ts` (Schritt 8h, Vorschlag V2); `04_Architektur.md`, Abschnitt 4 ist angepasst. Ohne jede Wertung rechnet die Umrechnung mit 600 (`WERTUNG_OHNE`).
 
 Beispiele ohne Zustand (Stufe s, Häufigkeit h):
 
@@ -93,27 +94,28 @@ Mit Zustand „abgelenkt“ 1,4: Clubchef 1 bei E = 800 → h = 0,76 · 1,4 = 1,
 ### R7 Phasen und Grenzen
 
 - Stufe je Phase = s + `phasenversatz[phase]` (fehlend 0), begrenzt auf 1 bis 10. Beispiel Coach Delgado (Endspiel −1) bei Z = 1020: Eröffnung 3, Mittelspiel 3, Endspiel 2.
-- h wird nach dem Zustandsfaktor auf 0,5 bis 2,5 begrenzt (Startwerte). Grund: Unter 0,5 und über 2,5 sind die Fehler der Engine nicht mehr menschlich glaubhaft.
+- Der Zustandsfaktor (abgelenkt · überheblich) ist höchstens 2,0; h wird danach auf 0,5 bis 2,5 begrenzt (Startwerte, `gegnerstaerke.ts`). Grund: Unter 0,5 und über 2,5 sind die Fehler der Engine nicht mehr menschlich glaubhaft.
 
 ### R8 Zustand „abgelenkt“
 
 - Setzt eine Begegnungs-Quest über `setzeZustand(gegner, faktor, grund)`; erlaubte Faktoren 1,3, 1,4, 1,5 (Entsprechung grob 100 bis 200 Elo, `04_Architektur.md`).
-- Sichtbar: Der Dialog vor der Partie nennt den Grund (Textschlüssel `zustand.*`), am Brett steht ein Symbol neben dem Gegnernamen.
+- Sichtbar: Der Dialog vor der Partie nennt den Grund, und die Kartenleiste unter dem Brett zeigt eine Zeile aus Name und Grund („Mrs. Okafor hat schlecht geschlafen.“, Textschlüssel `zustand.*`). Ist ein Gegner abgelenkt und überheblich zugleich, nennt die Zeile nur „abgelenkt“; beide Faktoren wirken trotzdem.
 - Gilt für die nächste Begegnung mit diesem Gegner einschließlich ihres Wiedereinstiegs; danach wird `Figurenstand.abgelenkt` auf null gesetzt („Revanche, wenn ich ausgeschlafen bin!“).
 - Nicht für Story-Partien mit festem Verlauf (R33).
 
 ### R9 Zustand „überheblich“ nach Niederlagen
 
 - Faktor ü = 1 + 0,15 · n, höchstens 1,6. n = Zahl der verlorenen ganzen Partien gegen diesen Gegner seit dem letzten Sieg oder Remis (aus dem Partieprotokoll gezählt, Ausgang `niederlage`, Format `partie`). Ein verlorener Wiedereinstieg zählt nicht extra; abgebrochene Partien zählen nicht.
+- Umsetzung (Schritt 8h, Vorschlag V8): eigenes Feld `Gegnerzustand.ueberheblich`, berechnet von `ueberheblichkeit` in `oberwelt/auftraege.ts`. Bekannte Abweichung: Der Code prüft das Format nicht; auch verlorene Stellungsduelle gegen Clubmitglieder zählen als Niederlage.
 - Gilt für Rollen `clubchef`, `clubmitglied` und `turnier`; nicht für `strasse` (dort ohnehin unter A) und nicht für `story`.
-- Sichtbar vor der Partie: Zeile des Gegners („Na, schon wieder da?“) und Symbol am Brett (Textschlüssel `zustand.ueberheblich`).
+- Sichtbar vor der Partie: Zeile des Gegners im Dialog („Na, schon wieder da?“) und die Zeile in der Kartenleiste unter dem Brett („Coach Delgado ist überheblich geworden.“, Textschlüssel `zustand.ueberheblich`).
 - Zustandsfaktor gesamt f = abgelenkt · ü, höchstens 2,0 (Startwert), dann R7.
 - Beispiel: Coach Delgado, E = 800, zwei Niederlagen → ü = 1,30; h = 0,76 · 1,30 = 0,99.
 
 ### R10 Post-Game
 
-- Im zweiten Durchlauf (`handlung.durchlauf` ≥ 2) bekommt jeder Gegner +300 auf Z, auch Straße und Clubmitglieder. Zustände und Grenzen gelten weiter.
-- Clubnadeln des zweiten Durchlaufs werden getrennt geführt (Vorschlag V5).
+- Im zweiten Durchlauf (`handlung.durchlauf` ≥ 2) bekommt jeder Gegner +300 auf Z, auch Straße und Clubmitglieder (`POST_GAME_AUFSCHLAG`, umgesetzt). Zustände und Grenzen gelten weiter.
+- Clubnadeln des zweiten Durchlaufs werden getrennt geführt (Vorschlag V5, offen bis Staffel 2). Freie Karten im Halbfinale (R29, Vorschlag V6) bleiben offen bis Akt 3.
 
 ### R11 Zustand „analysiert“
 
@@ -436,7 +438,7 @@ Eine Story-Partie zählt für A (R2) und für `eingangPartien` (R3), wenn alle g
 | Post-Game (zweiter Durchlauf, Weltmeisterschaft)               | 5–10     |
 
 - Grundlage: Dokument 02, 2.1 (18 Stunden Hauptspiel) und `04_Architektur.md`, Abschnitt 5 (Clubbesuch 60 bis 90 Minuten ohne Wiederholungen).
-- Nachmessen: `spielzeitSekunden` reicht für die Summe; für die Tabelle braucht es die Spielzeit je Ort (Vorschlag V7). Liegt ein Testlauf des Autors um mehr als ein Drittel daneben, werden zuerst R30 (Aufgabenzahl) und R13 (Zugzahl der Duelle) angepasst, nicht die Stärke.
+- Nachmessen: `spielzeitSekunden` gibt die Summe, `spielzeitJeOrt` die Spielzeit je Ort (Vorschlag V7, umgesetzt; beim Verlassen der Welt fortgeschrieben). Liegt ein Testlauf des Autors um mehr als ein Drittel daneben, werden zuerst R30 (Aufgabenzahl) und R13 (Zugzahl der Duelle) angepasst, nicht die Stärke.
 
 ## 9. Welt
 
@@ -446,6 +448,77 @@ Eine Story-Partie zählt für A (R2) und für `eingangPartien` (R3), wenn alle g
 - Zwischen Orten reist der Held über einen Dialog: Die Ink-Szene ruft die externe Funktion `reise(karte, ausloeser)` auf, zum Beispiel an der Bushaltestelle im Park von Maple Falls `reise("cedarCreek.aussen", "bushaltestelle")` und in Cedar Creek am Auslöser `busZurueck` zurück zum Park. So kann die Geschichte die Reise erlauben oder verweigern („Heute fährt er ohne dich“).
 - Auslöser dürfen das Feld `karte` tragen, wenn derselbe Name auf mehreren Karten eines Ortes vorkommt oder ein Rückweg eindeutig sein muss; getrennte Namen je Seite (`bibliothekTuer` / `bibliothekAusgang`) gehen weiter.
 - Ein Pipeline-Test prüft, dass jedes `reise`-Ziel als Karte und Auslöser existiert.
+
+### R42 Dialogvariablen
+
+Ink-Variablen, die über Szenen hinweg gelten, liegen in `Abenteuerstand.dialogvariablen`. Jede Datei deklariert die Variablen, die sie liest, mit demselben Startwert (`VAR`); keine Variable hat in zwei Dateien verschiedene Startwerte.
+
+- **Von der Hülle gesetzt** (`regeln/dialogvariablen.ts`), nie von einer Ink-Datei:
+  - `ausgang<Ort><Begegnung>`: Kennung der Begegnung ohne Punkt, Teile mit großem Anfangsbuchstaben (`mapleFalls.clubkampf` → `ausgangMapleFallsClubkampf`); Text `""` (nicht gespielt), `sieg`, `remis`, `niederlage`, `abgebrochen`. Die Dialoge behandeln `abgebrochen` wie nicht gespielt (R35); für die Quests zählt ein Abbruch als Niederlage.
+  - `<runde>Bestanden`: letzter Teil der Rundenkennung (`mapleFalls.reiheSam` → `reiheSamBestanden`), `true` nach Bestehen; nicht bestanden ändert nichts.
+  - `nadel<Ort>` (`nadelMapleFalls`): beste Clubnadel, 0 keine, 1 Bronze, 2 Silber, 3 Gold.
+  - `held`: Name des Helden aus dem Spielstand, nur gelesen.
+- **Von Ink gesetzt:** Merker der Szenen (`…Gesehen`, `…Getroffen`), Zähler wie `ambroseVertrauen`, und die Nachgespräch-Marken `clubkampfBesprochen` (zuletzt gewürdigte Nadel).
+- Die Hülle öffnet nach einer Partie oder Runde keinen Dialog von selbst; das Nachgespräch kommt beim nächsten Ansprechen der Figur.
+
+Verzeichnis (Stand Akt 1, aus dem Bericht von mittel-1 vom 08.11.2026; MF = `maple-falls-`, CC = `cedar-creek-`):
+
+| Variable                        | Typ, Start             | Setzt                                           | Liest                                                                                  | Bedeutung                                                                                                      |
+| ------------------------------- | ---------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `ausgangCedarCreekClubkampf`    | Text, `""`             | Hülle                                           | CC-bibliothek                                                                          | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangCedarCreekRosaDuell`    | Text, `""`             | Hülle                                           | CC-aussen                                                                              | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangMapleFallsClubkampf`    | Text, `""`             | Hülle                                           | MF-clubraum                                                                            | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangMapleFallsErsteLektion` | Text, `""`             | Hülle                                           | MF-aussen, MF-dachboden, MF-wohnzimmer                                                 | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangMapleFallsSamRevanche`  | Text, `""`             | Hülle                                           | MF-clubraum                                                                            | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangMapleFallsSkaterJo`     | Text, `""`             | Hülle                                           | MF-park                                                                                | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `ausgangMapleFallsVictor`       | Text, `""`             | Hülle                                           | MF-clubraum                                                                            | Ausgang der Begegnung: "" nicht gespielt, sieg, remis, niederlage, abgebrochen (zählt wie nicht gespielt, R35) |
+| `erinnerungNewYorkBestanden`    | Wahrheitswert, `false` | Hülle                                           | CC-archiv                                                                              | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `nadelCedarCreek`               | Zahl, `0`              | Hülle                                           | CC-archiv, CC-aussen, CC-bibliothek                                                    | beste Clubnadel: 0 keine, 1 Bronze, 2 Silber, 3 Gold                                                           |
+| `nadelMapleFalls`               | Zahl, `0`              | Hülle                                           | MF-aussen, MF-clubraum, MF-dachboden, MF-wohnzimmer                                    | beste Clubnadel: 0 keine, 1 Bronze, 2 Silber, 3 Gold                                                           |
+| `parkbankRaetselBestanden`      | Wahrheitswert, `false` | Hülle                                           | MF-park                                                                                | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `reiheDexBestanden`             | Wahrheitswert, `false` | Hülle                                           | CC-bibliothek                                                                          | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `reiheJunoBestanden`            | Wahrheitswert, `false` | Hülle                                           | MF-clubraum, MF-dachboden                                                              | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `reiheMaeBestanden`             | Wahrheitswert, `false` | Hülle                                           | CC-bibliothek                                                                          | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `reiheSamBestanden`             | Wahrheitswert, `false` | Hülle                                           | MF-clubraum, MF-dachboden                                                              | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `springerLilyBestanden`         | Wahrheitswert, `false` | Hülle                                           | MF-aussen                                                                              | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `todsuendenBestanden`           | Wahrheitswert, `false` | Hülle                                           | MF-clubraum                                                                            | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `trocknerStellungBestanden`     | Wahrheitswert, `false` | Hülle                                           | CC-waschsalon                                                                          | Runde bestanden (nicht bestanden ändert nichts)                                                                |
+| `abernathyBrief`                | Wahrheitswert, `false` | MF-park                                         | MF-park                                                                                | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `abernathyGetroffen`            | Wahrheitswert, `false` | MF-park                                         | MF-park                                                                                | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `ambroseVertrauen`              | Zahl, `0`              | CC-archiv, CC-aussen, MF-clubraum, MF-dachboden | CC-archiv, CC-aussen, MF-clubraum, MF-dachboden                                        | Zähler für Ambroses Vertrauen (für spätere Akte)                                                               |
+| `ankunftCedarCreekGesehen`      | Wahrheitswert, `false` | CC-aussen                                       | CC-aussen, MF-park                                                                     | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `ankunftGesehen`                | Wahrheitswert, `false` | MF-wohnzimmer                                   | MF-wohnzimmer                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `archivGeordnet`                | Wahrheitswert, `false` | CC-archiv                                       | CC-archiv, CC-bibliothek                                                               | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `aufbruchGesehen`               | Wahrheitswert, `false` | MF-wohnzimmer                                   | MF-park, MF-wohnzimmer                                                                 | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `boatengGetroffen`              | Wahrheitswert, `false` | CC-waschsalon                                   | CC-waschsalon                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `boatengLagos`                  | Wahrheitswert, `false` | CC-waschsalon                                   | CC-waschsalon                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `brettBeruehrt`                 | Wahrheitswert, `false` | MF-dachboden                                    | MF-dachboden, MF-wohnzimmer                                                            | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `clubBeigetreten`               | Wahrheitswert, `false` | MF-clubraum                                     | MF-aussen, MF-clubraum, MF-dachboden                                                   | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `clubkampfBesprochen`           | Zahl, `0`              | MF-clubraum                                     | MF-clubraum                                                                            | zuletzt gewürdigte Nadel in Maple Falls (Nachgespräch einmal je Verbesserung)                                  |
+| `clubkampfCedarCreekBesprochen` | Zahl, `0`              | CC-bibliothek                                   | CC-bibliothek                                                                          | dasselbe für Cedar Creek                                                                                       |
+| `dexGetroffen`                  | Wahrheitswert, `false` | CC-bibliothek                                   | CC-bibliothek                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `endeAkt1Gesehen`               | Wahrheitswert, `false` | CC-aussen                                       | CC-aussen, MF-dachboden                                                                | Ende von Akt 1 am Steg gesehen                                                                                 |
+| `ersteLektionBesprochen`        | Wahrheitswert, `false` | MF-dachboden                                    | MF-dachboden                                                                           | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `ersterAbendGesehen`            | Wahrheitswert, `false` | MF-wohnzimmer                                   | MF-wohnzimmer                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `erzaehlung1858Gesehen`         | Wahrheitswert, `false` | CC-archiv                                       | CC-archiv, CC-bibliothek                                                               | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `held`                          | Text, `"Du"`           | Hülle (Spielstand)                              | CC-archiv, CC-aussen, CC-bibliothek, MF-clubraum, MF-dachboden, MF-park, MF-wohnzimmer | Name des Helden (setzt die Hülle aus dem Spielstand, nur gelesen)                                              |
+| `joGetroffen`                   | Wahrheitswert, `false` | MF-park                                         | MF-park                                                                                | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `junoGetroffen`                 | Wahrheitswert, `false` | MF-aussen                                       | MF-aussen                                                                              | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `kenntHale`                     | Wahrheitswert, `false` | MF-clubraum                                     | CC-archiv, MF-clubraum, MF-dachboden, MF-wohnzimmer                                    | Victor-Szene gesehen, der Name Hale ist gefallen                                                               |
+| `lilyGeholfen`                  | Wahrheitswert, `false` | MF-aussen                                       | MF-aussen                                                                              | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `lilyGetroffen`                 | Wahrheitswert, `false` | MF-aussen                                       | MF-aussen                                                                              | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `maeEingeladen`                 | Wahrheitswert, `false` | CC-bibliothek                                   | CC-aussen, CC-bibliothek                                                               | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `maeGetroffen`                  | Wahrheitswert, `false` | CC-bibliothek                                   | CC-bibliothek                                                                          | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `okaforGetroffen`               | Wahrheitswert, `false` | CC-bibliothek                                   | CC-archiv, CC-bibliothek                                                               | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `parkbankBrettGefunden`         | Wahrheitswert, `false` | MF-park                                         | MF-park                                                                                | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `rosaGetroffen`                 | Wahrheitswert, `false` | CC-aussen                                       | CC-aussen                                                                              | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `samGetroffen`                  | Wahrheitswert, `false` | MF-clubraum                                     | MF-clubraum                                                                            | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `samKlagt`                      | Wahrheitswert, `false` | MF-clubraum                                     | MF-clubraum                                                                            | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `samVersoehnt`                  | Wahrheitswert, `false` | MF-clubraum                                     | MF-clubraum                                                                            | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `sternennachtGesehen`           | Wahrheitswert, `false` | CC-aussen                                       | CC-aussen, CC-bibliothek                                                               | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `victorCedarCreekGesehen`       | Wahrheitswert, `false` | CC-aussen                                       | CC-aussen                                                                              | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `victorGesehen`                 | Wahrheitswert, `false` | MF-clubraum                                     | MF-clubraum                                                                            | Merker der Szene (gesehen, getroffen, erledigt)                                                                |
+| `victorUeberrascht`             | Zahl, `0`              | MF-clubraum                                     | MF-clubraum                                                                            | 1, wenn Victors Trainingsstellung nicht verloren ging (R33)                                                    |
 
 ## 10. Offene Fragen an den Autor
 

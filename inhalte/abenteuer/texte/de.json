@@ -520,5 +520,17 @@
   "reisen.hinweis": "Bus und Bahn bringen dich in jede Stadt, die du schon kennst.",
   "reisen.keine": "Du kennst noch keine andere Stadt.",
   "reisen.zurueck": "Doch nicht",
-  "gegenstand.monatskarte.name": "Monatskarte"
+  "gegenstand.monatskarte.name": "Monatskarte",
+  "quest.turnierheft.titel": "Mamas Turnierheft",
+  "quest.turnierheft.schritt1": "Besuche Oma Ruth noch einmal.",
+  "gegenstand.notizbuch.name": "Mamas Turnierheft",
+  "tagebuch.notizbuch": "Mamas Turnierheft",
+  "tagebuch.notizbuchLeer": "Noch keine Partie eingetragen.",
+  "tagebuch.notizPartie": "Gegen {gegner}: {ausgang}",
+  "tagebuch.notizMoment": "Zug {zug}: {gespielt}{besser}",
+  "tagebuch.notizBesser": ", besser war {zug}",
+  "tagebuch.ausgang.sieg": "gewonnen",
+  "tagebuch.ausgang.niederlage": "verloren",
+  "tagebuch.ausgang.remis": "remis",
+  "tagebuch.ausgang.abgebrochen": "abgebrochen"
 }

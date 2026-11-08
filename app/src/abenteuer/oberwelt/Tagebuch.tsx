@@ -12,6 +12,7 @@ import type { Spieldaten } from "../daten/laden";
 import { naechsterSchritt } from "../regeln/quests";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
+import { notizen } from "./notizbuch";
 
 export function Tagebuch({
   stand,
@@ -109,9 +110,38 @@ export function Tagebuch({
           })}
         </ul>
       )}
+      {stand.gegenstaende.includes("notizbuch") && <Turnierheft stand={stand} daten={daten} />}
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}
       </button>
     </section>
+  );
+}
+
+/** Mamas Turnierheft (Szene 39a): die Momente der letzten Partien, wenn der Leser das Heft hat. */
+function Turnierheft({ stand, daten }: { stand: Abenteuerstand; daten: Spieldaten }) {
+  const eintraege = notizen(stand, daten.gegner);
+  return (
+    <>
+      <h3>{tSpiel("tagebuch.notizbuch")}</h3>
+      {eintraege.length === 0 ? (
+        <p>{tSpiel("tagebuch.notizbuchLeer")}</p>
+      ) : (
+        <ul data-testid="abenteuer-turnierheft">
+          {eintraege.map((n, i) => (
+            <li key={i}>
+              <strong>{n.titel}</strong>
+              {n.momente.length > 0 && (
+                <ul>
+                  {n.momente.map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }

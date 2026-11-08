@@ -893,6 +893,21 @@
       ]
     },
     {
+      "kennung": "ironwood.turnierheft",
+      "titel": "quest.turnierheft.titel",
+      "typ": "begegnung",
+      "ort": "ironwood",
+      "haupt": false,
+      "start": { "art": "dialog", "knoten": "ironwood-mamas-zimmer.oma_ruth_heft" },
+      "schritte": [
+        {
+          "text": "quest.turnierheft.schritt1",
+          "ereignis": { "art": "dialog", "knoten": "ironwood-mamas-zimmer.oma_ruth_heft" },
+          "wirkungen": [{ "art": "gegenstand", "gegenstand": "notizbuch" }]
+        }
+      ]
+    },
+    {
       "kennung": "riverton.lupe",
       "titel": "quest.lupe.titel",
       "typ": "begegnung",

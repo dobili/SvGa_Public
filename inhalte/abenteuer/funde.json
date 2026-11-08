@@ -13,6 +13,94 @@
       "name": "fund.muenzenFlussweg.name",
       "text": "fund.muenzenFlussweg.text",
       "muenzen": 15
+    },
+    {
+      "kennung": "pfeilspitze",
+      "ort": "wegCedarRiverton",
+      "name": "fund.pfeilspitze.name",
+      "text": "fund.pfeilspitze.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "fahrkarte1958",
+      "ort": "wegCedarRiverton",
+      "name": "fund.fahrkarte1958.name",
+      "text": "fund.fahrkarte1958.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "holzspringer",
+      "ort": "wegCedarRiverton",
+      "name": "fund.holzspringer.name",
+      "text": "fund.holzspringer.text",
+      "extra": "abenteuer:waldholz1"
+    },
+    {
+      "kennung": "pavillonspringer",
+      "ort": "riverton",
+      "name": "fund.pavillonspringer.name",
+      "text": "fund.pavillonspringer.text",
+      "extra": "abenteuer:rivertonPavillon"
+    },
+    {
+      "kennung": "zeitungsausschnitt",
+      "ort": "riverton",
+      "name": "fund.zeitungsausschnitt.name",
+      "text": "fund.zeitungsausschnitt.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "taubenfeder",
+      "ort": "riverton",
+      "name": "fund.taubenfeder.name",
+      "text": "fund.taubenfeder.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "holzlaeufer",
+      "ort": "riverton",
+      "name": "fund.holzlaeufer.name",
+      "text": "fund.holzlaeufer.text",
+      "extra": "abenteuer:waldholz2"
+    },
+    {
+      "kennung": "zahnrad",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.zahnrad.name",
+      "text": "fund.zahnrad.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "nietenkopf",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.nietenkopf.name",
+      "text": "fund.nietenkopf.text"
+    },
+    {
+      "kennung": "foto2001",
+      "ort": "ironwood",
+      "name": "fund.foto2001.name",
+      "text": "fund.foto2001.text"
+    },
+    {
+      "kennung": "umschlag",
+      "ort": "ironwood",
+      "name": "fund.umschlag.name",
+      "text": "fund.umschlag.text"
+    },
+    {
+      "kennung": "holzturm",
+      "ort": "ironwood",
+      "name": "fund.holzturm.name",
+      "text": "fund.holzturm.text",
+      "extra": "abenteuer:waldholz3"
+    },
+    {
+      "kennung": "glasfunke",
+      "ort": "ironwood",
+      "name": "fund.glasfunke.name",
+      "text": "fund.glasfunke.text",
+      "muenzen": 10
     }
   ]
 }

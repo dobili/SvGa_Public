@@ -28,8 +28,9 @@ Ironwood folgt in einem eigenen Auftrag.
    sie im passenden Knoten.
 3. **Externe Funktionen**, die es jetzt gibt: `gibKarte`, `setzeSzene`, `beginnePartie`,
    `beginneAufgaben`, `setzeZustand`, `schalteSteckbrief`, `reise`, `gibFund`, `oeffneLaden`.
-   Funde müssen in `funde.json` stehen (mittel-2 hat die Funde von Akt 2 angelegt? sonst im Bericht
-   nennen, der Haupt-Chat trägt sie ein), Läden in `laeden.json` (Riverton hat noch keinen; den
+   Die Funde von Akt 2 stehen in `funde.json` (Kennungen: pfeilspitze, fahrkarte1958,
+   holzspringer, pavillonspringer, zeitungsausschnitt, taubenfeder, holzlaeufer; für Ironwood
+   zahnrad, nietenkopf, foto2001, umschlag, holzturm, glasfunke), aufrufen mit `~ gibFund("…")`, Läden in `laeden.json` (Riverton hat noch keinen; den
    Zeitungsstand vorerst als Gespräch ohne `oeffneLaden`).
 4. **E4.1** `cedarCreek.partieformular`: Mr. Boateng entziffert das alte Partieformular aus Route 1
    (Voraussetzung: Fund `formular1857`), Belohnung ein Fragment; Knoten im Waschsalon oder Archiv.

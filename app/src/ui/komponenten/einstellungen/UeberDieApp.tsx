@@ -1,6 +1,6 @@
 /**
- * Seite „Über die App“: Version, Datenstand, Offline, Update, Fehler melden, Installation,
- * Lizenzen, Datenschutz, Impressum.
+ * Seite „Über die App“: Version, Datenstand, Offline, Update, Fehler melden, App weitergeben
+ * (seit 8.11.2026), Installation, Lizenzen, Datenschutz, Impressum.
  *
  * Rolle im Gesamtbild: Bis 0.3.31 eine Karte am Ende des Bildschirms „Einstellungen“, die unter
  * jedem Reiter erneut stand. Seit dem Entwurf K2 (Wahl des Autors, 31.10.2026) eine eigene Seite
@@ -21,6 +21,7 @@ import { t } from "../../../i18n/sprache";
 import { Blase, Infoknopf } from "../bausteine/Infoblase";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
 import { useDaten } from "../bausteine/useDaten";
+import { AppWeitergebenKnopf } from "../teilen/AppWeitergeben";
 import { Meldeformular } from "./Meldeformular";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
@@ -116,7 +117,7 @@ function useStandtexte() {
   return { offline, datenstand, offlineText, angaben };
 }
 
-/** Knöpfe: Update, Fehler melden, Installation (nur im Browser), Lizenzen. */
+/** Knöpfe: Update, Fehler melden, App weitergeben, Installation (nur im Browser), Lizenzen. */
 function Knoepfe({ angaben }: { angaben: string }) {
   const { navigiere } = useNavigation();
   const offline = useOfflineStand();
@@ -139,6 +140,7 @@ function Knoepfe({ angaben }: { angaben: string }) {
           </button>
         )}
         <FehlerMelden angaben={angaben} />
+        <AppWeitergebenKnopf />
         {!istInstalliert() && (
           <a className="knopf-zweit" href={INSTALLATIONSSEITE}>
             {t("ich.installationsseite")}

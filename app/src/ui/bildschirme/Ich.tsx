@@ -1,6 +1,6 @@
 /**
  * Bereich „Profil“ (intern „ich“): oben Name und Porträt des Lesers (ProfilKarte.tsx), dann der
- * Knopf zu den Einstellungen, darunter die Wertung des Lesers (wertung/Wertungskarte.tsx, seit dem Profil neu am 31.10.2026 mit
+ * Knopf zu den Einstellungen und „App weitergeben“ (teilen/AppWeitergeben.tsx), darunter die Wertung des Lesers (wertung/Wertungskarte.tsx, seit dem Profil neu am 31.10.2026 mit
  * drei Kacheln), sein
  * Fortschritt im Buch (Fortschrittsuebersicht.tsx), seine Orden und Abzeichen (erfolge/Erfolge.tsx) und seine gespielten Partien (Partienliste.tsx).
  *
@@ -18,6 +18,7 @@ import { Erfolge } from "../komponenten/erfolge/Erfolge";
 import { Fortschrittsuebersicht } from "../komponenten/fortschritt/Fortschrittsuebersicht";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
 import { Partienliste } from "../komponenten/partienliste/Partienliste";
+import { AppWeitergebenKnopf } from "../komponenten/teilen/AppWeitergeben";
 import { Profilkarten } from "../komponenten/profilkarten/Profilkarten";
 import { Wertungskarte } from "../komponenten/wertung/Wertungskarte";
 import { ProfilKarte } from "../profil/ProfilKarte";
@@ -45,6 +46,8 @@ export function Ich() {
         <Knopfsymbol art="einstellungen" />
         {t("ich.titel")}
       </button>
+      {/* Wunsch des Autors (8.11.2026): die App per Klick an Freunde weitergeben. */}
+      <AppWeitergebenKnopf klasse="profil-weitergeben" />
       <Wertungskarte punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
       {/* Profil neu (31.10.2026): Orden und Abzeichen mit Glanzstück und Regalen. */}

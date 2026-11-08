@@ -27,3 +27,49 @@
   min-height: auto;
   font-size: var(--groesse-fein);
 }
+
+/*
+ * „App weitergeben“ (Wunsch des Autors, 8.11.2026): großer QR-Code oben im Blatt, immer schwarz auf
+ * Weiß (auch im dunklen Schema, sonst lesen viele Scanner ihn nicht), darunter die Wege und die
+ * Adresse zum Abschreiben.
+ */
+.weitergeben {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+}
+
+.weitergeben-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--raster);
+  margin: 0;
+  text-align: center;
+}
+
+.qr-bild {
+  display: block;
+  width: min(72vw, 18rem);
+  height: auto;
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+
+.weitergeben-qr figcaption {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.weitergeben-adresse {
+  margin: 0;
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+  text-align: center;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+a.blattzeile {
+  text-decoration: none;
+}

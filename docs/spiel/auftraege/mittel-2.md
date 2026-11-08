@@ -1,7 +1,11 @@
-# Auftrag mittel-2: Story-Bibel Akt 3 (Silicon Bay, Port Delacroix, Desert Springs)
+# Auftrag mittel-2: kein Auftrag
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, siebter Auftrag; Grundlage sind die neuen Ideen des Autors
-in `docs/spiel/10_Sprueche_Schauplaetze_Varianten.md`)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der siebte Auftrag, Story-Bibel Akt 3, ist
+zusammengeführt, danke; Geburtsort und die Reste von Old Harbor in 09 sind nachgezogen. Bis der
+nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 3“ anhängen),
 `docs/spiel/09_Weltbeschreibung.md` (Abschnitte 5.6 bis 5.8 und die Karte in Abschnitt 1, soweit

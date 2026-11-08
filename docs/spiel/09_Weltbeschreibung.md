@@ -43,8 +43,8 @@ Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
   Bach.
 - **Akt 2 (Riverton, Ironwood): Herbst.** Laub auf den Wegen, Regen in Riverton, in Ironwood
   Rauch und erste Kälte; am Ende von Akt 2 der erste Schnee (Cliffhanger im Winterlicht).
-- **Akt 3 (Silicon Bay, Old Harbor, Desert Springs): Winter bis Frühjahr.** Silicon Bay kennt
-  keine Jahreszeit (Glas, Kunstlicht), Old Harbor Sturm und Gischt, Desert Springs die erste
+- **Akt 3 (Silicon Bay, Port Delacroix, Desert Springs): Winter bis Frühjahr.** Silicon Bay kennt
+  keine Jahreszeit (Glas, Kunstlicht), Port Delacroix den nassen Winter nach dem Hurrikan, Desert Springs die erste
   Wärme und blühende Kakteen.
 - **Akt 4 (Summit City, Crossroads, Pinewood, Ghost Town, Capital Arena): Sommer.** Camp und Berge
   in hellem Licht, Ghost Town in der Mittagshitze, das Finale an einem langen Sommerabend.
@@ -53,7 +53,7 @@ Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
   kann (Sternennacht in Cedar Creek, Nachtzug nach Riverton). Technisch eine Farbtönung über der
   Karte plus Lampen als Lichtkreise; keine Simulation der Uhrzeit.
 - **Wetter** nur, wo es erzählt: Regen in Riverton (Tropfen, nasse Straße), Rauch in Ironwood,
-  Nebel am Flussweg am Morgen, Sturm in Old Harbor. Einfache Partikel, kein Wettersystem.
+  Nebel am Flussweg am Morgen, Sturm und Regen in Port Delacroix. Einfache Partikel, kein Wettersystem.
 
 ## 3. Was eine Karte lebendig macht (Regeln für alle Karten)
 
@@ -86,7 +86,7 @@ Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
 - **Riverton:** Tauben im Park, Ratten an der Bahn (nur Geräusch und Huschen), Möwen am Fluss.
 - **Ironwood:** Krähen auf Stahlträgern, eine Werkskatze, Fledermäuse in der Dämmerung.
 - **Silicon Bay:** keine Tiere außer einer Drohne und einem Roboterstaubsauger (Absicht).
-- **Old Harbor:** Möwen, Krabben, ein Seehund am Kai, eine Hafenkatze.
+- **Port Delacroix:** Pelikane und Möwen am Kai, ein Reiher im Bauzaun, eine Katze auf dem Bootsdach.
 - **Desert Springs:** Eidechsen, ein Roadrunner, Geier als Kreise am Himmel.
 - **Summit City:** Murmeltiere, ein Adler, Ziegen am Hang.
 - **Routen:** je nach Landschaft Rehe am Waldrand (Morgen), Kühe, Hasen, Schmetterlinge.
@@ -101,21 +101,21 @@ Deshalb hat jede Karte neben den Handlungsfiguren **Statisten mit Tätigkeit** (
 ohne Spielwirkung, aber mit einem Satz, wenn man sie anspricht. Regel: Die Tätigkeit passt zum
 Ort, zur Tageszeit und zum Wirtschaftszweig des Ortes; nichts steht nur herum.
 
-| Ort            | Woher die Leute leben               | Was man sieht (Statisten, Tätigkeit)                                                                                                            | Tiere und ihr Verhalten                                                                                       |
-| -------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Maple Falls    | Schule, Diner, Ahornsirup, Pendler  | Briefträgerin auf Runde, Kind mit Ball vor der Schule, Mann harkt Laub, Kellnerin wischt Tische im Diner, Skater im Park, Rentner auf der Bank  | Eichhörnchen hortet Nüsse, Enten folgen, wer stehen bleibt, Katze schläft auf der Veranda, Krähen fliegen auf |
-| Route 1        | Felder, Hof, Angler                 | Bauer auf Traktor (fährt hin und her), Joggerin, Radfahrer überholt, Angler am Steg, Wanderer mit Karte                                         | Rehe am Waldrand (morgens), Kühe am Zaun, Reiher fliegt auf, Hase läuft weg                                   |
-| Cedar Creek    | Bibliothek, Waschsalon, Holz, Rente | Mr. Boateng faltet Wäsche, Leserin mit Bücherstapel, Kinder auf der Bibliothekstreppe, Mann repariert Steg, Busfahrer raucht an der Haltestelle | Hund wartet vor dem Waschsalon und wedelt, Reiher steht still, Motten um die Lampe, Eichelhäher ruft          |
-| Riverton       | Bahn, Hafen am Fluss, Markt         | Pendler mit Schirmen, Straßenmusiker unter der Brücke, Parkschachspieler mit Uhr (klopfen), Zeitungsverkäufer, Kinder springen in Pfützen       | Tauben picken und fliegen auf, Möwen streiten um Pommes, Ratten huschen an der Bahn                           |
-| Ironwood       | Stahlwerk, Kneipe, Reihenhäuser     | Schichtwechsel am Werkstor (Gruppen laufen), Frau trägt Kohle, Kinder spielen Straßenschach mit Kreide, Mann füttert Tauben, Kantinenkoch       | Werkskatze schläft am Ofen, Krähen auf Trägern, Fledermäuse abends                                            |
-| Silicon Bay    | Konzern, Cafés, Lieferdienste       | Alle schauen auf Bildschirme, Lieferroboter rollt, Wachmann, Besucher mit Namensschildern, niemand spielt am Brett                              | nur Drohne und Staubsaugerroboter (Absicht: die Stadt hat keine Tiere)                                        |
-| Old Harbor     | Fischerei, Fähre, Kneipe            | Fischer flicken Netze, Kistenträger, Kapitänin am Kai, Kinder angeln, Kellner stapelt Stühle gegen den Sturm                                    | Möwen klauen Fisch, Seehund taucht auf und ab, Krabben am Kai, Hafenkatze lauert                              |
-| Desert Springs | Motel, Diner, Tankstelle, Touristen | Tankwart, Motelputzfrau, Mira mit Schachbuch im Schatten, Touristen fotografieren, Mann wartet auf den Bus                                      | Eidechsen sonnen sich und huschen weg, Roadrunner rennt vorbei, Geier kreisen                                 |
-| Summit City    | Seilbahn, Hütten, Wanderer          | Wanderer mit Rucksack, Seilbahnwärter, Holzhacker, Ward mit Thermoskanne am Fenster                                                             | Murmeltier pfeift, Ziegen fressen, Adler zieht Kreise                                                         |
-| Crossroads     | Raststätte                          | Fernfahrer, Reisende aller Städte (Figuren aus früheren Orten tauchen wieder auf), Tankwart, Kellnerin                                          | streunender Hund, der den Helden ein Stück begleitet                                                          |
-| Pinewood Camp  | Camp, Betreuer                      | Kinder am See, Betreuer pfeift, Lagerfeuer am Abend, Kanus                                                                                      | Libellen, ein Reh am Seeufer, Frösche am Abend                                                                |
-| Ghost Town     | niemand                             | Wind, ein Plakat flattert, Staubteufel; ein alter Mann mit Metalldetektor als einzige Figur                                                     | Klapperschlange (Geräusch), Geier, eine Eule im Saloon                                                        |
-| Capital Arena  | Turnier                             | Zuschauer, Schiedsrichter, Reporter mit Mikrofon, Spieler mit Kopfhörern, Eltern mit Kaffee                                                     | keine, außer einem Hund im Publikum (Spielwitz)                                                               |
+| Ort            | Woher die Leute leben                      | Was man sieht (Statisten, Tätigkeit)                                                                                                            | Tiere und ihr Verhalten                                                                                       |
+| -------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Maple Falls    | Schule, Diner, Ahornsirup, Pendler         | Briefträgerin auf Runde, Kind mit Ball vor der Schule, Mann harkt Laub, Kellnerin wischt Tische im Diner, Skater im Park, Rentner auf der Bank  | Eichhörnchen hortet Nüsse, Enten folgen, wer stehen bleibt, Katze schläft auf der Veranda, Krähen fliegen auf |
+| Route 1        | Felder, Hof, Angler                        | Bauer auf Traktor (fährt hin und her), Joggerin, Radfahrer überholt, Angler am Steg, Wanderer mit Karte                                         | Rehe am Waldrand (morgens), Kühe am Zaun, Reiher fliegt auf, Hase läuft weg                                   |
+| Cedar Creek    | Bibliothek, Waschsalon, Holz, Rente        | Mr. Boateng faltet Wäsche, Leserin mit Bücherstapel, Kinder auf der Bibliothekstreppe, Mann repariert Steg, Busfahrer raucht an der Haltestelle | Hund wartet vor dem Waschsalon und wedelt, Reiher steht still, Motten um die Lampe, Eichelhäher ruft          |
+| Riverton       | Bahn, Hafen am Fluss, Markt                | Pendler mit Schirmen, Straßenmusiker unter der Brücke, Parkschachspieler mit Uhr (klopfen), Zeitungsverkäufer, Kinder springen in Pfützen       | Tauben picken und fliegen auf, Möwen streiten um Pommes, Ratten huschen an der Bahn                           |
+| Ironwood       | Stahlwerk, Kneipe, Reihenhäuser            | Schichtwechsel am Werkstor (Gruppen laufen), Frau trägt Kohle, Kinder spielen Straßenschach mit Kreide, Mann füttert Tauben, Kantinenkoch       | Werkskatze schläft am Ofen, Krähen auf Trägern, Fledermäuse abends                                            |
+| Silicon Bay    | Konzern, Cafés, Lieferdienste              | Alle schauen auf Bildschirme, Lieferroboter rollt, Wachmann, Besucher mit Namensschildern, niemand spielt am Brett                              | nur Drohne und Staubsaugerroboter (Absicht: die Stadt hat keine Tiere)                                        |
+| Port Delacroix | Fischerei, Klavierbau, Musik, Wiederaufbau | Handwerker auf Dächern, Helfer mit Sandsäcken, Mr. Batiste flickt Boote, ein Bläser auf einer Kiste, Kinder spielen Ball zwischen Zelten        | Pelikane tauchen nach Fisch, Möwen klauen, Reiher steht im Bauzaun, Katze schläft auf dem Bootsdach           |
+| Desert Springs | Motel, Diner, Tankstelle, Touristen        | Tankwart, Motelputzfrau, Mira mit Schachbuch im Schatten, Touristen fotografieren, Mann wartet auf den Bus                                      | Eidechsen sonnen sich und huschen weg, Roadrunner rennt vorbei, Geier kreisen                                 |
+| Summit City    | Seilbahn, Hütten, Wanderer                 | Wanderer mit Rucksack, Seilbahnwärter, Holzhacker, Ward mit Thermoskanne am Fenster                                                             | Murmeltier pfeift, Ziegen fressen, Adler zieht Kreise                                                         |
+| Crossroads     | Raststätte                                 | Fernfahrer, Reisende aller Städte (Figuren aus früheren Orten tauchen wieder auf), Tankwart, Kellnerin                                          | streunender Hund, der den Helden ein Stück begleitet                                                          |
+| Pinewood Camp  | Camp, Betreuer                             | Kinder am See, Betreuer pfeift, Lagerfeuer am Abend, Kanus                                                                                      | Libellen, ein Reh am Seeufer, Frösche am Abend                                                                |
+| Ghost Town     | niemand                                    | Wind, ein Plakat flattert, Staubteufel; ein alter Mann mit Metalldetektor als einzige Figur                                                     | Klapperschlange (Geräusch), Geier, eine Eule im Saloon                                                        |
+| Capital Arena  | Turnier                                    | Zuschauer, Schiedsrichter, Reporter mit Mikrofon, Spieler mit Kopfhörern, Eltern mit Kaffee                                                     | keine, außer einem Hund im Publikum (Spielwitz)                                                               |
 
 **Tagesrhythmus:** Dieselbe Karte zeigt zu anderer Tageszeit andere Statisten: morgens
 Briefträgerin und Schulkinder, mittags Handwerker und Kundschaft, abends Spaziergänger und

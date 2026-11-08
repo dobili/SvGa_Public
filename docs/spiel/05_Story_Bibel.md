@@ -28,7 +28,7 @@ Abschnitte, nie Seitenzahlen.
 
 | Jahr     | Ereignis                                                                                                                                                       |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1831     | Ambrose Whitlock wird in New Orleans geboren, Sohn eines Klavierbauers.                                                                                        |
+| 1831     | Ambrose Whitlock wird in Port Delacroix geboren, Sohn eines Klavierbauers.                                                                                     |
 | ab 1848  | Ambrose spielt in den Kaffeehäusern von New Orleans und wird dort der Beste nach dem jungen Paul Morphy (historische Figur, nur im Hintergrund).               |
 | 1857     | Ambrose reist nach New York zum Ersten Amerikanischen Schachkongress, als Zuschauer. Er sieht Morphy gegen Paulsen gewinnen (Erinnerung in Cedar Creek).       |
 | 1858     | Match in New Orleans gegen Josiah Hale, „den Ingenieur“, Brückenbauer aus dem Norden. Sieben Partien, Ambrose verliert 3 zu 4 mit einem tollkühnen Opfer.      |
@@ -80,7 +80,7 @@ herausfinden, was das eigene Schach ist. Das ist der Bogen über alle vier Akte.
 
 ### 2.2 Ambrose Whitlock, der Geist im Brett
 
-**Hintergrund.** Geboren 1831 in New Orleans, gestorben 1866 auf der Reise zu seinem Rivalen.
+**Hintergrund.** Geboren 1831 in Port Delacroix (Hafenstadt im Delta, eine Tagesreise flussab von New Orleans), gestorben 1866 auf der Reise zu seinem Rivalen.
 Ein Meister der romantischen Schachzeit, fiktiver Zeitgenosse von Paul Morphy (Dokument 02, 3.2),
 den er bewundert und nie geschlagen hat. Liebt mutige Opfer, schöne Angriffe und Ehre; findet
 vorsichtiges Schach langweilig. Hat 1858 das Match gegen Josiah Hale verloren, weil er im

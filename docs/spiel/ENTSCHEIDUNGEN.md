@@ -469,6 +469,14 @@ Ambroses Satz beim ersten Spruch, je zwei Konter für sieben Straßengegner; nur
 nie über Menschen. Vorschlag für Schritt 13: Feld `immunGegen` im Gegnerprofil (Rosa gegen alle
 Sprüche, Harlan nur gegen „Großes Maul“, bei ihm wirkt die Grübelfalle doppelt).
 
+**Story-Bibel Akt 3 zusammengeführt (mittel-2, Szenen 51 bis 80):** Silicon Bay (Dr. Lin),
+Port Delacroix (Miss Odile, Familie Whitlock-Duval mit Céleste, Tiefpunkt Szene 63, Wiederaufbau
+über drei Besuche, Flashback in der Klavierwerkstatt), Desert Springs mit Canyon (Mira); drei Wege,
+Sprüche mit Immunität, Szene 59 „Warum man im Club schweigt“, die übergreifenden Funde aus Akt 2
+aufgelöst, neu „Die fehlende Seite“ (Hales Notizbuch) für Akt 4. Nachgezogen: Ambrose ist in Port
+Delacroix geboren (eine Tagesreise flussab von New Orleans, wo er später spielte), Old Harbor ist
+in 09 überall ersetzt.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

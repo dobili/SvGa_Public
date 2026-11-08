@@ -265,3 +265,28 @@
 .abenteuer-deck button[aria-pressed="true"] {
   background: var(--gold);
 }
+
+/* Namenswahl (Startkarte und Spielmenü, Schritt 8g). */
+.abenteuer-namensfeld {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+.abenteuer-namensfeld input {
+  font: inherit;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--akzent);
+  border-radius: 0.5rem;
+  background: var(--flaeche);
+  color: inherit;
+}
+
+.abenteuer-neu-frage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}

@@ -68,6 +68,8 @@ export interface Appdienste {
   /** Spielstand lesen und als Ganzes schreiben (Feld `abenteuer` der Nutzerdaten). */
   readonly liesStand: () => Abenteuerstand | null;
   readonly schreibeStand: (stand: Abenteuerstand) => Promise<void>;
+  /** Löscht den Spielstand (neu beginnen); das Paket bleibt. */
+  readonly loescheStand: () => Promise<void>;
   /** Zustand des Zusatzpakets und Laden mit Fortschritt. */
   readonly paket: () => Paketzustand;
   readonly ladePaket: (fortschritt: (geladen: number, gesamt: number) => void) => Promise<void>;

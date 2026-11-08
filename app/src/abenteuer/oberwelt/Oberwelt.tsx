@@ -27,14 +27,9 @@ import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
-import { mitRundenergebnis, reiheBestanden, wertung as rundenwertung } from "../regeln/aufgaben";
-import {
-  variablenNachNadel,
-  variablenNachPartie,
-  variablenNachRunde,
-} from "../regeln/dialogvariablen";
-import { besteNadel, clubnadel, vorgabeFen } from "../regeln/karten";
+import { vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
+import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
@@ -103,13 +98,9 @@ export function Oberwelt() {
   // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
   const rundeInArbeit = useRef<string | null>(null);
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
-  const [rundenergebnis, setzeRundenergebnis] = useState<{
-    auftrag: Aufgabenauftrag;
-    punkte: number;
-    moeglich: number;
-    bestanden: boolean;
-    reiheGeschafft: boolean;
-  } | null>(null);
+  const [rundenergebnis, setzeRundenergebnis] = useState<
+    (Rundenrueckweg & { auftrag: Aufgabenauftrag }) | null
+  >(null);
   // Eine Aufgabenrunde, die in der App noch offen ist (ohne Ergebnis zurückgekommen).
   const [offeneRunde, setzeOffeneRunde] = useState<Aufgabenauftrag | null>(null);
   // Eine bestandene Runde, die als Quest-Ereignis noch auf die Welt wartet.
@@ -185,69 +176,25 @@ export function Oberwelt() {
     void dienste.liesErgebnis(kennung).then((e) => {
       const aktuell = standRef.current;
       if (!aktuell) return;
-      if (e) {
-        setzeErgebnis(e);
-        offenesErgebnis.current = e;
-        const begegnung = kennung.split("#")[0] ?? "";
-        void ladeSpieldaten().then((daten) => {
-          // Clubkampf: Der Gegner ist der Clubchef des Ortes → Clubnadel (Regelwerk R18 bis R21).
-          const b = daten.begegnungen.find((x) => x.kennung === begegnung);
-          const ort = daten.orte.find((o) => o.club?.chef === b?.gegner);
-          const nadel = ort ? clubnadel(e.ausgang, aktuell.partiekarten) : null;
-          const alt = ort ? aktuell.clubs.find((c) => c.kennung === ort.kennung) : undefined;
-          const clubs =
-            ort && nadel
-              ? [
-                  ...aktuell.clubs.filter((c) => c.kennung !== ort.kennung),
-                  {
-                    kennung: ort.kennung,
-                    nadel: besteNadel(alt?.nadel ?? null, nadel),
-                    aufgabenreihe: alt?.aufgabenreihe ?? false,
-                    versuche: (alt?.versuche ?? 0) + 1,
-                    steckbrief: alt?.steckbrief ?? [],
-                  },
-                ]
-              : aktuell.clubs;
-          setzeNeueNadel(nadel);
-          // Dialogvariablen für die Ink-Dateien: Ausgang der Begegnung, Nadel des Clubs.
-          const variablen = {
-            ...aktuell.dialogvariablen,
-            ...variablenNachPartie(begegnung, e.ausgang),
-            ...(ort
-              ? variablenNachNadel(
-                  ort.kennung,
-                  clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null,
-                )
-              : {}),
-          };
-          vorherigeKarten.current = aktuell.partiekarten;
-          if (wiedereinstiegMoeglich(e, begegnung, daten, aktuell)) {
-            setzeKipppunkt("suche");
-            void dienste
-              .sucheKipppunkt(kennung)
-              .then((k) => setzeKipppunkt(k))
-              .catch(() => setzeKipppunkt(null));
-          }
-          schreibe({
-            ...(standRef.current ?? aktuell),
-            clubs,
-            dialogvariablen: variablen,
-            laufendePartie: null,
-            partiekarten: null,
-            protokoll: [
-              ...aktuell.protokoll,
-              {
-                ergebnis: e,
-                ort: aktuell.position.karte.split(".")[0] ?? "",
-                gegner: b?.gegner ?? begegnung,
-                wiedereinstieg: aktuell.partiekarten?.wiedereinstieg ?? false,
-              },
-            ],
-          });
-        });
-      } else {
+      if (!e) {
         setzeOffenePartie(kennung);
+        return;
       }
+      setzeErgebnis(e);
+      offenesErgebnis.current = e;
+      void ladeSpieldaten().then((daten) => {
+        const r = standNachPartie(standRef.current ?? aktuell, e, daten);
+        setzeNeueNadel(r.nadel);
+        vorherigeKarten.current = aktuell.partiekarten;
+        if (wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell)) {
+          setzeKipppunkt("suche");
+          void dienste
+            .sucheKipppunkt(kennung)
+            .then((k) => setzeKipppunkt(k))
+            .catch(() => setzeKipppunkt(null));
+        }
+        schreibe(r.stand);
+      });
     });
     // Nur beim Aufbau; der Spielstand ändert sich danach nur noch durch diese Komponente.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -273,51 +220,11 @@ export function Oberwelt() {
           setzeOffeneRunde(auftrag);
           return;
         }
-        const w = rundenwertung(ergebnis);
-        const runden = mitRundenergebnis(aktuell.runden, auftrag, ergebnis);
-        const runde = daten.runden.find((r) => r.kennung === auftrag.runde);
-        const bloecke = daten.runden.filter((r) => r.ort === runde?.ort && r.reihe);
-        const ort = daten.orte.find((o) => o.kennung === runde?.ort);
-        const alt = ort ? aktuell.clubs.find((c) => c.kennung === ort.kennung) : undefined;
-        const reiheJetzt =
-          !!runde?.reihe &&
-          reiheBestanden(
-            runden,
-            bloecke.map((b) => b.kennung),
-          );
-        const clubs =
-          ort && reiheJetzt && !alt?.aufgabenreihe
-            ? [
-                ...aktuell.clubs.filter((c) => c.kennung !== ort.kennung),
-                {
-                  kennung: ort.kennung,
-                  nadel: alt?.nadel ?? null,
-                  aufgabenreihe: true,
-                  versuche: alt?.versuche ?? 0,
-                  steckbrief: alt?.steckbrief ?? [],
-                },
-              ]
-            : aktuell.clubs;
-        setzeRundenergebnis({
-          auftrag,
-          punkte: w.punkte,
-          moeglich: w.moeglich,
-          bestanden: w.bestanden,
-          reiheGeschafft: reiheJetzt && !alt?.aufgabenreihe,
-        });
-        if (w.bestanden) offeneRundenmeldung.current = auftrag.runde;
-        schreibe({
-          ...(standRef.current ?? aktuell),
-          runden,
-          clubs,
-          dialogvariablen: {
-            ...aktuell.dialogvariablen,
-            ...variablenNachRunde(auftrag.runde, w.bestanden),
-          },
-          laufendeAufgaben: null,
-          aufgabenergebnis: null,
-        });
-        if (w.bestanden && weltRef.current) meldeRunde(weltRef.current);
+        const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
+        setzeRundenergebnis({ auftrag, ...r });
+        if (r.bestanden) offeneRundenmeldung.current = auftrag.runde;
+        schreibe(r.stand);
+        if (r.bestanden && weltRef.current) meldeRunde(weltRef.current);
       },
     );
     // Nur beim Aufbau, wie der Rückweg der Partie.

@@ -140,6 +140,9 @@ export function useAppdienste(): Appdienste {
       schreibeStand: async (stand) => {
         await aendere((d) => ({ ...d, abenteuer: stand }));
       },
+      loescheStand: async () => {
+        await aendere((d) => ({ ...d, abenteuer: null }));
+      },
       paket: () => bekannterPaketzustand,
       ladePaket: async (fortschritt) => {
         await ladePaket(fortschritt);

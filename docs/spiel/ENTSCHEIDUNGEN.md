@@ -280,6 +280,14 @@ von mittel-2 hat mittel-1 begründet geändert (Verteilerknoten ohne Text meldet
 nach der Busfahrt startet kein Dialog von selbst). Später: `reise` mit Ankunftsknoten, Figuren mit
 Sichtbarkeitsbedingung in `orte.json` (Victor nur vor der Clubnadel).
 
+**Schritt 8g erledigt (Namenswahl, Spielmenü, Rückwege als Regeln):** Vor dem ersten Start fragt
+die Startkarte „Wie heißt du im Spiel?“ (höchstens 16 Zeichen, leer heißt „Du“, bleibt lokal); im
+Spielmenü lässt sich der Name ändern und das Spiel von vorn beginnen (Rückfrage, Spielstand weg,
+Paket bleibt). Die Rückwege aus Partie und Aufgabenrunde sind reine Funktionen
+(`regeln/rueckweg.ts`: Clubnadel und Versuch, Protokoll, Rundenstand, Aufgabenreihe,
+Dialogvariablen) mit Tests; `Oberwelt.tsx` ist von 978 auf 699 Zeilen geschrumpft, noch über der
+400-Zeilen-Regel; der nächste Schnitt (Dialog- und Kartenlogik in einen Hook) folgt mit 8h.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

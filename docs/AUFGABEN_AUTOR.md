@@ -74,6 +74,9 @@ Adresse mit „#abenteuer“ öffnen).
       „Zurück zur Stadt“; im Clubraum erscheint „Aufgaben bestanden: … Punkten“ (ab 70 Prozent) oder „Das reicht noch
       nicht“ mit „Noch eine Runde, eine Stufe leichter“. Im Tagebuch rückt die Quest „Das vierte Brett“ einen Schritt
       weiter. Die Runde steht auch in der App unter Trainer › Taktik als gespielte Runde.
+- [ ] N2615. Spielmenü (☰) › „Von vorn beginnen“ › „Ja, von vorn“: zurück auf die Startkarte, dort das Feld „Wie heißt du im
+      Spiel?“. Einen Namen eintippen (etwa „Kim“), „Spielen“: Ambrose spricht dich im Dialog mit diesem Namen an. Im
+      Spielmenü steht der Name im Feld; ändern und „Namen speichern“ wirkt sofort. Leer gelassen heißt der Held „Du“.
 
 ### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
 

@@ -18,8 +18,15 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByTestId("abenteuer-start")).toBeVisible();
   await page.getByTestId("abenteuer-laden").click();
   await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
+  // Namenswahl vor dem ersten Start (Schritt 8g); der Name steht später im Spielmenü.
+  await page.getByTestId("abenteuer-name").fill("Kim");
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
+  await page.getByTestId("abenteuer-menueknopf").click();
+  await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
+    "Kim",
+  );
+  await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
 

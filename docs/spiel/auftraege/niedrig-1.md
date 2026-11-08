@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Antworten der Gegner aus Akt 3 auf Sprüche
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, neunter Auftrag)
+**Stand:** fertig (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/niedrig-1.md`
@@ -215,3 +215,36 @@ ironwood-museum.json
 #       s      #
 ########m#######
 ```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Zehn neue Schlüssel in `inhalte/abenteuer/texte/de.json`
+(direkt nach `spruch.konter.slick.2`), Prüfung `test_abenteuer.py`: 11 bestanden.
+
+Straßengegner aus Akt 3 laut Story-Bibel (Abschnitt 18 und Welt in Akt 3):
+
+| Gegner                                    | Kennung (letzter Teil) | Quelle der Kennung                    |
+| ----------------------------------------- | ---------------------- | ------------------------------------- |
+| Dash, Lieferradfahrer, Silicon Bay        | `dash`                 | Bibel: `siliconBay.dash`              |
+| Mr. Batiste, Bootsflicker, Port Delacroix | `batiste`              | Bibel: `portDelacroix.batiste`        |
+| Buck, Tankwart, Desert Springs            | `buck`                 | Bibel: `desertSprings.buck`           |
+| Joggerin mit Smartwatch, Glasbrücke       | `joggerin`             | Vorschlag (Bibel nennt keine Kennung) |
+| Schiffskoch, Küstenfähre                  | `schiffskoch`          | Vorschlag (Bibel nennt keine Kennung) |
+
+Bei Batiste und Buck ist je eine Antwort wörtlich aus der Bibel übernommen („Junge Leute reden.
+Das Wasser hört nicht zu.“, „Na, jetzt willst du's aber wissen!“, „Hier draußen fährt keiner
+langsam …“), damit Steckbrief und Spiel übereinstimmen.
+
+Immunität (Vorschlag; „immun“ heißt: `spruch.immun`, Karte trotzdem verbraucht):
+
+- **Dash:** immun gegen `grossesMaul` (Bibel: spielt immer schnell, Tempo ist sein Alltag) und
+  gegen `ablenkung` (redet selbst ununterbrochen, Lärm stört ihn nicht); anfällig für
+  `gruebelfalle` (Bibel) und `schmeichelei` (fühlt sich gern bewundert).
+- **Mr. Batiste:** immun gegen `grossesMaul` und `gruebelfalle` (Bibel: gelassen, „das Wasser hört
+  nicht zu“) und gegen `ablenkung` (spielt nebenbei beim Bootflicken, Ablenkung ist sein
+  Normalzustand); anfällig nur für `schmeichelei` (ein Lob für seine Boote macht ihn redselig),
+  damit Vorbereitung sich bei ihm überhaupt lohnt.
+- **Buck:** gegen nichts immun (Bibel: „nicht immun“); passt zum lauten, herzlichen Tankwart, der
+  auf jeden Spruch einsteigt.
+- **Joggerin:** immun gegen `grossesMaul` (Stellungsduell 3 + 2, Tempo ist ihr Element); anfällig
+  für `gruebelfalle` und `ablenkung` (schaut ständig auf die Smartwatch).
+- **Schiffskoch:** immun gegen `ablenkung` (arbeitet in einer lauten Kombüse); anfällig für
+  `grossesMaul` (steht unter Zeitdruck, die Suppe muss raus) und `gruebelfalle`.

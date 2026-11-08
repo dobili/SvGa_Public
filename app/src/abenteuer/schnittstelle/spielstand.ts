@@ -147,6 +147,10 @@ export interface Abenteuerstand {
   readonly quests: readonly Queststand[];
   readonly figuren: readonly Figurenstand[];
   readonly karten: readonly Kartenbesitz[];
+  /** Gegenstände im Besitz (docs/spiel/08: fahrrad, taschenlampe, fahrkarte …). */
+  readonly gegenstaende: readonly string[];
+  /** Orte, die der Held schon betreten hat (W2: Schnellreise erst nach dem ersten Fußweg). */
+  readonly besuchteOrte: readonly string[];
   readonly fragmente: Fragmente;
   readonly protokoll: readonly Protokolleintrag[];
   /** Kennung der laufenden Begegnung, solange die Partie in der App offen ist; null sonst. */

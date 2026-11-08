@@ -77,6 +77,15 @@
       "buchuebungen": [],
       "themen": ["mattbilder"],
       "anzahl": 4
+    },
+    {
+      "kennung": "wegMapleCedar.tafel",
+      "ort": "wegMapleCedar",
+      "steller": "wegMapleCedar.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
     }
   ]
 }

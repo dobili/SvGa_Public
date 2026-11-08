@@ -1,6 +1,11 @@
 // Dialogvariablen aus Ergebnissen: Namen wie in den Ink-Dateien der Helfer.
 import { describe, expect, it } from "vitest";
-import { variablenNachNadel, variablenNachPartie, variablenNachRunde } from "./dialogvariablen";
+import {
+  variablenNachBesuch,
+  variablenNachNadel,
+  variablenNachPartie,
+  variablenNachRunde,
+} from "./dialogvariablen";
 
 describe("Dialogvariablen aus Ergebnissen", () => {
   it("bildet die Langform mit Ort aus der Kennung der Begegnung", () => {
@@ -15,6 +20,10 @@ describe("Dialogvariablen aus Ergebnissen", () => {
   it("merkt bestandene Runden unter dem Namen der Runde", () => {
     expect(variablenNachRunde("mapleFalls.reiheSam", true)).toEqual({ reiheSamBestanden: true });
     expect(variablenNachRunde("mapleFalls.reiheSam", false)).toEqual({});
+  });
+
+  it("merkt den ersten Besuch eines Ortes", () => {
+    expect(variablenNachBesuch("cedarCreek")).toEqual({ besuchtCedarCreek: true });
   });
 
   it("zählt die Nadel von 0 bis 3", () => {

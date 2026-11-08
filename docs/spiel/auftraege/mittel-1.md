@@ -22,18 +22,20 @@ zeichnet die Karten. Deine Knoten werden über Auslösernamen angesprochen, die 
 ## Vorgaben
 
 1. **Datei `weg-maple-cedar.ink`** mit den Einstiegen: `tafel` (Rätseltafel am Ortsausgang: ein
-   Satz, dann `~ beginneAufgaben("weg.mapleCedar.tafel")`), `wanderer` (Figur, drei Varianten je
+   Satz, dann `~ beginneAufgaben("wegMapleCedar.tafel")` (Runde steht schon in `runden.json`)), `wanderer` (Figur, drei Varianten je
    nach Besuch, eine Schachweisheit mit Abschnittsangabe aus Kapitel 1 bis 3, kein Zitat über einen
    Satz), `gegnerin` (Jos Freundin „Nia“, Skaterin, Straßengegnerin: Angebot einer Blitzpartie
-   3 + 2, `~ beginnePartie("weg.mapleCedar.nia")`, Knoten nach Sieg und Niederlage mit
-   `ausgangWegMapleCedarNia`), `fund_formular` (das alte Partieformular, E4: ein Satz von Ambrose,
+   3 + 2, `~ beginnePartie("wegMapleCedar.nia")`, Knoten nach Sieg und Niederlage mit
+   `ausgangWegMapleCedarNia`), `fund_formular` (Auslöser heißt `fundFormular`; das alte Partieformular, E4: ein Satz von Ambrose,
    `~ gibFund("formular1857")`), `rast` (Bank am Fluss: Ambrose erzählt zwei Sätze über Reisen
-   zu Fuß im 19. Jahrhundert, ohne Jahreszahl-Streit), `schild_cedar` (Ortsschild Cedar Creek).
+   zu Fuß im 19. Jahrhundert, ohne Jahreszahl-Streit), `schild_cedar` (Auslöser `schildCedar`, Ortsschild Cedar Creek), `fund_muenzen` (Auslöser
+   `fundMuenzen`: eine Kiste mit Münzen, `~ gibFund("muenzenFlussweg")`). Die Knoten heißen wie
+   in `orte.json` unter `dialog` eingetragen (`weg-maple-cedar.<knoten>`).
 2. **Externe Funktion `gibFund(kennung)`** darfst du benutzen, sie kommt mit Schritt 11
    (deklarieren mit `EXTERNAL gibFund(kennung)`; der Paketbau übersetzt das schon).
-3. **Gegnerin Nia** in `gegner.json` (Rolle `strasse`, A − 100, Angreiferin, schnell, Schwäche:
-   übersieht Rückzüge; Steckbrief zwei Zeilen) und Begegnung `weg.mapleCedar.nia` in
-   `begegnungen.json` (Stellungsduell nach C1 aus Kapitel 2 oder 3, Abbildung mit leichtem
+3. **Gegnerin Nia** steht vorläufig in `gegner.json` (`wegMapleCedar.nia`, Rolle `strasse`,
+   A − 100); passe Stil, Schwäche (übersieht Rückzüge) und zwei Steckbriefzeilen an. Begegnung
+   `wegMapleCedar.nia` in `begegnungen.json` (Stellungsduell nach C1 aus Kapitel 2 oder 3, Abbildung mit leichtem
    Vorteil für Weiß wählen und nennen; `uhr` darf noch fehlen, die Wahl der Zeitklasse kommt mit
    Schritt 13).
 4. **Laden in Maple Falls** (G2): Kiosk im Park, Figur „Mr. Patel“, Knoten `kiosk` in

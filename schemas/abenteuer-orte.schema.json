@@ -153,10 +153,14 @@
         "kennung": { "$ref": "#/$defs/kennung" },
         "name": { "$ref": "#/$defs/textschluessel" },
         "nummer": {
-          "description": "Reihenfolge in der Welt (1 = Maple Falls)",
+          "description": "Reihenfolge in der Welt (1 = Maple Falls); 0 für Wege zwischen den Städten",
           "type": "integer",
-          "minimum": 1,
+          "minimum": 0,
           "maximum": 12
+        },
+        "art": {
+          "description": "stadt (Vorgabe) oder weg: eine begehbare Route zwischen zwei Städten (docs/spiel/08, W1). Übergänge von und zu einem Weg dürfen in einen anderen Ort führen.",
+          "enum": ["stadt", "weg"]
         },
         "staffel": { "type": "integer", "minimum": 1, "maximum": 2 },
         "karten": {

@@ -266,6 +266,65 @@
       },
       "kartenErlaubt": true,
       "zeit": "wahl"
+    },
+    {
+      "kennung": "summitCity.clubkampf",
+      "gegner": "summitCity.ward",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "summitCity.victorFrei",
+      "gegner": "summitCity.victor",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "summitCity.sol",
+      "gegner": "summitCity.sol",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.21"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
+    },
+    {
+      "kennung": "pinewoodCamp.hollis",
+      "gegner": "pinewoodCamp.hollis",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.14"
+      },
+      "kartenErlaubt": true
     }
   ]
 }

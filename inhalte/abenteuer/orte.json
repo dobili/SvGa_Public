@@ -1871,6 +1871,12 @@
           "sprite": "figuren/celeste.png",
           "dialog": "port-delacroix-werkstatt.celeste",
           "gegner": "portDelacroix.celeste"
+        },
+        {
+          "kennung": "portDelacroix.blaeser",
+          "name": "figur.blaeser.name",
+          "sprite": "figuren/blaeser.png",
+          "dialog": "port-delacroix-musikhaus.blaeser"
         }
       ],
       "ausloeser": [
@@ -1989,6 +1995,17 @@
           "ziel": {
             "karte": "wegDelacroixDesert.canyonpfad",
             "ausloeser": "start"
+          }
+        },
+        {
+          "name": "bayou",
+          "karte": "portDelacroix.aussen",
+          "art": "uebergang",
+          "dialog": "port-delacroix-aussen.bayou",
+          "wenn": "musikhausOffen",
+          "ziel": {
+            "karte": "bayou.steg",
+            "ausloeser": "zurueckDelacroix"
           }
         }
       ],
@@ -2231,6 +2248,17 @@
           "karte": "desertSprings.aussen",
           "art": "dialog",
           "dialog": "desert-springs-aussen.bahnhof"
+        },
+        {
+          "name": "highway",
+          "karte": "desertSprings.aussen",
+          "art": "uebergang",
+          "dialog": "desert-springs-aussen.highway",
+          "wenn": "endeAkt3Gesehen",
+          "ziel": {
+            "karte": "wegDesertSummit.diner",
+            "ausloeser": "zurueckDesert"
+          }
         }
       ],
       "club": {
@@ -2249,6 +2277,1256 @@
           "themen": ["hinlenkung", "beseitigung", "abzug", "doppelschach"]
         }
       }
+    },
+    {
+      "kennung": "wegDesertSummit",
+      "name": "ort.wegDesertSummit.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegDesertSummit.diner",
+          "datei": "karten/weg-desert-summit-diner.json",
+          "name": "ort.wegDesertSummit.diner",
+          "innen": false
+        },
+        {
+          "kennung": "wegDesertSummit.bergstrasse",
+          "datei": "karten/weg-desert-summit-bergstrasse.json",
+          "name": "ort.wegDesertSummit.bergstrasse",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegDesertSummit.earl",
+          "name": "figur.earl.name",
+          "sprite": "figuren/earl.png",
+          "dialog": "weg-desert-summit.earl"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckDesert",
+          "karte": "wegDesertSummit.diner",
+          "art": "uebergang",
+          "dialog": "weg-desert-summit.zurueck_desert",
+          "ziel": {
+            "karte": "desertSprings.aussen",
+            "ausloeser": "bahnhof"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegDesertSummit.diner",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.tafel"
+        },
+        {
+          "name": "fundNeonK",
+          "karte": "wegDesertSummit.diner",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.fund_neon"
+        },
+        {
+          "name": "weiterBergstrasse",
+          "karte": "wegDesertSummit.diner",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDesertSummit.bergstrasse",
+            "ausloeser": "zurueckDiner"
+          }
+        },
+        {
+          "name": "zurueckDiner",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDesertSummit.diner",
+            "ausloeser": "weiterBergstrasse"
+          }
+        },
+        {
+          "name": "abzweigHochebene",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "uebergang",
+          "dialog": "weg-desert-summit.abzweig_hochebene",
+          "ziel": {
+            "karte": "hochebene.felsentuerme",
+            "ausloeser": "zurueckBergstrasse"
+          }
+        },
+        {
+          "name": "weiterSummit",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "uebergang",
+          "dialog": "summit-city-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "ausloeser": "wegDesert"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "hochebene",
+      "name": "ort.hochebene.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "hochebene.felsentuerme",
+          "datei": "karten/hochebene-felsentuerme.json",
+          "name": "ort.hochebene.felsentuerme",
+          "innen": false
+        },
+        {
+          "kennung": "hochebene.schule",
+          "datei": "karten/hochebene-schule.json",
+          "name": "ort.hochebene.schule",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckBergstrasse",
+          "karte": "hochebene.felsentuerme",
+          "art": "uebergang",
+          "dialog": "hochebene.zurueck",
+          "ziel": {
+            "karte": "wegDesertSummit.bergstrasse",
+            "ausloeser": "abzweigHochebene"
+          }
+        },
+        {
+          "name": "weiterSchule",
+          "karte": "hochebene.felsentuerme",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "hochebene.schule",
+            "ausloeser": "zurueckFelsentuerme"
+          }
+        },
+        {
+          "name": "zurueckFelsentuerme",
+          "karte": "hochebene.schule",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "hochebene.felsentuerme",
+            "ausloeser": "weiterSchule"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity",
+      "name": "ort.summitCity.name",
+      "nummer": 8,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "summitCity.aussen",
+          "datei": "karten/summit-city-aussen.json",
+          "name": "ort.summitCity.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "summitCity.huette",
+          "datei": "karten/summit-city-huette.json",
+          "name": "ort.summitCity.huette",
+          "innen": true
+        },
+        {
+          "kennung": "summitCity.bergstation",
+          "datei": "karten/summit-city-bergstation.json",
+          "name": "ort.summitCity.bergstation",
+          "innen": true
+        },
+        {
+          "kennung": "summitCity.bergladen",
+          "datei": "karten/summit-city-bergladen.json",
+          "name": "ort.summitCity.bergladen",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "summitCity.ward",
+          "name": "figur.ward.name",
+          "sprite": "figuren/ward.png",
+          "dialog": "summit-city-huette.ward",
+          "gegner": "summitCity.ward"
+        },
+        {
+          "kennung": "summitCity.kit",
+          "name": "figur.kit.name",
+          "sprite": "figuren/kit.png",
+          "dialog": "summit-city-huette.kit",
+          "gegner": "summitCity.kit"
+        },
+        {
+          "kennung": "summitCity.haraldsen",
+          "name": "figur.haraldsen.name",
+          "sprite": "figuren/haraldsen.png",
+          "dialog": "summit-city-huette.haraldsen",
+          "gegner": "summitCity.haraldsen"
+        },
+        {
+          "kennung": "summitCity.sol",
+          "name": "figur.sol.name",
+          "sprite": "figuren/sol.png",
+          "dialog": "summit-city-aussen.sol",
+          "gegner": "summitCity.sol"
+        },
+        {
+          "kennung": "summitCity.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "summit-city-bergstation.victor",
+          "gegner": "summitCity.victor"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "wegDesert",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "dialog": "summit-city-aussen.weg_desert",
+          "ziel": {
+            "karte": "wegDesertSummit.bergstrasse",
+            "ausloeser": "weiterSummit"
+          }
+        },
+        {
+          "name": "huetteTuer",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "summitCity.huette",
+            "ausloeser": "huetteAusgang"
+          }
+        },
+        {
+          "name": "huetteAusgang",
+          "karte": "summitCity.huette",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "ausloeser": "huetteTuer"
+          }
+        },
+        {
+          "name": "bergladenTuer",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "summitCity.bergladen",
+            "ausloeser": "bergladenAusgang"
+          }
+        },
+        {
+          "name": "bergladenAusgang",
+          "karte": "summitCity.bergladen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "ausloeser": "bergladenTuer"
+          }
+        },
+        {
+          "name": "seilbahnTal",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "dialog": "summit-city-aussen.seilbahn",
+          "ziel": {
+            "karte": "summitCity.bergstation",
+            "ausloeser": "seilbahnBerg"
+          }
+        },
+        {
+          "name": "seilbahnBerg",
+          "karte": "summitCity.bergstation",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "ausloeser": "seilbahnTal"
+          }
+        },
+        {
+          "name": "drachenbrunnen",
+          "karte": "summitCity.aussen",
+          "art": "gegenstand",
+          "dialog": "summit-city-aussen.drachenfest"
+        },
+        {
+          "name": "pokal",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.pokal"
+        },
+        {
+          "name": "kaminfeuer",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.kaminfeuer"
+        },
+        {
+          "name": "theke",
+          "karte": "summitCity.bergladen",
+          "art": "gegenstand",
+          "dialog": "summit-city-bergladen.theke"
+        },
+        {
+          "name": "fundMurmeltierpfeife",
+          "karte": "summitCity.bergstation",
+          "art": "gegenstand",
+          "dialog": "summit-city-bergstation.fund_pfeife"
+        },
+        {
+          "name": "wegCrossroads",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "dialog": "summit-city-aussen.weg_crossroads",
+          "wenn": "nadelSummitCity",
+          "ziel": {
+            "karte": "wegSummitCrossroads.geysirbecken",
+            "ausloeser": "zurueckSummit"
+          }
+        }
+      ],
+      "club": {
+        "name": "club.summitCity.name",
+        "kapitel": [8, 9],
+        "chef": "summitCity.ward",
+        "mitglieder": ["summitCity.kit", "summitCity.haraldsen"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:opposition-anwenden",
+            "ueb:fernopposition",
+            "ueb:schluesselfeld-finden",
+            "ueb:quadrat-doppelschritt",
+            "ueb:entfernter-freibauer",
+            "ueb:reserve-tempo",
+            "ueb:philidor-reihenfolge",
+            "ueb:lucena-c-bauer",
+            "ueb:vancura-a7",
+            "ueb:turm-gegen-bauer",
+            "ueb:abschneiden-reihe",
+            "ueb:falscher-laeufer"
+          ],
+          "themen": ["endspiel", "umwandlung"]
+        }
+      }
+    },
+    {
+      "kennung": "wegSummitCrossroads",
+      "name": "ort.wegSummitCrossroads.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegSummitCrossroads.geysirbecken",
+          "datei": "karten/weg-summit-crossroads-geysirbecken.json",
+          "name": "ort.wegSummitCrossroads.geysirbecken",
+          "innen": false
+        },
+        {
+          "kennung": "wegSummitCrossroads.praerie",
+          "datei": "karten/weg-summit-crossroads-praerie.json",
+          "name": "ort.wegSummitCrossroads.praerie",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegSummitCrossroads.bell",
+          "name": "figur.bell.name",
+          "sprite": "figuren/bell.png",
+          "dialog": "weg-summit-crossroads.bell"
+        },
+        {
+          "kennung": "wegSummitCrossroads.ray",
+          "name": "figur.rayCastillo.name",
+          "sprite": "figuren/ray-castillo.png",
+          "dialog": "weg-summit-crossroads.ray"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckSummit",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "uebergang",
+          "dialog": "weg-summit-crossroads.zurueck_summit",
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "ausloeser": "wegCrossroads"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.tafel"
+        },
+        {
+          "name": "fundBisonhaar",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.fund_bisonhaar"
+        },
+        {
+          "name": "bisons",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.bisons"
+        },
+        {
+          "name": "weiterPraerie",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegSummitCrossroads.praerie",
+            "ausloeser": "zurueckGeysirbecken"
+          }
+        },
+        {
+          "name": "zurueckGeysirbecken",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegSummitCrossroads.geysirbecken",
+            "ausloeser": "weiterPraerie"
+          }
+        },
+        {
+          "name": "sturmkeller",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.sturmkeller"
+        },
+        {
+          "name": "weiterCrossroads",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "uebergang",
+          "dialog": "crossroads-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "crossroads.aussen",
+            "ausloeser": "wegSummit"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "crossroads",
+      "name": "ort.crossroads.name",
+      "nummer": 9,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "crossroads.aussen",
+          "datei": "karten/crossroads-aussen.json",
+          "name": "ort.crossroads.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "crossroads.raststaette",
+          "datei": "karten/crossroads-raststaette.json",
+          "name": "ort.crossroads.raststaette",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "crossroads.darlene",
+          "name": "figur.darlene.name",
+          "sprite": "figuren/darlene.png",
+          "dialog": "crossroads-raststaette.darlene"
+        },
+        {
+          "kennung": "crossroads.nova",
+          "name": "figur.nova.name",
+          "sprite": "figuren/nova.png",
+          "dialog": "crossroads-raststaette.nova"
+        },
+        {
+          "kennung": "crossroads.slick",
+          "name": "figur.slick.name",
+          "sprite": "figuren/slick.png",
+          "dialog": "crossroads-aussen.slick"
+        },
+        {
+          "kennung": "crossroads.mira",
+          "name": "figur.mira.name",
+          "sprite": "figuren/mira.png",
+          "dialog": "crossroads-aussen.mira"
+        },
+        {
+          "kennung": "crossroads.bigJoe",
+          "name": "figur.bigJoe.name",
+          "sprite": "figuren/big-joe.png",
+          "dialog": "crossroads-aussen.big_joe"
+        },
+        {
+          "kennung": "crossroads.rosie",
+          "name": "figur.rosie.name",
+          "sprite": "figuren/rosie.png",
+          "dialog": "crossroads-aussen.rosie"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "wegSummit",
+          "karte": "crossroads.aussen",
+          "art": "uebergang",
+          "dialog": "crossroads-aussen.weg_summit",
+          "ziel": {
+            "karte": "wegSummitCrossroads.praerie",
+            "ausloeser": "weiterCrossroads"
+          }
+        },
+        {
+          "name": "raststaetteTuer",
+          "karte": "crossroads.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "crossroads.raststaette",
+            "ausloeser": "raststaetteAusgang"
+          }
+        },
+        {
+          "name": "raststaetteAusgang",
+          "karte": "crossroads.raststaette",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "crossroads.aussen",
+            "ausloeser": "raststaetteTuer"
+          }
+        },
+        {
+          "name": "variantenTisch",
+          "karte": "crossroads.raststaette",
+          "art": "gegenstand",
+          "dialog": "crossroads-raststaette.varianten_tisch"
+        },
+        {
+          "name": "postkarten",
+          "karte": "crossroads.raststaette",
+          "art": "gegenstand",
+          "dialog": "crossroads-raststaette.fund_postkarte"
+        },
+        {
+          "name": "wegweiser",
+          "karte": "crossroads.aussen",
+          "art": "gegenstand",
+          "dialog": "crossroads-aussen.wegweiser"
+        },
+        {
+          "name": "wegPinewood",
+          "karte": "crossroads.aussen",
+          "art": "uebergang",
+          "dialog": "crossroads-aussen.weg_pinewood",
+          "ziel": {
+            "karte": "wegCrossroadsPinewood.huetten",
+            "ausloeser": "zurueckCrossroads"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "wegCrossroadsPinewood",
+      "name": "ort.wegCrossroadsPinewood.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegCrossroadsPinewood.huetten",
+          "datei": "karten/weg-crossroads-pinewood-huetten.json",
+          "name": "ort.wegCrossroadsPinewood.huetten",
+          "innen": false
+        },
+        {
+          "kennung": "wegCrossroadsPinewood.riesenbaeume",
+          "datei": "karten/weg-crossroads-pinewood-riesenbaeume.json",
+          "name": "ort.wegCrossroadsPinewood.riesenbaeume",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegCrossroadsPinewood.greta",
+          "name": "figur.greta.name",
+          "sprite": "figuren/greta.png",
+          "dialog": "weg-crossroads-pinewood.greta"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCrossroads",
+          "karte": "wegCrossroadsPinewood.huetten",
+          "art": "uebergang",
+          "dialog": "weg-crossroads-pinewood.zurueck_crossroads",
+          "ziel": {
+            "karte": "crossroads.aussen",
+            "ausloeser": "wegPinewood"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegCrossroadsPinewood.huetten",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.tafel"
+        },
+        {
+          "name": "weiterRiesenbaeume",
+          "karte": "wegCrossroadsPinewood.huetten",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCrossroadsPinewood.riesenbaeume",
+            "ausloeser": "zurueckHuetten"
+          }
+        },
+        {
+          "name": "zurueckHuetten",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCrossroadsPinewood.huetten",
+            "ausloeser": "weiterRiesenbaeume"
+          }
+        },
+        {
+          "name": "rangerhaus",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.rangerhaus"
+        },
+        {
+          "name": "weiterCamp",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "uebergang",
+          "dialog": "pinewood-camp-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "pinewoodCamp.aussen",
+            "ausloeser": "wegCrossroads"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp",
+      "name": "ort.pinewoodCamp.name",
+      "nummer": 10,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "pinewoodCamp.aussen",
+          "datei": "karten/pinewood-camp-aussen.json",
+          "name": "ort.pinewoodCamp.aussen",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "pinewoodCamp.ezra",
+          "name": "figur.ezra.name",
+          "sprite": "figuren/ezra.png",
+          "dialog": "pinewood-camp-aussen.ezra"
+        },
+        {
+          "kennung": "pinewoodCamp.hollis",
+          "name": "figur.hollis.name",
+          "sprite": "figuren/hollis.png",
+          "dialog": "pinewood-camp-aussen.hollis",
+          "gegner": "pinewoodCamp.hollis"
+        },
+        {
+          "kennung": "pinewoodCamp.dex",
+          "name": "figur.dex.name",
+          "sprite": "figuren/dex.png",
+          "dialog": "pinewood-camp-aussen.dex"
+        },
+        {
+          "kennung": "pinewoodCamp.mae",
+          "name": "figur.mae.name",
+          "sprite": "figuren/mae.png",
+          "dialog": "pinewood-camp-aussen.mae"
+        },
+        {
+          "kennung": "pinewoodCamp.lou",
+          "name": "figur.lou.name",
+          "sprite": "figuren/lou.png",
+          "dialog": "pinewood-camp-aussen.lou"
+        },
+        {
+          "kennung": "pinewoodCamp.tamsin",
+          "name": "figur.tamsin.name",
+          "sprite": "figuren/tamsin.png",
+          "dialog": "pinewood-camp-aussen.tamsin"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "wegCrossroads",
+          "karte": "pinewoodCamp.aussen",
+          "art": "uebergang",
+          "dialog": "pinewood-camp-aussen.weg_crossroads",
+          "ziel": {
+            "karte": "wegCrossroadsPinewood.riesenbaeume",
+            "ausloeser": "weiterCamp"
+          }
+        },
+        {
+          "name": "lagerfeuer",
+          "karte": "pinewoodCamp.aussen",
+          "art": "gegenstand",
+          "dialog": "pinewood-camp-aussen.lagerfeuer"
+        },
+        {
+          "name": "kiosk",
+          "karte": "pinewoodCamp.aussen",
+          "art": "gegenstand",
+          "dialog": "pinewood-camp-aussen.kiosk"
+        },
+        {
+          "name": "wegGhost",
+          "karte": "pinewoodCamp.aussen",
+          "art": "uebergang",
+          "dialog": "pinewood-camp-aussen.weg_ghost",
+          "ziel": {
+            "karte": "wegPinewoodGhost.canyonrand",
+            "ausloeser": "zurueckCamp"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "wegPinewoodGhost",
+      "name": "ort.wegPinewoodGhost.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegPinewoodGhost.canyonrand",
+          "datei": "karten/weg-pinewood-ghost-canyonrand.json",
+          "name": "ort.wegPinewoodGhost.canyonrand",
+          "innen": false
+        },
+        {
+          "kennung": "wegPinewoodGhost.staubstrasse",
+          "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
+          "name": "ort.wegPinewoodGhost.staubstrasse",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegPinewoodGhost.juniper",
+          "name": "figur.juniper.name",
+          "sprite": "figuren/juniper.png",
+          "dialog": "weg-pinewood-ghost.juniper"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCamp",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "uebergang",
+          "dialog": "weg-pinewood-ghost.zurueck_camp",
+          "ziel": {
+            "karte": "pinewoodCamp.aussen",
+            "ausloeser": "wegGhost"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.tafel"
+        },
+        {
+          "name": "weiterStaubstrasse",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.staubstrasse",
+            "ausloeser": "zurueckCanyonrand"
+          }
+        },
+        {
+          "name": "zurueckCanyonrand",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.canyonrand",
+            "ausloeser": "weiterStaubstrasse"
+          }
+        },
+        {
+          "name": "weiterGhost",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "uebergang",
+          "dialog": "ghost-town-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "wegPinewood"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "ghostTown",
+      "name": "ort.ghostTown.name",
+      "nummer": 11,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "ghostTown.aussen",
+          "datei": "karten/ghost-town-aussen.json",
+          "name": "ort.ghostTown.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "ghostTown.saloon",
+          "datei": "karten/ghost-town-saloon.json",
+          "name": "ort.ghostTown.saloon",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "ghostTown.pruitt",
+          "name": "figur.pruitt.name",
+          "sprite": "figuren/pruitt.png",
+          "dialog": "ghost-town-aussen.pruitt"
+        },
+        {
+          "kennung": "ghostTown.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "ghost-town-saloon.victor"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "wegPinewood",
+          "karte": "ghostTown.aussen",
+          "art": "uebergang",
+          "dialog": "ghost-town-aussen.weg_pinewood",
+          "ziel": {
+            "karte": "wegPinewoodGhost.staubstrasse",
+            "ausloeser": "weiterGhost"
+          }
+        },
+        {
+          "name": "saloonTuer",
+          "karte": "ghostTown.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.saloon",
+            "ausloeser": "saloonAusgang"
+          }
+        },
+        {
+          "name": "saloonAusgang",
+          "karte": "ghostTown.saloon",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "saloonTuer"
+          }
+        },
+        {
+          "name": "grab",
+          "karte": "ghostTown.aussen",
+          "art": "gegenstand",
+          "dialog": "ghost-town-aussen.grab"
+        },
+        {
+          "name": "sternenhimmel",
+          "karte": "ghostTown.aussen",
+          "art": "gegenstand",
+          "dialog": "ghost-town-aussen.nacht"
+        },
+        {
+          "name": "fernpartieBrett",
+          "karte": "ghostTown.saloon",
+          "art": "gegenstand",
+          "dialog": "ghost-town-saloon.brett"
+        },
+        {
+          "name": "abzeichen",
+          "karte": "ghostTown.saloon",
+          "art": "uebergang",
+          "dialog": "ghost-town-saloon.fund_abzeichen",
+          "wenn": "abzeichenGefunden",
+          "ziel": {
+            "karte": "erinnerungSiedlung.huette",
+            "ausloeser": "ankunft"
+          }
+        },
+        {
+          "name": "wegCapital",
+          "karte": "ghostTown.aussen",
+          "art": "uebergang",
+          "dialog": "ghost-town-aussen.weg_capital",
+          "wenn": "fernpartieGespielt",
+          "ziel": {
+            "karte": "wegGhostCapital.seeufer",
+            "ausloeser": "zurueckGhost"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "erinnerungSiedlung",
+      "name": "ort.erinnerungSiedlung.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "erinnerung",
+      "karten": [
+        {
+          "kennung": "erinnerungSiedlung.huette",
+          "datei": "karten/erinnerung-siedlung-huette.json",
+          "name": "ort.erinnerungSiedlung.huette",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "erinnerungSiedlung.postreiter",
+          "name": "figur.postreiter.name",
+          "sprite": "figuren/postreiter.png",
+          "dialog": "erinnerung-siedlung.postreiter"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "ankunft",
+          "art": "start"
+        },
+        {
+          "name": "kerze",
+          "karte": "erinnerungSiedlung.huette",
+          "art": "gegenstand",
+          "dialog": "erinnerung-siedlung.kerze"
+        },
+        {
+          "name": "rueckkehr",
+          "karte": "erinnerungSiedlung.huette",
+          "art": "uebergang",
+          "dialog": "erinnerung-siedlung.rueckkehr",
+          "ziel": {
+            "karte": "ghostTown.saloon",
+            "ausloeser": "abzeichen"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital",
+      "name": "ort.wegGhostCapital.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegGhostCapital.seeufer",
+          "datei": "karten/weg-ghost-capital-seeufer.json",
+          "name": "ort.wegGhostCapital.seeufer",
+          "innen": false
+        },
+        {
+          "kennung": "wegGhostCapital.leuchtturm",
+          "datei": "karten/weg-ghost-capital-leuchtturm.json",
+          "name": "ort.wegGhostCapital.leuchtturm",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegGhostCapital.abe",
+          "name": "figur.abe.name",
+          "sprite": "figuren/abe.png",
+          "dialog": "weg-ghost-capital.abe"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckGhost",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "uebergang",
+          "dialog": "weg-ghost-capital.zurueck_ghost",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "wegCapital"
+          }
+        },
+        {
+          "name": "tafel",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "gegenstand",
+          "dialog": "weg-ghost-capital.tafel"
+        },
+        {
+          "name": "weiterLeuchtturm",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegGhostCapital.leuchtturm",
+            "ausloeser": "zurueckSeeufer"
+          }
+        },
+        {
+          "name": "zurueckSeeufer",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegGhostCapital.seeufer",
+            "ausloeser": "weiterLeuchtturm"
+          }
+        },
+        {
+          "name": "fundLinse",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "gegenstand",
+          "dialog": "weg-ghost-capital.fund_linse"
+        },
+        {
+          "name": "weiterCapital",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "uebergang",
+          "dialog": "capital-arena-aussen.ankunft_zu_fuss",
+          "ziel": {
+            "karte": "capitalArena.aussen",
+            "ausloeser": "wegGhost"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena",
+      "name": "ort.capitalArena.name",
+      "nummer": 12,
+      "staffel": 2,
+      "karten": [
+        {
+          "kennung": "capitalArena.aussen",
+          "datei": "karten/capital-arena-aussen.json",
+          "name": "ort.capitalArena.aussen",
+          "innen": false
+        },
+        {
+          "kennung": "capitalArena.halle",
+          "datei": "karten/capital-arena-halle.json",
+          "name": "ort.capitalArena.halle",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "capitalArena.mama",
+          "name": "figur.mutter.name",
+          "sprite": "figuren/mutter.png",
+          "dialog": "capital-arena-aussen.mama"
+        },
+        {
+          "kennung": "capitalArena.juno",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "capital-arena-aussen.juno"
+        },
+        {
+          "kennung": "capitalArena.turnierleiterin",
+          "name": "figur.turnierleiterin.name",
+          "sprite": "figuren/turnierleiterin.png",
+          "dialog": "capital-arena-halle.turnierleiterin"
+        },
+        {
+          "kennung": "capitalArena.lin",
+          "name": "figur.lin.name",
+          "sprite": "figuren/lin.png",
+          "dialog": "capital-arena-halle.lin"
+        },
+        {
+          "kennung": "capitalArena.grahamHale",
+          "name": "figur.grahamHale.name",
+          "sprite": "figuren/graham-hale.png",
+          "dialog": "capital-arena-halle.graham_hale"
+        },
+        {
+          "kennung": "capitalArena.bea",
+          "name": "figur.bea.name",
+          "sprite": "figuren/bea.png",
+          "dialog": "capital-arena-halle.bea",
+          "gegner": "capitalArena.bea"
+        },
+        {
+          "kennung": "capitalArena.marcus",
+          "name": "figur.marcus.name",
+          "sprite": "figuren/marcus.png",
+          "dialog": "capital-arena-halle.marcus",
+          "gegner": "capitalArena.marcus"
+        },
+        {
+          "kennung": "capitalArena.nova",
+          "name": "figur.nova.name",
+          "sprite": "figuren/nova.png",
+          "dialog": "capital-arena-halle.nova",
+          "gegner": "capitalArena.nova"
+        },
+        {
+          "kennung": "capitalArena.tobias",
+          "name": "figur.tobias.name",
+          "sprite": "figuren/tobias.png",
+          "dialog": "capital-arena-halle.tobias",
+          "gegner": "capitalArena.tobias"
+        },
+        {
+          "kennung": "capitalArena.kade",
+          "name": "figur.kade.name",
+          "sprite": "figuren/kade.png",
+          "dialog": "capital-arena-halle.kade",
+          "gegner": "capitalArena.kade"
+        },
+        {
+          "kennung": "capitalArena.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "capital-arena-halle.victor",
+          "gegner": "capitalArena.victor"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "wegGhost",
+          "karte": "capitalArena.aussen",
+          "art": "uebergang",
+          "dialog": "capital-arena-aussen.weg_ghost",
+          "ziel": {
+            "karte": "wegGhostCapital.leuchtturm",
+            "ausloeser": "weiterCapital"
+          }
+        },
+        {
+          "name": "halleTuer",
+          "karte": "capitalArena.aussen",
+          "art": "uebergang",
+          "dialog": "capital-arena-aussen.halle_betreten",
+          "ziel": {
+            "karte": "capitalArena.halle",
+            "ausloeser": "halleAusgang"
+          }
+        },
+        {
+          "name": "halleAusgang",
+          "karte": "capitalArena.halle",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "capitalArena.aussen",
+            "ausloeser": "halleTuer"
+          }
+        },
+        {
+          "name": "turniertafel",
+          "karte": "capitalArena.halle",
+          "art": "gegenstand",
+          "dialog": "capital-arena-halle.turniertafel"
+        },
+        {
+          "name": "pressetisch",
+          "karte": "capitalArena.halle",
+          "art": "gegenstand",
+          "dialog": "capital-arena-halle.pressetisch"
+        },
+        {
+          "name": "fanshop",
+          "karte": "capitalArena.halle",
+          "art": "gegenstand",
+          "dialog": "capital-arena-halle.fanshop"
+        },
+        {
+          "name": "treppe",
+          "karte": "capitalArena.aussen",
+          "art": "gegenstand",
+          "dialog": "capital-arena-aussen.treppe"
+        }
+      ]
+    },
+    {
+      "kennung": "bayou",
+      "name": "ort.bayou.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "bayou.steg",
+          "datei": "karten/bayou-steg.json",
+          "name": "ort.bayou.steg",
+          "innen": false
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "bayou.theron",
+          "name": "figur.theron.name",
+          "sprite": "figuren/theron.png",
+          "dialog": "bayou.theron"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckDelacroix",
+          "karte": "bayou.steg",
+          "art": "uebergang",
+          "dialog": "bayou.zurueck_delacroix",
+          "ziel": {
+            "karte": "portDelacroix.aussen",
+            "ausloeser": "deich"
+          }
+        },
+        {
+          "name": "nebel",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.nebel"
+        }
+      ]
     }
   ]
 }

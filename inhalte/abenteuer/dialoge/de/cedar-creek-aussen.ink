@@ -26,6 +26,7 @@ VAR ausgangCedarCreekRosaDuell = ""
 VAR victorCedarCreekGesehen = false
 VAR nadelCedarCreek = 0
 VAR endeAkt1Gesehen = false
+VAR aufbruchRivertonGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -233,4 +234,30 @@ Respekt. Wir sind mit dem Bus vorgefahren. #sprecher:juno
 Auswärtsspiel im Bibliotheksclub, Leute! Die Chefin dort ist eine Legende, die niemand kennt. #sprecher:coachDelgado #klang:pfiff
 Seht euch ruhig um. Der Bus fährt erst am Abend zurück. #sprecher:coachDelgado
 Ein Weg zu Fuß, ein Fluss, eine fremde Stadt. So reiste ich, als ich jung war. #sprecher:ambrose #stimmung:stolz
+-> END
+
+// ---------------------------------------------------------------- Aufbruch nach Riverton (Akt 2)
+// Übergang „zedernwald“ am Steg (orte.json, wenn: endeAkt1Gesehen): läuft vor dem Wechsel auf
+// die Route wegCedarRiverton. Erstes Mal: Szene 26 der Bibel (akt2.aufbruch); die Quest
+// riverton.parkclub beginnt danach mit dem Betreten des Zedernwalds.
+
+=== zedernwald ===
+{
+- not endeAkt1Gesehen:
+    Ein schmaler Waldweg führt zwischen die Zedern. Für heute ist es zu spät, der Bus wartet. #sprecher:erzaehler
+    -> END
+- aufbruchRivertonGesehen:
+    Der Waldweg nach Riverton. Juno läuft schon ein Stück voraus. #sprecher:erzaehler
+    -> END
+}
+~ aufbruchRivertonGesehen = true
+Juno hält dir ihr Handy hin. Darauf ein Foto: ein Pavillon im Regen, davor Tische mit Bildschirmen. #sprecher:erzaehler
+Der Parkclub von Riverton muss bis Sonntag raus. Wir müssen da hin, bevor es ihn nicht mehr gibt! #sprecher:juno
+Coach Delgado hat heute Elternabend. Aber deine Mama hat ja gesagt, ich hab sie gefragt. #sprecher:juno #stimmung:froh
+Auf dem Handy eine Nachricht von Mama: „Mit dem Zug zurück, vor dem Dunkelwerden. Hab euch lieb.“ #sprecher:erzaehler
+* [„Dann los. Zu Fuß durch den Wald?“]
+    Zu Fuß! Zurück nehmen wir den Zug. Abenteuer mit Rückfahrkarte. #sprecher:juno
+* [„Was machen wir, wenn wir zu spät sind?“]
+    Dann spielen wir wenigstens das letzte Spiel. Das ist auch was. #sprecher:juno
+- Bäume, die älter sind als ich. Endlich jemand in meinem Alter. #sprecher:ambrose #stimmung:lacht
 -> END

@@ -226,6 +226,27 @@ der strikte Befund im Pipeline-Test `test_abenteuer_karten.py` ist damit erledig
 Alternative wäre ein eigener Name je Seite gewesen (so hat mittel-2 Cedar Creek angelegt); beides
 geht weiter, denn ein Name ohne `karte` bleibt erlaubt.
 
+## 08.11.2026 – Helfer-Berichte (zweite Aufträge) zusammengeführt
+
+- **Victor nach R33, nicht nach der Bibel (Szene 12).** mittel-1 (Dialoge) folgte dem Regelwerk,
+  mittel-2 (Spieldaten) der Bibel; beide hatten recht, ihre Datei zu lesen. Entscheidung: R33 gilt
+  (Trainingsstellung Spanisch ohne schwarzen Springer, Schwarz am Zug, Zug 12, legal geprüft,
+  Material 39 : 36; Karten gesperrt, zählt nicht für die App). Grund: Dokument 02, 2.7 will, dass
+  der Leser die Niederlage nicht als unfair erlebt; die Dialoge erklären die Stellung. Die Bibel
+  wird bei der nächsten Überarbeitung angepasst. Bewertung mit der Engine (−2,5 bis −4 nach R33)
+  steht noch aus (Pipeline, lokal).
+- **Reise zwischen Orten über Dialoge:** neue externe Funktion `reise(karte, ausloeser)` (Bus);
+  Übergänge bleiben innerhalb eines Ortes. Die Landstraße im Park ist jetzt die Bushaltestelle
+  (Dialog aus `maple-falls-park.ink`, Rand geschlossen).
+- **Cedar Creek ohne Karten:** Der Kartentest überspringt in `orte.json` genannte, aber noch nicht
+  gezeichnete Karten (sichtbar als „skipped“), statt rot zu sein; die Oberwelt meldet eine fehlende
+  Karte. niedrig-1 zeichnet sie im vierten Auftrag.
+- **Neuer Pipeline-Test:** Begegnungsverweise aus Quests und `beginnePartie`-Aufrufen sowie
+  `reise`-Ziele müssen existieren (der Victor-Verweis war verwaist).
+- **Helfer:** mittel-1 schreibt die Dialoge für Cedar Creek, niedrig-1 die Karten; mittel-2 wartet
+  (kein Auftrag), bis die Aufgabenrunden (8f) das Datenformat festlegen; so bleibt das Guthaben
+  geschont (Wunsch des Autors).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

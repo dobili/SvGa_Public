@@ -50,8 +50,10 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Kollision steht am Kachelsatz: Kacheln mit der Eigenschaft `kollision = true` sind nicht begehbar.
 - Objekte der Ebene `ausloeser` haben `type = "ausloeser"` und einen Namen, der in `orte.json`
   unter `ausloeser` erklärt wird (`start`, `uebergang`, `dialog`, `gegenstand`). Ein Objekt
-  `start` mit `richtung` ist der Standardeinstieg; Übergänge heißen auf beiden Karten gleich
-  (Ziel: `ziel.karte`, `ziel.ausloeser`).
+  `start` mit `richtung` ist der Standardeinstieg. Übergänge (`ziel.karte`, `ziel.ausloeser`)
+  gelten je Ort; heißt der Rückweg gleich (Tür „schule“ auf beiden Karten), bekommt der zweite
+  Eintrag in `orte.json` das Feld `karte` und geht auf dieser Karte vor. Zwischen Orten reist man
+  nicht über Übergänge, sondern über einen Dialog (Bus) mit `~ reise("ort.karte", "ausloeser")`.
 - Figuren stehen nicht in der Tiled-Datei, sondern als Objekte mit dem Namen der Figur in der
   Ebene `ausloeser` (später: `type = "figur"`), damit `orte.json` die Wahrheit über Dialog und
   Gegner bleibt.

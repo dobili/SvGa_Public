@@ -62,6 +62,7 @@ def test_querverweise_stimmen():
             if ziel and ziel["karte"] not in kartenkennungen:
                 fehler.append(f"{ort['kennung']}: Übergang nach unbekannter Karte {ziel['karte']}")
 
+    alle_karten = {k["kennung"] for ort in orte for k in ort["karten"]}
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         if begegnung["gegner"] not in gegner:
             fehler.append(f"{begegnung['kennung']}: Gegner {begegnung['gegner']} fehlt")
@@ -72,9 +73,13 @@ def test_querverweise_stimmen():
             if ereignis["art"] == "partie" and ereignis["begegnung"] not in begegnungen:
                 fehler.append(f"{quest['kennung']}: Begegnung {ereignis['begegnung']} fehlt")
     for ink in sorted((INHALTE / "dialoge" / "de").glob("*.ink")):
-        for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', ink.read_text("utf-8"), re.M):
+        quelle = ink.read_text("utf-8")
+        for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', quelle, re.M):
             if aufruf not in begegnungen:
                 fehler.append(f"{ink.name}: Begegnung {aufruf} fehlt")
+        for karte in re.findall(r'^\s*~\s*reise\("([^"]+)",', quelle, re.M):
+            if karte not in alle_karten:
+                fehler.append(f"{ink.name}: Reise nach unbekannter Karte {karte}")
 
     questkennungen = {q["kennung"] for q in quests}
     for quest in quests:

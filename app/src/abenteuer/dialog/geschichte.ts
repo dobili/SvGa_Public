@@ -24,6 +24,8 @@ export interface Wirkungen {
   readonly beginneAufgaben: (runde: string) => void;
   readonly setzeZustand: (gegner: string, faktor: number, grund: string) => void;
   readonly schalteSteckbrief: (gegner: string, zeile: number) => void;
+  /** Reise auf eine Karte eines anderen Ortes (Bus nach Cedar Creek); wirkt nach dem Dialog. */
+  readonly reise: (karte: string, ausloeser: string) => void;
 }
 
 /** Werte, die über Szenen hinweg gelten (Spielstand, Feld dialogvariablen). */
@@ -70,6 +72,11 @@ export class Geschichte {
     this.story.BindExternalFunction(
       "setzeZustand",
       (g: string, f: number, grund: string) => wirkungen.setzeZustand(g, f, grund),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "reise",
+      (karte: string, ausloeser: string) => wirkungen.reise(karte, ausloeser),
       false,
     );
     this.story.BindExternalFunction(

@@ -171,8 +171,9 @@
           }
         },
         {
-          "name": "landstrasse",
-          "art": "uebergang"
+          "name": "bushaltestelle",
+          "art": "dialog",
+          "dialog": "maple-falls-park.bushaltestelle"
         }
       ],
       "club": {
@@ -267,7 +268,10 @@
         }
       ],
       "ausloeser": [
-        { "name": "bushaltestelle", "art": "start" },
+        {
+          "name": "bushaltestelle",
+          "art": "start"
+        },
         {
           "name": "busZurueck",
           "art": "dialog",
@@ -292,7 +296,10 @@
         {
           "name": "kellertreppe",
           "art": "uebergang",
-          "ziel": { "karte": "cedarCreek.archiv", "ausloeser": "kellerAusgang" }
+          "ziel": {
+            "karte": "cedarCreek.archiv",
+            "ausloeser": "kellerAusgang"
+          }
         },
         {
           "name": "kellerAusgang",

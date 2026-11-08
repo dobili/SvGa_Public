@@ -11,6 +11,7 @@
 
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR abernathyGetroffen = false
@@ -158,6 +159,7 @@ Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprec
     Ein Wagen ohne Pferde. Ich werde mich nie daran gewöhnen. #sprecher:ambrose
     * [Einsteigen]
         Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
+        ~ reise("cedarCreek.aussen", "bushaltestelle")
         -> END
     * [Noch nicht]
         -> END

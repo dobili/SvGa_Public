@@ -7,7 +7,7 @@
 //   #stimmung:streng (Porträtvariante), #klang:knarren (Geräusch), #pause (kurze Pause).
 // - Externe Funktionen (EXTERNAL) führt die React-Hülle aus; sie schreiben in den Spielstand.
 //   Ihre Namen sind fest: gibKarte, setzeSzene, beginnePartie, beginneAufgaben, setzeZustand,
-//   schalteSteckbrief. Das Spiel bindet sie beim Laden der Geschichte (inkjs BindExternalFunction).
+//   schalteSteckbrief, reise(karte, ausloeser). Das Spiel bindet sie beim Laden der Geschichte (inkjs BindExternalFunction).
 // - Globale Variablen (VAR) liegen im Spielstand (Feld dialogvariablen) und überleben Szenen.
 // - Der Name des Helden kommt aus dem Spielstand: {held}.
 // - Keine Seitenzahlen des Buches, nur Abschnitte und Abbildungen (CLAUDE.md, Regel 1).

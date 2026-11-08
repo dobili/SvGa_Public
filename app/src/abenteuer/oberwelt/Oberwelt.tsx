@@ -245,6 +245,8 @@ export function Oberwelt() {
   // Deck und gespielte Karten der gerade beendeten Partie, für den Wiedereinstieg (R15).
   const vorherigeKarten = useRef<Partiekarten | null>(null);
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
+  // Eine Reise, die ein Dialog angestoßen hat (Bus); sie geschieht, wenn der Dialog zu ist.
+  const reiseInArbeit = useRef<{ karte: string; ausloeser: string } | null>(null);
   // Der aktuelle Stand für Rückrufe aus Phaser und Dialogen, die nicht neu gerendert werden.
   const standRef = useRef(stand);
   useEffect(() => {
@@ -495,6 +497,9 @@ export function Oberwelt() {
         auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell, dienste.wertung());
     },
     beginneAufgaben: () => setzeMeldung(tSpiel("oberwelt.nochNichtGebaut")),
+    reise: (karte, ausloeser) => {
+      reiseInArbeit.current = { karte, ausloeser };
+    },
     setzeZustand: (gegner, faktor, grund) => {
       const aktuell = standRef.current ?? stand;
       schreibe(wendeWirkungenAn(aktuell, [{ art: "zustand", gegner, faktor, grund }], new Date()));
@@ -595,6 +600,9 @@ export function Oberwelt() {
     auftragInArbeit.current = null;
     const neu = { ...aktuell, dialogvariablen: { ...aktuell.dialogvariablen, ...variablen } };
     schreibe(neu);
+    const reise = reiseInArbeit.current;
+    reiseInArbeit.current = null;
+    if (reise) wechsleKarte(reise.karte, reise.ausloeser);
     if (!auftrag) return;
     if (auftrag.kartenErlaubt && neu.karten.length > 0) setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);

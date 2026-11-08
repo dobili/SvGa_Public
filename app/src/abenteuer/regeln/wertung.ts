@@ -33,7 +33,15 @@ export function mitAppWertung(stand: Abenteuerstand, appWertung: number | null):
         ? appWertung
         : stand.wertung
       : stand.wertung + (appWertung - stand.appWertungZuletzt);
-  return { ...stand, wertung: Math.max(A_MIN, Math.round(wertung)), appWertungZuletzt: appWertung };
+  const neu = Math.max(A_MIN, Math.round(wertung));
+  // Solange E noch läuft (R3), folgt E dem neuen A (Hinweis von mittel-2, vierter Bericht).
+  const eingangLaeuft = stand.eingangPartien < EINGANG_PARTIEN;
+  return {
+    ...stand,
+    wertung: neu,
+    appWertungZuletzt: appWertung,
+    eingangswertung: eingangLaeuft ? neu : stand.eingangswertung,
+  };
 }
 
 /** Zählt diese Partie nach R38 für A: ganze Partie aus der Grundstellung, zählt für die App. */

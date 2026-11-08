@@ -11,8 +11,12 @@ describe("Abenteuerwertung", () => {
     expect(ohne.wertung).toBe(600);
     const mit = leererAbenteuerstand(JETZT, "Kim", 900, true);
     expect(mit.wertung).toBe(900);
-    // Die App-Wertung steigt um 40 → A steigt um 40.
+    // Die App-Wertung steigt um 40 → A steigt um 40; E ist fest (zehn Partien) und bleibt.
     expect(mitAppWertung(mit, 940).wertung).toBe(940);
+    expect(mitAppWertung(mit, 940).eingangswertung).toBe(900);
+    // Läuft E noch, folgt es A (R3).
+    const laeuft = leererAbenteuerstand(JETZT, "Kim", 900, false);
+    expect(mitAppWertung(laeuft, 940).eingangswertung).toBe(940);
     expect(mitAppWertung(mit, 900)).toBe(mit);
     expect(mitAppWertung(mit, null)).toBe(mit);
     // Erste App-Wertung ohne gezählte Story-Partien ersetzt den Startwert.

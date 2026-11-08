@@ -1,7 +1,10 @@
-# Auftrag mittel-2: Spieldaten für Riverton, Ironwood und die Wege dorthin
+# Auftrag mittel-2: kein Auftrag
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, sechster Auftrag; Grundlage ist dein Akt 2 in
-`05_Story_Bibel.md` und `09_Weltbeschreibung.md`, Abschnitte 5.4 und 5.5)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechste Auftrag, Spieldaten für Akt 2, ist
+zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-regelwerk`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json` (nur neue Orte anhängen: `riverton`, `ironwood`,

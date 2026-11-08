@@ -1428,6 +1428,19 @@
               "gegenstand": "notizbuchseite"
             }
           ]
+        },
+        {
+          "text": "quest.fehlendeSeite.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-bergstation.victor_seite"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "halesSeite"
+            }
+          ]
         }
       ]
     },

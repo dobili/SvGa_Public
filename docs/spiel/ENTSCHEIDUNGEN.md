@@ -589,6 +589,10 @@ Stärkewechsel mitten in der Partie (Halbfinale): Begegnungsfeld `abgelenktAb {h
 Halbzug macht der Bot um den Faktor häufiger Fehler (`wahlHaeufigkeit`). Turniermodus der Landesmeisterschaft: ohne neue Technik über Begegnungen und Ink (Punkte aus
 `ausgang…`-Variablen, Wiederholen über den Dialog); der Haupt-Chat baut nur, was Ink nicht kann.
 
+**Abspann (Akt 4, Technikliste Punkt 7, 8.11.2026):** Ink-Funktion `zeigeAbspann()`; die Oberwelt
+zeigt danach `oberwelt/Abspann.tsx`: alle Figuren der Welt mit Porträt, Mitwirkende, und den
+Extra-Abspann (Ambroses Zettel), wenn `mentorzugFreiGespielt` nicht gesetzt ist.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

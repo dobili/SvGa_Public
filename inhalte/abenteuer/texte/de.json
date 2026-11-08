@@ -611,5 +611,15 @@
   "quest.erinnerung1858.titel": "Erinnerung: Das letzte Spiel, 1858",
   "quest.erinnerung1858.schritt1": "Spiel mit Ambrose Morphys Züge nach dem Opfer.",
   "quest.erinnerung1858.schritt2": "Sprich danach mit Mira.",
-  "deck.frei": "Dazu liegt frei im Deck, ohne Kosten und ohne Folge für die Nadel: {karten}"
+  "deck.frei": "Dazu liegt frei im Deck, ohne Kosten und ohne Folge für die Nadel: {karten}",
+  "abspann.titel": "Schach-Abenteuer",
+  "abspann.held": "Mit {name} und allen, die am Brett saßen:",
+  "abspann.mitwirkendeTitel": "Mit Dank an",
+  "abspann.mitwirkende.buch": "Das Buch „Schach von Grund auf“, aus dem jede Lektion stammt",
+  "abspann.mitwirkende.engine": "Stockfish und Maia, die Gegner hinter allen Figuren",
+  "abspann.mitwirkende.phaser": "Phaser, die Welt zum Laufen",
+  "abspann.mitwirkende.ink": "Ink von inkle, die Sprache der Dialoge",
+  "abspann.mitwirkende.portraets": "DiceBear Pixel Art, die Gesichter",
+  "abspann.extra": "Auf dem Brett im Dachboden liegt ein Zettel in alter Schrift: „Du hast es ohne mich geschafft. Das war der Sinn. A.“",
+  "abspann.schliessen": "Zurück in die Welt"
 }

@@ -66,9 +66,7 @@ Startwert deklariert („“, false, 0); keine Datei setzt eine Hüllen-Variable
 Variable hat in zwei Dateien verschiedene Startwerte. Entfernt, weil die Datei sie nicht braucht:
 `ambroseVertrauen` (CC-bibliothek), `held` (CC-waschsalon, MF-aussen), `junoGetroffen`
 (MF-clubraum), dazu ganz `okaforBittetHilfe` und `plakatGesehen` (gesetzt, aber nirgends
-gelesen). Nachgebessert, weil die Hülle jetzt auch „abgebrochen“ setzt: An sieben Stellen hätte
-ein Abbruch als Sieg oder Niederlage gegolten (Jo und Rosa als Sieg, Victor als Überraschung,
-Coach und Okafor als Niederlage, Mama und Juno als „erste Partie gespielt“). Jetzt zählt
+gelesen). Nachgebessert, weil die Hülle jetzt auch „abgebrochen“ setzt: An acht Stellen hätte ein Abbruch als Sieg oder Niederlage gegolten (Jo und Rosa als Sieg, Victor als Überraschung, Coach und Okafor als Niederlage, Ambrose mit „Verloren“, Mama und Juno als „erste Partie gespielt“). Jetzt zählt
 „abgebrochen“ überall wie nicht gespielt (Regelwerk R35), die Figur bietet die Partie wieder an.
 Hinweis: Für die Quests macht die Oberwelt aus „abgebrochen“ eine Niederlage; „Das Brett“ ist
 nach einem Abbruch also erledigt, Ambrose bietet die erste Lektion aber noch einmal an, und erst

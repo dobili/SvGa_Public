@@ -1163,6 +1163,39 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+Zum Abhaken gibt es alle Punkte dieses Teils auch als Seite mit „Empfehlung folgen“, „Nein“ und Notiz
+(Wunsch des Autors, 8.11.2026): https://claude.ai/artifact/Kumk513LwSbbDJ3wJ2aJC3 (privat, nur für
+dich). Claude liest die Antworten von dort und arbeitet sie hier ein.
+
+### Q20 Schach-Abenteuer: Entscheidungen vom 8.11.2026 (schon umgesetzt oder empfohlen, Widerspruch genügt)
+
+- [ ] Q20-1. **Limo für Jo auch nach einem Sieg:** Die Bibel wollte die Limo-Quest nur nach einer Niederlage. Weil
+      man die Limo jetzt am Kiosk kauft, startet sie nach dem ersten Duell gleich wie es ausging, und Jo ist danach
+      „analysiert“. Empfehlung: so lassen. Schon umgesetzt.
+- [ ] Q20-2. **Ablenkung im Laden:** Die Regel „Zeitkarten nie im Laden“ (Z4) gilt nur für Sprüche, die die Uhr
+      ändern; „Ablenkung“ (der nächste Zug des Gegners hastig) bleibt für 10 Münzen im Kiosk. Schon umgesetzt.
+- [ ] Q20-3. **Lupe des Uhrmachers im Laden:** Laut Bibel schenkt Mr. Harlan sie nach drei Siegen; dafür fehlt
+      noch ein Zähler für Siege je Gegner. Empfehlung: jetzt für 90 Münzen im Zeitungsstand Riverton, später
+      zusätzlich als Geschenk von Harlan. Schon umgesetzt.
+- [ ] Q20-4. **Balancing nach der Münzrechnung von mittel-2:** Fahrrad nicht im ersten Laden, Kartentasche 450
+      statt 300, „Was droht?“ 60 statt 45, Remisangebot nicht im Clubkampf, Straßensiege nur beim ersten Sieg je
+      Gegner und Tag 10 Münzen (danach 2). Schon umgesetzt.
+- [ ] Q20-5. **Geburtsort Ambroses:** geboren und aufgewachsen in Port Delacroix (Klavierwerkstatt), Schach in den
+      Kaffeehäusern von New Orleans. Empfehlung so übernehmen (Story-Bibel ist angepasst).
+- [ ] Q20-6. **Hurrikan und Jahreszeit in Akt 3:** Der Hurrikan war im letzten Spätsommer; Akt 3 zeigt den
+      Wiederaufbau im nassen Winter, damit der Ton Hoffnung bleibt statt Katastrophe. Empfehlung so übernehmen.
+- [ ] Q20-7. **Wer erhebt in Akt 3 den Vorwurf (Schummeln)?** Empfehlung: Remy, ein Kind aus der Stadt, das dem
+      Konzern misstraut; nicht Nova und kein Erwachsener. Er entschuldigt sich später (Szene 69).
+- [ ] Q20-8. **Nova bleibt in Akt 3 ohne Auflösung:** Der Held schweigt aus Rücksicht; den Beweis legt er in Akt 4
+      zusammen mit Dr. Lin vor. Empfehlung so übernehmen.
+- [ ] Q20-9. **Erinnerung mit einer Partie vor 1850:** Für den Flashback in Akt 3 die Sammlung der Klassiker um eine
+      gemeinfreie Partie aus den 1830er Jahren erweitern; bis dahin der Anfang der Unsterblichen. Empfehlung so.
+- [ ] Q20-10. **Céleste ohne Bekehrung:** Sie bleibt ohne Schachinteresse; genau das ist die Lehre für Ambrose.
+      Empfehlung so übernehmen.
+- [ ] Q20-11. **Echte Grafik auch online:** Die veröffentlichte App wird auf GitHub gebaut. Damit die gekauften
+      Bilder (Q17) dort ankommen, braucht der GitHub-Bau einen Lesezugang zum privaten Repository (ein „Deploy Key“,
+      den du in GitHub einträgst; ich schreibe die Anleitung, sobald das Repository da ist). Empfehlung: ja.
+
 ### Q19 Weitere Karten und Gegenstände im Schach-Abenteuer (8.11.2026, großteils umgesetzt, Widerspruch genügt)
 
 - [ ] Q19-1. **Grundsätze:** Karten ändern nie die Zugregeln, nur Informationen, Zeit oder die Startstellung; jede

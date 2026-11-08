@@ -184,6 +184,60 @@
           },
           "dialog": "maple-falls-park.landstrasse",
           "wenn": "aufbruchGesehen"
+        },
+        {
+          "name": "fotoGrandma",
+          "karte": "mapleFalls.wohnzimmer",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.foto_grandma"
+        },
+        {
+          "name": "kartonKueche",
+          "karte": "mapleFalls.wohnzimmer",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.karton_kueche"
+        },
+        {
+          "name": "pizzakarton",
+          "karte": "mapleFalls.wohnzimmer",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.pizzakarton"
+        },
+        {
+          "name": "hutschachtel",
+          "karte": "mapleFalls.dachboden",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.hutschachtel"
+        },
+        {
+          "name": "spiegel",
+          "karte": "mapleFalls.dachboden",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.spiegel"
+        },
+        {
+          "name": "zeitungen1961",
+          "karte": "mapleFalls.dachboden",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.zeitungen1961"
+        },
+        {
+          "name": "pokalvitrine",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.pokalvitrine"
+        },
+        {
+          "name": "brettOhneDame",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.brett_ohne_dame"
+        },
+        {
+          "name": "plakatZaehlen",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.plakat_zaehlen"
         }
       ],
       "club": {
@@ -359,6 +413,54 @@
           "name": "programmheft",
           "art": "gegenstand",
           "dialog": "cedar-creek-archiv.programmheft"
+        },
+        {
+          "name": "zeitungsregal",
+          "karte": "cedarCreek.bibliothek",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.zeitungsregal"
+        },
+        {
+          "name": "globus",
+          "karte": "cedarCreek.bibliothek",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.globus"
+        },
+        {
+          "name": "schildFluestern",
+          "karte": "cedarCreek.bibliothek",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.schild_fluestern"
+        },
+        {
+          "name": "boxerfoto",
+          "karte": "cedarCreek.archiv",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.boxerfoto"
+        },
+        {
+          "name": "wasserfleck",
+          "karte": "cedarCreek.archiv",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.wasserfleck"
+        },
+        {
+          "name": "zettelTurm",
+          "karte": "cedarCreek.waschsalon",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.zettel_turm"
+        },
+        {
+          "name": "comicheft",
+          "karte": "cedarCreek.waschsalon",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.comicheft"
+        },
+        {
+          "name": "automat",
+          "karte": "cedarCreek.waschsalon",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.automat"
         }
       ],
       "club": {

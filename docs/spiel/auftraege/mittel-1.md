@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Erinnerung London 1851 begehbar (Ort und Dialoge)
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, dreizehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der dreizehnte Auftrag, London begehbar, ist mit den Karten von niedrig-1 zusammengeführt, danke; „jung“ ist als Porträtvariante bei Q17 vorgemerkt. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json` (neuer Ort), `inhalte/abenteuer/dialoge/de/erinnerung-london.ink`

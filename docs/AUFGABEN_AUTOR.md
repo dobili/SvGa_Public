@@ -123,6 +123,12 @@ Adresse mit „#abenteuer“ öffnen).
       weg, und beim nächsten Duell ist Jo „analysiert“. Außerdem neu: Straßensiege bringen nur beim ersten Sieg
       je Gegner und Tag 10 Münzen, danach 2. Das Fahrrad gibt es nicht mehr im ersten Laden, die Kartentasche
       kostet 450, und das Remisangebot geht nicht im Clubkampf.
+- [ ] N2622. Erinnerungen: In Cedar Creek (Archiv, Programmheft), Riverton (große Uhr in der Bahnhofshalle) und
+      Ironwood (Vitrine im Museum) rätst du jetzt die echten Partien Zug für Zug: Paulsen gegen Morphy (New York
+      1857, ab Zug 13 mit Schwarz), die Unsterbliche Partie (London 1851, ab Zug 17 mit Weiß) und Bird gegen
+      Morphy (1858, ab Zug 17 mit Schwarz). Geschafft ab der Hälfte der Züge. In Riverton führt die Uhr zuerst
+      in die Erinnerung selbst: London in Sepia, du läufst als junger Ambrose über den Strand ins Kaffeehaus
+      (ohne Tagebuch und Münzen), am Schachtisch beginnt das Raten, die Uhr im Kaffeehaus bringt dich zurück.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
@@ -1188,6 +1194,7 @@ nur du das Buch änderst.
       Empfehlung ist ein einheitlicher Stil, gezeichnet nach Vorlage (Pixel-Porträt 64 × 64 oder gezeichnet in
       der Optik der App). Ohne Zeichner bleibt es bei Namen und Farbfeld. Wenn du selbst zeichnen oder jemanden
       fragen willst, brauche ich pro Figur ein PNG; die Liste der Figuren steht in `inhalte/abenteuer/orte.json`.
+      Für Ambrose zusätzlich eine junge Fassung (20 Jahre, für die Erinnerungen) und ein Laufbild als Held.
 
 ### Q16 Aussehen im Profil (7.11.2026, schon umgesetzt, Widerspruch genügt)
 

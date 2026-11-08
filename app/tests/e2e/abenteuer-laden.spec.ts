@@ -77,3 +77,21 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   await laden.getByRole("button", { name: "Fertig" }).click();
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("30 Münzen");
 });
+
+test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
+  const stand = {
+    ...STAND,
+    position: { karte: "erinnerungLondon.strand", x: 2, y: 10, richtung: "rechts" },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  const welt = page.getByTestId("abenteuer-welt");
+  await expect(welt).toBeVisible({ timeout: 30000 });
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(welt).toHaveClass(/abenteuer-welt-erinnerung/);
+  await expect(page.getByTestId("abenteuer-tagebuchknopf")).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer-muenzen")).toHaveCount(0);
+});

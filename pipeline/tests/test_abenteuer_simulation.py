@@ -23,10 +23,6 @@ INKJS = HAUPTORDNER / "app" / "node_modules" / "inkjs"
 STARTWERT = 1
 ZEITBUDGET_SEKUNDEN = 240
 
-# Bekannte Figuren ohne Platz auf einer Karte (seit 08.11.2026 keine mehr). Steht eine später auf
-# ihrer Karte, schlägt der Test fehl und der Eintrag muss hier weg.
-BEKANNT_OHNE_KARTE: set[str] = set()
-
 
 def _lauf() -> subprocess.CompletedProcess[str]:
     return subprocess.run(
@@ -62,9 +58,6 @@ def test_abspann_und_alle_hauptquests(ausgabe: str):
     assert "Hauptquest" not in ausgabe.split("Nie erreichte Knoten:")[0]
 
 
-def test_figuren_ohne_karte_nur_bekannte(ausgabe: str):
+def test_jede_figur_steht_auf_einer_karte(ausgabe: str):
     ohne = _figuren_ohne_karte(ausgabe)
-    neu = ohne - BEKANNT_OHNE_KARTE
-    behoben = BEKANNT_OHNE_KARTE - ohne
-    assert not neu, f"Neue Figuren ohne Platz auf einer Karte: {sorted(neu)}"
-    assert not behoben, f"Jetzt auf einer Karte, aus BEKANNT_OHNE_KARTE löschen: {sorted(behoben)}"
+    assert not ohne, f"Figuren ohne Platz auf einer gezeichneten Karte: {sorted(ohne)}"

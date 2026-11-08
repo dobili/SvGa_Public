@@ -77,7 +77,11 @@
       "buchuebungen": [],
       "themen": ["mattbilder"],
       "anzahl": 1,
-      "erinnerung": { "partie": "klassik-paulsen-morphy", "abZug": 13, "seite": "black" }
+      "erinnerung": {
+        "partie": "klassik-paulsen-morphy",
+        "abZug": 13,
+        "seite": "black"
+      }
     },
     {
       "kennung": "wegMapleCedar.tafel",
@@ -139,7 +143,11 @@
       "buchuebungen": [],
       "themen": ["mattbilder"],
       "anzahl": 1,
-      "erinnerung": { "partie": "klassik-unsterbliche", "abZug": 17, "seite": "white" }
+      "erinnerung": {
+        "partie": "klassik-unsterbliche",
+        "abZug": 17,
+        "seite": "white"
+      }
     },
     {
       "kennung": "wegRivertonIronwood.tafel",
@@ -183,7 +191,11 @@
       "buchuebungen": [],
       "themen": ["mattbilder"],
       "anzahl": 1,
-      "erinnerung": { "partie": "klassik-bird-morphy", "abZug": 17, "seite": "black" }
+      "erinnerung": {
+        "partie": "klassik-bird-morphy",
+        "abZug": 17,
+        "seite": "black"
+      }
     }
   ]
 }

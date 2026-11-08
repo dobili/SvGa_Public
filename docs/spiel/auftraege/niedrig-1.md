@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Karten der Erinnerung London 1851
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zehnte Auftrag, Karten London 1851, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/erinnerung-london-strand.json`,

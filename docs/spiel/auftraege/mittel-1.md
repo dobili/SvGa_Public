@@ -46,9 +46,9 @@ Dein Vorschlag ist angenommen: Das Skript der Gesamtsimulation kommt nach
   Abspann fehlt oder Daten fehlen; sonst 0. Nie begonnene Nebenquests zählen nicht (manche sind
   freiwillig, etwa die Feier in Ironwood, die es nur vor dem Clubkampf gibt).
 - Figuren ohne Karte werden nur noch gemeldet, nicht mehr ersatzweise gesetzt (außer mit
-  `--ersatz`). Der Test führt die fünf bekannten (`mapleFalls.juno`, `mapleFalls.abernathy`,
-  `mapleFalls.lily`, `pinewoodCamp.lou`, `pinewoodCamp.tamsin`) in `BEKANNT_OHNE_KARTE`, mit
-  Kommentar: Steht eine davon auf ihrer Karte, schlägt der Test fehl, bis der Eintrag gelöscht ist.
+  `--ersatz`). Nachtrag nach dem Hereinholen von 43d3d2f6: niedrig-1 hat die fünf Figuren gesetzt,
+  die Liste der bekannten Ausnahmen ist entfernt; der Test verlangt jetzt, dass jede Figur auf einer
+  gezeichneten Karte steht.
 - `pipeline/tests/test_abenteuer_simulation.py`: ein Startwert, nur mit `ABENTEUER_SIMULATION=1`
   (sonst `pytest.skip` mit Begründung; ebenso ohne Node oder ohne `app/node_modules/inkjs`).
   Prüft Rückgabewert 0, Abspann, keine offene Hauptquest und die Liste der Figuren ohne Karte.
@@ -58,8 +58,10 @@ Dein Vorschlag ist angenommen: Das Skript der Gesamtsimulation kommt nach
   längsten nicht besucht hat, statt zufällig umherzugehen, und fasst Dinge, die sich im selben
   Zustand nichts mehr tun, nicht immer wieder an.
 - Mit den Startwerten 1 bis 4: in allen Läufen Abspann, alle Hauptquests fertig, Rückgabewert 0.
-  Nie begonnen bleiben nur `mapleFalls.verlorenesBrett` und `mapleFalls.lilysSpringer` (Lily und
-  der Bibliothekar fehlen auf der Karte) und in zwei Läufen die freiwillige `ironwood.feier`.
+  Mit den gesetzten Figuren werden jetzt auch `mapleFalls.verlorenesBrett` und
+  `mapleFalls.lilysSpringer` fertig; in einem Lauf bleibt `mapleFalls.samsDame` nie begonnen (der
+  Spieler verlässt Maple Falls, bevor er Sam wieder anspricht; Sam steht auf der Karte, keine
+  Sackgasse).
 
 **Befund des Skripts, behoben:** `cedar-creek-archiv.ink`: Wer beim Ordnen „Später helfen“ sagte und
 danach die Clubnadel holte, bekam das Ordnen nie wieder angeboten (Bedingung `nadelCedarCreek ==

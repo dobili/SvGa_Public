@@ -514,5 +514,11 @@
   "figur.holloway.name": "Mrs. Holloway",
   "figur.okoro.name": "Mr. Okoro",
   "quest.lupe.titel": "Die Lupe des Uhrmachers",
-  "quest.lupe.schritt1": "Gewinne dreimal gegen Mr. Harlan in der Bahnhofshalle."
+  "quest.lupe.schritt1": "Gewinne dreimal gegen Mr. Harlan in der Bahnhofshalle.",
+  "reisen.knopf": "Reisen",
+  "reisen.titel": "Mit der Monatskarte reisen",
+  "reisen.hinweis": "Bus und Bahn bringen dich in jede Stadt, die du schon kennst.",
+  "reisen.keine": "Du kennst noch keine andere Stadt.",
+  "reisen.zurueck": "Doch nicht",
+  "gegenstand.monatskarte.name": "Monatskarte"
 }

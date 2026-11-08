@@ -134,6 +134,9 @@ Adresse mit „#abenteuer“ öffnen).
       (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen. Neu: Nach
       drei Siegen gegen Mr. Harlan schenkt er dir die Lupe (Quest „Die Lupe des Uhrmachers“); hast du sie schon
       gekauft, lobt er dich nur.
+- [ ] N2624. Monatskarte (Zeitungsstand Riverton, 80 Münzen): Draußen erscheint unter „Tagebuch“ der Knopf „Reisen“.
+      Er listet alle Städte, die du schon besucht hast (nicht die aktuelle); ein Tipp bringt dich an den Anfang
+      der Stadt, ohne die Wege zu laufen. In Häusern und Erinnerungen gibt es den Knopf nicht.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

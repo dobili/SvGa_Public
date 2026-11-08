@@ -752,3 +752,16 @@ bestanden, die sechs Karten nicht mehr übersprungen.
   Wand (geschlossen, von unten ansprechbar); `wind` (Schwingtür, abend).
 - `erinnerung-siedlung-huette` (12 × 10): ohne Ausgang am Rand; `start` und `ankunft`
   nebeneinander, `rueckkehr` in der oberen Wand, `kerze`, `postreiter`; `pferd`.
+
+**Teil 5: Weg 11 und Capital Arena (4 Karten, gepusht).** 580 Tests bestanden.
+
+- `weg-ghost-capital-seeufer`: See unten, Bootshaus, `tafel`; `fischer` (morgen),
+  `spaziergaenger` (abend), `moewen`, `enten`.
+- `weg-ghost-capital-leuchtturm`: Felsen, Leuchtturm mit Lampe oben, See unten, `fundLinse`, `abe`;
+  `faehrmann`, `moewe`, `seehund`.
+- `capital-arena-aussen`: Arena (`halleTuer`), Vorplatz, `treppe`, `mama`, `juno`; nur ein
+  Ortsübergang (`wegGhost` links), rechter Rand geschlossen; `zuschauer`, `reporter`, `eltern`,
+  `tauben`, `hund`.
+- `capital-arena-halle` (24 × 14): `turniertafel`, `pressetisch`, `fanshop`, Tribünen, neun
+  Figuren in zwei Reihen (`turnierleiterin`, `lin`, `grahamHale`, `bea`, `marcus`, `nova`,
+  `tobias`, `kade`, `victor`); `schiedsrichter`, `publikum`.

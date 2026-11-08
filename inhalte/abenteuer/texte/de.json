@@ -281,5 +281,7 @@
   "fund.holzturm.name": "Turm aus Holz",
   "fund.holzturm.text": "Im Schließfach der Umkleide. Der letzte; jetzt ist der Satz vollständig.",
   "fund.glasfunke.name": "Funke aus Glas",
-  "fund.glasfunke.text": "Im Schaukasten des Museums. Hübsch, aber in einem Kaffeehaus hätte er nicht gebrannt."
+  "fund.glasfunke.text": "Im Schaukasten des Museums. Hübsch, aber in einem Kaffeehaus hätte er nicht gebrannt.",
+  "quest.partieformular.titel": "Eine alte Handschrift",
+  "quest.partieformular.schritt1": "Zeig Mr. Boateng im Waschsalon das alte Partieformular."
 }

@@ -12,10 +12,13 @@ EXTERNAL beginneAufgaben(runde)
 VAR boatengGetroffen = false
 VAR boatengLagos = false
 VAR trocknerStellungBestanden = false
+VAR formularGefunden = false
+VAR formularEntziffert = false
 
 === boateng ===
 {
 - not boatengGetroffen: -> boateng_erstes_treffen
+- formularGefunden and not formularEntziffert: -> boateng_formular
 - trocknerStellungBestanden and not boatengLagos: -> boateng_lagos
 - trocknerStellungBestanden: -> boateng_alltag
 - else: -> boateng_wartet
@@ -75,3 +78,27 @@ Sie hat damals jedes Turnier hier gewonnen. Heute leitet sie den Club in der Bib
 === boateng_alltag ===
 {~Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten.|Dein Gutschein gilt. Komm mit Wäsche wieder.|Nächste Woche ein Erstickungsmatt. Verrat es niemandem.} #sprecher:boateng
 -> END
+
+// ---------------------------------------------------------------- Das alte Partieformular (E4.1)
+// Quest cedarCreek.partieformular: beginnt mit boateng_formular, erledigt mit
+// boateng_formular_entziffert (Partiefragment 2). Voraussetzung ist der Fund formular1857 auf
+// Route 1; formularGefunden setzt weg-maple-cedar.ink, weil die Hülle Funde nicht als
+// Dialogvariable meldet.
+
+=== boateng_formular ===
+Du zeigst Mr. Boateng das vergilbte Partieformular aus der Blechdose. Er setzt eine zweite Brille auf. #sprecher:erzaehler
+Oh. Das ist alt. #sprecher:boateng
+Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng
+-> boateng_formular_entziffert
+
+=== boateng_formular_entziffert ===
+~ formularEntziffert = true
+Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng
+Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und reicht ihn dir. #sprecher:erzaehler
+Das sind meine Züge. Ein Stück meiner letzten Partie, in meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig
+Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
+* [„Danke, Mr. Boateng.“]
+    Gern. Alte Partien sind wie alte Wäsche: Man muss sie nur einmal gut ausschütteln. #sprecher:boateng
+* [„Woher können Sie das lesen?“]
+    Mein Großvater schrieb so. Er war Lehrer in Accra und hat mir die alte Schrift beigebracht. #sprecher:boateng
+- -> END

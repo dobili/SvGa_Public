@@ -516,10 +516,7 @@
       "schritte": [
         {
           "text": "quest.parkclub.schritt1",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "weg-cedar-riverton.aufbruch"
-          },
+          "ereignis": { "art": "ort", "karte": "wegCedarRiverton.bahndamm" },
           "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.aufbruch" }]
         },
         {
@@ -860,6 +857,32 @@
           "text": "quest.erinnerungBird.schritt1",
           "ereignis": { "art": "aufgaben", "runde": "ironwood.erinnerungBird" },
           "wirkungen": [{ "art": "fragment", "halbzug": 4 }]
+        }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.partieformular",
+      "titel": "quest.partieformular.titel",
+      "typ": "hilfe",
+      "ort": "cedarCreek",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "cedar-creek-waschsalon.boateng_formular"
+      },
+      "schritte": [
+        {
+          "text": "quest.partieformular.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "cedar-creek-waschsalon.boateng_formular_entziffert"
+          },
+          "wirkungen": [
+            {
+              "art": "fragment",
+              "halbzug": 2
+            }
+          ]
         }
       ]
     }

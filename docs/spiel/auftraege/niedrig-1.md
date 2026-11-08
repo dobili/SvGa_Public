@@ -438,3 +438,138 @@ silicon-bay-lobby.json
 #      s     #
 #######l######
 ```
+
+**Teil 2: Weg 5 und Port Delacroix (6 Karten, gepusht).** 445 Tests bestanden, keine der sechs
+übersprungen; Prettier und Paketbau sauber.
+
+- `weg-silicon-delacroix-faehre` (28 × 20): Fährdeck, Wasser rundum, Salon mit `tafel` am Eingang,
+  `fundFlaschenpost`, `schiffskoch`; `passagierin`, `matrose`, `moewen`, `pelikan`.
+- `weg-silicon-delacroix-deich` (28 × 20): Deich zwischen Wasser und Sumpf, Sandsäcke,
+  `fundMuschel`, `guidry`; `helfer`, `reiher`, `moewe`.
+- `port-delacroix-aussen` (32 × 24): Turnhalle und Klavierwerkstatt oben, Straße mit Brettern vor
+  den Häusern (`brettHaus1` bis `4`), Gebäckstand mit `arceneaux`, zwei Zelte, Ruine des
+  Musikhauses am Kai, Boot mit `batiste`, Wasser unten; `deich` links, `wuestenzug` rechts;
+  `handwerker`, `sandsackhelfer`, `ballkinder`, `blaeser` (abend), `pelikane`, `moewen`, `reiher`
+  am Bauzaun, `katze` auf dem Boot.
+- `port-delacroix-turnhalle` (18 × 12): Körbe, acht Klapptische mit Brettern, `odile`, `remy`,
+  `lou`; `clubkinder`.
+- `port-delacroix-werkstatt` (16 × 12): Klaviere unter Planen, Hobelbank (`werkbank`), `henri`,
+  `celeste`.
+- `port-delacroix-musikhaus` (16 × 12): Ruine mit Trümmern, `schild` an der Wand; `aufraeumer`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Spendenkasse, nasses Notenheft, Plakat „Wir
+  spielen weiter“ (Turnhalle), Foto des jungen Ambrose und Célestes Laptop als Auslöser
+  (Werkstatt). Gerüste gibt der Platzhaltersatz nicht her (Bretter und Kisten stehen dafür).
+
+```text
+weg-silicon-delacroix-faehre.json
+############################
+############################
+############################
+############################
+############################
+#  L                    L  #
+#         ########         #
+#         #F#t##F#         #
+#         ### ####         #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                 S        #
+#    f              KKK    #
+#                   KKK    #
+#                          #
+############################
+############################
+############################
+############################
+############################
+
+weg-silicon-delacroix-deich.json
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+#                     L    #
+#     KK       KKK         #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                   G      #
+#          f               #
+#                          #
+############################
+############################
+############################
+############################
+############################
+############################
+
+port-delacroix-aussen.json
+################################
+#                              #
+# ########  #######            #
+# ##F##F##  ##F##F#            #
+# ########  #######            #
+# ########  #######            #
+# ########  #######            #
+# ###t####  ###w###            #
+#   b     b        b      b    #
+#                   gA         #
+dTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTw
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                    K     L   #
+#  KKK   KKK          ###m#### #
+#  KKK   KKK          ######## #
+#                     ######## #
+#             KKK              #
+#TTTTTTTTTTTTTTBTTTTTTTTTTTTTTT#
+#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+################################
+################################
+################################
+################################
+################################
+
+port-delacroix-turnhalle.json
+#L##############L#
+#                #
+#        O       #
+#                #
+#  BR B    B  B  #
+#                #
+#                #
+#  B  B    BL B  #
+#                #
+#                #
+#        s       #
+#########t########
+
+port-delacroix-werkstatt.json
+####F######F####
+#              #
+# KKK      KKK #
+# KKK      KKK #
+#           C  #
+#       KwK    #
+#        H     #
+# KKK          #
+# KKK          #
+#              #
+#       s      #
+########w#######
+
+port-delacroix-musikhaus.json
+########s#######
+#              #
+#              #
+# KK           #
+# KK           #
+#              #
+#          KKK #
+#          KKK #
+#   K          #
+#              #
+#       s      #
+########m#######
+```

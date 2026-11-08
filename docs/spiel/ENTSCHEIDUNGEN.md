@@ -383,7 +383,10 @@ Blitz-Szene, Zeitnot-Trick und Flashback London 1851 (mittel-2). Die Tafel-Runde
 `wegMapleCedar.tafel`. Alle drei Helfer warten jetzt ohne Auftrag (Guthaben schonen, Wunsch des
 Autors). Noch offen aus den Berichten: R27 (nur die erste Erinnerung je Staffel gibt die
 Bauernvorgabe), Fingerzeig im Laden ist laut `karten.json` dauerhaft (Angebot anpassen), Variable
-`mamaSpielt`, Kiosk-Angebot mit Preisen (kommt mit Schritt 12).
+`mamaSpielt`, Kiosk-Angebot mit Preisen (kommt mit Schritt 12). Aus dem Nachtrag von mittel-1
+(5985f3c6, zusammengeführt): Übergänge brauchen einen optionalen Dialog beim Betreten
+(`ankunft_zu_fuss` in Cedar Creek, `landstrasse` im Park), heute hat ein Übergang keinen; das ist
+der nächste Baustein von Schritt 10 (Feld `dialog` am Übergang, Dialog vor dem Kartenwechsel).
 
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 

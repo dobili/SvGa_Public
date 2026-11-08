@@ -403,6 +403,12 @@ nennt, der existiert. Münzen (Schritt 12) und Extras (Anbindung an „Dein Auss
 nicht; die Felder stehen schon in den Daten. Erste Funde: altes Partieformular und die Kiste am
 Flussweg (Route 1).
 
+**Sechste Helfer-Runde (Teil) zusammengeführt:** 17 Dinge zum Ansehen in den Innenräumen
+(Texte mittel-1, Objekte niedrig-1), Statisten und Tiere auf den drei Außenkarten. Hinweis von
+mittel-1: Ink-Besuchszähler überleben den Dialog nicht, weil jeder Dialog eine neue Geschichte
+baut; deshalb Variablen `angesehen…`. Vorschlag für später: Besuchszähler je Knoten in der Hülle
+speichern, dann können diese Variablen weg.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

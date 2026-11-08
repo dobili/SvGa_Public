@@ -1,6 +1,11 @@
-# Auftrag mittel-1: Dinge zum Ansehen in den Innenräumen von Maple Falls und Cedar Creek
+# Auftrag mittel-1: kein Auftrag
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, sechster Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechste Auftrag ist zusammengeführt, danke.
+Der nächste Auftrag kommt, sobald mittel-2 die Spieldaten für Riverton und Ironwood geliefert hat:
+dann Dialoge (mittel-1) und Karten (niedrig-1) für Akt 2. Bis dahin nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig (zuletzt `claude/schach-abenteuer-mittel-1-cl431d`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/dialoge/de/ansehen-maple-falls.ink` und

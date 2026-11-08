@@ -1,6 +1,11 @@
-# Auftrag niedrig-1: Maple Falls und Cedar Creek beleben (Statisten, Tiere, Dinge zum Ansehen)
+# Auftrag niedrig-1: kein Auftrag
 
-**Stand:** fertig (niedrig-1, 08.11.2026; Kartentest wartet auf mittel-1)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechste Auftrag ist zusammengeführt, danke.
+Der nächste Auftrag kommt, sobald mittel-2 die Spieldaten für Riverton und Ironwood geliefert hat:
+dann Dialoge (mittel-1) und Karten (niedrig-1) für Akt 2. Bis dahin nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), bitte frisch auf
 `origin/claude/friendly-shannon-y8bf90` aufsetzen (dein Zweig hat die Statisten der Route wieder
 entfernt; der Hauptzweig hat sie, und der Kartentest überspringt `type` statist/tier)

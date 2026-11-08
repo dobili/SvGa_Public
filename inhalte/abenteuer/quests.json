@@ -338,7 +338,7 @@
           "text": "quest.archiv1858.schritt1",
           "ereignis": {
             "art": "dialog",
-            "knoten": "cedar-creek-bibliothek.okafor"
+            "knoten": "cedar-creek-bibliothek.okafor_erstes_treffen"
           },
           "wirkungen": [
             { "art": "szene", "akt": 1, "szene": "akt1.bibliotheksclub" }
@@ -373,11 +373,8 @@
       "start": { "art": "ort", "karte": "cedarCreek.aussen" },
       "schritte": [
         {
-          "text": "quest.clubkampfCedarCreek.schritt1",
-          "ereignis": {
-            "art": "dialog",
-            "knoten": "cedar-creek-aussen.ankunft"
-          },
+          "text": "quest.clubkampfCedarCreek.bibliothek",
+          "ereignis": { "art": "ort", "karte": "cedarCreek.bibliothek" },
           "wirkungen": [
             { "art": "szene", "akt": 1, "szene": "akt1.ankunftCedarCreek" }
           ]
@@ -419,7 +416,10 @@
       "typ": "raetsel",
       "ort": "cedarCreek",
       "haupt": false,
-      "start": { "art": "dialog", "knoten": "cedar-creek-waschsalon.boateng" },
+      "start": {
+        "art": "dialog",
+        "knoten": "cedar-creek-waschsalon.boateng_erstes_treffen"
+      },
       "schritte": [
         {
           "text": "quest.trockner.schritt1",

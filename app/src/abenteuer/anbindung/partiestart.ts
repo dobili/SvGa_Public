@@ -106,6 +106,7 @@ export function partieeinstellungAus(
     abenteuer: {
       kennung: auftrag.kennung,
       ...(auftrag.abgelenktAb ? { abgelenktAb: auftrag.abgelenktAb } : {}),
+      ...(auftrag.variante ? { variante: auftrag.variante } : {}),
     },
   };
 }

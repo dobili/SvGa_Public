@@ -125,6 +125,11 @@ export interface Partieeinstellung {
      * ab diesem Halbzug macht der Bot um `faktor` häufiger Fehler (spiel/botzeit.ts, wahlHaeufigkeit).
      */
     readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
+    /**
+     * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10, V1): „blind“ blendet die
+     * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
+     */
+    readonly variante?: "blind";
   };
 }
 

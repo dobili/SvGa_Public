@@ -37,10 +37,12 @@ ergänzt der Spiel-Chat diese Datei.
 | `app/src/ui/bildschirme/Partie.tsx`, `ui/komponenten/partie/partieerweiterungen.ts` | Erweiterungspunkt für Leisten unter dem Brett (Kartenleiste) | keine (Leiste nur bei Partien mit `abenteuer`) |
 | `app/src/ui/komponenten/partie/Partieabschluss.tsx` | Knopf „Zurück zur Stadt“ | keine (nur bei Partien mit `abenteuer`) |
 | `app/src/ui/komponenten/partie/botzug.ts`, `app/src/spiel/botzeit.ts` | `wahlRestzeit`: gefühlte Zeitnot des Bots nach dem Spruch „Großes Maul“; `wahlHaeufigkeit`: Stärkewechsel mitten in der Partie (Halbfinale, 8.11. abends) | keine (ohne `einstellung.abenteuer` gleich der echten Restzeit und Häufigkeit) |
-| `app/src/spiel/partie.ts`, `app/src/speicher/partienLesen.ts` | Feld `einstellung.abenteuer` `{ kennung, zeitnotBis?, abgelenktAb? }` | keine (fehlt bei gewöhnlichen Partien) |
+| `app/src/spiel/partie.ts`, `app/src/speicher/partienLesen.ts` | Feld `einstellung.abenteuer` `{ kennung, zeitnotBis?, abgelenktAb?, variante? }` | keine (fehlt bei gewöhnlichen Partien) |
 | `app/src/speicher/format.ts` | **Format 11**: Feld `abenteuer` im Speicher (Spielstand des Spiels, sonst `null`); Brettart `pavillon` | Format steigt von 10 auf 11; ältere Stände werden ohne Verlust gelesen |
 | `app/src/training/extras.ts`, `ui/komponenten/extras/*` | Bedingung `abenteuer` (Funde), Extra „Brett Riverton-Pavillon“ | seit 8.11. abends unsichtbar ohne Spielstand (`sichtbareExtras`), Zähler wie vorher |
 | `app/src/ui/brett/masse.ts`, `app/public/extras/brett-pavillon.svg` | Farben des Pavillon-Bretts | keine (nur mit dem Extra wählbar) |
+| `app/src/ui/brett/Figur.tsx` | Klasse `brett-figur` an jeder Figur (8.11. abends), damit Blindschach sie ausblenden kann | keine (nur eine Klasse) |
+| `app/src/app/App.tsx` (Blindschach) | Rahmenklasse `rahmen-blindschach` bei Partien mit `einstellung.abenteuer.variante === "blind"` | keine |
 | `app/src/ui/stil/basis.css` | Abstand unten im Vollbild | keine |
 | `app/src/sw/dateiliste.ts`, `app/vite.config.ts`, `app/public/_headers` | Spiel als eigener Baustein, Zusatzpaket `public/abenteuer/` nur auf Wunsch geladen; Beta-Name im Manifest | keine Mehrlast beim Start |
 | `app/skripte/pruefe-groesse.mjs` | Größenbudget weist das Zusatzpaket gesondert aus | keine |

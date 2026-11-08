@@ -182,7 +182,8 @@ function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
     istObjekt(wechsel) && typeof wechsel.halbzug === "number" && typeof wechsel.faktor === "number"
       ? { abgelenktAb: { halbzug: wechsel.halbzug, faktor: wechsel.faktor } }
       : {};
-  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis, ...abgelenktAb } };
+  const variante = roh.variante === "blind" ? { variante: "blind" as const } : {};
+  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis, ...abgelenktAb, ...variante } };
 }
 
 /**

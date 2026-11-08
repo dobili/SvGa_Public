@@ -51,6 +51,7 @@ export function Figur({
   if (satz !== "buch") {
     return (
       <image
+        className="brett-figur"
         href={`${import.meta.env.BASE_URL}${ORDNER_BILDSAETZE}${satz}/${dateiname(zeichen)}`}
         x={x}
         y={y}
@@ -60,7 +61,7 @@ export function Figur({
     );
   }
   return (
-    <g transform={`translate(${x} ${y})`}>
+    <g className="brett-figur" transform={`translate(${x} ${y})`}>
       <path d={pfade.schattenriss} fill={FARBEN.creme} />
       <path d={pfade.figur} fill={farbe} />
     </g>

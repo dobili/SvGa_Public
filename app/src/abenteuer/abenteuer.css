@@ -370,3 +370,8 @@
 .abenteuer-abspann-extra {
   font-style: italic;
 }
+
+/* Blindschach (Variante „blind“, Akt 4, docs/spiel/10, V1): Figuren unsichtbar, Züge bleiben lesbar. */
+.rahmen-blindschach .brett-figur {
+  visibility: hidden;
+}

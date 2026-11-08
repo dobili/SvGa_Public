@@ -593,6 +593,11 @@ Halbzug macht der Bot um den Faktor häufiger Fehler (`wahlHaeufigkeit`). Turnie
 zeigt danach `oberwelt/Abspann.tsx`: alle Figuren der Welt mit Porträt, Mitwirkende, und den
 Extra-Abspann (Ambroses Zettel), wenn `mentorzugFreiGespielt` nicht gesetzt ist.
 
+**Erste Variante: Blindschach (V1/L2, 8.11.2026):** Begegnungsfeld `variante: "blind"`; die
+Partie trägt `einstellung.abenteuer.variante`, der Rahmen der App bekommt `rahmen-blindschach`, die
+Figuren des Bretts sind unsichtbar (die Zugliste bleibt). Varianten zählen nie für App, Wertung
+oder Nadeln (`zaehltFuerApp` false). Schach960 und die Varianten mit Fairy-Stockfish folgen.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

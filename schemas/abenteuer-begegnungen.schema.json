@@ -91,6 +91,10 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "variante": {
+          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar. Varianten zählen nie für Nadeln, Wertung oder die App",
+          "enum": ["blind"]
+        },
         "abgelenktAb": {
           "description": "Stärkewechsel mitten in der Partie (Akt 4, Halbfinale): ab diesem Halbzug macht der Gegner um den Faktor häufiger Fehler",
           "type": "object",

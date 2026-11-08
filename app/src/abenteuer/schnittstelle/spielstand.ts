@@ -98,6 +98,11 @@ export interface Partiekarten {
   readonly wiedereinstieg: boolean;
   /** Halbzug, in dem zuletzt eine Karte gespielt wurde (höchstens eine je eigenem Zug). */
   readonly letzterHalbzug: number | null;
+  /**
+   * Gegnerkennung der Partie (Schritt 13): Die Kartenleiste liest daraus, ob Sprüche erlaubt sind
+   * (nur Straßengegner), gegen welche er immun ist und wie er antwortet. Fehlt in älteren Ständen.
+   */
+  readonly gegner?: string;
 }
 
 /** Gesammelte Partiefragmente von Ambroses alter Partie (Dokument 02, 3.3), als Halbzugindizes. */

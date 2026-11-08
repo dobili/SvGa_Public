@@ -19,7 +19,12 @@ import { naechsteStufe, stufe, type Stufennummer } from "../../../engine/stufen"
 import { wahltempo } from "../../../engine/wahlmodell";
 import { MAIA_WEB } from "../../../engine/maia-web";
 import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../../engine/zugwahl";
-import { botBedenkzeit, eigeneRestzeit, zieheBotMitUhr } from "../../../spiel/botzeit";
+import {
+  botBedenkzeit,
+  eigeneRestzeit,
+  wahlRestzeit,
+  zieheBotMitUhr,
+} from "../../../spiel/botzeit";
 import { mitUhrverzug } from "../../../spiel/ablauf";
 import { engineZugMitLage } from "../../../spiel/enginezug";
 import {
@@ -116,7 +121,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       haeufigkeit: e.haeufigkeit,
       hoechstverlust: e.hoechstverlust,
       verlauf: verlaufVon(partie),
-      restMs: eigeneRestzeit(partie, jetztMs),
+      restMs: wahlRestzeit(partie, jetztMs),
       tempo: wahltempo(e.uhr),
       ...maiaDerPartie(partie),
     };
@@ -129,7 +134,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       blindeFlecken: e.blindeFlecken ?? [],
       fleckGewicht: 1,
       verlauf: verlaufVon(partie),
-      restMs: eigeneRestzeit(partie, jetztMs),
+      restMs: wahlRestzeit(partie, jetztMs),
       tempo: wahltempo(e.uhr),
       ...maiaDerPartie(partie),
     };
@@ -155,7 +160,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     stilmix: e.stilmix,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
-    restMs: eigeneRestzeit(partie, jetztMs),
+    restMs: wahlRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),
     ...maiaDerPartie(partie),
   };
@@ -168,7 +173,7 @@ function gruppenmitglieder(partie: Partie, fen: string, jetztMs: number): Gruppe
   if (nummer === null) return [];
   return mitgliederFuer(nummer, phaseVon(fen) ?? "mittelspiel", {
     verlauf: verlaufVon(partie),
-    restMs: eigeneRestzeit(partie, jetztMs),
+    restMs: wahlRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),
     ...maiaDerPartie(partie),
   });

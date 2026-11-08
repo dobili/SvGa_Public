@@ -40,8 +40,16 @@ export type Kartenwirkung =
    * (Regelwerk R26: f2 → f7, g1 → g8).
    */
   | { readonly art: "vorgabe"; readonly feld: string }
-  /** Mehr Bedenkzeit, nur gegen den Zeitdruck-Spezialisten der Landesmeisterschaft. */
-  | { readonly art: "zeitbonus"; readonly sekunden: number }
+  /**
+   * Bedenkzeit verschieben (Schritt 13, docs/spiel/10, S2): „leser“ bekommt Sekunden dazu
+   * („Kühler Kopf“), „gegner“ verliert sie („Grübelfalle“, ein Spruch). Nur in Partien mit Uhr.
+   */
+  | { readonly art: "zeit"; readonly wer: "leser" | "gegner"; readonly sekunden: number }
+  /**
+   * Gefühlte Zeitnot (S3, „Großes Maul“): der Gegner spielt so viele eigene Züge, als hätte er
+   * kaum noch Zeit. Die echte Uhr bleibt unberührt; wirkt auch ohne Uhr.
+   */
+  | { readonly art: "zeitnot"; readonly zuege: number }
   /** Wiedereinstieg am Kipppunkt ohne Abzug bei der Clubnadel (Post-Game, Entscheidung B2). */
   | { readonly art: "sanduhr" };
 
@@ -58,10 +66,15 @@ export interface Kartensorte {
   readonly art: Kartenart;
   readonly wirkung: Kartenwirkung;
   /**
-   * Vor Partiebeginn (Vorgaben, Zeitbonus), während der Partie, oder nachher (Sanduhr beim Angebot
+   * Vor Partiebeginn (Vorgaben), während der Partie, oder nachher (Sanduhr beim Angebot
    * des Wiedereinstiegs, Regelwerk R25).
    */
   readonly zeitpunkt: "vorher" | "waehrend" | "nachher";
+  /**
+   * Die Karte ist ein Spruch (Sticheleien statt Geistertrick, docs/spiel/10, S1): nur gegen
+   * Straßengegner spielbar, nie im Clubkampf oder Turnier, und manche Gegner sind immun.
+   */
+  readonly spruch_art?: boolean;
 }
 
 /** Besitz einer Kartensorte im Spielstand: dauerhafte Karten zählen 1, Verbrauchskarten die Anzahl. */

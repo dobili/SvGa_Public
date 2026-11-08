@@ -39,6 +39,26 @@ export function eigeneRestzeit(partie: Partie, jetztMs: number): number | null {
   return restzeit(partie.uhr, amZug(partie), jetztMs);
 }
 
+/** Gefühlte Restzeit unter „Großes Maul“: zwischen 30 und 60 Sekunden, Zeitnotstufe „30“. */
+export const GEFUEHLTE_ZEITNOT_MS = 45_000;
+
+/**
+ * Gefühlte Restzeit für die Zugwahl: so viel glaubt der Bot noch zu haben. Gleich der echten
+ * Restzeit, außer der Leser hat im Abenteuer den Spruch „Großes Maul“ gespielt
+ * (einstellung.abenteuer.zeitnotBis): Bis vor diesen Halbzug spielt der Bot, als hätte er nur noch
+ * GEFUEHLTE_ZEITNOT_MS, auch ohne Uhr.
+ * Warum: Der Gegner will es zeigen und spielt zu schnell; die Engine greift dabei daneben wie in
+ * echter Zeitnot (engine/menschenprofil.ts, Stufe „30“). Die Uhr bleibt unberührt (docs/spiel/10, S1).
+ * Regel: Kapitel 12, Zeiteinteilung (Zeitnot erzeugt Fehler).
+ * Beispiel: zeitnotBis 15, nach 10 Halbzügen, Uhr 4:00 → 45 000; nach 15 Halbzügen → 240 000.
+ */
+export function wahlRestzeit(partie: Partie, jetztMs: number): number | null {
+  const echt = eigeneRestzeit(partie, jetztMs);
+  const bis = partie.einstellung.abenteuer?.zeitnotBis;
+  if (bis === undefined || partie.zuege.length >= bis) return echt;
+  return echt === null ? GEFUEHLTE_ZEITNOT_MS : Math.min(echt, GEFUEHLTE_ZEITNOT_MS);
+}
+
 /** Zielfeld eines UCI-Zuges („e4d5“ → „d5“). */
 function ziel(uci: string): string {
   return uci.slice(BEZUGSFELD_LAENGE, 2 * BEZUGSFELD_LAENGE);

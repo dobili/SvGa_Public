@@ -61,12 +61,24 @@
           }
         },
         {
+          "description": "Uhr ändern (docs/spiel/10, S1): Kühler Kopf (+ für den Leser), Grübelfalle (− für den Gegner); nur mit Uhr",
           "type": "object",
           "additionalProperties": false,
-          "required": ["art", "sekunden"],
+          "required": ["art", "wer", "sekunden"],
           "properties": {
-            "art": { "const": "zeitbonus" },
-            "sekunden": { "type": "integer", "minimum": 30, "maximum": 600 }
+            "art": { "const": "zeit" },
+            "wer": { "enum": ["leser", "gegner"] },
+            "sekunden": { "type": "integer", "minimum": -600, "maximum": 600 }
+          }
+        },
+        {
+          "description": "Gefühlte Zeitnot des Gegners für so viele seiner Züge (Großes Maul, docs/spiel/10, S1; 08, Z6); die Uhr bleibt",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege"],
+          "properties": {
+            "art": { "const": "zeitnot" },
+            "zuege": { "type": "integer", "minimum": 1, "maximum": 10 }
           }
         }
       ]
@@ -101,8 +113,12 @@
           "enum": ["dauerhaft", "verbrauch"]
         },
         "wirkung": { "$ref": "#/$defs/wirkung" },
+        "spruch_art": {
+          "description": "Ein Spruch des Helden (docs/spiel/10, S1 bis S6): nur gegen Straßengegner, nie im Club oder Turnier; Texte spruch.<kennung>.1 bis .8",
+          "type": "boolean"
+        },
         "zeitpunkt": {
-          "description": "Vorgaben und Zeitbonus vor Partiebeginn, die meisten während der Partie, die Sanduhr nachher (Regelwerk R25)",
+          "description": "Vorgaben vor Partiebeginn, die meisten während der Partie, die Sanduhr nachher (Regelwerk R25)",
           "enum": ["vorher", "waehrend", "nachher"]
         }
       }

@@ -128,6 +128,11 @@
           "pattern": "^portraets/[a-z0-9-]+\\.(webp|png|svg)$"
         },
         "staerke": { "$ref": "#/$defs/staerke" },
+        "immunGegen": {
+          "description": "Sprüche, die bei diesem Gegner verpuffen (docs/spiel/10, S4), Kennungen aus karten.json; im Steckbrief erwähnen",
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+        },
         "phasenversatz": {
           "description": "Abweichung je Phase in Stufen (−3 bis 3); fehlend: keine",
           "type": "object",

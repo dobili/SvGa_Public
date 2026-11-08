@@ -91,6 +91,25 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "zeit": {
+          "description": "Bedenkzeit (Schritt 13): „wahl“ lässt den Leser vor der Partie wählen (ohne Uhr, Schnellschach, Blitz); eine feste Uhr gehört zur Geschichte (Schaffner 3 + 2). Fehlend: ohne Uhr",
+          "oneOf": [
+            { "const": "wahl" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sekunden", "zuschlag"],
+              "properties": {
+                "sekunden": {
+                  "type": "integer",
+                  "minimum": 60,
+                  "maximum": 3600
+                },
+                "zuschlag": { "type": "integer", "minimum": 0, "maximum": 60 }
+              }
+            }
+          ]
+        },
         "zaehltFuerApp": {
           "description": "Fehlend: ja für Partien aus der Grundstellung (Entscheidung A2)",
           "type": "boolean"

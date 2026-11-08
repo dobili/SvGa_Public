@@ -75,8 +75,13 @@ export interface Partieauftrag {
    * (Entscheidung A2)? Für Elo-Wertung, Rivalen und Duelle zählt sie nie.
    */
   readonly zaehltFuerApp: boolean;
-  /** Uhr nur für den Zeitdruck-Spezialisten; null: ohne Uhr (Entscheidung Dokument 02). */
+  /**
+   * Bedenkzeit der Partie; null: ohne Uhr. Fest aus der Begegnung (Schaffner 3 + 2) oder vom
+   * Leser vor der Partie gewählt (Schritt 13, Deckwahl).
+   */
   readonly uhr: { readonly sekunden: number; readonly zuschlag: number } | null;
+  /** Darf der Leser die Bedenkzeit vor der Partie wählen (Begegnung „zeit“: „wahl“)? */
+  readonly zeitwahl?: boolean;
 }
 
 /**

@@ -494,6 +494,22 @@ und kommt mit der Grafik; das Extra ist in `funde.json` schon vermerkt. Lizenzen
 Fairy-Stockfish und Figurenbilder der Märchenfiguren in `docs/spiel/LIZENZEN.md` (Wunsch des
 Autors: bei Zusatzpaketen auf Lizenzen achten).
 
+**Bedenkzeit und Sprüche (Schritt 13 fertig, 8.11.2026):** Begegnungen haben ein Feld `zeit`:
+„wahl“ (Clubkämpfe, Sams Revanche, Straßengegner außer Schaffner und Gus) bietet vor der Partie
+Ohne Uhr / Schnellschach 10 + 5 / Blitz 3 + 2 an, eine feste Uhr gehört zur Geschichte (Schaffner
+3 + 2, Gus 10 + 5); Ambroses erste Lektion, Victor und Mama bleiben ohne Uhr. Die Wahl kostet keine
+Nadel (08, Z2). Zeitkarten heißen Sprüche (10, S1): „Kühler Kopf“ (+120 s eigene Uhr, Schaffner),
+„Grübelfalle“ (−60 s Gegner, nie unter 5 s, Slick), „Großes Maul“ (fünf Züge gefühlte Zeitnot:
+Die Zugwahl des Bots rechnet mit 45 s Restzeit, Stufe „30“, auch ohne Uhr; `spiel/botzeit.ts`
+wahlRestzeit, Feld `einstellung.abenteuer.zeitnotBis`). Sprüche nur gegen Rolle `strasse`;
+`immunGegen` im Gegnerprofil (Rosa, Harlan), die Karte ist dann trotzdem verbraucht (S4). Gegner
+antworten mit `spruch.konter.<name>.1|2`, Ambrose erklärt beim ersten Spruch (Variable
+`spruchErklaert`). Dabei gefunden: Startstellungen aus Abbildungen wurden nie in eine FEN
+aufgelöst, alle Stellungsduelle brachen beim Start ab; jetzt löst `anbindung/dienste.ts` sie aus
+den Kapiteldaten auf (Oberflächentest `abenteuer-sprueche.spec.ts`). Offen: Die Immunität soll im
+Steckbrief stehen, sobald es eine Steckbriefansicht gibt; ein Wiedereinstieg spielt ohne die
+gewählte Uhr.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

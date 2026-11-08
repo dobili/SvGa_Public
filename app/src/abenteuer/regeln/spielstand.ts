@@ -159,6 +159,7 @@ function partiekartenAus(roh: unknown): Partiekarten | null {
     gespielt: liste(roh.gespielt),
     wiedereinstieg: roh.wiedereinstieg === true,
     letzterHalbzug: typeof roh.letzterHalbzug === "number" ? roh.letzterHalbzug : null,
+    ...(typeof roh.gegner === "string" ? { gegner: roh.gegner } : {}),
   };
 }
 

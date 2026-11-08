@@ -92,6 +92,18 @@ Adresse mit „#abenteuer“ öffnen).
       erste Clubnadel und die Kiste am Flussweg; mit genug Münzen ist eine Karte kaufbar, und dauerhafte Karten wie das
       Gefahrenradar gibt es nur einmal. Auf der Landstraße (Ortsausgang rechts im Park, erst nach dem Gespräch über die
       Fahrt nach Cedar Creek offen) liegt ein Fund im Busch; er steht danach im Tagebuch unter „Funde“.
+- [ ] N2619. Bedenkzeit und Sprüche: Im Park zu Skater Jo (Halfpipe) und „Abgemacht.“ wählen. Vor der Partie
+      erscheint „Karten für die Partie“ mit der neuen Zeile „Bedenkzeit“: Ohne Uhr, Schnellschach 10 + 5, Blitz 3 + 2.
+      Blitz wählen: Die Partie hat eine Uhr mit 3:00. Mit Uhr gerät Jo in Zeitnot und spielt dann schwächer; das
+      kostet keine Nadel. Die Wahl gibt es bei Clubkämpfen und Straßengegnern; der Schaffner spielt immer 3 + 2,
+      Gus immer 10 + 5. Neu sind drei Sprüche statt „Zeitbonus“, die der Held selbst sagt: „Kühler Kopf“ (+2 Minuten
+      für dich, vom Schaffner nach dem ersten Sieg), „Grübelfalle“ (der Gegner verliert eine Minute, von Slick im
+      Wohnwagen) und „Großes Maul“ (der Gegner spielt fünf Züge wie in Zeitnot, seine Uhr bleibt gleich; vom Weg
+      nach Ironwood). Sprüche gehen nur gegen Straßengegner, nie im Clubkampf; Zeitkarten nur mit Uhr. Beim ersten
+      Spruch erklärt Ambrose: „Am Brett eines Clubs schweigt man, im Park redet man.“ Der Gegner antwortet mit einer
+      eigenen Zeile; Rosa und Mr. Harlan sind gegen manche Sprüche immun („lässt sich nicht beirren“), die Karte ist
+      dann trotzdem weg. Nebenbei behoben: Die Stellungsduelle aus Buchabbildungen (Jo, Rosa, Nia, Schaffner, Harlan,
+      Gus) starteten bisher gar nicht, man stand nach „Los“ wieder in der Welt.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
@@ -1122,6 +1134,25 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
+
+### Q19 Weitere Karten und Gegenstände im Schach-Abenteuer (8.11.2026, Empfehlung, wird umgesetzt, Widerspruch genügt)
+
+- [ ] Q19-1. **Grundsätze:** Karten ändern nie die Zugregeln, nur Informationen, Zeit oder die Startstellung; jede
+      Karte lehrt eine Frage aus dem Buch; Gold gibt es nur ohne Karten; starke Karten (Vorgaben, Mentor-Zug) bleiben
+      unverkäuflich. Nicht geplant sind Karten, die Figuren verschieben, Züge verbieten oder den König schützen.
+- [ ] Q19-2. **Als Nächstes gebaut:** „Was droht?“ (leicht, zeigt als roten Pfeil, was der Gegner spielen würde, wenn
+      er jetzt am Zug wäre; Kapitel 4 und 12) und „Abzählen“ (leicht, ein Feld antippen: Angreifer und Verteidiger;
+      Kapitel 1). Danach „Limo“ (Geschenk für Straßengegner, 5 Münzen, bringt eine Steckbriefzeile) und der Spruch
+      „Schmeichelei“ (Gegner wird überheblich und spielt schwächer).
+- [ ] Q19-3. **Später:** „Remisangebot“ (Gegner nimmt bei ausgeglichener Stellung an), „Schutzengel“ (fünf Züge lang
+      fragt die App „Bist du sicher?“, wenn ein Zug Material verliert), „Waage“ (wer steht besser, ohne Zahl),
+      „Spickzettel“ (Eröffnung des Gegners vorab), „Auszeit“ (eigene Uhr hält einen Zug). Gegenstände: Lupe des
+      Uhrmachers (zwei Steckbriefzeilen vor jeder Partie), Kartentasche (vier statt drei Karten, ab Akt 3, 300
+      Münzen), Reisebrett (überall eine Übungspartie gegen Ambrose oder Juno), Partienotizbuch (drei Schlüsselmomente
+      je Partie im Tagebuch), Monatskarte (Schnellreise).
+- [ ] Q19-4. **Brücke zum Buch:** Wer in der App ein Kapitel abschließt, bekommt im Spiel dessen Karte geschenkt
+      (Kapitel 1 → Abzählen, Kapitel 4 → Gefahrenradar, Kapitel 12 → Was droht?). Ambrose: „Das hast du nicht im
+      Park gelernt, sondern im Buch.“
 
 ### Q17 Grafik für das Schach-Abenteuer (8.11.2026, Entscheidung nötig, nichts umgesetzt)
 

@@ -57,6 +57,7 @@ import {
   wiedereinstiegMoeglich,
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
+import { ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
@@ -546,6 +547,7 @@ export function Oberwelt() {
         gespielt: vorher,
         wiedereinstieg: auftrag.format.art === "wiedereinstieg",
         letzterHalbzug: null,
+        gegner: auftrag.profil.kennung,
       },
     };
     standRef.current = mitPartie;
@@ -610,7 +612,8 @@ export function Oberwelt() {
       return;
     }
     if (!auftrag) return;
-    if (auftrag.kartenErlaubt && neu.karten.length > 0) setzeDeckwahl(auftrag);
+    if ((auftrag.kartenErlaubt && neu.karten.length > 0) || auftrag.zeitwahl)
+      setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);
   };
 
@@ -665,7 +668,14 @@ export function Oberwelt() {
         <Deckwahl
           besitz={stand.karten}
           sorten={welt.daten.karten}
-          beiWahl={(deck) => startePartie(deckwahl, deck)}
+          mitKarten={deckwahl.kartenErlaubt}
+          zeitwahl={deckwahl.zeitwahl === true}
+          beiWahl={(deck, zeit) =>
+            startePartie(
+              deckwahl.zeitwahl ? { ...deckwahl, uhr: ZEITKLASSEN[zeit] } : deckwahl,
+              deck,
+            )
+          }
           beiAbbruch={() => setzeDeckwahl(null)}
         />
       )}

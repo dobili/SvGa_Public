@@ -94,6 +94,21 @@ def test_querverweise_stimmen():
             soll = 160 + 60 * clubnummer.get(profil["kennung"], 0)
             if staerke != {"art": "eingang", "versatz": soll}:
                 fehler.append(f"{profil['kennung']}: Clubchef braucht eingang + {soll}, hat {staerke}")
+    # Sprüche (Schritt 13, docs/spiel/10, S2, S4): Immunität nennt nur Spruchkarten, und
+    # Straßengegner, gegen die man Sprüche spielen kann, haben Antworten (zwei Zeilen) oder keine.
+    sprueche = {k["kennung"] for k in _lade("karten.json")["karten"] if k.get("spruch_art")}
+    for profil in _lade("gegner.json")["gegner"]:
+        for kennung in profil.get("immunGegen", []):
+            if kennung not in sprueche:
+                fehler.append(f"{profil['kennung']}: immun gegen {kennung}, das ist kein Spruch")
+        name = profil["kennung"].split(".")[-1]
+        konter = [f"spruch.konter.{name}.{n}" in texte for n in (1, 2)]
+        if any(konter) and not all(konter):
+            fehler.append(f"{profil['kennung']}: Antworten auf Sprüche unvollständig")
+    for kennung in sprueche:
+        for n in range(1, 9):
+            if f"spruch.{kennung}.{n}" not in texte:
+                fehler.append(f"Spruch spruch.{kennung}.{n} fehlt in texte/de.json")
     runden = _lade("runden.json")["runden"]
     # Läden (G2, G3): Waren existieren, Mentor-Zug, Sanduhr und Vorgaben sind nie zu kaufen.
     laeden = _lade("laeden.json")["laeden"]

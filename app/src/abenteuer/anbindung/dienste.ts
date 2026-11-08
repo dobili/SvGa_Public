@@ -7,9 +7,10 @@
  * Hülle (AbenteuerAnsicht.tsx) als Hook, weil Navigation und Maia-Stand Hooks sind.
  * Abhängigkeiten: speicher/speicher.ts, speicher/partien.ts, spiel/partie.ts,
  * app/navigationsKontext.ts, einstellungen/maiastand.ts, paket/paketlader.ts,
- * anbindung/partiestart.ts, anbindung/partieergebnis.ts, regeln/gegnerstaerke.ts.
+ * anbindung/partiestart.ts, anbindung/partieergebnis.ts, regeln/gegnerstaerke.ts, daten/laden.ts.
  */
 import { useMemo } from "react";
+import { ladeKapitel } from "../../daten/laden";
 import { useNavigation } from "../../app/navigationsKontext";
 import { findePartie, mitLaufender } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
@@ -63,13 +64,29 @@ export function useAbenteuerstand(): Abenteuerstand | null {
 }
 
 /**
+ * Löst eine Startstellung aus einer Abbildung des Buches in ihre FEN auf (Stellungsduelle der
+ * Straßengegner, Regelwerk R13); andere Startstellungen bleiben. Null, wenn es die Abbildung in
+ * den Buchdaten nicht gibt.
+ * Beispiel: Skater Jo, Abbildung 1.21 → { art: "fen", fen: <FEN der Abbildung 1.21> }.
+ */
+async function mitAufgeloesterStellung(auftrag: Partieauftrag): Promise<Partieauftrag | null> {
+  const stellung = auftrag.startstellung;
+  if (stellung.art !== "abbildung") return auftrag;
+  const kapitel = await ladeKapitel(Number(stellung.nummer.split(".")[0]));
+  const abbildung = kapitel.abbildungen.find((a) => a.id === stellung.nummer);
+  return abbildung ? { ...auftrag, startstellung: { art: "fen", fen: abbildung.fen } } : null;
+}
+
+/**
  * Legt die Partie zu einem Auftrag an: Einstellung bauen, Partie als laufende Partie ablegen,
  * Kennung im Spielstand merken (damit ein Neuladen mitten in der Partie zurückfindet).
  */
 async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<string | null> {
+  const aufgeloest = await mitAufgeloesterStellung(auftrag);
+  if (!aufgeloest) return null;
   // Der Name im Profil ist ein Textschlüssel; die Partie zeigt den Namen in der Sprache des Lesers.
   const einstellung = {
-    ...partieeinstellungAus(auftrag, mitMaia),
+    ...partieeinstellungAus(aufgeloest, mitMaia),
     botName: tSpiel(auftrag.profil.name),
   };
   const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());

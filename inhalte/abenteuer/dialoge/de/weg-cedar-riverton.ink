@@ -4,7 +4,7 @@
 // Stationen (W4): Wanderin Mrs. Fenwick mit einer Weisheit (Kapitel 1, Abschnitt 1.4),
 // Rätseltafel am Wegweiser (Runde wegCedarRiverton.tafel, Quest wegCedarRiverton.tafelWegweiser),
 // Zugschaffner Mr. Quinn als Straßengegner mit Uhr (Begegnung wegCedarRiverton.schaffner; Juno
-// spielt zuerst und verliert), Funde Pfeilspitze, Springer aus Holz, Fahrkarte von 1958.
+// spielt zuerst und verliert; beim ersten Sieg die Karte kuehlerKopf), Funde Pfeilspitze, Springer aus Holz, Fahrkarte von 1958.
 // Einstiege wie in orte.json: fenwick, schaffner, tafel, fund_pfeilspitze, fund_holzspringer,
 // fund_fahrkarte. Den Aufbruch erzählt der Übergang am Steg (cedar-creek-aussen.zedernwald), die
 // Ankunft der Übergang nach Riverton (riverton-aussen.ankunft_zu_fuss).
@@ -16,10 +16,12 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
+EXTERNAL gibKarte(kennung)
 
 VAR wegCedarRivertonTafelBestanden = false
 VAR fenwickGetroffen = false
 VAR quinnGetroffen = false
+VAR quinnKarteGegeben = false
 VAR ausgangWegCedarRivertonSchaffner = ""
 VAR pfeilspitzeGefunden = false
 VAR holzspringerGefunden = false
@@ -85,6 +87,12 @@ Zehn Züge, dann fährt mein Zug. #sprecher:schaffner
     -> END
 
 === quinn_nach_sieg ===
+{not quinnKarteGegeben:
+    ~ quinnKarteGegeben = true
+    Bevor ich es vergesse, ein Rat von der Strecke: Wenn alle drängeln, atme einmal durch. #sprecher:schaffner
+    ~ gibKarte("kuehlerKopf")
+    Ein kühler Kopf ist mehr wert als zwei Minuten. Aber zwei Minuten sind auch nicht schlecht. #sprecher:ambrose
+}
 Pünktlich gewonnen. Das sehe ich gern. Noch eine, bevor die Pause um ist? #sprecher:schaffner
 Du hast die Uhr behandelt wie eine Figur. Gut. #sprecher:ambrose
 + [„Noch eine.“]

@@ -27,8 +27,6 @@
   "karte.bauernvorgabe.spruch": "Ein Bauer weniger. Aus Respekt, sagt er.",
   "karte.springervorgabe.name": "Springervorgabe",
   "karte.springervorgabe.spruch": "Ohne Springer. So spielte man gegen mich, als ich zehn war.",
-  "karte.zeitbonus.name": "Zeitbonus",
-  "karte.zeitbonus.spruch": "Zeit ist die einzige Figur, die nie zurückkommt.",
   "karte.sanduhr.name": "Ambroses Sanduhr",
   "karte.sanduhr.spruch": "Noch einmal von hier. Diesmal siehst du es.",
   "quest.dasBrett.titel": "Das Brett auf dem Dachboden",
@@ -334,5 +332,11 @@
   "spruch.konter.gus.2": "Hab ich alles schon gehört. Im Rangierbahnhof ist es lauter.",
   "spruch.konter.slick.1": "Ha! Ich esse mit der Gabel, und du redest mit dem Mund voll.",
   "spruch.konter.slick.2": "Großes Maul im Park? Willkommen zu Hause. Jetzt zieh!",
-  "fund.gefundenExtra": "Gefunden: {name}. Dafür gibt es etwas Neues in „Dein Aussehen“ (Profil der App)."
+  "fund.gefundenExtra": "Gefunden: {name}. Dafür gibt es etwas Neues in „Dein Aussehen“ (Profil der App).",
+  "spruch.immun": "{gegner} lässt sich nicht beirren. Der Spruch verpufft.",
+  "deck.zeit": "Bedenkzeit",
+  "deck.zeit.ohne": "Ohne Uhr",
+  "deck.zeit.schnell": "Schnellschach 10 + 5",
+  "deck.zeit.blitz": "Blitz 3 + 2",
+  "deck.zeitHinweis": "Mit Uhr spielt dein Gegner in Zeitnot schwächer. Im Clubkampf zählt die Uhr nicht für die Nadel."
 }

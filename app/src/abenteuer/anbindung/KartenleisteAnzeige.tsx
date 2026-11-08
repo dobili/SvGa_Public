@@ -8,6 +8,8 @@
  * Wirkungen: Fingerzeig markiert das Startfeld des besten Zuges, Gefahrenradar die bedrohten
  * eigenen Figuren (Warnsignale, Kapitel 4), Zweite Chance nimmt den letzten eigenen Zug samt
  * Antwort zurück, Flüstern zeigt drei Kandidaten als Pfeile, Mentor-Zug spielt den besten Zug.
+ * Sprüche (Schritt 13): Kühler Kopf und Grübelfalle verschieben Bedenkzeit, Großes Maul setzt
+ * gefühlte Zeitnot (anbindung/spruchkarte.ts); nur gegen Straßengegner, Zeitkarten nur mit Uhr.
  * Abhängigkeiten: engine/engineDienst.ts, analyse/k4-warnsignale.ts, schach/stellung.ts,
  * spiel/zuege.ts, speicher (Spielstand), daten/laden.ts (Kartensorten), regeln/karten.ts, i18n.
  */
@@ -21,9 +23,12 @@ import { mitLaufender } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 import { leserAmZug, type Partie } from "../../spiel/partie";
 import { uciZuSan } from "../../spiel/zuege";
-import { ladeSpieldaten, type Kartendaten } from "../daten/laden";
+import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
 import { kartenSpielbar, mitGespielterKarte } from "../regeln/karten";
+import { passtZurPartie, spruecheErlaubt } from "../regeln/zeitkarten";
+import { spieleZeitkarte } from "./spruchkarte";
 import type { Kartensorte } from "../schnittstelle/karten";
+import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Leisteneigenschaften } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
@@ -33,6 +38,15 @@ const FINGERZEIG_MS = 1500;
 const FLUESTERN_MS = 2500;
 const MENTOR_MS = 3000;
 const KANDIDATEN = 3;
+
+/** Dialogvariable: Ambrose hat beim ersten Spruch erklärt, wo Sprüche hingehören. */
+const SPRUCH_ERKLAERT = "spruchErklaert";
+
+/** Merkt sich im Spielstand, dass Ambrose die Sprüche erklärt hat. */
+function mitErklaerung(stand: Abenteuerstand, erklaert: boolean): Abenteuerstand {
+  if (!erklaert) return stand;
+  return { ...stand, dialogvariablen: { ...stand.dialogvariablen, [SPRUCH_ERKLAERT]: true } };
+}
 
 /** Die eigenen Züge der Partie (für „Zweite Chance erst nach dem ersten eigenen Zug“). */
 function eigeneZuege(partie: Partie): number {
@@ -86,6 +100,7 @@ export function KartenleisteAnzeige({
 }: Leisteneigenschaften) {
   const stand = useAbenteuerstand();
   const [sorten, setzeSorten] = useState<readonly Kartendaten[]>([]);
+  const [gegnerliste, setzeGegnerliste] = useState<readonly Gegnerdaten[]>([]);
   const [laeuft, setzeLaeuft] = useState<string | null>(null);
   const [meldung, setzeMeldung] = useState<string | null>(null);
   const begegnung = partiekennung.split("#")[0] ?? partiekennung;
@@ -94,7 +109,9 @@ export function KartenleisteAnzeige({
     let aktiv = true;
     ladeSpieldaten()
       .then((d) => {
-        if (aktiv) setzeSorten(d.karten);
+        if (!aktiv) return;
+        setzeSorten(d.karten);
+        setzeGegnerliste(d.gegner);
       })
       .catch(() => undefined);
     return () => {
@@ -128,11 +145,17 @@ export function KartenleisteAnzeige({
     halbzug: partie.zuege.length,
     eigeneZuege: eigeneZuege(partie),
   };
+  const gegner = gegnerliste.find((g) => g.kennung === karten.gegner);
+  const partielage = {
+    uhr: partie.uhr !== null,
+    sprueche: spruecheErlaubt(gegner?.rolle ?? null),
+  };
 
   /** Spielt eine Karte: Wirkung ausführen, dann im Spielstand verbuchen. */
   const spiele = async (sorte: Kartensorte) => {
     setzeLaeuft(sorte.kennung);
     setzeMeldung(null);
+    let zeilen: readonly string[] = [];
     try {
       const fen = steuerung.fen;
       switch (sorte.wirkung.art) {
@@ -157,14 +180,27 @@ export function KartenleisteAnzeige({
             spiel: mitLaufender(d.spiel, zurueckOhneErlaubnis(partie)),
           }));
           break;
+        case "zeit":
+        case "zeitnot": {
+          const folge = spieleZeitkarte(partie, sorte, gegner);
+          await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, folge.partie) }));
+          zeilen = folge.zeilen;
+          break;
+        }
         default:
           break;
       }
+      // Beim ersten Spruch erklärt Ambrose, wo Sprüche hingehören (docs/spiel/10, S2).
+      const ersterSpruch =
+        sorte.spruch_art === true && stand.dialogvariablen[SPRUCH_ERKLAERT] !== true;
       await aendere((d) => ({
         ...d,
-        abenteuer: d.abenteuer ? mitGespielterKarte(d.abenteuer, sorte, lage.halbzug) : d.abenteuer,
+        abenteuer: d.abenteuer
+          ? mitErklaerung(mitGespielterKarte(d.abenteuer, sorte, lage.halbzug), ersterSpruch)
+          : d.abenteuer,
       }));
-      setzeMeldung(tSpiel(sorte.spruch));
+      const text = zeilen.length > 0 ? zeilen.join(" ") : tSpiel(sorte.spruch);
+      setzeMeldung(ersterSpruch ? `${text} ${tSpiel("spruch.ambrose.ersterSpruch")}` : text);
     } catch (fehler) {
       if (!(fehler instanceof AuftragAbgebrochen)) setzeMeldung(t("abenteuer.karteFehler"));
     } finally {
@@ -180,7 +216,10 @@ export function KartenleisteAnzeige({
         const sorte = sorten.find((s) => s.kennung === kennung) as Kartensorte | undefined;
         if (!sorte) return null;
         const gespielt = karten.gespielt.some((k) => k.kennung === kennung);
-        const erlaubt = laeuft === null && kartenSpielbar(karten, sorte, lage);
+        const erlaubt =
+          laeuft === null &&
+          kartenSpielbar(karten, sorte, lage) &&
+          passtZurPartie(sorte, partielage);
         return (
           <button
             key={kennung}

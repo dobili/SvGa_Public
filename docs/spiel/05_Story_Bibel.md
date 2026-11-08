@@ -997,7 +997,7 @@ Ort `wegCedarRiverton.zedernwald`, `wegCedarRiverton.bahndamm` · Juno, Mr. Quin
 Mrs. Fenwick. Ereignis: Rätseltafel (Runde `wegCedarRiverton.tafelWegweiser`, 3 Doppelangriffe, 5 Münzen),
 Wanderin mit Weisheit, Straßengegner mit Uhr: Stellungsduell 3 + 2 (R13, W4), Zielstärke A − 100.
 Juno spielt zuerst und verliert lachend („Ich hab die Zeit gewonnen. Er hatte mehr übrig.“). Sieg:
-10 Münzen und beim ersten Sieg die Karte **Zeitbonus** (Z3, Z4). Funde F „Pfeilspitze“, F
+10 Münzen und beim ersten Sieg die Karte **Kühler Kopf** (bisher Zeitbonus) (Z3, Z4). Funde F „Pfeilspitze“, F
 „Fahrkarte von 1958“. Etwa 12 Minuten.
 
 **28. Ankunft in Riverton** · `akt2.ankunftRiverton` · H `riverton.parkclub`
@@ -1314,9 +1314,9 @@ Ladenware ist er hier als Verbrauchskarte gedacht (G2). Das braucht entweder ein
 
 | Karte           | Wo                                            | Warum hier                                                 |
 | --------------- | --------------------------------------------- | ---------------------------------------------------------- |
-| Zeitbonus       | Szene 27, Schaffner am Bahndamm (erster Sieg) | erste Partie mit Uhr, Zeit als Hilfe wird spürbar (Z3, Z4) |
-| Zeitdruck       | Szene 34, Zuschauen im Pavillon               | Belohnung einer Nebenquest, passt zu Slicks Eile (Z3)      |
-| Zeitnot-Trick   | Szene 40, Ambrose auf der Brücke (Geschenk)   | Z6, mit dem ehrlichen Satz aus Kapitel 12, Abschnitt 12.5  |
+| Kühler Kopf     | Szene 27, Schaffner am Bahndamm (erster Sieg) | erste Partie mit Uhr, Zeit als Hilfe wird spürbar (Z3, Z4) |
+| Grübelfalle     | Szene 37, Slicks Wohnwagen (Abschied)         | Slick bringt den ersten Spruch bei (docs/spiel/10, S1)     |
+| Großes Maul     | Szene 40, Ambrose auf der Brücke (Geschenk)   | Z6, mit dem ehrlichen Satz aus Kapitel 12, Abschnitt 12.5  |
 | Bauernvorgabe   | Szene 35, Flashback London (≥ 70 %)           | Erinnerung nach R27                                        |
 | Flüstern        | Szene 41, Rätsel im Museum                    | Rätsel nach R27                                            |
 | Zweite Chance   | Szenen 31, 32, 45, 46                         | Straßensiege und Aufgabenreihen nach R27                   |

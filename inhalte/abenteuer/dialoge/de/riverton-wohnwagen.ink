@@ -1,12 +1,14 @@
 // Ort: Slicks Wohnwagen am Fluss (Akt 2). Gegenstand: Dosentrophäen.
 //
 // Szene 37 der Story-Bibel, zweiter Teil (akt2.pavillonGeraeumt): Slick schenkt {held} den
-// weißen Springer aus dem Pavillon (Fund pavillonspringer). Der Wohnwagen hat keinen eigenen
+// weißen Springer aus dem Pavillon (Fund pavillonspringer)
+// und bringt ihm den ersten Spruch bei (Karte gruebelfalle, Schritt 13, docs/spiel/10, S1). Der Wohnwagen hat keinen eigenen
 // Figurenauslöser; das Gespräch läuft deshalb über die Dosentrophäen: beim ersten Mal
 // slick_abschied (auf diesen Knoten wartet Quest riverton.parkclub), danach die Trophäen.
 // Die Tür öffnet sich erst, wenn clubkampfRivertonBesprochen wahr ist (orte.json, wenn).
 
 EXTERNAL gibFund(kennung)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR slickAbschiedGesehen = false
@@ -28,6 +30,10 @@ Aus dem letzten Satz. Der war schon im Pavillon, bevor ich geboren wurde. #sprec
 Nimm ihn mit. #sprecher:slick
 ~ gibFund("pavillonspringer")
 Dann spielen wir eben auf der Treppe. Die Treppe kann man nicht verpachten. #sprecher:slick #stimmung:froh
+Und noch was für die Treppe. Wenn dein Gegner zu sicher wirkt, frag ihn ganz ruhig, ob sein Turm da wirklich sicher steht. #sprecher:slick
+Dann grübelt er. Und die Uhr läuft. #sprecher:slick #stimmung:froh
+~ gibKarte("gruebelfalle")
+Ein Spruch ist kein Zug. Aber im Park gehört er dazu. #sprecher:ambrose
 Er hat recht. Und die Tische spielen trotzdem besser als er. Was heißt das? #sprecher:ambrose #stimmung:fern
 * [„Dass besser nicht alles ist.“]
     Vielleicht. Ich werde darüber nachdenken müssen. Ich habe ja Zeit. #sprecher:ambrose

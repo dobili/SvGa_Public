@@ -107,7 +107,8 @@ export function auftragFuer(
     deck: { karten: [] },
     kartenErlaubt: b.kartenErlaubt,
     zaehltFuerApp: b.zaehltFuerApp ?? b.startstellung.art === "grundstellung",
-    uhr: null,
+    uhr: typeof b.zeit === "object" ? b.zeit : null,
+    zeitwahl: b.zeit === "wahl",
   };
 }
 

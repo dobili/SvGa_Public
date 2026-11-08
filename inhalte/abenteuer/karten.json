@@ -89,19 +89,6 @@
       "zeitpunkt": "vorher"
     },
     {
-      "kennung": "zeitbonus",
-      "name": "karte.zeitbonus.name",
-      "spruch": "karte.zeitbonus.spruch",
-      "bild": "karten/zeitbonus.webp",
-      "stufe": "leicht",
-      "art": "verbrauch",
-      "wirkung": {
-        "art": "zeitbonus",
-        "sekunden": 120
-      },
-      "zeitpunkt": "vorher"
-    },
-    {
       "kennung": "sanduhr",
       "name": "karte.sanduhr.name",
       "spruch": "karte.sanduhr.spruch",
@@ -112,6 +99,50 @@
         "art": "sanduhr"
       },
       "zeitpunkt": "nachher"
+    },
+    {
+      "kennung": "kuehlerKopf",
+      "name": "karte.kuehlerKopf.name",
+      "spruch": "karte.kuehlerKopf.spruch",
+      "bild": "karten/kuehler-kopf.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeit",
+        "wer": "leser",
+        "sekunden": 120
+      },
+      "spruch_art": true,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "gruebelfalle",
+      "name": "karte.gruebelfalle.name",
+      "spruch": "karte.gruebelfalle.spruch",
+      "bild": "karten/gruebelfalle.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeit",
+        "wer": "gegner",
+        "sekunden": -60
+      },
+      "spruch_art": true,
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "grossesMaul",
+      "name": "karte.grossesMaul.name",
+      "spruch": "karte.grossesMaul.spruch",
+      "bild": "karten/grosses-maul.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeitnot",
+        "zuege": 5
+      },
+      "spruch_art": true,
+      "zeitpunkt": "waehrend"
     }
   ]
 }

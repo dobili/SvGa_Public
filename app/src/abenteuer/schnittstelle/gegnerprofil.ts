@@ -99,6 +99,8 @@ export interface Gegnerprofil {
   /** Porträt im Zusatzpaket, relativ zum Paketordner, zum Beispiel „portraets/big-joe.webp“. */
   readonly portraet: string;
   readonly staerke: Zielstaerke;
+  /** Sprüche (Kartenkennungen), die bei diesem Gegner verpuffen (docs/spiel/10, S4). */
+  readonly immunGegen?: readonly string[];
   /**
    * Abweichung der Phasen von der Zielstärke in Stufen, zum Beispiel { endspiel: −1 } für einen
    * Angreifer, der Endspiele schlecht spielt; fehlend: alle Phasen gleich.

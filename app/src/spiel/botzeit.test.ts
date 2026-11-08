@@ -1,6 +1,6 @@
 /** Tests der Uhr der Bots in der Partie: Abzug der simulierten Zeit, Zeitverlust, Wartezeit. */
 import { describe, expect, it } from "vitest";
-import { zieheBotMitUhr, zuglage } from "./botzeit";
+import { GEFUEHLTE_ZEITNOT_MS, wahlRestzeit, zieheBotMitUhr, zuglage } from "./botzeit";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
 import { druecke } from "./uhr";
 
@@ -67,5 +67,28 @@ describe("Uhr der Bots", () => {
     p = ziehe(p, leserzug("exd5")) ?? p;
     expect(zuglage(p, "d8d5", 2)).toBe("wiederschlag");
     expect(zuglage(p, "g8f6", 1)).toBe("einzig");
+  });
+});
+
+function mitZeitnot(p: Partie, bis: number): Partie {
+  return { ...p, einstellung: { ...p.einstellung, abenteuer: { kennung: "x", zeitnotBis: bis } } };
+}
+
+describe("Gefühlte Zeitnot (Spruch „Großes Maul“)", () => {
+  it("ohne Spruch gilt die echte Restzeit", () => {
+    const p = partie();
+    expect(wahlRestzeit(p, 0)).toBe(p.uhr?.restMs.black);
+  });
+
+  it("bis vor zeitnotBis glaubt der Bot, er habe kaum Zeit, auch ohne Uhr", () => {
+    const p = mitZeitnot(partie(), 5);
+    expect(wahlRestzeit(p, 0)).toBe(GEFUEHLTE_ZEITNOT_MS);
+    const ohneUhr = { ...p, uhr: null, einstellung: { ...p.einstellung, uhr: null } };
+    expect(wahlRestzeit(ohneUhr, 0)).toBe(GEFUEHLTE_ZEITNOT_MS);
+  });
+
+  it("ab zeitnotBis spielt der Bot wieder mit der echten Zeit", () => {
+    const p = mitZeitnot(partie(), 1);
+    expect(wahlRestzeit(p, 0)).toBe(p.uhr?.restMs.black);
   });
 });

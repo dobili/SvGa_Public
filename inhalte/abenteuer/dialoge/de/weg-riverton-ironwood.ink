@@ -8,7 +8,7 @@
 // Ankunft erzählt der Übergang nach Ironwood (ironwood-aussen.ankunft_zu_fuss).
 //
 // Karte des Zeitnot-Tricks: Der Name in karten.json kommt mit Schritt 13; bis dahin gibt der
-// Knoten zeitnot_trick als Platzhalter die Karte „zeitbonus“ (Bericht). Der Buchbezug ist ein
+// Knoten zeitnot_trick: die Karte „Großes Maul“ (Schritt 13, docs/spiel/10, S1). Der Buchbezug ist ein
 // einziger Satz aus Kapitel 12, Abschnitt 12.5, mit Fundstelle.
 // Variablen: wegRivertonIronwoodTafelBestanden setzt die Hülle (Langform, R42).
 
@@ -97,5 +97,5 @@ Er glaubte es, und er eilte. Wer eilt, übersieht. #sprecher:ambrose
 - Und der ehrliche Teil, aus dem Buch: „Ist bloß dein Gegner in Zeitnot, blitze nicht mit, sondern nutze die Zeit, die du hast.“ Kapitel 12, Abschnitt 12.5. #sprecher:ambrose
 Nimm diese Karte. Einmal, und nur wenn die Uhr läuft. #sprecher:ambrose
 Eine Goldnadel bekommst du damit nicht. #sprecher:ambrose
-~ gibKarte("zeitbonus")
+~ gibKarte("grossesMaul")
 -> END

@@ -113,9 +113,11 @@ export interface Partieeinstellung {
    * Seit Format 11: eine Begegnung des Schach-Abenteuers (app/src/abenteuer/, Entscheidung A2).
    * Die Kennung nennt den Partieauftrag des Spiels; die Partieansicht zeigt dann die Kartenleiste
    * und „Zurück zur Stadt“, und das Spiel übernimmt das Ergebnis beim Rückweg in den Spielstand.
-   * Fehlend bei allen gewöhnlichen Partien.
+   * Fehlend bei allen gewöhnlichen Partien. `zeitnotBis` (seit Schritt 13 des Abenteuers): Bis
+   * vor diesen Halbzug spielt der Bot wie in Zeitnot, weil der Leser den Spruch „Großes Maul“
+   * gespielt hat (spiel/botzeit.ts, wahlRestzeit); die echte Uhr bleibt unberührt.
    */
-  readonly abenteuer?: { readonly kennung: string };
+  readonly abenteuer?: { readonly kennung: string; readonly zeitnotBis?: number };
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

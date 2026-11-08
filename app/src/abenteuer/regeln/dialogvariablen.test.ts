@@ -41,12 +41,12 @@ describe("Dialogvariablen aus Ergebnissen", () => {
       ...leererAbenteuerstand(new Date("2026-11-08T12:00:00Z"), "Kim", null, false),
       muenzen: 25,
       gegenstaende: ["taschenlampe"],
-      karten: [{ kennung: "zeitbonus", anzahl: 1, erhalten: "2026-11-08T12:00:00Z" }],
+      karten: [{ kennung: "kuehlerKopf", anzahl: 1, erhalten: "2026-11-08T12:00:00Z" }],
     };
     expect(variablenAusBesitz(stand)).toEqual({
       muenzen: 25,
       hatTaschenlampe: true,
-      hatKarteZeitbonus: true,
+      hatKarteKuehlerKopf: true,
     });
   });
 

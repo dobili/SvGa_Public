@@ -171,10 +171,13 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
 }
 
 /** Die Begegnung des Schach-Abenteuers (Format 11), nur wenn gespeichert. */
-function abenteuerteil(roh: unknown): { abenteuer?: { readonly kennung: string } } {
-  return istObjekt(roh) && typeof roh.kennung === "string"
-    ? { abenteuer: { kennung: roh.kennung } }
-    : {};
+function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
+  if (!istObjekt(roh) || typeof roh.kennung !== "string") return {};
+  const zeitnotBis =
+    typeof roh.zeitnotBis === "number" && Number.isInteger(roh.zeitnotBis) && roh.zeitnotBis > 0
+      ? { zeitnotBis: roh.zeitnotBis }
+      : {};
+  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis } };
 }
 
 /**

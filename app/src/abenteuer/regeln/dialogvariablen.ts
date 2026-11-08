@@ -41,7 +41,7 @@ export function variablenNachRunde(runde: string, bestanden: boolean): Variablen
 
 /**
  * Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu berechnet (nicht gespeichert):
- * `hatFahrrad`, `hatTaschenlampe` für Gegenstände, `hatKarteZeitbonus` für Hilfskarten,
+ * `hatFahrrad`, `hatTaschenlampe` für Gegenstände, `hatKarteKuehlerKopf` für Hilfskarten,
  * `muenzen` als Zahl. So kann ein Dialog etwa das Schließfach nur mit Taschenlampe öffnen.
  */
 export function variablenAusBesitz(stand: Abenteuerstand): Variablen {

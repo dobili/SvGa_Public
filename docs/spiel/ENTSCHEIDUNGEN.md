@@ -270,6 +270,16 @@ Rundenstand), Spielstand mit `laufendeAufgaben`, `aufgabenergebnis`, `runden` (V
 `Oberwelt.tsx` in drei Dateien geteilt (`auftraege.ts`, `weltdaten.ts`), bleibt aber über 400
 Zeilen; die Rückwege (Partie, Runde) wandern in 8g in einen eigenen Hook.
 
+**Dialoge für Cedar Creek (mittel-1) zusammengeführt, Dialogvariablen aus Ergebnissen (V7):**
+Die Hülle setzt jetzt Variablen für die Ink-Dateien (`regeln/dialogvariablen.ts`): Ausgang einer
+Begegnung in der Langform mit Ort (`ausgangMapleFallsClubkampf` = „sieg“), bestandene Runde
+(`reiheSamBestanden` = true), beste Nadel eines Clubs (`nadelMapleFalls` 0 bis 3). Die Langform
+war der Vorschlag von mittel-1, weil die Kurzform („ausgangClubkampf“) über Orte hinweg
+mehrdeutig ist; mittel-1 benennt die Maple-Falls-Dateien im vierten Auftrag um. Drei Quest-Knoten
+von mittel-2 hat mittel-1 begründet geändert (Verteilerknoten ohne Text meldet der Dialog nie;
+nach der Busfahrt startet kein Dialog von selbst). Später: `reise` mit Ankunftsknoten, Figuren mit
+Sichtbarkeitsbedingung in `orte.json` (Victor nur vor der Clubnadel).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

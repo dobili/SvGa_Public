@@ -28,6 +28,11 @@ import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
 import { mitRundenergebnis, reiheBestanden, wertung as rundenwertung } from "../regeln/aufgaben";
+import {
+  variablenNachNadel,
+  variablenNachPartie,
+  variablenNachRunde,
+} from "../regeln/dialogvariablen";
 import { besteNadel, clubnadel, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
@@ -204,6 +209,17 @@ export function Oberwelt() {
                 ]
               : aktuell.clubs;
           setzeNeueNadel(nadel);
+          // Dialogvariablen für die Ink-Dateien: Ausgang der Begegnung, Nadel des Clubs.
+          const variablen = {
+            ...aktuell.dialogvariablen,
+            ...variablenNachPartie(begegnung, e.ausgang),
+            ...(ort
+              ? variablenNachNadel(
+                  ort.kennung,
+                  clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null,
+                )
+              : {}),
+          };
           vorherigeKarten.current = aktuell.partiekarten;
           if (wiedereinstiegMoeglich(e, begegnung, daten, aktuell)) {
             setzeKipppunkt("suche");
@@ -215,6 +231,7 @@ export function Oberwelt() {
           schreibe({
             ...(standRef.current ?? aktuell),
             clubs,
+            dialogvariablen: variablen,
             laufendePartie: null,
             partiekarten: null,
             protokoll: [
@@ -293,6 +310,10 @@ export function Oberwelt() {
           ...(standRef.current ?? aktuell),
           runden,
           clubs,
+          dialogvariablen: {
+            ...aktuell.dialogvariablen,
+            ...variablenNachRunde(auftrag.runde, w.bestanden),
+          },
           laufendeAufgaben: null,
           aufgabenergebnis: null,
         });

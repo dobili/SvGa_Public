@@ -67,6 +67,9 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   nicht über Übergänge, sondern über einen Dialog (Bus) mit `~ reise("ort.karte", "ausloeser")`,
   oder zu Fuß über einen Weg: ein Ort mit `art: "weg"` (Nummer 0, ohne Club), dessen Übergänge in
   die Nachbarstädte führen dürfen (docs/spiel/08, W1; Beispiel `wegMapleCedar`).
+- Ein Übergang kann `dialog` haben (läuft vor dem Wechsel: Abschied, Ankunft) und `wenn` (eine
+  Dialogvariable; ist sie nicht wahr, läuft nur der Dialog, der Held bleibt). Beispiel: Park,
+  `landstrasse` mit `wenn: aufbruchGesehen`.
 - Figuren stehen nicht in der Tiled-Datei, sondern als Objekte mit dem Namen der Figur in der
   Ebene `ausloeser` (später: `type = "figur"`), damit `orte.json` die Wahrheit über Dialog und
   Gegner bleibt.

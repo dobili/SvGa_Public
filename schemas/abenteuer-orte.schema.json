@@ -79,6 +79,11 @@
       "properties": {
         "name": { "$ref": "#/$defs/kennung" },
         "art": { "enum": ["uebergang", "dialog", "gegenstand", "start"] },
+        "wenn": {
+          "description": "uebergang: nur wenn diese Dialogvariable wahr ist (sonst läuft nur der Dialog, der Held bleibt); etwa aufbruchGesehen",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
         "karte": {
           "description": "Gilt nur auf dieser Karte des Ortes (etwa der Rückweg einer Tür); ohne Angabe auf allen Karten. Bei gleichem Namen geht der Eintrag mit Karte vor.",
           "$ref": "#/$defs/kartenkennung"

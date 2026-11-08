@@ -388,6 +388,13 @@ Bauernvorgabe), Fingerzeig im Laden ist laut `karten.json` dauerhaft (Angebot an
 (`ankunft_zu_fuss` in Cedar Creek, `landstrasse` im Park), heute hat ein Übergang keinen; das ist
 der nächste Baustein von Schritt 10 (Feld `dialog` am Übergang, Dialog vor dem Kartenwechsel).
 
+**Dialog an Übergängen (Schritt 10):** Ein Übergang kann `dialog` (läuft vor dem Wechsel) und
+`wenn` (Dialogvariable; nicht wahr → nur der Dialog, der Held bleibt) haben. Park `landstrasse`
+sperrt so bis `aufbruchGesehen`, `weiterCedar` zeigt die Ankunft zu Fuß. Sechste Aufträge
+(08.11.2026, nach dem Wechsel auf Opus): mittel-2 Spieldaten für Riverton, Ironwood und die zwei
+Wege; mittel-1 Dinge zum Ansehen in den Innenräumen; niedrig-1 Statisten, Tiere und dieselben
+Objekte in den Karten von Maple Falls und Cedar Creek.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

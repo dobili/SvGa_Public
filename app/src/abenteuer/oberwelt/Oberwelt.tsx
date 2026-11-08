@@ -103,6 +103,11 @@ export function Oberwelt() {
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
   // Eine Reise, die ein Dialog angestoßen hat (Bus); sie geschieht, wenn der Dialog zu ist.
   const reiseInArbeit = useRef<{ karte: string; ausloeser: string } | null>(null);
+  // Ein Übergang mit Dialog (orte.json `dialog`, `wenn`): der Wechsel folgt nach dem Dialog.
+  const uebergangNachDialog = useRef<{
+    ziel: { karte: string; ausloeser: string };
+    wenn: string | null;
+  } | null>(null);
   // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
   const rundeInArbeit = useRef<string | null>(null);
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
@@ -279,6 +284,15 @@ export function Oberwelt() {
     melde({ art: "partie", begegnung, ausgang: [ausgang] }, w);
   };
 
+  /** Öffnet den Dialog „datei.knoten“ aus dem Paket. */
+  const oeffneDialog = (verweis: string) => {
+    const [datei, knoten] = verweis.split(".", 2);
+    if (!datei || !knoten) return;
+    liesPaketJson<object>(`dialoge/${SPRACHE}/${datei}.json`)
+      .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
+      .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
+  };
+
   /** Ein Auslöser der Karte (aus Phaser): Übergänge sofort, alles andere als Quest-Ereignis. */
   const beiTreffer = (t: Ausloesertreffer | null) => {
     setzeTreffer(t);
@@ -286,6 +300,12 @@ export function Oberwelt() {
     const aktuell = standRef.current;
     if (!t || !w || !aktuell) return;
     const a = ausloeserFuer(w.ort, w.kennung, t.name);
+    if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf && a.dialog && a.ziel) {
+      // Erst der Dialog (Abschied, Ankunft, Sperre), dann der Wechsel, wenn `wenn` erfüllt ist.
+      uebergangNachDialog.current = { ziel: a.ziel, wenn: a.wenn ?? null };
+      oeffneDialog(a.dialog);
+      return;
+    }
     if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf) {
       // Ein Übergang ohne Ziel (etwa die Landstraße nach Cedar Creek) ist noch nicht gebaut.
       if (a.ziel) wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
@@ -384,15 +404,6 @@ export function Oberwelt() {
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
     szene?.setzeRichtung(richtung, gedrueckt);
-  };
-
-  /** Öffnet den Dialog „datei.knoten“ aus dem Paket. */
-  const oeffneDialog = (verweis: string) => {
-    const [datei, knoten] = verweis.split(".", 2);
-    if (!datei || !knoten) return;
-    liesPaketJson<object>(`dialoge/${SPRACHE}/${datei}.json`)
-      .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
-      .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
   };
 
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
@@ -537,6 +548,11 @@ export function Oberwelt() {
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;
     if (reise) wechsleKarte(reise.karte, reise.ausloeser);
+    const uebergang = uebergangNachDialog.current;
+    uebergangNachDialog.current = null;
+    if (uebergang && (!uebergang.wenn || neu.dialogvariablen[uebergang.wenn] === true)) {
+      wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
+    }
     const runde = rundeInArbeit.current;
     rundeInArbeit.current = null;
     if (runde) {

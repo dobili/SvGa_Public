@@ -181,7 +181,9 @@
           "ziel": {
             "karte": "wegMapleCedar.landstrasse",
             "ausloeser": "zurueckPark"
-          }
+          },
+          "dialog": "maple-falls-park.landstrasse",
+          "wenn": "aufbruchGesehen"
         }
       ],
       "club": {
@@ -478,7 +480,8 @@
           "ziel": {
             "karte": "cedarCreek.aussen",
             "ausloeser": "bushaltestelle"
-          }
+          },
+          "dialog": "cedar-creek-aussen.ankunft_zu_fuss"
         }
       ]
     }

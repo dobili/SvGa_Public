@@ -532,5 +532,7 @@
   "tagebuch.ausgang.sieg": "gewonnen",
   "tagebuch.ausgang.niederlage": "verloren",
   "tagebuch.ausgang.remis": "remis",
-  "tagebuch.ausgang.abgebrochen": "abgebrochen"
+  "tagebuch.ausgang.abgebrochen": "abgebrochen",
+  "gegenstand.reisebrett.name": "Reisebrett",
+  "reisebrett.knopf": "Übungspartie"
 }

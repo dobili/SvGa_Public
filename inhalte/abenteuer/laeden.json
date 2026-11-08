@@ -119,6 +119,11 @@
           "art": "gegenstand",
           "kennung": "kartentasche",
           "preis": 450
+        },
+        {
+          "art": "gegenstand",
+          "kennung": "reisebrett",
+          "preis": 100
         }
       ]
     }

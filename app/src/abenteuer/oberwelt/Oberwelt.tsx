@@ -39,6 +39,10 @@ import {
   variablenNachFund,
 } from "../regeln/dialogvariablen";
 
+/** Gegenstand „Reisebrett“ und seine Begegnung (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
+const REISEBRETT = "reisebrett";
+const UEBUNGSPARTIE = "reisebrett.ambrose";
+
 /** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
 const MONATSKARTE = "monatskarte";
 
@@ -607,6 +611,17 @@ export function Oberwelt() {
   };
 
   /**
+   * Reisebrett (docs/spiel/11, I3): überall eine freie Übungspartie gegen Ambrose, mit Wahl der
+   * Bedenkzeit und Karten wie jede Begegnung; sie zählt für Partienliste und Abenteuerwertung.
+   */
+  const starteUebungspartie = () => {
+    const aktuell = standRef.current ?? stand;
+    if (!welt) return;
+    const auftrag = auftragFuer(UEBUNGSPARTIE, welt.daten, aktuell);
+    if (auftrag) setzeDeckwahl(auftrag);
+  };
+
+  /**
    * Wiedereinstieg (Regelwerk R14): dieselbe Begegnung ab dem Kipppunkt, gleiches Profil und
    * gleicher Zustand, Farbe aus dem Zugrecht der Stellung, Karten nach R15.
    */
@@ -698,6 +713,16 @@ export function Oberwelt() {
           <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
             {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
           </span>
+          {welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl && (
+            <button
+              type="button"
+              className="abenteuer-tagebuchknopf abenteuer-reisebrettknopf"
+              onClick={starteUebungspartie}
+              data-testid="abenteuer-reisebrettknopf"
+            >
+              {tSpiel("reisebrett.knopf")}
+            </button>
+          )}
           {welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog && (
             <button
               type="button"

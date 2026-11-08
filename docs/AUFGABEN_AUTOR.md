@@ -140,6 +140,9 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2625. Mamas Turnierheft: Nach dem Foto (erster Besuch bei Oma Ruth in Ironwood) gibt sie dir beim zweiten
       Besuch Mamas blaues Turnierheft. Danach steht im Tagebuch ganz unten „Mamas Turnierheft“ mit deinen letzten
       fünf Partien (neueste zuerst): Gegner, Ausgang und bis zu drei Wendepunkte („Zug 12.: Sxe5, besser war Ld3“).
+- [ ] N2626. Reisebrett (Eisenwaren Ironwood, 100 Münzen; laut Bibel schenkt Juno es später in Akt 3): Überall, auch
+      in Häusern, erscheint links der Knopf „Übungspartie“. Er startet eine freie Partie gegen Ambrose mit Wahl der
+      Bedenkzeit und Karten; sie zählt für die Partienliste und deine Abenteuerwertung, nicht für Nadeln.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

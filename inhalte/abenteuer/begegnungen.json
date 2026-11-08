@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "begegnungen": [
     {
+      "kennung": "reisebrett.ambrose",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": { "art": "partie" },
+      "startstellung": { "art": "grundstellung" },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
       "kennung": "mapleFalls.ersteLektion",
       "gegner": "mapleFalls.ambrose",
       "farbe": "white",

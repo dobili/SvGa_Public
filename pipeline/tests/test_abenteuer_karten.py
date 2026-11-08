@@ -123,3 +123,23 @@ def test_rand_geschlossen(ort: dict, eintrag: dict):
     namen = {a["name"] for a in _uebergaenge(ort)}
     tueren = {o.feld for o in k.objekte(karte) if o.name in namen and not o.figur}
     assert k.offene_randfelder(karte, tueren) == []
+
+
+def _namen_auf_karten(ort: dict) -> set[str] | None:
+    """Namen aller Objekte auf den gezeichneten Karten eines Ortes; None, wenn keine gezeichnet ist."""
+    dateien = [INHALTE / e["datei"] for e in ort["karten"] if (INHALTE / e["datei"]).exists()]
+    if not dateien:
+        return None
+    return {o.name for datei in dateien for o in k.objekte(k.lade_karte(datei))}
+
+
+@pytest.mark.parametrize("ort", ORTE, ids=[o["kennung"] for o in ORTE])
+def test_jede_figur_und_jeder_ausloeser_steht_auf_einer_karte(ort: dict):
+    # Warum: Eine Figur ohne Platz ist im Spiel unerreichbar und kann die Handlung sperren
+    # (Befund der Gesamtsimulation, 08.11.2026: der Bibliothekar in Maple Falls fehlte).
+    namen = _namen_auf_karten(ort)
+    if namen is None:
+        pytest.skip(f"Ort {ort['kennung']} hat noch keine gezeichnete Karte")
+    fehlend = [f["kennung"] for f in ort["figuren"] if f["kennung"].split(".", 1)[1] not in namen]
+    fehlend += [a["name"] for a in ort["ausloeser"] if a["name"] not in namen]
+    assert not fehlend, f"nicht auf einer Karte: {fehlend}"

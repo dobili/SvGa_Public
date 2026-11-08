@@ -52,6 +52,11 @@ export interface Extralage {
   readonly themenstufen: Readonly<Record<string, Medaillenstufe>>;
   /** Kennungen der Funde im Schach-Abenteuer (leer ohne Spielstand). */
   readonly abenteuerfunde: ReadonlySet<string>;
+  /**
+   * Gibt es einen Spielstand des Schach-Abenteuers? Ohne ihn bleiben dessen Extras unsichtbar,
+   * damit die App ohne das Spiel aussieht wie bisher (Wunsch des Autors, 8.11.2026).
+   */
+  readonly abenteuerAktiv?: boolean;
 }
 
 /** Ein Extra: Kennung, Art, Wert in der Wahl seiner Art, Bedingung und Bild (Pfad in der App). */
@@ -159,6 +164,14 @@ export function bedingungErfuellt(bedingung: Bedingung, lage: Extralage): boolea
   // Die Prüfung gehört zur Art der Bedingung (PRUEFUNGEN ist danach getippt).
   const pruefe = PRUEFUNGEN[bedingung.art] as (b: Bedingung, l: Extralage) => boolean;
   return pruefe(bedingung, lage);
+}
+
+/**
+ * Die Extras, die die App zeigt: alle, außer denen des Schach-Abenteuers, solange es keinen
+ * Spielstand gibt. Beispiel: ohne Spielstand fehlt das Brett „Riverton-Pavillon“, auch im Zähler.
+ */
+export function sichtbareExtras(lage: Extralage, extras: readonly Extra[] = EXTRAS): readonly Extra[] {
+  return lage.abenteuerAktiv ? extras : extras.filter((e) => e.bedingung.art !== "abenteuer");
 }
 
 /** Die Kennungen aller freien Extras. Beispiel: Stufe 3 → Konfetti und Rahmen Bronze. */

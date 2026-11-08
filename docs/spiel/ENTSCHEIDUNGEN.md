@@ -562,6 +562,12 @@ Begegnung die Farbe auslost. Q17-1 ja (Kauf durch den Autor offen), Q17-2: Portr
 Hinweis des Autors (8.11.2026): Der Spiel-Chat ist nur für das Spiel zuständig; Fragen und
 Änderungen der App selbst betreut ein anderer Chat, Empfehlungen dazu sind willkommen.
 
+**Anschlüsse in der App (Wunsch des Autors, 8.11.2026 abends):** erlaubt, solange die App ohne
+geladenes Spiel aussieht und arbeitet wie bisher; jede Änderung dem Autor im Chat melden und in
+`docs/SPIEL_ANSCHLUESSE_FUER_APP.md` (Info für den App-Chat) eintragen. Dabei behoben: Die Karte
+„Schach-Abenteuer“ auf „Spielen“ und das Extra „Brett Riverton-Pavillon“ waren auch ohne Spiel
+sichtbar; jetzt nur mit geladenem Spiel oder Spielstand.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

@@ -113,3 +113,18 @@ describe("Titel aus der Meisterschaft (P3)", () => {
     expect(freieExtras(mitFund).has("brett-pavillon")).toBe(true);
   });
 });
+
+describe("Extras des Schach-Abenteuers", () => {
+  it("sind ohne Spielstand unsichtbar, mit Spielstand da", async () => {
+    const { EXTRAS, sichtbareExtras } = await import("./extras");
+    const lage = {
+      stufe: 1,
+      volleOrdengruppen: new Set<never>(),
+      themenstufen: {},
+      abenteuerfunde: new Set<string>(),
+    };
+    const ohne = sichtbareExtras(lage);
+    expect(ohne.some((e) => e.bedingung.art === "abenteuer")).toBe(false);
+    expect(sichtbareExtras({ ...lage, abenteuerAktiv: true })).toHaveLength(EXTRAS.length);
+  });
+});

@@ -53,6 +53,7 @@ export function useExtralage(): Extralage {
   const funde = useSpeicher((z) =>
     (z.daten.abenteuer?.funde ?? []).map((f) => f.kennung).join(","),
   );
+  const abenteuerAktiv = useSpeicher((z) => z.daten.abenteuer !== null);
   // Neue Lage nur, wenn sich Stufe, Gruppen oder Medaillen ändern (Mengen wären sonst jedes Mal neu).
   return useMemo(() => {
     const voll = new Set(schluessel.split(","));
@@ -63,6 +64,7 @@ export function useExtralage(): Extralage {
       volleOrdengruppen: new Set(ORDENGRUPPEN.filter((g) => voll.has(g))),
       themenstufen,
       abenteuerfunde: new Set(funde ? funde.split(",") : []),
+      abenteuerAktiv,
     };
-  }, [stufe, schluessel, medaillen, funde]);
+  }, [stufe, schluessel, medaillen, funde, abenteuerAktiv]);
 }

@@ -22,8 +22,8 @@ import { t } from "../../../i18n/sprache";
 import {
   bedingungErfuellt,
   EXTRAARTEN,
-  EXTRAS,
   extrasDerArt,
+  sichtbareExtras,
   type Extra,
   type Extraart,
   type Extralage,
@@ -68,7 +68,7 @@ function Kacheln({ art, gewaehlt, lage }: { art: Extraart; gewaehlt: Gewaehlt; l
           beiTipp={() => lege(wert)}
         />
       ))}
-      {extrasDerArt(art).map((extra) => {
+      {extrasDerArt(art, sichtbareExtras(lage)).map((extra) => {
         const zustand = zustandVon(extra, gewaehlt, lage);
         return (
           <Extrakachel
@@ -96,7 +96,7 @@ function Artauswahl({
   lage: Extralage;
 }) {
   const wahl = extrawahl(art);
-  const angelegt = extrasDerArt(art).some((e) => gewaehlt[art] === e.wert);
+  const angelegt = extrasDerArt(art, sichtbareExtras(lage)).some((e) => gewaehlt[art] === e.wert);
   const Zusatz = wahl?.Zusatz;
   return (
     <div role="tabpanel" aria-label={reitertext(art)} className="extrasneu-auswahl">
@@ -127,12 +127,13 @@ function useSprungInsBild() {
 export function ExtrasKarte() {
   const lage = useExtralage();
   const gewaehlt = useGewaehlteExtras();
-  const arten = EXTRAARTEN.filter((a) => extrasDerArt(a).length > 0);
+  const sichtbar = sichtbareExtras(lage);
+  const arten = EXTRAARTEN.filter((a) => extrasDerArt(a, sichtbar).length > 0);
   const [art, setzeArt] = useState<Extraart>(
     () => offenerAussehenssprung() ?? arten[0] ?? "rahmen",
   );
   const karte = useSprungInsBild();
-  const frei = EXTRAS.filter((e) => zustandVon(e, gewaehlt, lage) !== "gesperrt").length;
+  const frei = sichtbar.filter((e) => zustandVon(e, gewaehlt, lage) !== "gesperrt").length;
   return (
     <section
       ref={karte}
@@ -146,7 +147,7 @@ export function ExtrasKarte() {
           <div className="extrasneu-kopf">
             <h2 className="karte-titel">{t("extras.karte.titel")}</h2>
             <span className="hinweis" data-testid="extras-zaehler">
-              {t("extrasneu.zaehler", { frei, gesamt: EXTRAS.length })}
+              {t("extrasneu.zaehler", { frei, gesamt: sichtbar.length })}
             </span>
           </div>
         }

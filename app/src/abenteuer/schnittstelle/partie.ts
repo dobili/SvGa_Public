@@ -86,6 +86,8 @@ export interface Partieauftrag {
   readonly farbeFrei?: boolean;
   /** Freie Karten der Begegnung (R29: Mentor-Zug im Halbfinale), ohne Besitz im Deck. */
   readonly freieKarten?: readonly string[];
+  /** Stärkewechsel mitten in der Partie (Halbfinale): ab Halbzug häufiger Fehler um den Faktor. */
+  readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
 }
 
 /**

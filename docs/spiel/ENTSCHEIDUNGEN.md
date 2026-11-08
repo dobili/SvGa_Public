@@ -585,7 +585,8 @@ Mentor-Zug nicht zur Wahl im Deck (`mentorzugGesperrt`).
 (Halbfinale: `["mentorzug"]`). Sie liegen ohne Besitz zusätzlich im Deck, werden nicht verbraucht,
 zählen nicht für Nadel und Abenteuerwertung (`Kartenspiel.frei`) und setzen beim Spielen
 `<kennung>FreiGespielt` (für den Extra-Abspann: `mentorzugFreiGespielt`). Die Deckwahl nennt sie.
-Turniermodus der Landesmeisterschaft: ohne neue Technik über Begegnungen und Ink (Punkte aus
+Stärkewechsel mitten in der Partie (Halbfinale): Begegnungsfeld `abgelenktAb {halbzug, faktor}`, ab dem
+Halbzug macht der Bot um den Faktor häufiger Fehler (`wahlHaeufigkeit`). Turniermodus der Landesmeisterschaft: ohne neue Technik über Begegnungen und Ink (Punkte aus
 `ausgang…`-Variablen, Wiederholen über den Dialog); der Haupt-Chat baut nur, was Ink nicht kann.
 
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)

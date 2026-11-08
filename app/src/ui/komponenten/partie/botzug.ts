@@ -22,6 +22,7 @@ import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../../engine/zug
 import {
   botBedenkzeit,
   eigeneRestzeit,
+  wahlHaeufigkeit,
   wahlRestzeit,
   zieheBotMitUhr,
 } from "../../../spiel/botzeit";
@@ -118,7 +119,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       stilmix: e.stilmix,
       blindeFlecken: e.blindeFlecken ?? [],
       gewichte: e.gewichte,
-      haeufigkeit: e.haeufigkeit,
+      haeufigkeit: wahlHaeufigkeit(partie, e.haeufigkeit),
       hoechstverlust: e.hoechstverlust,
       verlauf: verlaufVon(partie),
       restMs: wahlRestzeit(partie, jetztMs),
@@ -158,7 +159,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     // Eigene Gegner mit gewähltem Stil (0.2.126) wie vorgefertigte Bots
     stilname: e.stilname ?? bot?.stilname,
     stilmix: e.stilmix,
-    haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
+    haeufigkeit: wahlHaeufigkeit(partie, e.haeufigkeit ?? bot?.haeufigkeit),
     hoechstverlust: e.hoechstverlust,
     restMs: wahlRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),

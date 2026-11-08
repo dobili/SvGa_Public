@@ -133,6 +133,7 @@ export function auftragFuer(
     zeitwahl: b.zeit === "wahl",
     farbeFrei: b.farbe === "zufall",
     ...(b.freieKarten ? { freieKarten: b.freieKarten } : {}),
+    ...(b.abgelenktAb ? { abgelenktAb: b.abgelenktAb } : {}),
   };
 }
 

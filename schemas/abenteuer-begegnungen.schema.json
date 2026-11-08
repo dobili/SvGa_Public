@@ -91,6 +91,16 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "abgelenktAb": {
+          "description": "Stärkewechsel mitten in der Partie (Akt 4, Halbfinale): ab diesem Halbzug macht der Gegner um den Faktor häufiger Fehler",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["halbzug", "faktor"],
+          "properties": {
+            "halbzug": { "type": "integer", "minimum": 1, "maximum": 300 },
+            "faktor": { "type": "number", "minimum": 1, "maximum": 3 }
+          }
+        },
         "freieKarten": {
           "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
           "type": "array",

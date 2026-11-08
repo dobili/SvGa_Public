@@ -92,3 +92,20 @@ describe("Gefühlte Zeitnot (Spruch „Großes Maul“)", () => {
     expect(wahlRestzeit(p, 0)).toBe(p.uhr?.restMs.black);
   });
 });
+
+describe("Stärkewechsel mitten in der Partie (Halbfinale des Abenteuers)", () => {
+  it("ab dem Halbzug häufiger Fehler, vorher unverändert", async () => {
+    const { wahlHaeufigkeit } = await import("./botzeit");
+    const p = partie();
+    const mit = (halbzug: number): Partie => ({
+      ...p,
+      einstellung: {
+        ...p.einstellung,
+        abenteuer: { kennung: "x", abgelenktAb: { halbzug, faktor: 1.5 } },
+      },
+    });
+    expect(wahlHaeufigkeit(p, 1.2)).toBe(1.2);
+    expect(wahlHaeufigkeit(mit(40), 1.2)).toBe(1.2);
+    expect(wahlHaeufigkeit(mit(1), 1.2)).toBeCloseTo(1.8);
+  });
+});

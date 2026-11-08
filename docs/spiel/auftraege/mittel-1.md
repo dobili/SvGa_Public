@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Erinnerung London 1851 begehbar (Ort und Dialoge)
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, dreizehnter Auftrag)
+**Stand:** fertig (Helfer mittel-1, 08.11.2026, dreizehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/orte.json` (neuer Ort), `inhalte/abenteuer/dialoge/de/erinnerung-london.ink`
@@ -45,5 +45,41 @@ Oder doch?“). Die Quest `riverton.flashbackLondon` startet weiter an der groß
 
 ## Bericht
 
-(vom Helfer auszufüllen)
+**Fertig:**
 
+- `orte.json`: Ort `erinnerungLondon` (`art: "erinnerung"`, `nummer` 0, Staffel 1) mit den Karten
+  `erinnerungLondon.strand` (`karten/erinnerung-london-strand.json`, außen) und
+  `erinnerungLondon.kaffeehaus` (`karten/erinnerung-london-kaffeehaus.json`, innen), den Figuren
+  `zeitungsjunge`, `kellner`, `zeitungsleser` (Sprites `figuren/<name>.png`) und den Auslösern
+  `ankunft` (Start), `kaffeehausTuer` (Übergang mit Dialog `kaffeehaus_betreten`), `tuer` (zurück
+  auf die Straße), `droschke`, `schachtisch` (Gegenstände), `rueckkehr` (Dialog, reist zurück).
+  Die Belebung (`passanten`, `tauben`, `laternenanzuender`, `gaeste`) gehört in die Karten und hat
+  in `orte.json` keinen Eintrag. Kein `musik`-Feld, weil es noch kein Stück gibt.
+- `erinnerung-london.ink` (neu): alle Einstiege; Ambrose spricht als junger Mann mit
+  `#stimmung:jung` (neue Porträtvariante, bitte bei den Porträts vormerken). {held} erscheint nur als
+  Stimme aus der Gegenwart, als Erzählzeile mit dem Namen („Ganz fern, wie durch Wasser, hört
+  Ambrose eine Stimme: „Ambrose? Wo sind wir?“ Es ist {held}.“), weil die Hülle den Sprechernamen
+  aus `figur.<sprecher>.name` liest und es für den frei gewählten Namen keinen Schlüssel gibt.
+  Am `schachtisch` beginnt `beginneAufgaben("riverton.flashbackLondon")`; `rueckkehr` sagt nach der
+  Partie die leisen Sätze der Bibel („Diese Maschinen würden das nie spielen. Oder doch?“), davor
+  „Noch nicht“, und reist mit `reise("riverton.bahnhofshalle", "grosseUhr")` zurück (Juno: „Du bist
+  ganz still. Alles gut?“). Tabakrauch nur als Wort.
+- `riverton-bahnhofshalle.ink`, Knoten `uhr`: statt `beginneAufgaben` jetzt
+  `reise("erinnerungLondon.strand", "ankunft")` mit einem Übergangssatz. Die Quest startet weiter
+  an der großen Uhr.
+- `texte/de.json`: `ort.erinnerungLondon.name` („London, 1851“), `.strand`, `.kaffeehaus`,
+  `figur.zeitungsjunge.name`, `figur.kellner.name`, `figur.zeitungsleser.name`.
+
+**Karten:** Die beiden Tiled-Dateien von niedrig-1 fehlen im heutigen Stand noch
+(`inhalte/abenteuer/karten/erinnerung-london-*.json`); die Namen der Objekte oben sind genau die
+aus diesem Auftrag. Der Paketbau und alle Tests laufen trotzdem.
+
+**Hinweis:** `inhalte/abenteuer/runden.json` (Stand 4e4b3a80, nicht von mir) besteht
+`prettier --check` nicht.
+
+Prüfungen: pytest alle (375), Paketbau, Prettier für meine Dateien, Durchspielen (10368 Läufe ohne
+Fehler), Simulation des Flashbacks (Uhr → Strand → Kaffeehaus → vorzeitige Rückkehr abgelehnt →
+Schachtisch → Rückkehr → Bahnhofshalle: Quest `riverton.flashbackLondon` fertig),
+`npm run pruefen` (2407 Tests).
+
+**Offene Fragen:** keine.

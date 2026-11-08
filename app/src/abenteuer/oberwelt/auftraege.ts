@@ -6,15 +6,16 @@
  * oberwelt/Oberwelt.tsx; die Oberwelt ruft sie, wenn ein Dialog eine Partie oder Runde anstößt
  * oder die Ergebniskarte den Wiedereinstieg anbietet.
  * Abhängigkeiten: regeln/gegnerstaerke.ts, regeln/aufgaben.ts, anbindung/partiestart.ts.
- * Beispiel: `auftragFuer("mapleFalls.ersteLektion", daten, stand, 900)` → Profil Ambrose,
- * gerechnete Stärke aus Profil, Zustand und Wertung, Farbe nach der Begegnung.
+ * Beispiel: `auftragFuer("mapleFalls.ersteLektion", daten, stand)` → Profil Ambrose, gerechnete
+ * Stärke aus Profil, Zustand (abgelenkt, überheblich) und Abenteuerwertung A, Farbe nach der
+ * Begegnung.
  */
 import { farbeAus } from "../anbindung/partiestart";
 import type { Gegnerdaten, Spieldaten } from "../daten/laden";
 import { motivanzahl, schwierigkeitAus, schwierigkeitDesVersuchs } from "../regeln/aufgaben";
-import { gerechneteStaerke } from "../regeln/gegnerstaerke";
+import { POST_GAME_AUFSCHLAG, gerechneteStaerke } from "../regeln/gegnerstaerke";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
-import type { Gegnerprofil, Gegnerzustand } from "../schnittstelle/gegnerprofil";
+import type { Gegnerprofil, Gegnerrolle, Gegnerzustand } from "../schnittstelle/gegnerprofil";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
@@ -24,13 +25,41 @@ function profilAus(daten: Gegnerdaten): Gegnerprofil {
   return daten as unknown as Gegnerprofil;
 }
 
+/** Überheblichkeit je verlorener Partie und ihre Grenze (Regelwerk R9). */
+const UEBERHEBLICH_JE_NIEDERLAGE = 0.15;
+const UEBERHEBLICH_MAX = 1.6;
+/** Rollen, die nach Niederlagen des Lesers überheblich werden (R9). */
+const UEBERHEBLICHE_ROLLEN: readonly Gegnerrolle[] = ["clubchef", "clubmitglied", "turnier"];
+
+/**
+ * Faktor „überheblich“ (R9): verlorene Partien gegen diesen Gegner seit dem letzten Sieg oder
+ * Remis, aus dem Protokoll gezählt; ein verlorener Wiedereinstieg zählt nicht extra, Abbrüche
+ * zählen nicht. Für Straße und Story immer 1.
+ */
+export function ueberheblichkeit(
+  stand: Abenteuerstand,
+  gegner: string,
+  rolle: Gegnerrolle,
+): number {
+  if (!UEBERHEBLICHE_ROLLEN.includes(rolle)) return 1;
+  let niederlagen = 0;
+  for (const eintrag of [...stand.protokoll].reverse()) {
+    if (eintrag.gegner !== gegner) continue;
+    const ausgang = eintrag.ergebnis.ausgang;
+    if (ausgang === "sieg" || ausgang === "remis") break;
+    if (ausgang === "niederlage" && !eintrag.wiedereinstieg) niederlagen++;
+  }
+  return Math.min(UEBERHEBLICH_MAX, 1 + UEBERHEBLICH_JE_NIEDERLAGE * niederlagen);
+}
+
 /** Zustand eines Gegners aus dem Spielstand; ohne Eintrag normal. */
-function zustandAus(stand: Abenteuerstand, gegner: string): Gegnerzustand {
+function zustandAus(stand: Abenteuerstand, gegner: string, rolle: Gegnerrolle): Gegnerzustand {
   const figur = stand.figuren.find((f) => f.kennung === gegner);
   return {
     haeufigkeitsfaktor: figur?.abgelenkt?.faktor ?? 1,
     grund: figur?.abgelenkt?.grund ?? null,
     analysiert: figur?.analysiert ?? false,
+    ueberheblich: ueberheblichkeit(stand, gegner, rolle),
   };
 }
 
@@ -39,17 +68,19 @@ export function auftragFuer(
   begegnung: string,
   daten: Spieldaten,
   stand: Abenteuerstand,
-  wertung: number | null,
 ): Partieauftrag | null {
   const b = daten.begegnungen.find((x) => x.kennung === begegnung);
   const gegner = b && daten.gegner.find((g) => g.kennung === b.gegner);
   if (!b || !gegner) return null;
   const profil = profilAus(gegner);
-  const zustand = zustandAus(stand, gegner.kennung);
-  const staerke = gerechneteStaerke(profil, zustand, {
-    aktuell: wertung,
-    eingang: stand.eingangswertung > 0 ? stand.eingangswertung : null,
-  });
+  const zustand = zustandAus(stand, gegner.kennung, profil.rolle);
+  // Bezugswerte A und E aus dem Spielstand (R2, R3); zweiter Durchlauf +300 (R10).
+  const staerke = gerechneteStaerke(
+    profil,
+    zustand,
+    { aktuell: stand.wertung, eingang: stand.eingangswertung },
+    stand.handlung.durchlauf >= 2 ? POST_GAME_AUFSCHLAG : 0,
+  );
   return {
     kennung: `${begegnung}#${Date.now().toString(36)}`,
     begegnung,
@@ -118,14 +149,13 @@ export function auftragFuerRunde(
   runde: string,
   daten: Spieldaten,
   stand: Abenteuerstand,
-  wertung: number | null,
 ): Aufgabenauftrag | null {
   const r = daten.runden.find((x) => x.kennung === runde);
   const ort = r && daten.orte.find((o) => o.kennung === r.ort);
   const club = ort?.club;
   if (!r || !ort || !club) return null;
   const versuch = (stand.runden.find((x) => x.kennung === runde)?.versuche ?? 0) + 1;
-  const schwierigkeit = schwierigkeitDesVersuchs(schwierigkeitAus(wertung), versuch);
+  const schwierigkeit = schwierigkeitDesVersuchs(schwierigkeitAus(stand.wertung), versuch);
   const anzahl = motivanzahl(
     {
       buchuebungen: r.buchuebungen,

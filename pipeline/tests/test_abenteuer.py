@@ -68,6 +68,20 @@ def test_querverweise_stimmen():
         if begegnung["gegner"] not in gegner:
             fehler.append(f"{begegnung['kennung']}: Gegner {begegnung['gegner']} fehlt")
     begegnungen = {b["kennung"] for b in _lade("begegnungen.json")["begegnungen"]}
+    # Versatzbereiche je Rolle (Regelwerk R4, Vorschlag V9): Straße −150..0 auf A, Clubmitglied
+    # −100..+50 auf A, Clubchef genau 160 + 60 · Clubnummer auf E; Story und Turnier sind frei.
+    clubnummer = {o["club"]["chef"]: o["nummer"] for o in orte if o.get("club")}
+    bereiche = {"strasse": ("aktuell", -150, 0), "clubmitglied": ("aktuell", -100, 50)}
+    for profil in _lade("gegner.json")["gegner"]:
+        staerke, rolle = profil["staerke"], profil["rolle"]
+        if rolle in bereiche:
+            art, unten, oben = bereiche[rolle]
+            if staerke["art"] != art or not unten <= staerke["versatz"] <= oben:
+                fehler.append(f"{profil['kennung']}: Stärke {staerke} passt nicht zur Rolle {rolle}")
+        elif rolle == "clubchef":
+            soll = 160 + 60 * clubnummer.get(profil["kennung"], 0)
+            if staerke != {"art": "eingang", "versatz": soll}:
+                fehler.append(f"{profil['kennung']}: Clubchef braucht eingang + {soll}, hat {staerke}")
     runden = _lade("runden.json")["runden"]
     rundenkennungen = {r["kennung"] for r in runden}
     for runde in runden:

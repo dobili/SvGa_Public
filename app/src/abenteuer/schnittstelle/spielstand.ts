@@ -120,6 +120,20 @@ export interface Abenteuerstand {
    */
   readonly eingangswertung: number;
   readonly eingangPartien: number;
+  /**
+   * Abenteuerwertung A (Regelwerk R2, Vorschlag V1): startet mit der Wertung der App oder 600,
+   * folgt Änderungen der App-Wertung und wächst mit Story-Partien, die nach R38 zählen.
+   */
+  readonly wertung: number;
+  /** Zuletzt gelesene Wertung der App, um ihre Änderung auf A zu übertragen; null ohne Wertung. */
+  readonly appWertungZuletzt: number | null;
+  /** Zahl der Story-Partien, die für A gezählt haben (K = 32 in den ersten 10, dann 20). */
+  readonly wertungPartien: number;
+  /**
+   * Zielstärke der laufenden Partie vor dem Zustandsfaktor und ob sie für A zählt (R38, geprüft
+   * beim Start); null ohne laufende Partie.
+   */
+  readonly laufendeWertung: { readonly zielElo: number; readonly zaehlt: boolean } | null;
   /** Name und Figurvariante des Helden (nur Vorname oder Spitzname, bleibt lokal). */
   readonly held: { readonly name: string; readonly variante: number };
   readonly handlung: Handlungsstand;
@@ -144,4 +158,6 @@ export interface Abenteuerstand {
   readonly dialogvariablen: Readonly<Record<string, number | string | boolean>>;
   /** Gesamte Spielzeit in Sekunden, für den Vergleich mit dem Zeitbudget je Club (Entscheidung A7). */
   readonly spielzeitSekunden: number;
+  /** Spielzeit je Ort in Sekunden (Vorschlag V7), um die Richtwerte R39/R40 nachzumessen. */
+  readonly spielzeitJeOrt: Readonly<Record<string, number>>;
 }

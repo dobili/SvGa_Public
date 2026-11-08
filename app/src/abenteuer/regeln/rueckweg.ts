@@ -17,6 +17,7 @@ import type { Abenteuerstand, Clubstand } from "../schnittstelle/spielstand";
 import { mitRundenergebnis, reiheBestanden, wertung } from "./aufgaben";
 import { variablenNachNadel, variablenNachPartie, variablenNachRunde } from "./dialogvariablen";
 import { besteNadel, clubnadel } from "./karten";
+import { nachStoryPartie } from "./wertung";
 
 /** Ein Club mit geänderten Feldern; fehlt er noch, entsteht er leer. */
 function mitClub(
@@ -69,14 +70,20 @@ export function standNachPartie(
       ? variablenNachNadel(ort.kennung, clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null)
       : {}),
   };
+  // Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt wurden.
+  const laufend = stand.laufendeWertung;
+  const gewertet = laufend?.zaehlt
+    ? nachStoryPartie(stand, laufend.zielElo, ergebnis.ausgang, ergebnis.gespielteKarten)
+    : stand;
   return {
     begegnung,
     nadel,
     stand: {
-      ...stand,
+      ...gewertet,
       clubs,
       dialogvariablen,
       laufendePartie: null,
+      laufendeWertung: null,
       partiekarten: null,
       protokoll: [
         ...stand.protokoll,

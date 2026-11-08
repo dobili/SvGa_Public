@@ -30,6 +30,7 @@ import { appdienste } from "../modul/abenteuer";
 import { vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
+import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
@@ -126,6 +127,16 @@ export function Oberwelt() {
     setzeStand(neu);
     void dienste.schreibeStand(neu);
   };
+
+  // Abenteuerwertung A folgt der Wertung der App (R2), geprüft beim Aufbau.
+  useEffect(() => {
+    const aktuell = standRef.current;
+    if (!aktuell) return;
+    const neu = mitAppWertung(aktuell, dienste.wertung());
+    if (neu !== aktuell) schreibe(neu);
+    // Nur beim Aufbau; danach ändert nur diese Komponente den Stand.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /** Ein Ereignis der Welt: Quests fortschreiben, Wirkungen anwenden, Meldungen zeigen. */
   const melde = (ereignis: Questereignis, w: Weltdaten | null = weltRef.current) => {
@@ -235,7 +246,7 @@ export function Oberwelt() {
   const starteRunde = (runde: string) => {
     const aktuell = standRef.current ?? stand;
     if (!welt || !aktuell) return;
-    const auftrag = auftragFuerRunde(runde, welt.daten, aktuell, dienste.wertung());
+    const auftrag = auftragFuerRunde(runde, welt.daten, aktuell);
     if (!auftrag) {
       setzeMeldung(tSpiel("aufgaben.fehlt", { runde }));
       return;
@@ -311,10 +322,15 @@ export function Oberwelt() {
       if (szene && aktuell && aktuell.position.karte === stand.position.karte) {
         const position = { ...szene.position(), karte: aktuell.position.karte };
         const sekunden = Math.round((Date.now() - begonnen) / 1000);
+        const ort = aktuell.position.karte.split(".")[0] ?? "";
         void dienste.schreibeStand({
           ...aktuell,
           position,
           spielzeitSekunden: aktuell.spielzeitSekunden + sekunden,
+          spielzeitJeOrt: {
+            ...aktuell.spielzeitJeOrt,
+            [ort]: (aktuell.spielzeitJeOrt[ort] ?? 0) + sekunden,
+          },
         });
       }
       if (spiel.current) beendeOberwelt(spiel.current);
@@ -377,8 +393,7 @@ export function Oberwelt() {
     },
     beginnePartie: (begegnung) => {
       const aktuell = standRef.current ?? stand;
-      if (welt)
-        auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell, dienste.wertung());
+      if (welt) auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell);
     },
     beginneAufgaben: (runde) => {
       rundeInArbeit.current = runde;
@@ -436,6 +451,8 @@ export function Oberwelt() {
       karten,
       position,
       laufendePartie: auftrag.kennung,
+      // Für die Abenteuerwertung (R2, R38): Zielstärke vor dem Zustandsfaktor und ob sie zählt.
+      laufendeWertung: { zielElo: auftrag.staerke.zielElo, zaehlt: zaehltFuerA(auftrag) },
       partiekarten: {
         deck: deck.filter((k) => !vorher.some((v) => v.kennung === k)),
         gespielt: vorher,
@@ -459,7 +476,7 @@ export function Oberwelt() {
     const aktuell = standRef.current ?? stand;
     if (!welt) return;
     const begegnung = e.kennung.split("#")[0] ?? "";
-    const auftrag = auftragFuer(begegnung, welt.daten, aktuell, dienste.wertung());
+    const auftrag = auftragFuer(begegnung, welt.daten, aktuell);
     if (!auftrag) return;
     const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
     const karten = kartenFuerWiedereinstieg(vorherigeKarten.current, e.gespielteKarten, k, sorten);

@@ -24,7 +24,7 @@ const AUFTRAG: Partieauftrag = {
   kennung: "mapleFalls.ersteLektion#1",
   begegnung: "mapleFalls.ersteLektion",
   profil: AMBROSE,
-  zustand: { haeufigkeitsfaktor: 1, grund: null, analysiert: false },
+  zustand: { haeufigkeitsfaktor: 1, grund: null, analysiert: false, ueberheblich: 1 },
   staerke: {
     zielElo: 800,
     stufenJePhase: { eroeffnung: 3, mittelspiel: 3, endspiel: 3 },

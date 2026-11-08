@@ -218,7 +218,7 @@ Kipppunkt bleiben gespielt, dauerhafte Karten von danach kehren ins Deck zurück
 nicht (R15); das Protokoll merkt sich den Wiedereinstieg (einmal je Begegnung). Nebenbei
 behoben: `liesErgebnis` gab die gespielten Karten nicht weiter, die Nadel wäre immer Gold gewesen.
 
-**Auslöser je Karte (V5, Befund von niedrig-1):** Auslöser in `orte.json` galten je Ort, deshalb
+**Auslöser je Karte (Befund von niedrig-1):** Auslöser in `orte.json` galten je Ort, deshalb
 führte „schule“ auf der Clubraumkarte wieder in den Clubraum und „treppeOben“ war unerklärt. Neu
 ist das optionale Feld `karte` am Auslöser: Ein Eintrag mit passender Karte geht vor, ohne Karte
 gilt er auf allen Karten des Ortes. Rückwege für Haustür, Schule, Park und Treppe eingetragen;
@@ -266,11 +266,11 @@ oder falsch; (2) Buchübungen ohne Lösungszug (Zählübungen „ueb:zaehlen-vor
 Taktiktrainer und fallen aus der Runde heraus, ebenso das Thema „zaehlen“ (eigener Trainer); dafür
 später der Zähltrainer als Aufgabenart; (3) Erinnerungen (Zugerraten, C3) laufen vorerst als
 Mattbilder-Runde. Vertrag: `schnittstelle/aufgaben.ts` (Auftrag mit Runde, Steller, Versuch;
-Rundenstand), Spielstand mit `laufendeAufgaben`, `aufgabenergebnis`, `runden` (V6).
+Rundenstand), Spielstand mit `laufendeAufgaben`, `aufgabenergebnis`, `runden`.
 `Oberwelt.tsx` in drei Dateien geteilt (`auftraege.ts`, `weltdaten.ts`), bleibt aber über 400
 Zeilen; die Rückwege (Partie, Runde) wandern in 8g in einen eigenen Hook.
 
-**Dialoge für Cedar Creek (mittel-1) zusammengeführt, Dialogvariablen aus Ergebnissen (V7):**
+**Dialoge für Cedar Creek (mittel-1) zusammengeführt, Dialogvariablen aus Ergebnissen:**
 Die Hülle setzt jetzt Variablen für die Ink-Dateien (`regeln/dialogvariablen.ts`): Ausgang einer
 Begegnung in der Langform mit Ort (`ausgangMapleFallsClubkampf` = „sieg“), bestandene Runde
 (`reiheSamBestanden` = true), beste Nadel eines Clubs (`nadelMapleFalls` 0 bis 3). Die Langform
@@ -287,6 +287,31 @@ Paket bleibt). Die Rückwege aus Partie und Aufgabenrunde sind reine Funktionen
 (`regeln/rueckweg.ts`: Clubnadel und Versuch, Protokoll, Rundenstand, Aufgabenreihe,
 Dialogvariablen) mit Tests; `Oberwelt.tsx` ist von 978 auf 699 Zeilen geschrumpft, noch über der
 400-Zeilen-Regel; der nächste Schnitt (Dialog- und Kartenlogik in einen Hook) folgt mit 8h.
+
+**Schritt 8h erledigt (Abenteuerwertung A und Vertragsvorschläge des Regelwerks):**
+
+- **V1, R2/R3/R38:** Der Spielstand trägt die Abenteuerwertung `wertung` (A), die zuletzt gelesene
+  App-Wertung, die Zahl der für A gezählten Partien und die Zielstärke der laufenden Partie
+  (`regeln/wertung.ts`, Tests). A startet mit der App-Wertung oder 600, folgt Änderungen der
+  App-Wertung und macht nach jeder zählenden Story-Partie (ganze Partie aus der Grundstellung,
+  zählt für die App, nicht abgebrochen, keine mittlere oder starke Karte) einen Elo-Schritt gegen
+  die Zielstärke vor dem Zustandsfaktor (K 32 bis zehn Partien, dann 20, nie unter 100). Solange E
+  noch läuft, folgt E dem neuen A, und die Partie zählt für `eingangPartien`. Straße,
+  Clubmitglieder und Aufgabenrunden rechnen jetzt mit A statt mit der App-Wertung. Das Tagebuch
+  zeigt A als „Deine Spielstärke im Abenteuer“.
+- **V2, R6/R7:** Umrechnung Z → Stufe mit kaufmännischem Runden und Eichpunkt in der Stufenmitte,
+  Häufigkeit 1,4^(−d/150), Zustandsfaktor höchstens 2,0, Ergebnis 0,5 bis 2,5; Architektur
+  Abschnitt 4 angepasst. Folge: Coach Delgado bei E = 800 spielt Stufe 3 mit Häufigkeit 0,76 statt
+  Stufe 4 mit 1,12 (etwa wie zuvor gemeint, aber richtig geeicht).
+- **V8, R9:** `Gegnerzustand.ueberheblich` als eigener Faktor (1 + 0,15 je Niederlage seit dem
+  letzten Sieg oder Remis, höchstens 1,6; nur Clubchef, Clubmitglied, Turnier), aus dem Protokoll
+  gezählt. **R10:** Im zweiten Durchlauf +300 auf Z.
+- **V7:** `spielzeitJeOrt` im Spielstand, beim Verlassen der Welt fortgeschrieben.
+- **V9:** Pipeline prüft die Versatzbereiche je Rolle (Straße −150 bis 0, Clubmitglied −100 bis
+  +50, Clubchef genau 160 + 60 · Clubnummer).
+- **Offen:** V5 (Nadeln des zweiten Durchlaufs) und V6 (freie Karten im Halbfinale) kommen mit
+  Staffel 2 bzw. Akt 3; die Schätzung `geschaetzteStaerke` aus den Zügen liefert die App noch
+  nicht (dann ersetzt sie den Startwert 600).
 
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 

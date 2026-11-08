@@ -67,6 +67,12 @@ export interface Gegnerzustand {
   readonly grund: string | null;
   /** Der Leser hat den Gegner vorbereitet (Nebenquest „analysiert“): Steckbriefzeilen sind sichtbar. */
   readonly analysiert: boolean;
+  /**
+   * Faktor „überheblich“ nach Niederlagen des Lesers (Regelwerk R9): 1 + 0,15 je verlorener ganzer
+   * Partie seit dem letzten Sieg oder Remis, höchstens 1,6; 1 = nicht überheblich. Getrennt von
+   * `haeufigkeitsfaktor` (abgelenkt), damit die Anzeige beide Gründe nennen kann (Vorschlag V8).
+   */
+  readonly ueberheblich: number;
 }
 
 /**

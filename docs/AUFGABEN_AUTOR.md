@@ -77,9 +77,11 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2615. Spielmenü (☰) › „Von vorn beginnen“ › „Ja, von vorn“: zurück auf die Startkarte, dort das Feld „Wie heißt du im
       Spiel?“. Einen Namen eintippen (etwa „Kim“), „Spielen“: Ambrose spricht dich im Dialog mit diesem Namen an. Im
       Spielmenü steht der Name im Feld; ändern und „Namen speichern“ wirkt sofort. Leer gelassen heißt der Held „Du“.
-
-### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
-
+- [ ] N2616. Tagebuch im Abenteuer: Unter den offenen Aufgaben steht „Deine Spielstärke im Abenteuer: N“; N ist beim Start
+      deine Wertung der App (klassisch) oder 600 ohne Wertung. Nach einer ganzen Partie gegen Ambrose ohne Flüstern oder
+      Mentor-Zug ändert sich N (Sieg etwa +25 bei gleich starkem Gegner); nach einer Partie mit Vorgabe oder einem
+      Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, spielt er in der dritten Partie spürbar lockerer
+      (mehr Fehler); die Anzeige „überheblich“ vor der Partie kommt noch.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

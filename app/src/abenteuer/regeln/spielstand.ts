@@ -43,8 +43,12 @@ export function leererAbenteuerstand(
   return {
     version: ABENTEUER_VERSION,
     begonnen: jetzt.toISOString(),
-    eingangswertung: wertung ?? 0,
+    eingangswertung: wertung ?? A_START,
     eingangPartien: wertungFest ? EINGANG_PARTIEN : 0,
+    wertung: wertung ?? A_START,
+    appWertungZuletzt: wertung,
+    wertungPartien: 0,
+    laufendeWertung: null,
     held: { name: heldname, variante: 0 },
     handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
     position: STARTPOSITION,
@@ -61,11 +65,14 @@ export function leererAbenteuerstand(
     runden: [],
     dialogvariablen: {},
     spielzeitSekunden: 0,
+    spielzeitJeOrt: {},
   };
 }
 
 /** Nach so vielen gewerteten Partien ist die Eingangswertung fest (Architektur, Abschnitt 4). */
 export const EINGANG_PARTIEN = 10;
+/** Startwert der Abenteuerwertung ohne Wertung der App (Regelwerk R2). */
+export const A_START = 600;
 
 type Roh = Record<string, unknown>;
 
@@ -91,6 +98,12 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     begonnen: roh.begonnen,
     eingangswertung: zahl(roh.eingangswertung),
     eingangPartien: zahl(roh.eingangPartien),
+    wertung: zahl(roh.wertung) || zahl(roh.eingangswertung) || A_START,
+    appWertungZuletzt: typeof roh.appWertungZuletzt === "number" ? roh.appWertungZuletzt : null,
+    wertungPartien: zahl(roh.wertungPartien),
+    laufendeWertung: istObjekt(roh.laufendeWertung)
+      ? { zielElo: zahl(roh.laufendeWertung.zielElo), zaehlt: roh.laufendeWertung.zaehlt === true }
+      : null,
     held: { name: text(roh.held.name), variante: zahl(roh.held.variante) },
     handlung,
     position: position ?? STARTPOSITION,
@@ -113,6 +126,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},
     spielzeitSekunden: zahl(roh.spielzeitSekunden),
+    spielzeitJeOrt: istObjekt(roh.spielzeitJeOrt)
+      ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
+      : {},
   };
 }
 

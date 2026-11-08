@@ -6,7 +6,7 @@ Kaufbereich der Seite.
 
 ## 1. Kaufen (LimeZu auf itch.io, beide Pakete)
 
-- [ ] **Modern Interiors** (Innenräume, Figuren, Möbel, Charakter-Generator)
+- [x] **Modern Interiors** (gekauft am 8.11.2026) (Innenräume, Figuren, Möbel, Charakter-Generator)
       https://limezu.itch.io/moderninteriors
       Kauf direkt: https://limezu.itch.io/moderninteriors/purchase
       Preis „name your own price“, Vollversion ab etwa 1,50 bis 3 US-Dollar. Enthält Kacheln für
@@ -14,7 +14,7 @@ Kaufbereich der Seite.
       Charakter-Generator (über 100 Outfits, 200 Frisuren; läuft nur unter Windows und Linux).
       Größen 16, 32 und 48 Pixel; das Spiel braucht die 16-Pixel-Fassung.
 
-- [ ] **Modern Exteriors** (Stadt, Park, Straßen, Strand, Fahrzeuge)
+- [x] **Modern Exteriors** (gekauft am 8.11.2026) (Stadt, Park, Straßen, Strand, Fahrzeuge)
       https://limezu.itch.io/modernexteriors
       Kauf direkt: https://limezu.itch.io/modernexteriors/purchase
       Mindestpreis etwa 5 US-Dollar. Enthält Straßen, Gebäude, Parks, Gärten, animierte Fahrzeuge
@@ -28,6 +28,10 @@ Jahren gepflegt. Alle Pakete von LimeZu: https://limezu.itch.io
 **Lizenz:** Nutzung und Bearbeitung in kommerziellen Projekten erlaubt, Namensnennung mit Link auf
 limezu.itch.io nötig (steht dann im Abspann und in `docs/spiel/LIZENZEN.md`), Weitergabe der
 Grafikdateien verboten. Deshalb kommen sie nicht ins öffentliche Repository.
+
+Ebenfalls vorhanden (8.11.2026): **Fungus Cave** (LimeZu, gleicher Stil; gern mit hochladen, vielleicht
+später für Höhle oder Canyon), **RPG Fantasy Battlers** (nicht nötig, Kampffiguren) und **QGO** (gehört nicht
+zum Spiel). Hochladen genügt in der 16×16-Fassung.
 
 ## 2. Privates Repository anlegen
 

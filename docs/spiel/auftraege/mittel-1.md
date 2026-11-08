@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Limo für Jo (Dialoge und Quest)
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, zwölfter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zwölfte Auftrag, Limo für Jo, ist zusammengeführt, danke; Start über den Dialog ist übernommen. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/dialoge/de/maple-falls-park.ink`, `inhalte/abenteuer/quests.json`

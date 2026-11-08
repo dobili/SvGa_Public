@@ -117,6 +117,12 @@ Adresse mit „#abenteuer“ öffnen).
       Bauernkompass, 6 Planfinder, 7 Taktikspürnase, 8 Endspielkompass, 9 Turmregel, 11 Phasenblick, 12 Was droht?),
       mit der Meldung „Für Kapitel 1 im Buch: …“. Zum Ausprobieren ein Kapitel in der App fertig lösen, dann die Welt
       öffnen. Sprüche erscheinen in der Deckwahl nur vor Partien gegen Straßengegner.
+- [ ] N2621. Limo für Jo: Nach dem ersten Duell mit Skater Jo spricht sie dich noch einmal an und will eine
+      Zitronenlimo. Am Kiosk von Mr. Patel kostet die Limo 5 Münzen (Patel: „Die trinkt nur Zitrone.“). Bring sie
+      Jo: Sie verrät ihre Schwäche (sie zieht ungern zurück), die Zeile steht danach im Steckbrief, die Limo ist
+      weg, und beim nächsten Duell ist Jo „analysiert“. Außerdem neu: Straßensiege bringen nur beim ersten Sieg
+      je Gegner und Tag 10 Münzen, danach 2. Das Fahrrad gibt es nicht mehr im ersten Laden, die Kartentasche
+      kostet 450, und das Remisangebot geht nicht im Clubkampf.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

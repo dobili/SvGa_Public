@@ -65,7 +65,7 @@ im vierten Auftrag (keine Probleme).
 
 **Knoten** (Einstiege fett):
 
-- `weg-maple-cedar.ink`: **tafel**; **wanderer** → wanderer_erstes, wanderer_zweites,
+- `weg-maple-cedar.ink`: **tafel**; **fund_muenzen**; **wanderer** → wanderer_erstes, wanderer_zweites,
   wanderer_drittes; **gegnerin** → nia_erstes_treffen, nia_angebot, nia_duell, nia_nach_sieg,
   nia_nach_niederlage; **fund_formular**; **rast**; **schild_cedar**.
 - `maple-falls-park.ink`: **kiosk** (Mr. Patel, `~ oeffneLaden("mapleFalls.kiosk")`),
@@ -74,18 +74,26 @@ im vierten Auftrag (keine Probleme).
 - `cedar-creek-aussen.ink`: **ankunft_zu_fuss** (Juno und Coach warten an der Haltestelle; setzt
   `ankunftCedarCreekGesehen` wie die Ankunft mit dem Bus, damit sie nicht doppelt läuft).
 
+**Nachgebessert nach der Korrektur des Haupt-Chats** (Stand b701e4af hereingeholt; Konflikte in
+`gegner.json` und `texte/de.json` gelöst: Nia aus seiner vorläufigen Fassung mit meinem Profil
+überschrieben, Texte beider Seiten vereinigt): Runde jetzt `wegMapleCedar.tafel` aus
+`runden.json`, der Aufruf `beginneAufgaben` ist aktiv; neuer Knoten `fund_muenzen` (Kiste am
+Flussufer, `~ gibFund("muenzenFlussweg")`) mit Texten `fund.muenzenFlussweg.name` und `.text`;
+alle Knoten heißen wie in `orte.json` unter `dialog` (Auslöser `fundFormular`, `fundMuenzen`,
+`schildCedar`). Prüfungen danach: pytest 9, Paketbau, Prettier, 5148 Läufe ohne Fehler, Tafel und
+Münzen einzeln, Variablen-Durchsicht, `npm run pruefen` (2379 Tests).
+
 **Entscheidungen mit Begründung:**
 
-1. **Kennungen zweiteilig.** Die Schemas für Gegner, Begegnungen, Quests und Runden erlauben nur
-   `ort.name`; `weg.mapleCedar.nia` wäre am Schematest gescheitert. Deshalb `wegMapleCedar.nia`
-   für Gegner und Begegnung. Die Hülle macht daraus genau die verlangte Variable
-   `ausgangWegMapleCedarNia`. Die Runde heißt `wegMapleCedar.tafelLandstrasse` statt
-   `….tafel`, weil die Variable sonst `tafelBestanden` hieße und mit jeder späteren Route
-   kollidierte; so heißt sie `tafelLandstrasseBestanden`.
-2. **Rätseltafel ohne Aufruf.** Der Test prüft jetzt jedes `beginneAufgaben` gegen
-   `runden.json`, und Runden brauchen dort einen Ort mit Club. Die Runde der Tafel fehlt also
-   noch (für mich gesperrt). Der Aufruf steht als Kommentar bereit, wie damals bei Victor; bis
-   dahin sagt die Tafel einen Satz und endet.
+1. **Kennungen zweiteilig** (`wegMapleCedar.nia`, `wegMapleCedar.tafel`), wie die Schemas es
+   verlangen und der Haupt-Chat bestätigt hat. Hinweis: Die Variable der Tafel heißt nach R42
+   `tafelBestanden`; bei weiteren Routen mit einer Runde `….tafel` teilen sie sich diese
+   Variable. Vorschlag: spätere Routen benennen die Runde nach dem Ort (`tafelFlussweg`,
+   `tafelRiverton`).
+2. **Ankunft zu Fuß:** Der Übergang `weiterCedar` führt nach `cedarCreek.aussen`, Auslöser
+   `bushaltestelle` (Art `start`, ohne Dialog). `ankunft_zu_fuss` braucht deshalb noch einen
+   Auslöser oder einen Ankunftsknoten nach dem Übergang; bis dahin läuft beim ersten Gespräch
+   draußen wie bisher die Ankunft mit dem Bus (sie setzt dieselbe Variable).
 3. **Stellung für Nia: Abbildung 3.77** (Abschnitt 3.10, Lettisches Gambit, Bilanz nach 13.
    Tae1 O-O, Weiß am Zug): Weiß ist besser entwickelt und hat die offene f-Linie, Stockfish lite
    Tiefe 14 sagt +1,78. Gewählt aus allen Abbildungen der Kapitel 2 und 3 mit Weiß am Zug
@@ -103,26 +111,23 @@ im vierten Auftrag (keine Probleme).
    nicht lesen. Das bereitet E4 vor (Mr. Boateng entschlüsselt sie im Archiv).
 
 **Neue Variablen** (alle von Ink gesetzt, außer den beiden der Hülle):
-`wandererBesuche` (Zahl, 0), `niaGetroffen`, `formularGefunden`, `patelGetroffen` (Wahrheitswerte,
-false); von der Hülle: `ausgangWegMapleCedarNia` (Text, „“), `tafelLandstrasseBestanden`
+`wandererBesuche` (Zahl, 0), `niaGetroffen`, `formularGefunden`, `muenzenGefunden`, `patelGetroffen`
+(Wahrheitswerte, false); von der Hülle: `ausgangWegMapleCedarNia` (Text, „“), `tafelBestanden`
 (Wahrheitswert, false). Im Park neu gelesen: `ankunftCedarCreekGesehen` (war dort schon
 deklariert), `aufbruchGesehen`.
 
 **Vorschläge für gesperrte Dateien (Haupt-Chat):**
 
-1. **`runden.json`:** Runde `wegMapleCedar.tafelLandstrasse` mit `anzahl` 3, Thema `matt1`,
-   Steller „Tafel“ ohne Figur (W4a); dafür muss der Test Runden ohne Club für Routen erlauben
-   (etwa Ort beginnt mit `weg`). Danach in `tafel` den Kommentar einkommentieren.
-2. **`wege.json`** (Schritt 10): Stationen als Auslöser `tafel`, `wanderer` (Figur), `gegnerin`
-   (Figur, Gegner `wegMapleCedar.nia`), `fund_formular`, `rast`, `schild_cedar`; Ankunft über den
-   Flussweg an `cedarCreek.aussen` Auslöser `bushaltestelle` mit Dialog
-   `cedar-creek-aussen.ankunft_zu_fuss`; Ausgang im Park über Auslöser `landstrasse` mit Dialog
-   `maple-falls-park.landstrasse`.
-3. **Bus erst nach dem Fußweg (W2):** `maple-falls-park.bushaltestelle` bietet den Bus heute nach
+1. **Ankunft und Ausgang:** Die Stationen stehen schon in `orte.json` (Ort `wegMapleCedar`). Es
+   fehlen noch zwei Dialoge an Übergängen: Ankunft über `weiterCedar` an `cedarCreek.aussen`
+   (`bushaltestelle`) mit `cedar-creek-aussen.ankunft_zu_fuss`, und der Ausgang im Park
+   (`landstrasse`) mit `maple-falls-park.landstrasse`. Übergänge haben heute keinen Dialog; ein
+   optionales Feld `dialog` am Übergang oder am Ziel-Auslöser würde beides lösen.
+2. **Bus erst nach dem Fußweg (W2):** `maple-falls-park.bushaltestelle` bietet den Bus heute nach
    dem Aufbruch sofort an. Für W2 sollte er erst nach `ankunftCedarCreekGesehen` fahren (davor
    ein Satz: „Den ersten Weg gehst du zu Fuß. Die Landstraße beginnt am Parkausgang.“). Der Knoten
    ist für diesen Auftrag gesperrt; ich ändere ihn gern im nächsten.
-4. **Kiosk `mapleFalls.kiosk`** (`laeden.json`, G2/G4), Vorschlag:
+3. **Kiosk `mapleFalls.kiosk`** (`laeden.json`, G2/G4), Vorschlag:
 
    | Angebot                                  | Preis | Vorrat   | Hinweis                                                           |
    | ---------------------------------------- | ----- | -------- | ----------------------------------------------------------------- |

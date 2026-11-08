@@ -1117,6 +1117,35 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### Q18 Deine Wünsche vom 8.11.: Wege, Entdeckungen, Zeit, Flashbacks, Läden (Entwurf steht, Widerspruch genügt)
+
+Der Entwurf mit allen Mechaniken steht in `docs/spiel/08_Wege_und_Entdeckungen.md`; gebaut wird
+ab Schritt 10, nachdem du Akt 1 gespielt hast. Kurzfassung der Empfehlungen und die Punkte, bei
+denen deine Meinung die Arbeit ändert:
+
+- [ ] Q18-1. **Wege:** Jede Verbindung ist eine begehbare Route (ein bis zwei Außenkarten) mit Rätseltafeln,
+      Straßengegnern mit Uhr, Funden und Wanderern. Der erste Weg wird gegangen, danach ist Bus oder Zug als
+      Schnellreise frei (gegen Münzen oder nach der Clubnadel kostenlos); Fahrrad als Gegenstand verdoppelt das
+      Tempo draußen. Erste Route Maple Falls → Cedar Creek ersetzt den heutigen Bus-Sprung. Einverstanden?
+- [ ] Q18-2. **Entdeckungen:** Funde auf Karten (sichtbar und versteckt), angezeigt im vorhandenen Album der App;
+      sie schalten Extras frei (Brettfarben, Figurensätze, neue Bretthintergründe wie „Maple Falls im Herbst“).
+      Zwei übergreifende Quests zum Start: altes Partieformular (Route 1 → Archiv Cedar Creek → Fragment),
+      verrosteter Schlüssel (Cedar Creek → Schuppen in Stadt 3 → Fahrrad). Reicht das als Anfang?
+- [ ] Q18-3. **Zeit:** Vor Partien gegen Straße und Clubmitglieder wählst du ohne Uhr, Schnellschach 10+5 oder
+      Blitz 3+2; Clubkämpfe bleiben ohne Uhr, außer du willst. Zeitkarten: Zeitbonus (eigene Uhr +2 min, gibt es),
+      neu Zeitdruck (Gegner −1 min) und Zeitgeschenk (Spielwitz). Zeitkarten zählen für die Nadel als leichte
+      Karten, nur über Routen und Nebenquests zu bekommen, nicht im Laden. Soll Blitz auch im Clubkampf erlaubt sein
+      (meine Empfehlung: ja, freiwillig, ohne Folge für die Nadel)?
+- [ ] Q18-4. **Geld:** Münzen als Spielwährung (Siege, Runden, Tafeln, Funde, Nadeln), ein Laden je Stadt mit
+      Verbrauchskarten, Fahrkarten, Fahrrad, Taschenlampe für versteckte Funde, Extras. Gold bleibt unkäuflich
+      (nur ohne Karten), Mentor-Zug und Sanduhr gibt es nie zu kaufen, keine Echtgeld-Käufe. Preise so, dass ein
+      Clubbesuch 60 bis 100 Münzen bringt. Willst du das Geldsystem, oder lieber nur Funde und Belohnungen?
+- [ ] Q18-5. **Flashbacks:** kurze spielbare Erinnerungen (2 bis 5 Minuten) in Sepia mit Ambrose als Held, am Ende eine
+      Stellung aus einer echten Partie der Zeit; die ersten drei: New York 1857, London Kaffeehaus, die letzte Partie
+      vor dem Verschwinden. Je ein Fragment als Belohnung. Einverstanden?
+- [ ] Q18-6. **Reihenfolge:** 10 Wege, 11 Entdeckungen, 12 Münzen und Läden, 13 Zeit, 14 Flashbacks, alles in
+      Staffel 1; die Landesmeisterschaft rückt nach hinten. Soll etwas davon vorgezogen oder gestrichen werden?
+
 ### Q17 Grafik für das Schach-Abenteuer (8.11.2026, Entscheidung nötig, nichts umgesetzt)
 
 - [ ] Q17-1. **Kacheln und Figuren kaufen.** Der Prototyp läuft mit farbigen Platzhalterkacheln. Für den Look der späten

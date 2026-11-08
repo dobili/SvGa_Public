@@ -336,6 +336,21 @@ Neuer Oberflächentest `tests/e2e/abenteuer-aufgaben.spec.ts`: Spielstand mit la
 Sam einspielen, Runde im Trainer durchspielen (Lösung zeigen), Ergebniskarte „0 von 3 Punkten“ mit
 Angebot der leichteren Runde. Damit ist Schritt 8 abgeschlossen.
 
+## 08.11.2026 – Wünsche des Autors: Wege, Entdeckungen, Zeit, Flashbacks, Läden
+
+Der Autor wünscht (Nachricht vom 8.11.2026, 07:50 Uhr): begehbare Wege zwischen den Städten mit
+Rätseln, kurzen Partien und Entdeckungen; übergreifende Nebenquests („Mondfossil“); Boni wie
+Brettfiguren und Bretthintergründe; Wahl von Blitz oder Schnellschach und Karten für die
+Bedenkzeit (die Engine spielt in Zeitnot schwächer); Fortbewegung zu Fuß, Bus, Zug, Fahrrad;
+Flashback-Abschnitte in Ambroses Erinnerungen; Geld und Läden. Entwurf mit Mechanik, Verträgen,
+Aufwand und Reihenfolge in `docs/spiel/08_Wege_und_Entdeckungen.md` (W1–W6, E1–E5, Z1–Z5,
+F1–F3, G1–G6). Entscheidungen des Haupt-Chats (Widerspruch genügt): Route 1 Maple Falls → Cedar
+Creek ersetzt den Bus-Sprung, der Bus bleibt Schnellreise nach dem ersten Fußweg; Funde nutzen
+das Album und die Extras der App statt neuer Systeme; Münzen sind reine Spielwährung ohne
+Echtgeld, Gold bleibt unkäuflich; Zeitkarten zählen als leichte Karten; Flashbacks nutzen die
+Oberwelt mit Sepia-Tönung. Reihenfolge: nach Schritt 9 (Akt 1 spielen) die Schritte 10 Wege,
+11 Entdeckungen, 12 Münzen und Läden, 13 Zeit, 14 Flashbacks. Rückfragen als Q18.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

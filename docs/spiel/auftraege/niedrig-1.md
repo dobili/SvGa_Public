@@ -739,3 +739,16 @@ bestanden, die sechs Karten nicht mehr übersprungen.
 - `pinewood-camp-aussen`: vier Hütten, See unten links, Kanus, `lagerfeuer`, `kiosk`, `ezra`,
   `hollis`, `dex`, `mae`, `lou`, `tamsin`; `betreuer` (abend), `kanufahrer`, `campkinder`,
   `libellen`, `reh`, `froesche` (abend).
+
+**Teil 4: Weg 10, Ghost Town und Erinnerung (5 Karten, gepusht).** 560 Tests bestanden.
+
+- `weg-pinewood-ghost-canyonrand`: Canyonwand oben, Abgrund unten, `tafel`; `kletterer`, `geier`,
+  `eidechse`.
+- `weg-pinewood-ghost-staubstrasse`: Kakteen, Felsen, `juniper`; `staubteufel` (als Statist,
+  wirbelt über die Straße), `klapperschlange`, `geier`.
+- `ghost-town-aussen`: Saloon (`saloonTuer`), verlassene Häuser, Friedhof unten links mit `grab`,
+  `sternenhimmel`, `victor`; `metallsucher`, `plakat` (flattert), `eule` (abend), `geier`.
+- `ghost-town-saloon`: Theke, `fernpartieBrett`, `pruitt`, `abzeichen` als Übergang in der oberen
+  Wand (geschlossen, von unten ansprechbar); `wind` (Schwingtür, abend).
+- `erinnerung-siedlung-huette` (12 × 10): ohne Ausgang am Rand; `start` und `ankunft`
+  nebeneinander, `rueckkehr` in der oberen Wand, `kerze`, `postreiter`; `pferd`.

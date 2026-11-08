@@ -5,12 +5,19 @@
  *
  * Rolle im Gesamtbild: anbindung/AufgabenAnsicht.tsx ruft sie mit dem Auftrag und den geladenen
  * Aufgaben (Taktiktrainer, Lichess-Zusatzaufgaben). Buchübungen sind die Taktikaufgaben mit
- * `herkunft.uebung`; Themen, die kein Trainer kennt (etwa „zaehlen“), fallen weg.
+ * `herkunft.uebung`; „falle“ und „struktur“ kommen aus den Trainern Falle oder Köder und Strukturen;
+ * Themen, die kein Trainer kennt (etwa „zaehlen“), fallen weg.
  * Abhängigkeiten: training/taktiktrainer.ts, training/zusatzaufgaben.ts, training/zufall.ts.
  * Beispiel: Sams Block (Buchübung „ueb:droh-ignorieren“, Thema „haengend“, anzahl 3,
  * Schwierigkeit 2) → vier Aufgaben: die Übung aus Abbildung 1.40, dann drei Hängeaufgaben.
  */
-import type { Taktikaufgabe as Aufgabe } from "../../daten/trainerdaten";
+import type {
+  Fallenaufgabe,
+  Strukturaufgabe,
+  Taktikaufgabe as Aufgabe,
+} from "../../daten/trainerdaten";
+import { fallenrunde } from "../../training/fallentrainer";
+import { strukturrunde } from "../../training/strukturtrainer";
 import { MOTIVE, taktikrunde, type Taktikthema } from "../../training/taktiktrainer";
 import { ZUFALL, type Zufall } from "../../training/zufall";
 import {
@@ -24,7 +31,15 @@ import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 /** Eine Aufgabe der Runde: Buchübung oder Taktikaufgabe (ohne Vorzug) oder Zusatzaufgabe. */
 export type Rundenaufgabe =
   | { readonly art: "taktik"; readonly aufgabe: Aufgabe; readonly motivAbfragen: boolean }
-  | { readonly art: "zusatz"; readonly aufgabe: Zusatzaufgabe };
+  | { readonly art: "zusatz"; readonly aufgabe: Zusatzaufgabe }
+  | { readonly art: "falle"; readonly aufgabe: Fallenaufgabe }
+  | { readonly art: "struktur"; readonly aufgabe: Strukturaufgabe };
+
+/** Aufgaben der Trainer „Falle oder Köder“ (Kapitel 4) und „Strukturen“ (Kapitel 5), falls geladen. */
+export interface Weitere {
+  readonly fallen: readonly Fallenaufgabe[];
+  readonly strukturen: readonly Strukturaufgabe[];
+}
 
 /** Mischt die Listen abwechselnd, bis `anzahl` erreicht ist (jedes Thema kommt gleich oft dran). */
 function abwechselnd<T>(listen: readonly (readonly T[])[], anzahl: number): T[] {
@@ -48,6 +63,7 @@ export function rundenaufgaben(
   taktik: readonly Aufgabe[],
   zusaetze: readonly Zusatzaufgabe[],
   zufall: Zufall = ZUFALL,
+  weitere: Weitere = { fallen: [], strukturen: [] },
 ): Rundenaufgabe[] {
   const buch: Rundenaufgabe[] = auftrag.buchuebungen.flatMap((id) =>
     taktik
@@ -67,6 +83,19 @@ export function rundenaufgaben(
       return taktikrunde(taktik, { thema: thema as Taktikthema, stufe }, auftrag.anzahl, zufall)
         .filter((a) => !buchkennungen.has(a.id))
         .map((aufgabe) => ({ art: "taktik" as const, aufgabe, motivAbfragen: false }));
+    }
+    // Themen „falle“ (Falle oder Köder, Kapitel 4) und „struktur“ (Bauernstrukturen, Kapitel 5).
+    if (thema === "falle") {
+      return fallenrunde(weitere.fallen, stufe, auftrag.anzahl, zufall).map((aufgabe) => ({
+        art: "falle" as const,
+        aufgabe,
+      }));
+    }
+    if (thema === "struktur") {
+      return strukturrunde(weitere.strukturen, stufe, auftrag.anzahl, zufall).map((aufgabe) => ({
+        art: "struktur" as const,
+        aufgabe,
+      }));
     }
     return [];
   });

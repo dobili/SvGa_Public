@@ -10,6 +10,7 @@ import type { BegegnungenDesSchachAbenteuers } from "../../daten/generiert/abent
 import type { GegnerDesSchachAbenteuers } from "../../daten/generiert/abenteuer-gegner";
 import type { AufgabenrundenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-runden";
 import type { FundeDesSchachAbenteuers } from "../../daten/generiert/abenteuer-funde";
+import type { LadenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-laeden";
 import type { HilfskartenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-karten";
 import type { OrteDesSchachAbenteuers } from "../../daten/generiert/abenteuer-orte";
 import type { QuestsDesSchachAbenteuers } from "../../daten/generiert/abenteuer-quests";
@@ -22,6 +23,7 @@ export type Ortdaten = OrteDesSchachAbenteuers["orte"][number];
 export type Begegnungsdaten = BegegnungenDesSchachAbenteuers["begegnungen"][number];
 export type Rundendaten = AufgabenrundenDesSchachAbenteuers["runden"][number];
 export type Funddaten = FundeDesSchachAbenteuers["funde"][number];
+export type Ladendaten = LadenDesSchachAbenteuers["laeden"][number];
 
 /** Alle Verzeichnisse des Spiels auf einmal. */
 export interface Spieldaten {
@@ -32,6 +34,7 @@ export interface Spieldaten {
   readonly begegnungen: readonly Begegnungsdaten[];
   readonly runden: readonly Rundendaten[];
   readonly funde: readonly Funddaten[];
+  readonly laeden: readonly Ladendaten[];
 }
 
 let vorrat: Promise<Spieldaten> | null = null;
@@ -46,8 +49,9 @@ export function ladeSpieldaten(): Promise<Spieldaten> {
     liesPaketJson<BegegnungenDesSchachAbenteuers>("daten/begegnungen.json"),
     liesPaketJson<AufgabenrundenDesSchachAbenteuers>("daten/runden.json"),
     liesPaketJson<FundeDesSchachAbenteuers>("daten/funde.json"),
+    liesPaketJson<LadenDesSchachAbenteuers>("daten/laeden.json"),
   ])
-    .then(([g, k, q, o, b, r, f]) => ({
+    .then(([g, k, q, o, b, r, f, l]) => ({
       gegner: g.gegner,
       karten: k.karten,
       quests: q.quests,
@@ -55,6 +59,7 @@ export function ladeSpieldaten(): Promise<Spieldaten> {
       begegnungen: b.begegnungen,
       runden: r.runden,
       funde: f.funde,
+      laeden: l.laeden,
     }))
     .catch((fehler: unknown) => {
       vorrat = null;

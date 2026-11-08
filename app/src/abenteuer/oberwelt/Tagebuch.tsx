@@ -59,6 +59,7 @@ export function Tagebuch({
         </>
       )}
       <p className="hinweis">{tSpiel("tagebuch.wertung", { wertung: stand.wertung })}</p>
+      <p className="hinweis">{tSpiel("laden.muenzen", { anzahl: stand.muenzen })}</p>
       <h3>{tSpiel("tagebuch.nadeln")}</h3>
       {stand.clubs.filter((c) => c.nadel).length === 0 ? (
         <p>{tSpiel("tagebuch.keineNadeln")}</p>

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-laeden.schema.json",
+  "title": "Läden des Schach-Abenteuers",
+  "description": "Ein Laden je Stadt (docs/spiel/08, G2 bis G6; Ink: oeffneLaden(kennung)). Verkauft Hilfskarten und Gegenstände gegen Münzen. Nie zu kaufen: Mentor-Zug, Sanduhr, Vorgaben (G3); Gold gibt es nur ohne Karten.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "laeden"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "laeden": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/laden" }
+    }
+  },
+  "$defs": {
+    "laden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "ort", "name", "angebot"],
+      "properties": {
+        "kennung": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+        },
+        "ort": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "name": {
+          "type": "string",
+          "pattern": "^laden\\.[a-zA-Z0-9]+\\.name$"
+        },
+        "angebot": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/ware" }
+        }
+      }
+    },
+    "ware": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["art", "kennung", "preis"],
+      "properties": {
+        "art": {
+          "description": "karte: Hilfskarte aus karten.json; gegenstand: Gegenstand im Spielstand (fahrrad, taschenlampe)",
+          "enum": ["karte", "gegenstand"]
+        },
+        "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "preis": { "type": "integer", "minimum": 1, "maximum": 500 }
+      }
+    }
+  }
+}

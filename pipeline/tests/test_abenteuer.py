@@ -26,6 +26,7 @@ DATEIEN = {
     "begegnungen.json": "abenteuer-begegnungen.schema.json",
     "runden.json": "abenteuer-runden.schema.json",
     "funde.json": "abenteuer-funde.schema.json",
+    "laeden.json": "abenteuer-laeden.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
 }
 
@@ -94,6 +95,18 @@ def test_querverweise_stimmen():
             if staerke != {"art": "eingang", "versatz": soll}:
                 fehler.append(f"{profil['kennung']}: Clubchef braucht eingang + {soll}, hat {staerke}")
     runden = _lade("runden.json")["runden"]
+    # Läden (G2, G3): Waren existieren, Mentor-Zug, Sanduhr und Vorgaben sind nie zu kaufen.
+    laeden = _lade("laeden.json")["laeden"]
+    ladenkennungen = {laden["kennung"] for laden in laeden}
+    nie_kaeuflich = {"mentorzug", "sanduhr", "bauernvorgabe", "springervorgabe"}
+    for laden in laeden:
+        if laden["name"] not in texte:
+            fehler.append(f"{laden['kennung']}: Text {laden['name']} fehlt")
+        for ware in laden["angebot"]:
+            if ware["art"] == "karte" and ware["kennung"] not in karten:
+                fehler.append(f"{laden['kennung']}: Karte {ware['kennung']} fehlt")
+            if ware["kennung"] in nie_kaeuflich:
+                fehler.append(f"{laden['kennung']}: {ware['kennung']} ist nie käuflich (G3)")
     funde = _lade("funde.json")["funde"]
     fundkennungen = {f["kennung"] for f in funde}
     ortkennungen = {o["kennung"] for o in orte}
@@ -138,6 +151,9 @@ def test_querverweise_stimmen():
         for aufruf in re.findall(r'^\s*~\s*beginnePartie\("([^"]+)"\)', quelle, re.M):
             if aufruf not in begegnungen:
                 fehler.append(f"{ink.name}: Begegnung {aufruf} fehlt")
+        for laden in re.findall(r'^\s*~\s*oeffneLaden\("([^"]+)"\)', quelle, re.M):
+            if laden not in ladenkennungen:
+                fehler.append(f"{ink.name}: Laden {laden} fehlt in laeden.json")
         for fund in re.findall(r'^\s*~\s*gibFund\("([^"]+)"\)', quelle, re.M):
             if fund not in fundkennungen:
                 fehler.append(f"{ink.name}: Fund {fund} fehlt in funde.json")

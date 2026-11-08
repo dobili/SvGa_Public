@@ -56,6 +56,7 @@ export function leererAbenteuerstand(
     quests: [],
     figuren: [],
     karten: [],
+    muenzen: 0,
     gegenstaende: [],
     funde: [],
     besuchteOrte: [],
@@ -123,6 +124,7 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     quests: liste(roh.quests),
     figuren: liste(roh.figuren),
     karten: liste(roh.karten),
+    muenzen: zahl(roh.muenzen),
     gegenstaende: liste<string>(roh.gegenstaende).filter((g) => typeof g === "string"),
     besuchteOrte: liste<string>(roh.besuchteOrte).filter((o) => typeof o === "string"),
     funde: liste<{ kennung: string; gefunden: string }>(roh.funde).filter(

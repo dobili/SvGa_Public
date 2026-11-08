@@ -30,6 +30,7 @@ import { appdienste } from "../modul/abenteuer";
 import { vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { mitFund } from "../regeln/funde";
+import { kaufe } from "../regeln/muenzen";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
 import { variablenNachBesuch } from "../regeln/dialogvariablen";
@@ -52,6 +53,7 @@ import {
   wiedereinstiegMoeglich,
 } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
+import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
 import {
@@ -77,6 +79,11 @@ interface OffenerDialog {
   readonly json: string;
   readonly datei: string;
   readonly knoten: string;
+}
+
+/** Der Laden zu einer Kennung aus den Spieldaten; unbekannt → undefined (kein Fenster). */
+function ladenDaten(w: Weltdaten, kennung: string) {
+  return w.daten.laeden.find((l) => l.kennung === kennung);
 }
 
 export function Oberwelt() {
@@ -109,6 +116,9 @@ export function Oberwelt() {
     ziel: { karte: string; ausloeser: string };
     wenn: string | null;
   } | null>(null);
+  // Ein Laden, den ein Dialog geöffnet hat (G5); er erscheint, wenn der Dialog zu ist.
+  const ladenInArbeit = useRef<string | null>(null);
+  const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
   // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
   const rundeInArbeit = useRef<string | null>(null);
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
@@ -398,9 +408,20 @@ export function Oberwelt() {
         rundenergebnis === null &&
         offeneRunde === null &&
         !tagebuch &&
-        !deckwahl,
+        !deckwahl &&
+        offenerLaden === null,
     );
-  }, [dialog, ergebnis, offenePartie, rundenergebnis, offeneRunde, tagebuch, deckwahl, welt]);
+  }, [
+    dialog,
+    ergebnis,
+    offenePartie,
+    rundenergebnis,
+    offeneRunde,
+    tagebuch,
+    deckwahl,
+    offenerLaden,
+    welt,
+  ]);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
@@ -422,12 +443,15 @@ export function Oberwelt() {
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
   const wirkungen: Wirkungen = {
+    oeffneLaden: (kennung) => {
+      ladenInArbeit.current = kennung;
+    },
     gibFund: (kennung) => {
       const aktuell = standRef.current ?? stand;
-      const neu = mitFund(aktuell, kennung, new Date());
+      const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
+      const neu = mitFund(aktuell, kennung, new Date(), fund?.muenzen ?? 0);
       if (neu === aktuell) return;
       schreibe(neu);
-      const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
       setzeMeldung(tSpiel("fund.gefunden", { name: tSpiel(fund?.name ?? kennung) }));
     },
     gibKarte: (kennung) => {
@@ -557,6 +581,9 @@ export function Oberwelt() {
     const reise = reiseInArbeit.current;
     reiseInArbeit.current = null;
     if (reise) wechsleKarte(reise.karte, reise.ausloeser);
+    const laden = ladenInArbeit.current;
+    ladenInArbeit.current = null;
+    if (laden) setzeOffenerLaden(laden);
     const uebergang = uebergangNachDialog.current;
     uebergangNachDialog.current = null;
     if (uebergang && (!uebergang.wenn || neu.dialogvariablen[uebergang.wenn] === true)) {
@@ -580,6 +607,8 @@ export function Oberwelt() {
     return gegner ? tSpiel(gegner.name) : "";
   };
 
+  const aktuellerLaden = welt && offenerLaden ? ladenDaten(welt, offenerLaden) : undefined;
+
   return (
     <div className="abenteuer-welt" data-testid="abenteuer-welt">
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
@@ -592,6 +621,9 @@ export function Oberwelt() {
       >
         {tSpiel("tagebuch.knopf")}
       </button>
+      <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
+        {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
+      </span>
       {fehler && (
         <p className="fehlertext abenteuer-ergebnis">{tSpiel("oberwelt.fehler", { fehler })}</p>
       )}
@@ -621,6 +653,18 @@ export function Oberwelt() {
           sorten={welt.daten.karten}
           beiWahl={(deck) => startePartie(deckwahl, deck)}
           beiAbbruch={() => setzeDeckwahl(null)}
+        />
+      )}
+      {welt && aktuellerLaden && (
+        <Laden
+          laden={aktuellerLaden}
+          stand={stand}
+          sorten={welt.daten.karten}
+          beiKauf={(ware) => {
+            const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
+            schreibe(kaufe(standRef.current ?? stand, ware, sorten, new Date()));
+          }}
+          beiSchliessen={() => setzeOffenerLaden(null)}
         />
       )}
       {tagebuch && welt && (

@@ -7,7 +7,16 @@
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 
 /** Der Stand mit dem Fund; schon gefunden → unverändert (derselbe Stand). */
-export function mitFund(stand: Abenteuerstand, kennung: string, jetzt: Date): Abenteuerstand {
+export function mitFund(
+  stand: Abenteuerstand,
+  kennung: string,
+  jetzt: Date,
+  muenzen = 0,
+): Abenteuerstand {
   if (stand.funde.some((f) => f.kennung === kennung)) return stand;
-  return { ...stand, funde: [...stand.funde, { kennung, gefunden: jetzt.toISOString() }] };
+  return {
+    ...stand,
+    muenzen: stand.muenzen + muenzen,
+    funde: [...stand.funde, { kennung, gefunden: jetzt.toISOString() }],
+  };
 }

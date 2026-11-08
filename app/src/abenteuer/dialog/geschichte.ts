@@ -24,6 +24,8 @@ export interface Wirkungen {
   readonly beginneAufgaben: (runde: string) => void;
   readonly setzeZustand: (gegner: string, faktor: number, grund: string) => void;
   readonly schalteSteckbrief: (gegner: string, zeile: number) => void;
+  /** Öffnet einen Laden (laeden.json; docs/spiel/08, G5), sobald der Dialog zu ist. */
+  readonly oeffneLaden: (kennung: string) => void;
   /** Ein Fund kommt in den Spielstand (funde.json; docs/spiel/08, E1). */
   readonly gibFund: (kennung: string) => void;
   /** Reise auf eine Karte eines anderen Ortes (Bus nach Cedar Creek); wirkt nach dem Dialog. */
@@ -61,6 +63,7 @@ export class Geschichte {
     this.story = new Story(json);
     this.story.BindExternalFunction("gibKarte", (k: string) => wirkungen.gibKarte(k), false);
     this.story.BindExternalFunction("gibFund", (k: string) => wirkungen.gibFund(k), false);
+    this.story.BindExternalFunction("oeffneLaden", (k: string) => wirkungen.oeffneLaden(k), false);
     this.story.BindExternalFunction("setzeSzene", (k: string) => wirkungen.setzeSzene(k), false);
     this.story.BindExternalFunction(
       "beginnePartie",

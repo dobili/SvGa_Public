@@ -409,6 +409,16 @@ mittel-1: Ink-Besuchszähler überleben den Dialog nicht, weil jeder Dialog eine
 baut; deshalb Variablen `angesehen…`. Vorschlag für später: Besuchszähler je Knoten in der Hülle
 speichern, dann können diese Variablen weg.
 
+**Schritt 12 (Münzen und Läden) gebaut:** Spielstand `muenzen`; Münzen für Straßensiege (10),
+jede erstmals bestandene Aufgabenrunde (10), die erste Clubnadel eines Clubs (50) und Funde mit
+`muenzen` (Kiste am Flussweg 15); Quest-Wirkung `muenzen`. Neue Datei `laeden.json` (Schema
+`abenteuer-laeden`), Dialogfunktion `oeffneLaden(kennung)` öffnet nach dem Dialog ein Ladenfenster
+wie die Deckwahl; dauerhafte Karten und Gegenstände gibt es nur einmal, zu teure Waren sind
+gesperrt. Erster Laden: Patels Kiosk im Park (Zweite Chance 20, Gefahrenradar 35, Flüstern 40,
+Fahrrad 120). Die Pipeline verbietet Mentor-Zug, Sanduhr und Vorgaben in Läden (G3). Münzen stehen
+oben rechts in der Welt und im Tagebuch. Oberflächentest `abenteuer-laden.spec.ts`. Fahrkarten
+und Extras im Laden folgen mit der Schnellreise-Regel und der Anbindung an „Dein Aussehen“.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

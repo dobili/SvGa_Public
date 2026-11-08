@@ -10,5 +10,7 @@ describe("mitFund", () => {
     const mit = mitFund(stand, "formular1857", jetzt);
     expect(mit.funde).toEqual([{ kennung: "formular1857", gefunden: "2026-11-08T11:00:00.000Z" }]);
     expect(mitFund(mit, "formular1857", jetzt)).toBe(mit);
+    // Ein Fund mit Münzen (G1) zahlt einmal aus.
+    expect(mitFund(stand, "muenzenFlussweg", jetzt, 15).muenzen).toBe(15);
   });
 });

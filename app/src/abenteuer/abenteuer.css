@@ -300,3 +300,19 @@
 .abenteuer-karte-spielen {
   text-align: center;
 }
+
+/* Münzen oben rechts neben dem Spielmenü (docs/spiel/08, G6). */
+.abenteuer-muenzen {
+  position: absolute;
+  top: var(--raster);
+  right: calc(var(--raster) * 7);
+  z-index: 3;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--raster);
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.85);
+  color: var(--navy);
+  font-weight: 600;
+}

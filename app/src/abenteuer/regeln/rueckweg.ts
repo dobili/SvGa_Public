@@ -17,6 +17,7 @@ import type { Abenteuerstand, Clubstand } from "../schnittstelle/spielstand";
 import { mitRundenergebnis, reiheBestanden, wertung } from "./aufgaben";
 import { variablenNachNadel, variablenNachPartie, variablenNachRunde } from "./dialogvariablen";
 import { besteNadel, clubnadel } from "./karten";
+import { MUENZEN } from "./muenzen";
 import { nachStoryPartie } from "./wertung";
 
 /** Ein Club mit geänderten Feldern; fehlt er noch, entsteht er leer. */
@@ -70,6 +71,12 @@ export function standNachPartie(
       ? variablenNachNadel(ort.kennung, clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null)
       : {}),
   };
+  // Münzen (G1): Sieg gegen einen Straßengegner, erste Nadel eines Clubs.
+  const rolle = daten.gegner.find((g) => g.kennung === b?.gegner)?.rolle;
+  const ersteNadel = ort && nadel && !stand.clubs.find((c) => c.kennung === ort.kennung)?.nadel;
+  const verdient =
+    (rolle === "strasse" && ergebnis.ausgang === "sieg" ? MUENZEN.strassensieg : 0) +
+    (ersteNadel ? MUENZEN.ersteNadel : 0);
   // Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt wurden.
   const laufend = stand.laufendeWertung;
   const gewertet = laufend?.zaehlt
@@ -80,6 +87,7 @@ export function standNachPartie(
     nadel,
     stand: {
       ...gewertet,
+      muenzen: gewertet.muenzen + verdient,
       clubs,
       dialogvariablen,
       laufendePartie: null,
@@ -136,6 +144,12 @@ export function standNachRunde(
       ...stand,
       runden,
       clubs,
+      // Münzen (G1): jede bestandene Runde, auch Wiederholungen nach einem Fehlversuch nur einmal.
+      muenzen:
+        stand.muenzen +
+        (w.bestanden && !stand.runden.find((x) => x.kennung === auftrag.runde)?.bestanden
+          ? MUENZEN.rundeBestanden
+          : 0),
       dialogvariablen: {
         ...stand.dialogvariablen,
         ...variablenNachRunde(auftrag.runde, w.bestanden),

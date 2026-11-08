@@ -238,6 +238,12 @@
           "karte": "mapleFalls.clubraum",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.plakat_zaehlen"
+        },
+        {
+          "name": "kiosk",
+          "art": "gegenstand",
+          "karte": "mapleFalls.park",
+          "dialog": "maple-falls-park.kiosk"
         }
       ],
       "club": {

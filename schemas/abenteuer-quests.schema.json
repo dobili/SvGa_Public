@@ -138,6 +138,16 @@
           }
         },
         {
+          "description": "Münzen (docs/spiel/08, G1)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "anzahl"],
+          "properties": {
+            "art": { "const": "muenzen" },
+            "anzahl": { "type": "integer", "minimum": 1, "maximum": 500 }
+          }
+        },
+        {
           "description": "Ein Gegenstand kommt in den Besitz (docs/spiel/08, W3, E1): fahrrad, taschenlampe, fahrkarte …",
           "type": "object",
           "additionalProperties": false,

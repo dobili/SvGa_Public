@@ -153,6 +153,8 @@ export function wendeWirkungAn(
         figuren: [...stand.figuren.filter((f) => f.kennung !== wirkung.gegner), figur],
       };
     }
+    case "muenzen":
+      return { ...stand, muenzen: stand.muenzen + wirkung.anzahl };
     case "gegenstand":
       return stand.gegenstaende.includes(wirkung.gegenstand)
         ? stand

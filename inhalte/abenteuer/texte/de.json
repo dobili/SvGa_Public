@@ -172,5 +172,13 @@
   "fund.muenzenFlussweg.text": "Eine kleine Holzkiste zwischen zwei Steinen am Flussweg, darin ein paar Münzen.",
   "fund.gefunden": "Gefunden: {name}. Es steht jetzt im Tagebuch.",
   "tagebuch.funde": "Funde",
-  "tagebuch.keineFunde": "Noch nichts gefunden. Schau dich auf den Wegen um."
+  "tagebuch.keineFunde": "Noch nichts gefunden. Schau dich auf den Wegen um.",
+  "laden.kiosk.name": "Patels Kiosk",
+  "laden.unbekannt.name": "Laden",
+  "laden.muenzen": "Deine Münzen: {anzahl}",
+  "laden.muenzenKurz": "{anzahl} Münzen",
+  "laden.ware": "{name} · {preis} Münzen",
+  "laden.schonDa": "hast du schon",
+  "laden.schliessen": "Fertig",
+  "gegenstand.taschenlampe.name": "Taschenlampe"
 }

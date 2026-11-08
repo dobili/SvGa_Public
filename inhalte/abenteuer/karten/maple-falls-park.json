@@ -335,6 +335,17 @@
               "value": "fliegen"
             }
           ]
+        },
+        {
+          "id": 10,
+          "name": "kiosk",
+          "type": "ausloeser",
+          "x": 256,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

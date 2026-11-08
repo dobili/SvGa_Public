@@ -1,0 +1,34 @@
+// Münzen und Läden (docs/spiel/08, G1 bis G6).
+import { describe, expect, it } from "vitest";
+import karten from "../../../../inhalte/abenteuer/karten.json";
+import type { Kartensorte } from "../schnittstelle/karten";
+import { kaufe, kaufhindernis } from "./muenzen";
+import { leererAbenteuerstand } from "./spielstand";
+
+const SORTEN = karten.karten as unknown as readonly Kartensorte[];
+const JETZT = new Date("2026-11-08T11:00:00Z");
+const STAND = { ...leererAbenteuerstand(JETZT, "Kim", null, false), muenzen: 50 };
+
+describe("Läden", () => {
+  it("kauft eine Verbrauchskarte, zieht den Preis ab und zählt die Karte", () => {
+    const ware = { art: "karte" as const, kennung: "zweiteChance", preis: 20 };
+    const nach = kaufe(STAND, ware, SORTEN, JETZT);
+    expect(nach.muenzen).toBe(30);
+    expect(nach.karten).toEqual([
+      { kennung: "zweiteChance", anzahl: 1, erhalten: JETZT.toISOString() },
+    ]);
+    expect(kaufe(nach, ware, SORTEN, JETZT).karten[0]?.anzahl).toBe(2);
+  });
+
+  it("verkauft dauerhafte Karten und Gegenstände nur einmal und nichts ohne Geld", () => {
+    const radar = { art: "karte" as const, kennung: "gefahrenradar", preis: 35 };
+    const mit = kaufe(STAND, radar, SORTEN, JETZT);
+    expect(kaufhindernis(mit, radar, SORTEN)).toBe("schonDa");
+    const rad = { art: "gegenstand" as const, kennung: "fahrrad", preis: 120 };
+    expect(kaufhindernis(STAND, rad, SORTEN)).toBe("zuTeuer");
+    expect(kaufe(STAND, rad, SORTEN, JETZT)).toBe(STAND);
+    const reich = kaufe({ ...STAND, muenzen: 200 }, rad, SORTEN, JETZT);
+    expect(reich.gegenstaende).toEqual(["fahrrad"]);
+    expect(kaufhindernis(reich, rad, SORTEN)).toBe("schonDa");
+  });
+});

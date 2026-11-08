@@ -193,6 +193,7 @@ async function main() {
     "begegnungen.json",
     "runden.json",
     "funde.json",
+    "laeden.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

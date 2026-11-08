@@ -147,6 +147,8 @@ export interface Abenteuerstand {
   readonly quests: readonly Queststand[];
   readonly figuren: readonly Figurenstand[];
   readonly karten: readonly Kartenbesitz[];
+  /** Münzen, reine Spielwährung ohne Echtgeld (docs/spiel/08, G1). */
+  readonly muenzen: number;
   /** Gegenstände im Besitz (docs/spiel/08: fahrrad, taschenlampe, fahrkarte …). */
   readonly gegenstaende: readonly string[];
   /** Gefundene Dinge (docs/spiel/08, E1): Kennung aus funde.json und Zeitpunkt (ISO). */

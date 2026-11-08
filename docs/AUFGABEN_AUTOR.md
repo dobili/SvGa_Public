@@ -86,6 +86,12 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2617. Seite „Spielen“ (unten in der Leiste): Unter den Kacheln steht die Karte „Schach-Abenteuer“ mit „Zum
       Abenteuer“; sie führt auf die Startkarte des Spiels. Hast du schon einen Spielstand, heißt sie „Dein Abenteuer
       wartet, {Name}.“ mit „Weiterspielen“. Aus einer Abbildung oder eigenen Stellung heraus fehlt die Karte.
+- [ ] N2618. Neues Spiel beginnen und im Park (Maple Falls) zum Kiosk mit der Markise laufen, „Ansehen“: Mr. Patel
+      begrüßt dich, danach öffnet sich „Patels Kiosk“ mit Preisen. Oben rechts in der Welt stehen deine Münzen (am
+      Anfang 0, also ist alles gesperrt). Münzen gibt es für Siege gegen Straßengegner, bestandene Aufgabenrunden, die
+      erste Clubnadel und die Kiste am Flussweg; mit genug Münzen ist eine Karte kaufbar, und dauerhafte Karten wie das
+      Gefahrenradar gibt es nur einmal. Auf der Landstraße (Ortsausgang rechts im Park, erst nach dem Gespräch über die
+      Fahrt nach Cedar Creek offen) liegt ein Fund im Busch; er steht danach im Tagebuch unter „Funde“.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

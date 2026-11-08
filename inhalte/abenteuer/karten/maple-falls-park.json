@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 10,
+  "nextobjectid": 11,
   "properties": [
     {
       "name": "kennung",
@@ -342,6 +342,17 @@
           "type": "ausloeser",
           "x": 256,
           "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "abernathy",
+          "type": "figur",
+          "x": 176,
+          "y": 128,
           "width": 16,
           "height": 16,
           "rotation": 0,

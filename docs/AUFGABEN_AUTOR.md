@@ -1188,6 +1188,25 @@ Zum Abhaken gibt es die Fragen zum Schach-Abenteuer auch als Seite mit „Empfeh
 und Notiz (Wunsch des Autors, 8.11.2026): https://claude.ai/artifact/Kumk513LwSbbDJ3wJ2aJC3 (privat,
 nur für dich). Der Spiel-Chat liest die Antworten von dort und arbeitet sie hier ein.
 
+### Q21 Schach-Abenteuer, Akt 4 (8.11.2026; Q21-1 ist eine echte Frage, der Rest Empfehlungen, Widerspruch genügt)
+
+- [ ] Q21-1. **Das erfundene Volk auf der Hochebene (Szene 82):** Empfehlung: ja, als kurze, respektvolle Begegnung
+      mit erfundenem Namen („Vell-Familien“), heutigen Figuren und einem eigenen Spiel; vor der Veröffentlichung
+      liest jemand aus einer indigenen Gemeinschaft gegen (Sensibilitätslesung, ein Auftrag nach außen). Oder lieber
+      ganz ohne Bezug zu Ureinwohnern: Dann wird der Ort eine Bergbausiedlung mit derselben Schachvariante.
+      „Empfehlung folgen“ heißt: mit Vell-Familien und Gegenlesung; „Nein“ heißt: Bergbausiedlung.
+- [ ] Q21-2. **Halbfinale mit Stärkewechsel mitten in der Partie:** Der Konzern-Junior Kade spielt mit Gerät, bis
+      das Signal ausfällt; dann spielt er selbst, deutlich schwächer. Empfehlung: so bauen; falls zu teuer, zwei
+      Partien (erst zwölf Züge überleben, dann die echte Partie).
+- [ ] Q21-3. **Wer den Konzern verantwortet:** ein namentlich genannter Vertriebschef, der geht; Graham Hale bleibt
+      überfordert und einsichtig, kein Erwachsener wird vorgeführt.
+- [ ] Q21-4. **Finale verloren:** Die Geschichte endet bei jedem Ausgang gleich gut, der Titel ist egal, die
+      Freundschaft nicht; Revanche im Post-Game.
+- [ ] Q21-5. **Ambroses Abschied endgültig:** ja, mit einem leisen Gruß im Extra-Abspann; danach spricht er nicht
+      mehr, nur sein Zettel bleibt im Album.
+- [ ] Q21-6. **Schachvarianten an Nebenschauplätzen:** Sie brauchen eine zweite Engine (Fairy-Stockfish, GPL,
+      Lizenz passt zur App). Empfehlung: zuerst drei Landschaften mit Varianten (L1, L2, L8), die übrigen später.
+
 ### Q17 Grafik für das Schach-Abenteuer (8.11.2026; deine Antworten vom 8.11. abends eingearbeitet)
 
 - [ ] Q17-1. **Kacheln und Figuren kaufen:** Deine Antwort: ja. Offen ist nur der Kauf: die Pixelpakete

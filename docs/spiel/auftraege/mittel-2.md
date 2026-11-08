@@ -1,34 +1,28 @@
-# Auftrag mittel-2: Story-Bibel Akt 4
+# Auftrag mittel-2: Porträts der Figuren von Akt 4 und die Fernpartie 1865/66
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, zwölfter Auftrag)
+**Stand:** offen (Haupt-Chat, 08.11.2026, dreizehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 4“ anhängen),
-`docs/spiel/09_Weltbeschreibung.md` (nur neue Abschnitte zu den Orten von Akt 4),
-`docs/spiel/auftraege/mittel-2.md`
-**Prüfung vor dem Push:** im Ordner `app/` `npx prettier --check ../docs/spiel`
+**Darf ändern:** `app/skripte/erzeuge-figurenbilder.mjs`, `inhalte/abenteuer/portraets/` (nur neue
+Bilder), `docs/spiel/05_Story_Bibel.md` (nur der Abschnitt zur Fernpartie), `docs/spiel/auftraege/mittel-2.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Akt 1 bis 3 stehen in Bibel und Daten. Akt 4 fehlt: Landesmeisterschaft, Halbfinale und Finale
-gegen Victor, die Auflösung um Nova und den Konzern (Beweis mit Dr. Lin, Bibel Akt 3, offene
-Frage 4 und Antworten des Autors in `ENTSCHEIDUNGEN.md`, Q20), Ambroses Abschied.
-
-## Vorgaben
-
-1. Gleiche Form wie Akt 3 (Kern in sieben Sätzen, Zeitlinie, Figuren, Welt mit Wegen und Orten,
-   Szenenliste mit Nummern, Ort, Figuren, Zweck, Dauer, Buchbezug, Quests, Belohnungen, Funde, Läden,
-   Karten und Sperren, offene Fragen mit Empfehlung).
-2. Die Landschaften L1 bis L10 aus `10_Sprueche_Schauplaetze_Varianten.md`, Abschnitt 3a, als
-   Nebenschauplätze unterwegs, jede mit ihrer Schachvariante (V1 bis V6); die Hauptstory und alle
-   Clubs bleiben klassisches Schach (Wunsch des Autors). O5 (das erfundene Volk mit eigenem Spiel)
-   mit Feingefühl: keine realen Stämme, keine Klischees, eine Rückfrage an den Autor dazu.
-3. R29 (Mentor-Zug im Halbfinale frei als vierte Karte) und der Extra-Abspann (Dokument 02, 2.7)
-   gehören in die Szenen des Halbfinales und Finales.
-4. Alles, was neue Technik bräuchte (Varianten, Turniermodus), als eigene Liste am Ende, damit der
-   Haupt-Chat es planen kann.
+1. Porträts für alle neuen Figuren aus deiner Technikliste (Abschnitt 34, Punkt 8) außer der
+   Vell-Familie (Rückfrage Q21-1 offen); Kennungen wie sie mittel-1 gerade in `gegner.json` und
+   `orte.json` einträgt (bitte vorher abstimmen über die Bibel: kebab-case des Namens).
+2. Die Fernpartie Ambrose gegen Hale 1865/66 (Technikliste Punkt 6) als PGN konstruieren: mit einer
+   Engine (Stockfish im Ordner `app/`, `node_modules` oder `public/engine`) glaubwürdige Züge der
+   Zeit, Fragmente 0 bis 8 als Halbzüge festlegen, die Endstellung für das Stellungsduell nach R13
+   prüfen (Vorteil etwa +1), Ambroses letzter Zug für das Zugerraten. Ergebnis in der Bibel
+   (Abschnitt Fernpartie) mit PGN und Halbzügen.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig** auf `abenteuer-regelwerk` (Basis 85951f66 hereingeholt). `05_Story_Bibel.md` hat Teil 4
 „Akt 4“ (Abschnitte 25 bis 34, Szenen 81 bis 110); `09_Weltbeschreibung.md` neue Abschnitte 5.9 bis

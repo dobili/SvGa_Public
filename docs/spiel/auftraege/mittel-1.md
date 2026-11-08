@@ -1,32 +1,30 @@
-# Auftrag mittel-1: Fehlende Funde, Läden und die Erinnerung 1858 in Akt 3
+# Auftrag mittel-1: Akt 4 in orte.json, gegner.json und begegnungen.json
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der sechzehnte Auftrag ist zusammengeführt, danke; die Sperre des Mentor-Zugs nach R29 macht jetzt die Deckwahl. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, siebzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/funde.json`, `laeden.json`, `begegnungen.json`, `runden.json`,
-`quests.json`, `texte/de.json` (nur neue Schlüssel), die Ink-Dateien von Akt 3, `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
+**Darf ändern:** `inhalte/abenteuer/orte.json`, `gegner.json`, `begegnungen.json` (nur neue Einträge für Akt 4),
+`inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Die Lücken, die du und mittel-2 gemeldet habt (Berichte in `mittel-1.md` und `mittel-2.md`):
+Akt 4 steht in der Story-Bibel (Teil 4, Abschnitte 25 bis 34, von mittel-2). Wie beim vierzehnten
+Auftrag (Akt 3): Orte, Karten-Kennungen, Figuren, Auslöser, Clubs, alle Gegner mit Steckbrief und
+Immunitäten, Begegnungen (Clubkämpfe mit `zeit: "wahl"`, Stellungsduelle aus Abbildungen mit
+geprüftem Vorteil etwa +1). Ausnahmen: Die Landschaften mit Schachvarianten (L1 bis L10) und die
+Landesmeisterschaft brauchen neue Technik (Bibel, Abschnitt 34); ihre Orte, Figuren und Auslöser
+bitte eintragen, aber noch keine Begegnungen mit Varianten oder Turnierrunden.
 
-1. **Funde** in `funde.json` mit Texten, und die auskommentierten `gibFund`-Aufrufe aktivieren:
-   anstecker, ohrstoepsel, zeroTablet (mittel-2), flaschenpost, muschelMitLoch,
-   erstesBrettMusikhaus, eidechsenhaut, nietenCanyonbruecke, Hales Brief (deine).
-2. **Läden:** `siliconBay.foodtruck` und der Laden von Okoro (Desert Springs), Waren nach
-   `docs/spiel/11_Karten_und_Gegenstaende.md`, Abschnitt 7 (Preise, Münzen je Akt); Karten Pokerface
-   und Schutzengel gibt es inzwischen nicht als eigene Wirkung, bitte die Aufrufe auf vorhandene
-   Karten umstellen (etwa Ablenkung, Was droht?) oder weglassen und berichten.
-3. **Buck:** 10 Münzen nach dem Sieg; die Startstellung prüfen (Bibel 8.44, Daten 1.36) und die
-   der Bibel nehmen, wenn sie zum Duell passt (Vorteil etwa +1 für den Leser).
-4. **Erinnerung 1858 (Szene 77):** Runde mit `erinnerung` (Partie aus `inhalte/zusatzpartien/klassiker.json`,
-   ab Zug, Seite; das Format kennt keinen Endzug, die Partie läuft bis zum Ende), Quest und Dialog.
-   Auch den Werkstatt-Flashback gern auf dieses Format umstellen, falls er noch Mattbilder nutzt.
-5. **Mentor-Zug nach `versoehnungGesehen` (R29):** als Quest-Wirkung `karte mentorzug`, wenn das
-   die Regel erfüllt; sonst im Bericht beschreiben, was die Hülle dafür bräuchte.
+Im Bericht wie beim vierzehnten Auftrag: Tabelle der zu zeichnenden Karten für niedrig-1 und die
+Knotenliste für die Dialoge. Die Rückfrage Q21-1 (Hochebene: Vell-Familien oder Bergbausiedlung) ist
+noch offen; den Ort bitte neutral benennen, die Figuren dort erst nach der Antwort.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt.**
 

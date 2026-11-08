@@ -137,3 +137,13 @@ und Musik (gehören in `orte.json`/`wege.json`, für mich gesperrt). Der Kartent
 `statist` und `tier` noch nicht; sobald die Karten in `orte.json`/`wege.json` stehen, würden sie
 als nicht erklärte Auslöser gemeldet. Vorschlag: im Test Objekte dieser Typen von der
 Erklärungspflicht ausnehmen und nur ihre Laufwege auf freie Kacheln prüfen.
+
+**Nachtrag nach der Korrektur (b701e4af):** Objekte umbenannt in `fundFormular`, `fundMuenzen`,
+`schildCedar`. Der Kartentest prüft die Routen jetzt über `wegMapleCedar` und meldete die Statisten
+und Tiere (`bauer`, `angler` …) als nicht erklärte Auslöser. Test und `orte.json` sind für mich
+gesperrt, rote Tests werden nicht gepusht; deshalb sind Statisten und Tiere vorerst wieder aus den
+Karten genommen (vollständig erhalten in Commit `da142008`, Liste oben). 303 Tests grün.
+
+**Frage:** Bitte im Kartentest Objekte mit `type` `statist` und `tier` von der Erklärungspflicht
+ausnehmen (nur Laufweg `von`/`bis` auf freien Kacheln prüfen) oder mir den Test freigeben; dann
+setze ich sie aus `da142008` wieder ein.

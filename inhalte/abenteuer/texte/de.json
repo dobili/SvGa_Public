@@ -512,5 +512,20 @@
   "figur.arceneaux.name": "Mrs. Arceneaux",
   "figur.henri.name": "Henri Whitlock-Duval",
   "figur.holloway.name": "Mrs. Holloway",
-  "figur.okoro.name": "Mr. Okoro"
+  "figur.okoro.name": "Mr. Okoro",
+  "quest.akademie.titel": "Die Stadt aus Glas",
+  "quest.akademie.schritt1": "Geh von der Raststätte über die Glasbrücke.",
+  "quest.akademie.schritt2": "Komm in Silicon Bay an.",
+  "quest.akademie.schritt3": "Melde dich bei Dr. Lin in der Akademie.",
+  "quest.akademie.schritt4": "Löse die Aufgaben, die Theo dir stellt.",
+  "quest.akademie.schritt5": "Löse die Aufgaben, die Nova dir stellt.",
+  "quest.akademie.schritt6": "Spiel gegen Dr. Lin um die Clubnadel.",
+  "quest.akademie.schritt7": "Geh ins Hotel und ruh dich aus.",
+  "quest.spielberichte.titel": "Die Spielberichte",
+  "quest.spielberichte.schritt1": "Werte die Spielberichte aus, die Victor dir gegeben hat.",
+  "quest.spielberichte.schritt2": "Sieh dir den Serverraum der Akademie an.",
+  "quest.tafelRaststaette.titel": "Die Tafel an der Raststätte",
+  "quest.tafelRaststaette.schritt1": "Löse die Aufgaben auf der Tafel am Kaffeeautomaten.",
+  "quest.fehlendeSeite.titel": "Die fehlende Seite",
+  "quest.fehlendeSeite.schritt1": "Sieh dir die Vitrine der Hales in der Lobby an."
 }

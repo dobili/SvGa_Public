@@ -20,6 +20,7 @@ EXTERNAL setzeSzene(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
 
+VAR abfahrtSiliconGesehen = false
 VAR ankunftIronwoodGesehen = false
 VAR elmStreetBekannt = false
 VAR mamaSpielt = false
@@ -83,14 +84,34 @@ Zu Fuß ist es ein halber Tag. #sprecher:erzaehler
     -> END
 
 === bus_silicon_bay ===
-{einladungGesehen:
-    Der Bus nach Silicon Bay steht an der Schnellstraße. Auf der Einladung in deiner Tasche steht ein Datum. #sprecher:erzaehler
-    Noch nicht heute. #sprecher:erzaehler
-    Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose
-- else:
+{
+- not einladungGesehen:
     An der Schnellstraße hält ein Fernbus: „Silicon Bay“. Was solltest du dort wollen? #sprecher:erzaehler
+    -> END
+- abfahrtSiliconGesehen:
+    Der Fernbus nach Silicon Bay hält an der Schnellstraße. Er fährt bis zur Raststätte vor der Stadt. #sprecher:erzaehler
+    -> bus_silicon_bay_einsteigen
 }
--> END
+-> bus_silicon_bay_abfahrt
+
+// Szene 51 „Abfahrt im Schnee“ und 51a „Das Reisebrett“ (Akt 3).
+=== bus_silicon_bay_abfahrt ===
+~ abfahrtSiliconGesehen = true
+Schnee liegt auf dem Wartehäuschen. Mama hat dich hergefahren, Juno hüpft von einem Fuß auf den anderen. #sprecher:erzaehler
+Ich hab Nachtschicht. Juno, du passt auf. Und du rufst an, jeden Abend. #sprecher:mutter
+Juno drückt dir eine kleine Holzkiste in die Hand: ihr Reisebrett, auf dem Deckel „Clubtagebuch, Außenstelle“. #sprecher:erzaehler
+Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. Oder mit mir. #sprecher:juno #stimmung:froh
+Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose
+-> bus_silicon_bay_einsteigen
+
+=== bus_silicon_bay_einsteigen ===
+* [Einsteigen]
+    Der Bus fährt los, die Schnellstraße entlang, bis zu einer Raststätte vor der Stadt aus Glas. #sprecher:erzaehler
+    ~ reise("wegIronwoodSilicon.raststaette", "start")
+    -> END
+* [Noch nicht]
+    Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose
+    -> END
 
 // ---------------------------------------------------------------- Gus
 

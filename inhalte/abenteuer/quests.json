@@ -927,6 +927,142 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "siliconBay.akademie",
+      "titel": "quest.akademie.titel",
+      "typ": "haupt",
+      "ort": "siliconBay",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "wegIronwoodSilicon.raststaette" },
+      "schritte": [
+        {
+          "text": "quest.akademie.schritt1",
+          "ereignis": {
+            "art": "ort",
+            "karte": "wegIronwoodSilicon.glasbruecke"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 3, "szene": "akt3.abfahrt" },
+            { "art": "gegenstand", "gegenstand": "reisebrett" }
+          ]
+        },
+        {
+          "text": "quest.akademie.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-aussen.ankunft_zu_fuss"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 3, "szene": "akt3.ankunftSiliconBay" }
+          ]
+        },
+        {
+          "text": "quest.akademie.schritt3",
+          "ereignis": { "art": "dialog", "knoten": "silicon-bay-akademie.lin" },
+          "wirkungen": [{ "art": "szene", "akt": 3, "szene": "akt3.akademie" }]
+        },
+        {
+          "text": "quest.akademie.schritt4",
+          "ereignis": { "art": "aufgaben", "runde": "siliconBay.reiheTheo" }
+        },
+        {
+          "text": "quest.akademie.schritt5",
+          "ereignis": { "art": "aufgaben", "runde": "siliconBay.reiheNova" },
+          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+        },
+        {
+          "text": "quest.akademie.schritt6",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "siliconBay.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 3, "szene": "akt3.clubnadelSiliconBay" },
+            { "art": "karte", "karte": "mentorzug" }
+          ]
+        },
+        {
+          "text": "quest.akademie.schritt7",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-aussen.hotel_nacht"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 3, "szene": "akt3.ambroseGebannt" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "siliconBay.spielberichte",
+      "titel": "quest.spielberichte.titel",
+      "typ": "begegnung",
+      "ort": "siliconBay",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "silicon-bay-lobby.victor_berichte"
+      },
+      "schritte": [
+        {
+          "text": "quest.spielberichte.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "siliconBay.auswertung" },
+          "wirkungen": [
+            { "art": "steckbrief", "gegner": "siliconBay.lin", "zeile": 0 },
+            { "art": "zustand", "gegner": "siliconBay.lin", "analysiert": true }
+          ]
+        },
+        {
+          "text": "quest.spielberichte.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-serverraum.schummelgeraete"
+          },
+          "wirkungen": [{ "art": "gegenstand", "gegenstand": "ohrempfaenger" }]
+        }
+      ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon.tafelRaststaette",
+      "titel": "quest.tafelRaststaette.titel",
+      "typ": "raetsel",
+      "ort": "wegIronwoodSilicon",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegIronwoodSilicon.raststaette",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelRaststaette.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "wegIronwoodSilicon.tafel" }
+        }
+      ]
+    },
+    {
+      "kennung": "siliconBay.fehlendeSeite",
+      "titel": "quest.fehlendeSeite.titel",
+      "typ": "raetsel",
+      "ort": "siliconBay",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "siliconBay.lobby",
+        "ausloeser": "vitrineHale"
+      },
+      "schritte": [
+        {
+          "text": "quest.fehlendeSeite.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-lobby.vitrine_foto"
+          },
+          "wirkungen": [{ "art": "gegenstand", "gegenstand": "notizbuchseite" }]
+        }
+      ]
     }
   ]
 }

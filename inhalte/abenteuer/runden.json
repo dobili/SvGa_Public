@@ -86,6 +86,101 @@
       "buchuebungen": [],
       "themen": ["matt1"],
       "anzahl": 3
+    },
+    {
+      "kennung": "wegCedarRiverton.tafel",
+      "ort": "wegCedarRiverton",
+      "steller": "wegCedarRiverton.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "riverton.reiheTamsin",
+      "ort": "riverton",
+      "steller": "riverton.tamsin",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a01", "ueb:droh-ignorieren"],
+      "themen": ["doppelangriff"]
+    },
+    {
+      "kennung": "riverton.reiheRay",
+      "ort": "riverton",
+      "steller": "riverton.ray",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a06", "ueb:k2-zweispringer-la4"],
+      "themen": ["doppelangriff"]
+    },
+    {
+      "kennung": "riverton.slickBeobachten",
+      "ort": "riverton",
+      "steller": "riverton.tamsin",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "riverton.odumAufgabe",
+      "ort": "riverton",
+      "steller": "riverton.pops",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 1
+    },
+    {
+      "kennung": "riverton.flashbackLondon",
+      "ort": "riverton",
+      "steller": "riverton.ambrose",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 4
+    },
+    {
+      "kennung": "wegRivertonIronwood.tafel",
+      "ort": "wegRivertonIronwood",
+      "steller": "wegRivertonIronwood.tafel",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["fesselung"],
+      "anzahl": 2
+    },
+    {
+      "kennung": "ironwood.reiheHank",
+      "ort": "ironwood",
+      "steller": "ironwood.hank",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a04"],
+      "themen": ["fesselung"]
+    },
+    {
+      "kennung": "ironwood.reihePriya",
+      "ort": "ironwood",
+      "steller": "ironwood.priya",
+      "reihe": true,
+      "buchuebungen": ["ueb:taktik-a03"],
+      "themen": ["spiess"]
+    },
+    {
+      "kennung": "ironwood.siegelStellung",
+      "ort": "ironwood",
+      "steller": "ironwood.teague",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["fesselung"],
+      "anzahl": 1
+    },
+    {
+      "kennung": "ironwood.erinnerungBird",
+      "ort": "ironwood",
+      "steller": "ironwood.ambrose",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 4
     }
   ]
 }

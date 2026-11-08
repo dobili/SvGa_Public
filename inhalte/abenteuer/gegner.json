@@ -254,6 +254,171 @@
           "wert": "rueckzug"
         }
       ]
+    },
+    {
+      "kennung": "wegCedarRiverton.schaffner",
+      "name": "figur.schaffner.name",
+      "rolle": "strasse",
+      "portraet": "portraets/schaffner.webp",
+      "staerke": { "art": "aktuell", "versatz": -100 },
+      "gewichte": { "schlagVerpasst": 1.3 },
+      "stil": "taktiker",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [{ "art": "stil", "wert": "taktiker" }]
+    },
+    {
+      "kennung": "riverton.slick",
+      "name": "figur.slick.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/slick.webp",
+      "staerke": { "art": "eingang", "versatz": 340 },
+      "phasenversatz": { "endspiel": -1 },
+      "gewichte": {
+        "drohungIgnoriert": 1.8,
+        "schlagreflex": 1.5,
+        "taktikUebersehen": 0.6
+      },
+      "stil": { "angreifer": 110, "taktiker": 100 },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": [
+          "praxis:Scotch Game",
+          "praxis:Italian Game: Evans Gambit"
+        ],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        { "art": "fehlerart", "wert": "drohungIgnoriert" },
+        { "art": "eroeffnung", "wert": "praxis:Scotch Game" },
+        { "art": "stil", "wert": "angreifer" }
+      ]
+    },
+    {
+      "kennung": "riverton.tamsin",
+      "name": "figur.tamsin.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/tamsin.webp",
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "schlagreflex": 1.6, "koenigMitte": 1.2 },
+      "stil": "draufgaenger",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "fehlerart", "wert": "schlagreflex" },
+        { "art": "stil", "wert": "draufgaenger" }
+      ]
+    },
+    {
+      "kennung": "riverton.ray",
+      "name": "figur.ray.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/ray.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "tempoverlust": 1.4, "bauernzugOhneNot": 1.3 },
+      "stil": "verteidiger",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "tempoverlust" }
+      ]
+    },
+    {
+      "kennung": "riverton.harlan",
+      "name": "figur.harlan.name",
+      "rolle": "strasse",
+      "portraet": "portraets/harlan.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "taktikUebersehen": 0.7 },
+      "stil": "positionsspieler",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [{ "art": "stil", "wert": "positionsspieler" }]
+    },
+    {
+      "kennung": "ironwood.bigJoe",
+      "name": "figur.bigJoe.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/big-joe.webp",
+      "staerke": { "art": "eingang", "versatz": 400 },
+      "gewichte": {
+        "taktikUebersehen": 1.5,
+        "roentgen": 1.8,
+        "drohungIgnoriert": 1.1
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": [
+          "praxis:Queen's Gambit Declined",
+          "praxis:Queen's Pawn Game: London System"
+        ],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
+        { "art": "fleck", "wert": "roentgen" },
+        { "art": "stil", "wert": "positionsspieler" }
+      ]
+    },
+    {
+      "kennung": "ironwood.hank",
+      "name": "figur.hank.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/hank.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigPassiv": 1.4 },
+      "stil": "verteidiger",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "koenigPassiv" }
+      ]
+    },
+    {
+      "kennung": "ironwood.priya",
+      "name": "figur.priya.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/priya.webp",
+      "staerke": { "art": "aktuell", "versatz": 50 },
+      "gewichte": { "bauernraub": 1.3 },
+      "stil": "taktiker",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "taktiker" },
+        { "art": "fehlerart", "wert": "bauernraub" }
+      ]
+    },
+    {
+      "kennung": "ironwood.gus",
+      "name": "figur.gus.name",
+      "rolle": "strasse",
+      "portraet": "portraets/gus.webp",
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "falscherAbtausch": 1.4 },
+      "stil": "vereinfacher",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "vereinfacher" },
+        { "art": "fehlerart", "wert": "falscherAbtausch" }
+      ]
+    },
+    {
+      "kennung": "ironwood.mama",
+      "name": "figur.mutter.name",
+      "rolle": "story",
+      "portraet": "portraets/mutter.webp",
+      "staerke": { "art": "eingang", "versatz": 250 },
+      "phasenversatz": { "mittelspiel": -1 },
+      "gewichte": { "taktikUebersehen": 1.6, "roentgen": 1.8 },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Queen's Gambit Declined"],
+        "abweichung": 10
+      },
+      "menschlich": true,
+      "steckbrief": [
+        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
+        { "art": "fleck", "wert": "roentgen" }
+      ]
     }
   ]
 }

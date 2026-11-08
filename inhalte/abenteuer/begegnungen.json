@@ -107,6 +107,54 @@
         "nummer": "3.77"
       },
       "kartenErlaubt": true
+    },
+    {
+      "kennung": "wegCedarRiverton.schaffner",
+      "gegner": "wegCedarRiverton.schaffner",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "3.75" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "riverton.harlan",
+      "gegner": "riverton.harlan",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "3.77" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "riverton.clubkampf",
+      "gegner": "riverton.slick",
+      "farbe": "zufall",
+      "format": { "art": "partie" },
+      "startstellung": { "art": "grundstellung" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "ironwood.gus",
+      "gegner": "ironwood.gus",
+      "farbe": "white",
+      "format": { "art": "stellungsduell", "zuege": 10, "mindestvorteil": 1.0 },
+      "startstellung": { "art": "abbildung", "nummer": "6.14" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "ironwood.mama",
+      "gegner": "ironwood.mama",
+      "farbe": "black",
+      "format": { "art": "partie" },
+      "startstellung": { "art": "grundstellung" },
+      "kartenErlaubt": true
+    },
+    {
+      "kennung": "ironwood.clubkampf",
+      "gegner": "ironwood.bigJoe",
+      "farbe": "zufall",
+      "format": { "art": "partie" },
+      "startstellung": { "art": "grundstellung" },
+      "kartenErlaubt": true
     }
   ]
 }

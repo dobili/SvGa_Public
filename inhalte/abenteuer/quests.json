@@ -505,6 +505,363 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "riverton.parkclub",
+      "titel": "quest.parkclub.titel",
+      "typ": "haupt",
+      "ort": "riverton",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "wegCedarRiverton.zedernwald" },
+      "schritte": [
+        {
+          "text": "quest.parkclub.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-cedar-riverton.aufbruch"
+          },
+          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.aufbruch" }]
+        },
+        {
+          "text": "quest.parkclub.schritt2",
+          "ereignis": { "art": "dialog", "knoten": "riverton-aussen.ankunft" },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.ankunftRiverton" }
+          ]
+        },
+        {
+          "text": "quest.parkclub.schritt3",
+          "ereignis": { "art": "dialog", "knoten": "riverton-pavillon.slick" },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.bildschirmtische" }
+          ]
+        },
+        {
+          "text": "quest.parkclub.schritt4",
+          "ereignis": { "art": "aufgaben", "runde": "riverton.reiheTamsin" }
+        },
+        {
+          "text": "quest.parkclub.schritt5",
+          "ereignis": { "art": "aufgaben", "runde": "riverton.reiheRay" },
+          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+        },
+        {
+          "text": "quest.parkclub.schritt6",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "riverton.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.clubnadelRiverton" },
+            { "art": "karte", "karte": "mentorzug" }
+          ]
+        },
+        {
+          "text": "quest.parkclub.schritt7",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "riverton-wohnwagen.slick_abschied"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.pavillonGeraeumt" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegCedarRiverton.tafelWegweiser",
+      "titel": "quest.tafelWegweiser.titel",
+      "typ": "raetsel",
+      "ort": "wegCedarRiverton",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegCedarRiverton.zedernwald",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelWegweiser.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "wegCedarRiverton.tafel" }
+        }
+      ]
+    },
+    {
+      "kennung": "riverton.schuppen",
+      "titel": "quest.schuppen.titel",
+      "typ": "hilfe",
+      "ort": "riverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "riverton-aussen.albescu_schluessel"
+      },
+      "schritte": [
+        {
+          "text": "quest.schuppen.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "riverton-schuppen.fahrrad"
+          },
+          "wirkungen": [{ "art": "gegenstand", "gegenstand": "fahrrad" }]
+        }
+      ]
+    },
+    {
+      "kennung": "riverton.zuschauen",
+      "titel": "quest.zuschauen.titel",
+      "typ": "begegnung",
+      "ort": "riverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "riverton-pavillon.tamsin_zuschauen"
+      },
+      "schritte": [
+        {
+          "text": "quest.zuschauen.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "riverton.slickBeobachten"
+          },
+          "wirkungen": [
+            { "art": "steckbrief", "gegner": "riverton.slick", "zeile": 0 },
+            { "art": "steckbrief", "gegner": "riverton.slick", "zeile": 1 },
+            { "art": "zustand", "gegner": "riverton.slick", "analysiert": true }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "riverton.odum",
+      "titel": "quest.odum.titel",
+      "typ": "raetsel",
+      "ort": "riverton",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "riverton.bahnhofshalle",
+        "ausloeser": "fundZeitungsausschnitt"
+      },
+      "schritte": [
+        {
+          "text": "quest.odum.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "riverton.odumAufgabe" },
+          "wirkungen": [{ "art": "karte", "karte": "fluestern" }]
+        }
+      ]
+    },
+    {
+      "kennung": "riverton.flashbackLondon",
+      "titel": "quest.flashbackLondon.titel",
+      "typ": "begegnung",
+      "ort": "riverton",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "riverton.bahnhofshalle",
+        "ausloeser": "grosseUhr"
+      },
+      "schritte": [
+        {
+          "text": "quest.flashbackLondon.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "riverton.flashbackLondon"
+          },
+          "wirkungen": [
+            { "art": "fragment", "halbzug": 3 },
+            { "art": "karte", "karte": "bauernvorgabe" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegRivertonIronwood.tafelHaltestelle",
+      "titel": "quest.tafelHaltestelle.titel",
+      "typ": "raetsel",
+      "ort": "wegRivertonIronwood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.kanalweg",
+        "ausloeser": "tafel"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelHaltestelle.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegRivertonIronwood.tafel"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.mamasFinale",
+      "titel": "quest.mamasFinale.titel",
+      "typ": "haupt",
+      "ort": "ironwood",
+      "haupt": true,
+      "start": { "art": "dialog", "knoten": "maple-falls-wohnzimmer.verbot" },
+      "schritte": [
+        {
+          "text": "quest.mamasFinale.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.verbot"
+          },
+          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.verbot" }]
+        },
+        {
+          "text": "quest.mamasFinale.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-mamas-zimmer.oma_ruth"
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.fotoGefunden" },
+            { "art": "gegenstand", "gegenstand": "foto2001" }
+          ]
+        },
+        {
+          "text": "quest.mamasFinale.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.foto_zeigen"
+          }
+        },
+        {
+          "text": "quest.mamasFinale.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "ironwood.mama",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.mamasPartie" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.clubkampf",
+      "titel": "quest.clubkampf.titel",
+      "typ": "haupt",
+      "ort": "ironwood",
+      "haupt": true,
+      "start": { "art": "ort", "karte": "ironwood.aussen" },
+      "schritte": [
+        {
+          "text": "quest.clubkampf.schritt1",
+          "ereignis": { "art": "dialog", "knoten": "ironwood-kantine.big_joe" }
+        },
+        {
+          "text": "quest.clubkampf.schritt2",
+          "ereignis": { "art": "aufgaben", "runde": "ironwood.reiheHank" }
+        },
+        {
+          "text": "quest.clubkampf.schritt3",
+          "ereignis": { "art": "aufgaben", "runde": "ironwood.reihePriya" },
+          "wirkungen": [{ "art": "karte", "karte": "zweiteChance" }]
+        },
+        {
+          "text": "quest.clubkampf.schritt4",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "ironwood.clubkampf",
+            "ausgang": ["sieg", "remis"]
+          },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.clubnadelIronwood" },
+            { "art": "karte", "karte": "mentorzug" }
+          ]
+        },
+        {
+          "text": "quest.clubkampf.schritt5",
+          "ereignis": { "art": "dialog", "knoten": "ironwood-aussen.kauf" },
+          "wirkungen": [
+            { "art": "szene", "akt": 2, "szene": "akt2.ironwoodVerkauft" }
+          ]
+        },
+        {
+          "text": "quest.clubkampf.schritt6",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "ironwood-aussen.einladung"
+          },
+          "wirkungen": [{ "art": "szene", "akt": 2, "szene": "akt2.einladung" }]
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.postsack",
+      "titel": "quest.postsack.titel",
+      "typ": "raetsel",
+      "ort": "ironwood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "ironwood.museum",
+        "ausloeser": "postsack"
+      },
+      "schritte": [
+        {
+          "text": "quest.postsack.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "ironwood.siegelStellung" },
+          "wirkungen": [
+            { "art": "gegenstand", "gegenstand": "umschlagOhneBrief" },
+            { "art": "steckbrief", "gegner": "ironwood.bigJoe", "zeile": 0 },
+            { "art": "karte", "karte": "fluestern" }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.feier",
+      "titel": "quest.feier.titel",
+      "typ": "begegnung",
+      "ort": "ironwood",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "ironwood-kantine.feier_einladung"
+      },
+      "voraussetzung": ["ironwood.mamasFinale"],
+      "schritte": [
+        {
+          "text": "quest.feier.schritt1",
+          "ereignis": { "art": "dialog", "knoten": "ironwood-kantine.feier" },
+          "wirkungen": [
+            {
+              "art": "zustand",
+              "gegner": "ironwood.bigJoe",
+              "faktor": 1.4,
+              "grund": "zustand.schlechtGeschlafen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood.erinnerungBird",
+      "titel": "quest.erinnerungBird.titel",
+      "typ": "begegnung",
+      "ort": "ironwood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "ironwood.museum",
+        "ausloeser": "vitrine1858"
+      },
+      "schritte": [
+        {
+          "text": "quest.erinnerungBird.schritt1",
+          "ereignis": { "art": "aufgaben", "runde": "ironwood.erinnerungBird" },
+          "wirkungen": [{ "art": "fragment", "halbzug": 4 }]
+        }
+      ]
     }
   ]
 }

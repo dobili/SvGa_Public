@@ -467,6 +467,16 @@
           "karte": "cedarCreek.waschsalon",
           "art": "gegenstand",
           "dialog": "ansehen-cedar-creek.automat"
+        },
+        {
+          "name": "zedernwald",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCedarRiverton.zedernwald",
+            "ausloeser": "zurueckCedar"
+          },
+          "dialog": "cedar-creek-aussen.zedernwald",
+          "wenn": "endeAkt1Gesehen"
         }
       ],
       "club": {
@@ -592,6 +602,718 @@
           "dialog": "cedar-creek-aussen.ankunft_zu_fuss"
         }
       ]
+    },
+    {
+      "kennung": "wegCedarRiverton",
+      "name": "ort.wegCedarRiverton.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegCedarRiverton.zedernwald",
+          "datei": "karten/weg-cedar-riverton-1.json",
+          "name": "ort.wegCedarRiverton.zedernwald",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        },
+        {
+          "kennung": "wegCedarRiverton.bahndamm",
+          "datei": "karten/weg-cedar-riverton-2.json",
+          "name": "ort.wegCedarRiverton.bahndamm",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegCedarRiverton.fenwick",
+          "name": "figur.fenwick.name",
+          "sprite": "figuren/fenwick.png",
+          "dialog": "weg-cedar-riverton.fenwick"
+        },
+        {
+          "kennung": "wegCedarRiverton.schaffner",
+          "name": "figur.schaffner.name",
+          "sprite": "figuren/schaffner.png",
+          "dialog": "weg-cedar-riverton.schaffner",
+          "gegner": "wegCedarRiverton.schaffner"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCedar",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "bushaltestelle"
+          }
+        },
+        {
+          "name": "tafel",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.tafel"
+        },
+        {
+          "name": "fundPfeilspitze",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.fund_pfeilspitze"
+        },
+        {
+          "name": "fundHolzspringer",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.fund_holzspringer"
+        },
+        {
+          "name": "weiterBahndamm",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCedarRiverton.bahndamm",
+            "ausloeser": "zurueckZedernwald"
+          }
+        },
+        {
+          "name": "zurueckZedernwald",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCedarRiverton.zedernwald",
+            "ausloeser": "weiterBahndamm"
+          }
+        },
+        {
+          "name": "fundFahrkarte",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.fund_fahrkarte"
+        },
+        {
+          "name": "weiterRiverton",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "bahndamm"
+          },
+          "dialog": "riverton-aussen.ankunft_zu_fuss"
+        }
+      ]
+    },
+    {
+      "kennung": "riverton",
+      "name": "ort.riverton.name",
+      "nummer": 3,
+      "staffel": 1,
+      "karten": [
+        {
+          "kennung": "riverton.aussen",
+          "datei": "karten/riverton-aussen.json",
+          "name": "ort.riverton.aussen",
+          "innen": false,
+          "musik": "musik/riverton.ogg"
+        },
+        {
+          "kennung": "riverton.pavillon",
+          "datei": "karten/riverton-pavillon.json",
+          "name": "ort.riverton.pavillon",
+          "innen": true
+        },
+        {
+          "kennung": "riverton.bahnhofshalle",
+          "datei": "karten/riverton-bahnhofshalle.json",
+          "name": "ort.riverton.bahnhofshalle",
+          "innen": true
+        },
+        {
+          "kennung": "riverton.wohnwagen",
+          "datei": "karten/riverton-wohnwagen.json",
+          "name": "ort.riverton.wohnwagen",
+          "innen": true
+        },
+        {
+          "kennung": "riverton.schuppen",
+          "datei": "karten/riverton-schuppen.json",
+          "name": "ort.riverton.schuppen",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "riverton.slick",
+          "name": "figur.slick.name",
+          "sprite": "figuren/slick.png",
+          "dialog": "riverton-pavillon.slick",
+          "gegner": "riverton.slick"
+        },
+        {
+          "kennung": "riverton.tamsin",
+          "name": "figur.tamsin.name",
+          "sprite": "figuren/tamsin.png",
+          "dialog": "riverton-pavillon.tamsin",
+          "gegner": "riverton.tamsin"
+        },
+        {
+          "kennung": "riverton.ray",
+          "name": "figur.ray.name",
+          "sprite": "figuren/ray.png",
+          "dialog": "riverton-pavillon.ray",
+          "gegner": "riverton.ray"
+        },
+        {
+          "kennung": "riverton.harlan",
+          "name": "figur.harlan.name",
+          "sprite": "figuren/harlan.png",
+          "dialog": "riverton-bahnhofshalle.harlan",
+          "gegner": "riverton.harlan"
+        },
+        {
+          "kennung": "riverton.pops",
+          "name": "figur.pops.name",
+          "sprite": "figuren/pops.png",
+          "dialog": "riverton-bahnhofshalle.pops"
+        },
+        {
+          "kennung": "riverton.albescu",
+          "name": "figur.albescu.name",
+          "sprite": "figuren/albescu.png",
+          "dialog": "riverton-aussen.albescu"
+        },
+        {
+          "kennung": "riverton.nova",
+          "name": "figur.nova.name",
+          "sprite": "figuren/nova.png",
+          "dialog": "riverton-aussen.nova"
+        },
+        {
+          "kennung": "riverton.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "riverton-aussen.victor"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "bahnhof",
+          "art": "start"
+        },
+        {
+          "name": "bahndamm",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegCedarRiverton.bahndamm",
+            "ausloeser": "weiterRiverton"
+          },
+          "dialog": "riverton-aussen.bahndamm"
+        },
+        {
+          "name": "kanalweg",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegRivertonIronwood.kanalweg",
+            "ausloeser": "zurueckRiverton"
+          },
+          "dialog": "riverton-aussen.kanalweg",
+          "wenn": "nadelRiverton"
+        },
+        {
+          "name": "bahnhofTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.bahnhofshalle",
+            "ausloeser": "bahnhofAusgang"
+          }
+        },
+        {
+          "name": "bahnhofAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "bahnhofTuer"
+          }
+        },
+        {
+          "name": "pavillonEingang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.pavillon",
+            "ausloeser": "pavillonAusgang"
+          }
+        },
+        {
+          "name": "pavillonAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "pavillonEingang"
+          }
+        },
+        {
+          "name": "wohnwagenTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.wohnwagen",
+            "ausloeser": "wohnwagenAusgang"
+          },
+          "wenn": "clubkampfRivertonBesprochen",
+          "dialog": "riverton-aussen.wohnwagen_zu"
+        },
+        {
+          "name": "wohnwagenAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "wohnwagenTuer"
+          }
+        },
+        {
+          "name": "schuppenTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.schuppen",
+            "ausloeser": "schuppenAusgang"
+          },
+          "wenn": "schuppenOffen",
+          "dialog": "riverton-aussen.schuppen_zu"
+        },
+        {
+          "name": "schuppenAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "schuppenTuer"
+          }
+        },
+        {
+          "name": "zugCedar",
+          "art": "dialog",
+          "dialog": "riverton-bahnhofshalle.zug"
+        },
+        {
+          "name": "bildschirmtische",
+          "art": "gegenstand",
+          "dialog": "riverton-aussen.bildschirmtische"
+        },
+        {
+          "name": "handyladen",
+          "art": "gegenstand",
+          "dialog": "riverton-aussen.handyladen"
+        },
+        {
+          "name": "fundLaeufer",
+          "art": "gegenstand",
+          "dialog": "riverton-aussen.fund_laeufer"
+        },
+        {
+          "name": "grosseUhr",
+          "art": "gegenstand",
+          "dialog": "riverton-bahnhofshalle.uhr"
+        },
+        {
+          "name": "zeitungsstand",
+          "art": "gegenstand",
+          "dialog": "riverton-bahnhofshalle.zeitungsstand"
+        },
+        {
+          "name": "fundZeitungsausschnitt",
+          "art": "gegenstand",
+          "dialog": "riverton-bahnhofshalle.fund_zeitungsausschnitt"
+        },
+        {
+          "name": "fundTaubenfeder",
+          "art": "gegenstand",
+          "dialog": "riverton-bahnhofshalle.fund_taubenfeder"
+        },
+        {
+          "name": "gedenktafel",
+          "art": "gegenstand",
+          "dialog": "riverton-pavillon.gedenktafel"
+        },
+        {
+          "name": "limonadenglas",
+          "art": "gegenstand",
+          "dialog": "riverton-pavillon.limonadenglas"
+        },
+        {
+          "name": "dosentrophaeen",
+          "art": "gegenstand",
+          "dialog": "riverton-wohnwagen.dosentrophaeen"
+        },
+        {
+          "name": "fahrrad",
+          "art": "gegenstand",
+          "dialog": "riverton-schuppen.fahrrad"
+        }
+      ],
+      "club": {
+        "name": "club.riverton.name",
+        "kapitel": [7, 4],
+        "chef": "riverton.slick",
+        "mitglieder": ["riverton.tamsin", "riverton.ray"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:taktik-a01",
+            "ueb:taktik-a06",
+            "ueb:droh-ignorieren",
+            "ueb:k2-zweispringer-la4"
+          ],
+          "themen": ["doppelangriff"]
+        }
+      }
+    },
+    {
+      "kennung": "wegRivertonIronwood",
+      "name": "ort.wegRivertonIronwood.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "wegRivertonIronwood.kanalweg",
+          "datei": "karten/weg-riverton-ironwood-1.json",
+          "name": "ort.wegRivertonIronwood.kanalweg",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        },
+        {
+          "kennung": "wegRivertonIronwood.bruecke",
+          "datei": "karten/weg-riverton-ironwood-2.json",
+          "name": "ort.wegRivertonIronwood.bruecke",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "wegRivertonIronwood.dale",
+          "name": "figur.dale.name",
+          "sprite": "figuren/dale.png",
+          "dialog": "weg-riverton-ironwood.dale"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckRiverton",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "riverton.aussen",
+            "ausloeser": "kanalweg"
+          }
+        },
+        {
+          "name": "tafel",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.tafel"
+        },
+        {
+          "name": "fundZahnrad",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.fund_zahnrad"
+        },
+        {
+          "name": "weiterBruecke",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegRivertonIronwood.bruecke",
+            "ausloeser": "zurueckKanalweg"
+          }
+        },
+        {
+          "name": "zurueckKanalweg",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegRivertonIronwood.kanalweg",
+            "ausloeser": "weiterBruecke"
+          }
+        },
+        {
+          "name": "fundNietenkopf",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.fund_nietenkopf"
+        },
+        {
+          "name": "zeitnotTrick",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.zeitnot_trick"
+        },
+        {
+          "name": "weiterIronwood",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "kanalweg"
+          },
+          "dialog": "ironwood-aussen.ankunft_zu_fuss"
+        }
+      ]
+    },
+    {
+      "kennung": "ironwood",
+      "name": "ort.ironwood.name",
+      "nummer": 4,
+      "staffel": 1,
+      "karten": [
+        {
+          "kennung": "ironwood.aussen",
+          "datei": "karten/ironwood-aussen.json",
+          "name": "ort.ironwood.aussen",
+          "innen": false,
+          "musik": "musik/ironwood.ogg"
+        },
+        {
+          "kennung": "ironwood.kantine",
+          "datei": "karten/ironwood-kantine.json",
+          "name": "ort.ironwood.kantine",
+          "innen": true
+        },
+        {
+          "kennung": "ironwood.mamasZimmer",
+          "datei": "karten/ironwood-mamas-zimmer.json",
+          "name": "ort.ironwood.mamasZimmer",
+          "innen": true
+        },
+        {
+          "kennung": "ironwood.umkleide",
+          "datei": "karten/ironwood-umkleide.json",
+          "name": "ort.ironwood.umkleide",
+          "innen": true
+        },
+        {
+          "kennung": "ironwood.museum",
+          "datei": "karten/ironwood-museum.json",
+          "name": "ort.ironwood.museum",
+          "innen": true
+        }
+      ],
+      "figuren": [
+        {
+          "kennung": "ironwood.bigJoe",
+          "name": "figur.bigJoe.name",
+          "sprite": "figuren/big-joe.png",
+          "dialog": "ironwood-kantine.big_joe",
+          "gegner": "ironwood.bigJoe"
+        },
+        {
+          "kennung": "ironwood.hank",
+          "name": "figur.hank.name",
+          "sprite": "figuren/hank.png",
+          "dialog": "ironwood-kantine.hank",
+          "gegner": "ironwood.hank"
+        },
+        {
+          "kennung": "ironwood.priya",
+          "name": "figur.priya.name",
+          "sprite": "figuren/priya.png",
+          "dialog": "ironwood-kantine.priya",
+          "gegner": "ironwood.priya"
+        },
+        {
+          "kennung": "ironwood.gus",
+          "name": "figur.gus.name",
+          "sprite": "figuren/gus.png",
+          "dialog": "ironwood-aussen.gus",
+          "gegner": "ironwood.gus"
+        },
+        {
+          "kennung": "ironwood.edna",
+          "name": "figur.edna.name",
+          "sprite": "figuren/edna.png",
+          "dialog": "ironwood-aussen.edna"
+        },
+        {
+          "kennung": "ironwood.teague",
+          "name": "figur.teague.name",
+          "sprite": "figuren/teague.png",
+          "dialog": "ironwood-museum.teague"
+        },
+        {
+          "kennung": "ironwood.omaRuth",
+          "name": "figur.omaRuth.name",
+          "sprite": "figuren/oma-ruth.png",
+          "dialog": "ironwood-mamas-zimmer.oma_ruth"
+        },
+        {
+          "kennung": "ironwood.mama",
+          "name": "figur.mutter.name",
+          "sprite": "figuren/mutter.png",
+          "dialog": "ironwood-kantine.mama",
+          "gegner": "ironwood.mama"
+        },
+        {
+          "kennung": "ironwood.victor",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "ironwood-aussen.victor"
+        },
+        {
+          "kennung": "ironwood.grahamHale",
+          "name": "figur.grahamHale.name",
+          "sprite": "figuren/graham-hale.png",
+          "dialog": "ironwood-aussen.graham_hale"
+        }
+      ],
+      "ausloeser": [
+        {
+          "name": "bushaltestelle",
+          "art": "start"
+        },
+        {
+          "name": "kanalweg",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegRivertonIronwood.bruecke",
+            "ausloeser": "weiterIronwood"
+          },
+          "dialog": "ironwood-aussen.kanalweg"
+        },
+        {
+          "name": "busRiverton",
+          "art": "dialog",
+          "dialog": "ironwood-aussen.bus_riverton"
+        },
+        {
+          "name": "busSiliconBay",
+          "art": "dialog",
+          "dialog": "ironwood-aussen.bus_silicon_bay"
+        },
+        {
+          "name": "kantineTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.kantine",
+            "ausloeser": "kantineAusgang"
+          }
+        },
+        {
+          "name": "kantineAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "kantineTuer"
+          }
+        },
+        {
+          "name": "haustuerRuth",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.mamasZimmer",
+            "ausloeser": "zimmerAusgang"
+          },
+          "wenn": "elmStreetBekannt",
+          "dialog": "ironwood-aussen.haustuer_ruth"
+        },
+        {
+          "name": "zimmerAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "haustuerRuth"
+          }
+        },
+        {
+          "name": "umkleideTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.umkleide",
+            "ausloeser": "umkleideAusgang"
+          }
+        },
+        {
+          "name": "umkleideAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "umkleideTuer"
+          }
+        },
+        {
+          "name": "museumTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.museum",
+            "ausloeser": "museumAusgang"
+          }
+        },
+        {
+          "name": "museumAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "museumTuer"
+          }
+        },
+        {
+          "name": "eisenwarenfenster",
+          "art": "gegenstand",
+          "dialog": "ironwood-aussen.eisenwarenfenster"
+        },
+        {
+          "name": "kreidebrett",
+          "art": "gegenstand",
+          "dialog": "ironwood-aussen.kreidebrett"
+        },
+        {
+          "name": "pokalregal",
+          "art": "gegenstand",
+          "dialog": "ironwood-kantine.pokalregal"
+        },
+        {
+          "name": "stahlbrett",
+          "art": "gegenstand",
+          "dialog": "ironwood-kantine.stahlbrett"
+        },
+        {
+          "name": "medaille",
+          "art": "gegenstand",
+          "dialog": "ironwood-mamas-zimmer.medaille"
+        },
+        {
+          "name": "partieformular2001",
+          "art": "gegenstand",
+          "dialog": "ironwood-mamas-zimmer.partieformular"
+        },
+        {
+          "name": "schliessfach",
+          "art": "gegenstand",
+          "dialog": "ironwood-umkleide.schliessfach"
+        },
+        {
+          "name": "postsack",
+          "art": "gegenstand",
+          "dialog": "ironwood-museum.postsack"
+        },
+        {
+          "name": "vitrine1858",
+          "art": "gegenstand",
+          "dialog": "ironwood-museum.vitrine"
+        },
+        {
+          "name": "fundGlasfunke",
+          "art": "gegenstand",
+          "dialog": "ironwood-museum.fund_glasfunke"
+        }
+      ],
+      "club": {
+        "name": "club.ironwood.name",
+        "kapitel": [7, 4],
+        "chef": "ironwood.bigJoe",
+        "mitglieder": ["ironwood.hank", "ironwood.priya"],
+        "aufgaben": {
+          "minuten": 15,
+          "buchuebungen": [
+            "ueb:taktik-a03",
+            "ueb:taktik-a04",
+            "ueb:elefant",
+            "ueb:legal-verteidigung"
+          ],
+          "themen": ["fesselung", "spiess"]
+        }
+      }
     }
   ]
 }

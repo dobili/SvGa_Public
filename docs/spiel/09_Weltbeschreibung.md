@@ -183,21 +183,43 @@ riecht nach Holz und Papier; die Zeit scheint hier langsamer zu gehen.
 Flussstadt mit Park, Brücke und Bahnhof, Backstein und Regen. Hier ist Schach laut: Parkschach
 mit Uhr, Zuschauer, Wetten um Limonade. Perfect Move hängt die ersten Banner auf.
 
-- **Außen:** Parkpavillon mit Brettern (der Club), Brücke über den Fluss, Bahnhof, ein
-  Handyladen (Laden), Bushaltestelle, Regenpfützen mit Spiegelung.
-- **Innen:** Pavillon (offen, Regen auf dem Dach), Bahnhofshalle (Zeitungsstand, Uhr, Flashback-
-  Auslöser), Slicks Wohnwagen (Schach-Trophäen aus Dosen).
-- **Verbindungen:** Zug (Cedar Creek ↔ Riverton), Kanalweg mit Fahrrad nach Ironwood.
+- **Außen `aussen`:** Parkpavillon mit Brettern (der Club), davor auf der Wiese die neuen
+  Bildschirmtische von Perfect Move (Szene 29), Brücke über den Fluss (Straßenmusiker darunter),
+  Bahnhof, ein Handyladen mit Tablets des Konzerns (Kulisse, kein Laden für den Helden),
+  Bushaltestelle, geschlossene Fahrradwerkstatt mit Schuppen dahinter, Regenpfützen mit
+  Spiegelung.
+- **Innen `pavillon`:** offen, Regen auf dem Dach, Marmorbretter, Uhren; zum Ansehen: eine
+  Gedenktafel für Mr. Odum, Slicks Lehrer, ein Glas mit Limonadenmünzen, eine Uhr mit Klebeband.
+- **Innen `bahnhofshalle`:** Zeitungsstand von Pops (der Laden der Stadt, Fahrkarten und Karten),
+  die große Uhr (Flashback-Auslöser), Bank des Uhrmachers Mr. Harlan; zum Ansehen: Fahrplantafel,
+  ein Fundbüro-Schild, eine Taube, die sich hereinverirrt hat.
+- **Innen `wohnwagen`:** Slicks Wohnwagen am Fluss (Schach-Trophäen aus Dosen, Kurierrad an der
+  Wand); Nachgespräch nach dem Clubkampf.
+- **Innen `schuppen`** (klein): Fahrradschuppen hinter der Werkstatt, mit dem Schlüssel aus Cedar
+  Creek zu öffnen (übergreifende Quest, Fahrrad).
+- **Verbindungen:** Zug (Cedar Creek ↔ Riverton; Route 2 „Zedernwald“ und „Bahndamm“ beim ersten
+  Mal zu Fuß), Kanalweg mit Fahrrad nach Ironwood (Route 3 „Kanalweg“ und „Brücke“), Bus nach
+  Ironwood als Schnellreise.
 
 ### 5.5 Ironwood (Akt 2)
 
 Stahlstadt, Rauch, Brücken, Werksschornsteine, Kälte. Der Club trifft sich in der Werkskantine;
-Mamas Geheimnis liegt hier. Grau mit einem warmen Kern (die Kantine, der Ofen).
+Mamas Geheimnis liegt hier. Grau mit einem warmen Kern (die Kantine, der Ofen). Am Ende von Akt 2
+fällt der erste Schnee.
 
-- **Außen:** Werkstor, Brücke, Reihenhäuser, Kantine, ein Kiosk; Rauch und Funken animiert.
-- **Innen:** Kantine (lange Tische, Ofen, Big Joes Brett aus Stahl), Mamas altes Zimmer im
-  Reihenhaus der Großeltern (das Geheimnis), die Umkleide (Schließfach mit Fund).
-- **Verbindungen:** Kanalweg (Riverton), Schnellstraße mit Bus nach Silicon Bay (Cliffhanger).
+- **Außen `aussen`:** Werkstor, Brücke mit Nieten „J. H.“, Reihenhäuser der Elm Street (Haus von
+  Oma Ruth), Kantine, Güterbahnhof (Gus auf der Kabeltrommel), Eisenwarenladen von Edna mit
+  Verkaufsfenster (der Laden der Stadt; statt des früher geplanten Kiosks), alter Bahnhof mit
+  Heimatmuseum, Bushaltestelle an der Schnellstraße; Rauch und Funken animiert.
+- **Innen `kantine`:** lange Tische, Ofen, Big Joes Brett aus Stahl, Pokalregal mit einer Lücke
+  (der Pokal von 2001); zum Ansehen: Schichtplan, Kaffeemaschine mit Beule, Foto der Werksmannschaft.
+- **Innen `mamasZimmer`:** Mamas altes Zimmer im Reihenhaus von Oma Ruth (das Geheimnis): Poster,
+  Silbermedaille, das Partieformular des Finales 2001 unter Glas.
+- **Innen `umkleide`** (klein): Spinde, Schließfach mit Fund (Holzturm, mit Laterne sichtbar).
+- **Innen `museum`:** Heimatmuseum im alten Bahnhof mit Mr. Teague: Postsäcke von 1866 (Fund
+  „Umschlag ohne Brief“), Vitrine mit einer Zeitung von 1858 (Erinnerung Ambroses), Standuhr.
+- **Verbindungen:** Kanalweg (Riverton), Bus nach Riverton, Schnellstraße mit Bus nach Silicon
+  Bay (Cliffhanger).
 
 ### 5.6 Silicon Bay (Akt 3)
 

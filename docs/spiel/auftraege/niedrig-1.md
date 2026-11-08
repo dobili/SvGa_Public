@@ -1,6 +1,11 @@
-# Auftrag niedrig-1: Zwei Routenkarten Maple Falls → Cedar Creek
+# Auftrag niedrig-1: kein Auftrag
 
-**Stand:** Frage (niedrig-1, 08.11.2026; Routenkarten fertig, Park offen)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der fünfte Auftrag ist zusammengeführt, danke.
+Der Autor will Guthaben sparen; bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und
+warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-aufgabenzuordnung`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/weg-maple-cedar-1.json` und

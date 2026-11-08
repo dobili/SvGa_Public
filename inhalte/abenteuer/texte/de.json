@@ -164,5 +164,8 @@
   "figur.wanderer.name": "Wanderer",
   "figur.nia.name": "Nia",
   "figur.tafel.name": "Die Rätseltafel",
-  "gegenstand.fahrrad.name": "Fahrrad"
+  "gegenstand.fahrrad.name": "Fahrrad",
+  "figur.patel.name": "Mr. Patel",
+  "fund.formular1857.name": "Altes Partieformular",
+  "fund.formular1857.text": "Ein vergilbtes Partieformular in einer Blechdose, eng beschrieben in einer Handschrift, die Ambrose kennt, aber nicht mehr lesen kann."
 }

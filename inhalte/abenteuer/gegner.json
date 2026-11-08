@@ -141,28 +141,17 @@
       "name": "figur.juno.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/juno.webp",
-      "staerke": {
-        "art": "aktuell",
-        "versatz": -100
-      },
+      "staerke": { "art": "aktuell", "versatz": -100 },
       "gewichte": {
         "figurHaengen": 2,
         "schlagreflex": 1.5,
         "taktikUebersehen": 1.3
       },
       "stil": "draufgaenger",
-      "eroeffnung": {
-        "art": "praxis"
-      },
+      "eroeffnung": { "art": "praxis" },
       "steckbrief": [
-        {
-          "art": "fehlerart",
-          "wert": "figurHaengen"
-        },
-        {
-          "art": "fehlerart",
-          "wert": "schlagreflex"
-        }
+        { "art": "fehlerart", "wert": "figurHaengen" },
+        { "art": "fehlerart", "wert": "schlagreflex" }
       ]
     },
     {
@@ -170,23 +159,15 @@
       "name": "figur.okafor.name",
       "rolle": "clubchef",
       "portraet": "portraets/okafor.webp",
-      "staerke": {
-        "art": "eingang",
-        "versatz": 280
-      },
-      "phasenversatz": {
-        "endspiel": 1
-      },
+      "staerke": { "art": "eingang", "versatz": 280 },
+      "phasenversatz": { "endspiel": 1 },
       "gewichte": {
         "tempoverlust": 1.6,
         "koenigPassiv": 1.3,
         "taktikUebersehen": 0.7,
         "grundreihe": 0.5
       },
-      "stil": {
-        "taktiker": 100,
-        "verteidiger": 80
-      },
+      "stil": { "taktiker": 100, "verteidiger": 80 },
       "eroeffnung": {
         "art": "fest",
         "eroeffnungen": [
@@ -196,18 +177,9 @@
         "abweichung": 15
       },
       "steckbrief": [
-        {
-          "art": "stil",
-          "wert": "taktiker"
-        },
-        {
-          "art": "fehlerart",
-          "wert": "tempoverlust"
-        },
-        {
-          "art": "eroeffnung",
-          "wert": "praxis:Philidor Defense"
-        }
+        { "art": "stil", "wert": "taktiker" },
+        { "art": "fehlerart", "wert": "tempoverlust" },
+        { "art": "eroeffnung", "wert": "praxis:Philidor Defense" }
       ]
     },
     {
@@ -215,27 +187,13 @@
       "name": "figur.dex.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/dex.webp",
-      "staerke": {
-        "art": "aktuell",
-        "versatz": 0
-      },
-      "gewichte": {
-        "koenigMitte": 1.5,
-        "figurHaengen": 1.3
-      },
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigMitte": 1.5, "figurHaengen": 1.3 },
       "stil": "taktiker",
-      "eroeffnung": {
-        "art": "praxis"
-      },
+      "eroeffnung": { "art": "praxis" },
       "steckbrief": [
-        {
-          "art": "stil",
-          "wert": "taktiker"
-        },
-        {
-          "art": "fehlerart",
-          "wert": "koenigMitte"
-        }
+        { "art": "stil", "wert": "taktiker" },
+        { "art": "fehlerart", "wert": "koenigMitte" }
       ]
     },
     {
@@ -243,27 +201,13 @@
       "name": "figur.mae.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/mae.webp",
-      "staerke": {
-        "art": "aktuell",
-        "versatz": -50
-      },
-      "gewichte": {
-        "drohungIgnoriert": 1.6,
-        "koenigsschild": 1.3
-      },
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "drohungIgnoriert": 1.6, "koenigsschild": 1.3 },
       "stil": "angreifer",
-      "eroeffnung": {
-        "art": "praxis"
-      },
+      "eroeffnung": { "art": "praxis" },
       "steckbrief": [
-        {
-          "art": "stil",
-          "wert": "angreifer"
-        },
-        {
-          "art": "fehlerart",
-          "wert": "drohungIgnoriert"
-        }
+        { "art": "stil", "wert": "angreifer" },
+        { "art": "fehlerart", "wert": "drohungIgnoriert" }
       ]
     },
     {
@@ -271,27 +215,13 @@
       "name": "figur.rosa.name",
       "rolle": "strasse",
       "portraet": "portraets/rosa.webp",
-      "staerke": {
-        "art": "aktuell",
-        "versatz": -50
-      },
-      "gewichte": {
-        "schlagVerpasst": 1.4,
-        "bauernzugOhneNot": 0.6
-      },
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "schlagVerpasst": 1.4, "bauernzugOhneNot": 0.6 },
       "stil": "verteidiger",
-      "eroeffnung": {
-        "art": "frei"
-      },
+      "eroeffnung": { "art": "frei" },
       "steckbrief": [
-        {
-          "art": "stil",
-          "wert": "verteidiger"
-        },
-        {
-          "art": "fehlerart",
-          "wert": "schlagVerpasst"
-        }
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "schlagVerpasst" }
       ]
     },
     {
@@ -303,14 +233,27 @@
         "art": "aktuell",
         "versatz": -100
       },
+      "gewichte": {
+        "rueckzug": 2,
+        "schlagreflex": 1.3
+      },
       "stil": {
         "angreifer": 120,
-        "taktiker": 70
+        "taktiker": 90
       },
       "eroeffnung": {
         "art": "frei"
       },
-      "steckbrief": []
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
+        }
+      ]
     }
   ]
 }

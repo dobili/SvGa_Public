@@ -36,6 +36,7 @@ class Kartenobjekt:
     figur: bool
     feld: Feld
     eigenschaften: dict[str, object]
+    belebung: bool = False
 
 
 def lade_karte(pfad: Path) -> dict:
@@ -73,6 +74,7 @@ def objekte(karte: dict) -> list[Kartenobjekt]:
         Kartenobjekt(
             name=o.get("name", ""),
             figur=o.get("type") == "figur",
+            belebung=o.get("type") in ("statist", "tier"),
             feld=(int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE),
             eigenschaften={e["name"]: e.get("value") for e in o.get("properties", [])},
         )

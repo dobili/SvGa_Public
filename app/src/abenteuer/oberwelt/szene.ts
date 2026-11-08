@@ -160,14 +160,18 @@ export class Oberweltszene extends Phaser.Scene {
   /** Die Objekte der Ebene „ausloeser“ als Kachelkoordinaten. */
   private liesAusloeser(karte: Phaser.Tilemaps.Tilemap): Ausloeser[] {
     const ebene = karte.getObjectLayer(AUSLOESER_EBENE);
-    return (ebene?.objects ?? [])
-      .filter((o) => typeof o.name === "string" && o.name.length > 0)
-      .map((o) => ({
-        name: o.name,
-        typ: o.type === FIGUR_TYP ? ("figur" as const) : ("ausloeser" as const),
-        x: Math.round((o.x ?? 0) / KACHEL),
-        y: Math.round((o.y ?? 0) / KACHEL),
-      }));
+    return (
+      (ebene?.objects ?? [])
+        .filter((o) => typeof o.name === "string" && o.name.length > 0)
+        // Statisten und Tiere (type statist/tier) sind noch keine Auslöser; sie kommen mit der Grafik.
+        .filter((o) => o.type !== "statist" && o.type !== "tier")
+        .map((o) => ({
+          name: o.name,
+          typ: o.type === FIGUR_TYP ? ("figur" as const) : ("ausloeser" as const),
+          x: Math.round((o.x ?? 0) / KACHEL),
+          y: Math.round((o.y ?? 0) / KACHEL),
+        }))
+    );
   }
 
   /** Das Steuerkreuz: Richtung gedrückt oder losgelassen. */

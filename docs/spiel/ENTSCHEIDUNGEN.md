@@ -375,6 +375,16 @@ verdoppelt das Tempo draußen) und `besuchteOrte` mit Dialogvariable `besucht<Or
 Schnellreise nach dem ersten Fußweg (W2; der Bus-Dialog prüft sie). Auslösernamen sind camelCase
 (Schema), Ink-Knoten dürfen Unterstriche behalten.
 
+**Fünfte Helfer-Runde zusammengeführt (08.11.2026, 09:30 Uhr):** Routenkarten „Landstraße“ und
+„Flussweg“ mit Statisten und Tieren (niedrig-1; Objekte `type` statist/tier sind noch keine
+Auslöser, der Kartentest überspringt sie), Dialoge der Route 1 samt Nia, Kiosk und Ankunft zu Fuß
+(mittel-1), Story-Bibel Akt 2 mit Riverton und Ironwood, Routen 2 und 3, 13 Funden, Läden,
+Blitz-Szene, Zeitnot-Trick und Flashback London 1851 (mittel-2). Die Tafel-Runde heißt
+`wegMapleCedar.tafel`. Alle drei Helfer warten jetzt ohne Auftrag (Guthaben schonen, Wunsch des
+Autors). Noch offen aus den Berichten: R27 (nur die erste Erinnerung je Staffel gibt die
+Bauernvorgabe), Fingerzeig im Laden ist laut `karten.json` dauerhaft (Angebot anpassen), Variable
+`mamaSpielt`, Kiosk-Angebot mit Preisen (kommt mit Schritt 12).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

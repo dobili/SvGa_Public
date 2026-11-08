@@ -183,7 +183,7 @@
         },
         {
           "id": 4,
-          "name": "fund_muenzen",
+          "name": "fundMuenzen",
           "type": "ausloeser",
           "x": 160,
           "y": 96,
@@ -194,7 +194,7 @@
         },
         {
           "id": 5,
-          "name": "schild_cedar",
+          "name": "schildCedar",
           "type": "ausloeser",
           "x": 336,
           "y": 128,

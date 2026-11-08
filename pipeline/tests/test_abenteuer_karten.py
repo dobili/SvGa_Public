@@ -79,6 +79,9 @@ def test_ausloeser_und_figuren_erklaert(ort: dict, eintrag: dict):
     erklaert = {"start"} | {a["name"] for a in ort["ausloeser"]}
     figuren = {f["kennung"].split(".", 1)[1] for f in ort["figuren"]}
     for objekt in k.objekte(_karte(eintrag)):
+        # Statisten und Tiere (09_Weltbeschreibung, 4a) stehen nicht in orte.json.
+        if objekt.belebung:
+            continue
         if objekt.figur:
             assert objekt.name in figuren, f"Figur {objekt.name} fehlt in orte.json"
         else:

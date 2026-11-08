@@ -92,6 +92,21 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true
+    },
+    {
+      "kennung": "wegMapleCedar.nia",
+      "gegner": "wegMapleCedar.nia",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "3.77"
+      },
+      "kartenErlaubt": true
     }
   ]
 }

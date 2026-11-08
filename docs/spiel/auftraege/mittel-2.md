@@ -1,6 +1,11 @@
-# Auftrag mittel-2: Story-Bibel Akt 2 (Riverton, Ironwood) mit Wegen und Entdeckungen
+# Auftrag mittel-2: kein Auftrag
 
-**Stand:** fertig (mittel-2, 08.11.2026; vorher offen, Haupt-Chat, fünfter Auftrag; Regelwerk ist auf Stand 8h, danke)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der fünfte Auftrag ist zusammengeführt, danke.
+Der Autor will Guthaben sparen; bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und
+warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-regelwerk`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 2“ anhängen; Akt 1 nur, wo Akt 2

@@ -159,6 +159,8 @@ export function wendeWirkungAn(
       return stand.gegenstaende.includes(wirkung.gegenstand)
         ? stand
         : { ...stand, gegenstaende: [...stand.gegenstaende, wirkung.gegenstand] };
+    case "gegenstandWeg":
+      return { ...stand, gegenstaende: stand.gegenstaende.filter((g) => g !== wirkung.gegenstand) };
     case "szene":
       return { ...stand, handlung: { ...stand.handlung, akt: wirkung.akt, szene: wirkung.szene } };
     case "fragment": {

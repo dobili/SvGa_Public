@@ -32,3 +32,18 @@ describe("Läden", () => {
     expect(kaufhindernis(reich, rad, SORTEN)).toBe("schonDa");
   });
 });
+
+describe("Münzen für Straßensiege", () => {
+  it("der erste Sieg je Gegner und Tag zählt voll, weitere wenig", async () => {
+    const { strassensiegMuenzen, MUENZEN: M } = await import("./muenzen");
+    const sieg = (gegner: string, beendet: string) => ({
+      gegner,
+      ergebnis: { ausgang: "sieg", beendet },
+    });
+    expect(strassensiegMuenzen([], "jo", "2026-11-08T10:00:00Z")).toBe(M.strassensieg);
+    const heute = [sieg("jo", "2026-11-08T09:00:00Z")];
+    expect(strassensiegMuenzen(heute, "jo", "2026-11-08T10:00:00Z")).toBe(M.strassensiegWiederholt);
+    expect(strassensiegMuenzen(heute, "nia", "2026-11-08T10:00:00Z")).toBe(M.strassensieg);
+    expect(strassensiegMuenzen(heute, "jo", "2026-11-09T10:00:00Z")).toBe(M.strassensieg);
+  });
+});

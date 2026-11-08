@@ -17,7 +17,7 @@ import type { Abenteuerstand, Clubstand } from "../schnittstelle/spielstand";
 import { mitRundenergebnis, reiheBestanden, wertung } from "./aufgaben";
 import { variablenNachNadel, variablenNachPartie, variablenNachRunde } from "./dialogvariablen";
 import { besteNadel, clubnadel } from "./karten";
-import { MUENZEN } from "./muenzen";
+import { MUENZEN, strassensiegMuenzen } from "./muenzen";
 import { nachStoryPartie } from "./wertung";
 
 /** Ein Club mit geänderten Feldern; fehlt er noch, entsteht er leer. */
@@ -75,8 +75,9 @@ export function standNachPartie(
   const rolle = daten.gegner.find((g) => g.kennung === b?.gegner)?.rolle;
   const ersteNadel = ort && nadel && !stand.clubs.find((c) => c.kennung === ort.kennung)?.nadel;
   const verdient =
-    (rolle === "strasse" && ergebnis.ausgang === "sieg" ? MUENZEN.strassensieg : 0) +
-    (ersteNadel ? MUENZEN.ersteNadel : 0);
+    (rolle === "strasse" && ergebnis.ausgang === "sieg" && b
+      ? strassensiegMuenzen(stand.protokoll, b.gegner, ergebnis.beendet)
+      : 0) + (ersteNadel ? MUENZEN.ersteNadel : 0);
   // Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt wurden.
   const laufend = stand.laufendeWertung;
   const gewertet = laufend?.zaehlt

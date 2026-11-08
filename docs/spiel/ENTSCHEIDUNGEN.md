@@ -532,8 +532,8 @@ echter Verzicht); Was droht? 60 statt 45; Remisangebot nur gegen Straßengegner 
 (sonst sicherte es eine Bronzenadel ohne Sieg); `riverton.flashbackLondon` gibt 20 Münzen statt der
 Bauernvorgabe (nur die erste Erinnerung der Staffel gibt sie); Jo bekam die Steckbriefzeile
 „Fleck Rückzug“. Ablenkung bleibt im Laden: Z4 („Zeitkarten nie im Laden“) gilt nur für Sprüche,
-die die Uhr ändern. Offen: Münzgrenze für Straßensiege (nur der erste Sieg je Gegner und Tag voll),
-die Wirkung „Gegenstand abgeben“ für die Limo-Quest und deren Dialoge.
+die die Uhr ändern. Nachgezogen: Straßensiege bringen 10 Münzen nur beim ersten Sieg je Gegner und Tag, danach 2;
+Quest-Wirkung `gegenstandWeg`; Limo (5 Münzen) im Kiosk. Die Dialoge der Limo-Quest schreibt mittel-1.
 
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 

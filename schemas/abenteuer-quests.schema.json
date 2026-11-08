@@ -156,6 +156,16 @@
             "art": { "const": "gegenstand" },
             "gegenstand": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
           }
+        },
+        {
+          "description": "Ein Gegenstand wird abgegeben (Limo für Jo, docs/spiel/05, Szene 10a); fehlt er, nichts",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "gegenstand"],
+          "properties": {
+            "art": { "const": "gegenstandWeg" },
+            "gegenstand": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+          }
         }
       ]
     },

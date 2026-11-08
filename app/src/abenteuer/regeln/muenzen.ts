@@ -14,6 +14,8 @@ import { wendeWirkungenAn } from "./quests";
 /** Münzen je Anlass (G1, G4: ein Clubbesuch bringt etwa 60 bis 100). */
 export const MUENZEN = {
   strassensieg: 10,
+  /** Jeder weitere Sieg gegen denselben Straßengegner am selben Tag (Befund mittel-2, 11, 7.4). */
+  strassensiegWiederholt: 2,
   rundeBestanden: 10,
   ersteNadel: 50,
 } as const;
@@ -56,4 +58,30 @@ export function kaufe(
       ? ({ art: "karte", karte: ware.kennung } as const)
       : ({ art: "gegenstand", gegenstand: ware.kennung } as const);
   return wendeWirkungenAn(bezahlt, [wirkung], jetzt);
+}
+
+/** Länge des Datums in einer ISO-Zeit („2026-11-08“). */
+const DATUMSLAENGE = 10;
+
+/**
+ * Münzen für einen Sieg gegen einen Straßengegner: der erste Sieg je Gegner und Tag voll, jeder
+ * weitere wenig, damit Münzen nicht durch Wiederholen des leichtesten Gegners entstehen.
+ * Beispiel: Jo heute schon einmal besiegt → 2; erster Sieg heute → 10.
+ */
+export function strassensiegMuenzen(
+  protokoll: readonly {
+    readonly gegner: string;
+    readonly ergebnis: { readonly ausgang: string; readonly beendet: string };
+  }[],
+  gegner: string,
+  beendet: string,
+): number {
+  const tag = beendet.slice(0, DATUMSLAENGE);
+  const schonHeute = protokoll.some(
+    (e) =>
+      e.gegner === gegner &&
+      e.ergebnis.ausgang === "sieg" &&
+      e.ergebnis.beendet.slice(0, DATUMSLAENGE) === tag,
+  );
+  return schonHeute ? MUENZEN.strassensiegWiederholt : MUENZEN.strassensieg;
 }

@@ -7,6 +7,11 @@
       "name": "laden.kiosk.name",
       "angebot": [
         {
+          "art": "gegenstand",
+          "kennung": "limo",
+          "preis": 5
+        },
+        {
           "art": "karte",
           "kennung": "zweiteChance",
           "preis": 20

@@ -118,3 +118,22 @@ zsTTTTTTTTTTTTTTTTTTTTTTTTTw
 #                      #####
 ############################
 ```
+
+**Nachtrag nach `09_Weltbeschreibung.md`** (Abschnitte 3, 4, 4a, 5.2, 6): Beide Routenkarten haben
+jetzt Statisten (`type = "statist"`, Eigenschaften `von`, `bis` als „x,y“ in Kacheln, `tun`, `wann`)
+und Tiere (`type = "tier"`, `von`, `bis`, `verhalten`, bei Bedarf `wann`); jeder Laufweg ist eine
+gerade Linie über freie Kacheln (geprüft).
+
+- Landstraße: `bauer` (Traktor auf dem Feld, tag), `joggerin` (Straße, morgen), `radfahrer`
+  (Straße, tag); `kuehe` (sitzen, am unteren Zaun), `hase` (ausweichen), `reh` (ausweichen,
+  morgen, oben am Feldrand). `gegnerin` ist Nia auf der Bank.
+- Flussweg: `angler` (am Steg, tag), `joggerin` (morgen); `reiher` (sitzen, am Ufer), `hase`
+  (ausweichen), `schmetterling` (fliegen, tag).
+
+Checkliste Abschnitt 6, was die Platzhalter nicht hergeben (offen für die Grafik): animierte
+Kachel (Wasser, Laub), Ahorn am Rand, Vordächer/Matten, Tönung (`toenung`), Nebel am Morgen,
+Spur einer Quest (Ebene `objekte` mit Bedingung, braucht die Technik aus Abschnitt 7), Geräusch
+und Musik (gehören in `orte.json`/`wege.json`, für mich gesperrt). Der Kartentest kennt die Typen
+`statist` und `tier` noch nicht; sobald die Karten in `orte.json`/`wege.json` stehen, würden sie
+als nicht erklärte Auslöser gemeldet. Vorschlag: im Test Objekte dieser Typen von der
+Erklärungspflicht ausnehmen und nur ihre Laufwege auf freie Kacheln prüfen.

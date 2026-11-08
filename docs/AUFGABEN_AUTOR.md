@@ -59,6 +59,15 @@ Adresse mit „#abenteuer“ öffnen).
       Zurückkommen steht der Held dort, wo du ihn verlassen hast.
 - [ ] N2611. Profil › Einstellungen › Deine Daten › Sicherung: Die Sicherung enthält jetzt den Spielstand (Format 11);
       nach „Alle Daten löschen“ ist auch das Paket weg und die Startkarte zeigt wieder „Spiel herunterladen“.
+- [ ] N2612. Im Abenteuer eine ganze Partie gegen Ambrose nach mindestens 11 Zügen verlieren (etwa aufgeben, nachdem du
+      eine Figur eingestellt hast): Auf der Ergebniskarte erscheint erst „Ambrose sieht sich die Partie an …“, nach ein
+      paar Sekunden „Hier ist es passiert, in Zug N“ mit dem Knopf „Noch einmal von Zug N“. N liegt vor deinem groben
+      Fehler. Tippen: Eine neue Partie beginnt in der Stellung von damals, mit derselben Farbe. Gibst du sie wieder
+      verloren, kommt kein zweites Angebot. Verlierst du in weniger als 11 Zügen oder stand es schon lange schlecht,
+      kommt gar kein Angebot (nur „Weiter“).
+- [ ] N2613. Vom Wohnzimmer durch die Haustür nach draußen und wieder hinein, von draußen in die Schule und zurück, in
+      den Park und zurück, vom Wohnzimmer über die Treppe auf den Dachboden und zurück: Jeder Weg führt auf die richtige
+      Karte, der Held steht in der Tür und löst sie erst aus, wenn er sie verlässt und wieder betritt.
 
 ### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
 
@@ -154,12 +163,12 @@ Meldung nennt die anderen. Gleich gute andere Züge gibt es laut Engine fast nie
 sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso schnell ist.
 
 - [ ] N2594. Training → Taktiktrainer, Motiv „Hinlenkung“ oder gemischt: Aufgabe lösen (etwa Abb. 7.14:
-  Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
-  Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
-  Zutreffend waren: …“ mit allen passenden Motiven.
+      Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
+      Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
+      Zutreffend waren: …“ mit allen passenden Motiven.
 - [ ] N2595. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
-  spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
-  langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
+      spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
+      langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
 
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
@@ -194,8 +203,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       übernehmen“ der Haken „Auch an Fehlern des Gegners“ (vorab an). Mit beiden Haken bekommen auch die
       Fehler des Gegners „Besser war (Engine)“ und „So wird bestraft (Engine)“. Ebenso unter Neue Variante ›
       Partie. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5
-      2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
+- [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
       Folgen übernehmen (+… Züge)“. Antippen legt an Fehlern, Patzern und verpassten Gewinnen beider Seiten
       „Besser war“ und „So wird bestraft“ als Abzweige an (Züge mit Chip-Zeichen „Engine“); danach
       verschwindet der Knopf. Ungenauigkeiten bekommen nichts.
@@ -396,8 +404,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       häufigsten Zügen von Spielern um 1200 weiter …“. Hast du schon gewertete Partien gegen die Bots
       gespielt, steht dort dein Band („dein Band nach deiner Wertung“). Ist der Satz verständlich?
 - [ ] N2551. Wähle bei „Sizilianische Verteidigung“ unter „Varianten“ nur „Old Sicilian“, Seite
-      Weiß, „Runde starten“. Die Variante endet nicht mehr nach 2… Sc6, sondern geht weiter: 3. Lc4 e6
-      4. O-O d5 5. exd5 exd5 6. Lb5 Ld7 7. Te1+ (ohne Wertung, Band 1200). Fühlt sich die Länge
+      Weiß, „Runde starten“. Die Variante endet nicht mehr nach 2… Sc6, sondern geht weiter: 3. Lc4 e6 4. O-O d5 5. exd5 exd5 6. Lb5 Ld7 7. Te1+ (ohne Wertung, Band 1200). Fühlt sich die Länge
       richtig an?
 - [ ] N2552. Dasselbe als Schwarz mit „Englische Eröffnung“ (1. c4): Früher gab es als Schwarz
       keine Aufgabe, jetzt ziehst du die häufigsten Antworten (etwa 1… e5 …). Startknopf: „1 Variante“.
@@ -1066,7 +1073,6 @@ Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurüc
 - [ ] N1013. **Zügeraten, Pfeile:** Trainer „Zug erraten“: Hast du den Partiezug selbst
       gefunden (auch mit Hinweis), erscheint kein Pfeil. Bei einem falschen Zug bleiben der
       goldene (Partiezug) und der rote Pfeil (dein Zug).
-
 
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 

@@ -22,9 +22,7 @@ FAELLE = [(ort, eintrag) for ort in ORTE for eintrag in ort["karten"]]
 
 # Bekannte Befunde, die der Haupt-Chat entscheidet (Karte und orte.json bleiben unverändert).
 # strict: Wird der Befund behoben, schlägt der Test fehl, und der Eintrag muss hier weg.
-BEFUNDE_ERKLAERT = {
-    "mapleFalls.wohnzimmer": "Auslöser treppeOben ist nur Ziel von treppe, nicht in orte.json erklärt",
-}
+BEFUNDE_ERKLAERT: dict[str, str] = {}
 
 
 def _mit_befund(befunde: dict[str, str]) -> list:

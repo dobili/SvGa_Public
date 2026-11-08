@@ -206,6 +206,26 @@ Funktionen in `regeln/karten.ts` (19 Tests). Vertragsänderungen: `Partiekarten`
 `Partiesteuerung` und Markierungs-Rückruf. Noch offen: Sanduhr und Wiedereinstieg (8e), Zeitbonus
 (braucht die Uhr des Zeitdruck-Spezialisten, Staffel 2), Mentor-Zug-Sperre in Akt 3 (R29).
 
+**Schritt 8e erledigt (Kipppunkt und Wiedereinstieg, R14, R15, R20):** Nach einer verlorenen
+ganzen Partie (nicht Stellungsduell, nicht nach einem verlorenen Wiedereinstieg derselben
+Begegnung) bewertet die Auswertungs-Engine mit Tiefe 10 rückwärts die Stellungen, in denen der
+Leser am Zug war, ab Halbzug 20 und höchstens 20 Stellungen, und nimmt die erste innerhalb ±1
+Bauer (`anbindung/kipppunkt.ts`, reine Suche mit austauschbarem Bewerter, Tests). Die
+Ergebniskarte zeigt „Ambrose sieht sich die Partie an …“, dann „Hier ist es passiert, in Zug N“
+mit dem Knopf „Noch einmal von Zug N“. Der Wiedereinstieg ist dieselbe Begegnung mit gleichem
+Profil und Zustand, Farbe aus dem Zugrecht der Stellung, Format `wiedereinstieg`; Karten bis zum
+Kipppunkt bleiben gespielt, dauerhafte Karten von danach kehren ins Deck zurück, verbrauchte
+nicht (R15); das Protokoll merkt sich den Wiedereinstieg (einmal je Begegnung). Nebenbei
+behoben: `liesErgebnis` gab die gespielten Karten nicht weiter, die Nadel wäre immer Gold gewesen.
+
+**Auslöser je Karte (V5, Befund von niedrig-1):** Auslöser in `orte.json` galten je Ort, deshalb
+führte „schule“ auf der Clubraumkarte wieder in den Clubraum und „treppeOben“ war unerklärt. Neu
+ist das optionale Feld `karte` am Auslöser: Ein Eintrag mit passender Karte geht vor, ohne Karte
+gilt er auf allen Karten des Ortes. Rückwege für Haustür, Schule, Park und Treppe eingetragen;
+der strikte Befund im Pipeline-Test `test_abenteuer_karten.py` ist damit erledigt und gelöscht.
+Alternative wäre ein eigener Name je Seite gewesen (so hat mittel-2 Cedar Creek angelegt); beides
+geht weiter, denn ein Name ohne `karte` bleibt erlaubt.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

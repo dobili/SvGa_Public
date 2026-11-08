@@ -79,6 +79,10 @@
       "properties": {
         "name": { "$ref": "#/$defs/kennung" },
         "art": { "enum": ["uebergang", "dialog", "gegenstand", "start"] },
+        "karte": {
+          "description": "Gilt nur auf dieser Karte des Ortes (etwa der Rückweg einer Tür); ohne Angabe auf allen Karten. Bei gleichem Namen geht der Eintrag mit Karte vor.",
+          "$ref": "#/$defs/kartenkennung"
+        },
         "ziel": {
           "description": "uebergang: Zielkarte und Auslösername dort, an dem der Held erscheint",
           "type": "object",

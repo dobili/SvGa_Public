@@ -88,10 +88,27 @@
           }
         },
         {
+          "name": "treppeOben",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "ausloeser": "treppe"
+          }
+        },
+        {
           "name": "haustuer",
           "art": "uebergang",
           "ziel": {
             "karte": "mapleFalls.aussen",
+            "ausloeser": "haustuer"
+          }
+        },
+        {
+          "name": "haustuer",
+          "karte": "mapleFalls.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
             "ausloeser": "haustuer"
           }
         },
@@ -109,10 +126,28 @@
           }
         },
         {
+          "name": "schule",
+          "karte": "mapleFalls.clubraum",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.aussen",
+            "ausloeser": "schule"
+          }
+        },
+        {
           "name": "park",
           "art": "uebergang",
           "ziel": {
             "karte": "mapleFalls.park",
+            "ausloeser": "park"
+          }
+        },
+        {
+          "name": "park",
+          "karte": "mapleFalls.park",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.aussen",
             "ausloeser": "park"
           }
         },

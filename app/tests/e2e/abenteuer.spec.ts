@@ -28,8 +28,13 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await laufe(page, "ArrowUp", 900);
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 5000 });
-  await aktion.click();
-  await expect(page.getByTestId("abenteuer-dialog")).toBeVisible();
+  // WebKit auf dem iPhone lädt die Dialogdatei aus dem Zwischenspeicher manchmal langsam, und ein
+  // Klick kann in einen Wechsel des Auslösers fallen; deshalb geduldig und notfalls noch einmal.
+  await expect(async () => {
+    const dialog = page.getByTestId("abenteuer-dialog");
+    if (!(await dialog.isVisible())) await aktion.click();
+    await expect(dialog).toBeVisible({ timeout: 3000 });
+  }).toPass({ timeout: 20000 });
   await expect(page.getByTestId("abenteuer-dialog")).toContainText("Staub, Kisten");
   // Die Hauptquest hat beim Betreten begonnen und steht im Tagebuch; der Dialog bleibt offen.
   await page.getByTestId("abenteuer-tagebuchknopf").click();

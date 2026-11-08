@@ -196,18 +196,27 @@ function objektposition(karte: object, name: string): { x: number; y: number } |
   return null;
 }
 
+/**
+ * Die Bedeutung eines Auslösers auf einer Karte: Ein Eintrag mit passendem Feld `karte` geht vor
+ * (der Rückweg einer Tür), sonst gilt der Eintrag des Ortes ohne Karte.
+ */
+function ausloeserFuer(ort: Ortdaten, karte: string, name: string) {
+  const passende = ort.ausloeser.filter((x) => x.name === name);
+  return passende.find((x) => x.karte === karte) ?? passende.find((x) => !x.karte);
+}
+
 /** Figur einer Karte zu einem Objektnamen („coachDelgado“ → Figur `ort.coachDelgado`). */
 function figurZu(ort: Ortdaten, name: string) {
   return ort.figuren.find((f) => f.kennung === `${ort.kennung}.${name}` || f.kennung === name);
 }
 
 /** Der Knopftext zu einem Treffer der Karte; null, wenn er nichts auslöst. */
-function aktionFuer(ort: Ortdaten, treffer: Ausloesertreffer | null): string | null {
+function aktionFuer(w: Weltdaten, treffer: Ausloesertreffer | null): string | null {
   if (!treffer) return null;
   if (treffer.typ === "figur") {
-    return figurZu(ort, treffer.name) ? tSpiel("oberwelt.aktion.sprechen") : null;
+    return figurZu(w.ort, treffer.name) ? tSpiel("oberwelt.aktion.sprechen") : null;
   }
-  const a = ort.ausloeser.find((x) => x.name === treffer.name);
+  const a = ausloeserFuer(w.ort, w.kennung, treffer.name);
   if (!a) return null;
   if (a.art === "gegenstand") return tSpiel("oberwelt.aktion.ansehen");
   if (a.art === "dialog") return tSpiel("oberwelt.aktion.sprechen");
@@ -379,7 +388,7 @@ export function Oberwelt() {
     const w = weltRef.current;
     const aktuell = standRef.current;
     if (!t || !w || !aktuell) return;
-    const a = w.ort.ausloeser.find((x) => x.name === t.name);
+    const a = ausloeserFuer(w.ort, w.kennung, t.name);
     if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf) {
       // Ein Übergang ohne Ziel (etwa die Landstraße nach Cedar Creek) ist noch nicht gebaut.
       if (a.ziel) wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
@@ -465,7 +474,7 @@ export function Oberwelt() {
       if (figur) oeffneDialog(figur.dialog);
       return;
     }
-    const a = welt.ort.ausloeser.find((x) => x.name === treffer.name);
+    const a = ausloeserFuer(welt.ort, welt.kennung, treffer.name);
     if (a?.dialog) oeffneDialog(a.dialog);
   };
 
@@ -616,7 +625,7 @@ export function Oberwelt() {
       {welt && !dialog && (
         <Steuerkreuz
           beiRichtung={beiRichtung}
-          aktion={aktionFuer(welt.ort, treffer)}
+          aktion={aktionFuer(welt, treffer)}
           beiAktion={beiAktion}
         />
       )}

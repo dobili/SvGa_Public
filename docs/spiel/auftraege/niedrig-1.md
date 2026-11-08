@@ -1,28 +1,33 @@
-# Auftrag niedrig-1: die 17 Karten von Akt 3
+# Auftrag niedrig-1: die 25 Karten von Akt 4
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der elfte Auftrag, alle 17 Karten von Akt 3, ist zusammengeführt, danke. Die Tabelle in mittel-1.md hatte ich versehentlich überschrieben, sie steht wieder dort. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, zwölfter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** die 17 Kartendateien aus der Tabelle unten (neu), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (jede gezeichnete Karte
-nimmt einen übersprungenen Test in die Prüfung auf), in `app/` Prettier und Paketbau
+**Darf ändern:** die neuen Kartendateien von Akt 4, dazu in den vorhandenen Karten
+`desert-springs-aussen.json` den Auslöser `highway` und in `port-delacroix-aussen.json` den
+Auslöser `bayou` und die Figur `blaeser` (im Musikhaus: `port-delacroix-musikhaus.json`),
+`docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (125 übersprungene Tests
+werden mit jeder Karte weniger), in `app/` Prettier und Paketbau
 
 ## Ziel
 
-Akt 3 steht in `orte.json`. Die Tabelle aller 17 Karten mit Dateinamen, Größen, Objekten und
-Figuren steht im Bericht des vierzehnten Auftrags von mittel-1 in
-`docs/spiel/auftraege/mittel-1.md` (Abschnitt „Für niedrig-1: zu zeichnende Karten“). Beschreibung
-der Orte: Story-Bibel Abschnitt 19, Weltbeschreibung `09_Weltbeschreibung.md` (5.6 bis 5.9).
+Akt 4 steht in `orte.json`. Die Tabelle aller Karten mit Dateien, Größen, Objekten und Figuren
+steht im Bericht des siebzehnten Auftrags von mittel-1 in `docs/spiel/auftraege/mittel-1.md`
+(Abschnitt „Für niedrig-1“); wenn sie dort fehlt, Objekte und Zuordnung wie beim letzten Mal direkt
+aus `orte.json`. Orte: Story-Bibel Teil 4 (Abschnitt 27 bis 31), Weltbeschreibung 5.9 bis 5.14.
 
 ## Vorgaben
 
-1. Wie bei Ironwood: Belebung nach 09 (Statisten, Tiere, Tageszeiten), Kollisionen, genau die
-   Objektnamen der Tabelle, je Karte genau ein `start` mit `richtung`.
-2. In dieser Reihenfolge und nach jeder Stadt pushen: Weg 4 und Silicon Bay (6 Karten), Weg 5 und
-   Port Delacroix (6), Weg 6 und Desert Springs (5). Port Delacroix nach dem Hurrikan: Wiederaufbau
-   im nassen Winter, Bretter vor Häusern, Gerüste.
+Wie bei Akt 3; nach jeder Stadt pushen (Summit City mit Weg, Crossroads mit Weg, Pinewood Camp mit
+Weg, Ghost Town mit Weg und Erinnerung, Capital Arena, Bayou und Hochebene zuletzt). Die Hochebene
+neutral ohne Figuren (Rückfrage Q21-1 offen).
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 (vom Helfer auszufüllen)
 

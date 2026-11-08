@@ -1,26 +1,36 @@
-# Auftrag mittel-1: Akt 4 in orte.json, gegner.json und begegnungen.json
+# Auftrag mittel-1: Dialoge und Quests für Weg 10, Ghost Town, Weg 11, Capital Arena, Bayou
 
-**Stand:** fertig (Helfer mittel-1, 08.11.2026, siebzehnter Auftrag)
+**Stand:** offen (Haupt-Chat, 08.11.2026, achtzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/orte.json`, `gegner.json`, `begegnungen.json` (nur neue Einträge für Akt 4),
-`inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
+**Darf ändern:** die Ink-Dateien dieser Orte und der Erinnerung `erinnerung-siedlung.ink` (neu),
+`port-delacroix-aussen.ink` (nur `bayou`), `port-delacroix-musikhaus.ink` (nur `blaeser`),
+`quests.json`, `runden.json`, `begegnungen.json`, `funde.json`, `laeden.json`, `texte/de.json` (nur
+neue Schlüssel), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
 
 ## Ziel
 
-Akt 4 steht in der Story-Bibel (Teil 4, Abschnitte 25 bis 34, von mittel-2). Wie beim vierzehnten
-Auftrag (Akt 3): Orte, Karten-Kennungen, Figuren, Auslöser, Clubs, alle Gegner mit Steckbrief und
-Immunitäten, Begegnungen (Clubkämpfe mit `zeit: "wahl"`, Stellungsduelle aus Abbildungen mit
-geprüftem Vorteil etwa +1). Ausnahmen: Die Landschaften mit Schachvarianten (L1 bis L10) und die
-Landesmeisterschaft brauchen neue Technik (Bibel, Abschnitt 34); ihre Orte, Figuren und Auslöser
-bitte eintragen, aber noch keine Begegnungen mit Varianten oder Turnierrunden.
+Dialoge, Quests, Runden, Begegnungen für `wegPinewoodGhost`, `ghostTown` (Fernpartie mit Victor,
+Flashback 1866 als Erinnerung, Duell-FEN aus Bibel Abschnitt 35), `wegGhostCapital`, `capitalArena`
+(Landesmeisterschaft: Vorrunde als vier Begegnungen mit Punkten in Ink, Novas Aussage, Halbfinale
+gegen Kade mit `abgelenktAb` und `freieKarten`, Finale ohne Karten nach R28, Ambroses Abschied mit
+`zeigeAbspann()`), `bayou`. mittel-2 schreibt parallel Weg 7 bis Pinewood Camp. Neue Einträge in
+gemeinsamen Dateien in einem eigenen Block.
 
-Im Bericht wie beim vierzehnten Auftrag: Tabelle der zu zeichnenden Karten für niedrig-1 und die
-Knotenliste für die Dialoge. Die Rückfrage Q21-1 (Hochebene: Vell-Familien oder Bergbausiedlung) ist
-noch offen; den Ort bitte neutral benennen, die Figuren dort erst nach der Antwort.
+Neue Technik, die ihr in Akt 4 nutzen könnt (Haupt-Chat, 8.11.2026, Einzelheiten in
+`docs/spiel/ENTSCHEIDUNGEN.md`): Ink-Funktion `zeigeAbspann()` (Abspann nach dem Dialog);
+Begegnungsfelder `freieKarten` (Halbfinale: `["mentorzug"]`, setzt `mentorzugFreiGespielt`),
+`abgelenktAb {halbzug, faktor}` (Stärkewechsel, Halbfinale) und `variante: "blind"` (Blindschach);
+Runden mit `erinnerung` (Zugerraten einer Klassikerpartie) und den Themen `falle`, `struktur`,
+`endspiel`; Siegzähler `siege<Begegnung>`; Turnierrunden ohne neue Technik als Begegnungen mit
+Punkten in Ink (`ausgang<Begegnung>`).
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig:**
 

@@ -522,6 +522,10 @@ gerechnet. Sprüche fehlen in der Deckwahl außer gegen Straßengegner. Kartenta
 300 Münzen): Deck 4. Nicht gebaut: Schutzengel (bräuchte eine Bewertung jedes eigenen Zuges
 während der Bot rechnet), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
 
+**Antworten aus Akt 3 (niedrig-1, 8.11.2026):** Konter für dash, batiste, buck, joggerin,
+schiffskoch. Immunitäten für die Gegnerprofile von Akt 3 (vorgemerkt): Dash grossesMaul und
+ablenkung, Batiste alles außer schmeichelei, Buck keine, Joggerin grossesMaul, Schiffskoch ablenkung.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

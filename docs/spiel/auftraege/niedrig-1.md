@@ -1,6 +1,8 @@
 # Auftrag niedrig-1: Antworten der Gegner aus Akt 3 auf Sprüche
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der neunte Auftrag, Antworten aus Akt 3, ist zusammengeführt, danke; die Immunitäten kommen mit den Gegnerprofilen von Akt 3. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+
+<!-- vorher: fertig --> (niedrig-1, 08.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/niedrig-1.md`

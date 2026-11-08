@@ -100,4 +100,19 @@ neuen Teil 2 „Akt 2“ (Abschnitte 7 bis 15, Szenen 26 bis 50); Prettier beste
   „junger Ambrose“.
 - Zeitlinie: Ergänzung 1851, 1858, 1866 (Brief), 2001 (Mamas Finale) in Abschnitt 8.
 
+**Nachtrag: Ausrichtung an `09_Weltbeschreibung.md`** (Vorgabe 0, kam nach dem ersten Push)
+
+- Riverton: Club im **Parkpavillon** statt an Steintischen; eine Außenkarte statt zwei;
+  Innenräume `pavillon`, `bahnhofshalle` (Zeitungsstand, große Uhr als Flashback-Auslöser,
+  Mr. Harlan), `wohnwagen` (Slick), dazu `schuppen` (E4). Der Handyladen aus 09 bleibt Kulisse,
+  gekauft wird bei Pops am Zeitungsstand (Fahrkarten passen zum Bahnhof). Slicks Geschenk ist jetzt
+  der „Springer aus dem Pavillon“.
+- Route 3 ist der **Kanalweg** (`route3.kanalweg`, `route3.bruecke`).
+- Ironwood: Club in der **Kantine** (Big Joes Stahlbrett); **Mamas altes Zimmer** im Reihenhaus
+  ihrer Mutter (neue Nebenfigur Oma Ruth) ist der Ort des Geheimnisses (Szene 39 neu);
+  **Umkleide** mit dem Holzturm im Schließfach; Ednas Laden als Verkaufsfenster außen statt Kiosk;
+  Museum im alten Bahnhof zusätzlich. Szene 50 an der Bushaltestelle der Schnellstraße im ersten
+  Schnee.
+- `09`, Abschnitte 5.4 und 5.5 entsprechend ergänzt (Innenräume mit Inventar, Laden, Verbindungen).
+
 **Offen:** nichts Blockierendes; sechs Fragen mit Empfehlung in Abschnitt 15 der Bibel.

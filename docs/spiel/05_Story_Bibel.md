@@ -746,10 +746,10 @@ Teil 1 unverändert. Alle Namen sind Arbeitsnamen bis zum Markencheck.
 ## 7. Der Kern von Akt 2 in sechs Sätzen
 
 1. {held} geht zu Fuß nach Riverton und findet den Parkclub halb verkauft: Perfect Move hat die
-   alten Steintische durch Bildschirmtische ersetzt, nur Slick und zwei Getreue spielen weiter an
-   den letzten Steintischen am Fluss.
-2. Der letzte Clubkampf an den Steintischen bringt die dritte Clubnadel; am nächsten Tag sind die
-   Tische weg. Zum ersten Mal sieht {held}, was der Konzern tut.
+   Wiese vor dem Parkpavillon mit Bildschirmtischen vollgestellt, und der Pavillon, in dem Slicks
+   Club seit Jahrzehnten spielt, muss bis Sonntag geräumt sein.
+2. Der letzte Clubkampf im Pavillon bringt die dritte Clubnadel; am nächsten Tag stehen auch dort
+   Bildschirmtische. Zum ersten Mal sieht {held}, was der Konzern tut.
 3. Ambrose erinnert sich an London 1851 und an das Kaffeehaus, in dem er die schönste Partie seines
    Lebens gesehen hat (Flashback); die Rechenmaschine des Konzerns findet er zugleich empörend und
    faszinierend.
@@ -807,16 +807,17 @@ von Mama (Szene 39). Neu: Sie wird beim Laufen mutiger und fordert selbst Straß
 ### 9.2 Neue Figuren Riverton
 
 **Slick** (Clubchef 3). Marcus „Slick“ Bellamy, Mitte zwanzig, er. Fahrradkurier, spielt seit
-seinem zwölften Jahr an den Steintischen im Riverside-Park, Blitzpartien um Kleingeld. Schnell,
+seinem zwölften Jahr im Pavillon des Riverside-Parks, Blitzpartien um Limonade, und wohnt in einem
+Wohnwagen am Fluss (Trophäen aus Dosen). Schnell,
 freundlich, großmäulig, mit einem Herzen für die Kinder im Park. Hat den alten Parkclub von seinem
 Lehrer übernommen, der dieses Jahr gestorben ist; der Stadtrat hat die Tische an Perfect Move
-verpachtet. Stil: Angreifer und Taktiker, sieht Gabeln sofort. Schwäche: spielt auch dann
+verpachtet, der Pavillon soll ein „Trainingszentrum“ werden. Stil: Angreifer und Taktiker, sieht Gabeln sofort. Schwäche: spielt auch dann
 schnell, wenn er nachdenken müsste, und übersieht stille Drohungen (Fehlerart `drohungIgnoriert`
 hoch, `schlagreflex` hoch). Sprechweise: schnell, Rhythmus, Wortspiele mit Gabeln und Pferden.
 
 - „Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit.“
 - „Ich denk nicht lang. Lang denken die Bildschirme.“
-- „Das hier ist der letzte Steintisch. Wenn du verlierst, verlierst du gegen Riverton.“
+- „Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton.“
 
 Zielstärke E + 340 (Club 3, R4). Eröffnung: Schottisch und Evans-Gambit (schnelle offene Spiele).
 
@@ -831,7 +832,8 @@ Aufgabenreihe zu Doppelangriffen und Hinlenkung. Beispiel: „Zwei Haltestellen,
 kann nur an einer aussteigen.“
 
 **Mr. Harlan** (Straßengegner). Ein pensionierter Uhrmacher, Ende sechzig, er, sitzt mit
-Lupenbrille auf der Bank am Uhrenturm und denkt über jeden Zug zehn Minuten nach. Sehr genau,
+Lupenbrille auf der Bank unter der großen Uhr in der Bahnhofshalle (er zieht sie jeden Morgen auf)
+und denkt über jeden Zug zehn Minuten nach. Sehr genau,
 sehr langsam. Rolle: die Blitz-Szene (Szene 31). Zielstärke A ± 0. Beispiel: „Eile ist der Feind
 der Feder. Und der Unruh.“
 
@@ -841,7 +843,7 @@ lächelt in jede Kamera und wirkt einen Moment lang erschöpft, als die Kameras 
 nur dieser Auftritt; ihr Geheimnis (sie wurde zum Schummeln gezwungen) kommt in Akt 3. Beispiel:
 „Mit Perfect Move trainiert jeder wie ein Champion! … Kann ich jetzt kurz sitzen?“
 
-**Pops** (Laden). Theodore „Pops“ Banks, Kioskbesitzer am Parkeingang, er, Anfang sechzig. Verkauft
+**Pops** (Laden). Theodore „Pops“ Banks, Inhaber des Zeitungsstands in der Bahnhofshalle, er, Anfang sechzig. Verkauft
 Zeitungen, Limo und seit dreißig Jahren Taschenschachspiele; kennt jeden im Park. Beispiel: „Ein
 Kiosk ist eine Bibliothek, die man essen kann.“
 
@@ -852,7 +854,8 @@ verloren. Rolle: übergreifende Quest „Der verrostete Schlüssel“ (E4, Szene
 ### 9.3 Neue Figuren Ironwood
 
 **Big Joe** (Clubchef 4). Joseph „Big Joe“ Kowalski, Ende fünfzig, er. Kranführer im Stahlwerk,
-leitet seit dreißig Jahren den Werksclub im Pausenraum, laut, herzlich, bärenstark und sanft mit
+leitet seit dreißig Jahren den Werksclub in der Kantine (sein Brett ist aus Stahl, selbst
+geschweißt), laut, herzlich, bärenstark und sanft mit
 Figuren. War Mamas Trainer und hat sich nie verziehen, dass er sie nach dem verlorenen Finale nicht
 zurückgeholt hat. Stil: Positionsspieler, der Figuren festnagelt (liebt Fesselungen). Schwäche:
 übersieht Spieße auf der eigenen Grundreihe, besonders müde (Fehlerart `taktikUebersehen` hoch,
@@ -879,9 +882,15 @@ Pause auf einer umgedrehten Kabeltrommel, immer mit Uhr, weil die Pause genau f�
 dauert. Stellungsduell mit Uhr (R13, W4). Zielstärke A − 50. Beispiel: „Fünfzehn Minuten Pause.
 Zehn für dich, fünf für mein Sandwich.“
 
-**Edna** (Laden). Edna Price, Eisenwarenhändlerin, siebzig, sie. Verkauft Schrauben, Laternen und
-seit Neuestem Fahrradteile; erklärt alles mit „Das hält“. Beispiel: „Kauf das Gute. Das Billige
+**Edna** (Laden). Edna Price, Eisenwarenhändlerin, siebzig, sie. Verkauft durch das Fenster
+ihres Ladens an der Hauptstraße Schrauben, Laternen und seit Neuestem Fahrradteile; erklärt alles mit „Das hält“. Beispiel: „Kauf das Gute. Das Billige
 kaufst du zweimal.“
+
+**Oma Ruth** (Nebenfigur). Ruth M., Mamas Mutter, Mitte siebzig, sie. Wohnt noch im Reihenhaus
+in der Elm Street, in dem Mama aufgewachsen ist; telefoniert jeden Sonntag mit Mama und hat {held}
+seit dem Umzug nicht gesehen. Hält Mamas altes Zimmer unverändert, „falls sie mal wieder
+schlafen will“. Beispiel: „Deine Mutter war das stillste Kind der Straße. Außer, wenn sie
+gewonnen hat.“ Rolle: öffnet Mamas Geheimnis (Szene 39).
 
 **Mr. Teague** (Nebenfigur). Walter Teague, achtzig, er, ehrenamtlicher Hüter des Heimatmuseums im
 alten Bahnhof. Hütet Postsäcke von 1870, die nie geöffnet wurden. Rolle: übergreifender Fund „Der
@@ -899,6 +908,7 @@ leere Umschlag“ (Szene 41).
 | Big Joe    | „Kumpel“, Werkhallenbilder, laut, herzlich                     |
 | Priya      | Technikwörter, begeistert, „Ingenieurwesen“                    |
 | Gus        | Pausen und Fahrpläne, knapp                                    |
+| Oma Ruth   | warm, erzählt von früher, nennt Mama „Laurie“                  |
 
 ## 10. Welt in Akt 2
 
@@ -920,22 +930,26 @@ Fuß etwa 12 Minuten; danach Schnellreise mit dem Zug am Bahnhof Cedar Creek ode
 
 ### 10.2 Riverton (Ort 3, `riverton`)
 
-Flussstadt mit alten Brücken, Backsteinlagerhäusern und dem Riverside-Park; laut, bunt, ein
-bisschen hektisch. Herbst, Laub auf den Steintischen.
+Bild, Areale und Innenräume nach `09_Weltbeschreibung.md`, Abschnitt 5.4: Flussstadt mit Park,
+Brücke und Bahnhof, Backstein und Regen. Herbst, Laub in den Pfützen, Schach ist hier laut.
 
-| Karte               | Art   | Zweck                                                                   | Figuren                                            | Atmosphäre                                                               |
-| ------------------- | ----- | ----------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
-| `riverton.aussen`   | außen | Bahnhof, Hauptstraße, Kiosk, Uhrenturm, geschlossene Fahrradwerkstatt   | Pops (Kiosk), Mr. Harlan (Uhrenturm), Mrs. Albescu | Straßenbahnklingel, Tauben am Uhrenturm, Plakate von Perfect Move.       |
-| `riverton.park`     | außen | Riverside-Park: Bildschirmtische vorn, die letzten Steintische am Fluss | Slick, Tamsin, Ray, Nova und Victor (Szene 29)     | Glänzende Tische mit leuchtenden Brettern, dahinter moosige Steintische. |
-| `riverton.schuppen` | innen | Fahrradschuppen hinter der Werkstatt (nach dem Schlüssel)               | –                                                  | Staub, Spinnweben, ein grünes Fahrrad unter einer Plane.                 |
-| `riverton.kiosk`    | innen | Laden (Szene 30)                                                        | Pops                                               | Zeitungsstapel, Limokühlschrank, Taschenschachspiele hinter Glas.        |
+| Karte                    | Art           | Zweck                                                                                                                         | Figuren                                                    | Atmosphäre                                                             |
+| ------------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `riverton.aussen`        | außen         | Bahnhof, Brücke, Park mit Pavillon und Bildschirmtischen, Handyladen (Kulisse), Bushaltestelle, geschlossene Fahrradwerkstatt | Mrs. Albescu, Nova und Victor (Szene 29), Statisten aus 09 | Regenpfützen mit Spiegelung, Tauben, Banner von Perfect Move.          |
+| `riverton.pavillon`      | innen (offen) | Slicks Club: Aufgabenreihen, Zuschauen, Clubkampf                                                                             | Slick, Tamsin, Ray                                         | Regen trommelt aufs Dach, Marmorbretter, Uhren klopfen.                |
+| `riverton.bahnhofshalle` | innen         | Zeitungsstand (Laden), große Uhr, Bank des Uhrmachers, Auslöser des Flashbacks                                                | Pops, Mr. Harlan                                           | Hall der Durchsagen, die Uhr tickt laut, Geruch nach nassen Mänteln.   |
+| `riverton.wohnwagen`     | innen         | Slicks Zuhause, Nachgespräch nach dem Clubkampf                                                                               | Slick                                                      | Trophäen aus Dosen, ein Kurierrad an der Wand, ein Brett auf dem Bett. |
+| `riverton.schuppen`      | innen (klein) | Fahrradschuppen hinter der Werkstatt (nach dem Schlüssel, E4)                                                                 | –                                                          | Staub, Spinnweben, ein grünes Fahrrad unter einer Plane.               |
 
-### 10.3 Route 3: Riverton → Ironwood (`route3`, das Fahrrad lohnt sich)
+Der Handyladen verkauft Tablets von Perfect Move und ist bewusst kein Laden für {held}: Gekauft
+wird am Zeitungsstand von Pops (Abschnitt 13). Ergänzt in `09`, Abschnitt 5.4.
 
-| Karte                  | Zweck                                                       | Stationen (W4)                                                                                 | Atmosphäre                                                       |
-| ---------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `route3.fabrikstrasse` | lange Straße an stillgelegten Fabriken vorbei, Hügel hinauf | Rätseltafel an der Bushaltestelle ohne Bus (2 Fesselungen), Fund „Zahnrad“, Bauer mit Weisheit | Leere Hallen, Graffiti mit Schachfiguren, Krähen auf den Zäunen. |
-| `route3.bruecke`       | Eisenbrücke über das Tal, dann der Abhang nach Ironwood     | Ambrose und der Zeitnot-Trick (Szene 36), Fund „Nietenkopf mit Initialen“                      | Wind, das Tal tief unten, Rauch aus dem Stahlwerk am Horizont.   |
+### 10.3 Route 3: Riverton → Ironwood (`route3`, Kanalweg, das Fahrrad lohnt sich)
+
+| Karte             | Zweck                                                     | Stationen (W4)                                                                                 | Atmosphäre                                                       |
+| ----------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `route3.kanalweg` | Treidelpfad am Kanal, an stillgelegten Fabriken vorbei    | Rätseltafel an der Bushaltestelle ohne Bus (2 Fesselungen), Fund „Zahnrad“, Bauer mit Weisheit | Leere Hallen, Graffiti mit Schachfiguren, Krähen auf den Zäunen. |
+| `route3.bruecke`  | Eisenbrücke über den Kanal, dann der Abhang nach Ironwood | Ambrose und der Zeitnot-Trick (Szene 40), Fund „Nietenkopf mit Initialen“                      | Wind, das Tal tief unten, Rauch aus dem Stahlwerk am Horizont.   |
 
 Die Route ist doppelt so lang wie Route 2 (zu Fuß etwa 15 Minuten, mit Fahrrad etwa 8; W3, W6):
 Das Fahrrad aus dem Schuppen (Szene 33) lohnt sich hier zum ersten Mal spürbar. Der Bauer am
@@ -945,15 +959,19 @@ Grundgesetz der Bauern; nur Kapitel nennen). Schnellreise: Bus vom Bahnhof River
 
 ### 10.4 Ironwood (Ort 4, `ironwood`)
 
-Arbeiterstadt im Tal, Stahlwerk mit Hochofen, Güterbahnhof, kleine Holzhäuser mit Gärten, alles
-etwas rußig und sehr freundlich. Abends glüht der Himmel orange.
+Bild, Areale und Innenräume nach `09_Weltbeschreibung.md`, Abschnitt 5.5: Stahlstadt, Rauch,
+Brücken, Werksschornsteine, Kälte, ein warmer Kern in der Kantine. Spätherbst; am Ende von Akt 2
+fällt der erste Schnee.
 
-| Karte                 | Art   | Zweck                                                               | Figuren                     | Atmosphäre                                                           |
-| --------------------- | ----- | ------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------- |
-| `ironwood.aussen`     | außen | Hauptstraße, Werkstor, Güterbahnhof, Eisenwarenladen, alter Bahnhof | Gus (Bahnhof), Edna (Laden) | Funken über dem Werk, Pfiff der Rangierlok, Geranien vor jedem Haus. |
-| `ironwood.pausenraum` | innen | Werksclub im Pausenraum: Aufgabenreihen, Clubkampf, Mamas Partie    | Big Joe, Hank, Priya, Mama  | Spinde, Kaffeemaschine, ein Pokalregal mit einem Foto von 2001.      |
-| `ironwood.museum`     | innen | Heimatmuseum im alten Bahnhof: Postsäcke, Erinnerung Ambroses       | Mr. Teague                  | Alte Fahrkartenschalter, eine Standuhr, Postsäcke mit Wachssiegeln.  |
-| `ironwood.laden`      | innen | Eisenwarenladen (Szene 37)                                          | Edna                        | Schubladen bis zur Decke, Geruch nach Öl und Holz.                   |
+| Karte                  | Art           | Zweck                                                                                                                                     | Figuren                                              | Atmosphäre                                                             |
+| ---------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ironwood.aussen`      | außen         | Werkstor, Brücke, Reihenhäuser (Elm Street), Kantine, Güterbahnhof, Eisenwarenfenster, alter Bahnhof, Bushaltestelle an der Schnellstraße | Gus (Güterbahnhof), Edna (Fenster), Statisten aus 09 | Rauch und Funken, Kinder malen Bretter mit Kreide, Krähen auf Trägern. |
+| `ironwood.kantine`     | innen         | Werksclub: Aufgabenreihen, Clubkampf, Mamas Partie, Feier                                                                                 | Big Joe, Hank, Priya, später Mama                    | Lange Tische, der Ofen, Big Joes Stahlbrett, eine Lücke im Pokalregal. |
+| `ironwood.mamasZimmer` | innen (klein) | Mamas altes Zimmer im Reihenhaus von Oma Ruth: das Geheimnis                                                                              | Oma Ruth                                             | Poster, eine Silbermedaille, ein Partieformular unter Glas.            |
+| `ironwood.umkleide`    | innen (klein) | Umkleide des Werks, Schließfach mit Fund (Laterne nötig)                                                                                  | –                                                    | Spinde, tropfende Dusche, ein vergessener Helm.                        |
+| `ironwood.museum`      | innen         | Heimatmuseum im alten Bahnhof: Postsäcke, Erinnerung Ambroses                                                                             | Mr. Teague                                           | Alte Schalter, eine Standuhr, Postsäcke mit Wachssiegeln.              |
+
+Ergänzt in `09`, Abschnitt 5.5: Museum, Güterbahnhof, Eisenwarenfenster statt Kiosk.
 
 ## 11. Szenenliste Akt 2
 
@@ -986,22 +1004,23 @@ Park – Schach für alle, ohne Wartezeit“. Ambrose: „Ohne Wartezeit. Als w�
 Schönste am Schach.“ Ein Schild weist zum Park. Etwa 3 Minuten.
 
 **29. Die Bildschirmtische** · `akt2.bildschirmtische` · H `riverton.parkclub`
-Ort `riverton.park` · Nova, Victor, Slick, Tamsin, Ray, Juno. Ereignis: Dialog. Nova eröffnet die
-Bildschirmtische vor Kameras; Victor steht daneben im Trainingsanzug des Konzerns und sagt
-auswendig gelernte Sätze. Hinten am Fluss spielen Slick, Tamsin und Ray an den letzten drei
-Steintischen. Slick: „Sie haben uns die Tische gelassen. Bis Sonntag.“ Victor zu {held}, als die
+Ort `riverton.aussen` (Park), dann `riverton.pavillon` · Nova, Victor, Slick, Tamsin, Ray, Juno.
+Ereignis: Dialog. Nova eröffnet im Regen unter einem Schirm die Bildschirmtische auf der Wiese
+vor Kameras; Victor steht daneben im Trainingsanzug des Konzerns und sagt
+auswendig gelernte Sätze. Im Pavillon spielen Slick, Tamsin und Ray weiter, die Uhren klopfen. Slick: „Sie haben uns den
+Pavillon gelassen. Bis Sonntag.“ Victor zu {held}, als die
 Kameras aus sind: „Die Tische machen keine Fehler. Das ist der Punkt.“ – {held} kann fragen: „Und
 das ist gut?“ Victor: „Mein Vater sagt ja.“ Ambrose starrt auf einen Bildschirm, auf dem die
 Maschine eine Partie in Sekunden gewinnt (`#stimmung:fern`). Der Clubkampf wird verabredet: das
-letzte Spiel an den Steintischen, Sonntag. Etwa 6 Minuten.
+letzte Spiel im Pavillon, Sonntag. Etwa 6 Minuten.
 
-**30. Pops’ Kiosk** · `akt2.ladenRiverton`
-Ort `riverton.kiosk` · Pops. Ereignis: Laden (G2, G5; `oeffneLaden("riverton.kiosk")`), Angebot
+**30. Pops’ Zeitungsstand** · `akt2.ladenRiverton`
+Ort `riverton.bahnhofshalle` · Pops. Ereignis: Laden (G2, G5; `oeffneLaden("riverton.zeitungsstand")`), Angebot
 in Abschnitt 13. Pops erzählt, dass Slicks Lehrer, der alte Mr. Odum, hier jeden Morgen eine
 Zeitung kaufte und die Schachspalte zuerst las. Etwa 3 Minuten.
 
 **31. Der Uhrmacher** · S `riverton.harlan` · Zeit (Vorgabe 5)
-Ort `riverton.aussen` (Bank am Uhrenturm) · Mr. Harlan, Juno, Ambrose. Ereignis: Stellungsduell
+Ort `riverton.bahnhofshalle` (Bank unter der großen Uhr) · Mr. Harlan, Juno, Ambrose. Ereignis: Stellungsduell
 aus einer Abbildung des Buches (Kapitel 3, Abbildung 3.77, Weiß am Zug etwa +1,6, geprüft im
 dritten Auftrag von mittel-2), Zielstärke A ± 0, **Wahl der Zeitklasse** vor der Partie (Z1). Juno
 hat ihn schon einmal ohne Uhr gespielt: „Er hat eine Stunde für zwölf Züge gebraucht und dann
@@ -1013,7 +1032,7 @@ keine Nadel (Z2). Harlan nach der Partie: „Die Unruh tickt für alle gleich. N
 Etwa 8 Minuten.
 
 **32. Aufgabenreihe Riverton** · Runden `riverton.reiheTamsin`, `riverton.reiheRay`
-Ort `riverton.park` (Steintische) · Tamsin, Ray. Ereignis: Aufgaben nach R30a, Zeitbudget 15
+Ort `riverton.pavillon` · Tamsin, Ray. Ereignis: Aufgaben nach R30a, Zeitbudget 15
 Minuten. Tamsin: Springergabeln (Buch Kapitel 7, Abschnitt 7.2, Motiv 1; Übung 35
 `ueb:taktik-a01`, Übung 4 `ueb:droh-ignorieren`). Ray: Doppelangriff und Hinlenkung (Übung 40
 `ueb:taktik-a06`, Übung 10 `ueb:k2-zweispringer-la4`; Kapitel 4, Abschnitt 4.10 „Springergabel auf
@@ -1029,8 +1048,8 @@ ihr altes grünes Fahrrad. Sie schenkt es {held}: „Es soll fahren, nicht stehe
 Gegenstand **Fahrrad** (W3). Ohne Schlüssel kann man das Fahrrad bei Edna in Ironwood kaufen
 (Abschnitt 13). Etwa 5 Minuten.
 
-**34. Zuschauen am Steintisch** · N begegnung `riverton.zuschauen`
-Ort `riverton.park` · Slick, Tamsin. Ereignis: Aufgaben und Dialog. Tamsin lädt {held} ein, eine
+**34. Zuschauen im Pavillon** · N begegnung `riverton.zuschauen`
+Ort `riverton.pavillon` · Slick, Tamsin. Ereignis: Aufgaben und Dialog. Tamsin lädt {held} ein, eine
 Runde Blitz zwischen Slick und Ray zu beobachten und mitzuzählen (Runde `riverton.slickBeobachten`,
 3 Aufgaben: Welche Drohung hat Slick übersehen?). Wirkung: Slick **analysiert**, zwei
 Steckbriefzeilen (Fehlerart „übersieht stille Drohungen“, Eröffnung „Schottisch“; C7). Tamsin: „Er
@@ -1040,8 +1059,8 @@ Etwa 7 Minuten.
 **35. Flashback: London, 1851** · `akt2.flashbackLondon` · N begegnung (Erinnerung)
 `riverton.flashbackLondon` · F2 (2)
 Ort: Sepia-Karte `flashback.london` (eine Straße am Strand, ein Kaffeehaus innen), Ambrose als
-Held (F1, F3). Auslöser: Am Abend nach Szene 29 sitzt {held} am Fluss; Ambrose sieht die
-Bildschirmtische leuchten und sagt: „Ich war einmal jünger als du jetzt. Fast.“ Ereignis: kurzer
+Held (F1, F3). Auslöser: Am Abend nach Szene 29 wartet {held} in der Bahnhofshalle auf den Zug; die große Uhr
+schlägt, draußen leuchten die Bildschirmtische, und Ambrose und sagt: „Ich war einmal jünger als du jetzt. Fast.“ Ereignis: kurzer
 Gang durch das Kaffeehaus (Zeitungsleser, Kaffeeduft, Tabakrauch nur als Wort), Ambrose (20) steht
 hinter zwei Spielern. Dann Zugerraten (C3) der Partie Anderssen gegen Kieseritzky, London 1851,
 `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß ab Zug 17 bis zum
@@ -1052,19 +1071,19 @@ dass {held} still ist. Belohnung: **Partiefragment 3**, bei mindestens 70 Prozen
 **Bauernvorgabe** (R27, R31). Etwa 5 Minuten (2 Minuten Gang, 3 Minuten Zugerraten).
 
 **36. Clubkampf Riverton** · `akt2.clubnadelRiverton` · H `riverton.parkclub`
-Ort `riverton.park` (letzter Steintisch) · Slick, Tamsin, Ray, Juno, Zuschauer aus dem Park.
+Ort `riverton.pavillon` · Slick, Tamsin, Ray, Juno, Zuschauer aus dem Park unter Schirmen.
 Ereignis: Partie gegen den Clubchef (Zielstärke E + 340, Profil `riverton.slick`), Wahl der
 Zeitklasse (Z1; Slick schlägt Blitz vor, Ambrose rät ab: „Er lebt von der Eile. Nimm ihm die
 Eile.“), Kartenwahl, Kipppunkt nach R14. Belohnung: **Clubnadel Riverton**, „Ambroses Notiz“,
-**Mentor-Zug** (R27, erste Nadel eines Clubs), 50 Münzen. Slick nach der Partie, bei jedem Ausgang: „Das war das letzte Spiel an diesem Tisch.
+**Mentor-Zug** (R27, erste Nadel eines Clubs), 50 Münzen. Slick nach der Partie, bei jedem Ausgang: „Das war das letzte Spiel in diesem Pavillon.
 Gut, dass es ein richtiges war.“ Etwa 30 Minuten.
 
-**37. Sonntagabend** · `akt2.steintischeWeg`
-Ort `riverton.park` · Slick, Juno, Ambrose. Ereignis: Dialog. Am nächsten Morgen sind die
-Steintische abgebaut, an ihrer Stelle zwei weitere Bildschirmtische. Slick packt sein altes Brett in
-die Kuriertasche: „Dann spielen wir eben auf der Treppe.“ Er schenkt {held} die eingeritzte
-Steinplatte des letzten Tisches (Fund F „Steinplatte vom letzten Tisch“, schaltet Bretthintergrund
-„Riverside-Steintisch“ frei, E3). Ambrose zum ersten Mal unsicher: „Er hat recht. Und die Tische
+**37. Sonntagabend** · `akt2.pavillonGeraeumt`
+Ort `riverton.pavillon`, dann `riverton.wohnwagen` · Slick, Juno, Ambrose. Ereignis: Dialog. Am
+nächsten Morgen stehen im Pavillon Bildschirmtische. Slick packt das letzte Marmorbrett in die
+Kuriertasche: „Dann spielen wir eben auf der Treppe.“ Im Wohnwagen zwischen den Dosentrophäen schenkt er {held} eine
+Figur aus dem letzten Satz, den weißen Springer mit der abgestoßenen Mähne (Fund F „Springer aus
+dem Pavillon“, schaltet Bretthintergrund „Riverton-Pavillon“ frei, E3). Ambrose zum ersten Mal unsicher: „Er hat recht. Und die Tische
 spielen trotzdem besser als er. Was heißt das?“ Etwa 4 Minuten.
 
 ### Route 3 und Ironwood
@@ -1077,15 +1096,18 @@ Angst. Vor einer Stadt. Das ist selten.“ {held} kann trotzdem nach Ironwood la
 frei), aber Mama erwartet {held} abends zurück. Wichtig: Die Geschichte bestraft nichts; das Verbot
 gilt dem Turnier, nicht dem Ort, und löst sich in Szene 43. Etwa 3 Minuten.
 
-**39. Das Foto im Pokalregal** · `akt2.fotoGefunden` · H `ironwood.mamasFinale`
-Ort `ironwood.pausenraum` · Juno, Big Joe. Ereignis: Dialog, Fund. Beim ersten Besuch im Werksclub
-findet Juno im Pokalregal ein Foto: „Jugendmeisterschaft 2001, Finale – Laura M., Stahlwerker-Club
-Ironwood“. Das Mädchen auf dem Foto hat Mamas Lachen. Big Joe wird still: „Du bist Lauries Kind?
-… Sag ihr, Big Joe lässt grüßen. Und dass es ihm leidtut.“ Fund F „Foto von 2001“ (kein
-Sammelbonus, Hauptquest-Gegenstand). Etwa 5 Minuten.
+**39. Mamas altes Zimmer** · `akt2.fotoGefunden` · H `ironwood.mamasFinale`
+Ort `ironwood.kantine`, dann `ironwood.mamasZimmer` · Big Joe, Oma Ruth, Juno. Ereignis: Dialog,
+Fund. Beim ersten Besuch in der Kantine stutzt Big Joe: „Kumpel, du hast ein Gesicht, das ich
+kenne. … Bist du Lauries Kind?“ Im Pokalregal ist eine Lücke, wo der Pokal von 2001 stehen
+sollte. Big Joe nennt die Elm Street: „Sag ihr, Big Joe lässt grüßen. Und dass es ihm leidtut.“
+Dort öffnet Oma Ruth, umarmt {held} lange und zeigt Mamas altes Zimmer: eine Silbermedaille, ein
+Foto „Jugendmeisterschaft 2001, Finale – Laura M., Stahlwerker-Club Ironwood“ und, unter Glas, das
+Partieformular des Finales mit einem Kreis um den 33. Zug. Oma Ruth: „Sie hat es eingerahmt und nie
+wieder angesehen.“ Fund F „Foto von 2001“ (Hauptquest-Gegenstand). Etwa 7 Minuten.
 
 **40. Die Eisenbrücke** · W `route3` · Zeit (Vorgabe 5, Zeitnot-Trick)
-Ort `route3.fabrikstrasse`, `route3.bruecke` · Ambrose, Juno, Mr. Dale. Ereignis: Rätseltafel
+Ort `route3.kanalweg`, `route3.bruecke` · Ambrose, Juno, Mr. Dale. Ereignis: Rätseltafel
 (Runde `route3.tafelHaltestelle`, 2 Fesselungen, 5 Münzen), Bauer mit Weisheit, Funde F „Zahnrad“
 und F „Nietenkopf mit Initialen J. H.“ (der Ingenieur hat diese Brücke gebaut; Ambrose erkennt die
 Initialen nicht oder will sie nicht erkennen). Auf der Brücke, im Wind, erklärt Ambrose den
@@ -1111,16 +1133,16 @@ ihn: „Joe spielt immer das Damengambit. Seit vierzig Jahren.“), Karte **Flü
 Etwa 7 Minuten.
 
 **42. Ednas Eisenwaren** · `akt2.ladenIronwood`
-Ort `ironwood.laden` · Edna. Ereignis: Laden (`oeffneLaden("ironwood.laden")`). Edna verkauft das
+Ort `ironwood.aussen` (Verkaufsfenster) · Edna. Ereignis: Laden (`oeffneLaden("ironwood.eisenwaren")`). Edna verkauft das
 Fahrrad für alle, die den Schlüssel nicht gefunden haben, und eine Laterne für versteckte Funde.
 „Das hält.“ Etwa 3 Minuten.
 
 **43. Mamas Partie** · `akt2.mamasPartie` · H `ironwood.mamasFinale` · Begegnung `ironwood.mama`
-Ort `mapleFalls.wohnzimmer`, dann `ironwood.pausenraum` · Mama, Big Joe, Juno, Ambrose. Ereignis:
+Ort `mapleFalls.wohnzimmer`, dann `ironwood.kantine` · Mama, Big Joe, Juno, Ambrose. Ereignis:
 Dialog, dann Partie. {held} zeigt Mama das Foto (Wahl: „Ich hab das gefunden.“ / „Big Joe lässt
 grüßen.“). Mama setzt sich, lange Pause. Sie erzählt kurz vom Finale 2001 und vom Spieß, den sie
 übersah. Dann: „Gut. Eine Partie. In Ironwood. Ich will den Raum sehen.“ Sie fährt mit {held} nach
-Ironwood, Big Joe und sie umarmen sich ohne Worte. Partie aus der Grundstellung: Mama mit Weiß,
+Ironwood, zuerst zu Oma Ruth, dann in die Kantine; Big Joe und sie umarmen sich ohne Worte. Partie aus der Grundstellung: Mama mit Weiß,
 Damengambit (Profil `mapleFalls.mutter`, Rolle `story`, Zielstärke E + 250, eingerostet: hohe
 Fehlerhäufigkeit im Mittelspiel, Gewicht `taktikUebersehen` hoch, blinder Fleck `roentgen`
 (Spieße!)), Karten erlaubt, zählt für die App (R37), jeder Ausgang führt weiter.
@@ -1135,8 +1157,8 @@ Zeit achten. Du spielst zu langsam.“ Ambrose leise: „Ihre Mutter, wenn ich s
 besser, als sie lügt.“ Wirkung: Szene gesetzt, Dialogvariable `mamaSpielt` = true, Juno klebt das
 Foto ins Tagebuch („Mit Glitzer. Diesmal ja.“). Etwa 25 Minuten.
 
-**44. Die Feier im Pausenraum** · N begegnung `ironwood.feier`
-Ort `ironwood.pausenraum` (Abend) · Big Joe, Hank, Priya, Mama, Juno. Ereignis: Dialog. Nach Mamas
+**44. Die Feier in der Kantine** · N begegnung `ironwood.feier`
+Ort `ironwood.kantine` (Abend) · Big Joe, Hank, Priya, Mama, Juno. Ereignis: Dialog. Nach Mamas
 Partie feiert der Werksclub das Wiedersehen bis spät. {held} kann bleiben oder früh gehen. Wer
 bleibt, sieht Big Joe um Mitternacht noch Geschichten erzählen. Wirkung bei Teilnahme: Big Joe ist
 am nächsten Tag **abgelenkt** (`setzeZustand`, Faktor 1,4, Grund `zustand.schlechtGeschlafen`,
@@ -1150,7 +1172,7 @@ geprüft im dritten Auftrag), Zielstärke A − 50. Belohnung: 10 Münzen, beim 
 **Zweite Chance**. Etwa 8 Minuten.
 
 **46. Aufgabenreihe Ironwood** · Runden `ironwood.reiheHank`, `ironwood.reihePriya`
-Ort `ironwood.pausenraum` · Hank, Priya. Ereignis: Aufgaben nach R30a, Zeitbudget 15 Minuten.
+Ort `ironwood.kantine` · Hank, Priya. Ereignis: Aufgaben nach R30a, Zeitbudget 15 Minuten.
 Hank: Fesselungen (Buch Kapitel 7, Abschnitt 7.2, Motiv 2; Übung 38 `ueb:taktik-a04`, Übung 17
 `ueb:elefant`). Priya: Spieße und Scheinbarer Schutz (Motiv 3; Übung 37 `ueb:taktik-a03`, Übung 22
 `ueb:legal-verteidigung`; Kapitel 4, Abschnitte 4.5 und 4.6). Themen `fesselung`, `spiess`.
@@ -1167,7 +1189,7 @@ starke Karte (die Bauernvorgabe gab es in Szene 35), stattdessen 20 Münzen (Abw
 siehe Bericht). Etwa 10 Minuten.
 
 **48. Clubkampf Ironwood** · `akt2.clubnadelIronwood` · H `ironwood.clubkampf`
-Ort `ironwood.pausenraum` · Big Joe, Mama, Juno, Hank, Priya. Ereignis: Partie gegen den
+Ort `ironwood.kantine` · Big Joe, Mama, Juno, Hank, Priya. Ereignis: Partie gegen den
 Clubchef (Zielstärke E + 400, Profil `ironwood.bigJoe`, Damengambit), Wahl der Zeitklasse,
 Kartenwahl, Kipppunkt. Mama sitzt zum ersten Mal als Zuschauerin dabei und sagt vor der Partie nur:
 „Grundreihe. Immer die Grundreihe.“ (Hinweis auf Big Joes Schwäche, wie ein Steckbrief.)
@@ -1176,18 +1198,19 @@ Etwa 30 Minuten.
 
 **49. Der Kauf** · `akt2.ironwoodVerkauft` · H `ironwood.clubkampf`
 Ort `ironwood.aussen` (Werkstor) · Big Joe, Victor, Graham Hale, Mama, Juno, Ambrose. Ereignis:
-Dialog. Am Werkstor hängt ein neues Schild: Das Stahlwerk hat den Pausenraum „für ein
+Dialog. Am Werkstor hängt ein neues Schild: Das Stahlwerk hat die Kantine „für ein
 Trainingszentrum“ an Perfect Move vermietet; der Club zieht in die Bildschirmtische um oder gar
 nicht. Graham Hale erklärt freundlich die Vorteile. Big Joe sagt nichts und trägt die Pokale in
 einem Karton hinaus. Victor steht neben seinem Vater und sieht Big Joe an; er fängt an: „Vater,
 vielleicht …“ und bricht ab. Mama stellt sich neben Big Joe. Etwa 5 Minuten.
 
 **50. Einladung nach Silicon Bay** · `akt2.einladung` · Ende Staffel 1 (Cliffhanger)
-Ort `route3.bruecke` (Abend) · Victor, {held}, Ambrose. Ereignis: Dialog. Victor kommt allein mit
-dem Fahrrad nach, zum ersten Mal ohne Tablet. Er gibt {held} eine Einladung zum Jugendturnier der
+Ort `ironwood.aussen` (Brücke und Bushaltestelle an der Schnellstraße, Abend, erster Schnee) ·
+Victor, {held}, Ambrose. Ereignis: Dialog. Victor kommt allein vom Werkstor herüber, zum ersten
+Mal ohne Tablet; Schneeflocken auf seinem Trainingsanzug. Er gibt {held} eine Einladung zum Jugendturnier der
 Konzern-Akademie in Silicon Bay. „Komm. Dann siehst du, wogegen du spielst.“ Pause. „Und vielleicht
-sagst du mir dann, ob ich auf der richtigen Seite stehe.“ Er fährt weg, bevor {held} antworten
-kann. Ambrose sieht ihm nach, dann auf die Nieten der Brücke mit „J. H.“: „Ein Hale, der fragt.
+sagst du mir dann, ob ich auf der richtigen Seite stehe.“ Er steigt in den Bus nach Silicon Bay, bevor {held}
+antworten kann. Ambrose sieht ihm nach, dann auf die Nieten der Brücke mit „J. H.“ (dieselben Initialen wie auf Route 3): „Ein Hale, der fragt.
 Das ist neu.“ Ende der Staffel: Im Tagebuch steht „Silicon Bay“, Juno hat ein Fragezeichen mit
 Glitzer gemalt. Etwa 4 Minuten.
 
@@ -1222,21 +1245,21 @@ Hilfe-Quest; eine eigene Hilfe-Quest wäre neben der Hauptlinie zu viel.
 Funde je Ort mit einem Satz; „E3“ heißt: schaltet ein Extra frei (Quelle `abenteuer:<fund>`).
 Münzen nach G1 (5 bis 20).
 
-| Ort      | Fund                            | Wo                                                     | Satz (Ambrose oder Juno)                                              | Wirkung                                     |
-| -------- | ------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------- |
-| Route 2  | Pfeilspitze                     | unter einem Farn am Bach (versteckt)                   | „Wer hier jagte, kannte den Wald besser als jede Karte.“              | 5 Münzen                                    |
-| Route 2  | Fahrkarte von 1958              | im Schotter am Bahndamm                                | „Riverton, einfache Fahrt. Wer fuhr damals, und kam er an?“           | 10 Münzen                                   |
-| Route 2  | Springer aus Holz               | in einem hohlen Baumstamm (versteckt)                  | „Ein Springer, allein im Wald. Er hüpft wohl noch.“                   | E3: Figurensatz „Waldholz“ (1/3)            |
-| Riverton | Steinplatte vom letzten Tisch   | Geschenk von Slick (Szene 37)                          | „Hier haben Menschen gespielt. Man sieht die Kratzer ihrer Ungeduld.“ | E3: Bretthintergrund „Riverside-Steintisch“ |
-| Riverton | Zeitungsausschnitt Schachspalte | im Kiosk hinter dem Ständer (versteckt)                | „Mr. Odums letzte Aufgabe, nie gelöst.“                               | Rätsel mit 1 Aufgabe, 10 Münzen             |
-| Riverton | Taubenfeder vom Uhrenturm       | auf der Bank von Mr. Harlan                            | „Eine Feder. Damit schrieb man früher Partien auf.“                   | 5 Münzen                                    |
-| Riverton | Läufer aus Holz                 | unter der Treppe am Fluss (versteckt)                  | „Noch ein Holzstück. Jemand hat einen ganzen Satz verloren.“          | E3: Figurensatz „Waldholz“ (2/3)            |
-| Route 3  | Zahnrad                         | am Zaun der leeren Fabrik                              | „Ein Rad, das kein anderes mehr dreht.“                               | 5 Münzen                                    |
-| Route 3  | Nietenkopf mit Initialen J. H.  | am Brückengeländer                                     | Ambrose schweigt; Juno: „J. H.? Wer ist das?“                         | übergreifend, Akt 3 (siehe unten)           |
-| Ironwood | Foto von 2001                   | Pokalregal (Szene 39)                                  | Juno: „Sie hat genau so gelacht wie deine Mama.“                      | Hauptquest                                  |
-| Ironwood | Umschlag ohne Brief             | Postsack im Museum (Szene 41)                          | „Er hat geschrieben.“                                                 | übergreifend, Akt 3 (E4 neu)                |
-| Ironwood | Turm aus Holz                   | in einer Schublade bei Edna (versteckt, Laterne nötig) | „Der letzte. Jetzt ist der Satz vollständig.“                         | E3: Figurensatz „Waldholz“ (3/3)            |
-| Ironwood | Funke aus Glas                  | Schaukasten im Museum                                  | „Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt.“          | 10 Münzen                                   |
+| Ort      | Fund                            | Wo                                                     | Satz (Ambrose oder Juno)                                              | Wirkung                                  |
+| -------- | ------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------- | ---------------------------------------- |
+| Route 2  | Pfeilspitze                     | unter einem Farn am Bach (versteckt)                   | „Wer hier jagte, kannte den Wald besser als jede Karte.“              | 5 Münzen                                 |
+| Route 2  | Fahrkarte von 1958              | im Schotter am Bahndamm                                | „Riverton, einfache Fahrt. Wer fuhr damals, und kam er an?“           | 10 Münzen                                |
+| Route 2  | Springer aus Holz               | in einem hohlen Baumstamm (versteckt)                  | „Ein Springer, allein im Wald. Er hüpft wohl noch.“                   | E3: Figurensatz „Waldholz“ (1/3)         |
+| Riverton | Springer aus dem Pavillon       | Geschenk von Slick (Szene 37)                          | „Hier haben Menschen gespielt. Man sieht die Kratzer ihrer Ungeduld.“ | E3: Bretthintergrund „Riverton-Pavillon“ |
+| Riverton | Zeitungsausschnitt Schachspalte | am Zeitungsstand hinter dem Ständer (versteckt)        | „Mr. Odums letzte Aufgabe, nie gelöst.“                               | Rätsel mit 1 Aufgabe, 10 Münzen          |
+| Riverton | Taubenfeder                     | auf der Bank von Mr. Harlan in der Bahnhofshalle       | „Eine Feder. Damit schrieb man früher Partien auf.“                   | 5 Münzen                                 |
+| Riverton | Läufer aus Holz                 | unter der Brücke beim Straßenmusiker (versteckt)       | „Noch ein Holzstück. Jemand hat einen ganzen Satz verloren.“          | E3: Figurensatz „Waldholz“ (2/3)         |
+| Route 3  | Zahnrad                         | am Zaun der leeren Fabrik                              | „Ein Rad, das kein anderes mehr dreht.“                               | 5 Münzen                                 |
+| Route 3  | Nietenkopf mit Initialen J. H.  | am Brückengeländer                                     | Ambrose schweigt; Juno: „J. H.? Wer ist das?“                         | übergreifend, Akt 3 (siehe unten)        |
+| Ironwood | Foto von 2001                   | Mamas altes Zimmer (Szene 39)                          | Juno: „Sie hat genau so gelacht wie deine Mama.“                      | Hauptquest                               |
+| Ironwood | Umschlag ohne Brief             | Postsack im Museum (Szene 41)                          | „Er hat geschrieben.“                                                 | übergreifend, Akt 3 (E4 neu)             |
+| Ironwood | Turm aus Holz                   | Schließfach in der Umkleide (versteckt, Laterne nötig) | „Der letzte. Jetzt ist der Satz vollständig.“                         | E3: Figurensatz „Waldholz“ (3/3)         |
+| Ironwood | Funke aus Glas                  | Schaukasten im Museum                                  | „Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt.“          | 10 Münzen                                |
 
 **Übergreifende Quests (E4):**
 
@@ -1267,19 +1290,19 @@ Sanduhr, Vorgaben und Zeitkarten sind nie käuflich (G3, Z4). Ein Clubbesuch bri
 Ironwood ähnlich; das reicht für eine Karte und eine Fahrkarte je Stadt oder das Fahrrad nach zwei
 Städten.
 
-| Laden            | Figur | Angebot                                             | Preis | Vorrat      |
-| ---------------- | ----- | --------------------------------------------------- | ----- | ----------- |
-| `riverton.kiosk` | Pops  | Fingerzeig (Verbrauchskarte)                        | 15    | 3 je Besuch |
-|                  |       | Zweite Chance                                       | 20    | 2 je Besuch |
-|                  |       | Zugfahrkarte Cedar Creek ↔ Riverton                 | 10    | unbegrenzt  |
-|                  |       | Bretthintergrund „Zeitungspapier“ (Extra)           | 40    | einmal      |
-|                  |       | Taschenschach „Kiosk-Edition“ (Album, ohne Wirkung) | 10    | einmal      |
-| `ironwood.laden` | Edna  | Zweite Chance                                       | 20    | 2 je Besuch |
-|                  |       | Ambroses Flüstern                                   | 40    | 1 je Besuch |
-|                  |       | Fahrrad (W3), nur ohne Schlüssel aus Szene 33       | 120   | einmal      |
-|                  |       | Laterne (versteckte Funde in Innenräumen sichtbar)  | 60    | einmal      |
-|                  |       | Busfahrkarte Riverton ↔ Ironwood                    | 10    | unbegrenzt  |
-|                  |       | Bretthintergrund „Glühender Hochofen“ (Extra)       | 80    | einmal      |
+| Laden                    | Figur | Angebot                                                    | Preis | Vorrat      |
+| ------------------------ | ----- | ---------------------------------------------------------- | ----- | ----------- |
+| `riverton.zeitungsstand` | Pops  | Fingerzeig (Verbrauchskarte)                               | 15    | 3 je Besuch |
+|                          |       | Zweite Chance                                              | 20    | 2 je Besuch |
+|                          |       | Zugfahrkarte Cedar Creek ↔ Riverton                        | 10    | unbegrenzt  |
+|                          |       | Bretthintergrund „Zeitungspapier“ (Extra)                  | 40    | einmal      |
+|                          |       | Taschenschach „Bahnhofs-Edition“ (Album, ohne Wirkung)     | 10    | einmal      |
+| `ironwood.eisenwaren`    | Edna  | Zweite Chance                                              | 20    | 2 je Besuch |
+|                          |       | Ambroses Flüstern                                          | 40    | 1 je Besuch |
+|                          |       | Fahrrad (W3), nur ohne Schlüssel aus Szene 33              | 120   | einmal      |
+|                          |       | Laterne (versteckte Funde in dunklen Innenräumen sichtbar) | 60    | einmal      |
+|                          |       | Busfahrkarte Riverton ↔ Ironwood                           | 10    | unbegrenzt  |
+|                          |       | Bretthintergrund „Glühender Hochofen“ (Extra)              | 80    | einmal      |
 
 Hinweis: „Fingerzeig“ ist im Kartenverzeichnis eine dauerhafte Karte (`karten.json`); als
 Ladenware ist er hier als Verbrauchskarte gedacht (G2). Das braucht entweder eine zweite Sorte
@@ -1290,7 +1313,7 @@ Ladenware ist er hier als Verbrauchskarte gedacht (G2). Das braucht entweder ein
 | Karte           | Wo                                            | Warum hier                                                 |
 | --------------- | --------------------------------------------- | ---------------------------------------------------------- |
 | Zeitbonus       | Szene 27, Schaffner am Bahndamm (erster Sieg) | erste Partie mit Uhr, Zeit als Hilfe wird spürbar (Z3, Z4) |
-| Zeitdruck       | Szene 34, Zuschauen am Steintisch             | Belohnung einer Nebenquest, passt zu Slicks Eile (Z3)      |
+| Zeitdruck       | Szene 34, Zuschauen im Pavillon               | Belohnung einer Nebenquest, passt zu Slicks Eile (Z3)      |
 | Zeitnot-Trick   | Szene 40, Ambrose auf der Brücke (Geschenk)   | Z6, mit dem ehrlichen Satz aus Kapitel 12, Abschnitt 12.5  |
 | Bauernvorgabe   | Szene 35, Flashback London (≥ 70 %)           | Erinnerung nach R27                                        |
 | Flüstern        | Szene 41, Rätsel im Museum                    | Rätsel nach R27                                            |

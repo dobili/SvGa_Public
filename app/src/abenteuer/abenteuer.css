@@ -208,6 +208,11 @@
 }
 
 /* Tagebuchknopf oben links; das Tagebuch selbst nutzt die Menükarte. */
+/* Unter dem Tagebuch: Schnellreise mit der Monatskarte. */
+.abenteuer-reisenknopf.abenteuer-tagebuchknopf {
+  top: calc(var(--raster) * 2 + 44px);
+}
+
 .abenteuer-tagebuchknopf {
   position: absolute;
   top: var(--raster);

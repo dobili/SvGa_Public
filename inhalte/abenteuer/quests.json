@@ -893,6 +893,27 @@
       ]
     },
     {
+      "kennung": "riverton.lupe",
+      "titel": "quest.lupe.titel",
+      "typ": "begegnung",
+      "ort": "riverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "riverton-bahnhofshalle.harlan_erstes_treffen"
+      },
+      "schritte": [
+        {
+          "text": "quest.lupe.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "riverton-bahnhofshalle.harlan_lupe"
+          },
+          "wirkungen": [{ "art": "gegenstand", "gegenstand": "lupe" }]
+        }
+      ]
+    },
+    {
       "kennung": "mapleFalls.limo",
       "titel": "quest.limo.titel",
       "typ": "begegnung",

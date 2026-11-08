@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: die 17 Karten von Akt 3
 
-**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der elfte Auftrag, alle 17 Karten von Akt 3, ist zusammengeführt, danke. Die Tabelle in mittel-1.md hatte ich versehentlich überschrieben, sie steht wieder dort. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** die 17 Kartendateien aus der Tabelle unten (neu), `docs/spiel/auftraege/niedrig-1.md`
@@ -303,4 +303,390 @@ erinnerung-london-kaffeehaus.json
 #              #
 #       s      #
 ########t#######
+```
+
+Zweig: `abenteuer-aufgabenzuordnung`. Die Tabelle aus `mittel-1.md` habe ich dort nicht gefunden;
+Objekte, Figuren und Kartenzuordnung (Feld `karte`) stammen deshalb direkt aus `orte.json`.
+Figuren ohne `karte` sind nach Bibel und 09 verteilt.
+
+**Teil 1: Weg 4 und Silicon Bay (6 Karten, gepusht).** 415 Tests bestanden, keiner der sechs
+übersprungen; Prettier und Paketbau sauber.
+
+- `weg-ironwood-silicon-raststaette` (28 × 20): Leitplanke der Schnellstraße oben, Lkw, Raststätte
+  mit Kaffeeautomat (`tafel`), `fundAnstecker`, Fernfahrerin `kowalczyk` am Lkw; `fernfahrer`,
+  `reisende`, `kraehe`, `hund`.
+- `weg-ironwood-silicon-glasbruecke` (28 × 20): Brücke über der Autobahn, `fundOhrstoepsel`,
+  `joggerin`; `pendlerin` (morgen), `lieferroboter`, `drohne`.
+- `silicon-bay-aussen` (32 × 24): Akademie und Konzernzentrale (Lobby) oben, Straßenbahngleis,
+  Straße, `hotel` unten links, Food-Truck mit Bank (`rosie`, `dash`), `victor`, `busIronwood` an
+  der Haltestelle, `glasbruecke` links, `faehre` rechts; `angestellte`, `wachmann`, `besucher`;
+  nur Maschinen als „Tiere“ (09, 4): `lieferroboter`, `drohne`.
+- `silicon-bay-akademie` (18 × 12): sechs Bildschirmbretter, Lins Schreibtisch, `lin`, `nova` an
+  der Fensterbank, `theo` an der Datenwand, `serverraumTuer` rechts am Rand; `schueler`,
+  `saugroboter`.
+- `silicon-bay-serverraum` (12 × 10): drei Serverreihen, `schummelgeraete` in einer Schublade.
+- `silicon-bay-lobby` (14 × 10): `vitrineHale`, `empfangsroboter`; `besuchergruppe`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Rangliste, Glaspokal, Zettel „Drei Ziele“
+  (Akademie, 09 5.6).
+
+```text
+weg-ironwood-silicon-raststaette.json
+############################
+#                          #
+############################
+############################
+#                          #
+#                          #
+#  KKK              KKKK   #
+#  KKKK             KKKK   #
+#       L          L       #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#          t               #
+#         #### ####        #
+#         ##F###F##        #
+#         #########        #
+#         #########     f  #
+#         #########        #
+#                          #
+#                          #
+############################
+
+weg-ironwood-silicon-glasbruecke.json
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+#TTTTTTTTLTTTTTTTTLTTTTTTTT#
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTJTTTTTT#
+#TTTTTTTTTTTTfTTTTTTTTTTTTT#
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+silicon-bay-aussen.json
+################################
+#  ##########     ###########  #
+#  ##F####F##     ##F#####F##  #
+#  ##########     ###########  #
+#  ##########     ###########  #
+#  ####a#####     #####l#####  #
+#                              #
+##############  ################
+#                              #
+#                              #
+gTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTf
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#           b             V    #
+#           L                  #
+#     h                LL      #
+#  #######     RKKKK           #
+#  ##F##F#      KKKK           #
+#  #######                     #
+#  #######       KKD           #
+#  #######                     #
+#  #######                     #
+#                              #
+#                              #
+################################
+
+silicon-bay-akademie.json
+####F########F####
+#L  N       L    #
+# T        KKK   #
+#                #
+#  B  B          #
+#                s
+#                #
+#  B  B   B  B   #
+#                #
+#                #
+#        s       #
+#########a########
+
+silicon-bay-serverraum.json
+############
+# KKKKKKKK #
+#          #
+#          #
+# KKKKKKKK #
+ss         #
+#          #
+# KKKKKKKK #
+#         s#
+############
+
+silicon-bay-lobby.json
+###F######F###
+#            #
+#            #
+#    KvKK    #
+#            #
+#          E #
+#KK          #
+#            #
+#      s     #
+#######l######
+```
+
+**Teil 2: Weg 5 und Port Delacroix (6 Karten, gepusht).** 445 Tests bestanden, keine der sechs
+übersprungen; Prettier und Paketbau sauber.
+
+- `weg-silicon-delacroix-faehre` (28 × 20): Fährdeck, Wasser rundum, Salon mit `tafel` am Eingang,
+  `fundFlaschenpost`, `schiffskoch`; `passagierin`, `matrose`, `moewen`, `pelikan`.
+- `weg-silicon-delacroix-deich` (28 × 20): Deich zwischen Wasser und Sumpf, Sandsäcke,
+  `fundMuschel`, `guidry`; `helfer`, `reiher`, `moewe`.
+- `port-delacroix-aussen` (32 × 24): Turnhalle und Klavierwerkstatt oben, Straße mit Brettern vor
+  den Häusern (`brettHaus1` bis `4`), Gebäckstand mit `arceneaux`, zwei Zelte, Ruine des
+  Musikhauses am Kai, Boot mit `batiste`, Wasser unten; `deich` links, `wuestenzug` rechts;
+  `handwerker`, `sandsackhelfer`, `ballkinder`, `blaeser` (abend), `pelikane`, `moewen`, `reiher`
+  am Bauzaun, `katze` auf dem Boot.
+- `port-delacroix-turnhalle` (18 × 12): Körbe, acht Klapptische mit Brettern, `odile`, `remy`,
+  `lou`; `clubkinder`.
+- `port-delacroix-werkstatt` (16 × 12): Klaviere unter Planen, Hobelbank (`werkbank`), `henri`,
+  `celeste`.
+- `port-delacroix-musikhaus` (16 × 12): Ruine mit Trümmern, `schild` an der Wand; `aufraeumer`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Spendenkasse, nasses Notenheft, Plakat „Wir
+  spielen weiter“ (Turnhalle), Foto des jungen Ambrose und Célestes Laptop als Auslöser
+  (Werkstatt). Gerüste gibt der Platzhaltersatz nicht her (Bretter und Kisten stehen dafür).
+
+```text
+weg-silicon-delacroix-faehre.json
+############################
+############################
+############################
+############################
+############################
+#  L                    L  #
+#         ########         #
+#         #F#t##F#         #
+#         ### ####         #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                 S        #
+#    f              KKK    #
+#                   KKK    #
+#                          #
+############################
+############################
+############################
+############################
+############################
+
+weg-silicon-delacroix-deich.json
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+#                     L    #
+#     KK       KKK         #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                   G      #
+#          f               #
+#                          #
+############################
+############################
+############################
+############################
+############################
+############################
+
+port-delacroix-aussen.json
+################################
+#                              #
+# ########  #######            #
+# ##F##F##  ##F##F#            #
+# ########  #######            #
+# ########  #######            #
+# ########  #######            #
+# ###t####  ###w###            #
+#   b     b        b      b    #
+#                   gA         #
+dTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTw
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                    K     L   #
+#  KKK   KKK          ###m#### #
+#  KKK   KKK          ######## #
+#                     ######## #
+#             KKK              #
+#TTTTTTTTTTTTTTBTTTTTTTTTTTTTTT#
+#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+################################
+################################
+################################
+################################
+################################
+
+port-delacroix-turnhalle.json
+#L##############L#
+#                #
+#        O       #
+#                #
+#  BR B    B  B  #
+#                #
+#                #
+#  B  B    BL B  #
+#                #
+#                #
+#        s       #
+#########t########
+
+port-delacroix-werkstatt.json
+####F######F####
+#              #
+# KKK      KKK #
+# KKK      KKK #
+#           C  #
+#       KwK    #
+#        H     #
+# KKK          #
+# KKK          #
+#              #
+#       s      #
+########w#######
+
+port-delacroix-musikhaus.json
+########s#######
+#              #
+#              #
+# KK           #
+# KK           #
+#              #
+#          KKK #
+#          KKK #
+#   K          #
+#              #
+#       s      #
+########m#######
+```
+
+**Teil 3: Weg 6 und Desert Springs (5 Karten, gepusht).** 470 Tests bestanden, 0 übersprungen;
+Prettier und Paketbau sauber. Damit sind alle 17 Karten von Akt 3 gezeichnet.
+
+- `weg-delacroix-desert-canyonpfad` (28 × 20): roter Fels oben und unten, `tafel` am Bahnhof,
+  Miras flacher `stein`, `fundEidechsenhaut`; `eidechsen`, `roadrunner`, `wanderin` (morgen).
+- `weg-delacroix-desert-felsbogen` (28 × 20): Felsbogen mit Pfeilern, `aussichtspunkt` darunter,
+  Eisenbahnbrücke unten mit `fundNieten`, `holloway` am Abstieg; `geier`, `eidechse`,
+  `fotograf` (abend).
+- `desert-springs-aussen` (32 × 24): Motel mit `dot`, Garage (`garageTuer`), Diner, Tankstelle mit
+  `buck` am Auto, alter Bahnhof mit `antiquariatTuer` und `bahnhof`, Kakteen; `canyon` links;
+  `tankwartlehrling`, `touristen`, `wartender`, `eidechsen`, `geier`, `hund` vor dem Diner.
+- `desert-springs-garage` (14 × 10): Werkbank, Reifenstapel mit Brett, `mira`, `tomas`.
+- `desert-springs-antiquariat` (14 × 10): Bücherregale, Kisten mit Briefen, `okoro`; `kundin`.
+- Nicht in `orte.json`, daher nicht gezeichnet: Miras Dosenpokal (Garage), Nachlass des
+  Brückenbauers als Auslöser (Antiquariat). Desert Springs hat keinen Übergang nach Akt 4; die
+  rechte Straßenseite ist deshalb geschlossen.
+
+Checkliste 6 für alle 17 Karten: Größe und Rand [x] (Kartentest), Belebung [x] (außen je mindestens
+zwei Statisten und Tiere, Silicon Bay nur Maschinen), Figuren an ihren Orten [x]; Geräusch, Musik,
+Tönung, Matten und Questspuren offen wie bisher (Grafik oder `orte.json`).
+
+```text
+weg-delacroix-desert-canyonpfad.json
+############################
+############################
+############################
+############################
+############################
+############################
+#                sK        #
+#            L             #
+#   t                      #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#       #####         f    #
+#       #####              #
+############################
+############################
+############################
+############################
+############################
+############################
+
+weg-delacroix-desert-felsbogen.json
+############################
+############################
+############################
+############################
+############################
+#         ##TTTT##         #
+#         ##TaTT##         #
+#         ##TTTT##         #
+#                    H     #
+zsTTTTTTTTTTTTTTTTTTTTTTTTTw
+#TTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                          #
+#     KfKK                 #
+############################
+############################
+############################
+############################
+############################
+############################
+############################
+
+desert-springs-aussen.json
+################################
+#                              #
+# ###########      #######     #
+# ##F###F########  ##F#F##     #
+# ###############  #######     #
+# ###############  #######     #
+# ############g##  #######     #
+#  D  m                        #
+#                L             #
+#                              #
+cTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#sTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+#                              #
+#             L             L  #
+#        b                     #
+#  ####a####        KK  KK     #
+#  #F#######        KK         #
+#  #########          B        #
+#  #########          K        #
+#  #########                   #
+#                              #
+#                              #
+#                              #
+################################
+
+desert-springs-garage.json
+##############
+#KKKKK     L #
+#            #
+#            #
+#   M   TKK  #
+#   B    KK  #
+#            #
+#            #
+#      s     #
+#######g######
+
+desert-springs-antiquariat.json
+####F#####F###
+#            #
+#K   O      K#
+#K  KKK     K#
+#K          K#
+#K          K#
+#K      KKK K#
+#            #
+#      s     #
+#######a######
 ```

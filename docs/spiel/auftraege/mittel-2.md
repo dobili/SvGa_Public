@@ -57,13 +57,14 @@ Reisebrett, Ankunft, Dr. Lin, Reihe Theo, Reihe Nova mit Zweiter Chance, Clubkam
 Hotelnacht), `siliconBay.spielberichte` (Auswertung → Steckbrief und „analysiert“ für Dr. Lin;
 Serverraum → Gegenstand `ohrempfaenger`), `siliconBay.fehlendeSeite` (Gegenstand `notizbuchseite`),
 `wegIronwoodSilicon.tafelRaststaette`. **Runden:** `wegIronwoodSilicon.tafel` (3), `siliconBay.reiheTheo`,
-`siliconBay.reiheNova`, `siliconBay.auswertung` (3). **Texte:** 15 neue Schlüssel.
+`siliconBay.reiheNova`, `siliconBay.auswertung` (3); Novas Reihe und die Tafel nutzen nach dem Hinweis
+des Haupt-Chats das neue Thema `falle`. **Texte:** 15 neue Schlüssel.
 
 **Prüfungen:** `pytest pipeline/tests` 385 bestanden; Paketbau kompiliert alle Ink-Dateien;
 Simulation mit inkjs (alle Knoten wie im Spiel gemeldet, Variablen beim Dialogende zurückgeschrieben
 wie in `Oberwelt.beiDialogende`, Quests wie `regeln/quests.ts`): ein Durchgang von der Abfahrt in
 Ironwood bis zur Fähre mit verlorener und gewonnener Joggerin- und Clubpartie; alle vier Quests
-erledigt. `npm run pruefen`: bestanden (359 Dateien, 2409 Tests).
+erledigt. `npm run pruefen`: bestanden (nach dem Hereinholen von 62297ddb: 360 Dateien, 2411 Tests; pytest 470).
 
 **Befunde**
 
@@ -83,8 +84,7 @@ erledigt. `npm run pruefen`: bestanden (359 Dateien, 2409 Tests).
 3. **Laden fehlt:** `siliconBay.foodtruck` (Rosie) steht nicht in `laeden.json`; Rosie erzählt nur.
    Angebot laut Bibel Abschnitt 22.
 4. **Buchübungen des Clubs** (`ueb:spannung-halten`, `ueb:k2-italienisch-sg5`, `ueb:k2-carokann-h4`,
-   `ueb:lasker-falle`) liegen nicht im Taktiktrainer; die Reihen nutzen nur die Themen `haengend` und
-   `gefangen`. Die Auswertung der Spielberichte (Szene 56) läuft als Runde mit dem Thema `haengend`,
+   `ueb:lasker-falle`) liegen nicht im Taktiktrainer; die Reihen nutzen nur Themen (`haengend`, `falle`). Die Auswertung der Spielberichte (Szene 56) läuft als Runde mit dem Thema `haengend`,
    bis es eine Aufgabenart „Welcher Zug ist zu gut?“ gibt.
 5. **Szenen-Wirkungen:** Hauptquest setzt `akt3.abfahrt` bis `akt3.ambroseGebannt`; Nebenquests setzen
    keine Szene, damit die Haupthandlung nicht springt.

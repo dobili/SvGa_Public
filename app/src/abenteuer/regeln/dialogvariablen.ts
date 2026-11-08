@@ -20,10 +20,21 @@ function grossAnfang(wort: string): string {
   return wort.charAt(0).toUpperCase() + wort.slice(1);
 }
 
-/** Variable zum Ausgang einer Begegnung: `ausgangMapleFallsClubkampf` = „sieg“. */
-export function variablenNachPartie(begegnung: string, ausgang: Ausgang): Variablen {
+/**
+ * Variablen zum Ausgang einer Begegnung: `ausgangMapleFallsClubkampf` = „sieg“, dazu bei einem Sieg
+ * der Zähler `siegeRivertonHarlan` (wie oft gewonnen; Ink fragt etwa „drei Siege“ ab, Harlans
+ * Lupe, docs/spiel/05, Szene 31a). `bisher` sind die Variablen vor der Partie.
+ */
+export function variablenNachPartie(
+  begegnung: string,
+  ausgang: Ausgang,
+  bisher: Variablen = {},
+): Variablen {
   const name = begegnung.split(".").map(grossAnfang).join("");
-  return { [`ausgang${name}`]: ausgang };
+  if (ausgang !== "sieg") return { [`ausgang${name}`]: ausgang };
+  const alt = bisher[`siege${name}`];
+  const siege = (typeof alt === "number" ? alt : 0) + 1;
+  return { [`ausgang${name}`]: ausgang, [`siege${name}`]: siege };
 }
 
 /**

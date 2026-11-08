@@ -19,12 +19,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeZusatzaufgaben } from "../../daten/laden";
-import { ladeTaktik } from "../../daten/trainerdaten";
+import { ladeFallen, ladeStrukturen, ladeTaktik } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { aendere } from "../../speicher/speicher";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
+import { Fallenaufgabe } from "../../ui/trainer/Fallenaufgabe";
+import { Strukturaufgabe } from "../../ui/trainer/Strukturaufgabe";
 import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
@@ -74,7 +76,11 @@ function Runde({
   return (
     <Rundenrahmen kennung="taktik" runde={mitProtokoll} nochmal={() => {}} zurAuswahl={null}>
       <div key={runde.index} className="trainer-aufgabe">
-        {aktuelle.art === "zusatz" ? (
+        {aktuelle.art === "falle" ? (
+          <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+        ) : aktuelle.art === "struktur" ? (
+          <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+        ) : aktuelle.art === "zusatz" ? (
           <Taktikaufgabe
             aufgabe={aktuelle.aufgabe.aufgabe}
             runde={mitProtokoll}
@@ -121,13 +127,18 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
   );
   const taktik = useDaten(ladeTaktik, "trainer-taktik");
   const zusaetze = useDaten(ladeZusatzaufgaben, "zusatzaufgaben");
-  const aufgaben = useMemo(
-    () =>
-      auftrag && taktik.art === "fertig" && zusaetze.art === "fertig"
-        ? rundenaufgaben(auftrag, taktik.wert.aufgaben, zusaetze.wert)
-        : null,
-    [auftrag, taktik, zusaetze],
-  );
+  const fallen = useDaten(ladeFallen, "trainer-falle");
+  const strukturen = useDaten(ladeStrukturen, "trainer-struktur");
+  const aufgaben = useMemo(() => {
+    if (!auftrag || taktik.art !== "fertig" || zusaetze.art !== "fertig") return null;
+    if (fallen.art === "laedt" || strukturen.art === "laedt") return null;
+    // Fehlen die Daten eines Trainers, fallen nur seine Themen weg (wie unbekannte Themen).
+    const weitere = {
+      fallen: fallen.art === "fertig" ? fallen.wert.aufgaben : [],
+      strukturen: strukturen.art === "fertig" ? strukturen.wert.aufgaben : [],
+    };
+    return rundenaufgaben(auftrag, taktik.wert.aufgaben, zusaetze.wert, undefined, weitere);
+  }, [auftrag, taktik, zusaetze, fallen, strukturen]);
   const beiEnde = (ergebnisse: readonly Antwortergebnis[], sekunden: number) => {
     if (!auftrag) return;
     void aendere((d) => ({

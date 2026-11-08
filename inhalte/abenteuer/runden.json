@@ -203,7 +203,7 @@
       "steller": "wegIronwoodSilicon.tafel",
       "reihe": false,
       "buchuebungen": [],
-      "themen": ["haengend"],
+      "themen": ["falle"],
       "anzahl": 3
     },
     {
@@ -220,7 +220,7 @@
       "steller": "siliconBay.nova",
       "reihe": true,
       "buchuebungen": [],
-      "themen": ["gefangen"]
+      "themen": ["falle"]
     },
     {
       "kennung": "siliconBay.auswertung",

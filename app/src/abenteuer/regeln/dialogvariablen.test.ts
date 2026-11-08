@@ -14,6 +14,16 @@ describe("Dialogvariablen aus Ergebnissen", () => {
   it("bildet die Langform mit Ort aus der Kennung der Begegnung", () => {
     expect(variablenNachPartie("mapleFalls.clubkampf", "sieg")).toEqual({
       ausgangMapleFallsClubkampf: "sieg",
+      siegeMapleFallsClubkampf: 1,
+    });
+    expect(
+      variablenNachPartie("riverton.harlan", "sieg", { siegeRivertonHarlan: 2 })
+        .siegeRivertonHarlan,
+    ).toBe(3);
+    expect(
+      variablenNachPartie("riverton.harlan", "niederlage", { siegeRivertonHarlan: 2 }),
+    ).toEqual({
+      ausgangRivertonHarlan: "niederlage",
     });
     expect(variablenNachPartie("cedarCreek.rosaDuell", "niederlage")).toEqual({
       ausgangCedarCreekRosaDuell: "niederlage",

@@ -44,6 +44,6 @@ Schlüssel), `docs/spiel/auftraege/mittel-1.md`
 
 Keine neuen Texte nötig. Prüfungen: pytest `test_abenteuer.py` (11), Paketbau, Prettier,
 Durchspielen (10044 Läufe ohne Fehler), alle Zweige von Pops, Edna und Schließfach einzeln (Laden
-wird jedes Mal geöffnet, Fund nur mit Laterne), `npm run pruefen` (2382 Tests).
+wird jedes Mal geöffnet, Fund nur mit Laterne), `npm run pruefen` (2383 Tests).
 
 **Offene Fragen:** keine.

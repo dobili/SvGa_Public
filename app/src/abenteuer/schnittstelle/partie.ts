@@ -84,6 +84,8 @@ export interface Partieauftrag {
   readonly zeitwahl?: boolean;
   /** Wird die Farbe ausgelost (Begegnung „farbe“: „zufall“)? Dann darf die Karte Farbwahl sie bestimmen. */
   readonly farbeFrei?: boolean;
+  /** Freie Karten der Begegnung (R29: Mentor-Zug im Halbfinale), ohne Besitz im Deck. */
+  readonly freieKarten?: readonly string[];
 }
 
 /**

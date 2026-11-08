@@ -111,6 +111,11 @@ def test_querverweise_stimmen():
         if "kapitel" in karte:
             schluessel.append(f"karte.{karte['kennung']}.geschenkt")
         fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
+    # Freie Karten (R29) gibt es in karten.json.
+    for begegnung in _lade("begegnungen.json")["begegnungen"]:
+        for k in begegnung.get("freieKarten", []):
+            if k not in karten:
+                fehler.append(f"{begegnung['kennung']}: freie Karte {k} fehlt in karten.json")
     # Erinnerungen (docs/spiel/08, F1): die Partie gibt es unter den Klassikern.
     klassiker = json.loads(
         (HAUPTORDNER / "inhalte" / "zusatzpartien" / "klassiker.json").read_text(encoding="utf-8")

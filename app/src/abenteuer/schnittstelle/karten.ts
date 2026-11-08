@@ -111,4 +111,9 @@ export interface Kartenspiel {
   readonly stufe: Kartenstufe;
   /** Halbzug der Partie, bei dem die Karte gespielt wurde; 0 für Karten vor Partiebeginn. */
   readonly halbzug: number;
+  /**
+   * Freie Karte der Begegnung (R29: Mentor-Zug im Halbfinale): nicht aus dem Besitz, nicht
+   * verbraucht, zählt nicht für Nadel und Wertung.
+   */
+  readonly frei?: boolean;
 }

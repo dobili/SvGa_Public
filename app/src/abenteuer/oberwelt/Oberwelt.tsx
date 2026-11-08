@@ -598,7 +598,11 @@ export function Oberwelt() {
         zustand: sichtbarerZustand(auftrag),
       },
       partiekarten: {
-        deck: deck.filter((k) => !vorher.some((v) => v.kennung === k)),
+        deck: [
+          ...deck.filter((k) => !vorher.some((v) => v.kennung === k)),
+          ...(auftrag.freieKarten ?? []).filter((k) => !deck.includes(k)),
+        ],
+        ...(auftrag.freieKarten ? { frei: auftrag.freieKarten } : {}),
         gespielt: vorher,
         wiedereinstieg: auftrag.format.art === "wiedereinstieg",
         letzterHalbzug: null,
@@ -687,7 +691,13 @@ export function Oberwelt() {
     }
     if (!auftrag) return;
     const mitLupe = neu.gegenstaende.includes(LUPE);
-    if ((auftrag.kartenErlaubt && neu.karten.length > 0) || auftrag.zeitwahl || mitLupe)
+    const mitFreien = (auftrag.freieKarten?.length ?? 0) > 0;
+    if (
+      (auftrag.kartenErlaubt && neu.karten.length > 0) ||
+      auftrag.zeitwahl ||
+      mitLupe ||
+      mitFreien
+    )
       setzeDeckwahl(auftrag);
     else startePartie(auftrag, []);
   };
@@ -778,6 +788,7 @@ export function Oberwelt() {
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
+          freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
             startePartie(
               {

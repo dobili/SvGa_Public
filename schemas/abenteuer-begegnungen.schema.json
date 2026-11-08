@@ -91,6 +91,11 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "freieKarten": {
+          "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+        },
         "zeit": {
           "description": "Bedenkzeit (Schritt 13): „wahl“ lässt den Leser vor der Partie wählen (ohne Uhr, Schnellschach, Blitz); eine feste Uhr gehört zur Geschichte (Schaffner 3 + 2). Fehlend: ohne Uhr",
           "oneOf": [

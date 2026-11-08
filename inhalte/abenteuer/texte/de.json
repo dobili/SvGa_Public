@@ -610,5 +610,6 @@
   "laden.antiquariat.name": "Antiquariat von Mr. Okoro",
   "quest.erinnerung1858.titel": "Erinnerung: Das letzte Spiel, 1858",
   "quest.erinnerung1858.schritt1": "Spiel mit Ambrose Morphys Züge nach dem Opfer.",
-  "quest.erinnerung1858.schritt2": "Sprich danach mit Mira."
+  "quest.erinnerung1858.schritt2": "Sprich danach mit Mira.",
+  "deck.frei": "Dazu liegt frei im Deck, ohne Kosten und ohne Folge für die Nadel: {karten}"
 }

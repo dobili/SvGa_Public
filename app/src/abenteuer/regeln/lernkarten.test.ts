@@ -5,7 +5,9 @@ import type { Kartensorte } from "../schnittstelle/karten";
 import {
   deckErlaubt,
   deckgroesse,
+  kartenstufeDerPartie,
   mentorzugGesperrt,
+  mitGespielterKarte,
   mitLernkarten,
   neueLernkarten,
 } from "./karten";
@@ -48,5 +50,25 @@ describe("Mentor-Zug in Akt 3 (R29)", () => {
     expect(mentorzugGesperrt({})).toBe(false);
     expect(mentorzugGesperrt({ tiefpunktGesehen: true })).toBe(true);
     expect(mentorzugGesperrt({ tiefpunktGesehen: true, versoehnungGesehen: true })).toBe(false);
+  });
+});
+
+describe("Freie Karte im Halbfinale (R29)", () => {
+  it("kostet nichts, zählt nicht für die Nadel und merkt sich das Spielen", () => {
+    const mentor = SORTEN.find((k) => k.kennung === "mentorzug");
+    if (!mentor) throw new Error("Mentor-Zug fehlt");
+    const s = {
+      ...stand(),
+      partiekarten: {
+        deck: ["mentorzug"],
+        gespielt: [],
+        wiedereinstieg: false,
+        letzterHalbzug: null,
+        frei: ["mentorzug"],
+      },
+    };
+    const nach = mitGespielterKarte(s, mentor, 30);
+    expect(nach.dialogvariablen.mentorzugFreiGespielt).toBe(true);
+    expect(kartenstufeDerPartie(nach.partiekarten?.gespielt ?? [])).toBe("gold");
   });
 });

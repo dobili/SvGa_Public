@@ -132,6 +132,7 @@ export function auftragFuer(
     uhr: typeof b.zeit === "object" ? b.zeit : null,
     zeitwahl: b.zeit === "wahl",
     farbeFrei: b.farbe === "zufall",
+    ...(b.freieKarten ? { freieKarten: b.freieKarten } : {}),
   };
 }
 

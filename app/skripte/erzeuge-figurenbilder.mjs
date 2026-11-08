@@ -148,6 +148,12 @@ const FIGUREN = {
   juniper: ["long13", "kupfer", "h3", "variant16", "ff6f69", "", "", ""], // Kletterin, L3
   abe: ["short05", "weiss", "h4", "variant20", "2663a3", "", "variant08", "variant09"], // Leuchtturm, L7
   theron: ["short02", "grau", "h8", "variant18", "ffeead", "", "variant05", "variant03"], // Luftboot, L5
+  // Hochebene (L9, Vell-Familien, O5): heutige Kleidung, keine Trachten, kein Schmuck als Zeichen
+  annek: ["long04", "dunkelbraun", "h6", "variant21", "5f705c", "light03", "", ""], // Lehrerin
+  joss: ["short09", "schwarz", "h6", "variant14", "2663a3", "", "variant03", ""], // Mechaniker
+  kira: ["long08", "schwarz", "h7", "variant12", "d11141", "", "", ""], // Schülerin, 13
+  blaeser: ["long11", "schwarz", "h7", "variant18", "ffd969", "", "", ""], // Bläserin im Musikhaus, L1
+  postreiter: ["short07", "braun", "h3", "variant20", "83623b", "", "variant06", "variant04"], // Erinnerung 1866
   // Erinnerung London 1851
   kellner: ["short03", "dunkelbraun", "h2", "variant20", "323232", "", "variant01", ""],
   zeitungsjunge: ["short24", "rot", "h1", "variant04", "83623b", "", "", "variant09"],

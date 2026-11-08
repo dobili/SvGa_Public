@@ -2392,6 +2392,40 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "hochebene.falkeUndBison",
+      "titel": "quest.falkeUndBison.titel",
+      "typ": "begegnung",
+      "ort": "hochebene",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "hochebene.felsentuerme"
+      },
+      "schritte": [
+        {
+          "text": "quest.falkeUndBison.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.kira_regel"
+          }
+        },
+        {
+          "text": "quest.falkeUndBison.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.annek_schach"
+          }
+        },
+        {
+          "text": "quest.falkeUndBison.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.kira_geschenk"
+          }
+        }
+      ]
     }
   ]
 }

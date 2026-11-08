@@ -39,6 +39,18 @@ export function variablenNachRunde(runde: string, bestanden: boolean): Variablen
   return { [`${name}Bestanden`]: true, [`${ort}${grossAnfang(name)}Bestanden`]: true };
 }
 
+/**
+ * Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu berechnet (nicht gespeichert):
+ * `hatFahrrad`, `hatTaschenlampe` für Gegenstände, `hatKarteZeitbonus` für Hilfskarten,
+ * `muenzen` als Zahl. So kann ein Dialog etwa das Schließfach nur mit Taschenlampe öffnen.
+ */
+export function variablenAusBesitz(stand: Abenteuerstand): Variablen {
+  const variablen: Record<string, number | boolean> = { muenzen: stand.muenzen };
+  for (const g of stand.gegenstaende) variablen[`hat${grossAnfang(g)}`] = true;
+  for (const k of stand.karten) variablen[`hatKarte${grossAnfang(k.kennung)}`] = k.anzahl > 0;
+  return variablen;
+}
+
 /** Variable zu einem Fund: `gefundenSchluessel` = true (für Bedingungen in Dialogen). */
 export function variablenNachFund(fund: string): Variablen {
   return { [`gefunden${grossAnfang(fund)}`]: true };

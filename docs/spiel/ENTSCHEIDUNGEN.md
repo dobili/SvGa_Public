@@ -436,6 +436,15 @@ Dialogvariable `gefunden<Fund>`; Runden setzen neben der Kurzform die Langform m
 Cedar Creek) angelegt; mittel-1 vergibt ihn im nächsten Auftrag. Zug ohne Fahrkartenabfrage
 bleibt bis zur Schnellreise-Regel.
 
+**Akt 2 vollständig in Daten, Karten und Dialogen (08.11.2026, mittags):** Ironwood-Dialoge von
+mittel-1 zusammengeführt; alle Dialogverweise in `orte.json` und `quests.json` haben Knoten, die
+Simulation aller Quests von Akt 1 und 2 läuft durch. Quest `ironwood.mamasFinale` begann und
+wartete auf denselben Knoten (Sackgasse); jetzt startet sie in der Kantine. Dialoge sehen den
+Besitz: `hat<Gegenstand>`, `hatKarte<Karte>` und `muenzen` werden beim Öffnen jedes Dialogs aus
+dem Spielstand abgeleitet (nicht gespeichert); damit kann das Schließfach die Laterne verlangen.
+Offen: Läden in Riverton (Zeitungsstand) und Ironwood (Eisenwaren, Edna) als Daten, die Laterne
+als Ware, der Zeitnot-Trick als eigene Karte (Schritt 13; bis dahin Zeitbonus als Platzhalter).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

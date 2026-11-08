@@ -2,11 +2,13 @@
 import { describe, expect, it } from "vitest";
 import {
   variablenNachBesuch,
+  variablenAusBesitz,
   variablenNachFund,
   variablenNachNadel,
   variablenNachPartie,
   variablenNachRunde,
 } from "./dialogvariablen";
+import { leererAbenteuerstand } from "./spielstand";
 
 describe("Dialogvariablen aus Ergebnissen", () => {
   it("bildet die Langform mit Ort aus der Kennung der Begegnung", () => {
@@ -32,6 +34,20 @@ describe("Dialogvariablen aus Ergebnissen", () => {
 
   it("merkt den ersten Besuch eines Ortes", () => {
     expect(variablenNachBesuch("cedarCreek")).toEqual({ besuchtCedarCreek: true });
+  });
+
+  it("leitet Besitz und Münzen für Dialoge ab", () => {
+    const stand = {
+      ...leererAbenteuerstand(new Date("2026-11-08T12:00:00Z"), "Kim", null, false),
+      muenzen: 25,
+      gegenstaende: ["taschenlampe"],
+      karten: [{ kennung: "zeitbonus", anzahl: 1, erhalten: "2026-11-08T12:00:00Z" }],
+    };
+    expect(variablenAusBesitz(stand)).toEqual({
+      muenzen: 25,
+      hatTaschenlampe: true,
+      hatKarteZeitbonus: true,
+    });
   });
 
   it("zählt die Nadel von 0 bis 3", () => {

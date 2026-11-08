@@ -33,7 +33,11 @@ import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
-import { variablenNachBesuch, variablenNachFund } from "../regeln/dialogvariablen";
+import {
+  variablenAusBesitz,
+  variablenNachBesuch,
+  variablenNachFund,
+} from "../regeln/dialogvariablen";
 
 /** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
 const FAHRRAD = "fahrrad";
@@ -647,7 +651,7 @@ export function Oberwelt() {
           json={dialog.json}
           knoten={dialog.knoten}
           wirkungen={wirkungen}
-          variablen={stand.dialogvariablen}
+          variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
           heldname={stand.held.name}
           beiKnoten={(knoten) => melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` })}
           beiEnde={beiDialogende}

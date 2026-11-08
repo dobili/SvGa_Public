@@ -135,6 +135,94 @@
           "wert": "positionsspieler"
         }
       ]
+    },
+    {
+      "kennung": "mapleFalls.juno",
+      "name": "figur.juno.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/juno.webp",
+      "staerke": { "art": "aktuell", "versatz": -100 },
+      "gewichte": {
+        "figurHaengen": 2,
+        "schlagreflex": 1.5,
+        "taktikUebersehen": 1.3
+      },
+      "stil": "draufgaenger",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "fehlerart", "wert": "figurHaengen" },
+        { "art": "fehlerart", "wert": "schlagreflex" }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.okafor",
+      "name": "figur.okafor.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/okafor.webp",
+      "staerke": { "art": "eingang", "versatz": 280 },
+      "phasenversatz": { "endspiel": 1 },
+      "gewichte": {
+        "tempoverlust": 1.6,
+        "koenigPassiv": 1.3,
+        "taktikUebersehen": 0.7,
+        "grundreihe": 0.5
+      },
+      "stil": { "taktiker": 100, "verteidiger": 80 },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": [
+          "praxis:Queen's Gambit Declined",
+          "praxis:Philidor Defense"
+        ],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        { "art": "stil", "wert": "taktiker" },
+        { "art": "fehlerart", "wert": "tempoverlust" },
+        { "art": "eroeffnung", "wert": "praxis:Philidor Defense" }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.dex",
+      "name": "figur.dex.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/dex.webp",
+      "staerke": { "art": "aktuell", "versatz": 0 },
+      "gewichte": { "koenigMitte": 1.5, "figurHaengen": 1.3 },
+      "stil": "taktiker",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "taktiker" },
+        { "art": "fehlerart", "wert": "koenigMitte" }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.mae",
+      "name": "figur.mae.name",
+      "rolle": "clubmitglied",
+      "portraet": "portraets/mae.webp",
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "drohungIgnoriert": 1.6, "koenigsschild": 1.3 },
+      "stil": "angreifer",
+      "eroeffnung": { "art": "praxis" },
+      "steckbrief": [
+        { "art": "stil", "wert": "angreifer" },
+        { "art": "fehlerart", "wert": "drohungIgnoriert" }
+      ]
+    },
+    {
+      "kennung": "cedarCreek.rosa",
+      "name": "figur.rosa.name",
+      "rolle": "strasse",
+      "portraet": "portraets/rosa.webp",
+      "staerke": { "art": "aktuell", "versatz": -50 },
+      "gewichte": { "schlagVerpasst": 1.4, "bauernzugOhneNot": 0.6 },
+      "stil": "verteidiger",
+      "eroeffnung": { "art": "frei" },
+      "steckbrief": [
+        { "art": "stil", "wert": "verteidiger" },
+        { "art": "fehlerart", "wert": "schlagVerpasst" }
+      ]
     }
   ]
 }

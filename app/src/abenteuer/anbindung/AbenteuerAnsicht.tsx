@@ -12,7 +12,7 @@
  * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
  * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
  */
-import { useEffect, useState, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
@@ -239,6 +239,20 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       aktiv = false;
     };
   }, []);
+
+  // Wer schon einen Spielstand und das Paket hat, landet gleich in der Welt (Rückweg aus Partie
+  // und Aufgabenrunde); die Startkarte sieht nur, wer neu beginnt oder das Paket laden muss.
+  const automatisch = useRef(false);
+  useEffect(() => {
+    const paketDa = zustand.art === "vorhanden" || zustand.art === "veraltet";
+    if (!paketDa || !stand || offen || automatisch.current) return;
+    automatisch.current = true;
+    void ladeModul().then((modul) => {
+      modul.verbinde(dienste);
+      setzeOberwelt(() => modul.Oberwelt);
+      setzeOffen(true);
+    });
+  }, [zustand, stand, offen, dienste]);
 
   const lade = () => {
     setzeZustand({ art: "laedt", geladen: 0, gesamt: 1 });

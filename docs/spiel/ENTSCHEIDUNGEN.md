@@ -328,6 +328,14 @@ Dialogvariablen-Verzeichnis von mittel-1). mittel-1 hat die Maple-Falls-Variable
 Stellungsduell-Kandidaten für spätere Städte (mittel-2, Tiefe 12): Kapitel 3: Abb. 3.77 (+1,64),
 3.75 (+1,66); Kapitel 6: 6.14 (+0,85), 6.5 (+0,84); Kapitel 8: 8.44 (+0,88), 8.48 (+2,50).
 
+**Welt öffnet sich von selbst, Oberflächentest für die Aufgabenrunde (08.11.2026):** Wer Spielstand
+und Paket hat, landet beim Aufruf des Abenteuers (auch beim Rückweg aus Partie und Runde) gleich in
+der Welt; die Startkarte zeigt sich nur ohne Spielstand (Namenswahl) oder ohne Paket. Grund: Der
+Rückweg „Zurück zur Stadt“ landete sonst auf der Startkarte und verlangte ein zweites „Spielen“.
+Neuer Oberflächentest `tests/e2e/abenteuer-aufgaben.spec.ts`: Spielstand mit laufender Runde von
+Sam einspielen, Runde im Trainer durchspielen (Lösung zeigen), Ergebniskarte „0 von 3 Punkten“ mit
+Angebot der leichteren Runde. Damit ist Schritt 8 abgeschlossen.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

@@ -75,7 +75,7 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
 
   // Zurück in die Welt: Die Partie läuft noch, „Weiterspielen“ führt zur selben Partie.
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-spielen").click();
+  // Mit Spielstand öffnet sich die Welt von selbst, ohne Startkarte.
   await expect(page.getByText("Deine Partie läuft noch.")).toBeVisible({ timeout: 20000 });
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });

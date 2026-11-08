@@ -53,8 +53,9 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2608. Partie zu Ende spielen (oder aufgeben): Unter der Auswertung steht „Zurück zur Stadt“. Tippen: zurück auf den
       Dachboden, oben eine Karte „Gewonnen/Verloren gegen Ambrose“ mit Zugzahl; „Weiter“ schließt sie. Die Partie steht
       zusätzlich in der Partienliste der App.
-- [ ] N2609. Mitten in der Partie über „Spielen“ in der Leiste unten weggehen, dann /app/#abenteuer, „Spielen“: Karte „Deine
-      Partie läuft noch“ mit „Weiterspielen“ (führt in dieselbe Partie) und „Partie aufgeben und in der Stadt bleiben“.
+- [ ] N2609. Mitten in der Partie über „Spielen“ in der Leiste unten weggehen, dann /app/#abenteuer: Die Welt öffnet sich
+      ohne Startkarte, darüber die Karte „Deine Partie läuft noch“ mit „Weiterspielen“ (führt in dieselbe Partie) und
+      „Partie aufgeben und in der Stadt bleiben“. Die Startkarte siehst du nur noch ohne Spielstand oder ohne Paket.
 - [ ] N2610. Android-Zurück-Taste im Dialog schließt nur den Dialog; außerhalb führt sie aus dem Spiel. Beim Verlassen und
       Zurückkommen steht der Held dort, wo du ihn verlassen hast.
 - [ ] N2611. Profil › Einstellungen › Deine Daten › Sicherung: Die Sicherung enthält jetzt den Spielstand (Format 11);

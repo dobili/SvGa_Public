@@ -1,8 +1,39 @@
-# Auftrag mittel-2: kein Auftrag
+# Auftrag mittel-2: Gegenstände und Karten in der Geschichte, Limo-Nebenquest
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der siebte Auftrag, Story-Bibel Akt 3, ist
-zusammengeführt, danke; Geburtsort und die Reste von Old Harbor in 09 sind nachgezogen. Bis der
-nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, achter Auftrag)
+
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
+**Darf ändern:** `docs/spiel/05_Story_Bibel.md` (Abschnitt „Hilfskarten und Zeitkarten“ je Akt und
+neue Szenen), `docs/spiel/11_Karten_und_Gegenstaende.md` (Abschnitt 6 und ein neuer Abschnitt 7
+„Verteilung und Preise“), `docs/spiel/auftraege/mittel-2.md`
+**Prüfung vor dem Push:** im Ordner `app/` `npx prettier --check ../docs/spiel` (falls die Dateien
+schon so formatiert sind), sonst nur sorgfältig lesen
+
+## Ziel
+
+Der Autor will viele Karten und Gegenstände („je mehr, desto besser“, Balancing später). Gebaut
+sind 27 Karten, die Gegenstände Fahrrad, Laterne und Kartentasche, Läden in Maple Falls, Riverton
+und Ironwood (`inhalte/abenteuer/laeden.json`) und Lernkarten aus dem Buch. Noch nicht verteilt
+sind die Ideen aus `11_Karten_und_Gegenstaende.md`: Limo, Lupe des Uhrmachers, Reisebrett,
+Partienotizbuch, Monatskarte, Spickzettel, Pokerface, Schutzengel.
+
+## Vorgaben
+
+1. Abschnitt 7 in Dokument 11: Tabelle aller Karten und Gegenstände mit Herkunft (Szene, Laden,
+   Lernkarte), Preis und Akt; die Münzen, die man bis zum jeweiligen Laden realistisch hat
+   (Münzregeln in `docs/spiel/08_Wege_und_Entdeckungen.md`, G1 bis G6), daneben. Ziel: In jedem Akt
+   gibt es etwas Neues zu kaufen, nichts Starkes ist zu früh erreichbar (Grundsätze G1 bis G5).
+2. Limo-Nebenquest für Akt 1 (Park Maple Falls): Jo will nach einer Niederlage des Lesers Limo;
+   der Leser kauft sie am Kiosk (5 Münzen) und bringt sie ihr; dafür eine Steckbriefzeile über Jo
+   oder eine Revanche mit Vorteil. Als Szene in der Story-Bibel, mit Quest-Schritten (Format wie die
+   vorhandenen Quests), ohne Ink-Dateien.
+3. Für Lupe, Reisebrett, Partienotizbuch und Monatskarte je eine Szene in Akt 2 oder 3, in der der
+   Gegenstand ins Spiel kommt (wer gibt ihn, warum, was sagt Ambrose).
+4. Im Bericht: Vorschläge für Preise, die du ändern würdest, und was davon zu stark wirkt.
+
+## Bericht
+
+(vom Helfer auszufüllen)
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

@@ -1,8 +1,36 @@
-# Auftrag mittel-1: kein Auftrag
+# Auftrag mittel-1: Kartentexte und Ambroses Erklärungen
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der zehnte Auftrag, Sprüche und Konter, ist
-zusammengeführt, danke; der Vorschlag `immunGegen` kommt mit Schritt 13. Bis der nächste Auftrag
-per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, elfter Auftrag)
+
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
+**Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel, bestehende nur bei den
+Karten aus `docs/spiel/11_Karten_und_Gegenstaende.md` verbessern), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests/test_abenteuer.py`, im Ordner `app/`
+`npm run pruefen` (die Texte sind dort typgeprüft)
+
+## Ziel
+
+Seit heute gibt es 16 neue Karten (`inhalte/abenteuer/karten.json`, Wirkungen in
+`docs/spiel/11_Karten_und_Gegenstaende.md` und `ENTSCHEIDUNGEN.md`, Abschnitt „Weitere Karten“).
+Die Karten brauchen Texte, die Kindern und Einsteigern erklären, welche Frage des Buches sie lehren.
+
+## Vorgaben
+
+1. Je Karte in `karten.json` (alle 27) ein Schlüssel `karte.<kennung>.erklaerung`: zwei bis drei
+   kurze Sätze von Ambrose, was die Karte zeigt und welche Frage man sich ohne Karte selbst stellen
+   sollte, mit Buchbezug („Kapitel 1, Zählen von Angreifern und Verteidigern“). Keine Buchzitate über
+   eine kurze Wendung hinaus (das Repository ist öffentlich).
+2. Die vorhandenen Sätze `karte.<kennung>.spruch` der 16 neuen Karten prüfen und verbessern (ein Satz,
+   Ambroses Ton: ruhig, etwas altmodisch, nie belehrend).
+3. Die Sprüche `spruch.schmeichelei.1`–`.8` und `spruch.ablenkung.1`–`.8` prüfen und verbessern (frech,
+   nie beleidigend, geschlechtsneutral, eine Zeile, Regeln wie im zehnten Auftrag).
+4. Für jede Lernkarte (Feld `kapitel`) einen eigenen Satz `karte.<kennung>.geschenkt`, den Ambrose
+   sagt, wenn der Leser die Karte durch das Buch bekommt (Beispiel für Abzählen: „Du hast im Buch
+   gezählt. Jetzt zählst du im Park.“).
+
+## Bericht
+
+(vom Helfer auszufüllen)
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

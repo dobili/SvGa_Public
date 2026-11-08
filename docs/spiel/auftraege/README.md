@@ -1,6 +1,6 @@
 # Aufträge an die Helfer-Chats des Schach-Abenteuers
 
-Der Haupt-Chat (Fable) baut das Fundament und verteilt abgegrenzte Arbeit auf Helfer-Chats
+Der Haupt-Chat baut das Fundament und verteilt abgegrenzte Arbeit auf Helfer-Chats
 (Opus). Jeder Helfer hat eine Auftragsdatei in diesem Ordner, benannt nach seinem Aufwand und
 seiner Nummer: `mittel-1.md`, `mittel-2.md`, `niedrig-1.md` … Der Helfer liest nur seine Datei.
 

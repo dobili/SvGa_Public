@@ -1,8 +1,31 @@
-# Auftrag niedrig-1: kein Auftrag
+# Auftrag niedrig-1: Antworten der Gegner aus Akt 3 auf Sprüche
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achte Auftrag, Ironwood-Karten, ist
-zusammengeführt, danke. Alle Karten von Akt 1 und 2 stehen. Bis der nächste Auftrag per Nachricht
-kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 08.11.2026, neunter Auftrag)
+
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
+**Darf ändern:** `inhalte/abenteuer/texte/de.json` (nur neue Schlüssel), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests/test_abenteuer.py -q`
+
+## Ziel
+
+Straßengegner antworten auf Sprüche des Helden (`docs/spiel/10_Sprueche_Schauplaetze_Varianten.md`,
+S4). Für Akt 1 und 2 gibt es die Antworten schon (`spruch.konter.skaterJo.1` usw. in `texte/de.json`,
+dort als Vorbild ansehen). Akt 3 steht in `docs/spiel/05_Story_Bibel.md` (Teil „Akt 3“).
+
+## Vorgaben
+
+1. Für jeden Straßengegner aus Akt 3 der Story-Bibel zwei Antworten:
+   `spruch.konter.<name>.1` und `.2`, wobei `<name>` der letzte Teil der geplanten Gegnerkennung ist
+   (bei „portDelacroix.marisol“ also „marisol“; steht keine Kennung in der Bibel, eine kurze in
+   Kleinbuchstaben ohne Umlaute vorschlagen und im Bericht nennen).
+2. Ton wie die Vorbilder: eine Zeile, frech oder gelassen, passend zum Steckbrief der Figur, nie
+   beleidigend, nichts über Aussehen, Herkunft oder Familie.
+3. Im Bericht: welche Gegner gegen welchen Spruch immun sein sollten (grossesMaul, gruebelfalle,
+   schmeichelei, ablenkung) und warum.
+
+## Bericht
+
+(vom Helfer auszufüllen)
 
 ## Letzter Auftrag (erledigt, zur Nachlese)
 

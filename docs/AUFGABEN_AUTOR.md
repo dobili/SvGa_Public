@@ -82,6 +82,9 @@ Adresse mit „#abenteuer“ öffnen).
       Mentor-Zug ändert sich N (Sieg etwa +25 bei gleich starkem Gegner); nach einer Partie mit Vorgabe oder einem
       Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, steht in der dritten Partie unter dem Brett in der
       gelben Leiste „Coach Delgado ist überheblich geworden.“, und er spielt spürbar lockerer (mehr Fehler).
+- [ ] N2617. Seite „Spielen“ (unten in der Leiste): Unter den Kacheln steht die Karte „Schach-Abenteuer“ mit „Zum
+      Abenteuer“; sie führt auf die Startkarte des Spiels. Hast du schon einen Spielstand, heißt sie „Dein Abenteuer
+      wartet, {Name}.“ mit „Weiterspielen“. Aus einer Abbildung oder eigenen Stellung heraus fehlt die Karte.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

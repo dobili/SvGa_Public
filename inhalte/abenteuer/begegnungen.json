@@ -61,7 +61,7 @@
       },
       "startstellung": {
         "art": "fen",
-        "fen": "r1b2rk1/2q1bppp/p2p1n2/1pp1p3/3PP3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 2 12"
+        "fen": "r1b2rk1/2q1bppp/p2p1n2/1pp1p3/4P3/2P2N1P/P1BN1PP1/R1BQR1K1 b - - 2 12"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false

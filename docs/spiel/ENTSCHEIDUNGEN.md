@@ -315,6 +315,19 @@ Dialogvariablen) mit Tests; `Oberwelt.tsx` ist von 978 auf 699 Zeilen geschrumpf
   Staffel 2 bzw. Akt 3; die Schätzung `geschaetzteStaerke` aus den Zügen liefert die App noch
   nicht (dann ersetzt sie den Startwert 600).
 
+**Einstieg auf der Seite „Spielen“ und dritte Helfer-Runde zusammengeführt (08.11.2026):** Die
+Seite „Spielen“ zeigt aus der Grundstellung eine Karte „Schach-Abenteuer“ („Zum Abenteuer“, mit
+Spielstand „Dein Abenteuer wartet, Kim.“ und „Weiterspielen“); die Adresse #abenteuer bleibt.
+Victor-Stellung nach der Engine-Prüfung von mittel-2 geändert: Springer gegen zwei Bauern (weiße
+Bauern d4 und b2 fehlen), −3,2 aus Sicht von Schwarz statt −6,9, weil Stockfish einen glatten
+Springer heute mit −5 bis −7 bewertet; Erzählung „der Springer hat zwei Bauern gefressen und kam
+nicht mehr heim“. mittel-2 hat Regelwerk (R14, R15, R30a, R31, R33, R41 Reise) und Bibel (Szenen
+12, 13, 14, 23) nachgezogen und bekommt als vierten Auftrag den Stand von 8h (A, R6 bis R10,
+Dialogvariablen-Verzeichnis von mittel-1). mittel-1 hat die Maple-Falls-Variablen umbenannt,
+„abgebrochen“ zählt in den Dialogen wie nicht gespielt; mittel-1 und niedrig-1 warten.
+Stellungsduell-Kandidaten für spätere Städte (mittel-2, Tiefe 12): Kapitel 3: Abb. 3.77 (+1,64),
+3.75 (+1,66); Kapitel 6: 6.14 (+0,85), 6.5 (+0,84); Kapitel 8: 8.44 (+0,88), 8.48 (+2,50).
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

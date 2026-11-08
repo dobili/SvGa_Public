@@ -38,6 +38,7 @@ import { Vorschlagskarte } from "../komponenten/spielstart/Vorschlagskarte";
 import { ZuletztGespielt } from "../komponenten/spielstart/ZuletztGespielt";
 import { probewertAus, type Probeherkunft } from "../../spiel/probepartie";
 import { Probekarte } from "../komponenten/varianten/Probekarte";
+import { Abenteuerkarte } from "../../abenteuer/anbindung/Abenteuerkarte";
 import "../stil/spielenneu.css";
 
 /** Die Kacheln zu den Unterseiten; sie reichen eine Stellung aus einer Abbildung weiter. */
@@ -158,6 +159,8 @@ function Startseite(p: { startFen?: string; abbildung?: string; vorbelegt: boole
       {!spiel.laufend && ausGrund && <Rivalenkarte />}
       <LetzteSpielstaerke partien={spiel.partien} />
       <Spielkacheln sw={sw} />
+      {/* Schach-Abenteuer (docs/spiel): Einstieg ins Spiel, nur aus der Grundstellung sinnvoll. */}
+      {ausGrund && <Abenteuerkarte />}
       <ZuletztGespielt />
     </div>
   );

@@ -295,3 +295,8 @@
 .abenteuer-zustand {
   font-style: italic;
 }
+
+/* Einstiegskarte auf der Seite „Spielen“. */
+.abenteuer-karte-spielen {
+  text-align: center;
+}

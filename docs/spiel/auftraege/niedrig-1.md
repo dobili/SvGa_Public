@@ -1,6 +1,11 @@
-# Auftrag niedrig-1: Karten für den Weg Riverton → Ironwood und für Ironwood
+# Auftrag niedrig-1: kein Auftrag
 
-**Stand:** fertig (niedrig-1, 08.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der achte Auftrag, Ironwood-Karten, ist
+zusammengeführt, danke. Alle Karten von Akt 1 und 2 stehen. Bis der nächste Auftrag per Nachricht
+kommt, bitte nichts tun und warten.)
+
+## Letzter Auftrag (erledigt, zur Nachlese)
+
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `inhalte/abenteuer/karten/weg-riverton-ironwood-1.json`, `-2.json`,
 `ironwood-*.json` (fünf Dateien, neu), `docs/spiel/auftraege/niedrig-1.md`

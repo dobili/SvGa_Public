@@ -424,6 +424,11 @@ außen, Pavillon, Bahnhofshalle, Wohnwagen, Schuppen), Übergang `zedernwald` in
 für mittel-1: Uhr mit Klebeband, Fahrplantafel und Fundbüro-Schild aus 09, 5.4 stehen noch nicht
 in `orte.json` (Dinge zum Ansehen für Riverton, mit dem nächsten Dialogauftrag).
 
+**Ironwood-Karten zusammengeführt (niedrig-1):** sieben Karten (Kanalweg, Brücke, Ironwood außen,
+Kantine, Mamas Zimmer, Umkleide, Museum); alle Karten von Akt 1 und 2 sind gezeichnet, der
+Kartentest überspringt nichts mehr. Offen für mittel-1 (Dinge zum Ansehen aus 09, 5.5): Schichtplan,
+Kaffeemaschine, Werksfoto, Poster, Standuhr, Nieten „J. H.“.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

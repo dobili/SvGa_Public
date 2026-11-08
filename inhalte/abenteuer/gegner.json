@@ -608,6 +608,124 @@
         { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
         { "art": "stil", "wert": "positionsspieler" }
       ]
+    },
+    {
+      "kennung": "siliconBay.lin",
+      "name": "figur.lin.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/lin.webp",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 460
+      },
+      "phasenversatz": {
+        "eroeffnung": 1,
+        "mittelspiel": -1
+      },
+      "gewichte": {
+        "koenigPassiv": 1.5,
+        "taktikUebersehen": 0.8
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": [
+          "praxis:Italian Game",
+          "praxis:Queen's Gambit Declined"
+        ],
+        "abweichung": 5
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Italian Game"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigPassiv"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.odile",
+      "name": "figur.odile.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/odile.webp",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 520
+      },
+      "gewichte": {
+        "koenigsschild": 1.6,
+        "tempoverlust": 1.2
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:French Defense", "praxis:English Opening"],
+        "abweichung": 15
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigsschild"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:French Defense"
+        }
+      ]
+    },
+    {
+      "kennung": "desertSprings.mira",
+      "name": "figur.mira.name",
+      "rolle": "clubchef",
+      "portraet": "portraets/mira.webp",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 580
+      },
+      "phasenversatz": {
+        "endspiel": -1
+      },
+      "gewichte": {
+        "falscherAbtausch": 1.6,
+        "drohungIgnoriert": 1.2
+      },
+      "stil": {
+        "angreifer": 120,
+        "taktiker": 100
+      },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": [
+          "praxis:King's Gambit",
+          "praxis:Italian Game: Evans Gambit"
+        ],
+        "abweichung": 10
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "falscherAbtausch"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:King's Gambit"
+        }
+      ]
     }
   ]
 }

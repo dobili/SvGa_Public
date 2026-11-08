@@ -4,7 +4,8 @@
 **Zweig:** dein fester Sitzungszweig (zuletzt `abenteuer-regelwerk`), Basis
 `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `docs/spiel/05_Story_Bibel.md` (neuer Teil „Akt 2“ anhängen; Akt 1 nur, wo Akt 2
-etwas vorbereitet, dann im Bericht nennen), `docs/spiel/auftraege/mittel-2.md`
+etwas vorbereitet, dann im Bericht nennen), `docs/spiel/09_Weltbeschreibung.md` (nur Abschnitte 5.4
+und 5.5), `docs/spiel/auftraege/mittel-2.md`
 **Prüfung vor dem Push:** `npx prettier --check ../docs/spiel` in `app/`
 
 ## Ziel
@@ -17,6 +18,10 @@ den Städten, Funde mit übergreifenden Quests, Läden und Münzen, Zeitkarten, 
 
 ## Vorgaben
 
+0. **Weltbeschreibung beachten:** `docs/spiel/09_Weltbeschreibung.md` legt Region, Jahreszeit je
+   Akt, Fauna, Areale und Innenräume von Riverton und Ironwood fest (Abschnitte 5.4, 5.5). Was
+   du für Akt 2 brauchst und dort fehlt, ergänzt du dort (nur diese beiden Abschnitte); `09` darfst
+   du dafür ändern.
 1. **Zwei Städte, je ein Club** mit Buchkapiteln nach `07_Aufgabenzuordnung.md` (Riverton und
    Ironwood), Clubchef mit Stil und Schwäche, zwei Clubmitglieder, ein Straßengegner, zwei bis drei
    Nebenfiguren; Clubkampf, Aufgabenreihe, Vorbereitungs-Nebenquest (Zustand „abgelenkt“ oder

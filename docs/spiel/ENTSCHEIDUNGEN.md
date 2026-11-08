@@ -354,6 +354,16 @@ Oberwelt mit Sepia-Tönung. Reihenfolge: nach Schritt 9 (Akt 1 spielen) die Schr
 „Zeitnot-Trick“ (Z6: Ambrose gaukelt dem Gegner für fünf Züge Zeitnot vor, die Uhr bleibt; wirkt
 auch ohne Uhr, deshalb mittlere Karte). Q18 damit erledigt.
 
+**Weltbeschreibung (Wunsch des Autors, 8.11.2026, 08:30 Uhr):** Vor dem Zeichnen mit echter
+Grafik steht jetzt `docs/spiel/09_Weltbeschreibung.md`: Region „Ashford“ (Arbeitsname) mit Fluss,
+Hügelland und Küste und der Reihenfolge der Reise; Jahreszeit je Akt (Spätsommer → Herbst →
+Winter/Frühjahr → Sommer), Tageszeit je Karte und Szene als Tönung, Wetter nur wo erzählt; Regeln
+für lebendige Karten (vier bewegte Dinge außen, drei Dinge zum Ansehen innen, Spuren erledigter
+Quests, Abwechslung der Clubräume, Größen); Fauna je Ort; alle zwölf Orte mit Arealen,
+Innenräumen, Inventar und Verbindungen; Checkliste je Karte; Technikliste (Tönung, Tiere und
+Statisten, animierte Kacheln, bedingte Objekte, Geräusche). mittel-2 richtet Akt 2 danach aus,
+niedrig-1 zeichnet die Routenkarten nach Abschnitt 5.2.
+
 ## Vorschläge von Claude (Teil 3 der Entscheidungsseite, zur Nachlese)
 
 - **C1 Stellungsduelle für Straßengegner:** Stellung aus dem Buchkapitel mit leichtem Vorteil

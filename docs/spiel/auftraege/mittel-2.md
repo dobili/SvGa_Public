@@ -115,4 +115,8 @@ neuen Teil 2 „Akt 2“ (Abschnitte 7 bis 15, Szenen 26 bis 50); Prettier beste
   Schnee.
 - `09`, Abschnitte 5.4 und 5.5 entsprechend ergänzt (Innenräume mit Inventar, Laden, Verbindungen).
 
+**Nachtrag 2 (Schritt 10):** Routen heißen jetzt wie die Wege-Orte aus Schritt 10
+(`wegCedarRiverton`, `wegRivertonIronwood`, Karten etwa `wegCedarRiverton.zedernwald`); Fahrrad als
+Gegenstand `fahrrad`, Schnellreise über `besucht<Ort>`.
+
 **Offen:** nichts Blockierendes; sechs Fragen mit Empfehlung in Abschnitt 15 der Bibel.

@@ -197,8 +197,8 @@ mit Uhr, Zuschauer, Wetten um Limonade. Perfect Move hängt die ersten Banner au
   Wand); Nachgespräch nach dem Clubkampf.
 - **Innen `schuppen`** (klein): Fahrradschuppen hinter der Werkstatt, mit dem Schlüssel aus Cedar
   Creek zu öffnen (übergreifende Quest, Fahrrad).
-- **Verbindungen:** Zug (Cedar Creek ↔ Riverton; Route 2 „Zedernwald“ und „Bahndamm“ beim ersten
-  Mal zu Fuß), Kanalweg mit Fahrrad nach Ironwood (Route 3 „Kanalweg“ und „Brücke“), Bus nach
+- **Verbindungen:** Zug (Cedar Creek ↔ Riverton; Weg `wegCedarRiverton` mit „Zedernwald“ und
+  „Bahndamm“ beim ersten Mal zu Fuß), Kanalweg mit Fahrrad nach Ironwood (Weg `wegRivertonIronwood` mit „Kanalweg“ und „Brücke“), Bus nach
   Ironwood als Schnellreise.
 
 ### 5.5 Ironwood (Akt 2)

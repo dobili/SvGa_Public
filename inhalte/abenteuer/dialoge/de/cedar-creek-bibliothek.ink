@@ -8,16 +8,14 @@
 // die Knoten mit Text (okafor_erstes_treffen, mae_einladung), nicht auf die Verteiler.
 //
 // Variablen: reiheDexBestanden, reiheMaeBestanden, ausgangCedarCreekClubkampf und nadelCedarCreek
-// setzt die Hülle (Vorschlag V-Dialog im Bericht mittel-1); die übrigen setzt Ink selbst.
+// setzt die Hülle (regeln/dialogvariablen.ts); die übrigen setzt Ink selbst.
 // sternennachtGesehen setzt cedar-creek-aussen.ink.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
-VAR ambroseVertrauen = 0
 VAR okaforGetroffen = false
-VAR okaforBittetHilfe = false
 VAR archivGeordnet = false
 VAR erzaehlung1858Gesehen = false
 VAR dexGetroffen = false
@@ -37,7 +35,7 @@ VAR clubkampfCedarCreekBesprochen = 0
 - not okaforGetroffen: -> okafor_erstes_treffen
 - not (reiheDexBestanden and reiheMaeBestanden): -> okafor_reihe_offen
 - nadelCedarCreek > clubkampfCedarCreekBesprochen: -> okafor_nach_sieg
-- nadelCedarCreek == 0 and ausgangCedarCreekClubkampf != "": -> okafor_nach_niederlage
+- nadelCedarCreek == 0 and ausgangCedarCreekClubkampf == "niederlage": -> okafor_nach_niederlage
 - nadelCedarCreek == 0: -> okafor_clubkampf
 - else: -> okafor_alltag
 }
@@ -56,7 +54,6 @@ Whitlock. #sprecher:okafor #pause
 Sie kennt meinen Namen. Nach hundertsechzig Jahren. #sprecher:ambrose #stimmung:traurig
 Ich weiß nicht, ob ich mich freuen soll. #sprecher:ambrose
 Im Keller hatten wir einen Wasserschaden. Hilfst du mir beim Umräumen, suchen wir den Kalender gemeinsam. #sprecher:okafor
-~ okaforBittetHilfe = true
 * [„Klar helfe ich.“]
     Danke. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
 * [„Erst will ich spielen.“]

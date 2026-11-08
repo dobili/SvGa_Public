@@ -9,7 +9,7 @@
 // Die Ankunft (Coach, Juno, Sam) läuft beim ersten Gespräch mit irgendetwas hier draußen, weil
 // beim Aussteigen kein Dialog von selbst startet (Vorschlag im Bericht mittel-1).
 //
-// Variablen: ausgangCedarCreekRosaDuell und nadelCedarCreek setzt die Hülle (Vorschlag V-Dialog);
+// Variablen: ausgangCedarCreekRosaDuell und nadelCedarCreek setzt die Hülle (regeln/dialogvariablen.ts);
 // maeEingeladen setzt cedar-creek-bibliothek.ink; die übrigen setzt diese Datei.
 
 EXTERNAL beginnePartie(begegnung)
@@ -19,7 +19,6 @@ EXTERNAL reise(karte, ausloeser)
 VAR held = "Du"
 VAR ambroseVertrauen = 0
 VAR ankunftCedarCreekGesehen = false
-VAR plakatGesehen = false
 VAR maeEingeladen = false
 VAR sternennachtGesehen = false
 VAR rosaGetroffen = false
@@ -45,7 +44,6 @@ Eine Stadt mit Bäumen, die älter sind als ich. Endlich etwas, das mich nicht j
 
 === plakat ===
 {not ankunftCedarCreekGesehen: -> ankunft}
-~ plakatGesehen = true
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
 Darauf ein Schachbrett aus Licht und eine Hand, die keinem Menschen gehört. #sprecher:erzaehler
 Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
@@ -126,7 +124,7 @@ Neu aufgestellt. So nennt man es, wenn jemand die Figuren vom Brett wischt. #spr
 {
 - not ankunftCedarCreekGesehen: -> ankunft
 - not rosaGetroffen: -> rosa_erstes_treffen
-- ausgangCedarCreekRosaDuell == "": -> rosa_angebot
+- ausgangCedarCreekRosaDuell == "" or ausgangCedarCreekRosaDuell == "abgebrochen": -> rosa_angebot
 - ausgangCedarCreekRosaDuell == "niederlage": -> rosa_nach_niederlage
 - else: -> rosa_nach_sieg
 }

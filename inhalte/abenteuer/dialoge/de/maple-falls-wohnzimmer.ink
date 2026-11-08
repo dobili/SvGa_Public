@@ -5,8 +5,8 @@
 // Einstieg für die Figur ist der Knoten „mutter“ (orte.json, Figur mapleFalls.mutter); er verzweigt
 // nach dem Spielstand. Wirkungen (Karten, Szenen) stehen in quests.json, nicht hier.
 //
-// Variablen: Die mit „Gesehen“ setzt diese Datei selbst. ausgangErsteLektion und nadelMapleFalls
-// setzt die Hülle nach der Partie bzw. dem Clubkampf (Vorschlag im Bericht mittel-1); solange sie
+// Variablen: Die mit „Gesehen“ setzt diese Datei selbst. ausgangMapleFallsErsteLektion und
+// nadelMapleFalls setzt die Hülle nach der Partie bzw. dem Clubkampf (regeln/dialogvariablen.ts); solange sie
 // leer bzw. 0 sind, bleibt Mama beim Alltagsgespräch. Das Spiel beginnt heute auf dem Dachboden
 // (regeln/spielstand.ts); wer das Brett schon berührt hat, bekommt eine kurze Begrüßung statt der
 // Ankunft mit der Kiste.
@@ -19,14 +19,14 @@ VAR ankunftGesehen = false
 VAR ersterAbendGesehen = false
 VAR aufbruchGesehen = false
 VAR kenntHale = false
-VAR ausgangErsteLektion = ""
+VAR ausgangMapleFallsErsteLektion = ""
 VAR nadelMapleFalls = 0
 
 === mutter ===
 {
 - not ankunftGesehen and not brettBeruehrt: -> ankunft
 - not ankunftGesehen: -> ankunft_kurz
-- ausgangErsteLektion != "" and not ersterAbendGesehen: -> erster_abend
+- ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen" and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
 - else: -> mutter_alltag
 }

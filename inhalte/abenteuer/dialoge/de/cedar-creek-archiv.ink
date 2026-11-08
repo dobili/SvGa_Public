@@ -8,8 +8,8 @@
 // Den Karton 1850–1859 gibt es nach dem Umräumen oder nach dem Clubkampf (Bibel, Szene 18).
 // Ambrose erwähnt 1866 nicht und nennt Hales Vornamen nicht (Bibel, Szene 19).
 //
-// Variablen: erinnerungNewYorkBestanden und nadelCedarCreek setzt die Hülle (Vorschlag V-Dialog
-// im Bericht mittel-1); die übrigen setzt Ink selbst.
+// Variablen: erinnerungNewYorkBestanden und nadelCedarCreek setzt die Hülle
+// (regeln/dialogvariablen.ts); die übrigen setzt Ink selbst.
 
 EXTERNAL beginneAufgaben(runde)
 

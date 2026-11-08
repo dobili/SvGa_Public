@@ -5,9 +5,10 @@
 // Park (Rätsel-Quest mapleFalls.verlorenesBrett, Partiefragment 0), 10 Jo auf der Halfpipe
 // (Straßengegnerin, Stellungsduell), 13 Aufbruch, zweiter Teil (Bus nach Cedar Creek).
 // Einstiege: „bibliothekar“, „parkbank“, „skater_jo“, „bushaltestelle“.
-// parkbankRaetselBestanden und ausgangSkaterJo setzt die Hülle (Vorschlag im Bericht mittel-1).
-// Jos Stellungsduell braucht die Begegnung mapleFalls.skaterJo in begegnungen.json (gesperrt);
-// bis dahin endet jo_duell ohne Partie.
+// parkbankRaetselBestanden und ausgangMapleFallsSkaterJo setzt die Hülle
+// (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie nicht gespielt (Regelwerk R35).
+// Die Bushaltestelle fährt mit reise() nach Cedar Creek und zurück kommt man über
+// cedar-creek-aussen.bus_zurueck an diesem Auslöser an.
 
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL beginnePartie(begegnung)
@@ -19,8 +20,9 @@ VAR parkbankBrettGefunden = false
 VAR parkbankRaetselBestanden = false
 VAR abernathyBrief = false
 VAR joGetroffen = false
-VAR ausgangSkaterJo = ""
+VAR ausgangMapleFallsSkaterJo = ""
 VAR aufbruchGesehen = false
+VAR ankunftCedarCreekGesehen = false
 
 // ---------------------------------------------------------------- Mr. Abernathy
 
@@ -107,8 +109,8 @@ Zähl, {held}. Wer greift an, wer verteidigt? #sprecher:ambrose
 === skater_jo ===
 {
 - not joGetroffen: -> jo_erstes_treffen
-- ausgangSkaterJo == "": -> jo_angebot
-- ausgangSkaterJo == "niederlage": -> jo_nach_niederlage
+- ausgangMapleFallsSkaterJo == "" or ausgangMapleFallsSkaterJo == "abgebrochen": -> jo_angebot
+- ausgangMapleFallsSkaterJo == "niederlage": -> jo_nach_niederlage
 - else: -> jo_nach_sieg
 }
 
@@ -153,17 +155,20 @@ Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprec
 // ---------------------------------------------------------------- Bushaltestelle
 
 === bushaltestelle ===
-{aufbruchGesehen:
+{
+- not aufbruchGesehen:
+    Hier hält der Bus nach Cedar Creek. Heute fährt er ohne dich. #sprecher:erzaehler
+    -> END
+- ankunftCedarCreekGesehen:
+    Der Linienbus nach Cedar Creek fährt jede Stunde. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
+- else:
     Der gelbe Schulbus wartet. Coach Delgado winkt mit der Trillerpfeife. #sprecher:erzaehler #klang:bus
     Juno sitzt schon hinten und hält dir einen Platz frei. #sprecher:erzaehler
     Ein Wagen ohne Pferde. Ich werde mich nie daran gewöhnen. #sprecher:ambrose
-    * [Einsteigen]
-        Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
-        ~ reise("cedarCreek.aussen", "bushaltestelle")
-        -> END
-    * [Noch nicht]
-        -> END
-- else:
-    Hier hält der Bus nach Cedar Creek. Heute fährt er ohne dich. #sprecher:erzaehler
-    -> END
 }
+* [Einsteigen]
+    Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
+    ~ reise("cedarCreek.aussen", "bushaltestelle")
+    -> END
+* [Noch nicht]
+    -> END

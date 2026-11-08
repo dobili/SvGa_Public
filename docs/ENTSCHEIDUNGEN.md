@@ -4,6 +4,19 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 8.11.2026 – Version 0.3.55: App weitergeben, Testliste vorgeprüft
+
+- **App weitergeben (Wunsch des Autors):** Profil und Einstellungen › Über die App öffnen ein Blatt mit
+  QR-Code (eigener Erzeuger nach der Norm, ohne Abhängigkeit, gegen python-qrcode und qrcodegen
+  geprüft), Teilen-Menü des Geräts, WhatsApp- und Mail-Link, Link kopieren. Geteilt wird
+  schach-von-grund-auf.com/installieren/ (Entscheidung vom 15.10.2026: Seite nur zum Installieren).
+- **Vorprüfung Teil 1:** 261 offene Testpunkte maschinell geprüft (Oberflächentests
+  `vorpruefung-neu.spec.ts`, `vorpruefung-alt.spec.ts`, bestehende Specs). Kein Fehler gefunden.
+  Belegt und deshalb aus der Liste genommen (142): N1013, N1064, N1075, N1078, N2137, N2145, N2309, N2310, N2339, N2344, N2353, N2361, N2362, N2363, N2370, N2372, N2373, N2374, N2375, N2400, N2401, N2406, N2410, N2412, N2420, N2421, N2422, N2423, N2424, N2430, N2432, N2440, N2441, N2442, N2443, N2444, N2446, N2460, N2461, N2462, N2463, N2464, N2465, N2466, N2467, N2480, N2481, N2483, N2484, N2485, N2486, N2490, N2491, N2492, N2493, N2494, N2495, N2496, N2497, N2498, N2500, N2501, N2502, N2503, N2506, N2507, N2508, N2509, N2510, N2511, N2512, N2514, N2516, N2517, N2518, N2519, N2521, N2525, N2526, N2527, N2528, N2529, N2531, N2533, N2534, N2535, N2536, N2540, N2541, N2542, N2543, N2544, N2545, N2546, N2547, N2548, N2549, N2552, N2553, N2555, N2556, N2557, N2558, N2559, N2560, N2561, N2562, N2563, N2564, N2568, N2570, N2571, N2572, N2573, N2574, N2575, N2576, N2577, N2578, N2579, N2581, N2582, N2583, N2584, N2585, N2586, N2588, N2589, N2590, N2591, N2592, N2593, N2594, N2595, N2596, N2597, N2598, N2599, N2600, N2602, N2603, N2604.
+  Überholt: N2300 (Brettvorschau in den Einstellungen); N2329 (Nichts verloren in der Auswertung); N2138 (Kalender auf dem iPhone); N2139 (Kalender auf Android). Q15-2 (Plan mit Wochentagen und Dauer) war mit 0.3.51 erledigt.
+- **Entscheidungsseite:** Alle übrigen Rückfragen und Testpunkte stehen zum Antippen auf einer
+  Seite (claude.ai-Artefakt), die Antworten liest Claude von dort.
+
 ## 7.11.2026 – Version 0.3.54: Fehler mit Buchbezug vollständig
 
 - **Findezeilen F1–F10** (Glühbirne) auf den Karten der Zeitleiste und im Rückblick Zug für Zug

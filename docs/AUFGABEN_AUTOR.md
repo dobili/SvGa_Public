@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 6.11.2026, Version 0.3.54 (Fehler mit Buchbezug vollständig, 7.11.2026).
+Stand: 8.11.2026, Version 0.3.55 (App weitergeben, Vorprüfung aufgeräumt, 8.11.2026).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.54“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.55“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,282 +33,65 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.3.54: Wie du den besseren Zug hättest finden können (7.11.2026)
+### Neu in 0.3.55: App weitergeben, Vorprüfung aufgeräumt (8.11.2026)
 
-- [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
-      war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
-      der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
-      und Glühbirnen-Zeile dasselbe (gleicher Trainer, gleiches Thema), steht nur die Warum-Zeile da.
-- [ ] N2603. Im Rückblick Zug für Zug zu einem Zug mit „?!“ oder „?“ gehen: Unter „Besser war …“ steht die Glühbirnen-
-      Zeile mit Kapitel; aufgeklappt gibt es einen eigenen Knopf „Üben“. Bei „gut“ und „sehr gut“ erscheint sie nie.
-- [ ] N2604. Nach mindestens 5 ausgewerteten Partien, in denen in 3 oder mehr derselbe Fehler vorkam, zeigt die Karte
-      „Heute“ eine Kachel wie „Drohung stehen gelassen · 3 von 5 Partien · Kapitel 1“. Der Knopf öffnet den Trainer; nach
-      dem Üben verschwindet die Kachel bis zur nächsten Partie. (Ältere Partien bekommen die Kürzel im Leerlauf
-      nachberechnet.)
+- [ ] N2605. Profil › „App weitergeben“ (unter „Einstellungen“; auch unter Einstellungen › Über die App) öffnet ein
+      Blatt mit großem QR-Code. Scanne ihn mit einem zweiten Handy: Es öffnet sich die Installationsseite
+      schach-von-grund-auf.com/installieren/. „Teilen (WhatsApp, Signal, Telegram …)“ öffnet das Teilen-Menü des
+      Handys mit dem Satz „Lern Schach mit mir! Die kostenlose App zum Buch „Schach von Grund auf“:“ und der Adresse.
+      Prüfe auch „Über WhatsApp schicken“ (WhatsApp öffnet sich mit fertigem Text), „Per E-Mail schicken“ und „Link
+      kopieren“ (Meldung „Link kopiert“, Einfügen ergibt die Adresse). Der QR-Code erscheint auch im Flugmodus. Passt
+      der Satz, und sitzt der Knopf richtig?
+- [ ] N2606. Zwei Kleinigkeiten fürs Auge: Im Steckbrief überdeckt der Pfeil der eingeklappten Kommentarzeile womöglich
+      das Textende („…aus Kap“), und im Rückblick Zug für Zug wirkt der Pfeil neben der Glühbirnen-Zeile verzerrt.
+      Siehst du das auf deinem Handy auch?
 
 ### Neu in 0.3.53: Aussehen nur noch im Profil, Fehler mit Buchbezug (7.11.2026)
 
-- [ ] N2600. Profil → Einstellungen: Oben gibt es keine Brettvorschau mehr, nur die Zeile „Aussehen (Brett, Figuren,
-      Rahmen) im Profil wählen“. Ein Tipp führt zur Profilkarte „Dein Aussehen“ (bisher „Deine Extras“), Reiter
-      „Brett“ offen. Dort stehen alle Bretter, die freischaltbaren mit Schloss und Bedingung („Nacht und Gold“: „Mit
-      allen Orden der Buchteile“). „Grün“ antippen: Vorschau und jede Abbildung im Buch werden grün. Reiter „Figuren“
-      ebenso (etwa „Merida“; „Gold“ mit Schloss „Ab Stufe 5“). Der Schalter „Koordinaten“ steht unter den Brettern.
 - [ ] N2601. Auswertung einer Partie mit Fehler oder Patzer: Auf der Fehlerkarte der Zeitleiste steht unter „Besser war“
       eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1)“. Tipp klappt den Satz mit der ganzen
       Fundstelle auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
       Fehlt die Zeile, wo ein klarer Grund erkennbar ist? Bei „Verpasst“ gibt es nur die Zeile zum besseren Zug.
 
-### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)
-
-- [ ] N2599. Eine ausgewertete Partie auf dem Handy öffnen und mit Vor/Zurück (oder den Pfeiltasten) ganz durchgehen,
-      einmal einzeilig und einmal aufgeklappt. Über der Zugnavigation steht immer die Zeile „Linie:“ mit drei
-      Symbolen (Partie, Glühbirne, Schwerter) in einer Zeile; Glühbirne und Schwerter sind nur an Fehlern
-      antippbar, sonst ausgegraut. Brett und Weiter-Knopf bleiben genau an ihrem Platz. Unter dem Brett gibt es
-      keine Knöpfe „Besserer Zug“ und „Bestrafung“ mehr. An einem Fehler spielt ein Tipp auf Glühbirne oder
-      Schwerter die Folge Zug für Zug vor (nochmal tippen hält an); danach geht man mit Vor/Zurück selbst durch,
-      „Partie“ (erstes Symbol) führt zurück.
-
 ### Neu in 0.3.51: Deine Meldungen vom 6.11.2026
 
-- [ ] N2585. Zug eingeben: Läufer antippen (Zielfelder erscheinen), dann eine eigene Figur ganz am Rand zu
-      einem Zielfeld des Läufers antippen (etwa den Springer direkt neben einem Läuferziel). Jetzt ist
-      die neue Figur gewählt, der Läufer zieht nicht. Ein Tipp knapp neben ein Zielfeld auf ein leeres
-      Feld zieht weiter dorthin.
-- [ ] N2586. Röntgentrainer, Schritt 1 (Schachs): Ein Schach übersehen, das zugleich ein Verlustschlag ist (wie
-      Lxf7+ auf deinem Bildschirmfoto). Unter „Übersehen“ steht jetzt „Lxf7+ gibt Schach und gehört deshalb
-      dazu, auch wenn der Schlag Material kostet (Lxf7+ …: −2 Bauerneinheiten).“ In Schritt 2 (Schläge)
-      musst du diesen Schlag nicht markieren. Zu deiner Frage: Die Markierung war richtig verlangt, aber
-      als Schach, nicht als Schlag; nur der Satz war irreführend.
 - [ ] N2587. 10-Minuten-Partie gegen einen Bot zu Ende spielen: Die Auswertung danach ist nach wenigen
       Sekunden fertig (vorher etwa 20 Sekunden). Grund: Jeder Zug hat die gerade rechnende Stellung
       verworfen und neu angefangen; jetzt wird das Ergebnis behalten und eine laufende Rechnung
       weiterverwendet.
-- [ ] N2588. Auswertung, Zeitleiste: Kacheln „Absichtlicher Fehler der Engine“ erscheinen nur noch, wenn der Zug
-      wirklich ein Fehler, Patzer oder verpasster Gewinn war, nicht bei kleinen Ungenauigkeiten.
-- [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
-      Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
-      aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
-- [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
-      jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
-- [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
-      stellen: Die Karte „Heute“ schlägt nach fälligen Wiederholungen zuerst Partie, Taktikthema und
-      Kurzplan vor. Die Startwahl der ersten Tour (Einstellungen › Hilfe › Rundgang) stellt das
-      ebenfalls ein.
-- [ ] N2593. Lernpfad „Dein Weg durchs Buch“: Unter dem Balken stehen jetzt auch „… Warum-Fragen“ und
-      „… Lernziele“. In Kapitel 1 eine Warum-Frage richtig beantworten und in der Gesamt-Checkliste ein
-      Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
-      sie erst, wenn auch Warum-Fragen und Lernziele erledigt sind. Ein Orden, den du schon hast, bleibt
-      golden (im ⓘ: „Den Orden „Teil …“ hast du schon.“); er zählt weiter nur Abbildungen und Übungen.
-- [ ] N2596. Ausgewertete Partie: einen Fehler (?) antippen, unter der Zugliste „Besserer Zug“ oder „Bestrafung“
-      wählen. Die Folge steht in Klammern hinter dem Fehler, darunter „Linie: Partie / Besserer Zug /
-      Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
-      markierter Zug passen immer zusammen; Zurück am ersten Zug oder „Zurück zur Partie“ führt in
-      die Partie zurück.
-- [ ] N2597. Karte „Heute“ › „Wann übst du?“ › Übungszeit planen: Wochentage und Dauer wählen (10 bis 60
-      Minuten), keine Uhrzeit mehr. An einem Plantag steht beim Öffnen „Heute ist dein Übungstag: 0 von
-      20 Minuten geschafft“ mit Balken und „Jetzt üben“. Ein paar Minuten in der App üben (lesen,
-      ziehen, lösen): Die Zahl steigt etwa jede Minute; wer drei Minuten nichts antippt, zählt nicht
-      weiter. Im Reiter der Karte steht „7/20 Min“.
-- [ ] N2598. Mindestens 5 gewertete Partien gegen Bots in derselben Zeitart spielen und auswerten lassen. Liegt eine
-      Phase deutlich (mindestens etwa 150 Punkte) unter deiner Schätzung, steht auf der Karte „Heute“
-      die Kachel „Aus deinen Partien“: „Ein Hinweis aus deinen letzten 8 Partien: Im Endspiel spielst
-      du etwa 250 Punkte schwächer als sonst …“ mit Kapitel und Trainer (Eröffnung: Kapitel 2,
-      Repertoire; Mittelspiel: Kapitel 7, Taktik; Endspiel: Kapitel 8, Endspieltrainer). Bei weniger
-      Partien oder ausgeglichenen Phasen kommt kein Hinweis.
-- [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
-      Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
-      Wertung zählt der stärkste besiegte Bot.
-
-### Neu in 0.3.51: Taktiktrainer – mehrere Motive und gleich schnelle Matts (6.11.2026)
-
-Deine Frage: „Können mehrere Motive gleichzeitig zutreffen?“ Ja, bei gut der Hälfte der Aufgaben
-(574 von 1067 mit Motiv). Bei „Welches Motiv war es?“ zählt jetzt jedes zutreffende Motiv; die
-Meldung nennt die anderen. Gleich gute andere Züge gibt es laut Engine fast nie (Lichess-Aufgaben
-sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso schnell ist.
-
-- [ ] N2594. Training → Taktiktrainer, Motiv „Hinlenkung“ oder gemischt: Aufgabe lösen (etwa Abb. 7.14:
-  Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
-  Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
-  Zutreffend waren: …“ mit allen passenden Motiven.
-- [ ] N2595. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
-  spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
-  langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
-
-### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
-
-- [ ] N2582. Variante → Stift: drei goldene Felder nebeneinander (je zweimal antippen) und ein roter Pfeil. In der
-      Legende „Nummern von Gold“ aufklappen: Jede Nummer hat „ohne Nummer“. Zweimal antippen (an 2 und 3) → am
-      Brett nur noch Gold 1, die Felder bleiben markiert; die beiden stehen in der Liste als „– Feld e4“ mit
-      „Nummer geben“. Beschriftete Nummern behalten ihren Text, auch wenn sie dadurch eine neue Nummer
-      bekommen.
-- [ ] N2583. „Nummern von Rot“ aufklappen, Haken „Nummern“ weg: Alle roten Marken der ganzen Variante sind ohne
-      Nummer, der Text bei „Rot“ in der Legende gilt für alle. Haken wieder an: Die Nummern sind zurück.
-- [ ] N2584. PGN der Variante sichern und wieder einlesen: Marken ohne Nummer bleiben ohne Nummer.
-
-### Neu in 0.3.49: Goldener Pfeil in Varianten wie in der Auswertung (1.11.2026)
-
-- [ ] N2581. Analysierte Variante: Steht ein Zug am Brett, der nicht der beste war (etwa 3... Sf6?? im Schäfermatt),
-      zeigt ein goldener Pfeil den besseren Zug, wie in der Partieauswertung. Der grüne Pfeil für den
-      besten nächsten Zug ist weg. Der Schalter „Engine-Pfeil“ blendet den goldenen Pfeil aus und ein.
 
 ### Neu in 0.3.48: Bearbeiten und Löschen auffindbar (1.11.2026)
 
-- [ ] N2574. Training › Varianten: Neben jeder Variante stehen ein Stift und ein Papierkorb. Der Stift öffnet
-      Name und Kommentar („Speichern“ übernimmt, „Abbrechen“ nicht), der Papierkorb fragt „„…“ endgültig
-      löschen?“. In einer geöffneten Variante steht hinter dem Titel ein goldener Stift; Antippen öffnet
-      Name, Kommentar, Teilen und Löschen. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2576. **Engine-Folgen vorab an:** Eine ausgewertete Partie mit mindestens einem eigenen Fehler, Patzer oder
-      verpassten Gewinn öffnen → Gabel-Knopf am Brett: Der Schalter „Engine-Folgen übernehmen („Besser
-      war …“, „So wird bestraft“)“ ist jetzt schon angehakt → „Öffnen“. An jedem eigenen Fehler zweigt
-      „Besser war (Engine)“ ab, bei Fehler und Patzer zusätzlich nach deinem Zug „So wird bestraft
-      (Engine)“. Ungenauigkeiten bekommen keine Folgen. Ebenso unter Varianten › Neue Variante ›
-      Partie. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2577. **Fehler des Gegners:** Am Gabel-Knopf einer ausgewerteten Partie steht unter „Engine-Folgen
-      übernehmen“ der Haken „Auch an Fehlern des Gegners“ (vorab an). Mit beiden Haken bekommen auch die
-      Fehler des Gegners „Besser war (Engine)“ und „So wird bestraft (Engine)“. Ebenso unter Neue Variante ›
-      Partie. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5
-      2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
-      Folgen übernehmen (+… Züge)“. Antippen legt an Fehlern, Patzern und verpassten Gewinnen beider Seiten
-      „Besser war“ und „So wird bestraft“ als Abzweige an (Züge mit Chip-Zeichen „Engine“); danach
-      verschwindet der Knopf. Ungenauigkeiten bekommen nichts.
-- [ ] N2579. **Karte:** Rechts neben dem letzten Zug jeder Linie steht ihre Endstellung als kleines Brett.
-      Nach der Analyse steht neben jedem Brett der Karte (Abzweige und Endstellungen) ein schmaler
-      Bewertungsbalken (unten Weiß, oben Schwarz): So sieht man beim Scrollen, welche Linie wem liegt.
 - [ ] N2580. **Baumansicht:** Nach der Analyse steht links an jedem kleinen Brett der Abzweig-Karten der
       Bewertungsbalken mit Zahl.
-- [ ] N2575. Touren (Kompass): Die Tour der Variante beginnt mit dem Titel (Bearbeiten, Löschen), die Tour der
-      Liste nennt Stift und Papierkorb, die Touren von Lernsammlung und Fehlerdatenbank sagen, dass ein
-      aufgeklappter Eintrag „Bearbeiten“ und „Löschen“ (mit „Rückgängig“) hat.
-
-### Neu in 0.3.47: Meisterpartien statt Studien, gespeicherte Werte (1.11.2026)
-
-- [ ] N2570. Varianten → Neue Variante: Statt „Studie (Kapitel 10)“ steht jetzt die Kachel „Meisterpartie“
-      (Krone). Oben „Quelle“: „Aus dem Buch“ listet die Meisterpartien aus Kapitel 11 (etwa Morphys
-      Opernpartie) und öffnet sie wie die Abbildung, mit den Varianten des Buches. „Berühmte Partien“
-      und „Aktuelle Turniere“ listen die Zusatzpartien von „Zug erraten“ (Hinweis „Zusatzinhalt“);
-      „Anderssen – Kieseritzky, Freie Partie, London 1851“ öffnet die Unsterbliche Partie als Variante ab der
-      Grundstellung. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2572. **Speichern nur per Abfrage:** Neue Variante aus der Grundstellung, 1. e4 ziehen: oben steht
-      „Geändert · nicht gespeichert“ mit dem Knopf „Speichern“; in der Liste „Varianten“ ist noch nichts.
-      „Zurück“ (oben, Zurück-Taste oder untere Leiste) fragt „Variante speichern?“ mit Speichern, Nicht
-      speichern, Abbrechen. „Karte“, „Von hier spielen“ und „Abfragen“ fragen vorher „Dafür muss die
-      Variante gespeichert sein“. An einer Abbildung mit eigenen Zügen fragt der Gabel-Knopf „Deine
-      Züge … speichern?“ (oder „Nur das Buch öffnen“); „Als Variante speichern“ in der Zugleiste und
-      „Einlesen und speichern“ bei PGN sind selbst die Antwort. Eine gespeicherte Variante speichert
-      Änderungen weiter von selbst. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2573. **Bretter in der Karte:** Abb. 2.40 als Variante → „Karte“: Unter „3. Sxe5“ und „4. De2!“ steht je
-      ein kleines Brett mit der Stellung am Abzweig und den blauen gepunkteten Pfeilen (Stern am
-      Hauptzug, „2“, „3“ …); die Nebenäste beginnen darunter. Ein Tipp aufs Brett springt zu diesem
-      Abzweig. Zoomen macht die Bretter größer. Schon umgesetzt, Widerspruch genügt.
-- [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
-      Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
-      Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler
-      „läuft … von …“ zählt nur diese.
 
 ### Neu in 0.3.46: Variationsbrowser, Zurück-Taste (1.11.2026)
 
-- [ ] N2500. Training: Kachel „Varianten“ (noch leer) öffnen; „Neue Variante“ zeigt sieben Kacheln.
-- [ ] N2501. Abb. 2.40 → Brettschalter „Variante“: Zugleiste mit Gabel „2“ nach 3. Sxe5, Chips „★ 3... d6!“ und „2 3... Sxe4?!“, auf dem Brett zwei blaue gepunktete Pfeile mit Stern und „2“.
-- [ ] N2502. Dort 3... De7 ziehen: Status „Gespeichert unter Varianten“, Gabel zeigt „3“, De7 in Gold.
-- [ ] N2503. Langer Druck auf einen Zug öffnet das Menü (Zugzeichen, Zur Hauptvariante machen, Kommentar, Ab hier löschen); nach „Ab hier löschen“ holt „Rückgängig“ die Züge zurück.
 - [ ] N2504. „+ Notiz zu diesem Zug“: Text schreiben, App schließen und neu öffnen – der Kommentar ist da, der Zug hat einen goldenen Punkt.
 - [ ] N2505. Titel antippen: umbenennen, Kommentar zur Variante (erscheint eingeklappt oben), PGN in Lichess als Studie einfügen (Varianten, Kommentare, Zeichen kommen an), Variante löschen mit Rückfrage.
-- [ ] N2506. Abb. 2.2 mit „Ziehen“ eigene Züge spielen, in „Deine Züge“ „Als Variante speichern“: Variante öffnet am letzten eigenen Zug; an der Abbildung steht danach „1 eigene Variante ›“.
-- [ ] N2507. Liste: „PGN“ → eine Lichess-PGN mit Varianten einfügen → Variante öffnet mit allen Abzweigen; FEN einfügen öffnet die Stellung.
-- [ ] N2508. Neue Variante aus Partie, Fehlerdatenbank, Lernsammlung und „Stellung aufbauen“ ausprobieren (Titel, Kommentare aus Satz bzw. Plan).
-- [ ] N2509. Ausgewertete eigene Partie mit Patzer: Gabel im Rückblick → Schalter „Engine-Folgen übernehmen“ → Abzweige „Besser war (Engine)“ und „So wird bestraft (Engine)“ (kursiv mit Chip-Zeichen), einzeln löschbar.
-- [ ] N2510. Partienliste und Auswertung zeigen die Zahl eigener Varianten einer Partie.
-- [ ] N2511. „Von hier spielen“ in einer Variante: Spielen zeigt „Probepartie: zählt nicht“, Partie gegen einen Bot, „Probepartie beenden“ → „Als Variante speichern“ → Züge als Abzweig mit Kommentar; Partienliste, Wertung, Rekorde und Tagesziel unverändert.
-- [ ] N2512. „Von hier spielen“ aus dem Gabel-Blatt der Auswertung: Farbe wie in der Partie; nach „Verwerfen“ bleibt nichts gespeichert.
 - [ ] N2513. Datensicherung mit Varianten: Rückfrage nennt „Varianten: n“; Einspielen auf einem zweiten Gerät bringt sie mit.
-- [ ] N2514. Tour auf beiden neuen Bildschirmen (Kompass oben rechts).
 - [ ] N2515. Englisch: beide Bildschirme in englischer Sprache ansehen.
-- [ ] N2516. Abb. 2.40 → „Variante“ → Schalter „Stift“: Gold wählen, d8 und h4 antippen (Pfeil mit „1“), e5 zweimal antippen
-      (goldener Rahmen mit „2“ in der Ecke), Rot f6–e4 (rot „1“). Status „Gespeichert unter Varianten“, die blauen Pfeile sind
-      weg, solange der Stift an ist.
-- [ ] N2517. Denselben Pfeil noch einmal setzen nimmt ihn weg, die Nummern rücken nach. Radierer leert die Stellung,
-      „Rückgängig“ holt alles zurück.
-- [ ] N2518. Legende: Goldzeile beschriften („Druck“), Rot aufklappen und „Rot 1“ beschriften; „Fertig“ – die Legende zeigt
-      nur das Beschriftete; App schließen und neu öffnen, alles ist noch da.
-- [ ] N2519. Eigenen Zug 3... De7 ziehen, „Baum“: Karte „nach 3. Sxe5“ mit Mini-Brett, Pfeilen ★/2/3 und drei Knöpfen
-      (Hauptvariante, „7 Züge · 1 Abzweig“, „1 Zug · eigene“), darunter eingerückt „in 3... Sxe4?!“. Tipp auf „3... Sxe4?!“
-      springt dorthin.
 - [ ] N2520. „Karte“: ganze Variante als Karte, Hauptvariante oben gold, De7 in Gold; mit einem Finger in alle Richtungen
       schieben, mit zwei Fingern zoomen, −/+/„Alles zeigen“/„Zur Stellung“ ausprobieren.
-- [ ] N2521. Auf der Karte einen Zug antippen: Die Variante öffnet genau an dieser Stellung; „Zurück“ in der Variante führt
-      zur Abbildung (kein zweiter Entwurf).
 - [ ] N2522. Karte „Als Liste“: alle Züge, Abzweige eingerückt; mit VoiceOver/TalkBack bedienbar.
 - [ ] N2523. Titel antippen → „PGN kopieren“ und in Lichess als Studie einfügen: Pfeile und Rahmen erscheinen (Gold als
       Gelb, Grau als Blau), die Texte „Gold 2: …“ und „Legende Gold: …“ stehen im Kommentar. Dieselbe PGN in der App unter
       „Varianten → PGN“ einlesen: genaue Farben, Nummern und Texte kommen zurück.
 - [ ] N2524. Eine Lichess-Studie mit Pfeilen als PGN einlesen: Pfeile und Felder in Gold/Rot/Grün/Blau sind da; Englisch
       einstellen und Stift, Legende, Baum und Karte ansehen; Tour auf Variante und Karte (Kompass).
-- [ ] N2560. Varianten → PGN: „1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sxe4 4. De2 Sf6 5. Sc6+“ einlesen, „Analyse“ antippen: oben
-      läuft „Analyse … von … Stellungen“, du kannst dabei weiter blättern und ziehen.
-- [ ] N2561. Nach der Analyse: hinter jedem Zug ein Symbol (4... Sf6 rotes „??“, 5. Sc6+ grüner Stern), am Brett
-      dieselbe Marke am Zielfeld, links der Balken mit Zahl, ein grüner Pfeil zeigt den besten Zug der gezeigten Stellung.
-- [ ] N2562. Die Chips „Symbole“, „Balken“, „Engine-Pfeil“ blenden je ihr Teil aus und ein; App schließen und neu öffnen:
-      die Wahl ist gemerkt, die Werte sind noch da (keine neue Analyse).
-- [ ] N2563. In der analysierten Variante einen neuen Zug ziehen: nur er wird nachgerechnet („Analyse 1 von 1“), danach
-      hat er Symbol und Balken.
-- [ ] N2564. Analyse einer langen Variante starten und „Abbrechen“ tippen: Der Knopf ist wieder aus, fertige Stellungen
-      behalten ihre Symbole; „Analyse“ noch einmal rechnet nur den Rest.
 - [ ] N2565. Analyse starten und die Variante verlassen (etwa ins Buch): später zurück – die Analyse ist im Hintergrund
       fertig geworden.
 - [ ] N2566. Titel → „Als PGN-Datei sichern“ und in Lichess als Studie einfügen: Lichess zeigt die Bewertungen
       (`[%eval]`). Dieselbe Datei in der App einlesen: Symbole und Balken sind sofort da.
 - [ ] N2567. Eine Lichess-Studie mit Engine-Bewertungen als PGN einlesen: Balken sofort; Symbole erst nach „Analyse“.
-- [ ] N2568. „Von hier spielen“, ein paar Züge, dann über die Leiste zu „Spielen“: oben die Karte „Probepartie läuft“
-      („zählt nicht · gegen …“); „Weiterspielen“ führt zurück, „Beenden“ bietet „Als Variante speichern“ und „Verwerfen“.
 - [ ] N2569. Englisch einstellen und Analyse, Chips, ⓘ und die Probekarte ansehen; Tour der Variante (Kompass) zeigt den
       Schritt „Analysis“.
-- [ ] N2525. Varianten → Neue Variante → „Ganze Eröffnung“: Italienische Partie, „Aus der Praxis“ anhaken, Band
-      wählen, Vorschau „Buch … · Praxis … Züge“ → Öffnen: Variante öffnet nach 3. Lc4 mit vielen Fortsetzungen; nach
-      3... Lc5 stehen auch 4. Sg5 (Übung 8) und 4. b4 (Evans); erster Praxiszug hinter dem Buch mit „Praxis (Lichess)“.
-- [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
-      Wiener Partie) ausprobieren.
-- [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
-      Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
-- [ ] N2528. Variante (etwa aus Abb. 2.40) → „Abfragen“: Seite wählen, „Ab dem Anfang“, falscher Zug zeigt den
-      Pfeil, ein Zug aus einem anderen Abzweig gilt nicht als Fehler, Linien nacheinander, Ergebnis am Ende.
-- [ ] N2529. Lernsammlung: beim Anlegen (oder Bearbeiten) unter „Notiz“ eine Variante wählen bzw. „Neue Variante
-      aus dieser Stellung“; am Eintrag „Varianten abfragen (1)“; in „Abfragen“ nach „Plan zeigen“ „Varianten abfragen“.
-      Dasselbe beim Bearbeiten eines Fehlereintrags; „lösen“ nimmt die Verknüpfung wieder weg.
-- [ ] N2555. Buch › „Dein Weg durchs Buch“ › ein Bündel „Nebenaufgaben“ antippen, dann die
-      Zurück-Taste (Android) oder die Zurück-Geste: Nur das Fenster schließt sich, der Lernpfad
-      bleibt. Ein zweites Zurück führt zum Buch.
-- [ ] N2556. Profil › ein Abzeichen antippen › Zurück-Taste: Das Fenster schließt sich, die App
-      bleibt offen. Dasselbe mit „Teilen“ unter einer ausgewerteten Partie und mit „Partie
-      einstellen“ auf Spielen.
-- [ ] N2557. Einen Link `schach-von-grund-auf.com/app/#aufgabe-taktik-` (abgeschnitten) öffnen:
-      Es erscheint „Dieser Link ist ungültig oder unvollständig.“ (nicht still das Buch). Ein Link mit
-      angehängtem `?fbclid=abc` hinter der Kennung öffnet die Aufgabe normal.
-- [ ] N2558. Eine Partie aus dem Profil öffnen › „Neue Partie“: Spielen öffnet, unten ist
-      „Spielen“ golden markiert. Training › 30-Minuten-Plan › Partietag › „Zum Spielen“: ebenso.
-- [ ] N2559. Während einer Tour (Einstellungen › Hilfe › Rundgang) die Zurück-Taste drücken: Die
-      Tour endet, die Seite darunter bleibt stehen (früher ging die App zusätzlich zurück).
 
 ### Neu in 0.3.45: Zeitleiste, Repertoire, Sammlungen bearbeiten, Fehlertest Teil 3 (1.11.2026)
 
-- [ ] N2480. Nach dem Ende kein Zurücknehmen: Spiele eine ungewertete Partie mit erlaubter
-      Rücknahme bis zum Ende (etwa aufgeben). Unter dem Brett steht kein „Zurücknehmen“ mehr, auch
-      nicht, wenn du die Partie später im Profil unter „Deine Partien“ wieder öffnest. Während der
-      Partie ist der Knopf wie bisher da.
-- [ ] N2481. Bester Zug ohne „?“: Öffne die Auswertung einer Partie, in der du schon klar
-      verloren standest. Züge mit dem Stern „Bester Zug“ tragen nirgends „?!“, „?“ oder „??“ (Zugliste,
-      Momente, Zahlen „Deine Züge“), auch wenn die Gewinnchance dabei weiter fällt.
 - [ ] N2482. Die Partie in Momenten wischen: In der Auswertung stehen die Momente nebeneinander.
       Wische mit dem Daumen nach links: Die Karten rasten ein, rechts schaut die nächste heraus, oben
       zählt „2 von 7“ usw. mit. Jede Phase beginnt mit einer schmalen Karte „Mittelspiel · Zug … · %“.
-- [ ] N2483. Blättern mit Knöpfen: Die Pfeile neben „1 von 7“ gehen einen Moment weiter oder
-      zurück, auch bei zwei schnellen Tipps; am Anfang ist der linke Pfeil grau, am Ende der rechte.
-- [ ] N2484. Phasenknöpfe: Tippe unter der Kurve auf „Mittelspiel“: Kurve zoomt wie bisher und die
-      Reihe rückt die Karte „Mittelspiel“ nach vorn; „Ganze Partie“ springt an den Anfang.
-- [ ] N2485. Zur Stellung: Tippe in einer Karte auf „Zur Stellung“. Das Brett oben ist danach ganz
-      zu sehen (auf kleinem Handy samt „Merken“ darunter), nicht mehr unten angeschnitten.
-- [ ] N2486. Bewegung reduzieren: Stelle am Handy „Bewegung reduzieren“ ein. Blättern in den
-      Momenten und „Zur Stellung“ springen ohne Gleiten.
 - [ ] N2487. Hell und dunkel, Querformat, Tablet: Die Momente sehen in hellem und dunklem Design
       gut aus; im Querformat steht das Brett links und „Zur Stellung“ scrollt nicht unnötig.
 - [ ] N2530. Repertoire-Trainer (Training › Repertoire-Trainer): Unter „Deine Runde“ steht die Zeile
@@ -316,54 +99,8 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Buches mit kurzem Namen (Königsgambit, Evans-Gambit, Dänisches Gambit, …, Damengambit). Wähle
       „Königsgambit“, Seite Weiß, „Runde starten“: Nach 1. e4 e5 ziehst du 2. f4, die App antwortet exf4.
       Stimmen die Varianten mit Kapitel 3 überein?
-- [ ] N2531. Zurück zur Auswahl, „Aus“ auf „Eröffnungen (Kapitel 2)“: Die zuletzt gewählte Eröffnung aus
-      Kapitel 2 ist noch da, und beim Wechsel auf Gambits das zuletzt gewählte Gambit.
 - [ ] N2532. Der Repertoire-Trainer steht jetzt auch bei Kapitel 3 unter „Die Trainer zu diesem
       Kapitel“. Passt das so?
-- [ ] N2533. Hake „Auch Eröffnungen aus der Praxis (Lichess)“ an: „Aus“ springt auf „Praxis (Lichess)“,
-      darunter der Hinweis, dass die Züge nicht aus dem Buch stammen, „Noch nichts gewählt.“ und ein
-      gesperrter Knopf „Runde starten · keine Variante“; darunter die offene Klappe „Eröffnungen nach
-      Spielstärke“. Öffne bei „Italienische Partie“ die „Varianten“ und tippe „Die häufigsten 3“: Über dem
-      Knopf steht „3 gewählt“, der Knopf heißt „Runde starten · 3 Varianten“.
-- [ ] N2534. Starte die Runde als Weiß: Über dem Brett steht der Name der Variante, „wie echte Spieler
-      sie auf Lichess am häufigsten spielen“ und „Aus der Praxis, Lichess (nicht aus dem Buch)“. Ein falscher
-      Zug zeigt „Nicht der Zug dieser Variante“ und den richtigen Zug als Pfeil.
-- [ ] N2535. Schließe die App und öffne den Trainer wieder: Schalter, Quelle und die gewählten Varianten
-      sind noch da. Haken weg: zurück auf „Eröffnungen (Kapitel 2)“, die Lichess-Liste verschwindet.
-- [ ] N2536. Rundgang im Repertoire-Trainer (Kompass oben rechts): Ein Schritt erklärt die Zeile „Aus“,
-      ein weiterer den Schalter „Praxis“; der Schritt zum Ziehen erwähnt keine Warum-Fragen mehr.
-- [ ] N2540. Training öffnen: Direkt unter „Dein Stapel für heute“ stehen drei Kacheln: Lernsammlung, Fehlerdatenbank (Datenbank-Symbol) und Alle Kapitel. Die Kachel Fehlerdatenbank zeigt „noch leer“ bzw. die Zahl der Einträge und öffnet die Fehlerdatenbank.
-- [ ] N2541. Eine Partie spielen, in der Auswertung auf einen Zug gehen, „Merken“, dann „Fehler“, dann „In die Fehlerdatenbank“: Es erscheint „In der Fehlerdatenbank gespeichert. Zur Fehlerdatenbank“. Der Link führt hin, und der Eintrag steht dort.
-- [ ] N2542. Dasselbe mit „Lernen“ und „Speichern“: „In der Lernsammlung gespeichert. Zur Lernsammlung“ führt in die Lernsammlung.
-- [ ] N2543. Lernsammlung: einen Eintrag aufklappen. Hat er keinen Plan, heißt der Knopf „Plan ergänzen“, sonst „Bearbeiten“. Die Felder Plan, Notiz und Eröffnung sind beschriftet wie beim Anlegen. Plan ändern und „Änderung speichern“: Der neue Plan steht in der Zeile, und „Abfragen“ zeigt ihn.
-- [ ] N2544. Lernsammlung: Eine geänderte Eröffnung verschiebt den Eintrag in die passende Gruppe.
-- [ ] N2545. Lernsammlung: „Löschen“ entfernt den Eintrag sofort. Unten schwebt „Gelöscht. Rückgängig“; ein Tipp holt ihn an dieselbe Stelle zurück. Nach etwa 10 Sekunden verschwindet die Leiste.
-- [ ] N2546. Fehlerdatenbank: einen Eintrag aufklappen, „Bearbeiten“, Fehlerart und Satz ändern, „Änderung speichern“. Die Zeile und die Auswertung je Fehlerart zählen den Fehler jetzt beim neuen Kapitel.
-- [ ] N2547. Fehlerdatenbank: „Eintrag löschen“, dann „Rückgängig“: Der Eintrag ist wieder da, die Auswertung zählt ihn wieder.
-- [ ] N2548. Tour im Training (Kompass oben rechts): Nach der Lernsammlung kommt ein Schritt zur Fehlerdatenbank.
-- [ ] N2490. Geteilten Link bei offener App öffnen: App offen lassen, dann im selben Browser-Tab
-      die Adresse schach-von-grund-auf.com/app/#aufgabe-taktik-l-1Vybh eingeben. Die Aufgabe
-      „Herausforderung“ öffnet sich sofort; „Training“ oben links führt zur Trainingsübersicht.
-- [ ] N2491. Profil › Einstellungen › Hilfe › „Rundgang durch die App“ › „Ich will spielen und
-      Partien auswerten“: Die Tour läuft auf „Spielen“, unten ist „Spielen“ golden markiert (nicht
-      mehr „Profil“).
-- [ ] N2492. Rundgang aus den Einstellungen öffnen und, solange die Frage „Wie möchtest du
-      starten?“ zu sehen ist, die Zurück-Taste (Android) drücken: Die Frage schließt sich.
-- [ ] N2493. Profil › Abzeichen „Erste Partie“ antippen › „Los geht's“: Spielen öffnet, unten ist
-      „Spielen“ markiert. Profil › Orden „Teil Endspiel“ › „Los geht's“: Kapitel 8 öffnet.
-- [ ] N2494. Ohne Internet (Flugmodus) Profil › Einstellungen › Bots und Wertung › „Maia laden“:
-      Es erscheint „Ohne Internetverbindung lässt sich Maia nicht laden …“ (kein „Failed to fetch“).
-- [ ] N2495. Datensicherung von einem Gerät mit verdienten Abzeichen auf einem zweiten Gerät (oder
-      nach „Alle Daten löschen“) einspielen: Es kommen keine Gratulationen zu alten Ringen oder
-      Abzeichen.
-- [ ] N2496. Orden-Probe (Aufgabenseite › Orden testen › ein Ring auf 100 %): Die Gratulation hat
-      den Fokus auf „Weiter“ (Tastatur am Rechner: Tab bleibt in der Karte, Esc schließt sie).
-- [ ] N2497. Handy auf Englisch stellen, App-Daten löschen, App über den QR-Code des Buches
-      (…/app/?start=buch) öffnen: Zuerst kommt die Frage nach der Sprache, die Tour „Mit dem Buch
-      starten“ erst danach.
-- [ ] N2498. App am Abend auf „Buch“ offen lassen, am nächsten Morgen wieder nach vorn holen:
-      „Heute“ zeigt den neuen Tag (am 1. eines Monats steht „Dein … ist fertig“), ohne etwas
-      anzutippen.
 - [ ] N2550. Repertoire-Trainer, Haken „Auch Eröffnungen aus der Praxis (Lichess)“: Unter dem
       Hinweis „nicht aus dem Buch“ steht jetzt ein Satz: „Nach dem Namen geht jede Variante mit den
       häufigsten Zügen von Spielern um 1200 weiter …“. Hast du schon gewertete Partien gegen die Bots
@@ -372,74 +109,14 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Weiß, „Runde starten“. Die Variante endet nicht mehr nach 2… Sc6, sondern geht weiter: 3. Lc4 e6
       4. O-O d5 5. exd5 exd5 6. Lb5 Ld7 7. Te1+ (ohne Wertung, Band 1200). Fühlt sich die Länge
       richtig an?
-- [ ] N2552. Dasselbe als Schwarz mit „Englische Eröffnung“ (1. c4): Früher gab es als Schwarz
-      keine Aufgabe, jetzt ziehst du die häufigsten Antworten (etwa 1… e5 …). Startknopf: „1 Variante“.
-- [ ] N2553. Ohne Netz (Flugmodus, App schon installiert): Die Runde aus der Praxis ist trotzdem
-      verlängert.
-- [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
-      Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
-      Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.
 
 ### Neu in 0.3.44: Lizenzen, Wiki und großer Fehlertest (Nacht 31.10./1.11.2026)
 
-- [ ] N2440. Karte „Heute“ mitten im Buch: Lies in Kapitel 6 ein paar Abbildungen (Kapitel 0 bis
-      5 abgehakt, Übungen offen). Die Übungskachel nennt jetzt Kapitel 5 (das zuletzt gelesene
-      fertige Kapitel), nicht mehr Kapitel 0.
-- [ ] N2441. Karte „Heute“ mit eigenem Ziel: Hefte unter „Ziele“ das Ziel „Übungen von Kapitel 3“
-      an. Die Übungskachel nennt jetzt Kapitel 3, auch wenn du dort noch nicht fertig gelesen hast.
-- [ ] N2442. Karte „Heute“ mit sehr vielen fälligen Karten (über 20): Statt „etwa 134 Minuten“
-      steht „Fang mit 20 an, das dauert etwa 14 Minuten“; die Kachel zeigt „200 fällig · 20 in etwa
-      14 Min“.
-- [ ] N2443. Karte „Heute“, alles erledigt (Tagesaufgabe gelöst, Kapitel gelesen): Als letzte
-      Kachel steht „Partie · Gegen die Engine“; ein Tipp öffnet Spielen. Neulinge vor Kapitel 0
-      sehen sie nicht.
-- [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
-      markierten Feld schlagen würde (fünf Aufgaben durchtippen).
 - [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
       mit Symbolen, Bündel als Chips).
-- [ ] N2446. Kapitelseite bei großer Schrift (Einstellungen › Schriftgröße 150 %) auf dem Handy:
-      nichts ragt über den Rand, „Alle abhaken“ und „Alle zurücksetzen“ stehen bei Platzmangel
-      untereinander.
-- [ ] N2460. Auswertung einer Partie gegen einen Bot: Unter „In Zahlen“ auf „Schwarz (Botname)“
-      tippen. Die Karte heißt jetzt „Züge von Botname“ statt „Deine Züge“; auf der eigenen Seite
-      weiter „Deine Züge“.
-- [ ] N2461. Spielen → Eigene Bots ohne eigenen Gegner: Über „Eigene Bots verwalten“ steht keine
-      leere Fläche mit Trennlinie mehr.
-- [ ] N2462. Profil → Partie einlesen (PGN): „1. e4 e5 2. Lc4 Sc6 3. Dh5 Sf6 4. Dxf7# 1-0“
-      einfügen (deutsche Notation) und doppelt auf „Einlesen und auswerten“ tippen. Erwartet: Schäfermatt
-      wird erkannt, in der Partienliste steht die Partie genau einmal.
-- [ ] N2463. Partie einlesen mit einer Crazyhouse- oder Chess960-PGN von Lichess: Meldung „Das ist
-      eine Schachvariante …“ statt einer kaputten Partie.
-- [ ] N2464. Zwei Tabs (oder installierte App und Browser-Tab) offen: im einen den Namen im Profil
-      ändern, im anderen eine Übung lösen oder Partie einlesen; danach beide neu laden. Erwartet: Name
-      und die andere Änderung sind beide da.
-- [ ] N2465. Datensicherung → „Sicherung einspielen“: Die Rückfrage nennt jetzt auch die Zahl der
-      Partien.
-- [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
-      Die Partie endet auf Zeit, der Zug wird nicht mehr ausgeführt.
-- [ ] N2467. Nach Mitternacht (0–1 Uhr) eine Partie als PGN herunterladen bzw. eine Sicherung
-      anlegen: Datei- und PGN-Datum zeigen den heutigen Tag, nicht gestern.
-- [ ] N2420. Einstellungen (Zahnrad) › Lizenzen: Neu sind „In onnxruntime-web enthalten:
-      protobuf.js, long.js, FlatBuffers, guid-typescript“, „Bibliotheken in der
-      WebAssembly-Laufzeit von onnxruntime“, „Schrift Source Serif 4 (Adobe)“, „Häufige
-      Eröffnungszüge ‚Aus der Praxis‘ …“ und „Hilfscode der Bauwerkzeuge …“. Bei jedem öffnet
-      „Lizenztext“ einen lesbaren Text (der für die WebAssembly-Laufzeit nur mit Internet).
-- [ ] N2421. Lizenzen, Eintrag „Zusatzpartien für ‚Zug erraten‘“: „Lizenztext“ öffnet den Text
-      der CC BY-SA 4.0, auch im Flugmodus.
-- [ ] N2422. Impressum (Startseite unten): Abschnitt „Quelltext und Rechte“ nennt „Version 3
-      oder (nach deiner Wahl) jeder späteren Version“, den Link zum Quelltext und „Einstellungen ›
-      Lizenzen“; der Link „Lizenzen“ unten führt zur Lizenzseite der App.
-- [ ] N2423. Eine Trainingsseite (schach-von-grund-auf.com/training/) und die Datenschutzseite
-      zeigen unten den Link „Lizenzen“.
-- [ ] N2424. Sprache Englisch: Die Lizenzseite zeigt auch die neuen Einträge auf Englisch.
-- [ ] N2430. Dashboard › Wiki (nach dem Zusammenführen und dem nächsten Push nach main):
-      Seite „Die Ordner der App“ öffnen und nach „Lernpfad“ suchen. Erwartet: ein Abschnitt
-      „ui/komponenten/lernpfad“ mit Stationen, Landschaften und Nebenaufgaben.
 - [ ] N2431. Dashboard › Wiki: Seite „Acht Wege durch den Code“ öffnen. Erwartet: acht Abläufe,
       darunter „Belohnungen“ und „Der erste Start: Startwahl und Touren“. Verständlich ohne
       Programmierkenntnisse? Notiz, was unklar ist.
-- [ ] N2432. Dashboard › Wiki: Suche nach „Buchbefund B7“ und nach „Zeit-Zählhilfe“. Erwartet:
-      kein Treffer (Buchbefunde bleiben aus dem Wiki).
 - [ ] N2433. Konzeptkarte (docs/konzeptkarte.html auf GitHub über „Raw“ oder lokal) auf dem
       Handy öffnen. Erwartet: neue Kreise wie „lernpfad“, „erfolge“, „start“; ein Tipp zeigt einen
       kurzen Text ohne abgeschnittenes „:“ am Ende.
@@ -448,69 +125,20 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 
 ### Neu in 0.3.43: Startwahl, Kennzahlen, Karte „Heute“, Orden und Nebenaufgaben (31.10.2026)
 
-- [ ] N2370. **Startwahl:** Am besten in einem privaten Browserfenster schach-von-grund-auf.com/app/
-      öffnen (wie eine frische Installation). Nach der Startanimation fragt die App „Willkommen! Wie
-      möchtest du starten?“ mit drei Knöpfen: „Ich lese das Buch“, „Ich will spielen und Partien
-      auswerten“, „Erst einmal umsehen“, darunter „Später“.
 - [ ] N2371. **Buch-Weg:** „Ich lese das Buch“: Die Tour zeigt Willkommen, die Karte „Heute“, das
       Weg-Symbol („Dein Weg durchs Buch“), das Nummernfeld, die Kapitel (mit „Schon weiter? Hake
       Gelesenes ab“), die Leiste, das Toursymbol, im Browser den Tipp zum Installieren und am Ende
       „Los: Kapitel 0“. Der Knopf öffnet Kapitel 0. Nimmt dich das an die Hand?
-- [ ] N2372. **Spielen-Weg:** In einem neuen privaten Fenster „Ich will spielen …“ wählen: Die App
-      wechselt zu Spielen und zeigt „Schnell eine Partie“, die Kacheln, die Auswertung und das
-      Einlesen einer Partie von Lichess oder chess.com mit dem Knopf „Partie einlesen“ (springt ins
-      Profil zu „Deine Partien“).
-- [ ] N2373. **QR-Adresse:** schach-von-grund-auf.com/app/?start=buch in einem privaten Fenster:
-      Die Frage entfällt, die Buch-Tour beginnt gleich. Profil › Einstellungen › Hilfe › „Rundgang
-      durch die App“ öffnet die Startwahl jederzeit wieder.
-- [ ] N2374. **Kennzahlen im Profil:** Unter Stufe und Erfahrung stehen drei Kacheln: ✓ Übungen
-      gelöst, Hantel Trainer-Durchgänge, Sprechblase Warum-Fragen, je mit großer Zahl. Eine Null
-      steht blass. Die alten Zeilen unter den Orden sind weg.
-- [ ] N2375. **Karte „Heute“ für Neue:** Frisch installiert steht dort „Anfangen · Kapitel 0 ·
-      Abb. 0.1“, auch wenn du vorher kurz in eine andere Abbildung geschaut hast. Eine Abbildung,
-      die nur kurz offen war, wird selbst vorgeschlagen statt übersprungen. Die Tagesaufgabe
-      (Taktik) erscheint erst, wenn Kapitel 0 zu 80 % gelesen oder ein Trainer geschafft ist. Gibt
-      es keine Alternativen, steht das Kreuz „Nicht jetzt“ rechts neben der großen Kachel.
-- [ ] N2400. **Infofenster der Orden:** Profil › „Deine Erfolge“: Tippe auf einen Orden oder ein
-      Abzeichen. Ein Fenster geht von unten auf: Bild, ein Satz, was man dafür tun muss, und der
-      Stand („3 von 10“) oder „Geschafft am …“ mit „Teilen“. Ein offenes Stück zeigt das Bild blass
-      in Farbe („so sieht es aus, wenn du es hast“). Kreuz oder Tipp daneben schließt.
-- [ ] N2401. **Ringe:** Profil, „Dein Fortschritt“: Ein Tipp auf einen Ring (Abbildungen, Übungen,
-      Lernziele, Trainer) öffnet dasselbe Fenster mit der Bedingung des Ordens. Auch Glanzstück und
-      „Als Nächstes“ öffnen es. Bei einem offenen Abzeichen wie „Erste Partie“ führt „Los geht's“
-      direkt dorthin.
 - [ ] N2404. **Nebenaufgaben auf dem Weg:** Dein Weg durchs Buch: Neben jeder Station steht ein
       kleines Feld mit Stern oder Bild und „0/5“. Nichts ragt über den Rand. Wirkt der Weg noch
       ruhig?
 - [ ] N2405. **Liste je Kapitel:** Tippe auf ein Feld: „Nebenaufgaben · Kapitel N“ mit Übungen,
       Lernzielen, Trainern des Kapitels und passenden Abzeichen und Orden. Passen die Stücke vom
       Niveau her zu den Kapiteln (etwa „Kurzer Prozess“ bei Kapitel 4, Kapitel 12 mit 11 Stücken)?
-- [ ] N2406. **Los geht's:** In der Liste „Übungen Kapitel 1“ → „Los geht's“ öffnet die erste
-      ungelöste Übung; „Trainer Kapitel 0“ den Koordinatentrainer (nach einer Runde 1/1 mit Haken,
-      das Feld an Station 0 wird farbig); „Lernziele Kapitel 2“ die Checkliste.
 - [ ] N2409. **Neue Abzeichen:** Im Regal „Abzeichen“ stehen „Kurzer Prozess“ (Matt in höchstens
       15 eigenen Zügen aus der Grundstellung) und „Neue Dame“ (eigenen Bauern umgewandelt).
       Gefallen dir Name, Bild und Bedingung? „Kurzer Prozess“ zählt auch gegen Stufe 1 (als
       Einsteigerziel); sag, falls nur gewertete Partien oder Bots ab Stufe 3 zählen sollen.
-- [ ] N2410. **Dunkel:** Felder, Liste und Fenster der Nebenaufgaben sind im Dunkelmodus gut lesbar.
-- [ ] N2412. **Trainer-Orden:** Der Ring „Trainings erstmalig absolviert“ zählt jetzt bis 17 (ohne
-      Fehlerdatenbank, die keine Runde hat). Vorher war der Orden unerreichbar; wer alle 17 schon
-      hat, bekommt nach dem Update die Gratulation.
-
-### Neu in 0.3.42: Erklärungen und Tour geprüft (31.10.2026)
-
-- [ ] N2361. **Tour im Profil:** Profil öffnen, Toursymbol oben rechts. Die Tour zeigt jetzt auch
-      Erfolge (Orden und Abzeichen), den Weg durchs Buch, Themen, Rekorde und Extras; der Schritt
-      zur Wertung spricht von Kacheln je Zeitklasse und dem „i“, nicht mehr von Reitern.
-- [ ] N2362. **Tour bei Spielen:** Auf der Startseite von Spielen und auf jeder Unterseite (Gegner
-      aussuchen, Eigene Stufe, Eigene Bots, Freie Partie) das Toursymbol antippen: Jeder Schritt
-      zeigt auf etwas, das auf dieser Seite zu sehen ist. Im Blatt „Partie einstellen“ stehen die
-      Erklärungen zu Spielhilfen und Eröffnung jetzt hinter einem „i“ an ihrer Überschrift, die zu
-      Bedenkzeit und Wertung im „i“ bei „Gewertete Partie“.
-- [ ] N2363. **Texte nennen nur, was es gibt:** Kapitel- und Denkroutine-Tour sprechen vom „i“ und
-      von den Phasenkacheln; der Hinweis zu Maia verweist auf Profil › Einstellungen › „Bots und
-      Wertung“; das Abzeichen „Zehn Ziele“ auf Buch › Karte „Heute“ › Ziele. Wenn dir irgendwo noch
-      ein Text begegnet, der einen Knopf oder Reiter nennt, den es nicht gibt: bitte melden.
 
 ### Neu in 0.3.42: Weniger Text – Seiten (Arbeitschat, 31.10.2026)
 
@@ -524,15 +152,6 @@ dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts
       gestrichelte Liste klar als „hier ist noch nichts“? (Texte und Knöpfe sind vorgeprüft.)
 - [ ] N2352. **Wertungsregeln hinter ⓘ:** Im Profil das ⓘ neben „Deine Wertung“: Fehlt dir in den
       beiden Sätzen etwas?
-- [ ] N2353. **Partiekopf:** Starte unter „Spielen“ eine Partie gegen einen Bot (etwa Frau
-      Schulz). Unter dem Titel „gegen Frau Schulz“ steht jetzt nur eine Zeile: rundes Porträt mit
-      kleiner Stufennummer unten rechts, ein Chip mit König und „Weiß“ (oder „Schwarz“), ein Chip
-      mit Buch und einem Wort für die Eröffnung („Praxis“, „Buch“ oder „Gewählt“) und rechts ⓘ.
-      Tipp aufs Porträt: Der Satz des Bots erscheint als Sprechblase in Anführungszeichen, ein
-      zweiter Tipp schließt sie. Tipp auf ⓘ: die frühere Zeile „Frau Schulz (Stufe 1 · Neuling) ·
-      du spielst Weiß · Eröffnung wie Menschen dieser Stärke“. Nach dem Ende der Partie steht
-      derselbe Kopf über der Auswertung. Zu zweit oder gegen eine eigene Stufe ohne Bot bleibt die
-      alte Textzeile.
 - [ ] N2356. **Denkroutine als Karten:** Nachschlagen, „Denkroutine“: Treffen die fünf Kurzzeilen
       („Was hat sich verändert?“, „Schach, Schlag, Drohung zuerst“, „Nicht die bequemste“, „Bis zur
       Ruhe, dann zählen“, „König sicher? Figur gedeckt?“) den Schritt, und sind die Titel die des
@@ -551,8 +170,6 @@ Bündel des Kapitels, etwa „Denkroutine“ oder „Planfindung“; ein Tipp ö
 - [ ] N2341. **Legende bei weiteren Werkzeugen:** Sicherheitsblick, Planbilanz und Warnsignale sind
       vorgeprüft. Wenn dir bei einem der übrigen Werkzeuge ein Stichwort der Legende nicht zu dem
       passt, was am Brett markiert ist: bitte mit Werkzeug melden.
-- [ ] N2344. **Kandidaten als Zeilen:** Abb. 12.1, Werkzeug „Kandidaten“: Bekommen nach einigen
-      Sekunden alle drei Zeilen eine Zahl (in der Prüfung stand bei Db1 einmal noch „–“)?
 
 ### Neu in 0.3.41: Einstellungen neu (Arbeitschat, 31.10.2026)
 
@@ -562,13 +179,9 @@ dann drei Reiter (Bedienung, Anzeige, Hilfe) mit je einer Zeile pro Einstellung,
 einmal die Zeilen „Bots und Wertung“, „Deine Daten“ und „Über die App“. Öffnen: unten „Profil“,
 dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
 
-- [ ] N2300. **Brettvorschau:** Profil › Einstellungen: Wirkt das große Brett oben ruhig genug, und
-      passt der Hintergrund (dunkel Nachtblau, hell Creme)?
 - [ ] N2304. **Reiter „Bedienung“:** Lassen sich die fünf Schalter mit dem Finger gut treffen?
 - [ ] N2308. **Unterseiten:** „Bots und Wertung“, „Deine Daten“, „Über die App“: Fehlt dir etwas,
       das es vorher gab?
-- [ ] N2309. **Tour der Einstellungen:** Kompass oben rechts: Stimmen die sieben Texte zu dem, was
-      du siehst?
 
 ### Neu in 0.3.40: Eigene Engine für die Auswertung (31.10.2026)
 
@@ -589,21 +202,6 @@ dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
       Danach einmal den Flugmodus einschalten, die App neu öffnen und wieder gegen einen Bot mit
       Maia spielen: Es geht auch ohne Netz.
 
-### Neu in 0.3.38: Spielen neu (Arbeitschat, 31.10.2026)
-
-Der Bildschirm „Spielen“ ist nach deiner Wahl neu gebaut (Entwurf J3 „Schnell eine Partie“):
-oben ein Vorschlag mit großem Knopf „Spielen“, darunter Rivale, Spielstärke, vier Kacheln zu
-eigenen Seiten und „Zuletzt gespielt“. Die Einstellungen von Stärke, Stil, Fehlern und Flecken
-sehen aus wie bisher, nur der Weg dorthin ist neu. Öffnen: Tipp auf „Spielen“ unten in der Leiste.
-Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › Anzeige).
-
-- [ ] N2339. **Zuletzt gespielt und Revanche:** Nach ein, zwei Partien gegen Bots stehen sie
-      unten (höchstens drei) mit Porträt, Name, „heute · 10 + 0“ und der Ergebnismarke (Pokal,
-      Händedruck oder Kreuz). Tipp auf den Namen öffnet die Partie. „Revanche“ zeigt sofort oben
-      „Schnell eine Partie“ mit genau diesem Bot (Satz „dein gewählter Gegner“) und einer Zeit
-      derselben Zeitklasse. Genauso wirken „Revanche“/„Herausfordern“ auf der Rivalenkarte und
-      „Spielen“ an einem angehefteten Ziel („Besiege Lotte in Schnellschach.“).
-
 ### Neu in 0.3.38: Auswertung neu (Arbeitschat, 31.10.2026)
 
 Die Auswertung nach einer Partie ist nach deiner Wahl neu gebaut (Entwurf F2 „Zeitleiste der
@@ -617,11 +215,6 @@ unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach ei
       vorher?
 - [ ] N2325. **Verlaufskurve:** Finger auf der Kurve halten und fahren zeigt den Zug, Loslassen
       springt dorthin, zwei Finger zoomen: alles wie vor dem Umbau?
-- [ ] N2329. **Nichts verloren:** Zugliste mit Zeichen und „Alle Züge zeigen“, Pfeile zum Blättern,
-      Uhren, Bewertungsbalken links am Brett, Drehen, Ruhige Ansicht (blendet die Auswertung aus,
-      Ergebnis und „Neue Partie“ bleiben), „Besserer Zug“/„Bestrafung“ abspielen, Nebenzweig,
-      „Zurücknehmen“ nach dem Ende (nur in ungewerteten Partien), die Meldung „Gruppenmodus frei“ und während der Rechnung
-      „Die Engine wertet die Partie aus …“ mit Balken: alles noch da?
 
 ### Neu in 0.3.38: Buchseite und Lernpfad neu (Arbeitschat, 31.10.2026)
 
@@ -667,15 +260,6 @@ hell und dunkel ansehen (Einstellungen, Farbschema).
 - [ ] N2295. **Glossar als Lexikonseite:** Nachschlagen › Glossar, Tipp auf „F“. Wirkt es wie
       ein Lexikon?
 - [ ] N2296. (unverändert lassen; Frage an dich)
-
-### Neu in 0.3.34: Profil – Zurückgeholt, was bei der Neugestaltung wegfiel (Arbeitschat, 31.10.2026)
-
-Bei der Neugestaltung des Profils waren ein paar nützliche Dinge weggefallen; sie sind zurück,
-ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der Leiste.
-
-- [ ] N2310. **Verlauf je Phase:** Erst nach einigen ausgewerteten gewerteten Partien: In „Deine
-      Wertung“ unter „Nach Phasen“ einen Balken antippen: Die Kurve dieser Phase erscheint mit
-      „Spanne …“; ein zweiter Tipp schließt sie.
 
 ### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
 
@@ -829,8 +413,6 @@ ohne Patzer), je mit Wert, Datum und Knopf „Versuchen“. Ein neuer Rekord ers
 
 - [ ] N2141. **Rekord am Rundenende:** Jede Trainerrunde, die die Tagessumme erhöht, meldet einen
       neuen Rekord „richtige Antworten an einem Tag (vorher …)“. Zu oft oder genau richtig?
-- [ ] N2145. **Partie-Rekorde:** Eine gewertete Partie gegen einen Bot gewinnen und auswerten
-      lassen. Zählt sie ohne Patzer für „Längste Partie ohne Patzer“ (in Halbzügen)?
 - [ ] N2147. **Abzeichen „Drei Rekorde“:** goldener Stern mit der 3. Gefällt das Bild?
 
 ### Neu in 0.3.21: Kombo und Fundstücke (Arbeitschat, 31.10.2026)
@@ -881,14 +463,6 @@ Trainerfrage, einer Karte oder einer Partie (bloßes Öffnen nicht).
 
 - [ ] N2136. **Wochenabzeichen:** „Vier gute Wochen“ (Sechseck mit 4) und „Zwölf gute Wochen“
       (Strahlenkranz mit 12) im Regal „Abzeichen“. Gefallen Namen und Bilder?
-- [ ] N2137. **Übungsplan ändern:** Buch › Karte „Heute“ › Reiter „Plan“: einen gespeicherten Plan
-      ändern und dann „Plan entfernen“. Klappt beides?
-- [ ] N2138. **Kalender auf dem iPhone:** „In meinen Kalender“ (und, wo es angeboten wird,
-      „Teilen“) gibt die Datei „schach-ueben.ics“ weiter. Lässt sich der Termin übernehmen, mit
-      Wiederholung an deinen Tagen, 20 Minuten lang, Erinnerung zur Startzeit, Titel „Schach üben“
-      und deinem Satz in der Beschreibung? Bitte in der installierten App und in Safari.
-- [ ] N2139. **Kalender auf Android:** Dasselbe auf einem Android-Handy (Google Kalender oder der
-      Kalender des Herstellers). Wird der Termin übernommen und erinnert er dich?
 
 ### Neu in 0.3.18: Gamifizierung, Grundlage (Welle 0, Opus, 31.10.2026)
 
@@ -964,18 +538,12 @@ werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was sch
       Stufe 5 schwer an?
 - [ ] N1074. **Gegnerzug vorgespielt:** Ist die Pause von 0,7 Sekunden vor dem Zug des Gegners
       angenehm?
-- [ ] N1075. **Lichess-Aufgabe, falscher Zug:** Roter Pfeil und Verlust laut Engine wie bei den
-      Buchaufgaben?
 - [ ] N1076. **Motivfrage:** Einverstanden mit der Zuordnung der Lichess-Themen zu den zwölf
       Grundmotiven (Räumung zur Hinlenkung, Ablenkung zur Überlastung)?
-- [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
-      „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
 
 ### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1061. **Berühmte Partien:** Bitte ein paar Kurztexte lesen: Stimmen sie, klingen sie gut?
-- [ ] N1064. **Offline:** Ohne Netz „Berühmte Partien“ und „Aktuelle Turniere“ öffnen: Die Listen
-      kommen.
 
 ### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 
@@ -1032,15 +600,6 @@ Nach deinen Beschlüssen im Chat umgesetzt; Widerspruch genügt.
       Runde. Prüfe, ob sich die Aufgaben auf dem Handy flott bedienen lassen und ob das Ende
       auch mitten in einer Aufgabe sauber kommt.
 
-### Neu in 0.3.2: kleine Korrekturen aus der Ideensammlung (Sonnet, 26.10.2026)
-
-Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurück.
-
-- [ ] N1013. **Zügeraten, Pfeile:** Trainer „Zug erraten“: Hast du den Partiezug selbst
-      gefunden (auch mit Hinweis), erscheint kein Pfeil. Bei einem falschen Zug bleiben der
-      goldene (Partiezug) und der rote Pfeil (dein Zug).
-
-
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 
 - [ ] N990. **Gruppenbild als Kreis:** Spielen › Vorgefertigte Bots, eine Stufe aufklappen. Unter
@@ -1095,13 +654,6 @@ nur du das Buch änderst.
       schon), mit Name, kurzem Satz („Typischer Plan: …“, aus dem Buch, wo das Buch das Thema hat) und
       Link ins Kapitel. Ich baue das nach dem Umbau der Auswertung (Punkt „besserer Zug“), weil beide
       dieselben Dateien berühren. Widerspruch genügt.
-- [ ] Q15-2. **Plan statt Kalender.** Schon umgesetzt in 0.3.51 (N2597, deine Antwort vom 6.11.2026:
-      Format frei in der Beta). Vorher speicherte der Plan Wochentage und Uhrzeit für den
-      Kalendertermin. Dein Vorschlag: Wochentage und Dauer planen, das Training zählt automatisch mit,
-      und beim Öffnen der App an einem Plantag erinnert die Karte „Heute“ an das anstehende Training
-      („Heute 20 Minuten geplant, 5 erledigt“). Empfehlung: genau so, Uhrzeit und Kalenderdatei
-      entfallen; gezählt wird die Zeit in Trainern, Übungen, Wiederholungen und Partien, die die App
-      neu misst (aktive Minuten).
 - [ ] Q15-3. **Ziele und Aufträge passend zur Spielstärke.** Schon umgesetzt in 0.3.51 (N2592): Ziele
       schlagen nur Bots und Bot-Orden vor, die höchstens 300 Punkte über deiner Zahl liegen (Wertung,
       sonst stärkster besiegter Bot, sonst 700). Die Wochenaufträge verlangten schon vorher nur die

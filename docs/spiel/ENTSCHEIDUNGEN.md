@@ -750,3 +750,20 @@ die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte
   Übergängen, erzählendes Ortsbild, Abgleich mit der Geschichte, Bühnenbild je Karte. Die
   Übergänge prüft `pipeline/abenteuer/uebergaenge.py`. Muster: Maple Falls, Erdgeschoss.
 - Möbel nutzen die Fassung mit halbdurchsichtigem Schatten (Black_Shadow).
+
+**Vollmacht des Autors für das Abenteuer (9.11.2026, nachmittags):** Der Autor steckt derzeit nicht
+tief in der Geschichte und kann Ortsdokumente und Wegenetz nicht prüfen. Der Haupt-Chat prüft
+gründlich, nimmt die Entwürfe dann als geprüft und entscheidet selbst, wo er sonst gefragt hätte; er
+meldet jede solche Entscheidung, damit der Autor widersprechen kann. Der Autor prüft später die
+fertigen Karten und beim Spielen die Geschichte.
+
+**Vom Haupt-Chat entschieden (Widerspruch genügt):**
+
+- Maßstab: Pokémon mal 1,5 bis 2 (vom Autor gewählt), Räume etwa anderthalbmal Pokémon.
+- `12_Akt1_Leben.md`: neue kleine Aufgaben zählen nicht für „alle Nebenquests“ (R27); Mrs. Whitlock
+  heißt Margaret; kein Rauchen im Spiel (Busfahrer mit Thermoskanne); die Kühe an der Landstraße
+  sind die ausgebüxten Kühe vom Kürbishof Miller (N1).
+- `13_Wegenetz.md`: Sperren mit Grund aus der Welt, Schlüssel aus dem Alltag (Fahrrad, Laterne,
+  Gummistiefel, Fährpass, Monatskarte), sieben Nebenorte ohne Club, Rückkehr in frühere Städte.
+- Unsichere Katalogeinträge werden erst geprüft, wenn eine Karte sie braucht; die Bildprüfung
+  meldet sie.

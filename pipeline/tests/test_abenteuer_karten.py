@@ -113,6 +113,13 @@ def test_alles_von_start_erreichbar(ort: dict, eintrag: dict):
     start = next(o for o in alle if o.name == "start")
     begehbar, gesperrt = k.erreichbar(karte, start.feld), k.blockiert(karte)
     assert begehbar, "Start liegt auf einer Kollisionskachel"
+    # Eine Sperre (Stamm, Tor) darf eine Karte teilen: Jeder Teil hat dann einen eigenen Eingang.
+    # Erreichbar ist, was vom Start oder von einem Übergang der Karte aus zu Fuß erreichbar ist.
+    namen = {a["name"] for a in _uebergaenge(ort)}
+    for eingang in (o for o in alle if o.name in namen and not o.figur):
+        x, y = eingang.feld
+        for feld in [(x, y), (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]:
+            begehbar |= k.erreichbar(karte, feld)
     for objekt in alle:
         # Möbel, Statisten und Tiere muss man nicht erreichen (Schmuck und Belebung).
         if objekt.moebel or objekt.belebung:

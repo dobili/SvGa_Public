@@ -203,3 +203,13 @@ def test_startposition_der_app_ist_der_start_des_dachbodens():
     start = next(o for o in k.objekte(_karte(eintrag)) if o.name == "start" and not o.figur)
     assert start.feld == (int(werte["x"]), int(werte["y"]))
     assert start.eigenschaften.get("richtung") == werte["richtung"]
+
+
+def test_frei_unten_laesst_den_gang_vor_dem_gebaeude_begehbar():
+    from pipeline.abenteuer.kartenbau import sperrfelder
+
+    # Motel 3 × 3 Kacheln bei (0, 0): ohne Angabe sperrt es die Reihen 1 und 2, mit frei_unten = 1
+    # nur die Reihe 1; der Gang in Reihe 2 bleibt frei.
+    motel = {"x": 0, "y": 0, "breite": 48, "hoehe": 48, "kollision": True}
+    assert {y for _, y in sperrfelder(motel)} == {1, 2}
+    assert {y for _, y in sperrfelder(motel | {"frei_unten": 1})} == {1}

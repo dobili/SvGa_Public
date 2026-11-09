@@ -2,7 +2,8 @@
  * Möbel und Schmuck der Karten (Quellen: inhalte/abenteuer/moebel/<ort>.json, im Paket als eine
  * daten/moebel.json zusammengeführt von skripte/baue-abenteuerpaket.mjs): Objekte vom Typ „moebel“ in der
  * Ebene ausloeser, gezeichnet als Bild aus dem Paket (gekaufte Grafik oder Platzhalter), mit
- * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe).
+ * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe und den Reihen
+ * `frei_unten`, die unten begehbar bleiben).
  *
  * Rolle im Gesamtbild: Laden (weltdaten.ts) und Aufstellen (szene.ts) der Möbel, ausgelagert, damit
  * beide Dateien klein bleiben. Die Pipeline prüft dieselbe Regel (pipeline/abenteuer/karten.py,
@@ -18,6 +19,8 @@ export interface Moebelangabe {
   readonly breite: number;
   readonly hoehe: number;
   readonly kollision?: boolean;
+  /** Begehbare Kachelreihen am unteren Bildrand (Gang vor dem Motel, Veranda). */
+  readonly frei_unten?: number;
 }
 
 /** Ein Möbel der Karte, bereit zum Zeichnen. */
@@ -98,7 +101,8 @@ export function stelleMoebelAuf(
     const oben = m.angabe.hoehe > kachel ? kachel : 0;
     // Unsichtbares Rechteck als Körper (ein Rechteck kennt seine Ecken; mit einer Zone saß der
     // Körper versetzt und sperrte Nachbarfelder).
-    const hoehe = m.angabe.hoehe - oben;
+    const hoehe = m.angabe.hoehe - oben - (m.angabe.frei_unten ?? 0) * kachel;
+    if (hoehe <= 0) continue;
     const flaeche = szene.add.rectangle(
       m.x + m.angabe.breite / 2,
       m.y + oben + hoehe / 2,

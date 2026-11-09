@@ -223,6 +223,22 @@ Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihr
 
 ## 4. Bühnenbilder
 
+### 4.0a Varianten B und C (KARTENREGELN 10.37)
+
+Für Wohnzimmer, Dachboden und Birch Lane liegen in `inhalte/abenteuer/szenen/varianten/` je zwei
+weitere Varianten; gleich bleiben Größe, Wände, Türen, Fenster, Übergänge, Auslöser und Figuren.
+
+- **Wohnzimmer B (schlicht):** ein Sessel auf rundem Teppich mit roter Stehlampe, wenige Kartons,
+  runder Holztisch mit anderen Stühlen, hohe Pflanze. **C (reich):** großer Teppich, zwei Sessel,
+  Bücherregal, Kommode, Kartongruppen, Palmen, Herd mit Topf, Obstkorb auf dem Esstisch.
+- **Dachboden B (schlicht):** Tisch mit Brett unter dem Fenster, Stehlampe, nur ein Regal, Sachen in
+  einer Reihe an Süd- und Ostwand. **C (reich):** zwei alte Schränke, Waldbild, Teppich mit Tisch,
+  Lampe, zwei Kistenstapel und alle Sachen der Mrs. Whitlock an den Wänden.
+- **Birch Lane B (schlicht):** Bach in einem langen flachen Bogen, je ein Baum je Garten, hohe
+  Laternen mit langem Ausleger, türkise und braune Straßenbäume, Spielplatz nur mit Sandkasten und
+  Schaukel. **C (reich):** Bach in vielen Bögen, Gemüsebeete und Büsche, Laternen mit Bogenarm,
+  dreierlei Straßenbäume, Spielturm mit Brücke, Schaukel, Wippe.
+
 ### 4.0 Nacharbeit nach der Rückmeldung des Autors zu Runde 4 (KARTENREGELN 10)
 
 Diese Änderungen gehen den Tabellen in 4.1 bis 4.5 vor.

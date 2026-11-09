@@ -1,0 +1,1015 @@
+{
+  "karte": "mapleFalls.aussen",
+  "datei": "karten/varianten/maple-falls-aussen-c.json",
+  "art": "aussen",
+  "beschreibung": "Variante C, reich: Die Birch Lane in voller Spätsommerpracht. Der Bach schlängelt sich in mehr Bögen hinter den Gärten und fließt vor der Schule nach Norden aus der Karte; der Wasserfall zwischen Felsen oben links. In den Gärten Ahorne und Laubbäume, drei Gemüsebeete, Gartenbank und viele Büsche; Häuser, Zäune mit Pforten und Briefkästen, Diner und Schule wie in Variante A. Am südlichen Gehweg Laternen mit gebogenem Arm, auf dem Grünstreifen grüne, rote und türkise Straßenbäume im Wechsel. Der eingezäunte Spielplatz hat einen Spielturm mit Brücke, Sandkasten, Schaukel und Wippe, dazu zwei Elternbänke. Zwischen den Südhäusern Beete und Büsche. Haltestelle vor der Schule, Wendehammer mit Pollern.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "e": "erde",
+    "d": "sand"
+  },
+  "raster": [
+    "##~~~##############################~~###########################",
+    "##~~~##############################~~###########################",
+    "~~~~~......~~~~~~~~~~~........~~~~~~~..........................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..........................#",
+    "#....~~~~~~...........~~~~~~~~.................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..pp........pp........pp........pp..........ppppp.............#",
+    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.........................pp..........................ee.......#",
+    "#.........................pp..........................ee.......#",
+    "#.........................pp..........................ee.......#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp...................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4Wasserfall",
+      "feld": [2, 0]
+    },
+    {
+      "moebel": "mf4FelsHoch",
+      "feld": [1, 0]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf4FelsHoch",
+      "feld": [5, 0]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [22, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [26, 5]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [32, 6]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "mf4Gartenbank",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [21, 8]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [27, 8]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [29, 9]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [34, 10]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [31, 12]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [36, 12]
+    },
+    {
+      "moebel": "mf4VillaOrange",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "mf4VillaLila",
+      "feld": [11, 10]
+    },
+    {
+      "moebel": "mf4VillaRot",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "mf4Diner",
+      "feld": [31, 14],
+      "id": "diner"
+    },
+    {
+      "moebel": "mf4SchildDiner",
+      "auf": "diner",
+      "versatz": [0, 20]
+    },
+    {
+      "moebel": "mf4Schule",
+      "feld": [39, 0]
+    },
+    {
+      "moebel": "mf4Fahnenmast",
+      "feld": [41, 15],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 10]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 11]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 12]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 13]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 14]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 15]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 16]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 17]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 18]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 19]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 20]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 21]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [10, 22]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 5]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 6]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 7]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 8]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 10]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 11]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 12]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 13]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 14]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 15]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 16]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 17]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 18]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 19]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 20]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 21]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [20, 22]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 5]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 6]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 7]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 8]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 9]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 11]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 12]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 13]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 15]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 16]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 17]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 18]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 19]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 20]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 21]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [30, 22]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [1, 23]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [5, 22]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [6, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [7, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [8, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [9, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [10, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [11, 23]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [12, 23]
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [15, 22]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [16, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [17, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [18, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [19, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [20, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [21, 23]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [22, 23]
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [25, 22]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [26, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [27, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [28, 23]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [29, 23]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [30, 23]
+    },
+    {
+      "moebel": "mf4TischLinks",
+      "feld": [36, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf4TischRechts",
+      "feld": [37, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [57, 21],
+      "vorn": true
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [55, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "mfMuelltonne",
+      "feld": [62, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4BaumGruen",
+      "feld": [2, 29]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [13, 29]
+    },
+    {
+      "moebel": "mf7BaumTuerkis",
+      "feld": [20, 29]
+    },
+    {
+      "moebel": "mf4BaumGruen",
+      "feld": [29, 29]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [35, 29]
+    },
+    {
+      "moebel": "mf7BaumTuerkis",
+      "feld": [41, 29]
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [6, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [17, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [24, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [33, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [39, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [45, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [51, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf7LaterneArm",
+      "feld": [59, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4SchildSackgasse",
+      "feld": [7, 29]
+    },
+    {
+      "moebel": "mf4SchildVerkauf",
+      "feld": [25, 31]
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [1, 25]
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [1, 26]
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [1, 27]
+    },
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [1, 32]
+    },
+    {
+      "moebel": "mf4Bauernhaus",
+      "feld": [18, 31]
+    },
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [29, 32]
+    },
+    {
+      "moebel": "mf4Bauernhaus",
+      "feld": [40, 31]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [12, 34]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [14, 37]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [28, 38]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [39, 38]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [48, 34]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [15, 33]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 32]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 33]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 34]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 35]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 36]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 37]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 38]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 39]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [11, 40]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 32]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 33]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 34]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 35]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 36]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 37]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 38]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 39]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [17, 40]
+    },
+    {
+      "moebel": "mf4ZaunEckeObenLinks",
+      "feld": [49, 31]
+    },
+    {
+      "moebel": "mf4ZaunEckeObenRechts",
+      "feld": [62, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [50, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [51, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [52, 31]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [53, 31]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [56, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [57, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [58, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [59, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [60, 31]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [61, 31]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 32]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 33]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 34]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 35]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 36]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 37]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 38]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [49, 39]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 32]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 33]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 34]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 35]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 36]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 37]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 38]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [62, 39]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [49, 40]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [62, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [50, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [51, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [52, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [53, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [54, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [55, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [56, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [57, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [58, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [59, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [60, 40]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [61, 40]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [50, 32]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [58, 32]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [52, 32]
+    },
+    {
+      "moebel": "mf4Sandkasten",
+      "feld": [51, 37],
+      "id": "sandkasten"
+    },
+    {
+      "moebel": "mf7Spielturm",
+      "feld": [51, 33]
+    },
+    {
+      "moebel": "mf4Schaukel",
+      "feld": [59, 34]
+    },
+    {
+      "moebel": "mf7Wippe",
+      "feld": [56, 38]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [60, 32]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [3, 24],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "haustuer",
+      "feld": [3, 23]
+    },
+    {
+      "name": "dinerTuer",
+      "feld": [33, 23]
+    },
+    {
+      "name": "schule",
+      "feld": [47, 23]
+    },
+    {
+      "name": "park",
+      "feld": [63, 25]
+    },
+    {
+      "name": "park",
+      "feld": [63, 26]
+    },
+    {
+      "name": "park",
+      "feld": [63, 27]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "juno",
+      "feld": [54, 24]
+    },
+    {
+      "name": "lily",
+      "feld": [14, 24]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "brieftraegerin",
+      "typ": "statist",
+      "feld": [6, 24],
+      "eigenschaften": {
+        "von": "6,24",
+        "bis": "30,24",
+        "tun": "trägt Briefe aus",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "laubharker",
+      "typ": "statist",
+      "feld": [23, 9],
+      "eigenschaften": {
+        "von": "23,9",
+        "bis": "25,9",
+        "tun": "harkt Laub im Garten",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kindMitBall",
+      "typ": "statist",
+      "feld": [55, 39],
+      "eigenschaften": {
+        "von": "51,39",
+        "bis": "60,39",
+        "tun": "spielt Ball auf dem Spielplatz",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [9, 6],
+      "eigenschaften": {
+        "von": "9,5",
+        "bis": "9,9",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [4, 24],
+      "eigenschaften": {
+        "von": "4,24",
+        "bis": "4,24",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"],
+  "variante": "c"
+}

@@ -1,0 +1,120 @@
+{
+  "karte": "mapleFalls.dachboden",
+  "datei": "karten/varianten/maple-falls-dachboden-b.json",
+  "art": "innen",
+  "zustand": ["alt", "gebraucht"],
+  "stil": ["klassisch", "rustikal"],
+  "beschreibung": "Variante B, schlicht: Der Dachboden des Whitlock-Hauses fast leer geräumt. In der Nordwestecke die Bodenluke mit Leiter. Unter dem Sprossenfenster mit Blick auf die Ahorne steht der kleine runde Tisch mit dem Reiseschachbrett und zwei Holzstühlen, links eine Stehlampe, rechts ein Bücherregal. Mrs. Whitlocks Sachen in einer Reihe an der Süd- und Ostwand: Kiste mit Tuch, Zeitungen von 1961, Hutschachtel, Standspiegel und ein Kistenstapel. Viel freie Dielenfläche.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4Luke",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mf2Dachfenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "mf3Kartonstapel",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "mf3Rundtisch",
+      "feld": [8, 4],
+      "id": "tisch"
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "mf3StuhlDunkelRechts",
+      "feld": [7, 4],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "mf3StuhlDunkelLinks",
+      "feld": [10, 4],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "mf3Kartonstapel",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "mf2KisteTuch",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "mf2Zeitungsstapel",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "mf2Hutschachtel",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "mf2Standspiegel",
+      "feld": [10, 7],
+      "id": "spiegel"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 5],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [1, 4]
+    },
+    {
+      "name": "brett",
+      "feld": [8, 5],
+      "auf_moebel": true
+    },
+    {
+      "name": "hutschachtel",
+      "feld": [8, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "spiegel",
+      "feld": [10, 8],
+      "auf_moebel": true
+    },
+    {
+      "name": "zeitungen1961",
+      "feld": [6, 9],
+      "auf_moebel": true
+    }
+  ],
+  "variante": "b"
+}

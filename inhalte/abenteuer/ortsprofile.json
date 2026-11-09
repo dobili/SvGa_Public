@@ -190,6 +190,217 @@
           "stil": ["einfach", "modern"]
         }
       }
+    },
+    "wegCedarRiverton": {
+      "bild": "Weg 2 von Cedar Creek nach Riverton: erst ein Zedernwald mit Waldbach und Lichtung, dann ein Feldweg am Fuß eines Bahndamms mit einem Gleis, Kleingärten und dem Fluss im Süden. Herbst, Laub, Zugpfiffe.",
+      "epoche": "gegenwart",
+      "wohlstand": "mittel",
+      "stil": ["laendlich", "wald"],
+      "zustand": ["gebraucht", "verwittert", "alt"],
+      "flora": "rote Zedern dicht, Moos, Farne, Pilze, Birken am Waldrand; am Damm Löwenzahn, Gras, Brombeeren; Gruppen von ein bis drei, keine Wiederholung.",
+      "karten": {
+        "zedernwald": {
+          "zweck": "Waldweg von Cedar Creek (links, nach der Brücke) nach Osten: Wegweiser mit Rätseltafel an der einzigen Kreuzung, Wanderin auf einem Baumstumpf, Holzsteg über den Waldbach, Lichtung mit hohlem Baumstamm, Pfadfinder mit Kreidepfeilen.",
+          "nachbarschaft": "Dichter Wald an Nord- und Südrand, ein Bach quer durch die Karte; keine Häuser.",
+          "pflicht": [
+            "Waldweg zwei Felder breit von Rand zu Rand, mit Kurven",
+            "Wald schließt am Nord- und Südrand dicht ab",
+            "Bach reicht bis zum Kartenrand, Holzsteg mit Geländer, wo der Weg ihn quert",
+            "Wegweiser mit drei Armen nur an der Kreuzung, Rätseltafel daneben",
+            "jeder Abzweig endet an etwas (Bachufer mit Trittsteinen, hohler Baumstamm)"
+          ],
+          "verboten": ["Häuser", "Zäune ohne Grundstück", "Bänke ohne Weg"],
+          "zustand": ["gebraucht", "verwittert"]
+        },
+        "bahndamm": {
+          "zweck": "Feldweg am Fuß des Bahndamms bis Riverton (rechts): Signalmast, stillgelegter Haltepunkt mit Bank (Schaffner in der Pause), dunkler Durchlass unter dem Damm, Bank mit Blick auf den Fluss, Kleingärten, Plakatwand von Perfect Move am Stadtrand.",
+          "nachbarschaft": "Bahndamm mit einem Gleis am Nordrand über die ganze Breite; Wiesen, Kleingärten und ab der Mitte der Fluss im Süden.",
+          "pflicht": [
+            "Gleis auf Schotter von Rand zu Rand, Böschung beidseitig, Gleis nie begehbar",
+            "Fluss reicht bis zum Süd- und Ostrand, Ufer mit Rand",
+            "Signalmast am Damm, Haltepunkt mit Bahnsteigrest, Schild und Bank",
+            "Kleingärten mit Zäunen, Beeten und Gartenhaus",
+            "Plakatwand mit Plakat nahe dem Stadtrand"
+          ],
+          "verboten": [
+            "Hindernisse auf dem Weg",
+            "Wegweiser ohne Kreuzung",
+            "Kisten ohne Zweck"
+          ],
+          "zustand": ["gebraucht", "verwittert", "alt"]
+        }
+      }
+    },
+    "riverton": {
+      "bild": "Flussstadt mit Bahnhof aus rotem Backstein und Uhrturm, Steinbrücke mit drei Bögen, Markt, Riverside-Park mit achteckigem Schachpavillon, Kanalbecken mit Anleger. Herbst, Regen, Pfützen mit Spiegelung, Tauben und Möwen. Schach ist hier laut.",
+      "epoche": "gegenwart mit altem Ortskern",
+      "wohlstand": "einfach bis mittel",
+      "stil": ["backstein", "industrie", "klassisch"],
+      "zustand": ["gebraucht", "alt"],
+      "flora": "Platanen und Linden im Park, Herbstlaub in Gruppen auf den Wegen, Blumenkästen an Reihenhäusern, Beete am Bahnhofsvorplatz; am Kanal Weiden.",
+      "karten": {
+        "aussen": {
+          "zweck": "Bahnhof mit Uhrturm und Vorplatz (Bushaltestelle nach Ironwood, Brunnen, Wegweiser), Water Street mit Markt, Handyladen von Perfect Move (Kulisse), geschlossener Fahrradwerkstatt mit Schuppen dahinter, Café; Steinbrücke über den Fluss mit Musiker darunter; Park mit Pavillon, Bildschirmtischen auf der Wiese, Slicks Wohnwagen am Ufer; Kanalbecken mit Anleger, Pegelhaus und Treidelpfad nach Süden.",
+          "nachbarschaft": "Gleise am Nordrand, Backstein-Reihenhäuser und Läden an einer Straße, Lagerhäuser am Ostkai; der Fluss teilt die Stadt in eine Bahnhofs- und eine Parkhälfte; im Süden Park und Kanal.",
+          "pflicht": [
+            "Fluss reicht bis zum West- und Ostrand, Kaimauer mit Geländer, Kanal bis zum Südrand",
+            "Straße und Gehwege beidseitig mit Bordsteinkanten, Brücke mit Fahrbahn und Gehwegen",
+            "Türen sitzen unten in der Fassade und passen zum Gebäude; betretbare Gebäude mit Tür in der Südfassade",
+            "Bushaltestelle mit Häuschen und Schild zur Straße, Wegweiser nur an der Kreuzung am Vorplatz",
+            "Pavillon von der Brücke aus zu sehen, Bildschirmtische als eigene Objektebene",
+            "Pfützen mit Spiegelung auf Plätzen und Wegen, Laternen am Weg"
+          ],
+          "verboten": [
+            "Blumenkästen auf dem Gehweg",
+            "Kisten ohne Zweck",
+            "Bildschirmtische im Pavillon vor Szene 37"
+          ],
+          "zustand": ["gebraucht", "alt"]
+        },
+        "bahnhofshalle": {
+          "zweck": "Große Halle: Zeitungsstand von Pops (Laden), große Uhr an der Nordwand (Flashback), Bank des Uhrmachers darunter, Bahnsteigtür zu den Gleisen.",
+          "raeume": [
+            {
+              "name": "halle",
+              "funktion": "bahnhof",
+              "inhalt": "große Uhr an der Nordwand, Bahnsteigtür, zwei Bogenfenster, Fahrplantafel, Holzbank unter der Uhr, Zeitungsstand mit Ständern, Fahrkartenschalter mit Gitter, Wartebänke gleicher Bauart, Fundbüro, Gepäckwagen, Pflanzen in Kübeln, Mülleimer an den Bänken"
+            }
+          ],
+          "pflicht": [
+            "Doppeltür in der Südwand",
+            "Uhr über der Bank, Weg von der Tür zur Uhr frei",
+            "Boden ruhig (Terrazzo, ein Muster)"
+          ],
+          "verboten": ["Wohnzimmermöbel", "Kisten ohne Zweck"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["klassisch", "backstein"]
+        },
+        "pavillon": {
+          "zweck": "Slicks Parkclub: offener Pavillon mit vier Marmortischen, Schachuhren, Gedenktafel für Mr. Odum, Limonadenkrug mit Münzglas.",
+          "raeume": [
+            {
+              "name": "pavillon",
+              "funktion": "club",
+              "inhalt": "Holzdielen, Geländer zwischen Säulen statt Wänden, vier Marmortische mit Brett und Uhr in zwei Reihen, gleiche Hocker, Gedenktafel an einer Säule, Klapptisch mit Limonade, Kiste mit Ersatzfiguren, Schirmständer"
+            }
+          ],
+          "pflicht": [
+            "Eingang mit Treppe in der Südseite",
+            "Kreuzgang zwischen den Tischen frei"
+          ],
+          "verboten": ["Bildschirmtische vor Szene 37", "geschlossene Wände"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["park", "klassisch"]
+        },
+        "wohnwagen": {
+          "zweck": "Slicks Zuhause: Nachgespräch nach dem Clubkampf, Dosentrophäen, Kurierrad, Brett auf dem Bett.",
+          "raeume": [
+            {
+              "name": "wohnwagen",
+              "funktion": "wohnen",
+              "inhalt": "Bett quer an einem Ende mit Brett darauf, Regal mit Trophäen aus Dosen, Küchenzeile am anderen Ende, Kurierrad an der Wand, Klapptisch mit zwei Hockern, Kuriertasche"
+            }
+          ],
+          "pflicht": [
+            "Tür in der Südwand",
+            "schmal und gemütlich, nichts steht im Weg zur Tür"
+          ],
+          "zustand": ["gebraucht"],
+          "stil": ["einfach"]
+        },
+        "schuppen": {
+          "zweck": "Fahrradschuppen hinter der Werkstatt: grünes Fahrrad unter einer Plane (Szene 33).",
+          "raeume": [
+            {
+              "name": "schuppen",
+              "funktion": "lager",
+              "inhalt": "Fahrrad unter Plane in der Mitte, Werkzeugwand, Werkbank mit Schraubstock, Felgen und Reifenstapel, Kanister, Spinnweben in den Ecken"
+            }
+          ],
+          "pflicht": ["Tür in der Südwand", "Weg von der Tür zum Fahrrad frei"],
+          "zustand": ["alt", "gebraucht"],
+          "stil": ["werkstatt"]
+        }
+      }
+    },
+    "wegRivertonIronwood": {
+      "bild": "Weg 3 von Riverton nach Ironwood: Treidelpfad an einem geraden Kanal, erst an leeren Fabriken mit Graffiti vorbei, dann Felder und Pappeln, dann eine genietete Eisenbrücke über einen Einschnitt und Serpentinen den Hang hinab. Wind, Krähen, Rauch am Horizont.",
+      "epoche": "gegenwart mit Industrieresten",
+      "wohlstand": "einfach",
+      "stil": ["industrie", "laendlich"],
+      "zustand": ["verwittert", "alt", "kaputt"],
+      "flora": "Brombeeren, Weiden und Schilf am Kanal, Kohl- und Kürbisfeld, Pappelallee, Ginster und Birken am Hang.",
+      "karten": {
+        "kanalweg": {
+          "zweck": "Treidelpfad von Riverton (oben) nach Süden: Fabrikmauer mit Graffiti, Fabrikhof mit Zaun (Zahnrad), Bushaltestelle ohne Bus mit Rätseltafel an einer alten Werkstraße, Wegweiser am Seitenarm nach Lockport mit Treidelbrücke, Bauer am Feldzaun, Rastanleger.",
+          "nachbarschaft": "Kanal mit gemauerten Ufern über die ganze Höhe; im Westen erst Fabriken, dann Felder; im Osten Böschung und Weiden.",
+          "pflicht": [
+            "Kanal reicht bis zum Nord- und Südrand, Seitenarm bis zum Westrand, Ufer mit Kante",
+            "Treidelpfad zwei Felder breit am Westufer, folgt den Kurven des Kanals",
+            "Treidelbrücke, wo der Pfad die Mündung des Seitenarms quert",
+            "Wegweiser nur an der Kreuzung am Seitenarm",
+            "Felder reichen bis zum Kartenrand, Zaun am Feld"
+          ],
+          "verboten": [
+            "Hindernisse auf dem Pfad",
+            "Sackgassen ohne Ziel",
+            "Kisten ohne Zweck"
+          ],
+          "zustand": ["verwittert", "alt", "kaputt"]
+        },
+        "bruecke": {
+          "zweck": "Eisenbrücke über den Kanaleinschnitt (Szene 40, Nietenkopf am Geländer), danach Serpentinen den Abhang hinab nach Ironwood (unten).",
+          "nachbarschaft": "Kanal und Felswand im Westen, offener Hang im Osten; vom Hang aus Schornsteine und Rauch von Ironwood im Süden.",
+          "pflicht": [
+            "Brücke aus genieteten Trägern mit Bohlen und Geländer beidseitig",
+            "Kanal im Einschnitt unter der Brücke, reicht bis zum Kartenrand",
+            "Pfad in Serpentinen mit Stützmauern",
+            "Bank mit Blick nach Süden"
+          ],
+          "verboten": [
+            "Hindernisse auf dem Pfad",
+            "Geländer mit Lücken auf der Brücke"
+          ],
+          "zustand": ["verwittert", "alt"]
+        }
+      }
+    },
+    "lockport": {
+      "bild": "Schleusendorf am Seitenarm des Kanals: zehn Häuser um eine Schleuse und ein Hafenbecken, Lastkahn am Kai, Wäsche an Leinen, Gasthaus mit Kegelbahn, Dorfplatz mit Linde und Pumpe. Herbstnebel über dem Wasser, Möwen.",
+      "epoche": "gegenwart mit altem Ortskern",
+      "wohlstand": "einfach",
+      "stil": ["laendlich", "holz", "fachwerk"],
+      "zustand": ["gebraucht", "alt", "verwittert"],
+      "flora": "Linde auf dem Platz, Pappeln am Südrand, Gärten mit Kürbissen, Schilf am Seitenarm.",
+      "karten": {
+        "aussen": {
+          "zweck": "Nebenort N2: Uferstraße vom Kanalweg (rechts) am Nordufer, Schleusenwärterhaus mit Glocke und Rätseltafel (Sperre S3), Steg über das Untertor, Kai mit Lastkahn und Kreidetafel, Gasthaus, Bootsschuppen mit Ruderboot an Tauen, Dorfplatz.",
+          "nachbarschaft": "Drei Häuser am Nordufer, Häuser und Gasthaus am Kai und am Dorfplatz im Süden; Becken öffnet sich nach Westen zum Fluss.",
+          "pflicht": [
+            "Hafenbecken reicht bis zum Westrand, Seitenarm bis zum Ostrand, Kai mit Pollern",
+            "Schleuse mit zwei Toren, Steg auf dem Untertor als eigenes Objekt",
+            "Häuser mit Gärten und Wäscheleinen, Türen passen zum Weg",
+            "Gasthaus mit Tür in der Südfassade zum Dorfplatz",
+            "Bank unter der Linde, Pumpe auf dem Platz"
+          ],
+          "verboten": ["Industriegebäude", "Kisten ohne Zweck"],
+          "zustand": ["gebraucht", "alt"]
+        },
+        "gasthaus": {
+          "zweck": "Gasthaus „Zur Schleuse“: Kegelbahn, Tresen mit Wirt Otto, Fund „Kegel mit Kerbe“.",
+          "raeume": [
+            {
+              "name": "gaststube",
+              "funktion": "gasthaus",
+              "inhalt": "Kegelbahn an der Nordwand mit neun Kegeln, Tresen mit Zapfhahn, Regal mit Gummistiefeln, Tische mit gleichen Stühlen, Foto der Schleuse im Hochwasser, Kreidetafel „Kegelkönig des Monats“, Kachelofen, Pflanze"
+            }
+          ],
+          "pflicht": ["Tür in der Südwand", "Anlauf der Kegelbahn frei"],
+          "verboten": ["Küchenzeile in der Gaststube"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["rustikal", "fachwerk"]
+        }
+      }
     }
   }
 }

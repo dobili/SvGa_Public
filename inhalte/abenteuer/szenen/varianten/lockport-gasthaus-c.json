@@ -60,71 +60,51 @@
       "versatz": [0, 6]
     },
     {
-      "moebel": "ld5ThekeLinks",
+      "moebel": "ld5Theke7",
       "feld": [1, 5],
-      "id": "th0",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeMitte",
-      "feld": [3, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeMitte",
-      "feld": [4, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeMitte",
-      "feld": [5, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeMitte",
-      "feld": [6, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeRechts",
-      "feld": [7, 5],
-      "bauteil_ok": true
+      "id": "theke"
     },
     {
       "moebel": "ld5Glaeser",
       "feld": [0, 0],
-      "auf": "th0",
-      "versatz": [2, 0]
+      "auf": "theke",
+      "versatz": [-36, -7]
     },
     {
       "moebel": "ld5Flaschen",
       "feld": [0, 0],
-      "auf": "th0",
-      "versatz": [12, 0]
+      "auf": "theke",
+      "versatz": [-6, -7]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [30, -7]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [1, 7],
       "vorn": true,
-      "versatz": [0, -6]
+      "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [3, 7],
       "vorn": true,
-      "versatz": [0, -6]
+      "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [5, 7],
       "vorn": true,
-      "versatz": [0, -6]
+      "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [7, 7],
       "vorn": true,
-      "versatz": [0, -6]
+      "versatz": [0, -9]
     },
     {
       "moebel": "mf9Rundtisch",

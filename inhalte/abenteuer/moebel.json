@@ -1008,6 +1008,108 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true
+    },
+    "caLeuchtturmSockel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Lighthouse_Bottom_Door_Closed.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true
+    },
+    "caLeuchtturmDach": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Lighthouse_Roof_Decorated.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "caBoot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "caBootMotor": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "caFischerboot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "caSteg": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_19.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "caStegSchmal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_20.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "caFaesser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "caKisten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_4.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "caRettungsring": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Life_Buoy_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "caFahneRot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Flag_1.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true
+    },
+    "caFahneBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Flag_2.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true
+    },
+    "caMikrofon": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_73.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "caStatue": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Grey_Statue.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true
+    },
+    "caBrunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_1.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true
+    },
+    "caBus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_4.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "caSchachtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_273.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
     }
   }
 }

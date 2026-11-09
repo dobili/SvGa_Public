@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 17,
+  "nextobjectid": 36,
   "properties": [
     {
       "name": "kennung",
@@ -94,10 +94,10 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0,
-        0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0,
-        0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0,
-        0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
@@ -337,6 +337,215 @@
               "value": "tag"
             }
           ]
+        },
+        {
+          "id": 17,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 32,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 80,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 19,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 128,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 20,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 176,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 21,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 224,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 22,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 272,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 23,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 320,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 24,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 64,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 25,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 80,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 26,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 16,
+          "y": 144,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 27,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 16,
+          "y": 176,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 28,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 320,
+          "y": 144,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 29,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 320,
+          "y": 176,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 30,
+          "name": "sbArbeitsplatz",
+          "type": "moebel",
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 31,
+          "name": "caMikrofon",
+          "type": "moebel",
+          "x": 64,
+          "y": 16,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 32,
+          "name": "sbPraesentation",
+          "type": "moebel",
+          "x": 224,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 33,
+          "name": "sbPflanze",
+          "type": "moebel",
+          "x": 336,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 34,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 128,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 35,
+          "name": "caSchachtisch",
+          "type": "moebel",
+          "x": 240,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

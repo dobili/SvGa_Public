@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Capital Arena, Seeufer und Leuchtturm einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, achtundzwanzigster Auftrag; Crossroads und Pinewood sind zusammengeführt, danke; Serene 16 und 26 im Register berichtigt)
+**Stand:** fertig (mittel-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 96159a1d)
 **Darf ändern:** `inhalte/abenteuer/karten/capital-arena-*.json`, `weg-ghost-capital-*.json`,
@@ -14,6 +14,38 @@ viele Schachtische in Reihen, Bühne, Zuschauerbänke, Anzeigetafel, Pressetisch
 Turnierleitung). Seeufer und Leuchtturm haben schon `stil` = `kueste` (Wasser); dazu Steg, Boote,
 Felsen, Leuchtturm (aus dem Register, sonst ein hohes Gebäude), Bänke.
 Bitte Merge-Konflikte in `moebel.json` vor dem Commit lösen (keine Konfliktmarken committen).
+
+## Bericht
+
+Vier Karten eingerichtet: Capital Arena draußen und Halle, Seeufer und Leuchtturm. 17 neue Möbel am
+Ende von `moebel.json` (Vorsilbe `ca`): `caLeuchtturmSockel`, `caLeuchtturmDach`, `caBoot`,
+`caBootMotor`, `caFischerboot`, `caSteg`, `caStegSchmal`, `caFaesser`, `caKisten`, `caRettungsring`,
+`caFahneRot`, `caFahneBlau`, `caMikrofon`, `caStatue`, `caBrunnen`, `caBus`, `caSchachtisch`.
+
+Bildschirmfotos im Spiel (Build mit verlinktem privaten Repository; Bilder nur lokal):
+
+- **Capital Arena draußen:** zwei Fahnenmasten zwischen den Hochhäusern, großer Springbrunnen an Stelle
+  des Kistenblocks, blauer Bus an Stelle des zweiten Kistenblocks, Statue mit Kübelbaum bei den
+  Eltern, Laterne, Bank, Kübelbaum am Rand; Mama und Juno frei.
+- **Halle:** vor jedem Vorrundengegner ein Schachtisch (helle Holztische in einer Reihe), der
+  Finaltisch zwischen Kade und Victor, vier orange Zuschauerbänke an Stelle der Kistenblöcke,
+  Pressearbeitsplatz mit Mikrofon neben dem Pressetisch, Anzeigetafel über dem Publikum, Pflanze;
+  Turniertafel, Pressetisch und Fanshop bleiben Auslöser.
+- **Seeufer (Küste):** Holzsteg aus drei schmalen Stegstücken ins Wasser an Stelle der Kisten, ein
+  Motorboot und ein Ruderboot auf dem See, Laterne, zwei Bänke, Rettungsring, Felsen.
+- **Leuchtturm (Küste):** rot-weißer Leuchtturm aus Sockel mit Tür und Laternendach an Stelle des
+  Wandblocks (die Wandkacheln und die Lampe darunter sind jetzt Boden, der Turm sperrt selbst),
+  Fischerboot, Ruderboot und Steg auf dem Wasser oben links, Fässer, Kisten, Rettungsring, Bank,
+  Felsen.
+
+**Entscheidungen:** Das ganze Leuchtturmbild ist 256 Pixel hoch und passt nicht auf die Karte; Sockel
+und Dach übereinander ergeben einen etwas gedrungeneren Turm. Eine Bühne gibt es nur als Strandbühne
+(Sand), deshalb keine Bühne in der Halle; das Finale steht als eigener Tisch zwischen Kade und Victor.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen. Prettier über die
+geänderten Dateien. `npm run build` mit verlinktem privaten Repository ohne Fehler. Playwright
+`tests/e2e/abenteuer` (Chromium): 9 bestanden. Vor dem Commit `claude/friendly-shannon-y8bf90`
+hereingeholt; `moebel.json` ohne Konflikt, keine Konfliktmarken.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

@@ -611,3 +611,37 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
       etwas darauf (Werkstück, Böcke).
 31. **Möbel gehören zu einer Gruppe.** Ein Regal zwischen zwei Werkbänken gehört zu einer davon
     (näher dran, gleiche Achse); nichts steht allein genau in der Mitte zwischen zwei Gruppen.
+
+### 10.6 Zusammenhang draußen (zweite Rückmeldung des Autors, 9.11.2026, mit Prüfung im Werkzeug)
+
+32. **Was zusammenhängt, ist durchgehend.** Flüsse, Bäche, Wege, Straßen, Gleise und Zäune haben keine
+    Unterbrechung: Ein Bach endet nur am Kartenrand, in einem See oder an einer Quelle mit Felsen;
+    ein Weg führt zu einem Kartenrand, einer Tür, einem Steg, einem Auslöser oder einem anderen
+    Belag. Prüfung: `pipeline/abenteuer/zusammenhang.py` im Kartenbauer („Bach endet“, „führt
+    nirgendwohin“).
+33. **Mindestbreiten.** Straße mindestens 3 Kacheln (zwei Spuren), Weg und Trampelpfad mindestens
+    2 Kacheln, auch kurze Zugänge: Einen Weg von einer Kachel Breite kann LimeZus Randsatz nicht
+    zeichnen. Prüfung: „zu schmal“.
+34. **Gleichmäßige Breite.** Straßen und Wege werden von Feld zu Feld höchstens eine Kachel breiter
+    oder schmaler, Flüsse höchstens zwei; ein Wendehammer oder Platz wird über mehrere Felder
+    angelegt, nicht als Sprung. Teiche und Seen sind frei. Prüfung: „sprunghaft“.
+35. **Zäune ohne Lücke.** Eine Lücke in einer Zaunreihe ist ein Tor oder Durchgang und endet auf
+    beiden Seiten an einem End- oder Eckstück; kein Zaunteil sitzt ein paar Pixel höher oder tiefer
+    als sein Nachbar. Prüfung: „Zaunlücke“, „versetzt“.
+36. **Randspur auf der Zeichnung.** Nach dem Zeichnen zieht `pipeline/abenteuer/randspur.py` jeden
+    Rand von Wasser und Erdwegen nach: Wo Wasser oder Weg an Gras oder Hecke grenzt, muss die
+    gezeichnete Kachel dort ihren Rand zeigen, an inneren Ecken die Innenecke. Unter Holzbrücken
+    läuft das Wasser ohne Ufer weiter. Befund: „Randlücke“.
+
+### 10.7 Drei Varianten je Karte (Wunsch des Autors, 9.11.2026)
+
+37. **Jede Karte entsteht in drei Varianten**, damit der Autor die beste wählt und dazu Hinweise
+    gibt. Gleich in allen dreien: Größe, Wände, Türen, Fenster, Übergänge mit ihren Feldern,
+    Auslöser und Figuren mit Namen (ihre Felder dürfen sich nur ändern, wenn sie kein Übergang sind
+    und ihr Gegenstand mitwandert), alles, was die Geschichte verlangt (Ortsdokument, 12/13/14).
+    Verschieden: Anordnung, Wahl der Möbelserie und Bilder, Deko, Dichte (eine schlichtere, eine
+    reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
+    Kleinkram. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
+    README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
+    zum Nachschlagen.

@@ -262,7 +262,12 @@ def baue(pfad: Path) -> list[str]:
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])
     befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen")
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
+    # Hier eingebunden statt oben: zusammenhang.py nutzt die Konstanten dieses Moduls.
+    from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
+
+    befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
     ziel = INHALTE / szene["datei"]
+    ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")
     ziel.write_text(
         json.dumps(tiled(szene, zeilen, gesetzt, vorlage), ensure_ascii=False, indent=1) + "\n",

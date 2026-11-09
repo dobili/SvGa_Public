@@ -20,7 +20,7 @@ def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
     BRUECKE_MAX Feldern desselben begehbaren Zeichens wieder Wasser (oder der Kartenrand hinter
     Wasser) folgt.
     Beispiel: Spalte „~hh~“ von oben nach unten: Das obere Wasser läuft unter der Brücke weiter.
-    Sonderfälle: Wand, Leere und Wasser selbst sind keine Brücke; ein Steg, der im Wasser endet,
+    Sonderfälle: Wand, Leere, Gras und Wasser selbst sind keine Brücke; ein Steg, der im Wasser endet,
     hat kein Wasser dahinter und bekommt deshalb weiter sein Ufer.
     """
     hoehe, breite = len(zeilen), len(zeilen[0])
@@ -28,7 +28,9 @@ def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
     if not (0 <= nx < breite and 0 <= ny < hoehe):
         return False
     bruecke = zeilen[ny][nx]
-    if bruecke in (WASSER, WAND, LEER):
+    # Gras ist nie eine Brücke: Sonst verlor ein Bach, der um eine Spalte versetzt weiterläuft,
+    # seine Uferecken (Park, Bildprüfung 9.11.2026).
+    if bruecke in (WASSER, WAND, LEER, "."):
         return False
     for schritt in range(1, BRUECKE_MAX + 1):
         nx, ny = x + dx * schritt, y + dy * schritt

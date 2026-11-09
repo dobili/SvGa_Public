@@ -2,7 +2,7 @@
   "karte": "cedarCreek.archiv",
   "datei": "karten/cedar-creek-archiv.json",
   "art": "innen",
-  "beschreibung": "Der Keller unter der Bibliothek, das Archiv von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Eine Stehlampe in der Ecke gibt warmes Licht.\n\nLinks oben führt die Tür zur Kellertreppe hinauf in die Bibliothek. An der Nordwand stehen drei hohe Regale voller Ordner und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers.\n\nIn der Mitte stehen geschlossene Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“, darin die Spur zu Ambrose. Rechts unten ein Schreibtisch mit Buch und Lampe, an dem man Akten sichtet; darauf liegt das alte Programmheft, davor ein Stuhl.\n\nAuf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer. Laufwege: von der Treppe nach rechts an den Regalen entlang und zwischen den Kartonreihen hindurch zum offenen Karton, zum Schreibtisch und zum Fleck.",
+  "beschreibung": "Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“. Rechts unten der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, daneben eine Stehlampe mit warmem Licht. Am Westende ein Stapel höherer Kartons. Auf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -20,77 +20,101 @@
   ],
   "objekte": [
     {
-      "moebel": "wzTuer",
-      "feld": [2, 1],
+      "moebel": "cc4Archivregal",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4Boxerfoto",
+      "feld": [5, 1],
       "an_wand": true
     },
     {
-      "moebel": "ccRegalA",
-      "feld": [4, 1]
+      "moebel": "cc4Archivregal",
+      "feld": [6, 1]
     },
     {
-      "moebel": "ccBoxerfoto",
-      "feld": [6, 1],
-      "an_wand": true
+      "moebel": "cc4ArchivregalB",
+      "feld": [8, 1],
+      "id": "dunklesRegal"
     },
     {
-      "moebel": "ccRegalC",
-      "feld": [7, 1]
-    },
-    {
-      "moebel": "ccRegalA",
+      "moebel": "cc4Treppe",
       "feld": [10, 1]
     },
     {
-      "moebel": "rvKiste",
+      "moebel": "cc4Karton",
+      "feld": [2, 5]
+    },
+    {
+      "moebel": "cc4Karton",
       "feld": [4, 5]
     },
     {
-      "moebel": "rvKiste",
+      "moebel": "cc4Karton",
       "feld": [6, 5]
     },
     {
-      "moebel": "rvKiste",
+      "moebel": "cc4Karton",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [4, 7],
+      "id": "karton1858"
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "cc4StuhlHinten",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "cc4Lesetisch",
+      "feld": [10, 7],
+      "id": "tisch"
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cc4Karton",
       "feld": [8, 5]
     },
     {
-      "moebel": "rvKiste",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "rvKisteOffen",
-      "feld": [5, 7]
-    },
-    {
-      "moebel": "cc3Schreibtisch",
-      "feld": [10, 6],
-      "id": "schreibtisch"
-    },
-    {
-      "moebel": "cc3StuhlVonHinten",
-      "feld": [10, 7],
-      "zu": "schreibtisch"
-    },
-    {
-      "moebel": "ccStehlampe",
-      "feld": [12, 4]
+      "moebel": "cc4Karton",
+      "feld": [8, 7]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [2, 4],
+      "feld": [11, 5],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "kellerAusgang",
-      "feld": [2, 3]
+      "feld": [11, 3]
     },
     {
       "name": "boxerfoto",
-      "feld": [6, 3]
+      "feld": [5, 3]
     },
     {
       "name": "programmheft",
@@ -99,7 +123,7 @@
     },
     {
       "name": "karton1858",
-      "feld": [5, 8],
+      "feld": [4, 7],
       "auf_moebel": true
     },
     {
@@ -109,5 +133,6 @@
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": ["neu", "gebraucht", "alt"]
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch", "einfach"]
 }

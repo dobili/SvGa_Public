@@ -385,6 +385,24 @@
       "kollision": true,
       "stil": "rustikal",
       "zustand": "alt"
+    },
+    "gt7ZaunEndeLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7ZaunEndeRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "einfach"
     }
   }
 }

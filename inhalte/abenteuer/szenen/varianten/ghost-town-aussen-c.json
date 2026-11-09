@@ -196,7 +196,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOR",
+      "moebel": "gt7ZaunEndeLinks",
       "feld": [39, 29],
       "bauteil_ok": true
     },
@@ -216,7 +216,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOL",
+      "moebel": "gt7ZaunEndeRechts",
       "feld": [42, 29],
       "bauteil_ok": true
     },

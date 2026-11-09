@@ -1064,7 +1064,7 @@
         },
         {
           "id": 37,
-          "name": "gt7ZaunOR",
+          "name": "gt7ZaunEndeLinks",
           "type": "moebel",
           "x": 672,
           "y": 448,
@@ -1156,7 +1156,7 @@
         },
         {
           "id": 41,
-          "name": "gt7ZaunOL",
+          "name": "gt7ZaunEndeRechts",
           "type": "moebel",
           "x": 720,
           "y": 448,

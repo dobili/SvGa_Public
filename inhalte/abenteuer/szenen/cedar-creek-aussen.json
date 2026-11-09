@@ -651,34 +651,8 @@
       "feld": [45, 27]
     },
     {
-      "moebel": "cc5Planke",
-      "feld": [52, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5Planke",
-      "feld": [52, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [54, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [54, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [55, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [55, 9],
-      "bauteil_ok": true
+      "moebel": "cc7Fussbruecke",
+      "feld": [51, 8]
     },
     {
       "moebel": "cc5Planke",

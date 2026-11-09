@@ -45,7 +45,7 @@
     "#....ssss.................pppppppppppppppppppppppppppppppkk#",
     "#....ssss.................pppppppppppppppppppppppppppppppkk#",
     "#....ssss.................pppppppppppppppppppppppppppppppkk#",
-    "#....ssss................................................kk#",
+    "#....ssss...ssssssssss...................................kk#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -55,6 +55,16 @@
     "############################################################"
   ],
   "objekte": [
+    {
+      "moebel": "hb7Turnhalle",
+      "feld": [20, 8],
+      "id": "halle"
+    },
+    {
+      "moebel": "hb7Basketballkorb",
+      "auf": "halle",
+      "versatz": [0, 10]
+    },
     {
       "moebel": "hb7Schule",
       "feld": [32, 1]
@@ -105,7 +115,7 @@
     },
     {
       "moebel": "heSchulbus",
-      "feld": [14, 33],
+      "feld": [14, 32],
       "bauteil_ok": true
     },
     {
@@ -121,20 +131,8 @@
       "feld": [24, 30]
     },
     {
-      "moebel": "wds6Kegelbaum",
-      "feld": [27, 10]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [18, 13]
-    },
-    {
       "moebel": "cc3Busch",
       "feld": [22, 4]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [22, 14]
     },
     {
       "moebel": "wds6Kegelbaum",
@@ -142,11 +140,11 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [25, 4]
+      "feld": [28, 9]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [21, 8]
+      "moebel": "cc3Busch",
+      "feld": [25, 4]
     },
     {
       "moebel": "wds6Pinie",
@@ -166,10 +164,6 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [19, 5]
-    },
-    {
-      "moebel": "cc3Busch",
       "feld": [21, 19]
     },
     {
@@ -178,23 +172,15 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [19, 2]
+      "feld": [28, 12]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [25, 15]
+      "moebel": "cc3Busch",
+      "feld": [19, 2]
     },
     {
       "moebel": "wds6Kegelbaum",
       "feld": [20, 22]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [18, 8]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [24, 9]
     }
   ],
   "ausloeser": [

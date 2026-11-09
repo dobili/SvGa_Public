@@ -190,6 +190,16 @@
       "art": "heu",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "hb7Turnhalle": {
+      "quelle": "spiel/eigene/werk_halle.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

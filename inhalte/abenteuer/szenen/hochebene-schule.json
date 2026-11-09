@@ -45,7 +45,7 @@
     "#..ssss.......pppppppppppppppppppppppppppppppp....kk.......#",
     "#..ssss.......pppppppppppppppppppppppppppppppp....kk.......#",
     "#..ssss.......pppppppppppppppppppppppppppppppp....kk.......#",
-    "#..ssss...........................................kk.......#",
+    "#..ssss.....................ssssssssss............kk.......#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -55,6 +55,16 @@
     "############################################################"
   ],
   "objekte": [
+    {
+      "moebel": "hb7Turnhalle",
+      "feld": [8, 10],
+      "id": "halle"
+    },
+    {
+      "moebel": "hb7Basketballkorb",
+      "auf": "halle",
+      "versatz": [0, 10]
+    },
     {
       "moebel": "hb7Schule",
       "feld": [18, 1]
@@ -97,7 +107,7 @@
     },
     {
       "moebel": "heSchulbus",
-      "feld": [30, 33],
+      "feld": [30, 32],
       "bauteil_ok": true
     },
     {
@@ -118,31 +128,7 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [10, 13]
-    },
-    {
-      "moebel": "cc3Busch",
       "feld": [3, 11]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [13, 13]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [8, 6]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [11, 18]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [13, 6]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [7, 14]
     },
     {
       "moebel": "wds6Kegelbaum",
@@ -153,16 +139,40 @@
       "feld": [45, 20]
     },
     {
+      "moebel": "wds6Pinie",
+      "feld": [12, 19]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [14, 3]
+    },
+    {
       "moebel": "cc3Busch",
       "feld": [2, 8]
     },
     {
       "moebel": "cc3Busch",
-      "feld": [13, 3]
+      "feld": [5, 6]
     },
     {
       "moebel": "cc3Busch",
-      "feld": [5, 6]
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [3, 16]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [56, 24]
     }
   ],
   "ausloeser": [

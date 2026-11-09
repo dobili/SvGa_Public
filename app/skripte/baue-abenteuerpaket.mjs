@@ -25,7 +25,11 @@ const QUELLE = resolve(HIER, "../../inhalte/abenteuer");
  * Repository (.gitignore), wie die Buchquellen. Gibt es dort eine Datei gleichen Namens, nimmt der
  * Paketbau sie statt des Platzhalters.
  */
-const PRIVAT = resolve(HIER, "../inhalte-privat/abenteuer");
+const PRIVAT = [
+  resolve(HIER, "../inhalte-privat/abenteuer"),
+  // Zugeschnittene Bilder aus dem privaten Repository (skripte/hole-privatgrafik.mjs).
+  resolve(HIER, "../inhalte-privat/quelle/spiel"),
+].find((ordner) => existsSync(ordner)) ?? resolve(HIER, "../inhalte-privat/abenteuer");
 const ZIEL = resolve(HIER, "../public/abenteuer");
 const PAKET = JSON.parse(await readFile(resolve(HIER, "../package.json"), "utf8"));
 

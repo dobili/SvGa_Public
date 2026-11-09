@@ -1,23 +1,25 @@
-# Auftrag niedrig-1: Desert Springs und die Wüstenwege einrichten
+# Auftrag niedrig-1: Alle Möbel prüfen, dann Ghost Town einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der neunzehnte Auftrag, Desert Springs, ist zusammengeführt, danke; Register und die drei Möbel berichtigt. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, zwanzigster Auftrag; danke für den Befund zum Register, ist berichtigt)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b03adbff)
-**Darf ändern:** `inhalte/abenteuer/karten/desert-springs-*.json`, `weg-delacroix-desert-*.json`,
-`weg-desert-summit-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge, Vorsilbe `ds`),
-`docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand f9d14040);
+privates Repository auf `origin/main` (Stand f8cb2b18, nur lesen)
+**Darf ändern:** `inhalte/abenteuer/moebel.json` (Pfade und Größen falscher Einträge, neue Einträge mit Vorsilbe `gt`),
+`inhalte/abenteuer/karten/ghost-town-*.json`, `weg-pinewood-ghost-*.json`, `erinnerung-siedlung-*.json`,
+und Karten anderer Orte nur, wenn eine berichtigte Möbelgröße dort etwas zustellt; `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 arbeitet parallel)
 
 ## Ziel
 
-Desert Springs (Wüstenstadt, Kachelstil „wueste“ automatisch): draußen (flache Häuser, Kakteen,
-Wassertank, Tankstelle), Garage (Autos, Werkzeug, Reifen), Antiquariat (Bücherregale, Kisten, alte
-Möbel); Canyonpfad und Felsbogen (Felsen, Kakteen; Felsen aus Serene Village oder Farm); Diner
-(Theke, Barhocker, Sitzecken; innen) und Bergstraße (Felsen, Leitplanke, Schilder).
-Neu: Eine Karteneigenschaft `stil` kann den Kachelsatz wählen (README); gibt es Wasser auf einer
-Karte, `kueste` setzen.
+1. Dein Vorschlag: eine Übersicht aller Möbel als Bild (Schlüssel und Bild nebeneinander). Prüfe jeden
+   Eintrag: Zeigt das Bild, was der Schlüssel sagt? Die Beschreibungen der Haiku-Helfer im Register sind
+   teils verschoben. Falsche Einträge auf das richtige Bild umstellen (Größe aus der Datei), in der
+   Tabelle im Bericht festhalten (alt, neu). Das Übersichtsbild nicht ins öffentliche Repository.
+2. Ghost Town (verlassene Goldgräberstadt, Wüste): draußen (Holzfassaden, Fässer, Kakteen, Brunnen),
+   Saloon (Theke, Tische, Klavier). Canyonrand und Staubstraße. Erinnerung Siedlung: Hütte (einfach,
+   Holz, sepia getönt wie London).
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; Konflikt in `moebel.json` mit
 mittel-1 gelöst, indem ich deren Fassung übernommen und nur meine `ds`-Einträge ergänzt habe).

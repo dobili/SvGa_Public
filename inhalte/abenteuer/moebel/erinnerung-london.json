@@ -65,6 +65,136 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": true
+    },
+    "el7FassadeA": {
+      "quelle": "spiel/eigene/fassade_london_a.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7FassadeB": {
+      "quelle": "spiel/eigene/fassade_london_b.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7FassadeC": {
+      "quelle": "spiel/eigene/fassade_london_c.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Kaffeehaus": {
+      "quelle": "spiel/eigene/kaffeehaus_fassade.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Droschke": {
+      "quelle": "spiel/eigene/droschke.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7DroschkeB": {
+      "quelle": "spiel/eigene/droschke.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Zeitungskarren": {
+      "quelle": "spiel/eigene/zeitungskarren.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "karren",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Gaslaterne": {
+      "quelle": "spiel/eigene/gaslaterne.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Lederbank3": {
+      "quelle": "spiel/eigene/lederbank_laengs_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Lederbank4": {
+      "quelle": "spiel/eigene/lederbank_laengs_4.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Lederbank5": {
+      "quelle": "spiel/eigene/lederbank_laengs_5.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Kerze": {
+      "quelle": "spiel/eigene/kerzenleuchter.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "kerze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el7Zeitungshalter": {
+      "quelle": "spiel/eigene/zeitungshalter.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

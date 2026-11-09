@@ -3,7 +3,7 @@
  * daten/moebel.json zusammengeführt von skripte/baue-abenteuerpaket.mjs): Objekte vom Typ „moebel“ in der
  * Ebene ausloeser, gezeichnet als Bild aus dem Paket (gekaufte Grafik oder Platzhalter), mit
  * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe und den Reihen
- * `frei_unten`, die unten begehbar bleiben).
+ * `frei_unten`, die unten begehbar bleiben) oder nach einer eigenen `maske` je Kachel.
  *
  * Rolle im Gesamtbild: Laden (weltdaten.ts) und Aufstellen (szene.ts) der Möbel, ausgelagert, damit
  * beide Dateien klein bleiben. Die Pipeline prüft dieselbe Regel (pipeline/abenteuer/karten.py,
@@ -21,6 +21,8 @@ export interface Moebelangabe {
   readonly kollision?: boolean;
   /** Begehbare Kachelreihen am unteren Bildrand (Gang vor dem Motel, Veranda). */
   readonly frei_unten?: number;
+  /** Eigene Sperrmaske je Kachelreihe, „#“ sperrt (offenes Tor, Mammutbaum); ersetzt die Regel oben. */
+  readonly maske?: readonly string[];
 }
 
 /** Ein Möbel der Karte, bereit zum Zeichnen. */
@@ -98,6 +100,23 @@ export function stelleMoebelAuf(
     const bild = szene.add.image(m.x, m.y, `moebel:${m.name}`).setOrigin(0, 0);
     bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
+    if (m.angabe.maske) {
+      // Gleiche Regel wie pipeline/abenteuer/maske.py: je „#“ eine gesperrte Kachel.
+      m.angabe.maske.forEach((zeile, reihe) => {
+        [...zeile].forEach((zeichen, spalte) => {
+          if (zeichen !== "#") return;
+          const kachelflaeche = szene.add.rectangle(
+            m.x + spalte * kachel + kachel / 2,
+            m.y + reihe * kachel + kachel / 2,
+            kachel,
+            kachel,
+          );
+          kachelflaeche.setVisible(false);
+          gruppe.add(kachelflaeche);
+        });
+      });
+      continue;
+    }
     const oben = m.angabe.hoehe > kachel ? kachel : 0;
     // Unsichtbares Rechteck als Körper (ein Rechteck kennt seine Ecken; mit einer Zone saß der
     // Körper versetzt und sperrte Nachbarfelder).

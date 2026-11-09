@@ -142,3 +142,8 @@ keine Überlappungsprüfung (Fahnenmast, Laterne oder Schild vor einer Fassade).
 Ein Möbel in `inhalte/abenteuer/moebel/<ort>.json` kann `"frei_unten": N` tragen: Die untersten N
 Kachelreihen des Bildes sperren nicht (Gang vor den Motelzimmern, Veranda des alten Bahnhofs).
 Kartenbau, Prüfungen und App rechnen gleich.
+
+Für alles Feinere gibt es `"maske": ["....", "#..#", "#..#"]`: je Kachelreihe des Bildes eine
+Zeichenkette, `#` sperrt, `.` ist frei (offenes Tor nur an den Pfosten, Viehgatter quer mit
+oberster Reihe, Mammutbaum nur am Stammfuß). Die Maske ersetzt die Standardregel und
+`frei_unten`; Regel in `pipeline/abenteuer/maske.py`.

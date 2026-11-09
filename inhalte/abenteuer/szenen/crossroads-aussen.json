@@ -334,11 +334,6 @@
       "feld": [58, 22]
     },
     {
-      "moebel": "ccZaunPfosten",
-      "feld": [58, 22],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "rvPicknicktisch",
       "feld": [28, 28]
     },

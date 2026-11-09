@@ -89,7 +89,7 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "rustikal",
-      "frei_unten": 1
+      "maske": ["....", "#..#", "#..#"]
     },
     "sx7Rangerhaus": {
       "quelle": "spiel/eigene/rangerhaus.png",

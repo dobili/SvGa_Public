@@ -342,8 +342,7 @@
     },
     {
       "moebel": "sx7RangerTor",
-      "feld": [13, 10],
-      "vorn": true
+      "feld": [13, 10]
     },
     {
       "moebel": "cc4Bootsschuppen",

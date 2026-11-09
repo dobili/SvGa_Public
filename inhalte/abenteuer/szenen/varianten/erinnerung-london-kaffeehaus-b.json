@@ -1,0 +1,176 @@
+{
+  "karte": "erinnerungLondon.kaffeehaus",
+  "datei": "karten/varianten/erinnerung-london-kaffeehaus-b.json",
+  "art": "innen",
+  "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): dunkles Holz, alte Dielen, Lederbänke an der Nordwand, ein Ofen, Bilder an den Wänden. An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner. Die Tür liegt in der Südwand. Variante B, die schlichtere: zwei Schachtische, Theke an der Nordwand, wenige Gäste.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "laendlich"],
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "ldBild",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ld5Theke7",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "ld5Flaschenregal",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "el7Lederbank3",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "el7Zeitungshalter",
+      "feld": [16, 6]
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [5, 6],
+      "id": "mitte"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "mitte",
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "mitte",
+      "versatz": [8, -2]
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [11, 8],
+      "id": "t2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "t2",
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "t2",
+      "versatz": [8, -2]
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "ldKommode",
+      "feld": [15, 4]
+    },
+    {
+      "moebel": "ldBild",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ldBuecherregal",
+      "feld": [5, 1]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "tuer",
+      "feld": [8, 12]
+    },
+    {
+      "name": "schachtisch",
+      "feld": [6, 8]
+    },
+    {
+      "name": "rueckkehr",
+      "feld": [8, 4]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "kellner",
+      "feld": [12, 6]
+    },
+    {
+      "name": "zeitungsleser",
+      "feld": [2, 11]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "anderssen",
+      "typ": "statist",
+      "feld": [4, 8],
+      "eigenschaften": {
+        "von": "4,8",
+        "bis": "4,8",
+        "tun": "spielt Schach",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kieseritzky",
+      "typ": "statist",
+      "feld": [8, 8],
+      "eigenschaften": {
+        "von": "8,8",
+        "bis": "8,8",
+        "tun": "spielt Schach",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "b"
+}

@@ -1,0 +1,270 @@
+{
+  "karte": "capitalArena.aussen",
+  "datei": "karten/varianten/capital-arena-aussen-b.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "k": "sand",
+    "t": "stein"
+  },
+  "beschreibung": "Variante B, Steinplatz: Die Capital Arena mit ihrer Freitreppe, davor ein Platz aus grauem Stein mit vier Fahnen und einem Brunnen mit Frauenstatue in der Achse der Treppe. Links ein Obstkarren mit Sonnenschirm, rechts ein Süßigkeitenwagen, schmiedeeiserne Bogenlaternen und Gartenbänke. Links und rechts des Baus ein Park aus Nadelbäumen, zum Platz hin von einer Reihe Büsche begrenzt. Am Westrand kommt der Weg vom Leuchtturm an.",
+  "raster": [
+    "################################################################",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ca7Arena",
+      "feld": [19, 2]
+    },
+    {
+      "moebel": "ca7Fahne2",
+      "feld": [20, 35]
+    },
+    {
+      "moebel": "ca7Fahne",
+      "feld": [24, 35]
+    },
+    {
+      "moebel": "ca7Fahne",
+      "feld": [36, 35]
+    },
+    {
+      "moebel": "ca7Fahne2",
+      "feld": [40, 35]
+    },
+    {
+      "moebel": "ca7Statuenbrunnen",
+      "feld": [30, 39]
+    },
+    {
+      "moebel": "ca7Obstkarren",
+      "feld": [8, 37]
+    },
+    {
+      "moebel": "ca7Suessigkeiten",
+      "feld": [50, 37]
+    },
+    {
+      "moebel": "ca7BankGarten",
+      "feld": [12, 44]
+    },
+    {
+      "moebel": "ca7BankGarten",
+      "feld": [48, 44]
+    },
+    {
+      "moebel": "ca7LaterneBogen",
+      "feld": [15, 37],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7LaterneBogen",
+      "feld": [46, 37],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [5, 12]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [12, 16]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [4, 20]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [11, 25]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [5, 29]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [50, 4]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [57, 8]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [51, 13]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [58, 18]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [50, 23]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [57, 28]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [2, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [5, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [8, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [11, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [14, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [47, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [50, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [53, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [56, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [59, 34]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 40],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "wegGhost",
+      "feld": [0, 40]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [0, 41]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [31, 30]
+    },
+    {
+      "name": "treppe",
+      "feld": [31, 33]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "fans",
+      "typ": "statist",
+      "feld": [20, 42],
+      "eigenschaften": {
+        "von": "12,42",
+        "bis": "26,42",
+        "tun": "laufen mit Schals zur Halle",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "reporterin",
+      "typ": "statist",
+      "feld": [36, 38],
+      "eigenschaften": {
+        "von": "34,38",
+        "bis": "40,38",
+        "tun": "filmt die Freitreppe",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [44, 44],
+      "eigenschaften": {
+        "von": "40,44",
+        "bis": "50,45",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"],
+  "variante": "b"
+}

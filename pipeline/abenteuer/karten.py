@@ -15,6 +15,7 @@ from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 
+from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 
 KACHELEBENEN = ("boden", "waende", "objekte")
@@ -103,12 +104,9 @@ def moebelfelder(karte: dict) -> set[Feld]:
         # Der Kartenbauer schreibt die Kollision an das Objekt (an der Wand, auf dem Tisch: keine).
         if not angabe or not eigene.get("kollision", angabe.get("kollision")):
             continue
-        spalten = max(1, angabe["breite"] // KACHELGROESSE)
-        reihen = max(1, angabe["hoehe"] // KACHELGROESSE)
         x0, y0 = int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE
-        oben = 1 if reihen > 1 else 0
-        unten = reihen - angabe.get("frei_unten", 0)  # begehbare Reihen unten (Gang, Veranda)
-        felder |= {(x0 + dx, y0 + dy) for dx in range(spalten) for dy in range(oben, unten)}
+        # Regel in maske.py: ohne oberste Reihe, „frei_unten“ oder eigene „maske“.
+        felder |= {(x0 + dx, y0 + dy) for dx, dy in maskenfelder(angabe)}
     return felder
 
 

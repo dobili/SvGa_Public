@@ -73,7 +73,7 @@ ihnen und sieht, wie einer beide Türme und die Dame gibt und trotzdem gewinnt.
   **Entfällt:** der Vater (nur im Dialog erwähnt), das Klavierholz (Erzählung).
 - **Für Runde 6:** `zeitungskarren`, `laternenanzuender` als Ansehen-Auslöser.
 - **Bilder** sind beim Haupt-Chat bestellt (Fassaden, Kaffeehausfront, Droschke, Zeitungskarren,
-  Lederbank, Kerzenleuchter, Zeitungshalter); bis dahin Ersatz aus dem Katalog.
+  Lederbank, Kerzenleuchter, Zeitungshalter); eingesetzt am 9.11.2026 nachts.
 
 ## 4. Bühnenbilder
 

@@ -1,0 +1,306 @@
+{
+  "moebel": {
+    "n4Boot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "maritim",
+      "zustand": "gebraucht"
+    },
+    "n4Fischerboot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "stil": "maritim",
+      "zustand": "gebraucht"
+    },
+    "n4Rettungsring": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Life_Buoy_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "maritim",
+      "zustand": "gebraucht"
+    },
+    "n4Fass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "n4FassGross": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "n4Kisten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_4.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "maritim",
+      "zustand": "gebraucht"
+    },
+    "n4Kiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "n4Wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "n4Fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "n4BootUfer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "n4MoeweVorn": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Front.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MoeweLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Left.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "blick": "links",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MoeweRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Right.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "blick": "rechts",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MuschelRosa": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Pink_Shell_1_Vers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MuschelWeiss": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_White_Shell_1_Vers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MuschelGold": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Gold_Shell_1_Vers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4MuschelBraun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Brown_Shell_1_Vers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SeesternGelb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Yellow_Small_Starfish.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SeesternLila": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Purple_Big_Starfish.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4Spross": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sprout_1_Vers_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SprossB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sprout_2_Vers_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SprossGross": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Big_Sprout_Vers_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4FaehrbootWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "stil": "maritim",
+      "zustand": "gebraucht"
+    },
+    "n4SeefelsGrossWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Big_Sea_Rock_Vers_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SeefelsWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Medium_Sea_Rock_3_Vers_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4SeefelsKleinWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sea_Rock_1_Vers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n4PfahlhausBlau": {
+      "quelle": "spiel/eigene/pfahlhaus_blau.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4PfahlhausRot": {
+      "quelle": "spiel/eigene/pfahlhaus_rot.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4PfahlhausWeiss": {
+      "quelle": "spiel/eigene/pfahlhaus_weiss.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4Netzgestell": {
+      "quelle": "spiel/eigene/netzgestell.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "stil": "maritim",
+      "zustand": "alt"
+    },
+    "n4PelikanLinks": {
+      "quelle": "spiel/eigene/pelikan_sitzend_links.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tier",
+      "stil": "maritim",
+      "zustand": "neu"
+    },
+    "n4PelikanRechts": {
+      "quelle": "spiel/eigene/pelikan_sitzend_rechts.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tier",
+      "stil": "maritim",
+      "zustand": "neu"
+    },
+    "n4Leuchtfeuer": {
+      "quelle": "spiel/eigene/leuchtfeuer.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    }
+  }
+}

@@ -698,6 +698,14 @@
             "karte": "cedarCreek.aussen",
             "ausloeser": "zedernpfad"
           }
+        },
+        {
+          "name": "kuerbishof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "kuerbishof.hof",
+            "ausloeser": "zurueckLandstrasse"
+          }
         }
       ]
     },
@@ -1542,6 +1550,92 @@
       ]
     },
     {
+      "kennung": "sternwarte",
+      "name": "ort.sternwarte.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "sternwarte.felsnase",
+          "datei": "karten/sternwarte-felsnase.json",
+          "name": "ort.sternwarte.felsnase",
+          "innen": false
+        },
+        {
+          "kennung": "sternwarte.kuppel",
+          "datei": "karten/sternwarte-kuppel.json",
+          "name": "ort.sternwarte.kuppel",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCanyon",
+          "karte": "sternwarte.felsnase",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDelacroixDesert.canyonpfad",
+            "ausloeser": "sternwarte"
+          }
+        },
+        {
+          "name": "kuppelTuer",
+          "karte": "sternwarte.felsnase",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.kuppel",
+            "ausloeser": "kuppelAusgang"
+          }
+        },
+        {
+          "name": "kuppelAusgang",
+          "karte": "sternwarte.kuppel",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.felsnase",
+            "ausloeser": "kuppelTuer"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine",
+      "name": "ort.goldmine.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "goldmine.stollen",
+          "datei": "karten/goldmine-stollen.json",
+          "name": "ort.goldmine.stollen",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "stollenAusgang",
+          "karte": "goldmine.stollen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "goldmine"
+          }
+        }
+      ]
+    },
+    {
       "kennung": "erinnerungLondon",
       "name": "ort.erinnerungLondon.name",
       "nummer": 0,
@@ -1920,6 +2014,16 @@
             "karte": "wegSiliconDelacroix.faehre",
             "ausloeser": "zurueckSilicon"
           }
+        },
+        {
+          "name": "inselfaehre",
+          "karte": "siliconBay.hafen",
+          "art": "uebergang",
+          "wenn": "nadelSiliconBay",
+          "ziel": {
+            "karte": "pelikaninsel.dorf",
+            "ausloeser": "faehre"
+          }
         }
       ],
       "club": {
@@ -1938,6 +2042,37 @@
           "themen": ["haengend", "gefangen"]
         }
       }
+    },
+    {
+      "kennung": "pelikaninsel",
+      "name": "ort.pelikaninsel.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "pelikaninsel.dorf",
+          "datei": "karten/pelikaninsel-dorf.json",
+          "name": "ort.pelikaninsel.dorf",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "faehre",
+          "karte": "pelikaninsel.dorf",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.hafen",
+            "ausloeser": "inselfaehre"
+          }
+        }
+      ]
     },
     {
       "kennung": "wegSiliconDelacroix",
@@ -2369,6 +2504,15 @@
           "ziel": {
             "karte": "desertSprings.aussen",
             "ausloeser": "canyon"
+          }
+        },
+        {
+          "name": "sternwarte",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.felsnase",
+            "ausloeser": "zurueckCanyon"
           }
         }
       ]
@@ -3523,6 +3667,15 @@
             "karte": "wegGhostCapital.seeufer",
             "ausloeser": "zurueckGhost"
           }
+        },
+        {
+          "name": "goldmine",
+          "karte": "ghostTown.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "goldmine.stollen",
+            "ausloeser": "stollenAusgang"
+          }
         }
       ]
     },
@@ -3847,6 +4000,37 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        }
+      ]
+    },
+    {
+      "kennung": "kuerbishof",
+      "name": "ort.kuerbishof.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "kuerbishof.hof",
+          "datei": "karten/kuerbishof-hof.json",
+          "name": "ort.kuerbishof.hof",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckLandstrasse",
+          "karte": "kuerbishof.hof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.landstrasse",
+            "ausloeser": "kuerbishof"
+          }
         }
       ]
     }

@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 9,
+  "nextobjectid": 19,
   "properties": [
     {
       "name": "kennung",
@@ -75,12 +75,12 @@
       "width": 18,
       "height": 12,
       "data": [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3,
-        3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 5, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 5, 0, 0, 0, 5, 0, 0, 5, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -229,6 +229,116 @@
               "value": "ausweichen"
             }
           ]
+        },
+        {
+          "id": 9,
+          "name": "sbArbeitsplatz",
+          "type": "moebel",
+          "x": 32,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "sbArbeitsplatzDrucker",
+          "type": "moebel",
+          "x": 80,
+          "y": 48,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "sbArbeitsplatz",
+          "type": "moebel",
+          "x": 32,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "sbArbeitsplatzDrucker",
+          "type": "moebel",
+          "x": 80,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "sbArbeitsplatz",
+          "type": "moebel",
+          "x": 144,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "sbArbeitsplatz",
+          "type": "moebel",
+          "x": 192,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "sbSchreibtisch",
+          "type": "moebel",
+          "x": 160,
+          "y": 16,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "sbPflanze",
+          "type": "moebel",
+          "x": 208,
+          "y": 16,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "sbPraesentation",
+          "type": "moebel",
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "sbWasserspender",
+          "type": "moebel",
+          "x": 240,
+          "y": 128,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

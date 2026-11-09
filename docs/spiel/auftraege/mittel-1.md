@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Silicon Bay, Weg dorthin und Erinnerung London einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, fünfundzwanzigster Auftrag; Riverton ist zusammengeführt, danke)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der fünfundzwanzigste Auftrag, Silicon Bay und London, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 272c1a2e)
 **Darf ändern:** `inhalte/abenteuer/karten/silicon-bay-*.json`, `inhalte/abenteuer/karten/weg-ironwood-silicon-*.json`,
@@ -19,6 +19,56 @@ Für London passt Serene Village oder ältere Möbel; die Sepia-Tönung macht di
 Hinweis: Beim letzten Zusammenführen gab es einen Konflikt in `moebel.json`, weil niedrig-1 parallel
 arbeitete. Bitte neue Einträge am Ende anfügen und vor dem Push `claude/friendly-shannon-y8bf90` erneut
 hereinholen.
+
+## Bericht
+
+Acht Karten eingerichtet: Silicon Bay draußen, Lobby, Akademie, Serverraum; Raststätte und
+Glasbrücke; Erinnerung London Strand und Kaffeehaus. 31 neue Möbel am Ende von `moebel.json`
+(Vorsilbe `sb` 20, `ld` 11), alle mit `kollision`; dazu wiederverwendet `rvKaffeeautomat`,
+`rvGetraenkeautomat`, `rvAutoGruen`, `rvPicknicktisch`, `rvHolzbank`, `laterne`, `muelltonne`.
+Platzhalter unter jedem Möbel durch Boden ersetzt; stehen geblieben sind nur die unter Auslösern
+(Tafel, Ohrstöpsel, Droschke, Schachtisch) und die Kiste neben der Droschke (der Wagen selbst; ein
+Möbel dort würde das Droschkenpferd zustellen).
+
+Neue Möbel: `sbPflanze`, `sbPoster`, `sbWhiteboard`, `sbPraesentation`, `sbWasserspender`,
+`sbServerKlein`, `sbServer`, `sbServerschrank`, `sbSofa`, `sbSessel`, `sbEmpfang`, `sbSchreibtisch`,
+`sbArbeitsplatz`, `sbArbeitsplatzDrucker`, `sbBuerostuhl` (alle aus Modern Office, Einzelbilder auf
+32 × 48 Pixel), `sbKuebelbaum`, `sbKuebelbaumRund`, `sbKuebelpflanze`, `sbLaterne`, `sbFoodtruck`;
+`ldGaslaterne`, `ldFass`, `ldKarren`, `ldTisch`, `ldStuhl`, `ldBuecherregal`, `ldOfen`, `ldKommode`,
+`ldTheke`, `ldBank`, `ldBild`. (Noch nicht gesetzt: `sbPoster`, `sbWhiteboard`, `sbBuerostuhl`,
+`ldKarren`, `ldBild`, als Vorrat.)
+
+Bildschirmfotos im Spiel (Build mit verlinktem privaten Repository; Bilder nur lokal):
+
+- **Silicon Bay draußen:** Bäume in weißen Kübeln vor beiden Glasbauten, schmale Kübelpflanzen im
+  Innenhof, moderne Laternen; Rosies Food-Truck (ein Taco-Wagen) steht an Stelle des Kistenblocks,
+  Rosie links davor, Dashs Bank darunter.
+- **Lobby:** Empfangstresen neben dem Empfangsroboter, zwei Pflanzen rahmen die Vitrine mit dem
+  Hale-Stück, graues Sofa bei der Besuchergruppe, Sessel, Kübelpflanze und Wasserspender.
+- **Akademie:** sechs Arbeitsplätze mit Rechner und Drucker statt der Brettkacheln, Präsentationstafel
+  an der Wand, Dr. Lins Schreibtisch mit Pflanze, Wasserspender; Nova, Theo und Lin frei.
+- **Serverraum:** drei Reihen Serverschränke in wechselnden Formen, Gänge dazwischen, das
+  Schummelgeräte-Versteck rechts unten frei.
+- **Raststätte:** Kaffee- und Getränkeautomat, an denen Mrs. Kowalczyk lehnt, ein geparktes Auto
+  rechts, zwei Laternen, Mülltonne und zwei Picknicktische.
+- **Glasbrücke:** zwei moderne Laternen auf der Brücke; sonst bleibt die Brücke leer (die Grafik der
+  Brücke selbst kommt aus dem Kachelsatz).
+- **London Strand (sepia):** acht Gaslaternen an beiden Gehwegen, zwei Fässer neben der Tür des
+  Kaffeehauses, eine Bank; der Laternenanzünder steht an einer Laterne.
+- **London Kaffeehaus (sepia):** Theke mit Flaschen und Kommode beim Kellner, Bücherregal und Stuhl
+  beim Zeitungsleser, Ofen mit Rohr an der Wand, vier dunkle Holztische mit Stühlen; der Schachtisch
+  in der Mitte bleibt der Auslöser.
+
+**Entscheidungen:** Die Einzelbilder von Modern Office sind alle 32 × 48 Pixel mit Rand; die Sperrfläche
+deckt deshalb zwei Spalten, auch bei schmalen Stücken. Für London gibt es im Register kaum Möbel aus
+der Zeit; ich habe dunkle Holzmöbel, Gaslaternen und einen Ofen gewählt, die Sepia-Tönung macht den
+Rest. Der Auftrag nennt „um 1960“; die Dialoge spielen 1851 (Weltausstellung), die Möbel passen zu
+beidem nur ungefähr.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen. Prettier über die
+geänderten Dateien. `npm run build` mit verlinktem privaten Repository ohne Fehler (Abenteuerpaket
+4,3 MB). Playwright `tests/e2e/abenteuer` (Chromium): 9 bestanden. Vor dem Push
+`claude/friendly-shannon-y8bf90` erneut hereingeholt; `moebel.json` nur am Ende ergänzt.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

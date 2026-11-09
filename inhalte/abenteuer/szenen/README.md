@@ -119,3 +119,6 @@ Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Pla
 3. Sind Wände, Türen und Fenster wie in einem echten Gebäude (Türen in Wänden, Fenster an Außenwänden)?
 4. Gibt es freie Laufwege zu allen Auslösern und Figuren, und wirkt der Ort lebendig, nicht karg?
 5. Passen Größenverhältnisse (Tisch nicht größer als Schrank, Stuhl am Tisch, Blickrichtung zum Tisch)?
+
+`"vorn": true` an einem Objekt: wird nach seinem Fuß vor anderen gezeichnet, hat aber keine Kollision und
+keine Überlappungsprüfung (Fahnenmast, Laterne oder Schild vor einer Fassade).

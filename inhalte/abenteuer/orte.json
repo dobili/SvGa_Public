@@ -268,6 +268,15 @@
             "karte": "mapleFalls.aussen",
             "ausloeser": "dinerTuer"
           }
+        },
+        {
+          "name": "zedernpfad",
+          "karte": "mapleFalls.park",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.zedernpfad",
+            "ausloeser": "zedernZurueckPark"
+          }
         }
       ],
       "club": {
@@ -675,7 +684,7 @@
           "art": "uebergang",
           "ziel": {
             "karte": "mapleFalls.park",
-            "ausloeser": "landstrasse"
+            "ausloeser": "zedernpfad"
           }
         },
         {

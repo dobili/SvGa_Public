@@ -482,15 +482,15 @@ geschlossen; Übergänge Süd (Spalten 10–11, `zedernZurueckPark`) und Ost (Re
 **Weg:** vom Südrand hoch bis Reihe 18, in Stufen nach Nordosten bis Reihe 10 (Spalte 36),
 waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reihen 4–5 zum Ostrand.
 
-| Abschnitt | Inventar                                                               |
-| --------- | ---------------------------------------------------------------------- |
-| Wald      | Zedern, schmale Zedern und Kegelbäume dicht, Abstand ein Feld vom Pfad |
-| S2        | umgestürzter Stamm quer über den Pfad bei Spalte 45 (Reihen 9–11)      |
-| Kuppe     | Lichtung, Baumstammbank (59, 3), Felsgruppe und Stein                  |
-| überall   | Farne, Pilze, Steine, Felsgruppen                                      |
+| Abschnitt | Inventar                                                                          |
+| --------- | --------------------------------------------------------------------------------- |
+| Wald      | Zedern in Gruppen von 2 bis 6, am Rand dichter, Lichtungen dazwischen             |
+| S2        | Stapel liegender Stämme mit Pilzen quer über den Pfad bei Spalte 45 (Reihen 9–11) |
+| Kuppe     | Lichtung, Baumstammbank (59, 3) in einem Steinkreis, Mitte frei für die Aussicht  |
+| überall   | Farne, Pilze, Steine, Felsgruppen                                                 |
 
 Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
-folgen in Runde 5; der Stamm ist nur ein Kachelbild (1 × 2), als Sperre wirkt er noch schmal.
+folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), dichte Zedern von Rand zu Rand bei Spalte 44–46 schließen den Wald daneben. Hügelkanten gibt es im Katalog nicht.
 
 ### 4.5 Ortskern (`cedarCreek.aussen`)
 

@@ -300,9 +300,27 @@ Tisch mit dem Brett (5, 4); weiter nach Osten zur Ecke mit Spiegel und Hutschach
 **Bezug:** Die Treppe liegt über der des Erdgeschosses (Nordwestecke). Gebaut in Runde 4 ohne neue
 Möbel; geändert ist nur die Lage der Treppe (vorher Westwand Mitte).
 
-### 4.3 bis 4.6
+### 4.3 Clubraum der Maple Falls High (`mapleFalls.clubraum`)
 
-Clubraum, Diner, Außen und Park folgen in Runde 4. Lage und Maße stehen schon in Abschnitt 1.
+**Größe:** 18 × 13 (7a.2, öffentlicher Raum 14–20 × 10–14). Nordwand Reihen 0–2, Tür in der
+Südwand (9, 12), Start (9, 11). Heller Holzboden, cremefarbene Wände.
+
+**Laufwege:** Tür → Gang zwischen den Tischen (Spalten 6–7 und 12–13) nach oben zu Tafel, Pult und
+Anrichte. Szenen 5, 6, 9, 11, 12.
+
+| Zone     | Gegenstand                                                     | Feld                                               | Zweck                                                 |
+| -------- | -------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------- |
+| Nordwand | Pinnwand, zwei Fenster, Weltkarte, Tafel, Plakat „Erst zählen“ | (1, 1); (3, 1) und (11, 1); (5, 1); (7, 1); (9, 1) | Auslöser `plakatZaehlen` (9, 3)                       |
+| Nordwand | freie Wandfläche                                               | (13, 1)–(14, 2) über dem Pult                      | Platzhalter Nadel-Plakat (5)                          |
+| West     | Anrichte mit Pokal von 1994                                    | (1, 2)                                             | Auslöser `pokalvitrine` (1, 3)                        |
+| Ost      | Lehrerpult mit Globus, zwei Spinde                             | Pult (13, 3); Spinde (15, 2) und (16, 2)           | Coach Delgado (12, 4)                                 |
+| Ost      | zwei niedrige Bücherregale                                     | (14, 5) und (14, 8), je 2 × 3 (neu in Runde 4)     | Schachbücher; gegen die karge Ostseite                |
+| Mitte    | vier Spieltische mit Brett und je zwei Stühlen                 | Tische (3, 5), (9, 5), (3, 8), (9, 8)              | die vier Bretter; `brettOhneDame` (10, 9); Sam (4, 4) |
+| Ecken    | Pflanzen                                                       | (1, 9) und (16, 9)                                 | Regel 4.4                                             |
+
+### 4.4 bis 4.6
+
+Diner, Außen und Park folgen in Runde 4. Lage und Maße stehen schon in Abschnitt 1.
 
 ## 5. Platzhalter für die Rückkehr
 
@@ -321,5 +339,5 @@ Damit die Karten die Rückkehr in späteren Akten tragen, ohne neu gezeichnet zu
 | park       | zweite Bank neben Abernathys Bank        | 7–8 / 12                                                                       | Abernathys Schüler (später)                     |
 | park       | Startlinie für Jos Rennen                | (14, 4) am Uferweg                                                             | Rennen mit dem Fahrrad (13, Akt 2)              |
 | park       | freier Platz für das öffentliche Brett   | 9–13 / 22–25 am Ende des Hauptwegs Süd                                         | Post-Game                                       |
-| clubraum   | freie Wandfläche für das Nadel-Plakat    | Nordwand, im Bühnenbild 4.5 festzulegen                                        | Nadeln des Helden                               |
+| clubraum   | freie Wandfläche für das Nadel-Plakat    | Nordwand (13, 1)–(14, 2) über dem Pult (4.3)                                   | Nadeln des Helden                               |
 | wohnzimmer | Platz auf der Anrichte                   | (4, 3), Platte frei                                                            | Mamas altes Turnierfoto ab Akt 2                |

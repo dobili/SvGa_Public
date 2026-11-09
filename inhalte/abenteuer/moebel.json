@@ -390,7 +390,8 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "fernseher"
     },
     "rvPokalhaufen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_148.png",
@@ -1361,7 +1362,8 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "fernseher"
     },
     "mfReihenhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Terraced_House_1_16x16.png",
@@ -2205,7 +2207,7 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": false,
-      "art": "geraet",
+      "art": "fernseher",
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten"

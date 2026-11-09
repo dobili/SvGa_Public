@@ -1,7 +1,7 @@
 {
   "karte": "wegSiliconDelacroix.deich",
   "art": "aussen",
-  "beschreibung": "Der Deich vom Fähranleger nach Port Delacroix (Variante A, nach dem Ortsdokument): Im Norden das graue Meer mit Steinschüttung, Bojen, Pfählen und der Fähre am Anlegesteg; oben die Deichkrone als Erdweg, im Süden der grüne Hang hinunter in die Marsch mit Gras, Büschen und Bäumen. Am Loch in der Krone arbeitet Mr. Guidry mit Sandsäcken, Treibgut liegt am Rand. Eine Rampe führt hinunter zu einem versteckten Platz im Schilf, wo die Muschel liegt; in der Marsch ein gestrandeter Kutter. Eine zweite Rampe führt zum Pumpenhaus. Dahinter Zypressen und am Ende die ersten Häuser von Port Delacroix hinter Bauzäunen, ein Ortsschild. In der Marsch Schilf und Sumpfzypressen mit Moos.",
+  "beschreibung": "Der Deich vom Fähranleger nach Port Delacroix (Variante A, nach dem Ortsdokument): Im Norden das graue Meer mit Steinschüttung, Bojen, Pfählen und der Fähre am Anlegesteg; oben die Deichkrone als Erdweg, im Süden der grüne Hang hinunter in die Marsch mit Gras, Büschen und Bäumen. Am Loch in der Krone arbeitet Mr. Guidry mit Sandsäcken, Treibgut liegt am Rand. Eine Rampe führt hinunter zu einem versteckten Platz im Schilf, wo die Muschel liegt; in der Marsch ein gestrandeter Kutter. Eine zweite Rampe führt zum Pumpenhaus. Dahinter Zypressen und am Ende die ersten Häuser von Port Delacroix hinter Bauzäunen, das Ortsschild „Port Delacroix“. In der Marsch Schilf und Sumpfzypressen mit Moos.",
   "boden": "gras",
   "wandart": "gras",
   "wand": "damm",
@@ -282,8 +282,9 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "svWegweiser",
-      "feld": [212, 7]
+      "moebel": "sd6SchildPortDelacroix",
+      "feld": [210, 6],
+      "vorn": true
     },
     {
       "moebel": "sd6Schilf",

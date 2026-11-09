@@ -370,8 +370,9 @@
       "feld": [202, 23]
     },
     {
-      "moebel": "svWegweiser",
-      "feld": [212, 7]
+      "moebel": "sd6SchildPortDelacroix",
+      "feld": [210, 6],
+      "vorn": true
     },
     {
       "moebel": "sd6Zypresse",

@@ -28,7 +28,7 @@ Bahnhof mit Güterbahnhof und Weg zum Steinbruch.
 
 ### 1.1 Außenkarte `ironwood.aussen`, 80 × 60
 
-**Reihen (Nord nach Süd):** 0–3 Abhang (Böschung, Fels, Gestrüpp; Treppe 24–25); 4–10 Reihenhäuser
+**Reihen (Nord nach Süd):** 0–3 Abhang (Böschung, Fels, Gestrüpp; Hangweg 14–25 / 0–2 vom Nordrand, Treppe 24–25 / 1–3); 4–10 Reihenhäuser
 der Elm Street (Türen in Reihe 10); 11 Stufen und schmale Vorgärten; 12 Gehweg; 13–14 Elm Street
 (Wohnstraße, zwei Felder); 15 Gehweg; 16–17 Hinterhöfe; 18–27 Häuserzeile Hauptstraße Nord (Türen in
 Reihe 27) und Werkhof; 28 Gehweg Nord; 29–31 Hauptstraße (drei Felder, Mittellinie); 32 Gehweg Süd;
@@ -63,8 +63,9 @@ Werk (nördlich der Hauptstraße).
  Reihe 59 └─┴─≈≈≈≈≈≈──┴───────────────────────── Gebüsch, Böschung ──────────────────────────────────────┘
 ```
 
-**Wegeführung:** Der Hauptweg beginnt an der Treppe (24–25, 0–3), läuft die **Gasse** (24–25,
-16–27) gerade nach Süden auf die Hauptstraße, dort nach Osten zum **Werkstor** (56–60, 27) und nach
+**Wegeführung:** Der Hauptweg kommt am Nordrand in den Spalten 14–15 an (Ende des Abhangs von W3),
+läuft als **Hangweg** (zwei Felder, Erde mit Steinkante) an der Böschung nach Osten (Reihen 1–2),
+die **Treppe** (24–25, 1–3) hinunter und die **Gasse** (24–25, 16–27) gerade nach Süden auf die Hauptstraße, dort nach Osten zum **Werkstor** (56–60, 27) und nach
 Westen zur **Haltestelle** an der Brücke (13–16, 32). Die Gasse ist bewusst gerade: Sie ist die
 Sichtachse vom Abhang auf den Uhrturm des alten Bahnhofs (24, 34). Kurven und Richtungswechsel
 haben die Nebenwege: der Uferweg am Kanal (11–12, 12–28) mit dem Kai, die Bahnhofstraße (16–17,
@@ -78,13 +79,13 @@ Werkspforte (geschlossen, Ziel ist das Schild).
 
 | Standort                               | Ziel                                          | Warum                                                        |
 | -------------------------------------- | --------------------------------------------- | ------------------------------------------------------------ |
-| oben an der Treppe (24, 1), Ankunft W3 | Uhrturm des alten Bahnhofs (24, 34)           | Ankunft zu Fuß: Man sieht die ganze Stadt bis zum Bahnhof.   |
+| oben an der Treppe (24, 1), nach der Ankunft über W3 | Uhrturm des alten Bahnhofs (24, 34) | Ankunft zu Fuß: Man sieht die ganze Stadt bis zum Bahnhof.   |
 | Haltestelle (14, 32), Ankunft mit Bus  | Schornsteine mit Rauch über dem Werk (52–60)  | Wer mit dem Bus kommt, sieht zuerst das Werk.                |
 | Hauptstraße (40, 30)                   | Werkstor mit Schild (56–60, 27)               | Szene 49: Das neue Schild hängt dort, wo jeder hinsieht.     |
 | Platz am Bahnsteig (30, 43)            | Gittertor zum Steinbruch hinter dem Güterbahnhof (76, 57–58) | Man sieht das Tor, bevor man den Weg dorthin findet. |
 | Brückenmitte (6, 32)                   | Hauptstraße bis zum Werk, Schnee in Szene 50  | Abschied am Ende von Akt 2.                                  |
 
-**Ränder:** Norden Abhang mit Fels und Gestrüpp (nur die Treppe öffnet ihn, Übergang W3). Westen
+**Ränder:** Norden Abhang mit Fels und Gestrüpp (nur der Hangweg öffnet ihn, Spalten 14–15, Übergang W3). Westen
 jenseits des Kanals Böschung; die Schnellstraße läuft über die Brücke an den Westrand, aber der
 Gehweg endet am Schild „Kraftfahrstraße – keine Fußgänger“ am Westende der Brücke (2, 32); dahinter
 Leitplanke. Die Gleise laufen an West- und Ostrand, mit Zaun; über die Gleise führt nur der
@@ -99,8 +100,8 @@ Hochformat-Bildschirme. Benachbarte Abschnitte haben verschiedene Themen.
 
 | Abschnitt          | Bereich       | Thema                           | Inhalt                                                                                                                      | Zum Entdecken                                                                  |
 | ------------------ | ------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| A1 Kanal Nord      | 0–15 / 0–14   | Kanal unter dem Abhang          | Kanal mit Ufer, Westböschung, Elm Street Nr. 2 am Westende, Uferweg beginnt an der Elm Street                               | Krähen auf dem Geländer, Brombeeren am Hang                                    |
-| B1 Treppe          | 16–31 / 0–14  | Ankunft zu Fuß                  | Treppe vom Abhang (Ankunft W3), Nr. 4 und Nr. 6, Blick über die Stadt                                                       | Aussicht oben an der Treppe (`aussichtTreppe`), Mrs. Brody fegt den Gehweg     |
+| A1 Kanal Nord      | 0–15 / 0–14   | Ankunft zu Fuß am Kanal         | Ankunft des Hangwegs am Nordrand (14–15), Kanal mit Ufer, Westböschung, Elm Street Nr. 2, Uferweg beginnt an der Elm Street | Krähen auf dem Geländer, Brombeeren am Hang                                    |
+| B1 Treppe          | 16–31 / 0–14  | Blick über die Stadt            | Hangweg und Treppe vom Abhang, Nr. 4 und Nr. 6                                                                              | Aussicht oben an der Treppe (`aussichtTreppe`), Mrs. Brody fegt den Gehweg     |
 | C1 Elm Street Ost  | 32–47 / 0–14  | Wohnstraße der Familie          | Nr. 8, Eckhaus Nr. 10 von Oma Ruth mit Spitzengardine, Werkspforte am Ostende                                               | Schild „Werkspforte – nur Schichtpersonal“, Kohleneimer vor Nr. 8              |
 | D1 Hallen          | 48–63 / 0–14  | Das Werk arbeitet               | Hallen mit Schornsteinen (Rauch und Funken animiert), Kantine im Werkhof                                                    | Funkenflug, Sirene zum Schichtwechsel                                          |
 | E1 Kranbahn        | 64–79 / 0–14  | Stahl unter freiem Himmel       | Portalkran über dem Lagerplatz, Stahlträgerbündel, Umkleide                                                                 | Krähen auf den Trägern, Kranführerkabine (Big Joes Arbeitsplatz, Ansehen)      |
@@ -120,8 +121,8 @@ Hochformat-Bildschirme. Benachbarte Abschnitte haben verschiedene Themen.
 | D4 Gus             | 48–63 / 45–59 | Pause am Güterbahnhof           | Bahnübergang (Andreaskreuz, Umlaufgitter), Kabeltrommeln, Gus auf der umgedrehten Trommel                                   | Gus (Szene 45), Thermosflasche und Uhr auf der Trommel                         |
 | E4 Steinbruchweg   | 64–79 / 45–59 | Abstecher                       | Stellwerk, Steinbruchweg mit zwei Knicken, Gittertor „Steinbruch – stillgelegt – Betreten auf eigene Gefahr“ (76, 57–58)    | Tor (Sichtachse), Ausblick auf die Steinbruchkante hinter dem Tor             |
 
-**Laufzeit:** Hauptweg Treppe → Gasse → Hauptstraße → Werkstor etwa 62 Kacheln (18 s), zur
-Haltestelle weitere 12 (zusammen 21 s). Quer über die Hauptstraße 80 Kacheln, 23 s. Liegt im
+**Laufzeit:** Hauptweg Nordrand → Hangweg → Treppe → Gasse → Hauptstraße → Werkstor etwa 72 Kacheln
+(21 s), zur Haltestelle etwa 50 (14 s). Quer über die Hauptstraße 80 Kacheln, 23 s. Liegt im
 Rahmen 17–23 s.
 
 ### 1.3 Gebäude und Maße
@@ -203,9 +204,9 @@ Helden (Technik aus 13: `hatLaterne`).
 
 | Von (Karte, Auslöser, Feld)                                         | Nach (Karte, Auslöser, Feld; Ankunft)                                                                                       | Lage, Bedingung                                                                                                                                              |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| aussen `kanalweg` Nordrand (24–25, 0); Ankunft (24, 1), Blick Süden | wegRivertonIronwood.bruecke `weiterIronwood` Südrand, Spalten 24–25 (Vorschlag an mittel-3, siehe unten)                     | Treppe am Ende des Abhangs, zwei Felder; Dialog `ankunft_zu_fuss` bleibt an `weiterIronwood`                                                                |
+| aussen `kanalweg` Nordrand (14–15, 0); Ankunft (14, 1), Blick Süden | wegRivertonIronwood.bruecke `weiterIronwood` Südrand (14–15, 159); Ankunft (14, 158), Blick Norden                          | Hangweg am Ende des Abhangs, zwei Felder, gleiche Spalten auf beiden Seiten (mit mittel-3 abgestimmt); Dialog `ankunft_zu_fuss` bleibt an `weiterIronwood` |
 | aussen `bushaltestelle` (14, 32), Start                             | –                                                                                                                           | Ankunft mit dem Bus (Schnellreise, Szene 43 mit Mama, Rückkehr)                                                                                              |
-| aussen `busRiverton` (12, 32), Dialog, Reise                        | Haltestelle in Riverton (Auslöser bei mittel-3)                                                                             | erst nach `besuchtIronwood`; 10 Münzen, nach der Clubnadel von Ironwood frei (Bibel 10.3, W2)                                                               |
+| aussen `busRiverton` (12, 32), Dialog, Reise                        | riverton.aussen `busIronwood` (Schild (49, 18), `orte/riverton.md`, mittel-3)                                               | erst nach `besuchtIronwood`; 10 Münzen, nach der Clubnadel von Ironwood frei (Bibel 10.3, W2)                                                               |
 | aussen `busSiliconBay` (15, 32), Dialog, Reise                      | wegIronwoodSilicon.raststaette `start` (140, 20) an der Haltestelle der Raststätte                                         | erst nach Szene 50 (`einladungGesehen`, neu); vorher sagt der Busfahrer, ohne Einladung lasse man niemanden aus dem Bus (`silicon-bay.md`)                           |
 | aussen `kantineTuer` (56, 17)                                       | kantine `kantineAusgang` (Südwand, Spalte 12); Ankunft (12, 14)                                                             | Südfassade 50 % ↔ Südwand 50 %; offen erst nach Szene 38 (Bedingung `verbotGesehen`, neu), vorher Dialog des Pförtners                                       |
 | aussen `umkleideTuer` (69, 17)                                      | umkleide `umkleideAusgang` (Südwand, Spalte 7); Ankunft (7, 8)                                                              | Südfassade 43 % ↔ Südwand 50 %                                                                                                                              |
@@ -213,14 +214,15 @@ Helden (Technik aus 13: `hatLaterne`).
 | aussen `museumTuer` (24, 41), Platzseite                            | museum `museumAusgang` (Südwand, Spalte 13); Ankunft (13, 12)                                                               | Südfassade 46 % ↔ Südwand 50 %                                                                                                                              |
 | aussen `steinbruch` (neu) Ostrand (79, 57–58); Ankunft (78, 57)     | steinbruch.grube `zurueckIronwood` (neu) Westrand (0, 6–7); Ankunft (1, 6)                                                  | Steinbruchweg durch das offene Gittertor; Schotter, zwei Felder                                                                                              |
 | steinbruch.grube `stollen` (neu), Stollenmund (57, 42)              | steinbruch.stollen `stollenAusgang` (neu) Südrand (18–19, 23); Ankunft (18, 22), Blick Norden                               | S4: `wenn: hatLaterne`; ohne Laterne Dialog „Zu dunkel. Die Kinder trauen sich auch nur bis hierher.“                                                        |
-| aussen `anleger` (neu, 12, 22), Dialog, Reise                       | Anleger in Lockport und Riverton (Lastkahn, mittel-3)                                                                       | nach Szene 39 (Big Joe kennt den Kapitän, 13 §3); 5 Münzen                                                                                                   |
+| aussen `anleger` (neu, 12, 22), Dialog, Reise                       | riverton.aussen `anlegerSchild` (56, 43) und lockport.aussen `kai` (14, 20) (Lastkahn, mittel-3)                            | `wenn: lastkahnFrei` (gesetzt in „Post für den Kapitän“ von mittel-3, ab Szene 39: Big Joe kennt den Kapitän, 13 §3); 5 Münzen                               |
 
-**Abstimmung mit mittel-3 (W3 ↔ Ironwood):** Vorschlag: Die Brückenkarte von W3 endet am **Südrand**
-mit dem Weg in den Spalten 24–25 (Ende des Abhangs, Treppenansatz), der Kanal verlässt sie am Südrand
-in den Spalten 4–9 (Ufer 3 und 10), damit er in Ironwood an derselben Stelle über den Nordrand
-hereinkommt. Läuft die Brückenkarte von West nach Ost, verlege ich die Ankunft an den Westrand von
-Ironwood; das ist auf meiner Seite mit einer Zeile erledigt. Das Ergebnis der Abstimmung steht in
-der Fußnote dieses Abschnitts, sobald mittel-3 geantwortet hat.
+**Abstimmung mit mittel-3 (W3 ↔ Ironwood), Stand 9.11.2026:** Die Brückenkarte von W3
+(`wegRivertonIronwood.bruecke`, 30 × 160, `orte/riverton.md` 1.5) endet am **Südrand** mit dem Weg in
+den Spalten 14–15; Ironwood übernimmt dieselben Spalten am Nordrand und führt den Weg als Hangweg zur
+Treppe. Der Kanal liegt auf beiden Karten westlich des Weges; Ironwood hat ihn in den Spalten 4–9.
+Bitte an mittel-3: den Kanal am Südrand der Brückenkarte ebenfalls auf die Spalten 4–9 legen (heute
+6–11), damit Wasser und Ufer beim Kartenwechsel nicht springen. Anleger (`anleger`, Bedingung
+`lastkahnFrei`) und Haltestelle (`busRiverton` ↔ `busIronwood`) wie in der Tabelle.
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `steinbruch` und `anleger` auf
 `ironwood.aussen`, Bedingung `verbotGesehen` auf `kantineTuer` (Dialog am Pförtnerhaus), neuer Ort
@@ -351,8 +353,8 @@ Szene 50 Abend mit Schnee.
 
 | Abschnitt | Inventar (Gegenstand, Feld, Ausrichtung, Material und Zustand, Zweck)                                                                                                                                                                                                                                    |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A1        | Kanal 4–9 / 0–59 mit Steinufer 3 und 10; Eisengeländer am Ostufer 10 / 0–11; Brombeerbüsche am Hang 11–15 / 0–3; Elm Street Nr. 2 (12–17 / 4–10), Stufen (14, 11), Mülltonne am Haus (17, 11); Laterne (13, 12)                                                                                       |
-| B1        | Treppe 24–25 / 0–3, Steinstufen mit Geländer beidseitig, Antritt oben frei; Hangbüsche und Felsgruppen 16–23 und 26–31 / 0–3; Nr. 4 (18–23), Nr. 6 (26–31), je zwei Stufen und ein Blumenkübel neben der Tür; Laterne (25, 12), Bank am Treppenfuß (22, 12, zur Straße)                                 |
+| A1        | Kanal 4–9 / 0–59 mit Steinufer 3 und 10; Eisengeländer am Ostufer 10 / 0–11; Brombeerbüsche am Hang 11–13 / 0–3; Hangweg 14–15 / 0–2 (Ankunft vom Nordrand), dann nach Osten; Elm Street Nr. 2 (12–17 / 4–10), Stufen (14, 11), Mülltonne am Haus (17, 11); Laterne (13, 12)                                                                                       |
+| B1        | Hangweg 16–23 / 1–2 (Erde mit Steinkante, Holzgeländer zur Böschung); Treppe 24–25 / 1–3, Steinstufen mit Geländer beidseitig, Antritt oben frei; Hangbüsche und Felsgruppen 16–23 / 0 und 3, 26–31 / 0–3; Nr. 4 (18–23), Nr. 6 (26–31), je zwei Stufen und ein Blumenkübel neben der Tür; Laterne (25, 12), Bank am Treppenfuß (22, 12, zur Straße)                                 |
 | C1        | Nr. 8 (32–37) mit zwei Kohleneimern neben den Stufen; Eckhaus Nr. 10 (38–46) mit Spitzengardine, Briefkasten an der Hauswand (43, 11), zwei Blumenkübel; Werkspforte im Zaun (47, 13–14) mit Schild (46, 12); Laterne (39, 12)                                                                          |
 | D1        | Werkshallen 48–63 / 0–9 (Sheddach, Kulisse), Schornsteine (52, 0) und (58, 0) mit Rauch und Funken (Animation); Kantine 50–61 / 11–17, Tür (56, 17) mit Vordach, Fußmatte (56, 18), Bank an der Fassade (52, 18), Fahrradständer (59, 18)                                                              |
 | E1        | Halle 64–79 / 0–9; Portalkran über dem Lagerplatz 72–79 / 10–20 (Kulisse mit Kabine), Stahlträgerbündel (73, 14), (76, 17); Umkleide 66–72 / 11–17, Tür (69, 17), Fußmatte                                                                                                                         |

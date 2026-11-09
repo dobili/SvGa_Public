@@ -648,7 +648,13 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
     Kleinkram, Häuser und Gärten ohne Rolle in der Geschichte (anderes Hausmodell, andere Farbe).
     Ein anderer Teppich oder eine andere Lampe allein macht noch keine Variante: Der Autor soll auf den
-    ersten Blick drei verschiedene Räume sehen. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    ersten Blick drei verschiedene Räume sehen. Ebenso wenig genügt Spiegeln oder Umstellen derselben
+    Möbel. Der Kartenbauer meldet es (`varianten.py`, seit der Nacht 9./10.11.2026), wenn die Hälfte
+    der Möbel von B oder C auf denselben Feldern steht wie in A, oder wenn neun Zehntel dieselben
+    Möbel sind und Boden und Wand gleich bleiben. Draußen heißt das: andere Häuser und Gebäudemodelle,
+    andere Plätze (Park statt Parkplatz, Markt statt Wiese), andere Beläge; drinnen: anderer Boden
+    oder andere Wand, andere Möbelserie, andere Raumaufteilung. Jede Variante besteht alle Prüfungen
+    für sich. Ablage: Variante A ist die Szene in
     `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
     README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
     zum Nachschlagen.

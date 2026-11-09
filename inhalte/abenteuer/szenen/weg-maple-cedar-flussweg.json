@@ -2,13 +2,13 @@
   "karte": "wegMapleCedar.flussweg",
   "datei": "karten/weg-maple-cedar-2.json",
   "art": "aussen",
-  "beschreibung": "Der Flussweg von der Landstraße nach Cedar Creek an einem stillen Morgen, 120 × 30 Kacheln. Ein Uferweg aus Erde, zwei Felder breit, läuft am Westrand in den Reihen 15–16 an, folgt dem Fluss mit zwei Bögen nach Süden (F3 und F5, bis Reihe 18) und steigt am Ende wieder auf die Reihen 15–16. Südlich liegt der Fluss mit Ufer, das Wasser reicht über Süd-, West- und Ostrand. Nördlich stehen Erlen und Ahorne in Gruppen, oben schließt dichter Laubwald den Rand ab.\n\nF1 Erlen über dem Wasser, Nebel am Morgen. F2 eine Baumgruppe nördlich des Weges, darunter die Münzen. F3 der kurze Abzweig zur alten Fährstelle: der Stein der Fährleute und ein Boot am Fährpfosten im Wasser. F4 die Rastbank direkt am Weg mit Blick über das Wasser, ein Reiher im Uferschilf. F5 der Abzweig zum Steg auf Pfählen, der bis Reihe 25 ins Wasser ragt, mit Silas beim Angeln. F6 die Picknickstelle am Ufer mit blühendem Busch. F7 eine Wiese mit Wildblumen und Schmetterlingen. F8 das Ortsschild „Cedar Creek, gegr. 1851“ südlich am Weg; dahinter sieht man schon den Bibliotheksturm über den Zedern. Gras, Farne, Pilze, Blumen und Steine wachsen in Gruppen am Wegrand und unter den Bäumen.",
+  "beschreibung": "Der Flussweg von der Landstraße nach Cedar Creek an einem stillen Morgen, 120 × 30 Kacheln. Ein Uferweg aus Erde, zwei Felder breit, läuft am Westrand in den Reihen 15–16 an, folgt dem Fluss mit zwei Bögen nach Süden (F3 und F5, bis Reihe 18) und steigt am Ende wieder auf die Reihen 15–16. Südlich liegt der Fluss mit Ufer, das Wasser reicht über Süd-, West- und Ostrand. Nördlich stehen Erlen und Ahorne in Gruppen, oben schließt dichter Laubwald den Rand ab.\n\nF1 Erlen über dem Wasser, Nebel am Morgen. F2 eine Baumgruppe nördlich des Weges, darunter die Münzen. F3 der kurze Abzweig zur alten Fährstelle: der Stein der Fährleute am Ufer. F4 die Rastbank direkt am Weg mit Blick über das Wasser, ein Reiher im Uferschilf. F5 der Abzweig zum Holzsteg, der vier Felder ins Wasser ragt, zwei Schlauchboote liegen längs zu beiden Seiten festgemacht, Silas angelt am Ende. F6 die Picknickstelle am Ufer mit blühendem Busch. F7 eine Wiese mit Wildblumen und Schmetterlingen. F8 das Ortsschild „Cedar Creek, gegr. 1851“ südlich am Weg; dahinter sieht man schon den Bibliotheksturm über den Zedern. Gras, Farne, Pilze, Blumen und Steine wachsen in Gruppen am Wegrand und unter den Bäumen.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
-    "e": "erde",
-    "d": "dielen"
+    "e": "erde"
   },
+  "bruecken": ["h"],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "natur",
@@ -39,13 +39,13 @@
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeeeeeee............eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#..............................eeeeeeeeeeeeeeee..............eeeeeeeeeeeeeeee..........................................#",
     "#................................eeeeeeeeeeee..................eeeeeeeeeeee............................................#",
-    "#.....................................ee...........................dd..................................................#",
-    "~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~dd~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#.....................................ee...........................ee..................................................#",
+    "~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~hh~~~~~...~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -241,13 +241,48 @@
       "feld": [36, 18]
     },
     {
-      "moebel": "wg4BootPfahl",
-      "feld": [40, 21],
+      "moebel": "wg4Bank",
+      "feld": [52, 14]
+    },
+    {
+      "moebel": "wg5StegLinks",
+      "feld": [67, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegRechts",
+      "feld": [68, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegLinks",
+      "feld": [67, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegRechts",
+      "feld": [68, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegEndeLinks",
+      "feld": [67, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegEndeRechts",
+      "feld": [68, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5BootAb",
+      "feld": [65, 20],
       "an_wand": false
     },
     {
-      "moebel": "wg4Bank",
-      "feld": [52, 13]
+      "moebel": "wg5BootAuf",
+      "feld": [69, 20],
+      "an_wand": false
     },
     {
       "moebel": "wg4BuschBluete",
@@ -1092,7 +1127,7 @@
     },
     {
       "name": "rast",
-      "feld": [52, 13],
+      "feld": [52, 14],
       "auf_moebel": true
     },
     {
@@ -1106,10 +1141,10 @@
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [67, 24],
+      "feld": [67, 23],
       "eigenschaften": {
-        "von": "67,24",
-        "bis": "67,24",
+        "von": "67,23",
+        "bis": "67,23",
         "tun": "Silas angelt am Ende des Stegs",
         "wann": "tag"
       }

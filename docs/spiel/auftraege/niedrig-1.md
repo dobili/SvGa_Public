@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Port Delacroix, Fähre/Deich und Bayou einrichten
 
-**Stand:** fertig (niedrig-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der achtzehnte Auftrag, Port Delacroix, ist zusammengeführt, danke; Wasser kommt jetzt über den Kachelstil „kueste“. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand c2751464)
 **Darf ändern:** `inhalte/abenteuer/karten/port-delacroix-*.json`, `inhalte/abenteuer/karten/weg-silicon-delacroix-*.json`,

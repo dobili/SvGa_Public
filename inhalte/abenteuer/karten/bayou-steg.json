@@ -17,6 +17,11 @@
       "name": "kennung",
       "type": "string",
       "value": "bayou.steg"
+    },
+    {
+      "name": "stil",
+      "type": "string",
+      "value": "kueste"
     }
   ],
   "layers": [

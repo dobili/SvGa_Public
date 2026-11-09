@@ -17,6 +17,11 @@
       "name": "kennung",
       "type": "string",
       "value": "wegGhostCapital.seeufer"
+    },
+    {
+      "name": "stil",
+      "type": "string",
+      "value": "kueste"
     }
   ],
   "layers": [

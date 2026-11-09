@@ -17,6 +17,11 @@
       "name": "kennung",
       "type": "string",
       "value": "wegSiliconDelacroix.faehre"
+    },
+    {
+      "name": "stil",
+      "type": "string",
+      "value": "kueste"
     }
   ],
   "layers": [

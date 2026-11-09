@@ -59,6 +59,8 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `objekte` (Kachelebene, über den Figuren, wenn `properties.ueberFiguren` gesetzt ist),
   `ausloeser` (Objektebene).
 - Kollision steht am Kachelsatz: Kacheln mit der Eigenschaft `kollision = true` sind nicht begehbar.
+- Kachelstil (gekaufte Grafik): automatisch innen, Stadt, Natur (Wege) oder Wüste; eine Karteneigenschaft
+  `stil` (etwa `kueste`: Wand = Wasser, Teppich = Holzsteg) geht vor.
 - Möbel und Schmuck (gekaufte Grafik): Objekte mit `type = "moebel"` in der Ebene `ausloeser`,
   Name = Schlüssel in `moebel.json` (Pfad im privaten Register, Breite, Höhe, `kollision`), `x`/`y`
   = linke obere Ecke in Pixeln auf dem Kachelraster. Mit `kollision` ist alles außer der obersten

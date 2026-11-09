@@ -1404,6 +1404,16 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc6TuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

@@ -46,6 +46,6 @@ freigegeben: Entscheidungen trifft der Haupt-Chat, der Autor sieht morgen alles 
 | Ortskern Cedar Creek C | Stegplatte am Ufer ohne Pfosten im Wasser                                                                 | 44     | mittel-2  |          |
 | Ortskern Cedar Creek C | Eingangstreppe der Bibliothek abgesetzt, Graslinie dazwischen                                             | 44     | mittel-2  |          |
 | Ortskern Cedar Creek C | Gleisende mit Stoppschild statt Prellbock                                                                 | 42     | mittel-2  |          |
-| Bibliothek A           | je Reihe noch ein Regal; Regale in Seitenansicht an der linken Wand                                       | 46     | mittel-4  |          |
+| Bibliothek A           | je Reihe noch ein Regal; Regale in Seitenansicht an der linken Wand                                       | 46     | mittel-4  | mittel-4 (Seitenregale: keine im Katalog, gemeldet) |
 | Drechslerei A          | Gegenstände auf dem Tisch in der Mitte schweben                                                           | 10.11  | mittel-2  |          |
 | alle Innenräume        | Türen in der Südwand niedrig (Wohnzimmer, Clubraum, Diner, Bibliothek, Archiv, Waschsalon, Drechslerei)   | 38     | jeweils   |          |

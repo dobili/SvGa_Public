@@ -10,7 +10,9 @@ Maße:
 - Anteil gleicher Stellen: Möbel mit gleichem Namen auf gleichem Feld, bezogen auf alle Möbel
   beider Varianten (Jaccard). Ab ``GLEICHE_STELLEN`` ist die Variante zu ähnlich.
 - Anteil gleicher Möbel: dieselben Möbelnamen, gleich wo (Jaccard über die Mehrfachmenge). Ab
-  ``GLEICHE_MOEBEL`` und bei gleichem Boden und gleicher Wand ist sie nur umgestellt.
+  ``GLEICHE_MOEBEL``, bei gleichem Boden, gleicher Wand und fast gleichem Grundriss (Anteil gleicher
+  Rasterzeichen ab ``GLEICHER_GRUNDRISS``) ist sie nur umgestellt. Der Grundriss zählt mit, weil
+  ein Stollen Boden und Wand nicht wechseln kann, wohl aber den Verlauf seiner Gänge.
 Sonderfall: Nach der Wahl des Autors liegt die frühere A als ``<datei>-a.json`` bei den Varianten;
 dann ist die Wahl getroffen und die übrigen Varianten werden nicht mehr verglichen.
 """
@@ -20,6 +22,7 @@ from pathlib import Path
 
 GLEICHE_STELLEN = 0.5
 GLEICHE_MOEBEL = 0.9
+GLEICHER_GRUNDRISS = 0.9
 
 
 def _stellen(szene: dict) -> set[tuple[str, tuple[int, ...]]]:
@@ -43,6 +46,15 @@ def aehnlichkeit(a: dict, b: dict) -> tuple[float, float]:
     return stellen, moebel
 
 
+def grundriss(a: dict, b: dict) -> float:
+    """Anteil gleicher Zeichen im Raster zweier Szenen (1.0 bei gleichem oder fehlendem Raster)."""
+    zeilen = zip(a.get("raster", []), b.get("raster", []), strict=False)
+    paare = [(x, y) for za, zb in zeilen for x, y in zip(za, zb, strict=False)]
+    if not paare:
+        return 1.0
+    return sum(x == y for x, y in paare) / len(paare)
+
+
 def pruefe_varianten(b: dict, a: dict) -> list[str]:
     """Befunde, wenn Variante ``b`` der Variante ``a`` zu sehr gleicht (Regel 10.37)."""
     stellen, moebel = aehnlichkeit(a, b)
@@ -52,7 +64,11 @@ def pruefe_varianten(b: dict, a: dict) -> list[str]:
             f"Variante zu ähnlich: {stellen:.0%} der Möbel stehen wie in A auf denselben Feldern "
             "(Regel 10.37, andere Anordnung, andere Gebäude oder Böden)"
         )
-    gleiche_flaechen = a.get("boden") == b.get("boden") and a.get("wandart") == b.get("wandart")
+    gleiche_flaechen = (
+        a.get("boden") == b.get("boden")
+        and a.get("wandart") == b.get("wandart")
+        and grundriss(a, b) >= GLEICHER_GRUNDRISS
+    )
     if moebel >= GLEICHE_MOEBEL and gleiche_flaechen:
         befunde.append(
             f"Variante nur umgestellt: {moebel:.0%} gleiche Möbel, gleicher Boden und gleiche Wand "

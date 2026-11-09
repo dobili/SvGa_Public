@@ -244,6 +244,18 @@
       "moebel": "cc5Fussmatte",
       "feld": [3, 14],
       "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc6RegalSeiteHell",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc6RegalSeiteDunkel",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "cc6RegalSeiteGrau",
+      "feld": [20, 9]
     }
   ],
   "ausloeser": [

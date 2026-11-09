@@ -23,6 +23,8 @@ def test_nur_umgestellt_wird_gemeldet():
     assert any("umgestellt" in x for x in pruefe_varianten(b, A))
     # Anderer Boden genügt, damit dieselben Möbel als eigener Raum gelten.
     assert pruefe_varianten(b | {"boden": "fliesen"}, A) == []
+    # Ebenso ein anderer Grundriss (Stollen: Boden und Wand bleiben Fels, die Gänge nicht).
+    assert pruefe_varianten(b | {"raster": ["#..", "#.."]}, A | {"raster": ["...", "###"]}) == []
 
 
 def test_verschiedene_variante_ist_in_ordnung():

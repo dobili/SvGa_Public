@@ -221,9 +221,17 @@ Umkleide ist ein Container mit der Tür bei Spalte 69; das Heimatmuseum (altes P
 33–45 mit der Tür zum Platz bei (24, 45), Auslöser (24, 46); der Platz liegt in den Reihen 46–48, zwei
 Gleise in 49–52 enden im Westen an Prellböcken vor dem Kanal (keine Eisenbahnbrücke im Katalog); der
 Steinbruchweg läuft in den Reihen 56–57 und endet vorerst an einer Absperrung (77, 56), bis es den Ort
-`steinbruch` gibt. Eine Querstraße (43–45) verbindet die Elm Street mit der Hauptstraße. Werkshallen,
-Schornsteine, Kran, Lok und Lokschuppen fehlen im Katalog und sind durch Gebäude, Container und Kisten
-angedeutet; `anleger` und `nietenBruecke` brauchen neue Dialoge und sind noch nicht gesetzt.
+`steinbruch` gibt. Eine Querstraße (43–45) verbindet die Elm Street mit der Hauptstraße. Das Werk
+besteht aus Hallen mit Sheddach, Schornsteinen und einem Portalkran über dem Lager (eigene Bilder); die
+Lok steht als Denkmal vor dem Museum, einem grauen Stadthaus ohne Schriftzug. Die Elm Street endet im
+Westen an einem Wendeplatz, südlich der Gleise liegen je nach Variante Schrebergärten, ein Holzlager
+oder Blumengärten, der Bahnübergang hat Holzplatten über beiden Gleisen; `anleger` und `nietenBruecke` brauchen neue Dialoge und sind noch nicht gesetzt.
+
+**Innenräume (Runde 5, 9.11.2026, mittel-4):** Kantine 24 × 16, Wohnküche mit Mamas Zimmer 18 × 12,
+Umkleide 14 × 10 und Museum 26 × 14 stehen als Szenen mit je drei Varianten. Abweichungen: `pokalregal`
+(14, 4) vor dem Regal statt in der Wand; im Museum fehlt eine Standuhr im Katalog, dafür hängt ein
+Fahrplan in der Mitte der Nordwand; der Gepäckkarren ist eine Sackkarre mit Postsäcken; in der Umkleide
+sind die Duschen Duschwannen (das alte Duschbild war im Katalog unklar).
 
 **Abstimmung mit mittel-3 (W3 ↔ Ironwood), entschieden vom Haupt-Chat am 9.11.2026:** Die
 Brückenkarte von W3 (`wegRivertonIronwood.bruecke`, 30 × 160, `orte/riverton.md` 1.5, Commit

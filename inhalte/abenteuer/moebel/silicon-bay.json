@@ -536,7 +536,7 @@
     },
     "sb5SchildPerfectMove": {
       "quelle": "spiel/eigene/schild_perfect_move.png",
-      "breite": 64,
+      "breite": 88,
       "hoehe": 16,
       "kollision": false,
       "art": "schild",
@@ -546,7 +546,7 @@
     },
     "sb5SchildAcademy": {
       "quelle": "spiel/eigene/schild_academy.png",
-      "breite": 48,
+      "breite": 104,
       "hoehe": 16,
       "kollision": false,
       "art": "schild",

@@ -5,8 +5,10 @@
 // werden können. Grundlage ist die Zeitachse eines Durchlaufs (Ortswechsel, Münzen aus
 // Straßensiegen, Runden, Quests und Funden, Läden, Karten, erste Clubkämpfe). Auf ihr spielen zwei
 // Spieler: der sparsame kauft eine leichte Karte erst, wenn der Clubkampf ohne Karte zweimal
-// verloren ist; der verschwenderische kauft in jedem Laden alles, was er bezahlen kann, und spielt
-// im Clubkampf immer seine stärkste Karte.
+// verloren ist. Außerdem sammelt er jede dauerhafte Karte einmal, sobald er sie mit einer
+// Rücklage von RUECKLAGE Münzen bezahlen kann (der Autor wünscht viele Karten); Verbrauchskarten
+// und Gegenstände kauft er nicht auf Vorrat. Der verschwenderische kauft in jedem Laden alles, was
+// er bezahlen kann, und spielt im Clubkampf immer seine stärkste Karte.
 //
 // Annahmen (Auftrag mittel-1, 09.11.2026): Sieg gegen den Clubchef ohne Karte 40 %, mit leichter
 // Karte 50 %, mit mittlerer 60 %, mit starker 75 %. Nadel nach R17: ohne Karte Gold, mit leichten
@@ -18,6 +20,8 @@ const WIEDERHOLUNGEN = 200;
 const SIEG = { keine: 0.4, leicht: 0.5, mittel: 0.6, stark: 0.75 };
 const RANG = { leicht: 1, mittel: 2, stark: 3 };
 const VERSUCHE_OHNE_KARTE = 2;
+const RUECKLAGE = 50;
+const REST_HOECHSTENS = 400;
 const HOECHSTENS_VERSUCHE = 30;
 const AKT = {
   mapleFalls: 1,
@@ -78,6 +82,12 @@ function kaufe(welt, sp, ware) {
   nimmKarte(sp, ware.kennung);
   sp.kaeufe.push({ kennung: ware.kennung, ort: sp.hier });
   return true;
+}
+
+/** Sparsam: dauerhafte Karten einmal, nur wenn danach noch die Rücklage bleibt. */
+function sammle(welt, sp, ware) {
+  if (welt.karten[ware.kennung]?.art !== "dauerhaft" || sp.muenzen - ware.preis < RUECKLAGE) return;
+  kaufe(welt, sp, ware);
 }
 
 /** Billigste leichte Karte in den bisher besuchten Läden (die der sparsame Spieler kaufen würde). */
@@ -153,8 +163,9 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
     else if (e.art === "karte") nimmKarte(sp, e.karte);
     else if (e.art === "laden") {
       sp.laedenBesucht.add(e.laden);
-      if (art === "verschwenderisch")
-        for (const w of welt.laeden.find((l) => l.kennung === e.laden).angebot) kaufe(welt, sp, w);
+      const angebot = welt.laeden.find((l) => l.kennung === e.laden).angebot;
+      for (const w of angebot)
+        art === "verschwenderisch" ? kaufe(welt, sp, w) : sammle(welt, sp, w);
     } else if (e.art === "clubkampf") {
       const erlaubt = welt.kartenErlaubt[e.begegnung] !== false;
       const c = clubkampf(welt, sp, e.begegnung, zufall, erlaubt);
@@ -238,6 +249,32 @@ function frueheste(welt, ersteLaeufe, stufe) {
   return kauf ? `${kauf.kennung} in ${kauf.ort} (Akt ${akt(kauf.ort)})` : "nie";
 }
 
+function dauerhafteNichtGekauft(welt, sp) {
+  const alle = new Set(
+    welt.laeden
+      .flatMap((l) => l.angebot)
+      .filter((w) => welt.karten[w.kennung]?.art === "dauerhaft")
+      .map((w) => w.kennung),
+  );
+  return [...alle].filter((k) => !sp.karten[k]);
+}
+
+function starkFrueh(welt) {
+  return welt.laeden
+    .filter((l) => akt(l.ort) < 3)
+    .flatMap((l) => l.angebot)
+    .filter((w) => welt.karten[w.kennung]?.stufe === "stark")
+    .map((w) => w.kennung);
+}
+
+function warenAkt4NichtGekauft(welt, sp) {
+  const gekauft = new Set(sp.kaeufe.map((k) => k.kennung));
+  return welt.laeden
+    .filter((l) => akt(l.ort) === 4)
+    .flatMap((l) => l.angebot)
+    .filter((w) => !gekauft.has(w.kennung) && !sp.karten[w.kennung]);
+}
+
 /** Bericht der Wirtschaft für mehrere Zeitachsen (Startwerte) und beide Spieler. */
 function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
   const zeilen = ["# Wirtschaft", ""];
@@ -267,8 +304,26 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       ziele.push(
         `- Vor jedem Clubkampf eine leichte Karte im Besitz oder kaufbar: ${ohneKauf.length ? "NEIN, " + ohneKauf.join(", ") : "ja"}`,
       );
+      const rest = erste.map((sp) => sp.muenzen);
+      ziele.push(
+        `- Münzen des sparsamen Spielers am Ende: ${spanne(rest)} (Ziel etwa 100 bis 300)`,
+      );
+      ziele.push(
+        `- Rest am Ende höchstens ${REST_HOECHSTENS}: ${Math.max(...rest) <= REST_HOECHSTENS ? "ja" : "NEIN"}`,
+      );
+      const fehlt = erste.map((sp) => dauerhafteNichtGekauft(welt, sp).length);
+      ziele.push(
+        `- Dauerhafte Karten, die der sparsame Spieler nie kaufen konnte: ${spanne(fehlt)}`,
+      );
     } else {
-      ziele.push(`- Erste kaufbare starke Karte: ${frueheste(welt, erste, "stark")}`);
+      ziele.push(`- Erste gekaufte starke Karte: ${frueheste(welt, erste, "stark")}`);
+      ziele.push(
+        `- Starke Karten erst ab Akt 3 im Laden: ${starkFrueh(welt).length ? "NEIN, " + starkFrueh(welt).join(", ") : "ja"}`,
+      );
+      const offen = erste.map((sp) => warenAkt4NichtGekauft(welt, sp).length);
+      ziele.push(
+        `- Waren in Akt 4, die der verschwenderische Spieler nicht kaufen konnte: ${spanne(offen)} (Ziel: mehr als 0)`,
+      );
       ziele.push(`- Erste kaufbare mittlere Karte: ${frueheste(welt, erste, "mittel")}`);
       const ende = erste.map((sp) => sp.orte.find((o) => akt(o.ort) === 2)?.ankunft ?? 0);
       ziele.push(`- Münzen des verschwenderischen Spielers bei Beginn von Akt 2: ${spanne(ende)}`);

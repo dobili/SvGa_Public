@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Neue Waren für Akt 3 und 4
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, zweiundzwanzigster Auftrag; der einundzwanzigste ist zusammengeführt, danke)
+**Stand:** fertig (Helfer mittel-1, 09.11.2026, zweiundzwanzigster Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `karten.json` (nur neue Karten), `laeden.json`, `texte/de.json` (nur neue Schlüssel),
@@ -25,6 +25,79 @@ und 4 mit neuen, teureren Waren, sodass Münzen bis zum Schluss etwas wert sind.
    Eintrag im neuen Abschnitt von `11_Karten_und_Gegenstaende.md` (Warum, Stufe, Laden, Preis).
 4. Die Wirtschaftsauswertung nach den Änderungen laufen lassen und die Tabelle (vorher, nachher) in den
    Bericht schreiben; `test_wirtschaft_ziele` um das Ziel „Rest am Ende höchstens 400“ ergänzen.
+
+## Bericht
+
+**Erledigt.**
+
+- **Elf neue Karten** in `karten.json`, nur mit vorhandenen Wirkungsarten: acht Werkzeugkarten
+  (dauerhaft, Werkzeuge, die allein die Stellung brauchen: k7-warnsignale, k5-felder, k5-figuren,
+  k1-angriffsregel, k8-opposition, k8-schluesselfelder, k9-erkennungsbilder, k8-elementarmatt), dazu
+  Klares Flüstern (Flüstern mit zwei Kandidaten), Lange Auszeit (Zeit +180 Sekunden) und als einzige
+  starke Karte die Läufervorgabe (Vorgabe f1). Name, Spruch, Erklärung mit Buchstelle in
+  `texte/de.json` (33 Schlüssel), Bild nach dem Muster `karten/<name>.webp`.
+- **Läden** in Akt 3 und 4 (Rosie, Gebäckstand, Mr. Okoro, Bergladen, Darlene), Preise 35 bis 200;
+  starke Karte erst ab Desert Springs (Akt 3). Tabelle mit Warum, Stufe, Laden und Preis in
+  `docs/spiel/11_Karten_und_Gegenstaende.md`, Abschnitt 8.
+- **Auswertung erweitert:** Der sparsame Spieler sammelt jetzt jede dauerhafte Karte einmal, sobald
+  er sie mit 50 Münzen Rücklage bezahlen kann (der Wunsch „viele Karten“; Verbrauchskarten und
+  Gegenstände kauft er nicht auf Vorrat). Neue Ziele in der Ausgabe: Rest am Ende, dauerhafte Karten,
+  die er nie kaufen konnte, starke Karten erst ab Akt 3, Waren in Akt 4, die der verschwenderische
+  Spieler nicht kaufen kann. `test_wirtschaft_ziele` prüft jetzt auch „Rest am Ende höchstens 400“
+  und „starke Karten erst ab Akt 3“ (statt „keine starke Karte im Laden“).
+
+**Vorher und nachher (Startwerte 1 und 2; derselbe sparsame Sammler in beiden Läufen):**
+
+| Stadt          | sparsam vorher: Ankunft → Abreise | sparsam nachher: Ankunft → Abreise | Waren im Laden (vorher → nachher) | verschwenderisch nachher: Ankunft |
+| -------------- | --------------------------------- | ---------------------------------- | --------------------------------- | --------------------------------- |
+| Maple Falls    | 0 → 80                            | 0 → 80                             | 7 → 7                             | 0                                 |
+| Cedar Creek    | 115 → 215                         | 115 → 215                          | –                                 | 0                                 |
+| Riverton       | 250 → 260                         | 250 → 260                          | 6 → 6                             | 135                               |
+| Ironwood       | 410 → 360                         | 410 → 360                          | 8 → 8                             | 0                                 |
+| Silicon Bay    | 485 → 565                         | 485 → 445                          | 3 → 4                             | 10                                |
+| Port Delacroix | 610 → 610                         | 490 → 340                          | 3 → 5                             | 0                                 |
+| Desert Springs | 745 → 745                         | 475 → 365                          | 3 → 6                             | 0                                 |
+| Summit City    | 870 → 820                         | 490 → 230                          | 4 → 6                             | 0–10                              |
+| Crossroads     | 940 → 940                         | 350 → 130                          | 9 → 13                            | 5–15                              |
+| Capital Arena  | 990                               | 180                                | 2 → 2                             | 35                                |
+| **Ende**       | **1020–1070**                     | **210–260**                        |                                   |                                   |
+
+**Ziele nachher:** sparsamer Spieler überall mindestens Silber (100 %), vor jedem Clubkampf eine
+leichte Karte im Besitz oder kaufbar (100 %), Rest am Ende 210 bis 260 (Ziel 100 bis 300,
+höchstens 400), alle dauerhaften Karten erreichbar, starke Karte erst ab Akt 3, der
+verschwenderische Spieler kann in Akt 4 sieben Waren nicht kaufen.
+
+**Entscheidungen:**
+
+1. _Sparsamer Spieler als Sammler._ Wer nichts kauft, behält jede Münze, egal wie die Preise sind;
+   das Ziel „100 bis 300 übrig“ ergibt nur Sinn für einen Spieler, der die Karten auch kauft. Der
+   Sammler kauft jede dauerhafte Karte einmal, mit Rücklage für eine leichte Karte vor dem
+   nächsten Clubkampf.
+2. _Keine Werkzeuge mit Engine._ k6-gegner und k7-ruhe brauchen nur die Stellung, rechnen aber mit
+   der Engine; als Karten im laufenden Spiel wären sie zu stark und zu teuer in der Rechenzeit.
+3. _Läufervorgabe 200 und zweimal im Laden_ (Desert Springs, Crossroads): die teuerste Ware, damit
+   der verschwenderische Spieler in Akt 4 etwas Starkes nicht bekommt.
+4. _Lange Auszeit in Crossroads:_ die Turnierrunde gegen Tobias hat eine feste Uhr; Auszeit ist kein
+   Spruch, Z4 („Zeitkarten nie im Laden“) betrifft nur die Spruchkarten.
+
+**Ideen für neue Wirkungen (brauchen Code, nicht umgesetzt):**
+
+- Gefahrenradar für mehrere Züge (heute ohne Wert; ein Feld `zuege` wäre nötig).
+- Doppelter Fingerzeig (zwei Figuren statt einer).
+- Mentor-Zug als Hinweis statt Zug (nur das Zielfeld zeigen).
+- Zweite Chance für zwei Züge (zwei Rücknahmen in einer Karte).
+- Werkzeuge mit Engine als teure Verbrauchskarten (Gegner?, Ruhe), einmal je Partie.
+- Karten, die zwischen Partien wirken (etwa „Vorbereitung“: Steckbrief eines Gegners vorab).
+
+**Prüfungen:** pytest 623 bestanden (3 übersprungen); `ABENTEUER_SIMULATION=1` 3 bestanden
+(Startwerte 1 bis 4 einzeln ohne Sackgasse); `npm run pruefen` grün (2434 Tests).
+
+**Nebenbefund Simulation:** Die Nebenquest `portDelacroix.schach960` (Mabel, drei Sets) blieb in
+der Rückkehr hängen, weil die Wegsuche über die Erinnerungen aus dem Ort hinausführte (Erinnerungen
+zählen zu jedem Gebiet) und der Spieler in der Wüste landete. Entscheidung: Bei der Rückkehr bleibt
+die Wegsuche im Zielort und seinen Erinnerungen (`imZiel`), wer doch hinausgerät, reist mit der
+Monatskarte zurück, und eine Quest darf bis zu 6000 Schritte brauchen. Am Spiel selbst ändert das
+nichts; die Ink-Logik der Bläserin ist in Ordnung.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

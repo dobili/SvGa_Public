@@ -146,6 +146,12 @@ function wegeVon(welt, karte) {
     .filter((a) => a && a.art === "uebergang" && a.ziel);
 }
 
+/** Bei der Rückkehr bleibt die Suche im Zielort und seinen Erinnerungen. */
+function imZiel(welt, st, karte) {
+  const o = welt.karteZuOrt[karte];
+  return o && (o.kennung === st.zielOrt || o.art === "erinnerung");
+}
+
 /** Erster Übergang zu jeder erreichbaren Karte (Breitensuche über offene, erlaubte Wege). */
 function ersteSchritte(welt, st) {
   // Ein Weg mit Dialog kann seine Bedingung selbst setzen (etwa das Abzeichen im Saloon): versuchen,
@@ -162,6 +168,7 @@ function ersteSchritte(welt, st) {
       const z = a.ziel.karte;
       if (gesehen.has(z) || !offen(a, k) || !erlaubt(welt, st, welt.karteZuOrt[z]?.kennung))
         continue;
+      if (st.zielOrt && !imZiel(welt, st, z)) continue;
       gesehen.add(z);
       erster[z] = k === st.karte ? a : erster[k];
       schlange.push(z);
@@ -244,7 +251,9 @@ function erkunde(welt, st, frist) {
   st.meldungen.add("Zeitbudget erreicht (der Lauf ist nicht zu Ende gekommen)");
 }
 
-/** Mit der Monatskarte (oberwelt/Reisen.tsx) zu jedem Ort mit offener Quest und dort bis zur Ruhe. */
+const RUECKKEHR_SCHRITTE = 6000;
+
+/** Mit der Monatskarte (oberwelt/Reisen.tsx) zu jedem Ort mit offener Quest, bis sie fertig ist. */
 function rueckkehr(welt, st, frist) {
   const ziele = [];
   for (let runde = 0; runde < 3; runde++)
@@ -255,8 +264,13 @@ function rueckkehr(welt, st, frist) {
       ziele.push(q.ort);
       betrete(welt, st, ort.karten[0].kennung);
       st.zielOrt = q.ort;
-      for (let n = 0; n < RUHE_ENDE; n++) {
-        waehleWeg(welt, st, besucheKarte(welt, st), n + 1e6);
+      // Bis die Quest fertig ist, höchstens RUECKKEHR_SCHRITTE (Quests mit mehreren Partien wie
+      // die drei Sets Schach960 brauchen je Partie mehrere Anläufe).
+      for (let n = 0; n < RUECKKEHR_SCHRITTE && !s.fertig; n++) {
+        // Nur Wege innerhalb des Ortes; wer doch hinausgerät (etwa durch einen Dialog), reist zurück.
+        if (welt.karteZuOrt[st.karte]?.kennung !== q.ort) betrete(welt, st, ort.karten[0].kennung);
+        const drinnen = besucheKarte(welt, st).filter((w) => imZiel(welt, st, w.ziel?.karte));
+        waehleWeg(welt, st, drinnen, n + 1e6);
         if (n % 200 === 0)
           for (const k of Object.keys(st.versuche)) st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
       }

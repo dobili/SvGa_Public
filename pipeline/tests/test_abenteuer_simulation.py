@@ -65,7 +65,8 @@ def test_jede_figur_steht_auf_einer_karte(ausgabe: str):
 
 def test_wirtschaft_ziele():
     """Wirtschaft (R17, R21 ff.): sparsamer Spieler mindestens Silber, vor jedem Clubkampf eine
-    leichte Karte im Besitz oder kaufbar, keine starke Karte im Laden."""
+    leichte Karte im Besitz oder kaufbar, starke Karten erst ab Akt 3 im Laden, und der sparsame
+    Spieler hat am Ende höchstens 400 Münzen übrig (Münzen sind bis zum Schluss etwas wert)."""
     if os.environ.get("ABENTEUER_SIMULATION") != "1":
         pytest.skip("Auswertung der Wirtschaft dauert etwa eine Minute; mit ABENTEUER_SIMULATION=1 starten")
     if shutil.which("node") is None or not INKJS.exists():
@@ -89,4 +90,5 @@ def test_wirtschaft_ziele():
     ziele = lauf.stdout.split("## Ziele", 1)[-1]
     assert "Sparsamer Spieler mindestens Silber (in 95 % der Läufe): ja" in ziele, lauf.stdout
     assert "Vor jedem Clubkampf eine leichte Karte im Besitz oder kaufbar: ja" in ziele, lauf.stdout
-    assert "Erste kaufbare starke Karte: nie" in ziele, lauf.stdout
+    assert "Starke Karten erst ab Akt 3 im Laden: ja" in ziele, lauf.stdout
+    assert "Rest am Ende höchstens 400: ja" in ziele, lauf.stdout

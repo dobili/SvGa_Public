@@ -373,6 +373,150 @@
         "art": "farbwahl"
       },
       "zeitpunkt": "vorher"
+    },
+    {
+      "kennung": "warnsignale",
+      "name": "karte.warnsignale.name",
+      "spruch": "karte.warnsignale.spruch",
+      "bild": "karten/warnsignale.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k7-warnsignale"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "schwacheFelder",
+      "name": "karte.schwacheFelder.name",
+      "spruch": "karte.schwacheFelder.spruch",
+      "bild": "karten/schwache-felder.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k5-felder"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "figurenplatz",
+      "name": "karte.figurenplatz.name",
+      "spruch": "karte.figurenplatz.spruch",
+      "bild": "karten/figurenplatz.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k5-figuren"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "angriffsregel",
+      "name": "karte.angriffsregel.name",
+      "spruch": "karte.angriffsregel.spruch",
+      "bild": "karten/angriffsregel.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k1-angriffsregel"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "opposition",
+      "name": "karte.opposition.name",
+      "spruch": "karte.opposition.spruch",
+      "bild": "karten/opposition.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k8-opposition"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "schluesselfelder",
+      "name": "karte.schluesselfelder.name",
+      "spruch": "karte.schluesselfelder.spruch",
+      "bild": "karten/schluesselfelder.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k8-schluesselfelder"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "erkennungsbild",
+      "name": "karte.erkennungsbild.name",
+      "spruch": "karte.erkennungsbild.spruch",
+      "bild": "karten/erkennungsbild.webp",
+      "stufe": "mittel",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k9-erkennungsbilder"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "elementarmatt",
+      "name": "karte.elementarmatt.name",
+      "spruch": "karte.elementarmatt.spruch",
+      "bild": "karten/elementarmatt.webp",
+      "stufe": "leicht",
+      "art": "dauerhaft",
+      "wirkung": {
+        "art": "werkzeug",
+        "werkzeug": "k8-elementarmatt"
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "klaresFluestern",
+      "name": "karte.klaresFluestern.name",
+      "spruch": "karte.klaresFluestern.spruch",
+      "bild": "karten/klares-fluestern.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "fluestern",
+        "kandidaten": 2
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "langeAuszeit",
+      "name": "karte.langeAuszeit.name",
+      "spruch": "karte.langeAuszeit.spruch",
+      "bild": "karten/lange-auszeit.webp",
+      "stufe": "leicht",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "zeit",
+        "wer": "leser",
+        "sekunden": 180
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
+      "kennung": "laeufervorgabe",
+      "name": "karte.laeufervorgabe.name",
+      "spruch": "karte.laeufervorgabe.spruch",
+      "bild": "karten/laeufervorgabe.webp",
+      "stufe": "stark",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "vorgabe",
+        "feld": "f1"
+      },
+      "zeitpunkt": "vorher"
     }
   ]
 }

@@ -181,3 +181,35 @@ Pokerface, Schutzengel, Kartentasche). Starke Karten und Mentor-Zug sind nie kä
    Ordnung, solange nur eines je Besuch verkauft wird.
 7. **Was droht? (45, dauerhaft):** stark im Lernwert und dauerhaft; Vorschlag 60, weil es jede
    Partie mitspielt.
+
+## 8. Neue Waren für Akt 3 und 4 (mittel-1, 09.11.2026)
+
+Warum: Die Wirtschaftsauswertung der Gesamtsimulation (`node pipeline/abenteuer/gesamtsimulation.cjs
+--wirtschaft`) zeigte, dass ein Spieler, der jede dauerhafte Karte einmal sammelt, am Ende noch über
+1000 Münzen hat; ab Riverton gab es nichts mehr, wofür sich Sparen lohnt. Der Autor wünscht viele
+Karten. Die elf neuen Karten nutzen nur vorhandene Wirkungsarten (Werkzeug des Buches, Flüstern mit
+zwei Kandidaten, Zeit, Vorgabe); es braucht keinen neuen Code.
+
+| Karte                 | Wirkung                          | Stufe/Art | Laden                        | Preis | Warum                                                                               |
+| --------------------- | -------------------------------- | --------- | ---------------------------- | ----- | ----------------------------------------------------------------------------------- |
+| Sieben Warnsignale    | Werkzeug k7-warnsignale          | M/d       | Silicon Bay (Rosie)          | 120   | Taktik in der Stadt der Maschinen: erst die Signale sehen, dann rechnen             |
+| Schwache Felder       | Werkzeug k5-felder               | L/d       | Port Delacroix (Gebäckstand) | 70    | Bauernstrukturen sind das Thema von Miss Odiles Club                                |
+| Figurenplatz          | Werkzeug k5-figuren              | L/d       | Port Delacroix (Gebäckstand) | 80    | ergänzt die Schwachen Felder: welche Figur zu welchem Skelett passt                 |
+| Goldene Angriffsregel | Werkzeug k1-angriffsregel        | M/d       | Desert Springs (Mr. Okoro)   | 110   | Mira opfert gern; wer zählt, sieht, ob ihr Angriff trägt                            |
+| Klares Flüstern       | Flüstern mit zwei Kandidaten     | M/v       | Desert Springs (Mr. Okoro)   | 70    | stärkere Stufe von Ambroses Flüstern (drei Kandidaten)                              |
+| Läufervorgabe         | Vorgabe f1 (Königsläufer)        | S/v       | Desert Springs, Crossroads   | 200   | einzige starke Karte im Laden, erst ab Akt 3; teuer, damit Münzen zählen            |
+| Opposition            | Werkzeug k8-opposition           | L/d       | Summit City (Bergladen)      | 90    | Großmeisterin Ward unterrichtet Endspiele                                           |
+| Schlüsselfelder       | Werkzeug k8-schluesselfelder     | M/d       | Summit City (Bergladen)      | 120   | wie Opposition, für Freibauern                                                      |
+| Erkennungsbild        | Werkzeug k9-erkennungsbilder     | M/d       | Crossroads (Darlene)         | 130   | der größte Laden vor der Meisterschaft; Endspiele entscheiden das Turnier           |
+| Elementarmatt         | Werkzeug k8-elementarmatt        | L/d       | Crossroads (Darlene)         | 90    | damit kein gewonnenes Endspiel im Patt endet                                        |
+| Lange Auszeit         | Zeit +180 Sekunden für den Leser | L/v       | Crossroads (Darlene)         | 35    | für die Turnierrunde mit fester Uhr (Tobias, 5 + 3); kein Spruch, also erlaubt (Z4) |
+
+Stufe: L leicht, M mittel, S stark; Art: d dauerhaft, v Verbrauch. Die Werkzeugkarten brauchen nur
+die Stellung (keine Engine, kein Zug), wie es das Schema für Werkzeugkarten verlangt. Bilder folgen
+dem Muster `karten/<name>.webp`; Texte (Name, Spruch, Erklärung mit Buchstelle) in
+`inhalte/abenteuer/texte/de.json`.
+
+Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler, der jede dauerhafte Karte
+einmal kauft, hat am Ende 210 bis 260 Münzen übrig (vorher 1020 bis 1070); der verschwenderische
+kann in Akt 4 sieben Waren nicht kaufen. Gold, Silber und die Kaufmöglichkeit vor jedem Clubkampf
+bleiben unverändert erfüllt.

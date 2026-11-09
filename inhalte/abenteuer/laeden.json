@@ -146,6 +146,11 @@
           "art": "karte",
           "kennung": "waage",
           "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "warnsignale",
+          "preis": 120
         }
       ]
     },
@@ -168,6 +173,16 @@
           "art": "karte",
           "kennung": "remisangebot",
           "preis": 35
+        },
+        {
+          "art": "karte",
+          "kennung": "schwacheFelder",
+          "preis": 70
+        },
+        {
+          "art": "karte",
+          "kennung": "figurenplatz",
+          "preis": 80
         }
       ]
     },
@@ -190,6 +205,21 @@
           "art": "karte",
           "kennung": "zweiteChance",
           "preis": 20
+        },
+        {
+          "art": "karte",
+          "kennung": "angriffsregel",
+          "preis": 110
+        },
+        {
+          "art": "karte",
+          "kennung": "klaresFluestern",
+          "preis": 70
+        },
+        {
+          "art": "karte",
+          "kennung": "laeufervorgabe",
+          "preis": 200
         }
       ]
     },
@@ -234,6 +264,16 @@
           "art": "gegenstand",
           "kennung": "seilbahnkarte",
           "preis": 15
+        },
+        {
+          "art": "karte",
+          "kennung": "opposition",
+          "preis": 90
+        },
+        {
+          "art": "karte",
+          "kennung": "schluesselfelder",
+          "preis": 120
         }
       ]
     },
@@ -286,6 +326,26 @@
           "art": "gegenstand",
           "kennung": "limo",
           "preis": 5
+        },
+        {
+          "art": "karte",
+          "kennung": "erkennungsbild",
+          "preis": 130
+        },
+        {
+          "art": "karte",
+          "kennung": "elementarmatt",
+          "preis": 90
+        },
+        {
+          "art": "karte",
+          "kennung": "langeAuszeit",
+          "preis": 35
+        },
+        {
+          "art": "karte",
+          "kennung": "laeufervorgabe",
+          "preis": 200
         }
       ]
     },

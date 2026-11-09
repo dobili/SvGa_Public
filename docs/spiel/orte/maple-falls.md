@@ -55,7 +55,7 @@ Hinterweg; 33–35 Hecke und Bäume am Südrand.
 | Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` 14 × 11 (4.2)                           | ja           |
 | Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                               | nein         |
 | Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                               | nein         |
-| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 18 × 12, Tür Südwand (4, 11) (Befund 9; gebaut 4.4)                     | ja (neu, 12) |
+| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 30 × 16, Tür Südwand (7, 15) (neu gedacht 4.4; Fassade 8, Abweichung)   | ja (neu, 12) |
 | Durchgang zum Ufer                 | 42–43 / 3–13, Hecken beidseits, Bank am Ufer (42, 4)                                    | –                                                      | –                                                                               | Weg          |
 | Maple Falls High                   | 44–59 / 5–10, Doppeltür (51–52, 10) in der Mitte der Südfassade; Schulhof 44–59 / 11–13 | Backstein, 16, Fahnenmast (47, 12)                     | `clubraum` 18 × 13, Tür (9, 12) (Vereinfachung: Schultür führt in den Clubraum) | ja           |
 | Haus Calloway (gegenüber Whitlock) | 3–11 / 22–26, Tür (7, 22) zur Straße; Veranda 4–10 / 21 mit Schaukelstuhl               | Holzhaus, 9, Blumenkästen                              | –                                                                               | nein         |
@@ -129,7 +129,7 @@ Laufzeit quer 44 Kacheln, 13 Sekunden.
 | --------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | aussen `haustuer` (3, 23), unter der Veranda        | wohnzimmer `haustuer` (5, 12); Ankunft (5, 11), Blick nach oben              | Südfassade 22 % ↔ Südwand 25 % (gebaut, 4.5).                                   |
 | wohnzimmer `treppeOben` (1, 3)                      | dachboden `treppe` (Nordwestecke, Feld im Bühnenbild Dachboden)              | Beide Treppen liegen in der Nordwestecke übereinander.                          |
-| aussen `dinerTuer` (33, 23)                         | diner `dinerAusgang` (4, 11); Ankunft (4, 10)                                | Südfassade 25 % ↔ Südwand 22 % (gebaut, 4.5).                                   |
+| aussen `dinerTuer` (33, 23)                         | diner `dinerAusgang` (7, 15); Ankunft (7, 13)                                | Südfassade 25 % ↔ Südwand 25 % (4.4).                                           |
 | aussen `schule` (47, 23), vor der Treppe            | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade ↔ Südwand Mitte (gebaut, 4.5).                                       |
 | aussen `park` Ostrand (63, 25–27); Ankunft (62, 26) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, 3 breit.                                            |
 | park `landstrasse` Ostrand (43, 15–17)              | wegMapleCedar.landstrasse `zurueckPark` Westrand (0, 15–17); Ankunft (1, 16) | Reihen mit mittel-2 abgestimmt (cedar-creek.md); Fluss dort südlich der Straße. |
@@ -339,25 +339,73 @@ Anrichte. Szenen 5, 6, 9, 11, 12.
 | Mitte    | vier Spieltische mit Brett und je zwei Stühlen                 | Tische (3, 5), (9, 5), (3, 8), (9, 8)              | die vier Bretter; `brettOhneDame` (10, 9); Sam (4, 4) |
 | Ecken    | Pflanzen                                                       | (1, 9) und (16, 9)                                 | Regel 4.4                                             |
 
-### 4.4 Diner (`mapleFalls.diner`, neu)
+### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
-**Größe:** 18 × 12 (7a.2, öffentlicher Raum). Nordwand Reihen 0–2 (rot), Boden weiße Fliesen, Tür in
-der Südwand (4, 11), Start (4, 10); außen Auslöser (33, 23) unter der Tür der Südfassade (22 % ↔ 25 %). Übergänge
-`dinerTuer` ↔ `dinerAusgang` in `orte.json`.
+Rückmeldung des Autors zu Runde 4: „kein Diner, zu kläglich, nicht mal eine Mensa“ (KARTENREGELN 10.30).
+Neu geplant und gebaut nach dieser Liste.
 
-**Laufwege:** Tür → nach oben zu den Hockern und zur Kasse; nach links und rechts zu den Sitzecken.
+**Was ein amerikanisches Kleinstadt-Diner braucht (10.30), in welcher Zahl:**
 
-| Zone     | Gegenstand                                              | Feld                                                                                         | Zweck                                                               |
-| -------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Nordwand | zwei Fenster, Pinnwand mit Tischsets, Foto 1962         | (3, 1), (6, 1); Pinnwand (9, 1); Foto (11, 1)                                                | `tischsetWand`, `fotoSchule1962` (Auslöser folgen in Runde 5)       |
-| Tresen   | vier Glasvitrinen (`mf4Vitrine`) und Kasse (`mf4Kasse`) | Vitrinen (3, 4), (5, 4), (7, 4), (11, 4); Kasse (9, 3)                                       | Hector dahinter (Reihe 3); Kasse mit dem Foto daneben               |
-| Tresen   | vier Barhocker (`mf4Barhocker`)                         | (3, 5), (5, 5), (7, 5), (11, 5)                                                              | Gäste; N-MF1 am Tresen                                              |
-| Küche    | Arbeitsplatte, Herd, Kühlschrank                        | (13, 2), (15, 2), (16, 1)                                                                    | Durchreiche-Ecke                                                    |
-| Südwand  | zwei Sitzecken: runder Tisch, zwei Stühle               | Tische (7, 8) und (12, 8); Stühle (6, 8), (9, 8), (11, 8), (14, 8); Pflanzen (1, 9), (16, 9) | statt vier Sitznischen: Der Katalog hat keine Sitzbänke für Nischen |
-| Ecken    | Pflanzen                                                | (1, 3), (16, 9)                                                                              | Regel 4.4                                                           |
+| Bereich     | Was                                                                                 | Zahl                            |
+| ----------- | ----------------------------------------------------------------------------------- | ------------------------------- |
+| Eingang     | Tür in der Südwand mit Fußmatte innen davor                                         | 1                               |
+| Gastraum    | lange Theke mit Hockern davor                                                       | 13 Kacheln Theke, 6 Hocker      |
+| Gastraum    | Kasse hinter der Theke, zum Gast hin, nahe der Tür                                  | 1 (Kassentheke)                 |
+| Gastraum    | Sitznischen mit Tisch und zwei Sitzen                                               | 4 (16 Plätze mit der Theke: 22) |
+| Gastraum    | Rückbuffet hinter der Theke: Kaffeemaschine, Milchshake-Mixer, Kuchenvitrine, Radio | 1 Zeile ohne Lücke              |
+| Gastraum    | Pinnwand mit Tischsets, Foto 1962, Fenster                                          | je 1, Fenster 2                 |
+| Durchreiche | Öffnung in der Wand zur Küche mit Geschirrablage                                    | 1                               |
+| Großküche   | abgetrennt, mit Personaltür; mehrere Herde, Grillplatte, Fritteuse, Abzugshauben    | Herde 2, Hauben 2, je 1         |
+| Großküche   | Kühlung, Arbeitstische aus Stahl, Spültisch                                         | Kühlschränke 2, Tische 2        |
+| Lager       | hinter der Küche, Kartons (Grund: Vorrat), Kühltruhe                                | 1 Raum                          |
+| Toiletten   | über einen Flur vom Gastraum, getrennt                                              | 2 (je WC und Handwaschbecken)   |
 
-Abweichungen vom Vorschlag in 12: keine Jukebox (im Katalog nicht vorhanden; `jukebox` entfällt oder
-wird ein Radio in Runde 5), zwei statt vier Sitzecken.
+**Größe:** 30 × 16. **Begründete Ausnahme** von 7a.2 (öffentlicher Raum 14–20 × 10–14): Der Autor verlangt
+ein vollständiges Diner mit Großküche, Lager und Toiletten; das passt nicht auf einen Bildschirm. Der
+Gastraum allein (19 × 12) liegt im Rahmen eines großen Saals, die Nebenräume liegen dahinter. Laufweg
+von der Tür bis zur Theke 5 Kacheln.
+
+**Raster:** Nordwand Reihen 0–2 (rot), Boden weiße Fliesen, Südwand Reihe 15 mit der Tür bei Spalte 7
+(25 %, wie die Tür der Fassade außen bei Spalte 2 von 8). Innenwände: Trennwand Spalte 20 (Reihen 3–14) mit Durchreiche (20, 4), Küchentür (20, 7) und
+Gang zum Flur (20, 10); Wand Reihe 9 (Spalten 21–28) mit Lagertür (27, 9); Flur Reihe 10; Wand Reihe 11
+(Spalten 21–25) mit den Toilettentüren (22, 11) und (24, 11); Wand Spalte 23 zwischen den Toiletten
+(Reihen 12–14) und Spalte 26 vor dem Lager (Reihen 10–14).
+
+**Laufwege:** Tür (7, 15) → Start (7, 13) → nach oben zur Kassentheke und zu den Hockern; nach links
+zur ersten Nische, nach rechts zu den drei Nischen östlich der Tür und durch den Gang (20, 10) zu den
+Toiletten. Hinter die Theke kommt man durch die Klappe (5, 6–8) oder von der Küche; das Personal geht
+durch die Küchentür.
+
+| Zone        | Gegenstand                                                                                              | Feld                                                                                                             | Möbel                                                                                 | Zweck                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Nordwand    | Pinnwand mit Tischsets, Foto 1962 (4 bis 5 Pixel unter der Krone), zwei Fenster                         | Pinnwand (10, 1), Foto (13, 1), Fenster (15, 1), (17, 1)                                                         | `mf4Pinnwand`, `wzBild`, `wzFenster`                                                  | `tischsetWand`, `fotoSchule1962` (Runde 5)                                         |
+| Rückbuffet  | drei Holzschränke, Kuchenvitrine mit Donuts, darauf Kaffeemaschine und Mixer                            | Schränke (2, 2), (4, 2), (6, 2); Vitrine (8, 2)                                                                  | `mf5Buffet`, `mf5Kuchenvitrine`, `mf5Kaffeemaschine`, `mf5Mixer`                      | Radio (`radio`, Runde 5) auf dem Schrank (6, 2), ohne Bild im Katalog: man hört es |
+| Theke       | kurzes Thekenstück (2–4), Klappe (5), Kassentheke (6–7), lange rote Theke (8–18)                        | Reihen 6–8                                                                                                       | `mf5ThekeLinks`, `mf5ThekeMitte`, `mf5ThekeRechts`, `mf5Kassentheke`                  | Kasse zum Gast hin, direkt über der Tür; Hector dahinter (5, 4)                    |
+| Theke       | sechs rote Barhocker                                                                                    | (3, 8), (9, 8), (11, 8), (13, 8), (15, 8), (17, 8)                                                               | `mf5Hocker`                                                                           | N-MF1 am Tresen                                                                    |
+| Südwand     | vier Sitznischen: kleiner Tisch, zwei Stühle mit hoher Lehne; die drei östlichen Rücken an Rücken       | Tische (2, 13), (11, 13), (14, 13), (17, 13); Stühle links und rechts                                            | `mf5Nischentisch`, `mf5NischenstuhlRechts`, `mf5NischenstuhlLinks`                    | Gäste; Tischset-Rätsel                                                             |
+| Eingang     | Tür, Fußmatte                                                                                           | (7, 14)                                                                                                          | `mf5Eingangstuer`, `mf4Fussmatte`                                                     | `dinerAusgang` (7, 15), Start (7, 13)                                              |
+| Ecken       | Pflanzen                                                                                                | (1, 10), (19, 12)                                                                                                | `wzPflanze`                                                                           | Regel 4.4                                                                          |
+| Durchreiche | Geschirrständer in der Wandöffnung                                                                      | (20, 4)                                                                                                          | `mf5Geschirr`                                                                         | Teller gehen von der Küche nach vorn                                               |
+| Großküche   | zwei Gastroherde mit Abzugshauben, Grillplatte, Fritteuse, zwei Kühlschränke, lückenlos an der Nordwand | Herde (21, 2), (22, 2); Hauben (21, 1), (22, 1); Grill (23, 2); Fritteuse (25, 2); Kühlschränke (27, 1), (28, 1) | `mf5Gastroherd`, `mf5Dunstabzug`, `mf5Grillplatte`, `mf5Fritteuse`, `mf5Kuehlschrank` | Kochen                                                                             |
+| Großküche   | Spültisch und Arbeitstisch aus Stahl, Brotbrett                                                         | (22, 6), (25, 6)                                                                                                 | `mf5Stahltisch`, `mf5Spuele`, `mf5Brotbrett`                                          | Arbeit in der Mitte                                                                |
+| Lager       | Kühltruhe, Kartonstapel                                                                                 | (28, 8), (27, 10), (27, 12)                                                                                      | `mf5Kuehlschrank`, `mf4KartonStapel`, `wzKartonstapelHoch`                            | Vorrat (Grund für Kisten, 10.18)                                                   |
+| Toiletten   | je WC (Spülkasten an der Wand) und Handwaschbecken                                                      | WC (21, 11), (25, 11); Becken (22, 13), (24, 13)                                                                 | `mf5Toilette`, `mf5Handwaschbecken`                                                   | –                                                                                  |
+
+Belebung: Kellnerin (Statist) bringt Teller zwischen (4, 11) und (18, 11). Figur Hector Sandoval (5, 4)
+und die Auslöser `tischsetWand`, `fotoSchule1962`, `radio` setzt die Szene mit ihren Dialogen in
+Runde 5 (heute nicht in `orte.json`; die Felder stehen in der Tabelle).
+
+**Außen (abgestimmt mit mittel-1, 9.11.2026):** Auf der Nordseite der Birch Lane sind zwischen dem
+Zaun Martínez (Spalte 30) und der Schule (ab 39) nur 8 Kacheln frei, und der Katalog hat keine
+Ladenfassade breiter als 8. Die Fassade bleibt deshalb Hardware_Store, 8 × 9, mit Markise und
+DINER-Schild; die Glastür liegt bei Spalte 2 von 8 (25 %), `dinerTuer` (33, 23) darunter. Innen sitzt
+die Tür deshalb bei Spalte 7 von 30 (25 %). **Begründete Abweichung** von der Regel „Fassade halb so breit
+wie innen“: Das Diner ist ein Flachbau, der sich hinter den Nachbargrundstücken nach hinten und zur Seite
+ausdehnt (Küche, Lager, Toiletten); von der Straße sieht man nur den Gastraum. Eine breitere Fassade
+ginge nur mit einer längeren Birch Lane oder einem eigenen Fassadenbild (Entscheidung Haupt-Chat).
+
+**Offen für den Haupt-Chat:** `werkzeuge/schatten.py` für `mf5Hocker`, `mf5Kaffeemaschine`, `mf5Mixer`
+(grauer Festschatten, 10.5; keine Black_Shadow-Fassung im Katalog).
 
 ### 4.5 Außenkarte Birch Lane (`mapleFalls.aussen`), gebaut
 

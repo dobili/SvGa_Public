@@ -1,0 +1,128 @@
+{
+  "karte": "portDelacroix.werkstatt",
+  "datei": "karten/varianten/port-delacroix-werkstatt-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, Hobelbank in der Mitte: Rote Wände, heller Dielenboden. Drei gerettete Klaviere stehen in einer Reihe an der Nordwand, daneben das alte Foto und zwei Fenster, in der Nordostecke Werkzeugschrank und Bretterstapel. Mitten im Raum die große Hobelbank (Auslöser des Flashbacks), rechts davon ein Sägebock, in der Südostecke ein Kistenstapel, links Kisten und eine Pflanze.",
+  "wand": "rot",
+  "boden": "holzHell",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6KlavierHell",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "pd6KlavierRot",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "pd6KlavierNatur",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "pd6FotoAlt",
+      "feld": [8, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Werkzeugschrank",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Hobelbank",
+      "feld": [7, 5],
+      "id": "hobel"
+    },
+    {
+      "moebel": "pd6Saegebock",
+      "feld": [14, 7]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [17, 8]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "pd6Pflanze",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [10, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 12],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "werkstattAusgang",
+      "feld": [10, 12]
+    },
+    {
+      "name": "werkbank",
+      "feld": [9, 7],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "henri",
+      "feld": [13, 6]
+    },
+    {
+      "name": "celeste",
+      "feld": [4, 7]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern", "industrie"],
+  "variante": "c"
+}

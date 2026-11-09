@@ -119,6 +119,70 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "industrie"
+    },
+    "st5PfuetzeKlein": {
+      "quelle": "spiel/eigene/pfuetze_fels_klein.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "wasser",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "st5PfuetzeGross": {
+      "quelle": "spiel/eigene/pfuetze_fels_gross.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "wasser",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "st5Schotterhaufen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Props_7.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "haufen",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "st5Steinpalette": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_5.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "material",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "st5Bohlen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_6.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "material",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "st5Schuppen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "st5Lichtmast": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Light_Tower_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

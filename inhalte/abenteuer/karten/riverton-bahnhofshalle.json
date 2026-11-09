@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 44,
+ "nextobjectid": 45,
  "layers": [
   {
    "id": 1,
@@ -1663,7 +1663,7 @@
     },
     {
      "id": 20,
-     "name": "rv5Schalter",
+     "name": "rv5Ladentisch",
      "type": "moebel",
      "x": 48,
      "y": 96,
@@ -1686,6 +1686,29 @@
     },
     {
      "id": 21,
+     "name": "rv5Kasse",
+     "type": "moebel",
+     "x": 56,
+     "y": 99,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 22,
      "name": "rv5Schalter",
      "type": "moebel",
      "x": 16,
@@ -1708,7 +1731,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "rv5Netzplan",
      "type": "moebel",
      "x": 256,
@@ -1731,7 +1754,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1754,7 +1777,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1777,7 +1800,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1800,7 +1823,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 320,
@@ -1823,7 +1846,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 48,
@@ -1846,7 +1869,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 80,
@@ -1869,7 +1892,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 144,
@@ -1892,7 +1915,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "rv5Muelleimer",
      "type": "moebel",
      "x": 240,
@@ -1915,7 +1938,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 112,
@@ -1938,7 +1961,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 112,
@@ -1961,7 +1984,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 320,
@@ -1984,8 +2007,8 @@
      ]
     },
     {
-     "id": 34,
-     "name": "rv5Schalter",
+     "id": 35,
+     "name": "rv5Vitrine",
      "type": "moebel",
      "x": 336,
      "y": 192,
@@ -2007,7 +2030,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "rv5Koffer",
      "type": "moebel",
      "x": 304,
@@ -2030,7 +2053,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "rv5Kaffeeautomat",
      "type": "moebel",
      "x": 368,
@@ -2053,7 +2076,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "rv5Gepaeckwagen",
      "type": "moebel",
      "x": 368,
@@ -2076,7 +2099,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "rv5Koffer",
      "type": "moebel",
      "x": 384,
@@ -2099,7 +2122,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "rv5Getraenkeautomat",
      "type": "moebel",
      "x": 368,
@@ -2122,7 +2145,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "rv5Topfpflanze",
      "type": "moebel",
      "x": 16,
@@ -2145,7 +2168,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "rv5Topfpflanze",
      "type": "moebel",
      "x": 336,
@@ -2168,7 +2191,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 208,
@@ -2191,7 +2214,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "rv5TuerSuedGlas",
      "type": "moebel",
      "x": 208,

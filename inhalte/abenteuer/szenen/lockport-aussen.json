@@ -1,7 +1,7 @@
 {
   "karte": "lockport.aussen",
   "art": "aussen",
-  "beschreibung": "Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen das Haus der Schleusenwärterin mit der Rätseltafel davor, zwei Wohnhäuser mit Wäscheleinen und Laternen am Weg. In der Mitte die Schleusenkammer, über ihr Untertor führt ein Holzsteg nach Süden zum Kai (Sperre S3 kommt in Runde 6). Westlich das Hafenbecken mit Kaimauer; am Kai liegen der Lastkahn „Ashford Belle“ und ein Ruderboot längs, Poller, ein Seil, ein Rettungsring. Hinter dem Kai das Gasthaus „Zur Schleuse“, ein Wohnhaus und eine Scheune, dazwischen Gassen zum Dorfplatz mit Linde und einer Bank, die zum Platz schaut. Östlich am Seitenarm der Bootsschuppen, dahinter Wiese und Bäume.",
+  "beschreibung": "Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen das Haus der Schleusenwärterin mit der Rätseltafel davor, zwei Wohnhäuser mit Wäscheleinen und Laternen am Weg. In der Mitte die Schleusenkammer, über ihr Untertor (Stemmtor mit Laufsteg und Schwenkbalken) geht man nach Süden zum Kai, das Obertor im Osten hält das Oberwasser (Sperre S3 kommt in Runde 6). Westlich das Hafenbecken mit Kaimauer; am Kai liegen der Lastkahn „Ashford Belle“ und ein Ruderboot längs, Poller, ein Seil, ein Rettungsring. Hinter dem Kai das Gasthaus „Zur Schleuse“, ein Wohnhaus und eine Scheune, dazwischen Gassen zum Dorfplatz mit Linde und einer Bank, die zum Platz schaut. Östlich am Seitenarm der Bootsschuppen, dahinter Wiese und Bäume.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -22,14 +22,14 @@
     "#......................................................#",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#...............................ee.....................#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
+    "#.............................pppppppp.................#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~pppppppp.................#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~pppppppp.................#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~pppppppp.................#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~pp.......................#",
     "#pppppppppppppppppppppppppppppppppppppppp..............#",
     "#pppppppppppppppppppppppppppppppppppppppp..............#",
     "#..........ee............ee............................#",
@@ -53,12 +53,38 @@
   ],
   "objekte": [
     {
-      "moebel": "mf9FussbrueckeLaengs3",
-      "feld": [32, 14]
+      "moebel": "ld5Schleusentor",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 17]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [38, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [38, 17]
     },
     {
       "moebel": "mf4BauernhausBreit",
-      "feld": [14, 23]
+      "feld": [14, 23],
+      "id": "gasthaus"
+    },
+    {
+      "moebel": "ld5SchildSchleuse",
+      "auf": "gasthaus",
+      "versatz": [40, 40]
     },
     {
       "moebel": "mf4Bauernhaus",
@@ -247,10 +273,6 @@
     },
     {
       "moebel": "wg4Stein",
-      "feld": [39, 13]
-    },
-    {
-      "moebel": "wg4Stein",
       "feld": [38, 22]
     },
     {
@@ -298,10 +320,6 @@
       "feld": [46, 8]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [39, 17]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [50, 34]
     },
@@ -326,10 +344,6 @@
       "feld": [52, 8]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [36, 12]
-    },
-    {
       "moebel": "wg4BuschKlein",
       "feld": [42, 24]
     },
@@ -344,10 +358,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [43, 21]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [37, 18]
     },
     {
       "moebel": "wg4BuschKlein",
@@ -388,6 +398,22 @@
     {
       "moebel": "wg4BuschKlein",
       "feld": [23, 22]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [46, 3]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [49, 23]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [52, 8]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [34, 19]
     }
   ],
   "ausloeser": [
@@ -445,5 +471,6 @@
     "landhaus",
     "modern"
   ],
+  "ufer": "stein",
   "datei": "karten/lockport-aussen.json"
 }

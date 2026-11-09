@@ -1365,6 +1365,45 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc7Flachhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_One_Story_House_16x16.png",
+      "breite": 256,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc7Vordachhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Japanese_House_16x16.png",
+      "breite": 240,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc7AutomatFront": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc7Werkbank": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wooden_Table_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

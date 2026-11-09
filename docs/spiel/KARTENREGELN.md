@@ -532,8 +532,12 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    durchscheinenden Schatten (Black_Shadow-Fassung oder `werkzeuge/schatten.py`); die Bildprüfung
    meldet jeden grauen Festschatten.
 6. **Brücken und Stege sind Bauwerke.** Unter einer Brücke läuft das Wasser mit Ufer weiter; die
-   Brücke selbst ist ein Brücken- oder Stegbild aus dem Katalog (Bohlen, Geländer, Pfosten), keine
-   Bodenfläche aus Dielen auf Gras.
+   Brücke selbst ist ein Bild (Bohlen, Geländer, Pfosten), keine Bodenfläche aus Dielen auf Gras.
+   Weil kein gekauftes Paket Brücken hat, gibt es eigene aus LimeZus Texturen im privaten
+   Repository: `spiel/eigene/bruecke_fuss_quer_L.png` und `_laengs_L` (Fußgängerbrücke, 2 Kacheln
+   breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
+   Steinbrüstung), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
+   Camping-Teilen (`Pier_*`).
 
 ### 10.2 Türen und Durchgänge
 

@@ -627,3 +627,15 @@ gleich gutes Ende bei jedem Ausgang des Finales, Q21-5 endgültiger Abschied mit
 - **C7 Gegner-Steckbrief wächst mit der Vorbereitung:** Vorbereitungs-Nebenquests schalten
   Zeilen im Clubtagebuch frei, die aus dem echten Bot-Profil (Fehlerarten, Stil, Eröffnung) erzeugt
   werden.
+
+## Grafik und Oberfläche (9.11.2026)
+
+- **G1 Pakete:** LimeZu Modern Exteriors (Außen), Interiors (Innen, Figuren), Office (Silicon Bay,
+  Turnierleitung), Farm (Land, Wege, Tiere), Modern UI (Rahmen, Porträts); Fungus Cave nur bei
+  Bedarf. Dungeon, Fantasy Battlers, Serene Village, Kitchen und Platformer nicht, weil Stil oder
+  Ansicht nicht passen. Nur im privaten Repository (Lizenz verbietet Weitergabe).
+- **G2 Oberfläche im Spiel:** Pixelrahmen aus Modern UI, nachgefärbt auf die Farben der App; Schrift
+  der App (lesbar, Umlaute, Schriftgröße des Lesers); Brett und Uhr bleiben im Aussehen der App, nur
+  die Kartenleiste bekommt den Rahmen. Grund: Immersion (Wunsch des Autors) ohne Bruch zur App.
+- **G3 Porträts** aus den Teilen des Porträt-Generators von Modern UI, per Skript zusammengesetzt,
+  passend zu den Figuren aus Modern Interiors; DiceBear bleibt Ersatz, wo Teile fehlen.

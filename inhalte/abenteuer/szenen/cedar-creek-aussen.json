@@ -10,7 +10,7 @@
     "e": "erde",
     "h": "holzDunkel"
   },
-  "beschreibung": "Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Eine schmale Asphaltstraße kommt links aus dem Zedernwald und endet rechts am Bach; an ihr entlang läuft ein gepflasterter Gehweg. Das größte Gebäude ist die Bibliothek aus rotem Backstein von 1890 mit ihrem schiefergedeckten Turm und hohen Bogenfenstern, die hölzerne Eingangstür liegt unten im Turm. Links daneben der Waschsalon von Mr. Boateng mit rot-weißen Markisen und großen Schaufenstern, vor der Tür wartet ein Hund. Zwischen beiden Gebäuden steht eine alte Laterne, ein Mülleimer steht am Bach. Rechts an der Straße die Bushaltestelle mit Wartehäuschen, an der der Busfahrer raucht; dahinter hängt an einer großen Plakatwand das glänzende Plakat von Perfect Move, das gar nicht in diesen Ort passt. Ganz rechts fließt der Bach, am Ufer ein Streifen Erde; ein Holzsteg führt ins Wasser, auf dem Rosa angelt und ein Mann einzelne Bretter erneuert, ein Reiher steht still im seichten Wasser. Unterhalb der Straße eine Wiese mit roten Zedern und einer Bank, auf der Victor sitzt und wartet. Laufwege: der Gehweg vor allen Türen, die Straße nach links in den Wald, der Uferweg zum Steg.",
+  "beschreibung": "Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Eine schmale Asphaltstraße kommt links aus dem Zedernwald und endet rechts am Bach; an ihr entlang läuft ein gepflasterter Gehweg. Das größte Gebäude ist die Bibliothek aus rotem Backstein von 1890 mit ihrem schiefergedeckten Turm und hohen Bogenfenstern, die hölzerne Eingangstür liegt unten im Turm. Links daneben der Waschsalon von Mr. Boateng mit rot-weißen Markisen und großen Schaufenstern, vor der Tür wartet ein Hund. Zwischen beiden Gebäuden steht eine alte Laterne, ein Mülleimer steht am Bach. Rechts an der Straße die Bushaltestelle mit Wartehäuschen, an der der Busfahrer raucht; dahinter steht die hölzerne Anschlagtafel des Ortes mit Zetteln vom Gemeindefest, und mitten darauf klebt das glänzende Plakat von Perfect Move, das gar nicht hierher passt. Ganz rechts fließt der Bach, am Ufer ein Streifen Erde; ein Holzsteg führt ins Wasser, auf dem Rosa angelt und ein Mann einzelne Bretter erneuert, ein Reiher steht still im seichten Wasser. Unterhalb der Straße eine Wiese mit roten Zedern und einer Bank, auf der Victor sitzt und wartet. Laufwege: der Gehweg vor allen Türen, die Straße nach links in den Wald, der Uferweg zum Steg.",
   "raster": [
     "############################################",
     "#...................................e~~~~~~#",
@@ -57,10 +57,6 @@
       "feld": [9, 13]
     },
     {
-      "moebel": "mf2Plakatwand",
-      "feld": [30, 3]
-    },
-    {
       "moebel": "mfBushaltestelle",
       "feld": [30, 14]
     },
@@ -103,6 +99,10 @@
     {
       "moebel": "mf2BlumenbeetKlein",
       "feld": [25, 17]
+    },
+    {
+      "moebel": "cc3Anschlagtafel",
+      "feld": [31, 7]
     }
   ],
   "ausloeser": [
@@ -206,5 +206,6 @@
         "verhalten": "fliegen"
       }
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht", "alt"]
 }

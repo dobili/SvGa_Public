@@ -2,7 +2,7 @@
   "karte": "cedarCreek.bibliothek",
   "datei": "karten/cedar-creek-bibliothek.json",
   "art": "innen",
-  "beschreibung": "Die Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag. Ein hoher, ruhiger Raum mit dunklen Holzdielen und hellgrauen Wänden; durch das Fenster in der Nordwand fällt schräges Licht auf den Staub über den Regalen. Es riecht nach Papier und Holz, die Zeit scheint hier langsamer zu gehen.\n\nAn der Nordwand stehen links drei hohe Bücherregale dicht an dicht, voll mit bunten Buchrücken. In der Mitte das Fenster, rechts daneben die Pinnwand mit dem Schild „Bitte flüstern“ (der Witz zur Hilfskarte Flüstern), darunter ein weiteres Regal, ganz rechts die schmale Tür zur Kellertreppe, die ins Archiv hinunterführt.\n\nLinks an der Westwand steht der Zeitungsständer mit den Tageszeitungen und Magazinen. In der Mitte des Raums der lange Lesetisch aus hellem Holz, auf dem zwei Schachbretter mit aufgebauten Figuren liegen: Hier trifft sich der Schachclub von Mrs. Okafor. Ein Stuhl steht an jedem Kopfende, Dex beugt sich von oben über ein Brett, Mae wartet am rechten Ende.\n\nRechts der Ausleihtresen mit einer grünen Leselampe, dahinter steht Mrs. Okafor und hat alles im Blick. Davor ein kleiner runder Lesetisch mit zwei Stühlen und einer zweiten grünen Lampe, an dem man in Ruhe blättern kann. Unten rechts der alte Globus, eine Stehlampe in der Ecke, Pflanzen bei der Tür. Eine Leserin trägt einen Bücherstapel durch den Gang.\n\nLaufwege: von der Eingangstür unten in der Mitte gerade nach oben, links um den Lesetisch zum Zeitungsständer, rechts am Tresen vorbei zur Kellertür und zum Globus.",
+  "beschreibung": "Die Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag. Ein hoher, ruhiger Raum mit dunklen Holzdielen und hellgrauen Wänden; durch das Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier und Holz.\n\nAn der Nordwand stehen vier hohe Bücherregale, ganz links das Regal mit Glastür, in dem die Zeitungen und Magazine liegen. In der Mitte das Fenster, daneben die Pinnwand mit dem Schild „Bitte flüstern“, rechts die schmale Tür zur Kellertreppe hinunter ins Archiv.\n\nLinks im Raum zwei runde Lesetische, auf jedem ein Schachbrett mit aufgebauten Figuren, an jedem Tisch zwei Stühle, die einander gegenüberstehen: Hier trifft sich der Schachclub von Mrs. Okafor. Dex steht über dem linken Brett, Mae wartet am rechten Tisch.\n\nRechts der grüne Schreibtisch der Bibliothekarin mit aufgeschlagenem Buch und Lampe, dahinter Mrs. Okafor. Darunter ein dritter runder Tisch zum Lesen mit Leselampe und zwei Stühlen, daneben eine Stehlampe. Der alte Globus steht auf einer niedrigen Kommode in der rechten Ecke, Pflanzen stehen in den Ecken neben der Tür. Eine Leserin trägt einen Bücherstapel durch den Gang.\n\nLaufwege: von der Tür unten gerade nach oben, links zwischen den Schachtischen hindurch zum Zeitungsregal, rechts am Schreibtisch vorbei zur Kellertür und zum Globus.",
   "wand": "hellgrau",
   "boden": "holzDunkel",
   "raster": [
@@ -23,7 +23,7 @@
   ],
   "objekte": [
     {
-      "moebel": "ccRegalA",
+      "moebel": "cc3Zeitungsregal",
       "feld": [1, 1]
     },
     {
@@ -55,49 +55,52 @@
       "an_wand": true
     },
     {
-      "moebel": "ccZeitungen",
-      "feld": [1, 5]
+      "moebel": "wzStuhlRechts",
+      "feld": [2, 7],
+      "zu": "tisch1"
     },
     {
-      "moebel": "ccTischL",
-      "feld": [3, 8],
-      "id": "tischL",
-      "bauteil_ok": true
+      "moebel": "wzEsstisch",
+      "feld": [3, 7],
+      "id": "tisch1"
     },
     {
-      "moebel": "ccTischR",
-      "feld": [5, 8],
-      "id": "tischR",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccSchachbrett",
-      "auf": "tischL"
+      "moebel": "wzStuhlLinks",
+      "feld": [5, 7],
+      "zu": "tisch1"
     },
     {
       "moebel": "ccSchachbrett",
-      "auf": "tischR"
-    },
-    {
-      "moebel": "ccStuhlBlickRechts",
-      "feld": [2, 8]
-    },
-    {
-      "moebel": "ccStuhlBlickLinks",
-      "feld": [7, 8]
-    },
-    {
-      "moebel": "ccTresen",
-      "feld": [12, 5],
-      "id": "tresen"
-    },
-    {
-      "moebel": "ccLeselampe",
-      "auf": "tresen"
+      "auf": "tisch1"
     },
     {
       "moebel": "wzStuhlRechts",
-      "feld": [11, 9]
+      "feld": [6, 10],
+      "zu": "tisch2"
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [7, 10],
+      "id": "tisch2"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [9, 10],
+      "zu": "tisch2"
+    },
+    {
+      "moebel": "ccSchachbrett",
+      "auf": "tisch2"
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [12, 5],
+      "id": "schreibtisch"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [11, 9],
+      "zu": "lesetisch"
     },
     {
       "moebel": "wzEsstisch",
@@ -106,19 +109,25 @@
     },
     {
       "moebel": "wzStuhlLinks",
-      "feld": [14, 9]
+      "feld": [14, 9],
+      "zu": "lesetisch"
     },
     {
       "moebel": "ccLeselampe",
       "auf": "lesetisch"
     },
     {
-      "moebel": "ccGlobus",
-      "feld": [15, 11]
+      "moebel": "ccStehlampe",
+      "feld": [16, 8]
     },
     {
-      "moebel": "ccStehlampe",
-      "feld": [16, 6]
+      "moebel": "wzArbeitsplatte",
+      "feld": [15, 10],
+      "id": "beistell"
+    },
+    {
+      "moebel": "ccGlobus",
+      "auf": "beistell"
     },
     {
       "moebel": "wzPflanze",
@@ -126,7 +135,7 @@
     },
     {
       "moebel": "wzPflanze",
-      "feld": [11, 11]
+      "feld": [10, 11]
     }
   ],
   "ausloeser": [
@@ -151,37 +160,37 @@
     },
     {
       "name": "zeitungsregal",
-      "feld": [1, 7],
+      "feld": [1, 3],
       "auf_moebel": true
     },
     {
       "name": "globus",
-      "feld": [15, 12],
+      "feld": [15, 11],
       "auf_moebel": true
     }
   ],
   "figuren": [
     {
       "name": "okafor",
-      "feld": [12, 4]
+      "feld": [14, 4]
     },
     {
       "name": "dex",
-      "feld": [4, 7]
+      "feld": [4, 6]
     },
     {
       "name": "mae",
-      "feld": [9, 10]
+      "feld": [8, 9]
     }
   ],
   "belebung": [
     {
       "name": "leserin",
       "typ": "statist",
-      "feld": [3, 11],
+      "feld": [2, 12],
       "eigenschaften": {
-        "von": "3,11",
-        "bis": "7,11",
+        "von": "2,12",
+        "bis": "5,12",
         "tun": "trägt einen Bücherstapel",
         "wann": "tag"
       }

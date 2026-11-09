@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Echte Häuser statt Ziegelblöcke (Maple Falls und Cedar Creek)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, einundzwanzigster Auftrag; Möbelprüfung und Ghost Town sind zusammengeführt, danke)
+**Stand:** Frage (niedrig-1, 09.11.2026; Maple Falls fertig, Park und Cedar Creek bewusst nicht begonnen)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 4c0d3ff9)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-aussen.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`,
@@ -24,6 +24,44 @@ für ländliche Orte.
    darüber steht und der Übergang erreichbar bleibt (Tests prüfen die Erreichbarkeit).
 3. Erst Maple Falls draußen, prüfen (Bildschirmfoto, Oberflächentests), dann Park und Cedar Creek.
    Klappt die Ausrichtung an Türen nicht sauber, nach Maple Falls aufhören und berichten.
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
+übernommen, nur `hsVilla` und `hsSchule` ergänzt).
+
+**Grundproblem:** Ganze Gebäude im Register sind viel größer als die alten Blöcke (5 Kacheln hoch):
+Villa 9 × 13 Kacheln, Uhrturm 8 × 15, Reihenhaus 12 × 15, Einfamilienhaus 16 × 14, Landhaus
+18 × 16. Die Einträge „generic building“ mit 5 bis 7 Kacheln sind nur Bauteile (Ecken, Eingänge),
+keine ganzen Häuser. Damit die Häuser passen, habe ich die Karte `maple-falls-aussen` **oben um 10
+Reihen vergrößert** (28 × 20 → 28 × 30): Alle Ebenen, Auslöser, Figuren, Möbel und die Laufwege
+der Statisten sind um 10 Reihen nach unten gerückt. Feste Koordinaten dieser Karte gibt es sonst
+nirgends (Tests, Code, Daten geprüft); ein Spielstand, der draußen gespeichert wurde, steht nach
+dem Laden 10 Reihen zu weit oben (Beta, laut CLAUDE.md erlaubt).
+
+**Maple Falls draußen:**
+
+- Wohnhaus = `hsVilla` (Villa 1, 144 × 208), links oben so gesetzt, dass die Haustür (Spalte 2 der
+  Villa) genau über dem Auslöser `haustuer` (5/16) liegt; der Held steht davor auf dem Gartenweg.
+  Bildschirmfoto: passt, die Tür ist direkt über dem Helden.
+- Schule = `hsSchule` (Uhrturm aus „school“, 128 × 240), Mitte über dem Auslöser `schule` (21/16).
+  **Nicht sauber:** Der Uhrturm hat unten ein großes Bogenfenster, aber keine Tür; ein Schulgebäude
+  mit Tür in passender Größe gibt es nicht (das Schulhaus im Register ist 24 × 23 Kacheln).
+- Der untere Block (Nachbarhaus ohne Tür) ist jetzt ein Garten: zwei Bäume und ein Blumenbeet
+  hinter dem vorhandenen Zaun (kein Haus passt dort unter die Straße).
+- Ein Baum, der in der Villa stand, ist entfernt; der Laufweg des Eichhörnchens liegt jetzt neben
+  der Schule.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
+(9 von 9) bestanden.
+
+**Frage, deshalb Park und Cedar Creek nicht begonnen (Vorgabe 3):**
+
+1. Ist das Vergrößern der Außenkarten der richtige Weg? Für Cedar Creek (Bibliothek, Waschsalon)
+   wäre dasselbe nötig; alternativ dürfte ein Haus oben über den Kartenrand hinausragen (Möbel mit
+   negativem `y`), wenn die Oberwelt das sauber zeichnet.
+2. Für die Schule: Uhrturm ohne Tür behalten, eine Villa nehmen (hat Tür, sieht aber wie ein
+   Wohnhaus aus) oder das große Schulhaus mit noch größerer Karte?
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

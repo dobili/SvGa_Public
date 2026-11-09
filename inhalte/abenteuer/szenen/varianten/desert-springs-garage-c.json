@@ -1,0 +1,161 @@
+{
+  "karte": "desertSprings.garage",
+  "datei": "karten/varianten/desert-springs-garage-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, voll: das Auto rechts, der Clubtisch links unter der Pinnwand, Regale an der Nordwand, viele Kartons und Kisten; rote Wand.",
+  "wand": "rot",
+  "boden": "stein",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#########.########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [9, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [9, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8Pinnwand",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "dsRegal",
+      "feld": [9, 1],
+      "id": "regal"
+    },
+    {
+      "moebel": "mf3PokalKlein",
+      "feld": [0, 0],
+      "auf": "regal"
+    },
+    {
+      "moebel": "mf4RegalNiedrig",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "iw5AutoB",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [5, 6],
+      "id": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [5, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [5, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [6, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [6, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [1, 7],
+      "id": "reifen"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "reifen"
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [13, 9]
+    },
+    {
+      "moebel": "iw5KistenB",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [16, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [9, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "garageAusgang",
+      "feld": [9, 11]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "tomas",
+      "feld": [12, 5]
+    },
+    {
+      "name": "mira",
+      "feld": [3, 8]
+    },
+    {
+      "name": "dot",
+      "feld": [8, 9]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": [
+    "industrie",
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "schule"
+  ],
+  "variante": "c"
+}

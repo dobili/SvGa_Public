@@ -1010,6 +1010,16 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "pd6SchildTurnhalle": {
+      "quelle": "spiel/eigene/schild_turnhalle.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

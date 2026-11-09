@@ -324,7 +324,13 @@
     },
     {
       "moebel": "pd6Gueterhalle",
-      "feld": [35, 15]
+      "feld": [35, 15],
+      "id": "th"
+    },
+    {
+      "moebel": "pd6SchildTurnhalle",
+      "auf": "th",
+      "versatz": [24, 56]
     },
     {
       "moebel": "pd6HausRot2",

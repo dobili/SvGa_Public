@@ -323,23 +323,45 @@
     },
     {
       "moebel": "pd6Werkhalle",
-      "feld": [20, 19]
+      "feld": [20, 19],
+      "id": "th"
     },
     {
       "moebel": "pd6Werkhalle",
       "feld": [26, 19]
     },
     {
-      "moebel": "pd6HausRot",
-      "feld": [8, 21]
+      "moebel": "pd6SchildTurnhalle",
+      "auf": "th",
+      "versatz": [24, -3]
     },
     {
-      "moebel": "pd6HausGruen",
-      "feld": [40, 21]
+      "moebel": "pd6HausGross",
+      "feld": [8, 15],
+      "id": "h1"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "h1",
+      "versatz": [30, -28]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [37, 16],
+      "id": "h2"
+    },
+    {
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h2",
+      "versatz": [-30, -30]
     },
     {
       "moebel": "pd6Gebaeckstand",
-      "feld": [34, 22]
+      "feld": [33, 22]
+    },
+    {
+      "moebel": "pd6Rohbau",
+      "feld": [22, 10]
     },
     {
       "moebel": "pd6Zelt",
@@ -351,7 +373,18 @@
     },
     {
       "moebel": "pd6Musikhaus",
-      "feld": [39, 31]
+      "feld": [39, 31],
+      "id": "mh"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "mh",
+      "versatz": [-40, -50]
+    },
+    {
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "mh",
+      "versatz": [60, -40]
     },
     {
       "moebel": "pd6Kiste",
@@ -359,29 +392,36 @@
     },
     {
       "moebel": "pd6Werkstatt",
-      "feld": [8, 44]
+      "feld": [8, 44],
+      "id": "ws"
     },
     {
-      "moebel": "pd6HausKleinRot",
-      "feld": [22, 49]
+      "moebel": "pd6HausGross",
+      "feld": [22, 43],
+      "id": "h3"
     },
     {
-      "moebel": "pd6HausKleinHell",
-      "feld": [28, 49]
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h3",
+      "versatz": [16, -54]
+    },
+    {
+      "moebel": "pd6HausGross",
+      "feld": [32, 43]
     },
     {
       "moebel": "pd6Fischerboot",
-      "feld": [58, 14],
+      "feld": [56, 11],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [60, 31],
+      "feld": [58, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Fischerboot",
-      "feld": [61, 40],
+      "feld": [56, 38],
       "bauteil_ok": true
     },
     {
@@ -459,71 +499,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "pd6BauzaunEndeLinks",
-      "feld": [42, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [43, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [44, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [45, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [46, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [47, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [48, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [49, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunEndeRechts",
-      "feld": [50, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunEndeLinks",
-      "feld": [32, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [33, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [34, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunEndeRechts",
-      "feld": [35, 51],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "pd6DielenNass",
       "feld": [14, 27]
     },
@@ -549,19 +524,19 @@
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [13, 22]
+      "feld": [16, 22]
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [45, 22]
+      "feld": [47, 22]
     },
     {
       "moebel": "pd6Stamm",
-      "feld": [6, 16]
+      "feld": [16, 12]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [10, 16]
+      "feld": [18, 15]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
@@ -577,7 +552,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [12, 22],
+      "feld": [17, 22],
       "vorn": true
     },
     {
@@ -587,7 +562,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [44, 22],
+      "feld": [48, 22],
       "vorn": true
     },
     {
@@ -614,24 +589,8 @@
       "feld": [62, 50]
     },
     {
-      "moebel": "rvLaubbaum",
-      "feld": [34, 46]
-    },
-    {
       "moebel": "rvLaubbaumDunkel",
       "feld": [44, 46]
-    },
-    {
-      "moebel": "rvLaubbaum",
-      "feld": [7, 11]
-    },
-    {
-      "moebel": "rvLaubbaumDunkel",
-      "feld": [13, 13]
-    },
-    {
-      "moebel": "pd6Rohbau",
-      "feld": [43, 11]
     },
     {
       "moebel": "rvLaubbaum",
@@ -639,11 +598,7 @@
     },
     {
       "moebel": "pd6Waescheleine",
-      "feld": [34, 49]
-    },
-    {
-      "moebel": "pd6Waescheleine",
-      "feld": [40, 49]
+      "feld": [42, 49]
     },
     {
       "moebel": "pd6Waescheleine",
@@ -664,18 +619,6 @@
     {
       "moebel": "pd6Kiste",
       "feld": [54, 36]
-    },
-    {
-      "moebel": "pd6Kiste",
-      "feld": [55, 36]
-    },
-    {
-      "moebel": "pd6Sandsaecke",
-      "feld": [52, 43]
-    },
-    {
-      "moebel": "pd6SandsaeckeHaufen",
-      "feld": [54, 10]
     }
   ],
   "ausloeser": [
@@ -720,23 +663,23 @@
     },
     {
       "name": "gebaeckstand",
-      "feld": [35, 25]
+      "feld": [34, 25]
     },
     {
       "name": "brettHaus1",
-      "feld": [10, 25]
+      "feld": [13, 25]
     },
     {
       "name": "brettHaus2",
-      "feld": [42, 25]
+      "feld": [44, 25]
     },
     {
       "name": "brettHaus3",
-      "feld": [23, 53]
+      "feld": [27, 53]
     },
     {
       "name": "brettHaus4",
-      "feld": [29, 53]
+      "feld": [37, 53]
     }
   ],
   "figuren": [
@@ -746,7 +689,7 @@
     },
     {
       "name": "arceneaux",
-      "feld": [37, 25]
+      "feld": [36, 25]
     },
     {
       "name": "blaeser",

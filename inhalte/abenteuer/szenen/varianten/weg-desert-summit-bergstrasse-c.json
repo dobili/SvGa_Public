@@ -187,6 +187,86 @@
       "feld": [21, 6]
     },
     {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [7, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [15, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [23, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL5",
+      "feld": [31, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [3, 94],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [36, 94],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [4, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [12, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [20, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL5",
+      "feld": [28, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [3, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [36, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [7, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL6",
+      "feld": [15, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [3, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [21, 34],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "wds6Kegelbaum",
       "feld": [9, 27]
     },
@@ -308,6 +388,78 @@
     },
     {
       "moebel": "wds6Pinie",
+      "feld": [4, 20]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [26, 3]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [15, 4]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [35, 16]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [27, 31]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [35, 7]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [27, 10]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [22, 12]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [36, 21]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [32, 31]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [5, 10]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [6, 25]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [32, 13]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [30, 21]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "wds6Pinie",
       "feld": [33, 39]
     },
     {
@@ -363,24 +515,52 @@
       "feld": [20, 56]
     },
     {
+      "moebel": "wds6PinieB",
+      "feld": [36, 43]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [22, 77]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [23, 45]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [19, 44]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [36, 38]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [11, 75]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [28, 61]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [31, 59]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [34, 54]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [31, 56]
+    },
+    {
       "moebel": "wds6WacholderB",
       "feld": [28, 99]
     },
     {
       "moebel": "wds6WacholderB",
       "feld": [5, 87]
-    },
-    {
-      "moebel": "wds6Fels",
-      "feld": [9, 98]
-    },
-    {
-      "moebel": "wds6BrockenMittel",
-      "feld": [14, 98]
-    },
-    {
-      "moebel": "wds6WacholderB",
-      "feld": [25, 98]
     },
     {
       "moebel": "wds6BrockenMittel",
@@ -395,8 +575,8 @@
       "feld": [30, 88]
     },
     {
-      "moebel": "wds6BrockenMittel",
-      "feld": [20, 98]
+      "moebel": "wds6Fels",
+      "feld": [24, 100]
     },
     {
       "moebel": "wds6WacholderB",
@@ -411,12 +591,24 @@
       "feld": [32, 99]
     },
     {
+      "moebel": "wds6BrockenMittel",
+      "feld": [18, 99]
+    },
+    {
       "moebel": "wds6Fels",
       "feld": [2, 92]
     },
     {
       "moebel": "wds6Fels",
       "feld": [20, 103]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [12, 100]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [25, 88]
     },
     {
       "moebel": "wds6Brocken",

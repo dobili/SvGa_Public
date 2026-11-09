@@ -148,6 +148,132 @@
       "art": "absperrung",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "wds6LeitplankeL2": {
+      "quelle": "spiel/eigene/leitplanke_laengs_2.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ2": {
+      "quelle": "spiel/eigene/leitplanke_quer_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL3": {
+      "quelle": "spiel/eigene/leitplanke_laengs_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ3": {
+      "quelle": "spiel/eigene/leitplanke_quer_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL4": {
+      "quelle": "spiel/eigene/leitplanke_laengs_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ4": {
+      "quelle": "spiel/eigene/leitplanke_quer_4.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL5": {
+      "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ5": {
+      "quelle": "spiel/eigene/leitplanke_quer_5.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL6": {
+      "quelle": "spiel/eigene/leitplanke_laengs_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ6": {
+      "quelle": "spiel/eigene/leitplanke_quer_6.png",
+      "breite": 16,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL7": {
+      "quelle": "spiel/eigene/leitplanke_laengs_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ7": {
+      "quelle": "spiel/eigene/leitplanke_quer_7.png",
+      "breite": 16,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL8": {
+      "quelle": "spiel/eigene/leitplanke_laengs_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ8": {
+      "quelle": "spiel/eigene/leitplanke_quer_8.png",
+      "breite": 16,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

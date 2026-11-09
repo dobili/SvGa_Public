@@ -167,6 +167,56 @@
       "feld": [21, 5]
     },
     {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [9, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [17, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL7",
+      "feld": [25, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL2",
+      "feld": [32, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [5, 80],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [34, 80],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [18, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL5",
+      "feld": [26, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [17, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [34, 34],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "wds6Pinie",
       "feld": [11, 3]
     },
@@ -177,10 +227,6 @@
     {
       "moebel": "wds6Pinie",
       "feld": [3, 10]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [15, 30]
     },
     {
       "moebel": "wds6Kegelbaum",
@@ -213,6 +259,66 @@
     {
       "moebel": "wds6Pinie",
       "feld": [14, 12]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [28, 21]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [31, 4]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [25, 11]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [31, 28]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [22, 26]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [34, 26]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [14, 16]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [31, 9]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [22, 10]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [3, 21]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [11, 11]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [28, 6]
     },
     {
       "moebel": "wds6Wacholder",

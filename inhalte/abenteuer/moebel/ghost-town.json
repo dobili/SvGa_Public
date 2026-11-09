@@ -237,7 +237,6 @@
       "hoehe": 16,
       "kollision": true,
       "art": "kiste",
-      "blick": "unten",
       "zustand": "gebraucht",
       "stil": "einfach"
     },
@@ -403,6 +402,155 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "gt7Theke": {
+      "quelle": "spiel/eigene/theke_holz_laengs_7.png",
+      "breite": 112,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "gt7Flaschenregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_84.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "gt7Klavier": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_17.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "gt7Treppe": {
+      "quelle": "spiel/generic/generic_134.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "treppe",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7StuhlR": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "gt7StuhlL": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "gt7Tisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7TischDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7Brett": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7Bild": {
+      "quelle": "spiel/generic/generic_037.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "gt7Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7FassKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt7Regal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_70.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "gt7Theke8": {
+      "quelle": "spiel/eigene/theke_holz_laengs_8.png",
+      "breite": 128,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "gt7TuerHolz": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "stil": "rustikal",
+      "zustand": "alt"
     }
   }
 }

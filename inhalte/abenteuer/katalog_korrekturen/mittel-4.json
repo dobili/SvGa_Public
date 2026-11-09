@@ -98,5 +98,23 @@
     "sicher": 0.8,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png": {
+    "beschreibung": "Großer dunkelgrauer Doppelspind aus Metall von vorn, zwei Türen mit Lüftungsschlitzen und Griffen, flache Oberseite.",
+    "art": "schrank",
+    "blick": "unten",
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png": {
+    "beschreibung": "Flache graue Duschwanne aus Metall von oben schräg gesehen, mit Rand und rundem Abfluss in der Mitte; passt als Boden einer Dusche.",
+    "art": "dusche",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

@@ -1,0 +1,167 @@
+{
+  "karte": "ironwood.mamasZimmer",
+  "datei": "karten/varianten/ironwood-mamas-zimmer-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C: dunkler Holzboden in der Küche, roter Teppichboden im Zimmer, Küchenzeile mit Topf auf dem Herd, Tisch an der Westwand, Sessel am Ofen; im Zimmer steht das Bett an der Südwand, der Schreibtisch oben.",
+  "wand": "rot",
+  "boden": "dielen",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkkzzzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "########k#########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [8, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "mf7HerdTopf",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [3, 2],
+      "id": "platte"
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "mf4BildKueche",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [2, 6],
+      "id": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [1, 6],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [4, 6],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "mf7SesselWeissRechts",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "mf2Kleiderschrank",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2BildWald",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [13, 3],
+      "id": "schreibtisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "schreibtisch",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "iwBild",
+      "feld": [16, 3],
+      "id": "rahmen2001"
+    },
+    {
+      "moebel": "iw5BettGrau",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "mf4Kommode",
+      "feld": [11, 8],
+      "id": "kommode"
+    },
+    {
+      "moebel": "mf7Teddy",
+      "feld": [0, 0],
+      "auf": "kommode"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "zimmerAusgang",
+      "feld": [8, 11]
+    },
+    {
+      "name": "medaille",
+      "feld": [15, 5]
+    },
+    {
+      "name": "partieformular2001",
+      "feld": [16, 5]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "omaRuth",
+      "feld": [3, 9]
+    },
+    {
+      "name": "mama",
+      "feld": [12, 6]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "boeden": {
+    "k": "holzDunkel",
+    "z": "teppichRot"
+  },
+  "variante": "c"
+}

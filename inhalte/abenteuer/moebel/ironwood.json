@@ -277,6 +277,33 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "iw5BettGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "iw5BettLila": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "iw5Duschwanne": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "dusche",
+      "zustand": "gebraucht",
+      "stil": "einfach"
     }
   }
 }

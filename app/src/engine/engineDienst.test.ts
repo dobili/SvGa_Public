@@ -40,6 +40,19 @@ describe("EngineDienst mit Stockfish", () => {
   afterAll(() => dienst.beendeEngine());
 
   it(
+    "rochiert im Schach960 als König auf Turm und kehrt danach ins gewöhnliche Schach zurück",
+    async () => {
+      // Nur die Rochade ist erlaubt: Stockfish muss sie im Modus UCI_Chess960 als g1h1 nennen.
+      const fen960 = "1r4kr/8/8/8/8/8/8/1R4KR w HBhb - 0 1";
+      const rochade = await dienst.bewerte(fen960, RECHENZEIT_MS, 1, { art: "voll" }, ["g1h1"]);
+      expect(rochade.besterZug).toBe("g1h1");
+      const normal = await dienst.bewerte(ABB_1_26, RECHENZEIT_MS, 1);
+      expect(normal.besterZug).toMatch(/^[a-h][1-8][a-h][1-8]/);
+    },
+    TESTFRIST_MS,
+  );
+
+  it(
     "bewertet Abb. 1.26 mit drei Varianten",
     async () => {
       const bewertung = await dienst.bewerte(ABB_1_26, RECHENZEIT_MS, 3);

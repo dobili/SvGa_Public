@@ -224,9 +224,11 @@ def pruefe_blickabstand(szene: dict, gesetzt: list[dict], moebel: dict) -> list[
 
 
 def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
-    """Vor jeder Tür an der Wand (``art`` tuer, ``an_wand``) ist die Kachel darunter frei (Platz für
-    die Fußmatte, 8.1.5). Türen ``auf`` einem Gebäude prüft die Regel nicht: Dort steht der Auslöser
-    vor dem Gebäude, und der Kartenbauer prüft ihn schon auf Erreichbarkeit.
+    """Vor jeder Tür an der Wand (``art`` tuer, ``an_wand``) ist die Kachel davor frei (Platz für
+    die Fußmatte, 8.1.5 und 10.8). Davor heißt: unter der Tür, bei einer Tür in der Südwand (die Tür
+    reicht bis an den unteren Kartenrand) über ihr im Raum. Türen ``auf`` einem Gebäude prüft die
+    Regel nicht: Dort steht der Auslöser vor dem Gebäude, und der Kartenbauer prüft ihn schon auf
+    Erreichbarkeit.
     """
     befunde, gesperrt = [], _sperrfelder(gesetzt)
     for s, e in _mit_eintrag(szene, gesetzt):
@@ -234,7 +236,9 @@ def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             continue
         x0, x1 = s["x"] // K, (s["x"] + s["breite"] - 1) // K
         unter = (s["y"] + s["hoehe"] - 1) // K + 1
-        if all(_gesperrt(zeilen, x, unter) or (x, unter) in gesperrt for x in range(x0, x1 + 1)):
+        # Regel 10.7: Ausgang in der Südwand; der Raum liegt über der Tür.
+        vorn = s["y"] // K - 1 if unter >= len(zeilen) else unter
+        if all(_gesperrt(zeilen, x, vorn) or (x, vorn) in gesperrt for x in range(x0, x1 + 1)):
             befunde.append(f"{s['name']}: keine freie Kachel vor der Tür")
     return befunde
 

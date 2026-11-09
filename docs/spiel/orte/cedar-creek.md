@@ -557,3 +557,51 @@ Bild mit „Cedar Creek“ (wie das Neonschild des Waschsalons) wäre schöner. 
 Ankunftspunkt (Art `start`, wie die Bushaltestelle); die Rückfahrt nach Riverton (Dialog am Bahnsteig, 10 Münzen)
 kommt in Runde 5. Die Karte des Bahnhofs Riverton gibt es noch nicht; der Dialog `riverton-bahnhofshalle.zug`
 führt schon auf `bahnhof`.
+
+### 4.6 Nacharbeit nach der Rückmeldung des Autors (KARTENREGELN 10, Runde 5)
+
+Diese Änderungen gehen den Tabellen in 4.1 bis 4.5 vor (Prüfbericht `2026-11-09_runde4_autor.md`,
+Tabelle Cedar Creek). Neue Möbel tragen die Vorsilbe `cc5`.
+
+**Ortskern (`cedarCreek.aussen`):**
+
+- Bibliothek: Der Eingang ist der Seiteneingang des viktorianischen Hauses (Treppe mit Geländer,
+  Holztür mit Rundbogenfenster, Balkon) links am Turm, Spalten 20–23 mit 12 px Feinschub, bündig am
+  Turm; die Bibliothek selbst steht jetzt in den Spalten 24–41. Die Tür ersetzt kein Fenster mehr
+  (10.9). `bibliothekTuer` (22, 19). Zwei Laternen symmetrisch zur Mitte der Treppe (x = 365 px).
+  Innen liegt die Tür deshalb bei Spalte 3 (Tür außen bei 2,75 von 22 = 12,5 %).
+- Bach gewunden, fünf Kacheln breit; linke Uferkante je Reihenblock: Reihen 0–3 Spalte 50, 4–6: 51,
+  7–11: 52, 12–13: 51, 14–17: 50, 18–23: 51, 24–29: 52, 30–34: 51, 35–39: 50. Der Uferweg bleibt
+  gerade (Spalten 48–49, ab Reihe 3); wo der Bach nach rechts schwingt, liegt Wiese dazwischen.
+- Brücken und Steg sind Plankenbilder (Camping Pier 12/13) auf Wasser; die Szene nennt `"bruecken":
+["h"]`, darunter zeichnet das Werkzeug Wasser mit Ufer (10.6). Bahnbrücke Reihen 1–2 (Spalten
+  50–54) unter dem Gleis, Fußgängerbrücke Reihen 8–9 (Spalten 52–56) mit Erdweg von Uferweg und zum
+  Ostrand, Steg Reihen 14–15 (Spalten 50–53) mit Pfählen am Ende (Pier 15).
+- Boote längs (10.24): Schlauchboot am Steg festgemacht (50, 16), ein zweites am Ufer des
+  Kanuverleihs (52, 25); das quer liegende Ruderboot entfällt.
+- Trampelpfad zur Tür des Bootsschuppens (Reihe 31, Spalten 46–47) zum Uferweg (10.25). Bank am Ufer
+  (50, 26), seitlich mit Blick zum Bach (10.17).
+- Wendehammer am Ostende der Straße (Asphalt Spalten 41–46, Reihen 20–23, Pflaster ringsum) mit zwei
+  Pollern zum Uferweg (47, 20) und (47, 22) (10.28). Die Anschlagtafel steht am Südrand des Platzes
+  (41, 25) mit `plakat` (41, 27), der Mülleimer daneben.
+
+**Bibliothek:** Schachtische und Lesetische sind leere Holztische (Basement 1, wie der Clubraum in
+Maple Falls), darauf vier Bretter und zwei Leselampen (10.12). Der Globus steht auf einer niedrigen
+Anrichte an der Ostwand (19, 7), `globus` (19, 9) (10.13). Zwei freistehende Regalreihen in den
+Reihen 5 und 9 (Spalten 13–18) mit Gang dazwischen, mit Feinschub fast lückenlos (10.30). Lesetische
+unten rechts (13, 13), (16, 13), Stühle davor, Stehlampe (19, 12). Notizbrett 6 px tiefer (10.10).
+Ausgang: Türbild in der Südwand bei Spalte 3, Fußmatte davor (10.7, 10.8).
+
+**Archiv:** Eine freistehende Regalreihe (Spalten 1–6, Reihe 5) mit Gang davor; drei Kartonstapel je
+zwei hoch an der Südwand (Spalten 1–6); der offene Karton 1850–1859 frei bei (8, 7); Arbeitsplatz in
+der Südostecke: leerer Tisch (11, 8) mit Leselampe und Programmheft, Stuhl davor (10.30).
+`wasserfleck` (9, 4). Mehr als eine Regalreihe überschreitet die Belegungsgrenze von 45 %.
+
+**Waschsalon:** Türbild in der Südwand bei Spalte 7, Fußmatte direkt davor, Notizbrett 6 px tiefer.
+
+**Drechslerei:** In der Mitte ein Arbeitstisch (6, 5) mit Werkstück (Stammstück), Leiste und Hammer
+(10.30); das Bücherregal steht direkt am Werktisch (8, 1) (10.31). Türbild in der Südwand bei Spalte 4,
+Fußmatte davor.
+
+**Werkzeug:** Die Regel „freie Kachel vor der Tür“ (`kartenregeln.pruefe_tueren`) prüft bei Türen in der
+Südwand jetzt die Kachel im Raum über der Tür (Test `test_tuer_in_der_suedwand_braucht_freie_kachel_im_raum`).

@@ -91,7 +91,7 @@ MOEBEL = lade_moebel()
 
 
 def moebelfelder(karte: dict) -> set[Feld]:
-    """Felder unter Möbeln mit ``kollision`` (inhalte/abenteuer/moebel/): alles außer der obersten Kachelreihe.
+    """Felder unter Möbeln mit ``kollision`` (Möbeldateien): alles außer der obersten Kachelreihe.
 
     Beispiel: ein Bett 32 × 48 bei (64, 32) sperrt die Felder (4, 3), (5, 3), (4, 4), (5, 4).
     """

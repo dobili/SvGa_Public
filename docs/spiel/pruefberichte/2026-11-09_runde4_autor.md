@@ -62,19 +62,19 @@ sich zur Straße.
 
 ## Cedar Creek
 
-| Karte       | Hinweis des Autors                                                                       | Regel             | Erledigt                                         |
-| ----------- | ---------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------ |
-| außen       | Trampelpfad oben links nicht bis zum Rand; Übergang Trampelpfad → Gehweg mit Grasrundung | 10.2, 10.3        | Haupt-Chat (Werkzeug)                            |
-| außen       | Tür der Bibliothek klebt vor dem großen Fenster; Laternen am Eingang nicht symmetrisch   | 10.9              |                                                  |
-| außen       | Brücken sehen aus wie gefliestes Gras; Bachufer nicht durchgehend                        | 10.6, 10.1        | Haupt-Chat (Werkzeug) und mittel-2 (Brückenbild) |
-| außen       | Boot quer im Bach                                                                        | 10.24             |                                                  |
-| außen       | Wasser einfarbig                                                                         | 10.4              | Haupt-Chat (Werkzeug)                            |
-| außen       | Hütte am Ufer ohne Pfad zur Tür; Bach schnurgerade                                       | 10.25, 10.23      |                                                  |
-| außen       | Straße endet abrupt an der Bushaltestelle (Wendehammer oder Übergang)                    | 10.28             |                                                  |
-| Bibliothek  | Schachbretter liegen auf Tischen mit Buch; Lampen stehen auf Büchern                     | 10.12             |                                                  |
-| Bibliothek  | Globus auf dem Boden                                                                     | 10.13             |                                                  |
-| Bibliothek  | Regale vereinzelt: Regalreihen mit Gängen                                                | 10.30             |                                                  |
-| Bibliothek  | Notizbrett an der Decke                                                                  | 10.10             |                                                  |
-| Archiv      | mehr Regalreihen; Kisten sortierter; Tisch in eine Ecke mit Lampe                        | 10.30             |                                                  |
-| Waschsalon  | Fußmatte näher an die Tür; Tür statt Lücke; Notizbrett tiefer                            | 10.8, 10.7, 10.10 |                                                  |
-| Drechslerei | Mitte leer (Werkstück, Böcke); Bücherregal genau mittig zwischen zwei Werkbänken         | 10.30, 10.31      |                                                  |
+| Karte       | Hinweis des Autors                                                                       | Regel             | Erledigt                                                                                                                       |
+| ----------- | ---------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| außen       | Trampelpfad oben links nicht bis zum Rand; Übergang Trampelpfad → Gehweg mit Grasrundung | 10.2, 10.3        | Haupt-Chat (Werkzeug)                                                                                                          |
+| außen       | Tür der Bibliothek klebt vor dem großen Fenster; Laternen am Eingang nicht symmetrisch   | 10.9              | mittel-2: Seiteneingang mit Treppe und Tür, Laternen symmetrisch                                                               |
+| außen       | Brücken sehen aus wie gefliestes Gras; Bachufer nicht durchgehend                        | 10.6, 10.1        | Haupt-Chat (Werkzeug) und mittel-2 (Brückenbild); Haupt-Chat (Werkzeug); mittel-2: Plankenbilder auf Wasser (Szene „bruecken“) |
+| außen       | Boot quer im Bach                                                                        | 10.24             | mittel-2: Schlauchboote längs, eines am Steg festgemacht                                                                       |
+| außen       | Wasser einfarbig                                                                         | 10.4              | Haupt-Chat (Werkzeug)                                                                                                          |
+| außen       | Hütte am Ufer ohne Pfad zur Tür; Bach schnurgerade                                       | 10.25, 10.23      | mittel-2: Trampelpfad zur Tür; Bach gewunden                                                                                   |
+| außen       | Straße endet abrupt an der Bushaltestelle (Wendehammer oder Übergang)                    | 10.28             | mittel-2: Wendehammer mit Pollern zum Uferweg                                                                                  |
+| Bibliothek  | Schachbretter liegen auf Tischen mit Buch; Lampen stehen auf Büchern                     | 10.12             | mittel-2: leere Holztische für Bretter und Leselampen                                                                          |
+| Bibliothek  | Globus auf dem Boden                                                                     | 10.13             | mittel-2: Globus auf einer Anrichte                                                                                            |
+| Bibliothek  | Regale vereinzelt: Regalreihen mit Gängen                                                | 10.30             | mittel-2: zwei Regalreihen mit Gang, Lücken geschlossen                                                                        |
+| Bibliothek  | Notizbrett an der Decke                                                                  | 10.10             | mittel-2: 6 px tiefer                                                                                                          |
+| Archiv      | mehr Regalreihen; Kisten sortierter; Tisch in eine Ecke mit Lampe                        | 10.30             | mittel-2: Regalreihe mit Gang, Kartonstapel sortiert, Arbeitsplatz mit Lampe in der Ecke                                       |
+| Waschsalon  | Fußmatte näher an die Tür; Tür statt Lücke; Notizbrett tiefer                            | 10.8, 10.7, 10.10 | mittel-2: Türbild in der Südwand, Matte direkt davor, Notizbrett tiefer                                                        |
+| Drechslerei | Mitte leer (Werkstück, Böcke); Bücherregal genau mittig zwischen zwei Werkbänken         | 10.30, 10.31      | mittel-2: Arbeitstisch mit Werkstück in der Mitte, Regal am Werktisch                                                          |

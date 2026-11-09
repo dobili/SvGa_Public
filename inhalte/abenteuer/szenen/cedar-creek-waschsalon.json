@@ -16,7 +16,8 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######"
+    "#######.######",
+    "##############"
   ],
   "objekte": [
     {
@@ -62,7 +63,8 @@
     {
       "moebel": "cc4Pinnwand",
       "feld": [9, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 6]
     },
     {
       "moebel": "cc4Waschmittelregal",
@@ -102,6 +104,11 @@
     {
       "moebel": "cc4WaeschekorbGruen",
       "feld": [6, 8]
+    },
+    {
+      "moebel": "cc5TuerModern",
+      "feld": [7, 10],
+      "an_wand": true
     },
     {
       "moebel": "cc4Fussmatte",

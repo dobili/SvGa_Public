@@ -1094,6 +1094,91 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "cc5Anrichte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_70.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kommode",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc5Tisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc5Tuer": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc5TuerModern": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc5Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc5Arbeitstisch": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/DIY_Crafting_Table_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5Hammer": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hammer_DIY_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5Werkstueck": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Small_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5Leiste": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Piece_3_Woodwork_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

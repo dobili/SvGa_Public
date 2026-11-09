@@ -1,1743 +1,1071 @@
 {
- "compressionlevel": -1,
- "orientation": "orthogonal",
- "renderorder": "right-down",
- "tiledversion": "1.11.0",
- "type": "map",
- "version": "1.10",
- "infinite": false,
- "width": 18,
- "height": 13,
- "tilewidth": 16,
- "tileheight": 16,
- "nextlayerid": 5,
- "nextobjectid": 43,
- "layers": [
-  {
-   "id": 1,
-   "name": "boden",
-   "type": "tilelayer",
-   "width": 18,
-   "height": 13,
-   "x": 0,
-   "y": 0,
-   "opacity": 1,
-   "visible": true,
-   "data": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
-  },
-  {
-   "id": 2,
-   "name": "waende",
-   "type": "tilelayer",
-   "width": 18,
-   "height": 13,
-   "x": 0,
-   "y": 0,
-   "opacity": 1,
-   "visible": true,
-   "data": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
-  {
-   "id": 3,
-   "name": "objekte",
-   "type": "tilelayer",
-   "width": 18,
-   "height": 13,
-   "x": 0,
-   "y": 0,
-   "opacity": 1,
-   "visible": true,
-   "data": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
-  },
-  {
-   "id": 4,
-   "name": "ausloeser",
-   "type": "objectgroup",
-   "draworder": "topdown",
-   "x": 0,
-   "y": 0,
-   "opacity": 1,
-   "visible": true,
-   "objects": [
+  "compressionlevel": -1,
+  "orientation": "orthogonal",
+  "renderorder": "right-down",
+  "tiledversion": "1.11.0",
+  "type": "map",
+  "version": "1.10",
+  "infinite": false,
+  "width": 18,
+  "height": 13,
+  "tilewidth": 16,
+  "tileheight": 16,
+  "nextlayerid": 5,
+  "nextobjectid": 43,
+  "layers": [
     {
-     "id": 1,
-     "name": "start",
-     "type": "ausloeser",
-     "x": 144,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "richtung",
-       "type": "string",
-       "value": "oben"
-      }
-     ]
+      "id": 1,
+      "name": "boden",
+      "type": "tilelayer",
+      "width": 18,
+      "height": 13,
+      "x": 0,
+      "y": 0,
+      "opacity": 1,
+      "visible": true,
+      "data": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0
+      ]
     },
     {
-     "id": 2,
-     "name": "schule",
-     "type": "ausloeser",
-     "x": 144,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
+      "id": 2,
+      "name": "waende",
+      "type": "tilelayer",
+      "width": 18,
+      "height": 13,
+      "x": 0,
+      "y": 0,
+      "opacity": 1,
+      "visible": true,
+      "data": [
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2
+      ]
     },
     {
-     "id": 3,
-     "name": "pokalvitrine",
-     "type": "ausloeser",
-     "x": 16,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
+      "id": 3,
+      "name": "objekte",
+      "type": "tilelayer",
+      "width": 18,
+      "height": 13,
+      "x": 0,
+      "y": 0,
+      "opacity": 1,
+      "visible": true,
+      "data": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      ]
     },
     {
-     "id": 4,
-     "name": "brettOhneDame",
-     "type": "ausloeser",
-     "x": 160,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 5,
-     "name": "plakatZaehlen",
-     "type": "ausloeser",
-     "x": 144,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 6,
-     "name": "coachDelgado",
-     "type": "figur",
-     "x": 192,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 7,
-     "name": "sam",
-     "type": "figur",
-     "x": 64,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 8,
-     "name": "schuelerin",
-     "type": "statist",
-     "x": 48,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "von",
-       "type": "string",
-       "value": "3,7"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "10,7"
-      },
-      {
-       "name": "tun",
-       "type": "string",
-       "value": "räumt Figuren in die Kiste"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      }
-     ]
-    },
-    {
-     "id": 9,
-     "name": "mf2Fenster",
-     "type": "moebel",
-     "x": 48,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 10,
-     "name": "mf2Weltkarte",
-     "type": "moebel",
-     "x": 80,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 11,
-     "name": "mf2Tafel",
-     "type": "moebel",
-     "x": 112,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "mf2PlakatZaehlen",
-     "type": "moebel",
-     "x": 144,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 13,
-     "name": "mf2Fenster",
-     "type": "moebel",
-     "x": 176,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 14,
-     "name": "mf3Anrichte",
-     "type": "moebel",
-     "x": 16,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 15,
-     "name": "mf3Pokal",
-     "type": "moebel",
-     "x": 24,
-     "y": 28,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 57
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 16,
-     "name": "mf2Lehrerpult",
-     "type": "moebel",
-     "x": 208,
-     "y": 48,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "mf2Globus",
-     "type": "moebel",
-     "x": 224,
-     "y": 41,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 73
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 18,
-     "name": "mf2Spind",
-     "type": "moebel",
-     "x": 240,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "mf2Spind",
-     "type": "moebel",
-     "x": 256,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "mf2Pflanze",
-     "type": "moebel",
-     "x": 16,
-     "y": 144,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "mf2Pflanze",
-     "type": "moebel",
-     "x": 256,
-     "y": 144,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "mf3Spieltisch",
-     "type": "moebel",
-     "x": 48,
-     "y": 80,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 23,
-     "name": "mf3BrettKleinFiguren",
-     "type": "moebel",
-     "x": 58,
-     "y": 90,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 105
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 24,
-     "name": "mf3StuhlOrangeRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "mf3StuhlOrangeLinks",
-     "type": "moebel",
-     "x": 80,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "mf3Spieltisch",
-     "type": "moebel",
-     "x": 144,
-     "y": 80,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "mf3BrettKleinFiguren",
-     "type": "moebel",
-     "x": 154,
-     "y": 90,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 105
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "mf3StuhlOrangeRechts",
-     "type": "moebel",
-     "x": 128,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 29,
-     "name": "mf3StuhlOrangeLinks",
-     "type": "moebel",
-     "x": 176,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 30,
-     "name": "mf3Spieltisch",
-     "type": "moebel",
-     "x": 48,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 31,
-     "name": "mf3BrettKleinFiguren",
-     "type": "moebel",
-     "x": 58,
-     "y": 138,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 153
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 32,
-     "name": "mf3StuhlOrangeRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 128,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
-     "name": "mf3StuhlOrangeLinks",
-     "type": "moebel",
-     "x": 80,
-     "y": 128,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "mf3Spieltisch",
-     "type": "moebel",
-     "x": 144,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "mf3BrettKleinFiguren",
-     "type": "moebel",
-     "x": 154,
-     "y": 138,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 153
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "mf3StuhlOrangeRechts",
-     "type": "moebel",
-     "x": 128,
-     "y": 128,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "mf3StuhlOrangeLinks",
-     "type": "moebel",
-     "x": 176,
-     "y": 128,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "mf4Pinnwand",
-     "type": "moebel",
-     "x": 16,
-     "y": 22,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "mf4RegalNiedrig",
-     "type": "moebel",
-     "x": 224,
-     "y": 80,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "mf4RegalNiedrig",
-     "type": "moebel",
-     "x": 224,
-     "y": 128,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "mf4TuerKlassisch",
-     "type": "moebel",
-     "x": 144,
-     "y": 176,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "mf4Fussmatte",
-     "type": "moebel",
-     "x": 144,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
+      "id": 4,
+      "name": "ausloeser",
+      "type": "objectgroup",
+      "draworder": "topdown",
+      "x": 0,
+      "y": 0,
+      "opacity": 1,
+      "visible": true,
+      "objects": [
+        {
+          "id": 1,
+          "name": "start",
+          "type": "ausloeser",
+          "x": 144,
+          "y": 160,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "richtung",
+              "type": "string",
+              "value": "oben"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "schule",
+          "type": "ausloeser",
+          "x": 144,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 3,
+          "name": "pokalvitrine",
+          "type": "ausloeser",
+          "x": 16,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 4,
+          "name": "brettOhneDame",
+          "type": "ausloeser",
+          "x": 160,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 5,
+          "name": "plakatZaehlen",
+          "type": "ausloeser",
+          "x": 144,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 6,
+          "name": "coachDelgado",
+          "type": "figur",
+          "x": 192,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 7,
+          "name": "sam",
+          "type": "figur",
+          "x": 64,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 8,
+          "name": "schuelerin",
+          "type": "statist",
+          "x": 48,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "von",
+              "type": "string",
+              "value": "3,7"
+            },
+            {
+              "name": "bis",
+              "type": "string",
+              "value": "10,7"
+            },
+            {
+              "name": "tun",
+              "type": "string",
+              "value": "räumt Figuren in die Kiste"
+            },
+            {
+              "name": "wann",
+              "type": "string",
+              "value": "tag"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "mf2Fenster",
+          "type": "moebel",
+          "x": 48,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "mf2Weltkarte",
+          "type": "moebel",
+          "x": 80,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "mf2Tafel",
+          "type": "moebel",
+          "x": 112,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "mf2PlakatZaehlen",
+          "type": "moebel",
+          "x": 144,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "mf2Fenster",
+          "type": "moebel",
+          "x": 176,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "mf3Anrichte",
+          "type": "moebel",
+          "x": 16,
+          "y": 32,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "mf3Pokal",
+          "type": "moebel",
+          "x": 24,
+          "y": 28,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 57
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mf2Lehrerpult",
+          "type": "moebel",
+          "x": 208,
+          "y": 48,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "mf2Globus",
+          "type": "moebel",
+          "x": 224,
+          "y": 41,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 73
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "name": "mf2Spind",
+          "type": "moebel",
+          "x": 240,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "name": "mf2Spind",
+          "type": "moebel",
+          "x": 256,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "mf2Pflanze",
+          "type": "moebel",
+          "x": 16,
+          "y": 144,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "mf2Pflanze",
+          "type": "moebel",
+          "x": 256,
+          "y": 144,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "mf3Spieltisch",
+          "type": "moebel",
+          "x": 48,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "mf3BrettKleinFiguren",
+          "type": "moebel",
+          "x": 58,
+          "y": 90,
+          "width": 12,
+          "height": 9,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 105
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "mf3StuhlOrangeRechts",
+          "type": "moebel",
+          "x": 32,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "mf3StuhlOrangeLinks",
+          "type": "moebel",
+          "x": 80,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "mf3Spieltisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "mf3BrettKleinFiguren",
+          "type": "moebel",
+          "x": 154,
+          "y": 90,
+          "width": 12,
+          "height": 9,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 105
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "name": "mf3StuhlOrangeRechts",
+          "type": "moebel",
+          "x": 128,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "mf3StuhlOrangeLinks",
+          "type": "moebel",
+          "x": 176,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "name": "mf3Spieltisch",
+          "type": "moebel",
+          "x": 48,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "name": "mf3BrettKleinFiguren",
+          "type": "moebel",
+          "x": 58,
+          "y": 138,
+          "width": 12,
+          "height": 9,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 153
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "mf3StuhlOrangeRechts",
+          "type": "moebel",
+          "x": 32,
+          "y": 128,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "mf3StuhlOrangeLinks",
+          "type": "moebel",
+          "x": 80,
+          "y": 128,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "name": "mf3Spieltisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 128,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "mf3BrettKleinFiguren",
+          "type": "moebel",
+          "x": 154,
+          "y": 138,
+          "width": 12,
+          "height": 9,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 153
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "mf3StuhlOrangeRechts",
+          "type": "moebel",
+          "x": 128,
+          "y": 128,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "mf3StuhlOrangeLinks",
+          "type": "moebel",
+          "x": 176,
+          "y": 128,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "name": "mf4Pinnwand",
+          "type": "moebel",
+          "x": 16,
+          "y": 22,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "name": "mf4RegalNiedrig",
+          "type": "moebel",
+          "x": 224,
+          "y": 80,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 40,
+          "name": "mf4RegalNiedrig",
+          "type": "moebel",
+          "x": 224,
+          "y": 128,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "name": "mf4TuerKlassisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 176,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "mf4Fussmatte",
+          "type": "moebel",
+          "x": 144,
+          "y": 160,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "tilesets": [
-  {
-   "firstgid": 1,
-   "name": "platzhalter",
-   "image": "../grafik/platzhalter.png",
-   "imagewidth": 64,
-   "imageheight": 64,
-   "tilewidth": 16,
-   "tileheight": 16,
-   "tilecount": 16,
-   "columns": 4,
-   "margin": 0,
-   "spacing": 0,
-   "tiles": [
+  ],
+  "tilesets": [
     {
-     "id": 1,
-     "properties": [
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 2,
-     "properties": [
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 6,
-     "properties": [
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 7,
-     "properties": [
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 4,
-     "properties": [
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
+      "firstgid": 1,
+      "name": "platzhalter",
+      "image": "../grafik/platzhalter.png",
+      "imagewidth": 64,
+      "imageheight": 64,
+      "tilewidth": 16,
+      "tileheight": 16,
+      "tilecount": 16,
+      "columns": 4,
+      "margin": 0,
+      "spacing": 0,
+      "tiles": [
+        {
+          "id": 1,
+          "properties": [
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "properties": [
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "properties": [
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "properties": [
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "properties": [
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "properties": [
-  {
-   "name": "kennung",
-   "type": "string",
-   "value": "mapleFalls.clubraum"
-  }
- ]
+  ],
+  "properties": [
+    {
+      "name": "kennung",
+      "type": "string",
+      "value": "mapleFalls.clubraum"
+    }
+  ]
 }

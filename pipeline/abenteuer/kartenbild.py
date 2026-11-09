@@ -22,6 +22,8 @@ from pipeline.abenteuer.zusammenhang import HOLZ
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
 DUNKEL = (26, 22, 18, 255)
+# Größter erlaubter Spalt zwischen Fußmatte und Tür in Pixeln (KARTENREGELN 10.8).
+MATTE_ABSTAND = 3
 # Deckender Festschatten der Standardbilder von LimeZu (wirkt auf unseren Böden wie ein Schleier).
 GRAUSCHATTEN = (167, 151, 150, 255)
 
@@ -207,6 +209,41 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
     return befunde
 
 
+def mattenbefunde(szene: dict, privat: Path) -> list[str]:
+    """Fußmatten liegen sichtbar an ihrer Tür (KARTENREGELN 10.8): höchstens MATTE_ABSTAND Pixel
+    zwischen den deckenden Pixeln von Matte und Tür, oben oder unten.
+
+    Warum: Die Matten lagen in fünf Räumen eine Handbreit über dem Türbild der Südwand, mit einem
+    Streifen Boden dazwischen (Bildprüfung 9.11.2026); im Raster stand alles richtig.
+    """
+    moebel = lade_moebel()
+    gesetzt, _ = platziere(szene, moebel)
+
+    def sichtbar(st: dict) -> tuple[int, int, int, int]:
+        rand = Image.open(privat / moebel[st["name"]]["quelle"]).getbbox() or (
+            0,
+            0,
+            st["breite"],
+            st["hoehe"],
+        )
+        return (st["x"] + rand[0], st["y"] + rand[1], st["x"] + rand[2], st["y"] + rand[3])
+
+    tueren = [st for st in gesetzt if moebel[st["name"]].get("art") == "tuer"]
+    befunde = []
+    for matte in (st for st in gesetzt if "matte" in st["name"].lower()):
+        m = sichtbar(matte)
+        abstaende = [
+            min(abs(t[1] - m[3]), abs(m[1] - t[3]))
+            for t in map(sichtbar, tueren)
+            if m[0] < t[2] and t[0] < m[2]
+        ]
+        if abstaende and min(abstaende) > MATTE_ABSTAND:
+            befunde.append(
+                f"{matte['name']} liegt {min(abstaende)} px von der Tür entfernt (versatz anpassen)"
+            )
+    return befunde
+
+
 def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     """Hintergrund mit Möbeln (nach Tiefe) und Figuren von vorn, doppelt vergrößert."""
     moebel = lade_moebel()
@@ -251,6 +288,7 @@ def main() -> None:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
         vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{name}.png")
         befunde = sorted(set(bildbefunde(szene, privat))) + randspur(szene, gezeichnet)
+        befunde += mattenbefunde(szene, privat)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

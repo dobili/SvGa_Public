@@ -404,6 +404,14 @@ wie innen“: Das Diner ist ein Flachbau, der sich hinter den Nachbargrundstück
 ausdehnt (Küche, Lager, Toiletten); von der Straße sieht man nur den Gastraum. Eine breitere Fassade
 ginge nur mit einer längeren Birch Lane oder einem eigenen Fassadenbild (Entscheidung Haupt-Chat).
 
+**Varianten (KARTENREGELN 10.37, mittel-3):** A ist die Szene oben. B
+(`szenen/varianten/maple-falls-diner-b.json`): schlichter und kühler, blaue Wände, graue Fliesen,
+Glastheke aus Holz und Glas mit fünf blauen Hockern, drei runde Tische statt Nischen, Küche umgestellt
+(Kühlschränke links, Grillplatte frei in der Mitte). C (`…-c.json`): reicher, Fünfziger-Diner mit voller
+Bar, sieben Nischen (sechs auf rotem Teppich), zwei Spielautomaten, Bilder, drei Herde unter drei
+Hauben. Gleich in allen dreien: Größe, Wände, Tür (7, 15), Fenster, Durchreiche, Lager, Toiletten,
+Übergang und Auslöser.
+
 **Offen für den Haupt-Chat:** `werkzeuge/schatten.py` für `mf5Hocker`, `mf5Kaffeemaschine`, `mf5Mixer`
 (grauer Festschatten, 10.5; keine Black_Shadow-Fassung im Katalog).
 

@@ -1511,6 +1511,7 @@
       "zustand": "alt",
       "stil": "rustikal"
     },
+<<<<<<< HEAD
     "mf4TuerKlassisch": {
       "quelle": "spiel/generic/generic_073.png",
       "breite": 16,
@@ -1521,6 +1522,8 @@
       "zustand": "neu",
       "stil": "klassisch"
     },
+=======
+>>>>>>> origin/claude/friendly-shannon-y8bf90
     "mf5ThekeLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_91.png",
       "breite": 32,
@@ -1859,6 +1862,326 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "natur"
+<<<<<<< HEAD
+=======
+    },
+    "mf4TuerKlassisch": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf8GlasthekeLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_316.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8GlasthekeMitte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_317.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8GlasthekeRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_318.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8HockerBlau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_103.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8Rundtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8StuhlHellRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_283.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8StuhlHellLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_287.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8Sideboard": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_312.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8HerdTopf": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_149.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "herd",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf8Herd": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_150.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "herd",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf8KuehlschrankWeiss": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_161.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kuehlschrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf8Spielautomat": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_218.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8VitrineLeer": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf8BildTeller": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_270.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8BildPflanze": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_271.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8HerdOffen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_155.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "herd",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf8Schulbank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_6.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8SchulstuhlVorn": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8SchulstuhlHinten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8Pinnwand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_33.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pinnwand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8Kommode": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_311.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8RegalRot": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8Pokaltisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_157.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pokal",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf8Lehrerpult": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_27.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8RundtischDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8SchulstuhlLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8SchulstuhlRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8RegalHoch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_64.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8RegalHoch2": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8GlobusFrei": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_35.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "globus",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf8Tafel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_39.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tafel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+>>>>>>> origin/claude/friendly-shannon-y8bf90
     }
   }
 }

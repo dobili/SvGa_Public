@@ -1627,7 +1627,11 @@
         {
           "name": "stollenAusgang",
           "karte": "goldmine.stollen",
-          "art": "uebergang"
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "goldmine"
+          }
         }
       ]
     },
@@ -3631,37 +3635,6 @@
           "ziel": {
             "karte": "goldmine.stollen",
             "ausloeser": "stollenAusgang"
-          }
-        }
-      ]
-    },
-    {
-      "kennung": "goldmine",
-      "name": "ort.goldmine.name",
-      "nummer": 0,
-      "staffel": 2,
-      "art": "weg",
-      "karten": [
-        {
-          "kennung": "goldmine.stollen",
-          "datei": "karten/goldmine-stollen.json",
-          "name": "ort.goldmine.stollen",
-          "innen": true
-        }
-      ],
-      "figuren": [],
-      "ausloeser": [
-        {
-          "name": "start",
-          "art": "start"
-        },
-        {
-          "name": "stollenAusgang",
-          "karte": "goldmine.stollen",
-          "art": "uebergang",
-          "ziel": {
-            "karte": "ghostTown.aussen",
-            "ausloeser": "goldmine"
           }
         }
       ]

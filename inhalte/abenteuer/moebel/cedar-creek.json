@@ -989,8 +989,8 @@
       "stil": "klassisch"
     },
     "cc4Fahrplan": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_2.png",
-      "breite": 16,
+      "quelle": "spiel/eigene/fahrplan_cedar.png",
+      "breite": 38,
       "hoehe": 32,
       "kollision": true,
       "art": "schild",
@@ -999,8 +999,8 @@
       "stil": "klassisch"
     },
     "cc4Stationsschild": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
-      "breite": 16,
+      "quelle": "spiel/eigene/schild_cedar_creek.png",
+      "breite": 48,
       "hoehe": 32,
       "kollision": true,
       "art": "schild",

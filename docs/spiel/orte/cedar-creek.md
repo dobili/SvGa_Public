@@ -552,8 +552,7 @@ südlich der Straße (Spalten 22–44) bleibt für das Gemeindefest.
 
 Offen: Der Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.
 
-Offen (Haltepunkt): Stationsschild und Fahrplantafel sind graue Schilder ohne lesbare Schrift; ein eigenes
-Bild mit „Cedar Creek“ (wie das Neonschild des Waschsalons) wäre schöner. `bahnhof` ist vorläufig nur
+Offen (Haltepunkt): `bahnhof` ist vorläufig nur
 Ankunftspunkt (Art `start`, wie die Bushaltestelle); die Rückfahrt nach Riverton (Dialog am Bahnsteig, 10 Münzen)
 kommt in Runde 5. Die Karte des Bahnhofs Riverton gibt es noch nicht; der Dialog `riverton-bahnhofshalle.zug`
 führt schon auf `bahnhof`.
@@ -605,3 +604,6 @@ Fußmatte davor.
 
 **Werkzeug:** Die Regel „freie Kachel vor der Tür“ (`kartenregeln.pruefe_tueren`) prüft bei Türen in der
 Südwand jetzt die Kachel im Raum über der Tür (Test `test_tuer_in_der_suedwand_braucht_freie_kachel_im_raum`).
+
+**Haltepunkt (Nachtrag):** Stationsschild „CEDAR CREEK“ (eigenes Bild, 3 × 2) bei (13, 3), Bank (16, 4),
+Fahrplantafel „FAHRPLAN“ (eigenes Bild) bei (19, 3); `bahnhof` liegt jetzt bei (16, 3) über der Bank.

@@ -436,7 +436,7 @@
     },
     {
       "moebel": "cc4Stationsschild",
-      "feld": [19, 3]
+      "feld": [13, 3]
     },
     {
       "moebel": "cc4Bahnbank",
@@ -444,7 +444,7 @@
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [20, 3]
+      "feld": [19, 3]
     },
     {
       "moebel": "cc4NadelbaumB",
@@ -756,7 +756,7 @@
     },
     {
       "name": "bahnhof",
-      "feld": [14, 3]
+      "feld": [16, 3]
     },
     {
       "name": "flussweg",

@@ -1,34 +1,32 @@
-# Auftrag mittel-1: Gesamtsimulation dauerhaft ablegen
+# Auftrag mittel-1: Balancing mit der Gesamtsimulation
 
-**Stand:** fertig, zusammengeführt (Haupt-Chat, 08.11.2026, zwanzigster Auftrag; Ausnahmeliste geleert, weil niedrig-1 die fünf Figuren gesetzt hat)
+**Stand:** offen (Haupt-Chat, 09.11.2026, einundzwanzigster Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `pipeline/abenteuer/gesamtsimulation.cjs` (neu), `pipeline/tests/test_abenteuer_simulation.py`
-(neu), Ink-Dateien und `quests.json` nur für Befunde des Skripts, `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
+**Darf ändern:** `pipeline/abenteuer/gesamtsimulation*.cjs`, `pipeline/tests/test_abenteuer_simulation.py`,
+`quests.json` (nur Belohnungen), `laeden.json` (nur Preise), `funde.json` (nur Belohnungen),
+`docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, mit `ABENTEUER_SIMULATION=1`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Dein Vorschlag ist angenommen: Das Skript der Gesamtsimulation kommt nach
-`pipeline/abenteuer/gesamtsimulation.cjs`, damit jeder spätere Umbau gegen Sackgassen geprüft wird.
+Der Autor wünscht viele Karten („je mehr, desto besser“) und Balancing danach. Die Simulation kennt
+jetzt den ganzen Weg; nutze sie für eine Auswertung der Wirtschaft.
 
 ## Vorgaben
 
-1. Dateikopf auf Deutsch (Zweck, Aufruf, Ausgabe), Kommentare nach CLAUDE.md, keine Pfade außerhalb
-   des Repositorys. Aufruf aus dem Hauptordner: `node pipeline/abenteuer/gesamtsimulation.cjs --startwert 1`.
-   Ausgabe: hängende Quests, nie erreichte Knoten, Figuren ohne Karte; Rückgabewert ungleich 0 bei
-   Sackgassen oder fehlendem Abspann.
-2. Figuren ohne Karte nicht mehr ersatzweise setzen, sondern als Befund melden (niedrig-1 setzt die
-   fünf Figuren gerade auf die Karten; bis dahin darf der Test sie als bekannte Ausnahme führen, mit
-   Kommentar, damit die Liste danach gelöscht wird).
-3. Test `pipeline/tests/test_abenteuer_simulation.py`: läuft mit einem Startwert und nur, wenn die
-   Umgebungsvariable `ABENTEUER_SIMULATION=1` gesetzt ist (sonst `pytest.skip` mit Begründung), damit
-   der gewöhnliche Testlauf schnell bleibt. Wenn sich die Laufzeit für einen Startwert deutlich unter
-   eine Minute drücken lässt, gern ohne diese Bedingung; dann im Bericht sagen.
-4. Victor und Juno im Clubraum: Bleibt beim Umweg über den Coach (Figuren in `orte.json` können nicht
-   bedingt erscheinen, und Victor dauerhaft im Clubraum passt nicht zur Geschichte). Kein Handlungsbedarf.
+1. Erweitere die Simulation um eine Auswertung je Ort (Startwerte 1 bis 4, dazu ein „sparsamer“ und
+   ein „verschwenderischer“ Spieler): Münzen bei Ankunft und Abreise, was im Laden bezahlbar wäre,
+   welche Karten der Spieler besitzt, wie oft er Karten in Clubkämpfen braucht (Annahme: gegen den
+   Clubchef ohne Karte Sieg mit 40 %, mit leichter Karte 50 %, mit mittlerer 60 %, mit starker 75 %).
+2. Ziele (Regelwerk R21 ff.): Ein sparsamer Spieler soll jede Stadt mit mindestens Silber schaffen
+   können; Münzen sollen nie so knapp sein, dass ein Clubkampf ohne Kaufmöglichkeit hängt, aber auch
+   nicht so üppig, dass alle starken Karten früh gekauft sind. Starke Karten nicht vor Akt 2 bezahlbar.
+3. Passe Preise und Belohnungen in kleinen Schritten an, bis die Ziele erfüllt sind. Jede Änderung
+   mit Grund in einer Tabelle im Bericht (alt, neu, warum).
+4. Die Auswertung bleibt als Option im Skript (`--wirtschaft`), damit sie nach neuen Karten wieder läuft.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt.**
 

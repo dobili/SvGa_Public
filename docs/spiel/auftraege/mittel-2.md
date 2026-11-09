@@ -1,33 +1,35 @@
-# Auftrag mittel-2: Die Hochebene mit den Vell-Familien
+# Auftrag mittel-2: Schach960 am Varianten-Tisch (Inhalte)
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der fünfzehnte Auftrag, Hochebene, ist zusammengeführt, danke; Varianten-Tisch und Fundtabelle sind nachgezogen. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, sechzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/orte.json` (nur der Ort `hochebene`: Figuren und Auslöser),
-`hochebene.ink`, `quests.json`, `funde.json`, `texte/de.json` (nur neue Schlüssel),
-`app/skripte/erzeuge-figurenbilder.mjs` und `inhalte/abenteuer/portraets/` (nur neue Bilder),
-`docs/spiel/05_Story_Bibel.md` (Szene 82), `docs/spiel/auftraege/mittel-2.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`, Simulation
+**Darf ändern:** Ink-Dateien der Orte mit Varianten-Tisch und der Wege, `begegnungen.json` (nur neue
+Einträge), `gegner.json` (nur neue Einträge), `orte.json` (nur neue Figuren), `quests.json` (nur
+neue Nebenquests), `funde.json`, `texte/de.json` (nur neue Schlüssel), `inhalte/abenteuer/portraets/`
+(nur neue Bilder), `docs/spiel/10_Sprueche_Schauplaetze_Varianten.md`, `docs/spiel/auftraege/mittel-2.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Der Autor hat Q21-1 mit „Empfehlung folgen“ beantwortet: Die Hochebene zeigt die erfundenen
-Vell-Familien, kurz und respektvoll, mit heutigen Figuren und ihrem eigenen Spiel (Variante
-„Falke und Bison“, L9; die Technik dafür fehlt noch, die Partie bitte wie die anderen Varianten
-vorerst erklären und vertrösten). Vor der Veröffentlichung liest jemand aus einer indigenen
-Gemeinschaft gegen; schreib deshalb so, dass die Gegenlesung wenig ändern muss.
+V1 Schach960 (Abschnitt 3 in `docs/spiel/10_…`) kommt ins Spiel. Der Haupt-Chat baut die Technik:
+Begegnungen bekommen `"variante": "schach960"`, die Startstellung wird zufällig ausgelost (oder fest
+mit `"startnummer": 0 bis 959`), Rochade nach 960-Regeln, die Engine spielt mit. Du baust die Inhalte.
 
 ## Vorgaben
 
-1. Keine realen Stämme, Orte, Zeremonien oder Symbole; keine Klischees (Federn, Tipis, „weise
-   Alte“, Naturmystik); die Figuren sind Menschen von heute mit Berufen, Humor und eigenen Ansichten
-   über Schach und den Konzern.
-2. Figuren in `orte.json` (Ort `hochebene`), Porträts per Skript, Dialoge, eine kleine Quest und
-   ein Fund; ihre Szene in der Bibel aktualisieren.
-3. Im Bericht: die Stellen, die die Gegenlesung besonders ansehen sollte, und die Objekte, die
-   niedrig-1 auf der Karte der Hochebene ergänzen muss.
+1. Ein Varianten-Tisch mit Schach960 in einer passenden Stadt (Vorschlag Silicon Bay: die Studenten
+   der Akademie spielen „gegen das Auswendiglernen“; oder dein besserer Vorschlag aus der Bibel),
+   eine Figur mit zwei bis drei Begegnungen steigender Stärke, Belohnung Münzen und ein Fund, keine
+   Nadeln (Varianten zählen nie für Nadeln, Wertung oder die App).
+2. Ambrose erklärt beim ersten Mal in zwei, drei Sätzen die Regeln (Grundreihe gemischt, Läufer auf
+   verschiedenen Farben, König zwischen den Türmen, Rochade: König und Turm landen auf denselben
+   Feldern wie im normalen Schach) und warum das gut tut: Eröffnungswissen hilft nicht, nur Grundsätze
+   (Entwicklung, Zentrum, Königssicherheit; Buchbezug Kapitel 2 und 3).
+3. Schreibe `"variante": "schach960"` in die Begegnungen; solange die Technik fehlt, meldet der Test
+   der Pipeline den Wert vielleicht als unbekannt: dann im Bericht nennen, der Haupt-Chat ergänzt das
+   Schema.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Fertig** auf `abenteuer-regelwerk` (Basis e198937a hereingeholt). Prüfungen: `pytest pipeline/tests`
 595 bestanden, `npm run pruefen` 362 Dateien und 2422 Tests, Paketbau läuft, Prettier für die

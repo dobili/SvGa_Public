@@ -293,6 +293,12 @@
           "datei": "karten/cedar-creek-waschsalon.json",
           "name": "ort.cedarCreek.waschsalon",
           "innen": true
+        },
+        {
+          "kennung": "cedarCreek.drechslerei",
+          "datei": "karten/cedar-creek-drechslerei.json",
+          "name": "ort.cedarCreek.drechslerei",
+          "innen": true
         }
       ],
       "figuren": [
@@ -393,6 +399,30 @@
           "ziel": {
             "karte": "cedarCreek.aussen",
             "ausloeser": "waschsalonTuer"
+          }
+        },
+        {
+          "name": "drechslereiTuer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.drechslerei",
+            "ausloeser": "drechslereiAusgang"
+          }
+        },
+        {
+          "name": "drechslereiAusgang",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "drechslereiTuer"
+          }
+        },
+        {
+          "name": "flussweg",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.flussweg",
+            "ausloeser": "weiterCedar"
           }
         },
         {
@@ -597,7 +627,7 @@
           "art": "uebergang",
           "ziel": {
             "karte": "cedarCreek.aussen",
-            "ausloeser": "bushaltestelle"
+            "ausloeser": "flussweg"
           },
           "dialog": "cedar-creek-aussen.ankunft_zu_fuss"
         }
@@ -650,7 +680,7 @@
           "art": "uebergang",
           "ziel": {
             "karte": "cedarCreek.aussen",
-            "ausloeser": "bushaltestelle"
+            "ausloeser": "zedernwald"
           }
         },
         {

@@ -10,42 +10,67 @@
     "e": "erde",
     "h": "holzDunkel"
   },
-  "beschreibung": "Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Eine schmale Asphaltstraße kommt links aus dem Zedernwald und endet rechts am Bach; an ihr entlang läuft ein gepflasterter Gehweg. Das größte Gebäude ist die Bibliothek aus rotem Backstein von 1890 mit ihrem schiefergedeckten Turm und hohen Bogenfenstern, die hölzerne Eingangstür liegt unten im Turm. Links daneben der Waschsalon von Mr. Boateng mit rot-weißen Markisen und großen Schaufenstern, vor der Tür wartet ein Hund. Zwischen beiden Gebäuden steht eine alte Laterne, ein Mülleimer steht am Bach. Rechts an der Straße die Bushaltestelle mit Wartehäuschen, an der der Busfahrer raucht; dahinter steht die hölzerne Anschlagtafel des Ortes mit Zetteln vom Gemeindefest, und mitten darauf klebt das glänzende Plakat von Perfect Move, das gar nicht hierher passt. Ganz rechts fließt der Bach, am Ufer ein Streifen Erde; ein Holzsteg führt ins Wasser, auf dem Rosa angelt und ein Mann einzelne Bretter erneuert, ein Reiher steht still im seichten Wasser. Unterhalb der Straße eine Wiese mit roten Zedern und einer Bank, auf der Victor sitzt und wartet. Laufwege: der Gehweg vor allen Türen, die Straße nach links in den Wald, der Uferweg zum Steg.",
+  "beschreibung": "Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Die schmale Asphaltstraße kommt links vom Flussweg und endet rechts vor dem Bach, beidseitig mit gepflastertem Gehweg. An der Nordseite stehen nebeneinander die Drechslerei von Mr. Dunmore (kleine Holzscheune mit Blechdach, Rolltor links, Holzstapel davor), der Waschsalon von Mr. Boateng mit Markisen und großen Schaufenstern, vor dem ein Hund wartet, und das größte Gebäude, die Bibliothek aus rotem Backstein von 1890 mit schiefergedecktem Turm; ihre hölzerne Tür liegt unten im Turm. Zwischen Waschsalon und Bibliothek steht eine alte Laterne. Rechts an der Straße die hölzerne Anschlagtafel mit Zetteln vom Gemeindefest und dem glänzenden Plakat von Perfect Move, daneben die Bushaltestelle mit Wartehäuschen; der Busfahrer trinkt auf der Straße Kaffee aus der Thermoskanne, Victor wartet am Häuschen. Hinter den Häusern eine Wiese mit roten Zedern und Fichten, aus der links der Zedernpfad zum Gehweg herunterkommt. Südlich der Straße zwei Holzhäuser mit roten Dächern und Gartenweg, daneben eine Wiese mit Zedern, einer Baumstammbank und einer Bank zum Bach. Ganz rechts läuft ein Uferweg aus Erde, dahinter fließt der Bach von oben nach unten durch das Bild; ein breiter Holzsteg ragt hinein, auf dem Rosa angelt und ein Mann Bretter erneuert, weiter unten der Bootsschuppen des Kanuverleihs mit einem Ruderboot im Wasser, ein Reiher steht am Ufer. Oben führt eine Holzbrücke über den Bach in den Zedernwald am Ostufer. Laufwege: Gehwege vor allen Türen, die Straße nach links, Zedernpfad, Uferweg, Steg und Brücke.",
   "raster": [
-    "############################################",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................ehhhh~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#pppppppppppppppppppppppppppppppppppe~~~~~~#",
-    "sssssssssssssssssssssssssssssssssssse~~~~~~#",
-    "#ssssssssssssssssssssssssssssssssssse~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "#...................................e~~~~~~#",
-    "############################################"
+    "##################################################~~~~~~####",
+    "#...............................................ee~~~~~~...#",
+    "#...............................................ee~~~~~~...#",
+    "#...............................................ee~~~~~~...#",
+    "#eeeeeeeeeee....................................ee~~~~~~...#",
+    "#eeeeeeeeeee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................eehhhhhheeee",
+    "#.........ee....................................eehhhhhheeee",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................eehhhh~~...#",
+    "#.........ee....................................eehhhh~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#.........ee....................................ee~~~~~~...#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~~...#",
+    "ssssssssssssssssssssssssssssssssssssssssssssssssee~~~~~~...#",
+    "ssssssssssssssssssssssssssssssssssssssssssssssssee~~~~~~...#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#pp..................p..........................ee~~~~~~...#",
+    "#ppppppppppppppppppppp..........................ee~~~~~~...#",
+    "##################################################~~~~~~####"
   ],
   "objekte": [
     {
+      "moebel": "cc4Drechslerei",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [6, 18]
+    },
+    {
       "moebel": "mf2Waschsalon",
-      "feld": [1, 8]
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [20, 15]
     },
     {
       "moebel": "mf2Bibliothek",
-      "feld": [11, 1],
-      "id": "bibliothek"
+      "feld": [22, 3],
+      "id": "bibliothek",
+      "bauteil_ok": true
     },
     {
       "moebel": "mf2Haustuer",
@@ -53,155 +78,272 @@
       "versatz": [-96, 87]
     },
     {
-      "moebel": "mfLaterne",
-      "feld": [9, 13]
+      "moebel": "cc3Anschlagtafel",
+      "feld": [40, 17]
     },
     {
       "moebel": "mfBushaltestelle",
-      "feld": [30, 14]
+      "feld": [42, 16]
     },
     {
       "moebel": "mfMuelltonne",
-      "feld": [35, 15]
+      "feld": [46, 23]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [8, 1]
     },
     {
       "moebel": "mf2Zeder",
-      "feld": [3, 19]
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [16, 2]
     },
     {
       "moebel": "mf2ZederSchmal",
-      "feld": [8, 19]
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [2, 6]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [13, 6]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [17, 6]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [41, 2]
     },
     {
       "moebel": "mf2Zeder",
-      "feld": [14, 19]
+      "feld": [44, 1]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [41, 8]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [45, 7]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [42, 12]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [56, 1]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [56, 4]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [57, 11]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [56, 15]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [57, 19]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [56, 23]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [57, 27]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [56, 31]
+    },
+    {
+      "moebel": "cc4Wohnhaus",
+      "feld": [3, 24]
+    },
+    {
+      "moebel": "cc4Wohnhaus",
+      "feld": [12, 24]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [24, 24]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [28, 27]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [32, 24]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [25, 31]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [35, 29]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [33, 31]
+    },
+    {
+      "moebel": "cc4NadelbaumB",
+      "feld": [38, 24]
     },
     {
       "moebel": "mfBank",
-      "feld": [22, 20]
+      "feld": [45, 25]
     },
     {
-      "moebel": "mf2Zeder",
-      "feld": [28, 19]
+      "moebel": "cc4Stammbank",
+      "feld": [29, 30]
     },
     {
-      "moebel": "mf2ZederSchmal",
-      "feld": [33, 19]
+      "moebel": "cc4Bootsschuppen",
+      "feld": [45, 27]
     },
     {
-      "moebel": "mf2Zeder",
-      "feld": [35, 1]
-    },
-    {
-      "moebel": "mf2ZederSchmal",
-      "feld": [35, 8]
-    },
-    {
-      "moebel": "mf2BlumenbeetKlein",
-      "feld": [25, 17]
-    },
-    {
-      "moebel": "cc3Anschlagtafel",
-      "feld": [31, 7]
+      "moebel": "cc4Ruderboot",
+      "feld": [50, 29],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [32, 17],
+      "feld": [44, 19],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "bushaltestelle",
-      "feld": [32, 17]
+      "feld": [44, 19]
     },
     {
       "name": "busZurueck",
-      "feld": [31, 17]
+      "feld": [43, 19]
     },
     {
-      "name": "bibliothekTuer",
-      "feld": [14, 17]
+      "name": "drechslereiTuer",
+      "feld": [4, 19]
     },
     {
       "name": "waschsalonTuer",
-      "feld": [5, 17]
+      "feld": [16, 19]
+    },
+    {
+      "name": "bibliothekTuer",
+      "feld": [25, 19]
     },
     {
       "name": "plakat",
-      "feld": [32, 9]
+      "feld": [40, 19]
     },
     {
       "name": "steg",
-      "feld": [39, 12]
+      "feld": [49, 14]
+    },
+    {
+      "name": "flussweg",
+      "feld": [0, 20]
+    },
+    {
+      "name": "flussweg",
+      "feld": [0, 21]
     },
     {
       "name": "zedernwald",
-      "feld": [0, 18]
+      "feld": [59, 8]
+    },
+    {
+      "name": "zedernwald",
+      "feld": [59, 9]
     }
   ],
   "figuren": [
     {
       "name": "rosa",
-      "feld": [40, 12]
+      "feld": [53, 14]
     },
     {
       "name": "victor",
-      "feld": [24, 21]
+      "feld": [47, 19]
     }
   ],
   "belebung": [
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [33, 17],
+      "feld": [42, 21],
       "eigenschaften": {
-        "von": "33,17",
-        "bis": "34,17",
-        "tun": "raucht an der Haltestelle",
+        "von": "42,21",
+        "bis": "44,21",
+        "tun": "trinkt Kaffee aus der Thermoskanne",
         "wann": "tag"
       }
     },
     {
       "name": "stegbauer",
       "typ": "statist",
-      "feld": [37, 12],
+      "feld": [51, 15],
       "eigenschaften": {
-        "von": "37,12",
-        "bis": "37,12",
-        "tun": "repariert den Steg",
+        "von": "51,15",
+        "bis": "52,15",
+        "tun": "erneuert Bretter am Steg",
         "wann": "tag"
       }
     },
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [6, 17],
+      "feld": [17, 19],
       "eigenschaften": {
-        "von": "6,17",
-        "bis": "7,17",
+        "von": "17,19",
+        "bis": "19,19",
         "verhalten": "folgen"
       }
     },
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [36, 15],
+      "feld": [49, 24],
       "eigenschaften": {
-        "von": "36,15",
-        "bis": "36,15",
+        "von": "49,24",
+        "bis": "49,24",
         "verhalten": "sitzen"
       }
     },
     {
       "name": "eichelhaeher",
       "typ": "tier",
-      "feld": [19, 1],
+      "feld": [9, 2],
       "eigenschaften": {
-        "von": "19,1",
-        "bis": "24,1",
+        "von": "9,2",
+        "bis": "16,2",
         "wann": "morgen",
         "verhalten": "fliegen"
       }

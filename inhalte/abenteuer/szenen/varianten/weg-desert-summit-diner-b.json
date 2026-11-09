@@ -1,0 +1,315 @@
+{
+  "karte": "wegDesertSummit.diner",
+  "datei": "karten/varianten/weg-desert-summit-diner-b.json",
+  "art": "aussen",
+  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen wird die Wüste zu Steppe mit ersten Pinien, die Straße führt zur Bergstraße. Variante B, die schlichtere: das Motel steht links vom Diner, nur ein Sattelzug, keine alte Tankstelle, ein Tafelberg statt des Felsbogens, weniger Kakteen.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "boeden": {
+    "r": "gras",
+    "s": "asphalt",
+    "k": "schotter"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern"],
+  "raster": [
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "##############################################################...............................#########################################################",
+    "#.......................#################............................................................................................................#",
+    "#.......................#################............................................................................................................#",
+    "#.......................#################............................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#.............................................................ssssssssssssssssssssssssssssssssss.....................................................#",
+    "#.............................................................ssssssssssssssssssssssssssssssssss.....................................................#",
+    "#.............................................ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.......................................#",
+    "#.............................................ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.......................................#",
+    "#.............................................ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.......................................#",
+    "#.............................................sss...ssssssssssssssssssssssssssss...........................sssssssssssssssssssssssssssssssssssssssssss",
+    "#.............................................sss...ssssssssssssssssssssssssssss...........................sssssssssssssssssssssssssssssssssssssssssss",
+    "#.............................................sss...ssssssssssssssssssssssssssss...........................sssssssssssssssssssssssssssssssssssssssssss",
+    "#.............................................sss...ssssssssssssssssssssssssssss..............................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssss...ssssssssssssssssssssssssssss.....................................................................#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssss...ssssssssssssssssssssssssssss.....................................................................#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssss...ssssssssssssssssssssssssssss.....................................................................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......ssssssssssssssssssssssssssss.....................................................................#",
+    "#...................................................ssssssssssssssssssssssssssss.....................................................................#",
+    "#...................................................ssssssssssssssssssssssssssss................#############################........................#",
+    "#...................................................ssssssssssssssssssssssssssss................#############################........................#",
+    "#...............................................................................................#############################........................#",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "wds6Motel",
+      "feld": [64, 3]
+    },
+    {
+      "moebel": "wds6SchildMotel",
+      "feld": [61, 5]
+    },
+    {
+      "moebel": "wds6Diner",
+      "feld": [80, 3],
+      "id": "diner"
+    },
+    {
+      "moebel": "wds6SchildDiner",
+      "auf": "diner",
+      "versatz": [0, -24]
+    },
+    {
+      "moebel": "wds6Tafel",
+      "feld": [90, 8]
+    },
+    {
+      "moebel": "wds6NeonK",
+      "feld": [84, 2]
+    },
+    {
+      "moebel": "wds6Container",
+      "feld": [92, 3]
+    },
+    {
+      "moebel": "wds6Wasserturm",
+      "feld": [130, 4]
+    },
+    {
+      "moebel": "wds6Reklame",
+      "feld": [114, 4]
+    },
+    {
+      "moebel": "wds6SattelzugBlau",
+      "feld": [54, 17]
+    },
+    {
+      "moebel": "wds6Spieltisch",
+      "feld": [68, 19],
+      "id": "tisch"
+    },
+    {
+      "moebel": "wds6Brett",
+      "auf": "tisch",
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "wds6Reifen",
+      "feld": [76, 16]
+    },
+    {
+      "moebel": "wds6Ortsschild",
+      "feld": [138, 13]
+    },
+    {
+      "moebel": "wds6Bank",
+      "feld": [8, 17]
+    },
+    {
+      "moebel": "wds6Wegweiser",
+      "feld": [2, 17]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "wds6Geierkreis",
+      "feld": [100, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [124, 9]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [121, 10]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [140, 4]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [146, 10]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [142, 12]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [146, 5]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [126, 9]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [111, 11]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [85, 19]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [137, 21]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [117, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [96, 19]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [86, 22]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [141, 21]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [35, 8]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [25, 7]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [28, 13]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [35, 11]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [21, 8]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [40, 10]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [147, 16],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckDesert",
+      "feld": [149, 15]
+    },
+    {
+      "name": "zurueckDesert",
+      "feld": [149, 16]
+    },
+    {
+      "name": "zurueckDesert",
+      "feld": [149, 17]
+    },
+    {
+      "name": "weiterBergstrasse",
+      "feld": [0, 19]
+    },
+    {
+      "name": "weiterBergstrasse",
+      "feld": [0, 20]
+    },
+    {
+      "name": "weiterBergstrasse",
+      "feld": [0, 21]
+    },
+    {
+      "name": "tafel",
+      "feld": [90, 10]
+    },
+    {
+      "name": "fundNeonK",
+      "feld": [84, 2]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "earl",
+      "feld": [70, 25]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "trucker",
+      "typ": "statist",
+      "feld": [66, 22],
+      "eigenschaften": {
+        "von": "66,22",
+        "bis": "66,22",
+        "tun": "repariert einen Reifen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [86, 10],
+      "eigenschaften": {
+        "von": "86,10",
+        "bis": "86,10",
+        "tun": "fegt den Parkplatz",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [40, 24],
+      "eigenschaften": {
+        "von": "40,24",
+        "bis": "44,24",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [128, 22],
+      "eigenschaften": {
+        "von": "128,22",
+        "bis": "132,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [30, 17],
+      "eigenschaften": {
+        "von": "30,17",
+        "bis": "34,17",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "variante": "b"
+}

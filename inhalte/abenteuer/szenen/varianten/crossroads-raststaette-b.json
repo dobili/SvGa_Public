@@ -281,12 +281,9 @@
       "zu": "t0"
     },
     {
-      "moebel": "crTisch",
-      "feld": [21, 15]
-    },
-    {
-      "moebel": "crStuhl",
-      "feld": [20, 14]
+      "moebel": "ld5Rundtisch",
+      "feld": [21, 15],
+      "id": "nova"
     }
   ],
   "ausloeser": [
@@ -317,7 +314,7 @@
     },
     {
       "name": "nova",
-      "feld": [22, 15]
+      "feld": [20, 16]
     }
   ],
   "belebung": [

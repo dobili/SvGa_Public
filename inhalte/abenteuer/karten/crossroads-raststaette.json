@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 68,
+  "nextobjectid": 67,
   "layers": [
     {
       "id": 1,
@@ -182,8 +182,8 @@
           "id": 6,
           "name": "nova",
           "type": "figur",
-          "x": 352,
-          "y": 240,
+          "x": 320,
+          "y": 256,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -1535,19 +1535,19 @@
         },
         {
           "id": 65,
-          "name": "crTisch",
+          "name": "ld5Rundtisch",
           "type": "moebel",
           "x": 336,
           "y": 240,
-          "width": 16,
-          "height": 16,
+          "width": 32,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 248
+              "value": 264
             },
             {
               "name": "kollision",
@@ -1558,29 +1558,6 @@
         },
         {
           "id": 66,
-          "name": "crStuhl",
-          "type": "moebel",
-          "x": 320,
-          "y": 224,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 67,
           "name": "mf8Spielautomat",
           "type": "moebel",
           "x": 352,

@@ -12,18 +12,6 @@
       "hoehe": 32,
       "kollision": true
     },
-    "crTisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_276.png",
-      "breite": 16,
-      "hoehe": 16,
-      "kollision": true
-    },
-    "crStuhl": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_285.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true
-    },
     "crBus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_2.png",
       "breite": 112,

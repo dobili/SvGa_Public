@@ -1,43 +1,30 @@
-# Auftrag mittel-1: Aussehen aller Figuren (Charakter-Generator)
+# Auftrag mittel-1: Riverton und der Weg dorthin mit echten Möbeln
 
-**Stand:** fertig (mittel-1, 09.11.2026); im privaten Repository lokal committet, Push steht aus (siehe Bericht)
+**Stand:** offen (Haupt-Chat, 09.11.2026, vierundzwanzigster Auftrag; die Figuren sind gebaut und gepusht, danke)
 
-**Zweig:** im öffentlichen Repository nur `docs/spiel/auftraege/mittel-1.md` (Bericht); die Arbeit liegt
-im **privaten** Repository `dobili/schach-abenteuer-inhalte` (in deiner Sitzung unter
-`/home/user/schach-abenteuer-inhalte`), Zweig `main`, vorher `git pull`.
-**Darf ändern:** dort nur `werkzeuge/figuren.json` und `spiel/figuren/` (gebaut).
-**Prüfung vor dem Push:** `python werkzeuge/figuren.py` läuft ohne Fehler (Pillow: `python3 -m venv
-/tmp/bv && /tmp/bv/bin/pip install pillow`, dann `/tmp/bv/bin/python werkzeuge/figuren.py`).
-
-**Wichtig:** Das private Repository bleibt privat. Nichts daraus ins öffentliche Repository kopieren
-(Lizenz von LimeZu verbietet die Weitergabe der Bilder).
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 7339b420)
+**Darf ändern:** `inhalte/abenteuer/karten/riverton-*.json`, `inhalte/abenteuer/karten/weg-cedar-riverton-*.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge, Schlüssel mit Vorsilbe `rv`, etwa `rvBahnsteigbank`),
+`docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests -q`, in `app/` Prettier, `npm run build` mit
+verlinktem privaten Repository (`ln -s /home/user/schach-abenteuer-inhalte app/inhalte-privat/quelle`) und
+`CHROMIUM_PFAD=… PLAYWRIGHT_NUR_CHROMIUM=1 npx playwright test tests/e2e/abenteuer`
 
 ## Ziel
 
-Jede der 83 Figuren aus `inhalte/abenteuer/orte.json` (Feld `sprite`, etwa `figuren/skater-jo.png`)
-bekommt ein eigenes Aussehen aus den Teilen des Charakter-Generators, passend zur Story-Bibel
-(Alter, Beruf, Stil, Herkunft). Dazu der Held `held-0` (neutral, jugendlich, freundlich) und
-`ambrose-jung` (Ambrose als junger Mann in den Erinnerungen, London und Siedlung).
+Wie niedrig-1 in Maple Falls (Regeln in `inhalte/abenteuer/README.md`, Abschnitt Tiled-Karten, Möbel):
+Riverton draußen (Kleinstadt am Fluss, Bahnhof), Pavillon (Schachtische im Freien), Bahnhofshalle
+(große Uhr, Bänke, Schalter, Zeitungsstand), Wohnwagen, Schuppen; dazu Zedernwald und Bahndamm.
+Grafik im Register `register/register.csv` des privaten Repositorys (bei dir vorhanden; nur lesen,
+nichts dorthin pushen), Themen etwa „subway and train station“, „city props“, „camping“, „garden“.
 
 ## Vorgaben
 
-1. Eintrag je Figur in `werkzeuge/figuren.json` unter `figuren`, Schlüssel = Dateiname ohne `.png`
-   (`skater-jo`, `coach-delgado` …). Felder und Werte stehen in `erklaerung` in der Datei. Kinder mit
-   `"kind": true` und den Kinderteilen.
-2. Die Teile siehst du auf den Übersichten in `register/figuren/` (koerper, kleidung, frisuren,
-   zubehoer, kinder; Nummern unter jedem Bild). Bitte jedes Blatt einmal ansehen und dann wählen.
-3. Hauttöne (koerper 1–9) vielfältig und passend zu den Figuren der Bibel; keine Klischees über
-   Kleidung oder Zubehör (Vell-Familien: heutige Kleidung, keine Federn, kein Schmuck aus realen
-   Kulturen). Wiederkehrende Figuren (Victor, Nova, Ambrose, Harlan …) haben überall dasselbe Bild.
-4. Gleiche Kombinationen vermeiden; Figuren eines Ortes sollen sich auf einen Blick unterscheiden.
-5. Die zwei Probeeinträge (`held-0`, `skater-jo`) darfst du ändern.
-6. Bauen, die Bögen in `spiel/figuren/` mitcommitten, pushen. Im Bericht: Tabelle Figur → kurze
-   Beschreibung des Aussehens (eine Zeile je Figur), damit der Autor es später nachlesen kann.
+1. Platzhalterkacheln Kiste, Lampe, Brett dort durch Boden ersetzen, wo jetzt ein Möbel steht.
+2. Gänge mindestens eine Kachel breit, jeder Auslöser und jede Figur erreichbar (Tests).
+3. Je Karte ein Bildschirmfoto prüfen, im Bericht ein Satz je Karte.
 
-Die Porträts leitet der Haupt-Chat danach aus denselben Angaben ab (Haut, Augen, Frisur), du musst
-dafür nichts tun.
-
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 85 Einträge in `werkzeuge/figuren.json` (83 Figuren aus `orte.json`, dazu `held-0` und
 `ambrose-jung`), alle gebaut nach `spiel/figuren/` (`python werkzeuge/figuren.py`: „85 Figuren

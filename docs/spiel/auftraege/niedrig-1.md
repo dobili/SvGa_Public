@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Ironwood und der Weg dorthin einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, siebzehnter Auftrag)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand adead8c3)
 **Darf ändern:** `inhalte/abenteuer/karten/ironwood-*.json`, `inhalte/abenteuer/karten/weg-riverton-ironwood-*.json`,
@@ -13,6 +13,41 @@ Wie Cedar Creek: Ironwood draußen (Industriestadt: Fabrikhallen, Schornsteine, 
 Kantine (Theke, lange Tische, Küche), Mamas Zimmer (bei Oma Ruth: altes Wohnzimmer, Fotos, Regal),
 Umkleide (Spinde, Bänke, Duschen), Museum (Vitrinen, Bilder, Statuen); dazu Kanalweg und Brücke.
 mittel-1 richtet parallel Riverton ein (Vorsilbe `rv`), deshalb deine Schlüssel mit `iw`.
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung`. Neu in `moebel.json` (nur Pfade, alle mit Vorsilbe `iw`):
+`iwSpind` (Schließfach schwarz, 32 × 32), `iwVitrine` (Holz-Glas-Vitrine, 32 × 48), `iwBild`
+(Gemälde mit Goldrahmen, 16 × 32), `iwFass` (16 × 16), `iwFassGross` (32 × 32), `iwStrommast`
+(16 × 64), `iwPylon` (Leitkegel, 16 × 32), `iwHantel` (16 × 16). Wiederverwendet ohne Änderung:
+`laterne`, `parkbank`, `muelltonne`, `busch`, `baum`, `fels`, `felsKlein`, `holztisch`,
+`kuehlschrank`, `sofaRund`, `pflanzeKlein`, `wartebank`, `aktenschrank`, `pokal`. Eine Dusche
+(„Dusche mit rotem Kreuz“) sah im Spiel wie ein Warnschild aus; an ihrer Stelle stehen graue
+Schränke, der Eintrag ist wieder entfernt. Kein Möbel verstellt Auslöser, Figuren oder Laufwege
+von Statisten und Tieren.
+
+Bildschirmfotos (je ein Satz):
+
+- **Kanalweg:** Strommast und Laterne am Kanal, Fässer und Leitkegel vor den Fabrikhallen, eine
+  Bank am Weg; Dale steht frei auf dem Weg.
+- **Brücke:** Laterne am Brückenkopf, Felsen, Büsche und ein Baum am Ufer, Fässer neben dem
+  Zeitnot-Trick.
+- **Ironwood draußen:** Kabeltrommeln als Fässer am Güterbahnhof (Gus davor), Strommast an der
+  Straße, Leitkegel als Baustelle, Laterne, Mülltonne und Bank vor den Reihenhäusern.
+- **Kantine:** zwei lange Tischreihen aus Holztischen, zwei Kühlschränke an der Küchenwand; Hank,
+  Priya und Big Joe frei erreichbar, das Stahlbrett bleibt Auslöser.
+- **Mamas Zimmer:** rundes Sofa und Pflanzen, ein kleiner Tisch neben Oma Ruth; Medaille und
+  Partieformular bleiben Auslöser.
+- **Umkleide:** schwarze Schließfächer an der Rückwand (das Schließfach mit dem Fund bleibt
+  Auslöser), graue Schränke links, zwei Bänke in der Mitte, eine Hantel in der Ecke.
+- **Museum:** zwei Glasvitrinen, kleine Pokale als Ausstellungsstücke, ein Gemälde, Pflanzen;
+  Vitrine 1858 und Postsack bleiben Auslöser.
+
+Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier, Paketbau und
+`npm run build` sauber, Oberflächentests Abenteuer (Chromium) 9 von 9 bestanden.
+
+Nicht gefunden im Register: Schornsteine und Fabrikhallen als Einzelbilder (die Hallen bleiben die
+Wandblöcke der Kachelsätze), Duschen in brauchbarer Form, Statuen für drinnen.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

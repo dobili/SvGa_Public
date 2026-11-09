@@ -486,3 +486,7 @@ Whitlock heißt mit Vornamen Margaret. (3) Der Busfahrer raucht nicht; die Weltb
 beim Einarbeiten angepasst. (4) Die Wirtschaftssimulation läuft nach dem Einbau; liegt der sparsame
 Spieler über 400 Münzen, sinken die Belohnungen der kleinen Aufgaben auf 5 bis 10. (5) Die Kühe auf
 der Kuhweide sind die ausgebüxten Kühe vom Kürbishof Miller (N1); das verknüpft Weg und Nebenort.
+
+**Nachtrag Runde 4 (Haupt-Chat, 9.11.2026):** Der Katalog hat keine Jukebox. Im Diner wird `jukebox`
+zu `radio`: ein altes Röhrenradio auf dem Tresen, gleicher Satz („Lieder aus den Sechzigern, die
+Schule wurde im selben Jahr gebaut“). Zwei statt vier Sitzecken, weil Nischenbänke fehlen.

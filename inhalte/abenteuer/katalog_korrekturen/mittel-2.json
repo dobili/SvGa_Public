@@ -542,5 +542,50 @@
     "sicher": 0.9,
     "korrektur": "mittel-2",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png": {
+    "beschreibung": "Gleisstück von oben: zwei helle Schienen waagerecht oben und unten, dazwischen dunkle Holzschwellen mit Rost, 1 Kachel breit und 2 hoch; lässt sich lückenlos zu einem waagerechten Gleis reihen.",
+    "art": "gleis",
+    "ganz": true,
+    "gegenstuecke": "",
+    "innen_aussen": "aussen",
+    "stil": ["industrie"],
+    "zustand": "gebraucht",
+    "blick": "keine",
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Frontal_1.png": {
+    "beschreibung": "Bahnsteigbank mit drei Sitzen aus grünem Holz auf Metallfüßen, von vorn, Sitzfläche zum Betrachter; 3 Kacheln breit, 1 hoch.",
+    "art": "bank",
+    "ganz": true,
+    "gegenstuecke": "",
+    "innen_aussen": "aussen",
+    "stil": ["klassisch"],
+    "zustand": "gebraucht",
+    "blick": "unten",
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png": {
+    "beschreibung": "Kleines graues Schild mit Textfläche auf einem Fuß, ohne lesbare Schrift.",
+    "art": "schild",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stop_Sign.png": {
+    "beschreibung": "Kleines rotes Verbotsschild (durchgestrichener Kreis) auf weißem Grund mit dunklem Rand, ohne Pfosten; eignet sich als Halt-Tafel am Gleisende.",
+    "art": "schild",
+    "ganz": true,
+    "gegenstuecke": "",
+    "innen_aussen": "aussen",
+    "blick": "unten",
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
   }
 }

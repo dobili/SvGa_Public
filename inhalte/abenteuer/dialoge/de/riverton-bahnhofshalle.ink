@@ -111,7 +111,7 @@ Schau dich um. Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops
 Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieht man Pendler mit nassen Schirmen. #sprecher:erzaehler
 * [Einsteigen]
     Der Zug ruckelt los. Draußen ziehen Felder, Zedern und der Bahndamm vorbei. #sprecher:erzaehler
-    ~ reise("cedarCreek.aussen", "bushaltestelle")
+    ~ reise("cedarCreek.aussen", "bahnhof")
     -> END
 * [Noch bleiben]
     -> END

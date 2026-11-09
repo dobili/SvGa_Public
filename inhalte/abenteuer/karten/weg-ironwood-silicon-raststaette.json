@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 11,
+  "nextobjectid": 19,
   "properties": [
     {
       "name": "kennung",
@@ -112,10 +112,10 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3,
-        0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -335,6 +335,94 @@
               "value": "folgen"
             }
           ]
+        },
+        {
+          "id": 11,
+          "name": "rvKaffeeautomat",
+          "type": "moebel",
+          "x": 64,
+          "y": 80,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "rvGetraenkeautomat",
+          "type": "moebel",
+          "x": 32,
+          "y": 80,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "rvAutoGruen",
+          "type": "moebel",
+          "x": 320,
+          "y": 80,
+          "width": 64,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "laterne",
+          "type": "moebel",
+          "x": 128,
+          "y": 80,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "laterne",
+          "type": "moebel",
+          "x": 272,
+          "y": 80,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "rvPicknicktisch",
+          "type": "moebel",
+          "x": 64,
+          "y": 256,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "rvPicknicktisch",
+          "type": "moebel",
+          "x": 336,
+          "y": 208,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "muelltonne",
+          "type": "moebel",
+          "x": 304,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

@@ -534,6 +534,192 @@
       "breite": 16,
       "hoehe": 16,
       "kollision": true
+    },
+    "sbPflanze": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_98.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbPoster": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_164.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbWhiteboard": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_170.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbPraesentation": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_171.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbWasserspender": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_173.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbServerKlein": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_174.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbServer": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_175.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbServerschrank": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_176.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbSofa": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_205.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbSessel": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_206.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbEmpfang": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_208.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbSchreibtisch": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_248.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbArbeitsplatz": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_323.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbArbeitsplatzDrucker": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_326.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbBuerostuhl": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_101.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbKuebelbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_8.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "sbKuebelbaumRund": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_7.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "sbKuebelpflanze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_Potted_6.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "sbLaterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "sbFoodtruck": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Tacos_Truck_1.png",
+      "breite": 112,
+      "hoehe": 80,
+      "kollision": true
+    },
+    "ldGaslaterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "ldFass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brown_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldKarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Empty.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldTisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_274.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ldStuhl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_281.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldBuecherregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_538.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldOfen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_114.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldKommode": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_56.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldTheke": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_416.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldBank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ldBild": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_111.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
     }
   }
 }

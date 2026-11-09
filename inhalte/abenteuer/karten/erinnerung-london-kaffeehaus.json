@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 8,
+  "nextobjectid": 25,
   "properties": [
     {
       "name": "kennung",
@@ -74,11 +74,11 @@
       "height": 12,
       "data": [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0,
-        0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
@@ -198,6 +198,193 @@
               "value": "tag"
             }
           ]
+        },
+        {
+          "id": 8,
+          "name": "ldTheke",
+          "type": "moebel",
+          "x": 176,
+          "y": 16,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 9,
+          "name": "ldKommode",
+          "type": "moebel",
+          "x": 208,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "ldBuecherregal",
+          "type": "moebel",
+          "x": 16,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "ldStuhl",
+          "type": "moebel",
+          "x": 16,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "ldOfen",
+          "type": "moebel",
+          "x": 80,
+          "y": 0,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "ldStuhl",
+          "type": "moebel",
+          "x": 80,
+          "y": 48,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "ldStuhl",
+          "type": "moebel",
+          "x": 144,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "ldStuhl",
+          "type": "moebel",
+          "x": 16,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "ldStuhl",
+          "type": "moebel",
+          "x": 224,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 48,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 64,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 19,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 160,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 20,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 176,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 21,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 32,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 22,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 48,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 23,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 192,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 24,
+          "name": "ldTisch",
+          "type": "moebel",
+          "x": 208,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

@@ -413,14 +413,14 @@ und Szene 37 braucht nur Bett, Brett und Dosen. Der Schuppen ist bewusst klein (
 | bruecke `weiterIronwood` (Südrand, Spalten 24–25, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Spalten 24–25, Reihe 0, Treppe; Ankunft (24, 1)) | Weg je zwei Felder, gleiche Spalten; Kanal auf beiden Seiten Spalten 4–9; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt           |
 | lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                             | Südfassade 50 % ↔ Südwand 50 %                                                                                                      |
 | bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof`/`bushaltestelle` (nach `orte/cedar-creek.md`)              | Schnellreise Zug (W2, nach `besuchtRiverton`); mit Monatskarte frei                                                                 |
-| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen `bushaltestelle` (14, 32) (mittel-4)                                   | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
+| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen `busRiverton` (12, 32), Ankunft (14, 32)                               | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
 | riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen `anleger` (12, 22)           | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                       |
 | lockport.aussen `kai` (neu, (14, 20); Dialog, Reise)                     | riverton.aussen `anlegerSchild`, ironwood.aussen `anleger` (12, 22)                    | Lastkahn zurück                                                                                                                     |
 
 **Abstimmung mit mittel-4 (Ironwood), Stand 9.11.2026 (vermittelt vom Haupt-Chat):** Übergang Südrand
 der Brückenkarte ↔ Treppe am Nordrand von `ironwood.aussen`, Weg auf beiden Seiten in den Spalten 24–25,
 Kanal auf beiden Seiten in den Spalten 4–9 (`orte/ironwood.md` 1.6). In Ironwood: Anleger `anleger`
-(12, 22) am Kai, Bushaltestelle `bushaltestelle` (14, 32) an der Brücke der Schnellstraße. Gegenstücke in
+(12, 22) am Kai, Bus `busRiverton` (12, 32), Ankunft `bushaltestelle` (14, 32) an der Brücke der Schnellstraße. Gegenstücke in
 Riverton: `anlegerSchild` (56, 43) am Kanalbecken, `busIronwood` (49, 18) am Bahnhofsvorplatz; in
 Lockport `kai` (14, 20). Der Lastkahn fährt nach L3 (Brief von Big Joe, also nach Szene 39), das passt zu
 „nach Szene 39“ in `orte/ironwood.md`.

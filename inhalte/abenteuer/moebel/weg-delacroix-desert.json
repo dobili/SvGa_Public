@@ -46,6 +46,15 @@
       "zustand": "alt",
       "stil": "industrie",
       "blick": "unten"
+    },
+    "dd6BrueckeErsatz": {
+      "quelle": "spiel/eigene/bruecke_strasse_laengs_10.png",
+      "breite": 48,
+      "hoehe": 164,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "industrie"
     }
   }
 }

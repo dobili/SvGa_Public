@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben links stürzt der Wasserfall zwischen Felsen über eine Geländestufe in den Bach, der sich hinter den Gärten in sanften Bögen windet und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez, jedes mit niedrigem Eisenzaun, Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise und einem Tisch davor, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem runden Wendehammer mit Pollern und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez, jedes mit niedrigem Eisenzaun, Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise und einem Tisch davor, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -12,10 +12,10 @@
     "d": "sand"
   },
   "raster": [
-    "##~~~##############################~~###########################",
-    "##~~~##############################~~###########################",
-    "~~~~~~~~~~~~~............~~~~~~~~~~~~..........................#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..........................#",
+    "###################################~~~##########################",
+    "~~~~~~~~~~~~~############~~~~~~~~~~~~~##########################",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........................#",
     "#............~~~~~~~~~~~~......................................#",
     "#..............................................................#",
     "#..............................................................#",
@@ -36,12 +36,12 @@
     "#..............................................................#",
     "#..............................................................#",
     "#..pp........pp........pp........pp..........ppppp.............#",
-    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.........................pp..........................ee.......#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#pssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppp...................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp......................dddddddddddd.#",
@@ -57,30 +57,6 @@
     "################################################################"
   ],
   "objekte": [
-    {
-      "moebel": "mf4Wasserfall",
-      "feld": [2, 0]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [1, 0]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [1, 1]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [5, 0]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [5, 1]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [6, 1]
-    },
     {
       "moebel": "mfAhorn",
       "feld": [1, 5]
@@ -503,7 +479,7 @@
     },
     {
       "moebel": "mf4BaumGruen",
-      "feld": [2, 29]
+      "feld": [8, 29]
     },
     {
       "moebel": "mf4BaumRot",
@@ -577,18 +553,6 @@
     {
       "moebel": "mf4SchildVerkauf",
       "feld": [25, 31]
-    },
-    {
-      "moebel": "mf4Poller",
-      "feld": [1, 25]
-    },
-    {
-      "moebel": "mf4Poller",
-      "feld": [1, 26]
-    },
-    {
-      "moebel": "mf4Poller",
-      "feld": [1, 27]
     },
     {
       "moebel": "mf4BauernhausBreit",
@@ -695,11 +659,11 @@
       "feld": [17, 40]
     },
     {
-      "moebel": "mf4ZaunEckeObenLinks",
+      "moebel": "mf5ZaunEckeObenLinks",
       "feld": [49, 31]
     },
     {
-      "moebel": "mf4ZaunEckeObenRechts",
+      "moebel": "mf5ZaunEckeObenRechts",
       "feld": [62, 31]
     },
     {
@@ -743,35 +707,35 @@
       "feld": [61, 31]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 32]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 33]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 34]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 35]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 36]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 37]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 38]
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf5ZaunSeiteLinks",
       "feld": [49, 39]
     },
     {

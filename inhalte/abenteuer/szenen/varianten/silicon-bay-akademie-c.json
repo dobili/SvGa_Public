@@ -1,0 +1,278 @@
+{
+  "karte": "siliconBay.akademie",
+  "datei": "karten/varianten/silicon-bay-akademie-c.json",
+  "art": "innen",
+  "beschreibung": "Der große Saal der Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Die Nordwand ist eine Glasfront mit weißen Rahmen; davor hängt die Datenwand aus Großbildschirmen mit der Rangliste der Schüler. Rechts in der Nordwand die Metalltür zum Serverraum mit Kartenleser. Der Boden ist heller Kunststoff. Schüler sitzen an Bildschirmtischen und spielen gegen die Maschine; nur Dr. Lins Tisch trägt ein altes Holzbrett. Unten in der Mitte die gläserne Eingangstür. Variante C, die reichere: neun Bildschirmtische in drei Inseln, Lounge mit Sofa und zwei Sesseln, Getränkeautomat und Wasserspender, Bilder an der Wand, Pflanzen in den Ecken.",
+  "wand": "hellgrau",
+  "boden": "fliesenWeiss",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Tuer",
+      "feld": [21, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5TuerSued",
+      "feld": [12, 15],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [12, 14],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [6, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5Datenwand",
+      "feld": [8, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [10, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5Datenwand",
+      "feld": [12, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [14, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5Bild",
+      "feld": [1, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5Bild",
+      "feld": [17, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [2, 4],
+      "id": "t0",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [2, 6],
+      "zu": "t0"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [4, 4],
+      "id": "t1",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [4, 6],
+      "zu": "t1"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [6, 4],
+      "id": "t2",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [6, 6],
+      "zu": "t2"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [2, 8],
+      "id": "t3",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [2, 10],
+      "zu": "t3"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [4, 8],
+      "id": "t4",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [4, 10],
+      "zu": "t4"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [6, 8],
+      "id": "t5",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [6, 10],
+      "zu": "t5"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [10, 6],
+      "id": "t6",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [10, 8],
+      "zu": "t6"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [12, 6],
+      "id": "t7",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [12, 8],
+      "zu": "t7"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [14, 6],
+      "id": "t8",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [14, 8],
+      "zu": "t8"
+    },
+    {
+      "moebel": "sb5Winkeltisch",
+      "feld": [18, 6],
+      "id": "lin",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "lin"
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [18, 8],
+      "zu": "lin"
+    },
+    {
+      "moebel": "sb5Sofa",
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [14, 10]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [16, 10]
+    },
+    {
+      "moebel": "sb5Automat",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "sb5Wasserspender",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "sb5Vitrine",
+      "feld": [20, 10],
+      "id": "vitrine"
+    },
+    {
+      "moebel": "pokal",
+      "auf": "vitrine"
+    },
+    {
+      "moebel": "sb5Pflanze",
+      "feld": [21, 12]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "akademieAusgang",
+      "feld": [12, 15]
+    },
+    {
+      "name": "serverraumTuer",
+      "feld": [21, 3]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "theo",
+      "feld": [9, 4]
+    },
+    {
+      "name": "lin",
+      "feld": [20, 7]
+    },
+    {
+      "name": "nova",
+      "feld": [11, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "saugroboter",
+      "typ": "tier",
+      "feld": [16, 13],
+      "eigenschaften": {
+        "von": "14,13",
+        "bis": "18,13",
+        "verhalten": "folgen"
+      }
+    }
+  ],
+  "variante": "c"
+}

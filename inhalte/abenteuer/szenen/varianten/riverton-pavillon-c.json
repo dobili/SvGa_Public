@@ -1,0 +1,289 @@
+{
+  "karte": "riverton.pavillon",
+  "datei": "karten/varianten/riverton-pavillon-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, Tische in der Mitte: Die vier Spieltische stehen dicht beieinander in der Mitte des Pavillons, mit einem Kreuzgang dazwischen; rundherum sitzen die Zuschauer auf Bänken unter den Fenstern und an der Ostwand. Gedenktafel für Mr. Odum zwischen den Fenstern der Nordwand, Blumenbank an der Westwand, Limonadenglas in der Südostecke, Figurenkiste in der Südwestecke.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Gedenktafel",
+      "feld": [9, 1],
+      "an_wand": true,
+      "versatz": [8, 4]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [13, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [16, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Spieltisch",
+      "feld": [6, 4],
+      "id": "t1"
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t1",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t1",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [6, 3],
+      "zu": "t1"
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [7, 3],
+      "zu": "t1"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [6, 5],
+      "zu": "t1"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [7, 5],
+      "zu": "t1"
+    },
+    {
+      "moebel": "rv5Spieltisch",
+      "feld": [11, 4],
+      "id": "t2"
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t2",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t2",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [11, 3],
+      "zu": "t2"
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [12, 3],
+      "zu": "t2"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [11, 5],
+      "zu": "t2"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [12, 5],
+      "zu": "t2"
+    },
+    {
+      "moebel": "rv5Spieltisch",
+      "feld": [6, 9],
+      "id": "t3"
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t3",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t3",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [6, 8],
+      "zu": "t3"
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [7, 8],
+      "zu": "t3"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [6, 10],
+      "zu": "t3"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [7, 10],
+      "zu": "t3"
+    },
+    {
+      "moebel": "rv5Spieltisch",
+      "feld": [11, 9],
+      "id": "t4"
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t4",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t4",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [11, 8],
+      "zu": "t4"
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [12, 8],
+      "zu": "t4"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [11, 10],
+      "zu": "t4"
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [12, 10],
+      "zu": "t4"
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "rv5BankSeite",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "rv5Blumenbank",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "rv5Limonade",
+      "feld": [18, 11]
+    },
+    {
+      "moebel": "rv5Figurenkiste",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [10, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "mf5TuerSuedHolz",
+      "feld": [10, 13],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "pavillonAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "gedenktafel",
+      "feld": [9, 3]
+    },
+    {
+      "name": "limonadenglas",
+      "feld": [18, 11],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "slick",
+      "feld": [8, 4]
+    },
+    {
+      "name": "ray",
+      "feld": [10, 4]
+    },
+    {
+      "name": "tamsin",
+      "feld": [8, 9]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [2, 8],
+      "eigenschaften": {
+        "von": "2,8",
+        "bis": "2,10",
+        "tun": "schaut einer Blitzpartie zu",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "wettender",
+      "typ": "statist",
+      "feld": [16, 8],
+      "eigenschaften": {
+        "von": "16,8",
+        "bis": "16,10",
+        "tun": "wettet um eine Limonade",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern"],
+  "variante": "c"
+}

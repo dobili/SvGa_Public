@@ -1,20 +1,22 @@
-# Auftrag niedrig-1: Ironwood und der Weg dorthin einrichten
+# Auftrag niedrig-1: Port Delacroix, Fähre/Deich und Bayou einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der siebzehnte Auftrag, Ironwood, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, achtzehnter Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand adead8c3)
-**Darf ändern:** `inhalte/abenteuer/karten/ironwood-*.json`, `inhalte/abenteuer/karten/weg-riverton-ironwood-*.json`,
-`inhalte/abenteuer/moebel.json` (nur neue Einträge, Schlüssel mit Vorsilbe `iw`), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag (Pipeline, Prettier, Build, Oberflächentests Abenteuer)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand c2751464)
+**Darf ändern:** `inhalte/abenteuer/karten/port-delacroix-*.json`, `inhalte/abenteuer/karten/weg-silicon-delacroix-*.json`,
+`inhalte/abenteuer/karten/bayou-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge, Vorsilbe `pd`),
+`docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher `claude/friendly-shannon-y8bf90` erneut hereinholen
+(mittel-1 richtet parallel Silicon Bay ein, Vorsilben `sb`, `ld`)
 
 ## Ziel
 
-Wie Cedar Creek: Ironwood draußen (Industriestadt: Fabrikhallen, Schornsteine, Arbeiterhäuser),
-Kantine (Theke, lange Tische, Küche), Mamas Zimmer (bei Oma Ruth: altes Wohnzimmer, Fotos, Regal),
-Umkleide (Spinde, Bänke, Duschen), Museum (Vitrinen, Bilder, Statuen); dazu Kanalweg und Brücke.
-mittel-1 richtet parallel Riverton ein (Vorsilbe `rv`), deshalb deine Schlüssel mit `iw`.
+Port Delacroix (Hafenstadt im Süden, nach dem Sturm im Wiederaufbau): draußen (Hafen, Holzhäuser,
+Baustellenteile aus „worksite“, Boote), Turnhalle (Notunterkunft: Feldbetten, Kisten), Werkstatt
+(Werkbänke, Werkzeug), Musikhaus (Instrumente, Bühne; hier steht der Varianten-Tisch mit Schach960);
+Fähre und Deich; Bayou mit Steg (Wasser, Steg, Schilf; Serene Village hat Teiche und Stege).
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung`. Neu in `moebel.json` (nur Pfade, alle mit Vorsilbe `iw`):
 `iwSpind` (Schließfach schwarz, 32 × 32), `iwVitrine` (Holz-Glas-Vitrine, 32 × 48), `iwBild`

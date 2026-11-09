@@ -5,7 +5,7 @@ sondern Freiheit wie in den Pokémon-Spielen, mit Sperren, die sich später öff
 anderen Seite, Rückwegen, die sich lohnen, Wahl der Reihenfolge, wo es geht, und Nebenorten ohne
 Schachclub. Grundlagen: `05_Story_Bibel.md` (Hauptszenen und Abhängigkeiten), `07_Aufgabenzuordnung.md`
 und `orte.json` (Kapitel je Club), `08_Wege_und_Entdeckungen.md` (W1 bis W6), `09_Weltbeschreibung.md`
-(Region, Orte), `KARTENREGELN.md` 7a (Maßstab). `12_Akt1_Leben.md` (mittel-1) gab es beim Schreiben
+(Region, Orte), `KARTENREGELN.md` 7a.2 (Maßstab: Pokémon mal 1,5 bis 2, Entscheidung des Autors). `12_Akt1_Leben.md` (mittel-1) gab es beim Schreiben
 noch nicht; Akt 1 steht deshalb hier nur im Umriss und wird von dort übernommen, sobald es da ist.
 
 ## 0. Grundsätze
@@ -66,9 +66,9 @@ Abkürzung, `[S1]` Sperre, `(N1)` Nebenort, `⇄` Schnellreise (Bus, Zug, Fähre
 ```
 
 Neue Querverbindungen: **Q1** Zedernpfad (Maple Falls nördlich über den Hügel nach Cedar Creek, eine
-kurze Karte), **Q2** Kanal-Seitenarm zu Lockport (Abstecher von W3), **Q3** Rückfähre Crossroads ↔
+eine Karte von etwa 100 Kacheln Länge, gut 30 Sekunden zu Fuß), **Q2** Kanal-Seitenarm zu Lockport (Abstecher von W3), **Q3** Rückfähre Crossroads ↔
 Port Delacroix über den Busbahnhof (Schnellreise, Akt 4), **Q4** Alte Minenstraße Crossroads → Ghost
-Town (eine Karte, mittel). Dazu die Abzweige zu den Nebenorten N1 bis N7.
+Town (eine Karte von etwa 150 Kacheln Länge, gut 40 Sekunden). Dazu die Abzweige zu den Nebenorten N1 bis N7.
 
 ## 2. Akt 1 (Maple Falls, Cedar Creek; Kapitel 0, 1, 7, 8)
 
@@ -83,13 +83,13 @@ liegt in den Wegen und im Nebenort.
 | S2  | Zedernpfad (Q1) am Waldrand hinter dem Park    | umgestürzte Zeder auf dem Pfad                                    | **von der Cedar-Creek-Seite**: Dex baut nach der Clubnadel eine Seilwinde („fast funktioniert“) |
 | –   | Zedernwald nach Riverton (Cedar Creek Ostrand) | Brücke über den Bach im Bau (Ortsdokument Cedar Creek)            | Ende von Akt 1 (`endeAkt1Gesehen`), wie heute                                                   |
 
-**Abkürzung:** Q1 Zedernpfad, von Cedar Creek aus geöffnet; danach in 15 Sekunden von Maple Falls in
-Cedar Creek statt über Landstraße und Flussweg. Lohn des Rückwegs über den Pfad: Fund „Zedernzapfen
+**Abkürzung:** Q1 Zedernpfad, von Cedar Creek aus geöffnet; danach in gut 30 Sekunden von Maple Falls in
+Cedar Creek statt in 65 bis 80 Sekunden über Landstraße und Flussweg. Lohn des Rückwegs über den Pfad: Fund „Zedernzapfen
 mit Initialen“ (Album) und die Revanche gegen Jo im Park.
 
 **Rückwege mit Lohn:** Nach der zweiten Nadel hat Mr. Abernathy im Park von Maple Falls eine neue
 Stellung auf seinem Reisebrett (Matt in zwei, Kapitel 7), und Juno wartet am Zedernpfad mit dem
-Tagebuch (Album). Wer den Pfad nimmt, ist in einer halben Minute dort.
+Tagebuch (Album). Wer den Pfad nimmt, ist in gut 30 Sekunden dort.
 
 **Wahl:** Kürbishof (N1) vor oder nach Cedar Creek; seine Aufgaben nutzen Kapitel 0 und 1
 (Figurenzüge, Figurenwerte), passen also in beide Reihenfolgen.
@@ -294,7 +294,7 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
 **08 Wege und Entdeckungen**
 
 1. W1 ergänzen: Querverbindungen Q1 bis Q4 und Abzweige zu Nebenorten sind eigene Wege-Karten nach
-   7a (kurzer oder mittlerer Weg).
+   7a.2 (eine Karte, 100 bis 150 Kacheln lang; Abstecher zu Nebenorten wie ein halber Weg).
 2. Neuer Abschnitt „Sperren und Schlüssel“ (S1 bis S12; Fahrrad, Laterne, Gummistiefel, Fährpass,
    Monatskarte) mit der Regel „jeder Schlüssel öffnet in zwei Akten etwas“.
 3. W2 Schnellreise: Lastkahn (Akt 2), Fähre in beide Richtungen nach Fährpass (Akt 3), Bus ab
@@ -307,7 +307,7 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
 1. Karte in Abschnitt 1 durch die Weltkarte oben ersetzen oder ergänzen (Querverbindungen,
    Nebenorte).
 2. Neue Abschnitte für N1 bis N7 (Lage, Bild, Innen- und Außenkarten) und für Q1 und Q4.
-3. Abschnitt 3.6 „Größen“ an `KARTENREGELN.md` 7a angleichen (heute: Routen zweimal 28 × 20).
+3. Abschnitt 3.6 „Größen“ an `KARTENREGELN.md` 7a angleichen (7a.2: Wege zwei Karten, zusammen 220 bis 400 Kacheln; heute: Routen zweimal 28 × 20).
 4. Jahreszeiten: Kürbishof im Frühherbst (Akt 1), Lockport im Herbstnebel (Akt 2), Pelikaninsel im
    Winterwind (Akt 3), Jahrmarkt im Sommer (Akt 4).
 

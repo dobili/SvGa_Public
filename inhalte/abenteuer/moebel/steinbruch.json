@@ -119,6 +119,24 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "industrie"
+    },
+    "st5PfuetzeKlein": {
+      "quelle": "spiel/eigene/pfuetze_fels_klein.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "wasser",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "st5PfuetzeGross": {
+      "quelle": "spiel/eigene/pfuetze_fels_gross.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "wasser",
+      "zustand": "alt",
+      "stil": "natur"
     }
   }
 }

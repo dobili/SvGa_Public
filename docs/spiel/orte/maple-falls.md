@@ -365,8 +365,10 @@ haben Seitenzäune, aber keinen Zaun zur Straße, weil der Grünstreifen den Pla
 
 **Gebaut in Runde 4: 44 × 32**, Lage wie in 1.2 mit diesen Abweichungen: Der Steg S5 ist ein morscher
 Steg im Wasser (4, 1) mit rot-weißer Sperrlatte `absperrungSteg` (5, 3); der Fußsteg zum Zedernpfad
-(10–11, 0–2) ist aus Dielen, das Schild „Sturmschaden“ (Wegweiser-Tafel) steht an seinem Ende (12, 3).
-Keine Halfpipe im Katalog: Jo sitzt an der langen Bank (19, 11). Die Brücke der Parkstraße ist die
+(10–11, 0–2) ist ein Holzsteg auf Pfählen (Camping Pier_Bridge_1 und _2) über Dielen, das Schild „Sturmschaden“ (Wegweiser-Tafel) steht an seinem Ende (12, 3).
+Statt der Halfpipe (Entscheidung Haupt-Chat, in 12): kleiner Basketballplatz aus Asphalt (24–30 / 23–29)
+mit Korb (27, 21); Jo sitzt daneben auf einer langen Bank am Fluss (31, 24), Figur (32, 27). Eine niedrige
+Mauer gibt es im Katalog nicht. Die Brücke der Parkstraße ist die
 Straße selbst über dem Fluss, ohne Geländer (kein Brückenbild im Katalog). Kiosk Patel (24, 10) mit
 Laterne, Abernathys Bank `parkbank` (3, 11) und zweite Bank (7, 11), Bushaltestelle (24, 18),
 Brett-Platz (9–13 / 22–25) mit Bank, Teich (17–23 / 23–27), Bäume.

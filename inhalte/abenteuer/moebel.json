@@ -3767,6 +3767,36 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf4StegLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4StegRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_2.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Basketballkorb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Basketball_Net_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Variante C (reicher): Eine lange Theke mit Flaschen- und Gläserregalen dahinter, das Klavier unter einem Bild, die Treppe an der Ostwand mit dem Versteck darunter. Vier Tische mit Stühlen, auf einem eine Laterne, in der Mitte der Spieltisch mit dem Brett. Fässer in der Ecke.",
+  "beschreibung": "Variante C (reicher): Eine lange Theke mit drei Barhockern, dahinter das breite Flaschenregal mit Spiegel zwischen zwei schmalen, das Klavier unter einem Bild, die Treppe an der Ostwand mit dem Versteck darunter. Vier Tische mit Stühlen, auf einem eine Laterne, in der Mitte der Spieltisch mit dem Brett. Fässer in der Ecke.",
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -29,16 +29,31 @@
       "feld": [2, 1]
     },
     {
-      "moebel": "gt7Regal",
+      "moebel": "gt7FlaschenregalBreit",
       "feld": [4, 1]
     },
     {
       "moebel": "gt7Flaschenregal",
-      "feld": [6, 1]
+      "feld": [8, 1]
     },
     {
       "moebel": "gt7Theke8",
       "feld": [2, 4]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [3, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [5, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [7, 6],
+      "versatz": [0, -8]
     },
     {
       "moebel": "gt7Klavier",

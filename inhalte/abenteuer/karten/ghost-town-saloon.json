@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 35,
+ "nextobjectid": 37,
  "layers": [
   {
    "id": 1,
@@ -984,11 +984,11 @@
     },
     {
      "id": 7,
-     "name": "gt7Flaschenregal",
+     "name": "gt7FlaschenregalBreit",
      "type": "moebel",
      "x": 32,
      "y": 16,
-     "width": 32,
+     "width": 64,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -1053,6 +1053,52 @@
     },
     {
      "id": 10,
+     "name": "gt7Barhocker",
+     "type": "moebel",
+     "x": 48,
+     "y": 88,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 112
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "gt7Barhocker",
+     "type": "moebel",
+     "x": 80,
+     "y": 88,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 112
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 12,
      "name": "gt7Klavier",
      "type": "moebel",
      "x": 240,
@@ -1075,7 +1121,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "gt7Treppe",
      "type": "moebel",
      "x": 256,
@@ -1098,7 +1144,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "gt7TischDunkel",
      "type": "moebel",
      "x": 128,
@@ -1121,7 +1167,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 112,
@@ -1144,7 +1190,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 160,
@@ -1167,7 +1213,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "gt7Brett",
      "type": "moebel",
      "x": 138,
@@ -1190,7 +1236,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 48,
@@ -1213,7 +1259,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 32,
@@ -1236,7 +1282,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 80,
@@ -1259,7 +1305,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 208,
@@ -1282,7 +1328,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 192,
@@ -1305,7 +1351,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 240,
@@ -1328,7 +1374,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 192,
@@ -1351,7 +1397,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 176,
@@ -1374,7 +1420,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 224,
@@ -1397,56 +1443,10 @@
      ]
     },
     {
-     "id": 25,
-     "name": "gt7FassKlein",
-     "type": "moebel",
-     "x": 16,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "gt7FassKlein",
-     "type": "moebel",
-     "x": 16,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 27,
      "name": "gt7FassKlein",
      "type": "moebel",
-     "x": 288,
+     "x": 16,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -1469,7 +1469,7 @@
      "id": 28,
      "name": "gt7FassKlein",
      "type": "moebel",
-     "x": 288,
+     "x": 16,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -1490,6 +1490,52 @@
     },
     {
      "id": 29,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 288,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 288,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
      "name": "gt7Bild",
      "type": "moebel",
      "x": 176,
@@ -1512,7 +1558,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 32,
      "name": "gt7Fass",
      "type": "moebel",
      "x": 16,
@@ -1535,7 +1581,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 33,
      "name": "gt7Kiste",
      "type": "moebel",
      "x": 288,
@@ -1558,7 +1604,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 34,
      "name": "gt7Kiste",
      "type": "moebel",
      "x": 288,
@@ -1581,7 +1627,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 35,
      "name": "gt7Fussmatte",
      "type": "moebel",
      "x": 160,
@@ -1604,7 +1650,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 36,
      "name": "gt7TuerHolz",
      "type": "moebel",
      "x": 160,

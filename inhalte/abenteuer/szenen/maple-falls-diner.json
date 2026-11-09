@@ -2,7 +2,7 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein echtes amerikanisches Kleinstadt-Diner: rote Wände, weiße Fliesen, es riecht nach Kaffee, Bratfett und Pfannkuchen. Vorn der Gastraum: eine lange Theke mit roter Platte quer durch den Raum, davor rote Barhocker; in der Mitte der Theke die alte Kassentheke aus Holz, die Kasse zum Gast hin, direkt über der Eingangstür; links davon eine Klappe, durch die Hector Sandoval nach vorn kommt. Hinter der Theke an der Nordwand das Rückbuffet ohne Lücke: Kaffeemaschine, Milchshake-Mixer, das Radio, dessen Lieder man hört, und die Kuchenvitrine mit Donuts; darüber die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und zwei Fenster. An der Südwand vier Sitznischen mit hohen Lehnen um kleine rote Tische. Rechts trennt eine Wand die Großküche ab: in der Wand die Durchreiche mit dem Geschirrständer, daneben die Küchentür. In der Küche zwei Gastroherde unter Abzugshauben, Grillplatte, Fritteuse, zwei hohe Kühlschränke, ein Spültisch und ein Arbeitstisch aus Stahl mit dem Brotbrett. Hinter der Küche das Lager mit Kartons und einer Kühltruhe; über einen kurzen Flur rechts von der Theke die beiden Toiletten. Laufwege: von der Tür nach oben zu den Hockern und zur Kasse, nach links zu den Nischen, nach rechts zum Flur.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein echtes amerikanisches Kleinstadt-Diner: rote Wände, weiße Fliesen, es riecht nach Kaffee, Bratfett und Pfannkuchen. Vorn der Gastraum: eine lange Theke mit roter Platte quer durch den Raum, davor rote Barhocker; links an der Theke die alte Kassentheke aus Holz, die Kasse zum Gast hin, direkt über der Eingangstür; links davon eine Klappe neben einem kurzen Thekenstück, durch die Hector Sandoval nach vorn kommt. Hinter der Theke an der Nordwand das Rückbuffet ohne Lücke: Kaffeemaschine, Milchshake-Mixer, das Radio, dessen Lieder man hört, und die Kuchenvitrine mit Donuts; darüber die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und zwei Fenster. An der Südwand, eine links und drei rechts der Tür, vier Sitznischen mit hohen Lehnen um kleine rote Tische. Rechts trennt eine Wand die Großküche ab: in der Wand die Durchreiche mit dem Geschirrständer, daneben die Küchentür. In der Küche zwei Gastroherde unter Abzugshauben, Grillplatte, Fritteuse, zwei hohe Kühlschränke, ein Spültisch und ein Arbeitstisch aus Stahl mit dem Brotbrett. Hinter der Küche das Lager mit Kartons und einer Kühltruhe; über einen kurzen Flur rechts von der Theke die beiden Toiletten. Laufwege: von der Tür nach oben zu den Hockern und zur Kasse, nach links zur ersten Nische, nach rechts zu den anderen Nischen und zum Flur.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
@@ -21,7 +21,7 @@
     "#...................#..#..#..#",
     "#...................#..#..#..#",
     "#...................#..#..#..#",
-    "##############.###############"
+    "#######.######################"
   ],
   "objekte": [
     {
@@ -83,56 +83,56 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "mf5ThekeMitte",
-      "feld": [4, 6],
-      "id": "thekeM4",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [5, 6],
-      "id": "thekeM5",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [6, 6],
-      "id": "thekeM6",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [7, 6],
-      "id": "thekeM7",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [8, 6],
-      "id": "thekeM8",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [9, 6],
-      "id": "thekeM9",
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf5ThekeRechts",
-      "feld": [10, 6],
+      "feld": [4, 6],
       "id": "theke2",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5Kassentheke",
-      "feld": [12, 6],
+      "feld": [6, 6],
       "id": "kasse"
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [14, 6],
+      "feld": [8, 6],
       "id": "theke3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [10, 6],
+      "id": "thekeO10",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [11, 6],
+      "id": "thekeO11",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [12, 6],
+      "id": "thekeO12",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [13, 6],
+      "id": "thekeO13",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [14, 6],
+      "id": "thekeO14",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [15, 6],
+      "id": "thekeO15",
       "bauteil_ok": true
     },
     {
@@ -160,23 +160,23 @@
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [5, 8],
-      "zu": "thekeM5"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [7, 8],
-      "zu": "thekeM7"
-    },
-    {
-      "moebel": "mf5Hocker",
       "feld": [9, 8],
-      "zu": "thekeM9"
+      "zu": "theke3"
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [11, 8],
+      "zu": "thekeO11"
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [13, 8],
+      "zu": "thekeO13"
     },
     {
       "moebel": "mf5Hocker",
       "feld": [15, 8],
-      "zu": "theke3"
+      "zu": "thekeO15"
     },
     {
       "moebel": "mf5Hocker",
@@ -200,32 +200,32 @@
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [6, 13],
+      "feld": [11, 13],
       "id": "nische2"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [5, 12],
+      "feld": [10, 12],
       "zu": "nische2"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [7, 12],
+      "feld": [12, 12],
       "zu": "nische2"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [10, 13],
+      "feld": [14, 13],
       "id": "nische3"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [9, 12],
+      "feld": [13, 12],
       "zu": "nische3"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [11, 12],
+      "feld": [15, 12],
       "zu": "nische3"
     },
     {
@@ -253,11 +253,11 @@
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [14, 14]
+      "feld": [7, 14]
     },
     {
       "moebel": "mf5Eingangstuer",
-      "feld": [14, 14]
+      "feld": [7, 14]
     },
     {
       "moebel": "mf5Geschirr",
@@ -350,14 +350,14 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [14, 13],
+      "feld": [7, 13],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "dinerAusgang",
-      "feld": [14, 15]
+      "feld": [7, 15]
     }
   ],
   "figuren": [],

@@ -54,803 +54,103 @@
   ],
   "objekte": [
     {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [0, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [1, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [2, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [3, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [4, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [5, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [6, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [7, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [8, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [9, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [10, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [11, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [12, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [13, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [14, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [15, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [16, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [17, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [18, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [19, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [20, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [21, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [22, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [23, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [24, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [25, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [26, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [27, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [28, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [29, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [30, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [31, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [32, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [33, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [34, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [35, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [36, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [37, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [38, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [39, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [40, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [41, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [42, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [43, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [44, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [45, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [46, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [47, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [48, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [49, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [50, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [51, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [52, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [53, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [54, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [55, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [56, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [57, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [58, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [59, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [60, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [61, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [62, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [63, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [64, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [65, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [66, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [67, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [68, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [69, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [70, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [71, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [72, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [73, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [74, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [75, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [76, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [77, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [78, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [79, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [80, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [81, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [82, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [83, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [84, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [85, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [86, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [87, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [88, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [89, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [90, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [91, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [92, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [93, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [94, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [95, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [96, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [97, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [98, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [99, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [100, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [101, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [102, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [103, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [104, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [105, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [106, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [107, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [108, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [109, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [110, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [111, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [112, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [113, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [114, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [115, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [116, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [117, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [118, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [119, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [120, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [121, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [122, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [123, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [124, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [125, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [126, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [127, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [128, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [129, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [130, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [131, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [132, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [133, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [134, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [135, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [136, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [137, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [138, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [139, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [140, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [141, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [142, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [143, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [144, 5],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5Leitplanke",
-      "feld": [145, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [146, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [147, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [148, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [149, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [150, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [151, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
+      "moebel": "ws5Planke8",
       "feld": [152, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [153, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [154, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [155, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [156, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [157, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [158, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5Leitplanke",
-      "feld": [159, 5],
       "bauteil_ok": true
     },
     {
@@ -1194,20 +494,16 @@
       "feld": [157, 24]
     },
     {
-      "moebel": "ws5AutoGrau",
-      "feld": [128, 21]
+      "moebel": "ws5SattelzugBlau",
+      "feld": [111, 20]
     },
     {
       "moebel": "ws5AutoGruen",
-      "feld": [112, 21]
-    },
-    {
-      "moebel": "ws5AutoBlau",
-      "feld": [118, 22]
-    },
-    {
-      "moebel": "ws5AutoBlau",
       "feld": [122, 21]
+    },
+    {
+      "moebel": "ws5AutoBlau",
+      "feld": [126, 21]
     },
     {
       "moebel": "ws5Wegweiser",
@@ -1631,7 +927,7 @@
   "figuren": [
     {
       "name": "kowalczyk",
-      "feld": [116, 26]
+      "feld": [118, 26]
     }
   ],
   "belebung": [

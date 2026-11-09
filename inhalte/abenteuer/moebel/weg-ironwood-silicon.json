@@ -389,6 +389,44 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "ws5Planke5": {
+      "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "stil": "industrie",
+      "zustand": "gebraucht"
+    },
+    "ws5Planke8": {
+      "quelle": "spiel/eigene/leitplanke_laengs_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "stil": "industrie",
+      "zustand": "gebraucht"
+    },
+    "ws5SattelzugRot": {
+      "quelle": "spiel/eigene/sattelzug_rot.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "stil": "modern",
+      "zustand": "gebraucht",
+      "blick": "links"
+    },
+    "ws5SattelzugBlau": {
+      "quelle": "spiel/eigene/sattelzug_blau.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "stil": "modern",
+      "zustand": "gebraucht",
+      "blick": "links"
     }
   }
 }

@@ -676,3 +676,15 @@ zerstörte oder verwitterte Stücke; ein kaputter Tisch passt nur an Orte wie Gh
 die Turnhalle nach dem Sturm, nicht ins neue Wohnzimmer). Ebenso auf Stile von Möbeln und Natur
 (modern, rustikal, alt; Laub-, Nadel-, Wüstenpflanzen): je Ort ein stimmiger Stil. Kommt als Punkt in
 die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte Zustand und Stil).
+
+**Weitere Hinweise des Autors für die nächste Kartenrunde (9.11.2026):**
+- Möbel stehen in logischer Beziehung: Stühle an Tischen; der Fernseher auf einem Lowboard oder
+  Fernsehtisch an der Wand, nicht auf dem Esstisch und nicht mitten im Raum; mit etwas Abstand davor
+  Sitzplätze mit Blick zum Fernseher; Pflanzen und Stehlampen in Ecken, an Wänden oder neben passenden
+  Möbeln, nicht allein mitten im Raum.
+- Möbel richtig gedreht: Stühle mit der Sitzfläche zum Tisch; Möbel mit Schubladen oder Türen zeigen
+  in den Raum, nicht zur Wand.
+- Vorschlag Haupt-Chat: Platzierungsregeln aus den fertig eingerichteten Musterräumen von LimeZu
+  ableiten (in den gekauften Paketen: Home Designs, Condominium, Museum, Gym u. a.), als Regeln in den
+  Kartenbauer (Beziehungen wie „Stühle um Tisch“, „Sitzplatz vor Fernseher“, „in Ecke“, Blickrichtung)
+  und ins Register (Vorderseite und Blickrichtung je Bild).

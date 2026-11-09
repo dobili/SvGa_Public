@@ -2,166 +2,197 @@
   "karte": "mapleFalls.park",
   "datei": "karten/maple-falls-park.json",
   "art": "aussen",
+  "beschreibung": "Der Stadtpark von Maple Falls am Nachmittag, 44 × 32 Kacheln. Am Nordrand fließt der Fluss breit und ruhig; ganz links ragt ein alter, morscher Steg ins Wasser, davor eine rot-weiße Sperrlatte der Stadt. Daneben führt ein schmaler Holzfußsteg über den Fluss zum Waldrand, wo der Zedernpfad beginnt; ein Schild an seinem Ende. Am Ufer entlang läuft ein Erdweg nach Osten und biegt in einer Kurve zur Straße hinunter. Links unter der großen Eiche steht Mr. Abernathys Bank, daneben eine zweite Bank und eine Mülltonne; in der Mitte ein Ahorn, eine lange Bank, wo Jo sitzt. Am Hauptweg der Verkaufswagen von Mr. Patel mit gestreiftem Dach und eine Laterne. Die Parkstraße kommt von links aus der Birch Lane, überquert im Osten den Fluss, der hier nach Süden abbiegt, und führt rechts aus der Karte zur Landstraße. Südlich der Straße die Bushaltestelle, ein Weg mit Kurve zu einem gepflasterten Platz mit Bank, ein Teich mit Enten und Bäume.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "p": "pflaster",
-    "e": "erde"
+    "e": "erde",
+    "s": "asphalt",
+    "h": "dielen"
   },
-  "beschreibung": "Der Stadtpark von Maple Falls am Fluss, ein warmer Spätsommernachmittag. Eine breite, gepflasterte Allee führt quer durch den Park, von der Birch Lane links bis zum Ortsausgang rechts, wo die Landstraße nach Cedar Creek beginnt; sie reicht auf beiden Seiten bis an den Rand. In der Mitte zweigt ein Weg nach oben zum Kiosk von Mr. Patel ab, einem rosa Verkaufswagen mit Markise, links und rechts davon je ein Blumenbeet. Oben stehen in den Ecken und neben dem Kiosk Ahornbäume, deren Blätter an den Rändern schon rot werden. An der Allee stehen zwei Laternen, links eine kleine Bank, zwei lange Parkbänke mit Blick auf den Weg und ein Mülleimer; auf der linken Bank sitzt jeden Nachmittag Mr. Abernathy mit Reiseschach und Thermoskanne, auf der rechten füttert ein Rentner die Tauben. Skater Jo lehnt mit ihrem Board am Wegrand und wartet auf Gegner für eine Blitzpartie. Rechts an der Allee die Bushaltestelle mit Wartehäuschen, zum Weg hin offen (Bus nach Cedar Creek). Unterhalb der Allee eine Reihe gepflanzter Bäume, dahinter ein Uferweg aus Erde und der blaue Fluss, an dem die Enten jedem hinterherwatscheln, der stehen bleibt. Laufwege: die Allee von Rand zu Rand, der Weg hoch zum Kiosk, der Uferweg unten.",
   "raster": [
-    "##############################",
-    "#............................#",
-    "#............................#",
-    "#..............pp............#",
-    "#..............pp............#",
-    "#..............pp............#",
-    "#..............pp............#",
-    "#..............pp............#",
-    "#..............pp............#",
-    "pppppppppppppppppppppppppppppp",
-    "pppppppppppppppppppppppppppppp",
-    "#............................#",
-    "#............................#",
-    "#............................#",
-    "#............................#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
-    "##############################"
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~##########",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~........#",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~........#",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#pppppppppppppppppppppppppppppppppppppppppp#",
+    "ssssssssssssssssssssssssssssssssssssssssssss",
+    "ssssssssssssssssssssssssssssssssssssssssssss",
+    "ssssssssssssssssssssssssssssssssssssssssssss",
+    "#pppppppppppppppppppppppppppppppppppppppppp#",
+    "#...........ee.................~~~~........#",
+    "#...........ee.................~~~~~~~~~~~~~",
+    "#..........ee..................~~~~~~~~~~~~~",
+    "#........ppppp.................~~~~~~~~~~~~~",
+    "#........ppppp...~~~~~~~...................#",
+    "#........ppppp...~~~~~~~...................#",
+    "#........ppppp...~~~~~~~...................#",
+    "#................~~~~~~~...................#",
+    "#................~~~~~~~...................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "############################################"
   ],
   "objekte": [
     {
-      "moebel": "mf2Kiosk",
-      "feld": [15, 0]
+      "moebel": "mf4StegKaputt",
+      "feld": [4, 1]
     },
     {
-      "moebel": "mf2Blumenbeet",
-      "feld": [12, 4]
+      "moebel": "mf4Sperrlatte",
+      "feld": [5, 3],
+      "id": "absperrungSteg"
     },
     {
-      "moebel": "mf2Blumenbeet",
-      "feld": [18, 4]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [1, 0]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [25, 0]
+      "moebel": "mf4Wegweiser",
+      "feld": [12, 3]
     },
     {
       "moebel": "mfBaum",
-      "feld": [8, 0]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [19, 0]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [5, 5]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [22, 5]
-    },
-    {
-      "moebel": "mf2BankLang",
-      "feld": [10, 7],
-      "id": "bank"
-    },
-    {
-      "moebel": "mf2BankLang",
-      "feld": [18, 7]
-    },
-    {
-      "moebel": "mfMuelltonne",
-      "feld": [13, 7]
-    },
-    {
-      "moebel": "mfBushaltestelle",
-      "feld": [24, 6]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [2, 11]
-    },
-    {
-      "moebel": "mfApfelbaum",
-      "feld": [8, 11]
-    },
-    {
-      "moebel": "mfApfelbaum",
-      "feld": [18, 11]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [24, 11]
+      "feld": [1, 7]
     },
     {
       "moebel": "mfBank",
-      "feld": [3, 7]
+      "feld": [3, 11],
+      "id": "bank"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [7, 11]
+    },
+    {
+      "moebel": "mfMuelltonne",
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [15, 6]
+    },
+    {
+      "moebel": "mf2BankLang",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "mf2Kiosk",
+      "feld": [24, 10]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [22, 10]
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [24, 18]
+    },
+    {
+      "moebel": "mfApfelbaum",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [26, 24]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [36, 4]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [38, 9]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [36, 24]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [14, 23]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 9],
+      "feld": [1, 16],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "park",
-      "feld": [0, 9]
+      "feld": [0, 15]
     },
     {
       "name": "park",
-      "feld": [0, 10]
+      "feld": [0, 16]
+    },
+    {
+      "name": "park",
+      "feld": [0, 17]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 15]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 16]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 17]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [10, 0]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [11, 0]
     },
     {
       "name": "bushaltestelle",
-      "feld": [26, 9]
-    },
-    {
-      "name": "landstrasse",
-      "feld": [29, 9]
-    },
-    {
-      "name": "landstrasse",
-      "feld": [29, 10]
+      "feld": [26, 21]
     },
     {
       "name": "parkbank",
-      "feld": [11, 8],
+      "feld": [4, 12],
       "auf_moebel": true
     },
     {
       "name": "kiosk",
-      "feld": [16, 3]
+      "feld": [25, 13]
     }
   ],
   "figuren": [
     {
       "name": "skaterJo",
-      "feld": [8, 6]
+      "feld": [18, 13]
     },
     {
       "name": "abernathy",
-      "feld": [9, 8]
+      "feld": [5, 13]
     }
   ],
   "belebung": [
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [19, 7],
+      "feld": [20, 12],
       "eigenschaften": {
-        "von": "19,7",
-        "bis": "19,7",
+        "von": "20,12",
+        "bis": "20,12",
         "tun": "sitzt auf der Bank und füttert Tauben",
         "wann": "tag"
       }
@@ -169,10 +200,10 @@
     {
       "name": "kioskbesucher",
       "typ": "statist",
-      "feld": [13, 10],
+      "feld": [23, 13],
       "eigenschaften": {
-        "von": "13,10",
-        "bis": "16,5",
+        "von": "21,13",
+        "bis": "27,13",
         "tun": "holt sich ein Eis",
         "wann": "tag"
       }
@@ -180,24 +211,24 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [16, 15],
+      "feld": [20, 28],
       "eigenschaften": {
-        "von": "16,15",
-        "bis": "22,15",
+        "von": "17,28",
+        "bis": "23,28",
         "verhalten": "folgen"
       }
     },
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [12, 2],
+      "feld": [16, 5],
       "eigenschaften": {
-        "von": "10,2",
-        "bis": "18,2",
+        "von": "10,5",
+        "bis": "24,5",
         "verhalten": "fliegen"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
+  "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "modern", "natur"]
 }

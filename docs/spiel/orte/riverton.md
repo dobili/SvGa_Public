@@ -344,6 +344,15 @@ ebenfalls Spalten 24–25; mit mittel-4 abgestimmt, `orte/ironwood.md` 1.6).
 oben Ginster, unten Birken; offen nur Nord (17–18) und Süd (24–25). **Abzweige:** zwei (Bank in BR6, Kehre
 3 mit Wegkreuz, je 3 lang). **Laufzeit:** durch die Serpentinen ≈ 190 Kacheln für 160 Reihen.
 
+**Gebaut (Runde 5, mittel-3):** feste Geometrie in drei Varianten: Kanal 20–24 bis Reihe 65, in der
+Schlucht als Band 4–24 / 61–65 nach Westen, dann 4–9 bis zum Südrand; Pfad 17–18 von Norden, Fußbrücke
+17–18 / 61–65 über die Schlucht, danach fünf Serpentinen (Reihen 92–93, 108–109, 124–125, 140–141,
+150–151) mit Holzgeländer unter jedem Bein, Ausgang 24–25 am Südrand. Auslöser `zurueckKanalweg`
+(17–18, 0), `weiterIronwood` (24–25, 159), `fundNietenkopf` (18, 62) und `zeitnotTrick` (17, 64) auf
+der Brücke, Start (17, 1); `waerterhaus` und `aussichtTal` kommen in Runde 6. A Ginster und rotes
+Wärterhäuschen; B Nadelbäume, Bretterschuppen, viel Geröll; C Ginster, Wildblumen, grünes Häuschen,
+Birkenhain, zwei Bänke, lange Graffiti-Mauer.
+
 ### 1.6 Lockport (`lockport.aussen`, 56 × 40, Nebenort N2)
 
 Neun Häuser (mit Wärterhaus und Gasthaus) um eine Schleuse am Seitenarm Q2 (`13_Wegenetz.md` 3). Der **Seitenarm** kommt am
@@ -378,10 +387,10 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
 | Dorfplatz                  | 14–34 / 29–34, Linde (24, 31), Schwengelpumpe (30, 30), Bank unter der Linde      | –                                                 | –                                                | Platz    |
 
 **Gebaut (Runde 5, mittel-3):** drei Varianten mit gleicher fester Geometrie: Uferstraße Reihen 10–11
-(Spalten 3–55), Kammer 30–37 / 14–16, Steg 32–33 / 14–16, Kai 1–40 / 20–21, Dorfplatz 2–38 / 32–35,
+(Spalten 3–55), Kammer 30–37 / 14–16 mit Steinkante, Untertor 30–31 und Obertor 36–37 als Stemmtore mit Schwenkbalken (über das Untertor geht man zum Kai), Kai 1–40 / 20–21, Dorfplatz 2–38 / 32–35,
 Gasthaus 14–23 / 23–31 (Tür (21, 31), Auslöser `gasthausTuer` (21, 32)), Wärterhaus (38, 0),
 Tafel (34, 8), Ankunft (54, 10). A: großes Becken 2–29 / 13–19, drei Häuser im Norden; B: kleineres
-Becken 6–29 / 14–19, weniger Häuser, Platz ohne Baum; C: Beete, drei Wäscheleinen, drei Boote.
+Becken 6–29 / 14–19, flache Häuser und ein blaues Häuschen statt Fachwerk, Brunnen statt Linde; C: Beete, drei Wäscheleinen, drei Boote.
 
 **Abschnitte** (je 14 × 20; Reihe 1 = Nordufer, Reihe 2 = Kai und Dorf):
 
@@ -627,6 +636,38 @@ der Story-Bibel und die Wege.
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder
 nach dem Katalog beim Bau (Vorsilbe `rt` für Riverton, `w2`, `w3`, `lp`); hier nur die Beschreibung,
 Karten werden noch nicht gebaut.
+
+### 4.0a Gebaute Karten und Varianten (mittel-1, 9.11.2026)
+
+Gebaut mit dem Kartenbauer, Szenen in `inhalte/abenteuer/szenen/riverton-*.json`, Varianten B und C in
+`szenen/varianten/`, Möbel mit Vorsilbe `rv5` in `moebel/riverton.json`. Eigene Bilder (nur im privaten
+Repository): `fahrrad_plane.png` (Schuppen) und `bahnhofsuhr.png` (Halle); der Katalog hat weder Fahrrad
+noch Wanduhr.
+
+- **Außen (72 × 56)**, Abweichungen von 1.3 wegen der Bildhöhen: Reihe 0 Hecke, ein Gleis in Reihe 1–2,
+  Hecke am Bahnzaun Reihe 3; Bahnhof ist der Backsteinturm mit Uhr (Spalten 32–39, Reihen 3–17),
+  Tür `bahnhofTuer` (36, 18); Vorplatz Reihen 18–21, Water Street Reihen 23–25 mit Gehwegen 22 und 26
+  und Gehweg um die Enden (kein Wendeplatz); Häuser der Südseite Reihen 27–35 mit der Front zur
+  Uferpromenade (Reihen 36–37), Markt als gepflasterter Platz; Fluss Reihen 38–44 von Rand zu Rand,
+  Straßenbrücke Spalten 50–54; Uferweg Süd 45–46; Park 47–54 mit Hinterweg 53–54, Hecke Reihe 55.
+  Wohnwagentür (4, 53), Schuppentür (16, 53), Pavilloneingang (41, 52). Übergänge unverändert:
+  `bahndamm` Westrand Reihen 8–9, `kanalweg` Südrand Spalten 57–58.
+- **Außen B:** graue Gleise, Steinpflaster auf Vorplatz und Promenade, Erde am Uferweg; Güterschuppen links,
+  Stellwerk rechts vom Bahnhof, Statuenbrunnen, Bogenlaternen, Nadelbäume; Südseite mit Holzhäusern,
+  Kaffeekiosk, Markthalle; großer Wohnwagen (Tür (3, 53)), Werkstatt in einer Bretterbude, Pavillon westlich
+  der Bildschirmtische. **Außen C:** Brücke in der Mitte (Spalten 30–34), Bahnhofstür (30, 18), Ausleger-
+  laternen, Ahorne, Eisladen, Kies auf der Promenade, gepflasterter Uferweg, Pavillon östlich der Brücke.
+- **Bahnhofshalle (26 × 16):** je ein Fahrkartenschalter; Zeitungsstand mit Holzladentisch und Kasse,
+  Fundbüro mit Glasvitrine. A wie 4.1 mit vier Säulen und Schließfächern; B alte Wartehalle mit dunklem
+  Holzboden, Holzbänken und zwei Säulen; C mit hellen Wänden, Bänken in der Mitte und den Ständen in den
+  Nordecken.
+- **Pavillon (20 × 14):** Holzwände mit großen Fenstern statt offener Seiten (der Kartenbauer kennt keine
+  Geländerwand). A vier Tische mit Kreuzgang; B fünf Tische; C helle Dielen, weiße Wände, fünf runde
+  Tischchen mit Seitenstühlen und Teppich.
+- **Wohnwagen (14 × 9):** A Bett West, Küche Ost, runder Teppich unter dem Klapptisch; B Holzwände, alte
+  Dielen, Sitzecke mit zwei Sesseln, Pokale auf dem Fensterbrett; C blauer Teppichboden, Etagenbett,
+  Rundtisch. Kein Kurierrad (fehlt im Katalog), dafür die Kuriertasche.
+- **Schuppen (10 × 8):** A Fahrrad in der Mitte; B Rad an der Ostseite; C halb Holzlager.
 
 ### 4.1 Bahnhofshalle (`riverton.bahnhofshalle`)
 

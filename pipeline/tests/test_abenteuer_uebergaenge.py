@@ -61,3 +61,16 @@ def test_sichtbare_breite_entscheidet_auf_der_platte():
     szene["objekte"][1]["moebel"] = "tvAlt"
     _, befunde = platziere(szene, moebel)
     assert any("breiter als die Platte" in b for b in befunde)
+
+
+def test_reise_als_dialog_und_uebergang_ohne_ziel():
+    alle = {
+        "a.aussen": _szene("a.aussen", "aussen", 6, [("ost", 3, 2)]),
+        "b.aussen": _szene("b.aussen", "aussen", 6, [("west", 2, 2)]),
+    }
+    # Rückfahrt im Bus: ein Dialog, kein Weg über den Rand; keine Befunde zu Rand oder Rückweg.
+    bus = [REGELN[0], {"name": "west", "ort": "b", "art": "dialog", "dialog": "b.bus"}]
+    assert pruefe(alle, bus) == []
+    # Übergang, dessen Nachbarort noch fehlt: Befund statt Abbruch.
+    offen = [{"name": "ost", "ort": "a", "art": "uebergang"}]
+    assert any("ohne Ziel" in b for b in pruefe(alle, offen))

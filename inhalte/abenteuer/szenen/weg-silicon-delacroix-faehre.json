@@ -1,0 +1,1119 @@
+{
+  "karte": "wegSiliconDelacroix.faehre",
+  "art": "aussen",
+  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als Deckhaus mit der Rätseltafel an der Wand. Auf dem Vorderdeck Bankreihen zum Bug, zwei Liegestühle und Rettungsringe; am Bug Poller, Taue und die Rampe zum Anleger. Die Bordwand ist vorläufig ein Steinufer; das Bild „wasser_rumpf“ (\"ufer\": \"rumpf\") ist beim Haupt-Chat bestellt.",
+  "boden": "gras",
+  "wandart": "gras",
+  "ufer": "stein",
+  "boeden": {
+    "d": "holzDunkel"
+  },
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~dddddddddddddddd~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "sd6RelingObenLinks",
+      "feld": [7, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingObenRechts",
+      "feld": [22, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUntenLinks",
+      "feld": [7, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUntenRechts",
+      "feld": [22, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [8, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [8, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [9, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [9, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [10, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [10, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [11, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [11, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [12, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [12, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingObenRechts",
+      "feld": [13, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUntenRechts",
+      "feld": [13, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingObenLinks",
+      "feld": [16, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUntenLinks",
+      "feld": [16, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [17, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [17, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [18, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [18, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [19, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [19, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [20, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [20, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [21, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [21, 73],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 8],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 8],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 25],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 25],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 41],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 41],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 42],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 42],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 45],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 45],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 47],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 47],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 49],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 49],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 50],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 50],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 51],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 51],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 52],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 52],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 53],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 53],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 54],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 54],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 55],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 55],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 57],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 57],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 59],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 59],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 60],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 60],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 61],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 61],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 62],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 62],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 63],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 63],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 65],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 65],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 66],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 66],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 68],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 68],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 69],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 69],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 70],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 70],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 71],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 71],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [7, 72],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [22, 72],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [15, 12]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [9, 16]
+    },
+    {
+      "moebel": "ld5Ruderboot",
+      "feld": [16, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bordbar",
+      "feld": [8, 20]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [18, 24],
+      "id": "brett"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "feld": [0, 0],
+      "auf": "brett"
+    },
+    {
+      "moebel": "sd6Salon",
+      "feld": [12, 29]
+    },
+    {
+      "moebel": "cc3Raetseltafel",
+      "feld": [17, 33]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [10, 42]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [16, 42]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [10, 46]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [16, 46]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [10, 50]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [16, 50]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [10, 54]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [16, 54]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [10, 58]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [16, 58]
+    },
+    {
+      "moebel": "sd6Liegestuhl",
+      "feld": [19, 61]
+    },
+    {
+      "moebel": "sd6LiegestuhlGrau",
+      "feld": [9, 61]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [10, 68]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [19, 68]
+    },
+    {
+      "moebel": "ld5Rettungsring",
+      "feld": [8, 40]
+    },
+    {
+      "moebel": "ld5Rettungsring",
+      "feld": [21, 40]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [12, 69]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [14, 6],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "zurueckSilicon",
+      "feld": [14, 4]
+    },
+    {
+      "name": "zurueckSilicon",
+      "feld": [15, 4]
+    },
+    {
+      "name": "weiterDeich",
+      "feld": [14, 73]
+    },
+    {
+      "name": "weiterDeich",
+      "feld": [15, 73]
+    },
+    {
+      "name": "tafel",
+      "feld": [17, 36]
+    },
+    {
+      "name": "fundFlaschenpost",
+      "feld": [8, 52]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "schiffskoch",
+      "feld": [17, 25]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [12, 1],
+      "eigenschaften": {
+        "von": "8,1",
+        "bis": "22,1",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "pelikan",
+      "typ": "tier",
+      "feld": [20, 72],
+      "eigenschaften": {
+        "von": "20,72",
+        "bis": "20,72",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "delfin",
+      "typ": "tier",
+      "feld": [25, 60],
+      "eigenschaften": {
+        "von": "25,70",
+        "bis": "25,45",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "matrose",
+      "typ": "statist",
+      "feld": [19, 10],
+      "eigenschaften": {
+        "von": "19,8",
+        "bis": "19,18",
+        "tun": "prüft die Ladungsgurte",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["einfach", "modern", "rustikal", "klassisch", "natur", "laendlich"],
+  "datei": "karten/weg-silicon-delacroix-faehre.json"
+}

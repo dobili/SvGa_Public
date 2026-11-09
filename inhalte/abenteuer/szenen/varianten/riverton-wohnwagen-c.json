@@ -2,9 +2,9 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/varianten/riverton-wohnwagen-c.json",
   "art": "innen",
-  "beschreibung": "Variante C, Essecke links: Slicks Wohnwagen mit allem an der Nordwand: Bett mit Brett im Westen, Bücherregal, Fenster, der Pokaltisch mit den Dosenpokalen, Küchenzeile und Herd im Osten. Der Klapptisch mit zwei Hockern steht links vorn, daneben die Zeitungen; rechts vorn eine Topfpflanze und die Kuriertasche. Tür mit Fußmatte in der Südwand.",
+  "beschreibung": "Variante C, blauer Teppichboden: Slicks Wohnwagen mit einem Etagenbett im Westen (das obere Bett ist leer), daneben Bücherregal, Fenster und der Pokaltisch mit den Dosenpokalen, im Osten Herd und eine alte Holzkommode als Küche. In der Mitte auf einem runden Teppich ein dunkler Rundtisch mit Brett und zwei orangefarbenen Stühlen; links die Zeitungen, rechts Pflanze und Kuriertasche. Tür mit Fußmatte in der Südwand.",
   "wand": "creme",
-  "boden": "holzHell",
+  "boden": "teppichBlau",
   "raster": [
     "##############",
     "##############",
@@ -18,13 +18,9 @@
   ],
   "objekte": [
     {
-      "moebel": "rv5Bett",
-      "feld": [1, 2],
+      "moebel": "rv5Etagenbett",
+      "feld": [1, 1],
       "id": "bett"
-    },
-    {
-      "moebel": "mf3BrettKleinFiguren",
-      "auf": "bett"
     },
     {
       "moebel": "rv5Buecherregal",
@@ -40,26 +36,34 @@
       "feld": [8, 1]
     },
     {
-      "moebel": "rv5Kuechenzeile",
+      "moebel": "wzHerd",
       "feld": [10, 2]
     },
     {
-      "moebel": "wzHerd",
-      "feld": [12, 2]
+      "moebel": "rv5Kommode",
+      "feld": [11, 2]
     },
     {
-      "moebel": "rv5Klapptisch",
-      "feld": [4, 5],
+      "moebel": "rv5TeppichRund",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "rv5Rundtisch",
+      "feld": [4, 4],
       "id": "tisch"
     },
     {
-      "moebel": "rv5Hocker",
-      "feld": [3, 5],
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "rv5StuhlRechts",
+      "feld": [3, 4],
       "zu": "tisch"
     },
     {
-      "moebel": "rv5Hocker",
-      "feld": [5, 5],
+      "moebel": "rv5StuhlLinks",
+      "feld": [6, 4],
       "zu": "tisch"
     },
     {

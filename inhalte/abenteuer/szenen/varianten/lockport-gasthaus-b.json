@@ -1,7 +1,7 @@
 {
   "karte": "lockport.gasthaus",
   "art": "innen",
-  "beschreibung": "Variante B, schlicht: Backsteinwände, Dielen. Die Kegelbahn läuft an der Westwand von unten nach oben, oben in der Ecke der Platz für die Kegel. Rechts oben eine helle Theke mit zwei Hockern, in der Mitte und rechts zwei Holztische für die Stammgäste, links Fässer und Kisten, ein Kaminofen an der Nordwand, hinter der Theke das Flaschenregal. Wenig Schmuck: zwei Fenster, ein Foto der Schleuse im Hochwasser. An der Tür ein Paar Gummistiefel; unten die Tür mit Fußmatte.",
+  "beschreibung": "Variante B, schlicht: Backsteinwände, Dielen. Die Kegelbahn läuft an der Westwand von unten nach oben, oben in der Ecke der Platz für die Kegel. Oben die Kegel, unten die Kugeln. Rechts oben eine lange helle Theke mit vier Hockern, Gläsern und Flaschen, dahinter das Flaschenregal; in der Mitte drei lange Holztische für die Stammgäste, rechts unten ein runder Tisch und Fässer, ein Kaminofen an der Nordwand. Wenig Schmuck: zwei Fenster, ein Foto der Schleuse im Hochwasser. An der Tür ein Paar Gummistiefel; unten die Tür mit Fußmatte.",
   "wand": "backstein",
   "boden": "dielen",
   "boeden": {
@@ -35,73 +35,13 @@
     },
     {
       "moebel": "wzBild",
-      "feld": [14, 1],
+      "feld": [9, 1],
       "an_wand": true,
       "versatz": [0, 6]
     },
     {
-      "moebel": "ld5ThekeHellLinks",
-      "feld": [13, 3],
-      "id": "th1",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeHellMitte",
-      "feld": [15, 3],
-      "id": "th2",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5ThekeHellRechts",
-      "feld": [16, 3],
-      "id": "th3",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5Barhocker",
-      "feld": [13, 5],
-      "zu": "th1",
-      "versatz": [0, -6],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Barhocker",
-      "feld": [15, 5],
-      "zu": "th2",
-      "versatz": [0, -6],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5LangtischL",
-      "feld": [7, 7],
-      "id": "lt1",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [6, 8],
-      "zu": "lt1"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [9, 8],
-      "zu": "lt1"
-    },
-    {
-      "moebel": "ld5LangtischL",
-      "feld": [16, 8],
-      "id": "lt3",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [15, 9],
-      "zu": "lt3"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [18, 9],
-      "zu": "lt3"
+      "moebel": "ld5Ofen",
+      "feld": [4, 1]
     },
     {
       "moebel": "ld5Flaschenregal",
@@ -109,31 +49,145 @@
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [3, 9]
+      "feld": [14, 2]
     },
     {
-      "moebel": "wg6Kisten",
-      "feld": [7, 10]
+      "moebel": "ld5Theke7",
+      "feld": [12, 4],
+      "id": "theke"
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [-36, -7]
+    },
+    {
+      "moebel": "ld5Flaschen",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [-6, -7]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [30, -7]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [12, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [14, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [16, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [18, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5LangtischL",
+      "feld": [5, 4],
+      "id": "lt1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [4, 5],
+      "zu": "lt1"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [7, 5],
+      "zu": "lt1"
+    },
+    {
+      "moebel": "ld5LangtischL",
+      "feld": [5, 8],
+      "id": "lt2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [4, 9],
+      "zu": "lt2"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [7, 9],
+      "zu": "lt2"
+    },
+    {
+      "moebel": "ld5LangtischL",
+      "feld": [11, 8],
+      "id": "lt3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [10, 9],
+      "zu": "lt3"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [13, 9],
+      "zu": "lt3"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [16, 8],
+      "id": "rt"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [15, 8],
+      "zu": "rt"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [18, 8],
+      "zu": "rt"
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [9, 10]
+      "feld": [9, 3]
     },
     {
-      "moebel": "mf9Wartebank",
-      "feld": [7, 3]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [18, 6]
-    },
-    {
-      "moebel": "ld5Ofen",
-      "feld": [4, 1]
+      "moebel": "wg6Faesser",
+      "feld": [17, 10]
     },
     {
       "moebel": "ld5Stiefel",
       "feld": [12, 11]
+    },
+    {
+      "moebel": "ld5Kegelkugel",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "ld5Kegelkugel",
+      "feld": [2, 11]
+    },
+    {
+      "moebel": "ld5Kegel",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "ld5Kegel",
+      "feld": [2, 3]
     },
     {
       "moebel": "mf4Fussmatte",

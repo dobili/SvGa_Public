@@ -31,6 +31,7 @@ nachträgliches Möblieren:
   // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
   // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).
+  // Roter Fels (Canyon, Wüste): "wand": "felsRot", Böden "sandRot" und "felsbodenRot".
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
     { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel

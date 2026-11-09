@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 74,
+ "nextobjectid": 91,
  "layers": [
   {
    "id": 1,
@@ -12227,6 +12227,397 @@
        "name": "tiefe",
        "type": "int",
        "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 576,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 624,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 672,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 720,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 128,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 176,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 80,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 224,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 704,
+     "y": 576,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 768,
+     "y": 608,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 616
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 416,
+     "y": 288,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "st5Steinpalette",
+     "type": "moebel",
+     "x": 576,
+     "y": 544,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "st5Steinpalette",
+     "type": "moebel",
+     "x": 608,
+     "y": 544,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "st5Steinpalette",
+     "type": "moebel",
+     "x": 480,
+     "y": 224,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 87,
+     "name": "st5Lore",
+     "type": "moebel",
+     "x": 752,
+     "y": 688,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 88,
+     "name": "st5Bohlen",
+     "type": "moebel",
+     "x": 32,
+     "y": 608,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 89,
+     "name": "st5Bohlen",
+     "type": "moebel",
+     "x": 48,
+     "y": 608,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "st5Schuppen",
+     "type": "moebel",
+     "x": 96,
+     "y": 576,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 632
       },
       {
        "name": "kollision",

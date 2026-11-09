@@ -1,0 +1,140 @@
+{
+  "karte": "portDelacroix.werkstatt",
+  "datei": "karten/varianten/port-delacroix-werkstatt-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Werkstatt mit Musikecke: Cremeweiße Wände, helle alte Dielen. An der Nordwand die Werkbank mit Farbe und Werkzeug (Auslöser des Flashbacks), daneben das Regal mit Gartengerät und Leim, links das alte Foto im Goldrahmen zwischen zwei Fenstern. Die drei geretteten Klaviere stehen an der Ostseite, zwei hintereinander an der Wand, eines davor. Links vorn Célestes Ecke mit dem Keyboard auf dem Ständer und einem Hocker, oben links eine Kommode. In der Mitte Sägebock und Holzscheite, ein Kanister an der Westwand.",
+  "wand": "creme",
+  "boden": "dielen",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6FotoAlt",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "pd6Bastelbank",
+      "feld": [8, 1],
+      "id": "hobel"
+    },
+    {
+      "moebel": "pd6Werkzeugregal",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "pd6Kommode",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "pd6KlavierHell",
+      "feld": [17, 3]
+    },
+    {
+      "moebel": "pd6KlavierRot",
+      "feld": [17, 6]
+    },
+    {
+      "moebel": "pd6KlavierNatur",
+      "feld": [14, 6]
+    },
+    {
+      "moebel": "pd6Keyboard",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "pd6Hocker",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "pd6Saegebock",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "pd6Holzscheite",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "pd6Kanister",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [17, 10]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [10, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 12],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "werkstattAusgang",
+      "feld": [10, 12]
+    },
+    {
+      "name": "werkbank",
+      "feld": [9, 3],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "henri",
+      "feld": [11, 6]
+    },
+    {
+      "name": "celeste",
+      "feld": [5, 10]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern", "industrie"],
+  "variante": "b"
+}

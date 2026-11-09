@@ -45,64 +45,20 @@
   ],
   "objekte": [
     {
-      "moebel": "hb7Felsblock",
-      "feld": [90, 9],
-      "vorn": false
+      "moebel": "hb7Felsturm",
+      "feld": [90, 3]
     },
     {
-      "moebel": "hb7Felsblock",
-      "feld": [90, 7],
-      "vorn": true
+      "moebel": "hb7FelsturmBreit",
+      "feld": [84, 14]
     },
     {
-      "moebel": "hb7Felsblock",
-      "feld": [90, 5],
-      "vorn": true
+      "moebel": "hb7Felsturm",
+      "feld": [60, 0]
     },
     {
-      "moebel": "hb7Felsblock",
-      "feld": [84, 21],
-      "vorn": false
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [84, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [84, 17],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [84, 15],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [60, 6],
-      "vorn": false
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [60, 4],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [60, 2],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [66, 21],
-      "vorn": false
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [66, 19],
-      "vorn": true
+      "moebel": "hb7Felsturm",
+      "feld": [66, 15]
     },
     {
       "moebel": "hb7Zaun",
@@ -274,10 +230,6 @@
       "id": "tisch"
     },
     {
-      "moebel": "hb7Brett",
-      "auf": "tisch"
-    },
-    {
       "moebel": "hb7Felsbogen",
       "feld": [6, 3]
     },
@@ -322,16 +274,12 @@
       "feld": [81, 21]
     },
     {
-      "moebel": "wds6Saguaro",
-      "feld": [70, 13]
+      "moebel": "wds6KaktusBluehend",
+      "feld": [71, 20]
     },
     {
       "moebel": "wds6KaktusBluehend",
       "feld": [62, 17]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [65, 13]
     },
     {
       "moebel": "wds6SteinRot",
@@ -372,6 +320,10 @@
     {
       "moebel": "wds6SteinRot",
       "feld": [91, 19]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [96, 22]
     },
     {
       "moebel": "hb7Felsblock",

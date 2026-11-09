@@ -2,7 +2,7 @@
   "karte": "summitCity.bergstation",
   "datei": "karten/summit-city-bergstation.json",
   "art": "innen",
-  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand große Fenster, hinter denen Wolken und Gipfel stehen; davor die Bank am Fenster. Rechts die Plattform, an der die Gondel ankommt (Ersatzbild: Wagenstück der Bahn, bis gondel.png kommt); mit ihr fährt man auch zurück ins Tal. Links Fahrkartenschalter, Fahrplan, Kaffeeautomat und Schließfächer. Bank in der Mitte vor den Fenstern, Gondel rechts, Schalter links, im Eck eine vergessene Murmeltierpfeife.",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand große Fenster, hinter denen Wolken und Gipfel stehen; davor die Bank am Fenster. Rechts die Plattform, an der die Gondel ankommt; mit ihr fährt man auch zurück ins Tal. Links Fahrkartenschalter, Fahrplan, Kaffeeautomat und Schließfächer. Bank in der Mitte vor den Fenstern, Gondel rechts, Schalter links, im Eck eine vergessene Murmeltierpfeife.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "zustand": ["neu", "gebraucht"],
@@ -23,18 +23,18 @@
   ],
   "objekte": [
     {
-      "moebel": "cc4Fenster",
-      "feld": [3, 1],
+      "moebel": "sc7FensterWolken",
+      "feld": [2, 1],
       "an_wand": true
     },
     {
-      "moebel": "cc4Fenster",
+      "moebel": "sc7FensterWolken",
       "feld": [6, 1],
       "an_wand": true
     },
     {
-      "moebel": "cc4Fenster",
-      "feld": [9, 1],
+      "moebel": "sc7FensterWolken",
+      "feld": [10, 1],
       "an_wand": true
     },
     {
@@ -42,9 +42,8 @@
       "feld": [5, 3]
     },
     {
-      "moebel": "sb5BahnLinks",
-      "feld": [13, 3],
-      "bauteil_ok": true
+      "moebel": "sc7Gondel",
+      "feld": [13, 2]
     },
     {
       "moebel": "rvTicketschalter",

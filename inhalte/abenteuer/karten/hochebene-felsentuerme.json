@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 86,
+  "nextobjectid": 80,
   "layers": [
     {
       "id": 1,
@@ -640,19 +640,19 @@
         },
         {
           "id": 12,
-          "name": "hb7Felsblock",
+          "name": "hb7Felsturm",
           "type": "moebel",
           "x": 1376,
-          "y": 128,
-          "width": 64,
-          "height": 32,
+          "y": 32,
+          "width": 48,
+          "height": 112,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 152
+              "value": 136
             },
             {
               "name": "kollision",
@@ -663,65 +663,65 @@
         },
         {
           "id": 13,
-          "name": "hb7Felsblock",
+          "name": "hb7FelsturmBreit",
           "type": "moebel",
-          "x": 1376,
-          "y": 96,
-          "width": 64,
-          "height": 32,
+          "x": 1408,
+          "y": 240,
+          "width": 80,
+          "height": 128,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 120
+              "value": 360
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 14,
-          "name": "hb7Felsblock",
+          "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1376,
-          "y": 64,
-          "width": 64,
-          "height": 32,
+          "x": 928,
+          "y": 208,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 88
+              "value": 216
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 15,
-          "name": "hb7Felsblock",
+          "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1408,
-          "y": 352,
-          "width": 64,
-          "height": 32,
+          "x": 944,
+          "y": 208,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 376
+              "value": 216
             },
             {
               "name": "kollision",
@@ -732,70 +732,70 @@
         },
         {
           "id": 16,
-          "name": "hb7Felsblock",
+          "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1408,
-          "y": 320,
-          "width": 64,
-          "height": 32,
+          "x": 960,
+          "y": 208,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 344
+              "value": 216
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 17,
-          "name": "hb7Felsblock",
+          "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1408,
-          "y": 288,
-          "width": 64,
-          "height": 32,
+          "x": 976,
+          "y": 208,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 312
+              "value": 216
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 18,
-          "name": "hb7Felsblock",
+          "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1408,
-          "y": 256,
-          "width": 64,
-          "height": 32,
+          "x": 992,
+          "y": 208,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 280
+              "value": 216
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
@@ -803,7 +803,7 @@
           "id": 19,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 928,
+          "x": 1008,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -826,7 +826,7 @@
           "id": 20,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 944,
+          "x": 1024,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -849,7 +849,7 @@
           "id": 21,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 960,
+          "x": 1040,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -872,7 +872,7 @@
           "id": 22,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 976,
+          "x": 1056,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -895,7 +895,7 @@
           "id": 23,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 992,
+          "x": 1072,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -918,7 +918,7 @@
           "id": 24,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1008,
+          "x": 1088,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -941,7 +941,7 @@
           "id": 25,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1024,
+          "x": 1104,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -964,7 +964,7 @@
           "id": 26,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1040,
+          "x": 1120,
           "y": 208,
           "width": 16,
           "height": 16,
@@ -987,121 +987,6 @@
           "id": 27,
           "name": "hb7Zaun",
           "type": "moebel",
-          "x": 1056,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 28,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 1072,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 29,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 1088,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 30,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 1104,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 31,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 1120,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 32,
-          "name": "hb7Zaun",
-          "type": "moebel",
           "x": 928,
           "y": 336,
           "width": 16,
@@ -1122,7 +1007,7 @@
           ]
         },
         {
-          "id": 33,
+          "id": 28,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 944,
@@ -1145,7 +1030,7 @@
           ]
         },
         {
-          "id": 34,
+          "id": 29,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 960,
@@ -1168,7 +1053,7 @@
           ]
         },
         {
-          "id": 35,
+          "id": 30,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 976,
@@ -1191,7 +1076,7 @@
           ]
         },
         {
-          "id": 36,
+          "id": 31,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 992,
@@ -1214,7 +1099,7 @@
           ]
         },
         {
-          "id": 37,
+          "id": 32,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1008,
@@ -1237,7 +1122,7 @@
           ]
         },
         {
-          "id": 38,
+          "id": 33,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1024,
@@ -1260,7 +1145,7 @@
           ]
         },
         {
-          "id": 39,
+          "id": 34,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1040,
@@ -1283,7 +1168,7 @@
           ]
         },
         {
-          "id": 40,
+          "id": 35,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1056,
@@ -1306,7 +1191,7 @@
           ]
         },
         {
-          "id": 41,
+          "id": 36,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1072,
@@ -1329,7 +1214,7 @@
           ]
         },
         {
-          "id": 42,
+          "id": 37,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1088,
@@ -1352,7 +1237,7 @@
           ]
         },
         {
-          "id": 43,
+          "id": 38,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1104,
@@ -1375,7 +1260,7 @@
           ]
         },
         {
-          "id": 44,
+          "id": 39,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1398,7 +1283,7 @@
           ]
         },
         {
-          "id": 45,
+          "id": 40,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 928,
@@ -1412,6 +1297,121 @@
               "name": "tiefe",
               "type": "int",
               "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "name": "hb7Zaun",
+          "type": "moebel",
+          "x": 928,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 248
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "hb7Zaun",
+          "type": "moebel",
+          "x": 928,
+          "y": 256,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 264
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 43,
+          "name": "hb7Zaun",
+          "type": "moebel",
+          "x": 928,
+          "y": 272,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 280
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "name": "hb7Zaun",
+          "type": "moebel",
+          "x": 928,
+          "y": 288,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 296
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 45,
+          "name": "hb7Zaun",
+          "type": "moebel",
+          "x": 928,
+          "y": 304,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 312
             },
             {
               "name": "kollision",
@@ -1425,121 +1425,6 @@
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 928,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 47,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 928,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 264
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 48,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 928,
-          "y": 272,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 280
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 49,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 928,
-          "y": 288,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 296
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 50,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 928,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 51,
-          "name": "hb7Zaun",
-          "type": "moebel",
-          "x": 928,
           "y": 320,
           "width": 16,
           "height": 16,
@@ -1559,7 +1444,7 @@
           ]
         },
         {
-          "id": 52,
+          "id": 47,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1582,7 +1467,7 @@
           ]
         },
         {
-          "id": 53,
+          "id": 48,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1605,7 +1490,7 @@
           ]
         },
         {
-          "id": 54,
+          "id": 49,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1628,7 +1513,7 @@
           ]
         },
         {
-          "id": 55,
+          "id": 50,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1651,7 +1536,7 @@
           ]
         },
         {
-          "id": 56,
+          "id": 51,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1674,7 +1559,7 @@
           ]
         },
         {
-          "id": 57,
+          "id": 52,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1697,7 +1582,7 @@
           ]
         },
         {
-          "id": 58,
+          "id": 53,
           "name": "hb7Zaun",
           "type": "moebel",
           "x": 1120,
@@ -1720,7 +1605,7 @@
           ]
         },
         {
-          "id": 59,
+          "id": 54,
           "name": "hb7Trog",
           "type": "moebel",
           "x": 960,
@@ -1743,7 +1628,7 @@
           ]
         },
         {
-          "id": 60,
+          "id": 55,
           "name": "wds6Wegweiser",
           "type": "moebel",
           "x": 1504,
@@ -1766,7 +1651,7 @@
           ]
         },
         {
-          "id": 61,
+          "id": 56,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 704,
@@ -1789,7 +1674,7 @@
           ]
         },
         {
-          "id": 62,
+          "id": 57,
           "name": "hb7Steintisch",
           "type": "moebel",
           "x": 656,
@@ -1812,30 +1697,7 @@
           ]
         },
         {
-          "id": 63,
-          "name": "hb7Brett",
-          "type": "moebel",
-          "x": 674,
-          "y": 218,
-          "width": 12,
-          "height": 9,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 233
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 64,
+          "id": 58,
           "name": "hb7Felsbogen",
           "type": "moebel",
           "x": 416,
@@ -1858,7 +1720,7 @@
           ]
         },
         {
-          "id": 65,
+          "id": 59,
           "name": "wds6Briefkasten",
           "type": "moebel",
           "x": 128,
@@ -1881,7 +1743,7 @@
           ]
         },
         {
-          "id": 66,
+          "id": 60,
           "name": "haltestellenschild",
           "type": "moebel",
           "x": 192,
@@ -1904,7 +1766,7 @@
           ]
         },
         {
-          "id": 67,
+          "id": 61,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 320,
@@ -1927,7 +1789,7 @@
           ]
         },
         {
-          "id": 68,
+          "id": 62,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 112,
@@ -1950,7 +1812,7 @@
           ]
         },
         {
-          "id": 69,
+          "id": 63,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1280,
@@ -1973,7 +1835,7 @@
           ]
         },
         {
-          "id": 70,
+          "id": 64,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 512,
@@ -1996,7 +1858,7 @@
           ]
         },
         {
-          "id": 71,
+          "id": 65,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 304,
@@ -2019,7 +1881,7 @@
           ]
         },
         {
-          "id": 72,
+          "id": 66,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 160,
@@ -2042,7 +1904,7 @@
           ]
         },
         {
-          "id": 73,
+          "id": 67,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 208,
@@ -2065,7 +1927,7 @@
           ]
         },
         {
-          "id": 74,
+          "id": 68,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 1200,
@@ -2088,7 +1950,7 @@
           ]
         },
         {
-          "id": 75,
+          "id": 69,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1472,
@@ -2111,7 +1973,7 @@
           ]
         },
         {
-          "id": 76,
+          "id": 70,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 160,
@@ -2134,7 +1996,7 @@
           ]
         },
         {
-          "id": 77,
+          "id": 71,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 784,
@@ -2157,7 +2019,7 @@
           ]
         },
         {
-          "id": 78,
+          "id": 72,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 1264,
@@ -2180,7 +2042,7 @@
           ]
         },
         {
-          "id": 79,
+          "id": 73,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 784,
@@ -2203,7 +2065,7 @@
           ]
         },
         {
-          "id": 80,
+          "id": 74,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 848,
@@ -2226,7 +2088,7 @@
           ]
         },
         {
-          "id": 81,
+          "id": 75,
           "name": "hb7Felsblock",
           "type": "moebel",
           "x": 272,
@@ -2249,7 +2111,7 @@
           ]
         },
         {
-          "id": 82,
+          "id": 76,
           "name": "hb7Felsblock",
           "type": "moebel",
           "x": 528,
@@ -2272,7 +2134,7 @@
           ]
         },
         {
-          "id": 83,
+          "id": 77,
           "name": "hb7Felsblock",
           "type": "moebel",
           "x": 1280,
@@ -2295,7 +2157,7 @@
           ]
         },
         {
-          "id": 84,
+          "id": 78,
           "name": "hb7Felsblock",
           "type": "moebel",
           "x": 48,
@@ -2318,7 +2180,7 @@
           ]
         },
         {
-          "id": 85,
+          "id": 79,
           "name": "hb7Felsblock",
           "type": "moebel",
           "x": 240,

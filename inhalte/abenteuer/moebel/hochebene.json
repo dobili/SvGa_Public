@@ -133,14 +133,14 @@
       "stil": "natur"
     },
     "hb7Steintisch": {
-      "quelle": "spiel/eigene/stein_flach_rot.png",
+      "quelle": "spiel/eigene/steintisch.png",
       "breite": 48,
       "hoehe": 32,
       "kollision": true,
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "natur"
     },
     "hb7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -161,6 +161,26 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "hb7Felsturm": {
+      "quelle": "spiel/eigene/felsturm_rot.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "hb7FelsturmBreit": {
+      "quelle": "spiel/eigene/felsturm_rot_breit.png",
+      "breite": 80,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

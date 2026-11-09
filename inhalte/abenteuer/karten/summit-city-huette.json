@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 36,
+  "nextobjectid": 39,
   "layers": [
     {
       "id": 1,
@@ -252,24 +252,24 @@
         },
         {
           "id": 11,
-          "name": "ld5Ofen",
+          "name": "sc7Kamin",
           "type": "moebel",
-          "x": 128,
-          "y": 16,
-          "width": 32,
-          "height": 48,
+          "x": 112,
+          "y": 0,
+          "width": 48,
+          "height": 64,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 56
+              "value": 0
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": true
+              "value": false
             }
           ]
         },
@@ -817,6 +817,75 @@
               "name": "tiefe",
               "type": "int",
               "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "kisteRot",
+          "type": "moebel",
+          "x": 256,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "wzSofa",
+          "type": "moebel",
+          "x": 224,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "name": "cc4Holzstapel",
+          "type": "moebel",
+          "x": 64,
+          "y": 64,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
             },
             {
               "name": "kollision",

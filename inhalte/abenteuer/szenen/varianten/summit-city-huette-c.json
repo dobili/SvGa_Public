@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/varianten/summit-city-huette-c.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der Kamin mit Feuer (Ersatzbild: Kachelofen, bis das Bild kamin.png kommt), Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Variante C, die reichere: Kamin in der Mitte mit Holzstapeln links und rechts, zwei Bücherwände, Vitrine, Teppich, Leselampe und drei Clubtische.",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Variante C, die reichere: Kamin in der Mitte mit Holzstapeln links und rechts, zwei Bücherwände, Vitrine, Teppich, Leselampe und drei Clubtische.",
   "wand": "holz",
   "boden": "holzDunkel",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -34,8 +34,9 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "ld5Ofen",
-      "feld": [8, 1]
+      "moebel": "sc7Kamin",
+      "feld": [7, 0],
+      "an_wand": true
     },
     {
       "moebel": "cc4Holzstapel",

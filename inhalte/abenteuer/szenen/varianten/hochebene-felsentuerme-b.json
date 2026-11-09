@@ -45,24 +45,8 @@
   ],
   "objekte": [
     {
-      "moebel": "hb7Felsblock",
-      "feld": [70, 9],
-      "vorn": false
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [70, 7],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [70, 5],
-      "vorn": true
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [70, 3],
-      "vorn": true
+      "moebel": "hb7FelsturmBreit",
+      "feld": [70, 2]
     },
     {
       "moebel": "wds6Wegweiser",

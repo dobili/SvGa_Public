@@ -187,7 +187,7 @@ und daneben die Werkstatt, in der Joss Vell den Bus repariert. Die Hälfte der S
 - **Weg 8:** abgestimmt mit mittel-3: `wegCrossroads` am Südrand (56–57), Gegenstück Nordrand (14–15) des Geysirbeckens.
 - **Bilder** sind beim Haupt-Chat bestellt (Drachenbrunnen, Talstation, Mast, Berghütte, Ferienhütten,
   Bergladen, Plakat, Wimpelketten, Kamin, Gondel, Wolkenfenster, rote Felstürme, Steintisch); bis sie
-  kommen, steht Ersatz aus dem Katalog, in der Beschreibung genannt.
+  kommen, steht Ersatz aus dem Katalog, in der Beschreibung genannt. Erledigt: alle Bilder eingesetzt (9.11.2026 nachts).
 
 ## 4. Bühnenbilder
 

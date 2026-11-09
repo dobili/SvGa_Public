@@ -84,6 +84,7 @@ anders vermerkt; zuständig für 12 und `orte/maple-falls.md` ist mittel-1, für
 
 ## Erledigt
 
-| Nr.  | Wer                 | Stand |
-| ---- | ------------------- | ----- |
-| 1–38 | mittel-1 / mittel-2 | offen |
+| Nr.                                                                                                            | Wer                 | Stand                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1–38                                                                                                           | mittel-1 / mittel-2 | offen                                                                                                                                                                                                                                                                                                  |
+| 4, 5 (Maple Falls), 8, 9, 10, 12, 13, 14, 15, 17, 23, 25, 26, 33 (Tessa), 34, 35, 38 (Teil 12 und maple-falls) | mittel-1            | erledigt 9.11.2026 in `12_Akt1_Leben.md` und `orte/maple-falls.md`; 10: Birch Lane 64 × 36 als begründete Ausnahme, Spielplatz gegenüber der Schule, Haus Hayes auf der Südseite; 33 R1 gehört zu 13 (mittel-2); 5 und Zedernpfad mit mittel-2 abgestimmt (Stamm auf der Pfadkarte, Schild am Fußsteg) |

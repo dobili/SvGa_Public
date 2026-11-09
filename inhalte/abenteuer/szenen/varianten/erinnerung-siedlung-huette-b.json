@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Variante B (schlichter): Fast leer: die Pritsche an der Ostwand, der Tisch mit Brett und Kerze an der Westseite, ein Stuhl, der Ofen in der Nordwestecke, eine einzelne Kiste. Der Postreiter steht an der Tür.",
+  "beschreibung": "Variante B (schlichter): Fast leer: die Pritsche an der Ostwand, der Tisch mit Brett und Kerze an der Westseite, ein Stuhl, der Kanonenofen in der Nordwestecke, eine einzelne Kiste. Der Postreiter steht an der Tür.",
   "zustand": ["alt", "verwittert", "gebraucht"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -58,7 +58,13 @@
     },
     {
       "moebel": "es7Kisten",
-      "feld": [9, 1]
+      "feld": [9, 1],
+      "id": "kisten"
+    },
+    {
+      "moebel": "es7Petroleumlampe",
+      "feld": [0, 0],
+      "auf": "kisten"
     },
     {
       "moebel": "es7Fass",

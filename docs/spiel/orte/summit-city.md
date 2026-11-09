@@ -124,9 +124,9 @@ Kulturen (O5): Menschen von heute mit Berufen. Der Weg kommt am **Ostrand (59, 1
 | ----------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------- |
 | aussen `wegDesert` Südrand (34–36, 55)                | bergstrasse `weiterSummit` Nordrand (18–20, 0)     | drei Felder                                                          |
 | aussen `wegCrossroads` Südrand (56–57, 55)            | geysirbecken `zurueckSummit` Nordrand (14–15, 0)   | Erdweg zwei Felder, `wenn: nadelSummitCity`, mit mittel-3 abgestimmt |
-| aussen `huetteTuer` (8, 27)                           | huette `huetteAusgang` (8–9, 12)                   | Tür der Hütte                                                        |
-| aussen `bergladenTuer` (22, 28)                       | bergladen `bergladenAusgang` (6–7, 9)              | Tür des Ladens                                                       |
-| aussen `seilbahnTal` (57, 22)                         | bergstation `seilbahnBerg` an der Gondel           | Fahrt mit der Seilbahn                                               |
+| aussen `huetteTuer` (8, 26)                           | huette `huetteAusgang` (8–9, 12)                   | Tür der Hütte                                                        |
+| aussen `bergladenTuer` (21, 24)                       | bergladen `bergladenAusgang` (6–7, 9)              | Tür des Ladens                                                       |
+| aussen `seilbahnTal` (54, 22)                         | bergstation `seilbahnBerg` an der Gondel           | Fahrt mit der Seilbahn                                               |
 | felsentuerme `zurueckBergstrasse` Ostrand (99, 14–15) | bergstrasse `abzweigHochebene` Westrand (0, 70–71) | zwei Felder Schotter                                                 |
 | felsentuerme `weiterSchule` Westrand (0, 14–15)       | schule `zurueckFelsentuerme` Ostrand (59, 19–20)   | zwei Felder                                                          |
 
@@ -200,10 +200,10 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
 | --------- | ---------------------------------------------------------------------------------------------------------------- |
 | S1        | Ortsschild (31, 50), Plakat (38, 46), Bank (39, 50)                                                              |
 | S2        | Drachenbrunnen (34, 31), Wimpelketten über dem Platz (Reihe 28), Marktstände (27, 36), (42, 36), Bänke, Laternen |
-| S3        | Berghütte 4–11 / 20–26, Holzstapel (12, 24), Bank auf der Veranda                                                |
-| S4        | Bergladen 18–24 / 22–27, Rucksäcke und Seil vor der Tür                                                          |
+| S3        | Berghütte 5–12 / 19–25, Holzstapel (12, 24), Bank auf der Veranda                                                |
+| S4        | Bergladen 18–24 / 18–23, Rucksäcke und Seil vor der Tür                                                          |
 | S5        | Felsplatte 2–24 / 6–12, Treppe (10–11, 13–15), Fernrohr (16, 7); Sol (12, 9)                                     |
-| S6        | Talstation 52–59 / 14–21, Mast (56, 6), Weg 52–53 / 22–27                                                        |
+| S6        | Talstation 51–58 / 14–21, Mast (54, 7), Weg 54–55 / 22–27                                                        |
 | S7–S8     | Ferienhütten, Pinien, Holzhacker mit Hackklotz, Ziegen                                                           |
 | S9        | Wegweiser (60, 31)                                                                                               |
 
@@ -232,3 +232,12 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
   westlich; Hütte mit nur einem Clubtisch; Felstürme mit einer geraden Strecke.
 - **C, die reichere:** außen mit Bühne und mehr Ständen (Sommerfest am Abend), zusätzliche Hütten; Hütte
   mit Bärenfell und zwei Bücherwänden; Felstürme mit Felsbogen und Pferdekoppel.
+
+### 4.5 Nacharbeit nach der Gegenprüfung (10.11.2026)
+
+- Hütte, Laden und Talstation stehen in A, B und C an denselben Stellen; die Türauslöser `huetteTuer`
+  (8, 26), `bergladenTuer` (21, 24) und `seilbahnTal` (54, 22) sind in allen Varianten gleich (Regel 37).
+- Die Ferienhütten stehen am Hüttenweg (Erde, zwei Felder, Reihen 46–47) im Westen und Osten, ihre Türen
+  direkt darüber.
+- B unterscheidet sich jetzt deutlich: Erdwege, ein achteckiger Brunnengarten mit Blumen und Bänken statt
+  des Marktplatzes, keine Stände, Ziegen auf der Ostwiese.

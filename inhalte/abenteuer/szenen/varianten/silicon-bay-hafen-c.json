@@ -355,6 +355,14 @@
     {
       "name": "faehre",
       "feld": [4, 29]
+    },
+    {
+      "name": "inselfaehre",
+      "feld": [47, 35]
+    },
+    {
+      "name": "inselfaehre",
+      "feld": [48, 35]
     }
   ],
   "figuren": [],

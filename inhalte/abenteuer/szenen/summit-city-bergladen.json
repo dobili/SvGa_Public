@@ -2,11 +2,18 @@
   "karte": "summitCity.bergladen",
   "datei": "karten/summit-city-bergladen.json",
   "art": "innen",
-  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Theke links, Regale an der Nordwand, Kartenständer in der Mitte.",
+  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Theke links, an der Nordwand Warenregale, Seilhaken und ein Werkzeugregal, Kartentisch in der Mitte.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "laendlich", "natur", "modern", "rustikal"],
+  "stil": [
+    "klassisch",
+    "laendlich",
+    "natur",
+    "modern",
+    "rustikal",
+    "industrie"
+  ],
   "raster": [
     "##############",
     "##############",
@@ -35,45 +42,49 @@
       "feld": [1, 3]
     },
     {
-      "moebel": "cc4Holzregal",
+      "moebel": "mf9Vorrat99",
       "feld": [5, 1]
     },
     {
-      "moebel": "cc4RegalA",
-      "feld": [7, 1]
+      "moebel": "mf9Vorrat100",
+      "feld": [6, 1]
     },
     {
-      "moebel": "cc4RegalB",
-      "feld": [10, 1]
-    },
-    {
-      "moebel": "ccWeltkarte",
-      "feld": [2, 1],
+      "moebel": "pg7SeilHaken",
+      "feld": [8, 1],
       "an_wand": true
     },
     {
-      "moebel": "ld5Seil",
-      "feld": [6, 6]
+      "moebel": "pdWerkzeugregal",
+      "feld": [9, 2]
     },
     {
-      "moebel": "scRucksack",
-      "feld": [9, 6]
+      "moebel": "mf9Vorrat102",
+      "feld": [12, 1]
     },
     {
-      "moebel": "scRucksackRot",
-      "feld": [10, 6]
-    },
-    {
-      "moebel": "kisteRot",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "cc4Falttisch",
+      "moebel": "cc5Tisch",
       "feld": [7, 5]
     },
     {
+      "moebel": "ld5Seil",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "scRucksack",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "scRucksackRot",
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "cc3Zeitungsregal",
+      "feld": [11, 3]
+    },
+    {
       "moebel": "cc4PflanzeK",
-      "feld": [12, 7]
+      "feld": [1, 7]
     }
   ],
   "ausloeser": [

@@ -808,8 +808,8 @@
      "id": 4,
      "name": "partieformular2001",
      "type": "ausloeser",
-     "x": 192,
-     "y": 64,
+     "x": 208,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1186,8 +1186,8 @@
      "id": 22,
      "name": "iwBild",
      "type": "moebel",
-     "x": 176,
-     "y": 48,
+     "x": 208,
+     "y": 16,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1196,12 +1196,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },

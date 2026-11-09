@@ -23,7 +23,7 @@
   "objekte": [
     {
       "moebel": "mf4Treppe",
-      "feld": [1, 0],
+      "feld": [1, 1],
       "id": "treppe"
     },
     {

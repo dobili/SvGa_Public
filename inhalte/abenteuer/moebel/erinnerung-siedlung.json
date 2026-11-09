@@ -29,13 +29,13 @@
       "stil": "rustikal"
     },
     "es7Ofen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_109.png",
+      "quelle": "spiel/eigene/kanonenofen.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
       "art": "herd",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "alt",
       "stil": "rustikal"
     },
     "es7Kisten": {
@@ -104,14 +104,6 @@
       "zustand": "gebraucht",
       "stil": "rustikal"
     },
-    "es7Laterne": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
-      "breite": 16,
-      "hoehe": 16,
-      "kollision": true,
-      "stil": "rustikal",
-      "zustand": "alt"
-    },
     "es7Tuch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
       "breite": 32,
@@ -164,6 +156,15 @@
       "kollision": false,
       "stil": "rustikal",
       "zustand": "alt"
+    },
+    "es7Petroleumlampe": {
+      "quelle": "spiel/eigene/petroleumlampe.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

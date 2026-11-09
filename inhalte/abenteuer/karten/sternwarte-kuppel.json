@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 20,
+ "nextobjectid": 19,
  "layers": [
   {
    "id": 1,
@@ -846,12 +846,12 @@
     },
     {
      "id": 12,
-     "name": "cc4Leselampe",
+     "name": "mf9RadioAlt",
      "type": "moebel",
-     "x": 174,
-     "y": 83,
+     "x": 176,
+     "y": 99,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -915,29 +915,6 @@
     },
     {
      "id": 15,
-     "name": "cc4Globus",
-     "type": "moebel",
-     "x": 64,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
      "name": "cc4KartonOffen",
      "type": "moebel",
      "x": 176,
@@ -960,7 +937,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "cc5Anrichte",
      "type": "moebel",
      "x": 48,
@@ -983,7 +960,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 128,
@@ -1006,12 +983,12 @@
      ]
     },
     {
-     "id": 19,
-     "name": "cc4Karton",
+     "id": 18,
+     "name": "cc4Globus",
      "type": "moebel",
-     "x": 80,
-     "y": 128,
-     "width": 32,
+     "x": 64,
+     "y": 115,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1019,12 +996,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 153
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     }

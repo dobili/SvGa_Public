@@ -3,9 +3,9 @@
   "datei": "karten/varianten/weg-pinewood-ghost-staubstrasse-c.json",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C: heller Sand, viele Zaunreste und Kakteen, zwei Autowracks, ein alter Wassertank am Wegrand.",
-  "boden": "sand",
-  "wandart": "sand",
+  "beschreibung": "Variante C: viele Zaunreste und blühende Kakteen, ein Autowrack und ein kaputter Planwagen, ein alter Wassertank am Wegrand.",
+  "boden": "sandRot",
+  "wandart": "sandRot",
   "boeden": {
     "k": "schotter"
   },
@@ -83,6 +83,14 @@
       "feld": [134, 10]
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [13, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [20, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [14, 4],
       "bauteil_ok": true
@@ -111,6 +119,14 @@
       "moebel": "ccZaun",
       "feld": [18, 4],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [39, 24]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [46, 24]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -143,6 +159,14 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [65, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [72, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [66, 4],
       "bauteil_ok": true
@@ -171,6 +195,14 @@
       "moebel": "ccZaun",
       "feld": [70, 4],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [99, 23]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [106, 23]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -203,6 +235,14 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [125, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [132, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [126, 4],
       "bauteil_ok": true
@@ -233,11 +273,11 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5AutoA",
+      "moebel": "wr5Autowrack",
       "feld": [50, 3]
     },
     {
-      "moebel": "iw5AutoA",
+      "moebel": "gt7PlanwagenKaputt",
       "feld": [118, 22]
     },
     {
@@ -298,111 +338,111 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [53, 4]
-    },
-    {
-      "moebel": "fels",
       "feld": [56, 3]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [64, 1]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [80, 2]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [84, 3]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [90, 4]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [95, 2]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [97, 2]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [104, 3]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [109, 3]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [112, 3]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [118, 1]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [122, 2]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [133, 2]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [137, 3]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [143, 4]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [146, 2]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [5, 5]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [9, 8]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [14, 8]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [20, 6]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [23, 8]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [34, 6]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusBluehend",
       "feld": [37, 5]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [45, 7]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [49, 6]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "fels",
       "feld": [51, 8]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [57, 5]
     },
     {
       "moebel": "dd6Saguaro",
@@ -446,7 +486,7 @@
     },
     {
       "moebel": "fels",
-      "feld": [148, 8]
+      "feld": [143, 7]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -774,6 +814,18 @@
     },
     {
       "moebel": "dd6Saguaro",
+      "feld": [117, 25]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [128, 26]
+    },
+    {
+      "moebel": "fels",
+      "feld": [131, 27]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
       "feld": [147, 25]
     }
   ],
@@ -835,7 +887,7 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "stil": [
     "natur",
     "einfach",

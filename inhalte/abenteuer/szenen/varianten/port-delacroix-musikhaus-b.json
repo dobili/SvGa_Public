@@ -54,16 +54,20 @@
       "feld": [3, 2]
     },
     {
-      "moebel": "pd6PfuetzeGross",
+      "moebel": "pd6DielenNass",
       "feld": [8, 4]
     },
     {
-      "moebel": "pd6PfuetzeGross",
+      "moebel": "pd6DielenNass",
       "feld": [12, 8]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
+      "moebel": "pd6DielenNass",
       "feld": [3, 8]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [15, 5]
     },
     {
       "moebel": "pd6Truemmer2",

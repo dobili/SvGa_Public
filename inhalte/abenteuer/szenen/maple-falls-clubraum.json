@@ -168,14 +168,14 @@
       "feld": [14, 9]
     },
     {
-      "moebel": "mf4TuerKlassisch",
-      "feld": [9, 11],
+      "moebel": "mf5TuerSuedHolz",
+      "feld": [9, 12],
       "an_wand": true
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [9, 10],
-      "versatz": [0, 16]
+      "feld": [9, 11],
+      "versatz": [0, 8]
     }
   ],
   "ausloeser": [

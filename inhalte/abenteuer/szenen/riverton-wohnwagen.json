@@ -2,7 +2,7 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/riverton-wohnwagen.json",
   "art": "innen",
-  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37): eng, gemütlich, alles hat zwei Zwecke. Helle Kunststoffwände, heller Holzboden, die Tür in der Mitte der Südwand, davor eine Fußmatte. Am Westende das Bett quer an der Wand, darauf ein Brett mit Figuren. An der Nordwand der weiße Ausstellungstisch mit Slicks Pokalen aus gebogenen Limodosen, daneben ein Regal mit Büchern und Flaschen, das Fenster zeigt auf den Fluss. Am Ostende die Küchenzeile mit dem kleinen Herd. In der Mitte auf einem runden Teppich ein Klapptisch mit zwei Hockern, an dem Slick in Szene 37 sitzt; an der Ostwand lehnt die Kuriertasche, in der Südwestecke ein Stapel Zeitungen.",
+  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37): eng, gemütlich, alles hat zwei Zwecke. Helle Kunststoffwände, heller Holzboden, die Tür in der Mitte der Südwand, davor eine Fußmatte. Am Westende das Bett quer an der Wand, darauf ein Brett mit Figuren. An der Nordwand eine Kommode mit Slicks Pokalen aus gebogenen Limodosen, daneben ein Regal mit Büchern und Flaschen, das Fenster zeigt auf den Fluss. Am Ostende die Küchenzeile mit dem kleinen Herd. In der Mitte auf einem runden Teppich ein Klapptisch mit zwei Hockern, an dem Slick in Szene 37 sitzt; an der Ostwand lehnt die Kuriertasche, in der Südwestecke ein Stapel Zeitungen.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -27,8 +27,19 @@
       "auf": "bett"
     },
     {
-      "moebel": "rv5Pokaltisch",
-      "feld": [4, 1]
+      "moebel": "rv5Kommode",
+      "feld": [4, 2],
+      "id": "pk"
+    },
+    {
+      "moebel": "rv5PokalKlein",
+      "auf": "pk",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5PokalSilber",
+      "auf": "pk",
+      "versatz": [7, 0]
     },
     {
       "moebel": "rv5Buecherregal",
@@ -72,7 +83,7 @@
     },
     {
       "moebel": "rv5Zeitungen",
-      "feld": [1, 5]
+      "feld": [1, 4]
     },
     {
       "moebel": "mf4Fussmatte",

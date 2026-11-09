@@ -15,14 +15,14 @@
     "####################################################################################################",
     "####################################################################################################",
     "####################################################################################################",
-    "#.........ffffffffff###########ffffffffffffffffffff................................................#",
-    "#.........ffffffffff###########ffffffffffffffffffff................................................#",
-    "#.........fffffffffffffffffffffffffffffffffffffffff................................................#",
-    "#.........fffffffffffffffffffffffffffffffffffffffff................................................#",
-    "#.........fffffffffffffffffffffffffffffffffffffffff................................................#",
-    "#.........fffffffffffffffffffffffffffffffffffffffff................................................#",
-    "#.........fffffffffffffffffffffffffffffffffffffffff................................................#",
-    "#.........ffffffffffffffffffffffffffffffffffffffffkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................#",
+    "#..........................fffffffffffffffffffff...................................................#",
+    "#......................ffffffffffffffffffffffffffff................................................#",
+    "#.....................fffffffffffffffffffffffffffff................................................#",
+    "#....................ffffffffffffffffffffffffffffff................................................#",
+    "#....................ffffffffffffffffffffffffffffff................................................#",
+    "#......................fffffffffffffffffffffffff...................................................#",
+    "#.........................fffffffffffffffffff......................................................#",
+    "#.................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................#",
     "#.................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................#",
     "#.................................................kk............................kk.................#",
     "#.................................................kk............................kk.................#",
@@ -31,14 +31,14 @@
     "#...................kk............................kk............................kkkkkkkkkkkkkkkkkkkk",
     "#...................kk............................kk............................kkkkkkkkkkkkkkkkkkkk",
     "#...................kk............................kk...............................................#",
-    "#...................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...fffffffffffffffffffffffffffffffffffffffff...#",
-    "#...................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...fffffffffffffffffffffffffffffffffffffffff...#",
+    "#...................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...............................................#",
+    "#...................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........fffffffffffffffffffffffffffffffff.....#",
+    "#.........................................................ffffffffffffffffffffffffffffffffffffff...#",
+    "#........................................................fffffffffffffffffffffffffffffffffffffff...#",
     "#......................................................fffffffffffffffffffffffffffffffffffffffff...#",
-    "#......................................................fffffffffffffffffffffffffffffffffffffffff...#",
-    "#......................................................fffffffffffffffffffffffffffffffffffffffff...#",
-    "#......................................................f#################fffffffffffffffffffffff...#",
-    "#......................................................f#################fffffffffffffffffffffff...#",
-    "#......................................................f#################fffffffffffffffffffffff...#",
+    "#......................................................f#################ffffffffffffffff..........#",
+    "#.......................................................#################ffffffffff................#",
+    "#.......................................................#################ffffff....................#",
     "####################################################################################################",
     "####################################################################################################",
     "####################################################################################################"
@@ -213,8 +213,12 @@
       "feld": [45, 10]
     },
     {
-      "moebel": "hb7Trog",
+      "moebel": "hb7Heu",
       "feld": [34, 7]
+    },
+    {
+      "moebel": "hb7Heu",
+      "feld": [40, 9]
     },
     {
       "moebel": "wds6Wegweiser",
@@ -270,6 +274,14 @@
       "feld": [85, 7]
     },
     {
+      "moebel": "wds6Saguaro",
+      "feld": [28, 4]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [18, 4]
+    },
+    {
       "moebel": "wds6KaktusKlein",
       "feld": [81, 21]
     },
@@ -280,10 +292,6 @@
     {
       "moebel": "wds6KaktusBluehend",
       "feld": [62, 17]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [21, 6]
     },
     {
       "moebel": "wds6KaktusKlein",
@@ -302,6 +310,10 @@
       "feld": [24, 9]
     },
     {
+      "moebel": "wds6KaktusKlein",
+      "feld": [26, 5]
+    },
+    {
       "moebel": "wds6KaktusBluehend",
       "feld": [77, 7]
     },
@@ -316,38 +328,6 @@
     {
       "moebel": "wds6KaktusBluehend",
       "feld": [54, 7]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [91, 19]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [96, 22]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [31, 22]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [18, 24]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [32, 16]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [12, 23]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [26, 22]
-    },
-    {
-      "moebel": "hb7Felsblock",
-      "feld": [38, 15]
     }
   ],
   "ausloeser": [

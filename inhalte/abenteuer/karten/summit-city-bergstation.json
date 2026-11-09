@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 17,
+ "nextobjectid": 18,
  "layers": [
   {
    "id": 1,
@@ -91,10 +91,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -109,10 +109,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -127,10 +127,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -145,10 +145,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -163,10 +163,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -888,6 +888,29 @@
     },
     {
      "id": 10,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 224,
+     "y": 16,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 11,
      "name": "sc7Gondel",
      "type": "moebel",
      "x": 208,
@@ -910,7 +933,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "rvTicketschalter",
      "type": "moebel",
      "x": 16,
@@ -933,7 +956,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "rvFahrplan",
      "type": "moebel",
      "x": 16,
@@ -956,7 +979,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "rvKaffeeautomat",
      "type": "moebel",
      "x": 144,
@@ -979,7 +1002,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "iwSpind",
      "type": "moebel",
      "x": 64,
@@ -1002,7 +1025,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "rvTopfpflanze",
      "type": "moebel",
      "x": 176,
@@ -1025,7 +1048,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "scRucksack",
      "type": "moebel",
      "x": 112,

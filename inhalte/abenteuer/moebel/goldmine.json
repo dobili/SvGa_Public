@@ -26,6 +26,15 @@
       "art": "lampe",
       "zustand": "alt",
       "stil": "industrie"
+    },
+    "n7Goldader": {
+      "quelle": "spiel/eigene/goldader.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
     }
   }
 }

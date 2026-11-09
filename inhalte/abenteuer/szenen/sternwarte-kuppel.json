@@ -65,10 +65,10 @@
       "zu": "funktisch"
     },
     {
-      "moebel": "cc4Leselampe",
+      "moebel": "mf9RadioAlt",
       "feld": [0, 0],
       "auf": "funktisch",
-      "versatz": [6, 0]
+      "versatz": [8, 0]
     },
     {
       "moebel": "iw5BettGrau",
@@ -79,24 +79,23 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "cc4Globus",
-      "feld": [4, 4]
-    },
-    {
       "moebel": "cc4KartonOffen",
       "feld": [11, 9]
     },
     {
       "moebel": "cc5Anrichte",
-      "feld": [3, 8]
+      "feld": [3, 8],
+      "id": "anrichte"
     },
     {
       "moebel": "cc4Hocker",
       "feld": [8, 7]
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [5, 8]
+      "moebel": "cc4Globus",
+      "feld": [0, 0],
+      "auf": "anrichte",
+      "versatz": [8, 0]
     }
   ],
   "ausloeser": [

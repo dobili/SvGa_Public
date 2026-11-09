@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer. Nach Osten geht es zum Canyonrand.",
+  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz mit einem Weg vor den Türen und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer und am Steg, Seerosen und eine kleine Grasinsel im See. Nach Osten geht es zum Canyonrand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -22,16 +22,16 @@
     "#..................ee......................................#",
     "#..................ee......................................#",
     "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#.................deeddddddd...............................#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
+    "#..................eeddddd.................................#",
+    "#..................dddddddd................................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
-    "#.................dddddddddd...............................#",
-    "#.................dddddddddd...............................#",
-    "#.................ddddeedddd...............................#",
+    "#..................dddddddd................................#",
+    "#...................ddeedd.................................#",
     "#.....................ee...................................#",
     "#.....................ee...................................#",
     "#.....................ee...................................#",
@@ -51,8 +51,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -70,7 +70,7 @@
     },
     {
       "moebel": "mf4Fahnenmast",
-      "feld": [27, 5]
+      "feld": [15, 12]
     },
     {
       "moebel": "pw7Campbude",
@@ -100,6 +100,42 @@
     {
       "moebel": "pw7KanuQuer",
       "feld": [34, 28]
+    },
+    {
+      "moebel": "cc5BootAmSteg",
+      "feld": [42, 30]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [6, 36]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [7, 37]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [5, 38]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [52, 35]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [53, 36]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [24, 40]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [25, 41]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [17, 38]
     },
     {
       "moebel": "cc7Picknicktisch",
@@ -155,39 +191,15 @@
     },
     {
       "moebel": "mfBaum",
-      "feld": [22, 6]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [32, 6]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [56, 6]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [12, 12]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [32, 13]
-    },
-    {
-      "moebel": "pw7Kiefer",
       "feld": [37, 14]
     },
     {
-      "moebel": "mfBaum",
+      "moebel": "wg4Busch",
       "feld": [43, 12]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [48, 12]
-    },
-    {
       "moebel": "pw7Kiefer",
-      "feld": [51, 12]
+      "feld": [48, 12]
     },
     {
       "moebel": "mfBaum",
@@ -251,7 +263,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [33, 8]
+      "feld": [28, 6]
     },
     {
       "moebel": "wg4Gras",
@@ -263,54 +275,50 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [40, 11]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [55, 11]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [6, 17]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [8, 19]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [33, 16]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [36, 19]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [47, 16]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [56, 19]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [6, 25]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [10, 23]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [28, 21]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [29, 22]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [5, 27]
     }
   ],

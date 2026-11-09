@@ -7665,8 +7665,8 @@
      "id": 20,
      "name": "wg5Aeste",
      "type": "moebel",
-     "x": 544,
-     "y": 208,
+     "x": 512,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7688,8 +7688,8 @@
      "id": 21,
      "name": "wg4StammPilze",
      "type": "moebel",
-     "x": 592,
-     "y": 176,
+     "x": 624,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -7698,7 +7698,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 248
       },
       {
        "name": "kollision",
@@ -7711,8 +7711,8 @@
      "id": 22,
      "name": "wg4StammPilzeB",
      "type": "moebel",
-     "x": 592,
-     "y": 192,
+     "x": 656,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -7721,7 +7721,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 248
       },
       {
        "name": "kollision",
@@ -7734,8 +7734,8 @@
      "id": 23,
      "name": "wg4StammPilzeB",
      "type": "moebel",
-     "x": 608,
-     "y": 208,
+     "x": 624,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -7744,7 +7744,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 264
       },
       {
        "name": "kollision",
@@ -7757,8 +7757,8 @@
      "id": 24,
      "name": "wg4StammPilze",
      "type": "moebel",
-     "x": 576,
-     "y": 208,
+     "x": 656,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -7767,7 +7767,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 264
       },
       {
        "name": "kollision",
@@ -7780,8 +7780,8 @@
      "id": 25,
      "name": "wg4StammPilze",
      "type": "moebel",
-     "x": 624,
-     "y": 192,
+     "x": 688,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -7790,7 +7790,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 248
       },
       {
        "name": "kollision",

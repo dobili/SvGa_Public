@@ -3,7 +3,7 @@
   "datei": "karten/varianten/pinewood-camp-aussen-b.json",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B: der See liegt weiter oben und bildet eine Bucht nach Norden, die Zelte stehen rechts, die Buden links, der Feuerplatz ist gepflastert, weniger Bäume.",
+  "beschreibung": "Variante B: der See liegt weiter oben und bildet eine Bucht nach Norden, die Zelte stehen rechts, die Buden links, der Feuerplatz aus Sand, weniger Bäume.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -23,14 +23,14 @@
     "#..................ee......................................#",
     "#..................ee......................................#",
     "#..................ee......................................#",
-    "#...............pppeeppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............pppppppppp.................................#",
-    "#...............ppppeepppp.................................#",
+    "#...eeeeeeeeeeeeeedeeddd...................................#",
+    "#...eeeeeeeeeeeeeeddddddd..................................#",
+    "#...............dddddddddd.................................#",
+    "#...............dddddddddd.................................#",
+    "#...............dddddddddd.................................#",
+    "#...............dddddddddd.................................#",
+    "#................dddddddd..................................#",
+    "#.................ddeedd...................................#",
     "#...................ee.....................................#",
     "#...................ee.....................................#",
     "#...................ee.....................................#",
@@ -40,7 +40,7 @@
     "#...dddddddddddd....ee.....................................#",
     "#..d~~~~~~~~~~~~d...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#ddd~~~~~~~~~~~~ddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#dd~~~~~~~~~~~~~~dddddddeeddddddddddddddddddddddddddddddddd#",
+    "#dd~~~~~~~~~~~~~~dddddddddddddddddddddddddddddddddddddddddd#",
     "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -51,8 +51,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -101,6 +101,38 @@
       "moebel": "pw7Kiosk",
       "feld": [30, 12],
       "id": "kiosk"
+    },
+    {
+      "moebel": "cc5BootAmSteg",
+      "feld": [26, 27]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [20, 31]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [21, 32]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [48, 33]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [49, 34]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [34, 39]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [35, 40]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [45, 37]
     },
     {
       "moebel": "cc7Picknicktisch",
@@ -212,70 +244,66 @@
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [9, 10]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [15, 6]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [28, 6]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [33, 8]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [40, 7]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [44, 8]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [55, 10]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [6, 12]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [40, 11]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [55, 11]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [6, 17]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [8, 19]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [36, 19]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [47, 16]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [56, 19]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [28, 21]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [29, 22]
     }
   ],
@@ -331,7 +359,7 @@
     },
     {
       "name": "tamsin",
-      "feld": [26, 26]
+      "feld": [26, 10]
     },
     {
       "name": "hollis",

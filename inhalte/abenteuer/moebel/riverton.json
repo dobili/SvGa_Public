@@ -1102,7 +1102,7 @@
       "kollision": true,
       "art": "kommode",
       "zustand": "gebraucht",
-      "stil": "klassisch",
+      "stil": "modern",
       "blick": "unten"
     },
     "rv5SesselWeissLinks": {
@@ -1231,6 +1231,36 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5SchalterLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5SchalterRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_7.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5Picknicktisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
       "blick": "unten"
     }
   }

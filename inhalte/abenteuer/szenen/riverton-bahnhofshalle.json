@@ -55,11 +55,11 @@
     },
     {
       "moebel": "rv5Zeitungsregal",
-      "feld": [1, 3]
+      "feld": [2, 3]
     },
     {
       "moebel": "rv5Zeitungsregal",
-      "feld": [2, 3]
+      "feld": [3, 3]
     },
     {
       "moebel": "rv5Ladentisch",
@@ -71,8 +71,14 @@
       "auf": "kiosk"
     },
     {
-      "moebel": "rv5Schalter",
-      "feld": [1, 10]
+      "moebel": "rv5SchalterLinks",
+      "feld": [2, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5SchalterRechts",
+      "feld": [4, 10],
+      "bauteil_ok": true
     },
     {
       "moebel": "rv5Netzplan",
@@ -97,15 +103,15 @@
     },
     {
       "moebel": "rv5Spind",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "rv5Spind",
       "feld": [3, 12]
     },
     {
       "moebel": "rv5Spind",
       "feld": [5, 12]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [9, 12]
     },
     {
       "moebel": "rv5Muelleimer",
@@ -146,10 +152,6 @@
     {
       "moebel": "rv5Getraenkeautomat",
       "feld": [23, 11]
-    },
-    {
-      "moebel": "rv5Topfpflanze",
-      "feld": [1, 13]
     },
     {
       "moebel": "rv5Topfpflanze",

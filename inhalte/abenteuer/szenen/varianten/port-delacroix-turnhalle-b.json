@@ -25,6 +25,10 @@
   ],
   "objekte": [
     {
+      "moebel": "pd6SpielfeldQuer",
+      "feld": [6, 4]
+    },
+    {
       "moebel": "pd6Fenster",
       "feld": [4, 1],
       "an_wand": true

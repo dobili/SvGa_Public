@@ -23,15 +23,15 @@
   "objekte": [
     {
       "moebel": "pd6Fluegel",
-      "feld": [1, 1]
+      "feld": [1, 2]
     },
     {
       "moebel": "pd6KlavierRot",
-      "feld": [4, 1]
+      "feld": [4, 2]
     },
     {
       "moebel": "pd6KlavierPlane",
-      "feld": [6, 1]
+      "feld": [6, 2]
     },
     {
       "moebel": "pd6FotoAlt",

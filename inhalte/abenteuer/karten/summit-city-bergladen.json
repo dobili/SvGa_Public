@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 19,
+ "nextobjectid": 20,
  "layers": [
   {
    "id": 1,
@@ -659,11 +659,11 @@
     },
     {
      "id": 9,
-     "name": "cc4Holzregal",
+     "name": "mf9Vorrat99",
      "type": "moebel",
      "x": 80,
      "y": 16,
-     "width": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -682,11 +682,11 @@
     },
     {
      "id": 10,
-     "name": "cc4RegalA",
+     "name": "mf9Vorrat100",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 16,
-     "width": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -705,34 +705,11 @@
     },
     {
      "id": 11,
-     "name": "cc4RegalB",
+     "name": "pg7SeilHaken",
      "type": "moebel",
-     "x": 160,
+     "x": 128,
      "y": 16,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "ccWeltkarte",
-     "type": "moebel",
-     "x": 32,
-     "y": 16,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -750,100 +727,54 @@
      ]
     },
     {
-     "id": 13,
-     "name": "ld5Seil",
+     "id": 12,
+     "name": "pdWerkzeugregal",
      "type": "moebel",
-     "x": 96,
-     "y": 96,
-     "width": 16,
-     "height": 16,
+     "x": 144,
+     "y": 32,
+     "width": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 56
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "mf9Vorrat102",
+     "type": "moebel",
+     "x": 192,
+     "y": 16,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     },
     {
      "id": 14,
-     "name": "scRucksack",
-     "type": "moebel",
-     "x": 144,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 15,
-     "name": "scRucksackRot",
-     "type": "moebel",
-     "x": 160,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
-     "name": "kisteRot",
-     "type": "moebel",
-     "x": 48,
-     "y": 112,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "cc4Falttisch",
+     "name": "cc5Tisch",
      "type": "moebel",
      "x": 112,
      "y": 80,
@@ -865,10 +796,102 @@
      ]
     },
     {
+     "id": 15,
+     "name": "ld5Seil",
+     "type": "moebel",
+     "x": 64,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "scRucksack",
+     "type": "moebel",
+     "x": 160,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "scRucksackRot",
+     "type": "moebel",
+     "x": 176,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
      "id": 18,
+     "name": "cc3Zeitungsregal",
+     "type": "moebel",
+     "x": 176,
+     "y": 48,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
      "name": "cc4PflanzeK",
      "type": "moebel",
-     "x": 192,
+     "x": 16,
      "y": 112,
      "width": 16,
      "height": 32,

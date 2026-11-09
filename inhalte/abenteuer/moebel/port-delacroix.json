@@ -1010,6 +1010,44 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "pd6SchildTurnhalle": {
+      "quelle": "spiel/eigene/schild_turnhalle.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6HausGross": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6PlaneDach": {
+      "quelle": "spiel/eigene/plane_dach.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6PlaneDachKlein": {
+      "quelle": "spiel/eigene/plane_dach_klein.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

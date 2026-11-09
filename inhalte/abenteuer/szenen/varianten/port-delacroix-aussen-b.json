@@ -324,15 +324,33 @@
     },
     {
       "moebel": "pd6Gueterhalle",
-      "feld": [35, 15]
+      "feld": [35, 15],
+      "id": "th"
     },
     {
-      "moebel": "pd6HausRot2",
-      "feld": [10, 21]
+      "moebel": "pd6SchildTurnhalle",
+      "auf": "th",
+      "versatz": [24, 56]
     },
     {
-      "moebel": "pd6HausGruen2",
-      "feld": [24, 21]
+      "moebel": "pd6HausGross",
+      "feld": [8, 15],
+      "id": "h1"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "h1",
+      "versatz": [30, -28]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [22, 16],
+      "id": "h2"
+    },
+    {
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h2",
+      "versatz": [30, -30]
     },
     {
       "moebel": "pd6Gebaeckstand",
@@ -340,7 +358,7 @@
     },
     {
       "moebel": "pd6Rohbau",
-      "feld": [8, 11]
+      "feld": [44, 12]
     },
     {
       "moebel": "pd6ZeltGruen",
@@ -352,7 +370,13 @@
     },
     {
       "moebel": "pd6MusikhausSolar",
-      "feld": [39, 31]
+      "feld": [39, 31],
+      "id": "mh"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "mh",
+      "versatz": [-20, -50]
     },
     {
       "moebel": "pd6Fass",
@@ -363,26 +387,32 @@
       "feld": [9, 43]
     },
     {
-      "moebel": "pd6HausKleinRot2",
-      "feld": [24, 49]
+      "moebel": "pd6HausGross",
+      "feld": [22, 43],
+      "id": "h3"
     },
     {
-      "moebel": "pd6HausKleinHell2",
-      "feld": [32, 49]
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h3",
+      "versatz": [16, -54]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [32, 44]
     },
     {
       "moebel": "pd6Fischerboot",
-      "feld": [59, 20],
+      "feld": [56, 18],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [61, 36],
+      "feld": [58, 30],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [58, 44],
+      "feld": [56, 42],
       "bauteil_ok": true
     },
     {
@@ -469,32 +499,47 @@
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
-      "feld": [8, 19],
+      "feld": [43, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [9, 19],
+      "feld": [44, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [10, 19],
+      "feld": [45, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [11, 19],
+      "feld": [46, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [12, 19],
+      "feld": [47, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [48, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [49, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [50, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeRechts",
-      "feld": [13, 19],
+      "feld": [51, 20],
       "bauteil_ok": true
     },
     {
@@ -519,11 +564,11 @@
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [15, 22]
+      "feld": [16, 22]
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [29, 22]
+      "feld": [32, 22]
     },
     {
       "moebel": "pd6Stamm",
@@ -544,12 +589,12 @@
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [16, 22],
+      "feld": [33, 22],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [30, 22],
+      "feld": [49, 22],
       "vorn": true
     },
     {
@@ -569,11 +614,7 @@
     },
     {
       "moebel": "mfAhorn",
-      "feld": [16, 11]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [50, 13]
+      "feld": [16, 10]
     },
     {
       "moebel": "mfAhorn",
@@ -585,15 +626,15 @@
     },
     {
       "moebel": "mfAhorn",
-      "feld": [40, 45]
+      "feld": [44, 45]
     },
     {
       "moebel": "pd6Waescheleine",
-      "feld": [26, 44]
+      "feld": [44, 50]
     },
     {
       "moebel": "pd6Waescheleine",
-      "feld": [42, 49]
+      "feld": [6, 36]
     },
     {
       "moebel": "mfAhorn",
@@ -646,19 +687,19 @@
     },
     {
       "name": "brettHaus1",
-      "feld": [12, 25]
+      "feld": [13, 25]
     },
     {
       "name": "brettHaus2",
-      "feld": [26, 25]
+      "feld": [29, 25]
     },
     {
       "name": "brettHaus3",
-      "feld": [25, 53]
+      "feld": [27, 53]
     },
     {
       "name": "brettHaus4",
-      "feld": [33, 53]
+      "feld": [39, 53]
     }
   ],
   "figuren": [
@@ -668,7 +709,7 @@
     },
     {
       "name": "arceneaux",
-      "feld": [22, 25]
+      "feld": [21, 25]
     },
     {
       "name": "blaeser",

@@ -83,6 +83,14 @@
       "feld": [134, 10]
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [79, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [86, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [80, 4],
       "bauteil_ok": true
@@ -487,7 +495,7 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "stil": [
     "natur",
     "einfach",

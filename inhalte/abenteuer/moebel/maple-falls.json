@@ -2700,6 +2700,16 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "mf9Absperrbock": {
+      "quelle": "spiel/eigene/absperrbock_gesperrt.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
     "mf8SpielautomatZwei": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_219.png",
       "breite": 16,

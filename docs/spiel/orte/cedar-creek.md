@@ -428,6 +428,11 @@ Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
 | Ecke SO      | Globus                                                                                               | (19, 12)                                                          | –                 | Metall, klassisch, einmal je Ort    | `globus` (18, 12)                                            |
 | Ecken        | Pflanzen                                                                                             | (1, 12), (20, 4)                                                  | –                 | Pflanze                             | Regel 4.4                                                    |
 
+Nacharbeit nach der Wahl des Autors (Variante A, 9.11.2026 nachts, mittel-4): je Regalreihe ein
+viertes Regal (11, 5) und (11, 9); niedrige Tür in der Südwand (`tuer_sued_holz`, (3, 16)), Matte
+direkt davor; der Tresen ist ein ganzes Bild mit Kasse (8, 11) statt zweier Bauteile. Regale in
+Seitenansicht für die Seitenwände (Regel 46) gibt es im Katalog nicht; gemeldet.
+
 Belebung: eine Leserin geht zwischen (3, 13) und (9, 13). Platzhalter (13 §7.4): Für die Kopie von
 Hales Seite (Post-Game) ist die Wandfläche rechts der Kellertür frei.
 

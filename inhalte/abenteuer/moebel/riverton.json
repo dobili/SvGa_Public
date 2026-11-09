@@ -383,6 +383,104 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "rv5Bett": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "rv5Pokaltisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_157.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5Buecherregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5Kuechenzeile": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5Klapptisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_273.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5Hocker": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Stool_Wood_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "rv5Kuriertasche": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Backpack_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv5TuerSuedHell": {
+      "quelle": "spiel/eigene/tuer_sued_hell.png",
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "breite": 16,
+      "hoehe": 16
+    },
+    "rv5Zeitungen": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_155.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "rv5BettKopfRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "links"
     }
   }
 }

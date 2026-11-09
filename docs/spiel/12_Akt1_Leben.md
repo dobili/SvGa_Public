@@ -490,3 +490,9 @@ der Kuhweide sind die ausgebüxten Kühe vom Kürbishof Miller (N1); das verknü
 **Nachtrag Runde 4 (Haupt-Chat, 9.11.2026):** Der Katalog hat keine Jukebox. Im Diner wird `jukebox`
 zu `radio`: ein altes Röhrenradio auf dem Tresen, gleicher Satz („Lieder aus den Sechzigern, die
 Schule wurde im selben Jahr gebaut“). Zwei statt vier Sitzecken, weil Nischenbänke fehlen.
+
+**Nachtrag Runde 4 (Haupt-Chat, 9.11.2026), Park:** Der Katalog hat keine Halfpipe. Entscheidung: Im
+Park entsteht ein kleiner Basketballplatz mit niedriger Betonmauer; Jo sitzt auf der Mauerkante und
+spielt dort Blitz um Limo. In Runde 5 werden alle Texte mit „Halfpipe“ (Story-Bibel Szenen 10 und 10a,
+Dialoge, 09 Belebung) auf „Mauer am Basketballplatz“ umgestellt. Fahnenmast und Wasserfall gibt es als
+eigene Standbilder (`spiel/eigene/fahnenmast_schule.png`, `wasserfall_3hoch.png`).

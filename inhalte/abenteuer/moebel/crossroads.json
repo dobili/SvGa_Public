@@ -29,6 +29,56 @@
       "breite": 112,
       "hoehe": 64,
       "kollision": true
+    },
+    "cr7Raststaette": {
+      "quelle": "spiel/eigene/diner_wagen.png",
+      "breite": 160,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cr7Sattelzug": {
+      "quelle": "spiel/eigene/sattelzug_rot.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cr7SattelzugBlau": {
+      "quelle": "spiel/eigene/sattelzug_blau.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cr7Motel": {
+      "quelle": "spiel/eigene/motel.png",
+      "breite": 224,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cr7Theke8": {
+      "quelle": "spiel/eigene/theke_holz_laengs_8.png",
+      "breite": 128,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

@@ -1,0 +1,338 @@
+{
+  "karte": "crossroads.aussen",
+  "variante": "b",
+  "art": "aussen",
+  "beschreibung": "Variante B, schlicht: Dieselbe Kreuzung mit Diner-Wagen und Vorplatz, aber eine kleine Tankstelle, kein Zaun am Jahrmarktfeld. Der Lkw-Parkplatz liegt südöstlich mit zwei Sattelzügen und einem Auto; Werksbus und Rosies Food-Truck stehen auf der Wiese südwestlich. Im Osten das Viehgatter, sonst weites Grasland. Ersatz bis zur Lieferung: Wegweiser der Städte als einfacher Wegweiser, Viehgatter als Absperrböcke.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "a": "asphalt",
+    "k": "schotter",
+    "e": "erde",
+    "p": "pflaster"
+  },
+  "raster": [
+    "##############################kkk###############################",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "#.............................kkk..............................#",
+    "eeeeeeee......................kkk..............................#",
+    "eeeeeeee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............................................................#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cr7Raststaette",
+      "feld": [10, 12]
+    },
+    {
+      "moebel": "ws5Tankstelle",
+      "feld": [36, 8]
+    },
+    {
+      "moebel": "crBus",
+      "feld": [2, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sbFoodtruck",
+      "feld": [18, 29]
+    },
+    {
+      "moebel": "cr7SattelzugBlau",
+      "feld": [38, 29]
+    },
+    {
+      "moebel": "cr7Sattelzug",
+      "feld": [38, 34]
+    },
+    {
+      "moebel": "rvAutoBlau",
+      "feld": [52, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wegweiser",
+      "feld": [29, 19]
+    },
+    {
+      "moebel": "mf9Absperrbock",
+      "feld": [58, 22]
+    },
+    {
+      "moebel": "mf9Absperrbock",
+      "feld": [58, 24]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [6, 6]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [54, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [17, 39]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [39, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 41]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [35, 29]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [58, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [21, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 33]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [33, 44]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [24, 29]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [62, 26]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [33, 33]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [23, 37]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [32, 43]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [61, 21]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [20, 46]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [20, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [59, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [4, 37]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 38]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [44, 7]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [53, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 46]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [24, 17]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [53, 11]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [31, 1],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "wegSummit",
+      "feld": [30, 0]
+    },
+    {
+      "name": "wegSummit",
+      "feld": [31, 0]
+    },
+    {
+      "name": "wegSummit",
+      "feld": [32, 0]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 14]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 15]
+    },
+    {
+      "name": "raststaetteTuer",
+      "feld": [14, 19]
+    },
+    {
+      "name": "wegweiser",
+      "feld": [29, 21]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "rosie",
+      "feld": [25, 33]
+    },
+    {
+      "name": "bigJoe",
+      "feld": [11, 33]
+    },
+    {
+      "name": "slick",
+      "feld": [16, 41]
+    },
+    {
+      "name": "mira",
+      "feld": [34, 27]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "von": "8,20",
+        "bis": "26,20",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "rinder",
+      "typ": "tier",
+      "feld": [52, 38],
+      "eigenschaften": {
+        "von": "46,34",
+        "bis": "60,44",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "tankwart",
+      "typ": "statist",
+      "feld": [44, 20],
+      "eigenschaften": {
+        "von": "38,20",
+        "bis": "50,20",
+        "tun": "tankt einen Wagen voll",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tomas",
+      "typ": "statist",
+      "feld": [35, 27],
+      "eigenschaften": {
+        "von": "35,27",
+        "bis": "35,27",
+        "tun": "Tomás zeigt Mira die Windräder am Horizont",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "natur",
+    "landhaus"
+  ],
+  "datei": "karten/varianten/crossroads-aussen-b.json"
+}

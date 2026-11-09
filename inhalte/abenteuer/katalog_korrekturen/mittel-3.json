@@ -523,5 +523,30 @@
     "raumfunktion": ["aussen_strasse"],
     "orte": ["grossstadt", "hafen"],
     "beschreibung": "Kleines Dachhäuschen aus grauem Metall mit dunklem Pyramidendach, Front mit Tür, Fenster und Aushängen; Treppenhaus auf einem Flachdach, auf einem Schiff als Steuerhaus nutzbar."
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_275.png": {
+    "innen_aussen": "innen",
+    "zustand": "gebraucht",
+    "material": ["holz"],
+    "stil": ["klassisch"],
+    "epoche": "gegenwart",
+    "wohlstand": "mittel",
+    "ganz": true,
+    "gegenstuecke": "",
+    "befestigung": "boden",
+    "ablage": "Oberseite",
+    "treppe": null,
+    "einzigartig": false,
+    "licht": false,
+    "anlass": null,
+    "anzahl": "einige",
+    "reihe": false,
+    "sicher": 0.9,
+    "korrektur": "mittel-3",
+    "nur_pfad": true,
+    "art": "tisch",
+    "raumfunktion": ["gastraum", "kueche"],
+    "orte": ["diner", "wohnhaus"],
+    "beschreibung": "Kleiner quadratischer Beistelltisch aus Holz mit heller orange-gelber Platte, von vorn; für eine Person oder als Ablage neben einem Stuhl."
   }
 }

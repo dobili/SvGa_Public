@@ -83,6 +83,14 @@
       "feld": [134, 10]
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [13, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [20, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [14, 4],
       "bauteil_ok": true
@@ -111,6 +119,14 @@
       "moebel": "ccZaun",
       "feld": [18, 4],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [39, 24]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [46, 24]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -143,6 +159,14 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [65, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [72, 4]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [66, 4],
       "bauteil_ok": true
@@ -173,6 +197,14 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [99, 23]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [106, 23]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [100, 23],
       "bauteil_ok": true
@@ -201,6 +233,14 @@
       "moebel": "ccZaun",
       "feld": [104, 23],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [125, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [132, 4]
     },
     {
       "moebel": "cc3ZaunEnde",

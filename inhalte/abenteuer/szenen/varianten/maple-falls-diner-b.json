@@ -1,0 +1,559 @@
+{
+  "karte": "mapleFalls.diner",
+  "datei": "karten/varianten/maple-falls-diner-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, schlichter und kühler: blaue Wände, graue Fliesen. Statt der roten Bar eine Glastheke aus Holz und Glas, links kurz, rechts lang, mit der Kassentheke dazwischen über der Tür; fünf blaue Hocker. Statt Nischen drei runde Tische mit hellen Holzstühlen. Hinter der Theke drei Sideboards mit Kaffeemaschine und Mixer und eine Kuchenvitrine, Pinnwand und Foto 1962, zwei Fenster; Pflanzen in drei Ecken. Durchreiche mit Geschirrständer. Die Großküche ist anders geordnet: Kühlschränke links, zwei Herde unter den Hauben, Fritteuse rechts; in der Mitte ein Stahltisch mit Spüle, daneben die Grillplatte frei stehend. Lager mit Kühltruhe und Kartons, Flur zu zwei Toiletten wie in A. Laufwege: von der Tür nach oben zur Kasse, zu den Hockern und Tischen, rechts durch den Gang zu den Toiletten.",
+  "wand": "blau",
+  "boden": "fliesenGrau",
+  "raster": [
+    "##############################",
+    "##############################",
+    "##############################",
+    "#...................#........#",
+    "#............................#",
+    "#...................#........#",
+    "#...................#........#",
+    "#............................#",
+    "#...................#........#",
+    "#...................#######.##",
+    "#.........................#..#",
+    "#...................##.#.##..#",
+    "#...................#..#..#..#",
+    "#...................#..#..#..#",
+    "#...................#..#..#..#",
+    "#######.######################"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [
+        15,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [
+        17,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8Pinnwand",
+      "feld": [
+        10,
+        1
+      ],
+      "an_wand": true,
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [
+        13,
+        1
+      ],
+      "an_wand": true,
+      "versatz": [
+        0,
+        5
+      ]
+    },
+    {
+      "moebel": "mf8Sideboard",
+      "feld": [
+        2,
+        2
+      ],
+      "id": "sb1"
+    },
+    {
+      "moebel": "mf8Sideboard",
+      "feld": [
+        4,
+        2
+      ],
+      "id": "sb2"
+    },
+    {
+      "moebel": "mf5Kaffeemaschine",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "sb1"
+    },
+    {
+      "moebel": "mf8Sideboard",
+      "feld": [
+        6,
+        2
+      ],
+      "id": "sb3"
+    },
+    {
+      "moebel": "mf8VitrineLeer",
+      "feld": [
+        8,
+        2
+      ]
+    },
+    {
+      "moebel": "mf5Mixer",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "sb3"
+    },
+    {
+      "moebel": "mf8GlasthekeLinks",
+      "feld": [
+        2,
+        6
+      ],
+      "id": "g1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        3,
+        6
+      ],
+      "id": "gm3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        4,
+        6
+      ],
+      "id": "gm4",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeRechts",
+      "feld": [
+        5,
+        6
+      ],
+      "id": "g2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5Kassentheke",
+      "feld": [
+        6,
+        6
+      ],
+      "id": "kasse"
+    },
+    {
+      "moebel": "mf8GlasthekeLinks",
+      "feld": [
+        8,
+        6
+      ],
+      "id": "g3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        9,
+        6
+      ],
+      "id": "go9",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        10,
+        6
+      ],
+      "id": "go10",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        11,
+        6
+      ],
+      "id": "go11",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        12,
+        6
+      ],
+      "id": "go12",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        13,
+        6
+      ],
+      "id": "go13",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        14,
+        6
+      ],
+      "id": "go14",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeMitte",
+      "feld": [
+        15,
+        6
+      ],
+      "id": "go15",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8GlasthekeRechts",
+      "feld": [
+        16,
+        6
+      ],
+      "id": "g4",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8HockerBlau",
+      "feld": [
+        3,
+        7
+      ],
+      "zu": "gm3"
+    },
+    {
+      "moebel": "mf8HockerBlau",
+      "feld": [
+        9,
+        7
+      ],
+      "zu": "go9"
+    },
+    {
+      "moebel": "mf8HockerBlau",
+      "feld": [
+        11,
+        7
+      ],
+      "zu": "go11"
+    },
+    {
+      "moebel": "mf8HockerBlau",
+      "feld": [
+        13,
+        7
+      ],
+      "zu": "go13"
+    },
+    {
+      "moebel": "mf8HockerBlau",
+      "feld": [
+        15,
+        7
+      ],
+      "zu": "go15"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [
+        2,
+        11
+      ],
+      "id": "tisch1"
+    },
+    {
+      "moebel": "mf8StuhlHellRechts",
+      "feld": [
+        1,
+        11
+      ],
+      "zu": "tisch1"
+    },
+    {
+      "moebel": "mf8StuhlHellLinks",
+      "feld": [
+        4,
+        11
+      ],
+      "zu": "tisch1"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [
+        11,
+        11
+      ],
+      "id": "tisch2"
+    },
+    {
+      "moebel": "mf8StuhlHellRechts",
+      "feld": [
+        10,
+        11
+      ],
+      "zu": "tisch2"
+    },
+    {
+      "moebel": "mf8StuhlHellLinks",
+      "feld": [
+        13,
+        11
+      ],
+      "zu": "tisch2"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [
+        16,
+        11
+      ],
+      "id": "tisch3"
+    },
+    {
+      "moebel": "mf8StuhlHellRechts",
+      "feld": [
+        15,
+        11
+      ],
+      "zu": "tisch3"
+    },
+    {
+      "moebel": "mf8StuhlHellLinks",
+      "feld": [
+        18,
+        11
+      ],
+      "zu": "tisch3"
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [
+        19,
+        12
+      ]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [
+        1,
+        8
+      ]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [
+        19,
+        3
+      ]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [
+        7,
+        14
+      ]
+    },
+    {
+      "moebel": "mf5Eingangstuer",
+      "feld": [
+        7,
+        14
+      ]
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [
+        20,
+        4
+      ]
+    },
+    {
+      "moebel": "mf8KuehlschrankWeiss",
+      "feld": [
+        21,
+        1
+      ]
+    },
+    {
+      "moebel": "mf8KuehlschrankWeiss",
+      "feld": [
+        22,
+        1
+      ]
+    },
+    {
+      "moebel": "mf8Herd",
+      "feld": [
+        23,
+        2
+      ]
+    },
+    {
+      "moebel": "mf8HerdTopf",
+      "feld": [
+        24,
+        2
+      ]
+    },
+    {
+      "moebel": "mf5Dunstabzug",
+      "feld": [
+        23,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Dunstabzug",
+      "feld": [
+        24,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Fritteuse",
+      "feld": [
+        26,
+        2
+      ]
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        23,
+        6
+      ],
+      "id": "zt"
+    },
+    {
+      "moebel": "mf5Spuele",
+      "feld": [
+        23,
+        6
+      ],
+      "vorn": true,
+      "versatz": [
+        0,
+        2
+      ]
+    },
+    {
+      "moebel": "mf5Grillplatte",
+      "feld": [
+        26,
+        6
+      ]
+    },
+    {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [
+        28,
+        8
+      ]
+    },
+    {
+      "moebel": "wzKartonstapelHoch",
+      "feld": [
+        27,
+        12
+      ]
+    },
+    {
+      "moebel": "mf5Toilette",
+      "feld": [
+        21,
+        11
+      ]
+    },
+    {
+      "moebel": "mf5Handwaschbecken",
+      "feld": [
+        22,
+        13
+      ]
+    },
+    {
+      "moebel": "mf5Toilette",
+      "feld": [
+        25,
+        11
+      ]
+    },
+    {
+      "moebel": "mf5Handwaschbecken",
+      "feld": [
+        24,
+        13
+      ]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [
+        7,
+        13
+      ],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "dinerAusgang",
+      "feld": [
+        7,
+        15
+      ]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [
+        4,
+        11
+      ],
+      "eigenschaften": {
+        "von": "4,11",
+        "bis": "18,11",
+        "tun": "bringt Teller"
+      }
+    }
+  ],
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "klassisch",
+    "industrie",
+    "modern"
+  ],
+  "variante": "b"
+}

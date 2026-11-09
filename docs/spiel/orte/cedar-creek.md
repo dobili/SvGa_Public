@@ -480,4 +480,4 @@ waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reih
 | überall   | Farne, Pilze, Steine, Felsgruppen                                                 |
 
 Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
-folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), dichte Zedern von Rand zu Rand bei Spalte 44–46 schließen den Wald daneben. Hügelkanten gibt es im Katalog nicht.
+folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), der Wald daneben ist aber offen. Hügelkanten gibt es im Katalog nicht.

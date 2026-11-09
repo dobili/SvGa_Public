@@ -1,0 +1,202 @@
+{
+  "moebel": {
+    "by6StegQuer2": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_2.png",
+      "breite": 32,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs2": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_2.png",
+      "breite": 32,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer3": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_3.png",
+      "breite": 48,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs3": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer4": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
+      "breite": 64,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs4": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "breite": 32,
+      "hoehe": 68,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer5": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_5.png",
+      "breite": 80,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs5": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_5.png",
+      "breite": 32,
+      "hoehe": 84,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer6": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_6.png",
+      "breite": 96,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs6": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_6.png",
+      "breite": 32,
+      "hoehe": 100,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer7": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "breite": 112,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs7": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_7.png",
+      "breite": 32,
+      "hoehe": 116,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer8": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_8.png",
+      "breite": 128,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs8": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_8.png",
+      "breite": 32,
+      "hoehe": 132,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer9": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_9.png",
+      "breite": 144,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs9": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_9.png",
+      "breite": 32,
+      "hoehe": 148,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegQuer10": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_10.png",
+      "breite": 160,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegLaengs10": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_10.png",
+      "breite": 32,
+      "hoehe": 164,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegUeberflutetQuer3": {
+      "quelle": "spiel/eigene/steg_ueberflutet_quer_3.png",
+      "breite": 48,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegUeberflutetLaengs3": {
+      "quelle": "spiel/eigene/steg_ueberflutet_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6Luftboot": {
+      "quelle": "spiel/eigene/luftboot.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6LuftbootRechts": {
+      "quelle": "spiel/eigene/luftboot_rechts.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "alt",
+      "stil": "rustikal"
+    }
+  }
+}

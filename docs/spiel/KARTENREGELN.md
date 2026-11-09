@@ -70,8 +70,9 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
 6. Hindernisse auf Wegen nur, wenn die Geschichte es will (Baumstümpfe stehen neben, nicht auf dem Weg).
 7. Straßenmöbel: Laternen direkt an Weg oder Straße; Bänke am Weg, zum Weg gewandt (oder vom Weg weg
    zu einer Aussicht, dann direkt am Weg und mit etwas zu sehen); Bushaltestelle zur Straße;
-   Blumenkästen parallel zum Weg, am Zaun oder an der Fassade, nie quer im Gehweg (der Gehweg
-   bleibt mindestens 2 Kacheln frei; Wunsch des Autors geht Abschnitt 9 vor); Mülleimer und Kästen nur mit erkennbarem
+   Blumenkästen parallel zum Weg, gern am Zaun oder an der Fassade, auch auf dem Gehweg wie
+   beim Zeichner (Abschnitt 9), aber nie über die ganze Breite: Es bleibt immer mindestens eine Kachel
+   zum Vorbeigehen frei; Wunsch des Autors geht Abschnitt 9 vor); Mülleimer und Kästen nur mit erkennbarem
    Zweck (Stromkasten an der Ecke, Mülltonne am Haus).
 8. Schilder: Wegweiser mit mehreren Richtungen nur an Kreuzungen; Schilder tragen erkennbaren,
    passenden Inhalt (keine Autobahntafel „SALE“ in der Kleinstadt); Text zum Betrachter oder zum Weg.

@@ -245,8 +245,8 @@ fett. Bestehende Punkte stehen in Klammern.
 | Flussweg 0–15             | Erlen über dem Wasser, Nebel am Morgen                                                                      |
 | Flussweg 15–30            | (Münzen unter dem Baum, `fundMuenzen`)                                                                      |
 | Flussweg 30–45            | Alte Fährstelle: Stein der Fährleute (N-W2), Pfosten der alten Fähre (`faehrpfosten`, Ansehen)              |
-| Flussweg 45–60            | (Steg mit Angler) = Silas Reed                                                                              |
-| Flussweg 60–75            | (Rastbank mit Blick aufs Wasser); Reiher im Schilf                                                          |
+| Flussweg 45–60            | (Rastbank mit Blick aufs Wasser); Reiher im Schilf                                                          |
+| Flussweg 60–75            | (Steg mit Angler) = Silas Reed                                                                              |
 | Flussweg 75–90            | **„Flaschenkorken mit eingebranntem Springer“** am Ufer (`fundKorken`, Album; vom Picknick des Schachclubs) |
 | Flussweg 90–105           | Schmetterlinge; Tessa                                                                                       |
 | Flussweg 105–120          | (Ortsschild „Cedar Creek, gegr. 1851“)                                                                      |

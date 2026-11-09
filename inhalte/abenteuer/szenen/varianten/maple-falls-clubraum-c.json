@@ -23,327 +23,202 @@
   "objekte": [
     {
       "moebel": "mf2Fenster",
-      "feld": [
-        3,
-        1
-      ],
+      "feld": [3, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [
-        11,
-        1
-      ],
+      "feld": [11, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Weltkarte",
-      "feld": [
-        5,
-        1
-      ],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Tafel",
-      "feld": [
-        7,
-        1
-      ],
+      "feld": [7, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2PlakatZaehlen",
-      "feld": [
-        9,
-        1
-      ],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [
-        13,
-        1
-      ],
+      "feld": [13, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf8Pokaltisch",
-      "feld": [
-        1,
-        1
-      ]
+      "feld": [1, 1]
     },
     {
       "moebel": "mf8Lehrerpult",
-      "feld": [
-        13,
-        2
-      ],
+      "feld": [13, 2],
       "id": "pult"
     },
     {
       "moebel": "mf2Globus",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "pult",
-      "versatz": [
-        6,
-        2
-      ]
+      "versatz": [6, 2]
     },
     {
       "moebel": "mf8RegalHoch",
-      "feld": [
-        15,
-        2
-      ]
+      "feld": [15, 2]
     },
     {
       "moebel": "mf8RegalHoch2",
-      "feld": [
-        15,
-        6
-      ]
+      "feld": [15, 6]
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        2,
-        5
-      ],
+      "feld": [2, 5],
       "id": "t1"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "t1"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        1,
-        5
-      ],
+      "feld": [1, 5],
       "zu": "t1"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        4,
-        5
-      ],
+      "feld": [4, 5],
       "zu": "t1"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        8,
-        5
-      ],
+      "feld": [8, 5],
       "id": "t2"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "t2"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        7,
-        5
-      ],
+      "feld": [7, 5],
       "zu": "t2"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        10,
-        5
-      ],
+      "feld": [10, 5],
       "zu": "t2"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        5,
-        8
-      ],
+      "feld": [5, 8],
       "id": "t3"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "t3"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        4,
-        8
-      ],
+      "feld": [4, 8],
       "zu": "t3"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        7,
-        8
-      ],
+      "feld": [7, 8],
       "zu": "t3"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        11,
-        8
-      ],
+      "feld": [11, 8],
       "id": "t4"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "t4"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        10,
-        8
-      ],
+      "feld": [10, 8],
       "zu": "t4"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        13,
-        8
-      ],
+      "feld": [13, 8],
       "zu": "t4"
     },
     {
       "moebel": "mf2Pflanze",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     },
     {
       "moebel": "mf2Pflanze",
-      "feld": [
-        16,
-        9
-      ]
+      "feld": [16, 9]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [
-        14,
-        9
-      ]
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "mf4TuerKlassisch",
+      "feld": [9, 11],
+      "an_wand": true
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [
-        9,
-        11
-      ]
-    },
-    {
-      "moebel": "mf5Eingangstuer",
-      "feld": [
-        9,
-        11
-      ]
+      "feld": [9, 10]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        9,
-        11
-      ],
+      "feld": [9, 10],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schule",
-      "feld": [
-        9,
-        12
-      ]
+      "feld": [9, 12]
     },
     {
       "name": "pokalvitrine",
-      "feld": [
-        1,
-        3
-      ],
+      "feld": [1, 3],
       "auf_moebel": true
     },
     {
       "name": "brettOhneDame",
-      "feld": [
-        12,
-        9
-      ],
+      "feld": [12, 9],
       "auf_moebel": true
     },
     {
       "name": "plakatZaehlen",
-      "feld": [
-        9,
-        3
-      ]
+      "feld": [9, 3]
     }
   ],
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [
-        12,
-        4
-      ]
+      "feld": [12, 4]
     },
     {
       "name": "sam",
-      "feld": [
-        3,
-        4
-      ]
+      "feld": [3, 4]
     }
   ],
   "belebung": [
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [
-        2,
-        7
-      ],
+      "feld": [2, 7],
       "eigenschaften": {
         "von": "2,7",
         "bis": "9,7",
@@ -352,14 +227,8 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "klassisch",
-    "schule"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "schule"],
   "variante": "c",
   "boeden": {
     "t": "teppichBlau"

@@ -26,680 +26,416 @@
   "objekte": [
     {
       "moebel": "wzFenster",
-      "feld": [
-        15,
-        1
-      ],
+      "feld": [15, 1],
       "an_wand": true
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        17,
-        1
-      ],
+      "feld": [17, 1],
       "an_wand": true
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [
-        10,
-        1
-      ],
+      "feld": [10, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        5
-      ]
+      "versatz": [0, 5]
     },
     {
       "moebel": "wzBild",
-      "feld": [
-        13,
-        1
-      ],
+      "feld": [13, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        4
-      ]
+      "versatz": [0, 4]
     },
     {
       "moebel": "mf8BildTeller",
-      "feld": [
-        19,
-        1
-      ],
+      "feld": [19, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf8BildPflanze",
-      "feld": [
-        1,
-        1
-      ],
+      "feld": [1, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf5Buffet",
-      "feld": [
-        2,
-        2
-      ],
+      "feld": [2, 2],
       "id": "b1"
     },
     {
       "moebel": "mf5Buffet",
-      "feld": [
-        4,
-        2
-      ],
+      "feld": [4, 2],
       "id": "b2"
     },
     {
       "moebel": "mf5Buffet",
-      "feld": [
-        6,
-        2
-      ],
+      "feld": [6, 2],
       "id": "b3"
     },
     {
       "moebel": "mf5Kuchenvitrine",
-      "feld": [
-        8,
-        2
-      ]
+      "feld": [8, 2]
     },
     {
       "moebel": "mf5Kaffeemaschine",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "b1"
     },
     {
       "moebel": "mf5Mixer",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "b2"
     },
     {
       "moebel": "mf5Kaffeemaschine",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "b3"
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [
-        2,
-        6
-      ],
+      "feld": [2, 6],
       "id": "t1",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeRechts",
-      "feld": [
-        4,
-        6
-      ],
+      "feld": [4, 6],
       "id": "t2",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5Kassentheke",
-      "feld": [
-        6,
-        6
-      ],
+      "feld": [6, 6],
       "id": "kasse"
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [
-        8,
-        6
-      ],
+      "feld": [8, 6],
       "id": "t3",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        10,
-        6
-      ],
+      "feld": [10, 6],
       "id": "tm10",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        11,
-        6
-      ],
+      "feld": [11, 6],
       "id": "tm11",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        12,
-        6
-      ],
+      "feld": [12, 6],
       "id": "tm12",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        13,
-        6
-      ],
+      "feld": [13, 6],
       "id": "tm13",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        14,
-        6
-      ],
+      "feld": [14, 6],
       "id": "tm14",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        15,
-        6
-      ],
+      "feld": [15, 6],
       "id": "tm15",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        16,
-        6
-      ],
+      "feld": [16, 6],
       "id": "tm16",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [
-        17,
-        6
-      ],
+      "feld": [17, 6],
       "id": "tm17",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeRechts",
-      "feld": [
-        18,
-        6
-      ],
+      "feld": [18, 6],
       "id": "t4",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        3,
-        8
-      ],
+      "feld": [3, 8],
       "zu": "t1"
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        9,
-        8
-      ],
+      "feld": [9, 8],
       "zu": "t3"
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        11,
-        8
-      ],
+      "feld": [11, 8],
       "zu": "tm11"
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        13,
-        8
-      ],
+      "feld": [13, 8],
       "zu": "tm13"
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        15,
-        8
-      ],
+      "feld": [15, 8],
       "zu": "tm15"
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [
-        17,
-        8
-      ],
+      "feld": [17, 8],
       "zu": "tm17"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        11,
-        11
-      ],
+      "feld": [11, 11],
       "id": "n1"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        10,
-        10
-      ],
+      "feld": [10, 10],
       "zu": "n1"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        12,
-        10
-      ],
+      "feld": [12, 10],
       "zu": "n1"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        14,
-        11
-      ],
+      "feld": [14, 11],
       "id": "n2"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        13,
-        10
-      ],
+      "feld": [13, 10],
       "zu": "n2"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        15,
-        10
-      ],
+      "feld": [15, 10],
       "zu": "n2"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        17,
-        11
-      ],
+      "feld": [17, 11],
       "id": "n3"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        16,
-        10
-      ],
+      "feld": [16, 10],
       "zu": "n3"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        18,
-        10
-      ],
+      "feld": [18, 10],
       "zu": "n3"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        11,
-        13
-      ],
+      "feld": [11, 13],
       "id": "n4"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        10,
-        12
-      ],
+      "feld": [10, 12],
       "zu": "n4"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        12,
-        12
-      ],
+      "feld": [12, 12],
       "zu": "n4"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        14,
-        13
-      ],
+      "feld": [14, 13],
       "id": "n5"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        13,
-        12
-      ],
+      "feld": [13, 12],
       "zu": "n5"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        15,
-        12
-      ],
+      "feld": [15, 12],
       "zu": "n5"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        17,
-        13
-      ],
+      "feld": [17, 13],
       "id": "n6"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        16,
-        12
-      ],
+      "feld": [16, 12],
       "zu": "n6"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        18,
-        12
-      ],
+      "feld": [18, 12],
       "zu": "n6"
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [
-        2,
-        13
-      ],
+      "feld": [2, 13],
       "id": "nw"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [
-        1,
-        12
-      ],
+      "feld": [1, 12],
       "zu": "nw"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [
-        3,
-        12
-      ],
+      "feld": [3, 12],
       "zu": "nw"
     },
     {
       "moebel": "mf8Spielautomat",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     },
     {
       "moebel": "mf8Spielautomat",
-      "feld": [
-        2,
-        9
-      ]
+      "feld": [2, 9]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [
-        4,
-        10
-      ]
+      "feld": [4, 10]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [
-        19,
-        13
-      ]
+      "feld": [19, 13]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [
-        7,
-        14
-      ]
+      "feld": [7, 14]
     },
     {
       "moebel": "mf5Eingangstuer",
-      "feld": [
-        7,
-        14
-      ]
+      "feld": [7, 14]
     },
     {
       "moebel": "mf5Geschirr",
-      "feld": [
-        20,
-        4
-      ]
+      "feld": [20, 4]
     },
     {
       "moebel": "mf5Gastroherd",
-      "feld": [
-        21,
-        2
-      ]
+      "feld": [21, 2]
     },
     {
       "moebel": "mf5Gastroherd",
-      "feld": [
-        22,
-        2
-      ]
+      "feld": [22, 2]
     },
     {
       "moebel": "mf8HerdOffen",
-      "feld": [
-        23,
-        2
-      ]
+      "feld": [23, 2]
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [
-        21,
-        1
-      ],
+      "feld": [21, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [
-        22,
-        1
-      ],
+      "feld": [22, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [
-        23,
-        1
-      ],
+      "feld": [23, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Grillplatte",
-      "feld": [
-        24,
-        2
-      ]
+      "feld": [24, 2]
     },
     {
       "moebel": "mf5Fritteuse",
-      "feld": [
-        26,
-        2
-      ]
+      "feld": [26, 2]
     },
     {
       "moebel": "mf5Kuehlschrank",
-      "feld": [
-        28,
-        1
-      ]
+      "feld": [28, 1]
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [
-        21,
-        6
-      ],
+      "feld": [21, 6],
       "id": "st1"
     },
     {
       "moebel": "mf5Spuele",
-      "feld": [
-        21,
-        6
-      ],
+      "feld": [21, 6],
       "vorn": true,
-      "versatz": [
-        0,
-        2
-      ]
+      "versatz": [0, 2]
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [
-        24,
-        6
-      ],
+      "feld": [24, 6],
       "id": "st2"
     },
     {
       "moebel": "mf5Brotbrett",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "st2"
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [
-        26,
-        6
-      ]
+      "feld": [26, 6]
     },
     {
       "moebel": "mf5Kuehlschrank",
-      "feld": [
-        28,
-        8
-      ]
+      "feld": [28, 8]
     },
     {
       "moebel": "wzKartonstapelHoch",
-      "feld": [
-        27,
-        12
-      ]
+      "feld": [27, 12]
     },
     {
       "moebel": "mf4KartonStapel",
-      "feld": [
-        27,
-        10
-      ]
+      "feld": [27, 10]
     },
     {
       "moebel": "mf5Toilette",
-      "feld": [
-        21,
-        11
-      ]
+      "feld": [21, 11]
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [
-        22,
-        13
-      ]
+      "feld": [22, 13]
     },
     {
       "moebel": "mf5Toilette",
-      "feld": [
-        25,
-        11
-      ]
+      "feld": [25, 11]
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [
-        24,
-        13
-      ]
+      "feld": [24, 13]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        7,
-        13
-      ],
+      "feld": [7, 13],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "dinerAusgang",
-      "feld": [
-        7,
-        15
-      ]
+      "feld": [7, 15]
     }
   ],
   "figuren": [],
@@ -707,10 +443,7 @@
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [
-        4,
-        11
-      ],
+      "feld": [4, 11],
       "eigenschaften": {
         "von": "4,11",
         "bis": "18,11",
@@ -718,15 +451,8 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "klassisch",
-    "industrie",
-    "modern"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "industrie", "modern"],
   "variante": "c",
   "boeden": {
     "t": "teppichRot"

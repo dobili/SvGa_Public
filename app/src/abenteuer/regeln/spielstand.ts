@@ -18,12 +18,17 @@ import {
   type Weltposition,
 } from "../schnittstelle/spielstand";
 
-/** Wo das Abenteuer beginnt: der Dachboden in Maple Falls, Blick nach oben (zum Brett). */
+/**
+ * Wo das Abenteuer beginnt: der Dachboden in Maple Falls, oben an der Treppe, Blick in den Raum.
+ * Gleich dem Auslöser „start“ der Karte (Szene maple-falls-dachboden.json); ein Test in
+ * pipeline/tests/test_abenteuer_karten.py hält beide gleich, weil Umbauten der Karte die Stelle
+ * sonst unbemerkt in ein Möbel legen können.
+ */
 export const STARTPOSITION: Weltposition = {
   karte: "mapleFalls.dachboden",
-  x: 2,
-  y: 7,
-  richtung: "oben",
+  x: 3,
+  y: 5,
+  richtung: "unten",
 };
 
 /**

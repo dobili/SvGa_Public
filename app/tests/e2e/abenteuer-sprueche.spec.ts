@@ -7,7 +7,7 @@
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
 
-/** Spielstand im Park, eine Kachel unter Skater Jo (8,6), Blick nach oben, mit einem Spruch. */
+/** Spielstand im Park, eine Kachel unter Skater Jo (32,27), Blick nach oben (Park aus Runde 4), mit einem Spruch. */
 const STAND = {
   version: 1,
   begonnen: "2026-11-08T05:00:00.000Z",
@@ -18,7 +18,7 @@ const STAND = {
   wertungPartien: 0,
   held: { name: "Kim", variante: 0 },
   handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
-  position: { karte: "mapleFalls.park", x: 8, y: 7, richtung: "oben" },
+  position: { karte: "mapleFalls.park", x: 32, y: 28, richtung: "oben" },
   besuchteOrte: ["mapleFalls"],
   karten: [{ kennung: "grossesMaul", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" }],
 };

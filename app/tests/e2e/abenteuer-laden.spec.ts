@@ -6,7 +6,7 @@
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
 
-/** Spielstand im Park, eine Kachel unter dem Kiosk (16,3), Blick nach oben. */
+/** Spielstand im Park, eine Kachel unter dem Kiosk (25,13), Blick nach oben (Park aus Runde 4). */
 const STAND = {
   version: 1,
   begonnen: "2026-11-08T05:00:00.000Z",
@@ -17,7 +17,7 @@ const STAND = {
   wertungPartien: 0,
   held: { name: "Kim", variante: 0 },
   handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
-  position: { karte: "mapleFalls.park", x: 16, y: 4, richtung: "oben" },
+  position: { karte: "mapleFalls.park", x: 25, y: 14, richtung: "oben" },
   besuchteOrte: ["mapleFalls"],
   muenzen: 50,
 };

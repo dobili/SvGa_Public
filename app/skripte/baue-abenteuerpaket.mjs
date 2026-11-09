@@ -56,6 +56,27 @@ async function kopiereJson(unterordner, name, gruppe) {
   await schreibe(ziel, inhalt, gruppe);
 }
 
+/**
+ * Rahmen der Spieloberfläche (Entscheidung G2): alle Dateien aus inhalte/abenteuer/ui (eigene
+ * Platzhalter im Pixelstil) und aus dem privaten Ordner ui/ (gekaufte Rahmen aus Modern UI samt
+ * eigener rahmen.json). Bei gleichem Namen gewinnt die private Datei.
+ */
+async function kopiereOberflaeche() {
+  const namen = new Set();
+  for (const ordner of [join(QUELLE, "ui"), join(PRIVAT, "ui")]) {
+    if (existsSync(ordner)) (await readdir(ordner)).forEach((name) => namen.add(name));
+  }
+  for (const name of [...namen].sort()) {
+    const privat = join(PRIVAT, "ui", name);
+    const quelle = existsSync(privat) ? privat : join(QUELLE, "ui", name);
+    await schreibe(
+      `ui/${name}`,
+      await readFile(quelle),
+      name.endsWith(".json") ? "daten" : "grafik",
+    );
+  }
+}
+
 /** Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. */
 /** Eine Grafik: aus dem privaten Ordner, wenn vorhanden, sonst der gezeichnete Platzhalter. */
 async function schreibeGrafik(pfad, platzhalter) {
@@ -213,6 +234,7 @@ async function main() {
     const quelle = existsSync(privat) ? privat : join(QUELLE, "portraets", name);
     await schreibe(`portraets/${name}`, await readFile(quelle), "grafik");
   }
+  await kopiereOberflaeche();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
   await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));

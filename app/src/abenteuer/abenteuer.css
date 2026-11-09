@@ -375,3 +375,43 @@
 .rahmen-blindschach .brett-figur {
   visibility: hidden;
 }
+
+/*
+ * Pixelrahmen (Entscheidung G2): Mit geladenem Rahmen (Klasse mit-pixelrahmen am Wurzelelement,
+ * Variablen aus anbindung/pixelrahmen.ts) zeichnen die Fenster des Spiels einen Rahmen im
+ * Pixelstil: der Dialog dunkel (fenster), Menüs, Meldungen und die Kartenleiste hell (karte), die
+ * Wahlknöpfe im Dialog als Pixelknopf. Schrift, Knöpfe der App und Kartenknöpfe bleiben, wie sie
+ * sind. Ohne Klasse gilt das Aussehen oben.
+ */
+.mit-pixelrahmen .abenteuer-dialog {
+  border-style: solid;
+  border-width: var(--rahmen-fenster-breite);
+  border-image: var(--rahmen-fenster-bild) var(--rahmen-fenster-schnitt) fill /
+    var(--rahmen-fenster-breite) stretch;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: pixelated;
+}
+
+.mit-pixelrahmen .abenteuer-menue,
+.mit-pixelrahmen .abenteuer-ergebnis,
+.mit-pixelrahmen.abenteuer-kartenleiste {
+  border-style: solid;
+  border-width: var(--rahmen-karte-breite);
+  border-image: var(--rahmen-karte-bild) var(--rahmen-karte-schnitt) fill /
+    var(--rahmen-karte-breite) stretch;
+  border-radius: 0;
+  background: transparent;
+  color: var(--navy);
+  image-rendering: pixelated;
+}
+
+.mit-pixelrahmen .abenteuer-dialog-wahlen button,
+.mit-pixelrahmen .abenteuer-dialog-weiter {
+  border-style: solid;
+  border-width: var(--rahmen-knopf-breite);
+  border-image: var(--rahmen-knopf-bild) var(--rahmen-knopf-schnitt) / var(--rahmen-knopf-breite)
+    stretch;
+  border-radius: 0;
+  image-rendering: pixelated;
+}

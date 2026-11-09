@@ -34,6 +34,7 @@ import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Leisteneigenschaften } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
+import { usePixelrahmen } from "./pixelrahmen";
 
 /** Rechenzeiten der Karten in Millisekunden (R23: Fingerzeig Tiefe 12, Mentor-Zug Tiefe 14). */
 const FINGERZEIG_MS = 1500;
@@ -112,6 +113,8 @@ export function KartenleisteAnzeige({
   beiMarkierungen,
 }: Leisteneigenschaften) {
   const stand = useAbenteuerstand();
+  const pixelrahmen = usePixelrahmen();
+  const leistenklasse = `abenteuer-kartenleiste ${pixelrahmen?.klasse ?? ""}`;
   const [sorten, setzeSorten] = useState<readonly Kartendaten[]>([]);
   const [gegnerliste, setzeGegnerliste] = useState<readonly Gegnerdaten[]>([]);
   const [laeuft, setzeLaeuft] = useState<string | null>(null);
@@ -143,7 +146,11 @@ export function KartenleisteAnzeige({
   );
   if (!stand || !partie || !karten || karten.deck.length === 0) {
     return (
-      <aside className="abenteuer-kartenleiste" data-testid="abenteuer-kartenleiste">
+      <aside
+        className={leistenklasse}
+        style={pixelrahmen?.stil}
+        data-testid="abenteuer-kartenleiste"
+      >
         <strong>{t("abenteuer.kartenleiste")}</strong>
         {zustandszeile}
         <span>{t("abenteuer.kartenleisteHinweis", { begegnung })}</span>
@@ -240,7 +247,7 @@ export function KartenleisteAnzeige({
   };
 
   return (
-    <aside className="abenteuer-kartenleiste" data-testid="abenteuer-kartenleiste">
+    <aside className={leistenklasse} style={pixelrahmen?.stil} data-testid="abenteuer-kartenleiste">
       <strong>{t("abenteuer.kartenleiste")}</strong>
       {zustandszeile}
       {karten.deck.map((kennung) => {

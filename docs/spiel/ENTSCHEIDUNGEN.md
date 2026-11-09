@@ -650,3 +650,9 @@ gleich gutes Ende bei jedem Ausgang des Finales, Q21-5 endgültiger Abschied mit
   Turms (wie bei Lichess), weil das Zielfeld des Königs im Schach960 auch ein gewöhnlicher Königszug
   sein kann. Zählt wie alle Varianten nie für Nadeln, Wertung oder die App. Inhalte (Tisch, Figur,
   Ambroses Erklärung) baut mittel-2.
+
+**Pixelrahmen gebaut (9.11.2026, G2):** `inhalte/abenteuer/ui/` enthält eigene Platzhalter-Rahmen im
+Pixelstil (Fenster dunkel, Karte hell, Knopf) und `rahmen.json` (Bild, Schnitt, Randbreite). Der
+Paketbau nimmt Dateien gleichen Namens aus dem privaten Ordner `ui/` vor; für Modern UI genügt dort
+eine eigene `rahmen.json` mit den gekauften Bildern. Rahmen tragen Dialog (dunkel), Menüs, Meldungen
+und die Kartenleiste (hell) sowie die Wahlknöpfe im Dialog; Schrift und Knöpfe der App bleiben.

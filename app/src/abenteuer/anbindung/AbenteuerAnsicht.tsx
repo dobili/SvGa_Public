@@ -19,6 +19,7 @@ import { t } from "../../i18n/sprache";
 import { speicherzustand } from "../../speicher/speicher";
 import { ANFANGSPARTIEN } from "../../spiel/wertung";
 import "../abenteuer.css";
+import { usePixelrahmen } from "./pixelrahmen";
 import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuermodul } from "../schnittstelle/modul";
@@ -208,6 +209,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   }> | null>(null);
   const [offen, setzeOffen] = useState(false);
   const [menue, setzeMenue] = useState(false);
+  const pixelrahmen = usePixelrahmen();
   // Name des Helden vor dem ersten Start; leer heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
 
@@ -291,7 +293,11 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   };
 
   return (
-    <div className="bildschirm bildschirm-abenteuer" data-testid="abenteuer">
+    <div
+      className={`bildschirm bildschirm-abenteuer ${pixelrahmen?.klasse ?? ""}`}
+      style={pixelrahmen?.stil}
+      data-testid="abenteuer"
+    >
       <button
         type="button"
         className="abenteuer-menueknopf"

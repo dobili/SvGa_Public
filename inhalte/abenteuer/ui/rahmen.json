@@ -1,0 +1,5 @@
+{
+  "fenster": { "datei": "ui/fenster.svg", "schnitt": 8, "breite": 16 },
+  "knopf": { "datei": "ui/knopf.svg", "schnitt": 8, "breite": 8 },
+  "karte": { "datei": "ui/karte.svg", "schnitt": 8, "breite": 8 }
+}

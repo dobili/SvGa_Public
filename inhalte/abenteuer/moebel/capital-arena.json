@@ -101,6 +101,293 @@
       "breite": 16,
       "hoehe": 16,
       "kollision": true
+    },
+    "ca7Fenster": {
+      "quelle": "spiel/generic/generic_086.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Tisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7StuhlRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "rechts"
+    },
+    "ca7StuhlLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "ca7StuhlVorn": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7StuhlRuecken": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7Brett": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7Klapptisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Table_5.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7Pflanze": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_13.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7Muelleimer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trashbin_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "mulleimer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Tafel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tafel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Mikrofon": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_73.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "zustand": "gebraucht"
+    },
+    "ca7Buehne": {
+      "quelle": "spiel/eigene/buehne_finale.png",
+      "breite": 96,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "buehne",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Banner": {
+      "quelle": "spiel/eigene/banner_meisterschaft.png",
+      "breite": 96,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Pressetisch": {
+      "quelle": "spiel/eigene/pressetisch.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca7Fanshop": {
+      "quelle": "spiel/eigene/fanshop.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca7Tuer": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Tribuene": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Mikrofon2": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_62.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca7Arena": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Palace_Example_1.png",
+      "breite": 400,
+      "hoehe": 544,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten",
+      "frei_unten": 6
+    },
+    "ca7Fahne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Flag_1.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Imbiss": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_3.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca7Limonadenwagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_2.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca7Brunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_1.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Baum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_20.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "ca7BaumRund": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "ca7Blumenbeet": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_4.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

@@ -37,64 +37,75 @@
   "objekte": [
     {
       "moebel": "el7FassadeC",
-      "feld": [1, 1]
+      "feld": [1, 2]
     },
     {
       "moebel": "el7FassadeA",
-      "feld": [7, 1]
-    },
-    {
-      "moebel": "el7Kaffeehaus",
-      "feld": [17, 1]
+      "feld": [6, 2]
     },
     {
       "moebel": "el7FassadeB",
-      "feld": [25, 1]
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "el7Kaffeehaus",
+      "feld": [16, 2]
     },
     {
       "moebel": "el7FassadeC",
-      "feld": [31, 1]
+      "feld": [23, 2]
     },
     {
       "moebel": "el7FassadeA",
-      "feld": [37, 1]
+      "feld": [28, 2]
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7FassadeB",
+      "feld": [33, 2]
+    },
+    {
+      "moebel": "el7FassadeC",
+      "feld": [38, 2]
+    },
+    {
+      "moebel": "el7Gaslaterne",
       "feld": [6, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7Gaslaterne",
       "feld": [13, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7Gaslaterne",
       "feld": [24, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7Gaslaterne",
       "feld": [30, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7Gaslaterne",
       "feld": [36, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
-      "feld": [4, 13]
+      "moebel": "el7Gaslaterne",
+      "feld": [4, 14],
+      "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
-      "feld": [20, 13]
+      "moebel": "el7Gaslaterne",
+      "feld": [20, 14],
+      "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
-      "feld": [38, 13]
+      "moebel": "el7Gaslaterne",
+      "feld": [38, 14],
+      "vorn": true
     },
     {
       "moebel": "el7Droschke",
@@ -139,7 +150,7 @@
     },
     {
       "name": "kaffeehausTuer",
-      "feld": [20, 9]
+      "feld": [19, 9]
     },
     {
       "name": "droschke",

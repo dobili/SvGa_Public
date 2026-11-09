@@ -46,12 +46,12 @@
       "feld": [14, 1]
     },
     {
-      "moebel": "mf2Ohrensessel",
-      "feld": [1, 8]
+      "moebel": "el7Lederbank3",
+      "feld": [5, 3]
     },
     {
-      "moebel": "cc4Zeitungsregal",
-      "feld": [15, 7]
+      "moebel": "el7Zeitungshalter",
+      "feld": [16, 6]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -64,11 +64,17 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "mitte"
+      "auf": "mitte",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelL",
       "feld": [7, 6]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "mitte",
+      "versatz": [8, -2]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -81,11 +87,17 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "t2"
+      "auf": "t2",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelL",
       "feld": [13, 8]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "t2",
+      "versatz": [8, -2]
     },
     {
       "moebel": "mf2Ohrensessel",

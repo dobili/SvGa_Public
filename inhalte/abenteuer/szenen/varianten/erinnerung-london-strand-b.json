@@ -37,27 +37,31 @@
   "objekte": [
     {
       "moebel": "el7FassadeB",
-      "feld": [4, 1]
+      "feld": [4, 2]
     },
     {
       "moebel": "el7FassadeC",
-      "feld": [10, 1]
+      "feld": [9, 2]
     },
     {
       "moebel": "el7Kaffeehaus",
-      "feld": [17, 1]
+      "feld": [14, 2]
     },
     {
       "moebel": "el7FassadeA",
-      "feld": [26, 1]
+      "feld": [21, 2]
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7FassadeC",
+      "feld": [26, 2]
+    },
+    {
+      "moebel": "el7Gaslaterne",
       "feld": [9, 6],
       "vorn": true
     },
     {
-      "moebel": "ldGaslaterne",
+      "moebel": "el7Gaslaterne",
       "feld": [32, 6],
       "vorn": true
     },
@@ -88,7 +92,7 @@
     },
     {
       "name": "kaffeehausTuer",
-      "feld": [20, 9]
+      "feld": [17, 9]
     },
     {
       "name": "droschke",
@@ -98,7 +102,7 @@
   "figuren": [
     {
       "name": "zeitungsjunge",
-      "feld": [14, 10]
+      "feld": [13, 10]
     }
   ],
   "belebung": [

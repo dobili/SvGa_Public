@@ -43,16 +43,12 @@
       "an_wand": true
     },
     {
-      "moebel": "mf2Ohrensessel",
-      "feld": [1, 3]
+      "moebel": "el7Lederbank5",
+      "feld": [2, 3]
     },
     {
-      "moebel": "mf2Ohrensessel",
-      "feld": [5, 3]
-    },
-    {
-      "moebel": "cc4Zeitungsregal",
-      "feld": [1, 7]
+      "moebel": "el7Zeitungshalter",
+      "feld": [1, 6]
     },
     {
       "moebel": "ld5Theke7",
@@ -73,11 +69,17 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "t1"
+      "auf": "t1",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelL",
       "feld": [6, 7]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "t1",
+      "versatz": [8, -2]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -90,11 +92,17 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "mitte"
+      "auf": "mitte",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelL",
       "feld": [10, 7]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "mitte",
+      "versatz": [8, -2]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -107,11 +115,17 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "t3"
+      "auf": "t3",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelL",
       "feld": [15, 8]
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "t3",
+      "versatz": [8, -2]
     }
   ],
   "ausloeser": [
@@ -142,7 +156,7 @@
     },
     {
       "name": "zeitungsleser",
-      "feld": [3, 5]
+      "feld": [3, 6]
     }
   ],
   "belebung": [

@@ -295,6 +295,15 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "iw5Duschwanne": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "dusche",
+      "zustand": "gebraucht",
+      "stil": "einfach"
     }
   }
 }

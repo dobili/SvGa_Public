@@ -1,0 +1,107 @@
+{
+  "karte": "ironwood.umkleide",
+  "datei": "karten/varianten/ironwood-umkleide-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B: Duschecke an der Westwand, drei große Spinde an der Nordwand, Bänke quer davor, Schließfach in der Nordostecke, Spiegel neben der Tür; Wand blau.",
+  "wand": "blau",
+  "boden": "fliesenGrau",
+  "boeden": {
+    "f": "fliesenWeiss"
+  },
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#ff..........#",
+    "#ff..........#",
+    "#ff..........#",
+    "#ff..........#",
+    "#ff..........#",
+    "#ff..........#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [10, 2],
+      "id": "schliessfachSpind"
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "iw5Duschwanne",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "iw5Duschwanne",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "mf2Standspiegel",
+      "feld": [10, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "umkleideAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schliessfach",
+      "feld": [11, 4]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "arbeiter",
+      "typ": "statist",
+      "feld": [8, 4],
+      "eigenschaften": {
+        "von": "8,4",
+        "bis": "9,4",
+        "tun": "zieht sich für die Schicht um",
+        "wann": "morgen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["industrie", "klassisch", "einfach", "modern", "rustikal"],
+  "variante": "b"
+}

@@ -1854,7 +1854,7 @@
           "wenn": "nadelSiliconBay",
           "ziel": {
             "karte": "wegSiliconDelacroix.faehre",
-            "ausloeser": "start"
+            "ausloeser": "zurueckSilicon"
           }
         }
       ],

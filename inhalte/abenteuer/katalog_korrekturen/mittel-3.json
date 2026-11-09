@@ -498,5 +498,30 @@
     "raumfunktion": ["aussen_strasse"],
     "orte": ["grossstadt", "kleinstadt", "industrie"],
     "beschreibung": "Blaues Schrift-Graffiti (verschlungene Buchstaben), sauber, zum Auflegen auf eine Mauerfront."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png": {
+    "innen_aussen": "aussen",
+    "zustand": "neu",
+    "material": ["metall", "glas"],
+    "stil": ["modern"],
+    "epoche": "gegenwart",
+    "wohlstand": "mittel",
+    "ganz": true,
+    "gegenstuecke": "",
+    "befestigung": "boden",
+    "ablage": null,
+    "treppe": null,
+    "einzigartig": false,
+    "licht": false,
+    "anlass": null,
+    "anzahl": "einzeln",
+    "reihe": false,
+    "sicher": 0.9,
+    "korrektur": "mittel-3",
+    "nur_pfad": true,
+    "art": "gebaeude",
+    "raumfunktion": ["aussen_strasse"],
+    "orte": ["grossstadt", "hafen"],
+    "beschreibung": "Kleines Dachhäuschen aus grauem Metall mit dunklem Pyramidendach, Front mit Tür, Fenster und Aushängen; Treppenhaus auf einem Flachdach, auf einem Schiff als Steuerhaus nutzbar."
   }
 }

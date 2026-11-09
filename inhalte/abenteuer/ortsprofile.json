@@ -1,140 +1,195 @@
 {
- "hinweis": "Ortsprofile für den Kartenbau (Regelwerk docs/spiel/KARTENREGELN.md, Abschnitt 1). Je Ort Grundzüge, je Karte Zweck, Räume, Pflicht, Verbot. Werte für stil, zustand, wohlstand und epoche wie im Katalog (register/katalog.json im privaten Repository).",
- "orte": {
-  "mapleFalls": {
-   "bild": "Kleinstadt am Fluss mit Wasserfall, Ahornbäume, Holzhäuser mit Veranden, eine Hauptstraße. Spätsommer, Blätter an den Rändern rot.",
-   "epoche": "gegenwart",
-   "wohlstand": "mittel",
-   "stil": ["landhaus", "holz", "klassisch"],
-   "zustand": ["neu", "gebraucht"],
-   "flora": "Ahorn (rot und grün), Hecken, Blumenbeete in Vorgärten, Rasen; Bäume an Straßen als Allee in gleichem Abstand.",
-   "karten": {
-    "aussen": {
-     "zweck": "Birch Lane: Haus des Helden, Nachbarhaus mit Katze, Schule mit Fahnenmast, Diner mit Leuchtreklame, Bushaltestelle mit Fahrplan; Wege zu Park und Schule.",
-     "nachbarschaft": "Wohnstraße mit Einfamilienhäusern (Holz, Veranda, mittlerer Wohlstand); am Ende der Straße Schule und Diner. Keine Industrie, keine Villa.",
-     "pflicht": [
-      "Straße quer über die ganze Karte, Gehweg beidseitig mit Kanten",
-      "jedes Haus mit Weg von der Tür zum Gehweg, Vorgarten, Zaun oder Hecke um das Grundstück",
-      "Häuser stehen in einer Reihe an der Straße",
-      "Laternen in gleichem Abstand am Gehweg, Bäume als Allee",
-      "Bushaltestelle mit Häuschen oder Schild zur Straße, Briefkästen an den Grundstücken"
-     ],
-     "verboten": ["Industriegebäude", "Lagerhallen", "Kisten oder Kästen ohne Zweck"],
-     "zustand": ["neu", "gebraucht"]
+  "hinweis": "Ortsprofile für den Kartenbau (Regelwerk docs/spiel/KARTENREGELN.md, Abschnitt 1). Je Ort Grundzüge, je Karte Zweck, Räume, Pflicht, Verbot. Werte für stil, zustand, wohlstand und epoche wie im Katalog (register/katalog.json im privaten Repository).",
+  "orte": {
+    "mapleFalls": {
+      "bild": "Kleinstadt am Fluss mit Wasserfall, Ahornbäume, Holzhäuser mit Veranden, eine Hauptstraße. Spätsommer, Blätter an den Rändern rot.",
+      "epoche": "gegenwart",
+      "wohlstand": "mittel",
+      "stil": ["landhaus", "holz", "klassisch"],
+      "zustand": ["neu", "gebraucht"],
+      "flora": "Ahorn (rot und grün), Hecken, Blumenbeete in Vorgärten, Rasen; Bäume an Straßen als Allee in gleichem Abstand.",
+      "karten": {
+        "aussen": {
+          "zweck": "Birch Lane: Haus des Helden, Nachbarhaus mit Katze, Schule mit Fahnenmast, Diner mit Leuchtreklame, Bushaltestelle mit Fahrplan; Wege zu Park und Schule.",
+          "nachbarschaft": "Wohnstraße mit Einfamilienhäusern (Holz, Veranda, mittlerer Wohlstand); am Ende der Straße Schule und Diner. Keine Industrie, keine Villa.",
+          "pflicht": [
+            "Straße quer über die ganze Karte, Gehweg beidseitig mit Kanten",
+            "jedes Haus mit Weg von der Tür zum Gehweg, Vorgarten, Zaun oder Hecke um das Grundstück",
+            "Häuser stehen in einer Reihe an der Straße",
+            "Laternen in gleichem Abstand am Gehweg, Bäume als Allee",
+            "Bushaltestelle mit Häuschen oder Schild zur Straße, Briefkästen an den Grundstücken"
+          ],
+          "verboten": [
+            "Industriegebäude",
+            "Lagerhallen",
+            "Kisten oder Kästen ohne Zweck"
+          ],
+          "zustand": ["neu", "gebraucht"]
+        },
+        "park": {
+          "zweck": "Stadtpark am Fluss: Halfpipe, Bänke, Enten, Kiosk von Mr. Patel (kleiner Verkaufswagen mit Markise am Weg), Bushaltestelle, Ortsausgang zur Landstraße rechts.",
+          "nachbarschaft": "Parkrand mit Straße oben oder links; Fluss als großes Gewässer, der bis zu zwei Kartenrändern reicht.",
+          "pflicht": [
+            "Fluss reicht bis zum Kartenrand, Ufer mit Rand",
+            "Wege verbinden Eingang, Kiosk, Halfpipe, Bänke und Ortsausgang und laufen bis zum Rand",
+            "Bänke direkt am Weg, zum Weg gewandt oder zum Fluss",
+            "Blumenbeete und Blumenkästen parallel zum Weg, nicht auf dem Weg",
+            "Mülleimer neben Bänken, Laternen am Weg"
+          ],
+          "verboten": ["Erdstreifen ohne Grund", "graue Kästen ohne Zweck"],
+          "zustand": ["neu", "gebraucht"]
+        },
+        "wohnzimmer": {
+          "zweck": "Zuhause nach dem Umzug: Mama, Umzugskartons, Pizzakarton, Treppe nach oben zum Dachboden.",
+          "raeume": [
+            {
+              "name": "wohnzimmer",
+              "funktion": "wohnen",
+              "inhalt": "Sofa mit Blick zum Fernseher auf Lowboard, Couchtisch, Sessel mit Stehlampe, Teppich, Bücherregal, Pflanzen in Ecken, Umzugskartons in Stapeln an den Wänden, Treppe nach oben (Antritt frei), Fenster mit Gardinen davor"
+            },
+            {
+              "name": "kueche",
+              "funktion": "kueche",
+              "inhalt": "eigener Raum, durch einen Türbogen vom Wohnzimmer getrennt: Küchenzeile an der Wand, Kühlschrank, Esstisch mit gleichen Stühlen, Karton „Küche?“"
+            }
+          ],
+          "pflicht": [
+            "Haustür in der Südwand",
+            "Mamas Laptop auf dem Esstisch oder Couchtisch"
+          ],
+          "verboten": ["Küchenmöbel im Wohnzimmer", "kaputte Möbel"],
+          "zustand": ["neu", "gebraucht"]
+        },
+        "dachboden": {
+          "zweck": "Dachboden der alten Mrs. Whitlock: Fund des Bretts, Gespräche mit Ambrose.",
+          "raeume": [
+            {
+              "name": "dachboden",
+              "funktion": "lager",
+              "inhalt": "Kisten und Truhen in Gruppen an den Wänden, alte Möbel unter Tüchern, Hutschachtel, Spiegel, Zeitungsstapel von 1961, eine Lampe, ein Fenster zu den Ahornbäumen, Treppe nach unten (Öffnung im Boden)"
+            }
+          ],
+          "pflicht": [
+            "Treppe führt nach unten",
+            "Weg vom Antritt zum Brett frei"
+          ],
+          "zustand": ["gebraucht", "alt", "kaputt"],
+          "stil": ["antik", "landhaus"]
+        },
+        "clubraum": {
+          "zweck": "Schachteam der Schule: Klassenzimmer mit Pokalen von 1994, vier Bretter, Tafel mit Diagramm.",
+          "raeume": [
+            {
+              "name": "klassenzimmer",
+              "funktion": "schule",
+              "inhalt": "Tafel an der Nordwand, Lehrerpult davor, vier Tische mit je zwei gleichen Stühlen und einem Brett auf der Platte, Pokalvitrine an der Wand (Pokale darin oder auf der Vitrine), Plakat „Erst zählen“, Regale mit Büchern, Pflanzen in Ecken, Fenster an der Außenwand, Schulranzen und Kleinkram"
+            }
+          ],
+          "pflicht": [
+            "Tür in der Südwand",
+            "Globus höchstens einmal, dann auf dem Pult oder einem Regal"
+          ],
+          "zustand": ["neu", "gebraucht"],
+          "stil": ["schule"]
+        }
+      }
     },
-    "park": {
-     "zweck": "Stadtpark am Fluss: Halfpipe, Bänke, Enten, Kiosk von Mr. Patel (kleiner Verkaufswagen mit Markise am Weg), Bushaltestelle, Ortsausgang zur Landstraße rechts.",
-     "nachbarschaft": "Parkrand mit Straße oben oder links; Fluss als großes Gewässer, der bis zu zwei Kartenrändern reicht.",
-     "pflicht": [
-      "Fluss reicht bis zum Kartenrand, Ufer mit Rand",
-      "Wege verbinden Eingang, Kiosk, Halfpipe, Bänke und Ortsausgang und laufen bis zum Rand",
-      "Bänke direkt am Weg, zum Weg gewandt oder zum Fluss",
-      "Blumenbeete und Blumenkästen parallel zum Weg, nicht auf dem Weg",
-      "Mülleimer neben Bänken, Laternen am Weg"
-     ],
-     "verboten": ["Erdstreifen ohne Grund", "graue Kästen ohne Zweck"],
-     "zustand": ["neu", "gebraucht"]
+    "wegMapleCedar": {
+      "bild": "Landstraße zwischen Maple Falls und Cedar Creek: Felder, Zäune, Ahorn am Rand, Ortsausgang mit Rätseltafel.",
+      "epoche": "gegenwart",
+      "wohlstand": "mittel",
+      "stil": ["laendlich"],
+      "zustand": ["neu", "gebraucht", "verwittert"],
+      "flora": "Ahorn und Eichen in Gruppen, Büsche, Wildblumen, hohes Gras, Steine; Abwechslung, keine Wiederholung.",
+      "karten": {
+        "landstrasse": {
+          "zweck": "Weg von Maple Falls (links) nach Cedar Creek (rechts): Rätseltafel am Ortsausgang, Bank mit Nia, Busch mit dem Fund.",
+          "pflicht": [
+            "Straße oder Feldweg von Rand zu Rand",
+            "Felder reichen bis zum Kartenrand, Zaun entlang des Weges, Feldeinfahrt mit Gatter",
+            "Traktor an der Feldeinfahrt oder am Feldrand",
+            "Bank direkt am Weg mit Blick über die Felder",
+            "Schilder mit Aufschrift (Ortsausgang „Maple Falls“), Wegweiser nur an einer Kreuzung"
+          ],
+          "verboten": [
+            "Hindernisse auf dem Weg",
+            "Wegweiser ohne Kreuzung",
+            "Zäune ohne Grundstück oder Feld"
+          ]
+        }
+      }
     },
-    "wohnzimmer": {
-     "zweck": "Zuhause nach dem Umzug: Mama, Umzugskartons, Pizzakarton, Treppe nach oben zum Dachboden.",
-     "raeume": [
-      {"name": "wohnzimmer", "funktion": "wohnen", "inhalt": "Sofa mit Blick zum Fernseher auf Lowboard, Couchtisch, Sessel mit Stehlampe, Teppich, Bücherregal, Pflanzen in Ecken, Umzugskartons in Stapeln an den Wänden, Treppe nach oben (Antritt frei), Fenster mit Gardinen davor"},
-      {"name": "kueche", "funktion": "kueche", "inhalt": "eigener Raum, durch einen Türbogen vom Wohnzimmer getrennt: Küchenzeile an der Wand, Kühlschrank, Esstisch mit gleichen Stühlen, Karton „Küche?“"}
-     ],
-     "pflicht": ["Haustür in der Südwand", "Mamas Laptop auf dem Esstisch oder Couchtisch"],
-     "verboten": ["Küchenmöbel im Wohnzimmer", "kaputte Möbel"],
-     "zustand": ["neu", "gebraucht"]
-    },
-    "dachboden": {
-     "zweck": "Dachboden der alten Mrs. Whitlock: Fund des Bretts, Gespräche mit Ambrose.",
-     "raeume": [
-      {"name": "dachboden", "funktion": "lager", "inhalt": "Kisten und Truhen in Gruppen an den Wänden, alte Möbel unter Tüchern, Hutschachtel, Spiegel, Zeitungsstapel von 1961, eine Lampe, ein Fenster zu den Ahornbäumen, Treppe nach unten (Öffnung im Boden)"}
-     ],
-     "pflicht": ["Treppe führt nach unten", "Weg vom Antritt zum Brett frei"],
-     "zustand": ["gebraucht", "alt", "kaputt"],
-     "stil": ["antik", "landhaus"]
-    },
-    "clubraum": {
-     "zweck": "Schachteam der Schule: Klassenzimmer mit Pokalen von 1994, vier Bretter, Tafel mit Diagramm.",
-     "raeume": [
-      {"name": "klassenzimmer", "funktion": "schule", "inhalt": "Tafel an der Nordwand, Lehrerpult davor, vier Tische mit je zwei gleichen Stühlen und einem Brett auf der Platte, Pokalvitrine an der Wand (Pokale darin oder auf der Vitrine), Plakat „Erst zählen“, Regale mit Büchern, Pflanzen in Ecken, Fenster an der Außenwand, Schulranzen und Kleinkram"}
-     ],
-     "pflicht": ["Tür in der Südwand", "Globus höchstens einmal, dann auf dem Pult oder einem Regal"],
-     "zustand": ["neu", "gebraucht"],
-     "stil": ["schule"]
+    "cedarCreek": {
+      "bild": "Kleiner Ort am Bach, rote Zedern, Bibliothek aus Backstein von 1890, Waschsalon, ein Steg. Still, altmodisch, riecht nach Holz und Papier.",
+      "epoche": "gegenwart mit altem Ortskern",
+      "wohlstand": "einfach bis mittel",
+      "stil": ["backstein", "klassisch", "altmodisch"],
+      "zustand": ["neu", "gebraucht", "alt"],
+      "flora": "rote Zedern, Büsche, Schilf am Bach, Blumenkästen an Fenstern.",
+      "karten": {
+        "aussen": {
+          "zweck": "Ortskern: Bushaltestelle mit Schild, Bibliothek (Treppe, Laternen, Doppeltür aus Holz), Waschsalon mit Neonschild, Plakat von Perfect Move an einer Mauer, Steg mit Rosa, Bank mit Victor, Bach rechts.",
+          "nachbarschaft": "Kleiner Platz mit Bibliothek als größtem Gebäude, daneben Waschsalon und zwei kleine Wohnhäuser; Bach als großes Gewässer am rechten Rand von oben bis unten.",
+          "pflicht": [
+            "Bach reicht oben und unten bis zum Kartenrand, Ufer mit Rand",
+            "Steg beginnt am Ufer und ragt ins Wasser",
+            "Straße und Gehwege beidseitig, bis zum Rand",
+            "Türen sitzen unten in der Fassade und passen zum Gebäude",
+            "Bank am Weg zum Bach gewandt (Aussicht), Laternen am Weg"
+          ],
+          "verboten": [
+            "Blumenkästen auf dem Gehweg",
+            "Schilder ohne Zusammenhang",
+            "Kästen ohne Zweck"
+          ]
+        },
+        "bibliothek": {
+          "zweck": "Bibliotheksclub: hohe Regale, grüne Leselampen, langer Tisch mit vier Brettern, Tresen, Kellertreppe.",
+          "raeume": [
+            {
+              "name": "lesesaal",
+              "funktion": "bibliothek",
+              "inhalt": "viele Bücherregale in Reihen und an den Wänden, langer Tisch mit gleichen Stühlen und vier Brettern auf der Platte, Leselampen auf dem Tisch, Tresen mit Stempel und Bücherstapel am Eingang, Zeitungsregal, Schild „Bitte flüstern“, Globus einmal, Pflanzen in Ecken und am Durchgang, Treppe nach unten zum Archiv, Teppich unter dem Tisch"
+            }
+          ],
+          "pflicht": [
+            "Boden ruhig (ein Parkett oder Teppich)",
+            "Öffnungen in Innenwänden als Tür oder Bogen"
+          ],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["antik", "klassisch", "holzDunkel"]
+        },
+        "archiv": {
+          "zweck": "Keller der Bibliothek: Kartons mit Jahreszahlen, flackernde Lampe, Karton 1850–1859, Programmheft.",
+          "raeume": [
+            {
+              "name": "keller",
+              "funktion": "lager",
+              "inhalt": "Regale mit Archivkartons in Reihen, Kartonstapel an den Wänden, Arbeitstisch mit Stuhl (zum Tisch gedreht) und Lampe daneben, Aktenschränke, Boxerfoto an der Wand, Wasserfleck, Treppe nach oben"
+            }
+          ],
+          "pflicht": [
+            "Treppe führt nach oben",
+            "Kartons in Regalen oder geordneten Stapeln, nicht verstreut"
+          ],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["lager", "alt"]
+        },
+        "waschsalon": {
+          "zweck": "Rätsel-Quest auf dem Trockner: Maschinen, Trockner mit Klebebrett, Automat, Stühle.",
+          "raeume": [
+            {
+              "name": "waschsalon",
+              "funktion": "waschsalon",
+              "inhalt": "Waschmaschinen gleicher Bauart lückenlos in einer Reihe an einer Wand, Trockner in einer zweiten Reihe, Getränkeautomat an freier Wand, Pinnwand mit Zetteln an freier Wandfläche, Wartestühle in Reihe, Falttisch (Arbeitstisch, kein Wohnzimmertisch), Wäschekörbe, Waschmittelregal, Mülleimer"
+            }
+          ],
+          "pflicht": ["Eingangstür in der Südwand mit Fenster daneben"],
+          "verboten": ["Wohnzimmer- oder Küchenmöbel"],
+          "zustand": ["gebraucht"],
+          "stil": ["einfach", "modern"]
+        }
+      }
     }
-   }
-  },
-  "wegMapleCedar": {
-   "bild": "Landstraße zwischen Maple Falls und Cedar Creek: Felder, Zäune, Ahorn am Rand, Ortsausgang mit Rätseltafel.",
-   "epoche": "gegenwart",
-   "wohlstand": "mittel",
-   "stil": ["laendlich"],
-   "zustand": ["neu", "gebraucht", "verwittert"],
-   "flora": "Ahorn und Eichen in Gruppen, Büsche, Wildblumen, hohes Gras, Steine; Abwechslung, keine Wiederholung.",
-   "karten": {
-    "landstrasse": {
-     "zweck": "Weg von Maple Falls (links) nach Cedar Creek (rechts): Rätseltafel am Ortsausgang, Bank mit Nia, Busch mit dem Fund.",
-     "pflicht": [
-      "Straße oder Feldweg von Rand zu Rand",
-      "Felder reichen bis zum Kartenrand, Zaun entlang des Weges, Feldeinfahrt mit Gatter",
-      "Traktor an der Feldeinfahrt oder am Feldrand",
-      "Bank direkt am Weg mit Blick über die Felder",
-      "Schilder mit Aufschrift (Ortsausgang „Maple Falls“), Wegweiser nur an einer Kreuzung"
-     ],
-     "verboten": ["Hindernisse auf dem Weg", "Wegweiser ohne Kreuzung", "Zäune ohne Grundstück oder Feld"]
-    }
-   }
-  },
-  "cedarCreek": {
-   "bild": "Kleiner Ort am Bach, rote Zedern, Bibliothek aus Backstein von 1890, Waschsalon, ein Steg. Still, altmodisch, riecht nach Holz und Papier.",
-   "epoche": "gegenwart mit altem Ortskern",
-   "wohlstand": "einfach bis mittel",
-   "stil": ["backstein", "klassisch", "altmodisch"],
-   "zustand": ["neu", "gebraucht", "alt"],
-   "flora": "rote Zedern, Büsche, Schilf am Bach, Blumenkästen an Fenstern.",
-   "karten": {
-    "aussen": {
-     "zweck": "Ortskern: Bushaltestelle mit Schild, Bibliothek (Treppe, Laternen, Doppeltür aus Holz), Waschsalon mit Neonschild, Plakat von Perfect Move an einer Mauer, Steg mit Rosa, Bank mit Victor, Bach rechts.",
-     "nachbarschaft": "Kleiner Platz mit Bibliothek als größtem Gebäude, daneben Waschsalon und zwei kleine Wohnhäuser; Bach als großes Gewässer am rechten Rand von oben bis unten.",
-     "pflicht": [
-      "Bach reicht oben und unten bis zum Kartenrand, Ufer mit Rand",
-      "Steg beginnt am Ufer und ragt ins Wasser",
-      "Straße und Gehwege beidseitig, bis zum Rand",
-      "Türen sitzen unten in der Fassade und passen zum Gebäude",
-      "Bank am Weg zum Bach gewandt (Aussicht), Laternen am Weg"
-     ],
-     "verboten": ["Blumenkästen auf dem Gehweg", "Schilder ohne Zusammenhang", "Kästen ohne Zweck"]
-    },
-    "bibliothek": {
-     "zweck": "Bibliotheksclub: hohe Regale, grüne Leselampen, langer Tisch mit vier Brettern, Tresen, Kellertreppe.",
-     "raeume": [
-      {"name": "lesesaal", "funktion": "bibliothek", "inhalt": "viele Bücherregale in Reihen und an den Wänden, langer Tisch mit gleichen Stühlen und vier Brettern auf der Platte, Leselampen auf dem Tisch, Tresen mit Stempel und Bücherstapel am Eingang, Zeitungsregal, Schild „Bitte flüstern“, Globus einmal, Pflanzen in Ecken und am Durchgang, Treppe nach unten zum Archiv, Teppich unter dem Tisch"}
-     ],
-     "pflicht": ["Boden ruhig (ein Parkett oder Teppich)", "Öffnungen in Innenwänden als Tür oder Bogen"],
-     "zustand": ["gebraucht", "alt"],
-     "stil": ["antik", "klassisch", "holzDunkel"]
-    },
-    "archiv": {
-     "zweck": "Keller der Bibliothek: Kartons mit Jahreszahlen, flackernde Lampe, Karton 1850–1859, Programmheft.",
-     "raeume": [
-      {"name": "keller", "funktion": "lager", "inhalt": "Regale mit Archivkartons in Reihen, Kartonstapel an den Wänden, Arbeitstisch mit Stuhl (zum Tisch gedreht) und Lampe daneben, Aktenschränke, Boxerfoto an der Wand, Wasserfleck, Treppe nach oben"}
-     ],
-     "pflicht": ["Treppe führt nach oben", "Kartons in Regalen oder geordneten Stapeln, nicht verstreut"],
-     "zustand": ["gebraucht", "alt"],
-     "stil": ["lager", "alt"]
-    },
-    "waschsalon": {
-     "zweck": "Rätsel-Quest auf dem Trockner: Maschinen, Trockner mit Klebebrett, Automat, Stühle.",
-     "raeume": [
-      {"name": "waschsalon", "funktion": "waschsalon", "inhalt": "Waschmaschinen gleicher Bauart lückenlos in einer Reihe an einer Wand, Trockner in einer zweiten Reihe, Getränkeautomat an freier Wand, Pinnwand mit Zetteln an freier Wandfläche, Wartestühle in Reihe, Falttisch (Arbeitstisch, kein Wohnzimmertisch), Wäschekörbe, Waschmittelregal, Mülleimer"}
-     ],
-     "pflicht": ["Eingangstür in der Südwand mit Fenster daneben"],
-     "verboten": ["Wohnzimmer- oder Küchenmöbel"],
-     "zustand": ["gebraucht"],
-     "stil": ["einfach", "modern"]
-    }
-   }
   }
- }
 }

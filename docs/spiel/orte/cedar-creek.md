@@ -308,3 +308,32 @@ Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
 ## 4. Bühnenbilder
 
 Folgen nach Durchsicht des Musters.
+
+### 4.L Landstraße (`wegMapleCedar.landstrasse`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten; Feldweg und Äcker aus Erde
+(`e`, `f`); Fluss als Wasser mit Ufer über West-, Ost- und Südrand (Reihe 20 im Westen, ab Spalte 17
+Reihe 26). **Rand** Randreihe als Gras (geschlossen), Felder und Fluss reichen optisch bis zum Rand.
+
+**Wege:** Feldweg drei Felder breit (Reihen 15–17) bis Spalte 59, mit Kurve nach Norden in L2
+(Reihen 13–15, Spalten 19–30); ab Spalte 60 zwei Felder (Reihen 15–16), Kurve nach Süden in L6
+(Reihen 16–17), am Ostrand Reihen 15–16. Abzweig nach Norden zum Kürbishof bei Spalten 52–53 durch
+das Gatter S1 (Lücke im Zaun, Reihe 11) bis zum Nordrand.
+
+**Zonen und Inventar** (Feld = linke obere Kachel):
+
+| Abschnitt            | Inventar                                                                                                                                                                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Norden, ganze Breite | Kornfeld der Brennans (Spalten 1–50, Korn auf jedem zweiten Feld), Vogelscheuche (10, 4), Traktor von Otis am Feldrand (36, 7, Blick links); Millers Mais (Spalten 54–118); durchgehender Holzzaun Reihe 11 (Satz Fence 4, Unterkante), Gatter-Lücke 52–53 mit Endpfosten |
+| L1                   | Rätseltafel mit Dach (3, 12, `tafel`), Ortsschild „Maple Falls“ (7, 12) nördlich am Weg, Blick zum Weg                                                                                                                                                                    |
+| L2                   | Kuhweide 17–29 × 18–24, geschlossener Zaun mit Ecken, Tor oben (22–24), Tränke innen am Zaun, Zettel „Bitte schließen“ am Tor; Kühe als Belebung                                                                                                                          |
+| L3                   | Krähen über dem Feld, Laubbaumgruppe südlich                                                                                                                                                                                                                              |
+| L4                   | Wegweiser mit vier Armen an der Kreuzung (49, 12); gegenüber Adas Apfelstand (50, 18) mit Äpfeln, Geräteschuppen (57, 18), Obstwiese mit drei Apfelbäumchen in einer Reihe                                                                                                |
+| L5                   | Mais, Wanderer auf dem Weg (67, 16)                                                                                                                                                                                                                                       |
+| L6                   | Bank direkt am Weg (80, 14, zum Weg), Nia daneben, zwei Heuhaufen, Laubbaum und roter Herbstbaum                                                                                                                                                                          |
+| L7                   | Buschgruppe 94–102 × 12–14 mit Lücke von oben; `fundFormular` (97, 13)                                                                                                                                                                                                    |
+| L8                   | Erlen am Fluss (106, 110, 114), Hase am Feldrand                                                                                                                                                                                                                          |
+
+Kleinflora (Gras, Farn, Pilze, Blumen, Steine, kleine Büsche) in Gruppen von ein bis drei südlich
+des Weges, Felsgruppen und Wildblumen vereinzelt. Belebung: Otis, Tessa (joggt), Radfahrer, Kühe,
+Krähen, Hase, Reh. Offen: Hufeisen (`fundHufeisen`) und Weidetor als Auslöser folgen in Runde 5.

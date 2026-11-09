@@ -1,0 +1,106 @@
+{
+  "karte": "cedarCreek.drechslerei",
+  "datei": "karten/varianten/cedar-creek-drechslerei-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, die schlichtere: Werkbank und Regal links, Hobelbank rechts, in der Mitte nur das Werkstück, ein Stapel Rundholz. Die Drechslerei von Mr. Dunmore am Westende der Hauptstraße von Cedar Creek: eine kleine Werkstatt mit Holzwänden und Dielenboden, in der es nach frisch geschnittenem Zedernholz riecht. Späne liegen auf der Hobelbank, Licht fällt durch das Fenster der Nordwand.\n\nAn der Nordwand links die große Hobelbank mit Ablage und Bank, darauf die Bügelsäge, Späne und ein gerahmtes Foto vom Großvater vor der alten Sägemühle; hier arbeitet Mr. Dunmore. Daneben ein Holzregal mit Büchern, Schalen und halbfertigen Figuren, rechts davon der Werktisch voller Farbdosen, Pinsel und Rahmen und in der Nordostecke eine Holzkiste mit Reststücken.\n\nIn der Südwestecke stapeln sich Rundhölzer aus den Zedern. Ein Hocker steht am Werktisch.\n\nLaufwege: von der Tür unten nach oben in die Mitte, links zur Hobelbank und zu Mr. Dunmore, rechts zum Werktisch und zur Kiste.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "####.###########",
+    "################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [1, 1],
+      "id": "werktisch"
+    },
+    {
+      "moebel": "cc4Holzregal",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "cc4Hobelbank",
+      "feld": [10, 1],
+      "id": "hobelbank"
+    },
+    {
+      "moebel": "cc4Spaene",
+      "auf": "hobelbank"
+    },
+    {
+      "moebel": "cc4FotoRahmen",
+      "auf": "hobelbank"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [2, 4]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "cc5Arbeitstisch",
+      "feld": [6, 5],
+      "id": "mitte"
+    },
+    {
+      "moebel": "cc5Werkstueck",
+      "auf": "mitte"
+    },
+    {
+      "moebel": "cc4Rundholz",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "cc5Tuer",
+      "feld": [4, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [4, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [4, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "drechslereiAusgang",
+      "feld": [4, 10]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "dunmore",
+      "typ": "statist",
+      "feld": [11, 5],
+      "eigenschaften": {
+        "von": "11,5",
+        "bis": "11,5",
+        "tun": "dreht an der Drehbank",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["rustikal", "klassisch"],
+  "variante": "b"
+}

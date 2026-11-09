@@ -8,14 +8,6 @@
       "stil": "maritim",
       "zustand": "gebraucht"
     },
-    "n4BootMotor": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
-      "breite": 80,
-      "hoehe": 48,
-      "kollision": true,
-      "stil": "maritim",
-      "zustand": "gebraucht"
-    },
     "n4Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
       "breite": 96,
@@ -68,15 +60,6 @@
       "stil": "rustikal",
       "blick": "unten"
     },
-    "n4Pfaehle": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_15.png",
-      "breite": 32,
-      "hoehe": 16,
-      "kollision": false,
-      "art": "steg",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
     "n4Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
       "breite": 16,
@@ -96,15 +79,6 @@
       "zustand": "gebraucht",
       "stil": "natur"
     },
-    "n4FelsFlach": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_7.png",
-      "breite": 16,
-      "hoehe": 16,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "gebraucht",
-      "stil": "natur"
-    },
     "n4BootUfer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
       "breite": 32,
@@ -114,61 +88,6 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich"
-    },
-    "n4Leuchtturm": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Lighthouse.png",
-      "breite": 112,
-      "hoehe": 256,
-      "kollision": true,
-      "art": "haus",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "klassisch"
-    },
-    "n4SeefelsGross": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Big_Sea_Rock_Vers_1.png",
-      "breite": 64,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "neu",
-      "stil": "einfach"
-    },
-    "n4Seefels": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Medium_Sea_Rock_1_Vers_1.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "neu",
-      "stil": "einfach"
-    },
-    "n4SeefelsB": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Medium_Sea_Rock_3_Vers_1.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "neu",
-      "stil": "einfach"
-    },
-    "n4SeefelsKlein": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sea_Rock_1_Vers_1.png",
-      "breite": 16,
-      "hoehe": 16,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "neu",
-      "stil": "einfach"
-    },
-    "n4FelsbogenKlein": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Broken_Arch_Sea_Rock_1_Vers_1.png",
-      "breite": 16,
-      "hoehe": 16,
-      "kollision": true,
-      "art": "stein",
-      "zustand": "neu",
-      "stil": "einfach"
     },
     "n4MoeweVorn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Front.png",
@@ -281,58 +200,10 @@
       "zustand": "neu",
       "stil": "einfach"
     },
-    "n4HausBlau": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
-      "breite": 48,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "landhaus"
-    },
-    "n4HausRot": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_White_Wood_Storage.png",
-      "breite": 48,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "landhaus"
-    },
-    "n4HausWeiss": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
-      "breite": 48,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "landhaus"
-    },
-    "n4HausBlauBraun": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png",
-      "breite": 48,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "landhaus"
-    },
     "n4FaehrbootWasser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
       "breite": 80,
       "hoehe": 48,
-      "kollision": false,
-      "stil": "maritim",
-      "zustand": "gebraucht"
-    },
-    "n4KutterWasser": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
-      "breite": 96,
-      "hoehe": 64,
       "kollision": false,
       "stil": "maritim",
       "zustand": "gebraucht"
@@ -363,6 +234,73 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "n4PfahlhausBlau": {
+      "quelle": "spiel/eigene/pfahlhaus_blau.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4PfahlhausRot": {
+      "quelle": "spiel/eigene/pfahlhaus_rot.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4PfahlhausWeiss": {
+      "quelle": "spiel/eigene/pfahlhaus_weiss.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
+    },
+    "n4Netzgestell": {
+      "quelle": "spiel/eigene/netzgestell.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "stil": "maritim",
+      "zustand": "alt"
+    },
+    "n4PelikanLinks": {
+      "quelle": "spiel/eigene/pelikan_sitzend_links.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tier",
+      "stil": "maritim",
+      "zustand": "neu"
+    },
+    "n4PelikanRechts": {
+      "quelle": "spiel/eigene/pelikan_sitzend_rechts.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tier",
+      "stil": "maritim",
+      "zustand": "neu"
+    },
+    "n4Leuchtfeuer": {
+      "quelle": "spiel/eigene/leuchtfeuer.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "stil": "maritim",
+      "zustand": "alt",
+      "blick": "unten"
     }
   }
 }

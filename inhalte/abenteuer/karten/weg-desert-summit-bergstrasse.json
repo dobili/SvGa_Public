@@ -15886,15 +15886,15 @@
      "type": "moebel",
      "x": 192,
      "y": 1344,
-     "width": 32,
-     "height": 48,
+     "width": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1384
+       "value": 1368
       },
       {
        "name": "kollision",

@@ -121,14 +121,13 @@
       "stil": "natur"
     },
     "wds6Quelle": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
-      "breite": 32,
-      "hoehe": 48,
+      "quelle": "spiel/eigene/pfuetze_fels_gross.png",
+      "breite": 48,
+      "hoehe": 32,
       "kollision": true,
-      "art": "brunnen",
-      "blick": "unten",
+      "art": "wasser",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "natur"
     },
     "wds6Briefkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Mailbox_1.png",

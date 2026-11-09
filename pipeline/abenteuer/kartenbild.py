@@ -179,7 +179,9 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
             )
         if not angabe or eintrag.get("bauteil_ok"):
             continue
-        befund = katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
+        # Eigene Bilder (spiel/eigene/, werkzeuge/schilder.py) stehen nicht im Katalog der Pakete.
+        eigen = angabe["quelle"].startswith("spiel/eigene/")
+        befund = None if eigen else katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
         if befund:
             befunde.append(befund)
         kanten = angeschnitten(Image.open(privat / angabe["quelle"]))

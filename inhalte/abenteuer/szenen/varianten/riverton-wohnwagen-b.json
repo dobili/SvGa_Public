@@ -2,7 +2,7 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/varianten/riverton-wohnwagen-b.json",
   "art": "innen",
-  "beschreibung": "Variante B, schäbig, aber aufgeräumt: Slicks Wohnwagen mit Holzwänden und alten Dielen. Tür mit Fußmatte in der Mitte der Südwand. Am Westende die Küchenzeile mit dem kleinen Herd, daneben das Fenster zum Fluss. Auf dem Fensterbrett stehen zwei Pokale aus Limodosen, am Ostende das Bett mit grauer Decke und dem Brett darauf, davor ein Stapel Zeitungen. In der Mitte auf einem Teppich eine Sitzecke mit gelbem und weißem Sessel um einen niedrigen Tisch, an der Westwand die Kuriertasche, eine Pflanze rechts.",
+  "beschreibung": "Variante B, schäbig, aber aufgeräumt: Slicks Wohnwagen mit Holzwänden und alten Dielen. Tür mit Fußmatte in der Mitte der Südwand. Am Westende die Küchenzeile mit dem kleinen Herd, daneben das Fenster zum Fluss. Neben dem Fenster stehen auf einer Kommode zwei Pokale aus Limodosen, am Ostende das Bett mit grauer Decke und dem Brett darauf, davor ein Stapel Zeitungen. In der Mitte auf einem Teppich eine Sitzecke mit gelbem und weißem Sessel um einen niedrigen Tisch, an der Westwand die Kuriertasche, eine Pflanze rechts.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -31,16 +31,19 @@
       "an_wand": true
     },
     {
+      "moebel": "rv5Kommode",
+      "feld": [7, 2],
+      "id": "pk"
+    },
+    {
       "moebel": "rv5PokalKlein",
-      "feld": [5, 2],
-      "an_wand": true,
-      "versatz": [2, 0]
+      "auf": "pk",
+      "versatz": [-7, 0]
     },
     {
       "moebel": "rv5PokalSilber",
-      "feld": [6, 1],
-      "an_wand": true,
-      "versatz": [0, 8]
+      "auf": "pk",
+      "versatz": [7, 0]
     },
     {
       "moebel": "rv5BettKopfRechts",
@@ -106,7 +109,8 @@
     },
     {
       "name": "dosentrophaeen",
-      "feld": [5, 3]
+      "feld": [7, 3],
+      "auf_moebel": true
     }
   ],
   "figuren": [],

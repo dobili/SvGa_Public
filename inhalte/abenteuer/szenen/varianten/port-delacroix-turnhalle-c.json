@@ -25,6 +25,10 @@
   ],
   "objekte": [
     {
+      "moebel": "pd6SpielfeldQuer",
+      "feld": [7, 4]
+    },
+    {
       "moebel": "pd6Fenster",
       "feld": [3, 1],
       "an_wand": true
@@ -181,14 +185,6 @@
       "feld": [1, 2]
     },
     {
-      "moebel": "pd6Kiste",
-      "feld": [1, 5]
-    },
-    {
-      "moebel": "pd6Kiste",
-      "feld": [1, 6]
-    },
-    {
       "moebel": "pd6Turnmatte",
       "feld": [1, 11]
     },
@@ -206,11 +202,11 @@
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [7, 2]
+      "feld": [5, 2]
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [5, 2]
+      "feld": [3, 2]
     },
     {
       "moebel": "pd6Liege",
@@ -221,20 +217,16 @@
       "feld": [23, 12]
     },
     {
-      "moebel": "pd6Kiste",
-      "feld": [24, 12]
-    },
-    {
       "moebel": "pd6Kistenstapel",
       "feld": [19, 2]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [2, 8]
+      "feld": [1, 6]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [2, 9]
+      "feld": [1, 7]
     },
     {
       "moebel": "pd6Figurenkiste",

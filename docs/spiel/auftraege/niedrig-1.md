@@ -1,25 +1,31 @@
-# Auftrag niedrig-1: Alle Möbel prüfen, dann Ghost Town einrichten
+# Auftrag niedrig-1: Echte Häuser statt Ziegelblöcke (Maple Falls und Cedar Creek)
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der zwanzigste Auftrag, Möbelprüfung und Ghost Town, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, einundzwanzigster Auftrag; Möbelprüfung und Ghost Town sind zusammengeführt, danke)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand f9d14040);
-privates Repository auf `origin/main` (Stand f8cb2b18, nur lesen)
-**Darf ändern:** `inhalte/abenteuer/moebel.json` (Pfade und Größen falscher Einträge, neue Einträge mit Vorsilbe `gt`),
-`inhalte/abenteuer/karten/ghost-town-*.json`, `weg-pinewood-ghost-*.json`, `erinnerung-siedlung-*.json`,
-und Karten anderer Orte nur, wenn eine berichtigte Möbelgröße dort etwas zustellt; `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 arbeitet parallel)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 4c0d3ff9)
+**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-aussen.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilbe `hs`), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 macht parallel die Capital Arena)
 
 ## Ziel
 
-1. Dein Vorschlag: eine Übersicht aller Möbel als Bild (Schlüssel und Bild nebeneinander). Prüfe jeden
-   Eintrag: Zeigt das Bild, was der Schlüssel sagt? Die Beschreibungen der Haiku-Helfer im Register sind
-   teils verschoben. Falsche Einträge auf das richtige Bild umstellen (Größe aus der Datei), in der
-   Tabelle im Bericht festhalten (alt, neu). Das Übersichtsbild nicht ins öffentliche Repository.
-2. Ghost Town (verlassene Goldgräberstadt, Wüste): draußen (Holzfassaden, Fässer, Kakteen, Brunnen),
-   Saloon (Theke, Tische, Klavier). Canyonrand und Staubstraße. Erinnerung Siedlung: Hütte (einfach,
-   Holz, sepia getönt wie London).
+Auf den Außenkarten sind Häuser noch Blöcke aus Wandkacheln (Ziegel). Ersetze sie durch echte
+Gebäude als Möbel: Modern Exteriors (Themen „generic building“, „villas“, „additional houses“,
+„school“, „shopping center“ im Register), passend zur Stadt; Holzhäuser aus Serene Village nur
+für ländliche Orte.
 
-## Bericht
+## Vorgaben
+
+1. Die Wandkacheln des alten Blocks werden Boden (Gras) oder Weg; das Gebäude als Möbel mit
+   `kollision` sperrt selbst (alles außer der obersten Kachelreihe; ein Haus ist meist mehrere
+   Kacheln hoch, der Held läuft dann hinter dem Dach vorbei, das ist gewollt).
+2. **Wichtig:** Die Tür eines Gebäudes muss über dem Übergang liegen (Auslöser wie `schule`,
+   `haustuer`): Der Auslöser bleibt, wo er ist, das Gebäude wird so gesetzt, dass seine Tür direkt
+   darüber steht und der Übergang erreichbar bleibt (Tests prüfen die Erreichbarkeit).
+3. Erst Maple Falls draußen, prüfen (Bildschirmfoto, Oberflächentests), dann Park und Cedar Creek.
+   Klappt die Ausrichtung an Türen nicht sauber, nach Maple Falls aufhören und berichten.
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
 übernommen und nur meine Änderungen eingetragen).

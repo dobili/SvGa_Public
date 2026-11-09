@@ -15,9 +15,9 @@
   },
   "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen, Obst- und Imbisskarren, die Bäckerei, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische, der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
-    "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-    "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-    "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+    "########################################################################",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
     "########################################################################",
     "#......................................................................#",
     "#......................................................................#",
@@ -60,8 +60,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
-    ".kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~...",
-    ".kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~...",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~..#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~..#",
     "#...................kk........................kk.........eep~~~~~~~~~..#",
     "#...................kk........................kk.........eep~~~~~~~~~..#",
     "#...................kk........................kk.........eep~~~~~~~~~..#",
@@ -70,367 +70,367 @@
     "#...................kk..............ppppppppppkk.........eep~~~~~......#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........eep~~~~~......#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........eep~~~~~......#",
-    "#########################################################eep~~~~~#######"
+    "#########################################################ee#~~~~~#######"
   ],
   "objekte": [
     {
       "moebel": "cc4Gleis",
-      "feld": [0, 0],
+      "feld": [0, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [1, 0],
+      "feld": [1, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [2, 0],
+      "feld": [2, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [3, 0],
+      "feld": [3, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [4, 0],
+      "feld": [4, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [5, 0],
+      "feld": [5, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [6, 0],
+      "feld": [6, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [7, 0],
+      "feld": [7, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [8, 0],
+      "feld": [8, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [9, 0],
+      "feld": [9, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [10, 0],
+      "feld": [10, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [11, 0],
+      "feld": [11, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [12, 0],
+      "feld": [12, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [13, 0],
+      "feld": [13, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [14, 0],
+      "feld": [14, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [15, 0],
+      "feld": [15, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [16, 0],
+      "feld": [16, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [17, 0],
+      "feld": [17, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [18, 0],
+      "feld": [18, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [19, 0],
+      "feld": [19, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [20, 0],
+      "feld": [20, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [21, 0],
+      "feld": [21, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [22, 0],
+      "feld": [22, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [23, 0],
+      "feld": [23, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [24, 0],
+      "feld": [24, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [25, 0],
+      "feld": [25, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [26, 0],
+      "feld": [26, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [27, 0],
+      "feld": [27, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [28, 0],
+      "feld": [28, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [29, 0],
+      "feld": [29, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [30, 0],
+      "feld": [30, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [31, 0],
+      "feld": [31, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [32, 0],
+      "feld": [32, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [33, 0],
+      "feld": [33, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [34, 0],
+      "feld": [34, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [35, 0],
+      "feld": [35, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [36, 0],
+      "feld": [36, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [37, 0],
+      "feld": [37, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [38, 0],
+      "feld": [38, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [39, 0],
+      "feld": [39, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [40, 0],
+      "feld": [40, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [41, 0],
+      "feld": [41, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [42, 0],
+      "feld": [42, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [43, 0],
+      "feld": [43, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [44, 0],
+      "feld": [44, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [45, 0],
+      "feld": [45, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [46, 0],
+      "feld": [46, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [47, 0],
+      "feld": [47, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [48, 0],
+      "feld": [48, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [49, 0],
+      "feld": [49, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [50, 0],
+      "feld": [50, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [51, 0],
+      "feld": [51, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [52, 0],
+      "feld": [52, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [53, 0],
+      "feld": [53, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [54, 0],
+      "feld": [54, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [55, 0],
+      "feld": [55, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [56, 0],
+      "feld": [56, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [57, 0],
+      "feld": [57, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [58, 0],
+      "feld": [58, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [59, 0],
+      "feld": [59, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [60, 0],
+      "feld": [60, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [61, 0],
+      "feld": [61, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [62, 0],
+      "feld": [62, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [63, 0],
+      "feld": [63, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [64, 0],
+      "feld": [64, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [65, 0],
+      "feld": [65, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [66, 0],
+      "feld": [66, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [67, 0],
+      "feld": [67, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [68, 0],
+      "feld": [68, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [69, 0],
+      "feld": [69, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [70, 0],
+      "feld": [70, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [71, 0],
+      "feld": [71, 1],
       "bauteil_ok": true
     },
     {

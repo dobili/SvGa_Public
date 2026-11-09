@@ -174,7 +174,8 @@
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [9, 10]
+      "feld": [9, 10],
+      "versatz": [0, 16]
     }
   ],
   "ausloeser": [

@@ -1,0 +1,180 @@
+{
+  "karte": "lockport.gasthaus",
+  "art": "innen",
+  "beschreibung": "Variante B, schlicht: Backsteinwände, Dielen. Die Kegelbahn läuft an der Westwand von unten nach oben, oben in der Ecke der Platz für die Kegel. Rechts oben eine helle Theke mit zwei Hockern, in der Mitte und rechts zwei Holztische für die Stammgäste, links Fässer und Kisten, ein Kaminofen an der Nordwand, hinter der Theke das Flaschenregal. Wenig Schmuck: zwei Fenster, ein Foto der Schleuse im Hochwasser. An der Tür ein Paar Gummistiefel; unten die Tür mit Fußmatte.",
+  "wand": "backstein",
+  "boden": "dielen",
+  "boeden": {
+    "k": "holzHell"
+  },
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "#kk................#",
+    "##############.#####"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [14, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "ld5ThekeHellLinks",
+      "feld": [13, 3],
+      "id": "th1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5ThekeHellMitte",
+      "feld": [15, 3],
+      "id": "th2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5ThekeHellRechts",
+      "feld": [16, 3],
+      "id": "th3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [13, 5],
+      "zu": "th1",
+      "versatz": [0, -6],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [15, 5],
+      "zu": "th2",
+      "versatz": [0, -6],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5LangtischL",
+      "feld": [7, 7],
+      "id": "lt1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [6, 8],
+      "zu": "lt1"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [9, 8],
+      "zu": "lt1"
+    },
+    {
+      "moebel": "ld5LangtischL",
+      "feld": [16, 8],
+      "id": "lt3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [15, 9],
+      "zu": "lt3"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [18, 9],
+      "zu": "lt3"
+    },
+    {
+      "moebel": "ld5Flaschenregal",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [7, 10]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [9, 10]
+    },
+    {
+      "moebel": "mf9Wartebank",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 6]
+    },
+    {
+      "moebel": "ld5Ofen",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "ld5Stiefel",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [14, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld5TuerSued",
+      "feld": [14, 12],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [14, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "gasthausAusgang",
+      "feld": [14, 12]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "kegler",
+      "typ": "statist",
+      "feld": [1, 10],
+      "eigenschaften": {
+        "von": "1,10",
+        "bis": "1,5",
+        "tun": "schiebt die Kugel",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["rustikal", "klassisch", "modern", "einfach", "laendlich"],
+  "variante": "b",
+  "datei": "karten/varianten/lockport-gasthaus-b.json"
+}

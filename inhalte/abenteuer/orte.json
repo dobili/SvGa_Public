@@ -387,6 +387,10 @@
           "dialog": "cedar-creek-aussen.bus_zurueck"
         },
         {
+          "name": "bahnhof",
+          "art": "start"
+        },
+        {
           "name": "bibliothekTuer",
           "art": "uebergang",
           "ziel": {

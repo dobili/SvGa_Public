@@ -1,0 +1,328 @@
+{
+  "moebel": {
+    "ws5Busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "landhaus"
+    },
+    "ws5BuschB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "landhaus"
+    },
+    "ws5BuschBreit": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_22.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ws5Gras": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ws5Stein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "ws5BlumenWeiss": {
+      "quelle": "spiel/serene/serene_18.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "blume",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "ws5Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "ws5Schild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "ws5Tafel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "ws5Huette": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "neu",
+      "stil": "landhaus"
+    },
+    "ws5Erle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_170.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "ws5Tankstelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_1.png",
+      "breite": 192,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude_teil",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5TankstelleGross": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_2.png",
+      "breite": 272,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude_teil",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5Rasthaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ws5Imbiss": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_1.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5ImbissKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_3.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5Wartehaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_2.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "haltestelle",
+      "blick": "oben",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5Haltestelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5Picknick": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ws5PicknickLang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ws5Muell": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trashbin_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "mulleimer",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "ws5Leitplanke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_7.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "ws5Pfahl": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "ws5Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "laterne",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ws5Wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_6.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "ws5Strandgras": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sprout_1_Vers_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "ws5Schilf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Sprout_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "landhaus"
+    },
+    "ws5AutoBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5AutoGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_10.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5AutoGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_14.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "ws5Steg4": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
+      "breite": 64,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ws5Steg5": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_5.png",
+      "breite": 80,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ws5Steg6": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_6.png",
+      "breite": 96,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ws5Steg7": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "breite": 112,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    }
+  }
+}

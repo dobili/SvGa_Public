@@ -32,14 +32,14 @@
     "#......................................................................................................................#",
     "#......................................................................................................................#",
     "#......................................................................................................................#",
-    "#..................eeeeeeeeeeeeeeeee...................................................................................#",
-    "#................eeeeeeeeeeeeeeeeeeeee.................................................................................#",
-    "#.............eeeee.................eeeee...................................eeeeeeeeeeeeeeeeeeeeee.....................#",
-    "eeeeeeeeeeeeeeeee.....................eeeee............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeee...........................eeeee......................eeeeeeee......................eeeeeeeeeeeeeeeeeeeeee",
-    "#..........................................eeee...................eeeee.................................ee.............#",
-    "#.............................................eeeeeeeeeeeeeeeeeeeeee....................................ee.............#",
-    "#.............................~~~~~............eeeeeeeeeeeeeeeeeee....................................~~~~~~...........#",
+    "#..................eeeeeeeeeeeeeeeeee..................................................................................#",
+    "#................eeeeeeeeeeeeeeeeeeeeee................................................................................#",
+    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee....................#",
+    "eeeeeeeeeeeeeeeeee....................eeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeee..........................eeeeee.....................eeeeeeeee.....................eeeeeeeeeeeeeeeeeeeeee",
+    "#..........................................eeeee..................eeeeee................................ee.............#",
+    "#.............................................eeeeeeeeeeeeeeeeeeeeeee...................................ee.............#",
+    "#.............................~~~~~............eeeeeeeeeeeeeeeeeeee...................................~~~~~~...........#",
     "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~~~......~~~~",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~..~~~~~~",
     "~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~",
@@ -233,24 +233,16 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg5StegLinks",
-      "feld": [56, 23],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg5StegRechts",
-      "feld": [57, 23],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wg5StegEndeLinks",
-      "feld": [56, 24],
-      "bauteil_ok": true
+      "feld": [56, 23],
+      "bauteil_ok": true,
+      "versatz": [0, -7]
     },
     {
       "moebel": "wg5StegEndeRechts",
-      "feld": [57, 24],
-      "bauteil_ok": true
+      "feld": [57, 23],
+      "bauteil_ok": true,
+      "versatz": [0, -7]
     },
     {
       "moebel": "wg5BootAb",
@@ -327,28 +319,56 @@
       "feld": [27, 19]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [14, 16]
+      "moebel": "wg4Stein",
+      "feld": [52, 13]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [53, 13]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [12, 21]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [13, 21]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [56, 13]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [15, 16]
+      "feld": [8, 22]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [14, 21]
+      "moebel": "wg4BlumeGelb",
+      "feld": [9, 22]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [15, 21]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [105, 12]
+      "moebel": "wg4PilzeB",
+      "feld": [104, 12]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [106, 12]
+      "feld": [38, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [39, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [38, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [57, 13]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -579,48 +599,48 @@
       "feld": [41, 9]
     },
     {
-      "moebel": "wg4BlumeBlau",
-      "feld": [12, 21]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [13, 21]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [55, 16]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [56, 16]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [55, 17]
+      "moebel": "wg4BuschKlein",
+      "feld": [41, 20]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [97, 20]
+      "feld": [42, 20]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [98, 20]
+      "moebel": "wg4SteinB",
+      "feld": [65, 16]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [66, 16]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [65, 17]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [116, 13]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [117, 13]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [116, 14]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [16, 9]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [17, 9]
+      "feld": [3, 11]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [95, 22]
+      "feld": [43, 14]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [96, 22]
+      "feld": [44, 14]
     },
     {
       "moebel": "wg4Stein",
@@ -971,10 +991,6 @@
       "feld": [43, 10]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [43, 14]
-    },
-    {
       "moebel": "wg4Pilze",
       "feld": [23, 17]
     },
@@ -1111,8 +1127,24 @@
       "feld": [28, 19]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [99, 9]
+      "moebel": "wg4BlumeBlau",
+      "feld": [16, 9]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [16, 18]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [16, 19]
     },
     {
       "moebel": "wg4PilzeB",

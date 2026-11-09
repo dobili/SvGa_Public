@@ -336,39 +336,49 @@ wird ein Radio in Runde 5), zwei statt vier Sitzecken.
 
 ### 4.5 Außenkarte Birch Lane (`mapleFalls.aussen`), gebaut
 
-**Gebaut in Runde 4: 64 × 41.** Die gebaute Lage geht dem Plan in 1.1 vor; die Abweichungen kommen
-von den Größen der ganzen Gebäude im Katalog (Holzhäuser 9 × 13 mit Dach und Veranda, Schule
-24 × 23, Häuser der Südseite 8 × 10 und 10 × 9).
+**Gebaut in Runde 4: 64 × 43** (nach der Bildprüfung des Haupt-Chats). Die gebaute Lage geht dem Plan
+in 1.1 vor; die Abweichungen kommen von den Größen der ganzen Gebäude im Katalog (Holzhäuser 9 × 13
+mit Dach und Veranda, Schule 24 × 23, Häuser der Südseite 8 × 10 und 10 × 9).
 
-| Reihen | Inhalt                                                                                                                                                                                                                                                                                                        |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0–2    | Fluss (0–1) und Uferweg aus Erde (2) hinter den Gärten; die Schule reicht im Osten bis an den Kartenrand                                                                                                                                                                                                      |
-| 3–9    | Gärten Nord mit Ahornen und Laubbäumen (Eichhörnchen)                                                                                                                                                                                                                                                         |
-| 10–22  | Nordseite: Whitlock (1, 10), Lily (11, 10), Martínez (21, 10), Diner (31, 14), Schule (39, 0)                                                                                                                                                                                                                 |
-| 23     | Vorgärten mit Briefkästen (6, 22), (16, 22), (26, 22); Plattenwege zu den Türen                                                                                                                                                                                                                               |
-| 24–28  | Gehweg Nord, Birch Lane (25–27), Gehweg Süd                                                                                                                                                                                                                                                                   |
-| 29–38  | Südseite: Calloway (1, 30), Wartehäuschen (12, 28), Schild „Zu verkaufen“ (17, 29), Hayes (18, 29) mit Einfahrt 26–27, Fisk (29, 30), Süd 4 (40, 29), Mülltonne (48, 29), Spielplatz auf Sand 50–61 / 30–37 (Sandkasten (51, 31), Schaukel (56, 30), Rutsche (59, 30), Klettergerüst (52, 35), Bank (57, 35)) |
-| 39     | Plattenweg vor den Häusern der Südseite (ihre Haustüren zeigen nach Süden, wie bei allen Häusern im Bild)                                                                                                                                                                                                     |
-| 40     | Hecke                                                                                                                                                                                                                                                                                                         |
+| Reihen | Inhalt                                                                                                                                                                                        |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0–3    | Wasserfall (2, 0) (eigene Grafik), Fluss in den Reihen 2–3 von Rand zu Rand, auch hinter der Schule                                                                                           |
+| 4–9    | Gärten Nord: Ahorne, Laubbäume, Gemüsebeet, Gartenbank, Büsche                                                                                                                                |
+| 4–23   | niedrige Eisenzäune: Seiten in den Spalten 10, 20, 30; vorn Reihe 23 mit Pforten (3–4, 13–14, 23–24) und den Briefkästen in der Zaunlinie (5, 15, 25)                                         |
+| 10–22  | Nordseite: Whitlock (1, 10), Lily (11, 10), Martínez (21, 10), Diner (31, 14) mit Tisch davor (36–37, 22), Schule (39, 0)                                                                     |
+| 24–28  | Gehweg Nord, Birch Lane (25–27), Gehweg Süd                                                                                                                                                   |
+| 29–31  | Grünstreifen: Straßenbäume und Laternen im Wechsel, Haltestelle (12, 29) mit Bank (9, 30) und Mülltonne (17, 30), Schild „Zu verkaufen“ (25, 31)                                              |
+| 31–40  | Südseite: Calloway (1, 32), Hayes (18, 31) mit Einfahrt 26–27, Fisk (29, 32), Süd 4 (40, 31); Zäune zwischen den Grundstücken (Spalten 11, 17, 48), Beet und Büsche; Spielplatz 50–61 / 32–39 |
+| 41     | Plattenweg vor den Häusern der Südseite (ihre Haustüren zeigen nach Süden, wie bei allen Häusern im Bild)                                                                                     |
+| 42     | Hecke                                                                                                                                                                                         |
 
-**Übergänge (gebaut):** `haustuer` (3, 23), Start (3, 24); `dinerTuer` (33, 23) ↔ Diner (4, 11), Start
-(4, 10); `schule` (47, 23) vor der Treppe; `park` Ostrand (63, 25–27). Die Auslöser stehen eine
-Kachel unter dem Bild des Gebäudes, weil Veranda und Treppe zum Bild gehören.
+**Übergänge (gebaut):** `haustuer` (3, 23) in der Pforte, Start (3, 24); `dinerTuer` (33, 23) ↔ Diner
+(4, 11); `schule` (47, 23) vor der Treppe; `park` Ostrand (63, 25–27).
 
-**Abweichungen:** Durchgang zum Ufer, Hinterweg und Fahnenmast entfallen (der Mast ist 9 Kacheln hoch
-und hätte die Schule überdeckt); kein Wasserfall-Bild im Katalog, der Fluss ist ruhiges Wasser;
-keine Laternen (sie hätten die Straße versperrt). Briefkasten- und Fundauslöser aus 12 folgen in
-Runde 5. Belebung: Briefträgerin, Laubharker, Kind mit Ball, Eichhörnchen, Katze.
+**Fahnenmast** (eigene Grafik) rechts neben der Freitreppe (57, 15), mit `vorn` vor der Fassade gezeichnet.
+**Offen:** Kein Schild für das Diner im Katalog. Straße und Gehweg enden eine Kachel vor dem Westrand, weil
+der Rand ohne Übergang geschlossen sein muss (Test „Rand geschlossen“). Die Grundstücke der Südseite
+haben Seitenzäune, aber keinen Zaun zur Straße, weil der Grünstreifen den Platz braucht.
 
 ### 4.6 Park (`mapleFalls.park`), gebaut
 
 **Gebaut in Runde 4: 44 × 32**, Lage wie in 1.2 mit diesen Abweichungen: Der Steg S5 ist ein morscher
 Steg im Wasser (4, 1) mit rot-weißer Sperrlatte `absperrungSteg` (5, 3); der Fußsteg zum Zedernpfad
-(10–11, 0–2) ist aus Dielen, das Schild „Sturmschaden“ (Wegweiser-Tafel) steht an seinem Ende (12, 3).
-Keine Halfpipe im Katalog: Jo sitzt an der langen Bank (19, 11). Die Brücke der Parkstraße ist die
+(10–11, 0–2) ist ein Holzsteg auf Pfählen (Camping Pier_Bridge_1 und _2) über Dielen, das Schild „Sturmschaden“ (Wegweiser-Tafel) steht an seinem Ende (12, 3).
+Statt der Halfpipe (Entscheidung Haupt-Chat, in 12): kleiner Basketballplatz aus Asphalt (24–30 / 23–29)
+mit Korb (27, 21); Jo sitzt daneben auf einer langen Bank am Fluss (31, 24), Figur (32, 27). Eine niedrige
+Mauer gibt es im Katalog nicht. Die Brücke der Parkstraße ist die
 Straße selbst über dem Fluss, ohne Geländer (kein Brückenbild im Katalog). Kiosk Patel (24, 10) mit
 Laterne, Abernathys Bank `parkbank` (3, 11) und zweite Bank (7, 11), Bushaltestelle (24, 18),
 Brett-Platz (9–13 / 22–25) mit Bank, Teich (17–23 / 23–27), Bäume.
+
+**Nach der Bildprüfung des Haupt-Chats:** Der Fluss läuft ohne Lücke unter der Parkstraße durch; die
+Brücke (31–34 / 15–17) hat Holzdielen und auf beiden Seiten ein Geländer über dem Wasser (Reihen 14 und
+18). Der Steg S5 ist jetzt ein gerader Holzsteg vom Ufer ins Wasser (5–6 / 0–3), die Sperrlatte steht
+am Ufer (5, 4). Am Uferweg stehen vier Bäume in gleichen Abständen (1, 7, 13, 19) mit Laternen dazwischen
+(5, 11, 17, 23); der Erdweg endet auf einem kleinen Pflasterstück am Gehweg (28–29, 13). Blumenbeete
+(14, 22) und (19, 13), Abfalleimer (2, 12) und (16, 23), Bäume am Teich (13, 28) und im Osten (35, 28).
+Für Jo fehlt eine Mauer im Katalog; er sitzt auf der Bank am Basketballplatz.
 
 **Übergänge (gebaut):** `park` Westrand (0, 15–17) ↔ Birch Lane (63, 25–27); `landstrasse` Ostrand
 (43, 15–17) ↔ Landstraße `zurueckPark` (0, 15–17); `zedernpfad` Nordrand (10–11, 0) ↔ Pfadkarte

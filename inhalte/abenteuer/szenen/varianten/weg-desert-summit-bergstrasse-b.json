@@ -163,6 +163,10 @@
       "feld": [10, 31]
     },
     {
+      "moebel": "wds6Bank",
+      "feld": [22, 61]
+    },
+    {
       "moebel": "wds6Briefkasten",
       "feld": [21, 5]
     },
@@ -325,7 +329,7 @@
       "feld": [2, 52]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6BrockenMittel",
       "feld": [36, 94]
     },
     {
@@ -341,8 +345,56 @@
       "feld": [13, 73]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6BrockenMittel",
       "feld": [19, 77]
+    },
+    {
+      "moebel": "wds6BrockenMittel",
+      "feld": [20, 47]
+    },
+    {
+      "moebel": "wds6BrockenMittel",
+      "feld": [19, 42]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [2, 65]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [5, 61]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [20, 91]
+    },
+    {
+      "moebel": "wds6BrockenMittel",
+      "feld": [36, 69]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [28, 46]
+    },
+    {
+      "moebel": "wds6WacholderB",
+      "feld": [22, 73]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [4, 47]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [6, 44]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [13, 96]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [37, 89]
     },
     {
       "moebel": "wds6Brocken",

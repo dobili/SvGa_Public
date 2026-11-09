@@ -971,6 +971,45 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "pd6Leiter": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Stairs.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6Stamm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Floating_Wood_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "kaputt",
+      "stil": "natur"
+    },
+    "pd6TurnhalleHolz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Japanese_House_16x16.png",
+      "breite": 240,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6TurnhalleVeranda": {
+      "quelle": "spiel/eigene/bahnhof_alt_veranda.png",
+      "breite": 160,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

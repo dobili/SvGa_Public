@@ -118,6 +118,46 @@
       "zustand": "gebraucht",
       "stil": "laendlich",
       "maske": ["##", "##", "##", "##"]
+    },
+    "cr7LangtischL": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_100.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cr7LangtischM": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_101.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cr7LangtischR": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_102.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cr7Hocker": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_103.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

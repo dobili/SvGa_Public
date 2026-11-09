@@ -181,3 +181,21 @@ nur dort, wo sie im Bild auffallen.
       (A, B, C).
 - [x] Prärie B: Weizen- und Maisfelder zu beiden Seiten des Wegs, Windrad nach (23, 40).
 - [x] Prärie C: Der Erdweg schließt bei Reihe 130 an die Schotterstraße an.
+
+## Antwort auf die Gegenprüfung von niedrig-1 (Crossroads, Jahrmarkt)
+
+- [x] Raststätte A/B/C: ein langer Varianten-Tisch (Langtisch aus Fuß, Mittelstücken und Ende) mit drei
+      Brettern und Hockern davor und dahinter statt zweier Rundtische.
+- [x] Raststätte A/B/C: Großküche mit Durchreiche und ein WC hinter einer Innenwand mit Wandfläche
+      (Regeln 30 und 39); der Raum ist dafür 24 × 18, die Tür liegt bei (12, 17).
+- [x] Raststätte C: Getränkeautomat nicht mehr frei im Raum, Laden in einer Ecke zusammengefasst.
+- [x] Crossroads außen: Zufahrten zu den Parkplätzen in Reihe 26; Vorplätze aus Asphalt bis an die
+      Schotterstraße, ohne Grasnaht; leere Werbetafeln entfernt; in B stehen Bus und Food-Truck auf einem
+      Schotterplatz mit Zufahrt; in C nur noch eine Zaunreihe am Jahrmarktfeld.
+- [x] Ortsdokument Crossroads: `wegPinewood` am Westrand, Tür (14, 19), Raststätte innen nachgezogen.
+- [x] Jahrmarkt A/B/C: Boden `erde` statt Sand mit Grasbüscheln; Lichterketten `vorn` zwischen
+      Lichtermasten (`n6Lichtermast`, Maske sperrt nur den Fuß) über den Gängen, nicht mehr durch die
+      Fahrgeschäfte; in C der zweite Zuckerwattewagen durch den Süßigkeitenwagen ersetzt; in B das
+      Dosenwerfen ergänzt; in A der vierte Flutlichtmast.
+- [ ] Offen: Postkartenständer (Bild fehlt, bisher Zeitungsregal), Tribüne mit Blick zur Bühne, Treppe
+      an der Bühne in B, Gehege für die Rinder in A.

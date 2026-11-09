@@ -1,11 +1,11 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Sommerjahrmarkt auf dem Feld hinter der Raststätte (Variante A, nach dem Ortsdokument): Vom Südrand kommt der Erdweg auf einen großen Sandplatz. Oben in der Mitte das Riesenrad, links das Karussell, rechts die Bühne für Country-Bands mit Lautsprechern und einer Holztribüne. In der Mitte der Schachautomat „Der Schachtürke“. Unten eine Reihe Buden: Losbude und Dosenwerfen, Süßigkeiten, Limonade, Hot Dogs und der Eiswagen. Flutlichtmasten an den Ecken, Lichterketten über dem Platz, ringsum Wiese mit Bäumen. Am Eingang der Torbogen „Summer Fair“.",
+  "beschreibung": "Sommerjahrmarkt auf dem Feld hinter der Raststätte (Variante A, nach dem Ortsdokument): Vom Südrand kommt der Erdweg auf einen großen Festplatz aus festgetretener Erde. Oben in der Mitte das Riesenrad, links das Karussell, rechts die Bühne für Country-Bands mit Lautsprechern und einer Holztribüne. In der Mitte der Schachautomat „Der Schachtürke“. Unten eine Reihe Buden: Losbude und Dosenwerfen, Süßigkeiten, Limonade, Hot Dogs und der Eiswagen. Flutlichtmasten an den Ecken, Lichterketten zwischen Holzmasten über den Gängen, ringsum Wiese mit Bäumen. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
-    "d": "sand",
+    "d": "erde",
     "e": "erde"
   },
   "raster": [
@@ -124,44 +124,56 @@
       "feld": [3, 24]
     },
     {
-      "moebel": "n6Lichterkette",
-      "feld": [8, 16],
-      "vorn": true
+      "moebel": "n6Flutlicht",
+      "feld": [44, 23]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [8, 14]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [13, 14]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [23, 14]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [12, 16],
-      "vorn": true
+      "feld": [9, 14],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [16, 16],
-      "vorn": true
+      "feld": [14, 14],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [20, 16],
-      "vorn": true
+      "feld": [19, 14],
+      "vorn": true,
+      "versatz": [0, 1]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [27, 15]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [32, 15]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [24, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [28, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [32, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [36, 16],
-      "vorn": true
+      "feld": [28, 15],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "wg4Busch",

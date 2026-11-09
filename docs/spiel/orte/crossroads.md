@@ -24,9 +24,7 @@ Feld = (Spalte, Reihe), linke obere Kachel; Bereiche „Spalten / Reihen“. Nor
       Prärie „Wide Plains“ (Weizen, Windräder, Sturmkeller)
              ▼  Schotterstraße
   Fernbus Q3 ◄══ Highway ══[9 Crossroads]══ Alte Minenstraße Q4 (Viehgatter S13) ══► Ghost Town
-                               │ Wanderweg W9
-                               ▼
-                        Pinewood Camp (mittel-4)
+  ◄═ Wanderweg W9 (Westrand) → Pinewood Camp (mittel-4)
 ```
 
 | Karte                              | Größe    | Lauf (Kacheln)              | Zeit (3,5/s) | Abzweige                                       |
@@ -34,7 +32,7 @@ Feld = (Spalte, Reihe), linke obere Kachel; Bereiche „Spalten / Reihen“. Nor
 | `wegSummitCrossroads.geysirbecken` | 30 × 170 | Nord → Süd mit Stegen ≈ 230 | ≈ 66 s       | Ranger-Station, Aussichtssteg am großen Geysir |
 | `wegSummitCrossroads.praerie`      | 30 × 170 | Nord → Süd ≈ 180            | ≈ 51 s       | Farm mit Sturmkeller, Windrad                  |
 | `crossroads.aussen`                | 64 × 48  | Nordrand → Raststätte ≈ 30  | ≈ 9 s        | Tankstelle, Parkplatz, Wanderweg, Minenstraße  |
-| `crossroads.raststaette`           | 24 × 14  | Tür → Tresen ≈ 12           | ≈ 3 s        | –                                              |
+| `crossroads.raststaette`           | 24 × 18  | Tür → Tresen ≈ 8            | ≈ 3 s        | Küche, WC                                      |
 
 Weg 8 zusammen 340 Kacheln (7a.2: 280–400), etwa zwei Minuten zu Fuß.
 
@@ -74,34 +72,43 @@ Karte am Südrand (14–16) Richtung Crossroads.
 ### 1.3 Crossroads außen (64 × 48)
 
 ```text
- Spalte: 0          20   30-32           50          63
- R0–21  Feld N6 (Jahrmarkt)  ║Schotter║ Tankstelle mit Zapfsäulen
-        [RASTSTÄTTE 10–19 / 13–19] Tür (15, 20)
- R22–25 ══════════════ Highway (Asphalt, 4) ═══════════════════[Viehgatter S13]══
- R26–40 Parkplatz: Werksbus, Food-Truck, Sattelzug   ║Wanderweg 20–21║   Weide mit Rindern
- R47    ───────────────────────╨ wegPinewood (20–21) ────────────────────────────
+ Spalte: 0     6-7         20   30-32           50          63
+ R0–13  Feld N6 ║Erdweg zum Jahrmarkt║  ║Schotter║ Tankstelle mit Zapfsäulen
+ R14–15 ══ Wanderweg W9 (Westrand) ══╗
+        [RASTSTÄTTE 10–19 / 12–18] Tür (14, 19), Vorplatz aus Asphalt (6–29 und 33–56 / 19–21)
+ R22–25 ══════════════ Highway (Asphalt, 4) ═══════════════════[Viehgatter S13 (58)]══
+ R26    Zufahrten zu den Parkplätzen (Asphalt, 6 Felder breit)
+ R27–40 Parkplatz: Werksbus, Food-Truck, Sattelzug                  Weide mit Rindern
 ```
 
-Übergänge: `wegSummit` Nordrand (30–32, 0), `wegPinewood` Westrand (0, 14–15), `raststaetteTuer`
-vor der Tür der Raststätte. Der Highway läuft bis an beide Ränder (Fernbus nach Westen, Alte
+Übergänge: `wegSummit` Nordrand (30–32, 0), `wegPinewood` Westrand (0, 14–15, Wanderweg W9 nach
+Westen), `jahrmarkt` Nordrand (6–7, 0), `raststaetteTuer` (14, 19) vor der Tür der Raststätte. Die
+Parkplätze haben in Reihe 26 eine Zufahrt vom Highway; in B steht der Werksbus mit dem Food-Truck
+auf einem Schotterplatz. Der Highway läuft bis an beide Ränder (Fernbus nach Westen, Alte
 Minenstraße nach Osten mit dem geschlossenen Viehgatter S13 bei Spalte 58; ein Übergang dorthin kommt
-mit Q4 in Runde 6). Wegweiser in alle Städte an der Kreuzung (`wegweiser` (29, 21)).
+mit Q4 in Runde 6). Wegweiser in alle Städte an der Kreuzung (`wegweiser` (29, 20)).
 
-### 1.4 Raststätte innen (24 × 14)
+### 1.4 Raststätte innen (24 × 18)
 
-Diner mit langem Holztresen an der Nordwand, Darlenes Laden rechts (Regale, Kasse mit
-Postkartenständer `postkarten`), der Varianten-Tisch links (großer Tisch mit mehreren Brettern,
-`variantenTisch`), Nova allein am Ecktisch. Tür in der Südwand (12, 13).
+Nordwand (Reihen 0–2), dahinter die Hinterräume (3–5): die Großküche mit Kühlschränken, Herden unter
+Hauben, Grill, Fritteuse, Spültisch und Vorratsregalen, daneben das WC. Eine Innenwand mit Wandfläche
+(Reihen 6–8, Regel 39) trennt sie vom Gastraum (9–16); in ihr die Durchreiche, die Küchentür und die
+WC-Tür. Vor der Durchreiche der lange Holztresen mit vier Hockern, Darlene dahinter, die Kasse zum Gast
+hin. Darlenes Laden (Postkartenständer `postkarten`, Regale) steht vor der Innenwand, davor der lange
+Varianten-Tisch (`variantenTisch`) mit drei Brettern und Hockern ringsum, Nova allein am Ecktisch. Tür
+in der Südwand (12, 17). A: Küche links, WC rechts; B: WC links, Küche rechts; C: wie A, mit zwei
+Toiletten, Spielautomaten und Kreidetafel.
 
 ### 1.5 Übergänge (Felder auf beiden Seiten)
 
-| Auslöser hier                                | Gegenstück                                                             | Bemerkung                                          |
-| -------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------- |
-| geysirbecken `zurueckSummit` (14–15, 0)      | summitCity.aussen `wegCrossroads` (Südrand, zwei Felder; mittel-2)     | `wenn: nadelSummitCity` (S10) auf der Seite Summit |
-| geysirbecken `weiterPraerie` (14–15, 169)    | praerie `zurueckGeysirbecken` (14–15, 0)                               |                                                    |
-| praerie `weiterCrossroads` (14–16, 169)      | crossroads.aussen `wegSummit` (30–32, 0)                               | Schotterstraße, drei Felder                        |
-| crossroads.aussen `wegPinewood` (20–21, 47)  | wegCrossroadsPinewood.huetten `zurueckCrossroads` (Nordrand; mittel-4) | Wanderweg, zwei Felder                             |
-| crossroads.aussen `raststaetteTuer` (15, 20) | raststaette `raststaetteAusgang` (12, 13); Ankunft (12, 12)            |                                                    |
+| Auslöser hier                                | Gegenstück                                                         | Bemerkung                                          |
+| -------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| geysirbecken `zurueckSummit` (14–15, 0)      | summitCity.aussen `wegCrossroads` (Südrand, zwei Felder; mittel-2) | `wenn: nadelSummitCity` (S10) auf der Seite Summit |
+| geysirbecken `weiterPraerie` (14–15, 169)    | praerie `zurueckGeysirbecken` (14–15, 0)                           |                                                    |
+| praerie `weiterCrossroads` (14–16, 169)      | crossroads.aussen `wegSummit` (30–32, 0)                           | Schotterstraße, drei Felder                        |
+| crossroads.aussen `wegPinewood` (0, 14–15)   | wegCrossroadsPinewood.huetten `zurueckCrossroads` (mittel-4)       | Wanderweg W9 am Westrand, zwei Felder              |
+| crossroads.aussen `raststaetteTuer` (14, 19) | raststaette `raststaetteAusgang` (12, 17); Ankunft (12, 16)        |                                                    |
+| crossroads.aussen `jahrmarkt` (6–7, 0)       | jahrmarkt.festplatz `zurueckCrossroads` (23–24, 35)                | Nebenort N6, siehe `jahrmarkt.md`                  |
 
 ## 2. Ortsbild
 
@@ -134,7 +141,7 @@ Spielarten, die man unterwegs gelernt hat. Hier trifft man alle wieder.
 
 | Element            | Entscheidung                                            | Grund                                                     |
 | ------------------ | ------------------------------------------------------- | --------------------------------------------------------- |
-| Vier Straßen       | Highway West–Ost, Schotterstraße Nord, Wanderweg Süd    | Bibel: Kreuzung von vier Straßen; Weg 8 und W9 sind Pfade |
+| Vier Straßen       | Highway West–Ost, Schotterstraße Nord, Wanderweg West   | Bibel: Kreuzung von vier Straßen; Weg 8 und W9 sind Pfade |
 | Viehgatter S13, Q4 | Gatter als Bild auf dem Highway im Osten, ohne Auslöser | Q4 und Darlenes Lieferung kommen in Runde 6               |
 | Jahrmarkt N6       | freies Feld nordwestlich hinter der Raststätte          | 13 §5: „auf dem Feld hinter der Raststätte“, Bau später   |
 | Fernbus Q3         | Haltestelle am Highway West                             | Schnellreise in Runde 6                                   |

@@ -2,7 +2,7 @@
   "karte": "crossroads.aussen",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Dieselbe Kreuzung mit Diner-Wagen und Vorplatz, aber eine kleine Tankstelle, kein Zaun am Jahrmarktfeld. Der Lkw-Parkplatz liegt südöstlich mit zwei Sattelzügen und einem Auto; Werksbus und Rosies Food-Truck stehen auf der Wiese südwestlich. Im Osten das Viehgatter, sonst weites Grasland. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
+  "beschreibung": "Variante B, schlicht: Dieselbe Kreuzung mit Diner-Wagen und Vorplatz, aber eine kleine Tankstelle, kein Zaun am Jahrmarktfeld. Der Lkw-Parkplatz liegt südöstlich mit zwei Sattelzügen und einem Auto; Werksbus und Rosies Food-Truck stehen auf einem Schotterplatz südwestlich; beide Plätze haben eine Zufahrt vom Highway. Im Osten das Viehgatter, sonst weites Grasland. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -31,22 +31,22 @@
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppp..............#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaa..............#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaa..............#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaa..............#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#..............................................................#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#.........kkkkk.............................aaaaaa.............#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
@@ -145,10 +145,6 @@
       "feld": [33, 44]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [24, 29]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [62, 26]
     },
@@ -223,6 +219,10 @@
     {
       "moebel": "wg4Gras",
       "feld": [51, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [3, 1]
     }
   ],
   "ausloeser": [

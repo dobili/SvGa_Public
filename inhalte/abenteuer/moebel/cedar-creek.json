@@ -1017,6 +1017,83 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "cc5Seiteneingang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Victorian_House_1_Side_Entrance_16x16.png",
+      "breite": 64,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "cc5Planke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_12.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5PlankeB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_13.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5StegPfaehle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_15.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc5BootAmSteg": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc5BootUfer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc5BankZumBach": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc5Poller": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

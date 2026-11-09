@@ -587,5 +587,12 @@
     "sicher": 0.85,
     "korrektur": "mittel-2",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png": {
+    "beschreibung": "Parkbank aus hellem Holz mit dunklem Metallgestell von der Seite: Lehne links, Sitzfläche öffnet sich nach rechts (man sitzt mit Blick nach rechts); 1 Kachel breit, 3 hoch.",
+    "blick": "rechts",
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
   }
 }

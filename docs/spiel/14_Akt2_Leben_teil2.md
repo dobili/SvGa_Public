@@ -392,6 +392,7 @@ Sprechweise und Beispielsätze:
 | Post, die keiner aufmacht                                 | Mr. Flores                  | Stimmung vor Szene 41 (Postsack), ohne Inhalt.                                                                             |
 | J. H. auf Brücke und im Lieferbuch                        | Nieten, Juno, N-ST1         | Juno fragt weiter („Wer baut hier alles?“); das Lieferbuch nennt nur Initialen und ein Notizbuch, Szene 57 löst es auf.  |
 | Pike und Kendra, Ruth und Laurie                          | Pike, Kendra (N-SB3)        | Zwei Familien, die nur sonntags telefonieren: Ironwood verliert seine Kinder an andere Städte, wie Mama damals.           |
+| Brief an Kapitän Ruben                                    | Big Joe (nach Szene 39)     | „Bring das Ruben in Lockport, Kumpel.“ Startet L3 von mittel-3 (`14_Akt2_Leben_teil1.md` 4.3), das `lastkahnFrei` setzt; danach fährt der Lastkahn vom Anleger in Ironwood. |
 | Busfahrer ohne Einladung                                  | Mr. Briggs                  | erklärt die Sperre des Busses bis Szene 50 in der Welt.                                                                    |
 | Vögel hören an der Brücke auf                             | Mr. Oakes                   | bereitet Szene 53 vor („Wo wohnen hier die Tiere?“ – „Die stören die Sensoren.“).                                        |
 | Frau von der Akademie löst Aufgaben auf Papier            | Cilla, Mr. Ames             | Dr. Lin bleibt die ehrliche Spielerin (Bibel 18.2); ihr Club im leeren Laden (Post-Game) ist angedeutet, nicht verraten. |
@@ -408,7 +409,7 @@ geprüft (Spalte „Gebraucht ab“).
 | --- | ------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------- |
 | –   | Ironwood, Kantinentür                       | Mr. Pike: „Gäste erst zum Turnier, Kumpel.“                                                   | nach Szene 38 (`verbotGesehen`)                  | Szene 39     | Club, Rocco, N-IW2                                                                     |
 | –   | Ironwood, Haus von Oma Ruth                 | Tür bleibt zu, niemand öffnet (heute)                                                          | `elmStreetBekannt` (Szene 39)                    | Szene 39     | Szene 39a beim zweiten Besuch (Turnierheft)                                             |
-| –   | Ironwood, Kai: Lastkahn                     | Kahn liegt nicht am Kai; Schild „Anleger“                                                      | nach Szene 39 (Big Joe kennt Kapitän Ruben)      | nie          | Schnellreise nach Lockport und Riverton (13 §3, mittel-3)                               |
+| –   | Ironwood, Kai: Lastkahn                     | Kahn liegt nicht am Kai; Schild „Anleger“                                                      | `lastkahnFrei` (mittel-3, „Post für den Kapitän“, ab Szene 39) | nie          | Schnellreise nach Lockport und Riverton (13 §3, mittel-3)                               |
 | –   | Ironwood, Umkleide, dunkler Spind           | Lampe kaputt                                                                                   | Laterne                                          | nie          | Fund „Turm aus Holz“ (Waldholz 3/3, Bibel 12)                                           |
 | S4  | Steinbruch, Stollenmund                     | Ruby: „So dunkel, dass die Taschenlampe Angst kriegt.“                                        | Laterne (Edna, 60 Münzen)                        | nie          | Echo (N-ST3), später Mamas Versteck (N-ST2)                                            |
 | –   | Stollen, Nische                             | nur Steine                                                                                     | `mamaSpielt` (Szene 43), Big Joe erzählt          | nie          | „Mamas altes Steckschach“                                                              |
@@ -465,7 +466,7 @@ Einbau; bleibt der sparsame Spieler am Ende von Akt 2 mehr als 100 Münzen über
 - Figuren: `ironwood.pike` (Pförtnerhaus), `.brody` (Elm Street, wandert), `.larsen` (Kreidebrett,
   eine Figur mit zwei Sprites wie die Zwillinge in Cedar Creek), `.rocco` (Kantine), `.flores`
   (Lok am Platz).
-- Auslöser außen: `steinbruch` (Übergang Ostrand), `anleger` (Dialog, Reise, nach Szene 39),
+- Auslöser außen: `steinbruch` (Übergang Ostrand), `anleger` (Dialog, Reise, `wenn: lastkahnFrei`),
   `nietenBruecke`, `aussichtTreppe`, `pickup`, `leuchtschild`, `barbara`, `fundStahlperle`,
   `fundEssensmarke`; `kantineTuer` bekommt `wenn: verbotGesehen` und einen Dialog am Pförtnerhaus;
   `busSiliconBay` bekommt `wenn: einladungGesehen`.
@@ -506,10 +507,11 @@ Einbau; bleibt der sparsame Spieler am Ende von Akt 2 mehr als 100 Münzen über
 
 **Dialogvariablen (neu, von Ink gesetzt, R42):** `verbotGesehen` (Szene 38), `einladungGesehen`
 (Szene 50), `mamaSpielt` (Szene 43, steht schon in der Bibel), `hatLaterne` und `besuchtIronwood`
-(13, Technik).
+(13, Technik); `lastkahnFrei` kommt von mittel-3 (`14_Akt2_Leben_teil1.md`).
 
 **`ortsprofile.json`:** Profile für `ironwood`, `steinbruch`, `wegIronwoodSilicon` und `siliconBay`
 mit allen Karten (in diesem Auftrag eingetragen).
 
 **Ortsdokumente:** `orte/ironwood.md` (mit N3) und `orte/silicon-bay.md` (mit W4) sind auf dem Stand
-dieses Dokuments; der Übergang W3 ↔ Ironwood ist mit mittel-3 abzustimmen (ironwood.md, 1.6).
+dieses Dokuments; der Übergang W3 ↔ Ironwood ist mit mittel-3 abgestimmt (ironwood.md, 1.6: Weg in
+den Spalten 24–25, Kanal 4–9 auf beiden Seiten).

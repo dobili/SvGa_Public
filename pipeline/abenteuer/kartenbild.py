@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
+from pipeline.abenteuer.moebelliste import lade_moebel
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
@@ -171,7 +172,7 @@ def angeschnitten(bild: Image.Image) -> list[str]:
 
 def bildbefunde(szene: dict, privat: Path) -> list[str]:
     """Befunde, die nur mit den Bildern prüfbar sind: angeschnittene Bauteile, unsichere Einträge."""
-    moebel = lade(INHALTE / "moebel.json")["moebel"]
+    moebel = lade_moebel()
     katalog = katalogeintraege(privat)
     befunde = []
     for eintrag in szene.get("objekte", []):
@@ -189,7 +190,7 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
 
 def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     """Hintergrund mit Möbeln (nach Tiefe) und Figuren von vorn, doppelt vergrößert."""
-    moebel = lade(INHALTE / "moebel.json")["moebel"]
+    moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [

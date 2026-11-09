@@ -62,7 +62,8 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Kachelstil (gekaufte Grafik): automatisch innen, Stadt, Natur (Wege) oder Wüste; eine Karteneigenschaft
   `stil` (etwa `kueste`: Wand = Wasser, Teppich = Holzsteg) geht vor.
 - Möbel und Schmuck (gekaufte Grafik): Objekte mit `type = "moebel"` in der Ebene `ausloeser`,
-  Name = Schlüssel in `moebel.json` (Pfad im privaten Register, Breite, Höhe, `kollision`), `x`/`y`
+  Name = Schlüssel in `moebel/<ort>.json` (Pfad im privaten Register, Breite, Höhe, `kollision`; eine
+  Datei je Ort, gemeinsame Einträge in `moebel/allgemein.json`, Namen über alle Dateien eindeutig), `x`/`y`
   = linke obere Ecke in Pixeln auf dem Kachelraster. Mit `kollision` ist alles außer der obersten
   Kachelreihe gesperrt; ein Möbel darf keinen Auslöser und keine Figur zustellen (Test).
 - Objekte der Ebene `ausloeser` haben `type = "ausloeser"` und einen Namen, der in `orte.json`

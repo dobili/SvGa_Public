@@ -1,0 +1,28 @@
+{
+  "moebel": {
+    "pwZelt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwZeltGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwZeltBeige": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_3.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwLagerfeuer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Campfire_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    }
+  }
+}

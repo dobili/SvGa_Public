@@ -41,7 +41,7 @@ Szene → Kartenbauer → Bildprüfung. Der Autor hat die Prüfung der Dokumente
      keine Grafik, und darf deshalb ins öffentliche Repository.
    - Schatten: immer die `schatten`-Fassung, wenn es eine gibt.
    - Eine Möbelserie je Raum (Feld `serie`), passende Ansichten (Feld `ansichten`) für die Drehung.
-3. **Möbel** in `inhalte/abenteuer/moebel.json` mit Vorsilbe je Karte (etwa `mf4`, `cc4`, `wg4`);
+3. **Möbel** in `inhalte/abenteuer/moebel/<ort>.json` mit Vorsilbe je Karte (etwa `mf4`, `cc4`, `wg4`);
    `art`, `blick`, `zustand`, `stil` aus dem Katalog übernehmen.
 4. **Szene** in `inhalte/abenteuer/szenen/` (vorhandene Datei ersetzen, neue Karten neu anlegen).
    Vorhandene Auslöser und Figuren bleiben mit ihren Namen. Neue Karten und Übergänge kommen in

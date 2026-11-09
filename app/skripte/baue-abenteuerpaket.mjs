@@ -94,17 +94,41 @@ async function kopierePrivatordner(ordner) {
   }
 }
 
-/** Wurzel des privaten Repositorys (Register-Pfade in moebel.json beziehen sich darauf). */
+/** Wurzel des privaten Repositorys (die Pfade „quelle“ der Möbel beziehen sich darauf). */
 const PRIVAT_WURZEL = resolve(HIER, "../inhalte-privat/quelle");
 const MOEBEL_GRUND = [150, 120, 90];
 const MOEBEL_RAND = [58, 58, 80];
 
 /**
- * Möbel und Schmuck (moebel.json): das Bild aus dem privaten Repository, sonst ein Platzhalter in
- * der angegebenen Größe (braune Fläche mit dunklem Rand), damit Karten immer vollständig laden.
+ * Alle Möbel aus inhalte/abenteuer/moebel/<ort>.json in einem Objekt Name → Angabe.
+ *
+ * Warum: Jeder Ort hat seit Runde 4 seine eigene Möbeldatei (weniger Merge-Konflikte, wenn mehrere
+ * Helfer parallel bauen); die App kennt weiter eine einzige daten/moebel.json im Paket. Namen sind
+ * über alle Dateien eindeutig (wie pipeline/abenteuer/moebelliste.py); ein doppelter Name bricht ab.
+ */
+async function ladeMoebelliste() {
+  const ordner = join(QUELLE, "moebel");
+  const alle = {};
+  const herkunft = {};
+  for (const datei of (await readdir(ordner)).filter((d) => d.endsWith(".json")).sort()) {
+    const { moebel } = JSON.parse(await readFile(join(ordner, datei), "utf8"));
+    for (const [name, angabe] of Object.entries(moebel)) {
+      if (name in alle) throw new Error(`Möbelname doppelt: ${name} (${herkunft[name]}, ${datei})`);
+      alle[name] = angabe;
+      herkunft[name] = datei;
+    }
+  }
+  return alle;
+}
+
+/**
+ * Möbel und Schmuck: daten/moebel.json aus allen Ortsdateien und je Möbel das Bild aus dem privaten
+ * Repository, sonst ein Platzhalter in der angegebenen Größe (braune Fläche mit dunklem Rand),
+ * damit Karten immer vollständig laden.
  */
 async function schreibeMoebel() {
-  const { moebel } = JSON.parse(await readFile(join(QUELLE, "moebel.json"), "utf8"));
+  const moebel = await ladeMoebelliste();
+  await schreibe("daten/moebel.json", JSON.stringify({ moebel }, null, 2) + "\n", "daten");
   for (const [name, angabe] of Object.entries(moebel)) {
     const quelle = join(PRIVAT_WURZEL, angabe.quelle);
     const bild = existsSync(quelle)
@@ -263,7 +287,6 @@ async function main() {
     "runden.json",
     "funde.json",
     "laeden.json",
-    "moebel.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

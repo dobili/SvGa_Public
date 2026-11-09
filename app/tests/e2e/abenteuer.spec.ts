@@ -51,14 +51,15 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
 
-  // Der Held steht auf (2,7) und schaut nach oben; das Brett liegt auf (5,4): rechts bis (5,7),
-  // dann hoch bis (5,5), das Brett ist Kollision und liegt dann vor ihm.
-  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,7");
-  // Erst bis (6,7) und zurück: Der Held steht dann rechts in seiner Kachel und streift beim Hochgehen
-  // nicht die Truhe auf (3,5)–(4,6).
-  await laufeBis(page, "ArrowRight", "6,7");
-  await laufeBis(page, "ArrowLeft", "5,7");
-  await laufeBis(page, "ArrowUp", "5,5");
+  // Dachboden aus Runde 4: Der Held steht auf (3,5) unter der Treppe (3,4), das Brett liegt auf dem
+  // Rundtisch bei (6,6). Am Tisch vorbei über den Teppich: rechts bis (4,5), hoch bis (4,4) (nicht
+  // auf (3,4), das wäre die Treppe), rechts bis (6,4), hinunter bis (6,5); der Tisch ist Kollision,
+  // das Brett liegt dann vor ihm.
+  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("3,5");
+  await laufeBis(page, "ArrowRight", "4,5");
+  await laufeBis(page, "ArrowUp", "4,4");
+  await laufeBis(page, "ArrowRight", "6,4");
+  await laufeBis(page, "ArrowDown", "6,5");
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 5000 });
   // WebKit auf dem iPhone lädt die Dialogdatei aus dem Zwischenspeicher manchmal langsam, und ein

@@ -15,6 +15,8 @@ from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 
+from pipeline.abenteuer.moebelliste import lade_moebel
+
 KACHELEBENEN = ("boden", "waende", "objekte")
 OBJEKTEBENE = "ausloeser"
 KACHELGROESSE = 16
@@ -85,13 +87,11 @@ def objekte(karte: dict) -> list[Kartenobjekt]:
     ]
 
 
-MOEBEL = json.loads(
-    (Path(__file__).resolve().parents[2] / "inhalte/abenteuer/moebel.json").read_text(encoding="utf-8")
-)["moebel"]
+MOEBEL = lade_moebel()
 
 
 def moebelfelder(karte: dict) -> set[Feld]:
-    """Felder unter Möbeln mit ``kollision`` (moebel.json): alles außer der obersten Kachelreihe.
+    """Felder unter Möbeln mit ``kollision`` (inhalte/abenteuer/moebel/): alles außer der obersten Kachelreihe.
 
     Beispiel: ein Bett 32 × 48 bei (64, 32) sperrt die Felder (4, 3), (5, 3), (4, 4), (5, 4).
     """

@@ -18,7 +18,7 @@ const STAND = {
   wertungPartien: 0,
   held: { name: "Kim", variante: 0 },
   handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
-  position: { karte: "mapleFalls.dachboden", x: 2, y: 7, richtung: "oben" },
+  position: { karte: "mapleFalls.dachboden", x: 3, y: 5, richtung: "unten" },
   laufendeAufgaben: {
     kennung: "mapleFalls.reiheSam#e2e",
     runde: "mapleFalls.reiheSam",

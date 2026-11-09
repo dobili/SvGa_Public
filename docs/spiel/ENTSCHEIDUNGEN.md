@@ -767,3 +767,9 @@ fertigen Karten und beim Spielen die Geschichte.
   Gummistiefel, Fährpass, Monatskarte), sieben Nebenorte ohne Club, Rückkehr in frühere Städte.
 - Unsichere Katalogeinträge werden erst geprüft, wenn eine Karte sie braucht; die Bildprüfung
   meldet sie.
+- Möbel je Ort (Auftrag des Haupt-Chats, 9.11.2026, umgesetzt von mittel-2): Statt einer
+  `inhalte/abenteuer/moebel.json` gibt es `inhalte/abenteuer/moebel/<ort>.json` und `allgemein.json`
+  (alte Platzhalter und über mehrere Orte verteilte Teile). Grund: Jeder Merge paralleler Helfer gab
+  Konflikte in der einen Datei. Namen bleiben über alle Dateien eindeutig (Test); die Pipeline liest
+  über `pipeline/abenteuer/moebelliste.py`, der Paketbau führt die Dateien zu einer
+  `daten/moebel.json` im Paket zusammen, die App bleibt unverändert.

@@ -38,6 +38,12 @@
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
           "innen": false
+        },
+        {
+          "kennung": "mapleFalls.diner",
+          "datei": "karten/maple-falls-diner.json",
+          "name": "ort.mapleFalls.diner",
+          "innen": true
         }
       ],
       "figuren": [
@@ -244,6 +250,33 @@
           "art": "gegenstand",
           "karte": "mapleFalls.park",
           "dialog": "maple-falls-park.kiosk"
+        },
+        {
+          "name": "dinerTuer",
+          "karte": "mapleFalls.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.diner",
+            "ausloeser": "dinerAusgang"
+          }
+        },
+        {
+          "name": "dinerAusgang",
+          "karte": "mapleFalls.diner",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.aussen",
+            "ausloeser": "dinerTuer"
+          }
+        },
+        {
+          "name": "zedernpfad",
+          "karte": "mapleFalls.park",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.zedernpfad",
+            "ausloeser": "zedernZurueckPark"
+          }
         }
       ],
       "club": {
@@ -613,7 +646,7 @@
           "art": "uebergang",
           "ziel": {
             "karte": "mapleFalls.park",
-            "ausloeser": "landstrasse"
+            "ausloeser": "zedernpfad"
           }
         },
         {

@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["gebraucht", "alt"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen; durch ein Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht, draußen stehen die Ahornbäume. Man kommt links über eine steile Holztreppe aus dem Wohnzimmer herauf; unten vor der Treppe ist Platz zum Antreten. Alles hier oben ist alt, aber ordentlich abgestellt, so wie die alte Mrs. Whitlock es hinterlassen hat. Unter dem Fenster steht auf einem verblichenen Teppich ein kleiner runder Holztisch mit zwei Holzstühlen, die einander gegenüberstehen; auf dem Tisch liegt das alte Reiseschachbrett, um das sich alles dreht, als hätte jemand gerade eine Partie unterbrochen. Neben dem rechten Stuhl eine alte Stehlampe. An der Nordwand reihen sich ein Kartonstapel, der Bauernschrank und ein Bücherregal voller vergilbter Bücher, dazwischen hängt ein Waldbild. Rechts vorn ist die Ecke mit Mrs. Whitlocks Sachen: ein hoher Stapel Holzkisten, ein ovaler Standspiegel, eine runde Hutschachtel, eine Kiste mit blauem Tuch und ein Bündel vergilbter Zeitungen von 1961 auf den Dielen. Laufwege: vom Treppenantritt nach rechts und hoch zum Tisch mit dem Brett, weiter nach rechts in die Ecke mit den Kisten.",
+  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen; durch ein Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht, draußen stehen die Ahornbäume. Man kommt in der Nordwestecke über eine steile Holztreppe aus dem Wohnzimmer herauf (sie liegt genau über der Treppe im Erdgeschoss); vor der Treppe ist Platz zum Antreten. Alles hier oben ist alt, aber ordentlich abgestellt, so wie die alte Mrs. Whitlock es hinterlassen hat. Unter dem Fenster steht auf einem verblichenen Teppich ein kleiner runder Holztisch mit zwei Holzstühlen, die einander gegenüberstehen; auf dem Tisch liegt das alte Reiseschachbrett, um das sich alles dreht, als hätte jemand gerade eine Partie unterbrochen. Neben dem rechten Stuhl eine alte Stehlampe. An der Nordwand reihen sich der Bauernschrank und ein Bücherregal voller vergilbter Bücher, dazwischen hängt ein Waldbild. Mitten im Raum steht ein Kistenstapel; rechts vorn ist die Ecke mit Mrs. Whitlocks Sachen: ein hoher Stapel Holzkisten, ein ovaler Standspiegel, eine runde Hutschachtel, eine Kiste mit blauem Tuch und ein Bündel vergilbter Zeitungen von 1961 auf den Dielen. Laufwege: vom Treppenantritt nach rechts und hoch zum Tisch mit dem Brett, weiter nach rechts in die Ecke mit den Kisten.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -34,7 +34,7 @@
     },
     {
       "moebel": "mf3Kartonstapel",
-      "feld": [1, 1]
+      "feld": [5, 7]
     },
     {
       "moebel": "mf2Kleiderschrank",
@@ -94,20 +94,20 @@
     },
     {
       "moebel": "mf2Treppe",
-      "feld": [1, 4]
+      "feld": [1, 3]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [2, 7],
+      "feld": [2, 6],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "treppe",
-      "feld": [2, 8]
+      "feld": [2, 7]
     },
     {
       "name": "brett",

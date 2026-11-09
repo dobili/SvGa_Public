@@ -152,7 +152,32 @@ Lesart: Pokémon-Routen sind schmal und lang (20 Schritte breit, also etwa ein b
 oder breit und flach (18 bis 20 hoch). Städte sind zwei bis sechs Bildschirme groß. Innenräume
 passen fast auf einen Bildschirm.
 
-### 7a.2 Unsere Größen (Werte nach dem Vorbild Pokémon)
+### 7a.2 Entscheidung des Autors: Pokémon mal 1,5 bis 2
+
+Entschieden am 9.11.2026: Die Form folgt Pokémon (schmale, lange Wege; kompakte Städte; große
+Städte in Vierteln; Räume auf etwa einem Bildschirm), die Größe ist aber draußen anderthalb- bis
+doppelt so groß, weil bei uns keine Kämpfe im hohen Gras das Laufen unterbrechen. Räume sind etwa
+anderthalbmal so groß wie bei Pokémon, weil die Möbel von LimeZu größer sind und Räume belebt
+wirken sollen. Diese Werte gehen der Tabelle unten (Pokémon eins zu eins) vor:
+
+| Kartenart                                       | Größe in Kacheln                                    | Durchquerung zu Fuß |
+| ----------------------------------------------- | --------------------------------------------------- | ------------------- |
+| Kleiner Ort (Maple Falls, Cedar Creek)          | 40–60 × 30–40                                       | 12–17 s             |
+| Mittlere Stadt (Riverton, Ironwood)             | 60–80 × 50–60                                       | 17–23 s             |
+| Große Stadt                                     | Viertel zu je 60–80 × 40–60                         | je 17–23 s          |
+| Weg zwischen zwei Orten in Akt 1                | 2 Karten, zusammen 220–280 lang, 20–30 quer         | 65–80 s             |
+| Weg ab Akt 2                                    | 2 Karten, zusammen 280–400 lang                     | 80–115 s            |
+| Wohnraum, Erdgeschoss einer Wohnung             | 12–16 × 10–13; zwei Räume nebeneinander bis 20 × 13 | 4–6 s               |
+| Öffentlicher Raum (Laden, Waschsalon, Clubraum) | 14–20 × 10–14                                       | 4–6 s               |
+| Großer Saal (Bibliothek, Turnierhalle)          | 20–30 × 14–20                                       | 6–9 s               |
+| Wald, Höhle                                     | 1,5 bis 2 mal die Pokémon-Werte unten               | –                   |
+
+Die Regeln 1 bis 8 unten gelten mit diesen Größen weiter; Abstand der Entdeckungen höchstens etwa
+15 Kacheln entlang des Hauptwegs.
+
+### 7a.3 Pokémon eins zu eins (Grundlage)
+
+Unsere Größen (Werte nach dem Vorbild Pokémon)
 
 Bei 3,5 Kacheln je Sekunde dauert alles etwa 7 % länger als in Pokémon. Gemessen wird ohne Umwege
 entlang des Hauptwegs.

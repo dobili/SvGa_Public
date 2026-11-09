@@ -15,7 +15,7 @@ liegt an der Birch Lane oder im Park.
 ```
                          N
      Wasserfall · Fluss (hinter den Dächern, nicht begehbar) ──────────────►
- ┌────────────────── mapleFalls.aussen (112 × 40) ──────────────────┐┌── mapleFalls.park (70 × 40) ──┐
+ ┌────────────────── mapleFalls.aussen (56 × 36) ──────────────────┐┌── mapleFalls.park (44 × 32) ──┐
  │ [Haus Whitlock] [Lily]  [Hayes]  [Juno]   [Schule + Fahnenmast]  ││ ~~~~~ Fluss, Ufer, Enten ~~~~~ │
  │  Garten, Zäune, Ahorn als Allee                                  ││  Wiese, Halfpipe, Kiosk Patel  │
  │ ─────── Gehweg Nord ───────────────────────────────────────────  ││  Bänke am Weg                  │
@@ -38,11 +38,11 @@ liegt an der Birch Lane oder im Park.
 | Diner                                      | Flachbau mit Leuchtreklame, Fassade 12                                                                                            | –                                                                             | nein (Kulisse) |
 | Kiosk Mr. Patel (Park)                     | Verkaufswagen mit Markise, 3 breit                                                                                                | – (Laden über Dialog)                                                         | nein           |
 
-Maßstab (`KARTENREGELN.md`, 7a): Die Birch Lane ist 112 Kacheln lang (gut 30 Sekunden zu Fuß), der
-Park 70 × 40 (20 Sekunden quer). Grundstücke an der Birch Lane sind 16 bis 20 Kacheln breit und
-reichen von der Straße 14 Kacheln nach hinten: Vorgarten 4, Haus 6, Garten hinter dem Haus 4 bis
-zum Fluss. Zwischen Haus Martínez und der Schule liegt ein Spielplatz (Statist: Kind mit Ball),
-zwischen Diner und den Häusern der Südseite ein kleiner Parkplatz.
+Maßstab (`KARTENREGELN.md`, 7a.2: Pokémon mal 1,5 bis 2): Die Birch Lane ist 56 Kacheln lang (16
+Sekunden zu Fuß), der Park 44 × 32 (13 Sekunden quer). Grundstücke an der Birch Lane sind 10 bis 12
+Kacheln breit: Vorgarten 3, Haus 5, Garten 3 bis zum Ufer. Das Erdgeschoss Whitlock schrumpft beim
+Überarbeiten des Bühnenbilds auf 20 × 13 (7a.2: zwei Räume nebeneinander). Zwischen Haus Martínez
+und der Schule liegt ein kleiner Spielplatz (Statist: Kind mit Ball).
 
 Regel für alle Häuser: Die Fassade ist halb so breit wie das Erdgeschoss innen (gerundet), die Tür
 sitzt außen und innen an derselben relativen Stelle (gleiche Wand, gleicher Anteil von links, ±1

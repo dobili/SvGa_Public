@@ -44,3 +44,20 @@ def test_katalogbefund_meldet_bauteil_und_unsicheres():
     assert "Bauteil" in katalogbefund("x", {"beschreibung": "Bank", "ganz": False, "gegenstuecke": "rechts"})
     assert "unsicher" in katalogbefund("x", {"ganz": True, "sicher": 0.5, "beschreibung": "Kiste"})
     assert katalogbefund("x", {"beschreibung": "Kiste", "sicher": 0.5, "korrektur": "Opus"}) is None
+
+
+def test_sichtbare_breite_entscheidet_auf_der_platte():
+    """Fernseher 32 px Bild (29 sichtbar) auf Anrichte 32 px (30 sichtbar): passt (mittel-1, 9.11.2026)."""
+    from pipeline.abenteuer.kartenbau import platziere
+
+    moebel = {
+        "anrichte": {"quelle": "a.png", "breite": 32, "hoehe": 32, "kollision": True, "sichtbar_breite": 30},
+        "tv": {"quelle": "b.png", "breite": 32, "hoehe": 32, "sichtbar_breite": 29},
+        "tvAlt": {"quelle": "c.png", "breite": 32, "hoehe": 32},
+    }
+    szene = {"objekte": [{"moebel": "anrichte", "feld": [1, 1], "id": "a"}, {"moebel": "tv", "auf": "a"}]}
+    _, befunde = platziere(szene, moebel)
+    assert befunde == []
+    szene["objekte"][1]["moebel"] = "tvAlt"
+    _, befunde = platziere(szene, moebel)
+    assert any("breiter als die Platte" in b for b in befunde)

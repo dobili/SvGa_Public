@@ -23,7 +23,7 @@
   ],
   "objekte": [
     {
-      "moebel": "cc3Zeitungsregal",
+      "moebel": "ccRegalB",
       "feld": [1, 1]
     },
     {
@@ -55,7 +55,7 @@
       "an_wand": true
     },
     {
-      "moebel": "wzStuhlRechts",
+      "moebel": "mf3StuhlOrangeRechts",
       "feld": [2, 7],
       "zu": "tisch1"
     },
@@ -65,16 +65,16 @@
       "id": "tisch1"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlOrangeLinks",
       "feld": [5, 7],
       "zu": "tisch1"
     },
     {
-      "moebel": "ccSchachbrett",
+      "moebel": "ccSchachbrettKlein",
       "auf": "tisch1"
     },
     {
-      "moebel": "wzStuhlRechts",
+      "moebel": "mf3StuhlOrangeRechts",
       "feld": [6, 10],
       "zu": "tisch2"
     },
@@ -84,12 +84,12 @@
       "id": "tisch2"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlOrangeLinks",
       "feld": [9, 10],
       "zu": "tisch2"
     },
     {
-      "moebel": "ccSchachbrett",
+      "moebel": "ccSchachbrettKlein",
       "auf": "tisch2"
     },
     {
@@ -98,7 +98,7 @@
       "id": "schreibtisch"
     },
     {
-      "moebel": "wzStuhlRechts",
+      "moebel": "mf3StuhlOrangeRechts",
       "feld": [11, 9],
       "zu": "lesetisch"
     },
@@ -108,7 +108,7 @@
       "id": "lesetisch"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlOrangeLinks",
       "feld": [14, 9],
       "zu": "lesetisch"
     },

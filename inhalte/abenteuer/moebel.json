@@ -2381,6 +2381,15 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "natur"
+    },
+    "ccSchachbrettKlein": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

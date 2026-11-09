@@ -2,7 +2,7 @@
   "karte": "portDelacroix.werkstatt",
   "datei": "karten/varianten/port-delacroix-werkstatt-c.json",
   "art": "innen",
-  "beschreibung": "Variante C, Hobelbank in der Mitte: Rote Wände, heller Dielenboden. Drei gerettete Klaviere stehen in einer Reihe an der Nordwand, daneben das alte Foto und zwei Fenster, in der Nordostecke Werkzeugschrank und Bretterstapel. Mitten im Raum die große Hobelbank (Auslöser des Flashbacks), rechts davon ein Sägebock, in der Südostecke ein Kistenstapel, links Kisten und eine Pflanze.",
+  "beschreibung": "Variante C, Hobelbank in der Mitte: Rote Wände, heller Dielenboden. Der Flügel und zwei gerettete Klaviere, eines unter einer Plane, stehen in einer Reihe an der Nordwand, daneben das alte Foto und zwei Fenster, in der Nordostecke Werkzeugschrank und Bretterstapel. Mitten im Raum die große Hobelbank (Auslöser des Flashbacks), rechts davon ein Sägebock, in der Südostecke ein Kistenstapel, links Kisten und eine Pflanze.",
   "wand": "rot",
   "boden": "holzHell",
   "raster": [
@@ -22,16 +22,16 @@
   ],
   "objekte": [
     {
-      "moebel": "pd6KlavierHell",
+      "moebel": "pd6Fluegel",
       "feld": [1, 1]
     },
     {
       "moebel": "pd6KlavierRot",
-      "feld": [3, 1]
+      "feld": [4, 1]
     },
     {
-      "moebel": "pd6KlavierNatur",
-      "feld": [5, 1]
+      "moebel": "pd6KlavierPlane",
+      "feld": [6, 1]
     },
     {
       "moebel": "pd6FotoAlt",

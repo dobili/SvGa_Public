@@ -2,7 +2,7 @@
   "karte": "portDelacroix.werkstatt",
   "datei": "karten/port-delacroix-werkstatt.json",
   "art": "innen",
-  "beschreibung": "Die Klavierwerkstatt Whitlock-Duval in der Rue des Facteurs (Szenen 66 und 68). Alte Holzwände, dunkle Dielen voller Späne, Licht durch zwei Fenster, es riecht nach gehobeltem Holz. Die Tür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand die große Hobelbank (Auslöser des Flashbacks), rechts davon das alte Foto eines jungen Mannes mit Schachbrett im Goldrahmen und der Werkzeugschrank. In der Nordwestecke drei gerettete Klaviere, zwei an der Westwand, eines daneben. Rechts im Raum ein helles Klavier (Ersatz für den bestellten Flügel mit Célestes Laptop), daneben der Bretterstapel. Mitten im Raum ein Sägebock, Holzscheite und ein hoher Bretterstapel, ein Kanister mit Leim.",
+  "beschreibung": "Die Klavierwerkstatt Whitlock-Duval in der Rue des Facteurs (Szenen 66 und 68). Alte Holzwände, dunkle Dielen voller Späne, Licht durch zwei Fenster, es riecht nach gehobeltem Holz. Die Tür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand die große Hobelbank (Auslöser des Flashbacks), rechts davon das alte Foto eines jungen Mannes mit Schachbrett im Goldrahmen und der Werkzeugschrank. In der Nordwestecke drei gerettete Klaviere, zwei an der Westwand, eines unter einer Plane daneben. Rechts im Raum der schwarze Flügel mit Célestes Laptop obendrauf, daneben der Bretterstapel. Mitten im Raum ein Sägebock, Holzscheite und ein hoher Bretterstapel, ein Kanister mit Leim.",
   "wand": "holz",
   "boden": "holzDunkel",
   "raster": [
@@ -55,13 +55,17 @@
       "feld": [1, 6]
     },
     {
-      "moebel": "pd6KlavierNatur",
+      "moebel": "pd6KlavierPlane",
       "feld": [3, 3]
     },
     {
-      "moebel": "pd6KlavierHell",
-      "feld": [15, 6],
+      "moebel": "pd6Fluegel",
+      "feld": [15, 5],
       "id": "fluegel"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "fluegel"
     },
     {
       "moebel": "pd6Saegebock",
@@ -69,7 +73,7 @@
     },
     {
       "moebel": "pd6Bretterstapel",
-      "feld": [17, 6]
+      "feld": [17, 8]
     },
     {
       "moebel": "pd6Holzscheite",

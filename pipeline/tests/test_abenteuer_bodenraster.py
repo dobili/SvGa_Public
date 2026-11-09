@@ -36,3 +36,10 @@ def test_randwand_zeigt_das_feld_dahinter():
     zeilen = ["#####", "#....", "eeeee", "eeeee", "#...."]
     erde = {"rand": [0, 0]}
     assert bodenfeld(erde, zeilen, 0, 2) == [1, 0]
+
+
+def test_gras_zwischen_wasser_ist_keine_bruecke():
+    # Bach versetzt um eine Spalte: (1,0) Wasser hat unten Gras, darunter wieder Wasser.
+    zeilen = ["~~.", "~..", "~~."]
+    assert not ueberbrueckt(zeilen, 1, 0, 0, 1)
+    assert bodenfeld(WASSER_ART, zeilen, 1, 0) == [2, 2]

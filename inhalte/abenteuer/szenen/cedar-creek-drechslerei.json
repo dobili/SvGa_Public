@@ -16,7 +16,8 @@
     "#..............#",
     "#..............#",
     "#..............#",
-    "####.###########"
+    "####.###########",
+    "################"
   ],
   "objekte": [
     {
@@ -38,7 +39,7 @@
     },
     {
       "moebel": "cc4Holzregal",
-      "feld": [7, 1]
+      "feld": [8, 1]
     },
     {
       "moebel": "cc4Werktisch",
@@ -72,6 +73,35 @@
     {
       "moebel": "cc4RundholzMittel",
       "feld": [13, 4]
+    },
+    {
+      "moebel": "cc5Tuer",
+      "feld": [4, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "cc5Arbeitstisch",
+      "feld": [6, 5],
+      "id": "mitte"
+    },
+    {
+      "moebel": "cc5Werkstueck",
+      "auf": "mitte",
+      "versatz": [-8, 0]
+    },
+    {
+      "moebel": "cc5Leiste",
+      "auf": "mitte",
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "cc5Hammer",
+      "auf": "mitte",
+      "versatz": [12, -4]
     }
   ],
   "ausloeser": [

@@ -21,7 +21,8 @@
     "#....................#",
     "#....................#",
     "#....................#",
-    "####.#################"
+    "###.##################",
+    "######################"
   ],
   "objekte": [
     {
@@ -48,7 +49,8 @@
     {
       "moebel": "cc4PinnwandK",
       "feld": [11, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 6]
     },
     {
       "moebel": "cc4Fenster",
@@ -69,12 +71,12 @@
       "an_wand": true
     },
     {
-      "moebel": "cc4Lesetisch",
+      "moebel": "cc5Tisch",
       "feld": [5, 7],
       "id": "schach1"
     },
     {
-      "moebel": "cc4Lesetisch",
+      "moebel": "cc5Tisch",
       "feld": [7, 7],
       "id": "schach2"
     },
@@ -139,50 +141,6 @@
       "zu": "schach2"
     },
     {
-      "moebel": "cc4RegalB",
-      "feld": [13, 4]
-    },
-    {
-      "moebel": "cc4RegalC",
-      "feld": [15, 4]
-    },
-    {
-      "moebel": "cc4RegalD",
-      "feld": [17, 4]
-    },
-    {
-      "moebel": "cc4Lesetisch",
-      "feld": [13, 10],
-      "id": "lese1"
-    },
-    {
-      "moebel": "cc4Lesetisch",
-      "feld": [16, 10],
-      "id": "lese2"
-    },
-    {
-      "moebel": "cc4Leselampe",
-      "auf": "lese1"
-    },
-    {
-      "moebel": "cc4Leselampe",
-      "auf": "lese2"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [13, 9],
-      "zu": "lese1"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [16, 9],
-      "zu": "lese2"
-    },
-    {
-      "moebel": "cc4Stehlampe",
-      "feld": [18, 9]
-    },
-    {
       "moebel": "cc4TresenLinks",
       "feld": [7, 11],
       "id": "tresen"
@@ -197,29 +155,107 @@
       "versatz": [6, 0]
     },
     {
-      "moebel": "cc4Globus",
-      "feld": [19, 12]
-    },
-    {
       "moebel": "cc4PflanzeK",
       "feld": [1, 12]
     },
     {
       "moebel": "cc4PflanzeK",
       "feld": [20, 4]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [13, 5],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [15, 5],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [17, 5],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [13, 9],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [15, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [17, 9],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [13, 12],
+      "zu": "lese1"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [13, 13],
+      "id": "lese1"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese1",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [16, 12],
+      "zu": "lese2"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [16, 13],
+      "id": "lese2"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese2",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [19, 12]
+    },
+    {
+      "moebel": "cc5Anrichte",
+      "feld": [19, 7],
+      "id": "anrichte"
+    },
+    {
+      "moebel": "cc4Globus",
+      "auf": "anrichte"
+    },
+    {
+      "moebel": "cc5Tuer",
+      "feld": [3, 15],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [3, 14]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [4, 14],
+      "feld": [3, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [4, 15]
+      "feld": [3, 15]
     },
     {
       "name": "kellertreppe",
@@ -235,7 +271,8 @@
     },
     {
       "name": "globus",
-      "feld": [18, 12]
+      "feld": [19, 9],
+      "auf_moebel": false
     }
   ],
   "figuren": [

@@ -75,7 +75,9 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
                 if dx * mx + dy * my <= 0:
                     befunde.append(f"{name} schaut nicht zu {eintrag['zu']} ({blick})")
         art = angabe.get("art")
-        if art in ALLEIN_VERBOTEN and not eintrag.get("an_wand"):
+        # Nur innen: Draußen stehen Laternen und Kübel frei am Weg (KARTENREGELN 10.19).
+        innen = szene.get("art") != "aussen"
+        if innen and art in ALLEIN_VERBOTEN and not eintrag.get("an_wand"):
             x0, y0, x1, y1 = _felder(s)
             rand = [(x, y) for x in range(x0 - 1, x1 + 2) for y in range(y0 - 1, y1 + 2)]
             andere = [o for o in gesetzt if o is not s and o["kollision"]]

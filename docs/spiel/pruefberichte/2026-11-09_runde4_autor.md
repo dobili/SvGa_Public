@@ -15,35 +15,35 @@ sich zur Straße.
 
 ## Maple Falls
 
-| Karte      | Hinweis des Autors                                                                                                    | Regel        | Erledigt                                  |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
-| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   | erledigt mittel-1 (9.11.2026)             |
-| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        | erledigt mittel-1 (9.11.2026)             |
-| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 | erledigt mittel-1 (9.11.2026)             |
-| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        | erledigt mittel-1 (9.11.2026)             |
-| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        | erledigt mittel-1 (9.11.2026)             |
-| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
-| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        | erledigt mittel-1 (9.11.2026)             |
-| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
-| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        | erledigt mittel-1 (9.11.2026)             |
-| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        | erledigt mittel-1 (9.11.2026)             |
-| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        | erledigt mittel-1 (9.11.2026)             |
-| Diner      | kein Diner: neu denken (Gastraum, Theke mit Hockern, Kasse zum Gast, Durchreiche, Großküche, Lager, Toiletten; Größe) | 10.30        |                                           |
-| Diner      | Glastresen mit Lücken; Kasse zum Ausgang gedreht                                                                      | 10.14, 10.30 |                                           |
-| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        | erledigt mittel-1 (9.11.2026)             |
-| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        | erledigt mittel-1 (9.11.2026)             |
-| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        | erledigt mittel-1 (9.11.2026)             |
-| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        | erledigt mittel-1 (9.11.2026)             |
-| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        | erledigt mittel-1 (9.11.2026)             |
-| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  | erledigt mittel-1 (9.11.2026)             |
-| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        |                                           |
-| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 |                                           |
-| Park       | Teich rechteckig                                                                                                      | 10.23        |                                           |
-| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        |                                           |
-| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  |                                           |
-| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         |                                           |
-| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        |                                           |
-| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  |                                           |
+| Karte      | Hinweis des Autors                                                                                                    | Regel        | Erledigt                                                            |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------- |
+| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   | erledigt mittel-1 (9.11.2026)                                       |
+| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        | erledigt mittel-1 (9.11.2026)                                       |
+| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 | erledigt mittel-1 (9.11.2026)                                       |
+| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        | erledigt mittel-1 (9.11.2026)                                       |
+| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        | erledigt mittel-1 (9.11.2026)                                       |
+| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026)                           |
+| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        | erledigt mittel-1 (9.11.2026)                                       |
+| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026)                           |
+| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        | erledigt mittel-1 (9.11.2026)                                       |
+| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        | erledigt mittel-1 (9.11.2026)                                       |
+| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        | erledigt mittel-1 (9.11.2026)                                       |
+| Diner      | kein Diner: neu denken (Gastraum, Theke mit Hockern, Kasse zum Gast, Durchreiche, Großküche, Lager, Toiletten; Größe) | 10.30        | erledigt mittel-3 (9.11.2026): neu gebaut 30 × 16, Ortsdokument 4.4 |
+| Diner      | Glastresen mit Lücken; Kasse zum Ausgang gedreht                                                                      | 10.14, 10.30 | erledigt mittel-3 (9.11.2026): neu gebaut 30 × 16, Ortsdokument 4.4 |
+| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        | erledigt mittel-1 (9.11.2026)                                       |
+| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        | erledigt mittel-1 (9.11.2026)                                       |
+| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        | erledigt mittel-1 (9.11.2026)                                       |
+| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        | erledigt mittel-1 (9.11.2026)                                       |
+| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        | erledigt mittel-1 (9.11.2026)                                       |
+| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  | erledigt mittel-1 (9.11.2026)                                       |
+| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        | mittel-4, Runde 6                                                   |
+| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 | mittel-4, Runde 6                                                   |
+| Park       | Teich rechteckig                                                                                                      | 10.23        | mittel-4, Runde 6                                                   |
+| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        | mittel-4, Runde 6                                                   |
+| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  | mittel-4, Runde 6                                                   |
+| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         | mittel-4, Runde 6                                                   |
+| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        | mittel-4, Runde 6                                                   |
+| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  | mittel-4, Runde 6                                                   |
 
 ## Wege
 
@@ -62,19 +62,19 @@ sich zur Straße.
 
 ## Cedar Creek
 
-| Karte       | Hinweis des Autors                                                                       | Regel             | Erledigt                                         |
-| ----------- | ---------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------ |
-| außen       | Trampelpfad oben links nicht bis zum Rand; Übergang Trampelpfad → Gehweg mit Grasrundung | 10.2, 10.3        | Haupt-Chat (Werkzeug)                            |
-| außen       | Tür der Bibliothek klebt vor dem großen Fenster; Laternen am Eingang nicht symmetrisch   | 10.9              |                                                  |
-| außen       | Brücken sehen aus wie gefliestes Gras; Bachufer nicht durchgehend                        | 10.6, 10.1        | Haupt-Chat (Werkzeug) und mittel-2 (Brückenbild) |
-| außen       | Boot quer im Bach                                                                        | 10.24             |                                                  |
-| außen       | Wasser einfarbig                                                                         | 10.4              | Haupt-Chat (Werkzeug)                            |
-| außen       | Hütte am Ufer ohne Pfad zur Tür; Bach schnurgerade                                       | 10.25, 10.23      |                                                  |
-| außen       | Straße endet abrupt an der Bushaltestelle (Wendehammer oder Übergang)                    | 10.28             |                                                  |
-| Bibliothek  | Schachbretter liegen auf Tischen mit Buch; Lampen stehen auf Büchern                     | 10.12             |                                                  |
-| Bibliothek  | Globus auf dem Boden                                                                     | 10.13             |                                                  |
-| Bibliothek  | Regale vereinzelt: Regalreihen mit Gängen                                                | 10.30             |                                                  |
-| Bibliothek  | Notizbrett an der Decke                                                                  | 10.10             |                                                  |
-| Archiv      | mehr Regalreihen; Kisten sortierter; Tisch in eine Ecke mit Lampe                        | 10.30             |                                                  |
-| Waschsalon  | Fußmatte näher an die Tür; Tür statt Lücke; Notizbrett tiefer                            | 10.8, 10.7, 10.10 |                                                  |
-| Drechslerei | Mitte leer (Werkstück, Böcke); Bücherregal genau mittig zwischen zwei Werkbänken         | 10.30, 10.31      |                                                  |
+| Karte       | Hinweis des Autors                                                                       | Regel             | Erledigt                                                                                                                       |
+| ----------- | ---------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| außen       | Trampelpfad oben links nicht bis zum Rand; Übergang Trampelpfad → Gehweg mit Grasrundung | 10.2, 10.3        | Haupt-Chat (Werkzeug)                                                                                                          |
+| außen       | Tür der Bibliothek klebt vor dem großen Fenster; Laternen am Eingang nicht symmetrisch   | 10.9              | mittel-2: Seiteneingang mit Treppe und Tür, Laternen symmetrisch                                                               |
+| außen       | Brücken sehen aus wie gefliestes Gras; Bachufer nicht durchgehend                        | 10.6, 10.1        | Haupt-Chat (Werkzeug) und mittel-2 (Brückenbild); Haupt-Chat (Werkzeug); mittel-2: Plankenbilder auf Wasser (Szene „bruecken“) |
+| außen       | Boot quer im Bach                                                                        | 10.24             | mittel-2: Schlauchboote längs, eines am Steg festgemacht                                                                       |
+| außen       | Wasser einfarbig                                                                         | 10.4              | Haupt-Chat (Werkzeug)                                                                                                          |
+| außen       | Hütte am Ufer ohne Pfad zur Tür; Bach schnurgerade                                       | 10.25, 10.23      | mittel-2: Trampelpfad zur Tür; Bach gewunden                                                                                   |
+| außen       | Straße endet abrupt an der Bushaltestelle (Wendehammer oder Übergang)                    | 10.28             | mittel-2: Wendehammer mit Pollern zum Uferweg                                                                                  |
+| Bibliothek  | Schachbretter liegen auf Tischen mit Buch; Lampen stehen auf Büchern                     | 10.12             | mittel-2: leere Holztische für Bretter und Leselampen                                                                          |
+| Bibliothek  | Globus auf dem Boden                                                                     | 10.13             | mittel-2: Globus auf einer Anrichte                                                                                            |
+| Bibliothek  | Regale vereinzelt: Regalreihen mit Gängen                                                | 10.30             | mittel-2: zwei Regalreihen mit Gang, Lücken geschlossen                                                                        |
+| Bibliothek  | Notizbrett an der Decke                                                                  | 10.10             | mittel-2: 6 px tiefer                                                                                                          |
+| Archiv      | mehr Regalreihen; Kisten sortierter; Tisch in eine Ecke mit Lampe                        | 10.30             | mittel-2: Regalreihe mit Gang, Kartonstapel sortiert, Arbeitsplatz mit Lampe in der Ecke                                       |
+| Waschsalon  | Fußmatte näher an die Tür; Tür statt Lücke; Notizbrett tiefer                            | 10.8, 10.7, 10.10 | mittel-2: Türbild in der Südwand, Matte direkt davor, Notizbrett tiefer                                                        |
+| Drechslerei | Mitte leer (Werkstück, Böcke); Bücherregal genau mittig zwischen zwei Werkbänken         | 10.30, 10.31      | mittel-2: Arbeitstisch mit Werkstück in der Mitte, Regal am Werktisch                                                          |

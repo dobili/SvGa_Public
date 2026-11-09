@@ -512,5 +512,5 @@ Einbau; bleibt der sparsame Spieler am Ende von Akt 2 mehr als 100 Münzen über
 mit allen Karten (in diesem Auftrag eingetragen).
 
 **Ortsdokumente:** `orte/ironwood.md` (mit N3) und `orte/silicon-bay.md` (mit W4) sind auf dem Stand
-dieses Dokuments; der Übergang W3 ↔ Ironwood ist mit mittel-3 abgestimmt (ironwood.md, 1.6: Spalten
-14–15 auf beiden Seiten; offen nur die Bitte, den Kanal auf der Brückenkarte auf die Spalten 4–9 zu legen).
+dieses Dokuments; der Übergang W3 ↔ Ironwood ist mit mittel-3 abgestimmt (ironwood.md, 1.6: Weg in
+den Spalten 24–25, Kanal 4–9 auf beiden Seiten).

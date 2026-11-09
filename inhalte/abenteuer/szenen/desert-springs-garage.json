@@ -1,0 +1,159 @@
+{
+  "karte": "desertSprings.garage",
+  "datei": "karten/desert-springs-garage.json",
+  "art": "innen",
+  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 18 × 12 Kacheln, Steinboden, Backsteinwand. An der Nordwand Werkbank, Werkzeugregal und Fenster, auf dem Regal Miras Dosenpokal; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, Kisten und Kartons. Tür in der Mitte der Südwand.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#########.########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [9, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [9, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc7Werkbank",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mf4RegalNiedrig",
+      "feld": [3, 1],
+      "id": "regal"
+    },
+    {
+      "moebel": "mf3PokalKlein",
+      "feld": [0, 0],
+      "auf": "regal"
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [14, 2]
+    },
+    {
+      "moebel": "iw5AutoA",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [8, 6],
+      "id": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [8, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [8, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [9, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [9, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [14, 7],
+      "id": "reifen"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [15, 7]
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "reifen"
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "iw5Kisten",
+      "feld": [12, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [9, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "garageAusgang",
+      "feld": [9, 11]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "tomas",
+      "feld": [4, 6]
+    },
+    {
+      "name": "mira",
+      "feld": [14, 9]
+    },
+    {
+      "name": "dot",
+      "feld": [11, 7]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": [
+    "industrie",
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "schule"
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "moebel": {
+    "wds6Pinie": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "wds6PinieB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "wds6Kegelbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "wds6Wacholder": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "wds6WacholderB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "wds6Fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "wds6FelsHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "wds6Brocken": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Big_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "wds6BrockenMittel": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Medium_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "wds6Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Warnschild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_5.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Holzstapel": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Trunk_Load_Big_Vertical_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "material",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Quelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "brunnen",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Briefkasten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Mailbox_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "briefkasten",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "wds6Schranke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Barrier_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "absperrung",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL2": {
+      "quelle": "spiel/eigene/leitplanke_laengs_2.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ2": {
+      "quelle": "spiel/eigene/leitplanke_quer_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL3": {
+      "quelle": "spiel/eigene/leitplanke_laengs_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ3": {
+      "quelle": "spiel/eigene/leitplanke_quer_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL4": {
+      "quelle": "spiel/eigene/leitplanke_laengs_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ4": {
+      "quelle": "spiel/eigene/leitplanke_quer_4.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL5": {
+      "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ5": {
+      "quelle": "spiel/eigene/leitplanke_quer_5.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL6": {
+      "quelle": "spiel/eigene/leitplanke_laengs_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ6": {
+      "quelle": "spiel/eigene/leitplanke_quer_6.png",
+      "breite": 16,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL7": {
+      "quelle": "spiel/eigene/leitplanke_laengs_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ7": {
+      "quelle": "spiel/eigene/leitplanke_quer_7.png",
+      "breite": 16,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeL8": {
+      "quelle": "spiel/eigene/leitplanke_laengs_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6LeitplankeQ8": {
+      "quelle": "spiel/eigene/leitplanke_quer_8.png",
+      "breite": 16,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6Spieltisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Umbrella_Composition_16x16.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6Container": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Dumpster_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "behaelter",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wds6Wasserturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_1.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "turm",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Reklame": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_2.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wds6Tankstelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_1.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Autowrack": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Car_6.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Reifen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tire_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "material",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Tafel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "wds6Ortsschild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Wohnwagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "wds6Diner": {
+      "quelle": "spiel/eigene/diner_wagen.png",
+      "breite": 160,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6Motel": {
+      "quelle": "spiel/eigene/motel.png",
+      "breite": 224,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "wds6SchildMotel": {
+      "quelle": "spiel/eigene/schild_motel.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "wds6SchildDiner": {
+      "quelle": "spiel/eigene/schild_kings_diner.png",
+      "breite": 96,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6NeonK": {
+      "quelle": "spiel/eigene/neon_k.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "fund",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6SattelzugRot": {
+      "quelle": "spiel/eigene/sattelzug_rot.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6SattelzugBlau": {
+      "quelle": "spiel/eigene/sattelzug_blau.png",
+      "breite": 160,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wds6Saguaro": {
+      "quelle": "spiel/eigene/kaktus_saguaro.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "pflanze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6KaktusKlein": {
+      "quelle": "spiel/eigene/kaktus_klein.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6KaktusBluehend": {
+      "quelle": "spiel/eigene/kaktus_bluehend.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6SteinRot": {
+      "quelle": "spiel/eigene/stein_flach_rot.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Geierkreis": {
+      "quelle": "spiel/eigene/geierkreis.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "schatten",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Felsbogen": {
+      "quelle": "spiel/eigene/felsbogen_rot.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wds6Brett": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "spiel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    }
+  }
+}

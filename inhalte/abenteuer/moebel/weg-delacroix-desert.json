@@ -1,0 +1,133 @@
+{
+  "moebel": {
+    "dd6Kaktus": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusB": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Ripe_2_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusOhne": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Fruitless_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "dd6Wasserturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_2.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "dd6WasserturmB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_4.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "dd6BrueckeErsatz": {
+      "quelle": "spiel/eigene/bruecke_strasse_laengs_10.png",
+      "breite": 48,
+      "hoehe": 164,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "dd6Felsbogen": {
+      "quelle": "spiel/eigene/felsbogen_rot.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": false,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "dd6Bruecke1879": {
+      "quelle": "spiel/eigene/eisenbahnbruecke_1879_quer.png",
+      "breite": 192,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "dd6Saguaro": {
+      "quelle": "spiel/eigene/kaktus_saguaro.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusKlein": {
+      "quelle": "spiel/eigene/kaktus_klein.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusBluehend": {
+      "quelle": "spiel/eigene/kaktus_bluehend.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6SteinFlach": {
+      "quelle": "spiel/eigene/stein_flach_rot.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "dd6Geierkreis": {
+      "quelle": "spiel/eigene/geierkreis.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6Wuestenbahnhof": {
+      "quelle": "spiel/eigene/wuestenbahnhof.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "einfach",
+      "blick": "unten"
+    }
+  }
+}

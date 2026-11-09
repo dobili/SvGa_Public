@@ -1,65 +1,5 @@
 {
   "moebel": {
-    "ld5ThekeLinks": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_85.png",
-      "breite": 32,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "ld5ThekeMitte": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_86.png",
-      "breite": 16,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "ld5ThekeRechts": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_87.png",
-      "breite": 16,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "ld5ThekeHellLinks": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_94.png",
-      "breite": 32,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "ld5ThekeHellMitte": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_95.png",
-      "breite": 16,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "ld5ThekeHellRechts": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_96.png",
-      "breite": 16,
-      "hoehe": 48,
-      "kollision": true,
-      "art": "tisch",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
     "ld5Barhocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_109.png",
       "breite": 16,
@@ -260,6 +200,79 @@
       "hoehe": 16,
       "kollision": false,
       "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Schleusentor": {
+      "quelle": "spiel/eigene/schleusentor_laengs_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Schwenkbalken": {
+      "quelle": "spiel/eigene/schleuse_balken.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5SchildSchleuse": {
+      "quelle": "spiel/eigene/schild_zur_schleuse.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Kegel": {
+      "quelle": "spiel/eigene/kegel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "sport",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Kegelkugel": {
+      "quelle": "spiel/eigene/kegelkugel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "sport",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Glaeser": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_397.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Flaschen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_173.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld5Theke7": {
+      "quelle": "spiel/eigene/theke_holz_laengs_7.png",
+      "breite": 112,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal"
     }

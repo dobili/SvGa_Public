@@ -294,7 +294,12 @@ def main() -> None:
         gezeichnet: dict = {}
         grund = hintergrund(szene, privat, gezeichnet)
         # Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau; das Spiel lädt Variante A.
-        name = szene["karte"] + (f"-{szene['variante']}" if szene.get("variante") else "")
+        name = szene["karte"]
+        # Zweite Fassung derselben Karte (Musikhaus: Ruine und neuer Clubraum) bekommt ein eigenes
+        # Bild „<kennung>-<zustand>.png“, sonst überschriebe sie den Hintergrund der ersten.
+        if szene.get("zustand_der_karte"):
+            name += f"-{szene['zustand_der_karte']}"
+        name += f"-{szene['variante']}" if szene.get("variante") else ""
         if not szene.get("variante"):
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
         vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{name}.png")

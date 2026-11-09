@@ -7,7 +7,9 @@
     "stadt": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
     "fels": "spiel/eigene/fels.png",
     "wasser_stein": "spiel/eigene/wasser_stein.png",
-    "damm": "spiel/eigene/damm.png"
+    "damm": "spiel/eigene/damm.png",
+    "felsRot": "spiel/eigene/fels_rot.png",
+    "wasser_rumpf": "spiel/eigene/wasser_rumpf.png"
   },
   "boeden": {
     "holzHell": {
@@ -130,6 +132,41 @@
         ],
         "anteil": 24
       }
+    },
+    "sandRot": {
+      "bogen": "felsRot",
+      "feld": [2, 0],
+      "varianten": [
+        [2, 0],
+        [3, 0],
+        [2, 1],
+        [3, 1]
+      ]
+    },
+    "felsbodenRot": {
+      "bogen": "felsRot",
+      "feld": [1, 0],
+      "varianten": [
+        [1, 0],
+        [1, 1]
+      ]
+    },
+    "wasser_rumpf": {
+      "bogen": "wasser_rumpf",
+      "feld": [1, 1],
+      "rand": [0, 0],
+      "wellen": {
+        "bilder": [
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_2.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_3.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_4.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_5.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_9.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_10.png"
+        ],
+        "anteil": 24
+      }
     }
   },
   "waende": {
@@ -184,6 +221,15 @@
     },
     "damm": {
       "bogen": "damm",
+      "oben": [0, 0],
+      "unten": [0, 1],
+      "krone": [
+        [1, 0],
+        [1, 1]
+      ]
+    },
+    "felsRot": {
+      "bogen": "felsRot",
       "oben": [0, 0],
       "unten": [0, 1],
       "krone": [

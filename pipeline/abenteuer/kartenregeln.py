@@ -19,7 +19,7 @@ STANDARD_ZUSTAND = ("neu", "gebraucht")
 def _felder(s: dict) -> tuple[int, int, int, int]:
     """Fußfläche eines Möbels in Kacheln: links, oben, rechts, unten (unterste Reihe zählt)."""
     x0, x1 = s["x"] // K, (s["x"] + s["breite"] - 1) // K
-    y1 = (s["y"] + s["hoehe"] - 1) // K
+    y1 = (s["y"] + s["hoehe"] - 1) // K - s.get("frei_unten", 0)
     y0 = y1 if s["hoehe"] <= K else (s["y"] // K) + 1
     return x0, y0, x1, y1
 

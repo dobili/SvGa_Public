@@ -1,0 +1,983 @@
+{
+  "karte": "wegIronwoodSilicon.raststaette",
+  "datei": "karten/varianten/weg-ironwood-silicon-raststaette-c.json",
+  "art": "aussen",
+  "beschreibung": "Variante C (reicher): Der Küstenpfad schwingt in drei Bögen: hoch an die große Düne im Westen, tief an den Priel mit der Brücke, wieder hoch unter den Wall und zuletzt hinunter zum Rastplatz. Dort steht die große Tankstelle mit Waschstraße, daneben Rasthaus und Imbisswagen, viele Autos auf dem Parkplatz und vier Picknicktische. Drei Glaslaternen am Ortsschild, Strandgras und Schilf in Gruppen, die Beobachtungshütte am Watt im Osten.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "s": "asphalt",
+    "p": "pflaster",
+    "a": "erde"
+  },
+  "bruecken": ["h"],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "modern",
+    "einfach",
+    "klassisch",
+    "industrie",
+    "rustikal",
+    "laendlich",
+    "landhaus"
+  ],
+  "raster": [
+    "################################################################################################################################################################",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#..............................................................................................................................................................#",
+    "#.......................aaaaaaaaaaaaaa..............................aaaaaaaaaaaaaaaaaa........................ppppppppppppppppppppppppppppppppppppppppp........#",
+    "#....................aaaaaaaaaaaaaaaaaaa......~~~~................aaaaaaaaaaaaaaaaaaaaa.......................ppppppppppppppppppppppppppppppppppppppppp........#",
+    "#...................aaaaa............aaaa.....~~~~...............aaaa................aaa................sssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "aaaaaaaaaaaaaaaaaaaaaa.................aaaa...~~~~.............aaaa...................aaaa..............sssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "aaaaaaaaaaaaaaaaaaaaa...................aaaaaahhhhaaaaaaaaaaaaaaaa.....................aaaa.............sssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.........................................aaaahhhhaaaaaaaaaaaaaa.........................aaaaaaaaaaaaaaaaaaaaasssssssssssssssssss...sssssssssssssss............#",
+    "#.............................................~~~~........................................aaaaaaaaaaaaaaaaaaaasssssssssssssssssss...sssssssssssssss............#",
+    "#.............................................~~~~......................................................aaaaaasssssssssssssssssss..............................#",
+    "#........................~~~~~~~~~............~~~~...........~~~~~~~~.........................................sssssssssssssssssss..............................#",
+    "~~........~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~.....sssssssssssssssssss..............................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....sssssssssssssssssss..............................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....sssssssssssssssssss..............................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ws5Planke8",
+      "feld": [0, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [8, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [16, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [24, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [32, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [40, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [48, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [56, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [64, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [72, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [80, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [88, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [96, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [104, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [112, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [120, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [128, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [136, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [144, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [152, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5AutoBlau",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "ws5AutoBlau",
+      "feld": [70, 1]
+    },
+    {
+      "moebel": "ws5AutoBlau",
+      "feld": [130, 1]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [13, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [16, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [19, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [19, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [22, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [22, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [25, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [25, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [28, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [31, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [31, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [34, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [34, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [37, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [37, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [40, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [40, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [43, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [43, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [46, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [46, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [49, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [49, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [52, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [52, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [55, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [55, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [58, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [58, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [61, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [61, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [64, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [64, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [67, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [67, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [70, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [70, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [73, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [73, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [76, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [76, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [79, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [79, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [82, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [82, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [85, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [85, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [88, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [88, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [91, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [91, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [94, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [94, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [97, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [97, 8]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [100, 6]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [100, 8]
+    },
+    {
+      "moebel": "ws5TankstelleGross",
+      "feld": [108, 6]
+    },
+    {
+      "moebel": "ws5Rasthaus",
+      "feld": [134, 7]
+    },
+    {
+      "moebel": "ws5Tafel",
+      "feld": [131, 13]
+    },
+    {
+      "moebel": "ws5Imbiss",
+      "feld": [143, 9]
+    },
+    {
+      "moebel": "ws5Wartehaus",
+      "feld": [140, 22]
+    },
+    {
+      "moebel": "ws5Haltestelle",
+      "feld": [138, 22]
+    },
+    {
+      "moebel": "ws5Picknick",
+      "feld": [148, 23]
+    },
+    {
+      "moebel": "ws5Muell",
+      "feld": [150, 23]
+    },
+    {
+      "moebel": "ws5Picknick",
+      "feld": [153, 23]
+    },
+    {
+      "moebel": "ws5Muell",
+      "feld": [155, 23]
+    },
+    {
+      "moebel": "ws5Picknick",
+      "feld": [145, 24]
+    },
+    {
+      "moebel": "ws5Muell",
+      "feld": [147, 24]
+    },
+    {
+      "moebel": "ws5Picknick",
+      "feld": [155, 24]
+    },
+    {
+      "moebel": "ws5Muell",
+      "feld": [157, 24]
+    },
+    {
+      "moebel": "ws5SattelzugBlau",
+      "feld": [111, 20]
+    },
+    {
+      "moebel": "ws5AutoGruen",
+      "feld": [122, 21]
+    },
+    {
+      "moebel": "ws5AutoBlau",
+      "feld": [126, 21]
+    },
+    {
+      "moebel": "ws5Wegweiser",
+      "feld": [103, 20]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [84, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [86, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [88, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [90, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [92, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [94, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [96, 23]
+    },
+    {
+      "moebel": "ws5Pfahl",
+      "feld": [98, 23]
+    },
+    {
+      "moebel": "ws5Huette",
+      "feld": [75, 19]
+    },
+    {
+      "moebel": "ws5Bank",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [27, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [32, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [29, 10]
+    },
+    {
+      "moebel": "ws5Steg6",
+      "feld": [45, 19]
+    },
+    {
+      "moebel": "ws5Schild",
+      "feld": [8, 15]
+    },
+    {
+      "moebel": "ws5Laterne",
+      "feld": [4, 14]
+    },
+    {
+      "moebel": "ws5Laterne",
+      "feld": [10, 14]
+    },
+    {
+      "moebel": "ws5Laterne",
+      "feld": [16, 14]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [24, 15]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [17, 11]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [80, 21]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [99, 21]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [91, 13]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [74, 13]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [128, 12]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [36, 17]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [98, 14]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [39, 14]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [73, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [95, 20]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [14, 18]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [101, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [88, 20]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [7, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [39, 21]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [30, 18]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [22, 13]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [68, 18]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [42, 19]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [93, 13]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [67, 19]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [58, 19]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [85, 21]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [62, 17]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [59, 14]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [90, 16]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [59, 18]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [157, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [22, 21]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [52, 18]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [86, 12]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [41, 13]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [34, 11]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [27, 19]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [55, 15]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [84, 15]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [91, 18]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [34, 19]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [5, 18]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [37, 18]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [28, 19]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [71, 11]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [52, 22]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [101, 18]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [65, 13]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [25, 17]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [42, 21]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [92, 16]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [5, 16]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [85, 19]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [17, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [59, 12]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [34, 17]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [39, 19]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [84, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [5, 21]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [57, 12]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [62, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [68, 11]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [79, 19]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [10, 11]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [63, 18]
+    },
+    {
+      "moebel": "ws5Schilf",
+      "feld": [56, 14]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [89, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [4, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [15, 12]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [73, 20]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [12, 18]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [68, 16]
+    },
+    {
+      "moebel": "ws5BlumenWeiss",
+      "feld": [63, 11]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [80, 14]
+    },
+    {
+      "moebel": "ws5Strandgras",
+      "feld": [86, 17]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [140, 20],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckIronwood",
+      "feld": [139, 21]
+    },
+    {
+      "name": "weiterGlasbruecke",
+      "feld": [0, 18]
+    },
+    {
+      "name": "weiterGlasbruecke",
+      "feld": [0, 19]
+    },
+    {
+      "name": "tafel",
+      "feld": [131, 14],
+      "auf_moebel": true
+    },
+    {
+      "name": "fundAnstecker",
+      "feld": [149, 25]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "kowalczyk",
+      "feld": [118, 26]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "austernfischer",
+      "typ": "tier",
+      "feld": [60, 25],
+      "eigenschaften": {
+        "von": "60,25",
+        "bis": "80,25",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [51, 23],
+      "eigenschaften": {
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [20, 18],
+      "eigenschaften": {
+        "von": "20,18",
+        "bis": "90,18",
+        "tun": "Radfahrer auf dem Küstenpfad",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "busfahrer",
+      "typ": "statist",
+      "feld": [145, 22],
+      "eigenschaften": {
+        "tun": "Busfahrer Briggs macht Pause am Wartehäuschen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "oakes",
+      "typ": "statist",
+      "feld": [76, 18],
+      "eigenschaften": {
+        "tun": "Mr. Oakes zählt Vögel im Watt",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "c"
+}

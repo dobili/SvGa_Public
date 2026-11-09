@@ -23,44 +23,74 @@
   "objekte": [
     {
       "moebel": "pd6Fenster",
-      "feld": [5, 1],
+      "feld": [
+        5,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "pd6Hobelbank",
-      "feld": [7, 1],
+      "feld": [
+        7,
+        1
+      ],
       "id": "hobel"
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [12, 1],
+      "feld": [
+        12,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "pd6FotoAlt",
-      "feld": [14, 1],
+      "feld": [
+        14,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 4]
+      "versatz": [
+        0,
+        4
+      ]
     },
     {
       "moebel": "pd6Werkzeugschrank",
-      "feld": [17, 2]
+      "feld": [
+        17,
+        2
+      ]
     },
     {
       "moebel": "pd6KlavierHell",
-      "feld": [1, 3]
+      "feld": [
+        1,
+        3
+      ]
     },
     {
       "moebel": "pd6KlavierRot",
-      "feld": [1, 6]
+      "feld": [
+        1,
+        6
+      ]
     },
     {
       "moebel": "pd6KlavierPlane",
-      "feld": [3, 3]
+      "feld": [
+        3,
+        3
+      ]
     },
     {
       "moebel": "pd6Fluegel",
-      "feld": [15, 5],
+      "feld": [
+        15,
+        5
+      ],
       "id": "fluegel"
     },
     {
@@ -69,60 +99,105 @@
     },
     {
       "moebel": "pd6Saegebock",
-      "feld": [5, 7]
+      "feld": [
+        5,
+        7
+      ]
     },
     {
       "moebel": "pd6Bretterstapel",
-      "feld": [17, 8]
+      "feld": [
+        17,
+        8
+      ]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [12, 9]
+      "feld": [
+        12,
+        9
+      ]
     },
     {
       "moebel": "pd6Kanister",
-      "feld": [4, 10]
+      "feld": [
+        4,
+        10
+      ]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [10, 11],
-      "versatz": [0, 8]
+      "feld": [
+        10,
+        11
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [10, 12],
+      "feld": [
+        10,
+        12
+      ],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [10, 11],
+      "feld": [
+        10,
+        11
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "werkstattAusgang",
-      "feld": [10, 12]
+      "feld": [
+        10,
+        12
+      ]
     },
     {
       "name": "werkbank",
-      "feld": [9, 4],
+      "feld": [
+        9,
+        4
+      ],
       "auf_moebel": true
     }
   ],
   "figuren": [
     {
       "name": "henri",
-      "feld": [12, 6]
+      "feld": [
+        12,
+        6
+      ]
     },
     {
       "name": "celeste",
-      "feld": [14, 9]
+      "feld": [
+        14,
+        9
+      ]
     }
   ],
   "belebung": [],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "rustikal", "modern", "industrie"]
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "klassisch",
+    "rustikal",
+    "modern",
+    "industrie"
+  ]
 }

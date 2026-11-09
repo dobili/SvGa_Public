@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Aussehen aller Figuren (Charakter-Generator)
 
-**Stand:** fertig (mittel-1, 09.11.2026); im privaten Repository als Commit 058f30ab, Push steht aus (siehe Bericht)
+**Stand:** fertig (mittel-1, 09.11.2026); im privaten Repository lokal committet, Push steht aus (siehe Bericht)
 
 **Zweig:** im öffentlichen Repository nur `docs/spiel/auftraege/mittel-1.md` (Bericht); die Arbeit liegt
 im **privaten** Repository `dobili/schach-abenteuer-inhalte` (in deiner Sitzung unter
@@ -69,7 +69,12 @@ Im öffentlichen Repository steht nur dieser Bericht, keine Bilder.
   heißen aber `Hairstyle_kid_<Form>_<Farbe>.png`. Deshalb stehen die Kinderfrisuren als
   `kid_4_1` statt `4_1` in der Liste. Wenn der Haupt-Chat das Werkzeug anpasst (Präfix `kid_`
   ergänzen), müssen die acht Einträge auf `4_1` usw. zurück.
-- **Push:** Der Commit 058f30ab liegt im privaten Repository nur lokal in meiner Sitzung; der
+- **Porträts** (Nachtrag): `figuren.py` baut jetzt auch `spiel/portraets/`. Die acht Kinder und die
+  sieben Figuren mit Glatze (Pops, Batiste, Buck, Earl, Haraldsen, Pruitt, Schiffskoch) haben
+  `portraet_frisur` mit einer ähnlichen Erwachsenenfrisur (Kinder: gleiche Haarfarbe, ähnliche Form;
+  Glatze: sehr kurzes Haar). Ergebnis: 84 von 85 Porträts; nur der Empfangsroboter behält das
+  gezeichnete Ersatzbild. Der Schiffskoch hat im Porträt keine Kochmütze (gibt es dort nicht).
+- **Push:** Die Commits b18770e7 (Figuren) und der Porträt-Nachtrag liegen im privaten Repository auf `main` nur lokal in meiner Sitzung (nach `git pull --rebase` auf 37aa5b5c); der
   Push nach `main` wurde von der Rechteprüfung der Sitzung abgelehnt (Schreiben in ein fremdes
   System). Der Autor muss ihn freigeben oder selbst pushen.
 

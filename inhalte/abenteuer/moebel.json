@@ -3696,6 +3696,36 @@
       "art": "teppich",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "cc4TresenLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_49.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc4TresenRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_52.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc4Kasse": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Register_Market_Stand_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "moebel": {
+    "sx7Windrad": {
+      "quelle": "spiel/eigene/windrad.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sx7Sturmkeller": {
+      "quelle": "spiel/eigene/luke_leiter.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sx7Mais": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "sx7MaisGruen": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Fruitless_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "neu",
+      "stil": "laendlich"
+    }
+  }
+}

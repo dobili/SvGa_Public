@@ -18,7 +18,8 @@ kommen sie nur ins private Repository, nie ins öffentliche.
 | **Dungeon tilesets 16×16** | kaum | älterer, düsterer Fantasy-Stil; höchstens ein Gewölbe unter dem Archiv. Nicht hochladen nötig |
 | RPG Fantasy Battlers | nein | Kampfmonster, passen nicht |
 | QGO | nein | gehört nicht zum Spiel |
-| Serene Village, Kitchen and more (gratis) | nein | Vorgänger; Modern Interiors und Exteriors enthalten das verbessert |
+| Serene Village (gratis) | ergänzend | Felsplateaus mit Treppen (Hochebene), Teiche, Steg (Bayou), Felsen, Pilze, Holzhäuser (Pinewood Camp); etwas bunterer Stil, deshalb sparsam |
+| Kitchen and more (gratis) | nein | Vorgänger; in Modern Interiors vollständig enthalten (Thema Küche, 408 Objekte) |
 | Basic platformer tileset | nein | Seitenansicht und 32 Pixel, das Spiel ist von oben gesehen mit 16 Pixeln |
 
 **Die Zuordnung ist nur ein Ausgangspunkt** (Wunsch des Autors, 9.11.2026): Beim Kartenbau dürfen

@@ -97,6 +97,26 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
    Festschatten, der nur auf einem Boden passt. **[auto]**
 3. Jedes Bild ist im Katalog beschrieben, bevor es verbaut wird.
 
+## 7a. Maßstab und Laufzeiten
+
+Wunsch des Autors (9.11.2026): Außenkarten müssen sich so groß anfühlen wie der Ort, den sie
+zeigen. Der Held läuft 3,5 Kacheln je Sekunde (56 px); eine Kachel ist etwa ein Meter. Die Kamera
+zeigt im Hochformat etwa 8 × 15 Kacheln. Laufzeiten ohne Umwege:
+
+| Art                       | Laufzeit                                | Größe in Kacheln              |
+| ------------------------- | --------------------------------------- | ----------------------------- |
+| Raum                      | 3–6 s                                   | nach Inhalt, etwa 16–25 breit |
+| Stadt außen (Hauptstraße) | 25–40 s quer                            | 90–140 breit                  |
+| Park, Platz               | 15–25 s                                 | 50–80                         |
+| Weg zwischen zwei Orten   | 1,5–2,5 min gesamt, auf 2–3 Karten      | je Karte 100–150 lang         |
+| Feld, Weide               | größer als ein Bildschirm, bis zum Rand | mindestens 25 × 20            |
+
+1. Wege zwischen Orten winden sich und haben Abzweigungen (Hof, Aussicht, Bach), damit sie nicht
+   wie ein Flur wirken.
+2. Etwa jeder Bildschirm hat etwas zum Entdecken: Fund, Statist, Tier, Schild, Aussicht. **[auto]**
+   (Abstand zwischen Auslösern, Figuren und Belebung höchstens etwa 25 Kacheln.)
+3. Gebäude haben außen echte Größe: Gärten, Höfe und Felder mit Platz; eine Villa mit großem Garten.
+
 ## 8. Vorbild: Beispielräume des Zeichners
 
 Abgeleitet aus den fertig eingerichteten Räumen, die LimeZu den Paketen beilegt (privates Repository,

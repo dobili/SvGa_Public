@@ -194,8 +194,8 @@ und der kühle Geruch von Papier, das älter ist als alle Menschen im Ort.
 Neben der Bibliothek brummt der Waschsalon von Mr. Boateng, ein Flachbau mit rot-weißen Markisen
 und einem Neonschild, bei dem ein Buchstabe fehlt. Vor der Tür liegt ein Hund, der zu niemandem
 gehört und allen. Gegenüber stehen zwei kleine Holzhäuser mit Blumenkästen unter den Fenstern und
-Briefkästen an der Pforte. An der Bushaltestelle raucht der Fahrer des klappernden Überlandbusses
-eine Zigarette, bevor er zurück nach Maple Falls fährt. An der Anschlagtafel daneben hängen Zettel
+Briefkästen an der Pforte. An der Bushaltestelle trinkt der Fahrer des klappernden Überlandbusses
+Kaffee aus einer Thermoskanne, bevor er zurück nach Maple Falls fährt. An der Anschlagtafel daneben hängen Zettel
 vom Gemeindefest, eine Katze wird vermisst, jemand verkauft ein Kanu, und mitten darauf klebt ein
 glänzendes Plakat, das nicht hierher passt: „Perfect Move – Schach für die Zukunft. Bald auch in
 deiner Stadt.“

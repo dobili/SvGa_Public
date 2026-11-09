@@ -5,8 +5,10 @@ sondern Freiheit wie in den Pokémon-Spielen, mit Sperren, die sich später öff
 anderen Seite, Rückwegen, die sich lohnen, Wahl der Reihenfolge, wo es geht, und Nebenorten ohne
 Schachclub. Grundlagen: `05_Story_Bibel.md` (Hauptszenen und Abhängigkeiten), `07_Aufgabenzuordnung.md`
 und `orte.json` (Kapitel je Club), `08_Wege_und_Entdeckungen.md` (W1 bis W6), `09_Weltbeschreibung.md`
-(Region, Orte), `KARTENREGELN.md` 7a.2 (Maßstab: Pokémon mal 1,5 bis 2, Entscheidung des Autors). `12_Akt1_Leben.md` (mittel-1) gab es beim Schreiben
-noch nicht; Akt 1 steht deshalb hier nur im Umriss und wird von dort übernommen, sobald es da ist.
+(Region, Orte), `KARTENREGELN.md` 7a.2 (Maßstab: Pokémon mal 1,5 bis 2, Entscheidung des Autors). Akt 1 ist mit `12_Akt1_Leben.md` (mittel-1)
+abgeglichen (Abschnitte 5 und 7 dort, Entscheidungen des Haupt-Chats vom 9.11.2026: kleine Aufgaben
+mit `klein: true`, Mrs. Whitlock heißt Margaret, der Busfahrer raucht nicht, die Kühe der Kuhweide
+gehören zum Kürbishof). Sperren sind durchnummeriert; S5 ist der morsche Steg aus 12.
 
 ## 0. Grundsätze
 
@@ -47,20 +49,20 @@ Abkürzung, `[S1]` Sperre, `(N1)` Nebenort, `⇄` Schnellreise (Bus, Zug, Fähre
                                                                                             ▼
    [5 Silicon Bay]══W4 Raststätte/Glasbrücke══════════════════════════════════════[4 Ironwood]
      │  ┆                                                     (N3 Alter Steinbruch) ┄┄ [S4 Laterne] ┘
-     │  ┆ Fähre sonntags [S5] ┄┄ (N4 Pelikaninsel)
-     W5 Küstenfähre/Deich [S6 Fährpass ab Rückkehr]
+     │  ┆ Fähre sonntags [S6] ┄┄ (N4 Pelikaninsel)
+     W5 Küstenfähre/Deich [S7 Fährpass ab Rückkehr]
      ▼
    [6 Port Delacroix]══W6 Wüstenzug/Canyonpfad══[7 Desert Springs]══W7 Diner/Bergstraße══[8 Summit City]
-     │ Bayou (L5) [S7 Gummistiefel]      ┆                     ┆ Abzweig Hochebene (L9)        │
-     │                                   ┆ (N5 Sternwarte am Canyon) [S8 Laterne, nachts]       W8 Geysire/Prärie [S9 Nadel]
+     │ Bayou (L5) [S8 Gummistiefel]      ┆                     ┆ Abzweig Hochebene (L9)        │
+     │                                   ┆ (N5 Sternwarte am Canyon) [S9 Laterne, nachts]       W8 Geysire/Prärie [S10 Nadel]
      │                                                                                          ▼
      └┄┄┄┄┄┄┄ Fähre zurück ⇄ ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ [9 Crossroads] (N6 Sommerjahrmarkt)
                                                                          ╱          ╲
                                                        W9 Fernwanderweg              Q4 Alte Minenstraße (neu)
                                                                       ╱                ╲
-                                                       [10 Pinewood Camp]┄┄W10┄┄[11 Ghost Town]──(N7 Silbermine) [S10 Laterne]
+                                                       [10 Pinewood Camp]┄┄W10┄┄[11 Ghost Town]──(N7 Silbermine) [S11 Laterne]
                                                                                           │
-                                                                                   W11 Seeufer/Leuchtturm [S11 Fernpartie]
+                                                                                   W11 Seeufer/Leuchtturm [S12 Fernpartie]
                                                                                           ▼
                                                                                  [12 Capital Arena]
 ```
@@ -73,23 +75,29 @@ Town (eine Karte von etwa 150 Kacheln Länge, gut 40 Sekunden). Dazu die Abzweig
 ## 2. Akt 1 (Maple Falls, Cedar Creek; Kapitel 0, 1, 7, 8)
 
 Reihenfolge fest: erst Maple Falls (Regeln, Figurenwerte), dann Cedar Creek (Matt). Die Freiheit
-liegt in den Wegen und im Nebenort.
+liegt in den Wegen und im Nebenort. Figuren, kleine Aufgaben und Funde der Orte stehen in
+`12_Akt1_Leben.md`; hier nur, was das Wegenetz betrifft. Grundsatz aus 12: Man **sieht**, was hinter
+einer Sperre liegt, und eine Figur davor **nennt den Grund** in einem Satz; der Grund ist Alltag,
+keine Fähigkeit. Das Fahrrad gibt es erst in Akt 2.
 
 **Sperren**
 
-| Nr. | Stelle                                         | Grund in der Welt                                                 | Öffnet sich                                                                                     |
-| --- | ---------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| S1  | Gatter auf der Landstraße (Abzweig zum Hof)    | Bauer Miller lässt niemanden aufs Feld, „die Kühe sind ausgebüxt“ | nach der Rätseltafel am Ortsausgang (Torwächter: drei Mattaufgaben); Miller hat zugesehen       |
-| S2  | Zedernpfad (Q1) am Waldrand hinter dem Park    | umgestürzte Zeder auf dem Pfad                                    | **von der Cedar-Creek-Seite**: Dex baut nach der Clubnadel eine Seilwinde („fast funktioniert“) |
-| –   | Zedernwald nach Riverton (Cedar Creek Ostrand) | Brücke über den Bach im Bau (Ortsdokument Cedar Creek)            | Ende von Akt 1 (`endeAkt1Gesehen`), wie heute                                                   |
+| Nr. | Stelle                                                                 | Grund in der Welt                                                                                                                                                                                 | Öffnet sich                                                                                                | Lohn                                                                                                                                                       |
+| --- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| S1  | Landstraße, Gatter zum Kürbishof Miller (N1), gegenüber dem Apfelstand | Walt Miller lässt niemanden aufs Feld, „die Kühe sind ausgebüxt“; Ada am Apfelstand: „Walt macht nur auf, wenn einer denken kann.“                                                                | nach der Rätseltafel am Ortsausgang (Torwächter: drei Mattaufgaben); Miller hat zugesehen                  | Nebenort N1                                                                                                                                                |
+| S2  | Zedernpfad (Q1), Waldrand hinter dem Park ↔ Westrand von Cedar Creek   | Eine Zeder ist im Sturm quer über den Pfad gefallen; von Maple Falls sieht man Stamm und Kuppe. Mrs. Holm an der Zedernhecke in Cedar Creek erzählt vom Sturm („Die alte Zeder hat es erwischt.“) | **von der Cedar-Creek-Seite**: Dex baut nach der Clubnadel eine Seilwinde („fast funktioniert“)            | Abkürzung; Bank auf der Kuppe mit Aussicht auf beide Orte und die Brückenbaustelle nach Riverton (`aussichtKuppe`, Vorgeschmack auf Akt 2); Zedernzapfen   |
+| S5  | Park von Maple Falls, Steg und Uferweg zum Wasserfall                  | Absperrband der Stadt: „Steg morsch – wird erneuert.“ Mr. Pratt: „Die Stadt hat kein Geld, ich hab keine Zeit.“                                                                                   | nach der ersten Clubnadel: Pratt hat den Steg am Wochenende selbst erneuert („Für Pokale baue ich alles.“) | Aussicht auf den Wasserfall (`aussichtWasserfall`), im Geländer „M. W. + E. C. 1952“ (`fundInitialen`, Album); Mrs. Calloway erzählt von Margaret Whitlock |
+| –   | Zedernwald nach Riverton (Cedar Creek Ostrand)                         | Brücke über den Bach im Bau (Ortsdokument Cedar Creek)                                                                                                                                            | Ende von Akt 1 (`endeAkt1Gesehen`), wie heute                                                              | Akt 2; die Kuppe (S2) zeigt die Baustelle schon vorher                                                                                                     |
 
-**Abkürzung:** Q1 Zedernpfad, von Cedar Creek aus geöffnet; danach in gut 30 Sekunden von Maple Falls in
-Cedar Creek statt in 65 bis 80 Sekunden über Landstraße und Flussweg. Lohn des Rückwegs über den Pfad: Fund „Zedernzapfen
-mit Initialen“ (Album) und die Revanche gegen Jo im Park.
+**Abkürzung:** Q1 Zedernpfad, von Cedar Creek aus geöffnet; danach in gut 30 Sekunden von Maple Falls
+in Cedar Creek statt in 65 bis 80 Sekunden über Landstraße und Flussweg. Auf der Kuppe steht die Bank
+mit Aussicht (S2). Eine zweite Abkürzung am Flussweg gibt es nicht; die alte Fährstelle bleibt
+Rätselort (12, Vorschlag 4).
 
-**Rückwege mit Lohn:** Nach der zweiten Nadel hat Mr. Abernathy im Park von Maple Falls eine neue
-Stellung auf seinem Reisebrett (Matt in zwei, Kapitel 7), und Juno wartet am Zedernpfad mit dem
-Tagebuch (Album). Wer den Pfad nimmt, ist in gut 30 Sekunden dort.
+**Rückwege mit Lohn:** Nach der ersten Nadel der Steg im Park (S5). Nach der zweiten Nadel hat
+Mr. Abernathy im Park eine neue Stellung auf seinem Reisebrett (Matt in zwei, Kapitel 7), und Juno
+wartet am Zedernpfad mit dem Tagebuch (Album); über den Pfad ist man in gut 30 Sekunden dort. Lohn
+des Pfades selbst: Fund „Zedernzapfen mit Initialen“ und die Revanche gegen Jo.
 
 **Wahl:** Kürbishof (N1) vor oder nach Cedar Creek; seine Aufgaben nutzen Kapitel 0 und 1
 (Figurenzüge, Figurenwerte), passen also in beide Reihenfolgen.
@@ -98,12 +106,16 @@ Tagebuch (Album). Wer den Pfad nimmt, ist in gut 30 Sekunden dort.
 
 - Thema und Stimmung: Ein Familienhof mit Maisirrgarten, Kürbisfeld und Hofladen kurz vor dem
   Herbstfest. Es riecht nach Heu und Apfelkuchen, Kinder rennen durch die Maisgänge.
-- Nebenquests: **Der Springer im Mais** (Ausgang des Irrgartens nur mit Springerzügen erreichbar,
-  Kapitel 0); **Kürbiswaage** (Kürbisse mit Figurenwerten 1, 3, 3, 5, 9 auf zwei Wagen gleich schwer
-  verteilen, Kapitel 1); **Die ausgebüxten Kühe** (drei Kühe auf der Landstraße finden, ohne Schach).
+- Nebenquests (alle `klein: true`, sie zählen nicht für R27): **Der Springer im Mais** (Ausgang des
+  Irrgartens nur mit Springerzügen erreichbar, Kapitel 0); **Kürbiswaage** (Kürbisse mit
+  Figurenwerten 1, 3, 3, 5, 9 auf zwei Wagen gleich schwer verteilen, Kapitel 1); **Die ausgebüxten
+  Kühe** (ohne Schach): Die drei Kühe stehen auf der Kuhweide der Landstraße und am Fährstein des
+  Flusswegs; Otis hat sie „gestern schon gesehen“, Tessa beim Laufen auch. So führt die Suche über
+  beide Karten des Wegs, an Apfelstand und Fährstelle vorbei.
 - Figuren: **Bauer Walt Miller** („Schach ist wie Ernte: erst säen, dann warten.“); **Tochter Wren**,
   12, baut den Irrgarten jedes Jahr neu; **Oma Miller** im Hofladen, verkauft Kuchen und erzählt
-  vom Herbstfest 1958; **Vogelscheuche** mit Namensschild „Morphy“.
+  vom Herbstfest von früher; **Vogelscheuche** mit Namensschild „Morphy“ (Ada spottet am Apfelstand:
+  „Walt gibt seinen Vogelscheuchen Namen. Meine heißen Vogelscheuche.“).
 - Gewinn: Münzen, Fund „Maiskolben-Turm“ (Album), Karte **Abzählen** (dauerhaft) für die Kürbiswaage.
 
 ## 3. Akt 2 (Riverton, Ironwood; Kapitel 4 und 7)
@@ -169,13 +181,13 @@ Delacroix, dann die Versöhnung im Canyon (05, Kern Akt 3); auch die Kapitel unt
 
 | Nr. | Stelle                                                | Grund in der Welt                                                        | Öffnet sich                                                                                  |
 | --- | ----------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| S5  | Fähre zur Pelikaninsel (N4)                           | fährt nur sonntags (im Spiel: nach jeder Clubnadel einen „Sonntag“ lang) | nach der Nadel von Silicon Bay, danach nach jeder Nadel wieder                               |
-| S6  | Küstenfähre zurück (W5, Port Delacroix → Silicon Bay) | Rückfahrt erst mit Fährpass                                              | **Fährpass** von Miss Odile nach dem Wiederaufbau; dann Fähre in beide Richtungen            |
-| S7  | Bayou (L5) hinter Port Delacroix                      | Hochwasser im Winter                                                     | **Gummistiefel** (Akt 2, Lockport-Gasthaus) und `musikhausOffen`; heute nur `musikhausOffen` |
-| S8  | Sternwarte am Canyon (N5)                             | Pfad nur nachts zu sehen, ohne Licht gefährlich                          | **Laterne** und die Nacht nach der Versöhnung (Szene im Canyon)                              |
+| S6  | Fähre zur Pelikaninsel (N4)                           | fährt nur sonntags (im Spiel: nach jeder Clubnadel einen „Sonntag“ lang) | nach der Nadel von Silicon Bay, danach nach jeder Nadel wieder                               |
+| S7  | Küstenfähre zurück (W5, Port Delacroix → Silicon Bay) | Rückfahrt erst mit Fährpass                                              | **Fährpass** von Miss Odile nach dem Wiederaufbau; dann Fähre in beide Richtungen            |
+| S8  | Bayou (L5) hinter Port Delacroix                      | Hochwasser im Winter                                                     | **Gummistiefel** (Akt 2, Lockport-Gasthaus) und `musikhausOffen`; heute nur `musikhausOffen` |
+| S9  | Sternwarte am Canyon (N5)                             | Pfad nur nachts zu sehen, ohne Licht gefährlich                          | **Laterne** und die Nacht nach der Versöhnung (Szene im Canyon)                              |
 | –   | Clubkampf ohne Ambrose, Mentor-Zug                    | Tiefpunkt (R29)                                                          | Versöhnung, wie heute                                                                        |
 
-**Abkürzung:** Die Fähre (S6) von der Seite Port Delacroix: Wer zurück nach Silicon Bay will
+**Abkürzung:** Die Fähre (S7) von der Seite Port Delacroix: Wer zurück nach Silicon Bay will
 (Spielberichte, Theo, Revanche bei Dr. Lin), muss nicht zu Fuß über Ironwood.
 
 **Rückwege mit Lohn:** Zurück nach Ironwood mit dem Brief aus Desert Springs: Big Joe liest den
@@ -185,7 +197,7 @@ mit der Laterne: Harlans Uhrmacherkeller (Revanche, drei Siege für die Lupe nac
 **Wahl:** Pelikaninsel (N4) und Sternwarte (N5) in beliebiger Reihenfolge und zu jeder Zeit nach ihrer
 Öffnung; die Aufgaben nutzen Kapitel 1, 2 und 7, die in Akt 3 schon dran waren.
 
-**Nebenort N4 Pelikaninsel** (vor Silicon Bay, Fähre sonntags, S5)
+**Nebenort N4 Pelikaninsel** (vor Silicon Bay, Fähre sonntags, S6)
 
 - Thema und Stimmung: Ein Fischerdorf auf einer flachen Insel, bunte Holzhäuser auf Stelzen, ein
   Leuchtfeuer ohne Wärter, Pelikane auf jedem Pfahl. Winterwind, Salz, keine Bildschirme, weil das
@@ -199,7 +211,7 @@ mit der Laterne: Harlans Uhrmacherkeller (Revanche, drei Siege für die Lupe nac
   **Pelikan „Bishop“**, der die Fähre begleitet.
 - Gewinn: Fund „Treibholz-Turm“ (Album), Karte **Ablenkung**, Münzen.
 
-**Nebenort N5 Sternwarte am Canyon** (Abzweig vom Canyonpfad W6, nachts, S8)
+**Nebenort N5 Sternwarte am Canyon** (Abzweig vom Canyonpfad W6, nachts, S9)
 
 - Thema und Stimmung: Eine alte Universitätssternwarte auf einer Felsnase, Kuppel mit rostigem
   Spalt, Kakteen im Mondlicht. Still, kalt, der Himmel so voll, dass man die Milchstraße hört.
@@ -222,10 +234,10 @@ Crossroads und die Fernpartie in Ghost Town vor der Landesmeisterschaft.
 
 | Nr. | Stelle                                        | Grund in der Welt                                                                                           | Öffnet sich                                                                                               |
 | --- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| S9  | Weg 8 nach Crossroads                         | Bergstraße über den Pass erst nach der Nadel (Ward lässt keinen ohne Endspiel weg; heute `nadelSummitCity`) | Nadel von Summit City, wie heute                                                                          |
-| S10 | Silbermine bei Ghost Town (N7)                | Stollen dunkel und abgesperrt von Mr. Pruitt                                                                | **Laterne** und Pruitts Geschichte (Gespräch nach dem Grab)                                               |
-| S11 | Weg 11 zur Capital Arena                      | Wachmann von Perfect Move am Seeufer: „Nur für Gemeldete“                                                   | Fernpartie gespielt (`fernpartieGespielt`) und Novas Bitte gehört (`novaBitteGehoert`)                    |
-| S12 | Alte Minenstraße Q4 (Crossroads → Ghost Town) | Viehgatter, Rinder auf der Straße                                                                           | Hilfe bei Darlene (Ladenquest: Lieferung ins Camp) **oder** von Ghost Town aus (Pruitt öffnet das Gatter) |
+| S10 | Weg 8 nach Crossroads                         | Bergstraße über den Pass erst nach der Nadel (Ward lässt keinen ohne Endspiel weg; heute `nadelSummitCity`) | Nadel von Summit City, wie heute                                                                          |
+| S11 | Silbermine bei Ghost Town (N7)                | Stollen dunkel und abgesperrt von Mr. Pruitt                                                                | **Laterne** und Pruitts Geschichte (Gespräch nach dem Grab)                                               |
+| S12 | Weg 11 zur Capital Arena                      | Wachmann von Perfect Move am Seeufer: „Nur für Gemeldete“                                                   | Fernpartie gespielt (`fernpartieGespielt`) und Novas Bitte gehört (`novaBitteGehoert`)                    |
+| S13 | Alte Minenstraße Q4 (Crossroads → Ghost Town) | Viehgatter, Rinder auf der Straße                                                                           | Hilfe bei Darlene (Ladenquest: Lieferung ins Camp) **oder** von Ghost Town aus (Pruitt öffnet das Gatter) |
 
 **Abkürzung:** Q4 Alte Minenstraße, geöffnet von Crossroads (Darlene) oder von Ghost Town (Pruitt).
 Damit ist **Pinewood Camp ein Abstecher**, keine Pflichtstation: Crossroads → Ghost Town direkt, oder
@@ -254,7 +266,7 @@ Stufe des Lesers an.
 - Gewinn: Album-Sammelbilder, Karte **Endspielkompass** (falls nicht gekauft) oder Münzen, Extra
   „Brett Jahrmarkt“ (Bretthintergrund).
 
-**Nebenort N7 Silbermine** (am Rand von Ghost Town, Sperre S10)
+**Nebenort N7 Silbermine** (am Rand von Ghost Town, Sperre S11)
 
 - Thema und Stimmung: Die Mine, um die herum Ghost Town einst entstand: Stollen mit Holzstützen,
   Loren, Spuren der Bergleute von 1866. Kühl, dunkel, die Laterne zeichnet einen Kreis auf den Fels.
@@ -281,7 +293,7 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
 3. Akt 3: Fährpass von Miss Odile nach dem Wiederaufbau; Pelikaninsel (N4) und Sternwarte (N5); Brief
    an Mae als Verbindung zu Akt 4.
 4. Akt 4: Pinewood Camp als Abstecher (Szene 95 nicht mehr Pflicht vor Ghost Town); Alte Minenstraße
-   Q4 mit Darlenes Lieferquest; Wachmann am Seeufer (S11) als Grund für die Sperre von Weg 11;
+   Q4 mit Darlenes Lieferquest; Wachmann am Seeufer (S12) als Grund für die Sperre von Weg 11;
    Sommerjahrmarkt (N6) und Silbermine (N7); Revanchen aller Clubchefs vor der Meisterschaft.
 
 **07 Aufgabenzuordnung**
@@ -295,7 +307,7 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
 
 1. W1 ergänzen: Querverbindungen Q1 bis Q4 und Abzweige zu Nebenorten sind eigene Wege-Karten nach
    7a.2 (eine Karte, 100 bis 150 Kacheln lang; Abstecher zu Nebenorten wie ein halber Weg).
-2. Neuer Abschnitt „Sperren und Schlüssel“ (S1 bis S12; Fahrrad, Laterne, Gummistiefel, Fährpass,
+2. Neuer Abschnitt „Sperren und Schlüssel“ (S1 bis S13; Fahrrad, Laterne, Gummistiefel, Fährpass,
    Monatskarte) mit der Regel „jeder Schlüssel öffnet in zwei Akten etwas“.
 3. W2 Schnellreise: Lastkahn (Akt 2), Fähre in beide Richtungen nach Fährpass (Akt 3), Bus ab
    Crossroads zu allen Orten (Akt 4).
@@ -323,8 +335,8 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
 ## 7. Rückkehr
 
 Wunsch des Autors (9.11.2026): Zurückkehren soll sich lohnen, nicht erst nach dem Spiel. Manchmal
-schickt die Geschichte {held} bewusst zurück, manchmal findet man freiwillig etwas Neues. Akt 1 wird
-mit `12_Akt1_Leben.md` (mittel-1) abgeglichen, sobald es da ist. Technik: Veränderungen sind
+schickt die Geschichte {held} bewusst zurück, manchmal findet man freiwillig etwas Neues. Akt 1 ist
+mit `12_Akt1_Leben.md` (mittel-1) abgeglichen; dessen kleine Aufgaben und Funde ergänzen 7.3. Technik: Veränderungen sind
 Objektebenen mit Bedingung aus dem Spielstand (09, Abschnitt 3.4) und Dialogvarianten; neue Karten
 braucht es dafür nicht.
 
@@ -402,7 +414,7 @@ Damit die Bühnenbilder die Rückkehr tragen, ohne später neu gezeichnet zu wer
   eigenes Objekt; an jeder Veranda ein Feld für Kürbisse oder Lichterketten (Objektebene); an der
   Schule Platz für eine Plakatwand; am Diner eine leere Werbetafel.
 - `mapleFalls.park`: Beginn des Zedernpfads am Nordrand mit umgestürztem Baum (Objekt, das
-  verschwindet); eine zweite Bank neben Abernathys Bank für seinen Schüler; Startlinie für Jos Rennen
+  verschwindet); Absperrband am Steg (S5, Objekt `absperrungSteg`, nach der ersten Nadel neuer Steg); eine zweite Bank neben Abernathys Bank für seinen Schüler; Startlinie für Jos Rennen
   am Uferweg; ein freier Platz für das öffentliche Brett (Post-Game).
 - `mapleFalls.clubraum`: freie Wandfläche für das Nadel-Plakat.
 - `mapleFalls.wohnzimmer`: Platz auf der Anrichte für Mamas altes Turnierfoto (ab Akt 2).

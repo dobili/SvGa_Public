@@ -78,4 +78,10 @@ des Wegs ein Felsabsatz mit Bank, der **Aussichtspunkt** (`aussichtspunkt`): Bli
 alte Strecke in die Stadt wird nicht mehr befahren; man geht **unter der Brücke** hindurch, am
 Brückenfuß sitzen die Nieten „J. H.“ (`fundNieten`). Danach fällt der Weg in Kehren zum **Westrand bei
 den Reihen 20–21** (`weiterDesert`, Abstieg zur Stadt). Die Felder von Bogen, Brücke, Aussicht und
-Nieten wandern je Variante mit (Regel 10.37).
+Nieten wandern je Variante mit (Regel 10.37).3. **Bilder** (bestellt und geliefert in der Nacht 9./10.11.2026, eingebaut): roter Fels (`felsRot`,
+`sandRot`, `felsbodenRot`), Felsbogen, Eisenbahnbrücke 1879 mit Gussschild „J. H. 1879“, Säulen-,
+kleine und blühende Kakteen, Motel mit Neonschild, Garage mit Rolltor, Wüstenbahnhof, alter Bahnhof
+mit Veranda und Schild ANTIQUARIAT, Diner-Wagen, Miras flacher Stein, Geierkreis. 4. **Felsbogen und Brücke** sind Frontansichten mit Durchgang nach Norden und Süden. Sie stehen deshalb
+über senkrechten Stücken des Wegs, die Pfeiler auf Fels, das Bild vorn gezeichnet; man geht durch
+den Bogen und unter der Brücke hindurch. 5. **Motel und Bahnhof:** Der Gang vor den Motelzimmern und die Veranda des alten Bahnhofs sind
+begehbar (`frei_unten: 1` im Möbel, seit 10.11.2026).

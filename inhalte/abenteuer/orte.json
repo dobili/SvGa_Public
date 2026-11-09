@@ -3470,7 +3470,7 @@
           "wenn": "abzeichenGefunden",
           "ziel": {
             "karte": "erinnerungSiedlung.huette",
-            "ausloeser": "ankunft"
+            "ausloeser": "rueckkehr"
           }
         },
         {

@@ -1,0 +1,410 @@
+{
+  "karte": "wegPinewoodGhost.canyonrand",
+  "datei": "karten/weg-pinewood-ghost-canyonrand.json",
+  "art": "aussen",
+  "beschreibung": "Der Canyonrand auf Weg 10, 150 × 30 Kacheln. Der Weg kommt am Westrand aus dem Wald des Camps und läuft nach Osten an der Kante eines roten Canyons entlang; im Süden fällt die Felswand tief zum Canyongrund ab. Kiefern im Westen, dann Fels und Kakteen. An der Kletterstelle hängen Seile über die Kante (die Kletterwand ist bestellt), dort spielt Juniper Drei-Schach, daneben die Rätseltafel; eine Bank an der Felsnase für das Echo, ein Wegweiser am Ostrand.",
+  "wand": "felsRot",
+  "wandart": "hecke",
+  "boden": "gras",
+  "boeden": {
+    "e": "erde",
+    "r": "felsbodenRot",
+    "f": "felsbodenRot"
+  },
+  "raster": [
+    "######################################################################################################################################################",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrr#",
+    "#...........................................................reeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrr#",
+    "#..............eeeeeeeeeeeeeeeeeeeeeeee.....................reeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrr#",
+    "#..............eeeeeeeeeeeeeeeeeeeeeeee.....................reerrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrr#",
+    "#..............ee....................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrr#",
+    "eeeeeeeeeeeeeeeee....................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeee...........................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeee",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "######################################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "pg7Seil",
+      "feld": [66, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "pg7Seil",
+      "feld": [68, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Schild",
+      "feld": [63, 8]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [96, 16]
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [143, 12]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [18, 2]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [23, 4]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [28, 2]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [31, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 2]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [40, 1]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [44, 2]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [46, 4]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [49, 4]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [54, 4]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [57, 1]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [6, 6]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [21, 6]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [29, 6]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [37, 5]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [41, 8]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [51, 7]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [54, 8]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [58, 7]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [8, 10]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [12, 9]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [23, 15]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [26, 15]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [63, 4]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [67, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [71, 1]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [77, 2]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [85, 4]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [87, 2]
+    },
+    {
+      "moebel": "fels",
+      "feld": [95, 3]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [96, 2]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [101, 1]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [109, 4]
+    },
+    {
+      "moebel": "fels",
+      "feld": [111, 3]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [117, 1]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [125, 2]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [130, 4]
+    },
+    {
+      "moebel": "fels",
+      "feld": [132, 2]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [136, 3]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [145, 4]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [60, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [65, 5]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [70, 6]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [89, 6]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [95, 7]
+    },
+    {
+      "moebel": "fels",
+      "feld": [98, 8]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [104, 8]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [137, 8]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [146, 8]
+    },
+    {
+      "moebel": "fels",
+      "feld": [96, 9]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [110, 12]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [141, 9]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [64, 14]
+    },
+    {
+      "moebel": "fels",
+      "feld": [67, 15]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [72, 14]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [105, 15]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [111, 16]
+    },
+    {
+      "moebel": "fels",
+      "feld": [116, 13]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [122, 14]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [126, 14]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [67, 17]
+    },
+    {
+      "moebel": "fels",
+      "feld": [81, 18]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [86, 17]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 14],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckCamp",
+      "feld": [0, 14]
+    },
+    {
+      "name": "zurueckCamp",
+      "feld": [0, 15]
+    },
+    {
+      "name": "weiterStaubstrasse",
+      "feld": [149, 14]
+    },
+    {
+      "name": "weiterStaubstrasse",
+      "feld": [149, 15]
+    },
+    {
+      "name": "tafel",
+      "feld": [64, 10]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "juniper",
+      "feld": [68, 17]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kletterer",
+      "typ": "statist",
+      "feld": [70, 17],
+      "eigenschaften": {
+        "von": "70,17",
+        "bis": "72,17",
+        "tun": "sichert das Seil",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "adler",
+      "typ": "tier",
+      "feld": [110, 24],
+      "eigenschaften": {
+        "von": "100,24",
+        "bis": "120,24",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "einfach", "laendlich", "klassisch", "landhaus"]
+}

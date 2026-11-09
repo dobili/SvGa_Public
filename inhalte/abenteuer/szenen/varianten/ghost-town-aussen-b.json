@@ -1,0 +1,559 @@
+{
+  "karte": "ghostTown.aussen",
+  "datei": "karten/varianten/ghost-town-aussen-b.json",
+  "art": "aussen",
+  "wand": "fels",
+  "beschreibung": "Variante B (schlichter): Nur drei Häuser an der geraden Front Street: der Laden im Westen, der Saloon in der Mitte, das Sheriffbüro im Osten. Der Weg zur gesperrten Mine zweigt westlich des Saloons ab. Der Friedhof liegt im Südwesten, klein und still, das Grab ohne Namen an seinem Westrand; der Hügel mit der Bank im Südosten. Weite leere Sandflächen, wenige Kakteen.",
+  "boden": "sand",
+  "wandart": "sand",
+  "boeden": {
+    "e": "erde",
+    "d": "dielen",
+    "k": "stein"
+  },
+  "zustand": ["alt", "verwittert", "gebraucht", "neu"],
+  "stil": [
+    "rustikal",
+    "laendlich",
+    "einfach",
+    "industrie",
+    "natur",
+    "klassisch",
+    "modern"
+  ],
+  "raster": [
+    "########################################################",
+    "########################################################",
+    "########################################################",
+    "##################kk####################################",
+    "##################kk####################################",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#.................ee...................................#",
+    "#dddddddddddddddddddddddddddddddddddddddddddddddddddddd#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
+    "#.........ee..................................ee.......#",
+    "#.........ee..................................ee.......#",
+    "#.........ee..................................ee.......#",
+    "#.........ee..................................ee.......#",
+    "#.............................................ee.......#",
+    "#.............................................ee.......#",
+    "#.............................................ee.......#",
+    "#.............................................ee.......#",
+    "#.............................................ee.......#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "########################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "gt7Laden",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "gt7Saloon",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "gt7Sheriff",
+      "feld": [40, 11]
+    },
+    {
+      "moebel": "gt7Traenke",
+      "feld": [36, 25]
+    },
+    {
+      "moebel": "gt7Absperrung",
+      "feld": [18, 5]
+    },
+    {
+      "moebel": "gt7Schild",
+      "feld": [20, 5]
+    },
+    {
+      "moebel": "gt7ZaunUL",
+      "feld": [3, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOL",
+      "feld": [3, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [4, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [4, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [5, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [5, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [6, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [6, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [7, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [7, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [8, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [8, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [9, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeLinks",
+      "feld": [9, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [10, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [11, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [12, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeRechts",
+      "feld": [12, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [13, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [13, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [14, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [14, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [15, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [15, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [16, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [16, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [17, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [17, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUR",
+      "feld": [18, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOR",
+      "feld": [18, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [3, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [18, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7GrabOhneName",
+      "feld": [4, 32]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [14, 33]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [15, 30]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [7, 30]
+    },
+    {
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [6, 30]
+    },
+    {
+      "moebel": "gt7Grabhuegel",
+      "feld": [13, 30]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [6, 33]
+    },
+    {
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [14, 30]
+    },
+    {
+      "moebel": "gt7Kreuz",
+      "feld": [15, 33]
+    },
+    {
+      "moebel": "gt7Geierkreis",
+      "feld": [10, 30]
+    },
+    {
+      "moebel": "gt7Bank",
+      "feld": [45, 33]
+    },
+    {
+      "moebel": "gt7Haltestelle",
+      "feld": [52, 24]
+    },
+    {
+      "moebel": "gt7Schild",
+      "feld": [3, 17]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [31, 35]
+    },
+    {
+      "moebel": "gt7Gras",
+      "feld": [2, 31]
+    },
+    {
+      "moebel": "gt7Busch",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [23, 27]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [50, 34]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [38, 28]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [14, 26]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [45, 10]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [44, 25]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [39, 30]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [30, 31]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [4, 7]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [32, 25]
+    },
+    {
+      "moebel": "gt7Busch",
+      "feld": [5, 27]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [19, 27]
+    },
+    {
+      "moebel": "gt7Busch",
+      "feld": [18, 27]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [24, 26]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [34, 15]
+    },
+    {
+      "moebel": "gt7FelsRot",
+      "feld": [24, 35]
+    },
+    {
+      "moebel": "gt7Gras",
+      "feld": [11, 31]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [13, 15]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "gt7Gras",
+      "feld": [30, 27]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 22],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 21]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 22]
+    },
+    {
+      "name": "wegCapital",
+      "feld": [55, 21]
+    },
+    {
+      "name": "wegCapital",
+      "feld": [55, 22]
+    },
+    {
+      "name": "saloonTuer",
+      "feld": [29, 20]
+    },
+    {
+      "name": "grab",
+      "feld": [5, 33]
+    },
+    {
+      "name": "sternenhimmel",
+      "feld": [46, 32]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "victor",
+      "feld": [50, 25]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "metallsucher",
+      "typ": "statist",
+      "feld": [8, 22],
+      "eigenschaften": {
+        "von": "8,22",
+        "bis": "40,22",
+        "tun": "Mr. Pruitt sucht mit dem Metalldetektor die Straße ab",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [10, 31],
+      "eigenschaften": {
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [37, 27],
+      "eigenschaften": {
+        "verhalten": "sitzen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "echse",
+      "typ": "tier",
+      "feld": [30, 30],
+      "eigenschaften": {
+        "von": "30,30",
+        "bis": "34,30",
+        "verhalten": "ausweichen",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "b"
+}

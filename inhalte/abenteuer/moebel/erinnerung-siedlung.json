@@ -1,0 +1,169 @@
+{
+  "moebel": {
+    "es7Bett": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "es7Tisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Brett": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Ofen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_109.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "herd",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Kisten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_101.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "es7Kiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7KisteLeer": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Box_Empty_Woodwork_Crafting_Table_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Fenster": {
+      "quelle": "spiel/generic/generic_087.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Hocker": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Stool_Wood_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7StuhlR": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7StuhlL": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es7Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "es7Tuch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "es7Regal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_70.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "es7Fass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "es7Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "es7Tuer": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "es7Kerze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Consumed_Candle_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "stil": "rustikal",
+      "zustand": "alt"
+    }
+  }
+}

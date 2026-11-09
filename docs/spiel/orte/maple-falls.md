@@ -318,9 +318,29 @@ Anrichte. Szenen 5, 6, 9, 11, 12.
 | Mitte    | vier Spieltische mit Brett und je zwei Stühlen                 | Tische (3, 5), (9, 5), (3, 8), (9, 8)              | die vier Bretter; `brettOhneDame` (10, 9); Sam (4, 4) |
 | Ecken    | Pflanzen                                                       | (1, 9) und (16, 9)                                 | Regel 4.4                                             |
 
-### 4.4 bis 4.6
+### 4.4 Diner (`mapleFalls.diner`, neu)
 
-Diner, Außen und Park folgen in Runde 4. Lage und Maße stehen schon in Abschnitt 1.
+**Größe:** 18 × 12 (7a.2, öffentlicher Raum). Nordwand Reihen 0–2 (rot), Boden weiße Fliesen, Tür in
+der Südwand (8, 11), Start (8, 10); außen Tür (37, 10) in der Südfassade (44 % ↔ 44 %). Übergänge
+`dinerTuer` ↔ `dinerAusgang` in `orte.json`.
+
+**Laufwege:** Tür → nach oben zu den Hockern und zur Kasse; nach links und rechts zu den Sitzecken.
+
+| Zone     | Gegenstand                                              | Feld                                                               | Zweck                                                               |
+| -------- | ------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Nordwand | zwei Fenster, Pinnwand mit Tischsets, Foto 1962         | (3, 1), (6, 1); Pinnwand (9, 1); Foto (11, 1)                      | `tischsetWand`, `fotoSchule1962` (Auslöser folgen in Runde 5)       |
+| Tresen   | vier Glasvitrinen (`mf4Vitrine`) und Kasse (`mf4Kasse`) | Vitrinen (3, 4), (5, 4), (7, 4), (11, 4); Kasse (9, 3)             | Hector dahinter (Reihe 3); Kasse mit dem Foto daneben               |
+| Tresen   | vier Barhocker (`mf4Barhocker`)                         | (3, 5), (5, 5), (7, 5), (11, 5)                                    | Gäste; N-MF1 am Tresen                                              |
+| Küche    | Arbeitsplatte, Herd, Kühlschrank                        | (13, 2), (15, 2), (16, 1)                                          | Durchreiche-Ecke                                                    |
+| Südwand  | zwei Sitzecken: runder Tisch, zwei Stühle               | Tische (2, 8) und (12, 8); Stühle (1, 8), (4, 8), (11, 8), (14, 8) | statt vier Sitznischen: Der Katalog hat keine Sitzbänke für Nischen |
+| Ecken    | Pflanzen                                                | (1, 3), (16, 9)                                                    | Regel 4.4                                                           |
+
+Abweichungen vom Vorschlag in 12: keine Jukebox (im Katalog nicht vorhanden; `jukebox` entfällt oder
+wird ein Radio in Runde 5), zwei statt vier Sitzecken.
+
+### 4.5 und 4.6
+
+Außen und Park folgen in Runde 4.
 
 ## 5. Platzhalter für die Rückkehr
 

@@ -89,7 +89,7 @@ Szenen legen fest: `"zustand": ["neu", "gebraucht"]` (Standard) und `"stil": ["m
 Kaputtes nur, wo die Geschichte es erklärt (Ghost Town, Turnhalle nach dem Sturm, Dachboden mit
 altem Gerümpel als _eigene Ecke_, nicht gemischt).
 
-Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen),
+Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen; hat das Bild durchsichtige Ränder, nennt die Möbelangabe `"sichtbar_breite"` die Breite der deckenden Pixel, dann vergleicht die Prüfung sichtbar mit sichtbar),
 `"an_wand": true`, `"zu": "<id>"` (Stuhl oder Sofa schaut zu Tisch oder Fernseher).
 
 ## Regeln für die Anordnung (Rückmeldungen des Autors, 9.11.2026)

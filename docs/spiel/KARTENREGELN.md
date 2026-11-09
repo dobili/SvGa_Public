@@ -693,3 +693,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     endet sie in der Karte, dann mit Gehweg rundherum oder einem Übergang auf einen Weg.
 48. **Zeichen der Geschichte sind lesbar.** Sperren und Hinweise, die der Spieler verstehen muss,
     tragen Schrift oder ein eindeutiges Bild (eigene Schilder über `werkzeuge/schilder.py`).
+49. **Höhen sind zu sehen.** Was im Ort höher liegt (Bahndamm, Deich, Bruchkante, Böschung),
+    bekommt eine sichtbare Stufe: `#`-Reihen über einem Boden mit `"wand": "damm"` (Grashang mit
+    Erde und Steinen am Fuß, `werkzeuge/damm.py`) oder `"wand": "fels"` (Felswand). Beide gehen
+    draußen zusammen mit `wandart`: Der Rand zeigt dann den Boden dahinter, nur `#` über einem
+    Boden wird Hang. Ein Gleis „auf dem Damm“ flach auf der Wiese reicht nicht (Bahndamm, Nacht
+    9./10.11.2026).

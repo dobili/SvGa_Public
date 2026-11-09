@@ -2,14 +2,14 @@
   "karte": "ghostTown.aussen",
   "datei": "karten/varianten/ghost-town-aussen-b.json",
   "art": "aussen",
-  "wand": "fels",
+  "wand": "felsRot",
   "beschreibung": "Variante B (schlichter): Nur drei Häuser an der geraden Front Street: der Laden im Westen, der Saloon in der Mitte, das Sheriffbüro im Osten. Der Weg zur gesperrten Mine zweigt westlich des Saloons ab. Der Friedhof liegt im Südwesten, klein und still, das Grab ohne Namen an seinem Westrand; der Hügel mit der Bank im Südosten. Weite leere Sandflächen, wenige Kakteen.",
-  "boden": "sand",
-  "wandart": "sand",
+  "boden": "sandRot",
+  "wandart": "sandRot",
   "boeden": {
-    "e": "erde",
+    "e": "felsbodenRot",
     "d": "dielen",
-    "k": "stein"
+    "k": "felsbodenRot"
   },
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": [
@@ -23,10 +23,10 @@
   ],
   "raster": [
     "########################################################",
-    "########################################################",
-    "########################################################",
-    "##################kk####################################",
-    "##################kk####################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
     "#.................ee...................................#",
     "#.................ee...................................#",
     "#.................ee...................................#",
@@ -65,27 +65,27 @@
   ],
   "objekte": [
     {
-      "moebel": "gt7Laden",
-      "feld": [4, 10]
+      "moebel": "gt7FassadeLaden",
+      "feld": [4, 13]
     },
     {
-      "moebel": "gt7Saloon",
-      "feld": [21, 10]
+      "moebel": "gt7SaloonFassade",
+      "feld": [21, 11]
     },
     {
-      "moebel": "gt7Sheriff",
-      "feld": [40, 11]
+      "moebel": "gt7FassadeSheriff",
+      "feld": [40, 13]
     },
     {
       "moebel": "gt7Traenke",
       "feld": [36, 25]
     },
     {
-      "moebel": "gt7Absperrung",
-      "feld": [18, 5]
+      "moebel": "gt7Stollen",
+      "feld": [17, 1]
     },
     {
-      "moebel": "gt7Schild",
+      "moebel": "gt7Lore",
       "feld": [20, 5]
     },
     {
@@ -371,104 +371,104 @@
       "feld": [3, 17]
     },
     {
-      "moebel": "gt7KaktusBluete",
+      "moebel": "gt7Kaktus",
       "feld": [31, 35]
     },
     {
-      "moebel": "gt7Gras",
-      "feld": [2, 31]
+      "moebel": "gt7TumbleweedGross",
+      "feld": [12, 8]
     },
     {
-      "moebel": "gt7Busch",
-      "feld": [25, 5]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [23, 27]
+      "moebel": "gt7Tumbleweed",
+      "feld": [26, 6]
     },
     {
       "moebel": "gt7Stein",
-      "feld": [50, 34]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [38, 28]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [14, 26]
+      "feld": [51, 31]
     },
     {
       "moebel": "gt7Stein",
-      "feld": [45, 10]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [44, 25]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [12, 10]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [11, 8]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [39, 30]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [30, 31]
+      "feld": [13, 12]
     },
     {
       "moebel": "gt7KaktusBluete",
-      "feld": [4, 7]
+      "feld": [33, 27]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [32, 25]
-    },
-    {
-      "moebel": "gt7Busch",
-      "feld": [5, 27]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [19, 27]
-    },
-    {
-      "moebel": "gt7Busch",
-      "feld": [18, 27]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [24, 26]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [34, 15]
-    },
-    {
-      "moebel": "gt7FelsRot",
-      "feld": [24, 35]
-    },
-    {
-      "moebel": "gt7Gras",
-      "feld": [11, 31]
+      "moebel": "gt7Stein",
+      "feld": [17, 34]
     },
     {
       "moebel": "gt7Saguaro",
-      "feld": [13, 15]
+      "feld": [38, 28]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [13, 7]
+      "moebel": "gt7TumbleweedGross",
+      "feld": [35, 10]
     },
     {
-      "moebel": "gt7Gras",
-      "feld": [30, 27]
+      "moebel": "gt7KaktusBluete",
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [41, 7]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [32, 26]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [14, 13]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [37, 13]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [11, 32]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [30, 36]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [51, 27]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [38, 7]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [20, 28]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [1, 35]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [27, 27]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [11, 17]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [24, 35]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [45, 10]
     }
   ],
   "ausloeser": [
@@ -497,7 +497,7 @@
     },
     {
       "name": "saloonTuer",
-      "feld": [29, 20]
+      "feld": [25, 20]
     },
     {
       "name": "grab",
@@ -506,6 +506,14 @@
     {
       "name": "sternenhimmel",
       "feld": [46, 32]
+    },
+    {
+      "name": "goldmine",
+      "feld": [18, 5]
+    },
+    {
+      "name": "goldmine",
+      "feld": [19, 5]
     }
   ],
   "figuren": [

@@ -2,427 +2,383 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Variante C, reicher, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen, kleine Bilder an der Wand. Lange rote Bar mit sechs roten Hockern, Kassentheke über der Tür. Hinter der Bar das volle Rückbuffet: Kaffeemaschine, zweite Kaffeemaschine, Milchshake-Mixer, Kuchenvitrine, Pinnwand und Foto 1962. Sieben Sitznischen, sechs davon in zwei Reihen auf einem roten Teppich rechts der Tür; zwei Spielautomaten in der Ecke neben einer Palme. Großküche mit drei Herden unter drei Hauben, Grillplatte, Fritteuse, Kühlschrank, Spültisch, Arbeitstisch mit Brotbrett und ein dritter Stahltisch. Lager und zwei Toiletten wie in A. Laufwege: von der Tür nach oben zur Kasse und zur Bar, zu den Nischen, rechts durch den Gang zu den Toiletten.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern (Variante C, vom Autor gewählt): rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (ein Fenster mit Ablage), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen den hohen Lehnstühlen, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
     "##############################",
     "##############################",
     "##############################",
-    "#...................#........#",
+    "#..#..#.....#...........#....#",
+    "#..#..#.....#...........#....#",
+    "#..#..#.....#................#",
+    "#..#..#.....#...........#....#",
+    "##.#.##.....###############.##",
+    "##.#.##.....###############.##",
+    "##.#.##.....###############.##",
     "#............................#",
-    "#...................#........#",
-    "#...................#........#",
     "#............................#",
-    "#...................#........#",
-    "#...................#######.##",
-    "#.........ttttttttt.......#..#",
-    "#.........ttttttttt.##.#.##..#",
-    "#.........ttttttttt.#..#..#..#",
-    "#.........ttttttttt.#..#..#..#",
-    "#.........ttttttttt.#..#..#..#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
     "#######.######################"
   ],
   "objekte": [
     {
-      "moebel": "wzFenster",
-      "feld": [15, 1],
-      "an_wand": true
+      "moebel": "mf8Spielautomat",
+      "feld": [7, 1]
     },
     {
-      "moebel": "wzFenster",
-      "feld": [17, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf4Pinnwand",
-      "feld": [10, 1],
-      "an_wand": true,
-      "versatz": [0, 5]
-    },
-    {
-      "moebel": "wzBild",
-      "feld": [13, 1],
-      "an_wand": true,
-      "versatz": [0, 4]
+      "moebel": "mf8SpielautomatZwei",
+      "feld": [8, 1]
     },
     {
       "moebel": "mf8BildTeller",
-      "feld": [19, 1],
+      "feld": [10, 1],
       "an_wand": true,
       "versatz": [0, 6]
     },
     {
       "moebel": "mf8BildPflanze",
-      "feld": [1, 1],
+      "feld": [11, 1],
       "an_wand": true,
       "versatz": [0, 6]
     },
     {
-      "moebel": "mf5Buffet",
-      "feld": [2, 2],
-      "id": "b1"
-    },
-    {
-      "moebel": "mf5Buffet",
-      "feld": [4, 2],
-      "id": "b2"
-    },
-    {
-      "moebel": "mf5Buffet",
-      "feld": [6, 2],
-      "id": "b3"
-    },
-    {
-      "moebel": "mf5Kuchenvitrine",
-      "feld": [8, 2]
-    },
-    {
-      "moebel": "mf5Kaffeemaschine",
-      "feld": [0, 0],
-      "auf": "b1"
-    },
-    {
-      "moebel": "mf5Mixer",
-      "feld": [0, 0],
-      "auf": "b2"
-    },
-    {
-      "moebel": "mf5Kaffeemaschine",
-      "feld": [0, 0],
-      "auf": "b3"
-    },
-    {
-      "moebel": "mf5ThekeLinks",
-      "feld": [2, 6],
-      "id": "t1",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeRechts",
-      "feld": [4, 6],
-      "id": "t2",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5Kassentheke",
-      "feld": [6, 6],
-      "id": "kasse"
-    },
-    {
-      "moebel": "mf5ThekeLinks",
-      "feld": [8, 6],
-      "id": "t3",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [10, 6],
-      "id": "tm10",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [11, 6],
-      "id": "tm11",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [12, 6],
-      "id": "tm12",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [13, 6],
-      "id": "tm13",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [14, 6],
-      "id": "tm14",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [15, 6],
-      "id": "tm15",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [16, 6],
-      "id": "tm16",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [17, 6],
-      "id": "tm17",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeRechts",
-      "feld": [18, 6],
-      "id": "t4",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [3, 8],
-      "zu": "t1"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [9, 8],
-      "zu": "t3"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [11, 8],
-      "zu": "tm11"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [13, 8],
-      "zu": "tm13"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [15, 8],
-      "zu": "tm15"
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [17, 8],
-      "zu": "tm17"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [11, 11],
-      "id": "n1"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [10, 10],
-      "zu": "n1"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [12, 10],
-      "zu": "n1"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [14, 11],
-      "id": "n2"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [13, 10],
-      "zu": "n2"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [15, 10],
-      "zu": "n2"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [17, 11],
-      "id": "n3"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [16, 10],
-      "zu": "n3"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [18, 10],
-      "zu": "n3"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [11, 13],
-      "id": "n4"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [10, 12],
-      "zu": "n4"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [12, 12],
-      "zu": "n4"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [14, 13],
-      "id": "n5"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [13, 12],
-      "zu": "n5"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [15, 12],
-      "zu": "n5"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [17, 13],
-      "id": "n6"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [16, 12],
-      "zu": "n6"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [18, 12],
-      "zu": "n6"
-    },
-    {
-      "moebel": "mf5Nischentisch",
-      "feld": [2, 13],
+      "moebel": "mf9Rundtisch",
+      "feld": [9, 5],
       "id": "nw"
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [1, 12],
+      "feld": [8, 5],
       "zu": "nw"
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [3, 12],
+      "feld": [11, 5],
       "zu": "nw"
     },
     {
-      "moebel": "mf8Spielautomat",
-      "feld": [1, 9]
-    },
-    {
-      "moebel": "mf8Spielautomat",
-      "feld": [2, 9]
-    },
-    {
-      "moebel": "mf4Palme",
-      "feld": [4, 10]
+      "moebel": "mf9Wartebank",
+      "feld": [8, 8]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [19, 13]
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "mf4Pinnwand",
+      "feld": [13, 8],
+      "an_wand": true,
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [16, 8],
+      "an_wand": true,
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf9Durchreiche",
+      "feld": [18, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [27, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [2, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [4, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Kassentheke",
+      "feld": [12, 10],
+      "id": "kasse"
+    },
+    {
+      "moebel": "mf5ThekeLinks",
+      "feld": [14, 10],
+      "id": "t0",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [16, 10],
+      "id": "t16",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [17, 10],
+      "id": "t17",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [18, 10],
+      "id": "t18",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [19, 10],
+      "id": "t19",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [20, 10],
+      "id": "t20",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [21, 10],
+      "id": "t21",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [22, 10],
+      "id": "t22",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [23, 10],
+      "id": "t23",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [24, 10],
+      "id": "t24",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeRechts",
+      "feld": [25, 10],
+      "id": "tr",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5Kaffeemaschine",
+      "feld": [0, 0],
+      "auf": "t0"
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [15, 12],
+      "zu": "t0",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [17, 12],
+      "zu": "t17",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [19, 12],
+      "zu": "t19",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [21, 12],
+      "zu": "t21",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [23, 12],
+      "zu": "t23",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [25, 12],
+      "zu": "tr",
+      "versatz": [0, -7],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [2, 10],
+      "id": "n1"
+    },
+    {
+      "moebel": "mf5NischenstuhlRechts",
+      "feld": [1, 10],
+      "zu": "n1"
+    },
+    {
+      "moebel": "mf5NischenstuhlLinks",
+      "feld": [4, 10],
+      "zu": "n1"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [2, 12],
+      "id": "n2"
+    },
+    {
+      "moebel": "mf5NischenstuhlRechts",
+      "feld": [1, 12],
+      "zu": "n2"
+    },
+    {
+      "moebel": "mf5NischenstuhlLinks",
+      "feld": [4, 12],
+      "zu": "n2"
+    },
+    {
+      "moebel": "mf4Palme",
+      "feld": [27, 12]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [7, 14]
+      "feld": [7, 14],
+      "versatz": [0, 8]
     },
     {
-      "moebel": "mf5Eingangstuer",
-      "feld": [7, 14]
+      "moebel": "mf9TuerSuedGlas",
+      "feld": [7, 15],
+      "an_wand": true
     },
     {
-      "moebel": "mf5Geschirr",
-      "feld": [20, 4]
+      "moebel": "mf5Kuehlschrank",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "mf8KuehlschrankWeiss",
+      "feld": [14, 1]
     },
     {
       "moebel": "mf5Gastroherd",
-      "feld": [21, 2]
+      "feld": [15, 2]
     },
     {
-      "moebel": "mf5Gastroherd",
-      "feld": [22, 2]
+      "moebel": "mf8Herd",
+      "feld": [16, 2]
     },
     {
       "moebel": "mf8HerdOffen",
-      "feld": [23, 2]
+      "feld": [17, 2]
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [21, 1],
+      "feld": [15, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [22, 1],
+      "feld": [16, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Dunstabzug",
-      "feld": [23, 1],
+      "feld": [17, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Grillplatte",
-      "feld": [24, 2]
+      "feld": [18, 2]
     },
     {
       "moebel": "mf5Fritteuse",
-      "feld": [26, 2]
-    },
-    {
-      "moebel": "mf5Kuehlschrank",
-      "feld": [28, 1]
+      "feld": [20, 2]
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [21, 6],
-      "id": "st1"
+      "feld": [22, 2],
+      "id": "spuel"
     },
     {
       "moebel": "mf5Spuele",
-      "feld": [21, 6],
+      "feld": [22, 2],
       "vorn": true,
       "versatz": [0, 2]
     },
     {
-      "moebel": "mf5Stahltisch",
-      "feld": [24, 6],
-      "id": "st2"
+      "moebel": "mf8Zerlegetisch2",
+      "feld": [15, 4],
+      "id": "ins1"
     },
     {
       "moebel": "mf5Brotbrett",
       "feld": [0, 0],
-      "auf": "st2"
+      "auf": "ins1",
+      "versatz": [-7, 0]
     },
     {
-      "moebel": "mf5Stahltisch",
-      "feld": [26, 6]
+      "moebel": "mf5Mixer",
+      "feld": [0, 0],
+      "auf": "ins1",
+      "versatz": [7, 0]
     },
     {
-      "moebel": "mf5Kuehlschrank",
-      "feld": [28, 8]
+      "moebel": "mf9Vorrat99",
+      "feld": [25, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat100",
+      "feld": [26, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat102",
+      "feld": [27, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat105",
+      "feld": [28, 1],
+      "bauteil_ok": true
     },
     {
       "moebel": "wzKartonstapelHoch",
-      "feld": [27, 12]
+      "feld": [25, 4]
     },
     {
       "moebel": "mf4KartonStapel",
-      "feld": [27, 10]
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [28, 5]
     },
     {
       "moebel": "mf5Toilette",
-      "feld": [21, 11]
+      "feld": [1, 1]
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [22, 13]
+      "feld": [2, 5]
     },
     {
       "moebel": "mf5Toilette",
-      "feld": [25, 11]
+      "feld": [5, 1]
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [24, 13]
+      "feld": [4, 5]
     }
   ],
   "ausloeser": [
@@ -443,17 +399,14 @@
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [4, 11],
+      "feld": [8, 14],
       "eigenschaften": {
-        "von": "4,11",
-        "bis": "18,11",
+        "von": "8,14",
+        "bis": "26,14",
         "tun": "bringt Teller"
       }
     }
   ],
   "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "industrie", "modern"],
-  "boeden": {
-    "t": "teppichRot"
-  }
+  "stil": ["klassisch", "industrie", "modern"]
 }

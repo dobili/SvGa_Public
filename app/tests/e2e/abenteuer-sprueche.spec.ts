@@ -5,9 +5,10 @@
  * wo Sprüche hingehören. Die Karte ist danach verbraucht.
  */
 import { expect, test } from "@playwright/test";
+import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 
-/** Spielstand im Park, eine Kachel unter Skater Jo (32,27), Blick nach oben (Park aus Runde 4), mit einem Spruch. */
+/** Spielstand im Park, eine Kachel unter Skater Jo (Feld aus der Karte), Blick nach oben, mit einem Spruch. */
 const STAND = {
   version: 1,
   begonnen: "2026-11-08T05:00:00.000Z",
@@ -18,7 +19,11 @@ const STAND = {
   wertungPartien: 0,
   held: { name: "Kim", variante: 0 },
   handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
-  position: { karte: "mapleFalls.park", x: 32, y: 28, richtung: "oben" },
+  position: {
+    karte: "mapleFalls.park",
+    ...feldDarunter("maple-falls-park", "skaterJo"),
+    richtung: "oben",
+  },
   besuchteOrte: ["mapleFalls"],
   karten: [{ kennung: "grossesMaul", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" }],
 };

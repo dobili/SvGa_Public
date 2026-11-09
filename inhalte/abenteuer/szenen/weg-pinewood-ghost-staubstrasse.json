@@ -82,6 +82,14 @@
       "feld": [134, 10]
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [23, 5]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [30, 5]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [24, 5],
       "bauteil_ok": true
@@ -112,6 +120,14 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "ccZaunPfosten",
+      "feld": [69, 22]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [76, 22]
+    },
+    {
       "moebel": "cc3ZaunEnde",
       "feld": [70, 22],
       "bauteil_ok": true
@@ -140,6 +156,14 @@
       "moebel": "ccZaun",
       "feld": [74, 22],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [109, 4]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [116, 4]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -201,67 +225,51 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [30, 3]
-    },
-    {
-      "moebel": "dd6KaktusKlein",
       "feld": [32, 3]
     },
     {
-      "moebel": "fels",
-      "feld": [40, 3]
-    },
-    {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "dd6KaktusKlein",
       "feld": [46, 4]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "fels",
       "feld": [51, 3]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "wg4Felsgruppe",
       "feld": [60, 2]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6Saguaro",
       "feld": [62, 2]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "dd6KaktusKlein",
       "feld": [67, 3]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "fels",
       "feld": [77, 4]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "wg4Felsgruppe",
       "feld": [82, 3]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6Saguaro",
       "feld": [86, 1]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "dd6KaktusKlein",
       "feld": [91, 2]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "fels",
       "feld": [98, 4]
     },
     {
-      "moebel": "dd6KaktusKlein",
-      "feld": [105, 1]
-    },
-    {
-      "moebel": "fels",
-      "feld": [111, 1]
-    },
-    {
       "moebel": "wg4Felsgruppe",
-      "feld": [116, 3]
+      "feld": [105, 1]
     },
     {
       "moebel": "dd6Saguaro",
@@ -325,39 +333,23 @@
     },
     {
       "moebel": "wg4Felsgruppe",
-      "feld": [63, 5]
-    },
-    {
-      "moebel": "dd6Saguaro",
       "feld": [70, 6]
     },
     {
-      "moebel": "dd6KaktusKlein",
+      "moebel": "dd6Saguaro",
       "feld": [78, 8]
     },
     {
-      "moebel": "fels",
+      "moebel": "dd6KaktusKlein",
       "feld": [83, 8]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "fels",
       "feld": [88, 6]
     },
     {
-      "moebel": "dd6Saguaro",
-      "feld": [94, 6]
-    },
-    {
-      "moebel": "dd6KaktusKlein",
-      "feld": [97, 6]
-    },
-    {
-      "moebel": "fels",
-      "feld": [106, 5]
-    },
-    {
       "moebel": "wg4Felsgruppe",
-      "feld": [115, 6]
+      "feld": [94, 6]
     },
     {
       "moebel": "dd6Saguaro",

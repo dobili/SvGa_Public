@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz mit einem Weg vor den Türen und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer. Nach Osten geht es zum Canyonrand.",
+  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz mit einem Weg vor den Türen und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer und am Steg, Seerosen und eine kleine Grasinsel im See. Nach Osten geht es zum Canyonrand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -24,14 +24,14 @@
     "#..................ee......................................#",
     "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
     "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
-    "#.................deeddddddd...............................#",
+    "#..................eeddddd.................................#",
+    "#..................dddddddd................................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
     "#.................dddddddddd...............................#",
-    "#.................dddddddddd...............................#",
-    "#.................dddddddddd...............................#",
-    "#.................ddddeedddd...............................#",
+    "#..................dddddddd................................#",
+    "#...................ddeedd.................................#",
     "#.....................ee...................................#",
     "#.....................ee...................................#",
     "#.....................ee...................................#",
@@ -51,8 +51,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -100,6 +100,42 @@
     {
       "moebel": "pw7KanuQuer",
       "feld": [34, 28]
+    },
+    {
+      "moebel": "cc5BootAmSteg",
+      "feld": [42, 30]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [6, 36]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [7, 37]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [5, 38]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [52, 35]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [53, 36]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [24, 40]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [25, 41]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [17, 38]
     },
     {
       "moebel": "cc7Picknicktisch",

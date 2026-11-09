@@ -25,8 +25,9 @@ stehen schon jetzt als Übergänge da.
 
 Vom **Südrand bei den Spalten 19–20** (`zurueckCanyon`) steigt ein Pfad in zwei Kehren auf eine
 Felsnase aus rotem Fels. Oben die **Sternwarte**: Kuppel auf einem Steinsockel, Tür nach Süden
-(`kuppelTuer`). Kakteen im Mondlicht, eine Bank mit Blick nach Westen, ein alter Antennenmast. Rand
-ringsum Fels (`wand: felsRot`), offen nur der Südrand.
+(`kuppelTuer`, in allen Varianten (19, 9)). Kakteen im Mondlicht, eine Bank an der Westkante mit Blick in
+den Canyon, ein alter Antennenmast. Um Plateau und Pfad ein Felsrand (`wand: felsRot`), nach Süden mit
+zwei Reihen Felswand über einem Streifen Canyongrund; weiter weg Dunkelheit (`" "`). Offen nur der Südrand.
 
 ### 1.2 Kuppel (`sternwarte.kuppel`, 14 × 12)
 
@@ -40,7 +41,9 @@ Tür in der Mitte der Südwand (`kuppelAusgang`, Ankunft (7, 10)).
 Fels (`wand: fels`). Der Eingang liegt am **Südrand bei den Spalten 19–20** (`stollenAusgang`, zurück
 zum Stolleneingang in Ghost Town). Ein Hauptgang mit Gleis läuft nach Norden und gabelt sich: nach
 Westen zur alten Kammer der Bergleute (Tisch, Kiste, Platz für das Logbuch von 1866), nach Osten zur
-Goldader mit abgestellter Lore und Pfützen. Holzstützen alle paar Felder, eine Grubenlampe am Haken.
+Goldader (`goldader.png`) mit abgestellter Lore und Pfützen. Das Gleis endet im Norden an einem Prellbock.
+Holzstützen alle paar Felder, Grubenlampen an den Querbalken. Fels jenseits der Wände bleibt dunkel (`" "`).
+Auf dem Tisch der Kammer bleibt ein Feld frei für das Logbuch (Runde 6).
 
 ### 1.4 Übergänge
 
@@ -76,6 +79,8 @@ Bergleute steht noch ein Tisch, auf dem jemand einmal einen Brief geschrieben ha
 - **Felsnase:** Boden roter Sand und Felsboden, Pfad Erde (2 breit), Sternwarte (bestellt; Ersatz
   Holzhaus), Kakteen, Felsen, Bank, Antennenmast (Ersatz Strommast).
 - **Kuppel:** Boden Dielen, Wand blau (Nachtblau), Teleskop (bestellt; Ersatz Stehlampe), Sternkarte
-  (bestellt; Ersatz Weltkarte), Regale, Schreibtisch mit Radio, Liege, Pflanze.
-- **Stollen:** Boden Felsboden, Wand Fels, Gleis im Hauptgang, Loren (eigenes Bild `lore.png`),
-  Pfützen (`pfuetze_fels_*`), Holzstützen (bestellt; Ersatz Holzstapel an den Seiten), Kisten, Tisch.
+  (bestellt; Ersatz Weltkarte), Regale, Schreibtisch mit Funkgerät (`radio_alt.png`), Liege, Globus auf
+  Anrichte oder Tisch, Pflanze.
+- **Stollen:** Boden Felsboden, Wand Fels, Gleis im Hauptgang mit Prellbock, Lore (`lore.png`),
+  Goldader (`goldader.png`), Pfützen (`pfuetze_fels_*`), Holzstützen (`stollen_stuetze.png`), Kiste,
+  Tisch mit Hockern, Gesteinsbrocken an den Wänden.

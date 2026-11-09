@@ -3,7 +3,7 @@
   "datei": "karten/varianten/port-delacroix-musikhaus-neu-c.json",
   "art": "innen",
   "zustand_der_karte": "musikhausOffen",
-  "beschreibung": "Variante C, Wohnzimmer der Stadt: Grüne Wände, roter Teppichboden, gemütlich. In der Nordwestecke das helle Klavier und ein Regal mit Brettern, ein Bild zwischen zwei Fenstern, in der Nordostecke eine große Pflanze, ein Teppich mit einem gelben Sessel zum Zuhören. Vier runde Tische mit je einem Brett und zwei Stühlen, rechts ein Notenregal, vorn eine Kiste und eine Pflanze. Tür mit Matte in der Mitte der Südwand, Auslöser für das Schild links daneben.",
+  "beschreibung": "Variante C, Wohnzimmer der Stadt: Grüne Wände, roter Teppichboden, gemütlich. In der Nordwestecke das helle Klavier und ein Regal mit Brettern, das Schild „Musik und Schach, seit 1889“ zwischen zwei Fenstern, in der Nordostecke eine große Pflanze, ein Teppich mit einem gelben Sessel zum Zuhören. Vier runde Tische mit je einem Brett und zwei Stühlen, rechts ein Notenregal, vorn eine Kiste und eine Pflanze. Tür mit Matte in der Mitte der Südwand, Auslöser für das Schild links daneben.",
   "wand": "gruen",
   "boden": "teppichRot",
   "raster": [
@@ -46,10 +46,10 @@
       "feld": [1, 5]
     },
     {
-      "moebel": "pd6Bild",
-      "feld": [9, 1],
+      "moebel": "pd6SchildMusikhaus",
+      "feld": [7, 1],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6PflanzeGross",

@@ -304,16 +304,6 @@
       "zustand": "neu",
       "stil": "klassisch"
     },
-    "pd6Feldbett": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_158.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "bett",
-      "zustand": "gebraucht",
-      "stil": "klassisch",
-      "blick": "unten"
-    },
     "pd6Werkzeugschrank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
       "breite": 32,
@@ -412,9 +402,9 @@
       "blick": "unten"
     },
     "pd6Laptop": {
-      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_136.png",
-      "breite": 32,
-      "hoehe": 48,
+      "quelle": "spiel/eigene/laptop.png",
+      "breite": 16,
+      "hoehe": 16,
       "kollision": false,
       "art": "geraet",
       "zustand": "gebraucht",
@@ -430,16 +420,6 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
-    },
-    "pd6Werkzeugregal": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Sprout_Tools_Shelf.png",
-      "breite": 48,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "regal",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
     },
     "pd6Keyboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_174.png",
@@ -870,6 +850,127 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "pd6Fluegel": {
+      "quelle": "spiel/eigene/fluegel.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6KlavierPlane": {
+      "quelle": "spiel/eigene/klavier_plane.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6Sandsaecke": {
+      "quelle": "spiel/eigene/sandsaecke.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6SandsaeckeReihe": {
+      "quelle": "spiel/eigene/sandsaecke_reihe.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6SandsaeckeHaufen": {
+      "quelle": "spiel/eigene/sandsaecke_haufen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6BauzaunEndeLinks": {
+      "quelle": "spiel/eigene/bauzaun_ende_links.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "pd6BauzaunMitte": {
+      "quelle": "spiel/eigene/bauzaun.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "pd6BauzaunEndeRechts": {
+      "quelle": "spiel/eigene/bauzaun_ende_rechts.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "pd6SchildMusikhaus": {
+      "quelle": "spiel/eigene/schild_musikhaus.png",
+      "breite": 96,
+      "hoehe": 24,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6Basketballkorb": {
+      "quelle": "spiel/eigene/basketballkorb_wand.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6DielenLoch": {
+      "quelle": "spiel/eigene/dielen_loch.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "kaputt",
+      "stil": "rustikal"
+    },
+    "pd6DielenNass": {
+      "quelle": "spiel/eigene/dielen_nass.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "kaputt",
+      "stil": "rustikal"
+    },
+    "pd6Liege": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Armchair_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

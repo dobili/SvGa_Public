@@ -50,6 +50,16 @@
       "an_wand": true
     },
     {
+      "moebel": "pd6Basketballkorb",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Basketballkorb",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
       "moebel": "pd6Klapptisch",
       "feld": [12, 3],
       "id": "odile"

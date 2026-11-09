@@ -3,7 +3,7 @@
   "datei": "karten/varianten/port-delacroix-musikhaus-neu-b.json",
   "art": "innen",
   "zustand_der_karte": "musikhausOffen",
-  "beschreibung": "Variante B, Musikschule: Das neue Musikhaus mit hellblauen Wänden und alten, frisch geölten Dielen. An der Nordwand zwischen zwei Fenstern das helle Klavier, daneben ein Keyboard, ein Bild und ein Notenregal. Sechs graue Klapptische mit Brett in zwei Reihen wie in einem Klassenzimmer, rechts ein Regal mit Brettern und eine Bank, Pflanzen in den Ecken. Tür mit Matte in der Mitte der Südwand, Auslöser für das Schild links daneben.",
+  "beschreibung": "Variante B, Musikschule: Das neue Musikhaus mit hellblauen Wänden und alten, frisch geölten Dielen. An der Nordwand zwischen zwei Fenstern das helle Klavier, daneben ein Keyboard, das Schild „Musik und Schach, seit 1889“, links ein Notenregal. Sechs graue Klapptische mit Brett in zwei Reihen wie in einem Klassenzimmer, rechts ein Regal mit Brettern und eine Bank, Pflanzen in den Ecken. Tür mit Matte in der Mitte der Südwand, Auslöser für das Schild links daneben.",
   "wand": "blau",
   "boden": "dielen",
   "raster": [
@@ -42,14 +42,14 @@
       "feld": [8, 2]
     },
     {
-      "moebel": "pd6Bild",
-      "feld": [11, 1],
+      "moebel": "pd6SchildMusikhaus",
+      "feld": [10, 1],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6Notenregal",
-      "feld": [13, 2]
+      "feld": [1, 5]
     },
     {
       "moebel": "pd6Regal",

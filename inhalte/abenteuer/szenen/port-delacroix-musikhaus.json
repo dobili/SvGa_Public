@@ -2,7 +2,7 @@
   "karte": "portDelacroix.musikhaus",
   "datei": "karten/port-delacroix-musikhaus.json",
   "art": "innen",
-  "beschreibung": "Das alte Musikhaus am Kai nach dem Hurrikan, die Ruine (Zustand bis Szene 70). Alte Holzwände mit Wasserflecken, dunkle nasse Dielen, auf denen große Pfützen stehen, weil durch das Loch im Dach der Regen fällt. Die Tür liegt in der Mitte der Südwand. In der Nordwestecke steht das gerettete Klavier, darunter Kisten mit einem Tuch; in der Nordostecke Bretter für das neue Dach. Auf dem Boden liegen ein zerbrochener Bilderrahmen und Splitter, rechts vorn ein Haufen Trümmer in Säcken, links vorn ein Kistenstapel, in der Mitte ein Sägebock, an dem schon gearbeitet wird. Ersatz: Dielen mit Loch, nasse Dielen und das Klavier unter Plane sind bestellt, bis dahin Pfützen und ein offenes Klavier.",
+  "beschreibung": "Das alte Musikhaus am Kai nach dem Hurrikan, die Ruine (Zustand bis Szene 70). Alte Holzwände mit Wasserflecken, dunkle nasse Dielen, auf denen große Pfützen stehen, weil durch das Loch im Dach der Regen fällt. Die Tür liegt in der Mitte der Südwand. In der Nordwestecke steht das gerettete Klavier unter einer Plane, darunter Kisten mit einem Tuch; in der Nordostecke Bretter für das neue Dach. Auf dem Boden liegen ein zerbrochener Bilderrahmen und Splitter, rechts vorn ein Haufen Trümmer in Säcken, links vorn ein Kistenstapel, in der Mitte ein Sägebock, an dem schon gearbeitet wird. An zwei Stellen sind die Dielen eingebrochen, darunter steht Wasser; nasse Flecken überall.",
   "wand": "holz",
   "boden": "holzDunkel",
   "raster": [
@@ -33,7 +33,7 @@
       "an_wand": true
     },
     {
-      "moebel": "pd6KlavierRot",
+      "moebel": "pd6KlavierPlane",
       "feld": [1, 2]
     },
     {
@@ -53,20 +53,24 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "pd6PfuetzeGross",
+      "moebel": "pd6DielenLoch",
       "feld": [6, 5]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
-      "feld": [12, 4]
+      "moebel": "pd6DielenNass",
+      "feld": [12, 3]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
+      "moebel": "pd6DielenNass",
       "feld": [13, 10]
     },
     {
-      "moebel": "pd6PfuetzeGross",
+      "moebel": "pd6DielenLoch",
       "feld": [4, 10]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [9, 5]
     },
     {
       "moebel": "pd6RahmenKaputt",

@@ -1086,6 +1086,75 @@
           "wert": "positionsspieler"
         }
       ]
+    },
+    {
+      "kennung": "portDelacroix.blaeserSet1",
+      "name": "figur.blaeser.name",
+      "rolle": "story",
+      "portraet": "portraets/blaeser.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "ungenau": 1.3
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.blaeserSet2",
+      "name": "figur.blaeser.name",
+      "rolle": "story",
+      "portraet": "portraets/blaeser.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "ungenau": 1.0
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "portDelacroix.blaeserSet3",
+      "name": "figur.blaeser.name",
+      "rolle": "story",
+      "portraet": "portraets/blaeser.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 100
+      },
+      "gewichte": {
+        "ungenau": 0.8
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
     }
   ]
 }

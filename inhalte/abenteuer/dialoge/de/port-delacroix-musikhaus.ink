@@ -2,16 +2,25 @@
 // Clubraum (Story-Bibel 19.4). Gegenstand: das Schild.
 //
 // Szene der Bibel (Abschnitt 20): 70 Das Schild (Quest portDelacroix.wiederaufbau, Besuch 3 von 3,
-// frühestens nach Desert Springs). Einstiege wie in orte.json: schild, blaeser (Akt 4, L1 Schach960,
-// noch ohne Technik: die Bläserin erzählt nur).
+// frühestens nach Desert Springs). Einstiege wie in orte.json: schild, blaeser (Akt 4, L1 Schach960:
+// die Bläserin Mabel spielt drei Sets mit steigender Stärke, Begegnungen
+// portDelacroix.schach960Set1 bis Set3, Nebenquest portDelacroix.schach960, Fund setliste960).
 // Beim Aufhängen gibt es den Fund „Erstes Brett im neuen Musikhaus“ (gibFund). Variablen: nadelDesertSprings setzt die Hülle (R42), simultanGedankt die Turnhalle,
 // musikhausOffen setzt diese Datei.
 
 EXTERNAL gibFund(kennung)
+EXTERNAL beginnePartie(begegnung)
 
 VAR simultanGedankt = false
 VAR nadelDesertSprings = 0
 VAR musikhausOffen = false
+VAR held = "Du"
+VAR blaeserGetroffen = false
+VAR setlisteGeschenkt = false
+VAR varianteSchach960Gelernt = false
+VAR ausgangPortDelacroixSchach960Set1 = ""
+VAR ausgangPortDelacroixSchach960Set2 = ""
+VAR ausgangPortDelacroixSchach960Set3 = ""
 
 === schild ===
 {
@@ -49,11 +58,76 @@ Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jema
 // ---------------------------------------------------------------- Die Bläserin (Akt 4, L1)
 
 === blaeser ===
-{musikhausOffen:
-    Eine Bläserin putzt ihre Posaune und lacht dich an. „Bei uns stehen die Figuren jeden Abend anders.“ #sprecher:erzaehler
-    „Schach960. Wir würfeln die Grundreihe aus, wie eine neue Melodie. Auswendig lernen hilft nichts.“ #sprecher:erzaehler
-    Eine Partie, die jeden Abend neu beginnt. Das hätte den Kaffeehäusern gutgetan. #sprecher:ambrose #stimmung:lacht
-- else:
+{
+- not musikhausOffen:
     In der Ruine liegt ein verbeultes Notenpult. Noch spielt hier niemand. #sprecher:erzaehler
+    -> END
+- not blaeserGetroffen: -> blaeser_regel
+- not (ausgangPortDelacroixSchach960Set1 == "sieg" or ausgangPortDelacroixSchach960Set1 == "remis"): -> blaeser_set1
+- not (ausgangPortDelacroixSchach960Set2 == "sieg" or ausgangPortDelacroixSchach960Set2 == "remis"): -> blaeser_set2
+- not (ausgangPortDelacroixSchach960Set3 == "sieg" or ausgangPortDelacroixSchach960Set3 == "remis"): -> blaeser_set3
+- not setlisteGeschenkt: -> blaeser_setliste
+- else: -> blaeser_alltag
 }
+
+=== blaeser_regel ===
+~ blaeserGetroffen = true
+~ varianteSchach960Gelernt = true
+Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
+Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jeden Abend anders. #sprecher:blaeser #stimmung:froh
+Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser
+Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:ambrose
+Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:ambrose
+Zum Rochieren tippst du am Brett erst den König an und dann deinen eigenen Turm. #sprecher:ambrose
+Kein Eröffnungsbuch hilft dir hier, {held}. Nur Grundsätze: Figuren entwickeln, das Zentrum besetzen, den König in Sicherheit bringen. Kapitel 2 und 3. #sprecher:ambrose
+Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
+Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
+-> blaeser_set1
+
+=== blaeser_set1 ===
+Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. Locker, zum Warmspielen. #sprecher:blaeser
++ [„Spielen wir.“]
+    ~ beginnePartie("portDelacroix.schach960Set1")
+    -> END
++ [„Später.“]
+    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser
+    -> END
+
+=== blaeser_set2 ===
+{ausgangPortDelacroixSchach960Set1 == "sieg":
+    Nicht schlecht! Du hast nicht gesucht, was du kennst. Du hast gespielt, was da stand. #sprecher:blaeser
+}
+Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser
++ [„Gern.“]
+    ~ beginnePartie("portDelacroix.schach960Set2")
+    -> END
++ [„Später.“]
+    -> END
+
+=== blaeser_set3 ===
+Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser
+Sie wird schneller und mutiger. Lass dich nicht mitreißen. Entwickeln, Zentrum, König. Dann darfst du improvisieren. #sprecher:ambrose
++ [„Ich bin bereit.“]
+    ~ beginnePartie("portDelacroix.schach960Set3")
+    -> END
++ [„Später.“]
+    Jam-Sessions fangen sowieso immer zu spät an. #sprecher:blaeser
+    -> END
+
+=== blaeser_setliste ===
+~ setlisteGeschenkt = true
+Die Band spielt einen Tusch. Mabel hebt die Posaune wie einen Pokal. #sprecher:erzaehler
+Drei Sets, und du hast nie nach der Eröffnung gefragt. Hier, unsere Setliste. #sprecher:blaeser #stimmung:froh
+Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 und 959, die Startstellung des Abends. #sprecher:erzaehler
+~ gibFund("setliste960")
+In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedacht, dass mir das gefällt. #sprecher:ambrose #stimmung:froh
 -> END
+
+=== blaeser_alltag ===
+{~Heute steht der König auf b1. Gestern auf g1. Morgen? Wer weiß.|Auswendig lernen ist wie Noten ablesen. Schön, aber noch keine Musik.|Remy will Schach960 mit der Trompete ansagen. Ich hab Nein gesagt.} #sprecher:blaeser
++ [„Noch ein Set?“]
+    Immer. #sprecher:blaeser
+    ~ beginnePartie("portDelacroix.schach960Set3")
+    -> END
++ [„Bis bald, Mabel.“]
+    -> END

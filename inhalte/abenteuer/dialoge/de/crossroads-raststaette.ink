@@ -7,8 +7,9 @@
 // Postkarte aller Städte.
 // Einstiege wie in orte.json: darlene, nova, varianten_tisch, fund_postkarte.
 //
-// Varianten: Gebaut ist nur Blindschach (Begegnung wegCrossroadsPinewood.blindschach, gelernt
-// bei Greta an Weg 9). Die übrigen nennt der Tisch mit „kommt bald“ (VARIANTE-FEHLT, Bericht).
+// Varianten: Gebaut sind Blindschach (Begegnung wegCrossroadsPinewood.blindschach, gelernt
+// bei Greta an Weg 9) und Schach960 (Begegnung crossroads.schach960 gegen Ambrose, gelernt bei
+// Mabel im Musikhaus von Port Delacroix). Die übrigen nennt der Tisch mit „kommt bald“ (VARIANTE-FEHLT, Bericht).
 // Variablen: variante<Name>Gelernt setzen die Dialoge der Wege und von Summit City;
 // novaBitteGehoert, novaHilfeZugesagt und die übrigen setzt diese Datei. novaBitteGehoert und
 // novaHilfeZugesagt sind für die Dialoge der Capital Arena gedacht (Szene 103).
@@ -29,6 +30,7 @@ VAR varianteEntenschachGelernt = false
 VAR varianteBlindschachGelernt = false
 VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
+VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
 
 // ---------------------------------------------------------------- Darlene
@@ -74,7 +76,7 @@ Hilfst du mir? #sprecher:nova
 === varianten_tisch ===
 An einem runden Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
-{not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt):
+{not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
     Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene
     -> END
 }
@@ -103,10 +105,17 @@ Was du schon kennst: #sprecher:erzaehler
 {varianteBlindschachGelernt:
     Blindschach, von Greta an der Hütte. Das geht schon. #sprecher:erzaehler
 }
-// VARIANTE-FEHLT: alle außer Blindschach (Bericht).
+{varianteSchach960Gelernt:
+    Schach960, von Mabel im Musikhaus. Das geht schon. #sprecher:erzaehler
+}
+// VARIANTE-FEHLT: alle außer Blindschach und Schach960 (Bericht).
 + {varianteBlindschachGelernt} [Blindschach gegen Ambrose]
     Zwölf Jahre Briefe, {held}. Ich sehe das Brett mit geschlossenen Augen besser als mit offenen. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
+    -> END
++ {varianteSchach960Gelernt} [Schach960 gegen Ambrose]
+    Gemischte Figuren. Mal sehen, ob ein alter Mann noch umlernen kann. #sprecher:ambrose #stimmung:lacht
+    ~ beginnePartie("crossroads.schach960")
     -> END
 + [Nur schauen]
     -> END

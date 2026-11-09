@@ -237,6 +237,12 @@
       "ort": "hochebene",
       "name": "fund.falkeAusHolz.name",
       "text": "fund.falkeAusHolz.text"
+    },
+    {
+      "kennung": "setliste960",
+      "ort": "portDelacroix",
+      "name": "fund.setliste960.name",
+      "text": "fund.setliste960.text"
     }
   ]
 }

@@ -1,26 +1,21 @@
-# Auftrag mittel-1: Silicon Bay, Weg dorthin und Erinnerung London einrichten
+# Auftrag mittel-1: Summit City, Hochebene und Weg nach Crossroads einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der fünfundzwanzigste Auftrag, Silicon Bay und London, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, sechsundzwanzigster Auftrag; Silicon Bay und London sind zusammengeführt, danke; 1851 statt 1960 war richtig)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 272c1a2e)
-**Darf ändern:** `inhalte/abenteuer/karten/silicon-bay-*.json`, `inhalte/abenteuer/karten/weg-ironwood-silicon-*.json`,
-`inhalte/abenteuer/karten/erinnerung-london-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge,
-Vorsilbe `sb` und `ld`), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 33bbfd39)
+**Darf ändern:** `inhalte/abenteuer/karten/summit-city-*.json`, `hochebene-*.json`, `weg-summit-crossroads-*.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilben `sc`, `he`), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Desert Springs, `ds`)
 
 ## Ziel
 
-Silicon Bay (die KI-Firma): draußen (moderne Stadt, Glas, Bäume in Kübeln), Lobby (Empfang, Sofas,
-Pflanzen; der Empfangsroboter steht dort), Akademie (Schulungsraum, Bildschirme), Serverraum
-(Serverschränke aus Modern Office); Raststätte und Glasbrücke. Erinnerung London (Ambroses Jugend, um
-1960, sepia getönt): Strand (Straße, Laternen, Häuser) und Kaffeehaus (Tische, Theke, Schachbretter).
-Für London passt Serene Village oder ältere Möbel; die Sepia-Tönung macht die Zeit.
+Summit City (Bergstadt): draußen (Holzhäuser, Nadelbäume, Schnee falls vorhanden, Seilbahn), Hütte,
+Bergstation (Seilbahn, Bänke, Schalter), Bergladen (Regale, Seile, Ausrüstung). Hochebene (Vell-Familien,
+Weltbeschreibung 5.9: heutige Siedlung, keine Zeichen oder Muster realer Kulturen): Felsentürme
+(Felsplateaus aus Serene Village), Schule (Klassenraum). Geysirbecken (Wasser: Karteneigenschaft
+`stil` = `kueste`, README) und Prärie (Gras, Zäune, Felsen).
 
-Hinweis: Beim letzten Zusammenführen gab es einen Konflikt in `moebel.json`, weil niedrig-1 parallel
-arbeitete. Bitte neue Einträge am Ende anfügen und vor dem Push `claude/friendly-shannon-y8bf90` erneut
-hereinholen.
-
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Acht Karten eingerichtet: Silicon Bay draußen, Lobby, Akademie, Serverraum; Raststätte und
 Glasbrücke; Erinnerung London Strand und Kaffeehaus. 31 neue Möbel am Ende von `moebel.json`

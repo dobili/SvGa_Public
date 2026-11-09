@@ -3836,6 +3836,16 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch"
+    },
+    "cc4SchildWaschsalon": {
+      "quelle": "spiel/eigene/schild_waschsalon.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

@@ -79,8 +79,16 @@ export function stelleMoebelAuf(
     bild.setDepth(m.y + m.angabe.hoehe - kachel / 2);
     if (!m.angabe.kollision) continue;
     const oben = m.angabe.hoehe > kachel ? kachel : 0;
-    const flaeche = szene.add.zone(m.x, m.y + oben, m.angabe.breite, m.angabe.hoehe - oben);
-    flaeche.setOrigin(0, 0);
+    // Unsichtbares Rechteck als Körper (ein Rechteck kennt seine Ecken; mit einer Zone saß der
+    // Körper versetzt und sperrte Nachbarfelder).
+    const hoehe = m.angabe.hoehe - oben;
+    const flaeche = szene.add.rectangle(
+      m.x + m.angabe.breite / 2,
+      m.y + oben + hoehe / 2,
+      m.angabe.breite,
+      hoehe,
+    );
+    flaeche.setVisible(false);
     gruppe.add(flaeche);
   }
   gruppe.refresh();

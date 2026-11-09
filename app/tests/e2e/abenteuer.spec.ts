@@ -54,7 +54,10 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   // Der Held steht auf (2,7) und schaut nach oben; das Brett liegt auf (5,4): rechts bis (5,7),
   // dann hoch bis (5,5), das Brett ist Kollision und liegt dann vor ihm.
   await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,7");
-  await laufeBis(page, "ArrowRight", "5,7");
+  // Erst bis (6,7) und zurück: Der Held steht dann rechts in seiner Kachel und streift beim Hochgehen
+  // nicht die Truhe auf (3,5)–(4,6).
+  await laufeBis(page, "ArrowRight", "6,7");
+  await laufeBis(page, "ArrowLeft", "5,7");
   await laufeBis(page, "ArrowUp", "5,5");
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 5000 });

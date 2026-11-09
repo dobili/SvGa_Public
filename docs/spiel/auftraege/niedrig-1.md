@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Maple Falls mit echten Möbeln einrichten (erste spielbare Demo)
 
-**Stand:** fertig (niedrig-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der fünfzehnte Auftrag, Maple Falls mit Möbeln, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 90d3448b)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/moebel.json`,

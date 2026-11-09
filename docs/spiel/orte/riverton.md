@@ -344,6 +344,15 @@ ebenfalls Spalten 24–25; mit mittel-4 abgestimmt, `orte/ironwood.md` 1.6).
 oben Ginster, unten Birken; offen nur Nord (17–18) und Süd (24–25). **Abzweige:** zwei (Bank in BR6, Kehre
 3 mit Wegkreuz, je 3 lang). **Laufzeit:** durch die Serpentinen ≈ 190 Kacheln für 160 Reihen.
 
+**Gebaut (Runde 5, mittel-3):** feste Geometrie in drei Varianten: Kanal 20–24 bis Reihe 65, in der
+Schlucht als Band 4–24 / 61–65 nach Westen, dann 4–9 bis zum Südrand; Pfad 17–18 von Norden, Fußbrücke
+17–18 / 61–65 über die Schlucht, danach fünf Serpentinen (Reihen 92–93, 108–109, 124–125, 140–141,
+150–151) mit Holzgeländer unter jedem Bein, Ausgang 24–25 am Südrand. Auslöser `zurueckKanalweg`
+(17–18, 0), `weiterIronwood` (24–25, 159), `fundNietenkopf` (18, 62) und `zeitnotTrick` (17, 64) auf
+der Brücke, Start (17, 1); `waerterhaus` und `aussichtTal` kommen in Runde 6. A Ginster und rotes
+Wärterhäuschen; B Nadelbäume, Bretterschuppen, viel Geröll; C Ginster, Wildblumen, grünes Häuschen,
+Birkenhain, zwei Bänke, lange Graffiti-Mauer.
+
 ### 1.6 Lockport (`lockport.aussen`, 56 × 40, Nebenort N2)
 
 Neun Häuser (mit Wärterhaus und Gasthaus) um eine Schleuse am Seitenarm Q2 (`13_Wegenetz.md` 3). Der **Seitenarm** kommt am

@@ -53,7 +53,8 @@
     },
     {
       "moebel": "mf3Pokal",
-      "auf": "anrichte"
+      "auf": "anrichte",
+      "versatz": [0, -7]
     },
     {
       "moebel": "mf2Lehrerpult",
@@ -62,7 +63,8 @@
     },
     {
       "moebel": "mf2Globus",
-      "auf": "pult"
+      "auf": "pult",
+      "versatz": [8, 6]
     },
     {
       "moebel": "mf2Spind",
@@ -159,7 +161,8 @@
     {
       "moebel": "mf4Pinnwand",
       "feld": [1, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf4RegalNiedrig",

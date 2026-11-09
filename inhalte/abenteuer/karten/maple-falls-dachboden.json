@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 23,
+  "nextobjectid": 24,
   "layers": [
     {
       "id": 1,
@@ -87,7 +87,7 @@
           "id": 1,
           "name": "start",
           "type": "ausloeser",
-          "x": 48,
+          "x": 32,
           "y": 80,
           "width": 16,
           "height": 16,
@@ -105,7 +105,7 @@
           "id": 2,
           "name": "treppe",
           "type": "ausloeser",
-          "x": 48,
+          "x": 16,
           "y": 64,
           "width": 16,
           "height": 16,
@@ -158,12 +158,12 @@
         },
         {
           "id": 7,
-          "name": "mf4TreppeAb",
+          "name": "mf4Luke",
           "type": "moebel",
           "x": 16,
-          "y": 0,
-          "width": 96,
-          "height": 80,
+          "y": 32,
+          "width": 32,
+          "height": 48,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -521,6 +521,29 @@
               "name": "kollision",
               "type": "bool",
               "value": true
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "mf2BildWald",
+          "type": "moebel",
+          "x": 64,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
             }
           ]
         }

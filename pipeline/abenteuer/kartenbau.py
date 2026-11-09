@@ -75,7 +75,12 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             if not basis:
                 befunde.append(f"{eintrag['moebel']}: Unterlage {eintrag['auf']} fehlt (vorher nennen)")
                 continue
-            if angabe["breite"] > basis["breite"] - 4:
+            # Mit „sichtbar_breite“ (Möbelangabe, deckende Pixel) zählt die sichtbare Breite; sonst
+            # die Bildbreite mit 4 Pixeln Spiel für den durchsichtigen Rand der Unterlage.
+            unterlage = moebel[basis["name"]]
+            spiel = 0 if "sichtbar_breite" in unterlage else 4
+            sichtbar = angabe.get("sichtbar_breite", angabe["breite"])
+            if sichtbar > unterlage.get("sichtbar_breite", unterlage["breite"]) - spiel:
                 befunde.append(f"{eintrag['moebel']} ist breiter als die Platte von {eintrag['auf']}")
             x = basis["x"] + (basis["breite"] - angabe["breite"]) // 2 + dx
             # Fuß des Gegenstands auf der Tischplatte: gut die Hälfte der Unterlage von oben.
@@ -116,8 +121,11 @@ def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
     return {(x0 + a, y0 + b) for a in range(spalten) for b in range(oben, reihen)}
 
 
-def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict]) -> list[str]:
-    """Rand, Wände, Überlappungen und zugestellte Auslöser."""
+def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:
+    """Rand, Wände, Überlappungen und zugestellte Auslöser.
+
+    Außen ist die Randwand nur Kollision und zeigt den Boden dahinter (KARTENREGELN 10.2): Zäune,
+    Hecken und Gleise dürfen dort bis in die letzte Spalte oder Reihe stehen."""
     befunde = []
     breite, hoehe = len(zeilen[0]) * K, len(zeilen) * K
     belegt: dict[tuple[int, int], str] = {}
@@ -132,6 +140,9 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict]) -> list[s
                 and 0 <= feld[0] < len(zeilen[0])
                 and zeilen[feld[1]][feld[0]] in GESPERRT
             )
+            am_rand = feld[0] in (0, len(zeilen[0]) - 1) or feld[1] in (0, len(zeilen) - 1)
+            if auf_wand and aussen and am_rand and zeilen[feld[1]][feld[0]] == WAND:
+                auf_wand = False
             if auf_wand and feld[1] == unten:
                 befunde.append(f"{s['name']} steht auf Wand oder Wasser bei {feld}")
             if feld in belegt:
@@ -249,7 +260,7 @@ def baue(pfad: Path) -> list[str]:
     zeilen = raster(szene)
     gesetzt, befunde = platziere(szene, moebel)
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])
-    befunde += pruefe(zeilen, gesetzt, punkte)
+    befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen")
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
     ziel = INHALTE / szene["datei"]
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")

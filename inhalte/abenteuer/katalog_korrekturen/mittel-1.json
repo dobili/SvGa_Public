@@ -91,5 +91,14 @@
   "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_59.png": {
     "sicher": 0.85,
     "korrektur": "mittel-1"
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Topsoil_Arable_Vertical_2_Single_16x16.png": {
+    "beschreibung": "Kleines Gemüsebeet: dunkle Erde in einem Holzrahmen mit Frontbohle, senkrecht, 2 × 3 Kacheln.",
+    "art": "beet",
+    "innen_aussen": "aussen",
+    "ganz": true,
+    "befestigung": "flach",
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
   }
 }

@@ -73,9 +73,7 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
     # Brückenfelder (Szene „bruecken“) sind begehbar, gezeichnet wird darunter aber Wasser mit
     # durchgehendem Ufer; die Brücke selbst ist ein Bild aus dem Katalog (KARTENREGELN 10.6).
     bruecken = set(szene.get("bruecken", []))
-    zeilen = [
-        "".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)
-    ]
+    zeilen = ["".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)]
     bild = Image.new("RGBA", (len(zeilen[0]) * K, len(zeilen) * K), DUNKEL)
     zeichner = ImageDraw.Draw(bild)
     grund = szene.get("boden", "holzHell")
@@ -195,10 +193,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
-    teile = [
-        (s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"]))
-        for s in gesetzt
-    ]
+    teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):

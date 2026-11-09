@@ -200,8 +200,12 @@
       "feld": [26, 4]
     },
     {
-      "moebel": "st5Steinpalette",
+      "moebel": "wg4Felsgruppe",
       "feld": [36, 13]
+    },
+    {
+      "moebel": "cc4Holzkiste",
+      "feld": [36, 16]
     },
     {
       "moebel": "st5Bohlen",

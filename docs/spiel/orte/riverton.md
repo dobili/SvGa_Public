@@ -34,10 +34,10 @@ Karten.
 ```
 
 Die Reise geht in Akt 2 erst nach Osten (Weg 2, quer wie Weg 1), dann nach Süden (Weg 3, hoch wie
-ein Pokémon-Weg). Der **Ashford River** kommt von Cedar Creek her, begleitet den Bahndamm im Süden und
-teilt Riverton in eine Bahnhofshälfte (Norden) und eine Parkhälfte (Süden). Am Südufer beginnt der
+ein Pokémon-Weg). Der **Ashford River** begleitet den Bahndamm ein Stück im Süden, verlässt ihn vor Riverton nach Süden
+und kommt von Süden heran in die Stadt (Prüfbericht Akt 2, Befund 9); er teilt Riverton in eine Bahnhofshälfte (Norden) und eine Parkhälfte (Süden). Am Südufer beginnt der
 **Kanal**; er läuft nach Süden bis Ironwood. Sein **Seitenarm** zweigt nach Westen ab und führt durch
-die Schleuse von Lockport zurück zum Fluss.
+die Schleuse von Lockport ins Hafenbecken des Dorfes; dort endet er, ohne Anschluss an den Fluss.
 
 **Maße und Laufzeiten (7a.2: Weg ab Akt 2 zwei Karten, zusammen 280 bis 400 lang, 80 bis 115 s):**
 
@@ -108,19 +108,21 @@ Der Weg (Erde, zwei Felder) kommt am **Westrand in den Reihen 14–15** aus dem 
 einem Bogen an den Fuß des Bahndamms (Reihen 8–9 ab Spalte 30) und folgt ihm bis zum **Ostrand in den
 Reihen 8–9** (Anschluss an Riverton). Zwischen Spalte 80 und 110 schwingt er nach Süden aus (Reihen
 11–12, an den Kleingärten vorbei) und kehrt zurück. Der **Bahndamm** liegt im Norden: Böschung Reihen 2
-und 6, Schotter und **ein Gleis** in den Reihen 3–5, vom West- bis zum Ostrand (Gleise sind nie begehbar,
-Zaun nur an den Haltepunkten). Der **Ashford River** tritt ab Spalte 60 am Südrand auf (Reihen 24–29) und
-reicht bis zum Ostrand.
+und 6, Schotter und **ein Gleis** in den Reihen 3–5. Das Gleis kommt im Westteil vom **Nordrand** herein
+(Spalten 24–26, Bogen nach Osten bis Spalte 30; nach Norden liegt der Haltepunkt von Cedar Creek,
+Prüfbericht Akt 2, Befund 8) und läuft dann bis zum Ostrand (Gleise sind nie begehbar, Zaun nur an den
+Haltepunkten). Der **Ashford River** tritt ab Spalte 60 am Südrand auf (Reihen 24–29), begleitet den Weg
+bis Spalte 110 und biegt dann nach Süden aus der Karte (Befund 9).
 
 ```text
  Spalte: 0     15    30    45    60    75    90    105   120   135  149
  Reihe 2 ┌────────────── Böschung ─────────────────────────────────────┐
- R3–5    │═══════════════ Gleis auf dem Schotter (West- bis Ostrand) ══════════│ (nicht begehbar)
+ R0–5    │    ║(Nordrand, 24–26)══ Gleis auf dem Schotter bis zum Ostrand ══════════│ (nicht begehbar)
  Reihe 6 │──── Böschung ──[Signal]──[Haltepunkt]─[Durchlass]────[Waggon]──[Plakat]│
  R8–9    │        ╔═══════════════════════════╗   ╔════════════════════════════════ → Riverton
  R11–12  │   ╔═══╝  B2 Gwen   B3        B4 Quinn ╚═══╝ Kleingärten B7                │
  R14–15 ═╝ B1 Birken                       B5        Bank B6                         │
- R24–29  │                                  ≈≈≈≈≈≈≈≈≈ Fluss (Süd- und Ostrand) ≈≈≈≈≈│
+ R24–29  │                                  ≈≈≈≈≈≈≈≈≈ Fluss (bis 120, dann Südrand)≈≈≈≈≈│
          └─────────────────────────────────────────────────────────────┘
           B1    B2    B3    B4    B5    B6    B7    B8    B9    B10
 ```
@@ -138,8 +140,9 @@ reicht bis zum Ostrand.
 | B9 (120–134) Stadtrand  | die ersten Plakate    | Lagerzaun, **Plakatwand** „Perfect Move Park – Schach für alle, ohne Wartezeit“ (Szene 28)                                                               | Plakat (`plakatPerfectMove`)                |
 | B10 (135–149) Einfahrt  | Riverton in Sicht     | Sichtachse auf den Uhrturm des Bahnhofs und die Steinbrücke                                                                                              | Uhrturm, Güterzug rattert vorbei (Belebung) |
 
-**Ränder:** Norden Bahndamm mit Gleis bis zu beiden Rändern, dahinter Gebüsch; Süden Wiesen und ab
-Spalte 60 der Fluss bis Süd- und Ostrand (Regel 6.4); offen nur West (14–15) und Ost (8–9).
+**Ränder:** Norden Bahndamm mit Gleis vom Nordrand (Westteil) bis zum Ostrand, dahinter Gebüsch; Süden
+Wiesen und zwischen Spalte 60 und 120 der Fluss bis zum Südrand (Regel 6.4); offen nur West (14–15) und
+Ost (8–9).
 **Abzweige:** drei (Haltepunkt, Durchlass, Gartenpforte), jedes mit Ziel. **Belebung:** Güterzug
 (einmal je Besuch, Objekt mit Weg auf dem Gleis), Gwen, Gärtnerin, Krähen, Hase, Katze.
 
@@ -158,12 +161,12 @@ Abschnitte zu je 18 × 14 Kacheln (Spalten A bis D, Reihen 1 bis 4).
  R8–9  ═══╪══ Fußweg am Zaun ══╗       Tür (36,13)          Laderampe          │
  R14–18   │                   ╚═ Vorplatz (18–52) · Wegweiser · Brunnen ·[Bus]│
  R19–22   │─ Gehweg / ════ Water Street (R20–21) ═══════════════════ Wendeplatz│
- R23–29   │[Häuser][Handyladen][ Markt 18–31 ][Werkstatt|Schuppen][Café]║Brücke║[Lagerhäuser, Kran]
+ R23–29   │[Häuser][Handyladen][ Markt 18–31 ][Bäckerei][Café]║Brücke║[Lagerhäuser, Kran]
  R30–32   │──── Uferpromenade ─────────────────────── Kaitreppe ║    ║──────── │
  R33–40   │≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ Ashford River (West- bis Ostrand) ≈║50–53║≈≈≈≈≈≈≈≈│
  R41–42   │──── Uferweg Süd ────────────────────────────╨─ Parktor ─[Anleger]╔Becken╗
- R43–48   │[Wohnwagen] Wiese  Bäume        [PAVILLON 36–45] Pegelhaus ║  ≈≈  ║
- R49–55   │ Wiese · Brunnen · Bildschirmtische (22–34) · Platz   Treidelpfad 57–58║Kanal║
+ R43–48   │[Wohnwagen][Werkstatt Albescu] Wiese [PAVILLON 36–45] Pegelhaus ║  ≈≈  ║
+ R49–55   │  [Schuppen] · Bildschirmtische (22–34) · Platz   Treidelpfad 57–58║Kanal║
           └─────────────────┴─────────────────┴─────────────────┴──── Südrand → Kanalweg
                     A                 B                 C               D
 ```
@@ -176,26 +179,27 @@ Süd; 43–55 Park, Kanalbecken und Kanal.
 
 **Gebäude und Plätze:**
 
-| Gebäude, Platz                       | Lage außen (Spalten / Reihen), Tür                                                                       | Fassade                                                       | Innen                                                 | Begehbar      |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------- | ------------- |
-| Bahnhof Riverton (Backstein, 1880er) | 30–42 / 5–13, Doppeltür (36, 13) in der Südfassade (7 von 13 = 54 %), Uhrturm über der Tür (35–37 / 5–8) | 13 breit, Rundbogenfenster, Vordach über der Tür              | `bahnhofshalle` 26 × 16, Tür Südwand Spalte 13 (50 %) | ja            |
-| Stellwerk (Kulisse)                  | 21–26 / 6–11                                                                                             | Holz auf Backsteinsockel, Fensterband                         | –                                                     | nein          |
-| Güterschuppen (Kulisse)              | 45–60 / 6–12, Laderampe 45–60 / 13 mit Frachtkisten und Sackkarre                                        | Backstein, Schiebetore                                        | –                                                     | nein          |
-| Wasserturm der Bahn                  | 64–69 / 5–12                                                                                             | Holztank auf Eisenbeinen                                      | –                                                     | Landmarke     |
-| Bahnhofsvorplatz                     | 18–52 / 14–18: Pflaster, Brunnen (26–28 / 15–17), **Wegweiser** (20, 18) an der Ecke zur Water Street    | –                                                             | –                                                     | Platz         |
-| Bushaltestelle (Bus nach Ironwood)   | Wartehäuschen 46–48 / 14–15, Schild (49, 18) an der Bordsteinkante                                       | Glas und Metall                                               | –                                                     | Kulisse       |
-| Reihenhäuser West (zwei)             | 1–7 / 23–28, Türen in der Nordfassade                                                                    | Backstein, Treppen mit drei Stufen                            | –                                                     | nein          |
-| Handyladen „Perfect Move Store“      | 9–16 / 23–28, Tür (12, 23) in der Nordfassade                                                            | 8 breit, Glasfront, Leuchtschild, Tablets im Schaufenster     | –                                                     | Kulisse       |
-| Markt                                | 18–31 / 23–29: vier Stände unter Markisen in zwei Reihen (Gemüse, Blumen, Brezeln, Fisch), Pflaster      | –                                                             | –                                                     | Platz         |
-| Fahrradwerkstatt Albescu             | 33–40 / 23–26, Rolltor (36–37, 23) zur Straße, geschlossen                                               | 8 breit, Schild „Albescu Bikes – geschlossen“, Fahrrad-Emblem | (Wohnung oben, nicht begehbar)                        | nein          |
-| Schuppen hinter der Werkstatt        | 35–39 / 27–29, Tür (37, 29) in der Südfassade zur Uferpromenade; Hofzaun 33–40 / 27                      | 5 breit, Holz, Vorhängeschloss                                | `schuppen` 10 × 8, Tür Südwand Spalte 5 (50 %)        | ja (E4)       |
-| Café „Dockside“ (Kulisse)            | 42–48 / 23–27, zwei Tische draußen auf dem Gehweg Süd                                                    | 7 breit, Markise                                              | –                                                     | nein          |
-| Steinbrücke                          | 50–53 / 22–42 (Rampe ab der Water Street), über dem Fluss Reihen 32–41                                   | Stein mit Bögen, Laternen, Banner von Perfect Move            | –                                                     | Weg           |
-| Lagerhäuser am Kai (Kulisse)         | 55–71 / 23–29, Kran am Kai (62, 31)                                                                      | Backstein, Ladeluken                                          | –                                                     | nein          |
-| Slicks Wohnwagen                     | 3–9 / 44–47, Tür (6, 47) an der Südseite; Klappstuhl, Grill, Kurierrad davor                             | 7 lang, weiß mit Rostrand                                     | `wohnwagen` 14 × 9, Tür Südwand Spalte 7 (50 %)       | ja (Szene 37) |
-| Parkpavillon                         | 36–45 / 43–48, Treppe und Eingang (40–41, 48) in der Südseite; Platz davor 36–45 / 49–50                 | 10 breit, achteckiges Holzdach, offene Seiten mit Geländer    | `pavillon` 20 × 14, Eingang Südwand Spalte 10 (50 %)  | ja            |
-| Pegelhaus (Kanalmeister)             | 52–55 / 45–48, Pegellatte am Becken                                                                      | 4 breit, Holz                                                 | –                                                     | nein          |
-| Kanalbecken und Anleger              | Becken 58–68 / 41–46 (offen zum Fluss), Anleger 56–57 / 42–46 mit Pollern und Schild „Ashford Belle“     | –                                                             | –                                                     | Platz         |
+| Gebäude, Platz                       | Lage außen (Spalten / Reihen), Tür                                                                                             | Fassade                                                       | Innen                                                 | Begehbar      |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- | ----------------------------------------------------- | ------------- |
+| Bahnhof Riverton (Backstein, 1880er) | 30–42 / 5–13, Doppeltür (36, 13) in der Südfassade (7 von 13 = 54 %), Uhrturm über der Tür (35–37 / 5–8)                       | 13 breit, Rundbogenfenster, Vordach über der Tür              | `bahnhofshalle` 26 × 16, Tür Südwand Spalte 13 (50 %) | ja            |
+| Stellwerk (Kulisse)                  | 21–26 / 6–11                                                                                                                   | Holz auf Backsteinsockel, Fensterband                         | –                                                     | nein          |
+| Güterschuppen (Kulisse)              | 45–60 / 6–12, Laderampe 45–60 / 13 mit Frachtkisten und Sackkarre                                                              | Backstein, Schiebetore                                        | –                                                     | nein          |
+| Wasserturm der Bahn                  | 64–69 / 5–12                                                                                                                   | Holztank auf Eisenbeinen                                      | –                                                     | Landmarke     |
+| Bahnhofsvorplatz                     | 18–52 / 14–18: Pflaster, Brunnen (26–28 / 15–17), **Wegweiser** (20, 18) an der Ecke zur Water Street                          | –                                                             | –                                                     | Platz         |
+| Bushaltestelle (Bus nach Ironwood)   | Wartehäuschen 46–48 / 14–15, Schild (49, 18) an der Bordsteinkante                                                             | Glas und Metall                                               | –                                                     | Kulisse       |
+| Reihenhäuser West (zwei)             | 1–7 / 23–28, Türen in der Nordfassade                                                                                          | Backstein, Treppen mit drei Stufen                            | –                                                     | nein          |
+| Handyladen „Perfect Move Store“      | 9–16 / 23–28, Tür (12, 23) in der Nordfassade                                                                                  | 8 breit, Glasfront, Leuchtschild, Tablets im Schaufenster     | –                                                     | Kulisse       |
+| Markt                                | 18–31 / 23–29: vier Stände unter Markisen in zwei Reihen (Gemüse, Blumen, Brezeln, Fisch), Pflaster                            | –                                                             | –                                                     | Platz         |
+| Bäckerei (Kulisse)                   | 33–40 / 23–26, Tür (36, 23) zur Straße; Hof mit Mehlsäcken und Fahrradständer 33–40 / 27–29                                    | 8 breit, Schaufenster mit Brezeln, Markise                    | –                                                     | nein          |
+| Fahrradwerkstatt Albescu             | 12–19 / 45–48 am Westteil des Parks, Rolltor (15–16, 45) zum Uferweg Süd, geschlossen                                          | 8 breit, Schild „Albescu Bikes – geschlossen“, Fahrrad-Emblem | (Wohnung oben, nicht begehbar)                        | nein          |
+| Schuppen hinter der Werkstatt        | 14–18 / 51–53 (Bibel 9.2: „hinter dem Park“), Tür (16, 53) in der Südfassade zum Hinterweg 0–34 / 54–55; Hofzaun 12–19 / 49–50 | 5 breit, Holz, Vorhängeschloss                                | `schuppen` 10 × 8, Tür Südwand Spalte 5 (50 %)        | ja (E4)       |
+| Café „Dockside“ (Kulisse)            | 42–48 / 23–27, zwei Tische draußen auf dem Gehweg Süd                                                                          | 7 breit, Markise                                              | –                                                     | nein          |
+| Steinbrücke                          | 50–53 / 22–42 (Rampe ab der Water Street), über dem Fluss Reihen 32–41                                                         | Stein mit Bögen, Laternen, Banner von Perfect Move            | –                                                     | Weg           |
+| Lagerhäuser am Kai (Kulisse)         | 55–71 / 23–29, Kran am Kai (62, 31)                                                                                            | Backstein, Ladeluken                                          | –                                                     | nein          |
+| Slicks Wohnwagen                     | 3–9 / 44–47, Tür (6, 47) an der Südseite; Klappstuhl, Grill, Kurierrad davor                                                   | 7 lang, weiß mit Rostrand                                     | `wohnwagen` 14 × 9, Tür Südwand Spalte 7 (50 %)       | ja (Szene 37) |
+| Parkpavillon                         | 36–45 / 43–48, Treppe und Eingang (40–41, 48) in der Südseite; Platz davor 36–45 / 49–50                                       | 10 breit, achteckiges Holzdach, offene Seiten mit Geländer    | `pavillon` 20 × 14, Eingang Südwand Spalte 10 (50 %)  | ja            |
+| Pegelhaus (Kanalmeister)             | 52–55 / 45–48, Pegellatte am Becken                                                                                            | 4 breit, Holz                                                 | –                                                     | nein          |
+| Kanalbecken und Anleger              | Becken 58–68 / 41–46 (offen zum Fluss), Anleger 56–57 / 42–46 mit Pollern und Schild „Ashford Belle“                           | –                                                             | –                                                     | Platz         |
 
 Regel wie in Maple Falls: Die Fassade ist halb so breit wie das Erdgeschoss innen (gerundet), die Tür
 sitzt außen und innen an derselben relativen Stelle (±1 Kachel). Häuser der Südseite der Water Street
@@ -204,24 +208,24 @@ Südfassade (Bahnhof, Schuppen, Wohnwagen, Pavillon).
 
 **Abschnitte:**
 
-| Abschnitt             | Bereich       | Thema                           | Zum Entdecken                                                                                        |
-| --------------------- | ------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| A1 Gleisfeld          | 0–17 / 0–13   | Ankunft zu Fuß am Zaun          | Ratten huschen (Geräusch), Löwenzahn, Sichtachse auf den Uhrturm                                     |
-| B1 Bahnhof            | 18–35 / 0–13  | Stellwerk und Bahnhofsfront     | Stellwerk mit Hebeln im Fenster, Bahnhofsuhr am Turm                                                 |
-| C1 Güterschuppen      | 36–53 / 0–13  | Fracht                          | Laderampe mit Sackkarre, Güterzug auf dem zweiten Gleis                                              |
-| D1 Wasserturm         | 54–71 / 0–13  | Landmarke                       | Wasserturm, Tauben auf dem Tank                                                                      |
-| A2 Westende           | 0–17 / 14–27  | Reihenhäuser und Handyladen     | Kyle in der Pause (N-RT3), Leuchtschild des Handyladens (`handyladen`)                               |
-| B2 Vorplatz und Markt | 18–35 / 14–27 | Wegweiser, Brunnen, Marktstände | Roz am Gemüsestand, Brunnen mit Tauben, Wegweiser (`wegweiserRiverton`)                              |
-| C2 Water Street Ost   | 36–53 / 14–27 | Werkstatt, Café, Bushaltestelle | Mrs. Albescu vor dem Rolltor, Bushaltestelle (`busIronwood`), Banner an der Brückenrampe             |
-| D2 Lagerhäuser        | 54–71 / 14–27 | Hafen am Fluss                  | Wendeplatz, Gabelstapler (Statist), Möwen                                                            |
-| A3 Westufer           | 0–17 / 28–41  | Uferpromenade                   | Bank mit Blick über den Fluss, Kinder springen in Pfützen (Pip, N-RT2)                               |
-| B3 Hinter dem Markt   | 18–35 / 28–41 | Schuppen und Hofzaun            | Schuppen mit Vorhängeschloss (`schuppenTuer`), Angler auf der Ufermauer (Statist)                    |
-| C3 Brücke             | 36–53 / 28–41 | Steinbrücke und Kaitreppe       | Dima unter dem ersten Brückenbogen, **Läufer aus Holz** (`fundLaeufer`, versteckt)                   |
-| D3 Kai                | 54–71 / 28–41 | Kran und Kai                    | Kran, Möwen streiten um Pommes                                                                       |
-| A4 Wohnwagenplatz     | 0–17 / 42–55  | Slicks Zuhause                  | Wohnwagen mit Kurierrad, Grill, Dosen im Fenster                                                     |
-| B4 Wiese              | 18–35 / 42–55 | Bildschirmtische                | Bildschirmtische (`bildschirmtische`), Brunnen, Kameraleute in Szene 29                              |
-| C4 Pavillon           | 36–53 / 42–55 | Parkschach                      | Pavillon mit klopfenden Uhren (Klang), Parktor mit Plakat, Pfützen mit Spiegelung                    |
-| D4 Kanalbecken        | 54–71 / 42–55 | Anleger und Kanal               | Schild „Ashford Belle“ (`anlegerSchild`), Pegelhaus mit Desmond Grant, Hochwassergatter (`kanalweg`) |
+| Abschnitt                  | Bereich       | Thema                              | Zum Entdecken                                                                                        |
+| -------------------------- | ------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| A1 Gleisfeld               | 0–17 / 0–13   | Ankunft zu Fuß am Zaun             | Ratten huschen (Geräusch), Löwenzahn, Sichtachse auf den Uhrturm                                     |
+| B1 Bahnhof                 | 18–35 / 0–13  | Stellwerk und Bahnhofsfront        | Stellwerk mit Hebeln im Fenster, Bahnhofsuhr am Turm                                                 |
+| C1 Güterschuppen           | 36–53 / 0–13  | Fracht                             | Laderampe mit Sackkarre, Güterzug auf dem zweiten Gleis                                              |
+| D1 Wasserturm              | 54–71 / 0–13  | Landmarke                          | Wasserturm, Tauben auf dem Tank                                                                      |
+| A2 Westende                | 0–17 / 14–27  | Reihenhäuser und Handyladen        | Kyle in der Pause (N-RT3), Leuchtschild des Handyladens (`handyladen`)                               |
+| B2 Vorplatz und Markt      | 18–35 / 14–27 | Wegweiser, Brunnen, Marktstände    | Margie am Gemüsestand, Brunnen mit Tauben, Wegweiser (`wegweiserRiverton`)                           |
+| C2 Water Street Ost        | 36–53 / 14–27 | Bäckerei, Café, Bushaltestelle     | Duft aus der Bäckerei, Bushaltestelle (`busIronwood`), Banner an der Brückenrampe                    |
+| D2 Lagerhäuser             | 54–71 / 14–27 | Hafen am Fluss                     | Wendeplatz, Gabelstapler (Statist), Möwen                                                            |
+| A3 Westufer                | 0–17 / 28–41  | Uferpromenade                      | Bank mit Blick über den Fluss, Kinder springen in Pfützen (Pip, N-RT2)                               |
+| B3 Hinter dem Markt        | 18–35 / 28–41 | Höfe und Ufermauer                 | Hof der Bäckerei mit Mehlsäcken, Angler auf der Ufermauer (Statist)                                  |
+| C3 Brücke                  | 36–53 / 28–41 | Steinbrücke und Kaitreppe          | Dima unter dem ersten Brückenbogen, **Läufer aus Holz** (`fundLaeufer`, versteckt)                   |
+| D3 Kai                     | 54–71 / 28–41 | Kran und Kai                       | Kran, Möwen streiten um Pommes                                                                       |
+| A4 Wohnwagen und Werkstatt | 0–17 / 42–55  | Slicks Zuhause, Albescus Werkstatt | Wohnwagen mit Kurierrad, Mrs. Albescu vor dem Rolltor, Schuppen mit Vorhängeschloss (`schuppenTuer`) |
+| B4 Wiese                   | 18–35 / 42–55 | Bildschirmtische                   | Bildschirmtische (`bildschirmtische`), Brunnen, Kameraleute in Szene 29                              |
+| C4 Pavillon                | 36–53 / 42–55 | Parkschach                         | Pavillon mit klopfenden Uhren (Klang), Parktor mit Plakat, Pfützen mit Spiegelung                    |
+| D4 Kanalbecken             | 54–71 / 42–55 | Anleger und Kanal                  | Schild „Ashford Belle“ (`anlegerSchild`), Pegelhaus mit Desmond Grant, Hochwassergatter (`kanalweg`) |
 
 **Wegeführung:** Der Fußweg vom Westrand (Reihen 8–9, Erde, zwei Felder) läuft am Bahnzaun entlang und
 biegt bei Spalte 17 in einem Bogen nach Süden auf den Vorplatz. Die **Water Street** (Asphalt, zwei
@@ -231,8 +235,8 @@ Osten bis zum Wendeplatz vor den Lagerhäusern (Spalten 62–68). Bei den Spalte
 Wege (Kies, zwei Felder) in Bögen: vom Parktor nach Südwesten zum Platz vor dem Pavillon, von dort in
 einer weiten S-Kurve nach Westen über die Wiese zum Wohnwagen (Reihen 49–52), und vom Parktor nach
 Osten am Pegelhaus vorbei zum Anleger und auf den **Treidelpfad** (Spalten 57–58) zum Südrand. Abzweige:
-Kaitreppe hinunter zu Dima (47–49 / 31–32), Pfad zum Schuppen (Uferpromenade → 37, 29), Bank am
-Westufer. Die Uferpromenade kreuzt die Brückenrampe ebenerdig mit Zebrastreifen.
+Kaitreppe hinunter zu Dima (47–49 / 31–32), Hinterweg am Südrand des Parks (Reihen 54–55) von der S-Kurve
+zum Schuppen (16, 53), Bank am Westufer. Die Uferpromenade kreuzt die Brückenrampe ebenerdig mit Zebrastreifen.
 
 **Unter der Brücke:** Dima sitzt auf dem schmalen Kai unter dem ersten Brückenbogen (50–53 / 32), zu
 erreichen über die Kaitreppe. Das braucht eine Brückenebene über dem Helden (obere Kachelebene). Trägt
@@ -263,7 +267,7 @@ Reihen 0–69 Spalten 20–24, dann eine weite Kurve nach Westen (Reihen 70–89
 (Pfad 11–12), Reihen 90–124 dort, dann zurück (Reihen 125–149) auf die Spalten 20–24 bis zum Südrand.
 Der **Seitenarm** Q2 (drei Felder) zweigt in den Reihen 101–103 nach Westen ab und reicht bis zum
 Westrand; der Pfad quert seine Mündung auf der **Treidelbrücke** (10–13 / 100–104, Holz auf
-Steinpfeilern, immer offen). Der Abzweig nach Lockport folgt dem Nordufer des Seitenarms (Reihen 98–99)
+Steinpfeilern, immer offen). Der Abzweig nach Lockport folgt dem Nordufer des Seitenarms (Reihen 97–98, zwei Reihen Abstand zum Wasser wie in Lockport; Befund 11)
 zum **Westrand**. Die Landschaft wechselt von Industrie (Norden, nahe Riverton) zu Feldern (Süden).
 
 ```text
@@ -273,7 +277,7 @@ zum **Westrand**. Die Landschaft wechselt von Industrie (Norden, nahe Riverton) 
  K3        │ [Fabrikhof]══ Abzweig 1 ══║≈≈≈≈≈│
  K4        │ Werkstraße, [Halt ohne Bus + Tafel]║≈[Drehbrücke, offen, rostig]
  K5–K6     │ Ziegelei-Schornstein   ╔═╝≈≈≈≈╝  Kurve nach Westen
- K7  R98–99 ◄═══ nach Lockport ═══[Wegweiser]║≈≈≈│
+ K7  R97–98 ◄═══ nach Lockport ═══[Wegweiser]║≈≈≈│
      R101–103≈≈≈ Seitenarm ≈≈≈≈≈≈[Treidelbr.]≈≈≈≈│
  K8        │ Schilf, Rastbank          ║≈≈≈≈≈│
  K9–K10    │ Felder von Mr. Dale, Scheune ║≈≈≈│ Weiden
@@ -282,25 +286,25 @@ zum **Westrand**. Die Landschaft wechselt von Industrie (Norden, nahe Riverton) 
  Reihe 189 └────────────────║║─┤≈≈≈≈≈├────┘  Südrand → Eisenbrücke (17–18)
 ```
 
-| Abschnitt (Reihen)      | Thema                    | Inhalt                                                                                                                                                                       | Zum Entdecken                                |
-| ----------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| K1 (0–14) Kanalausfahrt | Abschied vom Fluss       | Pfad nach dem Hochwassergatter, Poller mit Möwe, Kanalmeilenstein „Meile 0“                                                                                                  | Meilenstein (`meilenstein`), Möwe            |
-| K2 (15–29) Graffiti     | die erste Fabrik         | lange Ziegelmauer westlich des Pfads mit Graffiti von Schachfiguren; **Noor Haddad** sprüht (N-W3a)                                                                          | Noor, Graffiti                               |
-| K3 (30–44) Fabrikhof    | leere Hallen             | **Abzweig 1** nach Westen (6 lang) durch ein offenes Tor in den Fabrikhof; Maschendrahtzaun, Krähen                                                                          | **Zahnrad** am Zaun (`fundZahnrad`), Krähen  |
-| K4 (45–59) Werkstraße   | Bushaltestelle ohne Bus  | alte Werkstraße kreuzt von Westen und endet an einer rostigen Drehbrücke (offen gedreht, Kulisse); daran das Haltestellenschild ohne Fahrplan mit **Rätseltafel** (Szene 40) | Tafel (`tafel`), Drehbrücke                  |
-| K5 (60–74) Ziegelei     | Schornstein              | Schornstein der alten Ziegelei, Brombeeren; der Kanal beginnt die Kurve nach Westen                                                                                          | Brombeeren, Radfahrer (Belebung)             |
-| K6 (75–89) Kahnwrack    | Industrie endet          | Weiden am Ufer, halb versunkenes Kahnwrack im Kanal (Kulisse)                                                                                                                | Wrack mit Bisamratte                         |
-| K7 (90–104) Seitenarm   | Kreuzung am Wasser       | **Wegweiser** (Riverton ↑, Ironwood ↓, Lockport ←) an der einzigen Kreuzung; **Abzweig 2** nach Lockport (Q2), Treidelbrücke über die Mündung                                | Wegweiser, Sicht auf die Dächer von Lockport |
-| K8 (105–119) Schilf     | Rast                     | Schilf, Libellen, Rastbank am Pfad mit Blick über den Kanal                                                                                                                  | Rastbank (`rastKanal`), Libellen             |
-| K9 (120–134) Felder     | Mr. Dale                 | Kohl- und Kürbisfeld bis zum Westrand; **Mr. Dale** am Feldzaun (Weisheit, vorhanden)                                                                                        | Mr. Dale                                     |
-| K10 (135–149) Scheune   | Hof                      | Scheune mit Hühnern, Leiterwagen; der Kanal schwingt zurück                                                                                                                  | Hühner, Leiterwagen                          |
-| K11 (150–164) Anleger   | ein Platz für Kahnfahrer | **Abzweig 3** (3 lang) zum Rastanleger mit Bank; dort treibt eine Flaschenpost                                                                                               | **Flaschenpost** (`fundFlaschenpost`)        |
-| K12 (165–179) Pappeln   | Wind                     | Pappelallee am Pfad, Gänse auf dem Kanal                                                                                                                                     | Gänse                                        |
-| K13 (180–189) Ausblick  | Ironwood in der Ferne    | Strommast, Sichtachse nach Süden: Rauch und Schornsteine am Horizont                                                                                                         | Rauch (Hintergrund)                          |
+| Abschnitt (Reihen)      | Thema                    | Inhalt                                                                                                                                                                       | Zum Entdecken                                      |
+| ----------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| K1 (0–14) Kanalausfahrt | Abschied vom Fluss       | Pfad nach dem Hochwassergatter, Poller mit Möwe, Kanalmeilenstein „Meile 0“                                                                                                  | Meilenstein (`meilenstein`), Möwe                  |
+| K2 (15–29) Graffiti     | die erste Fabrik         | lange Ziegelmauer westlich des Pfads mit Graffiti von Schachfiguren; **Noor Haddad** sprüht (N-W3a)                                                                          | Noor, Graffiti                                     |
+| K3 (30–44) Fabrikhof    | leere Hallen             | **Abzweig 1** nach Westen (6 lang) durch ein offenes Tor in den Fabrikhof; Maschendrahtzaun, Krähen                                                                          | **Zahnrad** am Zaun (`fundZahnrad`), Krähen        |
+| K4 (45–59) Werkstraße   | Bushaltestelle ohne Bus  | alte Werkstraße kreuzt von Westen und endet an einer rostigen Drehbrücke (offen gedreht, Kulisse); daran das Haltestellenschild ohne Fahrplan mit **Rätseltafel** (Szene 40) | Tafel (`tafel`), Drehbrücke                        |
+| K5 (60–74) Ziegelei     | Schornstein              | Schornstein der alten Ziegelei, Brombeeren; der Kanal beginnt die Kurve nach Westen                                                                                          | Brombeeren, Radfahrer (Belebung)                   |
+| K6 (75–89) Kahnwrack    | Industrie endet          | Weiden am Ufer, halb versunkenes Kahnwrack im Kanal (Kulisse)                                                                                                                | Wrack mit Bisamratte                               |
+| K7 (90–104) Seitenarm   | Kreuzung am Wasser       | **Wegweiser** (Riverton ↑, Ironwood ↓, Lockport ←) an der einzigen Kreuzung; **Abzweig 2** nach Lockport (Q2), Treidelbrücke über die Mündung                                | Wegweiser, Sicht auf die Dächer von Lockport       |
+| K8 (105–119) Schilf     | Rast                     | Schilf, Libellen, Rastbank am Pfad mit Blick über den Kanal                                                                                                                  | Rastbank (`rastKanal`), Libellen                   |
+| K9 (120–134) Felder     | Mr. Dale                 | Kohl- und Kürbisfeld bis zum Westrand; **Mr. Dale** am Feldzaun (Weisheit, vorhanden)                                                                                        | Mr. Dale                                           |
+| K10 (135–149) Scheune   | Hof                      | Scheune mit Hühnern, Leiterwagen; der Kanal schwingt zurück                                                                                                                  | Hühner, Leiterwagen                                |
+| K11 (150–164) Anleger   | ein Platz für Kahnfahrer | **Abzweig 3** (3 lang) nach Osten an den Kanal zum Rastanleger mit Bank; dort treibt eine Konservendose mit Zettel                                                           | **Konservendose mit Zettel** (`fundKonservendose`) |
+| K12 (165–179) Pappeln   | Wind                     | Pappelallee am Pfad, Gänse auf dem Kanal                                                                                                                                     | Gänse                                              |
+| K13 (180–189) Ausblick  | Ironwood in der Ferne    | Strommast, Sichtachse nach Süden: Rauch und Schornsteine am Horizont                                                                                                         | Rauch (Hintergrund)                                |
 
 **Ränder:** Westen Fabrikmauern, dann Felder bis zum Rand; Osten Böschung mit Gestrüpp und Weiden; der
 Kanal reicht bis zum Nord- und Südrand, der Seitenarm bis zum Westrand. Offen sind Nordrand (17–18),
-Südrand (17–18) und Westrand (Pfad nach Lockport, Reihen 98–99). **Abzweige:** drei, jedes mit Ziel.
+Südrand (17–18) und Westrand (Pfad nach Lockport, Reihen 97–98). **Abzweige:** drei, jedes mit Ziel.
 
 ### 1.5 Eisenbrücke und Abhang (`wegRivertonIronwood.bruecke`, 30 × 160)
 
@@ -332,9 +336,9 @@ oben Ginster, unten Birken; offen nur Nord (17–18) und Süd (24–25). **Abzwe
 
 ### 1.6 Lockport (`lockport.aussen`, 56 × 40, Nebenort N2)
 
-Zehn Häuser um eine Schleuse am Seitenarm Q2 (`13_Wegenetz.md` 3). Der **Seitenarm** kommt am
+Neun Häuser (mit Wärterhaus und Gasthaus) um eine Schleuse am Seitenarm Q2 (`13_Wegenetz.md` 3). Der **Seitenarm** kommt am
 **Ostrand** herein (Reihen 14–16), fließt durch die **Schleuse** (Kammer 30–37 / 14–16, Obertor bei Spalte 37,
-Untertor bei Spalte 30) und weitet sich zum **Hafenbecken** (0–29 / 13–19), das am Westrand zum Fluss
+Untertor bei Spalte 30) und weitet sich zum **Hafenbecken** (2–29 / 13–19), das vor dem Westrand endet (Kaimauer bei Spalte 1, dahinter Wiese; ohne Anschluss an den Fluss, Befund 9)
 hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** auf dem Nordufer an.
 
 ```text
@@ -343,7 +347,7 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
  R2–9     │[Haus][Haus][Haus] Gärten, Wäscheleinen [Schleusenwärterhaus 38–44]
  R10–11   │── Nordufer ─────────────────────[Tafel S3]═══════ ← Kanalweg (Ostrand)
  R12      │ Finn angelt       Ufer          ┆Untertor-Steg (30, 12–18)
- R13–19 ≈≈≈≈≈ Hafenbecken (bis Westrand) ≈≈≈≈║Kammer║≈≈≈≈ Seitenarm ≈≈≈≈ (Ostrand)
+ R13–19 ≈≈≈≈ Hafenbecken (endet an der Kaimauer) ≈≈║Kammer║≈≈≈≈ Seitenarm ≈≈≈≈ (Ostrand)
           │   Lastkahn „Ashford Belle“ am Kai
  R20–21   │═══════════ Kai mit Pollern (2–40) ═══════════│
  R22–28   │[Bootsschuppen][Haus] [GASTHAUS 18–27] [Haus][Haus]
@@ -371,7 +375,7 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
 | B1 Finns Ufer       | 14–27 / 0–19  | Angeln                   | Finn angelt Flaschen (Belebung und Figur)                             |
 | C1 Schleuse         | 28–41 / 0–19  | Tafel und Tore           | Rätseltafel S3 (`tafelSchleuse`), Kurbeln der Schleuse                |
 | D1 Ankunft          | 42–55 / 0–19  | Wärterhaus und Seitenarm | Glocke am Giebel (`glocke`, Ansehen), Seitenarm mit Schilf            |
-| A2 Bootsschuppen    | 0–13 / 20–39  | Boote                    | Slipanlage, Ottos Ruderboot an vielen Tauen (L2)                      |
+| A2 Bootsschuppen    | 0–13 / 20–39  | Boote                    | Slipanlage, Henriks Ruderboot an vielen Tauen (L2)                    |
 | B2 Kai und Gasthaus | 14–27 / 20–39 | Kahn und Wirtshaus       | Lastkahn „Ashford Belle“, Kapitän Ruben, Tafel mit Kreide am Kai (L1) |
 | C2 Dorfplatz        | 28–41 / 20–39 | Linde und Pumpe          | Pumpe (`pumpe`, Ansehen), Bank unter der Linde                        |
 | D2 Ostdorf          | 42–55 / 20–39 | Gärten und Pappeln       | Gänse, Kürbisse vor den Türen                                         |
@@ -380,7 +384,7 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
 Spalte 2; der Steg über das Untertor (eine Kachel breit, Holz mit Geländer) führt hinüber zum Kai; vom
 Kai Gassen zwischen den Häusern zum Dorfplatz (zwei Felder). **Sichtachse:** Vom Ostrand sieht man
 über die Schleuse den Mast des Lastkahns und das Wirtshausschild. **Ränder:** Norden Gärten und Hecken,
-Süden Wiesen und Pappeln, Westen das Hafenbecken (zum Fluss), Osten der Seitenarm; offen nur der Pfad
+Süden Wiesen und Pappeln, Westen Wiese hinter der Kaimauer des Beckens, Osten der Seitenarm; offen nur der Pfad
 am Ostrand (Reihen 10–11). **Laufzeit:** Ostrand → Steg → Kai ≈ 48 Kacheln, knapp 14 s.
 
 ### 1.7 Gebäude und Maße
@@ -398,24 +402,24 @@ und Szene 37 braucht nur Bett, Brett und Dosen. Der Schuppen ist bewusst klein (
 
 ### 1.8 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                              | Nach (Karte, Auslöser, Feld; Ankunft)                                                  | Lage                                                                                                                                |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| cedarCreek.aussen `zedernwald` (Ostrand, Reihen 8–9)                     | zedernwald `zurueckCedar` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))             | Waldweg je zwei Felder, gleiche Reihen (`orte/cedar-creek.md` 1.6); nur nach `endeAkt1Gesehen`. In `orte.json` schon so (mittel-2). |
-| zedernwald `weiterBahndamm` (Ostrand, Spalte 139, Reihen 14–15)          | bahndamm `zurueckZedernwald` (Westrand, Spalte 0, Reihen 14–15; Ankunft (1, 14))       | Waldweg geht in den Feldweg über                                                                                                    |
-| bahndamm `weiterRiverton` (Ostrand, Spalte 149, Reihen 8–9)              | riverton.aussen `bahndamm` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))            | Fußweg am Bahnzaun; Dialog `riverton-aussen.ankunft_zu_fuss` bleibt an `weiterRiverton`                                             |
-| riverton.aussen `bahnhofTuer` (36, 13)                                   | bahnhofshalle `bahnhofAusgang` (13, 15); Ankunft (13, 14), Blick nach oben             | Südfassade 54 % ↔ Südwand 50 %                                                                                                      |
-| riverton.aussen `pavillonEingang` (40, 48)                               | pavillon `pavillonAusgang` (10, 13); Ankunft (10, 12)                                  | Südseite ↔ Südwand Mitte                                                                                                            |
-| riverton.aussen `wohnwagenTuer` (6, 47)                                  | wohnwagen `wohnwagenAusgang` (7, 8); Ankunft (7, 7)                                    | Südseite ↔ Südwand Mitte; `wenn: clubkampfRivertonBesprochen` (wie heute)                                                           |
-| riverton.aussen `schuppenTuer` (37, 29)                                  | schuppen `schuppenAusgang` (5, 7); Ankunft (5, 6)                                      | Südfassade ↔ Südwand; `wenn: schuppenOffen` (wie heute)                                                                             |
-| riverton.aussen `kanalweg` (Südrand, Spalten 57–58, Reihe 55)            | kanalweg `zurueckRiverton` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))         | Treidelpfad je zwei Felder; `wenn: nadelRiverton` (wie heute), Grund in der Welt: Hochwassergatter (2.4)                            |
-| kanalweg `weiterBruecke` (Südrand, Spalten 17–18, Reihe 189)             | bruecke `zurueckKanalweg` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))          | Treidelpfad geht weiter                                                                                                             |
-| kanalweg `lockport` (neu, Westrand, Spalte 0, Reihen 98–99)              | lockport.aussen `kanalweg` (neu, Ostrand, Spalte 55, Reihen 10–11; Ankunft (54, 10))   | Uferpfad am Seitenarm je zwei Felder; offen; die Sperre S3 liegt erst am Steg in Lockport                                           |
-| bruecke `weiterIronwood` (Südrand, Spalten 24–25, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Spalten 24–25, Reihe 0, Treppe; Ankunft (24, 1)) | Weg je zwei Felder, gleiche Spalten; Kanal auf beiden Seiten Spalten 4–9; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt           |
-| lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                             | Südfassade 50 % ↔ Südwand 50 %                                                                                                      |
-| bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof`/`bushaltestelle` (nach `orte/cedar-creek.md`)              | Schnellreise Zug (W2, nach `besuchtRiverton`); mit Monatskarte frei                                                                 |
-| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen `busRiverton` (12, 32), Ankunft (14, 32)                               | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
-| riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen `anleger` (12, 22)           | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                       |
-| lockport.aussen `kai` (neu, (14, 20); Dialog, Reise)                     | riverton.aussen `anlegerSchild`, ironwood.aussen `anleger` (12, 22)                    | Lastkahn zurück                                                                                                                     |
+| Von (Karte, Auslöser, Feld)                                              | Nach (Karte, Auslöser, Feld; Ankunft)                                                     | Lage                                                                                                                                |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| cedarCreek.aussen `zedernwald` (Ostrand, Reihen 8–9)                     | zedernwald `zurueckCedar` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))                | Waldweg je zwei Felder, gleiche Reihen (`orte/cedar-creek.md` 1.6); nur nach `endeAkt1Gesehen`. In `orte.json` schon so (mittel-2). |
+| zedernwald `weiterBahndamm` (Ostrand, Spalte 139, Reihen 14–15)          | bahndamm `zurueckZedernwald` (Westrand, Spalte 0, Reihen 14–15; Ankunft (1, 14))          | Waldweg geht in den Feldweg über                                                                                                    |
+| bahndamm `weiterRiverton` (Ostrand, Spalte 149, Reihen 8–9)              | riverton.aussen `bahndamm` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))               | Fußweg am Bahnzaun; Dialog `riverton-aussen.ankunft_zu_fuss` bleibt an `weiterRiverton`                                             |
+| riverton.aussen `bahnhofTuer` (36, 13)                                   | bahnhofshalle `bahnhofAusgang` (13, 15); Ankunft (13, 14), Blick nach oben                | Südfassade 54 % ↔ Südwand 50 %                                                                                                      |
+| riverton.aussen `pavillonEingang` (40, 48)                               | pavillon `pavillonAusgang` (10, 13); Ankunft (10, 12)                                     | Südseite ↔ Südwand Mitte                                                                                                            |
+| riverton.aussen `wohnwagenTuer` (6, 47)                                  | wohnwagen `wohnwagenAusgang` (7, 8); Ankunft (7, 7)                                       | Südseite ↔ Südwand Mitte; `wenn: clubkampfRivertonBesprochen` (wie heute)                                                           |
+| riverton.aussen `schuppenTuer` (16, 53)                                  | schuppen `schuppenAusgang` (5, 7); Ankunft (5, 6)                                         | Südfassade ↔ Südwand; `wenn: schuppenOffen` (wie heute)                                                                             |
+| riverton.aussen `kanalweg` (Südrand, Spalten 57–58, Reihe 55)            | kanalweg `zurueckRiverton` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))            | Treidelpfad je zwei Felder; `wenn: nadelRiverton` (wie heute), Grund in der Welt: Hochwassergatter (2.4)                            |
+| kanalweg `weiterBruecke` (Südrand, Spalten 17–18, Reihe 189)             | bruecke `zurueckKanalweg` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))             | Treidelpfad geht weiter                                                                                                             |
+| kanalweg `lockport` (neu, Westrand, Spalte 0, Reihen 97–98)              | lockport.aussen `kanalweg` (neu, Ostrand, Spalte 55, Reihen 10–11; Ankunft (54, 10))      | Uferpfad am Seitenarm je zwei Felder; offen; die Sperre S3 liegt erst am Steg in Lockport                                           |
+| bruecke `weiterIronwood` (Südrand, Spalten 24–25, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Spalten 24–25, Reihe 0, Treppe; Ankunft (24, 1))    | Weg je zwei Felder, gleiche Spalten; Kanal auf beiden Seiten Spalten 4–9; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt           |
+| lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                                | Südfassade 50 % ↔ Südwand 50 %                                                                                                      |
+| bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof` (neuer Haltepunkt am Nordrand, baut der Haupt-Chat; Befund 8) | Schnellreise Zug (W2, nach `besuchtRiverton`), 10 Münzen, frei nach der Nadel von Riverton (Bibel 10.1); mit Monatskarte frei       |
+| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen `busRiverton` (12, 32), Ankunft (14, 32)                                  | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
+| riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen `anleger` (12, 22)              | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                       |
+| lockport.aussen `kai` (neu, (14, 20); Dialog, Reise)                     | riverton.aussen `anlegerSchild`, ironwood.aussen `anleger` (12, 22)                       | Lastkahn zurück                                                                                                                     |
 
 **Abstimmung mit mittel-4 (Ironwood), Stand 9.11.2026 (vermittelt vom Haupt-Chat):** Übergang Südrand
 der Brückenkarte ↔ Treppe am Nordrand von `ironwood.aussen`, Weg auf beiden Seiten in den Spalten 24–25,
@@ -442,7 +446,7 @@ auf beiden Seiten.
 - `riverton.pavillon`: Bildschirmtische als Objektebene über den Marmortischen (nach Szene 37).
 - `wegCedarRiverton.bahndamm`: Durchlass (S14) als Objekt mit Bedingung `hatLaterne`; Thermoskanne im
   Durchlass.
-- `wegRivertonIronwood.kanalweg`: Noors Graffiti in zwei Stufen (Akt 2 halb, Akt 3 fertig); Flaschenpost
+- `wegRivertonIronwood.kanalweg`: Noors Graffiti in zwei Stufen (Akt 2 halb, Akt 3 fertig); Konservendose
   am Rastanleger nur einmal.
 - `lockport.aussen`: Lastkahn am Kai (bis L3 vertäut und abgedeckt, danach mit Mannschaft); Steg am
   Untertor als Objekt (S3 zu, dann offen); Feld für Eis auf dem Becken (Akt 3).
@@ -487,8 +491,7 @@ Wasserturm sitzen Tauben in einer langen Reihe.
 Die Water Street ist die Straße, auf der Riverton lebt. Am Markt verkauft eine Frau mit roten Händen
 Äpfel und Kürbisse und rechnet die Preise so schnell aus, dass man nicht nachkommt; gegenüber hängt
 das glänzende Schild eines neuen Ladens, in dessen Schaufenster Tablets mit Schachbrettern leuchten. Ein
-paar Häuser weiter ist ein Rolltor heruntergelassen, „Albescu Bikes – geschlossen“, und eine Frau
-steht davor, als warte sie darauf, dass es sich von selbst öffnet. Im Café an der Ecke dampft es aus
+paar Häuser weiter duftet es aus einer Bäckerei. Im Café an der Ecke dampft es aus
 den Tassen. Am Ende der Straße schwingt sich eine Steinbrücke mit drei Bögen über den Fluss, an ihrem
 Geländer flattert ein Banner, und unter dem ersten Bogen spielt ein Mann Akkordeon für die Möwen.
 
@@ -497,7 +500,10 @@ ein achteckiges Holzdach auf Säulen, darunter Marmortische, und das Klopfen der
 der Brücke. Jetzt stehen auf der Wiese davor sechs neue Tische mit Bildschirmen, die im Regen blau
 leuchten und auf denen Figuren ziehen, ohne dass jemand sie berührt. Ganz am Westende des Parks, wo das
 Ufer flach wird, steht ein Wohnwagen mit Rostrand, davor ein Klappstuhl, ein Grill und ein Kurierrad,
-und im Fenster glänzen Pokale, die aus Limodosen gebogen sind. Im Osten öffnet sich das Kanalbecken: Ein
+und im Fenster glänzen Pokale, die aus Limodosen gebogen sind. Gleich daneben ist an einer kleinen
+Werkstatt ein Rolltor heruntergelassen, „Albescu Bikes – geschlossen“, und eine Frau steht davor, als
+warte sie darauf, dass es sich von selbst öffnet; hinter der Werkstatt duckt sich ein Schuppen mit
+Vorhängeschloss. Im Osten öffnet sich das Kanalbecken: Ein
 Anleger mit eisernen Pollern, ein Schild für einen Lastkahn, der gerade nicht da ist, ein kleines
 Pegelhaus mit einer Messlatte im Wasser, und dahinter verschwindet der Kanal schnurgerade nach Süden
 zwischen alten Fabrikmauern.
@@ -527,7 +533,7 @@ dazwischen ein Pfad, der sich in Kehren den Hang hinunterschlängelt.
 ### 2.5 Lockport
 
 Lockport ist so klein, dass man es in einem Atemzug umrunden könnte, und so still, dass man die
-Schleusentore knarren hört. Zehn Häuser sitzen um ein Hafenbecken, Wäsche flattert an Leinen über den
+Schleusentore knarren hört. Neun Häuser sitzen um ein Hafenbecken, Wäsche flattert an Leinen über den
 Gärten, und im Herbstnebel kommen Möwen vom Fluss herauf und streiten sich auf den Pollern. Am Nordufer
 steht das Haus der Schleusenwärterin mit einer Glocke am Giebel; sie läutet, wenn ein Kahn kommt, und
 das ist selten genug, dass das ganze Dorf aus den Fenstern schaut. Ein Junge sitzt am Ufer und angelt,
@@ -553,10 +559,10 @@ der Story-Bibel und die Wege.
 | riverton.pavillon      | 29, 32, 34, 36, 37   | Slick, Tamsin, Ray, Juno, Zuschauer                           | `pavillonAusgang`, `gedenktafel`, `limonadenglas`, Uhr mit Klebeband; vier Marmortische                                                                                                             | Regen aufs Dach (Klang), Zuschauer                     |
 | riverton.wohnwagen     | 37                   | Slick                                                         | `wohnwagenAusgang`, `dosentrophaeen`, Kurierrad, Brett auf dem Bett                                                                                                                                 | –                                                      |
 | riverton.schuppen      | 33                   | –                                                             | `schuppenAusgang`, `fahrrad`                                                                                                                                                                        | Staub (Partikel)                                       |
-| kanalweg               | 40                   | Mr. Dale, Juno; Noor (14)                                     | `zurueckRiverton`, `weiterBruecke`, `tafel` (Runde `wegRivertonIronwood.tafelHaltestelle`), `fundZahnrad`; neu `lockport`, `meilenstein`, `rastKanal`, `fundFlaschenpost`                           | Krähen, Gänse, Radfahrer, Bisamratte                   |
+| kanalweg               | 40                   | Mr. Dale, Juno; Noor (14)                                     | `zurueckRiverton`, `weiterBruecke`, `tafel` (Runde `wegRivertonIronwood.tafelHaltestelle`), `fundZahnrad`; neu `lockport`, `meilenstein`, `rastKanal`, `fundKonservendose`                          | Krähen, Gänse, Radfahrer, Bisamratte                   |
 | bruecke                | 40, 50 (Erinnerung)  | Ambrose, Juno; Corwin Lund (14)                               | `zurueckKanalweg`, `weiterIronwood`, `fundNietenkopf`, `zeitnotTrick`; neu `waerterhaus`, `aussichtTal`                                                                                             | Krähen, Eidechse, Wind                                 |
-| lockport.aussen        | – (Nebenort, 13 §3)  | Imogen, Kapitän Ruben, Finn, Wirt Otto (im Gasthaus)          | `kanalweg`, `gasthausTuer`, `tafelSchleuse` (S3), `kai` (Lastkahn), `glocke`, `pumpe`, Ottos Boot                                                                                                   | Möwen, Gänse, Wäsche im Wind                           |
-| lockport.gasthaus      | –                    | Wirt Otto                                                     | `gasthausAusgang`, Kegelbahn, `fundKegel`                                                                                                                                                           | Kegler (Statisten), Kegel poltern (Klang)              |
+| lockport.aussen        | – (Nebenort, 13 §3)  | Imogen, Kapitän Ruben, Finn, Wirt Henrik (im Gasthaus)        | `kanalweg`, `gasthausTuer`, `tafelSchleuse` (S3), `kai` (Lastkahn), `glocke`, `pumpe`, Henriks Boot                                                                                                 | Möwen, Gänse, Wäsche im Wind                           |
+| lockport.gasthaus      | –                    | Wirt Henrik                                                   | `gasthausAusgang`, Kegelbahn, `fundKegel`                                                                                                                                                           | Kegler (Statisten), Kegel poltern (Klang)              |
 
 ### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
 
@@ -571,9 +577,9 @@ der Story-Bibel und die Wege.
 | Brücke mit Straßenmusiker                     | bleibt; Musiker bekommt einen Namen (Dima, 14) und sitzt unter dem ersten Bogen                                | Bibel 12 (Läufer „unter der Brücke beim Straßenmusiker“), 09, 4a.                                                                                       |
 | Handyladen                                    | bleibt Kulisse, Tür zur Straße, Verkäufer Kyle als Figur davor                                                 | Bibel 10.2: kein Laden für {held}; Kyle zeigt die Menschen hinter dem Konzern (14).                                                                     |
 | Bushaltestelle                                | auf dem Bahnhofsvorplatz, Bus nach Ironwood                                                                    | 09, 5.4; Schnellreise nach 13 §3 und Bibel 10.3.                                                                                                        |
-| Markt                                         | neu, mit Gemüsestand (Roz Pike)                                                                                | 09, 4a: Riverton lebt von „Bahn, Hafen am Fluss, Markt“; der Markt war bisher nirgends.                                                                 |
+| Markt                                         | neu, mit Gemüsestand (Margie Pell)                                                                             | 09, 4a: Riverton lebt von „Bahn, Hafen am Fluss, Markt“; der Markt war bisher nirgends.                                                                 |
 | Hafen am Fluss                                | Lagerhäuser und Kran am Ostkai (Kulisse), Anleger am Kanalbecken                                               | 09, 4a; der Anleger ist Teil der Lastkahn-Schnellreise (13 §3).                                                                                         |
-| Fahrradwerkstatt mit Schuppen                 | Werkstatt an der Water Street, Schuppen dahinter mit Tür zur Uferpromenade                                     | Bibel 9.2 („hinter dem Park“ heißt bei uns: hinter der Werkstatt, zum Fluss); die Schuppentür in der Südfassade passt zur Südwand innen.                |
+| Fahrradwerkstatt mit Schuppen                 | Werkstatt am Westteil des Parks, Schuppen dahinter mit Tür zum Hinterweg am Südrand                            | Bibel 9.2 („hinter dem Park“; Prüfbericht Akt 2, Befund 21); die Schuppentür in der Südfassade passt zur Südwand innen.                                 |
 | Slicks Wohnwagen „am Fluss“                   | Westende des Parks am flachen Ufer                                                                             | Bibel 9.2; abseits, damit Szene 37 ein eigener Gang ist.                                                                                                |
 | Kanal                                         | beginnt am Kanalbecken im Südosten, Treidelpfad am Westufer                                                    | Bibel 10.3; der Seitenarm nach Lockport zweigt nach Westen ab, der Pfad quert ihn auf einer festen Brücke (keine Sackgasse, Befund 1 des Prüfberichts). |
 | Schleuse S3                                   | am Steg über das Untertor in Lockport, nicht auf Weg 3                                                         | 13 §3 und Befund 1: Weg 3 bleibt frei; man sieht Lockport hinter der Schleuse (Grundsatz aus 12, Abschnitt 5).                                          |
@@ -704,24 +710,24 @@ Pfützen; Spiegelungen in den Pfützen als Kachelvariante.
 **Wege:** wie 1.3; Breiten: Fußweg 2, Water Street 2 mit Gehwegen je 1, Brückenrampe 4 (Fahrbahn 2,
 Gehwege je 1), Parkwege 2, Treidelpfad 2.
 
-| Abschnitt | Inventar (Feld = linke obere Kachel)                                                                                                                                                                                |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A1        | Zaun am Gleisfeld Reihe 5–7 (Unterkante), Fußweg 0–17 / 8–9, Gebüsch, Löwenzahn, zwei Laternen am Weg (6, 7), (14, 7)                                                                                               |
-| B1        | Stellwerk (21, 6), Bahnhof (30, 5) mit Uhrturm, Vordach über der Tür (35–37, 12), Fahrradständer (28, 13)                                                                                                           |
-| C1        | Güterschuppen (45, 6), Laderampe (45–60, 13) mit drei Frachtkisten (47, 13), (49, 13), (55, 13) und Sackkarre (52, 13); Gabelstapler-Fahrer (Statist)                                                               |
-| D1        | Wasserturm (64, 5), Tauben auf dem Tank (Tiere, `fliegen`)                                                                                                                                                          |
-| A2        | Reihenhäuser (1, 23), (4, 23) mit Treppen; Handyladen (9, 23) mit Leuchtschild und Banner; Kyle (13, 22) auf dem Gehweg; Laterne (8, 22)                                                                            |
-| B2        | Vorplatz: Brunnen (26, 15), Wegweiser (20, 18) mit drei Armen (Park ↘, Markt ↓, Kanal →); Markt: vier Stände (19, 24), (24, 24), (19, 27), (24, 27) mit Markisen; Roz (21, 26); Tauben auf dem Pflaster             |
-| C2        | Werkstatt Albescu (33, 23), Mrs. Albescu (35, 22); Café (42, 23) mit zwei Tischen (43, 22), (46, 22); Bushaltestelle (46, 14) mit Wartehäuschen, Schild (49, 18) `busIronwood`; Banner an der Brückenrampe (51, 22) |
-| D2        | Lagerhäuser (55, 23), Wendeplatz (62–68, 19–22), Laternen; Möwen                                                                                                                                                    |
-| A3        | Uferpromenade, Bank zum Fluss (8, 31), Mülleimer (10, 31); Pip und zwei Pfützen (5, 30), (12, 30) (Kachelvariante Pfütze)                                                                                           |
-| B3        | Hofzaun (33–40, 27), Schuppen (35, 27) mit Tür (37, 29) und Vorhängeschloss; Angler auf der Ufermauer (28, 31, Statist)                                                                                             |
-| C3        | Kaitreppe (47–49, 31–32), Kai unter dem Bogen (50–53, 32) mit Dima (51, 32), `fundLaeufer` (52, 32) im Schatten; Brücke 50–53 / 32–41 mit Laternen (50, 33), (53, 33), (50, 40), (53, 40)                           |
-| D3        | Kran (62, 31), Kaimauer, zwei Poller; Möwen mit Pommes                                                                                                                                                              |
-| A4        | Wohnwagen (3, 44), Klappstuhl (5, 48), Grill (8, 48), Kurierrad (10, 46); Uferweg Süd; zwei Bäume                                                                                                                   |
-| B4        | Bildschirmtische (22, 50), (26, 50), (30, 50), (22, 53), (26, 53), (30, 53) als Objektebene `bildschirmtische` (Auslöser (27, 49)); Brunnen (14, 50); Bänke an den Parkwegen; Baumgruppen                           |
-| C4        | Pavillon (36, 43), Treppe (40, 48), Platz davor (36–45, 49–50), Parktor (49, 42) mit Plakat; zwei Pfützen auf dem Weg                                                                                               |
-| D4        | Anleger (56, 42) mit Pollern und `anlegerSchild` (56, 43); Pegelhaus (52, 45) mit Desmond Grant (54, 49); Hochwassergatter (57–58, 50) als Objekt mit Bedingung; Kanal 60–64 / 47–55; Fabrikmauer (66, 47)          |
+| Abschnitt | Inventar (Feld = linke obere Kachel)                                                                                                                                                                                                                                    |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A1        | Zaun am Gleisfeld Reihe 5–7 (Unterkante), Fußweg 0–17 / 8–9, Gebüsch, Löwenzahn, zwei Laternen am Weg (6, 7), (14, 7)                                                                                                                                                   |
+| B1        | Stellwerk (21, 6), Bahnhof (30, 5) mit Uhrturm, Vordach über der Tür (35–37, 12), Fahrradständer (28, 13)                                                                                                                                                               |
+| C1        | Güterschuppen (45, 6), Laderampe (45–60, 13) mit drei Frachtkisten (47, 13), (49, 13), (55, 13) und Sackkarre (52, 13); Gabelstapler-Fahrer (Statist)                                                                                                                   |
+| D1        | Wasserturm (64, 5), Tauben auf dem Tank (Tiere, `fliegen`)                                                                                                                                                                                                              |
+| A2        | Reihenhäuser (1, 23), (4, 23) mit Treppen; Handyladen (9, 23) mit Leuchtschild und Banner; Kyle (13, 22) auf dem Gehweg; Laterne (8, 22)                                                                                                                                |
+| B2        | Vorplatz: Brunnen (26, 15), Wegweiser (20, 18) mit drei Armen (Park ↘, Markt ↓, Kanal →); Markt: vier Stände (19, 24), (24, 24), (19, 27), (24, 27) mit Markisen; Margie (21, 26); Tauben auf dem Pflaster                                                              |
+| C2        | Bäckerei (33, 23) mit Markise; Café (42, 23) mit zwei Tischen (43, 22), (46, 22); Bushaltestelle (46, 14) mit Wartehäuschen, Schild (49, 18) `busIronwood`; Banner an der Brückenrampe (51, 22)                                                                         |
+| D2        | Lagerhäuser (55, 23), Wendeplatz (62–68, 19–22), Laternen; Möwen                                                                                                                                                                                                        |
+| A3        | Uferpromenade, Bank zum Fluss (8, 31), Mülleimer (10, 31); Pip und zwei Pfützen (5, 30), (12, 30) (Kachelvariante Pfütze)                                                                                                                                               |
+| B3        | Hof der Bäckerei (33–40, 27–29) mit Mehlsäcken und Fahrradständer; Angler auf der Ufermauer (28, 31, Statist)                                                                                                                                                           |
+| C3        | Kaitreppe (47–49, 31–32), Kai unter dem Bogen (50–53, 32) mit Dima (51, 32), `fundLaeufer` (52, 32) im Schatten; Brücke 50–53 / 32–41 mit Laternen (50, 33), (53, 33), (50, 40), (53, 40)                                                                               |
+| D3        | Kran (62, 31), Kaimauer, zwei Poller; Möwen mit Pommes                                                                                                                                                                                                                  |
+| A4        | Wohnwagen (3, 44), Klappstuhl (5, 48), Grill (8, 48), Kurierrad (10, 46); Werkstatt Albescu (12, 45) mit Rolltor (15–16, 45), Mrs. Albescu (14, 43); Hofzaun 12–19 / 49–50; Schuppen (14, 51) mit Tür (16, 53) und Vorhängeschloss; Hinterweg 0–34 / 54–55; Uferweg Süd |
+| B4        | Bildschirmtische (22, 50), (26, 50), (30, 50), (22, 53), (26, 53), (30, 53) als Objektebene `bildschirmtische` (Auslöser (27, 49)); Brunnen (30, 45); Bänke an den Parkwegen; Baumgruppen                                                                               |
+| C4        | Pavillon (36, 43), Treppe (40, 48), Platz davor (36–45, 49–50), Parktor (49, 42) mit Plakat; zwei Pfützen auf dem Weg                                                                                                                                                   |
+| D4        | Anleger (56, 42) mit Pollern und `anlegerSchild` (56, 43); Pegelhaus (52, 45) mit Desmond Grant (54, 49); Hochwassergatter (57–58, 50) als Objekt mit Bedingung; Kanal 60–64 / 47–55; Fabrikmauer (66, 47)                                                              |
 
 Kleinflora: Blumenkästen an den Reihenhäusern, Beete am Vorplatz parallel zum Weg (nicht auf dem Weg),
 Herbstlaub in Gruppen auf den Parkwegen. Belebung: Pendler mit Schirmen (Vorplatz ↔ Water Street),
@@ -773,21 +779,21 @@ Grasböschung (Reihen 2 und 6), Fluss mit Ufer ab Spalte 60 im Süden. **Rand** 
 Uferkante, Fabrikhöfe aus Beton, Felder aus Erde, Gras mit Varianten. **Rand** Fabrikmauern und Felder
 im Westen, Böschung im Osten; Kanal bis Nord- und Südrand, Seitenarm bis zum Westrand.
 
-| Abschnitt | Inventar                                                                                                             |
-| --------- | -------------------------------------------------------------------------------------------------------------------- |
-| K1        | Poller (19, 4) mit Möwe, Meilenstein (16, 9) `meilenstein`                                                           |
-| K2        | Ziegelmauer 2–14 / 15–29 mit Graffiti (Objektebene in zwei Stufen), Noor (15, 22), Leiter und Sprühdosen (14, 23)    |
-| K3        | Tor (14, 36), Fabrikhof 4–13 / 32–43, Halle (Kulisse) 0–9 / 30–38, Maschendrahtzaun 4–13 / 43, `fundZahnrad` (9, 43) |
-| K4        | Werkstraße 0–16 / 50–51, Haltestellenschild mit Tafel (15, 49) `tafel`, Drehbrücke 20–24 / 50–51 (offen, Kulisse)    |
-| K5        | Schornstein (4, 62), Brombeeren (14, 66), Beginn der Kurve                                                           |
-| K6        | Weiden am Ostufer, Kahnwrack (15, 82) im Kanal                                                                       |
-| K7        | Wegweiser (9, 97), Uferpfad 0–10 / 98–99, Treidelbrücke 10–13 / 100–104, Seitenarm 0–13 / 101–103                    |
-| K8        | Schilf am Ufer, Rastbank (9, 112) `rastKanal`, Libellen                                                              |
-| K9        | Feld 0–9 / 120–134 (Kohl und Kürbis bis zum Rand), Feldzaun Spalte 10, Mr. Dale (10, 128)                            |
-| K10       | Scheune (2, 136), Hühner (Tiere), Leiterwagen (8, 141)                                                               |
-| K11       | Abzweig 3: Steg 14–16 / 156, Bank (14, 155), Flaschenpost (16, 157) `fundFlaschenpost`                               |
-| K12       | Pappeln am Pfad in gleichem Abstand (Allee), Gänse auf dem Kanal                                                     |
-| K13       | Strommast (5, 182), freie Sicht nach Süden                                                                           |
+| Abschnitt | Inventar                                                                                                                                                                                                |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| K1        | Poller (19, 4) mit Möwe, Meilenstein (16, 9) `meilenstein`                                                                                                                                              |
+| K2        | Ziegelmauer 2–14 / 15–29 mit Graffiti (Objektebene in zwei Stufen), Noor (15, 22), Leiter und Sprühdosen (14, 23)                                                                                       |
+| K3        | Tor (14, 36), Fabrikhof 4–13 / 32–43, Halle (Kulisse) 0–9 / 30–38, Maschendrahtzaun 4–13 / 43, `fundZahnrad` (9, 43)                                                                                    |
+| K4        | Werkstraße 0–16 / 50–51, Haltestellenschild mit Tafel (15, 49) `tafel`, Drehbrücke 20–24 / 50–51 (offen, Kulisse)                                                                                       |
+| K5        | Schornstein (4, 62), Brombeeren (14, 66), Beginn der Kurve                                                                                                                                              |
+| K6        | Weiden am Ostufer, Kahnwrack (15, 82) im Kanal                                                                                                                                                          |
+| K7        | Wegweiser (9, 96), Uferpfad 0–10 / 97–98, Treidelbrücke 10–13 / 100–104, Seitenarm 0–13 / 101–103                                                                                                       |
+| K8        | Schilf am Ufer, Rastbank (9, 112) `rastKanal`, Libellen                                                                                                                                                 |
+| K9        | Feld 0–9 / 120–134 (Kohl und Kürbis bis zum Rand), Feldzaun Spalte 10, Mr. Dale (10, 128)                                                                                                               |
+| K10       | Scheune (2, 136), Hühner (Tiere), Leiterwagen (8, 141)                                                                                                                                                  |
+| K11       | Abzweig 3 vom Pfad (17–18) nach Osten an den Kanal: Rastanleger 19–21 / 156 (Holzsteg auf der Uferkante), Bank (19, 155) zum Wasser, Konservendose (21, 157) `fundKonservendose` am Anleger (Befund 11) |
+| K12       | Pappeln am Pfad in gleichem Abstand (Allee), Gänse auf dem Kanal                                                                                                                                        |
+| K13       | Strommast (5, 182), freie Sicht nach Süden                                                                                                                                                              |
 
 ### 4.9 Eisenbrücke und Abhang (`wegRivertonIronwood.bruecke`, Bühnenbild)
 
@@ -809,18 +815,19 @@ Einschnitt, Hang aus Gras und Geröll. **Rand** Kanal und Felswand im Westen, Ha
 
 **Größe** 56 × 40. **Boden** Erde (Uferstraße, Gassen), Pflaster (Kai, Dorfplatz), Gras mit Varianten,
 Wasser mit Ufer (Becken, Seitenarm), Schleuse aus Stein mit Holztoren. **Rand** Gärten und Hecken im
-Norden, Wiesen und Pappeln im Süden, Becken bis zum Westrand, Seitenarm bis zum Ostrand.
+Norden, Wiesen und Pappeln im Süden und Westen (das Becken endet an einer Kaimauer bei Spalte 1), Seitenarm
+bis zum Ostrand.
 
-| Abschnitt | Inventar                                                                                                                                                    |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A1        | Haus (2, 2) mit Garten, Wäscheleine 2–8 / 9; Möwen                                                                                                          |
-| B1        | Häuser (10, 2), (18, 2), Finn (18, 12) am Ufer mit Angel, Eimer mit Flaschen (19, 11)                                                                       |
-| C1        | Tafel S3 (33, 11) `tafelSchleuse`; Steg auf dem Untertor (30, 12–18) als Objekt mit Bedingung `lockportSteg`; Kurbeln (29, 13), (38, 13)                    |
-| D1        | Schleusenwärterhaus (38, 4) mit Glocke (41, 4) `glocke`; Imogen (42, 10); Seitenarm 38–55 / 14–16 mit Schilf                                                |
-| A2        | Bootsschuppen (2, 22) mit Slipanlage; Ottos Ruderboot (6, 19) an vier Tauen (`ottosBoot`)                                                                   |
-| B2        | Lastkahn 8–20 / 17–19 („Ashford Belle“, Plane bis L3); Kapitän Ruben (14, 20) `kai`; Kreidetafel am Kai (11, 20) für L1; Gasthaus (18, 22) mit Tür (22, 28) |
-| C2        | Dorfplatz: Linde (24, 31), Bank (23, 33), Pumpe (30, 30) `pumpe`; Häuser (30, 22)                                                                           |
-| D2        | Häuser (38, 22), (46, 28) mit Kürbissen vor den Türen; Gänse                                                                                                |
+| Abschnitt | Inventar                                                                                                                                                     |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A1        | Haus (2, 2) mit Garten, Wäscheleine 2–8 / 9; Möwen                                                                                                           |
+| B1        | Häuser (10, 2), (18, 2), Finn (18, 12) am Ufer mit Angel, Eimer mit Flaschen (19, 11)                                                                        |
+| C1        | Tafel S3 (33, 11) `tafelSchleuse`; Steg auf dem Untertor (30, 12–18) als Objekt mit Bedingung `lockportSteg`; Kurbeln auf der Kammermauer (31, 13), (36, 13) |
+| D1        | Schleusenwärterhaus (38, 4) mit Glocke (41, 4) `glocke`; Imogen (42, 10); Seitenarm 38–55 / 14–16 mit Schilf                                                 |
+| A2        | Bootsschuppen (2, 22) mit Slipanlage; Henriks Ruderboot (6, 19) an vier Tauen (`henriksBoot`)                                                                |
+| B2        | Lastkahn 8–20 / 17–19 („Ashford Belle“, Plane bis L3); Kapitän Ruben (14, 20) `kai`; Kreidetafel am Kai (11, 20) für L1; Gasthaus (18, 22) mit Tür (22, 28)  |
+| C2        | Dorfplatz: Linde (24, 31), Bank (23, 33), Pumpe (30, 30) `pumpe`; Häuser (30, 22)                                                                            |
+| D2        | Häuser (38, 22), (46, 28) mit Kürbissen vor den Türen; Gänse                                                                                                 |
 
 ### 4.11 Gasthaus „Zur Schleuse“ (`lockport.gasthaus`)
 
@@ -828,15 +835,15 @@ Norden, Wiesen und Pappeln im Süden, Becken bis zum Westrand, Seitenarm bis zum
 Boden Holzdielen, Südwand Reihe 12 mit der Tür bei Spalte 10 (50 %). **Stimmung:** Kegel poltern,
 Bratkartoffeln, Lachen.
 
-**Laufwege:** Tür (10, 12) → Start (10, 11) → nach oben zur Kegelbahn; rechts zum Tresen mit Otto;
+**Laufwege:** Tür (10, 12) → Start (10, 11) → nach oben zur Kegelbahn; rechts zum Tresen mit Henrik;
 links zu den Tischen.
 
 | Zone      | Gegenstand                                 | Feld                   | Ausrichtung       | Material, Stil, Zustand | Zweck                                           |
 | --------- | ------------------------------------------ | ---------------------- | ----------------- | ----------------------- | ----------------------------------------------- |
 | Nordwand  | Kegelbahn, Anlauf links, neun Kegel rechts | (1, 2), 15 × 2         | läuft nach rechts | Holz hell, gebraucht    | `kegelbahn` (8, 4), Ansehen; Kegler (Statisten) |
 | Nordwand  | Kegel mit Kerbe im Ständer am Bahnende     | (16, 2)                | –                 | Holz, alt               | `fundKegel` (16, 4)                             |
-| Ostseite  | Tresen mit Zapfhahn und Gläsern            | (16, 6), 3 × 3         | Vorderseite links | Holz dunkel, rustikal   | Wirt Otto (15, 7)                               |
-| Ostwand   | Regal mit Gummistiefeln und Laternen       | (19, 5)                | –                 | Holz                    | Ottos Stiefel (L2)                              |
+| Ostseite  | Tresen mit Zapfhahn und Gläsern            | (16, 6), 3 × 3         | Vorderseite links | Holz dunkel, rustikal   | Wirt Henrik (15, 7)                             |
+| Ostwand   | Regal mit Gummistiefeln und Laternen       | (19, 5)                | –                 | Holz                    | Henriks Stiefel (L2)                            |
 | Westseite | drei Tische mit je vier gleichen Stühlen   | (2, 6), (6, 6), (2, 9) | –                 | Holz, rustikal          | Gäste (Statisten)                               |
 | Nordwand  | Foto der Schleuse im Hochwasser            | Wandfläche (17, 1)     | –                 | gerahmt                 | `fotoHochwasser` (17, 3), Ansehen               |
 | Westwand  | Tafel „Kegelkönig des Monats“              | Wandfläche (0, 4)      | –                 | Kreide                  | Ansehen, etwas Komisches (Regel 3.2)            |
@@ -844,4 +851,4 @@ links zu den Tischen.
 
 Drei Dinge zum Ansehen nach 09, 3.2: Foto der Schleuse (Foto), Kegel mit Kerbe (Geschichte), Tafel
 „Kegelkönig“ (Komisches); der Schachbezug kommt über die Kegelbahn („neun Kegel, und einer hält alle
-anderen“, Otto zu L2).
+anderen“, Henrik zu L2).

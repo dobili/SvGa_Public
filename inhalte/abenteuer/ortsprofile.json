@@ -216,8 +216,8 @@
           "zweck": "Feldweg am Fuß des Bahndamms bis Riverton (rechts): Signalmast, stillgelegter Haltepunkt mit Bank (Schaffner in der Pause), dunkler Durchlass unter dem Damm, Bank mit Blick auf den Fluss, Kleingärten, Plakatwand von Perfect Move am Stadtrand.",
           "nachbarschaft": "Bahndamm mit einem Gleis am Nordrand über die ganze Breite; Wiesen, Kleingärten und ab der Mitte der Fluss im Süden.",
           "pflicht": [
-            "Gleis auf Schotter von Rand zu Rand, Böschung beidseitig, Gleis nie begehbar",
-            "Fluss reicht bis zum Süd- und Ostrand, Ufer mit Rand",
+            "Gleis auf Schotter vom Nordrand (Westteil, Richtung Cedar Creek) bis zum Ostrand, Böschung beidseitig, Gleis nie begehbar",
+            "Fluss im Süden reicht bis zum Südrand, Ufer mit Rand",
             "Signalmast am Damm, Haltepunkt mit Bahnsteigrest, Schild und Bank",
             "Kleingärten mit Zäunen, Beeten und Gartenhaus",
             "Plakatwand mit Plakat nahe dem Stadtrand"
@@ -240,7 +240,7 @@
       "flora": "Platanen und Linden im Park, Herbstlaub in Gruppen auf den Wegen, Blumenkästen an Reihenhäusern, Beete am Bahnhofsvorplatz; am Kanal Weiden.",
       "karten": {
         "aussen": {
-          "zweck": "Bahnhof mit Uhrturm und Vorplatz (Bushaltestelle nach Ironwood, Brunnen, Wegweiser), Water Street mit Markt, Handyladen von Perfect Move (Kulisse), geschlossener Fahrradwerkstatt mit Schuppen dahinter, Café; Steinbrücke über den Fluss mit Musiker darunter; Park mit Pavillon, Bildschirmtischen auf der Wiese, Slicks Wohnwagen am Ufer; Kanalbecken mit Anleger, Pegelhaus und Treidelpfad nach Süden.",
+          "zweck": "Bahnhof mit Uhrturm und Vorplatz (Bushaltestelle nach Ironwood, Brunnen, Wegweiser), Water Street mit Markt, Handyladen von Perfect Move (Kulisse), Bäckerei und Café; Steinbrücke über den Fluss mit Musiker darunter; Park mit Pavillon, Bildschirmtischen auf der Wiese, Slicks Wohnwagen am Ufer, daneben die geschlossene Fahrradwerkstatt mit Schuppen dahinter; Kanalbecken mit Anleger, Pegelhaus und Treidelpfad nach Süden.",
           "nachbarschaft": "Gleise am Nordrand, Backstein-Reihenhäuser und Läden an einer Straße, Lagerhäuser am Ostkai; der Fluss teilt die Stadt in eine Bahnhofs- und eine Parkhälfte; im Süden Park und Kanal.",
           "pflicht": [
             "Fluss reicht bis zum West- und Ostrand, Kaimauer mit Geländer, Kanal bis zum Südrand",
@@ -366,7 +366,7 @@
       }
     },
     "lockport": {
-      "bild": "Schleusendorf am Seitenarm des Kanals: zehn Häuser um eine Schleuse und ein Hafenbecken, Lastkahn am Kai, Wäsche an Leinen, Gasthaus mit Kegelbahn, Dorfplatz mit Linde und Pumpe. Herbstnebel über dem Wasser, Möwen.",
+      "bild": "Schleusendorf am Seitenarm des Kanals: neun Häuser um eine Schleuse und ein Hafenbecken, Lastkahn am Kai, Wäsche an Leinen, Gasthaus mit Kegelbahn, Dorfplatz mit Linde und Pumpe. Herbstnebel über dem Wasser, Möwen.",
       "epoche": "gegenwart mit altem Ortskern",
       "wohlstand": "einfach",
       "stil": ["laendlich", "holz", "fachwerk"],
@@ -375,9 +375,9 @@
       "karten": {
         "aussen": {
           "zweck": "Nebenort N2: Uferstraße vom Kanalweg (rechts) am Nordufer, Schleusenwärterhaus mit Glocke und Rätseltafel (Sperre S3), Steg über das Untertor, Kai mit Lastkahn und Kreidetafel, Gasthaus, Bootsschuppen mit Ruderboot an Tauen, Dorfplatz.",
-          "nachbarschaft": "Drei Häuser am Nordufer, Häuser und Gasthaus am Kai und am Dorfplatz im Süden; Becken öffnet sich nach Westen zum Fluss.",
+          "nachbarschaft": "Drei Häuser am Nordufer, Häuser und Gasthaus am Kai und am Dorfplatz im Süden; das Becken endet im Westen an einer Kaimauer, dahinter Wiese.",
           "pflicht": [
-            "Hafenbecken reicht bis zum Westrand, Seitenarm bis zum Ostrand, Kai mit Pollern",
+            "Seitenarm reicht bis zum Ostrand, Hafenbecken endet im Westen an einer Kaimauer (ohne Anschluss an den Fluss), Kai mit Pollern",
             "Schleuse mit zwei Toren, Steg auf dem Untertor als eigenes Objekt",
             "Häuser mit Gärten und Wäscheleinen, Türen passen zum Weg",
             "Gasthaus mit Tür in der Südfassade zum Dorfplatz",
@@ -387,7 +387,7 @@
           "zustand": ["gebraucht", "alt"]
         },
         "gasthaus": {
-          "zweck": "Gasthaus „Zur Schleuse“: Kegelbahn, Tresen mit Wirt Otto, Fund „Kegel mit Kerbe“.",
+          "zweck": "Gasthaus „Zur Schleuse“: Kegelbahn, Tresen mit Wirt Henrik, Fund „Kegel mit Kerbe“.",
           "raeume": [
             {
               "name": "gaststube",

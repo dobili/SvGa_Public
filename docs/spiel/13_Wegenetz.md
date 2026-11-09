@@ -151,11 +151,13 @@ Verbot gilt dem Turnier, nicht dem Ort (Szene 38).
 
 **Sperren**
 
-| Nr. | Stelle                                                | Grund in der Welt                                                                    | Öffnet sich                                                                                                                                   |
-| --- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| S3  | Schleuse am Seitenarm Q2 nach Lockport (nicht auf W3) | Schleusentor geschlossen, „Herbstwartung“; der Pfad nach Lockport führt über das Tor | Tafel der Schleusenwärterin (Torwächter: zwei Gabeln, Kapitel 4). W3 selbst bleibt frei, mit seiner vorhandenen Tafel als einziger (Befund 1) |
-| S4  | Alter Steinbruch bei Ironwood (N3)                    | Stollen dunkel                                                                       | **Laterne** (Ironwood, Eisenwaren Edna)                                                                                                       |
-| –   | Club Ironwood                                         | Mama verbietet das Turnier in Ironwood (Szene 38)                                    | offen nach Szene 38 (Befund 2)                                                                                                                |
+| Nr. | Stelle                                                 | Grund in der Welt                                                                    | Öffnet sich                                                                                                                                     |
+| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| S3  | Schleuse am Seitenarm Q2 nach Lockport (nicht auf W3)  | Schleusentor geschlossen, „Herbstwartung“; der Pfad nach Lockport führt über das Tor | Tafel der Schleusenwärterin (Torwächter: zwei Gabeln, Kapitel 4). W3 selbst bleibt frei, mit seiner vorhandenen Tafel als einziger (Befund 1)   |
+| S4  | Alter Steinbruch bei Ironwood (N3)                     | Stollen dunkel                                                                       | **Laterne** (Ironwood, Eisenwaren Edna)                                                                                                         |
+| –   | Club Ironwood                                          | Mama verbietet das Turnier in Ironwood (Szene 38)                                    | offen nach Szene 38 (Befund 2)                                                                                                                  |
+| S14 | Bahndamm auf W2, Durchlass unter dem Damm (neu)        | stockdunkel; Streckenwärterin Gwen: „Da wohnt was.“                                  | **Laterne** (Ironwood, Eisenwaren Edna); Rückweg mit Lohn, nie Pflicht (`14_Akt2_Leben_teil1.md` 1.2, 6; Nachtrag Prüfbericht Akt 2, Befund 26) |
+| –   | Treidelpfad am Kanalbecken Riverton (Hochwassergatter) | Regen, Kanal über normal; Kanalmeister Desmond Grant                                 | `nadelRiverton` (wie in `orte.json`); in der Welt hört der Regen nach dem Clubkampf auf (`orte/riverton.md` 3.3)                                |
 
 **Abkürzung:** Der Lastkahn fährt vom Kanalanleger in Riverton über Lockport (N2) nach Ironwood
 (Schnellreise auf dem Wasser, Fahrkarte 5 Münzen). Geöffnet wird er von der Ironwood-Seite: Big Joe
@@ -165,25 +167,33 @@ kennt den Kapitän (Befund 36: W2 endet in Riverton, nur W3 berührt Lockport).
 dunkles Regal mit einem Fragment-Hinweis (Album-Eintrag ohne Halbzüge); mit dem **Fahrrad** über den Zedernpfad (Q1)
 zu Mae: Sternennacht im Herbst mit neuem Sternbild (Szene wie 22, andere Belohnung). Mit dem
 **Fahrrad** zurück in den Park von Maple Falls: Jo fordert ein Rennen auf dem Uferweg
-(Zeitkarte als Belohnung). Mit dem **Fahrrad** auf dem Radweg nach Lockport: Kapitän Ruben
-fordert ein Wettrennen gegen den Kahn (Münzen).
+(Zeitkarte als Belohnung). Mit dem **Fahrrad** auf dem Kanalweg: Kapitän Ruben
+fordert ein Wettrennen gegen den Kahn vom Seitenarm bis Meile 0 (Münzen; nur eine Karte, Prüfbericht Akt 2,
+Befund 27). Mit der **Laterne** zum Durchlass am Bahndamm (S14): Gwens Thermoskanne.
 
 **Wahl:** Lockport (N2) und der Steinbruch (N3) in beliebiger Reihenfolge, auch vor dem Club in
 Ironwood; ihre Aufgaben nutzen Kapitel 4 (Gabel, Fesselung, Spieß), dieselben wie die Clubs.
 
-**Nebenort N2 Schleusendorf Lockport** (Seitenarm Q2 des Kanals, Abstecher von W3, Schleuse S3)
+**Nebenort N2 Schleusendorf Lockport** (Seitenarm Q2 des Kanals, Abstecher von W3, Schleuse S3;
+ausgearbeitet in `14_Akt2_Leben_teil1.md` 4 und `orte/riverton.md` 1.6)
 
-- Thema und Stimmung: Zehn Häuser um eine Schleuse, Lastkähne, Wäsche an der Leine, ein Gasthaus mit
+- **Q2 ohne eigene Abstecherkarte** (Nachtrag, Befund 26): Der Uferpfad am Seitenarm beginnt am Wegweiser
+  des Kanalwegs und führt nach etwa 10 Kacheln über den Westrand direkt auf die Karte von Lockport, deren
+  Ostteil (Uferstraße, Schleuse) den Abstecher selbst bildet. Eine eigene Karte wäre ein leerer Gang:
+  Lockport sieht man schon vom Wegweiser aus, und mit 56 Kacheln Breite ist die Ankunft lang genug (wie
+  N3 in `orte/ironwood.md` 1.4).
+- Thema und Stimmung: Neun Häuser (mit Wärterhaus und Gasthaus) um eine Schleuse, Lastkähne, Wäsche an der Leine, ein Gasthaus mit
   Kegelbahn. Herbstlicher Nebel über dem Wasser, Möwen, die vom Fluss heraufkommen.
 - Nebenquests: **Kahnrennen** (zwei Kähne gleichzeitig angreifen: Gabel-Aufgaben am Kai, Kapitel 4);
   **Der festgebundene Kahn** (welches Tau hält was: Fesselungen als Bilderrätsel, Kapitel 4);
   **Post für den Kapitän** (Brief von Big Joe überbringen, ohne Schach).
 - Figuren: **Schleusenwärterin Imogen** (stellt die Tafel S3; „Erst das Wasser, dann das Boot.“);
-  **Kapitän Ruben** vom Lastkahn „Ashford Belle“; **Wirt Otto** mit Kegelbahn; **Junge Finn**, angelt
+  **Kapitän Ruben** vom Lastkahn „Ashford Belle“; **Wirt Henrik** (Henrik Dahl) mit Kegelbahn; **Junge Finn**, angelt
   Flaschen aus dem Kanal.
-- Gewinn: Lastkahn-Schnellreise, **Gummistiefel** (Wirt Otto, für Bayou und Watt in Akt 3), Fund
-  „Kegel mit Kerbe“ (Album), 30 Münzen; als einzige Karte **Gefahrenradar** (leicht), nur wenn der
-  Leser sie noch nicht hat, sonst 10 Münzen.
+- Gewinn: Lastkahn-Schnellreise, **Gummistiefel** (Wirt Henrik, für Bayou und Watt in Akt 3), Fund
+  „Kegel mit Kerbe“ (Album), 35 Münzen (mit der Tafel S3); als einzige Karte **Auszeit** (leicht,
+  Verbrauch) für alle drei Aufgaben. Nachtrag (Befund 26): Gefahrenradar hat jeder schon aus Club 1 (R27)
+  und wäre immer zu Münzen geworden.
 
 **Nebenort N3 Alter Steinbruch** (hinter dem Bahnhof von Ironwood, Sperre S4)
 
@@ -192,7 +202,8 @@ Ironwood; ihre Aufgaben nutzen Kapitel 4 (Gabel, Fesselung, Spieß), dieselben w
 - Nebenquests: **Die Lorenbahn** (Weichen stellen, damit keine Lore „hängt“: hängende Figuren und
   Spieße, Kapitel 4 und 7; als Aufgabenrunde, die Weichen nur im Dialog); **Mamas Versteck** (erst
   nach Szene 43, `mamaSpielt`: Big Joe erzählt, dass Mama hier als Jugendliche trainiert hat; ihr
-  altes Brett im Stollen finden, ohne Schach; Befund 3); **Das Echo** (Hallraum: ein Zug, der
+  altes Steckschach in einer Blechdose im Stollen finden, ohne Schach; Befund 3; ausgearbeitet als N-ST2 in
+  `14_Akt2_Leben_teil2.md`); **Das Echo** (Hallraum: ein Zug, der
   zurückkommt, Ansehen).
 - Figuren: **Vorarbeiter a. D. Mr. Hargrove** („Stein bricht da, wo er schwach ist. Bretter auch.“);
   **Fotografin Lena**, macht Bilder für ein Buch über Ironwood; **zwei Stahlwerkerkinder** mit

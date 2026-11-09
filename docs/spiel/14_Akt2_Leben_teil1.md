@@ -31,9 +31,9 @@ Es gelten die Grundsätze aus `12_Akt1_Leben.md`, Abschnitt 0, unverändert:
    (`gesamtsimulation.cjs --wirtschaft`) muss nach dem Einbau zeigen, dass die Grenzen aus 11 (7.1)
    halten; sonst sinken die kleinen Aufgaben auf 5 bis 10 (wie in 12, Entscheidung 4).
 4. **Schach im Alltag nach dem Kapitel des Ortes:** Riverton und Weg 2 Kapitel 7 (Abschnitt 7.2, Motiv 1
-   Gabel) und Kapitel 4 (Doppelangriff); Weg 3 und Lockport Kapitel 4 und 7 (Gabel, Fesselung, Spieß).
-   Bewusste Ausnahme wie der Fährstein in Akt 1: Noors Wand auf Weg 3 ist ein **Spieß**, Vorgeschmack auf
-   Priya in Ironwood. Buchbezug im Dialog nur als Kapitel und Abschnitt, nie mit Seiten.
+   Gabel) und Kapitel 4 (Doppelangriff); Weg 3 Kapitel 4, **Fesselung** (wie seine Tafel, Bibel 10.3);
+   Lockport Kapitel 4 und 7 (Gabel, Fesselung). Bewusste Ausnahme wie der Fährstein in Akt 1: Noors Wand
+   auf Weg 3 ist ein **Spieß**, Vorgeschmack auf Priya in Ironwood (Prüfbericht Akt 2, Befund 25). Buchbezug im Dialog nur als Kapitel und Abschnitt, nie mit Seiten.
 5. **Lieber wenige gute Häuser als viele leere:** neu betretbar ist nur das Gasthaus in Lockport. Alles
    andere bleibt Kulisse mit Figuren davor.
 6. **Keine Uhrzeit** (13, Grundsatz 7): Tagesabläufe sind `wann`-Varianten je Szene; Regen und Nebel sind
@@ -75,13 +75,14 @@ Sprechweise und Beispielsätze:
 - **Figur und Ort:** Leif Sorensen an der Bachquelle (Z2), Ziel im Pfadfinderlager (Z9).
 - **Ablauf:** (1) Leif erklärt: Drei Kreidepfeile an Bäumen, an jedem eine Frage; wer alle löst, darf die
   Fahne im Lager hissen. (2) Pfeil 1 (Z3), Pfeil 2 (Z7), Pfeil 3 (Z9): Auf dem Stamm ist ein kleines
-  Diagramm mit Kreide; die Frage „Welcher Zug greift zwei Figuren auf einmal an?“ wird als Wahl im Dialog
-  beantwortet (drei Möglichkeiten, Kapitel 7, Abschnitt 7.2, Motiv 1, und Kapitel 4, Doppelangriff).
-  Falsch heißt: noch einmal ansehen, kein Abzug. (3) Im Lager hissen {held} und die Kinder die Fahne.
+  Diagramm mit Kreide; je Pfeil eine Aufgabenrunde mit `anzahl` 1 (`wegCedarRiverton.pfeil1`, `.pfeil2`,
+  `.pfeil3`, Thema `doppelangriff`; Kapitel 7, Abschnitt 7.2, Motiv 1, und Kapitel 4, Doppelangriff),
+  wie `riverton.odumAufgabe`, weil der Dialog kein Brett zeigen kann (Prüfbericht Akt 2, Befund 7).
+  Falsch heißt: noch einmal versuchen, kein Abzug. (3) Im Lager hissen {held} und die Kinder die Fahne.
 - **Belohnung:** 10 Münzen, Fund „Pfadfinderabzeichen mit Springer“ (`abzeichenSpringer`, Album).
 - **Zeit:** 4 bis 6 Minuten (nutzt die Länge des Waldes).
 - **Voraussetzung:** keine; sinnvoll nach der Tafel am Wegweiser, weil dort dasselbe Motiv als Aufgabe
-  kommt. Unterschied zur Tafel: drei Einzelfragen im Gehen statt einer Runde am Ort.
+  kommt. Unterschied zur Tafel: drei Einzelaufgaben im Gehen statt einer Runde am Ort.
 
 **N-W2b Gwens Thermoskanne** · `hilfe` · `wegCedarRiverton.thermoskanne` (klein)
 
@@ -90,8 +91,10 @@ Sprechweise und Beispielsätze:
   stockdunkel. Ohne Laterne sagt {held}: „Zu dunkel.“ (2) Mit der **Laterne** (Laden Ironwood, Edna)
   wird der Durchlass sichtbar: eine Kröte, alte Ziegel, die Kanne. (3) Zurück zu Gwen. Sie schenkt aus
   der Kanne ein und erklärt beim Trinken: „Zwei Züge auf einem Gleis. Der vordere kann nicht weg, sonst
-  fährt der hintere durch.“ Wahl im Dialog: Wie heißt das auf dem Brett? (Spieß / Fesselung / Gabel;
-  Kapitel 4, Spieß und Fesselung; beide ersten Antworten gelten mit Erklärung).
+  fährt der hintere durch.“ Frage in Worten, Wahl im Dialog: Wie heißt das auf dem Brett? (Spieß /
+  **Fesselung** / Gabel; Kapitel 4, Fesselung). Richtig ist nur die Fesselung; Gwen erklärt jede Antwort:
+  „Fesselung: Der vordere darf nicht weg, weil dahinter der wertvollere steht. Beim Spieß ist es umgekehrt,
+  da steht der wertvollere vorn und muss weg. Und eine Gabel hat zwei Zinken, kein Gleis.“
 - **Belohnung:** 10 Münzen, Fund „Emaillebecher der Bahn“ (`emaillebecher`, Album).
 - **Zeit:** 3 bis 4 Minuten (ohne den Rückweg).
 - **Voraussetzung:** Gegenstand `laterne`; damit ein **Rückweg mit Lohn** (13, Grundsatz 5). Die
@@ -129,13 +132,13 @@ Westende des Parks, Bahnhofsvorplatz mit Bushaltestelle und Brunnen.
 
 ### 2.1 Neue Nebenfiguren
 
-| Figur               | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                      | Platz (Karte)                                      | Tagesablauf (`wann`)                                                                           |
-| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Dima Wolkow         | 34, er          | Akkordeonspieler unter der Steinbrücke, kam vor zehn Jahren mit dem Zug und ist geblieben, „weil der Bogen so schön hallt“. | aussen: Kai unter dem ersten Brückenbogen          | Morgen stimmt er, Tag spielt er für die Pendler, Abend spielt er für die Möwen.                |
-| Rosalind „Roz“ Pike | 52, sie         | Gemüsehändlerin am Markt, rechnet im Kopf schneller als jede Kasse und gibt immer einen Apfel zu viel.                      | aussen: Markt, Gemüsestand                         | Morgen baut sie auf, Tag verkauft sie, Abend zählt sie mit Pops die Woche.                     |
-| Kyle Brandt         | 22, er          | Verkäufer im Perfect-Move-Laden, spielt in jeder Pause heimlich auf einem Magnetbrett und darf es im Laden nicht.           | aussen: Gehweg vor dem Handyladen                  | Tag im Laden (hinter der Glasfront), in der Pause draußen mit dem Brett, Abend schließt er ab. |
-| Pip Delaney         | 9, sie          | Kind aus den Reihenhäusern, springt in jede Pfütze und nur in Springersprüngen, seit sie den Pavillon kennt.                | aussen: Uferpromenade (A3), Pfützen am Pavillon    | Nach der Schule in den Pfützen, später auf der Wiese, Abend ruft ihre Großmutter vom Fenster.  |
-| Desmond Grant       | 61, er          | Kanalmeister im Pegelhaus, misst dreimal am Tag den Wasserstand und schreibt ihn in ein Buch, das seit 1931 geführt wird.   | aussen: Pegelhaus am Kanalbecken, Hochwassergatter | Morgen am Pegel, Tag am Gatter, Abend schreibt er ins Pegelbuch.                               |
+| Figur                  | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                      | Platz (Karte)                                      | Tagesablauf (`wann`)                                                                           |
+| ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Dima Wolkow            | 34, er          | Akkordeonspieler unter der Steinbrücke, kam vor zehn Jahren mit dem Zug und ist geblieben, „weil der Bogen so schön hallt“. | aussen: Kai unter dem ersten Brückenbogen          | Morgen stimmt er, Tag spielt er für die Pendler, Abend spielt er für die Möwen.                |
+| Marjorie „Margie“ Pell | 52, sie         | Gemüsehändlerin am Markt, rechnet im Kopf schneller als jede Kasse und gibt immer einen Apfel zu viel.                      | aussen: Markt, Gemüsestand                         | Morgen baut sie auf, Tag verkauft sie, Abend zählt sie mit Pops die Woche.                     |
+| Kyle Brandt            | 22, er          | Verkäufer im Perfect-Move-Laden, spielt in jeder Pause heimlich auf einem Magnetbrett und darf es im Laden nicht.           | aussen: Gehweg vor dem Handyladen                  | Tag im Laden (hinter der Glasfront), in der Pause draußen mit dem Brett, Abend schließt er ab. |
+| Pip Delaney            | 9, sie          | Kind aus den Reihenhäusern, springt in jede Pfütze und nur in Springersprüngen, seit sie den Pavillon kennt.                | aussen: Uferpromenade (A3), Pfützen am Pavillon    | Nach der Schule in den Pfützen, später auf der Wiese, Abend ruft ihre Großmutter vom Fenster.  |
+| Desmond Grant          | 61, er          | Kanalmeister im Pegelhaus, misst dreimal am Tag den Wasserstand und schreibt ihn in ein Buch, das seit 1931 geführt wird.   | aussen: Pegelhaus am Kanalbecken, Hochwassergatter | Morgen am Pegel, Tag am Gatter, Abend schreibt er ins Pegelbuch.                               |
 
 Bestehende Figuren bleiben (Slick, Tamsin, Ray, Mr. Harlan, Pops, Mrs. Albescu, Nova, Victor). Statisten:
 Pendler mit Schirmen, Gabelstaplerfahrer am Güterschuppen, Angler auf der Ufermauer, Kameraleute in
@@ -145,7 +148,7 @@ Sprechweise und Beispielsätze:
 
 - **Dima:** singt halb, spricht in Takten. „Eins, zwei, drei, und – Brücke! Hörst du, wie sie
   antwortet?“ – „Slick kommt jeden Morgen vorbei. Er pfeift falsch. Aber schnell.“
-- **Roz Pike:** rechnet laut, schnell, mütterlich. „Drei Äpfel, zwei Birnen, macht vier fünfzig, nimm
+- **Margie Pell:** rechnet laut, schnell, mütterlich. „Drei Äpfel, zwei Birnen, macht vier fünfzig, nimm
   den Kürbis mit, der guckt dich an.“ – „Ein Griff, zwei Äpfel. So kauft man ein. Und so spielt Slick.“
 - **Kyle Brandt:** freundlich, ein bisschen verlegen, Verkaufssätze, die er selbst nicht ganz glaubt.
   „Perfect Move – Schach ohne Wartezeit! … Willst du eins? Nein? Gut. Ich auch nicht.“ – „Im Laden darf
@@ -164,9 +167,11 @@ Sprechweise und Beispielsätze:
 
 - **Figur und Ort:** Dima unter der Brücke (Kaitreppe).
 - **Ablauf:** (1) Der Wind hat drei Notenblätter vom Pult geweht. (2) Blatt 1 klebt am Wartehäuschen der
-  Bushaltestelle (Vorplatz). (3) Blatt 2 hat Roz am Gemüsestand aufgehoben; sie gibt es nur gegen eine
-  Antwort: „Ein Griff, zwei Äpfel. Wie heißt das auf dem Brett?“ (Wahl im Dialog: Doppelangriff / Gabel
-  / beides richtig; Kapitel 4, Doppelangriff, und Kapitel 7, Abschnitt 7.2). (4) Blatt 3 liegt nass auf
+  Bushaltestelle (Vorplatz). (3) Blatt 2 hat Margie am Gemüsestand aufgehoben; sie gibt es nur gegen eine
+  Antwort: „Ein Griff, zwei Äpfel. Wie heißt das auf dem Brett?“ (Frage in Worten, Wahl im Dialog:
+  **Doppelangriff** / Fesselung / Spieß; Kapitel 4, Doppelangriff). Richtig ist nur der Doppelangriff;
+  Margie erklärt: „Ein Zug, zwei Ziele: Doppelangriff. Macht ihn ein Springer, sagt man Gabel. Fesselung und
+  Spieß gehen auf einer Linie, meine Äpfel liegen nebeneinander.“ (4) Blatt 3 liegt nass auf
   der Treppe des Pavillons. (5) Zurück zu Dima; er spielt das Lied, das auf den Blättern steht, einen
   Walzer mit dem Titel „Gabel-Walzer“, den er für Slick geschrieben hat.
 - **Belohnung:** 10 Münzen, Fund „Notenblatt ‚Gabel-Walzer‘“ (`notenblatt`, Album). Danach spielt Dima
@@ -198,49 +203,50 @@ Sprechweise und Beispielsätze:
 - **Belohnung:** 10 Münzen beim ersten Sieg. Kyle bekommt ein Gegnerprofil (`riverton.kyle`, Stärke
   Straße) mit der typisierten Steckbriefzeile `{ "art": "fehlerart", "wert": "taktikUebersehen" }`
   („spielt, was das Tablet vorschlagen würde, und übersieht, was es ihm nicht zeigt“; Befund 13), die
-  der Sieg freischaltet. Nach Szene 37 steht Kyle unter den Zuschauern am Pavillon (Statist ohne
-  Wirkung): „Ich wollte nur sehen, wie es ohne Bildschirm aussieht.“
+  der Sieg freischaltet. Nach Szene 37 sitzt Kyle in seiner Pause auf der Treppe des Pavillons,
+  wo Slick weiterspielt („Dann spielen wir eben auf der Treppe.“), als Zuschauer ohne Wirkung: „Ich
+  wollte nur sehen, wie es ohne Bildschirm aussieht.“ (Prüfbericht Akt 2, Befund 10.)
 - **Zeit:** 5 bis 8 Minuten.
 
 ### 2.3 Gebäude
 
-| Gebäude                         | Status                       | Figur               | Dinge zum Ansehen (Auslöser `gegenstand`)                                                                                                                                               |
-| ------------------------------- | ---------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bahnhof mit Bahnhofshalle       | betretbar (vorhanden)        | Pops, Mr. Harlan    | (`grosseUhr`, `zeitungsstand`, Funde); neu `fahrplantafel` („Cedar Creek 7:10, 12:10, 17:10. Ironwood: siehe Bus.“), `fundbuero` („Gefunden: ein Regenschirm. Noch einer. Noch einer.“) |
-| Parkpavillon                    | betretbar (vorhanden)        | Slick, Tamsin, Ray  | (`gedenktafel`, `limonadenglas`); neu `uhrKlebeband` („Sie geht. Fragt nicht, wie.“)                                                                                                    |
-| Slicks Wohnwagen                | betretbar nach dem Clubkampf | Slick               | (`dosentrophaeen`); neu `brettBett`, `kurierrad`                                                                                                                                        |
-| Schuppen                        | betretbar mit Schlüssel (E4) | –                   | (`fahrrad`); neu `werkzeugwand`                                                                                                                                                         |
-| Fahrradwerkstatt Albescu        | Kulisse                      | Mrs. Albescu        | Rolltor mit Schild (`werkstattTor`: „Geschlossen seit dem Frühjahr. Die Fahrräder vermissen mich.“)                                                                                     |
-| Handyladen „Perfect Move Store“ | Kulisse                      | Kyle                | (`handyladen`)                                                                                                                                                                          |
-| Markt                           | Platz                        | Roz                 | Stände (Belebung), Roz als Figur                                                                                                                                                        |
-| Café „Dockside“                 | Kulisse                      | Kellnerin (Statist) | –                                                                                                                                                                                       |
-| Pegelhaus                       | Kulisse                      | Desmond Grant       | `pegel` („Pegelbuch seit 1931. Jeder Regen steht drin.“)                                                                                                                                |
-| Anleger                         | Platz                        | –                   | `anlegerSchild` („Lastkahn Ashford Belle: Riverton – Lockport – Ironwood. Fahrten nach Ansage.“), ab L3 Reise                                                                           |
-| Bushaltestelle                  | Kulisse                      | –                   | `busIronwood` (Reise nach `besuchtIronwood`)                                                                                                                                            |
+| Gebäude                         | Status                       | Figur               | Dinge zum Ansehen (Auslöser `gegenstand`)                                                                                                                                                                  |
+| ------------------------------- | ---------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bahnhof mit Bahnhofshalle       | betretbar (vorhanden)        | Pops, Mr. Harlan    | (`grosseUhr`, `zeitungsstand`, Funde); neu `fahrplantafel` („Cedar Creek: jeden Tag. Ironwood: siehe Bus.“ (keine Uhrzeit, Befund 12)), `fundbuero` („Gefunden: ein Regenschirm. Noch einer. Noch einer.“) |
+| Parkpavillon                    | betretbar (vorhanden)        | Slick, Tamsin, Ray  | (`gedenktafel`, `limonadenglas`); neu `uhrKlebeband` („Sie geht. Fragt nicht, wie.“)                                                                                                                       |
+| Slicks Wohnwagen                | betretbar nach dem Clubkampf | Slick               | (`dosentrophaeen`); neu `brettBett`, `kurierrad`                                                                                                                                                           |
+| Schuppen                        | betretbar mit Schlüssel (E4) | –                   | (`fahrrad`); neu `werkzeugwand`                                                                                                                                                                            |
+| Fahrradwerkstatt Albescu        | Kulisse                      | Mrs. Albescu        | Rolltor mit Schild (`werkstattTor`: „Geschlossen seit dem Frühjahr. Die Fahrräder vermissen mich.“)                                                                                                        |
+| Handyladen „Perfect Move Store“ | Kulisse                      | Kyle                | (`handyladen`)                                                                                                                                                                                             |
+| Markt                           | Platz                        | Margie              | Stände (Belebung), Margie als Figur                                                                                                                                                                        |
+| Café „Dockside“                 | Kulisse                      | Kellnerin (Statist) | –                                                                                                                                                                                                          |
+| Pegelhaus                       | Kulisse                      | Desmond Grant       | `pegel` („Pegelbuch seit 1931. Jeder Regen steht drin.“)                                                                                                                                                   |
+| Anleger                         | Platz                        | –                   | `anlegerSchild` („Lastkahn Ashford Belle: Riverton – Lockport – Ironwood. Fahrten nach Ansage.“), ab L3 Reise                                                                                              |
+| Bushaltestelle                  | Kulisse                      | –                   | `busIronwood` (Reise nach `besuchtIronwood`)                                                                                                                                                               |
 
 ### 2.4 Funde und Entdeckungen
 
 Abschnitte wie in `orte/riverton.md` 1.3 (A bis D zu je 18 Spalten, Reihen 1 bis 4).
 
-| Abschnitt           | Entdeckung (Funde fett, Bestehendes in Klammern)                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| A1 Gleisfeld        | Ratten huschen (Geräusch), Sichtachse auf den Uhrturm                                                               |
-| B1 Bahnhof          | Stellwerk mit Hebeln, (Bahnhofstür)                                                                                 |
-| C1 Güterschuppen    | Laderampe, Gabelstaplerfahrer (Statist: „Kisten für Ironwood. Immer Kisten für Ironwood.“)                          |
-| D1 Wasserturm       | Tauben auf dem Tank                                                                                                 |
-| A2 Westende         | Kyle (N-RT3), (`handyladen`)                                                                                        |
-| B2 Vorplatz, Markt  | Wegweiser (`wegweiserRiverton`), Brunnen mit Tauben, Roz                                                            |
-| C2 Water Street     | (Mrs. Albescu), Werkstatttor (`werkstattTor`), Bushaltestelle, Banner                                               |
-| D2 Lagerhäuser      | Möwen, Wendeplatz                                                                                                   |
-| A3 Westufer         | Pip (N-RT2), Bank mit Blick über den Fluss                                                                          |
-| B3 Hinter dem Markt | (Schuppen), Angler auf der Ufermauer                                                                                |
-| C3 Brücke           | Dima (N-RT1); (**Läufer aus Holz**, versteckt)                                                                      |
-| D3 Kai              | Kran, Möwen streiten um Pommes                                                                                      |
-| A4 Wohnwagenplatz   | (Wohnwagen), Kurierrad, Grill                                                                                       |
-| B4 Wiese            | (Bildschirmtische), Brunnen                                                                                         |
-| C4 Pavillon         | (Pavillon), Parktor mit Plakat, Pfützen mit Spiegelung                                                              |
-| D4 Kanalbecken      | Anleger (`anlegerSchild`), Pegelhaus mit Desmond (`pegel`), Hochwassergatter                                        |
-| Bahnhofshalle       | (**Zeitungsausschnitt** hinter dem Ständer, versteckt), (**Taubenfeder** auf Harlans Bank), Fahrplantafel, Fundbüro |
+| Abschnitt                  | Entdeckung (Funde fett, Bestehendes in Klammern)                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| A1 Gleisfeld               | Ratten huschen (Geräusch), Sichtachse auf den Uhrturm                                                                           |
+| B1 Bahnhof                 | Stellwerk mit Hebeln, (Bahnhofstür)                                                                                             |
+| C1 Güterschuppen           | Laderampe, Gabelstaplerfahrer (Statist: „Kisten für Ironwood. Immer Kisten für Ironwood.“)                                      |
+| D1 Wasserturm              | Tauben auf dem Tank                                                                                                             |
+| A2 Westende                | Kyle (N-RT3), (`handyladen`)                                                                                                    |
+| B2 Vorplatz, Markt         | Wegweiser (`wegweiserRiverton`), Brunnen mit Tauben, Margie                                                                     |
+| C2 Water Street            | Bäckerei, Bushaltestelle, Banner                                                                                                |
+| D2 Lagerhäuser             | Möwen, Wendeplatz                                                                                                               |
+| A3 Westufer                | Pip (N-RT2), Bank mit Blick über den Fluss                                                                                      |
+| B3 Hinter dem Markt        | (Schuppen), Angler auf der Ufermauer                                                                                            |
+| C3 Brücke                  | Dima (N-RT1); (**Läufer aus Holz**, versteckt)                                                                                  |
+| D3 Kai                     | Kran, Möwen streiten um Pommes                                                                                                  |
+| A4 Wohnwagen und Werkstatt | (Wohnwagen), Kurierrad, Grill; (Mrs. Albescu) vor der Werkstatt, Werkstatttor (`werkstattTor`); (Schuppen) dahinter (Befund 21) |
+| B4 Wiese                   | (Bildschirmtische), Brunnen                                                                                                     |
+| C4 Pavillon                | (Pavillon), Parktor mit Plakat, Pfützen mit Spiegelung                                                                          |
+| D4 Kanalbecken             | Anleger (`anlegerSchild`), Pegelhaus mit Desmond (`pegel`), Hochwassergatter                                                    |
+| Bahnhofshalle              | (**Zeitungsausschnitt** hinter dem Ständer, versteckt), (**Taubenfeder** auf Harlans Bank), Fahrplantafel, Fundbüro             |
 
 ## 3. Weg 3: Kanalweg und Eisenbrücke (`wegRivertonIronwood`)
 
@@ -248,7 +254,7 @@ Zwei Karten zu 190 und 160 Reihen (zusammen 350, etwa 113 Sekunden zu Fuß, 56 m
 Bestehende Stationen bleiben: Rätseltafel an der Bushaltestelle ohne Bus (Runde
 `wegRivertonIronwood.tafelHaltestelle`, die einzige Tafel auf Weg 3, Befund 1), Mr. Dale mit Weisheit,
 Funde Zahnrad und Nietenkopf, Szene 40 auf der Brücke. Neu: Graffiti-Künstlerin an der Fabrikmauer,
-Anstreicher an der Eisenbrücke, Abzweig nach Lockport mit Wegweiser, Rastanleger mit Flaschenpost.
+Anstreicher an der Eisenbrücke, Abzweig nach Lockport mit Wegweiser, Rastanleger mit Konservendose.
 
 ### 3.1 Neue Nebenfiguren
 
@@ -287,9 +293,11 @@ Sprechweise und Beispielsätze:
 - **Figur und Ort:** Corwin Lund am Brückenkopf (BR4); der Eimer liegt an der zweiten Kehre (BR8).
 - **Ablauf:** (1) Der Wind hat einen Farbeimer den Hang hinuntergerollt. (2) {held} holt ihn an der
   zweiten Kehre (Serpentinen hin und zurück, die Strecke ist das Erlebnis). (3) Corwin bindet den Eimer
-  ans Geländer: „So. Jetzt hängt er fest. Der kann nicht weg, sonst kippt die Leiter.“ Wahl im Dialog:
-  „Wie im Schach, wenn eine Figur nicht weg darf, weil dahinter …“ (der König / die Dame steht; Kapitel 4,
-  Fesselung; beide Antworten gelten mit Erklärung, absolute und relative Fesselung).
+  ans Geländer: „So. Jetzt hängt er fest. Der kann nicht weg, sonst kippt die Leiter.“ Frage in Worten,
+  Wahl im Dialog: „Wie heißt das im Schach, wenn eine Figur nicht weg darf, weil dahinter der König
+  steht?“ (Gabel / **Fesselung** / Doppelangriff; Kapitel 4, Fesselung). Richtig ist nur die Fesselung;
+  Corwin erklärt: „Gefesselt. Steht der König dahinter, darf sie gar nicht weg. Steht nur die Dame dahinter,
+  darf sie, aber es kostet.“
 - **Belohnung:** 10 Münzen.
 - **Zeit:** 3 bis 4 Minuten.
 - **Voraussetzung:** keine; wer den Weg nach Ironwood zum ersten Mal geht, kommt in Szene 40 ohnehin hier
@@ -298,23 +306,23 @@ Sprechweise und Beispielsätze:
 
 ### 3.3 Funde und Entdeckungen
 
-| Karte, Abschnitt | Entdeckung                                                                                                                                         |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kanalweg K1      | Hochwassergatter (offen), Meilenstein „Meile 0“ (`meilenstein`), Möwe auf dem Poller                                                               |
-| Kanalweg K2      | Noors Wand (N-W3a)                                                                                                                                 |
-| Kanalweg K3      | (**Zahnrad** am Zaun der leeren Fabrik), Krähen                                                                                                    |
-| Kanalweg K4      | (Rätseltafel an der Bushaltestelle ohne Bus), Drehbrücke                                                                                           |
-| Kanalweg K5–K6   | Schornstein, Brombeeren, Kahnwrack mit Bisamratte                                                                                                  |
-| Kanalweg K7      | Wegweiser nach Lockport, Treidelbrücke, Sicht auf Lockport                                                                                         |
-| Kanalweg K8      | Rastbank (`rastKanal`), Libellen                                                                                                                   |
-| Kanalweg K9–K10  | (Mr. Dale am Zaun), Scheune, Hühner                                                                                                                |
-| Kanalweg K11     | **Flaschenpost** am Rastanleger (`fundFlaschenpost`, Album: ein Zettel von Finn, „Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen.“) |
-| Kanalweg K12–K13 | Gänse, Pappeln, Rauch im Süden                                                                                                                     |
-| Brücke BR2       | Wärterhaus (`waerterhaus`: „Vernagelt. Auf der Tür steht ‚Brückenwärter‘ und darunter ‚bin gleich zurück‘.“)                                       |
-| Brücke BR4–BR5   | Corwin (N-W3b); (Szene 40); (**Nietenkopf** am Geländer); Aussicht ins Tal (`aussichtTal`)                                                         |
-| Brücke BR6–BR11  | Bank mit Blick auf das Werk, Eidechse, Wegkreuz, Graffiti „Ironwood steel“                                                                         |
+| Karte, Abschnitt | Entdeckung                                                                                                                                                                                                                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kanalweg K1      | Hochwassergatter (offen), Meilenstein „Meile 0“ (`meilenstein`), Möwe auf dem Poller                                                                                                                                                                                                                 |
+| Kanalweg K2      | Noors Wand (N-W3a)                                                                                                                                                                                                                                                                                   |
+| Kanalweg K3      | (**Zahnrad** am Zaun der leeren Fabrik), Krähen                                                                                                                                                                                                                                                      |
+| Kanalweg K4      | (Rätseltafel an der Bushaltestelle ohne Bus), Drehbrücke                                                                                                                                                                                                                                             |
+| Kanalweg K5–K6   | Schornstein, Brombeeren, Kahnwrack mit Bisamratte                                                                                                                                                                                                                                                    |
+| Kanalweg K7      | Wegweiser nach Lockport, Treidelbrücke, Sicht auf Lockport                                                                                                                                                                                                                                           |
+| Kanalweg K8      | Rastbank (`rastKanal`), Libellen                                                                                                                                                                                                                                                                     |
+| Kanalweg K9–K10  | (Mr. Dale am Zaun), Scheune, Hühner                                                                                                                                                                                                                                                                  |
+| Kanalweg K11     | **Konservendose mit Zettel** am Rastanleger (`fundKonservendose`, Album: ein Zettel von Finn, „Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen.“ Der Zettel steckt in einer Konservendose mit Deckel, weil die Kennung `flaschenpost` schon vergeben ist; Prüfbericht Akt 2, Befund 5) |
+| Kanalweg K12–K13 | Gänse, Pappeln, Rauch im Süden                                                                                                                                                                                                                                                                       |
+| Brücke BR2       | Wärterhaus (`waerterhaus`: „Vernagelt. Auf der Tür steht ‚Brückenwärter‘ und darunter ‚bin gleich zurück‘.“)                                                                                                                                                                                         |
+| Brücke BR4–BR5   | Corwin (N-W3b); (Szene 40); (**Nietenkopf** am Geländer); Aussicht ins Tal (`aussichtTal`)                                                                                                                                                                                                           |
+| Brücke BR6–BR11  | Bank mit Blick auf das Werk, Eidechse, Wegkreuz, Graffiti „Ironwood steel“                                                                                                                                                                                                                           |
 
-Die Flaschenpost ist ein kleiner Fund ohne Münzen; sie zeigt den Weg nach Lockport von der anderen Seite
+Die Konservendose ist ein kleiner Fund ohne Münzen; sie zeigt den Weg nach Lockport von der anderen Seite
 (Grundsatz aus 12: man sieht, was hinter der Sperre liegt).
 
 ## 4. Nebenort N2 Schleusendorf Lockport (`lockport`)
@@ -328,8 +336,8 @@ Abschnitt 3; hier ausgearbeitet. Alle Aufgaben tragen `klein: true` (13, Grundsa
 | Figur                    | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                          | Platz                                                  | Tagesablauf (`wann`)                                                            |
 | ------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
 | Imogen Rourke            | 63, sie         | Schleusenwärterin in dritter Generation, läutet die Glocke für jeden Kahn und kennt alle Kapitäne am Klang ihres Horns.         | Nordufer am Wärterhaus, Tafel S3                       | Morgen an den Kurbeln, Tag an der Tafel, Abend läutet sie die Glocke zum Essen. |
-| Kapitän Ruben Castellano | 47, er          | Fährt den Lastkahn „Ashford Belle“ zwischen Riverton und Ironwood, seit dem Herbst ohne Fracht, weil das Werk weniger bestellt. | Kai neben dem Kahn                                     | Morgen schrubbt er das Deck, Tag sitzt er am Kai, Abend im Gasthaus.            |
-| Wirt Otto Lindgren       | 70, er          | Wirt des Gasthauses „Zur Schleuse“, Kegelkönig von 1979 bis 1994, verleiht Gummistiefel an alle, die zum Boot wollen.           | Gasthaus hinter dem Tresen; sein Boot am Bootsschuppen | Morgen kocht er, Tag am Tresen, Abend auf der Kegelbahn.                        |
+| Kapitän Ruben Castellano | 47, er          | Fährt den Lastkahn „Ashford Belle“ zwischen Riverton und Ironwood, seit dem Sommer ohne Fracht, weil das Werk weniger bestellt. | Kai neben dem Kahn                                     | Morgen schrubbt er das Deck, Tag sitzt er am Kai, Abend im Gasthaus.            |
+| Wirt Henrik Dahl         | 70, er          | Wirt des Gasthauses „Zur Schleuse“, Kegelkönig von 1979 bis 1994, verleiht Gummistiefel an alle, die zum Boot wollen.           | Gasthaus hinter dem Tresen; sein Boot am Bootsschuppen | Morgen kocht er, Tag am Tresen, Abend auf der Kegelbahn.                        |
 | Finn Rourke              | 10, er          | Imogens Enkel, angelt Flaschen aus dem Becken und schickt sie mit Zetteln wieder los.                                           | Nordufer (B1)                                          | Nach der Schule am Ufer, Abend zählt er seine Flaschen.                         |
 
 Nachnamen neu (13 nannte nur Vornamen); doppelte Namen sind geprüft. Statisten: Kegler im Gasthaus, eine
@@ -341,9 +349,9 @@ Sprechweise und Beispielsätze:
   Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. Hier ist die Tafel.“
 - **Kapitän Ruben:** tiefe Stimme, kurze Sätze, Seemannsbilder. „Ein Kahn ohne Fracht ist ein Haus ohne
   Leute.“ – „Zwei Ziele, ein Schuss. So legt man an. So gabelt man auch.“
-- **Otto:** gemütlich, Kegelwörter. „Alle Neune! … Na ja, acht.“ – „Siehst du den Kegel in der Mitte? Der
+- **Henrik:** gemütlich, Kegelwörter. „Alle Neune! … Na ja, acht.“ – „Siehst du den Kegel in der Mitte? Der
   hält alle anderen. Fällt der, fallen sie alle.“
-- **Finn:** stolz, Zahlen. „Einundvierzig Flaschen! Zweiundvierzig, wenn du meine gefunden hast.“
+- **Finn:** stolz, Zahlen. „Einundvierzig Flaschen! Und eine Dose. Die Dose hast du gefunden, oder?“
 
 ### 4.2 Sperre S3 und Tafel
 
@@ -369,11 +377,11 @@ Sprechweise und Beispielsätze:
 
 **L2 Der festgebundene Kahn** · `raetsel` · `lockport.taue` (klein)
 
-- **Figur und Ort:** Wirt Otto (Gasthaus), sein Ruderboot am Bootsschuppen.
-- **Ablauf:** (1) Otto will sein Boot für den Winter an Land holen, aber es hängt an vier Tauen, und
+- **Figur und Ort:** Wirt Henrik (Gasthaus), sein Ruderboot am Bootsschuppen.
+- **Ablauf:** (1) Henrik will sein Boot für den Winter an Land holen, aber es hängt an vier Tauen, und
   „wenn du das falsche löst, kippt alles“. (2) Am Boot: Aufgabenrunde `lockport.taue`, `anzahl` 2, Thema
   `fesselung` (Kapitel 4, Fesselung; das Bild: ein Tau hält ein anderes, wie eine gefesselte Figur den
-  König deckt). (3) Das Boot gleitet an Land; Otto gibt {held} ein Paar **Gummistiefel**: „Damit du beim
+  König deckt). (3) Das Boot gleitet an Land; Henrik gibt {held} ein Paar **Gummistiefel**: „Damit du beim
   nächsten Boot keine nassen Füße kriegst. Ich hab zwei Paar.“
 - **Belohnung:** 10 Münzen, Gegenstand **Gummistiefel** (13, Grundsatz 4: Bayou im Winterhochwasser und
   Watt der Pelikaninsel, Akt 3).
@@ -384,21 +392,23 @@ Sprechweise und Beispielsätze:
 - **Figur und Ort:** Big Joe in der Kantine von Ironwood (mittel-4) gibt einen Brief mit; Kapitän Ruben am
   Kai.
 - **Ablauf:** (1) Nach Szene 39 (Big Joe getroffen) fragt Big Joe beim Ansprechen: „Kumpel, fährst du am
-  Kanal entlang? Bring das Ruben in Lockport. Der Mann hat seit dem Sommer keine Fracht.“ (2) {held} bringt
+  Kanal entlang? Bring das Ruben in Lockport, Kumpel. Der Mann hat seit dem Sommer keine Fracht.“
+  (Satz abgestimmt mit mittel-4, steht auch in `14_Akt2_Leben_teil2.md`) (2) {held} bringt
   den Brief nach Lockport. (3) Ruben liest, lacht laut: Das Werk hat eine Fuhre Stahlträger für ihn,
-  „solange es noch Werk ist“ (nur das, kein Wort über den späteren Verkauf). Ab jetzt fährt die „Ashford
+  „solange Joe das Sagen hat“ (nur das, kein Wort über den späteren Verkauf; Befund 15). Ab jetzt fährt die „Ashford
   Belle“: Lastkahn-Schnellreise Riverton ↔ Lockport ↔ Ironwood, 5 Münzen je Fahrt (13 §3), Variable
   `lastkahnFrei`.
 - **Schachbezug:** keiner (wie die Kühe in N1); bewusst eine Aufgabe nur für die Welt.
 - **Belohnung:** 10 Münzen und die Schnellreise.
 - **Zeit:** 3 Minuten (ohne den Weg).
 - **Voraussetzung:** `bigJoeGetroffen` (Szene 39, mittel-4). Liegt nach Szene 38, also nach dem ersten
-  Gang über Weg 3; die Hauptgeschichte braucht den Kahn nie.
+  Gang über Weg 3; dazu `lockportSteg` (Tafel S3), weil Ruben jenseits des Stegs am Kai steht
+  (Prüfbericht Akt 2, Befund 23). Die Hauptgeschichte braucht den Kahn nie.
 
 ### 4.4 Lohn des ganzen Ortes
 
 - Münzen: 5 (Tafel) + 10 + 10 + 10 = **35** (13, Grundsatz 6: 30 bis 40).
-- Funde: **„Kegel mit Kerbe“** (`kegelKerbe`, Album, im Gasthaus am Ende der Kegelbahn; Otto: „1979 hab
+- Funde: **„Kegel mit Kerbe“** (`kegelKerbe`, Album, im Gasthaus am Ende der Kegelbahn; Henrik: „1979 hab
   ich mit dem alle Neune geworfen. Die Kerbe ist vom Jubeln.“).
 - Gegenstand: **Gummistiefel** (L2).
 - Schnellreise: Lastkahn (L3).
@@ -410,25 +420,26 @@ Sprechweise und Beispielsätze:
 
 ### 4.5 Rückweg mit dem Fahrrad (13 §3)
 
-Kapitän Ruben fordert nach L3 ein **Wettrennen gegen den Kahn**: Er legt in Lockport ab, {held} fährt mit
-dem Rad über den Uferpfad und den Kanalweg zum Anleger in Riverton. Wer vor dem Kahn ankommt, bekommt 15
+Kapitän Ruben fordert nach L3 ein **Wettrennen gegen den Kahn**, nur auf dem Kanalweg (eine Karte,
+Prüfbericht Akt 2, Befund 27): Start am Wegweiser an der Treidelbrücke (K7), wo der Kahn aus dem Seitenarm
+in den Kanal biegt, Ziel am Meilenstein „Meile 0“ (K1) am Nordrand. Wer vor dem Kahn ankommt, bekommt 15
 Münzen (einmal je Akt). Technik: dieselbe Zeitmessung auf der Karte wie Jos Rennen im Park von Maple
 Falls (13 §3, neue Technik, einmal für beide).
 
 ## 5. Brücken zur Hauptgeschichte (ohne Änderung der Hauptszenen)
 
-| Brücke                                         | Wo                  | Wirkung in der Geschichte                                                                                       |
-| ---------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Kyle darf im Laden nicht spielen               | N-RT3               | Der Konzern mag das echte Brett nicht; leise Vorbereitung auf Novas Erschöpfung (Szene 29), ohne ihr Geheimnis. |
-| „Gabel-Walzer“ für Slick                       | Dima (N-RT1)        | Slick ist im Viertel beliebt; stützt Szene 36 (Zuschauer unter Schirmen) und Szene 37.                          |
-| Roz: „Ein Griff, zwei Äpfel. So spielt Slick.“ | Markt               | Steckbrief-Gefühl vor Szene 34 (Slick sieht Gabeln sofort), ohne Steckbriefzeile.                               |
-| Pip springt wie ein Springer                   | N-RT2               | Parkschach ist Teil des Alltags (09, 4a); macht den Verlust des Pavillons fühlbar.                              |
-| Regen hört nach dem Clubkampf auf              | Desmond Grant       | Szene 36/37 bekommt ein Bild in der Welt; erklärt die Sperre des Kanalwegs.                                     |
-| Quinn: „Pops macht den besten Kaffee“          | Bahndamm            | führt zu Szene 30a (Quinn trinkt Kaffee am Zeitungsstand).                                                      |
-| Ruben ohne Fracht, Brief von Big Joe           | L3                  | Das Werk bestellt weniger: leise Vorbereitung auf Szene 49 (Kantine vermietet), ohne den Verkauf zu nennen.     |
-| Corwin: „Die Brücke ist älter als das Werk“    | Eisenbrücke         | Gefühl von Geschichte vor dem Nietenkopf (Szene 40); keine Initialen, kein Name.                                |
-| Finns Flaschenpost                             | Kanalweg → Lockport | lockt zum Nebenort; kein Bezug zu Briefen der Hauptgeschichte (Hales Brief bleibt in Szene 41 und Akt 3).       |
-| Gummistiefel                                   | L2                  | Schlüssel für Akt 3 (Bayou, Watt; 13 Grundsatz 4).                                                              |
+| Brücke                                            | Wo                  | Wirkung in der Geschichte                                                                                       |
+| ------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Kyle darf im Laden nicht spielen                  | N-RT3               | Der Konzern mag das echte Brett nicht; leise Vorbereitung auf Novas Erschöpfung (Szene 29), ohne ihr Geheimnis. |
+| „Gabel-Walzer“ für Slick                          | Dima (N-RT1)        | Slick ist im Viertel beliebt; stützt Szene 36 (Zuschauer unter Schirmen) und Szene 37.                          |
+| Margie: „Ein Griff, zwei Äpfel. So spielt Slick.“ | Markt               | Steckbrief-Gefühl vor Szene 34 (Slick sieht Gabeln sofort), ohne Steckbriefzeile.                               |
+| Pip springt wie ein Springer                      | N-RT2               | Parkschach ist Teil des Alltags (09, 4a); macht den Verlust des Pavillons fühlbar.                              |
+| Regen hört nach dem Clubkampf auf                 | Desmond Grant       | Szene 36/37 bekommt ein Bild in der Welt; erklärt die Sperre des Kanalwegs.                                     |
+| Quinn: „Pops macht den besten Kaffee“             | Bahndamm            | führt zu Szene 30a (Quinn trinkt Kaffee am Zeitungsstand).                                                      |
+| Ruben ohne Fracht, Brief von Big Joe              | L3                  | Das Werk bestellt weniger: leise Vorbereitung auf Szene 49 (Kantine vermietet), ohne den Verkauf zu nennen.     |
+| Corwin: „Die Brücke ist älter als das Werk“       | Eisenbrücke         | Gefühl von Geschichte vor dem Nietenkopf (Szene 40); keine Initialen, kein Name.                                |
+| Finns Dose mit Zettel                             | Kanalweg → Lockport | lockt zum Nebenort; kein Bezug zu Briefen der Hauptgeschichte (Hales Brief bleibt in Szene 41 und Akt 3).       |
+| Gummistiefel                                      | L2                  | Schlüssel für Akt 3 (Bayou, Watt; 13 Grundsatz 4).                                                              |
 
 ## 6. Wege, Sperren und Rückwege
 
@@ -451,10 +462,10 @@ Cedar Creek, Steinbruch N3, Durchlass am Bahndamm) und später Sternwarte und Go
 **Rückwege mit Lohn in diesem Teil:**
 
 - **Laterne** (aus Ironwood) → Bahndamm: Durchlass, Gwens Thermoskanne (N-W2b).
-- **Fahrrad** → Uferpfad nach Lockport: Wettrennen gegen den Kahn (4.5).
+- **Fahrrad** → Kanalweg: Wettrennen gegen den Kahn (4.5).
 - **Big Joes Brief** (aus Ironwood) → Lockport: Lastkahn (L3).
-- **Nach der Nadel von Riverton:** Mrs. Fenwick und Mr. Quinn haben einen neuen Satz, Kyle steht unter den
-  Zuschauern; Revanchen gegen Quinn, Harlan und Kyle auf der neuen Stärke (R22).
+- **Nach der Nadel von Riverton:** Mrs. Fenwick und Mr. Quinn haben einen neuen Satz, Kyle sitzt auf der
+  Pavillontreppe bei Slick; Revanchen gegen Quinn, Harlan und Kyle auf der neuen Stärke (R22).
 - **Akt 3** (13, 7.2 und 7.3): Schnee auf den Bildschirmtischen, Slick in der Bahnhofshalle, Noors Wand
   fertig, Eis auf dem Becken in Lockport, Eiszapfen-Fund am Anleger in Riverton.
 
@@ -463,13 +474,13 @@ wie die Clubs (13, 3).
 
 ## 7. Zeitbudget
 
-| Ort                             | Neue Aufgaben (Minuten)     | Gebäude, Figuren, Funde (Minuten)          | Summe     |
-| ------------------------------- | --------------------------- | ------------------------------------------ | --------- |
-| Weg 2                           | 7–10 (N-W2a, N-W2b)         | 2–4 (Grenzstein, Signal, Gärten, Plakat)   | 9–14      |
-| Riverton                        | 13–20 (N-RT1, N-RT2, N-RT3) | 4–6 (fünf Figuren, Pegel, Anleger, Funde)  | 17–26     |
-| Weg 3                           | 6–9 (N-W3a, N-W3b)          | 2–4 (Meilenstein, Wegweiser, Flaschenpost) | 8–13      |
-| **Teil 1 zusätzlich (ohne N2)** |                             |                                            | **34–53** |
-| Lockport (Nebenort N2)          | 13–17 (Tafel, L1, L2, L3)   | 5–8 (Gang, Gasthaus, Figuren)              | 18–25     |
+| Ort                             | Neue Aufgaben (Minuten)     | Gebäude, Figuren, Funde (Minuten)           | Summe     |
+| ------------------------------- | --------------------------- | ------------------------------------------- | --------- |
+| Weg 2                           | 7–10 (N-W2a, N-W2b)         | 2–4 (Grenzstein, Signal, Gärten, Plakat)    | 9–14      |
+| Riverton                        | 13–20 (N-RT1, N-RT2, N-RT3) | 4–6 (fünf Figuren, Pegel, Anleger, Funde)   | 17–26     |
+| Weg 3                           | 6–9 (N-W3a, N-W3b)          | 2–4 (Meilenstein, Wegweiser, Konservendose) | 8–13      |
+| **Teil 1 zusätzlich (ohne N2)** |                             |                                             | **34–53** |
+| Lockport (Nebenort N2)          | 13–17 (Tafel, L1, L2, L3)   | 5–8 (Gang, Gasthaus, Figuren)               | 18–25     |
 
 Liegt ein Testlauf darüber, fallen zuerst N-RT3 (Duell) und N-W3b weg. Kleine Aufgaben und Nebenorte
 fallen nicht unter die Staffelzeiten von R40 (Akt 2 in Staffel 1: 3 bis 4 Stunden Hauptspiel); sie kommen
@@ -488,11 +499,14 @@ Karten werden noch nicht gebaut; diese Liste gilt für den Einbau.
 - Figuren neu: `wegCedarRiverton.sorensen`, `.tolliver`; Statisten „Pfadfinder“ (drei).
 - Auslöser neu: `grenzstein`, `pfeil1`, `pfeil2`, `pfeil3`, `signal`, `durchlass` (`wenn: hatLaterne`,
   sonst Dialog „Zu dunkel.“), `aussichtFluss`, `plakatPerfectMove`.
-- Quests: `wegCedarRiverton.schnitzeljagd`, `.thermoskanne` (beide `klein: true`).
+- Quests: `wegCedarRiverton.schnitzeljagd`, `.thermoskanne` (beide `klein: true`); Runden `wegCedarRiverton.pfeil1`, `.pfeil2`, `.pfeil3` (je `anzahl` 1, Befund 7).
 
 **`riverton`**
 
-- Figuren neu: `riverton.wolkow` (Dima), `.pike` (Roz), `.brandt` (Kyle), `.delaney` (Pip), `.grant`
+- `zugCedar` (Bahnhofshalle) zielt auf `cedarCreek.aussen` `bahnhof` (neuer Haltepunkt, baut der Haupt-Chat;
+  Prüfbericht Akt 2, Befund 8), 10 Münzen, frei nach der Nadel von Riverton.
+- `schuppenTuer` liegt jetzt am Park (16, 53), Befund 21.
+- Figuren neu: `riverton.wolkow` (Dima), `.pell` (Margie), `.brandt` (Kyle), `.delaney` (Pip), `.grant`
   (Desmond). Kyle bekommt das Gegnerprofil und die Begegnung `riverton.kyle`; die Figur heißt
   `riverton.brandt`, damit Figur und Begegnung getrennt bleiben.
 - Auslöser neu: `busIronwood` (Dialog, Reise), `anlegerSchild` (Dialog, Reise ab `lastkahnFrei`),
@@ -505,8 +519,8 @@ Karten werden noch nicht gebaut; diese Liste gilt für den Einbau.
 **`wegRivertonIronwood`**
 
 - Figuren neu: `wegRivertonIronwood.haddad` (Noor), `.lund` (Corwin).
-- Auslöser neu: `lockport` (Übergang zum Ostrand von `lockport.aussen`, Westrand Reihen 98–99),
-  `meilenstein`, `rastKanal`, `fundFlaschenpost`, `waerterhaus`, `aussichtTal`.
+- Auslöser neu: `lockport` (Übergang zum Ostrand von `lockport.aussen`, Westrand Reihen 97–98),
+  `meilenstein`, `rastKanal`, `fundKonservendose`, `waerterhaus`, `aussichtTal`.
 - Quests: `wegRivertonIronwood.wand`, `.farbeimer` (beide `klein: true`); Runde
   `wegRivertonIronwood.wand`.
 
@@ -517,12 +531,12 @@ Karten werden noch nicht gebaut; diese Liste gilt für den Einbau.
 - Figuren: `lockport.imogen`, `.ruben`, `.otto`, `.finn`.
 - Auslöser: `kanalweg` (Übergang zurück zum Kanalweg), `gasthausTuer`, `gasthausAusgang`, `tafelSchleuse`,
   `steg` (Objekt mit `wenn: lockportSteg`), `kai` (Dialog, Reise ab `lastkahnFrei`), `glocke`, `pumpe`,
-  `ottosBoot`, `kegelbahn`, `fundKegel`, `fotoHochwasser`.
+  `henriksBoot`, `kegelbahn`, `fundKegel`, `fotoHochwasser`.
 - Quests: `lockport.kahnrennen`, `.taue`, `.post` (alle `klein: true`); Runden `lockport.tafelSchleuse`,
   `lockport.kahnrennen`, `lockport.taue`.
 
 **Funde** (`funde.json`, neu): `abzeichenSpringer` (Weg 2), `emaillebecher` (Weg 2), `notenblatt`
-(Riverton), `murmel` (Riverton), `fotoWand` (Weg 3), `flaschenpost` (Weg 3), `kegelKerbe` (Lockport).
+(Riverton), `murmel` (Riverton), `fotoWand` (Weg 3), `konservendoseFinn` (Weg 3), `kegelKerbe` (Lockport).
 Bestehende Funde bleiben; der Sammelzähler der Entdecker-Nadel (E5) zählt nur die Funde aus der
 Story-Bibel, damit die Nadel erreichbar bleibt wie geplant (Vorschlag; sonst zählen die neuen mit).
 

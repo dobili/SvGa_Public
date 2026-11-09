@@ -71,6 +71,11 @@ export interface Szenendaten {
   readonly figurenbilder?: Readonly<Record<string, string>>;
   /** Möbel und Schmuck der Karte (moebel.ts). */
   readonly moebel?: readonly Moebel[];
+  /**
+   * Hintergrundbild aus dem Kartenbauer (Boden und Wände der gekauften Grafik); mit ihm werden die
+   * Kachelebenen nur noch für die Kollision gebraucht und nicht gezeichnet.
+   */
+  readonly hintergrund?: string | null;
   /** Name des Kachelsatzes in der Tiled-Datei. */
   readonly kachelsatz: string;
   readonly start: Weltposition;
@@ -88,6 +93,8 @@ interface Ausloeser {
 }
 
 const FIGUR_TYP = "figur";
+/** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
+const HINTERGRUND_TIEFE = -1;
 /** Höchstens so viele Kachelpixel je Bild rückt die Laufhilfe den Helden zur Kachelmitte. */
 const MITTENSCHRITT = 1;
 /** Schlüssel des Heldenbogens im Format von LimeZu. */
@@ -124,6 +131,7 @@ export class Oberweltszene extends Phaser.Scene {
       ladeFigurbogen(this, `figur:${name}`, adresse);
     }
     ladeMoebelbilder(this, this.daten.moebel ?? []);
+    if (this.daten.hintergrund) this.load.image("hintergrund", this.daten.hintergrund);
   }
 
   create(): void {
@@ -141,7 +149,11 @@ export class Oberweltszene extends Phaser.Scene {
       // braucht die gewöhnliche Ebene, die createLayer ohne weitere Angabe liefert.
       if (!(ebene instanceof Phaser.Tilemaps.TilemapLayer)) continue;
       ebene.setCollisionByProperty({ kollision: true });
+      if (this.daten.hintergrund) ebene.setVisible(false);
       feste.push(ebene);
+    }
+    if (this.daten.hintergrund) {
+      this.add.image(0, 0, "hintergrund").setOrigin(0, 0).setDepth(HINTERGRUND_TIEFE);
     }
     const { x, y } = this.daten.start;
     const echt = Boolean(this.daten.heldfigur);

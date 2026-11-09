@@ -98,7 +98,9 @@ def moebelfelder(karte: dict) -> set[Feld]:
     felder: set[Feld] = set()
     for o in (ebene(karte, OBJEKTEBENE) or {}).get("objects", []):
         angabe = MOEBEL.get(o.get("name", "")) if o.get("type") == "moebel" else None
-        if not angabe or not angabe.get("kollision"):
+        eigene = {e["name"]: e.get("value") for e in o.get("properties", [])}
+        # Der Kartenbauer schreibt die Kollision an das Objekt (an der Wand, auf dem Tisch: keine).
+        if not angabe or not eigene.get("kollision", angabe.get("kollision")):
             continue
         spalten = max(1, angabe["breite"] // KACHELGROESSE)
         reihen = max(1, angabe["hoehe"] // KACHELGROESSE)

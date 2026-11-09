@@ -1,372 +1,56 @@
-# Auftrag niedrig-1: Echte Häuser statt Ziegelblöcke (Maple Falls und Cedar Creek)
+# Auftrag: Karten mit dem Kartenbauer (Szenenbeschreibung, Bau, Bildprüfung)
 
-**Stand:** fertig (niedrig-1, 09.11.2026)
+**Stand:** offen (Haupt-Chat, 09.11.2026, zweiundzwanzigster Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 4c0d3ff9)
-**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-aussen.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`,
-`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilbe `hs`), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 macht parallel die Capital Arena)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 409b6826);
+privates Repository nur lesen (`origin/main` holen; dorthin nichts pushen)
+**Darf ändern:** `inhalte/abenteuer/szenen/` (nur deine Szenen), die zugehörigen Karten in
+`inhalte/abenteuer/karten/` (vom Kartenbauer geschrieben), `inhalte/abenteuer/moebel.json` (nur neue
+Einträge am Ende, Vorsilbe `cc`), deine Auftragsdatei
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests -q`, in `app/` Prettier, Build mit
+verlinktem privaten Repository und `npx playwright test tests/e2e/abenteuer` (Chromium); vorher erneut
+hereinholen (der andere Helfer arbeitet parallel an moebel.json)
 
 ## Ziel
 
-Auf den Außenkarten sind Häuser noch Blöcke aus Wandkacheln (Ziegel). Ersetze sie durch echte
-Gebäude als Möbel: Modern Exteriors (Themen „generic building“, „villas“, „additional houses“,
-„school“, „shopping center“ im Register), passend zur Stadt; Holzhäuser aus Serene Village nur
-für ländliche Orte.
+Der Autor fand die nachträglich möblierten Karten unbrauchbar (Wände als Blöcke, halbe Möbel, Dinge
+am Boden statt auf Tischen, Parkbänke im Haus). Neu entstehen Karten nach
+`inhalte/abenteuer/szenen/README.md`: erst eine **ausführliche, lebendige Szenenbeschreibung**, dann
+Bau mit dem Kartenbauer, dann **Bildprüfung** der Vorschau nach der Prüfliste, höchstens drei Runden.
+Muster: `szenen/maple-falls-wohnzimmer.json` und `szenen/maple-falls-aussen.json` (Vorschau dazu
+selbst zeichnen und ansehen). Notizen des Autors zu den alten Karten stehen unten.
 
-## Vorgaben
+Deine Karten: Cedar Creek Bibliothek, Archiv, Waschsalon, Landstraße (Weg Maple Falls–Cedar Creek)
 
-1. Die Wandkacheln des alten Blocks werden Boden (Gras) oder Weg; das Gebäude als Möbel mit
-   `kollision` sperrt selbst (alles außer der obersten Kachelreihe; ein Haus ist meist mehrere
-   Kacheln hoch, der Held läuft dann hinter dem Dach vorbei, das ist gewollt).
-2. **Wichtig:** Die Tür eines Gebäudes muss über dem Übergang liegen (Auslöser wie `schule`,
-   `haustuer`): Der Auslöser bleibt, wo er ist, das Gebäude wird so gesetzt, dass seine Tür direkt
-   darüber steht und der Übergang erreichbar bleibt (Tests prüfen die Erreichbarkeit).
-3. Erst Maple Falls draußen, prüfen (Bildschirmfoto, Oberflächentests), dann Park und Cedar Creek.
-   Klappt die Ausrichtung an Türen nicht sauber, nach Maple Falls aufhören und berichten.
+## Vorgehen je Karte
+
+1. Story-Bibel, Weltbeschreibung (`docs/spiel/09_Weltbeschreibung.md`) und die Ink-Datei des Ortes
+   lesen: Wer ist dort, was passiert, welche Auslöser und Figuren gibt es (alte Karte und orte.json)?
+2. Beschreibung schreiben (mehrere Absätze: Raum, Wände, Licht, jedes Möbel mit Platz und Bezug,
+   Kleinkram, Laufwege). Bewohnt und glaubwürdig, nicht karg.
+3. Möbel im Register suchen und **jedes Bild selbst ansehen**, bevor du es nimmst (die Beschreibungen
+   im Register sind teils falsch). Nur ganze Gegenstände; Bodenbelag und Wandstil aus `materialien.json`
+   (neue Böden oder Wände dort nur mit Rücksprache).
+4. Bauen (`python -m pipeline.abenteuer.kartenbau …`; Befunde beheben), Vorschau zeichnen
+   (`python -m pipeline.abenteuer.kartenbild /home/user/schach-abenteuer-inhalte /tmp/vorschau …`; Pillow
+   in einer eigenen venv), Vorschau ansehen, nach der Prüfliste prüfen, nachbessern. Im Bericht je
+   Karte: Runden, was geändert wurde, was offen bleibt.
+5. Größe frei wählen, wie es der Ort braucht; Übergänge anderer Karten zeigen auf die Auslösernamen.
+
+## Notizen des Autors zu den alten Karten
+
+Archiv: „kaum erkennbar, was die Möbel darstellen“. Waschsalon: „ein halber Tisch“. Maple Falls
+draußen: „So sieht keine Außenfassade aus“. Clubraum: „Bretter auf dem Boden, nur ein Stuhl?“.
+Dachboden: „Wände nicht passend gedreht“. Park: „Mauern oder gepflasterter Boden?“. Bahnhofshalle:
+„Karte steht auf dem Boden“. Pavillon: „Parkbänke im Innenraum?“. Wohnwagen: „Fernseher auf dem Boden,
+Möbel abgeschnitten“. Bahndamm: „Schienen enden im Nichts“. Zedernwald: „Bäume abgeschnitten“.
+Landstraße: „Wo ist hier ein Weg?“.
 
 ## Bericht
 
-Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
-übernommen, nur `hsVilla` und `hsSchule` ergänzt).
-
-**Grundproblem:** Ganze Gebäude im Register sind viel größer als die alten Blöcke (5 Kacheln hoch):
-Villa 9 × 13 Kacheln, Uhrturm 8 × 15, Reihenhaus 12 × 15, Einfamilienhaus 16 × 14, Landhaus
-18 × 16. Die Einträge „generic building“ mit 5 bis 7 Kacheln sind nur Bauteile (Ecken, Eingänge),
-keine ganzen Häuser. Damit die Häuser passen, habe ich die Karte `maple-falls-aussen` **oben um 10
-Reihen vergrößert** (28 × 20 → 28 × 30): Alle Ebenen, Auslöser, Figuren, Möbel und die Laufwege
-der Statisten sind um 10 Reihen nach unten gerückt. Feste Koordinaten dieser Karte gibt es sonst
-nirgends (Tests, Code, Daten geprüft); ein Spielstand, der draußen gespeichert wurde, steht nach
-dem Laden 10 Reihen zu weit oben (Beta, laut CLAUDE.md erlaubt).
-
-**Maple Falls draußen:**
-
-- Wohnhaus = `hsVilla` (Villa 1, 144 × 208), links oben so gesetzt, dass die Haustür (Spalte 2 der
-  Villa) genau über dem Auslöser `haustuer` (5/16) liegt; der Held steht davor auf dem Gartenweg.
-  Bildschirmfoto: passt, die Tür ist direkt über dem Helden.
-- Schule = `hsSchule` (Uhrturm aus „school“, 128 × 240), Mitte über dem Auslöser `schule` (21/16).
-  **Nicht sauber:** Der Uhrturm hat unten ein großes Bogenfenster, aber keine Tür; ein Schulgebäude
-  mit Tür in passender Größe gibt es nicht (das Schulhaus im Register ist 24 × 23 Kacheln).
-- Der untere Block (Nachbarhaus ohne Tür) ist jetzt ein Garten: zwei Bäume und ein Blumenbeet
-  hinter dem vorhandenen Zaun (kein Haus passt dort unter die Straße).
-- Ein Baum, der in der Villa stand, ist entfernt; der Laufweg des Eichhörnchens liegt jetzt neben
-  der Schule.
-
-Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
-(9 von 9) bestanden.
-
-**Frage, deshalb Park und Cedar Creek nicht begonnen (Vorgabe 3):**
-
-1. Ist das Vergrößern der Außenkarten der richtige Weg? Für Cedar Creek (Bibliothek, Waschsalon)
-   wäre dasselbe nötig; alternativ dürfte ein Haus oben über den Kartenrand hinausragen (Möbel mit
-   negativem `y`), wenn die Oberwelt das sauber zeichnet.
-2. Für die Schule: Uhrturm ohne Tür behalten, eine Villa nehmen (hat Tür, sieht aber wie ein
-   Wohnhaus aus) oder das große Schulhaus mit noch größerer Karte?
-
-**Nachtrag nach den Antworten des Haupt-Chats:**
-
-- **Schule Maple Falls:** „School 1“ ist 24 × 23 Kacheln; seine Türen liegen in den Spalten 7–9
-  und 13–15, die Treppe in 6–17. Damit eine Tür über `schule` (Spalte 21) steht, müsste das
-  Gebäude bis Spalte 30 reichen, die Karte ist 28 breit, und links steht die Villa. Deshalb die
-  vorgesehene Ausweichlösung: Uhrturm bleibt, davor `hsRampe` (Schuleingangsrampe, 64 × 32,
-  **ohne** Kollision, damit `schule` darunter begehbar bleibt). Bildschirmfoto: Vordach mit Stufen
-  vor dem Turm, der Held steht auf den Stufen.
-- **Cedar Creek draußen:** ebenfalls oben um 10 Reihen vergrößert (28 × 30). Die Bibliothek
-  (Backstein von 1890) ist jetzt der Uhrturm `hsSchule` über `bibliothekTuer` (14/16), davor
-  `hsRampe`; der alte Ziegelblock ist Wiese. Der **Waschsalon bleibt ein Block**: Sein Übergang
-  `waschsalonTuer` liegt an der Oberkante unterhalb der Straße (Eingang von Norden); alle Häuser
-  im Register haben die Tür unten, ein Haus dort würde die Straße überdecken. Vorschlag: den
-  Auslöser eine Reihe tiefer unter einen neuen Hausstandort verlegen (`orte.json` und Dialog
-  bleiben gleich, nur die Kachel ändert sich) – das entscheide ich nicht allein.
-- **Park:** hat keine Häuser (die Blöcke rechts sind der Fluss); nichts geändert. Mit
-  `stil = kueste` würden sie Wasser, der Weg würde aber zum Holzsteg; das überlasse ich dir.
-- Übergänge aus anderen Karten auf diese Karten nennen nur Auslöser-Namen, keine Koordinaten; die
-  Tests (Zielobjekte, Erreichbarkeit) sind grün.
-
-Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
-(9 von 9) bestanden.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
-übernommen und nur meine Änderungen eingetragen).
-
-**1. Prüfung aller Möbel.** Übersichtsbild aller 146 Einträge von `moebel.json` (Schlüssel, Bild,
-Größe; nur lokal, nicht im Repository) Eintrag für Eintrag angesehen. Falsch waren:
-
-| Schlüssel      | alt                                            | neu                                     |
-| -------------- | ---------------------------------------------- | --------------------------------------- |
-| `kuehlschrank` | Küche 124, 16 × 32 (Küchenschrank mit Fenster) | Küche 158, 16 × 48 (Kühlschrank)        |
-| `herd`         | Küche 131, 32 × 32 (Arbeitsplatte mit Dosen)   | Küche 148, 16 × 32 (Herd mit Kochfeld)  |
-| `kisteGrau`    | Lebensmittel 355, 16 × 32 (Papierständer)      | Konferenzsaal 31, 16 × 32 (graue Kiste) |
-
-Der größere Kühlschrank stellte im Wohnzimmer Mama zu; dort steht er jetzt eine Reihe höher
-(gleiche Unterkante). In Kantine und Wohnwagen hat er oben keinen Platz, die Tests bleiben dort
-grün. Plausibel trotz knapper Beschreibung und daher unverändert: `wartebank` (graue Bank von
-oben), `pdFeldbett` (weiße Liege), `aktenschrank`, `truhe`, `regalAlt`. Nicht gesetzt und nicht
-geprüft wichtig: `automatBunt` und `iwDusche` (unbenutzt, Bild abgeschnitten bzw. Warnschild).
-
-**2. Ghost Town, Wege und Erinnerung.** Neu: `gtKreuz` (Holzkreuz vom Friedhof, 32 × 32), `gtHeu`
-(Heuhaufen, 32 × 16). Wiederverwendet: `fels`, `felsKlein`, `dsKaktus`, `iwFass`, `zaun`,
-`ldTheke`, `dsHocker`, `pdKlavier`, `kisteRot`, `holztisch`, `stuhl`, `rvHolzscheite`.
-
-- **Canyonrand:** Felsen am Rand, Kakteen.
-- **Staubstraße:** Kakteengruppen und Felsbrocken statt Platzhaltern; Juniper frei auf dem Weg.
-- **Ghost Town draußen:** Friedhof mit sechs Holzkreuzen und Steinen (das Grab bleibt Auslöser),
-  ein Zaun, Fässer vor dem Saloon, Kakteen, ein Heuhaufen.
-- **Saloon:** Theke mit Gläsern, Klavier, ein Hocker am Spieltisch; Pruitt und das Fernpartie-Brett
-  frei.
-- **Erinnerung Siedlung (Hütte, Sepia):** Kisten, ein Tisch mit Stuhl, Holzscheite; Kerze und
-  Postreiter erreichbar.
-
-Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
-(9 von 9) bestanden. Einen Brunnen (Ziehbrunnen) gibt es im Register nicht als Einzelbild.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; Konflikt in `moebel.json` mit
-mittel-1 gelöst, indem ich deren Fassung übernommen und nur meine `ds`-Einträge ergänzt habe).
-Neu: `dsKaktus` (Topfkaktus, 16 × 32), `dsAuto` (Auto an der Tankstelle, 32 × 32), `dsReifen`
-(16 × 16), `dsHocker` (Holzhocker, 16 × 16), `dsSchranke` (Absperrung als Leitplanke, 32 × 16),
-`dsRegal` (Regal mit Büchern und Flaschen, 32 × 48). Wiederverwendet: `fels`, `felsKlein`,
-`truhe`, `kisteRot`, `kisteGrau`, `holztisch`, `wegweiser`, `pdWerkzeugregal`.
-
-Bildschirmfotos (je ein Satz):
-
-- **Canyonpfad:** Kakteen am Pfad, Felsen neben Miras Stein und am Ufer.
-- **Felsbogen:** zwei Absperrungen als Geländer an der Eisenbahnbrücke, Kakteen am Weg.
-- **Desert Springs draußen:** Kakteen an der Straße, ein Auto und Reifen an der Tankstelle bei
-  Buck.
-- **Garage:** Werkzeugregal und Reifen an der Rückwand, ein Auto in der Garage; Mira und Tomás
-  frei.
-- **Antiquariat:** vier Regale an den Seiten, Truhe und Kiste in der Mitte (die Truhe steht unter
-  Mr. Okoro, damit sie ihn nicht verdeckt), drei Aktenstapel.
-- **Diner:** zwei Autos auf dem Parkplatz, Kakteen am Rand, ein Tisch mit zwei Hockern vor dem
-  Diner (ein Innenraum fürs Diner ist keine eigene Karte).
-- **Bergstraße:** Felsen, eine Leitplanke am Hang, ein Wegweiser an der Abzweigung zur Hochebene.
-
-Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build` und Oberflächentests Abenteuer
-(9 von 9) bestanden. Einen Wassertank gibt es im Register nicht.
-
-**Befund für den Haupt-Chat (Register falsch beschriftet):** Ich habe alle Bilder aus
-`moebel.json` als Übersicht angesehen. Einige Namen im Register passen nicht zum Bild, und das
-betrifft schon gesetzte Möbel, die ich in diesem Auftrag nicht ändern darf:
-`buecherregal` (Classroom 36) ist eine Schultafel, `leselampe` (Classroom 40) ein Kühlschrank,
-`tafel` (Classroom 29) ein grüner Schrank, Classroom 34 ein Globus. Echte Bücherregale sind
-Classroom 43, 44 und 45 (je 32 × 48). Betroffen: Clubraum Maple Falls (`buecherregal` wirkt dort
-als Tafel, passt), Bibliothek Cedar Creek (`buecherregal` sollte Regal sein), `leselampe` in
-Bibliothek und Archiv. Vorschlag: die beiden Pfade in `moebel.json` korrigieren
-(`buecherregal` → Classroom 45 mit 32 × 48, `leselampe` → eine echte Lampe) und die
-Positionen in der Bibliothek prüfen; das Register sollte bei Gelegenheit neu beschriftet werden.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push erneut hereingeholt, ohne Konflikt). Neu in
-`moebel.json`, alle mit Vorsilbe `pd`: `pdFeldbett` (16 × 32), `pdKlavier` (32 × 48),
-`pdSchlagzeug` (32 × 32), `pdGitarrenkoffer` (32 × 32), `pdBoot` (Ruderboot, 64 × 32), `pdEimer`
-(16 × 16), `pdSeil` (16 × 16), `pdWerkzeugregal` (48 × 32). Wiederverwendet: `iwFass`,
-`iwFassGross`, `laterne`, `kisteRot`. Kein Möbel verstellt Auslöser, Figuren oder Laufwege (ein
-Leitkegel auf dem Platz des Reihers wurde wieder entfernt).
-
-Bildschirmfotos (je ein Satz):
-
-- **Fähre:** Fässer an Deck statt Lampen und Kistenstapel, ein Tau am Weg; der Schiffskoch frei
-  erreichbar.
-- **Deich:** Laterne am Deich, ein Eimer neben den Sandsäcken (die Säcke bleiben Kisten, im
-  Register gibt es keine).
-- **Port Delacroix draußen:** Ruderboot und Tau am Kai bei Mr. Batiste, Eimer an der Baustelle
-  vor dem Musikhaus, Laterne vor der Turnhalle; die Zelte bleiben Kistenblöcke (keine Zelte als
-  Einzelbild).
-- **Turnhalle:** vier Feldbetten an den Wänden, eine Kiste mit Hilfsgütern, die Spieltische bleiben.
-- **Werkstatt:** zwei Klaviere, Werkzeugregal mit Gießkannen und Pflanze; Werkbank bleibt Auslöser.
-- **Musikhaus:** Klavier, Schlagzeug und ein Gitarrenkoffer, eine Kiste mit geretteten Sachen;
-  der Bläser steht vor dem Schlagzeug.
-- **Bayou:** ein Ruderboot am Steg.
-
-Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier, Paketbau und
-`npm run build` sauber, Oberflächentests Abenteuer (Chromium) 9 von 9 bestanden.
-
-Befund für den Haupt-Chat: Auf Fähre, Deich und Bayou zeigen die Kachelsätze dort, wo Wasser sein
-soll (Wandkacheln am Rand), Gras; Wasser, Schilf und Stege aus `SERENE_VILLAGE_REVAMPED` sind
-Kachelsätze und brauchen einen Wasser-Stil im Kachelsatz, nicht Möbel. Den Varianten-Tisch im
-Musikhaus gibt es in `orte.json` nicht als Auslöser; deshalb nicht gesetzt.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung`. Neu in `moebel.json` (nur Pfade, alle mit Vorsilbe `iw`):
-`iwSpind` (Schließfach schwarz, 32 × 32), `iwVitrine` (Holz-Glas-Vitrine, 32 × 48), `iwBild`
-(Gemälde mit Goldrahmen, 16 × 32), `iwFass` (16 × 16), `iwFassGross` (32 × 32), `iwStrommast`
-(16 × 64), `iwPylon` (Leitkegel, 16 × 32), `iwHantel` (16 × 16). Wiederverwendet ohne Änderung:
-`laterne`, `parkbank`, `muelltonne`, `busch`, `baum`, `fels`, `felsKlein`, `holztisch`,
-`kuehlschrank`, `sofaRund`, `pflanzeKlein`, `wartebank`, `aktenschrank`, `pokal`. Eine Dusche
-(„Dusche mit rotem Kreuz“) sah im Spiel wie ein Warnschild aus; an ihrer Stelle stehen graue
-Schränke, der Eintrag ist wieder entfernt. Kein Möbel verstellt Auslöser, Figuren oder Laufwege
-von Statisten und Tieren.
-
-Bildschirmfotos (je ein Satz):
-
-- **Kanalweg:** Strommast und Laterne am Kanal, Fässer und Leitkegel vor den Fabrikhallen, eine
-  Bank am Weg; Dale steht frei auf dem Weg.
-- **Brücke:** Laterne am Brückenkopf, Felsen, Büsche und ein Baum am Ufer, Fässer neben dem
-  Zeitnot-Trick.
-- **Ironwood draußen:** Kabeltrommeln als Fässer am Güterbahnhof (Gus davor), Strommast an der
-  Straße, Leitkegel als Baustelle, Laterne, Mülltonne und Bank vor den Reihenhäusern.
-- **Kantine:** zwei lange Tischreihen aus Holztischen, zwei Kühlschränke an der Küchenwand; Hank,
-  Priya und Big Joe frei erreichbar, das Stahlbrett bleibt Auslöser.
-- **Mamas Zimmer:** rundes Sofa und Pflanzen, ein kleiner Tisch neben Oma Ruth; Medaille und
-  Partieformular bleiben Auslöser.
-- **Umkleide:** schwarze Schließfächer an der Rückwand (das Schließfach mit dem Fund bleibt
-  Auslöser), graue Schränke links, zwei Bänke in der Mitte, eine Hantel in der Ecke.
-- **Museum:** zwei Glasvitrinen, kleine Pokale als Ausstellungsstücke, ein Gemälde, Pflanzen;
-  Vitrine 1858 und Postsack bleiben Auslöser.
-
-Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier, Paketbau und
-`npm run build` sauber, Oberflächentests Abenteuer (Chromium) 9 von 9 bestanden.
-
-Nicht gefunden im Register: Schornsteine und Fabrikhallen als Einzelbilder (die Hallen bleiben die
-Wandblöcke der Kachelsätze), Duschen in brauchbarer Form, Statuen für drinnen.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository aktualisiert (df308d81), als
-`app/inhalte-privat/quelle` verlinkt. Neu in `moebel.json` (nur Pfade): `busch` (16 × 32), `fels`,
-`felsKlein` (16 × 16), `baumstumpf` (32 × 16), `wegweiser` (16 × 32), `leselampe` (16 × 32),
-`kisteGrau` (16 × 32), `aktenschrank` (16 × 32, niedriger grauer Schrank), `waschmaschine`
-(32 × 32), `waschmaschineHoch` (16 × 32), `wartebank` (32 × 32), `automatBunt` (32 × 48, angelegt,
-noch nicht gesetzt). Wiederverwendet: `baum`, `baumRund`, `parkbank`, `laterne`,
-`haltestellenschild`, `blumen`, `muelltonne`, `buecherregal`, `holztisch`, `pflanzeKlein`,
-`stuhl`. Platzhalter unter Möbeln durch Boden ersetzt; Platzhalter mit Auslöser bleiben. Mein
-Skript prüft zusätzlich, dass kein Möbel den Laufweg eines Statisten oder Tiers verstellt (keine
-Treffer); Gänge bleiben mindestens eine Kachel breit.
-
-Bildschirmfotos (Entwicklungsserver mit Grafik, Spielstand auf die Karte gesetzt):
-
-- **Landstraße:** Der Kistenblock oben ist jetzt ein Busch, hinter dem das Formular nur von oben
-  erreichbar bleibt; Bäume, Felsen, Baumstumpf und ein Wegweiser am Ortsausgang säumen die Straße.
-- **Flussweg:** Bäume, Büsche, Felsen und ein Baumstumpf am Weg zum Bach; Bank und Münzkiste
-  bleiben Auslöser.
-- **Cedar Creek draußen:** Haltestellenschild und Bank an der Bushaltestelle, Laterne am Ufer,
-  Mülltonne vor dem Waschsalon, Bäume und Büsche unten, Blumen am Weg zur Bibliothek.
-- **Bibliothek:** Bücherregale oben links, Holztische als Lesetische, Leselampe in der Ecke, eine
-  Pflanze; Dex und Mae sitzen an den Tischen.
-- **Archiv:** zwei Reihen grauer Kisten mit Akten, niedrige Aktenschränke an der Wand und unten
-  links; Karton 1858 und Programmheft bleiben Auslöser.
-- **Waschsalon:** vier Waschmaschinen an der Rückwand, drei hohe Maschinen links, ein Stuhl neben
-  Mr. Boateng, eine Wartebank vorn.
-
-Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier und Paketbau
-sauber, `npm run build` sauber, Oberflächentests des Abenteuers (Chromium, `tests/e2e/abenteuer*`)
-9 von 9 bestanden.
-
-Nicht umgesetzt: Teile aus `SERENE_VILLAGE_REVAMPED` und `modern-farm` (Teiche, Steg) brauchen
-Kachelsätze statt Einzelbilder; die Einzelbilder aus `modern-exteriors` reichten für Felsen und
-Bäume. Einen Getränkeautomaten (`automatBunt`) habe ich im Waschsalon nicht gestellt, weil der
-Platz neben dem Auslöser `automat` an der Wand zu eng ist.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository angehängt (lesen) und nach
-`/home/user/schach-abenteuer-inhalte` geklont, als `app/inhalte-privat/quelle` verlinkt (nicht im
-Repository, steht in `.gitignore`). In `moebel.json` stehen nur Pfade aus dem Register.
-
-Neue Möbel in `moebel.json` (Schlüssel: Register-Name, Breite × Höhe): `kisteRot`/`kisteBlau`
-(Holzkisten 16 × 32), `regalAlt` (32 × 32), `stehlampe` (16 × 48), `truhe` (32 × 32),
-`sofaRund` (32 × 32), `holztisch` (16 × 16), `stuhl` (16 × 32), `kuehlschrank` (16 × 32), `herd`
-(32 × 32), `pflanzeGross` (32 × 48), `pflanzeKlein` (16 × 32), `buecherregal` (32 × 32),
-`schreibtisch` (16 × 32), `tafel` (32 × 48), `pokal` (16 × 16), `baum`/`baumRund` (48 × 64),
-`blumen` (16 × 16), `blumenbusch` (32 × 16), `muelltonne` (32 × 32), `briefkasten` (16 × 32),
-`haltestellenschild` (16 × 48), `zaun` (16 × 16), `rampe` (64 × 32, Schuleingangsrampe als
-Halfpipe-Ersatz; eine Halfpipe gibt es im Register nicht), `brunnen` (32 × 48). Alle mit
-`kollision`. Platzhalterkacheln 3/5/7 unter jedem Möbel durch Boden ersetzt; Platzhalter, auf denen
-ein Auslöser liegt (Kiste `kartonKueche`, Brett `brettOhneDame`, Bank `parkbank`, Lampe
-`pokalvitrine` …), bleiben, weil ein Möbel keinen Auslöser zustellen darf.
-
-Bildschirmfotos im Spiel (Entwicklungsserver mit verlinkter Grafik, Spielstand auf die Karte
-gesetzt; Bilder nur lokal):
-
-- **Wohnzimmer:** rundes Sofa links oben, Küchenzeile mit Herd und Kühlschrank rechts oben neben
-  dem Umzugskarton, Holztisch auf dem Teppich, zwei Zimmerpflanzen, Holzkisten in den Ecken; Mama
-  frei erreichbar. Die Stehlampe oben blieb Platzhalter (siehe unten).
-- **Clubraum:** sechs Schachtische (Brettkacheln) mit je einem Holzstuhl, Tafel und Bücherregal an
-  der Wand, Pokal neben der Pokalvitrine, Schreibtisch des Coachs, Pflanze rechts unten.
-- **Draußen:** Bäume über und unter der Straße, Laternen, Mülltonne am Gehweg, blauer Briefkasten
-  vor dem Haus, Blumen, ein Zaun vor dem Nachbarhaus, Haltestellenschild am Weg zum Park. Die
-  Häuser bleiben die Wandblöcke der Kachelsätze; Haus-Grafiken aus dem Register (etwa „Country
-  House“) würden die Türen neu ordnen und sind deshalb nicht gesetzt.
-- **Park:** Rampe statt Kistenblock, Brunnen, Bäume, Blumenbusch, Laternen, Blumen neben der
-  Bank; Skater Jo und Abernathy erreichbar.
-
-Prüfungen: 624 Pipeline-Tests bestanden (3 übersprungen: Gesamtsimulation, nur mit
-`ABENTEUER_SIMULATION=1`), Prettier und Paketbau sauber.
-
-**Frage (Dachboden, nicht umgesetzt):** Zwei Tests lassen Möbel auf dem Dachboden bzw. an Wänden
-nicht zu, und die Tests sind für mich gesperrt:
-
-1. `test_ink_szene_und_tiled_karte_liegen_bereit` (`pipeline/tests/test_abenteuer.py`) verlangt,
-   dass jedes Objekt der Dachbodenkarte ein Auslöser aus `orte.json` ist; Möbel fallen durch.
-   Vorschlag: dort Objekte mit `type` `moebel`, `statist`, `tier` ausnehmen.
-2. `test_alles_von_start_erreichbar` prüft auch Möbel und verlangt, dass ihre linke obere Kachel
-   erreichbar ist; hohe Möbel an der Wand (Stehlampe, Kisten am oberen Rand) liegen mit der oberen
-   Reihe auf der Wand und fallen durch. Vorschlag: Möbel dort ausnehmen (ihre Kollision zählt
-   schon in `blockiert`). Deshalb blieb die Lampe im Wohnzimmer ein Platzhalter.
-
-Für den Dachboden sind `kisteRot`, `kisteBlau`, `regalAlt`, `stehlampe` und `truhe` schon in
-`moebel.json` angelegt; nach der Teständerung setze ich sie in wenigen Minuten.
-
-**Nachtrag (nach bf3f7c8a, Tests nehmen Möbel aus):** Dachboden eingerichtet: Holzkisten
-(`kisteRot`, `kisteBlau`) in den Ecken, altes Regal mit Leiter (`regalAlt`), Stehlampe am oberen
-Rand, Truhe mit Büchern links neben dem Teppich; das Reisebrett von Ambrose bleibt Auslöser in der
-Mitte, `hutschachtel`, `spiegel`, `zeitungen1961` unverändert. Im Wohnzimmer ist die Lampe jetzt
-ebenfalls eine `stehlampe`. Bildschirmfoto Dachboden: alles erreichbar, der Held steht vor dem
-Brett. 624 Tests bestanden, Paketbau sauber. Damit sind alle fünf Karten von Maple Falls
-eingerichtet.
-
-## Bericht des letzten Auftrags, zur Nachlese
-
 (vom Helfer auszufüllen)
 
 ## Bericht des letzten Auftrags, zur Nachlese
-
-(vom Helfer auszufüllen)
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-(vom Helfer auszufüllen)
-
-## Bericht des letzten Auftrags, zur Nachlese
-
-(vom Helfer auszufüllen)
-
-## Letzter Auftrag (erledigt, zur Nachlese)
-
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/karten/weg-riverton-ironwood-1.json`, `-2.json`,
-`ironwood-*.json` (fünf Dateien, neu), `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q` (danach darf nichts
-mehr übersprungen werden), in `app/` Prettier und Paketbau
-
-## Ziel
-
-Die sieben Karten aus `orte.json` (Orte `wegRivertonIronwood` und `ironwood`) wie beim siebten
-Auftrag: alle Auslöser und Figuren des Ortes, belebt nach `09_Weltbeschreibung.md` (Abschnitte 3,
-4, 4a, 5.5, Checkliste 6) und passend zur Story-Bibel Akt 2 (Szenen in Ironwood, Kanalweg).
-
-## Vorgaben
-
-1. **Größen:** Außen 32 × 24 (Werkstor, Brücke, Reihenhäuser, Kantine, Museum, Bushaltestelle;
-   Rauch und Funken als Statisten-Objekte), Wegkarten 28 × 20 (Kanalweg mit leeren Fabriken,
-   Brücke), Innen nach 09 (Kantine mit langen Tischen und Ofen, Mamas Zimmer klein, Umkleide mit
-   Schließfächern, Museum mit Schaukästen).
-2. **Belebung:** Schichtwechsel am Werkstor, Kinder mit Kreidebrett, Werkskatze am Ofen, Krähen auf
-   Trägern, Fledermäuse mit `wann: abend`.
-3. **Fehlende Dinge** wie Fahrplantafel oder Schilder, die 09 nennt, aber `orte.json` nicht: nicht
-   zeichnen, im Bericht nennen (wie beim letzten Mal; der Haupt-Chat sammelt sie für mittel-1).
-
-## Was nicht dazugehört
-
-`orte.json`, andere Orte, Grafik.
-
-## Bericht
 
 (vom Helfer auszufüllen)
 

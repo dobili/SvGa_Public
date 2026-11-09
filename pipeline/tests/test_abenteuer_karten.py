@@ -150,14 +150,16 @@ def test_jede_figur_und_jeder_ausloeser_steht_auf_einer_karte(ort: dict):
 
 def test_moebel_bekannt_und_frei_von_ausloesern():
     # Möbel stehen in moebel.json und versperren keinen Auslöser und keine Figur.
-    for _ort, eintrag in FAELLE:
+    for ort, eintrag in FAELLE:
         datei = INHALTE / eintrag["datei"]
         if not datei.exists():
             continue
         karte = k.lade_karte(datei)
         gesperrt = k.moebelfelder(karte)
+        # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett).
+        ansehen = {a["name"] for a in ort["ausloeser"] if a["art"] == "gegenstand"}
         for objekt in k.objekte(karte):
             if objekt.moebel:
                 assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
-            elif not objekt.belebung:
+            elif not objekt.belebung and objekt.name not in ansehen:
                 assert objekt.feld not in gesperrt, f"{eintrag['kennung']}: {objekt.name} zugestellt"

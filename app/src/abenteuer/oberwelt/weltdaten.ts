@@ -48,6 +48,8 @@ export interface Weltdaten {
   readonly figurenbilder: Readonly<Record<string, string>>;
   /** Möbel und Schmuck der Karte. */
   readonly moebel: readonly Moebel[];
+  /** Hintergrundbild aus dem Kartenbauer (grafik/karten/<kennung>.png), sonst null. */
+  readonly hintergrund: string | null;
 }
 
 /** Objektnamen der Figuren einer Tiled-Karte (Objekte mit type „figur“). */
@@ -123,13 +125,14 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   const erinnerung = fund.ort.art === "erinnerung";
-  const [stilbild, heldfigur, figurenbilder, moebel] = await Promise.all([
+  const [stilbild, heldfigur, figurenbilder, moebel, hintergrund] = await Promise.all([
     paketdateiAlsAdresseOderNull(
       `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
     ),
     paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
     figurenbilderFuer(fund.ort, karte),
     ladeMoebel(karte),
+    paketdateiAlsAdresseOderNull(`grafik/karten/${kartenkennung}.png`),
   ]);
   return {
     kennung: kartenkennung,
@@ -144,6 +147,7 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     heldfigur,
     figurenbilder,
     moebel,
+    hintergrund,
   };
 }
 

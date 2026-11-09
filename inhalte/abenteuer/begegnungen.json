@@ -501,9 +501,7 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "freieKarten": [
-        "mentorzug"
-      ],
+      "freieKarten": ["mentorzug"],
       "abgelenktAb": {
         "halbzug": 40,
         "faktor": 1.5

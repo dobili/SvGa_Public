@@ -345,20 +345,28 @@
       "versatz": [24, -3]
     },
     {
-      "moebel": "pd6HausRot",
-      "feld": [26, 21]
+      "moebel": "pd6HausGross",
+      "feld": [26, 15],
+      "id": "h1"
     },
     {
-      "moebel": "pd6HausGruen2",
-      "feld": [40, 21]
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h1",
+      "versatz": [-24, -40]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [38, 16],
+      "id": "h2"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "h2",
+      "versatz": [20, -30]
     },
     {
       "moebel": "pd6Gebaeckstand",
       "feld": [22, 22]
-    },
-    {
-      "moebel": "pd6Rohbau",
-      "feld": [33, 11]
     },
     {
       "moebel": "pd6Zelt",
@@ -374,33 +382,45 @@
     },
     {
       "moebel": "pd6Musikhaus",
-      "feld": [41, 31]
+      "feld": [41, 31],
+      "id": "mh"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "mh",
+      "versatz": [20, -50]
     },
     {
       "moebel": "pd6Werkstatt",
       "feld": [38, 44]
     },
     {
-      "moebel": "pd6HausKleinRot",
-      "feld": [10, 49]
+      "moebel": "pd6HausGross",
+      "feld": [8, 43],
+      "id": "h3"
     },
     {
-      "moebel": "pd6HausKleinHell2",
-      "feld": [16, 49]
+      "moebel": "pd6PlaneDach",
+      "auf": "h3",
+      "versatz": [20, -40]
+    },
+    {
+      "moebel": "pd6HausGross",
+      "feld": [18, 43]
     },
     {
       "moebel": "pd6Fischerboot",
-      "feld": [60, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6Fischerboot",
-      "feld": [58, 26],
+      "feld": [56, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [62, 42],
+      "feld": [58, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Fischerboot",
+      "feld": [56, 38],
       "bauteil_ok": true
     },
     {
@@ -486,46 +506,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "pd6BauzaunEndeLinks",
-      "feld": [32, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [33, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [34, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [35, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [36, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [37, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [38, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunEndeRechts",
-      "feld": [39, 19],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "pd6DielenNass",
       "feld": [30, 27]
     },
@@ -547,11 +527,11 @@
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [31, 22]
+      "feld": [34, 22]
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [45, 22]
+      "feld": [48, 22]
     },
     {
       "moebel": "pd6Stamm",
@@ -567,17 +547,17 @@
     },
     {
       "moebel": "rv5LaterneAusleger",
-      "feld": [21, 22],
+      "feld": [20, 22],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneAusleger",
-      "feld": [34, 22],
+      "feld": [36, 22],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneAusleger",
-      "feld": [48, 22],
+      "feld": [50, 22],
       "vorn": true
     },
     {
@@ -674,19 +654,19 @@
     },
     {
       "name": "brettHaus1",
-      "feld": [28, 25]
+      "feld": [31, 25]
     },
     {
       "name": "brettHaus2",
-      "feld": [42, 25]
+      "feld": [45, 25]
     },
     {
       "name": "brettHaus3",
-      "feld": [11, 53]
+      "feld": [13, 53]
     },
     {
       "name": "brettHaus4",
-      "feld": [17, 53]
+      "feld": [23, 53]
     }
   ],
   "figuren": [

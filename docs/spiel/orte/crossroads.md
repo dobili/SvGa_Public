@@ -49,7 +49,7 @@ verlässt die Karte am Südrand (14–15).
 
 | Abschnitt (Reihen)        | Thema           | Zum Entdecken                                                   |
 | ------------------------- | --------------- | --------------------------------------------------------------- |
-| G1 Waldrand (0–20)        | Ankunft         | Kiefern, Ranger-Station, Tor S10, Bell (17, 12), Tafel (11, 16) |
+| G1 Waldrand (0–20)        | Ankunft         | Kiefern, Ranger-Station, Tor S10, Bell (17, 14), Tafel (11, 16) |
 | G2 Beckenrand (21–40)     | erster Dampf    | erste Quellen, Warnschilder                                     |
 | G3 Westschleife (41–70)   | Sinter und Steg | Geysirkegel, Quellen links und rechts                           |
 | G4 Großer Geysir (71–110) | Ausbruch        | großer Geysir am Aussichtssteg, Bisons (`bisons` (17, 92))      |
@@ -148,5 +148,5 @@ Sinterboden, Ranger-Tor, Sturmkeller, Weizen, Wegweiser der Städte, Viehgatter,
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die
-Übergänge und Auslöser aus 1.5 und 3.1, die Figuren Bell (17, 12), Ray (19, 96), Darlene am Tresen,
+Übergänge und Auslöser aus 1.5 und 3.1, die Figuren Bell (17, 14), Ray (19, 96), Darlene am Tresen,
 Nova am Ecktisch.

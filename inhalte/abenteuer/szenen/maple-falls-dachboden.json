@@ -99,7 +99,7 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [3, 5],
+      "feld": [2, 5],
       "eigenschaften": {
         "richtung": "unten"
       }

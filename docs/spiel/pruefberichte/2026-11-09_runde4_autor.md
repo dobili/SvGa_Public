@@ -47,18 +47,18 @@ sich zur Straße.
 
 ## Wege
 
-| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt                                  |
-| ---------- | ---------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
-| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
-| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        |                                           |
-| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        |                                           |
-| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        |                                           |
-| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         |                                           |
-| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
-| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         |                                           |
-| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 |                                           |
-| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
-| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        |                                           |
+| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt                                                                                                                                                                                                   |
+| ---------- | ---------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | erledigt Haupt-Chat (Werkzeug, 9.11.2026)                                                                                                                                                                  |
+| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        | niedrig-1: Weide unten geschlossen, Holztor auf der Zaunlinie mit Zaunenden                                                                                                                                |
+| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        | niedrig-1: Wegweiser mit drei Brettern (West, Ost, Nord) am Wegrand                                                                                                                                        |
+| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        | niedrig-1: Weg biegt nach Süden, Stand und Hütte nördlich direkt am Weg, Theke und Tür zum Weg                                                                                                             |
+| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         | niedrig-1: Zaun bis Spalte 118; Randspalte zeichnet das Werkzeug (10.2)                                                                                                                                    |
+| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                                                                                                                                                                                            |
+| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         | niedrig-1: Stegbilder Camping Pier_28/29 und Pier_3/4 auf Brückenfeldern über Wasser                                                                                                                       |
+| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 | niedrig-1: Bank direkt am Weg, Blick zum Fluss; zwei Boote längs am Steg, Einzelboot entfernt                                                                                                              |
+| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                                                                                                                                                                                            |
+| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        | niedrig-1: umgefallene Stämme mit Pilzen und Ästen (kein Baum mit Wurzelteller im Katalog), gesägter Stamm entfernt; dichter Wald oben und unten bis an den Rand, Flutfüllung vom Start endet an Spalte 44 |
 
 ## Cedar Creek
 

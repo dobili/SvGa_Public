@@ -26,7 +26,7 @@ import {
  */
 export const STARTPOSITION: Weltposition = {
   karte: "mapleFalls.dachboden",
-  x: 3,
+  x: 2,
   y: 5,
   richtung: "unten",
 };

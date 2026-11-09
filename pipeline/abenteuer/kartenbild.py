@@ -73,7 +73,9 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
     # Brückenfelder (Szene „bruecken“) sind begehbar, gezeichnet wird darunter aber Wasser mit
     # durchgehendem Ufer; die Brücke selbst ist ein Bild aus dem Katalog (KARTENREGELN 10.6).
     bruecken = set(szene.get("bruecken", []))
-    zeilen = ["".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)]
+    # Wege und Beläge sehen das Raster ohne diese Umdeutung: Ein Weg läuft ohne Rand auf die Brücke.
+    roh = raster(szene)
+    zeilen = ["".join(WASSER if z in bruecken else z for z in zeile) for zeile in roh]
     bild = Image.new("RGBA", (len(zeilen[0]) * K, len(zeilen) * K), DUNKEL)
     zeichner = ImageDraw.Draw(bild)
     grund = szene.get("boden", "holzHell")
@@ -96,7 +98,8 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
                 nz = zeilen[innen[1]][innen[0]]
                 art = boeden["wasser"] if nz == WASSER else boeden[sonder.get(nz, grund)]
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, *innen)), ort)
+                quelle = zeilen if nz == WASSER else roh
+                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, quelle, *innen)), ort)
             elif z == WAND and wandart:
                 bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
             elif z == WAND and (x, y) in flaeche:
@@ -106,7 +109,7 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
                 zeichner.rectangle((*ort, ort[0] + K - 1, ort[1] + K - 1), fill=KRONE)
             elif z != LEER:
                 art = boeden[sonder.get(z, grund)]
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
+                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, roh, x, y)), ort)
     if not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild

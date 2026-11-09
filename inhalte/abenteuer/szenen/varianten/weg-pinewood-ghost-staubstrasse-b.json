@@ -113,6 +113,10 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "pg7Staubteufel",
+      "feld": [70, 24]
+    },
+    {
       "moebel": "mf4Wegweiser",
       "feld": [143, 12]
     },

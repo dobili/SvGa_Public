@@ -2,6 +2,7 @@
   "karte": "wegCedarRiverton.bahndamm",
   "datei": "karten/varianten/weg-cedar-riverton-bahndamm-c.json",
   "art": "aussen",
+  "wand": "damm",
   "beschreibung": "Variante C (reicher): Der Weg kommt durch einen dichteren Birkenwald, macht am Damm noch eine Stufe und schwingt zweimal weit nach Süden: zur Bank mit Blick über den Fluss und an großen Kleingärten mit zwei Gartenhäusern, Sonnenblumen und Kürbisbeeten vorbei. Der Bahnsteigrest ist länger, mit zwei Bänken. Am Stadtrand ein langer Lagerzaun hinter der Plakatwand. Viele Bäume, Löwenzahn und Blumen auf den Wiesen.",
   "boden": "gras",
   "wandart": "gras",
@@ -23,14 +24,14 @@
     "industrie"
   ],
   "raster": [
-    "######################################################################################################################################################",
+    "#############################################################~~~~~~~~#################################################################################",
+    "#............................................................~~~~~~~~................................................................................#",
     "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#...............................................ppppppppppppp........................................................................................#",
-    "#....................................................ee..............................................................................................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppppppppppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "################################################ppppppppppppp###ee####################################################################################",
+    "#####################################################kk#########ee####################################################################################",
     "#...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..........................................eeeeeeeeee...................eeeeeee",
     "#..............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee........................................eeeeeeeeeeee.................eeeeeeee",
     "#.............................eee......................................eeee....................................eeee........eee...............eee.....#",
@@ -883,14 +884,10 @@
     },
     {
       "moebel": "wc5Busch",
-      "feld": [39, 0]
-    },
-    {
-      "moebel": "wc5Busch",
       "feld": [41, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [43, 0]
     },
     {
@@ -898,7 +895,7 @@
       "feld": [45, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [47, 0]
     },
     {
@@ -906,40 +903,24 @@
       "feld": [49, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [51, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [53, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [55, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [57, 0]
     },
     {
-      "moebel": "wc5BuschB",
-      "feld": [59, 0]
-    },
-    {
-      "moebel": "wc5BuschB",
-      "feld": [61, 0]
-    },
-    {
       "moebel": "wc5Busch",
-      "feld": [63, 0]
-    },
-    {
-      "moebel": "wc5BuschB",
-      "feld": [65, 0]
-    },
-    {
-      "moebel": "wc5BuschB",
-      "feld": [67, 0]
+      "feld": [59, 0]
     },
     {
       "moebel": "wc5BuschB",
@@ -954,11 +935,11 @@
       "feld": [73, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [75, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [77, 0]
     },
     {
@@ -966,7 +947,7 @@
       "feld": [79, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [81, 0]
     },
     {
@@ -982,11 +963,11 @@
       "feld": [87, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [89, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [91, 0]
     },
     {
@@ -998,11 +979,11 @@
       "feld": [95, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [97, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [99, 0]
     },
     {
@@ -1030,11 +1011,11 @@
       "feld": [111, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [113, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [115, 0]
     },
     {
@@ -1046,11 +1027,11 @@
       "feld": [119, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [121, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [123, 0]
     },
     {
@@ -1066,7 +1047,7 @@
       "feld": [129, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [131, 0]
     },
     {
@@ -1074,11 +1055,11 @@
       "feld": [133, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [135, 0]
     },
     {
-      "moebel": "wc5Busch",
+      "moebel": "wc5BuschB",
       "feld": [137, 0]
     },
     {
@@ -1094,32 +1075,40 @@
       "feld": [143, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [145, 0]
     },
     {
-      "moebel": "wc5BuschB",
+      "moebel": "wc5Busch",
       "feld": [147, 0]
     },
     {
       "moebel": "wc5Signal",
-      "feld": [40, 2]
+      "feld": [40, 0]
+    },
+    {
+      "moebel": "wc5Durchlass",
+      "feld": [63, 5]
+    },
+    {
+      "moebel": "wc5Waggon",
+      "feld": [104, 1]
+    },
+    {
+      "moebel": "wc5Stufen",
+      "feld": [53, 7]
     },
     {
       "moebel": "wc5Schild",
+      "feld": [60, 4]
+    },
+    {
+      "moebel": "wc5Bahnbank",
       "feld": [49, 5]
     },
     {
       "moebel": "wc5Bahnbank",
-      "feld": [55, 6]
-    },
-    {
-      "moebel": "wc5Bahnbank",
-      "feld": [52, 6]
-    },
-    {
-      "moebel": "wc5Kiste",
-      "feld": [20, 7]
+      "feld": [53, 5]
     },
     {
       "moebel": "wc5Bank",
@@ -1538,6 +1527,10 @@
     },
     {
       "moebel": "wc5BirkeHerbst",
+      "feld": [11, 22]
+    },
+    {
+      "moebel": "wc5BirkeHerbst",
       "feld": [12, 17]
     },
     {
@@ -1546,51 +1539,51 @@
     },
     {
       "moebel": "wc5BirkeKlein",
-      "feld": [10, 23]
-    },
-    {
-      "moebel": "wc5BirkeKlein",
       "feld": [1, 20]
     },
     {
-      "moebel": "wc5LaubbaumB",
+      "moebel": "wc5Erle",
       "feld": [8, 18]
     },
     {
       "moebel": "wc5Laubbaum",
-      "feld": [20, 19]
-    },
-    {
-      "moebel": "wc5Birke",
-      "feld": [42, 19]
-    },
-    {
-      "moebel": "wc5Laubbaum",
-      "feld": [63, 18]
+      "feld": [21, 16]
     },
     {
       "moebel": "wc5LaubbaumB",
-      "feld": [112, 17]
-    },
-    {
-      "moebel": "wc5Erle",
-      "feld": [141, 22]
+      "feld": [42, 17]
     },
     {
       "moebel": "wc5Birke",
-      "feld": [146, 17]
+      "feld": [66, 17]
+    },
+    {
+      "moebel": "wc5Laubbaum",
+      "feld": [110, 17]
+    },
+    {
+      "moebel": "wc5Birke",
+      "feld": [140, 23]
+    },
+    {
+      "moebel": "wc5Erle",
+      "feld": [146, 20]
+    },
+    {
+      "moebel": "wc5Gras",
+      "feld": [35, 18]
+    },
+    {
+      "moebel": "wc5Gras",
+      "feld": [35, 17]
     },
     {
       "moebel": "wc5Loewenzahn",
-      "feld": [23, 24]
+      "feld": [118, 15]
     },
     {
-      "moebel": "wc5BlumeBlau",
-      "feld": [142, 21]
-    },
-    {
-      "moebel": "wc5BlumeBlau",
-      "feld": [141, 21]
+      "moebel": "wc5Gras",
+      "feld": [35, 16]
     },
     {
       "moebel": "wc5Gras",
@@ -1655,10 +1648,6 @@
     {
       "moebel": "wc5BlumenWeiss",
       "feld": [45, 23]
-    },
-    {
-      "moebel": "wc5BlumenWeiss",
-      "feld": [92, 7]
     },
     {
       "moebel": "wc5Gras",
@@ -1763,14 +1752,6 @@
     {
       "moebel": "wc5Farn",
       "feld": [99, 8]
-    },
-    {
-      "moebel": "wc5Farn",
-      "feld": [99, 7]
-    },
-    {
-      "moebel": "wc5Farn",
-      "feld": [100, 7]
     },
     {
       "moebel": "wc5BuschKlein",
@@ -1897,16 +1878,12 @@
       "feld": [46, 22]
     },
     {
-      "moebel": "wc5Gras",
-      "feld": [35, 18]
+      "moebel": "wc5BuschKlein",
+      "feld": [146, 19]
     },
     {
       "moebel": "wc5BlumeBlau",
       "feld": [87, 9]
-    },
-    {
-      "moebel": "wc5Loewenzahn",
-      "feld": [18, 7]
     },
     {
       "moebel": "wc5Loewenzahn",
@@ -1957,14 +1934,6 @@
       "feld": [35, 26]
     },
     {
-      "moebel": "wc5Stein",
-      "feld": [44, 18]
-    },
-    {
-      "moebel": "wc5Stein",
-      "feld": [45, 18]
-    },
-    {
       "moebel": "wc5Gras",
       "feld": [15, 19]
     },
@@ -2006,10 +1975,6 @@
     },
     {
       "moebel": "wc5Farn",
-      "feld": [68, 18]
-    },
-    {
-      "moebel": "wc5Farn",
       "feld": [69, 18]
     },
     {
@@ -2029,6 +1994,18 @@
       "feld": [33, 13]
     },
     {
+      "moebel": "wc5Gras",
+      "feld": [64, 18]
+    },
+    {
+      "moebel": "wc5Gras",
+      "feld": [63, 19]
+    },
+    {
+      "moebel": "wc5Gras",
+      "feld": [63, 18]
+    },
+    {
       "moebel": "wc5BlumenWeiss",
       "feld": [82, 18]
     },
@@ -2037,16 +2014,20 @@
       "feld": [136, 19]
     },
     {
-      "moebel": "wc5BuschKlein",
-      "feld": [118, 15]
-    },
-    {
       "moebel": "wc5Gras",
       "feld": [120, 20]
     },
     {
       "moebel": "wc5BuschKlein",
       "feld": [62, 20]
+    },
+    {
+      "moebel": "wc5BlumeBlau",
+      "feld": [115, 20]
+    },
+    {
+      "moebel": "wc5BlumeBlau",
+      "feld": [114, 19]
     },
     {
       "moebel": "wc5BlumenWeiss",
@@ -2230,10 +2211,6 @@
     },
     {
       "moebel": "wc5Stein",
-      "feld": [146, 22]
-    },
-    {
-      "moebel": "wc5Stein",
       "feld": [80, 19]
     },
     {
@@ -2401,6 +2378,14 @@
       "feld": [18, 17]
     },
     {
+      "moebel": "wc5Stein",
+      "feld": [23, 22]
+    },
+    {
+      "moebel": "wc5Stein",
+      "feld": [22, 21]
+    },
+    {
       "moebel": "wc5Loewenzahn",
       "feld": [9, 23]
     },
@@ -2461,14 +2446,6 @@
       "feld": [23, 27]
     },
     {
-      "moebel": "wc5Gras",
-      "feld": [111, 18]
-    },
-    {
-      "moebel": "wc5Gras",
-      "feld": [111, 17]
-    },
-    {
       "moebel": "wc5Loewenzahn",
       "feld": [90, 18]
     },
@@ -2490,15 +2467,7 @@
     },
     {
       "moebel": "wc5BlumeBlau",
-      "feld": [110, 17]
-    },
-    {
-      "moebel": "wc5BlumeBlau",
       "feld": [111, 16]
-    },
-    {
-      "moebel": "wc5BuschKlein",
-      "feld": [43, 18]
     },
     {
       "moebel": "wc5BlumenWeiss",
@@ -2545,17 +2514,17 @@
   "figuren": [
     {
       "name": "schaffner",
-      "feld": [58, 6]
+      "feld": [56, 6]
     }
   ],
   "belebung": [
     {
       "name": "streckenwaerterin",
       "typ": "statist",
-      "feld": [18, 7],
+      "feld": [34, 8],
       "eigenschaften": {
-        "von": "18,7",
-        "bis": "44,7",
+        "von": "34,8",
+        "bis": "46,8",
         "tun": "Gwen Tolliver prüft die Schwellen am Dammfuß",
         "wann": "tag"
       }
@@ -2563,7 +2532,7 @@
     {
       "name": "juno",
       "typ": "statist",
-      "feld": [50, 7],
+      "feld": [50, 8],
       "eigenschaften": {
         "tun": "Juno wartet unten an den Stufen",
         "wann": "tag"

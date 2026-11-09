@@ -25,6 +25,7 @@ nachträgliches Möblieren:
   "wandart": "hecke", // aussen: „#“ als Boden dieser Art statt Wandkrone
   "boden": "holzHell", // Standardboden (materialien.json, boeden)
   "boeden": { "t": "teppichRot" }, // weitere Böden je Buchstabe im Raster
+  "bruecken": ["h"], // begehbar, gezeichnet als Wasser mit Ufer; Brückenbild als Möbel darauf
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
     { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel

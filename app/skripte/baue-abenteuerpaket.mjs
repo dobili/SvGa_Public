@@ -130,7 +130,10 @@ async function schreibeMoebel() {
   const moebel = await ladeMoebelliste();
   await schreibe("daten/moebel.json", JSON.stringify({ moebel }, null, 2) + "\n", "daten");
   for (const [name, angabe] of Object.entries(moebel)) {
-    const quelle = join(PRIVAT_WURZEL, angabe.quelle);
+    // Umgefärbte Fassung zuerst: durchscheinender statt grauer Festschatten (werkzeuge/schatten.py
+    // im privaten Repository; Rückmeldung des Autors zum grauen Schleier, 9.11.2026).
+    const umgefaerbt = join(PRIVAT_WURZEL, "spiel/schatten", angabe.quelle);
+    const quelle = existsSync(umgefaerbt) ? umgefaerbt : join(PRIVAT_WURZEL, angabe.quelle);
     const bild = existsSync(quelle)
       ? await readFile(quelle)
       : platzhalterRechteck(angabe.breite, angabe.hoehe);

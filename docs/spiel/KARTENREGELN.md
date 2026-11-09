@@ -511,3 +511,103 @@ nur Regeln übernommen, keine Bilder; nichts davon liegt im Repository.
    Gehweg gilt.
 3. **5.2 „Gehwege beidseitig an Straßen“:** In F1 und S1 (Dorf, Hof) haben Erdwege keine Gehwege und
    keine Kanten; die Regel gilt nur für Stadtstraßen.
+
+## 10. Regeln aus der Rückmeldung des Autors zu Runde 4 (9.11.2026)
+
+Der Autor hat alle 14 Karten von Akt 1 angesehen. Die Fehler kamen immer wieder; deshalb gelten sie
+jetzt als Regeln für alle Karten. Die Bildprüfung geht diese Liste Punkt für Punkt durch. Was das
+Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
+
+### 10.1 Zeichnung (Werkzeug, Haupt-Chat)
+
+1. **Ränder durchgehend.** Wege, Ufer und Beläge haben überall ihre Randkacheln, auch an inneren
+   Ecken und schrägen Anschlüssen; kein blaues oder erdiges Feld stößt ohne Rand an Gras.
+2. **Bis an den Kartenrand.** Wege, Flüsse, Zäune und Gleise, die die Karte verlassen, sind bis in
+   die letzte Spalte oder Reihe gezeichnet.
+3. **Übergänge zwischen Belägen ohne Grasnaht.** Trampelpfad an Pflaster, Erde an Asphalt: Der
+   Rand eines Belags (die abgerundete Graskante) gibt es nur zum Gras hin, nie zwischen zwei
+   Belägen.
+4. **Wasser lebt.** Wasser bekommt Struktur (Wellen, Glanz, Varianten), keine einfarbige Fläche.
+5. **Kein grauer Schleier.** Möbel mit dem deckenden grauen Schatten von LimeZu bekommen den
+   durchscheinenden Schatten (Black_Shadow-Fassung oder `werkzeuge/schatten.py`); die Bildprüfung
+   meldet jeden grauen Festschatten.
+6. **Brücken und Stege sind Bauwerke.** Unter einer Brücke läuft das Wasser mit Ufer weiter; die
+   Brücke selbst ist ein Brücken- oder Stegbild aus dem Katalog (Bohlen, Geländer, Pfosten), keine
+   Bodenfläche aus Dielen auf Gras.
+
+### 10.2 Türen und Durchgänge
+
+7. **Ausgänge haben Türen.** Wo ein Raum ins Freie oder in ein anderes Gebäude führt, steht eine
+   Tür (Bild aus dem Katalog), keine Lücke in der Wand. Offene Durchgänge innerhalb einer Wohnung
+   bleiben erlaubt (Abschnitt 9.10).
+8. **Fußmatten liegen direkt vor der Tür**, innen auf dem ersten Feld vor der Schwelle.
+9. **Außen passen Tür und Fassade.** Eine Tür ersetzt nie ein gezeichnetes Fenster der Fassade; das
+   Gebäudebild muss eine Türstelle haben oder eine Fassung mit Tür sein. Laternen, Stufen und Schilder
+   am Eingang stehen symmetrisch zur Tür.
+
+### 10.3 Möbel: Bild passt zur Stelle
+
+10. **Wandbilder hängen auf Wandhöhe.** Schwarze Bretter, Tafeln und Bilder sitzen mit ihrer
+    Oberkante deutlich unter der Wandkrone (mindestens 4 Pixel Abstand), nie bündig an der Decke.
+11. **Was auf einem Tisch steht, steht auf der Platte.** Die Unterkante des Gegenstands liegt auf der
+    Tischplatte, nicht darüber (schwebende Statue) und nicht auf der Zarge.
+12. **Tische für Aufbauten sind leer.** Wer etwas auf einen Tisch stellt (Schachbrett, Lampe),
+    nimmt ein Tischbild ohne eigenen Inhalt; kein Brett auf einem Buch, keine Lampe auf einem
+    Bücherstapel.
+13. **Kleine Dinge gehören auf Möbel.** Globus, Lampe für den Tisch, Fernseher mit Standfuß, Radio
+    und Pflanzen im Topf in Tischgröße stehen auf Tisch, Kommode oder Anrichte. Fernseher an der Wand
+    nur als Wandfernseher (Bild ohne Fuß).
+14. **Küchenzeilen sind zusammenhängend.** Arbeitsplatten, Herd und Spüle bilden eine lückenlose
+    Zeile; über und hinter dem Herd hängt nichts Brennbares (kein Bild, kein Regal mit Büchern).
+15. **Fenster bleiben frei.** Hohe Möbel (Schränke, Regale, Hochschränke) stehen nicht vor
+    Fenstern; niedrige Möbel (Arbeitsplatte, Sofa) dürfen darunter, wenn das Bild sie niedriger als
+    die Fensterbank zeigt.
+16. **Treppen an der Wand.** Treppen lehnen an einer Wand oder liegen in einer Wandnische;
+    freistehend nur mit Geländer auf beiden Seiten und einem Grund im Bühnenbild. Eine Bodentreppe
+    zum Dachboden ist eine Luke mit Leiter oder schmaler Stiege, keine Verandatreppe.
+17. **Sitzbänke schauen zu dem, was man ansieht**: zum Weg, zum Platz, zum Spielfeld, zum Wasser.
+    Wartehäuschen und Bank der Bushaltestelle öffnen sich zur Straße.
+18. **Kisten auf dem Boden brauchen einen Grund** in der Geschichte (Einzug, Lager); sonst stehen sie
+    nicht herum.
+
+### 10.4 Außen
+
+19. **Straßenlaternen stehen am Straßenrand** (auf dem Gehweg oder direkt daneben), eine Bauart je
+    Straßenabschnitt; Lampen in Parks nur an Wegen.
+20. **Bäume abwechseln.** Nebeneinander stehende Bäume nutzen mindestens zwei Arten oder gespiegelte
+    Fassungen; keine Allee aus lauter gleichen Bildern.
+21. **Spielplätze sind eingezäunt**, mit Sand unter Schaukel und Klettergerüst, einem ausgetretenen
+    Pfad zum Eingang und Bänken für Eltern mit Blick auf die Geräte.
+22. **Spielfelder sind ganz**: Rand oder Linie um den Platz, zwei Körbe beim Basketball, Bank mit Blick
+    zum Feld.
+23. **Natürliches Wasser ist nicht gerade.** Bäche und Flüsse winden sich, Teiche sind rund oder
+    unregelmäßig; Gerade nur bei Kanal, Becken oder Graben mit Mauer. Wasserfälle brauchen Felsen
+    oder eine Geländestufe, aus der sie kommen.
+24. **Boote liegen längs** zum Ufer oder am Steg, festgemacht; an einem Steg dürfen mehrere liegen.
+25. **Buden, Hütten und Stände stehen am Weg** mit der Tür oder Theke zum Weg; vor einer Tür, die
+    oft benutzt wird, führt ein Trampelpfad hin.
+26. **Schilder haben einen Grund und einen Ort.** Wegweiser zeigen nur die Richtungen, die es an der
+    Kreuzung gibt; Schilder stehen am Wegrand, nie mitten auf dem Weg. Ein Schild ohne Aufgabe in der
+    Geschichte fällt weg.
+27. **Zäune sind geschlossen oder haben Enden.** Jede Lücke endet an Pfosten; Tore sitzen auf
+    derselben Linie wie der Zaun.
+28. **Straßen enden sinnvoll**: Wendehammer, Platz oder Übergang auf einen Weg mit Pfosten, nie
+    abgeschnitten.
+29. **Sperren sind dicht.** Eine Sperre auf einem Weg (Stämme, Zaun, Wasser) lässt sich nicht
+    umgehen: Wald, Felsen oder Wasser schließen links und rechts bis an den Kartenrand oder an eine
+    andere Sperre. Unsichtbare Wände gibt es nicht. Die Sperre sieht nach ihrem Grund aus
+    (umgestürzte Bäume nach einem Sturm, nicht gesägte Stämme, wenn es Sturm war).
+
+### 10.5 Räume nach ihrem Zweck
+
+30. **Ein Raum hat alles, was sein Zweck verlangt, in der passenden Größe.** Vor dem Bühnenbild steht
+    eine Liste: Was gehört in diesen Raum, in welcher Zahl? Beispiele:
+    - Diner: Gastraum mit Sitznischen und Tischen, Theke mit Hockern, Kasse hinter der Theke zum
+      Gast hin, Durchreiche; abgetrennte Großküche (mehrere Herde, Grill, Fritteuse, Arbeitstische
+      aus Stahl, Kühlung), Lager, Toiletten.
+    - Bibliothek: Regalreihen mit Gängen, Lesetische mit Lampen, Ausleihtheke.
+    - Archiv: dichte Regalreihen, Kisten sortiert und beschriftet, Arbeitsplatz in einer Ecke.
+    - Werkstatt: Werkbänke, Maschinen, Material, Werkzeugwand; die Mitte ist Arbeitsfläche mit
+      etwas darauf (Werkstück, Böcke).
+31. **Möbel gehören zu einer Gruppe.** Ein Regal zwischen zwei Werkbänken gehört zu einer davon
+    (näher dran, gleiche Achse); nichts steht allein genau in der Mitte zwischen zwei Gruppen.

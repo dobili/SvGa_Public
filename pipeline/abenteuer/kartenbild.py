@@ -20,11 +20,25 @@ from pipeline.abenteuer.moebelliste import lade_moebel
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
 DUNKEL = (26, 22, 18, 255)
+# Deckender Festschatten der Standardbilder von LimeZu (wirkt auf unseren Böden wie ein Schleier).
+GRAUSCHATTEN = (167, 151, 150, 255)
 
 
 def kachel(privat: Path, boegen: dict, angabe: dict, feld: list[int]) -> Image.Image:
     bogen = Image.open(privat / boegen[angabe["bogen"]]).convert("RGBA")
     return bogen.crop((feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K))
+
+
+def moebelbild(privat: Path, quelle: str) -> Image.Image:
+    """Das Bild eines Möbels; die umgefärbte Fassung (spiel/schatten/, durchscheinender statt grauer
+    Festschatten, werkzeuge/schatten.py) geht vor, wie im Paketbau der App."""
+    umgefaerbt = privat / "spiel" / "schatten" / quelle
+    return Image.open(umgefaerbt if umgefaerbt.exists() else privat / quelle).convert("RGBA")
+
+
+def grauer_schatten(privat: Path, quelle: str) -> bool:
+    """Ob das Möbel ohne umgefärbte Fassung noch den deckenden grauen Schatten von LimeZu trägt."""
+    return GRAUSCHATTEN in set(moebelbild(privat, quelle).get_flattened_data())
 
 
 def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
@@ -41,7 +55,12 @@ def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
 def hintergrund(szene: dict, privat: Path) -> Image.Image:
     mat = lade(INHALTE / "materialien.json")
     boegen, boeden, waende = mat["boegen"], mat["boeden"], mat["waende"]
-    zeilen = raster(szene)
+    # Brückenfelder (Szene „bruecken“) sind begehbar, gezeichnet wird darunter aber Wasser mit
+    # durchgehendem Ufer; die Brücke selbst ist ein Bild aus dem Katalog (KARTENREGELN 10.6).
+    bruecken = set(szene.get("bruecken", []))
+    zeilen = [
+        "".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)
+    ]
     bild = Image.new("RGBA", (len(zeilen[0]) * K, len(zeilen) * K), DUNKEL)
     zeichner = ImageDraw.Draw(bild)
     grund = szene.get("boden", "holzHell")
@@ -137,6 +156,11 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
     befunde = []
     for eintrag in szene.get("objekte", []):
         angabe = moebel.get(eintrag["moebel"])
+        if angabe and grauer_schatten(privat, angabe["quelle"]):
+            befunde.append(
+                f"{eintrag['moebel']} hat den grauen Festschatten: werkzeuge/schatten.py im privaten "
+                "Repository laufen lassen (oder die Black_Shadow-Fassung nehmen)"
+            )
         if not angabe or eintrag.get("bauteil_ok"):
             continue
         befund = katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
@@ -154,7 +178,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [
-        (s["tiefe"], s["x"], s["y"], Image.open(privat / moebel[s["name"]]["quelle"]).convert("RGBA"))
+        (s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"]))
         for s in gesetzt
     ]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}

@@ -1,0 +1,209 @@
+{
+  "karte": "capitalArena.aussen",
+  "datei": "karten/varianten/capital-arena-aussen-c.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "k": "sand"
+  },
+  "beschreibung": "Variante C, Bau am Teich: Die Capital Arena steht links, ihre Freitreppe führt auf einen breiten gepflasterten Platz mit Brunnen und zwei Fahnen. Rechts liegt ein Teich mit Steinkante zwischen Bäumen; ein Weg mit Laternen führt am Teich entlang nach Norden, Bänke mit Blick aufs Wasser. Auf dem Platz ein Hotdog-Wagen und ein Limonadenwagen. Am Westrand kommt der Weg vom Leuchtturm an.",
+  "raster": [
+    "################################################################",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#.....................................pp.......................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ca7Arena",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "ca7Fahne",
+      "feld": [12, 35]
+    },
+    {
+      "moebel": "ca7Fahne2",
+      "feld": [26, 35]
+    },
+    {
+      "moebel": "ca7Brunnen",
+      "feld": [18, 40]
+    },
+    {
+      "moebel": "ca7Imbiss",
+      "feld": [44, 37]
+    },
+    {
+      "moebel": "ca7Limonadenwagen",
+      "feld": [54, 38]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [42, 27]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [52, 27]
+    },
+    {
+      "moebel": "ca7BankGarten",
+      "feld": [30, 44]
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [37, 30],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [37, 20],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [37, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [6, 38],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [34, 38],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7BaumRund",
+      "feld": [41, 4]
+    },
+    {
+      "moebel": "ca7Baum",
+      "feld": [48, 4]
+    },
+    {
+      "moebel": "ca7BaumRund",
+      "feld": [55, 4]
+    },
+    {
+      "moebel": "ca7BaumRund",
+      "feld": [47, 29]
+    },
+    {
+      "moebel": "ca7BaumRund",
+      "feld": [57, 30]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 40],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "wegGhost",
+      "feld": [0, 40]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [0, 41]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [20, 30]
+    },
+    {
+      "name": "treppe",
+      "feld": [20, 33]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "fans",
+      "typ": "statist",
+      "feld": [20, 42],
+      "eigenschaften": {
+        "von": "12,42",
+        "bis": "26,42",
+        "tun": "laufen mit Schals zur Halle",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "reporterin",
+      "typ": "statist",
+      "feld": [36, 38],
+      "eigenschaften": {
+        "von": "34,38",
+        "bis": "40,38",
+        "tun": "filmt die Freitreppe",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [44, 44],
+      "eigenschaften": {
+        "von": "40,44",
+        "bis": "50,45",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"],
+  "variante": "c",
+  "ufer": "stein"
+}

@@ -688,3 +688,14 @@ die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte
   ableiten (in den gekauften Paketen: Home Designs, Condominium, Museum, Gym u. a.), als Regeln in den
   Kartenbauer (Beziehungen wie „Stühle um Tisch“, „Sitzplatz vor Fernseher“, „in Ecke“, Blickrichtung)
   und ins Register (Vorderseite und Blickrichtung je Bild).
+
+**Hinweise des Autors zu Außenkarten (9.11.2026, für die nächste Runde):**
+- Ausrichtung auch draußen: Die Bushaltestelle zeigt zur Straße; Laternen stehen am Weg oder an der
+  Straße, die sie beleuchten.
+- Bäume in Wohngebieten sind gepflanzt: in Reihen an der Straße, in Vorgärten, symmetrisch zum Haus;
+  zufällig verteilt nur in Wald und Wildnis.
+- Stimmige Nachbarschaft: Wohnhäuser neben Wohnhäusern; Industrie- oder Geschäftsbauten nur, wo die
+  Story es erklärt (Ironwood, Silicon Bay).
+- Innen und außen passen zusammen: Größe und Stand des Hauses draußen entsprechen den Räumen drinnen
+  (eine Villa hat viele, gut eingerichtete Räume; ein schlichtes Reihenhaus wenige, einfache). Je
+  Gebäude mit Innenkarte wird das Haus draußen nach den Innenräumen gewählt oder umgekehrt.

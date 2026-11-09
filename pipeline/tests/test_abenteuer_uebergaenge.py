@@ -34,3 +34,12 @@ def test_falscher_rand_und_fehlendes_gegenstueck():
     assert any("statt ['west']" in b for b in pruefe(alle, REGELN))
     alle["b.aussen"]["ausloeser"] = []
     assert any("keinen Auslöser west" in b for b in pruefe(alle, REGELN))
+
+
+def test_katalogbefund_meldet_bauteil_und_unsicheres():
+    from pipeline.abenteuer.katalog import katalogbefund
+
+    assert katalogbefund("x", None) is None
+    assert "Bauteil" in katalogbefund("x", {"ganz": False, "gegenstuecke": "rechte Hälfte"})
+    assert "unsicher" in katalogbefund("x", {"ganz": True, "sicher": 0.5, "beschreibung": "Kiste"})
+    assert katalogbefund("x", {"ganz": True, "sicher": 0.5, "korrektur": "Opus"}) is None

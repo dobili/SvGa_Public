@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 41,
+  "nextobjectid": 42,
   "layers": [
     {
       "id": 1,
@@ -589,6 +589,24 @@
       "objects": [
         {
           "id": 1,
+          "name": "start",
+          "type": "ausloeser",
+          "x": 2192,
+          "y": 224,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "richtung",
+              "type": "string",
+              "value": "links"
+            }
+          ]
+        },
+        {
+          "id": 2,
           "name": "zurueckCanyon",
           "type": "ausloeser",
           "x": 2224,
@@ -599,7 +617,7 @@
           "visible": true
         },
         {
-          "id": 2,
+          "id": 3,
           "name": "zurueckCanyon",
           "type": "ausloeser",
           "x": 2224,
@@ -610,7 +628,7 @@
           "visible": true
         },
         {
-          "id": 3,
+          "id": 4,
           "name": "weiterDesert",
           "type": "ausloeser",
           "x": 0,
@@ -621,7 +639,7 @@
           "visible": true
         },
         {
-          "id": 4,
+          "id": 5,
           "name": "weiterDesert",
           "type": "ausloeser",
           "x": 0,
@@ -632,7 +650,7 @@
           "visible": true
         },
         {
-          "id": 5,
+          "id": 6,
           "name": "aussichtspunkt",
           "type": "ausloeser",
           "x": 1184,
@@ -643,7 +661,7 @@
           "visible": true
         },
         {
-          "id": 6,
+          "id": 7,
           "name": "fundNieten",
           "type": "ausloeser",
           "x": 1008,
@@ -654,7 +672,7 @@
           "visible": true
         },
         {
-          "id": 7,
+          "id": 8,
           "name": "roadrunner",
           "type": "tier",
           "x": 1888,
@@ -682,7 +700,7 @@
           ]
         },
         {
-          "id": 8,
+          "id": 9,
           "name": "eidechse",
           "type": "tier",
           "x": 640,
@@ -710,7 +728,7 @@
           ]
         },
         {
-          "id": 9,
+          "id": 10,
           "name": "scFelsGross",
           "type": "moebel",
           "x": 1440,
@@ -733,7 +751,7 @@
           ]
         },
         {
-          "id": 10,
+          "id": 11,
           "name": "scFelsGross",
           "type": "moebel",
           "x": 1440,
@@ -756,7 +774,7 @@
           ]
         },
         {
-          "id": 11,
+          "id": 12,
           "name": "mfBank",
           "type": "moebel",
           "x": 1200,
@@ -779,7 +797,7 @@
           ]
         },
         {
-          "id": 12,
+          "id": 13,
           "name": "dd6BrueckeErsatz",
           "type": "moebel",
           "x": 960,
@@ -802,7 +820,7 @@
           ]
         },
         {
-          "id": 13,
+          "id": 14,
           "name": "wg5Wegweiser",
           "type": "moebel",
           "x": 96,
@@ -825,7 +843,7 @@
           ]
         },
         {
-          "id": 14,
+          "id": 15,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 160,
@@ -848,7 +866,7 @@
           ]
         },
         {
-          "id": 15,
+          "id": 16,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 272,
@@ -871,7 +889,7 @@
           ]
         },
         {
-          "id": 16,
+          "id": 17,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 384,
@@ -894,7 +912,7 @@
           ]
         },
         {
-          "id": 17,
+          "id": 18,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 496,
@@ -917,7 +935,7 @@
           ]
         },
         {
-          "id": 18,
+          "id": 19,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 608,
@@ -940,7 +958,7 @@
           ]
         },
         {
-          "id": 19,
+          "id": 20,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 720,
@@ -963,7 +981,7 @@
           ]
         },
         {
-          "id": 20,
+          "id": 21,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 832,
@@ -986,7 +1004,7 @@
           ]
         },
         {
-          "id": 21,
+          "id": 22,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 944,
@@ -1009,7 +1027,7 @@
           ]
         },
         {
-          "id": 22,
+          "id": 23,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 1056,
@@ -1032,7 +1050,7 @@
           ]
         },
         {
-          "id": 23,
+          "id": 24,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 1168,
@@ -1055,7 +1073,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": 25,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 1280,
@@ -1078,7 +1096,7 @@
           ]
         },
         {
-          "id": 25,
+          "id": 26,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 1504,
@@ -1101,7 +1119,7 @@
           ]
         },
         {
-          "id": 26,
+          "id": 27,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 1616,
@@ -1124,7 +1142,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": 28,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 1728,
@@ -1147,7 +1165,7 @@
           ]
         },
         {
-          "id": 28,
+          "id": 29,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 1840,
@@ -1170,7 +1188,7 @@
           ]
         },
         {
-          "id": 29,
+          "id": 30,
           "name": "dd6KaktusOhne",
           "type": "moebel",
           "x": 1952,
@@ -1193,7 +1211,7 @@
           ]
         },
         {
-          "id": 30,
+          "id": 31,
           "name": "dd6Kaktus",
           "type": "moebel",
           "x": 2064,
@@ -1216,7 +1234,7 @@
           ]
         },
         {
-          "id": 31,
+          "id": 32,
           "name": "fels",
           "type": "moebel",
           "x": 224,
@@ -1239,7 +1257,7 @@
           ]
         },
         {
-          "id": 32,
+          "id": 33,
           "name": "felsKlein",
           "type": "moebel",
           "x": 416,
@@ -1262,7 +1280,7 @@
           ]
         },
         {
-          "id": 33,
+          "id": 34,
           "name": "fels",
           "type": "moebel",
           "x": 608,
@@ -1285,7 +1303,7 @@
           ]
         },
         {
-          "id": 34,
+          "id": 35,
           "name": "felsKlein",
           "type": "moebel",
           "x": 800,
@@ -1308,7 +1326,7 @@
           ]
         },
         {
-          "id": 35,
+          "id": 36,
           "name": "felsKlein",
           "type": "moebel",
           "x": 1184,
@@ -1331,7 +1349,7 @@
           ]
         },
         {
-          "id": 36,
+          "id": 37,
           "name": "fels",
           "type": "moebel",
           "x": 1376,
@@ -1354,7 +1372,7 @@
           ]
         },
         {
-          "id": 37,
+          "id": 38,
           "name": "felsKlein",
           "type": "moebel",
           "x": 1568,
@@ -1377,7 +1395,7 @@
           ]
         },
         {
-          "id": 38,
+          "id": 39,
           "name": "fels",
           "type": "moebel",
           "x": 1760,
@@ -1400,7 +1418,7 @@
           ]
         },
         {
-          "id": 39,
+          "id": 40,
           "name": "felsKlein",
           "type": "moebel",
           "x": 1952,
@@ -1423,7 +1441,7 @@
           ]
         },
         {
-          "id": 40,
+          "id": 41,
           "name": "fels",
           "type": "moebel",
           "x": 2144,

@@ -198,6 +198,13 @@
   ],
   "ausloeser": [
     {
+      "name": "start",
+      "feld": [137, 14],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
       "name": "zurueckCanyon",
       "feld": [139, 14]
     },

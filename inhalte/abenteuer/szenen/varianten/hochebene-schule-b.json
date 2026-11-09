@@ -69,11 +69,6 @@
       "id": "halle"
     },
     {
-      "moebel": "hb7Basketballkorb",
-      "auf": "halle",
-      "versatz": [0, 10]
-    },
-    {
       "moebel": "hb7Werkstatt",
       "feld": [40, 24]
     },

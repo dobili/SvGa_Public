@@ -61,11 +61,6 @@
       "id": "halle"
     },
     {
-      "moebel": "hb7Basketballkorb",
-      "auf": "halle",
-      "versatz": [0, 10]
-    },
-    {
       "moebel": "hb7Schule",
       "feld": [32, 1]
     },
@@ -140,10 +135,6 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [28, 9]
-    },
-    {
-      "moebel": "cc3Busch",
       "feld": [25, 4]
     },
     {
@@ -165,14 +156,6 @@
     {
       "moebel": "cc3Busch",
       "feld": [21, 19]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [28, 3]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [28, 12]
     },
     {
       "moebel": "cc3Busch",

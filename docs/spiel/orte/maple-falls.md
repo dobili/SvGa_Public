@@ -373,6 +373,14 @@ Straße selbst über dem Fluss, ohne Geländer (kein Brückenbild im Katalog). K
 Laterne, Abernathys Bank `parkbank` (3, 11) und zweite Bank (7, 11), Bushaltestelle (24, 18),
 Brett-Platz (9–13 / 22–25) mit Bank, Teich (17–23 / 23–27), Bäume.
 
+**Nach der Bildprüfung des Haupt-Chats:** Der Fluss läuft ohne Lücke unter der Parkstraße durch; die
+Brücke (31–34 / 15–17) hat Holzdielen und auf beiden Seiten ein Geländer über dem Wasser (Reihen 14 und
+18). Der Steg S5 ist jetzt ein gerader Holzsteg vom Ufer ins Wasser (5–6 / 0–3), die Sperrlatte steht
+am Ufer (5, 4). Am Uferweg stehen vier Bäume in gleichen Abständen (1, 7, 13, 19) mit Laternen dazwischen
+(5, 11, 17, 23); der Erdweg endet auf einem kleinen Pflasterstück am Gehweg (28–29, 13). Blumenbeete
+(14, 22) und (19, 13), Abfalleimer (2, 12) und (16, 23), Bäume am Teich (13, 28) und im Osten (35, 28).
+Für Jo fehlt eine Mauer im Katalog; er sitzt auf der Bank am Basketballplatz.
+
 **Übergänge (gebaut):** `park` Westrand (0, 15–17) ↔ Birch Lane (63, 25–27); `landstrasse` Ostrand
 (43, 15–17) ↔ Landstraße `zurueckPark` (0, 15–17); `zedernpfad` Nordrand (10–11, 0) ↔ Pfadkarte
 `zedernZurueckPark` (10–11, 23), in `orte.json` eingetragen; `bushaltestelle` (26, 21); `kiosk` (25, 13).

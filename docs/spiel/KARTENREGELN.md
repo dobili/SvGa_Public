@@ -699,3 +699,10 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     draußen zusammen mit `wandart`: Der Rand zeigt dann den Boden dahinter, nur `#` über einem
     Boden wird Hang. Ein Gleis „auf dem Damm“ flach auf der Wiese reicht nicht (Bahndamm, Nacht
     9./10.11.2026).
+50. **Große `#`-Flächen sind kein Boden.** Ein Feld `#` ohne Boden darunter zeichnet der
+    Kartenbauer als Krone (Fels, Damm) oder als Wandkrone. Ein großer Block davon wirkt wie flacher
+    Boden in Felsfarbe, so in Stollen, auf Felsnasen und hinter Fassaden (Gegenprüfungen der Nacht
+    9./10.11.2026). Deshalb: in Stollen und Höhlen nur einen Rand von einer Kachel `#` um die Gänge,
+    alles dahinter `" "` (dunkel). Draußen hinter Häuserzeilen eine zweite Reihe Häuser, Dächer oder
+    Gärten statt `#`. Über einem Abgrund den Grund zeigen (Canyon: `sandRot` unten, Felswand mit
+    Fläche davor).

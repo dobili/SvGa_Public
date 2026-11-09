@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Birch Lane in Maple Falls an einem Herbstmorgen: eine ruhige Wohnstraße einer amerikanischen Kleinstadt. Oben links das schmale Reihenhaus der Familie mit Treppe zur Haustür, davor ein kleiner Vorgarten mit Kiesweg bis zum Gehweg. Daneben das Haus der Nachbarn mit Veranda. Rechts nimmt die große alte Backsteinschule mit rotem Dach, zwei Eingängen und breiter Treppe die ganze Höhe ein; hier ist der Schachclub. Vor allen Häusern ein durchgehender Gehweg, darunter die Straße, die rechts zum Park führt. Unter der Straße ein Grünstreifen mit Ahornbäumen in Herbstfarben, einer Bank, einer Laterne und der Bushaltestelle. Laternen an den Vorgärten, eine Mülltonne vor der Schule. Die Briefträgerin geht den Gehweg entlang, ein Nachbar harkt Laub, ein Kind spielt Ball, eine Katze sitzt im Vorgarten, ein Eichhörnchen huscht zwischen den Häusern.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag. Links das schmale Reihenhaus der Familie mit Haustür, Vorgarten und einem Erdweg, der gerade zum Gehweg führt; daneben das Nachbarhaus mit Balkon, auf dessen Stufen die Katze schläft. Rechts davon die Bushaltestelle mit Wartehäuschen, offen zur Straße hin. Dahinter die große alte Schule mit rotem Dach, zwei grünen Flügeltüren und breiter Treppe zum Gehweg. Vor den Häusern läuft ein gepflasterter Gehweg, dann die Straße, die rechts zum Park weiterführt. Am Gehweg stehen zwei Laternen, an der linken eine Bank im Vorgarten, an der rechten ein Mülleimer. Auf der anderen Straßenseite ist eine Reihe von Ahornen und Laubbäumen in gleichem Abstand gepflanzt, wie an einer Allee; die Ahorne färben sich schon rot. Juno wartet vor dem Haus, Lily spielt vor dem Nachbarhaus, ein Mann harkt Laub. Laufwege: von der Haustür über den Erdweg zum Gehweg, den Gehweg entlang zur Schule und weiter zum Park.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -28,12 +28,12 @@
     "#......................................................#",
     "#......................................................#",
     "#......................................................#",
-    "#.....e................................................#",
-    "#.....e................................................#",
-    "#.....e................................................#",
-    "#.....e................................................#",
-    "#.....e................................................#",
-    "#.....e................................................#",
+    "#...e..................................................#",
+    "#...e..................................................#",
+    "#...e..................................................#",
+    "#...e..................................................#",
+    "#...e..................................................#",
+    "#...e..................................................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#sssssssssssssssssssssssssssssssssssssssssssssssssssssss",
@@ -48,72 +48,76 @@
   "objekte": [
     {
       "moebel": "mfReihenhaus",
-      "feld": [3, 2]
+      "feld": [1, 2]
     },
     {
       "moebel": "mfNachbarhaus",
-      "feld": [17, 1]
+      "feld": [13, 1]
     },
     {
       "moebel": "mfSchule",
       "feld": [31, 0]
     },
     {
-      "moebel": "mfLaterne",
-      "feld": [11, 19]
+      "moebel": "mfBushaltestelle",
+      "feld": [25, 20]
     },
     {
       "moebel": "mfLaterne",
-      "feld": [27, 19]
+      "feld": [9, 19]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [22, 19]
     },
     {
       "moebel": "mfMuelltonne",
-      "feld": [30, 22]
+      "feld": [20, 21]
     },
     {
       "moebel": "mfAhorn",
       "feld": [2, 27]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [13, 27]
-    },
-    {
-      "moebel": "mfApfelbaum",
-      "feld": [22, 27]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [30, 28]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [36, 27]
+      "moebel": "mfBaum",
+      "feld": [10, 27]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [40, 27]
-    },
-    {
-      "moebel": "mfBushaltestelle",
-      "feld": [48, 27]
+      "feld": [18, 27]
     },
     {
       "moebel": "mfBaum",
-      "feld": [13, 17]
+      "feld": [26, 27]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [34, 27]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [42, 27]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [50, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [7, 21]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [6, 18],
+      "feld": [4, 18],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "haustuer",
-      "feld": [6, 17]
+      "feld": [4, 17]
     },
     {
       "name": "schule",
@@ -127,11 +131,11 @@
   "figuren": [
     {
       "name": "juno",
-      "feld": [16, 21]
+      "feld": [12, 21]
     },
     {
       "name": "lily",
-      "feld": [25, 21]
+      "feld": [19, 20]
     }
   ],
   "belebung": [
@@ -149,10 +153,10 @@
     {
       "name": "laubharker",
       "typ": "statist",
-      "feld": [8, 20],
+      "feld": [16, 19],
       "eigenschaften": {
-        "von": "8,20",
-        "bis": "10,20",
+        "von": "15,19",
+        "bis": "18,19",
         "tun": "harkt Laub vor dem Haus",
         "wann": "tag"
       }
@@ -181,12 +185,14 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [9, 18],
+      "feld": [7, 18],
       "eigenschaften": {
-        "von": "9,18",
-        "bis": "9,18",
+        "von": "7,18",
+        "bis": "7,18",
         "verhalten": "sitzen"
       }
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"]
 }

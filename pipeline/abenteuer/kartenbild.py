@@ -13,6 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
+from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
@@ -146,13 +147,17 @@ def angeschnitten(bild: Image.Image) -> list[str]:
 
 
 def bildbefunde(szene: dict, privat: Path) -> list[str]:
-    """Befunde, die nur mit den Bildern prüfbar sind: angeschnittene Bauteile."""
+    """Befunde, die nur mit den Bildern prüfbar sind: angeschnittene Bauteile, unsichere Einträge."""
     moebel = lade(INHALTE / "moebel.json")["moebel"]
+    katalog = katalogeintraege(privat)
     befunde = []
     for eintrag in szene.get("objekte", []):
         angabe = moebel.get(eintrag["moebel"])
         if not angabe or eintrag.get("bauteil_ok"):
             continue
+        befund = katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
+        if befund:
+            befunde.append(befund)
         kanten = angeschnitten(Image.open(privat / angabe["quelle"]))
         if kanten:
             befunde.append(f"{eintrag['moebel']} wirkt angeschnitten ({', '.join(kanten)}): Bauteil?")

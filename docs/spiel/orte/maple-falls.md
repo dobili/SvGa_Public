@@ -1,0 +1,305 @@
+# Maple Falls
+
+Stand: 9.11.2026, überarbeitet von mittel-1 nach dem Prüfbericht
+`pruefberichte/2026-11-09_akt1_wegenetz.md` (Befunde 5, 9, 10, 23, 38) auf den Stand von
+`12_Akt1_Leben.md` und Maßstab 7a.2. Ortsdokument nach dem Verfahren in `docs/spiel/orte/README.md`:
+Ortsplan, Ortsbild, Abgleich mit der Geschichte, Bühnenbilder, dazu die Platzhalter für die
+Rückkehr (13, 7.4). Quellen: `05_Story_Bibel.md` (Abschnitte 1, 2, 3.1, Szenen 1 bis 13),
+`09_Weltbeschreibung.md` (5.1, Belebung), `12_Akt1_Leben.md`, `13_Wegenetz.md`, `ortsprofile.json`,
+`KARTENREGELN.md`. Ausgearbeitet ist das Bühnenbild des Erdgeschosses (Muster); die übrigen folgen
+nach der Durchsicht durch den Autor.
+
+## 1. Ortsplan
+
+Norden ist oben, auf allen Karten. Der Fluss kommt im Nordwesten über den Wasserfall, fließt hinter
+den Gärten der Birch Lane nach Osten, liegt im Park am Nordrand, biegt im Ostteil des Parks nach
+Süden ab, unterquert die Brücke der Parkstraße und begleitet danach die Landstraße auf ihrer
+Südseite (Befund 5, abgestimmt mit mittel-2). Alles, was man betreten kann, liegt an der Birch Lane
+oder im Park. Felder sind (Spalte, Reihe), Bereiche „Spalten / Reihen“.
+
+```
+                         N
+ Wasserfall ≈≈≈≈≈≈≈≈≈≈≈≈ Fluss (Reihen 0–2, nicht begehbar) ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈┐
+┌──────────────────────── mapleFalls.aussen (64 × 36) ────────────────────────┐┌──── mapleFalls.park (44 × 32) ─────┐
+│ A       B       C       D       E       F       G       H                    ││ A    B Fußsteg C     D    E≈≈ F     │
+│ [Whitlock][Lily]   [Martínez] [Diner]  ¦ [Schule + Fahnenmast]   Bäume      ││ Steg │  ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ ≈≈ Wiese  │
+│  Gärten bis zum Ufer, Ahorne       Parkplatz ¦ Schulhof                     ││ Eiche  Halfpipe  Kiosk ≈≈        │
+│ ─── Gehweg Nord (14) ─────────────────────────────────────────────────────  ││ Uferweg mit Kurve ──┐  ≈≈        │
+│ ═══ Birch Lane (Reihen 15–17) ════════════════════════════════════════════ ═╪╪═ Parkstraße (15–17) ═[Brücke]═══ ═╪═► Landstraße
+│ ─── Gehweg Süd (18) ──────────────────────────────────────────────────────  ││ Hauptweg  Haltestelle ≈≈         │
+│ [Calloway] Halt. [Hayes]Einf.[Fisk]  [Süd 4]   [Spielplatz]                 ││  ╰─ Brett-Platz  Teich ≈≈≈≈≈≈≈≈≈≈≈╪═► Fluss
+│  Gärten Süd                                                                 ││ Wiese, Bäume                       │
+│  ╰──── Hinterweg mit zwei Kurven (Reihen 30–32) ──────────────╯              ││                                    │
+└─────────────────────────────────────────────────────────────────────────────┘└────────────────────────────────────┘
+```
+
+### 1.1 Außenkarte `mapleFalls.aussen`, 64 × 36
+
+**Größe und Ausnahme:** 64 × 36 statt höchstens 60 (7a.2), begründete Ausnahme (Befund 10): Die
+Nordseite trägt Haus Whitlock (10), Lily (9), Martínez (9, „zwei Häuser weiter“, Bibel), Diner (9)
+und Schule (16), zusammen 53 Kacheln Fassade; mit je einer Kachel Abstand, dem Durchgang zum Ufer
+neben der Schule und dem Rand sind es 64. Die Alternative (Schule an den Ostrand, Spielplatz
+dahinter) hätte die Schule aus der Sichtachse der Straße genommen. Laufzeit: Birch Lane 64 Kacheln,
+18 Sekunden.
+
+**Reihen (Nord nach Süd):** 0–2 Fluss, im Westen (Spalten 0–7) mit dem Wasserfall über dunklem Fels
+(Kachelanimation am oberen Rand); 3 Ufer mit Schilf und Gartenzäunen; 3–5 Gärten Nord; 5–10 Häuser
+Nord (Schule ab 5, Wohnhäuser ab 6); 11–13 Vorgärten, Parkplatz und Schulhof; 14 Gehweg Nord; 15–17
+Birch Lane; 18 Gehweg Süd; 19–21 Vorgärten Süd; 22–26 Häuser Süd; 27–29 Gärten Süd; 30–32
+Hinterweg; 33–35 Hecke und Bäume am Südrand.
+
+**Gebäude und Plätze:**
+
+| Gebäude                            | Lage außen (Spalten / Reihen), Tür                                                      | Fassade                                                | Innen                                                                           | Begehbar     |
+| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- | ------------ |
+| Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` (Bühnenbild folgt)                      | ja           |
+| Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                               | nein         |
+| Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                               | nein         |
+| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 18 × 12, Tür Südwand (8, 11) (Befund 9)                                 | ja (neu, 12) |
+| Durchgang zum Ufer                 | 42–43 / 3–13, Hecken beidseits, Bank am Ufer (42, 4)                                    | –                                                      | –                                                                               | Weg          |
+| Maple Falls High                   | 44–59 / 5–10, Doppeltür (51–52, 10) in der Mitte der Südfassade; Schulhof 44–59 / 11–13 | Backstein, 16, Fahnenmast (47, 12)                     | `clubraum` 18 × 13, Tür (9, 12) (Vereinfachung: Schultür führt in den Clubraum) | ja           |
+| Haus Calloway (gegenüber Whitlock) | 3–11 / 22–26, Tür (7, 22) zur Straße; Veranda 4–10 / 21 mit Schaukelstuhl               | Holzhaus, 9, Blumenkästen                              | –                                                                               | nein         |
+| Haltestelle Schulbus               | Schild (14, 18), Wartehäuschen 13–15 / 19                                               | –                                                      | –                                                                               | –            |
+| Haus Hayes (Leerstand)             | 17–25 / 22–26; Einfahrt 26–27 / 19–26 frei; Schild „Zu verkaufen“ (19, 20)              | Holzhaus, 9                                            | –                                                                               | nein         |
+| Haus Fisk (Owens Familie)          | 29–37 / 22–26                                                                           | Holzhaus, 9                                            | –                                                                               | nein         |
+| Haus Süd 4                         | 39–47 / 22–26                                                                           | Holzhaus, 8                                            | –                                                                               | nein         |
+| Spielplatz (gegenüber der Schule)  | 49–59 / 19–26: Sandkasten 52–54 / 22–23, Schaukel 56–57 / 20–21, Bank (50, 25)          | –                                                      | –                                                                               | Platz        |
+
+Regel für alle Häuser: Die Fassade ist halb so breit wie das Erdgeschoss innen (gerundet), die Tür
+sitzt außen und innen an derselben relativen Stelle (gleiche Wand, gleicher Anteil von links, ±1
+Kachel). Fenster gibt es innen nur an Nordwänden (die Ansicht zeigt nur dort Wandflächen); außen
+zeigt die Südfassade Fenster, auch die der Räume, die innen im Osten liegen. Das ist im Genre üblich
+und kein Widerspruch. Häuser der Südseite sind Kulisse; ihre Türen zeigen zur Straße (Nordfassade).
+
+**Abschnitte** (je etwa ein Bildschirm, 8 Spalten; Reihe 1 = Nordseite bis Straßenmitte, Reihe 2 =
+Südseite):
+
+| Abschnitt | Bereich       | Thema                         | Zum Entdecken                                                                        |
+| --------- | ------------- | ----------------------------- | ------------------------------------------------------------------------------------ |
+| A1        | 0–7 / 0–16    | Wasserfall und Haus Whitlock  | Wasserfall, Briefkasten mit verblichenem „Whitlock“ (`briefkastenWhitlock`, (6, 13)) |
+| B1        | 8–15 / 0–16   | Lilys Haus                    | Katze auf der Veranda, Eichhörnchen am Zaun                                          |
+| C1–D1     | 16–31 / 0–16  | Haus Martínez                 | Carla am Fahrrad (N-MF3), Mann harkt Laub (Statist)                                  |
+| E1        | 32–39 / 0–16  | Diner und Parkplatz           | Leuchtreklame mit flackerndem „p“ (`reklame`, (38, 11)), Tür zum Diner               |
+| F1        | 40–47 / 0–16  | Durchgang zum Ufer, Schulhof  | Bank am Ufer mit Blick auf den Fluss, Fahnenmast mit Mr. Pratt (`fahnenmast`)        |
+| G1–H1     | 48–63 / 0–16  | Schule                        | Doppeltür, Platz für die Plakatwand (5), Krähen auf dem Dach                         |
+| A2–B2     | 0–15 / 17–35  | Mrs. Calloway und Haltestelle | Mrs. Calloway (`blumenkasten`, (5, 21)), `fahrplan` („Schulbus 7:42“, (14, 18))      |
+| C2–D2     | 16–31 / 17–35 | Leerstand Hayes               | Schild „Zu verkaufen“, leere Einfahrt, Wäscheleine im Garten                         |
+| E2–F2     | 32–47 / 17–35 | Häuser Fisk und Süd 4         | Briefträgerin Wanda Kessler auf ihrer Runde (N-MF2), Hinterweg                       |
+| G2–H2     | 48–63 / 17–35 | Spielplatz                    | Owen; **„Bauer aus Plastik“** im Sandkasten (`fundBauer`, (53, 22))                  |
+
+**Wegeführung:** Die Birch Lane (3 breit, Gehwege je 1) ist gerade, weil sie die Sichtachse trägt:
+Von der Haustür Whitlock sieht man nach Osten schon nach einem Bildschirm die Schule und dahinter
+die Bäume des Parks. Kurven hat der **Hinterweg** (2 breit): Er beginnt am Spielplatz (54, 27), läuft
+in zwei Bögen hinter den Gärten der Südseite nach Westen (Reihen 30–32) und kommt neben der
+Haltestelle (16, 21–29) wieder an die Straße, die Abkürzung der Kinder. Der Durchgang zum Ufer
+(42–43) ist der zweite Abzweig, mit Bank als Ziel.
+
+**Ränder:** Norden Fluss mit Wasserfall, Westen Wald hinter dem Wasserfall, Süden Hecke und Bäume.
+Nur der Ostrand ist offen (Birch Lane → Park).
+
+### 1.2 Park `mapleFalls.park`, 44 × 32
+
+**Fluss (Befund 5):** Wasser 0–33 / 0–2 am Nordrand mit Ufer und Schilf in Reihe 3; ab Spalte 30
+biegt er nach Süden (Wasser 31–34 / 3–19), unterquert die **Brücke der Parkstraße** (31–34 / 15–17,
+Holzgeländer) und läuft dann nach Osten aus der Karte (Wasser 31–43 / 20–22). Auf der Landstraße
+liegt er südlich der Straße.
+
+| Ort im Park                  | Lage (Spalten / Reihen)                                          | Inhalt                                                                                                                                                          |
+| ---------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Steg (S5)                    | Steg 5 / 1–2, Absperrband (5, 3), alter Pfosten (7, 3)           | Steg ins Wasser; bis `nadelMapleFalls ≥ 1` abgesperrt (`absperrungSteg`), danach neu (`stegNeu`); `fundInitialen` am Pfosten, `aussichtWasserfall` vom Stegende |
+| Fußsteg zum Zedernpfad (S2)  | 10–11 / 0–2 über den Fluss, Schild (12, 3)                       | Übergang `zedernpfad` am Nordrand; Schild „Sturmschaden“ (`schildZedernpfad`) bis zur Öffnung; den Stamm zeigt erst die Pfadkarte                               |
+| Uferweg                      | 2–29 / 4–5, Kurve 28–29 / 6–14 bis zur Parkstraße                | Hauptweg im Norden, 2 breit; Startlinie für Jos Rennen (14, 4)                                                                                                  |
+| Große Eiche, Abernathys Bank | Eiche 2–5 / 8–11, Bank `parkbank` 3–4 / 12, zweite Bank 7–8 / 12 | Mr. Abernathy; zweite Bank mit dem vergessenen Reisebrett (Akt 1), später für seinen Schüler                                                                    |
+| Halfpipe                     | 15–21 / 7–10, Jo (18, 11)                                        | Jo, Skater (Statist)                                                                                                                                            |
+| Kiosk Mr. Patel              | 24–26 / 11–13 (Markise nach Süden), Patel (25, 14)               | `kiosk` (Laden `mapleFalls.kiosk`)                                                                                                                              |
+| Parkstraße                   | 0–43 / 15–17, Gehwege 14 und 18                                  | Fortsetzung der Birch Lane, Brücke 31–34                                                                                                                        |
+| Bushaltestelle               | Schild (26, 19), Wartehäuschen 25–28 / 19–20                     | `bushaltestelle`: Szene 13 wartet hier der Schulbus (Bibel), danach der Überlandbus mit Mr. Kettering (12)                                                      |
+| Hauptweg Süd                 | von (12, 18) im Bogen nach Südwesten bis 9–13 / 22–25            | 2 breit, endet am freien Platz für das öffentliche Brett (5)                                                                                                    |
+| Teich                        | 17–23 / 23–27                                                    | Enten, die folgen, wer stehen bleibt                                                                                                                            |
+| Ostteil jenseits des Flusses | 35–43 / 3–14 und 35–43 / 18–19                                   | Wiese mit Bäumen, Landstraße beginnt am Ostrand                                                                                                                 |
+
+**Abschnitte:** A (0–7) Steg und Eiche, B (8–15) Fußsteg und Brett-Platz, C (16–23) Halfpipe und
+Teich, D (24–31) Kiosk und Haltestelle, E (32–39) Flussbiegung und Brücke, F (40–43) Ortsausgang.
+Sichtachse: Von der Parkstraße am Westrand sieht man die Brücke nach etwa einem Bildschirm.
+Laufzeit quer 44 Kacheln, 13 Sekunden.
+
+### 1.3 Übergänge (Felder auf beiden Seiten)
+
+| Von (Karte, Auslöser, Feld)                         | Nach (Karte, Auslöser, Feld; Ankunft)                                        | Lage                                                                            |
+| --------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| aussen `haustuer` (5, 10)                           | wohnzimmer `haustuer` (5, 12); Ankunft (5, 11), Blick nach oben              | Südfassade 30 % ↔ Südwand 25 % (±1).                                            |
+| wohnzimmer `treppeOben` (1, 3)                      | dachboden `treppe` (Nordwestecke, Feld im Bühnenbild Dachboden)              | Beide Treppen liegen in der Nordwestecke übereinander.                          |
+| aussen `dinerTuer` (37, 10)                         | diner `dinerAusgang` (8, 11); Ankunft (8, 10)                                | Südfassade 44 % ↔ Südwand 44 %.                                                 |
+| aussen `schule` (51, 10) und (52, 10)               | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade Mitte ↔ Südwand Mitte.                                               |
+| aussen `park` Ostrand (63, 15–17); Ankunft (62, 16) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, gleiche Reihen und Breite.                          |
+| park `landstrasse` Ostrand (43, 15–17)              | wegMapleCedar.landstrasse `zurueckPark` Westrand (0, 15–17); Ankunft (1, 16) | Reihen mit mittel-2 abgestimmt (cedar-creek.md); Fluss dort südlich der Straße. |
+| park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zurueckPark` Südrand (Spalten laut 13 und cedar-creek.md)        | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
+| park `bushaltestelle` (26, 19), Dialog              | cedarCreek.aussen `bushaltestelle`                                           | Busfahrt (R41).                                                                 |
+
+Die Prüfung im Kartenbauer (`pipeline/abenteuer/uebergaenge.py`) verlangt: Jeder Übergang hat sein
+Gegenstück auf der Zielkarte; Türen liegen auf der Wand, durch die man den Raum verlässt
+(Südwand innen ↔ Tür in einer Südfassade außen); Randübergänge liegen auf dem passenden Rand
+(Ost ↔ West) und die Straße oder der Weg ist auf beiden Seiten gleich breit.
+
+## 2. Ortsbild
+
+Maple Falls hört man, bevor man es sieht. Hinter den Gärten der Birch Lane fällt der Fluss über
+eine Kante aus dunklem Fels, und das Rauschen liegt über der ganzen Stadt wie ein Teppich, auf den
+alle anderen Geräusche gestellt werden: das Klappern eines Briefkastendeckels, ein Rasenmäher drei
+Gärten weiter, die Schulglocke, die um acht Uhr zwei Minuten zu früh läutet, weil niemand sie seit
+Jahren gestellt hat.
+
+Es ist Spätsommer. Die Ahornbäume, die in gleichen Abständen den Gehweg säumen, sind noch grün,
+aber an den Rändern der Blätter brennt schon das erste Rot, als hätte jemand sie mit einem
+Pinsel nachgezogen. Morgens liegt Tau auf den Rasenflächen der Vorgärten, mittags riecht es nach
+warmem Holz und geschnittenem Gras, abends nach Holzkohle, wenn irgendwo gegrillt wird, und nach
+Kaffee und Gegrilltem aus dem Diner.
+
+Die Birch Lane ist eine Straße, auf der jeder jeden grüßt. Die Häuser sind aus Holz, weiß, hellblau
+oder salbeigrün gestrichen, mit Veranden, auf denen Schaukelstühle und vergessene Kaffeebecher
+stehen. Jeder Vorgarten hat seinen niedrigen Zaun oder seine Hecke, einen Plattenweg zur Tür und
+einen Briefkasten an der Straße, an dem der Name schon etwas verblichen ist. Auf der Veranda von
+Lilys Familie schläft eine graue Katze, die sich nur bewegt, um der Sonne zu folgen. Gegenüber
+strickt Mrs. Calloway auf ihrer Veranda und sieht jedem nach, der vorbeigeht; zwei Häuser weiter
+steht das Haus der Hayes leer, im Fenster lehnt ein Schild „Zu verkaufen“, und die Einfahrt wartet
+auf einen Umzugswagen.
+
+Das Haus der alten Mrs. Whitlock ist das älteste der Straße. Seine Farbe ist ein müdes Weiß, die
+Verandastufen knarren, und auf dem Dach fehlt eine Schindel. Im Garten dahinter stehen zwei alte
+Ahorne, deren Kronen bis an das kleine Dachbodenfenster reichen. Drinnen riecht es nach Umzug:
+Pappe, Klebeband, kalte Pizza. Die Möbel der Familie sind einfach und gebraucht, aber heil; nur
+oben unter dem Dach steht noch alles, was die Whitlocks in hundertfünfzig Jahren nicht
+weggeworfen haben.
+
+Weiter östlich, auf derselben Seite, steht das Diner, ein Flachbau mit Chromleisten; am Abend
+leuchtet die Reklame, ein rotes „Open“, bei dem das „p“ flackert. Daneben die Maple Falls High, ein
+Backsteinbau von 1962 mit einem Fahnenmast, an dem die Flagge träge im Wind hängt. Im Erdgeschoss,
+hinter dem dritten Fenster, ist das Klassenzimmer, in dem nachmittags das Schachteam trainiert; in
+einer Vitrine stehen die Pokale von 1994, als Maple Falls zuletzt etwas gewonnen hat. Gegenüber
+der Schule quietscht eine Schaukel auf dem Spielplatz.
+
+Folgt man der Straße nach Osten, wird sie zur Parkstraße. Der Stadtpark liegt am Fluss, der hier
+breit und ruhig ist. Enten treiben am Ufer, ein Steg aus grauem Holz ragt ins Wasser, und daneben
+führt ein schmaler Fußsteg hinüber zum Waldrand, wo der Zedernpfad über den Hügel beginnt. Auf der
+Wiese steht eine Halfpipe mit abgeplatztem Lack, auf deren Kante Jo sitzt und Blitzpartien um Limo
+spielt. Am Hauptweg parkt der Verkaufswagen von Mr. Patel mit gestreifter Markise; er verkauft
+Zeitungen, Limo und seit dreißig Jahren Taschenschachspiele. Auf der Bank unter der großen Eiche
+sitzt jeden Nachmittag Mr. Abernathy mit Reiseschach und Thermoskanne. Im Osten biegt der Fluss nach
+Süden ab, die Parkstraße überquert ihn auf einer kleinen Holzbrücke, und dahinter beginnt die
+Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihrer Seite.
+
+## 3. Abgleich mit der Geschichte
+
+### 3.1 Was die Geschichte verlangt
+
+| Karte      | Szenen                                          | Figuren                                                                                  | Auslöser und Gegenstände                                                                                                                                                                            | Belebung                                                             |
+| ---------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| wohnzimmer | 1, 4, 13; später Ironwood-Vorspiel, Akt 3 und 4 | Mama                                                                                     | `haustuer`, `treppeOben`, `fotoGrandma`, `kartonKueche`, `pizzakarton`; Kiste „Whitlock – nicht wegwerfen“ (Szene 1); Zettel vom Schachteam aus dem Briefkasten (Szene 4)                           | –                                                                    |
+| dachboden  | 2, 3, nach 12; Akt 4 (Szene nach der Arena)     | Ambrose (im Brett)                                                                       | `treppe`, `brett`, `hutschachtel`, `spiegel`, `zeitungen1961`                                                                                                                                       | Staub im Licht                                                       |
+| aussen     | 5, 8; Nebenaufgaben aus 12                      | Juno (Haltestelle), Lily; neu (12): Mrs. Calloway, Wanda Kessler, Mr. Pratt, Carla, Owen | `haustuer`, `dinerTuer`, `schule`, `park`; `briefkastenWhitlock`, `blumenkasten`, `fahnenmast`, `sandkasten`, `fundBauer`, `reklame`, `fahrplan`                                                    | Mann harkt Laub; Eichhörnchen am Zaun, Katze auf der Veranda, Krähen |
+| diner      | Nebenaufgabe N-MF1 (12)                         | Hector Sandoval, Kellnerin (Statist)                                                     | `dinerAusgang`, `jukebox`, `fotoSchule1962`, `tischsetWand`                                                                                                                                         | Kellnerin wischt Tische                                              |
+| clubraum   | 5, 6, 9, 11, 12                                 | Coach Delgado, Sam, Juno, Victor, Graham Hale                                            | `schule`, `pokalvitrine`, `brettOhneDame`, `plakatZaehlen`; vier Bretter                                                                                                                            | –                                                                    |
+| park       | 7, 10, 10a, 13; S5 und S2 (12)                  | Mr. Abernathy, Jo, Mr. Patel                                                             | `park`, `landstrasse`, `zedernpfad`, `bushaltestelle`, `parkbank`, zweite Bank mit dem vergessenen Reisebrett, `kiosk`; `absperrungSteg`, `fundInitialen`, `aussichtWasserfall`, `schildZedernpfad` | Skater, Rentner auf der Bank; Enten, die folgen, wer stehen bleibt   |
+
+### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
+
+| Element                                                | Entscheidung                                                                                                  | Grund                                                                                                                                                      |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wasserfall hinter den Gärten                           | bleibt, als Kachelanimation am oberen Rand der Außenkarte (Westen)                                            | Weltbeschreibung 5.1; gibt der Stadt ihren Namen.                                                                                                          |
+| Küche „in der Ecke“ des Wohnzimmers (Weltbeschreibung) | geändert: eigene Küche hinter einem Durchgang im selben Erdgeschoss                                           | Regel 2.1 (keine Küchenmöbel im Wohnzimmer); Rückmeldung des Autors zu Runde 3. Die Szenen brauchen nur den Karton „Küche?“, der jetzt in der Küche steht. |
+| Fernseher                                              | bleibt, auf einem Lowboard an der Nordwand, nicht neben der Haustür                                           | Regel 4.2.                                                                                                                                                 |
+| Schlafzimmer                                           | nur als geschlossene Tür im Erdgeschoss (nicht betretbar)                                                     | Die Geschichte braucht sie nicht; ohne sie wäre unklar, wo die Familie schläft.                                                                            |
+| Kaputte Möbel                                          | nur auf dem Dachboden                                                                                         | Ortsprofil: unten neu oder gebraucht.                                                                                                                      |
+| Haus Hayes „Zu verkaufen“                              | Südseite, mit freier Einfahrt                                                                                 | Ohne neue Figur; die Einfahrt trägt den Umzugswagen bei der Rückkehr (13, 7.4). Die Nordseite braucht den Platz für das Diner.                             |
+| Diner                                                  | **geändert:** Nordseite, betretbar, Fassade 9 (12, Befund 9)                                                  | N-MF1 spielt drinnen; Tür und Nischen an der Südwand, Fenster hinter dem Tresen an der Nordwand passen zur Ansicht.                                        |
+| Haus Calloway                                          | neu, gegenüber dem Whitlock-Haus                                                                              | 12: Nachbarin über sechzig Jahre, erzählt vom Fernschach per Post und von den Initialen.                                                                   |
+| Spielplatz                                             | gegenüber der Schule statt zwischen Martínez und Schule                                                       | Die Nordseite ist voll (Befund 10); vor der Schule sieht man ihn von der Straße.                                                                           |
+| Briefkasten am Haus Whitlock                           | neu, Pflicht                                                                                                  | Szene 4: „Zettel im Briefkasten“; N-MF2 (Schachkurier).                                                                                                    |
+| Steg im Park                                           | bleibt, im Nordwesten; abgesperrt bis `nadelMapleFalls ≥ 1` (S5)                                              | Ortsbild; Sperre mit Lohn (12, Abschnitt 5). Beginnt am Ufer und ragt ins Wasser (Regel 6.5).                                                              |
+| Fluss im Park                                          | Nordrand, Biegung nach Süden, Brücke der Parkstraße                                                           | Befund 5: ein Fluss für Maple Falls, Park und Landstraße.                                                                                                  |
+| Zedernpfad                                             | Fußsteg im Nordwesten des Parks, Schild bis zur Öffnung; der Stamm liegt auf der Pfadkarte                    | 13 (Q1, S2) und Befund 22.                                                                                                                                 |
+| Schulglocke zwei Minuten zu früh                       | nur Text (Belebung, Dialog möglich)                                                                           | kein Bild nötig.                                                                                                                                           |
+| Bushaltestellen                                        | zwei: Birch Lane (Schulbus morgens, Szene 5) und Park (Szene 13 wartet dort der Schulbus; danach Überlandbus) | Story-Bibel Szene 5 und 13 (Befund 23); der Überlandbus mit Mr. Kettering kommt aus 12.                                                                    |
+
+## 4. Bühnenbilder
+
+### 4.1 Erdgeschoss Haus Whitlock (`mapleFalls.wohnzimmer`), Muster
+
+**Größe:** 20 × 13 Kacheln (7a.2: zwei Räume nebeneinander). Nordwand: Reihe 0 Wandkrone, Reihen 1
+und 2 Wandfläche (creme, mit Sockelleiste). Boden ab Reihe 3. Südwand Reihe 12, Westwand Spalte 0,
+Ostwand Spalte 19. Innenwand zwischen Wohnzimmer (Spalten 1–10) und Küche (Spalten 12–18) in Spalte
+11, mit Durchgang (Türrahmen ohne Tür) in den Reihen 7 und 8. Boden: helle Holzdielen im Wohnzimmer,
+Fliesen (hell) in der Küche. Belegung etwa 40 % (Regel 8, Wohnhaus 39–54 %).
+
+**Licht und Stimmung:** Spätnachmittag, Licht fällt schräg durch die Nordfenster (im Spiel ohne
+eigenes Licht). Alles ist sauber, aber unfertig: Kartons stehen noch überall, und nichts hängt
+außer dem Foto.
+
+**Laufwege (frei halten):** Haustür (5, 12) → hinauf bis Reihe 10 → nach Westen bis Spalte 2 →
+hinauf bis zum Antritt der Treppe (2, 6). Haustür → nach Osten bis Spalte 10 → hinauf bis Reihe 8 →
+durch den Durchgang (11, 7–8) zum Esstisch. Jeder Auslöser ist von einem freien Nachbarfeld
+erreichbar.
+
+**Zonen und Inventar** (Feld = linke obere Kachel des Gegenstands, Spalte/Reihe):
+
+| Zone     | Gegenstand                                           | Wo                                                                                                              | Ausrichtung                      | Material, Stil, Zustand                 | Zweck                                                                    |
+| -------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------- | --------------------------------------- | ------------------------------------------------------------------------ |
+| Treppe   | Holztreppe nach oben mit Geländer                    | (1, 3) bis (2, 5) an der Nordwand                                                                               | führt nach oben (Nord)           | Holz, landhaus, gebraucht               | Weg zum Dachboden; Auslöser `treppeOben` auf (1, 3), Antritt (2, 6) frei |
+| Treppe   | Kiste „Whitlock – nicht wegwerfen“                   | (3, 6) neben dem Antritt                                                                                        | –                                | Pappe, alt                              | Szene 1: die Kiste, die der Held hinaufträgt                             |
+| Nordwand | Anrichte, 2 breit                                    | (4, 3), Platte frei                                                                                             | Vorderseite unten                | Holz dunkel, gebraucht                  | Platz für Mamas altes Turnierfoto ab Akt 2 (5)                           |
+| Nordwand | Fenster mit Gardinen davor                           | Wandfläche (4, 1) und (9, 1)                                                                                    | –                                | Holzrahmen, weiße Gardine               | Licht, Blick in den Garten                                               |
+| Nordwand | Foto von Grandma Whitlock, gerahmt                   | Wandfläche (6, 1)                                                                                               | –                                | Holzrahmen, alt                         | Auslöser `fotoGrandma` auf (6, 3), man steht davor                       |
+| Sitzecke | Lowboard, Fernseher an der Wand darüber              | Lowboard (7, 3), 3 breit; Fernseher `an_wand` über der Platte                                                   | Vorderseite unten (zum Raum)     | Holz hell, gebraucht                    | Regel 4.2                                                                |
+| Sitzecke | Teppich                                              | (6, 4), 5 × 3                                                                                                   | flach                            | Stoff, gemustert, gebraucht             | fasst die Sitzecke                                                       |
+| Sitzecke | Couchtisch                                           | (7, 5), 2 × 1                                                                                                   | –                                | Holz hell                               | darauf Fernbedienung und Becher                                          |
+| Sitzecke | Sofa, von hinten gesehen                             | (6, 7), 4 × 2                                                                                                   | blickt nach oben zum Fernseher   | Stoff grün, gebraucht                   | Sofa zum Fernseher, Abstand 3 (Regel 8, Blickabstand 2–4)                |
+| Sitzecke | Sessel                                               | (10, 5)                                                                                                         | blickt nach links zum Couchtisch | Stoff, passend zum Sofa (gleiche Serie) | zweiter Sitzplatz                                                        |
+| Sitzecke | Stehlampe                                            | (10, 4), neben dem Sessel                                                                                       | –                                | Metall, Schirm creme                    | Regel 4.4                                                                |
+| Umzug    | Kartonstapel (2–3 Kartons)                           | (1, 8) bis (1, 10) entlang der Westwand                                                                         | –                                | Pappe                                   | Umzug, lässt Spalte 2 frei                                               |
+| Umzug    | hoher Kartonstapel                                   | (8, 9) hinter dem Sofa                                                                                          | –                                | Pappe                                   | Story-Bibel: „ein hoher Stapel hinter dem Sofa“                          |
+| Umzug    | Pizzakarton, leer                                    | (3, 9) auf dem Boden neben dem Laufweg                                                                          | flach                            | Pappe                                   | Auslöser `pizzakarton`                                                   |
+| Westwand | Tür zum Schlafzimmer (geschlossen)                   | Westwand, Reihe 7 (als Tür in der Wand, (1, 7) bleibt frei)                                                     | –                                | Holz                                    | nur Kulisse                                                              |
+| Ecken    | Zimmerpflanze im Topf                                | (1, 11) und (10, 11)                                                                                            | –                                | Pflanze, Keramik                        | Ecken (Regel 4.4)                                                        |
+| Eingang  | Fußmatte                                             | (5, 11) vor der Haustür                                                                                         | flach                            | Stoff                                   | Eingang                                                                  |
+| Eingang  | Schuhregal mit Schuhen                               | (3, 11) neben der Haustür (die Südwand hat keine Wandfläche für Haken)                                          | Vorderseite unten                | Holz                                    | Spuren von Leben                                                         |
+| Eingang  | Haustür                                              | Südwand (5, 12)                                                                                                 | –                                | Holz                                    | Auslöser `haustuer`, Start (5, 11) mit Blick nach oben                   |
+| Küche    | Küchenzeile: Spüle, Herd, Arbeitsplatte, Kühlschrank | (12, 3) bis (18, 3) an der Nordwand, lückenlos; Kühlschrank in der Ecke (18, 3)                                 | Vorderseite unten                | weiß und Holz, gebraucht, eine Serie    | Kochen                                                                   |
+| Küche    | Fenster über der Spüle                               | Wandfläche (14, 1)                                                                                              | –                                | –                                       | Licht                                                                    |
+| Küche    | Wanduhr                                              | Wandfläche (17, 1)                                                                                              | –                                | –                                       | Leben                                                                    |
+| Küche    | Kleinkram auf der Arbeitsplatte                      | Kaffeemaschine, Obstschale                                                                                      | auf                              | –                                       | Leben                                                                    |
+| Küche    | Esstisch, rechteckig, mit vier gleichen Stühlen      | Tisch (14, 6), 3 × 2; Stühle oben (14, 5) und (16, 5) Sitz nach unten, unten (14, 8) und (16, 8) Sitz nach oben | Stühle zum Tisch                 | Holz hell, eine Serie                   | Szene 4 und später                                                       |
+| Küche    | Mamas Laptop und Papierstapel                        | auf dem Esstisch                                                                                                | auf                              | –                                       | Mama sortiert Papiere                                                    |
+| Küche    | Mama                                                 | (17, 7) neben dem Tisch                                                                                         | schaut nach links                | –                                       | Figur `mutter`                                                           |
+| Küche    | Karton „Küche?“                                      | (12, 10)                                                                                                        | –                                | Pappe, beschriftet                      | Auslöser `kartonKueche`                                                  |
+| Küche    | Mülleimer                                            | (18, 10)                                                                                                        | –                                | Metall                                  | Leben                                                                    |
+
+**Bezug zu anderen Karten:** Die Haustür liegt bei 25 % der Breite in der Südwand, außen bei 30 %
+(Spalte 3 von 10; Regel ±1 Kachel). Die Fassade ist 10 breit, halb so breit wie innen. Die Treppe
+in der Nordwestecke liegt unter der Bodenöffnung des Dachbodens (ebenfalls Nordwestecke). Die Küche
+liegt im Osten; außen zeigt der östliche Teil der Südfassade ihr Fenster (Genre-Regel in 1.1, statt
+eines Fensters in der Ostseite; Befund 38).
+
+### 4.2 bis 4.6
+
+Dachboden, Außen, Diner, Clubraum und Park folgen nach demselben Muster, sobald der Autor das
+Muster gesehen hat. Lage und Maße stehen schon in Abschnitt 1.
+
+## 5. Platzhalter für die Rückkehr
+
+Damit die Karten die Rückkehr in späteren Akten tragen, ohne neu gezeichnet zu werden
+(`13_Wegenetz.md`, 7.4). Alle Platzhalter sind Objekte mit Bedingung oder freie Felder.
+
+| Karte      | Platzhalter                              | Feld oder Bereich                                                              | Wofür                                           |
+| ---------- | ---------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------- |
+| aussen     | Einfahrt Hayes frei                      | 26–27 / 19–26                                                                  | Umzugswagen bei der Rückkehr                    |
+| aussen     | Schild „Zu verkaufen“ als eigenes Objekt | (19, 20)                                                                       | verschwindet, wenn jemand einzieht              |
+| aussen     | Feld für Kürbisse oder Lichterketten     | Verandas: Whitlock (3, 11), Lily (14, 11), Martínez (24, 11), Calloway (4, 21) | Jahreszeiten auf der Objektebene                |
+| aussen     | Plakatwand an der Schule                 | 55–57 / 11                                                                     | Plakate je Akt                                  |
+| aussen     | leere Werbetafel am Diner                | 33–34 / 11 am Parkplatz                                                        | Werbung je Akt                                  |
+| park       | Schild am Fußsteg zum Zedernpfad         | (12, 3), Bedingung bis zur Öffnung von S2                                      | verschwindet; der Stamm liegt auf der Pfadkarte |
+| park       | Absperrband am Steg (`absperrungSteg`)   | (5, 3), Bedingung `nadelMapleFalls ≥ 1` → neuer Steg                           | S5                                              |
+| park       | zweite Bank neben Abernathys Bank        | 7–8 / 12                                                                       | Abernathys Schüler (später)                     |
+| park       | Startlinie für Jos Rennen                | (14, 4) am Uferweg                                                             | Rennen mit dem Fahrrad (13, Akt 2)              |
+| park       | freier Platz für das öffentliche Brett   | 9–13 / 22–25 am Ende des Hauptwegs Süd                                         | Post-Game                                       |
+| clubraum   | freie Wandfläche für das Nadel-Plakat    | Nordwand, im Bühnenbild 4.5 festzulegen                                        | Nadeln des Helden                               |
+| wohnzimmer | Platz auf der Anrichte                   | (4, 3), Platte frei                                                            | Mamas altes Turnierfoto ab Akt 2                |

@@ -2,7 +2,9 @@
   "karte": "mapleFalls.dachboden",
   "datei": "karten/maple-falls-dachboden.json",
   "art": "innen",
-  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen; durch zwei kleine Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht auf Staub und Kisten, draußen stehen die Ahornbäume. Man kommt links unten über eine steile Holztreppe aus dem Wohnzimmer herauf. Hier oben stehen die Sachen der alten Mrs. Whitlock, die niemand weggeräumt hat: links an der Nordwand ein großer Bauernschrank, gestapelte Kartons und Holzkisten, eine davon mit einer blauen Decke überworfen. In der linken Ecke steht eine runde Hutschachtel. Vor den Fenstern liegt ein alter, verblichener Teppich, darauf ein kleiner runder Holztisch; auf dem Tisch steht das alte Reiseschachbrett, um das sich alles dreht. Daneben ein roter Ohrensessel mit verschlissenem Bezug, als hätte hier jemand gesessen und gespielt, und eine alte Stehlampe, dahinter weitere Kartons. Zwischen den Fenstern hängt ein Waldbild in einem Holzrahmen. Rechts an der Wand steht ein altes Bücherregal voller vergilbter Bücher, davor steht ein ovaler Standspiegel mit Holzfuß. Rechts unten liegt auf den Dielen ein Stapel vergilbter Zeitungen von 1961, daneben ein alter, wackliger Stuhl, ein offener Umzugskarton und ein Besen. Laufwege: von der Treppe nach oben zum Tisch mit dem Brett, nach links zur Hutschachtel, nach rechts zu Spiegel und Zeitungen.",
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal"],
+  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen; durch ein Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht, draußen stehen die Ahornbäume. Man kommt links über eine steile Holztreppe aus dem Wohnzimmer herauf; unten vor der Treppe ist Platz zum Antreten. Alles hier oben ist alt, aber ordentlich abgestellt, so wie die alte Mrs. Whitlock es hinterlassen hat. Unter dem Fenster steht auf einem verblichenen Teppich ein kleiner runder Holztisch mit zwei Holzstühlen, die einander gegenüberstehen; auf dem Tisch liegt das alte Reiseschachbrett, um das sich alles dreht, als hätte jemand gerade eine Partie unterbrochen. Neben dem rechten Stuhl eine alte Stehlampe. An der Nordwand reihen sich ein Kartonstapel, der Bauernschrank und ein Bücherregal voller vergilbter Bücher, dazwischen hängt ein Waldbild. Rechts vorn ist die Ecke mit Mrs. Whitlocks Sachen: ein hoher Stapel Holzkisten, ein ovaler Standspiegel, eine runde Hutschachtel, eine Kiste mit blauem Tuch und ein Bündel vergilbter Zeitungen von 1961 auf den Dielen. Laufwege: vom Treppenantritt nach rechts und hoch zum Tisch mit dem Brett, weiter nach rechts in die Ecke mit den Kisten.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -21,7 +23,7 @@
   "objekte": [
     {
       "moebel": "mf2Dachfenster",
-      "feld": [4, 1],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
@@ -31,58 +33,55 @@
       "versatz": [0, 2]
     },
     {
-      "moebel": "mf2Dachfenster",
-      "feld": [9, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf2Kleiderschrank",
+      "moebel": "mf3Kartonstapel",
       "feld": [1, 1]
     },
     {
-      "moebel": "mf2Kartonstapel",
-      "feld": [9, 2]
-    },
-    {
-      "moebel": "mf2KisteTuch",
-      "feld": [3, 5]
-    },
-    {
-      "moebel": "mf2Hutschachtel",
-      "feld": [1, 4],
-      "id": "hutschachtel"
-    },
-    {
-      "moebel": "mf2TeppichAlt",
-      "feld": [3, 3]
-    },
-    {
-      "moebel": "mf2Rundtisch",
-      "feld": [4, 3],
-      "id": "tisch"
-    },
-    {
-      "moebel": "mf2Schachbrett",
-      "auf": "tisch"
-    },
-    {
-      "moebel": "mf2Ohrensessel",
-      "feld": [6, 3]
-    },
-    {
-      "moebel": "mf2Stehlampe",
-      "feld": [8, 2]
+      "moebel": "mf2Kleiderschrank",
+      "feld": [9, 1]
     },
     {
       "moebel": "mf2Buecherregal",
       "feld": [11, 1]
     },
     {
-      "moebel": "mf2Standspiegel",
-      "feld": [12, 4]
+      "moebel": "mf2TeppichAlt",
+      "feld": [4, 3]
     },
     {
-      "moebel": "mf2KartonOffen",
+      "moebel": "mf3Rundtisch",
+      "feld": [5, 3],
+      "id": "tisch"
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "mf3StuhlDunkelRechts",
+      "feld": [4, 3],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "mf3StuhlDunkelLinks",
+      "feld": [7, 3],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "mf2Standspiegel",
+      "feld": [10, 5],
+      "id": "spiegel"
+    },
+    {
+      "moebel": "mf3Kartonstapel",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "mf2Hutschachtel",
       "feld": [11, 8]
     },
     {
@@ -90,20 +89,12 @@
       "feld": [9, 6]
     },
     {
-      "moebel": "mf2Besen",
-      "feld": [12, 7]
-    },
-    {
-      "moebel": "mf2Kiste1",
-      "feld": [6, 8]
+      "moebel": "mf2KisteTuch",
+      "feld": [7, 9]
     },
     {
       "moebel": "mf2Treppe",
-      "feld": [1, 6]
-    },
-    {
-      "moebel": "mf2StuhlAlt",
-      "feld": [7, 6]
+      "feld": [1, 4]
     }
   ],
   "ausloeser": [
@@ -116,7 +107,7 @@
     },
     {
       "name": "treppe",
-      "feld": [2, 9]
+      "feld": [2, 8]
     },
     {
       "name": "brett",
@@ -125,12 +116,12 @@
     },
     {
       "name": "hutschachtel",
-      "feld": [1, 5],
+      "feld": [11, 9],
       "auf_moebel": true
     },
     {
       "name": "spiegel",
-      "feld": [12, 5],
+      "feld": [10, 6],
       "auf_moebel": true
     },
     {

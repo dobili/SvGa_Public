@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Das Klassenzimmer 12 der Maple Falls High am Nachmittag, wenn hier das Schachteam von Coach Delgado trainiert. Ein heller Raum mit cremefarbenen Wänden und hellem Holzboden; durch drei Fenster an der Nordwand scheint die Spätsommersonne. In der Mitte der Nordwand hängt die grüne Tafel, auf der noch ein Diagramm von der letzten Aufgabe steht, daneben die Weltkarte und rechts das Plakat „Erst zählen, dann schlagen“, das Coach Delgado selbst gemalt hat. Links an der Wand eine Urkunde aus der Kreisliga. Die Schulbänke sind an die Wände geschoben; stattdessen stehen vier Holztische in zwei Reihen, auf jedem ein Schachbrett mit Figuren und an beiden Enden ein Stuhl, damit sich zwei gegenübersitzen. Auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt. Links vorn der Pokaltisch mit den Pokalen von 1994 auf rotem Tuch, das Stolz und Staub zugleich ist. Rechts vorn das Lehrerpult mit dem Globus, dahinter steht Coach Delgado mit der Pfeife. An der rechten Wand stehen Spinde und ein Bücherregal mit Schachbüchern, in den Ecken Grünpflanzen. Sam lümmelt am vorderen Tisch. Zwischen den Tischreihen bleibt ein Gang frei, durch den eine Schülerin die Figuren einsammelt. Unten in der Mitte die Tür zum Schulflur.",
+  "beschreibung": "Das Klassenzimmer 12 der Maple Falls High am Nachmittag, wenn hier das Schachteam von Coach Delgado trainiert. Ein heller Raum mit cremefarbenen Wänden und hellem Holzboden; durch zwei Fenster an der Nordwand scheint die Spätsommersonne. An der Nordwand hängen die Weltkarte, die grüne Tafel mit dem Diagramm von der letzten Aufgabe und das Plakat „Erst zählen, dann schlagen“, das Coach Delgado selbst gemalt hat. Links an der Wand steht eine niedrige Anrichte, darauf der Pokal von 1994, das Stolz und Staub zugleich ist. Rechts steht das Lehrerpult mit dem Globus, daneben Coach Delgado mit der Pfeife, und in der Ecke zwei Spinde. Die Schulbänke sind an die Wände geschoben; stattdessen stehen vier runde Spieltische in zwei Reihen, auf jedem ein kleines Brett mit Figuren, und links und rechts je ein Holzstuhl, der zum Tisch schaut. Auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt. Sam wartet am vorderen linken Tisch. Zwischen den Tischreihen bleibt ein Gang frei, durch den eine Schülerin die Figuren einsammelt. In den beiden vorderen Ecken stehen Grünpflanzen. Unten in der Mitte die Tür zum Schulflur.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -22,44 +22,38 @@
   ],
   "objekte": [
     {
-      "moebel": "mf2Urkunde",
-      "feld": [1, 1],
-      "an_wand": true,
-      "versatz": [0, 4]
-    },
-    {
       "moebel": "mf2Fenster",
       "feld": [3, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Weltkarte",
-      "feld": [6, 1],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Tafel",
-      "feld": [8, 1],
+      "feld": [7, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2PlakatZaehlen",
-      "feld": [10, 1],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [12, 1],
+      "feld": [11, 1],
       "an_wand": true
     },
     {
-      "moebel": "mf2Fenster",
-      "feld": [15, 1],
-      "an_wand": true
+      "moebel": "mf3Anrichte",
+      "feld": [1, 2],
+      "id": "anrichte"
     },
     {
-      "moebel": "mf2Pokaltisch",
-      "feld": [1, 2]
+      "moebel": "mf3Pokal",
+      "auf": "anrichte"
     },
     {
       "moebel": "mf2Lehrerpult",
@@ -71,92 +65,12 @@
       "auf": "pult"
     },
     {
-      "moebel": "mf2Schachtisch",
-      "feld": [3, 5],
-      "id": "t1",
-      "versatz": [3, 0]
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "t1"
-    },
-    {
-      "moebel": "mf2StuhlL",
-      "feld": [2, 5],
-      "versatz": [5, 0]
-    },
-    {
-      "moebel": "mf2StuhlR",
-      "feld": [6, 5]
-    },
-    {
-      "moebel": "mf2Schachtisch",
-      "feld": [9, 5],
-      "id": "t2",
-      "versatz": [3, 0]
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "t2"
-    },
-    {
-      "moebel": "mf2StuhlL",
-      "feld": [8, 5],
-      "versatz": [5, 0]
-    },
-    {
-      "moebel": "mf2StuhlR",
-      "feld": [12, 5]
-    },
-    {
-      "moebel": "mf2Schachtisch",
-      "feld": [3, 8],
-      "id": "t3",
-      "versatz": [3, 0]
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "t3"
-    },
-    {
-      "moebel": "mf2StuhlL",
-      "feld": [2, 8],
-      "versatz": [5, 0]
-    },
-    {
-      "moebel": "mf2StuhlR",
-      "feld": [6, 8]
-    },
-    {
-      "moebel": "mf2Schachtisch",
-      "feld": [9, 8],
-      "id": "t4",
-      "versatz": [3, 0]
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "t4"
-    },
-    {
-      "moebel": "mf2StuhlL",
-      "feld": [8, 8],
-      "versatz": [5, 0]
-    },
-    {
-      "moebel": "mf2StuhlR",
-      "feld": [12, 8]
-    },
-    {
       "moebel": "mf2Spind",
-      "feld": [16, 6]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [16, 8]
-    },
-    {
-      "moebel": "mf2Regal",
       "feld": [15, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [16, 2]
     },
     {
       "moebel": "mf2Pflanze",
@@ -165,6 +79,82 @@
     {
       "moebel": "mf2Pflanze",
       "feld": [16, 9]
+    },
+    {
+      "moebel": "mf3Spieltisch",
+      "feld": [3, 5],
+      "id": "t1"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t1"
+    },
+    {
+      "moebel": "mf3StuhlOrangeRechts",
+      "feld": [2, 5],
+      "zu": "t1"
+    },
+    {
+      "moebel": "mf3StuhlOrangeLinks",
+      "feld": [5, 5],
+      "zu": "t1"
+    },
+    {
+      "moebel": "mf3Spieltisch",
+      "feld": [9, 5],
+      "id": "t2"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t2"
+    },
+    {
+      "moebel": "mf3StuhlOrangeRechts",
+      "feld": [8, 5],
+      "zu": "t2"
+    },
+    {
+      "moebel": "mf3StuhlOrangeLinks",
+      "feld": [11, 5],
+      "zu": "t2"
+    },
+    {
+      "moebel": "mf3Spieltisch",
+      "feld": [3, 8],
+      "id": "t3"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t3"
+    },
+    {
+      "moebel": "mf3StuhlOrangeRechts",
+      "feld": [2, 8],
+      "zu": "t3"
+    },
+    {
+      "moebel": "mf3StuhlOrangeLinks",
+      "feld": [5, 8],
+      "zu": "t3"
+    },
+    {
+      "moebel": "mf3Spieltisch",
+      "feld": [9, 8],
+      "id": "t4"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t4"
+    },
+    {
+      "moebel": "mf3StuhlOrangeRechts",
+      "feld": [8, 8],
+      "zu": "t4"
+    },
+    {
+      "moebel": "mf3StuhlOrangeLinks",
+      "feld": [11, 8],
+      "zu": "t4"
     }
   ],
   "ausloeser": [
@@ -181,7 +171,7 @@
     },
     {
       "name": "pokalvitrine",
-      "feld": [1, 4],
+      "feld": [1, 3],
       "auf_moebel": true
     },
     {
@@ -191,13 +181,13 @@
     },
     {
       "name": "plakatZaehlen",
-      "feld": [10, 3]
+      "feld": [9, 3]
     }
   ],
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [14, 3]
+      "feld": [12, 4]
     },
     {
       "name": "sam",
@@ -216,5 +206,7 @@
         "wann": "tag"
       }
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch"]
 }

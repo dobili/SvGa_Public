@@ -25,7 +25,7 @@
       "an_wand": true
     },
     {
-      "moebel": "cc3Ordnerregal",
+      "moebel": "ccRegalA",
       "feld": [4, 1]
     },
     {
@@ -34,11 +34,11 @@
       "an_wand": true
     },
     {
-      "moebel": "cc3OrdnerregalB",
+      "moebel": "ccRegalC",
       "feld": [7, 1]
     },
     {
-      "moebel": "cc3Ordnerregal",
+      "moebel": "ccRegalA",
       "feld": [10, 1]
     },
     {

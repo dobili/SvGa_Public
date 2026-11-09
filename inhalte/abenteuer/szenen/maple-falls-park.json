@@ -8,7 +8,7 @@
     "p": "pflaster",
     "e": "erde"
   },
-  "beschreibung": "Der Stadtpark von Maple Falls am Fluss, ein warmer Spätsommernachmittag. Eine gepflasterte Allee führt quer durch den Park, von der Birch Lane links bis zum Ortsausgang rechts, wo die Landstraße nach Cedar Creek beginnt; von der Allee zweigt ein kurzer Weg nach oben zum Kiosk von Mr. Patel ab, einem rosa Verkaufswagen mit Markise, an dem es Eis und Limo gibt. Links oben steht die alte Betonrampe, an der Skater Jo ihre Tricks übt und Blitzpartien um Limo spielt. In der Mitte an der Allee die Bank, auf der Mr. Abernathy jeden Nachmittag mit Reiseschach und Thermoskanne sitzt; daneben eine zweite Bank, auf der ein Rentner die Tauben füttert, dazu ein Mülleimer und Laternen. Rechts oben ein kleiner Brunnen, rechts an der Allee die Bushaltestelle mit Wartehäuschen (Bus nach Cedar Creek). Überall Ahornbäume, deren Blätter an den Rändern schon rot werden, dazu Blumenbeete und Büsche. Unten fließt der Fluss vorbei; am Uferweg aus Erde watscheln die Enten jedem hinterher, der stehen bleibt. Laufwege: die Allee von links nach rechts, der Weg hoch zum Kiosk, der Uferweg unten.",
+  "beschreibung": "Der Stadtpark von Maple Falls am Fluss, ein warmer Spätsommernachmittag. Eine breite, gepflasterte Allee führt quer durch den Park, von der Birch Lane links bis zum Ortsausgang rechts, wo die Landstraße nach Cedar Creek beginnt; sie reicht auf beiden Seiten bis an den Rand. In der Mitte zweigt ein Weg nach oben zum Kiosk von Mr. Patel ab, einem rosa Verkaufswagen mit Markise, links und rechts davon je ein Blumenbeet. Oben stehen in den Ecken und neben dem Kiosk Ahornbäume, deren Blätter an den Rändern schon rot werden. An der Allee stehen zwei Laternen, links eine kleine Bank, zwei lange Parkbänke mit Blick auf den Weg und ein Mülleimer; auf der linken Bank sitzt jeden Nachmittag Mr. Abernathy mit Reiseschach und Thermoskanne, auf der rechten füttert ein Rentner die Tauben. Skater Jo lehnt mit ihrem Board am Wegrand und wartet auf Gegner für eine Blitzpartie. Rechts an der Allee die Bushaltestelle mit Wartehäuschen, zum Weg hin offen (Bus nach Cedar Creek). Unterhalb der Allee eine Reihe gepflanzter Bäume, dahinter ein Uferweg aus Erde und der blaue Fluss, an dem die Enten jedem hinterherwatscheln, der stehen bleibt. Laufwege: die Allee von Rand zu Rand, der Weg hoch zum Kiosk, der Uferweg unten.",
   "raster": [
     "##############################",
     "#............................#",
@@ -19,8 +19,8 @@
     "#..............pp............#",
     "#..............pp............#",
     "#..............pp............#",
-    "ppppppppppppppppppppppppppppp#",
-    "#ppppppppppppppppppppppppppppp",
+    "pppppppppppppppppppppppppppppp",
+    "pppppppppppppppppppppppppppppp",
     "#............................#",
     "#............................#",
     "#............................#",
@@ -37,8 +37,36 @@
       "feld": [15, 0]
     },
     {
-      "moebel": "mf2Rampe",
-      "feld": [3, 5]
+      "moebel": "mf2Blumenbeet",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [1, 0]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [25, 0]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [8, 0]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [19, 0]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [22, 5]
     },
     {
       "moebel": "mf2BankLang",
@@ -46,80 +74,36 @@
       "id": "bank"
     },
     {
-      "moebel": "mf2Bank",
-      "feld": [17, 7]
+      "moebel": "mf2BankLang",
+      "feld": [18, 7]
     },
     {
       "moebel": "mfMuelltonne",
-      "feld": [20, 7]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [1, 5]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [22, 5]
-    },
-    {
-      "moebel": "mfLaterne",
-      "feld": [12, 11]
+      "feld": [13, 7]
     },
     {
       "moebel": "mfBushaltestelle",
       "feld": [24, 6]
     },
     {
-      "moebel": "mf2Brunnen",
-      "feld": [19, 2]
-    },
-    {
       "moebel": "mfAhorn",
-      "feld": [1, 0]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [8, 0]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [24, 0]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [1, 11]
+      "feld": [2, 11]
     },
     {
       "moebel": "mfApfelbaum",
-      "feld": [16, 10]
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "mfApfelbaum",
+      "feld": [18, 11]
     },
     {
       "moebel": "mfAhorn",
       "feld": [24, 11]
     },
     {
-      "moebel": "mf2Blumenbeet",
-      "feld": [5, 12]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [20, 13]
-    },
-    {
-      "moebel": "mf2BlumenbeetKlein",
-      "feld": [11, 4]
-    },
-    {
-      "moebel": "mf2Busch",
-      "feld": [18, 5]
-    },
-    {
-      "moebel": "mf2Busch",
-      "feld": [14, 13]
-    },
-    {
-      "moebel": "mf2Busch",
-      "feld": [28, 13]
+      "moebel": "mfBank",
+      "feld": [3, 7]
     }
   ],
   "ausloeser": [
@@ -135,8 +119,16 @@
       "feld": [0, 9]
     },
     {
+      "name": "park",
+      "feld": [0, 10]
+    },
+    {
       "name": "bushaltestelle",
       "feld": [26, 9]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [29, 9]
     },
     {
       "name": "landstrasse",
@@ -159,17 +151,17 @@
     },
     {
       "name": "abernathy",
-      "feld": [10, 7]
+      "feld": [9, 8]
     }
   ],
   "belebung": [
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [17, 7],
+      "feld": [19, 7],
       "eigenschaften": {
-        "von": "17,7",
-        "bis": "17,7",
+        "von": "19,7",
+        "bis": "19,7",
         "tun": "sitzt auf der Bank und füttert Tauben",
         "wann": "tag"
       }
@@ -177,9 +169,9 @@
     {
       "name": "kioskbesucher",
       "typ": "statist",
-      "feld": [9, 11],
+      "feld": [13, 10],
       "eigenschaften": {
-        "von": "9,11",
+        "von": "13,10",
         "bis": "16,5",
         "tun": "holt sich ein Eis",
         "wann": "tag"
@@ -205,5 +197,7 @@
         "verhalten": "fliegen"
       }
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"]
 }

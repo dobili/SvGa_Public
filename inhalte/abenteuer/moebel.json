@@ -14,31 +14,31 @@
       "kollision": true
     },
     "kisteRot": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_26.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_26.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "kisteBlau": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_29.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_29.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "regalAlt": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_64.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_64.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "stehlampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_79.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
     },
     "truhe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_95.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_95.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -50,7 +50,7 @@
       "kollision": true
     },
     "holztisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_272.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_273.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
@@ -59,55 +59,55 @@
       "stil": "klassisch"
     },
     "stuhl": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_280.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_281.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "kuehlschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_158.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_159.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
     },
     "herd": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_148.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "pflanzeGross": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_18.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_18.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "pflanzeKlein": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_16.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "buecherregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_57.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_57.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "schreibtisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_10.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_10.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "tafel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_36.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "pokal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_133.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_133.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
@@ -209,25 +209,25 @@
       "kollision": true
     },
     "leselampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_79.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
     },
     "kisteGrau": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_31.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_31.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "aktenschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_11.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_11.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "waschmaschine": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_87.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_87.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -237,7 +237,7 @@
       "stil": "modern"
     },
     "waschmaschineHoch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_90.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_90.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -247,13 +247,13 @@
       "stil": "modern"
     },
     "wartebank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/9_Fishing_Singles/Fishing_Singles_44.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_44.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "rvTicketschalter": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_6.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -321,7 +321,7 @@
       "kollision": true
     },
     "rvZeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_105.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
@@ -390,10 +390,11 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "fernseher"
     },
     "rvPokalhaufen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_148.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_148.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
@@ -528,13 +529,13 @@
       "kollision": true
     },
     "iwVitrine": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_134.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_134.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "iwBild": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_100.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_100.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -564,7 +565,7 @@
       "kollision": true
     },
     "iwHantel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/8_Gym_Singles/Gym_Singles_108.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/8_Gym_Black_Shadow_Singles_16x16/Gym_Shadow_Singles_108.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
@@ -576,7 +577,7 @@
       "kollision": true
     },
     "pdKlavier": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_1.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -756,19 +757,19 @@
       "kollision": true
     },
     "ldTisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_274.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_275.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
     },
     "ldStuhl": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_281.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "ldBuecherregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_538.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_407.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -780,13 +781,13 @@
       "kollision": true
     },
     "ldKommode": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_56.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_56.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "ldTheke": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_416.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_285.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -798,7 +799,7 @@
       "kollision": true
     },
     "ldBild": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_111.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_111.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -834,7 +835,7 @@
       "kollision": true
     },
     "scSeil": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_392.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_483.png",
       "breite": 32,
       "hoehe": 16,
       "kollision": true
@@ -878,7 +879,7 @@
       "stil": "rustikal"
     },
     "dsKaktus": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_458.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_407.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -908,7 +909,7 @@
       "kollision": true
     },
     "dsRegal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_45.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_45.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -1004,13 +1005,13 @@
       "kollision": true
     },
     "crTisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_275.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_276.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
     },
     "crStuhl": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_284.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_285.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1064,7 +1065,7 @@
       "kollision": true
     },
     "iwDusche": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_57.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_57.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1142,7 +1143,7 @@
       "kollision": true
     },
     "caMikrofon": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_73.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_73.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1166,41 +1167,49 @@
       "kollision": true
     },
     "caSchachtisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_273.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_274.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true
     },
     "wzKuehlschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_158.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_159.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     },
     "wzHerd": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_148.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     },
     "wzArbeitsplatte": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_121.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
-      "art": "tisch",
+      "art": "schrank",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "neu",
       "stil": "modern"
     },
     "wzEsstisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_3.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "modern"
     },
     "wzStuhlLinks": {
       "quelle": "spiel/generic/generic_124.png",
@@ -1223,13 +1232,13 @@
       "stil": "klassisch"
     },
     "wzSofa": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_3.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_3.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "wzCouchtisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -1238,58 +1247,79 @@
       "quelle": "spiel/generic/generic_015.png",
       "breite": 64,
       "hoehe": 48,
-      "kollision": false
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzPizzakarton": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_97.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_97.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzKartonGross": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_95.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_95.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzKarton": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_96.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_96.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzKartonstapel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_99.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_99.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "wzKartonstapelHoch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzPflanzeGross": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_13.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_13.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzPflanze": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_16.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "modern"
     },
     "wzStehlampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_79.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzFenster": {
       "quelle": "spiel/generic/generic_086.png",
@@ -1297,14 +1327,17 @@
       "hoehe": 32,
       "kollision": false,
       "art": "fenster",
-      "zustand": "gebraucht",
-      "stil": "klassisch"
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzVorhang": {
       "quelle": "spiel/generic/generic_093.png",
       "breite": 48,
       "hoehe": 48,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzTuer": {
       "quelle": "spiel/generic/generic_073.png",
@@ -1313,38 +1346,54 @@
       "kollision": false,
       "art": "tuer",
       "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "klassisch"
+      "zustand": "neu",
+      "stil": "modern"
     },
     "wzBild": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_401.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_401.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "wzFernseher": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "fernseher"
     },
     "mfReihenhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Terraced_House_1_16x16.png",
       "breite": 192,
       "hoehe": 240,
-      "kollision": true
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mfNachbarhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Terraced_House_3_16x16.png",
       "breite": 192,
       "hoehe": 256,
-      "kollision": true
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mfSchule": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png",
       "breite": 384,
       "hoehe": 368,
-      "kollision": true
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mfAhorn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_20.png",
@@ -1380,7 +1429,7 @@
       "kollision": true,
       "art": "strassenmoebel",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "neu",
       "stil": "modern"
     },
     "mfLaterne": {
@@ -1389,7 +1438,7 @@
       "hoehe": 64,
       "kollision": true,
       "art": "lampe",
-      "zustand": "gebraucht",
+      "zustand": "neu",
       "stil": "klassisch"
     },
     "mfBank": {
@@ -1397,9 +1446,9 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
-      "art": "strassenmoebel",
+      "art": "bank",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "neu",
       "stil": "klassisch"
     },
     "mfMuelltonne": {
@@ -1408,11 +1457,11 @@
       "hoehe": 32,
       "kollision": true,
       "art": "strassenmoebel",
-      "zustand": "gebraucht",
+      "zustand": "neu",
       "stil": "modern"
     },
     "ccRegalA": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_57.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_57.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1422,7 +1471,7 @@
       "blick": "unten"
     },
     "ccRegalB": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_64.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_64.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1432,7 +1481,7 @@
       "blick": "unten"
     },
     "ccRegalC": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_71.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1442,31 +1491,31 @@
       "blick": "unten"
     },
     "ccTresen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_49.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_49.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "ccTischL": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_1.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "ccTischR": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_6.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_6.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "ccStuhlBlickLinks": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_3.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_3.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "ccStuhlBlickRechts": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_4.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_4.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1481,7 +1530,7 @@
       "stil": "klassisch"
     },
     "ccLeselampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_542.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_411.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1490,13 +1539,13 @@
       "stil": "klassisch"
     },
     "ccZeitungen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_98.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_98.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
     },
     "ccGlobus": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_34.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_34.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -1505,7 +1554,7 @@
       "stil": "klassisch"
     },
     "ccPinnwand": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_33.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_33.png",
       "breite": 32,
       "hoehe": 16,
       "kollision": false,
@@ -1514,7 +1563,7 @@
       "stil": "klassisch"
     },
     "ccWeltkarte": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_31.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_31.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": false
@@ -1529,13 +1578,13 @@
       "stil": "klassisch"
     },
     "ccKistenstapel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "ccHolzregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_64.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_64.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -1547,7 +1596,7 @@
       "kollision": false
     },
     "ccBoxerfoto": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_100.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_100.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1556,13 +1605,13 @@
       "stil": "klassisch"
     },
     "ccAktenkiste": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_53.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_53.png",
       "breite": 32,
       "hoehe": 16,
       "kollision": false
     },
     "ccWaschmaschineKorb": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_88.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_88.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -1604,19 +1653,28 @@
       "quelle": "spiel/generic/generic_134.png",
       "breite": 48,
       "hoehe": 64,
-      "kollision": false
+      "kollision": false,
+      "art": "treppe",
+      "zustand": "alt",
+      "stil": "rustikal"
     },
     "mf2Dachfenster": {
       "quelle": "spiel/generic/generic_027.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "alt",
+      "stil": "rustikal"
     },
     "mf2BildWald": {
       "quelle": "spiel/generic/generic_037.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
     },
     "mf2Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_2.png",
@@ -1646,52 +1704,67 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_200.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
     },
     "mf2Standspiegel": {
       "quelle": "spiel/generic/generic_149.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2Kartonstapel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "mf2KartonstapelBreit": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_99.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_99.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "mf2KartonOffen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_95.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_95.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
     "mf2Kiste": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_102.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_102.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "mf2Kleiderschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_103.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_103.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten"
     },
     "mf2Stehlampe": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_88.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2Besen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_104.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_104.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1700,10 +1773,13 @@
       "quelle": "spiel/generic/generic_028.png",
       "breite": 48,
       "hoehe": 64,
-      "kollision": false
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "alt",
+      "stil": "klassisch"
     },
     "mf2Stuhl": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_93.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_93.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -1712,73 +1788,99 @@
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_155.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
     },
     "mf2KisteTuch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_98.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
       "breite": 32,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal"
     },
     "mf2Kiste1": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_96.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_96.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "mf2Buecherregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_69.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "regal",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2StuhlAlt": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_94.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_94.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
     "mf2Tafel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_36.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "mf2PlakatZaehlen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_32.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_32.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
     },
     "mf2Weltkarte": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_31.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_31.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "mf2Urkunde": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_108.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_108.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": false
     },
     "mf2Pokaltisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_163.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_163.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
     },
     "mf2Lehrerpult": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_25.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2Globus": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_34.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_34.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "mf2Schachtisch": {
       "quelle": "spiel/generic/generic_057.png",
@@ -1799,13 +1901,17 @@
       "kollision": true
     },
     "mf2Spind": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_40.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2Regal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true
@@ -1814,19 +1920,29 @@
       "quelle": "spiel/generic/generic_137.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
     },
     "mf2Fenster": {
       "quelle": "spiel/generic/generic_086.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "mf2Kiosk": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_1.png",
       "breite": 48,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     },
     "mf2Rampe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Entrance_Ramp_1.png",
@@ -1838,7 +1954,11 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
       "breite": 48,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
     },
     "mf2Bank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
@@ -1856,7 +1976,10 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_4.png",
       "breite": 48,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
     },
     "mf2BlumenbeetKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
@@ -1927,8 +2050,209 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "mf3BrettKlein": {
+      "quelle": "spiel/eigene/schachbrett_klein.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "mf3BrettKleinFiguren": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf3Rundtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "mf3Kartonstapel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "mf3Kartons": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_99.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "mf3StuhlDunkelRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "rechts"
+    },
+    "mf3StuhlDunkelLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "links"
+    },
+    "mf3StuhlOrangeRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "rechts"
+    },
+    "mf3StuhlOrangeLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "mf3StuhlHellRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_283.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "mf3StuhlHellLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_287.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "mf3Spieltisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf3Anrichte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_55.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf3Pokal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_140.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf3PokalKlein": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_132.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf3Lowboard": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_57.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "mf3FernseherFlach": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fernseher",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "mf3SofaL": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben"
+    },
+    "mf3SofaM": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_5.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben"
+    },
+    "mf3SofaR": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_6.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben"
+    },
+    "mf3Couchtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern"
+    },
     "cc3Zeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_45.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_45.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1938,7 +2262,7 @@
       "blick": "unten"
     },
     "cc3Ordnerregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1948,7 +2272,7 @@
       "blick": "unten"
     },
     "cc3OrdnerregalB": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_44.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_44.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1958,7 +2282,7 @@
       "blick": "unten"
     },
     "cc3Schreibtisch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_25.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1968,7 +2292,7 @@
       "blick": "unten"
     },
     "cc3StuhlVonHinten": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -2059,6 +2383,15 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "natur"
+    },
+    "ccSchachbrettKlein": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

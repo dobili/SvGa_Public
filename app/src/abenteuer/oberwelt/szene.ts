@@ -11,6 +11,7 @@
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
  */
 import Phaser from "phaser";
+import { kameragrenzen } from "./kamera";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
   erzeugeLaufanimationen,
@@ -173,7 +174,9 @@ export class Oberweltszene extends Phaser.Scene {
     }
     for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
-    this.cameras.main.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
+    const kamera = this.cameras.main;
+    const g = kameragrenzen(karte.widthInPixels, karte.heightInPixels, kamera.width, kamera.height);
+    kamera.setBounds(g.x, g.y, g.breite, g.hoehe);
     this.cameras.main.startFollow(held, true);
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = this.liesAusloeser(karte);

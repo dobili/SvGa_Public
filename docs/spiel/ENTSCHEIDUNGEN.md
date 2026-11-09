@@ -678,6 +678,7 @@ die Turnhalle nach dem Sturm, nicht ins neue Wohnzimmer). Ebenso auf Stile von M
 die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte Zustand und Stil).
 
 **Weitere Hinweise des Autors für die nächste Kartenrunde (9.11.2026):**
+
 - Möbel stehen in logischer Beziehung: Stühle an Tischen; der Fernseher auf einem Lowboard oder
   Fernsehtisch an der Wand, nicht auf dem Esstisch und nicht mitten im Raum; mit etwas Abstand davor
   Sitzplätze mit Blick zum Fernseher; Pflanzen und Stehlampen in Ecken, an Wänden oder neben passenden
@@ -690,6 +691,7 @@ die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte
   und ins Register (Vorderseite und Blickrichtung je Bild).
 
 **Hinweise des Autors zu Außenkarten (9.11.2026, für die nächste Runde):**
+
 - Ausrichtung auch draußen: Die Bushaltestelle zeigt zur Straße; Laternen stehen am Weg oder an der
   Straße, die sie beleuchten.
 - Bäume in Wohngebieten sind gepflanzt: in Reihen an der Straße, in Vorgärten, symmetrisch zum Haus;
@@ -699,3 +701,69 @@ die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte
 - Innen und außen passen zusammen: Größe und Stand des Hauses draußen entsprechen den Räumen drinnen
   (eine Villa hat viele, gut eingerichtete Räume; ein schlichtes Reihenhaus wenige, einfache). Je
   Gebäude mit Innenkarte wird das Haus draußen nach den Innenräumen gewählt oder umgekehrt.
+
+**Rückmeldung des Autors zu Runde 3 der Karten (9.11.2026, mündlich, zusammengefasst):**
+
+- Dachboden: Treppe muss nach unten führen (wirkt wie Treppe nach oben); Kommode oben links steht
+  in der Wand. Sonst glaubwürdig (Gerümpel, auch Kaputtes, passt zum Dachboden).
+- Wohnzimmer: kaputte Kommoden; Fenster vor statt hinter den Gardinen; Fernseher an der Wand mit
+  Kommode davor ist unlogisch (dann auf dem Möbel), nicht neben der Eingangstür; Pflanzen zufällig;
+  Sofa falsch gedreht; Küchenmöbel gehören nicht ins Wohnzimmer (außer Einzimmerwohnung).
+- Clubraum: Globus schwebt; goldene Figur nicht auf der Tischplatte; Pflanzen nicht ganz in den
+  Ecken; darf belebter sein.
+- Allgemein: graue Schatten unter vielen Möbeln passen nicht zum Boden.
+- Maple Falls draußen: Gehweg nur oben mit Steinkante, endet links und rechts im Gras; Häuser links
+  wirken industriell neben der Villa (Story?), stehen nicht an der Straße, kein Weg zur Tür, keine
+  Gartenzäune; eine Villa hätte eher einen größeren Garten.
+- Park: brauner Streifen über dem Wasser unterbricht den Rasen; Weg endet vor dem Wagen (was ist er?);
+  Blumenkästen nicht zum Weg ausgerichtet; grauer Kasten neben der Bank unklar. Figuren bewegen sich
+  später (Tagesabläufe), Position zweitrangig.
+- Landstraße: Baumstümpfe auf dem Weg; Weg endet vor dem Rand; Zaun unten ohne Sinn?; Schild ohne
+  Aufschrift; Bank fern vom Weg und vom Weg weggedreht, ohne Aussicht; zu wenig Flora; Feld soll bis
+  zum Rand gehen; Traktor gehört an die Feldeinfahrt; Wegweiser mit zwei Richtungen nur an Kreuzungen.
+- Cedar Creek draußen: Weg endet vor dem Rand, nur oben Steinkante; Blumenkasten blockiert den Gehweg;
+  Tür der Bibliothek hängt oben in der Wand und passt nicht zum Gebäude; Steg beginnt nicht am Ufer;
+  grauer Kasten neben der Baustelle unklar; Bank abseits und weggedreht; Schild steht zusammenhanglos
+  im Gras; Gewässer sind immer kleine, rundum geschlossene Seen – große Gewässer müssen bis zum Rand gehen.
+- Bibliothek: unruhiger, sich wiederholender Boden; Gegenstand neben statt auf dem Tisch; zu wenig
+  Bücherregale; Pflanzen nicht in Ecken oder an Durchgängen; Lücke in der Wand: Tür oder Durchgang?;
+  Globus: nicht jedes Asset überall benutzen.
+- Archiv: zu leer, Kisten zufällig am Boden; Stuhl falsch gedreht; Lampe besser neben den Tisch.
+- Waschsalon: Pinnwand über dem Getränkeautomaten; unterschiedlich große Waschmaschinen; Maschinen
+  gehören lückenlos in Reihen; Tische aus dem Wohnzimmer (Küchenmöbel?) passen nicht.
+- Vorgehen (Wunsch des Autors): erst allgemeine Regeln aus allem Feedback, dann die Assets ausführlich
+  beschreiben (was, Ort, Zustand, Material, Stil, mögliche Ausrichtungen, eigenständig oder Bauteil,
+  Beziehungen zu anderen Dingen), dann erst der nächste Kartenlauf.
+
+**Vorgehen vor Runde 4 der Karten (9.11.2026, mit dem Autor abgestimmt):**
+
+- Regelwerk `docs/spiel/KARTENREGELN.md` aus allen Rückmeldungen; ergänzt um Vorbilder: die
+  Beispielräume des Zeichners (Abschnitt 8) und die Szenen von den Verkaufsseiten (Abschnitt 9).
+- Ortsprofile `inhalte/abenteuer/ortsprofile.json`.
+- Katalog aller Bilder im privaten Repository (`register/katalog.json`): Farbvarianten nach Umriss
+  zusammengefasst, Beschreibung je Form durch Sonnet-Helfer; Opus prüft alle Einträge mit
+  Sicherheit unter 0,7 und eine Stichprobe von 5 %. Stufe 1 (erste Orte) zuerst, der Rest bei Bedarf.
+- Wunsch des Autors: Ausrichtung schließt nichts aus, was mit einem anderen Bild möglich ist. Darum
+  beschreibt „blick“ nur das Bild; „ansichten“ verweist auf dasselbe Ding in anderer Ausrichtung,
+  „nutzbar_von“ nennt die sinnvollen Seiten.
+- Wunsch des Autors: Vor jeder Karte ein Ortsdokument (`docs/spiel/orte/`): Ortsplan mit allen
+  Übergängen, erzählendes Ortsbild, Abgleich mit der Geschichte, Bühnenbild je Karte. Die
+  Übergänge prüft `pipeline/abenteuer/uebergaenge.py`. Muster: Maple Falls, Erdgeschoss.
+- Möbel nutzen die Fassung mit halbdurchsichtigem Schatten (Black_Shadow).
+
+**Vollmacht des Autors für das Abenteuer (9.11.2026, nachmittags):** Der Autor steckt derzeit nicht
+tief in der Geschichte und kann Ortsdokumente und Wegenetz nicht prüfen. Der Haupt-Chat prüft
+gründlich, nimmt die Entwürfe dann als geprüft und entscheidet selbst, wo er sonst gefragt hätte; er
+meldet jede solche Entscheidung, damit der Autor widersprechen kann. Der Autor prüft später die
+fertigen Karten und beim Spielen die Geschichte.
+
+**Vom Haupt-Chat entschieden (Widerspruch genügt):**
+
+- Maßstab: Pokémon mal 1,5 bis 2 (vom Autor gewählt), Räume etwa anderthalbmal Pokémon.
+- `12_Akt1_Leben.md`: neue kleine Aufgaben zählen nicht für „alle Nebenquests“ (R27); Mrs. Whitlock
+  heißt Margaret; kein Rauchen im Spiel (Busfahrer mit Thermoskanne); die Kühe an der Landstraße
+  sind die ausgebüxten Kühe vom Kürbishof Miller (N1).
+- `13_Wegenetz.md`: Sperren mit Grund aus der Welt, Schlüssel aus dem Alltag (Fahrrad, Laterne,
+  Gummistiefel, Fährpass, Monatskarte), sieben Nebenorte ohne Club, Rückkehr in frühere Städte.
+- Unsichere Katalogeinträge werden erst geprüft, wenn eine Karte sie braucht; die Bildprüfung
+  meldet sie.

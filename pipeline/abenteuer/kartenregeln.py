@@ -91,4 +91,178 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             x0, _, x1, y1 = _felder(s)
             if all(_gesperrt(zeilen, x, y1 + 1) for x in range(x0, x1 + 1)):
                 befunde.append(f"{name}: Treppe ohne freien Antritt unten")
+    return befunde + pruefe_raum(szene, zeilen, gesetzt, moebel)
+
+
+# ---------------------------------------------------------------- Raumregeln (KARTENREGELN.md, 8.6)
+# Abgeleitet aus den Beispielräumen des Zeichners (docs/spiel/KARTENREGELN.md, Abschnitt 8).
+
+BELEGUNG_MIN, BELEGUNG_MAX = 0.20, 0.45  # Anteil der Bodenkacheln unter Möbeln mit Kollision (8.2.6)
+GANG_TIEFE = 2  # freie Kacheln vor jedem Eingang am Kartenrand (8.2.1)
+BLICK_MIN, BLICK_MAX = 2, 4  # Abstand Sofa oder Sessel zu Fernseher oder Kamin in Kacheln (8.2.5)
+SITZ = {"sofa", "sessel"}
+BLICKZIELE = {"fernseher", "kamin"}
+SCHRANKARTEN = {"schrank", "regal"}
+
+
+def _sperrfelder(gesetzt: list[dict]) -> set[tuple[int, int]]:
+    """Kacheln unter Möbeln mit Kollision (Fußfläche ohne die oberste Reihe hoher Möbel)."""
+    felder: set[tuple[int, int]] = set()
+    for s in gesetzt:
+        if s["kollision"]:
+            x0, y0, x1, y1 = _felder(s)
+            felder |= {(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)}
+    return felder
+
+
+def _art(s: dict, moebel: dict) -> str | None:
+    return moebel.get(s["name"], {}).get("art")
+
+
+def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list[str]:
+    """Innenräume: 20–45 % der Bodenkacheln unter Möbeln, sonst „karg“ oder „vollgestellt“.
+
+    Beispiel: Generic Home des Zeichners, etwa ein Drittel der Bodenkacheln belegt.
+    """
+    if szene.get("art") != "innen":
+        return []
+    boden = {(x, y) for y, z in enumerate(zeilen) for x, c in enumerate(z) if c not in GESPERRT}
+    if not boden:
+        return []
+    anteil = len(_sperrfelder(gesetzt) & boden) / len(boden)
+    if anteil < BELEGUNG_MIN:
+        return [f"Raum wirkt karg: {anteil:.0%} der Bodenkacheln belegt (Vorbild 20–45 %)"]
+    if anteil > BELEGUNG_MAX:
+        return [f"Raum wirkt vollgestellt: {anteil:.0%} der Bodenkacheln belegt (Vorbild 20–45 %)"]
+    return []
+
+
+def _nach_innen(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
+    """Richtung vom Kartenrand ins Innere für ein Randfeld, sonst None."""
+    hoehe, breite = len(zeilen), len(zeilen[0])
+    if y == hoehe - 1:
+        return (0, -1)
+    if y == 0:
+        return (0, 1)
+    if x == 0:
+        return (1, 0)
+    if x == breite - 1:
+        return (-1, 0)
+    return None
+
+
+def pruefe_eingaenge(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list[str]:
+    """Vor jedem Eingang am Kartenrand liegen zwei freie Kacheln Boden (Gang, 8.2.1).
+
+    Beispiel: Eisdiele des Zeichners, Gang drei Kacheln breit von der Tür zur Theke.
+    """
+    befunde, gesperrt = [], _sperrfelder(gesetzt)
+    for a in szene.get("ausloeser", []):
+        x, y = a["feld"]
+        richtung = _nach_innen(zeilen, x, y)
+        if not richtung:
+            continue
+        for schritt in range(1, GANG_TIEFE + 1):
+            fx, fy = x + richtung[0] * schritt, y + richtung[1] * schritt
+            if _gesperrt(zeilen, fx, fy) or (fx, fy) in gesperrt:
+                befunde.append(f"Eingang {a['name']}: kein freier Gang von {GANG_TIEFE} Kacheln")
+                break
     return befunde
+
+
+def _luecke(a: tuple[int, int, int, int], b: tuple[int, int, int, int]) -> tuple[int, int]:
+    """Freie Kacheln zwischen zwei Rechtecken waagerecht und senkrecht (0 = berühren sich)."""
+    dx = max(0, b[0] - a[2] - 1, a[0] - b[2] - 1)
+    dy = max(0, b[1] - a[3] - 1, a[1] - b[3] - 1)
+    return dx, dy
+
+
+def pruefe_stuehle(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Stühle mit ``zu`` stehen ohne Lücke an ihrem Tisch (8.2.3).
+
+    Beispiel: Eisdiele des Zeichners, je zwei Stühle direkt links und rechts am Tisch.
+    """
+    befunde, nach_id = [], {s["id"]: s for s in gesetzt}
+    for s, e in _mit_eintrag(szene, gesetzt):
+        ziel = nach_id.get(e.get("zu", ""))
+        if _art(s, moebel) == "stuhl" and ziel and _luecke(_felder(s), _felder(ziel)) != (0, 0):
+            befunde.append(f"{s['name']} steht nicht direkt am Tisch {e['zu']}")
+    return befunde
+
+
+def _mit_eintrag(szene: dict, gesetzt: list[dict]) -> list[tuple[dict, dict]]:
+    """Gesetzte Möbel mit ihrem Eintrag aus der Szene (gleiche Kennung wie in ``platziere``)."""
+    eintraege = {e.get("id", f"{e['moebel']}@{i}"): e for i, e in enumerate(szene.get("objekte", []))}
+    return [(s, eintraege.get(s["id"], {})) for s in gesetzt]
+
+
+def _blickziel(ziel: dict, szene: dict, gesetzt: list[dict], moebel: dict) -> bool:
+    """Ist ``ziel`` ein Fernseher oder Kamin oder trägt es einen (``auf``)?"""
+    if _art(ziel, moebel) in BLICKZIELE:
+        return True
+    return any(
+        e.get("auf") == ziel["id"] and _art(s, moebel) in BLICKZIELE for s, e in _mit_eintrag(szene, gesetzt)
+    )
+
+
+def pruefe_blickabstand(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Sofa oder Sessel mit ``zu`` auf Fernseher oder Kamin steht 2–4 Kacheln davor (8.2.5).
+
+    Abstand = Reihen (oder Spalten) zwischen den Fußflächen plus eins. Beispiel: TV-Studio des
+    Zeichners, Zuschauerstühle drei Reihen vor dem Moderationstisch.
+    """
+    befunde, nach_id = [], {s["id"]: s for s in gesetzt}
+    for s, e in _mit_eintrag(szene, gesetzt):
+        ziel = nach_id.get(e.get("zu", ""))
+        if _art(s, moebel) not in SITZ or not ziel or not _blickziel(ziel, szene, gesetzt, moebel):
+            continue
+        dx, dy = _luecke(_felder(s), _felder(ziel))
+        abstand = max(dx, dy) + 1
+        if not BLICK_MIN <= abstand <= BLICK_MAX:
+            befunde.append(f"{s['name']} steht {abstand} Kacheln vor {e['zu']} (Vorbild 2–4)")
+    return befunde
+
+
+def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Vor jeder Tür an der Wand (``art`` tuer, ``an_wand``) ist die Kachel darunter frei (Platz für
+    die Fußmatte, 8.1.5). Türen ``auf`` einem Gebäude prüft die Regel nicht: Dort steht der Auslöser
+    vor dem Gebäude, und der Kartenbauer prüft ihn schon auf Erreichbarkeit.
+    """
+    befunde, gesperrt = [], _sperrfelder(gesetzt)
+    for s, e in _mit_eintrag(szene, gesetzt):
+        if _art(s, moebel) != "tuer" or not e.get("an_wand"):
+            continue
+        x0, x1 = s["x"] // K, (s["x"] + s["breite"] - 1) // K
+        unter = (s["y"] + s["hoehe"] - 1) // K + 1
+        if all(_gesperrt(zeilen, x, unter) or (x, unter) in gesperrt for x in range(x0, x1 + 1)):
+            befunde.append(f"{s['name']}: keine freie Kachel vor der Tür")
+    return befunde
+
+
+def pruefe_teppiche(gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Teppiche liegen nie unter Schränken oder Regalen (8.4.1)."""
+    befunde = []
+    for t in gesetzt:
+        if _art(t, moebel) != "teppich":
+            continue
+        tx0, ty0 = t["x"] // K, t["y"] // K
+        tx1, ty1 = (t["x"] + t["breite"] - 1) // K, (t["y"] + t["hoehe"] - 1) // K
+        for s in gesetzt:
+            if _art(s, moebel) not in SCHRANKARTEN:
+                continue
+            x0, y0, x1, y1 = _felder(s)
+            if x0 <= tx1 and tx0 <= x1 and y0 <= ty1 and ty0 <= y1:
+                befunde.append(f"{t['name']} liegt unter {s['name']}")
+    return befunde
+
+
+def pruefe_raum(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Alle Raumregeln aus Abschnitt 8.6 der Kartenregeln."""
+    return (
+        pruefe_belegung(szene, zeilen, gesetzt)
+        + pruefe_eingaenge(szene, zeilen, gesetzt)
+        + pruefe_stuehle(szene, gesetzt, moebel)
+        + pruefe_blickabstand(szene, gesetzt, moebel)
+        + pruefe_tueren(szene, zeilen, gesetzt, moebel)
+        + pruefe_teppiche(gesetzt, moebel)
+    )

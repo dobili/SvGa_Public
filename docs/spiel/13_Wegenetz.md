@@ -446,8 +446,8 @@ Damit die Bühnenbilder die Rückkehr tragen, ohne später neu gezeichnet zu wer
 - `mapleFalls.aussen`: Einfahrt am Haus Hayes frei für den Umzugswagen; Schild „Zu verkaufen“ als
   eigenes Objekt; an jeder Veranda ein Feld für Kürbisse oder Lichterketten (Objektebene); an der
   Schule Platz für eine Plakatwand; am Diner eine leere Werbetafel.
-- `mapleFalls.park`: Beginn des Zedernpfads am Nordrand mit umgestürztem Baum (Objekt, das
-  verschwindet); Absperrband am Steg (S5, Objekt `absperrungSteg`, nach der ersten Nadel neuer Steg); eine zweite Bank neben Abernathys Bank für seinen Schüler; Startlinie für Jos Rennen
+- `mapleFalls.park`: Fußsteg über den Fluss im Nordwesten mit Schild „Sturmschaden“ (`schildZedernpfad`,
+  verschwindet nach der Öffnung; der Stamm selbst liegt auf der Karte des Zedernpfads, Befund 22); Absperrband am Steg (S5, Objekt `absperrungSteg`, nach der ersten Nadel neuer Steg); eine zweite Bank neben Abernathys Bank für seinen Schüler; Startlinie für Jos Rennen
   am Uferweg; ein freier Platz für das öffentliche Brett (Post-Game).
 - `mapleFalls.clubraum`: freie Wandfläche für das Nadel-Plakat.
 - `mapleFalls.wohnzimmer`: Platz auf der Anrichte für Mamas altes Turnierfoto (ab Akt 2).

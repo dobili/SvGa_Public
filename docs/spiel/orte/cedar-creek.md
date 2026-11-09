@@ -18,8 +18,9 @@ Landstraße → Flussweg → Cedar Creek → (ab Akt 2) Zedernwald nach Riverton
 die Abkürzung über die Hügelkuppe im Norden.
 
 **Der Fluss** (Entscheidung zu Befund 5, abgestimmt mit `orte/maple-falls.md`): Er läuft im Park von
-Maple Falls am Nordrand, biegt im Ostteil des Parks nach Süden ab, wird von der Parkstraße auf einer
-kleinen Brücke gekreuzt und verlässt den Park am Ostrand südlich der Straße. Auf der Landstraße und
+Maple Falls am Nordrand (Reihen 0–3), biegt ab Spalte 30 nach Süden ab, wird von der Parkstraße auf
+einer Brücke (Spalten 31–34) gekreuzt und verlässt den Park am Ostrand in den Reihen 20–23, südlich
+der Straße (Park nach `orte/maple-falls.md`, mit mittel-1 abgestimmt). Auf der Landstraße und
 dem Flussweg begleitet er den Weg im Süden und reicht dort über West-, Ost- und Südrand. **Der Bach**
 von Cedar Creek ist ein eigenes Gewässer: Er kommt im Norden aus den Zedern, fließt am Ostrand des
 Ortes nach Süden und mündet südlich der Karte in den Fluss.
@@ -27,9 +28,12 @@ Ortes nach Süden und mündet südlich der Karte in den Fluss.
 ### 1.1 Landstraße (`wegMapleCedar.landstrasse`, 120 × 30)
 
 Abschnitte zu je 15 Spalten über die ganze Höhe (etwa ein Querformat-Bildschirm breit). Der Feldweg
-(Erde, weiche Ränder mit Grasbüscheln, Regel 9.6.1) ist **zwei Felder breit** und windet sich
-zwischen den Reihen 13 und 17: am Westrand Reihen 15–16, eine Kurve nach Norden in L2, eine nach
-Süden in L6, am Ostrand wieder Reihen 15–16. Laufzeit des Hauptwegs etwa 125 Kacheln, gut 35 s.
+(Erde, weiche Ränder mit Grasbüscheln, Regel 9.6.1) ist am Westrand **drei Felder breit** (Reihen 15–17,
+wie die Parkstraße), wird hinter dem Abzweig in L4 zum zwei Felder breiten Weg und windet sich
+zwischen den Reihen 13 und 17: eine Kurve nach Norden in L2, eine nach Süden in L6, am Ostrand
+Reihen 15–16. Der Fluss tritt am Westrand in den Reihen 20–23 ein (drei Reihen Abstand zur Straße)
+und schwenkt in L2 nach Süden bis an den Südrand (Reihen 26–29); so entsteht zwischen Weg und Fluss
+Platz für Kuhweide und Obstwiese. Laufzeit des Hauptwegs etwa 125 Kacheln, gut 35 s.
 
 ```
           N
@@ -38,7 +42,7 @@ Süden in L6, am Ostrand wieder Reihen 15–16. Laufzeit des Hauptwegs etwa 125 
           │ Feld der Brennans (Korn) bis Nord-   ║Feldweg│ Millers Mais bis Nord- und Ostrand │
           │ und Westrand · Vogelscheuche · Krähen║zu N1 │            Büsche (fundFormular) │
  Reihe 11 │──Zaun────────────────────────────[Gatter S1]──Zaun──────────────────────────────│
- Reihe 15 ═Feldweg═╗          ╔════════════╩Wegweiser═══════════╗         ╔════════════════════ Ostrand → Flussweg
+ Reihe 15 ═Feldweg (R15–17)╗          ╔════════════╩Wegweiser═══════════╗         ╔════════════════════ Ostrand → Flussweg
  Reihe 16 ═════════╝  Kurve   ╚═══════════════════════════════  ╚═Kurve═══╝
           │Tafel+Ortsschild│ Kuhweide (Millers Kühe) │Apfelstand·Schuppen│ Heuhaufen·Bank(Nia)│
           │ „Maple Falls“  │ Weidetor               │ Obstwiese Brennan  │ Laubbäume          │
@@ -50,7 +54,7 @@ Süden in L6, am Ostrand wieder Reihen 15–16. Laufzeit des Hauptwegs etwa 125 
 
 | Abschnitt (Spalten)   | Thema                    | Inhalt (Bestehendes in Klammern)                                                                                                                                                                                                   | Zum Entdecken                          |
 | --------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| L1 (0–15) Ortsausgang | Abschied von Maple Falls | (Rätseltafel mit Dach `tafel`, 3–4 × 18), Ortsschild „Maple Falls“ (Rückseite zum Betrachter, 6 × 18); Feld der Brennans beginnt im Norden                                                                                         | Tafel (Torwächter für S1)              |
+| L1 (0–15) Ortsausgang | Abschied von Maple Falls | (Rätseltafel mit Dach `tafel`, 3–4 × 18), Ortsschild „Maple Falls“ (Rückseite zum Betrachter, 6 × 18); südlich nah der Fluss (Reihen 20–23) mit Schilf; Feld der Brennans beginnt im Norden                                        | Tafel (Torwächter für S1)              |
 | L2 (15–30) Kuhweide   | Weide am Fluss           | Weg kurvt nach Norden (Reihen 13–14); südlich die **Kuhweide** (Reihen 19–24) mit Weidetor „Bitte schließen“ (`weidetor`); darin die ausgebüxten Kühe vom Kürbishof Miller                                                         | Kühe (N1), Weidetor                    |
 | L3 (30–45) Kornfeld   | Feld der Brennans        | im Norden Korn bis zum Rand (Regel 6.3), Vogelscheuche im Feld; Otis mit dem Traktor am Feldrand am Weg                                                                                                                            | Krähen, Otis                           |
 | L4 (45–60) Abzweig    | Kreuzung, Herz des Weges | einzige Kreuzung: nach Norden der Feldweg zum Kürbishof (Gatter S1 in Reihe 11, Spalten 52–53), dort der **Wegweiser** (Maple Falls ←, Cedar Creek →, Hof Miller ↑); südlich gegenüber **Apfelstand** mit Ada, Schuppen, Obstwiese | Gatter S1, Apfelstand (N-W1), Schuppen |
@@ -86,13 +90,14 @@ Laufzeit etwa 125 Kacheln, gut 35 s.
 ### 1.3 Zedernpfad (Q1, `wegMapleCedar.zedernpfad`, neu, 100 × 24)
 
 Abkürzung über die Hügelkuppe, Befunde 22 und 28. Der Pfad (Erde, zwei Felder) beginnt am **Südrand**
-bei den Spalten 2–3 (Anschluss an den Nordrand des Parks von Maple Falls, hinter dem Fußsteg über den
-Fluss im Nordwesten des Parks), steigt durch Zedern nach Nordosten zur **Kuppe** (Spalten 55–65,
+bei den Spalten 10–11 (Anschluss an den Nordrand des Parks von Maple Falls bei den Spalten 10–11,
+hinter dem Fußsteg über den Fluss im Nordwesten des Parks; daneben der Steg S5), steigt durch Zedern nach Nordosten zur **Kuppe** (Spalten 55–65,
 Reihen 3–8) und fällt zum **Ostrand** in den Reihen 4–5 ab (Anschluss an den Nordwesten von Cedar
 Creek). Länge etwa 105 Kacheln, etwa 29 s.
 
 - **Stamm** (Sperre S2) quer über den Pfad bei Spalte 45, also auf der **Maple-Falls-Seite** der
-  Kuppe; von dort sieht man die Kuppe.
+  Kuppe; von dort sieht man die Kuppe. Im Park steht am Fußsteg nur das Schild „Sturmschaden“
+  (`schildZedernpfad`, verschwindet nach der Öffnung; `orte/maple-falls.md`).
 - **Kuppe** mit Bank (`aussichtKuppe`): Blick auf beide Orte und die Brückenbaustelle nach Riverton.
   Von Cedar Creek aus von Anfang an erreichbar.
 - Fund „Zedernzapfen mit Initialen“ an der Kuppe; Abschnitte zu je etwa 15 Spalten mit Zedern,
@@ -177,20 +182,20 @@ Spalte 11 (19 − 8).
 
 ### 1.6 Übergänge
 
-| Von (Karte, Auslöser, Feld)                                        | Nach (Karte, Auslöser, Feld)                                                  | Lage                                                                                   |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| mapleFalls.park `landstrasse` (Ostrand, Spalte 43, Reihen 15–16)   | landstrasse `zurueckPark` (Westrand, Spalte 0, Reihen 15–16)                  | Parkstraße und Feldweg je zwei Felder, gleiche Reihen (mit mittel-1 abgestimmt)        |
-| landstrasse `weiterFluss` (Ostrand, Spalte 119, Reihen 15–16)      | flussweg `zurueckLandstrasse` (Westrand, Spalte 0, Reihen 15–16)              | Feldweg geht in den Uferweg über                                                       |
-| flussweg `weiterCedar` (Ostrand, Spalte 119, Reihen 15–16)         | cedarCreek.aussen `flussweg` (neu, Westrand, Spalte 0, Reihen 20–21)          | Uferweg geht in die Hauptstraße über; Dialog `ankunft_zu_fuss` bleibt an `weiterCedar` |
-| mapleFalls.park `zedernpfad` (neu, Nordrand, Spalten 6–7, Reihe 0) | zedernpfad `zurueckPark` (neu, Südrand, Spalten 2–3, Reihe 23)                | hinter dem Fußsteg über den Fluss; Pfad je zwei Felder                                 |
-| zedernpfad `weiterCedar` (neu, Ostrand, Spalte 99, Reihen 4–5)     | cedarCreek.aussen `zedernpfad` (neu, Westrand, Spalte 0, Reihen 4–5)          | Pfad je zwei Felder; Sperre S2 liegt westlich der Kuppe                                |
-| mapleFalls.park `bushaltestelle` (Dialog, Reise)                   | cedarCreek.aussen `bushaltestelle` (35, 19)                                   | Busfahrt                                                                               |
-| cedarCreek.aussen `busZurueck` (34, 19, Dialog, Reise)             | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
-| aussen `drechslereiTuer` (6, 18)                                   | drechslerei `drechslereiAusgang` (Südwand, Spalte 8)                          | hinein nach Norden                                                                     |
-| aussen `waschsalonTuer` (15, 18)                                   | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
-| aussen `bibliothekTuer` (25, 18)                                   | bibliothek `bibliothekAusgang` (Südwand, Spalte 11)                           | hinein nach Norden                                                                     |
-| bibliothek `kellertreppe` (Nordwand, Spalte 19)                    | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                     |
-| aussen `zedernwald` (Ostrand, Spalte 55, Reihen 8–9)               | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+| Von (Karte, Auslöser, Feld)                                          | Nach (Karte, Auslöser, Feld)                                                  | Lage                                                                                   |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| mapleFalls.park `landstrasse` (Ostrand, Spalte 43, Reihen 15–17)     | landstrasse `zurueckPark` (Westrand, Spalte 0, Reihen 15–17)                  | Parkstraße und Feldweg je drei Felder, gleiche Reihen (mit mittel-1 abgestimmt)        |
+| landstrasse `weiterFluss` (Ostrand, Spalte 119, Reihen 15–16)        | flussweg `zurueckLandstrasse` (Westrand, Spalte 0, Reihen 15–16)              | Feldweg geht in den Uferweg über                                                       |
+| flussweg `weiterCedar` (Ostrand, Spalte 119, Reihen 15–16)           | cedarCreek.aussen `flussweg` (neu, Westrand, Spalte 0, Reihen 20–21)          | Uferweg geht in die Hauptstraße über; Dialog `ankunft_zu_fuss` bleibt an `weiterCedar` |
+| mapleFalls.park `zedernpfad` (neu, Nordrand, Spalten 10–11, Reihe 0) | zedernpfad `zurueckPark` (neu, Südrand, Spalten 10–11, Reihe 23)              | hinter dem Fußsteg über den Fluss; Pfad je zwei Felder                                 |
+| zedernpfad `weiterCedar` (neu, Ostrand, Spalte 99, Reihen 4–5)       | cedarCreek.aussen `zedernpfad` (neu, Westrand, Spalte 0, Reihen 4–5)          | Pfad je zwei Felder; Sperre S2 liegt westlich der Kuppe                                |
+| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (35, 19)                                   | Busfahrt                                                                               |
+| cedarCreek.aussen `busZurueck` (34, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
+| aussen `drechslereiTuer` (6, 18)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 8)                          | hinein nach Norden                                                                     |
+| aussen `waschsalonTuer` (15, 18)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
+| aussen `bibliothekTuer` (25, 18)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 11)                           | hinein nach Norden                                                                     |
+| bibliothek `kellertreppe` (Nordwand, Spalte 19)                      | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                     |
+| aussen `zedernwald` (Ostrand, Spalte 55, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `flussweg` und `zedernpfad` auf
 `cedarCreek.aussen`, `zedernpfad` auf `mapleFalls.park`, neue Karte `wegMapleCedar.zedernpfad` mit

@@ -1,22 +1,23 @@
-# Auftrag niedrig-1: Port Delacroix, Fähre/Deich und Bayou einrichten
+# Auftrag niedrig-1: Desert Springs und die Wüstenwege einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der achtzehnte Auftrag, Port Delacroix, ist zusammengeführt, danke; Wasser kommt jetzt über den Kachelstil „kueste“. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, neunzehnter Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand c2751464)
-**Darf ändern:** `inhalte/abenteuer/karten/port-delacroix-*.json`, `inhalte/abenteuer/karten/weg-silicon-delacroix-*.json`,
-`inhalte/abenteuer/karten/bayou-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge, Vorsilbe `pd`),
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b03adbff)
+**Darf ändern:** `inhalte/abenteuer/karten/desert-springs-*.json`, `weg-delacroix-desert-*.json`,
+`weg-desert-summit-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge, Vorsilbe `ds`),
 `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher `claude/friendly-shannon-y8bf90` erneut hereinholen
-(mittel-1 richtet parallel Silicon Bay ein, Vorsilben `sb`, `ld`)
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen
 
 ## Ziel
 
-Port Delacroix (Hafenstadt im Süden, nach dem Sturm im Wiederaufbau): draußen (Hafen, Holzhäuser,
-Baustellenteile aus „worksite“, Boote), Turnhalle (Notunterkunft: Feldbetten, Kisten), Werkstatt
-(Werkbänke, Werkzeug), Musikhaus (Instrumente, Bühne; hier steht der Varianten-Tisch mit Schach960);
-Fähre und Deich; Bayou mit Steg (Wasser, Steg, Schilf; Serene Village hat Teiche und Stege).
+Desert Springs (Wüstenstadt, Kachelstil „wueste“ automatisch): draußen (flache Häuser, Kakteen,
+Wassertank, Tankstelle), Garage (Autos, Werkzeug, Reifen), Antiquariat (Bücherregale, Kisten, alte
+Möbel); Canyonpfad und Felsbogen (Felsen, Kakteen; Felsen aus Serene Village oder Farm); Diner
+(Theke, Barhocker, Sitzecken; innen) und Bergstraße (Felsen, Leitplanke, Schilder).
+Neu: Eine Karteneigenschaft `stil` kann den Kachelsatz wählen (README); gibt es Wasser auf einer
+Karte, `kueste` setzen.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push erneut hereingeholt, ohne Konflikt). Neu in
 `moebel.json`, alle mit Vorsilbe `pd`: `pdFeldbett` (16 × 32), `pdKlavier` (32 × 48),

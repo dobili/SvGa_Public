@@ -21,6 +21,7 @@ const MITWIRKENDE = [
   "abspann.mitwirkende.phaser",
   "abspann.mitwirkende.ink",
   "abspann.mitwirkende.portraets",
+  "abspann.mitwirkende.grafik",
 ] as const;
 
 /** Alle Figuren der Welt, je Name einmal, in der Reihenfolge der Orte. */

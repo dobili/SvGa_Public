@@ -1850,6 +1850,16 @@
       "zustand": "neu",
       "stil": "natur"
     },
+    "mf4TuerKlassisch": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
     "mf8GlasthekeLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_316.png",
       "breite": 16,

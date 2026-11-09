@@ -237,9 +237,9 @@ Diese Änderungen gehen den Tabellen in 4.1 bis 4.5 vor.
 - **Dachboden (4.2):** Statt der Verandatreppe liegt in der Nordwestecke an der Wand die Bodenluke
   mit Leiter (`mf4Luke`, eigene Grafik des Haupt-Chats) bei (1, 2); Auslöser `treppe` auf der Öffnung
   (1, 4), Start (2, 5) wie STARTPOSITION der App. Das Waldbild hängt wieder an der Nordwand (4, 1).
-- **Clubraum (4.3):** Pokal steht auf der Platte der Anrichte, die Pinnwand hängt 6 px unter der
+- **Clubraum (4.3):** Tür als Bild in der Südwand (9, 11), Fußmatte innen davor (9, 10), Start (9, 10). Pokal steht auf der Platte der Anrichte, die Pinnwand hängt 6 px unter der
   Wandkrone, der Globus steht auf dem Lehrerpult neben dem Buch.
-- **Birch Lane (4.5):** Der Bach windet sich in Stufen (Reihen 1–4) von Rand zu Rand; der Wasserfall
+- **Birch Lane (4.5):** Der Bach kommt vom Westrand, windet sich in Stufen hinter den Gärten und fließt vor der Schule nach Norden aus der Karte (35–36 / 0–1), damit das Schuldach ihn nicht überdeckt; der Wasserfall
   kommt zwischen Felsen über eine Geländestufe. Die Schulbushaltestelle steht vor der Schule rechts
   der Treppe (57, 21), offen zur Straße, mit Bank (55, 22) und Mülltonne; der Fahnenmast links der
   Treppe (41, 15). Laternen stehen direkt am südlichen Gehweg (Fuß Reihe 29), eine Bauart; Straßenbäume

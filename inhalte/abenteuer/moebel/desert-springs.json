@@ -84,7 +84,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
-      "stil": "einfach"
+      "stil": "einfach",
+      "frei_unten": 1
     },
     "ds6SchildMotel": {
       "quelle": "spiel/eigene/schild_motel.png",
@@ -113,7 +114,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "frei_unten": 1
     },
     "ds6SchildAntiquariat": {
       "quelle": "spiel/eigene/schild_antiquariat.png",

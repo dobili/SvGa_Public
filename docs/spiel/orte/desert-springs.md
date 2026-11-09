@@ -83,5 +83,5 @@ Nieten wandern je Variante mit (Regel 10.37).3. **Bilder** (bestellt und geliefe
 kleine und blühende Kakteen, Motel mit Neonschild, Garage mit Rolltor, Wüstenbahnhof, alter Bahnhof
 mit Veranda und Schild ANTIQUARIAT, Diner-Wagen, Miras flacher Stein, Geierkreis. 4. **Felsbogen und Brücke** sind Frontansichten mit Durchgang nach Norden und Süden. Sie stehen deshalb
 über senkrechten Stücken des Wegs, die Pfeiler auf Fels, das Bild vorn gezeichnet; man geht durch
-den Bogen und unter der Brücke hindurch. 5. **Motel:** Der Gang vor den Zimmern (unterste Bildreihe) ist gesperrt, weil ein Möbel nur ganz
-gesperrt sein kann; man steht am Auslöser `motel` davor im Hof.
+den Bogen und unter der Brücke hindurch. 5. **Motel und Bahnhof:** Der Gang vor den Motelzimmern und die Veranda des alten Bahnhofs sind
+begehbar (`frei_unten: 1` im Möbel, seit 10.11.2026).

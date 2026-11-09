@@ -9,7 +9,7 @@
     "k": "sand",
     "t": "stein"
   },
-  "beschreibung": "Variante B, Steinplatz: Die Capital Arena mit ihrer Freitreppe, davor ein Platz aus grauem Stein mit vier Fahnen und einem Brunnen mit Frauenstatue in der Achse der Treppe. Links ein Obstkarren mit Sonnenschirm, rechts ein Süßigkeitenwagen, schmiedeeiserne Bogenlaternen und Gartenbänke. Links und rechts des Baus ein Park aus Nadelbäumen, zum Platz hin von einer Reihe Büsche begrenzt. Am Westrand kommt der Weg vom Leuchtturm an.",
+  "beschreibung": "Variante B, Steinplatz und Kiefernpark: Die Capital Arena steht rechts, ihre Freitreppe führt auf einen Platz aus grauem Stein mit vier Fahnen und einem Brunnen mit Frauenstatue in der Achse der Treppe. Links davon liegt ein großer Park aus Kiefern mit Bänken und einem Blumenbeet, zum Platz hin von einer Reihe Büsche begrenzt; am Platz ein Obstkarren mit Sonnenschirm, ein Süßigkeitenwagen, schmiedeeiserne Bogenlaternen und Gartenbänke. Am Westrand kommt der Weg vom Leuchtturm an.",
   "raster": [
     "################################################################",
     "#..............................................................#",
@@ -63,105 +63,125 @@
   "objekte": [
     {
       "moebel": "ca7Arena",
-      "feld": [19, 2]
+      "feld": [36, 2]
     },
     {
       "moebel": "ca7Fahne2",
-      "feld": [20, 35]
+      "feld": [37, 35]
     },
     {
       "moebel": "ca7Fahne",
-      "feld": [24, 35]
+      "feld": [41, 35]
     },
     {
       "moebel": "ca7Fahne",
-      "feld": [36, 35]
+      "feld": [53, 35]
     },
     {
       "moebel": "ca7Fahne2",
-      "feld": [40, 35]
+      "feld": [57, 35]
     },
     {
       "moebel": "ca7Statuenbrunnen",
-      "feld": [30, 39]
+      "feld": [47, 39]
     },
     {
       "moebel": "ca7Obstkarren",
-      "feld": [8, 37]
+      "feld": [20, 37]
     },
     {
       "moebel": "ca7Suessigkeiten",
-      "feld": [50, 37]
+      "feld": [28, 38]
     },
     {
       "moebel": "ca7BankGarten",
-      "feld": [12, 44]
+      "feld": [10, 44]
     },
     {
       "moebel": "ca7BankGarten",
-      "feld": [48, 44]
+      "feld": [30, 44]
     },
     {
       "moebel": "ca7LaterneBogen",
-      "feld": [15, 37],
+      "feld": [14, 37],
       "vorn": true
     },
     {
       "moebel": "ca7LaterneBogen",
-      "feld": [46, 37],
+      "feld": [32, 37],
       "vorn": true
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [4, 4]
+      "feld": [3, 3]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [11, 7]
+      "feld": [10, 5]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [5, 12]
+      "feld": [17, 3]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [12, 16]
+      "feld": [24, 6]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [4, 20]
+      "feld": [30, 3]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [11, 25]
+      "feld": [5, 10]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [5, 29]
+      "feld": [13, 12]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [50, 4]
+      "feld": [21, 11]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [57, 8]
+      "feld": [28, 13]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [51, 13]
+      "feld": [4, 18]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [58, 18]
+      "feld": [11, 20]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [50, 23]
+      "feld": [19, 19]
     },
     {
       "moebel": "ca7Nadelbaum",
-      "feld": [57, 28]
+      "feld": [26, 21]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [32, 18]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [6, 26]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [15, 27]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [23, 28]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [30, 26]
     },
     {
       "moebel": "ca7Hecke",
@@ -185,23 +205,39 @@
     },
     {
       "moebel": "ca7Hecke",
-      "feld": [47, 34]
+      "feld": [17, 34]
     },
     {
       "moebel": "ca7Hecke",
-      "feld": [50, 34]
+      "feld": [20, 34]
     },
     {
       "moebel": "ca7Hecke",
-      "feld": [53, 34]
+      "feld": [23, 34]
     },
     {
       "moebel": "ca7Hecke",
-      "feld": [56, 34]
+      "feld": [26, 34]
     },
     {
       "moebel": "ca7Hecke",
-      "feld": [59, 34]
+      "feld": [29, 34]
+    },
+    {
+      "moebel": "ca7Hecke",
+      "feld": [32, 34]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [8, 31]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [22, 31]
+    },
+    {
+      "moebel": "ca7Blumenbeet",
+      "feld": [15, 32]
     }
   ],
   "ausloeser": [
@@ -222,11 +258,11 @@
     },
     {
       "name": "halleTuer",
-      "feld": [31, 30]
+      "feld": [48, 30]
     },
     {
       "name": "treppe",
-      "feld": [31, 33]
+      "feld": [48, 33]
     }
   ],
   "figuren": [],

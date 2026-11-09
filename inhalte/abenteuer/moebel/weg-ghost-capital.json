@@ -169,7 +169,7 @@
       "stil": "natur"
     },
     "gc7Birke": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_20.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_50.png",
       "breite": 64,
       "hoehe": 64,
       "kollision": true,
@@ -251,6 +251,26 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "blick": "unten"
+    },
+    "gc7Waerterhaus2": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "gc7LinsenKiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "natur",
       "blick": "unten"
     }
   }

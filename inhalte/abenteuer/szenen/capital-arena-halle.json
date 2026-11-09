@@ -2,7 +2,7 @@
   "karte": "capitalArena.halle",
   "datei": "karten/capital-arena-halle.json",
   "art": "innen",
-  "beschreibung": "Die Turnierhalle der Capital Arena bei der Landesmeisterschaft (Szenen 103 bis 108). Helle Wände, ein dunkler, glänzender Holzboden, zwei hohe Fenster. Über der Mitte der Nordwand das blau-goldene Banner „Landesmeisterschaft“, darunter die Holzbühne mit rotem Teppich und dem Finaltisch mit zwei Stühlen. Links und rechts der Bühne vier Holztribünen für das Publikum aus allen Städten. Davor zwei Reihen mit je vier Brettern für die Vorrunde, links und rechts eines Mittelgangs. An der Westwand die Turniertafel, unten links neben dem Eingang der Fanshop mit Schals und Hemden, unten rechts der Pressetisch mit Laptops und Mikrofonen, große Pflanzen an den Seitenwänden, zwei Mikrofone neben der Bühne. Die Glastür liegt in der Mitte der Südwand, davor eine Matte.",
+  "beschreibung": "Die Turnierhalle der Capital Arena bei der Landesmeisterschaft (Szenen 103 bis 108). Helle Wände, ein dunkler, glänzender Holzboden, zwei hohe Fenster. Über der Mitte der Nordwand das blau-goldene Banner „Landesmeisterschaft“, darunter die Holzbühne mit rotem Teppich und dem Finaltisch mit zwei Stühlen. Links und rechts der Bühne vier Holztribünen für das Publikum aus allen Städten. Davor zwei Reihen mit je vier Brettern für die Vorrunde, links und rechts eines Mittelgangs. An der Nordwand links der Bühne die Turniertafel mit den Paarungen, unten links neben dem Eingang der Fanshop mit Schals und Hemden, unten rechts der Pressetisch mit Laptops und Mikrofonen, große Pflanzen an den Seitenwänden, zwei Mikrofone neben der Bühne. Die Glastür liegt in der Mitte der Südwand, davor eine Matte.",
   "wand": "creme",
   "boden": "holzDunkel",
   "raster": [
@@ -235,8 +235,9 @@
       "zu": "b24_13"
     },
     {
-      "moebel": "ca7Tafel",
-      "feld": [1, 7]
+      "moebel": "ca7Turnierwand",
+      "feld": [10, 1],
+      "an_wand": true
     },
     {
       "moebel": "ca7Pressetisch",
@@ -295,7 +296,7 @@
     },
     {
       "name": "turniertafel",
-      "feld": [2, 8],
+      "feld": [10, 3],
       "auf_moebel": true
     },
     {

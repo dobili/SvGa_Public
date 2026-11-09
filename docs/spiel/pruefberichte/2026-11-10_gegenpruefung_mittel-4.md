@@ -210,3 +210,23 @@ Weg 8 (Geysirbecken, Prärie). Crossroads und Jahrmarkt haben noch keine Szenen 
 ## Nicht prüfbar
 
 - **crossroads.aussen, crossroads.raststaette** (mittel-3) und **Jahrmarkt N6:** Noch keine Szenen im Bestand; nach dem Bau gegenprüfen.
+
+## Erledigt: mittel-1 (10.11.2026, Zweig claude/schach-abenteuer-mittel-1-cl431d)
+
+- **portDelacroix.aussen** (5880debf): Boote an Kai und Steg; Spielhäuschen durch Wohnhäuser in
+  Wohnhausgröße ersetzt; Musikhaus-Ruine mit Planen auf dem Dach und Bauzaun vor dem Eingang, weitere
+  Planen auf beschädigten Dächern. Grundriss: B und C hatten schon andere Gebäude und eine andere Lage
+  des Platzes (C Platz im Westen); die Varianten-Prüfung meldet keine Ähnlichkeit.
+- **portDelacroix.turnhalle** (443ca914): B und C mit Spielfeld; C nur noch ein Kistenstapel in der
+  Ecke. A: der „Tafel“ genannte Gegenstand ist der Lehrertisch an der Nordwand, bleibt.
+- **portDelacroix.musikhaus** (443ca914): Klavier unter Plane in A eine Reihe tiefer; B nasse Flecken
+  statt runder Pfützen. **Neu B:** Bank nicht mehr zur Südwand.
+- **portDelacroix.werkstatt C** (443ca914): Flügel und Klaviere eine Reihe tiefer.
+- **riverton.bahnhofshalle** (934ae19b): A Schalter aus beiden Teilen und von der Wand weg, Regale
+  ebenso, Schließfächer als Reihe an der Westwand; B Fahrplantafel an der Nordwand, Schließfächer als
+  Dreierreihe. C: der „orange Stuhl“ ist ein Koffer neben dem Gepäckwagen, bleibt.
+- **riverton.pavillon** (934ae19b): B mit grünen Wänden, Steinboden und Picknicktischen. A: Die
+  Figurenkiste in der Ecke ist Szene 37 (Slick packt), bleibt; der Kreuzgang in der Mitte ist nach dem
+  Ortsdokument gewollt.
+- **riverton.schuppen A** (934ae19b): Sägebock versetzt.
+- **riverton.wohnwagen** (934ae19b): Pokale auf einer Kommode, Zeitungen eine Reihe höher.

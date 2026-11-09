@@ -363,7 +363,7 @@
       "blick": "unten"
     },
     "ca7Baum": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_20.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_50.png",
       "breite": 64,
       "hoehe": 64,
       "kollision": true,
@@ -483,6 +483,15 @@
       "art": "busch",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "ca7Turnierwand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

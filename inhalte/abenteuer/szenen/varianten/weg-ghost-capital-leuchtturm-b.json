@@ -47,8 +47,8 @@
       "feld": [102, 1]
     },
     {
-      "moebel": "gc7WaerterhausGruen",
-      "feld": [94, 9]
+      "moebel": "gc7Waerterhaus2",
+      "feld": [92, 3]
     },
     {
       "moebel": "gc7Bank",
@@ -56,11 +56,23 @@
     },
     {
       "moebel": "gc7Rettungsring",
-      "feld": [99, 11]
+      "feld": [100, 11]
+    },
+    {
+      "moebel": "gc7LinsenKiste",
+      "feld": [106, 17]
+    },
+    {
+      "moebel": "gc7Fels",
+      "feld": [100, 8]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [92, 9]
+      "feld": [111, 7]
+    },
+    {
+      "moebel": "gc7FelsFlach",
+      "feld": [89, 9]
     },
     {
       "moebel": "gc7Fels",

@@ -174,28 +174,28 @@ nur dort, wo sie im Bild auffallen.
 - A: Die Turniertafel (Holzbrett mit Dach, um (1, 7)) sieht aus wie ein Gartenhäuschen; eine Turnierwand mit Paarungen liest sich besser. Vorschlag: Pinnwand oder Tafel an der Westwand (`an_wand`).
 - B: Bühne in der Raummitte, Tribünen davor an der Nordwand verdecken den Blick der Zuschauer auf die Bühne nicht, aber die Vorrundenbretter stehen hinter der Bühne Richtung Tür; Vorschlag: Reihenfolge Tribüne – Bühne – Vorrunde – Eingang wie in A/C.
 
-## Antwort auf die Gegenprüfung von mittel-4 (Weg 8)
-
-- [x] Geysirbecken: Sinterterrassen über die ganze Breite, das Wasser in kleine Quelltöpfe und durch
-      Sinterstufen geteilte Becken, Geysirkegel zwischen den Becken, Ranger-Tor gut sichtbar am Weg
-      (A, B, C).
-- [x] Prärie B: Weizen- und Maisfelder zu beiden Seiten des Wegs, Windrad nach (23, 40).
-- [x] Prärie C: Der Erdweg schließt bei Reihe 130 an die Schotterstraße an.
-
-## Antwort auf die Gegenprüfung von niedrig-1 (Crossroads, Jahrmarkt)
-
-- [x] Raststätte A/B/C: ein langer Varianten-Tisch (Langtisch aus Fuß, Mittelstücken und Ende) mit drei
-      Brettern und Hockern davor und dahinter statt zweier Rundtische.
-- [x] Raststätte A/B/C: Großküche mit Durchreiche und ein WC hinter einer Innenwand mit Wandfläche
-      (Regeln 30 und 39); der Raum ist dafür 24 × 18, die Tür liegt bei (12, 17).
-- [x] Raststätte C: Getränkeautomat nicht mehr frei im Raum, Laden in einer Ecke zusammengefasst.
-- [x] Crossroads außen: Zufahrten zu den Parkplätzen in Reihe 26; Vorplätze aus Asphalt bis an die
-      Schotterstraße, ohne Grasnaht; leere Werbetafeln entfernt; in B stehen Bus und Food-Truck auf einem
-      Schotterplatz mit Zufahrt; in C nur noch eine Zaunreihe am Jahrmarktfeld.
-- [x] Ortsdokument Crossroads: `wegPinewood` am Westrand, Tür (14, 19), Raststätte innen nachgezogen.
-- [x] Jahrmarkt A/B/C: Boden `erde` statt Sand mit Grasbüscheln; Lichterketten `vorn` zwischen
-      Lichtermasten (`n6Lichtermast`, Maske sperrt nur den Fuß) über den Gängen, nicht mehr durch die
-      Fahrgeschäfte; in C der zweite Zuckerwattewagen durch den Süßigkeitenwagen ersetzt; in B das
-      Dosenwerfen ergänzt; in A der vierte Flutlichtmast.
-- [ ] Offen: Postkartenständer (Bild fehlt, bisher Zeitungsregal), Tribüne mit Blick zur Bühne, Treppe
-      an der Bühne in B, Gehege für die Rinder in A.
+| ## Antwort auf die Gegenprüfung von mittel-4 (Weg 8) |
+|  |
+| - [x] Geysirbecken: Sinterterrassen über die ganze Breite, das Wasser in kleine Quelltöpfe und durch; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Sinterstufen geteilte Becken, Geysirkegel zwischen den Becken, Ranger-Tor gut sichtbar am Weg; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| (A, B, C).; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Prärie B: Weizen- und Maisfelder zu beiden Seiten des Wegs, Windrad nach (23, 40).; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Prärie C: Der Erdweg schließt bei Reihe 130 an die Schotterstraße an.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| ## Antwort auf die Gegenprüfung von niedrig-1 (Crossroads, Jahrmarkt); Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Raststätte A/B/C: ein langer Varianten-Tisch (Langtisch aus Fuß, Mittelstücken und Ende) mit drei; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Brettern und Hockern davor und dahinter statt zweier Rundtische.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Raststätte A/B/C: Großküche mit Durchreiche und ein WC hinter einer Innenwand mit Wandfläche; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| (Regeln 30 und 39); der Raum ist dafür 24 × 18, die Tür liegt bei (12, 17).; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Raststätte C: Getränkeautomat nicht mehr frei im Raum, Laden in einer Ecke zusammengefasst.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Crossroads außen: Zufahrten zu den Parkplätzen in Reihe 26; Vorplätze aus Asphalt bis an die; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Schotterstraße, ohne Grasnaht; leere Werbetafeln entfernt; in B stehen Bus und Food-Truck auf einem; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Schotterplatz mit Zufahrt; in C nur noch eine Zaunreihe am Jahrmarktfeld.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Ortsdokument Crossroads: `wegPinewood` am Westrand, Tür (14, 19), Raststätte innen nachgezogen.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [x] Jahrmarkt A/B/C: Boden `erde` statt Sand mit Grasbüscheln; Lichterketten `vorn` zwischen; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Lichtermasten (`n6Lichtermast`, Maske sperrt nur den Fuß) über den Gängen, nicht mehr durch die; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Fahrgeschäfte; in C der zweite Zuckerwattewagen durch den Süßigkeitenwagen ersetzt; in B das; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| Dosenwerfen ergänzt; in A der vierte Flutlichtmast.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| - [ ] Offen: Postkartenständer (Bild fehlt, bisher Zeitungsregal), Tribüne mit Blick zur Bühne, Treppe; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |
+| an der Bühne in B, Gehege für die Rinder in A.; Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke). |

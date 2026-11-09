@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Weg nach Cedar Creek und Cedar Creek einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, sechzehnter Auftrag; Maple Falls ist zusammengeführt, sehr schön geworden, danke)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand fa9f03a3)
 **Darf ändern:** `inhalte/abenteuer/karten/weg-maple-cedar-*.json`, `inhalte/abenteuer/karten/cedar-creek-*.json`,
@@ -22,6 +22,43 @@ Bibliothek (Regale, Lesetische, Lampen), Archiv (Kartons, Aktenschränke, Keller
 2. Neu (Laufhilfe seit fa9f03a3): Der Held rückt beim Gehen zur Kachelmitte; trotzdem Gänge
    mindestens eine Kachel breit lassen und Möbel nicht diagonal zu Engstellen stellen.
 3. Je Karte ein Bildschirmfoto prüfen und im Bericht in einem Satz beschreiben.
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository aktualisiert (df308d81), als
+`app/inhalte-privat/quelle` verlinkt. Neu in `moebel.json` (nur Pfade): `busch` (16 × 32), `fels`,
+`felsKlein` (16 × 16), `baumstumpf` (32 × 16), `wegweiser` (16 × 32), `leselampe` (16 × 32),
+`kisteGrau` (16 × 32), `aktenschrank` (16 × 32, niedriger grauer Schrank), `waschmaschine`
+(32 × 32), `waschmaschineHoch` (16 × 32), `wartebank` (32 × 32), `automatBunt` (32 × 48, angelegt,
+noch nicht gesetzt). Wiederverwendet: `baum`, `baumRund`, `parkbank`, `laterne`,
+`haltestellenschild`, `blumen`, `muelltonne`, `buecherregal`, `holztisch`, `pflanzeKlein`,
+`stuhl`. Platzhalter unter Möbeln durch Boden ersetzt; Platzhalter mit Auslöser bleiben. Mein
+Skript prüft zusätzlich, dass kein Möbel den Laufweg eines Statisten oder Tiers verstellt (keine
+Treffer); Gänge bleiben mindestens eine Kachel breit.
+
+Bildschirmfotos (Entwicklungsserver mit Grafik, Spielstand auf die Karte gesetzt):
+
+- **Landstraße:** Der Kistenblock oben ist jetzt ein Busch, hinter dem das Formular nur von oben
+  erreichbar bleibt; Bäume, Felsen, Baumstumpf und ein Wegweiser am Ortsausgang säumen die Straße.
+- **Flussweg:** Bäume, Büsche, Felsen und ein Baumstumpf am Weg zum Bach; Bank und Münzkiste
+  bleiben Auslöser.
+- **Cedar Creek draußen:** Haltestellenschild und Bank an der Bushaltestelle, Laterne am Ufer,
+  Mülltonne vor dem Waschsalon, Bäume und Büsche unten, Blumen am Weg zur Bibliothek.
+- **Bibliothek:** Bücherregale oben links, Holztische als Lesetische, Leselampe in der Ecke, eine
+  Pflanze; Dex und Mae sitzen an den Tischen.
+- **Archiv:** zwei Reihen grauer Kisten mit Akten, niedrige Aktenschränke an der Wand und unten
+  links; Karton 1858 und Programmheft bleiben Auslöser.
+- **Waschsalon:** vier Waschmaschinen an der Rückwand, drei hohe Maschinen links, ein Stuhl neben
+  Mr. Boateng, eine Wartebank vorn.
+
+Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier und Paketbau
+sauber, `npm run build` sauber, Oberflächentests des Abenteuers (Chromium, `tests/e2e/abenteuer*`)
+9 von 9 bestanden.
+
+Nicht umgesetzt: Teile aus `SERENE_VILLAGE_REVAMPED` und `modern-farm` (Teiche, Steg) brauchen
+Kachelsätze statt Einzelbilder; die Einzelbilder aus `modern-exteriors` reichten für Felsen und
+Bäume. Einen Getränkeautomaten (`automatBunt`) habe ich im Waschsalon nicht gestellt, weil der
+Platz neben dem Auslöser `automat` an der Wand zu eng ist.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 9,
+  "nextobjectid": 18,
   "properties": [
     {
       "name": "kennung",
@@ -67,10 +67,10 @@
       "width": 12,
       "height": 10,
       "data": [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 3, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
@@ -200,6 +200,105 @@
               "value": "tag"
             }
           ]
+        },
+        {
+          "id": 9,
+          "name": "waschmaschine",
+          "type": "moebel",
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "waschmaschine",
+          "type": "moebel",
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "waschmaschine",
+          "type": "moebel",
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "waschmaschine",
+          "type": "moebel",
+          "x": 128,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "waschmaschineHoch",
+          "type": "moebel",
+          "x": 16,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "waschmaschineHoch",
+          "type": "moebel",
+          "x": 16,
+          "y": 48,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "waschmaschineHoch",
+          "type": "moebel",
+          "x": 16,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "stuhl",
+          "type": "moebel",
+          "x": 112,
+          "y": 48,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "wartebank",
+          "type": "moebel",
+          "x": 32,
+          "y": 112,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

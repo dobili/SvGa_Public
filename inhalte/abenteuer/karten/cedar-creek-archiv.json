@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 7,
+  "nextobjectid": 21,
   "properties": [
     {
       "name": "kennung",
@@ -70,10 +70,10 @@
       "height": 10,
       "data": [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3,
-        3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
@@ -157,6 +157,160 @@
           "y": 144,
           "width": 16,
           "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 7,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 80,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 8,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 96,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 9,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 112,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 128,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 144,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 80,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 96,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 128,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "kisteGrau",
+          "type": "moebel",
+          "x": 144,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "aktenschrank",
+          "type": "moebel",
+          "x": 16,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "aktenschrank",
+          "type": "moebel",
+          "x": 32,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "leselampe",
+          "type": "moebel",
+          "x": 192,
+          "y": 0,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 19,
+          "name": "aktenschrank",
+          "type": "moebel",
+          "x": 64,
+          "y": 0,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 20,
+          "name": "aktenschrank",
+          "type": "moebel",
+          "x": 80,
+          "y": 0,
+          "width": 16,
+          "height": 32,
           "rotation": 0,
           "visible": true
         }

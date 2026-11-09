@@ -423,6 +423,75 @@ Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
 Belebung: eine Leserin geht zwischen (3, 13) und (9, 13). Platzhalter (13 §7.4): Für die Kopie von
 Hales Seite (Post-Game) ist die Wandfläche rechts der Kellertür frei.
 
+Folgen nach Durchsicht des Musters.
+
+### 4.L Landstraße (`wegMapleCedar.landstrasse`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten; Feldweg und Äcker aus Erde
+(`e`, `f`); Fluss als Wasser mit Ufer über West-, Ost- und Südrand (Reihe 20 im Westen, ab Spalte 17
+Reihe 26). **Rand** Randreihe als Gras (geschlossen), Felder und Fluss reichen optisch bis zum Rand.
+
+**Wege:** Feldweg drei Felder breit (Reihen 15–17) bis Spalte 59, mit Kurve nach Norden in L2
+(Reihen 13–15, Spalten 19–30); ab Spalte 60 zwei Felder (Reihen 15–16), Kurve nach Süden in L6
+(Reihen 16–17), am Ostrand Reihen 15–16. Abzweig nach Norden zum Kürbishof bei Spalten 52–53 durch
+das Gatter S1 (Lücke im Zaun, Reihe 11) bis zum Nordrand.
+
+**Zonen und Inventar** (Feld = linke obere Kachel):
+
+| Abschnitt            | Inventar                                                                                                                                                                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Norden, ganze Breite | Kornfeld der Brennans (Spalten 1–50, Korn auf jedem zweiten Feld), Vogelscheuche (10, 4), Traktor von Otis am Feldrand (36, 7, Blick links); Millers Mais (Spalten 54–118); durchgehender Holzzaun Reihe 11 (Satz Fence 4, Unterkante), Gatter-Lücke 52–53 mit Endpfosten |
+| L1                   | Rätseltafel mit Dach (3, 12, `tafel`), Ortsschild „Maple Falls“ (7, 12) nördlich am Weg, Blick zum Weg                                                                                                                                                                    |
+| L2                   | Kuhweide 17–29 × 18–24, geschlossener Zaun mit Ecken, Tor oben (22–24), Tränke innen am Zaun, Zettel „Bitte schließen“ am Tor; Kühe als Belebung                                                                                                                          |
+| L3                   | Krähen über dem Feld, Laubbaumgruppe südlich                                                                                                                                                                                                                              |
+| L4                   | Wegweiser mit vier Armen an der Kreuzung (49, 12); gegenüber Adas Apfelstand (50, 18) mit Äpfeln, Geräteschuppen (57, 18), Obstwiese mit drei Apfelbäumchen in einer Reihe                                                                                                |
+| L5                   | Mais, Wanderer auf dem Weg (67, 16)                                                                                                                                                                                                                                       |
+| L6                   | Bank direkt am Weg (80, 14, zum Weg), Nia daneben, zwei Heuhaufen, Laubbaum und roter Herbstbaum                                                                                                                                                                          |
+| L7                   | Buschgruppe 94–102 × 12–14 mit Lücke von oben; `fundFormular` (97, 13)                                                                                                                                                                                                    |
+| L8                   | Erlen am Fluss (106, 110, 114), Hase am Feldrand                                                                                                                                                                                                                          |
+
+Kleinflora (Gras, Farn, Pilze, Blumen, Steine, kleine Büsche) in Gruppen von ein bis drei südlich
+des Weges, Felsgruppen und Wildblumen vereinzelt. Belebung: Otis, Tessa (joggt), Radfahrer, Kühe,
+Krähen, Hase, Reh. Offen: Hufeisen (`fundHufeisen`) und Weidetor als Auslöser folgen in Runde 5.
+
+### 4.F Flussweg (`wegMapleCedar.flussweg`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten, Weg aus Erde, Steg aus Dielen
+(`d`), Fluss als Wasser mit Ufer im Süden (Reihen 20–21). **Rand** geschlossen, Übergänge West und
+Ost in den Reihen 15–16.
+
+**Wege:** Uferweg zwei Felder breit (Reihen 15–16) mit zwei Bögen nach Süden bis Reihe 17
+(Spalten 30–47 und 60–77). Abzweig zur Fährstelle bei Spalten 38–39 (Reihen 18–19).
+
+| Abschnitt  | Inventar                                                                            |
+| ---------- | ----------------------------------------------------------------------------------- |
+| Westen     | Baumgruppen im Norden, Münzfund (22, 12), Wildblumen                                |
+| Fährstelle | Felsgruppe (36, 18), Boot am Pfahl im Wasser (40, 21, ohne Kollision)               |
+| Mitte      | Rastbank (52, 13) zum Weg, Auslöser `rast`                                          |
+| Steg       | Dielen Spalten 67–68, Reihen 19–25 ins Wasser                                       |
+| Osten      | Ortsschild „Cedar Creek“ (112, 17), Auslöser `schildCedar` (112, 18), Erlen am Ufer |
+
+Belebung: Angler am Steg, Joggerin, Reiher, Hase, Schmetterlinge, Nebel über dem Wasser.
+
+### 4.Z Zedernpfad (`wegMapleCedar.zedernpfad`, Bühnenbild, niedrig-1)
+
+**Größe** 100 × 24, Norden oben. **Boden** Gras, Pfad aus Erde zwei Felder breit. **Rand**
+geschlossen; Übergänge Süd (Spalten 10–11, `zedernZurueckPark`) und Ost (Reihen 4–5,
+`zedernWeiterCedar`).
+
+**Weg:** vom Südrand hoch bis Reihe 18, in Stufen nach Nordosten bis Reihe 10 (Spalte 36),
+waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reihen 4–5 zum Ostrand.
+
+| Abschnitt | Inventar                                                               |
+| --------- | ---------------------------------------------------------------------- |
+| Wald      | Zedern, schmale Zedern und Kegelbäume dicht, Abstand ein Feld vom Pfad |
+| S2        | umgestürzter Stamm quer über den Pfad bei Spalte 45 (Reihen 9–11)      |
+| Kuppe     | Lichtung, Baumstammbank (59, 3), Felsgruppe und Stein                  |
+| überall   | Farne, Pilze, Steine, Felsgruppen                                      |
+
+Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
+folgen in Runde 5; der Stamm ist nur ein Kachelbild (1 × 2), als Sperre wirkt er noch schmal.
+
 ### 4.5 Ortskern (`cedarCreek.aussen`)
 
 **Größe:** 60 × 36 (vorher 44 × 24; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).

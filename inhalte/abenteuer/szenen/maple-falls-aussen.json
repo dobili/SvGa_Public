@@ -2,150 +2,221 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag. Links das schmale Reihenhaus der Familie mit Haustür, Vorgarten und einem Erdweg, der gerade zum Gehweg führt; daneben das Nachbarhaus mit Balkon, auf dessen Stufen die Katze schläft. Rechts davon die Bushaltestelle mit Wartehäuschen, offen zur Straße hin. Dahinter die große alte Schule mit rotem Dach, zwei grünen Flügeltüren und breiter Treppe zum Gehweg. Vor den Häusern läuft ein gepflasterter Gehweg, dann die Straße, die rechts zum Park weiterführt. Am Gehweg stehen zwei Laternen, an der linken eine Bank im Vorgarten, an der rechten ein Mülleimer. Auf der anderen Straßenseite ist eine Reihe von Ahornen und Laubbäumen in gleichem Abstand gepflanzt, wie an einer Allee; die Ahorne färben sich schon rot. Juno wartet vor dem Haus, Lily spielt vor dem Nachbarhaus, ein Mann harkt Laub. Laufwege: von der Haustür über den Erdweg zum Gehweg, den Gehweg entlang zur Schule und weiter zum Park.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 41 Kacheln. Ganz oben fließt der Fluss hinter den Gärten der Nordseite, mit einem Uferstreifen; in den Gärten stehen alte Ahorne und Laubbäume. Auf der Nordseite stehen in einer Reihe die Holzhäuser mit Satteldach und Veranda: ganz links das alte Whitlock-Haus, daneben Lilys Haus und das Haus der Martínez; vor jedem Haus ein schwarzer Briefkasten am Gehweg. Dann das Falls Diner, ein Flachbau mit rot-weiß gestreifter Markise und großem Schaufenster, und rechts davon die Maple Falls High, ein Backsteinbau mit roten Dächern, zwei grünen Doppeltüren und einer Treppe vor dem Eingang. Davor laufen Gehweg, die dreispurige Birch Lane und der südliche Gehweg; die Straße führt nach rechts aus der Karte zum Park. Auf der Südseite: links das Haus von Mrs. Calloway, dann das Wartehäuschen der Schulbushaltestelle, das leere Haus Hayes mit dem Schild „Zu verkaufen“ und einer gepflasterten Einfahrt, das Haus der Fisks und ein viertes Haus. Vor den Häusern der Südseite (sie zeigen ihre Haustüren nach Süden) läuft ein schmaler Plattenweg an der Hecke entlang. Ganz rechts, gegenüber der Schule, der Spielplatz auf Sand mit Sandkasten, Schaukel, Röhrenrutsche, Klettergerüst und einer Bank, daneben eine Mülltonne. Laufwege: von der Haustür Whitlock zum Gehweg und die Straße entlang nach Osten zu Diner, Schule, Spielplatz und weiter zum Park.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "p": "pflaster",
     "s": "asphalt",
-    "e": "erde"
+    "e": "erde",
+    "d": "sand"
   },
   "raster": [
-    "########################################################",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#...e..................................................#",
-    "#...e..................................................#",
-    "#...e..................................................#",
-    "#...e..................................................#",
-    "#...e..................................................#",
-    "#...e..................................................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "########################################################"
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#########################",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......................#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.......................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..pp............................pp..........ppppp.............#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.........................pp...................................#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp...................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "################################################################"
   ],
   "objekte": [
     {
-      "moebel": "mfReihenhaus",
-      "feld": [1, 2]
+      "moebel": "mfAhorn",
+      "feld": [1, 4]
     },
     {
-      "moebel": "mfNachbarhaus",
-      "feld": [13, 1]
+      "moebel": "mfAhorn",
+      "feld": [5, 4]
     },
     {
-      "moebel": "mfSchule",
-      "feld": [31, 0]
+      "moebel": "mfBaum",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [17, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [22, 4]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [32, 6]
+    },
+    {
+      "moebel": "mf4VillaOrange",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "mf4VillaLila",
+      "feld": [11, 10]
+    },
+    {
+      "moebel": "mf4VillaRot",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "mf4Diner",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "mf4Schule",
+      "feld": [39, 0]
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [6, 22],
+      "id": "briefkastenWhitlockObj"
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [16, 22]
+    },
+    {
+      "moebel": "mf4Briefkasten",
+      "feld": [26, 22]
+    },
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [1, 30]
     },
     {
       "moebel": "mfBushaltestelle",
-      "feld": [25, 20]
+      "feld": [12, 28]
     },
     {
-      "moebel": "mfLaterne",
-      "feld": [9, 19]
+      "moebel": "mf4SchildVerkauf",
+      "feld": [17, 29]
     },
     {
-      "moebel": "mfLaterne",
-      "feld": [22, 19]
+      "moebel": "mf4Bauernhaus",
+      "feld": [18, 29]
     },
     {
-      "moebel": "mfMuelltonne",
-      "feld": [20, 21]
+      "moebel": "mf4BauernhausBreit",
+      "feld": [29, 30]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [2, 27]
+      "moebel": "mf4Bauernhaus",
+      "feld": [40, 29]
     },
     {
-      "moebel": "mfBaum",
-      "feld": [10, 27]
+      "moebel": "mf4Sandkasten",
+      "feld": [51, 31],
+      "id": "sandkasten"
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [18, 27]
+      "moebel": "mf4Schaukel",
+      "feld": [56, 30]
     },
     {
-      "moebel": "mfBaum",
-      "feld": [26, 27]
+      "moebel": "mf4Rutsche",
+      "feld": [59, 30]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [34, 27]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [42, 27]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [50, 27]
+      "moebel": "mf4Klettergeruest",
+      "feld": [52, 35]
     },
     {
       "moebel": "mfBank",
-      "feld": [7, 21]
+      "feld": [57, 35]
+    },
+    {
+      "moebel": "mfMuelltonne",
+      "feld": [48, 29]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [4, 18],
+      "feld": [3, 24],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "haustuer",
-      "feld": [4, 17]
+      "feld": [3, 23]
+    },
+    {
+      "name": "dinerTuer",
+      "feld": [33, 23]
     },
     {
       "name": "schule",
-      "feld": [39, 23]
+      "feld": [47, 23]
     },
     {
       "name": "park",
-      "feld": [55, 25]
+      "feld": [63, 26]
+    },
+    {
+      "name": "park",
+      "feld": [63, 25]
+    },
+    {
+      "name": "park",
+      "feld": [63, 27]
     }
   ],
   "figuren": [
     {
       "name": "juno",
-      "feld": [12, 21]
+      "feld": [11, 28]
     },
     {
       "name": "lily",
-      "feld": [19, 20]
+      "feld": [15, 24]
     }
   ],
   "belebung": [
     {
       "name": "brieftraegerin",
       "typ": "statist",
-      "feld": [2, 23],
+      "feld": [2, 24],
       "eigenschaften": {
-        "von": "2,23",
-        "bis": "28,23",
+        "von": "2,24",
+        "bis": "30,24",
         "tun": "trägt Briefe aus",
         "wann": "morgen"
       }
@@ -153,10 +224,10 @@
     {
       "name": "laubharker",
       "typ": "statist",
-      "feld": [16, 19],
+      "feld": [22, 23],
       "eigenschaften": {
-        "von": "15,19",
-        "bis": "18,19",
+        "von": "21,23",
+        "bis": "24,23",
         "tun": "harkt Laub vor dem Haus",
         "wann": "tag"
       }
@@ -164,31 +235,31 @@
     {
       "name": "kindMitBall",
       "typ": "statist",
-      "feld": [42, 23],
+      "feld": [54, 37],
       "eigenschaften": {
-        "von": "42,23",
-        "bis": "46,23",
-        "tun": "spielt Ball vor der Schule",
+        "von": "51,37",
+        "bis": "58,37",
+        "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag"
       }
     },
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [29, 3],
+      "feld": [10, 6],
       "eigenschaften": {
-        "von": "29,3",
-        "bis": "30,8",
+        "von": "10,5",
+        "bis": "10,9",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [7, 18],
+      "feld": [13, 23],
       "eigenschaften": {
-        "von": "7,18",
-        "bis": "7,18",
+        "von": "13,23",
+        "bis": "13,23",
         "verhalten": "sitzen"
       }
     }

@@ -8,6 +8,15 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "cp7StegLaengs": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "breite": 32,
+      "hoehe": 68,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

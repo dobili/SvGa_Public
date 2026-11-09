@@ -50,3 +50,21 @@ Autor.
   - Sepia gilt auch am Tag, und zwar nur als Szene; die Karte selbst bleibt farbig.
   - Die Goldmine N7 (Sperre S11) liegt als gesperrter Stolleneingang am Rand.
 - **Capital Arena:** Halle mit Tribünen. Die Wache von Perfect Move steht am Seeufer (S12).
+
+## Nachtrag: Nebenorte N1, N4 bis N7 (noch ohne Karten)
+
+`docs/spiel/13_Wegenetz.md` beschreibt sieben Nebenorte. N2 Lockport und N3 Steinbruch sind gebaut. Für die
+anderen gibt es noch keinen Ort in `orte.json`. Ablauf wie oben: Ortsdokument, Karten je A/B/C,
+dazu der Ort in `orte.json` (art `weg`, wie der Steinbruch) und der Abzweig im Nachbarort als
+Übergang (Feld am Rand oder Tür; bei Sperren steht der Abzweig schon da, die Sperre selbst kommt
+in Runde 6).
+
+| Helfer    | Nebenorte                                                                                   | Vorsilbe   |
+| --------- | ------------------------------------------------------------------------------------------- | ---------- |
+| mittel-4  | N5 Sternwarte am Canyon (vom Canyonpfad), N7 Goldmine (am Rand von Ghost Town)              | `n5`, `n7` |
+| niedrig-1 | N1 Kürbishof Miller (von der Landstraße), N4 Pelikaninsel (Inselfähre ab Hafen Silicon Bay) | `n1`, `n4` |
+| mittel-3  | N6 Sommerjahrmarkt (Feld hinter der Raststätte Crossroads), nach Crossroads                 | `n6`       |
+
+Je Nebenort reichen eine Außenkarte und höchstens ein Innenraum, wenn das Wegenetz einen nennt. Die
+Goldmine braucht Stollen in Fels (`wand: fels`, Pfützen als Möbel), die Sternwarte eine Kuppel. Für
+die Sternwarte gilt die feste Nachttönung der Karte (nur als Szene).

@@ -21215,12 +21215,12 @@
     },
     {
      "id": 62,
-     "name": "svWegweiser",
+     "name": "sd6SchildPortDelacroix",
      "type": "moebel",
-     "x": 3392,
-     "y": 112,
-     "width": 16,
-     "height": 16,
+     "x": 3360,
+     "y": 96,
+     "width": 64,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -21232,7 +21232,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },

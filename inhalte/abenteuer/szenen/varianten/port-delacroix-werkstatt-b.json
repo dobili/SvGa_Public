@@ -2,7 +2,7 @@
   "karte": "portDelacroix.werkstatt",
   "datei": "karten/varianten/port-delacroix-werkstatt-b.json",
   "art": "innen",
-  "beschreibung": "Variante B, Werkstatt mit Musikecke: Cremeweiße Wände, helle alte Dielen. An der Nordwand die Werkbank mit Farbe und Werkzeug (Auslöser des Flashbacks), daneben das Regal mit Gartengerät und Leim, links das alte Foto im Goldrahmen zwischen zwei Fenstern. Die drei geretteten Klaviere stehen an der Ostseite, zwei hintereinander an der Wand, eines davor. Links vorn Célestes Ecke mit dem Keyboard auf dem Ständer und einem Hocker, oben links eine Kommode. In der Mitte Sägebock und Holzscheite, ein Kanister an der Westwand.",
+  "beschreibung": "Variante B, Werkstatt mit Musikecke: Cremeweiße Wände, helle alte Dielen. An der Nordwand die Werkbank mit Farbe und Werkzeug (Auslöser des Flashbacks), daneben ein Regal und Leim, links das alte Foto im Goldrahmen zwischen zwei Fenstern. Die drei geretteten Klaviere stehen an der Ostseite, zwei hintereinander an der Wand, davor der Flügel mit Célestes Laptop. Links vorn Célestes Ecke mit dem Keyboard auf dem Ständer und einem Hocker, oben links eine Kommode. In der Mitte Sägebock und Holzscheite, ein Kanister an der Westwand.",
   "wand": "creme",
   "boden": "dielen",
   "raster": [
@@ -43,7 +43,7 @@
       "id": "hobel"
     },
     {
-      "moebel": "pd6Werkzeugregal",
+      "moebel": "pd6Brettregal",
       "feld": [12, 2]
     },
     {
@@ -59,8 +59,13 @@
       "feld": [17, 6]
     },
     {
-      "moebel": "pd6KlavierNatur",
-      "feld": [14, 6]
+      "moebel": "pd6Fluegel",
+      "feld": [13, 6],
+      "id": "fluegel"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "fluegel"
     },
     {
       "moebel": "pd6Keyboard",

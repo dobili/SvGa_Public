@@ -1,0 +1,438 @@
+{
+  "karte": "wegGhostCapital.seeufer",
+  "datei": "karten/weg-ghost-capital-seeufer.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "bruecken": ["h"],
+  "boeden": {
+    "e": "erde",
+    "a": "sand",
+    "h": "wasser"
+  },
+  "beschreibung": "Weg 11, erste Karte: das Südufer eines großen Sees an einem Sommerabend (Szene 102). Im Norden reicht der See bis zum Kartenrand, davor ein heller Sandstrand mit blau-weißen Sonnenschirmen, Handtüchern, Treibholz und einem Kind mit Drachen. Am Westrand kommt der Erdweg aus Ghost Town an; gleich daneben steht der Wachmann von Perfect Move mit seiner Liste, sein Absperrbock „Gesperrt“ ist zur Seite gerückt. Der Weg läuft in Bögen nach Osten; auf einer Strandzunge steht das Fährterminal, daneben führt ein Holzsteg zur weißen Fähre, ein Rettungsring und Kisten liegen am Steg. Weiter östlich die Rätseltafel mit Dach und ein Mülleimer, Bänke am Weg. Im Süden schließt ein dichter Kiefernwald ab, mit einem Picknicktisch auf einer Lichtung und einer Bank.",
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#.................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............................................................#",
+    "#.................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............................................................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee....................................eeeeeeeeeeeeeeee...........#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee....................................eeeeeeeeeeeeeeee...........#",
+    "#...................................................................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeee",
+    "#...................................................................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeee",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "######################################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "gc7Steg",
+      "feld": [58, 2]
+    },
+    {
+      "moebel": "gc7Faehre",
+      "feld": [60, 3]
+    },
+    {
+      "moebel": "gc7Faehrterminal",
+      "feld": [48, 4]
+    },
+    {
+      "moebel": "gc7Rettungsring",
+      "feld": [57, 9]
+    },
+    {
+      "moebel": "gc7Absperrbock",
+      "feld": [3, 17]
+    },
+    {
+      "moebel": "gc7Tafel",
+      "feld": [88, 14]
+    },
+    {
+      "moebel": "gc7Muelleimer",
+      "feld": [90, 15]
+    },
+    {
+      "moebel": "gc7Schirm",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "gc7Handtuch",
+      "feld": [18, 10]
+    },
+    {
+      "moebel": "gc7SchirmZu",
+      "feld": [24, 8]
+    },
+    {
+      "moebel": "gc7HandtuchGelb",
+      "feld": [70, 9]
+    },
+    {
+      "moebel": "gc7Schirm",
+      "feld": [74, 8]
+    },
+    {
+      "moebel": "gc7Schirm",
+      "feld": [100, 8]
+    },
+    {
+      "moebel": "gc7Handtuch",
+      "feld": [104, 10]
+    },
+    {
+      "moebel": "gc7Treibholz",
+      "feld": [36, 10]
+    },
+    {
+      "moebel": "gc7Treibholz",
+      "feld": [126, 10]
+    },
+    {
+      "moebel": "gc7Kisten",
+      "feld": [62, 10]
+    },
+    {
+      "moebel": "gc7Picknicktisch",
+      "feld": [60, 20]
+    },
+    {
+      "moebel": "gc7Bank",
+      "feld": [108, 19]
+    },
+    {
+      "moebel": "gc7Bank",
+      "feld": [40, 15]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [116, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [49, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [122, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [78, 21]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [11, 25]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [41, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [17, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [113, 22]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [76, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [22, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [66, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [132, 23]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [145, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [1, 22]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [97, 25]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [70, 24]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [86, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [31, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [26, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [34, 25]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [30, 25]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [55, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [101, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [38, 22]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [24, 22]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [117, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [13, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [62, 25]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [126, 23]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [18, 23]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [136, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [9, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [92, 23]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [80, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [88, 24]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [128, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [107, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [128, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [84, 25]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [51, 25]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [71, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [55, 25]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [134, 26]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [7, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [37, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [66, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [138, 24]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [39, 26]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [147, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [97, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [140, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [122, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [112, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [47, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [5, 20]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [144, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [82, 20]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [42, 22]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [90, 19]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [16, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [3, 26]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 14],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckGhost",
+      "feld": [0, 14]
+    },
+    {
+      "name": "zurueckGhost",
+      "feld": [0, 15]
+    },
+    {
+      "name": "weiterLeuchtturm",
+      "feld": [149, 16]
+    },
+    {
+      "name": "weiterLeuchtturm",
+      "feld": [149, 17]
+    },
+    {
+      "name": "tafel",
+      "feld": [89, 16]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "wachmann",
+      "typ": "statist",
+      "feld": [4, 13],
+      "eigenschaften": {
+        "von": "4,13",
+        "bis": "4,13",
+        "tun": "prüft eine Liste: Nur für Gemeldete",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [30, 6],
+      "eigenschaften": {
+        "von": "20,4",
+        "bis": "50,8",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "drachenkind",
+      "typ": "statist",
+      "feld": [20, 10],
+      "eigenschaften": {
+        "von": "16,10",
+        "bis": "28,10",
+        "tun": "lässt einen Drachen steigen",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["natur", "modern", "klassisch"]
+}

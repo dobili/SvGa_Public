@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 21,
+ "nextobjectid": 22,
  "layers": [
   {
    "id": 1,
@@ -1067,7 +1067,7 @@
     },
     {
      "id": 13,
-     "name": "pd6KlavierNatur",
+     "name": "pd6KlavierPlane",
      "type": "moebel",
      "x": 48,
      "y": 48,
@@ -1090,11 +1090,11 @@
     },
     {
      "id": 14,
-     "name": "pd6KlavierHell",
+     "name": "pd6Fluegel",
      "type": "moebel",
      "x": 240,
-     "y": 96,
-     "width": 32,
+     "y": 80,
+     "width": 48,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -1102,7 +1102,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1113,6 +1113,29 @@
     },
     {
      "id": 15,
+     "name": "pd6Laptop",
+     "type": "moebel",
+     "x": 256,
+     "y": 92,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 16,
      "name": "pd6Saegebock",
      "type": "moebel",
      "x": 80,
@@ -1135,11 +1158,11 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 272,
-     "y": 96,
+     "y": 128,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1148,7 +1171,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -1158,7 +1181,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 192,
@@ -1181,7 +1204,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "pd6Kanister",
      "type": "moebel",
      "x": 64,
@@ -1204,7 +1227,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "pd6Fussmatte",
      "type": "moebel",
      "x": 160,
@@ -1227,7 +1250,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 160,

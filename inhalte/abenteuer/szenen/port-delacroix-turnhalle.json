@@ -2,7 +2,7 @@
   "karte": "portDelacroix.turnhalle",
   "datei": "karten/port-delacroix-turnhalle.json",
   "art": "innen",
-  "beschreibung": "Die Turnhalle der Schule von Port Delacroix, Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. Ersatz: Basketballkörbe an der Wand fehlen noch (bestellt).",
+  "beschreibung": "Die Turnhalle der Schule von Port Delacroix, Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängen zwei Basketballkörbe zwischen den Fenstern.",
   "wand": "hellgrau",
   "boden": "holzHell",
   "raster": [
@@ -50,6 +50,16 @@
     },
     {
       "moebel": "pd6Plakat",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Basketballkorb",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Basketballkorb",
       "feld": [19, 1],
       "an_wand": true
     },

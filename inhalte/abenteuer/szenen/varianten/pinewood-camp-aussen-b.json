@@ -1,0 +1,387 @@
+{
+  "karte": "pinewoodCamp.aussen",
+  "datei": "karten/varianten/pinewood-camp-aussen-b.json",
+  "variante": "b",
+  "art": "aussen",
+  "beschreibung": "Variante B: der See liegt weiter oben und bildet eine Bucht nach Norden, die Zelte stehen rechts, die Buden links, der Feuerplatz ist gepflastert, weniger Bäume.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "e": "erde",
+    "d": "sand",
+    "p": "pflaster",
+    "h": "dielen"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "###################ee#######################################",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#...............pppeeppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............pppppppppp.................................#",
+    "#...............ppppeepppp.................................#",
+    "#...................ee.....................................#",
+    "#...................ee.....................................#",
+    "#...................ee.....................................#",
+    "#...................ee.....................................#",
+    "#...................ee.....................................#",
+    "#...dddddddddddd....ee.....................................#",
+    "#...dddddddddddd....ee.....................................#",
+    "#..d~~~~~~~~~~~~d...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#ddd~~~~~~~~~~~~ddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#dd~~~~~~~~~~~~~~dddddddeeddddddddddddddddddddddddddddddddd#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "pw7Bootssteg3",
+      "feld": [24, 27]
+    },
+    {
+      "moebel": "pw7Feuerstelle",
+      "feld": [19, 12],
+      "id": "feuer"
+    },
+    {
+      "moebel": "mf4Fahnenmast",
+      "feld": [25, 3]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [9, 4]
+    },
+    {
+      "moebel": "pwZelt",
+      "feld": [36, 12]
+    },
+    {
+      "moebel": "pwZeltGruen",
+      "feld": [41, 12]
+    },
+    {
+      "moebel": "pwZeltBeige",
+      "feld": [46, 12]
+    },
+    {
+      "moebel": "pwZelt",
+      "feld": [51, 12]
+    },
+    {
+      "moebel": "pw7Kiosk",
+      "feld": [30, 12],
+      "id": "kiosk"
+    },
+    {
+      "moebel": "cc7Picknicktisch",
+      "feld": [30, 20]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [31, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [36, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [41, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [46, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [51, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [15, 3]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [42, 6]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [35, 8]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [56, 7]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [8, 17]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [10, 15]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [23, 17]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [56, 16]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [57, 13]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [10, 19]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [53, 21]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [40, 1]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [48, 5]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [55, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [58, 2]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [9, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [15, 6]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [33, 8]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [40, 7]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [44, 8]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [55, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [40, 11]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [55, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [6, 17]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [8, 19]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [36, 19]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [47, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [56, 19]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [28, 21]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [29, 22]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [19, 2],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [19, 0]
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [20, 0]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [59, 24]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [59, 25]
+    },
+    {
+      "name": "lagerfeuer",
+      "feld": [22, 13]
+    },
+    {
+      "name": "kiosk",
+      "feld": [32, 17]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "ezra",
+      "feld": [18, 13]
+    },
+    {
+      "name": "dex",
+      "feld": [23, 14]
+    },
+    {
+      "name": "mae",
+      "feld": [20, 16]
+    },
+    {
+      "name": "lou",
+      "feld": [20, 11]
+    },
+    {
+      "name": "tamsin",
+      "feld": [26, 26]
+    },
+    {
+      "name": "hollis",
+      "feld": [54, 18]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "betreuer",
+      "typ": "statist",
+      "feld": [20, 22],
+      "eigenschaften": {
+        "von": "20,22",
+        "bis": "20,18",
+        "tun": "pfeift die Kinder zusammen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kanufahrer",
+      "typ": "statist",
+      "feld": [30, 31],
+      "eigenschaften": {
+        "von": "24,31",
+        "bis": "40,31",
+        "tun": "paddelt über den See",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "libellen",
+      "typ": "tier",
+      "feld": [16, 26],
+      "eigenschaften": {
+        "von": "12,26",
+        "bis": "22,26",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [54, 25],
+      "eigenschaften": {
+        "von": "54,25",
+        "bis": "54,25",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "einfach", "laendlich", "landhaus", "klassisch", "rustikal"]
+}

@@ -23,6 +23,173 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true
+    },
+    "pw7KieferKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Kiefer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7KieferHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_212.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Tanne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_230.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7TanneHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_236.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Feuer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Campfire_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feuer",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Tent1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Tent2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Tent4": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_4.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Boot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7BootB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Right_1.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Steg": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Campbude": {
+      "quelle": "spiel/eigene/campbude.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Kiosk": {
+      "quelle": "spiel/eigene/campkiosk.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7KanuQuer": {
+      "quelle": "spiel/eigene/kanu_quer.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7KanuLaengs": {
+      "quelle": "spiel/eigene/kanu_laengs.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Bootssteg3": {
+      "quelle": "spiel/eigene/bootssteg_holz_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Feuerstelle": {
+      "quelle": "spiel/eigene/feuerstelle_gross.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "feuer",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

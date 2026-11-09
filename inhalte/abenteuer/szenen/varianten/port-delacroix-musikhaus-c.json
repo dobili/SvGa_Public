@@ -45,16 +45,16 @@
       "feld": [3, 3]
     },
     {
-      "moebel": "pd6PfuetzeGross",
+      "moebel": "pd6DielenLoch",
       "feld": [14, 4]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
+      "moebel": "pd6DielenNass",
       "feld": [4, 8]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
-      "feld": [9, 6]
+      "moebel": "pd6DielenNass",
+      "feld": [9, 5]
     },
     {
       "moebel": "pd6StuhlRechts",

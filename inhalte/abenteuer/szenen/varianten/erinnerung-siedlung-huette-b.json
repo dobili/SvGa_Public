@@ -1,0 +1,115 @@
+{
+  "karte": "erinnerungSiedlung.huette",
+  "datei": "karten/varianten/erinnerung-siedlung-huette-b.json",
+  "art": "innen",
+  "wand": "holz",
+  "boden": "dielen",
+  "beschreibung": "Variante B (schlichter): Fast leer: die Pritsche an der Ostwand, der Tisch mit Brett und Kerze an der Westseite, ein Stuhl, der Ofen in der Nordwestecke, eine einzelne Kiste. Der Postreiter steht an der Tür.",
+  "zustand": ["alt", "verwittert", "gebraucht"],
+  "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
+  "raster": [
+    "############",
+    "############",
+    "############",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "######.#####"
+  ],
+  "objekte": [
+    {
+      "moebel": "es7Bett",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "es7Tisch",
+      "feld": [3, 4],
+      "id": "tisch"
+    },
+    {
+      "moebel": "es7StuhlL",
+      "feld": [5, 4]
+    },
+    {
+      "moebel": "es7Brett",
+      "feld": [0, 0],
+      "auf": "tisch"
+    },
+    {
+      "moebel": "es7Kerze",
+      "feld": [0, 0],
+      "auf": "tisch"
+    },
+    {
+      "moebel": "es7Ofen",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "es7Fenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "es7Kiste",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "es7Kisten",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "es7Fass",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "es7Hocker",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "es7KisteLeer",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "es7Fussmatte",
+      "feld": [6, 8],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "es7Tuer",
+      "feld": [6, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "ankunft",
+      "feld": [5, 8]
+    },
+    {
+      "name": "rueckkehr",
+      "feld": [6, 9]
+    },
+    {
+      "name": "kerze",
+      "feld": [3, 5],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "postreiter",
+      "feld": [4, 7]
+    }
+  ],
+  "belebung": [],
+  "variante": "b"
+}

@@ -14354,11 +14354,11 @@
     },
     {
      "id": 37,
-     "name": "iw5AutoA",
+     "name": "wr5Autowrack",
      "type": "moebel",
      "x": 896,
      "y": 48,
-     "width": 32,
+     "width": 64,
      "height": 64,
      "rotation": 0,
      "visible": true,

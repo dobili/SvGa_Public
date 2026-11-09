@@ -5,12 +5,11 @@
   "art": "aussen",
   "beschreibung": "Variante C, grün: Wald bis zur Mitte, Blumen am Weg, zwei Bänke am Rand, mehr Kletterseile.",
   "wand": "felsRot",
-  "wandart": "hecke",
   "boden": "gras",
   "boeden": {
     "e": "erde",
     "r": "felsbodenRot",
-    "f": "felsbodenRot"
+    "f": "sandRot"
   },
   "raster": [
     "######################################################################################################################################################",
@@ -30,8 +29,8 @@
     "eeeeeeeeeeeee................eeeeeeeeeeeeeeeeeeeeeeeeeeee......................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeee.............................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeee",
     "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
@@ -264,31 +263,7 @@
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [17, 15]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [19, 14]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [22, 14]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [25, 15]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [58, 15]
-    },
-    {
-      "moebel": "pw7Tanne",
       "feld": [63, 13]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [75, 15]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -516,35 +491,19 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [7, 18]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [12, 18]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [21, 16]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [35, 16]
+      "feld": [26, 16]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [37, 17]
+      "feld": [35, 16]
     },
     {
       "moebel": "wg4BlumeRot",
       "feld": [42, 16]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [49, 17]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [54, 18]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -553,14 +512,6 @@
     {
       "moebel": "wg4BlumeRot",
       "feld": [62, 16]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [70, 18]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [73, 18]
     },
     {
       "moebel": "wg4BlumeGelb",

@@ -249,7 +249,8 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     karte = json.loads((INHALTE / "karten" / "maple-falls-dachboden.json").read_text(encoding="utf-8"))
     assert karte["width"] * karte["height"] == len(karte["layers"][0]["data"])
     objekte = next(e for e in karte["layers"] if e["type"] == "objectgroup")
-    namen = {o["name"] for o in objekte["objects"]}
+    # Möbel, Statisten und Tiere stehen nicht in orte.json.
+    namen = {o["name"] for o in objekte["objects"] if o.get("type") not in ("moebel", "statist", "tier")}
     ausloeser = {a["name"] for a in _lade("orte.json")["orte"][0]["ausloeser"]}
     assert namen <= ausloeser
 

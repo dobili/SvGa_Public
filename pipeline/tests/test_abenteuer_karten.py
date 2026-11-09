@@ -114,6 +114,9 @@ def test_alles_von_start_erreichbar(ort: dict, eintrag: dict):
     begehbar, gesperrt = k.erreichbar(karte, start.feld), k.blockiert(karte)
     assert begehbar, "Start liegt auf einer Kollisionskachel"
     for objekt in alle:
+        # Möbel, Statisten und Tiere muss man nicht erreichen (Schmuck und Belebung).
+        if objekt.moebel or objekt.belebung:
+            continue
         assert k.objekt_erreichbar(objekt, begehbar, gesperrt), objekt.name
 
 

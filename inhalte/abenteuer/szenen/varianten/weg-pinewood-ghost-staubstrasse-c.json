@@ -245,6 +245,18 @@
       "feld": [90, 18]
     },
     {
+      "moebel": "pg7Staubteufel",
+      "feld": [30, 22]
+    },
+    {
+      "moebel": "pg7Staubteufel",
+      "feld": [76, 4]
+    },
+    {
+      "moebel": "pg7Staubteufel",
+      "feld": [120, 5]
+    },
+    {
       "moebel": "mf4Wegweiser",
       "feld": [143, 12]
     },

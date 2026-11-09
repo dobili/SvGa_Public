@@ -8,6 +8,33 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "pg7Kletterwand": {
+      "quelle": "spiel/eigene/kletterwand.png",
+      "breite": 64,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "pg7SeilHaken": {
+      "quelle": "spiel/eigene/seil_haken.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pg7Staubteufel": {
+      "quelle": "spiel/eigene/staubteufel.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

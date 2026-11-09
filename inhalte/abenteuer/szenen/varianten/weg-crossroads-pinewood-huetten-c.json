@@ -3,7 +3,7 @@
   "datei": "karten/varianten/weg-crossroads-pinewood-huetten-c.json",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, dichter Wald: Tannen und hohe Kiefern dicht an dicht, Farne, Pilze, die Hütte südlich, zwei Feuerstellen an der Lichtung.",
+  "beschreibung": "Variante C, dichter Wald: Tannen und hohe Kiefern dicht an dicht, Farne, Pilze, zwei Feuerstellen an der Lichtung, Bärenspuren am Hang.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -50,17 +50,13 @@
       "id": "steg"
     },
     {
-      "moebel": "wg4Schuppen",
-      "feld": [78, 12],
+      "moebel": "cp7Schutzhuette",
+      "feld": [78, 2],
       "id": "schutzhuette"
     },
     {
-      "moebel": "mfBank",
-      "feld": [82, 11]
-    },
-    {
       "moebel": "cc4Holzstapel",
-      "feld": [75, 12]
+      "feld": [75, 6]
     },
     {
       "moebel": "wg4Schild",
@@ -71,16 +67,28 @@
       "feld": [56, 6]
     },
     {
-      "moebel": "pw7Feuer",
-      "feld": [59, 6]
+      "moebel": "cp7Feuerstelle",
+      "feld": [59, 5]
     },
     {
       "moebel": "pwLagerfeuer",
       "feld": [53, 12]
     },
     {
-      "moebel": "mf4Wegweiser",
-      "feld": [143, 12]
+      "moebel": "cp7Wegweiser",
+      "feld": [142, 11]
+    },
+    {
+      "moebel": "cp7Baerenspur",
+      "feld": [40, 19]
+    },
+    {
+      "moebel": "cp7Baerenspur",
+      "feld": [46, 19]
+    },
+    {
+      "moebel": "cp7Baerenspur",
+      "feld": [52, 6]
     },
     {
       "moebel": "fels",
@@ -96,7 +104,7 @@
     },
     {
       "moebel": "wg4Felsgruppe",
-      "feld": [51, 6]
+      "feld": [51, 12]
     },
     {
       "moebel": "pw7Tanne",
@@ -160,155 +168,135 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [61, 3]
-    },
-    {
-      "moebel": "pw7TanneHoch",
       "feld": [65, 1]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7TanneHoch",
       "feld": [69, 3]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7KieferHoch",
       "feld": [72, 3]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [75, 2]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [77, 3]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [80, 1]
-    },
-    {
-      "moebel": "pw7KieferHoch",
-      "feld": [83, 3]
-    },
-    {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [87, 3]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [89, 1]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [91, 3]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [96, 3]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [102, 1]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [104, 1]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [107, 2]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [109, 2]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [113, 2]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [116, 2]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [118, 3]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [121, 1]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [126, 2]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [132, 2]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [135, 3]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [138, 3]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [141, 2]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [145, 2]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [1, 6]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [6, 4]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [9, 6]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [15, 6]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [19, 5]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [27, 6]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [35, 6]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [37, 5]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [40, 6]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [43, 5]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [54, 4]
-    },
-    {
       "moebel": "pw7KieferHoch",
-      "feld": [89, 4]
+      "feld": [54, 4]
     },
     {
       "moebel": "pw7Tanne",
@@ -324,23 +312,23 @@
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [106, 4]
-    },
-    {
-      "moebel": "pw7KieferHoch",
       "feld": [111, 4]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7KieferHoch",
       "feld": [120, 5]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [125, 6]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [130, 5]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [138, 6]
     },
     {
       "moebel": "pw7TanneHoch",
@@ -352,110 +340,122 @@
     },
     {
       "moebel": "pw7Tanne",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "wg4Busch",
       "feld": [11, 7]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [18, 9]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [20, 9]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [22, 8]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [25, 9]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [32, 7]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [41, 9]
-    },
-    {
       "moebel": "pw7Tanne",
-      "feld": [92, 8]
+      "feld": [37, 7]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [96, 9]
+      "feld": [92, 8]
     },
     {
       "moebel": "pw7KieferHoch",
+      "feld": [96, 9]
+    },
+    {
+      "moebel": "pw7Tanne",
       "feld": [99, 8]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [106, 7]
     },
     {
       "moebel": "pw7Tanne",
       "feld": [122, 9]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [125, 9]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [135, 9]
-    },
-    {
       "moebel": "pw7TanneHoch",
-      "feld": [142, 8]
+      "feld": [130, 8]
     },
     {
       "moebel": "pw7KieferHoch",
+      "feld": [135, 9]
+    },
+    {
+      "moebel": "pw7Tanne",
       "feld": [146, 9]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [2, 11]
     },
     {
       "moebel": "pw7Tanne",
       "feld": [14, 10]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7TanneHoch",
       "feld": [16, 11]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7KieferHoch",
       "feld": [30, 10]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [34, 11]
+      "moebel": "pw7Tanne",
+      "feld": [33, 10]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "wg4Busch",
       "feld": [37, 11]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [50, 12]
-    },
-    {
-      "moebel": "wg4Busch",
       "feld": [65, 12]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [67, 12]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7KieferHoch",
       "feld": [70, 12]
     },
     {
-      "moebel": "pw7KieferHoch",
-      "feld": [86, 12]
-    },
-    {
       "moebel": "pw7Tanne",
-      "feld": [12, 14]
+      "feld": [76, 12]
     },
     {
       "moebel": "wg4Busch",
+      "feld": [83, 12]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [86, 12]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [12, 14]
+    },
+    {
+      "moebel": "pw7KieferHoch",
       "feld": [17, 15]
     },
     {
@@ -463,39 +463,39 @@
       "feld": [19, 14]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "wg4Busch",
       "feld": [22, 14]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [54, 14]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [58, 15]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7KieferHoch",
       "feld": [63, 13]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [75, 15]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [83, 15]
-    },
-    {
-      "moebel": "pw7KieferHoch",
-      "feld": [106, 15]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [111, 14]
+      "feld": [80, 14]
     },
     {
       "moebel": "wg4Busch",
+      "feld": [83, 15]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [106, 15]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [111, 14]
+    },
+    {
+      "moebel": "pw7KieferHoch",
       "feld": [3, 18]
     },
     {
@@ -503,32 +503,40 @@
       "feld": [5, 18]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "wg4Busch",
       "feld": [51, 18]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [53, 18]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [62, 16]
-    },
-    {
-      "moebel": "wg4Busch",
+      "moebel": "pw7TanneHoch",
       "feld": [65, 18]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7KieferHoch",
       "feld": [69, 18]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7Tanne",
       "feld": [72, 18]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "wg4Busch",
+      "feld": [74, 16]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [76, 17]
+    },
+    {
+      "moebel": "pw7TanneHoch",
       "feld": [79, 18]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [82, 18]
     },
     {
       "moebel": "pw7Tanne",
@@ -576,43 +584,23 @@
     },
     {
       "moebel": "wg4Busch",
-      "feld": [39, 20]
-    },
-    {
-      "moebel": "pw7Tanne",
       "feld": [42, 20]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [47, 20]
-    },
-    {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7Tanne",
       "feld": [49, 20]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7TanneHoch",
       "feld": [56, 20]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7KieferHoch",
       "feld": [59, 21]
     },
     {
       "moebel": "pw7Tanne",
       "feld": [62, 21]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [75, 19]
-    },
-    {
-      "moebel": "pw7KieferHoch",
-      "feld": [81, 20]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [83, 20]
     },
     {
       "moebel": "wg4Busch",
@@ -708,23 +696,23 @@
     },
     {
       "moebel": "pw7KieferHoch",
-      "feld": [58, 24]
-    },
-    {
-      "moebel": "pw7Tanne",
       "feld": [65, 24]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "pw7Tanne",
       "feld": [68, 24]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "wg4Busch",
       "feld": [72, 24]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7Tanne",
       "feld": [76, 24]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [81, 22]
     },
     {
       "moebel": "pw7KieferHoch",
@@ -820,23 +808,15 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [81, 25]
-    },
-    {
-      "moebel": "pw7TanneHoch",
       "feld": [117, 25]
     },
     {
-      "moebel": "pw7KieferHoch",
+      "moebel": "pw7TanneHoch",
       "feld": [136, 25]
     },
     {
-      "moebel": "pw7Tanne",
+      "moebel": "pw7KieferHoch",
       "feld": [140, 25]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [142, 27]
     },
     {
       "moebel": "wg4Farn",
@@ -896,55 +876,55 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [79, 3]
-    },
-    {
-      "moebel": "wg4Pilze",
       "feld": [85, 1]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [95, 2]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [97, 1]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [112, 3]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [120, 1]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [126, 1]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [140, 3]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [147, 1]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [10, 4]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [13, 4]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [25, 5]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [57, 4]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [62, 5]
     },
     {
       "moebel": "wg4Pilze",
@@ -952,15 +932,15 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [76, 4]
+      "feld": [77, 6]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [108, 4]
+      "feld": [113, 6]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [113, 6]
+      "feld": [119, 5]
     },
     {
       "moebel": "wg4Pilze",
@@ -1000,11 +980,11 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [34, 8]
+      "feld": [32, 9]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [37, 9]
+      "feld": [34, 8]
     },
     {
       "moebel": "wg4Farn",
@@ -1012,39 +992,39 @@
     },
     {
       "moebel": "wg4Pilze",
+      "feld": [51, 7]
+    },
+    {
+      "moebel": "wg4Farn",
       "feld": [96, 8]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [102, 7]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [111, 8]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [120, 9]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [124, 7]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [127, 8]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [132, 9]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [135, 7]
-    },
-    {
       "moebel": "wg4Pilze",
-      "feld": [138, 8]
+      "feld": [135, 7]
     },
     {
       "moebel": "wg4Farn",
@@ -1060,27 +1040,27 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [18, 12]
-    },
-    {
-      "moebel": "wg4Farn",
       "feld": [24, 12]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [28, 11]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [36, 11]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [41, 11]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [61, 12]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [80, 12]
     },
     {
       "moebel": "wg4Pilze",
@@ -1124,43 +1104,35 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [65, 15]
-    },
-    {
-      "moebel": "wg4Farn",
       "feld": [69, 14]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [73, 15]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [84, 14]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [110, 13]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [113, 15]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [2, 18]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [7, 18]
     },
     {
-      "moebel": "wg4Pilze",
-      "feld": [16, 18]
-    },
-    {
       "moebel": "wg4Farn",
-      "feld": [17, 18]
+      "feld": [16, 18]
     },
     {
       "moebel": "wg4Pilze",
@@ -1184,59 +1156,51 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [80, 17]
-    },
-    {
-      "moebel": "wg4Pilze",
       "feld": [85, 16]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [92, 18]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [97, 18]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [109, 16]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [117, 18]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [127, 18]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [2, 19]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [38, 19]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [41, 21]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [46, 20]
+      "moebel": "wg4Pilze",
+      "feld": [52, 21]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [60, 20]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [61, 20]
-    },
-    {
       "moebel": "wg4Pilze",
-      "feld": [65, 21]
+      "feld": [61, 20]
     },
     {
       "moebel": "wg4Farn",
@@ -1284,6 +1248,14 @@
     },
     {
       "moebel": "wg4Pilze",
+      "feld": [42, 22]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [48, 23]
+    },
+    {
+      "moebel": "wg4Pilze",
       "feld": [51, 23]
     },
     {
@@ -1296,155 +1268,163 @@
     },
     {
       "moebel": "wg4Farn",
+      "feld": [76, 22]
+    },
+    {
+      "moebel": "wg4Pilze",
       "feld": [79, 23]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [87, 22]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [117, 22]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [124, 23]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [130, 24]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [133, 23]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [140, 23]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [143, 24]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [148, 22]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [1, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [7, 27]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [16, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [18, 26]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [21, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [33, 25]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [46, 26]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [52, 27]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [54, 27]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [63, 25]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [67, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [70, 25]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [74, 26]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [79, 26]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [84, 26]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [85, 26]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [90, 27]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [94, 26]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [97, 27]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [102, 26]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [106, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [110, 27]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [113, 25]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [125, 27]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [130, 26]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [1, 28]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [10, 28]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [18, 28]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [46, 28]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [81, 28]
     },
     {
       "moebel": "wg4Farn",
@@ -1511,7 +1491,7 @@
   "figuren": [
     {
       "name": "greta",
-      "feld": [81, 11]
+      "feld": [87, 8]
     }
   ],
   "belebung": [

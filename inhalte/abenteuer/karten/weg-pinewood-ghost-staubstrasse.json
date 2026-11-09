@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 149,
+ "nextobjectid": 151,
  "layers": [
   {
    "id": 1,
@@ -14377,6 +14377,52 @@
     },
     {
      "id": 38,
+     "name": "pg7Staubteufel",
+     "type": "moebel",
+     "x": 640,
+     "y": 64,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "pg7Staubteufel",
+     "type": "moebel",
+     "x": 1600,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
      "name": "mf4Wegweiser",
      "type": "moebel",
      "x": 2288,
@@ -14399,7 +14445,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 41,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 96,
@@ -14422,7 +14468,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 42,
      "name": "fels",
      "type": "moebel",
      "x": 112,
@@ -14445,7 +14491,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 43,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 272,
@@ -14468,7 +14514,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 44,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 480,
@@ -14491,7 +14537,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 45,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 512,
@@ -14514,7 +14560,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 46,
      "name": "fels",
      "type": "moebel",
      "x": 640,
@@ -14537,7 +14583,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 47,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 736,
@@ -14560,7 +14606,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 48,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 816,
@@ -14583,7 +14629,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 49,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 960,
@@ -14606,7 +14652,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 50,
      "name": "fels",
      "type": "moebel",
      "x": 992,
@@ -14629,7 +14675,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 51,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1072,
@@ -14652,7 +14698,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 52,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1232,
@@ -14675,7 +14721,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 53,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1312,
@@ -14698,7 +14744,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 54,
      "name": "fels",
      "type": "moebel",
      "x": 1376,
@@ -14721,7 +14767,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 55,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1456,
@@ -14744,7 +14790,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 56,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1568,
@@ -14767,7 +14813,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 57,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1680,
@@ -14790,7 +14836,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 58,
      "name": "fels",
      "type": "moebel",
      "x": 1776,
@@ -14813,7 +14859,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 59,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1856,
@@ -14836,7 +14882,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 60,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1984,
@@ -14859,7 +14905,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 61,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2048,
@@ -14882,7 +14928,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 62,
      "name": "fels",
      "type": "moebel",
      "x": 2176,
@@ -14905,7 +14951,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 63,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 2304,
@@ -14928,7 +14974,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 64,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 2336,
@@ -14951,7 +14997,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 65,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 32,
@@ -14974,7 +15020,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 66,
      "name": "fels",
      "type": "moebel",
      "x": 128,
@@ -14997,7 +15043,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 67,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 208,
@@ -15020,7 +15066,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 68,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 320,
@@ -15043,7 +15089,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 69,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 480,
@@ -15066,7 +15112,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 70,
      "name": "fels",
      "type": "moebel",
      "x": 544,
@@ -15089,7 +15135,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 71,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 608,
@@ -15112,7 +15158,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 72,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 736,
@@ -15135,7 +15181,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 73,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 832,
@@ -15158,7 +15204,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 74,
      "name": "fels",
      "type": "moebel",
      "x": 928,
@@ -15181,7 +15227,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 75,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1008,
@@ -15204,7 +15250,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 76,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1120,
@@ -15227,7 +15273,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 77,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1248,
@@ -15250,7 +15296,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 78,
      "name": "fels",
      "type": "moebel",
      "x": 1328,
@@ -15273,7 +15319,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 79,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1408,
@@ -15296,7 +15342,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 80,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1504,
@@ -15319,7 +15365,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 81,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1552,
@@ -15342,7 +15388,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 82,
      "name": "fels",
      "type": "moebel",
      "x": 1696,
@@ -15365,7 +15411,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 83,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1840,
@@ -15388,7 +15434,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 84,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1936,
@@ -15411,7 +15457,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 85,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2176,
@@ -15434,7 +15480,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 86,
      "name": "fels",
      "type": "moebel",
      "x": 2224,
@@ -15457,7 +15503,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 87,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 2320,
@@ -15480,7 +15526,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 88,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 464,
@@ -15503,7 +15549,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 89,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 512,
@@ -15526,7 +15572,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 90,
      "name": "fels",
      "type": "moebel",
      "x": 608,
@@ -15549,7 +15595,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 91,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1200,
@@ -15572,7 +15618,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 92,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1424,
@@ -15595,7 +15641,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 93,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1488,
@@ -15618,7 +15664,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 94,
      "name": "fels",
      "type": "moebel",
      "x": 2048,
@@ -15641,7 +15687,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 95,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 416,
@@ -15664,7 +15710,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 96,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 880,
@@ -15687,7 +15733,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 97,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1008,
@@ -15710,7 +15756,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 98,
      "name": "fels",
      "type": "moebel",
      "x": 1104,
@@ -15733,7 +15779,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 99,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1376,
@@ -15756,7 +15802,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 100,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1696,
@@ -15779,7 +15825,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 101,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1744,
@@ -15802,7 +15848,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 102,
      "name": "fels",
      "type": "moebel",
      "x": 1840,
@@ -15825,7 +15871,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 103,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 64,
@@ -15848,7 +15894,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 104,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 144,
@@ -15871,7 +15917,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 105,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 224,
@@ -15894,7 +15940,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 106,
      "name": "fels",
      "type": "moebel",
      "x": 864,
@@ -15917,7 +15963,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 107,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 944,
@@ -15940,7 +15986,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 108,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1056,
@@ -15963,7 +16009,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 109,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1104,
@@ -15986,7 +16032,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 110,
      "name": "fels",
      "type": "moebel",
      "x": 1168,
@@ -16009,7 +16055,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 111,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1792,
@@ -16032,7 +16078,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 112,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1856,
@@ -16055,7 +16101,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 113,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1936,
@@ -16078,7 +16124,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 114,
      "name": "fels",
      "type": "moebel",
      "x": 2064,
@@ -16101,7 +16147,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 115,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 2144,
@@ -16124,7 +16170,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 116,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 2256,
@@ -16147,7 +16193,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 117,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2368,
@@ -16170,7 +16216,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 118,
      "name": "fels",
      "type": "moebel",
      "x": 96,
@@ -16193,7 +16239,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 119,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 144,
@@ -16216,7 +16262,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 120,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 240,
@@ -16239,7 +16285,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 121,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 368,
@@ -16262,7 +16308,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 122,
      "name": "fels",
      "type": "moebel",
      "x": 448,
@@ -16285,7 +16331,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 123,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 512,
@@ -16308,7 +16354,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 124,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 672,
@@ -16331,7 +16377,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 125,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 736,
@@ -16354,7 +16400,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 126,
      "name": "fels",
      "type": "moebel",
      "x": 832,
@@ -16377,7 +16423,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 127,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 880,
@@ -16400,7 +16446,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 128,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1152,
@@ -16423,7 +16469,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 129,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1264,
@@ -16446,7 +16492,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 130,
      "name": "fels",
      "type": "moebel",
      "x": 1376,
@@ -16469,7 +16515,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 131,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1472,
@@ -16492,7 +16538,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 132,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1568,
@@ -16515,7 +16561,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 133,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1696,
@@ -16538,7 +16584,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 134,
      "name": "fels",
      "type": "moebel",
      "x": 1920,
@@ -16561,7 +16607,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 135,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1952,
@@ -16584,7 +16630,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 136,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 2112,
@@ -16607,7 +16653,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 137,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2208,
@@ -16630,7 +16676,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 138,
      "name": "fels",
      "type": "moebel",
      "x": 2224,
@@ -16653,7 +16699,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 139,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 2352,
@@ -16676,7 +16722,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 140,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 880,
@@ -16699,7 +16745,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 141,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1248,
@@ -16722,7 +16768,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 142,
      "name": "fels",
      "type": "moebel",
      "x": 1344,
@@ -16745,7 +16791,7 @@
      ]
     },
     {
-     "id": 141,
+     "id": 143,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 1360,
@@ -16768,7 +16814,7 @@
      ]
     },
     {
-     "id": 142,
+     "id": 144,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1664,
@@ -16791,7 +16837,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 145,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1776,
@@ -16814,7 +16860,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 146,
      "name": "fels",
      "type": "moebel",
      "x": 1904,
@@ -16837,7 +16883,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 147,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 2016,
@@ -16860,7 +16906,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 148,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 2064,
@@ -16883,7 +16929,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 149,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2304,
@@ -16906,7 +16952,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 150,
      "name": "fels",
      "type": "moebel",
      "x": 2336,

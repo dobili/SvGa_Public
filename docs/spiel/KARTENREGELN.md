@@ -72,7 +72,7 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
    zu einer Aussicht, dann direkt am Weg und mit etwas zu sehen); Bushaltestelle zur Straße;
    Blumenkästen parallel zum Weg, gern am Zaun oder an der Fassade, auch auf dem Gehweg wie
    beim Zeichner (Abschnitt 9), aber nie über die ganze Breite: Es bleibt immer mindestens eine Kachel
-   zum Vorbeigehen frei; Wunsch des Autors geht Abschnitt 9 vor); Mülleimer und Kästen nur mit erkennbarem
+   zum Vorbeigehen frei; Mülleimer und Kästen nur mit erkennbarem
    Zweck (Stromkasten an der Ecke, Mülltonne am Haus).
 8. Schilder: Wegweiser mit mehreren Richtungen nur an Kreuzungen; Schilder tragen erkennbaren,
    passenden Inhalt (keine Autobahntafel „SALE“ in der Kleinstadt); Text zum Betrachter oder zum Weg.

@@ -161,6 +161,42 @@
       "art": "steg",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "by6StegUeberflutetQuer3": {
+      "quelle": "spiel/eigene/steg_ueberflutet_quer_3.png",
+      "breite": 48,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6StegUeberflutetLaengs3": {
+      "quelle": "spiel/eigene/steg_ueberflutet_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6Luftboot": {
+      "quelle": "spiel/eigene/luftboot.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "by6LuftbootRechts": {
+      "quelle": "spiel/eigene/luftboot_rechts.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

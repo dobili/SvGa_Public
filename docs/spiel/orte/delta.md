@@ -130,7 +130,7 @@ durch Holzstege (Brückenbilder auf `h`). Von Port Delacroix kommt man am Westra
 **Ränder:** Wasser ringsum; offen ist nur der Westrand (Steg).
 
 **Gebaut (Nacht 9./10.11.2026):** fest in allen Varianten: Eingangssteg 0–11 / 17–18 mit überflutetem
-Stück 7–9 (Steg ohne Planken zwischen vier Pfosten, bis `steg_ueberflutet` kommt), Nebelsteg 23–29 /
+Stück 7–9 (steg_ueberflutet_quer_3), Nebelsteg 23–29 /
 17–18 mit `nebel` (28, 17), Theron (17, 20), Start (1, 17). A drei Inseln mit Hütte, Südsteg mit Boot,
 Zypresseninsel und Reiherinsel; B eine große Insel mit grünem Haus, Kahn und Südostinsel; C fünf
 Inseln mit Fischerhaus, langen Stegen und dichten Bäumen. Wasser noch hell: Die dunkle Tönung kommt

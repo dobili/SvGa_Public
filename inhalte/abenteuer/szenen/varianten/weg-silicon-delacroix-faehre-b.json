@@ -2,10 +2,10 @@
   "karte": "wegSiliconDelacroix.faehre",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Autofähre mit hellem Deck und Reling aus Holz und Metall. Auf dem Achterdeck stehen vier Autos in zwei Reihen, davor Kisten. Mittschiffs der Salon und daneben das Steuerhaus mit der Brücke; vor dem Salon der Tisch, an dem Mr. Ruiz mit Schachbrett und Uhr wartet, an der Seitenwand die Rätseltafel. Das Vorderdeck ist windig: zwei Bänke, ein Rettungsboot, ein Liegestuhl, ein Container und Fässer, ein Rettungsring, am Bug die Poller. Die Bordwand ist vorläufig ein Steinufer; das Bild „wasser_rumpf“ (\"ufer\": \"rumpf\") ist beim Haupt-Chat bestellt.",
+  "beschreibung": "Variante B, schlicht: Autofähre mit hellem Deck und Reling aus Holz und Metall. Auf dem Achterdeck stehen vier Autos in zwei Reihen, davor Kisten. Mittschiffs der Salon und daneben das Steuerhaus mit der Brücke; vor dem Salon der Tisch, an dem Mr. Ruiz mit Schachbrett und Uhr wartet, an der Seitenwand die Rätseltafel. Das Vorderdeck ist windig: zwei Bänke, ein Rettungsboot, ein Liegestuhl, ein Container und Fässer, ein Rettungsring, am Bug die Poller. Ringsum die weiße Bordwand mit Bullaugen.",
   "boden": "gras",
   "wandart": "gras",
-  "ufer": "stein",
+  "ufer": "rumpf",
   "boeden": {
     "d": "holzHell"
   },

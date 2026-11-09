@@ -2,7 +2,7 @@
   "karte": "bayou.steg",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Eine große Insel mit einem grünen Holzhaus, wo Theron wohnt, ein Steg nach Süden mit einem flachen Kahn, ein zweiter Steg nach Osten zu einer Insel mit wenigen Bäumen. Der Eingangssteg mit dem überfluteten Stück (S8) und der Nebelsteg nach Osten bleiben. Ersatz bis zur Lieferung: Zypressen als dunkle Laubbäume, Schilf als Gras, Luftboot als Ruderboot; der überflutete Steg (S8) ist ein Steg ohne Planken zwischen Pfosten.",
+  "beschreibung": "Variante B, schlicht: Eine große Insel mit einem grünen Holzhaus, wo Theron wohnt, ein Steg nach Süden mit einem flachen Kahn, ein zweiter Steg nach Osten zu einer Insel mit wenigen Bäumen. Der Eingangssteg mit dem überfluteten Stück (S8) und der Nebelsteg nach Osten bleiben. Sumpfzypressen mit Moos, Schilf an den Ufern, Therons Luftboot am Steg; das überflutete Stück (S8) zeigt den Steg halb unter Wasser.",
   "boden": "gras",
   "wandart": "gras",
   "bruecken": ["h"],
@@ -50,32 +50,12 @@
       "feld": [0, 17]
     },
     {
+      "moebel": "by6StegUeberflutetQuer3",
+      "feld": [7, 17]
+    },
+    {
       "moebel": "by6StegQuer2",
       "feld": [10, 17]
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [7, 16],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [9, 16],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [7, 19],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [9, 19],
-      "vorn": true,
-      "bauteil_ok": true
     },
     {
       "moebel": "by6StegQuer7",
@@ -86,9 +66,8 @@
       "feld": [13, 28]
     },
     {
-      "moebel": "ld5Kahn",
-      "feld": [15, 29],
-      "bauteil_ok": true
+      "moebel": "by6LuftbootRechts",
+      "feld": [15, 29]
     },
     {
       "moebel": "by6StegQuer7",
@@ -99,72 +78,72 @@
       "feld": [14, 9]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [19, 9]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [34, 24]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [40, 27]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [12, 26]
+      "moebel": "sd6Schilf",
+      "feld": [20, 21]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [21, 18]
+      "feld": [35, 31]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [18, 24]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [39, 28]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [42, 24]
+      "feld": [33, 25]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [30, 30]
+      "feld": [21, 15]
     },
     {
       "moebel": "wg4Gras",
+      "feld": [21, 22]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
       "feld": [41, 24]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "wg4Gras",
+      "feld": [32, 29]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 27]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [42, 25]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 29]
+    },
+    {
+      "moebel": "wg4Gras",
       "feld": [14, 18]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [13, 26]
+      "feld": [16, 9]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [13, 21]
+      "feld": [13, 16]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [13, 19]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [21, 15]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [12, 16]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [19, 23]
+      "moebel": "sd6Schilf",
+      "feld": [37, 30]
     }
   ],
   "ausloeser": [

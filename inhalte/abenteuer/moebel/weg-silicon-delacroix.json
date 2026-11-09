@@ -294,7 +294,7 @@
       "stil": "rustikal"
     },
     "sd6Sandsack": {
-      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Dry_Pile_16x16.png",
+      "quelle": "spiel/eigene/sandsaecke_reihe.png",
       "breite": 32,
       "hoehe": 16,
       "kollision": true,
@@ -303,9 +303,9 @@
       "stil": "rustikal"
     },
     "sd6SandsackHaufen": {
-      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Dry_Pile_Small_16x16.png",
-      "breite": 16,
-      "hoehe": 16,
+      "quelle": "spiel/eigene/sandsaecke_haufen.png",
+      "breite": 32,
+      "hoehe": 32,
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
@@ -319,6 +319,42 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "sd6SandsackStapel": {
+      "quelle": "spiel/eigene/sandsaecke.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Schilf": {
+      "quelle": "spiel/eigene/schilf.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sd6SchilfBreit": {
+      "quelle": "spiel/eigene/schilf_breit.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sd6Zypresse": {
+      "quelle": "spiel/eigene/sumpfzypresse.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

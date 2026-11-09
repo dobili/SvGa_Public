@@ -1,7 +1,7 @@
 {
   "karte": "bayou.steg",
   "art": "aussen",
-  "beschreibung": "Bayou Noir (Variante A, nach dem Ortsdokument): Schwarzes, stilles Wasser bis an alle Ränder. Vom Westrand führt ein Steg herein; ein Stück davon steht unter Wasser, nur die Pfosten ragen heraus (Sperre S8, Hochwasser). Auf der ersten Insel Therons Hütte mit Fässern und Feuerholz, ein Anlegesteg nach Süden mit dem Boot. Nach Osten läuft der Nebelsteg ins Leere, nach Nordosten ein Steg zur Zypresseninsel und weiter nach Süden zur Reiherinsel. Ersatz bis zur Lieferung: Zypressen als dunkle Laubbäume, Schilf als Gras, Luftboot als Ruderboot; der überflutete Steg (S8) ist ein Steg ohne Planken zwischen Pfosten.",
+  "beschreibung": "Bayou Noir (Variante A, nach dem Ortsdokument): Schwarzes, stilles Wasser bis an alle Ränder. Vom Westrand führt ein Steg herein; ein Stück davon steht unter Wasser, nur die Pfosten ragen heraus (Sperre S8, Hochwasser). Auf der ersten Insel Therons Hütte mit Fässern und Feuerholz, ein Anlegesteg nach Süden mit dem Luftboot. Nach Osten läuft der Nebelsteg ins Leere, nach Nordosten ein Steg zur Zypresseninsel und weiter nach Süden zur Reiherinsel. Sumpfzypressen mit Moos, Schilf an den Ufern, Therons Luftboot am Steg; das überflutete Stück (S8) zeigt den Steg halb unter Wasser.",
   "boden": "gras",
   "wandart": "gras",
   "bruecken": ["h"],
@@ -49,32 +49,12 @@
       "feld": [0, 17]
     },
     {
+      "moebel": "by6StegUeberflutetQuer3",
+      "feld": [7, 17]
+    },
+    {
       "moebel": "by6StegQuer2",
       "feld": [10, 17]
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [7, 16],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [9, 16],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [7, 19],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Pfahl",
-      "feld": [9, 19],
-      "vorn": true,
-      "bauteil_ok": true
     },
     {
       "moebel": "by6StegQuer7",
@@ -89,9 +69,8 @@
       "feld": [16, 25]
     },
     {
-      "moebel": "ld5Ruderboot",
-      "feld": [18, 26],
-      "bauteil_ok": true
+      "moebel": "by6Luftboot",
+      "feld": [18, 26]
     },
     {
       "moebel": "by6StegLaengs9",
@@ -110,144 +89,148 @@
       "feld": [19, 15]
     },
     {
-      "moebel": "wg4LaubbaumB",
+      "moebel": "wr5Eiche",
       "feld": [13, 19]
     },
     {
-      "moebel": "rvLaubbaumDunkel",
+      "moebel": "sd6Zypresse",
       "feld": [30, 3]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [34, 6]
     },
     {
-      "moebel": "wg4LaubbaumB",
+      "moebel": "wr5Eiche",
       "feld": [40, 4]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [38, 23]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "sd6Zypresse",
+      "feld": [41, 26]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
       "feld": [16, 18]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "sd6Schilf",
       "feld": [43, 24]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "sd6Schilf",
       "feld": [43, 10]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "wg4BuschKlein",
       "feld": [39, 29]
     },
     {
+      "moebel": "sd6SchilfBreit",
+      "feld": [18, 20]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [13, 10]
+    },
+    {
       "moebel": "wg4Gras",
-      "feld": [32, 10]
+      "feld": [19, 20]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [12, 22]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [13, 23]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [18, 15]
-    },
-    {
-      "moebel": "wg4GrasB",
       "feld": [44, 22]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [37, 23]
-    },
-    {
-      "moebel": "wg4BuschKlein",
       "feld": [35, 12]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [37, 30]
+      "moebel": "sd6SchilfBreit",
+      "feld": [37, 21]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BuschKlein",
+      "feld": [22, 15]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
       "feld": [12, 16]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [13, 17]
+      "moebel": "wg4Gras",
+      "feld": [12, 22]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [28, 11]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [16, 12]
+      "moebel": "sd6Schilf",
+      "feld": [42, 21]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [40, 10]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [16, 15]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [19, 10]
+      "feld": [22, 18]
     },
     {
       "moebel": "wg4Gras",
+      "feld": [18, 18]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
       "feld": [39, 10]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "sd6SchilfBreit",
       "feld": [14, 15]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "wg4BuschKlein",
       "feld": [44, 23]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [15, 19]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [44, 11]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [39, 28]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [43, 10]
+      "moebel": "sd6Schilf",
+      "feld": [37, 28]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [22, 16]
+      "feld": [39, 11]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "wg4Gras",
+      "feld": [20, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 16]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [17, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [19, 19]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [32, 11]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
       "feld": [20, 20]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [18, 22]
+      "moebel": "sd6SchilfBreit",
+      "feld": [17, 18]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [22, 15]
+      "moebel": "sd6Schilf",
+      "feld": [12, 12]
     }
   ],
   "ausloeser": [

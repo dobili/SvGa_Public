@@ -219,6 +219,78 @@
       "feld": [27, 12]
     },
     {
+      "moebel": "wds6PinieB",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [40, 18]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [60, 24]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [27, 46]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [66, 14]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [38, 7]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [63, 24]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [22, 9]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [41, 7]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [2, 42]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [37, 12]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [64, 7]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [41, 44]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [14, 33]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [42, 22]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [54, 9]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [28, 7]
+    },
+    {
       "moebel": "wds6Wacholder",
       "feld": [34, 25]
     },
@@ -235,12 +307,12 @@
       "feld": [34, 14]
     },
     {
-      "moebel": "wds6Wacholder",
-      "feld": [38, 7]
+      "moebel": "scFelsKlein",
+      "feld": [44, 13]
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [44, 13]
+      "feld": [40, 12]
     }
   ],
   "ausloeser": [

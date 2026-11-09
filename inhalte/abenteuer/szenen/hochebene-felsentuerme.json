@@ -1,0 +1,430 @@
+{
+  "karte": "hochebene.felsentuerme",
+  "datei": "karten/hochebene-felsentuerme.json",
+  "art": "aussen",
+  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Weg mit drei Bögen, zwei Felstürme am Ostende, Koppel in der Mitte, Steintisch unter dem Wacholder, Felsbogen im Westen.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "boeden": {
+    "k": "schotter",
+    "f": "felsbodenRot"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "laendlich"],
+  "raster": [
+    "####################################################################################################",
+    "####################################################################################################",
+    "####################################################################################################",
+    "#...........................................................ffff#############ffffffffffffff........#",
+    "#...........................................................ffff#############ffffffffffffff........#",
+    "#...........................................................fffffffffffffffffffffffffffffff........#",
+    "#...........................................................fffffffffffffffffffffffffffffff........#",
+    "#...........................................................fffffffffffffffffffffffffffffff........#",
+    "#...........................................................fffffffffffffffffffffffffffffff........#",
+    "#...............................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................#",
+    "#...............................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................#",
+    "#...............................................kk............................kk...................#",
+    "#...............................................kk............................kk...................#",
+    "#...............................................kk............................kk...................#",
+    "kkkkkkkkkkkkkkkkkkkk............................kk............................kkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkk............................kk............................kkkkkkkkkkkkkkkkkkkkkk",
+    "#.................kk............................kk.................................................#",
+    "#.................kk............................kk.................................................#",
+    "#.................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................................................#",
+    "#.................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................................................#",
+    "#.............................fffffffffffffffffffffffffffffff......................................#",
+    "#.............................fffffffffffffffffffffffffffffff......................................#",
+    "#.............................fffffffffffffffffffffffffffffff......................................#",
+    "#.............................fffffffffffffffffffffffffffffff......................................#",
+    "#.............................ffffffffff#################ffff......................................#",
+    "#.............................ffffffffff#################ffff......................................#",
+    "#.............................ffffffffff#################ffff......................................#",
+    "####################################################################################################",
+    "####################################################################################################",
+    "####################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [86, 8],
+      "vorn": false
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [86, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [86, 4],
+      "vorn": true
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [88, 22],
+      "vorn": false
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [88, 20],
+      "vorn": true
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [88, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [88, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [59, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [60, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [61, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [62, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [63, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [64, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [65, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [66, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [67, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [68, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [69, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 13]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [59, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [60, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [61, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [62, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [63, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [64, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [65, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [66, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [67, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [68, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [69, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 21]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 14]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 15]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 16]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 17]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 18]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 19]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [58, 20]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 14]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 15]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 16]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 17]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 18]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 19]
+    },
+    {
+      "moebel": "hb7Zaun",
+      "feld": [70, 20]
+    },
+    {
+      "moebel": "hb7Trog",
+      "feld": [60, 15]
+    },
+    {
+      "moebel": "wds6Wegweiser",
+      "feld": [94, 12]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [44, 12]
+    },
+    {
+      "moebel": "hb7Steintisch",
+      "feld": [41, 13],
+      "id": "tisch"
+    },
+    {
+      "moebel": "hb7Brett",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "hb7Felsbogen",
+      "feld": [26, 3]
+    },
+    {
+      "moebel": "wds6Briefkasten",
+      "feld": [8, 12]
+    },
+    {
+      "moebel": "haltestellenschild",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [7, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [80, 20]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [32, 15]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [19, 4]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [10, 22]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [13, 24]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [75, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [92, 8]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [49, 6]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [79, 17]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [49, 21]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [53, 15]
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [17, 22]
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [33, 22]
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [80, 24]
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "hb7Felsblock",
+      "feld": [15, 10]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [98, 14],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckBergstrasse",
+      "feld": [99, 14]
+    },
+    {
+      "name": "zurueckBergstrasse",
+      "feld": [99, 15]
+    },
+    {
+      "name": "weiterSchule",
+      "feld": [0, 14]
+    },
+    {
+      "name": "weiterSchule",
+      "feld": [0, 15]
+    },
+    {
+      "name": "steintisch",
+      "feld": [42, 16]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "kira",
+      "feld": [44, 16]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [70, 6],
+      "eigenschaften": {
+        "von": "70,6",
+        "bis": "73,6",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "pferd",
+      "typ": "tier",
+      "feld": [63, 18],
+      "eigenschaften": {
+        "von": "63,18",
+        "bis": "66,18",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [30, 22],
+      "eigenschaften": {
+        "von": "30,22",
+        "bis": "33,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [84, 16],
+      "eigenschaften": {
+        "von": "84,16",
+        "bis": "84,16",
+        "tun": "macht ein Foto",
+        "wann": "tag"
+      }
+    }
+  ]
+}

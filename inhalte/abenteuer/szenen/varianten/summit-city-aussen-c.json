@@ -271,28 +271,92 @@
       "feld": [32, 11]
     },
     {
+      "moebel": "wds6PinieB",
+      "feld": [13, 9]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [26, 7]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [64, 38]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [63, 7]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [19, 35]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [60, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [66, 9]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [38, 17]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [8, 44]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [48, 22]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [41, 12]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [49, 18]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [22, 9]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [58, 27]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [52, 49]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [23, 37]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [4, 44]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [63, 20]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [66, 46]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [22, 32]
+    },
+    {
       "moebel": "wds6Wacholder",
       "feld": [49, 14]
     },
     {
-      "moebel": "wds6Wacholder",
-      "feld": [36, 17]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [62, 20]
-    },
-    {
       "moebel": "scFelsKlein",
       "feld": [41, 19]
-    },
-    {
-      "moebel": "scFelsKlein",
-      "feld": [40, 15]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [64, 7]
     },
     {
       "moebel": "wds6Wacholder",
@@ -309,6 +373,22 @@
     {
       "moebel": "wds6Wacholder",
       "feld": [41, 23]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [51, 25]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [26, 22]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [44, 23]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [38, 8]
     }
   ],
   "ausloeser": [

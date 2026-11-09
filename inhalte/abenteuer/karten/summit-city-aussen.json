@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 62,
+  "nextobjectid": 80,
   "layers": [
     {
       "id": 1,
@@ -1734,6 +1734,420 @@
         },
         {
           "id": 56,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 112,
+          "y": 128,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "wds6Pinie",
+          "type": "moebel",
+          "x": 640,
+          "y": 288,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 960,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 424
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 59,
+          "name": "wds6Pinie",
+          "type": "moebel",
+          "x": 432,
+          "y": 736,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 776
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 1056,
+          "y": 224,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 264
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 608,
+          "y": 112,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 1008,
+          "y": 384,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 424
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 352,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 64,
+          "name": "wds6Kegelbaum",
+          "type": "moebel",
+          "x": 656,
+          "y": 112,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 65,
+          "name": "wds6Pinie",
+          "type": "moebel",
+          "x": 32,
+          "y": 672,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 712
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 66,
+          "name": "wds6Kegelbaum",
+          "type": "moebel",
+          "x": 592,
+          "y": 192,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 248
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 67,
+          "name": "wds6Kegelbaum",
+          "type": "moebel",
+          "x": 256,
+          "y": 128,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "name": "wds6Pinie",
+          "type": "moebel",
+          "x": 1024,
+          "y": 112,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 69,
+          "name": "wds6Kegelbaum",
+          "type": "moebel",
+          "x": 656,
+          "y": 704,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 760
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 70,
+          "name": "wds6Kegelbaum",
+          "type": "moebel",
+          "x": 224,
+          "y": 528,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 584
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 672,
+          "y": 352,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 392
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 72,
+          "name": "wds6PinieB",
+          "type": "moebel",
+          "x": 864,
+          "y": 144,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 73,
+          "name": "wds6Pinie",
+          "type": "moebel",
+          "x": 448,
+          "y": 112,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 74,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 544,
@@ -1756,7 +2170,7 @@
           ]
         },
         {
-          "id": 57,
+          "id": 75,
           "name": "scFelsKlein",
           "type": "moebel",
           "x": 944,
@@ -1779,7 +2193,7 @@
           ]
         },
         {
-          "id": 58,
+          "id": 76,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 976,
@@ -1802,7 +2216,7 @@
           ]
         },
         {
-          "id": 59,
+          "id": 77,
           "name": "scFelsKlein",
           "type": "moebel",
           "x": 544,
@@ -1825,30 +2239,7 @@
           ]
         },
         {
-          "id": 60,
-          "name": "wds6Wacholder",
-          "type": "moebel",
-          "x": 608,
-          "y": 112,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 61,
+          "id": 78,
           "name": "scFelsKlein",
           "type": "moebel",
           "x": 704,
@@ -1862,6 +2253,29 @@
               "name": "tiefe",
               "type": "int",
               "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "name": "scFelsKlein",
+          "type": "moebel",
+          "x": 640,
+          "y": 192,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
             },
             {
               "name": "kollision",

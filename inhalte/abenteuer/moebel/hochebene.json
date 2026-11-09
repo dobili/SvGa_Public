@@ -31,6 +31,136 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "hb7Schule": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png",
+      "breite": 384,
+      "hoehe": 368,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "hb7Basketballfeld": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Basketball_Court_1.png",
+      "breite": 208,
+      "hoehe": 208,
+      "kollision": false,
+      "art": "boden",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Schaukel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "spielgeraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Spielturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_10.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "spielgeraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Aushang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Trog": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "trog",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "hb7Zaun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "hb7Werkstatt": {
+      "quelle": "spiel/eigene/garage_rolltor.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Felsblock": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "hb7Felsbogen": {
+      "quelle": "spiel/eigene/felsbogen_rot.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fels",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "hb7Steintisch": {
+      "quelle": "spiel/eigene/stein_flach_rot.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Brett": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "spiel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "hb7Basketballkorb": {
+      "quelle": "spiel/eigene/basketballkorb_wand.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "sport",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

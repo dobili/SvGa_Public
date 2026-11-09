@@ -48,5 +48,25 @@
     "sicher": 0.9,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_3.png": {
+    "beschreibung": "Kurze Parkbank aus hellem Holz mit Metallbeinen von der Seite: Rückenlehne rechts, Sitzfläche links; wer sitzt, schaut nach links. 1×3 Kacheln.",
+    "art": "bank",
+    "blick": "links",
+    "nutzbar_von": ["links"],
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png": {
+    "beschreibung": "Kurze Parkbank aus hellem Holz mit Metallbeinen von der Seite: Rückenlehne links, Sitzfläche rechts; wer sitzt, schaut nach rechts. 1×3 Kacheln.",
+    "art": "bank",
+    "blick": "rechts",
+    "nutzbar_von": ["rechts"],
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

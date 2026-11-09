@@ -84,6 +84,7 @@ anders vermerkt; zuständig für 12 und `orte/maple-falls.md` ist mittel-1, für
 
 ## Erledigt
 
-| Nr.  | Wer                 | Stand |
-| ---- | ------------------- | ----- |
-| 1–38 | mittel-1 / mittel-2 | offen |
+| Nr.                                                                                                                                                                          | Wer                 | Stand                                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1–38                                                                                                                                                                         | mittel-1 / mittel-2 | offen                                                                                                                                                                                                |
+| 1, 2, 3, 5 (Cedar Creek, Landstraße, Flussweg), 6, 7, 11, 16, 18, 19, 20, 21, 22, 24, 27, 28, 29, 30, 31, 32, 36, 37, 38 (Teile in 13); dazu 33 (R1 in 13) und 34 (S2 in 13) | mittel-2            | erledigt in `13_Wegenetz.md` (263df78f) und `orte/cedar-creek.md` (Ortsplan neu nach 7a.2, 9.11.2026); Fluss, Zedernpfad und Übergang Park ↔ Landstraße mit mittel-1 abgestimmt (Vorschlag gesendet) |

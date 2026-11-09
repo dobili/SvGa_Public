@@ -938,6 +938,56 @@
       "stil": "klassisch",
       "breite": 80,
       "hoehe": 116
+    },
+    "rv5Ladentisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_323.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5Kasse": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Register_Market_Stand_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5Vitrine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "vitrine",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5Parkbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv5Holzbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
     }
   }
 }

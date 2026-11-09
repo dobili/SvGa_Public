@@ -2,7 +2,7 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/riverton-bahnhofshalle.json",
   "art": "innen",
-  "beschreibung": "Die Bahnhofshalle von Riverton (Szenen 26, 35): Backstein aus den 1880er Jahren, hohe Fenster, ein heller Steinboden, Hall, Durchsagen und das laute Ticken der großen Uhr. Die Glastür mit Fußmatte liegt in der Mitte der Südwand. Über der Mitte der Nordwand hängt die große Bahnhofsuhr, darunter die Holzbank von Mr. Harlan, dem alten Uhrmacher; rechts davon die Bahnsteigtür zu den Gleisen und ein Netzplan, links die Fahrplantafel und ein Fenster. An der Westseite der Zeitungsstand von Pops: zwei Zeitungsregale an der Wand, davor der Verkaufsschalter, weiter unten der alte Fahrkartenschalter. Vier Säulen tragen die Decke. An der Ostseite drei orange Wartebänke hintereinander, das Fundbüro mit Schalter in der Südostecke, ein Gepäckwagen mit Koffer, Kaffee- und Getränkeautomat. Unten links eine Reihe Schließfächer, neben den Bänken ein Mülleimer, Topfpflanzen in den Ecken, eine Taube hat sich hereinverirrt, Reisende ziehen Koffer zum Bahnsteig.",
+  "beschreibung": "Die Bahnhofshalle von Riverton (Szenen 26, 35): Backstein aus den 1880er Jahren, hohe Fenster, ein heller Steinboden, Hall, Durchsagen und das laute Ticken der großen Uhr. Die Glastür mit Fußmatte liegt in der Mitte der Südwand. Über der Mitte der Nordwand hängt die große Bahnhofsuhr, darunter die Holzbank von Mr. Harlan, dem alten Uhrmacher; rechts davon die Bahnsteigtür zu den Gleisen und ein Netzplan, links die Fahrplantafel und ein Fenster. An der Westseite der Zeitungsstand von Pops: zwei Zeitungsregale an der Wand, davor der hölzerne Ladentisch mit Kasse, weiter unten der alte Fahrkartenschalter. Vier Säulen tragen die Decke. An der Ostseite drei orange Wartebänke hintereinander, das Fundbüro mit einer Glasvitrine in der Südostecke, ein Gepäckwagen mit Koffer, Kaffee- und Getränkeautomat. Unten links eine Reihe Schließfächer, neben den Bänken ein Mülleimer, Topfpflanzen in den Ecken, eine Taube hat sich hereinverirrt, Reisende ziehen Koffer zum Bahnsteig.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -62,9 +62,13 @@
       "feld": [2, 3]
     },
     {
-      "moebel": "rv5Schalter",
+      "moebel": "rv5Ladentisch",
       "feld": [3, 6],
       "id": "kiosk"
+    },
+    {
+      "moebel": "rv5Kasse",
+      "auf": "kiosk"
     },
     {
       "moebel": "rv5Schalter",
@@ -120,7 +124,7 @@
       "feld": [20, 4]
     },
     {
-      "moebel": "rv5Schalter",
+      "moebel": "rv5Vitrine",
       "feld": [21, 12]
     },
     {

@@ -137,21 +137,21 @@ Birch Lane und Park sind zusammen 100 Kacheln breit, gut 12 Bildschirme (Hochfor
 Bildschirm).
 Jeder Abschnitt bekommt etwas zum Entdecken (Regel 7a.2); Funde sind fett.
 
-| Abschnitt (von West nach Ost)  | Entdeckung                                                                                                  |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| Birch Lane West, Haus Whitlock | Briefkasten mit verblichenem „Whitlock“ (`briefkastenWhitlock`, Ansehen), Katze bei Lily                    |
-| vor Haus Hayes                 | Schild „Zu verkaufen“, Eichhörnchen im Ahorn                                                                |
-| Haus Martínez                  | Carla am Fahrrad (N-MF3)                                                                                    |
-| Spielplatz                     | Owen; **„Bauer aus Plastik“** im Sandkasten (`fundBauer`, 5 Münzen; Pratt: „Aus dem Schulset!“)             |
-| Schulhof                       | Mr. Pratt am Fahnenmast                                                                                     |
-| Südseite, Veranda Calloway     | Mrs. Calloway                                                                                               |
-| Diner und Parkplatz            | Diner (betretbar), Leuchtreklame mit flackerndem „p“ (`reklame`, Ansehen)                                   |
-| Haltestelle Südseite           | Fahrplan (`fahrplan`, Ansehen: „Schulbus 7:42“)                                                             |
-| Park West, große Eiche         | Mr. Abernathys Bank (vorhanden), **„rotes Ahornblatt“** unter der Eiche (`fundAhornblatt`, Album, 0 Münzen) |
-| Park Mitte, Halfpipe           | Jo (vorhanden)                                                                                              |
-| Park, Kiosk                    | Mr. Patel (vorhanden)                                                                                       |
-| Park Ufer, Steg                | Enten; Ausblick auf den Wasserfall (`aussichtWasserfall`, Ansehen, Ambrose sagt einen Satz)                 |
-| Park Ost, Haltestelle          | Bus nach Cedar Creek (vorhanden)                                                                            |
+| Abschnitt (von West nach Ost)  | Entdeckung                                                                                                                       |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| Birch Lane West, Haus Whitlock | Briefkasten mit verblichenem „Whitlock“ (`briefkastenWhitlock`, Ansehen), Katze bei Lily                                         |
+| vor Haus Hayes                 | Schild „Zu verkaufen“, Eichhörnchen im Ahorn                                                                                     |
+| Haus Martínez                  | Carla am Fahrrad (N-MF3)                                                                                                         |
+| Spielplatz                     | Owen; **„Bauer aus Plastik“** im Sandkasten (`fundBauer`, 5 Münzen; Pratt: „Aus dem Schulset!“)                                  |
+| Schulhof                       | Mr. Pratt am Fahnenmast                                                                                                          |
+| Südseite, Veranda Calloway     | Mrs. Calloway                                                                                                                    |
+| Diner und Parkplatz            | Diner (betretbar), Leuchtreklame mit flackerndem „p“ (`reklame`, Ansehen)                                                        |
+| Haltestelle Südseite           | Fahrplan (`fahrplan`, Ansehen: „Schulbus 7:42“)                                                                                  |
+| Park West, große Eiche         | Mr. Abernathys Bank (vorhanden), Eichhörnchen, Laub zum Durchlaufen                                                              |
+| Park Mitte, Halfpipe           | Jo (vorhanden)                                                                                                                   |
+| Park, Kiosk                    | Mr. Patel (vorhanden)                                                                                                            |
+| Park Ufer, Steg                | Enten; Absperrband am Steg (S5); dahinter Ausblick auf den Wasserfall (`aussichtWasserfall`) und **Initialen** (`fundInitialen`) |
+| Park Ost, Haltestelle          | Bus nach Cedar Creek (vorhanden)                                                                                                 |
 
 ## 2. Landstraße und Flussweg (`wegMapleCedar`)
 
@@ -352,7 +352,41 @@ Späne am Boden als Bodenkram (Kartenregeln 8.4.3: passend am Boden). Tür in de
 | Figuren für den Bibliotheksclub                         | Mr. Dunmore            | Maes neue Figuren in Szene 22; Figurensatz „Zedernholz“ als Extra (08 E3).          |
 | Rätsel der Woche                                        | Mrs. Okafor            | ihr „Ein Matt ist ein Bild“ (Bibel 2.8) im Alltag des Ortes.                        |
 
-## 5. Zeitbudget
+## 5. Wege, Sperren und Rückwege
+
+Wunsch des Autors (9.11.2026): Die Welt soll nicht schlauchartig sein. Akt 1 bekommt Stellen, die
+zuerst zu sind und sich später öffnen, mit einem Grund aus der Geschichte statt Fähigkeiten. Die
+Sperren S1 und S2 und der Waldweg nach Riverton kommen aus `13_Wegenetz.md` (mittel-2); hier
+bekommen sie Figuren, Aufgaben und Lohn. Neu von mir ist S5 im Park. Grundsätze für alle drei:
+
+- Man **sieht**, was hinter der Sperre liegt (Maisspitzen, Hügelkuppe, Wasserfall), und eine Figur
+  davor **nennt den Grund** in einem Satz. So weiß der Spieler, dass er zurückkommen soll.
+- Der Grund ist Alltag (Kühe, Sturm, morscher Steg), keine Fähigkeit.
+- Das Fahrrad gibt es erst in Akt 2 (Story-Bibel: im Kiosk „zu früh“, später im Schuppen in
+  Riverton). Akt 1 bekommt deshalb keine Fahrradsperre. Rückwege mit dem Rad stehen in
+  `13_Wegenetz.md`, Abschnitt 3.
+
+| Nr. | Karte, Stelle                                                                        | Grund                                                                                                                | Öffnung                                                                                                                                                         | Lohn des Rückwegs                                                                                                                                                                                                                                                                                                             |
+| --- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| S1  | Landstraße 45–60, Gatter zum Kürbishof Miller (N1)                                   | Walt Miller lässt niemanden aufs Feld, „die Kühe sind ausgebüxt“                                                     | Nach der Rätseltafel am Ortsausgang (Torwächter), Miller hat zugesehen. Vorher sagt Ada am Apfelstand gegenüber: „Walt macht nur auf, wenn einer denken kann.“  | Nebenort N1 (13_Wegenetz). Ergänzung: Die drei ausgebüxten Kühe stehen auf der Kuhweide (Landstraße 15–30) und am Fährstein; Otis hat sie „gestern schon gesehen“, Tessa beim Laufen auch. So führt die Kuhsuche über beide Karten des Wegs und an N-W1 und N-W2 vorbei.                                                      |
+| S2  | Zedernpfad (Q1), Waldrand hinter dem Park von Maple Falls ↔ Westrand von Cedar Creek | Eine Zeder ist im Sturm quer über den Pfad gefallen. Von Maple Falls aus sieht man den Stamm und dahinter die Kuppe. | Von der Cedar-Creek-Seite: Dex baut nach der Clubnadel die Seilwinde. Mrs. Holm an der Zedernhecke erzählt vorher vom Sturm („Die alte Zeder hat es erwischt“). | Abkürzung (15 Sekunden statt Landstraße und Flussweg); Zedernzapfen mit Initialen, Juno mit dem Tagebuch, Revanche gegen Jo (13_Wegenetz). Ergänzung: Auf der Kuppe eine Bank mit **Aussicht** auf beide Orte und die Brückenbaustelle nach Riverton (`aussichtKuppe`, Ansehen; Vorgeschmack auf Akt 2).                      |
+| S5  | Maple Falls, Park Ufer: Steg und Uferweg zum Wasserfall                              | Absperrband der Stadt: „Steg morsch – wird erneuert“. Mr. Pratt: „Die Stadt hat kein Geld, ich hab keine Zeit.“      | Wer mit der ersten Clubnadel aus Cedar Creek zurückkommt, findet den Steg erneuert: Pratt hat ihn am Wochenende selbst gebaut („Für Pokale baue ich alles“).    | Ausblick auf den Wasserfall (`aussichtWasserfall`, wandert hinter die Sperre) und im Geländer eingeritzt **„M. W. + E. C. 1952“** (`fundInitialen`, Album). Mrs. Calloway erklärt es, wenn man sie danach anspricht: Sie und Margaret Whitlock haben es als Mädchen geritzt, „und danach sechzig Jahre lang Karten gespielt“. |
+| –   | Cedar Creek Ostrand, Waldweg nach Riverton                                           | Brücke über den Bach im Bau                                                                                          | Ende von Akt 1 (`endeAkt1Gesehen`), wie heute                                                                                                                   | Akt 2; die Aussicht auf der Kuppe (S2) zeigt die Baustelle schon vorher.                                                                                                                                                                                                                                                      |
+
+**Vorschläge mit Grund** (für mittel-2 und `13_Wegenetz.md`):
+
+1. **Kühe über beide Karten** (S1): Die Quest „Die ausgebüxten Kühe“ führt dann an Apfelstand und
+   Fährstein vorbei. Grund: Der Spieler läuft den langen Weg ohnehin, so lohnt sich jede Ecke.
+2. **Vogelscheuche „Morphy“** (N1) und Adas dritte Vogelscheuche (N-W1) bleiben getrennt; Ada
+   spottet: „Walt gibt seinen Vogelscheuchen Namen. Meine heißen Vogelscheuche.“ Grund: Zwei Höfe,
+   zwei Temperamente, kein doppelter Inhalt.
+3. **S5 statt eines eigenen Funds**: Die Initialen ersetzen das rote Ahornblatt unter der Eiche.
+   Grund: Der Zeitrahmen bleibt bei höchstens 75 Minuten, und der Fund trägt mehr Geschichte
+   (Mrs. Whitlock, Brücke zu Szene 2 und 3, ohne etwas über Ambrose zu verraten).
+4. **Keine weitere Abkürzung am Flussweg.** Der Zedernpfad ist schon die Abkürzung von der
+   Cedar-Creek-Seite; eine zweite wäre doppelt. Die alte Fährstelle bleibt Rätselort (N-W2).
+
+## 6. Zeitbudget
 
 | Ort                     | Neue Aufgaben (Minuten)     | Gebäude, Figuren, Funde (Minuten)  | Summe     |
 | ----------------------- | --------------------------- | ---------------------------------- | --------- |
@@ -363,9 +397,11 @@ Späne am Boden als Bodenkram (Kartenregeln 8.4.3: passend am Boden). Tür in de
 
 Liegt ein Testlauf darüber, fallen zuerst N-MF3 und N-CC3 (die beiden Duelle) weg; dann bleibt der
 Zusatz bei 40 bis 60 Minuten. Die längeren Wege selbst (Laufzeit nach 7a) sind hier nicht
-mitgerechnet; sie gehören zum Maßstab.
+mitgerechnet; sie gehören zum Maßstab. Die Sperren (Abschnitt 5) ändern die Summe nicht: S5 ersetzt
+den Fund unter der Eiche, Aussicht und Gespräche an S1 und S2 dauern je unter einer Minute, und der
+Kürbishof N1 ist in `13_Wegenetz.md` gezählt.
 
-## 6. Was sich in den Ortsdokumenten ändert
+## 7. Was sich in den Ortsdokumenten ändert
 
 **`orte/maple-falls.md`**
 
@@ -377,9 +413,15 @@ mitgerechnet; sie gehören zum Maßstab.
   (Schulhof), `.carla` (Haus Martínez), `.owen` (Spielplatz). Statisten „Briefträgerin“ und „Kind mit
   Ball“ werden zu Figuren; die Kellnerin im Diner bleibt Statist.
 - Auslöser außen: `dinerTuer` (Übergang), `briefkastenWhitlock`, `blumenkasten`, `fahnenmast`,
-  `sandkasten`, `fundBauer`, `reklame`, `fahrplan`; Park: `fundAhornblatt`, `aussichtWasserfall`.
+  `sandkasten`, `fundBauer`, `reklame`, `fahrplan`; Park: `absperrungSteg` (S5, Zustand `stegNeu` nach der ersten
+  Clubnadel), dahinter `aussichtWasserfall` und `fundInitialen`; Mrs. Calloway bekommt danach einen
+  Satz zu den Initialen.
 - Auslöser im Diner: `dinerAusgang`, `jukebox`, `fotoWasserfall`, `tischsetWand`.
 - Quests: `mapleFalls.tischset`, `mapleFalls.post`, `mapleFalls.carla`; Runde `mapleFalls.tischset`.
+
+**`13_Wegenetz.md`** (Zedernpfad Q1, Stand von mittel-2 nachtragen): Bank mit `aussichtKuppe` auf
+der Hügelkuppe; Mrs. Holm nennt den Sturm als Grund für S2; Kühe von N1 auf der Kuhweide und am
+Fährstein (Vorschlag 1 in Abschnitt 5).
 
 **`orte/cedar-creek.md`** (Teil Cedar Creek)
 
@@ -406,7 +448,7 @@ mitgerechnet; sie gehören zum Maßstab.
   `faehrpfosten`, `fundKorken`. Quest `wegMapleCedar.faehrstein`, Runde `wegMapleCedar.faehrstein`.
 
 **Funde** (`funde.json`, neu): `tischset` (Maple Falls), `schachkurier` (Maple Falls), `bauerPlastik`
-(Maple Falls), `ahornblatt` (Maple Falls), `ahornsirup` (Weg), `kiesel` (Weg), `hufeisen` (Weg),
+(Maple Falls), `initialen` (Maple Falls), `ahornsirup` (Weg), `kiesel` (Weg), `hufeisen` (Weg),
 `korken` (Weg), `zedernspringer` (Cedar Creek), `messingknopf` (Cedar Creek), `eisvogelfeder` (Cedar
 Creek). Den „Zedernzapfen mit Initialen“ vergibt der Zedernpfad (`13_Wegenetz.md`, Q1).
 

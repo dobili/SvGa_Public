@@ -26,9 +26,11 @@ nachträgliches Möblieren:
   "boden": "holzHell", // Standardboden (materialien.json, boeden)
   "boeden": { "t": "teppichRot" }, // weitere Böden je Buchstabe im Raster
   "bruecken": ["h"], // begehbar, gezeichnet als Wasser mit Ufer; Brückenbild als Möbel darauf
+  "ufer": "stein", // optional: alles Wasser mit Steinkante statt Grasufer (Kai, Schleuse, Steinbruch)
   "dicht": true, // nur Lager und Archive: Belegung bis 60 % statt 45 % (dichte Regalreihen)
   // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
-  // Felswand (auch draußen, dann ohne "wandart"); Böden "schotter" und "felsboden".
+  // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
+  // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
     { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel

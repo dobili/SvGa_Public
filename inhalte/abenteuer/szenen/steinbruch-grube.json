@@ -2,9 +2,10 @@
   "karte": "steinbruch.grube",
   "datei": "karten/steinbruch-grube.json",
   "art": "aussen",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Rampen in der Mitte, Wasserloch links auf der Sohle, Radlader und Bauholz im Westen.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Der Stollenmund ist in einen Felsblock gebaut; sein Bild ist ein Bauteil und wirkt deshalb an den Seiten angeschnitten, der Fels deckt das ab. Rampen in der Mitte, Wasserloch mit Steinkante links auf der Sohle, Radlader, Bauholz, Bohlen und Werkzeugschuppen im Westen, Granitblöcke in Reihen auf Sohle und Zwischenstufe, Schotterhaufen und Steinpaletten, zwei Loren am Gleis.",
   "wand": "fels",
   "boden": "schotter",
+  "ufer": "stein",
   "boeden": {
     "r": "gras",
     "f": "felsboden"
@@ -370,6 +371,74 @@
     {
       "moebel": "wg4FelsgruppeB",
       "feld": [60, 17]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [36, 26]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [39, 26]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [42, 26]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [45, 26]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [8, 15]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [11, 15]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [14, 15]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [44, 36]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [48, 38]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [26, 18]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [36, 34]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [38, 34]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "st5Lore",
+      "feld": [47, 43]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [2, 38]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [3, 38]
+    },
+    {
+      "moebel": "st5Schuppen",
+      "feld": [6, 36]
     }
   ],
   "ausloeser": [

@@ -15,7 +15,7 @@ liegt an der Birch Lane oder im Park.
 ```
                          N
      Wasserfall · Fluss (hinter den Dächern, nicht begehbar) ──────────────►
- ┌────────────────── mapleFalls.aussen (56 × 33) ──────────────────┐┌── mapleFalls.park (30 × 20) ──┐
+ ┌────────────────── mapleFalls.aussen (112 × 40) ──────────────────┐┌── mapleFalls.park (70 × 40) ──┐
  │ [Haus Whitlock] [Lily]  [Hayes]  [Juno]   [Schule + Fahnenmast]  ││ ~~~~~ Fluss, Ufer, Enten ~~~~~ │
  │  Garten, Zäune, Ahorn als Allee                                  ││  Wiese, Halfpipe, Kiosk Patel  │
  │ ─────── Gehweg Nord ───────────────────────────────────────────  ││  Bänke am Weg                  │
@@ -37,6 +37,12 @@ liegt an der Birch Lane oder im Park.
 | Häuser Südseite                            | Holzhäuser, je Fassade 8–9, Türen in der Nordfassade zur Straße                                                                   | –                                                                             | nein           |
 | Diner                                      | Flachbau mit Leuchtreklame, Fassade 12                                                                                            | –                                                                             | nein (Kulisse) |
 | Kiosk Mr. Patel (Park)                     | Verkaufswagen mit Markise, 3 breit                                                                                                | – (Laden über Dialog)                                                         | nein           |
+
+Maßstab (`KARTENREGELN.md`, 7a): Die Birch Lane ist 112 Kacheln lang (gut 30 Sekunden zu Fuß), der
+Park 70 × 40 (20 Sekunden quer). Grundstücke an der Birch Lane sind 16 bis 20 Kacheln breit und
+reichen von der Straße 14 Kacheln nach hinten: Vorgarten 4, Haus 6, Garten hinter dem Haus 4 bis
+zum Fluss. Zwischen Haus Martínez und der Schule liegt ein Spielplatz (Statist: Kind mit Ball),
+zwischen Diner und den Häusern der Südseite ein kleiner Parkplatz.
 
 Regel für alle Häuser: Die Fassade ist halb so breit wie das Erdgeschoss innen (gerundet), die Tür
 sitzt außen und innen an derselben relativen Stelle (gleiche Wand, gleicher Anteil von links, ±1
@@ -161,8 +167,8 @@ Esstisch. Jeder Auslöser ist von einem freien Nachbarfeld erreichbar.
 | Sitzecke | Stehlampe                                            | (12, 5), neben dem Sessel                                                                                       | –                                | Metall, Schirm creme                                      | Regel 4.4                                                                |
 | Umzug    | Kartonstapel (2–3 Kartons)                           | (1, 8) bis (1, 11) entlang der Westwand                                                                         | –                                | Pappe                                                     | Umzug, lässt Spalte 2 frei                                               |
 | Umzug    | hoher Kartonstapel                                   | (10, 10) hinter dem Sofa                                                                                        | –                                | Pappe                                                     | Story-Bibel: „ein hoher Stapel hinter dem Sofa“                          |
-| Umzug    | Pizzakarton, leer                                    | (3, 9) auf dem Boden neben dem Laufweg                                                                                           | flach                            | Pappe                                                     | Auslöser `pizzakarton`                                                   |
-| Westwand | Tür zum Schlafzimmer (geschlossen)                   | Westwand, Reihe 7 (als Tür in der Wand, (1, 7) bleibt frei)                                                                         | –                                | Holz                                                      | nur Kulisse                                                              |
+| Umzug    | Pizzakarton, leer                                    | (3, 9) auf dem Boden neben dem Laufweg                                                                          | flach                            | Pappe                                                     | Auslöser `pizzakarton`                                                   |
+| Westwand | Tür zum Schlafzimmer (geschlossen)                   | Westwand, Reihe 7 (als Tür in der Wand, (1, 7) bleibt frei)                                                     | –                                | Holz                                                      | nur Kulisse                                                              |
 | Ecken    | Zimmerpflanze im Topf                                | (1, 12) und (12, 12)                                                                                            | –                                | Pflanze, Keramik                                          | Ecken (Regel 4.4)                                                        |
 | Eingang  | Fußmatte                                             | (6, 12) vor der Haustür                                                                                         | flach                            | Stoff                                                     | Eingang                                                                  |
 | Eingang  | Schuhregal mit Schuhen                               | (4, 12) neben der Haustür (die Südwand hat keine Wandfläche für Haken)                                          | Vorderseite unten                | Holz                                                      | Spuren von Leben                                                         |

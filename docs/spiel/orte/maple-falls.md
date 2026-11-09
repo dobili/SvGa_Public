@@ -361,6 +361,18 @@ Anrichte. Szenen 5, 6, 9, 11, 12.
 
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
+**Stand nach Runde 5 (gewählt: Variante C, überarbeitet nach den Hinweisen des Autors, 10.11.2026):**
+Größe 30 × 16 und Tür (7, 15) bleiben. Die Großküche liegt jetzt im Norden (Spalten 13–23, Reihen 3–6)
+hinter einer drei Reihen hohen Wand (Reihen 7–9, Regel 39); in ihrer Wandfläche die Durchreiche als
+Fenster (18, 8), Pinnwand (13, 8), Foto 1962 (16, 8) und die Küchentür (27, 8). Davor der Gang des
+Personals (Reihe 10), die rote Bar (Spalten 14–25) mit sechs Hockern direkt davor und der Kaffeemaschine
+auf der Platte; die Kassentheke am Westende (12–13), Kasse zum Gast. Hinter der Küche das Lager (25–28)
+mit Vorratsregalen und Kartons. Zwei Toiletten (Spalten 1–2 und 4–5) hinter einer drei Reihen hohen
+Wand mit Türen (2, 8) und (4, 8). Im früher leeren Teil oben links Spielautomaten-Ecke mit Bildern,
+eine Nische und eine Wartebank; unten links zwei Nischen mit runden Tischen zwischen den Lehnstühlen.
+Niedrige Glastür in der Südwand (eigenes Bild), Fußmatte davor. Die Tabelle unten beschreibt den
+früheren Stand A; die Szene in `szenen/maple-falls-diner.json` gilt.
+
 Rückmeldung des Autors zu Runde 4: „kein Diner, zu kläglich, nicht mal eine Mensa“ (KARTENREGELN 10.30).
 Neu geplant und gebaut nach dieser Liste.
 
@@ -497,8 +509,9 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   `bruecke_strasse_gehweg_quer_4` (Gehwege laufen mit über die Brücke, Brüstung außen; Felder 31–34 / 14–18), der Fluss läuft darunter mit Ufer weiter; Pfad 10–11
   vom Nordrand (Übergang `zedernpfad`, Felder unverändert) bis zum Uferweg. Das Schild „Sturmschaden“
   (`schildZedernpfad`, 13 §7.4, S2) steht am Wegrand (12, 5), nicht auf dem Pfad.
-- **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) in der Bucht (5–6 / 4–5); die
-  rot-weiße Sperrlatte `absperrungSteg` (S5) steht am Ufer davor (5, 6), neben dem Uferweg. Der neue
+- **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) draußen im Fluss (5–6 / 2–3), die
+  Uferkante läuft durch; davor am Ufer der Absperrbock „GESPERRT“ `absperrungSteg` (5–6 / 5–6, eigenes
+  Bild, Regel 48), neben dem Uferweg. Der neue
   Steg nach der ersten Nadel folgt als Objekt mit Bedingung in Runde 5.
 - **Uferweg** (Erde, 2 breit) Reihen 7–8 von West nach Ost, Kurve 27–28 / 9–13 zur Parkstraße.
 - **Nordteil:** Abernathys Bank `parkbank` (3, 11) mit zweiter Bank (1, 11) daneben, beide zum Weg;

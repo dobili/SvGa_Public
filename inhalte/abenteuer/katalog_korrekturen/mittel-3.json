@@ -273,5 +273,30 @@
     "raumfunktion": ["schule", "buero"],
     "orte": ["schule", "bibliothek"],
     "beschreibung": "Großes grünes Pult mit Holzkante und hellen Beinen, von vorn; links daneben ein grüner Schulstuhl von der Seite."
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_25.png": {
+    "innen_aussen": "innen",
+    "zustand": "gebraucht",
+    "material": ["stoff", "holz"],
+    "stil": ["einfach"],
+    "epoche": "gegenwart",
+    "wohlstand": "mittel",
+    "ganz": true,
+    "gegenstuecke": "",
+    "befestigung": "boden",
+    "ablage": null,
+    "treppe": null,
+    "einzigartig": false,
+    "licht": false,
+    "anlass": null,
+    "anzahl": "einzeln",
+    "reihe": false,
+    "sicher": 0.9,
+    "korrektur": "mittel-3",
+    "nur_pfad": true,
+    "art": "bank",
+    "raumfunktion": ["warten", "musik", "wohnen"],
+    "orte": ["diner", "laden", "schule", "wohnhaus"],
+    "beschreibung": "Kurze graue Polsterbank (2 Kacheln) auf hölzernen Beinen, von vorn; Sitzbank zum Warten oder für ein Klavier."
   }
 }

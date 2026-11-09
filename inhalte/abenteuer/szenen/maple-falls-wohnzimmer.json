@@ -95,7 +95,7 @@
     {
       "moebel": "wzArbeitsplatte",
       "feld": [13, 2],
-      "versatz": [0, 6]
+      "versatz": [2, 6]
     },
     {
       "moebel": "wzArbeitsplatte",
@@ -153,8 +153,8 @@
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [5, 10],
-      "versatz": [0, 18]
+      "feld": [5, 11],
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf4RegalSchmal",
@@ -165,15 +165,15 @@
       "auf": "tvboard"
     },
     {
-      "moebel": "wzTuer",
-      "feld": [5, 11],
+      "moebel": "mf5TuerSuedHolz",
+      "feld": [5, 12],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [5, 10],
+      "feld": [5, 11],
       "eigenschaften": {
         "richtung": "oben"
       }

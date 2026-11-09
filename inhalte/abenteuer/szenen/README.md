@@ -27,6 +27,8 @@ nachträgliches Möblieren:
   "boeden": { "t": "teppichRot" }, // weitere Böden je Buchstabe im Raster
   "bruecken": ["h"], // begehbar, gezeichnet als Wasser mit Ufer; Brückenbild als Möbel darauf
   "dicht": true, // nur Lager und Archive: Belegung bis 60 % statt 45 % (dichte Regalreihen)
+  // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
+  // Felswand (auch draußen, dann ohne "wandart"); Böden "schotter" und "felsboden".
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
     { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel

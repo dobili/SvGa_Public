@@ -117,5 +117,29 @@
     "bauteil": true,
     "sicher": 0.9,
     "korrektur": "niedrig-1"
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Pumpkin_Ripe_16x16.png": {
+    "beschreibung": "Reifer orangefarbener Kürbis mit grüner Ranke und Blättern, steht auf dem Boden, 1×2 Kacheln.",
+    "art": "pflanze",
+    "innen_aussen": "aussen",
+    "orte": ["garten", "bauernhof"],
+    "zustand": "neu",
+    "stil": ["laendlich"],
+    "blick": "keine",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
+  },
+  "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Ripe_16x16.png": {
+    "beschreibung": "Reifer orangefarbener Kürbis mit grüner Ranke und Blättern, steht auf dem Boden, 1×2 Kacheln.",
+    "art": "pflanze",
+    "innen_aussen": "aussen",
+    "orte": ["garten", "bauernhof"],
+    "zustand": "neu",
+    "stil": ["laendlich"],
+    "blick": "keine",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
   }
 }

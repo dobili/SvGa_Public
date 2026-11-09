@@ -306,6 +306,16 @@ zum **Westrand**. Die Landschaft wechselt von Industrie (Norden, nahe Riverton) 
 Kanal reicht bis zum Nord- und Südrand, der Seitenarm bis zum Westrand. Offen sind Nordrand (17–18),
 Südrand (17–18) und Westrand (Pfad nach Lockport, Reihen 97–98). **Abzweige:** drei, jedes mit Ziel.
 
+**Gebaut (Runde 5, mittel-3):** drei Varianten mit gleicher fester Geometrie (Kanal, Pfad, Kurven,
+Seitenarm mit Treidelbrücke 11–12 / 101–103, Pfad nach Lockport 0–10 / 97–98, Fabrikhof 2–13 / 37–42 mit
+Zaun in Reihe 43, Werkstraße 8–16 / 50–51, Wegweiser (9, 95), Rastanleger 19 / 155–156). Auslöser:
+`zurueckRiverton` (17–18, 0), `weiterBruecke` (17–18, 189), `lockport` (0, 97–98), `tafel` (15, 50) an der
+Rätseltafel (14, 47) neben dem Haltestellenschild, `fundZahnrad` (12, 42) am Hofzaun, Start (17, 1);
+Mr. Dale (10, 128). Die neuen Auslöser `meilenstein`, `rastKanal`, `fundKonservendose` kommen mit den
+Dialogen in Runde 6; Schild, Rastbank und Anleger stehen schon. A nach dem Dokument; B karger im Herbst
+(eine Halle, Container, breiter Ziegelturm, nur Kürbisse, gelbe Pappeln); C reicher (zwei Graffiti-Mauern,
+zwei Ziegeltürme, Hühnerstall, Pappeln auf beiden Ufern).
+
 ### 1.5 Eisenbrücke und Abhang (`wegRivertonIronwood.bruecke`, 30 × 160)
 
 Der Pfad kommt am **Nordrand bei den Spalten 17–18** an, noch am Westufer des Kanals (Kanal Spalten

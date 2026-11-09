@@ -533,6 +533,26 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb5SchildPerfectMove": {
+      "quelle": "spiel/eigene/schild_perfect_move.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5SchildAcademy": {
+      "quelle": "spiel/eigene/schild_academy.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

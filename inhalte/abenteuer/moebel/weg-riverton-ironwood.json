@@ -1,0 +1,254 @@
+{
+  "moebel": {
+    "wr5Fabrikhalle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "wr5FabrikhalleB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "wr5Rohbau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Building_Skeleton_1.png",
+      "breite": 112,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "wr5Ziegelturm": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Silos_2_16x16.png",
+      "breite": 80,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5Ziegelturm2": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Silos_1_16x16.png",
+      "breite": 112,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5Scheune": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Barn_Small_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Huehnerstall": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Chicken_Coop_16x16.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Vogelscheuche": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Scarecrow_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Heu": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Fresh_Pile_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Kohl": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cabbage_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Kuerbis": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Pappel": {
+      "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Big_16x16.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wr5PappelHoch": {
+      "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Huge_16x16.png",
+      "breite": 64,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wr5PappelGelb": {
+      "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Yellow_Big_16x16.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wr5Eiche": {
+      "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Oak_Green_Medium_16x16.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "wr5Container": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Container_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "wr5Autowrack": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Car_Wreck_4.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "wr5Leiterwagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Full_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5Karren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Small_Wood_Cart_Full_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr5MauerLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Wall_4.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5Mauer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Wall_7.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5Mauer2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Wall_12.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5MauerRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Wall_5.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "wr5GraffitiKrone": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Big_White_Crown_Graffiti.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wr5GraffitiWolf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Wolf_Clean_Graffiti.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wr5GraffitiGelb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Yellow_Writing_Graffiti.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wr5GraffitiBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Writing_Graffiti.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    }
+  }
+}

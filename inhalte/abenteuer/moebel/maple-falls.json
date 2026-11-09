@@ -898,7 +898,8 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sichtbar_breite": 30
     },
     "mf4Lowboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_70.png",
@@ -1438,13 +1439,14 @@
     },
     "mf4FernseherStand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
-      "breite": 28,
+      "breite": 32,
       "hoehe": 32,
       "kollision": false,
       "art": "fernseher",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "sichtbar_breite": 29
     },
     "mf4BaumGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_145.png",
@@ -1499,6 +1501,15 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf4Luke": {
+      "quelle": "spiel/eigene/luke_leiter.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "treppe",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

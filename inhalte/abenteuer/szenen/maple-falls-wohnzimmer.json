@@ -161,8 +161,7 @@
     },
     {
       "moebel": "mf4FernseherStand",
-      "auf": "tvboard",
-      "versatz": [-2, 0]
+      "auf": "tvboard"
     },
     {
       "moebel": "wzTuer",

@@ -23,7 +23,7 @@ sich zur Straße.
 | Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        | erledigt mittel-1 (9.11.2026)             |
 | Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        | erledigt mittel-1 (9.11.2026)             |
 | Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
-| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        |                                           |
+| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        | erledigt mittel-1 (9.11.2026)             |
 | Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
 | Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        | erledigt mittel-1 (9.11.2026)             |
 | Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        | erledigt mittel-1 (9.11.2026)             |

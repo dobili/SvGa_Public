@@ -646,7 +646,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     und ihr Gegenstand mitwandert), alles, was die Geschichte verlangt (Ortsdokument, 12/13/14).
     Verschieden: Anordnung, Wahl der Möbelserie und Bilder, Deko, Dichte (eine schlichtere, eine
     reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
-    Kleinkram. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    Kleinkram, Häuser und Gärten ohne Rolle in der Geschichte (anderes Hausmodell, andere Farbe).
+    Ein anderer Teppich oder eine andere Lampe allein macht noch keine Variante: Der Autor soll auf den
+    ersten Blick drei verschiedene Räume sehen. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
     `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
     README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
     zum Nachschlagen.

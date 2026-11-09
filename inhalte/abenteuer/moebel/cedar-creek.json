@@ -1452,6 +1452,36 @@
       "art": "busch",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "cc6RegalSeiteHell": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6RegalSeiteDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_73.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6RegalSeiteGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_66.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

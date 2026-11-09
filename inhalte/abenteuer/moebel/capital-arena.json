@@ -388,6 +388,101 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "ca7Rundtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ca7Pflanzekl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Nadelbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "ca7Obstkarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Fruit_Flowers_Cart_1.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Suessigkeiten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_1.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7BankGarten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7LaterneBogen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Statuenbrunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_2_1.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "ca7Fahne2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Flag_2.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "ca7Hecke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_16.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

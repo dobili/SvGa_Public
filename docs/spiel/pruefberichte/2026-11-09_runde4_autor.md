@@ -36,14 +36,14 @@ sich zur Straße.
 | außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        | erledigt mittel-1 (9.11.2026)                                       |
 | außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        | erledigt mittel-1 (9.11.2026)                                       |
 | außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  | erledigt mittel-1 (9.11.2026)                                       |
-| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        |                                                                     |
-| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 |                                                                     |
-| Park       | Teich rechteckig                                                                                                      | 10.23        |                                                                     |
-| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        |                                                                     |
-| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  |                                                                     |
-| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         |                                                                     |
-| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        |                                                                     |
-| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  |                                                                     |
+| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        | mittel-4, Runde 6                                                   |
+| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 | mittel-4, Runde 6                                                   |
+| Park       | Teich rechteckig                                                                                                      | 10.23        | mittel-4, Runde 6                                                   |
+| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        | mittel-4, Runde 6                                                   |
+| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  | mittel-4, Runde 6                                                   |
+| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         | mittel-4, Runde 6                                                   |
+| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        | mittel-4, Runde 6                                                   |
+| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  | mittel-4, Runde 6                                                   |
 
 ## Wege
 

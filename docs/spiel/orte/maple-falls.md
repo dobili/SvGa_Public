@@ -454,6 +454,55 @@ am Ufer (5, 4). Am Uferweg stehen vier Bäume in gleichen Abständen (1, 7, 13, 
 (14, 22) und (19, 13), Abfalleimer (2, 12) und (16, 23), Bäume am Teich (13, 28) und im Osten (35, 28).
 Für Jo fehlt eine Mauer im Katalog; er sitzt auf der Bank am Basketballplatz.
 
+**Runde 6 (mittel-4, 9.11.2026), nach der Rückmeldung des Autors** (`pruefberichte/2026-11-09_runde4_autor.md`,
+Zeilen „Park“; KARTENREGELN 10). Größe bleibt 44 × 32, Szene `szenen/maple-falls-park.json`, Möbel
+mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
+
+- **Fluss** (10.23, 10.1): Nordufer durchgehend in Reihe 1 (Gebüsch als Waldrand, Lücke nur am Pfad
+  10–11), Wasser in den Reihen 2–4 mit zwei Buchten bis Reihe 5 (Spalten 3–8 am Steg, 14–20, 25–33),
+  Biegung nach Süden bei Spalten 29–34, gewundener Lauf (Spalten 29–35 je nach Reihe) unter der
+  Straßenbrücke (31–34 / 15–17) durch, danach Bogen nach Osten und am Ostrand in den Reihen 20–23 zur
+  Landstraße. Am Westrand (Reihen 2–4) und Ostrand reicht er bis an den Kartenrand, nirgends
+  unterbrochen.
+- **Fußsteg zum Zedernpfad** (10.6): ein ganzer Holzsteg aus Pier_Bridge_2 (links) und Pier_Bridge_1
+  (rechts), Pfähle außen, über den Brückenfeldern `h` (10–11 / 2–4, Szene `bruecken`); Pfad 10–11
+  vom Nordrand (Übergang `zedernpfad`, Felder unverändert) bis zum Uferweg. Das Schild „Sturmschaden“
+  (`schildZedernpfad`, 13 §7.4, S2) steht am Wegrand (12, 5), nicht auf dem Pfad.
+- **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) in der Bucht (5–6 / 4–5); die
+  rot-weiße Sperrlatte `absperrungSteg` (S5) steht am Ufer davor (5, 6), neben dem Uferweg. Der neue
+  Steg nach der ersten Nadel folgt als Objekt mit Bedingung in Runde 5.
+- **Uferweg** (Erde, 2 breit) Reihen 7–8 von West nach Ost, Kurve 27–28 / 9–13 zur Parkstraße.
+- **Nordteil:** Abernathys Bank `parkbank` (3, 11) mit zweiter Bank (1, 11) daneben, beide zum Weg;
+  Abfalleimer (5, 11); Bäume abwechselnd (Laubbaum 6, 9; Ahorn 10, 9); Bank des Rentners (17, 11) mit
+  Abfalleimer; Kiosk Patel (24, 10), Auslöser `kiosk` (25, 13) unverändert.
+- **Laternen** (10.19): eine Bauart (Street_Lamp_5) am Uferweg (2, 15, 24; Fuß in Reihe 9), an der
+  Straße nördlich (14, 22, 38; Fuß in Reihe 13) und südlich (9, 21, 38; Fuß in Reihe 19), jeweils direkt
+  am Weg oder Gehweg, ohne Kollision (`vorn`), damit der schmale Gehweg frei bleibt.
+- **Bushaltestelle** (10.17): Wartehäuschen von hinten (Bus_Stop_2, 24–28 / 22–24), offen nach Norden
+  zur Straße; davor eine Wartefläche aus Pflaster (23–29 / 19–21) am Gehweg; Auslöser
+  `bushaltestelle` (26, 21) unverändert direkt vor der offenen Seite.
+- **Basketballplatz** (10.22): ganzer Platz mit Linien, Rand und zwei Körben (Basketball_Court_5,
+  1–14 / 20–30); zwei Seitenbänke (15, 22) und (15, 26) mit Blick nach links zum Feld; Jo (Figur
+  `skaterJo`) an der oberen Bank (16, 24).
+- **Pflasterplatz** (Platz für das öffentliche Brett im Post-Game, 13 §7.4): 17–21 / 21–25, über einen
+  Pflasterstreifen (18–19 / 19–20) an den Gehweg angeschlossen; Bank am Ostrand (22, 22) mit Blick auf
+  den Platz; Blumenkasten am Südrand des Pflasters (18, 26).
+- **Teich** (10.23): unregelmäßig (22–29 / 25–29), mit Grasrand zum Kartenrand; drei Seerosen
+  (Props_Water_11 bis 13) im Wasser, Enten am Ufer.
+- **Ostteil:** Wiese mit Ahorn (36, 3) und Laubbaum (38, 8) nördlich, Bäume (31, 26) und (39, 25)
+  südlich des Flusses.
+
+Abschnitte (je etwa ein Bildschirm, 11 Spalten): A (0–10) Steg S5, Fußsteg, Abernathys Bänke,
+Basketballplatz; B (11–21) Uferweg, Rentnerbank, Pflasterplatz, Jo; C (22–32) Kiosk, Haltestelle,
+Teich, Flussbiegung; D (33–43) Brücke, Ostwiese, Fluss zur Landstraße. Laufzeit quer 44 Kacheln, 13 s.
+
+Bildprüfung (drei Runden): Fluss berührte oben den Rand (Nordufer geschlossen), Teich lief in den
+Südrand (eine Reihe Gras dazwischen), Pfad zum Platz hing frei (Pflasterstreifen), Kurve des
+Uferwegs lief unter den Kiosk (zurück auf 27–28). Danach mit der verbesserten Zeichnung des Haupt-Chats
+(Innenecken, Ränder, Wellen, Brückenfelder) neu gezeichnet und geprüft: ohne Befund. Die Meldungen „Laterne allein mitten im Raum“ (Regel für
+Innenräume) und „wirkt angeschnitten“ (Pier_26 ist absichtlich zerbrochen, die Seerosen sind Wasserkacheln) sind begründet; die
+Katalogangaben dazu stehen in `katalog_korrekturen/mittel-4.json`.
+
 **Übergänge (gebaut):** `park` Westrand (0, 15–17) ↔ Birch Lane (63, 25–27); `landstrasse` Ostrand
 (43, 15–17) ↔ Landstraße `zurueckPark` (0, 15–17); `zedernpfad` Nordrand (10–11, 0) ↔ Pfadkarte
 `zedernZurueckPark` (10–11, 23), in `orte.json` eingetragen; `bushaltestelle` (26, 21); `kiosk` (25, 13).

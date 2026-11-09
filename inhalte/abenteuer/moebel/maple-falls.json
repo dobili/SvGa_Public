@@ -1748,6 +1748,107 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf6Busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sprout_4.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6Moos": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Moss_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6StegBrueckeL": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_2.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf6StegBrueckeR": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf6StegMorsch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_26.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "mf6Basketballplatz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Basketball_Court_5.png",
+      "breite": 224,
+      "hoehe": 176,
+      "kollision": false,
+      "art": "sport",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "mf6BankSeiteLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_5.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "mf6Haltestelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_2.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben"
+    },
+    "mf6Seerose1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_11.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6Seerose2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_12.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6Seerose3": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_13.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

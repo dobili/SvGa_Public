@@ -1,0 +1,208 @@
+{
+  "karte": "portDelacroix.musikhaus",
+  "datei": "karten/varianten/port-delacroix-musikhaus-neu-c.json",
+  "art": "innen",
+  "zustand_der_karte": "musikhausOffen",
+  "beschreibung": "Variante C, Wohnzimmer der Stadt: Grüne Wände, roter Teppichboden, gemütlich. In der Nordwestecke das helle Klavier und ein Regal mit Brettern, das Schild „Musik und Schach, seit 1889“ zwischen zwei Fenstern, in der Nordostecke eine große Pflanze, ein Teppich mit einem gelben Sessel zum Zuhören. Vier runde Tische mit je einem Brett und zwei Stühlen, rechts ein Notenregal, vorn eine Kiste und eine Pflanze. Tür mit Matte in der Mitte der Südwand, Auslöser für das Schild links daneben.",
+  "wand": "gruen",
+  "boden": "teppichRot",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [13, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6KlavierHell",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "pd6Regal",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "pd6Regal",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "pd6SchildMusikhaus",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "pd6PflanzeGross",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "pd6Teppich",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "pd6Rundtisch",
+      "feld": [4, 7],
+      "id": "c4_7"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "c4_7"
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [3, 7],
+      "zu": "c4_7"
+    },
+    {
+      "moebel": "pd6StuhlLinks",
+      "feld": [6, 7],
+      "zu": "c4_7"
+    },
+    {
+      "moebel": "pd6Rundtisch",
+      "feld": [9, 7],
+      "id": "c9_7"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "c9_7"
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [8, 7],
+      "zu": "c9_7"
+    },
+    {
+      "moebel": "pd6StuhlLinks",
+      "feld": [11, 7],
+      "zu": "c9_7"
+    },
+    {
+      "moebel": "pd6Rundtisch",
+      "feld": [14, 9],
+      "id": "c14_9"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "c14_9"
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [13, 9],
+      "zu": "c14_9"
+    },
+    {
+      "moebel": "pd6StuhlLinks",
+      "feld": [16, 9],
+      "zu": "c14_9"
+    },
+    {
+      "moebel": "pd6Rundtisch",
+      "feld": [4, 10],
+      "id": "c4_10"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "c4_10"
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [3, 10],
+      "zu": "c4_10"
+    },
+    {
+      "moebel": "pd6StuhlLinks",
+      "feld": [6, 10],
+      "zu": "c4_10"
+    },
+    {
+      "moebel": "pd6SesselGelb",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "pd6Pflanze",
+      "feld": [18, 11]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "pd6Notenregal",
+      "feld": [17, 5]
+    },
+    {
+      "moebel": "pd6PflanzeGross",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [10, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 13],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "musikhausAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "schild",
+      "feld": [9, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "odile",
+      "feld": [11, 5]
+    },
+    {
+      "name": "henri",
+      "feld": [7, 4]
+    },
+    {
+      "name": "remy",
+      "feld": [12, 11]
+    },
+    {
+      "name": "lou",
+      "feld": [8, 10]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "rustikal", "modern"],
+  "variante": "c"
+}

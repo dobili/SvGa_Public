@@ -1,0 +1,158 @@
+{
+  "karte": "desertSprings.antiquariat",
+  "datei": "karten/desert-springs-antiquariat.json",
+  "art": "innen",
+  "beschreibung": "Das Antiquariat von Mr. Okoro im alten Bahnhof von Desert Springs, 20 × 13 Kacheln, Dielen, Holzwand. An der Nordwand Bücherregale, ein Fenster und die alte Bahnhofsuhr, an den Seitenwänden schmale Regale; in der Mitte zwei Regalreihen und ein Lesetisch mit Lampe. Rechts der Tresen mit Mr. Okoro und eine Vitrine mit alten Fahrkarten, links Kisten mit Briefen, Zeitungsstapel und die Kellerluke. Tür in der Mitte der Südwand.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########",
+    "####################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [10, 13],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [10, 11],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4RegalC",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Bahnhofsuhr",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "cc6RegalSeiteHell",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "cc6RegalSeiteDunkel",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc6RegalSeiteGrau",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [4, 7]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [10, 7],
+      "id": "lesetisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "lesetisch",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [10, 6],
+      "zu": "lesetisch"
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [15, 6],
+      "id": "tresen"
+    },
+    {
+      "moebel": "mf4Vitrine",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [2, 10],
+      "id": "briefkiste"
+    },
+    {
+      "moebel": "mf2Zeitungsstapel",
+      "feld": [8, 9]
+    },
+    {
+      "moebel": "mf4Luke",
+      "feld": [12, 7]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "antiquariatAusgang",
+      "feld": [10, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okoro",
+      "feld": [17, 8]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"]
+}

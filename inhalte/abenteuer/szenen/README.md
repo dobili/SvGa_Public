@@ -33,6 +33,7 @@ nachträgliches Möblieren:
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
   // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).
   // Roter Fels (Canyon, Wüste): "wand": "felsRot", Böden "sandRot" und "felsbodenRot".
+  // Geysirbecken: Boden "sinter" (heller Sinter, selten Risse und orange Bakterienränder).
   // Zweite Fassung einer Karte (Musikhaus nach musikhausOffen): "zustand_der_karte": "<flag>",
   // eigene Datei; der Hintergrund heißt dann <kennung>-<flag>.png (die App tauscht ab Runde 6).
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts

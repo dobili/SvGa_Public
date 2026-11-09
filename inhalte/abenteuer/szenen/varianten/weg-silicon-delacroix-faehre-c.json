@@ -2,10 +2,10 @@
   "karte": "wegSiliconDelacroix.faehre",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Ein Passagierschiff mit Sonnendeck aus Dielen und dunkler Holzreling. Achtern Container, Fässer, Kisten, ein Rettungsboot und ein Beiboot; dahinter Liegestühle und ein Kübelbaum. Mr. Ruiz wartet mit dem Schachbrett vor dem Salon, neben dem das Steuerhaus steht; an der Salonwand die Rätseltafel. Weiter vorn die Bordbar mit Kübelbäumen, Bankreihen und eine Reihe Liegestühle, Rettungsringe ringsum, am Bug Poller und Taue. Die Bordwand ist vorläufig ein Steinufer; das Bild „wasser_rumpf“ (\"ufer\": \"rumpf\") ist beim Haupt-Chat bestellt.",
+  "beschreibung": "Variante C, reich: Ein Passagierschiff mit Sonnendeck aus Dielen und dunkler Holzreling. Achtern Container, Fässer, Kisten, ein Rettungsboot und ein Beiboot; dahinter Liegestühle und ein Kübelbaum. Mr. Ruiz wartet mit dem Schachbrett vor dem Salon, neben dem das Steuerhaus steht; an der Salonwand die Rätseltafel. Weiter vorn die Bordbar mit Kübelbäumen, Bankreihen und eine Reihe Liegestühle, Rettungsringe ringsum, am Bug Poller und Taue. Ringsum die weiße Bordwand mit Bullaugen.",
   "boden": "gras",
   "wandart": "gras",
-  "ufer": "stein",
+  "ufer": "rumpf",
   "boeden": {
     "d": "dielen"
   },

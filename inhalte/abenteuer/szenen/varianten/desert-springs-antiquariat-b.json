@@ -1,0 +1,155 @@
+{
+  "karte": "desertSprings.antiquariat",
+  "datei": "karten/varianten/desert-springs-antiquariat-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, hell: helle Regale, roter Teppich, der Tresen links neben der Tür, die Kisten und die Kellerluke rechts, eine lange Regalreihe quer durch den Raum.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "#........tt........#",
+    "##########.#########",
+    "####################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [10, 13],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [10, 11],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc6RegalHellA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc6RegalHellC",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "cc6RegalHellA",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc6RegalHellC",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc6RegalSeiteHell",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc6RegalSeiteGrau",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [13, 5]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [5, 8],
+      "id": "tresen"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [14, 9],
+      "id": "lesetisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "lesetisch",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [16, 9],
+      "id": "briefkiste"
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [17, 4]
+    },
+    {
+      "moebel": "mf4Luke",
+      "feld": [1, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "antiquariatAusgang",
+      "feld": [10, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okoro",
+      "feld": [7, 10]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "boeden": {
+    "t": "teppichRot"
+  },
+  "variante": "b"
+}

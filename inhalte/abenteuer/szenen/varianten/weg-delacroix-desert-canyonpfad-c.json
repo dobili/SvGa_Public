@@ -3,13 +3,13 @@
   "datei": "karten/varianten/weg-delacroix-desert-canyonpfad-c.json",
   "art": "aussen",
   "beschreibung": "Variante C, blühend: Sandboden mit Flecken aus Felsboden, viele Kakteen, Bänke an den Rastpunkten, der Pfad schwingt weit nach Süden.",
-  "wand": "fels",
-  "boden": "sand",
+  "wand": "felsRot",
+  "boden": "sandRot",
   "boeden": {
     "e": "erde",
     "k": "schotter",
     "p": "pflaster",
-    "f": "felsboden"
+    "f": "felsbodenRot"
   },
   "raster": [
     "################################################################################################################################################################",
@@ -247,8 +247,9 @@
       "feld": [145, 8]
     },
     {
-      "moebel": "iw5Schuppen",
-      "feld": [141, 12]
+      "moebel": "dd6Wuestenbahnhof",
+      "feld": [141, 10],
+      "id": "wuestenbahnhof"
     },
     {
       "moebel": "dd6Wasserturm",
@@ -259,8 +260,8 @@
       "feld": [118, 10]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [64, 16],
+      "moebel": "dd6SteinFlach",
+      "feld": [63, 16],
       "id": "miraStein"
     },
     {
@@ -280,100 +281,96 @@
       "feld": [37, 8]
     },
     {
-      "moebel": "dd6Kaktus",
-      "feld": [4, 17]
+      "moebel": "dd6Saguaro",
+      "feld": [4, 15]
     },
     {
-      "moebel": "dd6KaktusB",
+      "moebel": "dd6KaktusBluehend",
       "feld": [9, 12]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [14, 17]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [19, 12]
     },
     {
-      "moebel": "dd6KaktusB",
-      "feld": [24, 17]
+      "moebel": "dd6Saguaro",
+      "feld": [24, 15]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [29, 17]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusKlein",
       "feld": [39, 17]
     },
     {
-      "moebel": "dd6KaktusB",
+      "moebel": "dd6KaktusBluehend",
       "feld": [44, 22]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6Saguaro",
       "feld": [49, 17]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [54, 16]
     },
     {
-      "moebel": "dd6KaktusB",
+      "moebel": "dd6KaktusKlein",
       "feld": [59, 11]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [64, 11]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6Saguaro",
       "feld": [69, 11]
     },
     {
-      "moebel": "dd6KaktusB",
+      "moebel": "dd6KaktusBluehend",
       "feld": [74, 16]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [79, 17]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [84, 22]
     },
     {
-      "moebel": "dd6KaktusB",
-      "feld": [104, 22]
+      "moebel": "dd6Saguaro",
+      "feld": [104, 17]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [109, 10]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusKlein",
       "feld": [114, 15]
     },
     {
-      "moebel": "dd6KaktusB",
+      "moebel": "dd6KaktusBluehend",
       "feld": [119, 10]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [124, 15]
+      "moebel": "dd6Saguaro",
+      "feld": [124, 13]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [129, 13]
     },
     {
       "moebel": "felsKlein",
       "feld": [7, 12]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [24, 16]
     },
     {
       "moebel": "felsKlein",
@@ -416,12 +413,12 @@
       "feld": [111, 15]
     },
     {
-      "moebel": "mfBank",
-      "feld": [60, 11]
+      "moebel": "dd6Geierkreis",
+      "feld": [18, 15]
     },
     {
       "moebel": "mfBank",
-      "feld": [130, 13]
+      "feld": [60, 11]
     }
   ],
   "ausloeser": [

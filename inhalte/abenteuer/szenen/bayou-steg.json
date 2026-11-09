@@ -1,0 +1,316 @@
+{
+  "karte": "bayou.steg",
+  "art": "aussen",
+  "beschreibung": "Bayou Noir (Variante A, nach dem Ortsdokument): Schwarzes, stilles Wasser bis an alle Ränder. Vom Westrand führt ein Steg herein; ein Stück davon steht unter Wasser, nur die Pfosten ragen heraus (Sperre S8, Hochwasser). Auf der ersten Insel Therons Hütte mit Fässern und Feuerholz, ein Anlegesteg nach Süden mit dem Luftboot. Nach Osten läuft der Nebelsteg ins Leere, nach Nordosten ein Steg zur Zypresseninsel und weiter nach Süden zur Reiherinsel. Sumpfzypressen mit Moos, Schilf an den Ufern, Therons Luftboot am Steg; das überflutete Stück (S8) zeigt den Steg halb unter Wasser.",
+  "boden": "gras",
+  "wandart": "gras",
+  "bruecken": ["h"],
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~~~",
+    "~~~~~~~~~~~~...........~~~~~.................~~~",
+    "~~~~~~~~~~~~...........hhhhh.................~~~",
+    "~~~~~~~~~~~~...........hhhhh.................~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "hhhhhhhhhhhh...........hhhhhhh~~~~~~~~~hh~~~~~~~",
+    "hhhhhhhhhhhh...........hhhhhhh~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~hh~~~~~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~...........~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "by6StegQuer7",
+      "feld": [0, 17]
+    },
+    {
+      "moebel": "by6StegUeberflutetQuer3",
+      "feld": [7, 17]
+    },
+    {
+      "moebel": "by6StegQuer2",
+      "feld": [10, 17]
+    },
+    {
+      "moebel": "by6StegQuer7",
+      "feld": [23, 17]
+    },
+    {
+      "moebel": "by6StegQuer5",
+      "feld": [23, 11]
+    },
+    {
+      "moebel": "by6StegLaengs3",
+      "feld": [16, 25]
+    },
+    {
+      "moebel": "by6Luftboot",
+      "feld": [18, 26]
+    },
+    {
+      "moebel": "by6StegLaengs9",
+      "feld": [39, 13]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [13, 11]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [18, 12]
+    },
+    {
+      "moebel": "rvHolzscheite",
+      "feld": [19, 15]
+    },
+    {
+      "moebel": "wr5Eiche",
+      "feld": [13, 19]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [30, 3]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [34, 6]
+    },
+    {
+      "moebel": "wr5Eiche",
+      "feld": [40, 4]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [38, 23]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [41, 26]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [16, 18]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [43, 24]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [43, 10]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [39, 29]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [18, 20]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [13, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [19, 20]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [44, 22]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 12]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [37, 21]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [22, 15]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [12, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [12, 22]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [42, 21]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [22, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 18]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [39, 10]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [14, 15]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [44, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [37, 28]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [39, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 16]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [17, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [19, 19]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [32, 11]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [20, 20]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [12, 12]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 17],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckDelacroix",
+      "feld": [0, 17]
+    },
+    {
+      "name": "zurueckDelacroix",
+      "feld": [0, 18]
+    },
+    {
+      "name": "nebel",
+      "feld": [28, 17]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "theron",
+      "feld": [17, 20]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [40, 24],
+      "eigenschaften": {
+        "von": "40,24",
+        "bis": "40,24",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "alligator",
+      "typ": "tier",
+      "feld": [30, 28],
+      "eigenschaften": {
+        "von": "26,28",
+        "bis": "36,30",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "libellen",
+      "typ": "tier",
+      "feld": [6, 14],
+      "eigenschaften": {
+        "von": "3,14",
+        "bis": "10,14",
+        "verhalten": "fliegen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "frosch",
+      "typ": "tier",
+      "feld": [21, 23],
+      "eigenschaften": {
+        "von": "21,23",
+        "bis": "21,23",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "rustikal",
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "landhaus"
+  ],
+  "datei": "karten/bayou-steg.json"
+}

@@ -2,14 +2,14 @@
   "karte": "wegDelacroixDesert.canyonpfad",
   "datei": "karten/weg-delacroix-desert-canyonpfad.json",
   "art": "aussen",
-  "beschreibung": "Der Canyonpfad von Weg 6, 160 × 30 Kacheln, roter Fels (Wand fels, bis das rote Bild kommt). Ganz im Osten hält der Wüstenzug an einem einsamen Bahnsteig mit Prellbock, Holzhäuschen, Wasserturm und Bank. Der Pfad fällt über eine Rampe in den Canyon und läuft in Stufen nach Westen: Wanderschild mit Rätseltafel, trockenes Bachbett mit Kieseln, eine Engstelle, ein Hang mit Feigenkakteen (Ersatz für Säulenkakteen), Miras flacher Stein, Mrs. Holloway an einem Felsblock, eine Seitenschlucht nach Norden voller Geröll (später der Weg zur Sternwarte), dann öffnet sich der Canyon zum Westrand.",
-  "wand": "fels",
-  "boden": "sand",
+  "beschreibung": "Der Canyonpfad von Weg 6, 160 × 30 Kacheln, roter Fels. Ganz im Osten hält der Wüstenzug an einem einsamen Bahnsteig mit Prellbock, Holzhäuschen mit Vordach, Wasserturm und Bank. Der Pfad fällt über eine Rampe in den Canyon und läuft in Stufen nach Westen: Wanderschild mit Rätseltafel, trockenes Bachbett mit Kieseln, eine Engstelle, ein Hang mit Säulen- und blühenden Kakteen, Miras flacher roter Stein, Mrs. Holloway an einem Felsblock, eine Seitenschlucht nach Norden voller Geröll (später der Weg zur Sternwarte), dann öffnet sich der Canyon zum Westrand.",
+  "wand": "felsRot",
+  "boden": "sandRot",
   "boeden": {
     "e": "erde",
     "k": "schotter",
     "p": "pflaster",
-    "f": "felsboden"
+    "f": "felsbodenRot"
   },
   "raster": [
     "################################################################################################################################################################",
@@ -247,8 +247,9 @@
       "feld": [145, 8]
     },
     {
-      "moebel": "iw5Schuppen",
-      "feld": [141, 12]
+      "moebel": "dd6Wuestenbahnhof",
+      "feld": [141, 10],
+      "id": "wuestenbahnhof"
     },
     {
       "moebel": "dd6Wasserturm",
@@ -259,8 +260,8 @@
       "feld": [120, 9]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [62, 15],
+      "moebel": "dd6SteinFlach",
+      "feld": [61, 15],
       "id": "miraStein"
     },
     {
@@ -280,68 +281,68 @@
       "feld": [33, 8]
     },
     {
-      "moebel": "dd6Kaktus",
-      "feld": [4, 17]
+      "moebel": "dd6Saguaro",
+      "feld": [4, 15]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [11, 12]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [18, 17]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6Saguaro",
       "feld": [25, 16]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusKlein",
       "feld": [39, 16]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [46, 15]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6Saguaro",
       "feld": [53, 10]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [60, 15]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [67, 10]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [74, 19]
+      "moebel": "dd6Saguaro",
+      "feld": [74, 17]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusKlein",
       "feld": [81, 14]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [102, 14]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6Saguaro",
       "feld": [109, 9]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [116, 14]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [123, 9]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [130, 18]
+      "moebel": "dd6Saguaro",
+      "feld": [130, 16]
     },
     {
       "moebel": "fels",
@@ -398,6 +399,10 @@
     {
       "moebel": "cc3Kiesel",
       "feld": [114, 14]
+    },
+    {
+      "moebel": "dd6Geierkreis",
+      "feld": [18, 15]
     }
   ],
   "ausloeser": [

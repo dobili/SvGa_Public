@@ -1,0 +1,155 @@
+{
+  "karte": "desertSprings.garage",
+  "datei": "karten/varianten/desert-springs-garage-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, schlicht: kein Auto, zwei Werkbänke an der Nordwand, der Clubtisch rechts, Reifen und Fässer links; graue Fliesen, helle Wand.",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#########.########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [9, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [9, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc7Werkbank",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "cc7Werkbank",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "dsRegal",
+      "feld": [13, 1],
+      "id": "regal"
+    },
+    {
+      "moebel": "mf3PokalKlein",
+      "feld": [0, 0],
+      "auf": "regal"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [1, 6],
+      "id": "reifen"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [2, 6]
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "reifen"
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [12, 6],
+      "id": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [12, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [12, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [13, 5],
+      "zu": "club"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [13, 7],
+      "zu": "club"
+    },
+    {
+      "moebel": "mf4RegalNiedrig",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "cc4Holzkiste",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [15, 4]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [4, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [9, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "garageAusgang",
+      "feld": [9, 11]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "tomas",
+      "feld": [5, 6]
+    },
+    {
+      "name": "mira",
+      "feld": [3, 7]
+    },
+    {
+      "name": "dot",
+      "feld": [15, 9]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": [
+    "industrie",
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "schule"
+  ],
+  "variante": "b"
+}

@@ -1,10 +1,10 @@
 {
   "karte": "wegSiliconDelacroix.faehre",
   "art": "aussen",
-  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als Deckhaus mit der Rätseltafel an der Wand. Auf dem Vorderdeck Bankreihen zum Bug, zwei Liegestühle und Rettungsringe; am Bug Poller, Taue und die Rampe zum Anleger. Die Bordwand ist vorläufig ein Steinufer; das Bild „wasser_rumpf“ (\"ufer\": \"rumpf\") ist beim Haupt-Chat bestellt.",
+  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als Deckhaus mit der Rätseltafel an der Wand. Auf dem Vorderdeck Bankreihen zum Bug, zwei Liegestühle und Rettungsringe; am Bug Poller, Taue und die Rampe zum Anleger. Ringsum die weiße Bordwand mit Bullaugen.",
   "boden": "gras",
   "wandart": "gras",
-  "ufer": "stein",
+  "ufer": "rumpf",
   "boeden": {
     "d": "holzDunkel"
   },

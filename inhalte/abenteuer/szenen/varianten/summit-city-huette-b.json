@@ -1,0 +1,175 @@
+{
+  "karte": "summitCity.huette",
+  "datei": "karten/varianten/summit-city-huette-b.json",
+  "art": "innen",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Variante B, die schlichtere: Kamin links, Regal und Vitrine rechts, ein Clubtisch in der Mitte, wenig Kleinkram.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "laendlich", "natur", "rustikal", "einfach", "modern"],
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [8, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sc7Kamin",
+      "feld": [3, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "iwVitrine",
+      "feld": [14, 1],
+      "id": "vitrine"
+    },
+    {
+      "moebel": "pokal",
+      "auf": "vitrine"
+    },
+    {
+      "moebel": "iw5Kreidebrett",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 16]
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [2, 5]
+    },
+    {
+      "moebel": "mf2Rundtisch",
+      "feld": [5, 5],
+      "id": "ward"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "ward"
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [9, 8],
+      "id": "t1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "t1"
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [10, 1]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "mf2TeppichAlt",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [16, 9]
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "kisteRot",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "wzCouchtisch",
+      "feld": [2, 3]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "huetteAusgang",
+      "feld": [8, 12]
+    },
+    {
+      "name": "pokal",
+      "feld": [14, 4]
+    },
+    {
+      "name": "kaminfeuer",
+      "feld": [4, 4]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "ward",
+      "feld": [5, 8]
+    },
+    {
+      "name": "kit",
+      "feld": [7, 11]
+    },
+    {
+      "name": "haraldsen",
+      "feld": [13, 11]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [2, 4],
+      "eigenschaften": {
+        "von": "2,4",
+        "bis": "2,4",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "variante": "b"
+}

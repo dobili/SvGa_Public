@@ -25,7 +25,7 @@ halber Höhe zweigt nach Westen der Fahrweg zur **Hochebene** ab (L9, eigenes Or
                                        ║
                                        ╚══╗  (Ostrand unten, 120–122)
    Diner-Karte 150 × 30:  ◄══════════════╝══ Wüstenstraße ══ King's Diner ══ Motel ══◄══ [Desert Springs]
-                          Westrand (0, 18–20)                                  Ostrand (149, 14–16)
+                          Westrand (0, 19–21)                                  Ostrand (149, 15–17)
 ```
 
 Die Diner-Karte liegt also westlich von Desert Springs; ihr Westrand stößt an den Ostrand der
@@ -34,11 +34,11 @@ Bergstraße. Norden ist auf allen Karten oben.
 ### 1.1 Wüstenstraße mit Diner (`wegDesertSummit.diner`, 150 × 30)
 
 Die **Old Mother Road** (Asphalt, drei Felder breit, Bankette aus Kies je ein Feld) kommt am **Ostrand
-in den Reihen 14–16** aus Desert Springs. Sie läuft nach Westen, schwingt zwischen den Spalten 118 und
-104 nach Norden auf die **Reihen 10–12** (dort liegen Motel und Diner nördlich der Straße, der
-Fernfahrerplatz südlich), kehrt zwischen 62 und 50 auf die **Reihen 18–20** zurück und verlässt die
-Karte am **Westrand in den Reihen 18–20** zur Bergstraße. Boden Sand mit Kiesflecken, roter Fels
-(`wand: fels`) als Tafelberge am Nord- und Südrand. Die Sonne steht hoch, die Hitze ist Tönung (Szene).
+in den Reihen 15–17** aus Desert Springs. Sie läuft nach Westen, schwingt bei den Spalten 104–106
+nach Norden auf die **Reihen 12–14** (dort liegen Motel und Diner nördlich der Straße, der
+Fernfahrerplatz südlich), kehrt bei den Spalten 50–52 auf die **Reihen 19–21** zurück und verlässt die
+Karte am **Westrand in den Reihen 19–21** zur Bergstraße. Boden roter Sand (`sandRot`), Bankett Kies, roter Fels
+(`wand: felsRot`) als Tafelberge am Nord- und Südrand. Die Sonne steht hoch, die Hitze ist Tönung (Szene).
 
 ```text
  Spalte 0     15     30     45     60     75     90    105    120    135   149
@@ -48,9 +48,9 @@ Karte am **Westrand in den Reihen 18–20** zur Bergstraße. Boden Sand mit Kies
  R 8  │              │  Alte      │  Neon   Tafel  Parkplatz        Windrad  │
  R10  │              │  Zapfsäule ╔═════════════════════════╗               │
  R12  │              │            ║   Old Mother Road (3)   ╚═══════╗       │
- R14  │              │     ╔══════╝ Fernfahrerplatz: 2 Sattelzüge  ╚═══════◄ Ostrand 14–16
+ R14  │              │     ╔══════╝ Fernfahrerplatz: 2 Sattelzüge  ╚═══════◄ Ostrand 15–17
  R18  ◄══════════════════════╝ Tisch mit Brett (Earl)                       │
- R20  │ Westrand 18–20  Roadrunner   Kakteen     Kojote        Kakteen       │
+ R20  │ Westrand 19–21  Roadrunner   Kakteen     Kojote        Kakteen       │
  R29  └fels─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -69,10 +69,10 @@ Karte am **Westrand in den Reihen 18–20** zur Bergstraße. Boden Sand mit Kies
 | D11 (0–14) Ausblick              | die Berge              | erste Pinien, Rastplatz mit Bank, Sicht nach Westen auf die Berge (Sichtachse)                                                                  | Rastbank, Wegweiser „Summit City“      |
 
 **Wegeführung:** Hauptweg drei Felder Asphalt mit zwei Kurven (nach Norden bei 104–118, zurück bei 50–62);
-**zwei Abzweige**: (1) Parkplatz vor Motel und Diner (Asphalt, 76–103 / 7–9), (2) Pfad um den Diner in den
+**zwei Abzweige**: (1) Parkplatz vor Motel und Diner (Asphalt, 72–103 / 10–11), (2) Pfad um den Diner in den
 Hinterhof (zwei Felder Sand, 72–73 / 2–9). **Sichtachsen:** Von Osten sieht man das Neonschild des Diners
 schon ab Spalte 120 über der Kurve; vom Diner aus nach Westen die Berge hinter den Pinien von D11.
-**Ränder:** Nord und Süd roter Fels (Tafelberge, nicht begehbar), offen nur Ost (14–16) und West (18–20).
+**Ränder:** Nord und Süd roter Fels (Tafelberge, nicht begehbar), offen nur Ost (15–17) und West (19–21).
 **Laufzeit:** Hauptweg etwa 165 Kacheln, 47 Sekunden.
 
 ### 1.2 Bergstraße (`wegDesertSummit.bergstrasse`, 40 × 130)
@@ -122,12 +122,12 @@ West Fels und Wald, Süden Fels; offen nur Ost (120–122), West (70–71) und N
 
 | Auslöser (Karte, Feld)                             | Gegenstück (Karte, Feld)                              | Bemerkung                                                          |
 | -------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------ |
-| diner `zurueckDesert` Ostrand (149, 14–16)         | desertSprings.aussen `highway` Westrand (0, 18–20)    | Rückweg landet laut orte.json am `bahnhof` (desert-springs.md 1.8) |
-| diner `weiterBergstrasse` Westrand (0, 18–20)      | bergstrasse `zurueckDiner` Ostrand (39, 120–122)      | gleiche Breite (3)                                                 |
+| diner `zurueckDesert` Ostrand (149, 15–17)         | desertSprings.aussen `highway` Westrand (0, 18–20)    | Rückweg landet laut orte.json am `bahnhof` (desert-springs.md 1.8) |
+| diner `weiterBergstrasse` Westrand (0, 19–21)      | bergstrasse `zurueckDiner` Ostrand (39, 120–122)      | gleiche Breite (3)                                                 |
 | bergstrasse `abzweigHochebene` Westrand (0, 70–71) | hochebene.felsentuerme `zurueckBergstrasse` (Ostrand) | zwei Felder; Hochebene folgt mit eigenem Ortsdokument              |
 | bergstrasse `weiterSummit` Nordrand (18–20, 0)     | summitCity.aussen `wegDesert` (Südrand, 3 Felder)     | Summit City folgt; Breite drei Felder                              |
 
-Start je Karte: diner (147, 15) Blick nach links; bergstrasse (38, 121) Blick nach links.
+Start je Karte: diner (147, 16) Blick nach links; bergstrasse (38, 121) Blick nach links.
 
 ## 2. Ortsbild
 
@@ -203,22 +203,22 @@ und in der Ferne ein Seilbahnmast, der im Wind summt.
 ### 4.1 Wüstenstraße mit Diner (`wegDesertSummit.diner`, Bühnenbild)
 
 **Größe** 150 × 30. **Boden** Sand, Straße Asphalt (drei Felder), Bankett Kies, Parkplatz Asphalt,
-Hinterhof Sand. **Wand** Fels (`wand: fels`) als Tafelberge am Nord- und Südrand, zwei bis drei Reihen
-tief. **Ränder** offen nur Ost (149, 14–16) und West (0, 18–20).
+Hinterhof Sand. **Wand** roter Fels (`wand: felsRot`) als Tafelberge am Nord- und Südrand, drei Reihen
+tief. **Ränder** offen nur Ost (149, 15–17) und West (0, 19–21).
 
-| Abschnitt | Inventar                                                                                                                    |
-| --------- | --------------------------------------------------------------------------------------------------------------------------- |
-| D1        | Ortsschild (142, 12), Kakteen (138, 18), (145, 19), Steppenläufer                                                           |
-| D2        | Wasserturm (124, 3), Windrad (130, 4), Viehtränke (128, 9)                                                                  |
-| D3        | Reklametafel (108, 2) mit Sicht von der Kurve                                                                               |
-| D4        | Motel 90–103 / 3–8, Neon „VACANCY“ an der Fassade, Eismaschine (89, 8), leerer Pool (95, 13)                                |
-| D5        | Diner 76–88 / 3–8, Neonschild auf dem Dach (Objekt `auf`), Tür (82, 8), Rätseltafel (85, 9) `tafel`, Parkplatz 76–103 / 7–9 |
-| D6        | Sattelzüge (62, 13) und (62, 17), Reifenstapel (70, 14), Tisch mit Brett (66, 22), zwei Hocker, Sonnensegel; Earl (65, 22)  |
-| D7        | Hinterhof 74–89 / 1–2, Mülltonnen (78, 1), Kisten (86, 1), `fundNeonK` (83, 2)                                              |
-| D8        | Zapfsäule (52, 12), Vordachrest, Autowrack (48, 14), Kojote (Belebung)                                                      |
-| D9        | Felsbrocken, kleiner Felsbogen (36, 2), Kakteen; Roadrunner (Belebung, quert die Straße)                                    |
-| D10       | Trockengras, Büsche, Geier (Szene)                                                                                          |
-| D11       | Pinien (4, 6), (9, 4), Rastbank (6, 15), Wegweiser (2, 16)                                                                  |
+| Abschnitt | Inventar                                                                                                                                  |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| D1        | Ortsschild (142, 12), Kakteen (138, 18), (145, 19), Steppenläufer                                                                         |
+| D2        | Wasserturm (124, 3), Windrad (130, 4), Viehtränke (128, 9)                                                                                |
+| D3        | Reklametafel (108, 2) mit Sicht von der Kurve                                                                                             |
+| D4        | Motel 88–101 / 3–9 (fünf Zimmer), Motelschild mit „VACANCY“ (102, 5)                                                                      |
+| D5        | Diner 76–85 / 3–9, Neonschild auf dem Dach (Objekt `auf`), Tür (80–81, 9), Rätseltafel (86, 8) `tafel` (86, 10), Parkplatz 72–103 / 10–11 |
+| D6        | Platz 55–79 / 15–25, Sattelzüge (57, 16) und (57, 21), Reifen (77, 16), Tisch unter dem Schirm mit Brett (70, 19); Earl (72, 25)          |
+| D7        | Hinterhof 72–104 / 2, Container (73, 3), Neon-K (80, 2) `fundNeonK`                                                                       |
+| D8        | Zapfsäule (52, 12), Vordachrest, Autowrack (48, 14), Kojote (Belebung)                                                                    |
+| D9        | Felsbrocken, kleiner Felsbogen (36, 2), Kakteen; Roadrunner (Belebung, quert die Straße)                                                  |
+| D10       | Trockengras, Büsche, Geier (Szene)                                                                                                        |
+| D11       | Pinien (4, 6), (9, 4), Rastbank (6, 15), Wegweiser (2, 16)                                                                                |
 
 ### 4.2 Bergstraße (`wegDesertSummit.bergstrasse`, Bühnenbild)
 
@@ -245,3 +245,16 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
   alte Tankstelle; Bergstraße mit zwei Kehren und weniger Wald, Abzweig weiter unten.
 - **C, die reichere:** zusätzlich ein Campingplatz mit Wohnwagen bei D2, mehr Neon (zweites Schild am
   Motel), drei Sattelzüge; Bergstraße mit Quelle und Picknickplatz, dichterer Wald oben.
+
+### 4.4 Gebaute Karten (mittel-2, 9.11.2026 nachts)
+
+- **Diner** (`weg-desert-summit-diner`): wie 4.1, eigene Bilder des Haupt-Chats (Diner-Wagen, Motel,
+  Motelschild, Neonschild ohne K, Neon-K, Sattelzüge, Kakteen, roter Stein, Felsbogen, Geierkreise).
+  Die alte Tankstelle ist das Zapfsäulen-Vordach aus dem Katalog, der Tisch ein Sonnenschirm mit Tisch
+  und Stühlen. Windrad (eigenes Bild) neben dem Wasserturm; Wasserturm und Reklametafel aus dem Katalog.
+  **B:** Motel links vom Diner, ein Sattelzug, Tafelberg statt Felsbogen, ohne Tankstelle.
+  **C:** Diner und Motel enger, Wohnwagen am Wasserturm, Felsbogen und Zapfsäule weiter westlich, mehr
+  blühende Kakteen.
+- **Bergstraße** (`weg-desert-summit-bergstrasse`): wie 4.2 mit grauem Fels (`wand: fels`), Leitplanken
+  (eigene Bilder) talseits und an der Außenseite jeder Kehre. **B:** zwei lange Kehren (80, 34), weniger
+  Wald. **C:** drei weite Kehren (Straße 4–35), Picknickplatz an der Quelle, dichter Wald.

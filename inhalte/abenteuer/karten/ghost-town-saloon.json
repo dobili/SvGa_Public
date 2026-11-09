@@ -1,902 +1,1706 @@
 {
-  "compressionlevel": -1,
-  "orientation": "orthogonal",
-  "renderorder": "right-down",
-  "tiledversion": "1.11.0",
-  "type": "map",
-  "version": "1.10",
-  "infinite": false,
-  "width": 20,
-  "height": 14,
-  "tilewidth": 16,
-  "tileheight": 16,
-  "nextlayerid": 5,
-  "nextobjectid": 35,
-  "layers": [
+ "compressionlevel": -1,
+ "orientation": "orthogonal",
+ "renderorder": "right-down",
+ "tiledversion": "1.11.0",
+ "type": "map",
+ "version": "1.10",
+ "infinite": false,
+ "width": 20,
+ "height": 14,
+ "tilewidth": 16,
+ "tileheight": 16,
+ "nextlayerid": 5,
+ "nextobjectid": 35,
+ "layers": [
+  {
+   "id": 1,
+   "name": "boden",
+   "type": "tilelayer",
+   "width": 20,
+   "height": 14,
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "data": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "waende",
+   "type": "tilelayer",
+   "width": 20,
+   "height": 14,
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "data": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "id": 3,
+   "name": "objekte",
+   "type": "tilelayer",
+   "width": 20,
+   "height": 14,
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "data": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": 4,
+   "name": "ausloeser",
+   "type": "objectgroup",
+   "draworder": "topdown",
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "objects": [
     {
-      "id": 1,
-      "name": "boden",
-      "type": "tilelayer",
-      "width": 20,
-      "height": 14,
-      "x": 0,
-      "y": 0,
-      "opacity": 1,
-      "visible": true,
-      "data": [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+     "id": 1,
+     "name": "start",
+     "type": "ausloeser",
+     "x": 160,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "richtung",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
-      "id": 2,
-      "name": "waende",
-      "type": "tilelayer",
-      "width": 20,
-      "height": 14,
-      "x": 0,
-      "y": 0,
-      "opacity": 1,
-      "visible": true,
-      "data": [
-        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2,
-        2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2
-      ]
+     "id": 2,
+     "name": "saloonAusgang",
+     "type": "ausloeser",
+     "x": 160,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
     },
     {
-      "id": 3,
-      "name": "objekte",
-      "type": "tilelayer",
-      "width": 20,
-      "height": 14,
-      "x": 0,
-      "y": 0,
-      "opacity": 1,
-      "visible": true,
-      "data": [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+     "id": 3,
+     "name": "fernpartieBrett",
+     "type": "ausloeser",
+     "x": 128,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
     },
     {
-      "id": 4,
-      "name": "ausloeser",
-      "type": "objectgroup",
-      "draworder": "topdown",
-      "x": 0,
-      "y": 0,
-      "opacity": 1,
-      "visible": true,
-      "objects": [
-        {
-          "id": 1,
-          "name": "start",
-          "type": "ausloeser",
-          "x": 160,
-          "y": 192,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "richtung",
-              "type": "string",
-              "value": "oben"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "saloonAusgang",
-          "type": "ausloeser",
-          "x": 160,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true
-        },
-        {
-          "id": 3,
-          "name": "fernpartieBrett",
-          "type": "ausloeser",
-          "x": 128,
-          "y": 128,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true
-        },
-        {
-          "id": 4,
-          "name": "abzeichen",
-          "type": "ausloeser",
-          "x": 272,
-          "y": 160,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true
-        },
-        {
-          "id": 5,
-          "name": "pruitt",
-          "type": "figur",
-          "x": 176,
-          "y": 128,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true
-        },
-        {
-          "id": 6,
-          "name": "wind",
-          "type": "tier",
-          "x": 96,
-          "y": 176,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "fliegen"
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "name": "gt7Flaschenregal",
-          "type": "moebel",
-          "x": 32,
-          "y": 16,
-          "width": 32,
-          "height": 48,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 56
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "name": "gt7Flaschenregal",
-          "type": "moebel",
-          "x": 96,
-          "y": 16,
-          "width": 32,
-          "height": 48,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 56
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 9,
-          "name": "gt7Theke",
-          "type": "moebel",
-          "x": 32,
-          "y": 64,
-          "width": 112,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 88
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "name": "gt7Klavier",
-          "type": "moebel",
-          "x": 240,
-          "y": 16,
-          "width": 32,
-          "height": 48,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 56
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 11,
-          "name": "gt7Treppe",
-          "type": "moebel",
-          "x": 256,
-          "y": 96,
-          "width": 48,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 12,
-          "name": "gt7TischDunkel",
-          "type": "moebel",
-          "x": 128,
-          "y": 112,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 13,
-          "name": "gt7StuhlR",
-          "type": "moebel",
-          "x": 112,
-          "y": 112,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 14,
-          "name": "gt7StuhlL",
-          "type": "moebel",
-          "x": 160,
-          "y": 112,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 15,
-          "name": "gt7Brett",
-          "type": "moebel",
-          "x": 138,
-          "y": 122,
-          "width": 12,
-          "height": 9,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 137
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 16,
-          "name": "gt7Tisch",
-          "type": "moebel",
-          "x": 48,
-          "y": 144,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 17,
-          "name": "gt7StuhlR",
-          "type": "moebel",
-          "x": 32,
-          "y": 144,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 18,
-          "name": "gt7StuhlL",
-          "type": "moebel",
-          "x": 80,
-          "y": 144,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 19,
-          "name": "gt7Tisch",
-          "type": "moebel",
-          "x": 208,
-          "y": 160,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 184
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 20,
-          "name": "gt7StuhlR",
-          "type": "moebel",
-          "x": 192,
-          "y": 160,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 184
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 21,
-          "name": "gt7StuhlL",
-          "type": "moebel",
-          "x": 240,
-          "y": 160,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 184
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 22,
-          "name": "gt7Tisch",
-          "type": "moebel",
-          "x": 192,
-          "y": 80,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 23,
-          "name": "gt7StuhlR",
-          "type": "moebel",
-          "x": 176,
-          "y": 80,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 24,
-          "name": "gt7StuhlL",
-          "type": "moebel",
-          "x": 224,
-          "y": 80,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 25,
-          "name": "gt7FassKlein",
-          "type": "moebel",
-          "x": 16,
-          "y": 176,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 184
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 26,
-          "name": "gt7FassKlein",
-          "type": "moebel",
-          "x": 16,
-          "y": 192,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 200
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 27,
-          "name": "gt7FassKlein",
-          "type": "moebel",
-          "x": 288,
-          "y": 176,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 184
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 28,
-          "name": "gt7FassKlein",
-          "type": "moebel",
-          "x": 288,
-          "y": 192,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 200
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 29,
-          "name": "gt7Bild",
-          "type": "moebel",
-          "x": 176,
-          "y": 16,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 0
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 30,
-          "name": "gt7Fass",
-          "type": "moebel",
-          "x": 16,
-          "y": 112,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 31,
-          "name": "gt7Kiste",
-          "type": "moebel",
-          "x": 288,
-          "y": 128,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 32,
-          "name": "gt7Kiste",
-          "type": "moebel",
-          "x": 288,
-          "y": 112,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 120
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 33,
-          "name": "gt7Fussmatte",
-          "type": "moebel",
-          "x": 160,
-          "y": 200,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 34,
-          "name": "gt7TuerHolz",
-          "type": "moebel",
-          "x": 160,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "tilesets": [
+     "id": 4,
+     "name": "abzeichen",
+     "type": "ausloeser",
+     "x": 272,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
     {
-      "firstgid": 1,
-      "name": "platzhalter",
-      "image": "../grafik/platzhalter.png",
-      "imagewidth": 64,
-      "imageheight": 64,
-      "tilewidth": 16,
-      "tileheight": 16,
-      "tilecount": 16,
-      "columns": 4,
-      "margin": 0,
-      "spacing": 0,
-      "tiles": [
-        {
-          "id": 1,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "properties": [
+     "id": 5,
+     "name": "pruitt",
+     "type": "figur",
+     "x": 176,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
     {
-      "name": "kennung",
-      "type": "string",
-      "value": "ghostTown.saloon"
+     "id": 6,
+     "name": "wind",
+     "type": "tier",
+     "x": 96,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 7,
+     "name": "gt7Flaschenregal",
+     "type": "moebel",
+     "x": 32,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 8,
+     "name": "gt7Flaschenregal",
+     "type": "moebel",
+     "x": 96,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 9,
+     "name": "gt7Theke",
+     "type": "moebel",
+     "x": 32,
+     "y": 64,
+     "width": 112,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "gt7Klavier",
+     "type": "moebel",
+     "x": 240,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "gt7Treppe",
+     "type": "moebel",
+     "x": 256,
+     "y": 96,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "gt7TischDunkel",
+     "type": "moebel",
+     "x": 128,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "gt7StuhlR",
+     "type": "moebel",
+     "x": 112,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "gt7StuhlL",
+     "type": "moebel",
+     "x": 160,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "gt7Brett",
+     "type": "moebel",
+     "x": 138,
+     "y": 122,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 137
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "gt7Tisch",
+     "type": "moebel",
+     "x": 48,
+     "y": 144,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "gt7StuhlR",
+     "type": "moebel",
+     "x": 32,
+     "y": 144,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "gt7StuhlL",
+     "type": "moebel",
+     "x": 80,
+     "y": 144,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "gt7Tisch",
+     "type": "moebel",
+     "x": 208,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "gt7StuhlR",
+     "type": "moebel",
+     "x": 192,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "gt7StuhlL",
+     "type": "moebel",
+     "x": 240,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "gt7Tisch",
+     "type": "moebel",
+     "x": 192,
+     "y": 80,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "gt7StuhlR",
+     "type": "moebel",
+     "x": 176,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "gt7StuhlL",
+     "type": "moebel",
+     "x": 224,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 16,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 16,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 288,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "gt7FassKlein",
+     "type": "moebel",
+     "x": 288,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "gt7Bild",
+     "type": "moebel",
+     "x": 176,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "gt7Fass",
+     "type": "moebel",
+     "x": 16,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "gt7Kiste",
+     "type": "moebel",
+     "x": 288,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "gt7Kiste",
+     "type": "moebel",
+     "x": 288,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "gt7Fussmatte",
+     "type": "moebel",
+     "x": 160,
+     "y": 200,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "gt7TuerHolz",
+     "type": "moebel",
+     "x": 160,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
     }
-  ]
+   ]
+  }
+ ],
+ "tilesets": [
+  {
+   "firstgid": 1,
+   "name": "platzhalter",
+   "image": "../grafik/platzhalter.png",
+   "imagewidth": 64,
+   "imageheight": 64,
+   "tilewidth": 16,
+   "tileheight": 16,
+   "tilecount": 16,
+   "columns": 4,
+   "margin": 0,
+   "spacing": 0,
+   "tiles": [
+    {
+     "id": 1,
+     "properties": [
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 2,
+     "properties": [
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 6,
+     "properties": [
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 7,
+     "properties": [
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 4,
+     "properties": [
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "properties": [
+  {
+   "name": "kennung",
+   "type": "string",
+   "value": "ghostTown.saloon"
+  }
+ ]
 }

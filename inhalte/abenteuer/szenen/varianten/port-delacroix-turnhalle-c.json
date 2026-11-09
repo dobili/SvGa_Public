@@ -2,7 +2,7 @@
   "karte": "portDelacroix.turnhalle",
   "datei": "karten/varianten/port-delacroix-turnhalle-c.json",
   "art": "innen",
-  "beschreibung": "Variante C, Notquartier: Die Turnhalle mit grauem Steinboden und blauen Wänden dient zugleich als Schlafsaal für Helfer. An der Nordwand der Lehrertisch und das Plakat „Wir spielen weiter“, daneben die Spendenkasse. Fünf runde Tische mit je einem Brett und zwei Stühlen stehen in zwei Reihen, rechts an der Ostwand sechs Feldbetten in zwei Gruppen. In der Nordwestecke Kisten mit Spenden, darunter eine Turnmatte, vorn ein Ball und eine Bank.",
+  "beschreibung": "Variante C, Notquartier: Die Turnhalle mit grauem Steinboden und blauen Wänden dient zugleich als Schlafsaal für Helfer. An der Nordwand der Lehrertisch und das Plakat „Wir spielen weiter“, daneben die Spendenkasse. Fünf runde Tische mit je einem Brett und zwei Stühlen stehen in zwei Reihen, rechts an der Ostwand sechs Feldbetten (Campingliegen) in zwei Gruppen. In der Nordwestecke Kisten mit Spenden, darunter eine Turnmatte, vorn ein Ball und eine Bank.",
   "wand": "blau",
   "boden": "stein",
   "raster": [
@@ -37,6 +37,16 @@
     {
       "moebel": "pd6Plakat",
       "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Basketballkorb",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Basketballkorb",
+      "feld": [17, 1],
       "an_wand": true
     },
     {
@@ -143,27 +153,27 @@
       "zu": "r17_9"
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [22, 4]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [23, 4]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [24, 4]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [22, 9]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [23, 9]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [24, 9]
     },
     {
@@ -203,11 +213,11 @@
       "feld": [5, 2]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [22, 12]
     },
     {
-      "moebel": "pd6Feldbett",
+      "moebel": "pd6Liege",
       "feld": [23, 12]
     },
     {

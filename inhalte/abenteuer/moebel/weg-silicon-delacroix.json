@@ -265,6 +265,106 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "sd6SteglLaengs4": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "breite": 32,
+      "hoehe": 68,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Boje": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Buoy_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "sd6Pfahl": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Pole_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Sandsack": {
+      "quelle": "spiel/eigene/sandsaecke_reihe.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6SandsackHaufen": {
+      "quelle": "spiel/eigene/sandsaecke_haufen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Bauzaun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Traffic_Barrier_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "sd6SandsackStapel": {
+      "quelle": "spiel/eigene/sandsaecke.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Schilf": {
+      "quelle": "spiel/eigene/schilf.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sd6SchilfBreit": {
+      "quelle": "spiel/eigene/schilf_breit.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sd6Zypresse": {
+      "quelle": "spiel/eigene/sumpfzypresse.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sd6SchildPortDelacroix": {
+      "quelle": "spiel/eigene/schild_port_delacroix.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

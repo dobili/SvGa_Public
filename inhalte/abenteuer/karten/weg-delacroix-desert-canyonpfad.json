@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 91,
+ "nextobjectid": 92,
  "layers": [
   {
    "id": 1,
@@ -15586,12 +15586,12 @@
     },
     {
      "id": 53,
-     "name": "iw5Schuppen",
+     "name": "dd6Wuestenbahnhof",
      "type": "moebel",
      "x": 2256,
-     "y": 192,
-     "width": 48,
-     "height": 64,
+     "y": 160,
+     "width": 96,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -15655,11 +15655,11 @@
     },
     {
      "id": 56,
-     "name": "scFelsKlein",
+     "name": "dd6SteinFlach",
      "type": "moebel",
-     "x": 992,
+     "x": 976,
      "y": 240,
-     "width": 32,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -15770,12 +15770,12 @@
     },
     {
      "id": 61,
-     "name": "dd6Kaktus",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 64,
-     "y": 272,
-     "width": 16,
-     "height": 32,
+     "y": 240,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -15793,7 +15793,7 @@
     },
     {
      "id": 62,
-     "name": "dd6KaktusOhne",
+     "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 176,
      "y": 192,
@@ -15816,11 +15816,11 @@
     },
     {
      "id": 63,
-     "name": "dd6Kaktus",
+     "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 288,
      "y": 272,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -15839,19 +15839,19 @@
     },
     {
      "id": 64,
-     "name": "dd6KaktusOhne",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 400,
      "y": 256,
-     "width": 16,
-     "height": 32,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 312
       },
       {
        "name": "kollision",
@@ -15862,7 +15862,7 @@
     },
     {
      "id": 65,
-     "name": "dd6Kaktus",
+     "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 624,
      "y": 256,
@@ -15885,11 +15885,11 @@
     },
     {
      "id": 66,
-     "name": "dd6KaktusOhne",
+     "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 736,
      "y": 240,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -15908,19 +15908,19 @@
     },
     {
      "id": 67,
-     "name": "dd6Kaktus",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 848,
      "y": 160,
-     "width": 16,
-     "height": 32,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 216
       },
       {
        "name": "kollision",
@@ -15931,7 +15931,7 @@
     },
     {
      "id": 68,
-     "name": "dd6KaktusOhne",
+     "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 960,
      "y": 240,
@@ -15954,11 +15954,11 @@
     },
     {
      "id": 69,
-     "name": "dd6Kaktus",
+     "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1072,
      "y": 160,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -15977,12 +15977,12 @@
     },
     {
      "id": 70,
-     "name": "dd6KaktusOhne",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1184,
-     "y": 304,
-     "width": 16,
-     "height": 32,
+     "y": 272,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16000,7 +16000,7 @@
     },
     {
      "id": 71,
-     "name": "dd6Kaktus",
+     "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1296,
      "y": 224,
@@ -16023,11 +16023,11 @@
     },
     {
      "id": 72,
-     "name": "dd6KaktusOhne",
+     "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1632,
      "y": 224,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -16046,19 +16046,19 @@
     },
     {
      "id": 73,
-     "name": "dd6Kaktus",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1744,
      "y": 144,
-     "width": 16,
-     "height": 32,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 200
       },
       {
        "name": "kollision",
@@ -16069,7 +16069,7 @@
     },
     {
      "id": 74,
-     "name": "dd6KaktusOhne",
+     "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1856,
      "y": 224,
@@ -16092,11 +16092,11 @@
     },
     {
      "id": 75,
-     "name": "dd6Kaktus",
+     "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1968,
      "y": 144,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -16115,12 +16115,12 @@
     },
     {
      "id": 76,
-     "name": "dd6KaktusOhne",
+     "name": "dd6Saguaro",
      "type": "moebel",
      "x": 2080,
-     "y": 288,
-     "width": 16,
-     "height": 32,
+     "y": 256,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16443,6 +16443,29 @@
      "y": 224,
      "width": 16,
      "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "dd6Geierkreis",
+     "type": "moebel",
+     "x": 288,
+     "y": 240,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [

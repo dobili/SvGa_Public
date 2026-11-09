@@ -1,0 +1,46 @@
+{
+  "moebel": {
+    "scFelsGross": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Big_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "scFelsMittel": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Medium_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "scFelsKlein": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Small_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "scRucksack": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Backpack_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "scRucksackRot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Backpack_5.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "scSeil": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_483.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "scBankSeitlich": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Lateral_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    }
+  }
+}

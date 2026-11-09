@@ -1,0 +1,36 @@
+{
+  "moebel": {
+    "heSchulbus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_1.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "heBasketballkorb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Basketball_Net_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "heTraktor": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Left_Side_16x16.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "heVogelscheuche": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Scarecrow_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    }
+  }
+}

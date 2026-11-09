@@ -317,7 +317,7 @@ Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
 ## 4. Bühnenbilder
 
 Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in
-`inhalte/abenteuer/moebel.json` mit der Vorsilbe `cc4`, die Szenen in `inhalte/abenteuer/szenen/`.
+`inhalte/abenteuer/moebel/cedar-creek.json` mit der Vorsilbe `cc4`, die Szenen in `inhalte/abenteuer/szenen/`.
 Feld = linke obere Kachel (Spalte, Reihe). Bilder ohne sichere Katalogbeschreibung habe ich selbst
 angesehen und in `inhalte/abenteuer/katalog_korrekturen/mittel-2.json` beschrieben.
 

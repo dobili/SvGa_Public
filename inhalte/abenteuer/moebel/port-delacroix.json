@@ -1,0 +1,52 @@
+{
+  "moebel": {
+    "pdFeldbett": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_158.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pdKlavier": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "pdSchlagzeug": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_237.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pdGitarrenkoffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Guitar_Case.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pdBoot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pdEimer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Bucket_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "pdSeil": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rope_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "pdWerkzeugregal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Sprout_Tools_Shelf.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true
+    }
+  }
+}

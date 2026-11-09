@@ -1,0 +1,16 @@
+{
+  "moebel": {
+    "gtKreuz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "gtHeu": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Dry_Pile_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    }
+  }
+}

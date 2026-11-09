@@ -12,6 +12,7 @@ from pathlib import Path
 import pytest
 
 from pipeline.abenteuer import karten as k
+from pipeline.abenteuer import moebelliste
 
 HAUPTORDNER = Path(__file__).resolve().parents[2]
 INHALTE = HAUPTORDNER / "inhalte" / "abenteuer"
@@ -156,7 +157,7 @@ def test_jede_figur_und_jeder_ausloeser_steht_auf_einer_karte(ort: dict):
 
 
 def test_moebel_bekannt_und_frei_von_ausloesern():
-    # Möbel stehen in moebel.json und versperren keinen Auslöser und keine Figur.
+    # Möbel stehen in inhalte/abenteuer/moebel/ und versperren keinen Auslöser und keine Figur.
     for ort, eintrag in FAELLE:
         datei = INHALTE / eintrag["datei"]
         if not datei.exists():
@@ -170,3 +171,20 @@ def test_moebel_bekannt_und_frei_von_ausloesern():
                 assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
             elif not objekt.belebung and objekt.name not in ansehen:
                 assert objekt.feld not in gesperrt, f"{eintrag['kennung']}: {objekt.name} zugestellt"
+
+
+def test_moebel_namen_eindeutig():
+    # Jeder Ort hat seine eigene Möbeldatei (inhalte/abenteuer/moebel/); Szenen und Karten kennen ein
+    # Möbel nur über seinen Namen, deshalb darf kein Name in zwei Dateien stehen.
+    assert moebelliste.moebeldateien(), "inhalte/abenteuer/moebel/ ist leer"
+    assert moebelliste.doppelte_namen() == []
+
+
+def test_doppelter_moebelname_bricht_ab(tmp_path: Path):
+    # Ein doppelter Name wird gemeldet und nicht still überschrieben.
+    eintrag = {"quelle": "x.png", "breite": 16, "hoehe": 16}
+    for ort in ("maple-falls", "cedar-creek"):
+        (tmp_path / f"{ort}.json").write_text(json.dumps({"moebel": {"kiste": eintrag}}), "utf-8")
+    assert moebelliste.doppelte_namen(tmp_path) == ["kiste (cedar-creek.json, maple-falls.json)"]
+    with pytest.raises(ValueError, match="kiste"):
+        moebelliste.lade_moebel(tmp_path)

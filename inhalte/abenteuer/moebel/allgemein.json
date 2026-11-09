@@ -1,0 +1,339 @@
+{
+  "moebel": {
+    "parkbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "kisteRot": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_26.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "kisteBlau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_29.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "regalAlt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_64.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "stehlampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "truhe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_95.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "sofaRund": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "holztisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_273.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "stuhl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_281.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "kuehlschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_159.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "herd": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pflanzeGross": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_18.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "pflanzeKlein": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "buecherregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_57.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "schreibtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_10.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "tafel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "pokal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_133.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "baum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_1.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "baumRund": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_2.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "blumen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flowers_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "blumenbusch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "muelltonne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Blue_Closed_Trash_Can.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "briefkasten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Big_Blue_Mailbox.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "haltestellenschild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "zaun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "rampe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Entrance_Ramp_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "brunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_10.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "felsKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "baumstumpf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "leselampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "kisteGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_31.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "aktenschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_11.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "waschmaschine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_87.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "waschmaschineHoch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_90.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wartebank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_44.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svPlateau": {
+      "quelle": "spiel/serene/serene_02.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svGrasinsel": {
+      "quelle": "spiel/serene/serene_03.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svFels": {
+      "quelle": "spiel/serene/serene_29.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svFelsKlein": {
+      "quelle": "spiel/serene/serene_30.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svBaumreihe": {
+      "quelle": "spiel/serene/serene_04.png",
+      "breite": 128,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "svBaumreiheBreit": {
+      "quelle": "spiel/serene/serene_27.png",
+      "breite": 160,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "svBusch": {
+      "quelle": "spiel/serene/serene_17.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svHausRot": {
+      "quelle": "spiel/serene/serene_40.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svHausGruen": {
+      "quelle": "spiel/serene/serene_58.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svHausBlau": {
+      "quelle": "spiel/serene/serene_76.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svZaun": {
+      "quelle": "spiel/serene/serene_12.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "svWegweiser": {
+      "quelle": "spiel/serene/serene_13.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "svSchild": {
+      "quelle": "spiel/serene/serene_14.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "automatBunt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    }
+  }
+}

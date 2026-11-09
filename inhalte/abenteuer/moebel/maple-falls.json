@@ -1435,6 +1435,70 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf4FernseherStand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
+      "breite": 28,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fernseher",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "mf4BaumGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_145.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf4BaumRot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_148.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf4Fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf4FelsHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "mf4ZaunEckeObenLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_15.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4ZaunEckeObenRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_18.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

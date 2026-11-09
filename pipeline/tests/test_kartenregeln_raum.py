@@ -141,6 +141,15 @@ def test_tuer_an_der_wand_braucht_freie_kachel():
     assert pruefe_tueren(szene, zeilen, gesetzt, MOEBEL) == ["tuer: keine freie Kachel vor der Tür"]
 
 
+def test_haustuer_in_der_suedwand_oeffnet_nach_oben():
+    # Regel 10.7/10.8: Haustür als Bild in der Südwand; frei sein muss das Feld über dem Türbild.
+    tuer = {"moebel": "tuer", "feld": [5, 8], "an_wand": True}
+    szene, zeilen, gesetzt = _szene([tuer])
+    assert pruefe_tueren(szene, zeilen, gesetzt, MOEBEL) == []
+    szene, zeilen, gesetzt = _szene([tuer, {"moebel": "kiste", "feld": [5, 7]}])
+    assert pruefe_tueren(szene, zeilen, gesetzt, MOEBEL) == ["tuer: keine freie Kachel vor der Tür"]
+
+
 def test_teppich_nie_unter_schrank():
     szene, _, gesetzt = _szene([{"moebel": "teppich", "feld": [1, 3]}, {"moebel": "schrank", "feld": [2, 2]}])
     assert pruefe_teppiche(gesetzt, MOEBEL) == ["teppich liegt unter schrank"]

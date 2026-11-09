@@ -223,6 +223,28 @@ Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihr
 
 ## 4. Bühnenbilder
 
+### 4.0 Nacharbeit nach der Rückmeldung des Autors zu Runde 4 (KARTENREGELN 10)
+
+Diese Änderungen gehen den Tabellen in 4.1 bis 4.5 vor.
+
+- **Wohnzimmer (4.1):** Haustür als Bild in der Südwand (5, 11) statt Lücke, Fußmatte innen direkt
+  davor (5, 10), Start (5, 10). Der Fernseher steht mit seinem Fuß auf dem Sideboard (7, 2)
+  (`mf4FernseherStand` mit sichtbarer Breite, Rückfrage an den Haupt-Chat zur Plattenprüfung); die
+  niedrige Kommode steht unter dem Fenster (4, 2) und trägt ab Akt 2 Mamas Foto. Die Treppe läuft an
+  der Westwand in die Nordwand hinauf (1, 0), Auslöser `treppeOben` (2, 3), Antritt (2, 4).
+  Arbeitsplatten nach vorn gesetzt (versatz 6 px), damit sie unter dem Fenster bündig mit Herd und
+  Kühlschrank stehen; kein Bild mehr über dem Herd. Kisten bleiben (Umzug), geordnet an den Wänden.
+- **Clubraum (4.3):** Pokal steht auf der Platte der Anrichte, die Pinnwand hängt 6 px unter der
+  Wandkrone, der Globus steht auf dem Lehrerpult neben dem Buch.
+- **Birch Lane (4.5):** Der Bach windet sich in Stufen (Reihen 1–4) von Rand zu Rand; der Wasserfall
+  kommt zwischen Felsen über eine Geländestufe. Die Schulbushaltestelle steht vor der Schule rechts
+  der Treppe (57, 21), offen zur Straße, mit Bank (55, 22) und Mülltonne; der Fahnenmast links der
+  Treppe (41, 15). Laternen stehen direkt am südlichen Gehweg (Fuß Reihe 29), eine Bauart; Straßenbäume
+  wechseln zwischen grünem und rotem Laubbaum. Der Spielplatz ist eingezäunt (49–62 / 31–40) mit Tor
+  oben, Trampelpfad vom Gehweg, Sand, zwei Elternbänken mit Blick auf die Geräte und Abfalleimer.
+  Schilder mit Zweck: „Sackgasse“ am Wendehammer (7, 29), „Zu verkaufen“ an der Einfahrt Hayes
+  (25, 31); andere kleine Schilder gibt es nicht.
+
 ### 4.1 Erdgeschoss Haus Whitlock (`mapleFalls.wohnzimmer`), Muster
 
 **Größe:** 20 × 13 Kacheln (7a.2: zwei Räume nebeneinander). Nordwand: Reihe 0 Wandkrone, Reihen 1

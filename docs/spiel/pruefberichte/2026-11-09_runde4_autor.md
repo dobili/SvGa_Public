@@ -17,25 +17,25 @@ sich zur Straße.
 
 | Karte      | Hinweis des Autors                                                                                                    | Regel        | Erledigt              |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------- |
-| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   |                       |
-| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        |                       |
-| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 |                       |
-| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        |                       |
-| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        |                       |
+| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   | mittel-1 (erledigt)   |
+| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        | mittel-1 (erledigt)   |
+| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 | mittel-1 (erledigt)   |
+| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        | mittel-1 (erledigt)   |
+| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        | mittel-1 (erledigt)   |
 | Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | Haupt-Chat (Werkzeug) |
 | Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        |                       |
 | Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | Haupt-Chat (Werkzeug) |
-| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        |                       |
-| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        |                       |
-| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        |                       |
+| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        | mittel-1 (erledigt)   |
+| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        | mittel-1 (erledigt)   |
+| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        | mittel-1 (erledigt)   |
 | Diner      | kein Diner: neu denken (Gastraum, Theke mit Hockern, Kasse zum Gast, Durchreiche, Großküche, Lager, Toiletten; Größe) | 10.30        |                       |
 | Diner      | Glastresen mit Lücken; Kasse zum Ausgang gedreht                                                                      | 10.14, 10.30 |                       |
-| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        |                       |
-| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        |                       |
-| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        |                       |
-| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        |                       |
-| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        |                       |
-| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  |                       |
+| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        | mittel-1 (erledigt)   |
+| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        | mittel-1 (erledigt)   |
+| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        | mittel-1 (erledigt)   |
+| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        | mittel-1 (erledigt)   |
+| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        | mittel-1 (erledigt)   |
+| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  | mittel-1 (erledigt)   |
 | Park       | Bushaltestelle falsch herum                                                                                           | 10.17        |                       |
 | Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 |                       |
 | Park       | Teich rechteckig                                                                                                      | 10.23        |                       |

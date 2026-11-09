@@ -2,7 +2,7 @@
   "karte": "ironwood.kantine",
   "datei": "karten/ironwood-kantine.json",
   "art": "innen",
-  "beschreibung": "Die Kantine des Werks, zugleich Clubraum des Werksclubs, 24 × 16 Kacheln, graue Fliesen, helle Wände. An der Nordwand links die lange Essensausgabe mit Kaffeemaschine, daneben die Pinnwand mit dem Schichtplan, in der Mitte das Pokalregal mit einer Lücke, rechts ein Foto der Werksmannschaft und zwei Fenster. Links zwei lange Tische der Schicht mit Bänken, rechts der Clubtisch mit Big Joes dunklem Brett vor dem Ofen und ein zweiter Clubtisch. Südlich Spinde als Garderobe, ein Kühlschrank in der Ecke, Gummibaum, Geschirrwagen. Die Tür liegt in der Mitte der Südwand.",
+  "beschreibung": "Die Kantine des Werks, zugleich Clubraum des Werksclubs, 24 × 16 Kacheln, graue Fliesen, helle Wände. An der Nordwand links die lange Essensausgabe mit Kaffeemaschine, daneben die Pinnwand mit dem Schichtplan, in der Mitte das Pokalregal mit einer Lücke, rechts ein Foto der Werksmannschaft und zwei Fenster. Links zwei lange Tische der Schicht mit Bänken, rechts der Clubtisch mit Big Joes dunklem Brett vor dem Ofen und ein zweiter Clubtisch. Südlich Spinde als Garderobe, Gummibaum. Die Küchenzeile läuft lückenlos vom Kühlschrank bis zur Ablage mit dem Abtropfgestell. Die Tür liegt in der Mitte der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "raster": [
@@ -76,6 +76,10 @@
       "versatz": [0, 24]
     },
     {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [1, 1]
+    },
+    {
       "moebel": "wzArbeitsplatte",
       "feld": [2, 2],
       "id": "ausgabe"
@@ -86,8 +90,12 @@
       "auf": "ausgabe"
     },
     {
-      "moebel": "mf8HerdTopf",
+      "moebel": "wzHerd",
       "feld": [4, 2]
+    },
+    {
+      "moebel": "mf8Herd",
+      "feld": [5, 2]
     },
     {
       "moebel": "mf5Grillplatte",
@@ -96,6 +104,16 @@
     {
       "moebel": "mf5Kuchenvitrine",
       "feld": [8, 2]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [10, 2],
+      "id": "ablage"
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [0, 0],
+      "auf": "ablage"
     },
     {
       "moebel": "mf8Pinnwand",
@@ -307,16 +325,8 @@
       "feld": [4, 13]
     },
     {
-      "moebel": "mf5Kuehlschrank",
-      "feld": [22, 9]
-    },
-    {
       "moebel": "cc4PflanzeK",
-      "feld": [1, 3]
-    },
-    {
-      "moebel": "mf5Geschirr",
-      "feld": [9, 13]
+      "feld": [22, 12]
     }
   ],
   "ausloeser": [

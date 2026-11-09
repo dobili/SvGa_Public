@@ -92,7 +92,8 @@
     },
     {
       "moebel": "iwBild",
-      "feld": [11, 3],
+      "feld": [13, 1],
+      "an_wand": true,
       "id": "rahmen2001"
     },
     {
@@ -148,7 +149,7 @@
     },
     {
       "name": "partieformular2001",
-      "feld": [12, 4]
+      "feld": [13, 3]
     }
   ],
   "figuren": [

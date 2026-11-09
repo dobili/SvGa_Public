@@ -390,16 +390,6 @@
     },
     {
       "moebel": "mf7Zaun2Mitte",
-      "feld": [55, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf7Zaun2Mitte",
-      "feld": [61, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf7Zaun2Mitte",
       "feld": [62, 26],
       "bauteil_ok": true
     },
@@ -482,6 +472,14 @@
       "moebel": "mf7Zaun2Mitte",
       "feld": [78, 26],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [55, 26]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [61, 26]
     },
     {
       "moebel": "iw5Kantine",
@@ -570,7 +568,7 @@
       "feld": [33, 34]
     },
     {
-      "moebel": "mfAhorn",
+      "moebel": "mfBaum",
       "feld": [40, 34]
     },
     {
@@ -578,7 +576,7 @@
       "feld": [47, 34]
     },
     {
-      "moebel": "mfAhorn",
+      "moebel": "mfBaum",
       "feld": [36, 40]
     },
     {
@@ -586,7 +584,7 @@
       "feld": [44, 40]
     },
     {
-      "moebel": "mfAhorn",
+      "moebel": "mfBaum",
       "feld": [52, 39]
     },
     {
@@ -635,6 +633,14 @@
     {
       "moebel": "iw5Prellbock",
       "feld": [11, 52]
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [77, 50]
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [77, 52]
     },
     {
       "moebel": "cc4Gleis",
@@ -1257,26 +1263,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4Gleis",
-      "feld": [77, 50],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Gleis",
-      "feld": [77, 52],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Gleis",
-      "feld": [78, 50],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Gleis",
-      "feld": [78, 52],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cc4Holzstapel",
       "feld": [14, 54]
     },
@@ -1345,12 +1331,12 @@
       "feld": [66, 54]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [72, 54]
+      "moebel": "mfBaum",
+      "feld": [71, 54]
     },
     {
       "moebel": "mf9Absperrbock",
-      "feld": [76, 55],
+      "feld": [75, 56],
       "id": "torSteinbruch"
     },
     {

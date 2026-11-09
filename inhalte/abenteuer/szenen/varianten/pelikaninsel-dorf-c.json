@@ -2,7 +2,7 @@
   "karte": "pelikaninsel.dorf",
   "datei": "karten/varianten/pelikaninsel-dorf-c.json",
   "art": "aussen",
-  "beschreibung": "Variante C (reicher): ein breites Watt fast über die ganze Südseite, viele Muscheln, Seesterne und Möwen. Auf dem Dorfplatz vier Boote im Sand, Kistenstapel und Fässer; ein Fischkutter liegt vor den Pfahlhäusern, ein zweites Boot am Anleger.",
+  "beschreibung": "Variante C (reicher): ein breites Watt fast über die ganze Südseite, viele Muscheln, Seesterne und Möwen. Auf dem Dorfplatz zwei Netzgestelle, vier Boote im Sand, Kistenstapel und Fässer; sechs Pelikane auf Pfählen; ein Fischkutter liegt vor den Pfahlhäusern, ein zweites Boot am Anleger.",
   "boden": "erde",
   "wandart": "erde",
   "boeden": {
@@ -29,21 +29,21 @@
     "~~~~~~~~~~.............bb......~~~~~~~~~~~~~~~~~~~",
     "~~~~~~.................bb........~~~~~~~~~~~~~~~~~",
     "~~................................~~~~~~~~~~~~~~~~",
-    "~~....kkkkk.......................~~~~~~~~~~~~~~~~",
-    "~~...kkkkkkk......................~~~~~~~~~~~~~~~~",
-    "~~~.kkkkkkkkk.....................~~~~~~~~~~~~~~~~",
-    "~~~.kkkkkkkkk.....................~~bbb~~bbb~~bbb~",
-    "~~~kkkkkkkkkkk....................~~bbb~~bbb~~bbb~",
-    "~~.kkkkkkkkkkk....................~~bbb~~bbb~~bbb~",
-    "~~.kkkkkkkkkkk....................bbbbbbbbbbbbbbb~",
-    "~~.kkkkkkkkkkk....................bbbbbbbbbbbbbbb~",
-    "~~~kkkkkkkkkkk....................bbbbbbbbbbbbbbb~",
-    "~~~kkkkkkkkkkk....................~~~~~~~~~~~~bb~~",
-    "~~~kkkkkkkkkkk....................~~~~~~~~~~~~bb~~",
-    "~~..kkkkkkkkk.....................~~~~~~~~~~~~bb~~",
-    "~~..kkkkkkkkk.....................~~bbb~~bbb~~bb~~",
-    "~~...kkkkkkk......................~~bbb~~bbb~~bb~~",
-    "~~~...kkkkk.......................~~bbb~~bbb~~bb~~",
+    "~~................................~~~~~~~~~~~~~~~~",
+    "~~...kkkkk........................~~~~~~~~~~~~~~~~",
+    "~~~.kkkkkkk.......................~~~~~~~~~~~~~~~~",
+    "~~~kkkkkkkkk......................~~~~~~~~~~~~~~~~",
+    "~~~kkkkkkkkk......................~~~~~~~~~~~~~~~~",
+    "~~.kkkkkkkkk......................~~~~~~~~~~~~~~~~",
+    "~~.kkkkkkkkk......................bbbbbbbbbbbbbbb~",
+    "~~.kkkkkkkkk......................bbbbbbbbbbbbbbb~",
+    "~~~.kkkkkkk.......................bbbbbbbbbbbbbbb~",
+    "~~~..kkkkk........................~~~~~~~~~~~~bb~~",
+    "~~~...............................~~~~~~~~~~~~bb~~",
+    "~~................................~~~~~~~~~~~~bb~~",
+    "~~................................~~~~~~~~~~~~bb~~",
+    "~~................................~~~~~~~~~~~~bb~~",
+    "~~~...............................~~~~~~~~~~~~bb~~",
     "~~~...............................bbbbbbbbbbbbbb~~",
     "~~~...............................bbbbbbbbbbbbbb~~",
     "~~................................bbbbbbbbbbbbbb~~",
@@ -61,9 +61,8 @@
   ],
   "objekte": [
     {
-      "moebel": "n4Leuchtturm",
-      "feld": [4, 5],
-      "bauteil_ok": true
+      "moebel": "n4Leuchtfeuer",
+      "feld": [6, 9]
     },
     {
       "moebel": "n4SeefelsGrossWasser",
@@ -97,48 +96,75 @@
     },
     {
       "moebel": "n4Fels",
-      "feld": [11, 8]
+      "feld": [10, 9]
     },
     {
       "moebel": "n4Fels",
-      "feld": [12, 17]
+      "feld": [4, 15]
     },
     {
       "moebel": "n4Fels",
-      "feld": [10, 21]
+      "feld": [10, 15]
     },
     {
-      "moebel": "n4HausRot",
-      "feld": [36, 9],
-      "bauteil_ok": true
+      "moebel": "n4Fels",
+      "feld": [3, 10]
+    },
+    {
+      "moebel": "n4PfahlhausRot",
+      "feld": [35, 8]
+    },
+    {
+      "moebel": "n4PfahlhausBlau",
+      "feld": [40, 8]
+    },
+    {
+      "moebel": "n4PfahlhausWeiss",
+      "feld": [45, 8]
+    },
+    {
+      "moebel": "n4PfahlhausBlau",
+      "feld": [35, 17]
+    },
+    {
+      "moebel": "n4PfahlhausRot",
+      "feld": [40, 17]
     },
     {
       "moebel": "n4Rettungsring",
-      "feld": [39, 13]
-    },
-    {
-      "moebel": "n4HausBlau",
-      "feld": [41, 9],
-      "bauteil_ok": true
+      "feld": [38, 14]
     },
     {
       "moebel": "n4Rettungsring",
-      "feld": [44, 13]
+      "feld": [48, 14]
     },
     {
-      "moebel": "n4HausBlauBraun",
-      "feld": [46, 9],
-      "bauteil_ok": true
+      "moebel": "n4PelikanRechts",
+      "feld": [21, 1]
     },
     {
-      "moebel": "n4HausWeiss",
-      "feld": [36, 18],
-      "bauteil_ok": true
+      "moebel": "n4PelikanLinks",
+      "feld": [34, 9]
     },
     {
-      "moebel": "n4HausBlau",
-      "feld": [41, 18],
-      "bauteil_ok": true
+      "moebel": "n4PelikanRechts",
+      "feld": [44, 17]
+    },
+    {
+      "moebel": "n4PelikanLinks",
+      "feld": [39, 9]
+    },
+    {
+      "moebel": "n4PelikanLinks",
+      "feld": [31, 2]
+    },
+    {
+      "moebel": "n4Netzgestell",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "n4Netzgestell",
+      "feld": [25, 17]
     },
     {
       "moebel": "n4FaehrbootWasser",
@@ -192,16 +218,6 @@
     },
     {
       "moebel": "n4BootUfer",
-      "feld": [27, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n4Boot",
-      "feld": [20, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n4BootUfer",
       "feld": [31, 9],
       "bauteil_ok": true
     },
@@ -219,10 +235,6 @@
       "moebel": "n4MoeweVorn",
       "feld": [17, 19],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "n4SprossGross",
-      "feld": [24, 18]
     },
     {
       "moebel": "n4SeesternLila",
@@ -258,12 +270,20 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "n4MuschelWeiss",
+      "feld": [23, 11]
+    },
+    {
       "moebel": "n4SprossGross",
       "feld": [24, 21]
     },
     {
       "moebel": "n4MuschelBraun",
       "feld": [14, 26]
+    },
+    {
+      "moebel": "n4SprossB",
+      "feld": [3, 16]
     },
     {
       "moebel": "n4MuschelWeiss",
@@ -556,6 +576,10 @@
       "feld": [14, 6]
     },
     {
+      "moebel": "n4SprossB",
+      "feld": [9, 19]
+    },
+    {
       "moebel": "n4MuschelBraun",
       "feld": [38, 33]
     },
@@ -572,12 +596,27 @@
       "feld": [34, 28]
     },
     {
+      "moebel": "n4MoeweRechts",
+      "feld": [11, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n4MoeweLinks",
+      "feld": [5, 19],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "n4SeesternLila",
       "feld": [12, 29]
     },
     {
       "moebel": "n4MuschelGold",
       "feld": [19, 33]
+    },
+    {
+      "moebel": "n4MoeweVorn",
+      "feld": [7, 19],
+      "bauteil_ok": true
     },
     {
       "moebel": "n4SeesternLila",
@@ -598,26 +637,6 @@
     {
       "moebel": "n4MuschelWeiss",
       "feld": [6, 24]
-    },
-    {
-      "moebel": "n4MuschelGold",
-      "feld": [10, 27]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [19, 32]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [13, 33]
-    },
-    {
-      "moebel": "n4MuschelRosa",
-      "feld": [28, 34]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [20, 29]
     }
   ],
   "ausloeser": [

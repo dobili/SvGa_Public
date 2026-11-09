@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Aussehen aller Figuren (Charakter-Generator)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, dreiundzwanzigster Auftrag)
+**Stand:** fertig (mittel-1, 09.11.2026); im privaten Repository als Commit 058f30ab, Push steht aus (siehe Bericht)
 
 **Zweig:** im öffentlichen Repository nur `docs/spiel/auftraege/mittel-1.md` (Bericht); die Arbeit liegt
 im **privaten** Repository `dobili/schach-abenteuer-inhalte` (in deiner Sitzung unter
@@ -36,6 +36,132 @@ bekommt ein eigenes Aussehen aus den Teilen des Charakter-Generators, passend zu
 
 Die Porträts leitet der Haupt-Chat danach aus denselben Angaben ab (Haut, Augen, Frisur), du musst
 dafür nichts tun.
+
+## Bericht
+
+85 Einträge in `werkzeuge/figuren.json` (83 Figuren aus `orte.json`, dazu `held-0` und
+`ambrose-jung`), alle gebaut nach `spiel/figuren/` (`python werkzeuge/figuren.py`: „85 Figuren
+gebaut“). Keine zwei Einträge sind gleich; die Figuren der Capital Arena (elf auf einer Karte) und
+das Pinewood Camp (Dex, Mae, Tamsin, Lou) habe ich auf einem Kontaktbogen nebeneinander geprüft.
+Im öffentlichen Repository steht nur dieser Bericht, keine Bilder.
+
+**Entscheidungen:**
+
+- **Hauttöne:** Der Generator hat sechs natürliche Töne (1, 2, 3, 4, 7, dazu 5). Ton 5 wirkt im Spiel
+  grünlich mit lila Wangen, deshalb ist er nicht vergeben; 6, 8 und 9 sind Fantasietöne, nur der
+  Empfangsroboter bekommt 9 (blau, mit Schraube und türkisen Augen). Der dunkelste Ton (1) ist nur
+  mittelbraun; für noch dunklere Haut müsste der Haupt-Chat einen Ton nachfärben, wenn gewünscht.
+  Vergeben nach der Bibel, etwa Mrs. Okafor, Dex, Slick, Odile, Okoro und Kira mit Ton 1.
+- **Familien und Wiedererkennung:** Mama und Oma Ruth haben dieselben grünen Augen und denselben
+  Hautton, Remy und Mrs. Arceneaux ebenso, Henri und Céleste die grauen Augen des jungen Ambrose
+  (Whitlock-Linie), Victor und Graham Hale sehr helle Haut, graue Augen und dasselbe blonde Haar.
+  Wiederkehrende Figuren haben genau ein Bild (eine Datei je Sprite).
+- **Berufe ohne Klischee:** Mama in Pflegekleidung, Schaffner mit Dienstmütze und Weste,
+  Schiffskoch mit Kochmütze, Big Joe, Hank, Tomás, Albescu und Joss im Overall, Uhrmacher Harlan
+  mit Lupe, Rangerinnen und Wüstenwanderin mit breitem Hut. Die Vell-Familien tragen heutige
+  Kleidung (Trainingsjacke, Overall, Schulshirt), ohne Federn oder Schmuck.
+- **Kinder** (Kinderteile): Lily, Dex, Mae, Tamsin, Lou, Mira, Kira und der Zeitungsjunge. Teenager ab
+  14 (Held, Juno, Sam, Victor, Céleste …) haben den Erwachsenenkörper, sie sind etwa so groß.
+- **Held:** warm-helle Haut, kinnlanger Bob, helles Hemd unter offener Jacke, damit niemand auf ein
+  Geschlecht schließen kann.
+- **Befund am Werkzeug** (nicht geändert, weil ich nur `figuren.json` und `spiel/figuren/` ändern
+  darf): `figuren.py` setzt Kinderfrisuren als `Hairstyle_<frisur>.png` zusammen, die Dateien
+  heißen aber `Hairstyle_kid_<Form>_<Farbe>.png`. Deshalb stehen die Kinderfrisuren als
+  `kid_4_1` statt `4_1` in der Liste. Wenn der Haupt-Chat das Werkzeug anpasst (Präfix `kid_`
+  ergänzen), müssen die acht Einträge auf `4_1` usw. zurück.
+- **Push:** Der Commit 058f30ab liegt im privaten Repository nur lokal in meiner Sitzung; der
+  Push nach `main` wurde von der Rechteprüfung der Sitzung abgelehnt (Schreiben in ein fremdes
+  System). Der Autor muss ihn freigeben oder selbst pushen.
+
+**Aussehen je Figur** (Haut, Augen, Kleidung, Haar, Zubehör):
+
+| Figur           | Aussehen                                                                                                               |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| held-0          | warm-helle Haut, haselnussbraune Augen, offene Jacke über hellem Hemd, Haar braun (kinnlanger Bob)                     |
+| ambrose-jung    | helle Haut, graue Augen, langer Gehrock (schwarz), Haar dunkelbraun (Tolle)                                            |
+| mutter          | helle Haut, grüne Augen, Pflegekleidung (petrol), Haar braun (lang)                                                    |
+| coach-delgado   | warm-helle Haut, bernsteinfarbene Augen, Trainingsjacke (blau), Haar dunkelbraun (Pferdeschwanz)                       |
+| sam             | sehr helle Haut, blaue Augen, T-Shirt (rot), Haar rotblond (stachelig)                                                 |
+| skater-jo       | warm-helle Haut, haselnussbraune Augen, offene Jacke, Regenbogenhemd, Haar braun (kurz), Schirmmütze                   |
+| juno            | mittelbraune Haut, braune Augen, Pulli (flieder), Haar dunkelbraun (Dutt)                                              |
+| abernathy       | sehr helle Haut, graue Augen, Tweedjacke mit Krawatte (dunkelbraun), Haar grau (kurz), Brille                          |
+| lily            | Kind, sehr helle Haut, blaue Augen, rosa Shirt, Haar rotblond (Zöpfe)                                                  |
+| okafor          | braune Haut, braune Augen, helle Jacke mit Schal (blassblau), Haar grau (kurze Locken), Brille                         |
+| dex             | Kind, braune Haut, braune Augen, blaues Shirt, Haar schwarz (Stachelkopf)                                              |
+| mae             | Kind, sehr helle Haut, blaue Augen, hellblaues Shirt, Haar blond (Pagenkopf)                                           |
+| boateng         | mittelbraune Haut, bernsteinfarbene Augen, Pullover (hellblau), Haar aschgrau (kurz), Bart                             |
+| rosa            | warm-helle Haut, haselnussbraune Augen, Flanellhemd (grün), Haar aschgrau (kinnlang, Seitenscheitel), Strickmütze      |
+| victor          | sehr helle Haut, graue Augen, Sakko mit Hemd (marine), Haar hellbraun (ordentlich kurz)                                |
+| wanderer        | mittelbraune Haut, braune Augen, Outdoorjacke (grün), Haar braun (Topfschnitt), Rucksack                               |
+| nia             | braune Haut, bernsteinfarbene Augen, gemustertes Hemd (orange), Haar schwarz (Pferdeschwanz)                           |
+| fenwick         | helle Haut, grüne Augen, Outdoorjacke (rostbraun), Haar rotblond (langer Bob), Rucksack                                |
+| schaffner       | warm-helle Haut, graue Augen, Weste über Hemd (blau), Haar aschgrau (kurz), Dienstmütze                                |
+| slick           | braune Haut, braune Augen, Kapuzenjacke (blau), Haar schwarz (kurze Locken), Rucksack                                  |
+| tamsin          | Kind, mittelbraune Haut, braune Augen, gestreiftes Shirt, Haar dunkelbraun (kurz mit Pony)                             |
+| ray             | mittelbraune Haut, graue Augen, Uniformjacke (grau), Haar grau (kurz), Strickmütze                                     |
+| harlan          | sehr helle Haut, haselnussbraune Augen, Weste über Hemd (dunkel), Haar grau (ordentlich kurz), Lupe am Auge            |
+| pops            | braune Haut, bernsteinfarbene Augen, offene Jacke über Hemd (braun), Glatze, Bart                                      |
+| albescu         | helle Haut, grüne Augen, Overall (rot), Haar dunkelbraun (Pagenkopf)                                                   |
+| nova            | helle Haut, blaue Augen, helle Jacke mit Schal (weiß), Haar hellbraun (lang)                                           |
+| dale            | warm-helle Haut, braune Augen, Latzhose (blau), Haar hellbraun (kurz), Bart                                            |
+| big-joe         | helle Haut, blaue Augen, Overall (gelb), Haar dunkelbraun (kurz geschoren), Bart                                       |
+| hank            | mittelbraune Haut, braune Augen, Overall (orange), Haar dunkelbraun (Topfschnitt), Strickmütze                         |
+| priya           | braune Haut, braune Augen, Outdoorjacke (grau), Haar schwarz (lang)                                                    |
+| gus             | warm-helle Haut, bernsteinfarbene Augen, Blouson (marine), Haar aschgrau (kurz), Schnurrbart                           |
+| edna            | sehr helle Haut, grüne Augen, Flanellhemd (senf), Haar grau (Pagenkopf), Brille                                        |
+| teague          | helle Haut, graue Augen, langer Gehrock (oliv), Haar grau (kurz), Brille                                               |
+| oma-ruth        | helle Haut, grüne Augen, Strickpullover (lila), Haar grau (Dutt)                                                       |
+| graham-hale     | sehr helle Haut, graue Augen, Anzug mit Krawatte (dunkel, rote Krawatte), Haar hellbraun (seitlich gekämmt)            |
+| zeitungsjunge   | Kind, helle Haut, graue Augen, hellblaues Shirt, Haar rotblond (Stachelkopf)                                           |
+| kellner         | sehr helle Haut, braune Augen, Weste über Hemd (grau), Haar dunkelbraun (ordentlich kurz), Schnurrbart                 |
+| zeitungsleser   | warm-helle Haut, graue Augen, Sakko mit Hemd (schwarz), Haar grau (kurz), Lupe am Auge                                 |
+| kowalczyk       | sehr helle Haut, blaue Augen, Latzhose (grün), Haar rotblond (Pferdeschwanz), Schirmmütze                              |
+| joggerin        | mittelbraune Haut, grüne Augen, Trainingsjacke (rosa), Haar aschgrau (Pferdeschwanz)                                   |
+| lin             | warm-helle Haut, braune Augen, Sakko mit Hemd (grau), Haar schwarz (kinnlanger Bob), Brille                            |
+| theo            | warm-helle Haut, graue Augen, Pullover (graublau), Haar schwarz (mit Kopfhörern)                                       |
+| dash            | braune Haut, bernsteinfarbene Augen, T-Shirt (orange), Haar dunkelbraun (zerzaust), Rucksack                           |
+| rosie           | warm-helle Haut, bernsteinfarbene Augen, Hawaiihemd (türkis), Haar braun (Dutt)                                        |
+| empfangsroboter | blaues Blechgesicht, leuchtend türkise Augen, weißer Kittel (grau), Schraube auf dem Kopf                              |
+| schiffskoch     | mittelbraune Haut, haselnussbraune Augen, weißer Kittel (weiß), Kochmütze                                              |
+| guidry          | helle Haut, haselnussbraune Augen, offene Jacke über Hemd (oliv), Haar aschgrau (Tolle)                                |
+| odile           | braune Haut, bernsteinfarbene Augen, gemustertes Hemd (lila), Haar aschgrau (kurze Locken)                             |
+| remy            | mittelbraune Haut, braune Augen, Uniform mit Halstuch (gold (Bandjacke)), Haar schwarz (zerzaust)                      |
+| lou             | Kind, helle Haut, haselnussbraune Augen, grünes T-Shirt, Haar braun (kurz)                                             |
+| batiste         | braune Haut, haselnussbraune Augen, Latzhose (weinrot), Strickmütze                                                    |
+| arceneaux       | mittelbraune Haut, braune Augen, Strickpullover (lachs), Haar grau (langer Bob)                                        |
+| henri           | warm-helle Haut, graue Augen, Tweedjacke mit Krawatte (braun), Haar aschgrau (Tolle)                                   |
+| celeste         | warm-helle Haut, graue Augen, Kapuzenjacke (malve), Haar braun (mit Kopfhörern)                                        |
+| blaeser         | braune Haut, grüne Augen, offene Jacke, rotes Hemd, Haar schwarz (Dutt)                                                |
+| holloway        | warm-helle Haut, blaue Augen, Pulli (beige), Haar grau (kinnlang, Seitenscheitel), breitkrempiger Hut                  |
+| mira            | Kind, mittelbraune Haut, blaugrüne Augen, blaues Shirt, Haar schwarz (Zöpfe)                                           |
+| tomas           | mittelbraune Haut, bernsteinfarbene Augen, Overall (orange), Haar dunkelbraun (zerzaust)                               |
+| dot             | sehr helle Haut, blaue Augen, Hawaiihemd (rosa), Haar grau (wuschelig), Brille                                         |
+| buck            | warm-helle Haut, haselnussbraune Augen, offene Jacke über Hemd (rot), Schirmmütze                                      |
+| okoro           | braune Haut, braune Augen, Tweedjacke mit Krawatte (marine), Haar grau (kurz), Brille                                  |
+| earl            | helle Haut, graue Augen, T-Shirt (weinrot), Glatze, Bart                                                               |
+| kira            | Kind, braune Haut, braune Augen, gestreiftes Shirt, Haar schwarz (Pagenkopf)                                           |
+| annek           | mittelbraune Haut, braune Augen, Trainingsjacke (weinrot), Haar schwarz (Pferdeschwanz)                                |
+| joss            | braune Haut, bernsteinfarbene Augen, Overall (rot), Haar schwarz (ordentlich kurz)                                     |
+| ward            | sehr helle Haut, graue Augen, Strickpullover (grau), Haar grau (kinnlanger Bob)                                        |
+| kit             | helle Haut, grüne Augen, Outdoorjacke (grün), Haar rotblond (wild gewellt), Strickmütze                                |
+| haraldsen       | sehr helle Haut, blaue Augen, Blouson (marine), Glatze, Bart                                                           |
+| sol             | warm-helle Haut, bernsteinfarbene Augen, Kapuzenjacke (dunkelgrün), Haar braun (Pferdeschwanz), Rucksack               |
+| bell            | helle Haut, blaue Augen, offene Jacke über Hemd (oliv), Haar dunkelbraun (kinnlanger Bob), breitkrempiger Hut          |
+| ray-castillo    | mittelbraune Haut, bernsteinfarbene Augen, Blouson (grün), Haar dunkelbraun (seitlich gekämmt), Schirmmütze            |
+| darlene         | warm-helle Haut, grüne Augen, weiße Bluse mit Schürze (rot), Haar hellbraun (Dutt)                                     |
+| greta           | sehr helle Haut, blaue Augen, Flanellhemd (grün), Haar grau (Pferdeschwanz)                                            |
+| ezra            | braune Haut, braune Augen, T-Shirt (grün), Haar dunkelbraun (strubbelig)                                               |
+| hollis          | warm-helle Haut, haselnussbraune Augen, Outdoorjacke (grün), Haar braun (kinnlang, Seitenscheitel), breitkrempiger Hut |
+| juniper         | mittelbraune Haut, grüne Augen, T-Shirt (hellblau), Haar hellbraun (seitlich lang), Kletterhandschuhe                  |
+| pruitt          | sehr helle Haut, graue Augen, offene Jacke über Hemd (braun), Glatze, Bart                                             |
+| postreiter      | warm-helle Haut, haselnussbraune Augen, langer Gehrock (blaugrau), Haar braun (Pony seitlich), breitkrempiger Hut      |
+| abe             | sehr helle Haut, blaue Augen, helle Jacke mit Schal (hellblau), Haar grau (kurz), Dienstmütze                          |
+| turnierleiterin | sehr helle Haut, graue Augen, Weste über Hemd (grün), Haar schwarz (Pagenkopf)                                         |
+| bea             | sehr helle Haut, blaue Augen, Uniform mit Halstuch (blau), Haar hellbraun (langer Bob)                                 |
+| marcus          | braune Haut, braune Augen, Uniform mit Halstuch (grün), Haar schwarz (strubbelig)                                      |
+| tobias          | helle Haut, grüne Augen, Pullover (grau), Haar braun (seitlich lang)                                                   |
+| kade            | sehr helle Haut, graue Augen, Sakko mit Hemd (schwarz), Haar grau (seitlich gekämmt)                                   |
+| theron          | warm-helle Haut, haselnussbraune Augen, Hawaiihemd (blau), Haar braun (wuschelig), Brille                              |
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

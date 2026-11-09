@@ -2,7 +2,7 @@
   "karte": "wegDesertSummit.diner",
   "datei": "karten/weg-desert-summit-diner.json",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen wird die Wüste zu Steppe mit ersten Pinien, die Straße führt zur Bergstraße. Diner links vom Motel, alte Zapfsäule mit Autowrack und ein roter Felsbogen im Westen, Wasserturm und Reklametafel im Osten, zwei Sattelzüge.",
+  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Diner links vom Motel, alte Zapfsäule mit Autowrack und ein roter Felsbogen im Westen, Wasserturm und Reklametafel im Osten, zwei Sattelzüge.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -138,24 +138,32 @@
       "feld": [2, 17]
     },
     {
-      "moebel": "wds6Pinie",
+      "moebel": "wds6Saguaro",
       "feld": [3, 4]
     },
     {
-      "moebel": "wds6PinieB",
+      "moebel": "wds6Wacholder",
       "feld": [9, 6]
     },
     {
-      "moebel": "wds6Pinie",
+      "moebel": "wds6Saguaro",
       "feld": [14, 4]
     },
     {
-      "moebel": "wds6PinieB",
+      "moebel": "wds6Wacholder",
       "feld": [4, 11]
     },
     {
-      "moebel": "wds6Pinie",
+      "moebel": "wds6KaktusBluehend",
       "feld": [15, 10]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [35, 9]
     },
     {
       "moebel": "wds6Geierkreis",
@@ -275,10 +283,6 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [36, 7]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
       "feld": [46, 4]
     },
     {
@@ -290,16 +294,20 @@
       "feld": [47, 7]
     },
     {
-      "moebel": "wds6SteinRot",
-      "feld": [38, 8]
-    },
-    {
       "moebel": "wds6KaktusKlein",
       "feld": [40, 5]
     },
     {
       "moebel": "wds6KaktusKlein",
       "feld": [48, 11]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [38, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [36, 4]
     },
     {
       "moebel": "wds6Wacholder",

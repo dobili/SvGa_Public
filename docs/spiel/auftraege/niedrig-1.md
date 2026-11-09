@@ -1,29 +1,20 @@
-# Auftrag niedrig-1: Weg nach Cedar Creek und Cedar Creek einrichten
+# Auftrag niedrig-1: Ironwood und der Weg dorthin einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der sechzehnte Auftrag, Cedar Creek, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, siebzehnter Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand fa9f03a3)
-**Darf ändern:** `inhalte/abenteuer/karten/weg-maple-cedar-*.json`, `inhalte/abenteuer/karten/cedar-creek-*.json`,
-`inhalte/abenteuer/moebel.json`, `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier, Paketbau
-und `CHROMIUM_PFAD=… PLAYWRIGHT_NUR_CHROMIUM=1 npx playwright test tests/e2e/abenteuer` (nach `npm run build`)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand adead8c3)
+**Darf ändern:** `inhalte/abenteuer/karten/ironwood-*.json`, `inhalte/abenteuer/karten/weg-riverton-ironwood-*.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge, Schlüssel mit Vorsilbe `iw`), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag (Pipeline, Prettier, Build, Oberflächentests Abenteuer)
 
 ## Ziel
 
-Wie in Maple Falls: Möbel und Schmuck aus dem Register (privates Repository, wie im letzten Auftrag).
-Landstraße und Flussweg (Natur: Bäume, Büsche, Zäune, Felsen, Schilder; gern Teile aus
-`SERENE_VILLAGE_REVAMPED` und `modern-farm` für Felsen, Teiche, Steg), Cedar Creek draußen (Kleinstadt),
-Bibliothek (Regale, Lesetische, Lampen), Archiv (Kartons, Aktenschränke, Kellerstimmung), Waschsalon
-(Waschmaschinen, Bänke, Automaten).
+Wie Cedar Creek: Ironwood draußen (Industriestadt: Fabrikhallen, Schornsteine, Arbeiterhäuser),
+Kantine (Theke, lange Tische, Küche), Mamas Zimmer (bei Oma Ruth: altes Wohnzimmer, Fotos, Regal),
+Umkleide (Spinde, Bänke, Duschen), Museum (Vitrinen, Bilder, Statuen); dazu Kanalweg und Brücke.
+mittel-1 richtet parallel Riverton ein (Vorsilbe `rv`), deshalb deine Schlüssel mit `iw`.
 
-## Vorgaben
-
-1. Wie zuvor: `moebel.json` mit Pfaden, Wege frei, Auslöser und Figuren erreichbar.
-2. Neu (Laufhilfe seit fa9f03a3): Der Held rückt beim Gehen zur Kachelmitte; trotzdem Gänge
-   mindestens eine Kachel breit lassen und Möbel nicht diagonal zu Engstellen stellen.
-3. Je Karte ein Bildschirmfoto prüfen und im Bericht in einem Satz beschreiben.
-
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository aktualisiert (df308d81), als
 `app/inhalte-privat/quelle` verlinkt. Neu in `moebel.json` (nur Pfade): `busch` (16 × 32), `fels`,

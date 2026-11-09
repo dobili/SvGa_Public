@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Eine Bretterhütte der Bergbausiedlung, 1866 (Variante A, nach dem Ortsdokument), 12 × 10: grobe Bretterwände, Dielenboden, durch das Fenster der Nachthimmel. An der Westwand die Pritsche, in der Mitte ein dunkler Tisch mit dem Brett und einer heruntergebrannten Kerze, davor ein Stuhl; in der Nordostecke der Ofen, Kisten an den Wänden, ein Kerzenleuchter auf dem Kistenstapel. An der Tür in der Südwand wartet der Postreiter.",
+  "beschreibung": "Eine Bretterhütte der Bergbausiedlung, 1866 (Variante A, nach dem Ortsdokument), 12 × 10: grobe Bretterwände, Dielenboden, durch das Fenster der Nachthimmel. An der Westwand die Pritsche, in der Mitte ein dunkler Tisch mit dem Brett und einer heruntergebrannten Kerze, davor ein Stuhl; in der Nordostecke der Kanonenofen, Kisten an den Wänden, eine Petroleumlampe auf dem Kistenstapel. An der Tür in der Südwand wartet der Postreiter.",
   "zustand": ["alt", "verwittert", "gebraucht"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -62,7 +62,7 @@
       "feld": [10, 7]
     },
     {
-      "moebel": "es7Leuchter",
+      "moebel": "es7Petroleumlampe",
       "feld": [0, 0],
       "auf": "kisten"
     },

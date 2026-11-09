@@ -29,13 +29,13 @@
       "stil": "rustikal"
     },
     "es7Ofen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_114.png",
+      "quelle": "spiel/eigene/kanonenofen.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
       "art": "herd",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "alt",
       "stil": "rustikal"
     },
     "es7Kisten": {
@@ -157,8 +157,8 @@
       "stil": "rustikal",
       "zustand": "alt"
     },
-    "es7Leuchter": {
-      "quelle": "spiel/eigene/kerzenleuchter.png",
+    "es7Petroleumlampe": {
+      "quelle": "spiel/eigene/petroleumlampe.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,

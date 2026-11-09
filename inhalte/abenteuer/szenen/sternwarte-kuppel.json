@@ -2,7 +2,7 @@
   "karte": "sternwarte.kuppel",
   "datei": "karten/sternwarte-kuppel.json",
   "art": "innen",
-  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 12 Kacheln, nachtblaue Wand, Dielen. In der Mitte das Teleskop (vorerst eine Stehlampe, Bild bestellt), an der Nordwand die Sternkarte (Ersatz Weltkarte) zwischen Regalen, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Tür in der Südwand.",
+  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 12 Kacheln, nachtblaue Wand, Dielen. In der Mitte das Teleskop auf dem Dreifuß, an der Nordwand die Sternkarte mit dem Springer-Sternbild zwischen Regalen, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Tür in der Südwand.",
   "wand": "blau",
   "boden": "dielen",
   "raster": [
@@ -32,12 +32,12 @@
       "versatz": [0, 24]
     },
     {
-      "moebel": "cc4Stehlampe",
-      "feld": [6, 4],
+      "moebel": "n5Teleskop",
+      "feld": [5, 4],
       "id": "teleskop"
     },
     {
-      "moebel": "mf2Weltkarte",
+      "moebel": "n5Sternkarte",
       "feld": [6, 1],
       "an_wand": true,
       "id": "sternkarte"

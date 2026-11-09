@@ -2,13 +2,13 @@
   "karte": "sternwarte.felsnase",
   "datei": "karten/sternwarte-felsnase.json",
   "art": "aussen",
-  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels, Nacht als Tönung der Szene. Vom Südrand steigt der Pfad in Kehren auf das Plateau; dort die Sternwarte (vorerst eine Holzbude, Bild bestellt) mit Tür nach Süden, eine Bank mit Blick nach Westen, ein alter Antennenmast, Säulenkakteen.",
+  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels, Nacht als Tönung der Szene. Vom Südrand steigt der Pfad in Kehren auf das Plateau; dort die weiße Sternwarte mit rostigem Kuppelspalt und Schild, Tür nach Süden, eine Bank mit Blick nach Westen, ein alter Antennenmast, Säulenkakteen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "raster": [
     "########################################",
     "########################################",
-    "########################################",
+    "################.......#################",
     "#####..............................#####",
     "#####..............................#####",
     "#####..............................#####",
@@ -39,8 +39,8 @@
   ],
   "objekte": [
     {
-      "moebel": "pw7Campbude",
-      "feld": [17, 4],
+      "moebel": "n5Sternwarte",
+      "feld": [16, 1],
       "id": "sternwarte"
     },
     {

@@ -1,0 +1,32 @@
+{
+  "moebel": {
+    "n5Sternwarte": {
+      "quelle": "spiel/eigene/sternwarte_aussen.png",
+      "breite": 112,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "n5Teleskop": {
+      "quelle": "spiel/eigene/teleskop.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "n5Sternkarte": {
+      "quelle": "spiel/eigene/sternkarte_wand.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "klassisch"
+    }
+  }
+}

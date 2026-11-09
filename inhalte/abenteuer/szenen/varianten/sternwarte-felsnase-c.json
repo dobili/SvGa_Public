@@ -9,7 +9,7 @@
   "raster": [
     "########################################",
     "########################################",
-    "########################################",
+    "#####################.......############",
     "#####..............................#####",
     "#####..............................#####",
     "#####..............................#####",
@@ -40,8 +40,8 @@
   ],
   "objekte": [
     {
-      "moebel": "pw7Campbude",
-      "feld": [22, 4],
+      "moebel": "n5Sternwarte",
+      "feld": [21, 1],
       "id": "sternwarte"
     },
     {
@@ -74,35 +74,35 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [20, 5]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [6, 9]
-    },
-    {
-      "moebel": "dd6KaktusKlein",
       "feld": [11, 8]
     },
     {
-      "moebel": "dd6KaktusBluehend",
+      "moebel": "felsKlein",
       "feld": [14, 9]
     },
     {
-      "moebel": "dd6Saguaro",
+      "moebel": "dd6KaktusKlein",
       "feld": [18, 9]
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "dd6KaktusBluehend",
       "feld": [28, 9]
     },
     {
+      "moebel": "dd6Saguaro",
+      "feld": [33, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 12]
+    },
+    {
       "moebel": "dd6KaktusKlein",
-      "feld": [29, 7]
+      "feld": [15, 10]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [33, 8]
+      "feld": [19, 10]
     },
     {
       "moebel": "dd6Saguaro",

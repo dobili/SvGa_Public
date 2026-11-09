@@ -122,36 +122,28 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "st5Stuetzbalken",
+      "moebel": "n7Stuetze",
       "feld": [18, 6]
     },
     {
-      "moebel": "st5Stuetzbalken",
-      "feld": [21, 6]
+      "moebel": "n7Grubenlampe",
+      "feld": [21, 7]
     },
     {
-      "moebel": "st5Stuetzbalken",
+      "moebel": "n7Stuetze",
       "feld": [18, 10]
     },
     {
-      "moebel": "st5Stuetzbalken",
-      "feld": [21, 10]
-    },
-    {
-      "moebel": "st5Stuetzbalken",
+      "moebel": "n7Stuetze",
       "feld": [18, 14]
     },
     {
-      "moebel": "st5Stuetzbalken",
-      "feld": [21, 14]
+      "moebel": "n7Grubenlampe",
+      "feld": [21, 15]
     },
     {
-      "moebel": "st5Stuetzbalken",
+      "moebel": "n7Stuetze",
       "feld": [18, 18]
-    },
-    {
-      "moebel": "st5Stuetzbalken",
-      "feld": [21, 18]
     },
     {
       "moebel": "n7Lore",
@@ -340,18 +332,26 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [23, 18]
+      "feld": [21, 18]
     },
     {
       "moebel": "wg4Felsgruppe",
+      "feld": [23, 18]
+    },
+    {
+      "moebel": "felsKlein",
       "feld": [26, 17]
+    },
+    {
+      "moebel": "fels",
+      "feld": [27, 17]
     },
     {
       "moebel": "felsKlein",
       "feld": [29, 18]
     },
     {
-      "moebel": "fels",
+      "moebel": "wg4Felsgruppe",
       "feld": [31, 18]
     },
     {
@@ -359,15 +359,15 @@
       "feld": [34, 18]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "fels",
       "feld": [35, 18]
     },
     {
       "moebel": "felsKlein",
-      "feld": [23, 19]
+      "feld": [21, 19]
     },
     {
-      "moebel": "fels",
+      "moebel": "wg4Felsgruppe",
       "feld": [26, 19]
     },
     {
@@ -375,8 +375,36 @@
       "feld": [28, 19]
     },
     {
+      "moebel": "fels",
+      "feld": [30, 20]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [32, 20]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [34, 19]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [36, 19]
+    },
+    {
+      "moebel": "fels",
+      "feld": [37, 19]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [21, 22]
+    },
+    {
       "moebel": "st5Bohlen",
       "feld": [8, 12]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [36, 17]
     }
   ],
   "ausloeser": [

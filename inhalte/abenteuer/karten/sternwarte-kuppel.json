@@ -163,19 +163,19 @@
         },
         {
           "id": 5,
-          "name": "cc4Stehlampe",
+          "name": "n5Teleskop",
           "type": "moebel",
-          "x": 96,
+          "x": 80,
           "y": 64,
-          "width": 16,
-          "height": 48,
+          "width": 48,
+          "height": 80,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 136
             },
             {
               "name": "kollision",
@@ -186,11 +186,11 @@
         },
         {
           "id": 6,
-          "name": "mf2Weltkarte",
+          "name": "n5Sternkarte",
           "type": "moebel",
           "x": 96,
           "y": 16,
-          "width": 32,
+          "width": 48,
           "height": 32,
           "rotation": 0,
           "visible": true,

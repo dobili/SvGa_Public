@@ -33,13 +33,13 @@
       "versatz": [0, 24]
     },
     {
-      "moebel": "cc4Stehlampe",
-      "feld": [4, 6],
+      "moebel": "n5Teleskop",
+      "feld": [4, 5],
       "id": "teleskop"
     },
     {
-      "moebel": "mf2Weltkarte",
-      "feld": [9, 1],
+      "moebel": "n5Sternkarte",
+      "feld": [7, 1],
       "an_wand": true,
       "id": "sternkarte"
     },

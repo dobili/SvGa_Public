@@ -8,6 +8,24 @@
       "art": "fahrzeug",
       "zustand": "alt",
       "stil": "industrie"
+    },
+    "n7Stuetze": {
+      "quelle": "spiel/eigene/stollen_stuetze.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "stuetze",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "n7Grubenlampe": {
+      "quelle": "spiel/eigene/grubenlampe_haken.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "alt",
+      "stil": "industrie"
     }
   }
 }

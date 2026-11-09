@@ -2416,6 +2416,70 @@
           }
         }
       ]
+    },
+    {
+      "kennung": "portDelacroix.schach960",
+      "titel": "quest.schach960.titel",
+      "typ": "begegnung",
+      "ort": "portDelacroix",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "port-delacroix-musikhaus.blaeser_regel"
+      },
+      "schritte": [
+        {
+          "text": "quest.schach960.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.schach960Set1",
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        },
+        {
+          "text": "quest.schach960.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.schach960Set2",
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        },
+        {
+          "text": "quest.schach960.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "portDelacroix.schach960Set3",
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
     }
   ]
 }

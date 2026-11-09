@@ -535,6 +535,58 @@
       },
       "kartenErlaubt": false,
       "variante": "blind"
+    },
+    {
+      "kennung": "portDelacroix.schach960Set1",
+      "gegner": "portDelacroix.blaeserSet1",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "portDelacroix.schach960Set2",
+      "gegner": "portDelacroix.blaeserSet2",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "portDelacroix.schach960Set3",
+      "gegner": "portDelacroix.blaeserSet3",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "crossroads.schach960",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
     }
   ]
 }

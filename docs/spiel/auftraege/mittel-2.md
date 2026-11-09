@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Schach960 am Varianten-Tisch (Inhalte)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, sechzehnter Auftrag)
+**Stand:** fertig (mittel-2, 09.11.2026; Auftrag vom Haupt-Chat, sechzehnter Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** Ink-Dateien der Orte mit Varianten-Tisch und der Wege, `begegnungen.json` (nur neue
@@ -28,6 +28,54 @@ mit `"startnummer": 0 bis 959`), Rochade nach 960-Regeln, die Engine spielt mit.
 3. Schreibe `"variante": "schach960"` in die Begegnungen; solange die Technik fehlt, meldet der Test
    der Pipeline den Wert vielleicht als unbekannt: dann im Bericht nennen, der Haupt-Chat ergänzt das
    Schema.
+
+## Bericht
+
+**Fertig** auf `abenteuer-regelwerk` (Basis 36835075 hereingeholt). Prüfungen: `pytest pipeline/tests`
+622 bestanden, `npm run pruefen` 362 Dateien und 2422 Tests, Prettier für die geänderten JSON-Dateien;
+Simulation und 300 Zufallsdurchläufe je Datei ohne Fehler.
+
+**Ort:** nicht Silicon Bay, sondern das **Musikhaus in Port Delacroix** (Bibel und `10`, L1: „Wir
+spielen nie zweimal dasselbe Stück“). Gründe: Die Bläserin steht dort schon als Figur
+(`portDelacroix.blaeser`, Porträt vorhanden), die Szene passt zu Ambrose (Geburtsstadt, als Kind
+dagegen, lernt es jetzt), und die Akademie in Silicon Bay steht für den Konzern, nicht für Freude am
+Spiel. Freigeschaltet nach dem Wiederaufbau (`musikhausOffen`).
+
+**Inhalt**
+
+- **Dialog** `port-delacroix-musikhaus.ink`, Knoten `blaeser`: `blaeser_regel` (Mabel stellt sich
+  vor, Ambrose erklärt in drei Sätzen die Regeln: Grundreihe gemischt, Läufer auf verschiedenen
+  Farben, König zwischen den Türmen, Rochade auf dieselben Felder wie im normalen Schach; dazu warum
+  das gut tut: kein Eröffnungsbuch, nur Entwicklung, Zentrum, Königssicherheit, Kapitel 2 und 3),
+  `blaeser_set1` bis `blaeser_set3`, `blaeser_setliste` (Fund), `blaeser_alltag` (weitere Sets).
+  Der Kopf der Datei ist angepasst.
+- **Varianten-Tisch** `crossroads-raststaette.ink`: Schach960 erscheint in der Liste („Das geht
+  schon“) und ist spielbar gegen Ambrose (`crossroads.schach960`).
+- **Gegner** (`gegner.json`): `portDelacroix.blaeserSet1` (aktuell − 100), `blaeserSet2` (aktuell),
+  `blaeserSet3` (aktuell + 100), Rolle `story`, Stil `angreifer`, Eröffnung `frei`, Porträt
+  `blaeser.svg`.
+- **Begegnungen:** `portDelacroix.schach960Set1` bis `Set3` und `crossroads.schach960` (Farbe
+  Zufall, Partie, Karten gesperrt).
+- **Quest** `portDelacroix.schach960` „Nie zweimal dasselbe Stück“ (Start mit `blaeser_regel`, drei
+  Schritte je Set, Sieg oder Remis, 15, 20 und 30 Münzen). **Fund** `setliste960` („Setliste mit
+  Startnummern“). 6 neue Texte. `10_…` Abschnitt 3 mit dem Stand ergänzt.
+
+**Wichtig: `"variante": "schach960"` fehlt noch in den vier Begegnungen.** Das Schema
+(`schemas/abenteuer-begegnungen.schema.json`, Stand 36835075) kennt nur `"blind"`; mit dem Feld
+schlägt `test_beispiel_passt_zum_schema[begegnungen.json…]` fehl. Nach Regel 5 in CLAUDE.md (jeder
+Stand besteht alle Tests) habe ich es deshalb vorerst weggelassen. Sobald das Schema `schach960`
+kennt, ergänze ich es (oder der Haupt-Chat beim Zusammenführen): je Begegnung
+`"variante": "schach960"` nach `"kartenErlaubt": false` in `portDelacroix.schach960Set1`, `Set2`,
+`Set3` und `crossroads.schach960`. Bis dahin wären es normale Partien aus der Grundstellung; sie zählen trotzdem nicht für Nadeln (Rolle Story) und nicht für die App (`"zaehltFuerApp": false` steht schon drin). Bitte also nicht ohne das Feld nach `main` nehmen.
+
+**Entscheidungen**
+
+1. Drei Gegnerprofile statt einem: Die Stärke steht im Gegner, nicht in der Begegnung; „drei Sets“
+   erklären die steigende Stärke in der Welt.
+2. Rolle `story` (frei), damit keine Münzen für Straßensiege doppelt kommen; die Münzen gibt die
+   Quest.
+3. Karten gesperrt wie beim Blindschach: Hilfskarten setzen normale Stellungen voraus.
+4. Sieg oder Remis genügt für das nächste Set.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

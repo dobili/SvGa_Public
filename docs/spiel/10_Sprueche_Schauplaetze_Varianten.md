@@ -97,6 +97,13 @@ Zur Abwechslung, nie Pflicht für die Hauptstory, meist in Crossroads (Rastort) 
 - **Buchbezug:** Varianten haben keinen Buchbezug; deshalb zählen sie nicht für die Elo der App und
   nicht für A (R37). Blindschach trainiert aber das Vorstellen von Stellungen (Kapitel 11,
   Varianten berechnen), das nennt Ambrose.
+- **Stand V1 Schach960 (9.11.2026):** im Spiel an der Stelle von L1, im Musikhaus von Port
+  Delacroix (nach dem Wiederaufbau): die Bläserin Mabel spielt drei Sets mit steigender Stärke
+  (Begegnungen `portDelacroix.schach960Set1` bis `Set3`, Gegner A − 100, A, A + 100, Rolle Story,
+  ohne Karten), Nebenquest `portDelacroix.schach960` mit 15, 20 und 30 Münzen, Fund `setliste960`.
+  Ambrose erklärt die Regeln und warum nur Grundsätze helfen (Kapitel 2 und 3); als Kind war er
+  dagegen, jetzt lernt er es. Danach steht Schach960 am Varianten-Tisch in Crossroads
+  (`crossroads.schach960`, gegen Ambrose). Keine Nadeln, keine Wertung, nicht für die App.
 
 ## 3a. Landschaften als Wege, jede mit „ihrer“ Variante (L1 bis L10; Wunsch des Autors, 8.11.2026)
 

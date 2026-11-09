@@ -763,5 +763,11 @@
   "quest.falkeUndBison.schritt2": "Bring Annek an der Schule Schach bei.",
   "quest.falkeUndBison.schritt3": "Sprich noch einmal mit Kira.",
   "fund.falkeAusHolz.name": "Falke aus Holz",
-  "fund.falkeAusHolz.text": "Eine Spielfigur aus Kiras Werkunterricht, für das Spiel Falke und Bison. „Damit du nicht vergisst, wie man fliegt.“"
+  "fund.falkeAusHolz.text": "Eine Spielfigur aus Kiras Werkunterricht, für das Spiel Falke und Bison. „Damit du nicht vergisst, wie man fliegt.“",
+  "quest.schach960.titel": "Nie zweimal dasselbe Stück",
+  "quest.schach960.schritt1": "Spiel das erste Set Schach960 gegen Mabel im Musikhaus.",
+  "quest.schach960.schritt2": "Spiel das zweite Set gegen Mabel.",
+  "quest.schach960.schritt3": "Besteh die Jam-Session gegen Mabel.",
+  "fund.setliste960.name": "Setliste mit Startnummern",
+  "fund.setliste960.text": "Von Mabel im Musikhaus von Port Delacroix. Neben jedem Lied die Startstellung des Abends, eine Nummer zwischen 0 und 959."
 }

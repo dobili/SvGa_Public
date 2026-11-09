@@ -1,0 +1,51 @@
+{
+  "moebel": {
+    "dd6Kaktus": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusB": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Ripe_2_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "dd6KaktusOhne": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Fruitless_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "dd6Wasserturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_2.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "dd6WasserturmB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_4.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    }
+  }
+}

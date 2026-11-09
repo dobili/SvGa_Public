@@ -77,8 +77,8 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
         namen = {a["name"] for a in szene.get("ausloeser", [])}
         for name in sorted(namen):
             regel = regel_fuer(liste, karte, name)
-            if not regel:
-                continue
+            if not regel or "ziel" not in regel:
+                continue  # Übergang noch ohne Ziel (etwa zum Steinbruch, bis der Ort angelegt ist).
             ziel_karte, ziel_name = regel["ziel"]["karte"], regel["ziel"]["ausloeser"]
             ziel = alle.get(ziel_karte)
             if ziel is None:
@@ -87,7 +87,7 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
                 befunde.append(f"{karte} {name}: Ziel {ziel_karte} hat keinen Auslöser {ziel_name}")
                 continue
             zurueck = regel_fuer(liste, ziel_karte, ziel_name)
-            if not zurueck or zurueck["ziel"]["karte"] != karte:
+            if not zurueck or zurueck.get("ziel", {}).get("karte") != karte:
                 befunde.append(f"{karte} {name}: {ziel_karte} {ziel_name} führt nicht zurück")
             hier = {rand(szene, f) for f in felder(szene, name)}
             dort = {rand(ziel, f) for f in felder(ziel, ziel_name)}

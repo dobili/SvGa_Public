@@ -60,7 +60,10 @@ nachträgliches Möblieren:
 - **Außen:** Häuser sind ganze Gebäude aus dem Register (keine Wandblöcke); der Übergang liegt auf
   der Kachel direkt unter der Haustür. Bäume ganz (nicht Krone oder Stamm allein).
 - **Auslöser** und Figuren behalten ihre Namen aus orte.json; Übergänge anderer Karten zeigen auf sie.
-- **Möbel** kommen aus `moebel.json` (neue Einträge mit Pfad aus dem Register, Größe aus der Datei).
+- **Möbel** kommen aus `inhalte/abenteuer/moebel/<ort>.json`, eine Datei je Ort (`maple-falls.json`,
+  `cedar-creek.json`, `weg-maple-cedar.json` …; Ort ohne Datei: neue anlegen). Neue Einträge mit Pfad aus
+  dem Register und Größe aus der Datei. Namen bleiben über alle Dateien eindeutig (Test
+  `test_moebel_namen_eindeutig`); die Vorsilbe des Namens nennt die Karte (`mf4`, `cc4`, `wg4` …).
   Bauteile („Modular“, „Left“, „Top“ …) nur zusammen mit ihren Gegenstücken (`"bauteil_ok": true`).
 
 ## Befehle (Hauptordner)
@@ -74,7 +77,7 @@ python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAU inhalte/abenteuer/szenen
 Repositorys. Der Hintergrund landet in `PRIVAT/spiel/grafik/karten/<kennung>.png` (nicht ins
 öffentliche Repository!).
 
-## Angaben je Möbel in moebel.json (für die Regeln, Pflicht für neue und benutzte Einträge)
+## Angaben je Möbel in moebel/<ort>.json (für die Regeln, Pflicht für neue und benutzte Einträge)
 
 `art` (stuhl, tisch, sofa, schrank, regal, bett, pflanze, lampe, treppe, geraet, deko, gebaeude, baum,
 zaun, strassenmoebel …), `blick` (unten, oben, links, rechts: wohin Vorderseite oder Sitzfläche zeigt;

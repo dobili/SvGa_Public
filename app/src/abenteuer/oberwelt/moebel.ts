@@ -1,5 +1,6 @@
 /**
- * Möbel und Schmuck der Karten (inhalte/abenteuer/moebel.json): Objekte vom Typ „moebel“ in der
+ * Möbel und Schmuck der Karten (Quellen: inhalte/abenteuer/moebel/<ort>.json, im Paket als eine
+ * daten/moebel.json zusammengeführt von skripte/baue-abenteuerpaket.mjs): Objekte vom Typ „moebel“ in der
  * Ebene ausloeser, gezeichnet als Bild aus dem Paket (gekaufte Grafik oder Platzhalter), mit
  * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe).
  *
@@ -11,7 +12,7 @@
 import Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
 
-/** Eine Angabe aus moebel.json. */
+/** Eine Angabe aus daten/moebel.json im Paket. */
 export interface Moebelangabe {
   readonly quelle: string;
   readonly breite: number;

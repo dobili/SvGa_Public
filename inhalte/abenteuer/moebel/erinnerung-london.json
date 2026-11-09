@@ -1,0 +1,70 @@
+{
+  "moebel": {
+    "ldGaslaterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "ldFass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brown_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldKarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Empty.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldTisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_275.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ldStuhl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldBuecherregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_407.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldOfen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_114.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldKommode": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_56.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ldTheke": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_285.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ldBank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ldBild": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_111.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    }
+  }
+}

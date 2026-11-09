@@ -2,7 +2,7 @@
 
 Warum: Rückmeldungen des Autors (9.11.2026) zu den ersten Karten: Stühle zeigen vom Tisch weg, Möbel
 mit Schubladen zur Wand, Pflanzen und Lampen allein mitten im Raum, kaputte neben neuen Möbeln,
-Gegenstände über Figuren, Treppen ohne Antritt. Die Regeln brauchen Angaben in moebel.json:
+Gegenstände über Figuren, Treppen ohne Antritt. Die Regeln brauchen Angaben in inhalte/abenteuer/moebel/:
 ``art`` (stuhl, tisch, pflanze, lampe, treppe, …), ``blick`` (unten, oben, links, rechts: wohin die
 Vorderseite zeigt), ``zustand`` (neu, gebraucht, alt, kaputt) und ``stil`` (modern, rustikal, alt,
 industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sind.

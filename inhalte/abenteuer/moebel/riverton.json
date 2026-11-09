@@ -1,0 +1,274 @@
+{
+  "moebel": {
+    "rvTicketschalter": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvWartebank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "rvBahnsteigbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Frontal_1.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "rvGetraenkeautomat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "rvKaffeeautomat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvFahrplan": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Map_Monitor.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvTopfpflanze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Plant_Vase_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvKoffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Travel_Case_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvGepaeckwagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Yellow_Trolley_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvSaeule": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Big_Pillar.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": true
+    },
+    "rvZeitungsregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvPicknicktisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvPicknicktischLang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvHolzbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvLimonadenkarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_1.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvAutoBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvAutoGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_3.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvBildschirmtisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Control_Big_Monitor.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvHydrant": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Fire_Hydrant.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvGitarrenkoffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Guitar_Case_Money.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvBett": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_157.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvFernseher": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fernseher"
+    },
+    "rvPokalhaufen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_148.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "rvLaterneKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "rvKiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rvKisteOffen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rvWerkzeugkiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvMaterialstapel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "rvFass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvLeiter": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Broken_Ladder_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvHolzscheite": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvZeder": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "rvZederSchmal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "rvZederngruppe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_15.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "rvLaubbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "rvLaubbaumDunkel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_37.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "rvBaumstumpf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "rvWegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_5.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "rvGleis": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "rvHeuhaufen": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Fresh_Pile_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "rvHolzbankNatur": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true
+    }
+  }
+}

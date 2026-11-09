@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
+from pipeline.abenteuer.moebelliste import lade_moebel
 
 HAUPT = Path(__file__).resolve().parents[2]
 INHALTE = HAUPT / "inhalte" / "abenteuer"
@@ -64,7 +65,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     for nummer, eintrag in enumerate(szene.get("objekte", [])):
         angabe = moebel.get(eintrag["moebel"])
         if not angabe:
-            befunde.append(f"Möbel {eintrag['moebel']} fehlt in moebel.json")
+            befunde.append(f"Möbel {eintrag['moebel']} fehlt in inhalte/abenteuer/moebel/")
             continue
         if any(w in angabe["quelle"].lower() for w in BAUTEIL) and not eintrag.get("bauteil_ok"):
             befunde.append(f"{eintrag['moebel']} ist ein Bauteil ({angabe['quelle'].split('/')[-1]})")
@@ -244,7 +245,7 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
 def baue(pfad: Path) -> list[str]:
     """Baut eine Szene; gibt die Befunde zurück (leer = in Ordnung) und schreibt die Karte."""
     szene = lade(pfad)
-    moebel = lade(INHALTE / "moebel.json")["moebel"]
+    moebel = lade_moebel()
     zeilen = raster(szene)
     gesetzt, befunde = platziere(szene, moebel)
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])

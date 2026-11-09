@@ -2,9 +2,9 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/varianten/riverton-wohnwagen-b.json",
   "art": "innen",
-  "beschreibung": "Variante B, Bett am Ostende: Slicks Wohnwagen spiegelverkehrt eingerichtet. Helle Kunststoffwände, heller Holzboden, Tür mit Fußmatte in der Mitte der Südwand. Am Westende die Küchenzeile mit dem kleinen Herd, daneben das Fenster zum Fluss. An der Nordwand der Ausstellungstisch mit den Pokalen aus Limodosen, am Ostende das Bett mit dem Brett darauf, davor ein Stapel Zeitungen. In der Mitte der Klapptisch mit zwei Hockern, an der Westwand die Kuriertasche.",
-  "wand": "creme",
-  "boden": "holzHell",
+  "beschreibung": "Variante B, schäbig, aber aufgeräumt: Slicks Wohnwagen mit Holzwänden und alten Dielen. Tür mit Fußmatte in der Mitte der Südwand. Am Westende die Küchenzeile mit dem kleinen Herd, daneben das Fenster zum Fluss. Auf dem Fensterbrett stehen zwei Pokale aus Limodosen, am Ostende das Bett mit grauer Decke und dem Brett darauf, davor ein Stapel Zeitungen. In der Mitte auf einem Teppich eine Sitzecke mit gelbem und weißem Sessel um einen niedrigen Tisch, an der Westwand die Kuriertasche, eine Pflanze rechts.",
+  "wand": "holz",
+  "boden": "dielen",
   "raster": [
     "##############",
     "##############",
@@ -31,8 +31,16 @@
       "an_wand": true
     },
     {
-      "moebel": "rv5Pokaltisch",
-      "feld": [8, 1]
+      "moebel": "rv5PokalKlein",
+      "feld": [5, 2],
+      "an_wand": true,
+      "versatz": [2, 0]
+    },
+    {
+      "moebel": "rv5PokalSilber",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 8]
     },
     {
       "moebel": "rv5BettKopfRechts",
@@ -44,19 +52,22 @@
       "auf": "bett"
     },
     {
-      "moebel": "rv5Klapptisch",
-      "feld": [6, 5],
-      "id": "tisch"
+      "moebel": "rv5Teppich",
+      "feld": [4, 3]
     },
     {
-      "moebel": "rv5Hocker",
-      "feld": [5, 5],
-      "zu": "tisch"
+      "moebel": "rv5SesselGelb",
+      "feld": [4, 3]
     },
     {
-      "moebel": "rv5Hocker",
-      "feld": [7, 5],
-      "zu": "tisch"
+      "moebel": "rv5Couchtisch",
+      "feld": [6, 4],
+      "id": "ct"
+    },
+    {
+      "moebel": "rv5SesselWeissLinks",
+      "feld": [8, 4],
+      "zu": "ct"
     },
     {
       "moebel": "rv5Kuriertasche",
@@ -65,6 +76,10 @@
     {
       "moebel": "rv5Zeitungen",
       "feld": [11, 5]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [12, 6]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -91,8 +106,7 @@
     },
     {
       "name": "dosentrophaeen",
-      "feld": [9, 3],
-      "auf_moebel": true
+      "feld": [5, 3]
     }
   ],
   "figuren": [],

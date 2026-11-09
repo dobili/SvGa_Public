@@ -2,9 +2,9 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/varianten/riverton-bahnhofshalle-b.json",
   "art": "innen",
-  "beschreibung": "Variante B, spiegelverkehrt: Die Bahnhofshalle mit dem Zeitungsstand von Pops und dem Fahrkartenschalter an der Ostseite, den drei Wartebänken, Gepäckwagen und Automaten an der Westseite. Die große Uhr hängt weiter über der Mitte der Nordwand, darunter die Bank von Mr. Harlan; die Bahnsteigtür liegt jetzt links, die Fahrplantafel rechts. Vier Säulen, Schließfächer unten rechts, Glastür mit Fußmatte in der Mitte der Südwand, heller Steinboden, Backsteinwände.",
+  "beschreibung": "Variante B, alte Wartehalle: Die Bahnhofshalle mit dunklem Holzboden und Holzbänken statt Kunststoffsitzen. Drei Bogenfenster in der Backsteinwand, in der Mitte die große Uhr, darunter Mr. Harlans Bank, rechts die Bahnsteigtür mit Netzplan. Nur zwei Säulen stehen links und rechts der Mitte, dazwischen drei lange Holzbänke hintereinander und ein Mülleimer. Links oben zwei Parkbänke unter den Fenstern, darunter der Zeitungsstand von Pops mit Ladentisch, Kasse und zwei Zeitungsregalen. Rechts oben der einzige Fahrkartenschalter, in der Mitte rechts Gepäckwagen und Koffer, die Fahrplantafel und ein Kaffeeautomat, unten links Schließfächer, in der Südostecke das Fundbüro mit Glasvitrine. Glastür mit Fußmatte in der Mitte der Südwand.",
   "wand": "backstein",
-  "boden": "stein",
+  "boden": "holzDunkel",
   "raster": [
     "##########################",
     "##########################",
@@ -26,12 +26,13 @@
   "objekte": [
     {
       "moebel": "rv5Bogenfenster",
-      "feld": [20, 1],
+      "feld": [3, 1],
       "an_wand": true
     },
     {
-      "moebel": "rv5Fahrplantafel",
-      "feld": [17, 2]
+      "moebel": "rv5Bogenfenster",
+      "feld": [8, 1],
+      "an_wand": true
     },
     {
       "moebel": "rv5Bahnhofsuhr",
@@ -39,117 +40,128 @@
       "an_wand": true
     },
     {
-      "moebel": "rv5Bahnsteigtuer",
-      "feld": [6, 1],
+      "moebel": "rv5Bogenfenster",
+      "feld": [16, 1],
       "an_wand": true
     },
     {
-      "moebel": "rv5Bogenfenster",
-      "feld": [3, 1],
+      "moebel": "rv5Bahnsteigtuer",
+      "feld": [20, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Netzplan",
+      "feld": [22, 1],
       "an_wand": true
     },
     {
       "moebel": "rv5BankHarlan",
-      "feld": [12, 4],
-      "id": "bankHarlan"
-    },
-    {
-      "moebel": "rv5Zeitungsregal",
-      "feld": [24, 3]
-    },
-    {
-      "moebel": "rv5Zeitungsregal",
-      "feld": [23, 3]
-    },
-    {
-      "moebel": "rv5Schalter",
-      "feld": [21, 6],
-      "id": "kiosk"
-    },
-    {
-      "moebel": "rv5Schalter",
-      "feld": [23, 10]
-    },
-    {
-      "moebel": "rv5Netzplan",
-      "feld": [8, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "rv5Wartebank",
-      "feld": [7, 7]
-    },
-    {
-      "moebel": "rv5Wartebank",
-      "feld": [7, 10]
-    },
-    {
-      "moebel": "rv5Wartebank",
-      "feld": [7, 4]
+      "feld": [11, 4]
     },
     {
       "moebel": "rv5Saeule",
-      "feld": [5, 9]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [21, 12]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [19, 12]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [15, 12]
-    },
-    {
-      "moebel": "rv5Muelleimer",
-      "feld": [10, 8]
+      "feld": [9, 6]
     },
     {
       "moebel": "rv5Saeule",
-      "feld": [18, 4]
+      "feld": [16, 6]
     },
     {
-      "moebel": "rv5Saeule",
-      "feld": [18, 9]
+      "moebel": "rv5Parkbank",
+      "feld": [2, 4]
     },
     {
-      "moebel": "rv5Saeule",
+      "moebel": "rv5Parkbank",
       "feld": [5, 4]
     },
     {
+      "moebel": "rv5BankLang",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [11, 11]
+    },
+    {
       "moebel": "rv5Schalter",
-      "feld": [3, 12]
+      "feld": [22, 4]
     },
     {
-      "moebel": "rv5Koffer",
-      "feld": [6, 10]
+      "moebel": "rv5Zeitungsregal",
+      "feld": [1, 8]
     },
     {
-      "moebel": "rv5Kaffeeautomat",
-      "feld": [1, 3]
-    },
-    {
-      "moebel": "rv5Gepaeckwagen",
-      "feld": [2, 7]
-    },
-    {
-      "moebel": "rv5Koffer",
-      "feld": [1, 7]
-    },
-    {
-      "moebel": "rv5Getraenkeautomat",
+      "moebel": "rv5Zeitungsregal",
       "feld": [1, 11]
     },
     {
-      "moebel": "rv5Topfpflanze",
-      "feld": [24, 13]
+      "moebel": "rv5Ladentisch",
+      "feld": [3, 9],
+      "id": "kiosk"
+    },
+    {
+      "moebel": "rv5Kasse",
+      "auf": "kiosk"
+    },
+    {
+      "moebel": "rv5Gepaeckwagen",
+      "feld": [19, 9]
+    },
+    {
+      "moebel": "rv5Koffer",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "rv5Fahrplantafel",
+      "feld": [18, 12]
+    },
+    {
+      "moebel": "rv5Kaffeeautomat",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "rv5Spind",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "rv5Spind",
+      "feld": [8, 12]
+    },
+    {
+      "moebel": "rv5Vitrine",
+      "feld": [21, 12]
     },
     {
       "moebel": "rv5Topfpflanze",
-      "feld": [4, 8]
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [24, 4]
+    },
+    {
+      "moebel": "rv5Getraenkeautomat",
+      "feld": [23, 10]
+    },
+    {
+      "moebel": "rv5Koffer",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "rv5Gepaeckwagen",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "rv5Koffer",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "rv5Muelleimer",
+      "feld": [14, 9]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -180,31 +192,31 @@
     },
     {
       "name": "zugCedar",
-      "feld": [5, 3]
+      "feld": [20, 3]
     },
     {
       "name": "zeitungsstand",
-      "feld": [20, 7],
+      "feld": [4, 10],
       "auf_moebel": true
     },
     {
       "name": "fundZeitungsausschnitt",
-      "feld": [23, 6]
+      "feld": [2, 13]
     },
     {
       "name": "fundTaubenfeder",
-      "feld": [11, 4],
+      "feld": [13, 4],
       "auf_moebel": true
     }
   ],
   "figuren": [
     {
       "name": "harlan",
-      "feld": [15, 4]
+      "feld": [10, 4]
     },
     {
       "name": "pops",
-      "feld": [19, 7]
+      "feld": [5, 10]
     }
   ],
   "belebung": [
@@ -214,7 +226,7 @@
       "feld": [13, 12],
       "eigenschaften": {
         "von": "13,12",
-        "bis": "5,4",
+        "bis": "20,4",
         "tun": "zieht einen Koffer zum Bahnsteig",
         "wann": "morgen"
       }

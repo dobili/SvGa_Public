@@ -11,6 +11,380 @@
       "breite": 32,
       "hoehe": 16,
       "kollision": true
+    },
+    "gt7Saloon": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "verwittert",
+      "stil": "einfach"
+    },
+    "gt7Laden": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "gt7Schmiede": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Barn_Small_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "gt7Sheriff": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_2_16x16.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "gt7Pruefamt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "verwittert",
+      "stil": "einfach"
+    },
+    "gt7Wasserturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_4.png",
+      "breite": 80,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude_teil",
+      "zustand": "verwittert",
+      "stil": "industrie"
+    },
+    "gt7Windrad": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_Wind_Mill_16x16.png",
+      "breite": 64,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude_teil",
+      "zustand": "alt",
+      "stil": "laendlich"
+    },
+    "gt7Kreuz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7KreuzHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Grabhuegel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Cross_Pile_Of_Dirt.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7GrabOhneName": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Big_Pile_Of_Dirt.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Grabstein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Brown_Tombstone_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7GrabsteinB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Brown_Tombstone_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7GrabsteinGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Grey_Tombstone_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7GrabOffen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Dirt_Ditch_Wood_Grave.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Saguaro": {
+      "quelle": "spiel/eigene/kaktus_saguaro.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Kaktus": {
+      "quelle": "spiel/eigene/kaktus_klein.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7KaktusBluete": {
+      "quelle": "spiel/eigene/kaktus_bluehend.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7FelsRot": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7SteinRot": {
+      "quelle": "spiel/eigene/stein_flach_rot.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Geierkreis": {
+      "quelle": "spiel/eigene/geierkreis.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "gt7Schild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "gt7Haltestelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "gt7Fass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "gt7Kiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "gt7Stein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "gt7Busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_4.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "gt7Gras": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "gt7Tor1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "gt7Tor2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "gt7ZaunOL": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7ZaunOM": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Middle_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7ZaunOR": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7ZaunML": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7ZaunMR": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7ZaunUL": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "gt7ZaunUM": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Middle_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7ZaunUR": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "gt7Traenke": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Small_Full_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "gt7Fassl": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "gt7Absperrung": {
+      "quelle": "spiel/eigene/absperrbock_gesperrt.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "alt"
     }
   }
 }

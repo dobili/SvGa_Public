@@ -1,6 +1,6 @@
 # Auftrag mittel-2: Schach960 am Varianten-Tisch (Inhalte)
 
-**Stand:** fertig (mittel-2, 09.11.2026; Auftrag vom Haupt-Chat, sechzehnter Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der sechzehnte Auftrag, Schach960, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** Ink-Dateien der Orte mit Varianten-Tisch und der Wege, `begegnungen.json` (nur neue

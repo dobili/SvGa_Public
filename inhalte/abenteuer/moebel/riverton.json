@@ -269,6 +269,120 @@
       "breite": 48,
       "hoehe": 16,
       "kollision": true
+    },
+    "rv5FahrradPlane": {
+      "quelle": "spiel/eigene/fahrrad_plane.png",
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "rechts",
+      "breite": 32,
+      "hoehe": 32
+    },
+    "rv5Werkbank": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "rv5Werkzeugschrank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "rv5ReifenLiegend": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tire_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "rv5ReifenStehend": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tire_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "rv5Kanister": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "rv5Leiter": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Stairs.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "rv5Saegebock": {
+      "quelle": "spiel/eigene/saegebock.png",
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "breite": 32,
+      "hoehe": 32
+    },
+    "rv5KarrenWerkzeug": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Small_Wood_Cart_Full_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "rv5TuerSuedHolz": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "rv5Holzscheite": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "rv5Bretterstapel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
     }
   }
 }

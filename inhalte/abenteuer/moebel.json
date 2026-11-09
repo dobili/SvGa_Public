@@ -168,6 +168,78 @@
       "breite": 32,
       "hoehe": 48,
       "kollision": true
+    },
+    "busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_10.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "felsKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "baumstumpf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "leselampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "kisteGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_355.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "aktenschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_11.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "waschmaschine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_87.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "waschmaschineHoch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_90.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "wartebank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/9_Fishing_Singles/Fishing_Singles_44.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "automatBunt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
     }
   }
 }

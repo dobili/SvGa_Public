@@ -536,7 +536,8 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    Weil kein gekauftes Paket Brücken hat, gibt es eigene aus LimeZus Texturen im privaten
    Repository: `spiel/eigene/bruecke_fuss_quer_L.png` und `_laengs_L` (Fußgängerbrücke, 2 Kacheln
    breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
-   Steinbrüstung), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
+   Steinbrüstung), `bruecke_strasse_gehweg_quer_L` und `_laengs_L` (mit Gehweg auf beiden Seiten, 5 Kacheln
+   breit; Straßen mit Gehwegen nehmen diese, damit die Gehwege nicht am Wasser enden), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
    Camping-Teilen (`Pier_*`).
 
 ### 10.2 Türen und Durchgänge

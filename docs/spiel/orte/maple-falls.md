@@ -228,16 +228,20 @@ Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihr
 Für Wohnzimmer, Dachboden und Birch Lane liegen in `inhalte/abenteuer/szenen/varianten/` je zwei
 weitere Varianten; gleich bleiben Größe, Wände, Türen, Fenster, Übergänge, Auslöser und Figuren.
 
-- **Wohnzimmer B (schlicht):** ein Sessel auf rundem Teppich mit roter Stehlampe, wenige Kartons,
-  runder Holztisch mit anderen Stühlen, hohe Pflanze. **C (reich):** großer Teppich, zwei Sessel,
-  Bücherregal, Kommode, Kartongruppen, Palmen, Herd mit Topf, Obstkorb auf dem Esstisch.
-- **Dachboden B (schlicht):** Tisch mit Brett unter dem Fenster, Stehlampe, nur ein Regal, Sachen in
-  einer Reihe an Süd- und Ostwand. **C (reich):** zwei alte Schränke, Waldbild, Teppich mit Tisch,
-  Lampe, zwei Kistenstapel und alle Sachen der Mrs. Whitlock an den Wänden.
-- **Birch Lane B (schlicht):** Bach in einem langen flachen Bogen, je ein Baum je Garten, hohe
-  Laternen mit langem Ausleger, türkise und braune Straßenbäume, Spielplatz nur mit Sandkasten und
-  Schaukel. **C (reich):** Bach in vielen Bögen, Gemüsebeete und Büsche, Laternen mit Bogenarm,
-  dreierlei Straßenbäume, Spielturm mit Brücke, Schaukel, Wippe.
+- **Wohnzimmer B (Landhaus):** Holzwände, dunkle Dielen, graue Küchenfliesen; Sitzecke mit grauem
+  Sofa, rundem Tisch und Stehlampe an der Westwand; Küche mit Herd und Topf, Esstisch an der Südseite.
+  **C (modern):** hellgraue Wände, Dielen in der Küche; zwei weiße Sessel an einem runden Tisch auf
+  rosa Teppich, hohes Bücherregal; Kühlschrank in der Nordwestecke der Küche, Holztisch mit Hockern
+  in der Mitte.
+- **Dachboden B (Nähecke):** Kommode mit Stoffrollen und Nähmaschine an der Westwand, Tisch mit Brett
+  rechts unter dem Fenster, abgedeckte Truhe mit Teddy. **C (abgedeckte Möbel):** zwei alte Schränke,
+  Waldbild, Teppich mit Tisch gleich neben der Luke, zwei abgedeckte Truhen und Kisten an Ost- und
+  Südwand.
+- **Birch Lane B:** Säulen- und niedrige Hecken statt Zäunen, Martínez in grüner Villa, auf der
+  Südseite ein blaues Stadthaus (Hayes), ein Bauernhaus (Fisk), ein Flachdachhaus mit Gartenhaus;
+  Bach in flachem Bogen, wenige Bäume, Laternen mit langem Ausleger, kleiner Spielplatz. **C:**
+  Eisenzaun auf Ziegelsockel, Martínez im kleinen Bauernhaus, auf der Südseite Flachdachhaus (Hayes)
+  und zwei Wohnwagen; Bach in vielen Bögen, Gemüsebeete, Laternen mit Bogenarm, Spielturm und Wippe.
 
 ### 4.0 Nacharbeit nach der Rückmeldung des Autors zu Runde 4 (KARTENREGELN 10)
 

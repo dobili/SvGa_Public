@@ -2,22 +2,22 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/varianten/maple-falls-wohnzimmer-b.json",
   "art": "innen",
-  "beschreibung": "Variante B, schlicht: Das Erdgeschoss Whitlock am Tag nach dem Umzug mit wenig Möbeln. Links das Wohnzimmer: Treppe an der Westwand zum Dachboden, das Foto von Grandma Whitlock, eine niedrige Kommode, ein Sideboard mit dem Fernseher auf seinem Fuß, davor ein runder Teppich mit einem einzelnen gelben Sessel und einer roten Stehlampe. Die Kiste „Whitlock“ an der Westwand, darunter ein Kartonstapel; ein zweiter Stapel mit dem Pizzakarton an der Innenwand. Rechts die Küche: Arbeitsplatten, Herd und Kühlschrank in einer Reihe, ein runder Holztisch mit zwei Stühlen, Mama daneben, der Karton „Küche?“ und eine hohe Pflanze in der Ecke. Unten die Haustür mit Fußmatte.",
-  "wand": "creme",
-  "boden": "holzHell",
+  "beschreibung": "Variante B, Landhaus: Holzwände und dunkle Dielen. Links das Wohnzimmer mit der Treppe an der Westwand und daneben der Kiste „Whitlock“. An der Westwand eine Sitzecke: ein graues Sofa mit rundem Holztisch davor und einer Stehlampe mit weißem Schirm. An der Nordwand unter dem Fenster eine niedrige Kommode, das Foto von Grandma Whitlock, das Sideboard mit dem Fernseher auf seinem Fuß und eine hohe Pflanze bei der Schlafzimmertür; die Kartons mit dem Pizzakarton an der Innenwand. Rechts die Küche mit grauen Fliesen: Arbeitsplatten, ein Herd mit Topf und der Kühlschrank lückenlos an der Nordwand; der Esstisch steht an der Südseite mit zwei Stühlen, Mama arbeitet an der Küchenzeile. Unten die Haustür mit Fußmatte.",
+  "wand": "holz",
+  "boden": "holzDunkel",
   "raster": [
     "####################",
     "####################",
     "####################",
-    "#..........#fffffff#",
-    "#..........#fffffff#",
-    "#..........#fffffff#",
-    "#..........#fffffff#",
-    "#...........fffffff#",
-    "#...........fffffff#",
-    "#..........#fffffff#",
-    "#..........#fffffff#",
-    "#..........#fffffff#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#...........ggggggg#",
+    "#...........ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
     "#####.##############"
   ],
   "objekte": [
@@ -58,25 +58,6 @@
       "versatz": [0, 18]
     },
     {
-      "moebel": "wzArbeitsplatte",
-      "feld": [13, 2],
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "wzArbeitsplatte",
-      "feld": [15, 2],
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "wzKuehlschrank",
-      "feld": [18, 1]
-    },
-    {
-      "moebel": "mf4Karton",
-      "feld": [1, 5],
-      "id": "kiste"
-    },
-    {
       "moebel": "mf4KartonBreit",
       "feld": [12, 9],
       "id": "kartonKuecheBox"
@@ -92,68 +73,90 @@
       "id": "tvboard"
     },
     {
-      "moebel": "mf4Kommode",
-      "feld": [4, 2]
-    },
-    {
-      "moebel": "mf4KartonStapel",
-      "feld": [12, 3]
-    },
-    {
       "moebel": "mf4FernseherStand",
       "auf": "tvboard"
     },
     {
-      "moebel": "mf7TeppichRund",
-      "feld": [7, 5]
+      "moebel": "mf3SofaL",
+      "feld": [2, 6],
+      "bauteil_ok": true
     },
     {
-      "moebel": "mf4SesselHinten",
-      "feld": [7, 6],
-      "zu": "tvboard"
+      "moebel": "mf3SofaM",
+      "feld": [3, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf3SofaR",
+      "feld": [4, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7Rundtisch",
+      "feld": [2, 8],
+      "id": "couchtisch"
     },
     {
       "moebel": "mf7Stehlampe",
-      "feld": [9, 5]
+      "feld": [1, 6]
     },
     {
-      "moebel": "mf4KartonStapel",
-      "feld": [1, 7]
+      "moebel": "mf4Karton",
+      "feld": [1, 4],
+      "id": "kiste"
+    },
+    {
+      "moebel": "mf4Lowboard",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "mf7PflanzeHoch",
+      "feld": [10, 4]
     },
     {
       "moebel": "mf4KartonStapel",
       "feld": [9, 9]
     },
     {
-      "moebel": "mf7PflanzeKlein",
-      "feld": [1, 10]
+      "moebel": "mf4KartonBreit",
+      "feld": [10, 9]
     },
     {
-      "moebel": "wzHerd",
-      "feld": [17, 2]
+      "moebel": "wzArbeitsplatte",
+      "feld": [12, 2],
+      "versatz": [0, 6]
     },
     {
-      "moebel": "mf7Rundtisch",
-      "feld": [14, 6],
+      "moebel": "wzArbeitsplatte",
+      "feld": [14, 2],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "mf7HerdTopf",
+      "feld": [16, 2]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf7CouchtischRund",
+      "feld": [14, 9],
       "id": "esstisch"
     },
     {
       "moebel": "mf7StuhlRechts",
-      "feld": [13, 6],
+      "feld": [13, 9],
       "zu": "esstisch"
     },
     {
       "moebel": "mf7StuhlLinks",
-      "feld": [16, 6],
+      "feld": [16, 9],
       "zu": "esstisch"
     },
     {
-      "moebel": "mf7PflanzeHoch",
-      "feld": [18, 9]
-    },
-    {
       "moebel": "wzPflanze",
-      "feld": [10, 10]
+      "feld": [18, 9]
     }
   ],
   "ausloeser": [
@@ -196,7 +199,7 @@
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch"],
   "boeden": {
-    "f": "fliesenWeiss"
+    "g": "fliesenGrau"
   },
   "variante": "b"
 }

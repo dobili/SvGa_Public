@@ -114,7 +114,7 @@
       "feld": [11, 10]
     },
     {
-      "moebel": "mf4VillaRot",
+      "moebel": "mf7VillaGruen",
       "feld": [21, 10]
     },
     {
@@ -137,316 +137,133 @@
       "vorn": true
     },
     {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 5]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 6]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 7]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 8]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 9]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 10]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 11]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 12]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 13]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 14]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 15]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 16]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 17]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 18]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 19]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [10, 20]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 21]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [10, 22]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 5]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 6]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 7]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 8]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 9]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 10]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 11]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 12]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 13]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 14]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 15]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 16]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 17]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 18]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 19]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [20, 20]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 21]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [20, 22]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 5]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 6]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 7]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 8]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 9]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 10]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 11]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 12]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 13]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 14]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 15]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 16]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 17]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 18]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 19]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
+      "moebel": "mf7HeckeSaeule",
       "feld": [30, 20]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 21]
+      "moebel": "mf7HeckeQuer",
+      "feld": [1, 23],
+      "bauteil_ok": true
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 22]
+      "moebel": "mf7HeckeQuer",
+      "feld": [7, 23],
+      "bauteil_ok": true
     },
     {
-      "moebel": "mf4ZaunMitte",
-      "feld": [1, 23]
+      "moebel": "mf7HeckeQuer",
+      "feld": [9, 23],
+      "bauteil_ok": true
     },
     {
-      "moebel": "mf4ZaunEckeRechts",
-      "feld": [2, 23]
+      "moebel": "mf7HeckeQuer",
+      "feld": [11, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7HeckeQuer",
+      "feld": [17, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7HeckeQuer",
+      "feld": [19, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7HeckeQuer",
+      "feld": [21, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7HeckeQuer",
+      "feld": [27, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7HeckeQuer",
+      "feld": [29, 23],
+      "bauteil_ok": true
     },
     {
       "moebel": "mf4Briefkasten",
       "feld": [5, 22]
     },
     {
-      "moebel": "mf4ZaunEckeLinks",
-      "feld": [6, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [7, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [8, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [9, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [10, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [11, 23]
-    },
-    {
-      "moebel": "mf4ZaunEckeRechts",
-      "feld": [12, 23]
-    },
-    {
       "moebel": "mf4Briefkasten",
       "feld": [15, 22]
     },
     {
-      "moebel": "mf4ZaunEckeLinks",
-      "feld": [16, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [17, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [18, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [19, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [20, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [21, 23]
-    },
-    {
-      "moebel": "mf4ZaunEckeRechts",
-      "feld": [22, 23]
-    },
-    {
       "moebel": "mf4Briefkasten",
       "feld": [25, 22]
-    },
-    {
-      "moebel": "mf4ZaunEckeLinks",
-      "feld": [26, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [27, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [28, 23]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [29, 23]
-    },
-    {
-      "moebel": "mf4ZaunEckeRechts",
-      "feld": [30, 23]
     },
     {
       "moebel": "mf4TischLinks",
@@ -479,7 +296,7 @@
     },
     {
       "moebel": "mf7BaumBraun",
-      "feld": [20, 29]
+      "feld": [13, 29]
     },
     {
       "moebel": "mf7BaumTuerkis",
@@ -539,20 +356,24 @@
       "feld": [1, 32]
     },
     {
-      "moebel": "mf4Bauernhaus",
-      "feld": [18, 31]
-    },
-    {
-      "moebel": "mf4BauernhausBreit",
-      "feld": [29, 32]
+      "moebel": "mf7Stadthaus",
+      "feld": [19, 30]
     },
     {
       "moebel": "mf4Bauernhaus",
-      "feld": [40, 31]
+      "feld": [30, 31]
     },
     {
-      "moebel": "mf4Busch",
-      "feld": [14, 37]
+      "moebel": "mf7HausFlach",
+      "feld": [41, 33]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [12, 34]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [16, 39]
     },
     {
       "moebel": "mf4ZaunSeite",

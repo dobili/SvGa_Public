@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Variante C, reich: Der Dachboden des Whitlock-Hauses voller alter Dinge. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild; das Sprossenfenster zeigt die Ahorne. Bauernschrank und ein zweiter alter Holzschrank an der Nordwand. In der Mitte der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An den Wänden zwei Kistenstapel, die Kiste mit Tuch, die Zeitungen von 1961, Hutschachtel und Standspiegel.",
+  "beschreibung": "Variante C, abgedeckte Möbel: Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild, das Sprossenfenster zeigt die Ahorne; Bauernschrank und ein zweiter alter Holzschrank an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, die Kiste mit Tuch, die Zeitungen von 1961, die Hutschachtel und der Standspiegel.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -45,11 +45,11 @@
     },
     {
       "moebel": "mf2TeppichAlt",
-      "feld": [5, 4]
+      "feld": [3, 5]
     },
     {
       "moebel": "mf3Rundtisch",
-      "feld": [5, 5],
+      "feld": [4, 6],
       "id": "tisch"
     },
     {
@@ -58,41 +58,51 @@
     },
     {
       "moebel": "mf3StuhlDunkelRechts",
-      "feld": [4, 5],
+      "feld": [3, 6],
       "zu": "tisch"
     },
     {
       "moebel": "mf3StuhlDunkelLinks",
-      "feld": [7, 5],
+      "feld": [6, 6],
       "zu": "tisch"
     },
     {
       "moebel": "mf2Stehlampe",
-      "feld": [8, 4]
+      "feld": [7, 5]
     },
     {
-      "moebel": "mf3Kartonstapel",
-      "feld": [11, 4]
+      "moebel": "mf7Truhe",
+      "feld": [11, 4],
+      "id": "truhe1"
     },
     {
       "moebel": "mf7Kistenstapel",
-      "feld": [11, 7]
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "mf7Truhe",
+      "feld": [9, 7],
+      "id": "truhe2"
+    },
+    {
+      "moebel": "mf7Teddy",
+      "auf": "truhe2"
     },
     {
       "moebel": "mf2KisteTuch",
-      "feld": [1, 7]
+      "feld": [1, 9]
     },
     {
       "moebel": "mf2Zeitungsstapel",
-      "feld": [3, 7]
+      "feld": [7, 7]
     },
     {
       "moebel": "mf2Hutschachtel",
-      "feld": [7, 8]
+      "feld": [4, 8]
     },
     {
       "moebel": "mf2Standspiegel",
-      "feld": [9, 7],
+      "feld": [1, 6],
       "id": "spiegel"
     }
   ],
@@ -110,22 +120,22 @@
     },
     {
       "name": "brett",
-      "feld": [5, 6],
+      "feld": [4, 7],
       "auf_moebel": true
     },
     {
       "name": "hutschachtel",
-      "feld": [7, 9],
+      "feld": [4, 9],
       "auf_moebel": true
     },
     {
       "name": "spiegel",
-      "feld": [9, 8],
+      "feld": [1, 7],
       "auf_moebel": true
     },
     {
       "name": "zeitungen1961",
-      "feld": [3, 9],
+      "feld": [7, 9],
       "auf_moebel": true
     }
   ],

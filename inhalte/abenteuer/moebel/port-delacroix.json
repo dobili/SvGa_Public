@@ -781,6 +781,95 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "pd6TurnhalleDach": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6_Example.png",
+      "breite": 224,
+      "hoehe": 256,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6WerkstattSchmal": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6MusikhausSolar": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "kaputt",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6HausRot2": {
+      "quelle": "spiel/serene/serene_52.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6HausGruen2": {
+      "quelle": "spiel/serene/serene_77.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6HausKleinRot2": {
+      "quelle": "spiel/serene/serene_48.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6HausKleinHell2": {
+      "quelle": "spiel/serene/serene_42.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6GleisGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Vertical.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "pd6ZeltGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
     }
   }
 }

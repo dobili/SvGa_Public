@@ -2736,6 +2736,16 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf9Absperrbock": {
+      "quelle": "spiel/eigene/absperrbock_gesperrt.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

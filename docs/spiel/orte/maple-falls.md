@@ -497,8 +497,9 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   `bruecke_strasse_gehweg_quer_4` (Gehwege laufen mit über die Brücke, Brüstung außen; Felder 31–34 / 14–18), der Fluss läuft darunter mit Ufer weiter; Pfad 10–11
   vom Nordrand (Übergang `zedernpfad`, Felder unverändert) bis zum Uferweg. Das Schild „Sturmschaden“
   (`schildZedernpfad`, 13 §7.4, S2) steht am Wegrand (12, 5), nicht auf dem Pfad.
-- **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) in der Bucht (5–6 / 4–5); die
-  rot-weiße Sperrlatte `absperrungSteg` (S5) steht am Ufer davor (5, 6), neben dem Uferweg. Der neue
+- **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) draußen im Fluss (5–6 / 2–3), die
+  Uferkante läuft durch; davor am Ufer der Absperrbock „GESPERRT“ `absperrungSteg` (5–6 / 5–6, eigenes
+  Bild, Regel 48), neben dem Uferweg. Der neue
   Steg nach der ersten Nadel folgt als Objekt mit Bedingung in Runde 5.
 - **Uferweg** (Erde, 2 breit) Reihen 7–8 von West nach Ost, Kurve 27–28 / 9–13 zur Parkstraße.
 - **Nordteil:** Abernathys Bank `parkbank` (3, 11) mit zweiter Bank (1, 11) daneben, beide zum Weg;

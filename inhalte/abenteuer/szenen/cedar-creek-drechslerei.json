@@ -16,8 +16,7 @@
     "#..............#",
     "#..............#",
     "#..............#",
-    "####.###########",
-    "################"
+    "####.###########"
   ],
   "objekte": [
     {
@@ -75,14 +74,14 @@
       "feld": [13, 4]
     },
     {
-      "moebel": "cc5Tuer",
+      "moebel": "cc8TuerSuedHolz",
       "feld": [4, 10],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [4, 9],
-      "versatz": [0, 16]
+      "versatz": [0, 8]
     },
     {
       "moebel": "cc5Arbeitstisch",
@@ -92,17 +91,17 @@
     {
       "moebel": "cc5Werkstueck",
       "auf": "mitte",
-      "versatz": [-8, 0]
+      "versatz": [-8, 12]
     },
     {
       "moebel": "cc5Leiste",
       "auf": "mitte",
-      "versatz": [6, 2]
+      "versatz": [6, 14]
     },
     {
       "moebel": "cc5Hammer",
       "auf": "mitte",
-      "versatz": [12, -4]
+      "versatz": [12, 8]
     }
   ],
   "ausloeser": [

@@ -1404,6 +1404,54 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc6TuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc8TuerSuedGlas": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc8TuerSuedHolz": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc8Prellbock": {
+      "quelle": "spiel/eigene/prellbock.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "cc8HeckeSenkrecht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_16.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

@@ -33,108 +33,108 @@
     "#.............ee.............#",
     "#.............ee.............#",
     "#.............ee.............#",
-    "#.........ssssssssss.........#",
-    "#.........ssssssssss.........#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~ssssssssssssss~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~ssssssssssssssssssssss~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~sssssssssssss~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~hh~~~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~sssssssssssssssss~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#sssssssss~~~~hh~~~~sssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#~~~~~~~~~~~sssss~~~~hh~~~~~~#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssss#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
+    "#sssssss~~~~hh~~~~sssss~~~~~~#",
     "#...........ee...............#",
     "#...........ee...............#",
     "#...........ee...............#",
@@ -499,10 +499,6 @@
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [8, 20]
-    },
-    {
-      "moebel": "cc4NadelbaumB",
       "feld": [18, 19]
     },
     {
@@ -510,16 +506,20 @@
       "feld": [8, 14]
     },
     {
+      "moebel": "cc4NadelbaumB",
+      "feld": [22, 14]
+    },
+    {
       "moebel": "cc4Nadelbaum",
-      "feld": [18, 159]
+      "feld": [17, 158]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [18, 162]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [17, 163]
-    },
-    {
-      "moebel": "cc4NadelbaumB",
-      "feld": [22, 152]
+      "feld": [20, 152]
     },
     {
       "moebel": "cc4Nadelbaum",
@@ -732,11 +732,6 @@
     },
     {
       "moebel": "sx7Dampf",
-      "feld": [5, 29],
-      "vorn": true
-    },
-    {
-      "moebel": "sx7Dampf",
       "feld": [2, 60],
       "vorn": true
     },
@@ -756,27 +751,112 @@
       "vorn": true
     },
     {
-      "moebel": "sx7Dampf",
-      "feld": [11, 94],
-      "vorn": true
+      "moebel": "felsKlein",
+      "feld": [20, 25]
     },
     {
-      "moebel": "sx7Dampf",
-      "feld": [24, 41],
-      "vorn": true
+      "moebel": "felsKlein",
+      "feld": [24, 24]
     },
     {
-      "moebel": "sx7Dampf",
-      "feld": [4, 120],
-      "vorn": true
+      "moebel": "felsKlein",
+      "feld": [6, 38]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [20, 36]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [14, 44]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 41]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [12, 49]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [12, 54]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [13, 63]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [16, 61]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [14, 66]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [25, 71]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [5, 73]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [24, 73]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [19, 87]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [12, 84]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [17, 90]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [14, 95]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [15, 99]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [12, 98]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [12, 110]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [24, 109]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [13, 112]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [3, 118]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [5, 120]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [19, 120]
     },
     {
       "moebel": "sx7Bison",
       "feld": [18, 93]
-    },
-    {
-      "moebel": "sx7Bison",
-      "feld": [14, 94]
     },
     {
       "moebel": "sx7BisonLiegend",

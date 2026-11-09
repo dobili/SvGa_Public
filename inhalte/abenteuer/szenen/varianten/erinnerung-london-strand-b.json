@@ -1,0 +1,132 @@
+{
+  "karte": "erinnerungLondon.strand",
+  "datei": "karten/varianten/erinnerung-london-strand-b.json",
+  "art": "aussen",
+  "beschreibung": "Der Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): eine Straße mit Kopfsteinpflaster zwischen Gehwegen aus Steinplatten. Im Norden stehen Reihenhäuser aus Ziegel und Putz dicht an dicht, unten Läden, in der Mitte das Kaffeehaus mit dunkler Holzfront und Kerzenlicht. Gaslaternen, eine Pferdedroschke, Händlerkarren und Fässer, ein Zeitungsjunge. Im Süden schließt eine Ziegelmauer die Straße. Variante B, die schlichtere: vier Hausfronten, die Droschke wartet am Ostende, nur ein Karren.",
+  "boden": "pflaster",
+  "wandart": "stein",
+  "boeden": {
+    "g": "stein"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "laendlich"],
+  "raster": [
+    "############################################",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#gggggggggggggggggggggggggggggggggggggggggg#",
+    "#gggggggggggggggggggggggggggggggggggggggggg#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#gggggggggggggggggggggggggggggggggggggggggg#",
+    "#gggggggggggggggggggggggggggggggggggggggggg#",
+    "#..........................................#",
+    "############################################",
+    "############################################",
+    "############################################",
+    "############################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "el7FassadeB",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "el7FassadeC",
+      "feld": [9, 2]
+    },
+    {
+      "moebel": "el7Kaffeehaus",
+      "feld": [14, 2]
+    },
+    {
+      "moebel": "el7FassadeA",
+      "feld": [21, 2]
+    },
+    {
+      "moebel": "el7FassadeC",
+      "feld": [26, 2]
+    },
+    {
+      "moebel": "el7Gaslaterne",
+      "feld": [9, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "el7Gaslaterne",
+      "feld": [32, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "ldGaslaterne",
+      "feld": [22, 13]
+    },
+    {
+      "moebel": "el7Droschke",
+      "feld": [34, 11]
+    },
+    {
+      "moebel": "ldKarren",
+      "feld": [8, 16]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 12],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "ankunft",
+      "feld": [3, 12]
+    },
+    {
+      "name": "kaffeehausTuer",
+      "feld": [17, 9]
+    },
+    {
+      "name": "droschke",
+      "feld": [37, 15]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "zeitungsjunge",
+      "feld": [13, 10]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "passanten",
+      "typ": "statist",
+      "feld": [28, 10],
+      "eigenschaften": {
+        "von": "28,10",
+        "bis": "28,10",
+        "tun": "gehen vorbei",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [12, 14],
+      "eigenschaften": {
+        "von": "12,14",
+        "bis": "15,14",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "variante": "b"
+}

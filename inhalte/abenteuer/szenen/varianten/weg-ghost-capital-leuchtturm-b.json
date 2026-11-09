@@ -1,0 +1,295 @@
+{
+  "karte": "wegGhostCapital.leuchtturm",
+  "datei": "karten/varianten/weg-ghost-capital-leuchtturm-b.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "e": "erde",
+    "a": "sand"
+  },
+  "beschreibung": "Variante B, Laubwald: Der Weg folgt erst lange dem Strand und einem Laubwald, dann steigt er im Osten auf eine Landzunge, auf der der rot-weiße Leuchtturm steht. Links davor das grüne Wärterhaus von Abe Lindgren, rechts eine Bank mit Seeblick und Kisten, Felsen am Ufer. Am Fuß des Turms liegt die alte Linse; danach senkt sich der Weg zum Ausgang Richtung Capital Arena.",
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#...................................................................................eeeeeeeeeeeeeeeeee.....................................#",
+    "#...................................................................................eeeeeeeeeeeeeeeeee.....................................#",
+    "#...................................................................................ee..............ee.....................................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......................................ee..............ee.....................................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......................................ee..............eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.......#",
+    "#...........................................ee......................................ee..............eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.......#",
+    "#...........................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............................................ee.......#",
+    "#...........................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............................................eeeeeeeeee",
+    "#.................................................................................................................................eeeeeeeeee",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "#..........................................................................................................................................#",
+    "############################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "gc7Leuchtturm",
+      "feld": [102, 1]
+    },
+    {
+      "moebel": "gc7WaerterhausGruen",
+      "feld": [94, 9]
+    },
+    {
+      "moebel": "gc7Bank",
+      "feld": [109, 13]
+    },
+    {
+      "moebel": "gc7Rettungsring",
+      "feld": [99, 11]
+    },
+    {
+      "moebel": "gc7FelsFlach",
+      "feld": [92, 9]
+    },
+    {
+      "moebel": "gc7Fels",
+      "feld": [111, 9]
+    },
+    {
+      "moebel": "gc7Fels",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "gc7Treibholz",
+      "feld": [60, 10]
+    },
+    {
+      "moebel": "gc7Kisten",
+      "feld": [112, 14]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [98, 24]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [43, 25]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [71, 25]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [64, 19]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [40, 21]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [16, 20]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [111, 23]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [19, 24]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [33, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [26, 21]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [82, 22]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [127, 25]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [6, 20]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [72, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [119, 24]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [33, 25]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [62, 22]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [106, 26]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [71, 22]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [84, 25]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [113, 20]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [32, 22]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [50, 26]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [92, 23]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [132, 21]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [124, 21]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [64, 26]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [12, 24]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [5, 23]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [78, 25]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [83, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [95, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [91, 26]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [52, 23]
+    },
+    {
+      "moebel": "gc7Birke",
+      "feld": [2, 26]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [53, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [46, 19]
+    },
+    {
+      "moebel": "gc7Laubbaum",
+      "feld": [57, 26]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 16],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckSeeufer",
+      "feld": [0, 16]
+    },
+    {
+      "name": "zurueckSeeufer",
+      "feld": [0, 17]
+    },
+    {
+      "name": "weiterCapital",
+      "feld": [139, 20]
+    },
+    {
+      "name": "weiterCapital",
+      "feld": [139, 21]
+    },
+    {
+      "name": "fundLinse",
+      "feld": [105, 17]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "abe",
+      "feld": [100, 15]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [80, 5],
+      "eigenschaften": {
+        "von": "70,3",
+        "bis": "100,7",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "spaziergaenger",
+      "typ": "statist",
+      "feld": [100, 21],
+      "eigenschaften": {
+        "von": "96,21",
+        "bis": "124,21",
+        "tun": "geht mit dem Hund am See spazieren",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "rustikal", "modern"],
+  "variante": "b"
+}

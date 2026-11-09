@@ -13,7 +13,7 @@
     "t": "stein",
     "k": "sand"
   },
-  "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die Turnhalle mit Dachaufbauten steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Bauzaun mit Plane. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
+  "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die alte graue Holzturnhalle steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Bauzaun mit Plane. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -323,8 +323,8 @@
       "feld": [45, 7]
     },
     {
-      "moebel": "pd6TurnhalleDach",
-      "feld": [34, 9]
+      "moebel": "pd6TurnhalleHolz",
+      "feld": [33, 11]
     },
     {
       "moebel": "pd6HausRot2",
@@ -468,6 +468,76 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [8, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [9, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [10, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [11, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [12, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [13, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [10, 27]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [28, 35]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [40, 42]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [53, 30]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [22, 53]
+    },
+    {
+      "moebel": "pd6Leiter",
+      "feld": [15, 22]
+    },
+    {
+      "moebel": "pd6Leiter",
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "pd6Stamm",
+      "feld": [19, 16]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [53, 20]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [53, 38]
+    },
+    {
       "moebel": "rv5LaterneBogen",
       "feld": [6, 22],
       "vorn": true
@@ -556,7 +626,7 @@
     },
     {
       "name": "turnhalleTuer",
-      "feld": [37, 25]
+      "feld": [38, 25]
     },
     {
       "name": "werkstattTuer",

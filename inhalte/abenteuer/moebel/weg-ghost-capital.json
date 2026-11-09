@@ -212,6 +212,46 @@
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "gc7Leuchtturm": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Lighthouse.png",
+      "breite": 112,
+      "hoehe": 256,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "gc7Waerterhaus": {
+      "quelle": "spiel/serene/serene_51.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "gc7WaerterhausGruen": {
+      "quelle": "spiel/serene/serene_59.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "gc7WaerterhausKlein": {
+      "quelle": "spiel/serene/serene_47.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
     }
   }
 }

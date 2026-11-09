@@ -1,0 +1,700 @@
+{
+  "karte": "crossroads.aussen",
+  "art": "aussen",
+  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "a": "asphalt",
+    "k": "schotter",
+    "e": "erde",
+    "p": "pflaster"
+  },
+  "raster": [
+    "######ee######################kkk###############################",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "eeeeeeee......................kkk..............................#",
+    "eeeeeeee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
+    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............................................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cr7Raststaette",
+      "feld": [10, 12]
+    },
+    {
+      "moebel": "cr7SchildCrossroads",
+      "feld": [20, 16]
+    },
+    {
+      "moebel": "ws5TankstelleGross",
+      "feld": [36, 8]
+    },
+    {
+      "moebel": "crBus",
+      "feld": [4, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sbFoodtruck",
+      "feld": [18, 29]
+    },
+    {
+      "moebel": "cr7Sattelzug",
+      "feld": [4, 36]
+    },
+    {
+      "moebel": "rvAutoGruen",
+      "feld": [15, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7WegweiserStaedte",
+      "feld": [28, 16]
+    },
+    {
+      "moebel": "ws5Werbetafel",
+      "feld": [55, 2]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [2, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [5, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [8, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [20, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [21, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [22, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [23, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [24, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [25, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [26, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [40, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [41, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [42, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [43, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [44, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [45, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [46, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [47, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [48, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [49, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [50, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [51, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [52, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [53, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [54, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [55, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [56, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [57, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [58, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [59, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [60, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [61, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [62, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7ViehgatterQuer",
+      "feld": [58, 22]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [58, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [28, 28]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [34, 40]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [37, 5]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [31, 42]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [28, 39]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [45, 29]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [61, 7]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [42, 35]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [49, 29]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [15, 44]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [60, 2]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [54, 36]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [46, 33]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [33, 43]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [57, 32]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [52, 26]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [36, 45]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [29, 43]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [54, 26]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [3, 20]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [55, 40]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [38, 26]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [11, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 36]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [61, 37]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [36, 39]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [33, 9]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [50, 36]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 4]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [27, 32]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 35]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [51, 40]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [30, 39]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [54, 44]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [1, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [27, 13]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [33, 14]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [28, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 26]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [46, 33]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [28, 35]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [41, 45]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [29, 15]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [42, 2]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [44, 37]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [43, 41]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [28, 37]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 29]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [32, 33]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [37, 36]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [28, 45]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [37, 34]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [29, 40]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [36, 43]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [31, 1],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "wegSummit",
+      "feld": [30, 0]
+    },
+    {
+      "name": "wegSummit",
+      "feld": [31, 0]
+    },
+    {
+      "name": "wegSummit",
+      "feld": [32, 0]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 14]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 15]
+    },
+    {
+      "name": "jahrmarkt",
+      "feld": [6, 0]
+    },
+    {
+      "name": "jahrmarkt",
+      "feld": [7, 0]
+    },
+    {
+      "name": "raststaetteTuer",
+      "feld": [14, 19]
+    },
+    {
+      "name": "wegweiser",
+      "feld": [29, 20]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "rosie",
+      "feld": [25, 33]
+    },
+    {
+      "name": "bigJoe",
+      "feld": [11, 33]
+    },
+    {
+      "name": "slick",
+      "feld": [16, 41]
+    },
+    {
+      "name": "mira",
+      "feld": [34, 27]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "von": "8,20",
+        "bis": "26,20",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "rinder",
+      "typ": "tier",
+      "feld": [52, 38],
+      "eigenschaften": {
+        "von": "46,34",
+        "bis": "60,44",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "tankwart",
+      "typ": "statist",
+      "feld": [44, 20],
+      "eigenschaften": {
+        "von": "38,20",
+        "bis": "50,20",
+        "tun": "tankt einen Wagen voll",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tomas",
+      "typ": "statist",
+      "feld": [35, 27],
+      "eigenschaften": {
+        "von": "35,27",
+        "bis": "35,27",
+        "tun": "Tomás zeigt Mira die Windräder am Horizont",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "natur",
+    "landhaus"
+  ],
+  "datei": "karten/crossroads-aussen.json"
+}

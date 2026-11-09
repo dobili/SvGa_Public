@@ -99,12 +99,12 @@ neben dem Eingang, Turniertafel (`turniertafel`) an der Westwand.
 
 ### 1.5 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                     | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage                                                                     |
-| --------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| ghostTown.aussen `wegCapital` (Ostrand, zwei Felder, niedrig-1) | seeufer `zurueckGhost` (Westrand, Reihen 14–15; Ankunft (1, 14))         | Erdweg je zwei Felder; `wenn: fernpartieGespielt` (S12), wie heute       |
-| seeufer `weiterLeuchtturm` (Ostrand, Reihen 16–17)              | leuchtturm `zurueckSeeufer` (Westrand, Reihen 16–17; Ankunft (1, 16))    | Uferweg je zwei Felder                                                   |
-| leuchtturm `weiterCapital` (Ostrand, Reihen 20–21)              | capitalArena.aussen `wegGhost` (Westrand, Reihen 40–41; Ankunft (1, 40)) | Weg je zwei Felder; Dialog `capital-arena-aussen.ankunft_zu_fuss` bleibt |
-| capitalArena.aussen `halleTuer` (Tür oben auf der Treppe)       | halle `halleAusgang` (15, 19); Ankunft (15, 18), Blick nach oben         | Südfassade ↔ Südwand                                                     |
+| Von (Karte, Auslöser, Feld)                                      | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage                                                                     |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| ghostTown.aussen `wegCapital` (Ostrand, Spalte 55, Reihen 21–22) | seeufer `zurueckGhost` (Westrand, Reihen 14–15; Ankunft (1, 14))         | Erdweg je zwei Felder; `wenn: fernpartieGespielt` (S12), wie heute       |
+| seeufer `weiterLeuchtturm` (Ostrand, Reihen 16–17)               | leuchtturm `zurueckSeeufer` (Westrand, Reihen 16–17; Ankunft (1, 16))    | Uferweg je zwei Felder                                                   |
+| leuchtturm `weiterCapital` (Ostrand, Reihen 20–21)               | capitalArena.aussen `wegGhost` (Westrand, Reihen 40–41; Ankunft (1, 40)) | Weg je zwei Felder; Dialog `capital-arena-aussen.ankunft_zu_fuss` bleibt |
+| capitalArena.aussen `halleTuer` (Tür oben auf der Treppe)        | halle `halleAusgang` (15, 19); Ankunft (15, 18), Blick nach oben         | Südfassade ↔ Südwand                                                     |
 
 ## 2. Ortsbild
 
@@ -156,7 +156,7 @@ ein Fanshop mit Schals und T-Shirts.
 
 ### 3.3 Befunde und offene Punkte
 
-1. Rand zu Ghost Town: Reihen auf der Seite von niedrig-1 folgen; meine Seite Westrand 14–15.
+1. Rand zu Ghost Town mit niedrig-1 abgestimmt: ghostTown.aussen Ostrand (Spalte 55, Reihen 21–22) ↔ seeufer Westrand (Reihen 14–15), je zwei Felder Erdweg.
 2. Bilder (beim Haupt-Chat bestellt, bis dahin Ersatz): Bühne für das Finale, Banner
    „Landesmeisterschaft“, Pressetisch mit Laptops und Mikrofonen, Fanshop-Stand.
 

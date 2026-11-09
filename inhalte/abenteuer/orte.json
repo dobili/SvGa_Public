@@ -3271,6 +3271,46 @@
             "karte": "wegCrossroadsPinewood.huetten",
             "ausloeser": "zurueckCrossroads"
           }
+        },
+        {
+          "name": "jahrmarkt",
+          "karte": "crossroads.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "jahrmarkt.festplatz",
+            "ausloeser": "zurueckCrossroads"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "jahrmarkt",
+      "name": "ort.jahrmarkt.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "jahrmarkt.festplatz",
+          "datei": "karten/jahrmarkt-festplatz.json",
+          "name": "ort.jahrmarkt.festplatz",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCrossroads",
+          "karte": "jahrmarkt.festplatz",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "crossroads.aussen",
+            "ausloeser": "jahrmarkt"
+          }
         }
       ]
     },

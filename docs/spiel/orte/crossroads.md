@@ -82,7 +82,7 @@ Karte am Südrand (14–16) Richtung Crossroads.
  R47    ───────────────────────╨ wegPinewood (20–21) ────────────────────────────
 ```
 
-Übergänge: `wegSummit` Nordrand (30–32, 0), `wegPinewood` Südrand (20–21, 47), `raststaetteTuer`
+Übergänge: `wegSummit` Nordrand (30–32, 0), `wegPinewood` Westrand (0, 14–15), `raststaetteTuer`
 vor der Tür der Raststätte. Der Highway läuft bis an beide Ränder (Fernbus nach Westen, Alte
 Minenstraße nach Osten mit dem geschlossenen Viehgatter S13 bei Spalte 58; ein Übergang dorthin kommt
 mit Q4 in Runde 6). Wegweiser in alle Städte an der Kreuzung (`wegweiser` (29, 21)).

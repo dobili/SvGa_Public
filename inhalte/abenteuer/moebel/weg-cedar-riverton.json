@@ -488,14 +488,13 @@
       "stil": "laendlich"
     },
     "wc5Signal": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Traffic_Light_1.png",
+      "quelle": "spiel/eigene/bahn_signal.png",
       "breite": 16,
-      "hoehe": 80,
-      "kollision": false,
-      "art": "sonstiges",
-      "blick": "unten",
-      "zustand": "gebraucht",
-      "stil": "modern"
+      "hoehe": 48,
+      "kollision": true,
+      "art": "signal",
+      "stil": "industrie",
+      "zustand": "gebraucht"
     },
     "wc5Plakatwand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_1.png",
@@ -549,7 +548,10 @@
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Pumpkin_Ripe_16x16.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "laendlich"
     },
     "wc5Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -578,6 +580,39 @@
       "art": "baumstumpf",
       "zustand": "alt",
       "stil": "laendlich"
+    },
+    "wc5Waggon": {
+      "quelle": "spiel/eigene/bahn_gueterwagen.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": false,
+      "stil": "industrie",
+      "zustand": "alt"
+    },
+    "wc5WaggonLeer": {
+      "quelle": "spiel/eigene/bahn_gueterwagen_leer.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": false,
+      "stil": "industrie",
+      "zustand": "alt"
+    },
+    "wc5Durchlass": {
+      "quelle": "spiel/eigene/bahn_durchlass.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "stil": "industrie",
+      "zustand": "alt"
+    },
+    "wc5Stufen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Stage_Stairs_Up.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

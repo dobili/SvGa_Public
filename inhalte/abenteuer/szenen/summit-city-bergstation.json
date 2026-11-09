@@ -1,0 +1,110 @@
+{
+  "karte": "summitCity.bergstation",
+  "datei": "karten/summit-city-bergstation.json",
+  "art": "innen",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand große Fenster, hinter denen Wolken und Gipfel stehen; davor die Bank am Fenster. Rechts die Plattform, an der die Gondel ankommt; mit ihr fährt man auch zurück ins Tal. Links Fahrkartenschalter, Fahrplan, Kaffeeautomat und Schließfächer. Bank in der Mitte vor den Fenstern, Gondel rechts, Schalter links, im Eck eine vergessene Murmeltierpfeife.",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "sc7FensterWolken",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sc7FensterWolken",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sc7FensterWolken",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "sc7Gondel",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "rvTicketschalter",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "rvFahrplan",
+      "feld": [1, 3],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "rvKaffeeautomat",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "rvTopfpflanze",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "scRucksack",
+      "feld": [7, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [14, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "seilbahnBerg",
+      "feld": [14, 7]
+    },
+    {
+      "name": "fundMurmeltierpfeife",
+      "feld": [1, 9]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "victor",
+      "feld": [6, 5]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "skifahrerin",
+      "typ": "statist",
+      "feld": [9, 9],
+      "eigenschaften": {
+        "von": "9,9",
+        "bis": "9,9",
+        "tun": "wartet auf die Gondel",
+        "wann": "tag"
+      }
+    }
+  ]
+}

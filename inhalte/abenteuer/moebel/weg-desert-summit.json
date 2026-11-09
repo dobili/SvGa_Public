@@ -513,6 +513,16 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "wds6Windrad": {
+      "quelle": "spiel/eigene/windrad.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "windrad",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
     }
   }
 }

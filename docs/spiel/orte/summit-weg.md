@@ -251,7 +251,7 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
 - **Diner** (`weg-desert-summit-diner`): wie 4.1, eigene Bilder des Haupt-Chats (Diner-Wagen, Motel,
   Motelschild, Neonschild ohne K, Neon-K, Sattelzüge, Kakteen, roter Stein, Felsbogen, Geierkreise).
   Die alte Tankstelle ist das Zapfsäulen-Vordach aus dem Katalog, der Tisch ein Sonnenschirm mit Tisch
-  und Stühlen. Kein Windrad (kein Bild); Wasserturm und Reklametafel aus dem Katalog.
+  und Stühlen. Windrad (eigenes Bild) neben dem Wasserturm; Wasserturm und Reklametafel aus dem Katalog.
   **B:** Motel links vom Diner, ein Sattelzug, Tafelberg statt Felsbogen, ohne Tankstelle.
   **C:** Diner und Motel enger, Wohnwagen am Wasserturm, Felsbogen und Zapfsäule weiter westlich, mehr
   blühende Kakteen.

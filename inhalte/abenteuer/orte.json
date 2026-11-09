@@ -1410,6 +1410,10 @@
           }
         },
         {
+          "name": "steinbruch",
+          "art": "uebergang"
+        },
+        {
           "name": "eisenwarenfenster",
           "art": "gegenstand",
           "dialog": "ironwood-aussen.eisenwarenfenster"

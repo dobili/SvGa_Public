@@ -399,6 +399,15 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "einfach"
+    },
+    "iw5GleisGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

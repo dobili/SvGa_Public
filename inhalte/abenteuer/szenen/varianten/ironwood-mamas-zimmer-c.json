@@ -33,7 +33,7 @@
     },
     {
       "moebel": "wzKuehlschrank",
-      "feld": [8, 1]
+      "feld": [7, 1]
     },
     {
       "moebel": "mf7HerdTopf",
@@ -49,33 +49,27 @@
       "feld": [5, 2]
     },
     {
-      "moebel": "mf4BildKueche",
-      "feld": [7, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
       "moebel": "wzEsstisch",
-      "feld": [2, 6],
+      "feld": [4, 6],
       "id": "kuechentisch"
     },
     {
       "moebel": "wzStuhlRechts",
-      "feld": [1, 6],
+      "feld": [3, 6],
       "zu": "kuechentisch"
     },
     {
       "moebel": "wzStuhlLinks",
-      "feld": [4, 6],
+      "feld": [6, 6],
       "zu": "kuechentisch"
     },
     {
       "moebel": "ldOfen",
-      "feld": [8, 5]
+      "feld": [8, 3]
     },
     {
       "moebel": "mf7SesselWeissRechts",
-      "feld": [6, 5]
+      "feld": [5, 9]
     },
     {
       "moebel": "cc4PflanzeK",
@@ -83,7 +77,7 @@
     },
     {
       "moebel": "mf2Kleiderschrank",
-      "feld": [5, 7]
+      "feld": [1, 6]
     },
     {
       "moebel": "wzFenster",
@@ -150,7 +144,7 @@
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [3, 9]
+      "feld": [4, 9]
     },
     {
       "name": "mama",

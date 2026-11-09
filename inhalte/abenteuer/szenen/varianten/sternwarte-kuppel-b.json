@@ -71,16 +71,18 @@
       "zu": "funktisch"
     },
     {
+      "moebel": "mf9RadioAlt",
+      "feld": [0, 0],
+      "auf": "funktisch",
+      "versatz": [8, 0]
+    },
+    {
       "moebel": "iw5BettGrau",
       "feld": [10, 4]
     },
     {
       "moebel": "cc4PflanzeK",
       "feld": [12, 9]
-    },
-    {
-      "moebel": "mf2Globus",
-      "feld": [9, 5]
     },
     {
       "moebel": "cc4KartonHoch",
@@ -92,12 +94,18 @@
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [5, 9],
+      "feld": [11, 7],
       "id": "tisch2"
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [7, 9]
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "mf2Globus",
+      "feld": [0, 0],
+      "auf": "tisch2",
+      "versatz": [8, 0]
     }
   ],
   "ausloeser": [

@@ -1356,6 +1356,15 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts"
+    },
+    "cc7Fussbruecke": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "breite": 112,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

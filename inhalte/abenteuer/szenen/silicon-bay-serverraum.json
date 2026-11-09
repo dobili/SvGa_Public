@@ -1,0 +1,93 @@
+{
+  "karte": "siliconBay.serverraum",
+  "datei": "karten/silicon-bay-serverraum.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen fünf Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus drei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. In der Südwestecke ein Arbeitsplatz mit Bildschirmen. Die Glastür in der Südwand führt zurück in die Akademie.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "japanisch"],
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Server",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "sb5ServerC",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "sb5Server",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "sb5Metallschrank",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Klima",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "sb5Messplatz",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5GlastuerSued",
+      "feld": [7, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "serverraumAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schummelgeraete",
+      "feld": [11, 7],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": []
+}

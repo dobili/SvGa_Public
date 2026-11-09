@@ -697,6 +697,233 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb5Server": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5ServerB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_111.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5ServerC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5Lamellen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_259.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5Metallschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_192.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5Messplatz": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_315.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5Empfang": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_2.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "theke",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5Topfpflanze": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_197.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pflanze",
+      "stil": "modern",
+      "zustand": "neu"
+    },
+    "sb5Aufzug": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Elevator_Closed_Lights_Down.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tuer",
+      "stil": "modern",
+      "zustand": "neu",
+      "an_wand": true
+    },
+    "sb5SofaB": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_205.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sofa",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Tisch": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_194.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Bildschirm": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_170.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fernseher",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "an_wand": true
+    },
+    "sb5PflanzeKlein": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_99.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Klima": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Japanese_AC_Unit_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sb5Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5BildschirmB": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_171.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fernseher",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "an_wand": true
+    },
+    "sb5BildschirmC": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_172.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fernseher",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "an_wand": true
+    },
+    "sb5Sockel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_57.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "stil": "klassisch",
+      "zustand": "neu"
+    },
+    "sb5SockelB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_61.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "stil": "klassisch",
+      "zustand": "neu"
+    },
+    "sb5VitrineHale": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_137.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5SesselRund": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_196.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5StuhlBuero": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_102.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5GlastuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "stil": "modern",
+      "zustand": "neu"
     }
   }
 }

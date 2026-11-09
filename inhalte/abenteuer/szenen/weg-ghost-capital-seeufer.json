@@ -117,6 +117,18 @@
       "feld": [60, 20]
     },
     {
+      "moebel": "gc7Fels",
+      "feld": [57, 21]
+    },
+    {
+      "moebel": "gc7FelsFlach",
+      "feld": [63, 22]
+    },
+    {
+      "moebel": "gc7Fels",
+      "feld": [58, 23]
+    },
+    {
       "moebel": "gc7Bank",
       "feld": [108, 19]
     },
@@ -125,35 +137,43 @@
       "feld": [40, 15]
     },
     {
-      "moebel": "gc7Kiefer",
+      "moebel": "gc7KieferB",
       "feld": [116, 26]
     },
     {
-      "moebel": "gc7KieferB",
-      "feld": [49, 21]
+      "moebel": "gc7Kiefer",
+      "feld": [131, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [122, 21]
+      "feld": [132, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [25, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [78, 21]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [11, 25]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [41, 19]
+      "feld": [37, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [17, 19]
+      "feld": [102, 26]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [4, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [10, 22]
     },
     {
       "moebel": "gc7KieferB",
+      "feld": [8, 26]
+    },
+    {
+      "moebel": "gc7Kiefer",
       "feld": [113, 22]
     },
     {
@@ -161,40 +181,40 @@
       "feld": [76, 26]
     },
     {
-      "moebel": "gc7KieferB",
-      "feld": [22, 26]
+      "moebel": "gc7Kiefer",
+      "feld": [72, 25]
     },
     {
-      "moebel": "gc7KieferB",
+      "moebel": "gc7Kiefer",
       "feld": [66, 24]
     },
     {
-      "moebel": "gc7Kiefer",
-      "feld": [132, 23]
-    },
-    {
-      "moebel": "gc7Kiefer",
+      "moebel": "gc7KieferB",
       "feld": [145, 20]
     },
     {
-      "moebel": "gc7Kiefer",
-      "feld": [1, 22]
+      "moebel": "gc7KieferB",
+      "feld": [28, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [97, 25]
+      "feld": [18, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [70, 24]
+      "feld": [55, 22]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [86, 19]
+      "feld": [121, 25]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [23, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [31, 21]
+      "feld": [4, 25]
     },
     {
       "moebel": "gc7Kiefer",
@@ -202,171 +222,183 @@
     },
     {
       "moebel": "gc7KieferB",
+      "feld": [46, 22]
+    },
+    {
+      "moebel": "gc7KieferB",
       "feld": [34, 25]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [30, 25]
+      "feld": [78, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [55, 19]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [101, 20]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [38, 22]
+      "feld": [48, 25]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [24, 22]
+      "feld": [55, 26]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [117, 21]
+      "feld": [95, 24]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [13, 20]
+      "feld": [80, 22]
     },
     {
-      "moebel": "gc7Kiefer",
+      "moebel": "gc7KieferB",
       "feld": [62, 25]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [126, 23]
+      "feld": [108, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [18, 23]
+      "feld": [72, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [136, 21]
+      "feld": [95, 21]
     },
     {
-      "moebel": "gc7Kiefer",
+      "moebel": "gc7KieferB",
       "feld": [9, 19]
     },
     {
-      "moebel": "gc7KieferB",
-      "feld": [92, 23]
+      "moebel": "gc7Kiefer",
+      "feld": [20, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [80, 24]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [88, 24]
+      "feld": [140, 24]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [128, 19]
+      "feld": [91, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [107, 24]
+      "feld": [139, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [128, 26]
+      "feld": [124, 19]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [84, 25]
+      "feld": [29, 26]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [51, 25]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [71, 21]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [55, 25]
+      "feld": [66, 19]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [134, 26]
+      "feld": [88, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [7, 23]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [37, 19]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [66, 21]
+      "feld": [104, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [138, 24]
+      "feld": [17, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [81, 26]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [72, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [147, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [117, 22]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [100, 21]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [32, 22]
     },
     {
       "moebel": "gc7KieferB",
       "feld": [39, 26]
     },
     {
-      "moebel": "gc7Kiefer",
-      "feld": [147, 26]
-    },
-    {
       "moebel": "gc7KieferB",
-      "feld": [97, 19]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [140, 20]
-    },
-    {
-      "moebel": "gc7Kiefer",
-      "feld": [122, 26]
+      "feld": [129, 19]
     },
     {
       "moebel": "gc7KieferB",
       "feld": [112, 26]
     },
     {
-      "moebel": "gc7KieferB",
-      "feld": [47, 24]
+      "moebel": "gc7Kiefer",
+      "feld": [50, 21]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [5, 20]
+      "feld": [41, 23]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [144, 23]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [82, 20]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [42, 22]
-    },
-    {
-      "moebel": "gc7KieferB",
-      "feld": [90, 19]
+      "feld": [88, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [16, 26]
+      "feld": [44, 26]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [3, 26]
+      "feld": [108, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [136, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [13, 25]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [84, 23]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [127, 24]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [133, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [86, 20]
+    },
+    {
+      "moebel": "gc7Kiefer",
+      "feld": [22, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [119, 19]
+    },
+    {
+      "moebel": "gc7KieferB",
+      "feld": [121, 22]
     }
   ],
   "ausloeser": [

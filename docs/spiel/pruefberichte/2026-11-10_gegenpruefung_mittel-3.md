@@ -173,3 +173,20 @@ nur dort, wo sie im Bild auffallen.
 - A/B/C: gut lesbar (Banner „Landesmeisterschaft“, Bühne mit Finaltisch, Tribünen, Presse, Fanshop, Turniertafel).
 - A: Die Turniertafel (Holzbrett mit Dach, um (1, 7)) sieht aus wie ein Gartenhäuschen; eine Turnierwand mit Paarungen liest sich besser. Vorschlag: Pinnwand oder Tafel an der Westwand (`an_wand`).
 - B: Bühne in der Raummitte, Tribünen davor an der Nordwand verdecken den Blick der Zuschauer auf die Bühne nicht, aber die Vorrundenbretter stehen hinter der Bühne Richtung Tür; Vorschlag: Reihenfolge Tribüne – Bühne – Vorrunde – Eingang wie in A/C.
+
+## Erledigt: mittel-1 (10.11.2026)
+
+- **Jahreszeit:** Der orange Baum (Tree_20) in gc7Birke und ca7Baum ist durch einen grünen Laubbaum
+  ersetzt (Seeufer B, Leuchtturm B, Arena A/C).
+- **Wärterhaus:** jetzt ein Wohnhaus in Normalgröße mit Erdweg vom Uferweg zur Tür (A, C; in B läuft
+  der Uferweg direkt an der Tür vorbei); Felsen an der Landzunge; die alte Linse liegt in einer Kiste am
+  Turmfuß (sichtbar).
+- **Seeufer A:** Felsen an der Lichtung mit dem Picknicktisch.
+- **Arena B:** Bau nach rechts, großer Kiefernpark links, Steinplatz mit Statuenbrunnen; Varianten-Prüfung
+  ohne Befund.
+- **Halle A:** Turniertafel als Tafel an der Nordwand.
+- **Offen, Rückfrage an den Haupt-Chat:** Der Boden `sand` (Bogen gelaende, Feld 4, 31) ist selbst die
+  Kachel mit den grünen Punkten; Seeufer und Leuchtturm C nutzen ihn bereits. Ein glatter Strandsand
+  braucht eine andere Kachel in `materialien.json`. Absperrböcke quer über den Weg würden den Weg sperren
+  (Erreichbarkeitstest); die Sperre S12 sitzt in Ghost Town, deshalb steht der Bock neben dem Weg.
+  Rechtwinklige Wegknicke: bleiben vorerst (Kartenbauer kennt keine diagonalen Wegstücke).

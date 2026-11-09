@@ -31,6 +31,8 @@ def katalogbefund(name: str, eintrag: dict | None) -> str | None:
     """
     if eintrag is None:
         return None
+    if not eintrag.get("beschreibung"):
+        return f"{name}: im Katalog noch nicht beschrieben, bitte beschreiben"
     if eintrag.get("ganz") is False:
         teile = eintrag.get("gegenstuecke") or "Gegenstücke fehlen"
         return f"{name} ist laut Katalog ein Bauteil: {str(teile)[:80]}"

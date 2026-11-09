@@ -40,6 +40,7 @@ def test_katalogbefund_meldet_bauteil_und_unsicheres():
     from pipeline.abenteuer.katalog import katalogbefund
 
     assert katalogbefund("x", None) is None
-    assert "Bauteil" in katalogbefund("x", {"ganz": False, "gegenstuecke": "rechte Hälfte"})
+    assert "nicht beschrieben" in katalogbefund("x", {"ganz": True})
+    assert "Bauteil" in katalogbefund("x", {"beschreibung": "Bank", "ganz": False, "gegenstuecke": "rechts"})
     assert "unsicher" in katalogbefund("x", {"ganz": True, "sicher": 0.5, "beschreibung": "Kiste"})
     assert katalogbefund("x", {"ganz": True, "sicher": 0.5, "korrektur": "Opus"}) is None

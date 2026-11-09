@@ -52,7 +52,7 @@ Hinterweg; 33–35 Hecke und Bäume am Südrand.
 
 | Gebäude                            | Lage außen (Spalten / Reihen), Tür                                                      | Fassade                                                | Innen                                                                           | Begehbar     |
 | ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- | ------------ |
-| Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` (Bühnenbild folgt)                      | ja           |
+| Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` 14 × 11 (4.2)                           | ja           |
 | Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                               | nein         |
 | Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                               | nein         |
 | Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 18 × 12, Tür Südwand (8, 11) (Befund 9)                                 | ja (neu, 12) |
@@ -276,10 +276,33 @@ in der Nordwestecke liegt unter der Bodenöffnung des Dachbodens (ebenfalls Nord
 liegt im Osten; außen zeigt der östliche Teil der Südfassade ihr Fenster (Genre-Regel in 1.1, statt
 eines Fensters in der Ostseite; Befund 38).
 
-### 4.2 bis 4.6
+### 4.2 Dachboden Haus Whitlock (`mapleFalls.dachboden`)
 
-Dachboden, Außen, Diner, Clubraum und Park folgen nach demselben Muster, sobald der Autor das
-Muster gesehen hat. Lage und Maße stehen schon in Abschnitt 1.
+**Größe:** 14 × 11 (7a.2, Wohnraum). Nordwand Reihen 0–2 (Holzwand), Boden alte Dielen ab Reihe 3,
+Südwand Reihe 10. Ein Raum unter dem Dach, kein Ausgang außer der Treppe.
+
+**Licht und Stimmung:** erster Abend nach dem Umzug, Spätsommerlicht durch das Sprossenfenster.
+Alles ist alt, aber ordentlich abgestellt, so wie die alte Mrs. Whitlock es hinterlassen hat.
+
+**Laufwege:** Treppenende (2, 6) → Antritt (2, 7) → nach Osten durch Reihe 7 und 6 → hinauf zum
+Tisch mit dem Brett (5, 4); weiter nach Osten zur Ecke mit Spiegel und Hutschachtel.
+
+| Zone     | Gegenstand                                                               | Feld, Größe                                            | Ausrichtung       | Zustand, Stil | Zweck                                                                                 |
+| -------- | ------------------------------------------------------------------------ | ------------------------------------------------------ | ----------------- | ------------- | ------------------------------------------------------------------------------------- |
+| Treppe   | steile Holztreppe                                                        | (1, 3), 3 × 4                                          | Nord              | alt           | über der Treppe im Erdgeschoss (Nordwestecke); Auslöser `treppe` (2, 7), Start (2, 6) |
+| Nordwand | Sprossenfenster, Waldbild                                                | Wandfläche (5, 1), (7, 1)                              | –                 | alt           | Licht; Leben                                                                          |
+| Nordwand | Bauernschrank, Bücherregal                                               | (9, 1) und (11, 1), je 2 × 3                           | Vorderseite unten | alt, rustikal | vergilbte Bücher                                                                      |
+| Mitte    | Teppich, runder Tisch, zwei Stühle                                       | Teppich (4, 3); Tisch (5, 3); Stühle (4, 3) und (7, 3) | Stühle zum Tisch  | alt           | Szene 2 und 3: das Brett liegt auf dem Tisch (`brett` (5, 4))                         |
+| Mitte    | Stehlampe                                                                | (8, 2)                                                 | –                 | alt           | neben dem rechten Stuhl                                                               |
+| Mitte    | Kistenstapel                                                             | (5, 7), 2 × 3                                          | –                 | alt           | Gerümpel                                                                              |
+| Ecke Ost | Standspiegel, Kistenstapel, Hutschachtel, Zeitungen 1961, Kiste mit Tuch | (10, 5), (11, 5), (11, 8), (9, 6), (7, 9)              | –                 | alt           | Mrs. Whitlocks Sachen; Auslöser `spiegel`, `hutschachtel`, `zeitungen1961`            |
+
+**Bezug:** Die Treppe liegt über der des Erdgeschosses (Nordwestecke). Gebaut in Runde 4 ohne neue
+Möbel; geändert ist nur die Lage der Treppe (vorher Westwand Mitte).
+
+### 4.3 bis 4.6
+
+Clubraum, Diner, Außen und Park folgen in Runde 4. Lage und Maße stehen schon in Abschnitt 1.
 
 ## 5. Platzhalter für die Rückkehr
 

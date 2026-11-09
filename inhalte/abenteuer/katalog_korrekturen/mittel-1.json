@@ -14,5 +14,25 @@
     "zustand": "gebraucht",
     "sicher": 0.8,
     "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_200.png": {
+    "beschreibung": "Runde, trommelförmige helle Schachtel auf kleinen Füßen; passt als Hutschachtel oder Sitzpouf.",
+    "art": "deko",
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_98.png": {
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
+  },
+  "modern-office/Modern Office Singles/Modern_Office_Singles_155.png": {
+    "beschreibung": "Hoher Stapel weißer Papiere oder Zeitungen, leicht verrutscht, von schräg oben.",
+    "art": "deko",
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png": {
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
   }
 }

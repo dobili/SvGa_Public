@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Neue Waren für Akt 3 und 4
 
-**Stand:** fertig (Helfer mittel-1, 09.11.2026, zweiundzwanzigster Auftrag)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der zweiundzwanzigste Auftrag, neue Waren, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `karten.json` (nur neue Karten), `laeden.json`, `texte/de.json` (nur neue Schlüssel),

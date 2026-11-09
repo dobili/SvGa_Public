@@ -1,23 +1,65 @@
-# Auftrag niedrig-1: Alle Möbel prüfen, dann Ghost Town einrichten
+# Auftrag niedrig-1: Echte Häuser statt Ziegelblöcke (Maple Falls und Cedar Creek)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, zwanzigster Auftrag; danke für den Befund zum Register, ist berichtigt)
+**Stand:** offen (Haupt-Chat, 09.11.2026, einundzwanzigster Auftrag; Möbelprüfung und Ghost Town sind zusammengeführt, danke)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand f9d14040);
-privates Repository auf `origin/main` (Stand f8cb2b18, nur lesen)
-**Darf ändern:** `inhalte/abenteuer/moebel.json` (Pfade und Größen falscher Einträge, neue Einträge mit Vorsilbe `gt`),
-`inhalte/abenteuer/karten/ghost-town-*.json`, `weg-pinewood-ghost-*.json`, `erinnerung-siedlung-*.json`,
-und Karten anderer Orte nur, wenn eine berichtigte Möbelgröße dort etwas zustellt; `docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 arbeitet parallel)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 4c0d3ff9)
+**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-aussen.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilbe `hs`), `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 macht parallel die Capital Arena)
 
 ## Ziel
 
-1. Dein Vorschlag: eine Übersicht aller Möbel als Bild (Schlüssel und Bild nebeneinander). Prüfe jeden
-   Eintrag: Zeigt das Bild, was der Schlüssel sagt? Die Beschreibungen der Haiku-Helfer im Register sind
-   teils verschoben. Falsche Einträge auf das richtige Bild umstellen (Größe aus der Datei), in der
-   Tabelle im Bericht festhalten (alt, neu). Das Übersichtsbild nicht ins öffentliche Repository.
-2. Ghost Town (verlassene Goldgräberstadt, Wüste): draußen (Holzfassaden, Fässer, Kakteen, Brunnen),
-   Saloon (Theke, Tische, Klavier). Canyonrand und Staubstraße. Erinnerung Siedlung: Hütte (einfach,
-   Holz, sepia getönt wie London).
+Auf den Außenkarten sind Häuser noch Blöcke aus Wandkacheln (Ziegel). Ersetze sie durch echte
+Gebäude als Möbel: Modern Exteriors (Themen „generic building“, „villas“, „additional houses“,
+„school“, „shopping center“ im Register), passend zur Stadt; Holzhäuser aus Serene Village nur
+für ländliche Orte.
+
+## Vorgaben
+
+1. Die Wandkacheln des alten Blocks werden Boden (Gras) oder Weg; das Gebäude als Möbel mit
+   `kollision` sperrt selbst (alles außer der obersten Kachelreihe; ein Haus ist meist mehrere
+   Kacheln hoch, der Held läuft dann hinter dem Dach vorbei, das ist gewollt).
+2. **Wichtig:** Die Tür eines Gebäudes muss über dem Übergang liegen (Auslöser wie `schule`,
+   `haustuer`): Der Auslöser bleibt, wo er ist, das Gebäude wird so gesetzt, dass seine Tür direkt
+   darüber steht und der Übergang erreichbar bleibt (Tests prüfen die Erreichbarkeit).
+3. Erst Maple Falls draußen, prüfen (Bildschirmfoto, Oberflächentests), dann Park und Cedar Creek.
+   Klappt die Ausrichtung an Türen nicht sauber, nach Maple Falls aufhören und berichten.
+
+## Bericht des letzten Auftrags, zur Nachlese
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
+übernommen und nur meine Änderungen eingetragen).
+
+**1. Prüfung aller Möbel.** Übersichtsbild aller 146 Einträge von `moebel.json` (Schlüssel, Bild,
+Größe; nur lokal, nicht im Repository) Eintrag für Eintrag angesehen. Falsch waren:
+
+| Schlüssel      | alt                                            | neu                                     |
+| -------------- | ---------------------------------------------- | --------------------------------------- |
+| `kuehlschrank` | Küche 124, 16 × 32 (Küchenschrank mit Fenster) | Küche 158, 16 × 48 (Kühlschrank)        |
+| `herd`         | Küche 131, 32 × 32 (Arbeitsplatte mit Dosen)   | Küche 148, 16 × 32 (Herd mit Kochfeld)  |
+| `kisteGrau`    | Lebensmittel 355, 16 × 32 (Papierständer)      | Konferenzsaal 31, 16 × 32 (graue Kiste) |
+
+Der größere Kühlschrank stellte im Wohnzimmer Mama zu; dort steht er jetzt eine Reihe höher
+(gleiche Unterkante). In Kantine und Wohnwagen hat er oben keinen Platz, die Tests bleiben dort
+grün. Plausibel trotz knapper Beschreibung und daher unverändert: `wartebank` (graue Bank von
+oben), `pdFeldbett` (weiße Liege), `aktenschrank`, `truhe`, `regalAlt`. Nicht gesetzt und nicht
+geprüft wichtig: `automatBunt` und `iwDusche` (unbenutzt, Bild abgeschnitten bzw. Warnschild).
+
+**2. Ghost Town, Wege und Erinnerung.** Neu: `gtKreuz` (Holzkreuz vom Friedhof, 32 × 32), `gtHeu`
+(Heuhaufen, 32 × 16). Wiederverwendet: `fels`, `felsKlein`, `dsKaktus`, `iwFass`, `zaun`,
+`ldTheke`, `dsHocker`, `pdKlavier`, `kisteRot`, `holztisch`, `stuhl`, `rvHolzscheite`.
+
+- **Canyonrand:** Felsen am Rand, Kakteen.
+- **Staubstraße:** Kakteengruppen und Felsbrocken statt Platzhaltern; Juniper frei auf dem Weg.
+- **Ghost Town draußen:** Friedhof mit sechs Holzkreuzen und Steinen (das Grab bleibt Auslöser),
+  ein Zaun, Fässer vor dem Saloon, Kakteen, ein Heuhaufen.
+- **Saloon:** Theke mit Gläsern, Klavier, ein Hocker am Spieltisch; Pruitt und das Fernpartie-Brett
+  frei.
+- **Erinnerung Siedlung (Hütte, Sepia):** Kisten, ein Tisch mit Stuhl, Holzscheite; Kerze und
+  Postreiter erreichbar.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
+(9 von 9) bestanden. Einen Brunnen (Ziehbrunnen) gibt es im Register nicht als Einzelbild.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

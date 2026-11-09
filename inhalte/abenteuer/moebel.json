@@ -62,14 +62,14 @@
       "kollision": true
     },
     "kuehlschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_124.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_158.png",
       "breite": 16,
-      "hoehe": 32,
+      "hoehe": 48,
       "kollision": true
     },
     "herd": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_131.png",
-      "breite": 32,
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_148.png",
+      "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
@@ -206,7 +206,7 @@
       "kollision": true
     },
     "kisteGrau": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_355.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_31.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true
@@ -233,12 +233,6 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/9_Fishing_Singles/Fishing_Singles_44.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
-    },
-    "automatBunt": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
-      "breite": 32,
-      "hoehe": 48,
       "kollision": true
     },
     "rvTicketschalter": {
@@ -580,12 +574,6 @@
     "pdWerkzeugregal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Sprout_Tools_Shelf.png",
       "breite": 48,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "iwDusche": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_57.png",
-      "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
@@ -1005,6 +993,30 @@
     },
     "pwLagerfeuer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Campfire_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "gtKreuz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "gtHeu": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Dry_Pile_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "automatBunt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "iwDusche": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_57.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true

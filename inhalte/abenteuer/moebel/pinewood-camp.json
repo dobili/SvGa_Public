@@ -23,6 +23,90 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true
+    },
+    "pw7KieferKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Kiefer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7KieferHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_212.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Tanne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_230.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7TanneHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_236.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Feuer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Campfire_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feuer",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "pw7Tent1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Tent2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Tent4": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_4.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
     }
   }
 }

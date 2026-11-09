@@ -21,7 +21,7 @@ Runde 6 nur mit Gummistiefeln begehbar; in Runde 5 ist es Kulisse mit freiem Ran
    ~~~~~~~~~~~~~~~~~~~~~~~~~ Bucht ~~~ ║ Anleger ~~~~~~~~~~~~~~~~~~~~~~~~
   ~ ┌────────────┬─────────────────────╨──────────┬─────────────────────┐ ~
   ~ │ P2 Felsspitze│ P1 Anleger: Fährboot, Schild │ P4 Pfahlhäuser      │ ~
-  ~ │ Leuchtfeuer  │ Pelikanpfähle               │ auf Plankenböden,   │ ~
+  ~ │ Leuchtfeuer  │ Pelikanpfähle               │ auf Stelzen im      │ ~
   ~ │ Seefelsen    │ P3 Dorfplatz (Sand): Netze,  │ Bohlensteg übers    │ ~
   ~ │ Möwen        │ Fässer, Boote am Strand      │ Wasser, Boote       │ ~
   ~ └──────────────┴──────────────────────────────┴─────────────────────┘ ~
@@ -31,13 +31,13 @@ Runde 6 nur mit Gummistiefeln begehbar; in Runde 5 ist es Kulisse mit freiem Ran
 
 ### 1.1 Inseldorf (`pelikaninsel.dorf`, 50 × 36)
 
-| Abschnitt (Spalten / Reihen)  | Thema           | Inhalt                                                           | Zum Entdecken                    |
-| ----------------------------- | --------------- | ---------------------------------------------------------------- | -------------------------------- |
-| P1 Anleger (17–31 / 0–9)      | Ankunft         | Bohlensteg ins Wasser, Fährboot am Steg, Wegweiser, Kisten       | Pelikan „Bishop“ am Steg         |
-| P2 Felsspitze (0–15 / 3–22)   | das Leuchtfeuer | Felsboden, Leuchtfeuer ohne Wärter, Seefelsen, Möwen             | Tür des Leuchtfeuers             |
-| P3 Dorfplatz (16–33 / 9–24)   | Fischerei       | Sandplatz, Netzgestelle, Fässer und Kisten, Boote auf dem Strand | Old Pete am Netz                 |
-| P4 Pfahlhäuser (34–49 / 3–25) | Wohnen          | bunte Holzhäuser auf Plankenböden über dem Wasser, Bohlensteg    | Rettungsringe, Delphines Kutter  |
-| P5 Watt (4–45 / 25–35)        | Ebbe            | Schlick bis an den Südrand, Priele, Muscheln, Seesterne, Krebse  | Coral sammelt Muscheln (Runde 6) |
+| Abschnitt (Spalten / Reihen)  | Thema           | Inhalt                                                                 | Zum Entdecken                    |
+| ----------------------------- | --------------- | ---------------------------------------------------------------------- | -------------------------------- |
+| P1 Anleger (17–31 / 0–9)      | Ankunft         | Bohlensteg ins Wasser, Fährboot am Steg, Wegweiser, Kisten             | Pelikan „Bishop“ am Steg         |
+| P2 Felsspitze (0–15 / 3–22)   | das Leuchtfeuer | Felsboden, Leuchtfeuer ohne Wärter, Seefelsen, Möwen                   | Tür des Leuchtfeuers             |
+| P3 Dorfplatz (16–33 / 9–24)   | Fischerei       | Sandplatz, Netzgestelle, Fässer und Kisten, Boote auf dem Strand       | Old Pete am Netz                 |
+| P4 Pfahlhäuser (34–49 / 3–25) | Wohnen          | bunte Pfahlhäuser im Wasser, Treppen hinunter zum Bohlensteg, Pelikane | Rettungsringe, Delphines Kutter  |
+| P5 Watt (4–45 / 25–35)        | Ebbe            | Schlick bis an den Südrand, Priele, Muscheln, Seesterne, Krebse        | Coral sammelt Muscheln (Runde 6) |
 
 **Ränder:** Wasser ringsum (Regel 6.4), im Süden das Watt bis an den Rand; man verlässt die Insel nur mit
 der Fähre am Ende des Anlegers. **Laufzeit:** Anleger bis Leuchtfeuer etwa 30 Kacheln, bis zu den Pfahlhäusern etwa 25, gut
@@ -66,10 +66,10 @@ Bildschirme, nur Wind, Möwen und das Klappern der Leinen an den Masten.
 
 | Element (Wegenetz, N4)            | Entscheidung  | Grund                                                                        |
 | --------------------------------- | ------------- | ---------------------------------------------------------------------------- |
-| Fischerdorf, Häuser auf Stelzen   | bleibt        | Holzhäuser auf Plankenböden über dem Wasser; Bild „Pfahlhaus“ bestellt       |
+| Fischerdorf, Häuser auf Stelzen   | bleibt        | drei eigene Pfahlhäuser (blau, rot, weiß) im Wasser, Treppe zum Steg         |
 | Leuchtfeuer ohne Wärter           | bleibt        | auf der Felsspitze; Auslöser `leuchtfeuer` für die Batterie-Quest in Runde 6 |
-| Pelikane auf jedem Pfahl          | bleibt        | Belebung als Tiere; Bild „Pelikan“ bestellt, bis dahin Möwe                  |
-| Netze flicken (Old Pete)          | bleibt        | Netzgestell auf dem Dorfplatz; Bild bestellt, bis dahin Kisten und Fässer    |
+| Pelikane auf jedem Pfahl          | bleibt        | eigene Bilder, Pelikane auf Pfählen im Wasser, dazu Belebung                 |
+| Netze flicken (Old Pete)          | bleibt        | eigenes Netzgestell auf dem Dorfplatz neben Old Pete                         |
 | Watt mit Coral (Gummistiefel)     | Kulisse       | Schlickfläche ohne Sperre in Runde 5; Bedingung Gummistiefel in Runde 6      |
 | Partie gegen die Gezeiten         | entfällt hier | Stellungsduell, kein Kartenelement                                           |
 | Delphine, Old Pete, Coral, Bishop | Statisten     | Figuren mit Dialogen erst in Runde 6                                         |
@@ -80,9 +80,10 @@ Pete, Coral, Bishop mit Dialogen; Dialog für die geschlossene Fähre am Hafen (
 ## 4. Bühnenbilder
 
 **Größe** 50 × 36. **Boden** Strand und Dorfplatz Erde (der Sandboden zeichnet sich fleckig), Felsspitze
-Felsboden, Stege und Plankenböden dunkles Holz, Watt Schotter (grau wie nasser Schlick), ringsum Wasser.
+Felsboden, Stege dunkles Holz, Watt Schotter (grau wie nasser Schlick), ringsum Wasser.
 Dünengras als Sprosse, Boote im Sand mit Kollision, Boote und Seefelsen im Wasser ohne (das Wasser sperrt). Bühnenbild je Variante in den Szenen
 (`inhalte/abenteuer/szenen/pelikaninsel-dorf.json`, B und C in `szenen/varianten/`): A Leuchtfeuer im
 Westen und Dorf im Osten, B gespiegelt und schlichter, C mit größerem Watt, mehr Booten und einem Kutter,
-der bei Ebbe im Watt liegt. Die Häuser sind Gartenschuppen auf Plankenböden, bis die bestellten Pfahlhäuser
-kommen.
+der bei Ebbe im Watt liegt. Die Pfahlhäuser (eigene Bilder, 4 × 5) stehen ohne Kollision im Wasser, das Wasser sperrt; ihre Treppen
+enden am Bohlensteg darunter. Leuchtfeuer (3 × 6, Tür unten in der Mitte), Netzgestell und Pelikane auf
+Pfählen sind ebenfalls eigene Bilder.

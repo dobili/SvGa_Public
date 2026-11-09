@@ -22,9 +22,9 @@ sich zur Straße.
 | Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 |                                                                     |
 | Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        |                                                                     |
 | Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        |                                                                     |
-| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | Haupt-Chat (Werkzeug)                                               |
+| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026)                           |
 | Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        |                                                                     |
-| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | Haupt-Chat (Werkzeug)                                               |
+| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026)                           |
 | Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        |                                                                     |
 | Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        |                                                                     |
 | Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        |                                                                     |
@@ -47,18 +47,18 @@ sich zur Straße.
 
 ## Wege
 
-| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt              |
-| ---------- | ---------------------------------------------------------------------------------------- | ------------ | --------------------- |
-| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | Haupt-Chat (Werkzeug) |
-| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        |                       |
-| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        |                       |
-| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        |                       |
-| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         |                       |
-| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                       |
-| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         |                       |
-| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 |                       |
-| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                       |
-| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        |                       |
+| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt                                  |
+| ---------- | ---------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
+| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
+| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        |                                           |
+| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        |                                           |
+| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        |                                           |
+| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         |                                           |
+| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
+| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         |                                           |
+| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 |                                           |
+| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
+| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        |                                           |
 
 ## Cedar Creek
 

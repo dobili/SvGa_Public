@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Weg nach Cedar Creek und Cedar Creek einrichten
 
-**Stand:** fertig (niedrig-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der sechzehnte Auftrag, Cedar Creek, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand fa9f03a3)
 **Darf ändern:** `inhalte/abenteuer/karten/weg-maple-cedar-*.json`, `inhalte/abenteuer/karten/cedar-creek-*.json`,

@@ -802,6 +802,13 @@
   ],
   "ausloeser": [
     {
+      "name": "start",
+      "feld": [14, 1],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
       "name": "zurueckGeysirbecken",
       "feld": [14, 0]
     },

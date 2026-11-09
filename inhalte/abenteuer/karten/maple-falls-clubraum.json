@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 41,
+  "nextobjectid": 43,
   "layers": [
     {
       "id": 1,
@@ -97,7 +97,7 @@
           "name": "start",
           "type": "ausloeser",
           "x": 144,
-          "y": 176,
+          "y": 160,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -942,6 +942,52 @@
               "name": "kollision",
               "type": "bool",
               "value": true
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "name": "mf4TuerKlassisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 176,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "mf4Fussmatte",
+          "type": "moebel",
+          "x": 144,
+          "y": 160,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
             }
           ]
         }

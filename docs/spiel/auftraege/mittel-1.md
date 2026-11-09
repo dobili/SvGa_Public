@@ -1,32 +1,43 @@
-# Auftrag mittel-1: Neue Waren für Akt 3 und 4
+# Auftrag mittel-1: Aussehen aller Figuren (Charakter-Generator)
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der zweiundzwanzigste Auftrag, neue Waren, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, dreiundzwanzigster Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `karten.json` (nur neue Karten), `laeden.json`, `texte/de.json` (nur neue Schlüssel),
-`docs/spiel/11_Karten_und_Gegenstaende.md` (neuer Abschnitt), Simulation, `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests` (auch mit `ABENTEUER_SIMULATION=1`), im Ordner `app/` `npm run pruefen`
+**Zweig:** im öffentlichen Repository nur `docs/spiel/auftraege/mittel-1.md` (Bericht); die Arbeit liegt
+im **privaten** Repository `dobili/schach-abenteuer-inhalte` (in deiner Sitzung unter
+`/home/user/schach-abenteuer-inhalte`), Zweig `main`, vorher `git pull`.
+**Darf ändern:** dort nur `werkzeuge/figuren.json` und `spiel/figuren/` (gebaut).
+**Prüfung vor dem Push:** `python werkzeuge/figuren.py` läuft ohne Fehler (Pillow: `python3 -m venv
+/tmp/bv && /tmp/bv/bin/pip install pillow`, dann `/tmp/bv/bin/python werkzeuge/figuren.py`).
+
+**Wichtig:** Das private Repository bleibt privat. Nichts daraus ins öffentliche Repository kopieren
+(Lizenz von LimeZu verbietet die Weitergabe der Bilder).
 
 ## Ziel
 
-Deine Auswertung zeigt: Ab Riverton kann der sparsame Spieler jeden Laden leer kaufen und endet mit
-über 1100 Münzen. Der Autor wünscht viele Karten („je mehr, desto besser“). Fülle die Läden in Akt 3
-und 4 mit neuen, teureren Waren, sodass Münzen bis zum Schluss etwas wert sind.
+Jede der 83 Figuren aus `inhalte/abenteuer/orte.json` (Feld `sprite`, etwa `figuren/skater-jo.png`)
+bekommt ein eigenes Aussehen aus den Teilen des Charakter-Generators, passend zur Story-Bibel
+(Alter, Beruf, Stil, Herkunft). Dazu der Held `held-0` (neutral, jugendlich, freundlich) und
+`ambrose-jung` (Ambrose als junger Mann in den Erinnerungen, London und Siedlung).
 
 ## Vorgaben
 
-1. 8 bis 12 neue Karten, **nur mit vorhandenen Wirkungsarten** (`kartenwirkungen.ts`, Schema
-   `abenteuer-karten`), etwa stärkere Stufen bekannter Karten (zwei Fingerzeige, drei Minuten Zeit,
-   Gefahrenradar für mehrere Züge, falls die Wirkung einen Wert hat) oder Kombinationen über mehrere
-   Karten. Keine neue Wirkung, die Code braucht; Ideen dafür als Liste im Bericht.
-2. Preise so, dass der sparsame Spieler am Ende etwa 100 bis 300 Münzen übrig hat und der
-   verschwenderische in Akt 4 nicht alles kaufen kann. Starke Karten erst ab Akt 3 im Laden.
-3. Jede Karte bekommt Name, Spruch (Flavor), Bild-Kennung nach dem Muster der vorhandenen und einen
-   Eintrag im neuen Abschnitt von `11_Karten_und_Gegenstaende.md` (Warum, Stufe, Laden, Preis).
-4. Die Wirtschaftsauswertung nach den Änderungen laufen lassen und die Tabelle (vorher, nachher) in den
-   Bericht schreiben; `test_wirtschaft_ziele` um das Ziel „Rest am Ende höchstens 400“ ergänzen.
+1. Eintrag je Figur in `werkzeuge/figuren.json` unter `figuren`, Schlüssel = Dateiname ohne `.png`
+   (`skater-jo`, `coach-delgado` …). Felder und Werte stehen in `erklaerung` in der Datei. Kinder mit
+   `"kind": true` und den Kinderteilen.
+2. Die Teile siehst du auf den Übersichten in `register/figuren/` (koerper, kleidung, frisuren,
+   zubehoer, kinder; Nummern unter jedem Bild). Bitte jedes Blatt einmal ansehen und dann wählen.
+3. Hauttöne (koerper 1–9) vielfältig und passend zu den Figuren der Bibel; keine Klischees über
+   Kleidung oder Zubehör (Vell-Familien: heutige Kleidung, keine Federn, kein Schmuck aus realen
+   Kulturen). Wiederkehrende Figuren (Victor, Nova, Ambrose, Harlan …) haben überall dasselbe Bild.
+4. Gleiche Kombinationen vermeiden; Figuren eines Ortes sollen sich auf einen Blick unterscheiden.
+5. Die zwei Probeeinträge (`held-0`, `skater-jo`) darfst du ändern.
+6. Bauen, die Bögen in `spiel/figuren/` mitcommitten, pushen. Im Bericht: Tabelle Figur → kurze
+   Beschreibung des Aussehens (eine Zeile je Figur), damit der Autor es später nachlesen kann.
 
-## Bericht
+Die Porträts leitet der Haupt-Chat danach aus denselben Angaben ab (Haut, Augen, Frisur), du musst
+dafür nichts tun.
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt.**
 

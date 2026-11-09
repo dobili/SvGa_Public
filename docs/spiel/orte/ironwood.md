@@ -28,7 +28,7 @@ Bahnhof mit Güterbahnhof und Weg zum Steinbruch.
 
 ### 1.1 Außenkarte `ironwood.aussen`, 80 × 60
 
-**Reihen (Nord nach Süd):** 0–3 Abhang (Böschung, Fels, Gestrüpp; Treppe 24–25); 4–10 Reihenhäuser
+**Reihen (Nord nach Süd):** 0–3 Abhang (Böschung, Fels, Gestrüpp; Treppe 24–25 / 0–3 vom Nordrand); 4–10 Reihenhäuser
 der Elm Street (Türen in Reihe 10); 11 Stufen und schmale Vorgärten; 12 Gehweg; 13–14 Elm Street
 (Wohnstraße, zwei Felder); 15 Gehweg; 16–17 Hinterhöfe; 18–27 Häuserzeile Hauptstraße Nord (Türen in
 Reihe 27) und Werkhof; 28 Gehweg Nord; 29–31 Hauptstraße (drei Felder, Mittellinie); 32 Gehweg Süd;
@@ -63,8 +63,8 @@ Werk (nördlich der Hauptstraße).
  Reihe 59 └─┴─≈≈≈≈≈≈──┴───────────────────────── Gebüsch, Böschung ──────────────────────────────────────┘
 ```
 
-**Wegeführung:** Der Hauptweg beginnt an der Treppe (24–25, 0–3), läuft die **Gasse** (24–25,
-16–27) gerade nach Süden auf die Hauptstraße, dort nach Osten zum **Werkstor** (56–60, 27) und nach
+**Wegeführung:** Der Hauptweg kommt am Nordrand in den Spalten 24–25 an (Ende des Abhangs von W3),
+läuft die **Treppe** (24–25, 0–3) hinunter und die **Gasse** (24–25, 16–27) gerade nach Süden auf die Hauptstraße, dort nach Osten zum **Werkstor** (56–60, 27) und nach
 Westen zur **Haltestelle** an der Brücke (13–16, 32). Die Gasse ist bewusst gerade: Sie ist die
 Sichtachse vom Abhang auf den Uhrturm des alten Bahnhofs (24, 34). Kurven und Richtungswechsel
 haben die Nebenwege: der Uferweg am Kanal (11–12, 12–28) mit dem Kai, die Bahnhofstraße (16–17,
@@ -78,13 +78,13 @@ Werkspforte (geschlossen, Ziel ist das Schild).
 
 | Standort                               | Ziel                                          | Warum                                                        |
 | -------------------------------------- | --------------------------------------------- | ------------------------------------------------------------ |
-| oben an der Treppe (24, 1), Ankunft W3 | Uhrturm des alten Bahnhofs (24, 34)           | Ankunft zu Fuß: Man sieht die ganze Stadt bis zum Bahnhof.   |
+| oben an der Treppe (24, 1), nach der Ankunft über W3 | Uhrturm des alten Bahnhofs (24, 34) | Ankunft zu Fuß: Man sieht die ganze Stadt bis zum Bahnhof.   |
 | Haltestelle (14, 32), Ankunft mit Bus  | Schornsteine mit Rauch über dem Werk (52–60)  | Wer mit dem Bus kommt, sieht zuerst das Werk.                |
 | Hauptstraße (40, 30)                   | Werkstor mit Schild (56–60, 27)               | Szene 49: Das neue Schild hängt dort, wo jeder hinsieht.     |
 | Platz am Bahnsteig (30, 43)            | Gittertor zum Steinbruch hinter dem Güterbahnhof (76, 57–58) | Man sieht das Tor, bevor man den Weg dorthin findet. |
 | Brückenmitte (6, 32)                   | Hauptstraße bis zum Werk, Schnee in Szene 50  | Abschied am Ende von Akt 2.                                  |
 
-**Ränder:** Norden Abhang mit Fels und Gestrüpp (nur die Treppe öffnet ihn, Übergang W3). Westen
+**Ränder:** Norden Abhang mit Fels und Gestrüpp (nur die Treppe öffnet ihn, Spalten 24–25, Übergang W3). Westen
 jenseits des Kanals Böschung; die Schnellstraße läuft über die Brücke an den Westrand, aber der
 Gehweg endet am Schild „Kraftfahrstraße – keine Fußgänger“ am Westende der Brücke (2, 32); dahinter
 Leitplanke. Die Gleise laufen an West- und Ostrand, mit Zaun; über die Gleise führt nur der
@@ -120,8 +120,8 @@ Hochformat-Bildschirme. Benachbarte Abschnitte haben verschiedene Themen.
 | D4 Gus             | 48–63 / 45–59 | Pause am Güterbahnhof           | Bahnübergang (Andreaskreuz, Umlaufgitter), Kabeltrommeln, Gus auf der umgedrehten Trommel                                   | Gus (Szene 45), Thermosflasche und Uhr auf der Trommel                         |
 | E4 Steinbruchweg   | 64–79 / 45–59 | Abstecher                       | Stellwerk, Steinbruchweg mit zwei Knicken, Gittertor „Steinbruch – stillgelegt – Betreten auf eigene Gefahr“ (76, 57–58)    | Tor (Sichtachse), Ausblick auf die Steinbruchkante hinter dem Tor             |
 
-**Laufzeit:** Hauptweg Treppe → Gasse → Hauptstraße → Werkstor etwa 62 Kacheln (18 s), zur
-Haltestelle weitere 12 (zusammen 21 s). Quer über die Hauptstraße 80 Kacheln, 23 s. Liegt im
+**Laufzeit:** Hauptweg Nordrand → Treppe → Gasse → Hauptstraße → Werkstor etwa 62 Kacheln (18 s),
+zur Haltestelle etwa 40 (11 s). Quer über die Hauptstraße 80 Kacheln, 23 s. Liegt im
 Rahmen 17–23 s.
 
 ### 1.3 Gebäude und Maße
@@ -203,9 +203,9 @@ Helden (Technik aus 13: `hatLaterne`).
 
 | Von (Karte, Auslöser, Feld)                                         | Nach (Karte, Auslöser, Feld; Ankunft)                                                                                       | Lage, Bedingung                                                                                                                                              |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| aussen `kanalweg` Nordrand (24–25, 0); Ankunft (24, 1), Blick Süden | wegRivertonIronwood.bruecke `weiterIronwood` Südrand, Spalten 24–25 (Vorschlag an mittel-3, siehe unten)                     | Treppe am Ende des Abhangs, zwei Felder; Dialog `ankunft_zu_fuss` bleibt an `weiterIronwood`                                                                |
+| aussen `kanalweg` Nordrand (24–25, 0); Ankunft (24, 1), Blick Süden | wegRivertonIronwood.bruecke `weiterIronwood` Südrand (24–25, 159); Ankunft (24, 158), Blick Norden                          | Treppe am Ende des Abhangs, zwei Felder, gleiche Spalten auf beiden Seiten (mit mittel-3 abgestimmt); Dialog `ankunft_zu_fuss` bleibt an `weiterIronwood` |
 | aussen `bushaltestelle` (14, 32), Start                             | –                                                                                                                           | Ankunft mit dem Bus (Schnellreise, Szene 43 mit Mama, Rückkehr)                                                                                              |
-| aussen `busRiverton` (12, 32), Dialog, Reise                        | Haltestelle in Riverton (Auslöser bei mittel-3)                                                                             | erst nach `besuchtIronwood`; 10 Münzen, nach der Clubnadel von Ironwood frei (Bibel 10.3, W2)                                                               |
+| aussen `busRiverton` (12, 32), Dialog, Reise                        | riverton.aussen `busIronwood` (Schild (49, 18), `orte/riverton.md`, mittel-3)                                               | erst nach `besuchtIronwood`; 10 Münzen, nach der Clubnadel von Ironwood frei (Bibel 10.3, W2)                                                               |
 | aussen `busSiliconBay` (15, 32), Dialog, Reise                      | wegIronwoodSilicon.raststaette `start` (140, 20) an der Haltestelle der Raststätte                                         | erst nach Szene 50 (`einladungGesehen`, neu); vorher sagt der Busfahrer, ohne Einladung lasse man niemanden aus dem Bus (`silicon-bay.md`)                           |
 | aussen `kantineTuer` (56, 17)                                       | kantine `kantineAusgang` (Südwand, Spalte 12); Ankunft (12, 14)                                                             | Südfassade 50 % ↔ Südwand 50 %; offen erst nach Szene 38 (Bedingung `verbotGesehen`, neu), vorher Dialog des Pförtners                                       |
 | aussen `umkleideTuer` (69, 17)                                      | umkleide `umkleideAusgang` (Südwand, Spalte 7); Ankunft (7, 8)                                                              | Südfassade 43 % ↔ Südwand 50 %                                                                                                                              |
@@ -213,14 +213,14 @@ Helden (Technik aus 13: `hatLaterne`).
 | aussen `museumTuer` (24, 41), Platzseite                            | museum `museumAusgang` (Südwand, Spalte 13); Ankunft (13, 12)                                                               | Südfassade 46 % ↔ Südwand 50 %                                                                                                                              |
 | aussen `steinbruch` (neu) Ostrand (79, 57–58); Ankunft (78, 57)     | steinbruch.grube `zurueckIronwood` (neu) Westrand (0, 6–7); Ankunft (1, 6)                                                  | Steinbruchweg durch das offene Gittertor; Schotter, zwei Felder                                                                                              |
 | steinbruch.grube `stollen` (neu), Stollenmund (57, 42)              | steinbruch.stollen `stollenAusgang` (neu) Südrand (18–19, 23); Ankunft (18, 22), Blick Norden                               | S4: `wenn: hatLaterne`; ohne Laterne Dialog „Zu dunkel. Die Kinder trauen sich auch nur bis hierher.“                                                        |
-| aussen `anleger` (neu, 12, 22), Dialog, Reise                       | Anleger in Lockport und Riverton (Lastkahn, mittel-3)                                                                       | nach Szene 39 (Big Joe kennt den Kapitän, 13 §3); 5 Münzen                                                                                                   |
+| aussen `anleger` (neu, 12, 22), Dialog, Reise                       | riverton.aussen `anlegerSchild` (56, 43) und lockport.aussen `kai` (14, 20) (Lastkahn, mittel-3)                            | `wenn: lastkahnFrei` (gesetzt in „Post für den Kapitän“ von mittel-3, ab Szene 39: Big Joe kennt den Kapitän, 13 §3); 5 Münzen                               |
 
-**Abstimmung mit mittel-3 (W3 ↔ Ironwood):** Vorschlag: Die Brückenkarte von W3 endet am **Südrand**
-mit dem Weg in den Spalten 24–25 (Ende des Abhangs, Treppenansatz), der Kanal verlässt sie am Südrand
-in den Spalten 4–9 (Ufer 3 und 10), damit er in Ironwood an derselben Stelle über den Nordrand
-hereinkommt. Läuft die Brückenkarte von West nach Ost, verlege ich die Ankunft an den Westrand von
-Ironwood; das ist auf meiner Seite mit einer Zeile erledigt. Das Ergebnis der Abstimmung steht in
-der Fußnote dieses Abschnitts, sobald mittel-3 geantwortet hat.
+**Abstimmung mit mittel-3 (W3 ↔ Ironwood), entschieden vom Haupt-Chat am 9.11.2026:** Die
+Brückenkarte von W3 (`wegRivertonIronwood.bruecke`, 30 × 160, `orte/riverton.md` 1.5, Commit
+a5a08fdc) endet am **Südrand** in Reihe 159 mit dem Weg in den Spalten 24–25 und dem Kanal in den
+Spalten 4–9 (Ufer 3 und 10). Ironwood übernimmt dieselben Spalten am Nordrand: Treppe 24–25, Kanal
+4–9. Anleger (`anleger`, Bedingung `lastkahnFrei` aus L3, Brief von Big Joe nach Szene 39) und
+Haltestelle (`busRiverton` ↔ `busIronwood`) wie in der Tabelle.
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `steinbruch` und `anleger` auf
 `ironwood.aussen`, Bedingung `verbotGesehen` auf `kantineTuer` (Dialog am Pförtnerhaus), neuer Ort

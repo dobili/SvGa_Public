@@ -88,3 +88,132 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
 2. Schatten: die Fassung mit halbdurchsichtigem Schatten (`*_Black_Shadow_*`), nie den grauen
    Festschatten, der nur auf einem Boden passt. **[auto]**
 3. Jedes Bild ist im Katalog beschrieben, bevor es verbaut wird.
+
+## 8. Vorbild: Beispielräume des Zeichners
+
+Abgeleitet aus den fertig eingerichteten Räumen, die LimeZu den Paketen beilegt (privates Repository,
+`modern-interiors/6_Home_Designs/*/16x16/*preview*.png` mit `layer_*`: Generic Home, Wohnanlage
+(Condominium) 1 und 2, japanisches Haus, Turnhalle 1 und 2, Eisdiele, TV-Studio, Schießstand, Museum
+Eingang und Räume 1–4) und den zusammengesetzten Gebäuden aus Modern Exteriors (`*Example*`: Palast,
+Bürohaus, Condo 6, Eisenwarenladen). Ganze Straßenszenen liegen den Außenpaketen nicht bei; für außen
+gibt es deshalb nur Regeln zu Gebäuden. Kacheln = 16 Pixel; „Reihe“ zählt von oben.
+
+### 8.1 Ebenen und Wände
+
+1. **Zwei Ebenen:** Boden und Wände liegen allein auf Ebene 1; alles andere, auch Teppiche, Türen,
+   Fenster und Wandschmuck, auf Ebene 2 (Eisdiele und TV-Studio haben eine dritte für Dinge auf
+   Tresen und Licht). _Generic Home:_ `Layer_1` zeigt nur Dielen, Fliesen und Wände.
+2. **Nordwand zwei Reihen Wandfläche** mit schmaler heller Kante oben; Seitenwände nur als schmale
+   Kante mit Schattenkeil zum Boden. _Generic Home, Wohnanlage, Turnhalle._ (Passt zu 2. und zum
+   Kartenbauer.)
+3. **Innenwände zwischen zwei Räumen** bekommen auf der Südseite wieder zwei Reihen Wandfläche; der
+   Raum darunter hat seine eigene „Nordwand“. _Generic Home:_ der Eingangsraum unten hat eine eigene
+   Wandfläche mit zwei Schränken davor; _Museum Raum 2:_ jede Abteilung beginnt mit einer Wand.
+4. **Durchgänge zwischen Räumen sind offene Lücken** von 1 bis 3 Kacheln Breite, durch die der
+   Boden weiterläuft, ohne Türbild. Türbilder nur dort, wo eine Wohnung, ein Zimmer oder das Haus
+   endet. _Generic Home:_ Flur links und rechts und der Gang nach unten offen, eine Tür nur oben;
+   _Wohnanlage 2:_ vier Wohnungstüren nebeneinander. **Widerspruch zu 2.2** („keine nackten Lücken“):
+   Beim Zeichner sind offene Durchgänge innerhalb einer Wohnung üblich; 2.2 bleibt unverändert.
+5. **Türen** sitzen in der Wandfläche, ihre Unterkante auf der Bodenlinie; direkt davor auf der ersten
+   Bodenreihe liegt eine Fußmatte, so breit wie die Tür. _Wohnanlage 2:_ jede der vier Türen mit
+   eigener Matte; _Turnhalle 2:_ Matte vor dem Durchgang oben rechts. Ausgänge in der Südwand sind eine
+   Lücke von 2–4 Kacheln, oft mit Matte davor oder dahinter (_Eisdiele_, _Generic Home_).
+6. **Fenster** hängen in der Wandfläche, mittig über einem Möbel oder zwischen zwei Möbeln; Gardinen
+   oder Rollos so breit wie das Fenster. _Turnhalle:_ großes Fenster über der Hantelecke;
+   _japanisches Haus:_ zwei Schiebefenster je über einer Möbelgruppe; _TV-Studio:_ gestreifte Vorhänge
+   links und rechts über den Hockern.
+
+### 8.2 Anordnung und Abstände
+
+1. **Möbel an die Wände, Mitte frei.** Große Stücke (Schrank, Kamin, Regal, Theke, Bett) stehen mit
+   dem Rücken an einer Wand; die Raummitte bleibt als Lauffläche frei, mindestens 2 Kacheln breit von
+   jedem Eingang aus. _Generic Home:_ Mitte 6 × 3 Kacheln frei; _Eisdiele:_ Gang 3 Kacheln breit von
+   der Tür zur Theke; _Museum Raum 3:_ Mittelgang 2 Kacheln.
+2. **Symmetrie an der Hauptwand:** Das wichtigste Stück steht mittig, gleiche Stücke links und rechts
+   davon im gleichen Abstand. _Generic Home:_ Kamin mittig, je ein Sessel links und rechts, Abstand 0;
+   die beiden Kleiderschränke unten spiegeln sich um die Tür. _Eisdiele:_ Speisekarte mittig, je ein
+   Eisautomat und ein Herz-Schild links und rechts. _TV-Studio:_ Moderationstisch mittig, Lampen,
+   Hocker und Vorhänge gespiegelt. _Museum Eingang:_ Vitrinen gespiegelt um den Eingang.
+3. **Gruppen dicht, Gruppen untereinander mit Luft.** Was zusammengehört, steht ohne Lücke
+   (Stühle direkt am Tisch, Sessel direkt neben dem Kamin, Hocker direkt an der Theke); zwischen zwei
+   Gruppen liegt mindestens 1 Kachel Boden. _Eisdiele:_ Tisch 1 × 2 mit je zwei Stühlen links und
+   rechts ohne Abstand, die beiden Gruppen 4 Kacheln auseinander. _Japanisches Haus:_ Sitzkissen direkt
+   am niedrigen Tisch. _Schießstand:_ Hocker eine Reihe vor dem langen Tresen.
+4. **Reihen gleicher Geräte** stehen in gleichem Abstand nebeneinander: _Turnhalle:_ zwei Laufbänder
+   mit 1 Kachel Abstand, drei Boxsäcke in gleichem Abstand an der Nordwand; _Schießstand:_ vier
+   Bahnen, je Monitor und Scheibe übereinander; _Museum Raum 1:_ drei Vitrinen mit je einem Lesepult
+   rechts daneben.
+5. **Blickrichtung:** Sitzende schauen zur Mitte der Gruppe (Stühle zum Tisch, Publikumsstühle im
+   TV-Studio zum Moderationstisch, 3 Reihen davor). Sitzplätze vor einem Blickziel stehen 2–4 Kacheln
+   entfernt. _TV-Studio:_ Zuschauerstühle 3 Reihen vor dem Tisch; _Generic Home:_ Teppich 1 Reihe vor
+   dem Kamin, dahinter frei.
+6. **Belegung:** Ebene 2 belegt (mit Teppichen und Wandschmuck, gemessen an allen Kacheln des Raums
+   einschließlich Wände) bei Wohnräumen 39–54 % (Wohnanlage 39–41 %, Generic Home 46 %, japanisches
+   Haus 54 %), bei Läden und Hallen 51–59 % (Eisdiele 58 %, Museum 52–59 %, Turnhalle 57 %), bei
+   Studios und Fluren 33–41 % (TV-Studio 38 %, Schießstand 41 %, Museum Raum 1 33 %). Ohne Teppiche und
+   Wandschmuck ist etwa ein Drittel der Bodenkacheln mit Möbeln belegt.
+
+### 8.3 Pflanzen, Lampen, Wandschmuck
+
+1. **Pflanzen** stehen an Durchgängen (je eine links und rechts), in Raumecken oder in Lücken
+   zwischen Möbeln an der Wand; nie frei im Raum. _Generic Home:_ je eine Pflanze an den Fluren links
+   und rechts, je eine in den unteren Ecken des Eingangs; _Wohnanlage 2:_ Pflanzen zwischen den Türen
+   und in den Ecken unten; _japanisches Haus:_ zwei Bonsai rechts und links im Eingang. (Passt zu 4.4.)
+2. **Lampen:** In Wohnräumen kleine Lampen auf Ablagen (Beistelltisch, Kommode) oder Wandleuchten an
+   den Seitenwänden der Flure; Stehlampen kommen in keinem Beispiel vor. _Generic Home:_ Lampe mit
+   Büchern auf dem Beistelltisch, Wandleuchten in beiden Fluren. _TV-Studio:_ Strahler als Reihe in der
+   obersten Wandflächenreihe, Scheinwerfer auf Stativen in den Ecken.
+3. **Wandschmuck** sitzt ganz in der Wandfläche, mittig über einem Möbel, zwischen zwei Möbeln oder in
+   gleichen Abständen; Schilder mit Text gehören zur Funktion des Raums. _Museum Raum 1:_ Bilder mit
+   Schildchen darunter und Lesetafeln dazwischen; _japanisches Haus:_ zwei Rollbilder links und rechts
+   vom runden Fenster; _Eisdiele:_ Herz-Schilder und Löffel über den Automaten.
+
+### 8.4 Teppiche, Stile, Kleinkram
+
+1. **Teppiche** liegen rechteckig auf dem Raster, unter oder direkt vor einer Gruppe, nie unter
+   Schränken an der Wand; sie ragen höchstens 1 Kachel über die Gruppe hinaus. _Generic Home:_ 2 × 2 vor
+   dem Kamin, ein zweiter neben dem Etagenbett; _japanisches Haus:_ Tatami-Matten unter jeder
+   Sitzgruppe, je 1 Kachel größer als der Tisch; _Turnhalle:_ Gummimatten unter den Gewichtsbänken.
+2. **Eine Möbelserie je Raum:** gleiche Farbe und gleiches Material, Paare identisch. _Generic Home:_
+   alles Holz in einem Ton, zwei gleiche Schränke, zwei gleiche Sessel; _Eisdiele:_ alles rosa-weiß;
+   _TV-Studio:_ weiß-blau; _Museum:_ Vitrinen und Pulte aus derselben Serie. (Passt zu 3.2 und 3.3.)
+3. **Kleinkram** liegt auf Ablagen (Bücher und Lampe auf dem Beistelltisch, Vase auf der Kommode,
+   Becher auf der Theke), in Gruppen von 2–3 Stück. Am Boden nur, was dort hingehört und höchstens 1–2
+   Stück je Wohnraum: _Generic Home:_ Hut und Skateboard vor dem Etagenbett (Kinderzimmer);
+   _Turnhalle:_ Hanteln und Bälle neben den Geräten. **Ergänzung zu Prüfliste 2** („nichts liegt
+   unpassend am Boden“): Der Zeichner legt wenige passende Dinge bewusst auf den Boden; die Regel bleibt.
+
+### 8.5 Gebäude außen (Beispiele aus Modern Exteriors)
+
+1. **Eingang mittig in der Fassade**, davor Stufen oder eine Treppe in Türbreite, die bis auf den
+   Gehweg reicht. _Palast:_ Säulenportal mittig, Treppe 6 Kacheln breit, Laternenpfosten links und
+   rechts der Treppe; _Bürohaus „G-Neric Corp“:_ Glastür mittig unter dem Firmenschild.
+2. **Schild und Name über der Tür**, nicht daneben. _Bürohaus, Eisenwarenladen_ (Markise über den
+   Schaufenstern).
+3. **Bank direkt an der Fassade neben der Tür**, Sitzfläche zum Gehweg. _Condo 6:_ Bank zwischen
+   Haustür und Garagentor.
+
+### 8.6 Was der Kartenbauer prüfen könnte (Vorschlag für `kartenregeln.py`)
+
+- **Belegung:** Anteil der Bodenkacheln unter Möbeln mit Kollision 20–45 %, darunter „karg“, darüber
+  „vollgestellt“ (Messung wie 8.2.6).
+- **Freier Gang:** von jedem Eingang ein Weg von 2 Kacheln Breite bis in die Raummitte (Breitensuche
+  mit Abstandsprüfung).
+- **Möbel an der Wand:** große Möbel (`art` schrank, regal, bett, theke, kamin) berühren mit der
+  Rückseite eine Wand.
+- **Gruppen:** Stühle und Hocker grenzen ohne Lücke an ihren Tisch (`zu`); zwischen zwei Gruppen
+  mindestens 1 Kachel Boden.
+- **Blickabstand:** Sofa und Sessel mit `zu` auf Fernseher oder Kamin stehen 2–4 Kacheln davor.
+- **Matte vor Tür:** vor jeder Tür `an_wand` die Kachel darunter frei; Hinweis, wenn dort keine Matte
+  liegt.
+- **Wandschmuck mittig:** Bilder und Fenster über einem Möbel stehen mit ihrer Mitte höchstens
+  4 Pixel neben dessen Mitte.
+- **Teppich:** jeder Teppich überlappt eine Gruppe (Tisch, Sofa, Bett) oder liegt direkt davor und
+  ragt höchstens 1 Kachel darüber hinaus; nie unter `art` schrank oder regal.
+- **Paare gleich:** Stühle an einem Tisch und gespiegelte Paare an einer Wand benutzen dieselbe
+  Möbelserie (gleicher Schlüssel bis auf die Blickrichtung).
+- **Kleinkram am Boden:** Einträge mit `art` deko und Höhe 16 nur auf einer Ablage (`auf`), außer der
+  Ort erlaubt Bodenkram (Kinderzimmer, Turnhalle).
+
+Nur mit der Bildprüfung zu beurteilen: Symmetrie an der Hauptwand, ob Wandschmuck zur Funktion passt,
+Stil einer Möbelserie.

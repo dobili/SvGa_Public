@@ -13,7 +13,7 @@
     "t": "stein",
     "k": "sand"
   },
-  "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die alte graue Holzturnhalle steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Bauzaun mit Plane. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
+  "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die Turnhalle, eine Halle mit Blechdach und Holzwänden, steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Bauzaun mit Plane. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -323,8 +323,8 @@
       "feld": [45, 7]
     },
     {
-      "moebel": "pd6TurnhalleHolz",
-      "feld": [33, 11]
+      "moebel": "pd6Gueterhalle",
+      "feld": [35, 15]
     },
     {
       "moebel": "pd6HausRot2",
@@ -626,7 +626,7 @@
     },
     {
       "name": "turnhalleTuer",
-      "feld": [38, 25]
+      "feld": [37, 25]
     },
     {
       "name": "werkstattTuer",

@@ -1,0 +1,281 @@
+{
+  "karte": "cedarCreek.bibliothek",
+  "datei": "karten/varianten/cedar-creek-bibliothek-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, schlicht und hell: Regale aus hellem Holz an der Nordwand und eine einzige lange Regalreihe quer durch die Mitte des Saals. Der Schachclub sitzt oben links auf einem Teppich an zwei runden Tischen mit je zwei Brettern. Unten rechts eine kleine Leseecke mit zwei weißen Sesseln, Tisch mit Leselampe und Stehlampe. Der Ausleihtresen mit Kasse steht nahe der Tür, der Globus auf einer Anrichte an der Ostseite. Laufweg von der Tür nach oben am Tresen vorbei, links zum Club, rechts unter der Regalreihe zur Leseecke und zur Kellertür.",
+  "wand": "hellgrau",
+  "boden": "dielen",
+  "raster": [
+    "######################",
+    "######################",
+    "######################",
+    "#....................#",
+    "#..tttttt............#",
+    "#..tttttt............#",
+    "#..tttttt............#",
+    "#..tttttt............#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#............tttttt..#",
+    "#............tttttt..#",
+    "#....................#",
+    "###.##################",
+    "######################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6RegalHellA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc6RegalHellC",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "cc4PinnwandK",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [13, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Zeitungsregal",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc6RegalHellA",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "cc4Kellertuer",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Tuer",
+      "feld": [3, 15],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [3, 14]
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [4, 5],
+      "id": "schach1"
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [6, 5],
+      "id": "schach2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach1",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach1",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [4, 4],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [4, 6],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [5, 4],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [5, 6],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [6, 4],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [6, 6],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [7, 4],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [7, 6],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "cc6RegalHellC",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "cc6RegalHellD",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "cc6RegalHellA",
+      "feld": [15, 8]
+    },
+    {
+      "moebel": "cc6RegalHellB",
+      "feld": [17, 8]
+    },
+    {
+      "moebel": "cc6TischHell",
+      "feld": [15, 12],
+      "id": "lese1"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese1",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc6SesselRechts",
+      "feld": [13, 12],
+      "zu": "lese1"
+    },
+    {
+      "moebel": "cc6SesselLinks",
+      "feld": [17, 12],
+      "zu": "lese1"
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [6, 11]
+    },
+    {
+      "moebel": "cc5Anrichte",
+      "feld": [18, 5],
+      "id": "anrichte"
+    },
+    {
+      "moebel": "cc4Globus",
+      "auf": "anrichte"
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [20, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [3, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "bibliothekAusgang",
+      "feld": [3, 15]
+    },
+    {
+      "name": "kellertreppe",
+      "feld": [19, 3]
+    },
+    {
+      "name": "schildFluestern",
+      "feld": [11, 3]
+    },
+    {
+      "name": "zeitungsregal",
+      "feld": [16, 4]
+    },
+    {
+      "name": "globus",
+      "feld": [18, 7],
+      "auf_moebel": false
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okafor",
+      "feld": [8, 5]
+    },
+    {
+      "name": "dex",
+      "feld": [3, 5]
+    },
+    {
+      "name": "mae",
+      "feld": [5, 9]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "leserin",
+      "typ": "statist",
+      "feld": [3, 12],
+      "eigenschaften": {
+        "von": "3,12",
+        "bis": "9,12",
+        "tun": "trägt einen Bücherstapel",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch"],
+  "boeden": {
+    "t": "teppichRot"
+  },
+  "variante": "b"
+}

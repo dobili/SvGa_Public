@@ -1,0 +1,210 @@
+{
+  "karte": "cedarCreek.aussen",
+  "datei": "karten/cedar-creek-aussen.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "e": "erde",
+    "h": "holzDunkel"
+  },
+  "beschreibung": "Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Eine schmale Asphaltstraße kommt links aus dem Zedernwald und endet rechts am Bach; an ihr entlang läuft ein gepflasterter Gehweg. Das größte Gebäude ist die Bibliothek aus rotem Backstein von 1890 mit ihrem schiefergedeckten Turm und hohen Bogenfenstern, die hölzerne Eingangstür liegt unten im Turm. Links daneben der Waschsalon von Mr. Boateng mit rot-weißen Markisen und großen Schaufenstern, vor der Tür wartet ein Hund. Zwischen beiden Gebäuden steht eine alte Laterne, ein Mülleimer steht am Bach. Rechts an der Straße die Bushaltestelle mit Wartehäuschen, an der der Busfahrer raucht; dahinter hängt an einer großen Plakatwand das glänzende Plakat von Perfect Move, das gar nicht in diesen Ort passt. Ganz rechts fließt der Bach, am Ufer ein Streifen Erde; ein Holzsteg führt ins Wasser, auf dem Rosa angelt und ein Mann einzelne Bretter erneuert, ein Reiher steht still im seichten Wasser. Unterhalb der Straße eine Wiese mit roten Zedern und einer Bank, auf der Victor sitzt und wartet. Laufwege: der Gehweg vor allen Türen, die Straße nach links in den Wald, der Uferweg zum Steg.",
+  "raster": [
+    "############################################",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................ehhhh~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#pppppppppppppppppppppppppppppppppppe~~~~~~#",
+    "sssssssssssssssssssssssssssssssssssse~~~~~~#",
+    "#ssssssssssssssssssssssssssssssssssse~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "#...................................e~~~~~~#",
+    "############################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf2Waschsalon",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "mf2Bibliothek",
+      "feld": [11, 1],
+      "id": "bibliothek"
+    },
+    {
+      "moebel": "mf2Haustuer",
+      "auf": "bibliothek",
+      "versatz": [-96, 87]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [9, 13]
+    },
+    {
+      "moebel": "mf2Plakatwand",
+      "feld": [30, 3]
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "mfMuelltonne",
+      "feld": [35, 15]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [3, 19]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [8, 19]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [14, 19]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [22, 20]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [28, 19]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [33, 19]
+    },
+    {
+      "moebel": "mf2Zeder",
+      "feld": [35, 1]
+    },
+    {
+      "moebel": "mf2ZederSchmal",
+      "feld": [35, 8]
+    },
+    {
+      "moebel": "mf2BlumenbeetKlein",
+      "feld": [25, 17]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [32, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "bushaltestelle",
+      "feld": [32, 17]
+    },
+    {
+      "name": "busZurueck",
+      "feld": [31, 17]
+    },
+    {
+      "name": "bibliothekTuer",
+      "feld": [14, 17]
+    },
+    {
+      "name": "waschsalonTuer",
+      "feld": [5, 17]
+    },
+    {
+      "name": "plakat",
+      "feld": [32, 9]
+    },
+    {
+      "name": "steg",
+      "feld": [39, 12]
+    },
+    {
+      "name": "zedernwald",
+      "feld": [0, 18]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "rosa",
+      "feld": [40, 12]
+    },
+    {
+      "name": "victor",
+      "feld": [24, 21]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "busfahrer",
+      "typ": "statist",
+      "feld": [33, 17],
+      "eigenschaften": {
+        "von": "33,17",
+        "bis": "34,17",
+        "tun": "raucht an der Haltestelle",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "stegbauer",
+      "typ": "statist",
+      "feld": [37, 12],
+      "eigenschaften": {
+        "von": "37,12",
+        "bis": "37,12",
+        "tun": "repariert den Steg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [6, 17],
+      "eigenschaften": {
+        "von": "6,17",
+        "bis": "7,17",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [36, 15],
+      "eigenschaften": {
+        "von": "36,15",
+        "bis": "36,15",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "eichelhaeher",
+      "typ": "tier",
+      "feld": [19, 1],
+      "eigenschaften": {
+        "von": "19,1",
+        "bis": "24,1",
+        "wann": "morgen",
+        "verhalten": "fliegen"
+      }
+    }
+  ]
+}

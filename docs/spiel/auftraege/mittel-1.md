@@ -1,6 +1,6 @@
 # Auftrag: Karten mit dem Kartenbauer (Szenenbeschreibung, Bau, Bildprüfung)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, neunundzwanzigster Auftrag)
+**Stand:** fertig (mittel-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 409b6826);
 privates Repository nur lesen (`origin/main` holen; dorthin nichts pushen)
@@ -50,6 +50,53 @@ Landstraße: „Wo ist hier ein Weg?“.
 ## Bericht
 
 (vom Helfer auszufüllen)
+
+## Bericht
+
+Vier Karten neu nach `inhalte/abenteuer/szenen/README.md` gebaut: Szenenbeschreibung, Bau mit dem
+Kartenbauer, Bildprüfung der Vorschau. Szenen: `szenen/maple-falls-dachboden.json`,
+`maple-falls-clubraum.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`. Neue Möbel am Ende von
+`moebel.json` mit Vorsilbe `mf2`; jedes Bild habe ich vorher selbst angesehen (Kontaktbögen der Ordner
+Living Room, Basement, Classroom, Music and Sport, `spiel/generic`, dazu die Einzelbilder aus dem
+Register). Die Hintergrundbilder liegen nur lokal in meinem Klon des privaten Repositorys
+(`spiel/grafik/karten/<kennung>.png`, nicht gepusht); bitte mit
+`python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAU inhalte/abenteuer/szenen/<datei>.json` neu
+zeichnen.
+
+- **Dachboden** (14 × 11, Holzwand, Dielen; 3 Runden): Bauernschrank, Kartonstapel, Hutschachtel
+  (runde Schachtel), alter Teppich mit rundem Holztisch und dem Reisebrett darauf, roter Ohrensessel,
+  Stehlampe, Bücherregal, ovaler Standspiegel, Zeitungsstapel, offener Karton, alter Stuhl, Besen,
+  zwei Sprossenfenster und ein Waldbild an der Wand, steile Holztreppe links unten. Runde 1: Regal mit
+  Leiter las sich wie eine zweite Treppe → Bücherregal; Runde 2: alter Stuhl ergänzt; Runde 3: Tisch
+  und Brett so gerückt, dass der Oberflächentest gilt (Start (2,7), Brett (5,4)). Offen: keine
+  sichtbare Dachschräge (Wandstil Holz).
+- **Clubraum** (18 × 13, Creme, heller Holzboden; 3 Runden): Tafel, Weltkarte, Plakat „Erst zählen“
+  (Plakat mit Kästchen) und Urkunde an der Wand, drei Fenster, Pokaltisch mit rotem Tuch (Pokale von
+  1994), Lehrerpult mit Globus und Coach Delgado dahinter, Bücherregal, zwei Spinde, Pflanzen, vier
+  Holztische in zwei Reihen mit je einem Brett mit Figuren und zwei Stühlen, die zum Tisch schauen;
+  Gang zwischen den Reihen für die Schülerin. Runde 1: Stühle zu weit weg und in zwei Farben; Runde 2:
+  gleiches Stuhlpaar (Generic 114/115), Überlappung; Runde 3: Tische um 3 Pixel gerückt.
+- **Park** (30 × 20, Gras, Hecke; 2 Runden): gepflasterte Allee quer durch, Weg hoch zum Kiosk (rosa
+  Verkaufswagen mit Markise als Mr. Patels Kiosk), Betonrampe für Jo (eine Halfpipe gibt es im Register
+  nicht), Abernathys Bank und die Bank des Rentners, Mülleimer, drei Laternen, Bushaltestelle,
+  Brunnen, Ahorne mit roten Rändern, Apfelbaum, Blumenbeete, Büsche, unten der Fluss mit Uferweg aus
+  Erde für die Enten. Runde 2: Kiosk, Jo und Laterne so gerückt, dass die Oberflächentests gelten
+  (Kiosk-Auslöser (16,3), Jo (8,6)).
+- **Cedar Creek draußen** (44 × 24, Gras, Hecke; 2 Runden): Bibliothek aus rotem Backstein mit
+  Schieferturm (viktorianisches Haus) und hölzerner Tür unten im Turm, Waschsalon (Laden mit rot-weißen
+  Markisen), Laterne, Bushaltestelle mit Wartehäuschen, Plakatwand (Elektronik-Werbung, keine echte
+  Marke), Gehweg und Straße nach links in den Zedernwald, rechts der Bach mit Uferweg und einem Holzsteg
+  (Bodenart Holz im Raster, begehbar) für Rosa und den Stegbauer, Wiese mit Zedern und Victors Bank.
+  Runde 1: Bibliothek ohne Tür, Laterne und Mülleimer überlappten; Runde 2: Tür `auf` der Bibliothek,
+  Plakat mit Bild, Überlappungen behoben. Offen: kein Neonschild am Waschsalon.
+
+**Befund am Ablauf:** Drei Oberflächentests hängen an festen Kacheln der alten Karten (Dachboden: Start
+(2,7), Brett (5,4); Park: Kiosk (16,3), Jo (8,6)). Die Szenen halten sich daran; bei weiteren Karten
+lohnt ein Blick in `app/tests/e2e/abenteuer*.spec.ts` vor dem Bau.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen. Prettier über
+Szenen, Karten und `moebel.json`. `npm run build` mit verlinktem privaten Repository ohne Fehler.
+Playwright `tests/e2e/abenteuer` (Chromium): 9 bestanden.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

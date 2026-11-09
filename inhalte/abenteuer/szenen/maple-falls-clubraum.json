@@ -1,0 +1,220 @@
+{
+  "karte": "mapleFalls.clubraum",
+  "datei": "karten/maple-falls-clubraum.json",
+  "art": "innen",
+  "beschreibung": "Das Klassenzimmer 12 der Maple Falls High am Nachmittag, wenn hier das Schachteam von Coach Delgado trainiert. Ein heller Raum mit cremefarbenen Wänden und hellem Holzboden; durch drei Fenster an der Nordwand scheint die Spätsommersonne. In der Mitte der Nordwand hängt die grüne Tafel, auf der noch ein Diagramm von der letzten Aufgabe steht, daneben die Weltkarte und rechts das Plakat „Erst zählen, dann schlagen“, das Coach Delgado selbst gemalt hat. Links an der Wand eine Urkunde aus der Kreisliga. Die Schulbänke sind an die Wände geschoben; stattdessen stehen vier Holztische in zwei Reihen, auf jedem ein Schachbrett mit Figuren und an beiden Enden ein Stuhl, damit sich zwei gegenübersitzen. Auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt. Links vorn der Pokaltisch mit den Pokalen von 1994 auf rotem Tuch, das Stolz und Staub zugleich ist. Rechts vorn das Lehrerpult mit dem Globus, dahinter steht Coach Delgado mit der Pfeife. An der rechten Wand stehen Spinde und ein Bücherregal mit Schachbüchern, in den Ecken Grünpflanzen. Sam lümmelt am vorderen Tisch. Zwischen den Tischreihen bleibt ein Gang frei, durch den eine Schülerin die Figuren einsammelt. Unten in der Mitte die Tür zum Schulflur.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#########.########"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf2Urkunde",
+      "feld": [1, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf2Fenster",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Weltkarte",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Tafel",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2PlakatZaehlen",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Fenster",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Fenster",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Pokaltisch",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mf2Lehrerpult",
+      "feld": [13, 3],
+      "id": "pult"
+    },
+    {
+      "moebel": "mf2Globus",
+      "auf": "pult"
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [3, 5],
+      "id": "t1",
+      "versatz": [3, 0]
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "t1"
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [2, 5],
+      "versatz": [5, 0]
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [9, 5],
+      "id": "t2",
+      "versatz": [3, 0]
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "t2"
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [8, 5],
+      "versatz": [5, 0]
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [3, 8],
+      "id": "t3",
+      "versatz": [3, 0]
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "t3"
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [2, 8],
+      "versatz": [5, 0]
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [9, 8],
+      "id": "t4",
+      "versatz": [3, 0]
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "t4"
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [8, 8],
+      "versatz": [5, 0]
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [16, 6]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "mf2Regal",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "mf2Pflanze",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "mf2Pflanze",
+      "feld": [16, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [9, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "schule",
+      "feld": [9, 12]
+    },
+    {
+      "name": "pokalvitrine",
+      "feld": [1, 4],
+      "auf_moebel": true
+    },
+    {
+      "name": "brettOhneDame",
+      "feld": [10, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "plakatZaehlen",
+      "feld": [10, 3]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "coachDelgado",
+      "feld": [14, 3]
+    },
+    {
+      "name": "sam",
+      "feld": [4, 4]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "schuelerin",
+      "typ": "statist",
+      "feld": [3, 7],
+      "eigenschaften": {
+        "von": "3,7",
+        "bis": "10,7",
+        "tun": "räumt Figuren in die Kiste",
+        "wann": "tag"
+      }
+    }
+  ]
+}

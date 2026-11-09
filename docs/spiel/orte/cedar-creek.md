@@ -386,6 +386,33 @@ Offen: Der Katalog hat keine Drechselbank und kein Regal mit Holzfiguren; die Ho
 Drehbank, das Regal zeigt Bücher und Schalen. Die Einträge in `orte.json` (Karte, `drechslereiTuer`,
 `drechslereiAusgang`, Figur `dunmore`) kommen mit der Außenkarte.
 
+### 4.4 Bibliothek, Lesesaal (`cedarCreek.bibliothek`)
+
+**Größe:** 22 × 16 (großer Saal nach 7a.2; vorher 18 × 14). Nordwand Reihen 0–2 hellgrau, Boden dunkle
+Dielen, Südwand Reihe 15 mit der Doppeltür bei Spalte 11 (50 %, außen Spalte 25 der Hauptstraße im
+Turm). Zwei Fenster in der Nordwand.
+
+**Laufwege:** Tür (11, 15) → Start (11, 14) → gerade nach oben; links um den Schachtisch; rechts an
+Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
+
+| Zone         | Gegenstand                                                            | Feld                                                              | Ausrichtung       | Material, Stil, Zustand             | Zweck                                                        |
+| ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------- | ----------------------------------- | ------------------------------------------------------------ |
+| Nordwand     | hohe Bücherregale einer Serie                                         | (1, 1), (3, 1), (7, 1), (9, 1), (17, 1)                           | Vorderseite unten | Holz rotbraun, klassisch, gebraucht | Bibliothek                                                   |
+| Nordwand     | zwei Fenster mit dunklem Holzrahmen                                   | Wandfläche (5, 1), (13, 1)                                        | –                 | Holz, Glas                          | Licht                                                        |
+| Nordwand     | Pinnwand mit Schild „Bitte flüstern“                                  | Wandfläche (11, 1)                                                | –                 | Kork, klassisch                     | `schildFluestern` (11, 3)                                    |
+| Nordwand     | niedriges Zeitungsregal                                               | (15, 1)                                                           | Vorderseite unten | Holz                                | `zeitungsregal` (16, 4)                                      |
+| Nordwand     | Tür zur Kellertreppe                                                  | Wandfläche (19, 1)                                                | –                 | Holz                                | `kellertreppe` (19, 3); darunter liegt die Archivtreppe      |
+| Mitte links  | Schachtisch aus zwei grünen Lesetischen mit vier Brettern             | (5, 7), (7, 7)                                                    | –                 | Holz und Grün, klassisch            | Bibliotheksclub; Dex (4, 7), Mrs. Okafor (9, 7), Mae (6, 11) |
+| Mitte links  | je vier gleiche Stühle oben (Blick nach unten) und unten (von hinten) | Reihe 6 und 8, Spalten 5–8                                        | zum Tisch         | Holz und Grün                       | Spieler                                                      |
+| Mitte rechts | freistehende Regalreihe                                               | (13, 4), (15, 4), (17, 4)                                         | Vorderseite unten | Holz                                | Bücherreihe im Saal                                          |
+| unten rechts | zwei Lesetische mit Leselampe, je ein Stuhl, Stehlampe                | Tische (13, 10), (16, 10); Stühle (13, 9), (16, 9); Lampe (18, 9) | Stühle zum Tisch  | Holz, Stoffschirm                   | Lesen                                                        |
+| Eingang      | Ausleihtresen mit alter Kasse                                         | (8, 11)                                                           | Vorderseite unten | Holz, klassisch                     | Platz für Miss Ashby (Runde 5)                               |
+| Ecke SO      | Globus                                                                | (19, 12)                                                          | –                 | Metall, klassisch, einmal je Ort    | `globus` (18, 12)                                            |
+| Ecken        | Pflanzen                                                              | (1, 12), (20, 4)                                                  | –                 | Pflanze                             | Regel 4.4                                                    |
+
+Belebung: eine Leserin geht zwischen (3, 13) und (9, 13). Platzhalter (13 §7.4): Für die Kopie von
+Hales Seite (Post-Game) ist die Wandfläche rechts der Kellertür frei.
+
 Folgen nach Durchsicht des Musters.
 
 ### 4.L Landstraße (`wegMapleCedar.landstrasse`, Bühnenbild, niedrig-1)

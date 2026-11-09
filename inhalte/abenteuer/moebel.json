@@ -169,10 +169,78 @@
       "hoehe": 48,
       "kollision": true
     },
-<<<<<<< HEAD
     "busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_10.png",
-=======
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "fels": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "felsKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "baumstumpf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "wegweiser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "leselampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "kisteGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_355.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "aktenschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_11.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "waschmaschine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_87.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "waschmaschineHoch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_90.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "wartebank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/9_Fishing_Singles/Fishing_Singles_44.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "automatBunt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
     "rvTicketschalter": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_6.png",
       "breite": 32,
@@ -211,15 +279,10 @@
     },
     "rvTopfpflanze": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Plant_Vase_1.png",
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
-<<<<<<< HEAD
-    "fels": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_1.png",
-=======
     "rvKoffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Travel_Case_1.png",
       "breite": 16,
@@ -312,25 +375,16 @@
     },
     "rvPokalhaufen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_148.png",
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "breite": 16,
       "hoehe": 16,
       "kollision": true
     },
-<<<<<<< HEAD
-    "felsKlein": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
-=======
     "rvLaterneKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "breite": 16,
       "hoehe": 16,
       "kollision": true
     },
-<<<<<<< HEAD
-    "baumstumpf": {
-=======
     "rvKiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_1.png",
       "breite": 32,
@@ -404,70 +458,23 @@
       "kollision": true
     },
     "rvBaumstumpf": {
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
       "breite": 32,
       "hoehe": 16,
       "kollision": true
     },
-<<<<<<< HEAD
-    "wegweiser": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
-=======
     "rvWegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_5.png",
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
-<<<<<<< HEAD
-    "leselampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
-=======
     "rvGleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
-<<<<<<< HEAD
-    "kisteGrau": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_355.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "aktenschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_11.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "waschmaschine": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_87.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "waschmaschineHoch": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_90.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "wartebank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/9_Fishing_Singles/Fishing_Singles_44.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true
-    },
-    "automatBunt": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
-      "breite": 32,
-      "hoehe": 48,
-=======
     "rvHeuhaufen": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Fresh_Pile_16x16.png",
       "breite": 32,
@@ -478,7 +485,6 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
       "breite": 48,
       "hoehe": 16,
->>>>>>> origin/claude/schach-abenteuer-mittel-1-cl431d
       "kollision": true
     }
   }

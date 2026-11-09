@@ -168,3 +168,29 @@ def test_teppich_nie_unter_schrank():
     assert pruefe_teppiche(gesetzt, MOEBEL) == ["teppich liegt unter schrank"]
     szene, _, gesetzt = _szene([{"moebel": "teppich", "feld": [4, 5]}, {"moebel": "schrank", "feld": [1, 1]}])
     assert pruefe_teppiche(gesetzt, MOEBEL) == []
+
+
+def test_innenwand_braucht_wandflaeche():
+    from pipeline.abenteuer.kartenregeln import pruefe_wandflaechen
+
+    # Waagerechte Innenwand nur eine Reihe dick: von oben gesehen, ohne Fläche (Regel 10.39).
+    zeilen = _raum()
+    zeilen[6] = "#" * 10
+    befunde = pruefe_wandflaechen({"art": "innen"}, zeilen)
+    assert befunde and "Wand ohne Wandfläche" in befunde[0]
+    # Drei Reihen dick wie die Nordwand: in Ordnung.
+    zeilen[4] = zeilen[5] = "#" * 10
+    assert pruefe_wandflaechen({"art": "innen"}, zeilen) == []
+
+
+def test_gleiches_einzelmoebel_zweimal():
+    from pipeline.abenteuer.kartenregeln import pruefe_doppelte
+
+    moebel = {
+        "schrankA": {"art": "schrank", "quelle": "alt.png"},
+        "schrankB": {"art": "schrank", "quelle": "alt.png"},
+        "arbeitsplatte": {"art": "schrank", "quelle": "platte.png"},
+    }
+    gesetzt = [{"name": n} for n in ("schrankA", "schrankB", "arbeitsplatte", "arbeitsplatte")]
+    befunde = pruefe_doppelte({"art": "innen"}, gesetzt, moebel)
+    assert len(befunde) == 1 and "schrankA" in befunde[0]

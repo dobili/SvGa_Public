@@ -20,6 +20,8 @@ SCHMAL_ERLAUBT = 0
 FLAECHE = 8
 # Ein Bach ist schmaler als das; er darf nicht mitten in der Karte enden.
 BACH_HOECHSTENS = 5
+# Ein Bach ist mindestens so breit; an Stufen überlappen seine Stücke mindestens so weit.
+WASSER_MINDEST = 2
 # Ein Fluss darf von Feld zu Feld um so viel breiter oder schmaler werden, ein Weg nur um eins.
 WASSER_SPRUNG = 2
 # Holzböden über Wasser (Brücken, Stege) gehören für den Zusammenhang zum Wasserlauf.
@@ -178,6 +180,60 @@ def pruefe_breiten(szene: dict, zeilen: list[str]) -> list[str]:
     return befunde
 
 
+def _laeufe(werte: list[int]) -> list[tuple[int, int]]:
+    """Zusammenhängende Läufe einer sortierten Zahlenliste als (Anfang, Ende) einschließlich."""
+    laeufe: list[tuple[int, int]] = []
+    for w in sorted(werte):
+        if laeufe and w == laeufe[-1][1] + 1:
+            laeufe[-1] = (laeufe[-1][0], w)
+        else:
+            laeufe.append((w, w))
+    return laeufe
+
+
+def engstellen(teil: set[tuple[int, int]], mindest: int) -> list[tuple[int, int]]:
+    """Stellen, an denen ein Weg oder Bach um eine Reihe versetzt weiterläuft und die beiden Stücke
+    weniger als ``mindest`` Felder überlappen (KARTENREGELN 10.41).
+
+    Warum: Ein zwei Felder breiter Weg, der eine Reihe tiefer weitergeht, hat dort nur ein Feld
+    Überlappung; gezeichnet wirkt er wie abgeschnürt, ein Bach wie unterbrochen (Landstraße,
+    Flussweg, Birch Lane, 9.11.2026).
+    Beispiel: Spalte 5 Reihen 3–4, Spalte 6 Reihen 4–5: Überlappung 1 Feld, gemeldet bei (5, 3).
+    """
+    stellen = []
+    for achse in (0, 1):
+        quer: dict[int, list[int]] = {}
+        for feld in teil:
+            quer.setdefault(feld[achse], []).append(feld[1 - achse])
+        for lage in sorted(quer):
+            if lage + 1 not in quer:
+                continue
+            naechste = _laeufe(quer[lage + 1])
+            for a, b in _laeufe(quer[lage]):
+                for c, d in naechste:
+                    ueber = min(b, d) - max(a, c) + 1
+                    lang = b - a + 1 >= mindest and d - c + 1 >= mindest
+                    if lang and 0 < ueber < mindest:
+                        stellen.append((lage, a) if achse == 0 else (a, lage))
+    return sorted(set(stellen))
+
+
+def pruefe_engstellen(szene: dict, zeilen: list[str]) -> list[str]:
+    """Engstellen in Wegen, Straßen und Wasser (10.41); je Teil die erste Stelle."""
+    befunde = []
+    boeden = szene.get("boeden", {})
+    wasser = wasserzeichen(szene)
+    arten = {z: boeden[z] for z in boeden if boeden[z] in MINDEST and z not in wasser}
+    for zeichen, art in sorted(arten.items()):
+        for teil in _komponenten(zeilen, lambda z, c=zeichen: z == c):
+            if stellen := engstellen(teil, MINDEST[art]):
+                befunde.append(f"{art} „{zeichen}“: Engstelle bei {stellen[0]} ({len(stellen)} Stellen)")
+    for teil in _komponenten(zeilen, lambda z: z in wasser):
+        if len(_am_rand(teil, zeilen)) >= 2 and (stellen := engstellen(teil, WASSER_MINDEST)):
+            befunde.append(f"Bach: Engstelle bei {stellen[0]} ({len(stellen)} Stellen)")
+    return befunde
+
+
 def pruefe_enden(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
     """Bäche enden nicht mitten in der Karte; Wege und Straßen führen irgendwohin (10.32)."""
     befunde = []
@@ -248,6 +304,7 @@ def pruefe_zusammenhang(szene: dict, zeilen: list[str], gesetzt: list[dict], moe
         return []
     return (
         pruefe_breiten(szene, zeilen)
+        + pruefe_engstellen(szene, zeilen)
         + pruefe_enden(szene, zeilen, gesetzt, moebel)
         + pruefe_zaeune(gesetzt, moebel)
     )

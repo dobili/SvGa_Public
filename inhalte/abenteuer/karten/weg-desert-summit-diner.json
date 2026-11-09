@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 85,
+  "nextobjectid": 86,
   "layers": [
     {
       "id": 1,
@@ -1079,6 +1079,29 @@
         },
         {
           "id": 24,
+          "name": "wds6Windrad",
+          "type": "moebel",
+          "x": 2080,
+          "y": 64,
+          "width": 48,
+          "height": 96,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 25,
           "name": "wds6Reklame",
           "type": "moebel",
           "x": 1792,
@@ -1101,7 +1124,7 @@
           ]
         },
         {
-          "id": 25,
+          "id": 26,
           "name": "wds6SattelzugRot",
           "type": "moebel",
           "x": 912,
@@ -1124,7 +1147,7 @@
           ]
         },
         {
-          "id": 26,
+          "id": 27,
           "name": "wds6SattelzugBlau",
           "type": "moebel",
           "x": 912,
@@ -1147,7 +1170,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": 28,
           "name": "wds6Spieltisch",
           "type": "moebel",
           "x": 1120,
@@ -1170,7 +1193,7 @@
           ]
         },
         {
-          "id": 28,
+          "id": 29,
           "name": "wds6Brett",
           "type": "moebel",
           "x": 1154,
@@ -1193,7 +1216,7 @@
           ]
         },
         {
-          "id": 29,
+          "id": 30,
           "name": "wds6Reifen",
           "type": "moebel",
           "x": 1232,
@@ -1216,7 +1239,7 @@
           ]
         },
         {
-          "id": 30,
+          "id": 31,
           "name": "wds6Reifen",
           "type": "moebel",
           "x": 1248,
@@ -1239,7 +1262,7 @@
           ]
         },
         {
-          "id": 31,
+          "id": 32,
           "name": "wds6Tankstelle",
           "type": "moebel",
           "x": 608,
@@ -1262,7 +1285,7 @@
           ]
         },
         {
-          "id": 32,
+          "id": 33,
           "name": "wds6Autowrack",
           "type": "moebel",
           "x": 736,
@@ -1285,7 +1308,7 @@
           ]
         },
         {
-          "id": 33,
+          "id": 34,
           "name": "wds6Felsbogen",
           "type": "moebel",
           "x": 384,
@@ -1308,7 +1331,7 @@
           ]
         },
         {
-          "id": 34,
+          "id": 35,
           "name": "wds6Ortsschild",
           "type": "moebel",
           "x": 2240,
@@ -1331,7 +1354,7 @@
           ]
         },
         {
-          "id": 35,
+          "id": 36,
           "name": "wds6Bank",
           "type": "moebel",
           "x": 96,
@@ -1354,7 +1377,7 @@
           ]
         },
         {
-          "id": 36,
+          "id": 37,
           "name": "wds6Wegweiser",
           "type": "moebel",
           "x": 32,
@@ -1377,7 +1400,7 @@
           ]
         },
         {
-          "id": 37,
+          "id": 38,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 48,
@@ -1400,7 +1423,7 @@
           ]
         },
         {
-          "id": 38,
+          "id": 39,
           "name": "wds6PinieB",
           "type": "moebel",
           "x": 144,
@@ -1423,7 +1446,7 @@
           ]
         },
         {
-          "id": 39,
+          "id": 40,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 224,
@@ -1446,7 +1469,7 @@
           ]
         },
         {
-          "id": 40,
+          "id": 41,
           "name": "wds6PinieB",
           "type": "moebel",
           "x": 64,
@@ -1469,7 +1492,7 @@
           ]
         },
         {
-          "id": 41,
+          "id": 42,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 240,
@@ -1492,7 +1515,7 @@
           ]
         },
         {
-          "id": 42,
+          "id": 43,
           "name": "wds6Geierkreis",
           "type": "moebel",
           "x": 480,
@@ -1515,7 +1538,7 @@
           ]
         },
         {
-          "id": 43,
+          "id": 44,
           "name": "wds6Geierkreis",
           "type": "moebel",
           "x": 1920,
@@ -1538,7 +1561,7 @@
           ]
         },
         {
-          "id": 44,
+          "id": 45,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 2256,
@@ -1552,29 +1575,6 @@
               "name": "tiefe",
               "type": "int",
               "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 45,
-          "name": "wds6Saguaro",
-          "type": "moebel",
-          "x": 2096,
-          "y": 80,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
             },
             {
               "name": "kollision",
@@ -1608,29 +1608,6 @@
         },
         {
           "id": 47,
-          "name": "wds6KaktusKlein",
-          "type": "moebel",
-          "x": 2144,
-          "y": 144,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 48,
           "name": "wds6Saguaro",
           "type": "moebel",
           "x": 2304,
@@ -1653,7 +1630,7 @@
           ]
         },
         {
-          "id": 49,
+          "id": 48,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1744,
@@ -1676,7 +1653,7 @@
           ]
         },
         {
-          "id": 50,
+          "id": 49,
           "name": "wds6Saguaro",
           "type": "moebel",
           "x": 1920,
@@ -1699,7 +1676,7 @@
           ]
         },
         {
-          "id": 51,
+          "id": 50,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1712,
@@ -1722,7 +1699,7 @@
           ]
         },
         {
-          "id": 52,
+          "id": 51,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 2160,
@@ -1745,12 +1722,12 @@
           ]
         },
         {
-          "id": 53,
-          "name": "wds6KaktusKlein",
+          "id": 52,
+          "name": "wds6SteinRot",
           "type": "moebel",
           "x": 2096,
-          "y": 160,
-          "width": 16,
+          "y": 192,
+          "width": 48,
           "height": 32,
           "rotation": 0,
           "visible": true,
@@ -1758,7 +1735,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 184
+              "value": 216
             },
             {
               "name": "kollision",
@@ -1768,7 +1745,7 @@
           ]
         },
         {
-          "id": 54,
+          "id": 53,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1936,
@@ -1791,7 +1768,7 @@
           ]
         },
         {
-          "id": 55,
+          "id": 54,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 1728,
@@ -1814,7 +1791,7 @@
           ]
         },
         {
-          "id": 56,
+          "id": 55,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 2352,
@@ -1837,7 +1814,7 @@
           ]
         },
         {
-          "id": 57,
+          "id": 56,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1824,
@@ -1860,7 +1837,53 @@
           ]
         },
         {
+          "id": 57,
+          "name": "wds6SteinRot",
+          "type": "moebel",
+          "x": 2240,
+          "y": 144,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
           "id": 58,
+          "name": "wds6KaktusBluehend",
+          "type": "moebel",
+          "x": 2192,
+          "y": 112,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 59,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1600,
@@ -1883,7 +1906,7 @@
           ]
         },
         {
-          "id": 59,
+          "id": 60,
           "name": "wds6Saguaro",
           "type": "moebel",
           "x": 1408,
@@ -1906,7 +1929,7 @@
           ]
         },
         {
-          "id": 60,
+          "id": 61,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 2016,
@@ -1929,7 +1952,7 @@
           ]
         },
         {
-          "id": 61,
+          "id": 62,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 2304,
@@ -1952,7 +1975,7 @@
           ]
         },
         {
-          "id": 62,
+          "id": 63,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 1328,
@@ -1975,7 +1998,7 @@
           ]
         },
         {
-          "id": 63,
+          "id": 64,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1840,
@@ -1998,7 +2021,7 @@
           ]
         },
         {
-          "id": 64,
+          "id": 65,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 1552,
@@ -2021,7 +2044,7 @@
           ]
         },
         {
-          "id": 65,
+          "id": 66,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 1664,
@@ -2044,7 +2067,7 @@
           ]
         },
         {
-          "id": 66,
+          "id": 67,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 1504,
@@ -2067,7 +2090,7 @@
           ]
         },
         {
-          "id": 67,
+          "id": 68,
           "name": "wds6KaktusBluehend",
           "type": "moebel",
           "x": 1552,
@@ -2090,7 +2113,7 @@
           ]
         },
         {
-          "id": 68,
+          "id": 69,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 336,
@@ -2113,7 +2136,7 @@
           ]
         },
         {
-          "id": 69,
+          "id": 70,
           "name": "wds6Saguaro",
           "type": "moebel",
           "x": 688,
@@ -2136,7 +2159,7 @@
           ]
         },
         {
-          "id": 70,
+          "id": 71,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 512,
@@ -2159,7 +2182,7 @@
           ]
         },
         {
-          "id": 71,
+          "id": 72,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 576,
@@ -2182,7 +2205,7 @@
           ]
         },
         {
-          "id": 72,
+          "id": 73,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 736,
@@ -2205,7 +2228,7 @@
           ]
         },
         {
-          "id": 73,
+          "id": 74,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 784,
@@ -2228,7 +2251,7 @@
           ]
         },
         {
-          "id": 74,
+          "id": 75,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 752,
@@ -2251,7 +2274,7 @@
           ]
         },
         {
-          "id": 75,
+          "id": 76,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 608,
@@ -2274,7 +2297,7 @@
           ]
         },
         {
-          "id": 76,
+          "id": 77,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 640,
@@ -2297,7 +2320,7 @@
           ]
         },
         {
-          "id": 77,
+          "id": 78,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 768,
@@ -2320,7 +2343,7 @@
           ]
         },
         {
-          "id": 78,
+          "id": 79,
           "name": "wds6Wacholder",
           "type": "moebel",
           "x": 816,
@@ -2343,7 +2366,7 @@
           ]
         },
         {
-          "id": 79,
+          "id": 80,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 672,
@@ -2366,7 +2389,7 @@
           ]
         },
         {
-          "id": 80,
+          "id": 81,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 608,
@@ -2389,7 +2412,7 @@
           ]
         },
         {
-          "id": 81,
+          "id": 82,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 544,
@@ -2412,7 +2435,7 @@
           ]
         },
         {
-          "id": 82,
+          "id": 83,
           "name": "wds6SteinRot",
           "type": "moebel",
           "x": 384,
@@ -2435,7 +2458,7 @@
           ]
         },
         {
-          "id": 83,
+          "id": 84,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 784,
@@ -2458,7 +2481,7 @@
           ]
         },
         {
-          "id": 84,
+          "id": 85,
           "name": "wds6KaktusKlein",
           "type": "moebel",
           "x": 352,

@@ -80,6 +80,10 @@
       "feld": [120, 4]
     },
     {
+      "moebel": "wds6Windrad",
+      "feld": [115, 4]
+    },
+    {
       "moebel": "wds6Wohnwagen",
       "feld": [128, 6]
     },
@@ -223,10 +227,6 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [117, 5]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
       "feld": [136, 5]
     },
     {
@@ -240,10 +240,6 @@
     {
       "moebel": "wds6KaktusKlein",
       "feld": [142, 4]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [117, 9]
     },
     {
       "moebel": "wds6KaktusKlein",

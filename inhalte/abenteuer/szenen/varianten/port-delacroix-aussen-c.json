@@ -13,7 +13,7 @@
     "t": "stein",
     "k": "sand"
   },
-  "beschreibung": "Variante C, Platz im Westen: Port Delacroix mit grauem Gleis und Auslegerlaternen, Kies auf dem Uferweg und in der Rue des Facteurs. Oben Meer, Deichkrone und Hang mit Sandsäcken. Die hölzerne Turnhalle mit Veranda steht gleich hinter dem Bahnsteig im Westen, weiter östlich der Gebäckwagen, ein rotes Haus, ein Rohbau und ein grünes Haus. Der Platz mit den Zelten liegt im Westen unter der Turnhalle, die Gasse führt im Osten nach Süden; am Kai das Musikhaus hinter einem Bauzaun. Im Süden zwei kleine Holzhäuser im Westen und die Klavierwerkstatt im Osten, Wäscheleinen und Zypressen, Boote und Steg im Hafenbecken, Marschpfad zum Bayou am Ostrand.",
+  "beschreibung": "Variante C, Platz im Westen: Port Delacroix mit grauem Gleis und Auslegerlaternen, Kies auf dem Uferweg und in der Rue des Facteurs. Oben Meer, Deichkrone und Hang mit Sandsäcken. Die Turnhalle, eine lange Backsteinhalle mit Sägezahndach, steht gleich hinter dem Bahnsteig im Westen, weiter östlich der Gebäckwagen, ein rotes Haus, ein Rohbau und ein grünes Haus. Der Platz mit den Zelten liegt im Westen unter der Turnhalle, die Gasse führt im Osten nach Süden; am Kai das Musikhaus hinter einem Bauzaun. Im Süden zwei kleine Holzhäuser im Westen und die Klavierwerkstatt im Osten, Wäscheleinen und Zypressen, Boote und Steg im Hafenbecken, Marschpfad zum Bayou am Ostrand.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -331,8 +331,12 @@
       "feld": [54, 46]
     },
     {
-      "moebel": "pd6TurnhalleVeranda",
-      "feld": [8, 17]
+      "moebel": "pd6Werkhalle",
+      "feld": [8, 19]
+    },
+    {
+      "moebel": "pd6Werkhalle",
+      "feld": [14, 19]
     },
     {
       "moebel": "pd6HausRot",
@@ -557,7 +561,7 @@
     },
     {
       "moebel": "rv5LaterneAusleger",
-      "feld": [18, 22],
+      "feld": [21, 22],
       "vorn": true
     },
     {
@@ -644,7 +648,7 @@
     },
     {
       "name": "turnhalleTuer",
-      "feld": [12, 25]
+      "feld": [10, 25]
     },
     {
       "name": "werkstattTuer",

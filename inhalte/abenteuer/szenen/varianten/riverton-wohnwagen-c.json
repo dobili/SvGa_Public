@@ -2,7 +2,7 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/varianten/riverton-wohnwagen-c.json",
   "art": "innen",
-  "beschreibung": "Variante C, blauer Teppichboden: Slicks Wohnwagen mit einem Etagenbett im Westen (das obere Bett ist leer), daneben Bücherregal, Fenster und der Pokaltisch mit den Dosenpokalen, im Osten Herd und eine alte Holzkommode als Küche. In der Mitte auf einem runden Teppich ein dunkler Rundtisch mit Brett und zwei orangefarbenen Stühlen; links die Zeitungen, rechts Pflanze und Kuriertasche. Tür mit Fußmatte in der Südwand.",
+  "beschreibung": "Variante C, blauer Teppichboden: Slicks Wohnwagen mit einem Etagenbett im Westen (das obere Bett ist leer), daneben Bücherregal, Fenster und eine Kommode mit den Dosenpokalen, im Osten Herd und eine alte Holzkommode als Küche. In der Mitte auf einem runden Teppich ein dunkler Rundtisch mit Brett und zwei orangefarbenen Stühlen; links die Zeitungen, rechts Pflanze und Kuriertasche. Tür mit Fußmatte in der Südwand.",
   "wand": "creme",
   "boden": "teppichBlau",
   "raster": [
@@ -32,8 +32,19 @@
       "an_wand": true
     },
     {
-      "moebel": "rv5Pokaltisch",
-      "feld": [8, 1]
+      "moebel": "rv5Kommode",
+      "feld": [8, 2],
+      "id": "pk"
+    },
+    {
+      "moebel": "rv5PokalKlein",
+      "auf": "pk",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "rv5PokalSilber",
+      "auf": "pk",
+      "versatz": [7, 0]
     },
     {
       "moebel": "wzHerd",
@@ -72,7 +83,7 @@
     },
     {
       "moebel": "rv5Zeitungen",
-      "feld": [1, 5]
+      "feld": [1, 4]
     },
     {
       "moebel": "wzPflanze",

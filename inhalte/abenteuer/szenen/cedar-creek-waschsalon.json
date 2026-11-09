@@ -1,0 +1,129 @@
+{
+  "karte": "cedarCreek.waschsalon",
+  "datei": "karten/cedar-creek-waschsalon.json",
+  "art": "innen",
+  "beschreibung": "Der Waschsalon von Cedar Creek am Vormittag: ein heller, schmaler Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Durch das Fenster in der Nordwand fällt Licht, es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand reihen sich vier Waschmaschinen nebeneinander, auf der letzten steht ein Wäschekorb mit bunten Sachen. Darüber hängt die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“. Rechts in der Ecke der bunte Getränkeautomat, der summt und manchmal eine Dose verschluckt.\n\nAn der Westwand stehen die hohen Trockner übereinander; auf einem klebt ein kleines Steckschachbrett, an dem Mr. Boateng zwischen zwei Ladungen spielt. In der Mitte der runde Falttisch, an dem Mr. Boateng Wäsche zusammenlegt, ein Stuhl daneben. Vorn rechts die Wartesitze, auf denen jemand ein Comicheft liegen gelassen hat, und eine Pflanze in der Ecke. Eine Kundin wartet auf ihre Wäsche und geht dabei auf und ab.\n\nLaufwege: von der Tür unten in der Mitte nach oben zum Tisch, links zu den Trocknern, rechts zu den Sitzen und zum Automaten.",
+  "wand": "hellgrau",
+  "boden": "fliesenWeiss",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "ccPinnwand",
+      "feld": [3, 1],
+      "an_wand": true,
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "waschmaschine",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "waschmaschine",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "waschmaschine",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "ccWaschmaschineKorb",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "rvGetraenkeautomat",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "waschmaschineHoch",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "waschmaschineHoch",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [6, 6]
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "rvWartebank",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [12, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "waschsalonAusgang",
+      "feld": [7, 10]
+    },
+    {
+      "name": "zettelTurm",
+      "feld": [3, 4]
+    },
+    {
+      "name": "trockner",
+      "feld": [1, 6],
+      "auf_moebel": true
+    },
+    {
+      "name": "comicheft",
+      "feld": [10, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "automat",
+      "feld": [11, 4],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "boateng",
+      "feld": [8, 6]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kundin",
+      "typ": "statist",
+      "feld": [3, 8],
+      "eigenschaften": {
+        "von": "3,8",
+        "bis": "5,8",
+        "tun": "wartet auf ihre Wäsche",
+        "wann": "tag"
+      }
+    }
+  ]
+}

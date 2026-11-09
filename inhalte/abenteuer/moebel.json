@@ -1314,6 +1314,132 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": true
+    },
+    "ccRegalA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_57.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccRegalB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_64.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccRegalC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_71.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccTresen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_49.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccTischL": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccTischR": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_6.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccStuhlBlickLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ccStuhlBlickRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ccSchachbrett": {
+      "quelle": "spiel/eigene/schachbrett_figuren.png",
+      "breite": 18,
+      "hoehe": 14,
+      "kollision": false
+    },
+    "ccLeselampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_542.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "ccZeitungen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_98.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccGlobus": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_34.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ccPinnwand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_33.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false
+    },
+    "ccWeltkarte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_31.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "ccStehlampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_88.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccKistenstapel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "ccHolzregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_64.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "ccHaengelampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_168.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false
+    },
+    "ccBoxerfoto": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_100.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "ccAktenkiste": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_53.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false
+    },
+    "ccWaschmaschineKorb": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_88.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
     }
   }
 }

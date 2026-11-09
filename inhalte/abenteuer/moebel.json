@@ -1314,6 +1314,312 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": true
+    },
+    "mf2Treppe": {
+      "quelle": "spiel/generic/generic_134.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false
+    },
+    "mf2Dachfenster": {
+      "quelle": "spiel/generic/generic_027.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2BildWald": {
+      "quelle": "spiel/generic/generic_037.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Rundtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Schachbrett": {
+      "quelle": "spiel/eigene/schachbrett.png",
+      "breite": 18,
+      "hoehe": 14,
+      "kollision": false
+    },
+    "mf2SchachbrettFiguren": {
+      "quelle": "spiel/eigene/schachbrett_figuren.png",
+      "breite": 18,
+      "hoehe": 14,
+      "kollision": false
+    },
+    "mf2Ohrensessel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_204.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Hutschachtel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_200.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Standspiegel": {
+      "quelle": "spiel/generic/generic_149.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Kartonstapel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2KartonstapelBreit": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_99.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2KartonOffen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_95.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Kiste": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_102.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Kleiderschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_103.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Stehlampe": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_88.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Besen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_104.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2TeppichAlt": {
+      "quelle": "spiel/generic/generic_028.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false
+    },
+    "mf2Stuhl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_93.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Zeitungsstapel": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_155.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false
+    },
+    "mf2KisteTuch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_98.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "mf2Kiste1": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_96.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Buecherregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_69.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2StuhlAlt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_94.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Tafel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_36.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2PlakatZaehlen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_32.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Weltkarte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_31.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Urkunde": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_108.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Pokaltisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_163.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Lehrerpult": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_25.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Globus": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_34.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Schachtisch": {
+      "quelle": "spiel/generic/generic_057.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2StuhlL": {
+      "quelle": "spiel/generic/generic_114.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2StuhlR": {
+      "quelle": "spiel/generic/generic_115.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Spind": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Regal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_43.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Pflanze": {
+      "quelle": "spiel/generic/generic_137.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Fenster": {
+      "quelle": "spiel/generic/generic_086.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false
+    },
+    "mf2Kiosk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_1.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Rampe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Entrance_Ramp_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2BankLang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mf2Brunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mf2Blumenbeet": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_4.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "mf2BlumenbeetKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "mf2Busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_7.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "mf2Bibliothek": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Victorian_House_5_16x16.png",
+      "breite": 288,
+      "hoehe": 256,
+      "kollision": true
+    },
+    "mf2Waschsalon": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true
+    },
+    "mf2Plakatwand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_8.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true
+    },
+    "mf2Zeder": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "mf2ZederSchmal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "mf2Haustuer": {
+      "quelle": "spiel/generic/generic_074.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false
     }
   }
 }

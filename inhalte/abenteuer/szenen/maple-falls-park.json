@@ -1,0 +1,209 @@
+{
+  "karte": "mapleFalls.park",
+  "datei": "karten/maple-falls-park.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "e": "erde"
+  },
+  "beschreibung": "Der Stadtpark von Maple Falls am Fluss, ein warmer Spätsommernachmittag. Eine gepflasterte Allee führt quer durch den Park, von der Birch Lane links bis zum Ortsausgang rechts, wo die Landstraße nach Cedar Creek beginnt; von der Allee zweigt ein kurzer Weg nach oben zum Kiosk von Mr. Patel ab, einem rosa Verkaufswagen mit Markise, an dem es Eis und Limo gibt. Links oben steht die alte Betonrampe, an der Skater Jo ihre Tricks übt und Blitzpartien um Limo spielt. In der Mitte an der Allee die Bank, auf der Mr. Abernathy jeden Nachmittag mit Reiseschach und Thermoskanne sitzt; daneben eine zweite Bank, auf der ein Rentner die Tauben füttert, dazu ein Mülleimer und Laternen. Rechts oben ein kleiner Brunnen, rechts an der Allee die Bushaltestelle mit Wartehäuschen (Bus nach Cedar Creek). Überall Ahornbäume, deren Blätter an den Rändern schon rot werden, dazu Blumenbeete und Büsche. Unten fließt der Fluss vorbei; am Uferweg aus Erde watscheln die Enten jedem hinterher, der stehen bleibt. Laufwege: die Allee von links nach rechts, der Weg hoch zum Kiosk, der Uferweg unten.",
+  "raster": [
+    "##############################",
+    "#............................#",
+    "#............................#",
+    "#..............pp............#",
+    "#..............pp............#",
+    "#..............pp............#",
+    "#..............pp............#",
+    "#..............pp............#",
+    "#..............pp............#",
+    "ppppppppppppppppppppppppppppp#",
+    "#ppppppppppppppppppppppppppppp",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "##############################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf2Kiosk",
+      "feld": [15, 0]
+    },
+    {
+      "moebel": "mf2Rampe",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mf2BankLang",
+      "feld": [10, 7],
+      "id": "bank"
+    },
+    {
+      "moebel": "mf2Bank",
+      "feld": [17, 7]
+    },
+    {
+      "moebel": "mfMuelltonne",
+      "feld": [20, 7]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [22, 5]
+    },
+    {
+      "moebel": "mfLaterne",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [24, 6]
+    },
+    {
+      "moebel": "mf2Brunnen",
+      "feld": [19, 2]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [1, 0]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [8, 0]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [24, 0]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "mfApfelbaum",
+      "feld": [16, 10]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [24, 11]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [5, 12]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [20, 13]
+    },
+    {
+      "moebel": "mf2BlumenbeetKlein",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "mf2Busch",
+      "feld": [18, 5]
+    },
+    {
+      "moebel": "mf2Busch",
+      "feld": [14, 13]
+    },
+    {
+      "moebel": "mf2Busch",
+      "feld": [28, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 9],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "park",
+      "feld": [0, 9]
+    },
+    {
+      "name": "bushaltestelle",
+      "feld": [26, 9]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [29, 10]
+    },
+    {
+      "name": "parkbank",
+      "feld": [11, 8],
+      "auf_moebel": true
+    },
+    {
+      "name": "kiosk",
+      "feld": [16, 3]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "skaterJo",
+      "feld": [8, 6]
+    },
+    {
+      "name": "abernathy",
+      "feld": [10, 7]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [17, 7],
+      "eigenschaften": {
+        "von": "17,7",
+        "bis": "17,7",
+        "tun": "sitzt auf der Bank und füttert Tauben",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kioskbesucher",
+      "typ": "statist",
+      "feld": [9, 11],
+      "eigenschaften": {
+        "von": "9,11",
+        "bis": "16,5",
+        "tun": "holt sich ein Eis",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [16, 15],
+      "eigenschaften": {
+        "von": "16,15",
+        "bis": "22,15",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [12, 2],
+      "eigenschaften": {
+        "von": "10,2",
+        "bis": "18,2",
+        "verhalten": "fliegen"
+      }
+    }
+  ]
+}

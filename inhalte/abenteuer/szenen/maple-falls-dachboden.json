@@ -1,0 +1,141 @@
+{
+  "karte": "mapleFalls.dachboden",
+  "datei": "karten/maple-falls-dachboden.json",
+  "art": "innen",
+  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen; durch zwei kleine Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht auf Staub und Kisten, draußen stehen die Ahornbäume. Man kommt links unten über eine steile Holztreppe aus dem Wohnzimmer herauf. Hier oben stehen die Sachen der alten Mrs. Whitlock, die niemand weggeräumt hat: links an der Nordwand ein großer Bauernschrank, gestapelte Kartons und Holzkisten, eine davon mit einer blauen Decke überworfen. In der linken Ecke steht eine runde Hutschachtel. Vor den Fenstern liegt ein alter, verblichener Teppich, darauf ein kleiner runder Holztisch; auf dem Tisch steht das alte Reiseschachbrett, um das sich alles dreht. Daneben ein roter Ohrensessel mit verschlissenem Bezug, als hätte hier jemand gesessen und gespielt, und eine alte Stehlampe, dahinter weitere Kartons. Zwischen den Fenstern hängt ein Waldbild in einem Holzrahmen. Rechts an der Wand steht ein altes Bücherregal voller vergilbter Bücher, davor steht ein ovaler Standspiegel mit Holzfuß. Rechts unten liegt auf den Dielen ein Stapel vergilbter Zeitungen von 1961, daneben ein alter, wackliger Stuhl, ein offener Umzugskarton und ein Besen. Laufwege: von der Treppe nach oben zum Tisch mit dem Brett, nach links zur Hutschachtel, nach rechts zu Spiegel und Zeitungen.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf2Dachfenster",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2BildWald",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "mf2Dachfenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Kleiderschrank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf2Kartonstapel",
+      "feld": [9, 2]
+    },
+    {
+      "moebel": "mf2KisteTuch",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mf2Hutschachtel",
+      "feld": [1, 4],
+      "id": "hutschachtel"
+    },
+    {
+      "moebel": "mf2TeppichAlt",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "mf2Rundtisch",
+      "feld": [4, 3],
+      "id": "tisch"
+    },
+    {
+      "moebel": "mf2Schachbrett",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "mf2Standspiegel",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "mf2KartonOffen",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "mf2Zeitungsstapel",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "mf2Besen",
+      "feld": [12, 7]
+    },
+    {
+      "moebel": "mf2Kiste1",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "mf2Treppe",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "mf2StuhlAlt",
+      "feld": [7, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 7],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [2, 9]
+    },
+    {
+      "name": "brett",
+      "feld": [5, 4],
+      "auf_moebel": true
+    },
+    {
+      "name": "hutschachtel",
+      "feld": [1, 5],
+      "auf_moebel": true
+    },
+    {
+      "name": "spiegel",
+      "feld": [12, 5],
+      "auf_moebel": true
+    },
+    {
+      "name": "zeitungen1961",
+      "feld": [9, 8]
+    }
+  ]
+}

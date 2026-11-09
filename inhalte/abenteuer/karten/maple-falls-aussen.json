@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 35,
+  "nextobjectid": 36,
   "properties": [
     {
       "name": "kennung",
@@ -641,6 +641,17 @@
           "y": 384,
           "width": 32,
           "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 35,
+          "name": "hsRampe",
+          "type": "moebel",
+          "x": 304,
+          "y": 240,
+          "width": 64,
+          "height": 32,
           "rotation": 0,
           "visible": true
         }

@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Echte Häuser statt Ziegelblöcke (Maple Falls und Cedar Creek)
 
-**Stand:** Frage (niedrig-1, 09.11.2026; Maple Falls fertig, Park und Cedar Creek bewusst nicht begonnen)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 4c0d3ff9)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-aussen.json`, `maple-falls-park.json`, `cedar-creek-aussen.json`,
@@ -62,6 +62,29 @@ Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberfläche
    negativem `y`), wenn die Oberwelt das sauber zeichnet.
 2. Für die Schule: Uhrturm ohne Tür behalten, eine Villa nehmen (hat Tür, sieht aber wie ein
    Wohnhaus aus) oder das große Schulhaus mit noch größerer Karte?
+
+**Nachtrag nach den Antworten des Haupt-Chats:**
+
+- **Schule Maple Falls:** „School 1“ ist 24 × 23 Kacheln; seine Türen liegen in den Spalten 7–9
+  und 13–15, die Treppe in 6–17. Damit eine Tür über `schule` (Spalte 21) steht, müsste das
+  Gebäude bis Spalte 30 reichen, die Karte ist 28 breit, und links steht die Villa. Deshalb die
+  vorgesehene Ausweichlösung: Uhrturm bleibt, davor `hsRampe` (Schuleingangsrampe, 64 × 32,
+  **ohne** Kollision, damit `schule` darunter begehbar bleibt). Bildschirmfoto: Vordach mit Stufen
+  vor dem Turm, der Held steht auf den Stufen.
+- **Cedar Creek draußen:** ebenfalls oben um 10 Reihen vergrößert (28 × 30). Die Bibliothek
+  (Backstein von 1890) ist jetzt der Uhrturm `hsSchule` über `bibliothekTuer` (14/16), davor
+  `hsRampe`; der alte Ziegelblock ist Wiese. Der **Waschsalon bleibt ein Block**: Sein Übergang
+  `waschsalonTuer` liegt an der Oberkante unterhalb der Straße (Eingang von Norden); alle Häuser
+  im Register haben die Tür unten, ein Haus dort würde die Straße überdecken. Vorschlag: den
+  Auslöser eine Reihe tiefer unter einen neuen Hausstandort verlegen (`orte.json` und Dialog
+  bleiben gleich, nur die Kachel ändert sich) – das entscheide ich nicht allein.
+- **Park:** hat keine Häuser (die Blöcke rechts sind der Fluss); nichts geändert. Mit
+  `stil = kueste` würden sie Wasser, der Weg würde aber zum Holzsteg; das überlasse ich dir.
+- Übergänge aus anderen Karten auf diese Karten nennen nur Auslöser-Namen, keine Koordinaten; die
+  Tests (Zielobjekte, Erreichbarkeit) sind grün.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
+(9 von 9) bestanden.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

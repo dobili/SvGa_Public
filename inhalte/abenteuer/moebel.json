@@ -1134,6 +1134,12 @@
       "breite": 128,
       "hoehe": 240,
       "kollision": true
+    },
+    "hsRampe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Entrance_Ramp_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false
     }
   }
 }

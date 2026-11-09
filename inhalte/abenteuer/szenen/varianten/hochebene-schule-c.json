@@ -2,7 +2,7 @@
   "karte": "hochebene.schule",
   "datei": "karten/varianten/hochebene-schule-c.json",
   "art": "aussen",
-  "beschreibung": "Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Basketballfeld und Spielgeräten, am Eingang das Schwarze Brett. An der Straße die Bushaltestelle mit dem gelben Schulbus, daneben die Werkstatt von Joss Vell mit Rolltor, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände. Variante C, die reichere: großer Schulhof mit Schaukel, Spielturm und Picknicktischen, Basketballfeld rechts, die Werkstatt mit zwei Werkbänken und Reifenstapel, Bank an der Haltestelle.",
+  "beschreibung": "Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Basketballfeld und Spielgeräten, am Eingang das Schwarze Brett. An der Straße die Bushaltestelle mit dem gelben Schulbus, daneben die Werkstatt von Joss Vell mit Rolltor, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände. Variante C, die gespiegelte: Schulhaus rechts mit dem Hof davor, Basketballfeld links oben, die Werkstatt links an der Straße mit Zufahrt, Spielgeräte und Picknicktische auf dem Hof, Bank an der Haltestelle.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -32,20 +32,20 @@
     "#..........................................................#",
     "#..........................................................#",
     "#..........................................................#",
-    "#.................................................kkkkkkkkk#",
-    "#.................................................kkkkkkkkk#",
-    "#.................................................kk.......#",
-    "#.................................................kk.......#",
-    "#.................................................kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.........pppppppppppppppppppppppppppppppppppppp..kk.......#",
-    "#.................................................kk.......#",
+    "#........................................................kk#",
+    "#........................................................kk#",
+    "#........................................................kk#",
+    "#........................................................kk#",
+    "#........................................................kk#",
+    "#.........................pppppppppppppppppppppppppppppppkk#",
+    "#.........................pppppppppppppppppppppppppppppppkk#",
+    "#.........................pppppppppppppppppppppppppppppppkk#",
+    "#.........................pppppppppppppppppppppppppppppppkk#",
+    "#....ssss.................pppppppppppppppppppppppppppppppkk#",
+    "#....ssss.................pppppppppppppppppppppppppppppppkk#",
+    "#....ssss.................pppppppppppppppppppppppppppppppkk#",
+    "#....ssss.................pppppppppppppppppppppppppppppppkk#",
+    "#....ssss...ssssssssss...................................kk#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -56,145 +56,131 @@
   ],
   "objekte": [
     {
-      "moebel": "hb7Schule",
-      "feld": [18, 1]
-    },
-    {
-      "moebel": "hb7Aushang",
-      "feld": [33, 24]
-    },
-    {
-      "moebel": "hb7Basketballfeld",
-      "feld": [44, 4]
+      "moebel": "hb7Turnhalle",
+      "feld": [20, 8],
+      "id": "halle"
     },
     {
       "moebel": "hb7Basketballkorb",
-      "feld": [50, 3]
+      "auf": "halle",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "hb7Schule",
+      "feld": [32, 1]
+    },
+    {
+      "moebel": "hb7Aushang",
+      "feld": [47, 24]
+    },
+    {
+      "moebel": "hb7Basketballfeld",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "hb7Basketballkorb",
+      "feld": [9, 2]
     },
     {
       "moebel": "hb7Schaukel",
-      "feld": [14, 25]
+      "feld": [27, 25]
     },
     {
       "moebel": "hb7Spielturm",
-      "feld": [18, 28]
+      "feld": [30, 28]
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [38, 27]
+      "feld": [36, 28]
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [42, 27]
+      "feld": [52, 28]
     },
     {
       "moebel": "hb7Werkstatt",
-      "feld": [2, 23]
+      "feld": [4, 22]
     },
     {
       "moebel": "cc4Werktisch",
-      "feld": [9, 24]
-    },
-    {
-      "moebel": "cc4Werktisch",
-      "feld": [9, 28]
+      "feld": [11, 23]
     },
     {
       "moebel": "dsReifen",
-      "feld": [13, 29]
+      "feld": [11, 27]
     },
     {
       "moebel": "dsReifen",
-      "feld": [13, 30]
+      "feld": [12, 27]
     },
     {
       "moebel": "heSchulbus",
-      "feld": [34, 33],
+      "feld": [14, 32],
       "bauteil_ok": true
     },
     {
       "moebel": "haltestellenschild",
-      "feld": [46, 30]
+      "feld": [22, 30]
     },
     {
       "moebel": "parkbank",
-      "feld": [43, 30]
+      "feld": [19, 30]
     },
     {
       "moebel": "wds6Briefkasten",
-      "feld": [48, 30]
+      "feld": [24, 30]
     },
     {
       "moebel": "cc3Busch",
-      "feld": [7, 4]
+      "feld": [22, 4]
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [2, 4]
+      "feld": [26, 19]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [28, 9]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [25, 4]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [16, 24]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [23, 25]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [15, 19]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [18, 18]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [21, 19]
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [14, 4]
+      "feld": [28, 3]
     },
     {
       "moebel": "cc3Busch",
-      "feld": [7, 18]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [10, 9]
+      "feld": [28, 12]
     },
     {
       "moebel": "cc3Busch",
-      "feld": [55, 27]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [14, 17]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [8, 13]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [2, 17]
+      "feld": [19, 2]
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [4, 11]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [13, 13]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [7, 8]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [54, 22]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [14, 20]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [11, 3]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [45, 20]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [10, 17]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [13, 9]
+      "feld": [20, 22]
     }
   ],
   "ausloeser": [
@@ -215,31 +201,31 @@
     },
     {
       "name": "werkstatt",
-      "feld": [5, 29]
+      "feld": [7, 28]
     },
     {
       "name": "aushang",
-      "feld": [33, 26]
+      "feld": [47, 26]
     }
   ],
   "figuren": [
     {
       "name": "annek",
-      "feld": [26, 29]
+      "feld": [40, 29]
     },
     {
       "name": "joss",
-      "feld": [8, 31]
+      "feld": [10, 29]
     }
   ],
   "belebung": [
     {
       "name": "schulkinder",
       "typ": "statist",
-      "feld": [22, 30],
+      "feld": [34, 30],
       "eigenschaften": {
-        "von": "22,30",
-        "bis": "22,30",
+        "von": "34,30",
+        "bis": "34,30",
         "tun": "spielen Fangen",
         "wann": "tag"
       }
@@ -247,10 +233,10 @@
     {
       "name": "lehrerin",
       "typ": "statist",
-      "feld": [36, 30],
+      "feld": [44, 30],
       "eigenschaften": {
-        "von": "36,30",
-        "bis": "36,30",
+        "von": "44,30",
+        "bis": "44,30",
         "tun": "hat Pausenaufsicht",
         "wann": "tag"
       }
@@ -258,10 +244,10 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [54, 37],
+      "feld": [40, 37],
       "eigenschaften": {
-        "von": "54,37",
-        "bis": "57,37",
+        "von": "40,37",
+        "bis": "43,37",
         "verhalten": "ausweichen"
       }
     }

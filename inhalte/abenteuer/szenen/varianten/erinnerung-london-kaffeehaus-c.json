@@ -2,7 +2,7 @@
   "karte": "erinnerungLondon.kaffeehaus",
   "datei": "karten/varianten/erinnerung-london-kaffeehaus-c.json",
   "art": "innen",
-  "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): dunkles Holz, alte Dielen, Lederbänke an der Nordwand, ein Ofen, Bilder an den Wänden. An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner. Die Tür liegt in der Südwand. Variante C, die reichere: vier Schachtische, Ohrensessel am Ofen, zwei Zeitungsständer, Bilder an allen Wänden, viele Gäste.",
+  "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): dunkles Holz, alte Dielen, Lederbänke an der Nordwand, ein Ofen, Bilder an den Wänden. An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner (in allen Varianten). Die Tür liegt in der Südwand. Variante C, die reichere: vier Schachtische, Ohrensessel am Ofen, zwei Zeitungsständer, Bilder an allen Wänden, viele Gäste.",
   "wand": "holz",
   "boden": "holzDunkel",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -52,7 +52,7 @@
       "feld": [2, 3]
     },
     {
-      "moebel": "el7Lederbank4",
+      "moebel": "ld5Theke7",
       "feld": [10, 3]
     },
     {

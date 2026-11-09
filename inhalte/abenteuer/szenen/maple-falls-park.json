@@ -181,7 +181,8 @@
     {
       "moebel": "mf6StegMorsch",
       "feld": [5, 2],
-      "id": "stegS5"
+      "id": "stegS5",
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf9Absperrbock",

@@ -43,9 +43,9 @@
     "#...ppppppppppppppppppppppppppppppp...............kk.......#",
     "#...ppppppppppppppppppppppppppppppp...............kk.......#",
     "#...ppppppppppppppppppppppppppppppp...............kk.......#",
-    "#...ppppppppppppppppppppppppppppppp...............kk.......#",
-    "#...ppppppppppppppppppppppppppppppp...............kk.......#",
-    "#.................................................kk.......#",
+    "#...ppppppppppppppppppppppppppppppp......ssss.....kk.......#",
+    "#...ppppppppppppppppppppppppppppppp......ssss.....kk.......#",
+    "#.........ssssssssss.....................ssss.....kk.......#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -64,8 +64,14 @@
       "feld": [21, 24]
     },
     {
+      "moebel": "hb7Turnhalle",
+      "feld": [36, 4],
+      "id": "halle"
+    },
+    {
       "moebel": "hb7Basketballkorb",
-      "feld": [32, 24]
+      "auf": "halle",
+      "versatz": [0, 10]
     },
     {
       "moebel": "hb7Werkstatt",
@@ -77,7 +83,7 @@
     },
     {
       "moebel": "heSchulbus",
-      "feld": [12, 33],
+      "feld": [12, 32],
       "bauteil_ok": true
     },
     {
@@ -97,28 +103,28 @@
       "feld": [33, 16]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [33, 2]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [42, 6]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [39, 9]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [42, 2]
-    },
-    {
       "moebel": "cc3Busch",
       "feld": [56, 7]
     },
     {
       "moebel": "cc3Busch",
       "feld": [50, 9]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [36, 28]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [42, 15]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [47, 18]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [50, 15]
     }
   ],
   "ausloeser": [

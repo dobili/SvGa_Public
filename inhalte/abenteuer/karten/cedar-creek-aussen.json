@@ -560,29 +560,6 @@
         },
         {
           "id": 20,
-          "name": "mf2Plakatwand",
-          "type": "moebel",
-          "x": 480,
-          "y": 48,
-          "width": 80,
-          "height": 96,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 21,
           "name": "mfBushaltestelle",
           "type": "moebel",
           "x": 480,
@@ -605,7 +582,7 @@
           ]
         },
         {
-          "id": 22,
+          "id": 21,
           "name": "mfMuelltonne",
           "type": "moebel",
           "x": 560,
@@ -628,7 +605,7 @@
           ]
         },
         {
-          "id": 23,
+          "id": 22,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 48,
@@ -651,7 +628,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": 23,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 128,
@@ -674,7 +651,7 @@
           ]
         },
         {
-          "id": 25,
+          "id": 24,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 224,
@@ -697,7 +674,7 @@
           ]
         },
         {
-          "id": 26,
+          "id": 25,
           "name": "mfBank",
           "type": "moebel",
           "x": 352,
@@ -720,7 +697,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": 26,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 448,
@@ -743,7 +720,7 @@
           ]
         },
         {
-          "id": 28,
+          "id": 27,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 528,
@@ -766,7 +743,7 @@
           ]
         },
         {
-          "id": 29,
+          "id": 28,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 560,
@@ -789,7 +766,7 @@
           ]
         },
         {
-          "id": 30,
+          "id": 29,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 560,
@@ -812,7 +789,7 @@
           ]
         },
         {
-          "id": 31,
+          "id": 30,
           "name": "mf2BlumenbeetKlein",
           "type": "moebel",
           "x": 400,
@@ -826,6 +803,29 @@
               "name": "tiefe",
               "type": "int",
               "value": 280
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "name": "cc3Anschlagtafel",
+          "type": "moebel",
+          "x": 496,
+          "y": 112,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
             },
             {
               "name": "kollision",

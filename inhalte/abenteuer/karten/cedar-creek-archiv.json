@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 26,
+  "nextobjectid": 20,
   "layers": [
     {
       "id": 1,
@@ -116,7 +116,7 @@
           "id": 3,
           "name": "boxerfoto",
           "type": "ausloeser",
-          "x": 64,
+          "x": 96,
           "y": 48,
           "width": 16,
           "height": 16,
@@ -128,7 +128,7 @@
           "name": "programmheft",
           "type": "ausloeser",
           "x": 176,
-          "y": 48,
+          "y": 112,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -138,7 +138,7 @@
           "id": 5,
           "name": "karton1858",
           "type": "ausloeser",
-          "x": 112,
+          "x": 80,
           "y": 128,
           "width": 16,
           "height": 16,
@@ -149,7 +149,7 @@
           "id": 6,
           "name": "wasserfleck",
           "type": "ausloeser",
-          "x": 144,
+          "x": 128,
           "y": 144,
           "width": 16,
           "height": 16,
@@ -181,35 +181,35 @@
         },
         {
           "id": 8,
-          "name": "ccBoxerfoto",
+          "name": "cc3Ordnerregal",
           "type": "moebel",
           "x": 64,
           "y": 16,
-          "width": 16,
-          "height": 32,
+          "width": 32,
+          "height": 48,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 0
+              "value": 56
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 9,
-          "name": "ccHaengelampe",
+          "name": "ccBoxerfoto",
           "type": "moebel",
-          "x": 128,
+          "x": 96,
           "y": 16,
           "width": 16,
-          "height": 16,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -227,12 +227,12 @@
         },
         {
           "id": 10,
-          "name": "ccHolzregal",
+          "name": "cc3OrdnerregalB",
           "type": "moebel",
-          "x": 80,
-          "y": 32,
+          "x": 112,
+          "y": 16,
           "width": 32,
-          "height": 32,
+          "height": 48,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -250,12 +250,12 @@
         },
         {
           "id": 11,
-          "name": "ccHolzregal",
+          "name": "cc3Ordnerregal",
           "type": "moebel",
-          "x": 144,
-          "y": 32,
+          "x": 160,
+          "y": 16,
           "width": 32,
-          "height": 32,
+          "height": 48,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -273,10 +273,10 @@
         },
         {
           "id": 12,
-          "name": "ccHolzregal",
+          "name": "rvKiste",
           "type": "moebel",
-          "x": 176,
-          "y": 32,
+          "x": 64,
+          "y": 80,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -285,7 +285,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 56
+              "value": 104
             },
             {
               "name": "kollision",
@@ -296,11 +296,11 @@
         },
         {
           "id": 13,
-          "name": "aktenschrank",
+          "name": "rvKiste",
           "type": "moebel",
-          "x": 16,
+          "x": 96,
           "y": 80,
-          "width": 16,
+          "width": 32,
           "height": 32,
           "rotation": 0,
           "visible": true,
@@ -319,11 +319,34 @@
         },
         {
           "id": 14,
-          "name": "aktenschrank",
+          "name": "rvKiste",
           "type": "moebel",
-          "x": 16,
+          "x": 128,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "rvKiste",
+          "type": "moebel",
+          "x": 48,
           "y": 112,
-          "width": 16,
+          "width": 32,
           "height": 32,
           "rotation": 0,
           "visible": true,
@@ -341,34 +364,11 @@
           ]
         },
         {
-          "id": 15,
-          "name": "wzKartonstapel",
-          "type": "moebel",
-          "x": 64,
-          "y": 80,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 16,
-          "name": "wzKartonstapel",
+          "name": "rvKisteOffen",
           "type": "moebel",
-          "x": 112,
-          "y": 80,
+          "x": 80,
+          "y": 112,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -377,7 +377,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 136
             },
             {
               "name": "kollision",
@@ -388,10 +388,10 @@
         },
         {
           "id": 17,
-          "name": "wzKartonstapel",
+          "name": "cc3Schreibtisch",
           "type": "moebel",
           "x": 160,
-          "y": 80,
+          "y": 96,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -400,7 +400,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 120
             },
             {
               "name": "kollision",
@@ -411,11 +411,11 @@
         },
         {
           "id": 18,
-          "name": "rvKisteOffen",
+          "name": "cc3StuhlVonHinten",
           "type": "moebel",
-          "x": 112,
+          "x": 160,
           "y": 112,
-          "width": 32,
+          "width": 16,
           "height": 32,
           "rotation": 0,
           "visible": true,
@@ -434,149 +434,11 @@
         },
         {
           "id": 19,
-          "name": "ccKistenstapel",
+          "name": "ccStehlampe",
           "type": "moebel",
-          "x": 176,
-          "y": 112,
-          "width": 32,
-          "height": 48,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 152
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 20,
-          "name": "wzKarton",
-          "type": "moebel",
-          "x": 48,
-          "y": 128,
+          "x": 192,
+          "y": 64,
           "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 152
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 21,
-          "name": "ccAktenkiste",
-          "type": "moebel",
-          "x": 80,
-          "y": 35,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 57
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 22,
-          "name": "ccAktenkiste",
-          "type": "moebel",
-          "x": 144,
-          "y": 35,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 57
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 23,
-          "name": "ccAktenkiste",
-          "type": "moebel",
-          "x": 176,
-          "y": 35,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 57
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 24,
-          "name": "rvKiste",
-          "type": "moebel",
-          "x": 48,
-          "y": 48,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 25,
-          "name": "wzKartonstapelHoch",
-          "type": "moebel",
-          "x": 80,
-          "y": 112,
-          "width": 32,
           "height": 48,
           "rotation": 0,
           "visible": true,
@@ -584,7 +446,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 152
+              "value": 104
             },
             {
               "name": "kollision",

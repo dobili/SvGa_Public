@@ -1,6 +1,6 @@
 # Auftrag: Runde 3 der zehn Karten (Rückmeldungen des Autors einarbeiten)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, dreiundzwanzigster Auftrag)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b957d636);
 privates Repository auf `origin/main` holen (Stand d7dc36de), nur lesen, nicht pushen
@@ -38,7 +38,7 @@ Deine Karten und die Notizen des Autors:
 - **wegMapleCedar.landstrasse:** - Der Zaun geht an der einen Ecke nicht richtig ineinander über
   - Die Pflanzen oben rechts sind nicht als solche erkennbar. Sie sehen aus wie wie grüne Säulen
   - Das Feld ist etwas klein für ein richtiges Feld eiens Bauern, das man mit einem Traktor bearbeitet, oder?
-  - Das Gras ist wieder sehr regelmäßig. 
+  - Das Gras ist wieder sehr regelmäßig.
   - Der Weg hat keine Textur.
 
 Allgemein vom Autor: Möbel stehen in logischer Beziehung (Stühle am Tisch zum Tisch gewandt; Fernseher
@@ -48,6 +48,49 @@ Laternen an der Straße, Bushaltestelle zur Straße, Gras nicht zu regelmäßig,
 Häuser draußen passen zu den Räumen drinnen; keine Industriebauten neben der Villa.
 
 ## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (Hauptstand cc57941b und neuer hereingeholt). Alle fünf Szenen
+neu gebaut, `kartenbau` und `kartenbild` ohne Befunde. Neue Möbel `cc3…` (Zeitungsregal mit Glastür,
+zwei Ordnerregale, grüner Schreibtisch, Stuhl von hinten, Anschlagtafel, Rätseltafel mit Dach, drei
+natürliche Büsche, zwei Zaun-Endpfosten, Kiesel); jedes Bild vorher angesehen. `art`, `blick`,
+`zustand`, `stil` an allen benutzten Einträgen ergänzt, wo sie fehlten (keine Werte von mittel-1
+überschrieben). Korn und Mais sind `feldfrucht` und begehbar (der Mais hatte sonst das Feld in
+Kammern geteilt und das Versteck unerreichbar gemacht). Archiv und Ortskern erlauben den Zustand
+„alt“ (Bibliothek von 1890, altes Foto).
+
+Antworten auf die Notizen des Autors:
+
+- **Cedar Creek draußen, Anzeigetafel:** Die Autobahn-Werbetafel ist ersetzt durch die hölzerne
+  Anschlagtafel des Ortes mit Zetteln; das Perfect-Move-Plakat klebt darauf (Auslöser `plakat` davor).
+- **Bibliothek, Bretter auf der Bühne:** Die beiden Schachbretter liegen jetzt auf zwei runden
+  Lesetischen, an jedem zwei Stühle einander gegenüber, mit `zu` zum Tisch geprüft.
+- **Bibliothek, Globus am Boden:** Der Globus steht auf einer niedrigen Kommode in der rechten Ecke.
+- **Bibliothek, Supermarktregal links, abgeschnitten:** ersetzt durch ein ganzes Bücherregal mit
+  Glastür als Zeitungsregal an der Nordwand.
+- **Bibliothek, Tresen abgeschnitten:** Das Eckstück ist weg; Mrs. Okafor hat einen ganzen grünen
+  Schreibtisch mit Buch und Lampe.
+- **Archiv, zerstörtes Mobiliar, zufällige Anordnung:** Kartonstapel, Kistenhaufen und Schränke sind
+  entfernt; jetzt zwei saubere Reihen geschlossener Archivkartons und der offene Karton 1850–1859.
+- **Archiv, Strukturen links an der Wand:** Die grauen Blöcke (Aktenschränke) sind entfernt.
+- **Archiv, Ding von der Decke:** Die Hängelampe ist entfernt; Licht kommt von einer Stehlampe in der
+  Ecke.
+- **Archiv, drei große Objekte an der Nordwand:** Die leeren Leiterregale sind durch drei volle
+  Ordnerregale ersetzt; dazu ein Schreibtisch mit Stuhl, auf dem das Programmheft liegt.
+- **Waschsalon, falsch orientierte Möbel:** Die seitlich an der Westwand stehenden Trockner sind weg;
+  alle Maschinen stehen an der Nordwand mit der Tür zum Raum, die Wartesitze schauen in den Raum.
+- **Waschsalon, Tisch und Stuhl passen nicht:** ersetzt durch eine lange Arbeitsplatte zum
+  Zusammenlegen, an der Mr. Boateng steht.
+- **Waschsalon, Pinnwand verdeckt:** Die Pinnwand hängt jetzt frei zwischen Trockner und Automat.
+- **Landstraße, Zaunecke:** Keine Ecken mehr; die Zäune sind gerade Linien vom Kartenrand bis zum
+  Gatter (mit Endpfosten), die Weide hat einen Zaun mit Endpfosten an beiden Enden.
+- **Landstraße, grüne Säulen:** ersetzt durch drei runde, natürliche Büsche aus „Garden“.
+- **Landstraße, Feld zu klein:** Das Feld ist jetzt 23 × 7 Kacheln, der Traktor steht darin.
+- **Landstraße, Gras zu regelmäßig:** Der neue Kartenbauer zeichnet Gras mit Abwechslung.
+- **Landstraße, Weg ohne Textur:** Der Weg hat Ränder und verstreute Kiesel; ein eigener Kiesboden
+  wäre ein neuer Boden in `materialien.json`, dafür frage ich lieber nach.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
+(9 von 9) bestanden. Hintergründe nur lokal im privaten Klon (nicht gepusht).
 
 (vom Helfer auszufüllen)
 

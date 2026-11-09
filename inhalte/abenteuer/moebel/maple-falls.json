@@ -1849,6 +1849,84 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "mf9Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf9LaterneLang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "mf9BankRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "blick": "rechts",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf9BankLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "blick": "links",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf9BankRot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_7.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf9Brunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_1.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf9Trinkbrunnen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Drinking_Fountain_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf9Blumenkasten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

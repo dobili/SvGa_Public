@@ -3735,7 +3735,7 @@
           "dialog": "bayou.zurueck_delacroix",
           "ziel": {
             "karte": "portDelacroix.aussen",
-            "ausloeser": "deich"
+            "ausloeser": "bayou"
           }
         },
         {

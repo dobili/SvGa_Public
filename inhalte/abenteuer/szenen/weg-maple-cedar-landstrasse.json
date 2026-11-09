@@ -1,0 +1,467 @@
+{
+  "karte": "wegMapleCedar.landstrasse",
+  "datei": "karten/weg-maple-cedar-1.json",
+  "art": "aussen",
+  "beschreibung": "Die Landstraße zwischen Maple Falls und Cedar Creek an einem Spätsommermorgen: ein breiter, staubiger Feldweg, der vom Stadtpark links bis zum Flussweg rechts durch offenes Land führt. Wiesen mit hohem Gras, Holzzäune, Felder in Goldgelb; der Himmel ist weit, irgendwo brummt ein Traktor.\n\nGleich am Ortsausgang links steht die hölzerne Rätseltafel mit der ersten Aufgabe des Weges, oben in der Ecke ein Apfelbaum mit roten Äpfeln. Nördlich der Straße liegt ein Kornfeld hinter einem Holzzaun mit einem Gatter in der Mitte, zwischen den Halmen ein paar Maisstauden; eine Vogelscheuche wacht links, rechts steht der Traktor des Bauern mitten im Feld. Weiter rechts eine Gruppe dichter Büsche: Wer genau hinsieht, findet oben eine Lücke, durch die man an das verlorene Formular kommt.\n\nSüdlich der Straße eine eingezäunte Kuhweide, auf der die Kühe grasen. Rechts davon eine Bank unter einem Ahorn mit rotem Herbstlaub; hier wartet Nia, die Straßengegnerin, und daneben liegt ein Heuhaufen. Ein Wegweiser am rechten Rand zeigt nach Cedar Creek. Auf dem Weg ist ein Wanderer mit Karte unterwegs, morgens joggt jemand vorbei, ein Radfahrer überholt.\n\nLaufwege: der Feldweg in der Mitte von links nach rechts; nach oben durch das Gatter ins Feld und zu den Büschen, nach unten zur Bank.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "e": "erde"
+  },
+  "raster": [
+    "################################",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "#..............................#",
+    "################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 7]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [10, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "heTraktor",
+      "feld": [16, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "heVogelscheuche",
+      "feld": [7, 4]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [20, 8]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 13]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [6, 14]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [6, 15]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [6, 16]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [6, 17]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [18, 15]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [18, 16]
+    },
+    {
+      "moebel": "ccZaunPfosten",
+      "feld": [18, 17]
+    },
+    {
+      "moebel": "busch",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "busch",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "busch",
+      "feld": [26, 5]
+    },
+    {
+      "moebel": "busch",
+      "feld": [26, 6]
+    },
+    {
+      "moebel": "busch",
+      "feld": [24, 6]
+    },
+    {
+      "moebel": "busch",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "wegweiser",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "rvWegweiser",
+      "feld": [29, 8]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [21, 13]
+    },
+    {
+      "moebel": "rvHeuhaufen",
+      "feld": [24, 16]
+    },
+    {
+      "moebel": "mfApfelbaum",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [26, 14]
+    },
+    {
+      "moebel": "rvLaubbaum",
+      "feld": [1, 14]
+    },
+    {
+      "moebel": "fels",
+      "feld": [20, 16]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [13, 17]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 10],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckPark",
+      "feld": [0, 10]
+    },
+    {
+      "name": "weiterFluss",
+      "feld": [31, 10]
+    },
+    {
+      "name": "tafel",
+      "feld": [3, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "fundFormular",
+      "feld": [26, 6],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [14, 11]
+    },
+    {
+      "name": "gegnerin",
+      "feld": [23, 14]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "bauer",
+      "typ": "statist",
+      "feld": [6, 2],
+      "eigenschaften": {
+        "von": "6,2",
+        "bis": "15,2",
+        "tun": "prüft das reife Korn",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [2, 10],
+      "eigenschaften": {
+        "von": "2,10",
+        "bis": "28,10",
+        "tun": "joggt die Straße entlang",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [2, 11],
+      "eigenschaften": {
+        "von": "2,11",
+        "bis": "29,11",
+        "tun": "überholt auf der Straße",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kuehe",
+      "typ": "tier",
+      "feld": [9, 15],
+      "eigenschaften": {
+        "von": "9,15",
+        "bis": "15,15",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [2, 17],
+      "eigenschaften": {
+        "von": "2,17",
+        "bis": "5,17",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [16, 1],
+      "eigenschaften": {
+        "von": "16,1",
+        "bis": "21,1",
+        "verhalten": "ausweichen",
+        "wann": "morgen"
+      }
+    }
+  ]
+}

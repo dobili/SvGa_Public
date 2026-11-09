@@ -17,25 +17,38 @@ nachträgliches Möblieren:
 
 ```json
 {
-  "karte": "mapleFalls.wohnzimmer",          // Kennung wie in orte.json
+  "karte": "mapleFalls.wohnzimmer", // Kennung wie in orte.json
   "datei": "karten/maple-falls-wohnzimmer.json",
-  "art": "innen",                             // innen oder aussen
+  "art": "innen", // innen oder aussen
   "beschreibung": "…",
-  "wand": "creme",                            // innen: Wandstil (materialien.json, waende)
-  "wandart": "hecke",                         // aussen: „#“ als Boden dieser Art statt Wandkrone
-  "boden": "holzHell",                        // Standardboden (materialien.json, boeden)
-  "boeden": { "t": "teppichRot" },            // weitere Böden je Buchstabe im Raster
-  "raster": ["####", "#..#", "####"],         // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
+  "wand": "creme", // innen: Wandstil (materialien.json, waende)
+  "wandart": "hecke", // aussen: „#“ als Boden dieser Art statt Wandkrone
+  "boden": "holzHell", // Standardboden (materialien.json, boeden)
+  "boeden": { "t": "teppichRot" }, // weitere Böden je Buchstabe im Raster
+  "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
-    { "moebel": "wzSofa", "feld": [2, 2] },                       // linke obere Kachel
+    { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel
     { "moebel": "wzCouchtisch", "feld": [3, 5], "id": "tisch" },
-    { "moebel": "wzFernseher", "auf": "tisch" },                   // steht auf „tisch“
+    { "moebel": "wzFernseher", "auf": "tisch" }, // steht auf „tisch“
     { "moebel": "wzBild", "feld": [7, 1], "an_wand": true, "versatz": [8, 8] }
   ],
-  "ausloeser": [{ "name": "start", "feld": [7, 10], "eigenschaften": { "richtung": "oben" } },
-                { "name": "kartonKueche", "feld": [12, 5], "auf_moebel": true }],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 10],
+      "eigenschaften": { "richtung": "oben" }
+    },
+    { "name": "kartonKueche", "feld": [12, 5], "auf_moebel": true }
+  ],
   "figuren": [{ "name": "mutter", "feld": [11, 8] }],
-  "belebung": [{ "name": "katze", "typ": "tier", "feld": [9, 18], "eigenschaften": { "von": "9,18", "bis": "9,18", "verhalten": "sitzen" } }],
+  "belebung": [
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [9, 18],
+      "eigenschaften": { "von": "9,18", "bis": "9,18", "verhalten": "sitzen" }
+    }
+  ],
   "eigenschaften": { "stil": "kueste" }
 }
 ```

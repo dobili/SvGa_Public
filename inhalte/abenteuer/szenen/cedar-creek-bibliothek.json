@@ -1,0 +1,190 @@
+{
+  "karte": "cedarCreek.bibliothek",
+  "datei": "karten/cedar-creek-bibliothek.json",
+  "art": "innen",
+  "beschreibung": "Die Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag. Ein hoher, ruhiger Raum mit dunklen Holzdielen und hellgrauen Wänden; durch das Fenster in der Nordwand fällt schräges Licht auf den Staub über den Regalen. Es riecht nach Papier und Holz, die Zeit scheint hier langsamer zu gehen.\n\nAn der Nordwand stehen links drei hohe Bücherregale dicht an dicht, voll mit bunten Buchrücken. In der Mitte das Fenster, rechts daneben die Pinnwand mit dem Schild „Bitte flüstern“ (der Witz zur Hilfskarte Flüstern), darunter ein weiteres Regal, ganz rechts die schmale Tür zur Kellertreppe, die ins Archiv hinunterführt.\n\nLinks an der Westwand steht der Zeitungsständer mit den Tageszeitungen und Magazinen. In der Mitte des Raums der lange Lesetisch aus hellem Holz, auf dem zwei Schachbretter mit aufgebauten Figuren liegen: Hier trifft sich der Schachclub von Mrs. Okafor. Ein Stuhl steht an jedem Kopfende, Dex beugt sich von oben über ein Brett, Mae wartet am rechten Ende.\n\nRechts der Ausleihtresen mit einer grünen Leselampe, dahinter steht Mrs. Okafor und hat alles im Blick. Davor ein kleiner runder Lesetisch mit zwei Stühlen und einer zweiten grünen Lampe, an dem man in Ruhe blättern kann. Unten rechts der alte Globus, eine Stehlampe in der Ecke, Pflanzen bei der Tür. Eine Leserin trägt einen Bücherstapel durch den Gang.\n\nLaufwege: von der Eingangstür unten in der Mitte gerade nach oben, links um den Lesetisch zum Zeitungsständer, rechts am Tresen vorbei zur Kellertür und zum Globus.",
+  "wand": "hellgrau",
+  "boden": "holzDunkel",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#########.########"
+  ],
+  "objekte": [
+    {
+      "moebel": "ccRegalA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "ccRegalC",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "ccRegalB",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ccPinnwand",
+      "feld": [10, 1],
+      "an_wand": true,
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "ccRegalA",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ccZeitungen",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "ccTischL",
+      "feld": [3, 8],
+      "id": "tischL",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccTischR",
+      "feld": [5, 8],
+      "id": "tischR",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccSchachbrett",
+      "auf": "tischL"
+    },
+    {
+      "moebel": "ccSchachbrett",
+      "auf": "tischR"
+    },
+    {
+      "moebel": "ccStuhlBlickRechts",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "ccStuhlBlickLinks",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "ccTresen",
+      "feld": [12, 5],
+      "id": "tresen"
+    },
+    {
+      "moebel": "ccLeselampe",
+      "auf": "tresen"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [12, 9],
+      "id": "lesetisch"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "ccLeselampe",
+      "auf": "lesetisch"
+    },
+    {
+      "moebel": "ccGlobus",
+      "feld": [15, 11]
+    },
+    {
+      "moebel": "ccStehlampe",
+      "feld": [16, 6]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [11, 11]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [9, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "bibliothekAusgang",
+      "feld": [9, 13]
+    },
+    {
+      "name": "kellertreppe",
+      "feld": [15, 3]
+    },
+    {
+      "name": "schildFluestern",
+      "feld": [10, 3]
+    },
+    {
+      "name": "zeitungsregal",
+      "feld": [1, 7],
+      "auf_moebel": true
+    },
+    {
+      "name": "globus",
+      "feld": [15, 12],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okafor",
+      "feld": [12, 4]
+    },
+    {
+      "name": "dex",
+      "feld": [4, 7]
+    },
+    {
+      "name": "mae",
+      "feld": [9, 10]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "leserin",
+      "typ": "statist",
+      "feld": [3, 11],
+      "eigenschaften": {
+        "von": "3,11",
+        "bis": "7,11",
+        "tun": "trägt einen Bücherstapel",
+        "wann": "tag"
+      }
+    }
+  ]
+}

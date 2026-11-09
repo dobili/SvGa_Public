@@ -1,6 +1,6 @@
 # Auftrag: Karten mit dem Kartenbauer (Szenenbeschreibung, Bau, Bildprüfung)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, zweiundzwanzigster Auftrag)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 409b6826);
 privates Repository nur lesen (`origin/main` holen; dorthin nichts pushen)
@@ -47,6 +47,45 @@ Möbel abgeschnitten“. Bahndamm: „Schienen enden im Nichts“. Zedernwald: �
 Landstraße: „Wo ist hier ein Weg?“.
 
 ## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (Hauptstand ce11ffd9 und neuer hereingeholt, mein alter
+Häuser-Zwischenstand von Cedar Creek draußen auf den Hauptstand zurückgesetzt). Vier Szenen in
+`inhalte/abenteuer/szenen/`, Karten vom Kartenbauer geschrieben, Vorschau mit `kartenbild`
+gezeichnet und angesehen. Jedes neue Möbelbild habe ich vorher als Kontaktbogen selbst angesehen
+(die Registernamen stimmen oft nicht). Neue Möbel mit Vorsilbe `cc` (Regale, Tresen, Lesetisch aus
+zwei Endstücken, Stühle mit Blickrichtung, eigenes Schachbrett mit Figuren, grüne Leselampe,
+Zeitungsständer, Globus, Pinnwand, Stehlampe, Kistenstapel, Holzregal, Hängelampe, Bild,
+Aktenkiste, Waschmaschine mit Korb, Holzzaun, Zaunpfosten, Korn, Mais).
+
+- **Bibliothek** (18 × 14, dunkle Dielen, hellgraue Wände), 2 Runden: drei Bücherregale an der
+  Nordwand, Fenster, Pinnwand „Bitte flüstern“ (Auslöser davor), viertes Regal, Kellertür (Auslöser
+  `kellertreppe` davor); Zeitungsständer an der Westwand; langer Lesetisch mit zwei Schachbrettern
+  und Stühlen an beiden Enden (Dex und Mae); Tresen mit grüner Lampe, dahinter Mrs. Okafor; runder
+  Lesetisch mit zwei Stühlen und Lampe; Globus, Stehlampe, Pflanzen. Runde 2: Tisch-Mittelstück
+  entfernt (saß versetzt). Offen: Das rechte Tischende hat im Bild eine kleine Stufe.
+- **Archiv** (14 × 11, Steinboden, Backstein), 2 Runden: Kellertür mit Auslöser davor, Boxerfoto
+  an der Wand, Hängelampe, drei Holzregale mit Aktenkisten (Programmheft auf dem rechten), zwei
+  Reihen Kartonstapel, der offene Karton 1850–1859, Aktenschränke, Kistenstapel, Wasserfleck vorn.
+  Runde 2: Regale gefüllt, mehr Kartons. Offen: Die Aktenschränke wirken als schlichte graue Blöcke.
+- **Waschsalon** (14 × 11, weiße Fliesen), 2 Runden: vier Waschmaschinen (eine mit Wäschekorb),
+  Pinnwand mit dem Zettel „Verloren: ein Turm“, Fenster, Getränkeautomat in der Ecke, zwei Trockner
+  an der Westwand, runder Falttisch mit Stuhl und Mr. Boateng, Wartesitze mit dem Comicheft,
+  Pflanze. Runde 2: Fenster neben den Wäschekorb gerückt. Offen: Das Steckschachbrett am Trockner
+  gibt es nicht als Bild.
+- **Landstraße** (32 × 20, Gras, Feldweg), 1 Runde: Feldweg von links nach rechts, Rätseltafel am
+  Ortsausgang, Apfelbaum, Kornfeld mit Mais, Vogelscheuche und Traktor hinter einem Zaun mit
+  Gatter, Buschgruppe mit dem Formular (nur von oben erreichbar), Kuhweide mit Zaun, Bank mit Nia,
+  Heuhaufen, Ahorn, Laubbaum, Felsen, Wegweiser nach Cedar Creek. Der Traktor heißt im Register
+  „Left Side“ (Blickrichtung), ist aber ganz; deshalb `bauteil_ok`.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau mit verlinktem privaten Repository,
+`npm run build`, Oberflächentests Abenteuer (Chromium, 9 von 9) bestanden; im Spiel zeigen
+Bibliothek und Landstraße die neuen Hintergründe.
+
+Hinweis: Die Hintergründe liegen nur in meinem Klon unter
+`schach-abenteuer-inhalte/spiel/grafik/karten/` (nicht gepusht, das private Repository ist für mich
+nur zum Lesen vorgesehen); mit `python -m pipeline.abenteuer.kartenbild …` aus den Szenen neu
+zeichnen.
 
 (vom Helfer auszufüllen)
 

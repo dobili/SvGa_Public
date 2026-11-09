@@ -669,3 +669,10 @@ wer weiter unten steht, wird davor gezeichnet.
 im Raster des Platzhalters, damit alle Karten sofort echte Oberflächen haben; dann Möbel und Schmuck
 als Objekte vom Typ `moebel` (moebel.json, Bilder aus dem Register). Ohne gekaufte Grafik zeichnet
 der Paketbau Platzhalterrechtecke in derselben Größe, die Karten bleiben spielbar.
+
+**Hinweis des Autors für die nächste Runde der Karten (9.11.2026, noch umzusetzen, nachdem die
+Helfer die ersten zehn Karten fertig haben):** Auf den Zustand der Möbel achten (es gibt auch
+zerstörte oder verwitterte Stücke; ein kaputter Tisch passt nur an Orte wie Ghost Town, Keller oder
+die Turnhalle nach dem Sturm, nicht ins neue Wohnzimmer). Ebenso auf Stile von Möbeln und Natur
+(modern, rustikal, alt; Laub-, Nadel-, Wüstenpflanzen): je Ort ein stimmiger Stil. Kommt als Punkt in
+die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte Zustand und Stil).

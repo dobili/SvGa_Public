@@ -1,0 +1,139 @@
+{
+  "karte": "cedarCreek.archiv",
+  "datei": "karten/cedar-creek-archiv.json",
+  "art": "innen",
+  "beschreibung": "Der Keller unter der Bibliothek, das Archiv von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und alten Backsteinwänden. Licht kommt nur von einer einzelnen Hängelampe an der Nordwand, die ab und zu flackert; die Ecken bleiben im Halbdunkel. Es riecht nach feuchtem Papier.\n\nLinks oben führt die Tür zur Kellertreppe hinauf in die Bibliothek. Daneben hängt ein vergilbtes Foto eines Boxers in einem Goldrahmen an der Wand. An der Nordwand stehen hölzerne Regale mit Leitern, voll mit Ordnern und Mappen; auf dem rechten Regal liegt das alte Programmheft.\n\nIn der Mitte zwei Reihen aus Kartonstapeln, jeder Karton mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“, darin die Spur zu Ambrose. An der Westwand zwei graue Aktenschränke, rechts unten ein hoher Stapel Holzkisten, dazu einzelne Umzugskartons in den Ecken, als hätte jemand mitten im Sortieren aufgehört.\n\nAuf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer. Laufwege: von der Treppe nach rechts an den Regalen entlang, zwischen den Kartonreihen hindurch zum offenen Karton und zum Fleck.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzTuer",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ccBoxerfoto",
+      "feld": [4, 1],
+      "an_wand": true,
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "ccHaengelampe",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ccHolzregal",
+      "feld": [5, 2],
+      "id": "regal5"
+    },
+    {
+      "moebel": "ccHolzregal",
+      "feld": [9, 2],
+      "id": "regal9"
+    },
+    {
+      "moebel": "ccHolzregal",
+      "feld": [11, 2],
+      "id": "regalHeft"
+    },
+    {
+      "moebel": "aktenschrank",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "aktenschrank",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "wzKartonstapel",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "wzKartonstapel",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "wzKartonstapel",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "rvKisteOffen",
+      "feld": [7, 7]
+    },
+    {
+      "moebel": "ccKistenstapel",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "wzKarton",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "ccAktenkiste",
+      "auf": "regal5"
+    },
+    {
+      "moebel": "ccAktenkiste",
+      "auf": "regal9"
+    },
+    {
+      "moebel": "ccAktenkiste",
+      "auf": "regalHeft"
+    },
+    {
+      "moebel": "rvKiste",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "wzKartonstapelHoch",
+      "feld": [5, 7]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 4],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [2, 3]
+    },
+    {
+      "name": "boxerfoto",
+      "feld": [4, 3]
+    },
+    {
+      "name": "programmheft",
+      "feld": [11, 3],
+      "auf_moebel": true
+    },
+    {
+      "name": "karton1858",
+      "feld": [7, 8],
+      "auf_moebel": true
+    },
+    {
+      "name": "wasserfleck",
+      "feld": [9, 9]
+    }
+  ],
+  "figuren": [],
+  "belebung": []
+}

@@ -1,80 +1,94 @@
 {
-  "type": "map",
-  "version": "1.10",
-  "tiledversion": "1.11.0",
+  "compressionlevel": -1,
   "orientation": "orthogonal",
   "renderorder": "right-down",
+  "tiledversion": "1.11.0",
+  "type": "map",
+  "version": "1.10",
   "infinite": false,
-  "compressionlevel": -1,
-  "width": 18,
-  "height": 12,
+  "width": 24,
+  "height": 16,
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 19,
-  "properties": [
-    {
-      "name": "kennung",
-      "type": "string",
-      "value": "siliconBay.akademie"
-    }
-  ],
+  "nextobjectid": 35,
   "layers": [
     {
       "id": 1,
       "name": "boden",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 24,
+      "height": 16,
       "x": 0,
       "y": 0,
-      "width": 18,
-      "height": 12,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
     {
       "id": 2,
       "name": "waende",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 24,
+      "height": 16,
       "x": 0,
       "y": 0,
-      "width": 18,
-      "height": 12,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
       ]
     },
     {
       "id": 3,
       "name": "objekte",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 24,
+      "height": 16,
       "x": 0,
       "y": 0,
-      "width": 18,
-      "height": 12,
+      "opacity": 1,
+      "visible": true,
       "data": [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -90,18 +104,18 @@
       "id": 4,
       "name": "ausloeser",
       "type": "objectgroup",
-      "visible": true,
-      "opacity": 1,
+      "draworder": "topdown",
       "x": 0,
       "y": 0,
-      "draworder": "topdown",
+      "opacity": 1,
+      "visible": true,
       "objects": [
         {
           "id": 1,
           "name": "start",
           "type": "ausloeser",
-          "x": 144,
-          "y": 160,
+          "x": 192,
+          "y": 224,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -118,8 +132,8 @@
           "id": 2,
           "name": "akademieAusgang",
           "type": "ausloeser",
-          "x": 144,
-          "y": 176,
+          "x": 192,
+          "y": 240,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -129,8 +143,8 @@
           "id": 3,
           "name": "serverraumTuer",
           "type": "ausloeser",
-          "x": 272,
-          "y": 80,
+          "x": 336,
+          "y": 48,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -138,10 +152,10 @@
         },
         {
           "id": 4,
-          "name": "lin",
+          "name": "theo",
           "type": "figur",
-          "x": 192,
-          "y": 16,
+          "x": 176,
+          "y": 64,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -149,10 +163,10 @@
         },
         {
           "id": 5,
-          "name": "nova",
+          "name": "lin",
           "type": "figur",
-          "x": 64,
-          "y": 16,
+          "x": 288,
+          "y": 96,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -160,10 +174,10 @@
         },
         {
           "id": 6,
-          "name": "theo",
+          "name": "nova",
           "type": "figur",
-          "x": 32,
-          "y": 32,
+          "x": 48,
+          "y": 64,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -171,10 +185,10 @@
         },
         {
           "id": 7,
-          "name": "schueler",
-          "type": "statist",
-          "x": 64,
-          "y": 144,
+          "name": "saugroboter",
+          "type": "tier",
+          "x": 256,
+          "y": 208,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -183,162 +197,640 @@
             {
               "name": "von",
               "type": "string",
-              "value": "4,9"
+              "value": "14,13"
             },
             {
               "name": "bis",
               "type": "string",
-              "value": "8,9"
+              "value": "18,13"
             },
             {
-              "name": "tun",
+              "name": "verhalten",
               "type": "string",
-              "value": "tippt auf ein Bildschirmbrett"
-            },
-            {
-              "name": "wann",
-              "type": "string",
-              "value": "tag"
+              "value": "folgen"
             }
           ]
         },
         {
           "id": 8,
-          "name": "saugroboter",
-          "type": "tier",
-          "x": 160,
-          "y": 144,
+          "name": "sb5Tuer",
+          "type": "moebel",
+          "x": 336,
+          "y": 16,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "sb5TuerSued",
+          "type": "moebel",
+          "x": 192,
+          "y": 240,
           "width": 16,
           "height": 16,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
-              "name": "von",
-              "type": "string",
-              "value": "10,9"
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
             },
             {
-              "name": "bis",
-              "type": "string",
-              "value": "15,9"
-            },
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "ausweichen"
+              "name": "kollision",
+              "type": "bool",
+              "value": false
             }
           ]
         },
         {
-          "id": 9,
-          "name": "sbArbeitsplatz",
-          "type": "moebel",
-          "x": 32,
-          "y": 48,
-          "width": 32,
-          "height": 48,
-          "rotation": 0,
-          "visible": true
-        },
-        {
           "id": 10,
-          "name": "sbArbeitsplatzDrucker",
+          "name": "cc4Fussmatte",
           "type": "moebel",
-          "x": 80,
-          "y": 48,
-          "width": 32,
-          "height": 48,
+          "x": 192,
+          "y": 232,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 11,
-          "name": "sbArbeitsplatz",
+          "name": "sb5DatenwandB",
           "type": "moebel",
-          "x": 32,
-          "y": 96,
+          "x": 128,
+          "y": 6,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 12,
-          "name": "sbArbeitsplatzDrucker",
+          "name": "sb5Datenwand",
           "type": "moebel",
-          "x": 80,
-          "y": 96,
+          "x": 160,
+          "y": 6,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 13,
-          "name": "sbArbeitsplatz",
+          "name": "sb5DatenwandB",
           "type": "moebel",
-          "x": 144,
-          "y": 96,
+          "x": 192,
+          "y": 6,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 14,
-          "name": "sbArbeitsplatz",
+          "name": "sb5Datenwand",
           "type": "moebel",
-          "x": 192,
-          "y": 96,
+          "x": 224,
+          "y": 6,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 15,
-          "name": "sbSchreibtisch",
+          "name": "sb5Sofa",
           "type": "moebel",
-          "x": 160,
-          "y": 16,
+          "x": 16,
+          "y": 48,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 16,
-          "name": "sbPflanze",
+          "name": "sb5Bildschirmtisch",
           "type": "moebel",
-          "x": 208,
-          "y": 16,
+          "x": 48,
+          "y": 90,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 130
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 17,
-          "name": "sbPraesentation",
+          "name": "sb5Stuhl",
           "type": "moebel",
-          "x": 96,
-          "y": 0,
+          "x": 48,
+          "y": 112,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 18,
-          "name": "sbWasserspender",
+          "name": "sb5Bildschirmtisch",
+          "type": "moebel",
+          "x": 96,
+          "y": 90,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 130
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "name": "sb5Stuhl",
+          "type": "moebel",
+          "x": 96,
+          "y": 112,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "sb5Bildschirmtisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 90,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 130
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "sb5Stuhl",
+          "type": "moebel",
+          "x": 144,
+          "y": 112,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "sb5Bildschirmtisch",
+          "type": "moebel",
+          "x": 48,
+          "y": 154,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 194
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "sb5Stuhl",
+          "type": "moebel",
+          "x": 48,
+          "y": 176,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "sb5Bildschirmtisch",
+          "type": "moebel",
+          "x": 96,
+          "y": 154,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 194
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "sb5Stuhl",
+          "type": "moebel",
+          "x": 96,
+          "y": 176,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "sb5Bildschirmtisch",
+          "type": "moebel",
+          "x": 144,
+          "y": 154,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 194
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "sb5Stuhl",
+          "type": "moebel",
+          "x": 144,
+          "y": 176,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "name": "sb5Winkeltisch",
+          "type": "moebel",
+          "x": 240,
+          "y": 106,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 146
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "cc4Brett",
+          "type": "moebel",
+          "x": 250,
+          "y": 125,
+          "width": 12,
+          "height": 9,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 147
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "name": "sb5Stuhl",
           "type": "moebel",
           "x": 240,
           "y": 128,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "name": "sb5Vitrine",
+          "type": "moebel",
+          "x": 320,
+          "y": 144,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "pokal",
+          "type": "moebel",
+          "x": 328,
+          "y": 147,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 169
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "sb5Pflanze",
+          "type": "moebel",
+          "x": 336,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "name": "sb5Pflanze",
+          "type": "moebel",
+          "x": 16,
+          "y": 192,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         }
       ]
     }
@@ -408,6 +900,13 @@
           ]
         }
       ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "kennung",
+      "type": "string",
+      "value": "siliconBay.akademie"
     }
   ]
 }

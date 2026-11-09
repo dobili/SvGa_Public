@@ -118,6 +118,10 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
             elif z == WAND and (x, y) in flaeche:
                 teil = wand[flaeche[(x, y)]]
                 bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
+            elif z == WAND and "krone" in wand:
+                # Wandstile mit eigener Krone (Fels, KARTENREGELN 10.45): Kachel statt weißer Fläche.
+                feld = wand["krone"][(x * 7 + y * 3) % len(wand["krone"])]
+                bild.alpha_composite(kachel(privat, boegen, wand, feld), ort)
             elif z == WAND:
                 zeichner.rectangle((*ort, ort[0] + K - 1, ort[1] + K - 1), fill=KRONE)
             elif z != LEER:

@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Variante C, abgedeckte Möbel: Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild, das Sprossenfenster zeigt die Ahorne; Bauernschrank und ein zweiter alter Holzschrank an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, die Kiste mit Tuch, die Zeitungen von 1961, die Hutschachtel und der Standspiegel.",
+  "beschreibung": "Variante C, abgedeckte Möbel: Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild, das Sprossenfenster zeigt die Ahorne; der Bauernschrank und ein Bücherregal voller vergilbter Bücher an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, die Kiste mit Tuch, die Zeitungen von 1961, die Hutschachtel und der Standspiegel.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -40,7 +40,7 @@
       "feld": [9, 1]
     },
     {
-      "moebel": "mf7Holzschrank",
+      "moebel": "mf2Buecherregal",
       "feld": [11, 1]
     },
     {

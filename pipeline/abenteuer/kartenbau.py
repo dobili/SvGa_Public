@@ -105,6 +105,8 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             "hoehe": angabe["hoehe"],
             "tiefe": tiefe,
             "kollision": kollision,
+            # Begehbare Reihen unten im Bild (Gang vor dem Motel, Veranda), Angabe „frei_unten“.
+            "frei_unten": angabe.get("frei_unten", 0),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
         nach_id[stueck["id"]] = stueck
@@ -113,13 +115,15 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
 
 
 def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
-    """Felder, die ein Möbel mit Kollision sperrt (alles außer der obersten Kachelreihe)."""
+    """Felder, die ein Möbel mit Kollision sperrt: alles außer der obersten Kachelreihe und außer
+    ``frei_unten`` begehbaren Reihen am unteren Bildrand (Gang vor dem Motel, Veranda)."""
     if not stueck["kollision"]:
         return set()
     x0, y0 = stueck["x"] // K, stueck["y"] // K
     spalten, reihen = max(1, stueck["breite"] // K), max(1, stueck["hoehe"] // K)
     oben = 1 if reihen > 1 else 0
-    return {(x0 + a, y0 + b) for a in range(spalten) for b in range(oben, reihen)}
+    unten = reihen - stueck.get("frei_unten", 0)
+    return {(x0 + a, y0 + b) for a in range(spalten) for b in range(oben, unten)}
 
 
 def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:

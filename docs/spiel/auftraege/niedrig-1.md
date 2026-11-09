@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Desert Springs und die Wüstenwege einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, neunzehnter Auftrag)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b03adbff)
 **Darf ändern:** `inhalte/abenteuer/karten/desert-springs-*.json`, `weg-delacroix-desert-*.json`,
@@ -16,6 +16,43 @@ Möbel); Canyonpfad und Felsbogen (Felsen, Kakteen; Felsen aus Serene Village od
 (Theke, Barhocker, Sitzecken; innen) und Bergstraße (Felsen, Leitplanke, Schilder).
 Neu: Eine Karteneigenschaft `stil` kann den Kachelsatz wählen (README); gibt es Wasser auf einer
 Karte, `kueste` setzen.
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; Konflikt in `moebel.json` mit
+mittel-1 gelöst, indem ich deren Fassung übernommen und nur meine `ds`-Einträge ergänzt habe).
+Neu: `dsKaktus` (Topfkaktus, 16 × 32), `dsAuto` (Auto an der Tankstelle, 32 × 32), `dsReifen`
+(16 × 16), `dsHocker` (Holzhocker, 16 × 16), `dsSchranke` (Absperrung als Leitplanke, 32 × 16),
+`dsRegal` (Regal mit Büchern und Flaschen, 32 × 48). Wiederverwendet: `fels`, `felsKlein`,
+`truhe`, `kisteRot`, `kisteGrau`, `holztisch`, `wegweiser`, `pdWerkzeugregal`.
+
+Bildschirmfotos (je ein Satz):
+
+- **Canyonpfad:** Kakteen am Pfad, Felsen neben Miras Stein und am Ufer.
+- **Felsbogen:** zwei Absperrungen als Geländer an der Eisenbahnbrücke, Kakteen am Weg.
+- **Desert Springs draußen:** Kakteen an der Straße, ein Auto und Reifen an der Tankstelle bei
+  Buck.
+- **Garage:** Werkzeugregal und Reifen an der Rückwand, ein Auto in der Garage; Mira und Tomás
+  frei.
+- **Antiquariat:** vier Regale an den Seiten, Truhe und Kiste in der Mitte (die Truhe steht unter
+  Mr. Okoro, damit sie ihn nicht verdeckt), drei Aktenstapel.
+- **Diner:** zwei Autos auf dem Parkplatz, Kakteen am Rand, ein Tisch mit zwei Hockern vor dem
+  Diner (ein Innenraum fürs Diner ist keine eigene Karte).
+- **Bergstraße:** Felsen, eine Leitplanke am Hang, ein Wegweiser an der Abzweigung zur Hochebene.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build` und Oberflächentests Abenteuer
+(9 von 9) bestanden. Einen Wassertank gibt es im Register nicht.
+
+**Befund für den Haupt-Chat (Register falsch beschriftet):** Ich habe alle Bilder aus
+`moebel.json` als Übersicht angesehen. Einige Namen im Register passen nicht zum Bild, und das
+betrifft schon gesetzte Möbel, die ich in diesem Auftrag nicht ändern darf:
+`buecherregal` (Classroom 36) ist eine Schultafel, `leselampe` (Classroom 40) ein Kühlschrank,
+`tafel` (Classroom 29) ein grüner Schrank, Classroom 34 ein Globus. Echte Bücherregale sind
+Classroom 43, 44 und 45 (je 32 × 48). Betroffen: Clubraum Maple Falls (`buecherregal` wirkt dort
+als Tafel, passt), Bibliothek Cedar Creek (`buecherregal` sollte Regal sein), `leselampe` in
+Bibliothek und Archiv. Vorschlag: die beiden Pfade in `moebel.json` korrigieren
+(`buecherregal` → Classroom 45 mit 32 × 48, `leselampe` → eine echte Lampe) und die
+Positionen in der Bibliothek prüfen; das Register sollte bei Gelegenheit neu beschriftet werden.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

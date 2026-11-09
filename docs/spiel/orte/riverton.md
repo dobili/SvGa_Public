@@ -387,10 +387,10 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
 | Dorfplatz                  | 14–34 / 29–34, Linde (24, 31), Schwengelpumpe (30, 30), Bank unter der Linde      | –                                                 | –                                                | Platz    |
 
 **Gebaut (Runde 5, mittel-3):** drei Varianten mit gleicher fester Geometrie: Uferstraße Reihen 10–11
-(Spalten 3–55), Kammer 30–37 / 14–16, Steg 32–33 / 14–16, Kai 1–40 / 20–21, Dorfplatz 2–38 / 32–35,
+(Spalten 3–55), Kammer 30–37 / 14–16 mit Steinkante, Untertor 30–31 und Obertor 36–37 als Stemmtore mit Schwenkbalken (über das Untertor geht man zum Kai), Kai 1–40 / 20–21, Dorfplatz 2–38 / 32–35,
 Gasthaus 14–23 / 23–31 (Tür (21, 31), Auslöser `gasthausTuer` (21, 32)), Wärterhaus (38, 0),
 Tafel (34, 8), Ankunft (54, 10). A: großes Becken 2–29 / 13–19, drei Häuser im Norden; B: kleineres
-Becken 6–29 / 14–19, weniger Häuser, Platz ohne Baum; C: Beete, drei Wäscheleinen, drei Boote.
+Becken 6–29 / 14–19, flache Häuser und ein blaues Häuschen statt Fachwerk, Brunnen statt Linde; C: Beete, drei Wäscheleinen, drei Boote.
 
 **Abschnitte** (je 14 × 20; Reihe 1 = Nordufer, Reihe 2 = Kai und Dorf):
 

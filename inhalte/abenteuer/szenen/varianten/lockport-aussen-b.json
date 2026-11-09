@@ -1,7 +1,7 @@
 {
   "karte": "lockport.aussen",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: ein stilles Schleusendorf. Am Nordufer nur das Haus der Schleusenwärterin mit der Rätseltafel und ein Wohnhaus mit einer Wäscheleine, eine Laterne. Das Hafenbecken ist kleiner, am Kai liegt nur der Lastkahn. Hinter dem Kai das Gasthaus und eine Scheune, ein schlichter Dorfplatz ohne Baum. Östlich Wiese und einzelne Bäume.",
+  "beschreibung": "Variante B, schlicht: ein stilles Schleusendorf. Am Nordufer das flache Haus der Schleusenwärterin mit der Rätseltafel, ein flaches Wohnhaus und ein blaues Häuschen mit einer Wäscheleine, eine Laterne. Das Hafenbecken ist kleiner, am Kai liegt nur der Lastkahn. Hinter dem Kai das Gasthaus und ein flaches Wohnhaus, ein Dorfplatz mit Brunnen statt Linde. Östlich Wiese und einzelne Bäume.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -22,14 +22,14 @@
     "#......................................................#",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#...............................ee.....................#",
-    "#...............................ee.....................#",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
-    "#....p~~~~~~~~~~~~~~~~~~~~~~~~..ee.....................#",
+    "#.............................pppppppp.................#",
+    "#.............................pppppppp.................#",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~hh~~~~~~~~~~~~~~~~~~",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~pppppppp.................#",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~pppppppp.................#",
+    "#....p~~~~~~~~~~~~~~~~~~~~~~~~pp.......................#",
     "#pppppppppppppppppppppppppppppppppppppppp..............#",
     "#pppppppppppppppppppppppppppppppppppppppp..............#",
     "#..........ee............ee............................#",
@@ -53,20 +53,54 @@
   ],
   "objekte": [
     {
-      "moebel": "mf9FussbrueckeLaengs3",
-      "feld": [32, 14]
+      "moebel": "ld5Schleusentor",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 17]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [38, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [38, 17]
     },
     {
       "moebel": "mf4BauernhausBreit",
-      "feld": [14, 23]
+      "feld": [14, 23],
+      "id": "gasthaus"
     },
     {
-      "moebel": "mf4Bauernhaus",
+      "moebel": "ld5SchildSchleuse",
+      "auf": "gasthaus",
+      "versatz": [40, 40]
+    },
+    {
+      "moebel": "mf7HausFlachHoch",
       "feld": [38, 0]
     },
     {
-      "moebel": "mf4Bauernhaus",
-      "feld": [8, 0]
+      "moebel": "mf7HausFlach",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "svHausBlau",
+      "feld": [22, 4]
+    },
+    {
+      "moebel": "mf9Brunnen",
+      "feld": [5, 31]
     },
     {
       "moebel": "ld5Waesche",
@@ -98,17 +132,17 @@
       "feld": [36, 20]
     },
     {
-      "moebel": "cc4Drechslerei",
-      "feld": [28, 22]
+      "moebel": "mf7HausFlach",
+      "feld": [28, 23]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [44, 18]
     },
     {
       "moebel": "mf4Laterne",
       "feld": [20, 9],
       "vorn": true
-    },
-    {
-      "moebel": "wg4LaubbaumB",
-      "feld": [44, 18]
     },
     {
       "moebel": "mf4BaumRot",
@@ -139,8 +173,8 @@
       "feld": [46, 26]
     },
     {
-      "moebel": "wg4Erle",
-      "feld": [34, 36]
+      "moebel": "mf4BaumRot",
+      "feld": [47, 30]
     },
     {
       "moebel": "mf4BaumGruen",
@@ -156,7 +190,7 @@
     },
     {
       "moebel": "wg4Erle",
-      "feld": [5, 3]
+      "feld": [35, 36]
     },
     {
       "moebel": "mf4BaumGruen",
@@ -167,36 +201,32 @@
       "feld": [1, 3]
     },
     {
-      "moebel": "wg4Stein",
-      "feld": [23, 5]
+      "moebel": "wg4Erle",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [13, 23]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [32, 5]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [23, 8]
+      "feld": [2, 18]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [38, 31]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [35, 17]
+      "feld": [3, 16]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [5, 12]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [23, 8]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [54, 12]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [3, 14]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [49, 32]
+      "feld": [54, 3]
     },
     {
       "moebel": "wg4BuschKlein",
@@ -227,10 +257,6 @@
       "feld": [45, 32]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [35, 13]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [4, 25]
     },
@@ -245,6 +271,18 @@
     {
       "moebel": "wg4Stein",
       "feld": [1, 34]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [33, 4]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [7, 29]
     }
   ],
   "ausloeser": [

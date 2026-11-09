@@ -2,7 +2,7 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern (Variante C, vom Autor gewählt): rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (ein Fenster mit Ablage), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen den hohen Lehnstühlen, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern (Variante C, vom Autor gewählt): rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (ein Fenster mit Ablage), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine und altem Radio. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen den hohen Lehnstühlen, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
@@ -173,7 +173,14 @@
     {
       "moebel": "mf5Kaffeemaschine",
       "feld": [0, 0],
-      "auf": "t0"
+      "auf": "t0",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "mf9RadioAlt",
+      "feld": [0, 0],
+      "auf": "t0",
+      "versatz": [7, 0]
     },
     {
       "moebel": "mf5Hocker",

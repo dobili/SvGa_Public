@@ -594,5 +594,54 @@
     "sicher": 0.9,
     "korrektur": "mittel-2",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Excavator_1.png": {
+    "beschreibung": "Gelber Radlader von oben, Schaufel unten, Fahrerkabine mit Glasdach, 3×6 Kacheln.",
+    "art": "fahrzeug",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true,
+    "blick": "unten"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png": {
+    "beschreibung": "Stapel aufrecht gestellter Holzbohlen mit Bändern, Baumaterial, 2×3 Kacheln.",
+    "art": "kiste",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_1.png": {
+    "beschreibung": "Orange Werkzeugkiste aus Metall mit Griff, von vorn, 2×2 Kacheln.",
+    "art": "kiste",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Wolf_Clean_Graffiti.png": {
+    "beschreibung": "Graffiti: blauer Wolfskopf mit Zähnen, gesprüht, für eine Wand, 3×2 Kacheln.",
+    "art": "deko",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Big_White_Crown_Graffiti.png": {
+    "beschreibung": "Graffiti: große weiße Krone, gesprüht, für eine Wand, 2×2 Kacheln.",
+    "art": "deko",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png": {
+    "beschreibung": "Gleisstück von oben, senkrecht: zwei Schienen links und rechts, Holzschwellen quer, 2 Kacheln breit, 1 hoch; lässt sich lückenlos nach oben und unten reihen.",
+    "art": "gleis",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
   }
 }

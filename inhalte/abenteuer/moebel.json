@@ -486,6 +486,54 @@
       "breite": 48,
       "hoehe": 16,
       "kollision": true
+    },
+    "iwSpind": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "iwVitrine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_134.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "iwBild": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_100.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "iwFass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "iwFassGross": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "iwStrommast": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Electric_Pole_1.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "iwPylon": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Cone_10.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "iwHantel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/8_Gym_Singles/Gym_Singles_108.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
     }
   }
 }

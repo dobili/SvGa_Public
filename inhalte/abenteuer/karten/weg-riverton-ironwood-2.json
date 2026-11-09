@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 9,
+  "nextobjectid": 16,
   "properties": [
     {
       "name": "kennung",
@@ -114,7 +114,7 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -291,6 +291,83 @@
               "value": "fliegen"
             }
           ]
+        },
+        {
+          "id": 9,
+          "name": "laterne",
+          "type": "moebel",
+          "x": 320,
+          "y": 64,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "fels",
+          "type": "moebel",
+          "x": 48,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "busch",
+          "type": "moebel",
+          "x": 80,
+          "y": 224,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "baum",
+          "type": "moebel",
+          "x": 368,
+          "y": 32,
+          "width": 48,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "iwFass",
+          "type": "moebel",
+          "x": 384,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "iwFass",
+          "type": "moebel",
+          "x": 400,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "felsKlein",
+          "type": "moebel",
+          "x": 96,
+          "y": 64,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

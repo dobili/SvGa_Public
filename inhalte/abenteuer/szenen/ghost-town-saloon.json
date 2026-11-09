@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Flaschenregalen dahinter, rechts das Klavier, an der Ostwand die Treppe zu den Zimmern oben; unter der Treppe im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, zwei weitere Tische mit Stühlen, Fässer in der Ecke, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street.",
+  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts das Klavier, an der Ostwand die Treppe zu den Zimmern oben; unter der Treppe im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, zwei weitere Tische mit Stühlen, Fässer in der Ecke, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street.",
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -25,7 +25,7 @@
   ],
   "objekte": [
     {
-      "moebel": "gt7Flaschenregal",
+      "moebel": "gt7FlaschenregalBreit",
       "feld": [2, 1]
     },
     {
@@ -35,6 +35,16 @@
     {
       "moebel": "gt7Theke",
       "feld": [2, 4]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [3, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [5, 6],
+      "versatz": [0, -8]
     },
     {
       "moebel": "gt7Klavier",

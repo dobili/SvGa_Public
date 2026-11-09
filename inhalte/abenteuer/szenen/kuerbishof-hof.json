@@ -39,12 +39,12 @@
     "#fffffffffffffff...................ffffffffffff#",
     "#fffffffffffffff...................ffffffffffff#",
     "#fffffffffffffff...................ffffffffffff#",
-    "#...........ee......ee.........................#",
-    "#...........ee......ee..................ee.....#",
-    "#...........ee......ee..................ee.....#",
-    "#...........ee......ee..................ee.....#",
-    "#...........ee......ee..................ee.....#",
-    "#...........ee......ee..................ee.....#",
+    "#...........ee......ee.....ee..................#",
+    "#...........ee......ee.....ee...........ee.....#",
+    "#...........ee......ee.....ee...........ee.....#",
+    "#...........ee......ee.....ee...........ee.....#",
+    "#...........ee......ee.....ee...........ee.....#",
+    "#...........ee......ee.....ee...........ee.....#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#......................ee......................#",
@@ -648,12 +648,8 @@
     },
     {
       "moebel": "n1Traktor",
-      "feld": [28, 20],
+      "feld": [30, 20],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "n1Heu",
-      "feld": [34, 22]
     },
     {
       "moebel": "n1Heu",
@@ -746,10 +742,6 @@
     {
       "moebel": "n1Busch",
       "feld": [20, 31]
-    },
-    {
-      "moebel": "n1Blume",
-      "feld": [33, 23]
     },
     {
       "moebel": "n1Busch",
@@ -850,6 +842,10 @@
     {
       "moebel": "n1Blume",
       "feld": [35, 31]
+    },
+    {
+      "moebel": "n1BlumeW",
+      "feld": [12, 28]
     }
   ],
   "ausloeser": [

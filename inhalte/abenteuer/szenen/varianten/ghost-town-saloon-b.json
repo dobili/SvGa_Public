@@ -25,12 +25,22 @@
   ],
   "objekte": [
     {
-      "moebel": "gt7Flaschenregal",
+      "moebel": "gt7FlaschenregalBreit",
       "feld": [12, 1]
     },
     {
       "moebel": "gt7Theke",
       "feld": [11, 4]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [11, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [13, 6],
+      "versatz": [0, -8]
     },
     {
       "moebel": "gt7Klavier",

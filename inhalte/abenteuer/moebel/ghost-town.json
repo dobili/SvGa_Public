@@ -414,13 +414,13 @@
       "stil": "rustikal"
     },
     "gt7Flaschenregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_84.png",
+      "quelle": "spiel/eigene/flaschenregal_holz.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
       "art": "regal",
       "blick": "unten",
-      "zustand": "gebraucht",
+      "zustand": "alt",
       "stil": "rustikal"
     },
     "gt7Klavier": {
@@ -656,6 +656,26 @@
       "hoehe": 32,
       "kollision": true,
       "art": "stein",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt7FlaschenregalBreit": {
+      "quelle": "spiel/eigene/flaschenregal_holz_breit.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt7Barhocker": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_109.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "oben",
       "zustand": "alt",
       "stil": "rustikal"
     }

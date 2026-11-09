@@ -49,6 +49,9 @@ def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
             nx, ny = x + dx, y + dy
             if not (0 <= ny < len(zeilen) and 0 <= nx < len(zeilen[0])):
                 return True  # Am Kartenrand läuft der Boden weiter.
+            am_rand = nx in (0, len(zeilen[0]) - 1) or ny in (0, len(zeilen) - 1)
+            if am_rand and zeilen[ny][nx] == WAND:
+                return True  # Randwand außen ist nur Kollision; der Boden läuft darunter weiter.
             return zeilen[ny][nx] == zeichen
 
         spalte = 1 if gleich(-1, 0) == gleich(1, 0) else 0 if not gleich(-1, 0) else 2
@@ -58,6 +61,20 @@ def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
         # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
         return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]
     return art["feld"]
+
+
+def randnachbar(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
+    """Für ein Wandfeld am Kartenrand das nächste Feld nach innen, das kein Wand- oder Leerfeld
+    ist; sonst None (dann bleibt es Wand, etwa eine Hecke, die bis an den Rand reicht)."""
+    hoehe, breite = len(zeilen), len(zeilen[0])
+    if 0 < x < breite - 1 and 0 < y < hoehe - 1:
+        return None
+    dx = 1 if x == 0 else -1 if x == breite - 1 else 0
+    dy = 1 if y == 0 else -1 if y == hoehe - 1 else 0
+    nx, ny = x + dx, y + dy
+    if 0 <= nx < breite and 0 <= ny < hoehe and zeilen[ny][nx] not in (WAND, LEER):
+        return (nx, ny)
+    return None
 
 
 def hintergrund(szene: dict, privat: Path) -> Image.Image:
@@ -78,6 +95,12 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
             if z == WASSER:
                 art = boeden["wasser"]
                 bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
+            elif z == WAND and wandart and (innen := randnachbar(zeilen, x, y)) is not None:
+                # Außen ist der Rand nur Kollision: Er zeigt den Boden dahinter, damit Felder und
+                # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
+                nz = zeilen[innen[1]][innen[0]]
+                art = boeden["wasser"] if nz == WASSER else boeden[sonder.get(nz, grund)]
+                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, *innen)), ort)
             elif z == WAND and wandart:
                 bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
             elif z == WAND and (x, y) in flaeche:

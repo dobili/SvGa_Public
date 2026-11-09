@@ -16,7 +16,7 @@
     "#..............#",
     "#..............#",
     "#..............#",
-    "########.#######"
+    "####.###########"
   ],
   "objekte": [
     {
@@ -77,23 +77,30 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [8, 9],
+      "feld": [4, 9],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "drechslereiAusgang",
-      "feld": [8, 10]
+      "feld": [4, 10]
     }
   ],
-  "figuren": [
+  "figuren": [],
+  "belebung": [
     {
       "name": "dunmore",
-      "feld": [3, 6]
+      "typ": "statist",
+      "feld": [3, 6],
+      "eigenschaften": {
+        "von": "3,6",
+        "bis": "3,6",
+        "tun": "dreht an der Drehbank",
+        "wann": "tag"
+      }
     }
   ],
-  "belebung": [],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["rustikal", "klassisch"]
 }

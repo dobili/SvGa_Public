@@ -75,7 +75,7 @@ Offene Punkte:
   - `mapleFalls.park` braucht am Nordrand bei den Spalten 10–11 den Auslöser `zedernpfad`.
   - Bis dahin zeigen die Übergänge des Zedernpfads vorläufig auf `landstrasse` und `bushaltestelle`.
 - Park ↔ Landstraße sind ungleich breit (2 ↔ 3 Felder); das wartet auf den Umbau des Parks.
-- Der Stamm S2 ist ein 1 × 2-Bild und wirkt als Sperre schmal.
+- Der Stamm S2 ist ein Stapel liegender Stämme, der den Pfad sperrt; der lockere Wald daneben ist begehbar.
 - Auslöser für Runde 5: Hufeisen, Weidetor, `aussichtKuppe`, Zedernzapfen, S2.
 
 Katalogkorrekturen (`katalog_korrekturen/niedrig-1.json`):

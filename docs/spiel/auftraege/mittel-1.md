@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Crossroads, Pinewood Camp, Wege dazwischen; Felsplateaus nachsetzen
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, siebenundzwanzigster Auftrag; Summit City und Hochebene sind zusammengeführt, danke)
+**Stand:** fertig (mittel-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 623c31ad);
 im privaten Repository `origin/main` holen (Stand d33a9cd2, nur lesen)
@@ -18,6 +18,45 @@ im privaten Repository `origin/main` holen (Stand d33a9cd2, nur lesen)
 2. Crossroads (Kreuzung im Landesinneren): draußen (Tankstelle, Motel, Schilder, Bus), Raststätte
    (innen). Weg Crossroads–Pinewood: Hütten und Riesenbäume. Pinewood Camp draußen (Zelte, Hütten,
    Lagerfeuer, Steg am See; Wasser über `stil` = `kueste`, falls es einen See gibt).
+
+## Bericht
+
+Sechs Karten eingerichtet bzw. nachgesetzt: Hochebene Felsentürme (Felsplateaus), Crossroads draußen und
+Raststätte, Pinewood Camp draußen, Weg Hütten und Riesenbäume. 22 neue Möbel am Ende von
+`moebel.json`: `sv` 13 (Serene Village, wiederverwendbar), `cr` 5, `pw` 4.
+
+Neue Möbel: `svPlateau` (Felsplateau mit Holztreppe, 96 × 64), `svGrasinsel`, `svFels`, `svFelsKlein`,
+`svBaumreihe`, `svBaumreiheBreit`, `svBusch`, `svHausRot`, `svHausGruen`, `svHausBlau`, `svZaun`,
+`svWegweiser`, `svSchild`; `crZapfsaeule` (Tankstelle mit Dach), `crTheke`, `crTisch`, `crStuhl`,
+`crBus`; `pwZelt`, `pwZeltGruen`, `pwZeltBeige`, `pwLagerfeuer`. (Noch nicht gesetzt: die drei
+Häuser, `svSchild`, `pwZeltBeige`, als Vorrat für Pinewood-Hütten und spätere Orte.)
+
+Bildschirmfotos im Spiel (Build mit verlinktem privaten Repository; Bilder nur lokal):
+
+- **Hochebene Felsentürme:** sechs Felsplateaus mit Gras und Holztreppe an Stelle der Wandblöcke
+  (die Wandkacheln darunter sind jetzt Boden, die Plateaus sperren selbst), oben rechts ein Felsbrocken
+  und eine Grasinsel auf dem kleinen Turm; Kira und der Steintisch frei, der Basketballkorb eine Kachel
+  nach rechts gerückt, ein Felsen vom Plateau weg an den Weg.
+- **Crossroads draußen:** Tankstelle mit Dach und Zapfsäulen an Stelle der Kistenblöcke, gelber Bus
+  vor der Raststätte, Laterne, Bank, Mülltonne, ein geparktes Auto beim Motel, Wegweiser und Büsche.
+- **Crossroads Raststätte:** zwei Theken, rote Holztische mit Stühlen an Stelle der Bretter und Kisten,
+  Kühlschrank und Kaffeeautomat; Variantentisch und Postkarten bleiben Auslöser.
+- **Pinewood Camp:** blaues und grünes Zelt an Stelle der Kistenblöcke, Lagerfeuer neben dem Auslöser,
+  Holzbank, eine Baumreihe und Zedern am Ufer, Laterne und Busch oberhalb des Wegs.
+- **Weg Hütten:** zwei große Laubbäume statt der Kistenblöcke, Busch, Wegweiser bei der Tafel,
+  Holzbank, kurzer Zaun.
+- **Weg Riesenbäume:** sieben große Laubbäume und eine breite Baumreihe statt der Kistenblöcke; Greta,
+  Eichhörnchen und Specht frei.
+
+**Entscheidungen:** Pinewood Camp hat keinen See auf der Karte (die Wandblöcke sind Hütten), deshalb
+kein `stil` Küste und kein Steg. **Befund im Register:** Einige Beschreibungen unter „serene village
+einzeln“ passen nicht zum Bild (Nr. 26 ist ein Zaunrahmen, kein Felsbrocken; Nr. 16 sind Felsen mit
+Schild); ich habe nach den Bildern gewählt.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen. Prettier über die
+geänderten Dateien. `npm run build` mit verlinktem privaten Repository ohne Fehler. Playwright
+`tests/e2e/abenteuer` (Chromium): 9 bestanden. Vor dem Push `claude/friendly-shannon-y8bf90`
+erneut hereingeholt; `moebel.json` nur am Ende ergänzt.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

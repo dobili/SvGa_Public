@@ -840,6 +840,138 @@
       "breite": 48,
       "hoehe": 48,
       "kollision": true
+    },
+    "svPlateau": {
+      "quelle": "spiel/serene/serene_02.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svGrasinsel": {
+      "quelle": "spiel/serene/serene_03.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svFels": {
+      "quelle": "spiel/serene/serene_29.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svFelsKlein": {
+      "quelle": "spiel/serene/serene_30.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svBaumreihe": {
+      "quelle": "spiel/serene/serene_04.png",
+      "breite": 128,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "svBaumreiheBreit": {
+      "quelle": "spiel/serene/serene_27.png",
+      "breite": 160,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "svBusch": {
+      "quelle": "spiel/serene/serene_17.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "svHausRot": {
+      "quelle": "spiel/serene/serene_40.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svHausGruen": {
+      "quelle": "spiel/serene/serene_58.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svHausBlau": {
+      "quelle": "spiel/serene/serene_76.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "svZaun": {
+      "quelle": "spiel/serene/serene_12.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "svWegweiser": {
+      "quelle": "spiel/serene/serene_13.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "svSchild": {
+      "quelle": "spiel/serene/serene_14.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "crZapfsaeule": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_1.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true
+    },
+    "crTheke": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_261.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "crTisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_275.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "crStuhl": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_284.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "crBus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_2.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwZelt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwZeltGruen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwZeltBeige": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_3.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "pwLagerfeuer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Campfire_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
     }
   }
 }

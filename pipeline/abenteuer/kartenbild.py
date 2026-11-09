@@ -44,12 +44,16 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
     grund = szene.get("boden", "holzHell")
     sonder = szene.get("boeden", {})
     wand = waende[szene.get("wand", "creme")]
-    flaeche = flaechen(zeilen)
+    # Draußen ist „#“ eine Hecke (oder ein anderer Boden aus „wandart“), keine Wandkrone.
+    wandart = boeden.get(szene["wandart"]) if szene.get("wandart") else None
+    flaeche = {} if wandart else flaechen(zeilen)
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
             if z == WASSER:
                 bild.alpha_composite(kachel(privat, boegen, boeden["wasser"], boeden["wasser"]["feld"]), ort)
+            elif z == WAND and wandart:
+                bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
             elif z == WAND and (x, y) in flaeche:
                 teil = wand[flaeche[(x, y)]]
                 bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
@@ -58,7 +62,8 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
             elif z != LEER:
                 art = boeden[sonder.get(z, grund)]
                 bild.alpha_composite(kachel(privat, boegen, art, art["feld"]), ort)
-    _kronenrand(zeichner, zeilen, flaeche)
+    if not wandart:
+        _kronenrand(zeichner, zeilen, flaeche)
     return bild
 
 

@@ -3,31 +3,111 @@
   "boegen": {
     "boden": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
     "wand": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
-    "gelaende": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png"
+    "gelaende": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+    "stadt": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png"
   },
   "boeden": {
-    "holzHell": { "bogen": "boden", "feld": [1, 12] },
-    "holzDunkel": { "bogen": "boden", "feld": [1, 16] },
-    "dielen": { "bogen": "boden", "feld": [5, 12] },
-    "fliesenWeiss": { "bogen": "boden", "feld": [1, 4] },
-    "fliesenGrau": { "bogen": "boden", "feld": [13, 4] },
-    "teppichRot": { "bogen": "boden", "feld": [5, 8] },
-    "teppichBlau": { "bogen": "boden", "feld": [9, 18] },
-    "stein": { "bogen": "boden", "feld": [13, 34] },
-    "gras": { "bogen": "gelaende", "feld": [3, 6] },
-    "pflaster": { "bogen": "gelaende", "feld": [25, 9] },
-    "erde": { "bogen": "gelaende", "feld": [1, 31] },
-    "sand": { "bogen": "gelaende", "feld": [4, 31] },
-    "wasser": { "bogen": "gelaende", "feld": [20, 13] }
+    "holzHell": {
+      "bogen": "boden",
+      "feld": [1, 12]
+    },
+    "holzDunkel": {
+      "bogen": "boden",
+      "feld": [1, 16]
+    },
+    "dielen": {
+      "bogen": "boden",
+      "feld": [5, 12]
+    },
+    "fliesenWeiss": {
+      "bogen": "boden",
+      "feld": [1, 4]
+    },
+    "fliesenGrau": {
+      "bogen": "boden",
+      "feld": [13, 4]
+    },
+    "teppichRot": {
+      "bogen": "boden",
+      "feld": [5, 8]
+    },
+    "teppichBlau": {
+      "bogen": "boden",
+      "feld": [9, 18]
+    },
+    "stein": {
+      "bogen": "boden",
+      "feld": [13, 34]
+    },
+    "gras": {
+      "bogen": "gelaende",
+      "feld": [3, 6]
+    },
+    "pflaster": {
+      "bogen": "gelaende",
+      "feld": [25, 9]
+    },
+    "erde": {
+      "bogen": "gelaende",
+      "feld": [1, 31]
+    },
+    "sand": {
+      "bogen": "gelaende",
+      "feld": [4, 31]
+    },
+    "wasser": {
+      "bogen": "gelaende",
+      "feld": [20, 13]
+    },
+    "asphalt": {
+      "bogen": "stadt",
+      "feld": [0, 4]
+    },
+    "hecke": {
+      "bogen": "gelaende",
+      "feld": [1, 7]
+    }
   },
   "waende": {
-    "creme": { "bogen": "wand", "oben": [1, 6], "unten": [1, 7] },
-    "hellgrau": { "bogen": "wand", "oben": [1, 4], "unten": [1, 5] },
-    "rauten": { "bogen": "wand", "oben": [1, 0], "unten": [1, 1] },
-    "holz": { "bogen": "wand", "oben": [12, 0], "unten": [12, 1] },
-    "backstein": { "bogen": "wand", "oben": [1, 16], "unten": [1, 17] },
-    "rot": { "bogen": "wand", "oben": [23, 0], "unten": [23, 1] },
-    "blau": { "bogen": "wand", "oben": [23, 8], "unten": [23, 9] },
-    "gruen": { "bogen": "wand", "oben": [23, 12], "unten": [23, 13] }
+    "creme": {
+      "bogen": "wand",
+      "oben": [1, 6],
+      "unten": [1, 7]
+    },
+    "hellgrau": {
+      "bogen": "wand",
+      "oben": [1, 4],
+      "unten": [1, 5]
+    },
+    "rauten": {
+      "bogen": "wand",
+      "oben": [1, 0],
+      "unten": [1, 1]
+    },
+    "holz": {
+      "bogen": "wand",
+      "oben": [12, 0],
+      "unten": [12, 1]
+    },
+    "backstein": {
+      "bogen": "wand",
+      "oben": [1, 16],
+      "unten": [1, 17]
+    },
+    "rot": {
+      "bogen": "wand",
+      "oben": [23, 0],
+      "unten": [23, 1]
+    },
+    "blau": {
+      "bogen": "wand",
+      "oben": [23, 8],
+      "unten": [23, 9]
+    },
+    "gruen": {
+      "bogen": "wand",
+      "oben": [23, 12],
+      "unten": [23, 13]
+    }
   }
 }

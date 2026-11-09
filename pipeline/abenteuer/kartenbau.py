@@ -163,6 +163,10 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         objekt(a["name"], "ausloeser", a["feld"][0] * K, a["feld"][1] * K, eig=eig)
     for f in szene.get("figuren", []):
         objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K)
+    # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
+    for b in szene.get("belebung", []):
+        eig = [{"name": k, "type": "string", "value": v} for k, v in b.get("eigenschaften", {}).items()]
+        objekt(b["name"], b["typ"], b["feld"][0] * K, b["feld"][1] * K, eig=eig)
     for s in gesetzt:
         eig = [
             {"name": "tiefe", "type": "int", "value": s["tiefe"]},

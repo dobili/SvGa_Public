@@ -1254,6 +1254,66 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": false
+    },
+    "mfReihenhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Terraced_House_1_16x16.png",
+      "breite": 192,
+      "hoehe": 240,
+      "kollision": true
+    },
+    "mfNachbarhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Terraced_House_3_16x16.png",
+      "breite": 192,
+      "hoehe": 256,
+      "kollision": true
+    },
+    "mfSchule": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png",
+      "breite": 384,
+      "hoehe": 368,
+      "kollision": true
+    },
+    "mfAhorn": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_20.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "mfBaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "mfApfelbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_100.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true
+    },
+    "mfBushaltestelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_1.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true
+    },
+    "mfLaterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    },
+    "mfBank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "mfMuelltonne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Black_Closed_Trash_Can.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
     }
   }
 }

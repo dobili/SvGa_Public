@@ -2,10 +2,10 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen.json",
   "art": "aussen",
-  "beschreibung": "Desert Springs am Nachmittag, 56 × 40 Kacheln, Sand. Oben am Felsrand läuft die alte Bahnlinie; davor der Bahnsteig und der alte Bahnhof, ein gelbes Stadthaus mit Veranda-Tür, in dem das Antiquariat ist (Ersatz bis zum bestellten Bahnhofsbild). Links ein Wasserturm und das Diner (braunes Haus mit Schild „DINER“), rechts die Tankstelle mit Zapfsäulen; davor auf dem Gehweg Bucks alter Wagen. Die Old Mother Road kommt vom Westrand und biegt am Ostende nach Süden in den gepflasterten Hof. Südlich der Straße das Motel (zwei braune Flügel, Ersatz) und daneben Tomás’ Garage (Container mit Tür, Ersatz für die Garage mit Rolltor). Vom Ostrand kommt der Schotterpfad aus dem Canyon. Feigenkakteen, Felsen am Südrand, Laternen an der Straße.",
-  "wand": "fels",
-  "wandart": "sand",
-  "boden": "sand",
+  "beschreibung": "Desert Springs am Nachmittag, 56 × 40 Kacheln, roter Sand. Oben am Felsrand läuft die alte Bahnlinie; davor der Bahnsteig und der alte Bahnhof, ein gelbes Stadthaus mit Veranda-Tür, in dem das Antiquariat ist. Links ein Wasserturm und das Diner (braunes Haus mit Schild „DINER“), rechts die Tankstelle mit Zapfsäulen; davor auf dem Gehweg Bucks alter Wagen. Die Old Mother Road kommt vom Westrand und biegt am Ostende nach Süden in den gepflasterten Hof. Südlich der Straße das Motel (zwei braune Flügel, Ersatz) und daneben Tomás’ Garage (Container mit Tür, Ersatz für die Garage mit Rolltor). Vom Ostrand kommt der Schotterpfad aus dem Canyon. Feigenkakteen, Felsen am Südrand, Laternen an der Straße.",
+  "wand": "felsRot",
+  "wandart": "sandRot",
+  "boden": "sandRot",
   "boeden": {
     "k": "schotter",
     "p": "pflaster",
@@ -596,18 +596,23 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5StadthausGelb",
-      "feld": [21, 6],
+      "moebel": "ds6BahnhofAlt",
+      "feld": [20, 9],
       "id": "bahnhof"
     },
     {
-      "moebel": "iw5Reihenhaus",
-      "feld": [7, 8],
+      "moebel": "ds6SchildAntiquariat",
+      "feld": [22, 12],
+      "vorn": true
+    },
+    {
+      "moebel": "ds6Diner",
+      "feld": [7, 9],
       "id": "diner"
     },
     {
       "moebel": "mf4SchildDiner",
-      "feld": [8, 13],
+      "feld": [10, 9],
       "vorn": true
     },
     {
@@ -625,27 +630,26 @@
       "id": "bucksWagen"
     },
     {
-      "moebel": "iw5Reihenhaus",
-      "feld": [6, 21],
-      "id": "motelWest"
+      "moebel": "ds6Motel",
+      "feld": [4, 22],
+      "id": "motel"
     },
     {
-      "moebel": "iw5Reihenhaus",
-      "feld": [12, 21],
-      "id": "motelOst"
+      "moebel": "ds6SchildMotel",
+      "feld": [1, 22]
     },
     {
-      "moebel": "iw5Umkleide",
-      "feld": [20, 24],
+      "moebel": "ds6Garage",
+      "feld": [18, 23],
       "id": "garage"
     },
     {
       "moebel": "dsReifen",
-      "feld": [26, 28]
+      "feld": [24, 28]
     },
     {
       "moebel": "dsReifen",
-      "feld": [27, 28]
+      "feld": [25, 28]
     },
     {
       "moebel": "mf4Laterne",
@@ -676,39 +680,27 @@
       "feld": [33, 29]
     },
     {
-      "moebel": "dd6Kaktus",
-      "feld": [30, 10]
+      "moebel": "dd6Saguaro",
+      "feld": [30, 8]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [15, 10]
-    },
-    {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [48, 22]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [52, 26]
+      "moebel": "dd6Saguaro",
+      "feld": [52, 24]
     },
     {
-      "moebel": "dd6Kaktus",
-      "feld": [2, 25]
-    },
-    {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusBluehend",
       "feld": [28, 34]
     },
     {
-      "moebel": "dd6Kaktus",
-      "feld": [40, 35]
-    },
-    {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [50, 35]
     },
     {
-      "moebel": "dd6Kaktus",
+      "moebel": "dd6KaktusBluehend",
       "feld": [3, 34]
     },
     {

@@ -3,7 +3,7 @@
   "datei": "karten/varianten/desert-springs-aussen-b.json",
   "art": "aussen",
   "beschreibung": "Variante B, schlicht: Motel aus zwei Wohnwagen, Diner in einem großen Wohnwagen, grauer Bahnhof, kleinere Tankstelle weiter östlich, Hof aus Schotter, Wasserturm am Bahnsteig, kaum Kakteen.",
-  "wand": "fels",
+  "wand": "felsRot",
   "wandart": "sand",
   "boden": "sand",
   "boeden": {
@@ -326,18 +326,23 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5StadthausGrau",
-      "feld": [21, 6],
+      "moebel": "ds6BahnhofAlt",
+      "feld": [20, 9],
       "id": "bahnhof"
     },
     {
-      "moebel": "ds6WohnwagenMittel",
-      "feld": [4, 8],
+      "moebel": "ds6SchildAntiquariat",
+      "feld": [22, 12],
+      "vorn": true
+    },
+    {
+      "moebel": "ds6Diner",
+      "feld": [3, 9],
       "id": "diner"
     },
     {
       "moebel": "mf4SchildDiner",
-      "feld": [6, 13],
+      "feld": [6, 9],
       "vorn": true
     },
     {
@@ -355,27 +360,26 @@
       "id": "bucksWagen"
     },
     {
-      "moebel": "ds6Wohnwagen",
-      "feld": [5, 21],
-      "id": "motelWest"
+      "moebel": "ds6Motel",
+      "feld": [4, 22],
+      "id": "motel"
     },
     {
-      "moebel": "ds6Wohnwagen",
-      "feld": [11, 21],
-      "id": "motelOst"
+      "moebel": "ds6SchildMotel",
+      "feld": [1, 22]
     },
     {
-      "moebel": "iw5Umkleide",
-      "feld": [20, 24],
+      "moebel": "ds6Garage",
+      "feld": [18, 23],
       "id": "garage"
     },
     {
       "moebel": "dsReifen",
-      "feld": [26, 28]
+      "feld": [24, 28]
     },
     {
       "moebel": "dsReifen",
-      "feld": [27, 28]
+      "feld": [25, 28]
     },
     {
       "moebel": "mf4Laterne",
@@ -402,15 +406,11 @@
       "feld": [36, 29]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [48, 23]
     },
     {
-      "moebel": "dd6KaktusOhne",
-      "feld": [2, 26]
-    },
-    {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [40, 35]
     },
     {

@@ -75,6 +75,64 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "einfach"
+    },
+    "ds6Motel": {
+      "quelle": "spiel/eigene/motel.png",
+      "breite": 224,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "einfach"
+    },
+    "ds6SchildMotel": {
+      "quelle": "spiel/eigene/schild_motel.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "ds6Garage": {
+      "quelle": "spiel/eigene/garage_rolltor.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "industrie"
+    },
+    "ds6BahnhofAlt": {
+      "quelle": "spiel/eigene/bahnhof_alt_veranda.png",
+      "breite": 160,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "klassisch"
+    },
+    "ds6SchildAntiquariat": {
+      "quelle": "spiel/eigene/schild_antiquariat.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "ds6Diner": {
+      "quelle": "spiel/eigene/diner_wagen.png",
+      "breite": 160,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "modern"
     }
   }
 }

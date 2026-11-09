@@ -1,30 +1,26 @@
-# Auftrag mittel-1: Riverton und der Weg dorthin mit echten Möbeln
+# Auftrag mittel-1: Silicon Bay, Weg dorthin und Erinnerung London einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der vierundzwanzigste Auftrag, Riverton, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, fünfundzwanzigster Auftrag; Riverton ist zusammengeführt, danke)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 7339b420)
-**Darf ändern:** `inhalte/abenteuer/karten/riverton-*.json`, `inhalte/abenteuer/karten/weg-cedar-riverton-*.json`,
-`inhalte/abenteuer/moebel.json` (nur neue Einträge, Schlüssel mit Vorsilbe `rv`, etwa `rvBahnsteigbank`),
-`docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests -q`, in `app/` Prettier, `npm run build` mit
-verlinktem privaten Repository (`ln -s /home/user/schach-abenteuer-inhalte app/inhalte-privat/quelle`) und
-`CHROMIUM_PFAD=… PLAYWRIGHT_NUR_CHROMIUM=1 npx playwright test tests/e2e/abenteuer`
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 272c1a2e)
+**Darf ändern:** `inhalte/abenteuer/karten/silicon-bay-*.json`, `inhalte/abenteuer/karten/weg-ironwood-silicon-*.json`,
+`inhalte/abenteuer/karten/erinnerung-london-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge,
+Vorsilbe `sb` und `ld`), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag
 
 ## Ziel
 
-Wie niedrig-1 in Maple Falls (Regeln in `inhalte/abenteuer/README.md`, Abschnitt Tiled-Karten, Möbel):
-Riverton draußen (Kleinstadt am Fluss, Bahnhof), Pavillon (Schachtische im Freien), Bahnhofshalle
-(große Uhr, Bänke, Schalter, Zeitungsstand), Wohnwagen, Schuppen; dazu Zedernwald und Bahndamm.
-Grafik im Register `register/register.csv` des privaten Repositorys (bei dir vorhanden; nur lesen,
-nichts dorthin pushen), Themen etwa „subway and train station“, „city props“, „camping“, „garden“.
+Silicon Bay (die KI-Firma): draußen (moderne Stadt, Glas, Bäume in Kübeln), Lobby (Empfang, Sofas,
+Pflanzen; der Empfangsroboter steht dort), Akademie (Schulungsraum, Bildschirme), Serverraum
+(Serverschränke aus Modern Office); Raststätte und Glasbrücke. Erinnerung London (Ambroses Jugend, um
+1960, sepia getönt): Strand (Straße, Laternen, Häuser) und Kaffeehaus (Tische, Theke, Schachbretter).
+Für London passt Serene Village oder ältere Möbel; die Sepia-Tönung macht die Zeit.
 
-## Vorgaben
+Hinweis: Beim letzten Zusammenführen gab es einen Konflikt in `moebel.json`, weil niedrig-1 parallel
+arbeitete. Bitte neue Einträge am Ende anfügen und vor dem Push `claude/friendly-shannon-y8bf90` erneut
+hereinholen.
 
-1. Platzhalterkacheln Kiste, Lampe, Brett dort durch Boden ersetzen, wo jetzt ein Möbel steht.
-2. Gänge mindestens eine Kachel breit, jeder Auslöser und jede Figur erreichbar (Tests).
-3. Je Karte ein Bildschirmfoto prüfen, im Bericht ein Satz je Karte.
-
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Sieben Karten eingerichtet (Riverton draußen, Pavillon, Bahnhofshalle, Wohnwagen, Schuppen,
 Zedernwald, Bahndamm). 41 neue Möbel in `moebel.json`, alle mit Vorsilbe `rv`, alle mit

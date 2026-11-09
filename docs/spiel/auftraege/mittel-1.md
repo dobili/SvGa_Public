@@ -1,32 +1,32 @@
-# Auftrag mittel-1: Balancing mit der Gesamtsimulation
+# Auftrag mittel-1: Neue Waren für Akt 3 und 4
 
-**Stand:** fertig (Helfer mittel-1, 09.11.2026, einundzwanzigster Auftrag)
+**Stand:** offen (Haupt-Chat, 09.11.2026, zweiundzwanzigster Auftrag; der einundzwanzigste ist zusammengeführt, danke)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `pipeline/abenteuer/gesamtsimulation*.cjs`, `pipeline/tests/test_abenteuer_simulation.py`,
-`quests.json` (nur Belohnungen), `laeden.json` (nur Preise), `funde.json` (nur Belohnungen),
-`docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** `python -m pytest pipeline/tests`, mit `ABENTEUER_SIMULATION=1`, im Ordner `app/` `npm run pruefen`
+**Darf ändern:** `karten.json` (nur neue Karten), `laeden.json`, `texte/de.json` (nur neue Schlüssel),
+`docs/spiel/11_Karten_und_Gegenstaende.md` (neuer Abschnitt), Simulation, `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests` (auch mit `ABENTEUER_SIMULATION=1`), im Ordner `app/` `npm run pruefen`
 
 ## Ziel
 
-Der Autor wünscht viele Karten („je mehr, desto besser“) und Balancing danach. Die Simulation kennt
-jetzt den ganzen Weg; nutze sie für eine Auswertung der Wirtschaft.
+Deine Auswertung zeigt: Ab Riverton kann der sparsame Spieler jeden Laden leer kaufen und endet mit
+über 1100 Münzen. Der Autor wünscht viele Karten („je mehr, desto besser“). Fülle die Läden in Akt 3
+und 4 mit neuen, teureren Waren, sodass Münzen bis zum Schluss etwas wert sind.
 
 ## Vorgaben
 
-1. Erweitere die Simulation um eine Auswertung je Ort (Startwerte 1 bis 4, dazu ein „sparsamer“ und
-   ein „verschwenderischer“ Spieler): Münzen bei Ankunft und Abreise, was im Laden bezahlbar wäre,
-   welche Karten der Spieler besitzt, wie oft er Karten in Clubkämpfen braucht (Annahme: gegen den
-   Clubchef ohne Karte Sieg mit 40 %, mit leichter Karte 50 %, mit mittlerer 60 %, mit starker 75 %).
-2. Ziele (Regelwerk R21 ff.): Ein sparsamer Spieler soll jede Stadt mit mindestens Silber schaffen
-   können; Münzen sollen nie so knapp sein, dass ein Clubkampf ohne Kaufmöglichkeit hängt, aber auch
-   nicht so üppig, dass alle starken Karten früh gekauft sind. Starke Karten nicht vor Akt 2 bezahlbar.
-3. Passe Preise und Belohnungen in kleinen Schritten an, bis die Ziele erfüllt sind. Jede Änderung
-   mit Grund in einer Tabelle im Bericht (alt, neu, warum).
-4. Die Auswertung bleibt als Option im Skript (`--wirtschaft`), damit sie nach neuen Karten wieder läuft.
+1. 8 bis 12 neue Karten, **nur mit vorhandenen Wirkungsarten** (`kartenwirkungen.ts`, Schema
+   `abenteuer-karten`), etwa stärkere Stufen bekannter Karten (zwei Fingerzeige, drei Minuten Zeit,
+   Gefahrenradar für mehrere Züge, falls die Wirkung einen Wert hat) oder Kombinationen über mehrere
+   Karten. Keine neue Wirkung, die Code braucht; Ideen dafür als Liste im Bericht.
+2. Preise so, dass der sparsame Spieler am Ende etwa 100 bis 300 Münzen übrig hat und der
+   verschwenderische in Akt 4 nicht alles kaufen kann. Starke Karten erst ab Akt 3 im Laden.
+3. Jede Karte bekommt Name, Spruch (Flavor), Bild-Kennung nach dem Muster der vorhandenen und einen
+   Eintrag im neuen Abschnitt von `11_Karten_und_Gegenstaende.md` (Warum, Stufe, Laden, Preis).
+4. Die Wirtschaftsauswertung nach den Änderungen laufen lassen und die Tabelle (vorher, nachher) in den
+   Bericht schreiben; `test_wirtschaft_ziele` um das Ziel „Rest am Ende höchstens 400“ ergänzen.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 **Erledigt.**
 

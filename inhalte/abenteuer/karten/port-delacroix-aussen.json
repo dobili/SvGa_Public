@@ -13,11 +13,7 @@
   "nextlayerid": 5,
   "nextobjectid": 29,
   "properties": [
-    {
-      "name": "kennung",
-      "type": "string",
-      "value": "portDelacroix.aussen"
-    }
+    { "name": "kennung", "type": "string", "value": "portDelacroix.aussen" }
   ],
   "layers": [
     {
@@ -90,7 +86,7 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -176,11 +172,7 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "richtung",
-              "type": "string",
-              "value": "rechts"
-            }
+            { "name": "richtung", "type": "string", "value": "rechts" }
           ]
         },
         {
@@ -326,26 +318,14 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "12,9"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "17,9"
-            },
+            { "name": "von", "type": "string", "value": "12,9" },
+            { "name": "bis", "type": "string", "value": "17,9" },
             {
               "name": "tun",
               "type": "string",
               "value": "trägt Bretter zur Werkstatt"
             },
-            {
-              "name": "wann",
-              "type": "string",
-              "value": "tag"
-            }
+            { "name": "wann", "type": "string", "value": "tag" }
           ]
         },
         {
@@ -359,26 +339,14 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "22,16"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "29,16"
-            },
+            { "name": "von", "type": "string", "value": "22,16" },
+            { "name": "bis", "type": "string", "value": "29,16" },
             {
               "name": "tun",
               "type": "string",
               "value": "stapelt Sandsäcke am Kai"
             },
-            {
-              "name": "wann",
-              "type": "string",
-              "value": "tag"
-            }
+            { "name": "wann", "type": "string", "value": "tag" }
           ]
         },
         {
@@ -392,26 +360,14 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "6,13"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "8,13"
-            },
+            { "name": "von", "type": "string", "value": "6,13" },
+            { "name": "bis", "type": "string", "value": "8,13" },
             {
               "name": "tun",
               "type": "string",
               "value": "spielen Ball zwischen den Zelten"
             },
-            {
-              "name": "wann",
-              "type": "string",
-              "value": "tag"
-            }
+            { "name": "wann", "type": "string", "value": "tag" }
           ]
         },
         {
@@ -425,26 +381,14 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "2,16"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "2,16"
-            },
+            { "name": "von", "type": "string", "value": "2,16" },
+            { "name": "bis", "type": "string", "value": "2,16" },
             {
               "name": "tun",
               "type": "string",
               "value": "spielt Trompete auf einer Kiste"
             },
-            {
-              "name": "wann",
-              "type": "string",
-              "value": "abend"
-            }
+            { "name": "wann", "type": "string", "value": "abend" }
           ]
         },
         {
@@ -458,21 +402,9 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "3,18"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "10,18"
-            },
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "fliegen"
-            }
+            { "name": "von", "type": "string", "value": "3,18" },
+            { "name": "bis", "type": "string", "value": "10,18" },
+            { "name": "verhalten", "type": "string", "value": "fliegen" }
           ]
         },
         {
@@ -486,21 +418,9 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "20,18"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "28,18"
-            },
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "fliegen"
-            }
+            { "name": "von", "type": "string", "value": "20,18" },
+            { "name": "bis", "type": "string", "value": "28,18" },
+            { "name": "verhalten", "type": "string", "value": "fliegen" }
           ]
         },
         {
@@ -514,21 +434,9 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "20,12"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "20,12"
-            },
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "sitzen"
-            }
+            { "name": "von", "type": "string", "value": "20,12" },
+            { "name": "bis", "type": "string", "value": "20,12" },
+            { "name": "verhalten", "type": "string", "value": "sitzen" }
           ]
         },
         {
@@ -542,21 +450,9 @@
           "rotation": 0,
           "visible": true,
           "properties": [
-            {
-              "name": "von",
-              "type": "string",
-              "value": "17,17"
-            },
-            {
-              "name": "bis",
-              "type": "string",
-              "value": "17,17"
-            },
-            {
-              "name": "verhalten",
-              "type": "string",
-              "value": "sitzen"
-            }
+            { "name": "von", "type": "string", "value": "17,17" },
+            { "name": "bis", "type": "string", "value": "17,17" },
+            { "name": "verhalten", "type": "string", "value": "sitzen" }
           ]
         },
         {
@@ -644,53 +540,23 @@
       "tiles": [
         {
           "id": 1,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
+          "properties": [{ "name": "kollision", "type": "bool", "value": true }]
         },
         {
           "id": 2,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
+          "properties": [{ "name": "kollision", "type": "bool", "value": true }]
         },
         {
           "id": 6,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
+          "properties": [{ "name": "kollision", "type": "bool", "value": true }]
         },
         {
           "id": 7,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
+          "properties": [{ "name": "kollision", "type": "bool", "value": true }]
         },
         {
           "id": 4,
-          "properties": [
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
+          "properties": [{ "name": "kollision", "type": "bool", "value": true }]
         }
       ]
     }

@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 20,
+  "nextobjectid": 25,
   "layers": [
     {
       "id": 1,
@@ -117,7 +117,7 @@
           "name": "zettelTurm",
           "type": "ausloeser",
           "x": 160,
-          "y": 48,
+          "y": 64,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -150,7 +150,7 @@
           "name": "automat",
           "type": "ausloeser",
           "x": 176,
-          "y": 64,
+          "y": 80,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -161,7 +161,7 @@
           "name": "boateng",
           "type": "figur",
           "x": 96,
-          "y": 112,
+          "y": 128,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -202,7 +202,7 @@
         },
         {
           "id": 9,
-          "name": "waschmaschine",
+          "name": "cc4Waschmaschine",
           "type": "moebel",
           "x": 16,
           "y": 32,
@@ -225,7 +225,7 @@
         },
         {
           "id": 10,
-          "name": "waschmaschine",
+          "name": "cc4Waschmaschine",
           "type": "moebel",
           "x": 48,
           "y": 32,
@@ -248,7 +248,7 @@
         },
         {
           "id": 11,
-          "name": "waschmaschine",
+          "name": "cc4Waschmaschine",
           "type": "moebel",
           "x": 80,
           "y": 32,
@@ -271,7 +271,7 @@
         },
         {
           "id": 12,
-          "name": "waschmaschine",
+          "name": "cc4Waschmaschine",
           "type": "moebel",
           "x": 112,
           "y": 32,
@@ -294,7 +294,7 @@
         },
         {
           "id": 13,
-          "name": "waschmaschineHoch",
+          "name": "cc4Trockner",
           "type": "moebel",
           "x": 144,
           "y": 32,
@@ -317,9 +317,32 @@
         },
         {
           "id": 14,
-          "name": "ccPinnwand",
+          "name": "cc4Trockner",
           "type": "moebel",
           "x": 160,
+          "y": 32,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "cc4Pinnwand",
+          "type": "moebel",
+          "x": 144,
           "y": 16,
           "width": 32,
           "height": 16,
@@ -339,11 +362,11 @@
           ]
         },
         {
-          "id": 15,
-          "name": "rvGetraenkeautomat",
+          "id": 16,
+          "name": "cc4Waschmittelregal",
           "type": "moebel",
           "x": 176,
-          "y": 32,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
@@ -352,30 +375,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 16,
-          "name": "wzArbeitsplatte",
-          "type": "moebel",
-          "x": 80,
-          "y": 64,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 88
+              "value": 56
             },
             {
               "name": "kollision",
@@ -386,19 +386,19 @@
         },
         {
           "id": 17,
-          "name": "wzArbeitsplatte",
+          "name": "cc4AutomatLinks",
           "type": "moebel",
-          "x": 112,
+          "x": 192,
           "y": 64,
-          "width": 32,
-          "height": 32,
+          "width": 16,
+          "height": 64,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 88
+              "value": 120
             },
             {
               "name": "kollision",
@@ -409,7 +409,76 @@
         },
         {
           "id": 18,
-          "name": "rvWartebank",
+          "name": "cc4Falttisch",
+          "type": "moebel",
+          "x": 64,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "name": "cc4Falttisch",
+          "type": "moebel",
+          "x": 96,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "cc4Waeschekorb",
+          "type": "moebel",
+          "x": 128,
+          "y": 80,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "cc4Wartesitze",
           "type": "moebel",
           "x": 16,
           "y": 112,
@@ -431,8 +500,54 @@
           ]
         },
         {
-          "id": 19,
-          "name": "wzPflanze",
+          "id": 22,
+          "name": "cc4WaeschekorbGruen",
+          "type": "moebel",
+          "x": 64,
+          "y": 128,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "cc4Pflanze",
+          "type": "moebel",
+          "x": 16,
+          "y": 64,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "cc4Pflanze",
           "type": "moebel",
           "x": 192,
           "y": 128,

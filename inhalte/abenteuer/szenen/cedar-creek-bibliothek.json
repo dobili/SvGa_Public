@@ -2,198 +2,247 @@
   "karte": "cedarCreek.bibliothek",
   "datei": "karten/cedar-creek-bibliothek.json",
   "art": "innen",
-  "beschreibung": "Die Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag. Ein hoher, ruhiger Raum mit dunklen Holzdielen und hellgrauen Wänden; durch das Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier und Holz.\n\nAn der Nordwand stehen vier hohe Bücherregale, ganz links das Regal mit Glastür, in dem die Zeitungen und Magazine liegen. In der Mitte das Fenster, daneben die Pinnwand mit dem Schild „Bitte flüstern“, rechts die schmale Tür zur Kellertreppe hinunter ins Archiv.\n\nLinks im Raum zwei runde Lesetische, auf jedem ein Schachbrett mit aufgebauten Figuren, an jedem Tisch zwei Stühle, die einander gegenüberstehen: Hier trifft sich der Schachclub von Mrs. Okafor. Dex steht über dem linken Brett, Mae wartet am rechten Tisch.\n\nRechts der grüne Schreibtisch der Bibliothekarin mit aufgeschlagenem Buch und Lampe, dahinter Mrs. Okafor. Darunter ein dritter runder Tisch zum Lesen mit Leselampe und zwei Stühlen, daneben eine Stehlampe. Der alte Globus steht auf einer niedrigen Kommode in der rechten Ecke, Pflanzen stehen in den Ecken neben der Tür. Eine Leserin trägt einen Bücherstapel durch den Gang.\n\nLaufwege: von der Tür unten gerade nach oben, links zwischen den Schachtischen hindurch zum Zeitungsregal, rechts am Schreibtisch vorbei zur Kellertür und zum Globus.",
+  "beschreibung": "Der Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch zwei Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, unterbrochen von den Fenstern; in der Mitte hängt die Pinnwand mit dem Schild „Bitte flüstern“, rechts das niedrige Zeitungsregal und ganz rechts die schmale Tür zur Kellertreppe hinunter ins Archiv.\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem zwei Bretter mit aufgebauten Figuren, oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts eine Reihe freistehender Bücherregale, davor zwei Lesetische mit Leselampen und Stühlen, daneben eine Stehlampe.\n\nVorn links vom Eingang der Ausleihtresen mit der alten Kasse, in der Südostecke der alte Globus, Pflanzen in den Ecken. Eine Leserin trägt Bücher durch den Saal.\n\nLaufwege: von der Tür unten gerade nach oben in die Mitte, links um den Schachtisch, rechts an den Lesetischen vorbei zum Zeitungsregal und zur Kellertür.",
   "wand": "hellgrau",
   "boden": "holzDunkel",
   "raster": [
-    "##################",
-    "##################",
-    "##################",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#########.########"
+    "######################",
+    "######################",
+    "######################",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "###########.##########"
   ],
   "objekte": [
     {
-      "moebel": "ccRegalB",
+      "moebel": "cc4RegalA",
       "feld": [1, 1]
     },
     {
-      "moebel": "ccRegalC",
+      "moebel": "cc4RegalB",
       "feld": [3, 1]
     },
     {
-      "moebel": "ccRegalB",
-      "feld": [5, 1]
-    },
-    {
-      "moebel": "wzFenster",
-      "feld": [8, 1],
+      "moebel": "cc4Fenster",
+      "feld": [5, 1],
       "an_wand": true
     },
     {
-      "moebel": "ccPinnwand",
-      "feld": [10, 1],
-      "an_wand": true,
-      "versatz": [8, 8]
+      "moebel": "cc4RegalC",
+      "feld": [7, 1]
     },
     {
-      "moebel": "ccRegalA",
-      "feld": [12, 1]
+      "moebel": "cc4RegalD",
+      "feld": [9, 1]
     },
     {
-      "moebel": "wzTuer",
-      "feld": [15, 1],
+      "moebel": "cc4PinnwandK",
+      "feld": [11, 1],
       "an_wand": true
     },
     {
-      "moebel": "mf3StuhlOrangeRechts",
-      "feld": [2, 7],
-      "zu": "tisch1"
+      "moebel": "cc4Fenster",
+      "feld": [13, 1],
+      "an_wand": true
     },
     {
-      "moebel": "wzEsstisch",
-      "feld": [3, 7],
-      "id": "tisch1"
+      "moebel": "cc4Zeitungsregal",
+      "feld": [15, 1]
     },
     {
-      "moebel": "mf3StuhlOrangeLinks",
+      "moebel": "cc4RegalA",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "cc4Kellertuer",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Lesetisch",
       "feld": [5, 7],
-      "zu": "tisch1"
+      "id": "schach1"
     },
     {
-      "moebel": "ccSchachbrettKlein",
-      "auf": "tisch1"
+      "moebel": "cc4Lesetisch",
+      "feld": [7, 7],
+      "id": "schach2"
     },
     {
-      "moebel": "mf3StuhlOrangeRechts",
-      "feld": [6, 10],
-      "zu": "tisch2"
+      "moebel": "cc4Brett",
+      "auf": "schach1"
     },
     {
-      "moebel": "wzEsstisch",
-      "feld": [7, 10],
-      "id": "tisch2"
+      "moebel": "cc4Brett",
+      "auf": "schach2"
     },
     {
-      "moebel": "mf3StuhlOrangeLinks",
-      "feld": [9, 10],
-      "zu": "tisch2"
+      "moebel": "cc4StuhlVorn",
+      "feld": [5, 6],
+      "zu": "schach1"
     },
     {
-      "moebel": "ccSchachbrettKlein",
-      "auf": "tisch2"
+      "moebel": "cc4StuhlRuecken",
+      "feld": [5, 8],
+      "zu": "schach1"
     },
     {
-      "moebel": "cc3Schreibtisch",
-      "feld": [12, 5],
-      "id": "schreibtisch"
+      "moebel": "cc4StuhlVorn",
+      "feld": [6, 6],
+      "zu": "schach1"
     },
     {
-      "moebel": "mf3StuhlOrangeRechts",
-      "feld": [11, 9],
-      "zu": "lesetisch"
+      "moebel": "cc4StuhlRuecken",
+      "feld": [6, 8],
+      "zu": "schach1"
     },
     {
-      "moebel": "wzEsstisch",
-      "feld": [12, 9],
-      "id": "lesetisch"
+      "moebel": "cc4StuhlVorn",
+      "feld": [7, 6],
+      "zu": "schach2"
     },
     {
-      "moebel": "mf3StuhlOrangeLinks",
-      "feld": [14, 9],
-      "zu": "lesetisch"
+      "moebel": "cc4StuhlRuecken",
+      "feld": [7, 8],
+      "zu": "schach2"
     },
     {
-      "moebel": "ccLeselampe",
-      "auf": "lesetisch"
+      "moebel": "cc4StuhlVorn",
+      "feld": [8, 6],
+      "zu": "schach2"
     },
     {
-      "moebel": "ccStehlampe",
-      "feld": [16, 8]
+      "moebel": "cc4StuhlRuecken",
+      "feld": [8, 8],
+      "zu": "schach2"
     },
     {
-      "moebel": "wzArbeitsplatte",
-      "feld": [15, 10],
-      "id": "beistell"
+      "moebel": "cc4RegalB",
+      "feld": [13, 4]
     },
     {
-      "moebel": "ccGlobus",
-      "auf": "beistell"
+      "moebel": "cc4RegalC",
+      "feld": [15, 4]
     },
     {
-      "moebel": "wzPflanze",
-      "feld": [1, 11]
+      "moebel": "cc4RegalD",
+      "feld": [17, 4]
     },
     {
-      "moebel": "wzPflanze",
-      "feld": [10, 11]
+      "moebel": "cc4Lesetisch",
+      "feld": [13, 10],
+      "id": "lese1"
+    },
+    {
+      "moebel": "cc4Lesetisch",
+      "feld": [16, 10],
+      "id": "lese2"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese1"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [13, 9],
+      "zu": "lese1"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [16, 9],
+      "zu": "lese2"
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "cc4Globus",
+      "feld": [19, 12]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [20, 4]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [9, 12],
+      "feld": [11, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [9, 13]
+      "feld": [11, 15]
     },
     {
       "name": "kellertreppe",
-      "feld": [15, 3]
+      "feld": [19, 3]
     },
     {
       "name": "schildFluestern",
-      "feld": [10, 3]
+      "feld": [11, 3]
     },
     {
       "name": "zeitungsregal",
-      "feld": [1, 3],
-      "auf_moebel": true
+      "feld": [16, 4]
     },
     {
       "name": "globus",
-      "feld": [15, 11],
-      "auf_moebel": true
+      "feld": [18, 12]
     }
   ],
   "figuren": [
     {
       "name": "okafor",
-      "feld": [14, 4]
+      "feld": [9, 7]
     },
     {
       "name": "dex",
-      "feld": [4, 6]
+      "feld": [4, 7]
     },
     {
       "name": "mae",
-      "feld": [8, 9]
+      "feld": [6, 11]
     }
   ],
   "belebung": [
     {
       "name": "leserin",
       "typ": "statist",
-      "feld": [2, 12],
+      "feld": [3, 13],
       "eigenschaften": {
-        "von": "2,12",
-        "bis": "5,12",
+        "von": "3,13",
+        "bis": "9,13",
         "tun": "trägt einen Bücherstapel",
         "wann": "tag"
       }
     }
-  ]
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch"]
 }

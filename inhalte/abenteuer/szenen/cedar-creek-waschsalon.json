@@ -2,7 +2,7 @@
   "karte": "cedarCreek.waschsalon",
   "datei": "karten/cedar-creek-waschsalon.json",
   "art": "innen",
-  "beschreibung": "Der Waschsalon von Cedar Creek am Vormittag: ein heller Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand reihen sich vier Waschmaschinen und daneben der hohe Trockner, alle mit der Tür zum Raum; auf dem Trockner klebt ein kleines Steckschachbrett, an dem Mr. Boateng zwischen zwei Ladungen spielt. Rechts daneben die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“, und in der Ecke der bunte Getränkeautomat.\n\nIn der Mitte die lange Arbeitsplatte zum Zusammenlegen, an der Mr. Boateng Wäsche faltet. Links vorn die Wartesitze mit Blick in den Raum, auf denen jemand ein Comicheft liegen gelassen hat, und eine Pflanze in der Ecke rechts. Eine Kundin geht wartend auf und ab.\n\nLaufwege: von der Tür unten nach oben zur Arbeitsplatte, links zu den Sitzen, rechts zum Automaten und zur Pinnwand.",
+  "beschreibung": "Der Waschsalon von Mr. Boateng in Cedar Creek am Vormittag: ein heller, sauberer Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand stehen vier gleiche Waschmaschinen lückenlos in einer Reihe, daneben zwei schmale Trockner derselben Bauart; auf dem linken Trockner klebt Mr. Boatengs Steckschachbrett mit der Stellung der Woche. Über den Trocknern hängt die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“. In der Nordostecke steht das Regal mit Waschmittel, Gläsern und einem Korb, an der Ostwand der Getränkeautomat, dessen Leuchtfläche in den Raum zeigt.\n\nIn der Mitte zwei Arbeitstische aus Edelstahl zum Zusammenlegen der Wäsche, daneben ein voller Wäschekorb; hier faltet Mr. Boateng. Links vorn eine Reihe orangefarbener Wartesitze mit Blick in den Raum, auf denen jemand ein Comicheft liegen gelassen hat, davor ein zweiter Korb. Pflanzen am Westfenster und in der Südostecke. Eine Kundin wartet auf ihre Wäsche.\n\nLaufwege: von der Tür unten gerade nach oben zu den Tischen, links zu den Sitzen, rechts am Automaten vorbei zur Pinnwand und zu den Trocknern.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "raster": [
@@ -20,49 +20,71 @@
   ],
   "objekte": [
     {
-      "moebel": "waschmaschine",
+      "moebel": "cc4Waschmaschine",
       "feld": [1, 2]
     },
     {
-      "moebel": "waschmaschine",
+      "moebel": "cc4Waschmaschine",
       "feld": [3, 2]
     },
     {
-      "moebel": "waschmaschine",
+      "moebel": "cc4Waschmaschine",
       "feld": [5, 2]
     },
     {
-      "moebel": "waschmaschine",
+      "moebel": "cc4Waschmaschine",
       "feld": [7, 2]
     },
     {
-      "moebel": "waschmaschineHoch",
+      "moebel": "cc4Trockner",
       "feld": [9, 2]
     },
     {
-      "moebel": "ccPinnwand",
-      "feld": [10, 1],
+      "moebel": "cc4Trockner",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "cc4Pinnwand",
+      "feld": [9, 1],
       "an_wand": true
     },
     {
-      "moebel": "rvGetraenkeautomat",
-      "feld": [11, 2]
+      "moebel": "cc4Waschmittelregal",
+      "feld": [11, 1]
     },
     {
-      "moebel": "wzArbeitsplatte",
-      "feld": [5, 4],
+      "moebel": "cc4AutomatLinks",
+      "feld": [12, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Falttisch",
+      "feld": [4, 5],
       "id": "platte"
     },
     {
-      "moebel": "wzArbeitsplatte",
-      "feld": [7, 4]
+      "moebel": "cc4Falttisch",
+      "feld": [6, 5]
     },
     {
-      "moebel": "rvWartebank",
-      "feld": [1, 7]
+      "moebel": "cc4Waeschekorb",
+      "feld": [8, 5]
     },
     {
-      "moebel": "wzPflanze",
+      "moebel": "cc4Wartesitze",
+      "feld": [1, 7],
+      "id": "sitze"
+    },
+    {
+      "moebel": "cc4WaeschekorbGruen",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "cc4Pflanze",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc4Pflanze",
       "feld": [12, 8]
     }
   ],
@@ -80,7 +102,7 @@
     },
     {
       "name": "zettelTurm",
-      "feld": [10, 3]
+      "feld": [10, 4]
     },
     {
       "name": "trockner",
@@ -94,14 +116,13 @@
     },
     {
       "name": "automat",
-      "feld": [11, 4],
-      "auf_moebel": true
+      "feld": [11, 5]
     }
   ],
   "figuren": [
     {
       "name": "boateng",
-      "feld": [6, 7]
+      "feld": [6, 8]
     }
   ],
   "belebung": [
@@ -116,5 +137,7 @@
         "wann": "tag"
       }
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "einfach"]
 }

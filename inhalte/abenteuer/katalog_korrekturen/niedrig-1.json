@@ -1,0 +1,91 @@
+{
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Scarecrow_16x16.png": {
+    "beschreibung": "Vogelscheuche mit braunem Hut, Flickenjacke und ausgebreiteten Armen auf einem Holzpfahl, von vorn gesehen, 3×3 Kacheln.",
+    "art": "deko",
+    "raumfunktion": ["aussen_feld"],
+    "orte": ["bauernhof", "land"],
+    "innen_aussen": "aussen",
+    "zustand": "gebraucht",
+    "material": ["holz", "stoff"],
+    "stil": ["laendlich"],
+    "epoche": "zeitlos",
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "beziehungen": ["steht im Feld"],
+    "einzigartig": false,
+    "anzahl": "einzeln",
+    "sicher": 0.9,
+    "korrektur": "niedrig-1",
+    "nur_pfad": true
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Fresh_Pile_16x16.png": {
+    "beschreibung": "Kleiner Haufen frisches, goldgelbes Heu, flach am Boden, 2×1 Kacheln.",
+    "art": "deko",
+    "raumfunktion": ["aussen_feld"],
+    "orte": ["bauernhof", "land"],
+    "innen_aussen": "aussen",
+    "zustand": "neu",
+    "material": ["pflanze"],
+    "stil": ["laendlich"],
+    "epoche": "zeitlos",
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "anzahl": "gruppe",
+    "sicher": 0.9,
+    "korrektur": "niedrig-1",
+    "nur_pfad": true
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Left_Side_16x16.png": {
+    "beschreibung": "Blauer Traktor mit grauem Kabinendach und großen schwarzen Hinterrädern, von der Seite, Front nach links; ganzes Fahrzeug, 5×4 Kacheln.",
+    "art": "fahrzeug",
+    "raumfunktion": ["aussen_feld"],
+    "orte": ["bauernhof", "land"],
+    "innen_aussen": "aussen",
+    "zustand": "gebraucht",
+    "material": ["metall"],
+    "stil": ["laendlich"],
+    "epoche": "gegenwart",
+    "blick": "links",
+    "befestigung": "boden",
+    "ganz": true,
+    "einzigartig": true,
+    "anzahl": "einzeln",
+    "sicher": 0.9,
+    "korrektur": "niedrig-1",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png": {
+    "beschreibung": "Hölzerne Aushangtafel mit kleinem Satteldach auf zwei Pfosten, leere Bretterfläche von vorn, am Fuß etwas Gras; 2×2 Kacheln. Taugt als Rätseltafel oder Gemeindetafel.",
+    "art": "schild",
+    "raumfunktion": ["aussen_park", "aussen_strasse", "aussen_feld"],
+    "orte": ["land", "kleinstadt", "park", "wald"],
+    "innen_aussen": "aussen",
+    "zustand": "gebraucht",
+    "material": ["holz"],
+    "stil": ["laendlich"],
+    "epoche": "zeitlos",
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "niedrig-1",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_15.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
+  }
+}

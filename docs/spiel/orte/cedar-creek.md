@@ -307,4 +307,177 @@ Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
 
 ## 4. Bühnenbilder
 
+Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in
+`inhalte/abenteuer/moebel.json` mit der Vorsilbe `cc4`, die Szenen in `inhalte/abenteuer/szenen/`.
+Feld = linke obere Kachel (Spalte, Reihe). Bilder ohne sichere Katalogbeschreibung habe ich selbst
+angesehen und in `inhalte/abenteuer/katalog_korrekturen/mittel-2.json` beschrieben.
+
+### 4.1 Waschsalon (`cedarCreek.waschsalon`)
+
+**Größe:** 14 × 11 (öffentlicher Raum nach 7a.2). Nordwand Reihen 0–2 (Krone, zwei Reihen Wandfläche
+hellgrau), Boden ab Reihe 3 weiße Fliesen, Südwand Reihe 10 mit der Eingangstür bei Spalte 7 (50 %,
+wie außen Spalte 4 von 7). Ein Fenster neben der Tür in der Südwand (Ortsprofil) zeigt die Ansicht
+nicht; das Licht kommt wie in allen Räumen von Norden.
+
+**Stimmung:** Vormittag, Maschinen brummen gleichmäßig, Waschpulver und warme Wäsche.
+
+**Laufwege:** Tür (7, 10) → gerade nach oben zu den Arbeitstischen; links zu den Wartesitzen; rechts am
+Automaten vorbei zur Pinnwand und zu den Trocknern. Reihe 4 bleibt frei vor allen Maschinen.
+
+| Zone      | Gegenstand                                  | Feld                           | Ausrichtung            | Material, Stil, Zustand    | Zweck                                                      |
+| --------- | ------------------------------------------- | ------------------------------ | ---------------------- | -------------------------- | ---------------------------------------------------------- |
+| Nordwand  | vier Waschmaschinen (eine Serie, lückenlos) | (1, 2), (3, 2), (5, 2), (7, 2) | Vorderseite unten      | weiß, modern, gebraucht    | Waschen                                                    |
+| Nordwand  | zwei schmale Trockner (dieselbe Bauart)     | (9, 2), (10, 2)                | Vorderseite unten      | weiß, modern, gebraucht    | Trocknen; auf dem linken das Steckschachbrett (`trockner`) |
+| Nordwand  | Pinnwand mit Zetteln                        | Wandfläche (9, 1)              | –                      | Kork, einfach              | Zettel „Verloren: ein Turm“ (`zettelTurm` davor, (10, 4))  |
+| Ecke NO   | Regal mit Waschmittel, Gläsern und Korb     | (11, 1)                        | Vorderseite unten      | weiß und Glas, gebraucht   | Waschmittelregal                                           |
+| Ostwand   | Getränkeautomat, Leuchtfläche nach links    | (12, 4)                        | zeigt in den Raum      | Metall, modern             | `automat` davor (11, 5)                                    |
+| Mitte     | zwei Arbeitstische aus Edelstahl            | (4, 5), (6, 5)                 | –                      | Edelstahl, modern          | Falttisch; Mr. Boateng davor (6, 8)                        |
+| Mitte     | voller Wäschekorb                           | (8, 5)                         | –                      | Korbgeflecht               | Spuren von Leben                                           |
+| Westseite | drei Wartesitze in Reihe                    | (1, 7)                         | Sitzflächen nach unten | oranger Kunststoff, modern | Warten; Comicheft darauf (`comicheft`, (2, 8))             |
+| Westseite | zweiter Wäschekorb                          | (4, 8)                         | –                      | Korbgeflecht               | Leben                                                      |
+| Ecken     | Zimmerpflanzen                              | (1, 4), (12, 8)                | –                      | Pflanze, Keramik           | Regel 4.4                                                  |
+| Eingang   | Start                                       | (7, 9)                         | Blick nach oben        | –                          | Ankunft                                                    |
+
+Belebung: eine Kundin geht zwischen (9, 8) und (11, 8) auf und ab. Offen: Ein eigenes Trocknerbild gibt
+es im Katalog nicht; die Trockner sind schmale Frontlader derselben Serie.
+
+### 4.2 Archiv (`cedarCreek.archiv`)
+
+**Größe:** 14 × 11. Nordwand Reihen 0–2 Backstein, Boden ab Reihe 3 Stein, Seiten- und Südwand eine
+Reihe, keine Tür: Der einzige Ausgang ist die Treppe nach oben. Kühl, still, lange nicht benutzt.
+
+**Laufwege:** Treppe (11, 3) → Start (11, 5), Antritt frei → nach links zwischen Regalen und Kartonreihen zum
+offenen Karton (4, 7), nach rechts zum Lesetisch, nach vorn zum Wasserfleck (8, 9).
+
+| Zone     | Gegenstand                                         | Feld                            | Ausrichtung       | Material, Stil, Zustand  | Zweck                                                                               |
+| -------- | -------------------------------------------------- | ------------------------------- | ----------------- | ------------------------ | ----------------------------------------------------------------------------------- |
+| Nordwand | steile Holztreppe nach oben                        | (10, 1), 3 × 4                  | führt nach oben   | Holz dunkel, klassisch   | `kellerAusgang` (11, 3); unter der Kellertür der Bibliothek (Spalte 19 − 8)         |
+| Nordwand | vier hohe Regale mit Zeitungsjahrgängen und Mappen | (1, 1), (3, 1), (6, 1), (8, 1)  | Vorderseite unten | Holz, klassisch, alt     | Archiv; das Regal bei (8, 1) ist das dunkle Regal für die Laterne (R3, Platzhalter) |
+| Nordwand | Boxerfoto im Goldrahmen                            | Wandfläche (5, 1)               | –                 | alt                      | `boxerfoto` (5, 3)                                                                  |
+| Mitte    | Archivkartons in zwei Reihen                       | Reihe 5: 2, 4, 6; Reihe 7: 2, 6 | –                 | Pappe, gebraucht         | Archiv                                                                              |
+| Mitte    | offener Karton „1850–1859“                         | (4, 7)                          | –                 | Pappe                    | `karton1858`                                                                        |
+| Westwand | Stapel höherer Kartons                             | (1, 4), (1, 6)                  | –                 | Pappe                    | geordnete Stapel an der Wand                                                        |
+| Ecke SO  | Lesetisch mit aufgeschlagenem Buch, Stuhl dahinter | Tisch (9, 7), Stuhl (9, 5)      | Stuhl zum Tisch   | Holz und Grün, klassisch | `programmheft` auf dem Tisch (10, 7)                                                |
+| Ecke SO  | Stehlampe neben dem Tisch                          | (11, 6)                         | –                 | Holz, Stoffschirm        | Licht (Regel 4.4)                                                                   |
+| Boden    | Wasserfleck in Form eines Springers                | (8, 9)                          | –                 | –                        | `wasserfleck`                                                                       |
+
+Offen: Aktenschränke und Regale mit Archivkartons gibt es im Katalog nicht; die Regale zeigen
+gebundene Bände und Mappen.
+
+### 4.3 Drechslerei (`cedarCreek.drechslerei`, neu)
+
+**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 8
+(50 %, außen Spalte 6 von 8 ±1). Es riecht nach Zedernholz; Licht von Norden.
+
+**Laufwege:** Tür (8, 10) → Start (8, 9) → nach oben in die Mitte; links zur Hobelbank und zu
+Mr. Dunmore (3, 6), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
+
+| Zone     | Gegenstand                                                 | Feld             | Ausrichtung       | Material, Stil, Zustand        | Zweck                                                                                                |
+| -------- | ---------------------------------------------------------- | ---------------- | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Nordwand | große Hobelbank mit Ablage und Bank (statt einer Drehbank) | (1, 1), 5 × 4    | Vorderseite unten | Holz hell, rustikal, gebraucht | Arbeitsplatz; darauf Bügelsäge, Späne und das gerahmte Foto (`drehbank`, `fotoSaegemuehle`, Runde 5) |
+| Nordwand | Holzregal mit Büchern und Schalen                          | (7, 1)           | Vorderseite unten | Holz, gebraucht                | `figurenregal` (Runde 5)                                                                             |
+| Nordwand | Werktisch mit Farbdosen, Pinseln, Rahmen                   | (10, 1), 3 × 3   | Vorderseite unten | Holz, rustikal                 | Bemalen der Figuren                                                                                  |
+| Ecke NO  | Holzkiste mit Reststücken                                  | (13, 1)          | –                 | Holz und Metall                | Lager                                                                                                |
+| Ostwand  | Stapel Rundholz, leere Holzkiste                           | (13, 4), (13, 7) | –                 | Holz                           | Lager                                                                                                |
+| Ecke SW  | großer und kleiner Stapel Rundhölzer aus den Zedern        | (1, 8), (3, 8)   | –                 | Holz                           | Holzlager; Platzhalter für das Holz vom Zedernpfad (13 §7.4)                                         |
+| Mitte    | zwei Holzhocker                                            | (6, 4), (11, 5)  | –                 | Holz                           | an Hobelbank und Werktisch                                                                           |
+
+Offen: Der Katalog hat keine Drechselbank und kein Regal mit Holzfiguren; die Hobelbank vertritt die
+Drehbank, das Regal zeigt Bücher und Schalen. Die Einträge in `orte.json` (Karte, `drechslereiTuer`,
+`drechslereiAusgang`, Figur `dunmore`) kommen mit der Außenkarte.
+
+### 4.4 Bibliothek, Lesesaal (`cedarCreek.bibliothek`)
+
+**Größe:** 22 × 16 (großer Saal nach 7a.2; vorher 18 × 14). Nordwand Reihen 0–2 hellgrau, Boden dunkle
+Dielen, Südwand Reihe 15 mit der Doppeltür bei Spalte 11 (50 %, außen Spalte 25 der Hauptstraße im
+Turm). Zwei Fenster in der Nordwand.
+
+**Laufwege:** Tür (11, 15) → Start (11, 14) → gerade nach oben; links um den Schachtisch; rechts an
+Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
+
+| Zone         | Gegenstand                                                            | Feld                                                              | Ausrichtung       | Material, Stil, Zustand             | Zweck                                                        |
+| ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------- | ----------------------------------- | ------------------------------------------------------------ |
+| Nordwand     | hohe Bücherregale einer Serie                                         | (1, 1), (3, 1), (7, 1), (9, 1), (17, 1)                           | Vorderseite unten | Holz rotbraun, klassisch, gebraucht | Bibliothek                                                   |
+| Nordwand     | zwei Fenster mit dunklem Holzrahmen                                   | Wandfläche (5, 1), (13, 1)                                        | –                 | Holz, Glas                          | Licht                                                        |
+| Nordwand     | Pinnwand mit Schild „Bitte flüstern“                                  | Wandfläche (11, 1)                                                | –                 | Kork, klassisch                     | `schildFluestern` (11, 3)                                    |
+| Nordwand     | niedriges Zeitungsregal                                               | (15, 1)                                                           | Vorderseite unten | Holz                                | `zeitungsregal` (16, 4)                                      |
+| Nordwand     | Tür zur Kellertreppe                                                  | Wandfläche (19, 1)                                                | –                 | Holz                                | `kellertreppe` (19, 3); darunter liegt die Archivtreppe      |
+| Mitte links  | Schachtisch aus zwei grünen Lesetischen mit vier Brettern             | (5, 7), (7, 7)                                                    | –                 | Holz und Grün, klassisch            | Bibliotheksclub; Dex (4, 7), Mrs. Okafor (9, 7), Mae (6, 11) |
+| Mitte links  | je vier gleiche Stühle oben (Blick nach unten) und unten (von hinten) | Reihe 6 und 8, Spalten 5–8                                        | zum Tisch         | Holz und Grün                       | Spieler                                                      |
+| Mitte rechts | freistehende Regalreihe                                               | (13, 4), (15, 4), (17, 4)                                         | Vorderseite unten | Holz                                | Bücherreihe im Saal                                          |
+| unten rechts | zwei Lesetische mit Leselampe, je ein Stuhl, Stehlampe                | Tische (13, 10), (16, 10); Stühle (13, 9), (16, 9); Lampe (18, 9) | Stühle zum Tisch  | Holz, Stoffschirm                   | Lesen                                                        |
+| Eingang      | Ausleihtresen mit alter Kasse                                         | (8, 11)                                                           | Vorderseite unten | Holz, klassisch                     | Platz für Miss Ashby (Runde 5)                               |
+| Ecke SO      | Globus                                                                | (19, 12)                                                          | –                 | Metall, klassisch, einmal je Ort    | `globus` (18, 12)                                            |
+| Ecken        | Pflanzen                                                              | (1, 12), (20, 4)                                                  | –                 | Pflanze                             | Regel 4.4                                                    |
+
+Belebung: eine Leserin geht zwischen (3, 13) und (9, 13). Platzhalter (13 §7.4): Für die Kopie von
+Hales Seite (Post-Game) ist die Wandfläche rechts der Kellertür frei.
+
 Folgen nach Durchsicht des Musters.
+
+### 4.L Landstraße (`wegMapleCedar.landstrasse`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten; Feldweg und Äcker aus Erde
+(`e`, `f`); Fluss als Wasser mit Ufer über West-, Ost- und Südrand (Reihe 20 im Westen, ab Spalte 17
+Reihe 26). **Rand** Randreihe als Gras (geschlossen), Felder und Fluss reichen optisch bis zum Rand.
+
+**Wege:** Feldweg drei Felder breit (Reihen 15–17) bis Spalte 59, mit Kurve nach Norden in L2
+(Reihen 13–15, Spalten 19–30); ab Spalte 60 zwei Felder (Reihen 15–16), Kurve nach Süden in L6
+(Reihen 16–17), am Ostrand Reihen 15–16. Abzweig nach Norden zum Kürbishof bei Spalten 52–53 durch
+das Gatter S1 (Lücke im Zaun, Reihe 11) bis zum Nordrand.
+
+**Zonen und Inventar** (Feld = linke obere Kachel):
+
+| Abschnitt            | Inventar                                                                                                                                                                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Norden, ganze Breite | Kornfeld der Brennans (Spalten 1–50, Korn auf jedem zweiten Feld), Vogelscheuche (10, 4), Traktor von Otis am Feldrand (36, 7, Blick links); Millers Mais (Spalten 54–118); durchgehender Holzzaun Reihe 11 (Satz Fence 4, Unterkante), Gatter-Lücke 52–53 mit Endpfosten |
+| L1                   | Rätseltafel mit Dach (3, 12, `tafel`), Ortsschild „Maple Falls“ (7, 12) nördlich am Weg, Blick zum Weg                                                                                                                                                                    |
+| L2                   | Kuhweide 17–29 × 18–24, geschlossener Zaun mit Ecken, Tor oben (22–24), Tränke innen am Zaun, Zettel „Bitte schließen“ am Tor; Kühe als Belebung                                                                                                                          |
+| L3                   | Krähen über dem Feld, Laubbaumgruppe südlich                                                                                                                                                                                                                              |
+| L4                   | Wegweiser mit vier Armen an der Kreuzung (49, 12); gegenüber Adas Apfelstand (50, 18) mit Äpfeln, Geräteschuppen (57, 18), Obstwiese mit drei Apfelbäumchen in einer Reihe                                                                                                |
+| L5                   | Mais, Wanderer auf dem Weg (67, 16)                                                                                                                                                                                                                                       |
+| L6                   | Bank direkt am Weg (80, 14, zum Weg), Nia daneben, zwei Heuhaufen, Laubbaum und roter Herbstbaum                                                                                                                                                                          |
+| L7                   | Buschgruppe 94–102 × 12–14 mit Lücke von oben; `fundFormular` (97, 13)                                                                                                                                                                                                    |
+| L8                   | Erlen am Fluss (106, 110, 114), Hase am Feldrand                                                                                                                                                                                                                          |
+
+Kleinflora (Gras, Farn, Pilze, Blumen, Steine, kleine Büsche) in Gruppen von ein bis drei südlich
+des Weges, Felsgruppen und Wildblumen vereinzelt. Belebung: Otis, Tessa (joggt), Radfahrer, Kühe,
+Krähen, Hase, Reh. Offen: Hufeisen (`fundHufeisen`) und Weidetor als Auslöser folgen in Runde 5.
+
+### 4.F Flussweg (`wegMapleCedar.flussweg`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten, Weg aus Erde, Steg aus Dielen
+(`d`), Fluss als Wasser mit Ufer im Süden (Reihen 20–21). **Rand** geschlossen, Übergänge West und
+Ost in den Reihen 15–16.
+
+**Wege:** Uferweg zwei Felder breit (Reihen 15–16) mit zwei Bögen nach Süden bis Reihe 17
+(Spalten 30–47 und 60–77). Abzweig zur Fährstelle bei Spalten 38–39 (Reihen 18–19).
+
+| Abschnitt  | Inventar                                                                            |
+| ---------- | ----------------------------------------------------------------------------------- |
+| Westen     | Baumgruppen im Norden, Münzfund (22, 12), Wildblumen                                |
+| Fährstelle | Felsgruppe (36, 18), Boot am Pfahl im Wasser (40, 21, ohne Kollision)               |
+| Mitte      | Rastbank (52, 13) zum Weg, Auslöser `rast`                                          |
+| Steg       | Dielen Spalten 67–68, Reihen 19–25 ins Wasser                                       |
+| Osten      | Ortsschild „Cedar Creek“ (112, 17), Auslöser `schildCedar` (112, 18), Erlen am Ufer |
+
+Belebung: Angler am Steg, Joggerin, Reiher, Hase, Schmetterlinge, Nebel über dem Wasser.
+
+### 4.Z Zedernpfad (`wegMapleCedar.zedernpfad`, Bühnenbild, niedrig-1)
+
+**Größe** 100 × 24, Norden oben. **Boden** Gras, Pfad aus Erde zwei Felder breit. **Rand**
+geschlossen; Übergänge Süd (Spalten 10–11, `zedernZurueckPark`) und Ost (Reihen 4–5,
+`zedernWeiterCedar`).
+
+**Weg:** vom Südrand hoch bis Reihe 18, in Stufen nach Nordosten bis Reihe 10 (Spalte 36),
+waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reihen 4–5 zum Ostrand.
+
+| Abschnitt | Inventar                                                               |
+| --------- | ---------------------------------------------------------------------- |
+| Wald      | Zedern, schmale Zedern und Kegelbäume dicht, Abstand ein Feld vom Pfad |
+| S2        | umgestürzter Stamm quer über den Pfad bei Spalte 45 (Reihen 9–11)      |
+| Kuppe     | Lichtung, Baumstammbank (59, 3), Felsgruppe und Stein                  |
+| überall   | Farne, Pilze, Steine, Felsgruppen                                      |
+
+Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
+folgen in Runde 5; der Stamm ist nur ein Kachelbild (1 × 2), als Sperre wirkt er noch schmal.

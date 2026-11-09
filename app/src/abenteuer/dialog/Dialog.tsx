@@ -85,7 +85,11 @@ export function Dialog({
     >
       {sprecher !== ERZAEHLER && (
         <div className="abenteuer-dialog-kopf">
-          <Portraet sprecher={sprecher} stimmung={zeile?.tags.stimmung ?? null} />
+          <Portraet
+            sprecher={sprecher}
+            stimmung={zeile?.tags.stimmung ?? null}
+            zeile={zeile?.text}
+          />
           <p className="abenteuer-dialog-sprecher">{tSpiel(`figur.${sprecher}.name`)}</p>
         </div>
       )}

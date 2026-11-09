@@ -86,7 +86,36 @@
   margin: 0 0 var(--raster);
 }
 
-.abenteuer-dialog-kopf .abenteuer-dialog-sprecher {
+.abenteuer-dialog-kopf /*
+ * Porträt aus dem Porträt-Generator (Modern UI): Bogen mit Bildern 32 × 32, doppelt vergrößert;
+ * Zeile 1 ist Sprechen (zehn Bilder), zweimal je neuer Dialogzeile, dann Ruhe auf Bild 1.
+ */
+.abenteuer-portraet-bogen {
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-size: 640px 192px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  animation: abenteuer-sprechen 0.8s steps(10) 2;
+}
+
+@keyframes abenteuer-sprechen {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -640px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-portraet-bogen {
+    animation: none;
+  }
+}
+
+.abenteuer-dialog-sprecher {
   margin: 0;
 }
 

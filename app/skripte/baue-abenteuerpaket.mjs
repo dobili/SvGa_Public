@@ -253,6 +253,7 @@ async function main() {
   }
   await kopiereOberflaeche();
   await kopierePrivatordner("figuren");
+  await kopierePrivatordner("portraets");
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
   await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));

@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste).",
+  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden.",
   "boegen": {
     "boden": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
     "wand": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
@@ -9,105 +9,248 @@
   "boeden": {
     "holzHell": {
       "bogen": "boden",
-      "feld": [1, 12]
+      "feld": [
+        1,
+        12
+      ]
     },
     "holzDunkel": {
       "bogen": "boden",
-      "feld": [1, 16]
+      "feld": [
+        1,
+        16
+      ]
     },
     "dielen": {
       "bogen": "boden",
-      "feld": [5, 12]
+      "feld": [
+        5,
+        12
+      ]
     },
     "fliesenWeiss": {
       "bogen": "boden",
-      "feld": [1, 4]
+      "feld": [
+        1,
+        4
+      ]
     },
     "fliesenGrau": {
       "bogen": "boden",
-      "feld": [13, 4]
+      "feld": [
+        13,
+        4
+      ]
     },
     "teppichRot": {
       "bogen": "boden",
-      "feld": [5, 8]
+      "feld": [
+        5,
+        8
+      ]
     },
     "teppichBlau": {
       "bogen": "boden",
-      "feld": [9, 18]
+      "feld": [
+        9,
+        18
+      ]
     },
     "stein": {
       "bogen": "boden",
-      "feld": [13, 34]
+      "feld": [
+        13,
+        34
+      ]
     },
     "gras": {
       "bogen": "gelaende",
-      "feld": [3, 6]
+      "feld": [
+        3,
+        8
+      ],
+      "varianten": [
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          9,
+          7
+        ]
+      ]
     },
     "pflaster": {
       "bogen": "gelaende",
-      "feld": [25, 9]
+      "feld": [
+        25,
+        9
+      ]
     },
     "erde": {
       "bogen": "gelaende",
-      "feld": [1, 31]
+      "feld": [
+        1,
+        31
+      ],
+      "rand": [
+        0,
+        30
+      ]
     },
     "sand": {
       "bogen": "gelaende",
-      "feld": [4, 31]
+      "feld": [
+        4,
+        31
+      ]
     },
     "wasser": {
       "bogen": "gelaende",
-      "feld": [20, 13]
+      "feld": [
+        1,
+        36
+      ],
+      "rand": [
+        0,
+        35
+      ]
     },
     "asphalt": {
       "bogen": "stadt",
-      "feld": [0, 4]
+      "feld": [
+        0,
+        4
+      ]
     },
     "hecke": {
       "bogen": "gelaende",
-      "feld": [1, 7]
+      "feld": [
+        1,
+        7
+      ]
     }
   },
   "waende": {
     "creme": {
       "bogen": "wand",
-      "oben": [1, 6],
-      "unten": [1, 7]
+      "oben": [
+        1,
+        6
+      ],
+      "unten": [
+        1,
+        7
+      ]
     },
     "hellgrau": {
       "bogen": "wand",
-      "oben": [1, 4],
-      "unten": [1, 5]
+      "oben": [
+        1,
+        4
+      ],
+      "unten": [
+        1,
+        5
+      ]
     },
     "rauten": {
       "bogen": "wand",
-      "oben": [1, 0],
-      "unten": [1, 1]
+      "oben": [
+        1,
+        0
+      ],
+      "unten": [
+        1,
+        1
+      ]
     },
     "holz": {
       "bogen": "wand",
-      "oben": [12, 0],
-      "unten": [12, 1]
+      "oben": [
+        12,
+        0
+      ],
+      "unten": [
+        12,
+        1
+      ]
     },
     "backstein": {
       "bogen": "wand",
-      "oben": [1, 16],
-      "unten": [1, 17]
+      "oben": [
+        1,
+        16
+      ],
+      "unten": [
+        1,
+        17
+      ]
     },
     "rot": {
       "bogen": "wand",
-      "oben": [23, 0],
-      "unten": [23, 1]
+      "oben": [
+        23,
+        0
+      ],
+      "unten": [
+        23,
+        1
+      ]
     },
     "blau": {
       "bogen": "wand",
-      "oben": [23, 8],
-      "unten": [23, 9]
+      "oben": [
+        23,
+        8
+      ],
+      "unten": [
+        23,
+        9
+      ]
     },
     "gruen": {
       "bogen": "wand",
-      "oben": [23, 12],
-      "unten": [23, 13]
+      "oben": [
+        23,
+        12
+      ],
+      "unten": [
+        23,
+        13
+      ]
     }
   }
 }

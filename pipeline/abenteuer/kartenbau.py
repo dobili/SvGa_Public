@@ -15,6 +15,8 @@ import json
 import sys
 from pathlib import Path
 
+from pipeline.abenteuer.kartenregeln import pruefe_regeln
+
 HAUPT = Path(__file__).resolve().parents[2]
 INHALTE = HAUPT / "inhalte" / "abenteuer"
 K = 16
@@ -71,6 +73,8 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             if not basis:
                 befunde.append(f"{eintrag['moebel']}: Unterlage {eintrag['auf']} fehlt (vorher nennen)")
                 continue
+            if angabe["breite"] > basis["breite"] - 4:
+                befunde.append(f"{eintrag['moebel']} ist breiter als die Platte von {eintrag['auf']}")
             x = basis["x"] + (basis["breite"] - angabe["breite"]) // 2 + dx
             # Fuß des Gegenstands auf der Tischplatte: gut die Hälfte der Unterlage von oben.
             y = basis["y"] + basis["hoehe"] * 3 // 5 - angabe["hoehe"] + dy
@@ -241,6 +245,7 @@ def baue(pfad: Path) -> list[str]:
     gesetzt, befunde = platziere(szene, moebel)
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])
     befunde += pruefe(zeilen, gesetzt, punkte)
+    befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
     ziel = INHALTE / szene["datei"]
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")
     ziel.write_text(

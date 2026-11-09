@@ -35,6 +35,30 @@ def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
     return flaeche
 
 
+def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
+    """Die Kachel eines Bodens an (x, y): mit „rand“ Rand- oder Eckstück je nach Nachbarn gleicher
+    Art (3×3-Block von LimeZu), mit „varianten“ eine feste Zufallsauswahl, sonst „feld“.
+
+    Beispiel: ein Feldweg „e“ quer durchs Gras bekommt oben und unten Grasränder, in der Mitte Erde.
+    """
+    if "rand" in art:
+        zeichen = zeilen[y][x]
+
+        def gleich(dx: int, dy: int) -> bool:
+            nx, ny = x + dx, y + dy
+            if not (0 <= ny < len(zeilen) and 0 <= nx < len(zeilen[0])):
+                return True  # Am Kartenrand läuft der Boden weiter.
+            return zeilen[ny][nx] == zeichen
+
+        spalte = 1 if gleich(-1, 0) == gleich(1, 0) else 0 if not gleich(-1, 0) else 2
+        reihe = 1 if gleich(0, -1) == gleich(0, 1) else 0 if not gleich(0, -1) else 2
+        return [art["rand"][0] + spalte, art["rand"][1] + reihe]
+    if "varianten" in art:
+        # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
+        return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]
+    return art["feld"]
+
+
 def hintergrund(szene: dict, privat: Path) -> Image.Image:
     mat = lade(INHALTE / "materialien.json")
     boegen, boeden, waende = mat["boegen"], mat["boeden"], mat["waende"]
@@ -51,7 +75,8 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
             if z == WASSER:
-                bild.alpha_composite(kachel(privat, boegen, boeden["wasser"], boeden["wasser"]["feld"]), ort)
+                art = boeden["wasser"]
+                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
             elif z == WAND and wandart:
                 bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
             elif z == WAND and (x, y) in flaeche:
@@ -61,7 +86,7 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
                 zeichner.rectangle((*ort, ort[0] + K - 1, ort[1] + K - 1), fill=KRONE)
             elif z != LEER:
                 art = boeden[sonder.get(z, grund)]
-                bild.alpha_composite(kachel(privat, boegen, art, art["feld"]), ort)
+                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
     if not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
@@ -91,6 +116,47 @@ def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict)
                 zeichner.line((x0, y0, x0, y1), fill=KRONENRAND, width=2)
             if not krone(x + 1, y):
                 zeichner.line((x1 - 1, y0, x1 - 1, y1), fill=KRONENRAND, width=2)
+
+
+# Ab so vielen hellen, deckenden Pixeln an der linken, rechten oder oberen Bildkante gilt ein Bild als
+# angeschnitten (ein Bauteil eines größeren Möbels); die Unterkante zählt nicht (Schatten am Boden).
+ANSCHNITT = 6
+
+
+def angeschnitten(bild: Image.Image) -> list[str]:
+    """Kanten, an denen das Bild angeschnitten wirkt (deckende, helle Pixel statt dunklem Umriss).
+
+    Warum: Viele Einzelbilder von LimeZu sind Teile größerer Möbel (halber Tisch, Regalstück); allein
+    gesetzt wirken sie abgeschnitten (Rückmeldung des Autors, 9.11.2026).
+    """
+    rgba = bild.convert("RGBA")
+    breite, hoehe = rgba.size
+    px = rgba.load()
+
+    def hell(x: int, y: int) -> bool:
+        r, g, b, a = px[x, y]
+        return a > 0 and r * 0.3 + g * 0.59 + b * 0.11 > 100
+
+    kanten = {
+        "oben": sum(hell(x, 0) for x in range(breite)),
+        "links": sum(hell(0, y) for y in range(hoehe)),
+        "rechts": sum(hell(breite - 1, y) for y in range(hoehe)),
+    }
+    return [k for k, n in kanten.items() if n >= ANSCHNITT]
+
+
+def bildbefunde(szene: dict, privat: Path) -> list[str]:
+    """Befunde, die nur mit den Bildern prüfbar sind: angeschnittene Bauteile."""
+    moebel = lade(INHALTE / "moebel.json")["moebel"]
+    befunde = []
+    for eintrag in szene.get("objekte", []):
+        angabe = moebel.get(eintrag["moebel"])
+        if not angabe or eintrag.get("bauteil_ok"):
+            continue
+        kanten = angeschnitten(Image.open(privat / angabe["quelle"]))
+        if kanten:
+            befunde.append(f"{eintrag['moebel']} wirkt angeschnitten ({', '.join(kanten)}): Bauteil?")
+    return befunde
 
 
 def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
@@ -125,7 +191,10 @@ def main() -> None:
         grund = hintergrund(szene, privat)
         grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{szene['karte']}.png")
         vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{szene['karte']}.png")
+        befunde = sorted(set(bildbefunde(szene, privat)))
         print(f"{szene['karte']}: Hintergrund und Vorschau gezeichnet")
+        for b in befunde:
+            print(f"  - {b}")
 
 
 if __name__ == "__main__":

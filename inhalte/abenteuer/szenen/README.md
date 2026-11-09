@@ -74,7 +74,44 @@ python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAU inhalte/abenteuer/szenen
 Repositorys. Der Hintergrund landet in `PRIVAT/spiel/grafik/karten/<kennung>.png` (nicht ins
 öffentliche Repository!).
 
+## Angaben je Möbel in moebel.json (für die Regeln, Pflicht für neue und benutzte Einträge)
+
+`art` (stuhl, tisch, sofa, schrank, regal, bett, pflanze, lampe, treppe, geraet, deko, gebaeude, baum,
+zaun, strassenmoebel …), `blick` (unten, oben, links, rechts: wohin Vorderseite oder Sitzfläche zeigt;
+bei Teppichen und Bäumen weglassen), `zustand` (neu, gebraucht, alt, kaputt), `stil` (modern, klassisch,
+rustikal, industrie, natur, kinder …). Jedes Bild vorher ansehen; das Register irrt manchmal.
+
+Szenen legen fest: `"zustand": ["neu", "gebraucht"]` (Standard) und `"stil": ["modern", "klassisch"]`.
+Kaputtes nur, wo die Geschichte es erklärt (Ghost Town, Turnhalle nach dem Sturm, Dachboden mit
+altem Gerümpel als *eigene Ecke*, nicht gemischt).
+
+Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen),
+`"an_wand": true`, `"zu": "<id>"` (Stuhl oder Sofa schaut zu Tisch oder Fernseher).
+
+## Regeln für die Anordnung (Rückmeldungen des Autors, 9.11.2026)
+
+- **Beziehungen:** Stühle stehen an Tischen und zeigen mit der Sitzfläche zum Tisch. Der Fernseher
+  steht auf Lowboard oder Fernsehtisch an der Wand, nie auf dem Esstisch, nie mitten im Raum; mit
+  etwas Abstand davor Sitzplätze mit Blick zu ihm. Pflanzen und Stehlampen in Ecken, an Wänden oder
+  neben passenden Möbeln, nie allein mitten im Raum. Schachbretter liegen ganz auf einem Tisch
+  (`spiel/eigene/schachbrett_klein*.png` für schmale Tische), nicht auf Bühnen oder dem Boden.
+- **Drehung:** Möbel mit Schubladen, Türen, Bildschirmen zeigen in den Raum, nicht zur Wand; an der
+  linken Wand nach rechts, an der rechten nach links. Geräte wie Waschmaschinen ebenso.
+- **Ganze Dinge:** keine angeschnittenen Bauteile (Prüfung meldet „wirkt angeschnitten“); Mehrteiliges
+  nur vollständig. Nichts verdeckt anderes (Pinnwand hinter Waschmaschine) oder eine Figur.
+- **Zustand und Stil:** ein Stil je Ort; neues neben neuem, Altes nur gewollt.
+- **Begehbarkeit:** Treppen mit freiem Antritt; Wege laufen bis zum Kartenrand oder Ausgang;
+  Zäune sind geschlossene Linien mit passenden Ecken.
+- **Draußen:** Bäume in Wohngebieten gepflanzt (Reihen an der Straße, Vorgärten, symmetrisch);
+  zufällig nur in Wald und Wildnis. Laternen direkt an Weg oder Straße. Bushaltestelle zur Straße.
+  Wohnhäuser neben Wohnhäusern; Industrie nur, wo die Geschichte es sagt. Schilder und Werbung passen
+  zur Zeit und zum Ort (keine Autobahn-Anzeigetafel in der Kleinstadt). Felder sind groß genug für
+  einen Traktor. Pflanzen müssen als solche erkennbar sein.
+- **Innen und außen stimmig:** Ein Haus draußen passt zu seinen Räumen drinnen (Größe, Stand).
+
 ## Prüfliste für die Bildprüfung
+
+0. Alle Befunde von `kartenbau` und `kartenbild` sind behoben (oder im Bericht begründet).
 
 1. Ist jedes Ding ganz zu sehen und als das erkennbar, was die Beschreibung sagt?
 2. Steht alles an einem logischen Ort (auf Tisch, an Wand, in Ecke), nichts schwebt oder liegt

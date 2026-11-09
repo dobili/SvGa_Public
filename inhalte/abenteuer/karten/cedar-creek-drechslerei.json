@@ -495,12 +495,12 @@
         },
         {
           "id": 19,
-          "name": "cc5Arbeitstisch",
+          "name": "cc8Saegebock",
           "type": "moebel",
           "x": 96,
-          "y": 80,
-          "width": 48,
-          "height": 48,
+          "y": 96,
+          "width": 32,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -518,24 +518,24 @@
         },
         {
           "id": 20,
-          "name": "cc5Werkstueck",
+          "name": "cc8Saegebock",
           "type": "moebel",
-          "x": 104,
-          "y": 104,
-          "width": 16,
-          "height": 16,
+          "x": 128,
+          "y": 96,
+          "width": 32,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 121
+              "value": 120
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
@@ -543,8 +543,8 @@
           "id": 21,
           "name": "cc5Leiste",
           "type": "moebel",
-          "x": 118,
-          "y": 106,
+          "x": 110,
+          "y": 102,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -564,10 +564,10 @@
         },
         {
           "id": 22,
-          "name": "cc5Hammer",
+          "name": "cc5Werkstueck",
           "type": "moebel",
-          "x": 124,
-          "y": 100,
+          "x": 130,
+          "y": 102,
           "width": 16,
           "height": 16,
           "rotation": 0,

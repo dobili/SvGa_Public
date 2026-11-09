@@ -1452,6 +1452,15 @@
       "art": "busch",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "cc8Saegebock": {
+      "quelle": "spiel/eigene/saegebock.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

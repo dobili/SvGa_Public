@@ -1,0 +1,209 @@
+{
+  "karte": "siliconBay.akademie",
+  "datei": "karten/varianten/silicon-bay-akademie-b.json",
+  "art": "innen",
+  "beschreibung": "Der große Saal der Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Die Nordwand ist eine Glasfront mit weißen Rahmen; davor hängt die Datenwand aus Großbildschirmen mit der Rangliste der Schüler. Rechts in der Nordwand die Metalltür zum Serverraum mit Kartenleser. Der Boden ist heller Kunststoff. Schüler sitzen an Bildschirmtischen und spielen gegen die Maschine; nur Dr. Lins Tisch trägt ein altes Holzbrett. Unten in der Mitte die gläserne Eingangstür. Variante B, die schlichtere: eine lange Reihe Bildschirmtische quer durch den Saal, Sitzecke mit Sofa und Sessel links unten, Dr. Lins Tisch vor der Serverraumtür.",
+  "wand": "hellgrau",
+  "boden": "fliesenWeiss",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Tuer",
+      "feld": [21, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5TuerSued",
+      "feld": [12, 15],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [12, 14],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [9, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [11, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5DatenwandB",
+      "feld": [13, 0],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "sb5BildschirmtischB",
+      "feld": [3, 6],
+      "id": "t0",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [3, 8],
+      "zu": "t0"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [5, 6],
+      "id": "t1",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [5, 8],
+      "zu": "t1"
+    },
+    {
+      "moebel": "sb5BildschirmtischB",
+      "feld": [7, 6],
+      "id": "t2",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [7, 8],
+      "zu": "t2"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [9, 6],
+      "id": "t3",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [9, 8],
+      "zu": "t3"
+    },
+    {
+      "moebel": "sb5BildschirmtischB",
+      "feld": [11, 6],
+      "id": "t4",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [11, 8],
+      "zu": "t4"
+    },
+    {
+      "moebel": "sb5Bildschirmtisch",
+      "feld": [13, 6],
+      "id": "t5",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [13, 8],
+      "zu": "t5"
+    },
+    {
+      "moebel": "sb5Sofa",
+      "feld": [2, 11]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "sb5Winkeltisch",
+      "feld": [18, 5],
+      "id": "lin",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "lin"
+    },
+    {
+      "moebel": "sb5Stuhl",
+      "feld": [18, 7],
+      "zu": "lin"
+    },
+    {
+      "moebel": "sb5Vitrine",
+      "feld": [20, 11],
+      "id": "vitrine"
+    },
+    {
+      "moebel": "pokal",
+      "auf": "vitrine"
+    },
+    {
+      "moebel": "sb5Pflanze",
+      "feld": [21, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "akademieAusgang",
+      "feld": [12, 15]
+    },
+    {
+      "name": "serverraumTuer",
+      "feld": [21, 3]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "theo",
+      "feld": [8, 4]
+    },
+    {
+      "name": "lin",
+      "feld": [17, 4]
+    },
+    {
+      "name": "nova",
+      "feld": [4, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "saugroboter",
+      "typ": "tier",
+      "feld": [16, 13],
+      "eigenschaften": {
+        "von": "14,13",
+        "bis": "18,13",
+        "verhalten": "folgen"
+      }
+    }
+  ],
+  "variante": "b"
+}

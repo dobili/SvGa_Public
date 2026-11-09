@@ -119,6 +119,155 @@
       "breite": 112,
       "hoehe": 80,
       "kollision": true
+    },
+    "sb5Bildschirmtisch": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_320.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5BildschirmtischB": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_321.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Stuhl": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_101.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "oben",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Datenwand": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_171.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5DatenwandB": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_170.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Winkeltisch": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_249.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schreibtisch",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Sofa": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_205.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sofa",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Sessel": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_206.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Pflanze": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_98.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Bild": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_164.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Automat": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_175.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Wasserspender": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_173.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Tuer": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5TuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Vitrine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

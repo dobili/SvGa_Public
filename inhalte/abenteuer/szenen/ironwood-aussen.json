@@ -11,7 +11,9 @@
     "h": "dielen",
     "k": "stein",
     "e": "erde",
-    "q": "stein"
+    "q": "stein",
+    "u": "holzDunkel",
+    "g": "erde"
   },
   "bruecken": ["h"],
   "raster": [
@@ -26,12 +28,12 @@
     "####~~~~~~pp............pp.....................................................#",
     "####~~~~~~pp............pp.....................................................#",
     "####~~~~~~ppppppppppppppppppppppppppppppppppppp................................#",
-    "####~~~~~~ppppppppppppppppppppppppppppppppppppp................................#",
+    "####~~~~~~ppssssspppppppppppppppppppppppppppppp................................#",
     "####~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
     "####~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
     "####~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
-    "####~~~~~~pppppppppppppppppppppppppppppppppsssp................................#",
-    "####~~~~~~pp............pp................psssp................................#",
+    "####~~~~~~ppsssssppppppppppppppppppppppppppsssp................................#",
+    "####~~~~~~ppsssss.......pp................psssp................................#",
     "####~~~~~~pp............pp................psssp.sssssssssssssssssssssssssssssss#",
     "####~~~~~~ppppp.........pp................psssp.sssssssssssssssssssssssssssssss#",
     "####~~~~~~ppppp.........pp................psssp.sssssssssssssssssssssssssssssss#",
@@ -48,7 +50,7 @@
     "#ssshhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssshhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "###phhhhhhppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "####~~~~~~pp......pp........pp..................ss.............................#",
+    "####~~~~~~pp......pp........pp..................sss............................#",
     "####~~~~~~pp......pp........pp........sssssssssssssssssssssss..................#",
     "####~~~~~~pp......pp........pp........sssssssssssssssssssssss..................#",
     "####~~~~~~pp......pp........pp........sssssssssssssssssssssss..................#",
@@ -64,15 +66,15 @@
     "####~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "####~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "####~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppkkkkkkkkkkkkkkk#",
-    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppkkkkkkkkkkkkkkk#",
-    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppkkkkkkkkkkkkkkk#",
-    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppkkkkkkkkkkkkkkk#",
-    "####~~~~~~....................................................ee...............#",
-    "####~~~~~~....................................................ee...............#",
-    "####~~~~~~....................................................ee...............#",
-    "####~~~~~~....................................................eeeeeeeeeeeeeeeee#",
-    "####~~~~~~....................................................eeeeeeeeeeeeeeeee#",
+    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "####~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "####~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
+    "####~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
+    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................ee...............#",
+    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................eeeeeeeeeeeeeeeee#",
+    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................eeeeeeeeeeeeeeeee#",
     "####~~~~~~.....................................................................#",
     "####~~~~~~######################################################################"
   ],
@@ -116,12 +118,12 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [12, 8],
+      "feld": [18, 8],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [21, 8],
+      "feld": [30, 8],
       "vorn": true
     },
     {
@@ -130,24 +132,12 @@
       "vorn": true
     },
     {
-      "moebel": "cc5Poller",
-      "feld": [12, 12]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [12, 13]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [12, 14]
-    },
-    {
       "moebel": "iw5Kreidebrett",
       "feld": [29, 15]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [13, 16]
+      "feld": [19, 16]
     },
     {
       "moebel": "mf6Busch",
@@ -508,10 +498,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5Halle",
-      "feld": [48, 0]
-    },
-    {
       "moebel": "iw5Kantine",
       "feld": [53, 1],
       "id": "kantine"
@@ -527,30 +513,37 @@
       "id": "pfoertner"
     },
     {
-      "moebel": "iw5ContainerOffen",
-      "feld": [67, 3],
-      "bauteil_ok": true
+      "moebel": "iw5WerkHalle",
+      "feld": [66, 1]
     },
     {
-      "moebel": "iw5ContainerOffen",
-      "feld": [67, 6],
-      "bauteil_ok": true
+      "moebel": "iw5WerkHalle",
+      "feld": [72, 1]
     },
     {
-      "moebel": "iw5HalleB",
-      "feld": [73, 0]
+      "moebel": "iw5WerkHalle",
+      "feld": [72, 10]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [48, 3]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [50, 7]
+    },
+    {
+      "moebel": "iw5Kran",
+      "feld": [69, 19],
+      "vorn": true
     },
     {
       "moebel": "iw5Kisten",
-      "feld": [74, 14]
+      "feld": [70, 21]
     },
     {
       "moebel": "iw5KistenB",
-      "feld": [76, 14]
-    },
-    {
-      "moebel": "iwFassGross",
-      "feld": [74, 18]
+      "feld": [73, 20]
     },
     {
       "moebel": "iwPylon",
@@ -569,13 +562,13 @@
       "feld": [17, 32]
     },
     {
-      "moebel": "iw5Bahnhof",
-      "feld": [20, 33],
-      "id": "bahnhof"
+      "moebel": "iw5StadthausGrau",
+      "feld": [21, 35],
+      "id": "museum"
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [21, 43],
+      "feld": [20, 43],
       "vorn": true
     },
     {
@@ -584,17 +577,18 @@
       "vorn": true
     },
     {
+      "moebel": "iw5Lok",
+      "feld": [12, 40],
+      "id": "lok"
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [13, 36]
+    },
+    {
       "moebel": "iw5Kirche",
       "feld": [31, 37],
       "id": "kirche"
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [13, 38]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [13, 42]
     },
     {
       "moebel": "iw5AutoB",
@@ -610,15 +604,15 @@
     },
     {
       "moebel": "iw5AutoA",
-      "feld": [51, 35]
+      "feld": [52, 35]
     },
     {
       "moebel": "iw5AutoB",
-      "feld": [54, 35]
+      "feld": [55, 35]
     },
     {
       "moebel": "iw5AutoA",
-      "feld": [57, 35]
+      "feld": [58, 35]
     },
     {
       "moebel": "iw5AutoB",
@@ -1170,26 +1164,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4GleisRand",
-      "feld": [62, 49],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4GleisRand",
-      "feld": [62, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4GleisRand",
-      "feld": [63, 49],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4GleisRand",
-      "feld": [63, 51],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cc4Gleis",
       "feld": [64, 49],
       "bauteil_ok": true
@@ -1340,42 +1314,248 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5ContainerOffen",
-      "feld": [48, 53],
+      "moebel": "ccKorn",
+      "feld": [14, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [14, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [15, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [16, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [17, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [17, 56]
+    },
+    {
+      "moebel": "wg4Schuppen",
+      "feld": [18, 54]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [14, 58],
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5ContainerOffen",
-      "feld": [48, 55],
+      "moebel": "cc3ZaunEndeR",
+      "feld": [17, 58],
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5Kisten",
-      "feld": [36, 56]
+      "moebel": "ccZaun",
+      "feld": [15, 58],
+      "bauteil_ok": true
     },
     {
-      "moebel": "iw5KistenB",
-      "feld": [38, 56]
+      "moebel": "ccZaun",
+      "feld": [16, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [23, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [23, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [24, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [25, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [25, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [26, 56]
+    },
+    {
+      "moebel": "wg4Schuppen",
+      "feld": [27, 54]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [23, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [26, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [24, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [25, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [32, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [33, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [33, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [34, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [35, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [35, 56]
+    },
+    {
+      "moebel": "wg4Schuppen",
+      "feld": [36, 54]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [32, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [35, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [33, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [34, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [41, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [41, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [42, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [42, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [43, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [43, 56]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [44, 55]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [44, 56]
+    },
+    {
+      "moebel": "wg4Schuppen",
+      "feld": [45, 54]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [41, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [44, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [42, 58],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [43, 58],
+      "bauteil_ok": true
     },
     {
       "moebel": "iwFassGross",
-      "feld": [56, 54]
-    },
-    {
-      "moebel": "iwFassGross",
-      "feld": [52, 56]
+      "feld": [56, 55]
     },
     {
       "moebel": "iwFassGross",
       "feld": [58, 56]
     },
     {
-      "moebel": "mf4Strassenbaum",
-      "feld": [12, 54]
+      "moebel": "iwFassGross",
+      "feld": [52, 55]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [66, 53]
+      "feld": [66, 52]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [72, 52]
     },
     {
       "moebel": "mf9Absperrbock",
@@ -1557,5 +1737,14 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["industrie", "klassisch", "einfach", "modern", "natur"]
+  "stil": [
+    "industrie",
+    "klassisch",
+    "einfach",
+    "modern",
+    "natur",
+    "laendlich",
+    "rustikal",
+    "landhaus"
+  ]
 }

@@ -16,6 +16,8 @@ from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.randspur import randluecken
+from pipeline.abenteuer.zusammenhang import HOLZ
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
@@ -67,7 +69,9 @@ def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
     return flaeche
 
 
-def hintergrund(szene: dict, privat: Path) -> Image.Image:
+def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Image.Image:
+    """Hintergrund aus Böden und Wänden; ``gezeichnet`` (falls gegeben) erhält je Feld Bodenart und
+    Kachel für die Randspur."""
     mat = lade(INHALTE / "materialien.json")
     boegen, boeden, waende = mat["boegen"], mat["boeden"], mat["waende"]
     # Brückenfelder (Szene „bruecken“) sind begehbar, gezeichnet wird darunter aber Wasser mit
@@ -91,17 +95,24 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
                 art = boeden["wasser"]
                 feld = bodenfeld(art, zeilen, x, y)
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                if gezeichnet is not None:
+                    gezeichnet[(x, y)] = ("wasser", feld)
                 if (welle := wellenbild(art, feld, x, y)) is not None:
                     bild.alpha_composite(Image.open(privat / welle).convert("RGBA"), ort)
             elif z == WAND and wandart and (innen := randnachbar(zeilen, x, y)) is not None:
                 # Außen ist der Rand nur Kollision: Er zeigt den Boden dahinter, damit Felder und
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
                 nz = zeilen[innen[1]][innen[0]]
-                art = boeden["wasser"] if nz == WASSER else boeden[sonder.get(nz, grund)]
-                quelle = zeilen if nz == WASSER else roh
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, quelle, *innen)), ort)
+                artname = "wasser" if nz == WASSER else sonder.get(nz, grund)
+                art, quelle = boeden[artname], zeilen if nz == WASSER else roh
+                feld = bodenfeld(art, quelle, *innen)
+                bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                if gezeichnet is not None:
+                    gezeichnet[(x, y)] = (artname, feld)
             elif z == WAND and wandart:
                 bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
+                if gezeichnet is not None:
+                    gezeichnet[(x, y)] = (szene["wandart"], wandart["feld"])
             elif z == WAND and (x, y) in flaeche:
                 teil = wand[flaeche[(x, y)]]
                 bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
@@ -109,7 +120,10 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
                 zeichner.rectangle((*ort, ort[0] + K - 1, ort[1] + K - 1), fill=KRONE)
             elif z != LEER:
                 art = boeden[sonder.get(z, grund)]
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, roh, x, y)), ort)
+                feld = bodenfeld(art, roh, x, y)
+                bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                if gezeichnet is not None:
+                    gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
     if not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
@@ -213,17 +227,31 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     return bild.resize((bild.width * 2, bild.height * 2), Image.NEAREST)
 
 
+def randspur(szene: dict, gezeichnet: dict) -> list[str]:
+    """Ränder von Wasser und Erdwegen an der fertigen Zeichnung nachziehen (randspur.py), draußen."""
+    if szene.get("art") != "aussen":
+        return []
+    boeden = lade(INHALTE / "materialien.json")["boeden"]
+    raender = {name: boeden[name]["rand"] for name in ("wasser", "erde")}
+    trennt = {szene.get("boden", "gras"), szene.get("wandart", "hecke")}
+    return randluecken(gezeichnet, raender, trennt, frozenset(HOLZ))
+
+
 def main() -> None:
     privat, vorschauordner = Path(sys.argv[1]), Path(sys.argv[2])
     vorschauordner.mkdir(parents=True, exist_ok=True)
     (privat / "spiel" / "grafik" / "karten").mkdir(parents=True, exist_ok=True)
     for name in sys.argv[3:]:
         szene = lade(Path(name))
-        grund = hintergrund(szene, privat)
-        grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{szene['karte']}.png")
-        vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{szene['karte']}.png")
-        befunde = sorted(set(bildbefunde(szene, privat)))
-        print(f"{szene['karte']}: Hintergrund und Vorschau gezeichnet")
+        gezeichnet: dict = {}
+        grund = hintergrund(szene, privat, gezeichnet)
+        # Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau; das Spiel lädt Variante A.
+        name = szene["karte"] + (f"-{szene['variante']}" if szene.get("variante") else "")
+        if not szene.get("variante"):
+            grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
+        vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{name}.png")
+        befunde = sorted(set(bildbefunde(szene, privat))) + randspur(szene, gezeichnet)
+        print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")
 

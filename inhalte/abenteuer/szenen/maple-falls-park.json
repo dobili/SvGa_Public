@@ -9,51 +9,187 @@
     "p": "pflaster",
     "e": "erde",
     "s": "asphalt",
-    "h": "dielen"
+    "h": "dielen",
+    "b": "dielen"
   },
   "raster": [
-    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~##########",
+    "##########ee################################",
+    "#.........ee...............................#",
     "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
-    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~........#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~........#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................ee.~~~~........#",
-    "#...........................pp.~~~~........#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "#..~~~~~~.ee..~~~~~~~....~~~~~~~~~~........#",
+    "#.........ee..................~~~~~........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~.........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~..........#",
+    "#..........................ee~~~~..........#",
+    "#..........................ee~~~~..........#",
+    "#..........................ee.~~~~.........#",
+    "#..........................ee.~~~~~........#",
+    "#..........................ee..~~~~........#",
     "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
-    "ssssssssssssssssssssssssssssssshhhhsssssssss",
-    "ssssssssssssssssssssssssssssssshhhhsssssssss",
-    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
     "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
-    "#...........ee.................~~~~........#",
-    "#...........ee.................~~~~~~~~~~~~~",
-    "#..........ee..................~~~~~~~~~~~~~",
-    "#........ppppp.................~~~~~~~~~~~~~",
-    "#........ppppp...~~~~~~~sssssss............#",
-    "#........ppppp...~~~~~~~sssssss............#",
-    "#........ppppp...~~~~~~~sssssss............#",
-    "#................~~~~~~~sssssss............#",
-    "#................~~~~~~~sssssss............#",
-    "#.......................sssssss............#",
-    "#.......................sssssss............#",
+    "#.................pp...ppppppp.~~~~~.......#",
+    "#.................pp...ppppppp.~~~~~~~~~~~~~",
+    "#................ppppp.ppppppp.~~~~~~~~~~~~~",
+    "#................ppppp...........~~~~~~~~~~~",
+    "#................ppppp...........~~~~~~~~~~~",
+    "#................ppppp...............~~~~..#",
+    "#................ppppp...~~~...............#",
+    "#......................~~~~~~..............#",
+    "#.....................~~~~~~~~.............#",
+    "#......................~~~~~~~.............#",
+    "#........................~~~...............#",
     "#..........................................#",
     "############################################"
   ],
   "objekte": [
     {
-      "moebel": "mf4Sperrlatte",
-      "feld": [5, 4],
-      "id": "absperrungSteg"
+      "moebel": "mf6Busch",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [16, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [24, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [26, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [27, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [28, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [35, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [37, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [39, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [41, 1]
+    },
+    {
+      "moebel": "mf6StegBrueckeL",
+      "feld": [10, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf6StegBrueckeR",
+      "feld": [11, 1],
+      "bauteil_ok": true
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [12, 3]
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "mf6StegMorsch",
+      "feld": [5, 4],
+      "id": "stegS5"
+    },
+    {
+      "moebel": "mf4Sperrlatte",
+      "feld": [5, 6],
+      "id": "absperrungSteg"
     },
     {
       "moebel": "mfBank",
@@ -62,75 +198,84 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [7, 11]
+      "feld": [1, 11]
     },
     {
-      "moebel": "mfMuelltonne",
-      "feld": [9, 11]
+      "moebel": "mf4Abfalleimer",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [6, 9]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [36, 3]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [38, 8]
     },
     {
       "moebel": "mf2BankLang",
-      "feld": [19, 11]
+      "feld": [17, 11]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [20, 12]
     },
     {
       "moebel": "mf2Kiosk",
       "feld": [24, 10]
     },
     {
-      "moebel": "mfLaterne",
-      "feld": [22, 10]
+      "moebel": "mf4Laterne",
+      "feld": [2, 6],
+      "vorn": true
     },
     {
-      "moebel": "mfBushaltestelle",
-      "feld": [24, 18]
+      "moebel": "mf4Laterne",
+      "feld": [15, 6],
+      "vorn": true
     },
     {
-      "moebel": "mfApfelbaum",
-      "feld": [2, 23]
+      "moebel": "mf4Laterne",
+      "feld": [24, 6],
+      "vorn": true
     },
     {
-      "moebel": "mfBaum",
-      "feld": [36, 4]
+      "moebel": "mf4Laterne",
+      "feld": [14, 10],
+      "vorn": true
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [38, 9]
+      "moebel": "mf4Laterne",
+      "feld": [22, 10],
+      "vorn": true
     },
     {
-      "moebel": "mfBaum",
-      "feld": [36, 24]
+      "moebel": "mf4Laterne",
+      "feld": [38, 10],
+      "vorn": true
     },
     {
-      "moebel": "mfBank",
-      "feld": [14, 23]
+      "moebel": "mf4Laterne",
+      "feld": [9, 16],
+      "vorn": true
     },
     {
-      "moebel": "mf4StegLinks",
-      "feld": [10, 0],
-      "bauteil_ok": true
+      "moebel": "mf4Laterne",
+      "feld": [21, 16],
+      "vorn": true
     },
     {
-      "moebel": "mf4StegRechts",
-      "feld": [11, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf4Basketballkorb",
-      "feld": [27, 21]
-    },
-    {
-      "moebel": "mf2BankLang",
-      "feld": [31, 24]
-    },
-    {
-      "moebel": "mf4StegLinks",
-      "feld": [5, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf4StegRechts",
-      "feld": [6, 0],
-      "bauteil_ok": true
+      "moebel": "mf4Laterne",
+      "feld": [38, 16],
+      "vorn": true
     },
     {
       "moebel": "mf4Gelaender",
@@ -138,19 +283,11 @@
     },
     {
       "moebel": "mf4Gelaender",
-      "feld": [32, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [33, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [34, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
       "feld": [31, 18]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [32, 14]
     },
     {
       "moebel": "mf4Gelaender",
@@ -158,67 +295,75 @@
     },
     {
       "moebel": "mf4Gelaender",
+      "feld": [33, 14]
+    },
+    {
+      "moebel": "mf4Gelaender",
       "feld": [33, 18]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [34, 14]
     },
     {
       "moebel": "mf4Gelaender",
       "feld": [34, 18]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [1, 6]
+      "moebel": "mf6Basketballplatz",
+      "feld": [1, 20],
+      "id": "platz"
     },
     {
-      "moebel": "mfBaum",
-      "feld": [7, 6]
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [15, 22],
+      "zu": "platz"
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [13, 6]
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [15, 26],
+      "zu": "platz"
     },
     {
-      "moebel": "mfBaum",
-      "feld": [19, 6]
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [5, 6]
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [11, 6]
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [17, 6]
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [23, 6]
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [22, 22],
+      "id": "bankPlatz"
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [14, 22]
+      "feld": [18, 26]
     },
     {
-      "moebel": "mf2Blumenbeet",
-      "feld": [19, 13]
-    },
-    {
-      "moebel": "mf4Abfalleimer",
-      "feld": [2, 12]
+      "moebel": "mf6Haltestelle",
+      "feld": [24, 22]
     },
     {
       "moebel": "mf4Abfalleimer",
-      "feld": [16, 23]
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [24, 27]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [27, 26]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [26, 28]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [13, 28]
+      "feld": [16, 28]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [35, 28]
+      "feld": [39, 25]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [31, 26]
     }
   ],
   "ausloeser": [
@@ -278,7 +423,7 @@
   "figuren": [
     {
       "name": "skaterJo",
-      "feld": [32, 27]
+      "feld": [16, 24]
     },
     {
       "name": "abernathy",
@@ -289,10 +434,10 @@
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [20, 12],
+      "feld": [18, 12],
       "eigenschaften": {
-        "von": "20,12",
-        "bis": "20,12",
+        "von": "18,12",
+        "bis": "18,12",
         "tun": "sitzt auf der Bank und füttert Tauben",
         "wann": "tag"
       }
@@ -311,10 +456,10 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [20, 28],
+      "feld": [24, 30],
       "eigenschaften": {
-        "von": "17,28",
-        "bis": "23,28",
+        "von": "21,30",
+        "bis": "28,30",
         "verhalten": "folgen"
       }
     },
@@ -330,5 +475,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "modern", "natur"]
+  "stil": ["klassisch", "modern", "natur"],
+  "bruecken": ["h"]
 }

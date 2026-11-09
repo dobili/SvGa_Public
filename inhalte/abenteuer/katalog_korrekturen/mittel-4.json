@@ -1,0 +1,52 @@
+{
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_2.png": {
+    "beschreibung": "Bushaltestelle (Wartehäuschen) von hinten: Holzdach, darunter die Glasrückwand aus zwei Scheiben, keine Bank und kein Fahrplan zu sehen; die offene Seite zeigt vom Betrachter weg.",
+    "art": "haltestelle",
+    "blick": "oben",
+    "ansichten": [
+      "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_1.png"
+    ],
+    "nutzbar_von": ["oben"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_5.png": {
+    "beschreibung": "Lange Parkbank aus hellem Holz mit Metallbeinen von der Seite: Rückenlehne rechts, Sitzfläche links; wer sitzt, schaut nach links. 1×3 Kacheln.",
+    "art": "bank",
+    "blick": "links",
+    "nutzbar_von": ["links"],
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_26.png": {
+    "beschreibung": "Morscher, eingestürzter Steg im Wasser: lose Planken und Balken, gewollt unvollständig; ein ganzes Bild, kein Bauteil (die offenen Ränder sind der Schaden).",
+    "art": "steg",
+    "zustand": "kaputt",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_2.png": {
+    "beschreibung": "Linke Hälfte eines schmalen Holzstegs über einen Bach: Pfähle links oben und unten, Planken rechts; mit Pier_Bridge_1 rechts daneben ergibt es einen Steg mit Pfählen auf beiden Außenseiten.",
+    "art": "bruecke",
+    "ganz": false,
+    "gegenstuecke": "Pier_Bridge_1 rechts daneben (nicht links: dann stehen die Pfähle in der Mitte)",
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png": {
+    "beschreibung": "Rechte Hälfte eines schmalen Holzstegs über einen Bach: Planken links, Pfähle rechts oben und unten; gehört rechts neben Pier_Bridge_2.",
+    "art": "bruecke",
+    "ganz": false,
+    "gegenstuecke": "Pier_Bridge_2 links daneben",
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  }
+}

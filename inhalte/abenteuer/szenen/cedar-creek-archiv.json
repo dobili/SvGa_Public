@@ -46,68 +46,68 @@
       "feld": [10, 1]
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [1, 4]
-    },
-    {
-      "moebel": "cc4KartonHoch",
+      "moebel": "cc4ArchivregalB",
       "feld": [1, 5],
-      "versatz": [0, 4]
+      "versatz": [8, 0]
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [1, 6],
-      "versatz": [0, 4]
+      "moebel": "cc4Archivregal",
+      "feld": [3, 5],
+      "versatz": [4, 0]
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [2, 7],
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "cc4Karton",
-      "feld": [4, 7],
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "cc4Karton",
-      "feld": [6, 7],
-      "versatz": [0, 6]
+      "moebel": "cc4ArchivregalB",
+      "feld": [5, 5],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4KartonHoch",
-      "feld": [4, 7],
-      "versatz": [0, -6]
+      "feld": [1, 8],
+      "id": "stapel1"
     },
     {
       "moebel": "cc4KartonHoch",
-      "feld": [1, 8]
-    },
-    {
-      "moebel": "cc4Karton",
-      "feld": [3, 8]
+      "feld": [1, 8],
+      "versatz": [0, -12]
     },
     {
       "moebel": "cc4KartonHoch",
-      "feld": [5, 8]
+      "feld": [3, 8],
+      "id": "stapel3"
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [3, 8],
+      "versatz": [0, -12]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [5, 8],
+      "id": "stapel5"
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [5, 8],
+      "versatz": [0, -12]
     },
     {
       "moebel": "cc4KartonOffen",
-      "feld": [6, 4],
+      "feld": [8, 7],
       "id": "karton1858"
     },
     {
       "moebel": "cc4StuhlHinten",
-      "feld": [9, 6]
+      "feld": [11, 7]
     },
     {
-      "moebel": "cc4Lesetisch",
-      "feld": [9, 7],
+      "moebel": "cc5Tisch",
+      "feld": [11, 8],
       "id": "tisch"
     },
     {
-      "moebel": "cc4Stehlampe",
-      "feld": [11, 6]
+      "moebel": "cc4Leselampe",
+      "auf": "tisch",
+      "versatz": [7, 0]
     }
   ],
   "ausloeser": [
@@ -128,17 +128,17 @@
     },
     {
       "name": "programmheft",
-      "feld": [10, 7],
+      "feld": [11, 9],
       "auf_moebel": true
     },
     {
       "name": "karton1858",
-      "feld": [6, 5],
+      "feld": [8, 8],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [10, 9]
+      "feld": [9, 4]
     }
   ],
   "figuren": [],

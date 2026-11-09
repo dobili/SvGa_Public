@@ -103,7 +103,7 @@ Creek). Länge etwa 105 Kacheln, etwa 29 s.
 - Fund „Zedernzapfen mit Initialen“ an der Kuppe; Abschnitte zu je etwa 15 Spalten mit Zedern,
   Felsen, Pilzen und einem Specht als Belebung.
 
-### 1.4 Cedar Creek (`cedarCreek.aussen`, 56 × 36)
+### 1.4 Cedar Creek (`cedarCreek.aussen`, 60 × 40)
 
 Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C Süd).
 
@@ -165,20 +165,24 @@ Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C
 
 ### 1.5 Gebäude und Maße
 
-| Gebäude                       | Außen (Fassade, Kacheln)                                                     | Innen (7a.2)                                                                             | Begehbar |
-| ----------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- |
-| Bibliothek (1890)             | Backstein, Hauptbau 11 breit mit Turm, Doppeltür im Turm bei 6 von 11 (50 %) | Lesesaal `bibliothek` 22 × 16 (großer Saal; heute 18 × 14), Tür Südwand Spalte 11 (50 %) | ja       |
-| Archiv (Keller)               | – (unter dem östlichen Teil der Bibliothek)                                  | `archiv` 14 × 11, liegt unter den Spalten 8 bis 21 des Lesesaals                         | ja       |
-| Waschsalon Mr. Boateng        | Flachbau, Fassade 7, Tür bei 4 von 7 (50 %)                                  | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                                        | ja       |
-| Drechslerei Dunmore (neu)     | Holz, Fassade 8, Tür bei 5 von 8 (50 %)                                      | `drechslerei` 16 × 11 (12), Tür Südwand Spalte 8                                         | ja       |
-| Haus Süd 1 (Holm), Haus Süd 2 | Holz, je Fassade 7, Tür in der Nordfassade zur Straße                        | –                                                                                        | nein     |
-| Kanuverleih                   | Bootsschuppen am Ufer, 6 breit                                               | –                                                                                        | Kulisse  |
-| Bushaltestelle                | Wartehäuschen 3 breit                                                        | –                                                                                        | Kulisse  |
+| Gebäude                       | Außen (Fassade, Kacheln)                                                                | Innen (7a.2)                                                     | Begehbar |
+| ----------------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------- |
+| Bibliothek (1890)             | Backstein, 18 breit mit Turm links (Victorian House 5), Tür im Turm bei 3 von 18 (17 %) | Lesesaal `bibliothek` 22 × 16, Tür Südwand Spalte 4 (18 %)       | ja       |
+| Archiv (Keller)               | – (unter dem östlichen Teil der Bibliothek)                                             | `archiv` 14 × 11, liegt unter den Spalten 8 bis 21 des Lesesaals | ja       |
+| Waschsalon Mr. Boateng        | Flachbau, Fassade 8, Tür bei 4 von 8 (50 %)                                             | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                | ja       |
+| Drechslerei Dunmore (neu)     | kleine Holzscheune, Fassade 8, Rolltor bei 2 von 8 (25 %)                               | `drechslerei` 16 × 11, Tür Südwand Spalte 4 (25 %)               | ja       |
+| Haus Süd 1 (Holm), Haus Süd 2 | Holz, je Fassade 7, Tür in der Nordfassade zur Straße                                   | –                                                                | nein     |
+| Kanuverleih                   | Bootsschuppen am Ufer, 6 breit                                                          | –                                                                | Kulisse  |
+| Bushaltestelle                | Wartehäuschen 3 breit                                                                   | –                                                                | Kulisse  |
 
 Die Fassade ist halb so breit wie das Erdgeschoss innen, die Tür sitzt außen und innen an derselben
 relativen Stelle (±1 Kachel). Treppen liegen übereinander: Die Kellertreppe der Bibliothek liegt an
 der Nordwand bei Spalte 19 (Nordostbereich des 22 breiten Saals), die Treppe im Archiv deshalb bei
 Spalte 11 (19 − 8).
+
+Abweichung Bibliothek: Den ganzen Backsteinbau mit Turm gibt es im Katalog nur als Victorian House 5,
+18 Kacheln breit (Regel: 11). Er bleibt in dieser Breite, weil er das größte Haus des Ortes sein soll;
+die Tür sitzt unten im Turm links (3 von 18), innen deshalb bei Spalte 4.
 
 ### 1.6 Übergänge
 
@@ -189,13 +193,18 @@ Spalte 11 (19 − 8).
 | flussweg `weiterCedar` (Ostrand, Spalte 119, Reihen 15–16)           | cedarCreek.aussen `flussweg` (neu, Westrand, Spalte 0, Reihen 20–21)          | Uferweg geht in die Hauptstraße über; Dialog `ankunft_zu_fuss` bleibt an `weiterCedar` |
 | mapleFalls.park `zedernpfad` (neu, Nordrand, Spalten 10–11, Reihe 0) | zedernpfad `zurueckPark` (neu, Südrand, Spalten 10–11, Reihe 23)              | hinter dem Fußsteg über den Fluss; Pfad je zwei Felder                                 |
 | zedernpfad `weiterCedar` (neu, Ostrand, Spalte 99, Reihen 4–5)       | cedarCreek.aussen `zedernpfad` (neu, Westrand, Spalte 0, Reihen 4–5)          | Pfad je zwei Felder; Sperre S2 liegt westlich der Kuppe                                |
-| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (35, 19)                                   | Busfahrt                                                                               |
-| cedarCreek.aussen `busZurueck` (34, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
-| aussen `drechslereiTuer` (6, 18)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 8)                          | hinein nach Norden                                                                     |
-| aussen `waschsalonTuer` (15, 18)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
-| aussen `bibliothekTuer` (25, 18)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 11)                           | hinein nach Norden                                                                     |
+| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (44, 19)                                   | Busfahrt                                                                               |
+| cedarCreek.aussen `busZurueck` (43, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
+| aussen `drechslereiTuer` (4, 19)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 4)                          | hinein nach Norden                                                                     |
+| aussen `waschsalonTuer` (16, 19)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
+| aussen `bibliothekTuer` (25, 19)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 4)                            | hinein nach Norden                                                                     |
 | bibliothek `kellertreppe` (Nordwand, Spalte 19)                      | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                     |
-| aussen `zedernwald` (Ostrand, Spalte 55, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+| aussen `zedernwald` (Ostrand, Spalte 59, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+
+Umgesetzt (Runde 4, mittel-2): Karte `cedarCreek.drechslerei` mit `drechslereiTuer` und
+`drechslereiAusgang`, Auslöser `flussweg` (Westrand, Reihen 20–21), `weiterCedar.ziel` auf `flussweg`,
+`zurueckCedar` (Weg nach Riverton) auf `zedernwald`, Auslöser `zedernpfad` (Westrand, Reihen 4–5)
+mit `zedernWeiterCedar` als Gegenstück.
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `flussweg` und `zedernpfad` auf
 `cedarCreek.aussen`, `zedernpfad` auf `mapleFalls.park`, neue Karte `wegMapleCedar.zedernpfad` mit
@@ -324,19 +333,19 @@ nicht; das Licht kommt wie in allen Räumen von Norden.
 **Laufwege:** Tür (7, 10) → gerade nach oben zu den Arbeitstischen; links zu den Wartesitzen; rechts am
 Automaten vorbei zur Pinnwand und zu den Trocknern. Reihe 4 bleibt frei vor allen Maschinen.
 
-| Zone      | Gegenstand                                  | Feld                           | Ausrichtung            | Material, Stil, Zustand    | Zweck                                                      |
-| --------- | ------------------------------------------- | ------------------------------ | ---------------------- | -------------------------- | ---------------------------------------------------------- |
-| Nordwand  | vier Waschmaschinen (eine Serie, lückenlos) | (1, 2), (3, 2), (5, 2), (7, 2) | Vorderseite unten      | weiß, modern, gebraucht    | Waschen                                                    |
-| Nordwand  | zwei schmale Trockner (dieselbe Bauart)     | (9, 2), (10, 2)                | Vorderseite unten      | weiß, modern, gebraucht    | Trocknen; auf dem linken das Steckschachbrett (`trockner`) |
-| Nordwand  | Pinnwand mit Zetteln                        | Wandfläche (9, 1)              | –                      | Kork, einfach              | Zettel „Verloren: ein Turm“ (`zettelTurm` davor, (10, 4))  |
-| Ecke NO   | Regal mit Waschmittel, Gläsern und Korb     | (11, 1)                        | Vorderseite unten      | weiß und Glas, gebraucht   | Waschmittelregal                                           |
-| Ostwand   | Getränkeautomat, Leuchtfläche nach links    | (12, 4)                        | zeigt in den Raum      | Metall, modern             | `automat` davor (11, 5)                                    |
-| Mitte     | zwei Arbeitstische aus Edelstahl            | (4, 5), (6, 5)                 | –                      | Edelstahl, modern          | Falttisch; Mr. Boateng davor (6, 8)                        |
-| Mitte     | voller Wäschekorb                           | (8, 5)                         | –                      | Korbgeflecht               | Spuren von Leben                                           |
-| Westseite | drei Wartesitze in Reihe                    | (1, 7)                         | Sitzflächen nach unten | oranger Kunststoff, modern | Warten; Comicheft darauf (`comicheft`, (2, 8))             |
-| Westseite | zweiter Wäschekorb                          | (4, 8)                         | –                      | Korbgeflecht               | Leben                                                      |
-| Ecken     | Zimmerpflanzen                              | (1, 4), (12, 8)                | –                      | Pflanze, Keramik           | Regel 4.4                                                  |
-| Eingang   | Start                                       | (7, 9)                         | Blick nach oben        | –                          | Ankunft                                                    |
+| Zone      | Gegenstand                                                          | Feld              | Ausrichtung            | Material, Stil, Zustand    | Zweck                                                      |
+| --------- | ------------------------------------------------------------------- | ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------- |
+| Nordwand  | acht schmale Waschmaschinen, lückenlos, zwei mit Wäschekorb obenauf | (1, 2) bis (8, 2) | Vorderseite unten      | weiß, modern, gebraucht    | Waschen                                                    |
+| Nordwand  | zwei schmale Trockner (dieselbe Bauart)                             | (9, 2), (10, 2)   | Vorderseite unten      | weiß, modern, gebraucht    | Trocknen; auf dem linken das Steckschachbrett (`trockner`) |
+| Nordwand  | Pinnwand mit Zetteln                                                | Wandfläche (9, 1) | –                      | Kork, einfach              | Zettel „Verloren: ein Turm“ (`zettelTurm` davor, (10, 4))  |
+| Ecke NO   | Regal mit Waschmittel, Gläsern und Korb                             | (11, 1)           | Vorderseite unten      | weiß und Glas, gebraucht   | Waschmittelregal                                           |
+| Ostwand   | Getränkeautomat, Leuchtfläche nach links                            | (12, 4)           | zeigt in den Raum      | Metall, modern             | `automat` davor (11, 5)                                    |
+| Mitte     | zwei Arbeitstische aus Edelstahl                                    | (4, 5), (6, 5)    | –                      | Edelstahl, modern          | Falttisch; Mr. Boateng daneben (9, 7)                      |
+| Mitte     | voller Wäschekorb                                                   | (8, 5)            | –                      | Korbgeflecht               | Spuren von Leben                                           |
+| Westseite | drei Wartesitze in Reihe                                            | (1, 7)            | Sitzflächen nach unten | oranger Kunststoff, modern | Warten; Comicheft darauf (`comicheft`, (2, 8))             |
+| Eingang   | Wäschekorb mit Pflanze obenauf, direkt neben der Tür                | (6, 8)            | –                      | Korbgeflecht               | Leben                                                      |
+| Ecken     | Zimmerpflanzen                                                      | (1, 4), (12, 8)   | –                      | Pflanze, Keramik           | Regel 4.4                                                  |
+| Eingang   | Fußmatte vor der Tür, Start                                         | (7, 9)            | Blick nach oben        | –                          | Ankunft (Regel 8.5)                                        |
 
 Belebung: eine Kundin geht zwischen (9, 8) und (11, 8) auf und ab. Offen: Ein eigenes Trocknerbild gibt
 es im Katalog nicht; die Trockner sind schmale Frontlader derselben Serie.
@@ -346,69 +355,70 @@ es im Katalog nicht; die Trockner sind schmale Frontlader derselben Serie.
 **Größe:** 14 × 11. Nordwand Reihen 0–2 Backstein, Boden ab Reihe 3 Stein, Seiten- und Südwand eine
 Reihe, keine Tür: Der einzige Ausgang ist die Treppe nach oben. Kühl, still, lange nicht benutzt.
 
-**Laufwege:** Treppe (11, 3) → Start (11, 5), Antritt frei → nach links zwischen Regalen und Kartonreihen zum
-offenen Karton (4, 7), nach rechts zum Lesetisch, nach vorn zum Wasserfleck (8, 9).
+**Laufwege:** Treppe (11, 3) → Start (11, 5), Antritt frei → nach links über die freie Mitte zum
+offenen Karton (6, 5), nach unten rechts zum Lesetisch und zum Wasserfleck (10, 9).
 
-| Zone     | Gegenstand                                         | Feld                            | Ausrichtung       | Material, Stil, Zustand  | Zweck                                                                               |
-| -------- | -------------------------------------------------- | ------------------------------- | ----------------- | ------------------------ | ----------------------------------------------------------------------------------- |
-| Nordwand | steile Holztreppe nach oben                        | (10, 1), 3 × 4                  | führt nach oben   | Holz dunkel, klassisch   | `kellerAusgang` (11, 3); unter der Kellertür der Bibliothek (Spalte 19 − 8)         |
-| Nordwand | vier hohe Regale mit Zeitungsjahrgängen und Mappen | (1, 1), (3, 1), (6, 1), (8, 1)  | Vorderseite unten | Holz, klassisch, alt     | Archiv; das Regal bei (8, 1) ist das dunkle Regal für die Laterne (R3, Platzhalter) |
-| Nordwand | Boxerfoto im Goldrahmen                            | Wandfläche (5, 1)               | –                 | alt                      | `boxerfoto` (5, 3)                                                                  |
-| Mitte    | Archivkartons in zwei Reihen                       | Reihe 5: 2, 4, 6; Reihe 7: 2, 6 | –                 | Pappe, gebraucht         | Archiv                                                                              |
-| Mitte    | offener Karton „1850–1859“                         | (4, 7)                          | –                 | Pappe                    | `karton1858`                                                                        |
-| Westwand | Stapel höherer Kartons                             | (1, 4), (1, 6)                  | –                 | Pappe                    | geordnete Stapel an der Wand                                                        |
-| Ecke SO  | Lesetisch mit aufgeschlagenem Buch, Stuhl dahinter | Tisch (9, 7), Stuhl (9, 5)      | Stuhl zum Tisch   | Holz und Grün, klassisch | `programmheft` auf dem Tisch (10, 7)                                                |
-| Ecke SO  | Stehlampe neben dem Tisch                          | (11, 6)                         | –                 | Holz, Stoffschirm        | Licht (Regel 4.4)                                                                   |
-| Boden    | Wasserfleck in Form eines Springers                | (8, 9)                          | –                 | –                        | `wasserfleck`                                                                       |
+| Zone     | Gegenstand                                                                    | Feld                                                       | Ausrichtung       | Material, Stil, Zustand  | Zweck                                                                               |
+| -------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------- | ------------------------ | ----------------------------------------------------------------------------------- |
+| Nordwand | steile Holztreppe nach oben                                                   | (10, 1), 3 × 4                                             | führt nach oben   | Holz dunkel, klassisch   | `kellerAusgang` (11, 3); unter der Kellertür der Bibliothek (Spalte 19 − 8)         |
+| Nordwand | vier hohe Regale mit Zeitungsjahrgängen und Mappen                            | (1, 1), (3, 1), (6, 1), (8, 1)                             | Vorderseite unten | Holz, klassisch, alt     | Archiv; das Regal bei (8, 1) ist das dunkle Regal für die Laterne (R3, Platzhalter) |
+| Nordwand | Boxerfoto im Goldrahmen                                                       | Wandfläche (5, 1)                                          | –                 | alt                      | `boxerfoto` (5, 3)                                                                  |
+| Südwand  | Archivkartons in zwei dichten Reihen, hintere Reihe versetzt, bei 4 zwei hoch | vorn (1, 8), (3, 8), (5, 8); hinten (2, 7), (4, 7), (6, 7) | –                 | Pappe, gebraucht         | gestapeltes Archiv                                                                  |
+| Mitte    | offener Karton „1850–1859“, frei nah am Lesetisch                             | (6, 4)                                                     | –                 | Pappe                    | `karton1858` (6, 5)                                                                 |
+| Westwand | lückenlose Kartonsäule, hohe und flache im Wechsel                            | (1, 4) bis (1, 6)                                          | –                 | Pappe                    | geordnete Stapel an der Wand                                                        |
+| Ecke SO  | Lesetisch mit aufgeschlagenem Buch, Stuhl direkt davor                        | Tisch (9, 7), Stuhl (9, 6)                                 | Stuhl zum Tisch   | Holz und Grün, klassisch | `programmheft` auf dem Tisch (10, 7)                                                |
+| Ecke SO  | Stehlampe neben dem Tisch                                                     | (11, 6)                                                    | –                 | Holz, Stoffschirm        | Licht (Regel 4.4)                                                                   |
+| Boden    | Wasserfleck in Form eines Springers                                           | (10, 9)                                                    | –                 | –                        | `wasserfleck`                                                                       |
 
-Offen: Aktenschränke und Regale mit Archivkartons gibt es im Katalog nicht; die Regale zeigen
-gebundene Bände und Mappen.
+Offen: Aktenschränke, Regale mit Archivkartons und ein Zeitungsstapel in Raumgröße fehlen im Katalog; die Regale
+zeigen gebundene Bände und Mappen. Ein zweiter Tisch hätte den Raum über 45 % gefüllt und entfällt.
 
 ### 4.3 Drechslerei (`cedarCreek.drechslerei`, neu)
 
-**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 8
-(50 %, außen Spalte 6 von 8 ±1). Es riecht nach Zedernholz; Licht von Norden.
+**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 4
+(25 %, wie das Rolltor links in der Scheunenfassade, außen Spalte 4). Es riecht nach Zedernholz; Licht von Norden.
 
-**Laufwege:** Tür (8, 10) → Start (8, 9) → nach oben in die Mitte; links zur Hobelbank und zu
-Mr. Dunmore (3, 6), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
+**Laufwege:** Tür (4, 10) → Start (4, 9) → nach oben; links zur Hobelbank und zu
+Mr. Dunmore (2, 5), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
 
-| Zone     | Gegenstand                                                 | Feld             | Ausrichtung       | Material, Stil, Zustand        | Zweck                                                                                                |
-| -------- | ---------------------------------------------------------- | ---------------- | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| Nordwand | große Hobelbank mit Ablage und Bank (statt einer Drehbank) | (1, 1), 5 × 4    | Vorderseite unten | Holz hell, rustikal, gebraucht | Arbeitsplatz; darauf Bügelsäge, Späne und das gerahmte Foto (`drehbank`, `fotoSaegemuehle`, Runde 5) |
-| Nordwand | Holzregal mit Büchern und Schalen                          | (7, 1)           | Vorderseite unten | Holz, gebraucht                | `figurenregal` (Runde 5)                                                                             |
-| Nordwand | Werktisch mit Farbdosen, Pinseln, Rahmen                   | (10, 1), 3 × 3   | Vorderseite unten | Holz, rustikal                 | Bemalen der Figuren                                                                                  |
-| Ecke NO  | Holzkiste mit Reststücken                                  | (13, 1)          | –                 | Holz und Metall                | Lager                                                                                                |
-| Ostwand  | Stapel Rundholz, leere Holzkiste                           | (13, 4), (13, 7) | –                 | Holz                           | Lager                                                                                                |
-| Ecke SW  | großer und kleiner Stapel Rundhölzer aus den Zedern        | (1, 8), (3, 8)   | –                 | Holz                           | Holzlager; Platzhalter für das Holz vom Zedernpfad (13 §7.4)                                         |
-| Mitte    | zwei Holzhocker                                            | (6, 4), (11, 5)  | –                 | Holz                           | an Hobelbank und Werktisch                                                                           |
+| Zone          | Gegenstand                                                 | Feld             | Ausrichtung       | Material, Stil, Zustand        | Zweck                                                                                                |
+| ------------- | ---------------------------------------------------------- | ---------------- | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Nordwand      | große Hobelbank mit Ablage und Bank (statt einer Drehbank) | (1, 1), 5 × 4    | Vorderseite unten | Holz hell, rustikal, gebraucht | Arbeitsplatz; darauf Bügelsäge, Späne und das gerahmte Foto (`drehbank`, `fotoSaegemuehle`, Runde 5) |
+| Nordwand      | Holzregal mit Büchern und Schalen                          | (7, 1)           | Vorderseite unten | Holz, gebraucht                | `figurenregal` (Runde 5)                                                                             |
+| Nordwand      | Werktisch mit Farbdosen, Pinseln, Rahmen                   | (10, 1), 3 × 3   | Vorderseite unten | Holz, rustikal                 | Bemalen der Figuren                                                                                  |
+| Ecke NO       | Holzkiste mit Reststücken                                  | (13, 1)          | –                 | Holz und Metall                | Lager                                                                                                |
+| Ostwand       | Stapel Rundholz, leere Holzkiste                           | (13, 4), (13, 7) | –                 | Holz                           | Lager                                                                                                |
+| Ecke SW       | großer und kleiner Stapel Rundhölzer aus den Zedern        | (1, 8), (3, 8)   | –                 | Holz                           | Holzlager; Platzhalter für das Holz vom Zedernpfad (13 §7.4)                                         |
+| Arbeitsplätze | zwei Holzhocker direkt an Hobelbank und Werktisch          | (3, 5), (11, 4)  | –                 | Holz                           | Sitz am Arbeitsplatz (Regel 4.1)                                                                     |
 
 Offen: Der Katalog hat keine Drechselbank und kein Regal mit Holzfiguren; die Hobelbank vertritt die
-Drehbank, das Regal zeigt Bücher und Schalen. Die Einträge in `orte.json` (Karte, `drechslereiTuer`,
-`drechslereiAusgang`, Figur `dunmore`) kommen mit der Außenkarte.
+Drehbank, das Regal zeigt Bücher und Schalen. Mr. Dunmore steht vorerst als Statist an der Hobelbank
+(„dreht an der Drehbank“): Eine Figur braucht einen Dialog, und der kommt erst in Runde 5. Karte,
+`drechslereiTuer` und `drechslereiAusgang` stehen in `orte.json`.
 
 ### 4.4 Bibliothek, Lesesaal (`cedarCreek.bibliothek`)
 
-**Größe:** 22 × 16 (großer Saal nach 7a.2; vorher 18 × 14). Nordwand Reihen 0–2 hellgrau, Boden dunkle
-Dielen, Südwand Reihe 15 mit der Doppeltür bei Spalte 11 (50 %, außen Spalte 25 der Hauptstraße im
-Turm). Zwei Fenster in der Nordwand.
+**Größe:** 22 × 16 (großer Saal nach 7a.2; vorher 18 × 14). Nordwand Reihen 0–2 hellgrau, Boden ruhige
+Dielen (statt des unruhigen Parketts, Hinweis des Autors aus Runde 3), roter Teppich unter dem Schachtisch, Südwand Reihe 15 mit der Tür bei Spalte 4
+(Turm links in der Fassade, Tür bei 3 von 18, außen Spalte 25). Zwei Fenster in der Nordwand.
 
-**Laufwege:** Tür (11, 15) → Start (11, 14) → gerade nach oben; links um den Schachtisch; rechts an
+**Laufwege:** Tür (4, 15) → Start (4, 14) → nach oben; rechts um den Schachtisch; rechts an
 Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
 
-| Zone         | Gegenstand                                                            | Feld                                                              | Ausrichtung       | Material, Stil, Zustand             | Zweck                                                        |
-| ------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------- | ----------------------------------- | ------------------------------------------------------------ |
-| Nordwand     | hohe Bücherregale einer Serie                                         | (1, 1), (3, 1), (7, 1), (9, 1), (17, 1)                           | Vorderseite unten | Holz rotbraun, klassisch, gebraucht | Bibliothek                                                   |
-| Nordwand     | zwei Fenster mit dunklem Holzrahmen                                   | Wandfläche (5, 1), (13, 1)                                        | –                 | Holz, Glas                          | Licht                                                        |
-| Nordwand     | Pinnwand mit Schild „Bitte flüstern“                                  | Wandfläche (11, 1)                                                | –                 | Kork, klassisch                     | `schildFluestern` (11, 3)                                    |
-| Nordwand     | niedriges Zeitungsregal                                               | (15, 1)                                                           | Vorderseite unten | Holz                                | `zeitungsregal` (16, 4)                                      |
-| Nordwand     | Tür zur Kellertreppe                                                  | Wandfläche (19, 1)                                                | –                 | Holz                                | `kellertreppe` (19, 3); darunter liegt die Archivtreppe      |
-| Mitte links  | Schachtisch aus zwei grünen Lesetischen mit vier Brettern             | (5, 7), (7, 7)                                                    | –                 | Holz und Grün, klassisch            | Bibliotheksclub; Dex (4, 7), Mrs. Okafor (9, 7), Mae (6, 11) |
-| Mitte links  | je vier gleiche Stühle oben (Blick nach unten) und unten (von hinten) | Reihe 6 und 8, Spalten 5–8                                        | zum Tisch         | Holz und Grün                       | Spieler                                                      |
-| Mitte rechts | freistehende Regalreihe                                               | (13, 4), (15, 4), (17, 4)                                         | Vorderseite unten | Holz                                | Bücherreihe im Saal                                          |
-| unten rechts | zwei Lesetische mit Leselampe, je ein Stuhl, Stehlampe                | Tische (13, 10), (16, 10); Stühle (13, 9), (16, 9); Lampe (18, 9) | Stühle zum Tisch  | Holz, Stoffschirm                   | Lesen                                                        |
-| Eingang      | Ausleihtresen mit alter Kasse                                         | (8, 11)                                                           | Vorderseite unten | Holz, klassisch                     | Platz für Miss Ashby (Runde 5)                               |
-| Ecke SO      | Globus                                                                | (19, 12)                                                          | –                 | Metall, klassisch, einmal je Ort    | `globus` (18, 12)                                            |
-| Ecken        | Pflanzen                                                              | (1, 12), (20, 4)                                                  | –                 | Pflanze                             | Regel 4.4                                                    |
+| Zone         | Gegenstand                                                                                           | Feld                                                              | Ausrichtung       | Material, Stil, Zustand             | Zweck                                                        |
+| ------------ | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------- | ----------------------------------- | ------------------------------------------------------------ |
+| Nordwand     | hohe Bücherregale einer Serie                                                                        | (1, 1), (3, 1), (7, 1), (9, 1), (17, 1)                           | Vorderseite unten | Holz rotbraun, klassisch, gebraucht | Bibliothek                                                   |
+| Nordwand     | zwei Fenster mit dunklem Holzrahmen                                                                  | Wandfläche (5, 1), (13, 1)                                        | –                 | Holz, Glas                          | Licht                                                        |
+| Nordwand     | Pinnwand mit Schild „Bitte flüstern“                                                                 | Wandfläche (11, 1)                                                | –                 | Kork, klassisch                     | `schildFluestern` (11, 3)                                    |
+| Nordwand     | niedriges Zeitungsregal                                                                              | (15, 1)                                                           | Vorderseite unten | Holz                                | `zeitungsregal` (16, 4)                                      |
+| Nordwand     | Tür zur Kellertreppe                                                                                 | Wandfläche (19, 1)                                                | –                 | Holz                                | `kellertreppe` (19, 3); darunter liegt die Archivtreppe      |
+| Mitte links  | Schachtisch aus zwei grünen Lesetischen mit vier Brettern (eines je Stuhlpaar) auf rotem Teppich     | (5, 7), (7, 7); Teppich Spalten 4–9, Reihen 5–9                   | –                 | Holz und Grün, klassisch            | Bibliotheksclub; Dex (4, 7), Mrs. Okafor (9, 7), Mae (6, 11) |
+| Mitte links  | je vier gleiche Stühle oben (Blick nach unten) und unten (von hinten)                                | Reihe 6 und 8, Spalten 5–8                                        | zum Tisch         | Holz und Grün                       | Spieler                                                      |
+| Mitte rechts | freistehende Regalreihe                                                                              | (13, 4), (15, 4), (17, 4)                                         | Vorderseite unten | Holz                                | Bücherreihe im Saal                                          |
+| unten rechts | zwei Lesetische mit Leselampe, je ein Stuhl, Stehlampe                                               | Tische (13, 10), (16, 10); Stühle (13, 9), (16, 9); Lampe (18, 9) | Stühle zum Tisch  | Holz, Stoffschirm                   | Lesen                                                        |
+| Eingang      | Ausleihtresen aus zwei Eckteilen (links mit Papier, rechts hoher Block), alte Registrierkasse darauf | (7, 11), (9, 11)                                                  | Vorderseite unten | Holz hell, klassisch                | Platz für Miss Ashby dahinter (Runde 5)                      |
+| Ecke SO      | Globus                                                                                               | (19, 12)                                                          | –                 | Metall, klassisch, einmal je Ort    | `globus` (18, 12)                                            |
+| Ecken        | Pflanzen                                                                                             | (1, 12), (20, 4)                                                  | –                 | Pflanze                             | Regel 4.4                                                    |
 
 Belebung: eine Leserin geht zwischen (3, 13) und (9, 13). Platzhalter (13 §7.4): Für die Kopie von
 Hales Seite (Post-Game) ist die Wandfläche rechts der Kellertür frei.
@@ -472,12 +482,66 @@ geschlossen; Übergänge Süd (Spalten 10–11, `zedernZurueckPark`) und Ost (Re
 **Weg:** vom Südrand hoch bis Reihe 18, in Stufen nach Nordosten bis Reihe 10 (Spalte 36),
 waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reihen 4–5 zum Ostrand.
 
-| Abschnitt | Inventar                                                               |
-| --------- | ---------------------------------------------------------------------- |
-| Wald      | Zedern, schmale Zedern und Kegelbäume dicht, Abstand ein Feld vom Pfad |
-| S2        | umgestürzter Stamm quer über den Pfad bei Spalte 45 (Reihen 9–11)      |
-| Kuppe     | Lichtung, Baumstammbank (59, 3), Felsgruppe und Stein                  |
-| überall   | Farne, Pilze, Steine, Felsgruppen                                      |
+| Abschnitt | Inventar                                                                          |
+| --------- | --------------------------------------------------------------------------------- |
+| Wald      | Zedern in Gruppen von 2 bis 6, am Rand dichter, Lichtungen dazwischen             |
+| S2        | Stapel liegender Stämme mit Pilzen quer über den Pfad bei Spalte 45 (Reihen 9–11) |
+| Kuppe     | Lichtung, Baumstammbank (59, 3) in einem Steinkreis, Mitte frei für die Aussicht  |
+| überall   | Farne, Pilze, Steine, Felsgruppen                                                 |
 
 Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
-folgen in Runde 5; der Stamm ist nur ein Kachelbild (1 × 2), als Sperre wirkt er noch schmal.
+folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), dichte Zedern von Rand zu Rand bei Spalte 44–46 schließen den Wald daneben. Hügelkanten gibt es im Katalog nicht.
+
+### 4.5 Ortskern (`cedarCreek.aussen`)
+
+**Größe:** 60 × 40 (vorher 44 × 24; vier Reihen mehr für die Gärten im Süden; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).
+Rand Hecke, offen am Westrand in den Reihen 20–21 (Hauptstraße, `flussweg`) und am Ostrand in den
+Reihen 8–9 (Waldweg, `zedernwald`) und in den Reihen 4–5 (Zedernpfad, `zedernpfad`). Böden: Gras, Gehwege Pflaster (Reihen 19 und 22), Straße Asphalt (Reihen 20–21), Erde für Pfade
+und Uferweg (Spalten 48–49), dunkles Holz für Brücke (Reihen 8–9) und Steg (Reihen 14–15, Spalten
+50–53), Bach in den Spalten 50–55 von oben bis unten.
+
+**Laufwege:** Start an der Haltestelle (44, 19) → Gehweg Nord nach Westen an Anschlagtafel,
+Bibliothek, Waschsalon und Drechslerei vorbei → Straße nach Westen zum Flussweg. Nach Osten zum
+Uferweg, nach oben über die Brücke zum Ostrand, nach unten am Steg und am Kanuverleih vorbei. Der
+Zedernpfad kommt hinter der Drechslerei (Spalten 10–11) herunter. Südlich führen Gartenwege um die
+beiden Wohnhäuser.
+
+**Abschnitte und Entdeckungen** (je etwa ein Bildschirm, 7a.2 Regel 4):
+
+| Abschnitt        | Felder                     | Entdeckung                                                    |
+| ---------------- | -------------------------- | ------------------------------------------------------------- |
+| Zedernwiese Nord | Spalten 1–20, Reihen 1–8   | Zedernpfad aus dem Wald, Eichelhäher                          |
+| Hauptstraße West | Spalten 0–20, Reihen 9–22  | Drechslerei mit Holzstapel, Waschsalon mit Hund               |
+| Bibliothek       | Spalten 21–47, Reihen 1–22 | Bibliothek, Anschlagtafel mit Plakat (`plakat`), Haltestelle  |
+| Bach             | Spalten 48–59              | Steg mit Rosa (`steg`), Brücke in den Zedernwald, Reiher      |
+| Südseite         | Reihen 23–34               | zwei Wohnhäuser, Zedernwiese mit Bänken, Kanuverleih mit Boot |
+
+| Zone      | Gegenstand                                                                                                                              | Feld                                                                   | Ausrichtung       | Material, Stil, Zustand   | Zweck                                                                |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------- | ------------------------- | -------------------------------------------------------------------- |
+| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor                                                                                     | (2, 9), 8 × 10                                                         | Vorderseite unten | Holz, ländlich, gebraucht | `drechslereiTuer` (4, 19)                                            |
+| Nordseite | Holzstapel aus Rundholz                                                                                                                 | (6, 18)                                                                | –                 | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4)            |
+| Nordseite | Waschsalon mit Markisen                                                                                                                 | (12, 10), 8 × 9                                                        | Vorderseite unten | klassisch, gebraucht      | `waschsalonTuer` (16, 19); Hund (17, 19)                             |
+| Nordseite | Laterne                                                                                                                                 | (20, 15)                                                               | –                 | Metall, klassisch         | zwischen Waschsalon und Bibliothek                                   |
+| Nordseite | Bibliothek, Backstein mit Turm; unten im Turm ein Steinbogen mit zwei Lampen und Stufen zum Gehweg                                      | (22, 3), 18 × 16; Bogen 3 × 3 im Turm                                  | Vorderseite unten | Backstein, klassisch, alt | `bibliothekTuer` (24, 19)                                            |
+| Nordseite | Anschlagtafel mit Zetteln                                                                                                               | (40, 17)                                                               | Vorderseite unten | Holz, ländlich            | `plakat` (40, 19); Zettel je Akt (13 §7.4)                           |
+| Nordseite | Bushaltestelle mit Wartehäuschen                                                                                                        | (42, 16), 5 × 3                                                        | Vorderseite unten | modern                    | Start, `bushaltestelle` (44, 19), `busZurueck` (43, 19)              |
+| Wiesen    | Zedern und Fichten                                                                                                                      | Nordwiese, Ostufer, Südwiese                                           | –                 | Natur                     | Wald um den Ort, Zedernholz                                          |
+| Südseite  | zwei Holzhäuser mit rotem Dach in Gärten: Rasen, Plattenweg zur Tür, Blumenbeet, Zedernhecke im Süden, zwischen den Gärten und im Osten | Häuser (3, 24), (12, 24), je 8 × 10; Hecke Reihe 37, Spalten 11 und 21 | Vorderseite unten | Holz, ländlich, gebraucht | Haus Holm (Mrs. Holm pflegt die Hecke) und Nachbarn, nicht betretbar |
+| Südwiese  | Baumstammbank, Bank zum Bach, Mülleimer                                                                                                 | (29, 30), (45, 25), (46, 23)                                           | Vorderseite unten | Holz, Metall              | Ruheplatz; Platz für den Ast (Runde 5)                               |
+| Ufer      | Bootsschuppen des Kanuverleihs, Ruderboot im Bach                                                                                       | (45, 27), (50, 29)                                                     | –                 | Holz, Kunststoff          | Kanuverleih (Kulisse)                                                |
+| Bach      | Steg, zwei Felder breit                                                                                                                 | (50–53, 14–15)                                                         | –                 | Holz dunkel               | `steg` (49, 14); Rosa (53, 14), Stegbauer (51, 15)                   |
+| Bach      | Holzbrücke                                                                                                                              | (50–55, 8–9)                                                           | –                 | Holz dunkel               | zum Zedernwald (`zedernwald`, 59, 8–9)                               |
+
+Belebung: Der Busfahrer steht auf der Straße bei der Haltestelle (42–44, 21) und trinkt Kaffee aus der
+Thermoskanne (nicht mehr rauchend). Victor wartet am Häuschen (47, 19), Reiher am Ufer (49, 24),
+Eichelhäher über der Nordwiese am Morgen.
+
+Platzhalter (13 §7.4): Schild „Brückenarbeiten“ an der Brücke, Schaukasten an der Bibliothek, zweite
+Angel am Steg, Ast auf der Südwiese, Kühe und Zettel kommen als Objekte in Runde 5. Freie Wiese
+südlich der Straße (Spalten 22–44) bleibt für das Gemeindefest.
+
+Offen: Der Waschsalon nutzt dasselbe Gebäude wie das Diner in Maple Falls; ein Schild „Waschsalon“
+(Neonschild) oder eine andere Fassade gibt der Katalog nicht her (alle Ladenschilder tragen englische
+Aufschriften, eine zweite Markise darf nicht auf das Gebäude gelegt werden). Bitte als eigenes Bild.
+
+Offen: Der Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.

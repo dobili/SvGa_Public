@@ -55,7 +55,8 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
 
     ``feld`` = linke obere Kachel; ``auf`` = Kennung eines anderen Möbels (mittig auf dessen
     Oberseite, gezeichnet davor, ohne Kollision); ``an_wand`` = hängt an der Wandfläche (hinter
-    allem, ohne Kollision); ``versatz`` = Feinschub in Pixeln.
+    allem, ohne Kollision); ``vorn`` = nach dem Fuß gezeichnet, ohne Kollision (Fahnenmast vor einer
+    Fassade); ``versatz`` = Feinschub in Pixeln.
     """
     befunde: list[str] = []
     nach_id: dict[str, dict] = {}
@@ -82,10 +83,13 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
         else:
             x, y = eintrag["feld"][0] * K + dx, eintrag["feld"][1] * K + dy
             an_wand = eintrag.get("an_wand", False)
+            # „vorn“: nach dem Fuß gezeichnet, aber ohne Kollision und Überlappungsprüfung (Fahnenmast
+            # oder Laterne vor einer Fassade, deren Bild bis zur Treppe Kollisionsfläche ist).
+            vorn = eintrag.get("vorn", False)
             # Ohne Kollision (Teppich, flache Dinge am Boden) liegt das Möbel unter allem.
-            flach = not angabe.get("kollision") and not an_wand
+            flach = not angabe.get("kollision") and not an_wand and not vorn
             tiefe = 0 if an_wand else 1 if flach else y + angabe["hoehe"] - K // 2
-            kollision = bool(angabe.get("kollision")) and not an_wand
+            kollision = bool(angabe.get("kollision")) and not an_wand and not vorn
         stueck = {
             "name": eintrag["moebel"],
             "x": x,

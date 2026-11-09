@@ -2676,8 +2676,8 @@
       "stil": "klassisch"
     },
     "cc4Waschmaschine": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_87.png",
-      "breite": 32,
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_90.png",
+      "breite": 16,
       "hoehe": 32,
       "kollision": true,
       "art": "waschmaschine",
@@ -3554,6 +3554,93 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "cc4Drechslerei": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Barn_Small_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc4Wohnhaus": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc4Nadelbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cc4NadelbaumB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cc4Holzstapel": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Load_Big_Vertical_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc4Briefkasten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Mailbox_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sonstiges",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cc4Ruderboot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc4Bootsschuppen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "landhaus"
+    },
+    "cc4Stammbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
     "wg4Zeder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png",
       "breite": 32,
@@ -3571,15 +3658,6 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach"
-    },
-    "wg4Stamm": {
-      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Big_Vertical_16x16.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "deko",
-      "zustand": "gebraucht",
-      "stil": "laendlich"
     },
     "mf4StegKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_26.png",
@@ -3605,6 +3683,359 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
       "breite": 16,
       "hoehe": 32,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "wg4StammPilze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_18.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wg4StammPilzeB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wg4StammSchraeg": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Big_1_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wg4Tor1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
+    },
+    "wg4Tor2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
+    },
+    "mf4TreppeAb": {
+      "quelle": "spiel/eigene/treppe_ab_gelaender.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "treppe",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "mf4Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4RegalSchmal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc4WaschmaschineKorb": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_93.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "waschmaschine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4WaschmaschineKorbB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_94.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "waschmaschine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Fussmatte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "cc4TresenLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_49.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc4TresenRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_52.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc4Kasse": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Register_Market_Stand_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "cc4Hecke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_14.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cc4Portal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_4_23.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "mf4ZaunMitte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4ZaunSeite": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_4.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4ZaunEckeRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_6.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4ZaunEckeLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_8.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf4Strassenbaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_145.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Busch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4BuschKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Gemuesebeet": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Topsoil_Arable_Vertical_2_Single_16x16.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Gartenbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Armchair_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf4TischLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_Props_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4TischRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_Props_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Wasserfall": {
+      "quelle": "spiel/eigene/wasserfall_3hoch.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf4Fahnenmast": {
+      "quelle": "spiel/eigene/fahnenmast_schule.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4StegLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4StegRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_2.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "steg",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Basketballkorb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Basketball_Net_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Gelaender": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Abfalleimer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bin_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4SchildDiner": {
+      "quelle": "spiel/eigene/schild_diner.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf4Poller": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4SchildSackgasse": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_2.png",
+      "breite": 16,
+      "hoehe": 16,
       "kollision": true,
       "art": "strassenmoebel",
       "blick": "unten",

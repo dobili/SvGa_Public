@@ -698,6 +698,14 @@
             "karte": "cedarCreek.aussen",
             "ausloeser": "zedernpfad"
           }
+        },
+        {
+          "name": "kuerbishof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "kuerbishof.hof",
+            "ausloeser": "zurueckLandstrasse"
+          }
         }
       ]
     },
@@ -3807,6 +3815,37 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        }
+      ]
+    },
+    {
+      "kennung": "kuerbishof",
+      "name": "ort.kuerbishof.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "kuerbishof.hof",
+          "datei": "karten/kuerbishof-hof.json",
+          "name": "ort.kuerbishof.hof",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckLandstrasse",
+          "karte": "kuerbishof.hof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.landstrasse",
+            "ausloeser": "kuerbishof"
+          }
         }
       ]
     }

@@ -60,13 +60,11 @@ Spiel. Freigeschaltet nach dem Wiederaufbau (`musikhausOffen`).
   Schritte je Set, Sieg oder Remis, 15, 20 und 30 Münzen). **Fund** `setliste960` („Setliste mit
   Startnummern“). 6 neue Texte. `10_…` Abschnitt 3 mit dem Stand ergänzt.
 
-**Wichtig: `"variante": "schach960"` fehlt noch in den vier Begegnungen.** Das Schema
-(`schemas/abenteuer-begegnungen.schema.json`, Stand 36835075) kennt nur `"blind"`; mit dem Feld
-schlägt `test_beispiel_passt_zum_schema[begegnungen.json…]` fehl. Nach Regel 5 in CLAUDE.md (jeder
-Stand besteht alle Tests) habe ich es deshalb vorerst weggelassen. Sobald das Schema `schach960`
-kennt, ergänze ich es (oder der Haupt-Chat beim Zusammenführen): je Begegnung
-`"variante": "schach960"` nach `"kartenErlaubt": false` in `portDelacroix.schach960Set1`, `Set2`,
-`Set3` und `crossroads.schach960`. Bis dahin wären es normale Partien aus der Grundstellung; sie zählen trotzdem nicht für Nadeln (Rolle Story) und nicht für die App (`"zaehltFuerApp": false` steht schon drin). Bitte also nicht ohne das Feld nach `main` nehmen.
+**Nachtrag (nach 891b2b10):** Das Schema kennt `schach960`; die vier Begegnungen tragen jetzt
+`"variante": "schach960"` (ohne `startnummer`, also jedes Mal neu ausgelost) und
+`"zaehltFuerApp": false`. Ambrose sagt in seiner Erklärung zusätzlich: „Zum Rochieren tippst du am
+Brett erst den König an und dann deinen eigenen Turm.“ Prüfungen danach: pytest 623, `npm run
+pruefen` 364 Dateien und 2432 Tests.
 
 **Entscheidungen**
 

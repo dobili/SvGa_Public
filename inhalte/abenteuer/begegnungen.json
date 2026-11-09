@@ -547,7 +547,8 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "variante": "schach960"
     },
     {
       "kennung": "portDelacroix.schach960Set2",
@@ -560,7 +561,8 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "variante": "schach960"
     },
     {
       "kennung": "portDelacroix.schach960Set3",
@@ -573,7 +575,8 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "variante": "schach960"
     },
     {
       "kennung": "crossroads.schach960",
@@ -586,7 +589,8 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "variante": "schach960"
     }
   ]
 }

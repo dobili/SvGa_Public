@@ -319,3 +319,109 @@ Die Dateien sind nicht geändert; das ist die Liste für den Haupt-Chat.
    Seiten als `wenn` nutzen.
 3. Freie Reihenfolge in Akt 4: Szenen dürfen nicht mehr an „Ankunft in Pinewood“ hängen; Abhängigkeiten
    prüfen (`akt4.camp` ist dann keine Voraussetzung für Ghost Town).
+
+## 7. Rückkehr
+
+Wunsch des Autors (9.11.2026): Zurückkehren soll sich lohnen, nicht erst nach dem Spiel. Manchmal
+schickt die Geschichte {held} bewusst zurück, manchmal findet man freiwillig etwas Neues. Akt 1 wird
+mit `12_Akt1_Leben.md` (mittel-1) abgeglichen, sobald es da ist. Technik: Veränderungen sind
+Objektebenen mit Bedingung aus dem Spielstand (09, Abschnitt 3.4) und Dialogvarianten; neue Karten
+braucht es dafür nicht.
+
+### 7.1 Rückkehr durch die Geschichte
+
+**Schon in der Story-Bibel (05)**
+
+| Szene      | Ort                               | Akt | Anlass                                                         | Was man dort erlebt                                                       |
+| ---------- | --------------------------------- | --- | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| 25         | Bus nach Maple Falls              | 1   | Rückfahrt am Ende von Akt 1                                    | Juno liest aus dem Tagebuch vor, Nachricht über den Parkclub von Riverton |
+| 26         | Cedar Creek (Steg)                | 2   | Aufbruch nach Riverton                                         | Juno zeigt die Nachricht, der Weg durch den Zedernwald öffnet sich        |
+| 38         | Maple Falls (Wohnzimmer)          | 2   | Mama verbietet Ironwood                                        | „Nein. Nicht Ironwood.“; Mama geht zur Nachtschicht                       |
+| 64, 69, 70 | Port Delacroix                    | 3   | Wiederaufbau über drei Besuche, der dritte nach Desert Springs | Bretter sammeln, Benefiz-Simultan, das Schild über der Tür                |
+| 80         | Port Delacroix oder Maple Falls   | 3   | Rückweg am Ende von Akt 3                                      | Mama plant Summit City                                                    |
+| 109        | Maple Falls (Dachboden)           | 4   | Abschied                                                       | Das Brett wird still, Schlussstellung der Fernpartie                      |
+| 110        | alle Städte                       | 5   | Post-Game                                                      | Revanchen, Weltmeisterschaft, das Echo des Ingenieurs                     |
+| L1, L5     | Port Delacroix (Musikhaus, Bayou) | 4   | Varianten (freiwillig, Schnellreise)                           | Schach960 bei Mabel, Nebelschach im Bayou                                 |
+
+**Neu: kurze Rückkehr-Szenen und Bitten** (je Akt mindestens eine; keine ist Voraussetzung für eine
+Hauptszene, aber jede bringt etwas mit)
+
+| Nr. | Ort                                | Akt | Anlass                                                                                                                   | Was man dort erlebt                                                                                                                                     |
+| --- | ---------------------------------- | --- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| R1  | Maple Falls (Park)                 | 1   | Nach Szene 15: Mr. Abernathy hat seine Thermoskanne im Bus nach Cedar Creek vergessen; der Busfahrer gibt sie {held} mit | Abernathy erzählt, dass er Mrs. Okafor vor vierzig Jahren beim Turnier traf; neue Stellung auf seinem Reisebrett (Matt in zwei)                         |
+| R2  | Maple Falls (Clubraum)             | 2   | Nach der Nadel von Riverton: Coach Delgado bittet um einen Bericht fürs Team                                             | Sam fordert eine Revanche auf der Stärke von Akt 2; an der Wand hängt jetzt ein Plakat mit den Nadeln                                                   |
+| R3  | Cedar Creek (Archiv)               | 2   | Nach Szene 41 (leerer Umschlag): Mrs. Okafor ruft an, sie habe im Postbuch von 1866 den Namen Whitlock gefunden          | Eintrag „Brief an A. Whitlock, nicht zustellbar“; mit Laterne das dunkle Regal (Fragment-Hinweis)                                                       |
+| R4  | Silicon Bay (Akademie)             | 3   | Nach Szene 79: „Gib es Theo zurück, wenn du ihn siehst“ (Theos Tablet); mit dem Fährpass                                 | Theo freut sich und zeigt, was er ohne Tablet gelernt hat; Dr. Lin deutet an, dass sie bei der Meisterschaft aussagen will (Vorbereitung von Szene 105) |
+| R5  | Ironwood (Postamt der Bahnstation) | 3   | Nach Szene 76: Den Brief von Hale dorthin bringen, wo er 1866 liegen blieb                                               | Die Postbeamtin stempelt den Umschlag „Zugestellt“ mit heutigem Datum; Big Joe liest mit und schweigt; Ambrose: „Spät. Aber angekommen.“ (Album)        |
+| R6  | Maple Falls (Clubraum und Park)    | 4   | Vor der Meisterschaft: Coach Delgado lädt zu einem letzten Training mit dem alten Team ein                               | Juno, Sam und Lily spielen eine Simultan gegen {held}; Abernathy und Jo begleiten den Bus zur Capital Arena (sie sitzen im Publikum)                    |
+| R7  | Cedar Creek (Bibliothek)           | 4   | Nach Szene 88 (Hales Seite): Mrs. Okafor möchte die Seite mit dem Postbuch vergleichen                                   | Beide Handschriften nebeneinander; Mrs. Okafor kopiert die Seite fürs Archiv; Mae ist im Camp, ihr Zettel liegt da (Verbindung nach Pinewood)           |
+
+### 7.2 Weltzustand je Stadt und Akt
+
+Jahreszeiten nach 09, Abschnitt 2: Akt 1 Spätsommer bis Frühherbst, Akt 2 Herbst mit erstem Schnee
+am Ende, Akt 3 Winter bis Frühjahr, Akt 4 Sommer.
+
+| Stadt          | Akt 1                                                             | Akt 2                                                                                                                                           | Akt 3                                                                                                                        | Akt 4                                                                                                 | Post-Game                                           |
+| -------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Maple Falls    | Umzug, Haus Hayes „Zu verkaufen“, Ahorn mit ersten roten Rändern  | Herbstlaub, Kürbisse auf den Veranden; Haus Hayes verkauft, Umzugswagen der neuen Familie; Nadel-Plakat im Clubraum                             | Schnee, Lichterketten; die neue Familie Hayes hat ein Kind, das nach Schach fragt; am Diner eine Werbetafel von Perfect Move | Sommerferien; Plakat „Daumen drücken!“ an der Schule; Abernathy hat einen jungen Schüler auf der Bank | Ein Brett im Park, an dem jeder spielen darf        |
+| Cedar Creek    | Brücke über den Bach im Bau; Plakat von Perfect Move an der Tafel | Brücke fertig (Zedernwald offen); im Schaukasten der Bibliothek die Zeitung von 1858; das Plakat ist überklebt: „Schachabend in der Bibliothek“ | Eis am Bachrand, Rosa angelt mit Mütze; Boateng hat eine neue Stellung auf dem Trockner                                      | Sommer, Mae und Dex im Camp (Zettel an der Tür); Lesesommer der Bibliothek mit Kindern                | Kopie von Hales Seite im Archiv ausgestellt         |
+| Riverton       | –                                                                 | Regen; Pavillon geräumt, Bildschirmtische auf der Wiese                                                                                         | Schnee auf den Bildschirmtischen, zwei sind kaputt; Slick spielt in der Bahnhofshalle weiter                                 | Bildschirme abgedeckt; Slick sammelt Unterschriften für den Pavillon und fährt zur Meisterschaft      | Pavillon gehört wieder dem Club                     |
+| Ironwood       | –                                                                 | Rauch, erste Kälte; der Club wird verkauft                                                                                                      | Schnee; die Kantine trägt das Logo von Perfect Move, Big Joe fährt den Werksbus; Postamt mit dem gestempelten Brief (R5)     | Werksbus fährt zur Meisterschaft (Crossroads); Hank trainiert Kinder in der Umkleide                  | Die Belegschaft kauft den Club zurück               |
+| Silicon Bay    | –                                                                 | –                                                                                                                                               | Akademie, Glas und Kunstlicht                                                                                                | Plakate der Meisterschaft; Nova ist fort; Theo ohne Tablet am Food-Truck                              | Dr. Lins Club ohne Bildschirme in einem alten Laden |
+| Port Delacroix | –                                                                 | –                                                                                                                                               | Hurrikan-Spuren, Club in der Turnhalle; Wiederaufbau in drei Stufen                                                          | Musikhaus offen, Schach960 am Abend, Bayou nach dem Hochwasser begehbar                               | Konzert im Musikhaus                                |
+| Desert Springs | –                                                                 | –                                                                                                                                               | Erste Wärme, blühende Kakteen; Club in der Garage                                                                            | Mira und Tomás sind unterwegs (Crossroads); Dot vermietet Zimmer an Meisterschaftsfahrer              | Hales Brief als Leihgabe im Antiquariat             |
+| Summit City    | –                                                                 | –                                                                                                                                               | –                                                                                                                            | Sommer, Drachenfest am Abend                                                                          | Ward gibt einen Endspielkurs für alle Clubchefs     |
+
+Läden mit neuem Angebot: Mit jedem Akt nehmen die Läden der früheren Städte eine Karte des neuen
+Akts auf (zum Preis des neuen Akts), damit sich auch ein Einkauf auf dem Rückweg lohnt; die Liste
+gehört in 11 (Karten und Gegenstände).
+
+### 7.3 Freiwillige Entdeckungen für Rückkehrer
+
+- **Funde, die erst später erscheinen:** im Park von Maple Falls ein Ahornblatt mit eingeritzten Zügen
+  (ab Akt 2), am Steg von Cedar Creek eine zweite Angel mit Rosas Magnetfigur (ab Akt 3), am Kanal
+  von Riverton ein Eiszapfen-Fund nur im Winter (Akt 3), am Diner von Weg 7 das reparierte Neonschild
+  (Akt 4, wenn man das „K“ zurückbringt).
+- **Revanchen:** Jeder Straßengegner und jedes Clubmitglied spielt nach jeder neuen Nadel eine
+  Revanche auf der aktuellen Stärke (R22); der erste Sieg je Akt gibt 10 Münzen.
+- **Album:** Je Stadt und Akt ein Foto für Junos Tagebuch, das man nur dort im passenden Akt machen
+  kann (Kürbisse in Maple Falls, Schnee auf den Bildschirmtischen in Riverton, Musikhaus mit
+  Lichterkette in Port Delacroix).
+- **Nebenquests, die sich erst später zeigen:** die neue Familie Hayes in Maple Falls (Akt 3: ihr
+  Kind will Schach lernen, Aufgaben aus Kapitel 0 und 1 als Lehrer stellen); Slicks Unterschriften
+  in Riverton (Akt 4: zehn Bekannte aus allen Städten unterschreiben); Hank in Ironwood (Akt 4:
+  Kindertraining mit Fesselungen); Boatengs neue Trockner-Stellung (jeder Akt eine).
+- **Nebenorte:** Kürbishof, Lockport, Steinbruch, Pelikaninsel und Sternwarte haben in jedem späteren
+  Akt eine neue Kleinigkeit (Abschnitte 2 bis 5).
+
+### 7.4 Was die Karten schon jetzt vorsehen müssen
+
+Damit die Bühnenbilder die Rückkehr tragen, ohne später neu gezeichnet zu werden:
+
+- `mapleFalls.aussen`: Einfahrt am Haus Hayes frei für den Umzugswagen; Schild „Zu verkaufen“ als
+  eigenes Objekt; an jeder Veranda ein Feld für Kürbisse oder Lichterketten (Objektebene); an der
+  Schule Platz für eine Plakatwand; am Diner eine leere Werbetafel.
+- `mapleFalls.park`: Beginn des Zedernpfads am Nordrand mit umgestürztem Baum (Objekt, das
+  verschwindet); eine zweite Bank neben Abernathys Bank für seinen Schüler; Startlinie für Jos Rennen
+  am Uferweg; ein freier Platz für das öffentliche Brett (Post-Game).
+- `mapleFalls.clubraum`: freie Wandfläche für das Nadel-Plakat.
+- `mapleFalls.wohnzimmer`: Platz auf der Anrichte für Mamas altes Turnierfoto (ab Akt 2).
+- `cedarCreek.aussen`: Brücke mit Schild „Brückenarbeiten“ als Objekt; Anschlagtafel mit wechselnden
+  Zetteln (Objekt je Akt); am Bach Platz für eine zweite Angel und Eis am Ufer (Akt 3); Schaukasten
+  an der Bibliothek.
+- `cedarCreek.archiv`: ein dunkles Regal in einer Ecke, das erst mit Laterne etwas zeigt.
+- `cedarCreek.bibliothek`: Wand oder Vitrine für die Kopie von Hales Seite (Post-Game).
+- `riverton.aussen` und `riverton.pavillon`: Bildschirmtische als Objektebene mit Bedingung (aufgebaut,
+  verschneit, abgedeckt, weg); Pavillontür verschließbar; Tisch für Slicks Unterschriftenliste.
+- `ironwood.aussen`: Postamt an der Bahnstation mit Schalter (begehbar oder als Dialog am Fenster);
+  Haltebucht für den Werksbus; Tor zum Steinbruch hinter dem Bahnhof.
+- `ironwood.kantine`: Wandfläche für das Logo von Perfect Move (Objekt, später entfernt).
+- `siliconBay.aussen`: Anleger für die Fähre zur Pelikaninsel; ein leerer Laden mit Schild „Bald
+  geöffnet“ (Dr. Lins Club im Post-Game).
+- `portDelacroix.aussen`: Fähranleger in beide Richtungen; Steg zum Bayou mit Hochwassermarke.
+- `wegDelacroixDesert.canyonpfad`: Abzweig zur Sternwarte, nachts sichtbar (Objekt mit Bedingung).
+- `desertSprings.antiquariat`: Vitrine für Hales Brief (Post-Game).
+- `wegMapleCedar.landstrasse`: Gatter mit Abzweig zum Kürbishof (siehe Ortsdokument Cedar Creek).
+- `crossroads.aussen`: freies Feld hinter der Raststätte für den Jahrmarkt; Viehgatter am Beginn der
+  Alten Minenstraße.
+- `ghostTown.aussen`: Minentor mit Kette (öffnet mit Pruitt und Laterne).

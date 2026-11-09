@@ -310,9 +310,9 @@
       "stil": "klassisch"
     },
     "sb5Faehrterminal": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_9.png",
+      "quelle": "spiel/eigene/faehrterminal.png",
       "breite": 96,
-      "hoehe": 192,
+      "hoehe": 128,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -659,14 +659,14 @@
       "stil": "klassisch"
     },
     "sb5Kuestenfaehre": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Ship_Bar.png",
-      "breite": 112,
-      "hoehe": 80,
+      "quelle": "spiel/eigene/faehre.png",
+      "breite": 160,
+      "hoehe": 64,
       "kollision": false,
       "art": "fahrzeug",
       "blick": "unten",
-      "zustand": "neu",
-      "stil": "klassisch"
+      "zustand": "gebraucht",
+      "stil": "modern"
     },
     "sb5Lab": {
       "quelle": "spiel/eigene/werk_halle.png",

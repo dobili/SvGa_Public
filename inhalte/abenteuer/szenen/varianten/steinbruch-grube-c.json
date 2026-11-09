@@ -2,9 +2,10 @@
   "karte": "steinbruch.grube",
   "datei": "karten/varianten/steinbruch-grube-c.json",
   "art": "aussen",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Variante C, die reichere: Rampen weit im Osten, großes Wasserloch in der Mitte der Sohle, Radlader, Lichtmast und Bauholz, viele Birken an der Kante, Geröll überall.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Der Stollenmund ist in einen Felsblock gebaut; sein Bild ist ein Bauteil und wirkt deshalb an den Seiten angeschnitten, der Fels deckt das ab. Variante C, die reichere: Rampen weit im Osten, großes Wasserloch in der Mitte der Sohle, Radlader, Lichtmast, Bauholz, Bohlen und Werkzeugschuppen, Granitblöcke in Reihen, Schotterhaufen, zwei Loren, viele Birken an der Kante, Geröll überall.",
   "wand": "fels",
   "boden": "schotter",
+  "ufer": "stein",
   "boeden": {
     "r": "gras",
     "f": "felsboden"
@@ -404,6 +405,74 @@
     {
       "moebel": "fels",
       "feld": [66, 30]
+    },
+    {
+      "moebel": "st5Lichtmast",
+      "feld": [62, 26]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [18, 26]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [21, 26]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [24, 26]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [27, 26]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [20, 14]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [23, 14]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [26, 14]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [47, 38]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [44, 34]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [34, 19]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [2, 36]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [4, 36]
+    },
+    {
+      "moebel": "st5Lore",
+      "feld": [33, 45]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [12, 32]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [13, 32]
+    },
+    {
+      "moebel": "st5Schuppen",
+      "feld": [11, 42]
     }
   ],
   "ausloeser": [

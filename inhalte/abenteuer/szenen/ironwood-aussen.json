@@ -1438,10 +1438,6 @@
     {
       "name": "kreidebrett",
       "feld": [30, 15]
-    },
-    {
-      "name": "fundGlasfunke",
-      "feld": [23, 46]
     }
   ],
   "figuren": [

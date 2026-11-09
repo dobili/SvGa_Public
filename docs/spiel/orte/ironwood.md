@@ -225,6 +225,12 @@ Steinbruchweg läuft in den Reihen 56–57 und endet vorerst an einer Absperrung
 Schornsteine, Kran, Lok und Lokschuppen fehlen im Katalog und sind durch Gebäude, Container und Kisten
 angedeutet; `anleger` und `nietenBruecke` brauchen neue Dialoge und sind noch nicht gesetzt.
 
+**Innenräume (Runde 5, 9.11.2026, mittel-4):** Kantine 24 × 16, Wohnküche mit Mamas Zimmer 18 × 12,
+Umkleide 14 × 10 und Museum 26 × 14 stehen als Szenen mit je drei Varianten. Abweichungen: `pokalregal`
+(14, 4) vor dem Regal statt in der Wand; im Museum fehlt eine Standuhr im Katalog, dafür hängt ein
+Fahrplan in der Mitte der Nordwand; der Gepäckkarren ist eine Sackkarre mit Postsäcken; in der Umkleide
+sind die Duschen Duschwannen (das alte Duschbild war im Katalog unklar).
+
 **Abstimmung mit mittel-3 (W3 ↔ Ironwood), entschieden vom Haupt-Chat am 9.11.2026:** Die
 Brückenkarte von W3 (`wegRivertonIronwood.bruecke`, 30 × 160, `orte/riverton.md` 1.5, Commit
 a5a08fdc) endet am **Südrand** in Reihe 159 mit dem Weg in den Spalten 24–25 und dem Kanal in den

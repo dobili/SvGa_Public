@@ -304,6 +304,24 @@
       "art": "dusche",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "iw5Postsack": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_387.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "iw5Sackkarre": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_73.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "industrie"
     }
   }
 }

@@ -72,7 +72,7 @@
     },
     "sand": {
       "bogen": "gelaende",
-      "feld": [4, 31]
+      "feld": [9, 31]
     },
     "wasser": {
       "bogen": "gelaende",

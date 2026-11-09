@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen. In der Nordwestecke führt zwischen zwei gedrechselten Pfosten eine Holztreppe nach unten ins Erdgeschoss, links und rechts davon ein Geländer an der Wand. Durch das Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht; daneben der Bauernschrank und ein Bücherregal voller vergilbter Bücher. In der Mitte liegt ein verblichener Teppich mit einem kleinen runden Holztisch und zwei Holzstühlen, die einander gegenüberstehen; auf dem Tisch liegt das alte Reiseschachbrett, als hätte jemand gerade eine Partie unterbrochen. Neben dem rechten Stuhl eine alte Stehlampe. Das Gerümpel steht in Gruppen an den Wänden: an der Ostwand zwei hohe Kistenstapel, an der Südwand eine Kiste mit blauem Tuch, das Bündel vergilbter Zeitungen von 1961, eine runde Hutschachtel und ein ovaler Standspiegel. Laufwege: von der Treppe nach rechts zum Tisch mit dem Brett und weiter zu Mrs. Whitlocks Sachen an der Süd- und Ostwand; die Mitte bleibt frei.",
+  "beschreibung": "Der Dachboden des alten Whitlock-Hauses an der Birch Lane, am ersten Abend nach dem Umzug. Ein niedriger Raum unter dem Dach mit Holzwänden und alten Dielen. In der Nordwestecke an der Wand liegt die Bodenluke mit Holzrahmen; aus der dunklen Öffnung ragt das obere Ende der Leiter, über die man aus dem Erdgeschoss heraufkommt. Daneben hängt ein Waldbild. Durch das Sprossenfenster in der Nordwand fällt schräges Spätsommerlicht; daneben der Bauernschrank und ein Bücherregal voller vergilbter Bücher. In der Mitte liegt ein verblichener Teppich mit einem kleinen runden Holztisch und zwei Holzstühlen, die einander gegenüberstehen; auf dem Tisch liegt das alte Reiseschachbrett, als hätte jemand gerade eine Partie unterbrochen. Neben dem rechten Stuhl eine alte Stehlampe. Das Gerümpel steht in Gruppen an den Wänden: an der Ostwand zwei hohe Kistenstapel, an der Südwand eine Kiste mit blauem Tuch, das Bündel vergilbter Zeitungen von 1961, eine runde Hutschachtel und ein ovaler Standspiegel. Laufwege: von der Treppe nach rechts zum Tisch mit dem Brett und weiter zu Mrs. Whitlocks Sachen an der Süd- und Ostwand; die Mitte bleibt frei.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -22,8 +22,8 @@
   ],
   "objekte": [
     {
-      "moebel": "mf4TreppeAb",
-      "feld": [1, 0]
+      "moebel": "mf4Luke",
+      "feld": [1, 2]
     },
     {
       "moebel": "mf2Dachfenster",
@@ -89,19 +89,24 @@
       "moebel": "mf2Standspiegel",
       "feld": [10, 7],
       "id": "spiegel"
+    },
+    {
+      "moebel": "mf2BildWald",
+      "feld": [4, 1],
+      "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [3, 5],
+      "feld": [2, 5],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "treppe",
-      "feld": [3, 4]
+      "feld": [1, 4]
     },
     {
       "name": "brett",

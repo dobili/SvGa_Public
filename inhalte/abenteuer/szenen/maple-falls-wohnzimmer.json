@@ -2,7 +2,7 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/maple-falls-wohnzimmer.json",
   "art": "innen",
-  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste „Whitlock – nicht wegwerfen“. An der Nordwand eine alte Anrichte unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein niedriges Lowboard mit dem Fernseher an der Wand darüber und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln an der Innenwand, vorn darin der leere Pizzakarton von gestern Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür mit Fußmatte. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster und ein kleines Bild. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
+  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe an der Wand entlang zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste „Whitlock – nicht wegwerfen“. An der Nordwand eine niedrige Kommode unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln an der Innenwand, vorn darin der leere Pizzakarton von gestern Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -23,13 +23,13 @@
   "objekte": [
     {
       "moebel": "mf4Treppe",
-      "feld": [1, 2],
+      "feld": [1, 0],
       "id": "treppe"
     },
     {
       "moebel": "mf4Anrichte",
-      "feld": [4, 2],
-      "id": "anrichte"
+      "feld": [7, 2],
+      "id": "tvboard"
     },
     {
       "moebel": "wzFenster",
@@ -44,14 +44,8 @@
     },
     {
       "moebel": "mf4Lowboard",
-      "feld": [7, 2],
-      "id": "lowboard"
-    },
-    {
-      "moebel": "mf3FernseherFlach",
-      "feld": [7, 1],
-      "an_wand": true,
-      "versatz": [0, -6]
+      "feld": [4, 2],
+      "id": "anrichte"
     },
     {
       "moebel": "wzTuer",
@@ -65,12 +59,12 @@
     {
       "moebel": "mf4SesselHinten",
       "feld": [6, 6],
-      "zu": "lowboard"
+      "zu": "tvboard"
     },
     {
       "moebel": "mf4SesselHinten",
       "feld": [8, 6],
-      "zu": "lowboard"
+      "zu": "tvboard"
     },
     {
       "moebel": "wzStehlampe",
@@ -99,18 +93,14 @@
       "an_wand": true
     },
     {
-      "moebel": "mf4BildKueche",
-      "feld": [17, 1],
-      "an_wand": true,
-      "versatz": [0, 4]
+      "moebel": "wzArbeitsplatte",
+      "feld": [13, 2],
+      "versatz": [0, 6]
     },
     {
       "moebel": "wzArbeitsplatte",
-      "feld": [13, 2]
-    },
-    {
-      "moebel": "wzArbeitsplatte",
-      "feld": [15, 2]
+      "feld": [15, 2],
+      "versatz": [0, 6]
     },
     {
       "moebel": "wzHerd",
@@ -163,17 +153,26 @@
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [5, 11]
+      "feld": [5, 10]
     },
     {
       "moebel": "mf4RegalSchmal",
       "feld": [9, 1]
+    },
+    {
+      "moebel": "mf4FernseherStand",
+      "auf": "tvboard"
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [5, 11],
+      "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [5, 11],
+      "feld": [5, 10],
       "eigenschaften": {
         "richtung": "oben"
       }

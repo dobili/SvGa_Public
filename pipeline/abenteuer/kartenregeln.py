@@ -224,17 +224,23 @@ def pruefe_blickabstand(szene: dict, gesetzt: list[dict], moebel: dict) -> list[
 
 
 def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
-    """Vor jeder Tür an der Wand (``art`` tuer, ``an_wand``) ist die Kachel darunter frei (Platz für
-    die Fußmatte, 8.1.5). Türen ``auf`` einem Gebäude prüft die Regel nicht: Dort steht der Auslöser
-    vor dem Gebäude, und der Kartenbauer prüft ihn schon auf Erreichbarkeit.
+    """Vor jeder Tür an der Wand (``art`` tuer, ``an_wand``) ist die Kachel davor frei (Platz für
+    die Fußmatte, 8.1.5 und 10.8). Vor einer Tür der Nordwand liegt diese Kachel darunter; eine Tür
+    in der Südwand (ihr Fuß steht auf der letzten Reihe) öffnet nach oben in den Raum. Türen ``auf``
+    einem Gebäude prüft die Regel nicht: Dort steht der Auslöser vor dem Gebäude, und der
+    Kartenbauer prüft ihn schon auf Erreichbarkeit.
+
+    Beispiel: Haustür Whitlock in der Südwand (5, 12), frei sein muss (5, 10) über dem Türbild.
     """
     befunde, gesperrt = [], _sperrfelder(gesetzt)
     for s, e in _mit_eintrag(szene, gesetzt):
         if _art(s, moebel) != "tuer" or not e.get("an_wand"):
             continue
         x0, x1 = s["x"] // K, (s["x"] + s["breite"] - 1) // K
-        unter = (s["y"] + s["hoehe"] - 1) // K + 1
-        if all(_gesperrt(zeilen, x, unter) or (x, unter) in gesperrt for x in range(x0, x1 + 1)):
+        fuss = (s["y"] + s["hoehe"] - 1) // K
+        suedwand = fuss >= len(zeilen) - 1
+        vor = s["y"] // K - 1 if suedwand else fuss + 1
+        if all(_gesperrt(zeilen, x, vor) or (x, vor) in gesperrt for x in range(x0, x1 + 1)):
             befunde.append(f"{s['name']}: keine freie Kachel vor der Tür")
     return befunde
 

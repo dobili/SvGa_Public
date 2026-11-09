@@ -1,34 +1,45 @@
-# Auftrag niedrig-1: fünf Figuren auf die Karten von Maple Falls und Pinewood Camp
+# Auftrag niedrig-1: Maple Falls mit echten Möbeln einrichten (erste spielbare Demo)
 
-**Stand:** kein Auftrag (Haupt-Chat, 08.11.2026; der vierzehnte Auftrag, fünf Figuren, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, fünfzehnter Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
-**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/karten/pinewood-camp-aussen.json`,
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 90d3448b)
+**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/moebel.json`,
 `docs/spiel/auftraege/niedrig-1.md`
 **Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
 
 ## Ziel
 
-mittel-1 hat bei der Gesamtsimulation gefunden, dass fünf Figuren aus `orte.json` auf keiner
-gezeichneten Karte stehen. Ohne sie fehlen Junos Begegnung draußen, Lilys Springer-Quest, der
-Bibliothekar mit dem Brief (setzt `kenntHale`, wichtig für die Hauptgeschichte) und zwei Kinder im Camp.
+Die Karten haben jetzt echte Böden und Wände aus der gekauften Grafik. Möbel und Schmuck kommen als
+Objekte vom Typ `moebel` dazu (Regeln in `inhalte/abenteuer/README.md`, Abschnitt Tiled-Karten;
+Beispiel im Park: `parkbank`, `laterne`). Richte die fünf Karten von Maple Falls ein (Dachboden,
+Wohnzimmer, Clubraum, draußen, Park), damit der Autor eine erste schöne Demo spielen kann.
 
-| Figur           | Karte (Dialogdatei)                                       | Platz                                                                        |
-| --------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `juno`          | `maple-falls-aussen.json` (`maple-falls-aussen.juno`)     | auf dem Weg zwischen Haus und Schule                                         |
-| `lily`          | `maple-falls-aussen.json` (`maple-falls-aussen.lily`)     | im Park oder auf der Straße, gut sichtbar                                    |
-| `abernathy`     | `maple-falls-park.json` (`maple-falls-park.bibliothekar`) | an einer Bank im Park, gern mit Buch; der Name auf der Karte ist `abernathy` |
-| `lou`, `tamsin` | `pinewood-camp-aussen.json`                               | bei den Hütten oder am Lagerfeuer, nebeneinander                             |
+## Grafik finden
+
+Die Bilder liegen im **privaten** Repository `dobili/schach-abenteuer-inhalte`. Hänge es mit dem
+Werkzeug add_repo an deine Sitzung (lesen genügt) und klone es nach `/home/user/schach-abenteuer-inhalte`.
+Dort steht `register/register.csv` (Pfad, Paket, Thema, Name oder Beschreibung, Breite, Höhe,
+Verwendung); suchen etwa mit `grep -i "sofa\|couch" register/register.csv`. Übersichtsbilder mit
+Nummern: `register/uebersicht/`. Gelingt das Anhängen nicht, melde es sofort und warte.
+Nichts aus dem privaten Repository ins öffentliche kopieren; in `moebel.json` stehen nur Pfade.
 
 ## Vorgaben
 
-1. Objekte vom Typ `figur` in der Ebene `ausloeser`, `name` = Kurzname wie oben (so wie
-   `coachDelgado` im Clubraum), Größe 16 × 16, auf einer begehbaren Kachel, nicht auf einem
-   Übergang und nicht im Weg eines Übergangs.
-2. Steht die Dialogdatei einer Figur auf einer anderen Karte als oben vermutet, gilt die Dialogdatei.
-3. Am Ende im Spiel kurz prüfen: Paketbau ohne Fehler, die Figur steht im Bild (Bildschirmfoto genügt).
+1. Je Möbel ein Eintrag in `moebel.json` (sprechender Schlüssel wie `sofaRot`, `buecherregal1`)
+   mit `quelle` (Pfad aus dem Register), `breite`, `hoehe` (aus dem Register) und `kollision`.
+   Dasselbe Möbel darf auf mehreren Karten stehen.
+2. Dachboden: Kisten, altes Regal, Lampe, das Reisebrett von Ambrose (bleibt Auslöser). Wohnzimmer:
+   Sofa, Tisch, Küchenzeile, Pflanzen. Clubraum: Tische mit Stühlen, Regale, Pokalvitrine (Auslöser
+   bleibt). Draußen: Häuser, Bäume, Zäune, Bushaltestelle, Laternen. Park: Bäume, Bänke, Blumen,
+   Halfpipe (falls es eine gibt; sonst Rampe aus Holzteilen).
+3. Platzhalterkacheln „Kiste“, „Lampe“, „Brett“ (Kacheln 3, 7, 5) dort durch Boden ersetzen, wo
+   jetzt ein Möbel steht. Kollision muss danach stimmen: Wege bleiben frei, jeder Auslöser und jede
+   Figur erreichbar (die Tests prüfen das).
+4. Mit dem Paketbau (in `app/`: `node skripte/baue-abenteuerpaket.mjs`) und, wenn du das private
+   Repository als `app/inhalte-privat/quelle` verlinkst (`ln -s /home/user/schach-abenteuer-inhalte
+   app/inhalte-privat/quelle`), im Spiel ansehen; ein Bildschirmfoto je Karte im Bericht beschreiben.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 (vom Helfer auszufüllen)
 

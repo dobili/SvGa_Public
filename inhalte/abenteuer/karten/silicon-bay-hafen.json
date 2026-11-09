@@ -555,9 +555,9 @@
           "name": "sb5Faehrterminal",
           "type": "moebel",
           "x": 16,
-          "y": 272,
+          "y": 336,
           "width": 96,
-          "height": 192,
+          "height": 128,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -579,8 +579,8 @@
           "type": "moebel",
           "x": 16,
           "y": 496,
-          "width": 112,
-          "height": 80,
+          "width": 160,
+          "height": 64,
           "rotation": 0,
           "visible": true,
           "properties": [

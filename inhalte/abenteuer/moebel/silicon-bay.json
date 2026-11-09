@@ -553,6 +553,150 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb5BrunnenWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_4.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "brunnen",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sb5HotelC": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_16x16.png",
+      "breite": 368,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Baum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_14.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5GleisGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "gleis",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5GleisNeu": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Grey_Rail_Modular_Horizontal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "gleis",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5Fass": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "behaelter",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sb5FassB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "behaelter",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sb5Fischkiste": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_7.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "behaelter",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "sb5FischkisteB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_10.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "behaelter",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "sb5Fischeimer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Fish_Bucket_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "behaelter",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "sb5Kiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "behaelter",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sb5Kuestenfaehre": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Ship_Bar.png",
+      "breite": 112,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sb5Lab": {
+      "quelle": "spiel/eigene/werk_halle.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sb5Kran": {
+      "quelle": "spiel/eigene/werk_kran.png",
+      "breite": 112,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sb5LabGlas": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Large_Greenhouse_Example.png",
+      "breite": 128,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

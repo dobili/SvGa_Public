@@ -2,12 +2,13 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/varianten/silicon-bay-hafen-c.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser an der Kaimauer: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei, daneben der gläserne Perfect Move Store. Davor läuft eine Promenade aus Holzbohlen von West nach Ost, darunter der gepflasterte Kai mit Bänken zum Wasser, Pollern und Laternen. Im Westen das Fährterminal der Küstenfähre mit dem Boot im Wasser, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Variante C, die reichere: Leuchtturm auf der Mole, eine Schiffsbar im Wasser, Marktkarren und Kisten auf der Promenade, vier Laternen.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei und der Perfect Move Store. Davor läuft eine Promenade aus hellen Steinplatten, darunter der gepflasterte Kai bis zur Kaikante aus Stein. Im Westen das Fährterminal mit der Küstenfähre am Kai, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Variante C, die belebte: Leuchtturm auf der Mole im Osten, Marktkarren auf der Promenade, am Kai ein großer Kran, Fischkisten, Fässer und Kisten, Bänke zum Wasser, Laternen in dichter Reihe.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
     "p": "pflaster",
-    "h": "holzHell",
+    "h": "stein",
+    "k": "stein",
     "b": "holzDunkel"
   },
   "bruecken": ["b"],
@@ -29,12 +30,10 @@
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
@@ -44,14 +43,16 @@
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#..............................................................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkbbbbkkkkkk.......#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "objekte": [
@@ -60,102 +61,137 @@
       "feld": [1, 17]
     },
     {
-      "moebel": "sb5Fischerboot",
-      "feld": [2, 32],
+      "moebel": "sb5Kuestenfaehre",
+      "feld": [1, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [46, 30],
       "bauteil_ok": true
     },
     {
-      "moebel": "cc5BootUfer",
-      "feld": [56, 31]
+      "moebel": "sb5StegPlanke",
+      "feld": [46, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 31]
+      "feld": [46, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 32]
+      "feld": [46, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 33]
+      "feld": [46, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 34]
+      "feld": [46, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 35]
+      "feld": [47, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 31]
+      "feld": [47, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 32]
+      "feld": [47, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 33]
+      "feld": [47, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 34]
+      "feld": [47, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 35]
+      "feld": [47, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 31]
+      "feld": [48, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 32]
+      "feld": [48, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 33]
+      "feld": [48, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 34]
+      "feld": [48, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 35]
+      "feld": [48, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 31]
+      "feld": [48, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 32]
+      "feld": [49, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 33]
+      "feld": [49, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 34]
+      "feld": [49, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 35]
+      "feld": [49, 33],
+      "bauteil_ok": true
     },
     {
-      "moebel": "cc5StegPfaehle",
-      "feld": [52, 36],
+      "moebel": "sb5StegPlanke",
+      "feld": [49, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [49, 35],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5StegPfaehle",
-      "feld": [54, 36],
+      "feld": [46, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5StegPfaehle",
+      "feld": [48, 36],
       "bauteil_ok": true
     },
     {
@@ -163,76 +199,121 @@
       "feld": [2, 0]
     },
     {
+      "moebel": "sb5Store",
+      "feld": [17, 5]
+    },
+    {
       "moebel": "sb5Kurzwaren",
-      "feld": [16, 8]
+      "feld": [24, 8]
     },
     {
       "moebel": "sb5Hafenmeisterei",
-      "feld": [24, 6]
-    },
-    {
-      "moebel": "sb5Store",
-      "feld": [38, 5]
-    },
-    {
-      "moebel": "sb5Store",
-      "feld": [44, 5]
-    },
-    {
-      "moebel": "sb5Faehrhaus",
-      "feld": [50, 16]
+      "feld": [40, 6]
     },
     {
       "moebel": "sb5Leuchtturm",
-      "feld": [56, 14]
+      "feld": [56, 21]
     },
     {
-      "moebel": "sb5Schiffsbar",
-      "feld": [20, 32]
+      "moebel": "sb5Faehrhaus",
+      "feld": [51, 25]
+    },
+    {
+      "moebel": "sb5Fischerboot",
+      "feld": [30, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5BootUfer",
+      "feld": [51, 31]
     },
     {
       "moebel": "sb5Marktkarren",
-      "feld": [30, 17]
+      "feld": [12, 16]
     },
     {
       "moebel": "sb5Marktkarren",
-      "feld": [9, 17]
+      "feld": [46, 16]
     },
     {
       "moebel": "caKisten",
-      "feld": [13, 17]
+      "feld": [20, 17]
     },
     {
       "moebel": "caFaesser",
       "feld": [36, 22]
     },
     {
-      "moebel": "mfBank",
-      "feld": [12, 27]
+      "moebel": "sb5Kran",
+      "feld": [18, 23]
     },
     {
-      "moebel": "mfBank",
-      "feld": [40, 27]
+      "moebel": "sb5Fischkiste",
+      "feld": [9, 25]
     },
     {
-      "moebel": "sbLaterne",
-      "feld": [8, 22]
+      "moebel": "sb5FischkisteB",
+      "feld": [10, 25]
     },
     {
-      "moebel": "sbLaterne",
-      "feld": [18, 22]
+      "moebel": "sb5Fischkiste",
+      "feld": [11, 25]
     },
     {
-      "moebel": "sbLaterne",
+      "moebel": "sb5Fischeimer",
+      "feld": [13, 25]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [28, 22]
+    },
+    {
+      "moebel": "sb5FassB",
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "sb5Kiste",
       "feld": [30, 22]
     },
     {
+      "moebel": "sb5Kiste",
+      "feld": [28, 23]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [30, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [38, 27]
+    },
+    {
       "moebel": "sbLaterne",
-      "feld": [46, 22]
+      "feld": [10, 20]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [26, 20]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [34, 20]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [42, 20]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [50, 20]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [10, 29]
+      "feld": [8, 29]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [16, 29]
     },
     {
       "moebel": "cc5Poller",
@@ -244,7 +325,7 @@
     },
     {
       "moebel": "cc5Poller",
-      "feld": [48, 29]
+      "feld": [42, 29]
     }
   ],
   "ausloeser": [
@@ -281,10 +362,10 @@
     {
       "name": "ames",
       "typ": "statist",
-      "feld": [21, 17],
+      "feld": [27, 17],
       "eigenschaften": {
-        "von": "21,17",
-        "bis": "21,17",
+        "von": "27,17",
+        "bis": "27,17",
         "tun": "sitzt auf einer Kiste vor seinem Laden",
         "wann": "tag"
       }
@@ -292,10 +373,10 @@
     {
       "name": "finch",
       "typ": "statist",
-      "feld": [51, 21],
+      "feld": [50, 23],
       "eigenschaften": {
-        "von": "51,21",
-        "bis": "51,21",
+        "von": "50,23",
+        "bis": "50,23",
         "tun": "wartet am Fährhäuschen",
         "wann": "tag"
       }
@@ -303,10 +384,10 @@
     {
       "name": "moewe",
       "typ": "tier",
-      "feld": [30, 34],
+      "feld": [30, 36],
       "eigenschaften": {
-        "von": "26,34",
-        "bis": "36,34",
+        "von": "26,36",
+        "bis": "36,36",
         "verhalten": "fliegen"
       }
     }

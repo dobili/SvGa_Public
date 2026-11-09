@@ -2,7 +2,7 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme, kein Baum, der nicht in einem Kübel steht. Oben die Gebäudezeile: links der Konzernturm von Perfect Move mit Glasportal, in der Mitte die Akademie, rechts das Hotel Bayview, ganz rechts die Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält, und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit Food-Truck, Kübeln, Bänken und Wasserspiel, an der Südkante die Glasbrüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. Platz wie im Ortsplan: Food-Truck links, Innovation Lab dahinter, zwei Reihen Kübel, Wasserspiel mit Bänken, Kaffeekiosk rechts; Straßenbahn an der Haltestelle vor der Akademie.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, in der Mitte die Akademie, rechts das Hotel Bayview, daneben Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Pflaster), und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit dem Brunnen, an der Südkante die Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. Platz wie im Ortsplan: Food-Truck links, dahinter das Innovation Lab in einer alten Werkhalle, zwei Reihen Kübel, Brunnen mit Bänken, Kaffeekiosk rechts; Straßenbahn an der Haltestelle vor der Akademie.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -793,12 +793,8 @@
       "feld": [12, 33]
     },
     {
-      "moebel": "sb5Store",
-      "feld": [2, 36]
-    },
-    {
-      "moebel": "sb5Store",
-      "feld": [8, 36]
+      "moebel": "sb5Lab",
+      "feld": [3, 38]
     },
     {
       "moebel": "sb5Kuebel",
@@ -825,7 +821,7 @@
       "feld": [29, 41]
     },
     {
-      "moebel": "sb5Brunnen",
+      "moebel": "sb5BrunnenWasser",
       "feld": [42, 35]
     },
     {

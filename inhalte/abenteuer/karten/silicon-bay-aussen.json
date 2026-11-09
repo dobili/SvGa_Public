@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 179,
+  "nextobjectid": 178,
   "layers": [
     {
       "id": 1,
@@ -4124,19 +4124,19 @@
         },
         {
           "id": 163,
-          "name": "sb5Store",
+          "name": "sb5Lab",
           "type": "moebel",
-          "x": 32,
-          "y": 576,
+          "x": 48,
+          "y": 608,
           "width": 96,
-          "height": 176,
+          "height": 96,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 744
+              "value": 696
             },
             {
               "name": "kollision",
@@ -4147,19 +4147,19 @@
         },
         {
           "id": 164,
-          "name": "sb5Store",
+          "name": "sb5Kuebel",
           "type": "moebel",
-          "x": 128,
+          "x": 336,
           "y": 576,
-          "width": 96,
-          "height": 176,
+          "width": 32,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 744
+              "value": 600
             },
             {
               "name": "kollision",
@@ -4170,10 +4170,10 @@
         },
         {
           "id": 165,
-          "name": "sb5Kuebel",
+          "name": "sb5KuebelBluete",
           "type": "moebel",
           "x": 336,
-          "y": 576,
+          "y": 656,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -4182,7 +4182,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 600
+              "value": 680
             },
             {
               "name": "kollision",
@@ -4193,10 +4193,10 @@
         },
         {
           "id": 166,
-          "name": "sb5KuebelBluete",
+          "name": "sb5Kuebel",
           "type": "moebel",
-          "x": 336,
-          "y": 656,
+          "x": 400,
+          "y": 576,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -4205,7 +4205,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 680
+              "value": 600
             },
             {
               "name": "kollision",
@@ -4216,10 +4216,10 @@
         },
         {
           "id": 167,
-          "name": "sb5Kuebel",
+          "name": "sb5KuebelBluete",
           "type": "moebel",
           "x": 400,
-          "y": 576,
+          "y": 656,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -4228,7 +4228,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 600
+              "value": 680
             },
             {
               "name": "kollision",
@@ -4239,29 +4239,6 @@
         },
         {
           "id": 168,
-          "name": "sb5KuebelBluete",
-          "type": "moebel",
-          "x": 400,
-          "y": 656,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 680
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 169,
           "name": "sb5Kuebel",
           "type": "moebel",
           "x": 464,
@@ -4284,7 +4261,7 @@
           ]
         },
         {
-          "id": 170,
+          "id": 169,
           "name": "sb5KuebelBluete",
           "type": "moebel",
           "x": 464,
@@ -4307,20 +4284,20 @@
           ]
         },
         {
-          "id": 171,
-          "name": "sb5Brunnen",
+          "id": 170,
+          "name": "sb5BrunnenWasser",
           "type": "moebel",
           "x": 672,
           "y": 560,
-          "width": 48,
-          "height": 96,
+          "width": 64,
+          "height": 80,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 648
+              "value": 632
             },
             {
               "name": "kollision",
@@ -4330,7 +4307,7 @@
           ]
         },
         {
-          "id": 172,
+          "id": 171,
           "name": "mfBank",
           "type": "moebel",
           "x": 608,
@@ -4353,7 +4330,7 @@
           ]
         },
         {
-          "id": 173,
+          "id": 172,
           "name": "mfBank",
           "type": "moebel",
           "x": 736,
@@ -4376,7 +4353,7 @@
           ]
         },
         {
-          "id": 174,
+          "id": 173,
           "name": "sb5Kaffeekiosk",
           "type": "moebel",
           "x": 960,
@@ -4399,7 +4376,7 @@
           ]
         },
         {
-          "id": 175,
+          "id": 174,
           "name": "sbLaterne",
           "type": "moebel",
           "x": 192,
@@ -4422,7 +4399,7 @@
           ]
         },
         {
-          "id": 176,
+          "id": 175,
           "name": "sbLaterne",
           "type": "moebel",
           "x": 480,
@@ -4445,7 +4422,7 @@
           ]
         },
         {
-          "id": 177,
+          "id": 176,
           "name": "sbLaterne",
           "type": "moebel",
           "x": 768,
@@ -4468,7 +4445,7 @@
           ]
         },
         {
-          "id": 178,
+          "id": 177,
           "name": "sbLaterne",
           "type": "moebel",
           "x": 1024,

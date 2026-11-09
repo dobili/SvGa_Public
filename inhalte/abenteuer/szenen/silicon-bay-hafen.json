@@ -2,12 +2,13 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser an der Kaimauer: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei, daneben der gläserne Perfect Move Store. Davor läuft eine Promenade aus Holzbohlen von West nach Ost, darunter der gepflasterte Kai mit Bänken zum Wasser, Pollern und Laternen. Im Westen das Fährterminal der Küstenfähre mit dem Boot im Wasser, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Häuserzeile wie im Ortsplan, zwei Bänke am Kai, drei Laternen, Kisten an der Fischhalle.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei und der Perfect Move Store. Davor läuft eine Promenade aus hellen Steinplatten, darunter der gepflasterte Kai bis zur Kaikante aus Stein. Im Westen das Fährterminal mit der Küstenfähre am Kai, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Häuserzeile wie im Ortsplan; am Kai Fischkisten und Eimer vor der Fischhalle, Fässer, ein Ladekran, Bänke zum Wasser, Poller an der Kaimauer.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
     "p": "pflaster",
-    "h": "holzHell",
+    "h": "stein",
+    "k": "stein",
     "b": "holzDunkel"
   },
   "bruecken": ["b"],
@@ -29,12 +30,10 @@
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
@@ -44,6 +43,8 @@
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
+    "#..............................................................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkbbbbkkkkkkk#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
@@ -60,93 +61,128 @@
       "feld": [1, 17]
     },
     {
-      "moebel": "sb5Fischerboot",
-      "feld": [2, 32],
+      "moebel": "sb5Kuestenfaehre",
+      "feld": [1, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 30],
       "bauteil_ok": true
     },
     {
-      "moebel": "cc5BootUfer",
-      "feld": [56, 31]
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 31]
+      "feld": [52, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 32]
+      "feld": [52, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 33]
+      "feld": [52, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 34]
+      "feld": [52, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [52, 35]
+      "feld": [53, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 31]
+      "feld": [53, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 32]
+      "feld": [53, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 33]
+      "feld": [53, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 34]
+      "feld": [53, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [53, 35]
+      "feld": [53, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 31]
+      "feld": [54, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 32]
+      "feld": [54, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 33]
+      "feld": [54, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 34]
+      "feld": [54, 33],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [54, 35]
+      "feld": [54, 34],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 31]
+      "feld": [54, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 32]
+      "feld": [55, 30],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 33]
+      "feld": [55, 31],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 34]
+      "feld": [55, 32],
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5StegPlanke",
-      "feld": [55, 35]
+      "feld": [55, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 35],
+      "bauteil_ok": true
     },
     {
       "moebel": "cc5StegPfaehle",
@@ -172,39 +208,76 @@
     },
     {
       "moebel": "sb5Store",
-      "feld": [38, 5]
-    },
-    {
-      "moebel": "sb5Store",
-      "feld": [44, 5]
+      "feld": [40, 5]
     },
     {
       "moebel": "sb5Faehrhaus",
-      "feld": [57, 16]
+      "feld": [57, 25]
     },
     {
-      "moebel": "mfBank",
-      "feld": [18, 27]
+      "moebel": "sb5Fischerboot",
+      "feld": [14, 32],
+      "bauteil_ok": true
     },
     {
-      "moebel": "mfBank",
-      "feld": [24, 27]
+      "moebel": "cc5BootUfer",
+      "feld": [57, 31]
     },
     {
       "moebel": "caKisten",
       "feld": [13, 17]
     },
     {
-      "moebel": "sbLaterne",
-      "feld": [14, 22]
+      "moebel": "sb5Fischkiste",
+      "feld": [9, 21]
+    },
+    {
+      "moebel": "sb5FischkisteB",
+      "feld": [10, 21]
+    },
+    {
+      "moebel": "sb5Fischeimer",
+      "feld": [11, 21]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [26, 21]
+    },
+    {
+      "moebel": "sb5FassB",
+      "feld": [27, 21]
+    },
+    {
+      "moebel": "sb5Kiste",
+      "feld": [26, 22]
+    },
+    {
+      "moebel": "sb5Kran",
+      "feld": [38, 23]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [16, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [22, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [48, 27]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [30, 22]
+      "feld": [14, 20]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [46, 22]
+      "feld": [30, 20]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [46, 20]
     },
     {
       "moebel": "cc5Poller",
@@ -216,7 +289,11 @@
     },
     {
       "moebel": "cc5Poller",
-      "feld": [44, 29]
+      "feld": [36, 29]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [50, 29]
     }
   ],
   "ausloeser": [
@@ -264,10 +341,10 @@
     {
       "name": "finch",
       "typ": "statist",
-      "feld": [58, 21],
+      "feld": [56, 23],
       "eigenschaften": {
-        "von": "58,21",
-        "bis": "58,21",
+        "von": "56,23",
+        "bis": "56,23",
         "tun": "wartet am Fährhäuschen",
         "wann": "tag"
       }
@@ -275,10 +352,10 @@
     {
       "name": "moewe",
       "typ": "tier",
-      "feld": [30, 34],
+      "feld": [30, 36],
       "eigenschaften": {
-        "von": "26,34",
-        "bis": "36,34",
+        "von": "26,36",
+        "bis": "36,36",
         "verhalten": "fliegen"
       }
     }

@@ -1,21 +1,60 @@
-# Auftrag niedrig-1: Desert Springs und die Wüstenwege einrichten
+# Auftrag niedrig-1: Alle Möbel prüfen, dann Ghost Town einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, neunzehnter Auftrag)
+**Stand:** offen (Haupt-Chat, 09.11.2026, zwanzigster Auftrag; danke für den Befund zum Register, ist berichtigt)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b03adbff)
-**Darf ändern:** `inhalte/abenteuer/karten/desert-springs-*.json`, `weg-delacroix-desert-*.json`,
-`weg-desert-summit-*.json`, `inhalte/abenteuer/moebel.json` (nur neue Einträge, Vorsilbe `ds`),
-`docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand f9d14040);
+privates Repository auf `origin/main` (Stand f8cb2b18, nur lesen)
+**Darf ändern:** `inhalte/abenteuer/moebel.json` (Pfade und Größen falscher Einträge, neue Einträge mit Vorsilbe `gt`),
+`inhalte/abenteuer/karten/ghost-town-*.json`, `weg-pinewood-ghost-*.json`, `erinnerung-siedlung-*.json`,
+und Karten anderer Orte nur, wenn eine berichtigte Möbelgröße dort etwas zustellt; `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (mittel-1 arbeitet parallel)
 
 ## Ziel
 
-Desert Springs (Wüstenstadt, Kachelstil „wueste“ automatisch): draußen (flache Häuser, Kakteen,
-Wassertank, Tankstelle), Garage (Autos, Werkzeug, Reifen), Antiquariat (Bücherregale, Kisten, alte
-Möbel); Canyonpfad und Felsbogen (Felsen, Kakteen; Felsen aus Serene Village oder Farm); Diner
-(Theke, Barhocker, Sitzecken; innen) und Bergstraße (Felsen, Leitplanke, Schilder).
-Neu: Eine Karteneigenschaft `stil` kann den Kachelsatz wählen (README); gibt es Wasser auf einer
-Karte, `kueste` setzen.
+1. Dein Vorschlag: eine Übersicht aller Möbel als Bild (Schlüssel und Bild nebeneinander). Prüfe jeden
+   Eintrag: Zeigt das Bild, was der Schlüssel sagt? Die Beschreibungen der Haiku-Helfer im Register sind
+   teils verschoben. Falsche Einträge auf das richtige Bild umstellen (Größe aus der Datei), in der
+   Tabelle im Bericht festhalten (alt, neu). Das Übersichtsbild nicht ins öffentliche Repository.
+2. Ghost Town (verlassene Goldgräberstadt, Wüste): draußen (Holzfassaden, Fässer, Kakteen, Brunnen),
+   Saloon (Theke, Tische, Klavier). Canyonrand und Staubstraße. Erinnerung Siedlung: Hütte (einfach,
+   Holz, sepia getönt wie London).
+
+## Bericht des letzten Auftrags, zur Nachlese
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; Konflikt in `moebel.json` mit
+mittel-1 gelöst, indem ich deren Fassung übernommen und nur meine `ds`-Einträge ergänzt habe).
+Neu: `dsKaktus` (Topfkaktus, 16 × 32), `dsAuto` (Auto an der Tankstelle, 32 × 32), `dsReifen`
+(16 × 16), `dsHocker` (Holzhocker, 16 × 16), `dsSchranke` (Absperrung als Leitplanke, 32 × 16),
+`dsRegal` (Regal mit Büchern und Flaschen, 32 × 48). Wiederverwendet: `fels`, `felsKlein`,
+`truhe`, `kisteRot`, `kisteGrau`, `holztisch`, `wegweiser`, `pdWerkzeugregal`.
+
+Bildschirmfotos (je ein Satz):
+
+- **Canyonpfad:** Kakteen am Pfad, Felsen neben Miras Stein und am Ufer.
+- **Felsbogen:** zwei Absperrungen als Geländer an der Eisenbahnbrücke, Kakteen am Weg.
+- **Desert Springs draußen:** Kakteen an der Straße, ein Auto und Reifen an der Tankstelle bei
+  Buck.
+- **Garage:** Werkzeugregal und Reifen an der Rückwand, ein Auto in der Garage; Mira und Tomás
+  frei.
+- **Antiquariat:** vier Regale an den Seiten, Truhe und Kiste in der Mitte (die Truhe steht unter
+  Mr. Okoro, damit sie ihn nicht verdeckt), drei Aktenstapel.
+- **Diner:** zwei Autos auf dem Parkplatz, Kakteen am Rand, ein Tisch mit zwei Hockern vor dem
+  Diner (ein Innenraum fürs Diner ist keine eigene Karte).
+- **Bergstraße:** Felsen, eine Leitplanke am Hang, ein Wegweiser an der Abzweigung zur Hochebene.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build` und Oberflächentests Abenteuer
+(9 von 9) bestanden. Einen Wassertank gibt es im Register nicht.
+
+**Befund für den Haupt-Chat (Register falsch beschriftet):** Ich habe alle Bilder aus
+`moebel.json` als Übersicht angesehen. Einige Namen im Register passen nicht zum Bild, und das
+betrifft schon gesetzte Möbel, die ich in diesem Auftrag nicht ändern darf:
+`buecherregal` (Classroom 36) ist eine Schultafel, `leselampe` (Classroom 40) ein Kühlschrank,
+`tafel` (Classroom 29) ein grüner Schrank, Classroom 34 ein Globus. Echte Bücherregale sind
+Classroom 43, 44 und 45 (je 32 × 48). Betroffen: Clubraum Maple Falls (`buecherregal` wirkt dort
+als Tafel, passt), Bibliothek Cedar Creek (`buecherregal` sollte Regal sein), `leselampe` in
+Bibliothek und Archiv. Vorschlag: die beiden Pfade in `moebel.json` korrigieren
+(`buecherregal` → Classroom 45 mit 32 × 48, `leselampe` → eine echte Lampe) und die
+Positionen in der Bibliothek prüfen; das Register sollte bei Gelegenheit neu beschriftet werden.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

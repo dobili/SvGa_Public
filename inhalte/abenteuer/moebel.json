@@ -86,9 +86,9 @@
       "kollision": true
     },
     "buecherregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_36.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_57.png",
       "breite": 32,
-      "hoehe": 32,
+      "hoehe": 48,
       "kollision": true
     },
     "schreibtisch": {
@@ -98,9 +98,9 @@
       "kollision": true
     },
     "tafel": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_29.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_36.png",
       "breite": 32,
-      "hoehe": 48,
+      "hoehe": 32,
       "kollision": true
     },
     "pokal": {
@@ -200,9 +200,9 @@
       "kollision": true
     },
     "leselampe": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_40.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_79.png",
       "breite": 16,
-      "hoehe": 32,
+      "hoehe": 48,
       "kollision": true
     },
     "kisteGrau": {
@@ -841,6 +841,7 @@
       "hoehe": 48,
       "kollision": true
     },
+<<<<<<< HEAD
     "svPlateau": {
       "quelle": "spiel/serene/serene_02.png",
       "breite": 96,
@@ -849,10 +850,21 @@
     },
     "svGrasinsel": {
       "quelle": "spiel/serene/serene_03.png",
+=======
+    "dsKaktus": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_458.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "dsAuto": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Car_1.png",
+>>>>>>> origin/claude/friendly-shannon-y8bf90
       "breite": 32,
       "hoehe": 32,
       "kollision": true
     },
+<<<<<<< HEAD
     "svFels": {
       "quelle": "spiel/serene/serene_29.png",
       "breite": 32,
@@ -972,6 +984,31 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true
+=======
+    "dsReifen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tire_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "dsHocker": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Stool_Wood_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "dsSchranke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Barrier_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "dsRegal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_45.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true
+>>>>>>> origin/claude/friendly-shannon-y8bf90
     }
   }
 }

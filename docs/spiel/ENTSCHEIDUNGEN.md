@@ -699,3 +699,35 @@ die Prüfliste von `inhalte/abenteuer/szenen/README.md` und ins Register (Spalte
 - Innen und außen passen zusammen: Größe und Stand des Hauses draußen entsprechen den Räumen drinnen
   (eine Villa hat viele, gut eingerichtete Räume; ein schlichtes Reihenhaus wenige, einfache). Je
   Gebäude mit Innenkarte wird das Haus draußen nach den Innenräumen gewählt oder umgekehrt.
+
+**Rückmeldung des Autors zu Runde 3 der Karten (9.11.2026, mündlich, zusammengefasst):**
+- Dachboden: Treppe muss nach unten führen (wirkt wie Treppe nach oben); Kommode oben links steht
+  in der Wand. Sonst glaubwürdig (Gerümpel, auch Kaputtes, passt zum Dachboden).
+- Wohnzimmer: kaputte Kommoden; Fenster vor statt hinter den Gardinen; Fernseher an der Wand mit
+  Kommode davor ist unlogisch (dann auf dem Möbel), nicht neben der Eingangstür; Pflanzen zufällig;
+  Sofa falsch gedreht; Küchenmöbel gehören nicht ins Wohnzimmer (außer Einzimmerwohnung).
+- Clubraum: Globus schwebt; goldene Figur nicht auf der Tischplatte; Pflanzen nicht ganz in den
+  Ecken; darf belebter sein.
+- Allgemein: graue Schatten unter vielen Möbeln passen nicht zum Boden.
+- Maple Falls draußen: Gehweg nur oben mit Steinkante, endet links und rechts im Gras; Häuser links
+  wirken industriell neben der Villa (Story?), stehen nicht an der Straße, kein Weg zur Tür, keine
+  Gartenzäune; eine Villa hätte eher einen größeren Garten.
+- Park: brauner Streifen über dem Wasser unterbricht den Rasen; Weg endet vor dem Wagen (was ist er?);
+  Blumenkästen nicht zum Weg ausgerichtet; grauer Kasten neben der Bank unklar. Figuren bewegen sich
+  später (Tagesabläufe), Position zweitrangig.
+- Landstraße: Baumstümpfe auf dem Weg; Weg endet vor dem Rand; Zaun unten ohne Sinn?; Schild ohne
+  Aufschrift; Bank fern vom Weg und vom Weg weggedreht, ohne Aussicht; zu wenig Flora; Feld soll bis
+  zum Rand gehen; Traktor gehört an die Feldeinfahrt; Wegweiser mit zwei Richtungen nur an Kreuzungen.
+- Cedar Creek draußen: Weg endet vor dem Rand, nur oben Steinkante; Blumenkasten blockiert den Gehweg;
+  Tür der Bibliothek hängt oben in der Wand und passt nicht zum Gebäude; Steg beginnt nicht am Ufer;
+  grauer Kasten neben der Baustelle unklar; Bank abseits und weggedreht; Schild steht zusammenhanglos
+  im Gras; Gewässer sind immer kleine, rundum geschlossene Seen – große Gewässer müssen bis zum Rand gehen.
+- Bibliothek: unruhiger, sich wiederholender Boden; Gegenstand neben statt auf dem Tisch; zu wenig
+  Bücherregale; Pflanzen nicht in Ecken oder an Durchgängen; Lücke in der Wand: Tür oder Durchgang?;
+  Globus: nicht jedes Asset überall benutzen.
+- Archiv: zu leer, Kisten zufällig am Boden; Stuhl falsch gedreht; Lampe besser neben den Tisch.
+- Waschsalon: Pinnwand über dem Getränkeautomaten; unterschiedlich große Waschmaschinen; Maschinen
+  gehören lückenlos in Reihen; Tische aus dem Wohnzimmer (Küchenmöbel?) passen nicht.
+- Vorgehen (Wunsch des Autors): erst allgemeine Regeln aus allem Feedback, dann die Assets ausführlich
+  beschreiben (was, Ort, Zustand, Material, Stil, mögliche Ausrichtungen, eigenständig oder Bauteil,
+  Beziehungen zu anderen Dingen), dann erst der nächste Kartenlauf.

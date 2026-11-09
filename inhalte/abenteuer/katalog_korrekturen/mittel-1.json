@@ -100,5 +100,17 @@
     "befestigung": "flach",
     "sicher": 0.85,
     "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_49.png": {
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_15.png": {
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_101.png": {
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
   }
 }

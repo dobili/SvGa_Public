@@ -773,3 +773,13 @@ fertigen Karten und beim Spielen die Geschichte.
   Konflikte in der einen Datei. Namen bleiben über alle Dateien eindeutig (Test); die Pipeline liest
   über `pipeline/abenteuer/moebelliste.py`, der Paketbau führt die Dateien zu einer
   `daten/moebel.json` im Paket zusammen, die App bleibt unverändert.
+- Prüfung der Akt-2-Dokumente (Bericht `pruefberichte/2026-11-09_akt2.md`): neue Namen gegen
+  Verwechslung (Margie Pell, Walt und Kendra Kerrigan, Ellis Navarro, Henrik Dahl, Silas Finch,
+  Benny); das Lieferbuch im Steinbruch nennt nur „J. H.“; Cedar Creek bekommt einen Haltepunkt der
+  Bahn; kein Bus in Silicon Bay; Fragen zu einer Stellung als Aufgabenrunde mit einer Aufgabe.
+- Rückmeldung des Autors zu Runde 4 (Bericht `pruefberichte/2026-11-09_runde4_autor.md`): Die
+  Kritik wird zu Regeln (KARTENREGELN 10). Umzugskartons und Dachbodenkisten bleiben (Bibel:
+  erster Abend nach dem Umzug), geordnet an den Wänden; der Globus gehört aufs Lehrerpult oder
+  einen Tisch; Bänke und Wartehäuschen schauen auch in Amerika zum Weg. Möbel mit grauem
+  Festschatten bekommen den durchscheinenden Schatten aus LimeZus Black_Shadow-Fassung
+  (`werkzeuge/schatten.py` im privaten Repository). Das Diner wird neu gedacht (mittel-3).

@@ -75,7 +75,12 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             if not basis:
                 befunde.append(f"{eintrag['moebel']}: Unterlage {eintrag['auf']} fehlt (vorher nennen)")
                 continue
-            if angabe["breite"] > basis["breite"] - 4:
+            # Mit „sichtbar_breite“ (Möbelangabe, deckende Pixel) zählt die sichtbare Breite; sonst
+            # die Bildbreite mit 4 Pixeln Spiel für den durchsichtigen Rand der Unterlage.
+            unterlage = moebel[basis["name"]]
+            spiel = 0 if "sichtbar_breite" in unterlage else 4
+            sichtbar = angabe.get("sichtbar_breite", angabe["breite"])
+            if sichtbar > unterlage.get("sichtbar_breite", unterlage["breite"]) - spiel:
                 befunde.append(f"{eintrag['moebel']} ist breiter als die Platte von {eintrag['auf']}")
             x = basis["x"] + (basis["breite"] - angabe["breite"]) // 2 + dx
             # Fuß des Gegenstands auf der Tischplatte: gut die Hälfte der Unterlage von oben.

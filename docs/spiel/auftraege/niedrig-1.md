@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Alle Möbel prüfen, dann Ghost Town einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, zwanzigster Auftrag; danke für den Befund zum Register, ist berichtigt)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der zwanzigste Auftrag, Möbelprüfung und Ghost Town, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand f9d14040);
 privates Repository auf `origin/main` (Stand f8cb2b18, nur lesen)
@@ -18,6 +18,42 @@ und Karten anderer Orte nur, wenn eine berichtigte Möbelgröße dort etwas zust
 2. Ghost Town (verlassene Goldgräberstadt, Wüste): draußen (Holzfassaden, Fässer, Kakteen, Brunnen),
    Saloon (Theke, Tische, Klavier). Canyonrand und Staubstraße. Erinnerung Siedlung: Hütte (einfach,
    Holz, sepia getönt wie London).
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push hereingeholt; `moebel.json` von mittel-1
+übernommen und nur meine Änderungen eingetragen).
+
+**1. Prüfung aller Möbel.** Übersichtsbild aller 146 Einträge von `moebel.json` (Schlüssel, Bild,
+Größe; nur lokal, nicht im Repository) Eintrag für Eintrag angesehen. Falsch waren:
+
+| Schlüssel      | alt                                            | neu                                     |
+| -------------- | ---------------------------------------------- | --------------------------------------- |
+| `kuehlschrank` | Küche 124, 16 × 32 (Küchenschrank mit Fenster) | Küche 158, 16 × 48 (Kühlschrank)        |
+| `herd`         | Küche 131, 32 × 32 (Arbeitsplatte mit Dosen)   | Küche 148, 16 × 32 (Herd mit Kochfeld)  |
+| `kisteGrau`    | Lebensmittel 355, 16 × 32 (Papierständer)      | Konferenzsaal 31, 16 × 32 (graue Kiste) |
+
+Der größere Kühlschrank stellte im Wohnzimmer Mama zu; dort steht er jetzt eine Reihe höher
+(gleiche Unterkante). In Kantine und Wohnwagen hat er oben keinen Platz, die Tests bleiben dort
+grün. Plausibel trotz knapper Beschreibung und daher unverändert: `wartebank` (graue Bank von
+oben), `pdFeldbett` (weiße Liege), `aktenschrank`, `truhe`, `regalAlt`. Nicht gesetzt und nicht
+geprüft wichtig: `automatBunt` und `iwDusche` (unbenutzt, Bild abgeschnitten bzw. Warnschild).
+
+**2. Ghost Town, Wege und Erinnerung.** Neu: `gtKreuz` (Holzkreuz vom Friedhof, 32 × 32), `gtHeu`
+(Heuhaufen, 32 × 16). Wiederverwendet: `fels`, `felsKlein`, `dsKaktus`, `iwFass`, `zaun`,
+`ldTheke`, `dsHocker`, `pdKlavier`, `kisteRot`, `holztisch`, `stuhl`, `rvHolzscheite`.
+
+- **Canyonrand:** Felsen am Rand, Kakteen.
+- **Staubstraße:** Kakteengruppen und Felsbrocken statt Platzhaltern; Juniper frei auf dem Weg.
+- **Ghost Town draußen:** Friedhof mit sechs Holzkreuzen und Steinen (das Grab bleibt Auslöser),
+  ein Zaun, Fässer vor dem Saloon, Kakteen, ein Heuhaufen.
+- **Saloon:** Theke mit Gläsern, Klavier, ein Hocker am Spieltisch; Pruitt und das Fernpartie-Brett
+  frei.
+- **Erinnerung Siedlung (Hütte, Sepia):** Kisten, ein Tisch mit Stuhl, Holzscheite; Kerze und
+  Postreiter erreichbar.
+
+Prüfungen: 624 Pipeline-Tests, Prettier, Paketbau, `npm run build`, Oberflächentests Abenteuer
+(9 von 9) bestanden. Einen Brunnen (Ziehbrunnen) gibt es im Register nicht als Einzelbild.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

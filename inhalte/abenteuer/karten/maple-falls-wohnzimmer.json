@@ -243,7 +243,7 @@
           "type": "moebel",
           "x": 128,
           "y": 32,
-          "width": 32,
+          "width": 16,
           "height": 32,
           "rotation": 0,
           "visible": true
@@ -253,9 +253,9 @@
           "name": "kuehlschrank",
           "type": "moebel",
           "x": 160,
-          "y": 32,
+          "y": 16,
           "width": 16,
-          "height": 32,
+          "height": 48,
           "rotation": 0,
           "visible": true
         },

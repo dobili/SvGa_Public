@@ -1,0 +1,151 @@
+{
+  "karte": "portDelacroix.musikhaus",
+  "datei": "karten/varianten/port-delacroix-musikhaus-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, Ruine mit Resten des Clubraums: Verblichene cremefarbene Wände mit Wasserflecken, helle alte Dielen, Pfützen unter dem Loch im Dach. Zwischen den beiden Fenstern der Nordwand steht noch das Klavier, links Kisten unter Tüchern, rechts ein Kistenstapel. Ein paar Stühle stehen schief herum, rechts ein umgekippter Spieltisch, in den Ecken Säcke mit Schutt, vorn ein Sägebock und Holzscheite, ein zerbrochener Bilderrahmen liegt am Boden. Tür in der Mitte der Südwand.",
+  "wand": "creme",
+  "boden": "dielen",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6KlavierHell",
+      "feld": [9, 2]
+    },
+    {
+      "moebel": "pd6KistenTuch",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "pd6KistenTuch",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "pd6PfuetzeGross",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "pd6StuhlLinks",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "pd6Rundtisch",
+      "feld": [15, 8]
+    },
+    {
+      "moebel": "pd6Truemmer",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "pd6Truemmer2",
+      "feld": [17, 10]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "pd6RahmenKaputt",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "pd6Splitter",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "pd6Holzscheite",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "pd6Saegebock",
+      "feld": [6, 10]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "pd6Truemmer2",
+      "feld": [3, 10]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [13, 11]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [14, 11]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 13],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "musikhausAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "schild",
+      "feld": [9, 12]
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "kaputt"],
+  "stil": ["klassisch", "rustikal"],
+  "variante": "c"
+}

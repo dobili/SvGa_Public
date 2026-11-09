@@ -1,0 +1,154 @@
+{
+  "karte": "portDelacroix.musikhaus",
+  "datei": "karten/port-delacroix-musikhaus.json",
+  "art": "innen",
+  "beschreibung": "Das alte Musikhaus am Kai nach dem Hurrikan, die Ruine (Zustand bis Szene 70). Alte Holzwände mit Wasserflecken, dunkle nasse Dielen, auf denen große Pfützen stehen, weil durch das Loch im Dach der Regen fällt. Die Tür liegt in der Mitte der Südwand. In der Nordwestecke steht das gerettete Klavier, darunter Kisten mit einem Tuch; in der Nordostecke Bretter für das neue Dach. Auf dem Boden liegen ein zerbrochener Bilderrahmen und Splitter, rechts vorn ein Haufen Trümmer in Säcken, links vorn ein Kistenstapel, in der Mitte ein Sägebock, an dem schon gearbeitet wird. Ersatz: Dielen mit Loch, nasse Dielen und das Klavier unter Plane sind bestellt, bis dahin Pfützen und ein offenes Klavier.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6KlavierRot",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "pd6KistenTuch",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "pd6Truemmer",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "pd6PfuetzeGross",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [13, 10]
+    },
+    {
+      "moebel": "pd6PfuetzeGross",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "pd6RahmenKaputt",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "pd6Splitter",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "pd6Splitter",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "pd6Saegebock",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "pd6Holzscheite",
+      "feld": [4, 3]
+    },
+    {
+      "moebel": "pd6Truemmer2",
+      "feld": [17, 6]
+    },
+    {
+      "moebel": "pd6Kanister",
+      "feld": [18, 10]
+    },
+    {
+      "moebel": "pd6KistenTuch",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "pd6StuhlRechts",
+      "feld": [14, 6]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "pd6Truemmer",
+      "feld": [8, 10]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 13],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "musikhausAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "schild",
+      "feld": [9, 12]
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "kaputt"],
+  "stil": ["klassisch", "rustikal"]
+}

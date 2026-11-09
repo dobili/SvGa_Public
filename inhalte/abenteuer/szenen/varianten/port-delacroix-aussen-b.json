@@ -1,0 +1,676 @@
+{
+  "karte": "portDelacroix.aussen",
+  "datei": "karten/varianten/port-delacroix-aussen-b.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "wand": "damm",
+  "ufer": "stein",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "e": "erde",
+    "t": "stein",
+    "k": "sand"
+  },
+  "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die Turnhalle mit Dachaufbauten steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Absperrgitter. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~~",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~~",
+    "#............................ee.....................ee..~~~~~~~~~~~~~~",
+    "#############################ee#####################ee..~~~~~~~~~~~~~~",
+    "#############################ee#####################ee..~~~~~~~~~~~~~~",
+    "#tt.................................................pppp~~~~~~~~~~~~~~",
+    "#tt.................................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~~~~~~~",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~~~~~~~",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
+    "#ttppp..............pp...............................................#",
+    "#ttppp..............pp...............................................#",
+    "#ttppp..............pp...............................................#",
+    "#ttppp..............pp...............................................#",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeee",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeee",
+    "######################################################################",
+    "######################################################################",
+    "######################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Prellbock",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 25],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 41],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 42],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 45],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 47],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 49],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 50],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 51],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 52],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 53],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6GleisGrau",
+      "feld": [1, 54],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [12, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [19, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [26, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [33, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [38, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [39, 7]
+    },
+    {
+      "moebel": "pd6Sandsack",
+      "feld": [45, 7]
+    },
+    {
+      "moebel": "pd6TurnhalleDach",
+      "feld": [34, 9]
+    },
+    {
+      "moebel": "pd6HausRot2",
+      "feld": [10, 21]
+    },
+    {
+      "moebel": "pd6HausGruen2",
+      "feld": [24, 21]
+    },
+    {
+      "moebel": "pd6Gebaeckstand",
+      "feld": [18, 22]
+    },
+    {
+      "moebel": "pd6Rohbau",
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "pd6ZeltGruen",
+      "feld": [24, 32]
+    },
+    {
+      "moebel": "pd6Zelt",
+      "feld": [31, 33]
+    },
+    {
+      "moebel": "pd6MusikhausSolar",
+      "feld": [39, 31]
+    },
+    {
+      "moebel": "pd6Fass",
+      "feld": [30, 38]
+    },
+    {
+      "moebel": "pd6WerkstattSchmal",
+      "feld": [9, 43]
+    },
+    {
+      "moebel": "pd6HausKleinRot2",
+      "feld": [24, 49]
+    },
+    {
+      "moebel": "pd6HausKleinHell2",
+      "feld": [32, 49]
+    },
+    {
+      "moebel": "pd6Fischerboot",
+      "feld": [59, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Ruderboot",
+      "feld": [61, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Ruderboot",
+      "feld": [58, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Steg",
+      "feld": [56, 30]
+    },
+    {
+      "moebel": "pd6Steg",
+      "feld": [56, 31]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [3, 20]
+    },
+    {
+      "moebel": "rvWegweiser",
+      "feld": [5, 13]
+    },
+    {
+      "moebel": "pdEimer",
+      "feld": [53, 24]
+    },
+    {
+      "moebel": "pdSeil",
+      "feld": [54, 25]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [54, 12]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [55, 12]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [39, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [40, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [41, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [42, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [49, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [50, 41]
+    },
+    {
+      "moebel": "pd6Absperrgitter",
+      "feld": [51, 41]
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [6, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [16, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [30, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [7, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [16, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5LaterneBogen",
+      "feld": [52, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [16, 11]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [50, 13]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [57, 49]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [63, 49]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [40, 45]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [26, 44]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [42, 49]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [6, 32]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 5],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "deich",
+      "feld": [0, 5]
+    },
+    {
+      "name": "deich",
+      "feld": [0, 6]
+    },
+    {
+      "name": "bayou",
+      "feld": [69, 53]
+    },
+    {
+      "name": "bayou",
+      "feld": [69, 54]
+    },
+    {
+      "name": "turnhalleTuer",
+      "feld": [37, 25]
+    },
+    {
+      "name": "werkstattTuer",
+      "feld": [14, 53]
+    },
+    {
+      "name": "musikhausTuer",
+      "feld": [46, 41]
+    },
+    {
+      "name": "wuestenzug",
+      "feld": [4, 19]
+    },
+    {
+      "name": "gebaeckstand",
+      "feld": [19, 25]
+    },
+    {
+      "name": "brettHaus1",
+      "feld": [12, 25]
+    },
+    {
+      "name": "brettHaus2",
+      "feld": [26, 25]
+    },
+    {
+      "name": "brettHaus3",
+      "feld": [25, 53]
+    },
+    {
+      "name": "brettHaus4",
+      "feld": [33, 53]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "batiste",
+      "feld": [54, 27]
+    },
+    {
+      "name": "arceneaux",
+      "feld": [22, 25]
+    },
+    {
+      "name": "blaeser",
+      "feld": [29, 38]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "handwerker",
+      "typ": "statist",
+      "feld": [12, 30],
+      "eigenschaften": {
+        "von": "12,30",
+        "bis": "16,30",
+        "tun": "trägt Bretter",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "sandsackhelfer",
+      "typ": "statist",
+      "feld": [20, 7],
+      "eigenschaften": {
+        "von": "14,7",
+        "bis": "26,7",
+        "tun": "stapelt Sandsäcke",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "ballkinder",
+      "typ": "statist",
+      "feld": [25, 37],
+      "eigenschaften": {
+        "von": "22,37",
+        "bis": "30,38",
+        "tun": "spielen Ball zwischen den Zelten",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "pelikane",
+      "typ": "tier",
+      "feld": [55, 20],
+      "eigenschaften": {
+        "von": "55,18",
+        "bis": "55,24",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [60, 10],
+      "eigenschaften": {
+        "von": "58,8",
+        "bis": "66,12",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [55, 45],
+      "eigenschaften": {
+        "von": "55,44",
+        "bis": "55,47",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [54, 12],
+      "eigenschaften": {
+        "von": "54,12",
+        "bis": "54,12",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt", "kaputt"],
+  "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
+  "variante": "b"
+}

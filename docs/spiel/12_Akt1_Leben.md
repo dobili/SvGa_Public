@@ -156,7 +156,8 @@ Jeder Abschnitt bekommt etwas zum Entdecken (Regel 7a.2); Funde sind fett.
 ## 2. Landstraße und Flussweg (`wegMapleCedar`)
 
 Zwei Karten zu je 110 bis 140 Kacheln Länge (7a.2: zusammen 220 bis 280, gut eine Minute). Die Landstraße bekommt einen
-Abzweig zum **Hof der Brennans** (Hofladen am Gatter), der Flussweg eine **alte Fährstelle** mit
+Obstwiese der Brennans mit **Apfelstand** gegenüber dem Gatter zum Kürbishof Miller (`13_Wegenetz.md`,
+S1 und N1), der Flussweg eine **alte Fährstelle** mit
 einem Stein, in den ein Schachbrett geritzt ist. Bestehende Stationen bleiben: Rätseltafel am
 Ortsausgang, Nia an der Bank, Wanderer, Fund „altes Partieformular“ (`formular1857`), Münzen am
 Flussweg, Rastbank, Steg mit Angler, Ortsschild „Cedar Creek, gegr. 1851“.
@@ -165,7 +166,7 @@ Flussweg, Rastbank, Steg mit Angler, Ortsschild „Cedar Creek, gegr. 1851“.
 
 | Figur        | Alter, Pronomen | Hintergrund (ein Satz)                                                                                      | Platz                                                      | Tagesablauf                                                                              |
 | ------------ | --------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Ada Brennan  | 56, sie         | Bäuerin, verkauft am Gatter Äpfel und Sirup in einer Ehrlichkeitskasse und zählt abends nach, ob es stimmt. | Landstraße: Hofladen am Gatter (Abzweig)                   | Morgens im Stall, mittags am Hofladen, abends sitzt sie mit der Kasse auf dem Zaun.      |
+| Ada Brennan  | 56, sie         | Bäuerin, verkauft am Gatter Äpfel und Sirup in einer Ehrlichkeitskasse und zählt abends nach, ob es stimmt. | Landstraße: Apfelstand am Gatter (Abzweig)                 | Morgens im Stall, mittags am Apfelstand, abends sitzt sie mit der Kasse auf dem Zaun.    |
 | Otis Brennan | 59, er          | Adas Mann, fährt den Traktor und redet mit den Kühen mehr als mit Menschen.                                 | Landstraße: Traktor (heute Statist „Bauer auf Traktor“)    | Fährt morgens das Feld ab, mittags steht der Traktor am Gatter, abends repariert er ihn. |
 | Silas Reed   | 74, er          | Angler, der nie etwas fängt; sein Großvater hat noch die Fähre über den Fluss gestakt.                      | Flussweg: Steg (heute Statist „Angler“)                    | Von früh bis spät auf dem Steg, mittags Brot aus Papier, abends trägt er die Angel heim. |
 | Tessa Vance  | 24, sie         | Krankenschwester aus Cedar Creek, die für ihren ersten Lauf über die ganze Strecke trainiert.               | beide Karten: läuft hin und her (heute Statist „Joggerin“) | Morgens auf der Landstraße, abends auf dem Flussweg; bleibt nie länger als einen Satz.   |
@@ -186,12 +187,12 @@ Sprechweise und Beispielsätze:
 
 **N-W1 Die dritte Vogelscheuche** · `hilfe` · `wegMapleCedar.vogelscheuche` (klein)
 
-- **Figur und Ort:** Ada Brennan am Hofladen, Abzweig der Landstraße.
+- **Figur und Ort:** Ada Brennan am Apfelstand, Abzweig der Landstraße.
 - **Ablauf:** (1) Ada erklärt ihr Problem als Rechnung: drei Krähen greifen an, zwei Vogelscheuchen
   verteidigen, „das geht schief, das weiß jeder, der zählen kann“ (Kapitel 1, Zählen). (2) {held}
-  holt den alten Hut aus der Scheune (Auslöser `scheune` am Hof) und eine Stange vom Zaun. (3) Ada
+  holt den alten Hut aus dem Schuppen (Auslöser `schuppen` an der Obstwiese) und eine Stange vom Zaun. (3) Ada
   stellt die dritte Vogelscheuche auf; die Krähen (Tiere, `fliegen`) ziehen ab. (4) Zum Dank eine
-  kurze Zählfrage am Hofladen: Stellung mit drei Angreifern und drei Verteidigern, Wahl im Dialog.
+  kurze Zählfrage am Apfelstand: Stellung mit drei Angreifern und drei Verteidigern, Wahl im Dialog.
 - **Belohnung:** 10 Münzen, ein Glas Ahornsirup als Gegenstand ohne Wirkung („riecht nach Herbst“,
   Album).
 - **Zeit:** 5 bis 6 Minuten.
@@ -219,7 +220,7 @@ fett. Bestehende Punkte stehen in Klammern.
 | Landstraße 0–15           | (Rätseltafel, Ortsschild „Maple Falls“)                                                                     |
 | Landstraße 15–30          | Kuhweide, Kühe am Zaun (Tiere); Weidetor mit Schild „Bitte schließen“ (`weidetor`, Ansehen)                 |
 | Landstraße 30–45          | Vogelscheuche im Feld; Otis auf dem Traktor                                                                 |
-| Landstraße 45–60, Abzweig | Wegweiser (drei Richtungen), Hofladen mit Ada (N-W1), Scheune                                               |
+| Landstraße 45–60, Abzweig | Wegweiser (drei Richtungen), Gatter S1; gegenüber Apfelstand mit Ada (N-W1), Schuppen                       |
 | Landstraße 60–75          | (Wanderer); **„Hufeisen im Graben“** (`fundHufeisen`, 5 Münzen)                                             |
 | Landstraße 75–90          | Heuhaufen; (Bank mit Nia)                                                                                   |
 | Landstraße 90–105         | (Büsche mit `fundFormular`)                                                                                 |
@@ -332,7 +333,7 @@ Späne am Boden als Bodenkram (Kartenregeln 8.4.3: passend am Boden). Tür in de
 | Bibliothek                   | Zwillinge auf der Treppe, Bücherkasten                                                                    |
 | Anschlagtafel, Haltestelle   | (Plakat Perfect Move), Rätsel der Woche, Mr. Kettering                                                    |
 | Häuser Süd                   | Mrs. Holm an der Zedernhecke                                                                              |
-| Zedernwiese                  | Ast für N-CC2; **„Zapfen einer roten Zeder“** (`fundZapfen`, Album)                                       |
+| Zedernwiese                  | Ast für N-CC2; **„Eisvogelfeder“** (`fundFeder`, Album)                                                   |
 | Bach, Kanuverleih            | Hattie Quill (N-CC3)                                                                                      |
 | Steg                         | (Rosa; Schlüssel im Schilf, vorhanden)                                                                    |
 | Brücke zum Zedernwald        | (Schild „Weg gesperrt“ in Akt 1)                                                                          |
@@ -353,12 +354,12 @@ Späne am Boden als Bodenkram (Kartenregeln 8.4.3: passend am Boden). Tür in de
 
 ## 5. Zeitbudget
 
-| Ort                     | Neue Aufgaben (Minuten)     | Gebäude, Figuren, Funde (Minuten) | Summe     |
-| ----------------------- | --------------------------- | --------------------------------- | --------- |
-| Maple Falls             | 15–22 (N-MF1, N-MF2, N-MF3) | 5–8 (Diner, sechs Figuren, Funde) | 20–30     |
-| Landstraße und Flussweg | 8–11 (N-W1, N-W2)           | 3–5 (Hof, Fährstelle, Funde)      | 11–16     |
-| Cedar Creek             | 15–21 (N-CC1, N-CC2, N-CC3) | 5–8 (Drechslerei, Figuren, Funde) | 20–29     |
-| **Akt 1 zusätzlich**    |                             |                                   | **51–75** |
+| Ort                     | Neue Aufgaben (Minuten)     | Gebäude, Figuren, Funde (Minuten)  | Summe     |
+| ----------------------- | --------------------------- | ---------------------------------- | --------- |
+| Maple Falls             | 15–22 (N-MF1, N-MF2, N-MF3) | 5–8 (Diner, sechs Figuren, Funde)  | 20–30     |
+| Landstraße und Flussweg | 8–11 (N-W1, N-W2)           | 3–5 (Obstwiese, Fährstelle, Funde) | 11–16     |
+| Cedar Creek             | 15–21 (N-CC1, N-CC2, N-CC3) | 5–8 (Drechslerei, Figuren, Funde)  | 20–29     |
+| **Akt 1 zusätzlich**    |                             |                                    | **51–75** |
 
 Liegt ein Testlauf darüber, fallen zuerst N-MF3 und N-CC3 (die beiden Duelle) weg; dann bleibt der
 Zusatz bei 40 bis 60 Minuten. Die längeren Wege selbst (Laufzeit nach 7a) sind hier nicht
@@ -389,26 +390,29 @@ mitgerechnet; sie gehören zum Maßstab.
   `.zwillinge` (Bibliothekstreppe, eine Figur mit zwei Sprites oder zwei Statisten), `.holm`.
   Statisten „Busfahrer“, „Leserin“ und „Kinder auf der Treppe“ werden zu Figuren.
 - Auslöser außen: `drechslereiTuer`, `buecherkasten`, `zedernhecke`, `ast`, `fundKnopf`,
-  `fundZapfen`; die Anschlagtafel bekommt den Auslöser `raetselDerWoche` neben `plakat`.
+  `fundFeder`; die Anschlagtafel bekommt den Auslöser `raetselDerWoche` neben `plakat`.
 - Auslöser in der Drechslerei: `drechslereiAusgang`, `drehbank`, `figurenregal`, `fotoSaegemuehle`.
 - Quests: `cedarCreek.raetselDerWoche`, `cedarCreek.zedernspringer`, `cedarCreek.kanu`; Runde
   `cedarCreek.raetselDerWoche`.
 
 **`orte/cedar-creek.md`** (Teil Landstraße und Flussweg)
 
-- Landstraße: **Abzweig** zum Hof der Brennans mit Hofladen am Gatter und Scheune (Kulisse); der
-  Wegweiser steht am Abzweig (wie geplant). Figuren `wegMapleCedar.ada`, `.otis` (Traktor, heute
-  Statist), `.tessa` (heute Statist „Joggerin“, auf beiden Karten). Auslöser `hofladen` (Figur),
-  `scheune`, `weidetor`, `fundHufeisen`. Quest `wegMapleCedar.vogelscheuche`.
+- Landstraße: **Obstwiese** der Brennans mit Apfelstand und Geräteschuppen (Kulisse), gegenüber
+  dem Gatter S1 zum Kürbishof Miller (`13_Wegenetz.md`); der Wegweiser steht am Abzweig (wie geplant). Figuren `wegMapleCedar.ada`, `.otis` (Traktor, heute
+  Statist), `.tessa` (heute Statist „Joggerin“, auf beiden Karten). Auslöser `apfelstand` (Figur),
+  `schuppen`, `weidetor`, `fundHufeisen`. Quest `wegMapleCedar.vogelscheuche`.
 - Flussweg: **alte Fährstelle** mit dem Stein der Fährleute und Fährpfosten am Ufer zwischen
   Münzen-Fund und Steg. Figur `wegMapleCedar.silas` (heute Statist „Angler“). Auslöser `faehrstein`,
   `faehrpfosten`, `fundKorken`. Quest `wegMapleCedar.faehrstein`, Runde `wegMapleCedar.faehrstein`.
 
 **Funde** (`funde.json`, neu): `tischset` (Maple Falls), `schachkurier` (Maple Falls), `bauerPlastik`
 (Maple Falls), `ahornblatt` (Maple Falls), `ahornsirup` (Weg), `kiesel` (Weg), `hufeisen` (Weg),
-`korken` (Weg), `zedernspringer` (Cedar Creek), `messingknopf` (Cedar Creek), `zedernzapfen` (Cedar
-Creek).
+`korken` (Weg), `zedernspringer` (Cedar Creek), `messingknopf` (Cedar Creek), `eisvogelfeder` (Cedar
+Creek). Den „Zedernzapfen mit Initialen“ vergibt der Zedernpfad (`13_Wegenetz.md`, Q1).
 
 **Offen für den Haupt-Chat:** (1) Feld `klein` in `quests.json` und der Zählung „alle Nebenquests“
 (R27) oder eine andere Lösung; (2) Vorname „Margaret“ für Mrs. Whitlock (neu, Bibel nennt keinen);
-(3) Busfahrer raucht nicht mehr (Weltbeschreibung 4a); (4) Wirtschaftssimulation nach dem Einbau.
+(3) Busfahrer raucht nicht mehr (Weltbeschreibung 4a); (4) Wirtschaftssimulation nach dem Einbau. (5) Abgleich mit `13_Wegenetz.md`:
+Der Kürbishof Miller (N1) besitzt Abzweig, Gatter und Scheune; die Brennans haben deshalb nur eine
+Obstwiese mit Apfelstand gegenüber, Otis' Traktor fährt auf deren Wiese. Die Kühe auf der Kuhweide
+(Landstraße 15–30) können die ausgebüxten Kühe von N1 sein.

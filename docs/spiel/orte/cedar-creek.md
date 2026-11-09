@@ -363,3 +363,25 @@ offenen Karton (4, 7), nach rechts zum Lesetisch, nach vorn zum Wasserfleck (8, 
 
 Offen: Aktenschränke und Regale mit Archivkartons gibt es im Katalog nicht; die Regale zeigen
 gebundene Bände und Mappen.
+
+### 4.3 Drechslerei (`cedarCreek.drechslerei`, neu)
+
+**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 8
+(50 %, außen Spalte 6 von 8 ±1). Es riecht nach Zedernholz; Licht von Norden.
+
+**Laufwege:** Tür (8, 10) → Start (8, 9) → nach oben in die Mitte; links zur Hobelbank und zu
+Mr. Dunmore (3, 6), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
+
+| Zone     | Gegenstand                                                 | Feld             | Ausrichtung       | Material, Stil, Zustand        | Zweck                                                                                                |
+| -------- | ---------------------------------------------------------- | ---------------- | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Nordwand | große Hobelbank mit Ablage und Bank (statt einer Drehbank) | (1, 1), 5 × 4    | Vorderseite unten | Holz hell, rustikal, gebraucht | Arbeitsplatz; darauf Bügelsäge, Späne und das gerahmte Foto (`drehbank`, `fotoSaegemuehle`, Runde 5) |
+| Nordwand | Holzregal mit Büchern und Schalen                          | (7, 1)           | Vorderseite unten | Holz, gebraucht                | `figurenregal` (Runde 5)                                                                             |
+| Nordwand | Werktisch mit Farbdosen, Pinseln, Rahmen                   | (10, 1), 3 × 3   | Vorderseite unten | Holz, rustikal                 | Bemalen der Figuren                                                                                  |
+| Ecke NO  | Holzkiste mit Reststücken                                  | (13, 1)          | –                 | Holz und Metall                | Lager                                                                                                |
+| Ostwand  | Stapel Rundholz, leere Holzkiste                           | (13, 4), (13, 7) | –                 | Holz                           | Lager                                                                                                |
+| Ecke SW  | großer und kleiner Stapel Rundhölzer aus den Zedern        | (1, 8), (3, 8)   | –                 | Holz                           | Holzlager; Platzhalter für das Holz vom Zedernpfad (13 §7.4)                                         |
+| Mitte    | zwei Holzhocker                                            | (6, 4), (11, 5)  | –                 | Holz                           | an Hobelbank und Werktisch                                                                           |
+
+Offen: Der Katalog hat keine Drechselbank und kein Regal mit Holzfiguren; die Hobelbank vertritt die
+Drehbank, das Regal zeigt Bücher und Schalen. Die Einträge in `orte.json` (Karte, `drechslereiTuer`,
+`drechslereiAusgang`, Figur `dunmore`) kommen mit der Außenkarte.

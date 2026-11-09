@@ -55,9 +55,8 @@ Parkplatz am Diner; im Park das Ufer mit Steg und der Weg unter der großen Eich
 
 Sprechweise und Beispielsätze:
 
-- **Mrs. Calloway:** langsam, mit Pausen und vielen „Kindchen“ in der neutralen Form („Herzchen“
-  vermeidet sie; sie sagt den Namen). Erinnert sich an alles außer an das, was sie heute gegessen
-  hat. „Margaret hat jeden Sonntag Schach gespielt. Gegen wen, habe ich nie gesehen.“ – „Die Kisten
+- **Mrs. Calloway:** langsam, mit Pausen; spricht {held} immer mit Namen an. Erinnert sich an alles
+  außer an das, was sie heute gegessen hat. „Margaret hat jeden Sonntag Schach gespielt. Gegen wen, habe ich nie gesehen.“ – „Die Kisten
   auf ihrem Dachboden? Die hat nie jemand aufgemacht. Nicht mal sie.“
   (Mrs. Whitlocks Vorname „Margaret“ ist neu; die Bibel nennt keinen. Andeutung: Sonntagsschach
   gegen niemanden, also gegen das Brett, ohne es auszusprechen.)
@@ -410,9 +409,9 @@ mitgerechnet; sie gehören zum Maßstab.
 `korken` (Weg), `zedernspringer` (Cedar Creek), `messingknopf` (Cedar Creek), `eisvogelfeder` (Cedar
 Creek). Den „Zedernzapfen mit Initialen“ vergibt der Zedernpfad (`13_Wegenetz.md`, Q1).
 
-**Offen für den Haupt-Chat:** (1) Feld `klein` in `quests.json` und der Zählung „alle Nebenquests“
-(R27) oder eine andere Lösung; (2) Vorname „Margaret“ für Mrs. Whitlock (neu, Bibel nennt keinen);
-(3) Busfahrer raucht nicht mehr (Weltbeschreibung 4a); (4) Wirtschaftssimulation nach dem Einbau. (5) Abgleich mit `13_Wegenetz.md`:
-Der Kürbishof Miller (N1) besitzt Abzweig, Gatter und Scheune; die Brennans haben deshalb nur eine
-Obstwiese mit Apfelstand gegenüber, Otis' Traktor fährt auf deren Wiese. Die Kühe auf der Kuhweide
-(Landstraße 15–30) können die ausgebüxten Kühe von N1 sein.
+**Entscheidungen des Haupt-Chats (9.11.2026, nach Regel 9 umgesetzt, Widerspruch genügt):**
+(1) Neue Aufgaben tragen `klein: true` und zählen nicht für „alle Nebenquests“ (R27). (2) Mrs.
+Whitlock heißt mit Vornamen Margaret. (3) Der Busfahrer raucht nicht; die Weltbeschreibung wird
+beim Einarbeiten angepasst. (4) Die Wirtschaftssimulation läuft nach dem Einbau; liegt der sparsame
+Spieler über 400 Münzen, sinken die Belohnungen der kleinen Aufgaben auf 5 bis 10. (5) Die Kühe auf
+der Kuhweide sind die ausgebüxten Kühe vom Kürbishof Miller (N1); das verknüpft Weg und Nebenort.

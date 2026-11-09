@@ -1,0 +1,703 @@
+{
+  "karte": "wegMapleCedar.flussweg",
+  "variante": "b",
+  "datei": "karten/varianten/weg-maple-cedar-flussweg-b.json",
+  "art": "aussen",
+  "beschreibung": "Variante B (schlichter): Der Uferweg läuft gerade an und macht in der Mitte einen einzigen weiten Bogen nach Süden. Die Fährstelle liegt im Westen (Spalten 24–25), der Steg mit zwei Booten längs weit im Osten (Spalten 90–91). Die Rastbank steht im Bogen direkt am Weg. Nur eine lockere Baumreihe im Norden, wenig Kleinkram, das Ufer schwingt ruhig.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "e": "erde"
+  },
+  "bruecken": ["h"],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "einfach",
+    "modern"
+  ],
+  "raster": [
+    "########################################################################################################################",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "#......................................................................................................................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.............................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.......................ee............eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.......ee...........................#",
+    "#.......................ee.................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............ee...........................#",
+    "#.....................~~~~~~..........................................................~~~~hh~~~........................#",
+    "~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~............~~~~~~~~~~~~...........................~~~~~~~hh~~~~~~~~~~~~~~~...........~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~hh~~~~~~~~~~~~~~~~~......~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "wg4Bank",
+      "feld": [60, 16]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [32, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [37, 1]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [44, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [49, 2]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [56, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [61, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [67, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [74, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [79, 2]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [85, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [91, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumC",
+      "feld": [97, 2]
+    },
+    {
+      "moebel": "wg4LaubbaumB",
+      "feld": [104, 1]
+    },
+    {
+      "moebel": "wg4LaubbaumC",
+      "feld": [110, 2]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [42, 9]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [46, 9]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [44, 8]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [22, 17]
+    },
+    {
+      "moebel": "wg5StegLinks",
+      "feld": [90, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegRechts",
+      "feld": [91, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegLinks",
+      "feld": [90, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegRechts",
+      "feld": [91, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegEndeLinks",
+      "feld": [90, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegEndeRechts",
+      "feld": [91, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5BootAb",
+      "feld": [88, 19],
+      "an_wand": false
+    },
+    {
+      "moebel": "wg5BootAuf",
+      "feld": [92, 19],
+      "an_wand": false
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [70, 11]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [74, 12]
+    },
+    {
+      "moebel": "wg4Schild",
+      "feld": [112, 17]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [83, 18]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [96, 9]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [108, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [23, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [24, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [23, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [48, 19]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [49, 19]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [40, 18]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [59, 11]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [60, 11]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [35, 9]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [25, 11]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [79, 20]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [80, 20]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [111, 13]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [112, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [107, 20]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [108, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [63, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [64, 20]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [31, 8]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [32, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [58, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [16, 17]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 17]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [16, 18]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [114, 11]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [115, 11]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [89, 10]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [90, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [65, 14]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [66, 14]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [65, 15]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [48, 9]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [49, 9]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [96, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [97, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [96, 12]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [86, 9]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [20, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [27, 14]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [28, 14]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [76, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [77, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [76, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [106, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [107, 8]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [79, 21]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [80, 21]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [69, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [69, 12]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [52, 8]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [53, 8]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [91, 11]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [42, 13]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [43, 13]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [42, 14]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [99, 11]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [84, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [54, 8]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [55, 8]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [20, 12]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [2, 12]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [97, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [100, 11]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [101, 11]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [100, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [109, 9]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [110, 9]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [109, 10]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [3, 13]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [4, 13]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [110, 12]
+    },
+    {
+      "moebel": "wg4PilzeB",
+      "feld": [111, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [74, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [42, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [43, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 13]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [8, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [56, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [41, 20]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [42, 20]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [70, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [86, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [87, 18]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [106, 19]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [107, 19]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [31, 10]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [32, 10]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [110, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [110, 14]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [80, 14]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [81, 14]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 15],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckLandstrasse",
+      "feld": [0, 15]
+    },
+    {
+      "name": "zurueckLandstrasse",
+      "feld": [0, 16]
+    },
+    {
+      "name": "weiterCedar",
+      "feld": [119, 15]
+    },
+    {
+      "name": "weiterCedar",
+      "feld": [119, 16]
+    },
+    {
+      "name": "fundMuenzen",
+      "feld": [45, 12]
+    },
+    {
+      "name": "rast",
+      "feld": [60, 16],
+      "auf_moebel": true
+    },
+    {
+      "name": "schildCedar",
+      "feld": [112, 18],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [90, 22],
+      "eigenschaften": {
+        "von": "90,22",
+        "bis": "90,22",
+        "tun": "Silas angelt am Ende des Stegs",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [100, 15],
+      "eigenschaften": {
+        "von": "100,15",
+        "bis": "116,15",
+        "tun": "Tessa joggt am Fluss entlang",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [30, 19],
+      "eigenschaften": {
+        "von": "30,19",
+        "bis": "30,19",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [66, 10],
+      "eigenschaften": {
+        "von": "66,10",
+        "bis": "69,10",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "schmetterling",
+      "typ": "tier",
+      "feld": [90, 11],
+      "eigenschaften": {
+        "von": "90,11",
+        "bis": "97,11",
+        "verhalten": "fliegen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "nebel",
+      "typ": "tier",
+      "feld": [3, 19],
+      "eigenschaften": {
+        "von": "3,19",
+        "bis": "9,19",
+        "verhalten": "fliegen",
+        "wann": "morgen"
+      }
+    }
+  ]
+}

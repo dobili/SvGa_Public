@@ -1,0 +1,3164 @@
+{
+  "karte": "wegMapleCedar.landstrasse",
+  "variante": "c",
+  "datei": "karten/varianten/weg-maple-cedar-landstrasse-c.json",
+  "art": "aussen",
+  "beschreibung": "Variante C (reicher): Der Weg schwingt im Westen weit nach Norden an den Feldzaun, kreuzt bei den Spalten 38–39 den Feldweg zum Hoftor S1 und senkt sich im Osten zur Rast. An der Kreuzung steht Adas großer Marktstand mit Schuppen, darunter eine Obstwiese mit fünf Bäumchen. Felder bis Reihe 8, zwei Vogelscheuchen, der Traktor an der Einfahrt im Maisfeld, Heuhaufen am Weg. Die Kuhweide liegt westlich am Fluss. Viele Bäume in Gruppen, Erlen am Ufer, Blumen, Pilze und Steine.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "e": "erde",
+    "f": "erde"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "einfach",
+    "modern"
+  ],
+  "raster": [
+    "########################################################################################################################",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#.....................................ee................eee............................................................#",
+    "#.....................................ee................eee............................................................#",
+    "#.....................................ee................eee............................................................#",
+    "#..................eeeeeeeeeeeeeeeee..ee................eee............................................................#",
+    "#................eeeeeeeeeeeeeeeeeeeeeee................eee............................................................#",
+    "#.............eeeeeeeeeeeeeeeeeeeeeeeeeee...............eee............................................................#",
+    "eeeeeeeeeeeeeeeeeee.................eeeeeeeeeeeeeeeeeeeeeeeeee...................................eeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeee.....................eeeeeeeeeeeeeeeeeeeeeeeeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeee.....................eeeeeee......................#",
+    "#.............................................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..........................#",
+    "#.................................................................eeeeeeeeeeeeeeeeeeeeeeee.............................#",
+    "~~~~~~~~~............................................................ee................................................#",
+    "~~~~~~~~~~.............................................................................................................#",
+    "~~~~~~~~~~~~...........................................................................................................#",
+    "~~~~~~~~~~~~~..........................................................................................................#",
+    "~~~~~~~~~~~~~~~........................................................................................................#",
+    "~~~~~~~~~~~~~~~~..........~~~~...............................~~...........................................~~~~~........#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~........................~~~~~~~~~~~...~~~~~~..........................~~~~~~~~~~.~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~........~~..........~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [2, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [4, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [18, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [20, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [22, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [28, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [30, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [36, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [27, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [29, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [31, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [33, 1]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [35, 1]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [40, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [42, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [44, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [46, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [48, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [50, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [52, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [54, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [56, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [58, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [60, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [62, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [64, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [66, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [68, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [70, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [72, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [74, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [76, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [78, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [80, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [82, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [84, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [86, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [88, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [90, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [92, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [94, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [96, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [98, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [100, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [102, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [104, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [106, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [108, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [110, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [112, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [114, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [116, 0]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [118, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [18, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [20, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [22, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [28, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [30, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [36, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [17, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [25, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [27, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [29, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [31, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [33, 3]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [35, 3]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [40, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [42, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [44, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [46, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [48, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [52, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [54, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [56, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [58, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [60, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [62, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [64, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [66, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [68, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [70, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [72, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [74, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [76, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [78, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [80, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [82, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [84, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [86, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [88, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [94, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [96, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [98, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [100, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [102, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [104, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [106, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [108, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [110, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [112, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [114, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [116, 2]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [118, 2]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [2, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [20, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [22, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [28, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [30, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [36, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [17, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [19, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [21, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [23, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [29, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [31, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [33, 5]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [35, 5]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [40, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [42, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [44, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [46, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [48, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [50, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [52, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [54, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [60, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [62, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [64, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [66, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [68, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [70, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [72, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [74, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [76, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [78, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [80, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [82, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [84, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [86, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [88, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [94, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [96, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [98, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [100, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [102, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [104, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [106, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [108, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [110, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [112, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [114, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [116, 4]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [118, 4]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [2, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [18, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [20, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [22, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [30, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [36, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [7, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [15, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [17, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [19, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [21, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [25, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [27, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [29, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [31, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [33, 7]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [35, 7]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [40, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [42, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [44, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [46, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [48, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [50, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [52, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [54, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [60, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [62, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [64, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [66, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [68, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [70, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [72, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [74, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [76, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [78, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [80, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [82, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [84, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [86, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [88, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [90, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [92, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [94, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [96, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [98, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [100, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [102, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [104, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [106, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [108, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [110, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [112, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [114, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [116, 6]
+    },
+    {
+      "moebel": "ccMais",
+      "feld": [118, 6]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [20, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [22, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [24, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [26, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [28, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [30, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [32, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [34, 8]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [36, 8]
+    },
+    {
+      "moebel": "heVogelscheuche",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "heVogelscheuche",
+      "feld": [90, 3]
+    },
+    {
+      "moebel": "heTraktor",
+      "feld": [55, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [0, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [1, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [2, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [3, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [4, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [5, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [6, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [7, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [8, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [9, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [10, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [11, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [12, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [13, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [14, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [15, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [16, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [17, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [18, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [19, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [20, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [21, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [22, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [23, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [24, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [25, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [26, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [27, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [28, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [29, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [30, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [31, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [32, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [33, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [34, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [35, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [36, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomRight",
+      "feld": [37, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomLeft",
+      "feld": [40, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [41, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [42, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [43, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [44, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [45, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [46, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [47, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [48, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [49, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [50, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [51, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [52, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [53, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [54, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomRight",
+      "feld": [55, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomLeft",
+      "feld": [59, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [60, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [61, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [62, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [63, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [64, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [65, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [66, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [67, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [68, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [69, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [70, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [71, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [72, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [73, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [74, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [75, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [76, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [77, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [78, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [79, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [80, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [81, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [82, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [83, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [84, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [85, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [86, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [87, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [88, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [89, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [90, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [91, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [92, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [93, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [94, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [95, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [96, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [97, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [98, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [99, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [100, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [101, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [102, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [103, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [104, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [105, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [106, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [107, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [108, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [109, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [110, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [111, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [112, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [113, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [114, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [115, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [116, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [117, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [118, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [119, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor1",
+      "feld": [38, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor2",
+      "feld": [39, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Zettelschild",
+      "feld": [40, 10]
+    },
+    {
+      "moebel": "wg4ZaunBottomLeft",
+      "feld": [18, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopLeft",
+      "feld": [18, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [19, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [19, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [20, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [20, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [21, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [21, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [22, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [22, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [23, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopRight",
+      "feld": [23, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [24, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [25, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [26, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopLeft",
+      "feld": [26, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [27, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [27, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [28, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [28, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [29, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [29, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [30, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [30, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [31, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopMiddle",
+      "feld": [31, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomRight",
+      "feld": [32, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunTopRight",
+      "feld": [32, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor1",
+      "feld": [24, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor2",
+      "feld": [25, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleLeft",
+      "feld": [18, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleRight",
+      "feld": [32, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleLeft",
+      "feld": [18, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleRight",
+      "feld": [32, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleLeft",
+      "feld": [18, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleRight",
+      "feld": [32, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleLeft",
+      "feld": [18, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleRight",
+      "feld": [32, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleLeft",
+      "feld": [18, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunMiddleRight",
+      "feld": [32, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Traenke",
+      "feld": [19, 22]
+    },
+    {
+      "moebel": "wg4Zettelschild",
+      "feld": [27, 15]
+    },
+    {
+      "moebel": "cc3Raetseltafel",
+      "feld": [3, 12]
+    },
+    {
+      "moebel": "wg4Schild",
+      "feld": [7, 12]
+    },
+    {
+      "moebel": "wg5Wegweiser",
+      "feld": [40, 13]
+    },
+    {
+      "moebel": "wg6StandGross",
+      "feld": [43, 11],
+      "id": "stand"
+    },
+    {
+      "moebel": "wg4Aepfel",
+      "feld": [42, 14]
+    },
+    {
+      "moebel": "wg4Aepfel",
+      "feld": [48, 14]
+    },
+    {
+      "moebel": "wg4Schuppen",
+      "feld": [51, 11]
+    },
+    {
+      "moebel": "wg4ObstbaumKlein",
+      "feld": [44, 20]
+    },
+    {
+      "moebel": "wg4ObstbaumKlein",
+      "feld": [48, 21]
+    },
+    {
+      "moebel": "wg4ObstbaumKlein",
+      "feld": [52, 20]
+    },
+    {
+      "moebel": "wg4ObstbaumKlein",
+      "feld": [56, 21]
+    },
+    {
+      "moebel": "wg4ObstbaumKlein",
+      "feld": [47, 24]
+    },
+    {
+      "moebel": "wg4Bank",
+      "feld": [78, 17]
+    },
+    {
+      "moebel": "rvHeuhaufen",
+      "feld": [66, 12]
+    },
+    {
+      "moebel": "rvHeuhaufen",
+      "feld": [70, 12]
+    },
+    {
+      "moebel": "rvHeuhaufen",
+      "feld": [84, 13]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [108, 11]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [113, 11]
+    },
+    {
+      "moebel": "wg4BuschBreit",
+      "feld": [109, 10]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [115, 12]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [36, 20]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [76, 22]
+    },
+    {
+      "moebel": "wg4LaubbaumC",
+      "feld": [86, 23]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [96, 21]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [104, 22]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [108, 22]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [112, 22]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [100, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [68, 21]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [69, 21]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [68, 22]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [29, 24]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [66, 23]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [85, 15]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [95, 21]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [74, 20]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [83, 15]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [75, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [55, 11]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [48, 19]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [49, 19]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [115, 24]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [101, 13]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [76, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [59, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [54, 22]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [104, 17]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [105, 17]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [104, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [12, 21]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 21]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [34, 24]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [12, 13]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [13, 13]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [12, 14]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [84, 15]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [84, 16]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [85, 23]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [85, 24]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [90, 23]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [55, 23]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [56, 23]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [55, 24]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [80, 27]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [14, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [72, 23]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [85, 12]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [86, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [89, 27]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [49, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [50, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [49, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [111, 25]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [104, 19]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [105, 19]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [114, 25]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [115, 25]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [115, 18]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [116, 18]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [115, 19]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [49, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [16, 18]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [108, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [66, 22]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [67, 22]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [47, 19]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [47, 20]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [88, 14]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [89, 14]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [106, 11]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [107, 11]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [106, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [14, 20]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [27, 24]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [85, 21]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [86, 21]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [85, 22]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [101, 19]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [51, 21]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [51, 22]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [69, 15]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [70, 15]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [53, 23]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [41, 23]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [41, 11]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [69, 23]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [118, 24]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [118, 25]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [100, 23]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [108, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [95, 18]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [96, 18]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [95, 19]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [70, 13]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [71, 13]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [61, 14]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [80, 10]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [81, 10]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [80, 11]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [102, 19]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [101, 20]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [37, 24]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [95, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [96, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [95, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [90, 14]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [89, 15]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [118, 19]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [102, 11]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [103, 11]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [102, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [83, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [84, 10]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [83, 11]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [95, 14]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [82, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [102, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [103, 10]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [42, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [103, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [77, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [78, 13]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [77, 14]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [99, 13]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [48, 23]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [13, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [72, 21]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [100, 20]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [103, 23]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [52, 27]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [53, 27]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [110, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [109, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [109, 21]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [91, 14]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [35, 22]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [35, 23]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [20, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [72, 12]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [97, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [16, 10]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [15, 11]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [78, 12]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [79, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [34, 18]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [88, 15]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [63, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [64, 20]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [48, 27]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [49, 27]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [87, 21]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [74, 24]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [96, 19]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [70, 22]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [62, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [63, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [62, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [19, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 16]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [40, 25]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [105, 18]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [67, 25]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [68, 25]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [91, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [92, 16]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [1, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [54, 12]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [55, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [25, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [26, 16]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [3, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [54, 20]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [32, 15]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [35, 25]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [36, 25]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [35, 26]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [92, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [93, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [92, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [86, 15]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [87, 15]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [65, 25]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [66, 25]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [75, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [76, 11]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [75, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [108, 20]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [108, 21]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [40, 19]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [41, 19]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [112, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [113, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [112, 21]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [74, 22]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [29, 16]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [30, 16]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [73, 11]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [74, 11]
+    },
+    {
+      "moebel": "wg4BuschBluete",
+      "feld": [106, 13]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [98, 19]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [72, 13]
+    },
+    {
+      "moebel": "wg4BuschBluete",
+      "feld": [64, 13]
+    },
+    {
+      "moebel": "wg4BuschBluete",
+      "feld": [107, 18]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 16],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckPark",
+      "feld": [0, 15]
+    },
+    {
+      "name": "zurueckPark",
+      "feld": [0, 16]
+    },
+    {
+      "name": "zurueckPark",
+      "feld": [0, 17]
+    },
+    {
+      "name": "weiterFluss",
+      "feld": [119, 15]
+    },
+    {
+      "name": "weiterFluss",
+      "feld": [119, 16]
+    },
+    {
+      "name": "tafel",
+      "feld": [4, 13],
+      "auf_moebel": true
+    },
+    {
+      "name": "fundFormular",
+      "feld": [111, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [95, 16]
+    },
+    {
+      "name": "gegnerin",
+      "feld": [80, 17]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "bauer",
+      "typ": "statist",
+      "feld": [52, 10],
+      "eigenschaften": {
+        "von": "52,10",
+        "bis": "57,10",
+        "tun": "Otis prüft das reife Korn am Feldrand",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [2, 15],
+      "eigenschaften": {
+        "von": "2,15",
+        "bis": "30,15",
+        "tun": "Tessa joggt die Straße entlang",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [100, 15],
+      "eigenschaften": {
+        "von": "100,15",
+        "bis": "116,15",
+        "tun": "überholt auf der Straße",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kuehe",
+      "typ": "tier",
+      "feld": [20, 19],
+      "eigenschaften": {
+        "von": "20,19",
+        "bis": "30,19",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [60, 11],
+      "eigenschaften": {
+        "von": "60,11",
+        "bis": "64,11",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [20, 10],
+      "eigenschaften": {
+        "von": "20,10",
+        "bis": "26,10",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [116, 13],
+      "eigenschaften": {
+        "von": "116,13",
+        "bis": "116,13",
+        "verhalten": "ausweichen",
+        "wann": "morgen"
+      }
+    }
+  ]
+}

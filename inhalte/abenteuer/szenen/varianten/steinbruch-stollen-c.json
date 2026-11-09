@@ -1,0 +1,321 @@
+{
+  "karte": "steinbruch.stollen",
+  "datei": "karten/varianten/steinbruch-stollen-c.json",
+  "art": "innen",
+  "beschreibung": "Stollen 2 im alten Steinbruch: ein enger Gang im Fels, kalt und still, nur Tropfen fallen. Vom Eingang im Süden, durch den Tageslicht hereinfällt, läuft der Hauptgang mit einem alten Lorengleis nach Norden; Stützbalken aus Holz halten die Decke. An einer Gabelung geht links ein Seitenstollen zu einer Nische, in der Mama als Kind ihre Blechdose versteckt hat; rechts weitet sich der Gang zur Kaverne mit Pfütze, Geröll und einer abgestellten Lore, in der jedes Wort widerhallt. Variante C, die reichere: gewundener Hauptgang mit Knick, breite Kaverne mit zwei Pfützen, Tropfsteinen und Lore, die Nische mit Geröll, Balken alle vier Felder.",
+  "wand": "fels",
+  "boden": "schotter",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "raster": [
+    "########################################",
+    "########################################",
+    "########################################",
+    "###........###########................##",
+    "###........###########................##",
+    "###........###########................##",
+    "###........###########......~~........##",
+    "########..############................##",
+    "########..############...........~~...##",
+    "########..############................##",
+    "########..############................##",
+    "########..##############..##############",
+    "########..##############..##############",
+    "########..##############..##############",
+    "########..########........##############",
+    "########..########........##############",
+    "########............####################",
+    "########............####################",
+    "##################..####################",
+    "##################..####################",
+    "##################..####################",
+    "##################..####################",
+    "##################..####################",
+    "##################..####################"
+  ],
+  "objekte": [
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [17, 17],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [20, 17],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [17, 20],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [20, 20],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [23, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [26, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "st5Lore",
+      "feld": [30, 7]
+    },
+    {
+      "moebel": "fels",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [35, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [27, 9]
+    },
+    {
+      "moebel": "fels",
+      "feld": [36, 9]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "fels",
+      "feld": [9, 4]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [12, 16]
+    },
+    {
+      "moebel": "fels",
+      "feld": [22, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [25, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [26, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [28, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [29, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [31, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [32, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [34, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [37, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [22, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [27, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [28, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [31, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [33, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [34, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [36, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [37, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [22, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [22, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 9]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [37, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [37, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [37, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [37, 9]
+    },
+    {
+      "moebel": "fels",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [4, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "fels",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "fels",
+      "feld": [10, 4]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 5]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [18, 22],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "stollenAusgang",
+      "feld": [18, 23]
+    },
+    {
+      "name": "stollenAusgang",
+      "feld": [19, 23]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "fledermaus",
+      "typ": "tier",
+      "feld": [30, 4],
+      "eigenschaften": {
+        "von": "28,4",
+        "bis": "33,4",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "variante": "c"
+}

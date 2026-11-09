@@ -2,12 +2,13 @@
   "karte": "summitCity.aussen",
   "datei": "karten/varianten/summit-city-aussen-b.json",
   "art": "aussen",
-  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand aus grauem Fels. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Brunnen (Ersatz für den Drachenbrunnen, bis das Bild kommt), auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn (Ersatz: Werkhalle). Nach Osten führt die Straße zu Weg 8 und zum Geysirbecken. Ferienhütten, Pinien und Felsbrocken an den Hängen, Murmeltiere und Ziegen. Variante B, die schlichtere: Laden links, Hütte rechts davon, Talstation weiter westlich, der Platz ohne Stände.",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand aus grauem Fels. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Brunnen (Ersatz für den Drachenbrunnen, bis das Bild kommt), auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn (Ersatz: Werkhalle). Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten, Pinien und Felsbrocken an den Hängen, Murmeltiere und Ziegen. Variante B, die schlichtere: Laden links, Hütte rechts davon, Talstation weiter westlich, der Platz ohne Stände.",
   "wand": "fels",
   "boden": "gras",
   "boeden": {
     "p": "pflaster",
-    "f": "felsboden"
+    "f": "felsboden",
+    "e": "erde"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "rustikal", "laendlich"],
@@ -45,29 +46,29 @@
     "#....pppppppppppppppppppppppppppppppppppppppppp......................#",
     "#.........................ppppppppppppppppppppp......................#",
     "#.........................ppppppppppppppppppppp......................#",
-    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
-    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
-    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "#.................................ppp................................#",
-    "##################################ppp#################################"
+    "#.........................pppppppppppppppppppppeeeeeeeeeee...........#",
+    "#.........................pppppppppppppppppppppeeeeeeeeeee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.........................ppppppppppppppppppppp.........ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "#.................................ppp...................ee...........#",
+    "##################################ppp###################ee############"
   ],
   "objekte": [
     {
@@ -108,7 +109,7 @@
     },
     {
       "moebel": "wds6Wegweiser",
-      "feld": [60, 31]
+      "feld": [58, 31]
     },
     {
       "moebel": "sc7Ferienhuette",
@@ -116,7 +117,7 @@
     },
     {
       "moebel": "sc7FerienhuetteB",
-      "feld": [54, 44]
+      "feld": [59, 44]
     },
     {
       "moebel": "sc7Hackklotz",
@@ -139,16 +140,16 @@
       "feld": [61, 13]
     },
     {
+      "moebel": "wds6Pinie",
+      "feld": [52, 45]
+    },
+    {
       "moebel": "wds6Kegelbaum",
       "feld": [20, 39]
     },
     {
       "moebel": "wds6Kegelbaum",
       "feld": [41, 43]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [65, 45]
     },
     {
       "moebel": "wds6Pinie",
@@ -220,6 +221,10 @@
     },
     {
       "moebel": "wds6Kegelbaum",
+      "feld": [64, 29]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
       "feld": [43, 50]
     },
     {
@@ -267,20 +272,16 @@
       "feld": [63, 22]
     },
     {
+      "moebel": "wds6Pinie",
+      "feld": [55, 49]
+    },
+    {
       "moebel": "wds6Kegelbaum",
       "feld": [57, 8]
     },
     {
       "moebel": "wds6Pinie",
       "feld": [60, 7]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [62, 40]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [63, 28]
     },
     {
       "moebel": "wds6Kegelbaum",
@@ -329,15 +330,11 @@
     },
     {
       "name": "wegCrossroads",
-      "feld": [69, 33]
+      "feld": [56, 55]
     },
     {
       "name": "wegCrossroads",
-      "feld": [69, 34]
-    },
-    {
-      "name": "wegCrossroads",
-      "feld": [69, 35]
+      "feld": [57, 55]
     },
     {
       "name": "huetteTuer",

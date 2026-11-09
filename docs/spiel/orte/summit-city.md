@@ -17,14 +17,14 @@ Sommer, Summit City feiert sein Sommerfest.
 ```text
                  Gipfel (Fels) ─── Seilbahn ──► Bergstation (über den Wolken)
                         │
-   Hochebene ◄═ Abzweig ═╡ Bergstraße (Weg 7) ══► Summit City (Südrand) ══► Weg 8 Geysirbecken (Ostrand)
+   Hochebene ◄═ Abzweig ═╡ Bergstraße (Weg 7) ══► Summit City (Südrand) ══► Weg 8 Geysirbecken (Südrand, Erdweg)
    Felstürme ═► Schule   │
                   Diner (Wüste)
 ```
 
 | Karte                    | Größe    | Lauf (Kacheln)                 | Zeit (3,5/s) |
 | ------------------------ | -------- | ------------------------------ | ------------ |
-| `summitCity.aussen`      | 70 × 56  | Südrand → Markt → Ostrand ≈ 65 | ≈ 19 s       |
+| `summitCity.aussen`      | 70 × 56  | Südrand → Markt → Südrand ≈ 65 | ≈ 19 s       |
 | `summitCity.huette`      | 18 × 13  | Innenraum (Club)               | ≈ 4 s        |
 | `summitCity.bergstation` | 18 × 12  | Innenraum                      | ≈ 4 s        |
 | `summitCity.bergladen`   | 14 × 10  | Innenraum (Laden)              | ≈ 3 s        |
@@ -39,7 +39,7 @@ oder eine Abzweigung mit zwei Karten“), kürzer als ein Hauptweg.
 Bergstadt auf einer Alm unter den Gipfeln. Boden Gras, Wege aus Pflaster und Erde, Fels (`wand: fels`)
 im Norden als Gipfelwand, Pinien an den Rändern. Die Bergstraße kommt am **Südrand (34–36, 55)** an,
 läuft als Pflasterweg nach Norden zum **Marktplatz** mit dem Drachenbrunnen. Vom Markt geht eine
-Straße nach Osten zum **Ostrand (69, 33–35)**, Weg 8 zum Geysirbecken (S10, `wenn: nadelSummitCity`).
+Erdweg (zwei Felder) nach Südosten zum **Südrand (56–57, 55)**, Weg 8 zum Geysirbecken (S10, `wenn: nadelSummitCity`).
 
 ```text
  Spalte 0      10      20      30      40      50      60    69
@@ -49,7 +49,7 @@ Straße nach Osten zum **Ostrand (69, 33–35)**, Weg 8 zum Geysirbecken (S10, `
  R18 │                      Murmeltiere   │   ║ Weg            │
  R20 │ [Wards Hütte]  [Bergladen]        ║                    │
  R28 │        ║          ╔══════ Marktplatz ═══╗               │
- R31 │  Hütte ╚══════════╣  Drachenbrunnen    ╠═══════════════◄ Ostrand 33–35 (Weg 8)
+ R31 │  Hütte ╚══════════╣  Drachenbrunnen    ╠════╗ Erdweg 56–57 nach Süden (Weg 8)
  R40 │                   ╚══════════╦═════════╝   Hütten      │
  R48 │  Hütten, Ziegen              ║              Pinien      │
  R55 └──────────────────────────────╨ Südrand 34–36 ──────────┘  ← Bergstraße
@@ -68,11 +68,11 @@ Straße nach Osten zum **Ostrand (69, 33–35)**, Weg 8 zum Geysirbecken (S10, `
 | S9 Ostausgang (47–69 / 31–37)  | nach Weg 8     | Straße nach Osten, Wegweiser „Geysirbecken“, Ranger-Hinweis                               | Wegweiser                    |
 
 **Wegeführung:** Hauptweg drei Felder Pflaster Südrand → Markt (Reihen 40–55), Markt 26–46 / 28–40,
-Straße nach Osten (Reihen 33–35); Abzweige: Weg zu Wards Hütte und Bergladen (zwei Felder, Reihe 30),
+Erdweg nach Südosten (Reihen 33–34, dann Spalten 56–57 zum Südrand); Abzweige: Weg zu Wards Hütte und Bergladen (zwei Felder, Reihe 30),
 Weg zur Talstation (zwei Felder, Spalten 52–53), Treppe auf den Gipfelfelsen. **Sichtachsen:** vom
 Südrand nach Norden der Drachenbrunnen und dahinter die Gipfelwand; vom Markt nach Nordosten die
 Talstation mit dem Seil. **Ränder:** Norden Fels, Westen und Osten Pinienwald, Süden Wald; offen nur
-Süden (34–36) und Osten (33–35).
+Süden (34–36, Bergstraße) und Süden (56–57, Weg 8).
 
 ### 1.2 Wards Hütte (`summitCity.huette`, 18 × 13)
 
@@ -120,15 +120,15 @@ Kulturen (O5): Menschen von heute mit Berufen. Der Weg kommt am **Ostrand (59, 1
 
 ### 1.7 Übergänge (Felder auf beiden Seiten)
 
-| Auslöser (Karte, Feld)                                | Gegenstück (Karte, Feld)                           | Bemerkung                            |
-| ----------------------------------------------------- | -------------------------------------------------- | ------------------------------------ |
-| aussen `wegDesert` Südrand (34–36, 55)                | bergstrasse `weiterSummit` Nordrand (18–20, 0)     | drei Felder                          |
-| aussen `wegCrossroads` Ostrand (69, 33–35)            | geysirbecken `zurueckSummit` (Westrand, mittel-3)  | drei Felder, `wenn: nadelSummitCity` |
-| aussen `huetteTuer` (8, 27)                           | huette `huetteAusgang` (8–9, 12)                   | Tür der Hütte                        |
-| aussen `bergladenTuer` (22, 28)                       | bergladen `bergladenAusgang` (6–7, 9)              | Tür des Ladens                       |
-| aussen `seilbahnTal` (57, 22)                         | bergstation `seilbahnBerg` an der Gondel           | Fahrt mit der Seilbahn               |
-| felsentuerme `zurueckBergstrasse` Ostrand (99, 14–15) | bergstrasse `abzweigHochebene` Westrand (0, 70–71) | zwei Felder Schotter                 |
-| felsentuerme `weiterSchule` Westrand (0, 14–15)       | schule `zurueckFelsentuerme` Ostrand (59, 19–20)   | zwei Felder                          |
+| Auslöser (Karte, Feld)                                | Gegenstück (Karte, Feld)                           | Bemerkung                                                            |
+| ----------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------- |
+| aussen `wegDesert` Südrand (34–36, 55)                | bergstrasse `weiterSummit` Nordrand (18–20, 0)     | drei Felder                                                          |
+| aussen `wegCrossroads` Südrand (56–57, 55)            | geysirbecken `zurueckSummit` Nordrand (14–15, 0)   | Erdweg zwei Felder, `wenn: nadelSummitCity`, mit mittel-3 abgestimmt |
+| aussen `huetteTuer` (8, 27)                           | huette `huetteAusgang` (8–9, 12)                   | Tür der Hütte                                                        |
+| aussen `bergladenTuer` (22, 28)                       | bergladen `bergladenAusgang` (6–7, 9)              | Tür des Ladens                                                       |
+| aussen `seilbahnTal` (57, 22)                         | bergstation `seilbahnBerg` an der Gondel           | Fahrt mit der Seilbahn                                               |
+| felsentuerme `zurueckBergstrasse` Ostrand (99, 14–15) | bergstrasse `abzweigHochebene` Westrand (0, 70–71) | zwei Felder Schotter                                                 |
+| felsentuerme `weiterSchule` Westrand (0, 14–15)       | schule `zurueckFelsentuerme` Ostrand (59, 19–20)   | zwei Felder                                                          |
 
 ## 2. Ortsbild
 
@@ -184,7 +184,7 @@ und daneben die Werkstatt, in der Joss Vell den Bus repariert. Die Hälfte der S
 - **Für Runde 6 (keine Auslöser jetzt):** `plakat` (S1), `fernrohr` (S5), `foto` und `teekanne`
   (Hütte), `fahrplan` (Bergstation), `wanderkarten` (Bergladen), `pferd` und `schildSchule`
   (Felstürme), `bus` (Schule).
-- **Weg 8:** Der Ostrand (69, 33–35) ist mit mittel-3 abzustimmen (Geysirbecken, `zurueckSummit`).
+- **Weg 8:** abgestimmt mit mittel-3: `wegCrossroads` am Südrand (56–57), Gegenstück Nordrand (14–15) des Geysirbeckens.
 - **Bilder** sind beim Haupt-Chat bestellt (Drachenbrunnen, Talstation, Mast, Berghütte, Ferienhütten,
   Bergladen, Plakat, Wimpelketten, Kamin, Gondel, Wolkenfenster, rote Felstürme, Steintisch); bis sie
   kommen, steht Ersatz aus dem Katalog, in der Beschreibung genannt.

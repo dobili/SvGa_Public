@@ -1208,6 +1208,154 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc6RegalHellA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_55.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalHellB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_56.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalHellC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_57.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalHellD": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_58.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalGrauA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_62.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalGrauB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_63.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalGrauC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_64.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6RegalGrauD": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_65.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6TischHell": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6TischDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6SesselRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_214.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "rechts"
+    },
+    "cc6SesselLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_210.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "cc6SesselVorn": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_202.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc6StuhlLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_3.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "cc6StuhlRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_4.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "rechts"
     }
   }
 }

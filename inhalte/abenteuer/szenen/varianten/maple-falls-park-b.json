@@ -1,0 +1,420 @@
+{
+  "karte": "mapleFalls.park",
+  "datei": "karten/varianten/maple-falls-park-b.json",
+  "art": "aussen",
+  "beschreibung": "Variante B, schlicht: Der Fluss biegt schon bei Spalte 24 nach Süden und windet sich in drei Stufen zur Brücke; nach der Brücke läuft er in einem S-Bogen zum Ostrand. Der Uferweg ist kürzer, der gepflasterte Platz liegt im Nordteil direkt am Uferweg (Bank am Westrand, Blumenkasten am Südrand), der Kiosk daneben. Im Süden liegt der Basketballplatz in der Mitte mit zwei Bänken am Westrand, links davon ein kleiner Teich. Wenige Bäume, Laternen mit Arm an Uferweg und Straße.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "e": "erde",
+    "s": "asphalt",
+    "h": "dielen",
+    "b": "dielen"
+  },
+  "raster": [
+    "##########ee################################",
+    "#.........ee...............................#",
+    "~~~~~~~~..ee....~~~~~~~~~~~~...............#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~...............#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~...............#",
+    "#.~~~~~.~~hh~~~~......~~~~~~...............#",
+    "#.........ee...........~~~~~...............#",
+    "#eeeeeeeeeeeeeeeeeeeeeee~~~~...............#",
+    "#eeeeeeeeeeeeeeeeeeeeeee~~~~~..............#",
+    "#...........ppppp....ee..~~~~~.............#",
+    "#...........ppppp....ee...~~~~~............#",
+    "#...........ppppp....ee....~~~~~...........#",
+    "#...........ppppp....ee.....~~~~~..........#",
+    "#....................ee......~~~~~.........#",
+    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
+    "sssssssssssssssssssssssssssssssbbbbsssssssss",
+    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "#......................ppppppp.~~~~........#",
+    "#......................ppppppp..~~~~...~~~~~",
+    "#..~~~.................ppppppp...~~~~.~~~~~~",
+    "#.~~~~~...........................~~~~~~~~~~",
+    "#.~~~~~............................~~~~~~~~~",
+    "#.~~~~~.............................~~~~...#",
+    "#..~~~.....................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "#..........................................#",
+    "############################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf6StegBrueckeL",
+      "feld": [10, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf6StegBrueckeR",
+      "feld": [11, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [31, 18]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [32, 14]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [32, 18]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [33, 14]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [33, 18]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [34, 14]
+    },
+    {
+      "moebel": "mf4Gelaender",
+      "feld": [34, 18]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [16, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [29, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [32, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [35, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [38, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [41, 1]
+    },
+    {
+      "moebel": "mf6StegMorsch",
+      "feld": [3, 4],
+      "id": "stegS5"
+    },
+    {
+      "moebel": "mf4Sperrlatte",
+      "feld": [4, 6],
+      "id": "absperrungSteg"
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [3, 11],
+      "id": "bank"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [6, 11]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [8, 12]
+    },
+    {
+      "moebel": "mf9BankRechts",
+      "feld": [11, 9],
+      "id": "bankPlatz"
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [13, 13]
+    },
+    {
+      "moebel": "mf2Kiosk",
+      "feld": [17, 10]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [36, 4]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [38, 26]
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [5, 5],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [18, 5],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [9, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [26, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [38, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [4, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [20, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9Laterne",
+      "feld": [38, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf6Basketballplatz",
+      "feld": [8, 20],
+      "id": "platz"
+    },
+    {
+      "moebel": "mf9BankRechts",
+      "feld": [7, 22],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf9BankRechts",
+      "feld": [7, 26],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf6Haltestelle",
+      "feld": [24, 22]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [29, 22]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 16],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "park",
+      "feld": [0, 15]
+    },
+    {
+      "name": "park",
+      "feld": [0, 16]
+    },
+    {
+      "name": "park",
+      "feld": [0, 17]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 15]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 16]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 17]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [10, 0]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [11, 0]
+    },
+    {
+      "name": "bushaltestelle",
+      "feld": [26, 21]
+    },
+    {
+      "name": "parkbank",
+      "feld": [4, 12],
+      "auf_moebel": true
+    },
+    {
+      "name": "kiosk",
+      "feld": [18, 13]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "skaterJo",
+      "feld": [6, 24]
+    },
+    {
+      "name": "abernathy",
+      "feld": [5, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [7, 12],
+      "eigenschaften": {
+        "von": "7,12",
+        "bis": "7,12",
+        "tun": "sitzt auf der Bank und füttert Tauben",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kioskbesucher",
+      "typ": "statist",
+      "feld": [16, 13],
+      "eigenschaften": {
+        "von": "14,13",
+        "bis": "20,13",
+        "tun": "holt sich ein Eis",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [4, 26],
+      "eigenschaften": {
+        "von": "2,26",
+        "bis": "6,26",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [16, 5],
+      "eigenschaften": {
+        "von": "10,5",
+        "bis": "24,5",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "modern", "natur"],
+  "bruecken": ["h"],
+  "variante": "b"
+}

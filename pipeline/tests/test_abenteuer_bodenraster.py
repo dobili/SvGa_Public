@@ -16,3 +16,23 @@ def test_brücke_unterbricht_den_bach_nicht():
 def test_steg_ohne_wasser_dahinter_behält_das_ufer():
     zeilen = ["~~~", "~h.", "~~~"]
     assert not ueberbrueckt(zeilen, 0, 1, 1, 0)
+
+
+def test_innenecke_an_einer_ufer_stufe():
+    # Wasser unten links, Stufe nach rechts oben: (1,1) hat Wasser ringsum, nur oben rechts Gras.
+    zeilen = ["~~.", "~~~", "~~~"]
+    assert bodenfeld(WASSER_ART, zeilen, 1, 1) == [3, 1]
+
+
+def test_weg_ohne_grasnaht_am_pflaster():
+    zeilen = ["....", "eegg", "...."]
+    erde = {"rand": [0, 0]}
+    # Rechts Pflaster: kein Rand nach rechts, oben und unten Gras.
+    assert bodenfeld(erde, zeilen, 1, 1) == [1, 1]
+
+
+def test_randwand_zeigt_das_feld_dahinter():
+    # Weg verlässt die Karte links: Die Randwand über ihm zeigt Gras, also Grasrand oben.
+    zeilen = ["#####", "#....", "eeeee", "eeeee", "#...."]
+    erde = {"rand": [0, 0]}
+    assert bodenfeld(erde, zeilen, 0, 2) == [1, 0]

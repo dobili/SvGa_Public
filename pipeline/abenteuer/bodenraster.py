@@ -41,28 +41,57 @@ def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
     return False
 
 
-def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
-    """Die Kachel eines Bodens an (x, y): mit „rand“ Rand- oder Eckstück je nach Nachbarn gleicher
-    Art (3×3-Block von LimeZu), mit „varianten“ eine feste Zufallsauswahl, sonst „feld“.
+# Nachbarn, an denen ein Weg oder Belag seinen Grasrand zeigt: Gras („.“), Hecke oder Wand, Wasser,
+# Leere. An anderen Belägen (Pflaster, Sand, Brücke) läuft er ohne Naht weiter (KARTENREGELN 10.3).
+TRENNT = {".", WAND, WASSER, LEER}
+# Innenecken im Bogen von LimeZu: rechts neben dem 3×3-Block, je nach der abweichenden Diagonale.
+INNENECKEN = {(1, 1): (3, 0), (-1, 1): (4, 0), (1, -1): (3, 1), (-1, -1): (4, 1)}
 
-    Beispiel: ein Feldweg „e“ quer durchs Gras bekommt oben und unten Grasränder, in der Mitte Erde.
+
+def wirksames_zeichen(zeilen: list[str], x: int, y: int) -> str:
+    """Das Zeichen, das an (x, y) gezeichnet wird: Randwand außen zeigt das Feld dahinter."""
+    if zeilen[y][x] == WAND and (innen := randnachbar(zeilen, x, y)) is not None:
+        return zeilen[innen[1]][innen[0]]
+    return zeilen[y][x]
+
+
+def gleicher_boden(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
+    """Ob der Boden an (x, y) in Richtung (dx, dy) ohne Rand weiterläuft.
+
+    Warum: Der Autor sah Wege ohne Rand am Kartenrand, Grasnähte zwischen Trampelpfad und Gehweg
+    und Bäche, die an jeder Brücke endeten (Rückmeldung zu Runde 4, KARTENREGELN 10.1 bis 10.3).
+    Sonderfälle: Außerhalb der Karte läuft alles weiter; Wasser läuft nur in Wasser und unter
+    Brücken weiter; andere Böden laufen in jeden Belag außer Gras, Wand, Wasser und Leere.
+    """
+    zeichen = zeilen[y][x]
+    nx, ny = x + dx, y + dy
+    if not (0 <= ny < len(zeilen) and 0 <= nx < len(zeilen[0])):
+        return True
+    nachbar = wirksames_zeichen(zeilen, nx, ny)
+    if zeichen == WASSER:
+        return nachbar == WASSER or ueberbrueckt(zeilen, x, y, dx, dy)
+    return nachbar == zeichen or nachbar not in TRENNT
+
+
+def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
+    """Die Kachel eines Bodens an (x, y): mit „rand“ Rand-, Eck- oder Innenecken-Stück je nach
+    Nachbarn (3×3-Block von LimeZu und die vier Innenecken rechts daneben), mit „varianten“ eine
+    feste Zufallsauswahl, sonst „feld“.
+
+    Beispiel: ein Feldweg „e“ quer durchs Gras bekommt oben und unten Grasränder, in der Mitte Erde;
+    ein Ufer in Stufen bekommt an jeder inneren Stufe eine Innenecke statt einer Kerbe.
     """
     if "rand" in art:
-        zeichen = zeilen[y][x]
 
         def gleich(dx: int, dy: int) -> bool:
-            nx, ny = x + dx, y + dy
-            if not (0 <= ny < len(zeilen) and 0 <= nx < len(zeilen[0])):
-                return True  # Am Kartenrand läuft der Boden weiter.
-            am_rand = nx in (0, len(zeilen[0]) - 1) or ny in (0, len(zeilen) - 1)
-            if am_rand and zeilen[ny][nx] == WAND:
-                return True  # Randwand außen ist nur Kollision; der Boden läuft darunter weiter.
-            if zeichen == WASSER and ueberbrueckt(zeilen, x, y, dx, dy):
-                return True  # Unter Brücke und Gleis fließt das Wasser weiter, kein Ufer.
-            return zeilen[ny][nx] == zeichen
+            return gleicher_boden(zeilen, x, y, dx, dy)
 
         spalte = 1 if gleich(-1, 0) == gleich(1, 0) else 0 if not gleich(-1, 0) else 2
         reihe = 1 if gleich(0, -1) == gleich(0, 1) else 0 if not gleich(0, -1) else 2
+        if all(gleich(dx, dy) for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1))):
+            for (dx, dy), (sx, sy) in INNENECKEN.items():
+                if not gleich(dx, dy):
+                    return [art["rand"][0] + sx, art["rand"][1] + sy]
         return [art["rand"][0] + spalte, art["rand"][1] + reihe]
     if "varianten" in art:
         # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.

@@ -15,50 +15,50 @@ sich zur Straße.
 
 ## Maple Falls
 
-| Karte      | Hinweis des Autors                                                                                                    | Regel        | Erledigt              |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------- |
-| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   |                       |
-| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        |                       |
-| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 |                       |
-| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        |                       |
-| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        |                       |
-| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | Haupt-Chat (Werkzeug) |
-| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        |                       |
-| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | Haupt-Chat (Werkzeug) |
-| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        |                       |
-| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        |                       |
-| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        |                       |
-| Diner      | kein Diner: neu denken (Gastraum, Theke mit Hockern, Kasse zum Gast, Durchreiche, Großküche, Lager, Toiletten; Größe) | 10.30        |                       |
-| Diner      | Glastresen mit Lücken; Kasse zum Ausgang gedreht                                                                      | 10.14, 10.30 |                       |
-| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        |                       |
-| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        |                       |
-| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        |                       |
-| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        |                       |
-| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        |                       |
-| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  |                       |
-| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        | mittel-4, Runde 6     |
-| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 | mittel-4, Runde 6     |
-| Park       | Teich rechteckig                                                                                                      | 10.23        | mittel-4, Runde 6     |
-| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        | mittel-4, Runde 6     |
-| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  | mittel-4, Runde 6     |
-| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         | mittel-4, Runde 6     |
-| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        | mittel-4, Runde 6     |
-| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  | mittel-4, Runde 6     |
+| Karte      | Hinweis des Autors                                                                                                    | Regel        | Erledigt                                  |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
+| Wohnzimmer | Ausgang ist ein Loch in der Wand: Haustür einbauen; Fußmatte direkt an die Tür                                        | 10.7, 10.8   |                                           |
+| Wohnzimmer | Fernseher mit Standfuß hängt an der Wand: auf die Kommode stellen                                                     | 10.13        |                                           |
+| Wohnzimmer | Küche leer (Einzug, darf bleiben); Arbeitsplatten vor dem Fenster nach vorn, Küchenzeile ohne Lücke                   | 10.14, 10.15 |                                           |
+| Wohnzimmer | Bild hinter dem Herd entfernen                                                                                        | 10.14        |                                           |
+| Wohnzimmer | Treppe steht mitten im Raum: an eine Wand                                                                             | 10.16        |                                           |
+| Wohnzimmer | grauer Schleier unter den Sitzen vor dem Fernseher                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
+| Dachboden  | Treppe oben links ist eine Verandatreppe: Luke mit Stiege oder Leiter; Katalogbeschreibung prüfen                     | 10.16        |                                           |
+| Dachboden  | grauer Schleier unter Lampe, Hutschachtel, Spiegel                                                                    | 10.5         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
+| Clubraum   | goldene Statue schwebt über dem Tisch                                                                                 | 10.11        |                                           |
+| Clubraum   | schwarzes Brett bündig an der Decke                                                                                   | 10.10        |                                           |
+| Clubraum   | Globus auf dem Boden: aufs Lehrerpult                                                                                 | 10.13        |                                           |
+| Diner      | kein Diner: neu denken (Gastraum, Theke mit Hockern, Kasse zum Gast, Durchreiche, Großküche, Lager, Toiletten; Größe) | 10.30        |                                           |
+| Diner      | Glastresen mit Lücken; Kasse zum Ausgang gedreht                                                                      | 10.14, 10.30 |                                           |
+| außen      | Bushaltestelle und Bank falsch herum (zur Straße drehen)                                                              | 10.17        |                                           |
+| außen      | Laternen mitten auf der Wiese: an den Straßenrand                                                                     | 10.19        |                                           |
+| außen      | alle Bäume gleich: Arten mischen, spiegeln                                                                            | 10.20        |                                           |
+| außen      | Spielplatz ohne Umzäunung, ohne Sand, zu wenig Bänke für Eltern                                                       | 10.21        |                                           |
+| außen      | einzelne kleine Schilder am Gehweg und an der Abbiegung: Zweck klären oder entfernen                                  | 10.26        |                                           |
+| außen      | Wasserfall ohne Felsen; Bach schnurgerade und schmal; erreicht weder linken noch rechten Rand                         | 10.23, 10.2  |                                           |
+| Park       | Bushaltestelle falsch herum                                                                                           | 10.17        | mittel-4, Runde 6                         |
+| Park       | Basketballplatz ohne Rand, nur ein Korb; Bank nicht zum Platz                                                         | 10.22, 10.17 | mittel-4, Runde 6                         |
+| Park       | Teich rechteckig                                                                                                      | 10.23        | mittel-4, Runde 6                         |
+| Park       | Pflasterquadrat mit Bank, die nicht zum Platz schaut; Blumenkasten auf dem Rasen                                      | 10.17        | mittel-4, Runde 6                         |
+| Park       | Bach zu gerade, Ufer mit Lücken; Bach oben links unterbrochen                                                         | 10.23, 10.1  | mittel-4, Runde 6                         |
+| Park       | falsch zusammengesetzte Stegteile am Bach                                                                             | 10.6         | mittel-4, Runde 6                         |
+| Park       | Laternen zwischen Bäumen weit weg von der Straße, zwei Bauarten gemischt                                              | 10.19        | mittel-4, Runde 6                         |
+| Park       | Trampelpfad am Bach mit Randlücken; kleines Schild und rot-weißes Schildchen mitten auf dem Weg                       | 10.1, 10.26  | mittel-4, Runde 6                         |
 
 ## Wege
 
-| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt              |
-| ---------- | ---------------------------------------------------------------------------------------- | ------------ | --------------------- |
-| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | Haupt-Chat (Werkzeug) |
-| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        |                       |
-| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        |                       |
-| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        |                       |
-| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         |                       |
-| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                       |
-| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         |                       |
-| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 |                       |
-| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                       |
-| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        |                       |
+| Karte      | Hinweis des Autors                                                                       | Regel        | Erledigt                                  |
+| ---------- | ---------------------------------------------------------------------------------------- | ------------ | ----------------------------------------- |
+| Landstraße | Ränder von Weg und Fluss nicht durchgehend                                               | 10.1         | erledigt Haupt-Chat (Werkzeug, 9.11.2026) |
+| Landstraße | Weide links am Fluss: Zaunlücke ohne Pfosten; Torpfosten zu tief gesetzt                 | 10.27        |                                           |
+| Landstraße | Wegweiser mit fünf Schildern an einer einfachen Kreuzung                                 | 10.26        |                                           |
+| Landstraße | Verkaufsstand und blaue Hütte stehen auf dem Rasen, nicht am Weg (Tür und Theke zum Weg) | 10.25        |                                           |
+| Landstraße | Weg und Zaun rechts nicht bis zum Rand                                                   | 10.2         |                                           |
+| Flussweg   | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
+| Flussweg   | Steg sieht aus wie Dielen auf Gras                                                       | 10.6         |                                           |
+| Flussweg   | Holzbank abseits vom Weg; einzelnes Boot weit vom Steg, gern mehrere Boote am Steg       | 10.17, 10.24 |                                           |
+| Zedernpfad | Weg nicht bis zum Rand; Randlücken                                                       | 10.2, 10.1   |                                           |
+| Zedernpfad | Stammsperre sieht gesägt aus; lässt sich oben umgehen (Wald dichter bis zum Rand)        | 10.29        |                                           |
 
 ## Cedar Creek
 

@@ -14,7 +14,6 @@ Ausgabe: ``inhalte/abenteuer/moebel/<ort>.json``; die alte Datei wird gelöscht.
 import json
 import re
 import sys
-from pathlib import Path
 
 from pipeline.abenteuer.moebelliste import ORDNER
 

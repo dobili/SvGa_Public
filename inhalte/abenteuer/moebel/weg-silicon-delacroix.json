@@ -265,6 +265,60 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "sd6SteglLaengs4": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "breite": 32,
+      "hoehe": 68,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Boje": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Buoy_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "sd6Pfahl": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Pole_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Sandsack": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Dry_Pile_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6SandsackHaufen": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Dry_Pile_Small_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sd6Bauzaun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Traffic_Barrier_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "einfach"
     }
   }
 }

@@ -74,31 +74,33 @@ begehbar ist das Hauptdeck. Das hält die Karte auf einem Laufweg und vermeidet 
 ### 1.2 Deich (`wegSiliconDelacroix.deich`, 220 × 30)
 
 Der Deich läuft von West nach Ost, vom Fähranleger bis an den Westrand von Port Delacroix. Im Norden
-das Meer mit Steinschüttung (`"ufer": "stein"`), oben die Deichkrone mit dem Weg (Erde, zwei Felder,
-Reihen 8–9), im Süden der Hang (`"wand": "damm"`, Reihen 10–12) hinunter in die Marsch.
+das Meer mit Steinschüttung (`"ufer": "stein"`, Reihen 0–4), oben die Deichkrone mit dem Weg (Erde, zwei
+Felder, Reihen 5–6), Reihe 7 Grasstreifen, im Süden der Hang (`"wand": "damm"`, Reihen 8–10) hinunter in
+die Marsch. Die Reihen sind mit mittel-1 abgestimmt: Port Delacroix setzt Meer, Krone und Hang am
+Westrand in denselben Reihen fort.
 
 ```text
  Spalte: 0        20        60        96        140       160       200     219
- R0–6   ≈≈≈≈║Steg║≈≈≈≈≈≈≈≈≈≈≈≈ Meer, Steinschüttung, Möwen, Bojen ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
- R7     ─Böschungskante─ Sandsäcke am Loch (58–64) ─────────────────────────────────
- R8–9   ══ Deichkrone (Erde, 2) ═════════════════════════════════════════════════► PD
- R10–12 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ Hang ▓▓▓║R1║▓▓▓▓▓▓▓▓▓▓▓▓║R2║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
- R13–28 Marsch: Gras, Tümpel, Schilf, Wrack eines Kutters, Zypressen; Pumpenhaus; Dächer von PD im Osten
+ R0–4   ≈≈≈≈║Steg║≈≈≈≈≈≈≈≈≈≈≈≈ Meer, Steinschüttung, Möwen, Bojen ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ R5–6   ══ Deichkrone (Erde, 2) ═════════════════════════════════════════════════► PD
+ R7     ─ Grasstreifen ─ Sandsäcke am Loch (57–64) ─────────────────────────────────
+ R8–10  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ Hang ▓▓▓║R1║▓▓▓▓▓▓▓▓▓▓▓▓║R2║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ R11–28 Marsch: Gras, Schilf, Wrack eines Kutters, Zypressen; Pumpenhaus; Dächer von PD im Osten
 ```
 
-| Abschnitt (Spalten)     | Thema                  | Zum Entdecken                                                             |
-| ----------------------- | ---------------------- | ------------------------------------------------------------------------- |
-| D1 Anleger (0–19)       | Ankunft vom Schiff     | Anlegesteg 10–11 / 2–7, Fähre am Steg, `zurueckFaehre` (10–11, 2), Poller |
-| D2 Krone (20–39)        | Wind                   | Bojen im Meer, Möwen auf Pfählen                                          |
-| D3 Treibgut (40–57)     | Spuren des Sturms      | angespülte Kisten und Planken an der Schüttung                            |
-| D4 Loch (58–75)         | Weisheit               | Mr. Guidry (61, 7) stopft das Loch mit Sandsäcken (Figur `guidry`)        |
-| D5 Rampe 1 (76–99)      | hinunter in die Marsch | Rampe R1 96–97 / 10–12, Tümpel mit Schilf                                 |
-| D6 Marsch (100–119)     | versteckt              | Muschel mit Loch zwischen Schilf (`fundMuschel` (108, 25))                |
-| D7 Wrack (120–139)      | Hurrikan               | Kutter auf der Seite in der Marsch, Reiher                                |
-| D8 Pumpenhaus (140–159) | Technik                | Rampe R2 152–153 / 10–12, Pumpenhaus 156–161 / 17–21                      |
-| D9 Zypressen (160–179)  | Stille                 | Zypressen mit Moos, Fischreiher                                           |
-| D10 Ausblick (180–199)  | erster Blick           | abgedeckte Dächer und Bauzäune von Port Delacroix im Südosten (Kulisse)   |
-| D11 Ortsrand (200–219)  | Ankunft                | Ortsschild „Port Delacroix“, `weiterDelacroix` (219, 8–9)                 |
+| Abschnitt (Spalten)     | Thema                  | Zum Entdecken                                                                   |
+| ----------------------- | ---------------------- | ------------------------------------------------------------------------------- |
+| D1 Anleger (0–19)       | Ankunft vom Schiff     | Anlegesteg 10–11 / 1–4, Fähre am Steg, `zurueckFaehre` (10–11, 1), Poller       |
+| D2 Krone (20–39)        | Wind                   | Bojen im Meer, Möwen auf Pfählen                                                |
+| D3 Treibgut (40–57)     | Spuren des Sturms      | angespülte Kisten und Planken an der Schüttung                                  |
+| D4 Loch (58–75)         | Weisheit               | Mr. Guidry (61, 7) stopft das Loch mit Sandsäcken (Figur `guidry`)              |
+| D5 Rampe 1 (76–99)      | hinunter in die Marsch | Rampe R1 96–97 / 7–10, Tümpel mit Schilf                                        |
+| D6 Marsch (100–119)     | versteckt              | Muschel mit Loch zwischen Schilf (`fundMuschel` (106, 25), Pfad 96–107 / 11–25) |
+| D7 Wrack (120–139)      | Hurrikan               | Kutter auf der Seite in der Marsch, Reiher                                      |
+| D8 Pumpenhaus (140–159) | Technik                | Rampe R2 152–153 / 7–10, Vorplatz 150–155 / 15–16, Pumpenhaus ab (151, 17)      |
+| D9 Zypressen (160–179)  | Stille                 | Zypressen mit Moos, Fischreiher                                                 |
+| D10 Ausblick (180–199)  | erster Blick           | abgedeckte Dächer und Bauzäune von Port Delacroix im Südosten (Kulisse)         |
+| D11 Ortsrand (200–219)  | Ankunft                | Ortsschild „Port Delacroix“, `weiterDelacroix` (219, 5–6)                       |
 
 **Wegeführung:** Der Deich ist ein Bauwerk und läuft gerade; Abwechslung bringen die Rampen und der
 Steg. Zwei Abzweige mit Ziel (Muschel, Pumpenhaus), der Steg ist der Anfang. **Sichtachse:** Von der
@@ -129,13 +131,13 @@ durch Holzstege (Brückenbilder auf `h`). Von Port Delacroix kommt man am Westra
 
 ### 1.4 Übergänge (Felder auf beiden Seiten)
 
-| Auslöser hier                              | Gegenstück                                                                | Bemerkung                                                                              |
-| ------------------------------------------ | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| faehre `zurueckSilicon` (14–15, 4), Dialog | siliconBay.hafen `faehre` (4, 29)                                         | Fallreep am Heck; Reise zurück                                                         |
-| siliconBay.hafen `faehre` (4, 29), Dialog  | faehre `zurueckSilicon` (14–15, 4); Ankunft (14, 6)                       | `wenn: nadelSiliconBay`; das Ziel war `start` und führte nicht zurück                  |
-| faehre `weiterDeich` (14–15, 73)           | deich `zurueckFaehre` (10–11, 2)                                          | Bugrampe ↔ Ende des Anlegestegs                                                        |
-| deich `weiterDelacroix` (219, 8–9), Dialog | portDelacroix.aussen `deich` (Westrand, zwei Felder, Reihen von mittel-1) | Deichkrone läuft am Westrand von Port Delacroix weiter; Reihen mit mittel-1 abgleichen |
-| portDelacroix.aussen `bayou` (Ostrand)     | bayou `zurueckDelacroix` (0, 17–18)                                       | Steg; `wenn: musikhausOffen` auf der Seite Port Delacroix                              |
+| Auslöser hier                                              | Gegenstück                                            | Bemerkung                                                                                  |
+| ---------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| faehre `zurueckSilicon` (14–15, 4), Dialog                 | siliconBay.hafen `faehre` (4, 29)                     | Fallreep am Heck; Reise zurück                                                             |
+| siliconBay.hafen `faehre` (4, 29), Dialog                  | faehre `zurueckSilicon` (14–15, 4); Ankunft (14, 6)   | `wenn: nadelSiliconBay`; das Ziel war `start` und führte nicht zurück                      |
+| faehre `weiterDeich` (14–15, 73)                           | deich `zurueckFaehre` (10–11, 1)                      | Bugrampe ↔ Ende des Anlegestegs                                                            |
+| deich `weiterDelacroix` (219, 5–6), Dialog                 | portDelacroix.aussen `deich` (0, 5–6); Ankunft (1, 5) | Deichkrone läuft am Westrand von Port Delacroix weiter (mittel-1, 70 × 58)                 |
+| portDelacroix.aussen `bayou` (69, 53–54); Ankunft (68, 53) | bayou `zurueckDelacroix` (0, 17–18)                   | Marschpfad bei mittel-1, Steg bei mir; `wenn: musikhausOffen` auf der Seite Port Delacroix |
 
 Befund: In `orte.json` zielte `bayou.zurueckDelacroix` auf `portDelacroix.aussen`/`deich`; richtig ist
 `bayou` (korrigiert).
@@ -217,8 +219,8 @@ Fallreep (14–15, 4) und an der Bugrampe (14–15, 73), jeweils mit Endstücken
 
 ### 4.2 Deich
 
-**Boden** Gras; Weg Erde; Hang `wand: damm` (Reihen 10–12); Meer mit Steinufer. Steg `h` 10–11 / 2–7 mit
-Fußbrücke, Fähre am Steg. Inventar je Abschnitt nach 1.2; Sandsäcke am Loch (58–64 / 7), Pumpenhaus
+**Boden** Gras; Weg Erde; Hang `wand: damm` (Reihen 8–10); Meer mit Steinufer. Steg `h` 10–11 / 1–4 mit
+Fußbrücke, Fähre am Steg. Inventar je Abschnitt nach 1.2; Sandsäcke am Loch (57–64 / 7), Pumpenhaus
 (156, 17), Kutterwrack (124, 18), Ortsschild (210, 7).
 
 ### 4.3 Bayou

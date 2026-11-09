@@ -190,6 +190,289 @@
           "stil": ["einfach", "modern"]
         }
       }
+    },
+    "ironwood": {
+      "bild": "Stahlstadt im Tal: Werk mit Hallen, zwei Schornsteinen und Portalkran, Reihenhäuser aus dunkelrotem Backstein in der Elm Street, rußige Hauptstraße, alter Bahnhof mit Uhrturm, Güterbahnhof, Kanal mit Stahlbrücke. Spätherbst, Rauch und erste Kälte, am Ende von Akt 2 der erste Schnee; grau mit einem warmen Kern (Kantine).",
+      "epoche": "gegenwart mit Industriekern von 1870",
+      "wohlstand": "einfach",
+      "stil": ["backstein", "industrie", "einfach"],
+      "zustand": ["gebraucht", "alt", "verwittert"],
+      "flora": "wenig Grün: Linden und Kegelbäume in Baumscheiben am Platz, Brombeeren am Hang, Löwenzahn und Gras in Fugen und auf dem Schotter der Gleise; keine Vorgärten in der Elm Street, nur Stufen und Kübel.",
+      "karten": {
+        "aussen": {
+          "zweck": "Stadt (80 × 60, orte/ironwood.md): Treppe vom Abhang (Ankunft W3), Elm Street mit Reihenhäusern und Haus von Oma Ruth, Hauptstraße mit Eisenwarenfenster von Edna, Kneipe und Kohlenhandlung, Werkstor mit Pförtnerhaus und Werkhof (Kantine, Umkleide), Stahlbrücke mit Nieten „J. H.“ und Haltestelle, alter Bahnhof mit Museumstür zum Platz am Bahnsteig, Gleise, Güterbahnhof mit Gus, Steinbruchweg zum Ostrand.",
+          "nachbarschaft": "Arbeiterstadt: Reihenhäuser neben Reihenhäusern, Läden an der Hauptstraße, das Werk hinter einem Gitterzaun im Nordosten, Bahngelände im Süden; Gebäude südlich der Hauptstraße zeigen die Schauseite zum Platz am alten Bahnsteig.",
+          "pflicht": [
+            "Kanal reicht über Nord- und Südrand, Steinufer mit Rand, zwei Brücken (Straße, Bahn)",
+            "Hauptstraße mit Mittellinie, Gehweg beidseitig mit Bordstein, bis zur Brücke und zur Schranke",
+            "Reihenhäuser einer Bauart lückenlos in Reihe, Stufen vor jeder Tür, Kübel oder Kohleneimer neben den Stufen",
+            "Werkszaun mit Werkstor und Pförtnerhaus, Hallen mit Schornsteinen und Rauch (Animation)",
+            "Haltestelle am Gehweg mit zwei Schildern (Linie Riverton, Fernlinie Silicon Bay), Wartehäuschen offen zum Gehweg",
+            "Gleise mit Zaun, nur am Bahnübergang zu überqueren, Andreaskreuze",
+            "Treppe mit Geländer am Abhang (Ankunft zu Fuß), Gittertor zum Steinbruch",
+            "Laternen am Gehwegrand in gleichem Abstand"
+          ],
+          "verboten": [
+            "Villen und Gärten mit Rasen",
+            "Bäume frei in der Fläche",
+            "neue glänzende Fassaden (außer dem Schild von Perfect Move ab Szene 49)",
+            "Wege ohne Ziel"
+          ],
+          "zustand": ["gebraucht", "alt", "verwittert"]
+        },
+        "kantine": {
+          "zweck": "Werksclub in der Kantine (24 × 16): lange Tische der Schicht, Essensausgabe, Kanonenofen mit Werkskatze, Clubtisch mit Big Joes Stahlbrett, Pokalregal mit einer Lücke; Aufgabenreihen, Mamas Partie, Feier, Clubkampf.",
+          "raeume": [
+            {
+              "name": "kantine",
+              "funktion": "essen",
+              "inhalt": "Essensausgabe mit Warmhaltebehältern und Kaffeemaschine mit Beule an der Nordwand, Schichtplan an der Pinnwand, Pokalregal mit Lücke, Foto der Werksmannschaft, zwei lange Tische mit Bänken, zwei Clubtische mit je vier gleichen Stühlen (einer mit dem Stahlbrett), Kanonenofen mit Kohleneimer an der Ostwand, Garderobe mit Helmen und Jacken, Getränkekühlschrank, Gummibaum, Rollwagen mit Henkelmännern"
+            }
+          ],
+          "pflicht": [
+            "Doppeltür in der Südwand",
+            "Mittelgang von der Tür bis zur Essensausgabe frei",
+            "freie Wandfläche über der Essensausgabe (Logo von Perfect Move, Akt 3)"
+          ],
+          "verboten": ["Wohnzimmermöbel", "Bildschirmtische"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["industrie", "einfach"]
+        },
+        "mamasZimmer": {
+          "zweck": "Erdgeschoss im Reihenhaus von Oma Ruth (18 × 12): Wohnküche, durch eine Tür Mamas altes Zimmer, unverändert seit 2001; das Geheimnis (Szene 39, 39a).",
+          "raeume": [
+            {
+              "name": "wohnkueche",
+              "funktion": "kueche",
+              "inhalt": "Küchenzeile mit Herd und Spüle, Küchentisch mit Wachstuch und vier gleichen Stühlen, Telefon mit Schnur auf einem Tischchen neben einem Sessel, Kohleofen mit Holzkorb, Garderobe mit Mänteln, Fenster mit Spitzengardine, Pflanze"
+            },
+            {
+              "name": "mamasZimmer",
+              "funktion": "schlafen",
+              "inhalt": "Bett mit gestreifter Decke, Schreibtisch mit Lampe, Stuhl und Schublade, Poster einer Band von 2000, Silbermedaille am Nagel, Partieformular unter Glas und Foto 2001 an der Innenwand, Kommode mit Spiegel und Stofftier, Fenster, Pflanze"
+            }
+          ],
+          "pflicht": [
+            "Haustür in der Südwand der Wohnküche",
+            "Tür (Türbild) in der Innenwand zwischen Wohnküche und Zimmer",
+            "kein Schachbrett offen sichtbar"
+          ],
+          "verboten": ["Küchenmöbel in Mamas Zimmer", "kaputte Möbel"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["einfach", "klassisch"]
+        },
+        "umkleide": {
+          "zweck": "Umkleide des Werks (14 × 10): Spinde, Bänke, tropfende Dusche, dunkle Ecke mit dem Spind des Funds (Laterne).",
+          "raeume": [
+            {
+              "name": "umkleide",
+              "funktion": "sport",
+              "inhalt": "Spinde einer Bauart lückenlos an der Nordwand, zwei Spinde in der dunklen Nordostecke (einer mit Vorhängeschloss), zwei Umkleidebänke, Duschecke mit Fliesen, Handtuchhaken und Spiegel, vergessener Helm auf einer Bank, freie Ecke für einen Klapptisch (Akt 4)"
+            }
+          ],
+          "pflicht": [
+            "Tür in der Südwand",
+            "Nordostecke dunkel (Lampe kaputt)"
+          ],
+          "verboten": ["Wohnmöbel"],
+          "zustand": ["gebraucht", "alt"],
+          "stil": ["industrie", "einfach"]
+        },
+        "museum": {
+          "zweck": "Heimatmuseum in der alten Schalterhalle des Bahnhofs (26 × 14): Schalter, Standuhr, Postsäcke von 1866 auf dem Gepäckkarren, Vitrine mit der Zeitung von 1858 (freies Fach für Brief und Umschlag), Schaukasten mit dem Glasfunken.",
+          "raeume": [
+            {
+              "name": "schalterhalle",
+              "funktion": "museum",
+              "inhalt": "drei Fahrkartenschalter mit Gitter an der Nordwand, Standuhr mittig, zwei hohe Fenster, Pult mit Besucherbuch und Hocker, Postsäcke mit Wachssiegeln auf einem Gepäckkarren, alte Wartebank, Vitrine mit Zeitung und freiem Fach, Schaukasten, Fotos vom Bahnhof und vom Brückenbau, Pflanzen, Schirmständer"
+            }
+          ],
+          "pflicht": [
+            "Doppeltür in der Südwand",
+            "Vitrinen einer Serie, Mittelgang frei",
+            "Standuhr einmal"
+          ],
+          "verboten": [
+            "moderne Bildschirme",
+            "Namen auf dem Foto vom Brückenbau"
+          ],
+          "zustand": ["alt", "gebraucht"],
+          "stil": ["antik", "klassisch"]
+        }
+      }
+    },
+    "steinbruch": {
+      "bild": "Stillgelegter Granitsteinbruch hinter dem Güterbahnhof von Ironwood (Nebenort N3): Bruchkante mit Birken und Bretterbude, Serpentinen hinunter auf die Sohle, Wasserloch, in dem sich der Himmel spiegelt, rostige Loren auf einem Gleis mit Weichen, Graffiti von 1980, ein dunkler Stollen. Kühl, hallend.",
+      "epoche": "gegenwart, Anlage von 1868",
+      "wohlstand": "einfach",
+      "stil": ["industrie", "beliebig"],
+      "zustand": ["alt", "verwittert", "kaputt"],
+      "flora": "Birken und Büsche an der Kante, Gras und Moos in Felsfugen, Geröll; auf der Sohle kaum Pflanzen.",
+      "karten": {
+        "grube": {
+          "zweck": "Außenkarte (70 × 50, orte/ironwood.md 1.4): Zufahrt vom Westrand an der Kante entlang, Aussichtspunkt, Vorarbeiterbude mit Mr. Hargrove, Serpentinen, Sohle mit Wasserloch, Lorengleis mit drei Weichen, Brechanlage, Stollenmund (Sperre S4).",
+          "nachbarschaft": "keine Häuser; Felswände schließen Nord-, Ost- und Südrand.",
+          "pflicht": [
+            "Felswände mit Kante und Schatten ringsum, nur die Zufahrt öffnet den Westrand",
+            "Wasserloch als Teich rundum geschlossen, mit Felsrand",
+            "Lorengleis von Ende zu Ende (Prellbock an der Brechanlage, Stollenmund), Weichen sichtbar",
+            "Geländer an Aussichtspunkt und Serpentinenkehren",
+            "Stollenmund mit Holzrahmen und Warnschild"
+          ],
+          "verboten": [
+            "neue Maschinen",
+            "Wege ohne Ziel",
+            "Bäume auf der Sohle"
+          ],
+          "zustand": ["alt", "verwittert", "kaputt"]
+        },
+        "stollen": {
+          "zweck": "Höhle (40 × 24): Hauptgang mit Gleis und Stützbalken, Seitenstollen zur Nische (Mamas Versteck nach Szene 43), Kaverne mit Echo. Dunkel, mit Laterne ein Lichtkreis.",
+          "raeume": [
+            {
+              "name": "stollen",
+              "funktion": "keller",
+              "inhalt": "Felswände, Gang zwei Felder breit mit Gleis in der Mitte, Stützbalken aus Holz in gleichem Abstand, Haken mit leerer Grubenlampe an der Gabelung, Nische mit losem Stein, Kaverne mit Pfütze und abgestellter Lore, Geröll in Gruppen am Rand"
+            }
+          ],
+          "pflicht": [
+            "Eingang am Südrand mit Tageslicht",
+            "Grundtönung dunkel",
+            "Kleinkram nur am Rand, Gang frei"
+          ],
+          "verboten": ["Möbel", "helle Flächen ohne Lichtquelle"],
+          "zustand": ["alt", "verwittert"],
+          "stil": ["beliebig"]
+        }
+      }
+    },
+    "wegIronwoodSilicon": {
+      "bild": "Weg 4 nach Silicon Bay: Raststätte an der Schnellstraße (Tankstelle, Rasthaus mit Kaffeeautomat, Lkw-Parkplatz), dann ein Küstenpfad hinter dem Lärmschutzwall durch Salzwiese und Dünen am Watt, zuletzt eine Fußgängerbrücke aus Glas über die Autobahn. Wintertag, klar; Vögel bis zur Brücke, danach keine.",
+      "epoche": "gegenwart",
+      "wohlstand": "mittel",
+      "stil": ["modern", "laendlich"],
+      "zustand": ["neu", "gebraucht"],
+      "flora": "Strandhafer, Salzwiese, niedrige Büsche auf dem Wall; an der Brücke nur Kübel mit Gräsern.",
+      "karten": {
+        "raststaette": {
+          "zweck": "Weg von Osten (Bus aus Ironwood) nach Westen (160 × 28, orte/silicon-bay.md 1.1): Busbucht, Rasthaus mit Rätseltafel am Kaffeeautomaten, Tankstelle, Lkw-Parkplatz mit Mrs. Kowalczyk, Picknickwiese mit dem Fund, Küstenpfad mit Abzweigen zu Vogelhütte und Düne.",
+          "pflicht": [
+            "Schnellstraße am Nordrand mit Leitplanke, ohne Gehweg",
+            "Gebäude nördlich der Fahrgasse mit Türen nach Süden",
+            "Wegweiser nur am Beginn des Pfades",
+            "Bucht mit Watt reicht über West- und Südrand, Ufer mit Rand",
+            "Steg über den Priel mit Bohlen quer zur Gehrichtung",
+            "Bank auf der Düne mit Blick über die Bucht"
+          ],
+          "verboten": [
+            "Fußweg auf der Schnellstraße",
+            "Hindernisse auf dem Pfad",
+            "Wegweiser ohne Kreuzung"
+          ]
+        },
+        "glasbruecke": {
+          "zweck": "Weg in die Stadt (140 × 26, orte/silicon-bay.md 1.2): Rampe mit Kehren, Deck aus Glas über der Autobahn, Aussichtsplattform, Glasbank mit dem Fund, Joggerin, Brückenkopf mit Treppe, Stadtrand-Platz mit Werbetafel.",
+          "pflicht": [
+            "Autobahn unter dem Deck von Nord- bis Südrand, Autos animiert",
+            "Glasgeländer beidseitig, Laternen in gleichem Abstand",
+            "Treppe und Roboterrampe nebeneinander am Brückenkopf",
+            "keine Tiere westlich der Rampe"
+          ],
+          "verboten": ["Bäume", "Zugang zur Autobahn"]
+        }
+      }
+    },
+    "siliconBay": {
+      "bild": "Glasstadt an der Bucht, Kunstlicht, keine Jahreszeit, keine Bäume und keine Tiere: Konzernturm, Akademie als Glaswürfel, Hotel, Werbetafeln, Straßenbahn und Lieferroboter, Food-Truck als einziges Ding, das nicht leuchtet; unten am Hafen drei alte Backsteinhäuser, Fähren und ein leerer Laden. Sauber und falsch.",
+      "epoche": "gegenwart, Hafen von 1952",
+      "wohlstand": "gehoben",
+      "stil": ["modern", "buero"],
+      "zustand": ["neu"],
+      "flora": "keine Bäume; Kübel mit akkurat geschnittenen Gräsern in Reihen, sonst nichts.",
+      "karten": {
+        "aussen": {
+          "zweck": "Viertel Campus (72 × 52, orte/silicon-bay.md 1.3): Boulevard mit Straßenbahn und Roboterspuren, Konzernturm mit Lobby, Akademie, Hotel, Werbetafelwand mit Haltestelle der Fernlinie, Food-Truck mit Bank (Dash), LED-Wasserspiel, Café, Glasbrüstung mit Treppe zum Hafen.",
+          "nachbarschaft": "Bürotürme und Glasbauten an einem Boulevard; Platz mit Wasserspiel; Terrasse über dem Hafen.",
+          "pflicht": [
+            "Boulevard gerade von Rand zu Rand, Gehweg beidseitig, Roboterspuren markiert",
+            "Straßenbahngleise mit Haltestelleninsel und Endhaltestelle mit Prellbock, Tunnelportal am Westrand",
+            "Türen unten in den Glasfassaden, Firmenschild über der Tür",
+            "Bänke zum Wasserspiel, je zwei gegenüber",
+            "Kübel mit Gräsern in Reihen, symmetrisch an Eingängen",
+            "Glasbrüstung am Südrand, nur die Treppe öffnet ihn"
+          ],
+          "verboten": [
+            "Bäume",
+            "Tiere (außer Drohne und Staubsaugerroboter)",
+            "alte oder verwitterte Gegenstände (außer dem Food-Truck)",
+            "Schachbretter aus Holz im Freien"
+          ],
+          "zustand": ["neu"]
+        },
+        "hafen": {
+          "zweck": "Viertel Hafen (64 × 40, neu, orte/silicon-bay.md 1.4): Treppe vom Campus, alte Häuserzeile (Fischhalle, leerer Kurzwarenladen „Bald geöffnet“ mit Mr. Ames, Hafenmeisterei) neben dem Store von Perfect Move, Promenade, Kai mit Bänken und Fernrohr, Terminal der Küstenfähre, Steg der Inselfähre mit Fährhäuschen.",
+          "nachbarschaft": "alte Backsteinhäuser von 1952 an der Kaimauer, daneben ein Glasladen; Bucht reicht über West-, Süd- und Ostrand.",
+          "pflicht": [
+            "Bucht bis zum Rand, Kaikante mit Pollern",
+            "Steg der Inselfähre beginnt am Kai und ragt ins Wasser, Boot längs am Steg",
+            "Bänke am Kai zum Wasser",
+            "Häuserzeile mit Türen zur Promenade, Schaufenster des leeren Ladens mit Holzbrett und Zettel"
+          ],
+          "verboten": ["Bäume", "Tiere vor der Öffnung der Inselfähre"],
+          "zustand": ["neu", "gebraucht", "alt"],
+          "wohlstand": "einfach",
+          "stil": ["klassisch", "modern"]
+        },
+        "akademie": {
+          "zweck": "Glasbüro der Akademie (24 × 16): Bildschirmtische in Reihen, Datenwand mit Rangliste, Dr. Lins Schreibtisch mit einem einzigen Holzbrett, Fensterbank für Nova, Glaspokal, Tür zum Serverraum; Club, Aufgabenreihen, Clubkampf.",
+          "raeume": [
+            {
+              "name": "akademie",
+              "funktion": "schule",
+              "inhalt": "Datenwand aus Bildschirmen an der Nordwand, sechs Bildschirmtische einer Serie mit gleichen Stühlen in zwei Reihen, Schreibtisch mit Holzbrett und Stuhl, breite Fensterbank mit Kissen, Vitrine mit Glaspokal, Zettel „Drei Ziele“ an der Glaswand, Kamera mit Ringlicht in einer Ecke, Kunstpflanze, Station des Staubsaugerroboters"
+            }
+          ],
+          "pflicht": [
+            "Glastür in der Südwand",
+            "Tür mit Kartenleser in der Nordwand (Serverraum)",
+            "genau ein Holzbrett"
+          ],
+          "verboten": ["Holzmöbel außer dem Brett", "Bücherregale"],
+          "zustand": ["neu"],
+          "stil": ["modern", "buero"]
+        },
+        "serverraum": {
+          "zweck": "Serverraum hinter der Akademie (14 × 10): Serverschränke in Reihen, Schubladenschrank mit den Empfängern (Szene 56), Klimagerät.",
+          "raeume": [
+            {
+              "name": "serverraum",
+              "funktion": "buero",
+              "inhalt": "Serverschränke einer Bauart lückenlos an der Nordwand und in einer zweiten Reihe, Schubladenschrank aus Metall an der Ostwand, Klimagerät, Arbeitstisch mit Laptop und Stuhl"
+            }
+          ],
+          "pflicht": ["Tür in der Südwand", "Gang hinter jeder Reihe frei"],
+          "verboten": ["Wohnmöbel", "Pflanzen"],
+          "zustand": ["neu"],
+          "stil": ["modern"]
+        },
+        "lobby": {
+          "zweck": "Eingangshalle im Konzernturm (24 × 14): Vitrine „Hale – Ingenieure seit 1850“ in der Mitte, Zeitleiste der Firmengeschichte, Empfangstresen mit Roboter, Aufzüge, Sitzgruppe (Szene 57).",
+          "raeume": [
+            {
+              "name": "lobby",
+              "funktion": "buero",
+              "inhalt": "zwei Aufzüge an der Nordwand, Zeitleiste auf Bildschirmen, Vitrine mittig mit Rechenschieber, Brückenzeichnung und Notizbuch (freies Fach unten), Empfangstresen mit Empfangsroboter, Sitzgruppe aus zwei Sofas und Glastisch, Kunstpflanzen symmetrisch in den Ecken"
+            }
+          ],
+          "pflicht": [
+            "Glasportal in der Südwand",
+            "Vitrine einmal, frei umgehbar"
+          ],
+          "verboten": ["Holzmöbel außer der Vitrine", "Bildschirmtische"],
+          "zustand": ["neu"],
+          "stil": ["modern", "buero"]
+        }
+      }
     }
   }
 }

@@ -1,25 +1,21 @@
-# Auftrag mittel-1: Crossroads, Pinewood Camp, Wege dazwischen; Felsplateaus nachsetzen
+# Auftrag mittel-1: Capital Arena, Seeufer und Leuchtturm einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der siebenundzwanzigste Auftrag, Crossroads und Pinewood, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, achtundzwanzigster Auftrag; Crossroads und Pinewood sind zusammengeführt, danke; Serene 16 und 26 im Register berichtigt)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 623c31ad);
-im privaten Repository `origin/main` holen (Stand d33a9cd2, nur lesen)
-**Darf ändern:** `inhalte/abenteuer/karten/crossroads-*.json`, `pinewood-camp-*.json`,
-`weg-crossroads-pinewood-*.json`, `hochebene-*.json` (nur Felsplateaus nachsetzen),
-`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilben `cr`, `pw`, `sv`), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Desert Springs)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 96159a1d)
+**Darf ändern:** `inhalte/abenteuer/karten/capital-arena-*.json`, `weg-ghost-capital-*.json`,
+`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilbe `ca`), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Ghost Town)
 
 ## Ziel
 
-1. Serene Village gibt es jetzt als Einzelbilder: `spiel/serene/serene_NN.png` im privaten Repository,
-   im Register unter Thema „serene village einzeln“, Übersicht `register/uebersicht/serene-village__01.png`
-   (Felsplateau mit Treppe Nr. 2, Felsbrocken, Holzhäuser, Zäune, Baumreihen). Setze damit die
-   Felsplateaus auf der Hochebene nach (Vorsilbe `sv` für Serene-Village-Teile, wiederverwendbar).
-2. Crossroads (Kreuzung im Landesinneren): draußen (Tankstelle, Motel, Schilder, Bus), Raststätte
-   (innen). Weg Crossroads–Pinewood: Hütten und Riesenbäume. Pinewood Camp draußen (Zelte, Hütten,
-   Lagerfeuer, Steg am See; Wasser über `stil` = `kueste`, falls es einen See gibt).
+Capital Arena (Finale, große Stadt): draußen (Hochhäuser, Plätze, Fahnen, Bus), Halle (Turniersaal:
+viele Schachtische in Reihen, Bühne, Zuschauerbänke, Anzeigetafel, Pressetisch; Office für die
+Turnierleitung). Seeufer und Leuchtturm haben schon `stil` = `kueste` (Wasser); dazu Steg, Boote,
+Felsen, Leuchtturm (aus dem Register, sonst ein hohes Gebäude), Bänke.
+Bitte Merge-Konflikte in `moebel.json` vor dem Commit lösen (keine Konfliktmarken committen).
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Sechs Karten eingerichtet bzw. nachgesetzt: Hochebene Felsentürme (Felsplateaus), Crossroads draußen und
 Raststätte, Pinewood Camp draußen, Weg Hütten und Riesenbäume. 22 neue Möbel am Ende von

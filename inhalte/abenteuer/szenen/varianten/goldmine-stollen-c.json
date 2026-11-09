@@ -1,0 +1,424 @@
+{
+  "karte": "goldmine.stollen",
+  "datei": "karten/varianten/goldmine-stollen-c.json",
+  "variante": "c",
+  "art": "innen",
+  "beschreibung": "Variante C: drei Abzweige, die Goldader groß im Osten mit Pfützen, viel Geröll.",
+  "wand": "fels",
+  "boden": "schotter",
+  "boeden": {
+    "f": "felsboden"
+  },
+  "raster": [
+    "########################################",
+    "########################################",
+    "########################################",
+    "########################################",
+    "###ffffffffffffffffffffffffffffffff#####",
+    "###ffffffffffffffffffffffffffffffff#####",
+    "###ffffffffffffffffffffffffffffffff#####",
+    "###fffffffffffffffffff##################",
+    "###ffffffff#######ffff##################",
+    "###ffffffff#######ffff##################",
+    "###ffffffff#######ffff########ffffffff##",
+    "###ffffffff#######ffff########ffffffff##",
+    "###ffffffff#######ffff########ffffffff##",
+    "###ffffffff#######ffff########ffffffff##",
+    "###ffffffff#######ffff########ffffffff##",
+    "##################ffff########ffffffff##",
+    "##################ffff########ffffffff##",
+    "##################ffffffffffffffffffff##",
+    "##################ffffffffffffffffffff##",
+    "##################ffffffffffffffffffff##",
+    "##################ffffffffffffffffffff##",
+    "##################ffff##################",
+    "##################ffff##################",
+    "###################ff###################"
+  ],
+  "objekte": [
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 8],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [19, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [18, 6]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [21, 6]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [18, 10]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [21, 14]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [18, 18]
+    },
+    {
+      "moebel": "st5Stuetzbalken",
+      "feld": [21, 18]
+    },
+    {
+      "moebel": "n7Lore",
+      "feld": [19, 4],
+      "id": "lore"
+    },
+    {
+      "moebel": "fels",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [16, 4]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 4]
+    },
+    {
+      "moebel": "fels",
+      "feld": [25, 4]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [30, 4]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [13, 6]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [18, 5]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 5]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [28, 5]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [30, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [32, 6]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [33, 5]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [5, 8]
+    },
+    {
+      "moebel": "fels",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [3, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 9]
+    },
+    {
+      "moebel": "fels",
+      "feld": [8, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [32, 10]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [35, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [5, 12]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [9, 12]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [32, 12]
+    },
+    {
+      "moebel": "fels",
+      "feld": [33, 12]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [36, 12]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [3, 13]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [5, 14]
+    },
+    {
+      "moebel": "fels",
+      "feld": [7, 14]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [9, 14]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [32, 14]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [34, 14]
+    },
+    {
+      "moebel": "fels",
+      "feld": [35, 13]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [37, 14]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [30, 16]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "fels",
+      "feld": [35, 16]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [23, 18]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [26, 17]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [29, 18]
+    },
+    {
+      "moebel": "fels",
+      "feld": [31, 18]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [34, 18]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [35, 18]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [23, 19]
+    },
+    {
+      "moebel": "fels",
+      "feld": [26, 19]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [28, 19]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [8, 12]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [19, 22],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "stollenAusgang",
+      "feld": [19, 23]
+    },
+    {
+      "name": "stollenAusgang",
+      "feld": [20, 23]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "fledermaeuse",
+      "typ": "tier",
+      "feld": [20, 5],
+      "eigenschaften": {
+        "von": "18,5",
+        "bis": "22,5",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal",
+    "schule",
+    "landhaus"
+  ]
+}

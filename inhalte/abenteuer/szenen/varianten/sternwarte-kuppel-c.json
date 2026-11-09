@@ -1,0 +1,128 @@
+{
+  "karte": "sternwarte.kuppel",
+  "datei": "karten/varianten/sternwarte-kuppel-c.json",
+  "variante": "c",
+  "art": "innen",
+  "beschreibung": "Variante C: helle Wand, blauer Teppich, Teleskop hinten in der Mitte, zwei hohe Regale, runder Teppich.",
+  "wand": "creme",
+  "boden": "teppichBlau",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [7, 3],
+      "id": "teleskop"
+    },
+    {
+      "moebel": "mf2Weltkarte",
+      "feld": [2, 1],
+      "an_wand": true,
+      "id": "sternkarte"
+    },
+    {
+      "moebel": "mf8RegalHoch",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf8RegalHoch2",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [2, 6],
+      "id": "funktisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [2, 5],
+      "zu": "funktisch"
+    },
+    {
+      "moebel": "iw5BettGrau",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "mf7TeppichRund",
+      "feld": [6, 6]
+    },
+    {
+      "moebel": "cc4Globus",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "cc5Anrichte",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [4, 7],
+      "id": "tisch2"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [1, 3]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "kuppelAusgang",
+      "feld": [7, 11]
+    }
+  ],
+  "figuren": [],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal",
+    "schule",
+    "landhaus"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "karte": "sternwarte.felsnase",
+  "datei": "karten/sternwarte-felsnase.json",
+  "art": "aussen",
+  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels, Nacht als Tönung der Szene. Vom Südrand steigt der Pfad in Kehren auf das Plateau; dort die Sternwarte (vorerst eine Holzbude, Bild bestellt) mit Tür nach Süden, eine Bank mit Blick nach Westen, ein alter Antennenmast, Säulenkakteen.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "raster": [
+    "########################################",
+    "########################################",
+    "########################################",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#########...############################",
+    "#########...############################",
+    "#########...############################",
+    "#########...############################",
+    "#########...############################",
+    "#########...############################",
+    "#########.............##################",
+    "#########.............##################",
+    "#########.............##################",
+    "###################...##################",
+    "###################...##################",
+    "###################...##################",
+    "###################...##################",
+    "###################...##################",
+    "###################...##################",
+    "###################...##################",
+    "###################..###################"
+  ],
+  "objekte": [
+    {
+      "moebel": "pw7Campbude",
+      "feld": [17, 4],
+      "id": "sternwarte"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [31, 3]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [26, 3]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [26, 8]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [18, 11]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [10, 17]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [13, 20]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [19, 27],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "zurueckCanyon",
+      "feld": [19, 29]
+    },
+    {
+      "name": "zurueckCanyon",
+      "feld": [20, 29]
+    },
+    {
+      "name": "kuppelTuer",
+      "feld": [19, 9]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [32, 6],
+      "eigenschaften": {
+        "von": "32,6",
+        "bis": "32,6",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal",
+    "schule",
+    "landhaus"
+  ]
+}

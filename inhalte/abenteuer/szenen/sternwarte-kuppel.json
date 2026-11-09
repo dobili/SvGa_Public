@@ -1,0 +1,128 @@
+{
+  "karte": "sternwarte.kuppel",
+  "datei": "karten/sternwarte-kuppel.json",
+  "art": "innen",
+  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 12 Kacheln, nachtblaue Wand, Dielen. In der Mitte das Teleskop (vorerst eine Stehlampe, Bild bestellt), an der Nordwand die Sternkarte (Ersatz Weltkarte) zwischen Regalen, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Tür in der Südwand.",
+  "wand": "blau",
+  "boden": "dielen",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [6, 4],
+      "id": "teleskop"
+    },
+    {
+      "moebel": "mf2Weltkarte",
+      "feld": [6, 1],
+      "an_wand": true,
+      "id": "sternkarte"
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4RegalC",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [10, 1]
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [10, 6],
+      "id": "funktisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [10, 5],
+      "zu": "funktisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "funktisch",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "iw5BettGrau",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "cc4Globus",
+      "feld": [4, 4]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "cc5Anrichte",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [5, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "kuppelAusgang",
+      "feld": [7, 11]
+    }
+  ],
+  "figuren": [],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal",
+    "schule",
+    "landhaus"
+  ]
+}

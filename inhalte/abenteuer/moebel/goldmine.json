@@ -1,0 +1,13 @@
+{
+  "moebel": {
+    "n7Lore": {
+      "quelle": "spiel/eigene/lore.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "industrie"
+    }
+  }
+}

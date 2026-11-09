@@ -18,7 +18,7 @@ stehen schon jetzt als Übergänge da.
 | Karte                 | Größe   | Art   | Hauptweg          | Zeit   |
 | --------------------- | ------- | ----- | ----------------- | ------ |
 | `sternwarte.felsnase` | 40 × 30 | außen | Süd → Tür 40      | ≈ 11 s |
-| `sternwarte.kuppel`   | 16 × 14 | innen | –                 | –      |
+| `sternwarte.kuppel`   | 14 × 12 | innen | –                 | –      |
 | `goldmine.stollen`    | 40 × 24 | innen | Eingang → Ende 50 | ≈ 14 s |
 
 ### 1.1 Felsnase (`sternwarte.felsnase`, 40 × 30)
@@ -28,12 +28,12 @@ Felsnase aus rotem Fels. Oben die **Sternwarte**: Kuppel auf einem Steinsockel, 
 (`kuppelTuer`). Kakteen im Mondlicht, eine Bank mit Blick nach Westen, ein alter Antennenmast. Rand
 ringsum Fels (`wand: felsRot`), offen nur der Südrand.
 
-### 1.2 Kuppel (`sternwarte.kuppel`, 16 × 14)
+### 1.2 Kuppel (`sternwarte.kuppel`, 14 × 12)
 
 Runder Raum unter der Kuppel, als Rechteck mit Holzboden. In der Mitte das große Teleskop, an der
 Nordwand eine Sternkarte mit dem Sternbild „Springer“ und Regale, an der Ostwand der Schreibtisch mit
-Funkgerät (hier spielt Dr. Ngata nachts per Funk), an der Westwand eine Liege und eine Thermoskanne.
-Tür in der Mitte der Südwand (`kuppelAusgang`, Ankunft (8, 12)).
+Funkgerät (hier spielt Dr. Ngata nachts per Funk), an der Westwand eine Liege, ein Globus und Kisten mit Fotoplatten.
+Tür in der Mitte der Südwand (`kuppelAusgang`, Ankunft (7, 10)).
 
 ### 1.3 Stollen (`goldmine.stollen`, 40 × 24)
 
@@ -47,7 +47,7 @@ Goldader mit abgestellter Lore und Pfützen. Holzstützen alle paar Felder, eine
 | Von (Karte, Auslöser, Feld)                             | Nach (Karte, Auslöser, Feld)                 |
 | ------------------------------------------------------- | -------------------------------------------- |
 | canyonpfad `sternwarte` Nordrand (30–31, 0)             | felsnase `zurueckCanyon` Südrand (19–20, 29) |
-| felsnase `kuppelTuer` (Tür der Sternwarte)              | kuppel `kuppelAusgang` (8, 13)               |
+| felsnase `kuppelTuer` (Tür der Sternwarte)              | kuppel `kuppelAusgang` (7, 11)               |
 | ghostTown.aussen `goldmine` (Stolleneingang, niedrig-1) | stollen `stollenAusgang` Südrand (19–20, 23) |
 
 ## 2. Ortsbild

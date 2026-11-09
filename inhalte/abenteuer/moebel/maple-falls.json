@@ -1849,6 +1849,16 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "mf4TuerKlassisch": {
+      "quelle": "spiel/generic/generic_073.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

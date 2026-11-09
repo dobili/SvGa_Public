@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Maple Falls mit echten Möbeln einrichten (erste spielbare Demo)
 
-**Stand:** Frage (niedrig-1, 09.11.2026; vier Karten fertig, Dachboden blockiert)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 90d3448b)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/moebel.json`,
@@ -88,6 +88,14 @@ nicht zu, und die Tests sind für mich gesperrt:
 
 Für den Dachboden sind `kisteRot`, `kisteBlau`, `regalAlt`, `stehlampe` und `truhe` schon in
 `moebel.json` angelegt; nach der Teständerung setze ich sie in wenigen Minuten.
+
+**Nachtrag (nach bf3f7c8a, Tests nehmen Möbel aus):** Dachboden eingerichtet: Holzkisten
+(`kisteRot`, `kisteBlau`) in den Ecken, altes Regal mit Leiter (`regalAlt`), Stehlampe am oberen
+Rand, Truhe mit Büchern links neben dem Teppich; das Reisebrett von Ambrose bleibt Auslöser in der
+Mitte, `hutschachtel`, `spiegel`, `zeitungen1961` unverändert. Im Wohnzimmer ist die Lampe jetzt
+ebenfalls eine `stehlampe`. Bildschirmfoto Dachboden: alles erreichbar, der Held steht vor dem
+Brett. 624 Tests bestanden, Paketbau sauber. Damit sind alle fünf Karten von Maple Falls
+eingerichtet.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

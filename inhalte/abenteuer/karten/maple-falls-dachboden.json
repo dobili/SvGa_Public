@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 7,
+  "nextobjectid": 15,
   "properties": [
     {
       "name": "kennung",
@@ -49,11 +49,11 @@
       "width": 12,
       "height": 10,
       "data": [
-        2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 3, 3, 0, 0, 0, 7, 0, 0, 0, 3, 2,
-        2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2,
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 6, 0, 0, 0, 0, 0, 0, 0, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+        2, 6, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
       ]
     },
     {
@@ -154,6 +154,94 @@
           "y": 128,
           "width": 16,
           "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 7,
+          "name": "kisteRot",
+          "type": "moebel",
+          "x": 16,
+          "y": 0,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 8,
+          "name": "kisteBlau",
+          "type": "moebel",
+          "x": 16,
+          "y": 16,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 9,
+          "name": "kisteRot",
+          "type": "moebel",
+          "x": 160,
+          "y": 0,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 10,
+          "name": "kisteBlau",
+          "type": "moebel",
+          "x": 160,
+          "y": 16,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "kisteRot",
+          "type": "moebel",
+          "x": 160,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "stehlampe",
+          "type": "moebel",
+          "x": 96,
+          "y": -16,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "regalAlt",
+          "type": "moebel",
+          "x": 112,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "truhe",
+          "type": "moebel",
+          "x": 48,
+          "y": 80,
+          "width": 32,
+          "height": 32,
           "rotation": 0,
           "visible": true
         }

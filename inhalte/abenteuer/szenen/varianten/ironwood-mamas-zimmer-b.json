@@ -1,0 +1,175 @@
+{
+  "karte": "ironwood.mamasZimmer",
+  "datei": "karten/varianten/ironwood-mamas-zimmer-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B: Küche mit weißen Fliesen und weißem Kühlschrank, runder Tisch in der Mitte, Ofen an der Westwand. Mamas Zimmer mit hellem Holzboden, lila Bett links, Schreibtisch rechts, Kommode an der Südwand.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkkzzzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "#kkkkkkkkk#zzzzzz#",
+    "########k#########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [8, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "mf8KuehlschrankWeiss",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf8Herd",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "mf8Herd",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [4, 2],
+      "id": "platte"
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf3Rundtisch",
+      "feld": [4, 6],
+      "id": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [3, 6],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [6, 6],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "mf7SesselWeissLinks",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "mf2Kleiderschrank",
+      "feld": [7, 7]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2BildWald",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw5BettLila",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "iwBild",
+      "feld": [11, 8],
+      "id": "rahmen2001"
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [15, 5],
+      "id": "schreibtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [15, 4],
+      "zu": "schreibtisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "schreibtisch",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "mf7Stoffkommode",
+      "feld": [13, 8],
+      "id": "kommode"
+    },
+    {
+      "moebel": "mf7Teddy",
+      "feld": [0, 0],
+      "auf": "kommode"
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [16, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "zimmerAusgang",
+      "feld": [8, 11]
+    },
+    {
+      "name": "medaille",
+      "feld": [16, 7]
+    },
+    {
+      "name": "partieformular2001",
+      "feld": [12, 9]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "omaRuth",
+      "feld": [4, 9]
+    },
+    {
+      "name": "mama",
+      "feld": [15, 9]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "boeden": {
+    "k": "fliesenWeiss",
+    "z": "holzHell"
+  },
+  "variante": "b"
+}

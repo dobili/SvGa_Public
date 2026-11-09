@@ -160,7 +160,8 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2629. Schach-Abenteuer mit echter Grafik (nach N2628, Beta-App): Maple Falls mit Möbeln, Figuren laufen mit
       Animation, im Dialog bewegt das Porträt beim Sprechen die Lippen, Fenster und Knöpfe haben Pixelrahmen in Navy
       und Gold. Sag, was dir nicht gefällt (Figur, Möbel, Farbe der Rahmen); alles schnell änderbar. Hinweis: Die
-      dunkelste Hautfarbe der Grafik ist nur mittelbraun; ich färbe einen dunkleren Ton nach, wenn du nichts dagegen hast.
+      dunkelste Hautfarbe der Grafik ist nur mittelbraun; ein dunklerer Ton ist schon nachgefärbt (Okafor, Okoro,
+      Nia, Odile, Marcus, Pops). Widerspruch genügt.
 - [ ] N2630. Schach960 (Zufallsschach) im Musikhaus in Port Delacroix bei der Bläserin Mabel (nach dem Wiederaufbau)
       und bei Ambrose am Varianten-Tisch in Crossroads: Die Grundreihe ist gemischt; zur Rochade tippst du erst den
       König an, dann den eigenen Turm. Die Engine spielt mit; Varianten zählen nicht für Nadeln oder Wertung.

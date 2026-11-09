@@ -59,3 +59,28 @@ Szene → Kartenbauer → Bildprüfung. Der Autor hat die Prüfung der Dokumente
 
 Je Karte: Größe, Zahl der Möbel, Befunde vor und nach der Bildprüfung, offene Punkte; dazu die Liste
 deiner Katalogkorrekturen. Die Hintergründe im privaten Repository zeichnet der Haupt-Chat neu.
+
+### niedrig-1 (Status: fertig)
+
+| Karte                     | Größe    | Möbel | Befunde vorher → nachher                                    | Commit   |
+| ------------------------- | -------- | ----- | ----------------------------------------------------------- | -------- |
+| wegMapleCedar.landstrasse | 120 × 30 | 698   | Rand, Zaun auf Wand, Blick zum Wasser → keine               | 19a67053 |
+| wegMapleCedar.flussweg    | 120 × 30 | 252   | Boot auf Wasser → keine                                     | 06377b49 |
+| wegMapleCedar.zedernpfad  | 100 × 24 | 299   | Zedern mit Blick zur Wand, Zederngruppe als Bauteil → keine | a8ee840c |
+
+Offene Punkte:
+
+- Gegenstücke fehlen auf fremden Karten:
+  - `cedarCreek.aussen` braucht ein Gegenstück am Westrand für `weiterCedar` (Flussweg) und für `zedernWeiterCedar` (Reihen 4–5).
+  - `mapleFalls.park` braucht am Nordrand bei den Spalten 10–11 den Auslöser `zedernpfad`.
+  - Bis dahin zeigen die Übergänge des Zedernpfads vorläufig auf `landstrasse` und `bushaltestelle`.
+- Park ↔ Landstraße sind ungleich breit (2 ↔ 3 Felder); das wartet auf den Umbau des Parks.
+- Der Stamm S2 ist ein 1 × 2-Bild und wirkt als Sperre schmal.
+- Auslöser für Runde 5: Hufeisen, Weidetor, `aussichtKuppe`, Zedernzapfen, S2.
+
+Katalogkorrekturen (`katalog_korrekturen/niedrig-1.json`):
+
+- Vogelscheuche, Heuhaufen und Traktor (farm, Complete Tileset)
+- Camping Wood_Board_1
+- City_Props Tree_5 und Tree_6: `blick` keine
+- Tree_15 hat `blick` keine, wird aber nicht benutzt, weil es ein Bauteil ist

@@ -72,5 +72,20 @@
     "sicher": 0.9,
     "korrektur": "niedrig-1",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_15.png": {
+    "blick": "keine",
+    "korrektur": "niedrig-1",
+    "grund": "Baum ist rundum gleich, hat keine Vorderseite; mit blick unten meldet kartenbau jede Zeder vor einer Randreihe."
   }
 }

@@ -1,0 +1,235 @@
+{
+  "karte": "riverton.bahnhofshalle",
+  "datei": "karten/riverton-bahnhofshalle.json",
+  "art": "innen",
+  "beschreibung": "Die Bahnhofshalle von Riverton (Szenen 26, 35): Backstein aus den 1880er Jahren, hohe Fenster, ein heller Steinboden, Hall, Durchsagen und das laute Ticken der großen Uhr. Die Glastür mit Fußmatte liegt in der Mitte der Südwand. Über der Mitte der Nordwand hängt die große Bahnhofsuhr, darunter die Holzbank von Mr. Harlan, dem alten Uhrmacher; rechts davon die Bahnsteigtür zu den Gleisen und ein Netzplan, links die Fahrplantafel und ein Fenster. An der Westseite der Zeitungsstand von Pops: zwei Zeitungsregale an der Wand, davor der Verkaufsschalter, weiter unten der alte Fahrkartenschalter. Vier Säulen tragen die Decke. An der Ostseite drei orange Wartebänke hintereinander, das Fundbüro mit Schalter in der Südostecke, ein Gepäckwagen mit Koffer, Kaffee- und Getränkeautomat. Unten links eine Reihe Schließfächer, neben den Bänken ein Mülleimer, Topfpflanzen in den Ecken, eine Taube hat sich hereinverirrt, Reisende ziehen Koffer zum Bahnsteig.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "##########################",
+    "##########################",
+    "##########################",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#############.############"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv5Bogenfenster",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Fahrplantafel",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "rv5Bahnhofsuhr",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Bahnsteigtuer",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Bogenfenster",
+      "feld": [21, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5BankHarlan",
+      "feld": [11, 4],
+      "id": "bankHarlan"
+    },
+    {
+      "moebel": "rv5Zeitungsregal",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "rv5Zeitungsregal",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "rv5Schalter",
+      "feld": [3, 6],
+      "id": "kiosk"
+    },
+    {
+      "moebel": "rv5Schalter",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "rv5Netzplan",
+      "feld": [16, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Wartebank",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "rv5Wartebank",
+      "feld": [16, 10]
+    },
+    {
+      "moebel": "rv5Wartebank",
+      "feld": [16, 4]
+    },
+    {
+      "moebel": "rv5Saeule",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "rv5Spind",
+      "feld": [3, 12]
+    },
+    {
+      "moebel": "rv5Spind",
+      "feld": [5, 12]
+    },
+    {
+      "moebel": "rv5Spind",
+      "feld": [9, 12]
+    },
+    {
+      "moebel": "rv5Muelleimer",
+      "feld": [15, 8]
+    },
+    {
+      "moebel": "rv5Saeule",
+      "feld": [7, 4]
+    },
+    {
+      "moebel": "rv5Saeule",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "rv5Saeule",
+      "feld": [20, 4]
+    },
+    {
+      "moebel": "rv5Schalter",
+      "feld": [21, 12]
+    },
+    {
+      "moebel": "rv5Koffer",
+      "feld": [19, 10]
+    },
+    {
+      "moebel": "rv5Kaffeeautomat",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "rv5Gepaeckwagen",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "rv5Koffer",
+      "feld": [24, 7]
+    },
+    {
+      "moebel": "rv5Getraenkeautomat",
+      "feld": [23, 11]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [21, 8]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [13, 14],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "rv5TuerSuedGlas",
+      "feld": [13, 15],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [13, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "bahnhofAusgang",
+      "feld": [13, 15]
+    },
+    {
+      "name": "grosseUhr",
+      "feld": [13, 3]
+    },
+    {
+      "name": "zugCedar",
+      "feld": [19, 3]
+    },
+    {
+      "name": "zeitungsstand",
+      "feld": [4, 7],
+      "auf_moebel": true
+    },
+    {
+      "name": "fundZeitungsausschnitt",
+      "feld": [1, 6]
+    },
+    {
+      "name": "fundTaubenfeder",
+      "feld": [13, 4],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "harlan",
+      "feld": [10, 4]
+    },
+    {
+      "name": "pops",
+      "feld": [5, 7]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "reisende",
+      "typ": "statist",
+      "feld": [13, 12],
+      "eigenschaften": {
+        "von": "13,12",
+        "bis": "19,4",
+        "tun": "zieht einen Koffer zum Bahnsteig",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "taube",
+      "typ": "tier",
+      "feld": [15, 7],
+      "eigenschaften": {
+        "von": "15,7",
+        "bis": "16,9",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "modern"]
+}

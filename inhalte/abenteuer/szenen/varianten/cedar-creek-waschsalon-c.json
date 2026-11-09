@@ -1,0 +1,183 @@
+{
+  "karte": "cedarCreek.waschsalon",
+  "datei": "karten/varianten/cedar-creek-waschsalon-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, die reichere: eine zweite Reihe Maschinen in der Mitte, Falttisch und Wartesitze unten, mehr Körbe und Pflanzen. Der Waschsalon von Mr. Boateng in Cedar Creek am Vormittag: ein heller, sauberer Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand stehen vier gleiche Waschmaschinen lückenlos in einer Reihe, daneben zwei schmale Trockner derselben Bauart; auf dem linken Trockner klebt Mr. Boatengs Steckschachbrett mit der Stellung der Woche. Über den Trocknern hängt die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“. In der Nordostecke steht das Regal mit Waschmittel, Gläsern und einem Korb, an der Ostwand der Getränkeautomat, dessen Leuchtfläche in den Raum zeigt.\n\nIn der Mitte zwei Arbeitstische aus Edelstahl zum Zusammenlegen der Wäsche, daneben ein voller Wäschekorb; hier faltet Mr. Boateng. Links vorn eine Reihe orangefarbener Wartesitze mit Blick in den Raum, auf denen jemand ein Comicheft liegen gelassen hat, davor ein zweiter Korb. Pflanzen am Westfenster und in der Südostecke. Eine Kundin wartet auf ihre Wäsche.\n\nLaufwege: von der Tür unten gerade nach oben zu den Tischen, links zu den Sitzen, rechts am Automaten vorbei zur Pinnwand und zu den Trocknern.",
+  "wand": "hellgrau",
+  "boden": "fliesenWeiss",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "cc4WaschmaschineKorb",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4WaschmaschineKorbB",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "cc4Trockner",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "cc4Trockner",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "cc4Pinnwand",
+      "feld": [9, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc4Waschmittelregal",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "cc4AutomatLinks",
+      "feld": [12, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Falttisch",
+      "feld": [1, 7],
+      "id": "platte"
+    },
+    {
+      "moebel": "cc4Wartesitze",
+      "feld": [9, 7],
+      "id": "sitze"
+    },
+    {
+      "moebel": "cc4Waeschekorb",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "cc4WaeschekorbGruen",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "cc4Pflanze",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc4Pflanze",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "cc5TuerModern",
+      "feld": [7, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [7, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "waschsalonAusgang",
+      "feld": [7, 10]
+    },
+    {
+      "name": "zettelTurm",
+      "feld": [10, 3]
+    },
+    {
+      "name": "trockner",
+      "feld": [7, 3],
+      "auf_moebel": true
+    },
+    {
+      "name": "comicheft",
+      "feld": [10, 8],
+      "auf_moebel": true
+    },
+    {
+      "name": "automat",
+      "feld": [11, 5]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "boateng",
+      "feld": [9, 6]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kundin",
+      "typ": "statist",
+      "feld": [9, 8],
+      "eigenschaften": {
+        "von": "9,8",
+        "bis": "11,8",
+        "tun": "wartet auf ihre Wäsche",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "einfach"],
+  "variante": "c"
+}

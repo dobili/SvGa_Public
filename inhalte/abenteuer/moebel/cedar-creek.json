@@ -1179,6 +1179,35 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc7Picknicktisch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc7Blumenkasten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_4.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "pflanze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc7Bretterstapel": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Board_Load_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

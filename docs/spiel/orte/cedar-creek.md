@@ -607,3 +607,17 @@ Südwand jetzt die Kachel im Raum über der Tür (Test `test_tuer_in_der_suedwan
 
 **Haltepunkt (Nachtrag):** Stationsschild „CEDAR CREEK“ (eigenes Bild, 3 × 2) bei (13, 3), Bank (16, 4),
 Fahrplantafel „FAHRPLAN“ (eigenes Bild) bei (19, 3); `bahnhof` liegt jetzt bei (16, 3) über der Bank.
+
+### 4.7 Varianten B und C (KARTENREGELN 10.37)
+
+Variante A ist die Szene in `inhalte/abenteuer/szenen/`; B und C liegen in
+`inhalte/abenteuer/szenen/varianten/` (Möbel neu mit Vorsilbe `cc7`). Gleich in allen dreien: Größe,
+Wände, Türen, Übergänge mit ihren Feldern, Auslöser und Figuren mit Namen, Haltepunkt, Brücken, Steg.
+Die Bibliothek baut mittel-4.
+
+| Karte       | Variante B (schlichter)                                                                                        | Variante C (reicher)                                                                                                                        |
+| ----------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ortskern    | wenige Zedern, offene Wiese, Rasengärten nur mit Hecke im Süden, ein Boot; Bach schwingt in der Mitte weit aus | gemischte Bäume, Gärten mit Beeten, Blumenkästen und Briefkästen, Laternen am Südrand der Straße, Picknickplatz; Bach schwingt im Süden aus |
+| Archiv      | nur die Regale an der Nordwand, Arbeitsplatz in der Südwestecke, Kartonsäule an der Ostwand                    | lange Regalreihe quer durch den Raum, Kartonstapel davor, Arbeitsplatz mit Lampe am Fuß der Treppe                                          |
+| Waschsalon  | eine lange Reihe Maschinen, ein Falttisch, wenig Deko                                                          | zweite Reihe Maschinen in der Mitte, Falttisch und Wartesitze unten, mehr Körbe und Pflanzen                                                |
+| Drechslerei | Werktisch und Regal links, Hobelbank rechts, in der Mitte nur das Werkstück, ein Stapel Rundholz               | Hobelbank mit Säge links, Regal daneben, Werktisch mit Holzkiste rechts, Werkstück mit Leiste und Hammer, Bretter- und Rundholzstapel       |

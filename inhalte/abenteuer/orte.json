@@ -1627,7 +1627,11 @@
         {
           "name": "stollenAusgang",
           "karte": "goldmine.stollen",
-          "art": "uebergang"
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "goldmine"
+          }
         }
       ]
     },
@@ -2010,6 +2014,16 @@
             "karte": "wegSiliconDelacroix.faehre",
             "ausloeser": "zurueckSilicon"
           }
+        },
+        {
+          "name": "inselfaehre",
+          "karte": "siliconBay.hafen",
+          "art": "uebergang",
+          "wenn": "nadelSiliconBay",
+          "ziel": {
+            "karte": "pelikaninsel.dorf",
+            "ausloeser": "faehre"
+          }
         }
       ],
       "club": {
@@ -2028,6 +2042,37 @@
           "themen": ["haengend", "gefangen"]
         }
       }
+    },
+    {
+      "kennung": "pelikaninsel",
+      "name": "ort.pelikaninsel.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "pelikaninsel.dorf",
+          "datei": "karten/pelikaninsel-dorf.json",
+          "name": "ort.pelikaninsel.dorf",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "faehre",
+          "karte": "pelikaninsel.dorf",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.hafen",
+            "ausloeser": "inselfaehre"
+          }
+        }
+      ]
     },
     {
       "kennung": "wegSiliconDelacroix",
@@ -3621,6 +3666,15 @@
           "ziel": {
             "karte": "wegGhostCapital.seeufer",
             "ausloeser": "zurueckGhost"
+          }
+        },
+        {
+          "name": "goldmine",
+          "karte": "ghostTown.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "goldmine.stollen",
+            "ausloeser": "stollenAusgang"
           }
         }
       ]

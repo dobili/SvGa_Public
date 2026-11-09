@@ -3,13 +3,13 @@
   "datei": "karten/varianten/weg-delacroix-desert-canyonpfad-b.json",
   "art": "aussen",
   "beschreibung": "Variante B, karg: Felsboden, wenige Kakteen, viele Felsblöcke; der Pfad läuft erst hoch am Nordrand, dann tief am Südrand; Wasserturm ohne Treppe, anderes Häuschen.",
-  "wand": "fels",
-  "boden": "felsboden",
+  "wand": "felsRot",
+  "boden": "felsbodenRot",
   "boeden": {
     "e": "erde",
     "k": "schotter",
     "p": "pflaster",
-    "f": "felsboden"
+    "f": "felsbodenRot"
   },
   "raster": [
     "################################################################################################################################################################",
@@ -247,8 +247,9 @@
       "feld": [145, 8]
     },
     {
-      "moebel": "wg4Schuppen",
-      "feld": [141, 12]
+      "moebel": "dd6Wuestenbahnhof",
+      "feld": [141, 10],
+      "id": "wuestenbahnhof"
     },
     {
       "moebel": "dd6WasserturmB",
@@ -259,8 +260,8 @@
       "feld": [116, 15]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [58, 18],
+      "moebel": "dd6SteinFlach",
+      "feld": [57, 18],
       "id": "miraStein"
     },
     {
@@ -280,43 +281,43 @@
       "feld": [27, 9]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [4, 17]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [17, 12]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [30, 12]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [43, 13]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [56, 18]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [69, 8]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [82, 13]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [95, 15]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [108, 20]
     },
     {
-      "moebel": "dd6KaktusOhne",
+      "moebel": "dd6KaktusKlein",
       "feld": [121, 15]
     },
     {
@@ -414,6 +415,10 @@
     {
       "moebel": "cc3Kiesel",
       "feld": [114, 20]
+    },
+    {
+      "moebel": "dd6Geierkreis",
+      "feld": [18, 15]
     }
   ],
   "ausloeser": [

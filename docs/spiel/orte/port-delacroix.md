@@ -223,6 +223,26 @@ Der Ton ist Hoffnung: Niemand jammert, alle packen an, und wer nichts tragen kan
 Möbel mit Vorsilbe `pd6` in `inhalte/abenteuer/moebel/port-delacroix.json`. Stil des Ortes: rustikal
 und klassisch (Holz, alt, gebraucht), Zustand gebraucht bis alt, in der Ruine auch kaputt.
 
+### 4.0a Gebaute Karten und Varianten (mittel-1, 9./10.11.2026)
+
+Szenen in `inhalte/abenteuer/szenen/port-delacroix-*.json`, Varianten B und C in `szenen/varianten/`,
+Möbel `pd6` in `moebel/port-delacroix.json`. Ersatz für bestellte Bilder steht in jeder Beschreibung.
+
+- **Außen (70 × 58):** A wie 1.1 (Türfelder: Turnhalle (23, 25), Werkstatt (15, 53), Musikhaus (46, 41),
+  Häuser (10, 25), (42, 25), (23, 53), (29, 53), Gebäckstand (35, 25)). B: graues Gleis, Kopfsteinpflaster,
+  Turnhalle mit Dachaufbauten im Osten (Tür (37, 25)), Platz auf Sand, Musikhaus mit Solarpaneel,
+  schmale Werkstatt (Tür (14, 53)). C: Turnhalle und Platz im Westen (Tür (11, 25)), Werkstatt im Osten
+  (Tür (45, 53)), Musikhaus (Tür (48, 41)), Kies an Uferweg und Rue des Facteurs.
+- **Turnhalle:** A Hallenboden mit Spielfeld und acht Klapptischen; B Turniertag auf dunklen Dielen mit
+  zwölf Picknicktischen; C Notquartier mit runden Tischen und Feldbetten.
+- **Werkstatt:** A Hobelbank an der Nordwand, Klaviere im Westen; B Musikecke mit Keyboard, Klaviere im
+  Osten; C Klaviere in einer Reihe, Hobelbank als Insel.
+- **Musikhaus, Ruine:** A nasse Dielen mit Pfützen und Trümmern; B Backsteinhülle auf Estrich; C Reste des
+  alten Clubraums. **Neuer Clubraum** (`port-delacroix-musikhaus-neu.json`, `zustand_der_karte:
+musikhausOffen`): A Spieltische und Henris Klavier; B Musikschule mit Klapptischen; C Wohnzimmer der
+  Stadt mit Sessel und runden Tischen. Hinweis für Runde 6: `kartenbild` schreibt beide Zustände unter
+  derselben Kennung; der Hintergrund des Clubraums braucht einen eigenen Namen.
+
 ### 4.1 Turnhalle (`portDelacroix.turnhalle`)
 
 **Größe:** 26 × 16 (großer Saal). Nordwand Reihen 0–2 helle Wand mit hohen Fenstern, Boden Holz hell

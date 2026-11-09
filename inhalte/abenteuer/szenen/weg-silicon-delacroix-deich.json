@@ -1,0 +1,786 @@
+{
+  "karte": "wegSiliconDelacroix.deich",
+  "art": "aussen",
+  "beschreibung": "Der Deich vom Fähranleger nach Port Delacroix (Variante A, nach dem Ortsdokument): Im Norden das graue Meer mit Steinschüttung, Bojen, Pfählen und der Fähre am Anlegesteg; oben die Deichkrone als Erdweg, im Süden der grüne Hang hinunter in die Marsch mit Gras, Büschen und Bäumen. Am Loch in der Krone arbeitet Mr. Guidry mit Sandsäcken, Treibgut liegt am Rand. Eine Rampe führt hinunter zu einem versteckten Platz im Schilf, wo die Muschel liegt; in der Marsch ein gestrandeter Kutter. Eine zweite Rampe führt zum Pumpenhaus. Dahinter Zypressen und am Ende die ersten Häuser von Port Delacroix hinter Bauzäunen, ein Ortsschild. In der Marsch Schilf und Sumpfzypressen mit Moos.",
+  "boden": "gras",
+  "wandart": "gras",
+  "wand": "damm",
+  "ufer": "stein",
+  "boeden": {
+    "e": "erde",
+    "p": "pflaster"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#...............................................................................................ee......................................................ee.................................................................#",
+    "################################################################################################ee######################################################ee##################################################################",
+    "################################################################################################ee######################################################ee##################################################################",
+    "################################################################################################ee######################################################ee##################################################################",
+    "#...............................................................................................ee......................................................ee.................................................................#",
+    "#...............................................................................................ee......................................................ee.................................................................#",
+    "#...............................................................................................ee......................................................ee.................................................................#",
+    "#...............................................................................................ee......................................................ee.................................................................#",
+    "#...............................................................................................ee....................................................pppppp...............................................................#",
+    "#...............................................................................................ee....................................................pppppp...............................................................#",
+    "#...............................................................................................eeeeeeeeeeee...............................................................................................................#",
+    "#...............................................................................................eeeeeeeeeeee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#.........................................................................................................ee...............................................................................................................#",
+    "#..........................................................................................................................................................................................................................#",
+    "#..........................................................................................................................................................................................................................#",
+    "#..........................................................................................................................................................................................................................#",
+    "############################################################################################################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "sd6SteglLaengs4",
+      "feld": [10, 1]
+    },
+    {
+      "moebel": "caFischerboot",
+      "feld": [13, 0],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [20, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [34, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [48, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [62, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [76, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [90, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [104, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [118, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [132, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [146, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [160, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [174, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [188, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Pfahl",
+      "feld": [16, 3],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Pfahl",
+      "feld": [44, 3],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Pfahl",
+      "feld": [88, 3],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Pfahl",
+      "feld": [132, 3],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [42, 7]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [47, 7]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [52, 7]
+    },
+    {
+      "moebel": "sd6Sandsack",
+      "feld": [56, 7]
+    },
+    {
+      "moebel": "sd6Sandsack",
+      "feld": [58, 7]
+    },
+    {
+      "moebel": "sd6Sandsack",
+      "feld": [62, 7]
+    },
+    {
+      "moebel": "sd6Sandsack",
+      "feld": [64, 7]
+    },
+    {
+      "moebel": "sd6SandsackStapel",
+      "feld": [60, 11]
+    },
+    {
+      "moebel": "sd6SandsackHaufen",
+      "feld": [66, 11]
+    },
+    {
+      "moebel": "caFischerboot",
+      "feld": [124, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [151, 17]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [160, 12]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [166, 15]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [178, 12]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [182, 16]
+    },
+    {
+      "moebel": "svHausGruen",
+      "feld": [190, 14]
+    },
+    {
+      "moebel": "svHausRot",
+      "feld": [198, 16]
+    },
+    {
+      "moebel": "svHausBlau",
+      "feld": [206, 13]
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [188, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [190, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [192, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [194, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [196, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [198, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [200, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [202, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [204, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [206, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [208, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [210, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Bauzaun",
+      "feld": [212, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "svWegweiser",
+      "feld": [212, 7]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [147, 13]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [32, 26]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [122, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [26, 26]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [215, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [157, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [70, 18]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [28, 21]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [7, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [4, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [110, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [58, 25]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [143, 18]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [61, 18]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [76, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [49, 20]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [192, 21]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [110, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [79, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [129, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [64, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [172, 16]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [142, 22]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [114, 27]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [201, 16]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [217, 23]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [127, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [13, 20]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [153, 23]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [45, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [5, 17]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [142, 18]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [133, 22]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [92, 25]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [188, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [202, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [111, 12]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [131, 24]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [210, 22]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [90, 11]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [140, 21]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [155, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [164, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [206, 28]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [10, 13]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [6, 25]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [195, 19]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [70, 14]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [49, 22]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [19, 16]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [67, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [170, 19]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [118, 21]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [123, 14]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [81, 23]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [109, 17]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [29, 19]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [55, 24]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [59, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [39, 12]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [116, 27]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [141, 18]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [117, 18]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [168, 11]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [174, 21]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [17, 20]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [56, 12]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [20, 13]
+    },
+    {
+      "moebel": "sd6SchilfBreit",
+      "feld": [78, 16]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [146, 19]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [45, 27]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [27, 17]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [153, 17]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [28, 23]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [131, 26]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [85, 23]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [6, 16]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [85, 15]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [111, 17]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [174, 14]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [142, 22]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [198, 28]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [18, 12]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 16]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [139, 17]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [196, 21]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [96, 21]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [31, 20]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [156, 26]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [84, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [20, 23]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [214, 15]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [31, 23]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [146, 13]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [74, 20]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [15, 24]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [39, 12]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [13, 18]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [89, 15]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [72, 16]
+    },
+    {
+      "moebel": "sd6Zypresse",
+      "feld": [85, 17]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [52, 17]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 5],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "zurueckFaehre",
+      "feld": [10, 1]
+    },
+    {
+      "name": "zurueckFaehre",
+      "feld": [11, 1]
+    },
+    {
+      "name": "weiterDelacroix",
+      "feld": [219, 5]
+    },
+    {
+      "name": "weiterDelacroix",
+      "feld": [219, 6]
+    },
+    {
+      "name": "fundMuschel",
+      "feld": [106, 25]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "guidry",
+      "feld": [61, 7]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [40, 2],
+      "eigenschaften": {
+        "von": "30,2",
+        "bis": "60,2",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [128, 20],
+      "eigenschaften": {
+        "von": "128,20",
+        "bis": "128,20",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "helfer",
+      "typ": "statist",
+      "feld": [70, 7],
+      "eigenschaften": {
+        "von": "64,7",
+        "bis": "80,7",
+        "tun": "schiebt eine Schubkarre mit Sandsäcken",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "pelikan",
+      "typ": "tier",
+      "feld": [30, 3],
+      "eigenschaften": {
+        "von": "30,3",
+        "bis": "30,3",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "einfach",
+    "modern",
+    "rustikal",
+    "klassisch",
+    "natur",
+    "laendlich",
+    "landhaus"
+  ],
+  "datei": "karten/weg-silicon-delacroix-deich.json"
+}

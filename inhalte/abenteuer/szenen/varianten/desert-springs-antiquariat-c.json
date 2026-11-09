@@ -1,0 +1,149 @@
+{
+  "karte": "desertSprings.antiquariat",
+  "datei": "karten/varianten/desert-springs-antiquariat-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, dunkel und voll: graue Regale, dunkler Holzboden, drei kurze Regalreihen, der Tresen hinten rechts, Kisten und Stapel überall.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########",
+    "####################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [10, 13],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [10, 11],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "cc6RegalGrauA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauC",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauD",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauA",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauB",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc6RegalGrauC",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc6RegalSeiteGrau",
+      "feld": [18, 5]
+    },
+    {
+      "moebel": "cc6RegalSeiteHell",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cc6RegalGrauD",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "cc6RegalGrauB",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "cc6RegalGrauD",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "cc6RegalGrauB",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "cc6RegalGrauD",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "cc6RegalGrauB",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [15, 4],
+      "id": "tresen"
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [2, 10],
+      "id": "briefkiste"
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "mf2Zeitungsstapel",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "mf4Vitrine",
+      "feld": [16, 9]
+    },
+    {
+      "moebel": "mf4Luke",
+      "feld": [6, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "antiquariatAusgang",
+      "feld": [10, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okoro",
+      "feld": [17, 7]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "variante": "c"
+}

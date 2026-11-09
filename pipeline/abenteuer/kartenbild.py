@@ -12,6 +12,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
+from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -35,47 +36,6 @@ def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
                 flaeche[(x, y - 1)] = "unten"
                 flaeche[(x, y - 2)] = "oben"
     return flaeche
-
-
-def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
-    """Die Kachel eines Bodens an (x, y): mit „rand“ Rand- oder Eckstück je nach Nachbarn gleicher
-    Art (3×3-Block von LimeZu), mit „varianten“ eine feste Zufallsauswahl, sonst „feld“.
-
-    Beispiel: ein Feldweg „e“ quer durchs Gras bekommt oben und unten Grasränder, in der Mitte Erde.
-    """
-    if "rand" in art:
-        zeichen = zeilen[y][x]
-
-        def gleich(dx: int, dy: int) -> bool:
-            nx, ny = x + dx, y + dy
-            if not (0 <= ny < len(zeilen) and 0 <= nx < len(zeilen[0])):
-                return True  # Am Kartenrand läuft der Boden weiter.
-            am_rand = nx in (0, len(zeilen[0]) - 1) or ny in (0, len(zeilen) - 1)
-            if am_rand and zeilen[ny][nx] == WAND:
-                return True  # Randwand außen ist nur Kollision; der Boden läuft darunter weiter.
-            return zeilen[ny][nx] == zeichen
-
-        spalte = 1 if gleich(-1, 0) == gleich(1, 0) else 0 if not gleich(-1, 0) else 2
-        reihe = 1 if gleich(0, -1) == gleich(0, 1) else 0 if not gleich(0, -1) else 2
-        return [art["rand"][0] + spalte, art["rand"][1] + reihe]
-    if "varianten" in art:
-        # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
-        return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]
-    return art["feld"]
-
-
-def randnachbar(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
-    """Für ein Wandfeld am Kartenrand das nächste Feld nach innen, das kein Wand- oder Leerfeld
-    ist; sonst None (dann bleibt es Wand, etwa eine Hecke, die bis an den Rand reicht)."""
-    hoehe, breite = len(zeilen), len(zeilen[0])
-    if 0 < x < breite - 1 and 0 < y < hoehe - 1:
-        return None
-    dx = 1 if x == 0 else -1 if x == breite - 1 else 0
-    dy = 1 if y == 0 else -1 if y == hoehe - 1 else 0
-    nx, ny = x + dx, y + dy
-    if 0 <= nx < breite and 0 <= ny < hoehe and zeilen[ny][nx] not in (WAND, LEER):
-        return (nx, ny)
-    return None
 
 
 def hintergrund(szene: dict, privat: Path) -> Image.Image:

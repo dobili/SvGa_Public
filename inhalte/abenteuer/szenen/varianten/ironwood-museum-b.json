@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Variante B: roter Teppich als Mittelgang, die Schalter rechts an der Nordwand, Vitrinen links, Postsäcke rechts an der Ostwand, Wartesitze unter den Fenstern.",
   "wand": "creme",
-  "boden": "stein",
+  "boden": "fliesenGrau",
   "raster": [
     "##########################",
     "##########################",

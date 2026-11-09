@@ -637,6 +637,38 @@ Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obe
 nach dem Katalog beim Bau (Vorsilbe `rt` für Riverton, `w2`, `w3`, `lp`); hier nur die Beschreibung,
 Karten werden noch nicht gebaut.
 
+### 4.0a Gebaute Karten und Varianten (mittel-1, 9.11.2026)
+
+Gebaut mit dem Kartenbauer, Szenen in `inhalte/abenteuer/szenen/riverton-*.json`, Varianten B und C in
+`szenen/varianten/`, Möbel mit Vorsilbe `rv5` in `moebel/riverton.json`. Eigene Bilder (nur im privaten
+Repository): `fahrrad_plane.png` (Schuppen) und `bahnhofsuhr.png` (Halle); der Katalog hat weder Fahrrad
+noch Wanduhr.
+
+- **Außen (72 × 56)**, Abweichungen von 1.3 wegen der Bildhöhen: Reihe 0 Hecke, ein Gleis in Reihe 1–2,
+  Hecke am Bahnzaun Reihe 3; Bahnhof ist der Backsteinturm mit Uhr (Spalten 32–39, Reihen 3–17),
+  Tür `bahnhofTuer` (36, 18); Vorplatz Reihen 18–21, Water Street Reihen 23–25 mit Gehwegen 22 und 26
+  und Gehweg um die Enden (kein Wendeplatz); Häuser der Südseite Reihen 27–35 mit der Front zur
+  Uferpromenade (Reihen 36–37), Markt als gepflasterter Platz; Fluss Reihen 38–44 von Rand zu Rand,
+  Straßenbrücke Spalten 50–54; Uferweg Süd 45–46; Park 47–54 mit Hinterweg 53–54, Hecke Reihe 55.
+  Wohnwagentür (4, 53), Schuppentür (16, 53), Pavilloneingang (41, 52). Übergänge unverändert:
+  `bahndamm` Westrand Reihen 8–9, `kanalweg` Südrand Spalten 57–58.
+- **Außen B:** graue Gleise, Steinpflaster auf Vorplatz und Promenade, Erde am Uferweg; Güterschuppen links,
+  Stellwerk rechts vom Bahnhof, Statuenbrunnen, Bogenlaternen, Nadelbäume; Südseite mit Holzhäusern,
+  Kaffeekiosk, Markthalle; großer Wohnwagen (Tür (3, 53)), Werkstatt in einer Bretterbude, Pavillon westlich
+  der Bildschirmtische. **Außen C:** Brücke in der Mitte (Spalten 30–34), Bahnhofstür (30, 18), Ausleger-
+  laternen, Ahorne, Eisladen, Kies auf der Promenade, gepflasterter Uferweg, Pavillon östlich der Brücke.
+- **Bahnhofshalle (26 × 16):** je ein Fahrkartenschalter; Zeitungsstand mit Holzladentisch und Kasse,
+  Fundbüro mit Glasvitrine. A wie 4.1 mit vier Säulen und Schließfächern; B alte Wartehalle mit dunklem
+  Holzboden, Holzbänken und zwei Säulen; C mit hellen Wänden, Bänken in der Mitte und den Ständen in den
+  Nordecken.
+- **Pavillon (20 × 14):** Holzwände mit großen Fenstern statt offener Seiten (der Kartenbauer kennt keine
+  Geländerwand). A vier Tische mit Kreuzgang; B fünf Tische; C helle Dielen, weiße Wände, fünf runde
+  Tischchen mit Seitenstühlen und Teppich.
+- **Wohnwagen (14 × 9):** A Bett West, Küche Ost, runder Teppich unter dem Klapptisch; B Holzwände, alte
+  Dielen, Sitzecke mit zwei Sesseln, Pokale auf dem Fensterbrett; C blauer Teppichboden, Etagenbett,
+  Rundtisch. Kein Kurierrad (fehlt im Katalog), dafür die Kuriertasche.
+- **Schuppen (10 × 8):** A Fahrrad in der Mitte; B Rad an der Ostseite; C halb Holzlager.
+
 ### 4.1 Bahnhofshalle (`riverton.bahnhofshalle`)
 
 **Größe:** 26 × 16 (großer Saal). Nordwand Reihen 0–2 Backstein mit Fliesensockel, Boden ab Reihe 3

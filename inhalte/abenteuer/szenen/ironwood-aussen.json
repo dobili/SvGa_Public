@@ -73,9 +73,9 @@
     "####~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "####~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "####~~~~~~....eeee.....eeee.....eeee.....eeee.................ee...............#",
-    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................eeeeeeeeeeeeeeeee#",
-    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................eeeeeeeeeeeeeeeee#",
-    "####~~~~~~.....................................................................#",
+    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................ee...............#",
+    "####~~~~~~....eeee.....eeee.....eeee.....eeee.................eeeeeeeeeeeeeeeeee",
+    "####~~~~~~....................................................eeeeeeeeeeeeeeeeee",
     "####~~~~~~######################################################################"
   ],
   "objekte": [
@@ -1551,15 +1551,15 @@
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [66, 52]
+      "feld": [66, 53]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [72, 52]
+      "feld": [72, 53]
     },
     {
       "moebel": "mf9Absperrbock",
-      "feld": [77, 56],
+      "feld": [76, 55],
       "id": "torSteinbruch"
     },
     {
@@ -1618,6 +1618,14 @@
     {
       "name": "kreidebrett",
       "feld": [30, 15]
+    },
+    {
+      "name": "steinbruch",
+      "feld": [79, 57]
+    },
+    {
+      "name": "steinbruch",
+      "feld": [79, 58]
     }
   ],
   "figuren": [

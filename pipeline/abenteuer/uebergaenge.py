@@ -32,13 +32,14 @@ def szenen() -> dict[str, dict]:
 
 
 def uebergaenge() -> list[dict]:
-    """Alle Übergänge aus orte.json, je mit Ort (für Auslöser ohne Kartenangabe)."""
+    """Alle Übergänge und Dialog-Auslöser aus orte.json, je mit Ort (für Auslöser ohne
+    Kartenangabe). Dialoge gehören dazu, weil Reisen mit Bus oder Fähre als Dialog beginnen."""
     orte = json.loads((INHALTE / "orte.json").read_text(encoding="utf-8"))["orte"]
     return [
         {**a, "ort": o["kennung"]}
         for o in orte
         for a in o.get("ausloeser", [])
-        if a.get("art") == "uebergang"
+        if a.get("art") in ("uebergang", "dialog")
     ]
 
 
@@ -77,7 +78,12 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
         namen = {a["name"] for a in szene.get("ausloeser", [])}
         for name in sorted(namen):
             regel = regel_fuer(liste, karte, name)
-            if not regel:
+            if not regel or regel.get("art") != "uebergang":
+                continue
+            if "ziel" not in regel:
+                # Übergang ohne Ziel: der Nachbarort ist noch nicht eingetragen (Steinbruch, Nacht
+                # 9./10.11.2026). Melden statt abbrechen, damit die übrigen Prüfungen laufen.
+                befunde.append(f"{karte} {name}: Übergang ohne Ziel in orte.json")
                 continue
             ziel_karte, ziel_name = regel["ziel"]["karte"], regel["ziel"]["ausloeser"]
             ziel = alle.get(ziel_karte)
@@ -87,7 +93,11 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
                 befunde.append(f"{karte} {name}: Ziel {ziel_karte} hat keinen Auslöser {ziel_name}")
                 continue
             zurueck = regel_fuer(liste, ziel_karte, ziel_name)
-            if not zurueck or zurueck["ziel"]["karte"] != karte:
+            if zurueck and zurueck.get("art") == "dialog":
+                # Reise mit Bus oder Fähre: Hin- und Rückfahrt sind Dialoge, kein Weg über den Rand;
+                # der Ankunftspunkt muss nur existieren (Raststätte ↔ Ironwood, 9./10.11.2026).
+                continue
+            if not zurueck or zurueck.get("ziel", {}).get("karte") != karte:
                 befunde.append(f"{karte} {name}: {ziel_karte} {ziel_name} führt nicht zurück")
             hier = {rand(szene, f) for f in felder(szene, name)}
             dort = {rand(ziel, f) for f in felder(ziel, ziel_name)}

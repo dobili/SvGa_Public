@@ -656,3 +656,11 @@ Pixelstil (Fenster dunkel, Karte hell, Knopf) und `rahmen.json` (Bild, Schnitt, 
 Paketbau nimmt Dateien gleichen Namens aus dem privaten Ordner `ui/` vor; für Modern UI genügt dort
 eine eigene `rahmen.json` mit den gekauften Bildern. Rahmen tragen Dialog (dunkel), Menüs, Meldungen
 und die Kartenleiste (hell) sowie die Wahlknöpfe im Dialog; Schrift und Knöpfe der App bleiben.
+
+**Figuren aus dem Charakter-Generator (9.11.2026):** Jede Figur bekommt einen eigenen Bogen
+`figuren/<name>.png` (Pfad aus `sprite` in orte.json) im Format von LimeZu: Rahmen 16 × 32, vier
+Standbilder und je Richtung sechs Laufbilder. Zusammengesetzt aus Körper, Augen, Kleidung, Frisur
+und Zubehör nach `werkzeuge/figuren.json` im privaten Repository (`werkzeuge/figuren.py`). Der Held
+heißt `figuren/held-<variante>.png`, in Erinnerungen `figuren/ambrose-jung.png`. Ohne Bild bleibt der
+Platzhalter. Figuren stehen mit den Füßen auf ihrer Kachel, der Kopf ragt in die Kachel darüber;
+wer weiter unten steht, wird davor gezeichnet.

@@ -12,6 +12,13 @@
  */
 import Phaser from "phaser";
 import type { Weltposition } from "../schnittstelle/spielstand";
+import {
+  erzeugeLaufanimationen,
+  ladeFigurbogen,
+  laufname,
+  standbild,
+  stelleAufKachel,
+} from "./figurbilder";
 
 export type Richtung = Weltposition["richtung"];
 
@@ -55,8 +62,12 @@ export interface Szenendaten {
   /** Adressen der Bilder (Objekt-Adressen aus dem Paket). */
   readonly kachelbild: string;
   readonly heldbild: string;
-  /** Spritesheet für alle Figuren (Platzhalter; später je Figur aus orte.json). */
+  /** Spritesheet für alle Figuren ohne eigenes Bild (Platzhalter, 16 × 16). */
   readonly figurbild: string;
+  /** Bogen des Helden im Format von LimeZu (figurbilder.ts); ohne gilt heldbild. */
+  readonly heldfigur?: string | null;
+  /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
+  readonly figurenbilder?: Readonly<Record<string, string>>;
   /** Name des Kachelsatzes in der Tiled-Datei. */
   readonly kachelsatz: string;
   readonly start: Weltposition;
@@ -74,6 +85,8 @@ interface Ausloeser {
 }
 
 const FIGUR_TYP = "figur";
+/** Schlüssel des Heldenbogens im Format von LimeZu. */
+const HELDFIGUR = "heldfigur";
 
 export class Oberweltszene extends Phaser.Scene {
   /** Der Held; null, bis create() gelaufen ist (die Hülle kann vorher schon fragen). */
@@ -101,6 +114,10 @@ export class Oberweltszene extends Phaser.Scene {
       frameWidth: KACHEL,
       frameHeight: KACHEL,
     });
+    if (this.daten.heldfigur) ladeFigurbogen(this, HELDFIGUR, this.daten.heldfigur);
+    for (const [name, adresse] of Object.entries(this.daten.figurenbilder ?? {})) {
+      ladeFigurbogen(this, `figur:${name}`, adresse);
+    }
   }
 
   create(): void {
@@ -121,16 +138,21 @@ export class Oberweltszene extends Phaser.Scene {
       feste.push(ebene);
     }
     const { x, y } = this.daten.start;
+    const echt = Boolean(this.daten.heldfigur);
     const held = this.physics.add.sprite(
       x * KACHEL + KACHEL / 2,
       y * KACHEL + KACHEL / 2,
-      "held",
-      BILD_JE_RICHTUNG[this.blick],
+      echt ? HELDFIGUR : "held",
+      echt ? standbild(this.blick) : BILD_JE_RICHTUNG[this.blick],
     );
     this.held = held;
     held.setCollideWorldBounds(true);
-    const koerper = held.body as Phaser.Physics.Arcade.Body;
-    koerper.setSize(KACHEL - 4, KACHEL - 4).setOffset(2, 2);
+    if (echt) {
+      erzeugeLaufanimationen(this, HELDFIGUR);
+      stelleAufKachel(held, KACHEL);
+    } else {
+      (held.body as Phaser.Physics.Arcade.Body).setSize(KACHEL - 4, KACHEL - 4).setOffset(2, 2);
+    }
     for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
     this.cameras.main.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
@@ -146,13 +168,17 @@ export class Oberweltszene extends Phaser.Scene {
     const gruppe = this.physics.add.staticGroup();
     for (const a of this.ausloeser) {
       if (a.typ !== FIGUR_TYP) continue;
+      const eigenes = this.daten.figurenbilder?.[a.name] !== undefined;
       const figur = gruppe.create(
         a.x * KACHEL + KACHEL / 2,
         a.y * KACHEL + KACHEL / 2,
-        "figur",
-        BILD_JE_RICHTUNG.unten,
+        eigenes ? `figur:${a.name}` : "figur",
+        eigenes ? standbild("unten") : BILD_JE_RICHTUNG.unten,
       ) as Phaser.Physics.Arcade.Sprite;
       figur.setName(a.name);
+      if (eigenes) stelleAufKachel(figur, KACHEL);
+      // Wer weiter unten steht, wird davor gezeichnet (Köpfe ragen in die Kachel darüber).
+      figur.setDepth(figur.y);
     }
     this.physics.add.collider(held, gruppe);
   }
@@ -213,17 +239,31 @@ export class Oberweltszene extends Phaser.Scene {
     const richtung = this.laufen ? this.gewuenschteRichtung() : null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
+    this.zeigeHeld(richtung);
     if (richtung) {
       this.blick = richtung;
-      this.held.setFrame(BILD_JE_RICHTUNG[richtung]);
       const tempo = TEMPO * (this.daten.tempofaktor ?? 1);
       if (richtung === "links") koerper.setVelocityX(-tempo);
       if (richtung === "rechts") koerper.setVelocityX(tempo);
       if (richtung === "oben") koerper.setVelocityY(-tempo);
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
+    this.held.setDepth(this.held.y);
     this.meldeAusloeser();
     this.meldeKachel();
+  }
+
+  /** Bild des Helden: Laufanimation in Bewegung, sonst Standbild der Blickrichtung. */
+  private zeigeHeld(richtung: Richtung | null): void {
+    const held = this.held;
+    if (!held) return;
+    if (!this.daten.heldfigur) {
+      if (richtung) held.setFrame(BILD_JE_RICHTUNG[richtung]);
+      return;
+    }
+    if (richtung) held.anims.play(laufname(HELDFIGUR, richtung), true);
+    else if (held.anims.isPlaying) held.anims.stop();
+    if (!richtung) held.setFrame(standbild(this.blick));
   }
 
   /** Meldet die Kachel des Helden nach oben, wenn sie sich geändert hat. */

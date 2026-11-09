@@ -391,7 +391,7 @@ export function Oberwelt() {
     let aktiv = true;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     const begonnen = Date.now();
-    ladeWelt(stand.position.karte)
+    ladeWelt(stand.position.karte, stand.held.variante)
       .then((w) => {
         if (!aktiv || !rahmen.current) return;
         setzeTreffer(null);
@@ -418,6 +418,8 @@ export function Oberwelt() {
           kachelbild: w.kachelbild,
           heldbild: w.heldbild,
           figurbild: w.figurbild,
+          heldfigur: w.heldfigur,
+          figurenbilder: w.figurenbilder,
           kachelsatz: KACHELSATZ,
           start: stand.position,
           // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.

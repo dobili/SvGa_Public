@@ -175,6 +175,17 @@ export async function paketdateiAlsAdresse(pfad: string): Promise<string> {
   return URL.createObjectURL(await (await liesPaketdatei(pfad)).blob());
 }
 
+/**
+ * Wie `paketdateiAlsAdresse`, aber null, wenn das Paket die Datei nicht enthält: für Bilder, die
+ * nur mit der gekauften Grafik da sind (Figuren, Porträts). Ein geladenes Paket wird zuerst im
+ * Verzeichnis gefragt, damit fehlende Bilder keine Anfragen an den Server auslösen.
+ */
+export async function paketdateiAlsAdresseOderNull(pfad: string): Promise<string | null> {
+  const geladen = await geladenesVerzeichnis();
+  if (geladen && !geladen.verzeichnis.dateien.some((d) => d.pfad === pfad)) return null;
+  return paketdateiAlsAdresse(pfad).catch(() => null);
+}
+
 /** Beobachter des Paketzustands (für useSyncExternalStore in der Startkarte). */
 const beobachter = new Set<() => void>();
 

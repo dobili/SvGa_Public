@@ -25,11 +25,12 @@ const QUELLE = resolve(HIER, "../../inhalte/abenteuer");
  * Repository (.gitignore), wie die Buchquellen. Gibt es dort eine Datei gleichen Namens, nimmt der
  * Paketbau sie statt des Platzhalters.
  */
-const PRIVAT = [
-  resolve(HIER, "../inhalte-privat/abenteuer"),
-  // Zugeschnittene Bilder aus dem privaten Repository (skripte/hole-privatgrafik.mjs).
-  resolve(HIER, "../inhalte-privat/quelle/spiel"),
-].find((ordner) => existsSync(ordner)) ?? resolve(HIER, "../inhalte-privat/abenteuer");
+const PRIVAT =
+  [
+    resolve(HIER, "../inhalte-privat/abenteuer"),
+    // Zugeschnittene Bilder aus dem privaten Repository (skripte/hole-privatgrafik.mjs).
+    resolve(HIER, "../inhalte-privat/quelle/spiel"),
+  ].find((ordner) => existsSync(ordner)) ?? resolve(HIER, "../inhalte-privat/abenteuer");
 const ZIEL = resolve(HIER, "../public/abenteuer");
 const PAKET = JSON.parse(await readFile(resolve(HIER, "../package.json"), "utf8"));
 
@@ -78,6 +79,18 @@ async function kopiereOberflaeche() {
       await readFile(quelle),
       name.endsWith(".json") ? "daten" : "grafik",
     );
+  }
+}
+
+/**
+ * Bilder, die es nur mit der gekauften Grafik gibt (Figuren im Format von LimeZu): alle PNG aus
+ * dem privaten Ordner; ohne ihn nichts, das Spiel nimmt dann die Platzhalter.
+ */
+async function kopierePrivatordner(ordner) {
+  const quelle = join(PRIVAT, ordner);
+  if (!existsSync(quelle)) return;
+  for (const name of (await readdir(quelle)).filter((d) => d.endsWith(".png")).sort()) {
+    await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), "grafik");
   }
 }
 
@@ -239,6 +252,7 @@ async function main() {
     await schreibe(`portraets/${name}`, await readFile(quelle), "grafik");
   }
   await kopiereOberflaeche();
+  await kopierePrivatordner("figuren");
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
   await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));

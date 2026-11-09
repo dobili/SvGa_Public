@@ -9,7 +9,11 @@
  * `karte: "mapleFalls.clubraum"` (Rückweg nach draußen), auf der Außenkarte den Eintrag ohne Karte.
  */
 import { findeKarte, ladeSpieldaten, type Ortdaten, type Spieldaten } from "../daten/laden";
-import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
+import {
+  liesPaketJson,
+  paketdateiAlsAdresse,
+  paketdateiAlsAdresseOderNull,
+} from "../paket/paketlader";
 import { tSpiel } from "../texte/texte";
 import type { Ausloesertreffer } from "./szene";
 
@@ -37,10 +41,45 @@ export interface Weltdaten {
   readonly kachelbild: string;
   readonly heldbild: string;
   readonly figurbild: string;
+  /** Bogen des Helden im Format von LimeZu (gekaufte Grafik); null ohne. */
+  readonly heldfigur: string | null;
+  /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
+  readonly figurenbilder: Readonly<Record<string, string>>;
+}
+
+/** Objektnamen der Figuren einer Tiled-Karte (Objekte mit type „figur“). */
+function figurennamen(karte: object): string[] {
+  const ebenen = (karte as { layers?: readonly { objects?: readonly unknown[] }[] }).layers ?? [];
+  return ebenen.flatMap((e) =>
+    (e.objects ?? []).flatMap((o) => {
+      const objekt = o as { name?: string; type?: string };
+      return objekt.type === "figur" && objekt.name ? [objekt.name] : [];
+    }),
+  );
+}
+
+/**
+ * Die Bögen der Figuren einer Karte (Pfad aus `sprite` in orte.json), nur wo das Paket ein Bild hat.
+ * Beispiel: Objekt „juno“, Sprite „figuren/juno.png“ → { juno: "blob:…" }.
+ */
+async function figurenbilderFuer(ort: Ortdaten, karte: object): Promise<Record<string, string>> {
+  const paare = await Promise.all(
+    figurennamen(karte).map(async (name) => {
+      const sprite = figurZu(ort, name)?.sprite;
+      const adresse = sprite ? await paketdateiAlsAdresseOderNull(sprite) : null;
+      return adresse ? ([name, adresse] as const) : null;
+    }),
+  );
+  return Object.fromEntries(paare.filter((p) => p !== null));
+}
+
+/** Bild des Helden: in Erinnerungen der junge Ambrose, sonst die gewählte Heldenvariante. */
+function heldfigurpfad(erinnerung: boolean, variante: number): string {
+  return erinnerung ? "figuren/ambrose-jung.png" : `figuren/held-${variante}.png`;
 }
 
 /** Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. */
-export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
+export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise<Weltdaten> {
   const daten = await ladeSpieldaten();
   const fund = findeKarte(daten, kartenkennung);
   if (!fund) throw new Error(`Karte ${kartenkennung} fehlt in orte.json`);
@@ -49,6 +88,11 @@ export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
     paketdateiAlsAdresse(KACHELBILD),
     paketdateiAlsAdresse(fund.ort.art === "erinnerung" ? FIGURBILD : HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
+  ]);
+  const erinnerung = fund.ort.art === "erinnerung";
+  const [heldfigur, figurenbilder] = await Promise.all([
+    paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
+    figurenbilderFuer(fund.ort, karte),
   ]);
   return {
     kennung: kartenkennung,
@@ -60,6 +104,8 @@ export async function ladeWelt(kartenkennung: string): Promise<Weltdaten> {
     kachelbild,
     heldbild,
     figurbild,
+    heldfigur,
+    figurenbilder,
   };
 }
 

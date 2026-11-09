@@ -607,3 +607,17 @@ Südwand jetzt die Kachel im Raum über der Tür (Test `test_tuer_in_der_suedwan
 
 **Haltepunkt (Nachtrag):** Stationsschild „CEDAR CREEK“ (eigenes Bild, 3 × 2) bei (13, 3), Bank (16, 4),
 Fahrplantafel „FAHRPLAN“ (eigenes Bild) bei (19, 3); `bahnhof` liegt jetzt bei (16, 3) über der Bank.
+
+### 4.7 Varianten B und C (KARTENREGELN 10.37)
+
+Variante A ist die Szene in `inhalte/abenteuer/szenen/`; B und C liegen in
+`inhalte/abenteuer/szenen/varianten/` (Möbel neu mit Vorsilbe `cc7`). Gleich in allen dreien: Größe,
+Wände, Türen, Übergänge mit ihren Feldern, Auslöser und Figuren mit Namen, Haltepunkt, Brücken, Steg.
+Die Bibliothek baut mittel-4. Das Archiv ist in allen drei Varianten `"dicht": true` (bis 60 % Belegung).
+
+| Karte       | Variante A                                                                                                  | Variante B (schlichter)                                                                                                            | Variante C (reicher)                                                                                                                |
+| ----------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Ortskern    | zwei Holzhäuser in Gärten mit Zedernhecke                                                                   | ein eingeschossiges Haus mit Doppelgarage, Rasengarten, wenige Zedern, offene Wiese, ein Boot; Bach schwingt in der Mitte weit aus | ein Haus mit Holzvordach, Beet und Briefkasten, gemischte Bäume, Laternen am Gehweg Nord, Picknickplatz; Bach schwingt im Süden aus |
+| Archiv      | zwei versetzte Querreihen (links vorn, rechts hinten), Kartonstapel an der Südwand, Arbeitsplatz Südostecke | zwei Längsreihen mit Gang in der Mitte, Kartonsäule an der Ostwand, Arbeitsplatz Südwestecke                                       | Doppelreihe Rücken an Rücken mitten im Raum, Gänge ringsum, Kartons an der Südwand, Arbeitsplatz am Fuß der Treppe                  |
+| Waschsalon  | Maschinenreihe an der Nordwand, Falttische in der Mitte, Wartesitze links                                   | Maschinen und Getränkeautomat an der Nordwand, Falttische an der Westwand, Sitzecke in der Südostecke                              | zweite Reihe Maschinen in der Mitte, Falttisch und Wartesitze unten, mehr Körbe und Pflanzen                                        |
+| Drechslerei | Hobelbank links, Regal am Werktisch rechts, Arbeitstisch mit Werkstück in der Mitte                         | große Bank als Drehbank mitten im Raum, Werktisch und Regal an der Nordwand, Holzlager an der Ostwand                              | zwei Holztische als Werkbänke mit Werkzeug, Regal und Holzkiste, Hobelbank rechts, Werkstück in der Mitte, Holzlager an der Südwand |

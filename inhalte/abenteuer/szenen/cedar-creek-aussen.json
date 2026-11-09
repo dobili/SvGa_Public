@@ -33,19 +33,19 @@
     "#.........ee....................................ee~~~~~....#",
     "#.........ee....................................ee.~~~~~...#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppee.~~~~~...#",
-    "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
-    "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
-    "#ppppppppppppppppppppppppppppppppppppppppsssssspee.~~~~~...#",
-    "#.p.................p...................psssssspee.~~~~~...#",
-    "#.p.................p...................ppppppppee..~~~~~..#",
-    "#.p.................p...........................ee..~~~~~..#",
+    "eeesssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
+    "eeesssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
+    "#..sssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
+    "#pppppppppppppppppppppppppppppppppppppppssssssspee.~~~~~...#",
+    "#.p.................p..................ppsssssspee..~~~~~..#",
+    "#.p.................p..................pppppppppee..~~~~~..#",
     "#.p.................p...........................ee..~~~~~..#",
     "#.p.................p...........................ee..~~~~~..#",
     "#.p.................p...........................ee..~~~~~..#",
     "#.p.................p...........................ee..~~~~~..#",
     "#.p.................p...........................ee.~~~~~...#",
     "#.p.................p.........................eeee.~~~~~...#",
-    "#.p.................p...........................ee.~~~~~...#",
+    "#.p.................p.........................eeee.~~~~~...#",
     "#.p.................p...........................ee.~~~~~...#",
     "#.ppppppp........pppp...........................ee.~~~~~...#",
     "#...............................................ee~~~~~....#",
@@ -110,11 +110,15 @@
     },
     {
       "moebel": "cc3Anschlagtafel",
-      "feld": [41, 25]
+      "feld": [41, 26]
     },
     {
       "moebel": "mfMuelltonne",
-      "feld": [44, 25]
+      "feld": [43, 27]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [2, 22]
     },
     {
       "moebel": "cc4Nadelbaum",
@@ -647,34 +651,8 @@
       "feld": [45, 27]
     },
     {
-      "moebel": "cc5Planke",
-      "feld": [52, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5Planke",
-      "feld": [52, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [54, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [54, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [55, 8],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc5PlankeB",
-      "feld": [55, 9],
-      "bauteil_ok": true
+      "moebel": "cc7Fussbruecke",
+      "feld": [51, 8]
     },
     {
       "moebel": "cc5Planke",
@@ -740,7 +718,7 @@
     },
     {
       "name": "plakat",
-      "feld": [41, 27]
+      "feld": [41, 28]
     },
     {
       "name": "steg",

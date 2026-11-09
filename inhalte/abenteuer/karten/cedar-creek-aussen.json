@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 168,
+  "nextobjectid": 164,
   "layers": [
     {
       "id": 1,
@@ -79,16 +79,16 @@
         4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
         4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
         4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
-        0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        0, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
         4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-        4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
+        4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
         0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4,
         4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0,
+        1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0,
         0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -105,7 +105,7 @@
         1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
         0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4,
         4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
@@ -440,7 +440,7 @@
           "name": "plakat",
           "type": "ausloeser",
           "x": 656,
-          "y": 432,
+          "y": 448,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -969,7 +969,7 @@
           "name": "cc3Anschlagtafel",
           "type": "moebel",
           "x": 656,
-          "y": 400,
+          "y": 416,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -978,7 +978,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 424
+              "value": 440
             },
             {
               "name": "kollision",
@@ -991,8 +991,8 @@
           "id": 35,
           "name": "mfMuelltonne",
           "type": "moebel",
-          "x": 704,
-          "y": 400,
+          "x": 688,
+          "y": 432,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -1001,7 +1001,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 424
+              "value": 456
             },
             {
               "name": "kollision",
@@ -1012,6 +1012,29 @@
         },
         {
           "id": 36,
+          "name": "cc5Poller",
+          "type": "moebel",
+          "x": 32,
+          "y": 352,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 37,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 32,
@@ -1034,7 +1057,7 @@
           ]
         },
         {
-          "id": 37,
+          "id": 38,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 80,
@@ -1057,7 +1080,7 @@
           ]
         },
         {
-          "id": 38,
+          "id": 39,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 128,
@@ -1080,7 +1103,7 @@
           ]
         },
         {
-          "id": 39,
+          "id": 40,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 32,
@@ -1103,7 +1126,7 @@
           ]
         },
         {
-          "id": 40,
+          "id": 41,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 208,
@@ -1126,7 +1149,7 @@
           ]
         },
         {
-          "id": 41,
+          "id": 42,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 272,
@@ -1149,7 +1172,7 @@
           ]
         },
         {
-          "id": 42,
+          "id": 43,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 672,
@@ -1172,7 +1195,7 @@
           ]
         },
         {
-          "id": 43,
+          "id": 44,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 704,
@@ -1195,7 +1218,7 @@
           ]
         },
         {
-          "id": 44,
+          "id": 45,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 672,
@@ -1218,7 +1241,7 @@
           ]
         },
         {
-          "id": 45,
+          "id": 46,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 720,
@@ -1241,7 +1264,7 @@
           ]
         },
         {
-          "id": 46,
+          "id": 47,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 672,
@@ -1264,33 +1287,10 @@
           ]
         },
         {
-          "id": 47,
-          "name": "cc4Gleis",
-          "type": "moebel",
-          "x": 192,
-          "y": 16,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 40
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 48,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 208,
+          "x": 192,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1313,7 +1313,7 @@
           "id": 49,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 224,
+          "x": 208,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1336,7 +1336,7 @@
           "id": 50,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 240,
+          "x": 224,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1359,7 +1359,7 @@
           "id": 51,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 256,
+          "x": 240,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1382,7 +1382,7 @@
           "id": 52,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 272,
+          "x": 256,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1405,7 +1405,7 @@
           "id": 53,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 288,
+          "x": 272,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1428,7 +1428,7 @@
           "id": 54,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 304,
+          "x": 288,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1451,7 +1451,7 @@
           "id": 55,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 320,
+          "x": 304,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1474,7 +1474,7 @@
           "id": 56,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 336,
+          "x": 320,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1497,7 +1497,7 @@
           "id": 57,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 352,
+          "x": 336,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1520,7 +1520,7 @@
           "id": 58,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 368,
+          "x": 352,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1543,7 +1543,7 @@
           "id": 59,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 384,
+          "x": 368,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1566,7 +1566,7 @@
           "id": 60,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 400,
+          "x": 384,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1589,7 +1589,7 @@
           "id": 61,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 416,
+          "x": 400,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1612,7 +1612,7 @@
           "id": 62,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 432,
+          "x": 416,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1635,7 +1635,7 @@
           "id": 63,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 448,
+          "x": 432,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1658,7 +1658,7 @@
           "id": 64,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 464,
+          "x": 448,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1681,7 +1681,7 @@
           "id": 65,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 480,
+          "x": 464,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1704,7 +1704,7 @@
           "id": 66,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 496,
+          "x": 480,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1727,7 +1727,7 @@
           "id": 67,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 512,
+          "x": 496,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1750,7 +1750,7 @@
           "id": 68,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 528,
+          "x": 512,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1773,7 +1773,7 @@
           "id": 69,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 544,
+          "x": 528,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1796,7 +1796,7 @@
           "id": 70,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 560,
+          "x": 544,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1819,7 +1819,7 @@
           "id": 71,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 576,
+          "x": 560,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1842,7 +1842,7 @@
           "id": 72,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 592,
+          "x": 576,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1865,7 +1865,7 @@
           "id": 73,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 608,
+          "x": 592,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1888,7 +1888,7 @@
           "id": 74,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 624,
+          "x": 608,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1911,7 +1911,7 @@
           "id": 75,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 640,
+          "x": 624,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1934,7 +1934,7 @@
           "id": 76,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 656,
+          "x": 640,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1957,7 +1957,7 @@
           "id": 77,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 672,
+          "x": 656,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -1980,7 +1980,7 @@
           "id": 78,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 688,
+          "x": 672,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2003,7 +2003,7 @@
           "id": 79,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 704,
+          "x": 688,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2026,7 +2026,7 @@
           "id": 80,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 720,
+          "x": 704,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2049,7 +2049,7 @@
           "id": 81,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 736,
+          "x": 720,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2072,7 +2072,7 @@
           "id": 82,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 752,
+          "x": 736,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2095,7 +2095,7 @@
           "id": 83,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 768,
+          "x": 752,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2118,7 +2118,7 @@
           "id": 84,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 784,
+          "x": 768,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2141,7 +2141,7 @@
           "id": 85,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 800,
+          "x": 784,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2164,7 +2164,7 @@
           "id": 86,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 816,
+          "x": 800,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2187,7 +2187,7 @@
           "id": 87,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 832,
+          "x": 816,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2210,7 +2210,7 @@
           "id": 88,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 848,
+          "x": 832,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2233,7 +2233,7 @@
           "id": 89,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 864,
+          "x": 848,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2256,7 +2256,7 @@
           "id": 90,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 880,
+          "x": 864,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2279,7 +2279,7 @@
           "id": 91,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 896,
+          "x": 880,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2302,7 +2302,7 @@
           "id": 92,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 912,
+          "x": 896,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2325,7 +2325,7 @@
           "id": 93,
           "name": "cc4Gleis",
           "type": "moebel",
-          "x": 928,
+          "x": 912,
           "y": 16,
           "width": 16,
           "height": 32,
@@ -2346,6 +2346,29 @@
         },
         {
           "id": 94,
+          "name": "cc4Gleis",
+          "type": "moebel",
+          "x": 928,
+          "y": 16,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 40
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 95,
           "name": "cc4GleisRand",
           "type": "moebel",
           "x": 944,
@@ -2368,34 +2391,11 @@
           ]
         },
         {
-          "id": 95,
-          "name": "cc5Planke",
-          "type": "moebel",
-          "x": 800,
-          "y": 16,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
           "id": 96,
           "name": "cc5Planke",
           "type": "moebel",
           "x": 800,
-          "y": 32,
+          "y": 16,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -2415,10 +2415,10 @@
         },
         {
           "id": 97,
-          "name": "cc5PlankeB",
+          "name": "cc5Planke",
           "type": "moebel",
-          "x": 832,
-          "y": 16,
+          "x": 800,
+          "y": 32,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -2441,7 +2441,7 @@
           "name": "cc5PlankeB",
           "type": "moebel",
           "x": 832,
-          "y": 32,
+          "y": 16,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -2463,8 +2463,8 @@
           "id": 99,
           "name": "cc5PlankeB",
           "type": "moebel",
-          "x": 848,
-          "y": 16,
+          "x": 832,
+          "y": 32,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -2487,7 +2487,7 @@
           "name": "cc5PlankeB",
           "type": "moebel",
           "x": 848,
-          "y": 32,
+          "y": 16,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -2507,6 +2507,29 @@
         },
         {
           "id": 101,
+          "name": "cc5PlankeB",
+          "type": "moebel",
+          "x": 848,
+          "y": 32,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 102,
           "name": "cc4Gleisende",
           "type": "moebel",
           "x": 176,
@@ -2529,7 +2552,7 @@
           ]
         },
         {
-          "id": 102,
+          "id": 103,
           "name": "cc4Stationsschild",
           "type": "moebel",
           "x": 208,
@@ -2552,7 +2575,7 @@
           ]
         },
         {
-          "id": 103,
+          "id": 104,
           "name": "cc4Bahnbank",
           "type": "moebel",
           "x": 256,
@@ -2575,7 +2598,7 @@
           ]
         },
         {
-          "id": 104,
+          "id": 105,
           "name": "cc4Fahrplan",
           "type": "moebel",
           "x": 304,
@@ -2598,7 +2621,7 @@
           ]
         },
         {
-          "id": 105,
+          "id": 106,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 896,
@@ -2621,7 +2644,7 @@
           ]
         },
         {
-          "id": 106,
+          "id": 107,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 912,
@@ -2644,7 +2667,7 @@
           ]
         },
         {
-          "id": 107,
+          "id": 108,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 896,
@@ -2667,7 +2690,7 @@
           ]
         },
         {
-          "id": 108,
+          "id": 109,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 912,
@@ -2690,7 +2713,7 @@
           ]
         },
         {
-          "id": 109,
+          "id": 110,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 912,
@@ -2713,7 +2736,7 @@
           ]
         },
         {
-          "id": 110,
+          "id": 111,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 912,
@@ -2736,7 +2759,7 @@
           ]
         },
         {
-          "id": 111,
+          "id": 112,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 896,
@@ -2759,7 +2782,7 @@
           ]
         },
         {
-          "id": 112,
+          "id": 113,
           "name": "cc4Wohnhaus",
           "type": "moebel",
           "x": 48,
@@ -2782,7 +2805,7 @@
           ]
         },
         {
-          "id": 113,
+          "id": 114,
           "name": "cc4Wohnhaus",
           "type": "moebel",
           "x": 192,
@@ -2805,7 +2828,7 @@
           ]
         },
         {
-          "id": 114,
+          "id": 115,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 16,
@@ -2828,7 +2851,7 @@
           ]
         },
         {
-          "id": 115,
+          "id": 116,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 48,
@@ -2851,7 +2874,7 @@
           ]
         },
         {
-          "id": 116,
+          "id": 117,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 80,
@@ -2874,7 +2897,7 @@
           ]
         },
         {
-          "id": 117,
+          "id": 118,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 112,
@@ -2897,7 +2920,7 @@
           ]
         },
         {
-          "id": 118,
+          "id": 119,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 144,
@@ -2920,33 +2943,10 @@
           ]
         },
         {
-          "id": 119,
-          "name": "cc4Hecke",
-          "type": "moebel",
-          "x": 176,
-          "y": 592,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 600
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 120,
           "name": "cc4Hecke",
           "type": "moebel",
-          "x": 208,
+          "x": 176,
           "y": 592,
           "width": 32,
           "height": 16,
@@ -2969,7 +2969,7 @@
           "id": 121,
           "name": "cc4Hecke",
           "type": "moebel",
-          "x": 240,
+          "x": 208,
           "y": 592,
           "width": 32,
           "height": 16,
@@ -2992,7 +2992,7 @@
           "id": 122,
           "name": "cc4Hecke",
           "type": "moebel",
-          "x": 272,
+          "x": 240,
           "y": 592,
           "width": 32,
           "height": 16,
@@ -3015,7 +3015,7 @@
           "id": 123,
           "name": "cc4Hecke",
           "type": "moebel",
-          "x": 304,
+          "x": 272,
           "y": 592,
           "width": 32,
           "height": 16,
@@ -3038,7 +3038,7 @@
           "id": 124,
           "name": "cc4Hecke",
           "type": "moebel",
-          "x": 336,
+          "x": 304,
           "y": 592,
           "width": 32,
           "height": 16,
@@ -3061,6 +3061,29 @@
           "id": 125,
           "name": "cc4Hecke",
           "type": "moebel",
+          "x": 336,
+          "y": 592,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 600
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 126,
+          "name": "cc4Hecke",
+          "type": "moebel",
           "x": 176,
           "y": 560,
           "width": 32,
@@ -3081,7 +3104,7 @@
           ]
         },
         {
-          "id": 126,
+          "id": 127,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 176,
@@ -3104,7 +3127,7 @@
           ]
         },
         {
-          "id": 127,
+          "id": 128,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3127,7 +3150,7 @@
           ]
         },
         {
-          "id": 128,
+          "id": 129,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3150,7 +3173,7 @@
           ]
         },
         {
-          "id": 129,
+          "id": 130,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3173,7 +3196,7 @@
           ]
         },
         {
-          "id": 130,
+          "id": 131,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3196,7 +3219,7 @@
           ]
         },
         {
-          "id": 131,
+          "id": 132,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3219,7 +3242,7 @@
           ]
         },
         {
-          "id": 132,
+          "id": 133,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3242,7 +3265,7 @@
           ]
         },
         {
-          "id": 133,
+          "id": 134,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3265,7 +3288,7 @@
           ]
         },
         {
-          "id": 134,
+          "id": 135,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3288,7 +3311,7 @@
           ]
         },
         {
-          "id": 135,
+          "id": 136,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3311,7 +3334,7 @@
           ]
         },
         {
-          "id": 136,
+          "id": 137,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3334,7 +3357,7 @@
           ]
         },
         {
-          "id": 137,
+          "id": 138,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3357,7 +3380,7 @@
           ]
         },
         {
-          "id": 138,
+          "id": 139,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3380,7 +3403,7 @@
           ]
         },
         {
-          "id": 139,
+          "id": 140,
           "name": "cc4Hecke",
           "type": "moebel",
           "x": 336,
@@ -3403,7 +3426,7 @@
           ]
         },
         {
-          "id": 140,
+          "id": 141,
           "name": "mf2BlumenbeetKlein",
           "type": "moebel",
           "x": 64,
@@ -3426,7 +3449,7 @@
           ]
         },
         {
-          "id": 141,
+          "id": 142,
           "name": "mf2BlumenbeetKlein",
           "type": "moebel",
           "x": 224,
@@ -3449,7 +3472,7 @@
           ]
         },
         {
-          "id": 142,
+          "id": 143,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 384,
@@ -3472,7 +3495,7 @@
           ]
         },
         {
-          "id": 143,
+          "id": 144,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 448,
@@ -3495,7 +3518,7 @@
           ]
         },
         {
-          "id": 144,
+          "id": 145,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 512,
@@ -3518,7 +3541,7 @@
           ]
         },
         {
-          "id": 145,
+          "id": 146,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 400,
@@ -3541,7 +3564,7 @@
           ]
         },
         {
-          "id": 146,
+          "id": 147,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 560,
@@ -3564,7 +3587,7 @@
           ]
         },
         {
-          "id": 147,
+          "id": 148,
           "name": "mf2Zeder",
           "type": "moebel",
           "x": 528,
@@ -3587,7 +3610,7 @@
           ]
         },
         {
-          "id": 148,
+          "id": 149,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 608,
@@ -3610,7 +3633,7 @@
           ]
         },
         {
-          "id": 149,
+          "id": 150,
           "name": "cc4Nadelbaum",
           "type": "moebel",
           "x": 640,
@@ -3633,7 +3656,7 @@
           ]
         },
         {
-          "id": 150,
+          "id": 151,
           "name": "mf2ZederSchmal",
           "type": "moebel",
           "x": 432,
@@ -3656,7 +3679,7 @@
           ]
         },
         {
-          "id": 151,
+          "id": 152,
           "name": "cc4NadelbaumB",
           "type": "moebel",
           "x": 896,
@@ -3679,7 +3702,7 @@
           ]
         },
         {
-          "id": 152,
+          "id": 153,
           "name": "cc5BankZumBach",
           "type": "moebel",
           "x": 800,
@@ -3702,7 +3725,7 @@
           ]
         },
         {
-          "id": 153,
+          "id": 154,
           "name": "cc4Stammbank",
           "type": "moebel",
           "x": 464,
@@ -3725,7 +3748,7 @@
           ]
         },
         {
-          "id": 154,
+          "id": 155,
           "name": "cc4Bootsschuppen",
           "type": "moebel",
           "x": 720,
@@ -3748,36 +3771,13 @@
           ]
         },
         {
-          "id": 155,
-          "name": "cc5Planke",
-          "type": "moebel",
-          "x": 832,
-          "y": 128,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
           "id": 156,
-          "name": "cc5Planke",
+          "name": "cc7Fussbruecke",
           "type": "moebel",
-          "x": 832,
-          "y": 144,
-          "width": 32,
-          "height": 16,
+          "x": 816,
+          "y": 128,
+          "width": 112,
+          "height": 36,
           "rotation": 0,
           "visible": true,
           "properties": [
@@ -3795,10 +3795,10 @@
         },
         {
           "id": 157,
-          "name": "cc5PlankeB",
+          "name": "cc5Planke",
           "type": "moebel",
-          "x": 864,
-          "y": 128,
+          "x": 800,
+          "y": 224,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -3820,8 +3820,8 @@
           "id": 158,
           "name": "cc5PlankeB",
           "type": "moebel",
-          "x": 864,
-          "y": 144,
+          "x": 832,
+          "y": 224,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -3841,10 +3841,10 @@
         },
         {
           "id": 159,
-          "name": "cc5PlankeB",
+          "name": "cc5Planke",
           "type": "moebel",
-          "x": 880,
-          "y": 128,
+          "x": 800,
+          "y": 240,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -3866,8 +3866,8 @@
           "id": 160,
           "name": "cc5PlankeB",
           "type": "moebel",
-          "x": 880,
-          "y": 144,
+          "x": 832,
+          "y": 240,
           "width": 32,
           "height": 16,
           "rotation": 0,
@@ -3887,98 +3887,6 @@
         },
         {
           "id": 161,
-          "name": "cc5Planke",
-          "type": "moebel",
-          "x": 800,
-          "y": 224,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 162,
-          "name": "cc5PlankeB",
-          "type": "moebel",
-          "x": 832,
-          "y": 224,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 163,
-          "name": "cc5Planke",
-          "type": "moebel",
-          "x": 800,
-          "y": 240,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 164,
-          "name": "cc5PlankeB",
-          "type": "moebel",
-          "x": 832,
-          "y": 240,
-          "width": 32,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 165,
           "name": "cc5StegPfaehle",
           "type": "moebel",
           "x": 832,
@@ -4001,7 +3909,7 @@
           ]
         },
         {
-          "id": 166,
+          "id": 162,
           "name": "cc5BootAmSteg",
           "type": "moebel",
           "x": 800,
@@ -4024,7 +3932,7 @@
           ]
         },
         {
-          "id": 167,
+          "id": 163,
           "name": "cc5BootUfer",
           "type": "moebel",
           "x": 832,

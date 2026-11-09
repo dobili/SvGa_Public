@@ -47,23 +47,27 @@
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [1, 5],
-      "versatz": [8, 0]
-    },
-    {
-      "moebel": "cc4Archivregal",
-      "feld": [3, 5],
+      "feld": [1, 4],
       "versatz": [4, 0]
     },
     {
+      "moebel": "cc4Archivregal",
+      "feld": [3, 4],
+      "versatz": [0, 0]
+    },
+    {
       "moebel": "cc4ArchivregalB",
-      "feld": [5, 5],
+      "feld": [5, 6],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "cc4Archivregal",
+      "feld": [7, 6],
       "versatz": [0, 0]
     },
     {
       "moebel": "cc4KartonHoch",
-      "feld": [1, 8],
-      "id": "stapel1"
+      "feld": [1, 8]
     },
     {
       "moebel": "cc4KartonHoch",
@@ -72,27 +76,16 @@
     },
     {
       "moebel": "cc4KartonHoch",
-      "feld": [3, 8],
-      "id": "stapel3"
+      "feld": [3, 8]
     },
     {
       "moebel": "cc4KartonHoch",
       "feld": [3, 8],
-      "versatz": [0, -12]
-    },
-    {
-      "moebel": "cc4KartonHoch",
-      "feld": [5, 8],
-      "id": "stapel5"
-    },
-    {
-      "moebel": "cc4KartonHoch",
-      "feld": [5, 8],
       "versatz": [0, -12]
     },
     {
       "moebel": "cc4KartonOffen",
-      "feld": [8, 7],
+      "feld": [9, 4],
       "id": "karton1858"
     },
     {
@@ -133,16 +126,17 @@
     },
     {
       "name": "karton1858",
-      "feld": [8, 8],
+      "feld": [9, 5],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [9, 4]
+      "feld": [6, 4]
     }
   ],
   "figuren": [],
   "belebung": [],
   "zustand": ["gebraucht", "alt"],
-  "stil": ["klassisch", "einfach"]
+  "stil": ["klassisch", "einfach"],
+  "dicht": true
 }

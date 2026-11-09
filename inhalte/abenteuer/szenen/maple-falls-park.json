@@ -9,8 +9,7 @@
     "p": "pflaster",
     "e": "erde",
     "s": "asphalt",
-    "h": "dielen",
-    "b": "dielen"
+    "h": "dielen"
   },
   "raster": [
     "##########ee################################",
@@ -27,11 +26,11 @@
     "#..........................ee.~~~~.........#",
     "#..........................ee.~~~~~........#",
     "#..........................ee..~~~~........#",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
     "#.................pp...ppppppp.~~~~~.......#",
     "#.................pp...ppppppp.~~~~~~~~~~~~~",
     "#................ppppp.ppppppp.~~~~~~~~~~~~~",
@@ -40,13 +39,21 @@
     "#................ppppp...............~~~~..#",
     "#................ppppp...~~~...............#",
     "#......................~~~~~~..............#",
-    "#.....................~~~~~~~~.............#",
+    "#......................~~~~~~~.............#",
     "#......................~~~~~~~.............#",
     "#........................~~~...............#",
     "#..........................................#",
     "############################################"
   ],
   "objekte": [
+    {
+      "moebel": "mf9StrassenbrueckeGehwegQuer4",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "mf9FussbrueckeLaengs3",
+      "feld": [10, 2]
+    },
     {
       "moebel": "mf6Busch",
       "feld": [1, 1]
@@ -168,16 +175,6 @@
       "feld": [41, 1]
     },
     {
-      "moebel": "mf6StegBrueckeL",
-      "feld": [10, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf6StegBrueckeR",
-      "feld": [11, 1],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf4Wegweiser",
       "feld": [12, 5]
     },
@@ -276,38 +273,6 @@
       "moebel": "mf4Laterne",
       "feld": [38, 16],
       "vorn": true
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [31, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [31, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [32, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [32, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [33, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [33, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [34, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [34, 18]
     },
     {
       "moebel": "mf6Basketballplatz",

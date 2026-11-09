@@ -532,8 +532,13 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    durchscheinenden Schatten (Black_Shadow-Fassung oder `werkzeuge/schatten.py`); die Bildprüfung
    meldet jeden grauen Festschatten.
 6. **Brücken und Stege sind Bauwerke.** Unter einer Brücke läuft das Wasser mit Ufer weiter; die
-   Brücke selbst ist ein Brücken- oder Stegbild aus dem Katalog (Bohlen, Geländer, Pfosten), keine
-   Bodenfläche aus Dielen auf Gras.
+   Brücke selbst ist ein Bild (Bohlen, Geländer, Pfosten), keine Bodenfläche aus Dielen auf Gras.
+   Weil kein gekauftes Paket Brücken hat, gibt es eigene aus LimeZus Texturen im privaten
+   Repository: `spiel/eigene/bruecke_fuss_quer_L.png` und `_laengs_L` (Fußgängerbrücke, 2 Kacheln
+   breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
+   Steinbrüstung), `bruecke_strasse_gehweg_quer_L` und `_laengs_L` (mit Gehweg auf beiden Seiten, 5 Kacheln
+   breit; Straßen mit Gehwegen nehmen diese, damit die Gehwege nicht am Wasser enden), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
+   Camping-Teilen (`Pier_*`).
 
 ### 10.2 Türen und Durchgänge
 
@@ -641,7 +646,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     und ihr Gegenstand mitwandert), alles, was die Geschichte verlangt (Ortsdokument, 12/13/14).
     Verschieden: Anordnung, Wahl der Möbelserie und Bilder, Deko, Dichte (eine schlichtere, eine
     reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
-    Kleinkram. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    Kleinkram, Häuser und Gärten ohne Rolle in der Geschichte (anderes Hausmodell, andere Farbe).
+    Ein anderer Teppich oder eine andere Lampe allein macht noch keine Variante: Der Autor soll auf den
+    ersten Blick drei verschiedene Räume sehen. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
     `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
     README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
     zum Nachschlagen.

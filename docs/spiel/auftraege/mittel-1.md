@@ -1,21 +1,57 @@
-# Auftrag mittel-1: Capital Arena, Seeufer und Leuchtturm einrichten
+# Auftrag: Karten mit dem Kartenbauer (Szenenbeschreibung, Bau, Bildprüfung)
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der achtundzwanzigste Auftrag, Capital Arena, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, neunundzwanzigster Auftrag)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 96159a1d)
-**Darf ändern:** `inhalte/abenteuer/karten/capital-arena-*.json`, `weg-ghost-capital-*.json`,
-`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilbe `ca`), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Ghost Town)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 409b6826);
+privates Repository nur lesen (`origin/main` holen; dorthin nichts pushen)
+**Darf ändern:** `inhalte/abenteuer/szenen/` (nur deine Szenen), die zugehörigen Karten in
+`inhalte/abenteuer/karten/` (vom Kartenbauer geschrieben), `inhalte/abenteuer/moebel.json` (nur neue
+Einträge am Ende, Vorsilbe `mf2`), deine Auftragsdatei
+**Prüfung vor dem Push:** `python -m pytest pipeline/tests -q`, in `app/` Prettier, Build mit
+verlinktem privaten Repository und `npx playwright test tests/e2e/abenteuer` (Chromium); vorher erneut
+hereinholen (der andere Helfer arbeitet parallel an moebel.json)
 
 ## Ziel
 
-Capital Arena (Finale, große Stadt): draußen (Hochhäuser, Plätze, Fahnen, Bus), Halle (Turniersaal:
-viele Schachtische in Reihen, Bühne, Zuschauerbänke, Anzeigetafel, Pressetisch; Office für die
-Turnierleitung). Seeufer und Leuchtturm haben schon `stil` = `kueste` (Wasser); dazu Steg, Boote,
-Felsen, Leuchtturm (aus dem Register, sonst ein hohes Gebäude), Bänke.
-Bitte Merge-Konflikte in `moebel.json` vor dem Commit lösen (keine Konfliktmarken committen).
+Der Autor fand die nachträglich möblierten Karten unbrauchbar (Wände als Blöcke, halbe Möbel, Dinge
+am Boden statt auf Tischen, Parkbänke im Haus). Neu entstehen Karten nach
+`inhalte/abenteuer/szenen/README.md`: erst eine **ausführliche, lebendige Szenenbeschreibung**, dann
+Bau mit dem Kartenbauer, dann **Bildprüfung** der Vorschau nach der Prüfliste, höchstens drei Runden.
+Muster: `szenen/maple-falls-wohnzimmer.json` und `szenen/maple-falls-aussen.json` (Vorschau dazu
+selbst zeichnen und ansehen). Notizen des Autors zu den alten Karten stehen unten.
+
+Deine Karten: Maple Falls Dachboden, Clubraum (Schachclub im Klassenzimmer: Tische mit echten Brettern, Stühle davor), Park, Cedar Creek draußen
+
+## Vorgehen je Karte
+
+1. Story-Bibel, Weltbeschreibung (`docs/spiel/09_Weltbeschreibung.md`) und die Ink-Datei des Ortes
+   lesen: Wer ist dort, was passiert, welche Auslöser und Figuren gibt es (alte Karte und orte.json)?
+2. Beschreibung schreiben (mehrere Absätze: Raum, Wände, Licht, jedes Möbel mit Platz und Bezug,
+   Kleinkram, Laufwege). Bewohnt und glaubwürdig, nicht karg.
+3. Möbel im Register suchen und **jedes Bild selbst ansehen**, bevor du es nimmst (die Beschreibungen
+   im Register sind teils falsch). Nur ganze Gegenstände; Bodenbelag und Wandstil aus `materialien.json`
+   (neue Böden oder Wände dort nur mit Rücksprache).
+4. Bauen (`python -m pipeline.abenteuer.kartenbau …`; Befunde beheben), Vorschau zeichnen
+   (`python -m pipeline.abenteuer.kartenbild /home/user/schach-abenteuer-inhalte /tmp/vorschau …`; Pillow
+   in einer eigenen venv), Vorschau ansehen, nach der Prüfliste prüfen, nachbessern. Im Bericht je
+   Karte: Runden, was geändert wurde, was offen bleibt.
+5. Größe frei wählen, wie es der Ort braucht; Übergänge anderer Karten zeigen auf die Auslösernamen.
+6. Schachbretter auf Tischen: ein Brett als eigenes Möbel `auf` einem Tisch; ein passendes Brett-Bild gibt es im Register vielleicht nicht – dann melden, der Haupt-Chat zeichnet eins.
+
+## Notizen des Autors zu den alten Karten
+
+Archiv: „kaum erkennbar, was die Möbel darstellen“. Waschsalon: „ein halber Tisch“. Maple Falls
+draußen: „So sieht keine Außenfassade aus“. Clubraum: „Bretter auf dem Boden, nur ein Stuhl?“.
+Dachboden: „Wände nicht passend gedreht“. Park: „Mauern oder gepflasterter Boden?“. Bahnhofshalle:
+„Karte steht auf dem Boden“. Pavillon: „Parkbänke im Innenraum?“. Wohnwagen: „Fernseher auf dem Boden,
+Möbel abgeschnitten“. Bahndamm: „Schienen enden im Nichts“. Zedernwald: „Bäume abgeschnitten“.
+Landstraße: „Wo ist hier ein Weg?“.
 
 ## Bericht
+
+(vom Helfer auszufüllen)
+
+## Bericht des letzten Auftrags, zur Nachlese
 
 Vier Karten eingerichtet: Capital Arena draußen und Halle, Seeufer und Leuchtturm. 17 neue Möbel am
 Ende von `moebel.json` (Vorsilbe `ca`): `caLeuchtturmSockel`, `caLeuchtturmDach`, `caBoot`,

@@ -340,3 +340,26 @@ Automaten vorbei zur Pinnwand und zu den Trocknern. Reihe 4 bleibt frei vor alle
 
 Belebung: eine Kundin geht zwischen (9, 8) und (11, 8) auf und ab. Offen: Ein eigenes Trocknerbild gibt
 es im Katalog nicht; die Trockner sind schmale Frontlader derselben Serie.
+
+### 4.2 Archiv (`cedarCreek.archiv`)
+
+**Größe:** 14 × 11. Nordwand Reihen 0–2 Backstein, Boden ab Reihe 3 Stein, Seiten- und Südwand eine
+Reihe, keine Tür: Der einzige Ausgang ist die Treppe nach oben. Kühl, still, lange nicht benutzt.
+
+**Laufwege:** Treppe (11, 3) → Start (11, 5), Antritt frei → nach links zwischen Regalen und Kartonreihen zum
+offenen Karton (4, 7), nach rechts zum Lesetisch, nach vorn zum Wasserfleck (8, 9).
+
+| Zone     | Gegenstand                                         | Feld                            | Ausrichtung       | Material, Stil, Zustand  | Zweck                                                                               |
+| -------- | -------------------------------------------------- | ------------------------------- | ----------------- | ------------------------ | ----------------------------------------------------------------------------------- |
+| Nordwand | steile Holztreppe nach oben                        | (10, 1), 3 × 4                  | führt nach oben   | Holz dunkel, klassisch   | `kellerAusgang` (11, 3); unter der Kellertür der Bibliothek (Spalte 19 − 8)         |
+| Nordwand | vier hohe Regale mit Zeitungsjahrgängen und Mappen | (1, 1), (3, 1), (6, 1), (8, 1)  | Vorderseite unten | Holz, klassisch, alt     | Archiv; das Regal bei (8, 1) ist das dunkle Regal für die Laterne (R3, Platzhalter) |
+| Nordwand | Boxerfoto im Goldrahmen                            | Wandfläche (5, 1)               | –                 | alt                      | `boxerfoto` (5, 3)                                                                  |
+| Mitte    | Archivkartons in zwei Reihen                       | Reihe 5: 2, 4, 6; Reihe 7: 2, 6 | –                 | Pappe, gebraucht         | Archiv                                                                              |
+| Mitte    | offener Karton „1850–1859“                         | (4, 7)                          | –                 | Pappe                    | `karton1858`                                                                        |
+| Westwand | Stapel höherer Kartons                             | (1, 4), (1, 6)                  | –                 | Pappe                    | geordnete Stapel an der Wand                                                        |
+| Ecke SO  | Lesetisch mit aufgeschlagenem Buch, Stuhl dahinter | Tisch (9, 7), Stuhl (9, 5)      | Stuhl zum Tisch   | Holz und Grün, klassisch | `programmheft` auf dem Tisch (10, 7)                                                |
+| Ecke SO  | Stehlampe neben dem Tisch                          | (11, 6)                         | –                 | Holz, Stoffschirm        | Licht (Regel 4.4)                                                                   |
+| Boden    | Wasserfleck in Form eines Springers                | (8, 9)                          | –                 | –                        | `wasserfleck`                                                                       |
+
+Offen: Aktenschränke und Regale mit Archivkartons gibt es im Katalog nicht; die Regale zeigen
+gebundene Bände und Mappen.

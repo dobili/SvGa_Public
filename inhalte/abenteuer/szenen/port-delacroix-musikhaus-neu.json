@@ -1,0 +1,207 @@
+{
+  "karte": "portDelacroix.musikhaus",
+  "datei": "karten/port-delacroix-musikhaus-neu.json",
+  "art": "innen",
+  "zustand_der_karte": "musikhausOffen",
+  "beschreibung": "Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand Henris gestiftetes Klavier, links davon ein Regal mit Brettern und Figuren und ein Notenregal, rechts ein Bild und eine große Pflanze. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; über der Tür hängt innen das Schild „Musik- und Schachclub Port Delacroix, seit 1889“ (bestellt, Auslöser `schild` links neben der Tür).",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Bild",
+      "feld": [12, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "pd6KlavierNatur",
+      "feld": [9, 2]
+    },
+    {
+      "moebel": "pd6Regal",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "pd6Notenregal",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "pd6PflanzeGross",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "pd6Teppich",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "pd6Tisch",
+      "feld": [3, 6],
+      "id": "n3_6"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "n3_6"
+    },
+    {
+      "moebel": "pd6StuhlVorn",
+      "feld": [3, 5],
+      "zu": "n3_6"
+    },
+    {
+      "moebel": "pd6StuhlRuecken",
+      "feld": [3, 7],
+      "zu": "n3_6"
+    },
+    {
+      "moebel": "pd6Tisch",
+      "feld": [14, 6],
+      "id": "n14_6"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "n14_6"
+    },
+    {
+      "moebel": "pd6StuhlVorn",
+      "feld": [14, 5],
+      "zu": "n14_6"
+    },
+    {
+      "moebel": "pd6StuhlRuecken",
+      "feld": [14, 7],
+      "zu": "n14_6"
+    },
+    {
+      "moebel": "pd6Tisch",
+      "feld": [3, 10],
+      "id": "n3_10"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "n3_10"
+    },
+    {
+      "moebel": "pd6StuhlVorn",
+      "feld": [3, 9],
+      "zu": "n3_10"
+    },
+    {
+      "moebel": "pd6StuhlRuecken",
+      "feld": [3, 11],
+      "zu": "n3_10"
+    },
+    {
+      "moebel": "pd6Tisch",
+      "feld": [14, 10],
+      "id": "n14_10"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "n14_10"
+    },
+    {
+      "moebel": "pd6StuhlVorn",
+      "feld": [14, 9],
+      "zu": "n14_10"
+    },
+    {
+      "moebel": "pd6StuhlRuecken",
+      "feld": [14, 11],
+      "zu": "n14_10"
+    },
+    {
+      "moebel": "pd6Pflanze",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "pd6Pflanze",
+      "feld": [18, 11]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [18, 6]
+    },
+    {
+      "moebel": "pd6Regal",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [10, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [10, 13],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "musikhausAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "schild",
+      "feld": [9, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "odile",
+      "feld": [11, 5]
+    },
+    {
+      "name": "henri",
+      "feld": [13, 4]
+    },
+    {
+      "name": "remy",
+      "feld": [12, 9]
+    },
+    {
+      "name": "lou",
+      "feld": [7, 9]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "rustikal", "modern"]
+}

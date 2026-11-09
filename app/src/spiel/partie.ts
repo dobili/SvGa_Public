@@ -129,7 +129,7 @@ export interface Partieeinstellung {
      * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10, V1): „blind“ blendet die
      * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
      */
-    readonly variante?: "blind";
+    readonly variante?: "blind" | "schach960";
   };
 }
 

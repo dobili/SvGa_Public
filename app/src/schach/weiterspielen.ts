@@ -12,6 +12,7 @@ import { makeFen, parseFen } from "chessops/fen";
 import { makeSanAndPlay, parseSan } from "chessops/san";
 import type { NormalMove, Role } from "chessops/types";
 import { makeSquare, parseSquare } from "chessops/util";
+import { brauchtChess960Stellung } from "./chess960";
 import { sanInSprache } from "./notation";
 
 /** Die eigenen Züge hinter der Buchstellung und wie viele davon gerade gezeigt werden. */
@@ -63,6 +64,9 @@ export function legaleZiele(fen: string, von: string): string[] {
   const pos = stellung(fen);
   const feld = parseSquare(von);
   if (!pos || feld === undefined) return [];
+  // Schach960 (Abenteuer): Der König zieht zur Rochade auf den eigenen Turm, weil das Zielfeld
+  // des Königs dort auch ein gewöhnlicher Königszug sein kann.
+  if (brauchtChess960Stellung(pos)) return [...pos.dests(feld)].map((ziel) => makeSquare(ziel));
   return [...pos.dests(feld)].map((ziel) => makeSquare(rochadeziel(pos, feld, ziel)));
 }
 
@@ -124,8 +128,11 @@ export function spieleZug(fen: string, von: string, nach: string, umwandlung?: R
   const b = parseSquare(nach);
   if (!pos || a === undefined || b === undefined) return { art: "ungueltig" };
   // Rochade: Das Zielfeld des Königs (g1) wird zum Zug „König auf Turm“, den chessops erwartet.
-  const ziel = normalizeMove(pos, { from: a, to: b }).to;
-  if (!pos.dests(a).has(ziel) || rochadeziel(pos, a, ziel) !== b) return { art: "ungueltig" };
+  // Im Schach960 tippt der Leser gleich den Turm an (siehe legaleZiele).
+  const chess960 = brauchtChess960Stellung(pos);
+  const ziel = chess960 ? b : normalizeMove(pos, { from: a, to: b }).to;
+  const passt = pos.dests(a).has(ziel) && (chess960 || rochadeziel(pos, a, ziel) === b);
+  if (!passt) return { art: "ungueltig" };
   const bauer = pos.board.get(a)?.role === "pawn";
   const letzteReihe = b >> 3 === 0 || b >> 3 === 7;
   if (bauer && letzteReihe && !umwandlung) return { art: "umwandlung" };

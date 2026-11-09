@@ -1,6 +1,6 @@
 # Schach-Abenteuer: Anschlüsse in der App (Info für den App-Chat)
 
-Stand: 8.11.2026, abends. Gepflegt vom Spiel-Chat (Sitzung „SA Storyspiel“). Diese Datei sagt dem
+Stand: 9.11.2026. Gepflegt vom Spiel-Chat (Sitzung „SA Storyspiel“). Diese Datei sagt dem
 Chat, der an der App selbst arbeitet, was das Spiel außerhalb seiner eigenen Ordner berührt, damit
 beide Stränge später sauber zusammengeführt werden können. Bei jeder neuen Änderung an der App
 ergänzt der Spiel-Chat diese Datei.
@@ -43,6 +43,8 @@ ergänzt der Spiel-Chat diese Datei.
 | `app/src/ui/brett/masse.ts`, `app/public/extras/brett-pavillon.svg` | Farben des Pavillon-Bretts | keine (nur mit dem Extra wählbar) |
 | `app/src/ui/brett/Figur.tsx` | Klasse `brett-figur` an jeder Figur (8.11. abends), damit Blindschach sie ausblenden kann | keine (nur eine Klasse) |
 | `app/src/app/App.tsx` (Blindschach) | Rahmenklasse `rahmen-blindschach` bei Partien mit `einstellung.abenteuer.variante === "blind"` | keine |
+| `app/src/schach/chess960.ts` (neu), `schach/weiterspielen.ts`, `spiel/zuege.ts`, `engine/engineZuege.ts`, `engine/engineDienst.ts` | Schach960 (9.11.): Startstellungen nach Scharnagl; Engine schaltet `UCI_Chess960` nur, wenn eine Stellung Rochaderechte außerhalb von König e und Türmen a/h hat; Rochade dann als „König auf Turm“, am Brett tippt der Leser zur Rochade den Turm an | keine: im gewöhnlichen Schach liefert `brauchtChess960` immer false, es wird kein Befehl mehr gesendet und keine Eingabe ändert sich (Tests in `schach/chess960.test.ts`) |
+| `app/src/spiel/partie.ts`, `speicher/partienLesen.ts` | `einstellung.abenteuer.variante` kennt jetzt auch `"schach960"` | keine |
 | `app/src/ui/stil/basis.css` | Abstand unten im Vollbild | keine |
 | `app/src/sw/dateiliste.ts`, `app/vite.config.ts`, `app/public/_headers` | Spiel als eigener Baustein, Zusatzpaket `public/abenteuer/` nur auf Wunsch geladen; Beta-Name im Manifest | keine Mehrlast beim Start |
 | `app/skripte/pruefe-groesse.mjs` | Größenbudget weist das Zusatzpaket gesondert aus | keine |

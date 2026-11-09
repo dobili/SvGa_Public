@@ -10,6 +10,7 @@ import { Chess, normalizeMove } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import { makeSan, parseSan } from "chessops/san";
 import { makeUci, parseUci } from "chessops/util";
+import { rochadeUci } from "../schach/chess960";
 
 /** Stellung mit Regeln aus einer FEN; null bei unlesbarer oder regelwidriger Stellung. */
 export function regelstellung(fen: string): Chess | null {
@@ -40,7 +41,8 @@ export function uciZuSan(fen: string, uci: string): string | null {
  * Ein Zug in Kurznotation als UCI, wie ihn die Engine schreibt.
  *
  * Beispiel: Grundstellung, „e4“ → „e2e4“. Rochade → Königszug um zwei Felder („e1g1“), so wie
- * Stockfish sie selbst schreibt. Sonderfall: illegaler Zug → null.
+ * Stockfish sie selbst schreibt; im Schach960 „König auf Turm“ (spiel/chess960.ts).
+ * Sonderfall: illegaler Zug → null.
  */
 export function sanZuUci(fen: string, san: string): string | null {
   const pos = regelstellung(fen);
@@ -50,16 +52,8 @@ export function sanZuUci(fen: string, san: string): string | null {
   const figur = pos.board.get(zug.from);
   const ziel = pos.board.get(zug.to);
   const rochade = figur?.role === "king" && ziel?.role === "rook" && ziel.color === figur.color;
-  if (!rochade) return makeUci(zug);
-  const reihe = zug.from & ~ACHT_MINUS_EINS;
-  const koenigsziel = reihe + (zug.to > zug.from ? KOENIG_KURZ : KOENIG_LANG);
-  return makeUci({ from: zug.from, to: koenigsziel });
+  return rochade ? rochadeUci(pos, zug) : makeUci(zug);
 }
-
-const ACHT_MINUS_EINS = 7;
-/** Linie des Königs nach der kurzen (g) und der langen (c) Rochade. */
-const KOENIG_KURZ = 6;
-const KOENIG_LANG = 2;
 
 /** Stellung nach einem Zug in Kurznotation; null, wenn der Zug nicht passt. */
 export function fenNach(fen: string, san: string): string | null {

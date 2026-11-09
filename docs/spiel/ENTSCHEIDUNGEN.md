@@ -641,3 +641,12 @@ gleich gutes Ende bei jedem Ausgang des Finales, Q21-5 endgültiger Abschied mit
   die Kartenleiste bekommt den Rahmen. Grund: Immersion (Wunsch des Autors) ohne Bruch zur App.
 - **G3 Porträts** aus den Teilen des Porträt-Generators von Modern UI, per Skript zusammengesetzt,
   passend zu den Figuren aus Modern Interiors; DiceBear bleibt Ersatz, wo Teile fehlen.
+
+## Schach960 (9.11.2026)
+
+- **V1 umgesetzt (Technik):** Begegnungen mit `"variante": "schach960"` starten aus einer
+  ausgelosten Grundreihe (oder `startnummer`, Zählung nach Scharnagl). Stockfish bekommt
+  `UCI_Chess960` nur, solange eine Stellung es braucht; Rochade am Brett durch Antippen des eigenen
+  Turms (wie bei Lichess), weil das Zielfeld des Königs im Schach960 auch ein gewöhnlicher Königszug
+  sein kann. Zählt wie alle Varianten nie für Nadeln, Wertung oder die App. Inhalte (Tisch, Figur,
+  Ambroses Erklärung) baut mittel-2.

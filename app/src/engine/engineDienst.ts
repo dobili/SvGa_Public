@@ -14,6 +14,7 @@
  * Abhängigkeiten: uci.ts. Die Verbindung zur Engine ist austauschbar (Kanal), damit Tests die
  * Engine auch unter Node starten können.
  */
+import { brauchtChess960 } from "../schach/chess960";
 import { leseBesterZug, leseInfozeile, type Variante } from "./uci";
 
 /** Verbindung zur Engine: Befehle senden, Zeilen empfangen. */
@@ -102,6 +103,8 @@ interface LaufenderAuftrag {
 /** Ein Engine-Dienst mit einer eigenen Engine. In der App gibt es genau einen (siehe unten). */
 export class EngineDienst {
   private kanal: Kanal | null = null;
+  /** Steht die Engine im Schach960-Modus (UCI_Chess960)? Eine frische Engine steht nicht darin. */
+  private chess960 = false;
   private bereit: Promise<void> | null = null;
   private startzeitMs = 0;
   private auftrag: LaufenderAuftrag | null = null;
@@ -137,6 +140,7 @@ export class EngineDienst {
   private async verbinde(): Promise<void> {
     const kanal = this.oeffneKanal();
     this.kanal = kanal;
+    this.chess960 = false;
     kanal.beiZeile((zeile) => this.empfange(zeile));
     // Erst auf die Antwort warten, dann senden: Manche Engines antworten sofort im selben Aufruf.
     const uciBereit = this.warteAuf((zeile) => zeile.trim() === "uciok");
@@ -278,6 +282,13 @@ export class EngineDienst {
     });
     staerkebefehle(staerke).forEach((befehl) => kanal.senden(befehl));
     kanal.senden(`setoption name MultiPV value ${Math.max(varianten, nurZuege.length)}`);
+    // Schach960 (Abenteuer, Varianten-Tisch): Modus nur umschalten, wenn die Stellung es braucht;
+    // im gewöhnlichen Schach wird nie ein zusätzlicher Befehl gesendet.
+    const chess960 = brauchtChess960(fen);
+    if (chess960 !== this.chess960) {
+      kanal.senden(`setoption name UCI_Chess960 value ${chess960}`);
+      this.chess960 = chess960;
+    }
     kanal.senden(`position fen ${fen}`);
     const auswahl = nurZuege.length > 0 ? ` searchmoves ${nurZuege.join(" ")}` : "";
     // Mit Tiefengrenze hält die Engine an, sobald die Tiefe oder die Zeit erreicht ist.

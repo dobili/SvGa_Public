@@ -252,3 +252,13 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     namen = {o["name"] for o in objekte["objects"]}
     ausloeser = {a["name"] for a in _lade("orte.json")["orte"][0]["ausloeser"]}
     assert namen <= ausloeser
+
+
+def test_startnummer_nur_bei_schach960():
+    # Eine feste Startstellung ergibt nur im Schach960 Sinn (docs/spiel/10, V1); Varianten-Partien
+    # beginnen immer aus der Grundreihe, nicht aus einer Buchabbildung.
+    for begegnung in _lade("begegnungen.json")["begegnungen"]:
+        if "startnummer" in begegnung:
+            assert begegnung.get("variante") == "schach960", begegnung["kennung"]
+        if begegnung.get("variante") == "schach960":
+            assert begegnung["startstellung"] == {"art": "grundstellung"}, begegnung["kennung"]

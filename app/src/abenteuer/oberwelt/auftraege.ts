@@ -11,7 +11,8 @@
  * Begegnung.
  */
 import { farbeAus } from "../anbindung/partiestart";
-import type { Gegnerdaten, Spieldaten } from "../daten/laden";
+import { startFen960, zufallsnummer960 } from "../../schach/chess960";
+import type { Begegnungsdaten, Gegnerdaten, Spieldaten } from "../daten/laden";
 import { motivanzahl, schwierigkeitAus, schwierigkeitDesVersuchs } from "../regeln/aufgaben";
 import { POST_GAME_AUFSCHLAG, gerechneteStaerke } from "../regeln/gegnerstaerke";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
@@ -99,6 +100,15 @@ function zustandAus(stand: Abenteuerstand, gegner: string, rolle: Gegnerrolle): 
   };
 }
 
+/**
+ * Startstellung einer Begegnung; Schach960 lost die Grundreihe aus (oder nimmt `startnummer`).
+ * Regel: docs/spiel/10, V1 (Grundreihe gemischt, Läufer auf verschiedenen Farben).
+ */
+export function startstellungDer(b: Begegnungsdaten): Begegnungsdaten["startstellung"] {
+  if (b.variante !== "schach960") return b.startstellung;
+  return { art: "fen", fen: startFen960(b.startnummer ?? zufallsnummer960()) };
+}
+
 /** Baut den Partieauftrag einer Begegnung; null, wenn die Spieldaten sie nicht kennen. */
 export function auftragFuer(
   begegnung: string,
@@ -125,7 +135,7 @@ export function auftragFuer(
     staerke,
     farbe: farbeAus(b.farbe, Math.random),
     format: b.format,
-    startstellung: b.startstellung,
+    startstellung: startstellungDer(b),
     deck: { karten: [] },
     kartenErlaubt: b.kartenErlaubt,
     // Varianten zählen nie für die App und die Abenteuerwertung (Bibel Akt 4, Technikliste 4).

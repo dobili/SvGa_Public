@@ -48,7 +48,7 @@ ergänzt der Spiel-Chat diese Datei.
 | `app/src/ui/stil/basis.css` | Abstand unten im Vollbild | keine |
 | `app/src/sw/dateiliste.ts`, `app/vite.config.ts`, `app/public/_headers` | Spiel als eigener Baustein, Zusatzpaket `public/abenteuer/` nur auf Wunsch geladen; Beta-Name im Manifest | keine Mehrlast beim Start |
 | `app/skripte/pruefe-groesse.mjs` | Größenbudget weist das Zusatzpaket gesondert aus | keine |
-| `app/package.json` | Pakete `phaser` 4.2.1, `inkjs` 2.4.0; `vorbereiten` baut das Zusatzpaket | keine |
+| `app/package.json` | Pakete `phaser` 4.2.1, `inkjs` 2.4.0; `vorbereiten` holt die Privatgrafik (`skripte/hole-privatgrafik.mjs`, nur mit `GRAFIK_TOKEN`) und baut das Zusatzpaket | keine (ohne Schlüssel nur eine Zeile im Protokoll) |
 | `app/src/ui/bildschirme/lizenzbausteine.ts`, `docs/LIZENZEN.md` | Lizenzen von Phaser und inkjs | Lizenzseite zeigt zwei Einträge mehr |
 | `app/src/i18n/de.json`, `en.json` | Schlüssel `abenteuer.*` u. a. | keine |
 | Tests: `speicher/format.test.ts`, `spiel/buchkuerzel.test.ts`, `sw/dateiliste.test.ts`, `tests/e2e/varianten.spec.ts` | an Format 11 und den neuen Baustein angepasst | – |

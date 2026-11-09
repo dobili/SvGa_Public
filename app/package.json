@@ -9,7 +9,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "vorbereiten": "node skripte/erzeuge-typen.mjs && node skripte/kopiere-engine.mjs && node skripte/kopiere-maia-laufzeit.mjs && node skripte/kopiere-trainerdaten.mjs && node skripte/baue-abenteuerpaket.mjs",
+    "vorbereiten": "node skripte/erzeuge-typen.mjs && node skripte/kopiere-engine.mjs && node skripte/kopiere-maia-laufzeit.mjs && node skripte/kopiere-trainerdaten.mjs && node skripte/hole-privatgrafik.mjs && node skripte/baue-abenteuerpaket.mjs",
     "dev": "npm run vorbereiten && vite",
     "typen": "npm run vorbereiten && tsc --noEmit",
     "stil": "eslint . --max-warnings 0 && prettier --check .",

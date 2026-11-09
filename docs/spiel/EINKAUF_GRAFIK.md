@@ -76,10 +76,13 @@ und Figur auf der Karte gleich aus, und die Porträts bewegen die Lippen beim Sp
 
 ## 5. Danach (mache ich mit dir zusammen)
 
-- [ ] **Zugang für den GitHub-Bau** (Q20-11): Damit die Bilder auch in der veröffentlichten App
-      ankommen, braucht der Bau auf GitHub einen Lesezugang zum privaten Repository (ein „Deploy
-      Key“). Die Anleitung schreibe ich, sobald das Repository da ist; den Schlüssel trägst du selbst
-      in GitHub ein (keine Zugangsdaten in den Chat).
+- [ ] **Zugang für den Bau bei Cloudflare** (Q20-11, angepasst am 9.11.2026): Die App wird bei
+      Cloudflare gebaut, nicht bei GitHub. Deshalb statt eines Deploy Keys ein nur lesender
+      Zugangsschlüssel (GitHub „Fine-grained token“, nur für `schach-abenteuer-inhalte`, nur
+      „Contents: Read“), den du bei Cloudflare als geheime Variable `GRAFIK_TOKEN` einträgst. Das
+      Skript dafür steht schon (`app/skripte/hole-privatgrafik.mjs`); ohne Schlüssel baut alles wie
+      bisher mit Platzhaltern. Die genauen Klicks schreibe ich, sobald das Repository da ist (keine
+      Zugangsdaten in den Chat).
 
 ## Nicht nötig
 

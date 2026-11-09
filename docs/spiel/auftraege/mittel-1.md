@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Summit City, Hochebene und Weg nach Crossroads einrichten
 
-**Stand:** fertig (mittel-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der sechsundzwanzigste Auftrag, Summit City und Hochebene, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 33bbfd39)
 **Darf ändern:** `inhalte/abenteuer/karten/summit-city-*.json`, `hochebene-*.json`, `weg-summit-crossroads-*.json`,

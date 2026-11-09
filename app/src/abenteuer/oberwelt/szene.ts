@@ -88,6 +88,8 @@ interface Ausloeser {
 }
 
 const FIGUR_TYP = "figur";
+/** Höchstens so viele Kachelpixel je Bild rückt die Laufhilfe den Helden zur Kachelmitte. */
+const MITTENSCHRITT = 1;
 /** Schlüssel des Heldenbogens im Format von LimeZu. */
 const HELDFIGUR = "heldfigur";
 
@@ -248,6 +250,7 @@ export class Oberweltszene extends Phaser.Scene {
     if (richtung) {
       this.blick = richtung;
       const tempo = TEMPO * (this.daten.tempofaktor ?? 1);
+      this.rueckeZurMitte(richtung);
       if (richtung === "links") koerper.setVelocityX(-tempo);
       if (richtung === "rechts") koerper.setVelocityX(tempo);
       if (richtung === "oben") koerper.setVelocityY(-tempo);
@@ -256,6 +259,19 @@ export class Oberweltszene extends Phaser.Scene {
     this.held.setDepth(this.held.y);
     this.meldeAusloeser();
     this.meldeKachel();
+  }
+
+  /**
+   * Laufhilfe: Beim Gehen rückt der Held quer zur Richtung sanft zur Mitte seiner Kachel, damit er
+   * an Ecken von Möbeln und Wänden nicht hängen bleibt (auf dem Handy trifft man selten genau).
+   */
+  private rueckeZurMitte(richtung: Richtung): void {
+    const held = this.held;
+    if (!held) return;
+    const quer = richtung === "oben" || richtung === "unten" ? "x" : "y";
+    const mitte = Math.floor(held[quer] / KACHEL) * KACHEL + KACHEL / 2;
+    const abstand = mitte - held[quer];
+    held[quer] += Math.sign(abstand) * Math.min(Math.abs(abstand), MITTENSCHRITT);
   }
 
   /** Bild des Helden: Laufanimation in Bewegung, sonst Standbild der Blickrichtung. */

@@ -483,8 +483,8 @@ Karten werden noch nicht gebaut; diese Liste gilt für den Einbau.
 
 **`wegCedarRiverton`**
 
-- `zurueckCedar.ziel` → `{ "karte": "cedarCreek.aussen", "ausloeser": "zedernwald" }` (heute
-  `bushaltestelle`; Randübergang, `orte/riverton.md` 1.8).
+- `zurueckCedar.ziel` ist schon `{ "karte": "cedarCreek.aussen", "ausloeser": "zedernwald" }`
+  (mittel-2; Randübergang, `orte/riverton.md` 1.8).
 - Figuren neu: `wegCedarRiverton.sorensen`, `.tolliver`; Statisten „Pfadfinder“ (drei).
 - Auslöser neu: `grenzstein`, `pfeil1`, `pfeil2`, `pfeil3`, `signal`, `durchlass` (`wenn: hatLaterne`,
   sonst Dialog „Zu dunkel.“), `aussichtFluss`, `plakatPerfectMove`.
@@ -510,7 +510,7 @@ Karten werden noch nicht gebaut; diese Liste gilt für den Einbau.
 - Quests: `wegRivertonIronwood.wand`, `.farbeimer` (beide `klein: true`); Runde
   `wegRivertonIronwood.wand`.
 
-**`lockport`** (neu, `art: "nebenort"`, Nummer 0, Staffel 1; Technik, `orte/riverton.md` 3.3 Nr. 5)
+**`lockport`** (neu, Vorschlag `art: "nebenort"` mit Schemaänderung beim Kartenbau von Akt 2, Nummer 0, Staffel 1; Technik, `orte/riverton.md` 3.3 Nr. 5)
 
 - Karten: `lockport.aussen` (`karten/lockport-aussen.json`, außen, Musik vom Kanal oder neu),
   `lockport.gasthaus` (`karten/lockport-gasthaus.json`, innen).

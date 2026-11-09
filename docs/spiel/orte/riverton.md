@@ -398,24 +398,24 @@ und Szene 37 braucht nur Bett, Brett und Dosen. Der Schuppen ist bewusst klein (
 
 ### 1.8 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                              | Nach (Karte, Auslöser, Feld; Ankunft)                                                | Lage                                                                                                                                                         |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| cedarCreek.aussen `zedernwald` (Ostrand, Reihen 8–9)                     | zedernwald `zurueckCedar` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))           | Waldweg je zwei Felder, gleiche Reihen (`orte/cedar-creek.md` 1.6); nur nach `endeAkt1Gesehen`. **Ändern:** heute zielt `zurueckCedar` auf `bushaltestelle`. |
-| zedernwald `weiterBahndamm` (Ostrand, Spalte 139, Reihen 14–15)          | bahndamm `zurueckZedernwald` (Westrand, Spalte 0, Reihen 14–15; Ankunft (1, 14))     | Waldweg geht in den Feldweg über                                                                                                                             |
-| bahndamm `weiterRiverton` (Ostrand, Spalte 149, Reihen 8–9)              | riverton.aussen `bahndamm` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))          | Fußweg am Bahnzaun; Dialog `riverton-aussen.ankunft_zu_fuss` bleibt an `weiterRiverton`                                                                      |
-| riverton.aussen `bahnhofTuer` (36, 13)                                   | bahnhofshalle `bahnhofAusgang` (13, 15); Ankunft (13, 14), Blick nach oben           | Südfassade 54 % ↔ Südwand 50 %                                                                                                                               |
-| riverton.aussen `pavillonEingang` (40, 48)                               | pavillon `pavillonAusgang` (10, 13); Ankunft (10, 12)                                | Südseite ↔ Südwand Mitte                                                                                                                                     |
-| riverton.aussen `wohnwagenTuer` (6, 47)                                  | wohnwagen `wohnwagenAusgang` (7, 8); Ankunft (7, 7)                                  | Südseite ↔ Südwand Mitte; `wenn: clubkampfRivertonBesprochen` (wie heute)                                                                                    |
-| riverton.aussen `schuppenTuer` (37, 29)                                  | schuppen `schuppenAusgang` (5, 7); Ankunft (5, 6)                                    | Südfassade ↔ Südwand; `wenn: schuppenOffen` (wie heute)                                                                                                      |
-| riverton.aussen `kanalweg` (Südrand, Spalten 57–58, Reihe 55)            | kanalweg `zurueckRiverton` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))       | Treidelpfad je zwei Felder; `wenn: nadelRiverton` (wie heute), Grund in der Welt: Hochwassergatter (2.4)                                                     |
-| kanalweg `weiterBruecke` (Südrand, Spalten 17–18, Reihe 189)             | bruecke `zurueckKanalweg` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))        | Treidelpfad geht weiter                                                                                                                                      |
-| kanalweg `lockport` (neu, Westrand, Spalte 0, Reihen 98–99)              | lockport.aussen `kanalweg` (neu, Ostrand, Spalte 55, Reihen 10–11; Ankunft (54, 10)) | Uferpfad am Seitenarm je zwei Felder; offen; die Sperre S3 liegt erst am Steg in Lockport                                                                    |
-| bruecke `weiterIronwood` (Südrand, Spalten 14–15, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Reihe 0, Spalten nach mittel-4)                | Weg je zwei Felder; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt; Abstimmung mit mittel-4 (Stand unten)                                                   |
-| lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                           | Südfassade 50 % ↔ Südwand 50 %                                                                                                                               |
-| bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof`/`bushaltestelle` (nach `orte/cedar-creek.md`)            | Schnellreise Zug (W2, nach `besuchtRiverton`); mit Monatskarte frei                                                                                          |
-| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen Bushaltestelle (mittel-4)                                            | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                                                   |
-| riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen Anleger (mittel-4)         | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                                                |
-| lockport.aussen `kai` (neu, (14, 20); Dialog, Reise)                     | riverton.aussen `anlegerSchild`, ironwood.aussen Anleger                             | Lastkahn zurück                                                                                                                                              |
+| Von (Karte, Auslöser, Feld)                                              | Nach (Karte, Auslöser, Feld; Ankunft)                                                | Lage                                                                                                                                |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| cedarCreek.aussen `zedernwald` (Ostrand, Reihen 8–9)                     | zedernwald `zurueckCedar` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))           | Waldweg je zwei Felder, gleiche Reihen (`orte/cedar-creek.md` 1.6); nur nach `endeAkt1Gesehen`. In `orte.json` schon so (mittel-2). |
+| zedernwald `weiterBahndamm` (Ostrand, Spalte 139, Reihen 14–15)          | bahndamm `zurueckZedernwald` (Westrand, Spalte 0, Reihen 14–15; Ankunft (1, 14))     | Waldweg geht in den Feldweg über                                                                                                    |
+| bahndamm `weiterRiverton` (Ostrand, Spalte 149, Reihen 8–9)              | riverton.aussen `bahndamm` (Westrand, Spalte 0, Reihen 8–9; Ankunft (1, 8))          | Fußweg am Bahnzaun; Dialog `riverton-aussen.ankunft_zu_fuss` bleibt an `weiterRiverton`                                             |
+| riverton.aussen `bahnhofTuer` (36, 13)                                   | bahnhofshalle `bahnhofAusgang` (13, 15); Ankunft (13, 14), Blick nach oben           | Südfassade 54 % ↔ Südwand 50 %                                                                                                      |
+| riverton.aussen `pavillonEingang` (40, 48)                               | pavillon `pavillonAusgang` (10, 13); Ankunft (10, 12)                                | Südseite ↔ Südwand Mitte                                                                                                            |
+| riverton.aussen `wohnwagenTuer` (6, 47)                                  | wohnwagen `wohnwagenAusgang` (7, 8); Ankunft (7, 7)                                  | Südseite ↔ Südwand Mitte; `wenn: clubkampfRivertonBesprochen` (wie heute)                                                           |
+| riverton.aussen `schuppenTuer` (37, 29)                                  | schuppen `schuppenAusgang` (5, 7); Ankunft (5, 6)                                    | Südfassade ↔ Südwand; `wenn: schuppenOffen` (wie heute)                                                                             |
+| riverton.aussen `kanalweg` (Südrand, Spalten 57–58, Reihe 55)            | kanalweg `zurueckRiverton` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))       | Treidelpfad je zwei Felder; `wenn: nadelRiverton` (wie heute), Grund in der Welt: Hochwassergatter (2.4)                            |
+| kanalweg `weiterBruecke` (Südrand, Spalten 17–18, Reihe 189)             | bruecke `zurueckKanalweg` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))        | Treidelpfad geht weiter                                                                                                             |
+| kanalweg `lockport` (neu, Westrand, Spalte 0, Reihen 98–99)              | lockport.aussen `kanalweg` (neu, Ostrand, Spalte 55, Reihen 10–11; Ankunft (54, 10)) | Uferpfad am Seitenarm je zwei Felder; offen; die Sperre S3 liegt erst am Steg in Lockport                                           |
+| bruecke `weiterIronwood` (Südrand, Spalten 14–15, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Reihe 0, Spalten nach mittel-4)                | Weg je zwei Felder; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt; Abstimmung mit mittel-4 (Stand unten)                          |
+| lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                           | Südfassade 50 % ↔ Südwand 50 %                                                                                                      |
+| bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof`/`bushaltestelle` (nach `orte/cedar-creek.md`)            | Schnellreise Zug (W2, nach `besuchtRiverton`); mit Monatskarte frei                                                                 |
+| riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen Bushaltestelle (mittel-4)                                            | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
+| riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen Anleger (mittel-4)         | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                       |
+| lockport.aussen `kai` (neu, (14, 20); Dialog, Reise)                     | riverton.aussen `anlegerSchild`, ironwood.aussen Anleger                             | Lastkahn zurück                                                                                                                     |
 
 **Abstimmung mit mittel-4 (Ironwood):** Vorschlag gesendet am 9.11.2026: Weg 2 breit am Südrand der
 Brückenkarte (14–15) ↔ Nordrand von `ironwood.aussen`; Kanal kommt westlich des Weges in Ironwood an;
@@ -583,17 +583,18 @@ der Story-Bibel und die Wege.
 
 1. **Weg 3 „doppelt so lang wie Route 2“** (Bibel 10.3) widerspricht der Obergrenze 400 aus 7a.2.
    Empfehlung: Bibel anpassen („gut ein Drittel länger, mit Abhang und Abstecher“); umgesetzt in den
-   Maßen oben. Widerspruch genügt.
+   Maßen oben. **Haupt-Chat einverstanden (9.11.2026).**
 2. **`zurueckCedar`** in `orte.json` zielt auf `cedarCreek.aussen` `bushaltestelle`; richtig ist der
-   Randübergang `zedernwald` (cedar-creek.md 1.6). Beim Kartenbau ändern.
-3. **Brückenebene über dem Helden** für Dima unter der Brücke (1.3); Ausweichlösung steht dabei.
+   Randübergang `zedernwald` (cedar-creek.md 1.6). **Erledigt** von mittel-2 in `orte.json`.
+3. **Brückenebene über dem Helden** für Dima unter der Brücke (1.3); Ausweichlösung steht dabei. **Haupt-Chat einverstanden.**
 4. **Hochwassergatter**: Bedingung bleibt `nadelRiverton` (wie heute in `orte.json`), in der Welt
    erklärt: Nach dem Clubkampf hört der Regen auf, Desmond Grant öffnet das Gatter („Wasser ist runter.“).
-   Szene 40 braucht den Weg erst nach Szene 38, also nach der Nadel: Die Sperre öffnet rechtzeitig.
+   Szene 40 braucht den Weg erst nach Szene 38, also nach der Nadel: Die Sperre öffnet rechtzeitig. **Haupt-Chat einverstanden.**
 5. **Nebenort als Ort:** `lockport` braucht in `orte.json` eine neue Art, Vorschlag `art: "nebenort"`
-   (wie `weg`), Nummer 0, Staffel 1 (Technik).
+   (wie `weg`), Nummer 0, Staffel 1. **Vorschlag:** braucht eine Schemaänderung; eingebaut wird beim
+   Kartenbau von Akt 2 (Haupt-Chat, 9.11.2026).
 6. **Lastkahn-Schnellreise** braucht in Ironwood einen Anleger (mittel-4) und die Variable
-   `lastkahnFrei` (gesetzt in L3).
+   `lastkahnFrei` (gesetzt in L3). Abstimmung mit mittel-4 läuft (Nr. 7).
 7. **Übergang Weg 3 ↔ Ironwood:** Vorschlag an mittel-4 gesendet (1.8); offen ist nur die Spalte auf der
    Ironwood-Seite. Bis zur Antwort gilt: Ironwood-Nordrand, Weg zwei Felder.
 

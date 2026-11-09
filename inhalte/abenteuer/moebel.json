@@ -62,14 +62,14 @@
       "kollision": true
     },
     "kuehlschrank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_124.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_158.png",
       "breite": 16,
-      "hoehe": 32,
+      "hoehe": 48,
       "kollision": true
     },
     "herd": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_131.png",
-      "breite": 32,
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_148.png",
+      "breite": 16,
       "hoehe": 32,
       "kollision": true
     },
@@ -206,7 +206,7 @@
       "kollision": true
     },
     "kisteGrau": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_355.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/13_Conference_Hall_Singles/Conference_Hall_Singles_31.png",
       "breite": 16,
       "hoehe": 32,
       "kollision": true

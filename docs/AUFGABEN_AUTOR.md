@@ -148,6 +148,22 @@ Adresse mit „#abenteuer“ öffnen).
       Pixel-Porträt (60 Figuren, selbst erzeugt, frei verwendbar). In Erinnerungen (London) zeigt Ambrose sein junges
       Gesicht. Sag, welche Figur anders aussehen soll (Haar, Hautton, Kleidung, Brille, Bart); das ist schnell
       geändert.
+- [ ] N2628. Einmal einrichten, damit die gekaufte Grafik auch in der App bei Cloudflare ankommt (sonst siehst du dort
+      weiter die farbigen Platzhalter). Am Rechner: github.com › oben rechts dein Bild › Settings › Developer settings ›
+      Personal access tokens › Fine-grained tokens › „Generate new token“. Name „Grafik für Cloudflare“, Ablauf ein
+      Jahr, Repository access „Only select repositories“ › `schach-abenteuer-inhalte`, Permissions › Repository
+      permissions › Contents › „Read-only“, dann „Generate token“ und den Schlüssel kopieren (nicht in den Chat).
+      Dann dash.cloudflare.com › Workers & Pages › `schach-von-grund-auf` › Settings › Build › „Variables and
+      secrets“ › Add: Typ „Secret“, Name `GRAFIK_TOKEN`, Wert einfügen, speichern. Danach einen neuen Bau auslösen
+      (oder auf meinen nächsten Push warten). Prüfen: In der Beta-App im Schach-Abenteuer siehst du echte Böden,
+      Möbel und Figuren statt farbiger Kacheln. Der Schlüssel kann nur lesen und nur dieses eine Repository.
+- [ ] N2629. Schach-Abenteuer mit echter Grafik (nach N2628, Beta-App): Maple Falls mit Möbeln, Figuren laufen mit
+      Animation, im Dialog bewegt das Porträt beim Sprechen die Lippen, Fenster und Knöpfe haben Pixelrahmen in Navy
+      und Gold. Sag, was dir nicht gefällt (Figur, Möbel, Farbe der Rahmen); alles schnell änderbar. Hinweis: Die
+      dunkelste Hautfarbe der Grafik ist nur mittelbraun; ich färbe einen dunkleren Ton nach, wenn du nichts dagegen hast.
+- [ ] N2630. Schach960 (Zufallsschach) im Musikhaus in Port Delacroix bei der Bläserin Mabel (nach dem Wiederaufbau)
+      und bei Ambrose am Varianten-Tisch in Crossroads: Die Grundreihe ist gemischt; zur Rochade tippst du erst den
+      König an, dann den eigenen Turm. Die Engine spielt mit; Varianten zählen nicht für Nadeln oder Wertung.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-

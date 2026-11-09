@@ -2,7 +2,7 @@
   "karte": "crossroads.aussen",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Diner-Wagen mit Vorplatz und ein doppelt eingezäuntes Jahrmarktfeld mit Plakatwand dahinter, die große Tankstelle mit einer weiteren Zapfsäule und Plakatwand. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
+  "beschreibung": "Variante C, reich: Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit einer weiteren Zapfsäule. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -31,14 +31,14 @@
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#..............................................................#",
+    "#.........aaaaaa...............................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
@@ -112,10 +112,6 @@
     {
       "moebel": "cr7WegweiserStaedte",
       "feld": [28, 16]
-    },
-    {
-      "moebel": "ws5Werbetafel",
-      "feld": [55, 2]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -230,96 +226,6 @@
     {
       "moebel": "cc3ZaunEndeR",
       "feld": [26, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEnde",
-      "feld": [9, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [10, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [11, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [12, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [13, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [14, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [15, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [16, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [17, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [18, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [19, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [20, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [21, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [22, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [23, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [24, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [25, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [26, 5],
       "bauteil_ok": true
     },
     {
@@ -527,6 +433,10 @@
       "feld": [61, 40]
     },
     {
+      "moebel": "wg4GrasB",
+      "feld": [56, 5]
+    },
+    {
       "moebel": "wg4BlumeGelb",
       "feld": [8, 16]
     },
@@ -615,8 +525,8 @@
       "feld": [52, 28]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [28, 9]
+      "moebel": "mf4Strassenbaum",
+      "feld": [55, 30]
     },
     {
       "moebel": "mf4Strassenbaum",
@@ -661,10 +571,6 @@
     {
       "moebel": "wg4Busch",
       "feld": [53, 37]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [54, 28]
     }
   ],
   "ausloeser": [

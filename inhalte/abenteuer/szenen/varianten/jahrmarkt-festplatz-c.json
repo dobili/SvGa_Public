@@ -2,11 +2,11 @@
   "karte": "jahrmarkt.festplatz",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und das Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben dem Zuckerwattestand. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Lichterketten über dem Platz, drei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
+  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und das Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben dem Zuckerwattestand. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
-    "d": "sand",
+    "d": "erde",
     "e": "erde"
   },
   "raster": [
@@ -109,7 +109,7 @@
       "feld": [38, 10]
     },
     {
-      "moebel": "n6Zuckerwatte",
+      "moebel": "n6Suessigkeiten",
       "feld": [15, 21]
     },
     {
@@ -133,104 +133,76 @@
       "feld": [42, 3]
     },
     {
-      "moebel": "n6Lichterkette",
-      "feld": [4, 16],
-      "vorn": true
+      "moebel": "n6Flutlicht",
+      "feld": [44, 12]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [3, 15]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [8, 15]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [13, 15]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [18, 15]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [8, 16],
-      "vorn": true
+      "feld": [4, 15],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [12, 16],
-      "vorn": true
+      "feld": [9, 15],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [16, 16],
-      "vorn": true
+      "feld": [14, 15],
+      "vorn": true,
+      "versatz": [0, 1]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [26, 16]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [31, 16]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [36, 16]
+    },
+    {
+      "moebel": "n6Lichtermast",
+      "feld": [41, 16]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [20, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [24, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [28, 16],
-      "vorn": true
+      "feld": [27, 16],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
       "feld": [32, 16],
-      "vorn": true
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [36, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [40, 16],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [4, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [8, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [12, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [16, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [20, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [24, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [28, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [32, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [36, 11],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Lichterkette",
-      "feld": [40, 11],
-      "vorn": true
+      "feld": [37, 16],
+      "vorn": true,
+      "versatz": [0, 1]
     },
     {
       "moebel": "wg4Wildblumen",

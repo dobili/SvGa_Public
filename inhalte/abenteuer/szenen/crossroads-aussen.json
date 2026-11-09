@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
+  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit asphaltiertem Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Zufahrt vom Highway. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -30,14 +30,14 @@
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
-    "#.....ppppppppppppppppppppppp.kkk.ppppppppppppppppppppppp......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#..............................................................#",
+    "#.........aaaaaa...............................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
@@ -94,10 +94,6 @@
     {
       "moebel": "cr7WegweiserStaedte",
       "feld": [28, 16]
-    },
-    {
-      "moebel": "ws5Werbetafel",
-      "feld": [55, 2]
     },
     {
       "moebel": "cc3ZaunEnde",

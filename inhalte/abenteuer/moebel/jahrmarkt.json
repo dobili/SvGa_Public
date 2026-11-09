@@ -185,6 +185,16 @@
       "zustand": "neu",
       "stil": "modern"
     },
+    "n6Lichtermast": {
+      "quelle": "spiel/eigene/lichtermast.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "maske": [".", ".", "#"]
+    },
     "n6Tribuene": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
       "breite": 64,

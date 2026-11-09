@@ -1,15 +1,19 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads (Variante A, nach dem Ortsdokument): Holzwände, Dielen. In der Mitte der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern, Darlene dahinter. Rechts die Kasse mit dem Postkartenständer und Regale ihres Ladens. Links der Varianten-Tisch mit zwei Brettern und einer Kreidetafel, ein Spielautomat. Im Raum drei runde Tische, in der Ecke unten links ein kleiner Tisch, an dem Nova allein sitzt. Unten die Glastür mit Fußmatte.",
+  "beschreibung": "Darlenes Raststätte in Crossroads (Variante A): Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am Ende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
     "########################",
     "########################",
     "########################",
-    "#......................#",
-    "#......................#",
+    "#...............##.....#",
+    "#...............##.....#",
+    "#...............##.....#",
+    "###############.###.####",
+    "###############.###.####",
+    "###############.###.####",
     "#......................#",
     "#......................#",
     "#......................#",
@@ -22,28 +26,115 @@
   ],
   "objekte": [
     {
-      "moebel": "wzFenster",
-      "feld": [5, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "wzFenster",
-      "feld": [17, 1],
-      "an_wand": true
-    },
-    {
       "moebel": "mf4Fussmatte",
-      "feld": [12, 12],
+      "feld": [12, 16],
       "versatz": [0, 8]
     },
     {
       "moebel": "mf9TuerSuedGlas",
-      "feld": [12, 13],
+      "feld": [12, 17],
       "an_wand": true
     },
     {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf8KuehlschrankWeiss",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "mf5Dunstabzug",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Gastroherd",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "mf5Dunstabzug",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8Herd",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "mf5Dunstabzug",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8HerdOffen",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "mf5Grillplatte",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "mf5Fritteuse",
+      "feld": [8, 2]
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [10, 2],
+      "id": "spuel10"
+    },
+    {
+      "moebel": "mf5Spuele",
+      "feld": [10, 2],
+      "vorn": true,
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "mf9Vorrat99",
+      "feld": [12, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat102",
+      "feld": [13, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [15, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf9Durchreiche",
+      "feld": [6, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Toilette",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf5Handwaschbecken",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [19, 8],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4Pinnwand",
+      "feld": [10, 7],
+      "an_wand": true,
+      "versatz": [0, 3]
+    },
+    {
       "moebel": "cr7Theke8",
-      "feld": [8, 4],
+      "feld": [2, 10],
       "id": "theke"
     },
     {
@@ -72,208 +163,212 @@
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [9, 6],
+      "feld": [3, 12],
       "vorn": true,
       "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [11, 6],
+      "feld": [5, 12],
       "vorn": true,
       "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [13, 6],
+      "feld": [7, 12],
       "vorn": true,
       "versatz": [0, -9]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [15, 6],
+      "feld": [9, 12],
       "vorn": true,
       "versatz": [0, -9]
     },
     {
       "moebel": "mf5Kassentheke",
-      "feld": [17, 3]
+      "feld": [10, 9]
     },
     {
       "moebel": "rvZeitungsregal",
-      "feld": [19, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9Vorrat99",
-      "feld": [20, 1],
+      "feld": [16, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "mf9Vorrat100",
-      "feld": [21, 1],
+      "feld": [17, 7],
       "bauteil_ok": true
     },
     {
-      "moebel": "mf9Vorrat102",
-      "feld": [22, 1],
+      "moebel": "mf9Vorrat105",
+      "feld": [20, 7],
       "bauteil_ok": true
     },
     {
-      "moebel": "mf9Rundtisch",
-      "feld": [2, 4],
-      "id": "vt0"
+      "moebel": "mf9Vorrat99",
+      "feld": [21, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischL",
+      "feld": [15, 12],
+      "id": "vtL",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [17, 12],
+      "id": "vtM0",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [18, 12],
+      "id": "vtM1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [19, 12],
+      "id": "vtM2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischR",
+      "feld": [20, 12],
+      "id": "vtR",
+      "bauteil_ok": true
     },
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
-      "auf": "vt0"
+      "auf": "vtL"
     },
     {
-      "moebel": "mf9Rundtisch",
-      "feld": [5, 4],
-      "id": "vt1"
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
+      "moebel": "ccSchachbrettKlein",
       "feld": [0, 0],
-      "auf": "vt1"
+      "auf": "vtM1"
     },
     {
-      "moebel": "mf2Tafel",
-      "feld": [2, 1],
-      "an_wand": true,
-      "versatz": [0, 5]
+      "moebel": "ccSchachbrettKlein",
+      "feld": [0, 0],
+      "auf": "vtR"
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [15, 15],
+      "vorn": true,
+      "versatz": [0, -10]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [17, 15],
+      "vorn": true,
+      "versatz": [0, -10]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [19, 15],
+      "vorn": true,
+      "versatz": [0, -10]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [16, 11],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [18, 11],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [20, 11],
+      "versatz": [0, 6]
     },
     {
       "moebel": "ld5Rundtisch",
-      "feld": [8, 9],
+      "feld": [2, 14],
       "id": "t0"
     },
     {
       "moebel": "ld5Stuhl1",
-      "feld": [7, 9],
+      "feld": [1, 14],
       "zu": "t0"
     },
     {
       "moebel": "ld5Stuhl2",
-      "feld": [10, 9],
+      "feld": [4, 14],
       "zu": "t0"
     },
     {
       "moebel": "ld5Rundtisch",
-      "feld": [15, 9],
+      "feld": [7, 14],
       "id": "t1"
     },
     {
       "moebel": "ld5Stuhl1",
-      "feld": [14, 9],
+      "feld": [6, 14],
       "zu": "t1"
     },
     {
       "moebel": "ld5Stuhl2",
-      "feld": [17, 9],
+      "feld": [9, 14],
       "zu": "t1"
-    },
-    {
-      "moebel": "ld5Rundtisch",
-      "feld": [19, 9],
-      "id": "t2"
-    },
-    {
-      "moebel": "ld5Stuhl1",
-      "feld": [18, 9],
-      "zu": "t2"
-    },
-    {
-      "moebel": "ld5Stuhl2",
-      "feld": [21, 9],
-      "zu": "t2"
     },
     {
       "moebel": "crTisch",
-      "feld": [2, 11]
+      "feld": [21, 15]
     },
     {
       "moebel": "crStuhl",
-      "feld": [3, 11]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [22, 11]
-    },
-    {
-      "moebel": "rvGetraenkeautomat",
-      "feld": [21, 6]
-    },
-    {
-      "moebel": "ld5Rundtisch",
-      "feld": [4, 9],
-      "id": "t7"
-    },
-    {
-      "moebel": "ld5Stuhl1",
-      "feld": [3, 9],
-      "zu": "t7"
-    },
-    {
-      "moebel": "ld5Stuhl2",
-      "feld": [6, 9],
-      "zu": "t7"
+      "feld": [20, 14]
     },
     {
       "moebel": "mf8Spielautomat",
-      "feld": [22, 3]
-    },
-    {
-      "moebel": "mf4Pinnwand",
-      "feld": [14, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [7, 11]
+      "feld": [22, 9]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [12, 12],
+      "feld": [12, 16],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "raststaetteAusgang",
-      "feld": [12, 13]
+      "feld": [12, 17]
     },
     {
       "name": "variantenTisch",
-      "feld": [4, 7]
+      "feld": [17, 11]
     },
     {
       "name": "postkarten",
-      "feld": [18, 7]
+      "feld": [16, 10]
     }
   ],
   "figuren": [
     {
       "name": "darlene",
-      "feld": [11, 3]
+      "feld": [5, 9]
     },
     {
       "name": "nova",
-      "feld": [1, 11]
+      "feld": [22, 15]
     }
   ],
   "belebung": [
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [10, 8],
+      "feld": [8, 13],
       "eigenschaften": {
-        "von": "4,8",
-        "bis": "18,8",
+        "von": "2,13",
+        "bis": "14,13",
         "tun": "bringt Kaffee und Pfannkuchen",
         "wann": "tag"
       }

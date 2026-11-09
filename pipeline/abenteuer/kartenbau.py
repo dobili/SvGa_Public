@@ -17,6 +17,7 @@ from pathlib import Path
 
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.varianten import vergleiche_mit_a
 
 HAUPT = Path(__file__).resolve().parents[2]
 INHALTE = HAUPT / "inhalte" / "abenteuer"
@@ -266,6 +267,7 @@ def baue(pfad: Path) -> list[str]:
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
     befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
+    befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     ziel = INHALTE / szene["datei"]
     ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")

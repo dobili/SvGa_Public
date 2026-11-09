@@ -783,3 +783,15 @@ fertigen Karten und beim Spielen die Geschichte.
   einen Tisch; Bänke und Wartehäuschen schauen auch in Amerika zum Weg. Möbel mit grauem
   Festschatten bekommen den durchscheinenden Schatten aus LimeZus Black_Shadow-Fassung
   (`werkzeuge/schatten.py` im privaten Repository). Das Diner wird neu gedacht (mittel-3).
+- Varianten (Wunsch des Autors, 9.11.2026): Jede Karte entsteht in drei Varianten; der Autor wählt
+  auf einer Auswahlseite. Gewählt für Akt 1: Dachboden, Clubraum, Diner, Flussweg, Zedernpfad,
+  Ortskern Cedar Creek und Waschsalon in C, die übrigen sieben in A. Die früheren A liegen als
+  `szenen/varianten/<datei>-a.json`.
+- Rückmeldung zu den Varianten (Bericht `pruefberichte/2026-11-09_varianten_autor.md`, Regeln 10.8):
+  Das rot-weiße Schildchen im Park (Sperre des morschen Stegs, S5) wird ein Absperrbock mit
+  „GESPERRT“; der Wasserfall an der Birch Lane fällt weg, solange es keine Felswand gibt; Südtüren
+  werden eigene niedrige Türen; das Gleis in Cedar Creek endet an einem Prellbock. Fehlende Teile
+  (Brücken, Luke, Prellbock, Schilder) zeichnet der Haupt-Chat aus LimeZus Texturen und Farben
+  (`werkzeuge/bruecken.py`, `werkzeuge/schilder.py`); fremde Pakete passen im Stil nicht.
+- Nacht 9./10.11.2026 (Freigabe des Autors): Nacharbeit Akt 1 und alle Karten von Akt 2 in drei
+  Varianten (Auftrag `auftraege/runde5_karten.md`), Revision am Morgen.

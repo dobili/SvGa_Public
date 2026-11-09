@@ -6,7 +6,9 @@
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
-    "e": "erde"
+    "e": "erde",
+    "s": "asphalt",
+    "p": "pflaster"
   },
   "bruecken": ["h"],
   "zustand": ["neu", "gebraucht", "alt"],
@@ -34,13 +36,13 @@
     "#......................................................................................................................#",
     "#..................eeeeeeeeeeeeeeeeee..................................................................................#",
     "#................eeeeeeeeeeeeeeeeeeeeee................................................................................#",
-    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee....................#",
-    "eeeeeeeeeeeeeeeeee....................eeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeee..........................eeeeee.....................eeeeeeeee.....................eeeeeeeeeeeeeeeeeeeeee",
-    "#..........................................eeeee..................eeeeee................................ee.............#",
-    "#.............................................eeeeeeeeeeeeeeeeeeeeeee...................................ee.............#",
+    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee...........pppppppppp",
+    "eeeeeeeeeeeeeeeeee....................eeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessssssssss",
+    "eeeeeeeeeeeeeee..........................eeeeee.....................eeeeeeeee.....................eeeeeeeeeeeessssssssss",
+    "#..........................................eeeee..................eeeeee................................ee..eessssssssss",
+    "#.............................................eeeeeeeeeeeeeeeeeeeeeee...................................ee.....ppppppppp",
     "#.............................~~~~~............eeeeeeeeeeeeeeeeeeee...................................~~~~~~...........#",
-    "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~~~......~~~~",
+    "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~...........#",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~..~~~~~~",
     "~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -280,7 +282,7 @@
     },
     {
       "moebel": "wg4Schild",
-      "feld": [112, 17]
+      "feld": [112, 19]
     },
     {
       "moebel": "wg4GrasB",
@@ -460,19 +462,27 @@
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [116, 18]
+      "feld": [64, 15]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [117, 18]
+      "feld": [65, 15]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [64, 16]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [57, 17]
+      "feld": [107, 9]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [58, 17]
+      "feld": [108, 9]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [107, 10]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -625,10 +635,6 @@
     {
       "moebel": "wg4Stein",
       "feld": [117, 13]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [116, 14]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -911,32 +917,36 @@
       "feld": [71, 20]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [110, 17]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [111, 17]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [110, 18]
-    },
-    {
-      "moebel": "wg4PilzeB",
-      "feld": [16, 10]
-    },
-    {
-      "moebel": "wg4PilzeB",
-      "feld": [16, 11]
+      "moebel": "wg4SteinB",
+      "feld": [22, 20]
     },
     {
       "moebel": "wg4SteinB",
-      "feld": [63, 15]
+      "feld": [23, 20]
     },
     {
       "moebel": "wg4SteinB",
-      "feld": [64, 15]
+      "feld": [22, 21]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [82, 19]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [117, 12]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [118, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [115, 20]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [116, 20]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -1053,6 +1063,10 @@
     {
       "moebel": "wg4Stein",
       "feld": [109, 18]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [110, 18]
     },
     {
       "moebel": "wg4Stein",
@@ -1193,14 +1207,6 @@
     {
       "moebel": "wg4Stein",
       "feld": [72, 13]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [109, 13]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [21, 18]
     }
   ],
   "ausloeser": [
@@ -1221,11 +1227,23 @@
     },
     {
       "name": "weiterCedar",
+      "feld": [119, 14]
+    },
+    {
+      "name": "weiterCedar",
       "feld": [119, 15]
     },
     {
       "name": "weiterCedar",
       "feld": [119, 16]
+    },
+    {
+      "name": "weiterCedar",
+      "feld": [119, 17]
+    },
+    {
+      "name": "weiterCedar",
+      "feld": [119, 18]
     },
     {
       "name": "fundMuenzen",
@@ -1238,7 +1256,7 @@
     },
     {
       "name": "schildCedar",
-      "feld": [112, 18],
+      "feld": [112, 20],
       "auf_moebel": true
     }
   ],

@@ -1411,7 +1411,12 @@
         },
         {
           "name": "steinbruch",
-          "art": "uebergang"
+          "karte": "ironwood.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "steinbruch.grube",
+            "ausloeser": "zurueckIronwood"
+          }
         },
         {
           "name": "eisenwarenfenster",
@@ -1480,6 +1485,61 @@
           "themen": ["fesselung", "spiess"]
         }
       }
+    },
+    {
+      "kennung": "steinbruch",
+      "name": "ort.steinbruch.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "steinbruch.grube",
+          "datei": "karten/steinbruch-grube.json",
+          "name": "ort.steinbruch.grube",
+          "innen": false
+        },
+        {
+          "kennung": "steinbruch.stollen",
+          "datei": "karten/steinbruch-stollen.json",
+          "name": "ort.steinbruch.stollen",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckIronwood",
+          "karte": "steinbruch.grube",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "ausloeser": "steinbruch"
+          }
+        },
+        {
+          "name": "stollen",
+          "karte": "steinbruch.grube",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "steinbruch.stollen",
+            "ausloeser": "stollenAusgang"
+          }
+        },
+        {
+          "name": "stollenAusgang",
+          "karte": "steinbruch.stollen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "steinbruch.grube",
+            "ausloeser": "stollen"
+          }
+        }
+      ]
     },
     {
       "kennung": "erinnerungLondon",
@@ -2173,7 +2233,7 @@
         {
           "name": "wuestenzug",
           "karte": "portDelacroix.aussen",
-          "art": "uebergang",
+          "art": "dialog",
           "dialog": "port-delacroix-aussen.wuestenzug",
           "wenn": "nadelPortDelacroix",
           "ziel": {

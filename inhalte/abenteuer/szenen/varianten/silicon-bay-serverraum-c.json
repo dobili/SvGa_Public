@@ -1,0 +1,95 @@
+{
+  "karte": "siliconBay.serverraum",
+  "datei": "karten/varianten/silicon-bay-serverraum-c.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "beschreibung": "Variante C (reicher): An der Nordwand Serverschränke links und rechts eines Überwachungsbildschirms, davor zwei einzelne Schränke mit Gängen dazwischen. Klimagerät in der Nordostecke, der Metallschrank mit den Schummelgeräten an der Ostwand, in der Südwestecke ein Messplatz.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "japanisch"],
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5ServerB",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "sb5ServerB",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "sb5Bildschirm",
+      "feld": [5, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5ServerC",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "sb5ServerC",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "sb5Metallschrank",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Klima",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "sb5Messplatz",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5GlastuerSued",
+      "feld": [7, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "serverraumAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schummelgeraete",
+      "feld": [11, 7],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "variante": "c"
+}

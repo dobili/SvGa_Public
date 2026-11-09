@@ -141,5 +141,101 @@
     "ganz": true,
     "sicher": 0.85,
     "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_105.png": {
+    "beschreibung": "Dunkelgrauer Geräteschrank aus Metall mit Lüftungsschlitzen, Anzeige und Tasten rechts, von vorn, 2×3 Kacheln; passt als Serverschrank.",
+    "art": "geraet",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_111.png": {
+    "beschreibung": "Hellgrauer Geräteschrank wie Nr. 105, hellere Front, von vorn, 2×3 Kacheln; passt als Serverschrank.",
+    "art": "geraet",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_192.png": {
+    "beschreibung": "Hoher Metallschrank mit zwei Türen und Glasaufsatz oben, grau, von vorn, 2×3 Kacheln.",
+    "art": "schrank",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_315.png": {
+    "beschreibung": "Arbeitsplatz: weißer Tisch mit Tastatur und Gerät, darüber zwei Bildschirme mit blauem Bild, von vorn, 2×3 Kacheln.",
+    "art": "schreibtisch",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_2.png": {
+    "beschreibung": "Breiter Kassen- oder Empfangstresen mit grauem Dach, Glasfront, Holzsockel und Tür rechts, von vorn, 6×4 Kacheln.",
+    "art": "theke",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_137.png": {
+    "beschreibung": "Glasvitrine auf Holzsockel mit Ausstellungsstücken (Werkzeug, Figur), von vorn, 2×3 Kacheln.",
+    "art": "vitrine",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_140.png": {
+    "beschreibung": "Breite Glasvitrine auf Holzsockel mit Ausstellungsstücken, von vorn, 2×3 Kacheln.",
+    "art": "vitrine",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "unten",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_197.png": {
+    "beschreibung": "Zimmerpflanze mit großen grünen Blättern im Terrakottatopf, 2×3 Kacheln.",
+    "art": "pflanze",
+    "innen_aussen": "innen",
+    "zustand": "neu",
+    "stil": ["modern"],
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "niedrig-1"
   }
 }

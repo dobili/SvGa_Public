@@ -133,5 +133,21 @@
     "innen_aussen": "innen",
     "sicher": 0.85,
     "korrektur": "mittel-1"
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png": {
+    "beschreibung": "Bastel-Werkbank aus Holz mit Regalaufsatz, darauf Farbdose, Rahmen, Hammer, Buch, Stifte und Leim, von vorn.",
+    "art": "tisch",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png": {
+    "beschreibung": "Orangefarbener Werkzeugschrank aus Metall mit offenem Fach voller Schraubenschlüssel und Zangen, auf Füßen, von vorn.",
+    "art": "schrank",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
   }
 }

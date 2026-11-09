@@ -306,6 +306,16 @@ zum **Westrand**. Die Landschaft wechselt von Industrie (Norden, nahe Riverton) 
 Kanal reicht bis zum Nord- und Südrand, der Seitenarm bis zum Westrand. Offen sind Nordrand (17–18),
 Südrand (17–18) und Westrand (Pfad nach Lockport, Reihen 97–98). **Abzweige:** drei, jedes mit Ziel.
 
+**Gebaut (Runde 5, mittel-3):** drei Varianten mit gleicher fester Geometrie (Kanal, Pfad, Kurven,
+Seitenarm mit Treidelbrücke 11–12 / 101–103, Pfad nach Lockport 0–10 / 97–98, Fabrikhof 2–13 / 37–42 mit
+Zaun in Reihe 43, Werkstraße 8–16 / 50–51, Wegweiser (9, 95), Rastanleger 19 / 155–156). Auslöser:
+`zurueckRiverton` (17–18, 0), `weiterBruecke` (17–18, 189), `lockport` (0, 97–98), `tafel` (15, 50) an der
+Rätseltafel (14, 47) neben dem Haltestellenschild, `fundZahnrad` (12, 42) am Hofzaun, Start (17, 1);
+Mr. Dale (10, 128). Die neuen Auslöser `meilenstein`, `rastKanal`, `fundKonservendose` kommen mit den
+Dialogen in Runde 6; Schild, Rastbank und Anleger stehen schon. A nach dem Dokument; B karger im Herbst
+(eine Halle, Container, breiter Ziegelturm, nur Kürbisse, gelbe Pappeln); C reicher (zwei Graffiti-Mauern,
+zwei Ziegeltürme, Hühnerstall, Pappeln auf beiden Ufern).
+
 ### 1.5 Eisenbrücke und Abhang (`wegRivertonIronwood.bruecke`, 30 × 160)
 
 Der Pfad kommt am **Nordrand bei den Spalten 17–18** an, noch am Westufer des Kanals (Kanal Spalten
@@ -363,9 +373,15 @@ hinausführt. Der Pfad vom Kanalweg kommt am **Ostrand in den Reihen 10–11** a
 | Schleuse (S3)              | Kammer 30–37 / 14–16, Steg auf dem Untertor (30, 12–18) zwischen Nordufer und Kai | Holztore mit Balken, Kurbeln                      | –                                                | Weg (S3) |
 | Kai                        | 2–40 / 20–21, Poller alle 6 Kacheln, Lastkahn 8–20 / 17–19 im Becken              | –                                                 | –                                                | Platz    |
 | Bootsschuppen (Kulisse)    | 2–9 / 22–26                                                                       | Holz, Slipanlage                                  | –                                                | nein     |
-| Gasthaus „Zur Schleuse“    | 18–27 / 22–28, Tür (22, 28) in der Südfassade zum Dorfplatz; Terrasse zum Kai     | 10 breit, Fachwerk, Wirtshausschild, Kegel-Emblem | `gasthaus` 20 × 13, Tür Südwand Spalte 10 (50 %) | ja       |
+| Gasthaus „Zur Schleuse“    | 14–23 / 23–31, Tür (21, 31) in der Südfassade zum Dorfplatz; Terrasse zum Kai     | 10 breit, Fachwerk, Wirtshausschild, Kegel-Emblem | `gasthaus` 20 × 13, Tür Südwand Spalte 14 (70 %) | ja       |
 | Vier Häuser Süd            | 11–16 / 22–27, 30–36 / 22–27, 38–44 / 22–27, 46–52 / 28–33                        | je 6–7, Türen zum Dorfplatz oder zum Kai          | –                                                | nein     |
 | Dorfplatz                  | 14–34 / 29–34, Linde (24, 31), Schwengelpumpe (30, 30), Bank unter der Linde      | –                                                 | –                                                | Platz    |
+
+**Gebaut (Runde 5, mittel-3):** drei Varianten mit gleicher fester Geometrie: Uferstraße Reihen 10–11
+(Spalten 3–55), Kammer 30–37 / 14–16, Steg 32–33 / 14–16, Kai 1–40 / 20–21, Dorfplatz 2–38 / 32–35,
+Gasthaus 14–23 / 23–31 (Tür (21, 31), Auslöser `gasthausTuer` (21, 32)), Wärterhaus (38, 0),
+Tafel (34, 8), Ankunft (54, 10). A: großes Becken 2–29 / 13–19, drei Häuser im Norden; B: kleineres
+Becken 6–29 / 14–19, weniger Häuser, Platz ohne Baum; C: Beete, drei Wäscheleinen, drei Boote.
 
 **Abschnitte** (je 14 × 20; Reihe 1 = Nordufer, Reihe 2 = Kai und Dorf):
 
@@ -415,7 +431,7 @@ und Szene 37 braucht nur Bett, Brett und Dosen. Der Schuppen ist bewusst klein (
 | kanalweg `weiterBruecke` (Südrand, Spalten 17–18, Reihe 189)             | bruecke `zurueckKanalweg` (Nordrand, Spalten 17–18, Reihe 0; Ankunft (17, 1))             | Treidelpfad geht weiter                                                                                                             |
 | kanalweg `lockport` (neu, Westrand, Spalte 0, Reihen 97–98)              | lockport.aussen `kanalweg` (neu, Ostrand, Spalte 55, Reihen 10–11; Ankunft (54, 10))      | Uferpfad am Seitenarm je zwei Felder; offen; die Sperre S3 liegt erst am Steg in Lockport                                           |
 | bruecke `weiterIronwood` (Südrand, Spalten 24–25, Reihe 159)             | ironwood.aussen `kanalweg` (Nordrand, Spalten 24–25, Reihe 0, Treppe; Ankunft (24, 1))    | Weg je zwei Felder, gleiche Spalten; Kanal auf beiden Seiten Spalten 4–9; Dialog `ironwood-aussen.ankunft_zu_fuss` bleibt           |
-| lockport.aussen `gasthausTuer` (neu, 22, 28)                             | gasthaus `gasthausAusgang` (neu, 10, 12); Ankunft (10, 11)                                | Südfassade 50 % ↔ Südwand 50 %                                                                                                      |
+| lockport.aussen `gasthausTuer` (neu, 21, 32)                             | gasthaus `gasthausAusgang` (neu, 14, 12); Ankunft (14, 11)                                | Südfassade 70 % ↔ Südwand 70 %                                                                                                      |
 | bahnhofshalle `zugCedar` (Bahnsteigtür, Nordwand (19, 2); Dialog, Reise) | cedarCreek.aussen `bahnhof` (neuer Haltepunkt am Nordrand, baut der Haupt-Chat; Befund 8) | Schnellreise Zug (W2, nach `besuchtRiverton`), 10 Münzen, frei nach der Nadel von Riverton (Bibel 10.1); mit Monatskarte frei       |
 | riverton.aussen `busIronwood` (neu, Schild (49, 18); Dialog, Reise)      | ironwood.aussen `busRiverton` (12, 32), Ankunft (14, 32)                                  | Schnellreise Bus, nach `besuchtIronwood` (W2), 10 Münzen, nach der Nadel von Ironwood frei                                          |
 | riverton.aussen `anlegerSchild` (neu, (56, 43); Dialog, Reise)           | lockport.aussen `kai` (neu, (14, 20)) und ironwood.aussen `anleger` (12, 22)              | Lastkahn, erst nach „Post für den Kapitän“ (14, L3), 5 Münzen                                                                       |
@@ -825,17 +841,17 @@ bis zum Ostrand.
 | C1        | Tafel S3 (33, 11) `tafelSchleuse`; Steg auf dem Untertor (30, 12–18) als Objekt mit Bedingung `lockportSteg`; Kurbeln auf der Kammermauer (31, 13), (36, 13) |
 | D1        | Schleusenwärterhaus (38, 4) mit Glocke (41, 4) `glocke`; Imogen (42, 10); Seitenarm 38–55 / 14–16 mit Schilf                                                 |
 | A2        | Bootsschuppen (2, 22) mit Slipanlage; Henriks Ruderboot (6, 19) an vier Tauen (`henriksBoot`)                                                                |
-| B2        | Lastkahn 8–20 / 17–19 („Ashford Belle“, Plane bis L3); Kapitän Ruben (14, 20) `kai`; Kreidetafel am Kai (11, 20) für L1; Gasthaus (18, 22) mit Tür (22, 28)  |
+| B2        | Lastkahn 8–20 / 17–19 („Ashford Belle“, Plane bis L3); Kapitän Ruben (14, 20) `kai`; Kreidetafel am Kai (11, 20) für L1; Gasthaus (14, 23) mit Tür (21, 31)  |
 | C2        | Dorfplatz: Linde (24, 31), Bank (23, 33), Pumpe (30, 30) `pumpe`; Häuser (30, 22)                                                                            |
 | D2        | Häuser (38, 22), (46, 28) mit Kürbissen vor den Türen; Gänse                                                                                                 |
 
 ### 4.11 Gasthaus „Zur Schleuse“ (`lockport.gasthaus`)
 
 **Größe:** 20 × 13 (öffentlicher Raum). Nordwand Reihen 0–2 Fachwerk (helle Gefache, dunkle Balken),
-Boden Holzdielen, Südwand Reihe 12 mit der Tür bei Spalte 10 (50 %). **Stimmung:** Kegel poltern,
+Boden Holzdielen, Südwand Reihe 12 mit der Tür bei Spalte 14 (70 %, passend zur Fassade). **Stimmung:** Kegel poltern,
 Bratkartoffeln, Lachen.
 
-**Laufwege:** Tür (10, 12) → Start (10, 11) → nach oben zur Kegelbahn; rechts zum Tresen mit Henrik;
+**Laufwege:** Tür (14, 12) → Start (14, 11) → nach oben zur Kegelbahn; rechts zum Tresen mit Henrik;
 links zu den Tischen.
 
 | Zone      | Gegenstand                                 | Feld                   | Ausrichtung       | Material, Stil, Zustand | Zweck                                           |

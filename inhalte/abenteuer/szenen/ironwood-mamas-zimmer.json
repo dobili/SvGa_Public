@@ -1,0 +1,166 @@
+{
+  "karte": "ironwood.mamasZimmer",
+  "datei": "karten/ironwood-mamas-zimmer.json",
+  "art": "innen",
+  "beschreibung": "Oma Ruths Haus in der Elm Street, 18 × 12 Kacheln. Links die Wohnküche: Kühlschrank, Herd und Arbeitsplatte mit Spüle an der Nordwand, ein Fenster, der Küchentisch mit zwei Stühlen, ein Kohleofen an der Innenwand, ein Sessel, eine Pflanze und ein Kleiderschrank als Garderobe neben der Haustür. Durch eine offene Tür in der Innenwand geht es nach rechts in Mamas altes Zimmer: Bild und Fenster an der Wand, ein Bild im Rahmen an der Innenwand, das Bett mit grauer Decke, ein Schreibtisch mit Lampe und Stuhl, eine Kommode mit Teddy, eine Pflanze. Kein Schachbrett ist zu sehen.",
+  "wand": "creme",
+  "boden": "dielen",
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "#................#",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "########.#########",
+    "##################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [8, 10],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "wzHerd",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [3, 2],
+      "id": "platte"
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [3, 5],
+      "id": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [2, 5],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [5, 5],
+      "zu": "kuechentisch"
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [8, 3]
+    },
+    {
+      "moebel": "mf7SesselAlt",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [4, 9]
+    },
+    {
+      "moebel": "mf2Kleiderschrank",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "mf2BildWald",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iwBild",
+      "feld": [11, 3],
+      "id": "rahmen2001"
+    },
+    {
+      "moebel": "iw5BettGrau",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [14, 7],
+      "id": "schreibtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [14, 6],
+      "zu": "schreibtisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [0, 0],
+      "auf": "schreibtisch",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "mf4Kommode",
+      "feld": [11, 8],
+      "id": "kommode"
+    },
+    {
+      "moebel": "mf7Teddy",
+      "feld": [0, 0],
+      "auf": "kommode"
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [16, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "zimmerAusgang",
+      "feld": [8, 11]
+    },
+    {
+      "name": "medaille",
+      "feld": [16, 7]
+    },
+    {
+      "name": "partieformular2001",
+      "feld": [12, 4]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "omaRuth",
+      "feld": [5, 8]
+    },
+    {
+      "name": "mama",
+      "feld": [13, 9]
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"]
+}

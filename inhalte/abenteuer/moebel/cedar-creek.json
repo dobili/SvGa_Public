@@ -1404,6 +1404,93 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc6TuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc8TuerSuedGlas": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc8TuerSuedHolz": {
+      "quelle": "spiel/eigene/tuer_sued_holz.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc8Prellbock": {
+      "quelle": "spiel/eigene/prellbock.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "cc8HeckeSenkrecht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_16.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cc6RegalSeiteHell": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6RegalSeiteDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_73.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc6RegalSeiteGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_66.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "cc8Saegebock": {
+      "quelle": "spiel/eigene/saegebock.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

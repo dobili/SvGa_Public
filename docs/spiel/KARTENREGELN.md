@@ -538,7 +538,12 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
    Steinbrüstung), `bruecke_strasse_gehweg_quer_L` und `_laengs_L` (mit Gehweg auf beiden Seiten, 5 Kacheln
    breit; Straßen mit Gehwegen nehmen diese, damit die Gehwege nicht am Wasser enden), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
-   Camping-Teilen (`Pier_*`).
+   Camping-Teilen (`Pier_*`). Schleusen bekommen Tore statt Brücken: `schleusentor_laengs_L` und
+   `_quer_L` (Stemmtor mit Laufsteg, begehbar wie eine Brücke), dazu `schleuse_balken` am Ufer
+   (`werkzeuge/schleuse.py`). Kai, Schleusenkammer, Wasserloch im Steinbruch und Becken in der
+   Stadt haben kein Grasufer, sondern eine Steinkante: in der Szene `"ufer": "stein"`
+   (`werkzeuge/wasser_stein.py`, Boden `wasser_stein`); es gilt dann für alles Wasser der Karte.
+   Pfützen im Stollen sind Möbel (`pfuetze_fels_klein`, `_gross`), kein Wasser.
 
 ### 10.2 Türen und Durchgänge
 
@@ -648,7 +653,13 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
     Kleinkram, Häuser und Gärten ohne Rolle in der Geschichte (anderes Hausmodell, andere Farbe).
     Ein anderer Teppich oder eine andere Lampe allein macht noch keine Variante: Der Autor soll auf den
-    ersten Blick drei verschiedene Räume sehen. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    ersten Blick drei verschiedene Räume sehen. Ebenso wenig genügt Spiegeln oder Umstellen derselben
+    Möbel. Der Kartenbauer meldet es (`varianten.py`, seit der Nacht 9./10.11.2026), wenn die Hälfte
+    der Möbel von B oder C auf denselben Feldern steht wie in A, oder wenn neun Zehntel dieselben
+    Möbel sind und Boden und Wand gleich bleiben. Draußen heißt das: andere Häuser und Gebäudemodelle,
+    andere Plätze (Park statt Parkplatz, Markt statt Wiese), andere Beläge; drinnen: anderer Boden
+    oder andere Wand, andere Möbelserie, andere Raumaufteilung. Jede Variante besteht alle Prüfungen
+    für sich. Ablage: Variante A ist die Szene in
     `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
     README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
     zum Nachschlagen.
@@ -682,3 +693,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     endet sie in der Karte, dann mit Gehweg rundherum oder einem Übergang auf einen Weg.
 48. **Zeichen der Geschichte sind lesbar.** Sperren und Hinweise, die der Spieler verstehen muss,
     tragen Schrift oder ein eindeutiges Bild (eigene Schilder über `werkzeuge/schilder.py`).
+49. **Höhen sind zu sehen.** Was im Ort höher liegt (Bahndamm, Deich, Bruchkante, Böschung),
+    bekommt eine sichtbare Stufe: `#`-Reihen über einem Boden mit `"wand": "damm"` (Grashang mit
+    Erde und Steinen am Fuß, `werkzeuge/damm.py`) oder `"wand": "fels"` (Felswand). Beide gehen
+    draußen zusammen mit `wandart`: Der Rand zeigt dann den Boden dahinter, nur `#` über einem
+    Boden wird Hang. Ein Gleis „auf dem Damm“ flach auf der Wiese reicht nicht (Bahndamm, Nacht
+    9./10.11.2026).

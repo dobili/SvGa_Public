@@ -1,0 +1,263 @@
+{
+  "karte": "siliconBay.hafen",
+  "datei": "karten/varianten/silicon-bay-hafen-b.json",
+  "art": "aussen",
+  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser an der Kaimauer: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei, daneben der gläserne Perfect Move Store. Davor läuft eine Promenade aus Holzbohlen von West nach Ost, darunter der gepflasterte Kai mit Bänken zum Wasser, Pollern und Laternen. Im Westen das Fährterminal der Küstenfähre mit dem Boot im Wasser, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Variante B, die schlichtere: schmale Promenade, ein Store, wenig Kleinkram, nur zwei Laternen.",
+  "boden": "pflaster",
+  "wandart": "stein",
+  "boeden": {
+    "p": "pflaster",
+    "h": "holzHell",
+    "b": "holzDunkel"
+  },
+  "bruecken": ["b"],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "raster": [
+    "################################pppp############################",
+    "################################pppp############################",
+    "################################pppp############################",
+    "################################pppp############################",
+    "################################pppp############################",
+    "################################pppp############################",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#...............................pppp...........................#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#..............................................................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Faehrterminal",
+      "feld": [1, 17]
+    },
+    {
+      "moebel": "sb5Fischerboot",
+      "feld": [2, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5BootUfer",
+      "feld": [56, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 32]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 33]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 34]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [52, 35]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [53, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [53, 32]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [53, 33]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [53, 34]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [53, 35]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [54, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [54, 32]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [54, 33]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [54, 34]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [54, 35]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 31]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 32]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 33]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 34]
+    },
+    {
+      "moebel": "sb5StegPlanke",
+      "feld": [55, 35]
+    },
+    {
+      "moebel": "cc5StegPfaehle",
+      "feld": [52, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5StegPfaehle",
+      "feld": [54, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb5Fischhalle",
+      "feld": [2, 0]
+    },
+    {
+      "moebel": "sb5Hafenmeisterei",
+      "feld": [17, 6]
+    },
+    {
+      "moebel": "sb5Kurzwaren",
+      "feld": [25, 8]
+    },
+    {
+      "moebel": "sb5Store",
+      "feld": [41, 5]
+    },
+    {
+      "moebel": "sb5Faehrhaus",
+      "feld": [57, 16]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [20, 27]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [22, 21]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [44, 21]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [30, 29]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [33, 2],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "campus",
+      "feld": [32, 0]
+    },
+    {
+      "name": "campus",
+      "feld": [33, 0]
+    },
+    {
+      "name": "campus",
+      "feld": [34, 0]
+    },
+    {
+      "name": "campus",
+      "feld": [35, 0]
+    },
+    {
+      "name": "faehre",
+      "feld": [4, 29]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "ames",
+      "typ": "statist",
+      "feld": [28, 16],
+      "eigenschaften": {
+        "von": "28,16",
+        "bis": "28,16",
+        "tun": "sitzt auf einer Kiste vor seinem Laden",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "finch",
+      "typ": "statist",
+      "feld": [58, 21],
+      "eigenschaften": {
+        "von": "58,21",
+        "bis": "58,21",
+        "tun": "wartet am Fährhäuschen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "moewe",
+      "typ": "tier",
+      "feld": [30, 34],
+      "eigenschaften": {
+        "von": "26,34",
+        "bis": "36,34",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "variante": "b"
+}

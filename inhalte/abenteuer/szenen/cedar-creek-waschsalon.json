@@ -16,8 +16,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######",
-    "##############"
+    "#######.######"
   ],
   "objekte": [
     {
@@ -118,14 +117,14 @@
       "feld": [12, 8]
     },
     {
-      "moebel": "cc5TuerModern",
+      "moebel": "cc8TuerSuedGlas",
       "feld": [7, 10],
       "an_wand": true
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [7, 9],
-      "versatz": [0, 16]
+      "versatz": [0, 8]
     }
   ],
   "ausloeser": [

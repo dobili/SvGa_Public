@@ -164,5 +164,13 @@
     "sicher": 0.8,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/3_Bathroom_Singles/Bathroom_Singles_156.png": {
+    "beschreibung": "Flache graue Duschwanne aus Metall von oben schräg gesehen, mit Rand und rundem Abfluss in der Mitte; passt als Boden einer Dusche.",
+    "art": "dusche",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

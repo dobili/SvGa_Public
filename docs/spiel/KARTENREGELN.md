@@ -17,7 +17,9 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
    anderen Funktion gehören nicht hinein (keine Küchenzeile im Wohnzimmer, außer das Ortsprofil sagt
    „Einzimmerwohnung“). **[auto]** über `raumfunktion` im Katalog.
 2. Jede Öffnung in einer Wand ist entweder eine Tür (Bild) oder ein bewusster Durchgang (Bogen,
-   Türrahmen); keine nackten Lücken. Ausgangstüren liegen auf der Wand, durch die man den Raum verlässt.
+   Türrahmen); keine nackten Lücken. Innerhalb einer Wohnung sind offene Durchgänge ohne Türbild
+   erlaubt, wenn die Wand daneben sauber endet (Abschnitt 8); Außentüren und Türen zu fremden
+   Räumen sind immer Türbilder. Ausgangstüren liegen auf der Wand, durch die man den Raum verlässt.
 3. Nichts steht in einer Wand: Möbel stehen mit dem Fuß auf Boden vor der Wand. **[auto]**
 4. Treppen führen in die richtige Richtung: vom Dachboden nach unten, vom Erdgeschoss nach oben;
    der Antritt ist frei. **[auto]** über `treppe` (auf/ab) im Katalog.
@@ -34,6 +36,8 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
 4. Blickfänge (Globus, Pokal, Ritterrüstung) sparsam und nur, wo sie hingehören; nicht jedes Bild
    überall. **[auto]** über `einzigartig` im Katalog: höchstens einmal je Ort.
 5. Lieber weniger, dafür stimmig; aber nicht karg: bewohnte Räume haben Kleinkram und Spuren von Leben.
+   Kleinkram steht auf Ablagen; am Boden nur, was dort hingehört (Schuhe, Skateboard, Hanteln,
+   Kartons beim Umzug).
 
 ## 4. Beziehungen und Ausrichtung
 
@@ -54,8 +58,10 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
 
 1. Straßen und Wege laufen bis zum Kartenrand oder zu einem Ziel (Tür, Platz, Kreuzung), nie ins Leere.
    **[auto]**
-2. Gehwege liegen beidseitig an Straßen oder dort, wo man läuft, mit Kanten auf beiden Seiten.
-3. Jedes Haus hat einen Weg von der Tür zur Straße oder zum Gehweg; Wohnhäuser haben Vorgarten und
+2. In Städten liegen Gehwege beidseitig an Straßen, mit Bordstein auf beiden Seiten. In Dörfern,
+   auf Höfen und über Land gibt es weiche Erdwege ohne Gehweg (Abschnitt 9).
+3. Jedes Haus hat einen Weg von der Tür zur Straße oder zum Gehweg (Wohnblocks und Läden an einem
+   Platz öffnen direkt auf den Platz); Wohnhäuser haben Vorgarten und
    Zaun oder Hecke um das Grundstück, je nach Ortsprofil. Häuser stehen an der Straße.
 4. Nachbarschaft nach Ortsprofil: Wohnhäuser neben Wohnhäusern; Industrie oder Gewerbe nur, wo die
    Geschichte es sagt. Villa mit großem Garten.
@@ -64,7 +70,8 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
 6. Hindernisse auf Wegen nur, wenn die Geschichte es will (Baumstümpfe stehen neben, nicht auf dem Weg).
 7. Straßenmöbel: Laternen direkt an Weg oder Straße; Bänke am Weg, zum Weg gewandt (oder vom Weg weg
    zu einer Aussicht, dann direkt am Weg und mit etwas zu sehen); Bushaltestelle zur Straße;
-   Blumenkästen parallel zum Weg und nie auf dem Gehweg; Mülleimer und Kästen nur mit erkennbarem
+   Blumenkästen parallel zum Weg, am Zaun oder an der Fassade, nie quer im Gehweg (der Gehweg
+   bleibt mindestens 2 Kacheln frei; Wunsch des Autors geht Abschnitt 9 vor); Mülleimer und Kästen nur mit erkennbarem
    Zweck (Stromkasten an der Ecke, Mülltonne am Haus).
 8. Schilder: Wegweiser mit mehreren Richtungen nur an Kreuzungen; Schilder tragen erkennbaren,
    passenden Inhalt (keine Autobahntafel „SALE“ in der Kleinstadt); Text zum Betrachter oder zum Weg.

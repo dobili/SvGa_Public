@@ -51,7 +51,7 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [11, 5]
+      "feld": [3, 5]
     },
     {
       "moebel": "cc4Rundholz",
@@ -63,7 +63,7 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [6, 4]
+      "feld": [11, 4]
     },
     {
       "moebel": "cc4KisteLeer",
@@ -92,10 +92,10 @@
     {
       "name": "dunmore",
       "typ": "statist",
-      "feld": [3, 6],
+      "feld": [2, 5],
       "eigenschaften": {
-        "von": "3,6",
-        "bis": "3,6",
+        "von": "2,5",
+        "bis": "2,5",
         "tun": "dreht an der Drehbank",
         "wann": "tag"
       }

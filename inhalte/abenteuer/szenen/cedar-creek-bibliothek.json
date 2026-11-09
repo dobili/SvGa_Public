@@ -4,18 +4,18 @@
   "art": "innen",
   "beschreibung": "Der Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch zwei Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, unterbrochen von den Fenstern; in der Mitte hängt die Pinnwand mit dem Schild „Bitte flüstern“, rechts das niedrige Zeitungsregal und ganz rechts die schmale Tür zur Kellertreppe hinunter ins Archiv.\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem zwei Bretter mit aufgebauten Figuren, oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts eine Reihe freistehender Bücherregale, davor zwei Lesetische mit Leselampen und Stühlen, daneben eine Stehlampe.\n\nVorn links vom Eingang der Ausleihtresen mit der alten Kasse, in der Südostecke der alte Globus, Pflanzen in den Ecken. Eine Leserin trägt Bücher durch den Saal.\n\nLaufwege: von der Tür unten gerade nach oben in die Mitte, links um den Schachtisch, rechts an den Lesetischen vorbei zum Zeitungsregal und zur Kellertür.",
   "wand": "hellgrau",
-  "boden": "holzDunkel",
+  "boden": "dielen",
   "raster": [
     "######################",
     "######################",
     "######################",
     "#....................#",
     "#....................#",
-    "#....................#",
-    "#....................#",
-    "#....................#",
-    "#....................#",
-    "#....................#",
+    "#...tttttt...........#",
+    "#...tttttt...........#",
+    "#...tttttt...........#",
+    "#...tttttt...........#",
+    "#...tttttt...........#",
     "#....................#",
     "#....................#",
     "#....................#",
@@ -80,11 +80,23 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "schach1"
+      "auf": "schach1",
+      "versatz": [-7, 0]
     },
     {
       "moebel": "cc4Brett",
-      "auf": "schach2"
+      "auf": "schach1",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [7, 0]
     },
     {
       "moebel": "cc4StuhlVorn",
@@ -171,8 +183,18 @@
       "feld": [18, 9]
     },
     {
-      "moebel": "cc4Tresen",
-      "feld": [8, 11]
+      "moebel": "cc4TresenLinks",
+      "feld": [7, 11],
+      "id": "tresen"
+    },
+    {
+      "moebel": "cc4TresenRechts",
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "cc4Kasse",
+      "auf": "tresen",
+      "versatz": [6, 0]
     },
     {
       "moebel": "cc4Globus",
@@ -244,5 +266,8 @@
     }
   ],
   "zustand": ["gebraucht", "alt"],
-  "stil": ["klassisch"]
+  "stil": ["klassisch"],
+  "boeden": {
+    "t": "teppichRot"
+  }
 }

@@ -355,9 +355,8 @@ mit Dach und Veranda, Schule 24 × 23, Häuser der Südseite 8 × 10 und 10 × 9
 **Übergänge (gebaut):** `haustuer` (3, 23) in der Pforte, Start (3, 24); `dinerTuer` (33, 23) ↔ Diner
 (4, 11); `schule` (47, 23) vor der Treppe; `park` Ostrand (63, 25–27).
 
-**Offen:** Der Fahnenmast (eigene Grafik, 3 × 9) lässt sich nicht neben die Freitreppe stellen,
-ohne das Schulbild zu überlappen; ohne Kollision zeichnet der Kartenbauer ihn hinter die Schule.
-Kein Schild für das Diner im Katalog. Straße und Gehweg enden eine Kachel vor dem Westrand, weil
+**Fahnenmast** (eigene Grafik) rechts neben der Freitreppe (57, 15), mit `vorn` vor der Fassade gezeichnet.
+**Offen:** Kein Schild für das Diner im Katalog. Straße und Gehweg enden eine Kachel vor dem Westrand, weil
 der Rand ohne Übergang geschlossen sein muss (Test „Rand geschlossen“). Die Grundstücke der Südseite
 haben Seitenzäune, aber keinen Zaun zur Straße, weil der Grünstreifen den Platz braucht.
 

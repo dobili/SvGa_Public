@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Ganz oben links stürzt der Wasserfall über die Kante in den Fluss, der hinter allen Gärten und hinter der Schule von Rand zu Rand fließt. In den Gärten der Nordseite stehen alte Ahorne und Laubbäume, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Satteldach und Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez. Jedes Grundstück hat einen niedrigen dunklen Eisenzaun mit einer Pforte am Weg zur Haustür; der schwarze Briefkasten steht in der Zaunlinie neben der Pforte. Dann das Falls Diner mit gestreifter Markise und einem runden Tisch davor, und die Maple Falls High mit Freitreppe. Davor Gehweg, die dreispurige Birch Lane und der südliche Gehweg; die Straße führt nach rechts zum Park. Auf dem Grünstreifen der Südseite stehen in gleichen Abständen kleine Straßenbäume und klassische Laternen, dazu die Schulbushaltestelle mit Bank und Mülltonne. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“, gepflasterte Einfahrt), Fisk und ein viertes Haus, zwischen den Grundstücken Zäune, Beet und Büsche; ganz rechts der Spielplatz mit Sandkasten, Schaukel, Rutsche, Klettergerüst und Bank. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Laufwege: von der Pforte Whitlock zum Gehweg und die Straße entlang zu Diner, Schule, Spielplatz und weiter zum Park.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Ganz oben links stürzt der Wasserfall über die Kante in den Fluss, der hinter allen Gärten und hinter der Schule von Rand zu Rand fließt. In den Gärten der Nordseite stehen alte Ahorne und Laubbäume, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Satteldach und Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez. Jedes Grundstück hat einen niedrigen dunklen Eisenzaun mit einer Pforte am Weg zur Haustür; der schwarze Briefkasten steht in der Zaunlinie neben der Pforte. Dann das Falls Diner mit gestreifter Markise und einem runden Tisch davor, und die Maple Falls High mit Freitreppe; rechts neben der Treppe der Fahnenmast. Davor Gehweg, die dreispurige Birch Lane und der südliche Gehweg; die Straße führt nach rechts zum Park. Auf dem Grünstreifen der Südseite stehen in gleichen Abständen kleine Straßenbäume und klassische Laternen, dazu die Schulbushaltestelle mit Bank und Mülltonne. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“, gepflasterte Einfahrt), Fisk und ein viertes Haus, zwischen den Grundstücken Zäune, Beet und Büsche; ganz rechts der Spielplatz mit Sandkasten, Schaukel, Rutsche, Klettergerüst und Bank. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Laufwege: von der Pforte Whitlock zum Gehweg und die Straße entlang zu Diner, Schule, Spielplatz und weiter zum Park.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -132,6 +132,11 @@
     {
       "moebel": "mf4Schule",
       "feld": [39, 0]
+    },
+    {
+      "moebel": "mf4Fahnenmast",
+      "feld": [57, 15],
+      "vorn": true
     },
     {
       "moebel": "mf4ZaunSeite",

@@ -1415,78 +1415,8 @@
       "feld": [95, 13]
     },
     {
-      "moebel": "wc5Plakatwand",
+      "moebel": "sb5WerbetafelB",
       "feld": [126, 10]
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [121, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [122, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [123, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [124, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [125, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [126, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [127, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [128, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [129, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [130, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [131, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [132, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUM",
-      "feld": [133, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5ZaunUR",
-      "feld": [134, 9],
-      "bauteil_ok": true
     },
     {
       "moebel": "wc5BirkeHerbst",

@@ -95,31 +95,31 @@
     },
     {
       "moebel": "wg5Aeste",
-      "feld": [34, 13]
+      "feld": [32, 10]
     },
     {
       "moebel": "wg4StammPilze",
-      "feld": [37, 11],
+      "feld": [39, 15],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4StammPilzeB",
-      "feld": [37, 12],
+      "feld": [41, 15],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4StammPilzeB",
-      "feld": [38, 13],
+      "feld": [39, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4StammPilze",
-      "feld": [36, 13],
+      "feld": [41, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4StammPilze",
-      "feld": [39, 12],
+      "feld": [43, 15],
       "bauteil_ok": true
     },
     {

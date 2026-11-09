@@ -313,6 +313,143 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
+    },
+    "pd6Werkzeugschrank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6Saegebock": {
+      "quelle": "spiel/eigene/saegebock.png",
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "breite": 32,
+      "hoehe": 32
+    },
+    "pd6Bretterstapel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6Holzscheite": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6Kanister": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Barrel_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6Hobelbank": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Woodwork_Crafting_Table_16x16.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6KlavierHell": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6KlavierRot": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_10.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6KlavierNatur": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_17.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6FotoAlt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_100.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd6Laptop": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_136.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "pd6Bastelbank": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd6Werkzeugregal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Sprout_Tools_Shelf.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd6Keyboard": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_174.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

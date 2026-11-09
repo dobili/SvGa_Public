@@ -77,7 +77,8 @@
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [3, 14]
+      "feld": [3, 14],
+      "versatz": [0, 16]
     },
     {
       "moebel": "cc6SesselVorn",

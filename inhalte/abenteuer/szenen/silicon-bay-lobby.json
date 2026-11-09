@@ -1,0 +1,134 @@
+{
+  "karte": "siliconBay.lobby",
+  "datei": "karten/silicon-bay-lobby.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "stein",
+  "beschreibung": "Die Eingangshalle im Konzernturm von Perfect Move (Variante A, nach dem Ortsdokument), 24 × 14: polierter Steinboden, kühle Wände. An der Nordwand links zwei Aufzüge, rechts eine Zeitleiste der Firmengeschichte auf drei Bildschirmen. In der Mitte die Vitrine „Hale – Ingenieure seit 1850“ mit Rechenschieber und Brückenzeichnung. Rechts der breite Empfangstresen mit dem Empfangsroboter, links eine Sitzgruppe mit Sofa, Tisch und Sessel, in allen vier Ecken Pflanzen in Kübeln. Das Glasportal in der Südwand führt hinaus auf den Campus.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch", "japanisch", "einfach"],
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Bildschirm",
+      "feld": [14, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5BildschirmB",
+      "feld": [16, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5BildschirmC",
+      "feld": [18, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5VitrineHale",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Empfang",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "sb5Sofa",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "sb5Tisch",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "sb5SesselRund",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [12, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5GlastuerSued",
+      "feld": [12, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "lobbyAusgang",
+      "feld": [12, 13]
+    },
+    {
+      "name": "vitrineHale",
+      "feld": [12, 8]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "empfangsroboter",
+      "feld": [18, 4]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "besuchergruppe",
+      "typ": "statist",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "von": "7,10",
+        "bis": "10,10",
+        "tun": "Besuchergruppe mit Namensschildern wartet auf die Führung",
+        "wann": "tag"
+      }
+    }
+  ]
+}

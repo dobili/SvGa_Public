@@ -2027,16 +2027,6 @@
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [52, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
-      "feld": [53, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
       "feld": [54, 11],
       "bauteil_ok": true
     },
@@ -2358,6 +2348,16 @@
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [118, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor1",
+      "feld": [52, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor2",
+      "feld": [53, 11],
       "bauteil_ok": true
     },
     {

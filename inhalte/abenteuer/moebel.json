@@ -3659,15 +3659,6 @@
       "zustand": "neu",
       "stil": "einfach"
     },
-    "wg4Stamm": {
-      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Big_Vertical_16x16.png",
-      "breite": 16,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "deko",
-      "zustand": "gebraucht",
-      "stil": "laendlich"
-    },
     "mf4StegKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_26.png",
       "breite": 32,
@@ -3697,6 +3688,47 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "wg4StammPilze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_18.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wg4StammPilzeB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern"
+    },
+    "wg4StammSchraeg": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Big_1_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wg4Tor1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
+    },
+    "wg4Tor2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
     }
   }
 }

@@ -34,5 +34,14 @@
   "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_100.png": {
     "sicher": 0.8,
     "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_34.png": {
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_32.png": {
+    "beschreibung": "Buntes Lernplakat mit rotem Raster aus 6 × 4 Feldern voller farbiger Zeichen, hängt an der Wand.",
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
   }
 }

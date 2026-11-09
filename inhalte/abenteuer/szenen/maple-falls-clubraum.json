@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Das Klassenzimmer 12 der Maple Falls High am Nachmittag, wenn hier das Schachteam von Coach Delgado trainiert. Ein heller Raum mit cremefarbenen Wänden und hellem Holzboden; durch zwei Fenster an der Nordwand scheint die Spätsommersonne. An der Nordwand hängen die Weltkarte, die grüne Tafel mit dem Diagramm von der letzten Aufgabe und das Plakat „Erst zählen, dann schlagen“, das Coach Delgado selbst gemalt hat. Links an der Wand steht eine niedrige Anrichte, darauf der Pokal von 1994, das Stolz und Staub zugleich ist. Rechts steht das Lehrerpult mit dem Globus, daneben Coach Delgado mit der Pfeife, und in der Ecke zwei Spinde. Die Schulbänke sind an die Wände geschoben; stattdessen stehen vier runde Spieltische in zwei Reihen, auf jedem ein kleines Brett mit Figuren, und links und rechts je ein Holzstuhl, der zum Tisch schaut. Auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt. Sam wartet am vorderen linken Tisch. Zwischen den Tischreihen bleibt ein Gang frei, durch den eine Schülerin die Figuren einsammelt. In den beiden vorderen Ecken stehen Grünpflanzen. Unten in der Mitte die Tür zum Schulflur.",
+  "beschreibung": "Das Klassenzimmer 12 der Maple Falls High am Nachmittag, wenn hier das Schachteam von Coach Delgado trainiert. Ein heller Raum mit cremefarbenen Wänden und hellem Holzboden; durch zwei Fenster an der Nordwand scheint die Spätsommersonne. An der Nordwand hängen die Weltkarte, die grüne Tafel mit dem Diagramm von der letzten Aufgabe und das Plakat „Erst zählen, dann schlagen“, das Coach Delgado selbst gemalt hat. Links an der Wand steht eine niedrige Anrichte, darauf der Pokal von 1994, das Stolz und Staub zugleich ist. Rechts steht das Lehrerpult mit dem Globus, daneben Coach Delgado mit der Pfeife, und in der Ecke zwei Spinde. Die Schulbänke sind an die Wände geschoben; stattdessen stehen vier runde Spieltische in zwei Reihen, auf jedem ein kleines Brett mit Figuren, und links und rechts je ein Holzstuhl, der zum Tisch schaut. Auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt. Sam wartet am vorderen linken Tisch. Zwischen den Tischreihen bleibt ein Gang frei, durch den eine Schülerin die Figuren einsammelt. In den beiden vorderen Ecken stehen Grünpflanzen. Unten in der Mitte die Tür zum Schulflur. Rechts an der Wand stehen zwei niedrige Bücherregale mit Schachbüchern, über der Anrichte hängt eine Pinnwand mit Zetteln. Zwischen Tafel und Pult bleibt eine freie Wandfläche für das Plakat mit den Nadeln.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -155,6 +155,19 @@
       "moebel": "mf3StuhlOrangeLinks",
       "feld": [11, 8],
       "zu": "t4"
+    },
+    {
+      "moebel": "mf4Pinnwand",
+      "feld": [1, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4RegalNiedrig",
+      "feld": [14, 5]
+    },
+    {
+      "moebel": "mf4RegalNiedrig",
+      "feld": [14, 8]
     }
   ],
   "ausloeser": [

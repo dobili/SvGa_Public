@@ -1,45 +1,29 @@
-# Auftrag niedrig-1: Maple Falls mit echten Möbeln einrichten (erste spielbare Demo)
+# Auftrag niedrig-1: Weg nach Cedar Creek und Cedar Creek einrichten
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der fünfzehnte Auftrag, Maple Falls mit Möbeln, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, sechzehnter Auftrag; Maple Falls ist zusammengeführt, sehr schön geworden, danke)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 90d3448b)
-**Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/moebel.json`,
-`docs/spiel/auftraege/niedrig-1.md`
-**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier und Paketbau
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand fa9f03a3)
+**Darf ändern:** `inhalte/abenteuer/karten/weg-maple-cedar-*.json`, `inhalte/abenteuer/karten/cedar-creek-*.json`,
+`inhalte/abenteuer/moebel.json`, `docs/spiel/auftraege/niedrig-1.md`
+**Prüfung vor dem Push:** im Hauptordner `python -m pytest pipeline/tests -q`, in `app/` Prettier, Paketbau
+und `CHROMIUM_PFAD=… PLAYWRIGHT_NUR_CHROMIUM=1 npx playwright test tests/e2e/abenteuer` (nach `npm run build`)
 
 ## Ziel
 
-Die Karten haben jetzt echte Böden und Wände aus der gekauften Grafik. Möbel und Schmuck kommen als
-Objekte vom Typ `moebel` dazu (Regeln in `inhalte/abenteuer/README.md`, Abschnitt Tiled-Karten;
-Beispiel im Park: `parkbank`, `laterne`). Richte die fünf Karten von Maple Falls ein (Dachboden,
-Wohnzimmer, Clubraum, draußen, Park), damit der Autor eine erste schöne Demo spielen kann.
-
-## Grafik finden
-
-Die Bilder liegen im **privaten** Repository `dobili/schach-abenteuer-inhalte`. Hänge es mit dem
-Werkzeug add_repo an deine Sitzung (lesen genügt) und klone es nach `/home/user/schach-abenteuer-inhalte`.
-Dort steht `register/register.csv` (Pfad, Paket, Thema, Name oder Beschreibung, Breite, Höhe,
-Verwendung); suchen etwa mit `grep -i "sofa\|couch" register/register.csv`. Übersichtsbilder mit
-Nummern: `register/uebersicht/`. Gelingt das Anhängen nicht, melde es sofort und warte.
-Nichts aus dem privaten Repository ins öffentliche kopieren; in `moebel.json` stehen nur Pfade.
+Wie in Maple Falls: Möbel und Schmuck aus dem Register (privates Repository, wie im letzten Auftrag).
+Landstraße und Flussweg (Natur: Bäume, Büsche, Zäune, Felsen, Schilder; gern Teile aus
+`SERENE_VILLAGE_REVAMPED` und `modern-farm` für Felsen, Teiche, Steg), Cedar Creek draußen (Kleinstadt),
+Bibliothek (Regale, Lesetische, Lampen), Archiv (Kartons, Aktenschränke, Kellerstimmung), Waschsalon
+(Waschmaschinen, Bänke, Automaten).
 
 ## Vorgaben
 
-1. Je Möbel ein Eintrag in `moebel.json` (sprechender Schlüssel wie `sofaRot`, `buecherregal1`)
-   mit `quelle` (Pfad aus dem Register), `breite`, `hoehe` (aus dem Register) und `kollision`.
-   Dasselbe Möbel darf auf mehreren Karten stehen.
-2. Dachboden: Kisten, altes Regal, Lampe, das Reisebrett von Ambrose (bleibt Auslöser). Wohnzimmer:
-   Sofa, Tisch, Küchenzeile, Pflanzen. Clubraum: Tische mit Stühlen, Regale, Pokalvitrine (Auslöser
-   bleibt). Draußen: Häuser, Bäume, Zäune, Bushaltestelle, Laternen. Park: Bäume, Bänke, Blumen,
-   Halfpipe (falls es eine gibt; sonst Rampe aus Holzteilen).
-3. Platzhalterkacheln „Kiste“, „Lampe“, „Brett“ (Kacheln 3, 7, 5) dort durch Boden ersetzen, wo
-   jetzt ein Möbel steht. Kollision muss danach stimmen: Wege bleiben frei, jeder Auslöser und jede
-   Figur erreichbar (die Tests prüfen das).
-4. Mit dem Paketbau (in `app/`: `node skripte/baue-abenteuerpaket.mjs`) und, wenn du das private
-   Repository als `app/inhalte-privat/quelle` verlinkst (`ln -s /home/user/schach-abenteuer-inhalte
-app/inhalte-privat/quelle`), im Spiel ansehen; ein Bildschirmfoto je Karte im Bericht beschreiben.
+1. Wie zuvor: `moebel.json` mit Pfaden, Wege frei, Auslöser und Figuren erreichbar.
+2. Neu (Laufhilfe seit fa9f03a3): Der Held rückt beim Gehen zur Kachelmitte; trotzdem Gänge
+   mindestens eine Kachel breit lassen und Möbel nicht diagonal zu Engstellen stellen.
+3. Je Karte ein Bildschirmfoto prüfen und im Bericht in einem Satz beschreiben.
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository angehängt (lesen) und nach
 `/home/user/schach-abenteuer-inhalte` geklont, als `app/inhalte-privat/quelle` verlinkt (nicht im

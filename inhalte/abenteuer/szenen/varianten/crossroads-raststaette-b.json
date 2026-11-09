@@ -1,0 +1,297 @@
+{
+  "karte": "crossroads.raststaette",
+  "art": "innen",
+  "beschreibung": "Variante B, schlicht: Backsteinwände, graue Fliesen. Der Tresen steht links oben mit vier Hockern, daneben die Kasse und der Postkartenständer; rechts an der Wand die Regale des Ladens und ein Getränkeautomat. Der Varianten-Tisch steht mitten im Raum vor der Tür, rechts zwei Tische, links unten Novas Ecktisch.",
+  "wand": "backstein",
+  "boden": "fliesenGrau",
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [12, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "mf9TuerSuedGlas",
+      "feld": [12, 13],
+      "an_wand": true
+    },
+    {
+      "moebel": "cr7Theke8",
+      "feld": [2, 4],
+      "id": "theke"
+    },
+    {
+      "moebel": "mf5Kaffeemaschine",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [-44, 1]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [-10, 1]
+    },
+    {
+      "moebel": "ld5Flaschen",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [20, 1]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [44, 1]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [3, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [5, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [7, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [9, 6],
+      "vorn": true,
+      "versatz": [0, -9]
+    },
+    {
+      "moebel": "mf5Kassentheke",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "mf9Vorrat99",
+      "feld": [19, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat100",
+      "feld": [20, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat102",
+      "feld": [21, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Vorrat105",
+      "feld": [22, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvZeitungsregal",
+      "feld": [13, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [9, 9],
+      "id": "vt0"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "feld": [0, 0],
+      "auf": "vt0"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [12, 9],
+      "id": "vt1"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "feld": [0, 0],
+      "auf": "vt1"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [17, 6],
+      "id": "t0"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [16, 6],
+      "zu": "t0"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [19, 6],
+      "zu": "t0"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [20, 9],
+      "id": "t1"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [19, 9],
+      "zu": "t1"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [22, 9],
+      "zu": "t1"
+    },
+    {
+      "moebel": "crTisch",
+      "feld": [2, 10]
+    },
+    {
+      "moebel": "crStuhl",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "rvGetraenkeautomat",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [5, 7],
+      "id": "t7"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [4, 7],
+      "zu": "t7"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [7, 7],
+      "zu": "t7"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [17, 11],
+      "id": "t8"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [16, 11],
+      "zu": "t8"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [19, 11],
+      "zu": "t8"
+    },
+    {
+      "moebel": "mf8Spielautomat",
+      "feld": [22, 6]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [22, 11]
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [14, 8],
+      "id": "t9"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [13, 8],
+      "zu": "t9"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [16, 8],
+      "zu": "t9"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "raststaetteAusgang",
+      "feld": [12, 13]
+    },
+    {
+      "name": "variantenTisch",
+      "feld": [11, 11]
+    },
+    {
+      "name": "postkarten",
+      "feld": [13, 6]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "darlene",
+      "feld": [5, 3]
+    },
+    {
+      "name": "nova",
+      "feld": [3, 10]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [10, 8],
+      "eigenschaften": {
+        "von": "4,8",
+        "bis": "18,8",
+        "tun": "bringt Kaffee und Pfannkuchen",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "klassisch",
+    "modern",
+    "rustikal",
+    "einfach",
+    "laendlich",
+    "industrie"
+  ],
+  "variante": "b",
+  "datei": "karten/varianten/crossroads-raststaette-b.json"
+}

@@ -2392,6 +2392,103 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "cc4Waschmaschine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_87.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "waschmaschine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Trockner": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_90.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "waschmaschine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Pinnwand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_33.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pinnwand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cc4AutomatLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Left.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Falttisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_330.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Waeschekorb": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_97.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sonstiges",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "cc4WaeschekorbGruen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_96.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sonstiges",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "cc4Wartesitze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Waschmittelregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_83.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc4Pflanze": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "einfach"
     }
   }
 }

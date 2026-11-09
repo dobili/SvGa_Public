@@ -307,4 +307,36 @@ Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
 
 ## 4. Bühnenbilder
 
-Folgen nach Durchsicht des Musters.
+Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in
+`inhalte/abenteuer/moebel.json` mit der Vorsilbe `cc4`, die Szenen in `inhalte/abenteuer/szenen/`.
+Feld = linke obere Kachel (Spalte, Reihe). Bilder ohne sichere Katalogbeschreibung habe ich selbst
+angesehen und in `inhalte/abenteuer/katalog_korrekturen/mittel-2.json` beschrieben.
+
+### 4.1 Waschsalon (`cedarCreek.waschsalon`)
+
+**Größe:** 14 × 11 (öffentlicher Raum nach 7a.2). Nordwand Reihen 0–2 (Krone, zwei Reihen Wandfläche
+hellgrau), Boden ab Reihe 3 weiße Fliesen, Südwand Reihe 10 mit der Eingangstür bei Spalte 7 (50 %,
+wie außen Spalte 4 von 7). Ein Fenster neben der Tür in der Südwand (Ortsprofil) zeigt die Ansicht
+nicht; das Licht kommt wie in allen Räumen von Norden.
+
+**Stimmung:** Vormittag, Maschinen brummen gleichmäßig, Waschpulver und warme Wäsche.
+
+**Laufwege:** Tür (7, 10) → gerade nach oben zu den Arbeitstischen; links zu den Wartesitzen; rechts am
+Automaten vorbei zur Pinnwand und zu den Trocknern. Reihe 4 bleibt frei vor allen Maschinen.
+
+| Zone      | Gegenstand                                  | Feld                           | Ausrichtung            | Material, Stil, Zustand    | Zweck                                                      |
+| --------- | ------------------------------------------- | ------------------------------ | ---------------------- | -------------------------- | ---------------------------------------------------------- |
+| Nordwand  | vier Waschmaschinen (eine Serie, lückenlos) | (1, 2), (3, 2), (5, 2), (7, 2) | Vorderseite unten      | weiß, modern, gebraucht    | Waschen                                                    |
+| Nordwand  | zwei schmale Trockner (dieselbe Bauart)     | (9, 2), (10, 2)                | Vorderseite unten      | weiß, modern, gebraucht    | Trocknen; auf dem linken das Steckschachbrett (`trockner`) |
+| Nordwand  | Pinnwand mit Zetteln                        | Wandfläche (9, 1)              | –                      | Kork, einfach              | Zettel „Verloren: ein Turm“ (`zettelTurm` davor, (10, 4))  |
+| Ecke NO   | Regal mit Waschmittel, Gläsern und Korb     | (11, 1)                        | Vorderseite unten      | weiß und Glas, gebraucht   | Waschmittelregal                                           |
+| Ostwand   | Getränkeautomat, Leuchtfläche nach links    | (12, 4)                        | zeigt in den Raum      | Metall, modern             | `automat` davor (11, 5)                                    |
+| Mitte     | zwei Arbeitstische aus Edelstahl            | (4, 5), (6, 5)                 | –                      | Edelstahl, modern          | Falttisch; Mr. Boateng davor (6, 8)                        |
+| Mitte     | voller Wäschekorb                           | (8, 5)                         | –                      | Korbgeflecht               | Spuren von Leben                                           |
+| Westseite | drei Wartesitze in Reihe                    | (1, 7)                         | Sitzflächen nach unten | oranger Kunststoff, modern | Warten; Comicheft darauf (`comicheft`, (2, 8))             |
+| Westseite | zweiter Wäschekorb                          | (4, 8)                         | –                      | Korbgeflecht               | Leben                                                      |
+| Ecken     | Zimmerpflanzen                              | (1, 4), (12, 8)                | –                      | Pflanze, Keramik           | Regel 4.4                                                  |
+| Eingang   | Start                                       | (7, 9)                         | Blick nach oben        | –                          | Ankunft                                                    |
+
+Belebung: eine Kundin geht zwischen (9, 8) und (11, 8) auf und ab. Offen: Ein eigenes Trocknerbild gibt
+es im Katalog nicht; die Trockner sind schmale Frontlader derselben Serie.

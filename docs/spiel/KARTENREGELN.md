@@ -538,7 +538,12 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
    Steinbrüstung), `bruecke_strasse_gehweg_quer_L` und `_laengs_L` (mit Gehweg auf beiden Seiten, 5 Kacheln
    breit; Straßen mit Gehwegen nehmen diese, damit die Gehwege nicht am Wasser enden), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
-   Camping-Teilen (`Pier_*`).
+   Camping-Teilen (`Pier_*`). Schleusen bekommen Tore statt Brücken: `schleusentor_laengs_L` und
+   `_quer_L` (Stemmtor mit Laufsteg, begehbar wie eine Brücke), dazu `schleuse_balken` am Ufer
+   (`werkzeuge/schleuse.py`). Kai, Schleusenkammer, Wasserloch im Steinbruch und Becken in der
+   Stadt haben kein Grasufer, sondern eine Steinkante: in der Szene `"ufer": "stein"`
+   (`werkzeuge/wasser_stein.py`, Boden `wasser_stein`); es gilt dann für alles Wasser der Karte.
+   Pfützen im Stollen sind Möbel (`pfuetze_fels_klein`, `_gross`), kein Wasser.
 
 ### 10.2 Türen und Durchgänge
 
@@ -688,3 +693,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     endet sie in der Karte, dann mit Gehweg rundherum oder einem Übergang auf einen Weg.
 48. **Zeichen der Geschichte sind lesbar.** Sperren und Hinweise, die der Spieler verstehen muss,
     tragen Schrift oder ein eindeutiges Bild (eigene Schilder über `werkzeuge/schilder.py`).
+49. **Höhen sind zu sehen.** Was im Ort höher liegt (Bahndamm, Deich, Bruchkante, Böschung),
+    bekommt eine sichtbare Stufe: `#`-Reihen über einem Boden mit `"wand": "damm"` (Grashang mit
+    Erde und Steinen am Fuß, `werkzeuge/damm.py`) oder `"wand": "fels"` (Felswand). Beide gehen
+    draußen zusammen mit `wandart`: Der Rand zeigt dann den Boden dahinter, nur `#` über einem
+    Boden wird Hang. Ein Gleis „auf dem Damm“ flach auf der Wiese reicht nicht (Bahndamm, Nacht
+    9./10.11.2026).

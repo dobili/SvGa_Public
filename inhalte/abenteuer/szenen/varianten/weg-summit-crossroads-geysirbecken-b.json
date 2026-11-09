@@ -2,13 +2,13 @@
   "karte": "wegSummitCrossroads.geysirbecken",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Wenige Kiefern, ein Bretterschuppen als Ranger-Station mit Rätseltafel und dem offenen Tor im Zaun (S10). Die Stege laufen in einer anderen Linie von Insel zu Insel über das heiße Becken, die Inseln sind kleiner und kahl, nur einzelne Sinterkegel. Die Bisons stehen auf der mittleren Insel. Im Süden eine Weide mit Zaun auf der Ostseite und wenige Bäume. Ersatz bis zur Lieferung: Geysirkegel als Felsen, Sinterboden als Schotter; Bisons sind Belebung.",
+  "beschreibung": "Variante B, schlicht: Wenige Kiefern, ein Bretterschuppen als Ranger-Station mit Rätseltafel und dem offenen Tor im Zaun (S10). Die Stege laufen in einer anderen Linie von Insel zu Insel über das heiße Becken, die Inseln sind kleiner und kahl, nur einzelne Sinterkegel. Die Bisons stehen auf der mittleren Insel. Im Süden eine Weide mit Zaun auf der Ostseite und wenige Bäume. Sinterinseln mit Geysirkegeln, Dampf über dem Wasser, Bisons auf der Insel und der Weide.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "stein",
   "boeden": {
     "e": "erde",
-    "s": "schotter"
+    "s": "sinter"
   },
   "bruecken": ["h"],
   "raster": [
@@ -276,22 +276,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [12, 12],
       "bauteil_ok": true
     },
     {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [13, 12],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cc3ZaunEnde",
-      "feld": [16, 12],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
       "feld": [17, 12],
       "bauteil_ok": true
     },
@@ -351,6 +341,11 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "sx7RangerTor",
+      "feld": [13, 10],
+      "vorn": true
+    },
+    {
       "moebel": "cc4Bootsschuppen",
       "feld": [5, 14]
     },
@@ -359,23 +354,23 @@
       "feld": [10, 14]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [14, 38]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [22, 39]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [4, 60]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [20, 90]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [6, 110]
     },
     {
@@ -567,6 +562,52 @@
     {
       "moebel": "wg4Gras",
       "feld": [2, 124]
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [8, 115],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [12, 50],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [23, 101],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [21, 99],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [16, 103],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [2, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7BisonRechts",
+      "feld": [21, 95]
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [14, 94]
+    },
+    {
+      "moebel": "sx7BisonLiegend",
+      "feld": [3, 140]
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [7, 146]
     }
   ],
   "ausloeser": [

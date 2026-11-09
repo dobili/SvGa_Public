@@ -2,13 +2,13 @@
   "karte": "wegSummitCrossroads.geysirbecken",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Sechs Sinterinseln mit vielen Geysirkegeln, die Stege springen von Insel zu Insel; die Bisons stehen auf der großen Insel in der Mitte. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern. Ersatz bis zur Lieferung: Geysirkegel als Felsen, Sinterboden als Schotter; Bisons sind Belebung.",
+  "beschreibung": "Variante C, reich: Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Sechs Sinterinseln mit vielen Geysirkegeln, die Stege springen von Insel zu Insel; die Bisons stehen auf der großen Insel in der Mitte. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern. Sinterinseln mit Geysirkegeln, Dampf über dem Wasser, Bisons auf der Insel und der Weide.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "stein",
   "boeden": {
     "e": "erde",
-    "s": "schotter"
+    "s": "sinter"
   },
   "bruecken": ["h"],
   "raster": [
@@ -268,22 +268,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [12, 12],
       "bauteil_ok": true
     },
     {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [13, 12],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cc3ZaunEnde",
-      "feld": [16, 12],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
       "feld": [17, 12],
       "bauteil_ok": true
     },
@@ -343,8 +333,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "svHausGruen",
-      "feld": [4, 13]
+      "moebel": "sx7RangerTor",
+      "feld": [13, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Rangerhaus",
+      "feld": [2, 13]
     },
     {
       "moebel": "cc3Raetseltafel",
@@ -359,52 +354,44 @@
       "feld": [20, 16]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [4, 38]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [9, 40]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [13, 42]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [18, 58]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [24, 60]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [4, 76]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [10, 78]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [12, 90]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [23, 92]
     },
     {
-      "moebel": "mf4FelsHoch",
-      "feld": [20, 96]
-    },
-    {
-      "moebel": "mf4FelsHoch",
+      "moebel": "sx7Geysir",
       "feld": [17, 110]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [25, 111]
     },
     {
       "moebel": "felsKlein",
@@ -918,6 +905,58 @@
     {
       "moebel": "wg4BlumeGelb",
       "feld": [18, 161]
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [21, 48],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [5, 93],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [20, 52],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [4, 103],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [2, 42],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [3, 55],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [3, 90],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [8, 66],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [18, 93]
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [14, 94]
+    },
+    {
+      "moebel": "sx7BisonLiegend",
+      "feld": [3, 140]
     }
   ],
   "ausloeser": [

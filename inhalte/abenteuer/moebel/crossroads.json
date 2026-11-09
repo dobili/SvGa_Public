@@ -79,6 +79,35 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "cr7WegweiserStaedte": {
+      "quelle": "spiel/eigene/wegweiser_staedte.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cr7SchildCrossroads": {
+      "quelle": "spiel/eigene/schild_crossroads.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cr7Viehgatter": {
+      "quelle": "spiel/eigene/viehgatter.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "laendlich"
     }
   }
 }

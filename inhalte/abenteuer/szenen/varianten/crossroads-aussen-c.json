@@ -2,7 +2,7 @@
   "karte": "crossroads.aussen",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Diner-Wagen mit Vorplatz und ein doppelt eingezäuntes Jahrmarktfeld mit Plakatwand dahinter, die große Tankstelle mit einer weiteren Zapfsäule und Plakatwand. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Ersatz bis zur Lieferung: Wegweiser der Städte als einfacher Wegweiser, Viehgatter als Absperrböcke.",
+  "beschreibung": "Variante C, reich: Diner-Wagen mit Vorplatz und ein doppelt eingezäuntes Jahrmarktfeld mit Plakatwand dahinter, die große Tankstelle mit einer weiteren Zapfsäule und Plakatwand. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -67,6 +67,10 @@
       "feld": [10, 12]
     },
     {
+      "moebel": "cr7SchildCrossroads",
+      "feld": [20, 16]
+    },
+    {
       "moebel": "ws5TankstelleGross",
       "feld": [36, 8]
     },
@@ -106,8 +110,8 @@
       "feld": [40, 30]
     },
     {
-      "moebel": "wegweiser",
-      "feld": [29, 19]
+      "moebel": "cr7WegweiserStaedte",
+      "feld": [28, 16]
     },
     {
       "moebel": "ws5Werbetafel",
@@ -618,10 +622,6 @@
       "feld": [42, 25]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [24, 17]
-    },
-    {
       "moebel": "wg4Wildblumen",
       "feld": [41, 3]
     },
@@ -638,19 +638,19 @@
       "feld": [45, 38]
     },
     {
+      "moebel": "wg4Gras",
+      "feld": [52, 28]
+    },
+    {
       "moebel": "mf4Strassenbaum",
-      "feld": [55, 33]
+      "feld": [55, 30]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [48, 37]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [36, 26]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [51, 43]
-    },
-    {
-      "moebel": "wg4Laubbaum",
       "feld": [35, 42]
     },
     {
@@ -670,8 +670,16 @@
       "feld": [29, 36]
     },
     {
+      "moebel": "wg4Laubbaum",
+      "feld": [58, 35]
+    },
+    {
       "moebel": "mf4Strassenbaum",
       "feld": [60, 42]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [48, 44]
     },
     {
       "moebel": "mf4Strassenbaum",
@@ -680,10 +688,6 @@
     {
       "moebel": "wg4Busch",
       "feld": [53, 37]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [54, 28]
     }
   ],
   "ausloeser": [
@@ -720,7 +724,7 @@
     },
     {
       "name": "wegweiser",
-      "feld": [29, 21]
+      "feld": [29, 20]
     }
   ],
   "figuren": [

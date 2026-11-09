@@ -2,7 +2,7 @@
   "karte": "crossroads.aussen",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Dieselbe Kreuzung mit Diner-Wagen und Vorplatz, aber eine kleine Tankstelle, kein Zaun am Jahrmarktfeld. Der Lkw-Parkplatz liegt südöstlich mit zwei Sattelzügen und einem Auto; Werksbus und Rosies Food-Truck stehen auf der Wiese südwestlich. Im Osten das Viehgatter, sonst weites Grasland. Ersatz bis zur Lieferung: Wegweiser der Städte als einfacher Wegweiser, Viehgatter als Absperrböcke.",
+  "beschreibung": "Variante B, schlicht: Dieselbe Kreuzung mit Diner-Wagen und Vorplatz, aber eine kleine Tankstelle, kein Zaun am Jahrmarktfeld. Der Lkw-Parkplatz liegt südöstlich mit zwei Sattelzügen und einem Auto; Werksbus und Rosies Food-Truck stehen auf der Wiese südwestlich. Im Osten das Viehgatter, sonst weites Grasland. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -67,6 +67,10 @@
       "feld": [10, 12]
     },
     {
+      "moebel": "cr7SchildCrossroads",
+      "feld": [20, 16]
+    },
+    {
       "moebel": "ws5Tankstelle",
       "feld": [36, 8]
     },
@@ -93,8 +97,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wegweiser",
-      "feld": [29, 19]
+      "moebel": "cr7WegweiserStaedte",
+      "feld": [28, 16]
     },
     {
       "moebel": "mf9Absperrbock",
@@ -218,11 +222,11 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [24, 17]
+      "feld": [53, 11]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [53, 11]
+      "feld": [34, 45]
     }
   ],
   "ausloeser": [
@@ -259,7 +263,7 @@
     },
     {
       "name": "wegweiser",
-      "feld": [29, 21]
+      "feld": [29, 20]
     }
   ],
   "figuren": [

@@ -1,0 +1,276 @@
+{
+  "karte": "portDelacroix.turnhalle",
+  "datei": "karten/varianten/port-delacroix-turnhalle-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Turniertag: Die Turnhalle mit dunklem Holzboden und cremefarbenen Wänden ist für das Regionalturnier aufgebaut. Vorn an der Nordwand der Tisch der Turnierleitung mit Brett, an dem Miss Odile spielt, links das Plakat, rechts davon Fenster. Zwölf Picknicktische mit Bank stehen in drei Reihen links und rechts des Mittelgangs, auf jedem ein Brett. In den Ecken zwei Kommoden mit Ersatzfiguren und eine Spendenkasse, vorn links eine Kiste mit Figuren.",
+  "wand": "creme",
+  "boden": "dielen",
+  "raster": [
+    "##########################",
+    "##########################",
+    "##########################",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#############.############"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd6Fenster",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [15, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Fenster",
+      "feld": [20, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Plakat",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "pd6Klapptisch",
+      "feld": [12, 3],
+      "id": "odile"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "odile"
+    },
+    {
+      "moebel": "pd6StuhlRuecken",
+      "feld": [12, 4],
+      "zu": "odile"
+    },
+    {
+      "moebel": "pd6Kommode",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "pd6Kommode",
+      "feld": [23, 2]
+    },
+    {
+      "moebel": "pd6Spendenkasse",
+      "feld": [24, 4]
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [2, 5],
+      "id": "l2_5"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l2_5"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [6, 5],
+      "id": "l6_5"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l6_5"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [16, 5],
+      "id": "l16_5"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l16_5"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [20, 5],
+      "id": "l20_5"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l20_5"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [2, 8],
+      "id": "l2_8"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l2_8"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [6, 8],
+      "id": "l6_8"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l6_8"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [16, 8],
+      "id": "l16_8"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l16_8"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [20, 8],
+      "id": "l20_8"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l20_8"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [2, 11],
+      "id": "l2_11"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l2_11"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [6, 11],
+      "id": "l6_11"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l6_11"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [16, 11],
+      "id": "l16_11"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l16_11"
+    },
+    {
+      "moebel": "pd6Langtisch",
+      "feld": [20, 11],
+      "id": "l20_11"
+    },
+    {
+      "moebel": "pd6Brett",
+      "auf": "l20_11"
+    },
+    {
+      "moebel": "pd6Figurenkiste",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "pd6Ball",
+      "feld": [24, 13]
+    },
+    {
+      "moebel": "pd6Bank",
+      "feld": [3, 13]
+    },
+    {
+      "moebel": "pd6Bank",
+      "feld": [7, 13]
+    },
+    {
+      "moebel": "pd6Bank",
+      "feld": [16, 13]
+    },
+    {
+      "moebel": "pd6Bank",
+      "feld": [20, 13]
+    },
+    {
+      "moebel": "pd6Brettregal",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "pd6Turnmatte",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "pd6Turnmatte",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [13, 14],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6Tuer",
+      "feld": [13, 15],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [13, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "turnhalleAusgang",
+      "feld": [13, 15]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "odile",
+      "feld": [14, 3]
+    },
+    {
+      "name": "remy",
+      "feld": [10, 7]
+    },
+    {
+      "name": "lou",
+      "feld": [15, 10]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kinder",
+      "typ": "statist",
+      "feld": [11, 12],
+      "eigenschaften": {
+        "von": "11,12",
+        "bis": "15,12",
+        "tun": "warten auf ihre Partie",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern"],
+  "variante": "b"
+}

@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 174,
+  "nextobjectid": 185,
   "layers": [
     {
       "id": 1,
@@ -510,6 +510,121 @@
         },
         {
           "id": 9,
+          "name": "wg5Aeste",
+          "type": "moebel",
+          "x": 672,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "wg5Ast",
+          "type": "moebel",
+          "x": 752,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "wg5Aeste",
+          "type": "moebel",
+          "x": 688,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "wg5Ast",
+          "type": "moebel",
+          "x": 736,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "wg5Ast",
+          "type": "moebel",
+          "x": 656,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 14,
           "name": "wg4StammPilze",
           "type": "moebel",
           "x": 704,
@@ -532,8 +647,8 @@
           ]
         },
         {
-          "id": 10,
-          "name": "wg4StammSchraeg",
+          "id": 15,
+          "name": "wg4StammPilzeB",
           "type": "moebel",
           "x": 704,
           "y": 160,
@@ -555,7 +670,7 @@
           ]
         },
         {
-          "id": 11,
+          "id": 16,
           "name": "wg4StammPilzeB",
           "type": "moebel",
           "x": 720,
@@ -578,8 +693,8 @@
           ]
         },
         {
-          "id": 12,
-          "name": "wg4StammSchraeg",
+          "id": 17,
+          "name": "wg4StammPilze",
           "type": "moebel",
           "x": 688,
           "y": 176,
@@ -601,7 +716,7 @@
           ]
         },
         {
-          "id": 13,
+          "id": 18,
           "name": "wg4StammPilze",
           "type": "moebel",
           "x": 736,
@@ -624,7 +739,7 @@
           ]
         },
         {
-          "id": 14,
+          "id": 19,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 704,
@@ -647,7 +762,7 @@
           ]
         },
         {
-          "id": 15,
+          "id": 20,
           "name": "wg4ZederSchmal",
           "type": "moebel",
           "x": 720,
@@ -670,7 +785,7 @@
           ]
         },
         {
-          "id": 16,
+          "id": 21,
           "name": "wg4Busch",
           "type": "moebel",
           "x": 704,
@@ -693,7 +808,7 @@
           ]
         },
         {
-          "id": 17,
+          "id": 22,
           "name": "wg4Busch",
           "type": "moebel",
           "x": 704,
@@ -716,7 +831,7 @@
           ]
         },
         {
-          "id": 18,
+          "id": 23,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 704,
@@ -739,7 +854,7 @@
           ]
         },
         {
-          "id": 19,
+          "id": 24,
           "name": "wg4Kegelbaum",
           "type": "moebel",
           "x": 720,
@@ -762,7 +877,7 @@
           ]
         },
         {
-          "id": 20,
+          "id": 25,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 704,
@@ -785,7 +900,7 @@
           ]
         },
         {
-          "id": 21,
+          "id": 26,
           "name": "wg4Busch",
           "type": "moebel",
           "x": 720,
@@ -808,7 +923,7 @@
           ]
         },
         {
-          "id": 22,
+          "id": 27,
           "name": "wg4Busch",
           "type": "moebel",
           "x": 720,
@@ -831,8 +946,8 @@
           ]
         },
         {
-          "id": 23,
-          "name": "wg4ZederSchmal",
+          "id": 28,
+          "name": "wg4Kegelbaum",
           "type": "moebel",
           "x": 672,
           "y": 16,
@@ -854,7 +969,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": 29,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 752,
@@ -877,7 +992,7 @@
           ]
         },
         {
-          "id": 25,
+          "id": 30,
           "name": "wg4ZederSchmal",
           "type": "moebel",
           "x": 672,
@@ -900,7 +1015,7 @@
           ]
         },
         {
-          "id": 26,
+          "id": 31,
           "name": "wg4Kegelbaum",
           "type": "moebel",
           "x": 752,
@@ -923,7 +1038,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": 32,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 672,
@@ -946,8 +1061,8 @@
           ]
         },
         {
-          "id": 28,
-          "name": "wg4Zeder",
+          "id": 33,
+          "name": "wg4Kegelbaum",
           "type": "moebel",
           "x": 752,
           "y": 208,
@@ -969,7 +1084,99 @@
           ]
         },
         {
-          "id": 29,
+          "id": 34,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 640,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 784,
+          "y": 16,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 624,
+          "y": 208,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 264
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 800,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 38,
           "name": "wg4Stein",
           "type": "moebel",
           "x": 912,
@@ -992,8 +1199,8 @@
           ]
         },
         {
-          "id": 30,
-          "name": "wg4SteinB",
+          "id": 39,
+          "name": "wg4Stein",
           "type": "moebel",
           "x": 992,
           "y": 32,
@@ -1015,7 +1222,7 @@
           ]
         },
         {
-          "id": 31,
+          "id": 40,
           "name": "wg4Stein",
           "type": "moebel",
           "x": 896,
@@ -1038,7 +1245,7 @@
           ]
         },
         {
-          "id": 32,
+          "id": 41,
           "name": "wg4Stein",
           "type": "moebel",
           "x": 1008,
@@ -1061,8 +1268,8 @@
           ]
         },
         {
-          "id": 33,
-          "name": "wg4Stein",
+          "id": 42,
+          "name": "wg4SteinB",
           "type": "moebel",
           "x": 912,
           "y": 112,
@@ -1084,7 +1291,7 @@
           ]
         },
         {
-          "id": 34,
+          "id": 43,
           "name": "wg4Stein",
           "type": "moebel",
           "x": 992,
@@ -1107,7 +1314,7 @@
           ]
         },
         {
-          "id": 35,
+          "id": 44,
           "name": "wg4FelsgruppeB",
           "type": "moebel",
           "x": 1024,
@@ -1130,11 +1337,11 @@
           ]
         },
         {
-          "id": 36,
+          "id": 45,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 48,
-          "y": 64,
+          "x": 752,
+          "y": 0,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1143,7 +1350,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 120
+              "value": 56
             },
             {
               "name": "kollision",
@@ -1153,11 +1360,11 @@
           ]
         },
         {
-          "id": 37,
+          "id": 46,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 80,
-          "y": 256,
+          "x": 784,
+          "y": 192,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1166,7 +1373,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 312
+              "value": 248
             },
             {
               "name": "kollision",
@@ -1176,56 +1383,10 @@
           ]
         },
         {
-          "id": 38,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 112,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 39,
+          "id": 47,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 48,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 40,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 128,
+          "x": 608,
           "y": 32,
           "width": 32,
           "height": 64,
@@ -1245,102 +1406,10 @@
           ]
         },
         {
-          "id": 41,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 160,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 42,
+          "id": 48,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 96,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 43,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 224,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 44,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 192,
-          "y": 64,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 120
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 45,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 304,
+          "x": 576,
           "y": 48,
           "width": 32,
           "height": 64,
@@ -1360,11 +1429,11 @@
           ]
         },
         {
-          "id": 46,
+          "id": 49,
           "name": "wg4Kegelbaum",
           "type": "moebel",
-          "x": 272,
-          "y": 64,
+          "x": 848,
+          "y": 272,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1373,7 +1442,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 120
+              "value": 328
             },
             {
               "name": "kollision",
@@ -1383,10 +1452,102 @@
           ]
         },
         {
-          "id": 47,
+          "id": 50,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 624,
+          "y": 288,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 344
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 51,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 240,
+          "x": 816,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 832,
+          "y": 224,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 280
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 53,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 576,
+          "y": 240,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 296
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 608,
           "y": 80,
           "width": 32,
           "height": 64,
@@ -1406,172 +1567,11 @@
           ]
         },
         {
-          "id": 48,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 320,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 49,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 400,
-          "y": 32,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 88
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 50,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 336,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 51,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 368,
-          "y": 64,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 120
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 52,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 432,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 53,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 464,
-          "y": 48,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 54,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 480,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 55,
           "name": "wg4Kegelbaum",
           "type": "moebel",
-          "x": 512,
-          "y": 272,
+          "x": 576,
+          "y": 0,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1580,7 +1580,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 328
+              "value": 56
             },
             {
               "name": "kollision",
@@ -1593,7 +1593,7 @@
           "id": 56,
           "name": "wg4Kegelbaum",
           "type": "moebel",
-          "x": 528,
+          "x": 848,
           "y": 16,
           "width": 32,
           "height": 64,
@@ -1616,8 +1616,8 @@
           "id": 57,
           "name": "wg4ZederSchmal",
           "type": "moebel",
-          "x": 496,
-          "y": 16,
+          "x": 672,
+          "y": 80,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1626,7 +1626,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 72
+              "value": 136
             },
             {
               "name": "kollision",
@@ -1637,29 +1637,6 @@
         },
         {
           "id": 58,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 544,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 59,
           "name": "wg4Zeder",
           "type": "moebel",
           "x": 592,
@@ -1682,33 +1659,10 @@
           ]
         },
         {
-          "id": 60,
-          "name": "wg4Kegelbaum",
+          "id": 59,
+          "name": "wg4ZederSchmal",
           "type": "moebel",
-          "x": 640,
-          "y": 32,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 88
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 61,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 560,
+          "x": 784,
           "y": 64,
           "width": 32,
           "height": 64,
@@ -1728,11 +1682,11 @@
           ]
         },
         {
-          "id": 62,
+          "id": 60,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 624,
-          "y": 272,
+          "x": 640,
+          "y": 80,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1741,7 +1695,53 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 328
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 48,
+          "y": 48,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 80,
+          "y": 48,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
             },
             {
               "name": "kollision",
@@ -1752,10 +1752,10 @@
         },
         {
           "id": 63,
-          "name": "wg4Zeder",
+          "name": "wg4ZederSchmal",
           "type": "moebel",
-          "x": 784,
-          "y": 256,
+          "x": 32,
+          "y": 288,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -1764,7 +1764,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 312
+              "value": 344
             },
             {
               "name": "kollision",
@@ -1775,720 +1775,7 @@
         },
         {
           "id": 64,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 832,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 65,
           "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 784,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 66,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 832,
-          "y": 16,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 72
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 67,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 912,
-          "y": 256,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 68,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 864,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 69,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 992,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 70,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 1040,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 71,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1072,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 72,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 1104,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 73,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1152,
-          "y": 256,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 74,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1232,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 75,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1200,
-          "y": 256,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 76,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1264,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 77,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1296,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 78,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 1376,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 79,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1344,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 80,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1424,
-          "y": 304,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 360
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 81,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1456,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 82,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1520,
-          "y": 272,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 328
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 83,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1552,
-          "y": 288,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 84,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 976,
-          "y": 160,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 85,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1008,
-          "y": 160,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 86,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 224,
-          "y": 176,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 232
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 87,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 256,
-          "y": 176,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 232
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 88,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 1328,
-          "y": 112,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 89,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1392,
-          "y": 112,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 168
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 90,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 16,
-          "y": 208,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 264
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 91,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 96,
-          "y": 176,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 232
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 92,
-          "name": "wg4Kegelbaum",
-          "type": "moebel",
-          "x": 48,
-          "y": 160,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 93,
-          "name": "wg4ZederSchmal",
-          "type": "moebel",
-          "x": 1280,
-          "y": 144,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 200
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 94,
-          "name": "wg4Zeder",
-          "type": "moebel",
-          "x": 1248,
-          "y": 144,
-          "width": 32,
-          "height": 64,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 200
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 95,
-          "name": "wg4Kegelbaum",
           "type": "moebel",
           "x": 160,
           "y": 80,
@@ -2510,11 +1797,11 @@
           ]
         },
         {
-          "id": 96,
-          "name": "wg4Zeder",
+          "id": 65,
+          "name": "wg4Kegelbaum",
           "type": "moebel",
-          "x": 96,
-          "y": 112,
+          "x": 128,
+          "y": 80,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -2523,7 +1810,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 168
+              "value": 136
             },
             {
               "name": "kollision",
@@ -2533,10 +1820,10 @@
           ]
         },
         {
-          "id": 97,
-          "name": "wg4ZederSchmal",
+          "id": 66,
+          "name": "wg4Kegelbaum",
           "type": "moebel",
-          "x": 16,
+          "x": 160,
           "y": 16,
           "width": 32,
           "height": 64,
@@ -2556,10 +1843,861 @@
           ]
         },
         {
+          "id": 67,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 112,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 208,
+          "y": 48,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 69,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 240,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 70,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 304,
+          "y": 16,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 272,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 72,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 320,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 73,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 400,
+          "y": 16,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 336,
+          "y": 48,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 75,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 368,
+          "y": 80,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 76,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 432,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 77,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 448,
+          "y": 16,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 78,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 496,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 464,
+          "y": 256,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 312
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 80,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 480,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 544,
+          "y": 32,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 82,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 544,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 83,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 880,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 912,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 85,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 960,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 86,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1056,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1024,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 88,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 992,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 89,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1120,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 90,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1088,
+          "y": 256,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 312
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 91,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1152,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 92,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1216,
+          "y": 256,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 312
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 93,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1184,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 94,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1248,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 95,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1280,
+          "y": 256,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 312
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 96,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1312,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1392,
+          "y": 288,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 344
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
           "id": 98,
           "name": "wg4Zeder",
           "type": "moebel",
-          "x": 384,
+          "x": 1424,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 99,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1472,
+          "y": 272,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 328
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 100,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1536,
+          "y": 304,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 360
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 101,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1200,
+          "y": 176,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1248,
+          "y": 192,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 248
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 1168,
+          "y": 176,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 104,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1536,
           "y": 144,
           "width": 32,
           "height": 64,
@@ -2579,10 +2717,171 @@
           ]
         },
         {
-          "id": 99,
+          "id": 105,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1472,
+          "y": 128,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 106,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1504,
+          "y": 160,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 107,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 960,
+          "y": 160,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 108,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 1040,
+          "y": 160,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 109,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 16,
+          "y": 64,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 110,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 880,
+          "y": 176,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 111,
+          "name": "wg4Kegelbaum",
+          "type": "moebel",
+          "x": 1328,
+          "y": 144,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 200
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 112,
           "name": "wg4ZederSchmal",
           "type": "moebel",
-          "x": 448,
+          "x": 1360,
           "y": 112,
           "width": 32,
           "height": 64,
@@ -2602,11 +2901,11 @@
           ]
         },
         {
-          "id": 100,
+          "id": 113,
           "name": "wg4ZederSchmal",
           "type": "moebel",
-          "x": 592,
-          "y": 224,
+          "x": 1408,
+          "y": 112,
           "width": 32,
           "height": 64,
           "rotation": 0,
@@ -2615,7 +2914,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 280
+              "value": 168
             },
             {
               "name": "kollision",
@@ -2625,7 +2924,53 @@
           ]
         },
         {
-          "id": 101,
+          "id": 114,
+          "name": "wg4ZederSchmal",
+          "type": "moebel",
+          "x": 80,
+          "y": 112,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 115,
+          "name": "wg4Zeder",
+          "type": "moebel",
+          "x": 48,
+          "y": 112,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 168
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 116,
           "name": "wg4Felsgruppe",
           "type": "moebel",
           "x": 480,
@@ -2648,7 +2993,7 @@
           ]
         },
         {
-          "id": 102,
+          "id": 117,
           "name": "wg4Felsgruppe",
           "type": "moebel",
           "x": 1120,
@@ -2671,355 +3016,10 @@
           ]
         },
         {
-          "id": 103,
-          "name": "wg4Felsgruppe",
-          "type": "moebel",
-          "x": 1344,
-          "y": 192,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 104,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 976,
-          "y": 320,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 105,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 944,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 106,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 960,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 107,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 960,
-          "y": 320,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 108,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1424,
-          "y": 112,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 120
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 109,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1424,
-          "y": 128,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 110,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1440,
-          "y": 128,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 136
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 111,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 160,
-          "y": 176,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 112,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 144,
-          "y": 160,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 113,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 128,
-          "y": 160,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 114,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 176,
-          "y": 224,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 232
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 115,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 176,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 264
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 116,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 160,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 117,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 176,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 118,
-          "name": "wg4Gras",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 464,
+          "x": 336,
           "y": 176,
           "width": 16,
           "height": 16,
@@ -3029,21 +3029,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 184
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 119,
-          "name": "wg4Gras",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 496,
-          "y": 176,
+          "x": 336,
+          "y": 144,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3052,21 +3052,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 152
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 120,
-          "name": "wg4Stein",
+          "name": "wg4SteinB",
           "type": "moebel",
           "x": 1376,
-          "y": 240,
+          "y": 288,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3075,7 +3075,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 248
+              "value": 296
             },
             {
               "name": "kollision",
@@ -3086,10 +3086,10 @@
         },
         {
           "id": 121,
-          "name": "wg4Stein",
+          "name": "wg4SteinB",
           "type": "moebel",
-          "x": 1408,
-          "y": 240,
+          "x": 1376,
+          "y": 304,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3098,7 +3098,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 248
+              "value": 312
             },
             {
               "name": "kollision",
@@ -3111,8 +3111,8 @@
           "id": 122,
           "name": "wg4Stein",
           "type": "moebel",
-          "x": 1408,
-          "y": 256,
+          "x": 848,
+          "y": 192,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3121,7 +3121,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 264
+              "value": 200
             },
             {
               "name": "kollision",
@@ -3132,10 +3132,10 @@
         },
         {
           "id": 123,
-          "name": "wg4PilzeB",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 752,
-          "y": 128,
+          "x": 832,
+          "y": 192,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3144,87 +3144,18 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 200
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 124,
-          "name": "wg4Farn",
-          "type": "moebel",
-          "x": 400,
-          "y": 288,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 125,
-          "name": "wg4Farn",
-          "type": "moebel",
-          "x": 400,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 126,
-          "name": "wg4Farn",
-          "type": "moebel",
-          "x": 416,
-          "y": 272,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 127,
-          "name": "wg4Farn",
+          "name": "wg4Pilze",
           "type": "moebel",
           "x": 384,
           "y": 272,
@@ -3246,11 +3177,11 @@
           ]
         },
         {
-          "id": 128,
-          "name": "wg4Stein",
+          "id": 125,
+          "name": "wg4Pilze",
           "type": "moebel",
-          "x": 656,
-          "y": 208,
+          "x": 400,
+          "y": 288,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3259,7 +3190,76 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 216
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 126,
+          "name": "wg4SteinB",
+          "type": "moebel",
+          "x": 784,
+          "y": 272,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 280
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 127,
+          "name": "wg4SteinB",
+          "type": "moebel",
+          "x": 752,
+          "y": 272,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 280
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 128,
+          "name": "wg4SteinB",
+          "type": "moebel",
+          "x": 784,
+          "y": 288,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 296
             },
             {
               "name": "kollision",
@@ -3270,10 +3270,10 @@
         },
         {
           "id": 129,
-          "name": "wg4Stein",
+          "name": "wg4PilzeB",
           "type": "moebel",
-          "x": 624,
-          "y": 192,
+          "x": 16,
+          "y": 320,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3282,21 +3282,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 200
+              "value": 1
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": true
+              "value": false
             }
           ]
         },
         {
           "id": 130,
-          "name": "wg4Stein",
+          "name": "wg4PilzeB",
           "type": "moebel",
-          "x": 640,
-          "y": 192,
+          "x": 656,
+          "y": 320,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3305,21 +3305,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 200
+              "value": 1
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": true
+              "value": false
             }
           ]
         },
         {
           "id": 131,
-          "name": "wg4Pilze",
+          "name": "wg4PilzeB",
           "type": "moebel",
-          "x": 1392,
-          "y": 224,
+          "x": 656,
+          "y": 288,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3339,32 +3339,9 @@
         },
         {
           "id": 132,
-          "name": "wg4Pilze",
+          "name": "wg4SteinB",
           "type": "moebel",
-          "x": 1376,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 133,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 1168,
+          "x": 912,
           "y": 192,
           "width": 16,
           "height": 16,
@@ -3384,11 +3361,11 @@
           ]
         },
         {
-          "id": 134,
-          "name": "wg4BuschKlein",
+          "id": 133,
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 1184,
-          "y": 208,
+          "x": 768,
+          "y": 144,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3397,7 +3374,30 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 216
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 134,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 752,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
             },
             {
               "name": "kollision",
@@ -3410,8 +3410,8 @@
           "id": 135,
           "name": "wg4Farn",
           "type": "moebel",
-          "x": 1328,
-          "y": 320,
+          "x": 1232,
+          "y": 208,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3433,8 +3433,8 @@
           "id": 136,
           "name": "wg4Farn",
           "type": "moebel",
-          "x": 1328,
-          "y": 304,
+          "x": 1232,
+          "y": 224,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3454,10 +3454,10 @@
         },
         {
           "id": 137,
-          "name": "wg4Farn",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 1328,
-          "y": 336,
+          "x": 960,
+          "y": 240,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3466,21 +3466,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 248
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 138,
-          "name": "wg4BuschKlein",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 512,
-          "y": 112,
+          "x": 944,
+          "y": 208,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3489,7 +3489,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 120
+              "value": 216
             },
             {
               "name": "kollision",
@@ -3500,10 +3500,10 @@
         },
         {
           "id": 139,
-          "name": "wg4Pilze",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 1152,
-          "y": 160,
+          "x": 944,
+          "y": 224,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3512,21 +3512,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 232
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 140,
-          "name": "wg4Pilze",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 1168,
-          "y": 176,
+          "x": 928,
+          "y": 224,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3535,21 +3535,21 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 232
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
         {
           "id": 141,
-          "name": "wg4Pilze",
+          "name": "wg4Stein",
           "type": "moebel",
-          "x": 1152,
-          "y": 176,
+          "x": 1216,
+          "y": 320,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3558,12 +3558,12 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 1
+              "value": 328
             },
             {
               "name": "kollision",
               "type": "bool",
-              "value": false
+              "value": true
             }
           ]
         },
@@ -3571,8 +3571,8 @@
           "id": 142,
           "name": "wg4Gras",
           "type": "moebel",
-          "x": 1520,
-          "y": 256,
+          "x": 1072,
+          "y": 16,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -3594,6 +3594,512 @@
           "id": 143,
           "name": "wg4Gras",
           "type": "moebel",
+          "x": 1088,
+          "y": 32,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 144,
+          "name": "wg4Farn",
+          "type": "moebel",
+          "x": 832,
+          "y": 304,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 145,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1168,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 248
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 146,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1168,
+          "y": 256,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 264
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 147,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1152,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 248
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 148,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1152,
+          "y": 256,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 264
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 149,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 304,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 150,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 320,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 151,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 400,
+          "y": 320,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 152,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 400,
+          "y": 304,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 153,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 416,
+          "y": 304,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 154,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 656,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 155,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 1376,
+          "y": 224,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 232
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 156,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 1344,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 157,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 1376,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 216
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 158,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 1360,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 200
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 159,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 1120,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 160,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 944,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 161,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 912,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 162,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 944,
+          "y": 192,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 163,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 928,
+          "y": 160,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 164,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 1520,
+          "y": 256,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 165,
+          "name": "wg4Pilze",
+          "type": "moebel",
           "x": 1536,
           "y": 256,
           "width": 16,
@@ -3614,100 +4120,8 @@
           ]
         },
         {
-          "id": 144,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 576,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 145,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 560,
-          "y": 224,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 146,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1184,
-          "y": 48,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 56
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 147,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1168,
-          "y": 32,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 40
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 148,
-          "name": "wg4SteinB",
+          "id": 166,
+          "name": "wg4Farn",
           "type": "moebel",
           "x": 1056,
           "y": 112,
@@ -3719,7 +4133,53 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 120
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 167,
+          "name": "wg4Farn",
+          "type": "moebel",
+          "x": 1056,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 168,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1392,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
             },
             {
               "name": "kollision",
@@ -3729,10 +4189,33 @@
           ]
         },
         {
-          "id": 149,
+          "id": 169,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 1424,
+          "y": 176,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 184
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 170,
           "name": "wg4SteinB",
           "type": "moebel",
-          "x": 1056,
+          "x": 320,
           "y": 128,
           "width": 16,
           "height": 16,
@@ -3752,424 +4235,10 @@
           ]
         },
         {
-          "id": 150,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 976,
-          "y": 336,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 344
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 151,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 976,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 152,
-          "name": "wg4Pilze",
-          "type": "moebel",
-          "x": 864,
-          "y": 64,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 153,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 128,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 216
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 154,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 1312,
-          "y": 112,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 155,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 704,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 156,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 1040,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 157,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 1024,
-          "y": 224,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 158,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 1040,
-          "y": 208,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 159,
-          "name": "wg4PilzeB",
-          "type": "moebel",
-          "x": 1040,
-          "y": 224,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 160,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1488,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 161,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1504,
-          "y": 304,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 312
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 162,
+          "id": 171,
           "name": "wg4Farn",
           "type": "moebel",
-          "x": 256,
-          "y": 48,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 163,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 1360,
-          "y": 48,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 56
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 164,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 1376,
-          "y": 32,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 40
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 165,
-          "name": "wg4Gras",
-          "type": "moebel",
-          "x": 1392,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 1
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 166,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 96,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 167,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 784,
-          "y": 112,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 120
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 168,
-          "name": "wg4BuschKlein",
-          "type": "moebel",
-          "x": 784,
+          "x": 432,
           "y": 80,
           "width": 16,
           "height": 16,
@@ -4179,29 +4248,6 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 88
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 169,
-          "name": "wg4Farn",
-          "type": "moebel",
-          "x": 416,
-          "y": 256,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
               "value": 1
             },
             {
@@ -4212,57 +4258,11 @@
           ]
         },
         {
-          "id": 170,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1200,
-          "y": 224,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 232
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 171,
-          "name": "wg4Stein",
-          "type": "moebel",
-          "x": 1216,
-          "y": 240,
-          "width": 16,
-          "height": 16,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 248
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
           "id": 172,
           "name": "wg4Farn",
           "type": "moebel",
-          "x": 1168,
-          "y": 96,
+          "x": 448,
+          "y": 80,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -4282,10 +4282,263 @@
         },
         {
           "id": 173,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 1424,
+          "y": 224,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 174,
+          "name": "wg4Pilze",
+          "type": "moebel",
+          "x": 1440,
+          "y": 240,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 175,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 112,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 176,
+          "name": "wg4BuschKlein",
+          "type": "moebel",
+          "x": 112,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 177,
+          "name": "wg4PilzeB",
+          "type": "moebel",
+          "x": 832,
+          "y": 32,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 178,
+          "name": "wg4Gras",
+          "type": "moebel",
+          "x": 1376,
+          "y": 320,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 179,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 352,
+          "y": 128,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 180,
+          "name": "wg4Stein",
+          "type": "moebel",
+          "x": 336,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 181,
           "name": "wg4Farn",
           "type": "moebel",
-          "x": 1152,
-          "y": 96,
+          "x": 112,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 182,
+          "name": "wg4Farn",
+          "type": "moebel",
+          "x": 80,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 183,
+          "name": "wg4Farn",
+          "type": "moebel",
+          "x": 96,
+          "y": 208,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 184,
+          "name": "wg4Farn",
+          "type": "moebel",
+          "x": 96,
+          "y": 192,
           "width": 16,
           "height": 16,
           "rotation": 0,

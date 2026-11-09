@@ -450,9 +450,9 @@ das Gatter S1 (Lücke im Zaun, Reihe 11) bis zum Nordrand.
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Norden, ganze Breite | Kornfeld der Brennans (Spalten 1–50, Korn auf jedem zweiten Feld), Vogelscheuche (10, 4), Traktor von Otis am Feldrand (36, 7, Blick links); Millers Mais (Spalten 54–118); durchgehender Holzzaun Reihe 11 (Satz Fence 4, Unterkante), Gatter-Lücke 52–53 mit Endpfosten |
 | L1                   | Rätseltafel mit Dach (3, 12, `tafel`), Ortsschild „Maple Falls“ (7, 12) nördlich am Weg, Blick zum Weg                                                                                                                                                                    |
-| L2                   | Kuhweide 17–29 × 18–24, geschlossener Zaun mit Ecken, Tor oben (22–24), Tränke innen am Zaun, Zettel „Bitte schließen“ am Tor; Kühe als Belebung                                                                                                                          |
+| L2                   | Kuhweide 17–29 × 18–24, geschlossener Zaun mit Ecken, Holztor oben (23–24) auf der Zaunlinie, Tränke innen am Zaun, Zettel „Bitte schließen“ am Tor; Kühe als Belebung                                                                                                    |
 | L3                   | Krähen über dem Feld, Laubbaumgruppe südlich                                                                                                                                                                                                                              |
-| L4                   | Wegweiser mit vier Armen an der Kreuzung (49, 12); gegenüber Adas Apfelstand (50, 18) mit Äpfeln, Geräteschuppen (57, 18), Obstwiese mit drei Apfelbäumchen in einer Reihe                                                                                                |
+| L4                   | Weg biegt hier nach Süden (Reihen 18–20); Wegweiser mit drei Brettern an der Kreuzung (51, 16); nördlich direkt am Weg Adas Apfelstand (46, 14) mit Äpfeln, Geräteschuppen (56, 14), Obstwiese mit drei Apfelbäumchen in einer Reihe                                      |
 | L5                   | Mais, Wanderer auf dem Weg (67, 16)                                                                                                                                                                                                                                       |
 | L6                   | Bank direkt am Weg (80, 14, zum Weg), Nia daneben, zwei Heuhaufen, Laubbaum und roter Herbstbaum                                                                                                                                                                          |
 | L7                   | Buschgruppe 94–102 × 12–14 mit Lücke von oben; `fundFormular` (97, 13)                                                                                                                                                                                                    |
@@ -464,7 +464,7 @@ Krähen, Hase, Reh. Offen: Hufeisen (`fundHufeisen`) und Weidetor als Auslöser 
 
 ### 4.F Flussweg (`wegMapleCedar.flussweg`, Bühnenbild, niedrig-1)
 
-**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten, Weg aus Erde, Steg aus Dielen
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten, Weg aus Erde, Steg aus Stegbildern auf Brückenfeldern `h` über dem Wasser
 (`d`), Fluss als Wasser mit Ufer im Süden (Reihen 20–21). **Rand** geschlossen, Übergänge West und
 Ost in den Reihen 15–16.
 
@@ -474,9 +474,9 @@ Ost in den Reihen 15–16.
 | Abschnitt  | Inventar                                                                            |
 | ---------- | ----------------------------------------------------------------------------------- |
 | Westen     | Baumgruppen im Norden, Münzfund (22, 12), Wildblumen                                |
-| Fährstelle | Felsgruppe (36, 18), Boot am Pfahl im Wasser (40, 21, ohne Kollision)               |
-| Mitte      | Rastbank (52, 13) zum Weg, Auslöser `rast`                                          |
-| Steg       | Dielen Spalten 67–68, Reihen 19–25 ins Wasser                                       |
+| Fährstelle | Felsgruppe (36, 18), Stein der Fährleute                                            |
+| Mitte      | Rastbank (52, 14) direkt am Weg, Blick zum Fluss, Auslöser `rast`                   |
+| Steg       | Stegbilder Spalten 67–68, Reihen 20–23 über Wasser, zwei Boote längs (65 und 69)    |
 | Osten      | Ortsschild „Cedar Creek“ (112, 17), Auslöser `schildCedar` (112, 18), Erlen am Ufer |
 
 Belebung: Angler am Steg, Joggerin, Reiher, Hase, Schmetterlinge, Nebel über dem Wasser.
@@ -490,12 +490,12 @@ geschlossen; Übergänge Süd (Spalten 10–11, `zedernZurueckPark`) und Ost (Re
 **Weg:** vom Südrand hoch bis Reihe 18, in Stufen nach Nordosten bis Reihe 10 (Spalte 36),
 waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reihen 4–5 zum Ostrand.
 
-| Abschnitt | Inventar                                                                          |
-| --------- | --------------------------------------------------------------------------------- |
-| Wald      | Zedern in Gruppen von 2 bis 6, am Rand dichter, Lichtungen dazwischen             |
-| S2        | Stapel liegender Stämme mit Pilzen quer über den Pfad bei Spalte 45 (Reihen 9–11) |
-| Kuppe     | Lichtung, Baumstammbank (59, 3) in einem Steinkreis, Mitte frei für die Aussicht  |
-| überall   | Farne, Pilze, Steine, Felsgruppen                                                 |
+| Abschnitt | Inventar                                                                                           |
+| --------- | -------------------------------------------------------------------------------------------------- |
+| Wald      | Zedern in Gruppen von 2 bis 6, am Rand dichter, Lichtungen dazwischen                              |
+| S2        | umgefallene Stämme mit Pilzen und Ästen (Sturmholz) quer über den Pfad bei Spalte 45 (Reihen 9–11) |
+| Kuppe     | Lichtung, Baumstammbank (59, 3) in einem Steinkreis, Mitte frei für die Aussicht                   |
+| überall   | Farne, Pilze, Steine, Felsgruppen                                                                  |
 
 Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
 folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), dichte Zedern von Rand zu Rand bei Spalte 44–46 schließen den Wald daneben. Hügelkanten gibt es im Katalog nicht.

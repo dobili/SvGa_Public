@@ -1,0 +1,304 @@
+{
+  "karte": "summitCity.aussen",
+  "datei": "karten/varianten/summit-city-aussen-b.json",
+  "art": "aussen",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand aus grauem Fels. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Brunnen (Ersatz für den Drachenbrunnen, bis das Bild kommt), auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn (Ersatz: Werkhalle). Nach Osten führt die Straße zu Weg 8 und zum Geysirbecken. Ferienhütten, Pinien und Felsbrocken an den Hängen, Murmeltiere und Ziegen. Variante B, die schlichtere: Laden links, Hütte rechts davon, Talstation weiter westlich, der Platz ohne Stände.",
+  "wand": "fels",
+  "boden": "gras",
+  "boeden": {
+    "p": "pflaster",
+    "f": "felsboden"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "rustikal", "laendlich"],
+  "raster": [
+    "######################################################################",
+    "######################################################################",
+    "######################################################################",
+    "######################################################################",
+    "######################################################################",
+    "######################################################################",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#...fffffffffffffffffff..............................................#",
+    "#..###########pp########.............................................#",
+    "#..###########pp########.............................................#",
+    "#..###########pp########.............................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#............................................pp......................#",
+    "#................pp..........................pp......................#",
+    "#......pp........pp.......ppppppppppppppppppppp......................#",
+    "#....pppppppppppppppppppppppppppppppppppppppppp......................#",
+    "#....pppppppppppppppppppppppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
+    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
+    "#.........................pppppppppppppppppppppppppppppppppppppppppppp",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.........................ppppppppppppppppppppp......................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "#.................................ppp................................#",
+    "##################################ppp#################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "sc7Bergladen",
+      "feld": [4, 17]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [14, 19]
+    },
+    {
+      "moebel": "wds6Holzstapel",
+      "feld": [21, 24]
+    },
+    {
+      "moebel": "sc7Talstation",
+      "feld": [43, 14]
+    },
+    {
+      "moebel": "sc7Brunnen",
+      "feld": [34, 30]
+    },
+    {
+      "moebel": "parkbank",
+      "feld": [30, 38]
+    },
+    {
+      "moebel": "laterne",
+      "feld": [27, 28]
+    },
+    {
+      "moebel": "sc7Plakat",
+      "feld": [38, 46]
+    },
+    {
+      "moebel": "wds6Ortsschild",
+      "feld": [32, 50]
+    },
+    {
+      "moebel": "wds6Wegweiser",
+      "feld": [60, 31]
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [8, 40]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [54, 44]
+    },
+    {
+      "moebel": "sc7Hackklotz",
+      "feld": [24, 26]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [55, 38]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [6, 33]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [35, 17]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [61, 13]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [20, 39]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [41, 43]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [65, 45]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [65, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [32, 23]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [49, 26]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [27, 13]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [53, 21]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [61, 9]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [32, 7]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [35, 54],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "wegDesert",
+      "feld": [34, 55]
+    },
+    {
+      "name": "wegDesert",
+      "feld": [35, 55]
+    },
+    {
+      "name": "wegDesert",
+      "feld": [36, 55]
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [69, 33]
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [69, 34]
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [69, 35]
+    },
+    {
+      "name": "huetteTuer",
+      "feld": [17, 27]
+    },
+    {
+      "name": "bergladenTuer",
+      "feld": [7, 28]
+    },
+    {
+      "name": "seilbahnTal",
+      "feld": [46, 20]
+    },
+    {
+      "name": "drachenbrunnen",
+      "feld": [35, 35]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "sol",
+      "feld": [15, 9]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [36, 47],
+      "eigenschaften": {
+        "von": "36,47",
+        "bis": "36,47",
+        "tun": "rastet am Weg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "seilbahnwaerter",
+      "typ": "statist",
+      "feld": [47, 21],
+      "eigenschaften": {
+        "von": "47,21",
+        "bis": "47,21",
+        "tun": "prüft das Seil",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "holzhacker",
+      "typ": "statist",
+      "feld": [25, 28],
+      "eigenschaften": {
+        "von": "25,28",
+        "bis": "25,28",
+        "tun": "hackt Holz",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "murmeltier",
+      "typ": "tier",
+      "feld": [58, 18],
+      "eigenschaften": {
+        "von": "58,18",
+        "bis": "61,18",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "ziegen",
+      "typ": "tier",
+      "feld": [20, 48],
+      "eigenschaften": {
+        "von": "20,48",
+        "bis": "23,48",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "kinder",
+      "typ": "statist",
+      "feld": [38, 32],
+      "eigenschaften": {
+        "von": "38,32",
+        "bis": "38,32",
+        "tun": "klettern am Brunnen",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "b"
+}

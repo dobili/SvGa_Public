@@ -249,6 +249,15 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "modern"
+    },
+    "wr5BrueckeLaengs5": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_5.png",
+      "breite": 32,
+      "hoehe": 84,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "klassisch"
     }
   }
 }

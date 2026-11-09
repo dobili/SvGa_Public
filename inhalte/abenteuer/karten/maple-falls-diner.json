@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 73,
+ "nextobjectid": 74,
  "layers": [
   {
    "id": 1,
@@ -2184,7 +2184,7 @@
      "id": 31,
      "name": "mf5Kaffeemaschine",
      "type": "moebel",
-     "x": 232,
+     "x": 225,
      "y": 156,
      "width": 16,
      "height": 32,
@@ -2205,19 +2205,19 @@
     },
     {
      "id": 32,
-     "name": "mf5Hocker",
+     "name": "mf9RadioAlt",
      "type": "moebel",
-     "x": 240,
-     "y": 185,
+     "x": 239,
+     "y": 172,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 209
+       "value": 201
       },
       {
        "name": "kollision",
@@ -2230,7 +2230,7 @@
      "id": 33,
      "name": "mf5Hocker",
      "type": "moebel",
-     "x": 272,
+     "x": 240,
      "y": 185,
      "width": 16,
      "height": 32,
@@ -2253,7 +2253,7 @@
      "id": 34,
      "name": "mf5Hocker",
      "type": "moebel",
-     "x": 304,
+     "x": 272,
      "y": 185,
      "width": 16,
      "height": 32,
@@ -2276,7 +2276,7 @@
      "id": 35,
      "name": "mf5Hocker",
      "type": "moebel",
-     "x": 336,
+     "x": 304,
      "y": 185,
      "width": 16,
      "height": 32,
@@ -2299,7 +2299,7 @@
      "id": 36,
      "name": "mf5Hocker",
      "type": "moebel",
-     "x": 368,
+     "x": 336,
      "y": 185,
      "width": 16,
      "height": 32,
@@ -2322,7 +2322,7 @@
      "id": 37,
      "name": "mf5Hocker",
      "type": "moebel",
-     "x": 400,
+     "x": 368,
      "y": 185,
      "width": 16,
      "height": 32,
@@ -2343,6 +2343,29 @@
     },
     {
      "id": 38,
+     "name": "mf5Hocker",
+     "type": "moebel",
+     "x": 400,
+     "y": 185,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 209
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 39,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 32,
@@ -2365,33 +2388,10 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "mf5NischenstuhlRechts",
      "type": "moebel",
      "x": 16,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "mf5NischenstuhlLinks",
-     "type": "moebel",
-     "x": 64,
      "y": 160,
      "width": 16,
      "height": 32,
@@ -2412,6 +2412,29 @@
     },
     {
      "id": 41,
+     "name": "mf5NischenstuhlLinks",
+     "type": "moebel",
+     "x": 64,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 42,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 32,
@@ -2434,7 +2457,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "mf5NischenstuhlRechts",
      "type": "moebel",
      "x": 16,
@@ -2457,7 +2480,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "mf5NischenstuhlLinks",
      "type": "moebel",
      "x": 64,
@@ -2480,7 +2503,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "mf4Palme",
      "type": "moebel",
      "x": 432,
@@ -2503,7 +2526,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 112,
@@ -2526,7 +2549,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "mf9TuerSuedGlas",
      "type": "moebel",
      "x": 112,
@@ -2549,7 +2572,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "mf5Kuehlschrank",
      "type": "moebel",
      "x": 208,
@@ -2572,7 +2595,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "mf8KuehlschrankWeiss",
      "type": "moebel",
      "x": 224,
@@ -2595,7 +2618,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 50,
      "name": "mf5Gastroherd",
      "type": "moebel",
      "x": 240,
@@ -2618,7 +2641,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 51,
      "name": "mf8Herd",
      "type": "moebel",
      "x": 256,
@@ -2641,7 +2664,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 52,
      "name": "mf8HerdOffen",
      "type": "moebel",
      "x": 272,
@@ -2664,33 +2687,10 @@
      ]
     },
     {
-     "id": 52,
-     "name": "mf5Dunstabzug",
-     "type": "moebel",
-     "x": 240,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 53,
      "name": "mf5Dunstabzug",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 16,
      "width": 16,
      "height": 16,
@@ -2713,7 +2713,7 @@
      "id": 54,
      "name": "mf5Dunstabzug",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 16,
      "width": 16,
      "height": 16,
@@ -2734,6 +2734,29 @@
     },
     {
      "id": 55,
+     "name": "mf5Dunstabzug",
+     "type": "moebel",
+     "x": 272,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 56,
      "name": "mf5Grillplatte",
      "type": "moebel",
      "x": 288,
@@ -2756,7 +2779,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "mf5Fritteuse",
      "type": "moebel",
      "x": 320,
@@ -2779,7 +2802,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "mf5Stahltisch",
      "type": "moebel",
      "x": 352,
@@ -2802,7 +2825,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "mf5Spuele",
      "type": "moebel",
      "x": 352,
@@ -2825,7 +2848,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "mf8Zerlegetisch2",
      "type": "moebel",
      "x": 240,
@@ -2848,7 +2871,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "mf5Brotbrett",
      "type": "moebel",
      "x": 241,
@@ -2871,7 +2894,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 62,
      "name": "mf5Mixer",
      "type": "moebel",
      "x": 255,
@@ -2894,7 +2917,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 63,
      "name": "mf9Vorrat99",
      "type": "moebel",
      "x": 400,
@@ -2917,7 +2940,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 64,
      "name": "mf9Vorrat100",
      "type": "moebel",
      "x": 416,
@@ -2940,7 +2963,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "mf9Vorrat102",
      "type": "moebel",
      "x": 432,
@@ -2963,7 +2986,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "mf9Vorrat105",
      "type": "moebel",
      "x": 448,
@@ -2986,7 +3009,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "wzKartonstapelHoch",
      "type": "moebel",
      "x": 400,
@@ -3009,7 +3032,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 68,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 432,
@@ -3032,7 +3055,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 69,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 448,
@@ -3055,7 +3078,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 70,
      "name": "mf5Toilette",
      "type": "moebel",
      "x": 16,
@@ -3078,7 +3101,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 71,
      "name": "mf5Handwaschbecken",
      "type": "moebel",
      "x": 32,
@@ -3101,7 +3124,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "mf5Toilette",
      "type": "moebel",
      "x": 80,
@@ -3124,7 +3147,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "mf5Handwaschbecken",
      "type": "moebel",
      "x": 64,

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 18,
+ "nextobjectid": 19,
  "layers": [
   {
    "id": 1,
@@ -712,6 +712,29 @@
     },
     {
      "id": 14,
+     "name": "rv5TeppichRund",
+     "type": "moebel",
+     "x": 96,
+     "y": 64,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 15,
      "name": "rv5Kuriertasche",
      "type": "moebel",
      "x": 192,
@@ -734,7 +757,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "rv5Zeitungen",
      "type": "moebel",
      "x": 16,
@@ -757,7 +780,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 112,
@@ -780,7 +803,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 112,

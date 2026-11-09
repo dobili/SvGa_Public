@@ -2,8 +2,8 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/varianten/riverton-bahnhofshalle-c.json",
   "art": "innen",
-  "beschreibung": "Variante C, Wartebänke in der Mitte: Die Bahnhofshalle mit der großen Uhr über der Mitte der Nordwand und Mr. Harlans Bank darunter; links die Bahnsteigtür mit Netzplan, rechts die Fahrplantafel. Vier Säulen stehen an den Seiten, in der Mitte drei Bänke um einen Mülleimer. Der Zeitungsstand von Pops liegt in der Nordostecke mit zwei Regalen und Schalter, der Fahrkartenschalter in der Nordwestecke, darunter Kaffee- und Getränkeautomat. Unten links das Fundbüro, rechts Gepäckwagen, Koffer und Schließfach. Glastür mit Fußmatte in der Mitte der Südwand.",
-  "wand": "backstein",
+  "beschreibung": "Variante C, Wartebänke in der Mitte: Die Bahnhofshalle mit der großen Uhr über der Mitte der Nordwand und Mr. Harlans Bank darunter; links die Bahnsteigtür mit Netzplan, rechts die Fahrplantafel. Vier Säulen stehen an den Seiten, in der Mitte drei Bänke um einen Mülleimer. Der Zeitungsstand von Pops liegt in der Nordostecke mit zwei Regalen und Ladentisch, der Fahrkartenschalter in der Nordwestecke, darunter Kaffee- und Getränkeautomat. Helle Wände statt Backstein. Unten links das Fundbüro mit Glasvitrine, rechts Gepäckwagen, Koffer und Schließfach. Glastür mit Fußmatte in der Mitte der Südwand.",
+  "wand": "hellgrau",
   "boden": "stein",
   "raster": [
     "##########################",
@@ -106,8 +106,13 @@
       "feld": [24, 3]
     },
     {
-      "moebel": "rv5Schalter",
-      "feld": [22, 7]
+      "moebel": "rv5Ladentisch",
+      "feld": [22, 7],
+      "id": "kiosk"
+    },
+    {
+      "moebel": "rv5Kasse",
+      "auf": "kiosk"
     },
     {
       "moebel": "rv5Schalter",
@@ -146,7 +151,7 @@
       "feld": [19, 13]
     },
     {
-      "moebel": "rv5Schalter",
+      "moebel": "rv5Vitrine",
       "feld": [7, 12]
     },
     {

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 33,
+ "nextobjectid": 45,
  "layers": [
   {
    "id": 1,
@@ -1046,7 +1046,7 @@
      "id": 10,
      "name": "ld5ThekeLinks",
      "type": "moebel",
-     "x": 240,
+     "x": 192,
      "y": 96,
      "width": 32,
      "height": 48,
@@ -1069,7 +1069,7 @@
      "id": 11,
      "name": "ld5ThekeMitte",
      "type": "moebel",
-     "x": 272,
+     "x": 224,
      "y": 96,
      "width": 16,
      "height": 48,
@@ -1090,6 +1090,75 @@
     },
     {
      "id": 12,
+     "name": "ld5ThekeMitte",
+     "type": "moebel",
+     "x": 240,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "ld5ThekeMitte",
+     "type": "moebel",
+     "x": 256,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "ld5ThekeMitte",
+     "type": "moebel",
+     "x": 272,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
      "name": "ld5ThekeRechts",
      "type": "moebel",
      "x": 288,
@@ -1112,127 +1181,58 @@
      ]
     },
     {
-     "id": 13,
-     "name": "ld5Barhocker",
-     "type": "moebel",
-     "x": 240,
-     "y": 122,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 146
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 14,
-     "name": "ld5Barhocker",
-     "type": "moebel",
-     "x": 272,
-     "y": 122,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 146
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 15,
-     "name": "ld5Rundtisch",
-     "type": "moebel",
-     "x": 48,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 16,
-     "name": "ld5Stuhl1",
+     "name": "ld5Glaeser",
      "type": "moebel",
-     "x": 32,
-     "y": 96,
+     "x": 202,
+     "y": 108,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 137
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 17,
-     "name": "ld5Stuhl2",
+     "name": "ld5Flaschen",
      "type": "moebel",
-     "x": 80,
-     "y": 96,
+     "x": 212,
+     "y": 108,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 137
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 18,
-     "name": "ld5Rundtisch",
+     "name": "ld5Barhocker",
      "type": "moebel",
-     "x": 128,
-     "y": 96,
-     "width": 32,
+     "x": 192,
+     "y": 122,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1240,21 +1240,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 146
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 19,
-     "name": "ld5Stuhl1",
+     "name": "ld5Barhocker",
      "type": "moebel",
-     "x": 112,
-     "y": 96,
+     "x": 224,
+     "y": 122,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1263,21 +1263,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 146
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 20,
-     "name": "ld5Stuhl2",
+     "name": "ld5Barhocker",
      "type": "moebel",
-     "x": 160,
-     "y": 96,
+     "x": 256,
+     "y": 122,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1286,21 +1286,44 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 146
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 21,
+     "name": "ld5Barhocker",
+     "type": "moebel",
+     "x": 288,
+     "y": 122,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 146
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 22,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 48,
-     "y": 144,
+     "y": 96,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -1309,30 +1332,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "ld5Stuhl1",
-     "type": "moebel",
-     "x": 32,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1343,6 +1343,167 @@
     },
     {
      "id": 23,
+     "name": "ld5Stuhl1",
+     "type": "moebel",
+     "x": 32,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "ld5Stuhl2",
+     "type": "moebel",
+     "x": 80,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "ld5Rundtisch",
+     "type": "moebel",
+     "x": 128,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "ld5Stuhl1",
+     "type": "moebel",
+     "x": 112,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "ld5Stuhl2",
+     "type": "moebel",
+     "x": 160,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "ld5Rundtisch",
+     "type": "moebel",
+     "x": 48,
+     "y": 144,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "ld5Stuhl1",
+     "type": "moebel",
+     "x": 32,
+     "y": 144,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 30,
      "name": "ld5Stuhl2",
      "type": "moebel",
      "x": 80,
@@ -1365,7 +1526,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 31,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 128,
@@ -1388,7 +1549,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 32,
      "name": "ld5Stuhl1",
      "type": "moebel",
      "x": 112,
@@ -1411,7 +1572,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 33,
      "name": "ld5Stuhl2",
      "type": "moebel",
      "x": 160,
@@ -1434,7 +1595,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 34,
      "name": "wg6Faesser",
      "type": "moebel",
      "x": 176,
@@ -1457,7 +1618,30 @@
      ]
     },
     {
-     "id": 28,
+     "id": 35,
+     "name": "wg6Faesser",
+     "type": "moebel",
+     "x": 16,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 36,
      "name": "wg6Kisten",
      "type": "moebel",
      "x": 256,
@@ -1480,7 +1664,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 37,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -1503,7 +1687,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 38,
      "name": "ld5Stiefel",
      "type": "moebel",
      "x": 192,
@@ -1526,7 +1710,99 @@
      ]
     },
     {
-     "id": 31,
+     "id": 39,
+     "name": "ld5Kegelkugel",
+     "type": "moebel",
+     "x": 16,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "ld5Kegelkugel",
+     "type": "moebel",
+     "x": 16,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 41,
+     "name": "ld5Kegel",
+     "type": "moebel",
+     "x": 224,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "name": "ld5Kegel",
+     "type": "moebel",
+     "x": 224,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 43,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 224,
@@ -1549,7 +1825,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 44,
      "name": "ld5TuerSued",
      "type": "moebel",
      "x": 224,

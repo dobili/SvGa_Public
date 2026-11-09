@@ -1,0 +1,710 @@
+{
+  "karte": "wegSummitCrossroads.geysirbecken",
+  "variante": "b",
+  "art": "aussen",
+  "beschreibung": "Variante B, schlicht: Wenige Kiefern, ein Bretterschuppen als Ranger-Station mit Rätseltafel und dem offenen Tor im Zaun (S10). Die Stege laufen in einer anderen Linie von Insel zu Insel über das heiße Becken, die Inseln sind kleiner und kahl, nur einzelne Sinterkegel. Die Bisons stehen auf der mittleren Insel. Im Süden eine Weide mit Zaun auf der Ostseite und wenige Bäume. Sinterinseln mit Geysirkegeln, Dampf über dem Wasser, Bisons auf der Insel und der Weide.",
+  "boden": "gras",
+  "wandart": "gras",
+  "ufer": "stein",
+  "boeden": {
+    "e": "erde",
+    "s": "sinter"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "##############ee##############",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.........ssssssssss.........#",
+    "#.........ssssssssss.........#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~hh~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~ssssssssssssss~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~hh~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~ssssssssssssssssss~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~hh~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~sssssssssssssssss~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~sssssssssssss~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~hh~~~~~~~~~~~~~~~#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........ee...............#",
+    "#...........eeee.............#",
+    "#...........eeee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "#.............ee.............#",
+    "##############ee##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "by6StegLaengs10",
+      "feld": [14, 24]
+    },
+    {
+      "moebel": "by6StegLaengs2",
+      "feld": [14, 34]
+    },
+    {
+      "moebel": "by6StegLaengs10",
+      "feld": [19, 43]
+    },
+    {
+      "moebel": "by6StegLaengs5",
+      "feld": [19, 53]
+    },
+    {
+      "moebel": "by6StegLaengs10",
+      "feld": [9, 65]
+    },
+    {
+      "moebel": "by6StegLaengs9",
+      "feld": [9, 75]
+    },
+    {
+      "moebel": "by6StegLaengs2",
+      "feld": [9, 84]
+    },
+    {
+      "moebel": "by6StegLaengs10",
+      "feld": [12, 98]
+    },
+    {
+      "moebel": "by6StegLaengs9",
+      "feld": [12, 115]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [1, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [2, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [12, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [17, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [20, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [21, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [22, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [23, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [24, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [25, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [26, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [27, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [28, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sx7RangerTor",
+      "feld": [13, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [5, 14]
+    },
+    {
+      "moebel": "cc3Raetseltafel",
+      "feld": [10, 14]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [14, 38]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [22, 39]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [4, 60]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [20, 90]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [6, 110]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [14, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [20, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [21, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [22, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [23, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [24, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [25, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [26, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [27, 127],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [27, 3]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [17, 157]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [26, 165]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [22, 159]
+    },
+    {
+      "moebel": "wg4Kegelbaum",
+      "feld": [27, 157]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [25, 154]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [10, 156]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [10, 137]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [17, 147]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [26, 145]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [27, 136]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 160]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [9, 161]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [22, 130]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 141]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [27, 137]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [14, 126]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [8, 167]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [3, 131]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [1, 126]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [27, 134]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 168]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 161]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [26, 139]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 124]
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [8, 115],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [12, 50],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [23, 101],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [21, 99],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [16, 103],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [2, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7BisonRechts",
+      "feld": [21, 95]
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [14, 94]
+    },
+    {
+      "moebel": "sx7BisonLiegend",
+      "feld": [3, 140]
+    },
+    {
+      "moebel": "sx7Bison",
+      "feld": [7, 146]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [14, 1],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "zurueckSummit",
+      "feld": [14, 0]
+    },
+    {
+      "name": "zurueckSummit",
+      "feld": [15, 0]
+    },
+    {
+      "name": "weiterPraerie",
+      "feld": [14, 169]
+    },
+    {
+      "name": "weiterPraerie",
+      "feld": [15, 169]
+    },
+    {
+      "name": "tafel",
+      "feld": [11, 16]
+    },
+    {
+      "name": "bisons",
+      "feld": [17, 92]
+    },
+    {
+      "name": "fundBisonhaar",
+      "feld": [11, 128]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "bell",
+      "feld": [17, 14]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "bisonherde",
+      "typ": "tier",
+      "feld": [20, 92],
+      "eigenschaften": {
+        "von": "18,91",
+        "bis": "24,95",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "bisonWeide",
+      "typ": "tier",
+      "feld": [5, 135],
+      "eigenschaften": {
+        "von": "3,130",
+        "bis": "9,145",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [14, 40],
+      "eigenschaften": {
+        "von": "5,40",
+        "bis": "16,41",
+        "tun": "fotografiert die Quellen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "raben",
+      "typ": "tier",
+      "feld": [20, 8],
+      "eigenschaften": {
+        "von": "18,6",
+        "bis": "26,8",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "einfach",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
+  "datei": "karten/varianten/weg-summit-crossroads-geysirbecken-b.json"
+}

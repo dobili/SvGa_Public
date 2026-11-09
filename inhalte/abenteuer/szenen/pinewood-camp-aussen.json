@@ -1,0 +1,422 @@
+{
+  "karte": "pinewoodCamp.aussen",
+  "datei": "karten/pinewood-camp-aussen.json",
+  "art": "aussen",
+  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer. Nach Osten geht es zum Canyonrand.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "e": "erde",
+    "d": "sand",
+    "p": "pflaster",
+    "h": "dielen"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "###################ee#######################################",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#..................ee......................................#",
+    "#.................deeddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................dddddddddd...............................#",
+    "#.................ddddeedddd...............................#",
+    "#.....................ee...................................#",
+    "#.....................ee...................................#",
+    "#.....................ee...................................#",
+    "#.....................ee...................................#",
+    "#.....................ee...................................#",
+    "#.....................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.....................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.......................................ee.................#",
+    "#.......................................ee.................#",
+    "#.............dddddddd.............dddddeedd............ddd#",
+    "#dddddd....ddddddddddddddddd.....dddddddddddddddd......dddd#",
+    "#ddddddddddddd~~~~~~~~ddddddddddddd~~~~~hh~~dddddddddddd~~~~",
+    "~~~~~~~dddd~~~~~~~~~~~~~~~~~ddddd~~~~~~~hh~~~~~~~dddddd~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  ],
+  "objekte": [
+    {
+      "moebel": "pw7Bootssteg3",
+      "feld": [40, 30]
+    },
+    {
+      "moebel": "pw7Feuerstelle",
+      "feld": [21, 14],
+      "id": "feuer"
+    },
+    {
+      "moebel": "mf4Fahnenmast",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [34, 4]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [40, 4]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [46, 4]
+    },
+    {
+      "moebel": "pwZelt",
+      "feld": [3, 12]
+    },
+    {
+      "moebel": "pwZeltGruen",
+      "feld": [8, 12]
+    },
+    {
+      "moebel": "pw7Kiosk",
+      "feld": [28, 16],
+      "id": "kiosk"
+    },
+    {
+      "moebel": "pw7KanuQuer",
+      "feld": [34, 28]
+    },
+    {
+      "moebel": "cc7Picknicktisch",
+      "feld": [31, 21]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [26, 1]
+    },
+    {
+      "moebel": "cp7MammutStamm",
+      "feld": [51, 1]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [24, 4]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [30, 1]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [52, 5]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [56, 1]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [14, 6]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [22, 6]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [32, 6]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [56, 6]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [12, 12]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [32, 13]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [37, 14]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [43, 12]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [48, 12]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [51, 12]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [2, 18]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [6, 20]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [13, 18]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [43, 17]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [50, 18]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [1, 22]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [9, 25]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [14, 22]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [17, 23]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [40, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [55, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [58, 2]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [9, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [33, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 10]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [40, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 11]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [6, 17]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [8, 19]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [36, 19]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [47, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [56, 19]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [6, 25]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [10, 23]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [28, 21]
+    },
+    {
+      "moebel": "wg4BlumeRot",
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [5, 27]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [19, 2],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [19, 0]
+    },
+    {
+      "name": "wegCrossroads",
+      "feld": [20, 0]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [59, 24]
+    },
+    {
+      "name": "wegGhost",
+      "feld": [59, 25]
+    },
+    {
+      "name": "lagerfeuer",
+      "feld": [24, 15]
+    },
+    {
+      "name": "kiosk",
+      "feld": [30, 21]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "ezra",
+      "feld": [20, 15]
+    },
+    {
+      "name": "dex",
+      "feld": [25, 16]
+    },
+    {
+      "name": "mae",
+      "feld": [22, 18]
+    },
+    {
+      "name": "lou",
+      "feld": [22, 13]
+    },
+    {
+      "name": "tamsin",
+      "feld": [42, 28]
+    },
+    {
+      "name": "hollis",
+      "feld": [54, 16]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "betreuer",
+      "typ": "statist",
+      "feld": [22, 22],
+      "eigenschaften": {
+        "von": "22,22",
+        "bis": "22,18",
+        "tun": "pfeift die Kinder zusammen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kanufahrer",
+      "typ": "statist",
+      "feld": [30, 35],
+      "eigenschaften": {
+        "von": "24,35",
+        "bis": "40,35",
+        "tun": "paddelt über den See",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "libellen",
+      "typ": "tier",
+      "feld": [16, 30],
+      "eigenschaften": {
+        "von": "12,30",
+        "bis": "22,30",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [54, 29],
+      "eigenschaften": {
+        "von": "54,29",
+        "bis": "54,29",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "einfach", "laendlich", "landhaus", "klassisch", "rustikal"]
+}

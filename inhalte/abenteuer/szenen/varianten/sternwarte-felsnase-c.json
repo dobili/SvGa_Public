@@ -1,0 +1,170 @@
+{
+  "karte": "sternwarte.felsnase",
+  "datei": "karten/varianten/sternwarte-felsnase-c.json",
+  "variante": "c",
+  "art": "aussen",
+  "beschreibung": "Variante C: lange Serpentine mit drei Kehren, die Sternwarte rechts, viele blühende Kakteen.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "raster": [
+    "########################################",
+    "########################################",
+    "#####################.......############",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "#####..............................#####",
+    "##########################...###########",
+    "##########################...###########",
+    "########.....................###########",
+    "########.....................###########",
+    "########.....................###########",
+    "########....############################",
+    "########....############################",
+    "########....############################",
+    "########..............##################",
+    "########..............##################",
+    "########..............##################",
+    "##################....##################",
+    "##################....##################",
+    "##################....##################",
+    "##################....##################",
+    "##################....##################",
+    "###################..###################"
+  ],
+  "objekte": [
+    {
+      "moebel": "n5Sternwarte",
+      "feld": [21, 1],
+      "id": "sternwarte"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [31, 3]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [32, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [28, 9]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [33, 8]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [19, 10]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [9, 15]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [11, 17]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [15, 16]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [24, 16]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [19, 27],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "zurueckCanyon",
+      "feld": [19, 29]
+    },
+    {
+      "name": "zurueckCanyon",
+      "feld": [20, 29]
+    },
+    {
+      "name": "kuppelTuer",
+      "feld": [24, 9]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [32, 6],
+      "eigenschaften": {
+        "von": "32,6",
+        "bis": "32,6",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal",
+    "schule",
+    "landhaus"
+  ]
+}

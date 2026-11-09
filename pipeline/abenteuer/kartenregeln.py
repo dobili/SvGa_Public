@@ -8,6 +8,8 @@ Vorderseite zeigt), ``zustand`` (neu, gebraucht, alt, kaputt) und ``stil`` (mode
 industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sind.
 """
 
+from pipeline.abenteuer.maske import maskenfelder
+
 K = 16
 GESPERRT = {"#", "~", " "}
 WAND = "#"
@@ -116,8 +118,8 @@ def _sperrfelder(gesetzt: list[dict]) -> set[tuple[int, int]]:
     felder: set[tuple[int, int]] = set()
     for s in gesetzt:
         if s["kollision"]:
-            x0, y0, x1, y1 = _felder(s)
-            felder |= {(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)}
+            x0, y0 = s["x"] // K, s["y"] // K
+            felder |= {(x0 + a, y0 + b) for a, b in maskenfelder(s)}
     return felder
 
 

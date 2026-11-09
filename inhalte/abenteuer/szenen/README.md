@@ -33,6 +33,7 @@ nachträgliches Möblieren:
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
   // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).
   // Roter Fels (Canyon, Wüste): "wand": "felsRot", Böden "sandRot" und "felsbodenRot".
+  // Geysirbecken: Boden "sinter" (heller Sinter, selten Risse und orange Bakterienränder).
   // Zweite Fassung einer Karte (Musikhaus nach musikhausOffen): "zustand_der_karte": "<flag>",
   // eigene Datei; der Hintergrund heißt dann <kennung>-<flag>.png (die App tauscht ab Runde 6).
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
@@ -141,3 +142,8 @@ keine Überlappungsprüfung (Fahnenmast, Laterne oder Schild vor einer Fassade).
 Ein Möbel in `inhalte/abenteuer/moebel/<ort>.json` kann `"frei_unten": N` tragen: Die untersten N
 Kachelreihen des Bildes sperren nicht (Gang vor den Motelzimmern, Veranda des alten Bahnhofs).
 Kartenbau, Prüfungen und App rechnen gleich.
+
+Für alles Feinere gibt es `"maske": ["....", "#..#", "#..#"]`: je Kachelreihe des Bildes eine
+Zeichenkette, `#` sperrt, `.` ist frei (offenes Tor nur an den Pfosten, Viehgatter quer mit
+oberster Reihe, Mammutbaum nur am Stammfuß). Die Maske ersetzt die Standardregel und
+`frei_unten`; Regel in `pipeline/abenteuer/maske.py`.

@@ -20,7 +20,7 @@
     "modern"
   ],
   "raster": [
-    "########################################################################################################################",
+    "####################################################ee##################################################################",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
@@ -3103,6 +3103,14 @@
     {
       "name": "weiterFluss",
       "feld": [119, 16]
+    },
+    {
+      "name": "kuerbishof",
+      "feld": [52, 0]
+    },
+    {
+      "name": "kuerbishof",
+      "feld": [53, 0]
     },
     {
       "name": "tafel",

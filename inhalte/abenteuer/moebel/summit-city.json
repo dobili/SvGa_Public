@@ -41,6 +41,215 @@
       "breite": 16,
       "hoehe": 48,
       "kollision": true
+    },
+    "sc7Theke": {
+      "quelle": "spiel/eigene/theke_holz_laengs_3.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "theke",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc7Huette": {
+      "quelle": "spiel/eigene/berghuette.png",
+      "breite": 128,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "frei_unten": 1
+    },
+    "sc7Bergladen": {
+      "quelle": "spiel/eigene/bergladen.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc7Ferienhuette": {
+      "quelle": "spiel/eigene/huette_a.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc7FerienhuetteB": {
+      "quelle": "spiel/eigene/huette_b.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc7Brunnen": {
+      "quelle": "spiel/eigene/drachenbrunnen.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "brunnen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sc7Plakat": {
+      "quelle": "spiel/eigene/plakat_meisterschaft.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Hackklotz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "klotz",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "sc7Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sc7Talstation": {
+      "quelle": "spiel/eigene/seilbahn_talstation.png",
+      "breite": 128,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Mast": {
+      "quelle": "spiel/eigene/seilbahn_mast.png",
+      "breite": 32,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "mast",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Seil": {
+      "quelle": "spiel/eigene/seilbahn_seil.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "seil",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Kamin": {
+      "quelle": "spiel/eigene/kamin.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "kamin",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc7FensterWolken": {
+      "quelle": "spiel/eigene/fenster_wolken.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fenster",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Gondel": {
+      "quelle": "spiel/eigene/gondel.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc7Wimpel3": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc7Wimpel4": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc7Wimpel5": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc7Wimpel6": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc7Wimpel7": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc7Wimpel8": {
+      "quelle": "spiel/eigene/wimpelkette_laengs_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

@@ -199,6 +199,11 @@
   "ort.steinbruch.name": "Alter Steinbruch",
   "ort.steinbruch.grube": "Steinbruch, Grube",
   "ort.steinbruch.stollen": "Alter Stollen",
+  "ort.sternwarte.name": "Sternwarte am Canyon",
+  "ort.sternwarte.felsnase": "Felsnase der Sternwarte",
+  "ort.sternwarte.kuppel": "Kuppel der Sternwarte",
+  "ort.goldmine.name": "Goldmine",
+  "ort.goldmine.stollen": "Stollen der Goldmine",
   "ort.ironwood.aussen": "Ironwood, Hauptstraße",
   "ort.ironwood.kantine": "Werkskantine",
   "ort.ironwood.mamasZimmer": "Mamas altes Zimmer",
@@ -813,5 +818,11 @@
   "karte.laeufervorgabe.erklaerung": "Dein Gegner beginnt ohne den Königsläufer. Das ist viel: Spiel, wie man mit einer Figur mehr spielt, tausche und vereinfache. Kapitel 3, Abschnitt 3.2, die vier Faktoren der Stellungsbewertung.",
   "ort.lockport.name": "Lockport",
   "ort.lockport.aussen": "Schleusendorf",
-  "ort.lockport.gasthaus": "Gasthaus „Zur Schleuse“"
+  "ort.lockport.gasthaus": "Gasthaus „Zur Schleuse“",
+  "ort.jahrmarkt.name": "Sommerjahrmarkt",
+  "ort.jahrmarkt.festplatz": "Festplatz",
+  "ort.kuerbishof.name": "Kürbishof Miller",
+  "ort.kuerbishof.hof": "Kürbishof",
+  "ort.pelikaninsel.name": "Pelikaninsel",
+  "ort.pelikaninsel.dorf": "Inseldorf"
 }

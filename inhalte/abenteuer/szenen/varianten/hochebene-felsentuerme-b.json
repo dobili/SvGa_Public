@@ -1,0 +1,171 @@
+{
+  "karte": "hochebene.felsentuerme",
+  "datei": "karten/varianten/hochebene-felsentuerme-b.json",
+  "art": "aussen",
+  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Variante B, die schlichtere: ein langer gerader Weg, ein Felsturm, der Steintisch nah am Weg, keine Koppel.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "boeden": {
+    "k": "schotter",
+    "f": "felsbodenRot"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "laendlich"],
+  "raster": [
+    "####################################################################################################",
+    "####################################################################################################",
+    "####################################################################################################",
+    "#.............................#####################................................................#",
+    "#.............................#####################................................................#",
+    "#.............................#####################................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "#...................fffffffffffffffffffffffffffffffffffffffffffffffffff............................#",
+    "####################################################################################################",
+    "####################################################################################################",
+    "####################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "hb7FelsturmBreit",
+      "feld": [70, 2]
+    },
+    {
+      "moebel": "wds6Wegweiser",
+      "feld": [94, 12]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [52, 10]
+    },
+    {
+      "moebel": "hb7Steintisch",
+      "feld": [49, 11],
+      "id": "tisch"
+    },
+    {
+      "moebel": "hb7Brett",
+      "auf": "tisch"
+    },
+    {
+      "moebel": "wds6Briefkasten",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [21, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [46, 17]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [12, 19]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [24, 17]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [87, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [33, 23]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [55, 24]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [92, 17]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [13, 9]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [80, 18]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [98, 14],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckBergstrasse",
+      "feld": [99, 14]
+    },
+    {
+      "name": "zurueckBergstrasse",
+      "feld": [99, 15]
+    },
+    {
+      "name": "weiterSchule",
+      "feld": [0, 14]
+    },
+    {
+      "name": "weiterSchule",
+      "feld": [0, 15]
+    },
+    {
+      "name": "steintisch",
+      "feld": [50, 13]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "kira",
+      "feld": [52, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [40, 7],
+      "eigenschaften": {
+        "von": "40,7",
+        "bis": "43,7",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [24, 22],
+      "eigenschaften": {
+        "von": "24,22",
+        "bis": "27,22",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "variante": "b"
+}

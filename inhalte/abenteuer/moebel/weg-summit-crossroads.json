@@ -1,0 +1,105 @@
+{
+  "moebel": {
+    "sx7Windrad": {
+      "quelle": "spiel/eigene/windrad.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sx7Sturmkeller": {
+      "quelle": "spiel/eigene/sturmkeller.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "sx7Mais": {
+      "quelle": "spiel/eigene/weizen.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "sx7MaisGruen": {
+      "quelle": "spiel/eigene/weizen_breit.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "sx7Bison": {
+      "quelle": "spiel/eigene/bison.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx7BisonRechts": {
+      "quelle": "spiel/eigene/bison_rechts.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx7BisonLiegend": {
+      "quelle": "spiel/eigene/bison_liegend.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx7Geysir": {
+      "quelle": "spiel/eigene/geysir.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx7Dampf": {
+      "quelle": "spiel/eigene/dampf.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx7RangerTor": {
+      "quelle": "spiel/eigene/ranger_tor_offen.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "frei_unten": 1
+    },
+    "sx7Rangerhaus": {
+      "quelle": "spiel/eigene/rangerhaus.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten"
+    }
+  }
+}

@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
+from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.varianten import vergleiche_mit_a
 
@@ -107,6 +108,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             "kollision": kollision,
             # Begehbare Reihen unten im Bild (Gang vor dem Motel, Veranda), Angabe „frei_unten“.
             "frei_unten": angabe.get("frei_unten", 0),
+            **({"maske": angabe["maske"]} if "maske" in angabe else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
         nach_id[stueck["id"]] = stueck
@@ -115,15 +117,12 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
 
 
 def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
-    """Felder, die ein Möbel mit Kollision sperrt: alles außer der obersten Kachelreihe und außer
-    ``frei_unten`` begehbaren Reihen am unteren Bildrand (Gang vor dem Motel, Veranda)."""
+    """Felder, die ein Möbel mit Kollision sperrt (Regel in maske.py: ohne oberste Kachelreihe,
+    ``frei_unten`` oder eigene ``maske``)."""
     if not stueck["kollision"]:
         return set()
     x0, y0 = stueck["x"] // K, stueck["y"] // K
-    spalten, reihen = max(1, stueck["breite"] // K), max(1, stueck["hoehe"] // K)
-    oben = 1 if reihen > 1 else 0
-    unten = reihen - stueck.get("frei_unten", 0)
-    return {(x0 + a, y0 + b) for a in range(spalten) for b in range(oben, unten)}
+    return {(x0 + a, y0 + b) for a, b in maskenfelder(stueck)}
 
 
 def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:

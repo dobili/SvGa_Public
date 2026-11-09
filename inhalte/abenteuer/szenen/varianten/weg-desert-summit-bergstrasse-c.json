@@ -523,6 +523,10 @@
       "feld": [22, 77]
     },
     {
+      "moebel": "wds6Brocken",
+      "feld": [26, 43]
+    },
+    {
       "moebel": "wds6PinieB",
       "feld": [23, 45]
     },
@@ -549,10 +553,6 @@
     {
       "moebel": "wds6Pinie",
       "feld": [34, 54]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [31, 56]
     },
     {
       "moebel": "wds6WacholderB",

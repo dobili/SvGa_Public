@@ -2,7 +2,7 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/varianten/ironwood-umkleide-c.json",
   "art": "innen",
-  "beschreibung": "Variante C: weiße Fliesen, Backsteinwand, sieben schmale Spinde, eine lange Holzbank in der Mitte, Duschen in der Südostecke, Fass als Wäschetonne.",
+  "beschreibung": "Variante C: weiße Fliesen, Backsteinwand, drei große und zwei schmale Spinde, ein Pausentisch mit vier Stühlen in der Mitte, Dusche in der Südostecke, Fass als Wäschetonne.",
   "wand": "backstein",
   "boden": "fliesenWeiss",
   "boeden": {
@@ -38,44 +38,53 @@
       "id": "schliessfachSpind"
     },
     {
-      "moebel": "mf2Spind",
+      "moebel": "iwSpind",
       "feld": [1, 2]
     },
     {
-      "moebel": "mf2Spind",
-      "feld": [2, 2]
-    },
-    {
-      "moebel": "mf2Spind",
+      "moebel": "iwSpind",
       "feld": [3, 2]
     },
     {
-      "moebel": "mf2Spind",
-      "feld": [4, 2]
-    },
-    {
-      "moebel": "mf2Spind",
+      "moebel": "iwSpind",
       "feld": [5, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [6, 2]
     },
     {
       "moebel": "mf2Spind",
       "feld": [7, 2]
     },
     {
+      "moebel": "mf2Spind",
+      "feld": [8, 2]
+    },
+    {
       "moebel": "iw5Duschwanne",
       "feld": [11, 7]
     },
     {
-      "moebel": "cc4Stammbank",
-      "feld": [3, 5]
+      "moebel": "mf5Stahltisch",
+      "feld": [4, 5],
+      "id": "pausentisch"
     },
     {
-      "moebel": "cc4Stammbank",
-      "feld": [6, 5]
+      "moebel": "cc4StuhlVorn",
+      "feld": [4, 4],
+      "zu": "pausentisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [4, 6],
+      "zu": "pausentisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [5, 4],
+      "zu": "pausentisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [5, 6],
+      "zu": "pausentisch"
     },
     {
       "moebel": "iwFass",

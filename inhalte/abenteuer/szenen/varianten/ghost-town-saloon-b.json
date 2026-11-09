@@ -1,0 +1,181 @@
+{
+  "karte": "ghostTown.saloon",
+  "datei": "karten/varianten/ghost-town-saloon-b.json",
+  "art": "innen",
+  "wand": "holz",
+  "boden": "dielen",
+  "beschreibung": "Variante B (schlichter): Theke und Flaschenregal an der Nordwand rechts, das Klavier links, die Treppe an der Westwand mit dem Versteck darunter. Nur der Spieltisch mit dem Brett und ein zweiter Tisch; der Raum ist leer und staubig.",
+  "zustand": ["alt", "verwittert", "gebraucht", "neu"],
+  "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "gt7Flaschenregal",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "gt7Theke",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "gt7Klavier",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "gt7Treppe",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "gt7TischDunkel",
+      "feld": [9, 8],
+      "id": "spiel"
+    },
+    {
+      "moebel": "gt7StuhlR",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "gt7StuhlL",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "gt7Brett",
+      "feld": [0, 0],
+      "auf": "spiel"
+    },
+    {
+      "moebel": "gt7Tisch",
+      "feld": [15, 10],
+      "id": "t1"
+    },
+    {
+      "moebel": "gt7StuhlR",
+      "feld": [14, 10]
+    },
+    {
+      "moebel": "gt7StuhlL",
+      "feld": [17, 10]
+    },
+    {
+      "moebel": "gt7Tisch",
+      "feld": [5, 10],
+      "id": "t2"
+    },
+    {
+      "moebel": "gt7StuhlR",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "gt7StuhlL",
+      "feld": [7, 10]
+    },
+    {
+      "moebel": "gt7Tisch",
+      "feld": [15, 6],
+      "id": "t3"
+    },
+    {
+      "moebel": "gt7StuhlR",
+      "feld": [14, 6]
+    },
+    {
+      "moebel": "gt7StuhlL",
+      "feld": [17, 6]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [18, 3]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [7, 4]
+    },
+    {
+      "moebel": "gt7Fass",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "gt7Fass",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "gt7Kiste",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "gt7Kiste",
+      "feld": [18, 12]
+    },
+    {
+      "moebel": "gt7Fass",
+      "feld": [7, 11]
+    },
+    {
+      "moebel": "gt7Fussmatte",
+      "feld": [10, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "gt7TuerHolz",
+      "feld": [10, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [10, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "saloonAusgang",
+      "feld": [10, 13]
+    },
+    {
+      "name": "fernpartieBrett",
+      "feld": [9, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "abzeichen",
+      "feld": [2, 11]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "pruitt",
+      "feld": [12, 9]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "wind",
+      "typ": "tier",
+      "feld": [6, 11],
+      "eigenschaften": {
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "variante": "b"
+}

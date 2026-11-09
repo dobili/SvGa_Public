@@ -45,8 +45,8 @@ Hauptstraße **Front Street** aus festgetretener Erde, drei Felder breit, in den
 zu Rand, in der Mitte (Spalten 24–34) eine Reihe nach Süden versetzt, wo der Brunnen steht. Nördlich der
 Straße ein **Bretterweg** (Reihe 20, Holz) vor der Häuserzeile mit falschen Fassaden; alle Türen nach
 Süden. Hinter den Häusern steigen Geröll und roter Fels zur **Bruchkante** (Reihen 0–4, Wand `fels`)
-an, in der der Stolleneingang der Goldmine sitzt (Spalten 40–43); ein Erdweg, zwei Felder breit, führt
-von der Straße zwischen Sheriff und Prüfamt hinauf (Spalten 44–45). Südlich der Straße Stall, Tränke,
+an, in der der Stolleneingang der Goldmine sitzt (Spalten 32–33); ein Erdweg, zwei Felder breit, führt
+von der Straße zwischen Saloon und Sheriff hinauf (Spalten 32–33). Südlich der Straße Stall, Tränke,
 Wasserturm und ein umgekippter Planwagen; im Südosten der **Friedhof** in einem Holzzaun mit Tor, im
 Südwesten ein **Hügel** mit einer Bank für den Blick in den Sternenhimmel (Szene 101).
 
@@ -230,3 +230,13 @@ Figur: `pruitt` am Tisch. Belebung: Staubwirbel im Lichtstreifen (`wind`).
 | Fenster mit Nachthimmel      | Wand (8, 1) | Blick hinaus            |
 
 Figur: `postreiter` an der Tür (6, 7).
+
+### 4.4 Gebaut (Stand Runde 5c)
+
+Variante A in `szenen/`, B und C in `szenen/varianten/`. Abweichungen vom Plan oben: Der Weg zur Mine
+liegt zwischen Saloon und Sheriff (Spalten 32–33), der Stollenmund ist ein Steinfeld in der Bruchkante
+mit Absperrung; Saloon-Tür bei (27, 20) in A und C, (29, 20) in B. Das Friedhofstor steht offen
+(Lücke zwischen Zaunenden), damit das Grab ohne Namen erreichbar ist. Ersatzbilder bis zu den
+bestellten: Holzhäuser aus dem Katalog (Post_Apocalyptic_House, Farmer_House, Barn_Small), Absperrbock
+statt Stolleneingang. Im Saloon liegt die Theke an der Nordwand, die Treppe an der Ost- (A, C) oder
+Westwand (B). In der Hütte steht ein Einzelbett statt einer Pritsche.

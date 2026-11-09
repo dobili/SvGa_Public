@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Capital Arena, Seeufer und Leuchtturm einrichten
 
-**Stand:** fertig (mittel-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der achtundzwanzigste Auftrag, Capital Arena, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 96159a1d)
 **Darf ändern:** `inhalte/abenteuer/karten/capital-arena-*.json`, `weg-ghost-capital-*.json`,

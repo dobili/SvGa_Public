@@ -59,7 +59,7 @@
       "feld": [7, 9]
     },
     {
-      "moebel": "sb5Vitrine",
+      "moebel": "sb5VitrineHale",
       "feld": [10, 9]
     },
     {
@@ -79,11 +79,11 @@
       "feld": [3, 7]
     },
     {
-      "moebel": "sb5Sessel",
+      "moebel": "sb5SesselRund",
       "feld": [6, 4]
     },
     {
-      "moebel": "sb5Sessel",
+      "moebel": "sb5SesselRund",
       "feld": [6, 7]
     },
     {
@@ -112,7 +112,7 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "sb5Tuer",
+      "moebel": "sb5GlastuerSued",
       "feld": [12, 13]
     }
   ],

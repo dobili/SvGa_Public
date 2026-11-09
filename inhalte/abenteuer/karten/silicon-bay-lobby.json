@@ -305,7 +305,7 @@
         },
         {
           "id": 11,
-          "name": "sb5Vitrine",
+          "name": "sb5VitrineHale",
           "type": "moebel",
           "x": 176,
           "y": 80,
@@ -397,7 +397,7 @@
         },
         {
           "id": 15,
-          "name": "sb5Sessel",
+          "name": "sb5SesselRund",
           "type": "moebel",
           "x": 96,
           "y": 128,
@@ -535,7 +535,7 @@
         },
         {
           "id": 21,
-          "name": "sb5Tuer",
+          "name": "sb5GlastuerSued",
           "type": "moebel",
           "x": 192,
           "y": 208,

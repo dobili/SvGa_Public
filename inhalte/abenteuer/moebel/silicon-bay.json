@@ -741,6 +741,45 @@
       "art": "deko",
       "stil": "klassisch",
       "zustand": "neu"
+    },
+    "sb5VitrineHale": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_137.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "stil": "modern",
+      "zustand": "neu",
+      "blick": "unten"
+    },
+    "sb5SesselRund": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_196.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5StuhlBuero": {
+      "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_102.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb5GlastuerSued": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "stil": "modern",
+      "zustand": "neu"
     }
   }
 }

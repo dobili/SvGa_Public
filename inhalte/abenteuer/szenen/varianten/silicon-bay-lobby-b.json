@@ -35,7 +35,7 @@
       "an_wand": true
     },
     {
-      "moebel": "sb5Vitrine",
+      "moebel": "sb5VitrineHale",
       "feld": [11, 5]
     },
     {
@@ -47,7 +47,7 @@
       "feld": [3, 6]
     },
     {
-      "moebel": "sb5Sessel",
+      "moebel": "sb5SesselRund",
       "feld": [3, 9]
     },
     {
@@ -72,7 +72,7 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "sb5Tuer",
+      "moebel": "sb5GlastuerSued",
       "feld": [12, 13]
     }
   ],

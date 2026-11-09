@@ -133,7 +133,7 @@ Laufzeit quer 44 Kacheln, 13 Sekunden.
 | aussen `schule` (47, 23), vor der Treppe            | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade ↔ Südwand Mitte (gebaut, 4.5).                                       |
 | aussen `park` Ostrand (63, 25–27); Ankunft (62, 26) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, 3 breit.                                            |
 | park `landstrasse` Ostrand (43, 15–17)              | wegMapleCedar.landstrasse `zurueckPark` Westrand (0, 15–17); Ankunft (1, 16) | Reihen mit mittel-2 abgestimmt (cedar-creek.md); Fluss dort südlich der Straße. |
-| park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zurueckPark` Südrand (Spalten laut 13 und cedar-creek.md)        | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
+| park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zedernZurueckPark` Südrand (10–11, 23)                           | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
 | park `bushaltestelle` (26, 19), Dialog              | cedarCreek.aussen `bushaltestelle`                                           | Busfahrt (R41).                                                                 |
 
 Die Prüfung im Kartenbauer (`pipeline/abenteuer/uebergaenge.py`) verlangt: Jeder Übergang hat sein
@@ -364,9 +364,19 @@ und hätte die Schule überdeckt); kein Wasserfall-Bild im Katalog, der Fluss is
 keine Laternen (sie hätten die Straße versperrt). Briefkasten- und Fundauslöser aus 12 folgen in
 Runde 5. Belebung: Briefträgerin, Laubharker, Kind mit Ball, Eichhörnchen, Katze.
 
-### 4.6 Park
+### 4.6 Park (`mapleFalls.park`), gebaut
 
-Folgt in Runde 4.
+**Gebaut in Runde 4: 44 × 32**, Lage wie in 1.2 mit diesen Abweichungen: Der Steg S5 ist ein morscher
+Steg im Wasser (4, 1) mit rot-weißer Sperrlatte `absperrungSteg` (5, 3); der Fußsteg zum Zedernpfad
+(10–11, 0–2) ist aus Dielen, das Schild „Sturmschaden“ (Wegweiser-Tafel) steht an seinem Ende (12, 3).
+Keine Halfpipe im Katalog: Jo sitzt an der langen Bank (19, 11). Die Brücke der Parkstraße ist die
+Straße selbst über dem Fluss, ohne Geländer (kein Brückenbild im Katalog). Kiosk Patel (24, 10) mit
+Laterne, Abernathys Bank `parkbank` (3, 11) und zweite Bank (7, 11), Bushaltestelle (24, 18),
+Brett-Platz (9–13 / 22–25) mit Bank, Teich (17–23 / 23–27), Bäume.
+
+**Übergänge (gebaut):** `park` Westrand (0, 15–17) ↔ Birch Lane (63, 25–27); `landstrasse` Ostrand
+(43, 15–17) ↔ Landstraße `zurueckPark` (0, 15–17); `zedernpfad` Nordrand (10–11, 0) ↔ Pfadkarte
+`zedernZurueckPark` (10–11, 23), in `orte.json` eingetragen; `bushaltestelle` (26, 21); `kiosk` (25, 13).
 
 ## 5. Platzhalter für die Rückkehr
 

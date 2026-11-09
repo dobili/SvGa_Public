@@ -1,0 +1,166 @@
+{
+  "karte": "mapleFalls.wohnzimmer",
+  "datei": "karten/maple-falls-wohnzimmer.json",
+  "art": "innen",
+  "beschreibung": "Das neue Wohnzimmer der Familie am Tag nach dem Umzug in Maple Falls: ein heller, warmer Raum mit Holzboden und cremefarbenen Wänden, aber noch nicht fertig eingerichtet. An der Nordwand zwei Fenster mit Vorhängen, durch die Licht fällt, links die Tür zur Dachbodentreppe, rechts eine kleine Küchenecke mit Kühlschrank, Herd und Arbeitsplatte. Links vor der Wand steht das Sofa mit Couchtisch auf einem Teppich; der Fernseher steht noch eingepackt auf dem Couchtisch. Rechts in der Mitte der runde Esstisch mit zwei Stühlen, an dem Mama sitzt und arbeitet. Überall Umzugskartons, einer mit der Aufschrift „Küche?“ neben der Arbeitsplatte, der leere Pizzakarton von gestern Abend liegt mitten auf dem Boden. Zwischen den Fenstern hängt das Foto von Grandma Whitlock. Unten in der Mitte die Haustür nach draußen. Pflanzen in zwei Ecken, eine Stehlampe neben dem Esstisch. Laufwege: von der Haustür gerade nach oben, nach links zur Dachbodentür, nach rechts zu Mama und zur Küche.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#######.########"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzTuer",
+      "feld": [1, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzVorhang",
+      "feld": [4, 1],
+      "an_wand": true,
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [4, 1],
+      "an_wand": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "wzVorhang",
+      "feld": [9, 1],
+      "an_wand": true,
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [9, 1],
+      "an_wand": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "wzHerd",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "wzKarton",
+      "feld": [12, 4],
+      "id": "kartonKueche"
+    },
+    {
+      "moebel": "wzTeppich",
+      "feld": [2, 5]
+    },
+    {
+      "moebel": "wzSofa",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "wzCouchtisch",
+      "feld": [3, 5],
+      "id": "couchtisch"
+    },
+    {
+      "moebel": "wzFernseher",
+      "auf": "couchtisch"
+    },
+    {
+      "moebel": "wzEsstisch",
+      "feld": [10, 6],
+      "id": "esstisch"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "wzStehlampe",
+      "feld": [14, 5]
+    },
+    {
+      "moebel": "wzPflanzeGross",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "wzKartonstapelHoch",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "wzKartonGross",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "wzPizzakarton",
+      "feld": [7, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "haustuer",
+      "feld": [7, 11]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 3]
+    },
+    {
+      "name": "fotoGrandma",
+      "feld": [7, 3]
+    },
+    {
+      "name": "kartonKueche",
+      "feld": [12, 5],
+      "auf_moebel": true
+    },
+    {
+      "name": "pizzakarton",
+      "feld": [7, 7]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mutter",
+      "feld": [11, 8]
+    }
+  ]
+}

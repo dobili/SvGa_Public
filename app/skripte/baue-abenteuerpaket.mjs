@@ -287,6 +287,7 @@ async function main() {
   await kopierePrivatordner("figuren");
   await kopierePrivatordner("portraets");
   await kopierePrivatordner("grafik");
+  await kopierePrivatordner("grafik/karten");
   await schreibeMoebel();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());

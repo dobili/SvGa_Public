@@ -27,6 +27,9 @@ export interface Moebel {
   readonly y: number;
   readonly angabe: Moebelangabe;
   readonly adresse: string;
+  /** Vom Kartenbauer festgelegt: Zeichentiefe und Kollision (an der Wand, auf dem Tisch). */
+  readonly tiefe?: number;
+  readonly kollision?: boolean;
 }
 
 let angaben: Promise<Readonly<Record<string, Moebelangabe>>> | null = null;
@@ -43,6 +46,7 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
     type?: string;
     x?: number;
     y?: number;
+    properties?: readonly { name?: string; value?: unknown }[];
   }[];
   const moebel = await Promise.all(
     objekte
@@ -51,7 +55,19 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
         const name = o.name ?? "";
         const adresse = await paketdateiAlsAdresse(`moebel/${name}.png`).catch(() => null);
         const angabe = liste[name];
-        return adresse && angabe ? { name, x: o.x ?? 0, y: o.y ?? 0, angabe, adresse } : null;
+        if (!adresse || !angabe) return null;
+        const eigen = (n: string) => o.properties?.find((e) => e.name === n)?.value;
+        const tiefe = eigen("tiefe");
+        const kollision = eigen("kollision");
+        return {
+          name,
+          x: o.x ?? 0,
+          y: o.y ?? 0,
+          angabe,
+          adresse,
+          ...(typeof tiefe === "number" ? { tiefe } : {}),
+          ...(typeof kollision === "boolean" ? { kollision } : {}),
+        };
       }),
   );
   return moebel.filter((m) => m !== null);
@@ -76,8 +92,8 @@ export function stelleMoebelAuf(
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
     const bild = szene.add.image(m.x, m.y, `moebel:${m.name}`).setOrigin(0, 0);
-    bild.setDepth(m.y + m.angabe.hoehe - kachel / 2);
-    if (!m.angabe.kollision) continue;
+    bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
+    if (!(m.kollision ?? m.angabe.kollision)) continue;
     const oben = m.angabe.hoehe > kachel ? kachel : 0;
     // Unsichtbares Rechteck als Körper (ein Rechteck kennt seine Ecken; mit einer Zone saß der
     // Körper versetzt und sperrte Nachbarfelder).

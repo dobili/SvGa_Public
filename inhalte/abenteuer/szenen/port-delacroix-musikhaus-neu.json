@@ -25,73 +25,43 @@
   "objekte": [
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        3,
-        1
-      ],
+      "feld": [3, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        16,
-        1
-      ],
+      "feld": [16, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6SchildMusikhaus",
-      "feld": [
-        8,
-        1
-      ],
+      "feld": [8, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        4
-      ]
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6KlavierNatur",
-      "feld": [
-        5,
-        2
-      ]
+      "feld": [5, 2]
     },
     {
       "moebel": "pd6Regal",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "pd6Notenregal",
-      "feld": [
-        14,
-        2
-      ]
+      "feld": [14, 2]
     },
     {
       "moebel": "pd6PflanzeGross",
-      "feld": [
-        17,
-        9
-      ]
+      "feld": [17, 9]
     },
     {
       "moebel": "pd6Teppich",
-      "feld": [
-        8,
-        6
-      ]
+      "feld": [8, 6]
     },
     {
       "moebel": "pd6Tisch",
-      "feld": [
-        3,
-        6
-      ],
+      "feld": [3, 6],
       "id": "n3_6"
     },
     {
@@ -100,26 +70,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        3,
-        5
-      ],
+      "feld": [3, 5],
       "zu": "n3_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        3,
-        7
-      ],
+      "feld": [3, 7],
       "zu": "n3_6"
     },
     {
       "moebel": "pd6Tisch",
-      "feld": [
-        14,
-        6
-      ],
+      "feld": [14, 6],
       "id": "n14_6"
     },
     {
@@ -128,26 +89,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        14,
-        5
-      ],
+      "feld": [14, 5],
       "zu": "n14_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        14,
-        7
-      ],
+      "feld": [14, 7],
       "zu": "n14_6"
     },
     {
       "moebel": "pd6Tisch",
-      "feld": [
-        3,
-        10
-      ],
+      "feld": [3, 10],
       "id": "n3_10"
     },
     {
@@ -156,26 +108,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        3,
-        9
-      ],
+      "feld": [3, 9],
       "zu": "n3_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        3,
-        11
-      ],
+      "feld": [3, 11],
       "zu": "n3_10"
     },
     {
       "moebel": "pd6Tisch",
-      "feld": [
-        14,
-        10
-      ],
+      "feld": [14, 10],
       "id": "n14_10"
     },
     {
@@ -184,139 +127,81 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        14,
-        9
-      ],
+      "feld": [14, 9],
       "zu": "n14_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        14,
-        11
-      ],
+      "feld": [14, 11],
       "zu": "n14_10"
     },
     {
       "moebel": "pd6Pflanze",
-      "feld": [
-        1,
-        11
-      ]
+      "feld": [1, 11]
     },
     {
       "moebel": "pd6Pflanze",
-      "feld": [
-        18,
-        11
-      ]
+      "feld": [18, 11]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        18,
-        6
-      ]
+      "feld": [18, 6]
     },
     {
       "moebel": "pd6Regal",
-      "feld": [
-        1,
-        6
-      ]
+      "feld": [1, 6]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        18,
-        7
-      ]
+      "feld": [18, 7]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [
-        10,
-        12
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [10, 12],
+      "versatz": [0, 8]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [
-        10,
-        13
-      ],
+      "feld": [10, 13],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        10,
-        12
-      ],
+      "feld": [10, 12],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "musikhausAusgang",
-      "feld": [
-        10,
-        13
-      ]
+      "feld": [10, 13]
     },
     {
       "name": "schild",
-      "feld": [
-        9,
-        12
-      ]
+      "feld": [9, 12]
     }
   ],
   "figuren": [
     {
       "name": "odile",
-      "feld": [
-        11,
-        5
-      ]
+      "feld": [11, 5]
     },
     {
       "name": "henri",
-      "feld": [
-        13,
-        4
-      ]
+      "feld": [13, 4]
     },
     {
       "name": "remy",
-      "feld": [
-        12,
-        9
-      ]
+      "feld": [12, 9]
     },
     {
       "name": "lou",
-      "feld": [
-        7,
-        9
-      ]
+      "feld": [7, 9]
     }
   ],
   "belebung": [],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "klassisch",
-    "rustikal",
-    "modern"
-  ]
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "rustikal", "modern"]
 }

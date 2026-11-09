@@ -26,102 +26,63 @@
   "objekte": [
     {
       "moebel": "pd6SpielfeldQuer",
-      "feld": [
-        6,
-        3
-      ]
+      "feld": [6, 3]
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        2,
-        1
-      ],
+      "feld": [2, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        8,
-        1
-      ],
+      "feld": [8, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        16,
-        1
-      ],
+      "feld": [16, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        22,
-        1
-      ],
+      "feld": [22, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Plakat",
-      "feld": [
-        14,
-        1
-      ],
+      "feld": [14, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [
-        5,
-        1
-      ],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [
-        19,
-        1
-      ],
+      "feld": [19, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Pult",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "id": "pult"
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [
-        3,
-        2
-      ]
+      "feld": [3, 2]
     },
     {
       "moebel": "pd6Figurenkiste",
-      "feld": [
-        5,
-        3
-      ]
+      "feld": [5, 3]
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        3,
-        6
-      ],
+      "feld": [3, 6],
       "id": "t3_6"
     },
     {
@@ -130,26 +91,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        3,
-        5
-      ],
+      "feld": [3, 5],
       "zu": "t3_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        3,
-        7
-      ],
+      "feld": [3, 7],
       "zu": "t3_6"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        3,
-        10
-      ],
+      "feld": [3, 10],
       "id": "t3_10"
     },
     {
@@ -158,26 +110,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        3,
-        9
-      ],
+      "feld": [3, 9],
       "zu": "t3_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        3,
-        11
-      ],
+      "feld": [3, 11],
       "zu": "t3_10"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        7,
-        6
-      ],
+      "feld": [7, 6],
       "id": "t7_6"
     },
     {
@@ -186,26 +129,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        7,
-        5
-      ],
+      "feld": [7, 5],
       "zu": "t7_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        7,
-        7
-      ],
+      "feld": [7, 7],
       "zu": "t7_6"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        7,
-        10
-      ],
+      "feld": [7, 10],
       "id": "t7_10"
     },
     {
@@ -214,26 +148,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        7,
-        9
-      ],
+      "feld": [7, 9],
       "zu": "t7_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        7,
-        11
-      ],
+      "feld": [7, 11],
       "zu": "t7_10"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        17,
-        6
-      ],
+      "feld": [17, 6],
       "id": "t17_6"
     },
     {
@@ -242,26 +167,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        17,
-        5
-      ],
+      "feld": [17, 5],
       "zu": "t17_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        17,
-        7
-      ],
+      "feld": [17, 7],
       "zu": "t17_6"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        17,
-        10
-      ],
+      "feld": [17, 10],
       "id": "t17_10"
     },
     {
@@ -270,26 +186,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        17,
-        9
-      ],
+      "feld": [17, 9],
       "zu": "t17_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        17,
-        11
-      ],
+      "feld": [17, 11],
       "zu": "t17_10"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        21,
-        6
-      ],
+      "feld": [21, 6],
       "id": "t21_6"
     },
     {
@@ -298,26 +205,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        21,
-        5
-      ],
+      "feld": [21, 5],
       "zu": "t21_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        21,
-        7
-      ],
+      "feld": [21, 7],
       "zu": "t21_6"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [
-        21,
-        10
-      ],
+      "feld": [21, 10],
       "id": "t21_10"
     },
     {
@@ -326,167 +224,101 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [
-        21,
-        9
-      ],
+      "feld": [21, 9],
       "zu": "t21_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [
-        21,
-        11
-      ],
+      "feld": [21, 11],
       "zu": "t21_10"
     },
     {
       "moebel": "pd6Spendenkasse",
-      "feld": [
-        15,
-        3
-      ]
+      "feld": [15, 3]
     },
     {
       "moebel": "pd6Turnmatte",
-      "feld": [
-        1,
-        12
-      ]
+      "feld": [1, 12]
     },
     {
       "moebel": "pd6Turnmatte",
-      "feld": [
-        2,
-        12
-      ]
+      "feld": [2, 12]
     },
     {
       "moebel": "pd6Ball",
-      "feld": [
-        4,
-        13
-      ]
+      "feld": [4, 13]
     },
     {
       "moebel": "pd6Ball",
-      "feld": [
-        23,
-        13
-      ]
+      "feld": [23, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [
-        17,
-        13
-      ]
+      "feld": [17, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [
-        21,
-        13
-      ]
+      "feld": [21, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [
-        5,
-        13
-      ]
+      "feld": [5, 13]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        23,
-        2
-      ]
+      "feld": [23, 2]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        22,
-        4
-      ]
+      "feld": [22, 4]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        1,
-        5
-      ]
+      "feld": [1, 5]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [
-        13,
-        14
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [13, 14],
+      "versatz": [0, 8]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [
-        13,
-        15
-      ],
+      "feld": [13, 15],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        13,
-        14
-      ],
+      "feld": [13, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "turnhalleAusgang",
-      "feld": [
-        13,
-        15
-      ]
+      "feld": [13, 15]
     }
   ],
   "figuren": [
     {
       "name": "odile",
-      "feld": [
-        14,
-        4
-      ]
+      "feld": [14, 4]
     },
     {
       "name": "remy",
-      "feld": [
-        10,
-        8
-      ]
+      "feld": [10, 8]
     },
     {
       "name": "lou",
-      "feld": [
-        16,
-        8
-      ]
+      "feld": [16, 8]
     }
   ],
   "belebung": [
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [
-        11,
-        12
-      ],
+      "feld": [11, 12],
       "eigenschaften": {
         "von": "11,12",
         "bis": "15,12",
@@ -495,14 +327,6 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch",
-    "rustikal",
-    "modern"
-  ]
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern"]
 }

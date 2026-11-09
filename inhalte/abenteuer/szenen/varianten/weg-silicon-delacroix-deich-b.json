@@ -2,7 +2,7 @@
   "karte": "wegSiliconDelacroix.deich",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht und offen: Am Steg liegt ein Lastkahn statt der Fähre, im Meer nur Pfähle. Auf der Deichkrone Mr. Guidry am Loch, ein Fass. Unten im Westen eine eingezäunte Weidemarsch mit Heuhaufen und einer Reihe Strommasten, in der Mitte ein gestrandeter Lastkahn, am Ende der zweiten Rampe ein blaues Pumpenhaus. Am Ortsrand zwei flache Häuser hinter Bauzäunen und ein Wegweiser. In der Marsch Schilf und Sumpfzypressen mit Moos.",
+  "beschreibung": "Variante B, schlicht und offen: Am Steg liegt ein Lastkahn statt der Fähre, im Meer nur Pfähle. Auf der Deichkrone Mr. Guidry am Loch, ein Fass. Unten im Westen eine eingezäunte Weidemarsch mit Heuhaufen und einer Reihe Strommasten, in der Mitte ein gestrandeter Lastkahn, am Ende der zweiten Rampe ein blaues Pumpenhaus. Am Ortsrand zwei flache Häuser hinter Bauzäunen und das Ortsschild „Port Delacroix“. In der Marsch Schilf und Sumpfzypressen mit Moos.",
   "boden": "gras",
   "wandart": "gras",
   "wand": "damm",
@@ -544,8 +544,9 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "svWegweiser",
-      "feld": [212, 7]
+      "moebel": "sd6SchildPortDelacroix",
+      "feld": [210, 6],
+      "vorn": true
     },
     {
       "moebel": "wg4Gras",

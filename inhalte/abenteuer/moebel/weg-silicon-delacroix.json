@@ -355,6 +355,16 @@
       "art": "baum",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "sd6SchildPortDelacroix": {
+      "quelle": "spiel/eigene/schild_port_delacroix.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch"
     }
   }
 }

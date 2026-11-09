@@ -1440,6 +1440,30 @@
       "breite": 32,
       "hoehe": 48,
       "kollision": true
+    },
+    "ccZaun": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_1_Brown_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ccZaunPfosten": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_1_Brown_4_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true
+    },
+    "ccKorn": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Grain_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false
+    },
+    "ccMais": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true
     }
   }
 }
